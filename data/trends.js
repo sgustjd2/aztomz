@@ -88,8 +88,8 @@ window.HANGEUT_DATA = {
       ],
       "src": [
         [
-          "누데이크 성수점(다이닝코드)",
-          "https://www.diningcode.com/profile.php?rid=XRWejrYStegn"
+          "성수 누데이크 카페 후기(밍기뷰)",
+          "https://pedmingki.tistory.com/20"
         ],
         [
           "버거케이크 후기(브런치)",
@@ -137,8 +137,8 @@ window.HANGEUT_DATA = {
           "https://dategom.com/%EC%84%B1%EC%88%98-%ED%80%B8%EC%95%84%EB%A7%9D-%EB%94%94%EC%A0%80%ED%8A%B8-%EC%B9%B4%ED%8E%98-%EB%A9%9C%EB%A1%9C%EC%9B%8C-%EB%A7%9B%EC%A7%91-%EB%8D%B0%EC%9D%B4%ED%8A%B8/"
         ],
         [
-          "멜로워(다이닝코드)",
-          "https://www.diningcode.com/profile.php?rid=BNxGH2I7Zn4l"
+          "멜로워 성수 카페 후기(트립닷컴)",
+          "https://kr.trip.com/moments/detail/seoul-234-9948746"
         ]
       ]
     },
@@ -387,12 +387,12 @@ window.HANGEUT_DATA = {
       ],
       "src": [
         [
-          "다산 이스트베이글(인스타그램)",
-          "https://www.instagram.com/prpixy6/"
+          "줄 서는 다산 이스트베이글 빵 나오는 시간(유니코드)",
+          "https://www.keyzard.cc/unichord_/nb/224261273052"
         ],
         [
-          "다산신도시 맛집 후기",
-          "https://www.instagram.com/tytheforxagugu/"
+          "이스트베이글 in 다산 소개(코니플레이스)",
+          "https://conyplace.com/%EC%9D%B4%EC%8A%A4%ED%8A%B8%EB%B2%A0%EC%9D%B4%EA%B8%80-in-%EB%8B%A4%EC%82%B0-%EB%8B%A4%EC%82%B0%EB%8F%99%EC%9D%98-%EB%B2%A0%EC%9D%B4%EA%B8%80-%EC%A0%84%EB%AC%B8%EC%A0%90/"
         ]
       ]
     },
