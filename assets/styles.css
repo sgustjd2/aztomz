@@ -2,8 +2,9 @@
    한끗 — 에디토리얼 디자인 시스템 (anti-slop)
    원칙: 매거진 마스트헤드 · 타이포 커버(이모지 금지) · 랭킹 인덱스 ·
         비대칭 리듬 · 각진 인쇄 radius · 강한 타입 스케일.
-   외부 폰트/백드롭필터 미사용(어디서든 즉시 렌더).
+   본문 폰트 Pretendard(웹폰트 · dynamic-subset = 쓰는 글자만 로딩) · 백드롭필터 미사용.
    ============================================================ */
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css");
 :root{
   --paper:#f3efe6; --paper-2:#fbf9f3; --card:#fff;
   --ink:#17140f; --ink-2:#5c554c; --faint:#a39a8c;
@@ -12,7 +13,7 @@
   --green:#1c7a4a; --green-soft:#e2efe6;
   --amber:#c98a2b;
   --serif:Georgia,"Times New Roman",serif;
-  --sans:"Apple SD Gothic Neo","Pretendard Variable",Pretendard,"Noto Sans KR","Malgun Gothic",-apple-system,BlinkMacSystemFont,sans-serif;
+  --sans:"Pretendard Variable",Pretendard,"Apple SD Gothic Neo","Noto Sans KR","Malgun Gothic",-apple-system,BlinkMacSystemFont,sans-serif;
   --maxw:1080px; --readw:760px; --r:7px;
   /* 라이트 전용 디자인 — 다크모드 폰/인앱 웹뷰의 강제 색반전(시커멓게 나오는 현상) 차단 */
   color-scheme:light;
