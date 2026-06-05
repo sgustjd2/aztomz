@@ -99,9 +99,19 @@
 
   /* ---------- UI helpers ---------- */
   H.starHTML = (n)=>{ let s=''; for(let i=1;i<=5;i++) s+=`<span class="${i<=Math.round(n)?'':'off'}">★</span>`; return s; };
+  // 커버 썸네일용 대표 이미지: 영상 트렌드는 유튜브 썸네일, 아니면 첫 대표 이미지
+  H.coverImg = (t)=>{
+    if(t && t.video && t.video.youtube) return `https://i.ytimg.com/vi/${t.video.youtube}/hqdefault.jpg`;
+    const im = t && t.images && t.images[0];
+    return im ? (typeof im==='string'?im:im.u) : '';
+  };
   H.coverHTML = (t, opts={})=>{
     const stamp = t.label ? `<span class="c-stamp">${H.esc(t.label)}</span>` : '';
-    return `<div class="cover ${t.coverCat} ${opts.tall?'tall':''}">
+    const img = H.coverImg(t);
+    // 이미지가 깨지면 has-img를 떼서 기존 색 커버로 자연스럽게 폴백
+    const bg = img ? `<img class="c-bg" src="${img}" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.parentNode.classList.remove('has-img');this.remove()">` : '';
+    return `<div class="cover ${t.coverCat} ${opts.tall?'tall':''} ${img?'has-img':''}">
+      ${bg}
       <span class="c-kicker">${H.esc(t.cat)}</span>
       <span class="c-buzz">${H.esc(t.buzz||'')}</span>
       <span class="c-title">${H.esc(t.title)}</span>

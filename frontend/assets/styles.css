@@ -84,6 +84,13 @@ body:has(.wrap.reading) .mast .wrap{max-width:var(--readw)}
   background:rgba(0,0,0,.2);transform:rotate(-3deg);transform-origin:left center}
 .cover.tall{min-height:230px}
 .cover.tall .c-title{font-size:34px}
+/* 대표 이미지 썸네일: 색 커버 위에 사진 + 가독용 어두운 스크림(이미지 깨지면 has-img 제거→색 커버 폴백) */
+.cover .c-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.cover.has-img::after{content:"";position:absolute;inset:0;z-index:1;
+  background:linear-gradient(180deg,rgba(0,0,0,.10) 0%,rgba(0,0,0,.32) 48%,rgba(0,0,0,.76) 100%)}
+.cover.has-img .c-kicker,.cover.has-img .c-buzz,.cover.has-img .c-title,.cover.has-img .c-stamp{z-index:2}
+.cover.has-img .c-title{position:relative}
+.cover.has-img .c-kicker,.cover.has-img .c-buzz{text-shadow:0 1px 6px rgba(0,0,0,.7)}
 /* category color fields */
 .cat-dessert{background-color:#43302a}
 .cat-cafe{background-color:#26242a}
