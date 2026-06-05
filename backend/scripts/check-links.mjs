@@ -2,14 +2,14 @@
 /* 한끗 — 출처 링크 점검기
    data/trends.json(또는 인자로 준 파일)의 모든 src URL을 확인.
    ❌ 404/410 = 죽은 링크(교체/제거 필요). ⚠️ ERR = 봇 차단 가능(브라우저선 열릴 수 있음).
-   사용: node scripts/check-links.mjs [파일경로]
+   사용: node backend/scripts/check-links.mjs [파일경로]   (레포 루트에서)
    404가 하나라도 있으면 exit code 1. */
 import { readFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 
-const root = join(dirname(fileURLToPath(import.meta.url)), '..');
-const file = process.argv[2] || join(root, 'data', 'trends.json');
+const repoRoot = join(dirname(fileURLToPath(import.meta.url)), '..', '..');
+const file = process.argv[2] || join(repoRoot, 'backend', 'data', 'trends.json');
 const UA = { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124 Safari/537.36' };
 
 const data = JSON.parse(await readFile(file, 'utf8'));

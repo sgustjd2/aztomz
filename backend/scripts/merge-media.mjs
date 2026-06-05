@@ -19,7 +19,7 @@ const DROP = [
 ];
 
 const imagesMap = JSON.parse(readFileSync('.pipeline/images.json', 'utf-8'));
-const data = JSON.parse(readFileSync('data/trends.json', 'utf-8'));
+const data = JSON.parse(readFileSync('backend/data/trends.json', 'utf-8'));
 
 let vCount = 0, iCount = 0;
 for (const t of data.trends) {
@@ -27,7 +27,7 @@ for (const t of data.trends) {
   const imgs = (imagesMap[t.id] || []).filter(u => !DROP.some(re => re.test(u))).slice(0, 3);
   if (imgs.length) { t.images = imgs; iCount += imgs.length; }
 }
-writeFileSync('data/trends.json', JSON.stringify(data, null, 2) + '\n', 'utf-8');
+writeFileSync('backend/data/trends.json', JSON.stringify(data, null, 2) + '\n', 'utf-8');
 console.log(`✓ video ${vCount}개, images ${iCount}장 병합`);
 for (const t of data.trends) {
   console.log(`  [${t.id}] video:${t.video ? '▶' : '-'} images:${(t.images || []).length}`);

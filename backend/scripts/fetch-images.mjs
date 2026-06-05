@@ -1,13 +1,13 @@
 #!/usr/bin/env node
 // 일회성: 각 트렌드 출처에서 og:image를 ddgs extract로 뽑아 후보 이미지 맵 출력.
 // 결과를 보고 사람이 trends.json의 images에 골라 넣는다(품질 관리).
-// 사용: node scripts/fetch-images.mjs > .pipeline/images.json
+// 사용: node backend/scripts/fetch-images.mjs > .pipeline/images.json   (레포 루트에서)
 import { readFileSync } from 'node:fs';
 import { execFileSync } from 'node:child_process';
 
 const DDGS = process.env.DDGS_EXE ||
   'E:/workspace/side_project/hermes/hermes-agent/venv/Scripts/ddgs.exe';
-const data = JSON.parse(readFileSync('data/trends.json', 'utf-8'));
+const data = JSON.parse(readFileSync('backend/data/trends.json', 'utf-8'));
 
 function extract(url) {
   try {

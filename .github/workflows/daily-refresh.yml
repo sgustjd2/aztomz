@@ -20,16 +20,16 @@ jobs:
         with:
           node-version: "20"
 
-      # data/trends.json 재수집·재분석(hermes) + generatedAt=오늘 + data/trends.js 생성
+      # backend/data/trends.json 재수집·재분석(hermes) + generatedAt=오늘 + frontend/data/trends.js 생성
       - name: Refresh trends
-        run: node scripts/refresh.mjs
+        run: node backend/scripts/refresh.mjs
 
       # 변경이 있을 때만 커밋
       - name: Commit if changed
         run: |
           git config user.name  "hangeut-bot"
           git config user.email "bot@users.noreply.github.com"
-          git add data/trends.json data/trends.js
+          git add backend/data/trends.json frontend/data/trends.js
           if git diff --staged --quiet; then
             echo "변경 없음 — 커밋 생략"
           else

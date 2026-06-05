@@ -3,7 +3,7 @@
 // 각 트렌드의 src URL 본문을 ddgs extract로 읽어, 그 트렌드 키워드가
 // 실제로 등장하는지 확인한다. 200이어도 본문이 무관하면 가짜 출처.
 //
-// 사용: node scripts/check-source.mjs [data/trends.json] [--only=id1,id2]
+// 사용: node backend/scripts/check-source.mjs [backend/data/trends.json] [--only=id1,id2]   (레포 루트에서)
 // 종료코드: 무관(❌) 출처가 하나라도 있으면 1, 아니면 0.
 
 import { readFileSync } from 'node:fs';
@@ -13,7 +13,7 @@ const DDGS = process.env.DDGS_EXE ||
   'E:/workspace/side_project/hermes/hermes-agent/venv/Scripts/ddgs.exe';
 
 const args = process.argv.slice(2);
-const file = args.find(a => !a.startsWith('--')) || 'data/trends.json';
+const file = args.find(a => !a.startsWith('--')) || 'backend/data/trends.json';
 const onlyArg = args.find(a => a.startsWith('--only='));
 const onlyIds = onlyArg ? onlyArg.slice(7).split(',').map(s => s.trim()) : null;
 
