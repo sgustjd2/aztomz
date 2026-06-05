@@ -1,10 +1,10 @@
-name: daily-refresh
+name: weekly-refresh
 
-# 매일 트렌드 분석을 '오늘 기준'으로 갱신.
-# 06:00 KST (= 21:00 UTC 전날)에 실행. 수동 실행도 가능(workflow_dispatch).
+# 트렌드 분석을 '주간'으로 갱신(매주 1회, 대신 세밀하게).
+# 매주 월요일 06:00 KST (= 일요일 21:00 UTC)에 실행. 수동 실행도 가능(workflow_dispatch).
 on:
   schedule:
-    - cron: "0 21 * * *"
+    - cron: "0 21 * * 0"
   workflow_dispatch: {}
 
 permissions:
@@ -33,6 +33,6 @@ jobs:
           if git diff --staged --quiet; then
             echo "변경 없음 — 커밋 생략"
           else
-            git commit -m "chore: daily trend refresh ($(date -u +%Y-%m-%d))"
+            git commit -m "chore: weekly trend refresh ($(date -u +%Y-%m-%d))"
             git push
           fi

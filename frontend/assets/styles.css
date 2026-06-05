@@ -310,7 +310,7 @@ i{font-style:normal}
 .tp-lead .freshline{margin-top:16px}
 
 /* 탭(레이더 / 저장 아이디어) */
-.tp-tabs{display:flex;gap:8px;margin:22px 0 4px;flex-wrap:wrap}
+.tp-tabs{display:flex;gap:9px;margin:28px 0 12px;flex-wrap:wrap}
 .tp-tab{font-family:var(--sans);font-size:14px;font-weight:800;cursor:pointer;
   border:1.5px solid var(--line);background:var(--card);color:var(--ink-2);
   border-radius:99px;padding:8px 16px;transition:background .12s,border-color .12s,color .12s}
@@ -324,23 +324,23 @@ i{font-style:normal}
 .tp-search:focus{border-color:var(--ink)}
 
 /* 트렌드 카드 */
-#tpDaily,#tpList{display:flex;flex-direction:column;gap:12px}
-#tpDaily{margin:6px 0 8px}
+#tpDaily,#tpList{display:flex;flex-direction:column;gap:14px}
+#tpDaily{margin:8px 0 10px}
 .tp-card{border:1px solid var(--line);border-radius:var(--r);background:var(--card);
-  padding:15px 17px;cursor:pointer;transition:border-color .12s}
-.tp-card:hover{border-color:var(--ink-2)}
+  padding:19px 22px;cursor:pointer;transition:border-color .12s,box-shadow .12s}
+.tp-card:hover{border-color:var(--ink-2);box-shadow:0 2px 14px rgba(0,0,0,.05)}
 .tp-card.open{border-color:var(--ink)}
-.tp-card-head{display:flex;justify-content:space-between;align-items:flex-start;gap:14px}
+.tp-card-head{display:flex;justify-content:space-between;align-items:flex-start;gap:18px}
 .tp-card-main{flex:1;min-width:0}
-.tp-row1{display:flex;align-items:center;gap:9px;margin-bottom:6px;flex-wrap:wrap}
-.tp-kw{font-size:17px;font-weight:800;letter-spacing:-0.02em;margin:0}
-.tp-meta{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:7px}
+.tp-row1{display:flex;align-items:center;gap:10px;margin-bottom:9px;flex-wrap:wrap}
+.tp-kw{font-size:17.5px;font-weight:800;letter-spacing:-0.02em;margin:0}
+.tp-meta{display:flex;align-items:center;gap:11px;flex-wrap:wrap;margin-bottom:11px}
 .tp-cat{font-size:12.5px;font-weight:700;color:var(--ink-2);background:var(--paper-2);
   border:1px solid var(--line);padding:2px 9px;border-radius:99px}
 .tp-pl{display:inline-flex;gap:4px}
 .tp-pi{font-size:13px}
 .tp-gr{font-size:13px;font-weight:800;color:var(--green)}
-.tp-why{font-size:14.5px;color:var(--body);line-height:1.6;margin:0}
+.tp-why{font-size:14.5px;color:var(--body);line-height:1.65;margin:0}
 .tp-spark{flex:0 0 auto;align-self:center;color:var(--green)}
 .tp-spark.mid{color:var(--amber)}
 .tp-spark.warn{color:var(--accent)}
@@ -353,9 +353,23 @@ i{font-style:normal}
 .tp-badge.mid{color:#9a6b1e;background:#fbf2e2}
 .tp-badge.warn{color:#bd3415;background:var(--accent-soft)}
 
-/* 사업 앵글 */
-.tp-angle{margin:11px 0 0;padding:10px 13px;background:var(--green-soft);
-  border-left:3px solid var(--green);border-radius:var(--r);font-size:14px;color:var(--body);line-height:1.55}
+/* 사업 앵글(핵심 각도 — 항상 노출) */
+.tp-angle{margin:14px 0 0;padding:12px 15px;background:var(--green-soft);
+  border-left:3px solid var(--green);border-radius:var(--r);font-size:14.5px;color:var(--body);line-height:1.6}
+.tp-angle b{color:#176b40}
+
+/* 더보기 힌트 + 인라인 아이디어 3개(펼치면 바로 보임) */
+.tp-more{margin-top:13px;font-size:13px;font-weight:800;color:var(--ink-2);letter-spacing:-0.01em;user-select:none}
+.tp-card:hover .tp-more{color:var(--ink)}
+.tp-card.open .tp-more{display:none}
+.tp-ideas{margin-top:15px;padding-top:15px;border-top:1px solid var(--line)}
+.tp-ideas-h{font-size:12px;font-weight:900;letter-spacing:.07em;color:var(--accent);margin-bottom:11px;text-transform:uppercase}
+.tp-idea-list{list-style:none;counter-reset:idea;padding:0;margin:0 0 14px;display:flex;flex-direction:column;gap:10px}
+.tp-idea-list li{counter-increment:idea;position:relative;padding-left:32px;font-size:14.5px;line-height:1.55;color:var(--body);word-break:keep-all}
+.tp-idea-list li::before{content:counter(idea);position:absolute;left:0;top:1px;width:22px;height:22px;
+  display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:900;
+  color:var(--on-ink);background:var(--ink);border-radius:50%}
+.tp-ideas-foot{display:flex;gap:8px;flex-wrap:wrap}
 
 /* 펼침 액션 */
 .tp-actions{margin-top:12px;display:flex;gap:8px;flex-wrap:wrap}
@@ -386,7 +400,7 @@ i{font-style:normal}
   .tp-badge.peak,.tp-badge.good,.tp-badge.today{color:#7fe0a8}
   .tp-badge.mid{color:#e8c069;background:#2f2716}
   .tp-badge.warn{color:#ff9075}
-  .tp-gr,.tp-spark{color:#7fe0a8}
+  .tp-gr,.tp-spark,.tp-angle b{color:#7fe0a8}
   .tp-spark.mid{color:#e8c069}
   .tp-spark.warn{color:#ff9075}
   .tp-idea-del{color:#ff9075}

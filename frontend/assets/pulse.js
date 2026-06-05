@@ -37,13 +37,25 @@
     return (pl || []).map((p) => `<span class="tp-pi" title="${H.esc(p)}">${PI[p] || H.esc(p)}</span>`).join('');
   }
 
+  // 빠른 창업 아이디어 3개: 데이터에 t.ideas 있으면 사용, 없으면 angle+템플릿으로 생성
+  function quickIdeasOf(t) {
+    if (Array.isArray(t.ideas) && t.ideas.length) {
+      return t.ideas.slice(0, 3).map((x) => (typeof x === 'string' ? x : (x.title || x.text || '')));
+    }
+    const parts = (t.angle || '').split(/\s*또는\s*/).map((s) => s.trim()).filter(Boolean);
+    const out = parts.slice();
+    const tmpl = [`${t.kw} 전문 미디어·커뮤니티 (콘텐츠 비즈니스)`, `${t.kw} 데이터·큐레이션 도구 (SaaS)`, `${t.kw} 입문자용 교육·템플릿 마켓`];
+    for (const x of tmpl) { if (out.length >= 3) break; if (!out.includes(x)) out.push(x); }
+    return out.slice(0, 3);
+  }
+
   /* ---------- 트렌드 카드 ---------- */
   H.pulse = H.pulse || {};
   H.pulse.card = function (t, opts) {
     opts = opts || {};
     const tt = tierOf(t.total);
     const badge = opts.today
-      ? `<span class="tp-badge today">오늘</span>`
+      ? `<span class="tp-badge today">이번 주</span>`
       : `<span class="tp-badge ${tt.tier}">${tt.mark}${tt.label}</span>`;
     return `<article class="tp-card" data-id="${H.esc(t.id)}">
       <div class="tp-card-head">
@@ -59,10 +71,15 @@
         </div>
         <div class="tp-spark ${tt.tier}">${spark(t.sp)}</div>
       </div>
-      ${t.angle ? `<div class="tp-angle">💡 ${H.esc(t.angle)}</div>` : ''}
-      <div class="tp-actions" hidden>
-        <button class="tp-quick" data-quick="${H.esc(t.id)}">빠른 아이디어 3개</button>
-        <button class="tp-future" data-future disabled title="라이브 AI는 추후 제공됩니다">AI 상세 창업 아이템 (준비 중)</button>
+      ${t.angle ? `<div class="tp-angle">💡 <b>핵심 각도</b> · ${H.esc(t.angle)}</div>` : ''}
+      <div class="tp-more">▾ 빠른 창업 아이디어 3개 보기</div>
+      <div class="tp-ideas" hidden>
+        <div class="tp-ideas-h">빠른 창업 아이디어 3</div>
+        <ol class="tp-idea-list">${quickIdeasOf(t).map((s) => `<li>${H.esc(s)}</li>`).join('')}</ol>
+        <div class="tp-ideas-foot">
+          <button class="tp-quick" data-quick="${H.esc(t.id)}">📥 저장</button>
+          <button class="tp-future" data-future disabled title="라이브 AI는 추후 제공됩니다">AI 상세 창업 아이템 (준비 중)</button>
+        </div>
       </div>
     </article>`;
   };
@@ -97,7 +114,7 @@
     const box = H.q('#tpDaily'); if (!box) return;
     const daily = (D.daily || []);
     if (!daily.length) {
-      box.innerHTML = `<div class="tp-daily-empty">아직 오늘의 트렌드가 없어요. 매일 자동으로 채워집니다.${D.generatedAt ? ' · ' + H.freshChip(D.generatedAt) : ''}</div>`;
+      box.innerHTML = `<div class="tp-daily-empty">아직 이번 주 트렌드가 없어요. 매주 자동으로 채워집니다.${D.generatedAt ? ' · ' + H.freshChip(D.generatedAt) : ''}</div>`;
       return;
     }
     box.innerHTML = daily.map((t) => H.pulse.card(t, { today: true })).join('');
@@ -141,7 +158,7 @@
     const box = H.q('#tpIdeas'); if (!box) return;
     const ideas = loadIdeas();
     if (!ideas.length) {
-      box.innerHTML = `<div class="empty"><div class="e-mark">💡</div><h3>저장한 아이디어가 없어요</h3><p>트렌드 카드를 펼쳐 '빠른 아이디어 3개'를 눌러보세요.</p></div>`;
+      box.innerHTML = `<div class="empty"><div class="e-mark">💡</div><h3>저장한 아이디어가 없어요</h3><p>트렌드 카드를 펼쳐 아이디어 아래 '📥 저장'을 눌러보세요.</p></div>`;
       return;
     }
     box.innerHTML = ideas.map((idea) => {
@@ -201,7 +218,7 @@
       }
       if (e.target.closest('[data-future]')) { H.toast('라이브 AI 분석은 곧 제공됩니다'); return; }
       const card = e.target.closest('.tp-card'); if (!card) return;
-      const act = H.q('.tp-actions', card); if (act) act.hidden = !act.hidden;
+      const ideas = H.q('.tp-ideas', card); if (ideas) ideas.hidden = !ideas.hidden;
       card.classList.toggle('open');
     });
     // 아이디어 뷰: 다운로드 / 삭제
