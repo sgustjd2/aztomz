@@ -37,11 +37,13 @@
 
     <div class="sec-head" id="ad"><span class="no">01</span><h2>광고일까 진짜일까</h2><span class="note">노출 ≠ 좋은 곳</span></div>
     <nav class="index" id="indexList" aria-label="광고 분석 랭킹"></nav>
+    <div class="more-row" id="adMore" hidden></div>
 
     <div class="sec-head" id="trend"><span class="no">02</span><h2>요즘 트렌드</h2><span class="note">지금 따라 해도 되나?</span></div>
     <div class="cat-filter" id="catFilter" role="tablist" aria-label="카테고리 필터"></div>
     <div class="strip" id="stripList"></div>
     <div class="strip-empty" id="stripEmpty" hidden>이 카테고리엔 아직 트렌드가 없어요.</div>
+    <div class="more-row" id="stripMore" hidden></div>
 
     <section class="empty" style="margin-top:34px">
       <div class="e-mark">?</div>
@@ -89,43 +91,37 @@
       <a class="more" href="${href(f.id)}">전체 분석 읽기 →</a>
     </div>`;
 
-  // ranked index = 신뢰분석들
+  // 홈은 '미리보기' — 상위 N개만 노출하고 나머지는 더보기 → 전체 목록(list.html)
+  const HOME_AD_MAX = 6;     // 광고 분석 (2단 × 3행)
+  const HOME_TREND_MAX = 8;  // 트렌드 카드 (대략 2행)
+
+  // ranked index = 신뢰분석들 (상위 6개)
   const analyses = H.TRENDS.filter(t=>t.type==='신뢰분석');
-  H.q('#indexList').innerHTML = analyses.map((t,i)=>`
-    <a class="idx-row" href="${href(t.id)}">
-      <span class="rank">${String(i+1).padStart(2,'0')}</span>
-      <span class="t">
-        <span class="it-title">${H.freshChip(t.analyzedAt)}${H.esc(t.title)}</span>
-        <span class="it-cat">${H.esc(t.cat)} · ${H.esc(t.buzz)}</span>
-        <span class="it-label">${H.esc(t.label)}</span>
-      </span>
-      <span class="mini">
-        <span class="mrow">광고 ${t.ad} <span class="mbar"><i style="width:${t.ad}%;background:var(--accent)"></i></span></span>
-        <span class="mrow">신뢰 ${t.trust} <span class="mbar"><i style="width:${t.trust}%;background:var(--green)"></i></span></span>
-      </span>
-    </a>`).join('');
+  H.q('#indexList').innerHTML = analyses.slice(0, HOME_AD_MAX).map((t,i)=>H.adRowHTML(t, i+1)).join('');
+  const adMore = H.q('#adMore');
+  if(analyses.length > HOME_AD_MAX){
+    adMore.innerHTML = `<a class="btn more-btn" href="list.html?type=ad">광고 분석 전체보기 <b>+${analyses.length-HOME_AD_MAX}</b></a>`;
+    adMore.hidden = false;
+  }
 
-  // trend strip = 트렌드들 (카테고리별 필터)
+  // trend strip = 트렌드들 (카테고리별 필터, 상위 8개)
   const trends = H.TRENDS.filter(t=>t.type==='트렌드');
-  const cardHTML = (t)=>`
-    <a class="chip-card" href="${href(t.id)}">
-      ${H.coverHTML(t)}
-      <div class="cc-meta">
-        <div class="cc-stage">${H.esc(t.stage)}</div>
-        <div class="cc-title">${H.esc(t.title)}</div>
-        ${t.pureKorean?`<div style="font-size:13px;color:var(--green);font-weight:800;margin-top:3px">🌸 ${H.esc(t.pureKorean.split('(')[0].trim())}</div>`:''}
-        ${t.prompt?`<div style="font-size:13px;color:var(--accent);font-weight:800;margin-top:3px">📋 프롬프트 포함</div>`:''}
-        <div style="margin-top:5px">${H.freshChip(t.analyzedAt)}</div>
-      </div>
-    </a>`;
-
   const cats = ['전체', ...new Set(trends.map(t=>t.cat))];
   let activeCat = '전체';
 
   function renderStrip(){
     const list = activeCat==='전체' ? trends : trends.filter(t=>t.cat===activeCat);
-    H.q('#stripList').innerHTML = list.map(cardHTML).join('');
+    H.q('#stripList').innerHTML = list.slice(0, HOME_TREND_MAX).map(H.trendCardHTML).join('');
     H.q('#stripEmpty').hidden = list.length>0;
+    const more = H.q('#stripMore');
+    if(list.length > HOME_TREND_MAX){
+      const rest = list.length - HOME_TREND_MAX;
+      const q = activeCat==='전체' ? '' : `&cat=${encodeURIComponent(activeCat)}`;
+      more.innerHTML = `<a class="btn more-btn" href="list.html?type=trend${q}">트렌드 전체보기 <b>+${rest}</b></a>`;
+      more.hidden = false;
+    } else {
+      more.innerHTML = ''; more.hidden = true;
+    }
   }
   function renderFilter(){
     H.q('#catFilter').innerHTML = cats.map(c=>{

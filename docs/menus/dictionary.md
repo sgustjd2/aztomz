@@ -4,7 +4,10 @@
 신조어·밈을 트렌드로 큐레이션. 유래·우리말 대체·쓰임새 설명.
 
 ## 진입·화면
-- **파일:** frontend/trend.html?id=<신조어id>
+- **파일:** 
+  - `frontend/index.html` (홈: 트렌드 미리보기)
+  - `frontend/list.html?type=trend` (전체 목록, 페이지당 12개)
+  - `frontend/trend.html?id=<신조어id>` (상세 페이지)
 - **타입:** type=='트렌드', cat==[신조어 카테고리]
 - **표시:** 제목·카버·유행 단계(stage)·분석일·우리말 대체(pureKorean) 뱃지
 
@@ -32,3 +35,4 @@
 - **신조어 수명:** 2024년산 신조어는 2026.6 기준 한물. 출처에 "2024 신조어" 표시면 재검증 필수 (learnings.md 참고)
 - **2026 상반기 신조어 예:** 난리자베스·중지정·완내뉴 등 (learnings.md 기록)
 - pureKorean 필드는 신조어 항목에만 선택사항
+- **전체 목록 조회:** list.html?type=trend (카테고리 필터로 신조어만 선택 가능)

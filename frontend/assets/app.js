@@ -118,6 +118,34 @@
       ${stamp}
     </div>`;
   };
+  // 상세 페이지 링크 (모든 페이지가 frontend/ 루트에 있어 상대경로로 동작)
+  H.detailHref = (id)=> `trend.html?id=${encodeURIComponent(id)}`;
+  // 광고 분석 랭킹 행 (홈 #ad · list.html?type=ad 공용) — rank: 1-based 표시 순번
+  H.adRowHTML = (t, rank)=>`
+    <a class="idx-row" href="${H.detailHref(t.id)}">
+      <span class="rank">${String(rank).padStart(2,'0')}</span>
+      <span class="t">
+        <span class="it-title">${H.freshChip(t.analyzedAt)}${H.esc(t.title)}</span>
+        <span class="it-cat">${H.esc(t.cat)} · ${H.esc(t.buzz)}</span>
+        <span class="it-label">${H.esc(t.label)}</span>
+      </span>
+      <span class="mini">
+        <span class="mrow">광고 ${t.ad} <span class="mbar"><i style="width:${t.ad}%;background:var(--accent)"></i></span></span>
+        <span class="mrow">신뢰 ${t.trust} <span class="mbar"><i style="width:${t.trust}%;background:var(--green)"></i></span></span>
+      </span>
+    </a>`;
+  // 요즘 트렌드 카드 (홈 #trend · list.html?type=trend 공용)
+  H.trendCardHTML = (t)=>`
+    <a class="chip-card" href="${H.detailHref(t.id)}">
+      ${H.coverHTML(t)}
+      <div class="cc-meta">
+        <div class="cc-stage">${H.esc(t.stage)}</div>
+        <div class="cc-title">${H.esc(t.title)}</div>
+        ${t.pureKorean?`<div class="cc-pure">🌸 ${H.esc(t.pureKorean.split('(')[0].trim())}</div>`:''}
+        ${t.prompt?`<div class="cc-prompt">📋 프롬프트 포함</div>`:''}
+        <div class="cc-foot">${H.freshChip(t.analyzedAt)}</div>
+      </div>
+    </a>`;
   H.toast = (msg)=>{
     let el=H.q('.toast'); if(!el){ el=document.createElement('div'); el.className='toast'; document.body.appendChild(el); }
     el.textContent=msg; el.classList.add('show');

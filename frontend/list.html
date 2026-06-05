@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="color-scheme" content="light dark" />
+<title>전체 목록 — 한끗</title>
+<meta name="description" content="한끗의 광고 분석·요즘 트렌드 전체 목록. 카테고리로 좁히고 페이지로 넘겨 보세요." />
+<link rel="icon" type="image/svg+xml" href="favicon.svg" />
+<link rel="stylesheet" href="assets/styles.css" />
+<style>
+  .list-lead{padding:34px 0 14px;border-bottom:1px solid var(--line)}
+  .list-lead h1{font-size:34px;font-weight:900;line-height:1.14;letter-spacing:-0.04em;margin:12px 0 10px;text-wrap:balance}
+  .list-lead h1 .hl{color:var(--accent)}
+  .list-lead p{font-size:15.5px;color:var(--body);max-width:42ch;margin:0;word-break:keep-all}
+  @media(max-width:520px){.list-lead h1{font-size:28px}}
+</style>
+</head>
+<body>
+  <div data-mast></div>
+  <div class="wrap">
+
+    <section class="lead list-lead">
+      <span class="kicker" id="lKicker"></span>
+      <h1 id="lTitle"></h1>
+      <p id="lDesc"></p>
+      <div class="freshline" id="lFresh"></div>
+    </section>
+
+    <div class="cat-filter" id="lCatFilter" role="tablist" aria-label="카테고리 필터" hidden></div>
+    <div id="lList"></div>
+    <div class="strip-empty" id="lEmpty" hidden>해당 목록이 아직 없어요.</div>
+    <nav class="pager" id="lPager" aria-label="페이지 이동"></nav>
+
+    <div class="disc">⚠️ 모든 점수는 공개 정보 기반 <b>추정치</b>이며 확정 판정이 아닙니다.</div>
+
+    <footer class="site">
+      <div class="fwm">한<b>끗</b></div>
+      AZ와 MZ는 한 끗 차이 · 트렌드 번역소<br>SNS 이미지 무단 사용 없이 링크·자체요약 중심으로 운영합니다.
+    </footer>
+  </div>
+
+<script src="data/trends.js"></script>
+<script src="assets/app.js"></script>
+<script>
+  H.boot();
+
+  // ?type=ad | trend (기본 trend), ?cat=, ?page=
+  const type = (H.param('type')==='ad') ? 'ad' : 'trend';
+  const PAGE_SIZE = type==='ad' ? 10 : 12;
+  let activeCat = H.param('cat') || '전체';
+  let page = Math.max(1, parseInt(H.param('page')||'1', 10) || 1);
+
+  const ALL = type==='ad'
+    ? H.TRENDS.filter(t=>t.type==='신뢰분석')
+    : H.TRENDS.filter(t=>t.type==='트렌드');
+
+  // 헤더
+  if(type==='ad'){
+    document.title = '광고일까 진짜일까 — 한끗';
+    H.q('#lKicker').textContent = '광고일까 진짜일까';
+    H.q('#lTitle').innerHTML = 'SNS 맛집·디저트,<br><span class="hl">광고야 진짜야?</span>';
+    H.q('#lDesc').textContent = '광고 의심도·후기 신뢰도를 따로 분석한 전체 목록이에요. 노출이 많다고 좋은 곳은 아니에요.';
+  } else {
+    document.title = '요즘 트렌드 — 한끗';
+    H.q('#lKicker').textContent = '요즘 트렌드';
+    H.q('#lTitle').innerHTML = '지금 뜨는 그거,<br><span class="hl">따라 해도 되나?</span>';
+    H.q('#lDesc').textContent = '밈·신조어·음식·디저트·핫플을 한곳에. 카테고리로 좁혀 보세요.';
+  }
+  H.q('#lFresh').innerHTML = `전체 <b style="font-style:normal;color:var(--ink)">${ALL.length}</b>건`
+    + (H.generatedAt ? ` · 마지막 갱신 ${H.fmtISO(H.generatedAt)}` : '');
+
+  const cats = ['전체', ...new Set(ALL.map(t=>t.cat))];
+  const filtered = ()=> activeCat==='전체' ? ALL : ALL.filter(t=>t.cat===activeCat);
+
+  // 카테고리 필터 (트렌드 전용 — 홈 광고 섹션과 동일하게 광고 목록엔 미노출)
+  function renderFilter(){
+    if(type!=='trend') return;
+    const host = H.q('#lCatFilter'); host.hidden = false;
+    host.innerHTML = cats.map(c=>{
+      const n = c==='전체' ? ALL.length : ALL.filter(t=>t.cat===c).length;
+      return `<button class="cat-chip${c===activeCat?' on':''}" role="tab" aria-selected="${c===activeCat}" data-cat="${H.esc(c)}">${H.esc(c)} <span class="cc-n">${n}</span></button>`;
+    }).join('');
+    H.qa('#lCatFilter .cat-chip').forEach(b=> b.onclick=()=>{
+      if(activeCat===b.dataset.cat) return;
+      activeCat = b.dataset.cat; page = 1;
+      renderFilter(); render(); syncURL();
+    });
+  }
+
+  function render(){
+    const list = filtered();
+    const pages = Math.max(1, Math.ceil(list.length / PAGE_SIZE));
+    if(page > pages) page = pages;
+    const start = (page-1) * PAGE_SIZE;
+    const slice = list.slice(start, start + PAGE_SIZE);
+
+    H.q('#lEmpty').hidden = list.length > 0;
+    const host = H.q('#lList');
+    if(type==='ad'){
+      host.className = 'index';
+      host.innerHTML = slice.map((t,i)=>H.adRowHTML(t, start + i + 1)).join('');
+    } else {
+      host.className = 'strip';
+      host.innerHTML = slice.map(H.trendCardHTML).join('');
+    }
+    renderPager(pages);
+  }
+
+  // 1 … (cur-1) cur (cur+1) … last
+  function pageWindow(cur, total){
+    const out = [];
+    const lo = Math.max(2, cur-1), hi = Math.min(total-1, cur+1);
+    out.push(1);
+    if(lo > 2) out.push('…');
+    for(let p=lo; p<=hi; p++) out.push(p);
+    if(hi < total-1) out.push('…');
+    if(total > 1) out.push(total);
+    return out;
+  }
+
+  function renderPager(pages){
+    const host = H.q('#lPager');
+    if(pages <= 1){ host.innerHTML = ''; return; }
+    let html = `<button class="pg-nav" data-go="${page-1}" ${page<=1?'disabled':''} aria-label="이전 페이지">← 이전</button>`;
+    pageWindow(page, pages).forEach(p=>{
+      html += p==='…'
+        ? `<span class="pg-gap">…</span>`
+        : `<button class="pg-num${p===page?' on':''}" data-go="${p}" aria-label="${p}페이지"${p===page?' aria-current="page"':''}>${p}</button>`;
+    });
+    html += `<button class="pg-nav" data-go="${page+1}" ${page>=pages?'disabled':''} aria-label="다음 페이지">다음 →</button>`;
+    host.innerHTML = html;
+    H.qa('#lPager [data-go]').forEach(b=> b.onclick=()=>{
+      const p = parseInt(b.dataset.go, 10);
+      if(p < 1 || p > pages || p === page) return;
+      page = p; render(); syncURL();
+      const top = H.q('.list-lead'); if(top) window.scrollTo({ top: top.offsetTop, behavior:'smooth' });
+    });
+  }
+
+  function syncURL(){
+    const u = new URLSearchParams();
+    u.set('type', type);
+    if(activeCat !== '전체') u.set('cat', activeCat);
+    if(page > 1) u.set('page', String(page));
+    history.replaceState(null, '', `list.html?${u.toString()}`);
+  }
+
+  renderFilter();
+  render();
+</script>
+</body>
+</html>
