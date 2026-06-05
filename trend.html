@@ -23,6 +23,22 @@
   .related .r-t{font-size:14.5px;font-weight:800;margin-top:6px}
   @media(max-width:520px){.related{grid-template-columns:1fr}}
   .rv-form{border:1px solid var(--line);border-radius:12px;padding:16px 16px 18px;margin:14px 0;background:var(--paper-2)}
+  /* 데스크탑: 본문 폭을 넓혀 좌우 여백 축소(모바일은 기존대로 풀폭) */
+  @media(min-width:820px){ .wrap.reading{max-width:920px} }
+  /* 미디어 블록(영상·이미지) */
+  .media{margin:22px 0}
+  .media-h{font-size:12.5px;font-weight:800;letter-spacing:.05em;color:var(--accent);margin:0 0 8px;text-transform:uppercase}
+  .embed-frame{position:relative;width:100%;max-width:760px;aspect-ratio:16/9;border-radius:var(--r);
+    overflow:hidden;background:var(--ink);border:1px solid var(--line)}
+  .embed-frame.vertical{aspect-ratio:9/16;max-width:330px}
+  .embed-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+  .embed-cap{font-size:13px;color:var(--ink-2);margin-top:8px}
+  .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:10px}
+  .gallery a{display:block;aspect-ratio:4/3;border:1px solid var(--line);border-radius:var(--r);
+    overflow:hidden;background:var(--paper-2)}
+  .gallery img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .25s}
+  .gallery a:hover img{transform:scale(1.04)}
+  @media(max-width:520px){ .gallery{grid-template-columns:1fr 1fr;gap:8px} .embed-frame.vertical{max-width:100%} }
 </style>
 </head>
 <body>
@@ -64,6 +80,40 @@
     <div style="font-size:14.5px;margin:2px 0 4px">만족도 <span class="sat-badge sat-${t.sat}">${({pos:'긍정',neg:'부정',mix:'혼재'})[t.sat]}</span> <span class="muted">${H.esc(t.satTxt)}</span></div>`;
   }
 
+  // 영상 임베드(유튜브/틱톡) — 데이터에 t.video 있을 때만
+  function videoBlock(){
+    const v=t.video; if(!v) return '';
+    let src='', vertical=false;
+    if(v.youtube) src=`https://www.youtube-nocookie.com/embed/${v.youtube}`;
+    else if(v.tiktok){ src=`https://www.tiktok.com/embed/v2/${v.tiktok}`; vertical=true; }
+    else if(v.url) src=v.url;
+    if(!src) return '';
+    return `<div class="media">
+      <div class="media-h">▶ 지금 뜨는 영상</div>
+      <div class="embed-frame ${vertical?'vertical':''}">
+        <iframe src="${src}" title="${H.esc(t.title)} 영상" loading="lazy"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen></iframe>
+      </div>
+      ${v.cap?`<div class="embed-cap">${H.esc(v.cap)}</div>`:''}
+    </div>`;
+  }
+
+  // 대표 이미지 갤러리 — t.images + (영상 있으면 유튜브 썸네일 자동 추가). 깨진 이미지는 onerror로 제거
+  function galleryBlock(){
+    const all=[...(t.images||[])];
+    if(t.video&&t.video.youtube) all.unshift(`https://i.ytimg.com/vi/${t.video.youtube}/hqdefault.jpg`);
+    const uniq=[...new Set(all.map(x=>typeof x==='string'?x:x.u))].filter(Boolean);
+    if(!uniq.length) return '';
+    return `<div class="media">
+      <div class="media-h">📷 대표 이미지</div>
+      <div class="gallery">${uniq.map(u=>`<a href="${u}" target="_blank" rel="noopener">
+        <img src="${u}" alt="${H.esc(t.title)}" loading="lazy" referrerpolicy="no-referrer"
+          onerror="this.closest('a').remove()"></a>`).join('')}</div>
+    </div>`;
+  }
+
   function render(){
     const saved = H.isSaved(t.id);
     const related = H.TRENDS.filter(x=>x.id!==t.id).slice(0,2);
@@ -79,8 +129,10 @@
         <button class="save-btn ${saved?'on':''}" id="saveBtn">${saved?'★ 저장됨':'☆ 저장'}</button>
         <button class="save-btn" id="shareBtn">↗ 공유</button>
       </div>
+      ${videoBlock()}
       ${scoresBlock()}
       ${t.pull?`<blockquote class="pull">${H.esc(t.pull)}</blockquote>`:''}
+      ${galleryBlock()}
       ${t.prompt?`<div class="prompt-box"><span class="pb-label">📋 프롬프트 — 복사해서 ChatGPT·미드저니에 붙여넣기</span>${H.esc(t.prompt)}</div>`:''}
       ${t.pureKorean?`<div class="pure-kr">🌸 <b>예쁜 우리말로 바꾼다면</b> · ${H.esc(t.pureKorean)}</div>`:''}
       <p class="verdict">${H.esc(t.verdict)}</p>
