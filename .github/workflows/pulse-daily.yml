@@ -1,0 +1,48 @@
+name: pulse-daily
+
+# 매일 07:00 KST(= 22:00 UTC 전날)에 '오늘 요일의 펄스 분야'를 Gemini로 조사 →
+# backend/data/pulse.json daily[] 추가 + frontend/data/pulse.js 재생성 → 변경 시 커밋.
+# 요일 로테이션: 월 테크·금융 / 화 K뷰티·패션 / 수 헬스·등산 / 목 푸드·관광 / 금 교육·엔터 / 토 라이프 / 일 휴식.
+#
+# ▶ 사전 준비(1회): GitHub 저장소 Settings → Secrets and variables → Actions →
+#   New repository secret 으로 GEMINI_API_KEY 를 등록해야 한다(없으면 조사를 스킵하고 빌드는 안전).
+on:
+  schedule:
+    - cron: "0 22 * * *"   # 22:00 UTC = 07:00 KST
+  workflow_dispatch: {}     # 수동 실행도 가능
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pulse-daily
+  cancel-in-progress: false
+
+jobs:
+  research:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Pulse research (today's category via Gemini)
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_BASE_URL: https://generativelanguage.googleapis.com/v1beta/openai
+          GEMINI_MODEL: gemini-2.5-flash
+        run: node backend/scripts/pulse-research.mjs
+
+      - name: Commit if changed
+        run: |
+          git config user.name  "hangeut-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add backend/data/pulse.json frontend/data/pulse.js
+          if git diff --staged --quiet; then
+            echo "변경 없음 — 커밋 생략(일요일/키없음/조사실패 등)"
+          else
+            git commit -m "chore: pulse daily research ($(date -u +%Y-%m-%d))"
+            git push
+          fi
