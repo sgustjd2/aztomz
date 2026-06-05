@@ -7,8 +7,9 @@
 | 파일·경로 | 역할 |
 |---|---|
 | `frontend/` | ★ 배포 대상(Vercel `outputDirectory`). 브라우저가 받는 정적 파일 전부 |
-| `frontend/index.html` | 홈 — 오늘의 한끗·광고일까 진짜일까 랭킹·요즘 트렌드 스트립 |
+| `frontend/index.html` | 홈 — 오늘의 한끗·광고일까 진짜일까 미리보기(상위 6개)·요즘 트렌드 미리보기(상위 8개) + 더보기 → 전체 목록 |
 | `frontend/trend.html?id=` | 상세 — 점수(광고의심도/신뢰도)·만족도·판단·추천·출처·후기 |
+| `frontend/list.html` | 전체 목록 — `?type=ad\|trend` + `?cat=` + `?page=` (페이지네이션) |
 | `frontend/{login,signup,me,pulse}.html` | 인증·마이페이지·트렌드 펄스 |
 | `frontend/assets/styles.css`·`app.js`·`pulse.js` | 디자인 시스템 / 모의 스토어(H.*) / 펄스 |
 | `frontend/data/trends.js`·`pulse.js` | 브라우저가 로드하는 **생성물** — **직접 편집 금지** |

@@ -144,14 +144,23 @@ body:has(.wrap.reading) .mast .wrap{max-width:var(--readw)}
 /* ---------- trend strip (요즘 트렌드) ---------- */
 /* 가로스크롤 대신 줄바꿈 그리드 — 화면 폭에 맞춰 자동으로 다음 줄로 */
 .strip{display:grid;grid-template-columns:repeat(auto-fill,minmax(168px,1fr));gap:18px;padding:8px 0 14px}
-.chip-card{text-decoration:none;color:inherit}
-/* 커버는 고정 높이 대신 4:3 비율 — 카드 폭에 비례해 일정한 리듬 유지 */
-.chip-card .cover{aspect-ratio:4/3;min-height:0;padding:13px}
-.chip-card .cover .c-title{font-size:18px;line-height:1.18}
+/* 카드 = flex 컬럼 → 같은 줄 카드 높이를 통일하고 하단(신선도 칩)을 정렬 */
+.chip-card{text-decoration:none;color:inherit;display:flex;flex-direction:column;height:100%}
+/* 커버는 고정 높이 대신 4:3 비율 — 카드 폭에 비례해 일정한 리듬 유지. flex로 안 줄어들게 고정 */
+.chip-card .cover{aspect-ratio:4/3;min-height:0;padding:13px;flex:0 0 auto}
+/* 커버 제목 2줄 클램프 → 긴 제목이 커버 비율을 깨뜨리지 않게 */
+.chip-card .cover .c-title{font-size:18px;line-height:1.18;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 .chip-card .cover .c-stamp{font-size:11.5px;margin-bottom:6px}
-.chip-card .cc-meta{margin-top:9px}
+.chip-card .cc-meta{margin-top:9px;display:flex;flex-direction:column;flex:1 1 auto}
 .chip-card .cc-stage{font-size:13px;font-weight:800;color:var(--accent)}
-.chip-card .cc-title{font-size:15.5px;font-weight:800;letter-spacing:-0.02em;margin-top:1px}
+/* 카드 제목 2줄 클램프 → 아래 배지/칩 시작 위치를 카드끼리 맞춤 */
+.chip-card .cc-title{font-size:15.5px;font-weight:800;letter-spacing:-0.02em;margin-top:1px;
+  line-height:1.25;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.chip-card .cc-pure{font-size:13px;color:var(--green);font-weight:800;margin-top:3px}
+.chip-card .cc-prompt{font-size:13px;color:var(--accent);font-weight:800;margin-top:3px}
+/* 신선도 칩을 카드 맨 아래로 밀어 같은 줄 카드들의 하단을 정렬 */
+.chip-card .cc-foot{margin-top:auto;padding-top:6px}
 
 /* ---------- category filter (요즘 트렌드) ---------- */
 .cat-filter{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 16px}
@@ -162,6 +171,22 @@ body:has(.wrap.reading) .mast .wrap{max-width:var(--readw)}
 .cat-chip.on{background:var(--ink);color:var(--on-ink);border-color:var(--ink)}
 .cat-chip .cc-n{font-family:var(--serif);opacity:.65;margin-left:3px}
 .strip-empty{color:var(--ink-2);font-size:14.5px;padding:24px 4px}
+
+/* ---------- 더보기 (홈 섹션 → 전체 목록) ---------- */
+.more-row{display:flex;justify-content:center;margin:4px 0 30px}
+.more-btn{padding:11px 22px;font-size:15px}
+.more-btn b{font-family:var(--serif);font-style:normal;color:var(--accent);margin-left:4px}
+
+/* ---------- pager (list.html 전체 목록) ---------- */
+.pager{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;align-items:center;margin:26px 0 40px}
+.pager button{font-family:var(--sans);font-size:14px;font-weight:800;cursor:pointer;
+  border:1.5px solid var(--line);background:var(--card);color:var(--ink-2);
+  border-radius:8px;min-width:40px;height:40px;padding:0 12px;
+  transition:background .12s,border-color .12s,color .12s}
+.pager button:hover:not(:disabled){border-color:var(--ink);color:var(--ink)}
+.pager .pg-num.on{background:var(--ink);color:var(--on-ink);border-color:var(--ink)}
+.pager button:disabled{opacity:.4;cursor:not-allowed}
+.pager .pg-gap{color:var(--faint);padding:0 4px;font-weight:800}
 
 /* ---------- scores (detail) ---------- */
 .scores{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:18px 0}
