@@ -112,9 +112,11 @@ body:has(.wrap.reading) .mast .wrap{max-width:var(--readw)}
   break-inside:avoid}
 .idx-row:hover{background:var(--paper-2)}
 .idx-row .rank{font-family:var(--serif);font-style:normal;font-size:22px;color:var(--accent);text-align:center}
-.idx-row .t .it-cat{font-size:13px;letter-spacing:.04em;color:var(--faint);font-weight:700}
-.idx-row .t .it-title{font-size:17px;font-weight:800;letter-spacing:-0.02em;margin-top:1px}
-.idx-row .t .it-label{font-size:13.5px;color:var(--ink-2);margin-top:2px}
+.idx-row .t{display:flex;flex-direction:column}
+.idx-row .t .it-title{display:block;font-size:17px;font-weight:800;letter-spacing:-0.02em;line-height:1.3}
+.idx-row .t .it-title .fresh-chip{margin-right:7px;vertical-align:2px}
+.idx-row .t .it-cat{display:block;font-size:13px;letter-spacing:.04em;color:var(--faint);font-weight:700;margin-top:4px}
+.idx-row .t .it-label{display:block;font-size:13.5px;color:var(--ink-2);margin-top:3px}
 .idx-row .mini{text-align:right;min-width:120px}
 .mini .mrow{display:flex;align-items:center;gap:6px;justify-content:flex-end;font-size:13px;color:var(--ink-2);margin:2px 0}
 .mini .mbar{width:54px;height:6px;background:var(--track);border-radius:99px;overflow:hidden}
