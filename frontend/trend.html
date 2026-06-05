@@ -48,6 +48,14 @@
     line-height:1.6;word-break:keep-all}
   .article .art-ul{margin:8px 0 16px;padding-left:18px}
   .article .art-ul li{font-size:15.5px;line-height:1.75;margin:5px 0;color:var(--body);word-break:keep-all}
+  /* 프롬프트 박스: 라벨+복사버튼 헤더 / 긴 프롬프트 본문(줄바꿈 보존) */
+  .prompt-box .pb-top{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;
+    white-space:normal;margin-bottom:9px}
+  .prompt-box .pb-top .pb-label{margin-bottom:0;flex:1}
+  .prompt-box .pb-copy{flex:none;cursor:pointer;background:#e8a33d;color:#211d18;border:0;border-radius:6px;
+    font-size:12.5px;font-weight:800;padding:6px 12px;white-space:nowrap;font-family:var(--sans)}
+  .prompt-box .pb-copy:hover{opacity:.9}
+  .prompt-box .pb-text{white-space:pre-wrap;word-break:break-word}
 </style>
 </head>
 <body>
@@ -155,7 +163,13 @@
       ${scoresBlock()}
       ${t.pull?`<blockquote class="pull">${H.esc(t.pull)}</blockquote>`:''}
       ${galleryBlock()}
-      ${t.prompt?`<div class="prompt-box"><span class="pb-label">📋 프롬프트 — 복사해서 ChatGPT·미드저니에 붙여넣기</span>${H.esc(t.prompt)}</div>`:''}
+      ${t.prompt?`<div class="prompt-box">
+        <div class="pb-top">
+          <span class="pb-label">📋 프롬프트 · ${t.prompt.split('\n').length}줄 — 복사해서 ChatGPT·제미나이·미드저니에 붙여넣기</span>
+          <button class="pb-copy" type="button" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.pb-text').innerText).then(()=>{this.textContent='복사됨 ✓';setTimeout(()=>this.textContent='📋 복사',1500)}).catch(()=>{this.textContent='복사 실패'})">📋 복사</button>
+        </div>
+        <div class="pb-text">${H.esc(t.prompt)}</div>
+      </div>`:''}
       ${t.pureKorean?`<div class="pure-kr">🌸 <b>예쁜 우리말로 바꾼다면</b> · ${H.esc(t.pureKorean)}</div>`:''}
       <p class="verdict">${H.esc(t.verdict)}</p>
       ${articleBlock()}
