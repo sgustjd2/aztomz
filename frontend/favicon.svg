@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="한끗">
+  <!-- 한끗 — 트렌드 번역소: 말풍선 + 웃는 얼굴 + 반짝이 -->
+  <rect width="64" height="64" rx="14" fill="#17140f"/>
+  <!-- 말풍선 꼬리(본체 뒤) -->
+  <path d="M19 40 L19 54 L33 41 Z" fill="#e8431f"/>
+  <!-- 말풍선 본체 -->
+  <rect x="6" y="13" width="52" height="31" rx="12" fill="#e8431f"/>
+  <!-- 귀여운 눈 -->
+  <circle cx="24.5" cy="27.5" r="3.7" fill="#fff"/>
+  <circle cx="39.5" cy="27.5" r="3.7" fill="#fff"/>
+  <!-- 웃는 입 -->
+  <path d="M23 33.5 Q32 41 41 33.5" stroke="#fff" stroke-width="3.4" fill="none" stroke-linecap="round"/>
+  <!-- 트렌디한 반짝이 -->
+  <path d="M50 4 l1.8 4.2 4.2 1.8 -4.2 1.8 -1.8 4.2 -1.8 -4.2 -4.2 -1.8 4.2 -1.8 z" fill="#ffd24d"/>
+</svg>
