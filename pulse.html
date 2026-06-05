@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="color-scheme" content="light dark" />
+<title>트렌드 펄스 — 한끗</title>
+<meta name="description" content="지금 뜨는 110개 트렌드를 성장률·플랫폼·점수로 한눈에. 매일 갱신되는 창업 트렌드 레이더." />
+<link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+  <div data-mast></div>
+  <div class="wrap">
+
+    <section class="tp-lead lead">
+      <span class="kicker">트렌드 펄스 · 창업 레이더</span>
+      <h1>지금 뜨는 트렌드,<br><span class="hl">사업이 되는 각도</span></h1>
+      <p>110개 트렌드를 성장률·플랫폼·점수로 한눈에. 카드를 펼쳐 빠른 아이디어를 모아보세요.</p>
+      <div class="freshline" id="tpFresh"></div>
+    </section>
+
+    <div class="tp-tabs" id="tpTabs" role="tablist" aria-label="보기 전환"></div>
+
+    <!-- 트렌드 레이더 -->
+    <div id="tpRadar">
+      <div class="sec-head"><span class="no">·</span><h2>오늘의 트렌드</h2><span class="note">매일 갱신</span></div>
+      <div id="tpDaily"></div>
+
+      <div class="sec-head"><span class="no">110</span><h2>트렌드 레이더</h2><span class="note" id="tpCount"></span></div>
+      <input id="tpSearch" class="tp-search" type="search" placeholder="트렌드·키워드 검색…" aria-label="트렌드 검색" />
+      <div class="cat-filter" id="tpCatFilter" role="tablist" aria-label="카테고리 필터"></div>
+      <div id="tpList"></div>
+      <div class="strip-empty" id="tpEmpty" hidden>검색 결과가 없어요.</div>
+    </div>
+
+    <!-- 저장한 아이디어 -->
+    <div id="tpIdeas" hidden></div>
+
+    <div class="disc">⚠️ 성장률·점수는 공개 정보 기반 <b>추정치</b>이며, 투자·창업을 권유하지 않습니다. 빠른 아이디어는 출발점일 뿐 검증이 필요합니다.</div>
+
+    <footer class="site">
+      <div class="fwm">한<b>끗</b></div>
+      AZ와 MZ는 한 끗 차이 · 트렌드 번역소<br>트렌드 펄스는 창업 아이디어 발견을 돕는 참고 도구입니다.
+    </footer>
+  </div>
+
+<script src="data/pulse.js"></script>
+<script src="assets/app.js"></script>
+<script src="assets/pulse.js"></script>
+<script>
+  H.boot();
+  H.pulse.init();
+</script>
+</body>
+</html>

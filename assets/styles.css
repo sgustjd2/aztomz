@@ -292,3 +292,95 @@ i{font-style:normal}
   .stale-banner{border-color:#5a3326}
   .fresh-chip.ok{background:#2a241b}
 }
+
+/* ============================================================
+   트렌드 펄스 (pulse.html) — 전부 토큰 기반(다크 자동 대응)
+   ============================================================ */
+.tp-lead{padding:34px 0 8px;border-bottom:1px solid var(--line)}
+.tp-lead h1{font-size:38px;font-weight:900;line-height:1.14;letter-spacing:-0.04em;margin:12px 0 10px}
+.tp-lead h1 .hl{color:var(--accent)}
+.tp-lead p{font-size:16px;color:var(--body);max-width:46ch;margin:0}
+.tp-lead .freshline{margin-top:16px}
+
+/* 탭(레이더 / 저장 아이디어) */
+.tp-tabs{display:flex;gap:8px;margin:22px 0 4px;flex-wrap:wrap}
+.tp-tab{font-family:var(--sans);font-size:14px;font-weight:800;cursor:pointer;
+  border:1.5px solid var(--line);background:var(--card);color:var(--ink-2);
+  border-radius:99px;padding:8px 16px;transition:background .12s,border-color .12s,color .12s}
+.tp-tab:hover{border-color:var(--ink);color:var(--ink)}
+.tp-tab.on{background:var(--ink);color:var(--on-ink);border-color:var(--ink)}
+
+/* 검색 */
+.tp-search{width:100%;font-family:var(--sans);font-size:15px;color:var(--ink);
+  background:var(--card);border:1.5px solid var(--line);border-radius:var(--r);
+  padding:11px 14px;margin:6px 0 12px;outline:none}
+.tp-search:focus{border-color:var(--ink)}
+
+/* 트렌드 카드 */
+#tpDaily,#tpList{display:flex;flex-direction:column;gap:12px}
+#tpDaily{margin:6px 0 8px}
+.tp-card{border:1px solid var(--line);border-radius:var(--r);background:var(--card);
+  padding:15px 17px;cursor:pointer;transition:border-color .12s}
+.tp-card:hover{border-color:var(--ink-2)}
+.tp-card.open{border-color:var(--ink)}
+.tp-card-head{display:flex;justify-content:space-between;align-items:flex-start;gap:14px}
+.tp-card-main{flex:1;min-width:0}
+.tp-row1{display:flex;align-items:center;gap:9px;margin-bottom:6px;flex-wrap:wrap}
+.tp-kw{font-size:17px;font-weight:800;letter-spacing:-0.02em;margin:0}
+.tp-meta{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:7px}
+.tp-cat{font-size:12.5px;font-weight:700;color:var(--ink-2);background:var(--paper-2);
+  border:1px solid var(--line);padding:2px 9px;border-radius:99px}
+.tp-pl{display:inline-flex;gap:4px}
+.tp-pi{font-size:13px}
+.tp-gr{font-size:13px;font-weight:800;color:var(--green)}
+.tp-why{font-size:14.5px;color:var(--body);line-height:1.6;margin:0}
+.tp-spark{flex:0 0 auto;align-self:center;color:var(--green)}
+.tp-spark.mid{color:var(--amber)}
+.tp-spark.warn{color:var(--accent)}
+.tp-spark-svg{display:block}
+
+/* 점수 배지 (한끗 라벨 색 매핑) */
+.tp-badge{font-size:12px;font-weight:900;padding:3px 10px;border-radius:5px;
+  border:1.5px solid currentColor;white-space:nowrap}
+.tp-badge.peak,.tp-badge.good,.tp-badge.today{color:#176b40;background:var(--green-soft)}
+.tp-badge.mid{color:#9a6b1e;background:#fbf2e2}
+.tp-badge.warn{color:#bd3415;background:var(--accent-soft)}
+
+/* 사업 앵글 */
+.tp-angle{margin:11px 0 0;padding:10px 13px;background:var(--green-soft);
+  border-left:3px solid var(--green);border-radius:var(--r);font-size:14px;color:var(--body);line-height:1.55}
+
+/* 펼침 액션 */
+.tp-actions{margin-top:12px;display:flex;gap:8px;flex-wrap:wrap}
+.tp-quick{font-family:var(--sans);font-size:13.5px;font-weight:800;cursor:pointer;
+  border:1.5px solid var(--ink);background:var(--ink);color:var(--on-ink);border-radius:var(--r);padding:9px 14px}
+.tp-future{font-family:var(--sans);font-size:13.5px;font-weight:700;cursor:not-allowed;
+  border:1.5px dashed var(--line);background:transparent;color:var(--faint);border-radius:var(--r);padding:9px 14px}
+
+/* 오늘의 트렌드 빈 상태 */
+.tp-daily-empty{color:var(--ink-2);font-size:14px;padding:16px 14px;border:1px dashed var(--line);
+  border-radius:var(--r);display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+
+/* 저장한 아이디어 */
+#tpIdeas{display:flex;flex-direction:column;gap:10px;margin-top:8px}
+.tp-idea{border:1px solid var(--line);border-radius:var(--r);background:var(--card);padding:13px 15px}
+.tp-idea-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:5px}
+.tp-idea-from{font-size:12.5px;font-weight:800;color:var(--accent)}
+.tp-idea-date{font-size:11.5px;color:var(--faint)}
+.tp-idea-line{font-size:14.5px;font-weight:600;color:var(--ink);margin-bottom:9px}
+.tp-idea-actions{display:flex;gap:7px}
+.tp-idea-dl,.tp-idea-del{font-family:var(--sans);font-size:12.5px;font-weight:800;cursor:pointer;
+  border:1.5px solid var(--line);background:var(--card);color:var(--ink-2);border-radius:5px;padding:5px 11px}
+.tp-idea-dl:hover{border-color:var(--ink);color:var(--ink)}
+.tp-idea-del{color:var(--accent);border-color:var(--accent-soft)}
+
+/* 다크 보정 — 파스텔 배경 위 진한 글씨 + 스파크/성장률 가시 */
+@media (prefers-color-scheme: dark){
+  .tp-badge.peak,.tp-badge.good,.tp-badge.today{color:#7fe0a8}
+  .tp-badge.mid{color:#e8c069;background:#2f2716}
+  .tp-badge.warn{color:#ff9075}
+  .tp-gr,.tp-spark{color:#7fe0a8}
+  .tp-spark.mid{color:#e8c069}
+  .tp-spark.warn{color:#ff9075}
+  .tp-idea-del{color:#ff9075}
+}

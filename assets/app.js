@@ -128,6 +128,7 @@
       <nav>
         <a href="index.html#ad">광고일까 진짜일까</a>
         <a href="index.html#trend">요즘 트렌드</a>
+        <a href="pulse.html">트렌드 펄스</a>
         ${right}
       </nav>
     </div>`;
