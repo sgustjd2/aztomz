@@ -1,0 +1,38 @@
+name: daily-refresh
+
+# 매일 트렌드 분석을 '오늘 기준'으로 갱신.
+# 06:00 KST (= 21:00 UTC 전날)에 실행. 수동 실행도 가능(workflow_dispatch).
+on:
+  schedule:
+    - cron: "0 21 * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write   # data/* 변경분 커밋·푸시
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      # data/trends.json 재수집·재분석(hermes) + generatedAt=오늘 + data/trends.js 생성
+      - name: Refresh trends
+        run: node scripts/refresh.mjs
+
+      # 변경이 있을 때만 커밋
+      - name: Commit if changed
+        run: |
+          git config user.name  "hangeut-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add data/trends.json data/trends.js
+          if git diff --staged --quiet; then
+            echo "변경 없음 — 커밋 생략"
+          else
+            git commit -m "chore: daily trend refresh ($(date -u +%Y-%m-%d))"
+            git push
+          fi

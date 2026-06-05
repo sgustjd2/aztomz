@@ -1,0 +1,23 @@
+# --- 민감정보 / 로컬 전용 (절대 커밋 금지) ---
+# Claude Code 로컬 설정 — 실제 API 키 포함
+.claude/
+
+# 환경변수
+.env
+.env.*
+!.env.example
+
+# Vercel CLI 로컬 캐시
+.vercel/
+
+# --- 의존성 / 빌드 산출물 ---
+node_modules/
+dist/
+build/
+
+# --- OS / 에디터 ---
+.DS_Store
+Thumbs.db
+*.log
+.idea/
+.vscode/

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>한끗 — 요즘 유행, 광고야 진짜야?</title>
+<meta name="description" content="SNS에서 자주 보이는 맛집·디저트가 광고인지 실제 후기인지 분석하는 트렌드 번역소. 광고 의심도·후기 신뢰도·만족도를 따로 보여줍니다. 추정치이며 확정 판정이 아닙니다." />
+<link rel="stylesheet" href="assets/styles.css" />
+<style>
+  .lead{padding:40px 0 8px;border-bottom:1px solid var(--line)}
+  .lead h1{font-size:42px;font-weight:900;line-height:1.12;letter-spacing:-0.045em;margin:14px 0 12px}
+  .lead h1 .hl{color:var(--accent)}
+  .lead p{font-size:15.5px;color:#2e2a24;max-width:40ch;margin:0}
+  .lead .meta{margin-top:16px;font-family:var(--serif);font-style:italic;font-size:12.5px;color:var(--ink-2)}
+  @media(max-width:520px){.lead h1{font-size:33px}}
+  .fx-scores{display:flex;gap:8px;margin:6px 0 14px;flex-wrap:wrap}
+  .fx-scores .s{font-size:12px;font-weight:800;border:1.5px solid var(--line);border-radius:5px;padding:5px 10px}
+  .fx-scores .s b{font-family:var(--serif)}
+  .fx-scores .s.ad b{color:var(--accent)} .fx-scores .s.tr b{color:var(--green)}
+</style>
+</head>
+<body>
+  <div data-mast></div>
+  <div class="wrap">
+
+    <section class="lead">
+      <span class="kicker">AZ와 MZ는 한 끗 차이</span>
+      <h1>요즘 그 맛집,<br><span class="hl">광고야 진짜야?</span></h1>
+      <p>SNS 노출이 많다고 좋은 곳은 아니에요. 광고 의심도·실제 후기 신뢰도·만족도를 <b>따로</b> 분석해, 지금 가도 될지 1분에 알려드립니다.</p>
+      <div class="freshline" id="freshline"></div>
+    </section>
+
+    <article class="featured reveal" id="featured"></article>
+
+    <div class="sec-head" id="ad"><span class="no">01</span><h2>광고일까 진짜일까</h2><span class="note">노출 ≠ 좋은 곳</span></div>
+    <nav class="index" id="indexList" aria-label="광고 분석 랭킹"></nav>
+
+    <div class="sec-head" id="trend"><span class="no">02</span><h2>요즘 트렌드</h2><span class="note">지금 따라 해도 되나?</span></div>
+    <div class="strip" id="stripList"></div>
+
+    <section class="empty" style="margin-top:34px">
+      <div class="e-mark">?</div>
+      <h3>이것도 광고야 진짜야?</h3>
+      <p>궁금한 맛집·디저트를 던져주시면 다음 호에 분석해 올려요</p>
+      <!-- ▼ 카카오 오픈채팅/구글폼 링크로 교체 — "재요청" = 1순위 수요 신호 -->
+      <a class="btn accent" href="#" id="requestBtn">분석 요청하기</a>
+    </section>
+
+    <div class="disc">⚠️ 모든 점수는 공개 정보 기반 <b>추정치</b>이며 확정 판정이 아닙니다. 광고 의심도는 "광고일 수 있다"는 가능성일 뿐, 특정 업체의 광고를 단정하지 않습니다.</div>
+
+    <footer class="site">
+      <div class="fwm">한<b>끗</b></div>
+      AZ와 MZ는 한 끗 차이 · 트렌드 번역소<br>SNS 이미지 무단 사용 없이 링크·자체요약 중심으로 운영합니다.
+    </footer>
+  </div>
+
+<script src="data/trends.js"></script>
+<script src="assets/app.js"></script>
+<script>
+  H.boot();
+  const href = (id)=>`trend.html?id=${encodeURIComponent(id)}`;
+
+  // 오늘 날짜 + 데이터 신선도 (브라우저 시계 기준, 라이브)
+  const ff = H.feedFreshness();
+  H.q('#freshline').innerHTML =
+    `오늘 <b style="font-style:normal;color:var(--ink)">${H.todayStr()}</b> 기준 · 분석 ${H.TRENDS.length}건`
+    + (H.generatedAt ? ` · 마지막 갱신 ${H.fmtISO(H.generatedAt)} <span class="fresh-chip ${ff.cls}" style="font-style:normal">${ff.text}</span>` : '');
+
+  // featured = 첫 신뢰분석
+  const f = H.TRENDS.find(t=>t.type==='신뢰분석');
+  H.q('#featured').innerHTML = `
+    <a href="${href(f.id)}" style="text-decoration:none;color:inherit">${H.coverHTML(f,{tall:true})}</a>
+    <div class="fx-body">
+      <div style="display:flex;align-items:center;gap:8px;margin-top:2px">
+        <span class="kicker">오늘의 한끗</span>${H.freshChip(f.analyzedAt)}
+      </div>
+      <h3>${H.esc(f.title)}</h3>
+      <div class="fx-scores">
+        <span class="s ad">광고 의심 <b>${f.ad}</b></span>
+        <span class="s tr">후기 신뢰 <b>${f.trust}</b></span>
+        <span class="s">만족도 ${({pos:'긍정',neg:'부정',mix:'혼재'})[f.sat]}</span>
+      </div>
+      <p class="excerpt">${H.esc(f.excerpt)}</p>
+      <a class="more" href="${href(f.id)}">전체 분석 읽기 →</a>
+    </div>`;
+
+  // ranked index = 신뢰분석들
+  const analyses = H.TRENDS.filter(t=>t.type==='신뢰분석');
+  H.q('#indexList').innerHTML = analyses.map((t,i)=>`
+    <a class="idx-row" href="${href(t.id)}">
+      <span class="rank">${String(i+1).padStart(2,'0')}</span>
+      <span class="t">
+        <span class="it-cat">${H.esc(t.cat)} · ${H.esc(t.buzz)}</span>
+        <span class="it-title">${H.esc(t.title)}</span>
+        <span class="it-label">${H.esc(t.label)} ${H.freshChip(t.analyzedAt)}</span>
+      </span>
+      <span class="mini">
+        <span class="mrow">광고 ${t.ad} <span class="mbar"><i style="width:${t.ad}%;background:var(--accent)"></i></span></span>
+        <span class="mrow">신뢰 ${t.trust} <span class="mbar"><i style="width:${t.trust}%;background:var(--green)"></i></span></span>
+      </span>
+    </a>`).join('');
+
+  // trend strip = 트렌드들
+  const trends = H.TRENDS.filter(t=>t.type==='트렌드');
+  H.q('#stripList').innerHTML = trends.map(t=>`
+    <a class="chip-card" href="${href(t.id)}">
+      ${H.coverHTML(t)}
+      <div class="cc-meta">
+        <div class="cc-stage">${H.esc(t.stage)}</div>
+        <div class="cc-title">${H.esc(t.title)}</div>
+        <div style="margin-top:5px">${H.freshChip(t.analyzedAt)}</div>
+      </div>
+    </a>`).join('');
+</script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>로그인 — 한끗</title>
+<link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+  <div data-mast></div>
+  <div class="wrap">
+    <div class="auth-card">
+      <span class="kicker">한끗 계정</span>
+      <h1>다시 오셨네요</h1>
+      <p class="sub">저장한 트렌드와 내 후기를 이어서 보려면 로그인하세요.</p>
+      <form id="loginForm" novalidate>
+        <div class="form-err" id="formErr"></div>
+        <div class="field"><label for="email">이메일</label>
+          <input id="email" type="email" autocomplete="email" placeholder="you@example.com" /></div>
+        <div class="field"><label for="pw">비밀번호</label>
+          <input id="pw" type="password" autocomplete="current-password" placeholder="6자 이상" /></div>
+        <button class="btn primary block" type="submit">로그인</button>
+      </form>
+      <div class="alt">처음이세요? <a id="toSignup" href="signup.html">회원가입</a></div>
+    </div>
+  </div>
+
+<script src="assets/app.js"></script>
+<script>
+  H.boot();
+  // 이미 로그인 상태면 바로 이동
+  const next = (function(){ const n=H.param('next'); return (n && /\.html(\?|#|$)/.test(n) && !/^https?:\/\//.test(n)) ? n : 'index.html'; })();
+  if(H.user()){ location.replace(next); }
+  H.q('#toSignup').href = `signup.html?next=${encodeURIComponent(next)}`;
+
+  H.q('#loginForm').addEventListener('submit', (e)=>{
+    e.preventDefault();
+    const err=H.q('#formErr'); err.classList.remove('show');
+    const res=H.login({ email:H.q('#email').value, password:H.q('#pw').value });
+    if(!res.ok){ err.textContent=res.error; err.classList.add('show'); return; }
+    location.href = next;
+  });
+</script>
+</body>
+</html>
