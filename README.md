@@ -73,6 +73,7 @@ git push origin main              # → Vercel 자동 재배포
 
 - **[docs/prd.md](docs/prd.md)** — 프로젝트 기획·비전
 - **[docs/architecture.md](docs/architecture.md)** — 시스템 구조·백엔드 전환 계획
+- **[docs/hermes.md](docs/hermes.md)** — 🤖 **Hermes(고구미봇) 작동 방식** — 파이프라인·스킬 12개·검증 게이트·cron
 - **[docs/menus/](docs/menus/)** — 메뉴별 상세 문서
   - [홈](docs/menus/home.md) / [사전](docs/menus/dictionary.md) / [음식](docs/menus/food.md) / [디저트](docs/menus/dessert.md) / [핫플](docs/menus/hotplace.md)
   - [광고분석](docs/menus/ad-or-real.md) / [검색](docs/menus/search.md) / [공유](docs/menus/share.md)
@@ -109,7 +110,7 @@ git push origin main              # → Vercel 자동 재배포
 - `verdict` (string) — 장문 분석
 - `src` (array) — 출처 [제목, URL] 쌍
 - `recs` (array) — 추천 목록 [항목, 평가, 점수]
-- **선택:** `pureKorean` (신조어만) / `prompt` (AI만) / `stage` (트렌드만)
+- **선택:** `pureKorean` (신조어) / `prompt` (AI 명령어, 길고 디테일하게) / `stage` (트렌드) / `article` (블로그형 본문 블록) / `video` (유튜브·틱톡 임베드) / `images` (대표 이미지)
 
 ---
 
@@ -117,4 +118,4 @@ git push origin main              # → Vercel 자동 재배포
 
 - **OS:** Windows 11 / **셸:** PowerShell (Bash 도구도 사용 가능)
 - **배포:** GitHub `GO9ME/aztomz` → Vercel 정적 배포, push 자동 재배포
-- **Hermes(고구미봇):** 별도 레포 `E:\workspace\side_project\hermes`, cron 2개 (07:00 갱신·07:30 리서치 초안)
+- **Hermes(고구미봇):** 트렌드 수집·분석·검증을 돌리는 AI 에이전트(별도 `E:\workspace\side_project\hermes`). 스킬 12개 · 검증 게이트 2종(최신성·출처) · cron(주간 트렌드 갱신 + 펄스 요일 로테이션). 사이트 반영은 **사람 승인 후**. → **[작동 방식 문서](docs/hermes.md)**
