@@ -57,19 +57,24 @@
     const badge = opts.today
       ? `<span class="tp-badge today">이번 주</span>`
       : `<span class="tp-badge ${tt.tier}">${tt.mark}${tt.label}</span>`;
+    const rank = opts.today ? '·' : (opts.rank != null ? String(opts.rank).padStart(2, '0') : '');
+    const normGr = Math.min(100, Math.round((Number(t.gr) || 0) / 5));
     return `<article class="tp-card" data-id="${H.esc(t.id)}">
       <div class="tp-card-head">
+        <span class="tp-rank">${rank}</span>
         <div class="tp-card-main">
           <div class="tp-row1"><h3 class="tp-kw">${H.esc(t.kw)}</h3>${badge}</div>
           <div class="tp-meta">
             <span class="tp-cat">${H.esc(t.cat)}</span>
             <span class="tp-pl">${platformsHTML(t.pl)}</span>
-            <span class="tp-gr">+${H.esc(t.gr)}%</span>
             ${opts.today && t.date ? H.freshChip(t.date) : ''}
           </div>
           <p class="tp-why">${H.esc(t.why)}</p>
         </div>
-        <div class="tp-spark ${tt.tier}">${spark(t.sp)}</div>
+        <span class="mini tp-mini">
+          <span class="mrow">성장 <b>+${H.esc(t.gr)}%</b> <span class="mbar"><i style="width:${normGr}%;background:var(--green)"></i></span></span>
+          <span class="tp-spark ${tt.tier}">${spark(t.sp)}</span>
+        </span>
       </div>
       ${t.angle ? `<div class="tp-angle">💡 <b>핵심 각도</b> · ${H.esc(t.angle)}</div>` : ''}
       <div class="tp-more">▾ 빠른 창업 아이디어 3개 보기</div>
@@ -98,7 +103,7 @@
 
   function renderList() {
     const list = filtered();
-    H.q('#tpList').innerHTML = list.map((t) => H.pulse.card(t)).join('');
+    H.q('#tpList').innerHTML = list.map((t, i) => H.pulse.card(t, { rank: i + 1 })).join('');
     H.q('#tpEmpty').hidden = list.length > 0;
     const c = H.q('#tpCount'); if (c) c.textContent = `${list.length}개`;
   }

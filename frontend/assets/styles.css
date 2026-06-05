@@ -330,8 +330,11 @@ i{font-style:normal}
   padding:19px 22px;cursor:pointer;transition:border-color .12s,box-shadow .12s}
 .tp-card:hover{border-color:var(--ink-2);box-shadow:0 2px 14px rgba(0,0,0,.05)}
 .tp-card.open{border-color:var(--ink)}
-.tp-card-head{display:flex;justify-content:space-between;align-items:flex-start;gap:18px}
-.tp-card-main{flex:1;min-width:0}
+/* #ad 랭킹 카드와 동일한 리듬: [순위] [내용] [미니 막대] 3열 그리드 */
+.tp-card-head{display:grid;grid-template-columns:30px 1fr auto;gap:15px;align-items:start}
+.tp-rank{font-family:var(--serif);font-style:normal;font-size:21px;color:var(--accent);text-align:center;line-height:1.18}
+.tp-card-main{min-width:0}
+.tp-mini{display:flex;flex-direction:column;align-items:flex-end;gap:8px;min-width:118px}
 .tp-row1{display:flex;align-items:center;gap:10px;margin-bottom:9px;flex-wrap:wrap}
 .tp-kw{font-size:17.5px;font-weight:800;letter-spacing:-0.02em;margin:0}
 .tp-meta{display:flex;align-items:center;gap:11px;flex-wrap:wrap;margin-bottom:11px}
@@ -341,7 +344,7 @@ i{font-style:normal}
 .tp-pi{font-size:13px}
 .tp-gr{font-size:13px;font-weight:800;color:var(--green)}
 .tp-why{font-size:14.5px;color:var(--body);line-height:1.65;margin:0}
-.tp-spark{flex:0 0 auto;align-self:center;color:var(--green)}
+.tp-spark{color:var(--green)}
 .tp-spark.mid{color:var(--amber)}
 .tp-spark.warn{color:var(--accent)}
 .tp-spark-svg{display:block}
