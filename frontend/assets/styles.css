@@ -7,7 +7,7 @@
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css");
 :root{
   --paper:#f3efe6; --paper-2:#fbf9f3; --card:#fff;
-  --ink:#17140f; --ink-2:#5c554c; --faint:#a39a8c;
+  --ink:#17140f; --ink-2:#5c554c; --faint:#726857;  /* faint: 2.4→4.8:1 대비(WCAG AA) */
   --line:#ddd5c6; --rule:#17140f;
   --accent:#e8431f; --accent-soft:#fbe3da;
   --green:#1c7a4a; --green-soft:#e2efe6;
@@ -52,9 +52,21 @@ body:has(.wrap.reading) .mast .wrap{max-width:var(--readw)}
 .mast nav a.btn-mini{font-size:13.5px;font-weight:800;border:1.5px solid var(--accent);background:var(--accent);
   color:#fff;padding:6px 12px;border-radius:var(--r);text-decoration:none}
 .mast nav a.btn-mini:hover{color:#fff;opacity:.92}
-@media(max-width:520px){
-  .mast nav{gap:12px;font-size:13.5px}
+/* 햄버거 토글: 데스크톱 숨김, 모바일 표시 */
+.nav-toggle{display:none;background:none;border:0;cursor:pointer;font-size:23px;line-height:1;
+  color:var(--ink);padding:6px 4px;margin-left:auto}
+@media(max-width:560px){
   .issue{display:none}
+  .nav-toggle{display:block}
+  .mast .wrap{position:relative}
+  .mast nav{margin-left:0;position:absolute;top:60px;left:0;right:0;z-index:40;
+    display:none;flex-direction:column;align-items:stretch;gap:0;
+    background:var(--paper);border-bottom:2px solid var(--rule);
+    padding:4px 18px 12px;box-shadow:0 10px 22px rgba(0,0,0,.14)}
+  .mast nav.open{display:flex}
+  .mast nav a{padding:14px 2px;border-bottom:1px solid var(--line);font-size:16px}
+  .mast nav a.btn-mini{margin-top:10px;text-align:center;border-bottom:0;padding:13px 12px}
+  .mast .me-link{padding:14px 2px}
 }
 
 /* ---------- kickers / rules / section headers ---------- */
@@ -340,7 +352,7 @@ i{font-style:normal}
 @media (prefers-color-scheme: dark){
   :root{
     --paper:#15120d; --paper-2:#1e1912; --card:#221c15;
-    --ink:#f1ece1; --ink-2:#b7ae9e; --faint:#7e7567;
+    --ink:#f1ece1; --ink-2:#b7ae9e; --faint:#988e7d;  /* faint: 4.1→4.6:1 대비 */
     --line:#332c22; --rule:#cbc3b4;
     --accent:#f4593b; --accent-soft:#3a201a;
     --green:#46b074; --green-soft:#16271d;

@@ -176,7 +176,8 @@
     host.innerHTML=`<div class="wrap">
       <a class="wordmark" href="index.html">한<b>끗</b></a>
       <span class="issue">오늘 ${H.todayStr()} 기준</span>
-      <nav>
+      <button class="nav-toggle" type="button" aria-label="메뉴 열기" aria-expanded="false" aria-controls="mastNav">☰</button>
+      <nav id="mastNav">
         <a href="index.html#ad">광고일까 진짜일까</a>
         <a href="index.html#trend">요즘 트렌드</a>
         <a href="dictionary.html">MZ 사전</a>
@@ -185,6 +186,14 @@
         ${right}
       </nav>
     </div>`;
+    // 모바일 햄버거 토글 (≤560px). 링크 누르면 닫힘.
+    const tg=host.querySelector('.nav-toggle'), nv=host.querySelector('#mastNav');
+    if(tg && nv){
+      const setOpen=(o)=>{ nv.classList.toggle('open',o); tg.setAttribute('aria-expanded',String(o)); tg.textContent=o?'✕':'☰'; };
+      tg.addEventListener('click',()=> setOpen(!nv.classList.contains('open')));
+      nv.querySelectorAll('a').forEach(a=> a.addEventListener('click',()=> setOpen(false)));
+      document.addEventListener('click',(e)=>{ if(nv.classList.contains('open') && !host.contains(e.target)) setOpen(false); });
+    }
   };
 
   /* ---------- reveal on scroll (pure enhancement; default visible) ---------- */
