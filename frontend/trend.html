@@ -13,6 +13,11 @@
   .crumb a{color:var(--accent);text-decoration:none;font-weight:700}
   .d-head{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:14px 0 4px}
   .d-title{font-size:30px;font-weight:900;letter-spacing:-0.035em;margin:10px 0 6px;line-height:1.15}
+  .d-def{font-size:18px;font-weight:700;color:var(--body);line-height:1.5;margin:0 0 10px;word-break:keep-all}
+  /* 이렇게 써요 — 채팅 말풍선 느낌 */
+  .usage{margin:16px 0;background:var(--paper-2);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+  .usage .u-label{font-size:12.5px;font-weight:800;color:var(--ink-2);letter-spacing:.02em}
+  .usage .u-ex{margin:7px 0 0;font-size:16.5px;font-weight:700;color:var(--ink);line-height:1.5;word-break:keep-all}
   .d-actions{display:flex;gap:9px;margin:14px 0 6px}
   .stage-box{border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:var(--r);
     padding:13px 15px;margin:16px 0}
@@ -157,6 +162,7 @@
       ${H.coverHTML(t,{tall:true})}
       <div class="d-head"><span class="kicker">${H.esc(t.cat)} · ${H.esc(t.buzz)}</span></div>
       <h1 class="d-title">${H.esc(t.title)}</h1>
+      ${t.def?`<p class="d-def">${H.esc(t.def)}</p>`:''}
       <div><span class="label ${t.labelCls}">${H.esc(t.label)}</span></div>
       <div class="tags">
         <a class="tag-chip date" href="index.html?date=${encodeURIComponent(t.collectedAt||t.analyzedAt)}">📅 ${H.esc(t.collectedAt||t.analyzedAt)} 수집</a>
@@ -179,6 +185,7 @@
         </div>
         <div class="pb-text">${H.esc(t.prompt)}</div>
       </div>`:''}
+      ${t.example?`<div class="usage"><div class="u-label">💬 이렇게 써요</div><p class="u-ex">"${H.esc(t.example)}"</p></div>`:''}
       ${t.pureKorean?`<div class="pure-kr">🌸 <b>예쁜 우리말로 바꾼다면</b> · ${H.esc(t.pureKorean)}</div>`:''}
       <p class="verdict">${H.esc(t.verdict)}</p>
       ${articleBlock()}

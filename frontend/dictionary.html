@@ -20,16 +20,18 @@
     background:var(--card);color:var(--ink);font-size:15px;font-family:inherit}
   .dict-search:focus{outline:none;border-color:var(--accent)}
   .dict-count{font-size:13px;color:var(--ink-2);font-family:var(--serif)}
-  .dlist{display:flex;flex-direction:column;gap:0;margin:6px 0 30px}
-  .dword{display:block;padding:18px 4px;border-bottom:1px solid var(--line);text-decoration:none;color:inherit;
-    transition:background .12s}
-  .dword:hover{background:color-mix(in srgb, var(--accent) 5%, transparent)}
-  .dw-top{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
-  .dw-term{font-size:23px;font-weight:900;letter-spacing:-0.03em;color:var(--ink)}
-  .dw-cat{font-size:11.5px;font-weight:800;color:var(--ink-2);border:1px solid var(--line);border-radius:4px;padding:2px 7px}
-  .dw-def{margin:8px 0 0;font-size:15px;color:var(--body);line-height:1.55;word-break:keep-all}
-  .dw-kr{margin-top:8px;font-size:13.5px;color:var(--accent);font-weight:700}
-  .dw-more{margin-top:6px;font-size:12.5px;color:var(--ink-2)}
+  /* 단어 카드 그리드 */
+  .dlist{display:grid;grid-template-columns:repeat(auto-fill,minmax(228px,1fr));gap:14px;margin:8px 0 30px}
+  .dword{display:flex;flex-direction:column;background:var(--card);border:1.5px solid var(--line);border-radius:14px;
+    padding:17px 16px;text-decoration:none;color:inherit;transition:.14s}
+  .dword:hover{border-color:var(--accent);transform:translateY(-2px);box-shadow:0 7px 18px rgba(0,0,0,.07)}
+  .dw-top{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:9px}
+  .dw-term{font-size:22px;font-weight:900;letter-spacing:-0.03em;color:var(--ink);margin-right:auto}
+  .dw-def{margin:0;font-size:14.5px;color:var(--body);line-height:1.5;word-break:keep-all}
+  .dw-ex{margin-top:11px;font-size:13px;color:var(--ink-2);background:var(--paper-2);border-radius:9px;
+    padding:9px 11px;line-height:1.45;word-break:keep-all}
+  .dw-kr{margin-top:11px;font-size:13px;color:var(--accent);font-weight:800}
+  .dw-more{margin-top:11px;font-size:12px;color:var(--ink-2);font-weight:700}
   .dw-arch{font-size:11.5px;font-weight:800;color:var(--ink-2);background:var(--paper-2);
     border:1px solid var(--line);border-radius:4px;padding:2px 7px}
   .dword.is-arch{opacity:.62}
@@ -88,12 +90,12 @@
     <a class="dword${H.isFreshSlang(t)?'':' is-arch'}" href="trend.html?id=${encodeURIComponent(t.id)}">
       <div class="dw-top">
         <span class="dw-term">${H.esc(t.title)}</span>
-        ${H.isFreshSlang(t)?H.freshChip(t.analyzedAt):'<span class="dw-arch">🕰 지난 유행어</span>'}
-        ${t.stage?`<span class="dw-cat">${H.esc(t.stage)}</span>`:''}
+        ${H.isFreshSlang(t)?H.freshChip(t.analyzedAt):'<span class="dw-arch">🕰 지난</span>'}
       </div>
       <p class="dw-def">${H.esc(def(t))}</p>
-      ${t.pureKorean?`<div class="dw-kr">🌸 예쁜 우리말 · ${H.esc(t.pureKorean)}</div>`:''}
-      <div class="dw-more">자세히·출처 보기 →</div>
+      ${t.example?`<div class="dw-ex">💬 "${H.esc(t.example)}"</div>`:''}
+      ${t.pureKorean?`<div class="dw-kr">🌸 ${H.esc(t.pureKorean)}</div>`:''}
+      <div class="dw-more">자세히·출처 →</div>
     </a>`;
 
   function render(q){
