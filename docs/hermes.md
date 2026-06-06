@@ -29,7 +29,7 @@ Hermes는 [Nous Research](https://nousresearch.com)의 AI 에이전트 런타임
 ```
 
 - **수집·분석:** 고구미봇 온디맨드(디스코드 "한끗 실행" 명령).
-- **자동검증·게시:** auto-build.mjs가 아침 08:10 자동 실행 → 통과분만 사이트에 올라감 (사람 승인 불필요).
+- **자동검증·게시:** auto-build.mjs가 매일 저녁 21:00 자동 실행 → 통과분만 사이트에 올라감 (사람 승인 불필요).
 - **보류:** 출처가 404·무관·못읽음만 있는 항목은 자동 보류, 디스코드에 보고.
 
 ---
@@ -106,10 +106,13 @@ Hermes는 [Nous Research](https://nousresearch.com)의 AI 에이전트 런타임
 
 | 작업 | 주기 | 내용 |
 |---|---|---|
-| **한끗 자동 수집·게시** (신규) | 매일 08:10 | `hangeut-run`(수집·분석) → `auto-build.mjs`(자동검증·게시). 검증통과분만 사이트 반영 · git push → Vercel 배포 |
-| **한끗 광고/진짜 일일 재확인** (신규) | 매일 07:30 | `recheck_ad.py`(no-agent) — 가장 오래된 신뢰분석 1건의 출처 재검증(recheck-ad.mjs) → 살아있으면 analyzedAt 갱신(→ 홈 featured 회전). 거짓 신선도 금지 준수 |
-| **한끗 주간 갱신** (`dc54cec90b5e`) | 매주 월 06:30 | `hangeut_daily.py`(no-agent) — trends.json 날짜 스탬프 + 신선도 리포트. 무료·안 죽음 |
-| **한끗 펄스 — 오늘의 분야** (`f3a0b6724fa4`) | 매일 07:00 | `pulse_categories.py`(no-agent) — 오늘 분석할 펄스 분야를 디스코드로 안내 |
+| **한끗 자동 수집·게시** (신규) | 매일 **21:00** | `hangeut-run`(수집·분석) → `auto-build.mjs`(자동검증·게시). 검증통과분만 사이트 반영 · git push → Vercel 배포. **요일 로테이션 → 목 21:00 = 신조어(주간 사전 갱신)** |
+| **한끗 광고/진짜 일일 재확인** (신규) | 매일 **20:55** | `recheck_ad.py`(no-agent) — 가장 오래된 신뢰분석 1건의 출처 재검증(recheck-ad.mjs) → 살아있으면 analyzedAt 갱신(→ 홈 featured 회전). 거짓 신선도 금지 준수 |
+| **한끗 주간 갱신** (`dc54cec90b5e`) | 매주 월 **20:30** | `hangeut_daily.py`(no-agent) — trends.json 날짜 스탬프 + 신선도 리포트. 무료·안 죽음 |
+| **한끗 펄스 — 오늘의 분야** (`f3a0b6724fa4`) | 매일 **20:50** | `pulse_categories.py`(no-agent) — 오늘 분석할 펄스 분야를 디스코드로 안내 |
+| **한끗 — 오늘의 수집 분야** (`bc1a98451fb7`) | 매일 **20:58** | `trend_categories.py`(no-agent) — 오늘 수집할 트렌드 분야 안내 |
+
+> ⏰ **저녁 클러스터(20:30~21:00 KST)** — 아침엔 PC가 꺼져 있어 저녁으로 옮김. Hermes는 **로컬**이라 그 시각에 PC+게이트웨이가 켜져 있어야 실행된다(`tools/start-hermes.bat`, 로그인 시 자동 시작).
 
 ### 펄스 요일별 분야 로테이션
 11개 분야를 요일로 쪼개 **매일 1~2분야씩 → 일주일에 1회전**(한 번에 11개 몰아치던 무료 쿼터 부담 해소).
@@ -131,7 +134,7 @@ Hermes는 [Nous Research](https://nousresearch.com)의 AI 에이전트 런타임
 
 | 명령 | 동작 |
 |---|---|
-| `한끗 실행` | hangeut-run — 수집·분석·정리 후 `.pipeline/curate.json` 저장. (다음날 08:10 자동검증·게시 또는 "한끗 개발 반영"으로 수동 실행) |
+| `한끗 실행` | hangeut-run — 수집·분석·정리 후 `.pipeline/curate.json` 저장. (저녁 21:00 자동검증·게시 또는 "한끗 개발 반영"으로 수동 실행) |
 | `한끗 개발 반영` | hangeut-build(auto-build.mjs 호출) — curate.json 항목을 자동검증 후 통과분만 trends.json 반영 + git push |
 | `한끗 펄스` | 오늘 요일의 창업 트렌드 분야를 깊게 분석 (상세 아이디어 3개) |
 | `한끗 디자인` | 새 카드 디자인 제안 |

@@ -125,11 +125,11 @@ Agent(
   사람 승인 대신 **자동 검증이 게이트** — 죽음(404)·무관·못읽음 출처만 있는 항목은 자동 보류(미게시).
   · 검증·JSON병합·git은 **결정적 스크립트가 전담**(봇이 trends.json·git을 직접 만지지 않는다).
   · 잘못 올라간 게 있으면 **사후에** 사람이 수정·삭제(자동은 검증 통과까지, 최종 책임은 사람).
-  · 일일 에이전트 크론: **08:10 `한끗 자동 수집·게시`**(hangeut-run→auto-build).
+  · 일일 에이전트 크론: **21:00 `한끗 자동 수집·게시`**(hangeut-run→auto-build). 요일 로테이션 → **목 21:00 = 신조어**(주간 사전 갱신). 저녁 시간대(아침엔 PC가 꺼져 있어서).
 - **광고/진짜 일일 재확인.** "광고일까 진짜일까"는 카테고리와 무관하게 **매일 1건**(가장 오래된 신뢰분석)을
   `backend/scripts/recheck-ad.mjs`로 출처 재검증한다(결정적·LLM 없음). 살아있는 출처가 1개+면 `analyzedAt`을
   오늘로 갱신 → **홈 '오늘의 한끗'이 그 항목으로 회전**(고정 아님). 0개면 갱신 안 하고 '사람 확인 필요' 보고.
-  · 일일 no-agent 크론: **07:30 `한끗 광고/진짜 일일 재확인`**(recheck_ad.py→recheck-ad.mjs).
+  · 일일 no-agent 크론: **20:55 `한끗 광고/진짜 일일 재확인`**(recheck_ad.py→recheck-ad.mjs).
 - 인스타/틱톡/페북 **직접 스크래핑 금지(ToS).** ddgs 공개검색 + 유튜브 API만 사용.
 - 실서비스(Supabase) 전환 시 **UI/페이지는 손대지 말고** `app.js`의 `H.*` 내부 구현만 교체.
 
@@ -144,4 +144,4 @@ Agent(
 
 - OS: Windows 11 / 셸: PowerShell (Bash 도구도 사용 가능)
 - 배포: GitHub `GO9ME/aztomz`(public) → Vercel 정적 배포, push마다 자동 재배포
-- Hermes(고구미봇): 별도 레포 `E:\workspace\side_project\hermes`. cron 2개(07:00 갱신·07:30 리서치 초안)
+- Hermes(고구미봇): 별도 레포 `E:\workspace\side_project\hermes`. cron은 **저녁 클러스터(KST 20:30~21:00, PC 켜진 시간대)** — 메인 `한끗 자동 수집·게시` 21:00(목=신조어 주간 사전), 광고/진짜 재확인 20:55, 펄스 안내 20:50, 주간 갱신 월 20:30. ⚠️ Hermes는 로컬이라 **그 시각에 PC+게이트웨이가 켜져 있어야** 실행됨(`tools/start-hermes.bat`).
