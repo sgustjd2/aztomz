@@ -10,6 +10,8 @@
 | `frontend/index.html` | 홈 — 오늘의 한끗·광고일까 진짜일까 미리보기(상위 6개)·요즘 트렌드 미리보기(상위 8개) + 더보기 → 전체 목록 |
 | `frontend/trend.html?id=` | 상세 — 점수(광고의심도/신뢰도)·만족도·판단·추천·출처·후기 |
 | `frontend/list.html` | 전체 목록 — `?type=ad\|trend` + `?cat=` + `?page=` (페이지네이션) |
+| `frontend/dictionary.html` | MZ 사전 — 신조어 목록·검색·뜻·예쁜 우리말·출처 |
+| `frontend/quiz.html` | 유행어 퀴즈 — 뜻 맞히기(4지선다) + MZ력 점수(0~100%) + 공유 |
 | `frontend/{login,signup,me,pulse}.html` | 인증·마이페이지·트렌드 펄스 |
 | `frontend/assets/styles.css`·`app.js`·`pulse.js` | 디자인 시스템 / 모의 스토어(H.*) / 펄스 |
 | `frontend/data/trends.js`·`pulse.js` | 브라우저가 로드하는 **생성물** — **직접 편집 금지** |
@@ -86,8 +88,9 @@ git push origin main              # → Vercel 자동 재배포
 - **[docs/architecture.md](docs/architecture.md)** — 시스템 구조·백엔드 전환 계획
 - **[docs/hermes.md](docs/hermes.md)** — 🤖 **Hermes(고구미봇) 작동 방식** — 파이프라인·스킬 12개·검증 게이트·cron
 - **[docs/menus/](docs/menus/)** — 메뉴별 상세 문서
-  - [홈](docs/menus/home.md) / [사전](docs/menus/dictionary.md) / [음식](docs/menus/food.md) / [디저트](docs/menus/dessert.md) / [핫플](docs/menus/hotplace.md)
-  - [광고분석](docs/menus/ad-or-real.md) / [검색](docs/menus/search.md) / [공유](docs/menus/share.md)
+  - [홈](docs/menus/home.md) / [MZ 사전](docs/menus/dictionary.md) / [유행어 퀴즈](docs/menus/quiz.md)
+  - [음식](docs/menus/food.md) / [디저트](docs/menus/dessert.md) / [핫플](docs/menus/hotplace.md)
+  - [광고분석](docs/menus/ad-or-real.md) / [공유](docs/menus/share.md)
   - [마이페이지](docs/menus/mypage.md) / [인증](docs/menus/auth.md)
 - **[learnings.md](learnings.md)** — 고구미봇이 쌓는 분석 교훈
 - **[CLAUDE.md](CLAUDE.md)** — 개발 철칙·메모
@@ -125,7 +128,7 @@ git push origin main              # → Vercel 자동 재배포
 - `recs` (array) — 추천 목록 [항목, 평가, 점수]
 - `reasons` (object) — **점수별 근거** `{ad, trust, sat}` (각 점수를 그렇게 본 이유, 상세페이지에 "왜 이 점수?"로 노출)
 - `tags` (array) — **해시태그** (분야·지역·키워드, '#' 없이). 상세페이지에서 클릭 → `index.html?tag=값`으로 같은 태그 필터. 예: `["베이커리","성수","에그타르트"]`
-- **선택:** `pureKorean` (신조어) / `prompt` (AI 명령어, 길고 디테일하게) / `stage` (트렌드) / `article` (블로그형 본문 블록) / `video` (유튜브 임베드, **oembed 200(임베드 가능)만**) / `images` (대표 이미지)
+- **선택:** `def` (신조어, 한 줄 뜻 — 사전 요약·퀴즈 힌트) / `pureKorean` (신조어, 예쁜 우리말) / `prompt` (AI 명령어, 길고 디테일하게) / `stage` (트렌드) / `article` (블로그형 본문 블록) / `video` (유튜브 임베드, **oembed 200(임베드 가능)만**) / `images` (대표 이미지)
 
 ---
 
