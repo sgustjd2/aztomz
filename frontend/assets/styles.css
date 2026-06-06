@@ -224,6 +224,12 @@ body:has(.wrap.reading) .mast .wrap{max-width:var(--readw)}
 .fresh-chip.stale{color:#bd3415;background:var(--accent-soft)}
 .freshline{font-family:var(--serif);font-style:normal;font-size:13.5px;color:var(--ink-2);
   display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:16px}
+/* 해시태그 (분야·지역·키워드 — 클릭하면 ?tag= 필터) */
+.tags{display:flex;flex-wrap:wrap;gap:7px;margin:11px 0 2px}
+.tag-chip{font-size:13px;font-weight:700;color:var(--ink-2);background:var(--paper-2);
+  border:1px solid var(--line);border-radius:99px;padding:3px 11px;text-decoration:none;
+  transition:border-color .12s,color .12s}
+.tag-chip:hover{border-color:var(--ink);color:var(--ink)}
 .stale-banner{background:var(--accent-soft);border:1px solid #f0b9a8;border-radius:var(--r);
   padding:10px 13px;font-size:13.5px;color:#bd3415;font-weight:700;margin:12px 0}
 
