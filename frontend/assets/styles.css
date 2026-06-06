@@ -10,7 +10,8 @@
   --ink:#17140f; --ink-2:#5c554c; --faint:#726857;  /* faint: 2.4→4.8:1 대비(WCAG AA) */
   --line:#ddd5c6; --rule:#17140f;
   --accent:#e8431f; --accent-soft:#fbe3da;
-  --accent-text:#bf3611;  /* 본문/링크용 액센트 — 라이트 4.9:1(AA). fill/버튼은 --accent 유지 */
+  --accent-text:#bf3611;  /* 본문/링크용 액센트 — 라이트 4.9:1(AA). fill/커버는 --accent 유지 */
+  --accent-btn:#c2410c; --on-accent:#fff;  /* 액센트 버튼 — 흰 글씨 5.2:1(AA) */
   --green:#1c7a4a; --green-soft:#e2efe6;
   --amber:#c98a2b;
   --body:#2c2a24;   /* 본문 카피 텍스트 */
@@ -50,9 +51,9 @@ body:has(.wrap.reading) .mast .wrap{max-width:var(--readw)}
 .avatar{width:26px;height:26px;border-radius:50%;background:var(--ink);color:var(--on-ink);
   display:flex;align-items:center;justify-content:center;font-size:13.5px;font-weight:800}
 /* 가입 CTA: .mast nav a가 color를 덮지 않도록 특정성↑. 강조색(주황)+흰 글씨로 라이트/다크 모두 또렷 */
-.mast nav a.btn-mini{font-size:13.5px;font-weight:800;border:1.5px solid var(--accent);background:var(--accent);
-  color:#fff;padding:6px 12px;border-radius:var(--r);text-decoration:none}
-.mast nav a.btn-mini:hover{color:#fff;opacity:.92}
+.mast nav a.btn-mini{font-size:13.5px;font-weight:800;border:1.5px solid var(--accent-btn);background:var(--accent-btn);
+  color:var(--on-accent);padding:6px 12px;border-radius:var(--r);text-decoration:none}
+.mast nav a.btn-mini:hover{color:var(--on-accent);opacity:.92}
 /* 햄버거 토글: 데스크톱 숨김, 모바일 표시 */
 .nav-toggle{display:none;background:none;border:0;cursor:pointer;font-size:23px;line-height:1;
   color:var(--ink);padding:6px 4px;margin-left:auto}
@@ -290,7 +291,7 @@ details.src summary::before{content:"§ ";color:var(--accent-text)}
   text-decoration:none;transition:transform .12s}
 .btn:active{transform:translateY(1px)}
 .btn.primary{background:var(--ink);color:var(--on-ink)}
-.btn.accent{background:var(--accent);color:#fff;border-color:var(--accent-text)}
+.btn.accent{background:var(--accent-btn);color:var(--on-accent);border-color:var(--accent-btn)}
 .btn.block{width:100%}
 .btn[disabled]{opacity:.5;cursor:not-allowed}
 .field{margin:14px 0}
@@ -363,6 +364,7 @@ i{font-style:normal}
     --ink:#f1ece1; --ink-2:#b7ae9e; --faint:#988e7d;  /* faint: 4.1→4.6:1 대비 */
     --line:#332c22; --rule:#cbc3b4;
     --accent:#f4593b; --accent-soft:#3a201a; --accent-text:#f4593b;  /* 다크는 5.6:1로 충분 → 브랜드 톤 유지 */
+    --accent-btn:#f4593b; --on-accent:#15120d;  /* 다크: 밝은 주황 버튼 + 어두운 글씨 5.6:1 */
     --green:#46b074; --green-soft:#16271d;
     --amber:#d59a45;
     --body:#d9d3c7; --track:#3a3228;
