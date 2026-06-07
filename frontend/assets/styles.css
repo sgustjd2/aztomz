@@ -39,13 +39,13 @@ body:has(.wrap.reading) .mast .wrap{max-width:var(--readw)}
 /* ---------- masthead ---------- */
 .mast{border-bottom:2px solid var(--rule);background:var(--paper)}
 .mast .wrap{display:flex;align-items:center;gap:16px;height:60px}
-.wordmark{font-size:25px;font-weight:900;letter-spacing:-1.5px;text-decoration:none}
+.wordmark{font-size:25px;font-weight:900;letter-spacing:-1.5px;text-decoration:none;white-space:nowrap;flex:none}
 .wordmark b{color:var(--accent-text)}
 .issue{font-family:var(--serif);font-style:normal;font-size:13.5px;color:var(--ink-2);
-  border-left:1px solid var(--line);padding-left:14px}
+  border-left:1px solid var(--line);padding-left:14px;white-space:nowrap;flex:none}
 .mast nav{margin-left:auto;display:flex;gap:18px;align-items:center;
   font-size:14.5px;font-weight:700}
-.mast nav a{text-decoration:none;color:var(--ink)}
+.mast nav a{text-decoration:none;color:var(--ink);white-space:nowrap}
 .mast nav a:hover{color:var(--accent-text)}
 .mast .me-link{display:flex;align-items:center;gap:7px}
 .avatar{width:26px;height:26px;border-radius:50%;background:var(--ink);color:var(--on-ink);
@@ -57,7 +57,7 @@ body:has(.wrap.reading) .mast .wrap{max-width:var(--readw)}
 /* 햄버거 토글: 데스크톱 숨김, 모바일 표시 */
 .nav-toggle{display:none;background:none;border:0;cursor:pointer;font-size:23px;line-height:1;
   color:var(--ink);padding:6px 4px;margin-left:auto}
-@media(max-width:560px){
+@media(max-width:900px){
   .issue{display:none}
   .nav-toggle{display:block}
   .mast .wrap{position:relative}
