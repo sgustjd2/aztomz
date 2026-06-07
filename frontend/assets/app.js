@@ -176,6 +176,17 @@
     }catch(e){ H.toast && H.toast('공유를 지원하지 않는 환경이에요'); return 'fail'; }
   };
 
+  /* ---------- 테마: 라이트 기본 + 토글 + localStorage 기억 ---------- */
+  const THEME_KEY='hangeut.theme';
+  H.theme = {
+    get(){ try{ return LS.getItem(THEME_KEY)==='dark' ? 'dark' : 'light'; }catch(e){ return 'light'; } },
+    apply(t){ if(global.document && document.documentElement) document.documentElement.setAttribute('data-theme', t==='dark'?'dark':'light'); },
+    set(t){ t=(t==='dark')?'dark':'light'; try{ LS.setItem(THEME_KEY,t); }catch(e){} H.theme.apply(t); H.updateThemeBtn(t); },
+    toggle(){ H.theme.set(H.theme.get()==='dark'?'light':'dark'); }
+  };
+  H.updateThemeBtn = (t)=>{ const b=H.q && H.q('.theme-toggle'); if(b){ b.textContent=(t==='dark')?'☀':'🌙'; b.setAttribute('aria-label',(t==='dark')?'라이트 모드로 전환':'다크 모드로 전환'); } };
+  H.theme.apply(H.theme.get());  // 로드 즉시 적용(테마 깜빡임 최소화)
+
   /* ---------- masthead (auth-aware), injected into [data-mast] ---------- */
   H.renderMast = ()=>{
     const host=H.q('[data-mast]'); if(!host) return;
@@ -194,6 +205,7 @@
         <a href="dictionary.html">MZ 사전</a>
         <a href="pulse.html">트렌드 펄스</a>
         ${right}
+        <button class="theme-toggle" type="button" aria-label="테마 전환">🌙</button>
       </nav>
     </div>`;
     // 모바일 햄버거 토글 (≤560px). 링크 누르면 닫힘.
@@ -204,6 +216,8 @@
       nv.querySelectorAll('a').forEach(a=> a.addEventListener('click',()=> setOpen(false)));
       document.addEventListener('click',(e)=>{ if(nv.classList.contains('open') && !host.contains(e.target)) setOpen(false); });
     }
+    const tb=host.querySelector('.theme-toggle');
+    if(tb){ H.updateThemeBtn(H.theme.get()); tb.addEventListener('click',()=> H.theme.toggle()); }
   };
 
   /* ---------- reveal on scroll (pure enhancement; default visible) ---------- */
