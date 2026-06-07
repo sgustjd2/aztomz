@@ -51,9 +51,12 @@
   let activeCat = H.param('cat') || '전체';
   let page = Math.max(1, parseInt(H.param('page')||'1', 10) || 1);
 
-  const ALL = type==='ad'
+  // 최신순(수집일 desc, 동일 날짜는 분석일 desc)
+  const _key = (t)=> (t.collectedAt||t.analyzedAt||'')+'~'+(t.analyzedAt||'');
+  const ALL = (type==='ad'
     ? H.TRENDS.filter(t=>t.type==='신뢰분석')
-    : H.TRENDS.filter(t=>t.type==='트렌드');
+    : H.TRENDS.filter(t=>t.type==='트렌드')
+  ).sort((a,b)=> _key(b).localeCompare(_key(a)));
 
   // 헤더
   if(type==='ad'){

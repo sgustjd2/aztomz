@@ -151,7 +151,9 @@
   }
 
   // trend strip = 트렌드들 (카테고리별 필터, 상위 8개)
-  const trends = H.TRENDS.filter(t=>t.type==='트렌드');
+  // 최신순(수집일 desc, 동일 날짜는 분석일 desc) — 새로 올린 게 앞에
+  const _d = (t)=> (t.collectedAt||t.analyzedAt||'')+'~'+(t.analyzedAt||'');
+  const trends = H.TRENDS.filter(t=>t.type==='트렌드').sort((a,b)=> _d(b).localeCompare(_d(a)));
   const cats = ['전체', ...new Set(trends.map(t=>t.cat))];
   let activeCat = '전체';
 
