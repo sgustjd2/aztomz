@@ -1183,6 +1183,9 @@
         "볼륨스커트",
         "벌룬스커트",
         "화이트스커트"
+      ],
+      "images": [
+        "https://www.vogue.co.kr/wp_data/vogue/2025/12/style_693a5d2a38b06-1920x1080.jpg?x=1280&y=859&ver=1.1.20"
       ]
     },
     {
@@ -1235,7 +1238,10 @@
           "https://gamsalife.com/posts/%EC%98%81%ED%81%AC%ED%81%AC-%EB%9C%BB-%EC%99%84%EB%B2%BD-%EC%A0%95%EB%A6%AC-MZ%EC%84%B8%EB%8C%80-%EB%B0%88-%EC%9C%A0%EB%9E%98%EB%B6%80%ED%84%B0-%EB%8A%99%ED%81%AC%ED%81%AC%EA%B9%8C%EC%A7%80"
         ]
       ],
-      "example": "방금 그 댓글 봤어? 완전 영크크 터졌잖아 ㅋㅋㅋ"
+      "example": "방금 그 댓글 봤어? 완전 영크크 터졌잖아 ㅋㅋㅋ",
+      "images": [
+        "https://img.insight.co.kr/static/2026/06/05/1200/img_20260605143656_6e8o5uey.jpg"
+      ]
     },
     {
       "type": "트렌드",
@@ -1287,7 +1293,10 @@
           "https://gamsalife.com/posts/%EC%98%81%ED%81%AC%ED%81%AC-%EB%9C%BB-%EC%99%84%EB%B2%BD-%EC%A0%95%EB%A6%AC-MZ%EC%84%B8%EB%8C%80-%EB%B0%88-%EC%9C%A0%EB%9E%98%EB%B6%80%ED%84%B0-%EB%8A%99%ED%81%AC%ED%81%AC%EA%B9%8C%EC%A7%80"
         ]
       ],
-      "example": "어제 그 밈 나만 모르겠더라… 나 늙크크인가 봐."
+      "example": "어제 그 밈 나만 모르겠더라… 나 늙크크인가 봐.",
+      "images": [
+        "https://gamsalife.com/media/1778480272095-0a829939.webp"
+      ]
     },
     {
       "type": "트렌드",
@@ -1339,7 +1348,10 @@
           "https://redwinters.com/%EC%8B%A0%EC%A1%B0%EC%96%B4-%EC%83%A4%EA%B0%88-%EB%9C%BB%EA%B3%BC-%EC%9C%A0%EB%9E%98-%EC%B4%9D%EC%A0%95%EB%A6%AC-%EB%B0%88%EC%9D%98-%EC%8B%9C%EC%9E%91%EB%B6%80%ED%84%B0-%EC%96%B4%EC%9B%90%EA%B9%8C/"
         ]
       ],
-      "example": "버스 눈앞에서 놓쳤어… 아 진짜 샤갈."
+      "example": "버스 눈앞에서 놓쳤어… 아 진짜 샤갈.",
+      "images": [
+        "https://salmeuijihye.com/wp-content/uploads/2026/01/20260129121757.png"
+      ]
     },
     {
       "id": "bamti",
@@ -1391,7 +1403,10 @@
         "유행어"
       ],
       "pureKorean": "어수룩",
-      "example": "이 코디 살짝 밤티난다 ㅋㅋ 근데 그게 또 매력임."
+      "example": "이 코디 살짝 밤티난다 ㅋㅋ 근데 그게 또 매력임.",
+      "images": [
+        "https://img.khan.co.kr/news/2026/05/02/news-p.v1.20260429.7c3332c937694f389513ea6160f97a2f_P1.jpg"
+      ]
     },
     {
       "id": "ajaseu",
@@ -1547,7 +1562,10 @@
         "유행어"
       ],
       "pureKorean": "얼씨구",
-      "example": "최애 신곡 미모 봤어? 그냥 할렐야루임."
+      "example": "최애 신곡 미모 봤어? 그냥 할렐야루임.",
+      "images": [
+        "https://cdn.maily.so/202601/1768482534896051.png"
+      ]
     },
     {
       "id": "jemmini",
@@ -1594,7 +1612,10 @@
         "밈",
         "유행어"
       ],
-      "example": "어디서 먹을지 또 AI한테 물어봤어? 너 완전 젬민이다."
+      "example": "어디서 먹을지 또 AI한테 물어봤어? 너 완전 젬민이다.",
+      "images": [
+        "https://img1.daumcdn.net/thumb/S1200x630/?fname=https://t1.daumcdn.net/news/202605/11/552799-CKV2oOD/20260511060104759przt.jpg"
+      ]
     },
     {
       "id": "gyeongdo",
@@ -1646,7 +1667,10 @@
         "유행어"
       ],
       "pureKorean": "도둑잡기",
-      "example": "이번 주말 동네에서 경도 모임 있대, 같이 갈래?"
+      "example": "이번 주말 동네에서 경도 모임 있대, 같이 갈래?",
+      "images": [
+        "https://thumbnews.nateimg.co.kr/view610///news.nateimg.co.kr/orgImg/do/2026/01/05/133094420.3.png"
+      ]
     },
     {
       "id": "mbtichan",
