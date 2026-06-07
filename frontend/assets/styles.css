@@ -21,7 +21,7 @@
   --sans:"Pretendard Variable",Pretendard,"Apple SD Gothic Neo","Noto Sans KR","Malgun Gothic",-apple-system,BlinkMacSystemFont,sans-serif;
   --maxw:1080px; --readw:760px; --r:7px;
   /* 라이트+다크 모두 지원 — 폰이 다크모드면 아래 @media 다크 팔레트 사용(브라우저 강제 색반전 대신 의도된 테마) */
-  color-scheme:light dark;
+  color-scheme:light;  /* 기본 라이트 — 다크는 [data-theme="dark"]에서만 */
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -354,30 +354,33 @@ footer.site .fwm b{color:var(--accent-text)}
 /* 기울임(italic) 전면 비사용 — <i>(막대그래프 채움) 기본 italic도 리셋 */
 i{font-style:normal}
 
+/* 마스트헤드 라이트/다크 토글 버튼 */
+.theme-toggle{background:none;border:0;cursor:pointer;font-size:18px;line-height:1;padding:4px 8px;border-radius:var(--r);color:var(--ink)}
+.theme-toggle:hover{background:var(--paper-2)}
+
 /* ============================================================
-   다크 테마 — 폰/OS가 다크모드일 때 자동 적용
-   (변수 위주 재정의 + 밝은 파스텔/진한 글씨 대비 보정)
+   다크 테마 — [data-theme="dark"]에서만 적용. 기본은 라이트(OS 무시).
+   마스트헤드 토글로 전환 · localStorage 기억 (app.js H.theme)
    ============================================================ */
-@media (prefers-color-scheme: dark){
-  :root{
-    --paper:#15120d; --paper-2:#1e1912; --card:#221c15;
-    --ink:#f1ece1; --ink-2:#b7ae9e; --faint:#988e7d;  /* faint: 4.1→4.6:1 대비 */
-    --line:#332c22; --rule:#cbc3b4;
-    --accent:#f4593b; --accent-soft:#3a201a; --accent-text:#f4593b;  /* 다크는 5.6:1로 충분 → 브랜드 톤 유지 */
-    --accent-btn:#f4593b; --on-accent:#15120d;  /* 다크: 밝은 주황 버튼 + 어두운 글씨 5.6:1 */
-    --green:#46b074; --green-soft:#16271d;
-    --amber:#d59a45;
-    --body:#d9d3c7; --track:#3a3228;
-    --on-ink:#15120d;
-  }
-  .label.good,.sat-pos,.pure-kr b,.fresh-chip.fresh{color:#7fe0a8}
-  .label.warn,.sat-neg,.form-err,.src .src-list a,.stale-banner,.fresh-chip.stale{color:#ff9075}
-  .label.mid{color:#e8c069;background:#2f2716}
-  .sat-mix{background:#222a36;color:#9cc0ef}
-  .disc{background:#241d10;border-color:#473a1c;color:#dcbd72}
-  .stale-banner{border-color:#5a3326}
-  .fresh-chip.ok{background:#2a241b}
+:root[data-theme="dark"]{
+  --paper:#15120d; --paper-2:#1e1912; --card:#221c15;
+  --ink:#f1ece1; --ink-2:#b7ae9e; --faint:#988e7d;
+  --line:#332c22; --rule:#cbc3b4;
+  --accent:#f4593b; --accent-soft:#3a201a; --accent-text:#f4593b;
+  --accent-btn:#f4593b; --on-accent:#15120d;
+  --green:#46b074; --green-soft:#16271d;
+  --amber:#d59a45;
+  --body:#d9d3c7; --track:#3a3228;
+  --on-ink:#15120d;
+  color-scheme:dark;
 }
+[data-theme="dark"] .label.good,[data-theme="dark"] .sat-pos,[data-theme="dark"] .pure-kr b,[data-theme="dark"] .fresh-chip.fresh{color:#7fe0a8}
+[data-theme="dark"] .label.warn,[data-theme="dark"] .sat-neg,[data-theme="dark"] .form-err,[data-theme="dark"] .src .src-list a,[data-theme="dark"] .stale-banner,[data-theme="dark"] .fresh-chip.stale{color:#ff9075}
+[data-theme="dark"] .label.mid{color:#e8c069;background:#2f2716}
+[data-theme="dark"] .sat-mix{background:#222a36;color:#9cc0ef}
+[data-theme="dark"] .disc{background:#241d10;border-color:#473a1c;color:#dcbd72}
+[data-theme="dark"] .stale-banner{border-color:#5a3326}
+[data-theme="dark"] .fresh-chip.ok{background:#2a241b}
 
 /* ============================================================
    트렌드 펄스 (pulse.html) — 전부 토큰 기반(다크 자동 대응)
