@@ -9,6 +9,7 @@
         · 관련성 = ddgs extract 본문에 트렌드 핵심어 등장? 무관/차단(못 읽음) → 제거
       → '정확/약함'(핵심어 1종+)인 출처만 통과로 남긴다.
    3) 통과 출처가 1개 이상인 항목만 trends.json 에 추가. 0개면 '보류'(게시 안 함).
+      · images 가 비어 있으면 검증 통과 출처의 og:image 를 썸네일로 자동 주입(추가 fetch 없이 본문 재사용).
    4) refresh.mjs 로 trends.js 재생성.
    5) git pull --rebase → add → commit → push (Vercel 자동 배포). (--no-git 면 생략)
 
@@ -72,6 +73,21 @@ function extract(url) {
       env: { ...process.env, PYTHONIOENCODING: 'utf-8', PYTHONUTF8: '1' },
     }) || '';
   } catch (e) { return (e.stdout && e.stdout.toString()) || ''; }
+}
+// ── og:image 추출 (검증 통과 출처의 대표 이미지 → 썸네일 자동 주입용)
+//    extract() 본문엔 <meta property="og:image"> 가 들어 있어 추가 fetch 없이 재사용한다.
+function ogImages(body) {
+  const out = [];
+  const re = /<meta[^>]+(?:property|name)=["'](?:og:image(?::url)?|twitter:image(?::src)?)["'][^>]+content=["']([^"']+)["']/gi;
+  let m;
+  while ((m = re.exec(body))) {
+    let u = m[1].trim();
+    if (u.startsWith('//')) u = 'https:' + u;
+    if (!/^https?:\/\//.test(u)) continue;
+    if (/logo|favicon|sprite|icon|placeholder|default\.(png|jpg)/i.test(u)) continue;
+    if (!out.includes(u)) out.push(u);
+  }
+  return out;
 }
 const hasKw = (body, k) => new RegExp(k.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).test(body);
 function relevance(body, titleKws, extraKws) {
@@ -141,16 +157,24 @@ for (const cand of candidates) {
 
   const titleKws = titleKeywords(cand), extraKws = extraKeywords(cand);
   const good = [];
+  const ogImgs = [];   // 검증 통과 출처의 og:image (썸네일 자동 주입용)
   for (const [name, url] of srcPairs(cand)) {
     const st = await httpStatus(url);
     if (st === 404 || st === 410) { console.log(`   ❌ ${st} 죽음  ${name}`); continue; }
-    const rel = relevance(extract(url), titleKws, extraKws);
+    const body = extract(url);
+    const rel = relevance(body, titleKws, extraKws);
     console.log(`   ${rel.pass ? '✅' : '✋'} ${rel.v}(${rel.note})  ${name}`);
-    if (rel.pass) good.push([name, url]);
+    if (rel.pass) { good.push([name, url]); for (const u of ogImages(body)) if (!ogImgs.includes(u)) ogImgs.push(u); }
   }
 
   if (good.length >= 1) {
     cand.src = good;
+    // 🖼 썸네일 자동 주입: images가 비면 검증 통과 출처의 og:image로 채운다(추가 fetch 없음).
+    //    봇이 images를 빠뜨려도 모든 자동 게시물이 커버 썸네일을 갖도록 보장(깨진 URL은 프론트 onerror가 폴백).
+    if (!Array.isArray(cand.images) || !cand.images.length) {
+      if (ogImgs.length) { cand.images = ogImgs.slice(0, 2); console.log(`   🖼 썸네일 자동 주입 ${cand.images.length}장 (출처 og:image)`); }
+      else console.log('   ⚠ og:image 없음 — 썸네일 색커버 폴백');
+    }
     cand.collectedAt = cand.collectedAt || TODAY;   // 첫 수집일 불변
     cand.analyzedAt = TODAY;
     if (!cand.coverCat) cand.coverCat = { 디저트:'cat-dessert', 카페:'cat-cafe', 베이커리:'cat-bakery',
