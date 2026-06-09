@@ -132,7 +132,7 @@ window.HANGEUT_DATA = {
       "type": "신뢰분석",
       "cat": "카페·핫플",
       "coverCat": "cat-cafe",
-      "analyzedAt": "2026-06-05",
+      "analyzedAt": "2026-06-09",
       "title": "누데이크 성수",
       "buzz": "화제성 높음",
       "ad": 45,
