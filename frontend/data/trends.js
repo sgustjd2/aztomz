@@ -11,33 +11,25 @@ window.HANGEUT_DATA = {
       "title": "두바이 초콜릿 (편의점판)",
       "shops": [
         {
-          "name": "이치서울",
-          "area": "서울 강남·가로수길",
-          "url": "https://www.marieclairekorea.com/culture/lifestyle/2026/01/dubai-desserts/",
-          "note": "두바이 디저트 파르페·쁘띠 케이크"
+          "name": "월스트릿 휘낭시에",
+          "rep": "성수 디저트 맛집",
+          "area": "서울 성수",
+          "url": "https://hwan-forever.tistory.com/entry/%EC%84%B1%EC%88%98-%EC%8B%A0%EC%83%81-%EB%A7%9B%EC%A7%91-%EC%9B%94%EC%8A%A4%ED%8A%B8%EB%A6%BF-%ED%9C%98%EB%82%AD%EC%8B%9C%EC%97%90-%EB%91%90%EB%B0%94%EC%9D%B4%EC%B4%88%EC%BD%9C%EB%A6%BF-%ED%9C%98%EB%82%AD%EC%8B%9C%EC%97%90-%EB%82%B4%EB%8F%88%EB%82%B4%EC%82%B0-%ED%9B%84%EA%B8%B0",
+          "note": "두바이 초콜릿 휘낭시에로 입소문 난 신상 맛집"
         },
         {
-          "name": "마망젤라또 성수",
+          "name": "마망젤라또 성수점",
+          "rep": "성수 젤라또 맛집",
           "area": "서울 성수",
           "url": "https://www.marieclairekorea.com/culture/lifestyle/2026/01/dubai-desserts/",
-          "note": "두바이 쫀득 젤라또"
+          "note": "두바이 쫀득 젤라또 — 대기 알림톡 운영"
         },
         {
-          "name": "끼(KKI)",
-          "area": "서울 용산",
+          "name": "이치서울",
+          "rep": "가로수길 디저트 맛집",
+          "area": "서울 강남·가로수길",
           "url": "https://www.marieclairekorea.com/culture/lifestyle/2026/01/dubai-desserts/",
-          "note": "카다이프 식감 살린 두바이 디저트"
-        },
-        {
-          "name": "뿡어당",
-          "area": "서울 성북",
-          "url": "https://www.marieclairekorea.com/culture/lifestyle/2026/01/dubai-desserts/",
-          "note": "두바이초코 뿡어빵"
-        },
-        {
-          "name": "편의점 CU·GS25·세븐일레븐",
-          "area": "전국",
-          "note": "각사 PB 두바이 초콜릿 — 줄 안 서고 바로 구매"
+          "note": "할매입맛 파르페로 유명 — 두바이 디저트 파르페·쁘띠 케이크"
         }
       ],
       "buzz": "화제성 매우 높음",

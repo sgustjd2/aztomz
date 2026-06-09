@@ -68,6 +68,8 @@
   .shops .sh-row:last-child{border-bottom:0}
   .shops .sh-main{display:flex;align-items:baseline;gap:9px;flex:1;min-width:0}
   .shops .sh-name{font-size:16.5px;font-weight:800;color:var(--ink)}
+  .shops .sh-rep{display:inline-block;font-size:11px;font-weight:800;color:var(--green);
+    border:1px solid var(--green);border-radius:5px;padding:1px 7px;white-space:nowrap;line-height:1.5}
   .shops .sh-area{font-size:13px;color:var(--ink-2);font-weight:700;white-space:nowrap}
   .shops .sh-link{font-size:13px;font-weight:800;color:var(--accent);text-decoration:none;white-space:nowrap}
   .shops .sh-note{flex-basis:100%;font-size:14px;color:var(--body);line-height:1.55;word-break:keep-all;margin-top:1px}
@@ -168,14 +170,15 @@
   function shopsBlock(){
     const s = t.shops; if(!s || !s.length) return '';
     const rows = s.map(sh=>{
+      const rep = sh.rep?`<span class="sh-rep">${H.esc(sh.rep)}</span>`:'';
       const area = sh.area?`<span class="sh-area">${H.esc(sh.area)}</span>`:'';
       const link = sh.url?`<a class="sh-link" href="${sh.url}" target="_blank" rel="noopener">보기 ↗</a>`:'';
       const note = sh.note?`<span class="sh-note">${H.esc(sh.note)}</span>`:'';
-      return `<li class="sh-row"><div class="sh-main"><span class="sh-name">${H.esc(sh.name)}</span>${area}</div>${link}${note}</li>`;
+      return `<li class="sh-row"><div class="sh-main"><span class="sh-name">${H.esc(sh.name)}</span>${rep}${area}</div>${link}${note}</li>`;
     }).join('');
     return `<div class="sec-head"><span class="no">▣</span><h2>어디서 사 먹지?</h2></div>
       <ul class="shops">${rows}</ul>
-      <div class="shops-note">실제 검색에 나온 가게예요. 메뉴·가격·영업은 방문 전 다시 확인하세요.</div>`;
+      <div class="shops-note">맛집으로 소문난 곳 위주로 골랐어요. 메뉴·가격·영업은 방문 전 다시 확인하세요.</div>`;
   }
 
   function render(){

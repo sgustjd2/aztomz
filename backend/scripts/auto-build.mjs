@@ -118,6 +118,7 @@ async function verifyShops(cand) {
   for (const sh of cand.shops) {
     if (!sh || !sh.name) continue;
     const out = { name: String(sh.name).trim() };
+    if (sh.rep) out.rep = String(sh.rep).trim();    // 맛집 평판 한 줄(예: "성수 젤라또 맛집")
     if (sh.area) out.area = String(sh.area).trim();
     if (sh.note) out.note = String(sh.note).trim();
     const url = sh.url && String(sh.url).trim();
