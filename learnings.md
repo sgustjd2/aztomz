@@ -25,7 +25,7 @@
 - [2026-06-05] (소스) **다이닝코드 profile.php·인스타그램 페이지는 JS앱/로그인벽이라 ddgs가 본문을 못 읽어 '무관/차단'으로 뜬다**(들쭉날쭉). 출처는 tistory·trip.com·티스토리계열·언론기사처럼 **본문이 실제로 읽히는 링크**로 쓸 것. (누데이크·멜로워·이스트베이글 출처를 블로그/기사로 교체함.)
 
 ## 운영·파이프라인
-- [2026-06-11] (운영) Hermes 기본 모델(gemini-2.5-flash, 구글 무료 OAuth)은 21시대에 구글측 용량 429(MODEL_CAPACITY_EXHAUSTED)가 잦음 — 6/10은 재시도로 살았고 6/11은 6회 재시도 전부 실패해 크론이 죽음. hermes `config.yaml`의 `fallback_providers`(openrouter `google/gemini-2.5-flash` → anthropic `claude-haiku-4.5`)로 폴백 설정함. 크론도 폴백을 탐(공식 문서의 "크론 미지원"은 낡은 내용, scheduler.py가 읽음). 폴백 발동 시에만 OpenRouter 크레딧/Claude 사용량 소모.
+- [2026-06-11] (운영) Hermes 기본 모델(gemini-2.5-flash, 구글 무료 OAuth)은 21시대에 구글측 용량 429가 잦음 — 6/10은 재시도로 살았고 6/11은 6회 재시도 전부 실패해 크론이 죽음. `fallback_providers` 폴백을 시험했으나 **둘 다 실효성 없음 확인**: OpenRouter 보유 키 3개는 크레딧 $0 무료 계정(유료 모델 402/403, 1번 키는 일일 한도 초과), Anthropic OAuth는 서드파티 앱이 extra usage 크레딧 필요(400). → **Gemini 단독 운용으로 확정**(`fallback_providers: []`). 429로 죽은 날은 `hermes cron run 9ddacd750b48`로 수동 재실행. (참고: 크론도 폴백을 탐 — 공식 문서의 "크론 미지원"은 낡은 내용, scheduler.py가 config를 실행 시점마다 읽음.)
 
 ## 형식·분야
 - [2026-06-05] (형식) 신조어엔 **예쁜 우리말 대체어(pureKorean)**, AI 프롬프트엔 **실제 명령어(prompt)** 필드 포함.

@@ -145,6 +145,7 @@ Agent(
 - OS: Windows 11 / 셸: PowerShell (Bash 도구도 사용 가능)
 - 배포: GitHub `GO9ME/aztomz`(public) → Vercel 정적 배포, push마다 자동 재배포
 - Hermes(고구미봇): 별도 레포 `E:\workspace\side_project\hermes`. cron은 **전부 KST 21시대(저녁, PC 켜진 시간대)** — 메인 `한끗 자동 수집·게시` 21:00(목=신조어 주간 사전), 펄스/수집 분야 안내 21:00, 주간 갱신 월 21:00, 광고/진짜 재확인 21:15(충돌 방지로 15분 뒤). ⚠️ Hermes는 로컬이라 **그 시각에 PC+게이트웨이가 켜져 있어야** 실행됨(`tools/start-hermes.bat`).
-  Gemini 무료 OAuth가 21시대에 구글측 429(용량)로 막히는 일이 있어 hermes `config.yaml`에
-  `fallback_providers`(openrouter gemini-2.5-flash → anthropic claude-haiku-4.5) 설정됨(2026-06-11).
-  폴백 발동 시에만 OpenRouter 크레딧/Claude 사용량을 씀.
+  Gemini 무료 OAuth가 21시대에 구글측 429(용량)로 막히는 일이 있음. 폴백을 검토했으나
+  **Gemini 단독 운용으로 확정**(2026-06-11, `fallback_providers: []`) — OpenRouter 키들은 크레딧 $0
+  무료 계정이라 유료 모델 불가, Anthropic OAuth는 서드파티 앱이 extra usage 크레딧 필요라 둘 다 실효성 없음.
+  429로 크론이 죽은 날은 나중에 `hermes cron run 9ddacd750b48`로 수동 재실행.
