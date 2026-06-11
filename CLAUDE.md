@@ -149,3 +149,4 @@ Agent(
   **Gemini 단독 운용으로 확정**(2026-06-11, `fallback_providers: []`) — OpenRouter 키들은 크레딧 $0
   무료 계정이라 유료 모델 불가, Anthropic OAuth는 서드파티 앱이 extra usage 크레딧 필요라 둘 다 실효성 없음.
   429로 크론이 죽은 날은 나중에 `hermes cron run 9ddacd750b48`로 수동 재실행.
+  OpenRouter 키는 hermes에서 해지함(`.env` 주석 + auth 풀 삭제, 백업 `auth.json.bak.20260611_openrouter`).
