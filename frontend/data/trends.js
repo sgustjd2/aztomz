@@ -197,7 +197,7 @@ window.HANGEUT_DATA = {
       "type": "신뢰분석",
       "cat": "카페·핫플",
       "coverCat": "cat-bakery",
-      "analyzedAt": "2026-06-07",
+      "analyzedAt": "2026-06-13",
       "title": "멜로워 성수 (현 \"베통\")",
       "buzz": "화제성 중간",
       "ad": 25,
