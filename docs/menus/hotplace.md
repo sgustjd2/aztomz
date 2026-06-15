@@ -5,9 +5,11 @@ SNS 인기 장소(카페·식당·명소)를 광고도·신뢰도·경험 가치
 
 ## 진입·화면
 - **파일:**
-  - `frontend/index.html` (홈: 트렌드 미리보기)
-  - `frontend/list.html?type=trend&cat=핫플` (핫플 카테고리 전체 목록, 페이지당 12개)
+  - `frontend/index.html` (홈: 트렌드 미리보기 섹션)
+  - `frontend/list.html?type=trend` (마스트헤드 "요즘 트렌드" 메뉴 → 트렌드 전체 목록 + 카테고리 필터)
+  - `frontend/list.html?type=trend&cat=핫플` (핫플 카테고리만 필터, 페이지당 12개)
   - `frontend/trend.html?id=<핫플id>` (상세 페이지)
+- **마스트헤드 메뉴:** "요즘 트렌드" (list.html?type=trend 직접 연결)
 - **타입:** type=='신뢰분석', cat==[핫플 카테고리]
 - **표시:** 카버 + 제목·카테고리·점수·판정 뱃지
 

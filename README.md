@@ -9,7 +9,7 @@
 | `frontend/` | ★ 배포 대상(Vercel `outputDirectory`). 브라우저가 받는 정적 파일 전부 |
 | `frontend/index.html` | 홈 — 오늘의 한끗·광고일까 진짜일까 미리보기(상위 6개)·요즘 트렌드 미리보기(상위 8개) + 더보기 → 전체 목록 |
 | `frontend/trend.html?id=` | 상세 — 점수(광고의심도/신뢰도)·만족도·판단·추천·출처·후기 |
-| `frontend/list.html` | 전체 목록 — `?type=ad\|trend` + `?cat=` + `?page=` (페이지네이션) |
+| `frontend/list.html?type=ad\|trend` | 전체 목록 — 광고분석 또는 트렌드 리스트 + 페이지네이션 + 카테고리 필터 |
 | `frontend/dictionary.html` | MZ 사전 — 신조어 카드(뜻·예문·예쁜 우리말·출처)·검색·신선도 |
 | `frontend/{login,signup,me,pulse}.html` | 인증·마이페이지·트렌드 펄스 |
 | `frontend/assets/styles.css`·`app.js`·`pulse.js` | 디자인 시스템 / 모의 스토어(H.*) / 펄스 |
@@ -90,10 +90,10 @@ git push origin main              # → Vercel 자동 재배포
 - **[docs/architecture.md](docs/architecture.md)** — 시스템 구조·백엔드 전환 계획
 - **[docs/hermes.md](docs/hermes.md)** — 🤖 **Hermes(고구미봇) 작동 방식** — 파이프라인·스킬 12개·검증 게이트·cron
 - **[docs/menus/](docs/menus/)** — 메뉴별 상세 문서
-  - [홈](docs/menus/home.md) / [MZ 사전](docs/menus/dictionary.md)
+  - [오늘의 한끗(홈)](docs/menus/home.md) / [MZ 사전](docs/menus/dictionary.md)
+  - [광고일까 진짜일까](docs/menus/ad-or-real.md) / [요즘 트렌드](docs/menus/food.md)
   - [음식](docs/menus/food.md) / [디저트](docs/menus/dessert.md) / [핫플](docs/menus/hotplace.md)
-  - [광고분석](docs/menus/ad-or-real.md) / [공유](docs/menus/share.md)
-  - [마이페이지](docs/menus/mypage.md) / [인증](docs/menus/auth.md)
+  - [공유](docs/menus/share.md) / [마이페이지](docs/menus/mypage.md) / [인증](docs/menus/auth.md)
 - **[learnings.md](learnings.md)** — 고구미봇이 쌓는 분석 교훈
 - **[CLAUDE.md](CLAUDE.md)** — 개발 철칙·메모
 

@@ -19,6 +19,6 @@
 - 없음 (미구현)
 
 ## 비고
-- **우선순위:** 낮음. 현재는 frontend/index.html#ad / frontend/index.html#trend 섹션 링크로 충분
+- **우선순위:** 낮음. 현재는 frontend/list.html?type=ad / frontend/list.html?type=trend 목록 페이지로 충분
 - **2차 계획:** 마스트헤드에 검색 아이콘 + 모달 검색창 추가
 - **구현 시 고려:** case-insensitive 매칭, 한글 자모음 분해(optional)

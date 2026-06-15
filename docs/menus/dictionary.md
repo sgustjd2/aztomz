@@ -5,9 +5,9 @@
 
 ## 진입·화면
 - **파일:** 
-  - `frontend/dictionary.html` (사전 홈: 검색·목록)
+  - `frontend/dictionary.html` (마스트헤드 "MZ 사전" 메뉴 → 사전 홈: 검색·목록)
   - `frontend/trend.html?id=<신조어id>` (상세 페이지)
-  - 마스트헤드 "MZ 사전" 링크
+- **마스트헤드 메뉴:** "MZ 사전" (dictionary.html 직접 연결)
 - **타입:** coverCat=='cat-slang' 또는 type=='신조어'
 - **표시:** 검색창 + 단어 목록(단어·def·pureKorean·신선도·출처 링크)
 

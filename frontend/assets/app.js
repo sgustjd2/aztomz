@@ -200,8 +200,9 @@
       <span class="issue">오늘 ${H.todayStr()} 기준</span>
       <button class="nav-toggle" type="button" aria-label="메뉴 열기" aria-expanded="false" aria-controls="mastNav">☰</button>
       <nav id="mastNav">
-        <a href="index.html#ad">광고일까 진짜일까</a>
-        <a href="index.html#trend">요즘 트렌드</a>
+        <a href="index.html">오늘의 한끗</a>
+        <a href="list.html?type=ad">광고일까 진짜일까</a>
+        <a href="list.html?type=trend">요즘 트렌드</a>
         <a href="dictionary.html">MZ 사전</a>
         <a href="pulse.html">트렌드 펄스</a>
         ${right}
