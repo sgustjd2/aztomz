@@ -3698,6 +3698,325 @@
         "https://aitechlab.dev/wp-content/uploads/2025/08/midjourney-ai-image.webp",
         "https://api.prpt.ai/image/ab4f38d2-19a1-4a9d-a297-82f032e7a346"
       ]
+    },
+    {
+      "id": "frozen-jelly-2026",
+      "type": "트렌드",
+      "cat": "디저트",
+      "coverCat": "cat-dessert",
+      "collectedAt": "2026-06-15",
+      "analyzedAt": "2026-06-15",
+      "buzz": "화제성 매우 높음",
+      "stage": "상승",
+      "stageMsg": "여름 시즌 맞이 급상승 중",
+      "label": "도전해도 됨",
+      "labelCls": "good",
+      "title": "여름 한정 '얼먹젤리' 열풍",
+      "def": "젤리를 냉동실에 얼려 오독오독한 식감으로 즐기는 여름 디저트 문화",
+      "excerpt": "GS25 하리보 매출 1,786% 폭증! 젤리 얼려 먹는 '얼먹'이 다시 돌아왔습니다.",
+      "pull": "오독오독 식감 깡패!",
+      "verdict": "단순한 유행을 넘어 여름철 고정 디저트로 안착 중. 젤리 종류에 따라 식감이 천차만별이라 골라 먹는 재미가 있음.",
+      "recs": [
+        [
+          "오독한 식감",
+          "◎",
+          1
+        ],
+        [
+          "시원함",
+          "○",
+          1
+        ],
+        [
+          "치아 주의",
+          "✕",
+          0
+        ]
+      ],
+      "src": [
+        [
+          "썸트렌드 AI 리포트",
+          "https://some.co.kr/briefing/korean-dessert-texture-trend-report-2026"
+        ]
+      ],
+      "tags": [
+        "디저트",
+        "여름간식",
+        "얼먹",
+        "편의점"
+      ],
+      "article": [
+        [
+          "h",
+          "여름이면 돌아오는 '얼먹'의 진화, 젤리까지 얼려버렸다"
+        ],
+        [
+          "p",
+          "매년 여름이면 아이스크림 대신 간식을 얼려 먹는 '얼먹' 문화가 반복되지만, 올해는 그 기세가 심상치 않습니다. 특히 편의점 채널을 중심으로 젤리 매출이 전년 대비 폭발적으로 증가하며 젤리 얼먹이 대세로 자리 잡았습니다."
+        ],
+        [
+          "q",
+          "단순히 시원한 게 아니라, 젤리 특유의 질감이 '오독'하게 변하는 그 식감이 핵심입니다."
+        ],
+        [
+          "h",
+          "왜 지금 다시 떴나?"
+        ],
+        [
+          "p",
+          "틱톡과 릴스에서 '젤리 얼려 먹기' 챌린지가 다시 유행하며 Z세대의 호기심을 자극했습니다. 특히 코하쿠토나 너즈(Nerds) 같은 극강의 식감을 가진 젤리들이 얼먹에 최적화되었다는 소문이 퍼지면서 편의점 품절 대란으로 이어졌습니다."
+        ],
+        [
+          "h",
+          "한끗 정리"
+        ],
+        [
+          "ul",
+          [
+            "하리보나 코하쿠토 계열이 얼렸을 때 식감 변화가 가장 큼",
+            "너무 오래 얼리면 치아에 무리가 갈 수 있으니 주의",
+            "탄산수나 요거트에 토핑으로 활용하면 비주얼과 맛을 동시에 잡음"
+          ]
+        ]
+      ],
+      "shops": [
+        {
+          "name": "GS25",
+          "rep": "편의점 얼먹젤리 성지",
+          "area": "전국",
+          "note": "하리보 및 각종 PB 젤리 라인업 강화"
+        },
+        {
+          "name": "젤리집 (jelly_zip)",
+          "rep": "수제 젤리 편집샵",
+          "area": "온라인/팝업",
+          "note": "식감 위주의 큐레이션으로 유명"
+        }
+      ],
+      "video": {
+        "youtube": "LCn6nWOskK4",
+        "cap": "얼먹젤리 재유행 쇼츠"
+      },
+      "images": [
+        "https://static.some.co.kr/sometrend/images/imagewrap/meta/meta_sometrend_ai.png"
+      ]
+    },
+    {
+      "id": "lavashak-korea",
+      "type": "트렌드",
+      "cat": "디저트",
+      "coverCat": "cat-dessert",
+      "collectedAt": "2026-06-15",
+      "analyzedAt": "2026-06-15",
+      "buzz": "화제성 높음",
+      "stage": "상승",
+      "stageMsg": "중동 디저트 열풍의 차기 주자",
+      "label": "도전해도 됨",
+      "labelCls": "good",
+      "title": "이란식 과일 가죽 '라바삭'",
+      "def": "과일을 얇게 말린 가죽 형태에 석류 시럽과 과육을 얹어 먹는 이색 중동 간식",
+      "excerpt": "두바이 초콜릿 다음은 라바삭? 입안 가득 퍼지는 극강의 새콤함이 매력적입니다.",
+      "pull": "비주얼 쇼크, 침샘 자극!",
+      "verdict": "새콤한 맛을 즐기는 Z세대 사이에서 '침샘 어택' 간식으로 인기. 비주얼은 생소하지만 맛은 익숙한 과일 젤리 맛.",
+      "recs": [
+        [
+          "강력한 새콤함",
+          "◎",
+          1
+        ],
+        [
+          "이색적인 비주얼",
+          "○",
+          1
+        ],
+        [
+          "신맛 못 먹으면 금지",
+          "✕",
+          0
+        ]
+      ],
+      "src": [
+        [
+          "GS25 라바삭 출시 뉴스",
+          "https://m.blog.naver.com/alswl0224/223567792134"
+        ],
+        [
+          "라바삭 먹방 쇼츠",
+          "https://youtu.be/XnEh0yn14Aw"
+        ]
+      ],
+      "tags": [
+        "중동디저트",
+        "이색간식",
+        "라바삭",
+        "석류"
+      ],
+      "article": [
+        [
+          "h",
+          "중동에서 건너온 '라바삭', 침샘 폭발 비주얼의 정체"
+        ],
+        [
+          "p",
+          "틱톡 해외 피드에서만 보이던 이색 간식 '라바삭(Lavashak)'이 한국 편의점과 디저트 숍에 상륙했습니다. 과일을 얇게 펴서 말린 '과일 가죽'에 석류 시럽과 과육을 얹어 먹는 이란 전통 간식입니다."
+        ],
+        [
+          "q",
+          "극강의 새콤함과 쫀득함, '침샘 어택'이라는 수식어가 아깝지 않은 맛."
+        ],
+        [
+          "h",
+          "단순한 유행인가, 진짜 맛있는가?"
+        ],
+        [
+          "p",
+          "비주얼은 다소 생소하지만, 과일 본연의 맛이 응축된 젤리와 비슷해 한국인 입맛에도 의외로 잘 맞습니다. 최근에는 GS25 등 편의점에서도 접근 가능한 상품으로 출시되어 진입 장벽이 낮아졌습니다."
+        ],
+        [
+          "h",
+          "한끗 정리"
+        ],
+        [
+          "ul",
+          [
+            "석류 시럽을 듬뿍 뿌려 먹는 것이 정석",
+            "자극적인 신맛 때문에 호불호가 갈릴 수 있음",
+            "눈이 번쩍 뜨이는 신맛을 즐기는 Z세대 취향 저격"
+          ]
+        ]
+      ],
+      "shops": [
+        {
+          "name": "쿠키담",
+          "rep": "라바삭 오프라인 구매처",
+          "area": "부산",
+          "note": "인스타 핫디저트로 입소문 난 곳"
+        },
+        {
+          "name": "세븐스타몰",
+          "rep": "라바삭 전문 온라인샵",
+          "area": "온라인",
+          "note": "정통 이란식 라바삭 판매"
+        }
+      ],
+      "video": {
+        "youtube": "XnEh0yn14Aw",
+        "cap": "라바삭 석류맛 먹방"
+      },
+      "images": [
+        "https://blogthumb.pstatic.net/MjAyNDA4MzFfMTUz/MDAxNzI1MTE2MTE5MDMw.9231ICxzFBjIELNU7gFruHwFxxcYb_3Wvs1Ybo9Bu1wg.G7BFoGa00ojk7pZn9ekDMSUv4MnayBwJ6qgdfi4Jz8Qg.JPEG/GS25_gs_%C6%ED%C0%C7%C1%A1_%BD%C5%BB%F3_%C1%A9%B8%AE_%B6%F3%B9%D9%BB%E8_%C0%CC%B6%F5_%B5%F0%C0%FA%C6%AE.jpg?type=w2"
+      ]
+    },
+    {
+      "id": "pistachio-seongsu-2026",
+      "type": "트렌드",
+      "cat": "디저트",
+      "coverCat": "cat-dessert",
+      "collectedAt": "2026-06-15",
+      "analyzedAt": "2026-06-15",
+      "buzz": "화제성 높음",
+      "stage": "피크",
+      "stageMsg": "성수동을 점령한 초록빛 고소함",
+      "label": "지금 써도 됨",
+      "labelCls": "good",
+      "title": "성수동 피스타치오 성지 순례",
+      "def": "피스타치오 원물을 듬뿍 넣은 크림과 푸딩, 도넛이 주도하는 성수동 디저트 트렌드",
+      "excerpt": "민초 가고 피초 왔다! 성수동 카페들은 지금 피스타치오 메뉴 경쟁 중입니다.",
+      "pull": "피스타치오 덕후들의 성지!",
+      "verdict": "두바이 초콜릿 열풍 이후 피스타치오의 진한 맛을 찾는 수요가 급증. 고소함의 깊이가 예전 인공 향과는 차원이 다름.",
+      "recs": [
+        [
+          "진한 원물 맛",
+          "◎",
+          1
+        ],
+        [
+          "인증샷 맛집",
+          "○",
+          1
+        ],
+        [
+          "견과류 알러지 주의",
+          "✕",
+          0
+        ]
+      ],
+      "src": [
+        [
+          "성수 피스타치오 전문점 AMA",
+          "https://www.threads.com/@avocadoandunilover/post/DU5gPEkE563/"
+        ],
+        [
+          "라에비뉴 성수 리뷰",
+          "https://m.blog.naver.com/PostView.naver?blogId=richjenn7&logNo=224224681550"
+        ],
+        [
+          "성수 디저트 핫플 유튜브",
+          "https://youtu.be/O5wKRLMnlZ8"
+        ]
+      ],
+      "tags": [
+        "피스타치오",
+        "성수동맛집",
+        "디저트성지",
+        "고소함"
+      ],
+      "article": [
+        [
+          "h",
+          "성수동은 지금 '피스타치오'와 연애 중"
+        ],
+        [
+          "p",
+          "민초(민트초코)의 자리를 위협하는 새로운 '극호'의 맛, 피스타치오가 디저트 시장을 점령했습니다. 특히 성수동 일대에서는 피스타치오를 활용한 대왕 도넛, 푸딩, 샌드가 줄줄이 출시되며 긴 줄을 세우고 있습니다."
+        ],
+        [
+          "q",
+          "두바이 초콜릿 열풍이 남긴 피스타치오 스프레드에 대한 집착이 전문점 탄생으로 이어졌다."
+        ],
+        [
+          "h",
+          "광고야 진짜야?"
+        ],
+        [
+          "p",
+          "SNS에서 보이는 화려한 비주얼만큼이나 실제 맛에 대한 평가도 높은 편입니다. 원물 함량이 높은 피스타치오 페이스트를 사용하는 곳이 많아져서 예전의 인위적인 향과는 차원이 다른 고소함을 선사합니다."
+        ],
+        [
+          "h",
+          "한끗 정리"
+        ],
+        [
+          "ul",
+          [
+            "성수 'AMA'는 피스타치오 전문점으로 급부상 중",
+            "오후에는 품절되는 경우가 많으니 오전이나 이른 오후 방문 추천",
+            "진한 녹색일수록 원물 함량이 높아 고소한 맛이 강함"
+          ]
+        ]
+      ],
+      "shops": [
+        {
+          "name": "AMA (아마)",
+          "rep": "피스타치오 디저트 전문점",
+          "area": "서울 성수",
+          "note": "피스타치오 스프레드와 생면 카다이프의 조합"
+        },
+        {
+          "name": "라에비뉴 성수",
+          "rep": "피스타치오 크림 맛집",
+          "area": "서울 성수",
+          "note": "진한 피스타치오 크림 케이크가 대표 메뉴"
+        }
+      ],
+      "video": {
+        "youtube": "O5wKRLMnlZ8",
+        "cap": "성수동 대왕 피스타치오 도넛"
+      },
+      "images": [
+        "https://scontent-ssn1-1.cdninstagram.com/v/t51.82787-15/634862032_17865452433577274_222568806063283463_n.jpg?stp=cp6_dst-jpegr_e35_tt6&amp;_nc_cat=107&amp;ig_cache_key=MzgzNTIzODE2NDg5NDgzMTc4Ng%3D%3D.3-ccb7-5&amp;ccb=7-5&amp;_nc_sid=58cdad&amp;efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTQ0MC5oZHIucmVndWxhcl9waG90by5DMyJ9&amp;_nc_ohc=1PY51gYEXikQ7kNvwHeaZej&amp;_nc_oc=Ado0SyITWiNhrCmXpKzinaUH73a65fyZ1B_zptxNCp4UA6GGXA9Atue3bQXc96HpctU&amp;_nc_ad=z-m&amp;_nc_cid=0&amp;_nc_zt=23&amp;se=-1&amp;_nc_ht=scontent-ssn1-1.cdninstagram.com&amp;_nc_gid=M4w7I2pg7hcVyxsmRl1h6g&amp;_nc_ss=7a22e&amp;oh=00_Af9Jqpjbjca_MdfQCX693ij9GiCJy6WljgPahwTiRq8ppw&amp;oe=6A35AD62",
+        "https://blogthumb.pstatic.net/MjAyNjAzMTlfNjgg/MDAxNzczOTE0MTYwNzc0.xgVKU5_e1oxZnwL4hc0Arc3pNcjGuzCxwC7mWdp-16Ug.MjahE3wJPVA3kkpHdmEiGSCATEfWn0OqCkAxwzKo0iAg.JPEG/900%A3%DF20260319%A3%DF181414.jpg?type=w2"
+      ]
     }
   ]
 }
