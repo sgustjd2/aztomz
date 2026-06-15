@@ -105,7 +105,8 @@
         <div class="muted" style="font-size:14px;margin-top:4px">${H.esc(t.stageMsg)}</div>
       </div>`;
     const R = t.reasons || {};
-    return `<div class="scores">
+    return `<div class="scores-note">두 지표는 각각 <b>0~100 독립 점수</b>예요 — 서로 더하는 값이 아니라, “광고일까?”와 “후기를 믿을 만한가?”를 따로 잰 거예요.</div>
+    <div class="scores">
       <div class="score ad"><div class="s-label">광고 의심도</div>
         <div class="s-num">${t.ad}</div><div class="s-band">${H.bandTxt(t.ad)} · 높을수록 광고 가능성</div>
         <div class="track"><i style="width:${t.ad}%"></i></div>
