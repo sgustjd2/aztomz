@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-16",
+  "generatedAt": "2026-06-17",
   "trends": [
     {
       "id": "dubai-choco",
@@ -4016,6 +4016,216 @@
       "images": [
         "https://scontent-ssn1-1.cdninstagram.com/v/t51.82787-15/634862032_17865452433577274_222568806063283463_n.jpg?stp=cp6_dst-jpegr_e35_tt6&amp;_nc_cat=107&amp;ig_cache_key=MzgzNTIzODE2NDg5NDgzMTc4Ng%3D%3D.3-ccb7-5&amp;ccb=7-5&amp;_nc_sid=58cdad&amp;efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTQ0MC5oZHIucmVndWxhcl9waG90by5DMyJ9&amp;_nc_ohc=1PY51gYEXikQ7kNvwHeaZej&amp;_nc_oc=Ado0SyITWiNhrCmXpKzinaUH73a65fyZ1B_zptxNCp4UA6GGXA9Atue3bQXc96HpctU&amp;_nc_ad=z-m&amp;_nc_cid=0&amp;_nc_zt=23&amp;se=-1&amp;_nc_ht=scontent-ssn1-1.cdninstagram.com&amp;_nc_gid=M4w7I2pg7hcVyxsmRl1h6g&amp;_nc_ss=7a22e&amp;oh=00_Af9Jqpjbjca_MdfQCX693ij9GiCJy6WljgPahwTiRq8ppw&amp;oe=6A35AD62",
         "https://blogthumb.pstatic.net/MjAyNjAzMTlfNjgg/MDAxNzczOTE0MTYwNzc0.xgVKU5_e1oxZnwL4hc0Arc3pNcjGuzCxwC7mWdp-16Ug.MjahE3wJPVA3kkpHdmEiGSCATEfWn0OqCkAxwzKo0iAg.JPEG/900%A3%DF20260319%A3%DF181414.jpg?type=w2"
+      ]
+    },
+    {
+      "id": "dotori-oven-seongsu",
+      "type": "신뢰분석",
+      "cat": "카페·핫플",
+      "coverCat": "cat-cafe",
+      "collectedAt": "2026-06-17",
+      "analyzedAt": "2026-06-17",
+      "title": "도토리오븐 (성수)",
+      "buzz": "화제성 높음 (신상)",
+      "ad": 45,
+      "trust": 60,
+      "sat": "pos",
+      "satTxt": "지브리풍 공간·디저트는 호평, 웨이팅·가격은 감안",
+      "label": "믿고 가볼 만함",
+      "labelCls": "good",
+      "excerpt": "성수에 새로 뜬 '지브리 감성' 디저트 카페. 그릭요거트·에그타르트·두바이쫀득쿠키로 블로그·SNS에서 입소문 중.",
+      "pull": "감성·포토존 신상 카페 — 디저트는 진짜 호평, 협찬 후기는 적당히 거르고 보기.",
+      "verdict": "동화 같은 인테리어와 포토존으로 SNS·블로그에 빠르게 퍼진 성수 신상 카페예요. 그릭요거트·에그타르트·휘낭시에 같은 메뉴는 구체적 호평이 많아 디저트 자체는 믿을 만합니다. 다만 감성·포토존 카페 특성상 협찬·체험단 후기도 섞이니, 분위기 칭찬만 있는 글보다 메뉴를 구체적으로 짚은 후기를 보세요.",
+      "recs": [
+        [
+          "감성·포토존",
+          "◎",
+          1
+        ],
+        [
+          "디저트 맛",
+          "○",
+          1
+        ],
+        [
+          "가성비·한적함",
+          "✕",
+          0
+        ]
+      ],
+      "src": [
+        [
+          "도토리오븐 그릭요거트·에그타르트 후기(MSG)",
+          "https://msg1.kr/성수-카페-도토리오븐-그릭요거트-에그타르트-맛집/"
+        ],
+        [
+          "도토리오븐 방문후기(mejusa)",
+          "https://mejusa81.com/entry/성수-카페-추천-도토리오븐-따뜻한-감성으로-겨울-힐링해요ft-두바이쫀득쿠키"
+        ]
+      ],
+      "reasons": {
+        "ad": "감성·포토존 신상 카페라 블로그·SNS 노출이 빠르게 퍼졌고 일부 체험단·협찬 후기가 섞임. 다만 노골적 대가성 문구가 두드러지진 않아 높음(60+)이 아닌 중간 45.",
+        "trust": "그릭요거트·에그타르트·휘낭시에 등 메뉴를 구체적으로 짚은 후기가 여러 블로그에 꾸준해 후기 자체는 믿을 만함 → 중상 60.",
+        "sat": "동화풍 공간·포토존과 디저트 맛에 호평이 우세. 웨이팅·가격은 감안 → 대체로 긍정."
+      },
+      "shops": [
+        {
+          "name": "도토리오븐",
+          "rep": "성수 지브리 감성 신상 디저트 카페",
+          "area": "서울 성수",
+          "note": "그릭요거트볼·에그타르트·휘낭시에·두바이쫀득쿠키",
+          "url": "https://msg1.kr/성수-카페-도토리오븐-그릭요거트-에그타르트-맛집/"
+        }
+      ],
+      "article": [
+        [
+          "h",
+          "성수에 또 하나, '동화 속 카페' 도토리오븐"
+        ],
+        [
+          "p",
+          "성수동은 신상 카페가 가장 빨리 뜨고 빨리 식는 동네입니다. 그 와중에 2026년 봄부터 블로그·SNS에 부쩍 등장한 곳이 '도토리오븐'이에요. 지브리 애니메이션을 떠올리게 하는 따뜻한 우드톤 인테리어와 포토존으로 '감성 카페'를 찾는 사람들 사이에서 입소문이 났습니다."
+        ],
+        [
+          "q",
+          "비주얼만 예쁜 카페는 금방 식지만, 도토리오븐은 디저트 후기가 구체적이라는 점이 다릅니다."
+        ],
+        [
+          "h",
+          "뭘 먹나"
+        ],
+        [
+          "p",
+          "그릭요거트볼과 에그타르트가 대표 메뉴로 꼽히고, 휘낭시에·까눌레 같은 구움과자와 '두바이쫀득쿠키'처럼 트렌디한 메뉴도 함께 화제입니다. 디저트 맛에 대한 호평이 여러 후기에서 반복돼, 포토존만 보고 가는 카페와는 결이 다릅니다."
+        ],
+        [
+          "h",
+          "한끗 정리"
+        ],
+        [
+          "ul",
+          [
+            "지브리풍 인테리어·포토존이 강점 — 사진 찍기 좋아함",
+            "그릭요거트볼·에그타르트는 구체적 호평이 많아 디저트는 믿을 만함",
+            "감성 카페 특성상 협찬·체험단 후기가 섞이니 메뉴를 구체적으로 짚은 글 위주로 참고"
+          ]
+        ]
+      ],
+      "tags": [
+        "카페",
+        "성수",
+        "도토리오븐",
+        "감성카페",
+        "디저트카페"
+      ],
+      "images": [
+        "https://msg1.kr/wp-content/uploads/2026/05/screenshot_20260510-111300.jpg",
+        "https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdna%2FlAkPe%2FdJMcahbV8Dm%2FAAAAAAAAAAAAAAAAAAAAABXUrn4whGCw_q4bidBCa2pp8dI2hh8X_1S0aKIf4mTZ%2Fimg.png%3Fcredential%3DyqXZFxpELC7KVnFOS48ylbz2pIh7yKj8%26expires%3D1782831599%26allow_ip%3D%26allow_referer%3D%26signature%3DmAI9PusjCdpqVCuzyFNY74X9O6c%253D"
+      ]
+    },
+    {
+      "id": "neungdong-minari-seongsu",
+      "type": "신뢰분석",
+      "cat": "맛집",
+      "coverCat": "cat-food",
+      "collectedAt": "2026-06-17",
+      "analyzedAt": "2026-06-17",
+      "title": "능동미나리 성수점",
+      "buzz": "화제성 높음 (웨이팅)",
+      "ad": 25,
+      "trust": 72,
+      "sat": "pos",
+      "satTxt": "미나리 향·솔직 후기 다수, 줄 서서 먹는 성수 데이트 맛집",
+      "label": "믿고 가볼 만함",
+      "labelCls": "good",
+      "excerpt": "거의 모든 메뉴에 미나리가 들어가는 성수 웨이팅 맛집. '내돈내산 솔직 후기'가 여러 블로그에 꾸준.",
+      "pull": "협찬보다 '내돈내산' 후기가 많아 신뢰도가 높은 성수 데이트 맛집.",
+      "verdict": "이름 그대로 거의 모든 음식에 미나리를 넣는 콘셉트의 성수 맛집이에요. 여러 블로그에 '내돈내산', '정말 솔직한 후기', '줄 서서 먹는' 같은 자발적 후기가 꾸준해 광고 의심은 낮고 신뢰도는 높은 편입니다. 미나리 향에 대한 호불호는 있지만 전반적으로 만족 후기가 우세해요. 웨이팅·주차는 감안하세요.",
+      "recs": [
+        [
+          "성수 데이트",
+          "◎",
+          1
+        ],
+        [
+          "미나리 향 좋아함",
+          "◎",
+          1
+        ],
+        [
+          "웨이팅 싫음",
+          "✕",
+          0
+        ]
+      ],
+      "src": [
+        [
+          "능동미나리 성수점 주차·웨이팅 후기(리뷰해써)",
+          "https://didit-review.tistory.com/entry/서울성수-모든-음식에-미나리가-능동미나리-성수점-주차-웨이팅"
+        ],
+        [
+          "능동미나리 내돈내산 후기(goodgoing)",
+          "https://goodgoing.tistory.com/entry/성수역-맛집-능동미나리-성수점-내돈내산-후기-정말-여기가-성수-데이트-맛집-맞아"
+        ]
+      ],
+      "reasons": {
+        "ad": "여러 블로그에 '내돈내산'·'정말 솔직한 후기'를 내세운 자발적 글이 꾸준하고, 단기 협찬 집중·반복 홍보 문구가 두드러지지 않음 → 낮음 25.",
+        "trust": "주차·웨이팅·구체 메뉴 평이 분산된 후기가 여러 출처에 꾸준하고 재방문 언급도 있음 → 높음 72.",
+        "sat": "미나리 향 호불호는 있으나 '줄 서서 먹는' 만족 후기가 우세 → 긍정."
+      },
+      "shops": [
+        {
+          "name": "능동미나리 성수점",
+          "rep": "성수 미나리 요리 웨이팅 맛집",
+          "area": "서울 성수",
+          "note": "거의 모든 메뉴에 미나리 — 성수 데이트 맛집",
+          "url": "https://didit-review.tistory.com/entry/서울성수-모든-음식에-미나리가-능동미나리-성수점-주차-웨이팅"
+        }
+      ],
+      "article": [
+        [
+          "h",
+          "이름값 하는 곳, '능동미나리' 성수점"
+        ],
+        [
+          "p",
+          "성수에서 줄 서서 먹는 맛집을 찾는다면 '능동미나리'가 자주 거론됩니다. 이름 그대로 거의 모든 음식에 미나리가 들어가는 독특한 콘셉트로, 미나리 특유의 향과 식감을 좋아하는 사람들에게 입소문이 났어요."
+        ],
+        [
+          "q",
+          "협찬 후기보다 '내돈내산'·'솔직 후기'가 많다는 점이 이 집의 신뢰도를 끌어올립니다."
+        ],
+        [
+          "h",
+          "왜 믿을 만한가"
+        ],
+        [
+          "p",
+          "여러 블로그에 '정말 솔직한 후기', '내돈내산', '줄 서서 먹는' 같은 자발적 표현의 글이 꾸준합니다. 주차·웨이팅 같은 실제 방문 정보와 메뉴별 구체 평이 분산돼 있어, 단기 협찬으로 띄운 곳과는 결이 다릅니다."
+        ],
+        [
+          "h",
+          "한끗 정리"
+        ],
+        [
+          "ul",
+          [
+            "거의 모든 메뉴에 미나리 — 향 좋아하면 강력 추천, 싫으면 비추",
+            "'내돈내산' 솔직 후기가 많아 광고 의심은 낮은 편",
+            "성수 데이트 코스로 인기 — 웨이팅·주차는 미리 감안"
+          ]
+        ]
+      ],
+      "tags": [
+        "맛집",
+        "성수",
+        "능동미나리",
+        "미나리",
+        "웨이팅맛집"
+      ],
+      "images": [
+        "https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdna%2Fce1Zyu%2FbtsJDz5u7nr%2FAAAAAAAAAAAAAAAAAAAAAGCt_xfYkFUkTrwWkbUG4DJHp6yuzdvRTSei7cYq2UQm%2Fimg.jpg%3Fcredential%3DyqXZFxpELC7KVnFOS48ylbz2pIh7yKj8%26expires%3D1782831599%26allow_ip%3D%26allow_referer%3D%26signature%3DsZ8qU4f7q7A0O5BLudlm%252FuUKSLs%253D",
+        "https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdna%2FIVZia%2FbtsL1i8Bjn5%2FAAAAAAAAAAAAAAAAAAAAAMgFnzIpseS1Ctgu5FHBamprb2SOxChxLe1DfHxXR3zE%2Fimg.jpg%3Fcredential%3DyqXZFxpELC7KVnFOS48ylbz2pIh7yKj8%26expires%3D1782831599%26allow_ip%3D%26allow_referer%3D%26signature%3DcAAJBtANn4qJ9npy9p%252FkQrs8QNY%253D"
       ]
     }
   ]
