@@ -4228,6 +4228,194 @@ window.HANGEUT_DATA = {
         "https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdna%2Fce1Zyu%2FbtsJDz5u7nr%2FAAAAAAAAAAAAAAAAAAAAAGCt_xfYkFUkTrwWkbUG4DJHp6yuzdvRTSei7cYq2UQm%2Fimg.jpg%3Fcredential%3DyqXZFxpELC7KVnFOS48ylbz2pIh7yKj8%26expires%3D1782831599%26allow_ip%3D%26allow_referer%3D%26signature%3DsZ8qU4f7q7A0O5BLudlm%252FuUKSLs%253D",
         "https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdna%2FIVZia%2FbtsL1i8Bjn5%2FAAAAAAAAAAAAAAAAAAAAAMgFnzIpseS1Ctgu5FHBamprb2SOxChxLe1DfHxXR3zE%2Fimg.jpg%3Fcredential%3DyqXZFxpELC7KVnFOS48ylbz2pIh7yKj8%26expires%3D1782831599%26allow_ip%3D%26allow_referer%3D%26signature%3DcAAJBtANn4qJ9npy9p%252FkQrs8QNY%253D"
       ]
+    },
+    {
+      "id": "aespa-armageddon-challenge",
+      "type": "트렌드",
+      "cat": "노래·챌린지",
+      "coverCat": "cat-music",
+      "collectedAt": "2026-06-19",
+      "analyzedAt": "2026-06-19",
+      "buzz": "매우 화제성 높음",
+      "stage": "피크",
+      "stageMsg": "지금이 가장 핫한 시기",
+      "label": "지금 바로 도전해도 핵인싸",
+      "labelCls": "good",
+      "title": "에스파 아마겟돈 챌린지",
+      "def": "쇠맛 나는 독특한 안무와 'Armageddon' 후렴구가 특징인 댄스 챌린지",
+      "excerpt": "최상급 쇠맛과 절도 있는 안무로 숏폼을 강타한 에스파의 챌린지. ITZY, 뉴진스 등 동료 아이돌과의 콜라보로 화제성을 극대화하며 '피크' 유행을 달리고 있습니다.",
+      "pull": "이 챌린지, 지금 안 추면 늦어요!",
+      "verdict": "에스파의 '아마겟돈'은 'Supernova'의 메가 히트에 이어 나온 곡임에도 불구하고, 특유의 '쇠맛' 가득한 사운드와 절도 있는 포인트 안무로 숏폼 씬을 장악했습니다. 특히 ITZY 예지, 뉴진스 해린·민지 등 다른 인기 아이돌 그룹 멤버들이 참여한 챌린지 영상이 수백만에서 천만 뷰를 넘기며 폭발적인 인기를 견인하고 있습니다. 지금이 유행의 최정점으로, 챌린지에 참여한다면 가장 뜨거운 반응을 얻을 수 있는 시기입니다.",
+      "recs": [
+        [
+          "지금 따라하기",
+          "◎",
+          1
+        ],
+        [
+          "친구와 함께",
+          "◎",
+          1
+        ],
+        [
+          "'쇠맛' 느낌 살리기",
+          "○",
+          1
+        ]
+      ],
+      "src": [
+        [
+          "aespa Official YouTube",
+          "https://www.youtube.com/watch?v=sWszUNJRAek"
+        ],
+        [
+          "연예부기자 다람이 YouTube",
+          "https://www.youtube.com/watch?v=8viCovhY808"
+        ]
+      ],
+      "tags": [
+        "K-POP",
+        "댄스챌린지",
+        "에스파",
+        "아마겟돈",
+        "아이돌"
+      ],
+      "video": {
+        "youtube": "sWszUNJRAek",
+        "cap": "Armageddon with YEJI(ITZY)"
+      },
+      "article": [
+        [
+          "h",
+          "요즘 숏폼, '아마겟돈'이 지배 중"
+        ],
+        [
+          "p",
+          "'Supernova'로 이미 한 번 숏폼을 휩쓸었던 에스파가 '아마겟돈'으로 또다시 정점을 찍었습니다. 마치 로봇이 움직이는 듯한 절도 있는 안무와 '쇠맛' 가득한 묵직한 비트가 특징으로, 한 번 보면 잊을 수 없는 중독성을 자랑합니다."
+        ],
+        [
+          "q",
+          "ITZY, 뉴진스 등 역대급 콜라보로 화제성 폭발"
+        ],
+        [
+          "h",
+          "왜 이렇게 떴을까?"
+        ],
+        [
+          "p",
+          "가장 큰 인기 요인은 단연 동료 아이돌들과의 콜라보 챌린지입니다. ITZY 예지, 뉴진스 민지와 해린 등 다른 그룹의 최정상급 아이돌들이 참여한 영상들이 수백만, 많게는 천만 뷰를 돌파하며 팬덤을 넘어 대중적인 인지도를 확보했습니다."
+        ],
+        [
+          "p",
+          "또한, '쇠맛'이라는 독특한 컨셉이 오히려 신선하게 다가가며 따라 하고 싶은 욕구를 자극했습니다. 누구나 쉽게 따라 할 수 있는 포인트 안무 구간이 있어 참여의 장벽이 낮은 것도 한몫했습니다."
+        ],
+        [
+          "h",
+          "한끗 정리: 지금이 바로 '피크'"
+        ],
+        [
+          "ul",
+          [
+            "지금 도전하면 당신도 '핵인싸' 등극 가능!",
+            "친구와 함께 각 잡힌 '칼군무'에 도전해보세요.",
+            "포인트는 무표정한 얼굴과 절도 있는 동작으로 '쇠맛' 감성을 살리는 것."
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "zico-spot-challenge",
+      "type": "트렌드",
+      "cat": "노래·챌린지",
+      "coverCat": "cat-music",
+      "collectedAt": "2026-06-19",
+      "analyzedAt": "2026-06-19",
+      "buzz": "화제성 높음",
+      "stage": "안정화",
+      "stageMsg": "스테디셀러, 꾸준히 보이는 중",
+      "label": "지금 해도 자연스러운 스테디 챌린지",
+      "labelCls": "good",
+      "title": "지코 'SPOT!' 챌린지 (feat. JENNIE)",
+      "def": "힙한 바이브와 따라 하기 쉬운 그루브가 특징인 지코와 제니의 댄스 챌린지",
+      "excerpt": "출시 직후부터 1.5억 뷰를 돌파한 공식 MV와 함께 숏폼을 달군 스테디셀러 챌린지. 제니를 시작으로 수많은 동료 아티스트들이 참여하며 꾸준한 인기를 증명했습니다.",
+      "pull": "힙한 바이브, 놓치지 마세요!",
+      "verdict": "지코와 블랙핑크 제니의 만남만으로도 큰 화제를 모았던 'SPOT!'은 힙한 분위기와 따라 하기 쉬운 포인트 안무로 2026년 상반기를 대표하는 챌린지 중 하나로 자리 잡았습니다. 공식 MV 조회수가 1.5억 회를 넘고, 수많은 동료 아티스트들이 챌린지에 참여하며 그 인기를 증명했습니다. 출시된 지 시간이 조금 흘러 현재는 '안정화' 단계에 접어들었지만, 여전히 언제 어디서 춰도 자연스럽고 '힙한' 느낌을 줄 수 있는 스테디셀러 챌린지입니다.",
+      "recs": [
+        [
+          "힙한 느낌 내고 싶을 때",
+          "◎",
+          1
+        ],
+        [
+          "가볍게 리듬 탈 때",
+          "◎",
+          1
+        ],
+        [
+          "과한 인싸 느낌 피할 때",
+          "○",
+          1
+        ]
+      ],
+      "src": [
+        [
+          "HYBE LABELS Official MV",
+          "https://www.youtube.com/watch?v=xfqBQ2XhBCg"
+        ],
+        [
+          "ZICO Official YouTube Challenge",
+          "https://www.youtube.com/watch?v=AUIL1-z6xiA"
+        ]
+      ],
+      "tags": [
+        "K-POP",
+        "댄스챌린지",
+        "지코",
+        "제니",
+        "SPOT"
+      ],
+      "video": {
+        "youtube": "AUIL1-z6xiA",
+        "cap": "ZICO X JENNIE - SPOT! Challenge"
+      },
+      "article": [
+        [
+          "h",
+          "'SPOT!', 힙합씬과 아이돌씬을 모두 잡다"
+        ],
+        [
+          "p",
+          "지코와 제니, 두 트렌드 세터의 만남은 공개 전부터 큰 기대를 모았습니다. 'SPOT!'은 그 기대를 저버리지 않는 세련된 비트와 중독적인 멜로디, 그리고 누구나 쉽게 따라 할 수 있는 그루브한 안무로 공개 직후부터 지금까지 꾸준한 사랑을 받고 있습니다."
+        ],
+        [
+          "q",
+          "수많은 아티스트 릴레이 참여, 인기를 증명하다"
+        ],
+        [
+          "h",
+          "롱런의 비결은?"
+        ],
+        [
+          "p",
+          "단순히 한 번의 유행으로 끝나지 않고 롱런할 수 있었던 비결은 바로 '확장성'에 있습니다. 전소미, 르세라핌, 도경수(EXO) 등 장르와 세대를 불문한 수많은 아티스트들이 자신만의 스타일로 챌린지를 소화하며 생명력을 불어넣었습니다."
+        ],
+        [
+          "p",
+          "또한, 원곡 자체가 가진 높은 음악적 퀄리티 덕분에 챌린지를 넘어 BGM으로도 폭넓게 사용되며 꾸준히 대중에게 노출된 점도 롱런의 주요 요인입니다."
+        ],
+        [
+          "h",
+          "한끗 정리: 안정기의 매력"
+        ],
+        [
+          "ul",
+          [
+            "'피크'는 지났지만, 오히려 지금이 부담 없이 즐기기 좋은 시기.",
+            "과하게 유행을 좇는 느낌 없이, 자연스럽게 힙한 바이브를 연출하고 싶을 때 추천.",
+            "친구와 함께 가볍게 리듬을 타며 영상을 찍어보세요."
+          ]
+        ]
+      ]
     }
   ]
 };
