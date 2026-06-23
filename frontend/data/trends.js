@@ -4614,6 +4614,267 @@ window.HANGEUT_DATA = {
         "https://app.allmyuniverse.com/apps/gen-studio/users/2-da4b9237/1780977085001-gpt-image-2-8e6e1699-rwgl4c.webp"
       ],
       "pull": ""
+    },
+    {
+      "id": "siltarae-bingsu",
+      "type": "신뢰분석",
+      "cat": "맛집",
+      "coverCat": "cat-food",
+      "collectedAt": "2026-06-23",
+      "analyzedAt": "2026-06-23",
+      "buzz": "화제성 보통",
+      "label": "취향 따라 갈림",
+      "labelCls": "mid",
+      "title": "실타래 빙수",
+      "excerpt": "실처럼 곱게 갈아낸 얼음의 독특한 식감으로 SNS에서 주목받는 신상 빙수. 하지만 원조 논란과 맛에 대한 호불호가 갈리는 편.",
+      "pull": "새로운 식감, 하지만 맛은 글쎄?",
+      "verdict": "실타래 빙수는 가느다란 실처럼 얼음을 뽑아내는 비주얼로 주목받고 있습니다. 기존 눈꽃빙수보다 더 부드러운 식감이 특징이지만, 일부에서는 '맛은 밍밍하고 비주얼만 예쁘다'는 평과 함께 원조 논쟁도 있어 호불호가 갈립니다. 광고/협찬 게시물이 많아 보이지는 않으나, 신상 아이템 특성상 바이럴 마케팅 가능성은 있어 보입니다.",
+      "ad": 45,
+      "trust": 55,
+      "sat": "mix",
+      "satTxt": "호불호 갈림",
+      "reasons": {
+        "ad": [
+          "신상 아이템으로 바이럴 마케팅 가능성",
+          "인스타그램 중심의 비주얼 강조 게시물 다수"
+        ],
+        "trust": [
+          "실제 소비자들의 구체적인 식감 묘사 후기",
+          "맛에 대한 솔직한 비판(밍밍하다, 평범하다) 후기 존재"
+        ],
+        "sat": [
+          "'독특한 식감'은 긍정적 평가",
+          "'밍밍한 맛', '가격 대비 아쉽다'는 부정적 평가 공존"
+        ]
+      },
+      "recs": [
+        [
+          "새로운 식감 경험",
+          "◎",
+          1
+        ],
+        [
+          "진한 맛을 선호",
+          "✕",
+          0
+        ],
+        [
+          "사진 찍기 좋은 디저트",
+          "○",
+          1
+        ]
+      ],
+      "src": [
+        [
+          "쓰레드 (잇컾)",
+          "https://www.threads.com/@itcof_official/post/DIBSJtGyr06/"
+        ],
+        [
+          "네이버 블로그 (원조 논란)",
+          "https://m.blog.naver.com/mopjh/223405696964"
+        ]
+      ],
+      "tags": [
+        "빙수",
+        "여름디저트",
+        "신상빙수",
+        "식감"
+      ],
+      "article": [
+        [
+          "h",
+          "실처럼 사르르, 2026년 여름의 신상 빙수"
+        ],
+        [
+          "p",
+          "올여름, 인스타그램 피드를 장식하는 새로운 빙수가 등장했습니다. 바로 '실타래 빙수'입니다. 이름처럼 마치 명주실을 뽑아내듯 가늘고 고운 입자를 자랑하며 독특한 비주얼로 눈길을 사로잡고 있습니다."
+        ],
+        [
+          "q",
+          "눈꽃빙수보다 더 부드럽지만, 맛에 대한 평가는 엇갈립니다."
+        ],
+        [
+          "h",
+          "광고일까, 진짜 후기일까?"
+        ],
+        [
+          "p",
+          "아직 대대적인 광고나 협찬은 눈에 띄지 않지만, 비주얼을 강조하는 SNS 특성상 바이럴 마케팅의 가능성은 열려있습니다. '원조'를 주장하는 업체들의 신경전도 보여, 단순 유행을 넘어 하나의 카테고리로 자리 잡을지는 지켜봐야 합니다."
+        ],
+        [
+          "p",
+          "실제 후기를 보면 '입에서 녹는 식감이 신기하다'는 긍정 평가와 '너무 밍밍해서 시럽 맛으로 먹는다', '가격에 비해 특별한 맛은 아니다'라는 솔직한 평가가 공존합니다. 신뢰도는 보통 수준으로 보입니다."
+        ],
+        [
+          "h",
+          "한끗 정리"
+        ],
+        [
+          "ul",
+          [
+            "가볼 만한 때: 새로운 디저트 식감을 경험하고 싶을 때, 사진 찍기 좋은 예쁜 빙수를 찾을 때.",
+            "피해야 할 때: 진하고 깊은 맛의 클래식한 팥빙수나 과일 빙수를 기대할 때.",
+            "꿀팁: 망고, 초코 등 시럽이나 토핑이 풍부하게 올라간 메뉴를 선택하는 것이 '밍밍함'을 피하는 방법일 수 있습니다."
+          ]
+        ]
+      ],
+      "shops": [
+        {
+          "name": "티엠아이",
+          "rep": "연남동 실타래 빙수 원조 맛집",
+          "area": "서울 마포·연남",
+          "note": "다양한 맛의 실타래 빙수를 처음 선보인 곳으로 유명"
+        },
+        {
+          "name": "더 썸머",
+          "rep": "인천 송도 대형 카페",
+          "area": "인천 연수·송도",
+          "note": "넓은 공간과 함께 즐기는 생망고 실타래 빙수가 인기",
+          "url": "https://m.blog.naver.com/dalcong22/223126046029"
+        },
+        {
+          "name": "페이지 31",
+          "rep": "부산 기장 오션뷰 카페",
+          "area": "부산 기장",
+          "note": "바다를 보며 즐기는 실타래 빙수로 입소문",
+          "url": "https://m.blog.naver.com/xo_0ox/223458694859"
+        }
+      ],
+      "images": [
+        "https://scontent-ssn1-1.cdninstagram.com/v/t51.75761-15/489084576_18044840501601282_2432418305841633633_n.jpg?stp=dst-jpg_e35_tt6&amp;_nc_cat=111&amp;ig_cache_key=MzYwMzI0MTAwODYxNzkzMDA0Mg%3D%3D.3-ccb7-5&amp;ccb=7-5&amp;_nc_sid=58cdad&amp;efg=eyJ2ZW5jb2RlX3RhZyI6IkZFRUQueHBpZHMuMTM1MC5zZHIucmVndWxhcl9waG90by5DMyJ9&amp;_nc_ohc=C-qDDo7a5KUQ7kNvwHljoIs&amp;_nc_oc=AdpTXqELqLaVaw1vUdf9HZ9yLERDIlTZnHXpzJkYBZ_Mz8vzSV_OpyLNIunkNjg53uY&amp;_nc_ad=z-m&amp;_nc_cid=0&amp;_nc_zt=23&amp;_nc_ht=scontent-ssn1-1.cdninstagram.com&amp;_nc_gid=rLghGr3qlyErHhfXqS6k-g&amp;_nc_ss=7a22e&amp;oh=00_Af9sTzIeit__3oc-at8n-GD0BI79d69RPE8WSOGeVZQfwQ&amp;oe=6A40472F",
+        "https://blogthumb.pstatic.net/MjAyNDA1MjFfMTY3/MDAxNzE2MjYzMTYxNDI2.tfTB2OhyNoRAXDIVyUyYCMr5ZfYk_sqEWwQz-nNkBpUg.aCmuPOl7zNxHm2d2jYIr_vqUQFCelG8b1GsxlfBtCmwg.JPEG/VideoCapture%A3%DF20240322%A3%AD085220.jpg?type=w2"
+      ]
+    },
+    {
+      "id": "mara-jeongol",
+      "type": "신뢰분석",
+      "cat": "맛집",
+      "coverCat": "cat-food",
+      "collectedAt": "2026-06-23",
+      "analyzedAt": "2026-06-23",
+      "buzz": "화제성 높음",
+      "label": "믿고 가볼 만함",
+      "labelCls": "good",
+      "title": "마라전골",
+      "excerpt": "마라탕과 마라샹궈의 장점을 합친 메뉴. 푸짐한 건더기와 얼얼한 국물로 MZ세대의 입맛을 사로잡으며 새로운 '소주 안주' 강자로 떠올랐다.",
+      "pull": "마라, 이젠 전골로 즐기세요",
+      "verdict": "마라전골은 마라탕보다 국물이 자박하고 건더기가 풍성해 '요리'에 가까운 메뉴입니다. 여러 명이 함께 즐기기 좋고, 특히 술안주로 각광받고 있습니다. 유명 프랜차이즈를 중심으로 맛이 상향 평준화되어 실패 확률이 낮습니다. 광고성 게시물보다는 실제 방문 후기가 많아 신뢰도가 높습니다.",
+      "ad": 30,
+      "trust": 75,
+      "sat": "pos",
+      "satTxt": "대체로 만족",
+      "reasons": {
+        "ad": [
+          "프랜차이즈 가맹점 홍보성 게시물 일부 존재"
+        ],
+        "trust": [
+          "'내돈내산' 인증과 함께 지점별 비교, 메뉴 추천 등 구체적인 후기 다수",
+          "재방문 후기가 많아 충성도 높은 편"
+        ],
+        "sat": [
+          "'마라 입문자도 즐기기 좋은 맛', '술안주로 최고'라는 긍정 평가 지배적",
+          "'웨이팅이 길다'는 점은 단점으로 언급"
+        ]
+      },
+      "recs": [
+        [
+          "마라 초보자",
+          "◎",
+          1
+        ],
+        [
+          "여럿이서 술 한잔",
+          "◎",
+          1
+        ],
+        [
+          "강한 향신료를 싫어한다면",
+          "○",
+          1
+        ]
+      ],
+      "src": [
+        [
+          "티스토리 (천진영감 후기)",
+          "https://secret9yoon3.tistory.com/entry/마라를-처음-접하게-만들어-준-“천진영감”-마라전골-대추천👍"
+        ],
+        [
+          "다이닝코드 (맛집 랭킹)",
+          "https://www.diningcode.com/list.dc?query=마라+마라전골"
+        ]
+      ],
+      "tags": [
+        "마라",
+        "전골",
+        "중식",
+        "술안주",
+        "회식메뉴"
+      ],
+      "article": [
+        [
+          "h",
+          "마라탕 다음은? 2026년의 답은 '마라전골'"
+        ],
+        [
+          "p",
+          "마라탕, 마라샹궈의 열풍을 이을 다음 주자는 바로 마라전골입니다. 탕과 샹궈의 중간 형태로, 얼얼한 마라 소스에 푸짐한 고기와 채소, 분모자 등을 넣고 끓여 먹는 요리죠. 특히 저녁 식사나 술자리 메뉴로 큰 인기를 끌고 있습니다."
+        ],
+        [
+          "q",
+          "마라 초보자부터 마니아까지, 모두의 입맛을 사로잡은 메뉴."
+        ],
+        [
+          "h",
+          "광고 걱정 없이 즐기는 마라"
+        ],
+        [
+          "p",
+          "마라전골은 이미 '용용선생', '천진영감' 등 유명 맛집들을 통해 대중화된 메뉴입니다. 덕분에 인위적인 바이럴 광고보다는, 실제 방문객들의 '내돈내산' 후기를 쉽게 찾아볼 수 있어 신뢰도가 높습니다."
+        ],
+        [
+          "p",
+          "다만 인기 지점은 저녁 시간대 긴 웨이팅이 있을 수 있다는 점, 지점별로 맛의 편차가 약간 존재한다는 점은 감안해야 합니다. 하지만 전반적인 만족도는 매우 높은 편입니다."
+        ],
+        [
+          "h",
+          "한끗 정리"
+        ],
+        [
+          "ul",
+          [
+            "가볼 만한 때: 친구들과 새로운 안주에 도전하고 싶을 때, 얼큰한 국물 요리가 당길 때.",
+            "피해야 할 때: 마라의 '얼얼한 맛(麻)' 자체를 싫어하는 사람과의 식사 자리.",
+            "꿀팁: 마라 맛에 익숙하지 않다면 맵기 단계를 가장 낮은 것으로 선택하고, '꿔바로우'나 '유린기' 같은 사이드 메뉴를 함께 주문해 매운맛을 중화시키는 것을 추천합니다."
+          ]
+        ]
+      ],
+      "shops": [
+        {
+          "name": "용용선생",
+          "rep": "홍콩 레트로 컨셉 마라전골 대표 맛집",
+          "area": "전국 프랜차이즈",
+          "note": "화산마라전골과 고량주 샘플러가 시그니처 메뉴",
+          "url": "https://kr.trip.com/moments/detail/seoul-234-125000290/"
+        },
+        {
+          "name": "천진영감",
+          "rep": "강남역 줄 서서 먹는 마라전골 맛집",
+          "area": "서울 강남",
+          "note": "홍스프, 백스프, 로제스프 등 다양한 육수 선택 가능",
+          "url": "https://secret9yoon3.tistory.com/entry/%EB%A7%88%EB%9D%BC%EB%A5%BC-%EC%B2%98%EC%9D%8C-%EC%A0%91%ED%95%98%EA%B2%8C-%EB%A7%8C%EB%93%A4%EC%96%B4-%EC%A4%80-%E2%80%9C%EC%B2%9C%EC%A7%84%EC%98%81%EA%B0%90%E2%80%9D-%EB%A7%88%EB%9D%BC%EC%A0%84%EA%B3%A8-%EB%8C%80%EC%B6%94%EC%B2%9C%F0%9F%91%8D"
+        },
+        {
+          "name": "라라관",
+          "rep": "부산 서면 사천요리 전문점",
+          "area": "부산 부산진·서면",
+          "note": "본토의 맛을 느낄 수 있는 사천식 마라전골로 유명",
+          "url": "https://www.threads.net/@origin_recipe/post/DViHz3ZDs2-/"
+        }
+      ],
+      "images": [
+        "https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdna%2FQeg8Y%2FdJMcagw3QF4%2FAAAAAAAAAAAAAAAAAAAAALmre_AFN6FA9aPue5av4L4ME-61Iy-8tXRnK0CVmDIa%2Fimg.jpg%3Fcredential%3DyqXZFxpELC7KVnFOS48ylbz2pIh7yKj8%26expires%3D1782831599%26allow_ip%3D%26allow_referer%3D%26signature%3D1sr%252F%252F6mYNz2FA0RrRZ%252B2xTUPLPw%253D",
+        "https://d12zq4w4guyljn.cloudfront.net/750_750_20260502081244_profile_photo1_7bdfab5b6008.webp"
+      ]
     }
   ]
 };
