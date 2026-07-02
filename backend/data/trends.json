@@ -5492,6 +5492,98 @@
         "https://static.teamblind.com/img/web/share_topic.png"
       ],
       "buzz": "화제성 상승"
+    },
+    {
+      "id": "jungjijeong",
+      "type": "트렌드",
+      "cat": "신조어",
+      "coverCat": "cat-slang",
+      "collectedAt": "2026-07-02",
+      "analyzedAt": "2026-07-02",
+      "fresh": true,
+      "buzz": "화제성 높음",
+      "stage": "피크",
+      "stageMsg": "방송, SNS에서 활발히 사용 중",
+      "label": "지금 써도 됨",
+      "labelCls": "good",
+      "title": "중지정",
+      "def": "포기하지 않고 계속 나아가는 마음가짐을 뜻하는 말",
+      "pureKorean": "중요한 건 지치지 않는 정신",
+      "example": "이번 프로젝트 너무 힘들지만, 우리에겐 중지정이 있잖아!",
+      "excerpt": "‘중요한 건 꺾이지 않는 마음’에 이어 등장한 자기계발형 신조어. 포기하지만 않으면 무엇이든 이룰 수 있다는 긍정적인 메시지를 담고 있습니다.",
+      "verdict": "2024년 '중꺾마'의 계보를 잇는 2026년 대표 자기계발 신조어입니다. '중요한 건 지치지 않는 정신'의 줄임말로, 어려운 상황에서도 포기하지 않는 끈기를 강조할 때 사용됩니다. SNS는 물론 공공기관 캠페인에서도 활용될 만큼 긍정적이고 대중적인 표현이라 자연스럽게 사용할 수 있습니다.",
+      "recs": [
+        [
+          "일상 대화",
+          "◎",
+          1
+        ],
+        [
+          "동기 부여",
+          "◎",
+          1
+        ],
+        [
+          "공식 석상",
+          "○",
+          1
+        ]
+      ],
+      "src": [
+        [
+          "티스토리",
+          "https://subjop.tistory.com/entry/2026년-상반기-신조어-및-유행어-트렌드-완벽-정리-feat-중지정-난리자베스"
+        ],
+        [
+          "네이버블로그",
+          "https://m.blog.naver.com/PostView.naver?blogId=mopaspr&logNo=224180306587"
+        ]
+      ],
+      "tags": [
+        "신조어",
+        "줄임말",
+        "자기계발",
+        "중꺾마"
+      ],
+      "article": [
+        [
+          "h",
+          "꺾이지 않는 마음, 그 다음은 '지치지 않는 정신'"
+        ],
+        [
+          "p",
+          "'중요한 건 꺾이지 않는 마음', 기억하시나요? 2024년을 휩쓸었던 이 말이 2026년에는 '중지정'이라는 새로운 형태로 우리 곁에 찾아왔습니다. '중요한 건 지치지 않는 정신'의 줄임말로, 꺾이지 않는 것을 넘어 지치지 않고 나아가는 끈기와 꾸준함의 가치를 이야기합니다."
+        ],
+        [
+          "q",
+          "포기만 하지 않으면 언젠가는 된다는 믿음의 주문"
+        ],
+        [
+          "h",
+          "어디서, 어떻게 쓰일까?"
+        ],
+        [
+          "p",
+          "공부나 취업 준비처럼 긴 호흡이 필요한 상황에서 스스로를 다독이거나, 힘들어하는 친구를 응원할 때 주로 사용됩니다. \"이번 시험은 망했지만, 우리에겐 중지정이 있잖아!\" 와 같은 식이죠. SNS 해시태그는 물론, 행정안전부와 같은 공공기관에서도 정책 홍보에 활용할 만큼 널리 퍼지고 있습니다."
+        ],
+        [
+          "h",
+          "한끗 정리"
+        ],
+        [
+          "ul",
+          [
+            "AZ(아재)도 OK: '중꺾마'를 아신다면 쉽게 이해하고 사용할 수 있는 긍정적인 신조어입니다.",
+            "핵심 의미: 결과보다 과정을, 한 번의 성공보다 꾸준함을 중요시하는 요즘 세대의 가치관이 담겨있습니다.",
+            "사용 꿀팁: 팀 프로젝트나 스터디 그룹의 구호로 사용해 보세요! 팀워크와 사기를 동시에 끌어올릴 수 있습니다."
+          ]
+        ]
+      ],
+      "images": [
+        "https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdna%2FwNKce%2FdJMb99ZONFc%2FAAAAAAAAAAAAAAAAAAAAAG1vi-iSvPfdhyYpK6cFKh3Urc2QLFhVHn0W9MpCX9iB%2Fimg.jpg%3Fcredential%3DyqXZFxpELC7KVnFOS48ylbz2pIh7yKj8%26expires%3D1785509999%26allow_ip%3D%26allow_referer%3D%26signature%3D%252FNrz9WdpXVutZrhNzGizcNs0OL0%253D",
+        "https://blogthumb.pstatic.net/MjAyNjAyMTFfMTkg/MDAxNzcwNzk4MDc4MjY0.DYd86ihxXpwOPwcoFy8EGNR9frpnbd1flXzdMWsMQf0g.P_MjQKkQHr94qwk6yOgy17NAPBefmFI_Yhoz0IF1BHMg.PNG/image.png?type=w2"
+      ],
+      "pull": ""
     }
   ]
 }
