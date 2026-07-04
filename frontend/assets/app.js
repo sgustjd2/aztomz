@@ -1,7 +1,7 @@
 /* ============================================================
    한끗 — 공유 스토어 + 헬퍼 (데이터는 data/trends.js 에서 로드)
-   회원/세션/저장/리뷰는 localStorage 기반 프로토타입.
-   ▶ 실서비스: 이 STORE 레이어만 Supabase로 교체. UI는 H.* 인터페이스만 사용.
+   회원/세션/저장/리뷰는 localStorage 기반 로컬 개인화.
+   ▶ H.* 는 로컬 스토어 추상화 계층. 향후 백엔드를 붙여도 UI는 이 인터페이스만 사용.
    ▶ 신선도: 항상 '오늘'(브라우저 new Date) 대비 analyzedAt 으로 계산해 라이브 표시.
    ============================================================ */
 (function (global) {
@@ -13,7 +13,13 @@
 
   /* ---------- 저수준 storage ---------- */
   const LS = global.localStorage;
-  const K = { users:'hangeut.users', session:'hangeut.session', saves:'hangeut.saves', reviews:'hangeut.reviews' };
+  const K = {
+    users:'hangeut.users',
+    session:'hangeut.session',
+    saves:'hangeut.saves',
+    reviews:'hangeut.reviews',
+    pulseIdeas:'hangeut.pulseIdeas'
+  };
   function read(k, def){ try{ return JSON.parse(LS.getItem(k)) ?? def; }catch(e){ return def; } }
   function write(k, v){ try{ LS.setItem(k, JSON.stringify(v)); }catch(e){} }
   function hash(s){ let h=5381; for(let i=0;i<s.length;i++){ h=((h<<5)+h)+s.charCodeAt(i); h|=0; } return 'h'+(h>>>0).toString(36); }
@@ -29,6 +35,33 @@
   H.bandTxt = (v)=> v<=20?'낮음':v<=40?'약간':v<=60?'보통':v<=80?'높음':'매우 높음';
   H.fmtDate = (ts)=>{ const d=new Date(ts); const p=n=>String(n).padStart(2,'0'); return `${d.getFullYear()}.${p(d.getMonth()+1)}.${p(d.getDate())}`; };
   H.param = (k)=> new URLSearchParams(global.location.search).get(k);
+  H.resolve = (v)=> Promise.resolve(v);
+  H.trunc = (s, n=88)=> {
+    s = String(s || '').trim().replace(/\s+/g, ' ');
+    return s.length > n ? `${s.slice(0, n - 1)}…` : s;
+  };
+  H.summary = (t, n=88)=> H.trunc((t && (t.excerpt || t.def || t.stageMsg || t.verdict || t.pull)) || '', n);
+
+  const SAFE_PAGES = new Set(['index.html','list.html','trend.html','dictionary.html','login.html','signup.html','me.html','pulse.html']);
+  H.safeNext = (next, fallback='index.html')=>{
+    const fb = SAFE_PAGES.has(fallback) ? fallback : 'index.html';
+    const raw = String(next || '').trim();
+    if(!raw) return fb;
+    if(/^(?:[a-z][a-z0-9+.-]*:|\/\/|\/|\\)/i.test(raw)) return fb;
+    try{
+      const u = new URL(raw, 'https://hangeut.local/');
+      if(u.origin !== 'https://hangeut.local') return fb;
+      const page = (u.pathname.replace(/^\/+/, '') || 'index.html');
+      if(!SAFE_PAGES.has(page) || page.includes('/') || page.includes('\\')) return fb;
+      return `${page}${u.search}${u.hash}`;
+    }catch(e){ return fb; }
+  };
+  H.currentPage = ()=>{
+    const page = (global.location.pathname.split('/').pop() || 'index.html');
+    return H.safeNext(`${page}${global.location.search}${global.location.hash}`);
+  };
+  H.loginHref = (next)=> `login.html?next=${encodeURIComponent(H.safeNext(next || H.currentPage()))}`;
+  H.signupHref = (next)=> `signup.html?next=${encodeURIComponent(H.safeNext(next || H.currentPage()))}`;
 
   /* ---------- 오늘 / 신선도 (라이브) ---------- */
   H.todayStr = ()=>{ const d=new Date(); const p=x=>String(x).padStart(2,'0'); return `${d.getFullYear()}.${p(d.getMonth()+1)}.${p(d.getDate())}`; };
@@ -97,6 +130,14 @@
   };
   H.avgRating = (trendId)=>{ const rs=H.reviews(trendId); if(!rs.length) return null; return rs.reduce((s,r)=>s+r.rating,0)/rs.length; };
 
+  /* ---------- pulse ideas (local store; 향후 백엔드 전환 시 이 레이어만 교체) ---------- */
+  H.pulseIdeas = {
+    list: ()=> read(K.pulseIdeas, []),
+    save: (items)=>{ write(K.pulseIdeas, (items || []).slice(0, 80)); return {ok:true}; },
+    addMany: (items)=>{ const next = (items || []).concat(H.pulseIdeas.list()).slice(0, 80); write(K.pulseIdeas, next); return next; },
+    remove: (id)=>{ const next = H.pulseIdeas.list().filter(i=>i.id!==id); write(K.pulseIdeas, next); return next; }
+  };
+
   /* ---------- UI helpers ---------- */
   H.starHTML = (n)=>{ let s=''; for(let i=1;i<=5;i++) s+=`<span class="${i<=Math.round(n)?'':'off'}">★</span>`; return s; };
   // 커버 썸네일용 대표 이미지: 영상 트렌드는 유튜브 썸네일, 아니면 첫 대표 이미지
@@ -128,6 +169,7 @@
         <span class="it-title">${H.freshChip(t.analyzedAt)}${H.esc(t.title)}</span>
         <span class="it-cat">${H.esc(t.cat)} · ${H.esc(t.buzz)}</span>
         <span class="it-label">${H.esc(t.label)}</span>
+        ${H.summary(t)?`<span class="it-desc">${H.esc(H.summary(t, 96))}</span>`:''}
       </span>
       <span class="mini">
         <span class="mrow">광고 ${t.ad} <span class="mbar"><i style="width:${t.ad}%;background:var(--accent)"></i></span></span>
@@ -141,8 +183,9 @@
       <div class="cc-meta">
         <div class="cc-stage">${H.esc(t.stage)}</div>
         <div class="cc-title">${H.esc(t.title)}</div>
-        ${t.pureKorean?`<div class="cc-pure">🌸 ${H.esc(t.pureKorean.split('(')[0].trim())}</div>`:''}
-        ${t.prompt?`<div class="cc-prompt">📋 프롬프트 포함</div>`:''}
+        ${H.summary(t)?`<div class="cc-desc">${H.esc(H.summary(t, 72))}</div>`:''}
+        ${t.pureKorean?`<div class="cc-pure">우리말 · ${H.esc(t.pureKorean.split('(')[0].trim())}</div>`:''}
+        ${t.prompt?`<div class="cc-prompt">프롬프트 포함</div>`:''}
         <div class="cc-foot">${H.freshChip(t.analyzedAt)}</div>
       </div>
     </a>`;

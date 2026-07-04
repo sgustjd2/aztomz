@@ -1,63 +1,74 @@
-# 한끗 — 구조 & 백엔드 전환 계획
+# 한끗 — 정적 멀티페이지 구조
 
-## 현재 구조 (정적 멀티페이지 + 목 백엔드)
-의존성 0, 빌드 0. 어디든(Vercel/GitHub Pages) 즉시 배포.
+## 현재 구조
+의존성 0, 빌드 0. `frontend/`만 Vercel이 서빙하고, `backend/`는 데이터 원본과 운영 스크립트를 담는 비배포 영역이다.
 
 ```
-frontend/  ← Vercel outputDirectory(이것만 배포). backend/  ← 원본·스크립트(비공개)
-frontend/index.html      홈 — 마스트헤드 · 피처드 · "광고일까 진짜일까" 랭킹 인덱스 · "요즘 트렌드" 스트립
-frontend/trend.html?id=  상세 — 점수(광고/신뢰)·만족도·한끗 판단·추천·출처·방문자 후기(작성/목록)·함께 보기
-frontend/login.html      로그인 (?next= 리다이렉트)
-frontend/signup.html     회원가입 (?next=)
-frontend/me.html         내 한끗 — 저장한 트렌드 · 내가 쓴 후기 · 로그아웃 (비로그인 시 login으로 가드)
-frontend/pulse.html      트렌드 펄스 — 창업 트렌드 레이더(pulse.js·pulse-refresh.mjs)
-frontend/assets/styles.css  에디토리얼 디자인 시스템 (DESIGN.md 참고)
-frontend/assets/app.js      목 스토어(H.*) + 신선도 계산 + 마스트헤드/리뷰/저장 헬퍼
-backend/data/trends.json   ★ 데이터 원본(canonical). 사람/스크립트가 수정.
-frontend/data/trends.js     ← backend/scripts/refresh.mjs가 trends.json에서 생성(편집 금지). 사이트가 로드.
-backend/scripts/refresh.mjs  일일 갱신: 재수집·재분석(hermes 플러그) + generatedAt=오늘 + frontend/data/trends.js 생성
-.github/workflows/daily-refresh.yml  매일 06:00 KST 크론 → refresh 실행 → 변경분 커밋
+frontend/  ← Vercel outputDirectory(이것만 배포)
+backend/   ← canonical 데이터·검증·생성 스크립트(비공개)
+
+frontend/index.html      홈 — 오늘의 한끗 · 광고일까 진짜일까 · 요즘 트렌드
+frontend/list.html       전체 목록 — 광고분석/트렌드 목록 + 페이지네이션
+frontend/trend.html?id=  상세 — 점수 · 만족도 · 판단 · 출처 · 후기 · 함께 보기
+frontend/dictionary.html MZ 사전 — 신조어 검색/열람
+frontend/login.html      로컬 계정 로그인 (?next= 리다이렉트)
+frontend/signup.html     로컬 계정 생성 (?next=)
+frontend/me.html         내 한끗 — 저장한 트렌드 · 내가 쓴 후기 · 로그아웃
+frontend/pulse.html      트렌드 펄스 — 창업 트렌드 레이더
+frontend/assets/app.js   H.* 로컬 스토어 추상화 + 공통 UI 헬퍼
+backend/data/trends.json ★ 트렌드 canonical 원본
+frontend/data/trends.js  ← backend/scripts/refresh.mjs 생성물(직접 편집 금지)
 ```
 
-데이터·인증·저장·리뷰는 모두 `assets/app.js`의 `H.*` 인터페이스를 통한다.
-현재 구현은 `localStorage` 기반 **프로토타입**(비밀번호는 단순 해시 — 실보안 아님).
+## 운영 원칙
+- 한끗은 현재 **정적 멀티페이지 + 정적 데이터 갱신 + localStorage 기반 로컬 개인화**로 운영한다.
+- 로그인/회원가입/저장/후기/펄스 아이디어는 서버 계정이 아니라 브라우저 localStorage에 저장되는 개인화 기능이다.
+- 로컬 개인화 데이터는 공개 서버에 저장되지 않고, 다른 브라우저나 다른 기기와 동기화되지 않는다.
+- `H.*`는 로컬 스토어 추상화 계층으로 유지한다. 향후 백엔드를 붙이더라도 우선 교체 대상은 `H.*` 내부이며, 페이지 UI 계약은 유지한다.
+- Supabase 전환은 현재 확정 계획이 아니다. 필요가 생기면 별도 RFC/마이그레이션 계획으로 다시 검토한다.
 
-## 검증된 플로우 (2026-06-05)
-회원가입 → (중복 이메일 차단) → 저장 → 후기 작성(별점/길이 검증) → 마이페이지에 저장·후기 표시
-→ 로그아웃 → me.html 접근 시 login?next=me.html 으로 가드. 전부 동작 확인.
+## 로컬 스토어 계약
+`frontend/assets/app.js`의 `H.*`가 브라우저 저장소를 감싼다.
 
-## 실서비스 전환: 목 → Supabase
-**UI/페이지는 손대지 않는다.** `app.js`의 `H.*` 함수 내부 구현만 교체.
+| 인터페이스 | 현재 저장소 | 역할 |
+|---|---|---|
+| `H.signup/login/logout/user` | `hangeut.users`, `hangeut.session` | 이 브라우저 안의 로컬 계정과 세션 |
+| `H.saves/toggleSave/isSaved` | `hangeut.saves` | 사용자 이메일별 저장한 트렌드 ID |
+| `H.reviews/addReview/myReviews` | `hangeut.reviews` | 방문자 후기와 내 후기 |
+| `H.pulseIdeas` | `hangeut.pulseIdeas` | 펄스에서 저장한 창업 아이디어 |
+| `H.TRENDS`, `H.trend(id)` | `frontend/data/trends.js` | 생성된 정적 트렌드 데이터 |
 
-| 목(localStorage) | Supabase 대체 |
-|---|---|
-| `H.signup/login/logout/user` | `supabase.auth.signUp / signInWithPassword / signOut / getUser` |
-| `H.saves/toggleSave/isSaved` | `saves` 테이블 (user_id, trend_id) + RLS(본인 행만) |
-| `H.reviews/addReview/myReviews` | `reviews` 테이블 (user_id, trend_id, rating, text, created_at) + RLS |
-| `TRENDS` 배열 | `trends` 테이블 (또는 hermes가 매일 upsert) — `H.TRENDS`만 fetch로 교체 |
+## 데이터 흐름
+```
+.pipeline/curate.json (선택: Hermes 후보)
+    ↓
+backend/scripts/auto-build.mjs (선택: 출처 검증 + canonical 병합)
+    ↓
+backend/data/trends.json (canonical 원본)
+    ↓
+node backend/scripts/validate-trends.mjs
+    ↓
+backend/scripts/refresh.mjs
+    ↓
+frontend/data/trends.js (브라우저 로드)
+    ↓
+frontend/*.html
+```
 
-전환 순서: ① Supabase 프로젝트 생성 → ② 테이블 + RLS 정책 → ③ `app.js`의 STORE 레이어를
-async로 바꾸고 호출부에 `await` 추가 → ④ 인증을 비밀번호 또는 카카오 OAuth로.
-`H.*`가 Promise를 반환하게 되면 호출하는 페이지의 핸들러만 async/await로 소폭 수정.
+`frontend/data/trends.js`는 생성물이므로 직접 편집하지 않는다. `backend/data/trends.json`을 수정한 뒤 사이트 데이터에 반영하려면 `node backend/scripts/refresh.mjs`를 실행한다.
 
-## 오늘 기준 신선도 & 주간 자동 갱신
-> 갱신을 돌리는 에이전트(고구미봇)의 파이프라인·스킬·cron 상세는 **[docs/hermes.md](hermes.md)** 참고.
+## 신선도 원칙
+- `analyzedAt`은 실제로 재분석한 항목만 갱신한다.
+- `refresh.mjs`는 정적 데이터 파일을 다시 생성하고 `generatedAt`을 실행일로 찍지만, 개별 항목의 `analyzedAt`을 임의로 오늘로 바꾸지 않는다.
+- 사이트는 브라우저의 `new Date()` 대비 각 항목 `analyzedAt`으로 신선도 칩을 계산한다.
+- 오래된 분석은 숨기지 않고 "갱신 필요"로 노출한다. 거짓 신선도는 금지한다.
 
-- 사이트는 항상 **브라우저 `new Date()`(오늘)** 대비 각 항목 `analyzedAt`으로 신선도를 라이브 계산:
-  0일=「오늘 분석」, 1~3일=「N일 전」(초록), 4~13일=「N일 전」(중립), **14일+=「갱신 필요」(빨강) + 상세 경고 배너**.
-- 마스트헤드·홈 발행라인·인덱스 행·상세에 신선도 칩 노출 → 이용자가 분석이 언제 것인지 즉시 확인.
-- **거짓 신선도 금지:** refresh.mjs는 재분석한 항목만 `analyzedAt`을 오늘로 갱신. 안 한 항목은 그대로 둬서
-  오래된 분석이 "갱신 필요"로 정직하게 표시됨(신뢰가 제품의 본질).
-- 흐름: `backend/data/trends.json`(원본) → `backend/scripts/refresh.mjs`(hermes 재수집·재분석 + 날짜 스탬프) → `frontend/data/trends.js`(생성) → 사이트.
-  로컬 수동 실행: `node backend/scripts/refresh.mjs`(레포 루트에서). 운영: GitHub Action `weekly-refresh`(매주 월 06:00 KST). 펄스는 요일별 분야 로테이션(매일 1~2분야).
-- hermes 연결 지점: `backend/scripts/refresh.mjs`의 `collectAndAnalyze()` (현재 no-op TODO).
+## 자동/수동 갱신
+- 트렌드 정적 데이터 생성: GitHub Actions `weekly-refresh`가 매주 월요일 06:00 KST에 `backend/scripts/refresh.mjs`를 실행한다. 수동 `workflow_dispatch`도 가능하다.
+- 펄스 데이터: GitHub Actions `pulse-daily`가 매일 07:00 KST에 펄스 데이터를 갱신한다.
+- 로컬 Hermes 운영과 검증 게이트의 자세한 흐름은 [docs/hermes.md](hermes.md)를 따른다.
 
-## 다음에 붙일 만한 리텐션 기능
-- 저장 알림 / "이번 주 한끗" 구독(이메일·푸시)
-- hermes가 주기적으로 `trends` 자동 upsert → 콘텐츠 신선도(재방문 동력)
-- 후기 좋아요·신고, 작성자 평판
-- 개인화: 저장·후기 기반 추천
-
-## 보안 메모 (실서비스 전 필수)
-- 현재 목 인증은 **데모 전용**. 절대 실제 비밀번호 운영에 쓰지 말 것.
-- 전환 시 RLS로 본인 데이터만 접근, 리뷰 입력 서버측 검증/욕설 필터, 레이트리밋.
+## 보안 메모
+- 로컬 계정 비밀번호는 브라우저 localStorage에 단순 해시로 저장된다. 서버 인증이나 보안 계정이 아니다.
+- 사용자가 브라우저 데이터를 지우거나 다른 기기를 쓰면 로컬 계정, 저장, 후기, 펄스 아이디어가 이어지지 않는다.
+- 공개 후기처럼 보이지만 현재는 해당 브라우저 안에서만 보이는 로컬 후기다.

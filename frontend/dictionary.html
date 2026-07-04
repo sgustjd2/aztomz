@@ -6,11 +6,19 @@
 <meta name="color-scheme" content="light dark" />
 <title>MZ 사전 — 요즘 말, 1초에 해석 | 한끗</title>
 <meta name="description" content="요즘 유행어·밈·신조어를 뜻·예쁜 우리말·출처와 함께 정리한 MZ 사전. 한끗이 출처까지 확인한 정확한 뜻만 담았습니다." />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="한끗" />
+<meta property="og:locale" content="ko_KR" />
+<meta property="og:title" content="MZ 사전 — 요즘 말, 1초에 해석 | 한끗" />
+<meta property="og:description" content="요즘 유행어·밈·신조어를 뜻, 예문, 예쁜 우리말, 출처와 함께 확인하세요." />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="MZ 사전 — 요즘 말, 1초에 해석 | 한끗" />
+<meta name="twitter:description" content="요즘 유행어·밈·신조어를 뜻, 예문, 예쁜 우리말, 출처와 함께 확인하세요." />
 <link rel="icon" type="image/svg+xml" href="favicon.svg" />
 <link rel="stylesheet" href="assets/styles.css" />
 <style>
   .lead{padding:36px 0 8px;border-bottom:1px solid var(--line)}
-  .lead h1{font-size:38px;font-weight:900;line-height:1.12;letter-spacing:-0.045em;margin:12px 0 10px}
+  .lead h1{font-size:38px;font-weight:900;line-height:1.12;letter-spacing:0;margin:12px 0 10px}
   .lead h1 .hl{color:var(--accent)}
   .lead p{font-size:15.5px;color:var(--body);max-width:44ch;margin:0;word-break:keep-all}
   @media(max-width:520px){.lead h1{font-size:29px}}
@@ -26,7 +34,7 @@
     padding:17px 16px;text-decoration:none;color:inherit;transition:.14s}
   .dword:hover{border-color:var(--accent);transform:translateY(-2px);box-shadow:0 7px 18px rgba(0,0,0,.07)}
   .dw-top{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:9px}
-  .dw-term{font-size:22px;font-weight:900;letter-spacing:-0.03em;color:var(--ink);margin-right:auto}
+  .dw-term{font-size:22px;font-weight:900;letter-spacing:0;color:var(--ink);margin-right:auto}
   .dw-def{margin:0;font-size:14.5px;color:var(--body);line-height:1.5;word-break:keep-all}
   .dw-ex{margin-top:11px;font-size:13px;color:var(--ink-2);background:var(--paper-2);border-radius:9px;
     padding:9px 11px;line-height:1.45;word-break:keep-all}
@@ -51,11 +59,15 @@
     </section>
 
     <div class="dict-tools">
-      <input class="dict-search" id="q" type="search" placeholder="🔎 단어·뜻으로 검색 (예: 샤갈, 웃음)" aria-label="사전 검색" />
+      <input class="dict-search" id="q" type="search" placeholder="단어·뜻으로 검색 (예: 샤갈, 웃음)" aria-label="사전 검색" />
       <span class="dict-count" id="count"></span>
     </div>
 
-    <div class="dlist" id="list"></div>
+    <div class="sec-head" id="freshHead"><span class="no">01</span><h2>최신 신조어</h2><span class="note" id="freshNote"></span></div>
+    <div class="dlist" id="freshList"></div>
+
+    <div class="sec-head" id="archHead"><span class="no">02</span><h2>지난 유행어</h2><span class="note">읽을 수 있게 보관</span></div>
+    <div class="dlist" id="archList"></div>
     <div class="dict-empty" id="empty" hidden>그 단어는 아직 사전에 없어요. <a href="index.html" style="color:var(--accent)">전체 트렌드</a>에서 찾아보세요.</div>
 
     <footer class="site">
@@ -81,11 +93,11 @@
     <a class="dword${H.isFreshSlang(t)?'':' is-arch'}" href="trend.html?id=${encodeURIComponent(t.id)}">
       <div class="dw-top">
         <span class="dw-term">${H.esc(t.title)}</span>
-        ${H.isFreshSlang(t)?H.freshChip(t.analyzedAt):'<span class="dw-arch">🕰 지난</span>'}
+        ${H.isFreshSlang(t)?H.freshChip(t.analyzedAt):'<span class="dw-arch">지난</span>'}
       </div>
       <p class="dw-def">${H.esc(def(t))}</p>
-      ${t.example?`<div class="dw-ex">💬 "${H.esc(t.example)}"</div>`:''}
-      ${t.pureKorean?`<div class="dw-kr">🌸 ${H.esc(t.pureKorean)}</div>`:''}
+      ${t.example?`<div class="dw-ex">"${H.esc(t.example)}"</div>`:''}
+      ${t.pureKorean?`<div class="dw-kr">우리말 · ${H.esc(t.pureKorean)}</div>`:''}
       <div class="dw-more">자세히·출처 →</div>
     </a>`;
 
@@ -96,9 +108,15 @@
       (def(t)||'').toLowerCase().includes(k) ||
       (t.pureKorean||'').toLowerCase().includes(k) ||
       (t.tags||[]).some(x=>x.toLowerCase().includes(k)));
-    H.q('#list').innerHTML = list.map(row).join('');
+    const fresh = list.filter(H.isFreshSlang);
+    const arch = list.filter(t=>!H.isFreshSlang(t));
+    H.q('#freshList').innerHTML = fresh.map(row).join('');
+    H.q('#archList').innerHTML = arch.map(row).join('');
+    H.q('#freshHead').hidden = fresh.length === 0;
+    H.q('#archHead').hidden = arch.length === 0;
     H.q('#empty').hidden = list.length>0;
     const freshN = SLANG.filter(H.isFreshSlang).length;
+    H.q('#freshNote').textContent = k ? `${fresh.length}개` : `${freshN}개`;
     H.q('#count').textContent = k ? `${list.length} / ${SLANG.length}개` : `최신 ${freshN} · 전체 ${SLANG.length}개`;
   }
   render('');

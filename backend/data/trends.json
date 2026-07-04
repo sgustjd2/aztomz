@@ -2482,7 +2482,7 @@
       ],
       "ad": 5,
       "trust": 95,
-      "sat": 90,
+      "sat": "pos",
       "satTxt": "매우 만족",
       "reasons": {
         "ad": [

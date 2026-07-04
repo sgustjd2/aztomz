@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 /* ============================================================
-   한끗 — 일일 트렌드 갱신
-   backend/data/trends.json(원본)을 읽어 ① hermes 재수집·재분석 ② generatedAt=오늘 스탬프
-   ③ 브라우저용 frontend/data/trends.js 생성. .github/workflows/daily-refresh.yml 이 매일 실행.
+   한끗 — 정적 트렌드 데이터 생성
+   backend/data/trends.json(원본)을 읽어 ① 필요 시 재수집·재분석 ② generatedAt=실행일 스탬프
+   ③ 브라우저용 frontend/data/trends.js 생성. GitHub Actions weekly-refresh 또는 수동 실행.
 
    실행: node backend/scripts/refresh.mjs   (레포 루트에서)
    ============================================================ */

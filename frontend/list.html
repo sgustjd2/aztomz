@@ -6,11 +6,19 @@
 <meta name="color-scheme" content="light dark" />
 <title>전체 목록 — 한끗</title>
 <meta name="description" content="한끗의 광고 분석·요즘 트렌드 전체 목록. 카테고리로 좁히고 페이지로 넘겨 보세요." />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="한끗" />
+<meta property="og:locale" content="ko_KR" />
+<meta property="og:title" content="전체 목록 — 한끗" />
+<meta property="og:description" content="한끗의 광고 분석과 요즘 트렌드 전체 목록을 카테고리와 페이지로 둘러보세요." />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="전체 목록 — 한끗" />
+<meta name="twitter:description" content="한끗의 광고 분석과 요즘 트렌드 전체 목록을 카테고리와 페이지로 둘러보세요." />
 <link rel="icon" type="image/svg+xml" href="favicon.svg" />
 <link rel="stylesheet" href="assets/styles.css" />
 <style>
   .list-lead{padding:34px 0 14px;border-bottom:1px solid var(--line)}
-  .list-lead h1{font-size:34px;font-weight:900;line-height:1.14;letter-spacing:-0.04em;margin:12px 0 10px;text-wrap:balance}
+  .list-lead h1{font-size:34px;font-weight:900;line-height:1.14;letter-spacing:0;margin:12px 0 10px;text-wrap:balance}
   .list-lead h1 .hl{color:var(--accent)}
   .list-lead p{font-size:15.5px;color:var(--body);max-width:42ch;margin:0;word-break:keep-all}
   @media(max-width:520px){.list-lead h1{font-size:28px}}
@@ -48,7 +56,9 @@
   // ?type=ad | trend (기본 trend), ?cat=, ?page=
   const type = (H.param('type')==='ad') ? 'ad' : 'trend';
   const PAGE_SIZE = type==='ad' ? 10 : 12;
-  let activeCat = H.param('cat') || '전체';
+  const CAT_ALIAS = { '음식':'맛집', '핫플':'카페·핫플', '밈':'신조어', '유행어':'신조어' };
+  const normalizeCat = (c)=> CAT_ALIAS[c] || c || '전체';
+  let activeCat = normalizeCat(H.param('cat'));
   let page = Math.max(1, parseInt(H.param('page')||'1', 10) || 1);
 
   // 최신순(수집일 desc, 동일 날짜는 분석일 desc)

@@ -6,6 +6,14 @@
 <meta name="color-scheme" content="light dark" />
 <title>트렌드 펄스 — 한끗</title>
 <meta name="description" content="지금 뜨는 110개 트렌드를 성장률·플랫폼·점수로 한눈에. 매주 갱신되는 창업 트렌드 레이더." />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="한끗" />
+<meta property="og:locale" content="ko_KR" />
+<meta property="og:title" content="트렌드 펄스 — 한끗" />
+<meta property="og:description" content="성장률·플랫폼·점수로 보는 창업 트렌드 레이더와 로컬 저장 아이디어." />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="트렌드 펄스 — 한끗" />
+<meta name="twitter:description" content="성장률·플랫폼·점수로 보는 창업 트렌드 레이더와 로컬 저장 아이디어." />
 <link rel="icon" type="image/svg+xml" href="favicon.svg" />
 <link rel="stylesheet" href="assets/styles.css" />
 </head>
@@ -22,11 +30,14 @@
 
     <div class="tp-tabs" id="tpTabs" role="tablist" aria-label="보기 전환"></div>
 
-    <!-- 트렌드 레이더 -->
-    <div id="tpRadar">
+    <!-- 이번 주 트렌드 -->
+    <div id="tpWeekly" class="tp-panel">
       <div class="sec-head"><span class="no">·</span><h2>이번 주 트렌드</h2><span class="note">주간 갱신 · 세밀 분석</span></div>
       <div id="tpDaily"></div>
+    </div>
 
+    <!-- 트렌드 레이더 -->
+    <div id="tpRadar" class="tp-panel" hidden>
       <div class="sec-head"><span class="no">110</span><h2>트렌드 레이더</h2><span class="note" id="tpCount"></span></div>
       <input id="tpSearch" class="tp-search" type="search" placeholder="트렌드·키워드 검색…" aria-label="트렌드 검색" />
       <div class="cat-filter" id="tpCatFilter" role="tablist" aria-label="카테고리 필터"></div>
@@ -35,7 +46,7 @@
     </div>
 
     <!-- 저장한 아이디어 -->
-    <div id="tpIdeas" hidden></div>
+    <div id="tpIdeas" class="tp-panel" hidden></div>
 
     <div class="disc">⚠️ 성장률·점수는 공개 정보 기반 <b>추정치</b>이며, 투자·창업을 권유하지 않습니다. 빠른 아이디어는 출발점일 뿐 검증이 필요합니다.</div>
 

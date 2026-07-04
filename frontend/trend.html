@@ -6,17 +6,25 @@
 <meta name="color-scheme" content="light dark" />
 <title>한끗 — 트렌드 분석</title>
 <meta name="description" content="광고 의심도·실제 후기 신뢰도·만족도 분석. 추정치이며 확정 판정이 아닙니다." />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="한끗" />
+<meta property="og:locale" content="ko_KR" />
+<meta property="og:title" content="한끗 — 트렌드 분석" />
+<meta property="og:description" content="광고 의심도·실제 후기 신뢰도·만족도를 나눠 보는 한끗 트렌드 상세 분석." />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="한끗 — 트렌드 분석" />
+<meta name="twitter:description" content="광고 의심도·실제 후기 신뢰도·만족도를 나눠 보는 한끗 트렌드 상세 분석." />
 <link rel="icon" type="image/svg+xml" href="favicon.svg" />
 <link rel="stylesheet" href="assets/styles.css" />
 <style>
   .crumb{font-size:13.5px;color:var(--ink-2);margin:18px 0 14px}
   .crumb a{color:var(--accent);text-decoration:none;font-weight:700}
   .d-head{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:14px 0 4px}
-  .d-title{font-size:30px;font-weight:900;letter-spacing:-0.035em;margin:10px 0 6px;line-height:1.15}
+  .d-title{font-size:30px;font-weight:900;letter-spacing:0;margin:10px 0 6px;line-height:1.15}
   .d-def{font-size:18px;font-weight:700;color:var(--body);line-height:1.5;margin:0 0 10px;word-break:keep-all}
   /* 이렇게 써요 — 채팅 말풍선 느낌 */
   .usage{margin:16px 0;background:var(--paper-2);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
-  .usage .u-label{font-size:12.5px;font-weight:800;color:var(--ink-2);letter-spacing:.02em}
+  .usage .u-label{font-size:12.5px;font-weight:800;color:var(--ink-2);letter-spacing:0}
   .usage .u-ex{margin:7px 0 0;font-size:16.5px;font-weight:700;color:var(--ink);line-height:1.5;word-break:keep-all}
   .d-actions{display:flex;gap:9px;margin:14px 0 6px}
   .stage-box{border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:var(--r);
@@ -33,7 +41,7 @@
   @media(min-width:820px){ .wrap.reading{max-width:920px} }
   /* 미디어 블록(영상·이미지) */
   .media{margin:22px 0}
-  .media-h{font-size:12.5px;font-weight:800;letter-spacing:.05em;color:var(--accent);margin:0 0 8px;text-transform:uppercase}
+  .media-h{font-size:12.5px;font-weight:800;letter-spacing:0;color:var(--accent);margin:0 0 8px;text-transform:uppercase}
   .embed-frame{position:relative;width:100%;max-width:760px;aspect-ratio:16/9;border-radius:var(--r);
     overflow:hidden;background:var(--ink);border:1px solid var(--line)}
   .embed-frame.vertical{aspect-ratio:9/16;max-width:330px}
@@ -47,7 +55,7 @@
   @media(max-width:520px){ .gallery{grid-template-columns:1fr 1fr;gap:8px} .embed-frame.vertical{max-width:100%} }
   /* 블로그형 본문(article): 짧은 문단·소제목·강조로 가독성 있게 */
   .article{margin:24px 0;max-width:720px}
-  .article .art-h{font-size:19px;font-weight:900;letter-spacing:-0.025em;margin:24px 0 8px;line-height:1.3}
+  .article .art-h{font-size:19px;font-weight:900;letter-spacing:0;margin:24px 0 8px;line-height:1.3}
   .article .art-p{font-size:16px;line-height:1.8;color:var(--body);margin:0 0 15px;text-wrap:pretty;word-break:keep-all}
   .article .art-q{margin:18px 0;padding:11px 16px;border-left:3px solid var(--accent);
     background:var(--paper-2);border-radius:0 var(--r) var(--r) 0;font-weight:800;color:var(--ink);
@@ -129,7 +137,7 @@
     else if(v.url) src=v.url;
     if(!src) return '';
     return `<div class="media">
-      <div class="media-h">▶ 지금 뜨는 영상</div>
+      <div class="media-h">지금 뜨는 영상</div>
       <div class="embed-frame ${vertical?'vertical':''}">
         <iframe src="${src}" title="${H.esc(t.title)} 영상" loading="lazy"
           referrerpolicy="strict-origin-when-cross-origin"
@@ -147,7 +155,7 @@
     const uniq=[...new Set(all.map(x=>typeof x==='string'?x:x.u))].filter(Boolean);
     if(!uniq.length) return '';
     return `<div class="media">
-      <div class="media-h">📷 대표 이미지</div>
+      <div class="media-h">대표 이미지</div>
       <div class="gallery">${uniq.map(u=>`<a href="${u}" target="_blank" rel="noopener">
         <img src="${u}" alt="${H.esc(t.title)}" loading="lazy" referrerpolicy="no-referrer"
           onerror="this.closest('a').remove()"></a>`).join('')}</div>
@@ -164,7 +172,7 @@
       if(type==='ul') return `<ul class="art-ul">${(c||[]).map(li=>`<li>${H.esc(li)}</li>`).join('')}</ul>`;
       return `<p class="art-p">${H.esc(c)}</p>`;
     }).join('');
-    return `<div class="article"><div class="media-h">📝 자세히 읽기</div>${body}</div>`;
+    return `<div class="article"><div class="media-h">자세히 읽기</div>${body}</div>`;
   }
 
   // 어디서 사 먹지? — t.shops 있을 때만. [{name, area?, url?, note?}]
@@ -184,7 +192,9 @@
 
   function render(){
     const saved = H.isSaved(t.id);
-    const related = H.TRENDS.filter(x=>x.id!==t.id).slice(0,2);
+    const sameCat = H.TRENDS.filter(x=>x.id!==t.id && x.cat===t.cat);
+    const related = (sameCat.length ? sameCat : H.TRENDS.filter(x=>x.id!==t.id)).slice(0,2);
+    const relatedTitle = t.cat==='신조어' ? '관련 사전 항목' : '함께 보기';
     main.innerHTML = `
       <div class="crumb"><a href="index.html">홈</a> › ${H.esc(t.cat)}</div>
       ${H.coverHTML(t,{tall:true})}
@@ -193,14 +203,14 @@
       ${t.def?`<p class="d-def">${H.esc(t.def)}</p>`:''}
       <div><span class="label ${t.labelCls}">${H.esc(t.label)}</span></div>
       <div class="tags">
-        <a class="tag-chip date" href="index.html?date=${encodeURIComponent(t.collectedAt||t.analyzedAt)}">📅 ${H.esc(t.collectedAt||t.analyzedAt)} 수집</a>
+        <a class="tag-chip date" href="index.html?date=${encodeURIComponent(t.collectedAt||t.analyzedAt)}">${H.esc(t.collectedAt||t.analyzedAt)} 수집</a>
         ${(t.tags||[]).map(tg=>`<a class="tag-chip" href="index.html?tag=${encodeURIComponent(tg)}">#${H.esc(tg)}</a>`).join('')}
       </div>
       <div class="freshline">분석일 ${H.fmtISO(t.analyzedAt)} ${H.freshChip(t.analyzedAt)} · 오늘 ${H.todayStr()} 기준</div>
-      ${H.freshness(t.analyzedAt).cls==='stale' ? `<div class="stale-banner">⚠ 이 분석은 ${H.daysSince(t.analyzedAt)}일 전 기준이에요. 유행은 빨리 바뀌니 방문 전 최신 상황을 다시 확인하세요.</div>` : ''}
+      ${H.freshness(t.analyzedAt).cls==='stale' ? `<div class="stale-banner">주의: 이 분석은 ${H.daysSince(t.analyzedAt)}일 전 기준이에요. 유행은 빨리 바뀌니 방문 전 최신 상황을 다시 확인하세요.</div>` : ''}
       <div class="d-actions">
-        <button class="save-btn ${saved?'on':''}" id="saveBtn">${saved?'★ 저장됨':'☆ 저장'}</button>
-        <button class="save-btn" id="shareBtn">↗ 공유</button>
+        <button class="save-btn ${saved?'on':''}" id="saveBtn">${saved?'저장됨':'저장'}</button>
+        <button class="save-btn" id="shareBtn">공유</button>
       </div>
       ${videoBlock()}
       ${scoresBlock()}
@@ -208,13 +218,13 @@
       ${galleryBlock()}
       ${t.prompt?`<div class="prompt-box">
         <div class="pb-top">
-          <span class="pb-label">📋 프롬프트 · ${t.prompt.split('\n').length}줄 — 복사해서 ChatGPT·제미나이·미드저니에 붙여넣기</span>
-          <button class="pb-copy" type="button" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.pb-text').innerText).then(()=>{this.textContent='복사됨 ✓';setTimeout(()=>this.textContent='📋 복사',1500)}).catch(()=>{this.textContent='복사 실패'})">📋 복사</button>
+          <span class="pb-label">프롬프트 · ${t.prompt.split('\n').length}줄 — 복사해서 ChatGPT·제미나이·미드저니에 붙여넣기</span>
+          <button class="pb-copy" type="button" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.pb-text').innerText).then(()=>{this.textContent='복사됨';setTimeout(()=>this.textContent='복사',1500)}).catch(()=>{this.textContent='복사 실패'})">복사</button>
         </div>
         <div class="pb-text">${H.esc(t.prompt)}</div>
       </div>`:''}
-      ${t.example?`<div class="usage"><div class="u-label">💬 이렇게 써요</div><p class="u-ex">"${H.esc(t.example)}"</p></div>`:''}
-      ${t.pureKorean?`<div class="pure-kr">🌸 <b>예쁜 우리말로 바꾼다면</b> · ${H.esc(t.pureKorean)}</div>`:''}
+      ${t.example?`<div class="usage"><div class="u-label">이렇게 써요</div><p class="u-ex">"${H.esc(t.example)}"</p></div>`:''}
+      ${t.pureKorean?`<div class="pure-kr"><b>예쁜 우리말로 바꾼다면</b> · ${H.esc(t.pureKorean)}</div>`:''}
       <p class="verdict">${H.esc(t.verdict)}</p>
       ${articleBlock()}
       ${shopsBlock()}
@@ -227,23 +237,21 @@
       <div id="rvForm"></div>
       <div class="reviews" id="rvList"></div>
 
-      <div class="sec-head"><span class="no">→</span><h2>함께 보기</h2></div>
+      <div class="sec-head"><span class="no">→</span><h2>${relatedTitle}</h2></div>
       <div class="related">${related.map(x=>`<a href="trend.html?id=${x.id}">${H.coverHTML(x)}<div class="r-t">${H.esc(x.title)}</div></a>`).join('')}</div>
 
       <div class="disc">⚠️ 점수는 공개 정보 기반 <b>추정치</b>이며 확정 판정이 아닙니다. 방문자 후기는 이용자가 직접 작성한 내용입니다.</div>
       <footer class="site"><div class="fwm">한<b>끗</b></div>AZ와 MZ는 한 끗 차이 · 트렌드 번역소</footer>`;
 
-    H.q('#saveBtn').onclick = ()=>{
-      const r = H.toggleSave(t.id);
-      if(r.needAuth){ H.toast('저장하려면 로그인이 필요해요'); location.href=`login.html?next=${encodeURIComponent(location.href)}`; return; }
+    H.q('#saveBtn').onclick = async ()=>{
+      const r = await H.resolve(H.toggleSave(t.id));
+      if(r.needAuth){ H.toast('저장하려면 로그인이 필요해요'); location.href=H.loginHref(); return; }
       const b=H.q('#saveBtn'); b.classList.toggle('on', r.saved);
-      b.textContent = r.saved?'★ 저장됨':'☆ 저장'; H.toast(r.saved?'저장했어요':'저장을 해제했어요');
+      b.textContent = r.saved?'저장됨':'저장'; H.toast(r.saved?'저장했어요':'저장을 해제했어요');
     };
     H.q('#shareBtn').onclick = async ()=>{
       const text=`[한끗] ${t.title} — ${t.type==='신뢰분석'?`광고 ${t.ad}/신뢰 ${t.trust}`:t.stage} · ${t.label}`;
-      const url=location.href;
-      if(navigator.share){ try{ await navigator.share({title:'한끗',text,url}); }catch(e){} }
-      else { try{ await navigator.clipboard.writeText(text+' '+url); H.toast('링크를 복사했어요'); }catch(e){ prompt('복사해서 공유하세요:', text+' '+url); } }
+      await H.share({title:'한끗', text, url:location.href});
     };
     renderReviews();
     renderForm();
@@ -260,13 +268,13 @@
       <div class="rv-text">${H.esc(r.text)}</div></div>`).join('');
   }
 
-  function renderForm(){
+  async function renderForm(){
     const box = H.q('#rvForm');
-    const u = H.user();
+    const u = await H.resolve(H.user());
     if(!u){
       box.innerHTML = `<div class="rv-form" style="text-align:center">
         <p class="muted" style="margin:0 0 12px;font-size:15px">로그인하면 후기를 남길 수 있어요.</p>
-        <a class="btn primary" href="login.html?next=${encodeURIComponent(location.href)}">로그인하고 후기 쓰기</a></div>`;
+        <a class="btn primary" href="${H.loginHref()}">로그인하고 후기 쓰기</a></div>`;
       return;
     }
     box.innerHTML = `<div class="rv-form">
@@ -283,10 +291,10 @@
     });
     H.q('#starIn').onmouseleave=()=>paint(rating);
     function paint(n){ stars.forEach(s=> s.classList.toggle('on', Number(s.dataset.n)<=n)); }
-    H.q('#rvSubmit').onclick=()=>{
+    H.q('#rvSubmit').onclick=async ()=>{
       const err=H.q('#rvErr'); err.classList.remove('show');
-      const res=H.addReview(t.id,{rating,text:H.q('#rvText').value});
-      if(res.needAuth){ location.href=`login.html?next=${encodeURIComponent(location.href)}`; return; }
+      const res=await H.resolve(H.addReview(t.id,{rating,text:H.q('#rvText').value}));
+      if(res.needAuth){ location.href=H.loginHref(); return; }
       if(!res.ok){ err.textContent=res.error; err.classList.add('show'); return; }
       H.toast('후기를 등록했어요. 고마워요!');
       renderReviews(); renderForm();

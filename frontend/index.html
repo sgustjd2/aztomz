@@ -6,11 +6,19 @@
 <meta name="color-scheme" content="light dark" />
 <title>한끗 — 요즘 유행, 광고야 진짜야?</title>
 <meta name="description" content="SNS에서 자주 보이는 맛집·디저트가 광고인지 실제 후기인지 분석하는 트렌드 번역소. 광고 의심도·후기 신뢰도·만족도를 따로 보여줍니다. 추정치이며 확정 판정이 아닙니다." />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="한끗" />
+<meta property="og:locale" content="ko_KR" />
+<meta property="og:title" content="한끗 — 요즘 유행, 광고야 진짜야?" />
+<meta property="og:description" content="SNS 맛집·디저트의 광고 의심도, 후기 신뢰도, 만족도를 따로 보는 트렌드 번역소." />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="한끗 — 요즘 유행, 광고야 진짜야?" />
+<meta name="twitter:description" content="SNS 맛집·디저트의 광고 의심도, 후기 신뢰도, 만족도를 따로 보는 트렌드 번역소." />
 <link rel="icon" type="image/svg+xml" href="favicon.svg" />
 <link rel="stylesheet" href="assets/styles.css" />
 <style>
   .lead{padding:40px 0 8px;border-bottom:1px solid var(--line)}
-  .lead h1{font-size:42px;font-weight:900;line-height:1.12;letter-spacing:-0.045em;margin:14px 0 12px;text-wrap:balance}
+  .lead h1{font-size:42px;font-weight:900;line-height:1.12;letter-spacing:0;margin:14px 0 12px;text-wrap:balance}
   .lead h1 .hl{color:var(--accent)}
   /* 줄을 균형 있게 — 끝에 '다.' 한 글자만 남는 고아줄 방지(특히 모바일). 폭도 살짝 좁혀 비율 정리 */
   .lead p{font-size:16px;color:var(--body);max-width:40ch;margin:0;text-wrap:balance;word-break:keep-all}
@@ -50,7 +58,7 @@
       <h3>이것도 광고야 진짜야?</h3>
       <p>궁금한 맛집·디저트를 던져주시면 다음 호에 분석해 올려요</p>
       <!-- ▼ 카카오 오픈채팅/구글폼 링크로 교체 — "재요청" = 1순위 수요 신호 -->
-      <a class="btn accent" href="#" id="requestBtn">분석 요청하기</a>
+      <button class="btn accent" type="button" id="requestBtn">분석 요청하기</button>
     </section>
 
     <div class="disc">⚠️ 모든 점수는 공개 정보 기반 <b>추정치</b>이며 확정 판정이 아닙니다. 광고 의심도는 "광고일 수 있다"는 가능성일 뿐, 특정 업체의 광고를 단정하지 않습니다.</div>
@@ -79,15 +87,15 @@
       const g = {};
       H.TRENDS.forEach(t=>{ const d=t.collectedAt||t.analyzedAt||'미상'; (g[d]=g[d]||[]).push(t); });
       const dates = Object.keys(g).sort().reverse();
-      sec.innerHTML = `<div class="sec-head"><span class="no">📅</span><h2>수집 기록</h2><span class="note">${H.TRENDS.length}개 · <a href="index.html" style="color:var(--accent);font-weight:700">← 전체 트렌드</a></span></div>`
-        + dates.map(d=>`<div class="date-group"><div class="date-group-h">📅 ${H.esc(d)} <span>${g[d].length}개</span></div><div class="strip" style="margin-top:10px">${g[d].map(card).join('')}</div></div>`).join('');
+      sec.innerHTML = `<div class="sec-head"><span class="no">날짜</span><h2>수집 기록</h2><span class="note">${H.TRENDS.length}개 · <a href="index.html" style="color:var(--accent);font-weight:700">← 전체 트렌드</a></span></div>`
+        + dates.map(d=>`<div class="date-group"><div class="date-group-h">${H.esc(d)} <span>${g[d].length}개</span></div><div class="strip" style="margin-top:10px">${g[d].map(card).join('')}</div></div>`).join('');
       document.title = `수집 기록 — 한끗`;
     } else {
       const matched = _date
         ? H.TRENDS.filter(t=>(t.collectedAt||t.analyzedAt)===_date)
         : H.TRENDS.filter(t=>(t.tags||[]).includes(_tag));
-      const head = _date ? `📅 ${H.esc(_date)} 수집` : `#${H.esc(_tag)}`;
-      sec.innerHTML = `<div class="sec-head"><span class="no">${_date?'📅':'#'}</span><h2>${head}</h2><span class="note">${matched.length}개 · <a href="index.html" style="color:var(--accent);font-weight:700">← 전체 트렌드</a></span></div>`
+      const head = _date ? `${H.esc(_date)} 수집` : `#${H.esc(_tag)}`;
+      sec.innerHTML = `<div class="sec-head"><span class="no">${_date?'날짜':'#'}</span><h2>${head}</h2><span class="note">${matched.length}개 · <a href="index.html" style="color:var(--accent);font-weight:700">← 전체 트렌드</a></span></div>`
         + (matched.length ? `<div class="strip" style="margin-top:14px">${matched.map(card).join('')}</div>` : `<div class="strip-empty" style="display:block">해당 ${_date?'날짜':'태그'}의 트렌드가 없어요. <a href="index.html" style="color:var(--accent)">전체 보기</a></div>`);
       document.title = `${head} — 한끗`;
     }
@@ -102,12 +110,12 @@
     `오늘 <b style="font-style:normal;color:var(--ink)">${H.todayStr()}</b> 기준 · 분석 ${H.TRENDS.length}건`
     + (H.generatedAt ? ` · 마지막 갱신 ${H.fmtISO(H.generatedAt)} <span class="fresh-chip ${ff.cls}" style="font-style:normal">${ff.text}</span>` : '');
 
-  // 📅 수집일별 보기 — 최근 수집일 칩(클릭 → ?date= 필터)
+  // 수집일별 보기 — 최근 수집일 칩(클릭 → ?date= 필터)
   const _colDates = [...new Set(H.TRENDS.map(t=>t.collectedAt||t.analyzedAt).filter(Boolean))].sort().reverse().slice(0,7);
   if(_colDates.length){
     const dn = document.createElement('div');
     dn.className = 'date-nav';
-    dn.innerHTML = '<span class="date-nav-label">📅 수집일별</span>'
+    dn.innerHTML = '<span class="date-nav-label">수집일별</span>'
       + _colDates.map(d=>`<a class="tag-chip" href="index.html?date=${encodeURIComponent(d)}">${d}</a>`).join('')
       + `<a class="tag-chip" href="index.html?date=all" style="font-weight:800;border-color:var(--ink-2)">전체 기록 →</a>`;
     H.q('#freshline').insertAdjacentElement('afterend', dn);
@@ -182,6 +190,7 @@
     });
   }
   renderFilter(); renderStrip();
+  H.q('#requestBtn').addEventListener('click', ()=> H.toast('분석 요청 폼은 준비 중이에요. 지금은 전체 목록에서 후보를 살펴보세요.'));
 </script>
 </body>
 </html>

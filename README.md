@@ -1,6 +1,6 @@
 # 한끗 — 트렌드 번역소
 
-> **AZ와 MZ는 한 끗 차이** | 요즘 유행(밈·신조어·음식·디저트·핫플)을 1분에 번역하고, SNS 맛집이 광고인지 실후기인지 분석해주는 모바일 웹.
+> **AZ와 MZ는 한 끗 차이** | 요즘 유행(밈·신조어·음식·디저트·핫플)을 1분에 번역하고, SNS 맛집이 광고인지 실후기인지 분석해주는 의존성 0·빌드 0·외부 폰트 CDN 0 정적 모바일 웹. 개인화는 서버 계정 없이 브라우저 localStorage에만 저장합니다.
 
 ## 구조 한눈에
 
@@ -8,17 +8,19 @@
 |---|---|
 | `frontend/` | ★ 배포 대상(Vercel `outputDirectory`). 브라우저가 받는 정적 파일 전부 |
 | `frontend/index.html` | 홈 — 오늘의 한끗·광고일까 진짜일까 미리보기(상위 6개)·요즘 트렌드 미리보기(상위 8개) + 더보기 → 전체 목록 |
-| `frontend/trend.html?id=` | 상세 — 점수(광고의심도/신뢰도)·만족도·판단·추천·출처·후기 |
-| `frontend/list.html?type=ad\|trend` | 전체 목록 — 광고분석 또는 트렌드 리스트 + 페이지네이션 + 카테고리 필터 |
-| `frontend/dictionary.html` | MZ 사전 — 신조어 카드(뜻·예문·예쁜 우리말·출처)·검색·신선도 |
-| `frontend/{login,signup,me,pulse}.html` | 인증·마이페이지·트렌드 펄스 |
-| `frontend/assets/styles.css`·`app.js`·`pulse.js` | 디자인 시스템 / 모의 스토어(H.*) / 펄스 |
+| `frontend/list.html?type=ad\|trend` | 전체 목록 — 광고분석(10/페이지) 또는 트렌드(12/페이지) + 페이지네이션. `cat=음식`→`맛집`, `cat=핫플`→`카페·핫플` 별칭 매핑 |
+| `frontend/trend.html?id=` | 상세 — 점수(광고의심도/신뢰도)·만족도·판단·추천·출처·후기·공유·같은 카테고리 우선 관련 콘텐츠 |
+| `frontend/dictionary.html` | MZ 사전 — 신조어 카드(뜻·예문·예쁜 우리말·출처) 검색 + 최신 신조어/지난 유행어 분리 |
+| `frontend/login.html`·`signup.html`·`me.html` | 로컬 계정·안전한 `next` 복귀·내 한끗(저장/후기) |
+| `frontend/pulse.html` | 트렌드 펄스 — 이번 주 트렌드 / 트렌드 레이더 / 저장한 아이디어 탭 |
+| `frontend/assets/styles.css`·`app.js`·`pulse.js` | 시스템 폰트 디자인 시스템 / localStorage 스토어와 공통 헬퍼(`H.*`) / 펄스 |
 | `frontend/data/trends.js`·`pulse.js` | 브라우저가 로드하는 **생성물** — **직접 편집 금지** |
 | `backend/` | 비공개(배포 안 됨) — 데이터 원본 + 빌드 스크립트 |
 | `backend/data/trends.json`·`pulse.json` | ★ **canonical 데이터 원본** (사람·스크립트가 수정) |
 | `backend/scripts/auto-build.mjs` | **자동 게시 엔진** — 출처 자동검증(404/410/관련성) · 중복 제거 · 통과분만 trends.json 반영 · images 필드 자동 주입(og:image) · shops 배열 URL 생존성 검증(죽은 링크 제거) · git push |
 | `backend/scripts/recheck-ad.mjs` | **광고/진짜 일일 재확인** — 가장 오래된 신뢰분석 1건의 출처 재검증(ddgs) → 살아있으면 analyzedAt=오늘 갱신(→ 홈 featured 회전) |
-| `backend/scripts/refresh.mjs` 등 | 일일 갱신·출처검증·이미지 스크립트 |
+| `backend/scripts/refresh.mjs` 등 | 정적 데이터 생성·출처검증·이미지 스크립트 |
+| `tools/hermes-admin/` | 🔧 **Hermes 로컬 관리 콘솔** — 크론·설정·실행기록 관리(비배포, 127.0.0.1 전용) |
 | `docs/` | 기획·아키텍처·메뉴별 문서 |
 
 ---
@@ -41,6 +43,15 @@ node backend/scripts/refresh.mjs   # backend/data/trends.json → frontend/data/
 
 > trends.json을 직접 편집한 후, 이 스크립트를 실행하면 trends.js가 자동 생성됩니다.  
 > **trends.js는 직접 편집하지 마세요** — refresh.mjs의 생성물입니다.
+
+### Hermes(고구미봇) 로컬 관리 콘솔 (선택사항)
+```bash
+# Windows
+tools\hermes-admin\start.bat                  # 브라우저 자동 오픈 (포트 7766, 토큰 기반 보호)
+# 또는
+node tools/hermes-admin/server.mjs            # 수동 시작
+```
+크론 작업·설정·실행 기록을 웹 UI에서 관리. **로컬 전용**(127.0.0.1, 비배포). → **[콘솔 가이드](tools/hermes-admin/README.md)**
 
 ---
 
@@ -68,6 +79,8 @@ Vercel 자동 배포 (git push 시)
 - trends.json만 수정. trends.js는 건드리지 말 것.
 - auto-build.mjs가 출처 자동검증(게이트) — 죽음·무관·못읽음 출처만 있으면 자동 보류
 - 자동 게시 항목의 썸네일은 auto-build.mjs가 출처 og:image로 자동 주입 — 모든 아이템이 커버 이미지 보장
+- 로그인/회원가입/저장/후기/펄스 아이디어는 서버에 저장되지 않는 로컬 개인화(localStorage) 기능
+- 다른 브라우저·다른 기기와 동기화되지 않으며, `H.*`는 향후 백엔드가 필요할 때를 위한 추상화 계층으로 유지
 
 ---
 
@@ -87,13 +100,14 @@ git push origin main              # → Vercel 자동 재배포
 ## 문서 인덱스
 
 - **[docs/prd.md](docs/prd.md)** — 프로젝트 기획·비전
-- **[docs/architecture.md](docs/architecture.md)** — 시스템 구조·백엔드 전환 계획
+- **[docs/architecture.md](docs/architecture.md)** — 정적 멀티페이지 구조·로컬 스토어 계약
+- **[docs/local-first.md](docs/local-first.md)** — 정적 운영·localStorage 기반 로컬 개인화 전략
 - **[docs/hermes.md](docs/hermes.md)** — 🤖 **Hermes(고구미봇) 작동 방식** — 파이프라인·스킬 12개·검증 게이트·cron
 - **[docs/menus/](docs/menus/)** — 메뉴별 상세 문서
   - [오늘의 한끗(홈)](docs/menus/home.md) / [MZ 사전](docs/menus/dictionary.md)
-  - [광고일까 진짜일까](docs/menus/ad-or-real.md) / [요즘 트렌드](docs/menus/food.md)
-  - [음식](docs/menus/food.md) / [디저트](docs/menus/dessert.md) / [핫플](docs/menus/hotplace.md)
-  - [공유](docs/menus/share.md) / [마이페이지](docs/menus/mypage.md) / [인증](docs/menus/auth.md)
+  - [광고일까 진짜일까](docs/menus/ad-or-real.md) / [요즘 음식](docs/menus/food.md)
+  - [요즘 디저트](docs/menus/dessert.md) / [요즘 핫플](docs/menus/hotplace.md)
+  - [검색](docs/menus/search.md) / [공유](docs/menus/share.md) / [내 한끗](docs/menus/mypage.md) / [인증](docs/menus/auth.md)
 - **[learnings.md](learnings.md)** — 고구미봇이 쌓는 분석 교훈
 - **[CLAUDE.md](CLAUDE.md)** — 개발 철칙·메모
 
@@ -117,7 +131,7 @@ git push origin main              # → Vercel 자동 재배포
 각 trend 항목:
 - `id` (string) — 고유 키
 - `type` (string) — "신뢰분석" | "트렌드"
-- `cat` (string) — 카테고리 (디저트·성수 카페·AI 프롬프트 등)
+- `cat` (string) — 정규 7분류 중 하나: 디저트 · 맛집 · 카페·핫플 · 신조어 · 노래·챌린지 · 패션 · AI 프롬프트
 - `title` (string) — 트렌드명
 - `collectedAt` (YYYY-MM-DD) — **첫 수집일(불변)**. 사이트 "수집일별" 누적/필터 기준(`index.html?date=`). 재분석해도 안 바뀜
 - `analyzedAt` (YYYY-MM-DD) — 분석 날짜(재분석 시 갱신)
@@ -138,5 +152,5 @@ git push origin main              # → Vercel 자동 재배포
 
 - **OS:** Windows 11 / **셸:** PowerShell (Bash 도구도 사용 가능)
 - **배포:** GitHub `GO9ME/aztomz` → Vercel 정적 배포, push 자동 재배포
-- **Hermes(고구미봇):** 트렌드 수집·분석·검증을 돌리는 AI 에이전트(별도 `E:\workspace\side_project\hermes`). 스킬 12개 · 검증 게이트 2종(최신성·출처) · cron(주간 트렌드 갱신 + 펄스 요일 로테이션). 사이트 반영은 **사람 승인 후**. → **[작동 방식 문서](docs/hermes.md)**
+- **Hermes(고구미봇):** 트렌드 수집·분석·검증을 돌리는 AI 에이전트(별도 `E:\workspace\side_project\hermes`). 검증 게이트(최신성·출처·본문 관련성)를 통과한 항목만 자동 게시·배포하고, 미통과 항목은 보류. → **[작동 방식 문서](docs/hermes.md)**
 - **Hermes 수동 시작:** `tools/start-hermes.bat` **더블클릭** — 게이트웨이가 떠 있으면 알려주고, 꺼져 있으면 켜서 cron이 자동으로 돌게 한다(로그인 시 자동 시작도 등록돼 있어 평소엔 불필요). 같은 파일이 `hermes\start-hermes.bat`에도 복사돼 있다.

@@ -20,7 +20,7 @@ jobs:
         with:
           node-version: "20"
 
-      # backend/data/trends.json 재수집·재분석(hermes) + generatedAt=오늘 + frontend/data/trends.js 생성
+      # backend/data/trends.json canonical 원본 → generatedAt=실행일 + frontend/data/trends.js 생성
       - name: Refresh trends
         run: node backend/scripts/refresh.mjs
 

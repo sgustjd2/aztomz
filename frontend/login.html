@@ -5,6 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="color-scheme" content="light dark" />
 <title>로그인 — 한끗</title>
+<meta name="description" content="이 브라우저에만 저장되는 한끗 로컬 계정으로 저장한 트렌드와 후기를 이어서 봅니다." />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="한끗" />
+<meta property="og:locale" content="ko_KR" />
+<meta property="og:title" content="로그인 — 한끗" />
+<meta property="og:description" content="한끗 로컬 계정으로 저장한 트렌드와 후기를 이 브라우저에서 이어서 보세요." />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="로그인 — 한끗" />
+<meta name="twitter:description" content="한끗 로컬 계정으로 저장한 트렌드와 후기를 이 브라우저에서 이어서 보세요." />
 <link rel="icon" type="image/svg+xml" href="favicon.svg" />
 <link rel="stylesheet" href="assets/styles.css" />
 </head>
@@ -15,6 +24,7 @@
       <span class="kicker">한끗 계정</span>
       <h1>다시 오셨네요</h1>
       <p class="sub">저장한 트렌드와 내 후기를 이어서 보려면 로그인하세요.</p>
+      <p class="local-note"><strong>로컬 계정</strong>입니다. 입력한 정보와 저장/후기는 이 브라우저의 localStorage에만 저장되고 서버에 올라가지 않으며, 다른 기기와 동기화되지 않습니다.</p>
       <form id="loginForm" novalidate>
         <div class="form-err" id="formErr"></div>
         <div class="field"><label for="email">이메일</label>
@@ -31,14 +41,16 @@
 <script>
   H.boot();
   // 이미 로그인 상태면 바로 이동
-  const next = (function(){ const n=H.param('next'); return (n && /\.html(\?|#|$)/.test(n) && !/^https?:\/\//.test(n)) ? n : 'index.html'; })();
-  if(H.user()){ location.replace(next); }
-  H.q('#toSignup').href = `signup.html?next=${encodeURIComponent(next)}`;
+  const next = H.safeNext(H.param('next'), 'index.html');
+  (async ()=>{
+    if(await H.resolve(H.user())){ location.replace(next); }
+  })();
+  H.q('#toSignup').href = H.signupHref(next);
 
-  H.q('#loginForm').addEventListener('submit', (e)=>{
+  H.q('#loginForm').addEventListener('submit', async (e)=>{
     e.preventDefault();
     const err=H.q('#formErr'); err.classList.remove('show');
-    const res=H.login({ email:H.q('#email').value, password:H.q('#pw').value });
+    const res=await H.resolve(H.login({ email:H.q('#email').value, password:H.q('#pw').value }));
     if(!res.ok){ err.textContent=res.error; err.classList.add('show'); return; }
     location.href = next;
   });

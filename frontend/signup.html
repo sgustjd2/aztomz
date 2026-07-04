@@ -5,6 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="color-scheme" content="light dark" />
 <title>회원가입 — 한끗</title>
+<meta name="description" content="이 브라우저에만 저장되는 한끗 로컬 계정을 만들어 트렌드 저장과 후기 작성을 사용합니다." />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="한끗" />
+<meta property="og:locale" content="ko_KR" />
+<meta property="og:title" content="회원가입 — 한끗" />
+<meta property="og:description" content="서버에 저장되지 않는 한끗 로컬 계정으로 저장과 후기를 이 브라우저에 남기세요." />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="회원가입 — 한끗" />
+<meta name="twitter:description" content="서버에 저장되지 않는 한끗 로컬 계정으로 저장과 후기를 이 브라우저에 남기세요." />
 <link rel="icon" type="image/svg+xml" href="favicon.svg" />
 <link rel="stylesheet" href="assets/styles.css" />
 </head>
@@ -15,6 +24,7 @@
       <span class="kicker">한끗 계정</span>
       <h1>한끗 시작하기</h1>
       <p class="sub">트렌드 저장 · 후기 작성 · 내 기록을 모아보세요.</p>
+      <p class="local-note"><strong>로컬 계정</strong>입니다. 계정 정보와 저장/후기는 이 브라우저의 localStorage에만 저장됩니다. 공개 서버 저장이나 기기 간 동기화는 제공하지 않습니다.</p>
       <form id="signupForm" novalidate>
         <div class="form-err" id="formErr"></div>
         <div class="field"><label for="name">이름 / 닉네임</label>
@@ -32,14 +42,16 @@
 <script src="assets/app.js"></script>
 <script>
   H.boot();
-  const next = (function(){ const n=H.param('next'); return (n && /\.html(\?|#|$)/.test(n) && !/^https?:\/\//.test(n)) ? n : 'index.html'; })();
-  if(H.user()){ location.replace(next); }
-  H.q('#toLogin').href = `login.html?next=${encodeURIComponent(next)}`;
+  const next = H.safeNext(H.param('next'), 'index.html');
+  (async ()=>{
+    if(await H.resolve(H.user())){ location.replace(next); }
+  })();
+  H.q('#toLogin').href = H.loginHref(next);
 
-  H.q('#signupForm').addEventListener('submit', (e)=>{
+  H.q('#signupForm').addEventListener('submit', async (e)=>{
     e.preventDefault();
     const err=H.q('#formErr'); err.classList.remove('show');
-    const res=H.signup({ name:H.q('#name').value, email:H.q('#email').value, password:H.q('#pw').value });
+    const res=await H.resolve(H.signup({ name:H.q('#name').value, email:H.q('#email').value, password:H.q('#pw').value }));
     if(!res.ok){ err.textContent=res.error; err.classList.add('show'); return; }
     location.href = next;
   });
