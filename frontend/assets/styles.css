@@ -196,7 +196,8 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
 .idx-row .t .it-cat{display:block;font-family:var(--serif);font-size:13px;letter-spacing:0;
   color:var(--muted);font-weight:700;margin-top:6px}
 /* 라벨("믿고 가볼 만함") — trend.html 상세와 동일한 색 배지로, 한눈에 보이는 판단(verdict) 역할 */
-.idx-row .t .it-label{display:inline-flex;align-self:flex-start;font-size:12px;padding:3px 10px;margin-top:8px}
+.idx-row .t .it-label{display:inline-flex;align-self:flex-start;font-size:13.5px;font-weight:900;
+  padding:5px 13px;border-width:1.5px;margin:9px 0 3px}
 .idx-row .t .it-desc{display:block;font-size:13.5px;color:var(--muted);line-height:1.5;margin-top:9px;word-break:keep-all}
 /* 점수 바 컬럼도 상단 정렬 — 제목 첫 줄 높이에 맞춰 살짝 내림 */
 .idx-row .mini{text-align:right;min-width:120px;margin-top:2px}
@@ -211,13 +212,15 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
 }
 @media(max-width:420px){
   .idx-row{padding:13px 12px}
-  .strip{grid-template-columns:1fr}
   .chip-card .cover{aspect-ratio:16/10}
 }
 
 /* ---------- trend strip (요즘 트렌드) ---------- */
-/* 가로스크롤 대신 줄바꿈 그리드 — 화면 폭에 맞춰 자동으로 다음 줄로 */
-.strip{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:18px;padding:8px 0 14px}
+/* 고정 열 수(1→2→3단) — auto-fill,minmax(180px)는 데스크톱에서 5~6단까지 채워 카드가
+   너무 작아지는 문제가 있었음(요청: 3단으로 넉넉하게) → 폭 구간별 고정 열로 교체 */
+.strip{display:grid;grid-template-columns:1fr;gap:18px;padding:8px 0 14px}
+@media(min-width:540px){ .strip{grid-template-columns:repeat(2,1fr)} }
+@media(min-width:900px){ .strip{grid-template-columns:repeat(3,1fr)} }
 /* 카드 = flex 컬럼 → 같은 줄 카드 높이를 통일하고 하단(신선도 칩)을 정렬 */
 .chip-card{text-decoration:none;color:inherit;display:flex;flex-direction:column;height:100%;
   background:var(--card);border:1px solid var(--line);border-radius:16px;padding:9px;
