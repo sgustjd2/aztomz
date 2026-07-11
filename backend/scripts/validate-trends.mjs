@@ -17,6 +17,13 @@ import { dirname, join } from 'node:path';
 export const CATS = ['디저트', '맛집', '카페·핫플', '신조어', '노래·챌린지', '패션', 'AI 프롬프트'];
 const TYPES = ['신뢰분석', '트렌드'];
 const ISO = /^\d{4}-\d{2}-\d{2}$/;
+// trend.html 유행 단계(stage-box)가 쓰는 정규 라벨. 파이프라인 내부값(예: "curate")이 그대로
+// 새면 화면에 원문 그대로 노출된다 — WORD-2026-00xx 배치가 실제로 이렇게 깨졌던 사례.
+const STAGES = ['발견', '상승', '상승 → 피크', '피크', '피크 → 하락', '안정화', '안정화 → 끝물', '하락 (한물감)', '밈화'];
+// verdict는 사람이 쓴 한 줄 판단 문장이어야 한다. "provisional" 같은 영문 placeholder가
+// 그대로 남으면 화면에 그대로 노출된다.
+const PLACEHOLDER_VERDICT = /^[A-Za-z\s]+$/;
+const ARTICLE_TYPES = ['h', 'p', 'q', 'ul'];
 
 /**
  * @param {Array} trends
@@ -45,6 +52,21 @@ export function validateTrends(trends) {
         if (typeof t[k] !== 'number' || t[k] < 0 || t[k] > 100) errors.push(`${at} ${k} 0~100 숫자 아님: ${JSON.stringify(t[k])}`);
       }
       if (t.sat && !['pos', 'neg', 'mix'].includes(t.sat)) warnings.push(`${at} sat 값 비표준: ${JSON.stringify(t.sat)} (pos/neg/mix)`);
+    } else {
+      // 트렌드 타입은 scoresBlock()이 stage-box(유행 단계)를 그린다 — 두 필드 다 필수.
+      if (!STAGES.includes(t.stage)) errors.push(`${at} stage 비정규값(내부 파이프라인 값 유출 의심): ${JSON.stringify(t.stage)} (허용: ${STAGES.join('/')})`);
+      if (!t.stageMsg || typeof t.stageMsg !== 'string') errors.push(`${at} stageMsg 누락 — 화면에 undefined로 노출됨`);
+    }
+    // verdict(한끗 판단)·article(자세히 읽기)은 모든 타입에서 렌더링되는 공통 섹션.
+    if (!t.verdict || typeof t.verdict !== 'string') errors.push(`${at} verdict 누락`);
+    else if (PLACEHOLDER_VERDICT.test(t.verdict)) errors.push(`${at} verdict가 placeholder로 보임: ${JSON.stringify(t.verdict)}`);
+    if (t.article !== undefined) {
+      if (!Array.isArray(t.article)) errors.push(`${at} article이 배열이 아님`);
+      else t.article.forEach((b, bi) => {
+        if (!Array.isArray(b) || !ARTICLE_TYPES.includes(b[0])) {
+          errors.push(`${at} article[${bi}] 형식 오류(["h"|"p"|"q"|"ul", 내용] 튜플이어야 함): ${JSON.stringify(b).slice(0, 80)}`);
+        }
+      });
     }
     if (!Array.isArray(t.src) || t.src.length === 0) warnings.push(`${at} 출처(src) 없음`);
   });
