@@ -7317,6 +7317,201 @@ window.HANGEUT_DATA = {
         "https://cdn.kmjournal.net/news/photo/202607/12681_20570_4856.jpeg"
       ],
       "pull": ""
+    },
+    {
+      "id": "funko-pop-prompt",
+      "type": "트렌드",
+      "cat": "AI 프롬프트",
+      "coverCat": "cat-ai",
+      "collectedAt": "2026-07-12",
+      "analyzedAt": "2026-07-12",
+      "buzz": "SNS에서 빠르게 확산 중",
+      "stage": "상승",
+      "stageMsg": "지금 막 뜨는 중",
+      "label": "지금 써도 됨",
+      "labelCls": "good",
+      "title": "내 사진이 3D 피규어로? 펀코팝 스타일 프롬프트",
+      "def": "사진 속 인물을 동그란 눈의 귀여운 피규어 스타일로 바꿔주는 명령",
+      "excerpt": "내 사진이나 최애 캐릭터를 요즘 유행하는 펀코팝(Funko Pop) 스타일 피규어로 만들어보세요. 프롬프트 명령어 하나면 누구나 3D 아티스트가 될 수 있습니다.",
+      "pull": "내 사진이 3D 피규어가 되는 마법",
+      "verdict": "사진 속 인물이나 캐릭터를 미국의 유명 피규어 시리즈 '펀코팝' 스타일로 변환하는 AI 프롬프트입니다. 큰 머리와 동그랗고 까만 눈, 아기자기한 2등신 비율이 특징으로, 어떤 사진이든 귀여운 3D 피규어처럼 만들어줘요. SNS 프로필 사진이나 반려동물 사진으로 만들어 공유하면서 유행이 시작됐습니다. 지금 바로 써먹기 좋은 최신 프롬프트입니다.",
+      "recs": [
+        [
+          "활용하기 쉬움",
+          "◎",
+          1
+        ],
+        [
+          "결과물이 재미있음",
+          "◎",
+          1
+        ],
+        [
+          "상업적 이용 시 저작권 주의",
+          "△",
+          0
+        ]
+      ],
+      "src": [
+        [
+          "Fotor 블로그",
+          "https://www.fotor.com/ko/blog/nano-banana-model-prompts/"
+        ],
+        [
+          "GenApe",
+          "https://genape.ai/ko/tutorial-article/ai-generator/ai-art-prompt"
+        ]
+      ],
+      "tags": [
+        "AI프롬프트",
+        "피규어",
+        "펀코팝",
+        "Gemini"
+      ],
+      "prompt": "Create a Funko Pop style figure of [SUBJECT]. The subject should be depicted as a vinyl toy with a large head, oversized black eyes, and a small, simplified body. The figure should be posed in a dynamic and characteristic stance, reflecting their personality. The background should be a clean, solid color that complements the figure. Use vibrant colors and smooth, glossy textures to mimic the look of a real Funko Pop toy. The lighting should be bright and even, highlighting the figure's features without harsh shadows. --ar 1:1 --stylize 750",
+      "article": [
+        [
+          "h",
+          "내 최애가 3D 피규어로, 펀코팝 프롬프트!"
+        ],
+        [
+          "p",
+          "요즘 SNS에서 한 번쯤 보셨을 겁니다. 연예인이나 애니메이션 캐릭터, 심지어 내 반려동물까지 3D 피규어로 변신한 이미지들을요. 이게 바로 '펀코팝(Funko Pop) 스타일' AI 프롬프트를 활용한 결과물입니다."
+        ],
+        [
+          "q",
+          "명령어 한 줄이면, 어떤 사진이든 귀여운 피규어로 만들 수 있어요."
+        ],
+        [
+          "h",
+          "펀코팝(Funko Pop)이 뭐길래?"
+        ],
+        [
+          "p",
+          "펀코(Funko)는 미국의 유명한 장난감 회사 이름이에요. 여기서 만든 '팝!(Pop!)' 시리즈 피규어는 큰 머리에 동그랗고 까만 눈, 2등신의 아기자기한 비율로 전 세계적인 인기를 끌고 있죠. 이 특징을 그대로 AI에게 학습시켜, 어떤 대상이든 펀코팝 피규어처럼 보이게 만드는 겁니다."
+        ],
+        [
+          "h",
+          "어떻게 활용할까? (AZ 주목!)"
+        ],
+        [
+          "p",
+          "어렵지 않아요. 이미지 생성 AI에 위에 제공된 'prompt' 텍스트를 복사해 붙여넣고, [SUBJECT] 부분만 원하는 대상(예: a smiling Korean girl, a cute puppy)으로 바꿔주면 끝입니다. SNS 프로필 사진으로 쓰거나, 자녀나 손주의 사진을 피규어로 만들어 선물하면 좋은 반응을 얻을 수 있을 거예요."
+        ],
+        [
+          "h",
+          "한끗 정리"
+        ],
+        [
+          "ul",
+          [
+            "지금 막 뜨기 시작한 '상승' 단계의 트렌드예요.",
+            "복잡한 프로그램 없이 명령어만으로 3D 아티스트가 된 기분을 낼 수 있어요.",
+            "단, 생성된 이미지를 상업적으로 이용할 경우 원본 캐릭터의 저작권 문제가 발생할 수 있으니 개인적인 용도로만 즐기는 것을 추천해요."
+          ]
+        ]
+      ],
+      "images": [
+        "https://imgv3.fotor.com/images/blog-cover-image/fotor-nano-banana-model-prompt-blog-banner-image.jpg"
+      ]
+    },
+    {
+      "id": "doodle-art-prompt",
+      "type": "트렌드",
+      "cat": "AI 프롬프트",
+      "coverCat": "cat-ai",
+      "collectedAt": "2026-07-12",
+      "analyzedAt": "2026-07-12",
+      "buzz": "개성있는 B급 감성으로 인기",
+      "stage": "상승",
+      "stageMsg": "꾸준히 사용되는 중",
+      "label": "지금 써도 됨",
+      "labelCls": "good",
+      "title": "일부러 못 그린 느낌, 낙서·손그림 프롬프트",
+      "def": "AI가 그린 그림을 일부러 어설픈 손그림이나 낙서처럼 만들어주는 명령",
+      "excerpt": "완벽한 AI 그림은 이제 그만! 일부러 못 그린 듯한 '하찮은' 매력의 낙서 그림(Doodle Art) 프롬프트로 나만의 개성을 표현해보세요.",
+      "pull": "AI 그림, 이젠 '하찮음'이 대세",
+      "verdict": "사진이나 아이디어를 마치 어린아이가 크레파스로 그린 듯한 낙서 스타일로 변환하는 AI 프롬프트입니다. 정교하고 사실적인 이미지 대신, 의도적으로 삐뚤빼뚤하고 어설픈 B급 감성을 표현하는 것이 핵심입니다. SNS에서 개성 있는 프로필 사진이나 밈(meme)을 만들 때 주로 사용되며, 특유의 귀여움과 친근함으로 빠르게 퍼져나가고 있습니다. '잘' 그리려는 경쟁에서 벗어나고 싶은 심리가 반영된 트렌드입니다.",
+      "recs": [
+        [
+          "개성 표현에 탁월함",
+          "◎",
+          1
+        ],
+        [
+          "결과물이 유머러스함",
+          "◎",
+          1
+        ],
+        [
+          "공식적인 용도로는 부적합",
+          "✕",
+          0
+        ]
+      ],
+      "src": [
+        [
+          "Wondershare Filmora",
+          "https://filmora.wondershare.kr/ai-prompt/gemini-doodle-art-prompt.html"
+        ],
+        [
+          "카라atim 블로그",
+          "https://carat.im/blog/ai-image-prompt-guide"
+        ]
+      ],
+      "tags": [
+        "AI프롬프트",
+        "낙서",
+        "손그림",
+        "밈",
+        "Doodle"
+      ],
+      "prompt": "Create a doodle art style image of [SUBJECT]. The style should be whimsical and child-like, as if drawn with a crayon or a thick marker. Use simple shapes, bold outlines, and a limited, bright color palette. The drawing should have a rough, hand-drawn texture, with intentionally imperfect lines and coloring outside the lines. The background should be a simple pattern like polka dots or stripes, or a plain off-white paper texture. Avoid realistic details and complex shading. The overall mood should be playful and naive. --ar 1:1 --stylize 600",
+      "article": [
+        [
+          "h",
+          "완벽함은 지겨워! '하찮은' 그림의 반란"
+        ],
+        [
+          "p",
+          "AI가 그려주는 놀랍도록 사실적인 이미지, 이제는 조금 식상하게 느껴지시나요? 그래서 등장했습니다. 일부러 못 그리고, 대충 그린 듯한 느낌을 주는 '낙서 그림(Doodle Art)' 프롬프트가 새로운 트렌드로 떠오르고 있습니다."
+        ],
+        [
+          "q",
+          "어설프고 삐뚤빼뚤한 선이야말로 이 프롬프트의 진짜 매력이에요."
+        ],
+        [
+          "h",
+          "왜 '낙서'에 열광할까?"
+        ],
+        [
+          "p",
+          "모두가 '잘' 그린 그림을 만들 때, 오히려 어설픈 손그림은 독창적이고 개성 있는 표현 수단이 됩니다. B급 감성의 유머와 어린 시절의 향수를 자극하며, 보는 사람에게 친근하고 편안한 느낌을 주죠. SNS에서 무거운 주제보다 가볍고 재미있는 콘텐츠가 더 빨리 퍼지는 것과 같은 원리입니다."
+        ],
+        [
+          "h",
+          "어떻게 활용할까? (AZ 주목!)"
+        ],
+        [
+          "p",
+          "블로그나 SNS에 올릴 콘텐츠의 썸네일, 자녀나 손주를 위한 재미있는 그림책, 나만의 스티커나 굿즈를 만들 때 이 프롬프트를 활용해보세요. [SUBJECT] 부분에 'a cat playing with yarn(털실을 가지고 노는 고양이)' 처럼 원하는 내용을 영어로 넣기만 하면 세상에 하나뿐인 귀여운 그림이 완성됩니다."
+        ],
+        [
+          "h",
+          "한끗 정리"
+        ],
+        [
+          "ul",
+          [
+            "AI 이미지 트렌드가 '극사실주의'에서 '개성적 표현'으로 넘어가는 신호탄이에요.",
+            "유머와 친근함을 무기로 하기 때문에 밈(meme)으로 만들어 쓰기 좋습니다.",
+            "보고서나 프레젠테이션 같은 진지한 자리에는 어울리지 않으니 용도에 맞게 사용하세요."
+          ]
+        ]
+      ],
+      "images": [
+        "https://image.inblog.dev/?url=https%3A%2F%2Fsource.inblog.dev%2Ffeatured_image%2F2025-06-15T05%3A58%3A31.141Z-8787f448-660e-4780-9dfe-e1dc53407a34&amp;w=1200&amp;q=85&amp;format=jpg&amp;v=2025-06-15T05%3A58%3A32.583Z"
+      ]
     }
   ]
 };
