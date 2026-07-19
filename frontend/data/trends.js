@@ -8201,6 +8201,100 @@ window.HANGEUT_DATA = {
       "images": [
         "https://www.vogue.co.kr/wp_data/vogue/2026/07/style_6a5704e302221-1920x1080.jpg?x=1600&y=1839&ver=1.1.37"
       ]
+    },
+    {
+      "id": "find-waldo-prompt",
+      "type": "트렌드",
+      "cat": "AI 프롬프트",
+      "coverCat": "cat-ai",
+      "collectedAt": "2026-07-19",
+      "analyzedAt": "2026-07-19",
+      "buzz": "화제성 중간",
+      "stage": "상승",
+      "stageMsg": "참여형 콘텐츠로 활용 시작",
+      "label": "지금 써도 됨",
+      "labelCls": "good",
+      "title": "월리를 찾아라! 숨은그림찾기 프롬프트",
+      "def": "수많은 인파나 사물 속에 특정 대상을 숨긴 그림을 만드는 명령",
+      "excerpt": "SNS에서 '숨은 OO 찾기' 같은 참여형 콘텐츠를 만들 때 유용한 프롬프트입니다. 사용자의 흥미를 유발하고 머무는 시간을 늘리는 데 효과적이죠.",
+      "pull": "내 캐릭터를 군중 속에 숨겨보세요!",
+      "verdict": "단순히 이미지를 생성하는 것을 넘어, 사용자와 상호작용할 수 있는 '콘텐츠'를 만들어내는 프롬프트입니다. 브랜드 마스코트나 특정 아이템을 숨겨 SNS 이벤트를 열거나, 친구들과 함께 즐길 수 있는 퀴즈를 만드는 등 활용 가능성이 무궁무진합니다. 지금 바로 시도해 보세요.",
+      "recs": [
+        [
+          "SNS 이벤트 활용",
+          "◎",
+          1
+        ],
+        [
+          "친구와 퀴즈내기",
+          "○",
+          1
+        ],
+        [
+          "단순 이미지 생성",
+          "△",
+          0
+        ]
+      ],
+      "src": [
+        [
+          "All My Universe",
+          "https://allmyuniverse.com/image-prompt-guide-wheres-waldo-search-and-find-crowd-illustration/"
+        ]
+      ],
+      "tags": [
+        "AI프롬프트",
+        "숨은그림찾기",
+        "월리를찾아라",
+        "SNS이벤트",
+        "인터랙티브"
+      ],
+      "article": [
+        [
+          "h",
+          "AI로 만드는 '월리를 찾아라', 보셨나요?"
+        ],
+        [
+          "p",
+          "어릴 적 누구나 한 번쯤은 빽빽한 그림 속에서 빨간 줄무늬 옷을 입은 월리를 찾아 헤맨 기억이 있을 겁니다. 이제 AI를 이용해 단 몇 분 만에 우리만의 '숨은그림찾기' 이미지를 만들 수 있는 프롬프트가 새로운 트렌드로 떠오르고 있습니다."
+        ],
+        [
+          "q",
+          "단순 관상을 넘어, 사용자의 참여를 유도하는 '인터랙티브 콘텐츠'의 시작입니다."
+        ],
+        [
+          "h",
+          "왜 지금 '숨은그림찾기'일까요?"
+        ],
+        [
+          "p",
+          "SNS 피드에서 이용자의 시선을 단 1초라도 더 붙잡기 위한 경쟁이 치열해지면서, 이 프롬프트는 강력한 무기가 됩니다. '숨은 고양이 찾기', '인파 속 내 캐릭터 찾기' 등 무한한 변주가 가능해 브랜드 마케팅 채널이나 개인 크리에이터들 사이에서 입소문을 타고 있죠."
+        ],
+        [
+          "h",
+          "어떻게 활용하면 좋을까요?"
+        ],
+        [
+          "ul",
+          [
+            "브랜드 SNS 채널에서 신제품이나 마스코트를 숨겨놓고 찾는 이벤트를 열어보세요.",
+            "친구들만 아는 아이템을 숨겨놓고 함께 찾아보며 즐거운 시간을 보내세요.",
+            "복잡하고 정교한 일러스트 작품의 한 요소로 활용하여 깊이를 더해보세요."
+          ]
+        ],
+        [
+          "h",
+          "한끗 정리"
+        ],
+        [
+          "p",
+          "숨은그림찾기 프롬프트는 단순한 이미지 생성을 넘어, 콘텐츠 소비자와의 상호작용을 디자인하는 새로운 방식입니다. 기술과 재미를 결합한 이 트렌드를 활용해 당신의 SNS에 활기를 불어넣어 보세요."
+        ]
+      ],
+      "prompt": "Create a 'Where's Waldo' style illustration. The scene is a massive, chaotic, and densely populated city beach in the summer. Fill the image with hundreds of tiny, diverse characters doing various beach activities: sunbathing, swimming, playing volleyball, building sandcastles, eating ice cream. The art style should be a clean, colorful, flat vector illustration with clear outlines. Hidden somewhere in the crowd is a small, bright yellow rubber duck. The duck should be whole and not obscured, but placed cleverly to be hard to find. --ar 16:9 --style raw --v 6.0",
+      "images": [
+        "https://app.allmyuniverse.com/apps/gen-studio/users/2-da4b9237/1782251485984-gemini-2.5-flash-image-e65ec4ef-vqy2s3.webp"
+      ]
     }
   ]
 };
