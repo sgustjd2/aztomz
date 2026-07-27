@@ -106,6 +106,7 @@ Hermes는 [Nous Research](https://nousresearch.com)의 AI 에이전트 런타임
 
 | 작업 | 주기 | 내용 |
 |---|---|---|
+| **블로그 일일 초안** (`c3513e548f94`) | 매일 **09:00** | `aztomz_blog_daily.py`(no-agent) — `claude -p --permission-mode acceptEdits /blog-daily` 스킬로 키워드 백로그에서 오늘 주제 선택 → 조사·검증까지 수행 후 git 커밋(발행 제외) |
 | **한끗 자동 수집·게시** (신규) | 매일 **21:00** | `hangeut-run`(수집·분석) → `auto-build.mjs`(자동검증·게시). 검증통과분만 사이트 반영 · git push → Vercel 배포. **요일 로테이션 → 목 21:00 = 신조어(주간 사전 갱신)** |
 | **한끗 광고/진짜 일일 재확인** (신규) | 매일 **21:15** | `recheck_ad.py`(no-agent) — 가장 오래된 신뢰분석 1건의 출처 재검증(recheck-ad.mjs) → 살아있으면 analyzedAt 갱신(→ 홈 featured 회전). 메인(21:00)과 trends.json 쓰기 충돌 방지로 15분 뒤 |
 | **한끗 주간 갱신** (`dc54cec90b5e`) | 매주 월 **21:00** | `hangeut_daily.py`(no-agent) — trends.json 날짜 스탬프 + 신선도 리포트. 무료·안 죽음 |

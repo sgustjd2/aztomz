@@ -25,3 +25,8 @@ Thumbs.db
 # Hermes 파이프라인 작업파일
 .pipeline/
 .gstack/
+
+# 블로그 발행 산출물 / 티스토리 로그인 세션 (인증 쿠키 포함 — 절대 커밋 금지)
+backend/out/
+backend/.tistory-profile/
+backend/.tistory-state.json
