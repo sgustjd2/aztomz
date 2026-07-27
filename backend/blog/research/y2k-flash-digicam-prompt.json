@@ -1,0 +1,46 @@
+{
+  "keyword": "Y2K 플래시 디지캠 AI 이미지 프롬프트",
+  "categoryId": "ai-prompt-pack",
+  "searchedAt": "2026-07-27",
+  "note": "trendResearch — 2차 조사. 1차 조사가 인용한 '가장 바이럴한 이펙트'/'릴스를 지배 중'은 코디네이터가 SocialBee 원문을 직접 WebFetch로 대조한 결과 실재하지 않는 지어낸 인용으로 확인돼 폐기. 실제로 검증된 사실만 남김. 정직한 톤 지시(2026-07-27, 사용자) — '이번 달 터진' 것처럼 쓰지 말 것, 4월 시작·현재까지 회자 중으로 정확히.",
+  "candidates": [
+    {
+      "theme": "Y2K 플래시 디지캠 (2000년대 하드 플래시 감성)",
+      "evidence": "Instagram 공식 AI 스토리 이펙트. 2026-04-23 Digital Camera World 보도로 바이럴+논란 동시 확인(직접 WebFetch 대조 완료). 하루 1회 제한이 확산 요인. 7월 하순 트렌드 정리 글에도 여전히 등장.",
+      "selected": true
+    }
+  ],
+  "rejectedCandidates": [
+    { "theme": "K-pop 최애랑 인생네컷", "reason": "가장 최근 날짜 있는 근거가 2026-04-28(약 90일 전) — 30일 기준 미달" },
+    { "theme": "냥이/커플/홈트 (기존 백로그)", "reason": "최근 30일 근거 자체를 못 찾음 — 이번에도 폴백 상태 유지" },
+    { "theme": "Meta 뮤즈 이미지(7/9 출시, 18일 전)", "reason": "가장 최근 화제이나 '내 사진 무단 AI 학습' 사생활 논란 뉴스라 프롬프트 팩 장르와 안 맞음" },
+    { "theme": "vidguru.ai 'H1 2026 톱10 이미지 이펙트'", "reason": "게시일 2026-05-07, 상반기 스냅샷일 뿐 6~7월 언급 없음" }
+  ],
+  "chosen": {
+    "theme": "Y2K 플래시 디지캠",
+    "whyNow": "2026년 4월 인스타그램이 스토리에 낸 AI 이펙트로, 2000년대 하우스파티 사진 같은 강한 정면 플래시·과다노출·거친 그레인을 재현한다. 넉 달 가까이 된 트렌드지만 7월 하순 트렌드 정리 글에도 여전히 실려 있을 만큼 회자가 이어지고 있다 — '이번 달 터진 것'이 아니라 '아직도 도는 것'으로 정직하게 소개한다.",
+    "honestyNote": "본문에 '요즘', '이번 달' 같은 최신성 과장 표현을 쓰지 말 것. '4월에 나와서 아직도 도는' 식으로 시점을 정확히."
+  },
+  "sources": [
+    {
+      "title": "Instagram's retro flash filter is both viral and controversial",
+      "url": "https://www.digitalcameraworld.com/photography/photo-technique/instagrams-retro-flash-filter-is-both-viral-and-controversial-but-im-a-photographer-and-that-retro-flash-look-is-actually-easy-to-create-with-almost-any-camera",
+      "host": "digitalcameraworld.com",
+      "tier": "press",
+      "publishedAt": "2026-04-23",
+      "body": "사진 전문 매체 Digital Camera World가 인스타그램의 '레트로 플래시 필터'를 다뤘다. 2000년대풍 강한 직광 플래시 룩이 트렌디해 바이럴됐지만, 동시에 AI가 사용자 얼굴을 심각하게 변형시키는 문제가 불거졌다 — 눈동자 색이 파란색에서 초록색으로 바뀌거나, 인종/민족성까지 다르게 생성되는 사례가 보고됐다. 이 때문에 필터가 일시적으로 내려갔다가 나중에 복구됐다. 필자(사진작가)는 실제로는 일반 카메라로도 같은 룩을 쉽게 재현할 수 있다고 설명한다."
+    },
+    {
+      "title": "The latest Instagram trends (July 22, 2026)",
+      "url": "https://socialbee.com/blog/instagram-trends/",
+      "host": "socialbee.com",
+      "tier": "blog",
+      "publishedAt": "2026-07-22",
+      "body": "인스타그램 마케팅 블로그 SocialBee의 트렌드 정리 글(2026-07-22 갱신) 안에이 필터가 여전히 항목으로 실려 있다. 설명: 일반 사진을 2007년 하우스파티에서 찍은 듯한 하드 플래시 디지캠 스타일로 바꾸는 AI 스토리 이펙트. 야외 야간 사진·거울 셀카에 가장 잘 작동하고 복잡한 장면에서는 성능이 떨어진다. 일부 계정은 하루 1회로 사용이 제한돼 있어 게시 타이밍에 긴장감을 만든다. 브랜드 활용 팁으로 제품·공간의 전후 비교를 통한 저예산 향수 마케팅을 제안한다. 주의: 이 글의 이전 조사 버전이 인용한 '올해 가장 바이럴한 이펙트'·'릴스를 지배 중' 문구는 코디네이터가 직접 WebFetch로 원문 대조한 결과 실재하지 않아 폐기 — 이 문구들을 본문에 쓰지 말 것."
+    }
+  ],
+  "unknowns": [
+    "필터의 정확한 최초 출시일 — 자료마다 다름(4월 23일 보도 기준 그 이전 출시). '4월에 나왔다' 정도로만 쓸 것, 특정 일자 단정 금지.",
+    "실제 사용 건수·해시태그 조회수 등 정량 데이터 — 못 찾음. '얼마나 퍼졌는지'를 숫자로 쓰지 말 것."
+  ]
+}
