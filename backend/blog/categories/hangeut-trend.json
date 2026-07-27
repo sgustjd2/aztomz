@@ -1,0 +1,54 @@
+{
+  "id": "hangeut-trend",
+  "tistoryCategory": "AZTOMZ",
+  "_note": "한끗 트렌드 해설(신조어·패션·노래/챌린지·AI 프롬프트·음식 트렌드)을 블로그 글로. 주제·근거는 Hermes 가 수집·검증한 backend/data/trends.json 에서 온다 — blog-pick-trend.mjs 가 조사 파일을 만들어 준다.",
+  "persona": "요즘 뜨는 걸 1분 만에 이해시키는 사람. 유행을 띄우지도, 비웃지도 않는다",
+  "readerProfile": "어디서 본 말·스타일인데 정확히 뭔지 몰라 검색해본 사람",
+  "searchIntent": "정보형(이게 뭔데?)",
+  "structureTemplate": "hangeut-trend",
+  "tone": {
+    "formality": "해요체",
+    "emoji": false,
+    "sentenceMax": 3
+  },
+  "mustInclude": [
+    "한 줄 정의 — 검색해서 들어온 사람이 첫 문단에서 답을 얻어야 한다",
+    "어디서 나왔는지 / 왜 지금 뜨는지",
+    "유행 단계(stage) 를 정직하게 — 지금 시작인지, 피크인지, 저물고 있는지",
+    "실제로 어떻게 쓰나 / 어떻게 입나 (분야에 맞게)",
+    "출처 링크 (조사 파일 sources 의 url 그대로)",
+    "분석 기준일 명시"
+  ],
+  "banned": [
+    "무조건",
+    "완벽",
+    "역대급",
+    "요즘 애들은",
+    "요즘 노래는",
+    "아재",
+    "모르면 시대에 뒤처",
+    "안 하면 손해"
+  ],
+  "_bannedNote": "세대 비하 금지가 이 카테고리의 핵심이다. 한끗의 이름 자체가 'AZ와 MZ는 한 끗 차이' — 어느 쪽도 깎아내리지 않는다. 유행을 안 따라간다고 뒤처진 것처럼 쓰지도 않는다.",
+  "wordCount": [
+    1300,
+    2300
+  ],
+  "imagePolicy": {
+    "min": 0,
+    "altRequired": true,
+    "ownOnly": true,
+    "_note": "남의 사진·SNS 스크린샷 재업로드 금지. 커버는 자체 생성 카드."
+  },
+  "ctaType": "한끗 상세페이지 내부링크 1개(조사 파일 trend.detailUrl) + 관련 글 있으면 1개",
+  "affiliateDisclosure": false,
+  "publishDefault": "public",
+  "pipeline": {
+    "topicSource": "backend/data/trends.json (Hermes 수집) — blog-pick-trend.mjs 가 선정·조사파일 생성",
+    "skipResearch": true,
+    "_researchNote": "blog-researcher 를 쓰지 않는다. 조사가 이미 끝났다 — 여기에 새 검색을 덧붙이면 검증 안 된 사실이 섞인다. 특히 신조어는 '2024년산을 신상으로 오해'하는 사고가 반복됐으니, trend.stage 를 그대로 믿고 쓴다.",
+    "skipFactcheck": false,
+    "_factcheckNote": "팩트체크는 원본(trend) 왜곡 검증이다 — 유행 단계를 부풀렸는지, 원본에 없는 유래·수치를 지어냈는지, 세대 비하가 섞였는지를 본다."
+  },
+  "_publishNote": "자동 공개 발행. 게이트: (1) 출처 링크 0개면 보류 (2) 원본 trend 에 없는 사실이 있으면 보류 (3) stage 를 원본보다 세게 쓴 곳이 있으면 보류."
+}

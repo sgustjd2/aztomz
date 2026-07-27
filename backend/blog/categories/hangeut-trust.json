@@ -1,0 +1,56 @@
+{
+  "id": "hangeut-trust",
+  "tistoryCategory": "AZTOMZ",
+  "_note": "한끗 '광고일까 진짜일까' 신뢰분석 트렌드(디저트·맛집·카페·핫플)를 블로그 글로. 주제·근거는 Hermes 가 수집하고 auto-build.mjs 가 출처까지 검증한 backend/data/trends.json 에서 온다 — blog-pick-trend.mjs 가 조사 파일을 만들어 준다.",
+  "persona": "SNS에서 뜬 가게를 실제로 갈지 말지 판단해주는 사람. 광고를 걸러내되 가게를 깎아내리지는 않는다",
+  "readerProfile": "인스타에서 보고 궁금한데, 광고인지 진짜 후기인지 몰라 망설이는 사람",
+  "searchIntent": "판단형(갈까 말까)",
+  "structureTemplate": "hangeut-trust",
+  "tone": {
+    "formality": "해요체",
+    "emoji": false,
+    "sentenceMax": 3
+  },
+  "mustInclude": [
+    "이게 뭔지 한 문단 — 모르는 사람도 이해되게",
+    "광고 의심도·후기 신뢰도 두 점수와 각각의 근거 (반드시 추정치로 표현)",
+    "만족도는 신뢰도와 **별개 축**으로 분리해 서술 (믿을 만한가 ≠ 좋은가)",
+    "한끗 판단(verdict) 을 자기 문장으로 풀어쓴 결론",
+    "목적별 추천 — 어떤 상황엔 맞고 어떤 상황엔 아닌지",
+    "출처 링크 (조사 파일 sources 의 url 그대로)",
+    "분석 기준일 명시"
+  ],
+  "banned": [
+    "확실히 광고",
+    "무조건",
+    "완벽",
+    "역대급",
+    "인생맛집",
+    "실패 없는",
+    "believe me",
+    "강추",
+    "가성비 갑"
+  ],
+  "_bannedNote": "점수는 추정치다. 단정 표현을 쓰면 그 순간 이 카테고리의 존재 이유가 사라진다. 가게를 조롱하거나 단정적으로 깎아내리지도 않는다 — 판단 근거만 보여주고 결정은 독자가 한다.",
+  "wordCount": [
+    1400,
+    2400
+  ],
+  "imagePolicy": {
+    "min": 0,
+    "altRequired": true,
+    "ownOnly": true,
+    "_note": "가게 사진·SNS 스크린샷 재업로드 금지(저작권). 커버는 자체 생성 카드."
+  },
+  "ctaType": "한끗 상세페이지 내부링크 1개(조사 파일 trend.detailUrl) + 관련 글 있으면 1개",
+  "affiliateDisclosure": false,
+  "publishDefault": "public",
+  "pipeline": {
+    "topicSource": "backend/data/trends.json (Hermes 수집) — blog-pick-trend.mjs 가 선정·조사파일 생성",
+    "skipResearch": true,
+    "_researchNote": "blog-researcher 를 쓰지 않는다. 조사가 이미 끝났다 — src 는 auto-build.mjs 가 생존·본문관련성을 검증한 URL 이고, 분석(ad/trust/verdict/recs)은 Hermes 가 만든 것이다. 여기에 새 검색을 덧붙이면 검증 안 된 사실이 섞인다.",
+    "skipFactcheck": false,
+    "_factcheckNote": "팩트체크는 한다. 다만 '외부 사실 검증'이 아니라 '원본(trend) 왜곡 검증'이다 — 점수를 부풀렸는지, 추정을 단정으로 바꿨는지, 신뢰도와 만족도를 섞었는지, 원본에 없는 가게·수치를 지어냈는지를 본다."
+  },
+  "_publishNote": "자동 공개 발행. 게이트: (1) 출처 링크 0개면 보류 (2) 점수를 단정형으로 쓴 문장이 있으면 보류 (3) 원본 trend 에 없는 수치가 있으면 보류."
+}
