@@ -1,0 +1,178 @@
+{
+  "keyword": "Spring Boot 3 CORS 설정 안 먹힐 때",
+  "categoryId": "web-error",
+  "searchedAt": "2026-07-26",
+  "queries": [
+    "Spring Boot 3 CORS configuration not working Spring Security 6 2024",
+    "Spring Security 6 CORS Access-Control-Allow-Origin header missing fix",
+    "Spring Boot 3 CORS site:docs.spring.io",
+    "spring security 6 cors allowedOrigins wildcard credentials not working stack overflow",
+    "spring security cors allowedOrigins allowCredentials allowedOriginPatterns wildcard asterisk error IllegalArgumentException",
+    "spring boot 3 cors WebSecurityConfigurerAdapter removed migration SecurityFilterChain stackoverflow answer 2023",
+    "spring boot 3 cors error message exact text blocked by CORS policy No Access-Control-Allow-Origin preflight OPTIONS 403",
+    "spring security 6 cors 401 preflight OPTIONS not work corsConfigurationSource fix 2023 2024 stackoverflow",
+    "spring boot 3 migration guide cors changes Spring Boot 3.0 site:github.com spring-projects",
+    "spring security CORSMissingAllowOrigin CORS after update spring security 5 to 6 root cause fix"
+  ],
+  "sources": [
+    {
+      "title": "CORS :: Spring Security (Servlet) — 공식 레퍼런스 문서",
+      "url": "https://docs.spring.io/spring-security/reference/servlet/integrations/cors.html",
+      "host": "docs.spring.io",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "Spring Framework provides first-class CORS support. CORS must be processed before Spring Security because preflight requests don't contain cookies (e.g., JSESSIONID). Without proper ordering, Spring Security rejects unauthenticated preflight requests.\n\n[Method 1: CorsConfigurationSource Bean — 자동 감지]\nSpring Security automatically configures CORS when a UrlBasedCorsConfigurationSource bean is present:\n```java\n@Bean\nUrlBasedCorsConfigurationSource corsConfigurationSource() {\n    CorsConfiguration configuration = new CorsConfiguration();\n    configuration.setAllowedOrigins(Arrays.asList(\"https://example.com\"));\n    configuration.setAllowedMethods(Arrays.asList(\"GET\",\"POST\"));\n    UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();\n    source.registerCorsConfiguration(\"/**\", configuration);\n    return source;\n}\n```\n\n[Method 2: Spring MVC Integration — withDefaults()]\nIf Spring MVC CORS support is already configured, Spring Security can use it automatically:\n```java\n@Configuration\n@EnableWebSecurity\npublic class WebSecurityConfig {\n    @Bean\n    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {\n        http\n            // if Spring MVC is on classpath and no CorsConfigurationSource is provided,\n            // Spring Security will use CORS configuration provided to Spring MVC\n            .cors(withDefaults())\n            ...\n        return http.build();\n    }\n}\n```\n\n[Method 3: Per-Chain Configuration — 체인별 개별 지정]\nFor multiple SecurityFilterChain instances:\n```java\n@Bean\n@Order(0)\npublic SecurityFilterChain apiFilterChain(HttpSecurity http) throws Exception {\n    http\n        .securityMatcher(\"/api/**\")\n        .cors((cors) -> cors\n            .configurationSource(apiConfigurationSource())\n        )\n        ...\n    return http.build();\n}\n```\n\n[중요 경고]\n1. CORS must be processed BEFORE Spring Security: preflight requests don't contain cookies (like JSESSIONID). If Spring Security processes first, it rejects the unauthenticated request.\n2. Do NOT configure both configurationSource and preFlightRequestHandler on the same CorsConfigurer—this causes a startup error.\n3. Using .cors(CorsConfigurer::disable) removes Spring Security's CORS support but does NOT prevent browser CORS errors. To fix CORS issues, you must ENABLE CORS support and provide an appropriate configuration source — disabling does nothing useful.\n\n현재 문서 버전: Spring Security 7.1.0 / 6.5.11",
+      "facts": [
+        "CORS는 Spring Security 보다 먼저 처리되어야 한다 — preflight(OPTIONS) 요청에는 쿠키(JSESSIONID)가 없기 때문에 Spring Security가 먼저 처리하면 미인증으로 거부한다",
+        "UrlBasedCorsConfigurationSource 빈이 스프링 컨텍스트에 있으면 Spring Security 가 CORS 를 자동으로 감지한다",
+        ".cors(Customizer.withDefaults()) 는 CorsConfigurationSource 빈이 없을 때 Spring MVC 의 CORS 설정을 위임받는다",
+        ".cors(CorsConfigurer::disable) 은 브라우저 CORS 에러를 해결하지 못한다 — CORS 지원을 끄는 것이지 CORS 에러를 없애는 게 아니다",
+        "configurationSource 와 preFlightRequestHandler 를 동시에 같은 CorsConfigurer 에 설정하면 시작 오류 발생",
+        "Spring Security 6.5.11 / 7.1.0 기준 문서"
+      ]
+    },
+    {
+      "title": "CORS :: Spring Framework (Spring MVC) — 공식 레퍼런스 문서",
+      "url": "https://docs.spring.io/spring-framework/reference/web/webmvc-cors.html",
+      "host": "docs.spring.io",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "Spring MVC provides built-in CORS support through multiple configuration mechanisms.\n\n[1. @CrossOrigin — 컨트롤러/메서드 레벨]\n```java\n@CrossOrigin(origins = \"https://domain2.com\", maxAge = 3600)\n@RestController\n@RequestMapping(\"/account\")\npublic class AccountController { ... }\n```\n기본값: 모든 오리진 허용, 모든 헤더 허용, 해당 메서드 매핑, allowCredentials=disabled, maxAge=30분.\n\n[2. Global Configuration — WebMvcConfigurer]\n```java\n@Configuration\npublic class WebConfiguration implements WebMvcConfigurer {\n    @Override\n    public void addCorsMappings(CorsRegistry registry) {\n        registry.addMapping(\"/api/**\")\n            .allowedOrigins(\"https://domain1.com\", \"https://domain2.com\")\n            .allowedMethods(\"GET\", \"PUT\")\n            .allowedHeaders(\"header1\", \"header2\", \"header3\")\n            .exposedHeaders(\"header1\", \"header2\")\n            .allowCredentials(true)\n            .maxAge(3600);\n    }\n}\n```\n\n[3. CorsFilter — 서블릿 필터 레벨]\n```java\nCorsConfiguration config = new CorsConfiguration();\nconfig.setAllowCredentials(true);\nconfig.addAllowedOrigin(\"https://domain1.com\");\nconfig.addAllowedHeader(\"*\");\nconfig.addAllowedMethod(\"*\");\nUrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();\nsource.registerCorsConfiguration(\"/**\", config);\nCorsFilter filter = new CorsFilter(source);\n```\nNote: If using Spring Security, it has built-in CORS support, so consider using that instead of CorsFilter.\n\n[핵심 제약 — allowCredentials + wildcard]\nWhen allowCredentials is enabled:\n- Wildcards (\"*\") are NOT authorized in allowOrigins\n- Use allowOriginPatterns property to match dynamic origins instead\n- Example: .allowOriginPatterns(\"https://*.domain.com\")\n\n[처리 순서/우선순위]\n1. Global HandlerMapping level configuration (URL pattern 전체)\n2. @CrossOrigin class-level annotations (해당 클래스 모든 메서드)\n3. @CrossOrigin method-level annotations (가장 구체적, class-level 덮어쓰기)\n4. Custom CorsConfigurationSource implementations\n\n[중요] Spring Security 사용 시: @CrossOrigin 이나 WebMvcConfigurer 만으로는 부족하다 — Spring Security의 필터 체인이 MVC 핸들러보다 먼저 동작하기 때문에 Security 레벨에서도 cors()를 활성화해야 한다.",
+      "facts": [
+        "@CrossOrigin 기본값: allowCredentials=disabled, maxAge=1800초(30분), 모든 오리진·헤더 허용",
+        "WebMvcConfigurer.addCorsMappings() 기본값: GET/HEAD/POST 메서드만, allowCredentials=disabled, maxAge=1800초",
+        "allowCredentials=true 이면 allowedOrigins에 \"*\" 사용 불가 — allowedOriginPatterns 로 대체해야 한다",
+        "allowedOriginPatterns 는 Spring Framework 5.3에서 도입됨",
+        "Spring Security 사용 시 CorsFilter 단독 사용보다 Security의 내장 CORS 지원 사용 권장",
+        "@CrossOrigin + WebMvcConfigurer 는 additive하게 합산되며 단일값 속성(allowCredentials, maxAge)은 로컬이 글로벌을 덮어씀"
+      ]
+    },
+    {
+      "title": "CorsConfiguration Javadoc — Spring Framework API",
+      "url": "https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/web/cors/CorsConfiguration.html",
+      "host": "docs.spring.io",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "setAllowedOrigins: Sets a list of origins for which cross-origin requests are allowed. Each value may be a specific domain (\"https://domain1.com\"), comma-delimited domains, or wildcard \"*\" for all origins.\n\nKey Restrictions on setAllowedOrigins:\n- The CORS spec does NOT allow \"*\" when allowCredentials is set to true\n- The CORS spec does NOT recommend \"*\" when allowPrivateNetwork is set to true\n- These invalid combinations are rejected in favor of using allowedOriginPatterns instead\n\nsetAllowedOriginPatterns: Alternative to setAllowedOrigins supporting more flexible patterns with * anywhere in the hostname plus port lists.\nExamples:\n  - \"https://*.domain1.com\" — domains ending with domain1.com\n  - \"https://*.domain1.com:[8080,8081]\" — specific ports\n  - \"https://*.domain1.com:[*]\" — any port including default\nKey Advantage: When an allowedOriginPattern is matched, the Access-Control-Allow-Origin response header is set to the MATCHED ORIGIN (not \"*\"). Therefore allowedOriginPatterns CAN be used with allowCredentials and allowPrivateNetwork set to true.\nSince: 5.3\n\nvalidateAllowCredentials(): Throws IllegalArgumentException if allowCredentials is true and allowedOrigins contains \"*\". Since: 5.3\n\nWildcard Restrictions Table:\n  allowedOrigins \"*\":          OK without credentials, REJECTED with credentials\n  allowedOriginPatterns \"*\":   OK with credentials, OK with private network\n\nsetAllowCredentials: Sets whether user credentials (cookies, CSRF tokens) are supported in CORS requests. Cannot be combined with wildcard \"*\" in allowed origins. Establishes high trust level with configured domains — increases attack surface by exposing cookies and CSRF tokens.",
+      "facts": [
+        "allowCredentials=true 상태에서 allowedOrigins에 \"*\"를 넣으면 IllegalArgumentException 발생 (validateAllowCredentials() 메서드, since 5.3)",
+        "allowedOriginPatterns 는 Spring Framework 5.3 에서 도입됨 — allowCredentials=true 와 함께 사용 가능",
+        "allowedOriginPatterns 매칭 시 응답 헤더 Access-Control-Allow-Origin 값은 \"*\"가 아닌 실제 매칭된 오리진으로 설정됨",
+        "allowedOriginPatterns 지원 패턴: 와일드카드 위치 자유(https://*.domain.com), 포트 목록([8080,8081]), 전체 포트([*])"
+      ]
+    },
+    {
+      "title": "Reason: CORS header 'Access-Control-Allow-Origin' missing — MDN Web Docs",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS/Errors/CORSMissingAllowOrigin",
+      "host": "developer.mozilla.org",
+      "tier": "data",
+      "publishedAt": null,
+      "body": "Error message displayed in browser console:\n\"Reason: CORS header 'Access-Control-Allow-Origin' missing\"\n\nWhat It Means: The server's response to a CORS (Cross-Origin Resource Sharing) request is missing the required Access-Control-Allow-Origin header. This header determines whether the resource can be accessed by content from other origins (domains).\n\nWhen It Appears: This error occurs when:\n- A web page tries to access a resource from a different origin (different domain, protocol, or port)\n- The server doesn't include the Access-Control-Allow-Origin header in its response\n- The browser blocks the request as a security measure\n\nFor public APIs: Access-Control-Allow-Origin: *\nFor specific domains: Access-Control-Allow-Origin: https://example.com\n\nImportant: Never use the wildcard (*) for private APIs. Instead, specify the exact domains that need access.",
+      "facts": [
+        "브라우저 콘솔에 표시되는 정확한 에러 문구: \"Reason: CORS header 'Access-Control-Allow-Origin' missing\"",
+        "CORS 에러는 다른 origin(도메인·프로토콜·포트 중 하나라도 다른 경우) 접근 시 응답에 Access-Control-Allow-Origin 헤더가 없을 때 발생",
+        "브라우저가 보안 정책으로 요청을 차단함 — 서버 자체는 정상 응답했을 수도 있음"
+      ]
+    },
+    {
+      "title": "Spring Security CORS Configuration 2026 Playbook — TheLinuxCode (검색 결과 확인, WebFetch 차단)",
+      "url": "https://thelinuxcode.com/spring-security-cors-configuration-in-2026-a-practical-secure-playbook/",
+      "host": "thelinuxcode.com",
+      "tier": "blog",
+      "publishedAt": null,
+      "body": "[WebFetch 차단으로 본문 직접 읽기 불가. 검색 스니펫 기반 요약만 가능. 완료 기준 300자 미달 — 이 자료는 보조로만 사용하고 facts 에 포함하지 않음]\n\n검색 스니펫 내용: Spring Security CORS 설정 관련 실용 가이드, SecurityFilterChain + CorsConfigurationSource 패턴, allowCredentials true 시 allowedOriginPatterns 사용 권고.",
+      "facts": []
+    }
+  ],
+  "additionalContext": {
+    "exactBrowserErrorMessages": [
+      "Reason: CORS header 'Access-Control-Allow-Origin' missing",
+      "Access to XMLHttpRequest at 'http://localhost:8080/api/...' from origin 'http://localhost:3000' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+      "Access to fetch at 'http://localhost:8080/api/greeting' from origin 'http://localhost:3000' has been blocked by CORS policy: Response to preflight request doesn't pass access control check: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+      "origin 'null' has been blocked by CORS policy: Response to preflight request doesn't pass access control check: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+      "Access to XMLHttpRequest at http://localhost:8091 from origin http://localhost:4200 has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource"
+    ],
+    "errorMessageSources": [
+      "coderanch.com/t/711884/frameworks/origin-null-blocked-CORS-policy (검색 결과 스니펫)",
+      "검색 결과 스니펫 — dev.to/hemant_rai_1985/how-to-fix-cors-issue-in-spring-boot"
+    ],
+    "springBoot3SecurityChanges": {
+      "removedClasses": "WebSecurityConfigurerAdapter — Spring Security 5.7.0-M2에서 deprecated, Spring Security 6(Spring Boot 3) 에서 완전 제거",
+      "replacementPattern": "SecurityFilterChain @Bean 메서드로 교체 — configure(HttpSecurity http) override 대신 @Bean SecurityFilterChain filterChain(HttpSecurity http) 사용",
+      "deprecatedMethods": [
+        "authorizeRequests() → authorizeHttpRequests() 로 교체",
+        "antMatchers() → requestMatchers() 로 교체",
+        "cors() 체이닝 스타일에서 람다 DSL로 변경: http.cors(withDefaults()) 또는 http.cors(cors -> cors.configurationSource(...))"
+      ],
+      "javaxToJakarta": "Spring Boot 3 는 Jakarta EE 9+ 기반 — javax.servlet.* → jakarta.servlet.* 패키지 변경 (CorsFilter 등 서블릿 클래스 import 경로 변경 필요)"
+    },
+    "rootCauses": [
+      {
+        "cause": "Spring Security 필터 체인 순서 문제 — CORS 설정이 Security 레벨에 없음",
+        "detail": "Spring Security는 서블릿 필터 체인에서 DispatcherServlet(Spring MVC) 보다 먼저 실행됨. @CrossOrigin 어노테이션과 WebMvcConfigurer.addCorsMappings() 는 DispatcherServlet 이후에 처리되므로, Spring Security가 먼저 요청을 가로채 거부하면 CORS 헤더가 추가되지 않은 채 응답이 나감",
+        "fix": "SecurityFilterChain 에 .cors(withDefaults()) 또는 .cors(cors -> cors.configurationSource(source)) 추가"
+      },
+      {
+        "cause": "Preflight(OPTIONS) 요청을 Spring Security가 401/403으로 차단",
+        "detail": "브라우저는 실제 요청 전에 OPTIONS 메서드로 preflight 요청을 보냄. 이 요청에는 쿠키(JSESSIONID 등)가 없어 인증 정보가 없음. Spring Security가 모든 엔드포인트에 인증을 요구하도록 설정된 경우 OPTIONS 요청이 401/403으로 거부됨",
+        "fix": "http.cors() 로 CorsFilter 를 Security 필터 앞에 배치하면 preflight 자동 처리됨. 또는 .authorizeHttpRequests(auth -> auth.requestMatchers(HttpMethod.OPTIONS).permitAll()) 추가"
+      },
+      {
+        "cause": "allowedOrigins(\"*\") + allowCredentials(true) 조합 — IllegalArgumentException",
+        "detail": "CORS 스펙에 의해 allowCredentials=true 일 때 Access-Control-Allow-Origin: * 응답 헤더를 보낼 수 없음. Spring Framework 5.3 이후 validateAllowCredentials() 가 이 조합을 IllegalArgumentException 으로 즉시 거부",
+        "fix": "allowedOrigins(\"*\") 대신 allowedOriginPatterns(\"*\") 사용 (since 5.3), 또는 구체적인 오리진 목록으로 교체"
+      },
+      {
+        "cause": "Spring Boot 2→3 마이그레이션 후 WebSecurityConfigurerAdapter 제거로 인한 CORS 설정 누락",
+        "detail": "Spring Boot 2 에서 WebSecurityConfigurerAdapter 를 상속해 configure() 를 오버라이드했던 기존 CORS 설정이 Spring Boot 3/Security 6 에서 해당 클래스가 제거되며 동작 안 함. SecurityFilterChain 빈 방식으로 마이그레이션 필요",
+        "fix": "WebSecurityConfigurerAdapter 상속 제거 → @Bean SecurityFilterChain 방식으로 전환"
+      },
+      {
+        "cause": "cors() 비활성화 상태 — http.cors() 를 호출하지 않음",
+        "detail": "SecurityFilterChain 설정에서 .cors() 를 명시적으로 호출하지 않으면 Spring Security CORS 지원이 비활성화됨. Spring Boot 3/Security 6 에서는 기본적으로 비활성화된 경우도 있음",
+        "fix": "SecurityFilterChain 에 .cors(Customizer.withDefaults()) 또는 명시적 CorsConfigurationSource 추가"
+      }
+    ],
+    "codeExamples": {
+      "minimalWorkingConfig": {
+        "description": "Spring Security 6 + CorsConfigurationSource 완전 예시",
+        "code": "@Configuration\n@EnableWebSecurity\npublic class SecurityConfig {\n\n    @Bean\n    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {\n        http\n            .cors(Customizer.withDefaults()) // CorsConfigurationSource 빈을 자동 사용\n            .csrf(csrf -> csrf.disable()) // REST API 의 경우\n            .authorizeHttpRequests(auth -> auth\n                .anyRequest().authenticated()\n            );\n        return http.build();\n    }\n\n    @Bean\n    public CorsConfigurationSource corsConfigurationSource() {\n        CorsConfiguration configuration = new CorsConfiguration();\n        configuration.setAllowedOrigins(Arrays.asList(\"http://localhost:3000\"));\n        configuration.setAllowedMethods(Arrays.asList(\"GET\",\"POST\",\"PUT\",\"DELETE\",\"OPTIONS\"));\n        configuration.setAllowedHeaders(Arrays.asList(\"*\"));\n        configuration.setAllowCredentials(true);\n        // allowedOrigins(\"*\") + allowCredentials(true) 조합 금지 → allowedOriginPatterns 사용\n        // configuration.setAllowedOriginPatterns(Arrays.asList(\"*\"));\n        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();\n        source.registerCorsConfiguration(\"/**\", configuration);\n        return source;\n    }\n}"
+      },
+      "allowCredentialsPlusDynamicOrigin": {
+        "description": "allowCredentials=true + 동적 오리진 패턴 (allowedOriginPatterns 사용)",
+        "code": "CorsConfiguration configuration = new CorsConfiguration();\nconfiguration.setAllowedOriginPatterns(Arrays.asList(\"https://*.example.com\", \"http://localhost:[*]\"));\nconfiguration.setAllowCredentials(true); // allowedOriginPatterns 와 조합 가능\nconfiguration.setAllowedMethods(Arrays.asList(\"GET\",\"POST\",\"PUT\",\"DELETE\",\"OPTIONS\"));\nconfiguration.setAllowedHeaders(Arrays.asList(\"*\"));"
+      },
+      "wrongPattern_springBoot2Style": {
+        "description": "Spring Boot 2 방식 (Spring Boot 3 에서 동작 안 함)",
+        "code": "// ❌ Spring Boot 3 에서 제거됨\n@Configuration\npublic class SecurityConfig extends WebSecurityConfigurerAdapter {\n    @Override\n    protected void configure(HttpSecurity http) throws Exception {\n        http.cors().and()...;\n    }\n}"
+      }
+    },
+    "versionMapping": {
+      "springBoot3_0": "Spring Security 6.0, Spring Framework 6.0",
+      "springBoot3_1": "Spring Security 6.1, Spring Framework 6.0",
+      "springBoot3_2": "Spring Security 6.2, Spring Framework 6.1",
+      "springBoot3_3": "Spring Security 6.3, Spring Framework 6.1",
+      "note": "allowedOriginPatterns는 Spring Framework 5.3부터 사용 가능 → Spring Boot 2.4+ 부터 사용 가능"
+    }
+  },
+  "conflicts": [
+    {
+      "about": "Spring Security 기본값 — cors() 활성화 여부",
+      "a": "Spring Security 공식 문서: UrlBasedCorsConfigurationSource 빈이 컨텍스트에 있으면 자동으로 CORS 감지·활성화",
+      "b": "커뮤니티 여러 글: Spring Boot 3/Security 6 에서는 cors()를 SecurityFilterChain 에 명시적으로 호출해야 동작한다고 설명 — 자동 감지가 환경에 따라 다를 수 있음을 시사"
+    },
+    {
+      "about": "WebMvcConfigurer.addCorsMappings() 단독 사용 가능 여부",
+      "a": "Spring MVC 공식 문서: WebMvcConfigurer 설정은 유효한 CORS 설정 방법임",
+      "b": "Spring Security 공식 문서 + 커뮤니티: Spring Security 사용 시 WebMvcConfigurer 단독으로는 부족 — Security 필터가 MVC 핸들러보다 먼저 요청을 가로채기 때문에 Security 레벨에서도 cors()를 활성화해야 함"
+    }
+  ],
+  "unknowns": [
+    "Spring Boot 3.0 Migration Guide 의 CORS 관련 항목 원문 — GitHub 위키 WebFetch 차단으로 미확인",
+    "Spring Security GitHub issue #12905(Security 5→6 업그레이드 후 CORS 누락) 원문 — WebFetch 차단",
+    "Baeldung /spring-security-cors-preflight 원문 전체 — WebFetch 차단 (prelightcheck 처리 코드 예시 포함 여부 미확인)",
+    "Spring Boot 3 에서 jakarta.servlet 패키지 변경이 CorsFilter import 에 실제로 영향을 주는지 — 검색 스니펫 수준에서만 확인됨",
+    "Stack Overflow 고득점 답변 원문 (cors + spring-security 태그 300+ votes) — WebFetch 차단",
+    "Spring Security 6.0 GA 릴리스 노트의 CORS 관련 Breaking Change 명시 여부"
+  ]
+}

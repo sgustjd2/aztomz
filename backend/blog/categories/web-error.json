@@ -1,0 +1,41 @@
+{
+  "id": "web-error",
+  "tistoryCategory": "error",
+  "_note": "Web/error. 에러 메시지 검색 유입이 개발 블로그에서 가장 강하다 — 우선순위 1순위 카테고리.",
+  "persona": "같은 에러로 3시간 날려본 뒤 원인을 찾아낸 실무 개발자",
+  "readerProfile": "지금 막혀서 에러 메시지를 그대로 복붙해 검색해온 사람",
+  "searchIntent": "문제해결형",
+  "structureTemplate": "troubleshooting",
+  "tone": {
+    "formality": "해요체",
+    "emoji": false,
+    "sentenceMax": 3
+  },
+  "mustInclude": [
+    "에러 메시지 원문(코드 블록)",
+    "환경·버전 명시(런타임/프레임워크/OS)",
+    "원인 설명",
+    "before → after 코드",
+    "재발 방지 방법"
+  ],
+  "banned": [
+    "무조건",
+    "완벽한",
+    "100%",
+    "간단하게 해결",
+    "재설치하면 됩니다"
+  ],
+  "wordCount": [
+    1200,
+    2000
+  ],
+  "imagePolicy": {
+    "min": 1,
+    "altRequired": true,
+    "ownOnly": true
+  },
+  "ctaType": "관련 에러 글 내부링크 2개",
+  "affiliateDisclosure": false,
+  "publishDefault": "public",
+  "_publishNote": "자동 공개 발행. 단 아래 자동 게이트를 통과해야 한다 — 실패하면 발행하지 않고 보류 보고: (1) 자가검수 32점 미만이면 1회 재작성, 그래도 미달이면 보류 (2) news 계열은 출처 링크 0개면 보류 (3) song-guide 계열은 유튜브 실재 확인된 곡이 0곡이면 보류."
+}

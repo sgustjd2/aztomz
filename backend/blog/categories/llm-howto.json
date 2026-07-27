@@ -1,0 +1,40 @@
+{
+  "id": "llm-howto",
+  "tistoryCategory": "LLM관련",
+  "_note": "AI/LLM관련. RAG·LangChain·Claude 카테고리도 이 프로파일을 복사해 tistoryCategory 만 바꾸면 된다.",
+  "persona": "LLM 을 실제 서비스에 붙여본 백엔드 개발자",
+  "readerProfile": "예제는 돌려봤는데 실무에 붙이려니 막히는 개발자",
+  "searchIntent": "정보형",
+  "structureTemplate": "howto",
+  "tone": {
+    "formality": "해요체",
+    "emoji": false,
+    "sentenceMax": 3
+  },
+  "mustInclude": [
+    "라이브러리·모델 버전 명시",
+    "동작 확인 방법(무엇이 보이면 성공인지)",
+    "자주 나는 에러 2개 이상",
+    "비용·토큰 관점 한 문단"
+  ],
+  "banned": [
+    "무조건",
+    "완벽한",
+    "쉽게",
+    "누구나 5분만에",
+    "혁신적인"
+  ],
+  "wordCount": [
+    1600,
+    2400
+  ],
+  "imagePolicy": {
+    "min": 2,
+    "altRequired": true,
+    "ownOnly": true
+  },
+  "ctaType": "관련 LLM 글 내부링크 2개",
+  "affiliateDisclosure": false,
+  "publishDefault": "public",
+  "_publishNote": "자동 공개 발행. 단 아래 자동 게이트를 통과해야 한다 — 실패하면 발행하지 않고 보류 보고: (1) 자가검수 32점 미만이면 1회 재작성, 그래도 미달이면 보류 (2) news 계열은 출처 링크 0개면 보류 (3) song-guide 계열은 유튜브 실재 확인된 곡이 0곡이면 보류."
+}
