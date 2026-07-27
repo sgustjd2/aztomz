@@ -1,7 +1,10 @@
 keyword,categoryId,priority,memo
-"LangChain 0.3 마이그레이션 하면서 깨진 것들",llm-howto,2,버전 명시 필수
-"n8n 셀프호스팅 두 달 써본 후기",dev-tool,2,써본 조건 먼저 채울 것
+"LangChain 0.3 마이그레이션 하면서 깨진 것들",llm-howto,3,버전 명시 필수 — 2026-07-27부로 아이디어/트렌드 우선, 기술 how-to는 후순위
+"n8n 셀프호스팅 두 달 써본 후기",dev-tool,3,써본 조건 먼저 채울 것 — 2026-07-27부로 후순위(자동화 아이디어 우선)
 "2026년 상반기 LLM 판도 정리",ai-trend,1,출처 링크 없으면 발행 보류
+"n8n + AI로 만드는 업무 자동화 아이디어 모음",automation-idea,1,2026-07-27 사용자 지시 — 아이디어위주. 노드명·연동은 docs.n8n.io로 확인 후 쓸 것. 완전한 워크플로 JSON 지어내지 말 것
+"매일 아침 뉴스레터·RSS를 AI가 요약해서 슬랙/디스코드로 보내는 n8n 자동화",automation-idea,1,RSS 노드·AI 요약 노드·메신저 전송 노드 실재 확인 필수
+"구글폼 응답을 AI가 자동 분류해서 노션에 정리하는 n8n 워크플로",automation-idea,2,Google Forms/Notion 연동 노드 실재 확인 필수
 "비 오는 새벽에 어울리는 J-POP 신곡",jpop-hidden,3,조회수 100만 미만 · YT 실재 확인 필수
 "차트에 오르기 전 들어두는 팝 신곡",pop-hidden,3,조회수 200만 미만
 "멜론 차트 밖 국내 인디 신곡",music-hidden,3,조회수 50만 미만

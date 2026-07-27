@@ -1,0 +1,104 @@
+#!/usr/bin/env node
+/* ============================================================
+   에이전트 산출물 조립 — 마크다운 + 메타 → 발행용 HTML
+
+   에이전트 파이프라인(조사 → 정리 → 글쓰기 → SEO → 검증)의 마지막 결정적 단계.
+   LLM 은 마크다운만 쓰고, HTML 변환·살균·기계검사는 여기서 코드가 한다.
+
+   입력:  backend/out/blog/<slug>.md      (글쓰기 에이전트)
+          backend/out/blog/<slug>.json    (SEO 에이전트 — title/tags/desc/category)
+   출력:  backend/out/blog/<slug>.html    (blog-publish.mjs 가 그대로 받는 형식)
+
+   실행: node backend/scripts/blog-assemble.mjs <slug>
+   ============================================================ */
+import { readFile, writeFile } from 'node:fs/promises';
+import { existsSync } from 'node:fs';
+import { fileURLToPath } from 'node:url';
+import { dirname, join } from 'node:path';
+import { md2html } from './lib/md.mjs';
+
+const repoRoot = join(dirname(fileURLToPath(import.meta.url)), '..', '..');
+const outDir = join(repoRoot, 'backend', 'out', 'blog');
+const researchDir = join(repoRoot, 'backend', 'blog', 'research');
+
+const slug = process.argv.slice(2).find((a) => !a.startsWith('--'));
+if (!slug) { console.error('사용법: node backend/scripts/blog-assemble.mjs <slug>'); process.exit(1); }
+
+const mdPath = join(outDir, `${slug}.md`);
+const metaPath = join(outDir, `${slug}.json`);
+for (const p of [mdPath, metaPath]) {
+  if (!existsSync(p)) { console.error(`✗ 없음: ${p}`); process.exit(1); }
+}
+
+const md = await readFile(mdPath, 'utf8');
+const meta = JSON.parse(await readFile(metaPath, 'utf8'));
+
+/* 허용 URL — 조사 파일에 실제로 있던 것만. 여기 없는 링크는 지어낸 링크다.
+   LLM 검증은 누락에 약하므로(링크를 다 빼도 통과시킨다) 문자열로 직접 센다. */
+/* 조사 파일은 기본적으로 slug 와 같은 이름이지만, 한 조사로 곡별 글 여러 편을 뽑을 땐
+   slug 가 달라진다(city-pop-80s-still-fresh 조사 → yasuha-friday-chinatown 글).
+   post-build.mjs 와 같은 --research= 규약으로 지정한다. */
+const rArg = (process.argv.find((a) => a.startsWith('--research=')) || '').slice('--research='.length);
+const rPath = rArg
+  ? (rArg.endsWith('.json') ? rArg : join(researchDir, `${rArg}.json`))
+  : join(researchDir, `${slug}.json`);
+if (rArg && !existsSync(rPath)) { console.error(`✗ 조사 파일 없음: ${rPath}`); process.exit(1); }
+const research = existsSync(rPath) ? JSON.parse(await readFile(rPath, 'utf8')) : null;
+// relatedVideos(리믹스·커버)도 songs 와 동급 출처다 — 여기 빠지면 정상 임베드/링크가 '지어낸 URL'로 오탐된다.
+const allSongEntries = (research?.songs || []).flatMap((s) => [s, ...(s.relatedVideos || [])]);
+const allowed = [
+  ...(research?.sources || []).map((s) => s.url),
+  ...allSongEntries.map((s) => s.url),
+  ...allSongEntries.map((s) => s.lyricsUrl),  // 가사는 인용 금지 → 공식 가사 페이지 '링크'가 필수다
+  ...(meta.internalLinks || []),
+].filter(Boolean);
+
+const problems = [];
+// 코드블록 안 URL(예: 에러 메시지의 localhost:8080, 샘플 코드의 예시 주소)은 인용 링크가 아니라
+// 예시 텍스트다 — "지어낸 URL" 검사에서 빼지 않으면 web-error/dev-tool 류 글이 전부 막힌다.
+const mdWithoutCode = md.replace(/```[\s\S]*?```/g, '');
+const inText = [...mdWithoutCode.matchAll(/https?:\/\/[^\s)"'\]]+/g)].map((m) => m[0].replace(/[.,)]+$/, ''));
+if (allowed.length) {
+  const used = allowed.filter((u) => md.includes(u)).length;
+  const need = Math.min(3, allowed.length);
+  if (used < need) problems.push(`출처 링크 ${used}개 (최소 ${need}개 필요) — 조사 파일의 url 을 그대로 본문에 넣어야 한다`);
+  const invented = [...new Set(inText.filter((u) => !allowed.some((a) => u.startsWith(a) || a.startsWith(u))))];
+  if (invented.length) problems.push(`조사에 없는 URL: ${invented.slice(0, 5).join(' , ')}`);
+}
+if (/```[\s\S]*?```/.test(md) === false && /코드/.test(meta.title || '')) {
+  problems.push('제목은 코드를 다루는데 본문에 코드블록이 없다');
+}
+
+/* 영상 임베드 — 조사에 있는 영상만, 그리고 실제로 임베드가 되는 것만.
+   oembed 401/404 인 영상을 넣으면 독자에게 '재생 없음' 검은 상자가 뜬다(CLAUDE.md 철칙). */
+const embedIds = [...new Set([...md.matchAll(/^\s*\[YT:\s*([A-Za-z0-9_-]{11})\s*(?:\||\])/gim)].map((m) => m[1]))];
+const songIds = allSongEntries
+  .map((s) => s.videoId || (/[?&]v=([A-Za-z0-9_-]{11})/.exec(s.url || '') || [])[1])
+  .filter(Boolean);
+for (const id of embedIds) {
+  if (songIds.length && !songIds.includes(id)) {
+    problems.push(`조사에 없는 영상 임베드: ${id} — 조사 파일의 곡 영상만 넣을 수 있다`);
+    continue;
+  }
+  const r = await fetch(`https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=${id}&format=json`,
+    { signal: AbortSignal.timeout(15000) }).catch(() => null);
+  if (!r || !r.ok) problems.push(`임베드 불가 영상: ${id} (oembed ${r ? r.status : '요청 실패'}) — 넣으면 '재생 없음'으로 뜬다`);
+}
+
+if (problems.length) {
+  console.error('✗ 조립 중단 — 기계검사 위반:');
+  problems.forEach((p) => console.error(`   ✗ ${p}`));
+  process.exit(1);
+}
+
+const today = new Date().toISOString().slice(0, 10);
+const html = '<!--COVER-->\n' + md2html(md)
+  + `\n<p style="font-size:.85em;color:#6b7280;margin-top:2em">${today} 작성 · `
+  + `사실 확인이 안 된 항목은 본문에 그렇게 표시했습니다.</p>\n`;
+
+await writeFile(join(outDir, `${slug}.html`), html, 'utf8');
+
+const text = html.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
+console.log(`✓ 조립 완료: backend/out/blog/${slug}.html`);
+console.log(`  본문 ${text.length}자 · h2 ${(html.match(/<h2>/g) || []).length}개 · 링크 ${(html.match(/<a /g) || []).length}개`);
+console.log(`  다음: node backend/scripts/blog-verify.mjs ${slug} && node backend/scripts/blog-publish.mjs ${slug}`);

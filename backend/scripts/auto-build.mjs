@@ -40,6 +40,8 @@ const args = process.argv.slice(2);
 const NO_GIT = args.includes('--no-git');
 const DRY = args.includes('--dry');
 const STRICT = args.includes('--strict');
+const BLOG = args.includes('--blog');       // 배포 성공 후 티스토리까지 발행
+const scriptsDir = join(repoRoot, 'backend', 'scripts');
 const curatePath = args.find(a => !a.startsWith('--')) || join(repoRoot, '.pipeline', 'curate.json');
 
 const DDGS = process.env.DDGS_EXE ||
@@ -253,4 +255,20 @@ try {
 } catch (e) {
   console.error('⚠ git 단계 오류(파일은 반영됨):', (e.stderr || e.message || '').toString().slice(0, 300));
   process.exit(0);
+}
+
+// ── 블로그 발행(--blog): 사이트 배포가 끝난 뒤에만 티스토리로 넘어간다.
+// 여기서 실패해도 트렌드 게시는 이미 성공했으므로 절대 exit 1 하지 않는다(경고만).
+if (BLOG) {
+  for (const t of published) {
+    try {
+      execFileSync('node', [join(scriptsDir, 'blog-build.mjs'), t.id], { cwd: repoRoot, stdio: 'inherit' });
+      // 발행 전 검증(claude -p) — 원본 왜곡·단정·지어낸 사실·저작권을 마지막으로 본다.
+      // 반려되면 아래 publish 는 실행되지 않고 catch 로 떨어진다(트렌드 게시는 이미 완료).
+      execFileSync('node', [join(scriptsDir, 'blog-verify.mjs'), t.id], { cwd: repoRoot, stdio: 'inherit' });
+      execFileSync('node', [join(scriptsDir, 'blog-publish.mjs'), t.id], { cwd: repoRoot, stdio: 'inherit' });
+    } catch (e) {
+      console.error(`⚠ 블로그 발행 실패(트렌드 게시는 완료됨) — ${t.id}: ${(e.message || '').slice(0, 200)}`);
+    }
+  }
 }
