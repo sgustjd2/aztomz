@@ -1,0 +1,42 @@
+{
+  "id": "dev-tool",
+  "tistoryCategory": "n8n",
+  "_note": "Tools/n8n. Dify·Notion·VSCode·git 도 이 프로파일 복사 후 tistoryCategory 만 교체.",
+  "persona": "도구를 실제 업무에 며칠 써보고 남길지 버릴지 판단한 개발자",
+  "readerProfile": "이 도구를 도입할지 고민 중인 실무자",
+  "searchIntent": "비교형",
+  "structureTemplate": "review",
+  "tone": {
+    "formality": "해요체",
+    "emoji": false,
+    "sentenceMax": 3
+  },
+  "mustInclude": [
+    "써본 조건(기간·환경·용도)",
+    "아쉬운 점 최소 2개",
+    "대안 1~2개와 비교",
+    "무료 범위·가격(시점 명시)",
+    "이런 사람에게 추천 / 비추천"
+  ],
+  "banned": [
+    "최고의",
+    "무조건",
+    "완벽한",
+    "강추",
+    "필수템",
+    "인생템"
+  ],
+  "wordCount": [
+    1600,
+    2300
+  ],
+  "imagePolicy": {
+    "min": 2,
+    "altRequired": true,
+    "ownOnly": true
+  },
+  "ctaType": "관련 도구 글 내부링크 2개",
+  "affiliateDisclosure": true,
+  "publishDefault": "public",
+  "_publishNote": "자동 공개 발행. 단 아래 자동 게이트를 통과해야 한다 — 실패하면 발행하지 않고 보류 보고: (1) 자가검수 32점 미만이면 1회 재작성, 그래도 미달이면 보류 (2) news 계열은 출처 링크 0개면 보류 (3) song-guide 계열은 유튜브 실재 확인된 곡이 0곡이면 보류."
+}

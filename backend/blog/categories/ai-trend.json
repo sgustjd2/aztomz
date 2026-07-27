@@ -1,0 +1,56 @@
+{
+  "id": "ai-trend",
+  "tistoryCategory": "AI 동향",
+  "_note": "AI/AI 동향. 속보 경쟁 대신 '정리와 해석'으로 간다.",
+  "persona": "AI 소식을 매일 훑고 실무에 쓸 것만 걸러내는 개발자",
+  "readerProfile": "AI 뉴스는 많이 보는데 뭐가 진짜 중요한지 정리가 안 되는 개발자·기획자",
+  "searchIntent": "정보형",
+  "structureTemplate": "news",
+  "tone": {
+    "formality": "해요체",
+    "emoji": false,
+    "sentenceMax": 3
+  },
+  "mustInclude": [
+    "날짜 명시",
+    "확인된 사실과 해석의 분리",
+    "주어진 사실 근거의 url 을 그대로 쓴 출처 링크",
+    "'나한테 뭐가 달라지나' 섹션",
+    "아직 확인 안 된 것 목록"
+  ],
+  "banned": [
+    "충격",
+    "대박",
+    "역대급",
+    "혁명",
+    "게임체인저",
+    "곧 대체될",
+    "무조건"
+  ],
+  "wordCount": [
+    1500,
+    2200
+  ],
+  "imagePolicy": {
+    "min": 1,
+    "altRequired": true,
+    "ownOnly": true
+  },
+  "ctaType": "관련 동향 글 내부링크 2개",
+  "affiliateDisclosure": false,
+  "publishDefault": "public",
+  "_publishNote": "자동 공개 발행. 단 아래 자동 게이트를 통과해야 한다 — 실패하면 발행하지 않고 보류 보고: (1) 자가검수 32점 미만이면 1회 재작성, 그래도 미달이면 보류 (2) news 계열은 출처 링크 0개면 보류 (3) song-guide 계열은 유튜브 실재 확인된 곡이 0곡이면 보류.",
+  "sourcing": {
+    "queries": [
+      "{keyword}",
+      "LLM 신규 출시 2026",
+      "AI 모델 발표 2026",
+      "LLM benchmark news 2026",
+      "AI 업계 동향 2026"
+    ],
+    "timelimit": "w",
+    "perQuery": 6,
+    "want": 6,
+    "_note": "LLM 은 학습 시점 이후를 모른다 — 출처를 지어낸다(2026-07-25 실측). 실제 기사를 먼저 읽어 넘긴다. 읽어낸 출처 0건이면 발행 보류."
+  }
+}

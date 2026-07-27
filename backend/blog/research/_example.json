@@ -1,0 +1,37 @@
+{
+  "keyword": "예시 — 이 파일을 복사해서 쓰세요",
+  "categoryId": "ai-trend",
+  "notes": "조사자가 남기는 메모. 무엇을 확인했고 무엇을 못 했는지.",
+  "sources": [
+    {
+      "title": "실제 기사 제목",
+      "url": "https://example.org/real-article",
+      "host": "example.org",
+      "body": "기사 본문을 여기 넣는다. 300자 이상이어야 쓸모가 있다. 본문 없이 URL만 있으면 LLM 이 내용을 몰라 지어낸다."
+    }
+  ],
+  "songs": [
+    {
+      "artist": "아티스트",
+      "title": "곡명",
+      "url": "https://www.youtube.com/watch?v=XXXXXXXXXXX",
+      "views": 12345,
+      "subscribers": 200000,
+      "hiddenRatio": 0.06,
+      "publishedYear": 2026,
+      "commentSummary": {
+        "mood": [
+          "차분함"
+        ],
+        "whenListened": [
+          "새벽"
+        ],
+        "praised": [
+          "후렴"
+        ],
+        "sentiment": "positive",
+        "note": "댓글 총평(원문 인용 금지)"
+      }
+    }
+  ]
+}

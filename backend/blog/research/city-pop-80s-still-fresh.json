@@ -1,0 +1,783 @@
+{
+  "keyword": "지금 들어도 안 늙은 80년대 시티팝",
+  "categoryId": "retro-revival",
+  "notes": "80년대 발매가 확인된 시티팝 5곡(佐藤博 Say Goodbye · 杏里 Remember Summer Days · 吉田美奈子 Midnight Driver · 泰葉 フライディ・チャイナタウン · 菊池桃子 ミスティカルコンポーザー)은 실재·발매정보가 확인됐고, 각각 공식 리이슈·스트리밍 카탈로그 해금·해외 리믹스-커버·틱톡 챌린지 중 최소 하나의 부흥 경로가 구체적 수치로 뒷받침된다.\n이 중 2곡(佐藤博·杏里)은 곡 자체의 사운드·가사를 서술할 자료가 없어 발굴 모드(A)로만 쓸 수 있고, 나머지 3곡도 작곡자·발매월일 등 일부 사실이 자료 간 상충해 그 부분은 명시적으로 피해야 한다.\n竹内まりや Plastic Love·松原みき Stay With Me는 시티팝이 해외에서 오버그라운드로 넘어온 알고리즘발 확산의 배경 사례로만 인용 가능하며, 곡 소개로는 쓸 수 없다.",
+  "sources": [
+    {
+      "title": "Pacific Breeze: Japanese City Pop, AOR & Boogie 1976-1986 (product page)",
+      "url": "https://lightintheattic.net/products/pacific-breeze-japanese-city-pop-aor-boogie-1976-1986",
+      "host": "lightintheattic.net",
+      "body": "Light in the Attic Records(LITA 163)가 발매한 컴필레이션 앨범 공식 상품 페이지. 1976~1986년 일본의 경제 호황기를 반영한 음악을 모았다고 설명하며 \"정교한 기술과 혁신적인 테크노팝 곡부터 부드러운 그루브까지\" 다양한 시티팝 사운드를 담았다고 소개한다. 포맷은 2LP(검정/핑크/파랑)·CD, 가격은 LP $32·CD $10~15이며 페이지 확인 시점 기준 품절 상태였다. 선곡은 Andy Cabic(Vetiver), Zach Cowie(DJ), Mark \"Frosty\" McNeill(dublab)이 맡았고, 도쿄 아티스트 나가이 히로시(永井博)가 새로 그린 커버 아트를 수록했다. 재마스터링된 음질과 상세 라이너 노츠, 확대 북릿, 오비 카드 등 프리미엄 패키징이 특징이다. 수록곡에 大貫妙子, 吉田美奈子, 細野晴臣, 高中正義, 佐藤博(Say Goodbye 9번 트랙) 등 주요 시티팝 아티스트가 포함된다.",
+      "tier": "official"
+    },
+    {
+      "title": "Pacific Breeze: Japanese City Pop, AOR and Boogie 1976–1986",
+      "url": "https://en.wikipedia.org/wiki/Pacific_Breeze:_Japanese_City_Pop,_AOR_and_Boogie_1976%E2%80%931986",
+      "host": "en.wikipedia.org",
+      "body": "Light in the Attic Records가 2019년 5월 3일 발매한 시티팝 컴필레이션 앨범의 위키피디아 문서. 기획자는 Andy Cabic, Zach Cowie, Yosuke Kitazawa, Mark \"Frosty\" McNeill, Matt Sullivan 5인. 전체 16곡의 트랙리스트를 게재하고 있으며 大貫妙子(Taeko Ohnuki) 'Kusuri Wo Takusan', 吉田美奈子(Minako Yoshida) 'Midnight Driver', 細野晴臣(Haruomi Hosono) 'Sports Men', 高中正義(Masayoshi Takanaka) 'Bamboo Vendor', 佐藤博(Hiroshi Satoh) 'Say Goodbye', 鈴木茂(Shigeru Suzuki) 'Lady Pink Panther' 등이 포함된다. 앨범은 Light in the Attic의 일본 음악 아카이브 시리즈 세 번째 작품으로 소개된다.",
+      "tier": "data"
+    },
+    {
+      "title": "Light In The Attic prepares new Japanese City Pop compilation Pacific Breeze",
+      "url": "https://www.thevinylfactory.com/news/light-in-the-attic-japanese-city-pop-compilation-pacific-breeze",
+      "host": "thevinylfactory.com",
+      "body": "The Vinyl Factory(음반업계 전문 매체)의 2019년 3월 8일자 기사. Light in the Attic이 준비한 이 컴필레이션이 \"일본 외부에서 처음으로 완전히 라이선스를 받은 일본 시티팝 개요\"라고 설명한다. Andy Cabic, Zach Cowie, Mark McNeill 세 명의 편집자가 1976~1986년 사이의 곡들을 수집했으며, 호소노 하루오미·요시다 미나코·사토 히로시·오누키 타에코 등의 아티스트가 포함된다고 전한다. 컴필레이션은 \"급속한 기술적·경제적 상승기에 있던 일본의 부드러운 재즈, 테크노팝, 그 외 사운드\"를 담아냈다고 설명하며, 이는 당대 일본의 경제 성장기를 음악으로 반영한 것이라는 해석을 덧붙인다.",
+      "tier": "press"
+    },
+    {
+      "title": "シティポップの世界的ブームの背景 かれらの日本という国への目線",
+      "url": "https://kompass.cinra.net/article/202107-citypop_ymmts",
+      "host": "kompass.cinra.net",
+      "body": "Spotify와 CINRA가 함께 만드는 음악 가이드 매거진 Kompass의 2021-07-09 기사. 시티팝 붐의 요인을 \"이거다\"라고 단정하기 어렵다고 전제하면서도 시간순으로 정리한다: 2010년대 후반 베이퍼웨이브/퓨처펑크의 연장선에서 시티팝이 '발견'됨 → 2016년 가을 Spotify Japan 런칭 → 2019년 이후 배포 카탈로그 확충으로 비공식 음원·커버 영상이 재생수를 쌓는 가운데 공식 스트리밍 음원도 함께 발견됨 → 2020년 10~12월 松原みき '真夜中のドア'가 '글로벌 바이럴 18일 연속 1위'를 기록하고 竹内まりや '프라스틱 러브'가 '공식화'됨. 인도네시아 유튜버 Rainych의 존재가 언더그라운드에서 오버그라운드로의 전환을 촉진했다고 지적한다. 한국 DJ Night Tempo, 인도네시아 음악 제작자들의 활동으로 '일본과 미국이라는 단순 구도로 설명할 수 없다'고 강조한다.",
+      "tier": "press"
+    },
+    {
+      "title": "Anri",
+      "url": "https://en.wikipedia.org/wiki/Anri",
+      "host": "en.wikipedia.org",
+      "body": "杏里(Anri, 본명 川上映子)의 영문 위키피디아 문서. 1978년 데뷔 앨범 'Apricot Jam'부터 1983년 대표작 'Timely!!'(수록곡 'Cat's Eye', '悲しみが止まらない'), 1984~1988년 'Coool' 'Wave' 'Mystique' 'Boogie Woogie Mainland', 1990~1992년 'Circuit of Rainbow' 'Mind Cruisin'' 'Moana Lani'까지 앨범 목록을 정리한다. 2020년대 재평가 관련해 \"시티팝의 재유행과 함께, 베이퍼웨이브·퓨처펑크 장르의 여러 신진 아티스트들에게 그녀의 곡이 샘플링되면서 杏里는 일본 밖에서 새로운 성공과 인기를 누리고 있다\"고 서술하며 2023년 여러 앨범이 재발매됐다고 전한다.",
+      "tier": "data"
+    },
+    {
+      "title": "Hiroshi Sato (musician)",
+      "url": "https://en.wikipedia.org/wiki/Hiroshi_Sato_(musician)",
+      "host": "en.wikipedia.org",
+      "body": "일본 재즈 퓨전/AOR 키보디스트 佐藤博(히로시 사토, 1947-06-03 가고시마현 지란 출생 ~ 2012-10-24 요코하마에서 65세로 사망)의 영문 위키피디아 문서. 1970년대 후반과 1980년대 일본 재즈 퓨전 및 소프트 록 신에서 영향력 있는 키보디스트였고 이후 시티팝으로 분류됐다고 소개한다. 細野晴臣(하루오미 호소노), 웨스트 로드 블루스 밴드, 우에다 마사키 등과 협업했으며, 1978년 옐로우 매직 오케스트라(YMO) 참여를 제안받았으나 거절했다는 일화가 있다. 1970년부터 2012년까지 활동했고 알파 레코드·이스트월드 레이블과 계약했다. 대표 앨범으로 'SUPER MARKET'(1976), 'Awakening'(1982), 'SAILING BLASTER'(1984), 'SOUND OF SCIENCE'(1986) 등 총 14개 정규 앨범을 발표했다. 'Awakening'은 1982년 6월 25일 Alfa Records를 통해 LP로 발매됐다고 명시한다. 문서 자체에는 'Say Goodbye' 개별 곡에 대한 설명이나 2020년대 유튜브 알고리즘·해외 재평가 관련 서술은 포함돼 있지 않다.",
+      "tier": "data"
+    },
+    {
+      "title": "デビュー45周年のEPO シティーポップはなぜ国境を越えたのか",
+      "url": "https://xtrend.nikkei.com/atcl/contents/18/00581/00122/",
+      "host": "xtrend.nikkei.com",
+      "body": "닛케이 크로스트렌드(닛케이 계열 비즈니스 트렌드 매체)의 2025-04-24 기사. EPO의 데뷔 45주년을 계기로 시티팝이 왜 해외에서 인기를 얻게 됐는지 다룬다. 2010년대 후반부터 해외 인기가 시작됐고 2020년 松原みき 곡이 유튜브에서 바이럴되며 글로벌 현상이 됐다고 정리한다. EPO 본인은 유럽 아티스트들로부터 리믹스 앨범 음원 사용 요청을, 미국 클럽신에서 이벤트 출연 제의를 받았다고 밝힌다. Spotify 데이터에 따르면 EPO 楽曲이 서브스크립션에 전면 개방된 2020년 9월 이후 해외 재생수가 증가 추세이며 2023년 봄과 2024년 여름에 크게 늘었다. 해외에서 가장 많이 듣는 나라는 미국이고, 그다음으로 대만·멕시코·인도·캐나다·브라질·프랑스 순이다. 이 통계는 EPO 곡 전체에 대한 것으로 특정 한 곡을 지목하지는 않는다.",
+      "tier": "press"
+    },
+    {
+      "title": "Plastic Love",
+      "url": "https://en.wikipedia.org/wiki/Plastic_Love",
+      "host": "en.wikipedia.org",
+      "body": "竹内まりや '프라스틱 러브'의 영문 위키피디아 문서(이 곡은 초대형 히트곡이라 추천 목록에서 제외 — 부흥 배경 맥락 자료로만 사용). 1984년 녹음, 1985년 3월 25일 싱글 발매, 6번째 스튜디오 앨범 'Variety' 수록. 타케우치 본인 작곡, 야마시타 타츠로 편곡·프로듀스. 2017년 7월 5일 'Plastic Lover'라는 계정이 8분짜리 비공식 리믹스 버전을 업로드, 크롭된 'Sweetest Music' 싱글 커버를 썸네일로 사용. 베이퍼웨이브 장르 인기 상승과 맞물려 유튜브 추천 알고리즘을 타고 급속 확산, Reddit 논의·DeviantArt 팬아트도 확산에 기여. 2017~2019년 2,200만 이상 조회수, 2021년 2월 5,500만 이상 조회수를 기록한 뒤 저작권 클레임으로 삭제됐다(이후 별도 소스에서는 2025년 8월 기준 6,100만 이상이라는 수치도 확인되나 동일 영상 여부는 불명확 — conflicts 참조).",
+      "tier": "data"
+    },
+    {
+      "title": "「ラ・ムーはデザインやビジュアルも含めた総合エンターテイメント」菊池桃子の\"埋もれた名曲\"が海外で再評価されたワケ",
+      "url": "https://bunshun.jp/articles/-/48611",
+      "host": "bunshun.jp",
+      "body": "문예춘추 온라인(주간분슌)의 2021-09-17 기사, 필자 柴那典. 菊池桃子는 1984년 '青春のいじわる'로 데뷔한 80년대 대표 아이돌 중 한 명. 2021년 7월 16일 菊池桃子와 밴드 라무(La Mou)의 곡 총 180곡이 Spotify·Apple Music 등 스트리밍 서비스에 처음 해금됐다. 2021년 9월 시점 Spotify 일본에서 가장 많이 재생된 곡은 원래 히트 싱글이 아니라 3집 앨범 'ADVENTURE'(1986년) 수록곡 'ミスティック・コンポーザー(Mystical Composer)'였다 — 당시 프로모션도 CM 기용도 없었던 곡이 새로운 대표곡으로 떠오른 것. 竹内まりや '프라스틱 러브', 松原みき '真夜中のドア〜stay with me' 등과 함께 시티팝의 세계적 재평가 흐름 속에서 菊池桃子가 주목받고 있다고 설명한다.",
+      "tier": "press"
+    },
+    {
+      "title": "LAの若者たち2000人が泰葉の「フライディ・チャイナタウン」をクラブで熱唱…TikTokで\"旋風\"を巻き起こしているワケ",
+      "url": "https://bunshun.jp/articles/-/51366",
+      "host": "bunshun.jp",
+      "body": "문예춘추 온라인의 2022-01-16 기사. 泰葉(やすは) 'フライディ・チャイナタウン'는 1981년 발매곡으로, 발매 40년 만에 해외 젊은층을 사로잡는 '이국적' 음악으로 재발견됐다고 소개한다. 곡은 밤의 차이나타운을 헤매던 화자가 외국인과 스쳐 지나가며 '나도 이국인이구나'를 깨닫는 내용. LA에서 수천 명 규모 인파가 이 곡을 '잇츠소~♪'하고 떼창하는 장면이 소개되며, 십대들이 자전거를 타며 따라 부르는 정도로 청년 문화에 침투했다고 전한다. Night Tempo가 리믹스하면서 SNS에서 화제가 됐다는 서술이 있으나 정확한 리믹스 연도는 이 기사에 명시돼 있지 않다.",
+      "tier": "press"
+    },
+    {
+      "title": "泰葉「フライディ・チャイナタウン」がバイラル急上昇 リバイバルヒットした今改めて注目したい独自のグルーヴ感",
+      "url": "https://realsound.jp/2022/06/post-1063547.html",
+      "host": "realsound.jp",
+      "body": "음악 저널리즘 매체 리얼사운드의 2022-06-28 기사. Night Tempo가 2021-11-21에 올린 트윗이 약 6,000건 리트윗, 2만 건 이상 좋아요를 기록했고 첨부 영상은 약 80만 회 재생됐다고 구체적 수치를 밝힌다. 틱톡에서는 '프라이데이차이나타운' '프라이디차이나타운' '프라이디・차이나타운' 등 여러 해시태그가 존재하며, 상위 3개 해시태그를 합산하면 (기사 작성 시점인 2022-06-28 기준) 조회수 1,650만 회에 달한다고 전한다. 원곡은 1981년 발매, 2022-05-25 유니버설뮤직이 이 곡의 디지털 배포(서브스크립션 해금)를 시작했다는 사실도 명시한다.",
+      "tier": "press"
+    },
+    {
+      "title": "杉山清貴「やっぱりシティポップのブームが大きい」\"今の熱量\"を映し出すライブと名曲秘話を振り返る",
+      "url": "https://realsound.jp/2025/05/post-2037972.html",
+      "host": "realsound.jp",
+      "body": "리얼사운드의 2025-05-30 인터뷰 기사. 杉山清貴 본인이 \"역시 시티팝 붐이 크다\"고 언급하며, 2019년 투어는 십수 개 공연이었던 것에 비해 최근 5년 사이 상황이 크게 바뀌어 \"어, 왜 이렇게 뜨거워졌지?\"라고 느낀다고 말한다. 대표곡으로 'さよならのオーシャン'(솔로 데뷔곡), '最後のHoly Night'(2nd 싱글), '風が止んでも', 'PARK SIDE ROMANCE', 'She'(엘비스 코스텔로 커버)를 언급. 2024년 9월 '杉山清貴&オメガトライブ〜FIRST FINALE TOUR 2024〜'를 30회 이상 개최, 파시피코 요코하마 2일 공연도 진행했다고 전한다. 이 기사는 아티스트/그룹 전반의 붐을 다루며 특정 곡 하나의 개별 역주행 계기(알고리즘·챌린지·커버 등)를 명시하지는 않는다.",
+      "tier": "press"
+    },
+    {
+      "title": "大貫妙子や山下達郎が世界的にリバイバルヒット みのが考える、シティポップが今求められる理由",
+      "url": "https://realsound.jp/2022/02/post-975502_2.html",
+      "host": "realsound.jp",
+      "body": "리얼사운드의 2022-02-25 기사. 大貫妙子와 山下達郎이 해외에서 재평가받는 현상을 다룬다. 大貫妙子의 곡 '4:00 A.M.'이 \"틱톡에서 갑자기 유행\"하며 인기가 역전됐다고 서술하고, 가사 중 'Lord give me one more chance' 구절이 해외에서 호응을 얻었다고 언급한다. 함께 거론된 곡: '君に、胸キュン。'(YMO), 'RIDE ON TIME'(山下達郎 원곡을 인도네시아 유튜버 Rainych가 커버), '真夜中のドア〜stay with me'(松原みき), '恋は流星'(吉田美奈子). CASIOPEA·T-SQUARE 같은 테크니컬 퓨전 밴드, 인도네시아 유튜버 Rainych가 큐레이터 역할을 했다고 강조하며 90년대 J-POP은 아직 재평가가 정해지지 않은 미개척 분야라고 짚는다. 이 기사에는 CASABLANCA 등 패션 브랜드 관련 언급은 없다.",
+      "tier": "press"
+    },
+    {
+      "title": "フライディ・チャイナタウン",
+      "url": "https://ja.wikipedia.org/wiki/%E3%83%95%E3%83%A9%E3%82%A4%E3%83%87%E3%82%A3%E3%83%BB%E3%83%81%E3%83%A3%E3%82%A4%E3%83%8A%E3%82%BF%E3%82%A6%E3%83%B3",
+      "host": "ja.wikipedia.org",
+      "body": "泰葉의 데뷔 싱글 '프라이디・차이나타운'에 대한 일본어 위키피디아 문서. 1981년 9월 21일 Polydor Records에서 발매, 수록 앨범은 'TRANSIT'. 작사 荒木とよひさ, 작곡 泰葉(본인), 편곡 井上鑑(이노우에 아키라/칸). 오리콘 차트 최고 69위에 그친 곡이었으나 수십 년 뒤 해외에서 스트리밍·리믹스 문화를 통해 역주행했다고 서술한다. 2020년경 시티팝 붐 속에서 재발견됐고, 한국 DJ Night Tempo가 이 곡을 다뤘다고 명시한다. 가수 BENI가 2022년 커버 버전을 발표했고, 2022년 5월 25일 유니버설뮤직이 디지털 배포를 시작했다고 전한다.",
+      "tier": "data"
+    },
+    {
+      "title": "MONOCHROME (吉田美奈子のアルバム)",
+      "url": "https://ja.wikipedia.org/wiki/MONOCHROME_(%E5%90%89%E7%94%B0%E7%BE%8E%E5%A5%88%E5%AD%90%E3%81%AE%E3%82%A2%E3%83%AB%E3%83%90%E3%83%A0)",
+      "host": "ja.wikipedia.org",
+      "body": "吉田美奈子 7집 앨범 'MONOCHROME'(1980-10-21, Alfa Records)의 일본어 위키피디아 문서. 본인 첫 셀프 프로듀스 작품. 수록곡은 'RAINY DAY'를 제외하고 모두 吉田美奈子 단독 작사·작곡('RAINY DAY'만 山下達郎과 공동). 'MIDNIGHT DRIVER'는 사이드B 7번 트랙(CD 재발매반 MHCL 413 기준), 러닝타임 7분 44초. 참여 세션 뮤지션: 기타 松木恒秀, 베이스·기타 岡沢章, 드럼 富樫祐一, 말렛(비브라폰) Michael Mainieri, 색소폰 清水靖晃. 레코딩 엔지니어 吉田保, 1980년 여름 CBS Sony Studio(롯폰기)에서 녹음·보컬·믹싱 진행.",
+      "tier": "data"
+    },
+    {
+      "title": "杏里の隠れた名曲、世界的ヒット曲「Remember Summer Days」人気イラストレーターchao!とのコラボレーション動画も公開！",
+      "url": "https://prtimes.jp/main/html/rd/p/000000032.000143140.html",
+      "host": "prtimes.jp",
+      "body": "杏里의 소속 레이블 FOR LIFE MUSIC ENTERTAINMENT가 2024-12-07 10:00 배포한 공식 보도자료. 'Remember Summer Days'는 원래 1983년 11월 5일 발매된 싱글 '悲しみがとまらない'의 B면 곡이었고, 이후 2011년판 앨범 'Timely!'에 보너스 트랙으로 재수록됐다고 밝힌다. Spotify에서 杏里 재생곡 차트 기준 '悲しみがとまらない'가 3위, 'Remember Summer Days'가 2위에 해당하는 수준이며, '悲しみがとまらない'는 하루 13만 회 이상, 'Remember Summer Days'·'Last Summer Whisper'는 하루 4~5만 회씩 재생된다고 밝힌다. 앨범 'Timely!' 전체 누적 재생은 1억 7천만 회 이상이며, 재생은 대부분 미국·인도네시아·멕시코에서 발생한다고 명시한다. 이 곡을 '숨은 명곡'이자 '세계적 히트곡'으로 표현하며 일러스트레이터 chao!와의 협업 영상 공개를 알리는 내용이다.",
+      "tier": "official"
+    },
+    {
+      "title": "Macross 82-99",
+      "url": "https://en.wikipedia.org/wiki/Macross_82-99",
+      "host": "en.wikipedia.org",
+      "body": "퓨처펑크 프로듀서 Macross 82-99의 영문 위키피디아 문서. 멕시코시티 출신 전자음악 프로듀서·DJ로 2013년부터 활동, 베이퍼웨이브의 하위장르인 '퓨처펑크'의 기원으로 자주 인용되는 음악을 만든다고 소개된다. 음악은 \"시티팝을 포함한 여러 장르 요소를 결합\"하며 \"J-pop과 디스코 샘플이 앰비언트 분위기와 베이퍼웨이브 미학을 만나는 곳\"으로 묘사된다. 가장 유명한 트랙 'Fun Tonight'는 Armenta의 1983년 곡 'I Wanna Be With You'를 리믹스한 것으로 Spotify에서 2천만 회 이상 스트리밍됐다. 이 문서 자체에는 杏里 'Remember Summer Days' 리믹스에 대한 명시적 서술은 없으나(별도 검색으로 SoundCloud·Spotify·YouTube·Archive.org에 'Anri - Remember Summer Days (MACROSS 82-99 Bootleg)' 트랙이 실제로 유통되고 있음을 확인), Macross 82-99가 시티팝을 소재로 한 리믹스로 알려진 아티스트라는 배경은 뒷받침한다.",
+      "tier": "data"
+    },
+    {
+      "title": "\"第二次シティ・ポップ・ブーム\"で進む再評価 杏里、中原めいこらハイレゾ配信で集まる注目",
+      "url": "https://girlschannel.net/topics/5184594/",
+      "host": "girlschannel.net",
+      "body": "일본 커뮤니티/포럼 아그리게이터 girlschannel의 2024-06-07 게시물(원 기사 인용 형태). 1970~80년대 시티팝이 세계적으로 재평가받는 현상을 '제2차 시티팝 붐'으로 표현하며, 일시 유행이 아니라 '정기적으로 차트를 점유하는' 문화로 자리잡고 있다고 설명한다. 대만을 중심으로 2010년대 후반부터 주목받기 시작했으며 松原みき 곡이 결정적 계기였다고 서술. 杏里는 '서해안의 세련된 분위기'로 Bobby Caldwell을 연상케 하는 스타일을 제시했다고 평가되고, 中原めいこ는 1982년 데뷔 후 살사 리듬을 대담히 도입했으며 특히 카네보 화장품 광고곡이 대히트했다고 언급된다. 제목에 '하이레조 배포'가 있으나 본문에서 구체적 배포 방식 설명은 확인되지 않는다. 커뮤니티 아그리게이터 특성상 보조 자료로만 사용.",
+      "tier": "blog"
+    }
+  ],
+  "claims": [
+    {
+      "claim": "서구 레이블의 정식 라이선스 컴필레이션이 시티팝을 해외 시장에 처음으로 합법 유통시키며 재평가의 물꼬를 텄다.",
+      "grade": "confirmed",
+      "evidence": [
+        "Light in the Attic Records가 2019-05-03 발매한 'Pacific Breeze: Japanese City Pop, AOR & Boogie 1976-1986'는 '일본 밖에서 처음으로 완전 라이선스된 일본 시티팝 개요'라고 소개됐다.",
+        "이 컴필레이션은 총 16곡을 수록했고, 佐藤博 'Say Goodbye'가 9번 트랙, 吉田美奈子 'Midnight Driver'가 3번 트랙으로 포함됐다.",
+        "선곡은 Andy Cabic·Zach Cowie·Mark 'Frosty' McNeill이 맡았고, 도쿄 아티스트 永井博가 새로 그린 커버 아트를 실었으며 재마스터링·라이너노트 등 프리미엄 패키징으로 발매됐다."
+      ],
+      "sourceUrls": [
+        "https://lightintheattic.net/products/pacific-breeze-japanese-city-pop-aor-boogie-1976-1986",
+        "https://en.wikipedia.org/wiki/Pacific_Breeze:_Japanese_City_Pop,_AOR_and_Boogie_1976%E2%80%931986",
+        "https://www.thevinylfactory.com/news/light-in-the-attic-japanese-city-pop-compilation-pacific-breeze"
+      ]
+    },
+    {
+      "claim": "레이블이 묵혀뒀던 옛 카탈로그를 한꺼번에 스트리밍에 풀면서, 원래 히트곡이 아니었던 수록곡이 새 대표곡으로 떠오르는 패턴이 반복되고 있다.",
+      "grade": "confirmed",
+      "evidence": [
+        "杏里 'Remember Summer Days'는 1983년 싱글의 B면 곡이었을 뿐이지만, 소속사 공식 발표(2024-12-07)에 따르면 Spotify에서 하루 4~5만 회 재생되고 앨범 'Timely!' 전체 누적 재생은 1억7천만 회를 넘으며 청취 대부분이 미국·인도네시아·멕시코에서 발생한다.",
+        "菊池桃子·라무(La Mou)의 곡 180곡이 2021-07-16 스트리밍에 처음 해금된 뒤, 2021년 9월 시점 Spotify 일본에서 이 아티스트의 최다 재생곡은 원래 히트 싱글도 CM 곡도 아니었던 'ミスティック・コンポーザー'였다.",
+        "EPO는 카탈로그가 2020년 9월 스트리밍에 전면 개방된 뒤 해외 재생수가 늘었고 2023년 봄과 2024년 여름 특히 급증했다(주요 청취국: 미국>대만>멕시코>인도>캐나다>브라질>프랑스)."
+      ],
+      "sourceUrls": [
+        "https://prtimes.jp/main/html/rd/p/000000032.000143140.html",
+        "https://bunshun.jp/articles/-/48611",
+        "https://xtrend.nikkei.com/atcl/contents/18/00581/00122/"
+      ]
+    },
+    {
+      "claim": "한국·중남미의 리믹스·커버·챌린지 문화(퓨처펑크, Night Tempo류)가 원곡을 새 세대 앞에 다시 세운다.",
+      "grade": "confirmed",
+      "evidence": [
+        "杏里는 2020년대 재평가와 함께 베이퍼웨이브·퓨처펑크 신진 아티스트들에게 곡이 샘플링되며 해외에서 새로운 인기를 얻었고 2023년 여러 앨범이 재발매됐다.",
+        "멕시코시티 출신 퓨처펑크 프로듀서 Macross 82-99는 시티팝을 소재로 한 리믹스로 알려진 아티스트로, 대표곡 'Fun Tonight'(1983년 곡 리믹스)는 Spotify에서 2천만 회 이상 스트리밍됐다.",
+        "泰葉 'フライディ・チャイナタウン'(1981년 발매, 오리콘 최고 69위에 그쳤던 곡)은 한국 DJ Night Tempo가 다루며 화제가 됐다. 2021-11-21 관련 트윗은 리트윗 약 6,000건·좋아요 2만 건 이상·재생 약 80만 회를 기록했고, 틱톡 관련 해시태그 조회수는(2022-06-28 기준) 상위 3개 합산 약 1,650만 회에 달했다. 일본어 위키피디아는 이 곡이 '스트리밍·리믹스 문화를 통해 역주행했다'고 서술한다."
+      ],
+      "sourceUrls": [
+        "https://en.wikipedia.org/wiki/Anri",
+        "https://en.wikipedia.org/wiki/Macross_82-99",
+        "https://ja.wikipedia.org/wiki/%E3%83%95%E3%83%A9%E3%82%A4%E3%83%87%E3%82%A3%E3%83%BB%E3%83%81%E3%83%A3%E3%82%A4%E3%83%8A%E3%82%BF%E3%82%A6%E3%83%B3",
+        "https://realsound.jp/2022/06/post-1063547.html"
+      ]
+    },
+    {
+      "claim": "비공식 업로드가 유튜브 추천 알고리즘을 타면서, 정식 유통 이전에 이미 해외 청자 사이에서 시티팝이 오버그라운드로 넘어와 있었다 — 다만 이 경로의 대표 사례(竹内まりや·松原みき)는 초대형 히트곡이라 이 글의 추천 곡으로는 쓰지 않고 배경 맥락으로만 인용한다.",
+      "grade": "confirmed",
+      "evidence": [
+        "竹内まりや '프라스틱 러브'는 2017-07-05 'Plastic Lover' 계정이 올린 8분짜리 비공식 리믹스 업로드를 계기로 베이퍼웨이브 인기와 맞물려 유튜브 추천 알고리즘을 타고 급속히 퍼졌으며, 2017~2019년 2,200만 회 이상·2021년 2월 5,500만 회 이상의 조회수를 기록한 뒤 저작권 클레임으로 삭제됐다.",
+        "松原みき '真夜中のドア〜Stay With Me'는 2020년 10~12월 글로벌 바이럴 차트에서 18일 연속 1위를 기록했다.",
+        "이 흐름은 2016년 가을 Spotify Japan 런칭 이후 비공식 음원과 공식 카탈로그가 동시에 확산되던 시기와 맞물린다고 Spotify·CINRA 공동 매거진 기사가 정리한다."
+      ],
+      "sourceUrls": [
+        "https://en.wikipedia.org/wiki/Plastic_Love",
+        "https://kompass.cinra.net/article/202107-citypop_ymmts"
+      ]
+    }
+  ],
+  "numbers": [
+    {
+      "what": "Pacific Breeze 컴필레이션 발매일",
+      "value": "2019-05-03",
+      "asOf": "2019-05-03",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Pacific_Breeze:_Japanese_City_Pop,_AOR_and_Boogie_1976%E2%80%931986"
+    },
+    {
+      "what": "Pacific Breeze 컴필레이션 수록곡 수",
+      "value": "16곡",
+      "asOf": "2019-05-03",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Pacific_Breeze:_Japanese_City_Pop,_AOR_and_Boogie_1976%E2%80%931986"
+    },
+    {
+      "what": "佐藤博 'Say Goodbye' 유튜브 조회수(비공식 채널 '仕方が無い', 2015년 업로드)",
+      "value": "261,589회",
+      "asOf": "2026-07-25 (raw 조사 시점)",
+      "sourceUrl": "https://www.youtube.com/watch?v=VdqlOA0sZc0"
+    },
+    {
+      "what": "佐藤博 앨범 'Awakening' 발매일",
+      "value": "1982-06-25",
+      "asOf": "1982-06-25",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Hiroshi_Sato_(musician)"
+    },
+    {
+      "what": "佐藤博 정규 앨범 수",
+      "value": "총 14장 (1976~2012년 발표작 포함)",
+      "asOf": "위키피디아 문서 기준",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Hiroshi_Sato_(musician)"
+    },
+    {
+      "what": "杏里 'Remember Summer Days' 유튜브 조회수(공식 채널 'ANRI 杏里 Official', 2024년 업로드)",
+      "value": "291,790회",
+      "asOf": "2026-07-25 (raw 조사 시점)",
+      "sourceUrl": "https://www.youtube.com/watch?v=AZlnBW-MJh0"
+    },
+    {
+      "what": "杏里 'Remember Summer Days' 원 발매일",
+      "value": "1983-11-05 (싱글 '悲しみがとまらない' B면)",
+      "asOf": "1983-11-05",
+      "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000032.000143140.html"
+    },
+    {
+      "what": "杏里 Spotify 일일 재생수 — '悲しみがとまらない'",
+      "value": "13만 회 이상/일",
+      "asOf": "2024-12-07",
+      "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000032.000143140.html"
+    },
+    {
+      "what": "杏里 Spotify 일일 재생수 — 'Remember Summer Days'·'Last Summer Whisper'",
+      "value": "각 4~5만 회/일",
+      "asOf": "2024-12-07",
+      "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000032.000143140.html"
+    },
+    {
+      "what": "杏里 앨범 'Timely!' 누적 재생수",
+      "value": "1억 7천만 회 이상",
+      "asOf": "2024-12-07",
+      "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000032.000143140.html"
+    },
+    {
+      "what": "Macross 82-99 'Fun Tonight' Spotify 스트리밍 수",
+      "value": "2천만 회 이상",
+      "asOf": "확인 시점 불명 (위키피디아 문서 기준)",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Macross_82-99"
+    },
+    {
+      "what": "吉田美奈子 'Midnight Driver' 유튜브 조회수(비공식 채널 'Just Inkaz', 2018년 업로드)",
+      "value": "261,899회",
+      "asOf": "2026-07-25 (raw 조사 시점)",
+      "sourceUrl": "https://www.youtube.com/watch?v=Z3O7y451npQ"
+    },
+    {
+      "what": "吉田美奈子 앨범 'MONOCHROME' 발매일",
+      "value": "1980-10-21",
+      "asOf": "1980-10-21",
+      "sourceUrl": "https://ja.wikipedia.org/wiki/MONOCHROME_(%E5%90%89%E7%94%B0%E7%BE%8E%E5%A5%88%E5%AD%90%E3%81%AE%E3%82%A2%E3%83%AB%E3%83%90%E3%83%A0)"
+    },
+    {
+      "what": "泰葉 'フライディ・チャイナタウン' 유튜브 조회수(비공식 채널 'クラウド チャンネル cloud ch.', 2025년 업로드)",
+      "value": "193,644회",
+      "asOf": "2026-07-25 (raw 조사 시점)",
+      "sourceUrl": "https://www.youtube.com/watch?v=98FCdidaTI0"
+    },
+    {
+      "what": "泰葉 곡 원 발매일 및 오리콘 순위",
+      "value": "1981-09-21 발매, 오리콘 최고 69위",
+      "asOf": "1981-09-21",
+      "sourceUrl": "https://ja.wikipedia.org/wiki/%E3%83%95%E3%83%A9%E3%82%A4%E3%83%87%E3%82%A3%E3%83%BB%E3%83%81%E3%83%A3%E3%82%A4%E3%83%8A%E3%82%BF%E3%82%A6%E3%83%B3"
+    },
+    {
+      "what": "泰葉 곡 Night Tempo 관련 트윗(2021-11-21) 반응",
+      "value": "리트윗 약 6,000건 · 좋아요 2만 건 이상 · 영상 재생 약 80만 회",
+      "asOf": "2022-06-28 (기사 시점 집계)",
+      "sourceUrl": "https://realsound.jp/2022/06/post-1063547.html"
+    },
+    {
+      "what": "泰葉 곡 관련 틱톡 상위 3개 해시태그 합산 조회수",
+      "value": "약 1,650만 회",
+      "asOf": "2022-06-28",
+      "sourceUrl": "https://realsound.jp/2022/06/post-1063547.html"
+    },
+    {
+      "what": "泰葉 곡 유니버설뮤직 디지털 배포(서브스크립션 해금) 개시일",
+      "value": "2022-05-25",
+      "asOf": "2022-05-25",
+      "sourceUrl": "https://realsound.jp/2022/06/post-1063547.html"
+    },
+    {
+      "what": "菊池桃子 'ミスティカルコンポーザー' 유튜브 조회수(비공식 채널 'meowchin', 2017년 업로드)",
+      "value": "2,037,056회",
+      "asOf": "2026-07-25 (raw 조사 시점)",
+      "sourceUrl": "https://www.youtube.com/watch?v=1iQBGaZ_kJ4"
+    },
+    {
+      "what": "菊池桃子·라무(La Mou) 스트리밍 최초 해금 곡 수 및 날짜",
+      "value": "180곡, 2021-07-16",
+      "asOf": "2021-07-16",
+      "sourceUrl": "https://bunshun.jp/articles/-/48611"
+    },
+    {
+      "what": "菊池桃子 앨범 'ADVENTURE' 발매연도",
+      "value": "1986년 (정확한 월일은 인용 출처 본문에 없음 — '06-25' 표기는 단정 금지)",
+      "asOf": "1986년",
+      "sourceUrl": "https://bunshun.jp/articles/-/48611"
+    },
+    {
+      "what": "EPO 카탈로그 스트리밍 전면 개방 시점",
+      "value": "2020년 9월",
+      "asOf": "2020-09",
+      "sourceUrl": "https://xtrend.nikkei.com/atcl/contents/18/00581/00122/"
+    },
+    {
+      "what": "EPO 해외 청취 순위(재생수 기준)",
+      "value": "미국 > 대만 > 멕시코 > 인도 > 캐나다 > 브라질 > 프랑스",
+      "asOf": "2025-04-24 (기사 시점)",
+      "sourceUrl": "https://xtrend.nikkei.com/atcl/contents/18/00581/00122/"
+    },
+    {
+      "what": "EPO 재생수 급증 시점",
+      "value": "2023년 봄, 2024년 여름",
+      "asOf": "2025-04-24 (기사 시점)",
+      "sourceUrl": "https://xtrend.nikkei.com/atcl/contents/18/00581/00122/"
+    },
+    {
+      "what": "杉山清貴 투어 규모 변화 (배경 맥락 — 뒤 tour 는 曲 소개 아님)",
+      "value": "2019년 십수 회 → 2024년 9월 'FIRST FINALE TOUR 2024' 30회 이상",
+      "asOf": "2025-05-30 (인터뷰 시점)",
+      "sourceUrl": "https://realsound.jp/2025/05/post-2037972.html"
+    },
+    {
+      "what": "松原みき '真夜中のドア〜Stay With Me' 글로벌 바이럴 차트 순위 (배경 맥락용, 곡 소개 아님)",
+      "value": "2020년 10~12월 18일 연속 1위",
+      "asOf": "2020년 10~12월",
+      "sourceUrl": "https://kompass.cinra.net/article/202107-citypop_ymmts"
+    },
+    {
+      "what": "竹内まりや 'Plastic Love' 비공식 리믹스 조회수 (배경 맥락용, 곡 소개 아님 — 수치 상충 주의)",
+      "value": "2017~2019년 2,200만 회+ / 2021-02 5,500만 회+(이후 저작권 클레임 삭제) — 별도 자료의 2025-08 기준 6,100만 회+ 수치는 동일 영상 여부 불명확해 단정 금지",
+      "asOf": "2021-02 (가장 확실한 마지막 수치)",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Plastic_Love"
+    },
+    {
+      "what": "Spotify Japan 런칭 시점",
+      "value": "2016년 가을",
+      "asOf": "2016년 가을",
+      "sourceUrl": "https://kompass.cinra.net/article/202107-citypop_ymmts"
+    }
+  ],
+  "dropped": [],
+  "cannotCover": [
+    "추천 곡으로 다루면 안 되는 초대형 히트곡: 竹内まりや 'Plastic Love', 松原みき '真夜中のドア〜Stay With Me', 大貫妙子 '4:00 A.M.', 八神純子 'パープルタウン' — 곡 소개 섹션에 올리지 말 것. 앞의 둘(竹内まりや·松原みき)은 claims의 '부흥 배경' 맥락으로만 인용 가능(claims[3] 참고), 나머지 둘은 이 조사 범위에선 배경 인용 근거도 약해 언급을 자제할 것.",
+    "되살리면 안 되는 탈락 곡 13건(사유 포함, 다시 후보로 넣지 말 것): 竹内まりや Plastic Love(초대형 히트곡) · 松原みき 真夜中のドア〜Stay With Me(초대형 히트곡) · 大貫妙子 4:00 A.M.(초대형 히트곡) · 大橋純子 I Love You So(역주행 근거 없음) · 大橋純子 シルエット・ロマンス(역주행 근거 없음) · 濱田金吾 Midnight Cruisin'(역주행 근거 없음 — 2021년 바이닐 재발매 사실만 확인) · 杉山清貴&オメガトライブ ふたりの夏物語(역주행 근거 없음) · 吉田美奈子 恋は流星(연대 밖) · 杏里 Cat's Eye(유튜브 확인 실패) · 八神純子 黄昏のBAY CITY(역주행 근거 없음, 저신뢰 자료뿐) · 八神純子 パープルタウン(초대형 히트곡) · 角松敏生 Insomnia(곡 존재 미확인) · 中原めいこ ロンリー・チャップリン(곡 존재 미확인 — 실제로는 鈴木聖美 with Rats&Star의 1987년 곡으로 아티스트 오귀속이었다).",
+    "다음에 뜰 곡을 예측/추천하는 섹션 — 八神純子 黄昏のBAY CITY 등이 거론되나 저신뢰 블로그성 자료뿐이라 예측성 서술을 뒷받침할 자료가 없다. 쓰지 말 것.",
+    "佐藤博 'Say Goodbye'·杏里 'Remember Summer Days'의 편곡·세션 크레딧에 근거한 사운드 묘사 — 자료 자체가 없어 이 두 곡은 발굴 모드(A)로만 쓸 수 있다.",
+    "杏里 'Remember Summer Days'의 정확한 작사·작곡·편곡 크레딧 — 확인하지 못했다(角松敏生 언급 스니펫은 원문 재확인 못해 반영 안 함).",
+    "Night Tempo가 泰葉 곡을 정확히 언제 리믹스/발매했는지의 공식 날짜 — 확인하지 못했다. 2021-11-21은 트윗 시점일 뿐이다.",
+    "竹内まりや 'Plastic Love'의 '현재' 정확한 조회수 — 자료 간 상충(2,200만→5,500만→삭제→6,100만설). 이 곡 자체가 배경 맥락 전용이라 조회수를 본문에 쓸 일은 없어야 하지만, 혹시 인용하더라도 최신 수치를 확정형으로 쓰지 말 것.",
+    "菊池桃子 'ミスティカルコンポーザー'의 정확한 레이블 — 'VAP'로 추정되나 공식 페이지로 재확인되지 않았다."
+  ],
+  "songs": [
+    {
+      "artist": "佐藤博 (Hiroshi Sato)",
+      "title": "Say Goodbye",
+      "releaseYear": 1982,
+      "album": "Awakening",
+      "albumSourceUrl": "https://en.wikipedia.org/wiki/Hiroshi_Sato_(musician)",
+      "label": "Alfa Records",
+      "youtube": {
+        "url": "https://www.youtube.com/watch?v=Y_68hpU-hGg",
+        "videoId": "Y_68hpU-hGg",
+        "channel": "Hiroshi Sato - Topic",
+        "publishedYear": 2020,
+        "publishedAt": "2020-04-23",
+        "views": 758583,
+        "officialChannel": true,
+        "note": "유튜브 자동 생성 Topic 채널 — 공식 음원 배급 카탈로그 기반이라 공식으로 취급."
+      },
+      "lyricsUrl": "https://petitlyrics.com/lyrics/2632732",
+      "revival": {
+        "driver": "시티팝·뉴트로 재발견",
+        "evidence": "Light in the Attic이 2019년 5월 3일 발매한 컴필레이션 'Pacific Breeze: Japanese City Pop, AOR & Boogie 1976-1986'에 9번 트랙으로 수록되며, 일본 밖에서 처음으로 완전 라이선스된 형태로 해외 청자에게 소개됐다.",
+        "sourceUrl": "https://lightintheattic.net/products/pacific-breeze-japanese-city-pop-aor-boogie-1976-1986"
+      },
+      "soundFacts": [],
+      "url": "https://www.youtube.com/watch?v=Y_68hpU-hGg",
+      "videoId": "Y_68hpU-hGg",
+      "views": 758583,
+      "publishedYear": 2020,
+      "writeMode": "A",
+      "yearNote": "발매 1982년(앨범 'Awakening', Alfa Records, 1982-06-25) · 유튜브는 Topic 채널(공식 음원 배급 기반) 2020년 게시 — 게시 연도(2020)를 발매 연도(1982)로 쓰지 말 것.",
+      "canSay": [
+        {
+          "text": "佐藤博(1947-06-03 가고시마현 지란 출생 ~ 2012-10-24 요코하마 사망, 65세)는 1970년대 후반~80년대 일본 재즈 퓨전·AOR 신에서 활동한 키보디스트였다.",
+          "sourceUrl": "https://en.wikipedia.org/wiki/Hiroshi_Sato_(musician)"
+        },
+        {
+          "text": "이 곡이 수록된 앨범 'Awakening'은 1982-06-25 Alfa Records를 통해 발매됐다.",
+          "sourceUrl": "https://en.wikipedia.org/wiki/Hiroshi_Sato_(musician)"
+        },
+        {
+          "text": "위키피디아는 \"그는 1996년 Oracle(Eastworld Records)을 끝으로 활동을 쉬기 전까지 정규 앨범을 총 14장 냈다\"고 소개한다(원문을 그대로 따른 집계 — 이 문서의 앨범 목록표는 1976년 SUPER MARKET부터 2007년 CREAMY AQUA까지 더 많은 항목을 나열하고 있어 표와 이 총계가 정확히 일치하지는 않는다. 특정 앨범을 나열해 \"OO부터 OO까지 14장\"처럼 범위를 단정하지 말고, 이 총계 문장을 그대로 인용하는 선에서만 쓸 것). 1978년 호소노 하루오미(細野晴臣)의 밴드 옐로우 매직 오케스트라(YMO) 합류 제안을 받았지만, 1979년 일본을 떠나기로 하면서 그 제안을 거절했다(그 이유로 거절 — 거절한 다음에 떠난 게 아니라, 떠나기로 한 결정이 거절의 이유다. 1982년 귀국).",
+          "sourceUrl": "https://en.wikipedia.org/wiki/Hiroshi_Sato_(musician)"
+        },
+        {
+          "text": "Light in the Attic Records가 2019-05-03 발매한 컴필레이션 'Pacific Breeze: Japanese City Pop, AOR & Boogie 1976-1986'에 9번 트랙으로 수록되며, 일본 밖에서 처음으로 완전 라이선스된 형태로 해외 청자에게 소개됐다.",
+          "sourceUrl": "https://lightintheattic.net/products/pacific-breeze-japanese-city-pop-aor-boogie-1976-1986"
+        },
+        {
+          "text": "이 컴필레이션은 Andy Cabic·Zach Cowie·Mark McNeill 등이 선곡했고, 도쿄 아티스트 永井博가 새로 그린 커버 아트를 썼다.",
+          "sourceUrl": "https://lightintheattic.net/products/pacific-breeze-japanese-city-pop-aor-boogie-1976-1986"
+        },
+        {
+          "text": "유튜브 Hiroshi Sato - Topic 채널(공식 음원 배급 기반 자동 채널)에 이 곡이 있다(2020-04-23 게시, 조회수 75만 8,583회, 2026-07-25 조사 기준).",
+          "sourceUrl": "https://www.youtube.com/watch?v=Y_68hpU-hGg"
+        }
+      ],
+      "cannotSay": [
+        "곡의 편곡·연주·보컬 스타일 등 사운드 묘사 — 자료에 이 곡 개별 서술이 전혀 없다(위키피디아 본문이 'Say Goodbye 개별 곡에 대한 설명이나 서술은 포함돼 있지 않다'고 명시). 편성·템포·인상적인 구간을 지어내지 말 것.",
+        "'어떤 이야기인가'(가사·주제) — 자료에 가사 내용이나 곡의 테마를 설명하는 문장이 전혀 없다. 이 항목은 이 곡에서 생략할 것.",
+        "발매 당시(1982년) 반응·오리콘 성적 — 자료 없음.",
+        "채널 구독자 수 — 자료 없음. \"얼마나 안 알려졌나\"는 조회수 숫자(261,589회) 자체로만 말하고 비율을 계산해 쓰지 말 것.",
+        "앨범 총계(\"14장\")의 시작·끝 앨범을 특정해 범위로 단정하지 말 것 — 원문 총계 문장과 앨범 목록표가 정확히 안 맞는다. 총계 문장만 그대로 인용할 것."
+      ]
+    },
+    {
+      "artist": "杏里 (Anri)",
+      "title": "Remember Summer Days",
+      "releaseYear": 1983,
+      "album": "싱글 '悲しみがとまらない'(1983-11-05)의 B면으로 최초 발매, 2011년판 앨범 'Timely!'에 보너스 트랙으로 재수록",
+      "albumSourceUrl": "https://prtimes.jp/main/html/rd/p/000000032.000143140.html",
+      "label": "FOR LIFE MUSIC ENTERTAINMENT",
+      "youtube": {
+        "url": "https://www.youtube.com/watch?v=AZlnBW-MJh0",
+        "videoId": "AZlnBW-MJh0",
+        "channel": "ANRI 杏里 Official",
+        "publishedYear": 2024,
+        "views": 291790,
+        "officialChannel": true
+      },
+      "lyricsUrl": "https://utaten.com/lyric/qa30725043/",
+      "revival": {
+        "driver": "최근 아티스트의 커버·샘플링",
+        "evidence": "멕시코시티 출신 퓨처펑크 프로듀서 Macross 82-99가 이 곡을 리믹스한 부틀렉 버전('Anri - Remember Summer Days (MACROSS 82-99 Bootleg)')이 SoundCloud·Spotify·YouTube·Archive.org에 유통되며 베이퍼웨이브/퓨처펑크 씬을 통한 시티팝 재발견 초기 흐름의 한 축이 됐다.",
+        "sourceUrl": "https://en.wikipedia.org/wiki/Macross_82-99"
+      },
+      "revivalAdditional": {
+        "driver": "스트리밍 알고리즘 재유입",
+        "evidence": "소속사 FOR LIFE MUSIC의 2024-12-07 보도자료에 따르면 Spotify에서 이 곡이 하루 4~5만 회 재생되고, 앨범 'Timely!' 전체는 누적 1억 7천만 회 이상 재생되며 청취 대부분이 미국·인도네시아·멕시코에서 발생한다.",
+        "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000032.000143140.html"
+      },
+      "soundFacts": [],
+      "url": "https://www.youtube.com/watch?v=AZlnBW-MJh0",
+      "videoId": "AZlnBW-MJh0",
+      "views": 291790,
+      "publishedYear": 2024,
+      "writeMode": "A",
+      "yearNote": "원곡 발매 1983년(싱글 '悲しみがとまらない' B면, 1983-11-05) · 2011년판 앨범 'Timely!'에 보너스 트랙으로 재수록 · 유튜브 업로드는 2024년(공식 채널) — 업로드 연도(2024)를 발매 연도로 쓰지 말 것.",
+      "canSay": [
+        {
+          "text": "이 곡은 원래 1983-11-05 발매된 싱글 '悲しみがとまらない'의 B면 곡이었고, 2011년판 앨범 'Timely!'에 보너스 트랙으로 재수록됐다.",
+          "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000032.000143140.html"
+        },
+        {
+          "text": "소속 레이블 FOR LIFE MUSIC의 2024-12-07 공식 발표에 따르면 Spotify에서 '悲しみがとまらない'는 하루 13만 회 이상, 이 곡과 'Last Summer Whisper'는 각각 하루 4~5만 회 재생되며, 앨범 'Timely!' 전체 누적 재생은 1억7천만 회를 넘는다. 청취는 대부분 미국·인도네시아·멕시코에서 발생한다.",
+          "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000032.000143140.html"
+        },
+        {
+          "text": "杏里는 2020년대 재평가와 함께 베이퍼웨이브·퓨처펑크 신진 아티스트들에게 곡이 샘플링되며 해외에서 새로운 인기를 얻었고, 2023년 여러 앨범이 재발매됐다(아티스트 전반에 대한 서술).",
+          "sourceUrl": "https://en.wikipedia.org/wiki/Anri"
+        },
+        {
+          "text": "멕시코시티 출신 퓨처펑크 프로듀서 Macross 82-99가 이 곡을 리믹스한 부틀렉('Anri - Remember Summer Days (MACROSS 82-99 Bootleg)')이 여러 플랫폼에 유통되고 있다고 알려져 있다 — 단, 이 연결은 Macross 82-99 위키피디아 문서 '본문'에 직접 적힌 사실이 아니라 별도 확인(구체 출처 URL 미상)에 의존하므로 단정하지 말고 신중하게 쓸 것.",
+          "sourceUrl": "https://en.wikipedia.org/wiki/Macross_82-99"
+        },
+        {
+          "text": "공식 유튜브 채널 'ANRI 杏里 Official'에 2024년 업로드된 영상이며 조회수는 291,790회(2026-07-25 조사 기준)다 — 5곡 중 유일하게 아티스트 공식 채널 업로드다.",
+          "sourceUrl": "https://www.youtube.com/watch?v=AZlnBW-MJh0"
+        },
+        {
+          "text": "Macross 82-99 명의의 비공식 부틀렉 리믹스 영상(Artzie Music 채널, 2014-10-27 게시)이 조회수 1,486만 1,839회를 기록하고 있다(2026-07-25 조사 기준). 공식 발매가 아니라 팬/DJ 문화의 비공식 리믹스다.",
+          "sourceUrl": "https://www.youtube.com/watch?v=idipMrfAZHk"
+        }
+      ],
+      "cannotSay": [
+        "곡의 편곡·템포·보컬 스타일 등 사운드 묘사 — 자료에 이 곡 자체의 음악적 내용 서술이 없다(soundFacts 없음). 지어내지 말 것.",
+        "'어떤 이야기인가'(가사·주제) — 자료에 가사 내용을 설명하는 문장이 없다. 이 항목은 이 곡에서 생략할 것.",
+        "정확한 작사·작곡·편곡 크레딧 — raw 조사에서 확인하지 못했다(스니펫에 角松敏生 언급이 있었으나 원문 재확인 못해 반영 안 함). 크레딧을 단정해 쓰지 말 것.",
+        "Macross 82-99의 리믹스를 '이 곡을 리믹스했다'고 확정적으로 서술하지 말 것 — 근거 출처 자체가 '문서 본문엔 명시 없음, 별도 검색으로 확인'이라고 밝힌다. 쓰려면 '~로 알려져 있다' 정도로.",
+        "채널 구독자 수 — 자료 없음. 조회수 숫자 자체로만 말할 것."
+      ],
+      "relatedVideos": [
+        {
+          "type": "remix",
+          "artist": "Macross 82-99",
+          "title": "Remember Summer Days (MACROSS 82-99 Bootleg)",
+          "url": "https://www.youtube.com/watch?v=idipMrfAZHk",
+          "videoId": "idipMrfAZHk",
+          "channel": "Artzie Music",
+          "publishedAt": "2014-10-27",
+          "views": 14861839,
+          "officialChannel": false,
+          "note": "제목에 명시된 대로 비공식/미승인 부틀렉 리믹스 — 공식 발매물이 아니다. 이미 기존 revival.evidence(퓨처펑크 부틀렉 리믹스)의 실제 근거 영상. 조회수 1,486만은 이 곡 관련 영상 중 가장 크다 — \"공식\"이라고 쓰지 말 것.",
+          "sourceUrl": "https://www.youtube.com/watch?v=idipMrfAZHk"
+        }
+      ]
+    },
+    {
+      "artist": "吉田美奈子 (Minako Yoshida)",
+      "title": "Midnight Driver",
+      "releaseYear": 1980,
+      "album": "MONOCHROME",
+      "albumSourceUrl": "https://ja.wikipedia.org/wiki/MONOCHROME_(%E5%90%89%E7%94%B0%E7%BE%8E%E5%A5%88%E5%AD%90%E3%81%AE%E3%82%A2%E3%83%AB%E3%83%90%E3%83%A0)",
+      "label": "Alfa Records",
+      "youtube": {
+        "url": "https://www.youtube.com/watch?v=tp_ojywTBWE",
+        "videoId": "tp_ojywTBWE",
+        "channel": "ALFA MUSIC YouTube Channel",
+        "publishedYear": 2022,
+        "publishedAt": "2022-02-08",
+        "views": 362811,
+        "officialChannel": true,
+        "note": "레이블(Alfa Records) 공식 채널의 \"(Official Audio)\" 게시물."
+      },
+      "lyricsUrl": null,
+      "revival": {
+        "driver": "시티팝·뉴트로 재발견",
+        "evidence": "Light in the Attic 'Pacific Breeze: Japanese City Pop, AOR & Boogie 1976-1986'(2019-05-03)에 3번 트랙으로 수록되며 해외 청자에게 소개됐다.",
+        "sourceUrl": "https://en.wikipedia.org/wiki/Pacific_Breeze:_Japanese_City_Pop,_AOR_and_Boogie_1976%E2%80%931986"
+      },
+      "soundFacts": [
+        "본인 첫 셀프 프로듀스 앨범(MONOCHROME, 1980-10-21, Alfa Records)에 수록",
+        "수록곡 대부분 吉田美奈子 단독 작사·작곡('RAINY DAY'만 山下達郎과 공동 — 'Midnight Driver'는 단독)",
+        "세션 뮤지션: 기타 松木恒秀, 베이스·기타 岡沢章, 드럼 渡嘉敷祐一, 말렛(비브라폰) Michael Mainieri, 색소폰 清水靖晃",
+        "1980년 여름 CBS Sony Studio(롯폰기)에서 녹음, 엔지니어 吉田保",
+        "러닝타임 7분 44초",
+        "추가 오버더빙(7월 21~23일, STUDIO A·시바우라)은 엔지니어 YASUHIKO TERADA 가 맡았다 — 원문이 로마자로만 표기, 한자 위키링크 없음. 한자를 지어내 붙이지 말 것(로마자 Terada 로만 쓸 것)."
+      ],
+      "url": "https://www.youtube.com/watch?v=tp_ojywTBWE",
+      "videoId": "tp_ojywTBWE",
+      "views": 362811,
+      "publishedYear": 2022,
+      "writeMode": "B",
+      "yearNote": "발매 1980년(앨범 'MONOCHROME', Alfa Records, 1980-10-21) · 유튜브는 레이블 공식 채널(ALFA MUSIC YouTube Channel) 2022-02-08 게시 — 게시 연도(2022)를 발매 연도(1980)로 쓰지 말 것.",
+      "canSay": [
+        {
+          "text": "吉田美奈子 첫 셀프 프로듀스 앨범 'MONOCHROME'(1980-10-21, Alfa Records)의 LP 기준 사이드B 3번째 곡(수록곡: AIRPORT·MIRAGE·MIDNIGHT DRIVER·午後 AFTERNOON 순), 2004년 종이자켓 CD 재발매반(MHCL 413) 기준으로는 통산 7번 트랙. 러닝타임 7분 44초.",
+          "sourceUrl": "https://ja.wikipedia.org/wiki/MONOCHROME_(%E5%90%89%E7%94%B0%E7%BE%8E%E5%A5%88%E5%AD%90%E3%81%AE%E3%82%A2%E3%83%AB%E3%83%90%E3%83%A0)"
+        },
+        {
+          "text": "세션 편성: 기타 松木恒秀(Tsunehide Matsuki), 베이스·기타 岡沢章(Akira Okazawa), 드럼 渡嘉敷祐一(Yuuichi Togashiki), 말렛(비브라폰) Michael Mainieri, 색소폰 清水靖晃(Yasuaki Shimizu) — 비브라폰과 색소폰이 포함된 편성이었다. 다섯 명 다 ja.wikipedia 위키텍스트의 위키링크(한자↔로마자)로 확인됨.",
+          "sourceUrl": "https://ja.wikipedia.org/wiki/MONOCHROME_(%E5%90%89%E7%94%B0%E7%BE%8E%E5%A5%88%E5%AD%90%E3%81%AE%E3%82%A2%E3%83%AB%E3%83%90%E3%83%A0)"
+        },
+        {
+          "text": "1980년 여름 CBS Sony Studio(롯폰기)에서 녹음, 엔지니어 吉田保.",
+          "sourceUrl": "https://ja.wikipedia.org/wiki/MONOCHROME_(%E5%90%89%E7%94%B0%E7%BE%8E%E5%A5%88%E5%AD%90%E3%81%AE%E3%82%A2%E3%83%AB%E3%83%90%E3%83%A0)"
+        },
+        {
+          "text": "Light in the Attic 'Pacific Breeze: Japanese City Pop, AOR & Boogie 1976-1986'(2019-05-03)에 3번 트랙으로 수록되며 해외 정식 라이선스로 소개됐다.",
+          "sourceUrl": "https://en.wikipedia.org/wiki/Pacific_Breeze:_Japanese_City_Pop,_AOR_and_Boogie_1976%E2%80%931986"
+        },
+        {
+          "text": "레이블 Alfa Records 공식 채널(ALFA MUSIC YouTube Channel)에 \"Official Audio\"로 게시돼 있다(2022-02-08, 조회수 36만 2,811회, 2026-07-25 조사 기준).",
+          "sourceUrl": "https://www.youtube.com/watch?v=tp_ojywTBWE"
+        }
+      ],
+      "cannotSay": [
+        "작곡자 단정 금지 — 자료 불일치. 일본어 위키피디아 'MONOCHROME' 문서는 이 곡을 吉田美奈子 단독 작곡으로 명시하지만, 다른 음악 메타데이터 사이트(원문 재확인 못함)는 山下達郎이 작곡했고 그의 라이브에서 앙코르곡으로 자주 연주된다고 서술한다. 둘 중 하나로 단정하지 말 것 — 언급하려면 '작곡 크레딧에 대한 자료가 엇갈린다' 정도로만 쓰거나 생략할 것.",
+        "공식 가사 페이지 링크 없음 — lyricsUrl이 null이다. 가사 페이지 링크를 만들어내지 말 것. 가사 내용 자체도 서술할 근거가 없어(세션·녹음 정보만 있음) '어떤 이야기인가' 항목은 생략하거나 '가사 정보를 찾지 못했다'로 처리할 것.",
+        "편성(기타·베이스·드럼·비브라폰·색소폰) 이상의 구체적 사운드 묘사(템포, 보컬 톤, 특정 초 단위 구간 묘사) — 자료에 없음. 주어진 세션 크레딧과 편성 사실 이상으로 지어내지 말 것.",
+        "추가 오버더빙 엔지니어(YASUHIKO TERADA)의 한자 표기 — 원문에 위키링크 없이 로마자로만 나온다. 실존 동명이인(寺田康彦)이 있다고 확정해 붙이지 말 것. 로마자 그대로 쓰거나 이름 자체를 생략할 것.",
+        "앨범 크레딧(위 세션 5명)은 앨범 전체 크레딧이지 이 곡 하나만의 세션이라고 단정하지 말 것 — \"앨범 크레딧 기준\"이라고 밝히고 쓸 것."
+      ]
+    },
+    {
+      "artist": "泰葉 (Yasuha)",
+      "title": "フライディ・チャイナタウン (Friday Chinatown)",
+      "releaseYear": 1981,
+      "album": "TRANSIT (데뷔 싱글)",
+      "albumSourceUrl": "https://ja.wikipedia.org/wiki/%E3%83%95%E3%83%A9%E3%82%A4%E3%83%87%E3%82%A3%E3%83%BB%E3%83%81%E3%83%A3%E3%82%A4%E3%83%8A%E3%82%BF%E3%82%A6%E3%83%B3",
+      "label": "Polydor Records",
+      "youtube": {
+        "url": "https://www.youtube.com/watch?v=g0p_jI6T2WQ",
+        "videoId": "g0p_jI6T2WQ",
+        "channel": "UNIVERSAL MUSIC JAPAN",
+        "publishedYear": 2022,
+        "publishedAt": "2022-05-25",
+        "views": 29955371,
+        "officialChannel": true,
+        "note": "레이블 공식 채널의 리릭비디오. 발행일이 realsound 기사의 유니버설뮤직 스트리밍 해금일(2022-05-25)과 일치한다."
+      },
+      "lyricsUrl": "https://www.uta-net.com/song/6462/",
+      "revival": {
+        "driver": "최근 아티스트의 커버·샘플링",
+        "evidence": "한국 DJ Night Tempo가 이 곡을 소개·리믹스했고, 2021-11-21 그의 관련 트윗이 리트윗 약 6,000건·좋아요 2만 건 이상·영상 재생 약 80만 회를 기록하며 화제가 됐다. 이후 LA 클럽에서 수천 명 규모 인파가 이 곡을 떼창하는 장면이 화제가 됐다.",
+        "sourceUrl": "https://realsound.jp/2022/06/post-1063547.html"
+      },
+      "revivalAdditional": {
+        "driver": "틱톡·릴스 챌린지",
+        "evidence": "필리핀 아티스트 EVADE FROM 宇宙, 호주 Aests 등이 만든 퓨처펑크 리믹스가 틱톡에서 확산됐고, 관련 상위 3개 해시태그 합산 조회수가 (2022-06-28 기준) 약 1,650만 회에 달했다. 2022-05-25에는 유니버설뮤직이 이 곡의 디지털 배포(서브스크립션 해금)를 시작했다.",
+        "sourceUrl": "https://ja.wikipedia.org/wiki/%E3%83%95%E3%83%A9%E3%82%A4%E3%83%87%E3%82%A3%E3%83%BB%E3%83%81%E3%83%A3%E3%82%A4%E3%83%8A%E3%82%BF%E3%82%A6%E3%83%B3"
+      },
+      "soundFacts": [
+        "작사 荒木とよひさ, 작곡 泰葉 본인, 편곡 井上鑑",
+        "오리콘 차트 최고 순위 69위에 그쳤던 원래는 눈에 띄지 않던 싱글"
+      ],
+      "url": "https://www.youtube.com/watch?v=g0p_jI6T2WQ",
+      "videoId": "g0p_jI6T2WQ",
+      "views": 29955371,
+      "publishedYear": 2022,
+      "writeMode": "B",
+      "yearNote": "발매 1981년(싱글, 앨범 'TRANSIT', Polydor Records, 1981-09-21) · 유튜브는 레이블 공식 채널(UNIVERSAL MUSIC JAPAN) 2022-05-25 게시 — 발매 연도(1981)와 유튜브 게시 연도(2022)를 혼동하지 말 것.",
+      "canSay": [
+        {
+          "text": "1981-09-21 Polydor Records에서 데뷔 싱글로 발매, 수록 앨범 'TRANSIT'. 작사 荒木とよひさ, 작곡 泰葉 본인, 편곡 井上鑑.",
+          "sourceUrl": "https://ja.wikipedia.org/wiki/%E3%83%95%E3%83%A9%E3%82%A4%E3%83%87%E3%82%A3%E3%83%BB%E3%83%81%E3%83%A3%E3%82%A4%E3%83%8A%E3%82%BF%E3%82%A6%E3%83%B3"
+        },
+        {
+          "text": "오리콘 차트 최고 순위 69위에 그쳤던, 발매 당시엔 크게 주목받지 못한 싱글이었다.",
+          "sourceUrl": "https://ja.wikipedia.org/wiki/%E3%83%95%E3%83%A9%E3%82%A4%E3%83%87%E3%82%A3%E3%83%BB%E3%83%81%E3%83%A3%E3%82%A4%E3%83%8A%E3%82%BF%E3%82%A6%E3%83%B3"
+        },
+        {
+          "text": "곡 내용은 밤의 차이나타운을 헤매던 화자가 외국인과 스쳐 지나가며 '나도 이국인이구나'를 깨닫는 이야기다(자기 문장으로 풀어 쓸 것 — 가사 원문·번역 인용 금지).",
+          "sourceUrl": "https://bunshun.jp/articles/-/51366"
+        },
+        {
+          "text": "한국 DJ Night Tempo가 이 곡을 다루며 화제가 됐다. 2021-11-21 관련 트윗은 리트윗 약 6,000건, 좋아요 2만 건 이상, 영상 재생 약 80만 회를 기록했다.",
+          "sourceUrl": "https://realsound.jp/2022/06/post-1063547.html"
+        },
+        {
+          "text": "틱톡에서 관련 상위 3개 해시태그 합산 조회수가(2022-06-28 기준) 약 1,650만 회에 달했다. 2022-05-25 유니버설뮤직이 이 곡의 디지털 배포(서브스크립션 해금)를 시작했다.",
+          "sourceUrl": "https://realsound.jp/2022/06/post-1063547.html"
+        },
+        {
+          "text": "LA 클럽에서 수천 명 규모 인파가 이 곡을 떼창하는 장면이 화제가 됐고, 십대들이 자전거를 타며 따라 부르는 정도로 청년 문화에 침투했다고 전해진다.",
+          "sourceUrl": "https://bunshun.jp/articles/-/51366"
+        },
+        {
+          "text": "가수 BENI가 2022년 커버 버전을 발표했다.",
+          "sourceUrl": "https://ja.wikipedia.org/wiki/%E3%83%95%E3%83%A9%E3%82%A4%E3%83%87%E3%82%A3%E3%83%BB%E3%83%81%E3%83%A3%E3%82%A4%E3%83%8A%E3%82%BF%E3%82%A6%E3%83%B3"
+        },
+        {
+          "text": "유니버설뮤직재팬 공식 채널의 리릭비디오(2022-05-25 게시, 2026-07-25 조사 기준 조회수 2,995만 5,371회)가 있다. 게시일은 같은 날 시작된 유니버설뮤직의 스트리밍 해금과 일치한다.",
+          "sourceUrl": "https://www.youtube.com/watch?v=g0p_jI6T2WQ"
+        },
+        {
+          "text": "Night Tempo 공식 채널에 리믹스 \"Showa Groove Mix\" 비주얼라이저가 있다(2023-04-11 게시, 조회수 92만 6,866회). 2021-11-21 트윗과는 별개 시점의 공식 발매다.",
+          "sourceUrl": "https://www.youtube.com/watch?v=XPDDAKvVU2Y"
+        },
+        {
+          "text": "BENI 공식 채널에 커버 리릭비디오가 있다(2022-09-26 게시, 조회수 222만 8,173회).",
+          "sourceUrl": "https://www.youtube.com/watch?v=IStMsLncT40"
+        }
+      ],
+      "cannotSay": [
+        "곡의 템포·보컬 톤 등 구체적 사운드 질감 묘사 — 자료엔 편곡자 이름(井上鑑)만 있을 뿐 실제 편곡 스타일 설명이 없다. 이름 이상으로 소리를 지어내 묘사하지 말 것.",
+        "2021-11-21 트윗 시점과 2023-04-11 공식 리믹스 비주얼라이저 게시일을 같은 사건처럼 섞어 쓰지 말 것 — 별개 시점이다.",
+        "가사 원문·번역 — 저작권 정책상 금지. 이야기는 반드시 자기 문장 요약으로만.",
+        "메인 영상은 이제 공식 채널이다 — 예전 초안처럼 \"비공식 업로드인데도\"라는 프레이밍을 쓰지 말 것."
+      ],
+      "relatedVideos": [
+        {
+          "type": "remix",
+          "artist": "Night Tempo",
+          "title": "Fly-Day Chinatown (Night Tempo Showa Groove Mix) 【Official Visualizer】",
+          "url": "https://www.youtube.com/watch?v=XPDDAKvVU2Y",
+          "videoId": "XPDDAKvVU2Y",
+          "channel": "Night Tempo",
+          "publishedAt": "2023-04-11",
+          "views": 926866,
+          "officialChannel": true,
+          "note": "Night Tempo 공식 채널의 리믹스 비주얼라이저. 2021-11-21 트윗으로 화제가 된 것과는 별개 시점의 공식 발매 — 트윗 시점을 리믹스 발매일로 혼동하지 말 것.",
+          "sourceUrl": "https://www.youtube.com/watch?v=XPDDAKvVU2Y"
+        },
+        {
+          "type": "cover",
+          "artist": "BENI",
+          "title": "フライディ・チャイナタウン Lyric Video",
+          "url": "https://www.youtube.com/watch?v=IStMsLncT40",
+          "videoId": "IStMsLncT40",
+          "channel": "BENI",
+          "publishedAt": "2022-09-26",
+          "views": 2228173,
+          "officialChannel": true,
+          "note": "기존 canSay의 \"BENI가 2022년 커버를 발표했다\"(ja.wikipedia 근거)를 뒷받침하는 실제 공식 영상.",
+          "sourceUrl": "https://www.youtube.com/watch?v=IStMsLncT40"
+        }
+      ]
+    },
+    {
+      "artist": "菊池桃子 (Momoko Kikuchi)",
+      "title": "ミスティカルコンポーザー (Mystical Composer)",
+      "releaseYear": 1986,
+      "album": "ADVENTURE",
+      "albumSourceUrl": "https://bunshun.jp/articles/-/48611",
+      "label": "VAP (추정 — 소매 리스팅에서만 확인, 공식 페이지로 재확인 못함)",
+      "youtube": {
+        "url": "https://www.youtube.com/watch?v=Cjf11e9dCcw",
+        "videoId": "Cjf11e9dCcw",
+        "channel": "Momoko Kikuchi - Topic",
+        "publishedYear": 2022,
+        "publishedAt": "2022-04-11",
+        "views": 4193108,
+        "officialChannel": true,
+        "note": "유튜브 자동 생성 Topic 채널 — 공식 음원 배급 카탈로그 기반."
+      },
+      "lyricsUrl": "https://www.uta-net.com/song/364056/",
+      "revival": {
+        "driver": "스트리밍 알고리즘 재유입",
+        "evidence": "2021-07-16 菊池桃子와 밴드 라무(La Mou)의 곡 총 180곡이 Spotify·Apple Music 등에 처음 스트리밍 해금됐다. 2021년 9월 시점 Spotify 일본에서 이 아티스트의 가장 많이 재생된 곡은 원래 히트 싱글도 CM 기용곡도 아니었던 'ミスティック・コンポーザー'였다.",
+        "sourceUrl": "https://bunshun.jp/articles/-/48611"
+      },
+      "soundFacts": [
+        "앨범 ADVENTURE(1986-06-25) 전곡을 林哲司(하야시 테츠지)가 작곡·편곡"
+      ],
+      "url": "https://www.youtube.com/watch?v=Cjf11e9dCcw",
+      "videoId": "Cjf11e9dCcw",
+      "views": 4193108,
+      "publishedYear": 2022,
+      "writeMode": "B",
+      "yearNote": "발매 1986년(앨범 'ADVENTURE') — 정확한 월일은 인용 출처 본문에 명시돼 있지 않으므로 '1986년'까지만 쓸 것('06-25' 단정 금지) · 유튜브는 Topic 채널(공식 음원 배급 기반) 2022-04-11 게시, 2024 리마스터는 2024-09-17 별도 게시 — 게시 연도를 발매 연도로 쓰지 말 것. 참고: 우타넷 등록일 '1994/12/01' 표기는 원문 미확인 자료이며 발매연도가 아니다(재발매/베스트반 표시일 가능성) — 발매연도로 쓰지 말 것.",
+      "canSay": [
+        {
+          "text": "수록 앨범 'ADVENTURE'는 1986년 발매(3집)이고, 전곡을 林哲司(하야시 테츠지)가 작곡·편곡했다.",
+          "sourceUrl": "https://bunshun.jp/articles/-/48611"
+        },
+        {
+          "text": "2021-07-16 菊池桃子와 밴드 라무(La Mou)의 곡 총 180곡이 Spotify·Apple Music 등에 처음 스트리밍 해금됐다.",
+          "sourceUrl": "https://bunshun.jp/articles/-/48611"
+        },
+        {
+          "text": "2021년 9월 시점 Spotify 일본에서 菊池桃子의 가장 많이 재생된 곡은 원래 히트 싱글도 CM 기용곡도 아니었던 바로 이 곡이었다 — '왜 지금 통하는가'의 핵심 근거.",
+          "sourceUrl": "https://bunshun.jp/articles/-/48611"
+        },
+        {
+          "text": "菊池桃子는 1984년 '青春のいじわる'로 데뷔한 80년대 대표 아이돌 중 한 명이다.",
+          "sourceUrl": "https://bunshun.jp/articles/-/48611"
+        },
+        {
+          "text": "유튜브 Momoko Kikuchi - Topic 채널에 이 곡이 있다(2022-04-11 게시, 조회수 419만 3,108회, 2026-07-25 조사 기준).",
+          "sourceUrl": "https://www.youtube.com/watch?v=Cjf11e9dCcw"
+        },
+        {
+          "text": "2024년 9월 17일 \"Mystical Composer (2024 Remaster)\"가 같은 Topic 채널에 게시됐다(조회수 21,241회, 2026-07-25 조사 기준) — 2021년 스트리밍 해금 이후로도 공식 투자가 이어지고 있다는 근거.",
+          "sourceUrl": "https://www.youtube.com/watch?v=NOwKKfLSgLA"
+        }
+      ],
+      "cannotSay": [
+        "연도 단정 금지 — 자료 불일치. 우타넷(uta-net) 검색 스니펫엔 이 곡의 등록/표시일이 '1994/12/01'로 나타나지만 원문 페이지 직접 확인(403 실패)은 안 됐다. 앨범 'ADVENTURE'는 여러 기사·소매처에서 1986년 발매로 확인된다. 두 연도 중 하나로 단정해 쓰지 말 것 — 발매연도는 1986년.",
+        "앨범 정확한 발매 월일(일부 자료엔 '1986-06-25'로 표기돼 있음) — 인용된 bunshun.jp 기사 본문은 '1986년'까지만 밝히고 있어 특정 일자(06-25)를 단정해 쓰지 말 것.",
+        "레이블은 'VAP'로 추정되나 소매 리스팅에서만 확인됐고 공식 페이지로 재확인되지 않았다. 확정해서 쓰지 말 것.",
+        "곡의 템포·보컬 톤 등 구체적 사운드 질감 묘사 — 자료엔 작곡·편곡자 이름(林哲司)만 있을 뿐 실제 편곡 스타일 설명이 없다. 이름 이상으로 소리를 지어내 묘사하지 말 것.",
+        "'어떤 이야기인가'(가사·주제) — 자료에 이 곡의 가사 내용·테마를 설명하는 문장이 없다. 대신 '왜 지금 통하는가'(스트리밍 해금 이후 재발견된 비히트곡)를 이 곡 섹션의 중심 이야기로 쓸 것."
+      ],
+      "relatedVideos": [
+        {
+          "type": "remaster",
+          "artist": "菊池桃子",
+          "title": "Mystical Composer (2024 Remaster)",
+          "url": "https://www.youtube.com/watch?v=NOwKKfLSgLA",
+          "videoId": "NOwKKfLSgLA",
+          "channel": "Momoko Kikuchi - Topic",
+          "publishedAt": "2024-09-17",
+          "views": 21241,
+          "officialChannel": true,
+          "note": "2024년 공식 리마스터 버전 — 2021년 스트리밍 최초 해금 이후로도 레이블이 이 곡에 계속 투자하고 있다는 근거.",
+          "sourceUrl": "https://www.youtube.com/watch?v=NOwKKfLSgLA"
+        }
+      ]
+    }
+  ]
+}
