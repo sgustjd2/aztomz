@@ -70,75 +70,84 @@ async function pick(scope, name, candidates, { timeout = 8000, required = true }
 /* 대표 이미지 카드를 직접 만든다(1200x630).
    남의 사진(언론사·나무위키·인스타)을 내려받아 재업로드하지 않는다 — 출처를 밝혀도 저작권 침해다.
    우리 점수 데이터로 만든 카드는 저작권 문제가 없고, 브랜드도 일관되고, images 가 없는 신조어 글도 커버를 갖는다. */
-async function makeCover(ctx, spec, id) {
+export async function makeCover(ctx, spec, id) {
   const esc = (s) => String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-  const bar = (label, hint, n, color) => !Number.isFinite(n) ? '' : `
-    <div class="row">
-      <span class="lab">${esc(label)}<em>${esc(hint)}</em></span>
-      <span class="track"><span class="fill" style="width:${Math.max(4, Math.min(100, n))}%;background:${color}"></span></span>
-      <span class="num">${n}</span>
-    </div>`;
 
-  // 광고/신뢰 점수가 있으면(한끗 "광고일까 진짜일까" 트렌드) 크림 배경 점수카드.
-  // 없으면(backend/blog 파이프라인 — song/prompt-pack/news 등) "광고일까 진짜일까" 문구 자체가
-  // 안 맞으므로(2026-07-26 실측 — 오늘 만든 글 전부에 이 오표기가 박혀 나갔다) 완전히 다른 다크 템플릿을 쓴다.
+  /* ── 썸네일 안전영역 ──────────────────────────────────────────
+     티스토리 글목록 썸네일은 256x256 정사각형에 object-fit:cover 다(2026-07-28 실측).
+     즉 1200x630 카드에서 실제로 보이는 건 **가운데 630x630** 뿐이고 좌우는 잘려나간다.
+     그래서 제목·카테고리·브랜드를 전부 가운데 620px 안에 모으고 중앙정렬한다.
+     (예전 좌측정렬 카드는 목록에서 제목이 양쪽 다 잘렸다) */
+  const SAFE = 620;
+
+  // 분야마다 다른 포인트색 — 목록에서 글이 섞여 있을 때 한눈에 구분된다.
+  const ACCENT = {
+    '디저트': '#ff8ba7', '맛집': '#ff9f43', '카페·핫플': '#c08457',
+    '신조어': '#a78bfa', '노래·챌린지': '#f472b6', '패션': '#2dd4bf',
+    'AI 프롬프트': '#60a5fa', 'AI 동향': '#60a5fa', 'n8n': '#f0b429',
+    '음악': '#f472b6', 'error': '#fb7185',
+  };
+  const cat = spec.cat || '한끗';
+  const accent = ACCENT[cat] || '#f0b429';
+
+  // 제목 길이에 맞춰 글자 크기를 정한다 — 좁은 안전영역이라 긴 제목은 줄여야 3줄에 들어간다.
+  const t = String(spec.title || '');
+  const titleSize = t.length <= 16 ? 66 : t.length <= 24 ? 58 : t.length <= 34 ? 50 : 44;
+
   const hasScore = Number.isFinite(spec.ad) || Number.isFinite(spec.trust);
 
-  const html = hasScore ? `<!doctype html><meta charset="utf-8">
+  // 점수 배지 — 막대그래프는 가로로 길어 썸네일에서 잘린다. 숫자를 크게 보여준다.
+  const score = (label, n, color) => !Number.isFinite(n) ? '' : `
+    <div class="sc">
+      <div class="sc-n" style="color:${color}">${n}</div>
+      <div class="sc-l">${esc(label)}</div>
+    </div>`;
+
+  const html = `<!doctype html><meta charset="utf-8">
 <style>
-  @font-face{font-family:x}
   *{margin:0;box-sizing:border-box}
-  body{width:1200px;height:630px;background:#f6f0e4;color:#181612;
+  body{width:1200px;height:630px;position:relative;overflow:hidden;
+       background:#111113;color:#f7f4ee;
        font-family:"Malgun Gothic","맑은 고딕",system-ui,sans-serif;
-       padding:72px 80px;display:flex;flex-direction:column;justify-content:space-between}
-  .top{display:flex;align-items:center;gap:14px;font-size:26px;font-weight:700;color:#5a5144}
-  .chip{background:#181612;color:#f6f0e4;padding:6px 18px;border-radius:999px;font-size:24px}
-  h1{font-size:74px;line-height:1.18;font-weight:800;letter-spacing:-.02em;
-     display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-  .label{font-size:34px;font-weight:700;color:#5a5144;margin-top:18px}
-  .row{display:flex;align-items:center;gap:20px;margin-top:18px}
-  .lab{width:290px;font-size:30px;font-weight:700}
-  .lab em{display:block;font-style:normal;font-size:21px;font-weight:400;color:#766b5a;margin-top:2px}
-  .track{flex:1;height:18px;background:#ded3bf;border-radius:99px;overflow:hidden}
-  .fill{display:block;height:100%;border-radius:99px}
-  .num{width:76px;text-align:right;font-size:36px;font-weight:800}
-  .foot{display:flex;justify-content:space-between;align-items:flex-end;
-        font-size:22px;color:#766b5a;border-top:3px solid #181612;padding-top:20px}
-  .brand{font-size:30px;font-weight:800;color:#181612}
-</style>
-<div class="top"><span class="chip">${esc(spec.cat || '트렌드')}</span><span>광고일까 진짜일까</span></div>
-<div>
-  <h1>${esc(spec.title)}</h1>
-  ${spec.label ? `<div class="label">${esc(spec.label)}</div>` : ''}
-</div>
-<div>
-  ${bar('광고 의심도', '협찬·바이럴 신호', spec.ad, '#e34d2e')}
-  ${bar('후기 신뢰도', '후기를 믿을 만한가', spec.trust, '#237a52')}
-</div>
-<div class="foot"><span class="brand">한끗</span><span>추정치 · 확정 판정 아님 · ${esc(spec.analyzedAt || '')}</span></div>` : `<!doctype html><meta charset="utf-8">
-<style>
-  @font-face{font-family:x}
-  *{margin:0;box-sizing:border-box}
-  body{width:1200px;height:630px;background:#111;color:#f6f0e4;
-       font-family:"Malgun Gothic","맑은 고딕",system-ui,sans-serif;
-       padding:72px 80px;display:flex;flex-direction:column;justify-content:space-between}
-  .chip{display:inline-block;background:#f0b429;color:#181612;padding:8px 22px;
-        border-radius:999px;font-size:26px;font-weight:800;width:fit-content}
-  h1{font-size:70px;line-height:1.2;font-weight:800;letter-spacing:-.02em;margin-top:28px;
+       display:flex;align-items:center;justify-content:center}
+  /* 포인트색 은은한 발광 — 밋밋한 검정보다 눈에 걸린다 */
+  .glow{position:absolute;width:900px;height:900px;border-radius:50%;
+        background:radial-gradient(circle, ${accent}2e 0%, transparent 62%);
+        top:-330px;left:50%;transform:translateX(-50%)}
+  .glow2{position:absolute;width:700px;height:700px;border-radius:50%;
+         background:radial-gradient(circle, ${accent}18 0%, transparent 60%);
+         bottom:-320px;left:50%;transform:translateX(-50%)}
+  /* 실제로 썸네일에 보이는 영역 — 여기 밖으로 중요한 걸 두지 않는다 */
+  .safe{position:relative;width:${SAFE}px;display:flex;flex-direction:column;
+        align-items:center;text-align:center}
+  .chip{background:${accent};color:#141414;padding:9px 26px;border-radius:999px;
+        font-size:27px;font-weight:800;letter-spacing:-.01em}
+  h1{font-size:${titleSize}px;line-height:1.28;font-weight:800;letter-spacing:-.03em;
+     margin-top:26px;word-break:keep-all;
      display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
-  .label{font-size:32px;font-weight:600;color:#b8b0a0;margin-top:20px}
-  .rule{width:80px;height:6px;background:#f0b429;border-radius:99px;margin-top:auto}
-  .foot{display:flex;justify-content:space-between;align-items:flex-end;
-        font-size:22px;color:#8a8272;border-top:2px solid #333;padding-top:20px;margin-top:20px}
-  .brand{font-size:30px;font-weight:800;color:#f6f0e4}
+  .label{font-size:28px;font-weight:600;color:#a9a396;margin-top:20px;
+         display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden}
+  .scores{display:flex;gap:52px;margin-top:30px}
+  .sc{display:flex;flex-direction:column;align-items:center}
+  .sc-n{font-size:60px;font-weight:800;line-height:1}
+  .sc-l{font-size:22px;color:#a9a396;margin-top:8px;font-weight:600}
+  .rule{width:64px;height:5px;background:${accent};border-radius:99px;margin-top:34px}
+  .brand{margin-top:22px;font-size:26px;font-weight:800;color:#f7f4ee;letter-spacing:.02em}
+  .note{font-size:20px;color:#7d776b;margin-top:8px}
 </style>
-<div>
-  <span class="chip">${esc(spec.cat || '한끗')}</span>
+<div class="glow"></div><div class="glow2"></div>
+<div class="safe">
+  <span class="chip">${esc(cat)}</span>
   <h1>${esc(spec.title)}</h1>
   ${spec.label ? `<div class="label">${esc(spec.label)}</div>` : ''}
-</div>
-<div class="rule"></div>
-<div class="foot"><span class="brand">한끗</span><span>${esc(spec.analyzedAt || '')}</span></div>`;
+  ${hasScore ? `<div class="scores">
+    ${score('광고 의심도', spec.ad, '#ff6b52')}
+    ${score('후기 신뢰도', spec.trust, '#34d399')}
+  </div>` : ''}
+  <div class="rule"></div>
+  <div class="brand">한끗</div>
+  <div class="note">${hasScore ? '추정치 · 확정 판정 아님 · ' : ''}${esc(spec.analyzedAt || '')}</div>
+</div>`;
 
   const p = await ctx.newPage();
   await p.setViewportSize({ width: 1200, height: 630 });
@@ -152,7 +161,7 @@ async function makeCover(ctx, spec, id) {
 /* 커버 업로드.
    이 에디터에는 input[type=file] 이 상시 존재하지 않는다(--probe 결과 files: []).
    툴바 [첨부](aria-label) → [사진] 이 네이티브 파일창을 띄우므로 filechooser 로 받아야 한다. */
-async function uploadCover(page, file) {
+export async function uploadCover(page, file) {
   // input[type=file] 로 직접 주입하지 않는다 — 에디터가 뜬 뒤 '동작하지 않는' 숨은 input 이 생겨서
   // setInputFiles 가 조용히 성공만 하고 이미지는 영원히 안 들어온다(2026-07-25 실측).
   try {
@@ -526,10 +535,18 @@ async function coverOnly() {
   console.log(`✓ 커버 생성: ${file}`);
 }
 
-if (has('login')) await login();
-else if (has('selftest')) await selftest();
-else if (has('cover') && id) await coverOnly();
-else if (!id) {
-  console.error('사용법:\n  node backend/scripts/blog-publish.mjs --login\n  node backend/scripts/blog-publish.mjs <id> [--dry|--draft]\n  node backend/scripts/blog-publish.mjs --selftest');
-  process.exit(1);
-} else await publish();
+/* CLI 는 이 파일을 **직접 실행**했을 때만 돈다.
+   blog-recover.mjs 가 makeCover/uploadCover 를 재사용하려고 import 하는데, 가드가 없으면
+   import 만으로 아래 분기가 실행돼 엉뚱하게 발행이 돌아간다(2026-07-28). */
+const isMain = process.argv[1]
+  && import.meta.url === (await import('node:url')).pathToFileURL(process.argv[1]).href;
+
+if (isMain) {
+  if (has('login')) await login();
+  else if (has('selftest')) await selftest();
+  else if (has('cover') && id) await coverOnly();
+  else if (!id) {
+    console.error('사용법:\n  node backend/scripts/blog-publish.mjs --login\n  node backend/scripts/blog-publish.mjs <id> [--dry|--draft]\n  node backend/scripts/blog-publish.mjs --selftest');
+    process.exit(1);
+  } else await publish();
+}
