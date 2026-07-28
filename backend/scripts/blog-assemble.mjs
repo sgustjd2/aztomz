@@ -69,6 +69,26 @@ if (/```[\s\S]*?```/.test(md) === false && /코드/.test(meta.title || '')) {
   problems.push('제목은 코드를 다루는데 본문에 코드블록이 없다');
 }
 
+/* 말투 — 프로파일의 tone.formality 를 지켰는지 기계로 센다.
+   00_common.md 가 "프로파일의 tone.formality 를 따른다"고만 하는 간접 지시라 그냥 무시되는 일이
+   있었다(2026-07-28 실측: 해요체 프로파일인데 합니다체 31 / 해요체 0). LLM 검수는 이런 걸 잘 놓친다. */
+const profPath = meta.categoryId
+  ? join(repoRoot, 'backend', 'blog', 'categories', `${meta.categoryId}.json`) : null;
+if (profPath && existsSync(profPath)) {
+  const prof = JSON.parse(await readFile(profPath, 'utf8'));
+  const want = prof?.tone?.formality;
+  if (want) {
+    const prose = mdWithoutCode.replace(/\[IMG:[^\]]*\]/g, '');
+    const hap = (prose.match(/니다[.!?]/g) || []).length;      // 합니다체
+    const haeyo = (prose.match(/(어요|에요|예요|아요)[.!?]/g) || []).length;  // 해요체
+    if (want.includes('해요') && hap > haeyo) {
+      problems.push(`말투가 프로파일과 다르다 — 해요체여야 하는데 합니다체 ${hap} / 해요체 ${haeyo}`);
+    } else if (want.includes('습니다') && haeyo > hap) {
+      problems.push(`말투가 프로파일과 다르다 — 합니다체여야 하는데 해요체 ${haeyo} / 합니다체 ${hap}`);
+    }
+  }
+}
+
 /* 영상 임베드 — 조사에 있는 영상만, 그리고 실제로 임베드가 되는 것만.
    oembed 401/404 인 영상을 넣으면 독자에게 '재생 없음' 검은 상자가 뜬다(CLAUDE.md 철칙). */
 const embedIds = [...new Set([...md.matchAll(/^\s*\[YT:\s*([A-Za-z0-9_-]{11})\s*(?:\||\])/gim)].map((m) => m[1]))];
