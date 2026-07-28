@@ -131,11 +131,20 @@ const main = async () => {
       ad: Number.isFinite(picked.ad) ? picked.ad : null,
       trust: Number.isFinite(picked.trust) ? picked.trust : null,
       sat: picked.sat || null,
+      satTxt: picked.satTxt || null,
+      // 점수의 '근거'다 — {ad:[], trust:[], sat:[]}. 이게 없으면 글이 점수만 나열하고
+      // 왜 그렇게 봤는지를 못 쓴다(2026-07-28 팩트체커 지적으로 추가).
+      reasons: picked.reasons || null,
       recs: picked.recs || [], tags: picked.tags || [],
       article: picked.article || [],
       shops: picked.shops || [],
       prompt: picked.prompt || null,
       pureKorean: picked.pureKorean || null,
+      // 신조어의 실제 예문. hangeut-trend 의 "실제로 어떻게 쓰나요" 절이 이걸 쓴다.
+      example: picked.example || null,
+      // {youtube: '<videoId>', cap: '...'} — md.mjs 의 [YT: id | 캡션] 임베드로 넣을 수 있다.
+      // 단 oembed 200 인 것만(blog-assemble 이 검사한다).
+      video: picked.video || null,
       collectedAt: picked.collectedAt || null, analyzedAt: picked.analyzedAt || null,
       detailUrl,
     },

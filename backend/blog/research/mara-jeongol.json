@@ -2,7 +2,7 @@
   "keyword": "마라전골",
   "categoryId": "hangeut-trust",
   "slug": "mara-jeongol",
-  "searchedAt": "2026-07-27",
+  "searchedAt": "2026-07-28",
   "origin": "hermes-trends",
   "note": "Hermes 가 수집·분석하고 auto-build.mjs 가 출처까지 자동검증한 항목이다. 여기 있는 사실 밖으로 나가지 말 것 — 새로 검색해서 덧붙이지 않는다.",
   "trend": {
@@ -21,6 +21,20 @@
     "ad": 30,
     "trust": 75,
     "sat": "pos",
+    "satTxt": "대체로 만족",
+    "reasons": {
+      "ad": [
+        "프랜차이즈 가맹점 홍보성 게시물 일부 존재"
+      ],
+      "trust": [
+        "'내돈내산' 인증과 함께 지점별 비교, 메뉴 추천 등 구체적인 후기 다수",
+        "재방문 후기가 많아 충성도 높은 편"
+      ],
+      "sat": [
+        "'마라 입문자도 즐기기 좋은 맛', '술안주로 최고'라는 긍정 평가 지배적",
+        "'웨이팅이 길다'는 점은 단점으로 언급"
+      ]
+    },
     "recs": [
       [
         "마라 초보자",
@@ -108,6 +122,8 @@
     ],
     "prompt": null,
     "pureKorean": null,
+    "example": null,
+    "video": null,
     "collectedAt": "2026-06-23",
     "analyzedAt": "2026-07-26",
     "detailUrl": "https://aztomz.vercel.app/trend.html?id=mara-jeongol"
