@@ -46,7 +46,7 @@ const { execFileSync } = await import('node:child_process');
 
 const postId = (url) => (String(url).match(/\/(\d+)(?:$|[?#])/) || [])[1];
 
-async function recover(page, ctx, id, rec, makeCover, uploadCover) {
+async function recover(page, ctx, id, rec, makeCover, uploadCover, setRepresentative) {
   const pid = postId(rec.url);
   if (!pid) return { id, ok: false, why: `글 번호를 못 읽음: ${rec.url}` };
 
@@ -86,6 +86,11 @@ async function recover(page, ctx, id, rec, makeCover, uploadCover) {
     const ed = window.tinymce.activeEditor || window.tinymce.editors[0];
     ed.setContent(html); ed.fire('change'); ed.save?.();
   }, body.replace('<!--COVER-->', coverMarkup));
+
+  // ★ 새 이미지를 대표로 지정한다. 이게 이 스크립트의 핵심 — 본문만 갈면 목록 썸네일·og:image 는
+  //   예전 이미지를 계속 가리킨다(대표는 글 메타로 따로 저장되기 때문).
+  const rep = await setRepresentative(page);
+  if (!rep) return { id, ok: false, why: '대표 이미지 지정 실패(본문은 바뀜) — 목록 썸네일이 안 바뀐다' };
 
   // 완료 → (공개 상태 유지) → 저장
   await page.locator('#publish-layer-btn, button:has-text("완료")').first().click();
@@ -128,9 +133,9 @@ const main = async () => {
 
   // makeCover/uploadCover 를 blog-publish.mjs 에서 직접 가져온다(중복 구현 방지).
   const pub = await import('./blog-publish.mjs');
-  const { makeCover, uploadCover } = pub;
-  if (!makeCover || !uploadCover) {
-    console.error('✗ blog-publish.mjs 가 makeCover/uploadCover 를 export 하지 않습니다.');
+  const { makeCover, uploadCover, setRepresentative } = pub;
+  if (!makeCover || !uploadCover || !setRepresentative) {
+    console.error('✗ blog-publish.mjs 가 makeCover/uploadCover/setRepresentative 를 export 하지 않습니다.');
     process.exit(1);
   }
 
@@ -148,7 +153,7 @@ const main = async () => {
     const rec = posted[id];
     if (!rec) { results.push({ id, ok: false, why: 'posted.json 에 없음' }); continue; }
     try {
-      const r = await recover(page, ctx, id, rec, makeCover, uploadCover);
+      const r = await recover(page, ctx, id, rec, makeCover, uploadCover, setRepresentative);
       results.push(r);
       console.log(r.ok ? `✓ ${id} → ${r.url}` : `✗ ${id}: ${r.why}`);
     } catch (e) {

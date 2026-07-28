@@ -161,6 +161,26 @@ export async function makeCover(ctx, spec, id) {
 /* 커버 업로드.
    이 에디터에는 input[type=file] 이 상시 존재하지 않는다(--probe 결과 files: []).
    툴바 [첨부](aria-label) → [사진] 이 네이티브 파일창을 띄우므로 filechooser 로 받아야 한다. */
+/* 본문 첫 이미지를 '대표 이미지'로 지정한다.
+   티스토리는 대표 이미지를 본문 마크업이 아니라 **글 메타로 따로** 보관한다([##_Image|...] 치환자
+   JSON 에는 originWidth/style/filename 뿐이다). 그래서 본문 이미지를 새로 갈아도 목록 썸네일과
+   og:image 는 예전 이미지를 계속 가리킨다(2026-07-28 실측 — 커버를 12편 교체했는데 목록은 옛 카드였다).
+   이미지를 클릭하면 TinyMCE 가 .mce-represent-image-btn 오버레이를 띄우고, 누르면 .active 가 붙는다. */
+export async function setRepresentative(page) {
+  try {
+    await page.frameLocator('#editor-tistory_ifr').locator('figure img').first()
+      .click({ timeout: 8000 });
+    await page.waitForTimeout(600);
+    const btn = page.locator('.mce-represent-image-btn').first();
+    if (!await btn.count()) return false;
+    // 이미 대표면 다시 누르지 않는다(토글이라 해제돼버린다).
+    if (await btn.evaluate((b) => b.classList.contains('active'))) return true;
+    await btn.click();
+    await page.waitForTimeout(700);
+    return await btn.evaluate((b) => b.classList.contains('active')).catch(() => false);
+  } catch { return false; }
+}
+
 export async function uploadCover(page, file) {
   // input[type=file] 로 직접 주입하지 않는다 — 에디터가 뜬 뒤 '동작하지 않는' 숨은 input 이 생겨서
   // setInputFiles 가 조용히 성공만 하고 이미지는 영원히 안 들어온다(2026-07-25 실측).
@@ -443,6 +463,12 @@ async function publish() {
       ed.fire('change');
       ed.save?.();
     }, finalHtml);
+
+    // 커버를 넣었으면 대표 이미지로 지정한다 — 안 하면 목록 썸네일·og:image 가 안 잡힌다.
+    if (coverMarkup) {
+      const rep = await setRepresentative(page);
+      if (!rep) console.warn('  ⚠ 대표 이미지 지정 실패 — 목록 썸네일이 안 잡힐 수 있습니다.');
+    }
 
     // getContent() 는 업로드 중 throw 하므로 본문 DOM 길이로 확인한다.
     const injected = await page.evaluate(() =>
