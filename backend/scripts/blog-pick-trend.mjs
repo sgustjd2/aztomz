@@ -148,13 +148,28 @@ const main = async () => {
       collectedAt: picked.collectedAt || null, analyzedAt: picked.analyzedAt || null,
       detailUrl,
     },
-    sources: (picked.src || []).map(([name, url]) => ({
-      title: String(name || '출처'), url: String(url),
-      host: (() => { try { return new URL(String(url)).host; } catch { return ''; } })(),
-      tier: 'press',
-      body: 'Hermes 수집 시 auto-build.mjs 가 생존(404)·본문 관련성을 검증한 출처다. '
-        + '본문을 여기 다시 담지 않는다 — 이 글은 trend 필드의 분석을 근거로 쓴다.',
-    })),
+    sources: [
+      ...(picked.src || []).map(([name, url]) => ({
+        title: String(name || '출처'), url: String(url),
+        host: (() => { try { return new URL(String(url)).host; } catch { return ''; } })(),
+        tier: 'press',
+        kind: 'analysis',
+        body: 'Hermes 수집 시 auto-build.mjs 가 생존(404)·본문 관련성을 검증한 출처다. '
+          + '본문을 여기 다시 담지 않는다 — 이 글은 trend 필드의 분석을 근거로 쓴다.',
+      })),
+      /* 가게 링크도 조사 출처로 넣는다. auto-build 가 죽은 가게링크를 자동 제거하므로 살아있는 것만
+         남아 있다. 디저트·맛집 글은 src 가 1개뿐인 경우가 많은데(2026-07-29 실측) 정작 '어디서 파나'
+         가 독자에게 제일 필요하다. 단 kind:'shop' 으로 표시해 '분석 근거'와 구분한다 —
+         개인 블로그 후기를 점수의 근거처럼 인용하면 안 된다. */
+      ...(picked.shops || []).filter((s) => s && s.url).map((s) => ({
+        title: `가게 참고 — ${s.name}`, url: String(s.url),
+        host: (() => { try { return new URL(String(s.url)).host; } catch { return ''; } })(),
+        tier: 'blog',
+        kind: 'shop',
+        body: `${s.name}(${s.area || ''}) 참고 링크. ${s.note || ''} `
+          + '어디서 파는지 안내용이지 점수의 근거가 아니다 — 분석 근거로 인용하지 말 것.',
+      })),
+    ],
     internalLinkCandidates: [detailUrl],
     cannotSay: [
       '광고 의심도·후기 신뢰도는 추정치다. "확실히 광고다" 같은 확정 표현 금지.',
