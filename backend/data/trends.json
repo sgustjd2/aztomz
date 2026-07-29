@@ -9335,6 +9335,120 @@
         "https://cdn.hotplacehunter.co.kr/hotplacehunter/2023/08/29023912/%EA%B5%AD%EC%A0%9C%EC%88%98%EC%9E%85%EC%8B%9D%EB%8B%B9-_zzingg%EB%8B%98-%EC%9D%B8%EC%8A%A4%ED%83%80%EA%B7%B8%EB%9E%A8-1.jpg",
         "https://cdn-view.mk.co.kr/mkview/2026/07/16171338/CP-2023-0058-38430680-thumb-1200x900.jpg"
       ]
+    },
+    {
+      "id": "cafe-hued-yongsan",
+      "type": "신뢰분석",
+      "cat": "카페·핫플",
+      "coverCat": "cat-cafe",
+      "collectedAt": "2026-07-29",
+      "analyzedAt": "2026-07-29",
+      "buzz": "화제성 중간",
+      "ad": 15,
+      "trust": 85,
+      "sat": "pos",
+      "satTxt": "만족",
+      "label": "믿고 가볼 만함",
+      "labelCls": "good",
+      "title": "금성출판사가 만든 용산 카페 '흙(hued)'",
+      "excerpt": "60년 된 출판사가 용산의 낡은 목재창고를 개조해 만든 복합문화공간. 넓은 공간과 독특한 분위기로 입소문이 나고 있지만, 가격은 다소 비싸다는 평.",
+      "pull": "커피만 마시는 곳이 아닌, 책과 전시가 함께하는 새로운 경험의 공간",
+      "verdict": "용산의 새로운 핫플레이스로 떠오르는 '흙(hued)'은 60년 역사의 금성출판사가 만든 복합문화공간입니다. 낡은 목재창고를 개조한 독특한 분위기와 넓은 공간 덕분에 좋은 평을 받고 있습니다. '내돈내산' 후기가 많고 단점(비싼 가격)도 명확히 언급되어 광고 가능성은 낮아 보입니다. 커피와 함께 전시, 책을 즐기는 새로운 경험을 원한다면 방문할 가치가 충분합니다.",
+      "recs": [
+        [
+          "넓고 특별한 공간을 찾는다면",
+          "◎",
+          1
+        ],
+        [
+          "가성비를 중시한다면",
+          "△",
+          0.5
+        ],
+        [
+          "조용한 대화를 원한다면",
+          "○",
+          1
+        ]
+      ],
+      "src": [
+        [
+          "네이버블로그(내돈내산)",
+          "https://m.blog.naver.com/nayeong95/224303821514"
+        ],
+        [
+          "인스타그램(공간소개)",
+          "https://www.instagram.com/reel/DaeLyWjT12e/"
+        ]
+      ],
+      "tags": [
+        "카페",
+        "핫플",
+        "용산",
+        "대형카페",
+        "북카페",
+        "복합문화공간"
+      ],
+      "images": [
+        "https://blogthumb.pstatic.net/MjAyNjA2MDJfNSAg/MDAxNzgwMzc4NDc3NzQx.mW1yYnNqZsCJ8KeRwiIJHDe3PFBTdMFGQgnuz5L8dw0g.bqF1RpzLIrA4vGKPzCDHLkCfGqR8ROZb3GABd-wIClEg.JPEG/vllo%A3%DFsnapshot.jpg?type=w2",
+        "https://scontent-ssn1-1.cdninstagram.com/v/t51.82787-15/735067605_18167495257431416_5544957133636407284_n.jpg?stp=cmp1_dst-jpg_e35_s640x640_tt6&amp;_nc_cat=102&amp;ccb=7-5&amp;_nc_sid=18de74&amp;efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&amp;_nc_ohc=31THrJ8_1VcQ7kNvwEaZ37y&amp;_nc_oc=AdqyF8Z5BV6tc7mj0hiEAWIVxdDzoqifhdHA9xplHTtHtdGm7YYOK4b9w3MFM9WXdOY&amp;_nc_zt=23&amp;_nc_ht=scontent-ssn1-1.cdninstagram.com&amp;_nc_gid=t3W2-6A1D7QkU6d9e_K2KQ&amp;_nc_ss=7b689&amp;oh=00_AQD6PKNS82PhUFTiheH2VP7ECJsautQU5ZjsbL6A62Jlhg&amp;oe=6A6FC944"
+      ],
+      "reasons": {
+        "ad": [
+          "인스타그램 릴스 등 일부 콘텐츠에 협찬 가능성이 있으나, 전반적으로는 자발적 후기가 많아 광고 의심도는 낮음."
+        ],
+        "trust": [
+          "'내돈내산'을 명시한 블로그 후기가 다수 발견됨.",
+          "음료와 디저트 가격이 비싸다는 단점이 명확하게 언급되어 신뢰도를 높임.",
+          "공간의 역사(금성출판사, 목재창고)와 구조에 대한 구체적인 묘사가 많음."
+        ],
+        "sat": [
+          "독특하고 넓은 공간, 볼거리가 많다는 점에서 대부분 긍정적인 반응.",
+          "다만 가격이 비싸다는 점에서는 만족도가 갈릴 수 있음."
+        ]
+      },
+      "article": [
+        [
+          "h",
+          "요즘 용산에 이런 곳이? 출판사가 만든 카페"
+        ],
+        [
+          "p",
+          "성수, 연남 다음으로 주목받는 용산에 독특한 카페가 문을 열었습니다. 60년 역사의 출판사 '금성'이 낡은 목재창고를 개조해 만든 '흙(hued)'이 그 주인공입니다. 단순한 카페를 넘어 책과 전시가 함께하는 복합문화공간으로 입소문을 타고 있습니다."
+        ],
+        [
+          "q",
+          "커피 한 잔 값에 공간과 문화를 함께 경험하는 곳"
+        ],
+        [
+          "h",
+          "광고일까, 진짜 후기일까?"
+        ],
+        [
+          "p",
+          "SNS에서 보이는 멋진 공간 사진, 광고는 아닐까요? '흙'의 경우 '내돈내산'을 인증한 블로그 후기가 많고, '가격이 비싸다'는 솔직한 단점도 쉽게 찾아볼 수 있어 신뢰가 갑니다. 일부 광고성 콘텐츠가 있을 수 있지만, 대부분 실제 방문객의 만족스러운 경험이 주를 이루고 있습니다."
+        ],
+        [
+          "h",
+          "어떤 점이 특별할까?"
+        ],
+        [
+          "ul",
+          [
+            "압도적인 공간감: 58년 된 목재창고의 높은 층고와 뼈대를 그대로 살려, 일반적인 카페에서는 느끼기 힘든 개방감을 줍니다.",
+            "커피와 문화의 만남: 카페 곳곳에 책이 비치되어 있고, 연결된 공간에서는 상설 전시가 열려 커피 이상의 즐길 거리를 제공합니다.",
+            "용산의 재발견: 빌딩 숲 사이에 숨겨진 보석 같은 곳으로, 핫플레이스 용산의 새로운 매력을 느낄 수 있습니다."
+          ]
+        ],
+        [
+          "h",
+          "한끗 정리"
+        ],
+        [
+          "p",
+          "용산 카페 '흙'은 뻔한 카페 데이트가 지겨운 분들에게 좋은 대안이 될 수 있습니다. 특히 넓고 독특한 공간을 선호하거나, 커피와 함께 문화적인 경험을 하고 싶은 분들에게 추천합니다. 다만 높은 가격대는 감안해야 하니, 가성비보다는 가심비를 중요하게 생각하는 날 방문하는 것이 좋겠습니다."
+        ]
+      ]
     }
   ]
 }
