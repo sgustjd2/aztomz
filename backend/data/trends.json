@@ -10256,6 +10256,181 @@
       "images": [
         "https://img.asiatoday.co.kr/file/2026y/07m/23d/20260723001638281_1784792773_1.jpg"
       ]
+    },
+    {
+      "id": "ai-polaroid-prompt",
+      "type": "트렌드",
+      "cat": "AI 프롬프트",
+      "coverCat": "cat-ai",
+      "collectedAt": "2026-08-02",
+      "analyzedAt": "2026-08-02",
+      "buzz": "화제성 중간",
+      "stage": "안정화",
+      "stageMsg": "꾸준히 사랑받는 스테디셀러 감성",
+      "label": "지금 써도 됨",
+      "labelCls": "good",
+      "title": "폴라로이드 감성 사진 프롬프트",
+      "def": "AI 이미지를 빛바랜 아날로그 폴라로이드 사진처럼 만들어주는 명령",
+      "excerpt": "평범한 디지털 이미지에 빛바랜 색감, 즉석 사진 프레임, 아날로그 노이즈를 더해 빈티지한 감성을 불어넣는 프롬프트입니다.",
+      "pull": "클릭 한 번으로 2000년대 아날로그 감성을 소환한다.",
+      "verdict": "디지털 사진에 질렸다면 AI로 아날로그 감성을 입혀보세요. 이 프롬프트는 폴라로이드 특유의 빛바랜 색감, 프레임, 빈티지한 느낌을 재현해 줍니다. 특별한 여행 사진이나 일상 기록을 좀 더 감성적으로 만들고 싶을 때 유용합니다.",
+      "recs": [
+        [
+          "아날로그 감성",
+          "◎",
+          1
+        ],
+        [
+          "여행 사진 변환",
+          "◎",
+          1
+        ],
+        [
+          "선명한 화질 원할 때",
+          "✕",
+          0
+        ]
+      ],
+      "src": [
+        [
+          "Piclumen - AI Image Generation Trends",
+          "https://www.piclumen.com/blog/ai-image-generation-trends/"
+        ]
+      ],
+      "tags": [
+        "AI프롬프트",
+        "폴라로이드",
+        "아날로그감성",
+        "빈티지"
+      ],
+      "prompt": "[변환 목표]\\n- 평범한 디지털 사진을 빈티지한 폴라로이드 사진으로 변환\\n\\n[스타일]\\n- A polaroid photo of a young couple laughing on a beach.\\n- Taken in the style of the late 1990s.\\n- The image should have a nostalgic, dreamy feel.\\n\\n[조명]\\n- Soft, natural sunlight, typical of a late afternoon 'golden hour'.\\n- Slight, accidental light leaks on the edges of the photo.\\n\\n[카메라·렌즈]\\n- Shot on a vintage Polaroid 600 camera.\\n- Visible grain and slight motion blur, as if captured in a candid moment.\\n- The iconic white Polaroid frame must be visible around the image.\\n\\n[색보정]\\n- Faded colors with a warm, yellowish tint.\\n- Muted blues and greens.\\n- Low contrast and saturation.\\n\\n[피해야 할 것]\\n- No digital watermarks or timestamps.\\n- No overly sharp details or perfect focus.\\n- Avoid modern clothing or objects that break the vintage aesthetic.\\n\\n[비율]\\n- Aspect ratio 1:1 (square format typical of Polaroids)",
+      "article": [
+        [
+          "h",
+          "내 사진첩에 잠든 아날로그 감성을 깨우는 법"
+        ],
+        [
+          "p",
+          "매일같이 쌓이는 선명한 디지털 사진, 가끔은 조금 질리지 않나요? 폴라로이드 프롬프트는 바로 그럴 때 필요한 처방전입니다. AI를 이용해 어떤 이미지든 빛바랜 색감과 특유의 프레임을 가진 아날로그 사진으로 바꿔줍니다."
+        ],
+        [
+          "q",
+          "디지털 시대에 역설적으로 더 끌리는 빈티지의 매력"
+        ],
+        [
+          "h",
+          "어떻게 이런 느낌을 만들어낼까?"
+        ],
+        [
+          "p",
+          "핵심은 'Polaroid photo', 'vintage', 'faded colors', 'light leaks' 같은 키워드에 있습니다. AI에게 '1990년대 후반 스타일의 폴라로이드 사진'이라고 구체적으로 지시하고, '골든아워'의 부드러운 빛과 약간의 빛샘 현상까지 더해달라고 요청하는 거죠. 완벽하지 않아서 더 매력적인 결과가 나옵니다."
+        ],
+        [
+          "h",
+          "한끗 정리"
+        ],
+        [
+          "ul",
+          [
+            "여행이나 데이트 사진에 적용하면 특별한 추억을 만들 수 있습니다.",
+            "결과물이 너무 흐릿하다면 'slight motion blur' 대신 'soft focus'를 사용해 보세요.",
+            "친구들과의 파티 사진을 폴라로이드로 변환해 공유하면 좋은 반응을 얻을 거예요."
+          ]
+        ]
+      ],
+      "images": [
+        "https://images.piclumen.com/picture/directUpload/20260714/16/ai-image-generation-trends-2026.webp"
+      ]
+    },
+    {
+      "id": "historical-pov-prompt",
+      "type": "트렌드",
+      "cat": "AI 프롬프트",
+      "coverCat": "cat-ai",
+      "collectedAt": "2026-08-02",
+      "analyzedAt": "2026-08-02",
+      "buzz": "화제성 중간",
+      "stage": "안정화",
+      "stageMsg": "꾸준한 수요가 있는 컨셉 플레이",
+      "label": "지금 써도 됨",
+      "labelCls": "good",
+      "title": "역사적 관점 인물 사진 프롬프트",
+      "def": "사용자를 특정 역사적 시대나 사건 속 인물처럼 만들어주는 명령",
+      "excerpt": "단순한 인물 사진을 넘어, 마치 영화의 한 장면처럼 특정 시대의 분위기와 이야기를 담아내는 프롬프트입니다. 1920년대 경성부터 1980년대 홍콩까지, 원하는 시대의 주인공이 될 수 있습니다.",
+      "pull": "AI로 떠나는 시간 여행, 내가 바로 역사의 주인공.",
+      "verdict": "내 사진으로 역사적 인물이 되어보는 건 어떨까요? 이 프롬프트는 사용자를 특정 시대와 상황 속으로 데려다줍니다. 예를 들어 '1920년대 경성의 독립운동가'나 '1980년대 서울의 시티팝 가수'가 되어보는 거죠. 의상, 배경, 시대적 분위기를 구체적으로 지정하면 더욱 실감 나는 결과물을 얻을 수 있습니다.",
+      "recs": [
+        [
+          "컨셉 사진",
+          "◎",
+          1
+        ],
+        [
+          "프로필 사진",
+          "◎",
+          1
+        ],
+        [
+          "역사적 고증이 중요할 때",
+          "△",
+          0
+        ]
+      ],
+      "src": [
+        [
+          "Piclumen - AI Image Generation Trends",
+          "https://www.piclumen.com/blog/ai-image-generation-trends/"
+        ],
+        [
+          "Vddo - 스타일별 AI 이미지 프롬프트 모음",
+          "https://vddo.ai/ko/blog/prompts-different-art-styles"
+        ]
+      ],
+      "tags": [
+        "AI프롬프트",
+        "컨셉사진",
+        "시간여행",
+        "역사"
+      ],
+      "prompt": "[변환 목표]\\n- 현대 인물 사진을 특정 역사적 시대의 인물 사진으로 변환\\n\\n[스타일]\\n- A black and white photograph of a woman, styled as a member of the Korean independence movement in the 1920s.\\n- The setting is a dimly lit, clandestine meeting room in Gyeongseong (old Seoul).\\n- The mood is somber, determined, and resilient.\\n\\n[조명]\\n- Single, dramatic light source from the side, creating strong shadows (Chiaroscuro effect).\\n- The air is slightly hazy with smoke.\\n\\n[카메라·렌즈]\\n- Shot on a large format camera from the early 20th century.\\n- The image has a deep depth of field, with both the subject and background in sharp focus.\\n- Signs of aging on the photograph, such as slight scratches and faded edges.\\n\\n[색보정]\\n- Black and white with high contrast.\\n- Alternatively, a sepia tone for a warmer, more aged feel.\\n\\n[피해야 할 것]\\n- No modern hairstyles, makeup, or accessories.\\n- The background should not contain any anachronistic elements.\\n- Avoid smiling or overly cheerful expressions.\\n\\n[비율]\\n- Aspect ratio 4:5 (portrait orientation)",
+      "article": [
+        [
+          "h",
+          "AI로 떠나는 나만의 시간여행"
+        ],
+        [
+          "p",
+          "평범한 프로필 사진이 지겹다면, 역사 속으로 들어가 보는 건 어떠세요? 이 프롬프트는 당신을 원하는 시대의 인물로 만들어 줍니다. 단순히 옛날 옷을 입히는 것을 넘어, 그 시대의 분위기와 이야기까지 사진에 담아낼 수 있습니다."
+        ],
+        [
+          "q",
+          "사진 한 장으로 내가 원하는 시대의 주인공이 되어보세요."
+        ],
+        [
+          "h",
+          "어떻게 만들 수 있을까?"
+        ],
+        [
+          "p",
+          "핵심은 시대적 고증과 분위기 설정입니다. '1920년대 경성', '흑백 사진', '강한 그림자'처럼 구체적인 배경과 스타일을 지정해야 합니다. 인물의 표정('결연한 표정')과 의상('낡은 한복')까지 세심하게 묘사하면 AI는 더욱 실감 나는 결과물을 만들어냅니다."
+        ],
+        [
+          "h",
+          "한끗 정리"
+        ],
+        [
+          "ul",
+          [
+            "자신이 좋아하는 역사 드라마나 영화의 한 장면을 재현해 보세요.",
+            "흑백(Black and white)과 세피아(Sepia) 톤 두 가지 버전으로 만들어 비교해 보는 것도 재미있습니다.",
+            "친구들과 함께 각자 다른 시대의 인물이 되어보는 컨셉 사진 놀이에도 활용할 수 있습니다."
+          ]
+        ]
+      ],
+      "images": [
+        "https://images.piclumen.com/picture/directUpload/20260714/16/ai-image-generation-trends-2026.webp",
+        "https://vddo.ai/images/blogcover/prompts-different-art-styles_28.jpg"
+      ]
     }
   ]
 }
