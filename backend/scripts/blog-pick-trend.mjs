@@ -26,7 +26,12 @@ const trendsPath = join(repoRoot, 'backend', 'data', 'trends.json');
 const researchDir = join(repoRoot, 'backend', 'blog', 'research');
 const postedPath = join(repoRoot, 'backend', 'out', 'blog', 'posted.json');
 
-const SITE = process.env.HANGEUT_SITE || 'https://aztomz.vercel.app';
+/* Vercel 프로젝트 이름이 az2mz 라 배포 도메인도 az2mz.vercel.app 이다.
+   aztomz.vercel.app 은 초기에 만들었다 버린 별개 프로젝트로, 2026-06-07 상태에서 멈춘 채
+   아직 응답한다 — 그래서 링크가 깨진 게 아니라 '옛 데이터가 나오는' 형태로 조용히 틀렸다.
+   블로그 4편이 그 도메인을 걸고 발행된 뒤에야 발견됨(2026-07-29). 도메인을 바꿀 땐
+   두 곳(여기 + blog-build.mjs)을 같이 고쳐야 한다. */
+const SITE = process.env.HANGEUT_SITE || 'https://az2mz.vercel.app';
 
 const argv = process.argv.slice(2);
 const has = (f) => argv.includes(`--${f}`);

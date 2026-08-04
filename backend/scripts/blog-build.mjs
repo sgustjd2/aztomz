@@ -24,7 +24,8 @@ const jsonPath = join(repoRoot, 'backend', 'data', 'trends.json');
 const outDir = join(repoRoot, 'backend', 'out', 'blog');
 
 // 내부링크 대상 — 한끗 상세페이지. 티스토리 독자를 본 서비스로 보내는 유일한 경로.
-const SITE = process.env.HANGEUT_SITE || 'https://aztomz.vercel.app';
+// 배포 도메인은 az2mz.vercel.app — 자세한 경위는 blog-pick-trend.mjs 의 같은 상수 주석 참고.
+const SITE = process.env.HANGEUT_SITE || 'https://az2mz.vercel.app';
 
 const esc = (s) => String(s ?? '')
   .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
