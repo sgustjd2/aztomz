@@ -46,7 +46,7 @@ const { execFileSync } = await import('node:child_process');
 
 const postId = (url) => (String(url).match(/\/(\d+)(?:$|[?#])/) || [])[1];
 
-async function recover(page, ctx, id, rec, makeCover, uploadCover, setRepresentative) {
+async function recover(page, ctx, id, rec, makeCover, uploadCover, setRepresentative, uploadFigures) {
   const pid = postId(rec.url);
   if (!pid) return { id, ok: false, why: `글 번호를 못 읽음: ${rec.url}` };
 
@@ -82,10 +82,17 @@ async function recover(page, ctx, id, rec, makeCover, uploadCover, setRepresenta
   }, null, { timeout: 60000 }).then((h) => h.jsonValue()).catch(() => '');
   if (!coverMarkup) return { id, ok: false, why: '커버 마크업 확인 실패' };
 
+  /* 본문 그림(figures)도 커버와 같이 다시 올린다.
+     여기 빠뜨리면 <!--FIG:id--> 마커가 그대로 남아 캡션만 있고 그림은 없는 figure 가 발행된다
+     (2026-07-30 실측 — /295 를 그렇게 한 번 망가뜨렸다). blog-publish 와 같은 함수를 쓴다. */
+  const figRes = await uploadFigures(page, ctx, meta, id, body);
+  if (figRes.done) console.log(`  · ${id}: 본문 그림 ${figRes.done}장`);
+  if (figRes.failed.length) console.warn(`  ⚠ ${id}: 그림 실패 — ${figRes.failed.join(' · ')}`);
+
   await page.evaluate((html) => {
     const ed = window.tinymce.activeEditor || window.tinymce.editors[0];
     ed.setContent(html); ed.fire('change'); ed.save?.();
-  }, body.replace('<!--COVER-->', coverMarkup));
+  }, figRes.html.replace('<!--COVER-->', coverMarkup));
 
   // ★ 새 이미지를 대표로 지정한다. 이게 이 스크립트의 핵심 — 본문만 갈면 목록 썸네일·og:image 는
   //   예전 이미지를 계속 가리킨다(대표는 글 메타로 따로 저장되기 때문).
@@ -133,9 +140,9 @@ const main = async () => {
 
   // makeCover/uploadCover 를 blog-publish.mjs 에서 직접 가져온다(중복 구현 방지).
   const pub = await import('./blog-publish.mjs');
-  const { makeCover, uploadCover, setRepresentative } = pub;
-  if (!makeCover || !uploadCover || !setRepresentative) {
-    console.error('✗ blog-publish.mjs 가 makeCover/uploadCover/setRepresentative 를 export 하지 않습니다.');
+  const { makeCover, uploadCover, setRepresentative, uploadFigures } = pub;
+  if (!makeCover || !uploadCover || !setRepresentative || !uploadFigures) {
+    console.error('✗ blog-publish.mjs 가 makeCover/uploadCover/setRepresentative/uploadFigures 를 export 하지 않습니다.');
     process.exit(1);
   }
 
@@ -153,7 +160,7 @@ const main = async () => {
     const rec = posted[id];
     if (!rec) { results.push({ id, ok: false, why: 'posted.json 에 없음' }); continue; }
     try {
-      const r = await recover(page, ctx, id, rec, makeCover, uploadCover, setRepresentative);
+      const r = await recover(page, ctx, id, rec, makeCover, uploadCover, setRepresentative, uploadFigures);
       results.push(r);
       console.log(r.ok ? `✓ ${id} → ${r.url}` : `✗ ${id}: ${r.why}`);
     } catch (e) {

@@ -181,6 +181,49 @@ export async function setRepresentative(page) {
   } catch { return false; }
 }
 
+/* 본문 그림 N장 업로드 → <!--FIG:id--> 마커를 티스토리 CDN 마크업으로 치환한다.
+   커버와 같은 경로(uploadCover)를 재사용하되, 한 장 올릴 때마다 에디터를 비워
+   "방금 올라온 것"만 집어낸다 — 누적된 본문에서 마지막 이미지를 골라내려 하면
+   업로드 순서가 어긋났을 때 조용히 다른 그림이 들어간다.
+   실패는 비치명적이다: 그 그림만 빠지고 나머지 본문은 정상 발행된다. */
+export async function uploadFigures(page, ctx, meta, id, body) {
+  const wanted = [...body.matchAll(/<!--FIG:([A-Za-z0-9_-]+)-->/g)].map((m) => m[1]);
+  if (!wanted.length) return { html: body, done: 0, failed: [] };
+
+  const { makeFigure } = await import('./blog-figure.mjs');
+  const byId = new Map((meta.figures || []).map((f) => [f.id, f]));
+  let html = body;
+  const failed = [];
+  let done = 0;
+
+  for (const figId of wanted) {
+    const spec = byId.get(figId);
+    if (!spec) { failed.push(`${figId}(메타 figures 에 정의 없음)`); continue; }
+    try {
+      const file = await makeFigure(ctx, spec, id);
+      await page.bringToFront();
+      await page.evaluate(() => (window.tinymce.activeEditor || window.tinymce.editors[0]).setContent(''));
+      if (!await uploadCover(page, file)) throw new Error('업로드 트리거 실패');
+      const markup = await page.waitForFunction(() => {
+        try {
+          const ed = window.tinymce.activeEditor || window.tinymce.editors[0];
+          if (!/##_Image|<img\b/i.test(ed?.getBody()?.innerHTML || '')) return false;
+          const c = ed.getContent();          // 업로드 중이면 throw → 계속 폴링
+          return /##_Image|<img\b/i.test(c) ? c : false;
+        } catch { return false; }
+      }, null, { timeout: 60000 }).then((h) => h.jsonValue());
+      html = html.replace(`<!--FIG:${figId}-->`, markup);
+      done++;
+      console.log(`  · 그림 ${figId} 업로드됨`);
+    } catch (e) {
+      failed.push(`${figId}(${String(e.message).split('\n')[0].slice(0, 60)})`);
+    }
+  }
+  // 못 올린 마커는 지운다 — 남겨두면 독자에게 빈 figure 가 보인다.
+  html = html.replace(/<!--FIG:[A-Za-z0-9_-]+-->/g, '');
+  return { html, done, failed };
+}
+
 export async function uploadCover(page, file) {
   // input[type=file] 로 직접 주입하지 않는다 — 에디터가 뜬 뒤 '동작하지 않는' 숨은 input 이 생겨서
   // setInputFiles 가 조용히 성공만 하고 이미지는 영원히 안 들어온다(2026-07-25 실측).
@@ -221,8 +264,18 @@ async function setCategory(page, name) {
   // 하위 카테고리는 "- AZTOMZ" 처럼 하이픈 접두사로 렌더된다(2026-07-25 실측). "AI/AZTOMZ" 형태도 함께 받는다.
   const hits = page.locator('[role="option"], li a, li button, li').filter({ hasText: new RegExp(`^\\s*[-–]?\\s*(.*/)?${esc}\\s*$`) });
   const n = await hits.count();
-  // 같은 이름이 여러 곳에 있으면(예: 최상위 ETC 와 취미/ETC) 조용히 아무거나 고르지 않는다.
-  if (n > 1) console.warn(`  ⚠ 카테고리 "${name}" 가 ${n}곳에 있습니다 — 첫 번째를 씁니다. 고유한 이름으로 바꾸는 게 안전합니다.`);
+  /* 같은 이름이 진짜로 여러 곳에 있으면(예: 최상위 ETC 와 취미/ETC) 조용히 아무거나 고르지 않는다.
+     단 n 을 그대로 믿으면 안 된다 — 셀렉터가 li 와 그 안의 li a 를 겹쳐 잡아 같은 항목이
+     2번 세어진다(2026-07-30 실측: 유일한 "ETC" 인데 "2곳에 있습니다" 오탐. 매번 뜨면
+     진짜 충돌 때 무시하게 된다). 서로 겹치지 않는 것만 골라 실제 개수를 센다. */
+  let distinct = n;
+  if (n > 1) {
+    const boxes = [];
+    for (let i = 0; i < n; i++) boxes.push(await hits.nth(i).boundingBox().catch(() => null));
+    const keys = new Set(boxes.filter(Boolean).map((b) => `${Math.round(b.x)},${Math.round(b.y)}`));
+    distinct = keys.size || n;
+  }
+  if (distinct > 1) console.warn(`  ⚠ 카테고리 "${name}" 가 ${distinct}곳에 있습니다 — 첫 번째를 씁니다. 고유한 이름으로 바꾸는 게 안전합니다.`);
   if (n) { await hits.first().click(); return true; }
 
   // 못 찾으면 실제로 뭐가 떠 있었는지 남긴다 — 다시 probe 하지 않아도 되게.
@@ -453,10 +506,16 @@ async function publish() {
       }
     }
 
+    // ── 본문 그림: 커버를 올린 뒤, 같은 경로로 figures 를 하나씩 올려 마커를 채운다.
+    //    커버보다 뒤에 해야 한다 — 대표 이미지는 '본문 첫 이미지'를 집으므로 커버가 먼저여야 한다.
+    const figRes = await uploadFigures(page, ctx, meta, id, body);
+    if (figRes.done) console.log(`  · 본문 그림 ${figRes.done}장 삽입`);
+    if (figRes.failed.length) console.warn(`  ⚠ 그림 실패: ${figRes.failed.join(' · ')}`);
+
     // ── 본문: 타이핑하지 않고 setContent 로 한 번에 주입(양식이 안 깨지는 유일한 길).
     const finalHtml = coverMarkup
-      ? body.replace('<!--COVER-->', coverMarkup)
-      : body.replace('<!--COVER-->', '');
+      ? figRes.html.replace('<!--COVER-->', coverMarkup)
+      : figRes.html.replace('<!--COVER-->', '');
     await page.evaluate((html) => {
       const ed = window.tinymce.activeEditor || window.tinymce.editors[0];
       ed.setContent(html);

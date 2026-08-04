@@ -46,8 +46,13 @@ if (rArg && !existsSync(rPath)) { console.error(`✗ 조사 파일 없음: ${rPa
 const research = existsSync(rPath) ? JSON.parse(await readFile(rPath, 'utf8')) : null;
 // relatedVideos(리믹스·커버)도 songs 와 동급 출처다 — 여기 빠지면 정상 임베드/링크가 '지어낸 URL'로 오탐된다.
 const allSongEntries = (research?.songs || []).flatMap((s) => [s, ...(s.relatedVideos || [])]);
+// ai-prompt-pack 은 '사실 검증'이 아니라 '트렌드 발굴' 조사를 쓴다(프로파일 pipeline.trendResearch).
+// 그 산출물은 sources[] 가 아니라 candidates[].evidence[] 구조라, 여기 빼면 멀쩡한 근거 링크가
+// 전부 '지어낸 URL'로 막힌다(2026-07-30 실측 — 키링 프롬프트 팩 첫 조립에서 걸림).
+const allEvidence = (research?.candidates || []).flatMap((c) => c.evidence || []);
 const allowed = [
   ...(research?.sources || []).map((s) => s.url),
+  ...allEvidence.map((e) => e.url),
   ...allSongEntries.map((s) => s.url),
   ...allSongEntries.map((s) => s.lyricsUrl),  // 가사는 인용 금지 → 공식 가사 페이지 '링크'가 필수다
   ...(meta.internalLinks || []),
@@ -87,6 +92,31 @@ if (profPath && existsSync(profPath)) {
       problems.push(`말투가 프로파일과 다르다 — 합니다체여야 하는데 해요체 ${haeyo} / 합니다체 ${hap}`);
     }
   }
+}
+
+/* 본문 그림 — [FIG: id | 캡션 | 출처명 | 출처URL] 이 메타 figures[] 와 짝이 맞는지.
+   짝이 안 맞으면 발행 때 빈 자리로 사라지고(조용한 실패), 출처 없는 자료화면이 새면 저작권 문제다. */
+const figRefs = [...md.matchAll(/^\s*\[FIG:\s*([A-Za-z0-9_-]+)\s*(?:\|([^\]]*))?\]\s*$/gim)]
+  .map((m) => ({ id: m[1], rest: (m[2] || '').split('|').map((s) => s.trim()) }));
+const figDefs = new Map((meta.figures || []).map((f) => [f.id, f]));
+for (const ref of figRefs) {
+  const def = figDefs.get(ref.id);
+  if (!def) { problems.push(`본문 [FIG: ${ref.id}] 인데 메타 figures 에 정의가 없다`); continue; }
+  if (def.kind === 'shot') {
+    // 남의 화면을 찍은 것이다 — 출처 URL 이 캡션에 없으면 안 된다. 그리고 그 URL 은
+    // 우리가 이미 인용 중인 출처여야 한다(아무 페이지나 찍어 올리는 걸 막는다).
+    const capUrl = ref.rest.find((s) => /^https?:\/\//.test(s));
+    if (!capUrl) problems.push(`[FIG: ${ref.id}] 는 화면 캡처(shot)인데 캡션에 출처 URL 이 없다`);
+    else if (allowed.length && !allowed.some((a) => capUrl.startsWith(a) || a.startsWith(capUrl))) {
+      problems.push(`[FIG: ${ref.id}] 캡션의 출처 URL 이 조사에 없다: ${capUrl}`);
+    }
+    if (def.url && capUrl && !(def.url.startsWith(capUrl) || capUrl.startsWith(def.url))) {
+      problems.push(`[FIG: ${ref.id}] 캡처한 주소(${def.url})와 캡션 출처(${capUrl})가 다르다`);
+    }
+  }
+}
+for (const f of figDefs.keys()) {
+  if (!figRefs.some((r) => r.id === f)) problems.push(`메타 figures 의 "${f}" 가 본문에 안 쓰였다`);
 }
 
 /* 영상 임베드 — 조사에 있는 영상만, 그리고 실제로 임베드가 되는 것만.

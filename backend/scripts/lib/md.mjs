@@ -16,6 +16,10 @@ const EMBED_BOX = 'position:relative;padding-bottom:56.25%;height:0;margin:1.6em
 const EMBED_FRAME = 'position:absolute;top:0;left:0;width:100%;height:100%;border:0;';
 const EMBED_CAP = 'font-size:.9em;color:#6b7280;margin:-.8em 0 1.8em;text-align:center;';
 const CODE = 'white-space:pre-wrap;word-break:break-word;background:#f6f7f9;border-radius:10px;padding:14px 16px;';
+// 본문 그림 — 캡션에 출처를 붙일 수 있게 figure/figcaption 으로 감싼다.
+const FIG_BOX = 'margin:1.8em 0;';
+const FIG_CAP = 'font-size:.9em;color:#6b7280;margin-top:.7em;text-align:center;line-height:1.6;';
+const FIG_SRC = 'color:#9ca3af;';
 const TABLE = 'border-collapse:collapse;width:100%;margin:1.4em 0;';
 const TD = 'border:1px solid #e5e7eb;padding:8px 10px;text-align:left;';
 
@@ -45,7 +49,24 @@ export function md2html(md) {
       out.push(`<pre style="${CODE}"><code>${esc(body.join('\n'))}</code></pre>`);
       continue;
     }
-    // 이미지 자리표시자 → 주석으로만 남긴다(남의 이미지 URL 이 새는 걸 원천 차단)
+    /* 본문 그림 — [FIG: <figId> | 캡션] 또는 [FIG: <figId> | 캡션 | 출처명 | 출처URL]
+       실제 이미지는 blog-publish 가 티스토리 CDN 에 올린 뒤 <!--FIG:id--> 자리에 끼워 넣는다
+       (커버의 <!--COVER--> 와 같은 방식). 여기서는 자리와 캡션만 만든다.
+       그림 정의는 글 메타의 figures[] 에 있고, blog-assemble 이 짝이 맞는지 검사한다. */
+    const fig = line.match(/^\s*\[FIG:\s*([A-Za-z0-9_-]+)\s*(?:\|\s*([^|\]]*?))?\s*(?:\|\s*([^|\]]*?))?\s*(?:\|\s*(https?:\/\/[^\s\]]+))?\s*\]\s*$/i);
+    if (fig) {
+      const [, fid, cap, srcName, srcUrl] = fig;
+      const credit = srcUrl
+        ? ` <span style="${FIG_SRC}">출처 — <a href="${esc(srcUrl)}" target="_blank" rel="noopener">${esc(srcName || srcUrl)}</a></span>`
+        : (srcName ? ` <span style="${FIG_SRC}">출처 — ${esc(srcName)}</span>` : '');
+      out.push(`<figure style="${FIG_BOX}"><!--FIG:${esc(fid)}-->`
+        + ((cap || '').trim() || srcName
+          ? `<figcaption style="${FIG_CAP}">${esc((cap || '').trim())}${credit}</figcaption>` : '')
+        + '</figure>');
+      i++; continue;
+    }
+    // 이미지 '자리표시자'(아직 그림이 없는 것) → 주석으로만 남긴다.
+    // 남의 이미지 URL 이 새는 걸 원천 차단하려는 것이고, 화면에는 아무것도 안 나온다.
     if (/^\s*\[IMG:/i.test(line)) {
       out.push(`<!-- ${esc(line.trim())} -->`);
       i++; continue;
