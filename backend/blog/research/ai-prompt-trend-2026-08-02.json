@@ -1,0 +1,131 @@
+{
+  "searchedAt": "2026-08-02",
+  "windowStart": "2026-07-03",
+  "originalHypothesis": "여름 코닥/필름 감성 아기·아이 사진 AI 프롬프트 (스레드에서 봤다는 제보 기반) — 아래 candidates 에 해당 근거 있는 후보 없음. rejected 항목 참고.",
+  "candidates": [
+    {
+      "theme": "챗GPT/제미나이로 아기·아이 사진을 '아이가 그린 크레파스 그림'처럼 바꾸는 프롬프트 (크레파스 그림버전)",
+      "whyNow": "여러 계정이 최근 자기 아이/조카 사진을 챗GPT에 넣어 '3~4세 아이가 크레파스로 그린 듯한 서툰 손그림'으로 바꾸는 프롬프트를 서로 다른 시점·플랫폼(Threads 3계정, Instagram 릴스, Daum 카페)에서 '요즘 유행하는'이라는 현재형 표현으로 공유하고 있다. 다만 이 방식을 가능케 한 GPT-Image-2(챗GPT 이미지 2.0) 자체는 2026-04-21/22 출시(carat.im, gpters.org 확인)로 30일 창을 벗어난다 — '최근 새로 터졌다'가 아니라 '몇 달째 이어지는 중'에 더 가깝다.",
+      "volumeSignals": { "s1": false, "s2": true, "s3": true, "s4": false },
+      "signalsMet": 2,
+      "evidence": [
+        {
+          "title": "Threads 게시물 — \"요즘 이거 진짜 많이 보이지? 사진 → 아이 크레파스 그림 느낌\" (@simu28ziip)",
+          "url": "https://www.threads.com/@simu28ziip/post/DX3L3IlEb3c/",
+          "host": "threads.com",
+          "publishedAt": null,
+          "dateUnknown": true,
+          "whatItShows": "WebSearch 스니펫으로만 확인(직접 WebFetch 안 함 — 스레드 직접 열람 금지 원칙). '핵심은 디테일을 일부러 망가뜨리는 느낌', '너무 현실적으로 만들면 실패'라는 구체적 팁까지 캡션에 명시. 현재형 어투로 유행을 서술."
+        },
+        {
+          "title": "Threads 게시물 — \"요즘 유행하는 챗지피티 아이그림버전 프롬프트 공유\" (@railcube.korea)",
+          "url": "https://www.threads.com/@railcube.korea/post/DX_BoU4kcox/",
+          "host": "threads.com",
+          "publishedAt": null,
+          "dateUnknown": true,
+          "whatItShows": "WebSearch 스니펫으로만 확인. 프롬프트 전문 일부 노출: '3–4세 아이가 크레파스로 그린 듯한 매우 서툰 손그림 스타일'. 위 계정과 다른 별개 작성자."
+        },
+        {
+          "title": "Threads 게시물 — 크레파스 그림 프롬프트 실사용 예 (@memoryu_kimbbo)",
+          "url": "https://www.threads.com/@memoryu_kimbbo/post/DX8bi-KEVfU/",
+          "host": "threads.com",
+          "publishedAt": null,
+          "dateUnknown": true,
+          "whatItShows": "WebSearch 스니펫으로만 확인. '요즘유행하는 크레파스그림 프롬프트'라는 표현과 함께, 지역명·문구 삽입까지 포함한 실제 프롬프트 문장을 공유 — 위 두 계정과 또 다른 세 번째 작성자."
+        },
+        {
+          "title": "챗gpt 이미지 2.0 나오고 유행중인 크레파스st 프롬프트.jpg",
+          "url": "https://m.cafe.daum.net/subdued20club/ReHf/5639295",
+          "host": "cafe.daum.net",
+          "publishedAt": null,
+          "dateUnknown": true,
+          "whatItShows": "제목에서 이 트렌드를 'GPT-Image-2 출시 이후 유행'으로 시점을 명시. 검색 스니펫만 확인, 페이지 본문은 열람 안 함(다음카페 접근 제약 가능성)."
+        },
+        {
+          "title": "챗지피티 크레파스 프롬프트 모음｜사진을 감성 그림으로",
+          "url": "https://filmora.wondershare.kr/ai-prompts/chatgpt-crayon-drawing-prompts.html",
+          "host": "filmora.wondershare.kr",
+          "publishedAt": null,
+          "dateUnknown": true,
+          "whatItShows": "WebFetch로 본문 확인. 게시일 표기 없음. '성장 보고서', '아기 이모티콘', '월드컵 아기 사진' 등 아기 관련 템플릿을 일부 포함하지만 전체가 아기 특화는 아님. '여름 일러스트'·'여름 휴가 숏폼' 등 여름 관련 템플릿도 별도로 나열."
+        }
+      ],
+      "variationIdeas": [
+        "여름방학 물놀이 상황",
+        "생일/돌잔치 상황",
+        "가족 여행 상황",
+        "어린이집·유치원 하원길 상황",
+        "형제자매 함께 상황"
+      ],
+      "risks": "치명적 겹침 위험 — 이미 발행된 'ai-scribble-prompt'(하찮은 그림 프롬프트·낙서풍, 2026-07-25 발행, backend/out/blog/ai-scribble-prompt.json)와 핵심 컨셉이 사실상 동일하다('사진을 아이/서툰 손그림처럼 바꾼다'). 대상이 '아무 사진'이냐 '아기·아이 사진'이냐 차이는 있으나 결과물 미학(삐뚤삐뚤한 선·크레파스 질감)이 겹쳐 avoidOverlap 위반 소지가 크다. 또한 signalsMet=2로 최소 기준만 충족하고, s1(30일 내 게시물 volume 직접 확인)·s4(재점화 계기가 30일 이내)는 미충족 — '몇 달째 이어지는 유행'이지 '이번 달 새로 터진 것'은 아니다. 이 후보를 쓴다면 ai-scribble-prompt와 차별화(예: 성인 대상이 아닌 아기·아이 전용, 크레파스 재질 한정)를 본문에서 명시해야 한다."
+    },
+    {
+      "theme": "코닥·일회용 카메라 필름 감성 AI 프롬프트 (범용 — 아기/아이 특화 아님)",
+      "whyNow": "인스타그램 #필름카메라 #필름사진 해시태그가 170만 건을 넘겼고(allmyuniverse.com, 2026-07-01 발행/2026-07-12 업데이트), 코닥 라이선시가 만든 재사용 가능 35mm 카메라 'EC35'($35)가 실제로 여름 시즌 출시돼 파스텔 7색 중 절반가량이 품절됐다(Gizmodo, 2026-07-20 게시 — 30일 창 안). eWeek(2026-05-19)도 '아름답게 불완전한 필름 룩'을 2026년 8대 바이럴 AI 사진 편집 트렌드 중 1위로 이미 명명한 바 있어, 5월부터 7월까지 지속적으로 회자되는 흐름이 확인된다.",
+      "volumeSignals": { "s1": false, "s2": true, "s3": true, "s4": true },
+      "signalsMet": 3,
+      "evidence": [
+        {
+          "title": "일회용 카메라 AI 프롬프트로 감성 스냅 만드는 법",
+          "url": "https://allmyuniverse.com/image-prompt-guide-disposable-film-flash-candid-snapshot/",
+          "host": "allmyuniverse.com",
+          "publishedAt": "2026-07-12",
+          "dateUnknown": false,
+          "whatItShows": "WebFetch로 본문 확인. 발행 2026-07-01/업데이트 2026-07-12. '인스타그램에서 #필름카메라 #필름사진 태그는 170만을 넘겼고', '코닥은 Y2K 감성을 입힌 디지털 일회용 카메라까지 새로 내놨다'는 구체적 수치·사실 인용. The Conversation·나스미디어 트렌드 분석을 참고문헌으로 인용. 카페·쇼핑몰·패션·친구 사진 예시만 다루며 아기/아이 언급은 없음."
+        },
+        {
+          "title": "Kodak's New Point-And-Shoot Is a Real Disposable Replacement",
+          "url": "https://gizmodo.com/kodaks-new-point-and-shoot-is-a-real-disposable-replacement-2000787807",
+          "host": "gizmodo.com",
+          "publishedAt": "2026-07-20",
+          "dateUnknown": false,
+          "whatItShows": "WebFetch로 본문 확인. 코닥 라이선시(Reto) 제작 재사용 35mm 카메라 EC35($35) 판매 중 — 실제로는 디지털이 아닌 필름 재장전식. '펄스텔 7색 중 절반가량 이미 품절, 서두르지 않으면 무채색만 남는다'는 판매 현황을 구체적으로 인용."
+        },
+        {
+          "title": "8 Viral AI Photo Editing Trends (and Prompts) for ChatGPT, Gemini, and More",
+          "url": "https://www.eweek.com/news/ai-photo-editing-trends-2026/",
+          "host": "eweek.com",
+          "publishedAt": "2026-05-19",
+          "dateUnknown": false,
+          "whatItShows": "WebFetch로 본문 확인. 2026년 8대 바이럴 AI 사진 편집 트렌드를 나열, 1번이 '아름답게 불완전한 필름 룩'(disposable camera film grain/light leak). 7번은 별도 항목인 'Y2K 캠코더 부활'로, 우리 사이트가 이미 발행한 'Y2K 플래시 디지캠'과 더 가깝다 — 이 트렌드(1번)와는 결이 다르다. 아기/어린이 관련 트렌드는 8개 중 명시된 게 없음."
+        },
+        {
+          "title": "졸업식에서 꺼낸 필름카메라: MZ가 디지털 '완벽함' 대신 선택한 불완전함",
+          "url": "https://blog.nasmedia.co.kr/entry/2602-lifestyletrend-buy",
+          "host": "blog.nasmedia.co.kr",
+          "publishedAt": "2026-01-02",
+          "dateUnknown": false,
+          "whatItShows": "WebFetch로 본문 확인. 게시일 2026-01-02로 30일 창 밖. MZ세대의 필름카메라 소비 트렌드를 다루나 구체적 최신 수치·통계는 없고 졸업식·청년층에 초점. 아기/아이 언급 없음. 참고자료로만 사용 가능."
+        }
+      ],
+      "variationIdeas": [
+        "여름 바캉스 스냅",
+        "친구들과 카페 모임",
+        "야외 페스티벌·불꽃놀이",
+        "귀갓길 밤거리 스냅"
+      ],
+      "risks": "① 사용자가 제보한 '아기·아이 사진' 특화 근거가 전혀 없다 — 이 후보는 범용 인물/일상 사진 트렌드일 뿐, 원래 조사 목적과 어긋난다. ② eWeek이 같은 기사에서 '필름 감성'(1번)과 'Y2K 캠코더 부활'(7번)을 별개 항목으로 구분했지만, 두 미학 모두 '아날로그 카메라 노스탤지어' 계보라 이미 발행한 'Y2K 플래시 디지캠' 프롬프트 팩과 결과물이 헷갈릴 소지가 있다 — 쓴다면 '정면 플래시 과다노출'이 아니라 '필름 그레인·라이트리크·코닥 필름 스톡명(Portra 400 등)'으로 명확히 다른 미학임을 본문에서 구분해야 한다. ③ 코닥 EC35는 실제 필름 카메라 제품이지 AI 기능이 아니라 '재점화 계기'로서의 인과관계가 간접적이다."
+    }
+  ],
+  "rejected": [
+    {
+      "theme": "여름 코닥/필름 감성 아기·아이 사진 AI 프롬프트 (사용자 원 제보 그대로)",
+      "why": "6개 이상의 각도로 한국어·영어 검색을 반복했으나(코닥 감성 아기 사진, 필름 감성 아기 사진 챗지피티, 나노바나나 아기 사진, Kodak baby portrait AI prompt trend, film aesthetic baby photo ChatGPT prompt 2026, baby photo Kodak Portra film aesthetic trending August 2026 등), 'Kodak Portra 400'·'필름 그레인' 표현은 해외 범용 리스트형 아티클(cyberlink.com, atlabs.ai, geminitext.com, media.io)에서 아기 AI 프롬프트 수십 개 중 하나의 스타일 옵션으로만 등장했다. 이 조합이 최근 30일 내 다수 계정·언론이 '요즘 화제'로 다룬 정황은 전혀 확인하지 못했다 — Threads·Instagram 검색에서도 baby+film 결합 게시물은 하나도 노출되지 않았고(크레파스 그림버전만 노출), 육아 인플루언서 채널에서도 관련 언급을 찾지 못했다. volumeSignal 4개 중 1개도 근거로 확정할 수 없어 후보에서 제외한다."
+    },
+    {
+      "theme": "지브리풍 이미지 변환",
+      "why": "작업 지시에 이미 '명백히 한물감'으로 제외 명시."
+    },
+    {
+      "theme": "아이돌 어린 시절 합성 사진 챌린지",
+      "why": "검색 중 발견(hitpaw.kr)했으나 기원이 2025년 8월(1년 전)로 30일 기준을 크게 초과하고, 실존 인물(아이돌)을 프롬프트 대상으로 다뤄야 해 카테고리 banned 규칙(실존 인물 등장 금지)과 정면 충돌."
+    },
+    {
+      "theme": "Future Baby Generator(커플 사진으로 미래 아기 얼굴 예측)",
+      "why": "직전 조사(2026-07-30, ai-prompt-trend-2026-07-30.json)에서 이미 동일 사유로 탈락 처리됨 — 실제 태어날 아이 얼굴을 예측 생성하는 민감성 + 이미 제외된 '육아(범용)' 테마와 인접. 이번 조사에서도 같은 결론 유지."
+    }
+  ],
+  "notCovered": "인스타그램·틱톡·페이스북·스레드 앱/페이지를 직접 로그인하거나 스크래핑하지 않았다 — WebSearch가 검색엔진에 노출한 threads.com 게시물 제목·캡션 스니펫과, 그 플랫폼을 다루는 블로그·언론 기사(allmyuniverse, filmora.wondershare, eweek, gizmodo, nasmedia 등)만 WebFetch로 실제 열람해 확인했다. threads.com URL 자체는 WebFetch하지 않고 WebSearch 스니펫까지만 근거로 썼다.",
+  "fallbackNeeded": false,
+  "honestVerdict": "사용자가 제보한 '여름 코닥/필름 감성 아기·아이 사진 AI 프롬프트'는 이번 조사로는 확인되지 않았다. 검증 가능한 근거가 전혀 없어 30일 이내 고volume 트렌드라고 볼 수 없다(rejected 참고). 대신 두 가지를 찾았다: (1) 아기·아이 사진을 '크레파스 손그림'으로 바꾸는 프롬프트는 서로 다른 여러 계정이 최근 '요즘 유행'이라며 공유 중인 게 맞지만, 이미 발행한 ai-scribble-prompt(하찮은 그림/낙서풍)와 컨셉이 겹쳐 그대로 쓰면 avoidOverlap 위반 소지가 크다. (2) 필름/일회용 카메라 감성 자체는 해시태그 170만 건, 코닥 신제품(EC35, 2026-07-20 기사 기준 이미 일부 품절) 등 근거가 탄탄하지만 아기·아이 특화가 아니며 기존 'Y2K 플래시 디지캠' 발행분과 미학 계보가 인접해 역시 겹침 위험이 있다. 코디네이터가 두 후보 모두 리스크를 감수하고 차별화해 쓸지, keywords.csv 폴백(냥이/커플/홈트)으로 갈지 판단이 필요하다."
+}

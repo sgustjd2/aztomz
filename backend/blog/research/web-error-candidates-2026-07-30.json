@@ -1,0 +1,262 @@
+{
+  "searchedAt": "2026-07-30",
+  "queries": [
+    "Next.js 16 breaking change error github issues 2026",
+    "React 19.2 error \"Cannot read properties\" github issue 2026",
+    "Node.js 24 breaking change error 2026",
+    "Tailwind CSS v4 error migration issue 2026",
+    "TypeScript 5.9 6.0 breaking change error 2026",
+    "\"ERR_REQUIRE_ASYNC_MODULE\" node 24 error",
+    "TypeScript 6.0 \"error TS\" strict default broke build github issues",
+    "\"This build is using Turbopack\" webpack config error next.js 16",
+    "Vite 7 breaking change error migration 2026",
+    "pnpm 10 breaking change error 2026",
+    "Python 3.14 breaking change error 2026 deprecation removed",
+    "ESLint 10 removed eslintrc \"couldn't find\" flat config error 2026",
+    "Vite 8 breaking change error 2026 rolldown",
+    "TypeScript 6.0 release date general availability March 2026 official blog",
+    "TypeScript 6.0 upgrade broke build site:github.com issues 2026 strict",
+    "\"is possibly 'undefined'\" TS18048 TypeScript 6.0 strict error",
+    "ESLint 9 EOL couldn't find eslint.config error 한국 블로그",
+    "TypeScript 6.0 strict 한국 블로그 티스토리 velog 에러",
+    "Next.js 16 Turbopack 에러 한국 블로그 티스토리 2026",
+    "TypeScript 7.0 release date native Go compiler general availability 2026",
+    "\"typescript-eslint\" TypeScript 7 not supported peer dependency error 2026",
+    "gh api search/issues (GitHub 검색 API) — TS6/TS7/ESLint/Next16 최근 3개월 이슈 다건 조회"
+  ],
+  "candidates": [
+    {
+      "id": "typescript-7-native-compiler-breaks-typescript-eslint",
+      "errorString": "npm error ERESOLVE could not resolve\n\nWhile resolving: typescript-eslint@8.63.0\nFound: typescript@7.0.2\n\nCould not resolve dependency:\npeer typescript@\">=4.8.4 <6.1.0\" from typescript-eslint@8.63.0\n\n--- (강제 설치 후 npm run lint 시) ---\n\nTypeError: Cannot read properties of undefined (reading 'Cjs')\n    at .../@typescript-eslint/typescript-estree/dist/create-program/shared.js:59:18",
+      "stack": "TypeScript 7.0.2(네이티브 Go 컴파일러, 코드명 tsgo/Project Corsa) + typescript-eslint 8.63.0 + ESLint 10.6.0, Vite 8.1.3, Node 24.13–24.18, npm 11.6–11.16",
+      "whenItStarted": "TypeScript 7.0 GA — 2026-07-08 (Beta 2026-04-21, RC 2026-06-18). 공식 발표 당일 typescript-eslint 저장소에 호환성 이슈(#12518)가 접수됨. 근거: https://devblogs.microsoft.com/typescript/announcing-typescript-7-0/ , https://github.com/typescript-eslint/typescript-eslint/issues/12518",
+      "whyItHappens": "공식 발표 원문: 'TypeScript 7.0 does not ship with an API. We expect TypeScript 7.1 to ship with a new (and different) API.' typescript-eslint의 typescript-estree 패키지는 내부적으로 기존(Strada, JS 기반) TypeScript의 top-level export를 참조하는 코드가 있는데, TS 7(Go 네이티브)에는 그 API 자체가 없어 모듈 로드 시점에 곧바로 undefined 프로퍼티 접근으로 크래시한다. peerDependency 범위(\">=4.8.4 <6.1.0\")도 아직 TS 6.1조차 포함 안 해 npm ci 단계부터 막힌다. 후속 이슈(#12521)에서 메인테이너가 원인 코드 위치까지 특정: 'we have top-level code that accesses nonexistent APIs on the ts export with TS 7' — 이 top-level 코드가 typescript-eslint 자체의 '친절한 버전 경고'보다 먼저 실행되어 경고 대신 크래시가 뜬다.",
+      "fixSummary": "before: package.json에 그냥 \"typescript\": \"^7.0.2\" 로 올림 → npm ci ERESOLVE, 강제 설치 시 ESLint 크래시.\nafter (공식 권장 — devblogs.microsoft.com/typescript/announcing-typescript-7-0/ 원문의 npm alias 우회):\n```json\n{\n  \"devDependencies\": {\n    \"@typescript/native\": \"npm:typescript@^7.0.2\",\n    \"typescript\": \"npm:@typescript/typescript6@^6.0.2\"\n  }\n}\n```\n가장 간단한 실전 대응(kscius/commander-league#62 실사례): typescript-eslint·ts-jest·ts-morph 등 프로그래매틱 TS API를 쓰는 도구가 하나라도 있으면 당분간 typescript를 6.x(예: ~5.9.3 또는 ^6.0.2)에 고정하고 Dependabot이 TS7 메이저를 자동으로 올리지 못하게 ignore 규칙을 건다.",
+      "volumeSignals": {
+        "issueUrl": "https://github.com/typescript-eslint/typescript-eslint/issues/12518",
+        "issueOpenedAt": "2026-07-08",
+        "comments": 4,
+        "reactions": 38,
+        "duplicatesSeen": "3곳 이상 — (1) typescript-eslint#12521(같은 크래시를 다루는 후속 제안, Discord 채널 스레드 링크까지 첨부) (2) kubernetes-client/javascript PR#2946: Dependabot이 자동으로 typescript 6.0.3→7.0.2 상향을 시도, 코멘트 16개로 논쟁 (2026-07-16) (3) kscius/commander-league PR#62: Dependabot 그룹 업데이트(PR#57, 2026-07-23 병합)로 typescript@^7.0.2 + eslint@^10.7.0이 들어오면서 CI 전체(npm ci)가 죽어, 4일 뒤(2026-07-27) typescript@~5.9.3·eslint@8 라인으로 롤백",
+        "koreanReports": "false — 이번 조사에서 한국어 커뮤니티(OKKY·velog·티스토리) 보고를 찾지 못함. GA 후 3주밖에 안 지나 한국어 콘텐츠가 아직 못 따라잡은 것으로 보임(TS 6.0 관련 한국어 글은 다수 존재)."
+      },
+      "canFillMustInclude": {
+        "errorText": true,
+        "versions": true,
+        "cause": true,
+        "beforeAfter": true,
+        "prevention": true
+      },
+      "evidence": [
+        {
+          "title": "Announcing TypeScript 7.0",
+          "url": "https://devblogs.microsoft.com/typescript/announcing-typescript-7-0/",
+          "host": "devblogs.microsoft.com",
+          "publishedAt": "2026-07-08",
+          "body": "TypeScript 팀 공식 발표. GA 날짜 2026년 7월 8일. 기존 JS 기반 컴파일러(Strada)를 1년에 걸쳐 Go로 이식(코드명 Project Corsa)했으며 타입체크 로직은 TypeScript 6.0과 구조적으로 동일하다고 명시. 성능: 언어서버 실패 명령 80% 감소, 서버 크래시 60% 감소, Slack 사례로 CI 타입체크 시간 7.5분→1.25분. 결정적으로 'TypeScript 7.0 does not ship with an API. We expect TypeScript 7.1 to ship with a new (and different) API'라고 명시해, typescript-eslint·ts-jest·ts-morph 같은 프로그래매틱 API 소비 도구가 당장은 못 쓴다는 것을 공식적으로 인정. 호환 도구를 위해 npm alias 패키지 @typescript/typescript6 제공 방법을 안내. Vue/MDX/Astro/Svelte/Volar 등 임베디드 언어 지원 도구도 '아직 TS7을 활용할 수 없을 것'이라고 명시."
+        },
+        {
+          "title": "TypeScript 7.0.2 Support #12518",
+          "url": "https://github.com/typescript-eslint/typescript-eslint/issues/12518",
+          "host": "github.com",
+          "publishedAt": "2026-07-08",
+          "body": "실사용자가 Vite React TS 프로젝트를 TypeScript 6.0.3→7.0.2로 올리며 재현. typescript-eslint@8.63.0의 peerDependency 범위가 '>=4.8.4 <6.1.0'이라 npm ci 단계에서 ERESOLVE로 실패. npm install --force로 강제 설치하면 ESLint 실행 시 typescript-estree/dist/create-program/shared.js 내부에서 'Cannot read properties of undefined (reading 'Cjs')' 크래시. 정확한 버전 테이블 제공(Node 24.13/24.18, npm 11.6/11.16, ESLint 10.6.0, typescript-eslint 8.63.0, typescript 7.0.2, vite 8.1.3). 재현 전용 저장소(IshtarStar/typescript-eslint-typescript-7-repro)와 GitHub Actions 재현 워크플로까지 첨부. 반응 38개(+1 36개), 코멘트 4개. 메인테이너가 'not planned'로 종료 — 해결은 TypeScript 7.1 쪽 API 제공을 기다려야 한다고 답변."
+        },
+        {
+          "title": "Enhancement: Show user-friendly message if TS 7 is detected? #12521",
+          "url": "https://github.com/typescript-eslint/typescript-eslint/issues/12521",
+          "host": "github.com",
+          "publishedAt": "2026-07-08",
+          "body": "typescript-eslint 메인테이너가 직접 작성한 후속 이슈. peerDependency 체크가 있어도 사용자가 의도적/실수로 override하면 TS7이 설치될 수 있다고 지적. 원래는 ts.version 체크로 친절한 경고를 띄우려 했으나, typescript-estree/src/create-program/shared.ts의 top-level 코드가 TS7에 없는 API 심볼에 접근하면서 버전 체크 로직이 실행되기도 전에 하드 크래시가 난다고 원인 코드 위치까지 특정. Discord 채널 링크로 실사용자 보고 사례도 첨부되어 있어, 이슈 하나에 그치지 않고 커뮤니티에서 반복 관측되고 있음을 보여줌."
+        },
+        {
+          "title": "build(deps-dev): bump typescript from 6.0.3 to 7.0.2 #2946",
+          "url": "https://github.com/kubernetes-client/javascript/pull/2946",
+          "host": "github.com",
+          "publishedAt": "2026-07-16",
+          "body": "Dependabot이 자동 생성한 TypeScript 6.0.3→7.0.2 업데이트 PR. 본문 자체는 커밋 비교 링크·호환성 점수 배지·'@dependabot rebase/recreate/ignore' 안내 등 표준 템플릿이라 실질 정보량은 적지만, 주목할 점은 코멘트 수 16개다 — 일반적인 Dependabot 마이너/패치 PR은 대개 0~2개 코멘트로 자동 머지되는데, 이 PR은 메이저 버전(6→7) 상향이라 사람이 개입해 논의한 흔적으로 해석된다. kubernetes-client/javascript는 Kubernetes 공식 JavaScript 클라이언트 라이브러리로, 이런 비교적 규모 있고 관리가 활발한 프로젝트에서도 TS7 자동 상향이 조용히 지나가지 못하고 별도 검토 대상이 되었다는 사실 자체가 typescript-eslint#12518의 경고가 현실에서 실제로 걸려 넘어지는 사례임을 뒷받침한다."
+        },
+        {
+          "title": "Daily improvement — CI & TOOLING — 2026-07-27 (pin TS7→5.9, ESLint10→8) #62",
+          "url": "https://github.com/kscius/commander-league/pull/62",
+          "host": "github.com",
+          "publishedAt": "2026-07-27",
+          "body": "실제 저장소에서 typescript-eslint TS7 비호환 이슈(#12518)를 직접 인용하며 대응한 사례. 4일 전 병합된 Dependabot 그룹 업데이트(PR#57, 2026-07-23)가 typescript@^7.0.2·eslint@^10.7.0을 들여오면서 'npm ci 단계에서 모든 저장소의 CI가 실패'(peer @typescript-eslint/*@8이 typescript >=4.8.4 <6.1.0을 요구, TS7엔 파서용 컴파일러 API가 아직 없음)했다고 기록. typescript를 ~5.9.3, eslint를 8 라인으로 되돌려 CI를 복구했다는 before/after diff와 실제 CI 실행 로그 번호(30236841929)까지 남겼다. GA로부터 19일 만에 실제 프로젝트가 겪고 롤백까지 완료한 타임라인을 보여주는 근거."
+        }
+      ],
+      "risks": "매우 최신 이슈라(GA 후 3주) 역설적으로 '이미 다 해결됐다'는 리스크는 낮다 — typescript-eslint가 not_planned로 닫아 근본 수정은 TypeScript 7.1(시점 미정)을 기다려야 하는 상태라 당분간 유효할 가능성이 높다. 다만 영향 범위는 '프로그래매틱 TypeScript API를 쓰는 도구(ESLint 타입체크 룰, Jest ts-jest, ts-morph, Vue/Astro/Svelte 같은 임베디드 언어 도구)를 쓰는 프로젝트'로 한정되고, 순수 tsc 컴파일만 쓰는 프로젝트는 영향이 없다. 또한 아직 대부분 프로젝트의 기본값은 TypeScript 6.x이므로 '실수로/성급하게 7.0으로 업그레이드했을 때'라는 전제가 필요하다 — 이 지점을 원인 설명에서 분명히 해야 한다. 한국어 선례가 아직 없어(unknowns) 이 글이 한국어권에서는 꽤 이른 편에 속할 수 있다."
+    },
+    {
+      "id": "typescript-6-strict-by-default",
+      "errorString": "src/utils/permalinks.ts:115 - error ts(7053): Element implicitly has an 'any' type because expression of type '\"href\"' can't be used to index type '{}'.\nsrc/utils/permalinks.ts:109 - error ts(7023): 'applyGetPermalinks' implicitly has return type 'any' because it does not have a return type annotation and is referenced directly or indirectly in one of its return expressions.\n\n--- (types: [] 기본값 관련 별도 사례, 공식 발표문 예시) ---\nCannot find name 'fs'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node` and then add 'node' to the types field in your tsconfig.",
+      "stack": "TypeScript 6.0.x (GA 2026-03-23) — tsconfig.json 기반 모든 프로젝트(프레임워크 무관: Astro, React, Node 등)",
+      "whenItStarted": "TypeScript 6.0 GA — 2026-03-23 (RC 2026-03-06). 공식 발표 원문: 'strict is now true by default'. 근거: https://devblogs.microsoft.com/typescript/announcing-typescript-6-0/ , 최초 제안 이슈 https://github.com/microsoft/TypeScript/issues/62333 (2025-08-25 오픈)",
+      "whyItHappens": "tsconfig.json에 strict를 명시하지 않으면(5.x까지는 암묵적 false) 6.0부터는 암묵적 true로 간주 — noImplicitAny·strictNullChecks 등이 한꺼번에 켜진다. 여기에 더해 6.0은 types 배열 기본값을 []로 바꿔(과거엔 @types/* 전체 자동 로드) @types/node 등을 tsconfig에 명시하지 않은 프로젝트는 전역 타입도 못 찾게 된다. 그동안 느슨했던 프로젝트에 잠재해 있던 unsound 코드가 한꺼번에 컴파일 에러로 드러나는 구조.",
+      "fixSummary": "before: tsconfig.json에 strict 필드 자체가 없음(암묵적 false) → 6.0 업그레이드 시 수십~수백 건의 에러 폭발.\nafter 선택지 두 가지 — (1) 급한 경우 tsconfig.json에 \"strict\": false를 명시해 5.x 동작 유지 후 점진적 마이그레이션 (2) 실제로 타입을 고침: 예) menu: object = {} 로 인덱싱하던 함수를 menu: unknown + Record<string, unknown> 누산자 + 명시적 반환 타입으로 재작성(astrowind#707이 실제로 제시한 patch). 임시 유예책으로 \"ignoreDeprecations\": \"6.0\"도 가능하지만 TypeScript 7.0에서는 통하지 않는다고 공식 문서가 명시.",
+      "volumeSignals": {
+        "issueUrl": "https://github.com/microsoft/TypeScript/issues/62333",
+        "issueOpenedAt": "2025-08-25",
+        "comments": 11,
+        "reactions": 293,
+        "duplicatesSeen": "9곳 이상 — gh api search로 2026-05~07 사이 서로 무관한 저장소(gkanitz/collaudo-orchestrator-core #173 2026-07-26, arthelokyo/astrowind #707 2026-06-04, EspritVorace/smart-tab-organizer #246 2026-05-05, actionhero/node-resque #1297 2026-05-28, senecajs/seneca-ledger #16 2026-06-14 등)에서 'TypeScript 6.0 strict-by-default' 관련 이슈·PR을 확인. 오늘(2026-07-30) 시점에도 markec12345678/markecaifirm PR#31 'Fix all 41 TS18048 errors', troysatchell/ship PR#46 '156 surfaced type errors' 등 같은 날짜의 실제 수정 커밋이 잡힘 — 본문까지 정독해 인용한 것은 astrowind#707뿐이고 나머지는 제목·날짜만 검색으로 확인.",
+        "koreanReports": "true — https://velog.io/@yeonjin1357/TypeScript-6.0-Beta-%EB%B0%9C%ED%91%9C-%EC%A0%95%EB%A6%AC (velog, TS 6.0 베타 정리) 및 news.hada.io(GeekNews)에 관련 토픽 존재"
+      },
+      "canFillMustInclude": {
+        "errorText": true,
+        "versions": true,
+        "cause": true,
+        "beforeAfter": true,
+        "prevention": true
+      },
+      "evidence": [
+        {
+          "title": "Announcing TypeScript 6.0",
+          "url": "https://devblogs.microsoft.com/typescript/announcing-typescript-6-0/",
+          "host": "devblogs.microsoft.com",
+          "publishedAt": "2026-03-23",
+          "body": "TypeScript 6.0 공식 발표. 'strict is now true by default: The appetite for stricter typing continues to grow, and we've found that most new projects want strict mode enabled.' types 기본값이 빈 배열([])로 바뀌어 @types/node 등을 명시하지 않으면 'Cannot find name' 류 에러가 발생한다고 예시까지 제공. target 기본값도 고정 ES버전 대신 '현재 연도 기준 최신 ES스펙'(현재 es2025)으로 바뀜. 마이그레이션 유예 수단으로 tsconfig에 \"ignoreDeprecations\": \"6.0\" 설정 가능하나 TypeScript 7.0부터는 지원되지 않는다고 명시하며 '7.0 채택 전에 반드시 해결할 것'을 권고."
+        },
+        {
+          "title": "Enable `--strict` by default #62333",
+          "url": "https://github.com/microsoft/TypeScript/issues/62333",
+          "host": "github.com",
+          "publishedAt": "2025-08-25",
+          "body": "TypeScript 팀 프로덕트 매니저 Daniel Rosenwasser가 개설한 제안 이슈. 'TypeScript 6.0 will assume that --strict is on, unless explicitly disabled.' tsc --init이 수십 년간 strict:true를 기본 생성해온 것과의 정합성, 새 프로젝트가 더 안전한 기본값을 원한다는 점을 근거로 든다. 2026-02-04 closed(합의 도출). 반응 293개(👍177·❤️88·🚀28), 코멘트 11개로 TypeScript 저장소 내에서도 이례적으로 큰 커뮤니티 반응을 받은 이슈."
+        },
+        {
+          "title": "Google feedback on TS 6.0-beta #63214",
+          "url": "https://github.com/microsoft/TypeScript/issues/63214",
+          "host": "github.com",
+          "publishedAt": "2026-03-06",
+          "body": "Google이 TS 6.0 베타 피드백 기간에 자사 대규모 모노레포 기준 영향도를 정량 보고한 이슈. strict 기본값 변경이 사내 라이브러리의 약 0.1%, 네임스페이스 레거시 module 구문 폐기가 약 0.02%에 영향을 준다고 명시 — Google 규모의 모노레포에서 0.1%는 절대 건수로는 상당한 실 에러를 의미한다. 대응 계획으로 strict를 명시적으로 false 유지, module→namespace 치환, ts-ignore 활용, ignoreDeprecations:6.0 조기 도입 등을 나열했다. 반응 4개, 코멘트 2개로 조용한 이슈지만, 'strict 기본값 변경'이라는 언뜻 단순해 보이는 결정이 세계 최대급 코드베이스에서도 별도 마이그레이션 계획을 요구했다는 점에서 astrowind#707 같은 개별 프로젝트 사례와 같은 현상의 다른 규모를 보여준다."
+        },
+        {
+          "title": "applyGetPermalinks breaks under TypeScript 6.0 strict-by-default (19 implicit-any errors in permalinks.ts) #707",
+          "url": "https://github.com/arthelokyo/astrowind/issues/707",
+          "host": "github.com",
+          "publishedAt": "2026-06-04",
+          "body": "실 오픈소스 Astro 테마(AstroWind)에서 TypeScript 6 설치 직후 재현된 실제 사례. 'npx astro check'(tsc --noEmit 경유)에서 17×ts7053, 1×ts7023, 1×ts7024 등 19개 에러가 한꺼번에 발생. 원인은 menu: object = {} 매개변수를 bracket indexing으로 다루는 함수가 noImplicitAny 하에서 인덱스 시그니처·반환 타입을 추론 못 하기 때문. 이슈 작성자가 menu: unknown + Record<string, unknown> 누산자 + 명시적 반환 타입으로 고친 패치 코드까지 통째로 제시. 'TS 7.0 removes the strict: false escape hatch entirely, so the loose typing will need addressing regardless'라며 미루지 말라고 권고."
+        }
+      ],
+      "risks": "GA로부터 4개월 지나 완전히 '새 소식'은 아니지만, TS 6.0이 7.0으로 가는 브릿지 릴리스라 뒤늦게 5.x→6→7을 한 번에 밟는 팀들이 두 버전 문제를 동시에 겪는 중이다. 오늘(2026-07-30) 날짜로도 실제 저장소에서 '41개 TS18048 에러 수정', '156개 타입 에러 표면화' 같은 커밋이 나오고 있어 화제성 자체는 죽지 않았다. 다만 TS7.0 후보만큼 '지금 이 순간 터지기 시작한' 신선함은 덜하다."
+    },
+    {
+      "id": "nextjs-16-turbopack-webpack-config-build-fail",
+      "errorString": "⨯ ERROR: This build is using Turbopack, with a webpack config and no turbopack config.\nThis may be a mistake.",
+      "stack": "Next.js 16.0.0+ (Turbopack이 next dev/next build 기본 번들러), Node.js 20.9+, webpack() 훅을 주입하는 서드파티 플러그인(예: @payloadcms/next의 withPayload) 사용 시",
+      "whenItStarted": "Next.js 16 GA — 2025-10-21 (공식 블로그 publishedAt). 'Turbopack is now the default bundler for all new Next.js projects'. 근거: https://nextjs.org/blog/next-16 , https://nextjs.org/docs/app/guides/upgrading/version-16",
+      "whyItHappens": "공식 업그레이드 가이드 원문: 'If your project has a custom webpack configuration and you run next build (which now uses Turbopack by default), the build will fail to prevent misconfiguration issues.' 자신이 webpack 설정을 직접 안 했어도 'it is likely that a plugin is adding a webpack option'이라고 명시 — 실제로 payloadcms/payload#14354 사례는 withPayload가 Turbopack 모드에서도 무조건 webpack() 훅을 주입해서 발생.",
+      "fixSummary": "before: next.config에 webpack() 훅이 남아있는 채로(직접 작성했든 플러그인이 주입했든) Next 16으로 업그레이드 → next build/next dev가 즉시 실패.\nafter 3가지 공식 대응 — (1) next build --turbopack으로 webpack 설정을 무시하고 Turbopack 강행 (2) webpack 설정을 turbopack.resolveAlias 등 Turbopack 등가 옵션으로 이관 (3) next build --webpack으로 당분간 계속 webpack 사용. 경고만 없애고 싶다면 next.config.ts에 빈 turbopack: {} 를 추가.",
+      "volumeSignals": {
+        "issueUrl": "https://github.com/payloadcms/payload/issues/14354",
+        "issueOpenedAt": "2025-10-25",
+        "comments": 7,
+        "reactions": 6,
+        "duplicatesSeen": "정확히 같은 문구는 아니지만 Turbopack 자체가 원인인 파생 에러가 2026-05~07에도 계속 보고됨 — vercel/next.js #93556(2026-05-07, pnpm v11 enableGlobalVirtualStore 조합에서 Turbopack이 next/package.json 못 찾음, 13 reactions/8 comments), #93852(2026-05-14, Turbopack+Sentry+proxy.ts 조합이 Vercel 배포에서만 500 MIDDLEWARE_INVOCATION_FAILED, 8 comments/4 reactions, 재현 저장소 첨부), #95461(2026-07-03 병합, Turbopack CSS-modules passthrough 패치)",
+        "koreanReports": "true — https://beam307.github.io/2026/03/18/nextjs16-vs15/ (Next.js 16 vs 15 변경점 정리, Turbopack 기본 전환 언급) — 다만 이 webpack-config 충돌 에러 자체를 콕 집은 한국어 글은 이번 조사에서 못 찾음(개괄 수준)"
+      },
+      "canFillMustInclude": {
+        "errorText": true,
+        "versions": true,
+        "cause": true,
+        "beforeAfter": true,
+        "prevention": true
+      },
+      "evidence": [
+        {
+          "title": "Upgrading: Version 16 | Next.js (공식 업그레이드 가이드)",
+          "url": "https://nextjs.org/docs/app/guides/upgrading/version-16",
+          "host": "nextjs.org",
+          "publishedAt": "2026-05-13",
+          "body": "공식 문서(lastUpdated 2026-05-13, 즉 GA 이후에도 계속 갱신 중). 'Turbopack by default' 섹션에서 커스텀 webpack 설정이 있는 상태로 next build를 돌리면 빌드가 실패한다고 명시하고, 대응 3가지(Turbopack 강행/설정 이관/webpack 유지)를 표로 정리. 그 외 Async Request APIs 완전 비동기화, revalidateTag 2-인자 필수화, next lint 명령 제거, images.qualities 기본값 축소([75]만 허용) 등 16의 다른 breaking change도 함께 확인."
+        },
+        {
+          "title": "Next.js 16",
+          "url": "https://nextjs.org/blog/next-16",
+          "host": "nextjs.org",
+          "publishedAt": "2025-10-21",
+          "body": "Next.js 16 정식 발표 블로그. publishedAt이 October 21st 2025로 명시되어 있어 GA 날짜를 확정할 수 있음. 'more than 50% of development sessions and 20% of production builds on Next.js 15.3+ are already running on Turbopack' 등 채택률 수치와 함께 Turbopack GA를 선언. Breaking Changes 표에 '@next/eslint-plugin-next 기본값이 ESLint Flat Config로 전환 — ESLint v10이 legacy config 지원을 없앨 것에 맞춘 조치'라는 문구가 있어, ESLint 10 이슈와 Next.js 16이 시기적으로 서로 얽혀 있음을 보여준다."
+        },
+        {
+          "title": "withPayload unconditionally injects webpack config — breaks Next.js 16 default Turbopack setup #14354",
+          "url": "https://github.com/payloadcms/payload/issues/14354",
+          "host": "github.com",
+          "publishedAt": "2025-10-25",
+          "body": "실사용자가 Next.js 16.0.0 + Payload 3.61.1 조합에서 재현. pnpm next dev 실행 시 '⨯ ERROR: This build is using Turbopack, with a webpack config and no turbopack config. This may be a mistake.' 그대로 재현됨. pnpm next dev --webpack으로는 정상 동작해 원인이 injected webpack hook임을 확인. 환경 정보(Node 22.14.0, Windows 10, react 19.2.0 등) 전체 첨부. 코멘트 7개, 반응 6개로 closed."
+        }
+      ],
+      "risks": "핵심 breaking change 자체는 GA(2025-10-21)로부터 9개월 지나 '따끈따끈'하진 않다 — 이 정확한 문구를 처음 겪는 사람은 GA 직후(2025-10~12)에 몰렸을 가능성이 높다. 다만 (a) 기업들이 메이저 버전 업그레이드를 늦게 하는 경우가 흔해 2026-05~07에도 최초 조우 사례가 이어지고, (b) Turbopack 자체가 계속 진화 중이라 매달 다른 하위 에러가 새로 보고된다(위 duplicatesSeen 참고). '정확히 이 문자열'의 신선도는 중간, 'Next 16 Turbopack 전환기'라는 주제 자체의 신선도는 여전히 높다."
+    },
+    {
+      "id": "eslint-10-eslintrc-removed-v9-eol",
+      "errorString": "Oops! Something went wrong! :(\n\nESLint: 9.39.1\n\nESLint couldn't find an eslint.config.(js|mjs|cjs) file.\n\nFrom ESLint v9.0.0, the default configuration file is now eslint.config.js. If you are using a .eslintrc.* file, please follow the migration guide to update your configuration file to the new format:\nhttps://eslint.org/docs/latest/use/configure/migration-guide\n\nIf you still have problems after following the migration guide, please stop by https://eslint.org/chat/help to chat with the team.",
+      "stack": "ESLint 9.x/10.x — .eslintrc.*만 있고 eslint.config.js가 없는 Node.js 프로젝트 전반(프레임워크 무관)",
+      "whenItStarted": "ESLint 9.0.0(2024)부터 flat config가 기본. ESLint 10.0.0 GA는 2026-02-06 — 이때 eslintrc 시스템이 완전히 제거되어 ESLINT_USE_FLAT_CONFIG=false 같은 임시 우회 수단까지 사라졌다. 결정적으로 ESLint 9.x 자체의 EOL이 2026-08-06 — 이 조사 시점(2026-07-30)으로부터 정확히 1주일 후. 근거: https://eslint.org/blog/2026/02/eslint-v10.0.0-released/",
+      "whyItHappens": "공식 v10.0.0 릴리즈노트: eslintrc 시스템 완전 제거, .eslintrc.*/.eslintignore 미지원, --no-eslintrc·--env·--rulesdir 등 관련 CLI 옵션도 제거, loadESLint()는 항상 새 ESLint 클래스만 반환. 즉 예전에는 '경고만 뜨고 구식 설정으로도 일단 동작'했다면 10.0.0부터는 아예 설정 파일을 못 찾은 것으로 처리돼 프로세스가 exit code 2로 죽는다.",
+      "fixSummary": "before(.eslintrc.json):\n```json\n{ \"extends\": \"eslint:recommended\" }\n```\nafter(eslint.config.js, 공식 마이그레이션 가이드 예시):\n```js\nimport js from \"@eslint/js\";\nexport default [js.configs.recommended];\n```\n자동 변환 도구도 제공: `npx @eslint/migrate-config .eslintrc.json`. 플러그인·파서·env/globals 설정도 각각 flat config 문법으로 바뀌어야 한다(공식 가이드에 before/after 예시 다수 수록).",
+      "volumeSignals": {
+        "issueUrl": "https://github.com/RNA4219/Errorcook_Contextpatch/pull/8",
+        "issueOpenedAt": "2025-11-06",
+        "comments": 0,
+        "reactions": null,
+        "duplicatesSeen": "여러 곳에서 각자 개별적으로 반복 발생하는 패턴(하나의 '유명 이슈'가 아니라 프로젝트마다 자체적으로 겪음) — GoogleCloudPlatform/opentelemetry-operations-js#84(더 오래된 ESLint 7 사례지만 동일 에러 패턴의 원조, 2020), thomfilg/ai-plugin-work PR#471 'fix(dev-lint): fall back to plugin quality config when no root eslint flat config'(2026-06-01), kscius/commander-league PR#62(2026-07-27 — TS7 이슈와 겹쳐서 ESLint도 10→8로 함께 롤백한 사례, 위 TS7 후보의 evidence와 동일 소스)",
+        "koreanReports": "true — https://blog.path-finder.jp/troubleshooting/... (2026-06-23 발행, '【2026 최신판】ESLint 9 에서 eslint.config 못 찾는 에러' 한국어판) — 다만 이 사이트는 같은 글을 일본어/중국어/영어로도 기계적으로 복제 발행하는 다국어 SEO형 블로그라 신뢰도는 낮음(보조 근거로만 사용)"
+      },
+      "canFillMustInclude": {
+        "errorText": true,
+        "versions": true,
+        "cause": true,
+        "beforeAfter": true,
+        "prevention": true
+      },
+      "evidence": [
+        {
+          "title": "ESLint v10.0.0 released",
+          "url": "https://eslint.org/blog/2026/02/eslint-v10.0.0-released/",
+          "host": "eslint.org",
+          "publishedAt": "2026-02-06",
+          "body": "ESLint 공식 릴리즈 블로그. eslintrc 완전 제거 목록(ESLINT_USE_FLAT_CONFIG 환경변수 무시, --no-eslintrc/--env/--resolve-plugins-relative-to/--rulesdir/--ignore-path CLI 옵션 제거, .eslintrc.*/.eslintignore 미지원, loadESLint()가 항상 ESLint 클래스만 반환, Linter 생성자가 'flat'만 허용, defineParser()/defineRule() 등 폐기 메서드 제거, LegacyESLint·FileEnumerator 제거)를 조목조목 나열. Node.js 20.19.0 미만·21.x·23.x 지원 중단도 명시. ESLint 9.x EOL이 2026-08-06이라고 명확히 공지."
+        },
+        {
+          "title": "Configuration Migration Guide",
+          "url": "https://eslint.org/docs/latest/use/configure/migration-guide",
+          "host": "eslint.org",
+          "publishedAt": null,
+          "body": "공식 마이그레이션 가이드. .eslintrc → eslint.config.js 전환을 세 가지 케이스별 before/after 코드 쌍으로 제공한다. 예를 들어 플러그인 등록은 before가 module.exports = { plugins: [\"jsdoc\"], rules: {...} } 형태였다면, after는 import jsdoc from \"eslint-plugin-jsdoc\" 후 plugins: { jsdoc } 객체로 명시적으로 바인딩하는 형태로 바뀐다. 커스텀 파서도 parser: \"...\" 문자열 지정에서 languageOptions.parser에 실제 임포트한 객체를 넣는 방식으로, env/globals/parserOptions도 languageOptions 하나로 통합됐다. defineConfig() 헬퍼 사용을 권장하며, 마이그레이션 도구가 완벽하지 않을 수 있어 추가 수정이 필요할 수 있다고 안내한다."
+        },
+        {
+          "title": "Run npm --prefix errorcook run lint ... ESLint couldn't find an eslint.config.(js|mjs|cjs) file. #8",
+          "url": "https://github.com/RNA4219/Errorcook_Contextpatch/pull/8",
+          "host": "github.com",
+          "publishedAt": "2025-11-06",
+          "body": "PR 제목 자체가 CI 실패 로그를 그대로 붙여넣은 것 — 'ESLint: 9.39.1', 'ESLint couldn't find an eslint.config.(js|mjs|cjs) file.', 'Error: Process completed with exit code 2.'까지 실제 CI 출력이 한 글자도 다듬어지지 않은 채 남아있다. 본문(body) 필드는 비어 있고(null) 제목에 로그 전체가 들어간 특이한 형태이며, 끝에 '(vibe-kanban)' 태그가 붙어 있어 AI 코딩 도구가 생성한 자동 PR로 추정된다. 코멘트 0개, 규모가 작은 개인 저장소(errorcook)이지만, 사람이 각색하지 않은 원본 CI 트랜스크립트라는 점에서 '이 에러가 실제로 화면에 어떻게 뜨는지'를 보여주는 가장 가공되지 않은 1차 자료로서 가치가 있다."
+        }
+      ],
+      "risks": "가장 상세히 검증한 원문 CI 로그(RNA4219#8)는 2025-11 사례라 정확히 3개월 이내는 아니다 — 다만 이 에러는 '코드가 안 바뀌면 계속 재현되는' 구조적 에러라 오래된 사례로도 문구 자체의 유효성엔 문제가 없다. 화제성의 진짜 근거는 ESLint 9.x EOL이 이 조사 시점 기준 정확히 1주일 뒤(2026-08-06)라는 시한 압박이다 — '지금 안 옮기면 곧 완전히 막힌다'는 프레이밍이 실제로 성립한다. kscius#62처럼 TypeScript 7.0 이슈와 한 PR에서 같이 롤백되는 사례가 있어 두 후보(TS7 candidate와 이 candidate)가 실전에서는 세트로 터지기도 한다는 점도 참고할 만하다."
+    }
+  ],
+  "rejected": [
+    {
+      "error": "Tailwind CSS v4 CSS-first config (tailwind.config.js 제거, @theme 블록 전환) 관련 에러",
+      "why": "GA가 2025년 1월로 이미 1년 반 지났다. 2026년에도 마이그레이션 가이드 글은 계속 나오지만(SEO성 블로그가 주), gh api 검색 결과 최근 3개월(2026-05~07) 내 급증 신호를 찾지 못했다 — 이미 대부분 마이그레이션이 끝난 '한물간' 단계로 판단."
+    },
+    {
+      "error": "pnpm 10 lifecycle scripts 기본 비활성화(postinstall 등이 조용히 안 돌아 네이티브 모듈 빌드 실패)",
+      "why": "이미 pnpm 11이 릴리즈되어 있어(pnpm.io/blog/releases/11.0) pnpm 10은 한 세대 전 이슈. 화제의 중심이 10→11 마이그레이션으로 넘어간 상태."
+    },
+    {
+      "error": "Python 3.14 deprecated API 제거(asyncio 구 워처, argparse 옵션 등)",
+      "why": "대부분 DeprecationWarning 단계이고 즉시 크래시하는 유형이 적어 '지금 막혀서 에러를 복붙 검색해온 사람' 프로파일과 맞지 않는다. 실제 크래시형 사례를 이번 조사에서 못 찾았다."
+    },
+    {
+      "error": "Node.js ERR_REQUIRE_ASYNC_MODULE (require()로 top-level await 있는 ESM을 부를 때)",
+      "why": "이 에러 코드 자체는 Node 22.12~23(2024~2025)부터 있던 것으로 확인되어(nodejs 공식 v22-to-v24 마이그레이션 가이드에도 별도 언급 없음), 'Node 24라서 새로 생기는 에러'라고 보기 어렵다. versionUnknown 리스크가 있어 제외."
+    },
+    {
+      "error": "Vite 8 + Rolldown(rollupOptions→rolldownOptions 개명, circular import 경고 강화 등)",
+      "why": "GA가 2026-03-12로 시점 자체는 나쁘지 않으나, 이번 조사에서 실제 GitHub 이슈나 정확한 에러 문자열까지 fetch해서 검증하지 못했다(시간 배분상 TS7/TS6/Next16/ESLint10 네 후보에 집중). 후속 조사 후보로 남겨둔다 — 지어내지 않기 위해 candidates에 넣지 않았다."
+    }
+  ],
+  "bestPick": "typescript-7-native-compiler-breaks-typescript-eslint",
+  "bestPickWhy": "GA가 정확히 3주 전(2026-07-08)이라 이번 조사에서 찾은 후보 중 가장 신선하다. 공식 발표문 자체가 'TypeScript 7.0 does not ship with an API'라는 파격적 변화를 명시하고 있고, 그 결과로 생긴 크래시는 typescript-eslint 메인테이너가 'not planned'(자기 쪽에서 못 고친다, TS 7.1을 기다려야 한다)로 공식 종료해 독자가 스스로 대응책(버전 고정/npm alias)을 취해야만 하는 상황이다. 정확한 두 단계 에러 문자열(npm ERESOLVE → 강제 설치 시 TypeError Cjs 크래시)과 재현 전용 저장소, 정확한 버전 조합(Node/npm/ESLint/typescript-eslint/typescript/vite)까지 원문에서 확보했다. 무엇보다 실사례가 GA 당일(2026-07-08, 이슈 접수)부터 조사 시점 불과 3일 전(2026-07-27, 실제 저장소 롤백)까지 이어져 '지금도 실제로 터지는가'에 가장 자신 있게 '그렇다'고 답할 수 있다. mustInclude 5개 전부 official(devblogs.microsoft.com) + 실제 재현 저장소·GitHub 이슈(38 반응)로 뒷받침된다."
+}

@@ -1,0 +1,196 @@
+{
+  "slug": "ai-trend-2026-07-30",
+  "curatedAt": "2026-07-30",
+  "honestFraming": "이 글은 '오늘 터진 속보'가 아니라 2026-07-30 기준으로 최근 약 7주(6/9 Fable5 출시 ~ 7/30 TurboFieldfare)를 정리한 글이다 — 오늘 날짜로 새로 나온 건 TurboFieldfare 하나뿐이고, Opus5(7/24)·GN 글(7/29) 등은 '이번 주', Fable5(6/9)·GLM-5.2(6/16)·수출통제 부과(6/12) 등은 '배경 지식'으로 명시해야 한다.",
+  "themes": [
+    {
+      "key": "frontier-rush",
+      "title": "프런티어 모델 발표 러시 — 그런데 Opus 5는 새 1등이 아니다",
+      "claim": "6월 9일(Fable 5)부터 7월 24일(Opus 5)·7월 9일(GPT-5.6 확대 공개)까지 두 달 새 발표가 몰렸고, 그 결과 '가장 최근 = 최상위'라는 통념이 깨졌다 — Opus 5는 7월에 나온 신모델이지만 6월에 나온 Fable 5보다 한 단계 아래 티어다.",
+      "facts": [
+        {
+          "fact": "Anthropic이 2026-07-24 Claude Opus 5를 출시. 가격은 입력 $5/출력 $25(백만 토큰). Claude Max 신규 기본 모델·Claude Pro 최상위 모델로 지정. 공식 소개 문구: 'Opus 5 comes close to the frontier intelligence of Claude Fable 5 at half the price' — 신규 최상위 모델이 아니라 기존 최상위 Fable 5 아래 티어로 출시됐다.",
+          "age": "thisWeek",
+          "evidence": "official",
+          "sourceUrls": [
+            "https://www.anthropic.com/news/claude-opus-5"
+          ]
+        },
+        {
+          "fact": "기준점인 Claude Fable 5·Mythos 5는 2026-06-09에 이미 입력 $10/출력 $50으로 출시된 모델 — Opus 5보다 45일 먼저 나왔고 가격은 정확히 2배. 서열은 'Fable 5(6/9, $10/$50, 최상위) > Opus 5(7/24, $5/$25, 절반 가격에 근접하는 대안)' 순이다.",
+          "age": "background",
+          "evidence": "official",
+          "sourceUrls": [
+            "https://www.anthropic.com/news/claude-fable-5-mythos-5"
+          ]
+        },
+        {
+          "fact": "OpenAI는 GPT-5.6 계열(Sol/Terra/Luna)을 2026-06-26 일부 파트너 한정 프리뷰(API·Codex)로 먼저 열고, 예고한 대로 2026-07-09 오전 10시(PT)부터 확대 롤아웃을 시작했다. 세 모델 각각의 성능·가격 차이는 공식 페이지가 막혀(403) 확인하지 못했다.",
+          "age": "thisMonth",
+          "evidence": "official",
+          "sourceUrls": [
+            "https://community.openai.com/t/introducing-gpt-5-6-series-sol-terra-and-luna/1384931",
+            "https://en.wikipedia.org/wiki/GPT-5.6"
+          ]
+        }
+      ],
+      "evidence": "official 3건 — Anthropic 자체 발표 2건(Opus5·Fable5/Mythos5) + OpenAI 개발자 커뮤니티 공식 공지 1건(위키피디아로 보강). 날짜·가격은 전부 1차 확인. '서열이 재편됐다'는 해석 문장이지 공식 발표가 직접 '서열'을 언급한 건 아니므로 해석 표시(~로 보인다) 필요.",
+      "soWhat": "지금 Claude를 쓴다면 'Opus5 = 최고 성능'이 아니라 'Fable5가 최상위, Opus5는 절반 가격에 웬만큼 근접하는 대안'이라는 걸 알고 골라야 한다 — 비용 민감한 작업엔 Opus5, 최고 성능이 꼭 필요하면 Fable5로 나눠 쓰는 게 실무적으로 맞다. ChatGPT 쪽도 GPT-5.6 확대 롤아웃(7/9) 이후라면 계정에 최신 모델 접근권이 열렸는지 확인해볼 시점이다."
+    },
+    {
+      "key": "export-control-first-case",
+      "title": "정부 규제가 처음으로 프런티어 모델의 실제 배포를 막았다 풀었다",
+      "claim": "미 정부가 이미 출시돼 쓰이던 프런티어 모델(Fable 5·Mythos 5)의 해외 배포를 수출통제로 막았다가 18일 만에(6/12 부과 → 6/30 해제) 풀었다 — AI 모델이 실제로 무역·안보 규제의 대상이 된 사례.",
+      "facts": [
+        {
+          "fact": "미 상무부(Department of Commerce)가 2026-06-12(금) Claude Fable 5·Mythos 5에 수출통제를 부과해 해외 이용자 접근을 막았다 — Anthropic 자체 발표 기준.",
+          "age": "background",
+          "evidence": "official",
+          "sourceUrls": [
+            "https://www.anthropic.com/news/redeploying-fable-5"
+          ]
+        },
+        {
+          "fact": "Anthropic은 2026-06-30 수출통제 해제를 발표하며 다음 날인 7/1부터 전 세계 재배포를 약속했고 실제로 그렇게 진행됐다(이틀에 걸친 하나의 절차이지 별개 사건 아님). 상무장관 Howard Lutnick은 Anthropic이 보안 위험을 능동적으로 감지·해결하고 정부와 협력하기로 합의한 뒤 수출 허가 요구를 없앴다고 설명했다(알자지라 보도).",
+          "age": "thisMonth",
+          "evidence": "official",
+          "sourceUrls": [
+            "https://www.anthropic.com/news/redeploying-fable-5",
+            "https://www.aljazeera.com/economy/2026/7/1/us-lifts-restrictions-on-powerful-ai-models-fable-mythos-anthropic-says"
+          ]
+        }
+      ],
+      "evidence": "official 2건(Anthropic 자체 발표, 알자지라 언론 보도로 교차 확인). 부과~해제 타임라인은 1차 확인. '보안 위험을 능동적으로 감지·해결하기로 합의' 부분은 정부 공식 문서가 아니라 언론이 전한 장관 발언이므로 그 수준으로만 인용할 것.",
+      "soWhat": "해외에서(특히 규제 대상국) Claude 최상위 모델 접근이 막혔다 풀렸다 하는 일이 실제로 일어난다는 뜻이다. 프로덕션에서 최상위 모델에 의존한다면 이런 정책 리스크를 감안한 대체 경로(다른 벤더·모델 폴백)를 하나쯤 마련해두는 게 안전하다."
+    },
+    {
+      "key": "small-model-vs-frontier",
+      "title": "크기보다 특화 — 좁은 과제에서 프런티어를 흔드는 소형 모델",
+      "claim": "크기가 아니라 특화·효율로 프런티어를 우회하는 사례가 같은 주에 두 건 나왔다 — 좁은 과제에 파인튜닝한 9B 모델(Fermisense, 미검증 보고)과 26B 모델을 2GB 메모리로 돌리는 추론 엔진(TurboFieldfare, 직접 확인됨).",
+      "facts": [
+        {
+          "fact": "GeekNews가 2026-07-30 소개한 TurboFieldfare는 Apple Silicon Mac에서 Gemma 4 26B(설치 용량 14.3GB)를 약 2GB 메모리만으로 구동하는 오픈소스(Apache 2.0) 추론 엔진 — 각 토큰에 필요한 expert만 그때그때 SSD에서 불러오는 방식. 8GB M2 MacBook Air에서 초당 5.1~6.3 토큰, 24GB M5 Pro에서 31~35 토큰.",
+          "age": "today",
+          "evidence": "official",
+          "sourceUrls": [
+            "https://github.com/drumih/turbo-fieldfare"
+          ]
+        },
+        {
+          "fact": "Fermisense는 전자상거래 카탈로그 검수(상품분류·브랜드확인 등) 과제에서 9B 오픈모델(Qwen3.5-9B)을 약 500달러(임대 GPU 2대, 강화학습 3.5일)로 미세조정해 87.3% 대 76.9%로 GPT-5.5·GPT-5.6 Sol·Gemini 3.1 Pro·Claude Opus 4.8·Claude Fable 5 다섯 프런티어 모델을 능가했다고 '보고'했다. 원문(fermisense.com)이 403으로 막혀 2차 출처(aipricing.guru) 하나로만 재구성됐고 독립 재현도 확인되지 않았다 — '증명됐다'가 아니라 '보고됐다/주장한다'로만 쓸 것.",
+          "age": "thisWeek",
+          "evidence": "secondary",
+          "sourceUrls": [
+            "https://www.aipricing.guru/news/qwen3-5-9b-500-rl-fine-tune-frontier-models/"
+          ]
+        }
+      ],
+      "evidence": "official 1건(TurboFieldfare, GitHub README 직접 확인) + secondary 1건(Fermisense, 2차 재구성·독립 재현 안 됨). 후자는 반드시 '보고됐다' 어조로만 서술 — 원문 자체를 못 읽었다는 한계를 숨기지 말 것.",
+      "soWhat": "모든 작업에 프런티어 모델이 필요한 건 아니라는 재확인이다 — 카탈로그 분류처럼 범위가 좁고 반복적인 작업이라면 저비용 소형 모델 파인튜닝을 검토해볼 만하다(단 Fermisense 수치는 미검증이니 '검토해볼 만하다' 정도로만). 개인 Mac에서 큰 모델을 돌리고 싶다면 TurboFieldfare 같은 메모리 절약형 엔진도 옵션이다."
+    },
+    {
+      "key": "agent-tooling-discipline",
+      "title": "에이전트를 여러 개 실무에 굴릴 때 생기는 문제와, 그걸 막는 법",
+      "claim": "에이전트에 도구를 여러 개 붙여 실무에 굴리면 도구 남용·중복 실행 같은 문제가 따라온다는 보고가 나왔다. 반대로 통제 장치(지침 문서·이중 검토·도구 수 축소)를 갖추면 64개 에이전트급 대규모 작업도 성공한다는 사례(Bun)도 같은 시기에 나왔다 — 문제와 해법이 같은 결의 이야기다.",
+      "facts": [
+        {
+          "fact": "GeekNews 'Ask GN' 글(2026-07-29 추정 게시)에서 작성자 한 명이 공개 벤치마크 트레이스 기준 '6,780개 트레이스에서 8,042건의 중복 실행, 그중 159건은 실제 리소스 중복 생성'이었다고 보고했다 — 벤치마크 트레이스 측정(원문이 운영 서비스 아님을 명시)이며 외부 검증·통계적 근거는 없다.",
+          "age": "thisWeek",
+          "evidence": "anecdote",
+          "sourceUrls": [
+            "https://news.hada.io/topic?id=31946"
+          ]
+        },
+        {
+          "fact": "GitHub는 2025년 11월 자사 블로그에서 Copilot의 기본 내장 도구를 40개에서 13개로 줄인 결과(임베딩 기반 도구 라우팅 도입) SWE-Lancer·SWEbench-Verified 등에서 성공률이 2~5%p 개선되고 응답 지연이 평균 400ms 줄었다고 밝혔다 — 2026년 7월 소식이 아니라 배경 사례(연도 반드시 표기).",
+          "age": "background",
+          "evidence": "official",
+          "sourceUrls": [
+            "https://github.blog/ai-and-ml/github-copilot/how-were-making-github-copilot-smarter-with-fewer-tools/"
+          ]
+        },
+        {
+          "fact": "Bun 팀은 535,496줄(1,448개 파일)의 Zig 코드를 64개 Claude 에이전트로 병렬 실행해 11일 만에 Rust로 재작성했다(API 비용 약 16만5천 달러). 성공 핵심은 600줄 분량의 PORTING.md 지침 문서, 파일별 병렬 처리, 두 차례의 적대적 코드 리뷰였다 — 2026-07-16 The Pragmatic Engineer 보도.",
+          "age": "thisMonth",
+          "evidence": "press",
+          "sourceUrls": [
+            "https://blog.pragmaticengineer.com/the-pulse-what-can-we-learn-from-buns-rapid-rust-rewrite-with-ai/"
+          ]
+        }
+      ],
+      "evidence": "anecdote 1건(GN 벤치마크 트레이스 측정(원문이 운영 서비스 아님을 명시), 일반화 금지) + official 1건(GitHub 공식 블로그, 단 2025-11 자료라 연도 노출 필수) + press 1건(Pragmatic Engineer, 벤더 독립 취재). 세 근거의 신뢰 성격이 각각 달라 '업계 공통 문제/해법'으로 뭉뚱그리면 안 됨.",
+      "soWhat": "MCP 등 여러 도구를 에이전트에 붙여 쓴다면 (1) 꼭 필요한 도구만 남기고(GitHub Copilot 사례처럼 40→13개로 줄여도 성능이 떨어지지 않았다), (2) 같은 작업이 중복 실행되지 않는지 로그를 확인하는 습관을 들이는 게 좋다. 여러 에이전트를 큰 작업에 동시에 굴리려면 Bun 사례처럼 명확한 지침 문서와 이중 검토 없이는 위험하다. 이든 몰릭(2026-07-23, https://www.oneusefulthing.org/p/an-opinionated-guide-to-which-ai-b22)의 조언대로 '읽기만 하지 말고' 이번 달 안에 Claude든 ChatGPT든 골라 월 20달러로 실제 업무 하나를 맡겨보는 게 가장 빠른 이해 방법이다."
+    }
+  ],
+  "unconfirmedForPost": [
+    {
+      "claim": "xAI Grok 4.5의 정확한 공식 출시일(다수 매체가 7/8로 표기)",
+      "whyNot": "xAI 공식 발표 페이지와 Axios 등 보도 기사 모두 접근 불가(403)로 원문을 직접 확인하지 못했다."
+    },
+    {
+      "claim": "GPT-5.6 세 모델(Sol/Terra/Luna) 간 정확한 성능·가격 차이",
+      "whyNot": "OpenAI 공식 소개 페이지와 고객센터 문서 모두 접근 불가(403). 프리뷰(6/26)·확대 공개(7/9) 날짜만 확인했고 모델별 세부 스펙은 확인하지 못했다."
+    },
+    {
+      "claim": "DeepSeek V4 정식판(GA)이 실제로 출시됐는지",
+      "whyNot": "공식 문서에는 여전히 4월 프리뷰가 최신 항목으로 남아 있다. '7월 중순 출시 예정'이라는 6/30 보도는 계획을 전한 것일 뿐, 실제 출시를 확인해줄 후속 공식 발표를 찾지 못했다."
+    },
+    {
+      "claim": "500달러 미세조정 모델이 프런티어를 이겼다는 Fermisense 주장의 원문 확인",
+      "whyNot": "fermisense.com 원문 페이지가 접근 불가(403)라 2차 출처(블로그) 하나로만 재구성했다. 독립 재현 사례도 확인되지 않았다."
+    },
+    {
+      "claim": "7월에 새로 나온 Qwen(알리바바) 모델이 있는지",
+      "whyNot": "공식 GitHub 확인 결과 최신 Qwen3.6은 4월 릴리스였다. 후속으로 거론되는 모델(Qwen3.7-Plus)은 접근 오류(502)로 확인하지 못했다."
+    }
+  ],
+  "dropped": [
+    {
+      "claim": "GLM-5.2(Zhipu)가 6월 출시되며 오픈웨이트 리더보드 1위를 차지, 중국 랩까지 프런티어 러시에 가세했다는 각도",
+      "why": "리더보드 순위 자체가 소스 간 상충한다 — z.ai 자체 주장은 'Code Arena 1위'인데(원문은 JS 렌더링이라 직접 확인 실패), 직접 fetch에 성공한 simonwillison.net은 'Code Arena WebDev 2위, 1위는 Fable5'라고 적었다. 어느 쪽이 맞는지 판단할 근거가 없다. '출시 러시' 축은 Opus5·Fable5·GPT-5.6 3건으로 이미 성립해 우선순위에서 밀렸다."
+    },
+    {
+      "claim": "OpenAI가 7/29 'ChatGPT for Academic Researchers' 프로그램(2.5억달러, 최대 10만명) 발표",
+      "why": "사실 자체는 확인됐고(신선도 thisWeek, 근거 press) 흥미롭지만 이 글의 4개 축(출시러시/수출통제/소형특화모델/에이전트 실무이슈) 어디에도 자연스럽게 속하지 않는 별개 주제다. 억지로 끼워 넣으면 5번째 축이 생겨 목록글이 된다."
+    },
+    {
+      "claim": "게임 개발자 송재경의 'AI 특이점 진입' 인터뷰 발언과 실험 MMORPG 'Open MMO' 공개",
+      "why": "개인 견해·정성적 주장 위주라 사실/해석 분리가 어렵고, 4개 축 어디와도 맞지 않는 별개 소재다. '특이점 진입' 같은 과장성 프레이밍은 이 카테고리 밴워드(혁명·역대급 등)의 취지에 준하는 위험이 있어 제외했다."
+    },
+    {
+      "claim": "CSA(Cloud Security Alliance)의 MCP STDIO 구조적 보안결함 리서치(20만 취약 인스턴스 추정)",
+      "why": "2026-05-04 발행으로 신선도가 낮고(background), '에이전트 여러 개 운영' 축은 GN 중복실행 사례·GitHub 도구축소·Bun 사례 3건으로 이미 충분하다. 20만이라는 숫자를 과장해서 쓰면 밴워드(충격 등) 유혹이 커 별도 보안 전문 글감으로 남겼다."
+    },
+    {
+      "claim": "GPT-5.6 프리뷰(6/26)가 '정부 규제' 때문에 지연됐다는 Wikipedia 서술 — Fable5/Mythos5 수출통제와 같은 결의 업계 전반 규제 압박일 가능성",
+      "why": "Wikipedia 본문 인용 외 직접 확인된 1차 출처가 없다(OpenAI 공식 페이지 403). 이 상세만으로 '규제가 AI 업계 전반에 번졌다'고 일반화하면 과잉 해석이 된다."
+    }
+  ],
+  "disclosure": "공식 발표·언론 기사·개발자 커뮤니티(GeekNews 등) 공개 텍스트만 근거로 정리했고, 인스타그램·스레드·링크드인처럼 로그인이 필요한 SNS는 보지 않았다 — 그쪽에서 따로 화제였던 내용은 이 글에 반영되지 않았을 수 있다.",
+  "internalLinks": [
+    {
+      "url": "https://burning-go9me.tistory.com/288",
+      "reason": "n8n으로 RSS를 디스코드에 흘리는 자동화 글 — 이 글의 '에이전트 실무' 축(agent-tooling-discipline)과 바로 이어지는 실전 사례. 에이전트를 실무에 막 붙여보려는 독자에게 다음 스텝으로 자연스럽다."
+    },
+    {
+      "url": "https://burning-go9me.tistory.com/287",
+      "reason": "Y2K AI 프롬프트 글 — '읽기만 말고 AI에게 실제로 시켜보라'는 이 글의 실천 메시지(soWhat, 몰릭 인용)와 결이 같은, 진입장벽이 가장 낮은 AI 실습 예시. 285(야구장 프롬프트)와 성격이 비슷해 하나만 고르며 이쪽을 택했다."
+    }
+  ],
+  "cannotSay": [
+    "밴워드 금지: 충격/대박/역대급/혁명/게임체인저/곧 대체될/무조건 — Opus5·Fable5·TurboFieldfare 등 어떤 소식에도 이런 과장 표현을 붙이지 않는다.",
+    "Fermisense의 '500달러로 프런티어를 이겼다'를 단정 서술하지 않는다 — 원문이 403으로 막혀 2차 출처 하나로만 재구성됐고 독립 재현도 안 됐다. '~라고 보고했다'까지만 쓰고 '증명됐다/입증됐다'는 쓰지 않는다.",
+    "Opus5를 '클로드 최고 모델'이나 '새로운 최상위 모델'로 쓰지 않는다 — Anthropic 공식 표현상 Opus5는 기존 최상위 Fable5보다 아래 티어(가격도 정확히 절반)다.",
+    "Qwen3.6을 '7월 신모델'·'최근 출시'로 쓰지 않는다 — 공식 GitHub 확인상 2026년 4월 릴리스다.",
+    "GitHub Copilot 도구 축소 사례(40→13)를 인용할 때는 반드시 '2025년 11월'이라고 연도를 밝힌다 — 날짜를 생략하면 최근 사례처럼 읽힌다.",
+    "GN 'Ask GN' 글의 MCP 중복실행 수치(6,780건 중 8,042건)를 '업계 공통 문제'나 통계로 일반화하지 않는다 — 공개 벤치마크 트레이스 측정이고 원문이 '운영 서비스가 아니다'라고 스스로 한계를 밝혔다 — 운영 통계로 인용 금지.",
+    "이 글 전체를 '오늘의 속보'로 프레이밍하지 않는다 — 오늘(7/30) 신규는 TurboFieldfare뿐이고 나머지는 지난 몇 주를 지금 시점에서 정리한 것이다.",
+    "확인 안 된 항목(Grok4.5 정확한 날짜, GPT-5.6 세부 모델 차이, DeepSeek V4 GA 여부 등)을 단정문으로 쓰지 않는다 — '~로 알려졌다/보도됐다'까지만 쓰고, 확인 못한 이유(대부분 공식 페이지 403)를 숨기지 않는다.",
+    "수출통제 해제(6/30)와 재배포(7/1)를 서로 다른 사건처럼 쓰지 않는다 — 해제 발표 다음 날 재배포가 시작된, 이틀에 걸친 하나의 절차다."
+  ],
+  "titleAngles": [
+    "Opus5는 왜 최상위 모델이 아닐까 — 7월 AI 동향 정리",
+    "에이전트 여러 개 굴릴 때 터지는 문제 — 7월 AI 정리",
+    "500달러 미세조정 모델은 진짜일까 — 7월 AI 정리"
+  ]
+}

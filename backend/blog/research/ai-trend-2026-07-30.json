@@ -1,0 +1,560 @@
+{
+  "keyword": "2026년 7월 30일 AI 동향 — 프런티어 모델 러시·수출통제·소형모델 특화·에이전트 실무 이슈",
+  "categoryId": "ai-trend",
+  "slug": "ai-trend-2026-07-30",
+  "searchedAt": "2026-07-30",
+  "origin": "claude-websearch",
+  "queries": [
+    "Anthropic Claude Opus 5 announcement site:anthropic.com",
+    "xAI Grok 4.5 release date official",
+    "OpenAI GPT-5.6 rollout site:openai.com",
+    "Zhipu GLM-5.2 release z.ai official",
+    "xAI Grok 4.5 official announcement x.ai news",
+    "DeepSeek V4 release official DeepSeek 2026",
+    "fermisense \"when machines take the wheel\" 9B model fine-tuned catalog",
+    "Qwen3.6 release official Alibaba Qwen team 2026",
+    "DeepSeek V4 official release July 2026 launch confirmed deepseek.com",
+    "ChatGPT for Academic Researchers OpenAI expansion 100,000 users",
+    "Qwen3.5-9B fermisense GRPO catalog review 87.3 OR 76.9 benchmark score",
+    "GLM-5.2 release date June 16 2026 z.ai official confirmed",
+    "\"DeepSeek V4\" official release announcement July 15 OR July 16 OR July 17 2026",
+    "GPT-5.6 general availability ChatGPT all users rollout complete July 2026",
+    "\"Claude Fable\" Anthropic model announcement",
+    "2026년 7월 30일 AI 소식",
+    "AI agent MCP duplicate execution problem 2026",
+    "AI 업계 동향 2026년 7월",
+    "GitHub Copilot MCP tool count 40 to 13 benchmark improvement"
+  ],
+  "notes": "GeekNews 7건(A파트)을 우선 파기하고 원문까지 fetch. B파트에서 2026년 7월 전후 프런티어 모델 발표를 공식 출처로 교차확인. 그 과정에서 예상 못 한 큰 줄기(미 상무부의 Claude Fable 5/Mythos 5 수출통제 부과·해제)를 발견해 추가 조사함. 인스타그램/스레드/페이스북/링크드인은 전혀 열지 않음.",
+  "sources": [
+    {
+      "title": "TurboFieldfare - 모든 M 시리즈 Mac에서 Gemma 4 26B를 2GB RAM으로 실행하는 오픈소스 엔진",
+      "url": "https://news.hada.io/topic?id=31958",
+      "host": "news.hada.io",
+      "tier": "aggregator",
+      "kind": "geeknews",
+      "publishedAt": "2026-07-30",
+      "body": "제목 'TurboFieldfare - 모든 M 시리즈 Mac에서 Gemma 4 26B를 2GB RAM으로 실행하는 오픈소스 엔진'. GeekNews 게시 시각은 fetch 시점 기준 11시간 전(2026-07-30 조사 시점 — 같은 날일 가능성이 높으나 정확한 절대 게시 시각은 GeekNews UI에서 확인 불가). 요약: 전체 14.3GB 모델을 메모리에 다 올리지 않고 약 2GB 메모리만 사용해 추론. 핵심 기법은 '1.35GB 공유 코어와 FP16 KV 캐시는 메모리에 유지하면서 각 토큰에 필요한 routed expert만 SSD에서 Metal이 볼 수 있는 버퍼로 읽는' 방식. 8GB M2 MacBook Air에서 초당 5.1~6.3 토큰, 24GB M5 Pro에서 31~35 토큰. Swift 6.2·Metal 4로 구현, 네이티브 Mac 앱·CLI·OpenAI 호환 서버 제공. 원문 링크는 https://github.com/drumih/turbo-fieldfare."
+    },
+    {
+      "title": "drumih/turbo-fieldfare — GitHub README",
+      "url": "https://github.com/drumih/turbo-fieldfare",
+      "host": "github.com",
+      "tier": "official",
+      "kind": "primary",
+      "dateUnknown": true,
+      "body": "README 기준. 성능: 8GB M2 MacBook Air에서 '5.1-6.3 tok/s', 24GB M5 Pro에서 '31-35 tok/s'. 메모리: 런타임 '~2 GB of weights and 4K KV cache' 사용, 설치 용량은 텍스트 전용 모델 기준 'About 14.3 GB'. 요구사항: Apple Silicon Mac, macOS 26, Metal 4, Swift 6.2 이상. 라이선스: TurboFieldfare 자체 코드·문서는 Apache License 2.0이며 모델 가중치는 별도 다운로드로 원본 라이선스를 따른다. README에는 마지막 업데이트 날짜가 명시돼 있지 않고, main 브랜치에 12개 커밋이 있다는 점만 확인됨(정확한 커밋 날짜는 미확인)."
+    },
+    {
+      "title": "500달러로 미세조정한 9B 오픈 모델, 카탈로그 검수에서 프런티어 모델 능가",
+      "url": "https://news.hada.io/topic?id=31923",
+      "host": "news.hada.io",
+      "tier": "aggregator",
+      "kind": "geeknews",
+      "publishedAt": "2026-07-29",
+      "body": "제목 '500달러로 미세조정한 9B 오픈 모델, 카탈로그 검수에서 프런티어 모델 능가'. GN 게시는 1일전(2026-07-30 조사 시점, 작성자 GN+/@neo) — 2026-07-29로 추정. 요약: 전자상거래 카탈로그 검수(상품 분류·브랜드 확인·속성 추출·정책 판정)에서 오픈소스 9B 모델을 강화학습으로 미세조정. '17만7,767개 검수 에피소드로 만든 디지털 트윈에서 상품 분류, 브랜드 확인, 속성 추출, 정책 판정을 반복'. 약 500달러 학습 비용으로 87.3% 대 76.9% 점수로 최상위 프런티어 모델을 능가했다고 주장. 상품 1,000개당 0.50달러로, 추론 비용이 가장 저렴한 프런티어 구성보다 40배 저렴. 원문 링크는 https://fermisense.com/when-machines-take-the-wheel/."
+    },
+    {
+      "title": "The Rise of Intelligence Ownership: a task-trained open source model vs the frontier",
+      "url": "https://fermisense.com/when-machines-take-the-wheel/",
+      "host": "fermisense.com",
+      "tier": "official",
+      "kind": "primary",
+      "dateUnknown": true,
+      "body": "",
+      "unverified": true,
+      "note": "WebFetch 403 Forbidden — 봇 차단으로 원문 직접 확인 실패. web.archive.org도 도구가 지원하지 않아 접근 불가. 대신 이 기사를 직접 인용한 2차 출처(aipricing.guru)로 수치를 재구성함."
+    },
+    {
+      "title": "Qwen3.5 9B Beats Frontier Models After $500 RL Fine-Tune",
+      "url": "https://www.aipricing.guru/news/qwen3-5-9b-500-rl-fine-tune-frontier-models/",
+      "host": "aipricing.guru",
+      "tier": "blog",
+      "kind": "primary",
+      "publishedAt": "2026-07-28",
+      "body": "2026-07-28 발행. 학습 비용은 'roughly $500 in GPU time'(임대한 RTX PRO 6000 GPU 2대). 벤치마크는 87.3% 대 76.9%로 '10.4-point benchmark lead'. 비교 대상 프런티어 모델은 GPT-5.5, GPT-5.6 Sol, Gemini 3.1 Pro, Claude Opus 4.8, Claude Fable 5 다섯 개, 동일 툴·이미지·채점·턴 예산 조건. 학습은 '1,000 optimizer steps took about 3.5 days'였고 프런티어 대역을 넘어서는 데는 약 1일이 걸림. 상품 목록 1건당 비용은 가장 강력한 프런티어 대비 '68× advantage', 가장 저렴한 프런티어 대비 '40× lower cost', 가장 비싼 프런티어 대비 '340× lower'. 데이터셋은 '177,767 training episodes'와 '200-episode stratified validation set'. 이 평가는 독립적으로 재현되지 않았다는 점이 기사에 명시됨."
+    },
+    {
+      "title": "Cerebras가 사내 지식 베이스를 구축한 방법",
+      "url": "https://news.hada.io/topic?id=31850",
+      "host": "news.hada.io",
+      "tier": "aggregator",
+      "kind": "geeknews",
+      "publishedAt": "2026-07-27",
+      "body": "제목 'Cerebras가 사내 지식 베이스를 구축한 방법'. GN 게시는 3일전(2026-07-30 조사 시점) — 2026-07-27로 추정. 요약: Cerebras는 Slack·코드 저장소·문서·내부 데이터베이스를 기존 위치에서 직접 수집하는 지식베이스를 개발했고, 출시 3개월 만에 하루 15,000건 이상의 질문을 처리 중이라고 소개. 단일 Postgres 임베딩 테이블로 여러 데이터 소스를 통합했고, Slack 검색은 전문검색·임베딩검색·IDF·시간감쇠를 복합 활용. LLM이 질의 계획을 세워 검색 도구를 선택·병렬 실행하고 RRF와 재순위화 모델로 결과를 통합한다고 설명. 원문은 x.com/cerebras의 트윗 스레드이며, GeekNews 요약이 유일하게 읽을 수 있었던 텍스트."
+    },
+    {
+      "title": "Cerebras 공식 X(트위터) 스레드",
+      "url": "https://x.com/cerebras/status/2077822555159945507",
+      "host": "x.com",
+      "tier": "official",
+      "kind": "primary",
+      "dateUnknown": true,
+      "body": "",
+      "unverified": true,
+      "note": "WebFetch 402 Payment Required — 로그인/구독벽으로 원문 직접 확인 실패. GeekNews 요약(작성자 파라프레이즈)에만 의존."
+    },
+    {
+      "title": "AI로 11일 만에 끝낸 Bun의 Zig→Rust 재작성에서 배울 점",
+      "url": "https://news.hada.io/topic?id=31890",
+      "host": "news.hada.io",
+      "tier": "aggregator",
+      "kind": "geeknews",
+      "publishedAt": "2026-07-28",
+      "body": "제목 'AI로 11일 만에 끝낸 Bun의 Zig→Rust 재작성에서 배울 점'. GN 게시는 2일전(2026-07-30 조사 시점) — 2026-07-28로 추정. 요약: Bun 팀은 메모리 안전 문제로 '535,496줄의 코드'를 64개 AI 에이전트로 Rust로 이식, 본래 1~2년 걸릴 작업을 11일에 완료, API 비용 약 16만5천 달러. 성공 요인으로 600줄 규모의 PORTING.md 지침 문서, 파일별 병렬 처리, 강력한 테스트 스위트·CI, 두 차례의 적대적 코드 검토를 꼽음. 원문은 The Pragmatic Engineer(Gergely Orosz)의 2026-07-16자 글."
+    },
+    {
+      "title": "The Pulse: What can we learn from Bun's rapid Rust rewrite with AI?",
+      "url": "https://blog.pragmaticengineer.com/the-pulse-what-can-we-learn-from-buns-rapid-rust-rewrite-with-ai/",
+      "host": "blog.pragmaticengineer.com",
+      "tier": "press",
+      "kind": "primary",
+      "publishedAt": "2026-07-16",
+      "body": "2026-07-16 발행. 코드 규모: '535,496줄'의 Zig 코드, 1,448개 파일 대상. 소요기간 총 11일(준비 3시간, 컴파일 에러 수정 약 12시간, 로컬 테스트 약 2일, CI 테스트 통과 약 3일). API 가격 기준 비용은 '$165,000'. 64개 Claude 에이전트를 병렬 실행. 성공 핵심 요소로 600줄 규모 PORTING.md 지침 문서 작성, 파일별 병렬 처리로 작업 분산, 강력한 테스트 스위트와 CI 파이프라인, 두 차례의 적대적 코드 검토 프로세스를 꼽음. 다른 프로젝트에 적용하려면 코드베이스에 대한 깊은 이해, 신뢰할 수 있는 테스트, 상당한 토큰 비용 투입 의지가 필수 조건이라고 결론."
+    },
+    {
+      "title": "업무별로 고르는 AI 도구 가이드",
+      "url": "https://news.hada.io/topic?id=31966",
+      "host": "news.hada.io",
+      "tier": "aggregator",
+      "kind": "geeknews",
+      "publishedAt": "2026-07-30",
+      "body": "제목 '업무별로 고르는 AI 도구 가이드'. GN 게시는 5시간전(2026-07-30 조사 시점, 정확한 시각 미명시). 요약: Claude와 ChatGPT를 중심으로 한 AI 도구 선택 가이드. 단순 챗봇에서 '컴퓨터로 장시간 작업'할 수 있는 에이전트 시스템으로의 진화를 다룸. 가벼운 질문은 무료 모델, 의료·법률처럼 중요도 높은 업무는 유료 최상위 모델을 권장. 회사 가상 컴퓨터(Work/Cowork)와 로컬 앱(Codex/Claude Code) 두 실행 방식을 비교하고 프롬프트 주입 위험·권한 제한의 중요성을 강조. 월 20달러 요금제로 실제 업무 하나를 시작해보라고 권함. 원문은 Ethan Mollick의 One Useful Thing(Substack), 2026-07-23 발행."
+    },
+    {
+      "title": "An Opinionated Guide to Which AI to Use",
+      "url": "https://www.oneusefulthing.org/p/an-opinionated-guide-to-which-ai-b22",
+      "host": "oneusefulthing.org",
+      "tier": "blog",
+      "kind": "primary",
+      "publishedAt": "2026-07-23",
+      "body": "저자 Ethan Mollick(Wharton), 2026-07-23 발행, One Useful Thing(Substack). 핵심 인용: '지금 AI를 최대한 활용하려는 사람 대부분에게 선택지는 사실상 ChatGPT 아니면 Claude 둘뿐이다'(원문 'There are only two choices for most people who want to get the most out of AI right now: ChatGPT or Claude'). 두 서비스 모두 '수 시간의 실제 인간 작업에 상당'하는 일을 수행하는 에이전틱 시스템을 제공한다고 설명하고, 결론적으로 '클로드든 챗GPT든 골라서 월 20달러를 내고, 에이전트에게 진짜 업무를 맡겨보라'(원문 'pick Claude or ChatGPT, pay the $20, and give an agent a real task')고 권함. 구체적 우위 비교보다 직접 시도를 통한 학습을 강조."
+    },
+    {
+      "title": "Ask GN: MCP 도구를 여러 개 붙여 에이전트를 운영하시는 분들 중 중복 실행 겪어보신분 계실까요?",
+      "url": "https://news.hada.io/topic?id=31946",
+      "host": "news.hada.io",
+      "tier": "aggregator",
+      "kind": "geeknews",
+      "publishedAt": "2026-07-29",
+      "body": "공개 벤치마크 트레이스 6,780개 측정 → 중복 실행 8,042건, 리소스 중복 생성 159건. 원문 명시 한계: \"22개 모델이 태스크를 푸는 기록이지 실제 운영 서비스가 아닙니다.\" 개인의 운영 환경 통계가 아니다."
+    },
+    {
+      "title": "송재경, AI와 게임",
+      "url": "https://news.hada.io/topic?id=31940",
+      "host": "news.hada.io",
+      "tier": "aggregator",
+      "kind": "geeknews",
+      "publishedAt": "2026-07-29",
+      "body": "제목 '송재경, AI와 게임'. GN 게시는 1일전(2026-07-30 조사 시점) — 2026-07-29로 추정. 요약: 게임 개발자 송재경이 인간 플레이어와 AI 에이전트가 동일한 프로토콜로 접속하는 실험적 MMORPG 'Open MMO'를 공개. 개발 방식이 직접 코딩에서 AI 관리·지시 중심으로 바뀌었다는 점과 'AI 특이점은 이미 진입했다. 우리가 모르고 있을 뿐'이라는 주장을 소개. 다만 현재 AI는 3D 공간 개념에서 여전히 한계를 보인다고 언급. 산업혁명급 전환으로 평가하며 개발자의 핵심 경쟁력이 문제 정의 능력과 창의성으로 이동할 것으로 전망. 원문은 인벤(inven.co.kr) 기사, 2026-07-29 13:00 발행, 이두현·김수진 기자."
+    },
+    {
+      "title": "송재경, AI와 게임 (인벤 인터뷰)",
+      "url": "https://www.inven.co.kr/webzine/news/?news=318963",
+      "host": "inven.co.kr",
+      "tier": "press",
+      "kind": "primary",
+      "publishedAt": "2026-07-29",
+      "body": "발행 2026-07-29 13:00, 기자 이두현·김수진. 송재경 발언 인용: AI 특이점 관련 '뭔가에 진입한 것 같습니다. 우리는 잘 모르고 있지만요'. 프로그래밍의 미래에 대해 '정말 프로그래밍이 좋고 컴퓨터가 돌아가는 메커니즘을 이해하고 싶다면 정말 파볼 필요가 있는데'라고 언급. AI 활용에 대해 'AI가 나오면서 저는 일을 시키기만 하면 되고 직접 코딩을 하지는 않으니까, 다시 전성기 때만큼의 퍼포먼스를 내고 있습니다'라고 밝힘. 사회적 영향에 대해서는 '진짜 어떤 사회적 합의 같은 게 필요합니다'라고 언급. 이 인터뷰는 GeekNews가 소개한 것과 같은 기사로, 인간 플레이어와 AI 에이전트가 동일한 프로토콜로 접속하는 실험적 MMORPG 'Open MMO' 공개 소식을 함께 다룸."
+    },
+    {
+      "title": "Introducing Claude Opus 5",
+      "url": "https://www.anthropic.com/news/claude-opus-5",
+      "host": "anthropic.com",
+      "tier": "official",
+      "kind": "primary",
+      "publishedAt": "2026-07-24",
+      "body": "발행 2026-07-24. 가격은 '$5 per million input tokens and $25 per million output tokens', 프롬프트 캐싱 시 최대 90%·배치 처리 시 50% 추가 절감. 출시 플랫폼은 Claude API(claude-opus-5), Claude.ai, Claude Code, Claude Cowork, AWS·Google Cloud·Microsoft Foundry, Claude Max 신규 기본 모델, Claude Pro 최상위 모델. 벤치마크: Frontier-Bench v0.1·GDPval-AA v2 최고 성능, ARC-AGI-3 점수는 차순위 모델의 3배, Zapier AutomationBench 통과율은 차순위의 약 1.5배, OSWorld 2.0에서는 'Fable 5's best result'를 약 1/3 비용으로 넘어섬. 기본 속도 외 2.5배 빠른 Fast 모드도 제공. Opus 5는 'comes close to the frontier intelligence of Claude Fable 5 at half the price'로 소개됨 — 기존 최상위 모델 Fable 5보다 저렴한 대안으로 포지셔닝된 것이지, Fable 5를 대체하는 신규 최상위 모델이 아님."
+    },
+    {
+      "title": "Introducing Claude Fable 5 and Claude Mythos 5",
+      "url": "https://www.anthropic.com/news/claude-fable-5-mythos-5",
+      "host": "anthropic.com",
+      "tier": "official",
+      "kind": "primary",
+      "publishedAt": "2026-06-09",
+      "body": "발행 2026-06-09(재배포 공지는 2026-07-01 별도 문서). Fable 5와 Mythos 5는 동일 기반 모델에 안전장치만 다르며, 가격은 'Fable 5 and Mythos 5 are being offered at $10 per million input tokens and $50 per million output tokens—less than half the price of Claude Mythos Preview'. Mythos 5는 사이버보안 분야 안전장치가 해제된 버전. 사례로 Stripe의 '50-million-line Ruby codebase'에서 하루 만에 코드베이스 전체 마이그레이션을 수행했다고 소개, Hebbia Finance Benchmark에서 'Fable 5 has the highest score of any model', 분석 벤치마크에서 'first to break 90%'라고 주장. 출시 당시 'Claude Fable 5 is available everywhere today. Claude Mythos 5 is restricted to Glasswing partners'."
+    },
+    {
+      "title": "Redeploying Claude Fable 5",
+      "url": "https://www.anthropic.com/news/redeploying-fable-5",
+      "host": "anthropic.com",
+      "tier": "official",
+      "kind": "primary",
+      "publishedAt": "2026-06-30",
+      "body": "발행 2026-06-30. '지난 금요일인 6월 12일, 미국 정부가 우리의 최신 모델들에 수출통제를 적용했다'(원문 'On Friday, June 12, the US government applied export controls to our newest models')고 설명. '오늘, 6월 30일부로 Fable 5와 Mythos 5에 대한 수출통제가 해제됐다'(원문 'As of today, June 30, the export controls on Fable 5 and Mythos 5 have been lifted')고 명시. 재배포는 '내일인 7월 1일 수요일부터 전 세계 사용자에게 제공된다'(원문 'Fable 5 will be available starting tomorrow, Wednesday, July 1, to users globally')고 밝힘."
+    },
+    {
+      "title": "US lifts restrictions on powerful AI models Fable and Mythos, Anthropic says",
+      "url": "https://www.aljazeera.com/economy/2026/7/1/us-lifts-restrictions-on-powerful-ai-models-fable-mythos-anthropic-says",
+      "host": "aljazeera.com",
+      "tier": "press",
+      "kind": "primary",
+      "publishedAt": "2026-07-01",
+      "body": "발행 2026-07-01. 수출통제 해제 시점은 '화요일(6월 30일) 늦은 시간'으로 표현. 관련 정부기관은 미국 상무부(Department of Commerce), 상무장관 Howard Lutnick, 배경에는 국방부(Pentagon) 관련 안보 우려도 언급. 트럼프 행정부가 국가안보 우려로 Claude Fable 5·Mythos 5에 대한 외국인 접근을 제한했으며, 상무장관은 Anthropic이 '보안 위험을 능동적으로 감지하고 해결'하고 정부와 협력하기로 합의한 후 수출 허가 요구사항을 제거했다고 설명. 수출통제가 정확히 언제 처음 부과됐는지는 이 기사 자체에는 명시돼 있지 않고 '지난달'로만 표현(부과일은 Anthropic 자체 발표로 6/12 확인됨)."
+    },
+    {
+      "title": "Introducing GPT-5.6 series: Sol, Terra and Luna (OpenAI Developer Community 공지)",
+      "url": "https://community.openai.com/t/introducing-gpt-5-6-series-sol-terra-and-luna/1384931",
+      "host": "community.openai.com",
+      "tier": "official",
+      "kind": "primary",
+      "publishedAt": "2026-06-26",
+      "body": "OpenAI Developer Community 공지, 게시 2026-06-26 오후 5시42분. 'Coming July 9 10am PT'라며 2026-07-09 오전 10시(PT) 출시를 예고. 프리뷰 기간 동안은 'During the preview, GPT‑5.6 models will initially be available through the API and Codex to a select group of trusted partners and organizations'라고 명시 — 초기엔 API·Codex를 통해 일부 신뢰 파트너·조직에게만 제한 제공되고, 이후 ChatGPT·Codex·API 사용자에게 점진 확대(more broadly available) 예정이라고 밝힘. Sol/Terra/Luna 각 모델의 구체적 성능·가격 차이는 이 페이지 본문에서는 확인되지 않음(공식 발표 페이지 openai.com/index/gpt-5-6/는 403으로 직접 확인 실패)."
+    },
+    {
+      "title": "GPT-5.6: Frontier intelligence that scales with your ambition",
+      "url": "https://openai.com/index/gpt-5-6/",
+      "host": "openai.com",
+      "tier": "official",
+      "kind": "primary",
+      "dateUnknown": true,
+      "body": "",
+      "unverified": true,
+      "note": "WebFetch 403 Forbidden. Sol(프런티어 추론)/Terra(GPT-5.5급 성능, 2배 저렴)/Luna(최속·최저가) 구분 설명은 WebSearch 요약에만 등장 — 본문 직접 확인 못함."
+    },
+    {
+      "title": "GPT-5.6 in ChatGPT (Help Center)",
+      "url": "https://help.openai.com/en/articles/20001325-a-preview-of-gpt-56-sol-terra-and-luna",
+      "host": "help.openai.com",
+      "tier": "official",
+      "kind": "primary",
+      "dateUnknown": true,
+      "body": "",
+      "unverified": true,
+      "note": "WebFetch 403 Forbidden — 원문 직접 확인 실패."
+    },
+    {
+      "title": "GPT-5.6 — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/GPT-5.6",
+      "host": "en.wikipedia.org",
+      "tier": "aggregator",
+      "kind": "primary",
+      "publishedAt": "2026-07-09",
+      "body": "인포박스 기준 'June 26, 2026; 34 days ago (2026-06-26) (limited preview)'와 'July 9, 2026; 21 days ago (2026-07-09) (public release)'가 명시돼 있음(조사일 2026-07-30 기준 34일 전·21일 전 계산과 정확히 일치). 본문 첫 문단은 'Due to government restrictions levied by the Donald Trump administration, GPT-5.6 was first released as a limited preview only on June 26, 2026'라고 설명 — 프리뷰가 늦어진 배경에 정부 규제가 있었다고 서술(Anthropic Fable 5/Mythos 5 수출통제와 같은 시기의 별개 규제 이슈로 보임, 상세 미확인). 각주로 Axios(2026-07-09), Reuters(2026-06-27), TechCrunch(2026-06-26) 기사를 인용."
+    },
+    {
+      "title": "Introducing Grok 4.5",
+      "url": "https://x.ai/news/grok-4-5",
+      "host": "x.ai",
+      "tier": "official",
+      "kind": "primary",
+      "dateUnknown": true,
+      "body": "",
+      "unverified": true,
+      "note": "WebFetch 403 Forbidden — xAI 공식 발표 원문 직접 확인 실패."
+    },
+    {
+      "title": "Scoop: Musk's SpaceXAI releases new model, Grok 4.5",
+      "url": "https://www.axios.com/2026/07/08/spacexai-grok-new-model",
+      "host": "axios.com",
+      "tier": "press",
+      "kind": "primary",
+      "publishedAt": "2026-07-08",
+      "body": "",
+      "unverified": true,
+      "note": "WebFetch 403 Forbidden — 본문 직접 확인 실패. 다만 Axios는 URL 슬러그에 발행일을 담는 관례가 있어 '2026/07/08'이 게시일일 가능성이 높음(정황 증거일 뿐 본문 확인은 아님)."
+    },
+    {
+      "title": "xAI releases Grok 4.5: coding-focused model with 500K context",
+      "url": "https://datanorth.ai/news/xai-releases-grok-4-5-coding-focused-model",
+      "host": "datanorth.ai",
+      "tier": "blog",
+      "kind": "primary",
+      "publishedAt": "2026-07-13",
+      "body": "이 기사 자체 발행일은 2026-07-13. 가격은 입력 $2/출력 $6(백만 토큰), 컨텍스트 윈도우 '500,000-token'. 벤치마크로 DeepSWE 1.0 62.0%, Terminal Bench 2.1 83.3%, SWE Bench Pro 64.7%를 제시. 처리 속도는 'served at 80 tokens per second'. 토큰 효율성 관련 'resolves an average SWE Bench Pro task using 15,954 output tokens'로 Opus 4.8보다 약 4.2배 효율적이라고 설명. 다만 이 기사에서 Grok 4.5의 정확한 '출시일'(7/8로 다수 매체가 표기) 자체를 직접 인용하는 문장은 확인하지 못함 — xAI 공식 페이지는 403으로 직접 fetch 실패."
+    },
+    {
+      "title": "GLM-5.2: Built for Long-Horizon Tasks",
+      "url": "https://z.ai/blog/glm-5.2",
+      "host": "z.ai",
+      "tier": "official",
+      "kind": "primary",
+      "dateUnknown": true,
+      "body": "",
+      "unverified": true,
+      "note": "WebFetch는 200으로 응답했으나 본문이 비어 있음(JS 렌더링 페이지로 추정) — 실질적으로 원문 확인 실패."
+    },
+    {
+      "title": "GLM-5.2 is probably the most powerful text-only open weights LLM",
+      "url": "https://simonwillison.net/2026/Jun/17/glm-52/",
+      "host": "simonwillison.net",
+      "tier": "blog",
+      "kind": "primary",
+      "publishedAt": "2026-06-17",
+      "body": "발행 2026-06-17. 파라미터 '753B parameter'(활성 파라미터 약 40B, Mixture of Experts), 1.51TB 가중치 규모. 컨텍스트 윈도우는 GLM-5.1의 20만 토큰에서 '1 million token context window'로 확대. 라이선스는 MIT, 공개일은 2026년 6월16일. 벤치마크: Artificial Analysis Intelligence Index v4.1에서 오픈웨이트 모델 중 1위(51점), Code Arena WebDev 리더보드에서는 'ranked 2nd on the Code Arena WebDev leaderboard, behind only Claude Fable 5'. OpenRouter 기준 가격은 대부분 프로바이더가 입력 $1.40/출력 $4.40(백만 토큰). 토큰 소비량이 많아 'the model uses 43k output tokens per Intelligence Index task'라는 지적도 포함."
+    },
+    {
+      "title": "Zhipu AI releases harness for GLM-5.2 model as Chinese firm takes aim at Anthropic",
+      "url": "https://www.scmp.com/tech/tech-trends/article/3359170/zhipu-ai-releases-harness-glm-52-model-chinese-firm-takes-aim-anthropic",
+      "host": "scmp.com",
+      "tier": "press",
+      "kind": "primary",
+      "publishedAt": "2026-07-02",
+      "body": "발행 2026-07-02 오후 6시. 기사에는 GLM-5.2의 구체적 발표 날짜·벤치마크 수치·가격은 명시돼 있지 않고, 대신 '지난달 강력한 GLM-5.2 모델 출시 이후'(2026년 6월경)라는 시점 표현과, 실리콘밸리 일각에서 이를 '또 다른 딥시크 모멘트'로 부르고 있다는 정성적 평가만 확인됨. 기사 제목 자체가 'Zhipu AI releases harness for GLM-5.2 model as Chinese firm takes aim at Anthropic'로, 벤치마크보다는 업계 경쟁 구도 서술에 초점. 기사 부제는 Zhipu AI가 GLM-5.2용 코딩 하네스(harness)를 새로 공개했다는 내용으로, 이는 모델 자체가 아니라 그 위에서 도는 에이전트형 코딩 툴(zcode.z.ai류)을 가리킴 — 즉 이 기사의 핵심은 모델 재발표가 아니라 툴링 확장."
+    },
+    {
+      "title": "DeepSeek-V4 Preview Release 등 공식 뉴스 목록",
+      "url": "https://api-docs.deepseek.com/news/news260424/",
+      "host": "api-docs.deepseek.com",
+      "tier": "official",
+      "kind": "primary",
+      "publishedAt": "2026-04-24",
+      "body": "DeepSeek 공식 API 문서의 뉴스 목록 페이지. 최신 항목은 'DeepSeek-V4 Preview Release'(2026/04/24)이며, 이전 항목은 DeepSeek-V3.2 Release(2025/12/01), DeepSeek-V3.2-Exp Release(2025/09/29), DeepSeek V3.1 Update(2025/09/22), DeepSeek V3.1 Release(2025/08/21) 순. V4 프리뷰는 V4-Pro(활성 49B, 최상위 폐쇄형 모델과 경쟁 수준)와 V4-Flash(활성 13B, 빠르고 경제적) 두 모델. 페이지 내 'deepseek-chat & deepseek-reasoner will be fully retired and inaccessible after Jul 24th, 2026, 15:59 (UTC Time)' 문구는 확인되나, 이는 레거시 별칭 단종 일정이지 V4 정식판(GA) 출시 공지가 아님 — 조사 시점(2026-07-30) 기준 이 공식 문서에는 V4 GA 발표가 없음."
+    },
+    {
+      "title": "DeepSeek to launch V4 in mid-July with new peak-time API pricing",
+      "url": "https://technode.com/2026/06/30/deepseek-to-launch-v4-in-mid-july-with-new-peak-time-api-pricing/",
+      "host": "technode.com",
+      "tier": "press",
+      "kind": "primary",
+      "publishedAt": "2026-06-30",
+      "body": "발행 2026-06-30. 'the official release of DeepSeek V4 is scheduled for mid-July'라며 7월 중순 정식 출시를 예고. 가격 정책은 'peak and off-peak API pricing. Peak hours will run from 9:00 a.m. to 12:00 p.m. and 2:00 p.m. to 6:00 p.m. each day, during which API usage will be charged at twice the off-peak rate' — 매일 오전 9~12시, 오후 2~6시를 피크시간대로 지정해 비피크 대비 2배 요금을 부과한다는 내용. 이 기사 자체는 '예정'을 보도한 것으로, 실제 정식 출시가 이뤄졌는지는 이 기사만으로는 확인되지 않음."
+    },
+    {
+      "title": "QwenLM/Qwen3.6 — GitHub README",
+      "url": "https://github.com/QwenLM/Qwen3.6",
+      "host": "github.com",
+      "tier": "official",
+      "kind": "primary",
+      "publishedAt": "2026-04-22",
+      "body": "공식 GitHub 저장소 README 기준. '2026-04-16: Qwen3.6-35B-A3B is now availabe on Hugging Face Hub and ModelScope', '2026-04-22: Qwen3.6-27B is now availabe on Hugging Face Hub and ModelScope'가 README에 명시된 가장 최근 소식. 즉 Qwen3.6 라인업의 공식 출시는 2026년 4월이며, 조사 시점(2026-07-30) 기준 README에 7월 관련 업데이트는 없음 — 'Qwen 3.6이 7월 프런티어 물결의 일부'라는 전제는 이 공식 저장소로 확인되지 않음(오히려 4월 릴리스임)."
+    },
+    {
+      "title": "Accelerating scientific discovery with ChatGPT for Academic Researchers",
+      "url": "https://openai.com/index/chatgpt-for-academic-researchers/",
+      "host": "openai.com",
+      "tier": "official",
+      "kind": "primary",
+      "dateUnknown": true,
+      "body": "",
+      "unverified": true,
+      "note": "WebFetch 403 Forbidden — 공식 발표 원문 직접 확인 실패. 아래 SiliconANGLE 기사로 핵심 수치를 교차확인."
+    },
+    {
+      "title": "OpenAI opens new ChatGPT for Academic Researchers program to 100,000 scientists",
+      "url": "https://siliconangle.com/2026/07/29/openai-opens-new-chatgpt-academic-researchers-program-100000-scientists/",
+      "host": "siliconangle.com",
+      "tier": "press",
+      "kind": "primary",
+      "publishedAt": "2026-07-29",
+      "body": "발행 2026-07-29. 예산 규모는 '$250 million OpenAI initiative designed to support scientific projects'의 일부. 연구자 수는 초기 'Initially, the program will be open to 10,000 users at a limited number of universities'이며 이후 'OpenAI plans to onboard 90,000 more researchers over time'로 총 10만 명 목표. 프로그램에 초대된 연구자는 같은 학술기관 동료 4명을 추가로 추천할 수 있고, 이들도 무료로 동일 기능에 접근 가능. 참여 기관 예시로 Institute for Advanced Study, 프랑스 École normale supérieure가 거론되며, 확대는 2027년까지 이어질 예정."
+    },
+    {
+      "title": "CSA Research Note: MCP Security Crisis — Systemic Design Flaws in AI Agent Infrastructure",
+      "url": "https://labs.cloudsecurityalliance.org/research/csa-research-note-mcp-security-crisis-20260504-csa-styled/",
+      "host": "labs.cloudsecurityalliance.org",
+      "tier": "official",
+      "kind": "primary",
+      "publishedAt": "2026-05-04",
+      "body": "발행 2026-05-04(Cloud Security Alliance 리서치 노트 — 2026-07 이슈는 아니고 배경 자료). 'The MCP STDIO transport executes operating system commands without sanitization or validation, enabling remote code execution on any vulnerable host'라며 구조적 설계 결함을 지적. 영향 범위는 '200,000 vulnerable instances across a supply chain encompassing more than 150 million package downloads'. 개별 제품의 코딩 실수가 아니라 모든 공식 MCP SDK에 내재된 기본 설계이며, 하위 프로젝트들이 참조 구현을 신뢰해 그대로 전파됐다고 설명. Anthropic이 프로토콜 아키텍처 자체 수정은 거부하고 개별 개발자에게 해결 책임을 넘긴 상태라고 언급."
+    },
+    {
+      "title": "How we're making GitHub Copilot smarter with fewer tools",
+      "url": "https://github.blog/ai-and-ml/github-copilot/how-were-making-github-copilot-smarter-with-fewer-tools/",
+      "host": "github.blog",
+      "tier": "official",
+      "kind": "primary",
+      "publishedAt": "2025-11-19",
+      "body": "발행 2025-11-19(2026-07 이슈는 아니고 배경 자료 — GN 31946의 'MCP 도구 남용' 문제와 같은 계열이라 보강용으로 포함). GitHub Copilot의 기본 내장 도구를 'trims the default 40 built-in tools down to 13 core ones'로 줄임. 임베딩 기반 도구 라우팅과 적응형 도구 클러스터링 두 시스템을 새로 구축. 효과는 SWE-Lancer·SWEbench-Verified 등 벤치마크(GPT-5, Sonnet 4.5 사용)에서 'these changes improve success rates by 2-5 percentage points', 온라인 A/B 테스트에서는 'it reduces response latency by an average of 400 milliseconds'(TTFT 기준도 평균 400ms 감소). 도구가 적을수록 모델이 도구 선택에 쓰는 시간이 줄고 실제 작업에 쓰는 시간이 늘어난다는 것이 핵심 통찰 — 능력 추가가 아니라 제거에서 개선이 나왔다고 설명."
+    }
+  ],
+  "facts": [
+    {
+      "claim": "Anthropic이 2026-07-24 Claude Opus 5를 출시. 가격은 입력 $5/출력 $25(백만 토큰), Claude Max 신규 기본모델·Claude Pro 최상위 모델로 지정.",
+      "sourceUrl": "https://www.anthropic.com/news/claude-opus-5",
+      "confidence": "confirmed"
+    },
+    {
+      "claim": "Claude Opus 5는 Frontier-Bench v0.1·GDPval-AA v2에서 최고 성능, ARC-AGI-3 점수는 차순위 모델의 3배, OSWorld 2.0에서는 Fable 5 최고 기록을 약 1/3 비용으로 넘어섬. 다만 Opus 5는 'Fable 5보다 저렴한 대안'으로 소개돼, 신규 최상위 모델이 아니라 기존 최상위 Fable 5 아래 티어임.",
+      "sourceUrl": "https://www.anthropic.com/news/claude-opus-5",
+      "confidence": "confirmed"
+    },
+    {
+      "claim": "Anthropic이 2026-06-09 Claude Fable 5·Claude Mythos 5를 출시. 가격은 입력 $10/출력 $50(백만 토큰), Mythos 5는 Glasswing 파트너 한정 배포.",
+      "sourceUrl": "https://www.anthropic.com/news/claude-fable-5-mythos-5",
+      "confidence": "confirmed"
+    },
+    {
+      "claim": "미 상무부가 2026-06-12(금) Claude Fable 5·Mythos 5에 수출통제를 부과했고, Anthropic 발표 기준 2026-06-30 해제, 2026-07-01부터 전 세계 재배포.",
+      "sourceUrl": "https://www.anthropic.com/news/redeploying-fable-5",
+      "confidence": "confirmed"
+    },
+    {
+      "claim": "상무장관 Howard Lutnick은 Anthropic이 보안 위험을 능동적으로 감지·해결하고 정부와 협력하기로 합의한 후 Fable 5·Mythos 5 수출 허가 요구를 해제했다고 설명.",
+      "sourceUrl": "https://www.aljazeera.com/economy/2026/7/1/us-lifts-restrictions-on-powerful-ai-models-fable-mythos-anthropic-says",
+      "confidence": "confirmed"
+    },
+    {
+      "claim": "OpenAI가 GPT-5.6 계열(Sol/Terra/Luna)을 2026-06-26 제한적 프리뷰로 발표(API·Codex, 일부 파트너 한정), 2026-07-09 오전 10시(PT) 확대 롤아웃 시작 — Wikipedia 인포박스도 프리뷰 6/26·공개 7/9로 동일하게 기재.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/GPT-5.6",
+      "confidence": "confirmed"
+    },
+    {
+      "claim": "z.ai(Zhipu AI)가 GLM-5.2를 2026-06-13 코딩플랜 구독자 대상 우선 공개, 2026-06-16 MIT 라이선스 오픈웨이트로 공개. 파라미터는 753B(활성 약 40B, MoE), 컨텍스트는 최대 100만 토큰(GLM-5.1의 20만에서 확대).",
+      "sourceUrl": "https://simonwillison.net/2026/Jun/17/glm-52/",
+      "confidence": "confirmed"
+    },
+    {
+      "claim": "GLM-5.2는 Artificial Analysis Intelligence Index v4.1에서 오픈웨이트 모델 중 1위(51점), Code Arena WebDev 리더보드에서는 Claude Fable 5에 이어 2위.",
+      "sourceUrl": "https://simonwillison.net/2026/Jun/17/glm-52/",
+      "confidence": "confirmed"
+    },
+    {
+      "claim": "DeepSeek는 2026-04-24 V4-Pro(활성 49B)·V4-Flash(활성 13B) 프리뷰를 공식 출시. deepseek-chat·deepseek-reasoner 레거시 별칭은 2026-07-24 15:59(UTC) 이후 완전 폐지.",
+      "sourceUrl": "https://api-docs.deepseek.com/news/news260424/",
+      "confidence": "confirmed"
+    },
+    {
+      "claim": "TechNode(2026-06-30)에 따르면 DeepSeek는 V4 정식판(GA)을 '7월 중순' 출시 목표로 예고했고, 처음으로 피크시간대(오전 9~12시·오후 2~6시) 요금을 비피크의 2배로 매기는 정책을 예고. 단, 실제 GA가 이뤄졌는지는 확인 못함(공식 문서에 아직 반영 안 됨).",
+      "sourceUrl": "https://technode.com/2026/06/30/deepseek-to-launch-v4-in-mid-july-with-new-peak-time-api-pricing/",
+      "confidence": "confirmed"
+    },
+    {
+      "claim": "Alibaba Qwen 팀의 공식 GitHub(QwenLM/Qwen3.6)에 따르면 Qwen3.6-35B-A3B는 2026-04-16, Qwen3.6-27B는 2026-04-22에 Hugging Face·ModelScope에 공개 — 7월이 아니라 4월 릴리스.",
+      "sourceUrl": "https://github.com/QwenLM/Qwen3.6",
+      "confidence": "confirmed"
+    },
+    {
+      "claim": "OpenAI가 2026-07-29 'ChatGPT for Academic Researchers' 프로그램을 발표. 2억5000만 달러 규모 이니셔티브의 일부로, 초기 1만 명(일부 대학) → 향후 9만 명 추가로 총 10만 명까지 확대 계획(완전 확대는 2027년까지).",
+      "sourceUrl": "https://siliconangle.com/2026/07/29/openai-opens-new-chatgpt-academic-researchers-program-100000-scientists/",
+      "confidence": "confirmed"
+    },
+    {
+      "claim": "GeekNews에 2026-07-30 소개된 TurboFieldfare는 Apple Silicon Mac에서 Gemma 4 26B(설치 용량 14.3GB)를 약 2GB 메모리로 구동하는 오픈소스(Apache 2.0) 엔진. 8GB M2 MacBook Air에서 5.1~6.3 tok/s, 24GB M5 Pro에서 31~35 tok/s.",
+      "sourceUrl": "https://github.com/drumih/turbo-fieldfare",
+      "confidence": "confirmed"
+    },
+    {
+      "claim": "Fermisense는 177,767개 검수 에피소드로 만든 디지털 트윈에서 Qwen3.5-9B를 약 500달러(임대 RTX PRO 6000 GPU 2대, GRPO 1,000스텝·약 3.5일)로 미세조정해 87.3% 대 76.9%(10.4점 차)로 프런티어 모델(GPT-5.5·GPT-5.6 Sol·Gemini 3.1 Pro·Claude Opus 4.8·Claude Fable 5)을 능가했다고 보고. 상품 1건당 비용은 최저가 프런티어 대비 40배, 최고성능 프런티어 대비 68배, 최고가 프런티어 대비 340배 저렴 — 단 독립 재현은 안 됨.",
+      "sourceUrl": "https://www.aipricing.guru/news/qwen3-5-9b-500-rl-fine-tune-frontier-models/",
+      "confidence": "confirmed"
+    },
+    {
+      "claim": "Bun 팀은 535,496줄(1,448개 파일)의 Zig 코드를 64개 Claude 에이전트로 병렬 실행해 11일 만에 Rust로 재작성. API 비용은 약 16만5천 달러, 600줄 분량의 PORTING.md 지침과 두 차례의 적대적 코드 리뷰가 핵심이었다고 2026-07-16 The Pragmatic Engineer가 보도.",
+      "sourceUrl": "https://blog.pragmaticengineer.com/the-pulse-what-can-we-learn-from-buns-rapid-rust-rewrite-with-ai/",
+      "confidence": "confirmed"
+    },
+    {
+      "claim": "Ethan Mollick은 2026-07-23 글에서 '지금 AI를 제대로 쓰려는 사람 대부분에게 선택지는 사실상 ChatGPT 아니면 Claude 둘뿐'이라며, 월 20달러를 내고 에이전트에게 실제 업무 하나를 맡겨보라고 권장.",
+      "sourceUrl": "https://www.oneusefulthing.org/p/an-opinionated-guide-to-which-ai-b22",
+      "confidence": "confirmed"
+    },
+    {
+      "claim": "게임 개발자 송재경은 2026-07-29 인벤 인터뷰에서 'AI 특이점은 뭔가에 진입한 것 같다. 우리는 잘 모르고 있지만'이라 말하며, 인간과 AI 에이전트가 같은 프로토콜로 접속하는 실험적 MMORPG 'Open MMO'를 공개했다고 밝힘.",
+      "sourceUrl": "https://www.inven.co.kr/webzine/news/?news=318963",
+      "confidence": "confirmed"
+    },
+    {
+      "claim": "Cloud Security Alliance는 2026-05-04 리서치 노트에서 MCP STDIO 트랜스포트가 운영체제 명령을 살균 없이 실행하는 구조적 결함이 모든 공식 MCP SDK에 내재돼 있다며, 15만 건 이상의 패키지 다운로드에 걸쳐 20만 개의 취약 인스턴스가 존재한다고 추정.",
+      "sourceUrl": "https://labs.cloudsecurityalliance.org/research/csa-research-note-mcp-security-crisis-20260504-csa-styled/",
+      "confidence": "confirmed"
+    },
+    {
+      "claim": "GitHub는 2025-11-19 자사 블로그에서 Copilot의 기본 내장 도구를 40개에서 13개로 줄인 결과 SWE-Lancer·SWEbench-Verified 등에서 성공률이 2~5%p 개선되고 응답 지연이 평균 400ms 줄었다고 밝힘(2026-07 이슈는 아닌 배경 자료).",
+      "sourceUrl": "https://github.blog/ai-and-ml/github-copilot/how-were-making-github-copilot-smarter-with-fewer-tools/",
+      "confidence": "confirmed"
+    },
+    {
+      "claim": "GeekNews 'Ask GN' 글(2026-07-29)에서 작성자가 **공개 벤치마크 트레이스** 6,780개를 측정해 중복 실행 8,042건, 그중 159건은 리소스 중복 생성 유형이라고 보고. 작성자는 \"이 숫자는 전부 벤치마크 트레이스입니다. 22개 모델이 태스크를 푸는 기록이지 실제 운영 서비스가 아닙니다\"라고 한계를 명시했고, 실제 운영에서의 양상을 커뮤니티에 질문한 글이다. 운영 통계·실서비스 사고 집계로 인용 금지.",
+      "sourceUrl": "https://news.hada.io/topic?id=31946",
+      "confidence": "confirmed",
+      "evidence": "measurement-with-stated-limits"
+    },
+    {
+      "claim": "SCMP(2026-07-02)는 실리콘밸리 일각에서 GLM-5.2 출시(전월, 즉 2026년 6월)를 '또 다른 딥시크 모멘트'로 부르고 있다고 보도.",
+      "sourceUrl": "https://www.scmp.com/tech/tech-trends/article/3359170/zhipu-ai-releases-harness-glm-52-model-chinese-firm-takes-aim-anthropic",
+      "confidence": "confirmed"
+    }
+  ],
+  "conflicts": [
+    {
+      "about": "Fermisense 9B 미세조정 모델의 추론 비용 절감 배수가 몇 배인가",
+      "a": "GeekNews 요약(news.hada.io/topic?id=31923): '상품 1,000개당 0.50달러로, 추론 비용이 가장 저렴한 프런티어 구성보다 40배 저렴'",
+      "b": "aipricing.guru(2026-07-28, 직접 fetch 확인): 가장 강력한 프런티어 대비 68배, 가장 저렴한 프런티어 대비 40배, 가장 비싼 프런티어 대비 340배 — 비교 기준(어떤 프런티어 모델과 비교했는지)에 따라 세 가지 배수가 다르게 제시됨. 서로 틀린 게 아니라 baseline 차이이므로, 글에 배수를 쓸 때는 반드시 '어느 프런티어 대비'인지 명시해야 함."
+    },
+    {
+      "about": "GLM-5.2가 코딩 리더보드에서 몇 위인가",
+      "a": "초기 WebSearch 요약(z.ai 자체 주장 재인용, 직접 fetch는 실패해 원문 미확인): 'GLM-5.2 ranks first among globally available models on Code Arena'",
+      "b": "simonwillison.net(2026-06-17, 직접 fetch 확인): 'Code Arena WebDev 리더보드에서 2위 — 1위는 Claude Fable 5뿐'. 'Code Arena'와 'Code Arena WebDev'가 다른 리더보드일 가능성이 있어 완전한 모순은 아닐 수 있으나, z.ai 원문을 직접 못 읽어 확인 불가."
+    }
+  ],
+  "unconfirmed": [
+    {
+      "claim": "Grok 4.5의 정확한 공식 출시일(다수 매체가 2026-07-08로 표기)",
+      "whyNot": "xAI 공식 페이지(x.ai/news/grok-4-5)가 WebFetch 403으로 차단됐고, Axios·CNBC 등 보도 기사도 전부 403으로 본문을 못 읽음. datanorth.ai(2026-07-13 발행) 등 2차 출처의 가격·벤치마크 수치는 확인했지만 '출시일 7/8' 자체를 명시한 본문은 직접 읽지 못함 — WebSearch 엔진의 자동 요약에만 등장."
+    },
+    {
+      "claim": "GPT-5.6 Sol/Terra/Luna 세 모델의 성능·가격 차이(Terra가 GPT-5.5급을 2배 저렴하게 제공한다는 식의 설명)",
+      "whyNot": "openai.com/index/gpt-5-6/, help.openai.com 문서 두 곳 모두 WebFetch 403으로 본문 확인 실패. community.openai.com 공지는 롤아웃 일정(6/26 프리뷰, 7/9 확대)만 확인됐고 3개 모델 간 차이는 확인 못함."
+    },
+    {
+      "claim": "DeepSeek V4 정식판(GA)이 실제로 출시됐는지, 됐다면 정확한 날짜",
+      "whyNot": "공식 문서(api-docs.deepseek.com/news)의 최신 항목이 여전히 2026-04-24 프리뷰이고 GA 공지가 없음. TechNode(2026-06-30)는 '7월 중순 예정'이라는 계획만 보도했고, 이후 실제 출시를 확인해줄 공식 발표를 찾지 못함(조사 시점 2026-07-30)."
+    },
+    {
+      "claim": "Cerebras 사내 지식베이스의 '하루 15,000건 이상 질문 처리' 수치의 1차 확인",
+      "whyNot": "원문이 X(트위터) 스레드(x.com/cerebras)라 WebFetch가 402(결제/로그인 요구)로 차단돼 못 읽음. GeekNews의 파라프레이즈 요약에만 의존."
+    },
+    {
+      "claim": "7월에 새로 나온 Qwen 모델이 있는지",
+      "whyNot": "공식 GitHub(QwenLM/Qwen3.6) 확인 결과 Qwen3.6은 2026년 4월 릴리스였음. 후속으로 보이는 Qwen3.7-Plus(추정 2026-06-02 발표, marktechpost.com 보도)는 WebFetch가 502 에러로 실패해 직접 확인 못함 — 결과적으로 '7월 출시 Qwen 신모델'은 찾지 못함."
+    },
+    {
+      "claim": "Fermisense 원문(fermisense.com/when-machines-take-the-wheel/)의 1차 확인",
+      "whyNot": "WebFetch 403 Forbidden. web.archive.org 프록시도 이 환경에서 접근 자체가 차단돼 우회 못함. 2차 출처(aipricing.guru) 하나로만 재구성됐다는 한계가 있음."
+    },
+    {
+      "claim": "미 상무부의 Fable 5·Mythos 5 수출통제 '해제' 정확 시각이 6/30인지 7/1인지",
+      "whyNot": "Anthropic 자체 발표는 '오늘(6/30) 해제, 내일(7/1)부터 재배포'라고 명시했고 Al Jazeera(7/1 발행)는 '화요일 늦은 시간 해제'라고 표현 — 사실상 같은 사건을 가리키는 것으로 보이나, 시간대(현지시각 vs UTC) 대조까지는 못했음."
+    },
+    {
+      "claim": "GN 31946(MCP 중복실행 6,780 트레이스/8,042건) 수치의 외부 교차검증",
+      "whyNot": "1차 소스가 GeekNews 커뮤니티 질문 글 자체(작성자 개인 운영 경험담)이고 외부 링크가 없어, 동일 수치를 다루는 논문·공식 리포트를 찾지 못함."
+    }
+  ],
+  "themes": [
+    {
+      "theme": "프런티어 모델 출시가 7월 전후로 몰렸다 — 그리고 서열이 한 층 더 복잡해졌다",
+      "evidence": [
+        "https://www.anthropic.com/news/claude-opus-5",
+        "https://www.anthropic.com/news/claude-fable-5-mythos-5",
+        "https://en.wikipedia.org/wiki/GPT-5.6",
+        "https://simonwillison.net/2026/Jun/17/glm-52/"
+      ],
+      "note": "Claude Opus 5(7/24)는 최상위 모델이 아니라 이미 존재하던 Fable 5(6/9)의 '저렴한 대안'으로 나왔다. GPT-5.6(프리뷰 6/26·공개 7/9), GLM-5.2(6/16)까지 겹치며 6~7월에 최소 4개 랩의 발표가 몰림. 단, Grok 4.5(7/8 추정)는 공식 1차 확인은 못함."
+    },
+    {
+      "theme": "정부 규제가 처음으로 프런티어 모델의 실제 배포를 막았다가 풀었다",
+      "evidence": [
+        "https://www.anthropic.com/news/redeploying-fable-5",
+        "https://www.aljazeera.com/economy/2026/7/1/us-lifts-restrictions-on-powerful-ai-models-fable-mythos-anthropic-says",
+        "https://en.wikipedia.org/wiki/GPT-5.6"
+      ],
+      "note": "미 상무부가 6/12 Fable 5·Mythos 5에 수출통제를 걸어 해외 접근을 막았다가 6/30 해제, 7/1 재배포. GPT-5.6도 Wikipedia 서술상 '정부 규제로 프리뷰가 지연됐다'는 문구가 있어(상세 미확인) 같은 시기 규제 압박이 업계 전반에 있었을 가능성."
+    },
+    {
+      "theme": "작지만 특화된 모델이 좁은 과제에서는 프런티어를 이긴다",
+      "evidence": [
+        "https://www.aipricing.guru/news/qwen3-5-9b-500-rl-fine-tune-frontier-models/",
+        "https://github.com/drumih/turbo-fieldfare"
+      ],
+      "note": "Fermisense는 500달러짜리 9B 미세조정으로 카탈로그 검수라는 좁은 과제에서 프런티어 5개 모델을 앞섰다고 주장(독립 재현 안 됨). TurboFieldfare는 26B 모델을 2GB RAM으로 돌려 하드웨어 제약을 우회. 둘 다 '크기보다 특화·효율'이라는 같은 결의 이야기."
+    },
+    {
+      "theme": "에이전트를 실무에 여러 개 굴리면 도구 남용·중복실행·보안 문제가 함께 터진다",
+      "evidence": [
+        "https://news.hada.io/topic?id=31946",
+        "https://labs.cloudsecurityalliance.org/research/csa-research-note-mcp-security-crisis-20260504-csa-styled/",
+        "https://blog.pragmaticengineer.com/the-pulse-what-can-we-learn-from-buns-rapid-rust-rewrite-with-ai/"
+      ],
+      "note": "GeekNews 이용자는 MCP 도구 중복실행을 직접 겪었다고 보고했고, CSA는 MCP SDK 자체의 구조적 보안 결함(20만 취약 인스턴스)을 지적했다(5월 자료, 배경용). 반대로 Bun의 11일 재작성은 64개 에이전트를 '엄격한 지침서+이중 코드리뷰'로 통제해 성공한 사례 — 에이전트를 많이 굴릴수록 통제 장치가 성패를 가른다는 대비."
+    }
+  ],
+  "notCovered": "인스타그램·스레드(Threads)·페이스북·링크드인은 ToS 위반 및 로그인벽으로 직접 스크래핑하지 않음. 해당 플랫폼에서 화제였더라도 뉴스·공식 블로그·GeekNews 등 공개된 읽히는 출처에 나온 것만 반영함.",
+  "internalLinkCandidates": [
+    "https://burning-go9me.tistory.com/288",
+    "https://burning-go9me.tistory.com/287",
+    "https://burning-go9me.tistory.com/285"
+  ]
+}

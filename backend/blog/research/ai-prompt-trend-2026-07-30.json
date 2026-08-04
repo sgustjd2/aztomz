@@ -1,0 +1,158 @@
+{
+  "searchedAt": "2026-07-30",
+  "windowStart": "2026-06-30",
+  "candidates": [
+    {
+      "theme": "인스타그램 신규 AI 효과 '키링(참)·페이퍼돌' 스타일을 챗GPT/제미나이 프롬프트로 재현하기",
+      "whyNow": "메타가 2026-07-07 자사 첫 이미지 생성 모델 'Muse Image'를 출시하며 인스타그램 스토리용 신규 AI 효과 30여 종을 함께 공개했다. 그중 'IG Charms'는 인스타그램 프로필을 개인화된 키링(열쇠고리)으로 바꿔주는 효과, 'Paper Doll'은 종이인형처럼 여러 룩을 갈아입혀보는 효과다. 단, 이 효과는 미국에서 우선 제공되고(Engadget·about.fb.com 확인) 한국 출시 여부는 확인되지 않아, '한국에서도 프롬프트로 비슷한 룩을 직접 만들어보자'는 각도가 성립한다.",
+      "volumeSignals": { "s1": false, "s2": false, "s3": true, "s4": true },
+      "signalsMet": 2,
+      "evidence": [
+        {
+          "title": "Introducing Muse Image: Image Generation Built for Your World",
+          "url": "https://about.fb.com/news/2026/07/introducing-muse-image-meta-ai/",
+          "host": "about.fb.com",
+          "publishedAt": "2026-07-07",
+          "fetched": true,
+          "whatItShows": "메타 공식 발표. 'Muse Image는 Meta Superintelligence Labs의 첫 이미지 생성 모델', 인스타그램 스토리에 신규 AI 효과 30개 이상 탑재, 미국에서 우선 제공 후 확대 예정. 2026-07-07 11:05am PT 게시, 2026-07-10 업데이트(아래 논란 반영)."
+        },
+        {
+          "title": "Nuevos efectos en Stories de Meta AI",
+          "url": "https://about.fb.com/ltam/news/2026/07/nuevos-efectos-en-stories-de-meta-ai/",
+          "host": "about.fb.com",
+          "publishedAt": "2026-07-07",
+          "fetched": true,
+          "whatItShows": "효과 이름을 구체적으로 명명: Night Flash·Disposable(조명 보정), Puffer·Paper Doll('새로운 룩을 시도'), IG Charms('인스타그램 프로필을 개인화된 열쇠고리로 변환'). Paper Doll·IG Charms 두 효과가 이번 테마의 핵심 근거."
+        },
+        {
+          "title": "Meta Superintelligence 관련 인스타그램 스토리 AI 효과 기사",
+          "url": "https://www.socialsamosa.com/news-2/meta-superintelligence-ai-effects-instagram-stories-12144503",
+          "host": "socialsamosa.com",
+          "publishedAt": "2026-07-08",
+          "fetched": true,
+          "whatItShows": "위 5개 효과명(Night Flash·Disposable·Puffer·Paper Doll·IG Charms)을 동일하게 재확인. 5명의 인스타그램 크리에이터와 협업해 만든 효과라는 설명 추가."
+        },
+        {
+          "title": "메타, 이미지 생성 모델 '뮤즈 이미지' 출시...'뮤즈 비디오' 프리뷰도 공개",
+          "url": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=682211",
+          "host": "digitaltoday.co.kr",
+          "publishedAt": "2026-07-08",
+          "fetched": true,
+          "whatItShows": "한국 매체가 출시 당일(현지시간 2026-07-07) 소식을 입력일 2026-07-08 05:41로 보도. '초기에는 일부 국가에서만 제공'이라고 명시 — 한국이 1차 대상국인지는 이 기사만으로 불확실."
+        },
+        {
+          "title": "Meta's new Muse Image model accepts Instagram accounts as a prompt",
+          "url": "https://www.engadget.com/2210087/meta-s-new-muse-image-model-accepts-instagram-accounts-as-a-prompt/",
+          "host": "engadget.com",
+          "publishedAt": null,
+          "dateUnknown": true,
+          "fetched": true,
+          "whatItShows": "'Muse Image is available in the Meta AI app, Instagram and WhatsApp in the US to start, with more countries...to come.' — 미국 우선 제공을 영어 매체가 명시적으로 확인. Puffer·디스포저블 카메라 효과도 재확인."
+        },
+        {
+          "title": "Meta just launched a new AI generator, Muse Image, and users are already pushing back over use of their photos",
+          "url": "https://techcrunch.com/2026/07/07/meta-rolls-out-muse-a-new-ai-image-generator/",
+          "host": "techcrunch.com",
+          "publishedAt": "2026-07-07",
+          "fetched": true,
+          "whatItShows": "출시일(2026-07-07 3:18pm PDT) 및 공개 계정 @멘션으로 타인 얼굴을 합성할 수 있었던 기능이 논란 끝에 2026-07-10 철회됐다는 사실 확인. 스토리 효과 자체는 유지됨."
+        },
+        {
+          "title": "메타 뮤즈 이미지, 인스타 태그로 지인 얼굴도 AI 합성",
+          "url": "https://www.wikitree.co.kr/articles/1145284",
+          "host": "wikitree.co.kr",
+          "publishedAt": null,
+          "dateUnknown": true,
+          "fetched": false,
+          "whatItShows": "검색 결과로만 확인(직접 열람 안 함). 위 TechCrunch 기사와 같은 논란(공개 계정 얼굴 무단 합성)을 국내 매체도 다뤘다는 정황."
+        }
+      ],
+      "variationIdeas": [
+        "데일리 프로필용 미니 키링",
+        "여행 기념 키링(여행지 랜드마크 배경)",
+        "최애 팬덤 응원 키링(포토카드st일)",
+        "생일 기념 키링",
+        "여름 바캉스 키링(수영복·선글라스)",
+        "우정/커플 세트 키링"
+      ],
+      "risks": "① 인스타그램 자체 효과(IG Charms/Paper Doll)는 미국 등 일부 국가 한정 확인 — 우리 프롬프트가 그 결과와 '똑같다'고 단정하면 카테고리 banned 규칙(결과 확정 단정 금지) 위반이므로 '비슷한 룩을 재현' 정도로만 서술해야 함. ② 같은 발표에 포함된 Disposable/Night Flash 효과는 이미 우리 사이트가 다룬 'Y2K 플래시 디지캠' 테마와 사실상 동일 미학이므로 이번 글에서는 언급을 피하고 Charms·Paper Doll에만 집중해야 avoidOverlap 위반을 피함. ③ 출시 3주밖에 안 돼 일반 사용자 게시물 볼륨을 직접 확인하지 못함(s1·s2 미충족) — '이미 다들 하고 있다'는 과장된 어투는 피해야 함. ④ Instagram·Meta AI라는 실제 서비스명·기능명을 사실관계로 언급할 때 출처를 분명히 할 것."
+    },
+    {
+      "theme": "평범한 사진을 '가짜 생중계 속보' 한 장면으로 합성하는 원클릭 AI 템플릿 밈",
+      "whyNow": "2026-07-01 러시아 국적 루프탑퍼 커플이 엠파이어스테이트 빌딩을 무단 등반해 꼭대기에서 프러포즈 배너를 펼친 실제 사건(CNN·ABC·CBS·PBS 보도, 이후 체포)이 발생했고, 이를 패러디해 '나도 저런 뉴스 속보 주인공처럼' AI로 합성하는 포맷이 번졌다. TikTok 주간 트렌드 리포트(2026-07-18~25)는 이 '가짜 뉴스 속보' AI 템플릿이 570만 조회, 파생형인 '네온 아웃라인 변환'이 130만 조회를 기록했다고 전한다.",
+      "volumeSignals": { "s1": true, "s2": true, "s3": true, "s4": true },
+      "signalsMet": 4,
+      "evidence": [
+        {
+          "title": "What Is Trending on TikTok — July 2026 Weekly Report",
+          "url": "https://lightreel.ai/blogs/whats-trending-on-tiktok",
+          "host": "lightreel.ai",
+          "publishedAt": "2026-07-25",
+          "fetched": true,
+          "whatItShows": "'One-click AI templates become pranks and action scenes' 항목. 일반 사진을 영화 액션·스타디움 세리머니·애니메이션 윤곽선·가짜 TV뉴스 속보로 바꾸는 방식이 확산 중이라며, 가짜 뉴스 방송 버전 570만 조회·네온 아웃라인 버전 130만 조회를 명시. 2026-07-18~25 주간 기준."
+        },
+        {
+          "title": "How to Make a Breaking News AI Video (Empire State Climb Trend, 2026)",
+          "url": "https://www.getstarrd.app/blog/how-to-make-a-breaking-news-ai-video",
+          "host": "getstarrd.app",
+          "publishedAt": "2026-07-01",
+          "fetched": true,
+          "whatItShows": "'Empire State Climb Trend'라는 이름으로, 실제 등반·프러포즈 사건 이후 창작자들이 즉각 유사한 배너 문구로 가짜 생중계 속보 영상을 만들기 시작했다고 설명. 1~2장의 사진으로 뉴스 헬리콥터 시점의 가짜 속보를 만드는 방식이라고 구체적으로 서술."
+        },
+        {
+          "title": "How the Empire State Building climbers pulled off their death-defying stunt",
+          "url": "https://www.cnn.com/2026/07/03/us/empire-state-building-climbers-stunt",
+          "host": "cnn.com",
+          "publishedAt": "2026-07-03",
+          "fetched": false,
+          "whatItShows": "검색 결과로만 확인. 2026-07-01 엠파이어스테이트 빌딩 무단 등반·프러포즈·체포 사건 실재를 확인(ABC·CBS·PBS도 동일 사건 보도) — 위 AI 밈의 실제 발단이 된 뉴스 사건임을 뒷받침."
+        }
+      ],
+      "variationIdeas": [
+        "프러포즈 깜짝 속보(실존 인물 언급 없이 '커플 프러포즈' 상황만 차용)",
+        "생일 서프라이즈 속보",
+        "합격·취업 발표 속보",
+        "이사·독립 기념 속보",
+        "다이어트·운동 목표 달성 속보",
+        "친구 몰래카메라(장난) 속보"
+      ],
+      "risks": "① 원본 밈이 실제 체포된 실존 인물(등반 커플)의 사건에서 파생됨 — 프롬프트 예시에 그 인물이나 사건을 직접 지목하면 카테고리 banned 규칙(실존 인물 등장 금지) 위반이므로 '가짜 속보 포맷'만 차용하고 인물은 언급하지 않아야 함. ② '가짜 뉴스' 포맷 자체가 허위정보로 오인될 소지가 있어, 조사한 자료들도 공통으로 'AI 합성임을 명시하라'고 강조함 — 프롬프트에 워터마크/문구 안내를 넣는 게 안전. ③ 570만·130만 조회 수치의 출처가 lightreel.ai 블로그 1곳뿐이라 교차검증이 약함(공식·데이터 소스 부재). ④ 이 테마는 '예쁜 SNS 프로필 사진'보다 '장난/밈' 성격이 강해 이 카테고리의 readerProfile(프로필용 사진을 예쁘게 만들고 싶은 사람)과는 결이 다소 다름."
+    }
+  ],
+  "rejected": [
+    {
+      "theme": "지브리풍 이미지 변환",
+      "why": "작업 지시에 이미 '명백히 한물감'으로 제외 명시."
+    },
+    {
+      "theme": "AI 액션피규어·치비 아바타(피규어 챌린지, 나를 박스 피규어로)",
+      "why": "볼륨 자체는 매우 크지만(2026-03 기준 TikTok 890K+ 영상 — techradar/artificialintelligence-news) 기원이 2025년으로 오래됐고, 2026-06~07 구간에 새로 올라온 게시물 수나 재점화 계기를 구체적으로 확인하지 못함. '기원은 오래됐지만 아직 명맥은 있다'에 해당할 위험이 커서 이번 30일 기준으로는 근거 부족 판단. 이미 전 세계적으로 극도로 포화된 소재라 차별화도 어려움."
+    },
+    {
+      "theme": "Instagram 'Disposable/Night Flash' 필터(2026-05 출시, 저해상도 플래시 디지캠 룩)",
+      "why": "우리 사이트가 이미 발행한 'Y2K 플래시 디지캠' 프롬프트 팩(backend/out/blog/y2k-flash-digicam-prompt.json)과 미학이 사실상 동일 — avoidOverlap 위반."
+    },
+    {
+      "theme": "'2026 is the new 2016' 노스탤지어 챌린지",
+      "why": "위키피디아 문서(최종 수정 2026-07-09) 확인 결과 실제 2016년 옛날 사진·영상을 공유하는 밈이며 AI 이미지 생성과 직접 관련이 없음 — 카테고리 취지(프롬프트로 새 이미지를 만든다)에 부합하지 않음."
+    },
+    {
+      "theme": "Roast Me AI 캐리커처(사진 업로드하면 AI가 놀리는 코멘트)",
+      "why": "이미지 생성보다는 기존 사진에 대한 텍스트 평가(조롱) 위주라 '이미지 생성 프롬프트 팩' 형식과 맞지 않고, 외모를 부정적으로 묘사하는 예시를 만들어야 해서 톤 정책과도 상충."
+    },
+    {
+      "theme": "Future Baby Generator(커플 사진으로 미래 아기 얼굴 예측)",
+      "why": "실존할 수 있는 특정 인물(태어날 아이)의 얼굴을 예측 생성한다는 점이 민감하고, 이미 제외된 '육아' 테마와 인접해 겹침 우려."
+    },
+    {
+      "theme": "'You vs You' 대결 컨셉(너 vs 너 AI 영상)",
+      "why": "정지 이미지 한 장이 아니라 AI 영상(모션) 템플릿이 핵심이라 이 카테고리의 '이미지 생성 프롬프트' 포맷과 맞지 않음."
+    },
+    {
+      "theme": "가짜 영화 포스터 / 스크랩북 콜라주 / 시간여행 컨셉",
+      "why": "eWeek 기사(발행 2026-05-19)에서만 확인됨 — 오늘(2026-07-30) 기준 발행일이 72일 전이라 '최근 30일' 기준을 충족하지 못함. 더 최신 근거를 찾았으나(위 검색 다수) 구체적 날짜·수치가 있는 후속 보도를 찾지 못해 탈락."
+    }
+  ],
+  "notCovered": "인스타그램·틱톡·페이스북·스레드 앱/페이지를 직접 열람(스크래핑)하지 않았다 — 메타 공식 뉴스룸(about.fb.com, 기업 1차 발표)과 그 발표를 다룬 언론(TechCrunch·Engadget·소셜사모사·디지털투데이 등), 트렌드 리포트 블로그(lightreel.ai)만 WebFetch로 읽어 확인했다.",
+  "fallbackNeeded": false
+}
