@@ -10795,6 +10795,180 @@ window.HANGEUT_DATA = {
           "url": "https://m.blog.naver.com/ciabattam/223460492194"
         }
       ]
+    },
+    {
+      "id": "smishing-ai",
+      "type": "트렌드",
+      "cat": "신조어",
+      "coverCat": "cat-slang",
+      "collectedAt": "2026-08-06",
+      "analyzedAt": "2026-08-06",
+      "buzz": "화제성 중간",
+      "stage": "상승",
+      "stageMsg": "기술 발전에 따라 확산 중",
+      "label": "알아두면 안전",
+      "labelCls": "good",
+      "title": "스마이징 (Smishing + AI)",
+      "def": "인공지능 기술을 이용한 신종 문자 사기 수법",
+      "excerpt": "AI가 개인화된 메시지를 대량 생성해 보내는 신종 문자 사기. 단순 링크 클릭 유도를 넘어, 진짜 같은 말투와 맥락으로 진화해 각별한 주의가 필요해요.",
+      "pull": "AI가 쓴 문자, 이젠 사기까지 넘본다.",
+      "verdict": "‘스미싱(Smishing)’과 ‘AI’의 합성어. 인공지능이 개인의 정보나 SNS 활동을 학습해 맞춤형 사기 문자를 보내는 신종 범죄 수법이에요. 기존의 어색한 번역투 문자와 달리, 진짜 지인이 보낸 것처럼 자연스러워 속기 쉬우니 모르는 번호의 링크는 일단 의심하는 습관이 중요해요.",
+      "pureKorean": "인공지능 문자 사기",
+      "example": "“부모님 프로필 사진까지 도용해서 스마이징 문자 보냈다던데, 너무 무섭다.”",
+      "recs": [
+        [
+          "모르는 링크 클릭",
+          "✕",
+          0
+        ],
+        [
+          "출처 확인 습관",
+          "◎",
+          1
+        ],
+        [
+          "가족에게 공유",
+          "○",
+          1
+        ]
+      ],
+      "src": [
+        [
+          "mystory4617.tistory.com",
+          "https://mystory4617.tistory.com/entry/2026-최신-신조어-종합-정리"
+        ]
+      ],
+      "tags": [
+        "신조어",
+        "IT",
+        "사회",
+        "AI"
+      ],
+      "fresh": true,
+      "article": [
+        [
+          "h",
+          "내 말투를 흉내 내는 사기 문자?"
+        ],
+        [
+          "p",
+          "‘스마이징’은 문자(SMS)와 피싱(Phishing)의 합성어인 ‘스미싱’에 AI가 결합된 신조어입니다. 인공지능이 나의 SNS나 과거 대화 패턴을 학습해, 마치 진짜 지인이 보낸 것처럼 자연스러운 문자를 보내는 신종 금융 사기 수법을 뜻해요."
+        ],
+        [
+          "q",
+          "어설픈 번역투는 옛말, 이젠 AI가 사기 문자를 씁니다."
+        ],
+        [
+          "h",
+          "왜 위험할까?"
+        ],
+        [
+          "p",
+          "기존 스미싱이 ‘[국외발신] 택배 배송 확인’처럼 판박이 문구였다면, 스마이징은 “어제 말한 그 자료, 이 링크로 보내”처럼 구체적인 맥락을 위조해 의심하기 어렵게 만듭니다. 개인화된 내용 때문에 무심코 링크를 누르거나 개인정보를 넘겨주기 쉬워요."
+        ],
+        [
+          "h",
+          "한끗 정리"
+        ],
+        [
+          "ul",
+          [
+            "모르는 번호나 의심스러운 URL은 절대 클릭 금지",
+            "가족, 지인에게 온 문자라도 금전을 요구하면 반드시 직접 통화로 확인할 것",
+            "스마트폰 보안 설정을 강화하고 백신 앱을 최신으로 유지하기"
+          ]
+        ]
+      ],
+      "images": [
+        "https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdna%2FdhZtjH%2FdJMcabx3By6%2FAAAAAAAAAAAAAAAAAAAAAM5l7isybXC20IUycvLymOBxH595Ta4-k963DdEwzr-M%2Fimg.png%3Fcredential%3DyqXZFxpELC7KVnFOS48ylbz2pIh7yKj8%26expires%3D1788188399%26allow_ip%3D%26allow_referer%3D%26signature%3DqZVEzeoIiOyZaVJEIqAo83U4XkE%253D"
+      ]
+    },
+    {
+      "id": "nerd-nam",
+      "type": "트렌드",
+      "cat": "신조어",
+      "coverCat": "cat-slang",
+      "collectedAt": "2026-08-06",
+      "analyzedAt": "2026-08-06",
+      "buzz": "화제성 높음",
+      "stage": "피크",
+      "stageMsg": "하나의 스타일로 자리 잡는 중",
+      "label": "지금 써도 됨",
+      "labelCls": "good",
+      "title": "너드남",
+      "def": "한 분야에 깊이 몰두하는 모습이 매력적으로 보이는 남성",
+      "excerpt": "과거 ‘괴짜’로 여겨지던 ‘너드(Nerd)’가 새로운 매력 포인트로 부상했어요. 뿔테 안경, 체크 셔츠 등으로 대표되는 스타일과 한 분야에 대한 전문성과 열정을 갖춘 남성을 뜻해요.",
+      "pull": "이제는 ‘너드’가 힙한 시대!",
+      "verdict": "영어 ‘Nerd’와 ‘남자’의 합성어. 사회성은 조금 부족해 보일지라도, 자신이 좋아하는 특정 분야에 깊이 파고드는 열정과 지적인 모습을 가진 남성을 뜻하는 새로운 매력 코드로 부상했어요. 뿔테 안경, 체크 셔츠, 백팩 등이 대표적인 스타일 아이템으로 꼽힙니다.",
+      "pureKorean": "몰입하는 괴짜",
+      "example": "“요즘 드라마 남주인공들 다 너드남 스타일이더라. 완전 내 취향이야.”",
+      "recs": [
+        [
+          "스타일 칭찬",
+          "◎",
+          1
+        ],
+        [
+          "지적인 매력 어필",
+          "○",
+          1
+        ],
+        [
+          "부정적 의미로 사용",
+          "✕",
+          0
+        ]
+      ],
+      "src": [
+        [
+          "skyupland.com",
+          "https://skyupland.com/entry/2026년-최신-신조어·자주-묻는-단어-총정리-—-너드남부터-야르까지-뜻·예시-한-번에"
+        ]
+      ],
+      "tags": [
+        "신조어",
+        "패션",
+        "문화",
+        "스타일"
+      ],
+      "fresh": true,
+      "article": [
+        [
+          "h",
+          "‘괴짜’가 매력이 되기까지"
+        ],
+        [
+          "p",
+          "과거 ‘너드’는 꽉 막히고 사교성 없는 사람을 가리키는 부정적인 단어에 가까웠습니다. 하지만 이제는 한 분야에 대한 깊은 지식과 열정, 순수한 모습이 오히려 새로운 매력으로 인정받으면서 ‘너드남’이라는 긍정적인 캐릭터로 재탄생했어요."
+        ],
+        [
+          "q",
+          "어수룩해 보이지만, 자기 분야에선 누구보다 프로페셔널한 반전 매력!"
+        ],
+        [
+          "h",
+          "너드남 스타일의 정석"
+        ],
+        [
+          "p",
+          "보통 뿔테 안경, 살짝 헐렁한 체크 셔츠나 티셔츠, 그리고 백팩 조합을 ‘너드남 룩’의 정석으로 꼽습니다. 꾸민 듯 안 꾸민 듯 자연스러우면서도 지적인 분위기를 풍기는 것이 핵심이에요."
+        ],
+        [
+          "h",
+          "한끗 정리"
+        ],
+        [
+          "ul",
+          [
+            "패션뿐 아니라 지적인 열정을 갖춘 내면이 중요",
+            "드라마, 영화 속에서 매력적인 캐릭터로 자주 등장",
+            "자신만의 세계에 집중하는 모습이 새로운 ‘힙’으로 인정받는 문화"
+          ]
+        ]
+      ],
+      "images": [
+        "https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdna%2F8Ox6v%2FdJMcaiKKZBi%2FAAAAAAAAAAAAAAAAAAAAAPLsLLhEfl-ebNzyiQZPIn9Ut2oYz28Xpy2GQa8uJ8HE%2Fimg.png%3Fcredential%3DyqXZFxpELC7KVnFOS48ylbz2pIh7yKj8%26expires%3D1788188399%26allow_ip%3D%26allow_referer%3D%26signature%3DESHxpPsWF8Y1eTnLE5abCzqmPAk%253D"
+      ]
     }
   ]
 };
