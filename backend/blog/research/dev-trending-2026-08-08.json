@@ -1,0 +1,212 @@
+{
+  "keyword": "이번 주 개발 트렌드(GitHub·HuggingFace)",
+  "categoryId": "dev-trending",
+  "notes": "GitHub 위클리 트렌딩 4건 + HuggingFace 모델/데이터셋 5건, 총 9개 항목의 리스티클. 각 항목은 '무엇인지 + 이번 주 수치(스타/트렌딩스코어/다운로드) + 왜 눈에 띄는지'로만 쓴다. '왜 하필 이번 주 화제인지'의 인과(SNS 계기 등)는 근거가 없어 다룰 수 없다 — 수치 나열과 항목 소개까지만.",
+  "sources": [
+    {
+      "title": "zhaoxuya520/reverse-skill — Reverse Engineering / Authorized Penetration Testing Skill Router Pack",
+      "url": "https://github.com/zhaoxuya520/reverse-skill",
+      "host": "github.com",
+      "tier": "data",
+      "body": "이번 주 GitHub 위클리 트렌딩 1위(starsThisWeek 10,400, totalStars 20,707). Claude Code·Kiro·Cursor·Cline 등 AI 코딩 클라이언트가 역공학·침투테스트·CTF 작업을 할 때 어떤 도구·방법론을 쓸지 라우팅해주는 '스킬 패키지'다. 지원 시나리오는 모바일(APK·iOS), 바이너리(ELF/EXE/DLL/.SO), 웹/JS 암호화, YARA 기반 멀웨어 분석, 침투테스트(스캔·공격체인·EDR우회), CTF(40+ 세부 스킬, CTF-Sandbox-Orchestrator), 펌웨어·PWN·API보안·공급망보안 등. 통합 도구로 IDA Pro·radare2·Ghidra·jadx·apktool·Frida·BurpSuite를 명시. 라이선스는 주 MIT, CTF-Sandbox-Orchestrator만 GPLv3. README·저장소 페이지에는 스타 이력 그래프 급증에 대한 해명이나 커뮤니티 논란 언급이 없고 Trendshift 뱃지만 확인됨. 제작자는 zhaoxuya520 1인."
+    },
+    {
+      "title": "microsoft/AI-For-Beginners — 12 Weeks, 24 Lessons, AI for All!",
+      "url": "https://github.com/microsoft/AI-For-Beginners",
+      "host": "github.com",
+      "tier": "official",
+      "body": "마이크로소프트 공식 계정(microsoft)이 운영하는 AI 입문 커리큘럼 저장소. 이번 주 스타 8,224개, 누적 63,307개. 주 저자는 Dmitry Soshnikov(박사), 편집자는 Jen Looper(박사). 구성은 0주차(개발환경 설정) + I~VII부 총 7개 섹션·25개 레슨(슬로건은 12주·24레슨). 각 레슨은 이론자료·Jupyter 노트북·실습으로 구성. 다루는 주제는 기호적 AI, 신경망·딥러닝, 컴퓨터비전, 자연어처리, 유전알고리즘·강화학습·다중에이전트시스템, AI 윤리까지. 라이선스 MIT. 커밋 1,246개."
+    },
+    {
+      "title": "TencentCloud/TencentDB-Agent-Memory — team-level memory hub for AI Agents",
+      "url": "https://github.com/TencentCloud/TencentDB-Agent-Memory",
+      "host": "github.com",
+      "tier": "official",
+      "body": "텐센트클라우드(TencentCloud) 공식 조직 계정이 운영하는 오픈소스 프로젝트. 이번 주 스타 7,501개, 누적 17,713개. 모토는 'Agents remember. Humans innovate.' AI 에이전트 팀을 위한 팀 레벨 메모리 허브로, 대화·문서·코드를 4가지 재사용 가능한 메모리 자산으로 변환한다: Chat Memory(L0~L3 계층), Skill, LLM-Wiki, Code-Graph. OpenClaw, Hermes, Claude Code, CodeBuddy 및 SDK 통합을 지원한다고 명시. 라이선스 MIT. 현재 v2.0.0 이상 배포 중이며 v1.x/v0.x 마이그레이션 도구도 제공."
+    },
+    {
+      "title": "antirez/ds4 (DwarfStar) — DeepSeek V4 Flash/PRO 로컬 추론 엔진",
+      "url": "https://github.com/antirez/ds4",
+      "host": "github.com",
+      "tier": "data",
+      "body": "레디스(Redis) 창시자 Salvatore Sanfilippo(GitHub 계정 antirez)가 만든 프로젝트. 이번 주 스타 1,341개, 누적 20,912개. 프로젝트명은 DwarfStar이며 저장소 설명은 'DeepSeek 4 Flash and PRO local inference engine for Metal, CUDA and ROCm', README 본문 확인 결과 GLM 5.2 모델도 지원 대상으로 언급됨. 세 백엔드 지원: Metal(Mac, 96GB 이상 권장), CUDA(DGX Spark 포함), ROCm(AMD Strix Halo 등). 핵심 기능은 SSD 스트리밍(RAM보다 큰 모델 실행), 분산 추론, 네이티브 에이전트 및 OpenAI 호환 API 서버, 2비트·4비트 양자화. 라이선스 MIT. README에 'GPT 5.5, 5.6, Claude Fable의 지원으로 개발됐다'고 공개하며 llama.cpp·GGML 기여를 인정."
+    },
+    {
+      "title": "deepgrove/maple-preview — 20B-A1B ternary-weight reasoning LLM",
+      "url": "https://huggingface.co/deepgrove/maple-preview",
+      "host": "huggingface.co",
+      "tier": "data",
+      "body": "DeepGrove가 2026년 공개한 오픈소스 추론 특화 LLM. HuggingFace 트렌딩스코어 232, 좋아요 236, 다운로드 686건(createdAt 2026-08-04). 총 파라미터 20B(200억)에 활성 파라미터는 1B(A1B)뿐인 MoE 구조로, 24-layer·256-expert(그중 8개만 활성화) 구성. '삼진(ternary) 가중치'로 메모리 효율을 극대화. 카드에는 'IMO 수준 문제를 해결'하며 Mac mini M4에서 초당 200+ 토큰 속도를 낸다고 소개되나, 구체적 벤치마크 수치는 이미지로만 제시돼 텍스트로는 확인 불가. 라이선스 MIT. DeepGrove 조직 배경 정보는 카드에 없음."
+    },
+    {
+      "title": "inclusionAI/Ling-3.0-flash — 하이브리드 추론 MoE 모델",
+      "url": "https://huggingface.co/inclusionAI/Ling-3.0-flash",
+      "host": "huggingface.co",
+      "tier": "data",
+      "body": "inclusionAI(팔로워 2,450명)가 낸 '차세대 네이티브 하이브리드 추론 모델'. 총 파라미터 약 124B 중 5.1B만 활성화되는 hybrid-linear MoE(bailing_hybrid) 아키텍처로, 35개의 KDA 레이어와 7개의 Gated MLA 레이어(5:1 비율), 1/64 스파스 MoE에 512개 라우팅 전문가 포함. 벤치마크: SWE-Bench Pro 56.6, SWE-Bench Multilingual 72.4, AIME 2026 93.2, HMMT Feb 2026 87. 이전 1T급 모델 대비 파라미터를 약 8~12%로 줄이면서 주요 벤치마크는 동등하거나 우월하다고 카드에 명시(구체적 비교 대상 모델명은 카드에 없음). 라이선스 MIT. createdAt 2026-08-02, 월간 다운로드 3,065회."
+    },
+    {
+      "title": "LiquidAI/LFM2.5-2.6B-GGUF — 온디바이스 배포용 GGUF 양자화 모델",
+      "url": "https://huggingface.co/LiquidAI/LFM2.5-2.6B-GGUF",
+      "host": "huggingface.co",
+      "tier": "data",
+      "body": "Liquid AI가 낸 LFM2.5 계열의 GGUF 양자화 배포판. 모델명은 2.6B이나 카드에는 '3B params'로도 표기됨(레포명·본문 표기 불일치). LFM2 아키텍처 기반 '온디바이스 배포를 위해 설계된 하이브리드 모델 패밀리'. 16개 언어 지원. GGUF 포맷으로 llama.cpp 등 로컬 앱에서 실행 가능하며 Q4_K_M(1.67GB)부터 F16(5.4GB)까지 다양한 양자화 옵션 제공. 라이선스는 LFM1.0(자체 라이선스). createdAt 2026-08-01, lastModified 2026-08-06. 다운로드 31,489회로 이번 조사에서 고른 HF 모델 3건 중 최다. 카드에 구체적 벤치마크 수치는 제시되지 않음."
+    },
+    {
+      "title": "HAERAE-HUB/NOLLI — 한국어·영어 논리 퍼즐 QA 벤치마크",
+      "url": "https://huggingface.co/datasets/HAERAE-HUB/NOLLI",
+      "host": "huggingface.co",
+      "tier": "data",
+      "body": "HAERAE-HUB가 공개한 '규칙 기반 논리 퍼즐' 벤치마크 데이터셋. 총 7,500문항(영어 3,000 + 한국어 4,500), 15개 작업 유형 × 3난이도(쉬움/중간/어려움) × 100예제 구조. 프로그래밍 방식으로 생성·검증된 정답과 단계별 해설을 포함하며, 두 언어 간 모델 성능 격차를 진단할 목적으로 설계됐다고 카드에 명시. 라이선스 MIT. arXiv 논문(2608.04397)이 함께 제공됨. createdAt 2026-08-04, 트렌딩스코어 6, 좋아요 7, 다운로드 211."
+    },
+    {
+      "title": "biglam/british-library-book-images — 영국국립도서관 디지털화 이미지 데이터셋",
+      "url": "https://huggingface.co/datasets/biglam/british-library-book-images",
+      "host": "huggingface.co",
+      "tier": "data",
+      "body": "약 49,455권의 영국국립도서관(British Library) 디지털화 도서에서 추출한 이미지 1,080,814장을 담은 데이터셋. 출판 연도는 약 1510~1900년. covers 61,548개, embellishments 416,935개, plates 385,231개, medium 217,100개로 분류. 원본은 영국국립도서관이 Microsoft와 파트너십으로 디지털화해 2014년 Flickr Commons에 공개한 자료이며, 'BigLAM' 프로젝트 일환으로 British Library Labs가 주관, 현재 HuggingFace에서는 Daniel van Strien이 미러링·재패키징해 유지. 라이선스는 'no known copyright restrictions'(CC0-1.0 태그). HF 데이터셋 페이지의 createdAt은 2026-08-06으로, 원본 자료(2014년)와 다르다 — 신규 데이터가 아니라 기존 공개자료의 재업로드/재패키징일 가능성이 높음."
+    }
+  ],
+  "claims": [
+    {
+      "claim": "GitHub 위클리 트렌딩 1위는 1인 개발자가 만든 역공학·침투테스트 AI 에이전트 스킬 라우터 reverse-skill — 이번 주 신규 스타 10,400개로 마이크로소프트 공식 저장소보다 많다.",
+      "grade": "confirmed",
+      "evidence": [
+        "이번 주 스타 10,400개, 누적 20,707개로 GitHub 위클리 트렌딩 1위",
+        "지원 통합 도구: IDA Pro, radare2, Ghidra, jadx, apktool, Frida, BurpSuite",
+        "CTF-Sandbox-Orchestrator 하위에 40개 이상 CTF 세부 스킬 포함",
+        "RULES.md에 '인증 + 네트워크 프로필 확인 후에만 대상에 행동 시작' 문구로 사용범위 제한 명시",
+        "주 라이선스 MIT(CTF-Sandbox-Orchestrator만 GPLv3), 제작자는 1인 개발자(zhaoxuya520)",
+        "스타 급증에 대한 해명·논란 언급은 README·저장소 어디에도 없음(조작 여부는 판별 불가 — 단정 금지)"
+      ],
+      "sourceUrls": ["https://github.com/zhaoxuya520/reverse-skill"]
+    },
+    {
+      "claim": "마이크로소프트 공식 AI 입문 커리큘럼 AI-For-Beginners가 이번 주 스타 8,224개를 얻으며 트렌딩에 재진입했다 — 누적 6만 스타를 넘는 꾸준한 교육 콘텐츠.",
+      "grade": "confirmed",
+      "evidence": [
+        "이번 주 스타 8,224개, 누적 63,307개",
+        "0주차 + 7개 섹션·25개 레슨 구성(슬로건은 12주·24레슨)",
+        "주 저자 Dmitry Soshnikov(마이크로소프트), 편집자 Jen Looper",
+        "커밋 1,246개, MIT 라이선스"
+      ],
+      "sourceUrls": ["https://github.com/microsoft/AI-For-Beginners"]
+    },
+    {
+      "claim": "텐센트클라우드가 공개한 AI 에이전트용 팀 레벨 메모리 허브 TencentDB-Agent-Memory — 이번 주 스타 7,501개, Claude Code·Hermes 등과 통합을 지원한다.",
+      "grade": "confirmed",
+      "evidence": [
+        "이번 주 스타 7,501개, 누적 17,713개",
+        "4대 메모리 자산: Chat Memory(L0~L3 계층), Skill, LLM-Wiki, Code-Graph",
+        "지원 프레임워크: OpenClaw, Hermes, Claude Code, CodeBuddy",
+        "현재 버전 v2.0.0 이상, MIT 라이선스, v0.x/v1.x 마이그레이션 도구 제공"
+      ],
+      "sourceUrls": ["https://github.com/TencentCloud/TencentDB-Agent-Memory"]
+    },
+    {
+      "claim": "Redis 창시자 antirez가 만든 로컬 추론 엔진 ds4(DwarfStar)가 이번 주 스타 1,341개 — Mac·CUDA·ROCm 세 백엔드에서 DeepSeek V4·GLM 5.2급 모델을 돌린다.",
+      "grade": "confirmed",
+      "evidence": [
+        "이번 주 스타 1,341개, 누적 20,912개",
+        "지원 백엔드 3종: Metal(Mac 96GB+ 권장), CUDA(DGX Spark 포함), ROCm(AMD Strix Halo)",
+        "2비트·4비트 양자화 및 SSD 스트리밍으로 RAM보다 큰 모델 실행 지원",
+        "GitHub 설명은 'DeepSeek 4 Flash and PRO'만 언급하지만 README 본문에는 GLM 5.2 지원도 명시",
+        "MIT 라이선스, 개발자는 1인(Salvatore Sanfilippo)"
+      ],
+      "sourceUrls": ["https://github.com/antirez/ds4"]
+    },
+    {
+      "claim": "20B 파라미터 중 1B만 활성화하는 '삼진 가중치' 추론 특화 LLM maple-preview — HF 트렌딩스코어 232, 다운로드 686건을 기록했다.",
+      "grade": "confirmed",
+      "evidence": [
+        "총 파라미터 20B, 활성 파라미터 1B(MoE, 24-layer·256-expert 중 8개 활성화)",
+        "createdAt 2026-08-04, HF 트렌딩스코어 232, 좋아요 236, 다운로드 686",
+        "Mac mini M4에서 초당 200+ 토큰이라는 주장은 카드 자체 설명이며, 벤치마크 원자료는 이미지라 텍스트로 미확인(수치 확정 표현 금지)",
+        "MIT 라이선스"
+      ],
+      "sourceUrls": ["https://huggingface.co/deepgrove/maple-preview"]
+    },
+    {
+      "claim": "총 124B 중 5.1B만 활성화하는 하이브리드 추론 MoE 모델 Ling-3.0-flash — SWE-Bench Pro 56.6점 등 벤치마크로 훨씬 큰 모델급 성능을 낸다고 주장한다.",
+      "grade": "confirmed",
+      "evidence": [
+        "총 파라미터 약 124B, 활성 파라미터 5.1B(hybrid-linear MoE, 512개 라우팅 전문가)",
+        "SWE-Bench Pro 56.6점, SWE-Bench Multilingual 72.4점, AIME 2026 93.2점, HMMT Feb 2026 87점",
+        "createdAt 2026-08-02, 다운로드 3,065회, MIT 라이선스",
+        "이전 1T급 모델 대비 파라미터를 약 8~12% 규모로 줄이면서 벤치마크는 동등·우월(카드 자체 주장, 비교 대상 모델명은 카드에 없음)"
+      ],
+      "sourceUrls": ["https://huggingface.co/inclusionAI/Ling-3.0-flash"]
+    },
+    {
+      "claim": "온디바이스 배포용 GGUF 양자화 모델 LFM2.5-2.6B-GGUF가 이번 조사 HF 모델 3건 중 최다인 다운로드 31,489회를 기록했다 — 16개 언어를 지원하며 1.67GB부터 실행 가능.",
+      "grade": "confirmed",
+      "evidence": [
+        "파라미터 2.6B(카드 표기는 '3B params'로 혼재), 16개 언어 지원",
+        "GGUF 양자화 옵션: Q4_K_M 1.67GB ~ F16 5.4GB",
+        "createdAt 2026-08-01, lastModified 2026-08-06, 다운로드 31,489회",
+        "라이선스는 LFM1.0(자체 라이선스), 공식 벤치마크 수치는 카드에 없음"
+      ],
+      "sourceUrls": ["https://huggingface.co/LiquidAI/LFM2.5-2.6B-GGUF"]
+    },
+    {
+      "claim": "한국어·영어 논리 퍼즐 QA 벤치마크 NOLLI 데이터셋이 공개됐다 — 총 7,500문항으로 두 언어 간 모델 성능 격차를 진단하도록 설계됐다.",
+      "grade": "confirmed",
+      "evidence": [
+        "총 7,500문항(영어 3,000 + 한국어 4,500), 15개 작업유형 × 3난이도 × 100예제",
+        "arXiv 논문 2608.04397과 함께 공개, MIT 라이선스",
+        "createdAt 2026-08-04, 다운로드 211회, 트렌딩스코어 6, 좋아요 7"
+      ],
+      "sourceUrls": ["https://huggingface.co/datasets/HAERAE-HUB/NOLLI"]
+    },
+    {
+      "claim": "영국국립도서관 디지털화 도서 이미지 108만 장 데이터셋이 이번 주 HF에 등장했다 — CC0로 자유이용 가능하지만 원본은 2014년 자료라 신규 촬영본은 아니다.",
+      "grade": "confirmed",
+      "evidence": [
+        "이미지 총 1,080,814장(약 49,455권 도서에서 추출), 출판연도 약 1510~1900년",
+        "유형별 구성: embellishments 416,935개, plates 385,231개, medium 217,100개, covers 61,548개",
+        "라이선스 CC0-1.0('no known copyright restrictions')",
+        "원본은 2014년 British Library-Microsoft 파트너십으로 디지털화·Flickr Commons 공개된 자료이며, HF 페이지 자체의 createdAt은 2026-08-06 — 신규 생성이 아니라 이번 주 재업로드로 추정(확정 표현 금지)"
+      ],
+      "sourceUrls": ["https://huggingface.co/datasets/biglam/british-library-book-images"]
+    }
+  ],
+  "numbers": [
+    { "what": "reverse-skill 이번 주 신규 스타", "value": "10,400", "asOf": "2026-08-08", "sourceUrl": "https://github.com/zhaoxuya520/reverse-skill" },
+    { "what": "reverse-skill 누적 스타", "value": "20,707", "asOf": "2026-08-08", "sourceUrl": "https://github.com/zhaoxuya520/reverse-skill" },
+    { "what": "AI-For-Beginners 이번 주 신규 스타", "value": "8,224", "asOf": "2026-08-08", "sourceUrl": "https://github.com/microsoft/AI-For-Beginners" },
+    { "what": "AI-For-Beginners 누적 스타", "value": "63,307", "asOf": "2026-08-08", "sourceUrl": "https://github.com/microsoft/AI-For-Beginners" },
+    { "what": "AI-For-Beginners 커밋 수", "value": "1,246개", "asOf": "2026-08-08", "sourceUrl": "https://github.com/microsoft/AI-For-Beginners" },
+    { "what": "TencentDB-Agent-Memory 이번 주 신규 스타", "value": "7,501", "asOf": "2026-08-08", "sourceUrl": "https://github.com/TencentCloud/TencentDB-Agent-Memory" },
+    { "what": "TencentDB-Agent-Memory 누적 스타", "value": "17,713", "asOf": "2026-08-08", "sourceUrl": "https://github.com/TencentCloud/TencentDB-Agent-Memory" },
+    { "what": "ds4(DwarfStar) 이번 주 신규 스타", "value": "1,341", "asOf": "2026-08-08", "sourceUrl": "https://github.com/antirez/ds4" },
+    { "what": "ds4(DwarfStar) 누적 스타", "value": "20,912", "asOf": "2026-08-08", "sourceUrl": "https://github.com/antirez/ds4" },
+    { "what": "maple-preview 총 파라미터 / 활성 파라미터", "value": "20B / 1B(A1B)", "asOf": "2026-08-04", "sourceUrl": "https://huggingface.co/deepgrove/maple-preview" },
+    { "what": "maple-preview HF 트렌딩스코어", "value": "232", "asOf": "2026-08-08", "sourceUrl": "https://huggingface.co/deepgrove/maple-preview" },
+    { "what": "maple-preview 좋아요", "value": "236", "asOf": "2026-08-08", "sourceUrl": "https://huggingface.co/deepgrove/maple-preview" },
+    { "what": "maple-preview 다운로드", "value": "686회", "asOf": "2026-08-08", "sourceUrl": "https://huggingface.co/deepgrove/maple-preview" },
+    { "what": "Ling-3.0-flash 총 파라미터 / 활성 파라미터", "value": "약 124B / 5.1B", "asOf": "2026-08-02", "sourceUrl": "https://huggingface.co/inclusionAI/Ling-3.0-flash" },
+    { "what": "Ling-3.0-flash SWE-Bench Pro", "value": "56.6점", "asOf": "2026-08-02", "sourceUrl": "https://huggingface.co/inclusionAI/Ling-3.0-flash" },
+    { "what": "Ling-3.0-flash SWE-Bench Multilingual", "value": "72.4점", "asOf": "2026-08-02", "sourceUrl": "https://huggingface.co/inclusionAI/Ling-3.0-flash" },
+    { "what": "Ling-3.0-flash AIME 2026", "value": "93.2점", "asOf": "2026-08-02", "sourceUrl": "https://huggingface.co/inclusionAI/Ling-3.0-flash" },
+    { "what": "Ling-3.0-flash HMMT Feb 2026", "value": "87점", "asOf": "2026-08-02", "sourceUrl": "https://huggingface.co/inclusionAI/Ling-3.0-flash" },
+    { "what": "Ling-3.0-flash 다운로드(월간)", "value": "3,065회", "asOf": "2026-08-08", "sourceUrl": "https://huggingface.co/inclusionAI/Ling-3.0-flash" },
+    { "what": "LFM2.5-2.6B-GGUF 파라미터", "value": "2.6B(카드 표기 '3B params' 혼재)", "asOf": "2026-08-01", "sourceUrl": "https://huggingface.co/LiquidAI/LFM2.5-2.6B-GGUF" },
+    { "what": "LFM2.5-2.6B-GGUF 다운로드", "value": "31,489회", "asOf": "2026-08-08", "sourceUrl": "https://huggingface.co/LiquidAI/LFM2.5-2.6B-GGUF" },
+    { "what": "LFM2.5-2.6B-GGUF 양자화 파일 크기 범위", "value": "Q4_K_M 1.67GB ~ F16 5.4GB", "asOf": "2026-08-08", "sourceUrl": "https://huggingface.co/LiquidAI/LFM2.5-2.6B-GGUF" },
+    { "what": "NOLLI 문항 수", "value": "7,500문항(영어 3,000 + 한국어 4,500)", "asOf": "2026-08-04", "sourceUrl": "https://huggingface.co/datasets/HAERAE-HUB/NOLLI" },
+    { "what": "NOLLI 다운로드", "value": "211회", "asOf": "2026-08-08", "sourceUrl": "https://huggingface.co/datasets/HAERAE-HUB/NOLLI" },
+    { "what": "NOLLI 트렌딩스코어", "value": "6", "asOf": "2026-08-08", "sourceUrl": "https://huggingface.co/datasets/HAERAE-HUB/NOLLI" },
+    { "what": "british-library-book-images 이미지 총량", "value": "1,080,814장(약 49,455권)", "asOf": "2026-08-06", "sourceUrl": "https://huggingface.co/datasets/biglam/british-library-book-images" },
+    { "what": "british-library-book-images 유형별 구성", "value": "embellishments 416,935 / plates 385,231 / medium 217,100 / covers 61,548", "asOf": "2026-08-06", "sourceUrl": "https://huggingface.co/datasets/biglam/british-library-book-images" }
+  ],
+  "dropped": [],
+  "cannotCover": [
+    "각 항목이 '왜 하필 이번 주' 화제가 됐는지(SNS·뉴스레터·해커뉴스 게시 등 직접 계기) — README/카드 어디에도 근거 없음, 추측 금지",
+    "reverse-skill 스타 10,400개 급증이 유기적 확산인지 봇/매입 스타인지 — 판별 근거 없음, '조작 의혹'처럼 단정하지 말 것",
+    "deepgrove(maple-preview 제작 조직)의 팀 구성·소속·이전 실적",
+    "LiquidAI/LFM2.5-2.6B-GGUF의 정확한 최초 공개일(정확한 날짜)과 공식 벤치마크 수치",
+    "Ling-3.0-flash가 비교하는 '이전 1T급 모델'의 구체적 버전명",
+    "maple-preview의 'Mac mini M4 초당 200+ 토큰' 수치를 검증된 벤치마크처럼 인용하는 것 — 원자료가 이미지라 텍스트 확인 불가, 카드 자체 주장으로만 표기"
+  ],
+  "songs": []
+}

@@ -1,0 +1,291 @@
+{
+  "source": "hf-models",
+  "fetchedOk": true,
+  "sourceUrl": "https://huggingface.co/api/models?limit=100&full=true",
+  "items": [
+    {
+      "id": "larryvrh/MiniMax-H3-Turbo-Lora",
+      "url": "https://huggingface.co/larryvrh/MiniMax-H3-Turbo-Lora",
+      "createdAt": "2026-08-05T21:58:56.000Z",
+      "lastModified": "2026-08-07T23:30:05.000Z",
+      "trendingScore": 420,
+      "likes": 438,
+      "downloads": 0,
+      "pipelineTag": "text-to-video",
+      "tags": [
+        "text-to-video",
+        "text-to-audio",
+        "audio-video",
+        "lora",
+        "minimax-h3",
+        "comfyui",
+        "base_model:Comfy-Org/MiniMax-H3",
+        "base_model:adapter:Comfy-Org/MiniMax-H3"
+      ]
+    },
+    {
+      "id": "ethanfel/Qwen3-VL-32B-Ultra-Heretic-H3-ComfyUI-INT8-ConvRot",
+      "url": "https://huggingface.co/ethanfel/Qwen3-VL-32B-Ultra-Heretic-H3-ComfyUI-INT8-ConvRot",
+      "createdAt": "2026-08-03T09:25:01.000Z",
+      "lastModified": "2026-08-05T15:28:00.000Z",
+      "trendingScore": 367,
+      "likes": 388,
+      "downloads": 0,
+      "pipelineTag": "image-text-to-text",
+      "tags": [
+        "comfyui",
+        "h3",
+        "qwen3-vl",
+        "qwen3-vl-32b",
+        "heretic",
+        "abliterated",
+        "uncensored",
+        "bf16"
+      ]
+    },
+    {
+      "id": "deepgrove/maple-preview",
+      "url": "https://huggingface.co/deepgrove/maple-preview",
+      "createdAt": "2026-08-04T20:50:54.000Z",
+      "lastModified": "2026-08-04T20:51:36.000Z",
+      "trendingScore": 232,
+      "likes": 236,
+      "downloads": 686,
+      "pipelineTag": "text-generation",
+      "tags": [
+        "transformers",
+        "safetensors",
+        "text-generation",
+        "causal-lm",
+        "mixture-of-experts",
+        "reasoning",
+        "ternary",
+        "custom-code"
+      ]
+    },
+    {
+      "id": "inclusionAI/Ling-3.0-flash",
+      "url": "https://huggingface.co/inclusionAI/Ling-3.0-flash",
+      "createdAt": "2026-08-02T16:14:41.000Z",
+      "lastModified": "2026-08-06T15:09:42.000Z",
+      "trendingScore": 200,
+      "likes": 209,
+      "downloads": 3065,
+      "pipelineTag": "text-generation",
+      "tags": [
+        "safetensors",
+        "bailing_hybrid",
+        "text-generation",
+        "conversational",
+        "custom_code",
+        "license:mit",
+        "eval-results",
+        "region:us"
+      ]
+    },
+    {
+      "id": "drbaph/MiniMax-H3-Turbo-Lora-ComfyUI",
+      "url": "https://huggingface.co/drbaph/MiniMax-H3-Turbo-Lora-ComfyUI",
+      "createdAt": "2026-08-06T05:40:36.000Z",
+      "lastModified": "2026-08-08T05:37:45.000Z",
+      "trendingScore": 184,
+      "likes": 190,
+      "downloads": 0,
+      "pipelineTag": "text-to-video",
+      "tags": [
+        "minimax-h3",
+        "lora",
+        "adapter",
+        "comfyui",
+        "pruned",
+        "pruned-model",
+        "curve-form",
+        "text-to-video"
+      ]
+    },
+    {
+      "id": "realrebelai/MiniMax-H3_GGUFs",
+      "url": "https://huggingface.co/realrebelai/MiniMax-H3_GGUFs",
+      "createdAt": "2026-08-03T03:34:11.000Z",
+      "lastModified": "2026-08-08T05:58:24.000Z",
+      "trendingScore": 155,
+      "likes": 172,
+      "downloads": 87870,
+      "pipelineTag": null,
+      "tags": [
+        "gguf",
+        "minimax",
+        "comfyui",
+        "base_model:Comfy-Org/MiniMax-H3",
+        "base_model:quantized:Comfy-Org/MiniMax-H3",
+        "license:unknown",
+        "region:us"
+      ]
+    },
+    {
+      "id": "lightx2v/Minimax-h3-Turbo",
+      "url": "https://huggingface.co/lightx2v/Minimax-h3-Turbo",
+      "createdAt": "2026-08-07T12:59:07.000Z",
+      "lastModified": "2026-08-07T14:45:06.000Z",
+      "trendingScore": 151,
+      "likes": 153,
+      "downloads": 0,
+      "pipelineTag": "image-to-video",
+      "tags": [
+        "diffusers",
+        "t2v",
+        "i2v",
+        "r2v",
+        "image-to-video",
+        "en",
+        "zh",
+        "base_model:MiniMaxAI/MiniMax-H3"
+      ]
+    },
+    {
+      "id": "Kijai/MiniMax-H3_comfy",
+      "url": "https://huggingface.co/Kijai/MiniMax-H3_comfy",
+      "createdAt": "2026-08-07T13:13:09.000Z",
+      "lastModified": "2026-08-07T15:18:18.000Z",
+      "trendingScore": 144,
+      "likes": 146,
+      "downloads": 0,
+      "pipelineTag": null,
+      "tags": [
+        "region:us"
+      ]
+    },
+    {
+      "id": "LiquidAI/LFM2.5-2.6B-GGUF",
+      "url": "https://huggingface.co/LiquidAI/LFM2.5-2.6B-GGUF",
+      "createdAt": "2026-08-01T22:42:15.000Z",
+      "lastModified": "2026-08-06T17:10:07.000Z",
+      "trendingScore": 140,
+      "likes": 148,
+      "downloads": 31489,
+      "pipelineTag": "text-generation",
+      "tags": [
+        "gguf",
+        "liquid",
+        "lfm2.5",
+        "llama.cpp",
+        "text-generation",
+        "ar",
+        "zh",
+        "en"
+      ]
+    },
+    {
+      "id": "Abiray/Minimax-H3-nvfp4-INT4-INT8-Convrot",
+      "url": "https://huggingface.co/Abiray/Minimax-H3-nvfp4-INT4-INT8-Convrot",
+      "createdAt": "2026-08-03T09:54:37.000Z",
+      "lastModified": "2026-08-06T06:48:15.000Z",
+      "trendingScore": 130,
+      "likes": 136,
+      "downloads": 452420,
+      "pipelineTag": "image-text-to-video",
+      "tags": [
+        "diffusers",
+        "text-to-video",
+        "image-to-video",
+        "image-text-to-video",
+        "video-to-video",
+        "text-to-audio-video",
+        "multimodal",
+        "quantized"
+      ]
+    },
+    {
+      "id": "SexGod1979/PinkCherry_MiniMax-H3",
+      "url": "https://huggingface.co/SexGod1979/PinkCherry_MiniMax-H3",
+      "createdAt": "2026-08-05T19:05:53.000Z",
+      "lastModified": "2026-08-08T03:15:21.000Z",
+      "trendingScore": 122,
+      "likes": 129,
+      "downloads": 0,
+      "pipelineTag": "text-to-video",
+      "tags": [
+        "transformers",
+        "text-to-video",
+        "minimax-h3",
+        "license:apache-2.0",
+        "endpoints_compatible",
+        "region:us"
+      ]
+    },
+    {
+      "id": "sakamakismile/Qwen3-VL-32B-Heretic-MiniMax-H3-NVFP4",
+      "url": "https://huggingface.co/sakamakismile/Qwen3-VL-32B-Heretic-MiniMax-H3-NVFP4",
+      "createdAt": "2026-08-04T00:36:50.000Z",
+      "lastModified": "2026-08-04T00:50:28.000Z",
+      "trendingScore": 121,
+      "likes": 127,
+      "downloads": 0,
+      "pipelineTag": null,
+      "tags": [
+        "comfyui",
+        "minimax-h3",
+        "text-encoder",
+        "qwen3-vl",
+        "nvfp4",
+        "video-generation",
+        "uncensored",
+        "abliterated"
+      ]
+    },
+    {
+      "id": "Kijai/MiniMax-H3-experimental",
+      "url": "https://huggingface.co/Kijai/MiniMax-H3-experimental",
+      "createdAt": "2026-08-05T07:58:56.000Z",
+      "lastModified": "2026-08-07T17:20:38.000Z",
+      "trendingScore": 114,
+      "likes": 118,
+      "downloads": 0,
+      "pipelineTag": null,
+      "tags": [
+        "region:us"
+      ]
+    },
+    {
+      "id": "huihui-ai/Huihui-DeepSeek-V4-Flash-0731-abliterated-GGUF",
+      "url": "https://huggingface.co/huihui-ai/Huihui-DeepSeek-V4-Flash-0731-abliterated-GGUF",
+      "createdAt": "2026-08-02T09:18:05.000Z",
+      "lastModified": "2026-08-03T14:05:07.000Z",
+      "trendingScore": 99,
+      "likes": 101,
+      "downloads": 102798,
+      "pipelineTag": "text-generation",
+      "tags": [
+        "gguf",
+        "abliterated",
+        "uncensored",
+        "GGUF",
+        "huihui",
+        "quantized",
+        "deepseek",
+        "deepseek-v4"
+      ]
+    },
+    {
+      "id": "SyzygyResearch/Mach-1-Additive-35B",
+      "url": "https://huggingface.co/SyzygyResearch/Mach-1-Additive-35B",
+      "createdAt": "2026-08-02T00:49:44.000Z",
+      "lastModified": "2026-08-07T15:22:21.000Z",
+      "trendingScore": 93,
+      "likes": 93,
+      "downloads": 799,
+      "pipelineTag": null,
+      "tags": [
+        "qwen3_5_moe",
+        "qwen",
+        "mach-1",
+        "ternary",
+        "additive",
+        "base_model:SyzygyResearch/Mach-1-Additive-35B",
+        "base_model:finetune:SyzygyResearch/Mach-1-Additive-35B",
+        "license:apache-2.0"
+      ]
+    }
+  ],
+  "note": "no-sort(trendingScore 내림차순) 상위 100건 중 createdAt 최근 7일 이내인 것만 남김. "
+}
