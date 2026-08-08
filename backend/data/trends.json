@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-07",
+  "generatedAt": "2026-08-08",
   "trends": [
     {
       "id": "dubai-choco",
@@ -10303,7 +10303,7 @@
         "아날로그감성",
         "빈티지"
       ],
-      "prompt": "[변환 목표]\\n- 평범한 디지털 사진을 빈티지한 폴라로이드 사진으로 변환\\n\\n[스타일]\\n- A polaroid photo of a young couple laughing on a beach.\\n- Taken in the style of the late 1990s.\\n- The image should have a nostalgic, dreamy feel.\\n\\n[조명]\\n- Soft, natural sunlight, typical of a late afternoon 'golden hour'.\\n- Slight, accidental light leaks on the edges of the photo.\\n\\n[카메라·렌즈]\\n- Shot on a vintage Polaroid 600 camera.\\n- Visible grain and slight motion blur, as if captured in a candid moment.\\n- The iconic white Polaroid frame must be visible around the image.\\n\\n[색보정]\\n- Faded colors with a warm, yellowish tint.\\n- Muted blues and greens.\\n- Low contrast and saturation.\\n\\n[피해야 할 것]\\n- No digital watermarks or timestamps.\\n- No overly sharp details or perfect focus.\\n- Avoid modern clothing or objects that break the vintage aesthetic.\\n\\n[비율]\\n- Aspect ratio 1:1 (square format typical of Polaroids)",
+      "prompt": "[변환 목표]\n- 평범한 디지털 사진을 빈티지한 폴라로이드 사진으로 변환\n\n[스타일]\n- A polaroid photo of a young couple laughing on a beach.\n- Taken in the style of the late 1990s.\n- The image should have a nostalgic, dreamy feel.\n\n[조명]\n- Soft, natural sunlight, typical of a late afternoon 'golden hour'.\n- Slight, accidental light leaks on the edges of the photo.\n\n[카메라·렌즈]\n- Shot on a vintage Polaroid 600 camera.\n- Visible grain and slight motion blur, as if captured in a candid moment.\n- The iconic white Polaroid frame must be visible around the image.\n\n[색보정]\n- Faded colors with a warm, yellowish tint.\n- Muted blues and greens.\n- Low contrast and saturation.\n\n[피해야 할 것]\n- No digital watermarks or timestamps.\n- No overly sharp details or perfect focus.\n- Avoid modern clothing or objects that break the vintage aesthetic.\n\n[비율]\n- Aspect ratio 1:1 (square format typical of Polaroids)",
       "article": [
         [
           "h",
@@ -10392,7 +10392,7 @@
         "시간여행",
         "역사"
       ],
-      "prompt": "[변환 목표]\\n- 현대 인물 사진을 특정 역사적 시대의 인물 사진으로 변환\\n\\n[스타일]\\n- A black and white photograph of a woman, styled as a member of the Korean independence movement in the 1920s.\\n- The setting is a dimly lit, clandestine meeting room in Gyeongseong (old Seoul).\\n- The mood is somber, determined, and resilient.\\n\\n[조명]\\n- Single, dramatic light source from the side, creating strong shadows (Chiaroscuro effect).\\n- The air is slightly hazy with smoke.\\n\\n[카메라·렌즈]\\n- Shot on a large format camera from the early 20th century.\\n- The image has a deep depth of field, with both the subject and background in sharp focus.\\n- Signs of aging on the photograph, such as slight scratches and faded edges.\\n\\n[색보정]\\n- Black and white with high contrast.\\n- Alternatively, a sepia tone for a warmer, more aged feel.\\n\\n[피해야 할 것]\\n- No modern hairstyles, makeup, or accessories.\\n- The background should not contain any anachronistic elements.\\n- Avoid smiling or overly cheerful expressions.\\n\\n[비율]\\n- Aspect ratio 4:5 (portrait orientation)",
+      "prompt": "[변환 목표]\n- 현대 인물 사진을 특정 역사적 시대의 인물 사진으로 변환\n\n[스타일]\n- A black and white photograph of a woman, styled as a member of the Korean independence movement in the 1920s.\n- The setting is a dimly lit, clandestine meeting room in Gyeongseong (old Seoul).\n- The mood is somber, determined, and resilient.\n\n[조명]\n- Single, dramatic light source from the side, creating strong shadows (Chiaroscuro effect).\n- The air is slightly hazy with smoke.\n\n[카메라·렌즈]\n- Shot on a large format camera from the early 20th century.\n- The image has a deep depth of field, with both the subject and background in sharp focus.\n- Signs of aging on the photograph, such as slight scratches and faded edges.\n\n[색보정]\n- Black and white with high contrast.\n- Alternatively, a sepia tone for a warmer, more aged feel.\n\n[피해야 할 것]\n- No modern hairstyles, makeup, or accessories.\n- The background should not contain any anachronistic elements.\n- Avoid smiling or overly cheerful expressions.\n\n[비율]\n- Aspect ratio 4:5 (portrait orientation)",
       "article": [
         [
           "h",
