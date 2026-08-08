@@ -1,0 +1,140 @@
+{
+  "keyword": "Claude Opus 5 출시 — Anthropic 프론티어 모델 지형 변화",
+  "categoryId": "ai-company-watch",
+  "notes": "이 글은 (1) Opus 5가 Fable 5급 성능을 절반 가격에 낸다는 것 (2) Anthropic이 6~7월 두 달 새 모델 4개를 연쇄 출시했다는 것 (3) 출시 후에도 안전장치를 계속 재조정 중이라는 것, 이 세 가지는 1차 자료로 확실히 말할 수 있다. 절대 벤치마크 점수(%)와 '고객 불만이 설계 배경'이라는 인과는 2차 보도 수준이라 단정하면 안 된다.",
+  "sources": [
+    {
+      "title": "Introducing Claude Opus 5",
+      "url": "https://www.anthropic.com/news/claude-opus-5",
+      "host": "anthropic.com",
+      "body": "Claude Opus 5는 Fable 5에 가까운 성능을 절반 가격에 제공하는 모델로 소개됐다. Claude Max의 새 기본 모델이자 Claude Pro의 최강 모델로 지정됐다. Frontier-Bench v0.1에서 Opus 4.8 대비 2배 이상 점수를 기록했고, CursorBench 3.2에서는 최대 노력 설정으로 Fable 5 성능의 99.5%를 절반 비용에 달성했다. ARC-AGI 3에서는 차순위 모델의 3배 점수, Zapier AutomationBench에서는 차순위 대비 약 1.5배 성공률을 보였다. OSWorld 2.0에서는 Fable 5의 최고 결과를 3분의 1을 조금 넘는 비용으로 넘어섰다(원문 표현: just over a third of the cost). 생명과학 평가에서는 유기화학 분자구조 추론 +10.2포인트, 단백질 서열-기능 예측 +7.7포인트(Opus 4.8 대비, 내부 벤치마크) 향상됐다. 가격은 입력 $5/백만 토큰, 출력 $25/백만 토큰으로 Opus 4.8과 동일하며, Fast mode는 기본가의 2배로 약 2.5배 빠르다. 자동화된 행동 감사에서 부정렬 행동 점수 2.3으로 최근 모델 중 최저(가장 안전)를 기록했다. 다만 장시간 자율 생물학 연구와 공격적 사이버보안(익스플로잇 개발)에서는 Mythos 5보다 뒤처진다고 명시했다. 사이버 분류기는 Fable 5보다 약 85% 덜 자주 개입할 것으로 예상되며, 일반 접근에는 데이터 보존 요구사항이 없다(Fable/Mythos의 30일 보존 정책과 대조).",
+      "tier": "official"
+    },
+    {
+      "title": "Improving Fable 5's biology safeguards",
+      "url": "https://www.anthropic.com/news/improving-fable-5-s-biology-safeguards",
+      "host": "anthropic.com",
+      "body": "Anthropic은 2026년 8월 7일, Fable 5(6월 9일 공개)의 생물학 안전성 분류기를 재구성해 오탐지를 대폭 줄였다고 발표했다. 생물학 관련 요청에 대한 폴백이 약 85% 감소했다(완료). 플랫폼별 전체 폴백(생물학 외 사유 포함)은 Claude.ai 약 67%, Cowork 약 55%, Claude Code 약 17%, Claude Platform 약 7% 감소할 것으로 예상된다고 밝혔다(전망 — 원문 표현: we expect the total number of fallbacks ... will also be reduced). 일상적인 건강·교육 질문, 실험실 결과 해석 등에서 정당한 사용자가 훨씬 적은 폴백을 겪게 됐다고 설명했다. 다만 바이러스학, 독성학, 분자 설계 등 이중용도 전문 생물학 연구와 신약 개발 분야에는 여전히 제한이 유지된다.",
+      "tier": "official"
+    },
+    {
+      "title": "Claude Fable 5 and Claude Mythos 5",
+      "url": "https://www.anthropic.com/news/claude-fable-5-mythos-5",
+      "host": "anthropic.com",
+      "body": "2026년 6월 9일 Anthropic은 Claude Fable 5와 Claude Mythos 5를 함께 공개했다. 두 모델은 동일한 기반 모델이지만 안전장치 수준이 다르다 — Fable 5는 일반 공개용으로 사이버보안·생물학/화학 관련 요청을 감지하는 분류기가 적용돼 해당 요청은 Claude Opus 4.8로 자동 전환되며, Mythos 5는 이 중 일부 영역의 안전장치를 해제한 버전으로 Project Glasswing 파트너 및 제한된 생물의학 연구자에게만 제공된다. 가격은 입력 $10/백만 토큰, 출력 $50/백만 토큰이며, 구독 플랜(Pro/Max/Team/seat-based Enterprise)에서는 6월 22일까지 추가 비용 없이 제공됐다. 30일 데이터 보유 정책이 적용된다.",
+      "tier": "official"
+    },
+    {
+      "title": "Anthropic launches Opus 5",
+      "url": "https://techcrunch.com/2026/07/24/anthropic-launches-opus-5/",
+      "host": "techcrunch.com",
+      "body": "TechCrunch는 2026년 7월 24일 Anthropic이 Claude Opus 5를 출시했다고 보도했다. Opus 4.8이 5월 28일 출시된 지 약 2개월 만의 신모델이다. Opus 5가 Fable 5보다 저렴하고 제한이 적으며 여러 벤치마크에서 Fable 5를 능가한다고 전했다. Fable과 달리 Opus 5에는 30일 데이터 보유 정책이 적용되지 않는다. 사이버보안 작업에는 여전히 안전장치가 있으나 Fable 5 대비 안전 분류기 개입이 약 85% 감소할 것으로 예상된다고 전했다. Mythos 5·Fable 5·Sonnet 5가 2026년 6월에 출시됐고, 5 시리즈 중 Haiku만 아직 업그레이드를 기다리고 있다고 배경을 정리했다.",
+      "tier": "press"
+    },
+    {
+      "title": "Anthropic debuts Claude Opus 5 with feature that lets users toggle between cost and capability",
+      "url": "https://fortune.com/2026/07/24/anthropic-debuts-claude-opus-5-with-feature-that-lets-users-toggle-between-cost-and-capability/",
+      "host": "fortune.com",
+      "body": "Fortune은 2026년 7월 24일 Claude Opus 5 출시를 보도하며, 기업 고객의 높은 AI 비용 문제를 해결하기 위해 설계된 모델이라고 전했다. 낮음/중간/높음 단계로 비용과 성능 균형을 조정할 수 있는 기능이 특징이며, Fable 5 대비 절반 가격으로 유사 성능을 낸다고 설명했다. Anthropic은 Opus 5가 '가장 정렬된 Opus 모델'이라고 밝혔다. 기사는 OpenAI가 2026년 7월 9일 GPT-5.6을 출시하며 토큰 효율성을 강조했다고 짚었다. 시장 반응으로 기업 고객·개발자가 Fable 5의 높은 토큰 소비(burn rate)에 불만을 제기했고, 일부 사용자(some users)는 안전장치가 지나치게 엄격해 코딩·사이버보안·일부 생물학 연구·AI 모델 개발 작업에서 모델 유용성이 떨어진다고 비판했다고 보도했다. Anthropic은 6월에 Mythos 5, Fable 5, Sonnet 5를 출시해 2개월 내 총 4개 모델을 내놓았다.",
+      "tier": "press"
+    }
+  ],
+  "claims": [
+    {
+      "claim": "Claude Opus 5는 Fable 5급 성능을 절반 가격에 제공하며 Anthropic의 새 주력 모델(Max 기본·Pro 최상위)로 자리잡았다",
+      "grade": "confirmed",
+      "evidence": [
+        "가격: 입력 $5/출력 $25 (백만 토큰) — Fable 5(입력 $10/출력 $50)의 절반, Opus 4.8과는 동일가",
+        "CursorBench 3.2 최대 노력 설정에서 Fable 5 성능의 99.5%를 절반 비용에 달성 (Anthropic 자체 발표)",
+        "OSWorld 2.0(컴퓨터 사용 벤치마크)에서 Fable 5의 최고 결과를 3분의 1을 조금 넘는 비용으로 넘어섬",
+        "Claude Max 기본 모델, Claude Pro 최상위 모델로 지정"
+      ],
+      "sourceUrls": [
+        "https://www.anthropic.com/news/claude-opus-5",
+        "https://techcrunch.com/2026/07/24/anthropic-launches-opus-5/",
+        "https://fortune.com/2026/07/24/anthropic-debuts-claude-opus-5-with-feature-that-lets-users-toggle-between-cost-and-capability/"
+      ]
+    },
+    {
+      "claim": "Opus 5는 Anthropic 자체 벤치마크 발표 기준으로 이전 최고 모델 대비 큰 격차의 상대적 1위를 기록했다 — 단 절대 점수(%)는 공식 자료에 없어 별도 검증이 안 된다",
+      "grade": "confirmed",
+      "evidence": [
+        "Frontier-Bench v0.1에서 Opus 4.8 대비 2배 이상 점수",
+        "ARC-AGI 3에서 차순위 모델의 3배 점수",
+        "Zapier AutomationBench에서 차순위 대비 약 1.5배 성공률",
+        "유기화학 분광 데이터 분자구조 추론 +10.2포인트, 단백질 서열-기능 예측 +7.7포인트(Opus 4.8 대비, 내부 벤치마크)",
+        "※ 위 수치는 모두 Anthropic 자체 발표문의 상대 배수/점수차이며, 절대 퍼센트는 공식 페이지에 없음(제3자 블로그의 절대 수치는 이번 조사 출처에 없어 미검증)"
+      ],
+      "sourceUrls": ["https://www.anthropic.com/news/claude-opus-5"]
+    },
+    {
+      "claim": "Anthropic은 2026년 6~7월 두 달 사이 Mythos 5·Fable 5·Sonnet 5·Opus 5 4개 모델을 연쇄 출시하며 프론티어 모델 출시 주기를 크게 단축했다",
+      "grade": "confirmed",
+      "evidence": [
+        "Mythos 5·Fable 5: 2026-06-09 공개",
+        "Opus 4.8: 2026-05-28 출시 → Opus 5: 2026-07-24 출시(약 2개월 뒤)",
+        "Sonnet 5도 2026년 6월 출시(TechCrunch·Fortune 공통 보도)",
+        "5 시리즈 중 Haiku만 2026-07-24 기준 미출시"
+      ],
+      "sourceUrls": [
+        "https://www.anthropic.com/news/claude-opus-5",
+        "https://www.anthropic.com/news/claude-fable-5-mythos-5",
+        "https://techcrunch.com/2026/07/24/anthropic-launches-opus-5/",
+        "https://fortune.com/2026/07/24/anthropic-debuts-claude-opus-5-with-feature-that-lets-users-toggle-between-cost-and-capability/"
+      ]
+    },
+    {
+      "claim": "Anthropic은 모델 출시 후에도 안전장치를 계속 재조정하고 있다 — Opus 5의 사이버 분류기 개입 축소와 Fable 5 생물학 분류기의 오탐지 감소(8/7 업데이트)가 같은 흐름을 보여주지만, 고위험 영역(장기 자율 생물학 연구·공격적 사이버보안)의 제한은 여전히 남아있다",
+      "grade": "confirmed",
+      "evidence": [
+        "Opus 5 자동화된 행동 감사 부정렬 행동 점수 2.3 — 최근 모델 중 최저(가장 안전, 공식 표현: the lowest of our recent models)",
+        "Opus 5의 사이버 안전 분류기 개입, Fable 5 대비 약 85% 감소 예상(단, 익스플로잇 생성·침투테스트는 여전히 차단)",
+        "Fable 5 생물학 안전 분류기 재구성(2026-08-07)으로 폴백 전체 약 85% 감소, 플랫폼별로는 Claude.ai 약 67%↓·Cowork 약 55%↓·Claude Code 약 17%↓·Claude Platform 약 7%↓",
+        "다만 바이러스학·독성학·분자설계 등 이중용도 전문 생물학 연구·신약개발, 그리고 장시간 자율 생물학 연구·공격적 사이버보안은 Opus 5도 Mythos 5보다 성능이 낮다고 Anthropic이 명시"
+      ],
+      "sourceUrls": [
+        "https://www.anthropic.com/news/claude-opus-5",
+        "https://www.anthropic.com/news/improving-fable-5-s-biology-safeguards"
+      ]
+    },
+    {
+      "claim": "업계에서는 기업 고객의 비용·과도한 안전장치 불만이 Opus 5 설계 배경으로 거론되며, OpenAI GPT-5.6(7/9) 출시와 시점이 근접해 경쟁 구도로 해석된다",
+      "grade": "reported",
+      "evidence": [
+        "Fortune 보도: 기업 고객·개발자가 Fable 5의 높은 토큰 소비(burn rate)에 불만 제기, 일부 사용자는 안전장치가 지나치게 엄격해 코딩·사이버보안·일부 생물학 연구·AI 모델 개발에서 유용성이 떨어진다고 비판했다고 전함(구체적 인용원 미상, 2차 보도)",
+        "OpenAI는 Opus 5보다 약 2주 앞선 2026-07-09 GPT-5.6을 출시하며 토큰 효율성을 강조(Fortune 보도)",
+        "법무팀·소프트웨어 엔지니어링 팀이 Opus 5의 주요 타깃 고객층으로 언급됨(Fortune 보도, Anthropic 공식 확인 없음)"
+      ],
+      "sourceUrls": ["https://fortune.com/2026/07/24/anthropic-debuts-claude-opus-5-with-feature-that-lets-users-toggle-between-cost-and-capability/"]
+    }
+  ],
+  "numbers": [
+    { "what": "Opus 5 가격 (입력/출력, 백만 토큰)", "value": "$5 / $25", "asOf": "2026-07-24", "sourceUrl": "https://www.anthropic.com/news/claude-opus-5" },
+    { "what": "Fable 5·Mythos 5 가격 (입력/출력, 백만 토큰)", "value": "$10 / $50", "asOf": "2026-06-09", "sourceUrl": "https://www.anthropic.com/news/claude-fable-5-mythos-5" },
+    { "what": "Frontier-Bench v0.1, Opus 4.8 대비", "value": "2배 이상", "asOf": "2026-07-24", "sourceUrl": "https://www.anthropic.com/news/claude-opus-5" },
+    { "what": "ARC-AGI 3, 차순위 모델 대비", "value": "3배", "asOf": "2026-07-24", "sourceUrl": "https://www.anthropic.com/news/claude-opus-5" },
+    { "what": "CursorBench 3.2, Fable 5 대비 성능/비용", "value": "성능 99.5% / 비용 50%", "asOf": "2026-07-24", "sourceUrl": "https://www.anthropic.com/news/claude-opus-5" },
+    { "what": "Zapier AutomationBench, 차순위 대비 성공률", "value": "약 1.5배", "asOf": "2026-07-24", "sourceUrl": "https://www.anthropic.com/news/claude-opus-5" },
+    { "what": "유기화학 분자구조 추론 (Opus 4.8 대비, 내부 벤치마크)", "value": "+10.2포인트", "asOf": "2026-07-24", "sourceUrl": "https://www.anthropic.com/news/claude-opus-5" },
+    { "what": "단백질 서열-기능 예측 (Opus 4.8 대비, 내부 벤치마크)", "value": "+7.7포인트", "asOf": "2026-07-24", "sourceUrl": "https://www.anthropic.com/news/claude-opus-5" },
+    { "what": "Opus 5 부정렬 행동 점수 (자동화 행동 감사)", "value": "2.3 (최근 모델 중 최저)", "asOf": "2026-07-24", "sourceUrl": "https://www.anthropic.com/news/claude-opus-5" },
+    { "what": "Opus 5 사이버 안전 분류기 개입 감소 (Fable 5 대비)", "value": "약 85% 감소 예상", "asOf": "2026-07-24", "sourceUrl": "https://www.anthropic.com/news/claude-opus-5" },
+    { "what": "Opus 5 Fast mode 가격/속도", "value": "기본가 2배 / 약 2.5배 속도", "asOf": "2026-07-24", "sourceUrl": "https://www.anthropic.com/news/claude-opus-5" },
+    { "what": "Fable 5 생물학 관련 폴백 감소 (전체)", "value": "약 85% 감소", "asOf": "2026-08-07", "sourceUrl": "https://www.anthropic.com/news/improving-fable-5-s-biology-safeguards" },
+    { "what": "Fable 5 전체 폴백 감소 예상(생물학 외 사유 포함) — Claude.ai", "value": "약 67% 감소 예상", "asOf": "2026-08-07", "sourceUrl": "https://www.anthropic.com/news/improving-fable-5-s-biology-safeguards" },
+    { "what": "Fable 5 전체 폴백 감소 예상(생물학 외 사유 포함) — Cowork", "value": "약 55% 감소 예상", "asOf": "2026-08-07", "sourceUrl": "https://www.anthropic.com/news/improving-fable-5-s-biology-safeguards" },
+    { "what": "Fable 5 전체 폴백 감소 예상(생물학 외 사유 포함) — Claude Code", "value": "약 17% 감소 예상", "asOf": "2026-08-07", "sourceUrl": "https://www.anthropic.com/news/improving-fable-5-s-biology-safeguards" },
+    { "what": "Fable 5 전체 폴백 감소 예상(생물학 외 사유 포함) — Claude Platform", "value": "약 7% 감소 예상", "asOf": "2026-08-07", "sourceUrl": "https://www.anthropic.com/news/improving-fable-5-s-biology-safeguards" },
+    { "what": "Opus 4.8 출시일", "value": "2026-05-28", "asOf": "2026-07-24", "sourceUrl": "https://techcrunch.com/2026/07/24/anthropic-launches-opus-5/" },
+    { "what": "OpenAI GPT-5.6 출시일", "value": "2026-07-09", "asOf": "2026-07-24", "sourceUrl": "https://fortune.com/2026/07/24/anthropic-debuts-claude-opus-5-with-feature-that-lets-users-toggle-between-cost-and-capability/" }
+  ],
+  "dropped": [],
+  "cannotCover": [
+    "Opus 5 벤치마크의 절대 점수(%) — 공식 발표문에는 상대 배수만 있고, 제3자 블로그가 보도한 절대 수치(Frontier-Bench 43.3%, ARC-AGI-3 30.2% 등)는 이번 조사 출처에 없어 검증 불가. 절대 수치를 단정해 쓰지 말 것.",
+    "부정렬 행동 점수 2.3의 산출 방법론(System Card 상세) — 발표문에서 링크로만 안내, 본 조사에서 열람하지 않음",
+    "Frontier-Bench v0.1·CursorBench 3.2·Zapier AutomationBench가 누가 만든 벤치마크인지, Anthropic 자체 지표인지 여부 — 확인 못함",
+    "Axios 보도(2026-07-24) — 403으로 본문을 읽지 못해 출처에서 제외. 해당 관점 인용 불가",
+    "'기업 고객 다수가 불만을 제기했다'는 주장의 구체적 근거(누가, 몇 명, 어떤 조사) — Fortune 기사에 출처가 명시되지 않아 사실로 단정하지 말고 '업계 보도' 수준으로만 언급할 것"
+  ],
+  "songs": []
+}

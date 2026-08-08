@@ -1,0 +1,59 @@
+{
+  "company": "openai",
+  "name": "OpenAI",
+  "fetchedOk": true,
+  "sourceUrl": "https://openai.com/news/rss.xml",
+  "items": [
+    {
+      "title": "Responding to the next frontier of critical cyber capabilities",
+      "url": "https://openai.com/index/responding-next-frontier-critical-cyber-capabilities",
+      "publishedAt": "Fri, 07 Aug 2026 15:20:00 GMT"
+    },
+    {
+      "title": "How HSP GRUPPE builds AI capabilities for tax advisory",
+      "url": "https://openai.com/index/hsp-gruppe",
+      "publishedAt": "Fri, 07 Aug 2026 09:00:00 GMT"
+    },
+    {
+      "title": "Improving GPT‑5.6 Sol in ChatGPT—and expanding access to GPT-5.6 Luna for free users",
+      "url": "https://openai.com/index/improving-gpt-5-6-sol-in-chatgpt",
+      "publishedAt": "Thu, 06 Aug 2026 10:00:00 GMT"
+    },
+    {
+      "title": "Working with the American Psychological Association on youth mental health and AI",
+      "url": "https://openai.com/index/openai-and-apa-partner-to-advance-responsible-ai",
+      "publishedAt": "Thu, 06 Aug 2026 06:00:00 GMT"
+    },
+    {
+      "title": "From asking to doing: How the world is putting ChatGPT to work",
+      "url": "https://openai.com/index/how-the-world-is-putting-chatgpt-to-work",
+      "publishedAt": "Thu, 06 Aug 2026 00:00:00 GMT"
+    },
+    {
+      "title": "Third-party cyber evaluations involving OpenAI models",
+      "url": "https://openai.com/index/third-party-cyber-evaluations-involving-openai-models",
+      "publishedAt": "Tue, 04 Aug 2026 19:00:00 GMT"
+    },
+    {
+      "title": "New ways to learn and teach with ChatGPT Work and Codex",
+      "url": "https://openai.com/index/learn-teach-chatgpt-work-codex",
+      "publishedAt": "Tue, 04 Aug 2026 00:00:00 GMT"
+    },
+    {
+      "title": "Apple is getting this wrong",
+      "url": "https://openai.com/index/apple-is-getting-this-wrong",
+      "publishedAt": "Mon, 03 Aug 2026 22:00:00 GMT"
+    },
+    {
+      "title": "How we built a realtime system for responsive voice AI in six months",
+      "url": "https://openai.com/index/continuous-voice-interaction-with-gpt-live",
+      "publishedAt": "Mon, 03 Aug 2026 07:00:00 GMT"
+    },
+    {
+      "title": "Circles powers telco personalization with OpenAI technology",
+      "url": "https://openai.com/index/circles",
+      "publishedAt": "Mon, 03 Aug 2026 00:00:00 GMT"
+    }
+  ],
+  "note": "뉴스룸 HTML은 403 — RSS 필수. 노이즈(파트너십·기업 사례)가 많아 blog-researcher 가 제목으로 골라야 한다. 모델 세부는 developers.openai.com/api/docs/changelog(별도 채널) 참고 가능."
+}
