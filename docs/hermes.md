@@ -51,8 +51,8 @@ Hermes는 [Nous Research](https://nousresearch.com)의 AI 에이전트 런타임
 
 | 항목 | 내용 |
 |---|---|
-| 모델 | `gemini-3-flash-preview` (Google 계정 OAuth = Code Assist) |
-| 재시도 | `agent.api_max_retries=6` — 무료 **분당 한도(429)**를 백오프로 기다렸다 넘어감 |
+| 모델 | `gemini-2.5-pro(GA)` (API키, 유료 Tier-1) · provider `gemini` 단독 — fallback 없음 (2026-06-23 확정) |
+| 재시도 | `agent.api_max_retries=6` — 유료 쿼터지만 21:30 **503 잦음** → 재시도 게이트 별도(`21:50`) |
 | 검색 | `ddgs.exe`(DuckDuckGo, 키 불필요) — 브라우저(Chrome)는 안 됨 |
 | 화제성 | `scripts/youtube_search.py`(YouTube Data API) — 조회수·댓글·업로드일 |
 | **한계** | 무료 쿼터(분당 소량) + **cron 3분 하드제한** → 복잡한 자동 크론은 불가. **온디맨드(인터랙티브)** 또는 **가벼운 no-agent 크론**이 현실적 |
@@ -114,6 +114,7 @@ Hermes는 [Nous Research](https://nousresearch.com)의 AI 에이전트 런타임
 | **한끗 — 오늘의 수집 분야** (`bc1a98451fb7`) | 매일 **21:00** | `trend_categories.py`(no-agent) — 오늘 수집할 트렌드 분야 안내 |
 
 > ⏰ **전부 21시대(KST)** — 아침엔 PC가 꺼져 있어 저녁으로 옮김. 메인 수집·게시 21:00, 재확인만 21:15(파일 쓰기 충돌 방지). Hermes는 **로컬**이라 그 시각에 PC+게이트웨이가 켜져 있어야 실행된다(`tools/start-hermes.bat`, 로그인 시 자동 시작).
+> **⚠️ auto-build.mjs·recheck-ad.mjs는 현재 브랜치가 `main`이어야 한다.** feature 브랜치에서 실행되면 pull --rebase가 silent fail → origin/main으로 push 안 됨 → 라이브 사이트가 정체됨(2026-08-09~15 사고). 안전장치 추가: 현재 브랜치 != `main`이면 exit 1 + git rebase 실패 시 abort 자동 실행.
 
 ### 펄스 요일별 분야 로테이션
 11개 분야를 요일로 쪼개 **매일 1~2분야씩 → 일주일에 1회전**(한 번에 11개 몰아치던 무료 쿼터 부담 해소).
