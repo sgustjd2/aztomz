@@ -1,0 +1,248 @@
+{
+  "source": "hf-datasets",
+  "fetchedOk": true,
+  "sourceUrl": "https://huggingface.co/api/datasets?limit=100&full=true",
+  "items": [
+    {
+      "id": "RekaAI/RekaDaily-10k-raw",
+      "url": "https://huggingface.co/datasets/RekaAI/RekaDaily-10k-raw",
+      "createdAt": "2026-08-04T21:25:22.000Z",
+      "lastModified": "2026-08-07T15:04:57.000Z",
+      "trendingScore": 11,
+      "likes": 11,
+      "downloads": 3281,
+      "pipelineTag": null,
+      "tags": [
+        "task_categories:video-classification",
+        "task_categories:image-to-video",
+        "language:en",
+        "license:apache-2.0",
+        "size_categories:100K<n<1M",
+        "format:parquet",
+        "format:optimized-parquet",
+        "modality:image"
+      ]
+    },
+    {
+      "id": "biglam/british-library-book-images",
+      "url": "https://huggingface.co/datasets/biglam/british-library-book-images",
+      "createdAt": "2026-08-06T10:13:33.000Z",
+      "lastModified": "2026-08-07T15:01:23.000Z",
+      "trendingScore": 11,
+      "likes": 12,
+      "downloads": 126,
+      "pipelineTag": null,
+      "tags": [
+        "task_categories:image-classification",
+        "task_categories:image-to-text",
+        "task_categories:text-to-image",
+        "annotations_creators:machine-generated",
+        "language_creators:found",
+        "source_datasets:blbooks",
+        "license:cc0-1.0",
+        "size_categories:1M<n<10M"
+      ]
+    },
+    {
+      "id": "Zhongzhi1228/Recursive-Task-Synthesis",
+      "url": "https://huggingface.co/datasets/Zhongzhi1228/Recursive-Task-Synthesis",
+      "createdAt": "2026-08-03T18:57:11.000Z",
+      "lastModified": "2026-08-06T23:30:00.000Z",
+      "trendingScore": 8,
+      "likes": 8,
+      "downloads": 118,
+      "pipelineTag": null,
+      "tags": [
+        "task_categories:reinforcement-learning",
+        "language:en",
+        "license:cc-by-4.0",
+        "size_categories:10K<n<100K",
+        "format:parquet",
+        "modality:tabular",
+        "modality:text",
+        "library:datasets"
+      ]
+    },
+    {
+      "id": "mfzheng/Scene2Wave",
+      "url": "https://huggingface.co/datasets/mfzheng/Scene2Wave",
+      "createdAt": "2026-08-03T04:47:35.000Z",
+      "lastModified": "2026-08-05T17:25:05.000Z",
+      "trendingScore": 7,
+      "likes": 21,
+      "downloads": 22,
+      "pipelineTag": null,
+      "tags": [
+        "task_categories:feature-extraction",
+        "license:other",
+        "size_categories:n<1K",
+        "region:us",
+        "wireless",
+        "6g",
+        "multimodal",
+        "channel-impulse-response"
+      ]
+    },
+    {
+      "id": "HAERAE-HUB/NOLLI",
+      "url": "https://huggingface.co/datasets/HAERAE-HUB/NOLLI",
+      "createdAt": "2026-08-04T11:11:43.000Z",
+      "lastModified": "2026-08-07T04:21:15.000Z",
+      "trendingScore": 6,
+      "likes": 7,
+      "downloads": 211,
+      "pipelineTag": null,
+      "tags": [
+        "task_categories:question-answering",
+        "language:ko",
+        "language:en",
+        "license:mit",
+        "size_categories:1K<n<10K",
+        "format:parquet",
+        "modality:text",
+        "library:datasets"
+      ]
+    },
+    {
+      "id": "ernie-research/FoR-T2I",
+      "url": "https://huggingface.co/datasets/ernie-research/FoR-T2I",
+      "createdAt": "2026-08-05T08:20:31.000Z",
+      "lastModified": "2026-08-05T11:33:06.000Z",
+      "trendingScore": 6,
+      "likes": 6,
+      "downloads": 409,
+      "pipelineTag": null,
+      "tags": [
+        "task_categories:text-to-image",
+        "language:en",
+        "license:cc-by-4.0",
+        "size_categories:1K<n<10K",
+        "format:json",
+        "modality:text",
+        "library:datasets",
+        "library:pandas"
+      ]
+    },
+    {
+      "id": "OS-Copilot/OSReward",
+      "url": "https://huggingface.co/datasets/OS-Copilot/OSReward",
+      "createdAt": "2026-08-06T10:51:21.000Z",
+      "lastModified": "2026-08-08T01:50:15.000Z",
+      "trendingScore": 6,
+      "likes": 6,
+      "downloads": 30,
+      "pipelineTag": null,
+      "tags": [
+        "task_categories:visual-question-answering",
+        "annotations_creators:expert-generated",
+        "language:en",
+        "size_categories:1K<n<10K",
+        "modality:text",
+        "modality:image",
+        "arxiv:2607.28609",
+        "region:us"
+      ]
+    },
+    {
+      "id": "dronefreak/Aeroscapes",
+      "url": "https://huggingface.co/datasets/dronefreak/Aeroscapes",
+      "createdAt": "2026-08-01T08:33:40.000Z",
+      "lastModified": "2026-08-01T09:25:35.000Z",
+      "trendingScore": 5,
+      "likes": 5,
+      "downloads": 537,
+      "pipelineTag": null,
+      "tags": [
+        "task_categories:image-segmentation",
+        "task_ids:semantic-segmentation",
+        "language:en",
+        "license:cc-by-sa-4.0",
+        "size_categories:1K<n<10K",
+        "format:json",
+        "modality:image",
+        "modality:text"
+      ]
+    },
+    {
+      "id": "Comunidade-Synapse-BR/Synapse-PT-75M-Dataset",
+      "url": "https://huggingface.co/datasets/Comunidade-Synapse-BR/Synapse-PT-75M-Dataset",
+      "createdAt": "2026-08-04T22:30:38.000Z",
+      "lastModified": "2026-08-04T22:35:59.000Z",
+      "trendingScore": 5,
+      "likes": 5,
+      "downloads": 59,
+      "pipelineTag": null,
+      "tags": [
+        "language:pt",
+        "license:apache-2.0",
+        "size_categories:10K<n<100K",
+        "format:json",
+        "modality:text",
+        "library:datasets",
+        "library:pandas",
+        "library:polars"
+      ]
+    },
+    {
+      "id": "Gen-Verse/Skill2-Bench",
+      "url": "https://huggingface.co/datasets/Gen-Verse/Skill2-Bench",
+      "createdAt": "2026-08-04T23:42:22.000Z",
+      "lastModified": "2026-08-04T23:42:22.000Z",
+      "trendingScore": 5,
+      "likes": 5,
+      "downloads": 50,
+      "pipelineTag": null,
+      "tags": [
+        "task_categories:question-answering",
+        "task_categories:text-generation",
+        "language:en",
+        "license:mit",
+        "size_categories:n<1K",
+        "format:json",
+        "modality:tabular",
+        "modality:text"
+      ]
+    },
+    {
+      "id": "AxiomicLabs/ACI-Bench",
+      "url": "https://huggingface.co/datasets/AxiomicLabs/ACI-Bench",
+      "createdAt": "2026-08-03T19:02:52.000Z",
+      "lastModified": "2026-08-03T20:30:44.000Z",
+      "trendingScore": 4,
+      "likes": 4,
+      "downloads": 89,
+      "pipelineTag": null,
+      "tags": [
+        "task_categories:text-generation",
+        "task_categories:question-answering",
+        "language:en",
+        "license:apache-2.0",
+        "size_categories:1K<n<10K",
+        "format:parquet",
+        "modality:text",
+        "library:datasets"
+      ]
+    },
+    {
+      "id": "NCSpeech/YO-CPT-kk",
+      "url": "https://huggingface.co/datasets/NCSpeech/YO-CPT-kk",
+      "createdAt": "2026-08-04T19:57:01.000Z",
+      "lastModified": "2026-08-04T23:48:02.000Z",
+      "trendingScore": 4,
+      "likes": 4,
+      "downloads": 326,
+      "pipelineTag": null,
+      "tags": [
+        "task_categories:text-to-speech",
+        "task_categories:automatic-speech-recognition",
+        "task_categories:audio-classification",
+        "language:kk",
+        "language:ru",
+        "license:other",
+        "size_categories:100K<n<1M",
+        "format:parquet"
+      ]
+    }
+  ],
+  "note": "no-sort(trendingScore 내림차순) 상위 100건 중 createdAt 최근 7일 이내인 것만 남김. 데이터셋은 신규가 드물어 0건이 정상일 수 있음 — 억지로 채우지 않음."
+}

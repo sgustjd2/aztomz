@@ -16,6 +16,8 @@
      node backend/scripts/blog-publish.mjs <id> --dry   # ② 에디터까지만 채우고 멈춤(셀렉터 점검)
      node backend/scripts/blog-publish.mjs <id>         # ③ 공개 발행
      node backend/scripts/blog-publish.mjs <id> --draft # 비공개 저장
+     node backend/scripts/blog-publish.mjs <id> --edit  # 이미 발행된 글을 새 글 대신 "그 자리에서" 수정
+                                                         # (posted.json 의 URL에서 글 번호를 찾아 그 편집화면으로 감)
 
    환경변수: TISTORY_BLOG(기본 burning-go9me) · TISTORY_CATEGORY(기본 AZTOMZ)
              HEADLESS=1 로 창 없이 실행(로그인 이후에만 권장)
@@ -410,8 +412,22 @@ async function publish() {
   // 같은 글을 두 번 올리면 중복 콘텐츠가 된다. 발행 기록을 남기고 재실행은 --force 로만.
   // (로그인 확인보다 먼저 — 이미 올린 글이면 브라우저를 띄울 이유가 없다.)
   const posted = existsSync(postedPath) ? JSON.parse(await readFile(postedPath, 'utf8')) : {};
-  if (posted[id] && !has('force') && !has('dry')) {
-    console.log(`· 이미 발행됨 (${posted[id].at}) — ${posted[id].url}\n  다시 올리려면 --force`);
+  let editPostId = null;
+  if (has('edit')) {
+    // 새 글을 또 만드는 게 아니라 이미 발행된 그 글의 편집화면으로 간다 — 사실 오류 등을
+    // 사후에 고칠 때 쓴다(중복 게시물을 만들지 않기 위해).
+    if (!posted[id]) {
+      console.error(`✗ --edit 는 이미 발행된 글만 가능합니다 — posted.json 에 "${id}" 가 없습니다.`);
+      process.exit(1);
+    }
+    const m = posted[id].url.match(/\/(\d+)\/?$/);
+    if (!m) {
+      console.error(`✗ posted.json 의 URL 에서 글 번호를 못 찾았습니다: ${posted[id].url}`);
+      process.exit(1);
+    }
+    editPostId = m[1];
+  } else if (posted[id] && !has('force') && !has('dry')) {
+    console.log(`· 이미 발행됨 (${posted[id].at}) — ${posted[id].url}\n  다시 올리려면 --force (같은 글을 고치려면 --edit)`);
     process.exit(0);
   }
 
@@ -431,8 +447,16 @@ async function publish() {
   }
 
   const page = ctx.pages()[0] || await ctx.newPage();
-  // "작성 중인 글을 불러올까요?" 네이티브 confirm — 항상 '아니오'(새 글로 시작).
-  page.on('dialog', (d) => d.dismiss().catch(() => {}));
+  // "작성 중인 글을 불러올까요?" 네이티브 confirm — 페이지 진입 직후엔 '아니오'(새 글/우리가 주입할
+  // 내용으로 시작). 그런데 발행 버튼을 누른 뒤에 뜨는 확인창(예: "이미 발행된 글입니다. 덮어쓸까요?")
+  // 까지 똑같이 dismiss 해버리면 클릭은 성공했다고 나오는데 실제로는 취소돼 아무 것도 안 바뀐다
+  // (2026-08-09 --edit 모드에서 실측 — 콘솔은 "발행 완료"인데 라이브 글이 그대로였다).
+  // contentReady 이후에 뜨는 다이얼로그는 발행 확인일 가능성이 높으므로 accept 한다.
+  let contentReady = false;
+  page.on('dialog', (d) => {
+    console.log(`  · 다이얼로그(${contentReady ? 'accept' : 'dismiss'}): ${d.message().slice(0, 100)}`);
+    (contentReady ? d.accept() : d.dismiss()).catch(() => {});
+  });
 
   const fail = async (e) => {
     const shot = join(outDir, `${id}.error.png`);
@@ -443,7 +467,7 @@ async function publish() {
   };
 
   try {
-    await page.goto(`${BASE}/manage/newpost/`, { waitUntil: 'domcontentloaded' });
+    await page.goto(editPostId ? `${BASE}/manage/newpost/${editPostId}` : `${BASE}/manage/newpost/`, { waitUntil: 'domcontentloaded' });
 
     if (/login|accounts\.kakao/.test(page.url())) {
       throw new Error('로그인 세션이 만료됐습니다. --login 을 다시 실행하되, '
@@ -533,6 +557,21 @@ async function publish() {
     const injected = await page.evaluate(() =>
       (window.tinymce.activeEditor || window.tinymce.editors[0]).getBody().innerHTML.length);
     if (injected < 200) throw new Error(`본문 주입이 비어 보입니다(${injected}자). 에디터 모드를 확인하세요.`);
+    contentReady = true; // 이제부터 뜨는 다이얼로그는 발행 확인일 가능성이 높다 — accept 로 전환
+
+    // ── 수정 모드면 기존 태그를 먼저 다 지운다 — 안 지우면 새 태그가 옛 태그 옆에 그냥 쌓인다.
+    // 구조: <span class="txt_tag">#이름<a class="btn_delete">...</a></span> 가 태그마다 하나.
+    // 지울 때마다 DOM 이 다시 그려지므로 매번 새로 조회한다(캐시된 핸들은 stale 해짐).
+    if (editPostId) {
+      for (let i = 0; i < 30; i++) {
+        const del = page.locator('.editor_tag a.btn_delete').first();
+        if (!(await del.count())) break;
+        await del.evaluate((el) => el.click());
+        await page.waitForTimeout(150);
+      }
+      const remaining = await page.locator('.editor_tag a.btn_delete').count();
+      if (remaining) console.warn(`  ⚠ 기존 태그 ${remaining}개를 다 못 지웠습니다 — 수동 확인 필요`);
+    }
 
     // ── 태그 (카테고리와 마찬가지로 에디터 하단 인라인)
     const tagInput = await pick(page, '태그 입력란', [
@@ -584,15 +623,22 @@ async function publish() {
     ], { timeout: 8000 });
     await pub.click();
 
-    // 발행되면 글 주소로 이동한다.
-    await page.waitForURL((u) => /\/\d+$/.test(u.pathname) || u.pathname.includes('/manage/posts'), { timeout: 30000 })
-      .catch(() => { throw new Error('발행 후 이동을 확인하지 못했습니다. 티스토리에서 직접 확인하세요.'); });
+    // 발행되면 글 주소로 이동한다. /manage/ 아래는 전부 "아직 안 끝남" 으로 친다 —
+    // --edit 모드는 시작 URL 자체가 /manage/newpost/<id> 라 숫자로 끝나는 걸로만 판정하면
+    // 클릭 직후(진짜 저장이 되기도 전에) 바로 통과해버린다(2026-08-09 실측 — "발행 완료"라고
+    // 나왔는데 라이브 글은 그대로였다. 원인: 발행 확인 다이얼로그가 dismiss 되며 취소된 것).
+    await page.waitForURL(
+      (u) => (/\/\d+\/?$/.test(u.pathname) && !u.pathname.includes('/manage/')) || u.pathname.includes('/manage/posts'),
+      { timeout: 30000 }
+    ).catch(() => { throw new Error('발행 후 이동을 확인하지 못했습니다. 티스토리에서 직접 확인하세요.'); });
 
     // /manage/posts/ 로 튕겼으면 page.url() 은 진짜 글 주소가 아니다 — RSS 로 퍼머링크를 확정한다.
+    // --edit 는 글 번호를 이미 알고 있으니(editPostId) RSS 조회가 실패해도 그걸로 확정할 수 있다.
     let finalUrl = page.url();
-    if (!has('draft') && !/\/\d+$/.test(new URL(finalUrl).pathname)) {
+    if (!has('draft') && !/\/\d+\/?$/.test(new URL(finalUrl).pathname)) {
       const permalink = await findPermalink(meta.title);
       if (permalink) finalUrl = permalink;
+      else if (editPostId) finalUrl = `${BASE}/${editPostId}`;
       else console.warn('  ⚠ RSS 에서 퍼머링크를 못 찾았습니다 — posted.json 에 관리 페이지 주소가 남습니다.');
     }
 

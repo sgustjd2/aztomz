@@ -1,0 +1,59 @@
+{
+  "id": "ai-company-watch",
+  "tistoryCategory": "AI 동향",
+  "_note": "AI/AI 동향. ai-trend 와 달리 '이번 주 여러 소식 종합'이 아니라 **한 회사(Claude/OpenAI/Gemini/Grok 로테이션)의 이번 주 가장 중요한 발표 1건**을 깊게 다룬다. 회사별 1차 출처(공식 뉴스룸 RSS/HTML)만 근거로 쓴다 — 일반 웹서치는 2026-08-08 조사에서 존재하지 않는 기술(네이버 'AuthGR' 등)을 지어낸 전례가 있어 이 카테고리에서는 원천 배제한다.",
+  "persona": "AI 회사들의 공식 발표를 매주 직접 확인하고 실무 영향만 정리하는 사람",
+  "readerProfile": "Claude·OpenAI·Gemini·Grok 각각 뭘 발표했는지 매주 놓치지 않고 싶은 개발자·기획자",
+  "searchIntent": "정보형",
+  "structureTemplate": "news",
+  "tone": {
+    "formality": "해요체",
+    "emoji": false,
+    "sentenceMax": 3
+  },
+  "mustInclude": [
+    "어느 회사의 어떤 발표인지, 발표일 명시",
+    "확인된 사실과 해석의 분리 (grade: confirmed/reported/unclear 구분)",
+    "공식 출처 url 을 그대로 쓴 출처 링크 — 최소 1개는 회사 공식 도메인",
+    "'나한테 뭐가 달라지나' 섹션",
+    "아직 확인 안 된 것 목록(있으면) — 없으면 이 항목 생략 가능"
+  ],
+  "banned": [
+    "충격",
+    "대박",
+    "역대급",
+    "혁명",
+    "게임체인저",
+    "곧 대체될",
+    "무조건",
+    "업계를 뒤흔들"
+  ],
+  "wordCount": [
+    1200,
+    2000
+  ],
+  "imagePolicy": {
+    "min": 0,
+    "altRequired": true,
+    "ownOnly": true,
+    "_note": "본문 그림은 blog-figure.mjs 의 table/timeline 카드로. 회사 로고·제품 스크린샷 등 남의 자산 사용 금지."
+  },
+  "ctaType": "같은 시리즈(다른 회사) 이전 글 내부링크 1~2개, 없으면 생략",
+  "affiliateDisclosure": false,
+  "publishDefault": "public",
+  "_publishNote": "자동 공개 발행. 게이트: (1) 공식 출처 링크 0개면 발행 보류 (2) 자가검수 32점 미만이면 1회 재작성, 그래도 미달이면 보류 (3) ai-watch-fetch.mjs 가 후보 0건을 반환했으면(예: xAI 차단) 그 회사는 이번 주 건너뛰고 다음 회사로 대체 — 빈 소재로 억지로 쓰지 않는다.",
+  "sourcing": {
+    "method": "결정적 스크립트 우선 — 절대 일반 WebSearch 로 시작하지 않는다.",
+    "steps": [
+      "1. node backend/scripts/ai-watch-fetch.mjs --company=<이번 주 회사> 로 후보 목록(최근 10건, 제목+URL+날짜)을 받는다.",
+      "2. blog-researcher 가 그중 실제로 신모델·신기능 발표로 보이는 1~2건을 추려 WebFetch 로 본문 전체를 읽는다(제목만 보고 판단 금지 — 파트너십·채용 발표 등 노이즈가 섞여 있다).",
+      "3. 읽은 본문에서 확인된 사실만 research.json 의 facts[] 에 담는다. 추측·해석은 themes[] 로 분리.",
+      "4. 공식 발표 하나로 부족하면(내용이 얇으면) 같은 회사의 개발자 체인지로그(OpenAI: developers.openai.com/api/docs/changelog)나 관련 언론 보도로 보강하되, 1차 출처(회사 공식) 인용을 항상 우선한다."
+    ],
+    "rotation": {
+      "_note": "요일이 아니라 '이번 주 아직 안 쓴 회사'로 고른다 — blog-pick-ai-company.mjs 가 posted.json 을 보고 이번 주(월요일 기준) 발행 이력이 없는 회사 중 순번이 가장 빠른 걸 고른다.",
+      "order": ["anthropic", "google", "openai", "xai"]
+    },
+    "xaiCaveat": "2026-08-08 확인: x.ai 는 이 환경에서 도메인 전체가 403 이고 RSS 도 없다. xai 차례인데 후보를 못 가져오면 스킵하고 다음 회사로 넘어간다 — 근거 없이 쓰지 않는다. 사람이 브라우저로 직접 x.ai/news 를 확인해 조사 파일을 수동으로 만들면 그걸로 진행 가능."
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "company": "anthropic",
+  "name": "Anthropic",
+  "fetchedOk": true,
+  "sourceUrl": "https://www.anthropic.com/news",
+  "items": [
+    {
+      "title": "Aug 7, 2026 Product Improving Fable 5&#x27;s biology safeguards",
+      "url": "https://www.anthropic.com/news/improving-fable-5-s-biology-safeguards",
+      "publishedAt": null
+    },
+    {
+      "title": "Jul 30, 2026 Investigating three real-world incidents in our cybersecurity evaluations",
+      "url": "https://www.anthropic.com/news/investigating-incidents-cybersecurity-evals",
+      "publishedAt": null
+    },
+    {
+      "title": "Jul 27, 2026 Announcements Our position on open-weights models",
+      "url": "https://www.anthropic.com/news/position-open-weights-models",
+      "publishedAt": null
+    },
+    {
+      "title": "Jul 24, 2026 Product Introducing Claude Opus 5",
+      "url": "https://www.anthropic.com/news/claude-opus-5",
+      "publishedAt": null
+    },
+    {
+      "title": "Jul 22, 2026 Economic Research A research agenda for the Economic Futures Research Fund",
+      "url": "https://www.anthropic.com/news/economic-futures-research-fund-agenda",
+      "publishedAt": null
+    },
+    {
+      "title": "Jul 22, 2026 Product Ask Claude about the Anthropic Economic Index",
+      "url": "https://www.anthropic.com/news/anthropic-economic-index-connector",
+      "publishedAt": null
+    },
+    {
+      "title": "Jul 21, 2026 Announcements Anthropic is donating another $20 million to Public First Action",
+      "url": "https://www.anthropic.com/news/donation-public-first-action",
+      "publishedAt": null
+    },
+    {
+      "title": "Jul 20, 2026 Announcements Apply for Anthropic’s AI for Science rare disease research grants",
+      "url": "https://www.anthropic.com/news/rare-disease-research-grants",
+      "publishedAt": null
+    }
+  ],
+  "note": "RSS 없음 — HTML 직접 파싱. platform.claude.com/docs/en/release-notes/overview 는 API 릴리스노트(별도 채널, 미포함)."
+}
