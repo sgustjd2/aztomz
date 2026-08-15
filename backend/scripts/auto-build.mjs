@@ -25,7 +25,7 @@
    종료코드: 게시 0건이어도 0(정상). 치명 오류만 1.
    env: DDGS_EXE(ddgs 실행경로, 기본 로컬 venv) — Actions에선 pip ddgs + DDGS_EXE=ddgs
    ============================================================ */
-import { readFileSync, writeFileSync, existsSync } from 'node:fs';
+import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'node:fs';
 import { execFileSync } from 'node:child_process';
 import { validateTrends } from './validate-trends.mjs';
 import { fileURLToPath } from 'node:url';
@@ -275,16 +275,37 @@ try {
 
 // ── 블로그 발행(--blog): 사이트 배포가 끝난 뒤에만 티스토리로 넘어간다.
 // 여기서 실패해도 트렌드 게시는 이미 성공했으므로 절대 exit 1 하지 않는다(경고만).
+// 실패는 콘솔에만 찍고 끝내면 무인 크론에서 아무도 못 본다 — 파일로도 남긴다(2026-08-15).
+function blogFailureHint(text) {
+  if (/Not logged in|OAuth session expired|claude\s*\/login/i.test(text)) return 'claude CLI 세션 만료 — 터미널에서 claude /login 필요';
+  if (/로그인 세션이 만료|로그인 프로필이 없습니다|--login/i.test(text)) return '티스토리 로그인 세션 만료 — node backend/scripts/blog-publish.mjs --login 필요';
+  return null;
+}
 if (BLOG) {
+  const failLogPath = join(repoRoot, 'backend', 'out', 'blog', 'publish-failures.json');
+  const blogFailures = [];
   for (const t of published) {
-    try {
-      execFileSync('node', [join(scriptsDir, 'blog-build.mjs'), t.id], { cwd: repoRoot, stdio: 'inherit' });
-      // 발행 전 검증(claude -p) — 원본 왜곡·단정·지어낸 사실·저작권을 마지막으로 본다.
-      // 반려되면 아래 publish 는 실행되지 않고 catch 로 떨어진다(트렌드 게시는 이미 완료).
-      execFileSync('node', [join(scriptsDir, 'blog-verify.mjs'), t.id], { cwd: repoRoot, stdio: 'inherit' });
-      execFileSync('node', [join(scriptsDir, 'blog-publish.mjs'), t.id], { cwd: repoRoot, stdio: 'inherit' });
-    } catch (e) {
-      console.error(`⚠ 블로그 발행 실패(트렌드 게시는 완료됨) — ${t.id}: ${(e.message || '').slice(0, 200)}`);
+    const stages = [['blog-build', 'blog-build.mjs'], ['blog-verify', 'blog-verify.mjs'], ['blog-publish', 'blog-publish.mjs']];
+    for (const [stage, script] of stages) {
+      try {
+        const out = execFileSync('node', [join(scriptsDir, script), t.id], { cwd: repoRoot, encoding: 'utf-8' });
+        process.stdout.write(out);
+      } catch (e) {
+        const text = ((e.stdout || '') + (e.stderr || '') + (e.message || '')).toString();
+        process.stdout.write(text);
+        const hint = blogFailureHint(text);
+        blogFailures.push({ id: t.id, stage, at: new Date().toISOString(), hint, message: text.slice(-500) });
+        console.error(`⚠ 블로그 발행 실패(트렌드 게시는 완료됨) — ${t.id} [${stage}]${hint ? ': ' + hint : ''}`);
+        break; // 이 항목의 나머지 단계는 건너뜀 — 다음 항목으로
+      }
     }
+  }
+  if (blogFailures.length) {
+    mkdirSync(dirname(failLogPath), { recursive: true });
+    let log = [];
+    try { log = JSON.parse(readFileSync(failLogPath, 'utf-8')); } catch {}
+    log.push(...blogFailures);
+    writeFileSync(failLogPath, JSON.stringify(log, null, 2) + '\n', 'utf-8');
+    console.error(`\n⚠️ 블로그 발행 실패 ${blogFailures.length}건 기록 → backend/out/blog/publish-failures.json`);
   }
 }
