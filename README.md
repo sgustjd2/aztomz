@@ -18,8 +18,10 @@
 | `frontend/data/trends.js`·`pulse.js` | 브라우저가 로드하는 **생성물** — **직접 편집 금지** |
 | `backend/` | 비공개(배포 안 됨) — 데이터 원본 + 빌드 스크립트 |
 | `backend/data/trends.json`·`pulse.json` | ★ **canonical 데이터 원본** (사람·스크립트가 수정) |
+| `youtube-summaries/` | 생성물 — AI Engineer(@aiDotEngineer) 채널 새 영상 한국어 상세 요약 모음(영상별 `.md` + 인덱스). **배포 대상 아님**(frontend/만 Vercel 배포) |
 | `backend/scripts/auto-build.mjs` | **자동 게시 엔진** — 출처 자동검증(404/410/관련성) · 중복 제거 · 통과분만 trends.json 반영 · images 필드 자동 주입(og:image) · shops 배열 URL 생존성 검증(죽은 링크 제거) · git push |
 | `backend/scripts/recheck-ad.mjs` | **광고/진짜 일일 재확인** — 가장 오래된 신뢰분석 1건의 출처 재검증(ddgs) → 살아있으면 analyzedAt=오늘 갱신(→ 홈 featured 회전) |
+| `backend/scripts/youtube-summarize.mjs` | AI Engineer 채널 새 영상 → **Gemini 한국어 상세 요약** (URL 직수신 — 자막 스크래핑·yt-dlp 불필요) → `youtube-summaries/<날짜>-<id>.md` 저장. RSS로 신규 감지, 파일 존재로 중복 스킵. `--limit`·`--lowres`·`--channel` 등 옵션 지원 |
 | `backend/scripts/refresh.mjs` 등 | 정적 데이터 생성·출처검증·이미지 스크립트 |
 | `tools/hermes-admin/` | 🔧 **Hermes 로컬 관리 콘솔** — 크론·설정·실행기록 관리(비배포, 127.0.0.1 전용) |
 | `docs/` | 기획·아키텍처·메뉴별 문서 |
@@ -91,7 +93,8 @@ Vercel 자동 배포 (git push 시)
 
 ## 배포
 
-GitHub `GO9ME/aztomz`(public) → Vercel 정적 배포. `vercel.json`의 `outputDirectory: "frontend"`로 **frontend/만 서빙**(backend/ 비공개).  
+GitHub `GO9ME/aztomz`(public) → Vercel 정적 배포. `vercel.json`의 `outputDirectory: "frontend"`로 **frontend/만 서빙**.  
+`backend/`·`youtube-summaries/` 등 생성물은 git 추적되지만 배포되지 않습니다.  
 **자동:** 각 push마다 Vercel이 재배포 (약 1~2분).
 
 ```bash
@@ -99,6 +102,11 @@ git add backend/data/trends.json frontend/data/trends.js
 git commit -m "..."
 git push origin main              # → Vercel 자동 재배포
 ```
+
+**YouTube 요약 자동화:**
+- 매일 08:00 KST(23:00 UTC 전날) GitHub Actions에서 `youtube-summarize.mjs` 실행
+- RSS로 AI Engineer 채널 새 영상 감지 → 미요약 항목만 Gemini 한국어 요약
+- 변경시 자동 커밋·푸시 (리포에만 저장, 배포되지 않음)
 
 ---
 

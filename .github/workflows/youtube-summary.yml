@@ -1,0 +1,51 @@
+name: youtube-summary
+
+# 매일 08:00 KST(= 23:00 UTC 전날), AI Engineer(@aiDotEngineer) 채널의 새 영상을
+# Gemini 로 한국어 상세 요약 → youtube-summaries/<날짜>-<id>.md + 인덱스 재생성 → 변경 시 커밋.
+#
+# · 새 영상 감지: YOUTUBE_API_KEY 있으면 Data API(최근 50개·안정), 없으면 RSS 폴백(최근 15개·간헐 실패).
+#   이미 요약한 영상은 파일 존재로 건너뜀.
+# · --limit=15 로 매 실행 신규분을 소진. 하루 15개 넘는 대량 업로드일엔 며칠에 걸쳐 처리(나머지는
+#   다음 실행에서). 급하면 수동 백필: node backend/scripts/youtube-summarize.mjs --limit=50
+#
+# ▶ 사전 준비(1회): 저장소 Settings → Secrets and variables → Actions 에 등록 —
+#   GEMINI_API_KEY(필수, pulse-daily 와 공유) · YOUTUBE_API_KEY(권장 — 없으면 불안정한 RSS 로 폴백).
+on:
+  schedule:
+    - cron: "0 23 * * *"   # 23:00 UTC = 08:00 KST
+  workflow_dispatch: {}     # 수동 실행도 가능
+
+permissions:
+  contents: write
+
+concurrency:
+  group: youtube-summary
+  cancel-in-progress: false
+
+jobs:
+  summarize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Summarize new videos (Gemini, from URL)
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+        run: node backend/scripts/youtube-summarize.mjs --limit=15
+
+      - name: Commit if changed
+        run: |
+          git config user.name  "hangeut-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add youtube-summaries
+          if git diff --staged --quiet; then
+            echo "변경 없음 — 커밋 생략(신규 영상 없음/키없음/요약실패 등)"
+          else
+            git commit -m "chore: youtube summaries ($(date -u +%Y-%m-%d))"
+            git push
+          fi

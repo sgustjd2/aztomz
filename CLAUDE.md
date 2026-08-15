@@ -21,7 +21,8 @@
 | `backend/` | 비공개(배포 안 됨) — 원본 데이터 + 스크립트 |
 | `backend/data/trends.json`·`pulse.json` | ★ **canonical 데이터 원본** (사람·스크립트가 수정) |
 | `backend/scripts/` | 아래 "스크립트" 표 참고 |
-| `.github/workflows/` | `daily-refresh.yml`(주간 재생성) · `pulse-daily.yml`(펄스 일일 조사) — 아래 "크론 일람" |
+| `.github/workflows/` | `daily-refresh.yml`(주간 재생성) · `pulse-daily.yml`(펄스 일일 조사) · `youtube-summary.yml`(유튜브 새 영상 요약) — 아래 "크론 일람" |
+| `youtube-summaries/` | 생성물 — AI Engineer 채널 영상 한국어 상세 요약 모음(영상별 `.md` + 인덱스). 배포 안 됨 |
 | `docs/` · `README.md` · `learnings.md` · `summary.md` | 문서 (아래 정책으로 자동 최신화) |
 
 ### 스크립트 (`backend/scripts/`)
@@ -42,6 +43,7 @@
 | `blog-feedback.mjs` | 노래 추천 피드백 → 선곡 기준 교훈 적립(다음 글에 주입). `--list` · `--good=` · `--bad=` · `--lesson=` |
 | `category-new.mjs` | 블로그 카테고리 프로파일 생성 마법사 |
 | `pulse-research.mjs` / `pulse-refresh.mjs` | 펄스 일일 조사(Actions에서 실행) / `pulse.json` → `pulse.js` 재생성 |
+| `youtube-summarize.mjs` | AI Engineer(@aiDotEngineer) 채널 새 영상 → Gemini 한국어 상세 요약(**URL만 넘김 — 자막 스크래핑·yt-dlp 없음**) → `youtube-summaries/<날짜>-<id>.md` + 인덱스. RSS로 신규 감지(쿼터·키 불필요), 파일 존재로 중복 스킵. `--dry`·`--limit=N`·`--lowres`·`--channel=`·`--selftest` |
 | `fetch-images.mjs` · `merge-*.mjs` | 보조 — 이미지 수집, 필드(media·tags·articles·reasons·prompts) 병합 |
 
 ### 콘텐츠 데이터 수정 절차 (항상 이 순서)
@@ -61,6 +63,7 @@ node backend/scripts/check-source.mjs backend/data/trends.json --only=<id>  # 5)
 | 시각 (KST) | 작업 | 실행 위치 | 진입점 |
 |---|---|---|---|
 | 매일 07:00 | 펄스 일일 조사(요일 로테이션) | **GitHub Actions** (PC 무관) | `pulse-daily.yml` → `pulse-research.mjs` (시크릿 `GEMINI_API_KEY`) |
+| 매일 08:00 | **YouTube 새 영상 한국어 요약**(AI Engineer 채널) | **GitHub Actions** (PC 무관) | `youtube-summary.yml` → `youtube-summarize.mjs` (시크릿 `GEMINI_API_KEY`) |
 | 월 06:00 | 트렌드 주간 재생성 | **GitHub Actions** (PC 무관) | `daily-refresh.yml`(내부 이름 `weekly-refresh`) → `refresh.mjs` |
 | 매일 09:00 | **블로그 일일 초안**(검증까지, 발행 제외) | Hermes(로컬, no-agent) | `aztomz_blog_daily.py` → `claude -p /blog-daily` 스킬 |
 | 매일 21:00 | 펄스/수집 분야 안내 | Hermes(로컬) | — |
