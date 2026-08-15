@@ -113,11 +113,24 @@ if (!ok) { console.log('\n· 갱신할 것 없음 — 종료.'); process.exit(0)
 writeFileSync(trendsPath, JSON.stringify(data, null, 2) + '\n', 'utf-8');
 execFileSync('node', [refreshPath], { cwd: repoRoot, stdio: 'inherit' });
 if (NO_GIT) { console.log('\n--no-git: 파일만 갱신.'); process.exit(0); }
+
+// 다른 브랜치에서 실행되면 origin/main과 계속 어긋난 채로 push되어 며칠씩 조용히 배포가 멈춘다
+// (2026-08-09~08-15 실측: generatedAt 6일 정체). main이 아니면 여기서 바로 죽는다.
+const curBranch = sh(['rev-parse', '--abbrev-ref', 'HEAD']).trim();
+if (curBranch !== 'main') {
+  console.error(`⛔ 현재 브랜치가 main이 아니라 '${curBranch}' — git 단계 중단(파일은 반영됨). 'git checkout main' 후 재실행할 것.`);
+  process.exit(1);
+}
+
 try {
   sh(['add', 'backend/data/trends.json', 'frontend/data/trends.js']);
   sh(['commit', '-m', `auto: 광고/진짜 일일 재확인 — ${target.title} (${TODAY})`]);
   try { sh(['pull', '--rebase', '--autostash', 'origin', 'main']); }
-  catch (e) { console.error('⚠ pull --rebase 실패 — push 보류:', (e.stderr || e.message || '').toString().slice(0, 160)); process.exit(0); }
+  catch (e) {
+    try { sh(['rebase', '--abort']); } catch {}
+    console.error('⚠ pull --rebase 실패(충돌) — abort 완료, push 보류:', (e.stderr || e.message || '').toString().slice(0, 160));
+    process.exit(0);
+  }
   sh(['push', 'origin', 'main']);
   console.log(`\n✓ 재확인 push 완료 → Vercel 재배포. '오늘의 한끗' = ${target.title}`);
 } catch (e) {

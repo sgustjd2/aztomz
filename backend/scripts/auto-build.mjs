@@ -244,12 +244,28 @@ execFileSync('node', [refreshPath], { cwd: repoRoot, stdio: 'inherit' });
 
 // ── git: 충돌 방지 위해 commit 후 pull --rebase → push
 if (NO_GIT) { console.log('\n--no-git: git 단계 생략. 게시', published.length, '건 파일 반영 완료.'); process.exit(0); }
+
+// 다른 브랜치에 커밋해도 아래는 계속 origin/main에 push한다 — 그 결과 로컬이 branch A, 배포는
+// origin/main인 상태로 며칠간 조용히 어긋난 사고가 있었다(2026-08-09~08-15, generatedAt 6일 정체).
+// main이 아니면 여기서 바로 죽는다(치명 오류) — 잘못된 브랜치로 조용히 push하는 것보다 낫다.
+const curBranch = sh('git', ['rev-parse', '--abbrev-ref', 'HEAD']).trim();
+if (curBranch !== 'main') {
+  console.error(`⛔ 현재 브랜치가 main이 아니라 '${curBranch}' — git 단계 중단(파일은 반영됨). ` +
+    `이 스크립트는 origin/main에 push하도록 고정돼 있다. 'git checkout main' 후 재실행하거나 브랜치를 확인할 것.`);
+  process.exit(1);
+}
+
 try {
   sh('git', ['add', 'backend/data/trends.json', 'frontend/data/trends.js']);
   sh('git', ['commit', '-m', `auto: 트렌드 자동 게시(검증통과 ${published.length}) ${TODAY}`,
     '-m', published.map(t => `- ${t.title}`).join('\n')]);
   try { sh('git', ['pull', '--rebase', '--autostash', 'origin', 'main']); }
-  catch (e) { console.error('⚠ pull --rebase 실패(충돌 가능) — push 보류:', (e.stderr || e.message || '').toString().slice(0, 200)); process.exit(0); }
+  catch (e) {
+    // rebase 실패를 그냥 두면 .git/rebase-merge가 남아 다음 실행까지 계속 막는다(실측: 5일간 방치).
+    try { sh('git', ['rebase', '--abort']); } catch {}
+    console.error('⚠ pull --rebase 실패(충돌) — abort 완료, push 보류:', (e.stderr || e.message || '').toString().slice(0, 200));
+    process.exit(0);
+  }
   sh('git', ['push', 'origin', 'main']);
   console.log(`\n✓ 자동 게시·배포: ${published.length}건 push 완료 → Vercel 재배포.`);
 } catch (e) {

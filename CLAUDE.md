@@ -200,6 +200,12 @@ Agent(
 
 ### 파이프라인 · 운영
 
+- **로컬 작업은 `main` 브랜치에서 직접 한다.** `auto-build.mjs`·`recheck-ad.mjs`(Hermes 자동화)는
+  `origin/main`에 pull --rebase → push 하도록 고정돼 있고, 현재 브랜치가 main이 아니면 스스로
+  중단한다(2026-08-15부터). 인터랙티브 세션이 별도 feature 브랜치에 오래 머물면 봇의 자동 push가
+  거기 쌓이고 origin/main은 조용히 정체된다 — 실제로 2026-08-09~08-15 사이 `blog-pipeline-automation`
+  브랜치에서 6일간 작업하는 동안 라이브 사이트(`generatedAt`)가 08-09에 멈춰 있었다(사람이 직접
+  확인하기 전까지 아무도 몰랐음). feature 브랜치가 꼭 필요하면 작업 끝나는 대로 바로 main에 merge.
 - **자동 게시(검증 통과분만).** 일일 파이프라인(21:30)은 봇이 수집·분석 후 `auto-build.mjs`로
   **출처를 자동검증**해 통과한 항목만 `backend/data/trends.json`에 반영하고 **git push(자동 배포)**한다.
   사람 승인 대신 **자동 검증이 게이트** — 죽음(404)·무관·못읽음 출처만 있는 항목은 자동 보류(미게시).
