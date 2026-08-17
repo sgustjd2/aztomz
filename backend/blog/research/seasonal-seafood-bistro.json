@@ -2,9 +2,9 @@
   "keyword": "제철 해산물 한식주점",
   "categoryId": "hangeut-trend",
   "slug": "seasonal-seafood-bistro",
-  "searchedAt": "2026-08-08",
+  "searchedAt": "2026-08-16",
   "origin": "hermes-trends",
-  "note": "Hermes 가 수집·분석하고 auto-build.mjs 가 출처까지 자동검증한 항목이다. 여기 있는 사실 밖으로 나가지 말 것 — 새로 검색해서 덧붙이지 않는다.",
+  "note": "Hermes 가 수집·분석하고 auto-build.mjs 가 출처까지 자동검증한 항목이다. 여기 있는 사실 밖으로 나가지 말 것 — 새로 검색해서 덧붙이지 않는다. (참고: 이 항목은 출처 대조 감사로 2026-08-15에 사실관계를 재검증·수정한 버전이다.)",
   "trend": {
     "id": "seasonal-seafood-bistro",
     "type": "트렌드",
@@ -102,13 +102,6 @@
         "area": "서울 동작",
         "note": "벌교 참꼬막, 키조개 샤부샤부 등 남도 코스요리",
         "url": "https://www.korearank.com/tour/tour_detail.php?uid=55585"
-      },
-      {
-        "name": "어물전 청",
-        "rep": "청담동 숙성회 전문",
-        "area": "서울 청담",
-        "note": "다양한 제철 생선으로 구성된 숙성회 코스",
-        "url": "https://m.blog.naver.com/ciabattam/223460492194"
       }
     ],
     "prompt": null,
@@ -116,7 +109,7 @@
     "example": null,
     "video": null,
     "collectedAt": "2026-08-04",
-    "analyzedAt": "2026-08-04",
+    "analyzedAt": "2026-08-15",
     "detailUrl": "https://az2mz.vercel.app/trend.html?id=seasonal-seafood-bistro"
   },
   "sources": [
@@ -143,14 +136,6 @@
       "tier": "blog",
       "kind": "shop",
       "body": "순천집(서울 동작) 참고 링크. 벌교 참꼬막, 키조개 샤부샤부 등 남도 코스요리 어디서 파는지 안내용이지 점수의 근거가 아니다 — 분석 근거로 인용하지 말 것."
-    },
-    {
-      "title": "가게 참고 — 어물전 청",
-      "url": "https://m.blog.naver.com/ciabattam/223460492194",
-      "host": "m.blog.naver.com",
-      "tier": "blog",
-      "kind": "shop",
-      "body": "어물전 청(서울 청담) 참고 링크. 다양한 제철 생선으로 구성된 숙성회 코스 어디서 파는지 안내용이지 점수의 근거가 아니다 — 분석 근거로 인용하지 말 것."
     }
   ],
   "internalLinkCandidates": [
@@ -160,6 +145,6 @@
     "광고 의심도·후기 신뢰도는 추정치다. \"확실히 광고다\" 같은 확정 표현 금지.",
     "후기 신뢰도(믿을 만한가) 와 만족도(좋은가) 를 섞어 쓰지 말 것 — 별개 축이다.",
     "trend 필드에 없는 수치·날짜·가게·인물을 새로 만들지 말 것. 추가 검색도 하지 않는다.",
-    "분석 기준일은 2026-08-04 이다. \"오늘 기준\" 처럼 시점을 옮겨 쓰지 말 것."
+    "분석 기준일은 2026-08-15 이다. \"오늘 기준\" 처럼 시점을 옮겨 쓰지 말 것."
   ]
 }
