@@ -1,0 +1,167 @@
+{
+  "keyword": "두바이 초콜릿 (편의점판)",
+  "categoryId": "hangeut-trust",
+  "slug": "dubai-choco",
+  "searchedAt": "2026-08-17",
+  "origin": "hermes-trends",
+  "note": "Hermes 가 수집·분석하고 auto-build.mjs 가 출처까지 자동검증한 항목이다. 여기 있는 사실 밖으로 나가지 말 것 — 새로 검색해서 덧붙이지 않는다.",
+  "trend": {
+    "id": "dubai-choco",
+    "type": "신뢰분석",
+    "cat": "디저트",
+    "title": "두바이 초콜릿 (편의점판)",
+    "def": null,
+    "excerpt": "바이럴은 강했지만 실제 후기는 일관되게 \"원조와 다르고 가성비 별로\". 후기는 믿을 만한데 내용이 안 좋은 케이스.",
+    "pull": "후기는 믿을 만한데, 그 후기가 \"별로\"라고 말한다.",
+    "verdict": "바이럴·협찬은 강했지만, 구체적이고 신뢰할 만한 실제 후기들이 일관되게 \"원조와 다르고 가성비 별로\"라고 말해요. 후기는 믿을 만한데 그 내용이 안 좋은 케이스. 호기심에 한 번은 OK, 원조 기대는 금물.",
+    "stage": null,
+    "stageMsg": null,
+    "buzz": "화제성 하락",
+    "label": "SNS 기대치 조절 필요",
+    "ad": 57,
+    "trust": 57,
+    "sat": "neg",
+    "satTxt": "후기는 풍부·신뢰도 높은데 내용은 부정적",
+    "reasons": {
+      "ad": "출시 직후 협찬 해시태그·반복 홍보 문구가 몰렸고 인플루언서 노출도 편중 → 광고 신호 중상.",
+      "trust": "후기 수는 많고 기간도 분산됐지만, 구체적 맛 묘사보다 “원조와 다르다”는 실망 후기가 섞임 → 중간.",
+      "sat": "“한 번이면 충분”, 바삭함 부족·단맛 위주 평이 우세 → 부정."
+    },
+    "recs": [
+      [
+        "호기심 체험",
+        "가능",
+        1
+      ],
+      [
+        "원조 맛 기대",
+        "✕",
+        0
+      ],
+      [
+        "선물용",
+        "✕",
+        0
+      ]
+    ],
+    "tags": [
+      "디저트",
+      "편의점",
+      "초콜릿"
+    ],
+    "article": [
+      [
+        "h",
+        "편의점 두바이 초콜릿, 인기는 이미 사그라들었다"
+      ],
+      [
+        "p",
+        "피스타치오 크림에 카다이프(바삭한 면)를 넣은 두바이 초콜릿이 한때 SNS를 휩쓸었죠. 줄 서서 사 먹던 그 맛이 이제 편의점 매대에 올라왔습니다."
+      ],
+      [
+        "p",
+        "문제는 ‘원조와 같은 맛’을 기대하고 집었다가 갸웃하는 후기가 많다는 점이에요. 바삭함이 덜하고 단맛 위주라는 평이 적지 않습니다."
+      ],
+      [
+        "h",
+        "광고야 진짜야?"
+      ],
+      [
+        "p",
+        "노출은 여전히 많지만, 협찬성 게시물과 실제 시식 후기의 톤이 꽤 갈립니다. ‘인생 초콜릿’이라는 극찬과 ‘한 번이면 충분’이라는 평이 공존해요. 그래서 만족도는 부정 쪽으로 기울었습니다(추정)."
+      ],
+      [
+        "q",
+        "노출이 많다고 ‘지금 꼭 먹어야 할 맛’은 아니에요."
+      ],
+      [
+        "h",
+        "한끗 정리"
+      ],
+      [
+        "ul",
+        [
+          "기대치를 ‘간식’ 수준으로 낮추면 무난",
+          "원조 카다이프 식감을 원하면 전문점이 정답",
+          "한 번 호기심 충족용으로는 OK"
+        ]
+      ]
+    ],
+    "shops": [
+      {
+        "name": "월스트릿 휘낭시에",
+        "rep": "성수 디저트 맛집",
+        "area": "서울 성수",
+        "url": "https://hwan-forever.tistory.com/entry/%EC%84%B1%EC%88%98-%EC%8B%A0%EC%83%81-%EB%A7%9B%EC%A7%91-%EC%9B%94%EC%8A%A4%ED%8A%B8%EB%A6%BF-%ED%9C%98%EB%82%AD%EC%8B%9C%EC%97%90-%EB%91%90%EB%B0%94%EC%9D%B4%EC%B4%88%EC%BD%9C%EB%A6%BF-%ED%9C%98%EB%82%AD%EC%8B%9C%EC%97%90-%EB%82%B4%EB%8F%88%EB%82%B4%EC%82%B0-%ED%9B%84%EA%B8%B0",
+        "note": "두바이 초콜릿 휘낭시에로 입소문 난 신상 맛집"
+      },
+      {
+        "name": "마망젤라또 성수점",
+        "rep": "성수 젤라또 맛집",
+        "area": "서울 성수",
+        "url": "https://www.marieclairekorea.com/culture/lifestyle/2026/01/dubai-desserts/",
+        "note": "두바이 쫀득 젤라또 — 오후 12·2·4시 한정 판매"
+      },
+      {
+        "name": "이치서울",
+        "rep": "가로수길 디저트 맛집",
+        "area": "서울 강남·가로수길",
+        "url": "https://www.marieclairekorea.com/culture/lifestyle/2026/01/dubai-desserts/",
+        "note": "흑임자·쑥 파르페로 유명 — 두바이 디저트 파르페·쁘띠 케이크·토스트로 선보임"
+      }
+    ],
+    "prompt": null,
+    "pureKorean": null,
+    "example": null,
+    "video": {
+      "youtube": "5xrFV4-MgP0",
+      "cap": "CU 두바이 초콜릿 리뷰 — 지뻔뻔"
+    },
+    "collectedAt": "2026-06-05",
+    "analyzedAt": "2026-08-16",
+    "detailUrl": "https://az2mz.vercel.app/trend.html?id=dubai-choco"
+  },
+  "sources": [
+    {
+      "title": "픽스 디저트 쇼콜라티에(나무위키)",
+      "url": "https://namu.wiki/w/%ED%94%BD%EC%8A%A4%20%EB%94%94%EC%A0%80%ED%8A%B8%20%EC%87%BC%EC%BD%9C%EB%9D%BC%ED%8B%B0%EC%97%90",
+      "host": "namu.wiki",
+      "tier": "press",
+      "kind": "analysis",
+      "body": "Hermes 수집 시 auto-build.mjs 가 생존(404)·본문 관련성을 검증한 출처다. 본문을 여기 다시 담지 않는다 — 이 글은 trend 필드의 분석을 근거로 쓴다."
+    },
+    {
+      "title": "가게 참고 — 월스트릿 휘낭시에",
+      "url": "https://hwan-forever.tistory.com/entry/%EC%84%B1%EC%88%98-%EC%8B%A0%EC%83%81-%EB%A7%9B%EC%A7%91-%EC%9B%94%EC%8A%A4%ED%8A%B8%EB%A6%BF-%ED%9C%98%EB%82%AD%EC%8B%9C%EC%97%90-%EB%91%90%EB%B0%94%EC%9D%B4%EC%B4%88%EC%BD%9C%EB%A6%BF-%ED%9C%98%EB%82%AD%EC%8B%9C%EC%97%90-%EB%82%B4%EB%8F%88%EB%82%B4%EC%82%B0-%ED%9B%84%EA%B8%B0",
+      "host": "hwan-forever.tistory.com",
+      "tier": "blog",
+      "kind": "shop",
+      "body": "월스트릿 휘낭시에(서울 성수) 참고 링크. 두바이 초콜릿 휘낭시에로 입소문 난 신상 맛집 어디서 파는지 안내용이지 점수의 근거가 아니다 — 분석 근거로 인용하지 말 것."
+    },
+    {
+      "title": "가게 참고 — 마망젤라또 성수점",
+      "url": "https://www.marieclairekorea.com/culture/lifestyle/2026/01/dubai-desserts/",
+      "host": "www.marieclairekorea.com",
+      "tier": "blog",
+      "kind": "shop",
+      "body": "마망젤라또 성수점(서울 성수) 참고 링크. 두바이 쫀득 젤라또 — 오후 12·2·4시 한정 판매 어디서 파는지 안내용이지 점수의 근거가 아니다 — 분석 근거로 인용하지 말 것."
+    },
+    {
+      "title": "가게 참고 — 이치서울",
+      "url": "https://www.marieclairekorea.com/culture/lifestyle/2026/01/dubai-desserts/",
+      "host": "www.marieclairekorea.com",
+      "tier": "blog",
+      "kind": "shop",
+      "body": "이치서울(서울 강남·가로수길) 참고 링크. 흑임자·쑥 파르페로 유명 — 두바이 디저트 파르페·쁘띠 케이크·토스트로 선보임 어디서 파는지 안내용이지 점수의 근거가 아니다 — 분석 근거로 인용하지 말 것."
+    }
+  ],
+  "internalLinkCandidates": [
+    "https://az2mz.vercel.app/trend.html?id=dubai-choco"
+  ],
+  "cannotSay": [
+    "광고 의심도·후기 신뢰도는 추정치다. \"확실히 광고다\" 같은 확정 표현 금지.",
+    "후기 신뢰도(믿을 만한가) 와 만족도(좋은가) 를 섞어 쓰지 말 것 — 별개 축이다.",
+    "trend 필드에 없는 수치·날짜·가게·인물을 새로 만들지 말 것. 추가 검색도 하지 않는다.",
+    "분석 기준일은 2026-08-16 이다. \"오늘 기준\" 처럼 시점을 옮겨 쓰지 말 것."
+  ]
+}

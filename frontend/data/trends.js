@@ -11126,6 +11126,101 @@ window.HANGEUT_DATA = {
       "images": [
         "https://scontent-ssn1-1.cdninstagram.com/v/t51.82787-15/774362724_18122504404779608_6747776780553506166_n.jpg?stp=cmp1_dst-jpg_e35_s640x640_tt6&amp;_nc_cat=110&amp;ccb=7-5&amp;_nc_sid=18de74&amp;efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&amp;_nc_ohc=pbabqWM0wnMQ7kNvwG4aCtc&amp;_nc_oc=AdrZVoAULp9erKSBYU17JB8ihCXxrA93eQI8aPqdsms3_WgaMe9Ip7kQNg9LyeNzz9Q&amp;_nc_zt=23&amp;_nc_ht=scontent-ssn1-1.cdninstagram.com&amp;_nc_gid=YAeeClFaCi7qA5gtVVV9Zw&amp;_nc_ss=7b689&amp;oh=00_AQHNmIjsoaIvKgw4EP3jZs6NNMNjILNlzH1uqlm09ll-PA&amp;oe=6A878B3E"
       ]
+    },
+    {
+      "id": "ganbare-challenge",
+      "type": "트렌드",
+      "cat": "노래·챌린지",
+      "coverCat": "cat-music",
+      "title": "간바레 챌린지",
+      "excerpt": "한 사람이 화면 3분할로 동시에 등장해 리듬에 맞춰 손가락을 튕기고 포즈를 잡는 숏폼 챌린지예요. 일본에서 건너와 국내 아이돌들이 잇따라 참여하며 확산 중이에요.",
+      "pull": "한 사람이 세 명처럼, 3분할 화면의 마법.",
+      "verdict": "일본 음악크리에이터 오다마요네즈가 만든 곡 頑張りたい人へ(응원하고 싶은 사람에게)에 맞춰, 같은 사람이 3분할 화면 여러 칸에 동시에 등장해 손가락을 튕기고 포즈를 잡는 챌린지예요. 걸그룹 CSR 유나가 2월 말 올린 영상이 국내 유행의 기폭제가 됐고, 이후 투모로우바이투게더 범규·있지 예나·류진·유나·세븐틴 승관·아이브 장원영·가을 등 여러 아이돌이 참여하며 계속 번지고 있어요.",
+      "stage": "상승",
+      "stageMsg": "아이돌 참여가 이어지며 확산 중",
+      "buzz": "화제성 높음",
+      "label": "지금 써도 됨",
+      "labelCls": "good",
+      "ad": null,
+      "trust": null,
+      "sat": null,
+      "satTxt": null,
+      "reasons": null,
+      "recs": [
+        [
+          "혼자 3분할 챌린지 영상",
+          "◎",
+          1
+        ],
+        [
+          "친구 응원 메시지로 변형",
+          "○",
+          1
+        ],
+        [
+          "진지한 분위기의 자리",
+          "✕",
+          0
+        ]
+      ],
+      "src": [
+        [
+          "CSR 유나, 원조 간바레 챌린지 900만 조회수 기록(스포츠경향)",
+          "https://sports.khan.co.kr/article/202603311829003/"
+        ],
+        [
+          "간바레 챌린지가 뭐길래 — 아이돌까지 다 하는 그 3분할 영상",
+          "https://oflouis.dev/trends/ganbare-challenge/"
+        ]
+      ],
+      "images": [],
+      "video": {
+        "youtube": "Pu3ik5mjF_c",
+        "cap": "일본에서 유행중인 간바레 챌린지 원본"
+      },
+      "article": [
+        [
+          "h",
+          "3분할 화면 속 나, 간바레 챌린지"
+        ],
+        [
+          "p",
+          "같은 사람이 화면을 세 칸으로 나눠 동시에 등장해 리듬에 맞춰 손가락을 튕기고 표정을 짓는 챌린지가 SNS를 채우고 있어요. 사용하는 곡은 일본 음악크리에이터 오다마요네즈의 頑張りたい人へ — \"응원하고 싶은 사람에게\"라는 뜻이에요."
+        ],
+        [
+          "q",
+          "응원하고 싶은 사람에게 — 곡 제목 그대로, 이 챌린지의 본질은 응원이에요."
+        ],
+        [
+          "h",
+          "유나의 영상이 불씨가 됐어요"
+        ],
+        [
+          "p",
+          "걸그룹 CSR의 유나가 2월 말 일본 투어 중 올린 3분할 영상이 한 달 만에 인스타그램 약 600만, 틱톡 약 300만 조회수를 기록하며 국내 유행에 불을 붙였어요. 이후 투모로우바이투게더 범규, 있지 예나·류진·유나, 세븐틴 승관, 아이브 장원영·가을 등 여러 아이돌이 잇따라 참여했어요."
+        ],
+        [
+          "h",
+          "한끗 정리"
+        ],
+        [
+          "ul",
+          [
+            "핵심 포인트: 같은 옷·표정을 3분할 화면에 반복 배치하는 편집이 관건이에요.",
+            "보도 시점(2026년 3월 말) 기준 참여 아이돌 목록이라 이후 더 늘었을 수 있어요.",
+            "원곡이 응원 메시지인 만큼 친구·팬을 향한 응원 문구와 함께 올리는 경우가 많아요."
+          ]
+        ]
+      ],
+      "tags": [
+        "간바레챌린지",
+        "숏폼챌린지",
+        "3분할챌린지",
+        "오다마요네즈",
+        "CSR유나"
+      ],
+      "collectedAt": "2026-08-17",
+      "analyzedAt": "2026-08-17"
     }
   ]
 };
