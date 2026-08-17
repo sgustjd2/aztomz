@@ -115,6 +115,8 @@ Hermes는 [Nous Research](https://nousresearch.com)의 AI 에이전트 런타임
 
 > ⏰ **전부 21시대(KST)** — 아침엔 PC가 꺼져 있어 저녁으로 옮김. 메인 수집·게시 21:00, 재확인만 21:15(파일 쓰기 충돌 방지). Hermes는 **로컬**이라 그 시각에 PC+게이트웨이가 켜져 있어야 실행된다(`tools/start-hermes.bat`, 로그인 시 자동 시작).
 > **⚠️ auto-build.mjs·recheck-ad.mjs는 현재 브랜치가 `main`이어야 한다.** feature 브랜치에서 실행되면 pull --rebase가 silent fail → origin/main으로 push 안 됨 → 라이브 사이트가 정체됨(2026-08-09~15 사고). 안전장치 추가: 현재 브랜치 != `main`이면 exit 1 + git rebase 실패 시 abort 자동 실행.
+> 
+> **⚠️ git 동시 작업 방지 락** — auto-build.mjs·recheck-ad.mjs는 `.git/az2mz-auto.lock`으로 서로의 git 단계(pull/commit/push)를 보호해 rebase 중단을 방지한다. **단, 인터랙티브 세션의 수동 git 명령까지는 강제할 수 없다**(계기: 2026-08-16 21:15경 인터랙티브 세션과 recheck-ad 충돌). 권장: 21:00~21:15 구간(크론 시간대)에는 수동 git 작업을 피할 것.
 
 ### 펄스 요일별 분야 로테이션
 11개 분야를 요일로 쪼개 **매일 1~2분야씩 → 일주일에 1회전**(한 번에 11개 몰아치던 무료 쿼터 부담 해소).
