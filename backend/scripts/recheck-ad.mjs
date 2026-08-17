@@ -17,6 +17,7 @@
    ============================================================ */
 import { readFileSync, writeFileSync } from 'node:fs';
 import { execFileSync } from 'node:child_process';
+import { acquireGitLock } from './lib/git-lock.mjs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 
@@ -120,6 +121,12 @@ const curBranch = sh(['rev-parse', '--abbrev-ref', 'HEAD']).trim();
 if (curBranch !== 'main') {
   console.error(`⛔ 현재 브랜치가 main이 아니라 '${curBranch}' — git 단계 중단(파일은 반영됨). 'git checkout main' 후 재실행할 것.`);
   process.exit(1);
+}
+
+// 다른 프로세스와 동시에 git 단계를 밟으면 rebase가 깨진 채 남는다(2026-08-16 실측).
+if (!acquireGitLock(repoRoot, 'recheck-ad.mjs')) {
+  console.log('· git 단계 보류(다른 프로세스 작업 중) — 파일은 반영됨.');
+  process.exit(0);
 }
 
 try {

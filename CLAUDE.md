@@ -209,6 +209,16 @@ Agent(
   거기 쌓이고 origin/main은 조용히 정체된다 — 실제로 2026-08-09~08-15 사이 `blog-pipeline-automation`
   브랜치에서 6일간 작업하는 동안 라이브 사이트(`generatedAt`)가 08-09에 멈춰 있었다(사람이 직접
   확인하기 전까지 아무도 몰랐음). feature 브랜치가 꼭 필요하면 작업 끝나는 대로 바로 main에 merge.
+- **git 동시 작업 락.** `auto-build.mjs`·`recheck-ad.mjs`는 git 단계(add/commit/pull --rebase/push)
+  진입 전 `.git/az2mz-auto.lock`을 얻는다(`backend/scripts/lib/git-lock.mjs`). 다른 프로세스가
+  이미 쥐고 있으면(10분 이내 = 신선) 이번 실행은 git 단계를 건너뛰고 조용히 종료한다(파일 반영은
+  이미 끝난 상태라 다음 실행이나 수동 push가 따라잡는다). 10분 넘은 락은 죽은 것으로 보고 자동
+  정리 후 재시도한다. 이 락은 두 스크립트끼리만 서로 보호한다 — **인터랙티브 세션의 수동 git
+  명령은 이 락을 안 본다.** 그러니 사람이 이 저장소에서 직접 `git commit`/`push`를 할 때도
+  `.git/az2mz-auto.lock`이 있는지 먼저 확인하는 습관을 들일 것(있으면 몇 초 기다렸다 다시 확인).
+  이 락이 생긴 이유: 2026-08-16 21:15경 인터랙티브 세션과 recheck-ad.mjs로 추정되는 프로세스가
+  동시에 이 저장소에서 git 작업을 하다 rebase가 깨진 채 남아(`.git/rebase-merge`에 autostash만
+  남고 `--continue`/`--abort` 둘 다 실패) 수동 복구가 필요했다.
 - **자동 게시(검증 통과분만).** 일일 파이프라인(21:30)은 봇이 수집·분석 후 `auto-build.mjs`로
   **출처를 자동검증**해 통과한 항목만 `backend/data/trends.json`에 반영하고 **git push(자동 배포)**한다.
   사람 승인 대신 **자동 검증이 게이트** — 죽음(404)·무관·못읽음 출처만 있는 항목은 자동 보류(미게시).

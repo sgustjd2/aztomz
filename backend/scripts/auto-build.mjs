@@ -28,6 +28,7 @@
 import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'node:fs';
 import { execFileSync } from 'node:child_process';
 import { validateTrends } from './validate-trends.mjs';
+import { acquireGitLock } from './lib/git-lock.mjs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 
@@ -253,6 +254,13 @@ if (curBranch !== 'main') {
   console.error(`⛔ 현재 브랜치가 main이 아니라 '${curBranch}' — git 단계 중단(파일은 반영됨). ` +
     `이 스크립트는 origin/main에 push하도록 고정돼 있다. 'git checkout main' 후 재실행하거나 브랜치를 확인할 것.`);
   process.exit(1);
+}
+
+// 다른 프로세스(다른 크론 실행, 인터랙티브 세션의 수동 git)와 동시에 git 단계를 밟으면
+// rebase가 깨진 채 남는다(2026-08-16 실측). 락을 못 얻으면 파일은 이미 반영됐으니 그냥 종료.
+if (!acquireGitLock(repoRoot, 'auto-build.mjs')) {
+  console.log('· git 단계 보류(다른 프로세스 작업 중) — 파일은 반영됨. 다음 실행이나 수동 push로 따라잡힌다.');
+  process.exit(0);
 }
 
 try {
