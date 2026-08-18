@@ -3,10 +3,18 @@
 채널 [AI Engineer](https://www.youtube.com/@aiDotEngineer) 의 새 영상을 Gemini 로 자동 요약한 모음입니다.
 생성: `backend/scripts/youtube-summarize.mjs` (GitHub Actions `youtube-summary` 크론).
 
-총 **42개**.
+총 **50개**.
 
 | 발행일 | 제목 |
 |---|---|
+| 2026-08-18 | [Voice agents with Realtime Video — Sidney Primas, LemonSlice](2026-08-18-z1dqv74SpUs.md) |
+| 2026-08-18 | [Generative Video at the Speed of Light — Keegan McCallum, uRun](2026-08-18-Xln-On3syJk.md) |
+| 2026-08-18 | [The Next Game Engine Won't Have a Manual — Arturo Nunez, Nereu](2026-08-18-VBCDhRrvlYo.md) |
+| 2026-08-18 | [Building an Agentic Video Editor for Mass Consumer — Ekaterina Deyneka, Reelful](2026-08-18-pPj_tjlvYjA.md) |
+| 2026-08-18 | [While my guitar gently speaks — Todd Fisher, Philo Ventures](2026-08-18-E_Txocq-Lrw.md) |
+| 2026-08-18 | [Infra behind Krea 2: How to train and serve at scale — Gabriel Jorge Menezes, Krea.ai](2026-08-18-byn9PURoBNY.md) |
+| 2026-08-18 | [The Next Medium: Why Real-Time Interactive Video Changes Everything — Ahmed Ahres, Reactor](2026-08-18-5dCAmSDOAjI.md) |
+| 2026-08-18 | [Training Krea 2: What matters in generative model training — Sangwu Lee, Krea.ai](2026-08-18--tviRdpmHvs.md) |
 | 2026-08-17 | [How to Kill the Code Review — Ankit Jain, Aviator](2026-08-17-YgEv7IQzGdM.md) |
 | 2026-08-17 | [Security Firewall for Agents — Ryan Dahl, Deno](2026-08-17-MkRYPFIMCSA.md) |
 | 2026-08-14 | [The Rise of CaaS: Context-as-a-Service for Agentic AI — Omer Primor, Bright Data](2026-08-14-Ot4OPrPH4xY.md) |
