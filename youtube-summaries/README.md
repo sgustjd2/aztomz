@@ -3,10 +3,12 @@
 채널 [AI Engineer](https://www.youtube.com/@aiDotEngineer) 의 새 영상을 Gemini 로 자동 요약한 모음입니다.
 생성: `backend/scripts/youtube-summarize.mjs` (GitHub Actions `youtube-summary` 크론).
 
-총 **30개**.
+총 **42개**.
 
 | 발행일 | 제목 |
 |---|---|
+| 2026-08-17 | [How to Kill the Code Review — Ankit Jain, Aviator](2026-08-17-YgEv7IQzGdM.md) |
+| 2026-08-17 | [Security Firewall for Agents — Ryan Dahl, Deno](2026-08-17-MkRYPFIMCSA.md) |
 | 2026-08-14 | [The Rise of CaaS: Context-as-a-Service for Agentic AI — Omer Primor, Bright Data](2026-08-14-Ot4OPrPH4xY.md) |
 | 2026-08-14 | [Computer-use models will agentify the web, not APIs — Dhruv Batra, Yutori](2026-08-14-Ki980nV0__0.md) |
 | 2026-08-14 | [Bringing agents onto the world wide web — Paul Klein IV, Browserbase](2026-08-14-GqoNrUz8hEU.md) |
@@ -37,3 +39,13 @@
 | 2026-08-08 | [Realtime multiplayer, automation, and you! — Idan Gazit, GitHub](2026-08-08-iQ5xldZ9StU.md) |
 | 2026-08-08 | [Benchmarking Coding Agents on New vs Legacy Codebases — Denys Linkov, Wisedocs](2026-08-08-7vn4WpqNpck.md) |
 | 2026-08-07 | [The New Primitives: Building AI Native Software — Kwindla Kramer, Daily](2026-08-07-LZuWZRze3MU.md) |
+| 2026-08-07 | [Compression at the Edge — NVIDIA, Unsloth, HuggingFace, Ollama](2026-08-07-J4_jCrTxMkk.md) |
+| 2026-08-07 | [Local Models: Trust, Control, Optimization — Carter Abdallah, NVIDIA](2026-08-07-FWMJQDH3iK0.md) |
+| 2026-08-07 | [Open Source Is Dead. Long Live Open Source. — Saoud Rizwan, Cline](2026-08-07-CoEIs6Xm8m8.md) |
+| 2026-08-06 | [The State of Model Routing — NVIDIA, Cognition, OpenRouter](2026-08-06-QHBjufYK8TA.md) |
+| 2026-08-05 | [Gadgets: Personal app vibe coding that is actually safe — Kenton Varda, Cloudflare](2026-08-05-RmS5s6Wbin4.md) |
+| 2026-08-02 | [MCP Tasks (async): Why Aren't Any Agents Supporting Them? — Cornelia Davis, Temporal](2026-08-02-s4r6nk5WsZw.md) |
+| 2026-08-02 | [When Will The Benchmaxxing Plague End? — Nick Heiner, Surge AI](2026-08-02--npY6XjM8CQ.md) |
+| 2026-08-02 | [MCP Apps: Extending the Frontier — Ido Salomon & Liad Yosef](2026-08-02--jY2T2PiJBE.md) |
+| 2026-08-01 | [Rethinking Environments for Long-Horizon Work — Rayan Garg, Theta Software](2026-08-01-2aS7aKoXn64.md) |
+| 2026-07-31 | [What's Next After RLHF? — Diogo Almeida, TypeSafe AI](2026-07-31-cJ0EOzey--o.md) |
