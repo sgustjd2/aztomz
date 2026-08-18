@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-17",
+  "generatedAt": "2026-08-18",
   "trends": [
     {
       "id": "dubai-choco",
@@ -2454,7 +2454,7 @@
       },
       "src": [
         [
-          "아시아경제",
+          "아주경제",
           "https://www.ajunews.com/view/20260306074820124"
         ],
         [
@@ -2462,7 +2462,7 @@
           "https://www.marieclairekorea.com/culture/2026/03/2026-michelin-guide-seoul-busan/"
         ],
         [
-          "다음뉴스",
+          "한국일보(다음뉴스)",
           "https://v.daum.net/v/20260305190239693"
         ],
         [
@@ -6203,7 +6203,7 @@
       "cat": "카페·핫플",
       "coverCat": "cat-cafe",
       "collectedAt": "2026-07-10",
-      "analyzedAt": "2026-07-31",
+      "analyzedAt": "2026-08-18",
       "buzz": "화제성 높음",
       "ad": 35,
       "trust": 75,
