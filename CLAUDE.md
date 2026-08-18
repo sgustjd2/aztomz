@@ -69,12 +69,20 @@ node backend/scripts/check-source.mjs backend/data/trends.json --only=<id>  # 5)
 | 매일 21:00 | 펄스/수집 분야 안내 | Hermes(로컬) | — |
 | 월 21:00 | 주간 갱신 | Hermes(로컬) | — |
 | 매일 21:15 | 광고/진짜 일일 재확인 | Hermes(로컬, no-agent) | `recheck_ad.py` → `recheck-ad.mjs` |
-| 매일 21:30 | **한끗 자동 수집·게시** (목=신조어 주간 사전) + 티스토리 발행 | Hermes(로컬, 에이전트) | hangeut-run → `auto-build.mjs --blog` |
+| 매일 21:30 | **한끗 자동 수집·게시** (목=신조어 주간 사전) | Hermes(로컬, 에이전트) | hangeut-run → `auto-build.mjs`(`.pipeline/curate.json`) |
 | 매일 21:50 | 수집 재시도 게이트(21:30이 503/429로 죽었을 때만 1회 재실행) | Hermes(로컬, no-agent) | `hangeut_retry_gate.py` |
 
 - ⚠️ **Hermes 크론은 그 시각에 PC+게이트웨이가 켜져 있어야 실행됨**(`tools/start-hermes.bat`).
   PC는 보통 ~22:30까지만 켜짐 — 게이트를 22:00→**21:50**으로 당긴 이유(2026-06-23, 22:00엔 PC가 꺼져 미실행 잦았음).
 - GitHub Actions 2개는 클라우드라 PC 상태와 무관하게 돈다.
+- ⚠️ **티스토리 블로그 발행은 자동화돼 있지 않다.** `auto-build.mjs`는 `--blog` 플래그를 지원하지만, 실제
+  Hermes 잡 프롬프트(`hermes/cron/jobs.json`)에는 이 플래그가 없다 — 트렌드 데이터 게시(`trends.json`
+  → git push → Vercel)까지만 매일 밤 자동으로 돈다. 카카오 로그인을 자동화하지 않는다는 철칙(아래
+  "블로그 발행" 항목 참고) 때문에 티스토리 세션이 주기적으로 만료되고, 무인 실행에서 이걸 복구할
+  방법이 없어 **의도적으로 발행 단계는 자동화 대상에서 뺀 상태로 보인다**(2026-08-19 확인 — 지금까지
+  발행된 글은 전부 인터랙티브 세션에서 사람이 트리거함). 자동 발행을 원하면 `--blog`를 잡 프롬프트에
+  추가하면 되지만, 그러면 세션 만료 시 매번 조용히 실패만 하고(`backend/out/blog/publish-failures.json`
+  에 기록은 남는다) 실제 발행은 여전히 안 된다 — 근본 해결은 티스토리 세션 자체를 안 끊기게 하는 것.
 - 크론이 안 돈 날은 수동 백필: `hermes cron run 9ddacd750b48`.
 
 ---
