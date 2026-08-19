@@ -3,10 +3,20 @@
 채널 [AI Engineer](https://www.youtube.com/@aiDotEngineer) 의 새 영상을 Gemini 로 자동 요약한 모음입니다.
 생성: `backend/scripts/youtube-summarize.mjs` (GitHub Actions `youtube-summary` 크론).
 
-총 **50개**.
+총 **60개**.
 
 | 발행일 | 제목 |
 |---|---|
+| 2026-08-19 | [Guardrails First: Engineering Member-Facing Health AI — Rashi Agrawal, Hinge Health](2026-08-19-YXEqC05WEI0.md) |
+| 2026-08-19 | [Trading Desks to Clinical Trials: Parallels in Applied Vertical AI — Ayush Bhardwaj, Allos AI](2026-08-19-Yphdry8ttAQ.md) |
+| 2026-08-19 | [AI is the World’s largest Relationship Therapist — Clay Cockrell & Tony Fabrikant, CoupleWork AI](2026-08-19-yoONZwV2smc.md) |
+| 2026-08-19 | [Don’t be data poor — Anuj Iravane, Anterior](2026-08-19-XAsb7MIAzm8.md) |
+| 2026-08-19 | [How to build an AI-Native Health Company — Dan Feng, Maven Clinic](2026-08-19-WJRdLNhrsLQ.md) |
+| 2026-08-19 | [Healthcare’s Agent Bytecode: X12 as the Harness for AI Agents — Vasant Kearney, Onlay](2026-08-19-UyyOoJmuATU.md) |
+| 2026-08-19 | [From Ambient Documentation to Clinical Intelligence — Chaitanya Asawa, Abridge](2026-08-19-u6q-byPWUuo.md) |
+| 2026-08-19 | [Shipping AI to a Million Patients Without an A/B Test — Jared Joselowitz, Ufonia](2026-08-19-McknwOzbmyg.md) |
+| 2026-08-19 | [Why Your Enterprise Tech Stack Isn’t Ready for AI Agents — Christopher Lovejoy & Saul Howard](2026-08-19-mav15aW9lLM.md) |
+| 2026-08-19 | [200 Million Patient Interactions Later — Vivek Muppalla, Hippocratic AI](2026-08-19-AN65uc645mE.md) |
 | 2026-08-18 | [Voice agents with Realtime Video — Sidney Primas, LemonSlice](2026-08-18-z1dqv74SpUs.md) |
 | 2026-08-18 | [Generative Video at the Speed of Light — Keegan McCallum, uRun](2026-08-18-Xln-On3syJk.md) |
 | 2026-08-18 | [The Next Game Engine Won't Have a Manual — Arturo Nunez, Nereu](2026-08-18-VBCDhRrvlYo.md) |
