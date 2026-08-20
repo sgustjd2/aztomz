@@ -3,10 +3,18 @@
 채널 [AI Engineer](https://www.youtube.com/@aiDotEngineer) 의 새 영상을 Gemini 로 자동 요약한 모음입니다.
 생성: `backend/scripts/youtube-summarize.mjs` (GitHub Actions `youtube-summary` 크론).
 
-총 **60개**.
+총 **68개**.
 
 | 발행일 | 제목 |
 |---|---|
+| 2026-08-20 | [Unlock Agent Autonomy: The Runtime for AI-Native Systems — Tushar Jain, Docker](2026-08-20-zaGyGgLW3SM.md) |
+| 2026-08-20 | [The Last Human Code Review: Building Trust in AI-Generated Code — Itamar Friedman, Qodo](2026-08-20-s-aixZYJG4c.md) |
+| 2026-08-20 | [IT Admin for the AI Workforce — Sarthak Aggarwal, Decawork](2026-08-20-q-WOjZhOMCA.md) |
+| 2026-08-20 | [Your Agent Evolved. Your Evals Didn't. — Ameya Bhatawdekar, Braintrust](2026-08-20-nxokqOq1imY.md) |
+| 2026-08-20 | [How I automate my own job at Hugging Face using agents — Niels Rogge, Hugging Face](2026-08-20-FLUoowDJg4I.md) |
+| 2026-08-20 | [Prototyping as Leadership: How a CTO Ships with AI Agents — Hursh Agrawal, The Browser Company](2026-08-20-bdHaOXZOhcM.md) |
+| 2026-08-20 | [Your Fine-Tuned Model Is Tech Debt: A 50x ROI House of Cards — Dan Bjornn, Lease End](2026-08-20-4loPnxvWWhg.md) |
+| 2026-08-20 | [The Era of Compound Engineering — Kieran Klaassen, Every/Cora](2026-08-20-_ehJyfHg1Vk.md) |
 | 2026-08-19 | [Guardrails First: Engineering Member-Facing Health AI — Rashi Agrawal, Hinge Health](2026-08-19-YXEqC05WEI0.md) |
 | 2026-08-19 | [Trading Desks to Clinical Trials: Parallels in Applied Vertical AI — Ayush Bhardwaj, Allos AI](2026-08-19-Yphdry8ttAQ.md) |
 | 2026-08-19 | [AI is the World’s largest Relationship Therapist — Clay Cockrell & Tony Fabrikant, CoupleWork AI](2026-08-19-yoONZwV2smc.md) |
