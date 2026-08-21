@@ -3,10 +3,13 @@
 채널 [AI Engineer](https://www.youtube.com/@aiDotEngineer) 의 새 영상을 Gemini 로 자동 요약한 모음입니다.
 생성: `backend/scripts/youtube-summarize.mjs` (GitHub Actions `youtube-summary` 크론).
 
-총 **68개**.
+총 **71개**.
 
 | 발행일 | 제목 |
 |---|---|
+| 2026-08-21 | [Building Agents Is Trivial Now, Context Is the Next Frontier — Jeff Ng, Unblocked](2026-08-21-HvMyYLTfvhg.md) |
+| 2026-08-21 | [The Missing Layer: Design Taste in AI Agents — Hassan El Mghari, Together AI](2026-08-21-7GMKdpLsxwU.md) |
+| 2026-08-21 | [Agentic SDLC at Uber — Uday Kiran Medisetty & Adam Huda, Uber](2026-08-21-17-YSUHo6Lk.md) |
 | 2026-08-20 | [Unlock Agent Autonomy: The Runtime for AI-Native Systems — Tushar Jain, Docker](2026-08-20-zaGyGgLW3SM.md) |
 | 2026-08-20 | [The Last Human Code Review: Building Trust in AI-Generated Code — Itamar Friedman, Qodo](2026-08-20-s-aixZYJG4c.md) |
 | 2026-08-20 | [IT Admin for the AI Workforce — Sarthak Aggarwal, Decawork](2026-08-20-q-WOjZhOMCA.md) |
