@@ -1,12 +1,24 @@
 {
   "collectedAt": "2026-08-21",
-  "days": 3,
+  "days": 2,
   "results": {
     "geeknews": {
       "source": "geeknews",
       "fetchedOk": true,
       "sourceUrl": "https://news.hada.io/rss/news",
       "items": [
+        {
+          "title": "CIA 자금이 1980년대 NeXT의 생존을 뒷받침했다",
+          "url": "",
+          "date": "2026-08-21T02:36:15.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "기능 요청: AGENTS.md 지원",
+          "url": "",
+          "date": "2026-08-21T02:33:15.000Z",
+          "aiRelated": false
+        },
         {
           "title": "악성 Rust 크레이트 arrayref, 빌드 과정에서 원격 페이로드 실행",
           "url": "",
@@ -294,35 +306,23 @@
           "url": "",
           "date": "2026-08-19T14:04:20.000Z",
           "aiRelated": false
-        },
-        {
-          "title": "Mojo 전체 컴파일러와 툴체인 오픈소스 공개",
-          "url": "",
-          "date": "2026-08-19T13:01:09.000Z",
-          "aiRelated": false
-        },
-        {
-          "title": "AI 시대, 개발자는 면사무소가 아니라 목욕탕을 만들어야 한다",
-          "url": "",
-          "date": "2026-08-19T12:49:43.000Z",
-          "aiRelated": true
         }
       ],
-      "note": "GeekNews Atom 피드에서 최근 3일 항목. aiRelated=true 는 제목 키워드 기준(본문은 조사 단계에서 확인)."
+      "note": "GeekNews Atom 피드에서 최근 2일 항목. aiRelated=true 는 제목 키워드 기준(본문은 조사 단계에서 확인)."
     },
     "inpa": {
       "source": "inpa",
       "fetchedOk": true,
       "sourceUrl": "https://inpa.tistory.com/rss",
       "items": [],
-      "note": "최근 3일 이내 작성된 글만. 날짜 없는 항목은 제외. 0건이면 어제·오늘 새 글이 없다는 뜻."
+      "note": "최근 2일 이내 작성된 글만. 날짜 없는 항목은 제외. 0건이면 어제·오늘 새 글이 없다는 뜻."
     },
     "goddaehee": {
       "source": "goddaehee",
       "fetchedOk": true,
       "sourceUrl": "https://goddaehee.tistory.com/rss",
       "items": [],
-      "note": "최근 3일 이내 작성된 글만. 날짜 없는 항목은 제외. 0건이면 어제·오늘 새 글이 없다는 뜻."
+      "note": "최근 2일 이내 작성된 글만. 날짜 없는 항목은 제외. 0건이면 어제·오늘 새 글이 없다는 뜻."
     },
     "github": {
       "source": "github",

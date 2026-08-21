@@ -1,0 +1,132 @@
+{
+  "keyword": "개발·IT 다이제스트 (2026-08-21)",
+  "categoryId": "dev-digest",
+  "slug": "dev-digest-2026-08-21",
+  "searchedAt": "2026-08-21",
+  "notes": "기간: 2026-08-19~08-21(최근 2일). 소스: GeekNews(긱뉴스) Atom 피드 50건 중 7건을 골라 각 topic 페이지를 WebFetch로 직접 열어 확인. inpa.tistory·goddaehee.tistory·GitHub 주간 급상승(도구 키워드) 3개 소스는 이번 창에서 0건이라 지어내지 않고 건너뜀(inpa는 사실상 휴면, goddaehee·GitHub 도구는 이번엔 새 글/급상승 없음 — dev-digest.json 프로파일의 정상 케이스). AI 이슈 섹션은 GeekNews와 겹치지 않는 별도 소식(Stripe·OpenRouter 인수, Google·Marvell 칩 파트너십)을 WebSearch로 찾아 공식 발표/언론 기사 원문을 직접 읽고 확인.",
+  "sources": [
+    {
+      "title": "AI 답변을 그대로 붙여넣지 마세요",
+      "url": "https://news.hada.io/topic?id=32699",
+      "host": "news.hada.io",
+      "tier": "press",
+      "body": "GeekNews에 올라온 에세이형 글. 핵심 주장은 AI 도구가 내놓은 답변·코드를 편집 없이 그대로 전달·복붙하지 말고, 반드시 직접 읽고 이해한 뒤 자신의 관점을 담아 재작성하거나 요약해서 전달해야 한다는 것. 코드 리뷰·문서 작성·커뮤니케이션 등 AI 산출물을 그대로 넘기는 관행이 늘면서 검증 없는 전달이 문제라는 취지로, 특정 도구나 회사 발표가 아니라 실무 관행에 대한 의견 글이다.",
+      "facts": [
+        "GeekNews topic id=32699, 2026-08-20 게시",
+        "주장: AI 출력물은 검증·재작성 후 전달해야 한다(그대로 붙여넣기 지양)"
+      ]
+    },
+    {
+      "title": "OpenSandbox - AI 에이전트를 위한 샌드박스 런타임",
+      "url": "https://news.hada.io/topic?id=32685",
+      "host": "news.hada.io",
+      "tier": "press",
+      "body": "AI 에이전트가 임의 코드를 실행할 때 격리된 환경에서 돌릴 수 있게 해주는 오픈소스 샌드박스 런타임 프로젝트 소개. GeekNews topic 페이지에 GitHub 저장소(opensandbox-group/OpenSandbox) 링크가 함께 게시되어 있다. 코딩 에이전트(터미널형 CLI 에이전트 등)가 셸 명령·파일 조작을 수행할 때 호스트 시스템과 분리된 실행 환경을 제공하는 것이 목적으로, 최근 늘어난 자율 코딩 에이전트의 안전성 문제와 맞물려 눈여겨볼 만하다.",
+      "facts": [
+        "GeekNews topic id=32685, 2026-08-20 게시",
+        "GitHub 저장소: opensandbox-group/OpenSandbox",
+        "AI 에이전트 실행 격리(샌드박스) 목적 오픈소스 런타임"
+      ]
+    },
+    {
+      "title": "Bun 1.4 출시 — Zig에서 Rust로 재작성, Node.js 호환성 역대 최대 폭 향상",
+      "url": "https://bun.com/blog/bun-v1.4",
+      "host": "bun.com",
+      "tier": "official",
+      "body": "Bun 공식 블로그의 1.4.0 릴리스 공지(2026-08-20, Jarred Sumner 등 작성). 가장 큰 변화는 Bun 런타임을 Zig에서 Rust로 완전히 재작성한 첫 정식 릴리스라는 점 — Claude Code가 이미 이 Rust 포트를 수개월간 사용해왔다고 밝힘. Node.js 호환성 테스트를 1,517개 추가로 통과시켰고 node:http·node:fs·node:stream 계열은 97% 통과율, node:events·node:sqlite 등은 100% 통과율을 달성했다. 성능 지표로 유휴 CPU 사용량 5배 감소, 메모리 사용량 최대 35% 감소, Linux 시작 속도 50% 향상(5.1ms), new URL() 최대 4.6배, marked.parse() 138배 속도 향상을 제시했다. Bun.Image·Bun.WebView·Bun.markdown·Bun.cron() 등 npm 의존성을 대체하는 내장 API도 추가됐고, HTTP/3는 아직 실험적 기능이다.",
+      "facts": [
+        "Bun 1.4.0, 2026-08-20 공식 발행",
+        "런타임을 Zig에서 Rust로 재작성한 첫 정식 릴리스",
+        "Node.js 호환성 테스트 1,517개 신규 통과, node:http/fs/stream 97% 통과율",
+        "유휴 CPU 사용량 5배 감소, 메모리 최대 35% 감소, Linux 시작 속도 50%↑(5.1ms)",
+        "new URL() 최대 4.6배, marked.parse() 138배 속도 향상"
+      ]
+    },
+    {
+      "title": "Go 1.27 출시",
+      "url": "https://go.dev/blog/go1.27",
+      "host": "go.dev",
+      "tier": "official",
+      "body": "Go 팀 공식 블로그 게시물(2026-08-19, Nicholas Husin 작성). 언어 차원의 큰 변화로 제네릭 메서드를 지원해 타입별로 메서드를 따로 만들 필요를 줄였고, 중첩·임베드된 구조체 필드를 구조체 리터럴에서 직접 초기화할 수 있게 됐으며, 대입 문맥에서 함수 타입 인수 추론 범위가 넓어졌다. 도구 쪽은 go fix에 현대화 도구 4개 추가, go doc의 package@version 조회 지원, go mod tidy의 require 블록 자동 통합이 추가됐다. 성능은 80바이트 미만 객체 할당 비용을 최대 30% 줄였고 goroutineleak 프로파일이 정식 제공되어 영구적으로 막힌 고루틴을 자동 탐지한다. 표준 라이브러리에는 encoding/json/v2, ML-DSA 암호화(crypto/mldsa), 네이티브 UUID 패키지, 실험적 SIMD 지원이 추가됐다.",
+      "facts": [
+        "Go 1.27, 2026-08-19 공식 발표",
+        "제네릭 메서드 지원 추가(언어 명세 변경)",
+        "80바이트 미만 객체 할당 비용 최대 30% 감소",
+        "goroutineleak 프로파일 정식 제공, encoding/json/v2·crypto/mldsa·네이티브 UUID 패키지 추가"
+      ]
+    },
+    {
+      "title": "악성 Rust 크레이트 arrayref, 빌드 과정에서 원격 페이로드 실행",
+      "url": "https://blog.rust-lang.org/2026/08/20/supply-chain-attack-on-arrayref/",
+      "host": "blog.rust-lang.org",
+      "tier": "official",
+      "body": "Rust 공식 블로그의 공급망 공격 공지. 2026-08-20 07:15 UTC에 신고됐다. 공격 수법은 타이포스쿼팅에 가까운 proc-macro1이라는 크레이트의 빌드 스크립트가 악성 페이로드를 원격에서 내려받도록 만들고, 널리 쓰이는 arrayref 크레이트가 이 크레이트에 의존하도록 변조한 것 — Cargo가 사용되지 않는 의존성까지 빌드하는 특성을 악용했다. 영향받은 패키지와 온라인 노출 시간은 arrayref@0.3.10(86분), internment@0.8.7(90분), append-only-vec@0.1.9(107분) 등이며, Rust 팀은 악성 버전을 삭제하고 부당하게 삭제됐던 정상 버전을 복구했으며 관련 계정을 잠갔다. arrayref 원 개발자가 악의적으로 행동했다기보다는 계정이나 PC가 탈취된 것으로 보인다고 밝혔고, 사용자에게 로컬 ~/.cargo/registry/cache 디렉토리 점검을 권고했다.",
+      "facts": [
+        "2026-08-20 07:15 UTC 신고, Rust 공식 블로그 공지",
+        "arrayref@0.3.10 등 온라인 노출 시간: 86~107분",
+        "원인: proc-macro1 크레이트의 빌드 스크립트가 페이로드 원격 다운로드",
+        "대응: 악성 버전 삭제, 부당 삭제 버전 복구, 관련 계정 잠금"
+      ]
+    },
+    {
+      "title": "Kimi Code CLI - 터미널에서 사용하는 오픈소스 코딩 에이전트",
+      "url": "https://github.com/MoonshotAI/kimi-code",
+      "host": "github.com",
+      "tier": "official",
+      "body": "Moonshot AI가 공개한 오픈소스 터미널 코딩 에이전트 저장소(MIT 라이선스). README 기준 코드 읽기·수정, 셸 명령 실행, 파일 검색, 웹페이지 조회를 수행하며, 화면 녹화·데모 영상 같은 영상 입력을 받아 UI를 구현하는 기능과 내장 서브에이전트(coder·explore·plan)를 별도 컨텍스트에서 병렬 실행하는 기능, MCP(Model Context Protocol) 통합, Agent Client Protocol을 통한 IDE 연동을 지원한다. 단일 바이너리로 배포돼 Node.js 없이 실행 가능하다(설치는 curl/PowerShell 스크립트 또는 npm). 조사 시점 기준 GitHub 스타 약 7,000개, 열린 이슈 714개, PR 445개 — 스타 수는 참고용 규모 정보일 뿐 품질 평가는 아니다.",
+      "facts": [
+        "GitHub: MoonshotAI/kimi-code, MIT 라이선스",
+        "GitHub 스타 약 7,000개(조사 시점)",
+        "단일 바이너리 배포, MCP 통합·IDE 연동(Agent Client Protocol) 지원",
+        "영상 입력으로 화면 녹화 기반 UI 구현 기능"
+      ]
+    },
+    {
+      "title": "Google, 일부 소스 코드의 Git 태그 배포를 Google Drive 요청 방식으로 대체",
+      "url": "https://news.hada.io/topic?id=32692",
+      "host": "news.hada.io",
+      "tier": "press",
+      "body": "GeekNews topic 페이지에 정리된 내용에 따르면 GrapheneOS가 자사 Mastodon 계정을 통해, Google이 일부(Android/Pixel 관련으로 추정) 소스 코드를 Git 태그로 직접 공개하던 방식을 접고, Google Forms로 신청받아 승인 후 Google Drive를 통해 tarball(압축 아카이브) 접근 권한을 부여하는 방식으로 바꿨다고 전했다. 문제로 지적된 점은 처리 시간이 수 시간에서 수 주로 늘어난다는 것과, tarball 형식이 Android 개발 도구 생태계가 전제하는 Git 저장소 구조·리비전 이력을 지원하지 않는다는 점이다. 다만 원문인 GrapheneOS Mastodon 게시물 본문은 페이지 렌더링 문제로 직접 확인하지 못했고, GeekNews의 요약을 근거로 정리한 내용이다.",
+      "facts": [
+        "GeekNews topic id=32692",
+        "출처: GrapheneOS 공식 Mastodon 계정 게시물(원문 본문은 직접 확인 못함)",
+        "Google 소스코드 배포: Git 태그 → Google Forms 신청 + Google Drive tarball 방식으로 전환",
+        "지적된 문제: 처리 시간 수 시간→수 주, tarball이 Git 리비전 구조 미지원"
+      ]
+    },
+    {
+      "title": "Stripe, OpenRouter 인수 합의 발표",
+      "url": "https://stripe.com/newsroom/news/stripe-agrees-to-acquire-openrouter",
+      "host": "stripe.com",
+      "tier": "official",
+      "body": "Stripe 공식 뉴스룸 발표(2026-08-19). Stripe가 AI 모델 게이트웨이·라우팅 플랫폼 OpenRouter를 인수하기로 합의했다고 밝혔다. OpenRouter는 80개 이상 제공자의 400개 이상 모델에 걸쳐 토큰 사용을 라우팅·최적화하는 서비스로, 하루 10조 개 이상의 토큰을 처리하며 1,000만 명 이상의 개발자·기업이 사용 중이라고 소개됐다. Stripe CEO Patrick Collison은 \"토큰은 AI로 구축하는 회사의 중심 통화이며, 요청을 지능적으로 라우팅하고 토큰을 효율적으로 사용함으로써 기업이 수익성을 극대화하도록 돕겠다\"고 밝혔다. OpenRouter 공식 블로그(openrouter.ai/blog/announcements/openrouter-is-joining-stripe)에서는 인수 후에도 \"같은 이름·같은 제품·같은 로드맵\"으로 운영되며 기존 통합에는 변화가 없다고 밝혔고, 거래 종료는 향후 몇 주 내로 예상된다고 전했다. 공식 발표문에는 인수 금액이 명시되지 않았으며, 별도 언론 보도(TechCrunch 등)에서는 약 70~75억 달러 규모로 추정하고 있다 — 이는 보도 추정치이지 공식 확인 수치가 아니다.",
+      "facts": [
+        "2026-08-19 Stripe 공식 발표",
+        "OpenRouter: 80개+ 제공자, 400개+ 모델, 일일 10조+ 토큰 처리, 1,000만+ 개발자/기업 사용",
+        "공식 발표문에는 인수 금액 미기재(언론 추정치 약 70~75억 달러는 별도 보도)",
+        "인수 후에도 OpenRouter 이름·제품·로드맵 유지, 기존 통합 변화 없음"
+      ]
+    },
+    {
+      "title": "Google, Marvell과 커스텀 AI 칩 파트너십 확대 — 최대 122억 달러 규모 워런트",
+      "url": "https://www.proactiveinvestors.com/companies/news/1097286",
+      "host": "proactiveinvestors.com",
+      "tier": "press",
+      "body": "2026-08-19 보도. Google이 Marvell Technology와 커스텀 실리콘 파트너십을 확대하며, Marvell이 Google에 자사 주식 최대 5,897만 주(발행주식의 약 6.7%)를 주당 206.58달러에 매입할 수 있는 워런트를 부여했다고 전했다. 워런트 총 규모는 약 122억 달러이며, Google의 커스텀 칩 매출이 5억 달러 늘어날 때마다 트랜치 단위로 행사권이 발생해 2027 회계연도 3분기부터 2033 회계연도까지 순차 행사되는 구조다. 대상 제품군은 AI 추론 가속기·네트워킹 하드웨어·메모리 제품·스토리지/네트워크/메모리 인터페이스 컨트롤러·근접 메모리 컴퓨팅으로, 발표 직후 Marvell 주가는 약 9% 상승했다. 이 계약으로 Google은 3대 하이퍼스케일러(아마존·마이크로소프트·구글) 모두와 커스텀 AI 칩 파트너십을 맺은 첫 사례로 보도됐다(evertiq.com 등 복수 매체가 동일 수치로 교차 확인).",
+      "facts": [
+        "2026-08-19 발표, Marvell 주가 약 9% 상승",
+        "Google, Marvell 주식 최대 5,897만 주(발행주식 약 6.7%) 매입 워런트 확보",
+        "워런트 규모 약 122억 달러, 행사가 주당 206.58달러",
+        "행사 조건: Google 커스텀 칩 매출 5억 달러 증가마다 트랜치 발생, 2027~2033 회계연도"
+      ]
+    }
+  ],
+  "internalLinkCandidates": ["https://az2mz.vercel.app"],
+  "cannotSay": [
+    "제목만으로 내용 단정 금지 — 원문 확인분만",
+    "SNS 인용·캡처 금지 — 공식/언론만",
+    "스타 수만으로 '최고' 평가 금지",
+    "Stripe·OpenRouter 인수 금액은 공식 미기재 — 언론 추정치(약 70~75억 달러)는 '보도에 따르면'으로만 언급하고 확정처럼 쓰지 말 것",
+    "Google Git 태그→Drive 전환 항목은 원문(GrapheneOS Mastodon) 본문을 직접 확인하지 못했다 — GeekNews 요약 근거임을 명시할 것"
+  ]
+}
