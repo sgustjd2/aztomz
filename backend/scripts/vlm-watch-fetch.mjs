@@ -1,8 +1,13 @@
 #!/usr/bin/env node
 /* ============================================================
    경량 VLM 워치 — HuggingFace image-text-to-text(비전-언어) 모델 중
-   3070/4070 급 GPU 에서 돌아가는 경량 신규 모델만 골라 후보로 수집
+   경량 보드·소비자 GPU 에 올릴 수 있는 작은 모델을 골라 후보로 수집
    (결정적 · LLM 없음)
+
+   ⚠️ 특정 GPU(3070/4070)로 한정하지 않는다(2026-08-21 사용자 요청).
+   int4 VRAM 추정치를 메모리 등급으로 환산해, 경량 보드(라즈베리파이·Jetson Nano/
+   Orin Nano/Orin NX/AGX Orin)부터 소비자 GPU(3070/4070)까지 어디에 올라가는지
+   보드별 적합 여부(boardFit)를 함께 낸다.
 
    용도(사용자 요청 2026-08-21):
      · 블로그 '이번 주 경량 VLM' 시리즈의 결정적 소스
@@ -20,9 +25,10 @@
      · 크기를 못 읽는 모델(id 에 크기 토큰 없음)은 제외한다 — 27B 인지 2B 인지
        모른 채 '경량'이라 넘기면 안 된다(추측 금지).
 
-   VRAM 추정(대략, 판단용이지 확정 아님):
+   VRAM/메모리 추정(대략, 판단용이지 확정 아님):
      · fp16 ≈ paramsB × 2 GB,  int4(4비트 양자화) ≈ paramsB × 0.5 GB + 오버헤드 ~1.5GB
-     · 3070 = 8GB, 4070 = 12GB. int4 기준으로 들어가는지 표시한다.
+     · 이 int4 추정치를 경량 보드/GPU 의 '모델용 가용 메모리' 예산과 비교해 boardFit 을 낸다.
+       (라즈베리파이·Jetson 은 CPU/GPU 가 메모리를 공유하므로 예산을 보수적으로 잡는다.)
 
    두 가지 모드:
      · trending(기본) — 최근 days 일 이내 생성 + trendingScore 순. 블로그 '이번 주 경량 VLM'용.
@@ -68,6 +74,26 @@ function vramInt4GB(paramsB) {
   return Math.round((paramsB * 0.5 + 1.5) * 10) / 10;
 }
 
+/* 경량 보드~소비자 GPU 의 '모델용 가용 메모리' 예산(GB, 대략).
+   특정 GPU 하나로 한정하지 않기 위해(2026-08-21 요청) 대표 등급을 나열한다.
+   보드는 OS·런타임이 메모리를 나눠 쓰므로 예산을 총메모리보다 낮게 잡았다. */
+const BOARDS = [
+  { name: '라즈베리파이 5 8GB (CPU)', budgetGB: 3, kind: 'edge-cpu', note: 'CPU 추론 — 매우 느림, 초경량(≈1B 이하) 위주' },
+  { name: 'Jetson Nano 4GB', budgetGB: 2.5, kind: 'edge' },
+  { name: 'Jetson Orin Nano 8GB', budgetGB: 6, kind: 'edge' },
+  { name: 'RTX 3070 8GB', budgetGB: 8, kind: 'gpu' },
+  { name: 'RTX 4070 12GB', budgetGB: 11, kind: 'gpu' },
+  { name: 'Jetson Orin NX 16GB', budgetGB: 12, kind: 'edge' },
+  { name: 'Jetson AGX Orin 32GB+', budgetGB: 28, kind: 'edge' },
+];
+
+/* 모델 int4 추정치가 각 보드 예산에 들어가는지 + 들어가는 최소 메모리 등급 */
+function boardFit(vram) {
+  const fits = BOARDS.map((b) => ({ name: b.name, kind: b.kind, budgetGB: b.budgetGB, fits: vram <= b.budgetGB }));
+  const minGB = Math.min(...BOARDS.map((b) => b.budgetGB).filter((g) => vram <= g).concat([Infinity]));
+  return { fits, minBoardBudgetGB: Number.isFinite(minGB) ? minGB : null };
+}
+
 function daysAgo(n, now = new Date()) {
   return new Date(now.getTime() - n * DAY_MS);
 }
@@ -89,6 +115,7 @@ async function fetchVlm({ mode = 'trending', days = 60, maxB = 8, fetchLimit = 3
     if (mode === 'trending' && (!m.createdAt || new Date(m.createdAt) < cutoff)) continue; // trending: 최근만
     const lic = (m.tags || []).find((t) => t.startsWith('license:'));
     const int4 = vramInt4GB(paramsB);
+    const bf = boardFit(int4);
     items.push({
       id: m.id,
       url: `https://huggingface.co/${m.id}`,
@@ -98,8 +125,8 @@ async function fetchVlm({ mode = 'trending', days = 60, maxB = 8, fetchLimit = 3
       downloads: m.downloads ?? null,
       paramsB,
       vramInt4GB: int4,
-      fits3070: int4 <= 8,   // 8GB
-      fits4070: int4 <= 12,  // 12GB
+      minBoardBudgetGB: bf.minBoardBudgetGB,   // 이 모델이 올라가는 가장 작은 보드 예산(GB)
+      boardFit: bf.fits,                        // 보드별 적합 여부(라즈베리파이~AGX Orin, 3070/4070 포함)
       license: lic ? lic.slice('license:'.length) : null,
       tags: (m.tags || []).filter((t) => !t.startsWith('license:')).slice(0, 8),
     });
@@ -108,10 +135,12 @@ async function fetchVlm({ mode = 'trending', days = 60, maxB = 8, fetchLimit = 3
   return {
     source: 'hf-vlm', mode, fetchedOk: true, sourceUrl: url,
     filter: { pipeline: 'image-text-to-text', maxParamsB: maxB, freshDays: mode === 'trending' ? days : null },
+    boards: BOARDS,
     items: kept,
-    note: mode === 'popular'
-      ? `image-text-to-text 모델을 다운로드 내림차순으로 받아 파라미터 <= ${maxB}B 인 것만 남김(생성일 무관 — 검증된 후보). 크기 못 읽는 모델 제외. VRAM 은 int4 기준 대략 추정(확정 아님).`
-      : `image-text-to-text 모델을 trendingScore 내림차순으로 받아 (1) 파라미터 <= ${maxB}B (2) 최근 ${days}일 이내 생성 두 조건으로 좁힘. 크기 못 읽는 모델 제외. VRAM 은 int4 기준 대략 추정(확정 아님).`,
+    note: (mode === 'popular'
+      ? `image-text-to-text 모델을 다운로드 내림차순으로 받아 파라미터 <= ${maxB}B 인 것만 남김(생성일 무관 — 검증된 후보). `
+      : `image-text-to-text 모델을 trendingScore 내림차순으로 받아 (1) 파라미터 <= ${maxB}B (2) 최근 ${days}일 이내 생성 두 조건으로 좁힘. `)
+      + `크기 못 읽는 모델 제외. VRAM 은 int4 기준 대략 추정(확정 아님). boardFit 은 그 추정치를 경량 보드~소비자 GPU 예산과 비교한 것 — 특정 GPU 로 한정하지 않음.`,
   };
 }
 
@@ -136,15 +165,22 @@ function selftest() {
   const v3 = vramInt4GB(3), v7 = vramInt4GB(7);
   const vram_ok = v3 === 3 && v7 === 5;
   console.log(vram_ok ? '✓' : '✗', `VRAM int4 추정 3B=${v3}GB 7B=${v7}GB`);
-  console.log((ok && vram_ok) ? '\n자체검사 통과' : '\n자체검사 실패');
-  process.exit((ok && vram_ok) ? 0 : 1);
+  // boardFit sanity: 0.5B(~1.75GB)는 라즈베리파이(3GB예산) OK, 7B(~5GB)는 라즈베리파이 ✕·3070(8GB) OK
+  const tiny = boardFit(vramInt4GB(0.5)), mid = boardFit(vramInt4GB(7));
+  const pi = (bf) => bf.fits.find((b) => b.name.includes('라즈베리파이')).fits;
+  const g3070 = (bf) => bf.fits.find((b) => b.name.includes('3070')).fits;
+  const board_ok = pi(tiny) === true && pi(mid) === false && g3070(mid) === true && tiny.minBoardBudgetGB === 2.5;
+  console.log(board_ok ? '✓' : '✗', `boardFit: 0.5B→라즈베리파이OK(min ${tiny.minBoardBudgetGB}GB), 7B→라즈베리파이✕·3070OK`);
+  console.log((ok && vram_ok && board_ok) ? '\n자체검사 통과' : '\n자체검사 실패');
+  process.exit((ok && vram_ok && board_ok) ? 0 : 1);
 }
 
 const main = async () => {
   if (has('selftest')) return selftest();
   if (has('list')) {
     console.log('hf-vlm   HuggingFace image-text-to-text 경량 신규 모델   https://huggingface.co/api/models?pipeline_tag=image-text-to-text');
-    console.log('옵션: --days=N(기본 60) --maxb=N(기본 8, 파라미터 상한 B)');
+    console.log('옵션: --days=N(기본 60) --maxb=N(기본 8, 파라미터 상한 B) · --mode=trending|popular');
+    console.log('출력: 모델마다 int4 VRAM 추정 + boardFit(라즈베리파이·Jetson·3070/4070 등 보드별 적합)');
     return;
   }
 
@@ -158,8 +194,10 @@ const main = async () => {
     console.error(`⚠ 후보 0건 (${scopeLabel}) — 조건에 맞는 경량 VLM 이 없거나 id 크기 토큰 관례가 바뀌었을 수 있다. --days 를 늘리거나 --mode=popular 를 써보라.`);
   } else {
     console.log(`✓ 경량 VLM 후보 ${result.items.length}건 [${mode}] (${scopeLabel})`);
-    result.items.slice(0, 10).forEach((it) =>
-      console.log(`  ${it.id}  (${it.paramsB}B · int4 ~${it.vramInt4GB}GB · 3070 ${it.fits3070 ? 'OK' : '✕'}/4070 ${it.fits4070 ? 'OK' : '✕'} · ${it.license || 'no-license'})`));
+    result.items.slice(0, 10).forEach((it) => {
+      const min = it.minBoardBudgetGB != null ? `${it.minBoardBudgetGB}GB급↑` : '초과';
+      console.log(`  ${it.id}  (${it.paramsB}B · int4 ~${it.vramInt4GB}GB · 최소 ${min} 보드 · ${it.license || 'no-license'})`);
+    });
   }
 
   await mkdir(outDir, { recursive: true });

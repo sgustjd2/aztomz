@@ -8,6 +8,44 @@
     "maxParamsB": 8,
     "freshDays": null
   },
+  "boards": [
+    {
+      "name": "라즈베리파이 5 8GB (CPU)",
+      "budgetGB": 3,
+      "kind": "edge-cpu",
+      "note": "CPU 추론 — 매우 느림, 초경량(≈1B 이하) 위주"
+    },
+    {
+      "name": "Jetson Nano 4GB",
+      "budgetGB": 2.5,
+      "kind": "edge"
+    },
+    {
+      "name": "Jetson Orin Nano 8GB",
+      "budgetGB": 6,
+      "kind": "edge"
+    },
+    {
+      "name": "RTX 3070 8GB",
+      "budgetGB": 8,
+      "kind": "gpu"
+    },
+    {
+      "name": "RTX 4070 12GB",
+      "budgetGB": 11,
+      "kind": "gpu"
+    },
+    {
+      "name": "Jetson Orin NX 16GB",
+      "budgetGB": 12,
+      "kind": "edge"
+    },
+    {
+      "name": "Jetson AGX Orin 32GB+",
+      "budgetGB": 28,
+      "kind": "edge"
+    }
+  ],
   "items": [
     {
       "id": "Qwen/Qwen2.5-VL-7B-Instruct",
@@ -18,8 +56,51 @@
       "downloads": 9566668,
       "paramsB": 7,
       "vramInt4GB": 5,
-      "fits3070": true,
-      "fits4070": true,
+      "minBoardBudgetGB": 6,
+      "boardFit": [
+        {
+          "name": "라즈베리파이 5 8GB (CPU)",
+          "kind": "edge-cpu",
+          "budgetGB": 3,
+          "fits": false
+        },
+        {
+          "name": "Jetson Nano 4GB",
+          "kind": "edge",
+          "budgetGB": 2.5,
+          "fits": false
+        },
+        {
+          "name": "Jetson Orin Nano 8GB",
+          "kind": "edge",
+          "budgetGB": 6,
+          "fits": true
+        },
+        {
+          "name": "RTX 3070 8GB",
+          "kind": "gpu",
+          "budgetGB": 8,
+          "fits": true
+        },
+        {
+          "name": "RTX 4070 12GB",
+          "kind": "gpu",
+          "budgetGB": 11,
+          "fits": true
+        },
+        {
+          "name": "Jetson Orin NX 16GB",
+          "kind": "edge",
+          "budgetGB": 12,
+          "fits": true
+        },
+        {
+          "name": "Jetson AGX Orin 32GB+",
+          "kind": "edge",
+          "budgetGB": 28,
+          "fits": true
+        }
+      ],
       "license": "apache-2.0",
       "tags": [
         "transformers",
@@ -41,8 +122,51 @@
       "downloads": 7681585,
       "paramsB": 4,
       "vramInt4GB": 3.5,
-      "fits3070": true,
-      "fits4070": true,
+      "minBoardBudgetGB": 6,
+      "boardFit": [
+        {
+          "name": "라즈베리파이 5 8GB (CPU)",
+          "kind": "edge-cpu",
+          "budgetGB": 3,
+          "fits": false
+        },
+        {
+          "name": "Jetson Nano 4GB",
+          "kind": "edge",
+          "budgetGB": 2.5,
+          "fits": false
+        },
+        {
+          "name": "Jetson Orin Nano 8GB",
+          "kind": "edge",
+          "budgetGB": 6,
+          "fits": true
+        },
+        {
+          "name": "RTX 3070 8GB",
+          "kind": "gpu",
+          "budgetGB": 8,
+          "fits": true
+        },
+        {
+          "name": "RTX 4070 12GB",
+          "kind": "gpu",
+          "budgetGB": 11,
+          "fits": true
+        },
+        {
+          "name": "Jetson Orin NX 16GB",
+          "kind": "edge",
+          "budgetGB": 12,
+          "fits": true
+        },
+        {
+          "name": "Jetson AGX Orin 32GB+",
+          "kind": "edge",
+          "budgetGB": 28,
+          "fits": true
+        }
+      ],
       "license": "apache-2.0",
       "tags": [
         "transformers",
@@ -64,8 +188,51 @@
       "downloads": 6533261,
       "paramsB": 3,
       "vramInt4GB": 3,
-      "fits3070": true,
-      "fits4070": true,
+      "minBoardBudgetGB": 3,
+      "boardFit": [
+        {
+          "name": "라즈베리파이 5 8GB (CPU)",
+          "kind": "edge-cpu",
+          "budgetGB": 3,
+          "fits": true
+        },
+        {
+          "name": "Jetson Nano 4GB",
+          "kind": "edge",
+          "budgetGB": 2.5,
+          "fits": false
+        },
+        {
+          "name": "Jetson Orin Nano 8GB",
+          "kind": "edge",
+          "budgetGB": 6,
+          "fits": true
+        },
+        {
+          "name": "RTX 3070 8GB",
+          "kind": "gpu",
+          "budgetGB": 8,
+          "fits": true
+        },
+        {
+          "name": "RTX 4070 12GB",
+          "kind": "gpu",
+          "budgetGB": 11,
+          "fits": true
+        },
+        {
+          "name": "Jetson Orin NX 16GB",
+          "kind": "edge",
+          "budgetGB": 12,
+          "fits": true
+        },
+        {
+          "name": "Jetson AGX Orin 32GB+",
+          "kind": "edge",
+          "budgetGB": 28,
+          "fits": true
+        }
+      ],
       "license": null,
       "tags": [
         "transformers",
@@ -87,8 +254,51 @@
       "downloads": 5256357,
       "paramsB": 8,
       "vramInt4GB": 5.5,
-      "fits3070": true,
-      "fits4070": true,
+      "minBoardBudgetGB": 6,
+      "boardFit": [
+        {
+          "name": "라즈베리파이 5 8GB (CPU)",
+          "kind": "edge-cpu",
+          "budgetGB": 3,
+          "fits": false
+        },
+        {
+          "name": "Jetson Nano 4GB",
+          "kind": "edge",
+          "budgetGB": 2.5,
+          "fits": false
+        },
+        {
+          "name": "Jetson Orin Nano 8GB",
+          "kind": "edge",
+          "budgetGB": 6,
+          "fits": true
+        },
+        {
+          "name": "RTX 3070 8GB",
+          "kind": "gpu",
+          "budgetGB": 8,
+          "fits": true
+        },
+        {
+          "name": "RTX 4070 12GB",
+          "kind": "gpu",
+          "budgetGB": 11,
+          "fits": true
+        },
+        {
+          "name": "Jetson Orin NX 16GB",
+          "kind": "edge",
+          "budgetGB": 12,
+          "fits": true
+        },
+        {
+          "name": "Jetson AGX Orin 32GB+",
+          "kind": "edge",
+          "budgetGB": 28,
+          "fits": true
+        }
+      ],
       "license": "apache-2.0",
       "tags": [
         "transformers",
@@ -110,8 +320,51 @@
       "downloads": 3959914,
       "paramsB": 4,
       "vramInt4GB": 3.5,
-      "fits3070": true,
-      "fits4070": true,
+      "minBoardBudgetGB": 6,
+      "boardFit": [
+        {
+          "name": "라즈베리파이 5 8GB (CPU)",
+          "kind": "edge-cpu",
+          "budgetGB": 3,
+          "fits": false
+        },
+        {
+          "name": "Jetson Nano 4GB",
+          "kind": "edge",
+          "budgetGB": 2.5,
+          "fits": false
+        },
+        {
+          "name": "Jetson Orin Nano 8GB",
+          "kind": "edge",
+          "budgetGB": 6,
+          "fits": true
+        },
+        {
+          "name": "RTX 3070 8GB",
+          "kind": "gpu",
+          "budgetGB": 8,
+          "fits": true
+        },
+        {
+          "name": "RTX 4070 12GB",
+          "kind": "gpu",
+          "budgetGB": 11,
+          "fits": true
+        },
+        {
+          "name": "Jetson Orin NX 16GB",
+          "kind": "edge",
+          "budgetGB": 12,
+          "fits": true
+        },
+        {
+          "name": "Jetson AGX Orin 32GB+",
+          "kind": "edge",
+          "budgetGB": 28,
+          "fits": true
+        }
+      ],
       "license": "apache-2.0",
       "tags": [
         "transformers",
@@ -133,8 +386,51 @@
       "downloads": 3097484,
       "paramsB": 2,
       "vramInt4GB": 2.5,
-      "fits3070": true,
-      "fits4070": true,
+      "minBoardBudgetGB": 2.5,
+      "boardFit": [
+        {
+          "name": "라즈베리파이 5 8GB (CPU)",
+          "kind": "edge-cpu",
+          "budgetGB": 3,
+          "fits": true
+        },
+        {
+          "name": "Jetson Nano 4GB",
+          "kind": "edge",
+          "budgetGB": 2.5,
+          "fits": true
+        },
+        {
+          "name": "Jetson Orin Nano 8GB",
+          "kind": "edge",
+          "budgetGB": 6,
+          "fits": true
+        },
+        {
+          "name": "RTX 3070 8GB",
+          "kind": "gpu",
+          "budgetGB": 8,
+          "fits": true
+        },
+        {
+          "name": "RTX 4070 12GB",
+          "kind": "gpu",
+          "budgetGB": 11,
+          "fits": true
+        },
+        {
+          "name": "Jetson Orin NX 16GB",
+          "kind": "edge",
+          "budgetGB": 12,
+          "fits": true
+        },
+        {
+          "name": "Jetson AGX Orin 32GB+",
+          "kind": "edge",
+          "budgetGB": 28,
+          "fits": true
+        }
+      ],
       "license": "apache-2.0",
       "tags": [
         "transformers",
@@ -156,8 +452,51 @@
       "downloads": 2881964,
       "paramsB": 0.8,
       "vramInt4GB": 1.9,
-      "fits3070": true,
-      "fits4070": true,
+      "minBoardBudgetGB": 2.5,
+      "boardFit": [
+        {
+          "name": "라즈베리파이 5 8GB (CPU)",
+          "kind": "edge-cpu",
+          "budgetGB": 3,
+          "fits": true
+        },
+        {
+          "name": "Jetson Nano 4GB",
+          "kind": "edge",
+          "budgetGB": 2.5,
+          "fits": true
+        },
+        {
+          "name": "Jetson Orin Nano 8GB",
+          "kind": "edge",
+          "budgetGB": 6,
+          "fits": true
+        },
+        {
+          "name": "RTX 3070 8GB",
+          "kind": "gpu",
+          "budgetGB": 8,
+          "fits": true
+        },
+        {
+          "name": "RTX 4070 12GB",
+          "kind": "gpu",
+          "budgetGB": 11,
+          "fits": true
+        },
+        {
+          "name": "Jetson Orin NX 16GB",
+          "kind": "edge",
+          "budgetGB": 12,
+          "fits": true
+        },
+        {
+          "name": "Jetson AGX Orin 32GB+",
+          "kind": "edge",
+          "budgetGB": 28,
+          "fits": true
+        }
+      ],
       "license": "apache-2.0",
       "tags": [
         "transformers",
@@ -179,8 +518,51 @@
       "downloads": 2709315,
       "paramsB": 7,
       "vramInt4GB": 5,
-      "fits3070": true,
-      "fits4070": true,
+      "minBoardBudgetGB": 6,
+      "boardFit": [
+        {
+          "name": "라즈베리파이 5 8GB (CPU)",
+          "kind": "edge-cpu",
+          "budgetGB": 3,
+          "fits": false
+        },
+        {
+          "name": "Jetson Nano 4GB",
+          "kind": "edge",
+          "budgetGB": 2.5,
+          "fits": false
+        },
+        {
+          "name": "Jetson Orin Nano 8GB",
+          "kind": "edge",
+          "budgetGB": 6,
+          "fits": true
+        },
+        {
+          "name": "RTX 3070 8GB",
+          "kind": "gpu",
+          "budgetGB": 8,
+          "fits": true
+        },
+        {
+          "name": "RTX 4070 12GB",
+          "kind": "gpu",
+          "budgetGB": 11,
+          "fits": true
+        },
+        {
+          "name": "Jetson Orin NX 16GB",
+          "kind": "edge",
+          "budgetGB": 12,
+          "fits": true
+        },
+        {
+          "name": "Jetson AGX Orin 32GB+",
+          "kind": "edge",
+          "budgetGB": 28,
+          "fits": true
+        }
+      ],
       "license": "llama2",
       "tags": [
         "transformers",
@@ -202,8 +584,51 @@
       "downloads": 2668862,
       "paramsB": 8,
       "vramInt4GB": 5.5,
-      "fits3070": true,
-      "fits4070": true,
+      "minBoardBudgetGB": 6,
+      "boardFit": [
+        {
+          "name": "라즈베리파이 5 8GB (CPU)",
+          "kind": "edge-cpu",
+          "budgetGB": 3,
+          "fits": false
+        },
+        {
+          "name": "Jetson Nano 4GB",
+          "kind": "edge",
+          "budgetGB": 2.5,
+          "fits": false
+        },
+        {
+          "name": "Jetson Orin Nano 8GB",
+          "kind": "edge",
+          "budgetGB": 6,
+          "fits": true
+        },
+        {
+          "name": "RTX 3070 8GB",
+          "kind": "gpu",
+          "budgetGB": 8,
+          "fits": true
+        },
+        {
+          "name": "RTX 4070 12GB",
+          "kind": "gpu",
+          "budgetGB": 11,
+          "fits": true
+        },
+        {
+          "name": "Jetson Orin NX 16GB",
+          "kind": "edge",
+          "budgetGB": 12,
+          "fits": true
+        },
+        {
+          "name": "Jetson AGX Orin 32GB+",
+          "kind": "edge",
+          "budgetGB": 28,
+          "fits": true
+        }
+      ],
       "license": "apache-2.0",
       "tags": [
         "transformers",
@@ -225,8 +650,51 @@
       "downloads": 2563742,
       "paramsB": 2,
       "vramInt4GB": 2.5,
-      "fits3070": true,
-      "fits4070": true,
+      "minBoardBudgetGB": 2.5,
+      "boardFit": [
+        {
+          "name": "라즈베리파이 5 8GB (CPU)",
+          "kind": "edge-cpu",
+          "budgetGB": 3,
+          "fits": true
+        },
+        {
+          "name": "Jetson Nano 4GB",
+          "kind": "edge",
+          "budgetGB": 2.5,
+          "fits": true
+        },
+        {
+          "name": "Jetson Orin Nano 8GB",
+          "kind": "edge",
+          "budgetGB": 6,
+          "fits": true
+        },
+        {
+          "name": "RTX 3070 8GB",
+          "kind": "gpu",
+          "budgetGB": 8,
+          "fits": true
+        },
+        {
+          "name": "RTX 4070 12GB",
+          "kind": "gpu",
+          "budgetGB": 11,
+          "fits": true
+        },
+        {
+          "name": "Jetson Orin NX 16GB",
+          "kind": "edge",
+          "budgetGB": 12,
+          "fits": true
+        },
+        {
+          "name": "Jetson AGX Orin 32GB+",
+          "kind": "edge",
+          "budgetGB": 28,
+          "fits": true
+        }
+      ],
       "license": "apache-2.0",
       "tags": [
         "transformers",
@@ -248,8 +716,51 @@
       "downloads": 2115144,
       "paramsB": 2,
       "vramInt4GB": 2.5,
-      "fits3070": true,
-      "fits4070": true,
+      "minBoardBudgetGB": 2.5,
+      "boardFit": [
+        {
+          "name": "라즈베리파이 5 8GB (CPU)",
+          "kind": "edge-cpu",
+          "budgetGB": 3,
+          "fits": true
+        },
+        {
+          "name": "Jetson Nano 4GB",
+          "kind": "edge",
+          "budgetGB": 2.5,
+          "fits": true
+        },
+        {
+          "name": "Jetson Orin Nano 8GB",
+          "kind": "edge",
+          "budgetGB": 6,
+          "fits": true
+        },
+        {
+          "name": "RTX 3070 8GB",
+          "kind": "gpu",
+          "budgetGB": 8,
+          "fits": true
+        },
+        {
+          "name": "RTX 4070 12GB",
+          "kind": "gpu",
+          "budgetGB": 11,
+          "fits": true
+        },
+        {
+          "name": "Jetson Orin NX 16GB",
+          "kind": "edge",
+          "budgetGB": 12,
+          "fits": true
+        },
+        {
+          "name": "Jetson AGX Orin 32GB+",
+          "kind": "edge",
+          "budgetGB": 28,
+          "fits": true
+        }
+      ],
       "license": "apache-2.0",
       "tags": [
         "transformers",
@@ -267,12 +778,55 @@
       "url": "https://huggingface.co/HauhauCS/Gemma-4-E4B-Uncensored-HauhauCS-Aggressive",
       "createdAt": "2026-04-02T22:29:19.000Z",
       "trendingScore": null,
-      "likes": 1009,
+      "likes": 1010,
       "downloads": 1943039,
       "paramsB": 4,
       "vramInt4GB": 3.5,
-      "fits3070": true,
-      "fits4070": true,
+      "minBoardBudgetGB": 6,
+      "boardFit": [
+        {
+          "name": "라즈베리파이 5 8GB (CPU)",
+          "kind": "edge-cpu",
+          "budgetGB": 3,
+          "fits": false
+        },
+        {
+          "name": "Jetson Nano 4GB",
+          "kind": "edge",
+          "budgetGB": 2.5,
+          "fits": false
+        },
+        {
+          "name": "Jetson Orin Nano 8GB",
+          "kind": "edge",
+          "budgetGB": 6,
+          "fits": true
+        },
+        {
+          "name": "RTX 3070 8GB",
+          "kind": "gpu",
+          "budgetGB": 8,
+          "fits": true
+        },
+        {
+          "name": "RTX 4070 12GB",
+          "kind": "gpu",
+          "budgetGB": 11,
+          "fits": true
+        },
+        {
+          "name": "Jetson Orin NX 16GB",
+          "kind": "edge",
+          "budgetGB": 12,
+          "fits": true
+        },
+        {
+          "name": "Jetson AGX Orin 32GB+",
+          "kind": "edge",
+          "budgetGB": 28,
+          "fits": true
+        }
+      ],
       "license": "gemma",
       "tags": [
         "gguf",
@@ -294,8 +848,51 @@
       "downloads": 1693352,
       "paramsB": 7,
       "vramInt4GB": 5,
-      "fits3070": true,
-      "fits4070": true,
+      "minBoardBudgetGB": 6,
+      "boardFit": [
+        {
+          "name": "라즈베리파이 5 8GB (CPU)",
+          "kind": "edge-cpu",
+          "budgetGB": 3,
+          "fits": false
+        },
+        {
+          "name": "Jetson Nano 4GB",
+          "kind": "edge",
+          "budgetGB": 2.5,
+          "fits": false
+        },
+        {
+          "name": "Jetson Orin Nano 8GB",
+          "kind": "edge",
+          "budgetGB": 6,
+          "fits": true
+        },
+        {
+          "name": "RTX 3070 8GB",
+          "kind": "gpu",
+          "budgetGB": 8,
+          "fits": true
+        },
+        {
+          "name": "RTX 4070 12GB",
+          "kind": "gpu",
+          "budgetGB": 11,
+          "fits": true
+        },
+        {
+          "name": "Jetson Orin NX 16GB",
+          "kind": "edge",
+          "budgetGB": 12,
+          "fits": true
+        },
+        {
+          "name": "Jetson AGX Orin 32GB+",
+          "kind": "edge",
+          "budgetGB": 28,
+          "fits": true
+        }
+      ],
       "license": "apache-2.0",
       "tags": [
         "transformers",
@@ -317,8 +914,51 @@
       "downloads": 1620593,
       "paramsB": 7,
       "vramInt4GB": 5,
-      "fits3070": true,
-      "fits4070": true,
+      "minBoardBudgetGB": 6,
+      "boardFit": [
+        {
+          "name": "라즈베리파이 5 8GB (CPU)",
+          "kind": "edge-cpu",
+          "budgetGB": 3,
+          "fits": false
+        },
+        {
+          "name": "Jetson Nano 4GB",
+          "kind": "edge",
+          "budgetGB": 2.5,
+          "fits": false
+        },
+        {
+          "name": "Jetson Orin Nano 8GB",
+          "kind": "edge",
+          "budgetGB": 6,
+          "fits": true
+        },
+        {
+          "name": "RTX 3070 8GB",
+          "kind": "gpu",
+          "budgetGB": 8,
+          "fits": true
+        },
+        {
+          "name": "RTX 4070 12GB",
+          "kind": "gpu",
+          "budgetGB": 11,
+          "fits": true
+        },
+        {
+          "name": "Jetson Orin NX 16GB",
+          "kind": "edge",
+          "budgetGB": 12,
+          "fits": true
+        },
+        {
+          "name": "Jetson AGX Orin 32GB+",
+          "kind": "edge",
+          "budgetGB": 28,
+          "fits": true
+        }
+      ],
       "license": "apache-2.0",
       "tags": [
         "transformers",
@@ -340,8 +980,51 @@
       "downloads": 1519297,
       "paramsB": 0.5,
       "vramInt4GB": 1.8,
-      "fits3070": true,
-      "fits4070": true,
+      "minBoardBudgetGB": 2.5,
+      "boardFit": [
+        {
+          "name": "라즈베리파이 5 8GB (CPU)",
+          "kind": "edge-cpu",
+          "budgetGB": 3,
+          "fits": true
+        },
+        {
+          "name": "Jetson Nano 4GB",
+          "kind": "edge",
+          "budgetGB": 2.5,
+          "fits": true
+        },
+        {
+          "name": "Jetson Orin Nano 8GB",
+          "kind": "edge",
+          "budgetGB": 6,
+          "fits": true
+        },
+        {
+          "name": "RTX 3070 8GB",
+          "kind": "gpu",
+          "budgetGB": 8,
+          "fits": true
+        },
+        {
+          "name": "RTX 4070 12GB",
+          "kind": "gpu",
+          "budgetGB": 11,
+          "fits": true
+        },
+        {
+          "name": "Jetson Orin NX 16GB",
+          "kind": "edge",
+          "budgetGB": 12,
+          "fits": true
+        },
+        {
+          "name": "Jetson AGX Orin 32GB+",
+          "kind": "edge",
+          "budgetGB": 28,
+          "fits": true
+        }
+      ],
       "license": "apache-2.0",
       "tags": [
         "transformers",
@@ -363,8 +1046,51 @@
       "downloads": 1295205,
       "paramsB": 2,
       "vramInt4GB": 2.5,
-      "fits3070": true,
-      "fits4070": true,
+      "minBoardBudgetGB": 2.5,
+      "boardFit": [
+        {
+          "name": "라즈베리파이 5 8GB (CPU)",
+          "kind": "edge-cpu",
+          "budgetGB": 3,
+          "fits": true
+        },
+        {
+          "name": "Jetson Nano 4GB",
+          "kind": "edge",
+          "budgetGB": 2.5,
+          "fits": true
+        },
+        {
+          "name": "Jetson Orin Nano 8GB",
+          "kind": "edge",
+          "budgetGB": 6,
+          "fits": true
+        },
+        {
+          "name": "RTX 3070 8GB",
+          "kind": "gpu",
+          "budgetGB": 8,
+          "fits": true
+        },
+        {
+          "name": "RTX 4070 12GB",
+          "kind": "gpu",
+          "budgetGB": 11,
+          "fits": true
+        },
+        {
+          "name": "Jetson Orin NX 16GB",
+          "kind": "edge",
+          "budgetGB": 12,
+          "fits": true
+        },
+        {
+          "name": "Jetson AGX Orin 32GB+",
+          "kind": "edge",
+          "budgetGB": 28,
+          "fits": true
+        }
+      ],
       "license": "apache-2.0",
       "tags": [
         "transformers",
@@ -386,8 +1112,51 @@
       "downloads": 1236843,
       "paramsB": 4,
       "vramInt4GB": 3.5,
-      "fits3070": true,
-      "fits4070": true,
+      "minBoardBudgetGB": 6,
+      "boardFit": [
+        {
+          "name": "라즈베리파이 5 8GB (CPU)",
+          "kind": "edge-cpu",
+          "budgetGB": 3,
+          "fits": false
+        },
+        {
+          "name": "Jetson Nano 4GB",
+          "kind": "edge",
+          "budgetGB": 2.5,
+          "fits": false
+        },
+        {
+          "name": "Jetson Orin Nano 8GB",
+          "kind": "edge",
+          "budgetGB": 6,
+          "fits": true
+        },
+        {
+          "name": "RTX 3070 8GB",
+          "kind": "gpu",
+          "budgetGB": 8,
+          "fits": true
+        },
+        {
+          "name": "RTX 4070 12GB",
+          "kind": "gpu",
+          "budgetGB": 11,
+          "fits": true
+        },
+        {
+          "name": "Jetson Orin NX 16GB",
+          "kind": "edge",
+          "budgetGB": 12,
+          "fits": true
+        },
+        {
+          "name": "Jetson AGX Orin 32GB+",
+          "kind": "edge",
+          "budgetGB": 28,
+          "fits": true
+        }
+      ],
       "license": "gemma",
       "tags": [
         "transformers",
@@ -409,8 +1178,51 @@
       "downloads": 1165093,
       "paramsB": 4,
       "vramInt4GB": 3.5,
-      "fits3070": true,
-      "fits4070": true,
+      "minBoardBudgetGB": 6,
+      "boardFit": [
+        {
+          "name": "라즈베리파이 5 8GB (CPU)",
+          "kind": "edge-cpu",
+          "budgetGB": 3,
+          "fits": false
+        },
+        {
+          "name": "Jetson Nano 4GB",
+          "kind": "edge",
+          "budgetGB": 2.5,
+          "fits": false
+        },
+        {
+          "name": "Jetson Orin Nano 8GB",
+          "kind": "edge",
+          "budgetGB": 6,
+          "fits": true
+        },
+        {
+          "name": "RTX 3070 8GB",
+          "kind": "gpu",
+          "budgetGB": 8,
+          "fits": true
+        },
+        {
+          "name": "RTX 4070 12GB",
+          "kind": "gpu",
+          "budgetGB": 11,
+          "fits": true
+        },
+        {
+          "name": "Jetson Orin NX 16GB",
+          "kind": "edge",
+          "budgetGB": 12,
+          "fits": true
+        },
+        {
+          "name": "Jetson AGX Orin 32GB+",
+          "kind": "edge",
+          "budgetGB": 28,
+          "fits": true
+        }
+      ],
       "license": "apache-2.0",
       "tags": [
         "transformers",
@@ -432,8 +1244,51 @@
       "downloads": 1065438,
       "paramsB": 2,
       "vramInt4GB": 2.5,
-      "fits3070": true,
-      "fits4070": true,
+      "minBoardBudgetGB": 2.5,
+      "boardFit": [
+        {
+          "name": "라즈베리파이 5 8GB (CPU)",
+          "kind": "edge-cpu",
+          "budgetGB": 3,
+          "fits": true
+        },
+        {
+          "name": "Jetson Nano 4GB",
+          "kind": "edge",
+          "budgetGB": 2.5,
+          "fits": true
+        },
+        {
+          "name": "Jetson Orin Nano 8GB",
+          "kind": "edge",
+          "budgetGB": 6,
+          "fits": true
+        },
+        {
+          "name": "RTX 3070 8GB",
+          "kind": "gpu",
+          "budgetGB": 8,
+          "fits": true
+        },
+        {
+          "name": "RTX 4070 12GB",
+          "kind": "gpu",
+          "budgetGB": 11,
+          "fits": true
+        },
+        {
+          "name": "Jetson Orin NX 16GB",
+          "kind": "edge",
+          "budgetGB": 12,
+          "fits": true
+        },
+        {
+          "name": "Jetson AGX Orin 32GB+",
+          "kind": "edge",
+          "budgetGB": 28,
+          "fits": true
+        }
+      ],
       "license": "mit",
       "tags": [
         "transformers",
@@ -455,8 +1310,51 @@
       "downloads": 1062311,
       "paramsB": 7,
       "vramInt4GB": 5,
-      "fits3070": true,
-      "fits4070": true,
+      "minBoardBudgetGB": 6,
+      "boardFit": [
+        {
+          "name": "라즈베리파이 5 8GB (CPU)",
+          "kind": "edge-cpu",
+          "budgetGB": 3,
+          "fits": false
+        },
+        {
+          "name": "Jetson Nano 4GB",
+          "kind": "edge",
+          "budgetGB": 2.5,
+          "fits": false
+        },
+        {
+          "name": "Jetson Orin Nano 8GB",
+          "kind": "edge",
+          "budgetGB": 6,
+          "fits": true
+        },
+        {
+          "name": "RTX 3070 8GB",
+          "kind": "gpu",
+          "budgetGB": 8,
+          "fits": true
+        },
+        {
+          "name": "RTX 4070 12GB",
+          "kind": "gpu",
+          "budgetGB": 11,
+          "fits": true
+        },
+        {
+          "name": "Jetson Orin NX 16GB",
+          "kind": "edge",
+          "budgetGB": 12,
+          "fits": true
+        },
+        {
+          "name": "Jetson AGX Orin 32GB+",
+          "kind": "edge",
+          "budgetGB": 28,
+          "fits": true
+        }
+      ],
       "license": "apache-2.0",
       "tags": [
         "transformers",
@@ -470,5 +1368,5 @@
       ]
     }
   ],
-  "note": "image-text-to-text 모델을 다운로드 내림차순으로 받아 파라미터 <= 8B 인 것만 남김(생성일 무관 — 검증된 후보). 크기 못 읽는 모델 제외. VRAM 은 int4 기준 대략 추정(확정 아님)."
+  "note": "image-text-to-text 모델을 다운로드 내림차순으로 받아 파라미터 <= 8B 인 것만 남김(생성일 무관 — 검증된 후보). 크기 못 읽는 모델 제외. VRAM 은 int4 기준 대략 추정(확정 아님). boardFit 은 그 추정치를 경량 보드~소비자 GPU 예산과 비교한 것 — 특정 GPU 로 한정하지 않음."
 }

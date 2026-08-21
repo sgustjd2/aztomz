@@ -43,7 +43,7 @@
 | `blog-feedback.mjs` | 노래 추천 피드백 → 선곡 기준 교훈 적립(다음 글에 주입). `--list` · `--good=` · `--bad=` · `--lesson=` |
 | `category-new.mjs` | 블로그 카테고리 프로파일 생성 마법사 |
 | `dev-trending-fetch.mjs` | **개발/IT 소스 fetcher** — GitHub 주간 급상승 + HuggingFace 트렌딩 모델/데이터셋(최근 7일 신규만). `--source=github\|hf-models\|hf-datasets` · `--selftest`. 카테고리 `dev-trending` |
-| `vlm-watch-fetch.mjs` | **개발/IT 소스 fetcher** — HuggingFace 경량 VLM(image-text-to-text, 파라미터 ≤8B, 3070/4070 구동) 후보 + int4 VRAM 추정·라이선스. `--mode=trending`(블로그, 최근 60일)·`--mode=popular`(프로젝트 후보, 다운로드순) · `--days=` · `--maxb=` · `--selftest`. 카테고리 `vlm-watch` |
+| `vlm-watch-fetch.mjs` | **개발/IT 소스 fetcher** — HuggingFace 경량 VLM(image-text-to-text, 파라미터 ≤8B) 후보 + int4 VRAM 추정·라이선스·**보드 티어 적합도**(`boardFit`: 라즈베리파이 5·Jetson Nano/Orin·소비자 GPU 등 — 특정 GPU 하드코딩 안 함). `--mode=trending`(블로그, 최근 60일)·`--mode=popular`(프로젝트 후보, 다운로드순) · `--days=` · `--maxb=` · `--selftest`. 카테고리 `vlm-watch` |
 | `dev-digest-fetch.mjs` | **개발/IT 소스 fetcher** — GeekNews(긱뉴스) Atom + inpa/goddaehee 티스토리 최근글 + GitHub 급상승 스킬/플러그인. `--source=` · `--days=`(기본 2) · `--selftest`. 카테고리 `dev-digest`. ⚠️ Threads(ToS)·Yozm(JS)은 자동 제외 — AI 이슈는 조사 단계 WebSearch 로 대체 |
 | `pulse-research.mjs` / `pulse-refresh.mjs` | 펄스 일일 조사(Actions에서 실행) / `pulse.json` → `pulse.js` 재생성 |
 | `youtube-summarize.mjs` | AI Engineer(@aiDotEngineer) 채널 새 영상 → Gemini 한국어 상세 요약(**URL만 넘김 — 자막 스크래핑·yt-dlp 없음**) → `youtube-summaries/<날짜>-<id>.md` + 인덱스. RSS로 신규 감지(쿼터·키 불필요), 파일 존재로 중복 스킵. `--dry`·`--limit=N`·`--lowres`·`--channel=`·`--selftest` |
