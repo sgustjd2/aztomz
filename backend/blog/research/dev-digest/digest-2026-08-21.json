@@ -1,0 +1,335 @@
+{
+  "collectedAt": "2026-08-21",
+  "days": 3,
+  "results": {
+    "geeknews": {
+      "source": "geeknews",
+      "fetchedOk": true,
+      "sourceUrl": "https://news.hada.io/rss/news",
+      "items": [
+        {
+          "title": "악성 Rust 크레이트 arrayref, 빌드 과정에서 원격 페이로드 실행",
+          "url": "",
+          "date": "2026-08-21T01:33:24.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Kaneo - 필요한 것만 담은 오픈소스 프로젝트 관리 도구",
+          "url": "",
+          "date": "2026-08-21T00:30:04.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Rust 개발자가 Zig로 JSONPath를 다시 구현하며 느낀 차이",
+          "url": "",
+          "date": "2026-08-21T00:19:23.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "대화를 지식으로 바꾸기: Slack이 인간-에이전트 팀을 만드는 방법",
+          "url": "",
+          "date": "2026-08-21T00:15:02.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "arrayref 공급망 공격",
+          "url": "",
+          "date": "2026-08-21T00:13:23.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Aaron Swartz는 스크래핑으로 기소됐지만 Meta는 별다른 제재 없이 계속하고 있음",
+          "url": "",
+          "date": "2026-08-20T22:31:40.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "온디바이스에서 피아노를 자동 완성하는 1억 2,500만 매개변수 모델",
+          "url": "",
+          "date": "2026-08-20T19:34:16.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "프로그래머를 위한 음악 이론",
+          "url": "",
+          "date": "2026-08-20T16:13:20.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Bun 1.4 출시 — Zig에서 Rust로 재작성, Node.js 호환성 역대 최대 폭 향상",
+          "url": "",
+          "date": "2026-08-21T00:16:23.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "AliExpress가 WebAudio 핑거프린팅으로 Bluetooth 멀티포인트 전환을 방해함",
+          "url": "",
+          "date": "2026-08-20T15:32:20.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "실제 FlyWire 커넥톰으로 구동되는 macOS 데스크톱의 3D 초파리",
+          "url": "",
+          "date": "2026-08-20T14:31:48.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "터미널을 되찾는 법",
+          "url": "",
+          "date": "2026-08-20T14:07:18.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "모든 것을 위한 SQLite",
+          "url": "",
+          "date": "2026-08-20T14:04:18.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "모든 것을 위한 PostgreSQL",
+          "url": "",
+          "date": "2026-08-20T13:32:58.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Casio F-B100W-1A 모델",
+          "url": "",
+          "date": "2026-08-20T11:36:05.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "AI 답변을 그대로 붙여넣지 마세요",
+          "url": "",
+          "date": "2026-08-20T11:33:05.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "Show GN: 브라우저에서도 사용 가능한 3D 슬라이서 three-slicer — 0.2.0에서 SLA(레진) 지원 추가",
+          "url": "",
+          "date": "2026-08-20T10:31:26.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Show GN: 오마이한글 rhwp기반 안드로이드용 한글문서 편집앱",
+          "url": "",
+          "date": "2026-08-20T10:08:34.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "TypeGPU로 실시간 깊이 인식 조명 주입 구현",
+          "url": "",
+          "date": "2026-08-20T06:33:40.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Show GN: PDF 번역에서 텍스트보다 레이아웃이 더 어려워서 문서 단위 번역 도구를 만들었습니다",
+          "url": "",
+          "date": "2026-08-20T06:13:33.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Ask GN: 서비스 개발 시 회계 시스템과 어떻게 연동하시나요?",
+          "url": "",
+          "date": "2026-08-20T06:01:40.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Google, 일부 소스 코드의 Git 태그 배포를 Google Drive 요청 방식으로 대체",
+          "url": "",
+          "date": "2026-08-20T05:32:00.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "코드는 다 읽을 수 없고, 코드 리뷰가 맡아온 책임은 사라지지 않는다",
+          "url": "",
+          "date": "2026-08-21T00:11:48.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Show GN: 웹 canvas에 HTML DOM을 그려보자 (크롬 HTML-in-Canvas)",
+          "url": "",
+          "date": "2026-08-20T05:06:32.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "아직도 커밋 메시지를 직접 작성하는 이유",
+          "url": "",
+          "date": "2026-08-20T05:02:14.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "[팟캐스트] 개발자라면 알아야 할 암호학",
+          "url": "",
+          "date": "2026-08-20T01:49:12.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "fx - Unix 셸처럼 가볍게 쓰고 임베드할 수 있는 코딩 에이전트",
+          "url": "",
+          "date": "2026-08-20T00:45:01.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "OpenSandbox - AI 에이전트를 위한 샌드박스 런타임",
+          "url": "",
+          "date": "2026-08-20T00:30:02.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "일반 텍스트 회계가 꽤 멋진 이유",
+          "url": "",
+          "date": "2026-08-20T00:16:53.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Kimi Code CLI - 터미널에서 사용하는 오픈소스 코딩 에이전트",
+          "url": "",
+          "date": "2026-08-20T00:15:01.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Mastodon 5.0: 기반 다지기",
+          "url": "",
+          "date": "2026-08-20T00:13:53.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Bun 1.4 Rust 재작성의 불안한 징후",
+          "url": "",
+          "date": "2026-08-20T00:10:53.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "HTML만으로 구현하는 동적 UI",
+          "url": "",
+          "date": "2026-08-20T00:07:53.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "초저배출구역 도입 후 성장 저하를 겪던 어린이 폐가 회복됨",
+          "url": "",
+          "date": "2026-08-19T23:42:37.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "기하학과 CUDA로 무작위 섬의 위치 찾기",
+          "url": "",
+          "date": "2026-08-19T23:39:37.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Go 1.27 출시",
+          "url": "",
+          "date": "2026-08-19T23:36:37.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "7,704명 연구에서 원격 근무자의 웰빙이 가장 높게 나타남",
+          "url": "",
+          "date": "2026-08-19T21:37:45.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "OpenRouter가 Stripe에 합류함",
+          "url": "",
+          "date": "2026-08-19T21:34:45.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "시민 위생 — 경찰국가에 악용될 기술을 만들지 말 것 (2013)",
+          "url": "",
+          "date": "2026-08-19T20:31:55.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Moderna, 흑색종 mRNA 신생항원 치료제 최초의 긍정적 3상 결과 발표",
+          "url": "",
+          "date": "2026-08-19T19:31:29.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "농담으로 산 도메인이 지정학적 전쟁에 휘말린 과정",
+          "url": "",
+          "date": "2026-08-19T18:32:55.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "CSS, 받은편지함 속 폭탄",
+          "url": "",
+          "date": "2026-08-19T18:03:39.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "GrapheneOS 지원 Motorola 기기, 2027년 출시 예정",
+          "url": "",
+          "date": "2026-08-19T16:31:41.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "고착된 임금 규범이 예상 밖 인플레이션을 실질임금 손실로 바꾼 과정",
+          "url": "",
+          "date": "2026-08-19T15:44:09.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Fairphone, 미국에서 공식 판매 시작",
+          "url": "",
+          "date": "2026-08-19T15:41:09.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "그래도 총을 든 사람들이 결국 하라고 명령한다",
+          "url": "",
+          "date": "2026-08-19T15:38:09.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Show GN: DevSwitcher Tools – VSCode 상태 표시줄 하나로 6개 언어를 한 번에",
+          "url": "",
+          "date": "2026-08-19T14:06:23.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Show GN: 직접 만들고 있는 웹 테트리스",
+          "url": "",
+          "date": "2026-08-19T14:04:20.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Mojo 전체 컴파일러와 툴체인 오픈소스 공개",
+          "url": "",
+          "date": "2026-08-19T13:01:09.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "AI 시대, 개발자는 면사무소가 아니라 목욕탕을 만들어야 한다",
+          "url": "",
+          "date": "2026-08-19T12:49:43.000Z",
+          "aiRelated": true
+        }
+      ],
+      "note": "GeekNews Atom 피드에서 최근 3일 항목. aiRelated=true 는 제목 키워드 기준(본문은 조사 단계에서 확인)."
+    },
+    "inpa": {
+      "source": "inpa",
+      "fetchedOk": true,
+      "sourceUrl": "https://inpa.tistory.com/rss",
+      "items": [],
+      "note": "최근 3일 이내 작성된 글만. 날짜 없는 항목은 제외. 0건이면 어제·오늘 새 글이 없다는 뜻."
+    },
+    "goddaehee": {
+      "source": "goddaehee",
+      "fetchedOk": true,
+      "sourceUrl": "https://goddaehee.tistory.com/rss",
+      "items": [],
+      "note": "최근 3일 이내 작성된 글만. 날짜 없는 항목은 제외. 0건이면 어제·오늘 새 글이 없다는 뜻."
+    },
+    "github": {
+      "source": "github",
+      "fetchedOk": true,
+      "sourceUrl": "https://github.com/trending?since=weekly",
+      "items": [],
+      "note": "주간 급상승 레포 중 plugin/extension/skill/cli/mcp 등 도구 성격 키워드가 잡힌 것만. dev-trending 과 겹치는 항목은 조사 단계에서 제외한다."
+    }
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "id": "vlm-watch",
+  "tistoryCategory": "AI 모델",
+  "_note": "주 1회, 3070/4070 급 GPU 에서 돌아가는 경량 비전-언어 모델(VLM)만 골라 소개한다. vlm-watch-fetch.mjs 가 image-text-to-text 파이프라인에서 (1) id 로 읽은 파라미터 <=8B (2) 최근 생성 두 조건으로 걸러 넘긴다. 27B 같은 대형 모델은 다루지 않는다 — 이 시리즈의 존재 이유가 '내 GPU 에서 실제로 돌아가는 것'이다. 용도 앵글: 이미지+텍스트 점검(예: 화재·연기 감지, 안전장비 착용 확인) — 로컬에서 돌릴 수 있는지를 독자가 판단하게 한다.",
+  "persona": "매주 HuggingFace 를 훑어 소비자 GPU 에서 돌아가는 새 VLM 만 골라주는 사람",
+  "readerProfile": "온프레미스·엣지 AI 를 고민하는 개발자 — 클라우드 API 말고 내 3070/4070 에서 이미지 점검을 돌리고 싶은 사람",
+  "searchIntent": "정보형",
+  "structureTemplate": "listicle",
+  "tone": { "formality": "해요체", "emoji": false, "sentenceMax": 3 },
+  "mustInclude": [
+    "선정 기준 — 'image-text-to-text · 파라미터 8B 이하 · 최근 생성' 명시",
+    "모델마다 파라미터 수와 int4 기준 VRAM 추정치(추정임을 명시) + 3070(8GB)/4070(12GB) 구동 가능 여부",
+    "모델마다 라이선스(상업적 사용 가능 여부는 라이선스명까지만 — 해석 단정 금지) + HuggingFace 공식 링크",
+    "VRAM·크기·라이선스 한눈에 비교 표 1개"
+  ],
+  "banned": ["충격", "대박", "역대급", "혁명", "게임체인저", "필수템", "무조건", "인생템", "완벽"],
+  "wordCount": [1500, 5000],
+  "_wordCountNote": "모델 3~6개를 각각 크기·VRAM·라이선스·용도 적합성으로 다루면 뉴스 카테고리보다 길어진다. dev-trending 과 같은 이유로 상한을 넉넉히 둔다.",
+  "imagePolicy": {
+    "min": 0, "altRequired": true, "ownOnly": true,
+    "_note": "모델 데모 이미지·아키텍처 도식 등 남의 자산 재업로드 금지. 필요하면 blog-figure.mjs 의 table 카드(VRAM 비교)로 대체."
+  },
+  "ctaType": "같은 시리즈 이전 글 내부링크 1~2개, 없으면 생략",
+  "affiliateDisclosure": false,
+  "publishDefault": "public",
+  "_publishNote": "자동 공개 발행. 게이트: (1) 후보가 2개 미만이면 발행 보류(억지로 개수 채우지 않는다 — 경량 신규 VLM 은 드물 수 있다) (2) VRAM 은 int4 대략 추정이라 '무조건 돌아간다'로 단정 금지 — '~정도로 추정된다' (3) 라이선스는 이름만 옮기고 '상업적으로 써도 된다' 같은 법적 해석을 지어내지 않는다.",
+  "cannotSay": [
+    "VRAM 추정치는 int4 기준 대략값이다 — '정확히 N GB', '무조건 돌아간다' 금지. 실제 사용량은 이미지 해상도·컨텍스트·구현에 따라 달라진다.",
+    "라이선스는 명칭만 전달한다. '상업적 사용 가능/불가' 같은 법적 해석을 단정하지 말 것.",
+    "모델 성능(정확도)은 벤치마크 근거 없이 '더 낫다/최고다' 로 단정하지 말 것 — 모델 카드에 있는 수치만 인용.",
+    "'화재 감지·안전장비 확인에 바로 쓸 수 있다' 처럼 특정 용도 성능을 검증 없이 보장하지 말 것 — '이런 이미지+텍스트 점검에 시도해볼 만하다' 수준으로만."
+  ],
+  "sourcing": {
+    "method": "결정적 스크립트 우선 — 절대 일반 WebSearch 로 시작하지 않는다.",
+    "steps": [
+      "1. node backend/scripts/vlm-watch-fetch.mjs (trending, 블로그용) 로 최근 경량 VLM 후보를 받는다.",
+      "2. node backend/scripts/vlm-watch-fetch.mjs --mode=popular (프로젝트 후보 겸용) 로 검증된 경량 VLM 도 받는다.",
+      "3. blog-researcher 가 후보 상위 3~6개의 HuggingFace 모델 카드를 WebFetch 로 읽어 '무엇을 입력받고 무엇을 출력하는지·컨텍스트·언어·라이선스·벤치마크'를 확인한다. id·크기만 보고 판단 금지.",
+      "4. VRAM 은 fetch 스크립트의 int4 추정치를 쓰되 '추정'임을 본문에 명시한다.",
+      "5. 확인된 내용만 research.json 에 담는다. 성능·용도 적합성을 지어내지 않는다."
+    ],
+    "freshnessWindow": "기본 60일(vlm-watch-fetch --days). 경량 신규 VLM 은 일반 모델보다 출시 빈도가 낮아 7일 창이면 0건이 잦다 — 그래서 창을 넓게 둔다."
+  }
+}
