@@ -1,0 +1,58 @@
+{
+  "keyword": "3070·4070에서 돌리는 경량 VLM (image-text-to-text)",
+  "categoryId": "vlm-watch",
+  "slug": "vlm-watch-2026-08-21",
+  "searchedAt": "2026-08-21",
+  "notes": "선정 기준은 image-text-to-text 파이프라인 · 파라미터 8B 이하(3070 8GB/4070 12GB에서 int4 기준 대략 구동 가능) · 후보는 backend/blog/research/vlm-watch/hf-vlm-trending-2026-08-21.json(최근 60일 신규)과 hf-vlm-popular-2026-08-21.json(다운로드순 검증본)에서만 뽑았다. abliterated/GGUF/FP8/INT8/LoRA 같은 파생 리팩본(DreamFast·ahmed22xa·ethanfel·unsloth 등)은 원본 모델(LFM2.5-VL-3B, Qwen3-VL-4B/8B, Qwen2.5-VL-7B)로 대표하고 별도로 세지 않았다. 화재·연기 감지, 안전장비 착용 확인 같은 특정 용도의 정확도는 어떤 모델 카드에도 없어 검증하지 않았다 — 모델 카드에 실제로 있는 벤치마크 수치만 인용하고, 그 외에는 '이런 이미지+텍스트 점검에 시도해볼 만하다' 수준으로만 언급한다. VRAM은 candidate 파일의 int4 대략 추정치이며, 실제 사용량은 이미지 해상도·컨텍스트 길이·구현에 따라 달라진다.",
+  "sources": [
+    {
+      "title": "LiquidAI/LFM2.5-VL-3B — LFM2.5-2.6B 백본 + SigLIP2 비전 인코더의 3.1B 경량 VLM",
+      "url": "https://huggingface.co/LiquidAI/LFM2.5-VL-3B",
+      "host": "huggingface.co",
+      "tier": "official",
+      "body": "모델 카드 기준: image-text-to-text — 텍스트와 이미지를 함께 입력받아 텍스트를 출력한다(\"can process both text and images\"). 구성은 \"LFM2.5-2.6B language model as its backbone\" + \"SigLIP2 NaFlex vision encoder\"(약 400M)로 총 파라미터는 3.1B(카드 표기 3B). 컨텍스트 길이는 \"Context length: 32,768 tokens\". 지원 언어는 16개로 명시: English, Arabic, Chinese, French, German, Italian, Japanese, Korean, Portuguese, Spanish, Vietnamese, Thai, Indonesian, Hindi, Russian, Polish — 한국어가 명시적으로 포함된다. 라이선스는 \"lfm1.0\"(커스텀 라이선스명, 별도 해석 안 함). 벤치마크: RefCOCO(Macro Prec@1) 87.9, MathVista 68.5, ChartQA 81.3, OCRBenchv2(영어 서브셋) 47.5. 온디바이스 처리량으로 Apple M5 Max 228 tokens/s, AMD Ryzen AI 116 tokens/s가 카드에 제시돼 있다(3070/4070 GPU 벤치마크는 카드에 없음). candidate 파일(hf-vlm-trending) 기준 파라미터 3B, int4 VRAM 추정 3GB — 3070(8GB)/4070(12GB) 모두 여유 있게 구동 가능한 추정치다. 2026-08-11 공개된 가장 최근 모델이며, 한국어를 포함한 16개 언어를 명시한 점과 RefCOCO(물체 위치 지정) 점수가 있어 '사진 속 특정 대상 확인' 류 점검에 시도해볼 만하다."
+    },
+    {
+      "title": "Qwen/Qwen3-VL-8B-Instruct — Qwen3-VL 계열의 8B급, 256K 네이티브 컨텍스트",
+      "url": "https://huggingface.co/Qwen/Qwen3-VL-8B-Instruct",
+      "host": "huggingface.co",
+      "tier": "official",
+      "body": "모델 카드 기준: image-text-to-text — 이미지와 텍스트를 함께 입력받아 텍스트 응답을 생성한다. 모델명은 \"Qwen3-VL-8B-Instruct\"로 8B를 표기하지만, 카드의 기술 사양(Model size) 섹션은 \"9B params\"로 표기돼 있어 명칭과 사양표에 불일치가 있다(비전 인코더 포함 추정치로 보이나 카드에 명시적 설명은 없음) — 이 글에서는 candidate 파일의 파라미터 값(8B)을 기준으로 다룬다. 컨텍스트는 \"Native 256K context, expandable to 1M\". 언어 지원은 \"Supports 32 languages (up from 19)\"로 명시되나 한국어가 그 32개 목록에 포함되는지는 카드에서 개별 언어명이 나열되지 않아 확인 불가. 라이선스는 apache-2.0. 벤치마크(모두 카드 표기 그대로): MDPBench Overall 68.3, MDPBench Digital 78.4, MDPBench Photographed 65, PBench Average 49*(카드에 별표 각주 존재, 각주 내용은 확인 못함). candidate 파일(hf-vlm-popular) 기준 int4 VRAM 추정 5.5GB — 3070(8GB)/4070(12GB) 모두 구동 가능한 추정치. 256K라는 긴 컨텍스트가 있어 여러 장의 점검 사진을 한 번에 묻는 용도에 시도해볼 만하나, 화재·안전장비 같은 특정 대상 인식 정확도는 카드 벤치마크에 없다."
+    },
+    {
+      "title": "Qwen/Qwen2.5-VL-7B-Instruct — 다운로드 956만+ 최다 검증된 7B VLM, OCR·문서 벤치마크 다수",
+      "url": "https://huggingface.co/Qwen/Qwen2.5-VL-7B-Instruct",
+      "host": "huggingface.co",
+      "tier": "official",
+      "body": "모델 카드 기준: 이미지·비디오·텍스트를 혼합 입력받아 텍스트로 응답하는 image-text-to-text 모델. \"We have three models with 3, 7 and 72 billion parameters\" 중 7B 규모. 컨텍스트는 \"The current config.json is set for context length up to 32,768 tokens\". 카드 본문에 지원 언어에 대한 명시적 언급은 없었다(확인 안 됨 — 지어내지 않음). 라이선스는 apache-2.0. 벤치마크(카드 표기 그대로): 문서/OCR — DocVQAtest 95.7, OCRBench 864, InfoVQAtest 82.6; 이미지 이해 — ChartQAtest 87.3, MMBench-V1.1-En 82.6, MathVista testmini 68.2; 비디오 이해 — MVBench 69.6, PerceptionTest 70.5; 에이전트/그라운딩 — ScreenSpot 84.7, AITZ_EM 81.9, MobileMiniWob++_SR 91.4. candidate 파일(hf-vlm-popular) 기준 다운로드 9,566,668회로 이번 목록 중 최다이며 파라미터 7B·int4 VRAM 추정 5GB — 3070(8GB)/4070(12GB) 모두 구동 가능한 추정치. DocVQA·OCRBench 점수가 높아 사진 속 표지판·라벨 텍스트를 읽는 점검류에 시도해볼 만하다."
+    },
+    {
+      "title": "llava-hf/llava-1.5-7b-hf — 초기 오픈소스 VLM의 기준점, 영어 전용",
+      "url": "https://huggingface.co/llava-hf/llava-1.5-7b-hf",
+      "host": "huggingface.co",
+      "tier": "official",
+      "body": "모델 카드 기준: 이미지와 텍스트를 입력받아 텍스트를 생성하며, \"The model supports multi-image and multi-prompt generation. Meaning that you can pass multiple images in your prompt.\"라고 명시돼 있어 여러 장의 이미지를 한 프롬프트에 넣을 수 있다. 파라미터는 \"7B params\"로 명시. 컨텍스트 길이는 카드에 명시돼 있지 않다(확인 안 됨). 지원 언어는 \"English\" 태그만 확인되며 다른 언어 지원 언급은 없다. 라이선스는 Llama 2 커뮤니티 라이선스(\"Llama 2 is licensed under the LLAMA 2 Community License, Copyright (c) Meta Platforms, Inc.\"). 카드에 구체적인 벤치마크 점수는 제시돼 있지 않다. candidate 파일(hf-vlm-popular) 기준 다운로드 2,709,315회, 파라미터 7B·int4 VRAM 추정 5GB — 3070(8GB)/4070(12GB) 모두 구동 가능한 추정치. 2023-12-05 공개로 이번 목록 중 가장 오래된 모델이며, 이후 Qwen 계열 대비 벤치마크 근거가 카드에 없어 성능 비교는 불가하다. 영어 전용이라 한국어가 섞인 점검 프롬프트에는 부적합할 가능성이 있다."
+    },
+    {
+      "title": "google/gemma-3-4b-it — 128K 컨텍스트, 140개+ 언어 다국어 지원의 4B 모델",
+      "url": "https://huggingface.co/google/gemma-3-4b-it",
+      "host": "huggingface.co",
+      "tier": "official",
+      "body": "모델 카드 기준: \"Text string, such as a question, a prompt, or a document to be summarized\"와 이미지를 입력받아 \"Generated text in response to the input\"을 출력하는 멀티모달 구조. 파라미터는 4B. 컨텍스트는 \"Total input context of 128K tokens for the 4B, 12B, and 27B sizes\". 언어 지원은 \"multilingual support in over 140 languages\"로 명시되나, 카드 본문에서 한국어가 개별로 언급되는지는 확인하지 못했다(140개 언어 중 포함 여부 미확인). 라이선스는 \"gemma\"(구글 커스텀 라이선스명). 벤치마크(4B 모델, 카드 표기 그대로): MMLU 59.6(5-shot), GSM8K 38.4(8-shot), HumanEval 36.0(0-shot), MATH 24.2(4-shot), TriviaQA 65.8(5-shot), HellaSwag 77.2(10-shot), VQAv2 63.9(멀티모달 벤치마크). candidate 파일(hf-vlm-popular) 기준 다운로드 1,236,843회, int4 VRAM 추정 3.5GB — 3070(8GB)/4070(12GB) 모두 구동 가능한 추정치. 128K라는 긴 컨텍스트와 VQAv2 벤치마크가 있어 이미지 질의응답 점검에 시도해볼 만하다."
+    },
+    {
+      "title": "HuggingFaceTB/SmolVLM2-500M-Video-Instruct — 0.5B 초경량, 비디오까지 지원",
+      "url": "https://huggingface.co/HuggingFaceTB/SmolVLM2-500M-Video-Instruct",
+      "host": "huggingface.co",
+      "tier": "official",
+      "body": "모델 카드 기준: \"processes videos, images, and text inputs to generate text outputs\" — 비디오·이미지·텍스트를 입력받아 텍스트를 출력한다. 파라미터는 \"0.5B params\"(모델명 500M과 일치). 컨텍스트 길이는 카드에 명시돼 있지 않다(확인 안 됨). 지원 언어는 \"Language(s) (NLP): English\"로 영어만 명시. 라이선스는 apache-2.0(\"We release the SmolVLM2 checkpoints under the Apache 2.0 license\"). 벤치마크(카드 표기 그대로): Video-MME 42.2, MLVU 47.3, MVBench 39.73. 카드 자체에 \"1.8GB of GPU RAM for video inference\"라는 실측 수치가 있으며, candidate 파일(hf-vlm-popular)의 int4 VRAM 추정치(1.8GB)와 값이 일치한다 — 다만 이 1.8GB는 카드가 밝힌 비디오 추론 기준치이고 이미지 단독 추론이나 다른 해상도에서는 달라질 수 있다. 이번 목록 중 파라미터가 가장 작아(0.5B) 3070(8GB)/4070(12GB) 모두 여유롭게 구동 가능한 추정치이며, 저사양 환경에서 가장 먼저 시도해볼 후보다. 영어 전용이라 한국어 프롬프트 점검에는 제약이 있을 수 있다."
+    }
+  ],
+  "internalLinkCandidates": ["https://az2mz.vercel.app"],
+  "cannotSay": [
+    "VRAM 은 int4 대략 추정 — 무조건 돌아간다 금지",
+    "라이선스 법적 해석 금지",
+    "특정 용도 성능 검증 없이 보장 금지",
+    "한국어 성능은 모델 카드 근거 있을 때만 언급"
+  ]
+}

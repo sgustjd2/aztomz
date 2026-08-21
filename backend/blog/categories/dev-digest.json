@@ -1,6 +1,6 @@
 {
   "id": "dev-digest",
-  "tistoryCategory": "개발 소식",
+  "tistoryCategory": "AI 동향",
   "_note": "개발·IT 다이제스트. dev-digest-fetch.mjs 가 GeekNews(긱뉴스)·inpa/goddaehee 블로그 최근글·GitHub 급상승 스킬/플러그인 후보를 모아 넘긴다. AI 이슈는 Threads 를 못 쓰므로(ToS) blog-researcher 가 WebSearch 로 공식/뉴스 출처에서 확보한다. Yozm 은 자동 제외(인터랙티브 실행 때만 WebFetch 참고). '요즘 개발판에서 무슨 일이 있었나'를 짧게 훑어주는 큐레이션이지, 각 항목을 깊이 파는 글이 아니다.",
   "persona": "긱뉴스·개발 블로그·GitHub 를 대신 훑어 이번 며칠의 개발 소식을 요약해주는 사람",
   "readerProfile": "바빠서 매일 못 챙기는 개발자 — 최근 며칠 개발·AI 판에서 주목할 것만 빠르게 훑고 싶은 사람",
