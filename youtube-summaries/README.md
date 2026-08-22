@@ -3,10 +3,12 @@
 채널 [AI Engineer](https://www.youtube.com/@aiDotEngineer) 의 새 영상을 Gemini 로 자동 요약한 모음입니다.
 생성: `backend/scripts/youtube-summarize.mjs` (GitHub Actions `youtube-summary` 크론).
 
-총 **71개**.
+총 **73개**.
 
 | 발행일 | 제목 |
 |---|---|
+| 2026-08-22 | [Coding Agents Don't Scale Themselves. Neither Do Your Teams. — Patrick Debois, Tessl](2026-08-22-zCJtYuqwm7E.md) |
+| 2026-08-22 | [Give the Agent a Budget, Not a Token — Sachin Malhotra, Anthropic](2026-08-22-rbjWzZK2LU0.md) |
 | 2026-08-21 | [Building Agents Is Trivial Now, Context Is the Next Frontier — Jeff Ng, Unblocked](2026-08-21-HvMyYLTfvhg.md) |
 | 2026-08-21 | [The Missing Layer: Design Taste in AI Agents — Hassan El Mghari, Together AI](2026-08-21-7GMKdpLsxwU.md) |
 | 2026-08-21 | [Agentic SDLC at Uber — Uday Kiran Medisetty & Adam Huda, Uber](2026-08-21-17-YSUHo6Lk.md) |
