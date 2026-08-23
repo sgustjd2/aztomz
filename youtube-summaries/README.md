@@ -3,12 +3,18 @@
 채널 [AI Engineer](https://www.youtube.com/@aiDotEngineer) 의 새 영상을 Gemini 로 자동 요약한 모음입니다.
 생성: `backend/scripts/youtube-summarize.mjs` (GitHub Actions `youtube-summary` 크론).
 
-총 **73개**.
+총 **79개**.
 
 | 발행일 | 제목 |
 |---|---|
 | 2026-08-22 | [Coding Agents Don't Scale Themselves. Neither Do Your Teams. — Patrick Debois, Tessl](2026-08-22-zCJtYuqwm7E.md) |
+| 2026-08-22 | [Inside 847 Production Clinical AI Notes — Sebastian Fox, Composo](2026-08-22-yqF6XhzbWBk.md) |
 | 2026-08-22 | [Give the Agent a Budget, Not a Token — Sachin Malhotra, Anthropic](2026-08-22-rbjWzZK2LU0.md) |
+| 2026-08-22 | [The Agent Behind the Curtain: Building the Oz Cloud Agent Platform — Safia Abdalla, Warp](2026-08-22-L173Z8DpaJg.md) |
+| 2026-08-22 | [Agent Frameworks Considered Harmful — Rémi Louf, .txt](2026-08-22-KHudyx5wW3U.md) |
+| 2026-08-22 | [FinOps for AI Agents: Who Spent All the Tokens? — Tisha Chawla & Susheem Koul, Microsoft](2026-08-22-GJX19pNhmSw.md) |
+| 2026-08-22 | [Preferences Over Benchmarks: Model Routing — Archana Kamath & Tyler Gillam, DigitalOcean](2026-08-22-FvxY8oPoI8o.md) |
+| 2026-08-22 | [What If Your Chip Design Team Moved Like a Single Body? — Abduallah Mohamed, AIDAChip](2026-08-22-0I6aoPSRzVc.md) |
 | 2026-08-21 | [Building Agents Is Trivial Now, Context Is the Next Frontier — Jeff Ng, Unblocked](2026-08-21-HvMyYLTfvhg.md) |
 | 2026-08-21 | [The Missing Layer: Design Taste in AI Agents — Hassan El Mghari, Together AI](2026-08-21-7GMKdpLsxwU.md) |
 | 2026-08-21 | [Agentic SDLC at Uber — Uday Kiran Medisetty & Adam Huda, Uber](2026-08-21-17-YSUHo6Lk.md) |
