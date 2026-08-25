@@ -3,10 +3,12 @@
 채널 [AI Engineer](https://www.youtube.com/@aiDotEngineer) 의 새 영상을 Gemini 로 자동 요약한 모음입니다.
 생성: `backend/scripts/youtube-summarize.mjs` (GitHub Actions `youtube-summary` 크론).
 
-총 **79개**.
+총 **81개**.
 
 | 발행일 | 제목 |
 |---|---|
+| 2026-08-25 | [Einstein Arena: Harnessing Collective Agent Intelligence for Open Science — James Zou, Together AI](2026-08-25-mMNkdYnIVC4.md) |
+| 2026-08-24 | [The Missing Layer in Agentic AI — Giedrius Šteimantas, Oxylabs](2026-08-24-XsvUhpnHepE.md) |
 | 2026-08-22 | [Coding Agents Don't Scale Themselves. Neither Do Your Teams. — Patrick Debois, Tessl](2026-08-22-zCJtYuqwm7E.md) |
 | 2026-08-22 | [Inside 847 Production Clinical AI Notes — Sebastian Fox, Composo](2026-08-22-yqF6XhzbWBk.md) |
 | 2026-08-22 | [Give the Agent a Budget, Not a Token — Sachin Malhotra, Anthropic](2026-08-22-rbjWzZK2LU0.md) |
