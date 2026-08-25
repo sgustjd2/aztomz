@@ -1,0 +1,79 @@
+{
+  "keyword": "컨텍스트 엔지니어링으로 AI 코딩 토큰 줄이기 (87% 절감의 실체)",
+  "categoryId": "ai-trend",
+  "slug": "context-engineering-token-save",
+  "searchedAt": "2026-08-26",
+  "origin": "claude-code-websearch",
+  "note": "이 조사는 Claude Code 워크플로에서 4개 주장군(Anthropic 글·Claude Code 문서·Caveman 벤치마크·원본 영상)을 병렬 WebFetch/WebSearch 로 교차검증한 결과다. 사용자가 준 재구성 초안을 그대로 믿지 않고, 각 사실과 URL·수치를 실제로 확인했다. 여기 '확인된 사실'만 본문에 사실로 쓰고, '아직 확인 안 된 것/주의'는 그대로 정직하게 노출한다.",
+  "sources": [
+    {
+      "title": "Anthropic — Effective Context Engineering for AI Agents",
+      "url": "https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents",
+      "host": "anthropic.com",
+      "tier": "official",
+      "kind": "engineering-blog",
+      "publishedAt": "2025-09-29",
+      "body": "Anthropic 공식 엔지니어링 블로그(2025-09-29). 실재·URL 확인. 컨텍스트 엔지니어링을 'LLM 추론 중 최적의 토큰(정보) 집합을 선별하고 유지하는 전략의 집합'으로 정의하고, 컨텍스트를 '유한한 자원'으로 규정하며 프롬프트 엔지니어링의 자연스러운 확장으로 위치시킨다. 본문에 실제로 등장하는 개념: (1) context rot — 컨텍스트 토큰이 많아질수록 모델이 그 안의 정보를 정확히 회상하는 능력이 떨어진다 (2) just-in-time retrieval — 런타임에 도구로 필요한 데이터를 그때그때 불러오는 전략 (3) compaction — 컨텍스트 한도에 가까워진 대화를 요약해 압축 (4) sub-agents — 컨텍스트 한계를 우회하는 서브에이전트 구조 (5) tool design — 도구는 자족적이고 오류에 강하며 매우 명확해야 한다 (6) system prompt는 단순·직접적으로, few-shot 예시, 컨텍스트 밖 메모리에 노트 적기, 장기 과제 일관성 유지."
+    },
+    {
+      "title": "Claude Code Docs — Explore the context window",
+      "url": "https://code.claude.com/docs/en/context-window",
+      "host": "code.claude.com",
+      "tier": "official",
+      "kind": "docs",
+      "body": "Claude Code 공식 문서 '컨텍스트 윈도우'. 확인된 사실: (1) CLAUDE.md(프로젝트/글로벌 ~/.claude/CLAUDE.md)는 매 대화 시작 시 자동 로드(auto-loaded)되는 항목으로 분류된다 — 짧은 질문에도 상당한 입력 토큰이 자동으로 붙는다. (2) 서브에이전트는 'fresh, separate context window'로 시작해 메인 세션의 대화기록/자동메모리 없이 동작하고, 파일 읽기는 메인 컨텍스트에 안 들어가며 최종 텍스트 응답(+짧은 토큰/시간 메타데이터)만 메인으로 반환된다. 문서의 예시: 서브에이전트가 파일 6,100토큰을 읽고 메인에는 420토큰 결과만 돌려줬다 = 그만큼이 컨텍스트 절약. (3) 컨텍스트에는 사용자 입력뿐 아니라 파일 내용·명령 실행 결과·시스템 지침·스킬 등이 함께 들어간다."
+    },
+    {
+      "title": "Claude Code Docs — Slash commands (/compact, /clear)",
+      "url": "https://code.claude.com/docs/en/commands",
+      "host": "code.claude.com",
+      "tier": "official",
+      "kind": "docs",
+      "body": "Claude Code 커맨드 레퍼런스. 확인된 사실: (1) /compact [instructions] — '지금까지의 대화를 요약해 컨텍스트를 확보'하며, 선택적으로 요약에 집중할 지시를 인자로 넘길 수 있다(예: 특정 버그·수정한 파일·실패한 테스트에 집중). (2) /clear [name] — '빈 컨텍스트로 새 대화 시작'. 같은 대화를 이어가며 컨텍스트만 줄이려면 /compact 를 쓰라고 안내(둘의 차이 명시). 별칭 /reset·/new. 선택 인자 name 으로 이전 대화에 라벨을 붙여 /resume 로 되살릴 수 있다."
+    },
+    {
+      "title": "Caveman — Claude Code skill (GitHub: juliusbrussee/caveman)",
+      "url": "https://github.com/juliusbrussee/caveman",
+      "host": "github.com",
+      "tier": "source",
+      "kind": "repo-readme",
+      "body": "Caveman 은 AI 코딩 에이전트(Claude Code 등 30+)가 장황한 문장 대신 핵심만 압축해 답하게 만드는 스킬. 레포·README 실재 확인(HTTP 200), JetBrains·Product Hunt 등 독립 출처가 동일 레포/제작자(Julius Brüssee) 교차확인. 제작자 태그라인 원문: 'Claude Code skill that cuts 65% of tokens by talking like caveman.' README 벤치마크 표(원문, 출력 토큰 기준): React 재렌더링 1180→159(87%), 인증 미들웨어 704→121(83%), PostgreSQL 연결풀 2347→380(84%), git rebase vs merge 702→292(58%), callback→async 387→301(22%), 마이크로서비스 vs 모놀리식 446→310(30%), 보안 PR 리뷰 678→398(41%), Docker 멀티스테이지 1042→290(72%), PostgreSQL 레이스컨디션 1200→232(81%), React error boundary 3454→456(87%), 평균 1214→294(65%). 표의 6개 인용 수치(초안에 실린 것) 모두 README 원문과 일치 — 지어낸 표 아님. 단 매우 중요한 프레이밍 사실: (a) 87% 는 평균이 아니라 10개 과제 중 단 2개(React 두 항목)만 찍은 best-case 상한값이고 나머지는 22~84%. (b) 자기보고 평균은 65%(태그라인과 동일). (c) 측정 대상은 '출력(output) 토큰'뿐 — README 원문: 입력·추론 토큰은 그대로이고 스킬 자체가 매 턴 입력을 약 1~1.5k 토큰 추가한다. (d) 독립 테스트(JetBrains AI 블로그)의 실제 에이전트 작업에서는 약 8.5% 절감으로 광고된 65%와 큰 격차. (e) '33.2% fewer input tokens' 지표는 다른 제품(Caveman Proxy, BSL-1.1)의 입력토큰 벤치마크로 위 스킬 표의 87%와 무관."
+    },
+    {
+      "title": "원본 영상 — 메이커 에반 | Maker Evan (컨텍스트가 전부다)",
+      "url": "https://www.youtube.com/watch?v=IrwBH_DBCZA",
+      "host": "youtube.com",
+      "tier": "video",
+      "kind": "source-video",
+      "body": "이 글이 출발점으로 삼은 유튜브 영상. oEmbed 200 으로 실존 확인. 실제 제목 '컨텍스트가 전부다 — 토큰 87% 줄인 방법 총정리', 채널 '메이커 에반 | Maker Evan'(@maker-evan). 주제는 컨텍스트 엔지니어링/AI 코딩 토큰 절감. 영상 자막 원문은 외부에서 정상 추출되지 않아, 이 글은 영상의 주제를 공식 문서·벤치마크로 교차검증해 재구성한 것이다(그 사실을 글에 밝힌다)."
+    }
+  ],
+  "facts": [
+    "컨텍스트에는 사용자 질문뿐 아니라 시스템 지침·대화기록·읽은 파일·명령 실행 결과·CLAUDE.md·스킬/MCP 도구 정의·서브에이전트 반환·AI의 이전 답변까지 함께 쌓인다 (Anthropic·Claude Code 문서).",
+    "Anthropic 정의(요지): 컨텍스트 엔지니어링 = LLM 추론 중 최적의 토큰 집합을 선별·유지하는 전략. 컨텍스트는 유한한 자원이다.",
+    "Context rot: 컨텍스트 토큰이 많아질수록 모델이 그 안의 정보를 정확히 회상하는 능력이 떨어진다 (Anthropic).",
+    "Anthropic이 제시하는 실전 방향: just-in-time(필요할 때 도구로 그때그때 로드), compaction(요약 압축), 서브에이전트로 컨텍스트 격리, 명확한 도구/시스템 프롬프트 설계.",
+    "Claude Code: CLAUDE.md는 매 대화 시작 시 자동 로드된다 — 짧게 질문해도 입력 토큰이 자동으로 붙는다.",
+    "Claude Code: 서브에이전트는 분리된 새 컨텍스트로 돌고, 파일을 많이 읽어도 최종 응답만 메인에 돌려준다(문서 예시: 6,100토큰 읽고 420토큰만 반환).",
+    "Claude Code: /compact [instructions]로 대화를 요약 압축하되 특정 주제에 집중하도록 지시할 수 있고, /clear로 빈 컨텍스트의 새 대화를 시작한다(별칭 /reset·/new).",
+    "Caveman(github.com/juliusbrussee/caveman)은 답변을 압축해 출력 토큰을 줄이는 Claude Code 스킬이며, README 벤치마크 표의 수치들은 실제로 존재한다."
+  ],
+  "the87Framing": "'토큰 87% 절감'은 Caveman README 벤치마크에서 10개 과제 중 단 2개(React 재렌더링·React error boundary)만 찍은 best-case 상한값이다. 저자 자신의 태그라인은 65%이고, 측정 대상은 출력 토큰뿐이며, 스킬 자체가 매 턴 입력을 약 1~1.5k 토큰 추가한다. 독립 테스트(JetBrains)에서는 실제 에이전트 작업 기준 약 8.5% 절감에 그쳤다. 따라서 '87%'는 대표값·전체비용 절감으로 읽으면 왜곡이다.",
+  "unverified": [
+    "'모든 세션 비용이 87% 준다'는 명제 — 거짓. 87%는 특정 과제 출력 토큰의 best-case.",
+    "Caveman의 실제 절감폭은 환경/과제에 따라 크게 다르다(자기보고 평균 65% vs 독립테스트 8.5%). 단일 대표값으로 말할 수 없다.",
+    "영상 자막 원문은 외부 추출 실패 — 이 글은 영상의 '주제'를 공식 문서로 교차검증해 재구성한 것이며, 영상 내 특정 발언을 인용하지 않는다."
+  ],
+  "internalLinkCandidates": [
+    "https://burning-go9me.tistory.com/328",
+    "https://burning-go9me.tistory.com/329"
+  ],
+  "cannotSay": [
+    "'토큰 87% 절감'을 대표값·전체비용 절감처럼 쓰지 말 것. 쓰려면 반드시 (a) 출력 토큰 한정 (b) 10과제 중 2개만 찍은 best-case (c) 자기보고 평균 65%·독립테스트 8.5% (d) 스킬이 입력 1~1.5k 토큰 추가 를 같은 자리에서 밝힌다.",
+    "banned(ai-trend): 충격·대박·역대급·혁명·게임체인저·곧 대체될·무조건.",
+    "확인된 사실과 해석을 섞지 말 것 — 사실은 출처 링크, 해석은 '~로 보인다'.",
+    "Anthropic 글·Caveman README·기사 본문을 통째로 옮기지 말 것 — 요약하고 링크한다. 원문 인용은 짧은 한 조각(출처 명시)까지만.",
+    "출처 URL은 조사에 있는 것 그대로. 지어내거나 조립하지 말 것.",
+    "날짜를 명시할 것(동향글은 빨리 늙는다). Anthropic 글 2025-09-29, 이 글 정리 2026-08-26."
+  ]
+}
