@@ -63,7 +63,7 @@ async function httpStatus(url) {
     clearTimeout(tm); return r.status;
   } catch { return 'ERR'; }
 }
-function sh(a) { return execFileSync('git', a, { cwd: repoRoot, encoding: 'utf-8', stdio: ['ignore', 'pipe', 'pipe'] }); }
+function sh(a) { return execFileSync('git', a, { cwd: repoRoot, encoding: 'utf-8', stdio: ['ignore', 'pipe', 'pipe'], windowsHide: true }); }
 
 // ── 대상 선정
 const data = JSON.parse(readFileSync(trendsPath, 'utf-8'));
@@ -112,7 +112,7 @@ if (!ok) { console.log('\n· 갱신할 것 없음 — 종료.'); process.exit(0)
 
 // 저장 + refresh + git
 writeFileSync(trendsPath, JSON.stringify(data, null, 2) + '\n', 'utf-8');
-execFileSync('node', [refreshPath], { cwd: repoRoot, stdio: 'inherit' });
+execFileSync('node', [refreshPath], { cwd: repoRoot, stdio: 'inherit', windowsHide: true });
 if (NO_GIT) { console.log('\n--no-git: 파일만 갱신.'); process.exit(0); }
 
 // 다른 브랜치에서 실행되면 origin/main과 계속 어긋난 채로 push되어 며칠씩 조용히 배포가 멈춘다

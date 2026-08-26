@@ -139,7 +139,7 @@ async function verifyShops(cand) {
 }
 
 function sh(cmd, a) {
-  return execFileSync(cmd, a, { cwd: repoRoot, encoding: 'utf-8', stdio: ['ignore', 'pipe', 'pipe'] });
+  return execFileSync(cmd, a, { cwd: repoRoot, encoding: 'utf-8', stdio: ['ignore', 'pipe', 'pipe'], windowsHide: true });
 }
 
 // src 정규화: 표준 [["이름","url"]] 외에 봇이 자주 쓰는 [{name,url}] 객체도 허용
@@ -241,7 +241,7 @@ if (!_v.ok) { console.error('\n⛔ 스키마 검증 실패 — 빌드·배포 �
 if (_v.warnings.length) console.warn(`⚠ 스키마 경고 ${_v.warnings.length}건(배포는 계속)`);
 console.log('✓ 스키마 검증 통과');
 writeFileSync(trendsPath, JSON.stringify(out, null, 2) + '\n', 'utf-8');
-execFileSync('node', [refreshPath], { cwd: repoRoot, stdio: 'inherit' });
+execFileSync('node', [refreshPath], { cwd: repoRoot, stdio: 'inherit', windowsHide: true });
 
 // ── git: 충돌 방지 위해 commit 후 pull --rebase → push
 if (NO_GIT) { console.log('\n--no-git: git 단계 생략. 게시', published.length, '건 파일 반영 완료.'); process.exit(0); }
@@ -296,7 +296,7 @@ if (BLOG) {
     const stages = [['blog-build', 'blog-build.mjs'], ['blog-verify', 'blog-verify.mjs'], ['blog-publish', 'blog-publish.mjs']];
     for (const [stage, script] of stages) {
       try {
-        const out = execFileSync('node', [join(scriptsDir, script), t.id], { cwd: repoRoot, encoding: 'utf-8' });
+        const out = execFileSync('node', [join(scriptsDir, script), t.id], { cwd: repoRoot, encoding: 'utf-8', windowsHide: true });
         process.stdout.write(out);
       } catch (e) {
         const text = ((e.stdout || '') + (e.stderr || '') + (e.message || '')).toString();

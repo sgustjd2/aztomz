@@ -94,7 +94,7 @@ const [bin, preArgs] = WIN ? [process.env.ComSpec || 'cmd.exe', ['/d', '/s', '/c
 let raw;
 try {
   raw = execFileSync(bin, [...preArgs, '-p', '--output-format', 'json'], {
-    cwd: repoRoot, encoding: 'utf8', timeout: 300000, maxBuffer: 20 * 1024 * 1024,
+    cwd: repoRoot, encoding: 'utf8', timeout: 300000, maxBuffer: 20 * 1024 * 1024, windowsHide: true,
     input: prompt, stdio: ['pipe', 'pipe', 'pipe'],
   });
 } catch (e) {
