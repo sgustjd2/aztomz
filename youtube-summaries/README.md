@@ -3,10 +3,19 @@
 채널 [AI Engineer](https://www.youtube.com/@aiDotEngineer) 의 새 영상을 Gemini 로 자동 요약한 모음입니다.
 생성: `backend/scripts/youtube-summarize.mjs` (GitHub Actions `youtube-summary` 크론).
 
-총 **81개**.
+총 **90개**.
 
 | 발행일 | 제목 |
 |---|---|
+| 2026-08-26 | [Reverse-Engineering the AI Buyer — Aliisa Rosenthal, Acrew Capital](2026-08-26-wdTRsfw0KG0.md) |
+| 2026-08-26 | [The Building Blocks of GTM Orchestration — Arman Vaziri, Ramp](2026-08-26-VjEP0xqTUI0.md) |
+| 2026-08-26 | [How We Got LLMs to Recommend Our Open Source Library — Christopher Burns, Inth](2026-08-26-V_5bn4q-vAI.md) |
+| 2026-08-26 | [GTM Engineering: The Technical Bits — Everett Berry, Clay](2026-08-26-UhCY231d0FQ.md) |
+| 2026-08-26 | [How AI Agents Let GTM Teams Scale — Justin Joyce, Cloudflare](2026-08-26-Qw_tC68KKes.md) |
+| 2026-08-26 | [The Death of Developer Advocates — Stephanie Jarmak, Sourcegraph](2026-08-26-Lrw0jqBNaw0.md) |
+| 2026-08-26 | [AI in GTM at Notion — Flora Liu](2026-08-26-L4I7WgiEquo.md) |
+| 2026-08-26 | [Building GTM AI Agents: Lessons from Deploying to 6,000 Users — Sait Izmit, Snowflake](2026-08-26-DrTdD-ttjCY.md) |
+| 2026-08-26 | [Knowledge Systems: The New GTM Stack — Jeffrey Wang, Exa](2026-08-26-6pbQgnJ9Voc.md) |
 | 2026-08-25 | [Einstein Arena: Harnessing Collective Agent Intelligence for Open Science — James Zou, Together AI](2026-08-25-mMNkdYnIVC4.md) |
 | 2026-08-24 | [The Missing Layer in Agentic AI — Giedrius Šteimantas, Oxylabs](2026-08-24-XsvUhpnHepE.md) |
 | 2026-08-22 | [Coding Agents Don't Scale Themselves. Neither Do Your Teams. — Patrick Debois, Tessl](2026-08-22-zCJtYuqwm7E.md) |
