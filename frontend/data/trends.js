@@ -7492,7 +7492,7 @@ window.HANGEUT_DATA = {
       "cat": "디저트",
       "coverCat": "cat-dessert",
       "collectedAt": "2026-07-13",
-      "analyzedAt": "2026-08-15",
+      "analyzedAt": "2026-08-27",
       "ad": 30,
       "trust": 75,
       "sat": "pos",
