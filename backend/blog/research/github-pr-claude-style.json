@@ -1,0 +1,73 @@
+{
+  "keyword": "GitHub PR에 급증한 'Claude 같은' 문체 — 46만 건 어휘 변화 분석",
+  "categoryId": "ai-trend",
+  "slug": "github-pr-claude-style",
+  "searchedAt": "2026-08-28",
+  "origin": "geeknews + websearch 교차검증",
+  "note": "GeekNews(news.hada.io/topic?id=32970) 항목이 실제로 존재함을 확인했고, 원문 링크가 가리키는 인터랙티브 대시보드(louisabraham.github.io/load-bearing/)는 JS 렌더링이라 WebFetch로 본문을 못 읽었다. 대신 같은 프로젝트·같은 저자의 GitHub 저장소(README, github.com/louisabraham/load-bearing)를 두 차례 별도로 fetch해 핵심 수치를 교차 확인했다. 단, 같은 프로젝트를 다룬 implicator.ai 기사는 수치가 다르다(461,121건/0.7%→39% vs 47,464건/1.0%→45%) — Hacker News 저자 댓글에서 '피드백 후 1000 PR/day, 5000만 단어로 확장했다'고 밝힌 것과 맞춰보면 implicator.ai는 확장 전(작은) 버전을, GitHub 저장소 현재 README는 확장 후(현재) 버전을 다루는 것으로 보이나 100% 확정은 못 했다. 이 불일치는 facts에 병합하지 않고 그대로 병기한다. 사용자가 예시로 든 delve/boast/meticulous/seamless/leverage는 이 GitHub PR 연구의 대표 단어가 아니다 — 그 단어들은 별개의 학술 논문(ChatGPT·의학논문 어휘 연구)에서 나온 것이며, 이 연구가 실제로 지목한 대표 단어는 'load-bearing'(및 quietly·latent·genuine·seam 계열)과 em dash 문장부호다. 둘을 섞으면 사실 왜곡이므로 집필 시 분리할 것.",
+  "sources": [
+    {
+      "title": "news.hada.io topic 32970 — \"GitHub PR에 급증한 'Claude 같은' 문체 - 46만 건의 어휘 변화 분석\"",
+      "url": "https://news.hada.io/topic?id=32970",
+      "host": "news.hada.io",
+      "tier": "community",
+      "kind": "discussion",
+      "body": "GeekNews(긱뉴스)에 2026-08-28 게재된 항목. 제목은 \"GitHub PR에 급증한 'Claude 같은' 문체 - 46만 건의 어휘 변화 분석\"이며 원문 링크는 https://louisabraham.github.io/load-bearing/ (louisabraham/load-bearing 프로젝트)로 연결된다. 게재된 요약 설명에 따르면 GitHub 풀 리퀘스트 설명 461,121건을 어휘만으로 클러스터링했고, 2025년 초 0.7%에 불과했던 새 문체 집단이 2026년 중반 약 39%까지 늘었다고 소개한다. 'load-bearing' 같은 단어가 이 집단 안에서 바깥보다 훨씬(약 39배) 자주 쓰인다는 점, 그리고 저자가 \"Claude의 말버릇을 추적하는 것이 아니다\"라며 이는 \"최근 PR의 약 40%가 Claude 사용자에게 익숙한 어휘 분포를 공유한다는 관찰\"이라고 선을 그은 유보 표현이 있다고 확인됨."
+    },
+    {
+      "title": "louisabraham/load-bearing — \"The load-bearing vocabulary of Claude: cluster analysis of GitHub pull requests\"",
+      "url": "https://github.com/louisabraham/load-bearing",
+      "host": "github.com",
+      "tier": "official",
+      "kind": "study",
+      "body": "Louis Abraham이 만든 원 분석 프로젝트의 GitHub 저장소(README). 수집 기간은 2025-01-06 ~ 2026-08-17(85주, 총 603개 수집일 중 595일이 온전한 85주에 해당). 이 기간 동안 PR 설명 461,121건, 단어 출현 51,079,244회, (빈도 하한 필터 후) 어휘 19,798개를 수집했다. 설명 중앙값 길이는 65단어이며 자동화 계정(봇)으로 추정되는 것을 걸러냈다(README 표에서 확인된 필터링 비율 약 13%). 방법론은 Bregman hard clustering(k-means, 거리 척도로 KL divergence)으로, 날짜·시간 정보 없이 오직 각 PR 설명의 단어 분포만으로 K=10개 '문체 클러스터'에 배정한다(저자는 K=10과 K=12를 모두 검토했다고 명시: \"Ten and twelve are both inside the window\"). 결과: 10개 클러스터 중 하나가 \"0.7% of the corpus at the start of 2025 and is 39% of it by the middle of 2026\"이며 주당 약 +1.2%p씩 계속 늘고 있다(\"+1.2 points a week\"). 이 클러스터의 대표(load-bearing) 단어는 실제로 'load-bearing'이라는 단어 자체로, 클러스터 안에서 929회, 밖에서 82회 등장해 비율로 약 39배 차이(\"load-bearing is written 929 times inside and 82 outside — 39×\")라고 명시됐다. 별도로 em dash(—) 사용 빈도가 \"0.2 appearances per 10,000 words in early 2024 against 123 in mid-2026\"로 급증했다고 기술한다(단, 이 문장의 'early 2024'는 저장소가 명시한 수집 시작일 2025-01-06보다 앞선 시점이라 저장소 자체 서술 안에서 앞뒤가 안 맞는다 — 원문 그대로 옮기고 해소하지 않음). 참고로 방법론 설명 중 \"A day of 2026 holds some 460,000 pull requests matching the query\"라는 문장이 별도로 있는데, 이는 실제 분석 표본(461,121건, 85주 누적)과는 다른 수치로, GitHub 전체에서 해당 검색 쿼리에 걸리는 하루치 PR 총량(맥락 설명용)이다. 두 '46만대' 숫자가 뜻하는 대상이 다르므로 혼동 주의. 클러스터별 대표 단어를 정리한 명시적 표/리스트는 README 본문에서 찾지 못했다(두 차례 재확인)."
+    },
+    {
+      "title": "GitHub PR Study Traces AI-Linked Vocabulary Growth — implicator.ai",
+      "url": "https://www.implicator.ai/github-pr-ai-linked-vocabulary-1-to-45-percent/",
+      "host": "implicator.ai",
+      "tier": "press",
+      "kind": "article",
+      "body": "같은 프로젝트(load-bearing)를 다룬 기술 매체 기사. 이 기사가 인용한 수치는 GitHub 저장소의 현재 README와 다르다: PR 설명 47,464건(GitHub README의 461,121건과 다름), 단어 출현 5,024,747회(README의 51,079,244회와 다름), 대상 그룹 성장은 \"1.0% of sampled pull request descriptions at the start of 2025 to about 45% in the last four weeks\"(README의 0.7%→39%와 다름), em dash는 \"0.2 appearances per 10,000 words in the corpus's first four weeks to 132.4 in its final four weeks, a rise of roughly 660 times\"(README의 '123'과 다름). 'load-bearing' 단어는 \"used 98 times inside the group and three times outside it. Adjusted for the amount of text on each side, that was 93 appearances per million words inside against 0.76 outside\"라고 적었는데 이 절대값(98 vs 3)도 README(929 vs 82)와 다르다. 저자 소개는 \"Louis Abraham (파이낸셜 경제학 박사 과정, Reduck 창립자 겸 CTO)\", 방법론은 \"One set of eight word distributions covers the entire collection, and descriptions are assigned by vocabulary alone\"라고 기술해 클러스터 개수를 8개로 서술한다(README의 K=10과 다름). 발표 시점은 \"2026년 8월 27일\"로 명시. 저자의 유보 표현을 직접 인용: \"The evidence does not observe an assistant writing any pull request.\" 이 기사와 GitHub README 사이 수치 불일치는 시점 차이(프로젝트가 이후 확장됨)로 추정되나 확정하지 못함."
+    },
+    {
+      "title": "Show HN: The load-bearing vocabulary of Claude — Hacker News",
+      "url": "https://news.ycombinator.com/item?id=49461817",
+      "host": "news.ycombinator.com",
+      "tier": "community",
+      "kind": "discussion",
+      "body": "프로젝트 저자가 직접 올린 Show HN 스레드. 저자는 댓글에서 방법론을 \"frequencies를 계산하고 단어들을 상대 빈도로 순위 매긴다\"고 설명했고, 피드백을 받은 뒤 표본을 \"1000 PR per day\", 데이터셋 전체를 \"50M words total\"로 확장했다고 밝혔다(이는 GitHub README 현재 버전의 51,079,244 단어·461,121건 규모와 대체로 일치해, implicator.ai가 인용한 더 작은 47,464건/500만 단어 수치는 확장 이전 버전을 다뤘을 가능성을 뒷받침한다). 댓글 다수는 디자인(스크롤·모바일 UX)을 칭찬하는 한편, 'load-bearing', 'seam', 'sidecar' 같은 단어의 과도한 사용과 설명 난해함을 비판했고, 여러 사용자가 RLHF(강화학습) 보상 설계가 이런 반복적 'Claudeism'을 만든 것 아니냐는 추측을 내놨다(추측일 뿐, 이 스레드에서 검증된 사실 아님). 한 댓글은 LLM과 상호작용하며 예시를 일관되게 제시하는 습관을 무의식적으로 채택하게 됐다고 언급했다."
+    }
+  ],
+  "facts": [
+    "GeekNews(news.hada.io) topic id=32970이 2026-08-28 기준 실제로 존재하며, 제목은 \"GitHub PR에 급증한 'Claude 같은' 문체 - 46만 건의 어휘 변화 분석\", 원문 링크는 https://louisabraham.github.io/load-bearing/ (프로젝트: The load-bearing vocabulary of Claude, 저자 Louis Abraham, GitHub: github.com/louisabraham/load-bearing).",
+    "GitHub 저장소(README) 현재 버전 기준: 2025-01-06 ~ 2026-08-17(85주) 동안 GitHub PR 설명 461,121건, 단어 출현 51,079,244회, 필터링 후 어휘 19,798개를 수집했다. GeekNews의 '46만 건'은 이 461,121건을 반올림한 것으로 보인다(단, README에는 이와 별개로 '하루에 460,000건의 PR이 쿼리에 걸린다'는 문맥 설명 문장도 있어 두 '46만'이 서로 다른 대상을 가리킬 여지가 있다 — 완전히 해소하지 못함).",
+    "방법론: 날짜·시간 정보 없이 PR 설명의 단어 분포(어휘)만으로 KL-divergence 기반 k-means(Bregman hard clustering)를 적용해 K=10개의 '문체 클러스터'로 분류.",
+    "10개 클러스터 중 하나가 2025년 초 전체의 0.7%에서 2026년 중반 약 39%로 늘었고, 주당 약 +1.2%포인트씩 계속 증가 중이라고 README에 명시됨.",
+    "그 클러스터의 대표 단어는 'load-bearing'이며, 클러스터 안에서 929회, 밖에서 82회 등장해(약 39배 차이) 클러스터를 규정하는 핵심 단어로 지목됨(README 원문).",
+    "em dash(—) 사용 빈도가 만 단어당 0.2회에서 123회로 늘었다고 README에 기술됨(단, README 원문이 시작 시점을 'early 2024'로 적어 자신이 명시한 수집 시작일 2025-01-06과 어긋나는 내부 불일치가 있음 — 그대로 병기, 해소 안 함).",
+    "같은 프로젝트를 다룬 implicator.ai 기사(2026-08-27 발표로 명시)는 다른 규모의 수치를 인용한다: PR 설명 47,464건, 단어 출현 5,024,747회, 클러스터 8개, 그룹 성장 1.0%→45%(4주 평균 기준), em dash 0.2→132.4(약 660배), load-bearing 98회(안) vs 3회(밖). GitHub README의 461,121건/K=10/0.7%→39%/123배/929vs82와 정면으로 다르다.",
+    "Hacker News Show HN 스레드(저자 본인 게시)에서 저자는 초기 피드백 이후 표본을 '하루 1000 PR, 총 5000만 단어'로 확장했다고 직접 밝혔다 — 이는 GitHub README 현재 버전(51,079,244단어)과 규모가 맞아, implicator.ai 기사가 확장 이전의 더 작은 초기 버전을 다뤘을 가능성을 시사한다(확정은 아님).",
+    "GeekNews 요약에 따르면 저자는 이 분석이 'Claude의 말버릇을 추적하는 것이 아니'라고 선을 그었고, implicator.ai는 저자의 표현을 직접 인용해 \"The evidence does not observe an assistant writing any pull request\"(어시스턴트가 PR을 직접 썼다는 것을 관찰한 증거는 아니다)라고 전한다 — 즉 원 저자 스스로도 인과(AI가 썼다)를 단정하지 않는다.",
+    "사용자가 예로 든 delve·boast·meticulous·seamless·leverage는 이 GitHub PR 연구(load-bearing 프로젝트)의 대표 단어가 아니다. GitHub README를 두 차례 직접 확인한 결과 'delve'라는 단어는 이 문서에 전혀 등장하지 않는다. delve/boast/meticulous 등은 별개의 학술 연구(ChatGPT·의학논문 어휘 과다사용 연구, 예: arXiv 2406.07016, PubMed 어휘 연구)에서 나온 단어로, GitHub PR 연구와는 다른 코퍼스·다른 저자의 별개 연구다."
+  ],
+  "unverified": [
+    "louisabraham.github.io/load-bearing/ (GeekNews가 실제로 링크한 원문 페이지)는 JS 렌더링 사이트라 WebFetch로 본문을 읽지 못했다. 같은 저자·같은 프로젝트의 GitHub 저장소 README로 대체 확인했으나, 대시보드 페이지 자체의 서술(예: 특정 저장소별 월별 'load-bearing' 등장 횟수 표, intercom/rails 사례)은 검색엔진 요약에서만 언급되고 직접 본문으로는 확인하지 못했다.",
+    "Boing Boing 기사(boingboing.net/2026/08/27/claudes-load-bearing-vocabulary-charted.html)는 접근 시 HTTP 403으로 차단돼 본문을 읽지 못했다. 이 기사가 언급했다고 검색엔진이 요약한 내용(예: 'delve는 ChatGPT 단어지 Claude 단어가 아니다', 특정 저장소의 연도별/월별 load-bearing 카운트: 2024년 1회·2025년 1회·2026년 3월 2회·4월 36회·5월 63회·6월 122회·7월 188회 등)은 원문을 직접 못 읽었으므로 확인된 사실로 쓰지 말 것.",
+    "GeekNews의 '46만 건'이 461,121건(분석 표본)을 가리키는지, 아니면 README의 별개 문맥 문장인 '하루 460,000건의 쿼리 매칭 PR'을 가리키는지 완전히 특정하지 못했다. 두 수치가 우연히 비슷해 헷갈리기 쉽다.",
+    "GitHub README 버전과 implicator.ai 기사 버전의 수치 불일치(461,121 vs 47,464건, K=10 vs 8클러스터, 0.7%→39% vs 1.0%→45%, em dash 123 vs 132.4)가 '프로젝트 확장 전/후' 차이 때문이라는 설명은 정황(HN 댓글)상 추정일 뿐, 저자가 명시적으로 '이전 기사는 구버전 수치'라고 밝힌 적은 확인하지 못했다.",
+    "load-bearing 외 이 문체 클러스터를 규정하는 나머지 대표 단어(quietly·latent·genuine·seam 등으로 검색엔진 요약에 반복 등장)는 GitHub README 본문에서 명시적 표/리스트로 직접 인용하지 못했다 — 단어 자체의 존재는 개연성이 있으나 원문 그대로의 인용문을 확보하지 못함.",
+    "em dash 수치의 'early 2024' 표현이 저장소의 다른 곳에 적힌 수집 시작일(2025-01-06)과 왜 어긋나는지(오타인지, 다른 외부 비교 기준인지) 원문에서 설명을 찾지 못했다."
+  ],
+  "cannotSay": [
+    "확인 안 된 수치·인과를 단정하지 말 것(예: 'AI가 개발자를 게으르게 만든다' 같은 비약 금지). 원 저자 스스로도 \"어시스턴트가 PR을 직접 썼다는 증거는 아니다\"라고 선을 그었다.",
+    "banned(ai-trend): 충격·대박·역대급·혁명·게임체인저·곧 대체될·무조건.",
+    "GitHub README 수치(461,121건/0.7%→39%)와 implicator.ai 수치(47,464건/1.0%→45%)가 서로 다르다는 것을 감추지 말고, 본문에서 어느 쪽을 인용하는지 명시할 것 — 두 수치를 섞어서 새로운 숫자를 만들지 말 것.",
+    "delve·boast·meticulous·seamless·leverage를 이 GitHub PR 연구의 결과인 것처럼 쓰지 말 것 — 이 연구의 실제 대표 단어는 'load-bearing'과 em dash(문장부호)다.",
+    "확인된 사실과 해석 분리, 출처 URL 그대로, 날짜 명시(GeekNews 게재 2026-08-28, implicator.ai 발표 2026-08-27, 데이터 수집 2025-01-06~2026-08-17)."
+  ],
+  "internalLinkCandidates": [
+    "https://burning-go9me.tistory.com/335",
+    "https://burning-go9me.tistory.com/329"
+  ]
+}
