@@ -3,10 +3,19 @@
 채널 [AI Engineer](https://www.youtube.com/@aiDotEngineer) 의 새 영상을 Gemini 로 자동 요약한 모음입니다.
 생성: `backend/scripts/youtube-summarize.mjs` (GitHub Actions `youtube-summary` 크론).
 
-총 **90개**.
+총 **99개**.
 
 | 발행일 | 제목 |
 |---|---|
+| 2026-08-27 | [Building the Engine While Flying the Plane: Launching the Figma MCP Server — Jesse Lumarie, Figma](2026-08-27-ZIYYsAzaLlA.md) |
+| 2026-08-27 | [KV Cache-Aware Routing and P/D Disaggregation on Kubernetes — Yuchen Fama & Ashish Kamra, Red Hat](2026-08-27-YXowceUKYJI.md) |
+| 2026-08-27 | [How Anthropic Builds: Lessons from Labs — Mike Krieger, Anthropic](2026-08-27-qqrk7CtkuIw.md) |
+| 2026-08-27 | [How to Generate Mergeable Code with a Context Engine — Peter Werry, Unblocked](2026-08-27-qdAkxLoYNI8.md) |
+| 2026-08-27 | [Can LLMs Write Fast Multi-GPU Kernels? — Simran Arora, Together AI](2026-08-27-pOvWgX7IJsc.md) |
+| 2026-08-27 | [How to avoid disaster when vibe-coding a billing engine — Andrew Garvin, Stripe](2026-08-27-mJqwmmOx4WA.md) |
+| 2026-08-27 | [AI Agents Are Just Distributed Systems Now — Salman Munaf, TikTok](2026-08-27-hD9-V56FNRI.md) |
+| 2026-08-27 | [The Agentic Commerce Stack — Ahnaf Prio, Best Buy](2026-08-27-G7cgLjZtmMU.md) |
+| 2026-08-27 | [Which AI startups actually land enterprise contracts? — Brian Lewis, Millennium](2026-08-27-7A65O-0lvKE.md) |
 | 2026-08-26 | [Reverse-Engineering the AI Buyer — Aliisa Rosenthal, Acrew Capital](2026-08-26-wdTRsfw0KG0.md) |
 | 2026-08-26 | [The Building Blocks of GTM Orchestration — Arman Vaziri, Ramp](2026-08-26-VjEP0xqTUI0.md) |
 | 2026-08-26 | [How We Got LLMs to Recommend Our Open Source Library — Christopher Burns, Inth](2026-08-26-V_5bn4q-vAI.md) |
