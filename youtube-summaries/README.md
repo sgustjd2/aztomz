@@ -3,10 +3,18 @@
 채널 [AI Engineer](https://www.youtube.com/@aiDotEngineer) 의 새 영상을 Gemini 로 자동 요약한 모음입니다.
 생성: `backend/scripts/youtube-summarize.mjs` (GitHub Actions `youtube-summary` 크론).
 
-총 **99개**.
+총 **107개**.
 
 | 발행일 | 제목 |
 |---|---|
+| 2026-08-28 | [Productionizing LLM Gateways: Architecture, Tradeoffs and Hard Lessons — Kanish Manuja, Twilio](2026-08-28-zrZ1amZBSPw.md) |
+| 2026-08-28 | [From AI-Assisted to AI-Native: Building a Frontier Development Team — Clare Liguori, AWS](2026-08-28-pqlWNihgdjI.md) |
+| 2026-08-28 | [AI-Native Organisations Run on Skills: How to Structure and Scale Them — Imad Touil, QuantumBlack](2026-08-28-M05vON8i0aI.md) |
+| 2026-08-28 | [Your Code Has Bugs. Lean4 Has Proofs: Formal Verification for Engineers — Varun Pant, AWS](2026-08-28-lRa9sPaMyy4.md) |
+| 2026-08-28 | [Building uReview, Uber’s Multi-Agent Code Review Engine — Will Bond & Ameya Ketkar, Uber](2026-08-28-EL123UNokkI.md) |
+| 2026-08-28 | [AI Evals for Cross-Functional Teams — Nachiket Paranjape & Swaroop Chitlur Haridas, DoorDash](2026-08-28-bMjlRrWjdT0.md) |
+| 2026-08-28 | [How do you diffuse AI into the real world? — Varun Shenoy, Long Lake](2026-08-28-B0fjR3yaZFU.md) |
+| 2026-08-28 | [How to Get Your Org to Adopt Coding Agents (Without Shipping Garbage) — Eyal Blum, Figma](2026-08-28-5Bn0xro2ol8.md) |
 | 2026-08-27 | [Building the Engine While Flying the Plane: Launching the Figma MCP Server — Jesse Lumarie, Figma](2026-08-27-ZIYYsAzaLlA.md) |
 | 2026-08-27 | [KV Cache-Aware Routing and P/D Disaggregation on Kubernetes — Yuchen Fama & Ashish Kamra, Red Hat](2026-08-27-YXowceUKYJI.md) |
 | 2026-08-27 | [How Anthropic Builds: Lessons from Labs — Mike Krieger, Anthropic](2026-08-27-qqrk7CtkuIw.md) |
