@@ -1,0 +1,97 @@
+{
+  "keyword": "AI Engineer 08-28 신규 talk 8편 정리 — AI를 조직에 도입·검증·운영하기",
+  "categoryId": "ai-trend",
+  "slug": "ai-engineer-talks-0828",
+  "searchedAt": "2026-08-29",
+  "origin": "youtube-summaries/detailed (gemini-2.5-pro 상세 시청) 병렬 증류",
+  "note": "AI Engineer(@aiDotEngineer) 채널 2026-08-28 신규 talk 8편을 Gemini(gemini-2.5-pro)가 각 영상을 상세히 시청해 만든 상세 요약(youtube-summaries/detailed/<id>.md)을 근거로 블로그 섹션과 이 sources body 를 작성했다. 원 1차 자료는 영상이며, 발표자 제시 수치·데모 결과는 발표 제시값으로 귀속(원문 슬라이드 1:1 대조 안 함). 각 항목에 영상 링크를 그대로 건다.",
+  "theme": "이번 배치는 아키텍처보다 조직 도입·품질 보증에 무게: AI 코딩/에이전트의 성패는 도구가 아니라 일하는 방식·검증·거버넌스에 달렸다는 취지로 여러 발표가 수렴.",
+  "sources": [
+    {
+      "title": "AI-Native Organisations Run on Skills: How to Structure and Scale Them — Imad Touil, QuantumBlack",
+      "url": "https://www.youtube.com/watch?v=M05vON8i0aI",
+      "host": "youtube.com",
+      "tier": "press",
+      "kind": "talk",
+      "body": "발표자는 퀀텀블랙(QuantumBlack)의 이마드 투일이며, 핵심 논지는 AI 네이티브 조직의 가치가 개별 모델이 아니라 재사용 가능한 '스킬'을 중앙 플랫폼에서 거버넌스하는 데서 나온다는 것이다. 발표에서 제시한 'Skills Bench' 벤치마크로는 소프트웨어 엔지니어링 도메인에서 스킬 적용 시 GPT-3.5가 32%→55.1%, Opus 3.0이 50.3%→72.4%로 성능이 향상됐다(발표자 제시치, 객관적 확정 사실 아님). 스킬은 \"노하우를 실행 가능하고, 이식 가능하며, 저렴하게 만드는 단위\"로 정의되며, 앤트로픽 발표 이후 공개 스킬이 2,000개 이상으로 급증했다고 소개했다. 관리되지 않은 스킬은 중복·품질 저하·발견성 부족·소유권 부재 등 새로운 기술 부채를 만들고, 이를 개인→팀→중앙 플랫폼→조직의 4단계 확장 모델과 15개 팀(팀당 5~12명) 가정 시뮬레이션 데모로 설명했다."
+    },
+    {
+      "title": "Your Code Has Bugs. Lean4 Has Proofs: Formal Verification for Engineers — Varun Pant, AWS",
+      "url": "https://www.youtube.com/watch?v=lRa9sPaMyy4",
+      "host": "youtube.com",
+      "tier": "press",
+      "kind": "talk",
+      "body": "발표자는 AWS의 Varun Pant이며, AI가 대량 생성한 코드의 정확성을 형식 검증과 Lean 증명 보조기로 보장하자는 것이 핵심 논지다. 그는 LLM-as-judge는 확률적이고, 테스트는 일부 입력만 확인하며, 사람 리뷰는 확장되지 않아 \"모든 입력에 대해 올바르다\"를 단언하지 못한다고 지적하고, 대안으로 명세 기반 개발(spec 작성 → 명세 검증 → AI 구현 → 증명)을 제안한다(\"Humans own the spec. Machines own the code and proof.\"). 발표에서 제시한 수치로는, C 압축 라이브러리 zlib을 Lean으로 변환하며 약 1,100개 정리와 32,000줄 증명 코드가 생성된 오픈소스 사례, 그리고 AWS Cedar가 Rust 구현과 Lean 모델을 매일 밤 약 1억(100M) 건의 무작위 차등 테스팅으로 비교해 불일치 시 릴리스를 막는 게이트가 있다. 또 증명 과정을 체스에 비유해 전술(tactic)로 증명 트리를 탐색하고 마지막에 작고 신뢰할 수 있는 커널이 검증한다고 설명하며, '아마도 올바른'이 아닌 '증명 가능하게 올바른' 소프트웨어를 지향하자고 마무리한다."
+    },
+    {
+      "title": "How do you diffuse AI into the real world? — Varun Shenoy, Long Lake",
+      "url": "https://www.youtube.com/watch?v=B0fjR3yaZFU",
+      "host": "youtube.com",
+      "tier": "press",
+      "kind": "talk",
+      "body": "발표자는 롱레이크(Long Lake) 공동창업자 바룬 셰노이이며, 핵심 논지는 모델 성능이 아니라 'AI를 실제 세상에 확산(diffuse)시키는 것'이 향후 20년의 최대 과제라는 것(인용 \"AI diffusion is the single most important problem for the next 20 years\"). 근거로 1880년대 전기가 공장을 재편하기까지 1920년대까지 한 세대가 걸렸다는 비유와, 200명 자산관리 회사 현장엔 AI로 바뀐 게 없다는 관찰을 제시함. 롱레이크는 소프트웨어를 팔지 않고 서비스 비즈니스를 직접 인수·운영하며, 발표 제시 수치로 2023년 창업 후 30억 달러(3B+) 이상 투자 유치, 35개 비즈니스 인수, 팀 40명, 아멕스 GBT를 63억 달러(6.3B)에 인수 발표. 3가지 교훈: (1) 에이전트 자율성 스펙트럼 Copilot→Sync Agent→Async Agent→Coworker를 현장 반복으로 \"earn the right to do more\", (2) 인터넷에 없는 실제 업무 데이터로 Real Work→Rich Traces→Real-World Evals→Better Agents→More Impact 선순환(flywheel), (3) 지속적 학습·활성화를 하나의 루프로 보고 엑셀·ERP·아웃룩 등 기존 시스템 통합과 물리적 방문으로 \"meet people where they live\"하는 극단적 소프트웨어-서비스 공동설계."
+    },
+    {
+      "title": "How to Get Your Org to Adopt Coding Agents (Without Shipping Garbage) — Eyal Blum, Figma",
+      "url": "https://www.youtube.com/watch?v=5Bn0xro2ol8",
+      "host": "youtube.com",
+      "tier": "press",
+      "kind": "talk",
+      "body": "발표자 이얄 블룸(Figma 소프트웨어 엔지니어)은 코딩 에이전트 도입이 허니문(간단 작업 빠른 성공)→추락(복잡 작업에서 실패·신뢰 붕괴)→진짜 기술(계획·검증·가드레일 습득)의 3단계를 거친다고 봤다. 발표에서 제시한 수치는 초기 간단 작업 약 10배 향상, 성숙기 복잡 작업 2~5배 향상, AI 생성 문서·이메일·슬랙 메시지 길이 3~4배 증가다. 세 가지 교훈은 (1) 검증 투자 — 결정론적 분석→에이전트 리뷰→인간 리뷰로 재구성한 검증 피라미드와 TDD 활용, (2) 프롬프트 전 계획 — 1~2주 계획 후 에이전트가 하룻밤에 약 20개의 작은 PR로 6주 분량 구현, (3) 소통·문화 변화 — PR 설명을 사람 요약 \"Eyal Says\"와 AI 상세 \"AI Says\"로 구분, 슬랙에서 에이전트 태그 워크플로우 통합이다. 회의론자(특히 최고 엔지니어)의 피드백을 도입 로드맵으로 삼으라는 것이 핵심 관점이며, 인용으로 \"Their feedback is your roadmap to adoption.\", \"Attention is now the most scarce resource.\"가 나온다."
+    },
+    {
+      "title": "From AI-Assisted to AI-Native: Building a Frontier Development Team — Clare Liguori, AWS",
+      "url": "https://www.youtube.com/watch?v=pqlWNihgdjI",
+      "host": "youtube.com",
+      "tier": "press",
+      "kind": "talk",
+      "body": "발표는 AWS 클레어 리구오리가 AI 지원(AI-Assisted)과 AI 네이티브(AI-Native)를 구분하며, 발표에서 제시한 내부 파일럿 수치로 지원 단계는 10~20%, 방식을 바꾼 팀은 중앙값 4.5배·일부 10배 이상의 생산성 향상을 보였다고 밝혔다. 사례로 Amazon Bedrock 추론 데이터 플레인은 30명·18개월 예상이 6명·76일로(기간 86%·인력 80% 감축, 주간 커밋 2→40개) 단축됐고, Prime Video 스프린트는 90주→24주(73% 단축)·커밋 96→556개(5.8배)로 나타났으나 둘 다 최상위/이상적 환경이었다. Amazon Stores의 '평범한' 50개 팀 연구에서는 도구를 뿌린 그룹 절반이 3배 미만, 새 방식을 의도적으로 도입한 절반이 4.5배 중앙값으로 갈려, 도구가 아니라 일하는 방식 변화가 핵심 요인으로 지목됐다. 프론티어 개발자는 생산 코드의 1~2%만 직접 작성하고 \"Feed agents, don't babysit\" 원칙으로 무엇을 할지·어떻게 검증할지를 명시하며, 코드 병목 해소 후 의사결정·출시 승인 등 새 병목과 'FOMAT'(Fear Of Missing Agent Time) 번아웃이 과제로 남았다."
+    },
+    {
+      "title": "Productionizing LLM Gateways: Architecture, Tradeoffs and Hard Lessons — Kanish Manuja, Twilio",
+      "url": "https://www.youtube.com/watch?v=zrZ1amZBSPw",
+      "host": "youtube.com",
+      "tier": "press",
+      "kind": "talk",
+      "body": "발표자 Kanish Manuja는 Twilio 수석 엔지니어이고, LLM 게이트웨이를 앱과 여러 제공업체 사이의 단일 진입점(\"하나의 API, 하나의 정책 적용 지점\")으로 정의하며 가용성·지연 시간·가드레일·비용 네 요소가 서로 상충해 동시 최적화가 불가능하다고 주장한다. 지연 시간과 관련해 발표에서 제시한 예시 수치로 임베딩 0.3초, 분류 0.8초, 채팅 3초, 추론 35초를 들며 통합 평균(블렌디드 P99 약 6~8초)은 무의미하니 모델·라우트별 P99 추적과 타임아웃이 필요하다고 했고, \"A reasoning model's normal is a chat model's outage.\"라고 인용했다. 폴백은 제공업체별 스키마 차이를 흡수하는 정규화 계층과 폴백 제공업체 용량 계획이 없으면 앱이 깨지거나 폴백 쪽이 과부하로 다운된다고 지적했다. 결론은 중앙 집중식 게이트웨이가 단일 장애점(SPOF)이 되므로 복원력은 각 서비스에 분산하고 거버넌스(비용·정책)만 중앙화하는 \"Decentralized gateway, centralized governance\" 모델을 제안한 것이다."
+    },
+    {
+      "title": "AI Evals for Cross-Functional Teams — Nachiket Paranjape & Swaroop Chitlur Haridas, DoorDash",
+      "url": "https://www.youtube.com/watch?v=bMjlRrWjdT0",
+      "host": "youtube.com",
+      "tier": "press",
+      "kind": "talk",
+      "body": "도어대시 GenAI 플랫폼 팀(Nachiket Paranjape, Swaroop Chitlur Haridas)의 발표로, AI 평가(Eval)를 엔지니어링 테스트 하네스가 아니라 PM·운영(S&O)·레이블링 파트너까지 참여하는 크로스펑셔널 품질 인프라로 재정의한다는 것이 핵심 논지이며, \"품질 판단은 도메인을 아는 사람들의 몫\"이라는 관점을 강조한다. 발표에서 제시한 규모 수치로 LLM 게이트웨이는 주당 6억 건(600M+) 이상의 API 호출, 에이전트 게이트웨이는 하루 30만 건(300K+) 이상의 도구 호출을 처리한다고 소개한다. 평가는 추적·샘플링 → 주석·검토 → 골든셋·보정 → 모니터링·반복의 지속적 루프로 운영되며, 사람 판단과 자동 평가자(judge)를 맞추는 보정은 GEPA(Genetic Eval-based Prompt Augmentation)로 감사 가능하게 만든다. 성과로는 스프레드시트에서 전용 Evals UI로 전환한 뒤 작업당 주석 비용이 40% 감소했다는 수치를 발표에서 제시했고, 보정 결과는 \"마법이 아니라 검토 가능한 것\"이라며 비엔지니어도 셀프서비스 UI로 실행할 수 있게 한 API-First 설계를 강조한다."
+    },
+    {
+      "title": "Building uReview, Uber's Multi-Agent Code Review Engine — Will Bond & Ameya Ketkar, Uber",
+      "url": "https://www.youtube.com/watch?v=EL123UNokkI",
+      "host": "youtube.com",
+      "tier": "press",
+      "kind": "talk",
+      "body": "발표자는 우버 윌 본드·아메야 케트카르로, 수천 명 엔지니어·수백 팀·6개 언어별 모노레포 규모에서 코드 리뷰가 병목이 됐고 '첫 리뷰까지 걸리는 시간'이 2024년 3시간에서 2026년 발표 시점 9시간으로 3배 늘었다고 제시했다(AI 코드 생성으로 PR 급증이 원인). uReview는 GitHub·Phabricator·에이전트 루프 입력을 디스패치가 받아 일반·AI 린터·심층 리뷰·커스텀 에이전트 등 생성기로 라우팅하고, 후처리에서 평가·분류·중복 제거를 거쳐 내보내는 멀티 에이전트 구조다. 발표에서 제시한 운영 수치는 주당 약 2만 5천 개 코멘트 생성, 코멘트 수용률(Addressal Rate) 67%(심각도 높은 코멘트는 74%), 부정 피드백 PR 4%, 단순 구현 대비 비용 60%+ 절감·정확도 70%+ 향상이다. 시스템 진화의 핵심은 관찰 가능성(사용자 감성·수용률·에이전트 궤적 추적)이었고, \"모델은 자신이 틀렸다는 것을 모른다\"는 교훈으로 가드레일을 강조했으며, 결론은 아우터 루프(사람 리뷰)를 없애지 않고 확장해 인간이 아키텍처·도메인·제품 판단에 집중하게 한다는 비전이다."
+    }
+  ],
+  "facts": [
+    "AI Engineer(@aiDotEngineer) 채널에 2026-08-28 다수의 컨퍼런스 talk가 올라왔고, 이 글은 그중 8편(QuantumBlack·AWS Lean4·Long Lake·Figma·AWS AI-Native·Twilio·DoorDash·Uber)을 정리한다.",
+    "공통 흐름: 여러 발표가 AI 코딩/에이전트의 성패를 도구 도입이 아니라 일하는 방식·검증·거버넌스로 본다.",
+    "Imad Touil(QuantumBlack)은 발표에서 제시한 Skills Bench 수치로 소프트웨어 엔지니어링에서 스킬 적용 시 GPT-3.5 32%→55.1%, Opus 3.0 50.3%→72.4% 향상을 소개했다(발표 제시치).",
+    "Clare Liguori(AWS)는 Amazon Bedrock 추론 데이터 플레인이 30명·18개월 예상에서 6명·76일로, 주간 커밋 2→40개로 줄었다는 사례를 발표에서 제시했다.",
+    "Will Bond·Ameya Ketkar(Uber)의 uReview는 주당 약 2만 5천 개 코멘트를 생성하고 수용률 67%(고심각도 74%)라고 발표에서 제시했으며, 첫 리뷰까지 시간이 2024년 3시간→2026년 9시간으로 늘었다고 밝혔다."
+  ],
+  "unverified": [
+    "이 정리는 Gemini(gemini-2.5-pro)가 각 영상을 상세 시청해 만든 요약을 근거로 한다. 발표 슬라이드 원문과 1:1 대조는 안 함 — 구체 수치는 원 영상 확인 권장.",
+    "스킬 벤치마크·Amazon Bedrock 6명 76일·uReview 67%·DoorDash 주석비용 40% 절감 등은 모두 발표자가 발표에서 제시한 값(회사 내부 사례·데모 기준)으로 독립 검증치가 아니다.",
+    "2026-08-28 신규분만 다룬다. 이후 추가 업로드분은 포함하지 않았다."
+  ],
+  "cannotSay": [
+    "영상 요약 기반임을 숨기지 말 것 — 원문 확인 권고를 밝힌다.",
+    "발표자 제시 수치를 객관적 사실처럼 단정하지 말 것 — \"발표에서 제시한 수치\"로 표기.",
+    "banned(ai-trend): 충격·대박·역대급·혁명·게임체인저·곧 대체될·무조건.",
+    "확인된 사실과 해석 분리, 출처 URL 그대로, 날짜(2026-08-28 게재) 명시. 발표자·회사·프로젝트명은 sources 그대로만."
+  ],
+  "internalLinkCandidates": [
+    "https://burning-go9me.tistory.com/342",
+    "https://burning-go9me.tistory.com/335"
+  ]
+}
