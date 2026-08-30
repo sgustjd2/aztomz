@@ -3,10 +3,18 @@
 채널 [AI Engineer](https://www.youtube.com/@aiDotEngineer) 의 새 영상을 Gemini 로 자동 요약한 모음입니다.
 생성: `backend/scripts/youtube-summarize.mjs` (GitHub Actions `youtube-summary` 크론).
 
-총 **107개**.
+총 **115개**.
 
 | 발행일 | 제목 |
 |---|---|
+| 2026-08-29 | [The Half Life of Agent Infrastructure — Ben Kus, Box](2026-08-29-sM1iYgz93HI.md) |
+| 2026-08-29 | [Tell the Robot What You Want — Sandhya Subramani, AWS](2026-08-29-S6aSoQ6_u5A.md) |
+| 2026-08-29 | [Agentic Sites: Building Hyper Personalized Websites — Carlos Sanchez, Adobe](2026-08-29-jebp4V0vh30.md) |
+| 2026-08-29 | [From Tokenmaxxing to Trusted Throughput — Mingsheng Hong, Ironclad](2026-08-29-dSg0pu8d6qg.md) |
+| 2026-08-29 | [Tribal Dungeons of Global Shipping: AI Agents at Global Scale — Dmitry Buykin, Maersk](2026-08-29-dQ-_i1tZiws.md) |
+| 2026-08-29 | [Agents Are Where Microservices Were in 2015 — Roberto Milev & Uday Kanagala, Navan](2026-08-29-32nrHU6zHU8.md) |
+| 2026-08-29 | [Guardians of the State: An Air-Gapped AI Fortress for Consumer Data — Rachna Srivastava, DFPI](2026-08-29-2WZsT-znFTQ.md) |
+| 2026-08-29 | [The Signal Layer: What to Build When Anything Can Be Built — Lena Hall, Akamai](2026-08-29-1KOdiGgMtpY.md) |
 | 2026-08-28 | [Productionizing LLM Gateways: Architecture, Tradeoffs and Hard Lessons — Kanish Manuja, Twilio](2026-08-28-zrZ1amZBSPw.md) |
 | 2026-08-28 | [From AI-Assisted to AI-Native: Building a Frontier Development Team — Clare Liguori, AWS](2026-08-28-pqlWNihgdjI.md) |
 | 2026-08-28 | [AI-Native Organisations Run on Skills: How to Structure and Scale Them — Imad Touil, QuantumBlack](2026-08-28-M05vON8i0aI.md) |
