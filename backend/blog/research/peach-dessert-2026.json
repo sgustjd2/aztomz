@@ -1,0 +1,211 @@
+{
+  "keyword": "여름의 끝을 잡고, 복숭아 디저트",
+  "categoryId": "hangeut-trust",
+  "slug": "peach-dessert-2026",
+  "searchedAt": "2026-08-30",
+  "origin": "hermes-trends",
+  "note": "Hermes 가 수집·분석하고 auto-build.mjs 가 출처까지 자동검증한 항목이다. 여기 있는 사실 밖으로 나가지 말 것 — 새로 검색해서 덧붙이지 않는다.",
+  "trend": {
+    "id": "peach-dessert-2026",
+    "type": "신뢰분석",
+    "cat": "디저트",
+    "title": "여름의 끝을 잡고, 복숭아 디저트",
+    "def": null,
+    "excerpt": "아삭한 딱복, 달콤한 물복. 여름의 마지막을 화려하게 장식하는 복숭아 디저트가 인기입니다. 복숭아 1.5개를 통째로 올린 파르페부터 사랑스러운 비주얼의 케이크까지, 지금 아니면 1년을 기다려야 해요.",
+    "pull": null,
+    "verdict": "복숭아 디저트 역시 광고성은 매우 낮습니다. 카페들이 여름 시즌의 대미를 장식하기 위해 선보이는 메뉴로, 실제 후기들이 주를 이룹니다. '과즙이 풍부하다', '인생 복숭아 디저트' 등의 긍정적인 반응이 많아 신뢰하고 즐길 수 있는 트렌드입니다.",
+    "stage": null,
+    "stageMsg": null,
+    "buzz": "화제성 높음",
+    "label": "믿고 맛볼 만함",
+    "ad": 10,
+    "trust": 88,
+    "sat": "pos",
+    "satTxt": "긍정적",
+    "reasons": null,
+    "recs": [
+      [
+        "여름의 마지막을 달콤하게 보내고 싶다면",
+        "◎",
+        1
+      ],
+      [
+        "딱복파와 물복파 모두",
+        "◎",
+        1
+      ],
+      [
+        "복숭아 알러지가 있다면",
+        "✕",
+        0
+      ]
+    ],
+    "tags": [
+      "복숭아",
+      "여름디저트",
+      "제철디저트",
+      "케이크맛집"
+    ],
+    "article": [
+      [
+        "h",
+        "지금 아니면 1년을 기다려야 할 맛"
+      ],
+      [
+        "p",
+        "여름 과일의 여왕, 복숭아가 디저트의 주인공으로 화려하게 귀환했습니다. 카페 쇼케이스마다 탐스러운 복숭아를 올린 케이크, 타르트, 파르페가 가득하죠. '여름 가기 전에 꼭 먹어야 한다'는 반응과 함께 SNS를 뜨겁게 달구고 있습니다."
+      ],
+      [
+        "q",
+        "딱복의 아삭함과 물복의 달콤함을 한 번에!"
+      ],
+      [
+        "h",
+        "광고 걱정 없이 즐겨도 될까?"
+      ],
+      [
+        "p",
+        "네, 광고 걱정은 접어두셔도 좋습니다. 대부분의 카페들이 여름 시즌의 마지막을 장식하기 위해 정성껏 내놓는 메뉴들이기 때문이죠. '내돈내산' 후기들에서도 '복숭아가 정말 신선하다', '크림과의 조합이 환상적'이라는 칭찬이 자자해 믿고 맛볼 수 있습니다."
+      ],
+      [
+        "h",
+        "어떤 종류가 인기일까?"
+      ],
+      [
+        "p",
+        "복숭아 2개를 통째로 올린 파르페, 아삭한 딱복과 부드러운 물복을 함께 사용한 케이크 등 비주얼과 맛을 모두 잡은 메뉴들이 인기입니다. 성심당의 '복숭아 시루'처럼 특정 지역의 명물로 자리 잡은 디저트도 있죠. 취향에 맞는 복숭아 디저트를 찾아 여름의 끝을 즐겨보세요."
+      ],
+      [
+        "h",
+        "한끗 정리"
+      ],
+      [
+        "ul",
+        [
+          "가야 할 때: 여름의 마지막을 달콤하고 특별하게 기억하고 싶을 때.",
+          "피해야 할 때: 딱딱한 과일보다 부드러운 식감을 선호한다면, 딱복 위주 디저트는 피하는 게 좋을 수 있어요.",
+          "꿀팁: 안에는 물복, 밖에는 딱복을 사용해 두 가지 식감을 모두 살린 케이크가 특히 인기가 많으니 참고하세요!"
+        ]
+      ]
+    ],
+    "shops": [
+      {
+        "name": "헷키",
+        "rep": "제철 과일 케이크 전문점",
+        "area": "서울 성동구",
+        "note": "여름 시즌 복숭아를 듬뿍 올린 타르트",
+        "url": "https://hip-kr.com/life_food/?bmode=view&idx=172790001"
+      },
+      {
+        "name": "카페 하이웨스트",
+        "rep": "복숭아 디저트 성지",
+        "area": "서울 마포구",
+        "note": "생복숭아 타르트, 복숭아 파르페, 복숭아밭 수플레 팬케이크",
+        "url": "http://woman.chosun.com/news/articleViewAmp.html?idxno=126386"
+      },
+      {
+        "name": "성심당",
+        "rep": "대전의 명물",
+        "area": "대전",
+        "note": "여름 한정으로 판매되는 '복숭아 시루' 케이크",
+        "url": "https://chopchop01.tistory.com/entry/성심당-복숭아시루-블루베리시루-판매기간-총정리"
+      },
+      {
+        "name": "이치서울",
+        "rep": "작품 같은 디저트",
+        "area": "서울 신사동",
+        "note": "제철 과일을 활용한 예술적인 디저트로 유명",
+        "url": "http://woman.chosun.com/news/articleViewAmp.html?idxno=126386"
+      },
+      {
+        "name": "므항",
+        "rep": "건대 케이크 맛집",
+        "area": "서울 건대",
+        "note": "물복과 딱복을 함께 사용한 생과일 복숭아 홀케이크",
+        "url": "https://www.threads.net/@muehang_bakehouse/post/DbKtWL6GvE5"
+      }
+    ],
+    "prompt": null,
+    "pureKorean": null,
+    "example": null,
+    "video": null,
+    "collectedAt": "2026-08-24",
+    "analyzedAt": "2026-08-24",
+    "detailUrl": "https://az2mz.vercel.app/trend.html?id=peach-dessert-2026"
+  },
+  "sources": [
+    {
+      "title": "hip-kr.com",
+      "url": "https://hip-kr.com/life_food/?bmode=view&idx=172790001",
+      "host": "hip-kr.com",
+      "tier": "press",
+      "kind": "analysis",
+      "body": "Hermes 수집 시 auto-build.mjs 가 생존(404)·본문 관련성을 검증한 출처다. 본문을 여기 다시 담지 않는다 — 이 글은 trend 필드의 분석을 근거로 쓴다."
+    },
+    {
+      "title": "woman.chosun.com",
+      "url": "http://woman.chosun.com/news/articleViewAmp.html?idxno=126386",
+      "host": "woman.chosun.com",
+      "tier": "press",
+      "kind": "analysis",
+      "body": "Hermes 수집 시 auto-build.mjs 가 생존(404)·본문 관련성을 검증한 출처다. 본문을 여기 다시 담지 않는다 — 이 글은 trend 필드의 분석을 근거로 쓴다."
+    },
+    {
+      "title": "Daum 뉴스",
+      "url": "https://v.daum.net/v/20260810071648477",
+      "host": "v.daum.net",
+      "tier": "press",
+      "kind": "analysis",
+      "body": "Hermes 수집 시 auto-build.mjs 가 생존(404)·본문 관련성을 검증한 출처다. 본문을 여기 다시 담지 않는다 — 이 글은 trend 필드의 분석을 근거로 쓴다."
+    },
+    {
+      "title": "가게 참고 — 헷키",
+      "url": "https://hip-kr.com/life_food/?bmode=view&idx=172790001",
+      "host": "hip-kr.com",
+      "tier": "blog",
+      "kind": "shop",
+      "body": "헷키(서울 성동구) 참고 링크. 여름 시즌 복숭아를 듬뿍 올린 타르트 어디서 파는지 안내용이지 점수의 근거가 아니다 — 분석 근거로 인용하지 말 것."
+    },
+    {
+      "title": "가게 참고 — 카페 하이웨스트",
+      "url": "http://woman.chosun.com/news/articleViewAmp.html?idxno=126386",
+      "host": "woman.chosun.com",
+      "tier": "blog",
+      "kind": "shop",
+      "body": "카페 하이웨스트(서울 마포구) 참고 링크. 생복숭아 타르트, 복숭아 파르페, 복숭아밭 수플레 팬케이크 어디서 파는지 안내용이지 점수의 근거가 아니다 — 분석 근거로 인용하지 말 것."
+    },
+    {
+      "title": "가게 참고 — 성심당",
+      "url": "https://chopchop01.tistory.com/entry/성심당-복숭아시루-블루베리시루-판매기간-총정리",
+      "host": "chopchop01.tistory.com",
+      "tier": "blog",
+      "kind": "shop",
+      "body": "성심당(대전) 참고 링크. 여름 한정으로 판매되는 '복숭아 시루' 케이크 어디서 파는지 안내용이지 점수의 근거가 아니다 — 분석 근거로 인용하지 말 것."
+    },
+    {
+      "title": "가게 참고 — 이치서울",
+      "url": "http://woman.chosun.com/news/articleViewAmp.html?idxno=126386",
+      "host": "woman.chosun.com",
+      "tier": "blog",
+      "kind": "shop",
+      "body": "이치서울(서울 신사동) 참고 링크. 제철 과일을 활용한 예술적인 디저트로 유명 어디서 파는지 안내용이지 점수의 근거가 아니다 — 분석 근거로 인용하지 말 것."
+    },
+    {
+      "title": "가게 참고 — 므항",
+      "url": "https://www.threads.net/@muehang_bakehouse/post/DbKtWL6GvE5",
+      "host": "www.threads.net",
+      "tier": "blog",
+      "kind": "shop",
+      "body": "므항(서울 건대) 참고 링크. 물복과 딱복을 함께 사용한 생과일 복숭아 홀케이크 어디서 파는지 안내용이지 점수의 근거가 아니다 — 분석 근거로 인용하지 말 것."
+    }
+  ],
+  "internalLinkCandidates": [
+    "https://az2mz.vercel.app/trend.html?id=peach-dessert-2026"
+  ],
+  "cannotSay": [
+    "광고 의심도·후기 신뢰도는 추정치다. \"확실히 광고다\" 같은 확정 표현 금지.",
+    "후기 신뢰도(믿을 만한가) 와 만족도(좋은가) 를 섞어 쓰지 말 것 — 별개 축이다.",
+    "trend 필드에 없는 수치·날짜·가게·인물을 새로 만들지 말 것. 추가 검색도 하지 않는다.",
+    "분석 기준일은 2026-08-24 이다. \"오늘 기준\" 처럼 시점을 옮겨 쓰지 말 것."
+  ]
+}

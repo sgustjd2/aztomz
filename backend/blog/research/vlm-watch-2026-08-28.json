@@ -1,0 +1,52 @@
+{
+  "keyword": "라즈베리파이5·Jetson·소비자 GPU에서 돌리는 이번 주 경량 VLM (image-text-to-text)",
+  "categoryId": "vlm-watch",
+  "slug": "vlm-watch-2026-08-28",
+  "searchedAt": "2026-08-30",
+  "notes": "이번 주 후보는 backend/blog/research/vlm-watch/hf-vlm-trending-2026-08-28.json(image-text-to-text · 파라미터 8B 이하 · 최근 60일 신규, trendingScore 내림차순)에서만 뽑았다. 수집분 8개 중 abliterated/uncensored/ComfyUI 재포장(DreamFast/Qwen3-VL-4b-Heretic-ComfyUI)과 'Claude' 이름을 붙인 unsloth 재포장(mondk/GGUF.Claude-Qwen3.5-4B-Reasoning · mondk/Safetensors.Claude-Qwen3.5-4B-Reasoning)은 제외하고, 남은 5개(정상 실모델·공식 빌드·LoRA)를 그대로 실었다. 모든 수치(파라미터 · int4 VRAM 추정 · boardFit · 다운로드 · 좋아요 · 라이선스 · 공개일)는 수집 JSON 메타 그대로이며, 벤치마크·정확도는 지어내지 않았다 — 수집 JSON에 없으면 '모델 카드 확인'으로 넘긴다. VRAM은 int4 대략 추정치이고 실제 사용량은 이미지 해상도·컨텍스트 길이·구현에 따라 달라진다. LFM2.5-VL-3B의 언어·컨텍스트 정보는 지난주(2026-08-21) 글에서 모델 카드를 확인한 내용을 참조로만 언급했다.",
+  "sources": [
+    {
+      "title": "LiquidAI/LFM2.5-VL-3B — 이번 주 다운로드·좋아요 최다 실모델(3B 경량 VLM)",
+      "url": "https://huggingface.co/LiquidAI/LFM2.5-VL-3B",
+      "host": "huggingface.co",
+      "tier": "official",
+      "body": "수집 JSON(hf-vlm-trending-2026-08-28) 기준: 파라미터 3B, int4 VRAM 추정 3GB, 라이선스 'other', 2026-08-11 공개, 다운로드 20,513 · 좋아요 193 · 트렌딩 5. 태그는 transformers · safetensors · lfm2_vl · image-text-to-text · liquid · lfm2.5 · edge · conversational로, 이미지와 텍스트를 함께 입력받아 텍스트를 내는 온디바이스 지향 VLM이다. LiquidAI의 실모델이며 이번 주 후보 중 다운로드·좋아요가 가장 높다. boardFit: 라즈베리파이 5 8GB(CPU, 예산 3GB)부터 올라가는 추정이나 보드 노트에 'CPU 추론 — 매우 느림'이 명시됨. Jetson Nano 4GB(예산 2.5GB)에는 미달, Jetson Orin Nano 8GB·소비자 GPU(3070/4070)에는 여유. 같은 모델의 공식 GGUF 빌드(LFM2.5-VL-3B-GGUF)가 별도로 공개돼 있다. 지난주(2026-08-21) 글에서 이 모델 카드를 WebFetch로 확인했을 때 한국어 포함 16개 언어와 컨텍스트 32,768이 명시돼 있었다(세부 벤치마크·언어 목록은 모델 카드 확인). VRAM은 int4 대략 추정이며 실제 사용량은 해상도·컨텍스트·구현에 따라 달라진다."
+    },
+    {
+      "title": "LiquidAI/LFM2.5-VL-3B-GGUF — 같은 모델의 공식 llama.cpp(GGUF) 빌드",
+      "url": "https://huggingface.co/LiquidAI/LFM2.5-VL-3B-GGUF",
+      "host": "huggingface.co",
+      "tier": "official",
+      "body": "수집 JSON 기준: 파라미터 3B, int4 VRAM 추정 3GB, 라이선스 'other', 2026-08-11 공개, 다운로드 36,211 · 좋아요 53 · 트렌딩 4. 태그는 gguf · liquid · lfm2 · lfm2-vl · edge · lfm2.5 · lfm2.5-vl · llama.cpp로, 위 LFM2.5-VL-3B를 llama.cpp에서 바로 돌리도록 GGUF로 포장한 공식 빌드다. 다운로드가 원본보다 많아 실제로는 이 형식으로 받는 사람이 더 많음을 보여준다. boardFit은 원본과 동일(라즈베리파이 5 CPU부터 걸침, Jetson Nano 4GB 미달, Jetson Orin Nano·소비자 GPU 여유) — GGUF는 특히 llama.cpp 기반 CPU·엣지 구동에 맞는 형식이다. 성능·언어 세부는 원본 모델 카드 확인. VRAM은 int4 대략 추정."
+    },
+    {
+      "title": "webbrain-one/webbrain-vl-2-450M — 0.45B 초소형, 브라우저 자동화·GUI 화면 이해용",
+      "url": "https://huggingface.co/webbrain-one/webbrain-vl-2-450M",
+      "host": "huggingface.co",
+      "tier": "official",
+      "body": "수집 JSON 기준: 파라미터 0.45B, int4 VRAM 추정 1.7GB, 라이선스 'other', 2026-08-21 공개, 다운로드 51 · 좋아요 5 · 트렌딩 5. 태그는 transformers · safetensors · lfm2_vl · image-text-to-text · browser-automation · gui-understanding · vision-language-model · webbrain으로, LFM2 계열 아키텍처(lfm2_vl) 기반의 브라우저 자동화·GUI 화면 이해에 초점을 둔 초소형 VLM이다. boardFit: 최소 예산 2.5GB로 라즈베리파이 5 8GB·Jetson Nano 4GB를 포함해 목록의 모든 보드 티어에 올라가는 추정. 다운로드·좋아요가 아직 적은 신생 모델이며 벤치마크·정확도 근거는 수집 JSON에 없음 — 자세한 성능은 모델 카드 확인. VRAM은 int4 대략 추정."
+    },
+    {
+      "title": "Surpem/Supertron3-0.8B — 0.8B, Qwen3.5 계열 기반 에이전트·액션 지향 멀티모달",
+      "url": "https://huggingface.co/Surpem/Supertron3-0.8B",
+      "host": "huggingface.co",
+      "tier": "official",
+      "body": "수집 JSON 기준: 파라미터 0.8B, int4 VRAM 추정 1.9GB, 라이선스 apache-2.0, 2026-08-21 공개, 다운로드 30 · 좋아요 3 · 트렌딩 3. 태그는 transformers · safetensors · qwen3_5 · image-text-to-text · multimodal · action · agent · pytorch로, Qwen3.5 계열 기반의 에이전트/액션 지향 초소형 멀티모달 모델이다. boardFit: 최소 예산 2.5GB로 라즈베리파이 5·Jetson Nano를 포함한 모든 보드 티어에 올라가는 추정. 라이선스명이 apache-2.0으로 표기돼 있다(법적 해석은 하지 않음). 다운로드·좋아요가 적은 신생 모델이라 벤치마크·정확도 근거는 수집 JSON에 없음 — 자세한 성능은 모델 카드 확인. VRAM은 int4 대략 추정."
+    },
+    {
+      "title": "lightx2v/MiniMax-H3-Prompt-Rewriter-LoRA-8B — 트렌딩 최고지만 프롬프트 재작성용 LoRA",
+      "url": "https://huggingface.co/lightx2v/MiniMax-H3-Prompt-Rewriter-LoRA-8B",
+      "host": "huggingface.co",
+      "tier": "official",
+      "body": "수집 JSON 기준: 파라미터 8B, int4 VRAM 추정 5.5GB, 라이선스 null(미표기), 2026-08-18 공개, 다운로드 489 · 좋아요 34 · 트렌딩 6(이번 후보 중 트렌딩 최고). 태그는 peft · safetensors · lora · qwen3-vl · minimax-h3 · prompt-rewriting · multimodal · audio-video-generation으로, Qwen3-VL 위에 얹는 LoRA 어댑터이며 용도는 MiniMax H3 오디오·비디오 생성 파이프라인의 프롬프트 재작성이다. 즉 이 시리즈가 다루는 '이미지 점검용 독립 VLM'과는 결이 다르고, LoRA라 단독 실행이 아니라 베이스 모델이 필요하다(실제 VRAM은 추정치보다 커질 수 있음). boardFit: 최소 예산 6GB로 Jetson Orin Nano 8GB·소비자 GPU에는 올라가나 라즈베리파이 5·Jetson Nano에는 미달하는 추정. 라이선스가 수집 JSON에 미표기라 확인 불가 — 반드시 모델 카드에서 확인. VRAM은 int4 대략 추정."
+    }
+  ],
+  "internalLinkCandidates": ["https://burning-go9me.tistory.com/328"],
+  "cannotSay": [
+    "VRAM 은 int4 대략 추정 — '정확히 N GB', '무조건 돌아간다' 금지. 실제 사용량은 해상도·컨텍스트·구현에 따라 달라진다.",
+    "라이선스는 명칭만 전달 — 법적 해석 단정 금지. MiniMax LoRA는 수집 JSON에 라이선스 미표기라 상업적 사용 여부 확인 불가.",
+    "벤치마크·정확도는 수집 JSON에 없으면 인용하지 않는다 — 모델 카드 확인. webbrain·Supertron 등 신생 모델은 근거가 적다.",
+    "특정 용도(화재·연기 감지·안전장비 확인 등) 성능을 검증 없이 보장하지 않는다 — '이런 이미지+텍스트 점검에 시도해볼 만하다' 수준까지만.",
+    "MiniMax-H3-Prompt-Rewriter-LoRA-8B 는 프롬프트 재작성용 LoRA로, 이미지 점검용 독립 VLM 이 아니며 베이스 모델이 필요하다."
+  ]
+}
