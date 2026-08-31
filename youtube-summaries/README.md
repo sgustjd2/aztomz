@@ -3,10 +3,11 @@
 채널 [AI Engineer](https://www.youtube.com/@aiDotEngineer) 의 새 영상을 Gemini 로 자동 요약한 모음입니다.
 생성: `backend/scripts/youtube-summarize.mjs` (GitHub Actions `youtube-summary` 크론).
 
-총 **115개**.
+총 **116개**.
 
 | 발행일 | 제목 |
 |---|---|
+| 2026-08-30 | [SOTA Generative Media Panel — Dumitru Erhan, Shane Gu & Nicole Brichtova, Google DeepMind](2026-08-30-KLDdXOw6jIc.md) |
 | 2026-08-29 | [The Half Life of Agent Infrastructure — Ben Kus, Box](2026-08-29-sM1iYgz93HI.md) |
 | 2026-08-29 | [Tell the Robot What You Want — Sandhya Subramani, AWS](2026-08-29-S6aSoQ6_u5A.md) |
 | 2026-08-29 | [Agentic Sites: Building Hyper Personalized Websites — Carlos Sanchez, Adobe](2026-08-29-jebp4V0vh30.md) |
