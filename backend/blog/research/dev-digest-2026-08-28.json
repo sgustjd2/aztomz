@@ -1,0 +1,82 @@
+{
+  "keyword": "개발 다이제스트 (2026-08-26~28) — 이번 주 개발/툴 소식",
+  "categoryId": "dev-digest",
+  "slug": "dev-digest-2026-08-28",
+  "searchedAt": "2026-08-31",
+  "origin": "Claude Code WebSearch/WebFetch 조사",
+  "note": "각 출처는 실제로 열어 본문을 읽고 정리했다. 여기 사실 밖으로 나가지 말 것. 시드 파일(backend/blog/research/dev-digest/digest-2026-08-28.json)의 GeekNews 헤드라인 중 개발·툴 성격 6건을 골라 WebSearch로 원문을 찾고 WebFetch로 본문을 확인했다. 큐레이션 재검증(2026-09-01): curl로 6개 URL 전건 HTTP 200 확인 + 본문 텍스트에서 각 fact의 핵심어(모델명·수치·용어) 일치 확인, 삭제된 출처 없음.",
+  "sources": [
+    {
+      "title": "cc-gemini-rewrite — Patch Claude Code to re-explain hard answers inline",
+      "url": "https://github.com/esc5221/cc-gemini-rewrite",
+      "host": "github.com",
+      "tier": "official",
+      "kind": "release",
+      "body": "GitHub 사용자 esc5221이 만든 오픈소스 도구(MIT 라이선스, JavaScript, 29 커밋, 스타 7개, 포크 0개). Claude Code의 답변이 장황하고 읽기 어렵다는 문제를 해결하기 위해, 메시지 표시(MessageDisplay) 훅에 개입해 원본 답변이 출력된 직후 같은 TUI 화면 안에 별도 LLM이 재작성한 버전을 함께 보여준다. 대화 기록(history)에는 원본이 그대로 남고, 화면에만 원본+재작성 블록이 나란히 표시되는 방식이다. 재작성에 쓰는 모델은 OpenAI 호환 엔드포인트를 통해 교체 가능하며 기본값은 'gemini-3.5-flash-lite'다. OpenAI·OpenRouter·로컬 모델도 설정으로 지원한다. 설치는 Node ≥18 환경에서 './install.sh' 실행 또는 '/plugin marketplace add' 명령으로 하며, 설정 파일은 '~/.claude/cc-gemini-rewrite/config.json'에 저장된다. GeekNews에는 2026-08-28 'Show GN' 항목으로 소개됐다."
+    },
+    {
+      "title": "superfile — Pretty fancy and modern terminal file manager",
+      "url": "https://github.com/yorukot/superfile",
+      "host": "github.com",
+      "tier": "official",
+      "kind": "release",
+      "body": "yorukot이 만든 Go(Bubble Tea 프레임워크 기반) 오픈소스 터미널 파일 관리자. GitHub 스타 약 23.0k개, 포크 855개, 오픈 이슈 194개, 오픈 PR 69개(조사 시점 기준). 핵심 기능은 멀티 패널 지원 — 여러 디렉터리를 동시에 열어 패널 간 Tab으로 전환하고 파일을 복사·붙여넣기 할 수 있다. 전 구간 키보드 조작(화살표 이동, Enter로 진입, Backspace로 상위 이동)을 지원하며 파일 복사·이동·삭제·이름변경·퍼지 검색·일괄 작업·이미지 미리보기 기능을 포함한다. 플러그인·테마로 커스터마이징 가능하고 모든 단축키를 재매핑할 수 있다. Linux·macOS·Windows를 지원하나 Windows 지원은 아직 완전하지 않다고 문서에 명시돼 있다. 원 프로젝트는 2024년 3월 시작됐다."
+    },
+    {
+      "title": "Launching Route 53 Files",
+      "url": "https://www.daemonology.net/blog/2026-08-27-Launching-Route-53-Files.html",
+      "host": "daemonology.net",
+      "tier": "official",
+      "kind": "analysis",
+      "body": "Tarsnap 창립자이자 AWS Hero인 Colin Percival이 2026-08-27 자신의 블로그에 올린 글. AWS의 'S3 Files'(S3 버킷을 파일시스템으로 마운트하는 기능, 2026년 4월 출시)를 겨냥한 풍자(satire) 프로젝트로 'Route 53 Files'를 소개한다 — Route 53 DNS 호스팅 영역을 표준 UNIX 파일시스템처럼 마운트해, EC2·ECS·EKS·Lambda에서 DNS 레코드를 파일 편집으로 바꿀 수 있다고 주장하는 콘셉트다. 글쓴이는 파일 편집이 자동으로 Route 53에 반영되고 역방향 동기화도 되며, 변경 후 약 90초 내 DNS에 반영된다고 적었다. '100% 환불 SLA' 같은 문구와 '2027년 4월 1일까지 기다리기 싫어서 지금 낸다'는 설명으로 이 프로젝트가 진지한 제품이 아니라 AWS의 최근 'category error'식 네이밍·기능 추가를 비꼬는 농담 발표임을 스스로 밝히고 있다."
+    },
+    {
+      "title": "Agent Behavior — Standards for defining and evaluating agent behavior",
+      "url": "https://www.agentbehavior.dev/",
+      "host": "agentbehavior.dev",
+      "tier": "official",
+      "kind": "release",
+      "body": "Basis와 Braintrust(관측·평가 플랫폼 기업)의 협업으로 공개된 오픈 표준. GitHub 저장소는 braintrustdata/agentbehavior(스타 322개, 조사 시점 기준). 문제의식은 '현대 에이전트는 몇 시간씩 작업하며 한 궤적(trajectory) 안에서 수백 번의 결정을 내리는데, 이를 단일 결과 지표 하나로 환원할 수 없다'는 것이다. 이를 위해 'Behavior spec'이라는 마크다운 문서 형식을 제안한다 — 저장소의 '.agents/behaviors/<name>/BEHAVIOR.md' 경로에 YAML 프론트매터(name, description)와 본문으로 구성되며, 코드와 함께 버전관리된다. 권장 서술 축은 Intent(언제·왜 적용되는지)·Evidence(무엇을 확인할지)·Decision(어떤 판단을 내릴지)·Execution(실행 방법)·Recovery(실패 시 대응) 5가지다. 평가 시 '반복 행동(repetitive action)'은 '동일 도구를 동일 인자로 3턴 이상 연속 호출'로 구체적으로 정의해, 에이전트가 피드백을 반영 못 하고 루프에 갇힌 상태를 프로그램적으로 잡아낼 수 있게 한다."
+    },
+    {
+      "title": "Teamwork agent teams (/teamwork-preview) | Google Antigravity Docs",
+      "url": "https://antigravity.google/docs/teamwork/",
+      "host": "antigravity.google",
+      "tier": "official",
+      "kind": "release",
+      "body": "Google Antigravity 공식 문서. '/teamwork-preview' 슬래시 명령은 대규모 소프트웨어 프로젝트·복잡한 시뮬레이션·심화 리서치를 위한 협업형 다중 에이전트 팀을 구동한다고 설명한다. Antigravity 2.0(데스크톱·웹)과 Antigravity CLI 양쪽에서 제공되며 유료 플랜에서 이용 가능하다고 명시돼 있다. 역할 구성은 Sentinel(진행 조율자, 사용자 승인 후 요청을 기록·라우팅하고 주기적 진행상황을 게시), Project Orchestrator(작업 분해·병렬 관리), Explorer(읽기전용 저장소 탐색·해법 평가), Worker(코드 구현·테스트 작성)로 이뤄진 실행 그룹과, Critic(코드 리뷰)·Challenger(엣지케이스·스트레스 테스트)·Auditor(작업 검증)·Success Auditor(최종 종합 검증)로 이뤄진 검증 게이트로 나뉜다. 문서는 여러 날에 걸친 대규모 프레임워크 마이그레이션, 분산 시스템·CPU 시뮬레이터 구축, 수학적 증명·이론 연구 등을 활용 사례로 든다. 다중 에이전트 워크플로는 리소스 소모가 크고 오래 실행될 수 있어 로컬 머신이 계속 켜져 있어야 한다고 안내한다."
+    },
+    {
+      "title": "Visualizing with the help of Antigravity | Google Antigravity Blog",
+      "url": "https://antigravity.google/blog/visualizing-with-the-help-of-antigravity",
+      "host": "antigravity.google",
+      "tier": "official",
+      "kind": "release",
+      "body": "Google Antigravity 공식 블로그, 2026-08-26 게시. 에이전트가 만드는 인터랙티브 UI '아티팩트' 중 데이터 시각화·시뮬레이션 사례 3가지를 구체적으로 소개한다. (1) 패키지 의존성 그래프 — 노드·연결선으로 의존관계를 표시하고 런타임 의존성·내부 모듈·개발 도구 등 종류별 필터링 지원. (2) 쿼드트리(quadtree) 탐색기 — 버킷 용량 초과 시 4분면으로 분할되고 쿼리 범위와 겹치지 않는 영역은 자동 제거되는 공간 자료구조 알고리즘을 대화형으로 시각화. (3) 태양계 시뮬레이션 — 케플러 법칙 기반 행성 궤도를 3D로 렌더링하며 실시간 시뮬레이션과 상세 데이터 패널을 제공. 블로그는 이 아티팩트들이 '종속성 없이(dependency-free)' 만들어져 추가 패키지 설치 없이 오프라인에서도 렌더링되며, 표 형식 데이터보다 시각적 표현이 패턴 파악에 낫다고 설명한다. Antigravity 별도 문서(antigravity.google/docs/artifacts/)는 아티팩트를 '에이전트가 작업 수행과 진행상황·사고과정 전달을 위해 만드는 구조화된 산출물'로 정의하며 구현계획·코드 diff·아키텍처 다이어그램·이미지·브라우저 녹화도 아티팩트 유형에 포함된다고 밝힌다."
+    }
+  ],
+  "facts": [
+    "cc-gemini-rewrite(github.com/esc5221)는 Claude Code MessageDisplay 훅에 개입해 원본 답변 옆에 LLM 재작성본을 TUI 안에 나란히 표시하며, 기본 재작성 모델은 'gemini-3.5-flash-lite', 스타 7개·29 커밋(조사 시점)이다.",
+    "superfile(github.com/yorukot)는 Go+Bubble Tea 기반 멀티패널 터미널 파일관리자로 GitHub 스타 약 23.0k개, 포크 855개(조사 시점 기준).",
+    "Route 53 Files는 2026-08-27 Colin Percival(Tarsnap 창립자)이 자신의 블로그에 올린 풍자 프로젝트로, AWS S3 Files(2026년 4월 출시)를 겨냥해 'Route 53 DNS 영역을 UNIX 파일시스템처럼 마운트'한다는 콘셉트를 '~90초 내 DNS 반영'·'100% 환불 SLA' 같은 문구로 소개했다.",
+    "Agent Behavior 표준은 Basis와 Braintrust의 협업으로 공개됐고 GitHub 저장소(braintrustdata/agentbehavior) 스타 322개(조사 시점), '.agents/behaviors/<name>/BEHAVIOR.md' 형식과 Intent·Evidence·Decision·Execution·Recovery 5축을 제안한다.",
+    "Agent Behavior 표준은 '반복 행동(repetitive action)'을 '동일 도구를 동일 인자로 3턴 이상 연속 호출'로 정의해 에이전트 루프를 프로그램적으로 탐지하게 한다.",
+    "Google Antigravity의 '/teamwork-preview'(유료 플랜, Antigravity 2.0 데스크톱·웹 + CLI 제공)는 Sentinel·Project Orchestrator·Explorer·Worker 실행 그룹과 Critic·Challenger·Auditor·Success Auditor 검증 게이트로 구성된 다중 에이전트 팀을 운영한다.",
+    "Google Antigravity 공식 블로그(2026-08-26)는 인터랙티브 아티팩트 사례로 패키지 의존성 그래프, 쿼드트리 탐색기, 케플러 법칙 기반 태양계 3D 시뮬레이션 3가지를 제시했고, 이 아티팩트들은 추가 패키지 설치 없이 오프라인 렌더링된다고 밝혔다."
+  ],
+  "unverified": [
+    "cc-gemini-rewrite·superfile의 정확한 최신 릴리스 버전 번호와 릴리스 날짜(GitHub 페이지에 명시 안 됨)",
+    "GeekNews 원문이 인용한 'cc-gemini-rewrite' Show GN 게시자 본인 코멘트(GeekNews topic 페이지 자체를 직접 특정하지 못해 GitHub 저장소로 대체 확인)",
+    "Agent Behavior 표준의 최초 공개(발표) 정확한 날짜",
+    "Route 53 Files가 실제로 동작하는 코드/서비스인지, 순수 콘셉트 글인지 여부(저자 본인이 풍자라고 밝혔을 뿐 리포지토리·데모 존재 여부는 확인 못함)"
+  ],
+  "cannotSay": [
+    "출처 없는 수치·날짜·제품명을 지어내지 말 것",
+    "단정·과장 금지, banned(dev-digest): 충격·대박·역대급·혁명·게임체인저·곧 대체될·무조건",
+    "발표 주체가 밝힌 값은 '발표 제시치'로 귀속"
+  ],
+  "internalLinkCandidates": [
+    "https://burning-go9me.tistory.com/329",
+    "https://burning-go9me.tistory.com/307"
+  ]
+}

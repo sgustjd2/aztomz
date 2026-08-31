@@ -1,0 +1,124 @@
+{
+  "keyword": "소형 언어모델(SLM)이 뜨는 이유 — 온디바이스·경량 모델 흐름",
+  "categoryId": "ai-trend",
+  "slug": "slm-era-2026",
+  "searchedAt": "2026-08-31",
+  "origin": "Claude Code WebSearch/WebFetch 조사",
+  "note": "각 출처는 실제로 열어 본문을 읽고 정리했다. 여기 사실 밖으로 나가지 말 것. 일부 블로그 애그리게이터(zylos.ai, hyscaler 등)가 인용한 'Gartner 40%/95% 절감/18배 저렴' 수치는 실제 Gartner 발표(2025-04-09, '3배' 예측)와 다르게 부풀려진 값으로 확인돼 채택하지 않았다 — 아래 conflicts 참고. [큐레이터 검증 2026-09-01: 9개 출처 전부 curl(UA 지정)로 200 OK 확인 + 본문에서 핵심 키워드(모델명·수치) 직접 대조 완료 — marktechpost.com은 기본 curl UA에서 403이었으나 브라우저 UA로 재요청 시 200/본문 확인됨(봇 차단, 실제 접근 가능). 9/9 생존·본문 일치, 드롭 없음.]",
+  "sources": [
+    {
+      "title": "Introducing Gemma 3n: The developer guide / Announcing Gemma 3n preview",
+      "url": "https://developers.googleblog.com/en/introducing-gemma-3n/",
+      "host": "developers.googleblog.com",
+      "tier": "official",
+      "kind": "release",
+      "publishedAt": "2025-05-20",
+      "body": "Google DeepMind(제품 매니저 Lucas Gonzalez, 수석 소프트웨어 엔지니어 Rakesh Shivanna 명의)가 2025-05-20 발표. Gemma 3n은 원시 파라미터 5B·8B 모델이지만 Per-Layer Embeddings(PLE) 기술로 동적 메모리 풋프린트가 각각 2GB·3GB에 불과해 기존 2B·4B급 모델 수준의 부담으로 동작한다(두 사이즈를 실효 파라미터 기준 E2B·E4B로 명명). MatFormer 아키텍처로 컴퓨트 유연성을, MobileNet-v5 기반 비전 인코더와 신규 오디오 인코더로 이미지·오디오·비디오·텍스트를 네이티브로 입력받고 텍스트를 출력한다. 모바일에서 이전 세대 대비 약 1.5배 빠른 응답, 오프라인 동작, 자동 음성 인식·번역을 지원하며, 개발 목적은 \"개인적이고 프라이빗한 AI 경험을 휴대폰·태블릿·노트북 같은 일상 기기에서 직접 구축\"할 수 있게 하는 것이라고 명시했다."
+    },
+    {
+      "title": "Empowering innovation: The next generation of the Phi family",
+      "url": "https://azure.microsoft.com/en-us/blog/empowering-innovation-the-next-generation-of-the-phi-family/",
+      "host": "azure.microsoft.com",
+      "tier": "official",
+      "kind": "release",
+      "publishedAt": "2025-02-26",
+      "body": "Microsoft Azure가 2025-02-26 발표(생성 AI 담당 부사장 Weizhu Chen 작성). Phi-4-multimodal은 5.6B 파라미터, Phi-4-mini는 3.8B 파라미터로 공개됐다. Phi-4-multimodal은 Hugging Face OpenASR 리더보드에서 단어 오류율(WER) 6.14%로 1위를 기록했다고 발표에서 제시했고, Phi-4-mini는 발표 제시 벤치마크에서 수학·코딩·추론 과제에서 더 큰 모델들을 능가한다고 설명했다. Azure AI Foundry, Hugging Face, NVIDIA API Catalog에서 이용 가능. 소형 모델 개발 이유로 낮은 계산 요구량에 따른 빠른 결과·낮은 지연, 온디바이스 실행 최적화, 계산 오버헤드 감소, 비용 효율성, 엣지 컴퓨팅 플랫폼 배포 용이성을 명시했다."
+    },
+    {
+      "title": "microsoft/Phi-4-mini-instruct",
+      "url": "https://huggingface.co/microsoft/Phi-4-mini-instruct",
+      "host": "huggingface.co",
+      "tier": "official",
+      "kind": "release",
+      "publishedAt": null,
+      "body": "Hugging Face 모델 카드(Microsoft 공식 배포). Phi-4-mini는 3.8B 파라미터 트랜스포머 디코더 모델로, 20만(200K) 토큰 어휘를 지원해 다국어 처리력이 늘었고, grouped-query attention과 내장 함수 호출(function calling)을 지원한다. 검색 결과 요약 기준 Phi-3.5-mini 대비 MMLU +8%p, MATH +12%p, HumanEval +6%p 개선(발표 제시치). 별도 소형 모델 매치업 자료에서는 Phi-4-mini가 MMLU 73%로 8B급 Llama 3.1 8B와 동등한 점수를 내면서 메모리는 절반, 속도는 2배라는 비교치도 확인됨(3차 자료, 발표사 직접 수치는 아님 — 아래 unverified 참고)."
+    },
+    {
+      "title": "SmolLM3: smol, multilingual, long-context reasoner",
+      "url": "https://huggingface.co/blog/smollm3",
+      "host": "huggingface.co",
+      "tier": "official",
+      "kind": "release",
+      "publishedAt": "2025-07-08",
+      "body": "Hugging Face(HuggingFaceTB 팀)가 2025-07-08 공식 블로그에 발표. SmolLM3는 3B(30억) 파라미터 디코더 전용 모델로 11.2조(11.2T) 토큰으로 학습됐고, NoPE와 YaRN 스케일링으로 최대 128K 토큰 컨텍스트를 지원한다. 'think'/'no_think' 두 가지 추론 모드를 전환할 수 있고 6개 언어 다국어 생성, 도구 호출(tool-call)을 지원한다. 발표에서 제시한 12개 벤치마크 비교에서 SmolLM3는 Llama-3.2-3B·Qwen2.5-3B를 능가하고 Qwen3-4B·Gemma3-4B 같은 더 큰 4B급과도 경쟁력이 있다고 밝혔다. 구체 수치: AIME 2025 수학 벤치마크에서 확장 사고 모드 36.7% vs 비활성 모드 9.3%, LiveCodeBench 코딩 30.0% vs 15.2%. 아키텍처·데이터 구성·3단계 사전학습·후처리 정렬까지 엔지니어링 블루프린트를 공개했다."
+    },
+    {
+      "title": "Qwen3.5 small models: Everything you need to know",
+      "url": "https://artificialanalysis.ai/articles/qwen3-5-small-models",
+      "host": "artificialanalysis.ai",
+      "tier": "data",
+      "kind": "analysis",
+      "publishedAt": "2026-03-05",
+      "body": "벤치마크 집계 사이트 Artificial Analysis가 2026-03-05 게재. Alibaba Qwen팀이 2026-03-02 Qwen3.5-0.8B·2B·4B·9B 4종을 Hugging Face·ModelScope에 공개했다고 전하며, 자체 Intelligence Index(추론 모드) 기준 9B 32점·4B 27점·2B 16점·0.8B 9점을 집계했다. 전세대 대비 개선폭은 9B가 Qwen3 VL 8B(17점) 대비 +15점, 4B가 Qwen3 4B 2507(18점) 대비 +9점, 2B가 Qwen3 1.7B(13점) 대비 +3점, 0.8B가 Qwen3 0.6B(6.5점) 대비 +2.5점이다. 4비트 양자화 시 메모리 요구량은 9B 약 6GB, 4B 약 3GB, 2B·0.8B는 2GB 미만으로 집계했다."
+    },
+    {
+      "title": "Alibaba just released Qwen 3.5 Small models: a family of 0.8B to 9B parameters built for on-device applications",
+      "url": "https://www.marktechpost.com/2026/03/02/alibaba-just-released-qwen-3-5-small-models-a-family-of-0-8b-to-9b-parameters-built-for-on-device-applications/",
+      "host": "marktechpost.com",
+      "tier": "press",
+      "kind": "news",
+      "publishedAt": "2026-03-02",
+      "body": "MarkTechPost가 2026-03-02 보도. Qwen3.5 소형 모델군(0.8B/2B/4B/9B)의 핵심 철학은 \"More Intelligence, Less Compute\"로, 소비자급 하드웨어·엣지 기기 배포로의 방향 전환, 클라우드 의존 제거, 개인정보 보호가 중요한 환경 최적화를 개발 목표로 제시했다. 모바일칩·IoT 기기·엣지 디바이스 배포를 염두에 두고 설계됐다고 전했다. 구체적 벤치마크 수치는 Artificial Analysis 기사가 더 상세하다(위 항목 참고). 이 기사는 Qwen3.5-9B가 30B급 이상 모델과 견줄 만한 수준이라고 소개했으며, 파라미터 규모별로 저사양 IoT 기기(0.8B)부터 데스크톱·엣지 서버(9B)까지 계층적으로 배포처를 나눠 제시했다."
+    },
+    {
+      "title": "Small Language Models are the Future of Agentic AI",
+      "url": "https://arxiv.org/abs/2506.02153",
+      "host": "arxiv.org",
+      "tier": "data",
+      "kind": "paper",
+      "publishedAt": "2025-06-02",
+      "body": "NVIDIA 소속 연구진(Peter Belcak, Greg Heinrich, Shizhe Diao, Yonggan Fu, Xin Dong, Saurav Muralidharan, Yingyan Celine Lin, Pavlo Molchanov)의 포지션 논문. arXiv 제출 2025-06-02, 최종본 2025-09-15. 핵심 주장: 에이전트 AI 시스템은 언어모델이 소수의 전문화된 작업을 반복적으로 수행하는 구조라, 10B 파라미터 이하 SLM이 충분히 강력하고 본질적으로 더 적합하며 경제적으로 필수적이라고 주장한다. 다만 일반 대화 능력이 필수적인 경우에는 여러 모델을 함께 쓰는 이질적(heterogeneous) 에이전트 시스템이 자연스러운 선택이라고 인정하며, LLM→SLM 전환을 위한 일반 알고리즘을 제시한다. 웹 페이지·요약 자료에는 '10~30배 저렴' 같은 구체 배수가 3차 요약에서 언급됐으나 논문 초록·서한 페이지 자체에는 명시적 배수 수치가 확인되지 않았다(아래 unverified 참고)."
+    },
+    {
+      "title": "Gartner Predicts by 2027, Organizations Will Use Small, Task-Specific AI Models Three Times More Than General-Purpose Large Language Models (CIO Dive 보도)",
+      "url": "https://www.ciodive.com/news/small-AI-model-use-growth-Gartner-prediction/745435/",
+      "host": "ciodive.com",
+      "tier": "press",
+      "kind": "news",
+      "publishedAt": "2025-04-16",
+      "body": "CIO Dive가 2025-04-16 보도한 Gartner 리서치 예측. Gartner VP 애널리스트 Sumit Agarwal 명의로, 2027년까지 기업들이 소형·특화(task-specific) AI 모델을 범용 LLM보다 3배 더 많이 사용하게 될 것이라 예측했다(Gartner 공식 발표는 2025-04-09, gartner.com 원문은 403으로 직접 접근 불가해 CIO Dive 인용 보도로 대체). 이유로 업무 워크플로우의 다양성과 정확도 향상 필요성이 특화 모델로의 전환을 이끌고, 계산 리소스 최소화와 운영·유지보수 비용 절감이 뒤따른다고 설명했다."
+    },
+    {
+      "title": "MobileLLM-R1: Exploring the Limits of Sub-Billion Language Model Reasoners with Open Training Recipes",
+      "url": "https://arxiv.org/abs/2509.24945",
+      "host": "arxiv.org",
+      "tier": "data",
+      "kind": "paper",
+      "publishedAt": "2025-09-29",
+      "body": "Meta(Facebook Research) 소속 Changsheng Zhao, Ernie Chang, Zechun Liu 등 11명 저자. arXiv 제출 2025-09-29, 최종본 2026-02-27(ICLR 2026 게재). '추론 능력은 충분히 큰 모델에서만 나타난다'는 통념에 도전하며, 데이터를 정교하게 선별하면 약 2조 토큰만으로도 서브빌리언(sub-1B) 모델에서 강한 추론 능력이 가능함을 보였다. 950M 파라미터 MobileLLM-R1은 AIME 벤치마크에서 15.5점을 기록해 OLMo-2-1.48B(0.6점)·SmolLM-2-1.7B(0.3점)를 크게 앞섰고, Qwen3의 36조 토큰 대비 11.7%만 사용하고도 Qwen3-0.6B와 동등하거나 더 나은 성능을 냈다고 밝혔다. 이는 '소형 모델=구조적 추론 한계'라는 일반론에 대한 반례 데이터로, 데이터 품질이 파라미터 수 못지않게 중요함을 시사한다."
+    }
+  ],
+  "facts": [
+    "Google Gemma 3n(E2B/E4B, 원시 5B/8B 파라미터)은 Per-Layer Embeddings로 동적 메모리 2GB/3GB만 사용 — 2025-05-20 Google 공식 블로그 발표",
+    "Microsoft Phi-4-mini(3.8B)·Phi-4-multimodal(5.6B)은 2025-02-26 Azure 공식 발표, Phi-4-multimodal은 HuggingFace OpenASR 리더보드 WER 6.14%로 1위(발표 제시치)",
+    "Hugging Face SmolLM3(3B, 11.2T 토큰 학습, 최대 128K 컨텍스트)는 2025-07-08 공식 블로그로 공개, AIME 2025에서 확장 사고 모드 36.7% vs 비활성 9.3%(발표 제시치)",
+    "Alibaba Qwen3.5 소형군(0.8B/2B/4B/9B)은 2026-03-02 공개, Artificial Analysis 집계 Intelligence Index 기준 9B 32점·4B 27점·2B 16점·0.8B 9점, 4비트 양자화 시 9B 약 6GB·4B 약 3GB",
+    "NVIDIA 연구진의 포지션 논문(arXiv 2506.02153, 2025-06-02 제출)은 에이전트 AI 작업 다수에 10B 이하 SLM이 충분하고 경제적으로 필수라고 주장",
+    "Gartner는 2025-04-09(CIO Dive 2025-04-16 보도) 2027년까지 기업이 소형·특화 AI 모델을 범용 LLM보다 3배 더 많이 쓸 것으로 예측(VP 애널리스트 Sumit Agarwal)",
+    "Meta의 MobileLLM-R1(950M, arXiv 2509.24945, 2025-09-29 제출)은 약 2조 토큰 정교 선별 학습만으로 AIME 15.5점을 기록해, 동급 소형 모델(OLMo-2-1.48B 0.6점) 대비 크게 앞섬 — 소형=추론 한계라는 통념에 반례",
+    "SmolLM3(3B)는 발표 제시 12개 벤치마크에서 Llama-3.2-3B·Qwen2.5-3B를 능가하고 Qwen3-4B·Gemma3-4B 등 더 큰 4B급과도 경쟁력 있다고 Hugging Face가 밝힘"
+  ],
+  "unverified": [
+    "'SLM이 클라우드 API 대비 18배 저렴', 'On-device 처리로 비용 최대 95% 절감', 'Gartner가 2027년까지 엔터프라이즈 AI 워크로드 40%가 SLM으로 이동한다고 예측'했다는 수치는 zylos.ai·hyscaler.com 등 블로그 애그리게이터에서만 확인되고, 실제 Gartner 공식 발표(2025-04-09, '3배' 예측)와 배수가 다르다 — 아래 conflicts 참고. 이 40%/95%/18배 수치는 채택하지 않는다.",
+    "Phi-4-mini가 Llama 3.1 8B와 MMLU 73%로 동률이며 메모리 절반·속도 2배라는 비교는 3차 매체(localaimaster.com 등) 요약에서만 확인됨 — Microsoft 공식 자료로 직접 대조하지 못함",
+    "NVIDIA 논문이 SLM을 'LLM 대비 10~30배 저렴하게 서빙 가능'하다고 명시했다는 수치는 여러 3차 요약(Medium 등)에서 반복되나, 논문 초록·공식 서한 페이지에서 직접 확인하지 못했다 — 인용 시 3차 출처임을 밝힐 것",
+    "Qwen3.5 소형 모델의 라이선스(Apache 등 구체 조항)는 이번 조사에서 직접 확인하지 못함"
+  ],
+  "conflicts": [
+    {
+      "about": "SLM 전환 속도/규모에 대한 Gartner 예측 수치",
+      "a": "Gartner 공식 발표(2025-04-09) 및 CIO Dive 보도(2025-04-16): 2027년까지 기업이 소형·특화 AI 모델을 범용 LLM보다 '3배' 더 많이 사용할 것",
+      "b": "일부 SEO 블로그(zylos.ai, hyscaler.com 등, 발행일 2026-02 전후)는 'Gartner(2026), 2027년까지 엔터프라이즈 AI 워크로드 40%가 클라우드 LLM에서 SLM으로 이동'이라고 인용하나, 이는 Gartner의 다른 발표(2024-09-09, '2027년까지 생성형 AI 솔루션의 40%가 멀티모달')와 수치가 혼동된 것으로 보이며 원출처를 특정하지 못했다"
+    }
+  ],
+  "cannotSay": [
+    "출처 없는 수치·날짜·제품명을 지어내지 말 것",
+    "단정·과장 금지, banned(ai-trend): 충격·대박·역대급·혁명·게임체인저·곧 대체될·무조건",
+    "발표 주체가 밝힌 값은 '발표 제시치'로 귀속"
+  ],
+  "internalLinkCandidates": [
+    "https://burning-go9me.tistory.com/349",
+    "https://burning-go9me.tistory.com/335"
+  ],
+  "songs": []
+}

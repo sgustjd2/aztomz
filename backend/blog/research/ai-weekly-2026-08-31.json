@@ -1,0 +1,98 @@
+{
+  "keyword": "이번 주 AI 동향 (2026년 8월 말) — 새 모델·제품 소식 정리",
+  "categoryId": "ai-trend",
+  "slug": "ai-weekly-2026-08-31",
+  "searchedAt": "2026-08-31",
+  "origin": "Claude Code WebSearch/WebFetch 조사",
+  "note": "각 출처는 실제로 열어 본문을 읽고 정리했다(OpenAI 공식 발표문은 WebFetch 403으로 직접 접근이 막혀 r.jina.ai 프록시로 같은 URL 본문을 읽었고, TechCrunch 보도로 교차 확인함). '「Agent Behavior」 평가 표준'은 시작 힌트에 있었으나 8월 넷째~다섯째 주에 그 이름으로 발표된 실제 표준/제품을 찾지 못해 제외했다 — unverified 항목 참고. [큐레이터 재검증 2026-09-01: curl로 sources[] 8건 전부 HTTP 200 확인(openai.com은 직접 403·r.jina.ai 프록시로 200 확인, 기존 방식과 동일), facts[] 7건의 핵심 수치·고유명사를 각 소스 원문에서 grep으로 대조해 전부 일치 확인. 삭제/재분류된 항목 없음.]",
+  "sources": [
+    {
+      "title": "Intelligent transcription with Gemini 3.5 Transcribe",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-5-transcribe/",
+      "host": "blog.google",
+      "tier": "official",
+      "kind": "release",
+      "body": "Google이 2026년 8월 26일 공식 블로그(작성: Diego Melendo Casado, Luke Leonhard, Gemini Audio팀)를 통해 새 음성인식 모델 'Gemini 3.5 Transcribe'를 공개 미리보기로 출시했다고 발표했다. 자체 측정 기준 단어 오류율(WER)은 스트리밍 4.0%, 비스트리밍 2.6%이며, 다국어 벤치마크 FLEURS에서는 스트리밍 5.50%·비스트리밍 5.04%를 기록했다고 밝혔다. 이전 모델 Chirp 3 대비 최종 전사 완료 시간이 70% 개선됐다고 주장한다. 85개 이상 언어 자동감지, 필러어 제거·자동 포맷팅, 최대 3명 화자 식별(3명 초과는 실험단계), 다른 Gemini 모델로의 함수 호출 위임 기능을 갖췄다. 개발자용(Google AI Studio·Antigravity), 엔터프라이즈(Gemini Enterprise Agent Platform), 일반 사용자용(안드로이드 Gboard Rambler, Gemini macOS 앱, Chrome 곧 출시)으로 순차 제공된다."
+    },
+    {
+      "title": "Gemini Omni 1.1 Flash lets you build with more control",
+      "url": "https://blog.google/innovation-and-ai/technology/developers-tools/build-with-gemini-omni-1-1-flash/",
+      "host": "blog.google",
+      "tier": "official",
+      "kind": "release",
+      "body": "Google이 2026년 8월 27일 공식 블로그(Google DeepMind, 제품관리자 Anish Nangia·Alisa Fortin)를 통해 영상 생성·편집용 멀티모달 모델 'Gemini Omni 1.1 Flash'를 발표했다. 기존 영상의 마지막 10초 맥락을 바탕으로 10초 단위로 최대 40초까지 장면을 확장하는 '장면 확장(Scene Extension)' 기능이 핵심이며, 시작·끝 프레임을 지정해 두 키프레임 사이를 자연스러운 카메라 움직임으로 잇는 기능, 최대 3초 분량의 외부 영상을 스타일 참조로 업로드하는 기능을 제공한다. 360p 초안 모드는 720p 대비 최대 60% 빠르고 비용은 3분의 1이며, 1080p·4K 업스케일링을 지원한다(공식 가격표: 360p $0.03/초, 720p $0.10/초, 1080p $0.15/초, 4K $0.30/초). Google AI Studio, Flow by Google, Gemini Enterprise Agent Platform에서 즉시 이용 가능하며 장면 확장 기능은 Google AI Plus·Pro·Ultra 구독자 전원에게 전 세계 Gemini 앱에서 제공된다."
+    },
+    {
+      "title": "Teamwork: When AI Becomes a Research Partner",
+      "url": "https://antigravity.google/blog/teamwork-when-ai-becomes-a-research-partner",
+      "host": "antigravity.google",
+      "tier": "official",
+      "kind": "release",
+      "body": "Google이 2026년 8월 27일 Antigravity 공식 블로그를 통해 멀티 에이전트 오케스트레이션 기능 'Teamwork'의 성과를 발표했다. Teamwork는 여러 에이전트가 자율적으로 서로의 결과물을 제안·비판·개선하는 방식(생성→스트레스 테스트→최선안 결합)으로 동작하며, 수학·이론컴퓨터과학 공개문제 7개 해결(TCSBench 71% 달성), RISC-V CPU 시뮬레이터로 운영체제 부팅 성공(BOOM 시뮬레이터 대비 평균 오류율 0.71%), 오픈소스 라이브러리 Eigen의 GeMV 연산 최적화 상류 병합, ParlayHash 처리량 2배·메모리 25% 절감 등 구체 사례를 제시했다. Teamwork는 애초 Google I/O에서 처음 공개됐던 프레임워크이며, '/teamwork-preview' 명령으로 Antigravity 모든 유료 플랜에서 향후 수주에 걸쳐 점진적으로 제공된다고 밝혔다."
+    },
+    {
+      "title": "Jalapeño's first results show industry-leading speed and efficiency in AI inference",
+      "url": "https://openai.com/index/jalapeno-first-results/",
+      "host": "openai.com",
+      "tier": "official",
+      "kind": "release",
+      "body": "OpenAI가 2026년 8월 25일(Hot Chips 컨퍼런스 시점) 공식 발표문을 통해 자체 추론 전용 칩 'Jalapeño'(Broadcom과 공동설계)의 첫 벤치마크 결과를 공개했다. Nvidia GB200 비교 시스템 대비 와트당 AI 작업량이 1.5~1.9배, 종단 지연시간이 1.7~3.6배 낮았고(전력 550W 기준, 공정 정격 700W), 상호작용형 워크로드에서는 2.1~4.1배 빨랐다고 밝혔다. 공개 모델 3종 기준 혼합 처리량(TPS/kW)은 GPT-OSS 120B 약 1.9배, DeepSeek R1 약 1.7배, Kimi K2.5 1T 약 1.5배 향상됐다고 제시했다. OpenAI는 연말까지 자사 컴퓨팅 인프라 내에서 소규모로 Jalapeño 배포를 시작하고, 본격 대량 배포는 2027년이라고 밝혔다."
+    },
+    {
+      "title": "OpenAI's Jalapeño chip is built for fast inference at scale, benchmarks show",
+      "url": "https://techcrunch.com/2026/08/25/openais-jalapeno-chip-is-built-for-fast-inference-at-scale-benchmarks-show/",
+      "host": "techcrunch.com",
+      "tier": "press",
+      "kind": "news",
+      "body": "TechCrunch가 2026년 8월 25일 보도한 기사로, OpenAI가 Hot Chips 컨퍼런스에서 Jalapeño 칩의 첫 벤치마크 결과를 공개했다고 전한다. SemiAnalysis의 InferenceX 벤치마크에서 사용자당 토큰 처리량과 킬로와트당 처리량 모두 현재 상용 최고 사양 추론 프로세서를 웃돌았다고 전했다. OpenAI 하드웨어 책임자가 '기존 기술 대비 상당한 성능 향상'이라고 언급했으며, 데이터 이동·통신 지연 최소화를 위해 Broadcom과 공동 설계했다고 설명한다. 다만 Jalapeño 본격 배포 시점(2026년 말 소량, 2027년 대량)까지는 경쟁사 기술도 발전할 것이라는 점을 균형 있게 지적했다."
+    },
+    {
+      "title": "Alibaba releases Qwen3.8-Flash-Next, targeting \"ultimate cost efficiency\"",
+      "url": "https://the-decoder.com/alibaba-releases-qwen3-8-flash-next-targeting-ultimate-cost-efficiency/",
+      "host": "the-decoder.com",
+      "tier": "press",
+      "kind": "release",
+      "body": "the-decoder가 2026년 8월 26일 보도한 기사로, 알리바바 Qwen팀이 차세대 Qwen4 아키텍처를 미리 보여주는 오픈웨이트 멀티모달 모델 'Qwen3.8-Flash-Next'를 공개했다고 전한다. 총 파라미터 1,250억 개 중 토큰당 60억 개만 활성화하는 MoE(전문가 혼합) 구조이며, 510억 파라미터 규모의 새로운 N-gram 임베딩 레이어를 결합했다. 기본 컨텍스트는 262,144 토큰이며 YaRN 기법으로 100만 토큰까지 확장 가능하다. 가격은 입력 100만 토큰당 $0.16, 출력 $0.47로 책정됐고, Qwen3.8-Plus 대비 약 9분의 1 훈련 비용으로 더 나은 성능을 냈다고 알리바바 측이 밝혔다고 전한다. 가중치는 GitHub·Hugging Face·ModelScope에 공개됐고 QwenCloud API로도 제공된다."
+    },
+    {
+      "title": "Expanding our support for scientists",
+      "url": "https://www.anthropic.com/news/expanding-support-for-scientists",
+      "host": "anthropic.com",
+      "tier": "official",
+      "kind": "news",
+      "body": "Anthropic이 2026년 8월 27일 공식 발표를 통해 전 세계 과학자에게 Claude 유료 시트 10,000개를 무료·할인 제공한다고 밝혔다. 학술기관 또는 비영리 연구기관 소속 책임연구자(PI)나 이에 준하는 자격이 있으면 신청 가능하며, 표준 시트는 무료, 사용량 5배인 프리미엄 시트는 월 $15로 1년간 가격이 고정된다. PI가 인증을 마치면 소속 연구실원을 플랜에 추가할 수 있다. 기존 생물과학 중심이던 AI for Science 크레딧 프로그램을 자연과학·수학·컴퓨터과학·공학 등 다른 과학 분야로 확대했으며, 리만 제타 함수 연구나 단백질 설계 등을 활용 사례로 제시했다. 향후 수개월에 걸쳐 초기 10,000석 이상으로 프로그램을 확대할 계획이라고 밝혔다."
+    },
+    {
+      "title": "Grok 4.6 on Microsoft Foundry",
+      "url": "https://x.ai/news/grok-4-6-microsoft-foundry",
+      "host": "x.ai",
+      "tier": "official",
+      "kind": "release",
+      "body": "xAI가 2026년 8월 26일 공식 발표를 통해 자사 최신 모델 Grok 4.6이 Microsoft Foundry Models를 통해 이용 가능해졌다고 밝혔다. 1.5조 규모 모델 패밀리를 기반으로 하며 500k 컨텍스트 윈도우, low·medium·high·xhigh 4단계로 조절 가능한 reasoning effort 옵션을 제공한다고 설명한다. 코딩·엔지니어링·오피스 생산성·리서치·추론 최적화 작업에 강점을 뒀다고 소개하며, Microsoft Foundry의 모델 탐색·평가·배포·거버넌스 통합 플랫폼을 통해 개발자가 접근할 수 있다고 밝혔다. 같은 주 Grok 4.6은 Google Enterprise Agent Platform에도 500k 컨텍스트·구성 가능한 reasoning 옵션으로 추가됐다."
+    }
+  ],
+  "facts": [
+    "Gemini 3.5 Transcribe: 2026-08-26 공개 미리보기 발표, WER 스트리밍 4.0%/비스트리밍 2.6%, 85개+ 언어 지원, 이전 모델(Chirp 3) 대비 전사 완료시간 70% 개선(발표 제시치)",
+    "Gemini Omni 1.1 Flash: 2026-08-27 발표, 장면 확장 10초 단위 최대 40초, 360p 초안 모드가 720p 대비 최대 60% 빠르고 비용 1/3, 4K 업스케일 초당 $0.30(발표 제시치)",
+    "Google Antigravity Teamwork: 2026-08-27 성과 발표, TCSBench 71% 달성·RISC-V 시뮬레이터 BOOM 대비 평균 오류율 0.71%·ParlayHash 처리량 2배(발표 제시치)",
+    "OpenAI Jalapeño 칩: 2026-08-25 Hot Chips에서 첫 벤치마크 공개, Nvidia GB200 대비 와트당 작업량 1.5~1.9배·지연시간 1.7~3.6배 개선(발표 제시치), 연말 소규모 배포·2027년 본격 배포",
+    "Alibaba Qwen3.8-Flash-Next: 2026-08-26 공개, 총 파라미터 1,250억(활성 60억), 262,144 토큰 기본 컨텍스트(YaRN으로 100만 토큰 확장), 입력 $0.16/출력 $0.47 (100만 토큰당)",
+    "Anthropic: 2026-08-27 과학자 대상 Claude 무료 시트 10,000개 개방, PI 인증 필요, 프리미엄 시트 월 $15·1년 고정가",
+    "xAI Grok 4.6: 2026-08-26 Microsoft Foundry Models 공개, 500k 컨텍스트 윈도우, reasoning effort 4단계(low/medium/high/xhigh)"
+  ],
+  "unverified": [
+    "시작 힌트에 있던 '「Agent Behavior」 평가 표준'이라는 이름의 구체적 발표를 8월 넷째~다섯째 주 범위에서 찾지 못했다. 관련은 있으나 시점이 이번 주가 아니거나(Anthropic 'Agentic Misalignment in Summer 2026' 연구는 2026-07-13 게시, METR Frontier Risk Report는 2026-05-19, AISI 사이버평가 사고보고서는 2026-07-28) 명칭이 다르다 — 무리하게 이번 주 뉴스로 포함하지 않았다.",
+    "Grok 4.6 Microsoft Foundry 발표문에는 토큰당 가격(입력/출력)이 명시돼 있지 않아 3rd-party 소스(juliangoldie.com)에서만 확인됨 — 원문 미확인이라 facts에는 넣지 않음",
+    "Gemini Omni 1.1 Flash 가격표(360p~4K 초당 요금)는 원문 이미지 형태로만 제공돼 블로그 발표문 내 표 형태 확인, 별도 요금 페이지 대조는 안 함"
+  ],
+  "cannotSay": [
+    "출처 없는 수치·날짜·제품명을 지어내지 말 것",
+    "단정·과장 금지, banned(ai-trend): 충격·대박·역대급·혁명·게임체인저·곧 대체될·무조건",
+    "발표 주체가 밝힌 값은 '발표 제시치'로 귀속"
+  ],
+  "internalLinkCandidates": [
+    "https://burning-go9me.tistory.com/343",
+    "https://burning-go9me.tistory.com/342",
+    "https://burning-go9me.tistory.com/306"
+  ]
+}
