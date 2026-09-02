@@ -3,10 +3,19 @@
 채널 [AI Engineer](https://www.youtube.com/@aiDotEngineer) 의 새 영상을 Gemini 로 자동 요약한 모음입니다.
 생성: `backend/scripts/youtube-summarize.mjs` (GitHub Actions `youtube-summary` 크론).
 
-총 **116개**.
+총 **125개**.
 
 | 발행일 | 제목 |
 |---|---|
+| 2026-09-01 | [Agent Spending Without Controls — Rodrigo Coelho & Pranav Maheshwari, Edge & Node](2026-09-01-ZyGMqdIpPoE.md) |
+| 2026-09-01 | [Why Your AI Agent Needs a Wallet: USDC and Nanopayments — Harshal Bhangale, Circle](2026-09-01-xKzU_3riL6s.md) |
+| 2026-09-01 | [Your Agent Just Authorized What?! — Jay Mok & Ben Coumes, Paypal](2026-09-01-vGn6N4-bxBY.md) |
+| 2026-09-01 | [Beyond the Lethal Trifecta: Agentic Commerce on the Open Internet — David Levine, Kiduna Club](2026-09-01-tE2z8-hqoLY.md) |
+| 2026-09-01 | [When AI Agents Pay and Sellers Monetize: Building x402 Apps on AWS — Anil Nadiminti, AWS](2026-09-01-qTZirYu9pr0.md) |
+| 2026-09-01 | [The End of the Static Screen: Architecting Intent-Driven UX — Gus Iwanaga, commercetools](2026-09-01-QrMcNe2jjt8.md) |
+| 2026-09-01 | [x402 isn’t good (yet) — Jan Curn, Apify](2026-09-01-h6mi88VrPtQ.md) |
+| 2026-09-01 | [Multimodal Collaborative Agents for Next-Gen Commerce — Nidhi Kaushik Vyas, Google DeepMind](2026-09-01-AhQpRalYlyg.md) |
+| 2026-09-01 | [Teaching agents to pay — Anna Spysz, Stripe](2026-09-01-A-zeQiYkmXk.md) |
 | 2026-08-30 | [SOTA Generative Media Panel — Dumitru Erhan, Shane Gu & Nicole Brichtova, Google DeepMind](2026-08-30-KLDdXOw6jIc.md) |
 | 2026-08-29 | [The Half Life of Agent Infrastructure — Ben Kus, Box](2026-08-29-sM1iYgz93HI.md) |
 | 2026-08-29 | [Tell the Robot What You Want — Sandhya Subramani, AWS](2026-08-29-S6aSoQ6_u5A.md) |
