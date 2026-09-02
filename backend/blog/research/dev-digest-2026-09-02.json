@@ -1,0 +1,82 @@
+{
+  "keyword": "개발 다이제스트 (2026-09-02) — 이번 주 개발/툴 소식",
+  "categoryId": "dev-digest",
+  "slug": "dev-digest-2026-09-02",
+  "searchedAt": "2026-09-03",
+  "origin": "Claude Code WebSearch/WebFetch 조사",
+  "note": "시드 파일(backend/blog/research/dev-digest/digest-2026-09-02.json)의 GeekNews 헤드라인 중 '개발·툴' 성격 6건을 골라 GeekNews 토픽 페이지(news.hada.io/topic?id=...)에서 원문 outbound URL을 확인한 뒤, 원문 자체를 WebFetch로 읽어 정리했다. 대형 AI 모델 출시 뉴스(Claude Fable/Mythos, TrueForge, ARC-AGI 소형 Transformer 등)는 조사 범위에서 제외했다. 이미 발행한 GitHub PR '46만건 문체' 글(/341, curl.se 아님·별개 주제)과 지난 다이제스트(/360=dev-digest-2026-08-28: cc-gemini-rewrite·superfile·Route 53 Files·Agent Behavior·Antigravity teamwork)에 나온 항목은 겹치지 않게 새로 골랐다. Threads·Yozm 링크는 사용하지 않았다(이번 조사에는 해당 소스가 후보에 없었음). '빵어전(AI 도트 타워디펜스)'과 'Show GN: Can I Remove This?'는 GeekNews·웹 검색 모두에서 원문 URL을 찾지 못해 제외했다(unverified 참고). 큐레이션 재검증(2026-09-03): curl로 6개 URL 전건 HTTP 200 확인 + 본문 텍스트에서 각 fact의 핵심어(수치·고유명사·용어) 일치 확인, 삭제된 출처 없음. facts/unverified 재검토 결과 재분류 대상 없음, 중복·모순 없음.",
+  "sources": [
+    {
+      "title": "클릭하우스(ClickHouse) – 기적의 데이터베이스 기술",
+      "url": "https://sungmooncho.com/2026/08/29/clickhouse/",
+      "host": "sungmooncho.com",
+      "tier": "official",
+      "kind": "analysis",
+      "body": "ChartMetric 창업자 조성문이 2026-08-29 자신의 블로그에 올린 글. 고객사 ChartMogul이 방대한 시계열 데이터에서도 어떤 필터를 적용하든 거의 실시간으로 최신 숫자를 보여주는 걸 보고 창업자 Nick에게 비결을 물었더니 'Snowflake 대신 ClickHouse를 쓴다'는 답을 들었다는 일화로 시작한다. 저자의 엔지니어가 맥북에 ClickHouse를 설치하고 약 10억 개 행을 입력한 뒤 인덱싱 없이 'SELECT … GROUP BY … ORDER BY' 쿼리를 돌렸을 때 '엔터를 치는 순간 답이 나왔다'고 적었다. ClickHouse가 빠른 이유로 컬럼 단위 저장·벡터화 처리·병렬 처리·희소 기본 인덱스 4가지를 들며 '물리 법칙을 어긴 마법이 아니라 불필요한 읽기와 CPU 작업을 줄인 결과'라고 강조한다. 현재 저자 회사는 전체 데이터의 거의 절반을 ClickHouse로 처리 중이며 나머지도 계속 이전하고 있다고 밝혔다."
+    },
+    {
+      "title": "스마트폰 없이도 결제하기 — 교내 매점에 지문인식 결제 시스템을 직접 만들어 배포한 이야기",
+      "url": "https://yeonfish.dev/posts/fingerprint_payment/1_v1/",
+      "host": "yeonfish.dev",
+      "tier": "official",
+      "kind": "maker",
+      "body": "개발자 yeonfish6040이 자신의 블로그에 올린 시리즈(ep.1)의 첫 글. '2026학년도부터 초·중등교육법 제20조의5에 근거해서 교내에서 스마트폰을 못 쓰게 됐다'는 상황에서 기존 QR 기반 매점 결제(DIMIPAY, '우리 학교 매점 결제가 DIMIPAY로 돌아간다')가 막히자 지문인식 결제 단말을 직접 만들어 배포했다. V1 하드웨어는 결제용 HI-LINK ZW0608(유효면적 12.05×12.05mm²)·등록용 ZKTeco LIVE20R(15.24×20.32mm²) 지문센서, nRF54L15 MCU(BLE 통신), iPad 키오스크로 구성했고 센서-MCU는 UART로 연결했다. V1 평균 인증 시간은 5.8초로 요구치인 2초를 크게 넘었고, 시간 분해 결과 UART 업로드 구간이 3.8초를 차지해 병목으로 지목됐다. 2026년 5월 한 달간 매점 전체 결제 7,454건 중 3,199건(약 43%)이 지문인식으로 이뤄졌다. 다음 편(하드웨어 개선편, /posts/fingerprint_payment/2_hardware/)에서는 V2 요구조건에 '12MHz 이상의 SPI 통신을 지원하는 지문센서'가 추가됐다고 밝혀, UART에서 SPI로 인터페이스를 바꿨음을 확인할 수 있다."
+    },
+    {
+      "title": "Is Minifying CSS Necessary? (CSS 축소는 정말 필요한가?, 2023)",
+      "url": "https://shivjm.blog/is-minifying-css-necessary/",
+      "host": "shivjm.blog",
+      "tier": "data",
+      "kind": "analysis",
+      "body": "Shiv J.M.이 2023-09-08 자신의 블로그에 올린 실측 글(GeekNews에는 2026-09-02 재조명 게재). 저자는 CSS 최소화(공백·주석 제거)가 'gzip·Brotli 압축만으로도 충분해 실익이 거의 없다'고 주장하며 두 가지 실험을 제시한다. 첫째, 자체 제작 도구로 10,000~100,000개 선언 블록을 가진 스타일시트를 만들어 파싱 시간을 쟀더니 10,000블록은 9~10ms, 100,000블록은 95~105ms로 공백 유무와 무관했다. 둘째, WebPageTest로 대/소 CSS × 주석 유무 × 최소화 여부 8가지 시나리오를 렌더링까지 측정했더니 가장 큰 차이는 1,000블록 시트에서 54ms였다. 파일 크기 예시로 Bootstrap CSS가 최소화 전 147KB, gzip만 적용 22KB, 최소화+gzip 20KB로 차이가 2KB에 불과했다. 결론은 '거대 기업이 아닌 이상 표준 압축으로 충분하고, 최소화는 가독성만 해친다'는 것."
+    },
+    {
+      "title": "a CVE dispute (curl의 CVE 발급 여부를 둘러싼 분쟁)",
+      "url": "https://daniel.haxx.se/blog/2026/06/24/a-cve-dispute/",
+      "host": "daniel.haxx.se",
+      "tier": "official",
+      "kind": "dispute",
+      "body": "curl 프로젝트 리드 Daniel Stenberg가 2026-06-24 자신의 공식 블로그에 올린 글. curl은 CNA(CVE 발급 권한 기관)로서 자체적으로 CVE 부여 여부를 판단하는데, 한 신고자가 호스트명 검증 버그(점(.)으로 시작하는 이름이 '*.example.com' 와일드카드와 잘못 매칭되는 문제, 2025-12-08에 이미 수정됨)에 CVE 발급을 요청했으나 curl 보안팀이 'DNS상 점으로 시작하는 이름은 불법이라 실공격이 사실상 불가능'하다며 거절했다. 신고자가 MITRE에 상급 심사를 요청해 2026-02-10 첫 이의제기, 2026-05-28과 06-15 두 차례 재문의가 이어졌고, 2026-06-24 MITRE가 최종적으로 curl의 판단(CVE 미할당)을 지지하며 분쟁이 종료됐다. curl이 CNA가 된 이후 겪은 첫 CVE 분쟁 사례라고 저자는 밝힌다."
+    },
+    {
+      "title": "Google removes uBlock Origin from Chrome Web Store in final Manifest V2 purge",
+      "url": "https://cyberinsider.com/google-removes-ublock-origin-from-chrome-web-store-in-final-manifest-v2-purge/",
+      "host": "cyberinsider.com",
+      "tier": "press",
+      "kind": "policy",
+      "body": "2026-08-31 Google이 Chrome 웹 스토어에서 남아있던 모든 Manifest V2(MV2) 확장 프로그램을 제거했고 uBlock Origin도 함께 삭제됐다고 보도한다. uBlock Origin 1.74가 Chrome 웹 스토어에 올라간 마지막 안정 버전으로 남게 됐다. Chrome 138 이전 버전에서는 이미 설치된 MV2 확장이 계속 동작하지만 업데이트를 받지 못하고, Chrome 139부터는 MV2 확장이 완전히 미지원(비활성화)된다. Google은 'Manifest V3이 보안·개인정보 보호·성능을 개선하며 확장이 접근·수정할 수 있는 범위를 더 엄격히 제한한다'는 입장을 밝혔다. 대안으로 Firefox는 MV2와 uBlock Origin을 계속 지원하고, Brave는 uBlock Origin을 자체 호스팅해 설정에서 켤 수 있으며, Chrome 사용자는 기능이 축소된 uBlock Origin Lite를 쓸 수 있다고 전한다."
+    },
+    {
+      "title": "Prela tutorial (11줄 코드로 만드는 더 나은 SQL)",
+      "url": "https://prela-lang.org/tutorial/",
+      "host": "prela-lang.org",
+      "tier": "official",
+      "kind": "release",
+      "body": "UCLA RePL(Relational Programming Languages) 연구실이 개발 중인 쿼리 언어 Prela의 공식 튜토리얼 페이지. 핵심 아이디어는 모든 테이블을 두 개의 열로만 이뤄진 '이진 관계(binary relation)'로 표현해, 함수 합성처럼 관계를 이어붙이는 방식으로 쿼리를 짠다는 것이다. 튜토리얼은 SQL로 20줄 넘게 필요한 쿼리(예: 미국 회사가 제작하고 캐릭터 이름이 제목에 들어간 영화 찾기)를 Prela로는 'movie.where(company.s(country).eq(\"[us]\") & keyword.eq(\"character-name-in-title\")).select(title & cast.s(person).s(alias).s(text))'처럼 몇 줄로 줄일 수 있다고 제시한다. 문서는 이 장난감 버전 구현을 Python으로 함께 소개한다."
+    }
+  ],
+  "facts": [
+    "sungmooncho.com(2026-08-29, ChartMetric 창업자 조성문): 엔지니어가 맥북에 ClickHouse로 약 10억 행을 입력, 인덱싱 없이 GROUP BY·ORDER BY 쿼리가 엔터를 치는 즉시 응답했고 회사는 현재 전체 데이터의 거의 절반을 ClickHouse로 처리 중.",
+    "yeonfish.dev 지문결제 프로젝트: 2026년 5월 한 달간 매점 전체 결제 7,454건 중 3,199건(약 43%)이 지문인식으로 결제됐고, V1 평균 인증시간 5.8초(요구치 2초)에서 UART 업로드 구간이 3.8초를 차지해 병목이었다.",
+    "yeonfish.dev V2 개선편: 요구조건에 '12MHz 이상 SPI 통신 지원 지문센서'가 추가돼 V1의 UART 인터페이스에서 SPI로 전환됨을 확인.",
+    "shivjm.blog(2023-09-08, GeekNews 2026-09-02 재조명): Bootstrap CSS 147KB → gzip만 22KB → 최소화+gzip 20KB(차이 2KB), 100,000개 선언 블록 파싱시간 95~105ms(공백 유무 무관), WebPageTest 최대 렌더링 차이 54ms(1,000블록 시트).",
+    "daniel.haxx.se(curl 리드 Daniel Stenberg, 2026-06-24): 호스트명 와일드카드 매칭 버그(2025-12-08 수정)의 CVE 발급을 두고 신고자가 2026-02-10 MITRE에 첫 이의제기, 05-28·06-15 재문의를 거쳐 06-24 MITRE가 curl의 'CVE 미할당' 판단을 최종 지지.",
+    "cyberinsider.com: 2026-08-31 Google이 Chrome 웹 스토어에서 모든 MV2 확장을 제거하며 uBlock Origin 1.74가 마지막 안정 버전으로 남았고, Chrome 139부터 MV2 확장은 완전 미지원.",
+    "prela-lang.org(UCLA RePL 연구실): 모든 테이블을 두 열짜리 '이진 관계'로 표현하는 쿼리 언어 Prela로, SQL 20줄 이상 쿼리를 몇 줄로 줄이는 예시 튜토리얼을 공식 제공."
+  ],
+  "unverified": [
+    "'Show GN: 빵어전 - AI와 함께 만든 세로형 도트 타워 디펜스'와 'Show GN: Can I Remove This? – JS 의존성 제거 Agent Skill'의 원문 URL — GeekNews·웹 검색 모두에서 outbound 링크를 찾지 못해 제외",
+    "지문결제 프로젝트의 학교명 — 본문은 '우리 학교'로만 지칭하고 결제시스템명 'DIMIPAY'만 확인됨, 학교명 자체는 본문에 명시되지 않음",
+    "지문결제 V2의 최종 인증시간 수치와 SourceAFIS 알고리즘 채택 여부 — 시리즈 2편(하드웨어)까지는 확인했으나 수치 확정은 이후 편(펌웨어편 등)에 있을 수 있어 이번 조사 범위에서는 미확인",
+    "Prela 쿼리 언어의 정식 출시일·버전·라이선스 정보"
+  ],
+  "cannotSay": [
+    "출처 없는 수치·제품명 창작 금지",
+    "단정·과장 금지 banned:충격·대박·역대급·혁명·게임체인저·곧 대체될·무조건",
+    "발표/시드 제시치로 귀속"
+  ],
+  "internalLinkCandidates": [
+    "https://burning-go9me.tistory.com/360",
+    "https://burning-go9me.tistory.com/359"
+  ]
+}

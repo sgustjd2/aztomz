@@ -1,0 +1,376 @@
+{
+  "collectedAt": "2026-09-02",
+  "days": 3,
+  "results": {
+    "geeknews": {
+      "source": "geeknews",
+      "fetchedOk": true,
+      "sourceUrl": "https://news.hada.io/rss/news",
+      "items": [
+        {
+          "title": "Show GN: 빵어전 - AI와 함께 만든 세로형 도트 타워 디펜스",
+          "url": "",
+          "date": "2026-09-02T10:54:11.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "클릭하우스(ClickHouse) – 기적의 데이터베이스 기술",
+          "url": "",
+          "date": "2026-09-02T08:06:46.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Show GN: 스마트폰 없이도 결제하기 — 교내 매점에 지문인식 결제 시스템을 직접 만들어 배포한 이야기",
+          "url": "",
+          "date": "2026-09-02T07:48:57.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "CSS 축소는 정말 필요한가? (2023)",
+          "url": "",
+          "date": "2026-09-02T06:01:21.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "소비자 핀테크의 언번들링 - 금융상품을 묶는 앱에서 모든 계좌를 관리하는 AI 에이전트로",
+          "url": "",
+          "date": "2026-09-02T03:31:44.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "평균만으로는 충분하지 않다, 딥테크 스타트업을 움직이는 운영체제 [유튜브]",
+          "url": "",
+          "date": "2026-09-02T02:06:01.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Uber 규모의 소프트웨어 팩토리를 효율적으로 운영하는 법",
+          "url": "",
+          "date": "2026-09-02T01:15:02.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "에이전틱 스킬 감쇠 : 숙련은 여전히 반복에서 나온다",
+          "url": "",
+          "date": "2026-09-02T01:05:02.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Firefox를 놓지 마라",
+          "url": "",
+          "date": "2026-09-02T00:33:13.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "TrueForge - LLM을 실제 에이전트로 실행하는 오픈소스 하네스",
+          "url": "",
+          "date": "2026-09-02T00:30:03.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "ChatGPT/Codex 앱, macOS 런타임에 헤드리스 LibreOffice 포함",
+          "url": "",
+          "date": "2026-09-02T00:19:46.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "iOS용 Firefox, 선택형 광고 차단 기능 도입",
+          "url": "",
+          "date": "2026-09-02T00:17:30.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "에이전트 메모리는 파이프라인이 아니라 파일 형식이어야 한다",
+          "url": "",
+          "date": "2026-09-02T00:15:06.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Ed Zitron의 AI 회의론 예측은 얼마나 정확했나?",
+          "url": "",
+          "date": "2026-09-02T00:09:19.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "Janet 1.42.0",
+          "url": "",
+          "date": "2026-09-02T00:09:17.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "좋아, 내 텍스트 편집기는 직접 만들겠다",
+          "url": "",
+          "date": "2026-09-02T00:06:17.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Claude Fable 5.1 과 Mythos 5.1 공개",
+          "url": "",
+          "date": "2026-09-01T19:38:00.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "Play Store의 AuroraStore 차단으로 GrapheneOS 사용자 피해",
+          "url": "",
+          "date": "2026-09-01T18:33:07.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "ChatGPT Work 도구와 스킬 레퍼런스",
+          "url": "",
+          "date": "2026-09-01T17:44:21.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "67센트로 1.5시간 학습한 소형 Transformer, ARC-AGI-1에서 여러 LLM을 앞서다",
+          "url": "",
+          "date": "2026-09-01T16:44:07.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "방문한 화장실을 날짜와 장소로 모은 아카이브",
+          "url": "",
+          "date": "2026-09-01T16:41:07.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Darling - Linux에서 macOS 소프트웨어 실행하기",
+          "url": "",
+          "date": "2026-09-01T15:32:38.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Show GN: Booova - 당신의 책 한 권을 다 써주는 AI Book Agent",
+          "url": "",
+          "date": "2026-09-01T14:28:26.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "사이보그가 되지 않기 위하여: LLM의 말투가 내 생각이 되지 않게 하기",
+          "url": "",
+          "date": "2026-09-01T14:03:33.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "미루기 연구의 영향력 있는 실험에서 발견된 데이터 조작 증거",
+          "url": "",
+          "date": "2026-09-01T13:41:22.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "AnkiDroid: Google Play가 더 이상 Open Collective 후원 링크를 허용하지 않음",
+          "url": "",
+          "date": "2026-09-01T13:38:22.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Show GN: Can I Remove This? – JS 의존성 제거를 검토하는 Agent Skill",
+          "url": "",
+          "date": "2026-09-01T12:59:53.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "GPU World: 모두가 GPU를 한 대씩 쓰는 미래 공모전",
+          "url": "",
+          "date": "2026-09-01T11:33:06.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "m4로 OpenBSD httpd 설정의 반복 줄이기",
+          "url": "",
+          "date": "2026-09-01T10:04:14.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Fastpotify - 브라우저 엔진 없이 1초 안에 실행되는 Spotify 클라이언트",
+          "url": "",
+          "date": "2026-09-01T08:32:40.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "10년 동안 축적된 12TB 이상의 스팀 데이터가 외부로 유출되었습니다.",
+          "url": "",
+          "date": "2026-09-01T07:13:33.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Codex의 20X는 주간 사용량도 실제 20배, Claude는 5시간 한도만 20배",
+          "url": "",
+          "date": "2026-09-01T06:48:04.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "Grok Bot으로 운영하는 엔지니어링 조직",
+          "url": "",
+          "date": "2026-09-01T05:25:26.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Kubernetes에서 Java JVM의 CPU·메모리 Request와 Limit",
+          "url": "",
+          "date": "2026-09-01T05:00:49.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "국토부, 테슬라 감독형 FSD는 국내 기준에 부적합, 미국산은 FTA로 예외",
+          "url": "",
+          "date": "2026-09-01T04:41:57.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "단일 HTML 파일로 만든 걸어 다니는 ASCII 사이버펑크 도시 [비디오]",
+          "url": "",
+          "date": "2026-09-01T04:32:13.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "테렌스 타오가 설명하는 수학의 6가지 필수 개념 [영상]",
+          "url": "",
+          "date": "2026-09-01T03:39:04.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Show GN: 허니 펄스 - 꿀 채집 로그라이크 게임 (Flutter Flame)",
+          "url": "",
+          "date": "2026-09-01T02:53:43.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "포스트 AI 데이터 스택의 형태와 사용감",
+          "url": "",
+          "date": "2026-09-01T01:51:50.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "AI 칩 아키텍처",
+          "url": "",
+          "date": "2026-09-01T01:45:19.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "미군 매점 냉동고가 해킹당한 것 같다",
+          "url": "",
+          "date": "2026-09-01T01:36:31.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Hister - 방문한 웹페이지와 로컬 파일을 다시 찾는 개인 검색엔진",
+          "url": "",
+          "date": "2026-09-01T00:40:02.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Starboard - macOS Dock 옆에 항상 붙어 있는 터미널",
+          "url": "",
+          "date": "2026-09-01T00:30:02.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "11줄 코드로 만드는 더 나은 SQL",
+          "url": "",
+          "date": "2026-09-01T00:19:59.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "조직이 커질수록 일이 느려지는 이유, 조정의 역풍 [171p 슬라이드]",
+          "url": "",
+          "date": "2026-09-01T00:19:47.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "OpenClaw 2.0 출시, 설치부터 메모리와 브라우저 제어까지 전면 개편",
+          "url": "",
+          "date": "2026-09-01T00:17:35.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "VibeCoded AI-Slop License v1.0 - 만든 사람도 읽지 않은 코드를 위해",
+          "url": "",
+          "date": "2026-09-01T00:16:59.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "curl의 CVE 발급 여부를 둘러싼 분쟁",
+          "url": "",
+          "date": "2026-09-01T00:13:59.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "학회에서 목격한 터무니없는 AI 사용: 질의응답까지 AI에 맡긴 발표자들",
+          "url": "",
+          "date": "2026-09-01T00:10:59.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "Google, Chrome 웹 스토어에서 uBlock Origin 등 모든 MV2 확장 프로그램 삭제",
+          "url": "",
+          "date": "2026-08-31T23:32:43.000Z",
+          "aiRelated": false
+        }
+      ],
+      "note": "GeekNews Atom 피드에서 최근 3일 항목. aiRelated=true 는 제목 키워드 기준(본문은 조사 단계에서 확인)."
+    },
+    "inpa": {
+      "source": "inpa",
+      "fetchedOk": true,
+      "sourceUrl": "https://inpa.tistory.com/rss",
+      "items": [],
+      "note": "최근 3일 이내 작성된 글만. 날짜 없는 항목은 제외. 0건이면 어제·오늘 새 글이 없다는 뜻."
+    },
+    "goddaehee": {
+      "source": "goddaehee",
+      "fetchedOk": true,
+      "sourceUrl": "https://goddaehee.tistory.com/rss",
+      "items": [
+        {
+          "title": "UI/UX Pro Max 사용법 - skills 설치부터 구조&middot;사용법&middot;커뮤니티 반응 정리(UI/UX Pro Max 보안&middot;설치&middot;사용법)",
+          "url": "https://goddaehee.tistory.com/639",
+          "date": "2026-09-01T16:23:54.000Z"
+        },
+        {
+          "title": "Claude Academy 시작하기 : 무료 강의 목록과 추천 학습 순서(클로드 무료 강의 - 어디까지 진짜 무료일까?)",
+          "url": "https://goddaehee.tistory.com/638",
+          "date": "2026-08-31T09:00:41.000Z"
+        },
+        {
+          "title": "Caveman Skill 사용법: 답변 압축, 토큰 절감 검증, 설치 가이드와 커뮤니티 평가(정말 토큰을 줄일까? - 짧은 답변의 장점과 숨은 비용)",
+          "url": "https://goddaehee.tistory.com/637",
+          "date": "2026-08-30T12:22:59.000Z"
+        }
+      ],
+      "note": "최근 3일 이내 작성된 글만. 날짜 없는 항목은 제외. 0건이면 어제·오늘 새 글이 없다는 뜻."
+    },
+    "github": {
+      "source": "github",
+      "fetchedOk": true,
+      "sourceUrl": "https://github.com/trending?since=weekly",
+      "items": [
+        {
+          "repo": "tt-a1i/archify",
+          "url": "https://github.com/tt-a1i/archify",
+          "description": "Agent skill for beautiful, verifiable architecture, workflow, sequence, data-flow, and lifecycle diagrams—self-contained HTML with motion and crisp export.",
+          "starsThisWeek": 25469
+        },
+        {
+          "repo": "anthropics/claude-plugins-community",
+          "url": "https://github.com/anthropics/claude-plugins-community",
+          "description": "Community plugin marketplace for Claude Cowork and Claude Code. Read-only mirror — submit plugins at clau.de/plugin-directory-submission.",
+          "starsThisWeek": 1634
+        },
+        {
+          "repo": "cursor/plugins",
+          "url": "https://github.com/cursor/plugins",
+          "description": "Cursor plugin specification and official plugins",
+          "starsThisWeek": 1377
+        },
+        {
+          "repo": "punkpeye/awesome-mcp-servers",
+          "url": "https://github.com/punkpeye/awesome-mcp-servers",
+          "description": "A collection of MCP servers.",
+          "starsThisWeek": 919
+        }
+      ],
+      "note": "주간 급상승 레포 중 plugin/extension/skill/cli/mcp 등 도구 성격 키워드가 잡힌 것만. dev-trending 과 겹치는 항목은 조사 단계에서 제외한다."
+    }
+  }
+}
