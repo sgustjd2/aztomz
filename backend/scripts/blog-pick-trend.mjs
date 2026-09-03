@@ -40,6 +40,43 @@ const flag = (n) => (argv.find((a) => a.startsWith(`--${n}=`)) || '').split('=')
 /* 끝물은 블로그로 쓰지 않는다 — 지금 검색될 이유가 없는 주제다. */
 const DYING = /하락|끝물|한물/;
 
+/* 신선도 — '피크'는 가장 빨리 식는 단계라 분석이 오래되면 현재형("지금 줄 서는 중")이 거짓이 된다.
+   (pistachio-seongsu: collectedAt 06-15 데이터로 09-02 "지금 피크" 발행 → 2026-09-03 감사 지적). */
+const PEAK = /피크/;
+const STALE_PEAK_DAYS = 21;   // 피크인데 이만큼 지났으면 현재형 금지·과거 시제 강제
+const STALE_ANY_DAYS = 45;    // 어떤 트렌드든 이 이상이면 '묵은 데이터' 경고
+const daysSince = (d) => {
+  if (!d) return Infinity;
+  const ms = Date.now() - new Date(String(d).slice(0, 10) + 'T00:00:00Z').getTime();
+  return Number.isFinite(ms) ? Math.floor(ms / 86400000) : Infinity;
+};
+
+/* 본문을 읽을 수 없는 소셜 검색/해시태그/프로필/릴스 URL — '어디서 봤나' 안내는 되지만
+   어원·사실의 '근거'로 쓰면 안 된다(nanri-zabeth: tiktok discover 링크 1개로 어원 단정 사고).
+   dev-digest fetcher가 Threads/Yozm를 배제하듯, hermes 경로에서도 같은 블랙리스트를 적용한다. */
+const UNREADABLE_SRC = /(tiktok\.com\/(discover|tag|explore|foryou|@)|instagram\.com\/(explore|p\/|reel\/|reels\/|stories\/)|threads\.(net|com)\/)/i;
+const readableSource = (url) => { try { return !UNREADABLE_SRC.test(String(url)); } catch { return false; } };
+
+/* 데이터가 실제로 얼마나 묵었나 — collectedAt(현실을 관찰한 시점)과 analyzedAt(점수 매긴 시점) 중
+   더 오래된 쪽. pistachio 처럼 collectedAt 06-15 / analyzedAt 08-16 이면 80일로 잡아야 '피크' 판정이
+   묵었음을 안다(analyzedAt만 보면 18일로 신선해 보인다). 둘 다 없으면 -1(경고 안 함). */
+const ageOf = (t) => {
+  const a = daysSince(t.analyzedAt), c = daysSince(t.collectedAt);
+  return Math.max(a === Infinity ? -1 : a, c === Infinity ? -1 : c);
+};
+
+/* 선정 시 붙이는 신선도·근거 경고(하드 제외는 아님 — --id 로 명시 선택은 허용하되 크게 알린다). */
+const flagsFor = (t) => {
+  const f = [];
+  const age = ageOf(t);
+  if (PEAK.test(t.stage || '') && age > STALE_PEAK_DAYS) f.push(`피크인데 데이터 ${age}일 전 — 현재형 금지`);
+  else if (age > STALE_ANY_DAYS) f.push(`묵은 데이터(${age}일 전)`);
+  const realSrc = (t.src || []).filter(([, url]) => readableSource(url)).length;
+  if (realSrc === 0) f.push('읽을 수 있는 출처 0');
+  else if (realSrc < 2) f.push('출처 1개(표본 얇음)');
+  return f;
+};
+
 /* 트렌드 cat → 블로그 카테고리 프로파일.
    신뢰분석(광고 의심도·후기 신뢰도 점수가 있는 것)은 성격이 완전히 달라 따로 간다. */
 const catProfile = (t) => (t.type === '신뢰분석' ? 'hangeut-trust' : 'hangeut-trend');
@@ -95,9 +132,14 @@ const main = async () => {
 
   if (has('list')) {
     console.log(`블로그 가능 ${candidates.length}건 (전체 ${trends.length}건 중):`);
-    byFresh.slice(0, 20).forEach((t) => console.log(
-      `  ${t.analyzedAt} | ${t.type} | ${t.cat} | ${t.id} | ${t.title}`));
+    byFresh.slice(0, 20).forEach((t) => {
+      const f = flagsFor(t);
+      console.log(`  ${t.analyzedAt} | ${t.type} | ${t.cat} | ${t.id} | ${t.title}`
+        + (f.length ? `  ⚠ ${f.join('; ')}` : ''));
+    });
     if (candidates.length > 20) console.log(`  ... 외 ${candidates.length - 20}건`);
+    const clean = candidates.filter((t) => !flagsFor(t).length).length;
+    console.log(`\n  (경고 없는 후보 ${clean}건 — 우선 사용 권장. ⚠ 붙은 건 신선도/근거 약함)`);
     return;
   }
 
@@ -110,12 +152,16 @@ const main = async () => {
       process.exit(1);
     }
   } else {
-    // 요일 선호 분야 → 없으면 최신순 전체에서
+    // 요일 선호 분야 → 없으면 최신순 전체에서. 경고(신선도·근거) 없는 후보를 먼저 쓴다.
     const pref = DOW_PREF[new Date().getDay()];
-    picked = byFresh.find((t) => pref.includes(t.cat)) || byFresh[0];
+    const clean = byFresh.filter((t) => !flagsFor(t).length);
+    const pool = clean.length ? clean : byFresh;
+    picked = pool.find((t) => pref.includes(t.cat)) || pool[0];
   }
 
   const profile = catProfile(picked);
+  const pickedFlags = flagsFor(picked);
+  const stalePeak = PEAK.test(picked.stage || '') && ageOf(picked) > STALE_PEAK_DAYS;
   const detailUrl = `${SITE}/trend.html?id=${encodeURIComponent(picked.id)}`;
 
   /* 조사 파일 — 파이프라인(blog-writer/blog-assemble)이 그대로 쓴다.
@@ -154,7 +200,7 @@ const main = async () => {
       detailUrl,
     },
     sources: [
-      ...(picked.src || []).map(([name, url]) => ({
+      ...(picked.src || []).filter(([, url]) => readableSource(url)).map(([name, url]) => ({
         title: String(name || '출처'), url: String(url),
         host: (() => { try { return new URL(String(url)).host; } catch { return ''; } })(),
         tier: 'press',
@@ -181,13 +227,15 @@ const main = async () => {
       '후기 신뢰도(믿을 만한가) 와 만족도(좋은가) 를 섞어 쓰지 말 것 — 별개 축이다.',
       'trend 필드에 없는 수치·날짜·가게·인물을 새로 만들지 말 것. 추가 검색도 하지 않는다.',
       `분석 기준일은 ${picked.analyzedAt || '미상'} 이다. "오늘 기준" 처럼 시점을 옮겨 쓰지 말 것.`,
+      ...(stalePeak ? [`⚠ 데이터가 ${ageOf(picked)}일 전이고 stage가 '${picked.stage}'다 — "지금 피크/줄 서는 중" 같은 현재형 금지. "8월 중순엔 피크였다"처럼 과거 시제로 쓰고, 지금은 식었을 수 있음을 밝혀라.`] : []),
     ],
   };
 
   if (has('dry')) {
     console.log(`· dry: ${picked.id} (${picked.type}/${picked.cat}) → ${profile}`);
     console.log(`  제목: ${picked.title}`);
-    console.log(`  출처 ${research.sources.length}개 · article ${(picked.article || []).length}블록`);
+    console.log(`  출처 ${research.sources.length}개(읽을 수 있는 것만) · article ${(picked.article || []).length}블록`);
+    if (pickedFlags.length) console.log(`  ⚠ ${pickedFlags.join('; ')}`);
     return;
   }
 
@@ -198,7 +246,8 @@ const main = async () => {
   console.log(`✓ 오늘의 주제: ${picked.title}`);
   console.log(`  id ${picked.id} · ${picked.type}/${picked.cat} · 분석일 ${picked.analyzedAt}`);
   console.log(`  카테고리 프로파일: ${profile}`);
-  console.log(`  출처 ${research.sources.length}개 · article ${(picked.article || []).length}블록`);
+  console.log(`  출처 ${research.sources.length}개(읽을 수 있는 것만) · article ${(picked.article || []).length}블록`);
+  if (pickedFlags.length) console.log(`  ⚠ 신선도/근거 경고: ${pickedFlags.join('; ')} — 집필 시 반드시 반영`);
   console.log(`  조사 파일: backend/blog/research/${picked.id}.json`);
   console.log(`  남은 후보 ${candidates.length - 1}건`);
   console.log(`\n  다음: 파이프라인으로 집필 → node backend/scripts/blog-assemble.mjs ${picked.id} --research=${picked.id}`);

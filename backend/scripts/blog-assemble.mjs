@@ -135,16 +135,38 @@ for (const id of embedIds) {
   if (!r || !r.ok) problems.push(`임베드 불가 영상: ${id} (oembed ${r ? r.status : '요청 실패'}) — 넣으면 '재생 없음'으로 뜬다`);
 }
 
+/* 트렌드 글(광고/신뢰 점수가 없는 type)인데 상세페이지 CTA 에서 "점수"를 보라고 안내하면,
+   독자가 링크를 타도 약속한 점수가 없다 — trend.html 은 신뢰분석이 아니면 '유행 단계' 박스만
+   렌더한다(clown/purple 실측 반려 2건). trend.html 링크가 걸린 문단에 '점수'가 있으면 막는다. */
+const tType = research?.trend?.type;
+const isTrend = tType && tType !== '신뢰분석'
+  && research?.trend?.ad == null && research?.trend?.trust == null;
+if (isTrend) {
+  for (const para of md.split(/\n{2,}/)) {
+    if (/trend\.html\?id=/.test(para) && /점수/.test(para)) {
+      problems.push('트렌드 글인데 상세페이지 CTA 에 "점수" 안내가 있다 — 트렌드엔 점수가 없다. "유행 단계와 한끗 판단"으로 고쳐라');
+      break;
+    }
+  }
+}
+
 if (problems.length) {
   console.error('✗ 조립 중단 — 기계검사 위반:');
   problems.forEach((p) => console.error(`   ✗ ${p}`));
   process.exit(1);
 }
 
+/* builtAt 이 오늘이 아니면 경고(하드코딩 실수로 어제 날짜가 박히는 사고가 반복됐다). 전날 초안을
+   다음날 올리는 정상 케이스도 있어 막지는 않고 알리기만 한다. */
+if (meta.builtAt && meta.builtAt !== new Date().toISOString().slice(0, 10)) {
+  console.warn(`  ⚠ meta.builtAt(${meta.builtAt}) 가 오늘이 아니다 — 의도한 게 아니면 고쳐라`);
+}
+
 const today = new Date().toISOString().slice(0, 10);
+/* 각주는 '작성일'만 남긴다 — 예전엔 "사실 확인이 안 된 항목은 본문에 그렇게 표시했습니다"를
+   늘 붙였는데, 정작 본문에 그런 표시가 없는 경우가 대부분이라 거짓 고지였다(반복 지적). */
 const html = '<!--COVER-->\n' + md2html(md)
-  + `\n<p style="font-size:.85em;color:#6b7280;margin-top:2em">${today} 작성 · `
-  + `사실 확인이 안 된 항목은 본문에 그렇게 표시했습니다.</p>\n`;
+  + `\n<p style="font-size:.85em;color:#6b7280;margin-top:2em">${today} 작성</p>\n`;
 
 await writeFile(join(outDir, `${slug}.html`), html, 'utf8');
 
