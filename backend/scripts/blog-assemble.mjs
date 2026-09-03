@@ -158,11 +158,11 @@ if (problems.length) {
 
 /* builtAt 이 오늘이 아니면 경고(하드코딩 실수로 어제 날짜가 박히는 사고가 반복됐다). 전날 초안을
    다음날 올리는 정상 케이스도 있어 막지는 않고 알리기만 한다. */
-if (meta.builtAt && meta.builtAt !== new Date().toISOString().slice(0, 10)) {
+if (meta.builtAt && meta.builtAt !== new Date().toLocaleDateString('en-CA')) {
   console.warn(`  ⚠ meta.builtAt(${meta.builtAt}) 가 오늘이 아니다 — 의도한 게 아니면 고쳐라`);
 }
 
-const today = new Date().toISOString().slice(0, 10);
+const today = new Date().toLocaleDateString('en-CA');  // 로컬(KST) 날짜 — toISOString(UTC)은 밤엔 하루 어긋난다
 /* 각주는 '작성일'만 남긴다 — 예전엔 "사실 확인이 안 된 항목은 본문에 그렇게 표시했습니다"를
    늘 붙였는데, 정작 본문에 그런 표시가 없는 경우가 대부분이라 거짓 고지였다(반복 지적). */
 const html = '<!--COVER-->\n' + md2html(md)

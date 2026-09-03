@@ -1,0 +1,195 @@
+{
+  "keyword": "떡의 화려한 변신, 피자설기",
+  "categoryId": "hangeut-trust",
+  "slug": "pizza-seolgi",
+  "searchedAt": "2026-09-03",
+  "origin": "hermes-trends",
+  "note": "Hermes 가 수집·분석하고 auto-build.mjs 가 출처까지 자동검증한 항목이다. 여기 있는 사실 밖으로 나가지 말 것 — 새로 검색해서 덧붙이지 않는다.",
+  "trend": {
+    "id": "pizza-seolgi",
+    "type": "신뢰분석",
+    "cat": "디저트",
+    "title": "떡의 화려한 변신, 피자설기",
+    "def": null,
+    "excerpt": "백설기 위에 피자 토핑을 얹은 '단짠' 조합으로 시장에서 입소문을 타기 시작한 퓨전 떡. 호기심을 자극하는 비주얼과 맛으로 SNS에서 빠르게 화제가 되고 있습니다.",
+    "pull": "피자인가, 떡인가? 상상초월 조합",
+    "verdict": "부평 시장에서 시작되어 SNS를 뜨겁게 달군 '피자설기'는 자생적으로 발생한 트렌드로 보입니다. 블로그 후기 대부분이 대가성 문구 없이 구체적인 경험을 담고 있어 신뢰도가 높습니다. '오픈런', '조기 품절' 등의 언급이 자주 보이는 만큼, 한번쯤 경험해 볼 만한 이색 디저트입니다.",
+    "stage": null,
+    "stageMsg": null,
+    "buzz": "화제성 중간",
+    "label": "믿고 먹어볼 만함",
+    "ad": 25,
+    "trust": 80,
+    "sat": "pos",
+    "satTxt": "긍정적",
+    "reasons": {
+      "ad": [
+        "자생적 트렌드에 가까움",
+        "대가성 문구 없는 순수 후기 다수"
+      ],
+      "trust": [
+        "'오픈런', '품절' 등 실제 경험 기반 후기",
+        "맛에 대한 구체적인 묘사",
+        "지역 시장에서 시작된 자발적 유행"
+      ],
+      "sat": [
+        "'단짠' 조합에 대한 긍정적 평가",
+        "호기심을 충족시키는 이색적인 맛"
+      ]
+    },
+    "recs": [
+      [
+        "새로운 조합을 즐긴다면",
+        "◎",
+        1
+      ],
+      [
+        "든든한 간식을 찾는다면",
+        "○",
+        1
+      ],
+      [
+        "전통 떡의 맛을 기대하면",
+        "✕",
+        0
+      ]
+    ],
+    "tags": [
+      "퓨전떡",
+      "시장맛집",
+      "단짠디저트",
+      "이색디저트"
+    ],
+    "article": [
+      [
+        "h",
+        "피자인가, 떡인가? 시장을 뒤흔든 이색 간식"
+      ],
+      [
+        "p",
+        "백설기 위에 짭짤한 피자 토핑을 올린 '피자설기'가 새로운 디저트 강자로 떠오르고 있습니다. 전통 간식인 떡과 대중적인 음식인 피자의 만남이라는 독특한 콘셉트로, 특히 젊은 세대의 호기심을 자극하며 SNS를 통해 빠르게 입소문을 탔습니다."
+      ],
+      [
+        "q",
+        "익숙한 듯 새로운 '단짠'의 조화가 인기 비결"
+      ],
+      [
+        "h",
+        "광고일까, 진짜일까?"
+      ],
+      [
+        "p",
+        "피자설기 열풍은 특정 프랜차이즈의 마케팅이 아닌, 부평 시장과 같은 지역 상권에서 자연스럽게 시작되었습니다. '오픈런 후기', '재료 소진' 등 실제 방문객들의 생생한 후기가 주를 이루고 있어 광고 가능성은 낮아 보입니다."
+      ],
+      [
+        "h",
+        "어디서 맛볼 수 있나?"
+      ],
+      [
+        "p",
+        "유행의 시작점인 인천 부평 시장의 떡집들부터 최근에는 잠실 등 대형 상권의 팝업 스토어까지, 점차 판매처가 확대되는 추세입니다. 떡집마다 조금씩 다른 레시피를 비교하며 맛보는 것도 재미있는 경험이 될 것입니다."
+      ],
+      [
+        "h",
+        "한끗 정리"
+      ],
+      [
+        "ul",
+        [
+          "든든한 한 끼 식사 대용으로도 충분",
+          "따뜻하게 데워 먹으면 치즈의 풍미가 살아남",
+          "아이들 간식으로도 인기 만점"
+        ]
+      ]
+    ],
+    "shops": [
+      {
+        "name": "풍년떡집",
+        "rep": "부평시장 피자설기 원조 맛집",
+        "area": "인천 부평",
+        "note": "피자설기 유행을 이끈 곳 중 하나로 알려짐",
+        "url": "https://blog.naver.com/PostView.naver?blogId=soaql1219&logNo=224366054990"
+      },
+      {
+        "name": "성심떡집",
+        "rep": "부평시장 피자설기 양대산맥",
+        "area": "인천 부평",
+        "note": "풍년떡집과 함께 피자설기로 유명한 곳",
+        "url": "https://blog.naver.com/PostView.naver?blogId=soaql1219&logNo=224366054990"
+      },
+      {
+        "name": "영도다리떡방",
+        "rep": "부산 3대 떡집의 팝업",
+        "area": "서울 잠실(팝업)",
+        "note": "최근 잠실 팝업에서 피자설기를 선보여 화제가 됨",
+        "url": "https://keyzard.cc/views/nb/LDc6Oi9sb2hoZWVtbWtsaGdoZm1tbWc"
+      }
+    ],
+    "prompt": null,
+    "pureKorean": null,
+    "example": null,
+    "video": null,
+    "collectedAt": "2026-08-17",
+    "analyzedAt": "2026-08-17",
+    "detailUrl": "https://az2mz.vercel.app/trend.html?id=pizza-seolgi"
+  },
+  "sources": [
+    {
+      "title": "네이버블로그(후기)",
+      "url": "https://blog.naver.com/PostView.naver?blogId=soaql1219&logNo=224366054990",
+      "host": "blog.naver.com",
+      "tier": "press",
+      "kind": "analysis",
+      "body": "Hermes 수집 시 auto-build.mjs 가 생존(404)·본문 관련성을 검증한 출처다. 본문을 여기 다시 담지 않는다 — 이 글은 trend 필드의 분석을 근거로 쓴다."
+    },
+    {
+      "title": "더쿠(커뮤니티 반응)",
+      "url": "https://theqoo.net/square/4312940332",
+      "host": "theqoo.net",
+      "tier": "press",
+      "kind": "analysis",
+      "body": "Hermes 수집 시 auto-build.mjs 가 생존(404)·본문 관련성을 검증한 출처다. 본문을 여기 다시 담지 않는다 — 이 글은 trend 필드의 분석을 근거로 쓴다."
+    },
+    {
+      "title": "다음뉴스(기사)",
+      "url": "https://v.daum.net/v/Wcpyd9b0Ga?f=p",
+      "host": "v.daum.net",
+      "tier": "press",
+      "kind": "analysis",
+      "body": "Hermes 수집 시 auto-build.mjs 가 생존(404)·본문 관련성을 검증한 출처다. 본문을 여기 다시 담지 않는다 — 이 글은 trend 필드의 분석을 근거로 쓴다."
+    },
+    {
+      "title": "가게 참고 — 풍년떡집",
+      "url": "https://blog.naver.com/PostView.naver?blogId=soaql1219&logNo=224366054990",
+      "host": "blog.naver.com",
+      "tier": "blog",
+      "kind": "shop",
+      "body": "풍년떡집(인천 부평) 참고 링크. 피자설기 유행을 이끈 곳 중 하나로 알려짐 어디서 파는지 안내용이지 점수의 근거가 아니다 — 분석 근거로 인용하지 말 것."
+    },
+    {
+      "title": "가게 참고 — 성심떡집",
+      "url": "https://blog.naver.com/PostView.naver?blogId=soaql1219&logNo=224366054990",
+      "host": "blog.naver.com",
+      "tier": "blog",
+      "kind": "shop",
+      "body": "성심떡집(인천 부평) 참고 링크. 풍년떡집과 함께 피자설기로 유명한 곳 어디서 파는지 안내용이지 점수의 근거가 아니다 — 분석 근거로 인용하지 말 것."
+    },
+    {
+      "title": "가게 참고 — 영도다리떡방",
+      "url": "https://keyzard.cc/views/nb/LDc6Oi9sb2hoZWVtbWtsaGdoZm1tbWc",
+      "host": "keyzard.cc",
+      "tier": "blog",
+      "kind": "shop",
+      "body": "영도다리떡방(서울 잠실(팝업)) 참고 링크. 최근 잠실 팝업에서 피자설기를 선보여 화제가 됨 어디서 파는지 안내용이지 점수의 근거가 아니다 — 분석 근거로 인용하지 말 것."
+    }
+  ],
+  "internalLinkCandidates": [
+    "https://az2mz.vercel.app/trend.html?id=pizza-seolgi"
+  ],
+  "cannotSay": [
+    "광고 의심도·후기 신뢰도는 추정치다. \"확실히 광고다\" 같은 확정 표현 금지.",
+    "후기 신뢰도(믿을 만한가) 와 만족도(좋은가) 를 섞어 쓰지 말 것 — 별개 축이다.",
+    "trend 필드에 없는 수치·날짜·가게·인물을 새로 만들지 말 것. 추가 검색도 하지 않는다.",
+    "분석 기준일은 2026-08-17 이다. \"오늘 기준\" 처럼 시점을 옮겨 쓰지 말 것."
+  ]
+}
