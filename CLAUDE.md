@@ -38,6 +38,7 @@
 | `blog-build.mjs <id>\|--latest` | **한끗** 트렌드 1건 → 티스토리용 HTML + 메타(`backend/out/blog/`). 커버는 자체 생성 카드. `--selftest` 있음 |
 | `post-build.mjs --category=<id>` | **다주제** 키워드 → 조사·초안·SEO·자가검수 → 같은 형식의 HTML+메타. `--research=<파일>`로 조사 결과 주입 · `--dry` |
 | `blog-assemble.mjs <slug>` | **에이전트 산출물 조립** — 마크다운 + 메타 → 발행용 HTML. URL 살균·임베드 검증(relatedVideos 포함). `--research=<파일>`로 조사파일-slug 분리 지원 |
+| `blog-selfreview.mjs <slug>` | **집필 직후 자체 피드백→반영** — `claude -p`가 초안을 냉정히 자기비평하고 실제 결함만 **외과적 find/replace**로 고쳐 넣은 뒤 재조립(전면 재작성 금지·드리프트 방지). blog-verify 앞 단계. `--dry`(제안만)·`--selftest` |
 | `blog-verify.mjs <id>` | **발행 전 최종 검증** — `claude -p`가 원본 왜곡·단정·지어낸 사실·저작권을 본다. 반려 시 exit 1. `--warn` |
 | `blog-publish.mjs <id>` | Playwright로 티스토리 자동 발행. `--login`(1회) · `--dry` · `--draft` · `--probe` · `--categories` · `--cover` |
 | `blog-feedback.mjs` | 노래 추천 피드백 → 선곡 기준 교훈 적립(다음 글에 주입). `--list` · `--good=` · `--bad=` · `--lesson=` |
@@ -250,8 +251,11 @@ Agent(
     `blog-publish.mjs`가 티스토리 CDN에 업로드한다(`<!--COVER-->` 마커 자리).
   · 발행 실패는 **비치명적** — trends.json 게시·배포는 이미 끝난 상태이므로 롤백하지 않고 경고만 남긴다.
   · 제목을 매번 같은 템플릿으로 찍지 않는다(양산글 신호 → 저품질·색인제외). `hangeut-blog` 스킬이 담당.
+  · **표준 흐름은 조사 → 집필 → `blog-selfreview` → `blog-verify` → 발행.** 집필 직후
+    `node backend/scripts/blog-selfreview.mjs <slug>` 로 **자체 피드백을 반영**한다(스스로 비평해 실제
+    결함만 외과적으로 고침 — 전면 재작성 금지, find/replace, 고친 뒤 재조립해 기계 게이트 재검).
   · **발행 전 `blog-verify.mjs` 를 반드시 통과시킨다.** `claude -p` 가 CLAUDE.md 철칙을 알고 검증한다
-    (원본 왜곡·추정치 단정·신뢰도/만족도 혼동·지어낸 사실·가사/이미지 저작권). 호출당 약 $0.2~0.4.
+    (원본 왜곡·추정치 단정·신뢰도/만족도 혼동·지어낸 사실·가사/이미지 저작권). selfreview·verify 각 호출당 약 $0.2~0.4.
 - **LLM 단독 생성 금지 — 조사가 먼저다.** 모르는 영역을 시키면 **전량 환각**이다
   (실측: 무명 J-POP 후보 8곡 전부 가짜 · 2026 AI 동향 출처 전부 가짜).
   · 음악 = 유튜브 검색으로 실존 곡을 먼저 모은다(`lib/youtube.mjs` `discoverSongs`).
