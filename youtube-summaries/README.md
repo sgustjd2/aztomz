@@ -3,10 +3,15 @@
 채널 [AI Engineer](https://www.youtube.com/@aiDotEngineer) 의 새 영상을 Gemini 로 자동 요약한 모음입니다.
 생성: `backend/scripts/youtube-summarize.mjs` (GitHub Actions `youtube-summary` 크론).
 
-총 **125개**.
+총 **130개**.
 
 | 발행일 | 제목 |
 |---|---|
+| 2026-09-03 | [From coding to Knowledge work agents — Karan Vaidya, Composio](2026-09-03-xxfMT-bPEmU.md) |
+| 2026-09-03 | [Tethered: Our Agents Are Us — Shu Fang, Two Sigma](2026-09-03-wCIYViPd4SU.md) |
+| 2026-09-03 | [Agents' next frontier: agent-to-agent and network effects — Jean-Denis Greze, Town](2026-09-03-REascnFlq_8.md) |
+| 2026-09-03 | [Everyone Gets A Software Company — Benjamin Guo, Zo Computer](2026-09-03-Qr15lGAGKpo.md) |
+| 2026-09-03 | [Your company brain will leak secrets: how we stopped it for big banks — Tanmai Gopal, PromptQL](2026-09-03-0uC6u0lJJl4.md) |
 | 2026-09-01 | [Agent Spending Without Controls — Rodrigo Coelho & Pranav Maheshwari, Edge & Node](2026-09-01-ZyGMqdIpPoE.md) |
 | 2026-09-01 | [Why Your AI Agent Needs a Wallet: USDC and Nanopayments — Harshal Bhangale, Circle](2026-09-01-xKzU_3riL6s.md) |
 | 2026-09-01 | [Your Agent Just Authorized What?! — Jay Mok & Ben Coumes, Paypal](2026-09-01-vGn6N4-bxBY.md) |
