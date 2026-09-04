@@ -1,0 +1,160 @@
+{
+  "keyword": "개발 다이제스트 (2026-09-05 주간) — 이번 주 개발/툴 소식",
+  "categoryId": "dev-digest",
+  "slug": "dev-digest-2026-09-05",
+  "searchedAt": "2026-09-05",
+  "origin": "Claude Code WebSearch/WebFetch",
+  "notes": "GitHub API·공식 블로그로 전 항목 재검증 완료(2026-09-05). 6개 GitHub 저장소는 실재하며 설명·라이선스·스타/포크 수가 조사 시점 원본과 오차 범위 내(며칠간 자연 증가분) 일치했다. zvec.org 공식 블로그도 실재 확인, 벤치마크 수치(SWE-QA-Bench·BrowseComp-Plus·Django 색인 30초) 전부 페이지 본문에서 직접 확인. 지난 글(/373, /360)과 키워드 중복 없음. 단, zvec-grep 기본 임베딩 모델명은 README('potion-retrieval-32m')와 공식 블로그('potion-code-16m') 표기가 서로 달라 이 글에서는 특정 모델명을 단정하지 않는다.",
+  "sources": [
+    {
+      "title": "DietrichGebert/ponytail — Makes your AI agent think like the laziest senior dev in the room",
+      "url": "https://github.com/DietrichGebert/ponytail",
+      "host": "github.com",
+      "tier": "official",
+      "body": "AI 코딩 에이전트(Claude Code·Codex·Copilot·Cursor·Windsurf 등 20여 개 도구)에 '가장 게으른 시니어 개발자처럼 생각하라'는 규칙 세트를 주입하는 오픈소스 스킬/플러그인. 재검증 시점(2026-09-05, GitHub API) 기준 스타 125,759개, 포크 6,760개, MIT 라이선스, 2026-06-12 생성. 핵심은 코드를 쓰기 전에 거치는 '판단 사다리'(존재 이유 확인 → 기존 코드/헬퍼 재사용 → 표준 라이브러리 → 네이티브 플랫폼 기능 → 이미 설치된 의존성 → 한 줄 → 최소 구현)이며 `/ponytail`·`/ponytail-review`·`/ponytail-audit`·`/ponytail-debt`·`/ponytail-gain` 슬래시 명령을 제공한다.",
+      "facts": [
+        "Ponytail(github.com/DietrichGebert/ponytail)은 GitHub API 재조회(2026-09-05) 기준 스타 125,759개, 포크 6,760개, MIT 라이선스, 2026-06-12 생성됐다.",
+        "GeekNews(2026-06-22 게시, 2차 보도)가 인용한 벤치마크(FastAPI+React 저장소, 기능 태스크 12개)에서 코드 줄 수 54%·토큰 22%·비용 20%·소요시간 27% 감소, 안전성 100% 유지라는 수치가 나왔다(원 벤치마크 1차 출처는 확인 못함 — GeekNews 인용으로만 존재)."
+      ]
+    },
+    {
+      "title": "router-for-me/CLIProxyAPI — Wrap Antigravity, ChatGPT Codex, Claude Code, Grok Build as an OpenAI/Gemini/Claude/Codex compatible API service",
+      "url": "https://github.com/router-for-me/CLIProxyAPI",
+      "host": "github.com",
+      "tier": "official",
+      "body": "Go로 작성된 오픈소스 프록시 서버로, Claude Code·OpenAI Codex·Grok Build·Gemini 같은 CLI 기반 AI 구독 계정을 OAuth로 연결한 뒤 OpenAI/Gemini/Claude/Codex 호환 API 엔드포인트로 노출한다. 재검증 시점 기준 스타 50,434개, 포크 7,680개, MIT 라이선스, 2025-07-01 생성. 다계정 라운드로빈 로드밸런싱, 모델 라우팅·프로바이더 별칭·폴백, 스트리밍/웹소켓, 멀티모달 입력, 함수 호출(tools), SDK 임베드를 지원한다.",
+      "facts": [
+        "CLIProxyAPI(github.com/router-for-me/CLIProxyAPI)는 GitHub API 재조회 기준 스타 50,434개, 포크 7,680개, MIT 라이선스, Go 언어, 2025-07-01 생성됐다.",
+        "Claude Code·ChatGPT Codex·Grok Build·Gemini 구독 계정을 OAuth로 연결해 OpenAI/Gemini/Claude/Codex 호환 API로 노출하며, 다계정 라운드로빈·모델 라우팅·스트리밍/웹소켓·함수 호출을 지원한다."
+      ]
+    },
+    {
+      "title": "tt-a1i/archify — Agent skill for beautiful, verifiable architecture, workflow, sequence, data-flow, and lifecycle diagrams",
+      "url": "https://github.com/tt-a1i/archify",
+      "host": "github.com",
+      "tier": "official",
+      "body": "코드베이스나 시스템 설명을 채팅 안에서 인터랙티브 시스템 맵으로 바꿔주는 에이전트 스킬. github.com/trending?since=weekly(조사 시점 2026-09-05)에서 주간 트렌딩 1위, 주간 스타 증가량 +24,227개를 기록했다. GitHub API 재조회 기준 누적 스타 47,959개, 포크 3,092개, MIT 라이선스, 2026-04-15 생성. Node.js로 구현, 타입 지정 JSON을 결정론적 검증 후 자체완결형 HTML/SVG 다이어그램으로 렌더링한다. 아키텍처·워크플로·시퀀스·데이터플로우·라이프사이클 5종 다이어그램을 지원하고 설치는 `npx skills add tt-a1i/archify -g` 한 줄.",
+      "facts": [
+        "archify(github.com/tt-a1i/archify)는 2026-09-05 GitHub 주간 트렌딩 1위, 주간 스타 증가량 +24,227개를 기록했으며 GitHub API 재조회 기준 누적 스타 47,959개, 포크 3,092개, MIT 라이선스, 2026-04-15 생성됐다.",
+        "5가지 다이어그램 유형(아키텍처·워크플로·시퀀스·데이터플로우·라이프사이클)을 지원하며 설치 명령은 `npx skills add tt-a1i/archify -g` 한 줄이다."
+      ]
+    },
+    {
+      "title": "bilawalsidhu/gods-eye-view — A spy satellite simulator in your browser, except the data is real",
+      "url": "https://github.com/bilawalsidhu/gods-eye-view",
+      "host": "github.com",
+      "tier": "official",
+      "body": "브라우저에서 돌아가는 오픈소스 지리공간 시각화 플랫폼으로, 항공기·선박·위성·지진·교통·공개 CCTV 등 실시간 공개 데이터를 포토리얼리스틱 3D 지구본 위에 표시한다. GitHub API 재조회 기준 스타 17,467개, 포크 3,520개, MIT 라이선스, 2026-06-22 생성. 데이터 출처는 항공기(OpenSky Network·adsb.lol), 선박(AISStream), 위성(CelesTrak, SGP4 궤도 전파), 지진(USGS), 산불(NASA FIRMS), 우주발사(Launch Library 2), 교통(TomTom·OpenStreetMap) 등 전부 공개 API로 명시돼 있다. 순수 바닐라 JS+CesiumJS+Vite, API 키 없이 기본 기능 작동.",
+      "facts": [
+        "gods-eye-view(github.com/bilawalsidhu/gods-eye-view)는 GitHub API 재조회 기준 스타 17,467개, 포크 3,520개, MIT 라이선스, 2026-06-22 생성됐다.",
+        "OpenSky Network·adsb.lol(항공기)·AISStream(선박)·CelesTrak(위성, SGP4 궤도 전파)·USGS(지진)·NASA FIRMS(산불)·Launch Library 2(우주발사) 등 실제 공개 API 데이터를 사용하며 API 키 없이 기본 기능이 동작한다."
+      ]
+    },
+    {
+      "title": "zvec-ai/zvec-grep — Local-first search across your workspace, built for humans and AI agents",
+      "url": "https://github.com/zvec-ai/zvec-grep",
+      "host": "github.com",
+      "tier": "official",
+      "body": "Alibaba의 Zvec 팀이 만든 오픈소스 로컬 검색 도구 'zg'(zvec-grep). ripgrep(rg)·BM25·벡터 검색을 하나의 로컬 우선(local-first) 인터페이스로 통합했다. GitHub API 재조회 기준 스타 2,606개, 포크 128개, Apache-2.0 라이선스, 2026-07-10 생성, JavaScript/TypeScript. 설치는 `npm install -g @zvec/zvec-grep` 한 줄이며 OpenCode·Codex·Claude Code·Qwen Code·Qoder·Cursor와 MCP로 연동된다.",
+      "facts": [
+        "zvec-grep(github.com/zvec-ai/zvec-grep)은 GitHub API 재조회 기준 스타 2,606개, 포크 128개, Apache-2.0 라이선스, 2026-07-10 생성됐으며 설치는 `npm install -g @zvec/zvec-grep` 한 줄이다.",
+        "OpenCode·Codex·Claude Code·Qwen Code·Qoder·Cursor와 MCP로 연동된다."
+      ]
+    },
+    {
+      "title": "From rg to zg: Local Search Beyond Keywords — Zvec 공식 블로그",
+      "url": "https://zvec.org/en/blog/2026-08-28-zvec-grep-open-source/",
+      "host": "zvec.org",
+      "tier": "official",
+      "body": "Zvec(Alibaba) 공식 블로그의 zg(zvec-grep) 오픈소스 공개 발표 글, 2026-08-28 게시(article:published_time 메타로 확인). WebFetch로 본문 재확인 완료 — SWE-QA-Bench에서 툴 호출 50%+ 감소·입력 토큰 약 50% 감소·판정 점수 +1.50, BrowseComp-Plus에서 정확도 98.67%→99.00%·입력 토큰 -37.56%·툴 호출 -43.52%·에이전트 소요시간 -38.58%라는 수치가 본문에 그대로 존재한다. 3,457개 파일 규모 Django 저장소를 Apple M4 Pro에서 기본 로컬 임베딩 모델로 30초 이내 색인 가능하다는 문구도 본문에서 확인됨. Apache 2.0, 'early stage' 명시.",
+      "facts": [
+        "Zvec 공식 블로그(2026-08-28 게시, WebFetch로 본문 재확인)는 zg가 SWE-QA-Bench에서 툴 호출 50%+ 감소·입력 토큰 약 50% 감소·판정 점수 +1.50, BrowseComp-Plus에서 정확도 98.67%→99.00%·입력 토큰 -37.56%·툴 호출 -43.52%·에이전트 시간 -38.58%를 기록했다고 밝혔다.",
+        "3,457개 파일 규모의 Django 저장소 전체를 Apple M4 Pro에서 기본 로컬 임베딩 모델로 30초 이내에 색인할 수 있다고 제시했다(본문 확인)."
+      ]
+    },
+    {
+      "title": "jingyaogong/minimind — Train a 64M-parameter LLM from scratch in just 2h",
+      "url": "https://github.com/jingyaogong/minimind",
+      "host": "github.com",
+      "tier": "official",
+      "body": "개인 개발자도 LLM 개발 전 과정을 재현할 수 있게 만든 교육용 오픈소스 프레임워크. GitHub API 재조회 기준 스타 58,512개, 포크 7,603개, Apache License 2.0, 2024-07-27 생성(2년 넘은 프로젝트, 이번 주 신규 출시 아님 — 최신 릴리스 'minimind-3'만 2026-04-01 공개). 사전학습·SFT·LoRA·RLHF(DPO)·PPO/GRPO 파이프라인을 PyTorch로 처음부터 구현. 64M 파라미터(Dense) 모델의 SFT를 NVIDIA 3090 GPU 1장, 2시간, 약 3위안(약 0.43달러)에 학습 가능하다고 README에 명시.",
+      "facts": [
+        "minimind(github.com/jingyaogong/minimind)는 GitHub API 재조회 기준 스타 58,512개, 포크 7,603개, Apache License 2.0, 2024-07-27 생성됐다(신규 프로젝트 아님).",
+        "64M 파라미터(Dense) 모델의 SFT 단계를 NVIDIA 3090 GPU 1장으로 2시간, 약 3위안(약 0.43달러)에 학습할 수 있다고 README에 명시돼 있으며, 최신 릴리스 'minimind-3'는 2026-04-01 공개됐다."
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "claim": "Ponytail은 AI 코딩 에이전트에 '과잉 구현 자제' 규칙을 주입해 코드량·비용·시간을 줄이는 방향의 오픈소스 스킬이며, 3개월 만에 스타 12만 개를 넘길 만큼 커뮤니티 반응이 크다.",
+      "grade": "confirmed",
+      "evidence": [
+        "GitHub API 재조회 기준 스타 125,759개, 포크 6,760개, MIT 라이선스, 2026-06-12 생성 — 약 3개월 만에 이 규모 도달.",
+        "20여 개 AI 코딩 도구(Claude Code·Codex·Copilot·Cursor·Windsurf 등)를 지원하는 슬래시 명령 세트 제공."
+      ],
+      "sourceUrls": ["https://github.com/DietrichGebert/ponytail"]
+    },
+    {
+      "claim": "CLIProxyAPI는 구독형 AI 코딩 CLI(Claude Code·Codex·Grok Build·Gemini) 계정을 표준 API 호환 엔드포인트로 바꿔주는 프록시로, 다계정·멀티모달·함수 호출까지 지원하는 실사용 가능한 오픈소스 인프라다.",
+      "grade": "confirmed",
+      "evidence": [
+        "GitHub API 재조회 기준 스타 50,434개, 포크 7,680개, MIT, Go 언어, 2025-07-01 생성.",
+        "README 기준 다계정 라운드로빈, 모델 라우팅/별칭/폴백, 스트리밍·웹소켓, 멀티모달 입력, 함수 호출(tools), SDK 임베드 지원."
+      ],
+      "sourceUrls": ["https://github.com/router-for-me/CLIProxyAPI"]
+    },
+    {
+      "claim": "이번 주 GitHub 트렌딩 1위는 시스템 다이어그램을 자동 생성하는 에이전트 스킬 archify로, 일주일 새 스타 2만 4천여 개가 늘었다.",
+      "grade": "confirmed",
+      "evidence": [
+        "github.com/trending?since=weekly(조사 시점 2026-09-05) 1위, 주간 스타 증가량 +24,227개.",
+        "GitHub API 재조회 기준 누적 스타 47,959개, 포크 3,092개, MIT, 2026-04-15 생성 — 설치는 `npx skills add tt-a1i/archify -g` 한 줄."
+      ],
+      "sourceUrls": ["https://github.com/tt-a1i/archify"]
+    },
+    {
+      "claim": "gods-eye-view는 항공기·선박·위성·지진 등 실제 공개 데이터 API만으로 브라우저 위성 시뮬레이터를 구현한 프로젝트로, API 키 없이도 기본 기능이 작동한다.",
+      "grade": "confirmed",
+      "evidence": [
+        "GitHub API 재조회 기준 스타 17,467개, 포크 3,520개, MIT, 2026-06-22 생성.",
+        "OpenSky Network·adsb.lol·AISStream·CelesTrak(SGP4)·USGS·NASA FIRMS·Launch Library 2 등 공개 API를 데이터 출처로 명시."
+      ],
+      "sourceUrls": ["https://github.com/bilawalsidhu/gods-eye-view"]
+    },
+    {
+      "claim": "Alibaba Zvec 팀의 로컬 검색 도구 zg(zvec-grep)는 ripgrep·BM25·벡터 검색을 결합해 SWE-QA-Bench·BrowseComp-Plus 벤치마크에서 툴 호출·토큰 사용량을 큰 폭으로 줄였다고 공식 발표했다.",
+      "grade": "confirmed",
+      "evidence": [
+        "공식 블로그(zvec.org, 2026-08-28, WebFetch 본문 확인): SWE-QA-Bench 툴 호출 50%+↓·입력 토큰 약 50%↓·판정 점수 +1.50, BrowseComp-Plus 정확도 98.67%→99.00%·입력 토큰 -37.56%·툴 호출 -43.52%·에이전트 시간 -38.58%.",
+        "GitHub API 재조회 기준 스타 2,606개, 포크 128개, Apache-2.0, 2026-07-10 생성."
+      ],
+      "sourceUrls": [
+        "https://zvec.org/en/blog/2026-08-28-zvec-grep-open-source/",
+        "https://github.com/zvec-ai/zvec-grep"
+      ]
+    }
+  ],
+  "numbers": [
+    { "what": "Ponytail GitHub 스타", "value": "125,759개", "asOf": "2026-09-05(재조회)", "sourceUrl": "https://github.com/DietrichGebert/ponytail" },
+    { "what": "Ponytail GitHub 포크", "value": "6,760개", "asOf": "2026-09-05(재조회)", "sourceUrl": "https://github.com/DietrichGebert/ponytail" },
+    { "what": "GeekNews 인용 벤치마크(FastAPI+React, 12태스크) 코드량/토큰/비용/시간 변화", "value": "-54% / -22% / -20% / -27%, 안전성 100% 유지", "asOf": "GeekNews 2026-06-22 게시(2차 보도)", "sourceUrl": "https://github.com/DietrichGebert/ponytail" },
+    { "what": "CLIProxyAPI GitHub 스타/포크", "value": "50,434개 / 7,680개", "asOf": "2026-09-05(재조회)", "sourceUrl": "https://github.com/router-for-me/CLIProxyAPI" },
+    { "what": "archify 주간 스타 증가량(트렌딩)", "value": "+24,227개", "asOf": "2026-09-05", "sourceUrl": "https://github.com/tt-a1i/archify" },
+    { "what": "archify 누적 스타/포크", "value": "47,959개 / 3,092개", "asOf": "2026-09-05(재조회)", "sourceUrl": "https://github.com/tt-a1i/archify" },
+    { "what": "gods-eye-view GitHub 스타/포크", "value": "17,467개 / 3,520개", "asOf": "2026-09-05(재조회)", "sourceUrl": "https://github.com/bilawalsidhu/gods-eye-view" },
+    { "what": "zvec-grep GitHub 스타/포크", "value": "2,606개 / 128개", "asOf": "2026-09-05(재조회)", "sourceUrl": "https://github.com/zvec-ai/zvec-grep" },
+    { "what": "zg SWE-QA-Bench 판정점수 상승", "value": "+1.50점, 툴 호출 50%+↓, 입력 토큰 약 50%↓", "asOf": "2026-08-28 공식 발표", "sourceUrl": "https://zvec.org/en/blog/2026-08-28-zvec-grep-open-source/" },
+    { "what": "zg BrowseComp-Plus 정확도/토큰/툴호출/시간 변화", "value": "98.67%→99.00% / -37.56% / -43.52% / -38.58%", "asOf": "2026-08-28 공식 발표", "sourceUrl": "https://zvec.org/en/blog/2026-08-28-zvec-grep-open-source/" },
+    { "what": "Django 저장소(3,457파일) 색인 시간(M4 Pro)", "value": "30초 이내", "asOf": "2026-08-28 공식 발표", "sourceUrl": "https://zvec.org/en/blog/2026-08-28-zvec-grep-open-source/" },
+    { "what": "minimind GitHub 스타/포크", "value": "58,512개 / 7,603개", "asOf": "2026-09-05(재조회)", "sourceUrl": "https://github.com/jingyaogong/minimind" },
+    { "what": "minimind 64M 모델 SFT 비용/시간", "value": "RTX 3090 1장 · 2시간 · 약 0.43달러(3위안)", "asOf": "README 명시", "sourceUrl": "https://github.com/jingyaogong/minimind" }
+  ],
+  "dropped": [],
+  "cannotCover": [
+    "zvec-grep의 기본 로컬 임베딩 모델명 확정 — README는 예시 명령에 'local/potion-retrieval-32m'를 쓰지만 공식 블로그 본문은 'potion-code-16m'을 기본값으로 언급해 두 공식 출처가 서로 다른 모델명을 제시한다. 이 글에서는 특정 모델명·파라미터 수를 단정하지 않는다.",
+    "Ponytail 벤치마크(코드량 54%↓ 등)의 1차 출처 — GeekNews가 인용한 수치일 뿐 원 벤치마크 리포트(누가, 어떤 방법론으로 측정했는지)를 직접 찾아 확인하지 못했다. 인용임을 명시하지 않고는 이 수치를 단정적으로 쓸 수 없다.",
+    "6개 프로젝트 각각의 '이번 주' 신규성 여부 — archify·gods-eye-view는 주간 트렌딩 급상승(신규성 근거 있음)이 확인되지만, Ponytail(생성 2026-06-12)·CLIProxyAPI(생성 2025-07-01)·minimind(생성 2024-07-27)는 원 공개가 몇 달~몇 년 전이라 '이번 주 신규 출시'로 단정하면 안 된다.",
+    "대형 프런티어 AI 모델(GPT·Claude·Gemini 신버전) 관련 이번 주 소식 — 조사 범위에서 의도적으로 제외(ai-weekly 소관)."
+  ],
+  "songs": []
+}

@@ -1,0 +1,102 @@
+{
+  "keyword": "이번 주 AI 소식 (2026-09-03~09-05) — 새 모델·제품·발표",
+  "categoryId": "ai-trend",
+  "slug": "ai-weekly-2026-09-05",
+  "searchedAt": "2026-09-05",
+  "origin": "Claude Code WebSearch/WebFetch",
+  "note": "9/1~2에 나온 Claude Fable 5.1·Gemini 3.8 Flash·Meta Muse Spark 1.3·Qwen3.8-Max·AI 사이버보안 3사 동시발표(/375 게시물, 태그: Claude Fable 5.1·Gemini 3.8 Flash·Muse Spark·Qwen3.8-Max)는 제외했다. 6건 모두 9/3~9/4 발표. 주의: OpenAI GPT-6 Astra(9/3)는 사이버보안 Daybreak 프로그램·ExploitBench 100%처럼 /375가 다룬 'AI 사이버보안 동시발표'와 소재가 겹칠 위험이 있다 — 다만 /375 태그 목록엔 GPT-6/Astra/OpenAI가 없고, 이번 기사들의 핵심은 사이버보안이 아니라 'AGI 시대 첫 모델' 주장·컴퓨터 사용 능력·ARC-AGI-3 벤치마크이므로 포함했다. 집필 시 /375 본문과 겹치는 각도(사이버보안 등급)는 피하고 AGI 발언·컴퓨터 사용·벤치마크 위주로 쓸 것을 권장. 5건 목표는 채웠고 6건째(GPT-6 Astra)는 위 사유로 보너스 포함.",
+  "sources": [
+    {
+      "title": "NVIDIA to Acquire Hugging Face",
+      "url": "https://blogs.nvidia.com/blog/nvidia-to-acquire-hugging-face/",
+      "host": "blogs.nvidia.com",
+      "tier": "official",
+      "kind": "announcement",
+      "body": "NVIDIA 공식 블로그(2026-09-03, Jensen Huang 명의)에 따르면 NVIDIA가 AI 모델 공유·배포 플랫폼 Hugging Face를 129억 3,030만 달러(12,930,300,000달러)에 인수한다고 발표했다. Hugging Face는 1,800만 명 이상의 개발자·연구자·크리에이터가 300만 개 이상의 모델, 50만 개 이상의 데이터셋, 100만 개 이상의 애플리케이션을 공유하는 플랫폼이며, 20만 개 이상 기업이 이를 활용한다고 밝혔다. NVIDIA는 'Hugging Face는 전체 AI 생태계를 위한 개방형 플랫폼으로 남을 것'이라며 NVIDIA 컴퓨트 사용이 필수가 아니고 AMD·인텔 등 타 하드웨어 지원도 계속된다고 명시했다. 개발자들은 앞으로도 모델·프레임워크·클라우드·컴퓨팅 플랫폼을 자유롭게 선택할 수 있다고 약속했다."
+    },
+    {
+      "title": "Nvidia to buy Hugging Face for nearly $13 billion in big bet on open AI models",
+      "url": "https://www.nbcnews.com/tech/tech-news/nvidia-buy-hugging-face-nearly-13-billion-big-bet-open-ai-models-rcna595868",
+      "host": "nbcnews.com",
+      "tier": "press",
+      "kind": "news",
+      "body": "NBC News(2026-09-03 오전 8:34 미 동부시간)에 따르면 NVIDIA의 Hugging Face 인수 총 규모는 129억 3천만 달러이며, 이 중 투자자 대상 현금 지급은 약 119억 달러, 직원 리텐션 프로그램에는 최대 10억 달러 규모의 주식 기반 보상이 배정됐다고 전했다. 기사는 NVIDIA가 이번 인수를 통해 오픈소스 AI 모델 생태계를 지원함으로써 향후 칩 수요를 확보하려 한다고 분석했다 — Meta·OpenAI·Microsoft 등 주요 고객사가 자체 AI 칩을 개발 중인 상황에서, 개발자들이 AI 도구를 공유·테스트·협업하는 허브인 Hugging Face를 통해 미국과 중국 연구소 간 기술 격차를 좁히는 데도 도움이 될 수 있다고 봤다. Jensen Huang CEO의 발언 \"Hugging Face는 전체 AI 생태계를 위한 개방형 플랫폼으로 남을 것\"을 인용했다."
+    },
+    {
+      "title": "Introducing WeatherNext 3, our most advanced and accurate global weather AI model",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/introducing-weathernext-3/",
+      "host": "blog.google",
+      "tier": "official",
+      "kind": "announcement",
+      "body": "Google DeepMind·Google Research 공식 블로그(2026-09-03)가 새 글로벌 기상 AI 모델 WeatherNext 3를 공개했다. 지표면 변수는 최대 5km 격자, 다른 지표 변수는 10km, 대기 변수는 25km 격자에서 매시간(이전 WeatherNext 2는 6시간 주기) 예보를 생성하는 첫 글로벌 모델이라고 밝혔다. 6시간 지연이 있는 정부 관측 데이터 대신 실시간 위성 데이터를 학습에 직접 활용하는 방식이며, 강수 예보 정확도가 하루 이상 선행 기준 최대 50% 향상됐다고 설명했다. 100m 고도 풍속·구름량·태양복사량 등 재생에너지용 변수도 포함한다. Google 검색, Gemini 앱, Google 지도, Google Maps Platform Weather API, Google Earth Engine에 통합됐다."
+    },
+    {
+      "title": "Institute of Foundation Models Releases Fully Open K2 Horizon Models with Weights, Code and Training Data",
+      "url": "https://www.hpcwire.com/aiwire/2026/09/03/institute-of-foundation-models-releases-fully-open-k2-horizon-models-with-weights-code-and-training-data/",
+      "host": "hpcwire.com",
+      "tier": "press",
+      "kind": "news",
+      "body": "AIwire(HPCwire, 2026-09-03)는 MBZUAI 산하 Institute of Foundation Models(IFM)가 K2 Horizon이라는 6개 모델 라인업(0.9B, 3.7B, 7B, 32B, 36B-A4B, 375B-A23B 파라미터)을 공개했다고 전했다. 전 모델이 Apache 2.0 라이선스로 배포되며, IFM은 '가중치·코드·학습 데이터·방법론을 모두 공개'해 역사상 가장 큰 완전 개방형 AI 릴리스라고 주장한다. 소형 모델(0.9B·3.7B·7B)은 추론·수학·코딩·에이전트 벤치마크에서 동급 최고 성능을 냈다고 설명했다. Hugging Face·vLLM·SGLang을 통해 즉시 이용 가능하며, Compass·Cerebras·AWS·Nebius 등 추론 파트너를 통해 API로도 제공된다.",
+      "confirmSourceNote": "MBZUAI 자체 보도자료(ifm.ai/k2/press-release)는 403으로 직접 열람 불가해 동일 사실을 전한 2차 매체(AIwire)로 대체했다. r.jina.ai 리더로 hpcwire.com 본문 직접 대조 완료(2026-09-05) — 파라미터·라이선스·가용성 수치 일치, 단 원문엔 Ollama/Unsloth 언급 없어 삭제."
+    },
+    {
+      "title": "Microsoft announces Project Zenith, a clutter-free Windows experience meant to entice developers",
+      "url": "https://www.engadget.com/2251018/microsoft-announces-project-zenith-clutter-free-windows-experience/",
+      "host": "engadget.com",
+      "tier": "press",
+      "kind": "news",
+      "body": "Engadget(2026-09-04)에 따르면 Microsoft가 IFA 2026에서 'Project Zenith'라는 개발자 전용 Windows 11 구성을 공개했다. 파일 확장자·숨김 파일을 기본으로 노출하고 여러 프로그래밍 언어·런타임을 사전 설치한 '군더더기 없는' 개발 환경을 표방한다. 최소 64GB 통합 메모리와 250GB/s 메모리 대역폭을 요구하며, 첫 지원 기기는 AMD Ryzen AI Halo 기반 미니 데스크톱이다. 목표는 300억 파라미터 이상급 로컬 AI 모델을 클라우드 토큰 과금 없이 로컬에서 무제한 구동하는 것이라고 전했다."
+    },
+    {
+      "title": "Announcing Project Zenith: the ready-to-code Windows experience",
+      "url": "https://blogs.windows.com/windowsdeveloper/2026/09/04/announcing-project-zenith-the-ready-to-code-windows-experience/",
+      "host": "blogs.windows.com",
+      "tier": "official",
+      "kind": "announcement",
+      "body": "Microsoft 공식 Windows 개발자 블로그(2026-09-04)에 따르면 Project Zenith는 \"64GB+ 통합 메모리·250GB/s+ 메모리 대역폭\"을 갖춘 개발자용 기기에서 제공되는 준비된(ready-to-code) Windows 11 경험이다. 목표는 코딩 모델을 로컬에서 무제한 구동해 토큰 비용을 낮추는 것이라고 명시했다. Windows Platform CVP Logan Ayer 명의로 발표됐다."
+    },
+    {
+      "title": "MAI-Transcribe-2 is the fastest, most accurate and cheapest speech recognition model in the world",
+      "url": "https://microsoft.ai/news/mai-transcribe-2-is-the-fastest-most-accurate-and-cheapest-speech-recognition-model-in-the-world/",
+      "host": "microsoft.ai",
+      "tier": "official",
+      "kind": "announcement",
+      "body": "Microsoft AI 공식 발표(2026-09-03)는 신규 음성 인식 모델 MAI-Transcribe-2를 소개했다. 60개 언어를 대상으로 한 FLEURS 벤치마크에서 평균 단어 오류율(WER) 5.2%를 기록해 1위를 차지했다고 밝혔다. 속도는 OpenAI의 GPT-Transcribe 대비 최대 10배, ElevenLabs Scribe v2 대비 7배, Google Gemini 3.5 Transcribe 대비 5배 빠르다고 주장했다. 가격은 오디오 1시간당 0.10달러이며, 이는 연말까지 한시적으로 제공되는 가격이라고 명시했다. 화자 분리(diarization), 잡음 환경 성능, 단어 단위 타임스탬프, 자동 언어 감지, 키워드 바이어싱, 코드 스위칭 등을 지원한다."
+    },
+    {
+      "title": "OpenAI launches GPT-6 Astra, its most powerful model yet, and touts its ability to use your computer",
+      "url": "https://fortune.com/2026/09/03/openai-debuts-gpt-6-astra-computer-use-greg-brockman-says-start-of-agi/",
+      "host": "fortune.com",
+      "tier": "press",
+      "kind": "news",
+      "body": "Fortune(2026-09-03)은 OpenAI가 GPT-6 Astra를 공개했다고 전했다. 핵심으로 내세운 기능은 '컴퓨터 사용(computer use)' — 사람처럼 화면을 보고 스프레드시트·양식 작성·웹 탐색을 수행하는 능력이다. ARC-AGI-3 벤치마크에서 도구를 쓸 경우 99.9%, 표준 조건에서는 66%를 기록했고, 사이버보안 테스트 ExploitBench에서 100%를 기록해 이전 모델 GPT-5.6 Sol과 Anthropic Claude Fable 5.1을 능가했다고 보도했다. 공동창업자 Greg Brockman은 이 모델을 'AGI 시대의 첫 모델'로 봐도 합리적이라고 말했다고 인용했다. 출시는 사이버보안 프로그램(Daybreak) 참여 기업이 먼저 접근하고, 이후 며칠 안에 ChatGPT Plus/Pro/Business/Enterprise, API, AWS로 순차 확대된다고 전했다. 기사에는 가격·context window 수치가 명시되지 않았다."
+    }
+  ],
+  "facts": [
+    "NVIDIA가 2026-09-03 Hugging Face를 129억 3,030만 달러에 인수한다고 공식 발표했다(NVIDIA 공식 블로그). Hugging Face는 사용자 1,800만 명 이상, 모델 300만 개 이상, 데이터셋 50만 개 이상, 애플리케이션 100만 개 이상, 이용 기업 20만 개 이상 규모다.",
+    "Google DeepMind가 2026-09-03 공개한 WeatherNext 3는 지표면 변수 기준 최대 5km 격자에서 매시간 예보를 내는 첫 글로벌 기상 모델이며, 하루 이상 선행 강수 예보 정확도가 최대 50% 향상됐다.",
+    "MBZUAI Institute of Foundation Models가 2026-09-03 공개한 K2 Horizon은 0.9B~375B 파라미터 6개 모델을 Apache 2.0으로 가중치·코드·학습데이터까지 전부 공개했으며 Hugging Face·vLLM·SGLang으로 즉시 이용 가능하다.",
+    "Microsoft가 2026-09-04 IFA에서 공개한 Project Zenith는 최소 64GB 통합 메모리·250GB/s 대역폭을 요구하며 AMD Ryzen AI Halo 미니 데스크톱에 먼저 탑재돼 300억 파라미터 이상급 모델의 로컬 무제한 실행을 목표로 한다.",
+    "Microsoft AI가 2026-09-03 공개한 MAI-Transcribe-2는 FLEURS 벤치마크(60개 언어)에서 WER 5.2%를 기록했고, OpenAI GPT-Transcribe 대비 최대 10배 빠르며 시간당 0.10달러(연말까지 한시가)로 책정됐다.",
+    "OpenAI가 2026-09-03 공개한 GPT-6 Astra는 ARC-AGI-3에서 도구 사용 시 99.9%, ExploitBench(사이버보안)에서 100%를 기록했고, Greg Brockman은 이를 'AGI 시대의 첫 모델'로 표현했다."
+  ],
+  "unverified": [
+    "GPT-6 Astra의 정확한 가격과 context window(Fortune·CNBC·Axios 기사 모두 구체적 수치를 명시하지 않음 — 별도 검색에서 '1M 토큰·GPT-5.6 Sol 대비 2.5배 가격' 언급이 있었으나 1차 출처로 직접 확인하지 못해 facts에서 제외)",
+    "K2 Horizon의 구체적 벤치마크 점수(수치)는 원문(hpcwire.com)에도 없어 \"동급 최고 성능\" 수준의 정성적 서술만 확인 — 원문은 Ollama·Unsloth 지원을 언급하지 않음(초안 작성 시 언급 금지)",
+    "NVIDIA-Hugging Face 거래의 종료 예상 시기·거래 구조(현금/주식 비율)",
+    "Project Zenith 탑재 기기의 실제 출시일(발표는 됐으나 소비자 판매 시점 불명)",
+    "GPT-6 Astra 관련 내용이 /375(9/4 사이버보안 3사 동시발표 글)와 소재가 정확히 얼마나 겹치는지 — /375 본문 전체를 직접 열람하지 못해 태그만으로 판단함",
+    "WeatherNext 3의 \"64개 멤버·15일치 앙상블\" 수치는 공식 블로그 원문(blog.google)에서 확인되지 않아 facts에서 제외 — 사용 금지"
+  ],
+  "cannotSay": [
+    "출처 없는 수치·제품·날짜 창작 금지",
+    "단정·과장 금지 banned:충격·대박·역대급·혁명·게임체인저·곧 대체될·무조건",
+    "발표/기사 제시치로 귀속 — 특히 벤치마크·속도·정확도 수치는 전부 발표사 자체 측정치이며 제3자 재현 검증 여부는 불명"
+  ],
+  "internalLinkCandidates": [
+    "https://burning-go9me.tistory.com/375",
+    "https://burning-go9me.tistory.com/373"
+  ],
+  "verifiedAt": "2026-09-05",
+  "verifiedBy": "curator (WebFetch/curl 재확인)"
+}
