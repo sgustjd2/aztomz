@@ -3,10 +3,11 @@
 채널 [AI Engineer](https://www.youtube.com/@aiDotEngineer) 의 새 영상을 Gemini 로 자동 요약한 모음입니다.
 생성: `backend/scripts/youtube-summarize.mjs` (GitHub Actions `youtube-summary` 크론).
 
-총 **130개**.
+총 **131개**.
 
 | 발행일 | 제목 |
 |---|---|
+| 2026-09-04 | [Why AI Agents Need Million-Token Context — Thomas Wolf & Olive Song, MiniMax](2026-09-04-5Cxe5dv2Xlw.md) |
 | 2026-09-03 | [From coding to Knowledge work agents — Karan Vaidya, Composio](2026-09-03-xxfMT-bPEmU.md) |
 | 2026-09-03 | [Tethered: Our Agents Are Us — Shu Fang, Two Sigma](2026-09-03-wCIYViPd4SU.md) |
 | 2026-09-03 | [Agents' next frontier: agent-to-agent and network effects — Jean-Denis Greze, Town](2026-09-03-REascnFlq_8.md) |
