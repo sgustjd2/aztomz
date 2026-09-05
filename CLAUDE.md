@@ -251,9 +251,12 @@ Agent(
     `blog-publish.mjs`가 티스토리 CDN에 업로드한다(`<!--COVER-->` 마커 자리).
   · 발행 실패는 **비치명적** — trends.json 게시·배포는 이미 끝난 상태이므로 롤백하지 않고 경고만 남긴다.
   · 제목을 매번 같은 템플릿으로 찍지 않는다(양산글 신호 → 저품질·색인제외). `hangeut-blog` 스킬이 담당.
-  · **표준 흐름은 조사 → 집필 → `blog-selfreview` → `blog-verify` → 발행.** 집필 직후
-    `node backend/scripts/blog-selfreview.mjs <slug>` 로 **자체 피드백을 반영**한다(스스로 비평해 실제
-    결함만 외과적으로 고침 — 전면 재작성 금지, find/replace, 고친 뒤 재조립해 기계 게이트 재검).
+  · **표준 흐름은 조사 → 집필(`structures/_format.md` 양식) → `blog-selfreview` → `blog-verify` → 발행.**
+    집필 직후 `node backend/scripts/blog-selfreview.mjs <slug>` 로 **자체 피드백을 반영**한다(스스로 비평해
+    실제 결함만 외과적으로 고침 — 전면 재작성 금지, find/replace, 고친 뒤 재조립해 기계 게이트 재검).
+  · **주제 전략은 [`backend/blog/blogchart-plan.md`](backend/blog/blogchart-plan.md).** 블로그차트 상위
+    카테고리 ∩ 우리가 실출처로 정직하게 쓸 수 있는 것(맛집·디저트·패션·여행·IT/AI·미용·가전·반려·콘텐츠·건강)
+    10편 플랜 — 하루 4편 이하, 쓰는 날 그날 WebSearch 조사. 인테리어·부동산·금융·의학은 E-E-A-T/환각 위험으로 제외.
   · **발행 전 `blog-verify.mjs` 를 반드시 통과시킨다.** `claude -p` 가 CLAUDE.md 철칙을 알고 검증한다
     (원본 왜곡·추정치 단정·신뢰도/만족도 혼동·지어낸 사실·가사/이미지 저작권). selfreview·verify 각 호출당 약 $0.2~0.4.
 - **LLM 단독 생성 금지 — 조사가 먼저다.** 모르는 영역을 시키면 **전량 환각**이다

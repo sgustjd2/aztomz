@@ -47,9 +47,14 @@ description: 블로그 글 하나를 조사 → 정리 → 집필 → SEO → �
 
 ```bash
 node backend/scripts/blog-assemble.mjs <slug>    # md+meta → HTML, 링크 기계검사
+node backend/scripts/blog-selfreview.mjs <slug>  # 자체 피드백→반영: 초안을 자기비평해 실제 결함만 외과 수정 후 재조립
 node backend/scripts/blog-verify.mjs <slug>      # claude -p 최종 검증(CLAUDE.md 철칙)
 node backend/scripts/blog-publish.mjs <slug>     # 티스토리 발행 (--draft 로 비공개)
 ```
+
+`blog-selfreview` 는 집필 직후 결함(원본 왜곡·축 혼동·reasons=null 신호 창작·묵은 피크 현재형·트렌드
+CTA '점수'·표본 과장·저작권)을 스스로 잡아 **외과적 find/replace 로만** 고친다(전면 재작성 금지·드리프트 방지).
+비치명적 — 실패해도 발행을 막지 않고 뒤의 `blog-verify` 가 최종 게이트다.
 
 `blog-assemble` 은 조사 파일에 없는 URL 이 본문에 있으면 **조립 자체를 거부한다.**
 LLM 판단이 아니라 문자열 대조라서 우회가 안 된다.
@@ -59,3 +64,4 @@ LLM 판단이 아니라 문자열 대조라서 우회가 안 된다.
 - 에이전트가 앞 단계 파일을 못 찾으면 **만들어내지 말고** 그 단계를 다시 돌려라.
 - 조사 없이 집필로 건너뛰지 마라. 그게 환각의 유일한 원인이다.
 - 한끗 트렌드 글은 이 파이프라인이 아니라 `blog-build.mjs` 를 쓴다(데이터가 이미 있다).
+- 기술·정보성 글은 `backend/blog/structures/_format.md`(콜아웃 💡⚠️📌·비교표·정리·참고 — goddaehee·inpa 참고) 양식을 따른다(구조 템플릿이 이미 참조한다).

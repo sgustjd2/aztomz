@@ -45,7 +45,12 @@ node backend/scripts/blog-pick-trend.mjs
 
 ### 주제 발굴 (백로그가 빌 때만)
 
-`backend/blog/categories/*.json` 을 전부 읽어 각 카테고리의 `persona`·`readerProfile`·`selection`
+**먼저 `backend/blog/blogchart-plan.md` 를 본다** — 블로그차트 상위 카테고리 공략 10편 플랜(맛집·디저트·
+패션·여행·IT/AI·미용·가전·반려·콘텐츠·건강)이 각도·템플릿·출처힌트까지 정해져 있다. 아직 안 쓴 주제
+(같은 개념이 `posted.json` 에 없는 것)가 있으면 그걸 **우선** 쓰고, 그 편의 지침(원칙·주의)을 따른다.
+플랜이 다 소진됐으면 아래 자유 발굴로 넘어간다.
+
+자유 발굴: `backend/blog/categories/*.json` 을 전부 읽어 각 카테고리의 `persona`·`readerProfile`·`selection`
 (있으면)을 참고해, 카테고리마다 최근 실제로 화제인 주제 후보를 WebSearch 로 확인한다.
 **추측으로 채우지 마라** — 검색으로 실재를 확인한 것만 후보로 올린다.
 카테고리당 최소 1개는 만들려고 하되, 억지로 채우지 말고 실제로 소재가 있는 카테고리만 채운다.
@@ -147,6 +152,7 @@ JSON을 지어내지 말 것") 그 지시를 `blog-researcher` 호출 프롬프�
 
 ```bash
 node backend/scripts/blog-assemble.mjs <slug> --research=<조사파일명>   # 조사 파일명이 slug와 다르면(곡별 글처럼) 명시
+node backend/scripts/blog-selfreview.mjs <slug>   # 자체 피드백→반영(외과적 수정 후 재조립). 비치명적 — 실패해도 계속
 node backend/scripts/blog-verify.mjs <slug>
 ```
 
