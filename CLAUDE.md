@@ -281,7 +281,7 @@ Agent(
 ## 환경 메모
 
 - OS: Windows 11 / 셸: PowerShell (Bash 도구도 사용 가능)
-- 배포: GitHub `GO9ME/aztomz`(public) → Vercel 정적 배포, push마다 자동 재배포
+- 배포: GitHub `sgustjd2/aztomz`(public, 구 `GO9ME/aztomz`에서 이전 — 구 URL은 리다이렉트) → Vercel 정적 배포, push마다 자동 재배포
 - **Hermes(고구미봇)**: 별도 레포 `E:\workspace\side_project\hermes`. 크론 시각은 위 "크론 일람" 표가 유일한 기준.
   - **모델: `gemini-2.5-pro`(GA) · provider `gemini`(API키, 유료 Tier-1) 단독 — 폴백 없음**
     (`fallback_providers: []`, 2026-06-23 확정). 이전 구성은 전부 폐기:
