@@ -1,0 +1,143 @@
+{
+  "keyword": "요즘 뜨는 경량 비전-언어 모델(VLM) — 라즈베리파이·젯슨·소비자 GPU에서도 돌아가는 소형 오픈모델",
+  "categoryId": "vlm-watch",
+  "searchedAt": "2026-09-06T00:00:00+09:00",
+  "queries": [
+    "vision-language model VLM definition Hugging Face blog",
+    "LiquidAI LFM2.5-VL announcement blog",
+    "Apertus v1.5 8B Swiss AI EPFL ETH official release multimodal",
+    "small vision language model Jetson Orin Raspberry Pi 2026",
+    "https://huggingface.co/LiquidAI/LFM2.5-VL-3B",
+    "https://huggingface.co/swiss-ai/Apertus-v1.5-8B",
+    "https://huggingface.co/Hatim2221/Mubsir-Qwen-2B-VL",
+    "https://huggingface.co/blog/vlms-2025",
+    "https://www.liquid.ai/blog/lfm2-5-vl-3b",
+    "https://ai.ethz.ch/news-and-events/ai-center-news/2026/07/apertus-15-building-the-next-generation-of-open-ai-infrastructure.html",
+    "https://www.kunalganglani.com/blog/raspberry-pi-5-vs-jetson-orin-nano-edge-ai"
+  ],
+  "sources": [
+    {
+      "title": "LiquidAI/LFM2.5-VL-3B · Hugging Face (모델 카드)",
+      "url": "https://huggingface.co/LiquidAI/LFM2.5-VL-3B",
+      "host": "huggingface.co",
+      "tier": "data",
+      "publishedAt": "2026-08-11",
+      "body": "LFM2.5-VL-3B는 'LFM2.5 family of hybrid models designed for on-device deployment'의 멀티모달(비전) 변형으로, 텍스트와 이미지를 함께 처리하는 비전-언어 모델이다. 파라미터 수는 3.1B(약 30억 개). 라이선스는 자체 커스텀 라이선스 'lfm1.0'(Hugging Face API의 license 필드에는 'other'로 표기됨 — 시드 파일 참고). 가능한 작업은 이미지 이해·시각적 그라운딩(객체를 이미지에서 찾아 좌표 반환), OCR(광학문자인식) 및 레이아웃 주석 처리, 자연어 쿼리 기반 객체 검색, 문서 처리 및 구조화된 출력 생성이다. 배포 환경으로 Apple M5 Max, AMD Ryzen AI Max+, Galaxy S26 Ultra 같은 엣지 디바이스와 NVIDIA H100 GPU(고처리량), CPU 추론(GGUF 포맷)을 명시했다. 필요 메모리는 약 3GB 이하로 소개된다. 벤치마크로 ScreenSpot-v2 80.7점, RefCOCO(Macro Prec@1) 87.9점을 기록했고, 처리 속도는 Apple M5 Max에서 228 tok/s, AMD Ryzen AI Max+에서 116 tok/s로 보고됐다.",
+      "facts": [
+        "파라미터 수 3.1B(30억)",
+        "라이선스: lfm1.0(커스텀, HF API 표시상 'other')",
+        "ScreenSpot-v2 벤치마크 80.7점",
+        "RefCOCO(Macro Prec@1) 87.9점",
+        "Apple M5 Max에서 228 tok/s, AMD Ryzen AI Max+에서 116 tok/s",
+        "권장 메모리 약 3GB 이하, CPU 추론 지원(GGUF)"
+      ]
+    },
+    {
+      "title": "swiss-ai/Apertus-v1.5-8B · Hugging Face (모델 카드)",
+      "url": "https://huggingface.co/swiss-ai/Apertus-v1.5-8B",
+      "host": "huggingface.co",
+      "tier": "data",
+      "publishedAt": "2026-07-24",
+      "body": "Apertus 1.5는 스위스 AI 이니셔티브(Swiss AI Initiative)가 개발한 8B·70B 파라미터 언어모델 계열로, '다국어·멀티모달·완전 공개·투명 AI'를 표방한다. 이 페이지는 8B 버전으로, 실제 파라미터는 아키텍처 오버헤드를 포함하면 약 9B다. 라이선스는 Apache 2.0. 멀티모달 기능은 텍스트·이미지·오디오를 인터리브(interleaved)로 입력받아 텍스트를 생성하는 것으로, 이미지 이해와 오디오 전사/분석이 필요한 사용 사례를 지원한다. 다국어 지원 범위는 'massively multilingual'로 소개되며 구체적 언어 수는 이 페이지에 명시되지 않았다. 이번 버전은 4T(4조) 토큰 규모의 멀티모달 혼합 데이터로 지속 사전학습(continued pretraining)했고, 컨텍스트 길이는 최대 262,144 토큰까지 지원한다. 배포는 vLLM·Transformers 프레임워크를 지원하며, 8B 모델 기준 `--gpu-memory-utilization 0.6` 설정 예시가 제공된다. 구체적 벤치마크 수치는 이 페이지 발췌본에는 없고, 별도 기술보고서에서 텍스트·비전·다국어·안전성 영역 벤치마크가 나올 예정이라고 안내한다.",
+      "facts": [
+        "파라미터 8B(아키텍처 오버헤드 포함 약 9B)",
+        "라이선스 Apache 2.0",
+        "멀티모달 사전학습에 4T(4조) 토큰 투입",
+        "최대 컨텍스트 길이 262,144 토큰",
+        "8B 모델 vLLM 배포 예시 --gpu-memory-utilization 0.6"
+      ]
+    },
+    {
+      "title": "Hatim2221/Mubsir-Qwen-2B-VL · Hugging Face (모델 카드)",
+      "url": "https://huggingface.co/Hatim2221/Mubsir-Qwen-2B-VL",
+      "host": "huggingface.co",
+      "tier": "data",
+      "publishedAt": null,
+      "body": "Mubsir-Qwen-2B-VL은 'Built on the Qwen2-VL-2B-Instruct architecture'라고 명시된, Qwen2-VL-2B를 베이스로 한 비전-언어 모델이다. 파라미터 수는 20억 개(2B). 라이선스는 Apache 2.0. 이 모델은 범용이 아니라 'vision-language model fine-tuned specifically for Arabic Handwritten Text Recognition (HTR)', 즉 아랍어 손글씨 인식이라는 좁은 과업에 특화되도록 파인튜닝됐다. 학습 데이터셋은 KHATT(KFUPM Handwritten Arabic TexT)를 사용했다고 밝히고 있다. 학습 하드웨어로는 '2x NVIDIA T4 GPUs'가 사용됐다고 명시돼 있다. 다만 정확도·정밀도 등 평가 수치는 모델 카드 본문에 기재돼 있지 않았고, 정확한 공개 날짜도 카드에 명시돼 있지 않다(시드 데이터의 createdAt은 2026-08-14).",
+      "facts": [
+        "베이스 모델: Qwen2-VL-2B-Instruct",
+        "파라미터 수 2B(20억)",
+        "라이선스 Apache 2.0",
+        "아랍어 손글씨 인식(HTR) 전용 파인튜닝, KHATT 데이터셋 사용",
+        "학습 하드웨어 2x NVIDIA T4 GPU"
+      ]
+    },
+    {
+      "title": "Vision Language Models (Better, Faster, Stronger) — Hugging Face 공식 블로그",
+      "url": "https://huggingface.co/blog/vlms-2025",
+      "host": "huggingface.co",
+      "tier": "official",
+      "publishedAt": "2025-05-12",
+      "body": "Hugging Face 공식 블로그(2025-05-12 게시)는 VLM을 명시적 한 문장 정의 대신 기능으로 설명한다: '시각과 언어를 결합하여 이미지와 텍스트를 입력받아 구조화된 텍스트를 출력할 수 있는 모델'. 경량/소형 VLM(엣지 배포용) 사례로 SmolVLM2(256M·500M·2.2B, 비디오 이해 지원, 500M이 권장), Gemma-3-4B-IT(4B, 128k 토큰 컨텍스트, 140개 이상 언어 지원), Qwen2.5-VL-3B-Instruct(3B, 객체 탐지·문서 이해·에이전트 작업), Moondream2(2B, 초기 소형 VLM 시도작)를 열거한다. 이 글은 2025-09~2026 시점 기준 이전 세대 소형 VLM들의 계보를 정리한 자료로, 이번 조사 대상인 2026년 신모델(LFM2.5-VL, Apertus 1.5 등)이 어떤 흐름 위에 있는지 배경을 제공한다.",
+      "facts": [
+        "SmolVLM2: 256M/500M/2.2B, 500M이 권장 크기",
+        "Gemma-3-4B-IT: 4B, 128k 토큰 컨텍스트, 140+ 언어",
+        "Qwen2.5-VL-3B-Instruct: 3B, 객체 탐지·문서 이해 가능",
+        "Moondream2: 2B",
+        "게시일 2025-05-12"
+      ]
+    },
+    {
+      "title": "LFM2.5-VL-3B: A Better and Faster Vision-Language Model for the Edge — Liquid AI 공식 블로그",
+      "url": "https://www.liquid.ai/blog/lfm2-5-vl-3b",
+      "host": "liquid.ai",
+      "tier": "official",
+      "publishedAt": "2026-08-12",
+      "body": "Liquid AI가 2026-08-12에 공식 게시한 발표문. LFM2.5-VL-3B(3.1B 파라미터)는 'strong understanding of digital screens across mobile, web, and desktop'을 지원해 화면 이해, 페이지 전체 레이아웃 분석 기반 문서 이해, 지정 객체를 이미지에서 찾아 바운딩박스로 반환하는 좌표 그라운딩, 시각 정보 기반 도구 호출(함수 호출)을 수행한다. 벤치마크로 ScreenSpot-v2 80.7점(경쟁 모델 Gemma-4-E4B 51.2점, Qwen3.5-4B 78.5점 대비 우위), RefCOCO 정밀도 87.9(이전 버전 LFM2-VL 대비 57.1에서 30포인트 향상)를 제시한다. 처리량은 NVIDIA H100 SXM5에서 고동시성 시 약 11K tokens/초, Apple M5 Max에서 228 tok/s, AMD Ryzen AI Max+ 395에서 116 tok/s로 테스트됐다고 밝혔다. 스마트폰(Galaxy S26 Ultra)에서도 구동 테스트를 언급한다. 라이선스는 'Open-weight — Download, fine-tune, and deploy without restrictions'로 설명된다.",
+      "facts": [
+        "게시일 2026-08-12",
+        "ScreenSpot-v2 80.7점 vs Gemma-4-E4B 51.2점, Qwen3.5-4B 78.5점",
+        "RefCOCO 정밀도 87.9(전작 57.1에서 30점 향상)",
+        "H100 SXM5에서 약 11K tokens/초, M5 Max 228 tok/s, Ryzen AI Max+ 395 116 tok/s",
+        "테스트 디바이스에 스마트폰(Galaxy S26 Ultra) 포함"
+      ]
+    },
+    {
+      "title": "Apertus 1.5: Building the next generation of open AI infrastructure — ETH Zurich AI Center 공식 뉴스",
+      "url": "https://ai.ethz.ch/news-and-events/ai-center-news/2026/07/apertus-15-building-the-next-generation-of-open-ai-infrastructure.html",
+      "host": "ai.ethz.ch",
+      "tier": "official",
+      "publishedAt": "2026-07-24",
+      "body": "ETH Zurich AI Center가 2026-07-24 게시한 공식 발표문. EPFL·ETH Zurich·스위스 국립 슈퍼컴퓨팅센터(CSCS)가 공동으로 Apertus 1.5를 공개했다고 밝힌다. 이번 업데이트의 핵심은 'the model can now understand images and audio alongside text' — 즉 텍스트에 더해 이미지·오디오까지 이해하는 멀티모달 확장이며, 오디오 이해는 아직 실험적(experimental) 단계라고 명시한다. 별도로 경량 모델 스위트인 'Apertus Mini, a suite of 16 compact models'도 함께 소개됐다(단, 이 경량 스위트의 정확한 파라미터·비전 지원 여부는 본문에 없음). 라이선스는 Apache 2.0로 연구·상업적 사용을 모두 허용한다고 명시한다. 개발 주체 역할은 EPFL이 프로젝트 리더십(Martin Jaggi, Antoine Bosselut 교수 참여), ETH Zurich이 연구과학자 참여(Imanol Schlag), CSCS가 Alps 슈퍼컴퓨터 제공 및 실제 학습 수행을 담당했다고 밝힌다. 학습 토큰 수·컨텍스트 길이 등 세부 스펙은 이 공식 뉴스 페이지 본문에는 나오지 않는다(해당 수치는 Hugging Face 모델 카드 쪽에서 확인됨 — 아래 conflicts 참고).",
+      "facts": [
+        "발표일 2026-07-24",
+        "EPFL·ETH Zurich·CSCS 3개 기관 공동 개발/공개",
+        "오디오 이해 기능은 아직 실험적(experimental) 단계",
+        "'Apertus Mini' 경량 모델 스위트 16종도 별도 공개",
+        "라이선스 Apache 2.0, 연구·상업적 사용 모두 허용"
+      ]
+    },
+    {
+      "title": "Raspberry Pi 5 vs Jetson Orin Nano: Edge AI 2026",
+      "url": "https://www.kunalganglani.com/blog/raspberry-pi-5-vs-jetson-orin-nano-edge-ai",
+      "host": "kunalganglani.com",
+      "tier": "blog",
+      "publishedAt": "2026-05-10",
+      "body": "2026-05-10 게시(2026-08-16 최종 업데이트)된 하드웨어 비교 블로그 글. 가격은 라즈베리파이 5(8GB)가 약 $80, Jetson Orin Nano(8GB)가 약 $499. AI 성능은 라즈베리파이 5가 약 2~4 TOPS인 반면 Jetson Orin Nano는 INT8 기준 최대 40 TOPS다. CPU는 각각 Cortex-A76 4코어 2.4GHz(Pi5) vs Cortex-A78AE 6코어 1.5GHz(Orin Nano)이며, GPU 가속은 Pi5가 없고(CPU 전용 추론) Orin Nano는 1024코어 Ampere GPU를 갖는다. LLM 추론 속도 예시로 Gemma 2B 모델(INT4 양자화) 기준 Pi5는 약 8~15 tok/s, Orin Nano는 GPU 가속으로 40~80+ tok/s를 낸다고 보고한다. 비전 AI 예시로 YOLOv8n이 Pi5(CPU)에서 약 5~15 FPS, Orin Nano(TensorRT 최적화)에서 100+ FPS를 낸다. 총소요비용은 Pi5 구성이 약 $100~155, Orin Nano 구성이 약 $300~600으로 3~5배 가격 차이가 난다고 정리한다. 이 글은 개인 기술 블로그로 1차 자료는 아니며 보조 참고용이다.",
+      "facts": [
+        "가격: Pi5 8GB 약 $80, Jetson Orin Nano 8GB 약 $499(3~5배 차이)",
+        "AI 성능: Pi5 약 2~4 TOPS vs Orin Nano 최대 40 TOPS(INT8)",
+        "Gemma 2B INT4 추론 속도: Pi5 8~15 tok/s vs Orin Nano 40~80+ tok/s",
+        "YOLOv8n: Pi5 5~15 FPS(CPU) vs Orin Nano 100+ FPS(TensorRT)"
+      ]
+    }
+  ],
+  "conflicts": [
+    {
+      "about": "LiquidAI/LFM2.5-VL-3B 라이선스 표기",
+      "a": "모델 카드 본문(WebFetch)은 커스텀 라이선스명 'lfm1.0'을 명시한다.",
+      "b": "시드 파일(hf-vlm-trending-2026-09-02.json)의 Hugging Face API 메타데이터는 license 필드를 'other'로만 표기한다 — 같은 사실을 다른 상세도로 기술한 것으로 보이며 내용이 상충하지는 않는다."
+    },
+    {
+      "about": "Apertus 1.5의 학습 토큰 수·컨텍스트 길이 출처",
+      "a": "Hugging Face 모델 카드(swiss-ai/Apertus-v1.5-8B)는 '4T 토큰 멀티모달 지속 사전학습', '최대 컨텍스트 262,144 토큰'을 구체적으로 명시한다.",
+      "b": "ETH Zurich 공식 뉴스 페이지 본문에는 이 수치들이 나오지 않는다(오디오는 '실험적'이라고만 언급) — 공식 발표문과 모델 카드의 상세도 차이이며 사실 자체가 어긋나는 것은 아니다."
+    }
+  ],
+  "unknowns": [
+    "Hatim2221/Mubsir-Qwen-2B-VL의 아랍어 손글씨 인식 정확도·정밀도 등 정량 평가 수치 — 모델 카드에 미기재",
+    "Hatim2221/Mubsir-Qwen-2B-VL의 정확한 공개 날짜 — 모델 카드에 미기재(시드 API의 createdAt은 2026-08-14)",
+    "Apertus 1.5의 비전(이미지) 벤치마크 정량 점수 — 공식 뉴스·모델 카드 모두 '별도 기술보고서에서 공개 예정'이라고만 언급, 이번 조사 시점엔 수치 미공개",
+    "swiss-ai/Apertus-v1.5-8B가 실제로 GGUF/양자화 배포판이 있는지, 라즈베리파이 급 엣지에서 실측 구동 사례가 있는지 — 이번 조사에서 확인 못함(시드 데이터의 boardFit은 int4 VRAM 추정치이며 실측 벤치마크 아님)"
+  ]
+}

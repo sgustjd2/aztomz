@@ -1,0 +1,93 @@
+{
+  "keyword": "요즘 뜨는 경량 비전-언어 모델(VLM) — 라즈베리파이·젯슨·소비자 GPU에서도 돌아가는 소형 오픈모델",
+  "categoryId": "vlm-watch",
+  "slug": "lightweight-vlm-2026-09",
+  "searchedAt": "2026-09-06T00:00:00+09:00",
+  "verifiedAt": "2026-09-06",
+  "origin": "vlm-watch fetch + HF 모델카드",
+  "note": "raw의 소스 7개는 전부 주제와 직접 관련 있어 dropped 없음. 모델은 다운로드·주목도 상위 3개(LiquidAI/LFM2.5-VL-3B, swiss-ai/Apertus-v1.5-8B, Hatim2221/Mubsir-Qwen-2B-VL) 중심. HF 공식 블로그(vlms-2025)는 이전 세대 소형 VLM 계보를 정리한 배경 자료로, 개인 하드웨어 비교 블로그(kunalganglani.com)는 Pi5/Jetson Orin Nano 사양 비교 보조자료로만 쓴다 — 후자의 성능 수치(Gemma 2B, YOLOv8n)는 이번에 다루는 3개 VLM 자체의 실측치가 아니므로 절대 섞어 쓰지 않는다.",
+  "sources": [
+    {
+      "title": "LiquidAI/LFM2.5-VL-3B · Hugging Face (모델 카드)",
+      "url": "https://huggingface.co/LiquidAI/LFM2.5-VL-3B",
+      "host": "huggingface.co",
+      "tier": "data"
+    },
+    {
+      "title": "swiss-ai/Apertus-v1.5-8B · Hugging Face (모델 카드)",
+      "url": "https://huggingface.co/swiss-ai/Apertus-v1.5-8B",
+      "host": "huggingface.co",
+      "tier": "data"
+    },
+    {
+      "title": "Hatim2221/Mubsir-Qwen-2B-VL · Hugging Face (모델 카드)",
+      "url": "https://huggingface.co/Hatim2221/Mubsir-Qwen-2B-VL",
+      "host": "huggingface.co",
+      "tier": "data"
+    },
+    {
+      "title": "Vision Language Models (Better, Faster, Stronger) — Hugging Face 공식 블로그",
+      "url": "https://huggingface.co/blog/vlms-2025",
+      "host": "huggingface.co",
+      "tier": "official"
+    },
+    {
+      "title": "LFM2.5-VL-3B: A Better and Faster Vision-Language Model for the Edge — Liquid AI 공식 블로그",
+      "url": "https://www.liquid.ai/blog/lfm2-5-vl-3b",
+      "host": "liquid.ai",
+      "tier": "official"
+    },
+    {
+      "title": "Apertus 1.5: Building the next generation of open AI infrastructure — ETH Zurich AI Center 공식 뉴스",
+      "url": "https://ai.ethz.ch/news-and-events/ai-center-news/2026/07/apertus-15-building-the-next-generation-of-open-ai-infrastructure.html",
+      "host": "ai.ethz.ch",
+      "tier": "official"
+    },
+    {
+      "title": "Raspberry Pi 5 vs Jetson Orin Nano: Edge AI 2026",
+      "url": "https://www.kunalganglani.com/blog/raspberry-pi-5-vs-jetson-orin-nano-edge-ai",
+      "host": "kunalganglani.com",
+      "tier": "blog"
+    }
+  ],
+  "facts": [
+    "LiquidAI/LFM2.5-VL-3B: 파라미터 3.1B(약 30억), 온디바이스 배포용 LFM2.5 하이브리드 계열의 비전 변형이며 이미지 이해·시각적 그라운딩(좌표 반환)·OCR·문서 구조화 출력을 지원 (huggingface.co, data)",
+      "LiquidAI/LFM2.5-VL-3B 라이선스: 커스텀 명칭 'lfm1.0'(HF API 표시상으로는 'other'), Liquid AI 공식 블로그는 'Open-weight — 제한 없이 다운로드·파인튜닝·배포 가능'으로 설명 (huggingface.co, data; liquid.ai, official)",
+    "LiquidAI/LFM2.5-VL-3B 벤치마크: ScreenSpot-v2 80.7점(Liquid AI는 경쟁 모델 Gemma-4-E4B 51.2점, Qwen3.5-4B 78.5점과 비교해 우위라고 주장), RefCOCO(Macro Prec@1) 87.9점(전작 LFM2-VL의 57.1에서 30점 향상이라고 자체 발표) (huggingface.co, data; liquid.ai, official)",
+    "LiquidAI/LFM2.5-VL-3B 처리 속도(자체 발표): Apple M5 Max 228 tok/s, AMD Ryzen AI Max+ 395 116 tok/s, NVIDIA H100 SXM5 고동시성 시 약 11K tokens/초. 권장 메모리 약 3GB 이하, CPU 추론(GGUF 포맷) 지원 (huggingface.co, data; liquid.ai, official)",
+    "swiss-ai/Apertus-v1.5-8B: 파라미터 8B(아키텍처 오버헤드 포함 약 9B), 라이선스 Apache 2.0, EPFL·ETH Zurich·스위스 국립 슈퍼컴퓨팅센터(CSCS) 공동 개발로 2026-07-24 발표 (huggingface.co, data; ai.ethz.ch, official)",
+    "swiss-ai/Apertus-v1.5-8B: 텍스트·이미지·오디오를 인터리브로 입력받는 멀티모달 모델이며 오디오 이해는 아직 실험적(experimental) 단계. 멀티모달 사전학습에 4T(4조) 토큰 투입, 최대 컨텍스트 262,144 토큰, vLLM 배포 예시로 --gpu-memory-utilization 0.6 제시 (huggingface.co, data; ai.ethz.ch, official)",
+    "swiss-ai는 Apertus-v1.5-8B와 함께 경량 스위트 'Apertus Mini'(16종)도 공개했으나 정확한 파라미터·비전 지원 여부는 공식 뉴스 페이지 본문에 없음 (ai.ethz.ch, official)",
+    "Hatim2221/Mubsir-Qwen-2B-VL: Qwen2-VL-2B-Instruct를 베이스로 한 파라미터 2B 모델, 라이선스 Apache 2.0, 아랍어 손글씨 인식(HTR) 전용으로 KHATT 데이터셋을 사용해 파인튜닝했고 학습은 NVIDIA T4 GPU 2장으로 진행 (huggingface.co, data)",
+    "(배경) Hugging Face 공식 블로그(2025-05-12)가 정리한 이전 세대 소형 VLM: SmolVLM2(256M/500M/2.2B, 500M 권장), Gemma-3-4B-IT(4B, 128k 컨텍스트, 140개 이상 언어), Qwen2.5-VL-3B-Instruct(3B, 객체 탐지·문서 이해), Moondream2(2B) (huggingface.co, official)",
+    "(하드웨어 참고, 3개 VLM 실측 아님) 개인 기술 블로그 기준 가격은 라즈베리파이 5(8GB) 약 $80 vs Jetson Orin Nano(8GB) 약 $499(3~5배 차이), AI 성능은 Pi5 2~4 TOPS vs Orin Nano 최대 40 TOPS(INT8). 예시로 든 Gemma 2B(INT4) 추론은 Pi5 8~15 tok/s vs Orin Nano 40~80+ tok/s, YOLOv8n은 Pi5 5~15 FPS(CPU) vs Orin Nano 100+ FPS(TensorRT) (kunalganglani.com, blog)"
+  ],
+  "unverified": [
+    "swiss-ai/Apertus-v1.5-8B의 이미지(비전) 벤치마크 정량 점수 — 모델 카드·공식 뉴스 모두 '별도 기술보고서에서 추후 공개'라고만 언급, 현재 수치 없음",
+    "Hatim2221/Mubsir-Qwen-2B-VL의 아랍어 손글씨 인식 정확도·정밀도 등 정량 평가 수치 — 모델 카드 미기재",
+    "Hatim2221/Mubsir-Qwen-2B-VL의 정확한 공개 날짜 — 모델 카드 미기재(시드 API의 createdAt만 2026-08-14로 참고 가능)",
+    "swiss-ai/Apertus-v1.5-8B가 실제로 GGUF/양자화 배포판이 있는지, 라즈베리파이급 엣지에서 실측 구동 사례가 있는지 — 이번 조사에서 확인 못함",
+    "LFM2.5-VL-3B·Apertus-v1.5-8B·Mubsir-Qwen-2B-VL 세 모델이 라즈베리파이·Jetson Orin에서 실제로 낸 실측 토큰/초·FPS — 존재하는 하드웨어 비교 수치(Gemma 2B, YOLOv8n)는 이 3개 모델과 무관한 다른 모델 예시일 뿐, 대입해서 말할 수 없음"
+  ],
+  "conflicts": [
+    {
+      "about": "LiquidAI/LFM2.5-VL-3B 라이선스 표기",
+      "a": "모델 카드 본문은 커스텀 라이선스명 'lfm1.0'을 명시한다.",
+      "b": "시드 파일(hf-vlm-trending-2026-09-02.json)의 HF API 메타데이터는 license 필드를 'other'로만 표기한다 — 같은 사실을 다른 상세도로 기술한 것으로 상충은 아니다."
+    },
+    {
+      "about": "Apertus 1.5의 학습 토큰 수·컨텍스트 길이 출처",
+      "a": "Hugging Face 모델 카드는 '4T 토큰 멀티모달 지속 사전학습', '최대 컨텍스트 262,144 토큰'을 구체적으로 명시한다.",
+      "b": "ETH Zurich 공식 뉴스 페이지 본문에는 이 수치들이 나오지 않는다(오디오는 '실험적'이라고만 언급) — 공식 발표문과 모델 카드의 상세도 차이이며 사실이 어긋나는 것은 아니다."
+    }
+  ],
+  "cannotSay": [
+    "VRAM 추정치는 int4 기준 대략값 — '정확히 N GB'·'무조건 돌아간다' 금지. 실제는 해상도·컨텍스트·구현에 따라 달라진다.",
+    "라이선스는 명칭만 전달. '상업적 사용 가능/불가' 같은 법적 해석 단정 금지.",
+    "성능(정확도)은 모델카드의 벤치 수치만 인용. 근거 없이 '최고다/더 낫다' 단정 금지 — LFM2.5-VL-3B의 경쟁 모델 비교 수치는 Liquid AI 자체 발표(1차 자료 아님, 자사 벤치)임을 밝힐 것.",
+    "특정 용도(화재감지 등) 성능 보장 금지 — '시도해볼 만하다' 수준까지만.",
+    "하드웨어 비교 블로그(kunalganglani.com)의 Pi5 vs Jetson Orin Nano 수치(Gemma 2B, YOLOv8n 기준)를 이 글의 3개 VLM(LFM2.5-VL-3B·Apertus-v1.5-8B·Mubsir-Qwen-2B-VL) 실측치인 것처럼 옮겨 쓰지 말 것 — 보드 성능 격차를 설명하는 일반 참고자료로만 인용."
+  ],
+  "internalLinkCandidates": [],
+  "curation": "이 글은 다운로드·주목도가 높은 경량 VLM 3종(LiquidAI/LFM2.5-VL-3B, swiss-ai/Apertus-v1.5-8B, Hatim2221/Mubsir-Qwen-2B-VL)의 파라미터·라이선스·용도·공식 발표 벤치마크(있는 것만)를 모델카드/공식 블로그 1차 자료로 확인해 소개할 수 있다. LFM2.5-VL-3B는 벤치마크·속도·경쟁모델 비교치까지 갖춰 가장 구체적으로 다룰 수 있고, Apertus-v1.5-8B는 스펙·개발주체는 확실하나 비전 벤치마크 수치가 없어 '기술보고서 예정'까지만 말할 수 있으며, Mubsir-Qwen-2B-VL은 아랍어 손글씨 인식이라는 좁은 용도와 학습 구성만 말할 수 있고 정확도는 말할 수 없다. 라즈베리파이/Jetson 보드 이야기는 일반적인 하드웨어 스펙 비교(가격·TOPS)까지만 가능하며, 이 3개 모델이 그 보드에서 실제로 몇 tok/s가 나오는지는 실측 자료가 없어 말할 수 없다 — 이 연결을 시도하면 지어낸 숫자가 된다."
+}
