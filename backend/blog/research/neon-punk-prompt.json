@@ -1,0 +1,120 @@
+{
+  "keyword": "네온 펑크(Neon Punk) 프롬프트",
+  "categoryId": "hangeut-trend",
+  "slug": "neon-punk-prompt",
+  "searchedAt": "2026-09-06",
+  "origin": "hermes-trends",
+  "note": "Hermes 가 수집·분석하고 auto-build.mjs 가 출처까지 자동검증한 항목이다. 여기 있는 사실 밖으로 나가지 말 것 — 새로 검색해서 덧붙이지 않는다.",
+  "trend": {
+    "id": "neon-punk-prompt",
+    "type": "트렌드",
+    "cat": "AI 프롬프트",
+    "title": "네온 펑크(Neon Punk) 프롬프트",
+    "def": "화려한 네온사인과 사이버펑크 감성을 결합해 미래적인 도시의 밤을 표현하는 명령",
+    "excerpt": "사이버펑크의 디스토피아적 세계관에 화려하고 강렬한 네온 조명을 녹여낸 스타일입니다. 도시의 밤거리, 인물 사진 등을 미래적이면서도 몽환적인 분위기로 재탄생시킵니다.",
+    "pull": "평범한 밤 사진을 SF 영화의 한 장면으로.",
+    "verdict": "사이버펑크의 디스토피아적 세계관에 화려하고 강렬한 네온 조명을 녹여낸 '네온 펑크' 스타일이 인기입니다. 도시의 밤거리, 인물 사진 등을 미래적이면서도 몽환적인 분위기로 재탄생시키며, 특히 비 오는 날의 풍경과 결합했을 때 효과가 극대화됩니다. SNS에서 강렬한 인상을 남기고 싶을 때 활용하기 좋은 프롬프트입니다.",
+    "stage": "피크",
+    "stageMsg": "적극적으로 활용되는 중",
+    "buzz": "화제성 높음",
+    "label": "지금 써도 됨",
+    "ad": null,
+    "trust": null,
+    "sat": null,
+    "satTxt": null,
+    "reasons": null,
+    "recs": [
+      [
+        "미래적·사이버펑크 분위기",
+        "◎",
+        1
+      ],
+      [
+        "강렬한 색감 표현",
+        "◎",
+        1
+      ],
+      [
+        "자연·낮 풍경",
+        "✕",
+        0
+      ]
+    ],
+    "tags": [
+      "AI프롬프트",
+      "네온",
+      "사이버펑크",
+      "NeonPunk",
+      "Cyberpunk"
+    ],
+    "article": [
+      [
+        "h",
+        "도시의 밤을 캔버스 삼아"
+      ],
+      [
+        "p",
+        "요즘 SNS 피드를 둘러보면 마치 SF 영화 속에 들어온 듯한 이미지들을 심심치 않게 볼 수 있습니다. 화려한 네온사인이 빛나는 미래 도시, 그 속을 거니는 인물. 바로 '네온 펑크' AI 프롬프트가 만들어낸 결과물입니다."
+      ],
+      [
+        "q",
+        "어두울수록, 비가 올수록 더 빛을 발하는 스타일이죠."
+      ],
+      [
+        "h",
+        "왜 지금 '네온 펑크'일까?"
+      ],
+      [
+        "p",
+        "기술에 대한 기대와 불안이 공존하는 현대 사회의 분위기를 반영하기 때문입니다. 사이버펑크의 어두운 세계관과 네온의 화려함이 충돌하며 만들어내는 독특한 미학이 많은 이들의 시선을 사로잡고 있습니다. 평범한 사진도 단번에 특별하게 만들어주는 강력한 시각적 효과 덕분이죠."
+      ],
+      [
+        "h",
+        "한끗 정리: 네온 펑크 제대로 쓰는 법"
+      ],
+      [
+        "ul",
+        [
+          "'Neon signs', 'cyberpunk city', 'rainy night', 'reflection' 키워드는 필수 조합입니다.",
+          "인물 사진에 적용할 땐 'dramatic split lighting', 'vivid magenta pink' 처럼 구체적인 조명 색상을 지정해 보세요.",
+          "미래적인 의상이나 소품을 추가하면 더욱 완성도 높은 결과물을 얻을 수 있습니다."
+        ]
+      ]
+    ],
+    "shops": [],
+    "prompt": "A full-body portrait of a female model in a futuristic cyberpunk city at night. She wears a modern, stylish outfit with neon accents. The background is filled with towering skyscrapers, holographic advertisements, and glowing neon signs in Japanese and English. It's raining, and the wet streets reflect the vibrant city lights. Use dramatic, cinematic lighting with high contrast. The atmosphere should be moody and mysterious. Shot on an 85mm lens with a shallow depth of field. --ar 9:16 --style raw",
+    "pureKorean": null,
+    "example": null,
+    "video": null,
+    "collectedAt": "2026-09-06",
+    "analyzedAt": "2026-09-06",
+    "detailUrl": "https://az2mz.vercel.app/trend.html?id=neon-punk-prompt"
+  },
+  "sources": [
+    {
+      "title": "AI Academy: ChatGPT Neon Photo Prompts",
+      "url": "https://academy.techpresso.co/prompts/chatgpt-prompts-neon-photos",
+      "host": "academy.techpresso.co",
+      "tier": "press",
+      "kind": "analysis",
+      "body": "Hermes 수집 시 auto-build.mjs 가 생존(404)·본문 관련성을 검증한 출처다. 본문을 여기 다시 담지 않는다 — 이 글은 trend 필드의 분석을 근거로 쓴다."
+    },
+    {
+      "title": "Media.io: Night Glow Effect AI Photo Editing Prompts",
+      "url": "https://www.media.io/ai/image-to-image/night-glow-effect-ai-photo-editing-chatgpt-prompts",
+      "host": "www.media.io",
+      "tier": "press",
+      "kind": "analysis",
+      "body": "Hermes 수집 시 auto-build.mjs 가 생존(404)·본문 관련성을 검증한 출처다. 본문을 여기 다시 담지 않는다 — 이 글은 trend 필드의 분석을 근거로 쓴다."
+    }
+  ],
+  "internalLinkCandidates": [
+    "https://az2mz.vercel.app/trend.html?id=neon-punk-prompt"
+  ],
+  "cannotSay": [
+    "광고 의심도·후기 신뢰도는 추정치다. \"확실히 광고다\" 같은 확정 표현 금지.",
+    "후기 신뢰도(믿을 만한가) 와 만족도(좋은가) 를 섞어 쓰지 말 것 — 별개 축이다.",
+    "trend 필드에 없는 수치·날짜·가게·인물을 새로 만들지 말 것. 추가 검색도 하지 않는다.",
+    "분석 기준일은 2026-09-06 이다. \"오늘 기준\" 처럼 시점을 옮겨 쓰지 말 것."
+  ]
+}

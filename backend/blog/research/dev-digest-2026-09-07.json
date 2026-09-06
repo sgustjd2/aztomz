@@ -1,0 +1,107 @@
+{
+  "keyword": "이번 주 개발자 도구·오픈소스 다이제스트 (2026-09-01~09-07)",
+  "categoryId": "dev-digest",
+  "searchedAt": "2026-09-07",
+  "queries": [
+    "GitHub release September 2026 new version open source tool",
+    "\"v\" release notes September 2026 CLI framework library",
+    "Bun release September 2026 changelog",
+    "Deno OR \"Node.js\" release September 2026 changelog version",
+    "Rust OR Go OR TypeScript language release September 2026",
+    "Vite OR Astro OR \"Next.js\" OR Svelte release September 2026",
+    "Astro 7.3.0 release notes changelog September 2026",
+    "svelte 5.57.0 npm release date changelog",
+    "uv OR Ruff OR pnpm OR ESLint release September 2026",
+    "Node.js release September 2026 changelog v26 OR v27",
+    "BentoPDF open source release September 2026",
+    "Ollama OR LangChain OR Playwright OR Vitest release September 2026 changelog",
+    "ollama v0.33.3 release date github"
+  ],
+  "sources": [
+    {
+      "title": "Bun v1.4.2",
+      "url": "https://bun.com/blog/bun-v1.4.2",
+      "host": "bun.com",
+      "tier": "official",
+      "publishedAt": "2026-09-05",
+      "body": "Bun 공식 블로그에 게시된 v1.4.2 릴리스 노트. 2026-09-05 공개. v1.4.1에서 생긴 회귀 버그 두 건을 수정: (1) bun build가 Elysia 앱에서 중첩 var를 같은 블록의 let과 동일 이름으로 바꿔버려 'Cannot declare a var variable that shadows a let/const/class variable' 에러가 나던 문제, (2) AsyncLocalStorage에서 store.exit() 또는 중첩 store.run() 안에서 타이머·Promise를 만들면 바깥 store 값이 메모리에 계속 남아있던 누수. 그 외 worker_threads의 'online' 이벤트 순서가 Node.js와 어긋나 @discordjs/ws가 멈추던 현상 수정, Bun.Image에 4-component CMYK/YCCK JPEG 디코딩 지원 추가(RGB로 변환되어 모든 출력 포맷에서 동작), JavaScriptCore를 약 350개 WebKit 커밋 반영분으로 업그레이드(Intl·TypedArray·Proxy 버그 수정), musl(Alpine)에서의 GC 크래시 수정, JSON 파싱 에러 메시지 개선, 파일 디스크립터 중복 해제 문제 수정 등 총 7개 이슈를 해결. 기여자 3명.",
+      "facts": [
+        "Bun v1.4.2가 2026-09-05 공식 블로그(bun.com/blog/bun-v1.4.2)에 게시됨",
+        "v1.4.1 회귀 버그 2건(Elysia bun build 변수명 충돌, AsyncLocalStorage 메모리 누수) 포함 총 7개 이슈 수정",
+        "JavaScriptCore를 약 350개 WebKit 커밋 반영분으로 업그레이드"
+      ]
+    },
+    {
+      "title": "Astro 7.3",
+      "url": "https://astro.build/blog/astro-730/",
+      "host": "astro.build",
+      "tier": "official",
+      "publishedAt": "2026-09-03",
+      "body": "Astro 공식 블로그의 7.3 릴리스 노트. 2026-09-03 공개. 6월에 나온 Astro 7 라인(Vite 8 기반 빌드 파이프라인 + 신규 Rust 컴파일러)의 패치 릴리스. 주요 변경 3가지: (1) astro preview 명령에 --ignore-lock 플래그를 추가해 여러 개의 프리뷰 서버를 동시에 띄울 수 있게 함(기존엔 락 파일 때문에 1개만 가능), (2) 커스텀 이미지 서비스·캐시 제공자에 Astro의 런타임 로거를 전달해, 이 서비스들이 내는 경고가 콘솔에 직접 찍히지 않고 사용자가 설정한 로깅 설정을 따르도록 함, (3) @astrojs/cloudflare 패키지에 커스텀 워커 엔트리포인트를 위한 finalize() 헬퍼를 추가해 쿠키·CDN 캐시 기본값을 응답에 일관되게 적용할 수 있게 함. 그 외 다수의 버그 수정과 소규모 개선이 전체 체인지로그에 포함됨.",
+      "facts": [
+        "Astro 7.3이 2026-09-03 공식 블로그(astro.build/blog/astro-730)에 게시됨",
+        "astro preview --ignore-lock 플래그로 다중 프리뷰 서버 동시 실행 지원",
+        "@astrojs/cloudflare에 커스텀 워커 엔트리포인트용 finalize() 헬퍼 추가"
+      ]
+    },
+    {
+      "title": "Releases · astral-sh/uv",
+      "url": "https://github.com/astral-sh/uv/releases",
+      "host": "github.com",
+      "tier": "official",
+      "publishedAt": "2026-09-04",
+      "body": "Python 패키지·프로젝트 매니저 uv(Rust로 작성, Astral 개발)의 공식 GitHub 릴리스 페이지. 이번 주 두 개 패치가 나옴. 0.12.9(2026-09-01): CPython 3.15.0rc2 지원 추가, --no-locked/--no-frozen 플래그로 관련 환경변수 설정을 개별적으로 무효화할 수 있게 함, 휠 메타데이터 읽기 시 발생할 수 있던 메모리 안전 문제 수정, 인증 영역(realm)이 바뀔 때 민감한 헤더를 제거하도록 수정. 0.12.10(2026-09-04): PyPI Trusted Publishing 토큰을 발행(publish) 후 자동으로 취소(revoke) 시도하도록 개선, 프리뷰 기능으로 잠금 파일에서 해상도 외부 패키지의 exclude-newer-package 설정을 생략하도록 변경, --locked 모드에서 exclude-newer-package 설정 불일치를 감지해 고치던 문제 수정.",
+      "facts": [
+        "uv 0.12.9가 2026-09-01, uv 0.12.10이 2026-09-04에 GitHub 공식 릴리스로 발행됨",
+        "0.12.9에서 CPython 3.15.0rc2 지원 추가",
+        "0.12.10에서 PyPI Trusted Publishing 토큰 발행 후 자동 취소 시도 기능 추가"
+      ]
+    },
+    {
+      "title": "Release v0.33.3 · ollama/ollama",
+      "url": "https://github.com/ollama/ollama/releases/tag/v0.33.3",
+      "host": "github.com",
+      "tier": "official",
+      "publishedAt": "2026-09-02",
+      "body": "로컬 LLM 실행기 Ollama의 공식 GitHub 릴리스 태그 v0.33.3. 2026-09-02(커밋 b79067b) 공개, 이번 주 기준 최신 안정판. 변경사항: Gemma4 모델이 MLX 엔진에서 이미지·오디오 입력을 지원하도록 멀티모달 범위 확대, 프롬프트의 캐시된 토큰 수를 응답에 더 명확히 보고하도록 개선, GGUF 모델 파일에 정의된 기본 파라미터 값을 이제 올바르게 준수하도록 수정(이전엔 무시되던 경우가 있었음), MLX·MLX-C·llama.cpp 하위 엔진 종속성 업데이트. 신규 기여자 marcelpetrick의 첫 PR(#17579)이 포함됨. 커뮤니티 반응 총 40건(👍34·🚀7·🎉6 등).",
+      "facts": [
+        "Ollama v0.33.3이 2026-09-02 GitHub 공식 릴리스로 공개됨(커밋 b79067b)",
+        "Gemma4가 MLX 엔진에서 이미지·오디오 입력 지원",
+        "GGUF 모델에 정의된 기본 파라미터 값을 올바르게 준수하도록 수정"
+      ]
+    },
+    {
+      "title": "Release v0.34.0 (pre-release) · ollama/ollama",
+      "url": "https://github.com/ollama/ollama/releases/tag/v0.34.0",
+      "host": "github.com",
+      "tier": "official",
+      "publishedAt": "2026-09-05",
+      "body": "Ollama 공식 GitHub 릴리스의 v0.34.0 사전 릴리스(pre-release). 2026-09-05 공개. ChatGPT Desktop 앱에서 Ollama로 실행 중인 로컬 모델을 직접 사용할 수 있게 하는 연동 기능이 추가됨, Apple Silicon에서 구조화된 출력(structured output) 생성 성능 개선, OpenAI 호환 클라이언트에서 도구(tool) 검색을 지원하도록 확장, 압축된 응답을 통한 이미지 처리 개선이 포함됨. 정식(stable) 태그가 아닌 pre-release 상태이므로 프로덕션 반영 전 변경 가능성이 있다는 점을 명시.",
+      "facts": [
+        "Ollama v0.34.0 사전 릴리스가 2026-09-05 GitHub에 공개됨",
+        "ChatGPT Desktop 앱에서 Ollama 로컬 모델을 직접 사용할 수 있는 연동 기능 추가",
+        "OpenAI 호환 클라이언트의 도구(tool) 검색 지원 확장"
+      ]
+    },
+    {
+      "title": "MCP in LangChain: Stateless Protocol, Elicitation, and More!",
+      "url": "https://www.langchain.com/blog/mcp-in-langchain-stateless-protocol-elicitation-and-more",
+      "host": "langchain.com",
+      "tier": "official",
+      "publishedAt": "2026-09-03",
+      "body": "LangChain 공식 블로그 게시글(저자 Sydney Runkle, 2026-09-03). MCP(Model Context Protocol) 지원이 별도 패키지 설치 없이 메인 패키지의 langchain.mcp 네임스페이스로 통합됨(alpha preview)을 발표. 글에 따르면 MCP는 2026년 7월에 대규모 프로토콜 업데이트를 거쳤고, ChatGPT 사용자의 MCP 도구 호출 건수가 연중 98배 증가했다고 밝힘. langchain.mcp의 핵심 변화 3가지: (1) 전송·인증·연결 관리·프로토콜 협상을 FastMCP가 담당, (2) 세션 유지가 필요 없는 상태 비저장(stateless) 프로토콜로 전환해 서버 재배포 시에도 연결을 유지할 필요가 없고 확장성이 향상됨, (3) 사용자 승인·누락 매개변수 요청 등을 처리하는 elicitation(상호작용) 인터럽트와 클라이언트 측 캐싱(서버가 도구 목록의 유효기간을 지정해 매번 재요청하지 않음) 지원 추가. 인증은 Bearer 토큰·OAuth 2.1·머신-투-머신 자격증명·CIMD 등을 지원하며, ClientGroup으로 여러 MCP 서버를 동시에 연결해 도구명에 자동으로 접두사(billing_search, docs_search 등)를 붙여 구분한다고 설명.",
+      "facts": [
+        "LangChain이 2026-09-03 공식 블로그에서 langchain.mcp 네임스페이스(alpha preview)를 발표",
+        "글에 따르면 ChatGPT 사용자의 MCP 도구 호출 건수가 연중 98배 증가",
+        "MCP가 상태 비저장(stateless) 프로토콜로 전환되어 세션 유지 불필요, ClientGroup으로 다중 서버 연결 지원"
+      ]
+    }
+  ],
+  "conflicts": [],
+  "unknowns": [
+    "Svelte 공식 블로그의 'What's new in Svelte: September 2026'(게시일 2026-09-01)은 이번 주 발행물이지만, 다루는 핵심 릴리스인 svelte@5.57.0의 실제 배포일은 2026-08-28로 조사 대상 기간(9/1~9/7) 이전이라 이번 다이제스트의 '이번 주 릴리스'로는 넣지 않음(참고용으로만 기록)",
+    "Node.js는 이번 주(9/1~9/7) 발행된 신규 마이너/패치 릴리스를 확인하지 못함(직전 확인된 최신은 8월의 v26.6.0)",
+    "Deno의 이번 주 신규 릴리스 여부는 확인하지 못함(최신 확인된 안정판은 8월 6일 기준 2.9.5)",
+    "Rust 1.99, Go 다음 패치 등은 각각 10/1·9월 중순 예정으로 이번 주 발행 확인 안 됨"
+  ]
+}

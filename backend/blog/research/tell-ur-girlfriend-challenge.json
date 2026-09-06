@@ -1,0 +1,130 @@
+{
+  "keyword": "Tell Ur Girlfriend 챌린지",
+  "categoryId": "hangeut-trend",
+  "slug": "tell-ur-girlfriend-challenge",
+  "searchedAt": "2026-09-06",
+  "origin": "hermes-trends",
+  "note": "Hermes 가 수집·분석하고 auto-build.mjs 가 출처까지 자동검증한 항목이다. 여기 있는 사실 밖으로 나가지 말 것 — 새로 검색해서 덧붙이지 않는다.",
+  "trend": {
+    "id": "tell-ur-girlfriend-challenge",
+    "type": "트렌드",
+    "cat": "노래·챌린지",
+    "title": "Tell Ur Girlfriend 챌린지",
+    "def": "Lay Bankz의 노래 'Tell Ur Girlfriend'에 맞춰 추는 간단하고 중독성 있는 댄스 챌린지",
+    "excerpt": "미국 가수 레이 뱅크(Lay Bankz)의 동명 노래에 맞춰 간단한 손동작과 골반 움직임을 반복하는 댄스 챌린지입니다. 따라 하기 쉬운 안무 덕분에 전 세계적으로 꾸준한 인기를 끌고 있습니다.",
+    "pull": "이 노래만 나오면 나도 모르게 어깨가 들썩",
+    "verdict": "미국 아티스트 레이 뱅크(Lay Bankz)의 'Tell Ur Girlfriend' 노래에 맞춰 추는 댄스 챌린지입니다. 중독성 있는 멜로디와 누구나 쉽게 따라 할 수 있는 간단한 안무가 특징이죠. 2024년 4월경 시작되어 현재는 '안정화' 단계에 접어들었지만, 여전히 틱톡이나 릴스에서 꾸준히 보이며 많은 사람들이 참여하고 있습니다. 지금이라도 부담 없이 도전해보기 좋은 챌린지입니다.",
+    "stage": "안정화",
+    "stageMsg": "꾸준히 보이는 댄스 챌린지",
+    "buzz": "화제성 보통",
+    "label": "지금 써도 됨",
+    "ad": null,
+    "trust": null,
+    "sat": null,
+    "satTxt": null,
+    "reasons": null,
+    "recs": [
+      [
+        "쉬운 안무",
+        "◎",
+        1
+      ],
+      [
+        "친구와 함께",
+        "○",
+        1
+      ],
+      [
+        "공공장소",
+        "△",
+        0
+      ]
+    ],
+    "tags": [
+      "댄스챌린지",
+      "틱톡",
+      "릴스",
+      "Lay Bankz"
+    ],
+    "article": [
+      [
+        "h",
+        "이 노래만 나오면 나도 모르게 '그 동작'"
+      ],
+      [
+        "p",
+        "틱톡과 릴스를 휩쓴 'Tell Ur Girlfriend' 챌린지를 아시나요? 미국 가수 레이 뱅크(Lay Bankz)의 동명의 노래에 맞춰 추는 간단한 댄스 챌린지입니다. 특별한 댄스 실력 없이도 누구나 쉽게 따라 할 수 있어 전 세계적인 유행으로 번졌습니다."
+      ],
+      [
+        "q",
+        "중독성 있는 후렴구와 따라하기 쉬운 안무의 완벽한 조합."
+      ],
+      [
+        "h",
+        "어떤 안무길래?"
+      ],
+      [
+        "p",
+        "챌린지의 핵심은 골반을 부드럽게 움직이며 손으로 간단한 동작을 반복하는 것입니다. 원곡의 가사 'Tell your girlfriend' 부분에 맞춰 손으로 무언가를 말하는 듯한 제스처를 취하는 것이 포인트죠. 안무가 쉽고 반복적이라 한번 보면 바로 따라 할 수 있을 정도입니다."
+      ],
+      [
+        "h",
+        "AZ세대도 '인싸'되는 법"
+      ],
+      [
+        "p",
+        "이 챌린지는 혼자서도, 친구나 가족과 함께하기도 좋습니다. 특히 여행지나 특별한 장소에서 배경과 함께 찍으면 더 멋진 영상을 만들 수 있죠. MZ세대의 최신 유행에 동참하고 싶다면, 이 챌린지로 가볍게 시작해보는 것을 추천합니다."
+      ],
+      [
+        "h",
+        "한끗 정리"
+      ],
+      [
+        "ul",
+        [
+          "따라해도 될까?: 네, 안정화 단계로 접어들어 부담 없이 즐길 수 있습니다.",
+          "핵심 포인트: 자신감 있는 표정과 부드러운 골반 움직임이 중요합니다.",
+          "꿀팁: 다양한 버전의 안무 영상이 있으니, 마음에 드는 스타일을 참고해 자신만의 느낌으로 재해석해보세요."
+        ]
+      ]
+    ],
+    "shops": [],
+    "prompt": null,
+    "pureKorean": null,
+    "example": null,
+    "video": {
+      "youtube": "LRkAQgkcw00",
+      "cap": "Tell your girlfriend - lay bankz dance"
+    },
+    "collectedAt": "2026-07-24",
+    "analyzedAt": "2026-07-24",
+    "detailUrl": "https://az2mz.vercel.app/trend.html?id=tell-ur-girlfriend-challenge"
+  },
+  "sources": [
+    {
+      "title": "유튜브",
+      "url": "https://www.youtube.com/watch?v=n3b9uJjvOWI",
+      "host": "www.youtube.com",
+      "tier": "press",
+      "kind": "analysis",
+      "body": "Hermes 수집 시 auto-build.mjs 가 생존(404)·본문 관련성을 검증한 출처다. 본문을 여기 다시 담지 않는다 — 이 글은 trend 필드의 분석을 근거로 쓴다."
+    },
+    {
+      "title": "고구마팜",
+      "url": "https://gogumafarm.kr/챌린지-도전하고-싶은데-어렵다면-누구나-쉽게-따라/",
+      "host": "gogumafarm.kr",
+      "tier": "press",
+      "kind": "analysis",
+      "body": "Hermes 수집 시 auto-build.mjs 가 생존(404)·본문 관련성을 검증한 출처다. 본문을 여기 다시 담지 않는다 — 이 글은 trend 필드의 분석을 근거로 쓴다."
+    }
+  ],
+  "internalLinkCandidates": [
+    "https://az2mz.vercel.app/trend.html?id=tell-ur-girlfriend-challenge"
+  ],
+  "cannotSay": [
+    "광고 의심도·후기 신뢰도는 추정치다. \"확실히 광고다\" 같은 확정 표현 금지.",
+    "후기 신뢰도(믿을 만한가) 와 만족도(좋은가) 를 섞어 쓰지 말 것 — 별개 축이다.",
+    "trend 필드에 없는 수치·날짜·가게·인물을 새로 만들지 말 것. 추가 검색도 하지 않는다.",
+    "분석 기준일은 2026-07-24 이다. \"오늘 기준\" 처럼 시점을 옮겨 쓰지 말 것."
+  ]
+}
