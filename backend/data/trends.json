@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-06",
+  "generatedAt": "2026-09-07",
   "trends": [
     {
       "id": "dubai-choco",
@@ -11227,7 +11227,7 @@
       "cat": "디저트",
       "coverCat": "cat-dessert",
       "collectedAt": "2026-08-17",
-      "analyzedAt": "2026-08-17",
+      "analyzedAt": "2026-09-07",
       "buzz": "화제성 중간",
       "ad": 25,
       "trust": 80,
@@ -11272,10 +11272,6 @@
         ]
       },
       "src": [
-        [
-          "네이버블로그(후기)",
-          "https://blog.naver.com/PostView.naver?blogId=soaql1219&logNo=224366054990"
-        ],
         [
           "더쿠(커뮤니티 반응)",
           "https://theqoo.net/square/4312940332"
