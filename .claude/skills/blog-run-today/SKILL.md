@@ -17,7 +17,9 @@ description: >
 - **티스토리 로그인이 되어 있어야 발행된다**(카카오 로그인 자동화 금지 철칙). 첫 발행이 세션 만료로
   실패하면 거기서 멈추고 "로그인 후 다시" 를 알린 뒤, 나머지는 검증까지만 해 둔다.
 - 표준 흐름·철칙은 `CLAUDE.md`, 반복결함 가드는 `structures/hangeut-*.md`·`_format.md`, 주제전략은
-  `backend/blog/blogchart-plan.md`. 작업 전에 이 세 개와 최근 `posted.json` 을 훑는다.
+  `backend/blog/blogchart-plan.md`, **조회수 SEO 규칙은 `backend/blog/seo-playbook.md`**. 작업 전에 이것들과 최근 `posted.json` 을 훑는다.
+- ⚠ **조회수의 최대 레버는 '색인 등록'**(seo-playbook §3) — 네이버 서치어드바이저·구글 서치콘솔 등록은 **사람이 1회** 해야 하고,
+  안 돼 있으면 아무리 써도 검색 노출이 안 된다. 미등록으로 의심되면 발행 보고에 §3 체크리스트를 넣어 사용자에게 상기시킨다.
 
 ## 1. 상태 파악
 ```bash
@@ -28,7 +30,7 @@ ls -t backend/blog/research/dev-digest/*.json backend/blog/research/vlm-watch/*.
 `.git/az2mz-auto.lock` 이 있으면 몇 초 기다렸다 다시 확인(봇과 git 충돌 방지).
 
 ## 2. 주제 5편+ 선정 (품질 우선, 하루 4~6편)
-우선순위:
+**검색수요 먼저**(`seo-playbook.md` §1): 검색량 있는 **롱테일** 우선 · 실제 검색어 표현으로 · 시즌 주제는 정점 3~4주 전 발행. 그 안에서 우선순위:
 1. **`blogchart-plan.md` 미소진 주제** — 이미 각도·템플릿·출처힌트가 정해져 있다. 같은 개념이
    `posted.json` 에 없으면 우선.
 2. **`blog-pick-trend --list` 의 ⚠ 없는 fresh 후보**(trends.json 검증분).
@@ -45,6 +47,7 @@ ls -t backend/blog/research/dev-digest/*.json backend/blog/research/vlm-watch/*.
 편마다: 카테고리 구조 템플릿 + `structures/_format.md` 양식(콜아웃·비교표·정리·참고) + 해요체.
 기술 개념은 **eli5**("쉽게 말하면 …")로. `trend`/조사 근거 밖 사실 창작 금지, 수치는 "발표/기사에서 밝힌" 귀속.
 (개별 절차는 `blog-daily` 스킬의 카테고리 분기·`blog-pipeline` 을 따른다. 여러 편은 Workflow 로 병렬.)
+**제목·메타(blog-seo)는 `seo-playbook.md` §2**: 핵심 키워드 제목 앞배치·자연스럽게 1회만, 각 글 고유 제목, 실검색어 매칭, 연도/시기는 근거 있을 때만.
 
 ## 5. 자체 피드백 → 검증 (편마다)
 ```bash
