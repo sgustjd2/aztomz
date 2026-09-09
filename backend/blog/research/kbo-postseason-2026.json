@@ -1,0 +1,144 @@
+{
+  "keyword": "2026 프로야구 포스트시즌 가을야구 일정 대진",
+  "categoryId": "hangeut-trend",
+  "notes": "확정해서 말할 수 있는 건 (1) 정규시즌이 10월 7일 종료된다는 것(2026-08-25 KBO 공식 발표), (2) 와일드카드→준PO→PO→한국시리즈 4단계 진행방식(경기수·홈어드밴티지 규정 포함, KBO 표준 규정), (3) 9월 9일 기준 상위권 순위(삼성 1위 등)뿐 — 정규시즌이 아직 안 끝나 진출 5팀은 미확정이다. 각 라운드 정확한 날짜(WC 10/12 등)는 KBO 미발표 커뮤니티 추정치이므로 본문에서 단정하면 안 된다. 6위 NC의 5위 두산 추격 등 '순위 경쟁'과 '방식 설명' 중심으로 써야 하는 글.",
+  "sources": [
+    {
+      "title": "일자별/연도별 팀 순위 — 2026 KBO 리그",
+      "url": "https://www.koreabaseball.com/record/teamrank/teamrank.aspx",
+      "host": "koreabaseball.com",
+      "body": "KBO 공식 기록실 2026시즌 팀 순위표(조사 시점 2026-09-09 실시간 조회). 1위 삼성 122경기 73승3무46패 승률0.613, 2위 kt 119경기 70승3무46패 승률0.603(1.5게임차), 3위 LG 123경기 68승1무54패 승률0.557(6.5게임차), 4위 KIA 121경기 66승2무53패 승률0.555(7게임차), 5위 두산 124경기 62승4무58패 승률0.517(11.5게임차), 6위 NC 117경기 55승2무60패 승률0.478(16게임차). 팀별 소화 경기수가 117~128경기로 제각각이라 144경기 정규시즌이 아직 안 끝났음을 보여준다.",
+      "tier": "data"
+    },
+    {
+      "title": "2026 KBO 정규시즌 경기 일정 발표",
+      "url": "https://www.koreabaseball.com/MediaNews/Notice/View.aspx?bdSe=11794",
+      "host": "koreabaseball.com",
+      "body": "KBO가 2025-12-19 공지한 2026 정규시즌 일정. 개막일 3월 28일(토), 팀당 144경기 총 720경기. 올스타전 7월 11일, 후반기 7월 16일 시작. 이 시점엔 9월 6일까지 135경기로 우선 편성했고 포스트시즌 날짜는 미명시.",
+      "tier": "official"
+    },
+    {
+      "title": "2023년 최강 팀을 가리는 KBO 포스트시즌, 10월 19일 시작",
+      "url": "https://www.koreabaseball.com/MediaNews/Notice/View.aspx?bdSe=9843",
+      "host": "koreabaseball.com",
+      "body": "KBO 공식 포스트시즌 진행방식 안내(2023년 발표, 매 시즌 동일 규정 적용). 와일드카드 결정전(4위vs5위, 최대2경기, 전경기 4위팀 홈, 4위는 1승/무만해도 진출·5위는 2연승해야 진출), 준플레이오프(3위vs WC승자)·플레이오프(2위vs준PO승자)는 5전3선승제, 한국시리즈(1위vs PO승자)는 7전4선승제. 연장 최대 15회, 라운드 간 최소 1일 이동일.",
+      "tier": "official"
+    },
+    {
+      "title": "KBO, 잔여경기 일정 확정…9월 29일부터 더블헤더 개최, 10월 7일 정규시즌 종료",
+      "url": "https://www.osen.co.kr/article/G1112863265",
+      "host": "osen.co.kr",
+      "body": "2026-08-25 KBO가 잔여경기(미편성 45경기+재편성 60경기=총105경기) 일정을 10월 7일까지로 공식 확정 발표. 더블헤더는 9월 29일부터 가능(9/29~10/5는 팀당 최대 1회 제한).",
+      "tier": "press"
+    },
+    {
+      "title": "[오피셜] '10월 7일까지 모든 팀 야구한다' KBO 정규시즌 잔여경기 일정 발표",
+      "url": "https://www.starnewskorea.com/sports/2026/08/25/2026082513360468822",
+      "host": "starnewskorea.com",
+      "body": "2026-08-25 보도. KBO가 잔여 105경기 일정을 공식 발표, 10월 7일 종료. '정규시즌 최종일과 와일드카드 결정전 개막일 사이의 이동일'이라는 표현으로 WC가 정규시즌 종료 후 이동일을 거쳐 시작됨을 시사하나 구체 날짜는 미기재.",
+      "tier": "press"
+    },
+    {
+      "title": "'105경기 재편성' 2026시즌 KBO 정규시즌 10월 7일 종료",
+      "url": "https://www.dailian.co.kr/news/view/1682114/%E2%80%98105%EA%B2%BD%EA%B8%B0-%EC%9E%AC%ED%8E%B8%EC%84%B1%E2%80%99-2026%EC%8B%9C%EC%A6%8C-K-2026",
+      "host": "dailian.co.kr",
+      "body": "2026-08-25 보도. 시즌 개막 지연+폭염 휴식기 겹쳐 잔여경기 누적, 105경기 재편성 거쳐 10월 7일 종료. 아시안게임 국가대표 소집(9/14)·귀국(9/28) 일정, 더블헤더 편성 기준(9/29부터, 10/5까지 팀당 최대1회)도 안내. 포스트시즌 라운드별 정확한 날짜는 미언급.",
+      "tier": "press"
+    },
+    {
+      "title": "'폭염 휴식' 끝난 KBO리그, 잔여경기 편성은?…전구단 10월 가을야구, 한국시리즈는 3년 만에 11월 피날레",
+      "url": "http://www.spochoo.com/news/articleView.html?idxno=128671",
+      "host": "spochoo.com",
+      "body": "THE GATE 2026-08-11 보도. 잔여경기(103경기, NC는 25경기) 누적으로 포스트시즌 일정 자동 순연. WC 결정전은 2022년(10/13 개막)·2023년(10/19 개막) 사례처럼 '10월 3주차쯤' 개막 예상(KBO 관계자 '비슷하게 진행될 것' 발언 인용, 확정 아님). 한국시리즈는 2023년 이후 3년 만에 11월까지 이어질 전망(11월 10일 이전 종료 예상, 확정 아님). 실제 최종 일정은 8/24~25경 공개 예정이라 안내했고 이는 위 8/25 발표로 실현됨.",
+      "tier": "press"
+    },
+    {
+      "title": "2026 신한 SOL KBO 리그/순위 경쟁",
+      "url": "https://namu.wiki/w/2026%20%EC%8B%A0%ED%95%9C%20SOL%20KBO%20%EB%A6%AC%EA%B7%B8/%EC%88%9C%EC%9C%84%20%EA%B2%BD%EC%9F%81",
+      "host": "namu.wiki",
+      "body": "'9월 9일 경기 종료 후 기준' 상위 5개팀 순위(삼성·kt·LG·KIA·두산)를 서술, KBO 공식 순위표와 완전 일치해 교차검증됨. 6위 NC가 5위 두산과 게임차를 4.5까지 좁혀 5위 경쟁이 유동적이라고 서술.",
+      "tier": "blog"
+    },
+    {
+      "title": "2026 신한 SOL KBO 포스트시즌",
+      "url": "https://namu.wiki/w/2026%20%EC%8B%A0%ED%95%9C%20SOL%20KBO%20%ED%8F%AC%EC%8A%A4%ED%8A%B8%EC%8B%9C%EC%A6%8C",
+      "host": "namu.wiki",
+      "body": "커뮤니티 편집 문서. 44번째 포스트시즌으로 표기하며 각 라운드 구체 날짜(WC 10/12~14, 준PO 10/15~22, PO 10/23~30, KS 10/31~11/9)를 표로 제시하나 KBO 공식 출처 인용 표기가 문서 내에 없음 — conflicts 참고, 확정 발표로 단정 불가. 진행방식(2전2선승/3선승/4선승) 서술은 KBO 공식 2023년 규정과 실질적으로 동일.",
+      "tier": "blog"
+    }
+  ],
+  "claims": [
+    {
+      "claim": "2026 KBO 정규시즌은 10월 7일(수) 종료된다",
+      "grade": "confirmed",
+      "evidence": [
+        "잔여 105경기(미편성 45+재편성 60) 일정을 KBO가 2026-08-25 공식 확정 발표, 10월 7일까지 편성",
+        "더블헤더는 9월 29일부터 가능(9/29~10/5는 팀당 최대 1회 제한)"
+      ],
+      "sourceUrls": [
+        "https://www.osen.co.kr/article/G1112863265",
+        "https://www.starnewskorea.com/sports/2026/08/25/2026082513360468822",
+        "https://www.dailian.co.kr/news/view/1682114/%E2%80%98105%EA%B2%BD%EA%B8%B0-%EC%9E%AC%ED%8E%B8%EC%84%B1%E2%80%99-2026%EC%8B%9C%EC%A6%8C-K-2026"
+      ]
+    },
+    {
+      "claim": "포스트시즌은 와일드카드→준플레이오프→플레이오프→한국시리즈 4단계로 진행되며, 각 단계 규정(경기수·홈어드밴티지)이 정해져 있다",
+      "grade": "confirmed",
+      "evidence": [
+        "와일드카드 결정전: 4위vs5위, 최대 2경기, 전 경기 4위팀 홈구장. 4위는 1승/무승부만 해도 진출, 5위는 2연승해야 진출",
+        "준플레이오프(3위vs WC승자)·플레이오프(2위vs준PO승자): 5전3선승제",
+        "한국시리즈(1위vs PO승자): 7전4선승제, 연장 최대 15회, 라운드 간 최소 1일 이동일"
+      ],
+      "sourceUrls": ["https://www.koreabaseball.com/MediaNews/Notice/View.aspx?bdSe=9843"]
+    },
+    {
+      "claim": "9월 9일 기준 상위권 순위는 1위 삼성·2위 kt·3위 LG·4위 KIA·5위 두산이지만, 정규시즌이 아직 끝나지 않아 실제 가을야구 진출 5팀은 확정되지 않았다",
+      "grade": "confirmed",
+      "evidence": [
+        "9월 9일 기준(KBO 공식 순위표) 1위 삼성 승률0.613, 2위 kt 승률0.603(1.5게임차), 3위 LG 승률0.557(6.5게임차), 4위 KIA 승률0.555(7게임차), 5위 두산 승률0.517(11.5게임차)",
+        "팀별 소화 경기수가 117~128경기로 제각각 — 144경기 중 잔여경기가 남아 순위 변동 가능",
+        "6위 NC가 5위 두산과 게임차를 4.5까지 좁혀 5위 경쟁이 9월 9일 시점에도 유동적"
+      ],
+      "sourceUrls": [
+        "https://www.koreabaseball.com/record/teamrank/teamrank.aspx",
+        "https://namu.wiki/w/2026%20%EC%8B%A0%ED%95%9C%20SOL%20KBO%20%EB%A6%AC%EA%B7%B8/%EC%88%9C%EC%9C%84%20%EA%B2%BD%EC%9F%81"
+      ]
+    },
+    {
+      "claim": "올해는 개막 지연(5일)과 폭염 휴식기 여파로 잔여경기가 예년보다 많이 쌓였고, 그 결과 포스트시즌 개막이 늦춰져 한국시리즈가 3년 만에 11월까지 이어질 전망이다",
+      "grade": "reported",
+      "evidence": [
+        "정규시즌 개막이 예정보다 5일 늦었고 폭염으로 인한 경기 연기가 겹쳐 잔여경기(기사 시점 103경기)가 누적됐다고 언론 보도",
+        "한국시리즈는 2023년 이후 3년 만에 11월까지 이어질 것이 유력하다고 보도(11월 10일 이전 종료 전망) — 어디까지나 8월 11일 시점 예상치, KBO 공식 확정 아님"
+      ],
+      "sourceUrls": ["http://www.spochoo.com/news/articleView.html?idxno=128671"]
+    }
+  ],
+  "numbers": [
+    { "what": "2026 정규시즌 종료일", "value": "10월 7일(수)", "asOf": "2026-08-25 KBO 공식 발표", "sourceUrl": "https://www.osen.co.kr/article/G1112863265" },
+    { "what": "잔여경기 규모", "value": "총 105경기(미편성 45경기 + 재편성 60경기)", "asOf": "2026-08-25", "sourceUrl": "https://www.osen.co.kr/article/G1112863265" },
+    { "what": "더블헤더 시작일 및 제한", "value": "9월 29일부터 가능, 9/29~10/5는 팀당 최대 1회", "asOf": "2026-08-25", "sourceUrl": "https://www.starnewskorea.com/sports/2026/08/25/2026082513360468822" },
+    { "what": "1위 삼성", "value": "122경기 73승3무46패, 승률 0.613", "asOf": "2026-09-09", "sourceUrl": "https://www.koreabaseball.com/record/teamrank/teamrank.aspx" },
+    { "what": "2위 kt", "value": "119경기 70승3무46패, 승률 0.603 (1위와 1.5게임차)", "asOf": "2026-09-09", "sourceUrl": "https://www.koreabaseball.com/record/teamrank/teamrank.aspx" },
+    { "what": "3위 LG", "value": "123경기 68승1무54패, 승률 0.557 (1위와 6.5게임차)", "asOf": "2026-09-09", "sourceUrl": "https://www.koreabaseball.com/record/teamrank/teamrank.aspx" },
+    { "what": "4위 KIA", "value": "121경기 66승2무53패, 승률 0.555 (1위와 7게임차)", "asOf": "2026-09-09", "sourceUrl": "https://www.koreabaseball.com/record/teamrank/teamrank.aspx" },
+    { "what": "5위 두산", "value": "124경기 62승4무58패, 승률 0.517", "asOf": "2026-09-09", "sourceUrl": "https://www.koreabaseball.com/record/teamrank/teamrank.aspx" },
+    { "what": "6위 NC", "value": "117경기 55승2무60패, 승률 0.478 (5위 두산과 게임차 좁혀지는 중)", "asOf": "2026-09-09", "sourceUrl": "https://www.koreabaseball.com/record/teamrank/teamrank.aspx" },
+    { "what": "2026 정규시즌 규모", "value": "팀당 144경기, 총 720경기", "asOf": "2025-12-19 KBO 발표", "sourceUrl": "https://www.koreabaseball.com/MediaNews/Notice/View.aspx?bdSe=11794" },
+    { "what": "와일드카드 결정전 방식", "value": "4위vs5위, 최대 2경기, 전경기 4위팀 홈 (4위 1승/무 진출, 5위 2연승 진출)", "asOf": "KBO 표준 규정(2023년 공지 기준)", "sourceUrl": "https://www.koreabaseball.com/MediaNews/Notice/View.aspx?bdSe=9843" },
+    { "what": "준플레이오프·플레이오프", "value": "5전3선승제", "asOf": "KBO 표준 규정", "sourceUrl": "https://www.koreabaseball.com/MediaNews/Notice/View.aspx?bdSe=9843" },
+    { "what": "한국시리즈", "value": "7전4선승제", "asOf": "KBO 표준 규정", "sourceUrl": "https://www.koreabaseball.com/MediaNews/Notice/View.aspx?bdSe=9843" }
+  ],
+  "dropped": [],
+  "cannotCover": [
+    "각 포스트시즌 라운드(와일드카드~한국시리즈)의 정확한 시작·종료 날짜 — KBO가 9월 9일(조사 시점) 현재 공식 발표하지 않음. 나무위키 문서의 WC 10/12~14, 준PO 10/15~22, PO 10/23~30, KS 10/31~11/9 표기는 공식 출처 인용이 없는 커뮤니티 추정치이므로 본문에서 확정된 날짜처럼 쓰면 안 된다(unverified). 쓰려면 반드시 '아직 미발표·예상' 단서를 붙일 것",
+    "실제 가을야구 진출 5개팀 확정 명단 — 정규시즌이 10월 7일까지 남아있어 9월 9일 순위로 진출팀을 단정할 수 없다. 특히 5위(두산 vs NC)는 게임차 4.5로 유동적",
+    "6~10위 하위권(SSG·한화·롯데·키움 등) 순위 다툼의 최신 흐름 — 이번 조사는 가을야구 진출권(5위 이내)에 집중했고 하위권은 상세 조사하지 않음",
+    "각 팀별 선발 로테이션·부상자 명단 등 전력 분석 — 조사 범위 밖"
+  ],
+  "internalLinkCandidates": [
+    { "slug": "ballpark-food-2026", "title": "야푸 뜻, 야구장 직관 먹거리 원정이 뜨는 이유", "url": "https://burning-go9me.tistory.com/372" },
+    { "slug": "baseball-stadium-ai-prompt", "title": "야구장 못 가도 직관 인증샷 남기는 AI 프롬프트 5종", "url": "https://burning-go9me.tistory.com/285" }
+  ],
+  "songs": []
+}
