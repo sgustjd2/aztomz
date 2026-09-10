@@ -3,10 +3,18 @@
 채널 [AI Engineer](https://www.youtube.com/@aiDotEngineer) 의 새 영상을 Gemini 로 자동 요약한 모음입니다.
 생성: `backend/scripts/youtube-summarize.mjs` (GitHub Actions `youtube-summary` 크론).
 
-총 **131개**.
+총 **139개**.
 
 | 발행일 | 제목 |
 |---|---|
+| 2026-09-09 | [The Universal Remote Control for AI — Alex Hancock, Block](2026-09-09-YkNulwcc5jk.md) |
+| 2026-09-09 | [How long can your skills be before your agent forgets what you told it? — Laurie Voss, Arize AI](2026-09-09-XzJD1bvXKjs.md) |
+| 2026-09-09 | [It’s Tokens All The Way Down: How RLMs are Different — Kevin Madura, AlixPartners](2026-09-09-xo68uCibfm8.md) |
+| 2026-09-09 | [MCP Apps: Give the Model Data, Give the User a UI — Dustin Mihalik, Indeed](2026-09-09-lbaXnx0KLA8.md) |
+| 2026-09-09 | [Your agents lack context: Here's how to fix \"You're absolutely right!\" — Brandon Waselnuk, Unblocked](2026-09-09-KcVkq5L-0f0.md) |
+| 2026-09-09 | [The exact tools used to port a massive codebase in days #programming #typescript #dev](2026-09-09-AJhjm4_UJIk.md) |
+| 2026-09-09 | [500 Skills, Zero Fine-Tuning: LinkedIn's Playbook for AI Agents — Ajay Prakash, LinkedIn](2026-09-09-9wZpvF3QleU.md) |
+| 2026-09-09 | [Build-Time vs. Run-Time: Why Dev Tools Fail in Production — Averi Kitsch & Prerna Kakkar, Google](2026-09-09-9R--1tg45Jg.md) |
 | 2026-09-04 | [Why AI Agents Need Million-Token Context — Thomas Wolf & Olive Song, MiniMax](2026-09-04-5Cxe5dv2Xlw.md) |
 | 2026-09-03 | [From coding to Knowledge work agents — Karan Vaidya, Composio](2026-09-03-xxfMT-bPEmU.md) |
 | 2026-09-03 | [Tethered: Our Agents Are Us — Shu Fang, Two Sigma](2026-09-03-wCIYViPd4SU.md) |
