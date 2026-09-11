@@ -3,10 +3,17 @@
 채널 [AI Engineer](https://www.youtube.com/@aiDotEngineer) 의 새 영상을 Gemini 로 자동 요약한 모음입니다.
 생성: `backend/scripts/youtube-summarize.mjs` (GitHub Actions `youtube-summary` 크론).
 
-총 **139개**.
+총 **146개**.
 
 | 발행일 | 제목 |
 |---|---|
+| 2026-09-10 | [The Spatial Harness: Bringing Agents to the Canvas — Max Drake, tldraw](2026-09-10-XWcXwnysmpY.md) |
+| 2026-09-10 | [Design at the Speed of Adjectives — Paul Bakaus, Renaissance Geek, Inc.](2026-09-10-v42opQpCy60.md) |
+| 2026-09-10 | [Training Taste — Thais Castello Branco, Taste Labs](2026-09-10-sDMGWK4wZ_w.md) |
+| 2026-09-10 | [One Designer + AI. Hundreds of Deliverables. — Vincent Wendy, AI Engineer](2026-09-10-O1FN4awNEtM.md) |
+| 2026-09-10 | [The Design-Code Roundtrip That Isn't — Jonathan Gordon, ReWeaver AI](2026-09-10-NW-jwOVr32w.md) |
+| 2026-09-10 | [Generative UI... in Python? — Jeremiah Lowin, Prefect](2026-09-10-Krzs8GeiWTc.md) |
+| 2026-09-10 | [Mousepower: agents that can’t be measured, can’t be managed. — Maximillian Piras, Yutori](2026-09-10-8KkibGU_DDY.md) |
 | 2026-09-09 | [The Universal Remote Control for AI — Alex Hancock, Block](2026-09-09-YkNulwcc5jk.md) |
 | 2026-09-09 | [How long can your skills be before your agent forgets what you told it? — Laurie Voss, Arize AI](2026-09-09-XzJD1bvXKjs.md) |
 | 2026-09-09 | [It’s Tokens All The Way Down: How RLMs are Different — Kevin Madura, AlixPartners](2026-09-09-xo68uCibfm8.md) |
