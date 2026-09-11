@@ -3962,7 +3962,7 @@ window.HANGEUT_DATA = {
       "cat": "카페·핫플",
       "coverCat": "cat-cafe",
       "collectedAt": "2026-06-17",
-      "analyzedAt": "2026-08-19",
+      "analyzedAt": "2026-09-11",
       "title": "도토리오븐 (성수)",
       "buzz": "화제성 높음 (신상)",
       "ad": 45,
