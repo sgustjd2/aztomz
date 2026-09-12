@@ -3,10 +3,11 @@
 채널 [AI Engineer](https://www.youtube.com/@aiDotEngineer) 의 새 영상을 Gemini 로 자동 요약한 모음입니다.
 생성: `backend/scripts/youtube-summarize.mjs` (GitHub Actions `youtube-summary` 크론).
 
-총 **146개**.
+총 **147개**.
 
 | 발행일 | 제목 |
 |---|---|
+| 2026-09-11 | [Building ambitious software — Jonathan Kelley, Dioxus Labs & Cognition](2026-09-11-H7vFrcNWXzs.md) |
 | 2026-09-10 | [The Spatial Harness: Bringing Agents to the Canvas — Max Drake, tldraw](2026-09-10-XWcXwnysmpY.md) |
 | 2026-09-10 | [Design at the Speed of Adjectives — Paul Bakaus, Renaissance Geek, Inc.](2026-09-10-v42opQpCy60.md) |
 | 2026-09-10 | [Training Taste — Thais Castello Branco, Taste Labs](2026-09-10-sDMGWK4wZ_w.md) |
