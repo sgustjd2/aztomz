@@ -78,6 +78,13 @@ learnings.md 가 봇 자동추가로 dirty 하면(`|-` 접두어 깨짐이면 `-
 발행한 편들의 `/NNN` URL·제목·근거(조사 출처 수), selfreview·verify가 잡은 것, 스킵·보류 사유.
 blogchart-plan 을 썼으면 소진 현황도.
 
+## 9. 마무리 — 머지·워크트리 정리
+오늘 작업이 끝나면 항상:
+- **머지**: 이 프로젝트의 일일 작업은 7단계에서 **메인 체크아웃 `main`에 직접 커밋·푸시**되므로 보통 세션 브랜치엔 머지할 고유 커밋이 **없다**(확인: `git rev-list --left-right --count origin/main...HEAD` 가 `N  0` 이면 머지 불필요). 세션이 feature 워크트리에서 시작됐고 거기에만 있는 커밋이 있으면(`ahead>0`) `main`에 머지 후 `git push origin main`.
+- **워크트리 정리**: 세션이 끝난 워크트리·브랜치를 치운다. 데스크톱 앱이 대개 자동 회수하니 먼저 `git -C <메인체크아웃> worktree list` 로 확인 — 남아 있으면 `git -C <메인> worktree remove <경로>` + 병합된 브랜치 `git branch -D <브랜치>`(origin/main 대비 `ahead 0` 확인 후). **list 에 보이는 다른 활성 세션 워크트리는 절대 건들지 마라**(그 세션이 깨진다). 정리 완료 = list 에 `main` + 활성 세션만 남음.
+- **정합성 확인**: `main` 이 `origin/main` 대비 `ahead>0` 또는 `behind>0` 로 갈라져 있으면(철칙: 라이브 정체 신호) `.git/az2mz-auto.lock` 확인 후 `git pull --rebase origin main && git push origin main` 로 맞춘다.
+
 ## 하지 말 것
 - 로그인 없이 발행 강행(실패만 쌓인다). 묵은·얇은 근거로 물량 채우기. 정직하게 못 쓰는 카테고리 진입.
 - 전면 재작성(selfreview는 외과적 find/replace). trends.json/조사 밖 사실 창작.
+- 마무리(9단계)에서 **다른 활성 세션의 워크트리 삭제 금지** — `worktree list` 에 보이는, 내 세션이 아닌 항목은 그대로 둔다.
