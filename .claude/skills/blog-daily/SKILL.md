@@ -159,7 +159,9 @@ node backend/scripts/blog-verify.mjs <slug>
 `ai-prompt-pack` 도 이제 조사 파일이 있으니 `--research=` 를 생략하지 마라 — 생략하면 본문에 실수로
 들어간 URL이 있어도 조립이 걸러주지 못한다.
 
-`blog-assemble.mjs` 가 반려하면(지어낸 URL 등) 해당 단계로 돌아가 고친다.
+`blog-assemble.mjs` 가 반려하면(지어낸 URL, 또는 2026-09-13부터 **같은 카테고리 최근 글과 소제목
+3개 이상 겹침**) 해당 단계로 돌아가 고친다 — 소제목·마무리 문구를 실제로 바꿔라(`00_common.md`·
+해당 `structures/*.md` 의 반복결함 절 참고). 마무리 상투구 경고는 막지는 않지만 무시하지 말 것.
 `blog-verify.mjs` 가 blocker 를 내면, 오늘 세션처럼 원문 대조 후 직접 교정 → 재조립 → 재검증.
 
 ## 3단계 — 로컬 커밋 (푸시는 하지 않는다)

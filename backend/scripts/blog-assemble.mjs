@@ -20,6 +20,7 @@ import { md2html } from './lib/md.mjs';
 const repoRoot = join(dirname(fileURLToPath(import.meta.url)), '..', '..');
 const outDir = join(repoRoot, 'backend', 'out', 'blog');
 const researchDir = join(repoRoot, 'backend', 'blog', 'research');
+const structureLogPath = join(repoRoot, 'backend', 'blog', 'structure-log.json');
 
 const slug = process.argv.slice(2).find((a) => !a.startsWith('--'));
 if (!slug) { console.error('사용법: node backend/scripts/blog-assemble.mjs <slug>'); process.exit(1); }
@@ -150,10 +151,54 @@ if (isTrend) {
   }
 }
 
+/* 구조 중복(양산형) 감시 — 2026-09-13 도입.
+   실측: 같은 날 hangeut-trend 두 편이 "[날짜] 기준으로 정리/확인했어요 … 다음 글에서는 ~ 다뤄볼게요"
+   마무리를 토씨만 바꿔 반복했다. 구글 서치콘솔 확인 결과 미색인 613개 중 195개가 "적절한 표준
+   태그가 포함된 대체 페이지"(중복/유사 판정) — 소제목·마무리를 카테고리마다 매번 똑같이 찍어내는
+   게 실제 원인 중 하나였다. LLM 지시("다르게 써라")만으로는 도지지 않아(오늘도 지시 없이 자연히
+   수렴) 기계로 겹침을 잡는다. */
+const warnings = [];
+const h2s = [...md.matchAll(/^##\s+(.+)$/gm)].map((m) => m[1].trim());
+const paras = md.split(/\n{2,}/).map((p) => p.trim()).filter(Boolean);
+const closing = paras.slice(-2).join('\n\n');
+
+const structureLog = existsSync(structureLogPath)
+  ? JSON.parse(await readFile(structureLogPath, 'utf8')) : [];
+const sameCategory = structureLog.filter((e) => e.categoryId === meta.categoryId && e.slug !== slug);
+const recent = sameCategory.slice(-8);
+
+// 소제목 그대로 재사용 — 같은 카테고리 최근 글 중 한 편과 h2 3개 이상이 토씨까지 같으면 막는다.
+// (뼈대 자체를 매번 그대로 베끼는 걸 잡는다 — 구조 문서의 예시 헤더를 문자 그대로 쓰면 걸린다.)
+for (const e of recent) {
+  const overlap = h2s.filter((h) => (e.h2 || []).includes(h));
+  if (overlap.length >= 3) {
+    problems.push(`소제목이 최근 글 "${e.slug}"와 ${overlap.length}개 토씨까지 같다(${overlap.join(' / ')}) — 카테고리·주제에 맞게 소제목 표현을 바꿔라`);
+    break;
+  }
+}
+
+// 마무리 상투구 — "다음 글 예고"·"기준일 고지"류 CTA 자체는 카테고리 프로파일이 승인한 폴백이지만,
+// 매번 같은 연결어투로 찍으면 문장은 달라도 뼈대가 같아진다. 최근 같은 카테고리 글 절반 이상이
+// 같은 상투구를 썼으면 경고만(막지는 않음 — 이 CTA 유형 자체는 정당한 폴백이라 warn 이 맞다).
+const CLOSING_CLICHES = [
+  { re: /다음\s*(글|편)(에서는)?[\s\S]{0,60}(다뤄(볼게요|드릴게요|줄게요|볼\s*예정)|다룰\s*(예정|게요))/, note: '"다음 글에서는 ~ 다뤄볼게요/예정이에요" 예고 공식' },
+  { re: /기준으로\s*[\s\S]{0,20}(정리|확인)(했|됐|해|돼)/, note: '"[날짜] 기준으로 정리/확인했어요" 마무리 공식' },
+];
+const matchedCliches = CLOSING_CLICHES.filter((c) => c.re.test(closing)).map((c) => c.note);
+for (const note of matchedCliches) {
+  const priorHits = recent.filter((e) => e.closingClichePatterns?.includes(note)).length;
+  if (recent.length >= 3 && priorHits >= Math.ceil(recent.length / 2)) {
+    warnings.push(`마무리가 ${note}를 씀 — 최근 같은 카테고리 ${recent.length}편 중 ${priorHits}편도 같은 상투구. 표현을 바꿔라(막지는 않음)`);
+  }
+}
+
 if (problems.length) {
   console.error('✗ 조립 중단 — 기계검사 위반:');
   problems.forEach((p) => console.error(`   ✗ ${p}`));
   process.exit(1);
+}
+if (warnings.length) {
+  warnings.forEach((w) => console.warn(`  ⚠ ${w}`));
 }
 
 /* builtAt 이 오늘이 아니면 경고(하드코딩 실수로 어제 날짜가 박히는 사고가 반복됐다). 전날 초안을
@@ -161,6 +206,14 @@ if (problems.length) {
 if (meta.builtAt && meta.builtAt !== new Date().toLocaleDateString('en-CA')) {
   console.warn(`  ⚠ meta.builtAt(${meta.builtAt}) 가 오늘이 아니다 — 의도한 게 아니면 고쳐라`);
 }
+
+// 이번 글의 구조 지문을 기록 — 다음 글이 겹치는지 비교할 재료. 카테고리당 최근 것만 있으면
+// 되므로 전체 200개로 잘라 파일이 무한히 안 커지게 한다.
+const updatedLog = [
+  ...structureLog.filter((e) => e.slug !== slug),
+  { slug, categoryId: meta.categoryId || null, date: new Date().toLocaleDateString('en-CA'), h2: h2s, closingClichePatterns: matchedCliches },
+].slice(-200);
+await writeFile(structureLogPath, JSON.stringify(updatedLog, null, 2) + '\n', 'utf8');
 
 const today = new Date().toLocaleDateString('en-CA');  // 로컬(KST) 날짜 — toISOString(UTC)은 밤엔 하루 어긋난다
 /* 각주는 '작성일'만 남긴다 — 예전엔 "사실 확인이 안 된 항목은 본문에 그렇게 표시했습니다"를
