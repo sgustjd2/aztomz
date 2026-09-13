@@ -258,10 +258,13 @@ export async function uploadFigures(page, ctx, meta, id, body) {
       await page.bringToFront();
       await page.evaluate(() => (window.tinymce.activeEditor || window.tinymce.editors[0]).setContent(''));
       if (!await uploadCover(page, file)) throw new Error('업로드 트리거 실패');
+      await waitForBodyImage(page);
+      // alt 는 getContent() 직렬화 전에 넣어야 결과 마크업에 반영된다(2026-09-13 추가 —
+      // 네이버 서치어드바이저 진단에서 이미지 130개가 alt 누락으로 잡혀 추가함).
+      await setImageAlt(page, spec.title || '본문 이미지');
       const markup = await page.waitForFunction(() => {
         try {
           const ed = window.tinymce.activeEditor || window.tinymce.editors[0];
-          if (!/##_Image|<img\b/i.test(ed?.getBody()?.innerHTML || '')) return false;
           const c = ed.getContent();          // 업로드 중이면 throw → 계속 폴링
           return /##_Image|<img\b/i.test(c) ? c : false;
         } catch { return false; }
@@ -276,6 +279,32 @@ export async function uploadFigures(page, ctx, meta, id, body) {
   // 못 올린 마커는 지운다 — 남겨두면 독자에게 빈 figure 가 보인다.
   html = html.replace(/<!--FIG:[A-Za-z0-9_-]+-->/g, '');
   return { html, done, failed };
+}
+
+/* 업로드된 이미지가 에디터 DOM에 실제로 나타날 때까지 기다린다. 업로드 직후엔 잠깐
+   비어있다가 뜨므로, alt 를 넣기 전에 이 함수로 먼저 대기해야 img 요소를 찾을 수 있다. */
+async function waitForBodyImage(page) {
+  return page.waitForFunction(() => {
+    try {
+      const ed = window.tinymce.activeEditor || window.tinymce.editors[0];
+      return /##_Image|<img\b/i.test(ed?.getBody()?.innerHTML || '');
+    } catch { return false; }
+  }, null, { timeout: 60000 }).catch(() => {});
+}
+
+/* alt 속성 채우기(2026-09-13) — 네이버 서치어드바이저 진단에서 이미지 130개가 alt 누락으로
+   잡혔다. 원인: 우리 md.mjs 는 <img> 를 직접 안 쓰고(티스토리가 업로드 후 자기 마크업으로
+   대체) alt 를 넣을 지점이 없었다. 매번 에디터를 비우고 한 장씩 올리므로(uploadFigures 의
+   루프) 이 시점엔 본문에 이미지가 최대 1장뿐이라 어느 이미지인지 헷갈릴 일이 없다. */
+async function setImageAlt(page, altText) {
+  return page.evaluate((alt) => {
+    const ed = window.tinymce.activeEditor || window.tinymce.editors[0];
+    const img = ed.getBody().querySelector('img');
+    if (!img) return false;
+    img.setAttribute('alt', alt);
+    ed.fire('change');
+    return true;
+  }, altText).catch(() => false);
 }
 
 export async function uploadCover(page, file) {
@@ -556,12 +585,13 @@ async function publish() {
       const uploaded = await uploadCover(page, coverFile);
       if (uploaded) {
         // 티스토리는 업로드 이미지를 [##_Image|...] 치환자로도, 실제 <img> 로도 보관한다. 둘 다 유효.
+        await waitForBodyImage(page);
+        await setImageAlt(page, meta.title); // getContent() 로 뽑기 전에 넣어야 결과에 반영된다.
         // 업로드가 끝나기 전에는 티스토리가 getContent() 를 막고
         // "이미지 업로드가 완료된 후 시도해 주세요." 를 던진다 → 삼키고 계속 폴링해야 한다.
         coverMarkup = await page.waitForFunction(() => {
           try {
             const ed = window.tinymce.activeEditor || window.tinymce.editors[0];
-            if (!/##_Image|<img\b/i.test(ed?.getBody()?.innerHTML || '')) return false;
             const c = ed.getContent();          // 업로드 진행 중이면 여기서 throw
             return /##_Image|<img\b/i.test(c) ? c : false;
           } catch { return false; }
