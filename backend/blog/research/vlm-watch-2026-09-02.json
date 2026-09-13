@@ -1,0 +1,81 @@
+{
+  "keyword": "이번 주 경량 VLM (2026-09-02) — 새로 뜬 모델 위주",
+  "categoryId": "vlm-watch",
+  "slug": "vlm-watch-2026-09-02",
+  "searchedAt": "2026-09-03",
+  "origin": "backend/blog/research/vlm-watch/hf-vlm-trending-2026-09-02.json (image-text-to-text · 파라미터 8B 이하 · 최근 60일 신규, trendingScore 내림차순, HF API 수집)",
+  "note": "시드 JSON 7개 항목 중 abliteration/heretic/uncensored/ComfyUI 재포장 2개(DreamFast/Qwen3-VL-4b-Heretic-ComfyUI, LuffyTheFox/Gemma-4-E4B-Uncensored-Genesis-GGUF)는 제외. 남은 5개 중 지난주(2026-08-28) 글에서 이미 다룬 모델이 3개(LiquidAI/LFM2.5-VL-3B, 같은 모델의 -GGUF 빌드, lightx2v/MiniMax-H3-Prompt-Rewriter-LoRA-8B) — 이번 주도 트렌딩 상위라 다운로드/좋아요 갱신치만 짧게 실었다. 순수 신규(지난주 시드에 없던 모델)는 swiss-ai/Apertus-v1.5-8B, Hatim2221/Mubsir-Qwen-2B-VL 2개뿐이라 '새로 뜬 실모델 3개 이상' 기준(readyToWrite 조건)을 못 채운다. Apertus-v1.5-8B, Mubsir-Qwen-2B-VL 은 HF 모델 카드를 WebFetch로 직접 읽어 사실을 확인했고, 나머지 3개(지난주 재등장분)는 시드 JSON 메타만 썼다. 모든 VRAM(int4)은 대략 추정치이며 실제 사용량은 해상도·컨텍스트·구현에 따라 달라진다.",
+  "readyToWrite": false,
+  "gaps": [
+    "지난주(vlm-watch-2026-08-28, /349)와 중복 많음 — 이번 주 시드 7개 중 지난주에 이미 다룬 모델이 3개(LFM2.5-VL-3B, LFM2.5-VL-3B-GGUF, MiniMax-H3-Prompt-Rewriter-LoRA-8B)이고, 정말 새로 뜬 실모델은 swiss-ai/Apertus-v1.5-8B · Hatim2221/Mubsir-Qwen-2B-VL 2개뿐이라 '새로 뜬 모델 위주' 기준(3개 이상)에 못 미친다.",
+    "swiss-ai/Apertus-v1.5-8B 의 비전 벤치마크(GQA·MMStar·DocVQA)는 모델 카드에 수치가 없고 '상세 결과는 추후 기술보고서에서 공개'로만 적혀 있어 인용 불가.",
+    "Hatim2221/Mubsir-Qwen-2B-VL 은 실제 OCR/HTR 정확도 수치가 모델 카드에 없다(학습 인프라·데이터셋명만 확인됨)."
+  ],
+  "sources": [
+    {
+      "title": "swiss-ai/Apertus-v1.5-8B — 이번 주 신규, 이미지·오디오까지 받는 8B 다국어 모델(스위스 AI 이니셔티브)",
+      "url": "https://huggingface.co/swiss-ai/Apertus-v1.5-8B",
+      "host": "huggingface.co",
+      "tier": "official",
+      "kind": "model-card",
+      "body": "HF 모델 카드(WebFetch로 직접 확인) + 시드 JSON 메타. 개발 주체는 Swiss AI Initiative, Apertus 1.0을 이어 계속 사전학습한 1.5 버전이며 8B(별도로 70B 버전도 존재). 이미지·오디오·텍스트를 입력받아 텍스트만 출력하는 멀티모달 모델로, 8B 모델에 4조 개의 멀티모달 토큰을 추가 학습했다고 카드에 명시. 컨텍스트는 최대 262,144 토큰(v1.0 대비 4배 증가), 라이선스는 apache-2.0. 시드 JSON 기준 2026-07-24 공개, trendingScore 6, 좋아요 73, 다운로드 9,748, 파라미터 8B, int4 VRAM 추정 5.5GB. 비전 관련 벤치마크(GQA·MMStar·DocVQA 등)는 카드에 '상세 결과는 추후 기술보고서에서 공개'라고만 적혀 있어 실제 점수는 없음."
+    },
+    {
+      "title": "Hatim2221/Mubsir-Qwen-2B-VL — 이번 주 신규, 아랍어 손글씨 인식(HTR) 특화 2B",
+      "url": "https://huggingface.co/Hatim2221/Mubsir-Qwen-2B-VL",
+      "host": "huggingface.co",
+      "tier": "official",
+      "kind": "model-card",
+      "body": "HF 모델 카드(WebFetch로 직접 확인) + 시드 JSON 메타. 베이스 모델은 Qwen2-VL-2B-Instruct, KHATT(KFUPM Handwritten Arabic TexT) 데이터셋으로 QLoRA 파인튜닝 후 16비트로 가중치를 병합한 아랍어 손글씨 인식(HTR)·OCR 특화 모델. 학습은 T4 GPU 2장으로 진행했다고 카드에 명시. 라이선스 apache-2.0. 시드 JSON 기준 2026-08-14 공개, trendingScore 4, 좋아요 4, 다운로드 2,759, 파라미터 2B, int4 VRAM 추정 2.5GB. 정량적 OCR/HTR 정확도 수치는 카드에 없음."
+    },
+    {
+      "title": "LiquidAI/LFM2.5-VL-3B-GGUF — 지난주(/349)에도 소개, 이번 주도 트렌딩 상위(llama.cpp 공식 빌드)",
+      "url": "https://huggingface.co/LiquidAI/LFM2.5-VL-3B-GGUF",
+      "host": "huggingface.co",
+      "tier": "official",
+      "kind": "seed-meta",
+      "body": "시드 JSON(2026-09-02) 메타만 사용 — 지난주 이미 다룬 모델이라 갱신치만 확인. 다운로드 41,180(지난주 36,211에서 증가), 좋아요 57(지난주 53), trendingScore 6(지난주 4보다 상승). 파라미터 3B, int4 VRAM 추정 3GB, 라이선스 'other', 공개일은 2026-08-11로 그대로. LiquidAI의 LFM2.5-VL-3B를 llama.cpp에서 바로 돌리도록 만든 공식 GGUF 빌드로, 여전히 이번 주 후보 중 다운로드 최다다."
+    },
+    {
+      "title": "LiquidAI/LFM2.5-VL-3B — 지난주(/349)에도 소개, 원본 safetensors 빌드",
+      "url": "https://huggingface.co/LiquidAI/LFM2.5-VL-3B",
+      "host": "huggingface.co",
+      "tier": "official",
+      "kind": "seed-meta",
+      "body": "시드 JSON(2026-09-02) 메타만 사용. 다운로드 23,905(지난주 20,513에서 증가), 좋아요 197(지난주 193), trendingScore 4(지난주 5보다 하락). 파라미터 3B, int4 VRAM 추정 3GB, 라이선스 'other', 공개일 2026-08-11로 그대로. GGUF 빌드와 함께 여전히 이번 주 후보군에서 다운로드·좋아요 상위권."
+    },
+    {
+      "title": "lightx2v/MiniMax-H3-Prompt-Rewriter-LoRA-8B — 지난주(/349)에도 소개, 트렌딩은 하락(프롬프트 재작성용 LoRA)",
+      "url": "https://huggingface.co/lightx2v/MiniMax-H3-Prompt-Rewriter-LoRA-8B",
+      "host": "huggingface.co",
+      "tier": "official",
+      "kind": "seed-meta",
+      "body": "시드 JSON(2026-09-02) 메타만 사용. 다운로드 670(지난주 489에서 증가), 좋아요 35(지난주 34), trendingScore 3(지난주 6보다 하락). Qwen3-VL 위에 얹는 LoRA 어댑터로 MiniMax H3 오디오·비디오 생성 파이프라인의 프롬프트 재작성용이며, 독립 실행형 이미지 점검 VLM이 아니다(베이스 모델 필요). 라이선스는 시드 JSON에 null(미표기)로 그대로."
+    }
+  ],
+  "facts": [
+    "swiss-ai/Apertus-v1.5-8B: 8B 파라미터, apache-2.0 라이선스, 2026-07-24 공개, 좋아요 73·다운로드 9,748(시드 JSON 2026-09-02 기준), 컨텍스트 최대 262,144 토큰(모델 카드), 8B 모델에 4조 개 멀티모달 토큰 추가 학습(모델 카드)",
+    "Hatim2221/Mubsir-Qwen-2B-VL: 베이스 Qwen2-VL-2B-Instruct, 2B 파라미터, apache-2.0 라이선스, 2026-08-14 공개, 좋아요 4·다운로드 2,759(시드 JSON), KHATT 데이터셋 + T4 GPU 2장 QLoRA 학습(모델 카드)",
+    "LiquidAI/LFM2.5-VL-3B-GGUF: 다운로드가 지난주 36,211 → 이번 주 41,180으로 증가, trendingScore 4 → 6으로 상승(두 시드 JSON 비교)",
+    "LiquidAI/LFM2.5-VL-3B: 다운로드가 지난주 20,513 → 이번 주 23,905로 증가, 좋아요 193 → 197로 증가(두 시드 JSON 비교)",
+    "lightx2v/MiniMax-H3-Prompt-Rewriter-LoRA-8B: 다운로드가 지난주 489 → 이번 주 670으로 증가했으나 trendingScore는 6 → 3으로 하락(두 시드 JSON 비교)",
+    "이번 주 시드(hf-vlm-trending-2026-09-02.json) 총 7개 항목 중 abliteration/heretic/uncensored/ComfyUI 태그로 제외된 것 2개(DreamFast/Qwen3-VL-4b-Heretic-ComfyUI, LuffyTheFox/Gemma-4-E4B-Uncensored-Genesis-GGUF)"
+  ],
+  "unverified": [
+    "swiss-ai/Apertus-v1.5-8B 의 GQA·MMStar·DocVQA 등 비전 벤치마크 실제 점수 — 모델 카드에 '추후 기술보고서 공개'로만 적혀 있어 수치 없음",
+    "Hatim2221/Mubsir-Qwen-2B-VL 의 정량적 OCR/HTR 정확도(문자 오류율 등) — 모델 카드에 수치 없음",
+    "두 신규 모델 모두 라즈베리파이 5·Jetson 등 실제 보드에서의 체감 속도(토큰/초) — 시드 JSON은 VRAM 추정치만 제공, 실측 벤치마크 아님"
+  ],
+  "cannotSay": [
+    "출처 없는 수치·제품명 창작 금지",
+    "단정·과장 금지 banned:충격·대박·역대급·혁명·게임체인저·곧 대체될·무조건",
+    "발표/시드 제시치로 귀속 — VRAM(int4)은 대략 추정치이며 확정 수치가 아니다",
+    "swiss-ai/Apertus-v1.5-8B의 비전 벤치마크 수치는 모델 카드에 없다 — '성능이 좋다/나쁘다' 단정 금지, '추후 기술보고서 공개 예정'까지만",
+    "lightx2v/MiniMax-H3-Prompt-Rewriter-LoRA-8B는 프롬프트 재작성용 LoRA로 독립 실행형 이미지 점검 VLM이 아니다 — 베이스 모델 필요함을 명시할 것",
+    "새로 뜬 실모델이 2개(Apertus-v1.5-8B, Mubsir-Qwen-2B-VL)뿐이라 '이번 주 새 모델 붐' 같은 과장된 프레이밍 금지 — 지난주와 중복이 많다는 사실을 그대로 전달"
+  ],
+  "internalLinkCandidates": [
+    "https://burning-go9me.tistory.com/349",
+    "https://burning-go9me.tistory.com/361"
+  ]
+}

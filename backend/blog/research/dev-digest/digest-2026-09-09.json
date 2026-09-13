@@ -1,0 +1,383 @@
+{
+  "collectedAt": "2026-09-09",
+  "days": 3,
+  "results": {
+    "geeknews": {
+      "source": "geeknews",
+      "fetchedOk": true,
+      "sourceUrl": "https://news.hada.io/rss/news",
+      "items": [
+        {
+          "title": "Show HN: LLM 어텐션 시각화",
+          "url": "",
+          "date": "2026-09-09T10:36:48.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "대규모 언어 모델은 적응적 탐색을 통해 새로운 사회적 편향을 형성함",
+          "url": "",
+          "date": "2026-09-09T10:33:48.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "AI도 의식을 가질 수 있을까: ‘의식의 어려운 문제’가 다시 중요해진 이유",
+          "url": "",
+          "date": "2026-09-09T09:34:01.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "내 PC가 AI 데이터센터가 된다: 유휴 컴퓨팅 자원의 새로운 수익화",
+          "url": "",
+          "date": "2026-09-09T09:14:52.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "저작권은 이익보다 해악이 크므로 폐지해야 함",
+          "url": "",
+          "date": "2026-09-09T08:39:25.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "나비에–스토크스 밀레니엄 상금 문제",
+          "url": "",
+          "date": "2026-09-09T08:36:25.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "수학자에게 Lean이 있다면 개발자에게는 TLA+가 있다",
+          "url": "",
+          "date": "2026-09-09T08:31:30.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "OpenAI, 수학 난제 해결 경쟁에서 부당한 수단을 썼다는 의혹",
+          "url": "",
+          "date": "2026-09-09T07:33:28.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "Show GN: AI 운동 카운터 - 카메라로 푸시업·스쿼트 횟수를 세는 iPhone 앱",
+          "url": "",
+          "date": "2026-09-09T07:24:45.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "Mercury 2.5",
+          "url": "",
+          "date": "2026-09-09T06:32:32.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "ChatGPT Pro 신규 구독 일시 중단 가능성 예고",
+          "url": "",
+          "date": "2026-09-09T05:45:57.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "방사성 물질을 이용하는 회전날개를 가진 헬리콥터",
+          "url": "",
+          "date": "2026-09-09T05:32:39.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Show GN: # Starpl(스타플) - 실제 별에 일상을 기록하는 SNS",
+          "url": "",
+          "date": "2026-09-09T04:59:04.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Tesla, 정지 표지판 위반으로 남성 사망…Full Self-Driving/Autopilot 작동 확인",
+          "url": "",
+          "date": "2026-09-09T04:44:19.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Show HN: Stuxnet - 악명 높은 사이버 무기의 소스 코드 재구성",
+          "url": "",
+          "date": "2026-09-09T04:41:19.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "오늘 Anthropic에서 사직했다",
+          "url": "",
+          "date": "2026-09-09T04:38:19.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "AI로 개발할 때 진짜 위험: 못 만드는 게 아니라, 잘못 생각한 걸 너무 잘 만들어준다",
+          "url": "",
+          "date": "2026-09-09T04:17:39.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "에이전트는 테스트·검증 기법을 얼마나 잘 활용하는가?",
+          "url": "",
+          "date": "2026-09-09T04:04:00.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "TiVo, 직접 녹화한 영상의 광고 건너뛰기 기능 유료화 예정",
+          "url": "",
+          "date": "2026-09-09T04:01:00.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "프린터를 만드는 방법",
+          "url": "",
+          "date": "2026-09-09T03:58:00.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Emacs Bedrock 2.0",
+          "url": "",
+          "date": "2026-09-09T03:54:59.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Tao: AI가 수학의 미해결 문제를 재생 불가능한 자원처럼 채굴하고 있음",
+          "url": "",
+          "date": "2026-09-09T03:51:59.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "Show GN: Quiz Gate - PR을 만들면 git diff 기반으로 코드 변경점에 대한 문제를 풀어볼 수 있는 앱",
+          "url": "",
+          "date": "2026-09-09T03:06:17.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "GPT-6 Astra를 위한 스킬과 프롬프트 다시 생각하기",
+          "url": "",
+          "date": "2026-09-09T03:00:03.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "Trey Parker와 Matt Stone, South Park의 이름을 South America로 변경",
+          "url": "",
+          "date": "2026-09-09T02:55:06.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "내 피드, 내 방식",
+          "url": "",
+          "date": "2026-09-09T02:52:06.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "프로그래밍은 예술이다",
+          "url": "",
+          "date": "2026-09-09T02:49:06.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "벨기에 대중교통 실시간 지도",
+          "url": "",
+          "date": "2026-09-09T02:46:06.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "SSD 4개에서 스트리밍해 MacBook Pro에서 Kimi K3(2.8T)를 초당 1토큰으로 실행",
+          "url": "",
+          "date": "2026-09-09T02:43:06.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Show GN: CartCut - 오픈소스 영상편집기",
+          "url": "",
+          "date": "2026-09-09T02:33:59.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Show HN: Copperhead — 회로 기판을 위한 Cursor",
+          "url": "",
+          "date": "2026-09-09T01:59:51.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Qwen3.8 27B 양자화 벤치마크: 4비트는 성능 유지, 1비트는 붕괴",
+          "url": "",
+          "date": "2026-09-09T01:56:51.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "붓다 이야기에서 탄생한 두 기독교 성인",
+          "url": "",
+          "date": "2026-09-09T01:53:51.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "소변이 튀지 않는 소변기 (2025)",
+          "url": "",
+          "date": "2026-09-09T01:50:51.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Broadcom의 VDDK 다운로드 제거로 VMware를 떠나기가 더 어려워짐",
+          "url": "",
+          "date": "2026-09-09T01:47:51.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Show GN: routar - 백엔드 스펙 없이 프론트에서 API 스키마를 간편하게 관리하는 타입세이프 HTTP 클라이언트를 ...",
+          "url": "",
+          "date": "2026-09-09T01:22:11.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Caltech Mathathon — 연구 수준의 수학에 전념하는 최초의 해커톤",
+          "url": "",
+          "date": "2026-09-09T00:59:10.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "모든 곳의 보안을 바로잡을 시간은 1년뿐이다",
+          "url": "",
+          "date": "2026-09-09T00:56:10.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "D2의 다이어그램 자동 배치 엔진 TALA, 오픈소스로 공개",
+          "url": "",
+          "date": "2026-09-09T00:53:10.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "DHS ‘예측 치안’ 부서, 미국인의 금융 습관 분석",
+          "url": "",
+          "date": "2026-09-09T00:50:10.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Paramount, 약 167조원 합병 지지 여론 조성에 ‘위장 풀뿌리’ 단체 활용하다 적발",
+          "url": "",
+          "date": "2026-09-09T00:47:09.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "fnprint - 실행 동작을 비교해 바이너리 속 함수를 식별하는 도구",
+          "url": "",
+          "date": "2026-09-09T00:45:01.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "극단적인 서버 사이드 렌더링 (2025)",
+          "url": "",
+          "date": "2026-09-09T00:32:43.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Qwen-Drive-1.0 - 도로 상황을 이해하고 주행 경로까지 계획하는 자율주행 AI 모델",
+          "url": "",
+          "date": "2026-09-09T00:30:02.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "2026년 유럽 클라우드 제공업체의 현황",
+          "url": "",
+          "date": "2026-09-09T00:29:43.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "2026년, 비밀번호 관리자 전환하기",
+          "url": "",
+          "date": "2026-09-09T00:26:42.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "내 소프트웨어의 기본 라이선스를 MIT에서 EUPL로 바꿨다",
+          "url": "",
+          "date": "2026-09-09T00:23:42.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "나비에-스토크스 해법 발표의 이면: 수학자가 공개한 OpenAI와의 협의 과정",
+          "url": "",
+          "date": "2026-09-08T22:56:58.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "오래된 HTML 코드 조각과 유물들",
+          "url": "",
+          "date": "2026-09-08T22:48:27.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "ChatGPT Images 2.5 공개 - 더 빠른 생성과 정밀한 편집, 직접 그리는 Sketch 추가",
+          "url": "",
+          "date": "2026-09-08T22:41:56.000Z",
+          "aiRelated": false
+        }
+      ],
+      "note": "GeekNews Atom 피드에서 최근 3일 항목. aiRelated=true 는 제목 키워드 기준(본문은 조사 단계에서 확인)."
+    },
+    "inpa": {
+      "source": "inpa",
+      "fetchedOk": true,
+      "sourceUrl": "https://inpa.tistory.com/rss",
+      "items": [],
+      "note": "최근 3일 이내 작성된 글만. 날짜 없는 항목은 제외. 0건이면 어제·오늘 새 글이 없다는 뜻."
+    },
+    "goddaehee": {
+      "source": "goddaehee",
+      "fetchedOk": true,
+      "sourceUrl": "https://goddaehee.tistory.com/rss",
+      "items": [
+        {
+          "title": "Claude Fable 5.1 출시 리뷰(클로드 Fable 5.1이란?) - 무엇이 좋아졌고 무엇이 비싸졌나(벤치마크, 요금제, 접근 제한 살펴 보기)",
+          "url": "https://goddaehee.tistory.com/642",
+          "date": "2026-09-07T09:00:32.000Z"
+        },
+        {
+          "title": "GPT-6 Astra 리뷰(GPT-6 Astra 란?) - 무엇이 좋아졌고 무엇이 비싸졌나(벤치마크, 요금제, 접근 제한 살펴 보기)",
+          "url": "https://goddaehee.tistory.com/641",
+          "date": "2026-09-06T15:57:14.000Z"
+        }
+      ],
+      "note": "최근 3일 이내 작성된 글만. 날짜 없는 항목은 제외. 0건이면 어제·오늘 새 글이 없다는 뜻."
+    },
+    "github": {
+      "source": "github",
+      "fetchedOk": true,
+      "sourceUrl": "https://github.com/trending?since=weekly",
+      "items": [
+        {
+          "repo": "tt-a1i/archify",
+          "url": "https://github.com/tt-a1i/archify",
+          "description": "Agent skill for beautiful, verifiable architecture, workflow, sequence, data-flow, and lifecycle diagrams—self-contained HTML with motion and crisp export.",
+          "starsThisWeek": 13318
+        },
+        {
+          "repo": "blader/humanizer",
+          "url": "https://github.com/blader/humanizer",
+          "description": "Agent skill that removes signs of AI-generated writing from text",
+          "starsThisWeek": 5790
+        },
+        {
+          "repo": "ChromeDevTools/chrome-devtools-mcp",
+          "url": "https://github.com/ChromeDevTools/chrome-devtools-mcp",
+          "description": "Chrome DevTools for coding agents",
+          "starsThisWeek": 1014
+        },
+        {
+          "repo": "ayghri/i-have-adhd",
+          "url": "https://github.com/ayghri/i-have-adhd",
+          "description": "A skill to stop your coding agent from burying the answer. ADHD-friendly output.",
+          "starsThisWeek": 5927
+        },
+        {
+          "repo": "mksglu/context-mode",
+          "url": "https://github.com/mksglu/context-mode",
+          "description": "Context window optimization for AI coding agents. Sandboxes tool output (98% reduction), persists session memory, and enforces routing across 17 platforms via MCP + hooks.",
+          "starsThisWeek": 935
+        },
+        {
+          "repo": "ruvnet/ruflo",
+          "url": "https://github.com/ruvnet/ruflo",
+          "description": "🌊 The original agent meta-harness. Deploy intelligent multi-player swarms, coordinate autonomous workflows, and build conversational AI systems. Features adaptive memory, self-learning intelligence, RAG integration, and native Claude Code / Codex / Hermes and many more Integrated",
+          "starsThisWeek": 1585
+        }
+      ],
+      "note": "주간 급상승 레포 중 plugin/extension/skill/cli/mcp 등 도구 성격 키워드가 잡힌 것만. dev-trending 과 겹치는 항목은 조사 단계에서 제외한다."
+    }
+  }
+}

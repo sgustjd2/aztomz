@@ -1,0 +1,365 @@
+{
+  "collectedAt": "2026-08-26",
+  "days": 3,
+  "results": {
+    "geeknews": {
+      "source": "geeknews",
+      "fetchedOk": true,
+      "sourceUrl": "https://news.hada.io/rss/news",
+      "items": [
+        {
+          "title": "Edge Vision AI - AI를 현실 세계로 가져오는 기술",
+          "url": "",
+          "date": "2026-08-26T10:19:53.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "뒷마당 사무실 짓기: 시공 과정과 비용 분석",
+          "url": "",
+          "date": "2026-08-26T08:33:51.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "미국 일부 식당이 팁을 없애는 이유",
+          "url": "",
+          "date": "2026-08-26T06:43:43.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Firefox 157, 모든 플랫폼에서 JPEG XL 기본 지원",
+          "url": "",
+          "date": "2026-08-26T06:31:40.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "FDA, 케톤과 혈당 수치를 모두 모니터링하는 최초의 웨어러블 기기 승인",
+          "url": "",
+          "date": "2026-08-26T05:31:33.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "SiFive의 첫 서버 플랫폼 BigSky SF-2U870",
+          "url": "",
+          "date": "2026-08-26T03:26:24.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Hacker News 콘텐츠의 절반은 AI일까?",
+          "url": "",
+          "date": "2026-08-26T02:56:38.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "대학은 예비 창업가를 어떻게 준비시켜야 하는가",
+          "url": "",
+          "date": "2026-08-26T02:54:17.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Qwen 3.8-Flash-Next(125B a6B), 2026년 8월 26일 공개 예정",
+          "url": "",
+          "date": "2026-08-26T00:48:50.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "Emacs 31.1의 새로운 기능",
+          "url": "",
+          "date": "2026-08-26T00:45:50.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "key-amnesia - AI 에이전트에 시크릿을 노출하지 않고 명령을 실행하는 도구",
+          "url": "",
+          "date": "2026-08-26T00:30:02.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "OpenAI Jalapeño: Nvidia Blackwell을 앞선 LLM 추론 칩",
+          "url": "",
+          "date": "2026-08-26T00:18:45.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "AI로 만든 웹사이트마다 전용 DB를 하나씩 제공하는 이유",
+          "url": "",
+          "date": "2026-08-26T00:15:01.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "MNT Station - 모듈식 오픈 하드웨어 데스크톱·서버",
+          "url": "",
+          "date": "2026-08-26T00:10:25.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Python 3 전환을 시작한 EVE Online",
+          "url": "",
+          "date": "2026-08-26T00:07:25.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Rust의 never 타입 `!`, 10년 만에 안정화",
+          "url": "",
+          "date": "2026-08-26T00:04:25.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "내 친구 Aaron",
+          "url": "",
+          "date": "2026-08-25T21:32:35.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Nitter, X Corp.의 영구 중단 요구 서한을 받고 공식 서비스·개발 중단",
+          "url": "",
+          "date": "2026-08-25T20:31:15.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "공중화장실은 모두 어디로 사라졌을까?",
+          "url": "",
+          "date": "2026-08-25T19:43:29.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Apple, M6·M5 Pro를 탑재한 새로운 Mac mini 공개",
+          "url": "",
+          "date": "2026-08-25T19:40:29.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "컨트리 음악의 전설 Dolly Parton, 80세로 별세",
+          "url": "",
+          "date": "2026-08-25T19:37:29.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "OpenAI GPT-5.6 Sol 가격 인하, 최소 2026년 11월 21일까지",
+          "url": "",
+          "date": "2026-08-25T18:33:02.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "IPFS 유지보수 조직 Shipyard, 운영 종료 수순",
+          "url": "",
+          "date": "2026-08-25T16:39:14.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Apple, M5 Max·M5 Ultra를 탑재한 새로운 Mac Studio 공개",
+          "url": "",
+          "date": "2026-08-25T16:36:14.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Apple, 성능과 AI 연산을 크게 높인 M6·M5 Ultra 공개",
+          "url": "",
+          "date": "2026-08-25T15:32:50.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "Show GN: homebutler - 홈서버 관리에 필요한 걸 한 바이너리에 담고 AI까지 붙였습니다",
+          "url": "",
+          "date": "2026-08-25T14:30:57.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "Show GN: Galaxy Constellate - 사람과 관심사를 별자리로 연결하는 커뮤니티",
+          "url": "",
+          "date": "2026-08-25T10:53:15.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Perspec 1.0 - 문서 사진의 원근을 보정하는 Haskell 데스크톱 앱",
+          "url": "",
+          "date": "2026-08-25T09:02:41.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Show GN: 혼서가 - 정보가 낡으면 빌드가 실패하는 1인가구 생활정보 위키",
+          "url": "",
+          "date": "2026-08-25T08:35:43.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Show GN: Macchiato - 내 에이전트를 아이폰으로 원격 조종하는 앱",
+          "url": "",
+          "date": "2026-08-25T07:07:52.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "애플, iCloud+ ‘나의 이메일 가리기’ 주소는 icloud.com에 유지하기로",
+          "url": "",
+          "date": "2026-08-25T06:31:23.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Emacs 31.1 출시",
+          "url": "",
+          "date": "2026-08-25T06:15:07.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Firefox 157에 도입되는 JPEG XL",
+          "url": "",
+          "date": "2026-08-25T05:01:21.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Show GN: forge-harness — AI가 쓴 코드를 커밋 전에 막는 Claude Code 게이트 하네스 (오픈소스)",
+          "url": "",
+          "date": "2026-08-25T04:11:34.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "애플의 첫 폴더블 iPhone은 ‘마법’을 되살릴 것",
+          "url": "",
+          "date": "2026-08-25T04:02:01.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "San Francisco 전체를 비디오 게임으로 구현",
+          "url": "",
+          "date": "2026-08-25T02:31:31.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Vibe Tax - 바이브 코딩을 위해 모든 개발자가 치르는 토큰 비용",
+          "url": "",
+          "date": "2026-08-25T01:40:52.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Fable과 ‘공짜 점심’의 종말",
+          "url": "",
+          "date": "2026-08-25T01:38:53.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "뉴스 읽기는 담배 피우는 것과 같다",
+          "url": "",
+          "date": "2026-08-25T01:00:04.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Prime Agent - 코딩과 장기 자율 작업을 위한 자기 개선형 RLM 에이전트",
+          "url": "",
+          "date": "2026-08-25T00:30:02.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "블로그 글을 손글씨로 쓸 수 있을까?",
+          "url": "",
+          "date": "2026-08-25T00:09:54.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "오프그리드 태양광으로 전기차 충전하기(2025)",
+          "url": "",
+          "date": "2026-08-25T00:06:54.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "번아웃으로 더는 버틸 수 없다",
+          "url": "",
+          "date": "2026-08-25T00:03:53.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "전 세계 해양 온도, 관측 사상 최고치 기록",
+          "url": "",
+          "date": "2026-08-24T23:32:01.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "텍스트 모드라는 거짓말: 현대 TUI가 접근성을 해치는 이유",
+          "url": "",
+          "date": "2026-08-24T22:01:03.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "AI 의존이 코딩 전문성의 성장 경로를 무너뜨릴 수 있음",
+          "url": "",
+          "date": "2026-08-24T21:33:40.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "Varkos - 대화를 넘어 Skyrim 세계를 인식하고 행동하는 AI 동료",
+          "url": "",
+          "date": "2026-08-24T19:39:44.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "MS Paint와 Photos, 로컬 AI 이미지에 서버 발급 GUID를 보이지 않는 워터마크로 삽입",
+          "url": "",
+          "date": "2026-08-24T19:36:44.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "샤오미 새 CPU, 단일 스레드는 Apple급·멀티스레드는 더 빠르다고 주장",
+          "url": "",
+          "date": "2026-08-24T17:31:27.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "SELF - SQLite 데이터베이스 자체를 실행 파일로 쓰는 파일 포맷",
+          "url": "",
+          "date": "2026-08-24T16:33:13.000Z",
+          "aiRelated": false
+        }
+      ],
+      "note": "GeekNews Atom 피드에서 최근 3일 항목. aiRelated=true 는 제목 키워드 기준(본문은 조사 단계에서 확인)."
+    },
+    "inpa": {
+      "source": "inpa",
+      "fetchedOk": true,
+      "sourceUrl": "https://inpa.tistory.com/rss",
+      "items": [],
+      "note": "최근 3일 이내 작성된 글만. 날짜 없는 항목은 제외. 0건이면 어제·오늘 새 글이 없다는 뜻."
+    },
+    "goddaehee": {
+      "source": "goddaehee",
+      "fetchedOk": true,
+      "sourceUrl": "https://goddaehee.tistory.com/rss",
+      "items": [
+        {
+          "title": "Grok Bot이란? - Grok Bot 설치 및 사용 방법(플랜, 일반 Grok과 다른 점, 가격, 활용 사례)",
+          "url": "https://goddaehee.tistory.com/634",
+          "date": "2026-08-26T09:00:10.000Z"
+        },
+        {
+          "title": "Claude Code ELI5 스킬 이란? : Anthropic에서 쓰던 화제의 ELI5 스킬(ELI5 설치 및 사용해보기)",
+          "url": "https://goddaehee.tistory.com/633",
+          "date": "2026-08-24T15:51:06.000Z"
+        }
+      ],
+      "note": "최근 3일 이내 작성된 글만. 날짜 없는 항목은 제외. 0건이면 어제·오늘 새 글이 없다는 뜻."
+    },
+    "github": {
+      "source": "github",
+      "fetchedOk": true,
+      "sourceUrl": "https://github.com/trending?since=weekly",
+      "items": [
+        {
+          "repo": "anthropics/claude-plugins-community",
+          "url": "https://github.com/anthropics/claude-plugins-community",
+          "description": "Community plugin marketplace for Claude Cowork and Claude Code. Read-only mirror — submit plugins at clau.de/plugin-directory-submission.",
+          "starsThisWeek": 1199
+        },
+        {
+          "repo": "Tencent/AI-Infra-Guard",
+          "url": "https://github.com/Tencent/AI-Infra-Guard",
+          "description": "A full-stack AI Red Teaming platform securing AI ecosystems via Agent Scan, Skills Scan, MCP scan, AI Infra scan and LLM jailbreak evaluation.",
+          "starsThisWeek": 1247
+        },
+        {
+          "repo": "PostHog/posthog",
+          "url": "https://github.com/PostHog/posthog",
+          "description": "🦔 PostHog is the leading platform for building self-driving products. Our developer tools – AI observability, analytics, session replay, flags, experiments, error tracking, logs, and more – capture all the context agents need to diagnose problems, uncover opportunities, and ship fixes. Steer it all from Slack, web, desktop, or the MCP.",
+          "starsThisWeek": 1426
+        }
+      ],
+      "note": "주간 급상승 레포 중 plugin/extension/skill/cli/mcp 등 도구 성격 키워드가 잡힌 것만. dev-trending 과 겹치는 항목은 조사 단계에서 제외한다."
+    }
+  }
+}
