@@ -37,7 +37,7 @@
 | `recheck-ad.mjs` | "광고일까 진짜일까" 최고령 1건 출처 재검증(결정적·LLM 없음) |
 | `blog-build.mjs <id>\|--latest` | **한끗** 트렌드 1건 → 티스토리용 HTML + 메타(`backend/out/blog/`). 커버는 자체 생성 카드. `--selftest` 있음 |
 | `post-build.mjs --category=<id>` | **다주제** 키워드 → 조사·초안·SEO·자가검수 → 같은 형식의 HTML+메타. `--research=<파일>`로 조사 결과 주입 · `--dry` |
-| `blog-assemble.mjs <slug>` | **에이전트 산출물 조립** — 마크다운 + 메타 → 발행용 HTML. URL 살균·임베드 검증(relatedVideos 포함). `--research=<파일>`로 조사파일-slug 분리 지원 |
+| `blog-assemble.mjs <slug>` | **에이전트 산출물 조립** — 마크다운 + 메타 → 발행용 HTML. URL 살균·임베드 검증(relatedVideos 포함). **구조 중복 방지**(같은 카테고리 최근 글과 소제목 3개 이상 일치 시 차단, 마무리 상투구 >50% 중복 시 경고). `--research=<파일>`로 조사파일-slug 분리 지원 |
 | `blog-selfreview.mjs <slug>` | **집필 직후 자체 피드백→반영** — `claude -p`가 초안을 냉정히 자기비평하고 실제 결함만 **외과적 find/replace**로 고쳐 넣은 뒤 재조립(전면 재작성 금지·드리프트 방지). blog-verify 앞 단계. `--dry`(제안만)·`--selftest` |
 | `blog-verify.mjs <id>` | **발행 전 최종 검증** — `claude -p`가 원본 왜곡·단정·지어낸 사실·저작권을 본다. 반려 시 exit 1. `--warn` |
 | `blog-publish.mjs <id>` | Playwright로 티스토리 자동 발행. `--login`(1회) · `--dry` · `--draft` · `--probe` · `--categories` · `--cover` |
