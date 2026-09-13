@@ -1,3 +1,7 @@
 keyword,categoryId,priority,memo,pickedAt,slug
 "Spring Boot 3 CORS 설정 안 먹힐 때",web-error,1,실제로 겪은 케이스만 — 에러 원문 확보 후 작성,2026-07-26,spring-boot-3-cors-not-working
 "지금 들어도 안 늙은 80년대 시티팝",retro-revival,2,"왜 지금 통하는지 반드시 짚을 것 — 수동 실행(자동화 이전), song-guide 목록형 1편 + song-single 곡별 4편으로 처리됨",2026-07-25,"city-pop-80s-still-fresh, yasuha-friday-chinatown, hiroshi-sato-say-goodbye, minako-yoshida-midnight-driver, anri-remember-summer-days, momoko-kikuchi-mystical-composer"
+"2026년 상반기 LLM 판도 정리",ai-trend,1,"상반기 회고는 9월 기준 시의성 상실 — '2026년 9월 AI 3사(OpenAI/Anthropic/Google) 신모델 정리'로 대체해 발행",2026-09-13,ai-trends-sept-2026
+"n8n + AI로 만드는 업무 자동화 아이디어 모음",automation-idea,1,4가지 아이디어(Gmail 분류·RSS 요약·문의폼 자동응답·아침 다이제스트)로 발행,2026-09-13,n8n-ai-automation-ideas
+"매일 아침 뉴스레터·RSS를 AI가 요약해서 슬랙/디스코드로 보내는 n8n 자동화",automation-idea,1,위 n8n 글의 아이디어 4번(Schedule Trigger→HTTP Request→OpenAI→Slack)으로 포함 발행,2026-09-13,n8n-ai-automation-ideas
+"우리 냥이 인생샷 만들기 AI 잡지컷 프롬프트",ai-prompt-pack,2,"기발행 /274(댕댕이)와 짝 — 캣타워·창가낮잠·간식·병원·슬로우선데이·박스탐험 6종으로 발행",2026-09-13,cat-photo-prompt-pack

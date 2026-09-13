@@ -1,0 +1,69 @@
+{
+  "keyword": "2026 추석 연휴 국내 여행지 추천",
+  "categoryId": "hangeut-trend",
+  "searchedAt": "2026-09-13",
+  "notes": "2026년 추석 연휴(9/24~27, 4일)를 앞두고 국내 단기 여행지를 지역·동반자 유형별로 정리할 수 있다. 강릉·전주·제주·부산·남해·가평양평 등 구체 스팟과 이동시간 정보는 확인됨. 항공권/KTX 예매 자체는 이미 지난 이슈(코레일 일반예매 9/7~11 종료)라 '지금 예매하세요'로 쓰면 시점 오류 — 여행지 추천에 집중하고 예매는 언급하지 않거나 과거형으로만.",
+  "sources": [
+    {
+      "title": "2026년 추석 연휴 기간 국내 여행 어디로 갈까? 추천 여행지 TOP 5",
+      "url": "https://www.wegive.co.kr/wezine/detail/2090",
+      "host": "wegive.co.kr",
+      "tier": "blog",
+      "body": "대전 성심당, 인천 강화도 서해 낙조, 공주 부자떡집, 단양 액티비티, 속초 가을 바다 추천. 가족은 하회마을류 전통 체험, 부모님 동반은 온천·고궁, 연인은 경주 동궁과 월지 야경·강릉 커피거리. 당일치기는 강릉(서울서 기차 1시간반·버스 2시간반). 가평~양평 코스: 아침고요수목원→남이섬→두물머리 일몰."
+    },
+    {
+      "title": "2026년 추석 날짜와 연휴 정보, 국내외 여행지 추천까지",
+      "url": "https://kr.trip.com/blog/newyear-trip-recommend/",
+      "host": "kr.trip.com",
+      "tier": "blog",
+      "body": "추석 날짜 9월 25일(금), 연휴 9/24~27 총 4일. 국내: 강릉(청량리역 기차 1.5시간·고속터미널 버스 2.5시간, 당일/1박2일), 전주 한옥마을(한옥 700여채, 국내 최대), 제주도(2박3일~3박4일, 스누피가든), 부산(해운대·광안리·태종대·자갈치시장), 남해독일마을(유럽 감성)."
+    },
+    {
+      "title": "\"2026 추석 KTX·SRT 예매 언제?\"…승차권 일정·달라진 점 총정리",
+      "url": "https://www.ajunews.com/view/20260818084321406",
+      "host": "ajunews.com",
+      "tier": "press",
+      "body": "코레일 추석 연휴(9/23~27 운행분) KTX 승차권 일반예매는 9월 7일~11일 진행(교통약자 사전예매 9/3~4). 2026년 9월 1일부터 KTX·SRT 통합 운영, '코레일+' 앱에서 통합 예매 가능."
+    }
+  ],
+  "claims": [
+    {
+      "claim": "2026년 추석 연휴는 9월 24일(목)부터 27일(일)까지 4일간이다",
+      "grade": "confirmed",
+      "evidence": ["추석 날짜 9월 25일(금), 연휴 9/24~27 총 4일"],
+      "sourceUrls": ["https://kr.trip.com/blog/newyear-trip-recommend/"]
+    },
+    {
+      "claim": "강릉은 서울에서 기차 1시간 반, 버스 2시간 반이면 닿아 당일치기·1박2일 여행지로 꼽힌다",
+      "grade": "confirmed",
+      "evidence": ["청량리역 기차 1시간반, 고속터미널 버스 2시간반"],
+      "sourceUrls": ["https://kr.trip.com/blog/newyear-trip-recommend/", "https://www.wegive.co.kr/wezine/detail/2090"]
+    },
+    {
+      "claim": "전주 한옥마을은 700여 채 규모로 국내 최대 한옥촌이다",
+      "grade": "confirmed",
+      "evidence": ["700여 채의 한옥으로 구성된 국내 최대 규모의 전통 한옥촌"],
+      "sourceUrls": ["https://kr.trip.com/blog/newyear-trip-recommend/"]
+    },
+    {
+      "claim": "가평~양평은 아침고요수목원-남이섬-두물머리로 이어지는 가을 당일 코스로 추천된다",
+      "grade": "confirmed",
+      "evidence": ["아침고요수목원에서 시작해 남이섬을 거쳐 두물머리에서 일몰을 보는 코스"],
+      "sourceUrls": ["https://www.wegive.co.kr/wezine/detail/2090"]
+    },
+    {
+      "claim": "코레일 추석 연휴 KTX 일반예매는 이미 9월 7일~11일에 진행돼 종료됐다",
+      "grade": "confirmed",
+      "evidence": ["일반예매는 9월 7일부터 11일까지 진행"],
+      "sourceUrls": ["https://www.ajunews.com/view/20260818084321406"]
+    }
+  ],
+  "numbers": [
+    { "what": "2026 추석 연휴 기간", "value": "9월 24일(목)~27일(일), 4일", "asOf": "2026-09-13", "sourceUrl": "https://kr.trip.com/blog/newyear-trip-recommend/" },
+    { "what": "전주 한옥마을 한옥 채수", "value": "약 700여 채", "asOf": "2026-09-13", "sourceUrl": "https://kr.trip.com/blog/newyear-trip-recommend/" },
+    { "what": "KTX 추석 일반예매 기간", "value": "9월 7일~11일(종료)", "asOf": "2026-09-13", "sourceUrl": "https://www.ajunews.com/view/20260818084321406" }
+  ],
+  "dropped": [],
+  "cannotCover": ["구체적 숙소 가격·잔여 객실 현황(자료 없음)", "SRT 단독 예매 일정(공식 미발표)"],
+  "songs": []
+}

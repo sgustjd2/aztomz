@@ -1,0 +1,153 @@
+{
+  "keyword": "2026년 9월 AI 업계 동향",
+  "categoryId": "ai-trend",
+  "searchedAt": "2026-09-13",
+  "queries": [
+    "AI 모델 발표 2026년 9월",
+    "LLM 신규 출시 2026-09",
+    "OpenAI Anthropic Google new model September 2026",
+    "AI benchmark news September 2026",
+    "Claude Gemini GPT 신제품 2026년 9월",
+    "AI 업계 동향 2026년 9월",
+    "site:openai.com news 2026",
+    "site:anthropic.com news September 2026",
+    "site:blog.google gemini September 2026",
+    "OpenAI \"GPT-6 Astra\" site:openai.com",
+    "Anthropic \"Claude Fable 5.1\" \"Mythos 5.1\" site:anthropic.com",
+    "Google \"Gemini 3.8 Flash\" official blog.google",
+    "artificialanalysis.ai GPT-6 Astra Claude Mythos benchmark leaderboard September 2026",
+    "TechCrunch GPT-6 Astra zero-day vulnerabilities \"Critical\" cybersecurity",
+    "GPT-6 Astra 가격 인상 반응 비판",
+    "GPT-6 Astra 지디넷 OR 전자신문 OR 블로터 한국 보도",
+    "Claude Fable 5.1 Mythos 5.1 국내 보도 한국어"
+  ],
+  "sources": [
+    {
+      "title": "Introducing GPT-6-Astra: The most intelligent and aligned model in the world (OpenAI 공식 발표 미러)",
+      "url": "https://community.openai.com/t/introducing-gpt-6-astra-the-most-intelligent-and-aligned-model-in-the-world/1394703",
+      "host": "community.openai.com",
+      "tier": "press",
+      "publishedAt": "2026-09-03",
+      "body": "OpenAI의 GPT-6 Astra 공식 발표문을 인용한 게시글. 발표일은 2026년 9월 3~4일. 롤아웃 범위는 'Pro, Enterprise, and Business Premium users in ChatGPT Work and Codex' 및 API에서 즉시 제공되며 Plus·Business 사용자는 며칠 내 접근 가능하다고 명시. 벤치마크는 Agents' Last Exam, AutomationBench, ScreenSpot Pro, FrontierMath Tier 4, ARC-AGI 3, TerminalBench-4.0, HealthBench Pro에서 최고 수준을 달성했다고 주장. 가격은 백만 토큰당 입력 $10.00, 캐시된 입력 $1.00, 캐시 쓰기 $12.50, 출력 $50.00. 컨텍스트 윈도우 1,050,000토큰, 최대 출력 토큰 128,000, 지식 기준일 2026년 4월 30일.",
+      "facts": [
+        "GPT-6 Astra는 2026-09-03(미국시간) 발표, Pro/Enterprise/Business Premium(ChatGPT Work·Codex)과 API에는 즉시, Plus·Business는 며칠 내 순차 제공",
+        "가격: 입력 $10.00/백만토큰, 캐시된 입력 $1.00, 캐시 쓰기 $12.50, 출력 $50.00",
+        "컨텍스트 윈도우 1,050,000토큰, 최대 출력 토큰 128,000, 지식 기준일 2026-04-30",
+        "Agents' Last Exam·AutomationBench·ScreenSpot Pro·FrontierMath Tier 4·ARC-AGI 3·TerminalBench-4.0·HealthBench Pro에서 최고 성능을 주장"
+      ]
+    },
+    {
+      "title": "Introducing Claude Fable 5.1 and Claude Mythos 5.1",
+      "url": "https://www.anthropic.com/claude-fable-and-mythos-5-1",
+      "host": "anthropic.com",
+      "tier": "official",
+      "publishedAt": "2026-09-01",
+      "body": "Anthropic 공식 발표. Claude Fable 5.1(일반 공개)과 Claude Mythos 5.1(신뢰 접근 프로그램 전용, 동일 모델에 완화된 가드레일)을 2026년 9월 1일 출시. Fable 5.1은 일반 워크로드 기준 Fable 5 대비 약 25% 저렴, 복잡한 코딩·에이전트 작업은 최대 45%까지 절감 가능하다고 주장. 캐시 읽기 비용을 75% 낮춰 $0.25/백만토큰으로 책정(입력 $10, 출력 $50은 Fable 5와 동일). 벤치마크: Terminal-Bench-Science 0.1에서 52.6%(Fable 5는 24.7%), Terminal-Bench 4.0에서 55.8%(Fable 5는 42.0%), CursorBench 3.2.0에서 73.4%(Fable 5는 70.5%). 사이버보안 오탐(false positive) 60% 감소, 생물학 기본 질문 활성화 85% 감소, 단백질 설계 결합력 10배 향상(Mythos 5.1 티어에서 확인) 등 안전성 개선도 명시.",
+      "facts": [
+        "Claude Fable 5.1 / Claude Mythos 5.1 출시일: 2026-09-01",
+        "Terminal-Bench-Science 0.1 점수: Fable 5.1 52.6% vs Fable 5 24.7%",
+        "Terminal-Bench 4.0: Fable 5.1 55.8% vs Fable 5 42.0%; CursorBench 3.2.0: 73.4% vs 70.5%",
+        "캐시 읽기 비용 75% 인하로 $0.25/백만토큰, 표준 입력/출력 가격은 $10/$50로 Fable 5와 동일(변화 없음)",
+        "사이버보안 오탐 60% 감소, 단백질 설계 결합력 10배 향상"
+      ]
+    },
+    {
+      "title": "Claude Fable 5.1의 새로운 기능 (공식 문서)",
+      "url": "https://platform.claude.com/docs/ko/models/fable-5-1/whats-new-fable-5-1",
+      "host": "platform.claude.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "Anthropic 공식 한국어 문서. Claude Fable 5.1은 Fable 5와 동일한 입력/출력 가격을 유지하면서 캐시 읽기 비용만 4분의 1(기본 입력가의 0.025배, 타 모델은 0.1배)로 낮췄다고 명시. 가격표: 기본 입력 $10/MTok, 5분 캐시 쓰기 $12.50/MTok, 1시간 캐시 쓰기 $20/MTok, 캐시 읽기 $0.25/MTok, 출력 $50/MTok. 배치 처리는 입력 $5/MTok, 출력 $25/MTok. 호환성이 깨지는 변경 3가지: 강제 도구 사용(tool_choice type 'any'/'tool') 미지원(400 오류 반환), thinking 블록은 생성한 모델에서만 읽을 수 있음(단방향), 이전 턴 편집 시 thinking 블록 무효화(2026-08-31 이후 신규 계정부터 강제). 행동 변화: 병렬 도구 호출 대신 턴당 하나씩 호출하는 경향 증가, 도구 호출 사이 진행상황 업데이트 감소, low effort에서 검색 도구 호출 빈도 감소, 산문 밀도 증가, 채팅 서식(굵게·헤더·목록) 사용 감소, 텍스트 편집 시 부분 수정보다 파일 전체 재작성 경향 증가. 제공처: Claude API(claude-fable-5-1), AWS Bedrock, Google Cloud Vertex AI, Microsoft Foundry.",
+      "facts": [
+        "가격표: 기본 입력 $10/MTok, 5분 캐시 쓰기 $12.50, 1시간 캐시 쓰기 $20, 캐시 읽기 $0.25, 출력 $50/MTok",
+        "배치 처리 가격: 입력 $5/MTok, 출력 $25/MTok",
+        "캐시 읽기는 기본 입력가의 0.025배(다른 Claude 모델은 0.1배) — 즉 4분의 1 수준",
+        "강제 도구 사용(tool_choice: any/tool) 미지원 — 설정 시 400 invalid_request_error 반환",
+        "thinking 블록 편집 무효화 검사는 2026-08-31 이후 생성된 신규 계정부터 강제 적용",
+        "Claude Fable 5.1은 Claude Fable 5 대비 병렬 도구 호출 대신 턴당 1개씩 호출하는 경향이 늘어 왕복 횟수·시간이 늘 수 있음(품질 저하는 아님)"
+      ]
+    },
+    {
+      "title": "Introducing Gemini 3.8 Flash and 3.8 Flash Cyber",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/3-8-flash-and-3-8-flash-cyber/",
+      "host": "blog.google",
+      "tier": "official",
+      "publishedAt": "2026-09-02",
+      "body": "Google 공식 블로그. 2026년 9월 2일 Gemini 3.8 Flash와 사이버보안 특화 버전 Gemini 3.8 Flash Cyber를 발표. 도입 가격은 2026년 12월 31일까지 입력 토큰당 $0.75/백만, 출력 토큰당 $3.75/백만. 벤치마크: DeepSWE v1.1에서 대부분의 대형 모델 능가, HLE-Verified 54.9%, CyberGym(Cyber 모델)에서 기존 3.5 Flash Cyber 및 더 큰 상용 모델 능가, 내부 취약점 발견 벤치마크 성공률 70% 초과, CWE-Bench(패칭) pass@1 47.2%. Chrome 보안팀 검증: 3.8 Flash Cyber가 Chrome 취약점에 대해 '최고의 상용 모델보다 2.6배 더 많은 정확한 패치'를 생성(원문: \"3.8 Flash Cyber produced 2.6 times more correct patches to vulnerabilities in Chrome than the best commercial models\"). Gemini 앱(AI Pro/Ultra 구독자), AI Mode, Google Sheets, Google Antigravity, AI Studio, Gemini API에서 즉시 이용 가능.",
+      "facts": [
+        "Gemini 3.8 Flash / 3.8 Flash Cyber 발표일: 2026-09-02",
+        "도입 가격(2026-12-31까지): 입력 $0.75/백만 토큰, 출력 $3.75/백만 토큰",
+        "HLE-Verified 벤치마크 점수 54.9%, CWE-Bench(패칭) pass@1 47.2%, 내부 취약점 발견 벤치마크 성공률 70% 초과",
+        "Chrome 보안팀 검증: 3.8 Flash Cyber가 최고 상용 모델 대비 2.6배 많은 정확한 Chrome 취약점 패치 생성",
+        "이전 버전 Gemini 3.7 Flash는 3주 전 출시 — 최근 3개월간 세 번째 Flash 업데이트(9to5google 교차확인)"
+      ]
+    },
+    {
+      "title": "Benchmarking GPT-6 Astra | Artificial Analysis",
+      "url": "https://artificialanalysis.ai/articles/benchmarking-gpt-6-astra",
+      "host": "artificialanalysis.ai",
+      "tier": "data",
+      "publishedAt": "2026-09-09",
+      "body": "제3자 벤치마크 기관 Artificial Analysis의 분석 기사. Intelligence Index(v4.2) 기준 GPT-6 Astra(max)와 Claude Fable 5.1(max with fallback)이 53점으로 동점, GPT-5.6 Sol(max)은 47점. 비용 비교: 동일 점수 기준 GPT-6 Astra가 태스크당 $3.26으로 Claude Fable 5.1의 $7.63 대비 약 40% 비용. GPT-6 Astra 토큰 가격은 입력/출력 $10/$50(이전 세대 $4/$20에서 2.5배 인상), 캐시 읽기 90% 할인, 캐시 쓰기 25% 프리미엄. Coding Agent Index 기준으로는 GPT-6 Astra가 태스크당 $7.09로 GPT-5.6 Sol(max) 대비 약 15% 비싸지만 Claude Fable 5.1 대비로는 약 40% 저렴.",
+      "facts": [
+        "Artificial Analysis Intelligence Index(v4.2): GPT-6 Astra 53점 = Claude Fable 5.1 53점(동점), GPT-5.6 Sol 47점",
+        "동일 Intelligence Index 점수 기준 태스크당 비용: GPT-6 Astra $3.26 vs Claude Fable 5.1 $7.63(Astra가 약 40% 비용)",
+        "Coding Agent Index 기준 태스크당 비용: GPT-6 Astra $7.09, GPT-5.6 Sol(max) 대비 약 15% 비쌈, Claude Fable 5.1 대비 약 40% 저렴",
+        "GPT-6 Astra 토큰 가격은 이전 세대($4/$20) 대비 2.5배 인상된 $10/$50"
+      ]
+    },
+    {
+      "title": "OpenAI launches GPT-6 Astra, its first model to cross a critical cybersecurity threshold",
+      "url": "https://www.csoonline.com/article/4218679/openai-launches-gpt-6-astra-its-first-model-to-cross-a-critical-cybersecurity-threshold.html",
+      "host": "csoonline.com",
+      "tier": "press",
+      "publishedAt": "2026-09-04",
+      "body": "IT 보안 전문지 CSO Online의 1차 보도. GPT-6 Astra가 OpenAI Preparedness Framework 기준 사이버보안 'Critical' 임계값을 넘은 첫 모델이라고 보도. 벤치마크: ExploitBench 100%(전작 GPT-5.6 Sol은 78.5%), ExploitGym 성공률 42.4%(전작 30.3%). OpenAI는 '론칭 3개월 전 공개된 취약점에 대해 모델을 테스트했으며, 2개의 신규 제로데이 취약점을 발견해 소프트웨어 제작사에 공개했다'고 밝힘. Critical 임계값은 '많은 강화된 실제 시스템에서 사람의 개입 없이 모든 심각도의 제로데이 익스플로잇을 식별·개발할 수 있는' 수준으로 정의됨. 공개 배포판은 악용 개념증명 생성 등 고급 공격 작업을 거부하도록 설계. 기업 관리자는 워크스페이스에서 Astra를 수동으로 활성화해야 하며 기본값은 비활성.",
+      "facts": [
+        "ExploitBench 점수: GPT-6 Astra 100% vs GPT-5.6 Sol 78.5%",
+        "ExploitGym 성공률: GPT-6 Astra 42.4% vs GPT-5.6 Sol 30.3%",
+        "GPT-6 Astra는 OpenAI의 사이버보안 'Critical' 임계값을 넘은 최초 모델(2026-09-04 보도)",
+        "평가 중 이전에 알려지지 않은 제로데이 취약점 2건을 발견해 제작사에 공개",
+        "기업 워크스페이스에서 Astra는 기본 비활성화 상태이며 관리자가 수동으로 켜야 함"
+      ]
+    },
+    {
+      "title": "Gemini 3.8 Flash rolling out three weeks after last release",
+      "url": "https://9to5google.com/2026/09/02/gemini-3-8-flash-launch/",
+      "host": "9to5google.com",
+      "tier": "press",
+      "publishedAt": "2026-09-02",
+      "body": "9to5Google의 1차 보도. Gemini 3.8 Flash가 이전 모델 3.7 Flash 출시 3주 만에, 최근 3개월간 세 번째 Flash 업데이트로 나왔다고 보도. 소프트웨어 엔지니어링·에이전트 작업·전문 분야 다단계 추론에서 3.7 Flash를 크게 능가하며 더 비싼 최상위 모델 성능에 근접하고 있다고 평가. 도입 가격은 입력 $0.75/백만, 출력 $3.75/백만(12월 31일까지). 즉시 이용 가능한 곳: Google AI Pro·Ultra 구독자의 Gemini 앱, AI Mode, Google Sheets의 Gemini, 개발자용 Google Antigravity·AI Studio·Gemini API.",
+      "facts": [
+        "Gemini 3.8 Flash는 3.7 Flash 출시 3주 만에, 최근 3개월 내 세 번째 Flash 업데이트로 출시(2026-09-02)",
+        "도입 가격은 blog.google 발표와 동일: 입력 $0.75/백만 토큰, 출력 $3.75/백만 토큰(2026-12-31까지)"
+      ]
+    },
+    {
+      "title": "GPT-6 Astra Is Expensive per Token. I'm Not Sure That's the Right Metric",
+      "url": "https://dev.to/mayacollins1/gpt-6-astra-is-expensive-per-token-im-not-sure-thats-the-right-metric-1621",
+      "host": "dev.to",
+      "tier": "blog",
+      "publishedAt": "2026-09-08",
+      "body": "개발자 블로그(dev.to)의 비판적 분석 글. 저자 Maya Collins는 토큰당 가격만으로 모델을 고르는 것이 잘못된 판단 기준이라고 주장하며, 실제로 중요한 지표는 '작업 완료 비용'(성공률까지 고려한 총비용)이라고 분석. GPT-6 Astra 표준 가격은 입력 $10/백만·출력 $50/백만, 장문맥(272K 토큰 초과) 시 입력 $20/백만·출력 $75/백만으로 뛰며, 이는 GPT-5.6 Sol 대비 약 2.5배 비싸다. 코딩 에이전트처럼 실행 중심 작업에서는 실패율이 낮은 고가 모델이 더 경제적일 수 있다는 실무 관점을 제시.",
+      "facts": [
+        "GPT-6 Astra 장문맥(272K 토큰 초과) 요금: 입력 $20/백만, 출력 $75/백만(표준가 $10/$50에서 2배)",
+        "GPT-6 Astra 표준 토큰가는 GPT-5.6 Sol 대비 약 2.5배",
+        "저자 주장: 토큰 단가가 아니라 '성공률까지 반영한 작업당 총비용'이 실무 선택 기준이어야 함(정성적 주장, 수치 검증 없음)"
+      ]
+    }
+  ],
+  "conflicts": [
+    {
+      "about": "OpenAI GPT-6 Astra 발표/출시 시점 표현",
+      "a": "community.openai.com에 인용된 OpenAI 발표문: 'Pro, Enterprise, Business Premium(ChatGPT Work·Codex) 및 API에는 즉시 제공, Plus·Business는 며칠 내' — 발표일 2026-09-03",
+      "b": "csoonline.com 및 한국어 위키백과: '2026-09-03 제한적 프리뷰 시작, 2026-09-04 일반 공개(general availability) 확대' — 날짜를 이틀로 나눠 서술. 단계 구분일 뿐 내용상 모순은 아니라고 판단되나 정확한 '발표일 vs 전체 롤아웃 완료일'을 하나로 못박기는 애매함"
+    }
+  ],
+  "unknowns": [
+    "Greg Brockman이 'AGI 시대에 오신 것을 환영합니다'라고 말했다는 인용은 note.com(개인 블로그, blog tier) 검색 스니펫에서만 확인됐고 OpenAI 공식 발표문·주요 프레스에서 원문 인용을 직접 확인하지 못함 — 사실 여부 미확정",
+    "DeepSeek V4.1 Flash(2026-09-10), Alibaba Qwen3.8-Max(2026-09-02), Sakana AI Fugu Ultra v2.0(2026-09-11), Meta Muse Spark 1.3, GLM 5.3, Tencent Hy4 Preview 등은 llmreference.com·felloai.com 등 SEO 애그리게이터/콘텐츠팜 성격 사이트에서만 언급됐고 각 사 공식 채널로 직접 검증하지 못함 — 이번 조사에서는 제외 권장",
+    "CNBC 'model fatigue' 원문 기사(2026-09-06, cnbc.com/2026/09/06/meta-google-openai-anthropic-ai-model-fatigue.html)는 WebFetch가 403으로 차단돼 본문을 직접 확인하지 못함. '1,100명 이상의 AI 연구소 직원이 워싱턴에 프론티어 AI 개발 속도 조절을 청원했다'는 내용은 검색 요약에서만 나왔고 원문 대조 못함",
+    "Meta의 신모델(Muse Spark 1.3) 출시 사실 자체를 공식 소스(about.fb.com/ai 등)로 확인하지 못함 — CNBC 요약에서만 언급, 확정 불가"
+  ]
+}

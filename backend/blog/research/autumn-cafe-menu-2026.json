@@ -1,0 +1,66 @@
+{
+  "keyword": "2026 가을 카페 신메뉴 총정리",
+  "categoryId": "hangeut-trend",
+  "searchedAt": "2026-09-13",
+  "notes": "2026년 9월 초 국내 주요 카페 프랜차이즈 6곳(할리스·투썸플레이스·파스쿠찌·더벤티·이디야커피·커피베이·탐앤탐스)이 일제히 가을 시즌 신메뉴를 출시했다. 흑임자·밤·고구마·쑥이 공통 재료로 반복 등장 — '이번 가을 카페가는 이유' 각도로 묶을 수 있다. 가격 정보는 대부분 기사에 미기재.",
+  "sources": [
+    {
+      "title": "카페업계, 단풍처럼 알록달록 물든 가을 신메뉴",
+      "url": "https://sports.khan.co.kr/article/202609080313003/",
+      "host": "sports.khan.co.kr",
+      "tier": "press",
+      "publishedAt": "2026-09-08",
+      "body": "할리스: 호감 스무디(홍시·곶감), 흑임자 라이스 할리치노, 흑임자 버터크림 라떼, 흑임자 초코 롤케이크, 모과배차. 투썸플레이스: 촉촉한 밤 생크림 케이크, 부드러운 고구마 생크림 케이크. 파스쿠찌: 흑임자 크런치 그라니따 등 흑임자 라인업 다수. 더벤티: 알찬 포도 에이드·요거트 스무디, 알찬 옥수수팝 라떼·치즈팝콘 쉐이크. 이디야커피: 마이멜로디 히비스커스 청귤티, 쿠로미 흑임자 크림 라떼, 포차코 밤 크림 라떼(캐릭터 콜라보)."
+    },
+    {
+      "title": "커피베이·커피베이 익스프레스, 공주밤·흑임자 가을 메뉴 선봬",
+      "url": "https://www.shinailbo.co.kr/news/articleView.html?idxno=5060664",
+      "host": "shinailbo.co.kr",
+      "tier": "press",
+      "publishedAt": "2026-09-10",
+      "body": "커피베이 9월 10일 출시: 흑임자프라노베·흑임자라떼(음료), 공주밤빵·맘모스빵(베이커리). 커피베이 익스프레스: 공주밤밀크쉐이크·공주밤라떼·공주밤빵. 계절 식재료로 음료·베이커리 메뉴군 함께 확대, 500원 할인 이벤트 및 공주밤 티셔츠 증정 행사 진행."
+    },
+    {
+      "title": "탐앤탐스, 쑥·팥에 동남아 바닐라 판단 더한 가을 신메뉴 5종 출시",
+      "url": "https://www.newswhoplus.com/news/articleView.html?idxno=69293",
+      "host": "newswhoplus.com",
+      "tier": "press",
+      "publishedAt": "2026-09-09",
+      "body": "탐앤탐스 '그리니시 어텀' 5종(9월 9일 발표): 쑥 팥 크림 라떼, 쑥 팥 슈페너(4단 레이어링), 포레스트 쑥 라떼, 바닐라 판단 라떼, 고구마 판단 라떼. 브랜드 코멘트: 쑥·팥의 진한 맛과 판단 원료의 이색적 고소함을 매칭해 선명한 컬러와 차별화된 풍미를 구현."
+    }
+  ],
+  "claims": [
+    {
+      "claim": "2026년 9월 초 할리스·투썸플레이스·파스쿠찌·더벤티·이디야커피·커피베이·탐앤탐스 등 주요 카페 프랜차이즈가 일제히 가을 시즌 메뉴를 출시했다",
+      "grade": "confirmed",
+      "evidence": ["기사 3건이 각 브랜드 출시 메뉴를 구체 명시(9/8~9/10 발표)"],
+      "sourceUrls": ["https://sports.khan.co.kr/article/202609080313003/", "https://www.shinailbo.co.kr/news/articleView.html?idxno=5060664", "https://www.newswhoplus.com/news/articleView.html?idxno=69293"]
+    },
+    {
+      "claim": "흑임자가 여러 브랜드(할리스·파스쿠찌·이디야커피·커피베이)에서 공통으로 쓰인 이번 가을 대표 재료다",
+      "grade": "confirmed",
+      "evidence": ["할리스 흑임자 라이스 할리치노 등 3종, 파스쿠찌 흑임자 라인업 다수, 이디야 쿠로미 흑임자 크림 라떼, 커피베이 흑임자프라노베·흑임자라떼"],
+      "sourceUrls": ["https://sports.khan.co.kr/article/202609080313003/", "https://www.shinailbo.co.kr/news/articleView.html?idxno=5060664"]
+    },
+    {
+      "claim": "탐앤탐스는 쑥·팥과 동남아식 판단(pandan) 향을 조합한 '그리니시 어텀' 5종을 9월 9일 출시했다",
+      "grade": "confirmed",
+      "evidence": ["쑥 팥 크림 라떼·쑥 팥 슈페너·포레스트 쑥 라떼·바닐라 판단 라떼·고구마 판단 라떼 5종, 9월 9일 발표"],
+      "sourceUrls": ["https://www.newswhoplus.com/news/articleView.html?idxno=69293"]
+    },
+    {
+      "claim": "커피베이는 9월 10일부터 공주밤·흑임자를 활용한 음료·베이커리 신메뉴를 출시하고 할인·증정 이벤트를 함께 진행했다",
+      "grade": "confirmed",
+      "evidence": ["흑임자프라노베·흑임자라떼·공주밤빵·맘모스빵, 500원 할인, 공주밤 티셔츠 증정"],
+      "sourceUrls": ["https://www.shinailbo.co.kr/news/articleView.html?idxno=5060664"]
+    }
+  ],
+  "numbers": [
+    { "what": "탐앤탐스 '그리니시 어텀' 출시 종수", "value": "5종", "asOf": "2026-09-09", "sourceUrl": "https://www.newswhoplus.com/news/articleView.html?idxno=69293" },
+    { "what": "커피베이 가을 메뉴 출시일", "value": "2026년 9월 10일", "asOf": "2026-09-10", "sourceUrl": "https://www.shinailbo.co.kr/news/articleView.html?idxno=5060664" },
+    { "what": "커피베이 할인 이벤트 금액", "value": "500원 할인", "asOf": "2026-09-10", "sourceUrl": "https://www.shinailbo.co.kr/news/articleView.html?idxno=5060664" }
+  ],
+  "dropped": [],
+  "cannotCover": ["각 메뉴의 정확한 가격(기사에 미기재)", "칼로리·영양정보(자료 없음)", "이디야 캐릭터 콜라보 기간·조건 상세"],
+  "songs": []
+}
