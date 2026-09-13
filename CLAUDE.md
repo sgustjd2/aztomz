@@ -41,6 +41,7 @@
 | `blog-selfreview.mjs <slug>` | **집필 직후 자체 피드백→반영** — `claude -p`가 초안을 냉정히 자기비평하고 실제 결함만 **외과적 find/replace**로 고쳐 넣은 뒤 재조립(전면 재작성 금지·드리프트 방지). blog-verify 앞 단계. `--dry`(제안만)·`--selftest` |
 | `blog-verify.mjs <id>` | **발행 전 최종 검증** — `claude -p`가 원본 왜곡·단정·지어낸 사실·저작권을 본다. 반려 시 exit 1. `--warn` |
 | `blog-publish.mjs <id>` | Playwright로 티스토리 자동 발행. `--login`(1회) · `--dry` · `--draft` · `--probe` · `--categories` · `--cover` |
+| `blog-extension-server.mjs` | **크롬 확장(`backend/tistory-extension/`) 로컬 브릿지** — `backend/out/blog/`를 읽어 확장에 초안(제목·카테고리·태그·본문)을 내려주는 HTTP 서버. `--port=`(기본 8137) · `--selftest`. 발행·로그인·캡차·커버 이미지 첨부는 여전히 사람이 직접 한다 — 확장은 "채우기"만, `blog-publish.mjs`(Playwright 완전자동)와는 별개의 반자동 경로다 |
 | `blog-feedback.mjs` | 노래 추천 피드백 → 선곡 기준 교훈 적립(다음 글에 주입). `--list` · `--good=` · `--bad=` · `--lesson=` |
 | `category-new.mjs` | 블로그 카테고리 프로파일 생성 마법사 |
 | `dev-trending-fetch.mjs` | **개발/IT 소스 fetcher** — GitHub 주간 급상승 + HuggingFace 트렌딩 모델/데이터셋(최근 7일 신규만). `--source=github\|hf-models\|hf-datasets` · `--selftest`. 카테고리 `dev-trending` |

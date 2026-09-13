@@ -1,0 +1,16 @@
+{
+  "manifest_version": 3,
+  "name": "한끗 티스토리 초안 도우미",
+  "version": "1.0.0",
+  "description": "backend/scripts/blog-extension-server.mjs 로컬 서버에서 초안을 불러와 티스토리 에디터(제목·카테고리·태그·본문)에 채워준다. 로그인·이미지 첨부·발행·캡차는 여전히 사람이 직접 한다.",
+  "permissions": ["scripting", "activeTab"],
+  "host_permissions": ["http://localhost/*", "*://*.tistory.com/*"],
+  "background": { "service_worker": "background.js" },
+  "content_scripts": [
+    {
+      "matches": ["*://*.tistory.com/manage/newpost*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
