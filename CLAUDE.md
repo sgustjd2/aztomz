@@ -245,9 +245,10 @@ Agent(
   `recheck-ad.mjs`로 출처 재검증(결정적·LLM 없음). 살아있는 출처가 1개+면 `analyzedAt`을 오늘로
   갱신 → **홈 '오늘의 한끗'이 그 항목으로 회전**(고정 아님). 0개면 갱신 안 하고 '사람 확인 필요' 보고.
   메인 수집(21:30)보다 먼저 끝나 trends.json 쓰기 충돌 없음.
-- **블로그 발행(티스토리).** 티스토리 Open API는 2024-02 종료 — 공식 글쓰기 API가 없다. 유일한 경로는
-  Playwright이며, **카카오 로그인은 자동화하지 않는다**(전용 프로필 `backend/.tistory-profile`에
-  사람이 1회 로그인 → 세션 재사용). 본문은 타이핑하지 말고 `tinymce.activeEditor.setContent()`로 한 번에 주입.
+- **블로그 발행(티스토리).** 티스토리 Open API는 2024-02 종료 — 공식 글쓰기 API가 없다. 두 경로가 있다:
+  · Playwright 완전자동(`blog-publish.mjs`) — 로그인·초안 채우기·발행 버튼까지 전부 자동(캡차/봇탐지 우회는 의도적으로 구현 안 함).
+  · 크롬 확장 반자동(`blog-extension-server.mjs` + `backend/tistory-extension/`) — 제목·카테고리·태그·본문만 자동 주입, 로그인·이미지 첨부·발행 버튼은 사람이 직접 한다.
+  · **둘 다 카카오 로그인을 자동화하지 않는다** — Playwright는 전용 프로필 `backend/.tistory-profile`에 사람이 1회 로그인해 세션을 재사용하고, 크롬 확장은 사람이 평소 쓰는 크롬에 이미 로그인된 세션을 그대로 쓴다. 본문 주입은 둘 다 타이핑하지 않고 `tinymce.activeEditor.setContent()`로 한 번에.
   · 대표 이미지 **핫링크 금지** — 나무위키 403·언론사 무응답이 흔하다. `blog-build.mjs`가 내려받아
     `blog-publish.mjs`가 티스토리 CDN에 업로드한다(`<!--COVER-->` 마커 자리).
   · 발행 실패는 **비치명적** — trends.json 게시·배포는 이미 끝난 상태이므로 롤백하지 않고 경고만 남긴다.
