@@ -709,10 +709,14 @@ async function publish() {
     // --edit 모드는 시작 URL 자체가 /manage/newpost/<id> 라 숫자로 끝나는 걸로만 판정하면
     // 클릭 직후(진짜 저장이 되기도 전에) 바로 통과해버린다(2026-08-09 실측 — "발행 완료"라고
     // 나왔는데 라이브 글은 그대로였다. 원인: 발행 확인 다이얼로그가 dismiss 되며 취소된 것).
+    // 발행 클릭 후 뜨는 DKAPTCHA(지도 봇검증)는 사람이 직접 푼다. 30초는 사람이 지도를
+    // 읽고 답을 입력하기에 짧아 자주 시간초과됐다(2026-09-14 실측: 30초로 5회 연속 실패 →
+    // 3분으로 늘리자 5편 연속 통과). 발행은 어차피 사람이 붙어 있는 반자동 단계라(무인 자동화
+    // 안 함, [[tistory-publish-captcha]]) 넉넉히 3분 준다 — 정말 안 풀면 그때 실패로 친다.
     await page.waitForURL(
       (u) => (/\/\d+\/?$/.test(u.pathname) && !u.pathname.includes('/manage/')) || u.pathname.includes('/manage/posts'),
-      { timeout: 30000 }
-    ).catch(() => { throw new Error('발행 후 이동을 확인하지 못했습니다. 티스토리에서 직접 확인하세요.'); });
+      { timeout: 180000 }
+    ).catch(() => { throw new Error('발행 후 이동을 확인하지 못했습니다(캡차 미해결일 수 있음). 티스토리에서 직접 확인하세요.'); });
 
     // /manage/posts/ 로 튕겼으면 page.url() 은 진짜 글 주소가 아니다 — RSS 로 퍼머링크를 확정한다.
     // --edit 는 글 번호를 이미 알고 있으니(editPostId) RSS 조회가 실패해도 그걸로 확정할 수 있다.
