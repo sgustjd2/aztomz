@@ -3,10 +3,18 @@
 채널 [AI Engineer](https://www.youtube.com/@aiDotEngineer) 의 새 영상을 Gemini 로 자동 요약한 모음입니다.
 생성: `backend/scripts/youtube-summarize.mjs` (GitHub Actions `youtube-summary` 크론).
 
-총 **147개**.
+총 **155개**.
 
 | 발행일 | 제목 |
 |---|---|
+| 2026-09-14 | [Tokens Should Have Jobs — Katelyn Lesse & Angela Jiang, Anthropic](2026-09-14-PXj0p_mW9nI.md) |
+| 2026-09-14 | [No Memory, No Harness: Why the Database Is the Last Line of Defense — Kay Malcolm, Oracle](2026-09-14-jA_x7F8caHI.md) |
+| 2026-09-14 | [Loophole: Adversarial Agents To Stress Test Your Morality — Brendan Rappazzo, Morgan Stanley](2026-09-14-hOWU0KPUp1k.md) |
+| 2026-09-14 | [Harness Engineering: Building the Production Cage for Powerful Domain Agents — Mike Chambers, AWS](2026-09-14-gxVZ_1tuuq4.md) |
+| 2026-09-14 | [Agents Without Code: Skills, YAML, and Filesystems Replaced Python — Philipp Schmid, Google DeepMind](2026-09-14-fjF8EKnxKCU.md) |
+| 2026-09-14 | [Every step you take, every call you make: the reliable agent stack — Giselle van Dongen, Restate](2026-09-14-cI7zfqusmFU.md) |
+| 2026-09-14 | [How We Solved Agent Building — Andrew Qu, Vercel](2026-09-14-9dYcwOkpCE8.md) |
+| 2026-09-14 | [We let an AI agent execute Bash and lived to talk about it — Sarah Sanders, PostHog](2026-09-14-4lXks428C9o.md) |
 | 2026-09-11 | [Building ambitious software — Jonathan Kelley, Dioxus Labs & Cognition](2026-09-11-H7vFrcNWXzs.md) |
 | 2026-09-10 | [The Spatial Harness: Bringing Agents to the Canvas — Max Drake, tldraw](2026-09-10-XWcXwnysmpY.md) |
 | 2026-09-10 | [Design at the Speed of Adjectives — Paul Bakaus, Renaissance Geek, Inc.](2026-09-10-v42opQpCy60.md) |
