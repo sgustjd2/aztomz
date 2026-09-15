@@ -1,0 +1,95 @@
+{
+  "keyword": "2026 노벨상 발표 일정",
+  "categoryId": "info",
+  "slug": "nobel-prize-2026",
+  "searchedAt": "2026-09-16",
+  "queries": [
+    "2026 Nobel Prize announcement dates schedule",
+    "노벨상 2026 발표 일정",
+    "Nobel Prize 2026 prize money amount SEK 11 million",
+    "노벨상 시상식 12월 10일 알프레드 노벨 기일 2026",
+    "연합뉴스 노벨상 2026 발표 일정 10월",
+    "김대중 노벨평화상 2000년 유일한 한국인 수상자",
+    "한강 2024 노벨문학상 수상 최초 아시아 여성",
+    "노벨상 상금 1100만 크로나 2025 인상",
+    "Nobel Prize award amount 2026 \"11 million\" OR \"9 million\" SEK laureate",
+    "\"2026년 노벨상\" 상금 크로나 발표"
+  ],
+  "sources": [
+    {
+      "title": "Dates for announcement of 2026 Nobel Prize laureates revealed",
+      "url": "https://en.apa.az/europe/dates-for-announcement-of-2026-nobel-prize-laureates-revealed-523615",
+      "note": "WebFetch로 본문 확인. 2026 노벨상 발표가 10/5~10/12에 진행되며 부문별 날짜(생리의학 10/5, 물리 10/6, 화학 10/7, 문학 10/8, 평화 10/9, 경제학 10/12)를 순서대로 명시. 모든 발표는 노벨상 공식 디지털 채널에서 생중계. 시상식은 12월 10일 스톡홀름이라고만 기재(평화상의 오슬로 시상은 언급 안 함 — Wikipedia로 별도 확인)."
+    },
+    {
+      "title": "2026 Nobel Peace Prize (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/2026_Nobel_Peace_Prize",
+      "note": "WebFetch로 본문 확인. 발표일 2026-10-09, 시상식 2026-12-10, 장소 노르웨이 오슬로. 후보 개인 208명·단체 79곳(노벨재단이 2026-04-30 발표한 지명 현황 기준으로 추정). 상금을 '900만 스웨덴 크로나'로 기재 — 다른 출처(1100만 크로나, 2025년 기준)와 어긋남. 노미네이션 제출 마감일은 문서에 명시 없음(통상 2월 초로 알려짐, 확정 문구는 못 찾음)."
+    },
+    {
+      "title": "Prize announcement dates - NobelPrize.org (검색 스니펫)",
+      "url": "https://www.nobelprize.org/prizes/about/prize-announcement-dates/",
+      "note": "직접 WebFetch는 403으로 막힘. WebSearch 결과가 이 페이지 내용을 인용해 부문별 최소 발표 시각(CEST)을 제공: 생리의학 10/5 11:30, 물리 10/6 11:45, 화학 10/7 11:45, 문학 10/8 13:00, 평화 10/9 11:00, 경제학 10/12 11:45 — 전부 '~부터(at the earliest)'. apa.az가 확인한 날짜와 순서가 일치해 교차검증됨. 시각까지는 원문 미열람이라 재확인 권장."
+    },
+    {
+      "title": "The 2026 Nobel Prize announcements (보도자료, 검색 스니펫)",
+      "url": "https://www.nobelprize.org/press-release/the-2026-nobel-prize-announcements/",
+      "note": "직접 WebFetch 403. 제목·URL만 검색 결과에서 확인, 발표 기간(10/5~10/12)과 생중계 방침을 다른 소스(apa.az)와 동일하게 언급하는 보도자료로 추정."
+    },
+    {
+      "title": "노벨상, 상금은 얼마일까 - 농민신문",
+      "url": "https://www.nongmin.com/article/20251029500578",
+      "note": "WebFetch로 본문 확인(2025-10-29 작성). 현재 상금은 부문당 1100만 크로나(약 16억8000만원). 1901년 첫해 15만782크로나에서 출발, 2012년엔 전년 1000만 크로나에서 800만 크로나로 감액됐다가 이후 재차 인상. 2026년 액수 변경 여부는 이 기사에 명시 없음."
+    },
+    {
+      "title": "[2025 노벨상] 노벨 물리학상에 존 클라크·미셸 데보레·존 마티니스",
+      "url": "https://v.daum.net/v/20251007185646442",
+      "note": "WebFetch로 본문 확인. 2025-10-07 발표, 초전도 회로 조셉슨 접합의 양자 터널링·에너지 양자화 실증 공로. 상금 1100만 스웨덴크로나(약 16억5500만원) — 2025년도 확정 금액으로 가장 최신 수치."
+    },
+    {
+      "title": "김대중 전 대통령, 韓최초 노벨평화상 수상 [그해 오늘] - 이데일리",
+      "url": "https://www.edaily.co.kr/News/Read?newsId=01082406639052592&mediaCodeNo=257",
+      "note": "WebFetch로 본문 확인. 2000-10-13 오후 6시(현지시각) 수상자 발표. 선정 사유: '한국과 동아시아 민주주의·인권, 특히 북한과의 화해를 위한 노력'. 2000-12-10 시상식(오슬로). 노벨상 100주년 기념 수상자로 만장일치 결정. 한국인 최초 노벨상 수상."
+    },
+    {
+      "title": "한강, 노벨 문학상 수상‥아시아 여성 작가 첫 수상 - MBC뉴스",
+      "url": "https://imnews.imbc.com/news/2024/world/article/6665801_36445.html",
+      "note": "WebFetch로 본문 확인. 2024-10-10 수상자 발표. 스웨덴 한림원 선정 사유: '역사적 트라우마에 맞서고 인간 삶의 연약함을 드러낸 강렬한 시적 산문'. 역대 121번째 수상자·18번째 여성 수상자, 아시아인 수상은 2012년 모옌 이후 12년 만. 시상식 2024-12-10 스톡홀름 콘서트홀."
+    }
+  ],
+  "claims": [
+    "2026년 노벨상 수상자 발표는 10월 5일(월)부터 12일(월) 사이 진행된다 (https://en.apa.az/europe/dates-for-announcement-of-2026-nobel-prize-laureates-revealed-523615)",
+    "발표 순서는 생리의학상 → 물리학상 → 화학상 → 문학상 → 평화상 → 경제학상 순으로 고정돼 있다 (https://en.apa.az/europe/dates-for-announcement-of-2026-nobel-prize-laureates-revealed-523615)",
+    "모든 부문 발표는 노벨상 공식 디지털 채널에서 생중계된다 (https://en.apa.az/europe/dates-for-announcement-of-2026-nobel-prize-laureates-revealed-523615)",
+    "노벨평화상만 노르웨이 오슬로에서 발표·시상되고, 나머지 5개 부문(생리의학·물리·화학·문학·경제학)은 스웨덴 스톡홀름에서 발표·시상된다 (https://en.wikipedia.org/wiki/2026_Nobel_Peace_Prize, https://en.apa.az/europe/dates-for-announcement-of-2026-nobel-prize-laureates-revealed-523615)",
+    "2026 노벨평화상 후보로 개인 208명, 단체 79곳이 지명됐다(노벨재단의 2026-04-30 지명 현황 발표 기준으로 추정) (https://en.wikipedia.org/wiki/2026_Nobel_Peace_Prize)",
+    "노벨상 시상식은 창설자 알프레드 노벨의 기일(1896-12-10)에 맞춰 매년 12월 10일 열린다 — 2026년도 12월 10일 예정 (https://en.wikipedia.org/wiki/2026_Nobel_Peace_Prize, https://en.apa.az/europe/dates-for-announcement-of-2026-nobel-prize-laureates-revealed-523615)",
+    "2025년 노벨 물리학상 상금은 1100만 스웨덴 크로나(약 16억5500만원)였다 — 2025-10-07 발표 기준 (https://v.daum.net/v/20251007185646442)",
+    "노벨상 상금은 1901년 첫해 15만782크로나에서 출발해 여러 차례 조정돼 왔고, 2012년엔 전년 1000만 크로나에서 800만 크로나로 줄었다가 이후 다시 늘었다 (https://www.nongmin.com/article/20251029500578)",
+    "2000년 김대중 전 대통령이 '한국과 동아시아 민주주의·인권, 특히 북한과의 화해를 위한 노력'을 이유로 노벨평화상 수상자로 발표됐다(2000-10-13 오후 6시, 현지시각). 한국인 최초 노벨상 수상이며 노벨상 100주년 기념 수상자로 만장일치 결정됐다 (https://www.edaily.co.kr/News/Read?newsId=01082406639052592&mediaCodeNo=257)",
+    "김대중 전 대통령은 2000년 12월 10일 오슬로 시상식에서 상을 받았다 (https://www.edaily.co.kr/News/Read?newsId=01082406639052592&mediaCodeNo=257)",
+    "2024년 한강 작가가 한국인 최초이자 아시아 여성 작가 최초로 노벨문학상 수상자로 발표됐다(2024-10-10). 스웨덴 한림원은 '역사적 트라우마에 맞서고 인간 삶의 연약함을 드러낸 강렬한 시적 산문'을 선정 사유로 밝혔다 (https://imnews.imbc.com/news/2024/world/article/6665801_36445.html)",
+    "한강은 역대 121번째 노벨문학상 수상자이자 18번째 여성 수상자였으며, 아시아인 수상은 2012년 모옌 이후 12년 만이었다 (https://imnews.imbc.com/news/2024/world/article/6665801_36445.html)",
+    "한강의 시상식은 2024년 12월 10일 스웨덴 스톡홀름 콘서트홀에서 열렸다 (https://imnews.imbc.com/news/2024/world/article/6665801_36445.html)"
+  ],
+  "numbers": [
+    "발표 기간: 2026-10-05 ~ 2026-10-12 (https://en.apa.az/europe/dates-for-announcement-of-2026-nobel-prize-laureates-revealed-523615)",
+    "생리의학상 발표일: 2026-10-05(월) (https://en.apa.az/europe/dates-for-announcement-of-2026-nobel-prize-laureates-revealed-523615)",
+    "물리학상 발표일: 2026-10-06(화) (https://en.apa.az/europe/dates-for-announcement-of-2026-nobel-prize-laureates-revealed-523615)",
+    "화학상 발표일: 2026-10-07(수) (https://en.apa.az/europe/dates-for-announcement-of-2026-nobel-prize-laureates-revealed-523615)",
+    "문학상 발표일: 2026-10-08(목) (https://en.apa.az/europe/dates-for-announcement-of-2026-nobel-prize-laureates-revealed-523615)",
+    "평화상 발표일: 2026-10-09(금) (https://en.apa.az/europe/dates-for-announcement-of-2026-nobel-prize-laureates-revealed-523615, https://en.wikipedia.org/wiki/2026_Nobel_Peace_Prize)",
+    "경제학상 발표일: 2026-10-12(월) (https://en.apa.az/europe/dates-for-announcement-of-2026-nobel-prize-laureates-revealed-523615)",
+    "시상식: 2026-12-10(목) (https://en.wikipedia.org/wiki/2026_Nobel_Peace_Prize)",
+    "2026 평화상 후보 규모: 개인 208명 + 단체 79곳 (https://en.wikipedia.org/wiki/2026_Nobel_Peace_Prize)",
+    "2025년 노벨 물리학상 상금: 1100만 스웨덴 크로나(약 16억5500만원), 2025-10-07 기준 (https://v.daum.net/v/20251007185646442)",
+    "2000-10-13 18시(현지시각) 김대중 전 대통령 노벨평화상 수상자 발표 (https://www.edaily.co.kr/News/Read?newsId=01082406639052592&mediaCodeNo=257)",
+    "2024-10-10 한강 노벨문학상 수상자 발표, 역대 121번째 수상자·18번째 여성 수상자 (https://imnews.imbc.com/news/2024/world/article/6665801_36445.html)"
+  ],
+  "uncertain": [
+    "2026년도 노벨상 상금의 정확한 액수 — 2025년까지 확인된 최신 금액은 부문당 1100만 스웨덴 크로나이지만, 2026년 금액을 명시적으로 새로 발표한 공식 자료는 이번 조사에서 못 찾음. Wikipedia '2026 Nobel Peace Prize' 문서는 900만 크로나로 기재해 다른 출처(1100만 크로나)와 어긋난다 — 상금은 노벨재단이 투자 수익에 따라 매년 조정해 발표하므로, 본문에는 '2025년 기준 1100만 크로나'로만 쓰고 2026년 액수는 단정하지 말 것.",
+    "각 부문 발표의 정확한 현지 시각(CEST) — WebSearch 스니펫에서 생리의학 11:30·물리 11:45·화학 11:45·문학 13:00·평화 11:00(모두 '최소 이 시각부터')를 확인했으나, nobelprize.org 공식 페이지 직접 열람은 403으로 실패했고 2차로 본문을 읽은 apa.az 기사에는 시각이 없었다. 한국시간(KST) 환산은 별도로 확인된 사실이 아니라 CEST+7시간의 산술 계산일 뿐이므로(서머타임 기준 9월 하순 전제), 본문에 쓸 경우 '~부터'라는 유동성과 계산값임을 명시할 것.",
+    "12월 10일 시상식의 정확한 현지 시각(오전/오후) — 신뢰도 낮은 블로그(모오코타 등)에서 '오전 9시'라는 언급이 있었으나 1차 자료로 확인 못 했다. 본문에 단정적으로 쓰지 말 것.",
+    "경제학상(알프레드 노벨 기념 스웨덴중앙은행 경제학상)의 정식 명칭·제도적 세부(노벨상 6개 중 유일하게 유언장이 아닌 1968년 스웨덴 중앙은행 기증으로 만들어졌다는 통설)는 이번 조사에서 1차 자료 본문까지 확인하지 못함."
+  ]
+}

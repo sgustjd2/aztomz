@@ -222,5 +222,78 @@
       "참고"
     ],
     "closingClichePatterns": []
+  },
+  {
+    "slug": "asian-games-2026",
+    "categoryId": "hangeut-trend",
+    "date": "2026-09-16",
+    "h2": [
+      "언제, 어디서 열리나요",
+      "한국 대표팀은 1,052명",
+      "주목 종목 일정",
+      "어디서 볼 수 있나요",
+      "정리",
+      "참고"
+    ],
+    "closingClichePatterns": []
+  },
+  {
+    "slug": "nobel-prize-2026",
+    "categoryId": "hangeut-trend",
+    "date": "2026-09-16",
+    "h2": [
+      "2026 발표 일정, 6개 부문",
+      "어디서 발표하고 어떻게 보나요",
+      "상금은 얼마나 되나요",
+      "한국과 노벨상",
+      "정리",
+      "참고"
+    ],
+    "closingClichePatterns": []
+  },
+  {
+    "slug": "autumn-exhibitions-2026",
+    "categoryId": "hangeut-trend",
+    "date": "2026-09-16",
+    "h2": [
+      "유영국: 산은 내 안에 있다",
+      "오인환 vs 장서영: 휴먼 에러",
+      "권병준: 내 마음속에 너는",
+      "스페인의 거장, 고야",
+      "DDP디자인페어 2026",
+      "일정·관람료 한눈에",
+      "정리",
+      "참고"
+    ],
+    "closingClichePatterns": []
+  },
+  {
+    "slug": "suneung-checklist-2026",
+    "categoryId": "hangeut-trend",
+    "date": "2026-09-16",
+    "h2": [
+      "시험장에 가져갈 수 있는 것",
+      "반입 금지 물품",
+      "수험표와 신분증",
+      "시험 당일 유의사항",
+      "정리",
+      "참고"
+    ],
+    "closingClichePatterns": []
+  },
+  {
+    "slug": "winter-car-check-2026",
+    "categoryId": "hangeut-trend",
+    "date": "2026-09-16",
+    "h2": [
+      "왜 미리 점검해야 하나요",
+      "배터리 — 겨울 방전 1순위",
+      "타이어 — 공기압과 마모",
+      "냉각수·워셔액·브레이크",
+      "겨울 점검 한눈에",
+      "정리",
+      "참고"
+    ],
+    "closingClichePatterns": []
   }
 ]
