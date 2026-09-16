@@ -3,10 +3,19 @@
 채널 [AI Engineer](https://www.youtube.com/@aiDotEngineer) 의 새 영상을 Gemini 로 자동 요약한 모음입니다.
 생성: `backend/scripts/youtube-summarize.mjs` (GitHub Actions `youtube-summary` 크론).
 
-총 **155개**.
+총 **164개**.
 
 | 발행일 | 제목 |
 |---|---|
+| 2026-09-15 | [Act, Confirm, or Stop? Smarter behavior for AI assistants, wearables & robots — Amit Desai, Roku](2026-09-15-Zd5b40Jbp_k.md) |
+| 2026-09-15 | [Tolan: Voice-First AI Companion — Paula Dozsa, Tolan](2026-09-15-xLUQOqjudtA.md) |
+| 2026-09-15 | [5 Voice Agent Failure Modes You'll Hit in Week One — Venky B, Plivo](2026-09-15-vblnYHzBgS4.md) |
+| 2026-09-15 | [I Monitored Crime Audio. Voice Agents Scare Me More. — Sumanyu Sharma, Hamming AI](2026-09-15-qStB9GbppMU.md) |
+| 2026-09-15 | [Voice Agents Can Just Do Things — Charlie Guo, OpenAI](2026-09-15-OpY6MmZFeHo.md) |
+| 2026-09-15 | [Realtime Voice Agents with Frontier Intelligence — Bohan Li, EliseAI](2026-09-15-MBHOH1NmDqc.md) |
+| 2026-09-15 | [\"My name is... my name is...\": A Linguistic Map for Voice Agents — Midam Kim, ServiceNow](2026-09-15-IDNfAZVKvPE.md) |
+| 2026-09-15 | [Your Voice Agent is Just a Walkie Talkie — Neil Zeghidour, Gradium](2026-09-15-a8EcVumh71E.md) |
+| 2026-09-15 | [Speech-to-Speech Model Research at Google DeepMind — Valeria Wu Fon & Tom Ouyang, Google DeepMind](2026-09-15-18Um2VjMM_g.md) |
 | 2026-09-14 | [Tokens Should Have Jobs — Katelyn Lesse & Angela Jiang, Anthropic](2026-09-14-PXj0p_mW9nI.md) |
 | 2026-09-14 | [No Memory, No Harness: Why the Database Is the Last Line of Defense — Kay Malcolm, Oracle](2026-09-14-jA_x7F8caHI.md) |
 | 2026-09-14 | [Loophole: Adversarial Agents To Stress Test Your Morality — Brendan Rappazzo, Morgan Stanley](2026-09-14-hOWU0KPUp1k.md) |
