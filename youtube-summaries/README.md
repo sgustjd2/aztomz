@@ -3,10 +3,19 @@
 채널 [AI Engineer](https://www.youtube.com/@aiDotEngineer) 의 새 영상을 Gemini 로 자동 요약한 모음입니다.
 생성: `backend/scripts/youtube-summarize.mjs` (GitHub Actions `youtube-summary` 크론).
 
-총 **164개**.
+총 **173개**.
 
 | 발행일 | 제목 |
 |---|---|
+| 2026-09-16 | [Rebuilding the web for agents — Liad Yosef, MCP Apps](2026-09-16-waI44NP1abk.md) |
+| 2026-09-16 | [Connect AI to Billions of Legal Documents — Simon Eskildsen, turbopuffer & Jacob Lauritzen, Legora](2026-09-16-V-isu4eTHgw.md) |
+| 2026-09-16 | [Stop Chunking Like It's 2022 — Yuval Belfer, AI21 Labs](2026-09-16-r9OwPx_HoV0.md) |
+| 2026-09-16 | [If we want them to do Knowledge Work, design them as Knowledge Agents — Benjamin Clavié, Mixedbread](2026-09-16-O84lhGc1OOI.md) |
+| 2026-09-16 | [Pinecone 2.0 — Edo Liberty, Pinecone](2026-09-16-IN-rb-9WmiY.md) |
+| 2026-09-16 | [Where RL Will Take Search — Maximilian-David Rumpf, SID.ai](2026-09-16-iJVxxxHM_Oc.md) |
+| 2026-09-16 | [The unreasonable effectiveness of BM25 for agentic search — Jo Kristian Bergum, Hornet.dev](2026-09-16-fZH97QHHYjY.md) |
+| 2026-09-16 | [The Search Engine for the Agentic Web — Will Bryk, Exa](2026-09-16-59AA5kIoqjA.md) |
+| 2026-09-16 | [Your Agreements Are a Database You Can't Query — Hiral Shah, Docusign & Sean Sodha, NVIDIA](2026-09-16-_gvamfT8H-w.md) |
 | 2026-09-15 | [Act, Confirm, or Stop? Smarter behavior for AI assistants, wearables & robots — Amit Desai, Roku](2026-09-15-Zd5b40Jbp_k.md) |
 | 2026-09-15 | [Tolan: Voice-First AI Companion — Paula Dozsa, Tolan](2026-09-15-xLUQOqjudtA.md) |
 | 2026-09-15 | [5 Voice Agent Failure Modes You'll Hit in Week One — Venky B, Plivo](2026-09-15-vblnYHzBgS4.md) |
