@@ -3,10 +3,11 @@
 채널 [AI Engineer](https://www.youtube.com/@aiDotEngineer) 의 새 영상을 Gemini 로 자동 요약한 모음입니다.
 생성: `backend/scripts/youtube-summarize.mjs` (GitHub Actions `youtube-summary` 크론).
 
-총 **173개**.
+총 **174개**.
 
 | 발행일 | 제목 |
 |---|---|
+| 2026-09-17 | [Homa: The End of TCP for AI Clusters — John Ousterhout, Stanford](2026-09-17-eZ8WWZzoaR0.md) |
 | 2026-09-16 | [Rebuilding the web for agents — Liad Yosef, MCP Apps](2026-09-16-waI44NP1abk.md) |
 | 2026-09-16 | [Connect AI to Billions of Legal Documents — Simon Eskildsen, turbopuffer & Jacob Lauritzen, Legora](2026-09-16-V-isu4eTHgw.md) |
 | 2026-09-16 | [Stop Chunking Like It's 2022 — Yuval Belfer, AI21 Labs](2026-09-16-r9OwPx_HoV0.md) |
