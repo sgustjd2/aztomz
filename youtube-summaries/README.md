@@ -3,10 +3,11 @@
 채널 [AI Engineer](https://www.youtube.com/@aiDotEngineer) 의 새 영상을 Gemini 로 자동 요약한 모음입니다.
 생성: `backend/scripts/youtube-summarize.mjs` (GitHub Actions `youtube-summary` 크론).
 
-총 **174개**.
+총 **175개**.
 
 | 발행일 | 제목 |
 |---|---|
+| 2026-09-18 | [Total Recall: Agent Memory and Harness Engineering — Ignacio Martinez, Oracle](2026-09-18-xs-ob87TTzg.md) |
 | 2026-09-17 | [Homa: The End of TCP for AI Clusters — John Ousterhout, Stanford](2026-09-17-eZ8WWZzoaR0.md) |
 | 2026-09-16 | [Rebuilding the web for agents — Liad Yosef, MCP Apps](2026-09-16-waI44NP1abk.md) |
 | 2026-09-16 | [Connect AI to Billions of Legal Documents — Simon Eskildsen, turbopuffer & Jacob Lauritzen, Legora](2026-09-16-V-isu4eTHgw.md) |
