@@ -3,10 +3,19 @@
 채널 [AI Engineer](https://www.youtube.com/@aiDotEngineer) 의 새 영상을 Gemini 로 자동 요약한 모음입니다.
 생성: `backend/scripts/youtube-summarize.mjs` (GitHub Actions `youtube-summary` 크론).
 
-총 **175개**.
+총 **184개**.
 
 | 발행일 | 제목 |
 |---|---|
+| 2026-09-19 | [Routing LLM Inference in Production: From Engine Signals to Policy — Qianru Lao & Lu Zhang, OpenAI](2026-09-19-sOB3HSiG8vo.md) |
+| 2026-09-19 | [Are LLM Performance Benchmarks Reliable? — Ashok Chandrasekar & Jason Kramberger, Google](2026-09-19-l1-D89bAuOA.md) |
+| 2026-09-19 | [The Frontier AI Inference Cloud for Agents — Byung-Gon (Gon) Chun, FriendliAI](2026-09-19-Hvb2LfMH58c.md) |
+| 2026-09-19 | [Large clusters for small models — Daniel Svonava, Superlinked](2026-09-19-g4SsanB0gMc.md) |
+| 2026-09-19 | [Vertical Mobility: Inference from MVP to Trillion-Parameter Workloads — Sitanshu Gupta, CoreWeave](2026-09-19-cQQbJqvZkpo.md) |
+| 2026-09-19 | [Weight Folding, CUDA Streams, and the Bug That Made My Model Speak Backwards — Filip Makraduli](2026-09-19-c1hGBoWw20A.md) |
+| 2026-09-19 | [Two Bugs That Hid in Plain Sight: A vLLM Debugging Detective Story — Asaf Gardin & Yuval Belfer](2026-09-19-btxG75rNJC4.md) |
+| 2026-09-19 | [Operating Distributed Inference Systems at Scale — Nishant Gupta & Naman Ahuja, Meta](2026-09-19-7c9FSUVcXR0.md) |
+| 2026-09-19 | [What's New in Inference Engineering — Philip Kiely, Baseten](2026-09-19-75ckHC2LU_0.md) |
 | 2026-09-18 | [Total Recall: Agent Memory and Harness Engineering — Ignacio Martinez, Oracle](2026-09-18-xs-ob87TTzg.md) |
 | 2026-09-17 | [Homa: The End of TCP for AI Clusters — John Ousterhout, Stanford](2026-09-17-eZ8WWZzoaR0.md) |
 | 2026-09-16 | [Rebuilding the web for agents — Liad Yosef, MCP Apps](2026-09-16-waI44NP1abk.md) |
