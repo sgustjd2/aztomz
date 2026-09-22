@@ -13,6 +13,7 @@
 
    실행 (레포 루트에서):
      node backend/scripts/blog-publish.mjs --login      # ① 최초 1회: 창 열리면 직접 로그인 후 엔터
+     node backend/scripts/blog-publish.mjs --keepalive  # 세션 유지(스케줄러 하루 1회) — 만료면 exit 1
      node backend/scripts/blog-publish.mjs <id> --dry   # ② 에디터까지만 채우고 멈춤(셀렉터 점검)
      node backend/scripts/blog-publish.mjs <id>         # ③ 공개 발행
      node backend/scripts/blog-publish.mjs <id> --draft # 비공개 저장
@@ -479,6 +480,41 @@ async function login() {
   process.exit(ok ? 0 : 1);
 }
 
+/* --keepalive: 봇탐지 우회가 아니라, 세션이 idle 로 죽지 않게 살려두는 정당한 방법.
+   관리페이지를 한 번 열어 서버 세션을 갱신하고, 롤링된 쿠키를 .tistory-state.json 에 최신값으로
+   다시 떠둔다(발행 때 re-inject 하는 그 파일). 만료됐으면 자동 로그인은 하지 않고(철칙) exit 1 로
+   "사람이 --login 필요"를 알린다. 무인 스케줄러(Task Scheduler/Hermes)에서 하루 1회 돌리는 용도라
+   기본 headless(--head 로 창 보기). */
+async function keepalive() {
+  if (!existsSync(profileDir)) {
+    console.error('✗ 로그인 프로필이 없습니다. 먼저: node backend/scripts/blog-publish.mjs --login');
+    process.exit(1);
+  }
+  const ctx = await chromium.launchPersistentContext(profileDir, { headless: !has('head') });
+  if (existsSync(statePath)) {
+    const st = JSON.parse(await readFile(statePath, 'utf8'));
+    await ctx.addCookies(st.cookies || []);
+  }
+  const page = ctx.pages()[0] || await ctx.newPage();
+  page.on('dialog', (d) => d.dismiss().catch(() => {}));   // "작성 중인 글 불러올까요?" 류 무시
+  const now = () => new Date().toISOString().slice(0, 16).replace('T', ' ');
+  try {
+    await page.goto(`${BASE}/manage/`, { waitUntil: 'domcontentloaded' });
+    if (/login|accounts\.kakao/.test(page.url())) {
+      console.error(`✗ 세션 만료 (${now()}) — 재로그인 필요: node backend/scripts/blog-publish.mjs --login`);
+      await ctx.close();
+      process.exit(1);
+    }
+    await ctx.storageState({ path: statePath });   // 방문으로 갱신된 쿠키를 최신값으로 다시 저장
+    console.log(`✓ 세션 살아있음 — 갱신 완료 (${now()})`);
+    await ctx.close();
+  } catch (e) {
+    await ctx.close().catch(() => {});
+    console.error(`✗ keep-alive 실패 (${now()}): ${e.message}`);
+    process.exit(1);
+  }
+}
+
 async function publish() {
   const htmlPath = join(outDir, `${id}.html`);
   const metaPath = join(outDir, `${id}.json`);
@@ -760,10 +796,11 @@ const isMain = process.argv[1]
 
 if (isMain) {
   if (has('login')) await login();
+  else if (has('keepalive')) await keepalive();
   else if (has('selftest')) await selftest();
   else if (has('cover') && id) await coverOnly();
   else if (!id) {
-    console.error('사용법:\n  node backend/scripts/blog-publish.mjs --login\n  node backend/scripts/blog-publish.mjs <id> [--dry|--draft]\n  node backend/scripts/blog-publish.mjs --selftest');
+    console.error('사용법:\n  node backend/scripts/blog-publish.mjs --login\n  node backend/scripts/blog-publish.mjs --keepalive   # 세션 유지(스케줄러용, 하루 1회)\n  node backend/scripts/blog-publish.mjs <id> [--dry|--draft]\n  node backend/scripts/blog-publish.mjs --selftest');
     process.exit(1);
   } else await publish();
 }

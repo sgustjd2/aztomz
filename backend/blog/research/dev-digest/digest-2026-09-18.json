@@ -1,0 +1,372 @@
+{
+  "collectedAt": "2026-09-18",
+  "days": 3,
+  "results": {
+    "geeknews": {
+      "source": "geeknews",
+      "fetchedOk": true,
+      "sourceUrl": "https://news.hada.io/rss/news",
+      "items": [
+        {
+          "title": "북한 핵실험이 수년간 이어지는 지진을 촉발함",
+          "url": "",
+          "date": "2026-09-18T21:42:20.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "한국, 개인정보 유출 과징금 상한을 매출의 10%로 인상",
+          "url": "",
+          "date": "2026-09-18T21:42:19.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Android 17, 3.x 이후 처음으로 AOSP에 공개하지 않고 새 API 추가",
+          "url": "",
+          "date": "2026-09-18T21:02:18.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "생각을 멈추는 방식이 통하는 시점은 오지 않음",
+          "url": "",
+          "date": "2026-09-18T20:52:20.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Conway의 추측을 바이브 코딩으로 증명해 봤다",
+          "url": "",
+          "date": "2026-09-18T20:52:18.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "미군, AI 환각으로 만들어진 정보 보고서 활용하다 위기 겪어",
+          "url": "",
+          "date": "2026-09-18T19:42:18.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "선그리스어: 고대 그리스어 속에 숨겨진 잃어버린 언어",
+          "url": "",
+          "date": "2026-09-18T18:52:18.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "코딩 에이전트 하네스 설계에 관한 실증 연구",
+          "url": "",
+          "date": "2026-09-18T17:42:19.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Cloudflare Quick Tunnels",
+          "url": "",
+          "date": "2026-09-18T17:42:18.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Ask GN: OSS의 사용자 대상 광고 노출은 어디까지 허용될까?",
+          "url": "",
+          "date": "2026-09-18T16:43:03.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "ZCode 내부 분석: 사용자 모르게 Git 이력을 클라우드에 업로드",
+          "url": "",
+          "date": "2026-09-18T16:42:18.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "무한 파라미터 LLM: 실시간 데이터로 가중치 생성 및 적응",
+          "url": "",
+          "date": "2026-09-18T15:42:19.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "Warren Buffett, Berkshire 이사회 의장직에서 물러나고 아들을 후임으로 지명",
+          "url": "",
+          "date": "2026-09-18T15:42:17.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "GLM 코딩 에이전트 ZCode, 사용자 모르게 Git 이력을 업로드함",
+          "url": "",
+          "date": "2026-09-18T14:52:18.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Bend 2와 바이브 코딩의 함정",
+          "url": "",
+          "date": "2026-09-18T14:52:17.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "나는 패스키가 마음에 들지 않는다",
+          "url": "",
+          "date": "2026-09-18T14:42:17.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "CrowdSec 소스 코드 유출",
+          "url": "",
+          "date": "2026-09-18T13:32:17.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "황금 못, 그리고 Vale(n) 프로그래밍 언어의 부활",
+          "url": "",
+          "date": "2026-09-18T13:12:18.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "주의: 저명한 Rust 개발자를 겨냥한 표적 공격",
+          "url": "",
+          "date": "2026-09-18T13:12:17.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "OpenJev",
+          "url": "",
+          "date": "2026-09-18T12:42:17.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Microsoft 임원, AI 스크래핑을 ‘인류 역사상 최대 규모의 노동 절도’라고 칭해",
+          "url": "",
+          "date": "2026-09-18T11:52:19.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "x86 에뮬레이션의 골칫거리",
+          "url": "",
+          "date": "2026-09-18T11:52:18.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Jemalloc 5.4.0",
+          "url": "",
+          "date": "2026-09-18T11:52:17.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "LLM과 함께 글 쓰는 법",
+          "url": "",
+          "date": "2026-09-18T09:42:16.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "Show GN: 묻기 전에 먼저 움직이는 Slack AI 팀원",
+          "url": "",
+          "date": "2026-09-18T08:46:21.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "Show GN: 채널톡, intercom 에 지친 팀들을 위해,, 레닛(lenit)을 소개합니다.",
+          "url": "",
+          "date": "2026-09-18T08:40:41.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Qwen 3.8 Omni Flash",
+          "url": "",
+          "date": "2026-09-18T07:42:16.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "Show GN: SQLBraid - SQL을 그대로 쓰는 TypeScript 라이브러리",
+          "url": "",
+          "date": "2026-09-18T05:50:40.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "OpenAI 해킹",
+          "url": "",
+          "date": "2026-09-18T05:42:16.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "사진작가 오스틴 만의 iPhone 18 Pro 카메라 리뷰",
+          "url": "",
+          "date": "2026-09-18T04:02:16.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "존 그루버의 iPhone 18 Pro 리뷰",
+          "url": "",
+          "date": "2026-09-18T03:42:17.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "일본의 100세 이상 인구, 10만 명 넘어",
+          "url": "",
+          "date": "2026-09-18T03:42:16.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "섹스, AI, 그리고 종말",
+          "url": "",
+          "date": "2026-09-18T02:02:16.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "macOS 27 Golden Gate 리뷰",
+          "url": "",
+          "date": "2026-09-18T01:52:16.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "스타트업을 피벗해야 할까? [동영상]",
+          "url": "",
+          "date": "2026-09-18T01:15:01.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "SpaceXAI가 한 달 만에 Grok Bot을 만든 방법 [동영상]",
+          "url": "",
+          "date": "2026-09-18T00:55:02.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Anthropic, AI가 AI를 개발하는 내부 현황과 감독 지표 공개",
+          "url": "",
+          "date": "2026-09-18T00:52:15.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "Bonsai 2 27B, 성능 98.2%를 유지하며 모델 크기를 5.9GB로 압축",
+          "url": "",
+          "date": "2026-09-18T00:42:15.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "jcode - 수십 개 세션을 병렬로 실행하는 터미널 코딩 에이전트",
+          "url": "",
+          "date": "2026-09-18T00:30:02.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "GitLab.com의 요청 속도 제한이 변경됨",
+          "url": "",
+          "date": "2026-09-17T23:42:15.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "왁스 모터",
+          "url": "",
+          "date": "2026-09-17T22:52:16.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Bend - 증명으로 AI의 실수를 막고 GPU에서 실행되는 언어",
+          "url": "",
+          "date": "2026-09-17T22:52:15.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "Astra for Law - 법률 업무용 AI",
+          "url": "",
+          "date": "2026-09-17T22:42:15.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "모두가 제정신을 잃었다",
+          "url": "",
+          "date": "2026-09-17T22:02:15.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Mysetup - 다른 사람의 AI 도구와 실제 작업 방식을 살펴보는 커뮤니티",
+          "url": "",
+          "date": "2026-09-17T21:52:16.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "셀프스토리지라는 미국의 종교",
+          "url": "",
+          "date": "2026-09-17T21:52:15.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "항공유 절약하기",
+          "url": "",
+          "date": "2026-09-17T21:02:16.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "가동률 백분율 표기, 이제 그만하면 안 될까?",
+          "url": "",
+          "date": "2026-09-17T21:02:15.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "돛의 귀환: 화물선이 다시 바람을 이용하기 시작함",
+          "url": "",
+          "date": "2026-09-17T20:52:16.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "내가 필즈상 수상자들의 서한에 서명하지 않은 이유",
+          "url": "",
+          "date": "2026-09-17T20:52:15.000Z",
+          "aiRelated": false
+        }
+      ],
+      "note": "GeekNews Atom 피드에서 최근 3일 항목. aiRelated=true 는 제목 키워드 기준(본문은 조사 단계에서 확인)."
+    },
+    "inpa": {
+      "source": "inpa",
+      "fetchedOk": true,
+      "sourceUrl": "https://inpa.tistory.com/rss",
+      "items": [],
+      "note": "최근 3일 이내 작성된 글만. 날짜 없는 항목은 제외. 0건이면 어제·오늘 새 글이 없다는 뜻."
+    },
+    "goddaehee": {
+      "source": "goddaehee",
+      "fetchedOk": true,
+      "sourceUrl": "https://goddaehee.tistory.com/rss",
+      "items": [],
+      "note": "최근 3일 이내 작성된 글만. 날짜 없는 항목은 제외. 0건이면 어제·오늘 새 글이 없다는 뜻."
+    },
+    "github": {
+      "source": "github",
+      "fetchedOk": true,
+      "sourceUrl": "https://github.com/trending?since=weekly",
+      "items": [
+        {
+          "repo": "ayghri/i-have-adhd",
+          "url": "https://github.com/ayghri/i-have-adhd",
+          "description": "A skill to stop your coding agent from burying the answer. ADHD-friendly output.",
+          "starsThisWeek": 10800
+        },
+        {
+          "repo": "mksglu/context-mode",
+          "url": "https://github.com/mksglu/context-mode",
+          "description": "Context window optimization for AI coding agents. Sandboxes tool output (98% reduction), persists session memory, and enforces routing across 17 platforms via MCP + hooks.",
+          "starsThisWeek": 1482
+        },
+        {
+          "repo": "max-sixty/worktrunk",
+          "url": "https://github.com/max-sixty/worktrunk",
+          "description": "Worktrunk is a CLI for Git worktree management, designed for parallel AI agent workflows",
+          "starsThisWeek": 1060
+        },
+        {
+          "repo": "blader/humanizer",
+          "url": "https://github.com/blader/humanizer",
+          "description": "Agent skill that removes signs of AI-generated writing from text",
+          "starsThisWeek": 3235
+        },
+        {
+          "repo": "Panniantong/Agent-Reach",
+          "url": "https://github.com/Panniantong/Agent-Reach",
+          "description": "Give your AI agent eyes to see the entire internet. Read &amp; search Twitter, Reddit, YouTube, GitHub, Bilibili, XiaoHongShu — one CLI, zero API fees.",
+          "starsThisWeek": 3670
+        },
+        {
+          "repo": "danny-avila/LibreChat",
+          "url": "https://github.com/danny-avila/LibreChat",
+          "description": "Enhanced ChatGPT Clone: Features Agents, MCP, Skills, DeepSeek, Anthropic, AWS, OpenAI, Responses API, Azure, Groq, o1, GPT-5, Mistral, OpenRouter, Vertex AI, Gemini, Artifacts, AI model switching, message search, Code Interpreter, langchain, DALL-E-3, OpenAPI Actions, Functions, Secure Multi-User Auth, Presets, open-source for self-hosting. Active",
+          "starsThisWeek": 1421
+        }
+      ],
+      "note": "주간 급상승 레포 중 plugin/extension/skill/cli/mcp 등 도구 성격 키워드가 잡힌 것만. dev-trending 과 겹치는 항목은 조사 단계에서 제외한다."
+    }
+  }
+}
