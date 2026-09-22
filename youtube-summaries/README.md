@@ -3,10 +3,11 @@
 채널 [AI Engineer](https://www.youtube.com/@aiDotEngineer) 의 새 영상을 Gemini 로 자동 요약한 모음입니다.
 생성: `backend/scripts/youtube-summarize.mjs` (GitHub Actions `youtube-summary` 크론).
 
-총 **184개**.
+총 **185개**.
 
 | 발행일 | 제목 |
 |---|---|
+| 2026-09-21 | [The Dark Arts of Skill Engineering — Paul Bakaus, Renaissance Geek (Impeccable)](2026-09-21-SQMCtZX3trg.md) |
 | 2026-09-19 | [Routing LLM Inference in Production: From Engine Signals to Policy — Qianru Lao & Lu Zhang, OpenAI](2026-09-19-sOB3HSiG8vo.md) |
 | 2026-09-19 | [Are LLM Performance Benchmarks Reliable? — Ashok Chandrasekar & Jason Kramberger, Google](2026-09-19-l1-D89bAuOA.md) |
 | 2026-09-19 | [The Frontier AI Inference Cloud for Agents — Byung-Gon (Gon) Chun, FriendliAI](2026-09-19-Hvb2LfMH58c.md) |
