@@ -289,9 +289,17 @@ Agent(
 - OS: Windows 11 / 셸: PowerShell (Bash 도구도 사용 가능)
 - 배포: GitHub `sgustjd2/aztomz`(public, 구 `GO9ME/aztomz`에서 이전 — 구 URL은 리다이렉트) → Vercel 정적 배포, push마다 자동 재배포
 - **Hermes(고구미봇)**: 별도 레포 `E:\workspace\side_project\hermes`. 크론 시각은 위 "크론 일람" 표가 유일한 기준.
-  - **모델: `gemini-2.5-pro`(GA) · provider `gemini`(API키, 유료 Tier-1) 단독 — 폴백 없음**
-    (`fallback_providers: []`, 2026-06-23 확정). 이전 구성은 전부 폐기:
-    프리뷰(`gemini-3-flash-preview`)는 21:30 503 잦음 · 무료 OAuth(cloudcode)는 병렬 툴콜 400 버그 ·
-    OpenRouter 키는 크레딧 $0라 유료 모델 불가(해지, 백업 `auth.json.bak.20260611_openrouter`) ·
-    Anthropic OAuth는 서드파티 앱 크레딧 필요 · lite 계열은 리서치를 대충 해 기본 모델 부적합.
+  - **모델: `claude-sonnet-5` · provider Anthropic(Claude Code 구독 자격증명 OAuth) · effort `medium` (2026-09-23 전환).**
+    구독 주간 한도를 이 계정의 인터랙티브 Claude Code 사용과 **공유** — 무거운 무인 크론(특히 블로그)이 한도를
+    빨리 태우니 사용량 관찰. **폴백 없음**(한도 소진·실패 시 그날 자동화 중단). effort=thinking 토큰 예산
+    (medium=8k), 올릴수록 소모↑. 되돌리기: `hermes model` → Google/Gemini → `schtasks /Run /TN Hermes_Gateway`.
+    · (이전, 2026-06-23~09-23) `gemini-2.5-pro`(GA)·provider `gemini`(유료 Tier-1) 단독. 대안 폐기 이력:
+    프리뷰(`gemini-3-flash-preview`) 21:30 503 잦음 · 무료 OAuth(cloudcode) 병렬 툴콜 400 버그 ·
+    OpenRouter 크레딧 $0(백업 `auth.json.bak.20260611_openrouter`) · lite 리서치 부실.
   - 크론이 죽은 날 수동 재실행: `hermes cron run 9ddacd750b48`.
+  - **hermes 업데이트는 반드시 `E:\workspace\side_project\hermes\hermes-update.ps1` 로.** 맨 `hermes update`는
+    Windows에서 게이트웨이 stop(Task Scheduler 오인식→Access denied)·재기동(Job Object reap) 두 버그로 깨진다.
+    래퍼가 stop→update→`schtasks /Run`로 우회(업스트림 PR NousResearch/hermes-agent#115495는 재기동만 커버).
+  - **게이트웨이 자동부활: 스케줄작업 `Hermes_Gateway_Watchdog`** — 로그인 중 10분마다 `hermes-watchdog.ps1`,
+    heartbeat 180s+ 끊기면 `schtasks /Run /TN Hermes_Gateway`. 세션 중 게이트웨이가 스스로 죽어도
+    (#113667·전원off) 다음 로그인 안 기다리고 되살림.
