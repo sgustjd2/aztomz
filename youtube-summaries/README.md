@@ -3,10 +3,11 @@
 채널 [AI Engineer](https://www.youtube.com/@aiDotEngineer) 의 새 영상을 Gemini 로 자동 요약한 모음입니다.
 생성: `backend/scripts/youtube-summarize.mjs` (GitHub Actions `youtube-summary` 크론).
 
-총 **185개**.
+총 **186개**.
 
 | 발행일 | 제목 |
 |---|---|
+| 2026-09-22 | [I Gave an AI a Body — Cyrus Clarke, MIT Media Lab](2026-09-22-jgWY66RaSrQ.md) |
 | 2026-09-21 | [The Dark Arts of Skill Engineering — Paul Bakaus, Renaissance Geek (Impeccable)](2026-09-21-SQMCtZX3trg.md) |
 | 2026-09-19 | [Routing LLM Inference in Production: From Engine Signals to Policy — Qianru Lao & Lu Zhang, OpenAI](2026-09-19-sOB3HSiG8vo.md) |
 | 2026-09-19 | [Are LLM Performance Benchmarks Reliable? — Ashok Chandrasekar & Jason Kramberger, Google](2026-09-19-l1-D89bAuOA.md) |
