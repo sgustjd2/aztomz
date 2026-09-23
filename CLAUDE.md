@@ -300,6 +300,10 @@ Agent(
   - **hermes 업데이트는 반드시 `E:\workspace\side_project\hermes\hermes-update.ps1` 로.** 맨 `hermes update`는
     Windows에서 게이트웨이 stop(Task Scheduler 오인식→Access denied)·재기동(Job Object reap) 두 버그로 깨진다.
     래퍼가 stop→update→`schtasks /Run`로 우회(업스트림 PR NousResearch/hermes-agent#115495는 재기동만 커버).
-  - **게이트웨이 자동부활: 스케줄작업 `Hermes_Gateway_Watchdog`** — 로그인 중 10분마다 `hermes-watchdog.ps1`,
-    heartbeat 180s+ 끊기면 `schtasks /Run /TN Hermes_Gateway`. 세션 중 게이트웨이가 스스로 죽어도
-    (#113667·전원off) 다음 로그인 안 기다리고 되살림.
+  - **게이트웨이 자동부활: 스케줄작업 `Hermes_Gateway_Watchdog`** — 로그인 중 10분마다 `hermes-watchdog.vbs`
+    (wscript 숨김)→`hermes-watchdog.ps1`, heartbeat 180s+ 끊기면 `schtasks /Run /TN Hermes_Gateway`. 세션 중
+    게이트웨이가 스스로 죽어도(#113667·전원off) 다음 로그인 안 기다리고 되살림.
+  - **창 숨김(게이밍 중 cmd/PS 팝업 방지): 두 스케줄작업 다 `wscript.exe <이름>.vbs` 로 실행** — 콘솔창 안 뜸.
+    게이트웨이=`gateway-service\Hermes_Gateway.vbs`(hermes 기본 숨김 런처 `sh.Run …,0,False`), 워치독=`hermes-watchdog.vbs`.
+    게이트웨이 작업 액션 변경엔 **관리자 권한 필요**: (관리자창) `schtasks /Change /TN Hermes_Gateway /TR "wscript.exe
+    E:\workspace\side_project\hermes\gateway-service\Hermes_Gateway.vbs"`. `.cmd`(console)로 되돌면 재시작마다 cmd 창이 뜬다.
