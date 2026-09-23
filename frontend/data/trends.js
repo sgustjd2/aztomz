@@ -627,7 +627,7 @@ window.HANGEUT_DATA = {
       "type": "신뢰분석",
       "cat": "카페·핫플",
       "coverCat": "cat-bakery",
-      "analyzedAt": "2026-08-23",
+      "analyzedAt": "2026-09-23",
       "title": "이스트베이글 (다산)",
       "buzz": "지역 핫플 급부상",
       "ad": 20,
