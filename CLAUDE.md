@@ -41,7 +41,8 @@
 | `blog-selfreview.mjs <slug>` | **집필 직후 자체 피드백→반영** — `claude -p`가 초안을 냉정히 자기비평하고 실제 결함만 **외과적 find/replace**로 고쳐 넣은 뒤 재조립(전면 재작성 금지·드리프트 방지). blog-verify 앞 단계. `--dry`(제안만)·`--selftest` |
 | `blog-verify.mjs <id>` | **발행 전 최종 검증** — `claude -p`가 원본 왜곡·단정·지어낸 사실·저작권을 본다. 반려 시 exit 1. `--warn` |
 | `blog-publish.mjs <id>` | Playwright로 티스토리 자동 발행. `--login`(1회) · `--keepalive`(세션 유지, 스케줄러 하루 1회) · `--dry` · `--draft` · `--probe` · `--categories` · `--cover` |
-| `blog-publish-naver.mjs <id>` | **네이버 블로그 발행**(SmartEditor ONE) — 티스토리와 같은 빌드 결과를 클립보드 붙여넣기로 주입, 커버·그림은 [사진] 업로드, 유튜브 iframe은 링크로 변환. `--login`(1회, 전용 프로필 `backend/.naver-profile`) · `--dry` · `--draft`(임시저장) · `--probe` · `--selftest`. 카테고리는 `naverCategory()`가 티스토리 카테고리+커버 분야로 자동 매핑(네이버 쪽: 한끗 트렌드/맛집·디저트·카페·핫플·신조어·밈·노래·음악·패션·뷰티 · AI·IT/AI 동향·개발·자동화 · 생활정보). **`--queue`** = 티스토리 발행분을 최신순으로 하루 `--max`(3)편·글 사이 `--gap`(40-90)분 랜덤 대기·`--max-age`(30)일 넘은 글 스킵·실패 시 그날 중단(`--list`로 대기열만). 기록 `posted-naver.json`. 로그인·캡차는 사람 |
+| `blog-publish-naver.mjs <id>` | **네이버 블로그 발행**(SmartEditor ONE) — 클립보드 붙여넣기로 본문 주입(붙여넣은 뒤 사용자 클립보드 복원), 커버·그림은 [사진] 업로드, 유튜브 iframe은 링크로 변환, 카테고리는 `naverCategory()` 자동 매핑(한끗 트렌드/맛집·디저트·카페·핫플·신조어·밈·노래·음악·패션·뷰티 · AI·IT/AI 동향·개발·자동화 · 생활정보). **`meta.platform === "naver"` 글만** 올린다(`--force` 예외). `--login`(1회, 전용 프로필 `backend/.naver-profile`) · `--dry` · `--draft`(임시저장) · `--probe` · `--selftest`. 기록 `posted-naver.json`. 로그인·캡차는 사람 |
+| `blog-queue.mjs` | **블로그 자동 발행 대기열(티스토리+네이버, 서로 다른 글)** — `meta.platform`별로, **검증 통과 후 본문이 안 바뀐 글**(`meta.verified.html` = 현재 html sha1, `blog-verify.mjs`가 통과 시 기록)만 골라 T→N 번갈아 발행. 플랫폼당 하루 `--max`(5)편(한국 날짜 기준, 발행 기록으로 셈) · 글 사이 `--gap`(20-40)분 랜덤 · `builtAt` `--max-age`(7)일 이내 · 한 플랫폼 실패 시 그날 그 플랫폼만 중단 · 동시 실행 락(`out/blog/.queue.lock`) · 창은 화면 밖(`BLOG_OFFSCREEN=1`). `--list` · `--only=naver` · `--selftest` |
 | `blog-extension-server.mjs` | **크롬 확장(`backend/tistory-extension/`) 로컬 브릿지** — `backend/out/blog/`를 읽어 확장에 초안(제목·카테고리·태그·본문)을 내려주는 HTTP 서버. `--port=`(기본 8137) · `--selftest`. 발행·로그인·캡차·커버 이미지 첨부는 여전히 사람이 직접 한다 — 확장은 "채우기"만, `blog-publish.mjs`(Playwright 완전자동)와는 별개의 반자동 경로다 |
 | `blog-feedback.mjs` | 노래 추천 피드백 → 선곡 기준 교훈 적립(다음 글에 주입). `--list` · `--good=` · `--bad=` · `--lesson=` |
 | `keyword-demand.mjs "<주제>" …` | **검색수요 게이트**(결정적·LLM 없음) — 네이버 검색광고 키워드도구 API 로 주제의 월간 검색수(PC+모바일) 조회, `--min`(기본 100) 미달이면 exit 1 로 그 주제 차단. `--json`·`--selftest`. 자격증명 `.env`: `NAVER_AD_API_KEY`·`NAVER_AD_SECRET`·`NAVER_AD_CUSTOMER`(searchad.naver.com 무료 발급). 발행 재개 시 주제 선정 게이트로 씀(seo-playbook §1) |
@@ -72,26 +73,23 @@ node backend/scripts/check-source.mjs backend/data/trends.json --only=<id>  # 5)
 | 매일 07:00 | 펄스 일일 조사(요일 로테이션) | **GitHub Actions** (PC 무관) | `pulse-daily.yml` → `pulse-research.mjs` (시크릿 `GEMINI_API_KEY`) |
 | 매일 08:00 | **YouTube 새 영상 한국어 요약**(AI Engineer 채널) | **GitHub Actions** (PC 무관) | `youtube-summary.yml` → `youtube-summarize.mjs` (시크릿 `GEMINI_API_KEY`) |
 | 월 06:00 | 트렌드 주간 재생성 | **GitHub Actions** (PC 무관) | `daily-refresh.yml`(내부 이름 `weekly-refresh`) → `refresh.mjs` |
-| 매일 09:00 | **블로그 일일 초안**(검증까지, 발행 제외) | Hermes(로컬, no-agent) | `aztomz_blog_daily.py` → `claude -p /blog-daily` 스킬 |
+| 매일 09:00 | **블로그 일일 집필 10편**(티스토리 5 + 네이버 5, 서로 다른 주제 · 검증까지, 발행은 대기열) | Windows 스케줄작업 `AZ2MZ_Blog_Daily`(StartWhenAvailable, 제한 8h) | `tools/blog-daily.vbs`(wscript 숨김) → `claude -p /blog-daily` · 로그 `backend/out/blog/blog-daily.log`. (2026-09-24 Hermes 잡 `c49cb13870e0`에서 이관 — 그 잡은 50분 대기 한도라 10편 불가, **일시정지** 상태) |
 | 매일 21:00 | 펄스/수집 분야 안내 | Hermes(로컬) | — |
 | 월 21:00 | 주간 갱신 | Hermes(로컬) | — |
 | 매일 21:15 | 광고/진짜 일일 재확인 | Hermes(로컬, no-agent) | `recheck_ad.py` → `recheck-ad.mjs` |
 | 매일 21:30 | **한끗 자동 수집·게시** (목=신조어 주간 사전) | Hermes(로컬, 에이전트) | hangeut-run → `auto-build.mjs`(`.pipeline/curate.json`) |
 | 매일 21:50 | 수집 재시도 게이트(21:30이 503/429로 죽었을 때만 1회 재실행) | Hermes(로컬, no-agent) | `hangeut_retry_gate.py` |
-| 매일 18:00 | **네이버 블로그 순차 발행**(티스토리 발행분 하루 3편, 글 사이 40~90분 랜덤 대기) | Windows 스케줄작업 `AZ2MZ_Naver_Queue`(StartWhenAvailable) | `tools/naver-queue.vbs`(wscript 숨김) → `blog-publish-naver.mjs --queue` · 로그 `backend/out/blog/naver-queue.log` |
+| 매일 12:00 · 15:00 · 18:00 | **블로그 자동 발행 대기열**(티스토리·네이버 각 하루 5편, 글 사이 20~40분 랜덤 대기 · 뒤 회차는 늦게 검증된 글 따라잡기) | Windows 스케줄작업 `AZ2MZ_Blog_Queue`(StartWhenAvailable) | `tools/blog-queue.vbs`(wscript 숨김) → `blog-queue.mjs` · 로그 `backend/out/blog/blog-queue.log` |
 | 수 20:00 | **개발/IT 소스 fetch**(경량 VLM·개발 다이제스트 후보만 갱신 — 집필·발행·git 없음) | Hermes(로컬, no-agent) | `dev_it_fetch.py`(잡 `441ad100e8b3`) → `vlm-watch-fetch.mjs`·`dev-digest-fetch.mjs` |
 
 - ⚠️ **Hermes 크론은 그 시각에 PC+게이트웨이가 켜져 있어야 실행됨**(`tools/start-hermes.bat`).
   PC는 보통 ~22:30까지만 켜짐 — 게이트를 22:00→**21:50**으로 당긴 이유(2026-06-23, 22:00엔 PC가 꺼져 미실행 잦았음).
 - GitHub Actions 2개는 클라우드라 PC 상태와 무관하게 돈다.
-- ⚠️ **티스토리 블로그 발행은 자동화돼 있지 않다.** `auto-build.mjs`는 `--blog` 플래그를 지원하지만, 실제
-  Hermes 잡 프롬프트(`hermes/cron/jobs.json`)에는 이 플래그가 없다 — 트렌드 데이터 게시(`trends.json`
-  → git push → Vercel)까지만 매일 밤 자동으로 돈다. 카카오 로그인을 자동화하지 않는다는 철칙(아래
-  "블로그 발행" 항목 참고) 때문에 티스토리 세션이 주기적으로 만료되고, 무인 실행에서 이걸 복구할
-  방법이 없어 **의도적으로 발행 단계는 자동화 대상에서 뺀 상태로 보인다**(2026-08-19 확인 — 지금까지
-  발행된 글은 전부 인터랙티브 세션에서 사람이 트리거함). 자동 발행을 원하면 `--blog`를 잡 프롬프트에
-  추가하면 되지만, 그러면 세션 만료 시 매번 조용히 실패만 하고(`backend/out/blog/publish-failures.json`
-  에 기록은 남는다) 실제 발행은 여전히 안 된다 — 근본 해결은 티스토리 세션 자체를 안 끊기게 하는 것.
+- **블로그 발행은 2026-09-24부터 대기열로 자동화**(사용자 지시: 티스토리 5 + 네이버 5, 서로 다른 글). 09:00 `/blog-daily`(Windows 스케줄작업)가
+  10편을 쓰고 검증해 글마다 `meta.platform`을 배정 → 12:00·15:00·18:00 `blog-queue.mjs`가 순차 발행. 로그인·캡차는 여전히
+  사람 몫이라(철칙) **티스토리 세션 만료·캡차가 뜨면 그날 티스토리만 멈춘다**(`blog-queue.log`에 남음 → `blog-publish.mjs --login`).
+  세션은 `blog-publish.mjs --keepalive`로 연장된다. 네이버 세션은 30일 영구 쿠키라 상대적으로 안정적.
+  (이전: 2026-08-19~09-24 티스토리 발행은 인터랙티브 세션에서 사람이 트리거, 09-13~09-24 일일 배치 중단.)
 - 크론이 안 돈 날은 수동 백필: `hermes cron run 9ddacd750b48`.
 
 ---

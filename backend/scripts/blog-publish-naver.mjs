@@ -3,8 +3,8 @@
    한끗 — 네이버 블로그 발행 (Playwright)
 
    blog-publish.mjs(티스토리)와 같은 빌드 결과 backend/out/blog/<id>.{html,json} 을
-   네이버 블로그(SmartEditor ONE)에 올린다. 평소엔 티스토리만 발행하고, 네이버는 매일 18:00
-   스케줄작업 AZ2MZ_Naver_Queue(tools/naver-queue.vbs → --queue)가 하루 3편씩 천천히 따라 올린다.
+   네이버 블로그(SmartEditor ONE)에 올린다. 글은 meta.platform 으로 한 플랫폼에만 배정되고(티스토리와
+   겹치지 않음), 평소엔 blog-queue.mjs(매일 12:00·18:00 스케줄작업)가 이 스크립트를 한 편씩 부른다.
 
    ── 로그인은 자동화하지 않는다 (티스토리와 같은 철칙) ──
    전용 프로필(backend/.naver-profile)에 사람이 1번 로그인("로그인 상태 유지" 체크)하고 재사용.
@@ -23,8 +23,7 @@
      node backend/scripts/blog-publish-naver.mjs <id> --draft # 임시저장만
    ============================================================ */
 import { readFile, writeFile } from 'node:fs/promises';
-import { existsSync, readFileSync } from 'node:fs';
-import { spawnSync } from 'node:child_process';
+import { existsSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 import { createInterface } from 'node:readline/promises';
@@ -163,6 +162,11 @@ async function publish() {
   const meta = JSON.parse(await readFile(metaPath, 'utf8'));
   const parts = toParts(await readFile(htmlPath, 'utf8'));
   const posted = existsSync(postedPath) ? JSON.parse(await readFile(postedPath, 'utf8')) : {};
+  // 티스토리 배정 글(platform 없음 = tistory)은 올리지 않는다 — 두 블로그에 같은 글이 가지 않게.
+  if (meta.platform !== 'naver' && !has('force') && !has('dry') && !has('probe')) {
+    console.error(`✗ "${id}" 는 ${meta.platform || 'tistory'} 배정 글입니다(meta.platform). 그래도 올리려면 --force`);
+    process.exit(1);
+  }
   if (posted[id] && !has('force') && !has('dry') && !has('probe')) {
     console.log(`· 네이버에 이미 발행됨 (${posted[id].at}) — ${posted[id].url}  (다시: --force)`);
     process.exit(0);
@@ -177,7 +181,7 @@ async function publish() {
     viewport: { width: 1440, height: 960 },
     permissions: ['clipboard-read', 'clipboard-write'],
     // 대기열(무인)은 창을 화면 밖에 띄운다 — 게임·작업 중에 창이 튀어나오지 않게. headless 는 봇 신호라 안 씀.
-    args: process.env.NAVER_OFFSCREEN === '1' ? ['--window-position=-32000,-32000'] : [],
+    args: process.env.BLOG_OFFSCREEN === '1' ? ['--window-position=-32000,-32000'] : [],
   });
   if (existsSync(statePath)) await ctx.addCookies(JSON.parse(await readFile(statePath, 'utf8')).cookies || []);
   const page = ctx.pages()[0] || await ctx.newPage();
@@ -275,51 +279,6 @@ async function publish() {
   }
 }
 
-/* --queue: 티스토리에 이미 올린 글을 네이버에 천천히 순차 발행한다. 스팸 판정은 "짧은 시간 대량"이
-   핵심 신호라 속도를 조절한다: 하루 --max 편(오늘 이미 올린 수 포함) · 글 사이 --gap 분 랜덤 대기 ·
-   최신순 · 티스토리 발행 후 --max-age 일 넘은 글은 건너뜀(묵은 트렌드).
-   한 편이라도 실패하면(세션 만료·캡차) 그날은 멈춘다 — 막힌 채 계속 두드리면 그게 더 스팸 신호다.
-   ponytail: 캡차 자체를 피하는 방법은 없다(우회 안 함). 속도 조절이 할 수 있는 전부. */
-export function queueCandidates(tistory, naver, now, maxAgeDays, hasBuild = () => true) {
-  return Object.entries(tistory)
-    .filter(([id, v]) => !naver[id] && hasBuild(id)
-      && (now - Date.parse(v.at.replace(' ', 'T') + 'Z')) / 864e5 <= maxAgeDays)
-    .sort((a, b) => b[1].at.localeCompare(a[1].at))
-    .map(([id]) => id);
-}
-
-async function runQueue() {
-  const val = (k, d) => argv.find((a) => a.startsWith(`--${k}=`))?.split('=')[1] ?? d;
-  const max = Number(val('max', 3));
-  const maxAge = Number(val('max-age', 30));
-  const [gapMin, gapMax] = val('gap', '40-90').split('-').map(Number);
-  const read = (p) => (existsSync(p) ? JSON.parse(readFileSync(p, 'utf8')) : {});
-  const tistory = read(join(outDir, 'posted.json'));
-  const naver = read(postedPath);
-  const hasBuild = (x) => existsSync(join(outDir, `${x}.html`)) && existsSync(join(outDir, `${x}.json`))
-    && JSON.parse(readFileSync(join(outDir, `${x}.json`), 'utf8')).category !== 'error';
-  const all = queueCandidates(tistory, naver, Date.now(), maxAge, hasBuild);
-  const today = new Date().toISOString().slice(0, 10);
-  const doneToday = Object.values(naver).filter((v) => v.at.startsWith(today)).length;
-  const todo = all.slice(0, Math.max(0, max - doneToday));
-  console.log(`네이버 대기열: 후보 ${all.length}편(최근 ${maxAge}일) · 오늘 이미 ${doneToday}편 · 이번 실행 ${todo.length}편`);
-  if (has('list')) {
-    for (const x of all) console.log(`  ${tistory[x].at}  ${x}  → ${naverCategory(JSON.parse(readFileSync(join(outDir, `${x}.json`), 'utf8')))}`);
-    return;
-  }
-  for (let i = 0; i < todo.length; i++) {
-    console.log(`\n[${i + 1}/${todo.length}] ${todo[i]}`);
-    const r = spawnSync(process.execPath, [fileURLToPath(import.meta.url), todo[i]],
-      { stdio: 'inherit', env: { ...process.env, NAVER_OFFSCREEN: '1' } });
-    if (r.status !== 0) { console.error('✗ 실패 — 오늘 대기열 중단(세션·캡차 확인 후 다시)'); process.exit(1); }
-    if (i < todo.length - 1) {
-      const min = gapMin + Math.random() * (gapMax - gapMin);
-      console.log(`  · 다음 글까지 ${min.toFixed(0)}분 대기`);
-      await new Promise((res) => setTimeout(res, min * 60000));
-    }
-  }
-}
-
 function selftest() {
   const cats = [
     [{ category: 'AZTOMZ', coverSpec: { cat: '디저트' } }, '맛집·디저트'],
@@ -332,13 +291,7 @@ function selftest() {
   ];
   const badCat = cats.filter(([m, want]) => naverCategory(m) !== want);
   console.log(badCat.length ? `✗ naverCategory: ${JSON.stringify(badCat)}` : '✓ naverCategory selftest');
-  const now = Date.parse('2026-09-24T00:00:00Z');
-  const q = queueCandidates({
-    old: { at: '2026-07-01 10:00' }, mid: { at: '2026-09-10 10:00' }, fresh: { at: '2026-09-23 10:00' }, done: { at: '2026-09-22 10:00' },
-  }, { done: {} }, now, 30);
-  const qOk = JSON.stringify(q) === '["fresh","mid"]';
-  console.log(qOk ? '✓ queueCandidates selftest' : `✗ queueCandidates: ${JSON.stringify(q)}`);
-  if (badCat.length || !qOk) process.exitCode = 1;
+  if (badCat.length) process.exitCode = 1;
   const parts = toParts('<!--COVER-->\n<p>a</p><!-- [IMG: x] --><!--FIG:t1--><div class="v"><iframe src="https://www.youtube-nocookie.com/embed/AZlnBW-MJh0" title="곡"></iframe></div>');
   const ok = parts.length === 4 && parts[0].img === 'COVER' && parts[1].html === '<p>a</p>'
     && parts[2].img === 'FIG:t1' && parts[3].html.includes('watch?v=AZlnBW-MJh0') && parts[3].html.includes('곡')
@@ -354,9 +307,8 @@ if (isMain) {
   else {
     ({ chromium } = await import('playwright'));
     if (has('login')) await login();
-    else if (has('queue')) await runQueue();
     else if (id) await publish();
     else console.error('사용법: node backend/scripts/blog-publish-naver.mjs --login | <id> [--dry|--draft|--probe|--force]'
-      + ' | --queue [--list] [--max=3] [--gap=40-90] [--max-age=30] | --selftest');
+      + ' | --selftest');
   }
 }

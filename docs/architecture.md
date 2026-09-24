@@ -68,7 +68,7 @@ frontend/*.html
 ## 자동/수동 갱신
 - 트렌드 정적 데이터 생성: GitHub Actions `weekly-refresh`가 매주 월요일 06:00 KST에 `backend/scripts/refresh.mjs`를 실행한다. 수동 `workflow_dispatch`도 가능하다.
 - 펄스 데이터: GitHub Actions `pulse-daily`가 매일 07:00 KST에 펄스 데이터를 갱신한다.
-- 블로그 미러 발행: Windows 스케줄작업 `AZ2MZ_Naver_Queue`가 매일 18:00에 `node backend/scripts/blog-publish-naver.mjs --queue`를 실행해 티스토리 발행분을 네이버 블로그에 미러링한다(하루 3편·글 사이 40~90분 랜덤 대기·30일 넘은 글 스킵). 로그: `backend/out/blog/naver-queue.log`.
+- 블로그 티스토리·네이버 일일 발행: 09:00 `AZ2MZ_Blog_Daily` → `claude -p /blog-daily` 스킬이 10편(T5+N5, 각각 다른 글) 집필·검증 → 12:00·15:00·18:00 `AZ2MZ_Blog_Queue` → `node backend/scripts/blog-queue.mjs`가 플랫폼 교대 순차 발행(20~40분 간격, 각 5편/일). 로그: `backend/out/blog/blog-daily.log`, `blog-queue.log`.
 - 로컬 Hermes 운영과 검증 게이트의 자세한 흐름은 [docs/hermes.md](hermes.md)를 따른다.
 
 ## 보안 메모

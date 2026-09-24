@@ -108,9 +108,10 @@ git push origin main              # → Vercel 자동 재배포
 - RSS로 AI Engineer 채널 새 영상 감지 → 미요약 항목만 Gemini 한국어 요약
 - 변경시 자동 커밋·푸시 (리포에만 저장, 배포되지 않음)
 
-**블로그 미러 발행:**
-- 네이버 블로그 일일 순차 발행: 매일 18:00 Windows 스케줄작업 `AZ2MZ_Naver_Queue`가 하루 3편씩 40~90분 랜덤 대기로 발행. 로그: `backend/out/blog/naver-queue.log`
-- 로그인 자동화 없음(티스토리와 같은 철칙) — 전용 프로필 `backend/.naver-profile`에 1회 로그인 후 재사용
+**블로그 티스토리·네이버 일일 발행:**
+- 09:00 집필: Windows 스케줄작업 `AZ2MZ_Blog_Daily` → `claude -p /blog-daily` 스킬이 10편(티스토리 5+네이버 5, 서로 다른 글) 집필·검증. 로그: `backend/out/blog/blog-daily.log`
+- 12:00·15:00·18:00 발행: Windows 스케줄작업 `AZ2MZ_Blog_Queue` → `node backend/scripts/blog-queue.mjs`가 플랫폼별 순차 발행(T→N→T→N…, 글 사이 20~40분 랜덤, 각 플랫폼 하루 5편 한도). 로그: `backend/out/blog/blog-queue.log`
+- 로그인 자동화 없음(기존 철칙) — 전용 프로필(티스토리 `backend/.tistory-profile`, 네이버 `backend/.naver-profile`)에 1회 로그인 후 재사용
 
 ---
 

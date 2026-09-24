@@ -525,6 +525,11 @@ async function publish() {
   const body = await readFile(htmlPath, 'utf8');
   const meta = JSON.parse(await readFile(metaPath, 'utf8'));
   const category = meta.category || CATEGORY;
+  // 네이버 배정 글은 티스토리에 올리지 않는다 — 두 블로그에 같은 글이 가지 않게(blog-queue.mjs).
+  if (meta.platform === 'naver' && !has('force') && !has('dry')) {
+    console.error(`✗ "${id}" 는 네이버 배정 글입니다(meta.platform). 그래도 올리려면 --force`);
+    process.exit(1);
+  }
 
   // 같은 글을 두 번 올리면 중복 콘텐츠가 된다. 발행 기록을 남기고 재실행은 --force 로만.
   // (로그인 확인보다 먼저 — 이미 올린 글이면 브라우저를 띄울 이유가 없다.)
@@ -556,6 +561,8 @@ async function publish() {
   const ctx = await chromium.launchPersistentContext(profileDir, {
     headless: process.env.HEADLESS === '1',
     viewport: { width: 1440, height: 960 },
+    // blog-queue.mjs(무인)가 부를 땐 창을 화면 밖에 — 게임·작업 중에 튀어나오지 않게.
+    args: process.env.BLOG_OFFSCREEN === '1' ? ['--window-position=-32000,-32000'] : [],
   });
   // 프로필에 안 남는 세션 쿠키를 --login 때 떠둔 storageState 에서 되살린다.
   if (existsSync(statePath)) {

@@ -50,7 +50,7 @@ node backend/scripts/blog-assemble.mjs <slug>    # md+meta → HTML, 링크 기�
 node backend/scripts/blog-selfreview.mjs <slug>  # 자체 피드백→반영: 초안을 자기비평해 실제 결함만 외과 수정 후 재조립
 node backend/scripts/blog-verify.mjs <slug>      # claude -p 최종 검증(CLAUDE.md 철칙)
 node backend/scripts/blog-publish.mjs <slug>     # 티스토리 발행 (--draft 로 비공개)
-# 네이버 블로그는 매일 18:00 대기열(blog-publish-naver.mjs --queue)이 하루 3편씩 순차 발행 — 수동은 blog-publish-naver.mjs <slug>
+node backend/scripts/blog-publish-naver.mjs <slug>  # meta.platform 이 "naver" 인 글만(한 글은 한 플랫폼에만). 평소엔 blog-queue.mjs 가 순차 발행
 ```
 
 `blog-selfreview` 는 집필 직후 결함(원본 왜곡·축 혼동·reasons=null 신호 창작·묵은 피크 현재형·트렌드

@@ -108,7 +108,12 @@ const main = async () => {
 
   const posted = existsSync(postedPath)
     ? JSON.parse(await readFile(postedPath, 'utf8')) : {};
-  const postedIds = new Set(Object.keys(posted));
+  // 티스토리·네이버에 서로 다른 글을 올리므로 양쪽 발행 기록 + 이미 써둔 초안(아직 대기열에 있는 글)까지
+  // 모두 제외한다 — 안 그러면 같은 날 두 번째 편이 같은 트렌드를 다시 고른다.
+  const naverPath = join(dirname(postedPath), 'posted-naver.json');
+  const naver = existsSync(naverPath) ? JSON.parse(await readFile(naverPath, 'utf8')) : {};
+  const postedIds = new Set([...Object.keys(posted), ...Object.keys(naver)]);
+  for (const t of trends) if (existsSync(join(dirname(postedPath), `${t.id}.json`))) postedIds.add(t.id);
 
   const candidates = [];
   const rejected = [];

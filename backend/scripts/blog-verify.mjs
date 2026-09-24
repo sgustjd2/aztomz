@@ -16,7 +16,8 @@
 
    비용: 호출당 대략 $0.2~0.4 (CLAUDE.md 컨텍스트 포함).
    ============================================================ */
-import { readFile } from 'node:fs/promises';
+import { readFile, writeFile } from 'node:fs/promises';
+import { createHash } from 'node:crypto';
 import { existsSync } from 'node:fs';
 import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
@@ -132,3 +133,7 @@ if (blockers.length) {
   process.exit(WARN_ONLY ? 0 : 1);
 }
 console.log(`✓ 검증 통과${warns.length ? ` (경고 ${warns.length}건)` : ''}`);
+
+// 자동 발행 대기열(blog-queue.mjs)은 '검증 통과 이후 본문이 안 바뀐 글'만 올린다 — 통과 당시 본문 해시를 남긴다.
+meta.verified = { at: new Date().toISOString(), html: createHash('sha1').update(html).digest('hex') };
+await writeFile(metaPath, JSON.stringify(meta, null, 2) + '\n', 'utf8');
