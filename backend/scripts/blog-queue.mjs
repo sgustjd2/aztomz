@@ -93,6 +93,9 @@ async function main() {
     plan[p] = only && only !== p ? [] : all.slice(0, Math.max(0, max - doneToday));
     console.log(`${p}: 후보 ${all.length}편 · 오늘 이미 ${doneToday}편 · 이번 ${plan[p].length}편${has('list') && all.length ? '\n  ' + all.join('\n  ') : ''}`);
   }
+  // 애드포스트 미디어 등록은 네이버 공개 글 50편쯤에 신청하기로 함(2026-09-24 사용자 결정) — 그 시점을 로그로 알린다.
+  const naverPublic = Object.values(posted.naver).filter((v) => !v.private).length;
+  if (naverPublic >= 50) console.log(`📢 네이버 공개 글 ${naverPublic}편(이 스크립트 발행분) — 애드포스트 미디어 등록 신청 시점`);
   if (has('list')) return;
 
   // 12:00 회차가 아직 도는 중에 18:00 회차가 뜨면 같은 글을 두 번 올릴 수 있다 — 살아있는 실행이 있으면 양보.

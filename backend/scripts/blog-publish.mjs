@@ -83,98 +83,235 @@ export async function makeCover(ctx, spec, id) {
      (예전 좌측정렬 카드는 목록에서 제목이 양쪽 다 잘렸다) */
   const SAFE = 620;
 
-  /* ── 디자인 (2026-09-24 개편) ─────────────────────────────────────
-     예전 카드(방사형 발광·사선 스트라이프·흐린 이모지 워터마크·기울어진 칩·도장)는 요소가 많아
-     작은 썸네일에서 제목이 묻혔다. 참고한 썸네일 원칙(wikidocs @aitechnote 18696):
-     짙은 단색 배경 + 강조색 하나 · 캡션→굵은 제목→보조 순의 위계 · 150px 로 줄어도 읽히는 대비.
-     → 분야별 **짙은 단색**(그라데이션 없음) 위에 흰색 초대형 제목, 아이콘 하나, 나머지는 최소.
-       흰 글씨 대비를 위해 분야색은 모두 채도 있는 어두운 톤으로 골랐다. */
-  const THEME = {
-    '디저트': ['#b8325a', '🍰'], '맛집': ['#b84a17', '🍜'], '카페·핫플': ['#6e4428', '☕'],
-    '신조어': ['#5236c4', '💬'], '노래·챌린지': ['#a82c6f', '🎵'], '음악': ['#a82c6f', '🎧'],
-    '패션': ['#0a6e63', '👟'], '미용': ['#0a6e63', '💄'], 'AI 프롬프트': ['#1f45c9', '🤖'],
-    'AI 동향': ['#1f45c9', '🤖'], 'AI': ['#1f45c9', '🤖'], '개발': ['#23304a', '💻'],
-    'n8n': ['#23304a', '⚙️'], '여행': ['#0f6a8a', '🧳'], '가전': ['#23304a', '🔌'],
-    '반려동물': ['#7a5418', '🐾'], '건강': ['#17704f', '🌿'], '생활': ['#17704f', '🏠'],
-    '과일': ['#c2410c', '🍊'], '해산물': ['#0f6a8a', '🦐'], '김장': ['#b84a17', '🥬'], '음식': ['#b84a17', '🍲'], '간식': ['#b84a17', '🍠'], '축제': ['#5236c4', '🎆'],
-    '추석': ['#7a5418', '🌕'], '명절': ['#7a5418', '🌕'], '뷰티': ['#0a6e63', '💄'],
-    'error': ['#9f1d35', '⚠️'],
-  };
+  /* ── 디자인 (2026-09-24 2차 개편 — 분야별 템플릿) ─────────────────────────
+     1차(단색+흰 제목)는 깔끔했지만 "허접하다"는 피드백. 사용자가 준 핀터레스트 레퍼런스 48장
+     (블로그 썸네일·카드뉴스 보드 3개)에서 반복되는 패턴을 분야별 템플릿으로 나눴다:
+       pop       원색 바탕 + 두툼한 디스플레이 제목 + 노란 강조 박스 + 큰 3D 아이콘  (음식·행사·여행)
+       chat      말풍선 채팅 UI — "이게 무슨 뜻이야?" 질문형                          (신조어·밈)
+       editorial 검정 바탕 + 형광 라임 강조 + 격자선                                  (AI·개발)
+       clean     흰 바탕 + 형광펜 밑줄 강조 + 좌측 강조선                             (생활·가이드 기본)
+       magazine  짙은 컬러 바탕 + 큰 흰 제목 + 영문 워터마크                          (패션·뷰티·음악)
+       score     흰 바탕 + 큰 숫자 타일 + 판정 말풍선                                 (광고일까 진짜일까)
+     아이콘은 Microsoft Fluent Emoji 3D(MIT 라이선스) — 남의 사진이 아니라 저작권 문제 없음.
+     못 받아오면 시스템 이모지로 대체된다. 모든 요소는 가운데 정사각형(SAFE) 안 — 목록 썸네일 크롭 대비. */
+  const FLUENT = (name) => `https://cdn.jsdelivr.net/gh/microsoft/fluentui-emoji@main/assets/${encodeURIComponent(name)}/3D/${name.toLowerCase().replace(/ /g, '_')}_3d.png`;
+  // [키워드, 템플릿, 색, Fluent 이름, 대체 이모지, 영문 워터마크]
+  const THEMES = [
+    ['디저트', 'pop', '#ff5d8f', 'Shortcake', '🍰'], ['카페', 'pop', '#7b4a2d', 'Hot beverage', '☕'],
+    ['맛집', 'pop', '#ff6b1a', 'Steaming bowl', '🍜'], ['간식', 'pop', '#f77f00', 'Roasted sweet potato', '🍠'],
+    ['과일', 'pop', '#ff8c00', 'Tangerine', '🍊'], ['해산물', 'pop', '#1f7ae0', 'Shrimp', '🦐'],
+    ['김장', 'pop', '#2f8f46', 'Leafy green', '🥬'], ['음식', 'pop', '#ff6b1a', 'Pot of food', '🍲'],
+    ['축제', 'pop', '#5b3cc4', 'Fireworks', '🎆'], ['추석', 'pop', '#6b4a2f', 'Full moon', '🌕'],
+    ['명절', 'pop', '#6b4a2f', 'Full moon', '🌕'], ['여행', 'pop', '#1f7ae0', 'Luggage', '🧳'],
+    ['신조어', 'chat', '#6c4cf0', 'Speech balloon', '💬'], ['밈', 'chat', '#6c4cf0', 'Speech balloon', '💬'],
+    ['n8n', 'editorial', '#c6f432', 'Gear', '⚙️'], ['개발', 'editorial', '#c6f432', 'Laptop', '💻'],
+    ['AI', 'editorial', '#c6f432', 'Robot', '🤖'], ['LLM', 'editorial', '#c6f432', 'Robot', '🤖'],
+    ['패션', 'magazine', '#0f5c55', 'Running shoe', '👟', 'FASHION'],
+    ['미용', 'magazine', '#a8325e', 'Lipstick', '💄', 'BEAUTY'], ['뷰티', 'magazine', '#a8325e', 'Lipstick', '💄', 'BEAUTY'],
+    ['노래', 'magazine', '#3b1f7a', 'Musical notes', '🎵', 'MUSIC'], ['챌린지', 'magazine', '#3b1f7a', 'Musical notes', '🎵', 'MUSIC'],
+    ['음악', 'magazine', '#3b1f7a', 'Headphone', '🎧', 'MUSIC'],
+    ['가전', 'clean', '#2563eb', 'Electric plug', '🔌'], ['반려', 'clean', '#d97706', 'Paw prints', '🐾'],
+    ['건강', 'clean', '#16a34a', 'Herb', '🌿'], ['생활', 'clean', '#16a34a', 'House', '🏠'],
+    ['error', 'clean', '#dc2626', 'Warning', '⚠️'],
+  ];
   // 티스토리 카테고리명(AZTOMZ)이 분야 자리에 새면 의미가 없다 — 그땐 분야 태그를 숨긴다.
   const rawCat = String(spec.cat || '').trim();
   const cat = /^(AZTOMZ|한끗)?$/i.test(rawCat) ? '' : rawCat;
-  const key = Object.keys(THEME).find((k) => cat.includes(k));
-  const [bg, emoji] = THEME[key] || ['#1d2433', '📌'];
+  const hasScore = Number.isFinite(spec.ad) || Number.isFinite(spec.trust);
+  const hit = THEMES.find(([k]) => cat.includes(k));
+  const [, tplBase, color, fluent, emoji, mark] = hit || ['', 'clean', '#2563eb', 'Pushpin', '📌'];
+  const tpl = hasScore ? 'score' : tplBase;
 
-  // 제목: "핵심, 나머지"면 핵심을 크게·나머지를 작게. 쉼표가 없으면 통째로.
+  // 제목: "핵심, 보조" → 핵심을 강조, 보조는 작게. 쉼표가 없으면 통째로 핵심.
   const t = String(spec.title || '').trim();
   const ci = t.indexOf(',');
   let head = t, rest = '';
   if (ci > 1 && ci <= 22) { head = t.slice(0, ci).trim(); rest = t.slice(ci + 1).trim(); }
-  // 120px 썸네일에서도 제목이 읽히도록 짧을수록 과감하게 키운다(3줄 넘치면 아래 측정-축소가 받는다).
-  const headSize = head.length <= 6 ? 124 : head.length <= 9 ? 108 : head.length <= 12 ? 94
-                 : head.length <= 16 ? 80 : head.length <= 22 ? 66 : head.length <= 30 ? 56 : 48;
-  const restSize = rest.length <= 16 ? 38 : 34;
-
-  const hasScore = Number.isFinite(spec.ad) || Number.isFinite(spec.trust);
-  // 라벨(한끗 판단 한 줄)은 점수 카드에서만 쓴다 — 정보글에선 제목과 겹치는 군더더기였다.
-  // 제목에 이미 들어있는 라벨도 뺀다(예: "핑크뮬리 명소" 제목 + "핑크뮬리 명소" 라벨).
+  const hs = (base) => Math.round(base * (head.length <= 6 ? 1.18 : head.length <= 9 ? 1 : head.length <= 13 ? 0.84 : head.length <= 18 ? 0.7 : 0.6));
   const label = hasScore && spec.label && !t.replace(/\s/g, '').includes(String(spec.label).replace(/\s/g, '')) ? spec.label : '';
-  const score = (name, n) => !Number.isFinite(n) ? '' : `
-    <div class="sc"><div class="sc-n">${n}</div><div class="sc-l">${esc(name)}</div></div>`;
+  const icon = (size) => `<img class="ic" style="width:${size}px;height:${size}px" src="${FLUENT(fluent)}"
+    onerror="this.outerHTML='<span class=&quot;ic&quot; style=&quot;font-size:${Math.round(size * 0.8)}px;line-height:1&quot;>${emoji}</span>'">`;
+  const tag = cat ? esc(cat) : '';
+  const date = esc(spec.analyzedAt || '');
+
+  const BODY = {
+    pop: () => `
+      <style>
+        body{background:${color}}
+        .dots{position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.16) 3px,transparent 3.5px);background-size:34px 34px}
+        .blob{position:absolute;width:330px;height:330px;border-radius:50%;background:rgba(255,255,255,.2);right:-40px;bottom:-40px}
+        .tag{background:#fff;color:${color};font-weight:800;font-size:25px;padding:8px 16px;border-radius:8px;align-self:flex-start}
+        .head{font-family:"Black Han Sans",Pretendard,sans-serif;font-weight:400;font-size:${hs(92)}px;line-height:1.12;color:#fff;margin-top:26px;
+              text-shadow:0 5px 0 rgba(0,0,0,.18)}
+        .head span{background:#ffe14d;color:#1a1a1a;padding:0 12px;box-decoration-break:clone;-webkit-box-decoration-break:clone;text-shadow:none}
+        .rest{margin-top:20px;font-size:34px;font-weight:700;color:#fff;max-width:420px}
+        .ic{position:absolute;right:26px;bottom:34px}
+        .foot{color:rgba(255,255,255,.85)}
+      </style>
+      <div class="dots"></div>
+      <div class="safe">
+        <div class="blob"></div>
+        <div class="main">
+        ${tag ? `<div class="tag">${tag}</div>` : ''}
+        <div class="head"><span>${esc(head)}</span></div>
+        ${rest ? `<div class="rest">${esc(rest)}</div>` : ''}
+        </div>
+        ${icon(230)}
+        <div class="foot"><b>한끗</b> ${date}</div>
+      </div>`,
+
+    chat: () => `
+      <style>
+        body{background:#eceafe;background-image:radial-gradient(rgba(108,76,240,.14) 3px,transparent 3.5px);background-size:34px 34px}
+        .b{max-width:470px;border-radius:26px;padding:22px 28px;font-weight:800;box-shadow:0 8px 24px rgba(40,20,120,.12)}
+        .q{background:#fff;color:#2b2b3a;font-size:32px;border-bottom-left-radius:6px;align-self:flex-start;margin-top:26px}
+        .a{background:${color};color:#fff;font-size:${hs(64)}px;line-height:1.18;border-bottom-right-radius:6px;align-self:flex-end;margin-top:18px}
+        .a small{display:block;font-size:26px;font-weight:600;opacity:.9;margin-top:10px}
+        .dotsb{background:#fff;border-radius:20px;padding:12px 20px;align-self:flex-start;font-size:26px;color:#9a97b8;letter-spacing:4px}
+        .tag{color:${color};font-weight:800;font-size:26px}
+        .ic{position:absolute;left:44px;bottom:78px;transform:rotate(-8deg)}
+        .foot{color:#5f5c7a}
+      </style>
+      <div class="safe">
+        <div class="main">
+        ${tag ? `<div class="tag">${tag}</div>` : ''}
+        <div class="dotsb">•••</div>
+        <div class="b q">이게 무슨 뜻이야?</div>
+        <div class="b a">${esc(head)}${rest ? `<small>${esc(rest)}</small>` : ''}</div>
+        </div>
+        ${icon(150)}
+        <div class="foot"><b>한끗</b> ${date}</div>
+      </div>`,
+
+    editorial: () => `
+      <style>
+        body{background:#101216}
+        .grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);background-size:42px 42px}
+        .tag{color:${color};font-weight:800;font-size:25px;letter-spacing:.04em}
+        .head{font-size:${hs(84)}px;line-height:1.14;font-weight:900;color:#fff;letter-spacing:-.04em;margin-top:22px}
+        .head span{background:${color};color:#101216;padding:0 10px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+        .rest{margin-top:22px;font-size:32px;font-weight:600;color:rgba(255,255,255,.78);max-width:430px}
+        .ic{position:absolute;right:30px;bottom:40px}
+        .foot{color:rgba(255,255,255,.6)}
+      </style>
+      <div class="grid"></div>
+      <div class="safe">
+        <div class="main">
+        ${tag ? `<div class="tag">${tag}</div>` : ''}
+        <div class="head"><span>${esc(head)}</span></div>
+        ${rest ? `<div class="rest">${esc(rest)}</div>` : ''}
+        </div>
+        ${icon(200)}
+        <div class="foot"><b style="color:#fff">한끗</b> ${date}</div>
+      </div>`,
+
+    clean: () => `
+      <style>
+        body{background:#fff;background-image:radial-gradient(${color}26 3px,transparent 3.5px);background-size:34px 34px}
+        .safe{background:#fff}
+        .side{position:absolute;top:0;bottom:0;left:285px;width:14px;background:${color}}
+        .tag{color:${color};font-weight:800;font-size:26px}
+        .head{font-size:${hs(82)}px;line-height:1.16;font-weight:900;color:#15171c;letter-spacing:-.04em;margin-top:20px}
+        .head span{background:linear-gradient(transparent 58%, ${color}40 58%)}
+        .rest{margin-top:20px;font-size:32px;font-weight:600;color:#4b5060;max-width:420px}
+        .circle{position:absolute;right:24px;bottom:30px;width:250px;height:250px;border-radius:50%;background:${color}1f}
+        .ic{position:absolute;right:44px;bottom:50px}
+        .foot{color:#6b7080}
+      </style>
+      <div class="side"></div>
+      <div class="safe">
+        <div class="main">
+        ${tag ? `<div class="tag">${tag}</div>` : ''}
+        <div class="head"><span>${esc(head)}</span></div>
+        ${rest ? `<div class="rest">${esc(rest)}</div>` : ''}
+        </div>
+        <div class="circle"></div>
+        ${icon(210)}
+        <div class="foot"><b style="color:#15171c">한끗</b> ${date}</div>
+      </div>`,
+
+    magazine: () => `
+      <style>
+        body{background:${color}}
+        .mark{position:absolute;right:24px;top:18px;font-size:112px;font-weight:900;letter-spacing:-.04em;color:transparent;
+              -webkit-text-stroke:2px rgba(255,255,255,.18);writing-mode:vertical-rl;line-height:1}
+        .tag{color:#fff;font-weight:700;font-size:25px;opacity:.85;border-bottom:3px solid #fff;padding-bottom:6px;align-self:flex-start}
+        .head{font-size:${hs(96)}px;line-height:1.08;font-weight:900;color:#fff;letter-spacing:-.045em;margin-top:28px}
+        .rest{margin-top:22px;font-size:32px;font-weight:600;color:rgba(255,255,255,.88);max-width:430px}
+        .ic{position:absolute;right:30px;bottom:44px;filter:drop-shadow(0 14px 24px rgba(0,0,0,.35))}
+        .foot{color:rgba(255,255,255,.75)}
+      </style>
+      ${mark ? `<div class="mark">${mark}</div>` : ''}
+      <div class="safe">
+        <div class="main">
+        ${tag ? `<div class="tag">${tag}</div>` : ''}
+        <div class="head">${esc(head)}</div>
+        ${rest ? `<div class="rest">${esc(rest)}</div>` : ''}
+        </div>
+        ${icon(210)}
+        <div class="foot"><b style="color:#fff">한끗</b> ${date}</div>
+      </div>`,
+
+    score: () => `
+      <style>
+        body{background:#f3f4f8;background-image:linear-gradient(rgba(20,20,40,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(20,20,40,.05) 1px,transparent 1px);background-size:42px 42px}
+        .tag{color:#e5484d;font-weight:800;font-size:25px}
+        .head{font-size:${hs(74)}px;line-height:1.15;font-weight:900;color:#15171c;letter-spacing:-.04em;margin-top:16px;max-width:430px}
+        .tiles{display:flex;gap:16px;margin-top:26px}
+        .tile{background:#fff;border-radius:18px;padding:16px 26px;box-shadow:0 6px 20px rgba(20,20,40,.08)}
+        .tile b{display:block;font-size:66px;font-weight:900;line-height:1}
+        .tile span{font-size:21px;font-weight:700;color:#6b7080}
+        .say{margin-top:22px;background:#15171c;color:#fff;font-size:26px;font-weight:700;padding:12px 20px;border-radius:16px;
+             border-bottom-left-radius:4px;align-self:flex-start}
+        .ic{position:absolute;right:34px;top:48px}
+        .foot{color:#6b7080}
+      </style>
+      <div class="safe">
+        <div class="main">
+        <div class="tag">광고일까 진짜일까${tag ? ` · ${tag}` : ''}</div>
+        <div class="head">${esc(head)}</div>
+        <div class="tiles">
+          ${Number.isFinite(spec.ad) ? `<div class="tile"><b style="color:#e5484d">${spec.ad}</b><span>광고 의심도</span></div>` : ''}
+          ${Number.isFinite(spec.trust) ? `<div class="tile"><b style="color:#12a150">${spec.trust}</b><span>후기 신뢰도</span></div>` : ''}
+        </div>
+        ${label ? `<div class="say">“${esc(label)}”</div>` : ''}
+        </div>
+        ${icon(150)}
+        <div class="foot"><b style="color:#15171c">한끗</b> 추정치 · ${date}</div>
+      </div>`,
+  };
 
   const html = `<!doctype html><meta charset="utf-8">
 <style>
   @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css');
+  @import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=block');
   *{margin:0;box-sizing:border-box}
-  body{width:1200px;height:630px;overflow:hidden;background:${bg};color:#fff;
-       font-family:Pretendard,"Malgun Gothic","맑은 고딕",system-ui,sans-serif;
-       display:flex;align-items:center;justify-content:center;word-break:keep-all}
-  /* 목록 썸네일(가운데 정사각형 크롭)에 실제로 보이는 영역 — 여기 밖에는 아무것도 두지 않는다 */
-  .safe{width:${SAFE}px;height:630px;padding:58px 34px 50px;display:flex;flex-direction:column;
-        align-items:center;justify-content:center;text-align:center}
-  /* 넘칠 때 flex 가 제목을 찌그러뜨려 잘리지 않게(차지 카드 실측) — 대신 아래에서 통째로 축소한다 */
+  body{width:1200px;height:630px;overflow:hidden;position:relative;color:#15171c;
+       font-family:Pretendard,"Malgun Gothic","맑은 고딕",system-ui,sans-serif;word-break:keep-all}
+  /* 목록 썸네일(가운데 정사각형 크롭)에 실제로 보이는 영역 — 핵심 요소는 전부 이 안 */
+  .safe{position:absolute;left:${(1200 - SAFE) / 2}px;top:0;width:${SAFE}px;height:630px;padding:54px 44px 44px;
+        display:flex;flex-direction:column;align-items:flex-start;overflow:visible}
   .safe > *{flex-shrink:0}
-  .icon{margin-top:auto;font-size:88px;line-height:1;font-family:"Segoe UI Emoji","Apple Color Emoji",sans-serif}
-  .tag{margin-top:22px;font-size:26px;font-weight:700;letter-spacing:.02em;color:rgba(255,255,255,.78)}
-  .head{margin-top:16px;font-size:${headSize}px;line-height:1.14;font-weight:800;letter-spacing:-.035em;
-        display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
-  .rule{width:64px;height:6px;background:#fff;margin-top:26px}
-  .rest{margin-top:22px;font-size:${restSize}px;line-height:1.3;font-weight:600;color:rgba(255,255,255,.88);
-        display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-  .label{margin-top:18px;font-size:30px;font-weight:700;color:rgba(255,255,255,.88)}
-  .scores{display:flex;margin-top:28px;background:rgba(0,0,0,.22);border-radius:10px}
-  .sc{padding:12px 34px;display:flex;flex-direction:column;align-items:center}
-  .sc + .sc{border-left:2px solid rgba(255,255,255,.18)}
-  .sc-n{font-size:64px;font-weight:800;line-height:1.05}
-  .sc-l{font-size:21px;font-weight:600;color:rgba(255,255,255,.75);margin-top:4px}
-  .foot{margin-top:auto;padding-top:24px;display:flex;align-items:baseline;gap:12px;
-        font-size:21px;color:rgba(255,255,255,.66);font-weight:600}
-  .brand{font-size:28px;font-weight:800;color:#fff;letter-spacing:-.02em}
+  .main{display:flex;flex-direction:column;align-items:flex-start;width:100%;position:relative;z-index:1;transform-origin:left top}
+  .foot{margin-top:auto;font-size:21px;font-weight:600;display:flex;gap:10px;align-items:baseline;position:relative;z-index:1}
+  .foot b{font-size:27px;font-weight:900;letter-spacing:-.02em}
+  .ic{object-fit:contain;z-index:0}
+  .head,.rest,.tag,.b{position:relative;z-index:1}
 </style>
-<div class="safe">
-  <div class="icon">${emoji}</div>
-  ${cat ? `<div class="tag">${esc(cat)}</div>` : ''}
-  <div class="head">${esc(head)}</div>
-  ${rest ? `<div class="rule"></div><div class="rest">${esc(rest)}</div>` : ''}
-  ${label ? `<div class="label">“${esc(label)}”</div>` : ''}
-  ${hasScore ? `<div class="scores">${score('광고 의심도', spec.ad)}${score('후기 신뢰도', spec.trust)}</div>` : ''}
-  <div class="foot"><span class="brand">한끗</span>
-    <span>${hasScore ? '추정치 · ' : ''}${esc(spec.analyzedAt || '')}</span></div>
-</div>`;
+${BODY[tpl]()}`;
 
   const p = await ctx.newPage();
   await p.setViewportSize({ width: 1200, height: 630 });
-  await p.setContent(html, { waitUntil: 'load' });
-  // 웹폰트(Pretendard)가 다 받아진 뒤에 찍는다 — 안 기다리면 맑은 고딕으로 찍힌다(오프라인이면 그대로 폴백).
+  await p.setContent(html, { waitUntil: 'networkidle' }).catch(() => {});
+  // 웹폰트·아이콘이 다 받아진 뒤에 찍는다(오프라인이면 기본 글꼴·시스템 이모지로 폴백).
   await p.evaluate(() => document.fonts.ready);
-  // 요소 조합(3줄 제목+보조+점수)에 따라 넘칠 수 있다 — 넘치면 통째로 축소. 측정-축소가 결정적이다.
+  // 제목 블록(.main)이 아래 푸터를 침범하면 블록만 통째로 줄인다(아이콘은 절대배치라 그대로).
   await p.evaluate(() => {
-    // 가운데 정렬이라 위로 넘친 부분은 scrollHeight 에 안 잡힌다 — 자식들의 실제 위·아래 끝으로 잰다.
-    const el = document.querySelector('.safe');
-    const rs = [...el.children].map((c) => c.getBoundingClientRect());
-    const h = Math.max(...rs.map((r) => r.bottom)) - Math.min(...rs.map((r) => r.top)) + 90;
-    if (h > 630) el.style.transform = `scale(${630 / h})`;
+    const main = document.querySelector('.main');
+    const foot = document.querySelector('.foot');
+    const m = main.getBoundingClientRect();
+    const room = foot.getBoundingClientRect().top - 18 - m.top;
+    if (m.height > room) main.style.transform = `scale(${room / m.height})`;
   });
   const file = join(outDir, `${id}.cover.png`);
   await p.screenshot({ path: file });
