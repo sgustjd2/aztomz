@@ -70,6 +70,41 @@ async function pick(scope, name, candidates, { timeout = 8000, required = true }
   throw new Error(`요소를 못 찾음: ${name}\n  시도한 후보: ${candidates.filter((c) => typeof c === 'string').join(' | ')}`);
 }
 
+/* 커버용 실사진 찾기 — 상업적 사용이 허용된 무료 라이선스만(2026-09-24 사용자 요청: 3D 아이콘이 AI 티가 난다).
+   1순위 Pexels(무료 API 키 .env PEXELS_API_KEY, 출처표기 불필요) → 없거나 결과 0이면 Openverse CC0/PDM(키 불필요).
+   검색어: coverSpec.photo(영문, blog-seo 가 넣음) > 한국어 제목 핵심(Pexels ko-KR) > 분야 기본 영문.
+   같은 분야 글끼리 같은 사진이 반복되지 않게 상위 5장 중 글 id 해시로 고른다.
+   ponytail: 자동 선택이라 엉뚱한 사진이 걸릴 수 있다 — 문제되면 coverSpec.photo 를 구체적으로 적거나 noPhoto:true. */
+const PHOTO_EN = {
+  디저트: 'dessert', 카페: 'cafe drink', 맛집: 'korean food', 간식: 'snack', 과일: 'fruit', 해산물: 'seafood',
+  김장: 'kimchi', 음식: 'korean food', 축제: 'festival lights', 추석: 'korean traditional', 명절: 'korean traditional',
+  여행: 'travel landscape', 신조어: 'friends smartphone', 밈: 'friends smartphone', n8n: 'computer workspace',
+  개발: 'coding laptop', AI: 'technology computer', LLM: 'technology computer', 패션: 'fashion street',
+  미용: 'cosmetics', 뷰티: 'cosmetics', 노래: 'concert stage', 챌린지: 'dance', 음악: 'music headphones',
+  가전: 'home appliance', 반려: 'pet dog', 건강: 'healthy food', 생활: 'cozy home',
+};
+export async function findCoverPhoto(spec, head, id, key) {
+  try { process.loadEnvFile(join(repoRoot, '.env')); } catch { /* .env 없으면 셸 환경변수만 */ }
+  const seed = [...String(id)].reduce((a, c) => a + c.charCodeAt(0), 0);
+  const pick = (arr) => arr[seed % Math.min(arr.length, 5)];
+  const en = spec.photo || PHOTO_EN[key] || 'lifestyle';
+  const get = (u, h) => fetch(u, { headers: h }).then((r) => (r.ok ? r.json() : null)).catch(() => null);
+  if (process.env.PEXELS_API_KEY) {
+    const tries = spec.photo ? [[spec.photo, 'en-US']] : [[head, 'ko-KR'], [en, 'en-US']];
+    for (const [q, loc] of tries) {
+      if (!q) continue;
+      const j = await get(`https://api.pexels.com/v1/search?query=${encodeURIComponent(q)}&orientation=landscape&per_page=8&locale=${loc}`,
+        { Authorization: process.env.PEXELS_API_KEY });
+      if (j?.photos?.length) { const x = pick(j.photos); return { url: x.src.large2x, credit: `Pexels · ${x.photographer} · ${x.url}` }; }
+    }
+  }
+  const j = await get(`https://api.openverse.org/v1/images/?q=${encodeURIComponent(en)}&license=cc0,pdm&category=photograph&aspect_ratio=wide&size=large&mature=false&page_size=10`);
+  // Openverse 는 실사진이 아닌 옛 그림·스캔이 섞인다("shrimp" → 동양화 실측) — 실사진 위주 출처만.
+  const ok = (j?.results || []).filter((x) => x.width >= 1000 && /^(stocksnap|wikimedia)$/.test(x.source));
+  if (ok.length) { const x = pick(ok); return { url: x.url, credit: `Openverse ${x.license} · ${x.source} · ${x.foreign_landing_url}` }; }
+  return null;
+}
+
 /* 대표 이미지 카드를 직접 만든다(1200x630).
    남의 사진(언론사·나무위키·인스타)을 내려받아 재업로드하지 않는다 — 출처를 밝혀도 저작권 침해다.
    우리 점수 데이터로 만든 카드는 저작권 문제가 없고, 브랜드도 일관되고, images 가 없는 신조어 글도 커버를 갖는다. */
@@ -133,6 +168,35 @@ export async function makeCover(ctx, spec, id) {
     onerror="this.outerHTML='<span class=&quot;ic&quot; style=&quot;font-size:${Math.round(size * 0.8)}px;line-height:1&quot;>${emoji}</span>'">`;
   const tag = cat ? esc(cat) : '';
   const date = esc(spec.analyzedAt || '');
+
+  // 실사진 카드: 위 사진(가로 전체) + 아래 분야색 단색 패널에 흰 제목. 그라데이션 오버레이 없음.
+  // 흰 글씨 대비를 위해 밝은 라임(editorial)은 검정 패널로 바꾼다.
+  const photo = spec.noPhoto ? null : await findCoverPhoto(spec, head, id, hit?.[0]);
+  if (photo) console.log(`  · 커버 사진: ${photo.credit}`);
+  const panel = tplBase === 'editorial' ? '#101216' : hit ? color : '#1d2433';
+  const PHOTO = () => `
+      <style>
+        body{background:${panel}}
+        .ph{position:absolute;left:0;top:0;width:1200px;height:360px;object-fit:cover}
+        .safe{padding:390px 40px 30px}
+        .tagp{position:absolute;left:40px;top:30px;background:#fff;color:#15171c;font-weight:800;font-size:24px;padding:7px 14px;border-radius:8px}
+        .head{font-size:${hs(76)}px;line-height:1.12;font-weight:900;color:#fff;letter-spacing:-.04em}
+        .rest{margin-top:12px;font-size:28px;font-weight:600;color:rgba(255,255,255,.88)}
+        .sc{position:absolute;left:40px;top:258px;display:flex;gap:10px}
+        .sc div{background:#fff;border-radius:12px;padding:8px 16px;font-size:18px;font-weight:700;color:#6b7080}
+        .sc b{font-size:40px;font-weight:900;margin-right:6px}
+        .foot{color:rgba(255,255,255,.8)}
+      </style>
+      <img class="ph" src="${photo.url}">
+      <div class="safe">
+        ${tag ? `<div class="tagp">${tag}</div>` : ''}
+        ${hasScore ? `<div class="sc">${Number.isFinite(spec.ad) ? `<div><b style="color:#e5484d">${spec.ad}</b>광고 의심도</div>` : ''}${Number.isFinite(spec.trust) ? `<div><b style="color:#12a150">${spec.trust}</b>후기 신뢰도</div>` : ''}</div>` : ''}
+        <div class="main">
+          <div class="head">${esc(head)}</div>
+          ${rest ? `<div class="rest">${esc(rest)}</div>` : ''}
+        </div>
+        <div class="foot"><b style="color:#fff">한끗</b> ${hasScore ? '추정치 · ' : ''}${date}</div>
+      </div>`;
 
   const BODY = {
     pop: () => `
@@ -298,7 +362,7 @@ export async function makeCover(ctx, spec, id) {
   .ic{object-fit:contain;z-index:0}
   .head,.rest,.tag,.b{position:relative;z-index:1}
 </style>
-${BODY[tpl]()}`;
+${photo ? PHOTO() : BODY[tpl]()}`;
 
   const p = await ctx.newPage();
   await p.setViewportSize({ width: 1200, height: 630 });
