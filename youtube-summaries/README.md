@@ -3,10 +3,20 @@
 채널 [AI Engineer](https://www.youtube.com/@aiDotEngineer) 의 새 영상을 Gemini 로 자동 요약한 모음입니다.
 생성: `backend/scripts/youtube-summarize.mjs` (GitHub Actions `youtube-summary` 크론).
 
-총 **186개**.
+총 **196개**.
 
 | 발행일 | 제목 |
 |---|---|
+| 2026-09-23 | [From VLM/VLA's to Embodied Agents — Armen Aghajanyan, Perceptron AI](2026-09-23-ZZcE0HeO-Hc.md) |
+| 2026-09-23 | [You’re Not Thinking Big Enough: Rebuilding Food Systems with AI Agents — Cody Menefee, Firecrawl](2026-09-23-ztlXKfPCT3Q.md) |
+| 2026-09-23 | [From Scratch to SOTA: Training a 3B State-Space Vision Model — Krishna Prasad Srinivasan, Sarvam](2026-09-23-T72nqdC92PM.md) |
+| 2026-09-23 | [Building the Document Context Layer for AI Agents — Jerry Liu, LlamaIndex](2026-09-23-RQi7x-navxU.md) |
+| 2026-09-23 | [Modality Misalignment and Originality Attribution in Short-Form Video — Aditya Gautam, Meta](2026-09-23-jNE8No-wvok.md) |
+| 2026-09-23 | [AI Engineer Paris 2026 Main Stage: Google DeepMind, ElevenLabs, Hugging Face & Stripe \| Day 2](2026-09-23-g0vqT_wZtXA.md) |
+| 2026-09-23 | [Skill issue: stop deploying vision language models, use them with Skills — Merve Noyan, Hugging Face](2026-09-23-dKcTBQzR7jI.md) |
+| 2026-09-23 | [AI Engineer Paris 2026 Opening Keynotes: Mistral, Langfuse & Sizzy \| Day 1](2026-09-23-CGq9KRSb9Kc.md) |
+| 2026-09-23 | [The Best Models Still Reason Like Toddlers — Andrew Dai, Elorian](2026-09-23-A_I8mw8yfns.md) |
+| 2026-09-23 | [From Ingestion to Agents: How AI Teams Build on Document Intelligence — Adit Abraham, Reducto](2026-09-23-0I07YAuF8xA.md) |
 | 2026-09-22 | [I Gave an AI a Body — Cyrus Clarke, MIT Media Lab](2026-09-22-jgWY66RaSrQ.md) |
 | 2026-09-21 | [The Dark Arts of Skill Engineering — Paul Bakaus, Renaissance Geek (Impeccable)](2026-09-21-SQMCtZX3trg.md) |
 | 2026-09-19 | [Routing LLM Inference in Production: From Engine Signals to Policy — Qianru Lao & Lu Zhang, OpenAI](2026-09-19-sOB3HSiG8vo.md) |
