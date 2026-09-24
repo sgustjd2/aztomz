@@ -66,7 +66,7 @@ export function toParts(html) {
 const CATEGORY_RULES = [
   [/n8n|개발|dev-/, '개발·자동화'],
   [/AI|LLM/, 'AI 동향'],
-  [/맛집|디저트|간식|제철 음식/, '맛집·디저트'],
+  [/맛집|디저트|간식|제철 음식|과일|해산물/, '맛집·디저트'],
   [/카페|핫플/, '카페·핫플'],
   [/신조어|밈/, '신조어·밈'],
   [/노래|음악|챌린지/, '노래·음악'],
@@ -287,6 +287,7 @@ function selftest() {
     [{ category: '음악', coverSpec: { cat: '음악' } }, '노래·음악'],
     [{ coverSpec: { cat: '가을 하객룩' } }, '패션·뷰티'],
     [{ coverSpec: { cat: '추석' } }, '생활정보'],
+    [{ coverSpec: { cat: '과일' } }, '맛집·디저트'],
     [{ id: 'dev-digest-2026-09-24', category: 'AI 동향', coverSpec: { cat: 'AI' } }, '개발·자동화'],
   ];
   const badCat = cats.filter(([m, want]) => naverCategory(m) !== want);
