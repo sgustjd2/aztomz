@@ -6,6 +6,7 @@
   "scripts": {
     "postinstall": "playwright install chromium",
     "login": "node scripts/blog-publish.mjs --login",
+    "login:naver": "node scripts/blog-publish-naver.mjs --login",
     "categories": "node scripts/blog-publish.mjs x --categories",
     "category:new": "node scripts/category-new.mjs"
   },

@@ -41,6 +41,7 @@
 | `blog-selfreview.mjs <slug>` | **집필 직후 자체 피드백→반영** — `claude -p`가 초안을 냉정히 자기비평하고 실제 결함만 **외과적 find/replace**로 고쳐 넣은 뒤 재조립(전면 재작성 금지·드리프트 방지). blog-verify 앞 단계. `--dry`(제안만)·`--selftest` |
 | `blog-verify.mjs <id>` | **발행 전 최종 검증** — `claude -p`가 원본 왜곡·단정·지어낸 사실·저작권을 본다. 반려 시 exit 1. `--warn` |
 | `blog-publish.mjs <id>` | Playwright로 티스토리 자동 발행. `--login`(1회) · `--keepalive`(세션 유지, 스케줄러 하루 1회) · `--dry` · `--draft` · `--probe` · `--categories` · `--cover` |
+| `blog-publish-naver.mjs <id>` | **네이버 블로그 발행**(SmartEditor ONE) — 티스토리와 같은 빌드 결과를 클립보드 붙여넣기로 주입, 커버·그림은 [사진] 업로드, 유튜브 iframe은 링크로 변환. `--login`(1회, 전용 프로필 `backend/.naver-profile`) · `--dry` · `--draft`(임시저장) · `--probe` · `--selftest`. 카테고리는 `naverCategory()`가 티스토리 카테고리+커버 분야로 자동 매핑(네이버 쪽: 한끗 트렌드/맛집·디저트·카페·핫플·신조어·밈·노래·음악·패션·뷰티 · AI·IT/AI 동향·개발·자동화 · 생활정보). **`--queue`** = 티스토리 발행분을 최신순으로 하루 `--max`(3)편·글 사이 `--gap`(40-90)분 랜덤 대기·`--max-age`(30)일 넘은 글 스킵·실패 시 그날 중단(`--list`로 대기열만). 기록 `posted-naver.json`. 로그인·캡차는 사람 |
 | `blog-extension-server.mjs` | **크롬 확장(`backend/tistory-extension/`) 로컬 브릿지** — `backend/out/blog/`를 읽어 확장에 초안(제목·카테고리·태그·본문)을 내려주는 HTTP 서버. `--port=`(기본 8137) · `--selftest`. 발행·로그인·캡차·커버 이미지 첨부는 여전히 사람이 직접 한다 — 확장은 "채우기"만, `blog-publish.mjs`(Playwright 완전자동)와는 별개의 반자동 경로다 |
 | `blog-feedback.mjs` | 노래 추천 피드백 → 선곡 기준 교훈 적립(다음 글에 주입). `--list` · `--good=` · `--bad=` · `--lesson=` |
 | `keyword-demand.mjs "<주제>" …` | **검색수요 게이트**(결정적·LLM 없음) — 네이버 검색광고 키워드도구 API 로 주제의 월간 검색수(PC+모바일) 조회, `--min`(기본 100) 미달이면 exit 1 로 그 주제 차단. `--json`·`--selftest`. 자격증명 `.env`: `NAVER_AD_API_KEY`·`NAVER_AD_SECRET`·`NAVER_AD_CUSTOMER`(searchad.naver.com 무료 발급). 발행 재개 시 주제 선정 게이트로 씀(seo-playbook §1) |
@@ -77,6 +78,7 @@ node backend/scripts/check-source.mjs backend/data/trends.json --only=<id>  # 5)
 | 매일 21:15 | 광고/진짜 일일 재확인 | Hermes(로컬, no-agent) | `recheck_ad.py` → `recheck-ad.mjs` |
 | 매일 21:30 | **한끗 자동 수집·게시** (목=신조어 주간 사전) | Hermes(로컬, 에이전트) | hangeut-run → `auto-build.mjs`(`.pipeline/curate.json`) |
 | 매일 21:50 | 수집 재시도 게이트(21:30이 503/429로 죽었을 때만 1회 재실행) | Hermes(로컬, no-agent) | `hangeut_retry_gate.py` |
+| 매일 18:00 | **네이버 블로그 순차 발행**(티스토리 발행분 하루 3편, 글 사이 40~90분 랜덤 대기) | Windows 스케줄작업 `AZ2MZ_Naver_Queue`(StartWhenAvailable) | `tools/naver-queue.vbs`(wscript 숨김) → `blog-publish-naver.mjs --queue` · 로그 `backend/out/blog/naver-queue.log` |
 | 수 20:00 | **개발/IT 소스 fetch**(경량 VLM·개발 다이제스트 후보만 갱신 — 집필·발행·git 없음) | Hermes(로컬, no-agent) | `dev_it_fetch.py`(잡 `441ad100e8b3`) → `vlm-watch-fetch.mjs`·`dev-digest-fetch.mjs` |
 
 - ⚠️ **Hermes 크론은 그 시각에 PC+게이트웨이가 켜져 있어야 실행됨**(`tools/start-hermes.bat`).

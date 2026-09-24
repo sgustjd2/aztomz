@@ -192,7 +192,7 @@ EOF
 - 오늘 고른 키워드·카테고리·최종 제목
 - `backend/out/blog/<slug>.html` 경로
 - 검증 결과(blocker/warn 개수, 있었던 재작성 라운드)
-- **"발행하려면: `node backend/scripts/blog-publish.mjs <slug>` (로그인 필요)"** 안내를 마지막 줄에
+- **"발행하려면: `node backend/scripts/blog-publish.mjs <slug>` (로그인 필요 — 네이버는 발행 후 18:00 대기열이 자동으로 따라 올림)"** 안내를 마지막 줄에
 - 실패/보류했다면 사유와, 다음엔 어느 키워드가 시도될지
 
 ## 실패 시

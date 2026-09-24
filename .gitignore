@@ -34,3 +34,5 @@ Thumbs.db
 backend/out/
 backend/.tistory-profile/
 backend/.tistory-state.json
+backend/.naver-profile/
+backend/.naver-state.json

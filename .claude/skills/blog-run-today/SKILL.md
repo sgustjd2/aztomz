@@ -66,6 +66,9 @@ node backend/scripts/blog-verify.mjs <slug>        # 최종 게이트. 반려 �
 ```bash
 node backend/scripts/blog-publish.mjs <slug>
 ```
+- **네이버 블로그는 여기서 바로 올리지 않는다.** 매일 18:00 스케줄작업 `AZ2MZ_Naver_Queue`
+  (`blog-publish-naver.mjs --queue`)가 티스토리 발행분을 하루 3편·40~90분 간격으로 순차 발행한다.
+  한꺼번에 몰아 올리면 네이버 스팸 판정 신호라 즉시 발행 금지. 대기열 확인: `--queue --list`.
 - 결과 URL 이 `/manage/posts/`(RSS permalink 미조회)면, 방금 순번의 실제 `/NNN` 글을 `curl` 로
   제목 대조해 찾아 `backend/out/blog/posted.json` 의 그 slug url 을 `/NNN` 으로 고친다.
 - 첫 발행이 로그인 벽/세션 만료로 실패하면 멈추고 사용자에게 알린다.
