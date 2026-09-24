@@ -83,129 +83,98 @@ export async function makeCover(ctx, spec, id) {
      (예전 좌측정렬 카드는 목록에서 제목이 양쪽 다 잘렸다) */
   const SAFE = 620;
 
-  /* ── 디자인 근거 (2026-08-16, 조회수 10만~900만 유튜브 썸네일 19장 관찰) ──
-     ① 투톤 스택 타이포: 핵심어 줄은 형광색·초대형, 나머지는 흰색·작게
-     ② 숫자가 화면 최대 강조 (BEST 10 · 9곳 · 30개)
-     ③ 기울어진 스티커/배너 라벨 ("신상카페" 빨간 박스, "2025 총결산" pill)
-     ④ 판정 문구는 도장/인용처럼 시각 오브젝트로
-     사진은 못 쓰니(저작권) 임팩트는 타이포 크기 대비 + 형광 마커 + 대형 이모지 워터마크로 만든다. */
-
-  // 분야마다 다른 포인트색 — 목록에서 글이 섞여 있을 때 한눈에 구분된다.
-  const ACCENT = {
-    '디저트': '#ff8ba7', '맛집': '#ff9f43', '카페·핫플': '#e8a25e',
-    '신조어': '#a78bfa', '노래·챌린지': '#f472b6', '패션': '#2dd4bf',
-    'AI 프롬프트': '#60a5fa', 'AI 동향': '#60a5fa', 'n8n': '#f0b429',
-    '음악': '#f472b6', 'error': '#fb7185',
+  /* ── 디자인 (2026-09-24 개편) ─────────────────────────────────────
+     예전 카드(방사형 발광·사선 스트라이프·흐린 이모지 워터마크·기울어진 칩·도장)는 요소가 많아
+     작은 썸네일에서 제목이 묻혔다. 참고한 썸네일 원칙(wikidocs @aitechnote 18696):
+     짙은 단색 배경 + 강조색 하나 · 캡션→굵은 제목→보조 순의 위계 · 150px 로 줄어도 읽히는 대비.
+     → 분야별 **짙은 단색**(그라데이션 없음) 위에 흰색 초대형 제목, 아이콘 하나, 나머지는 최소.
+       흰 글씨 대비를 위해 분야색은 모두 채도 있는 어두운 톤으로 골랐다. */
+  const THEME = {
+    '디저트': ['#b8325a', '🍰'], '맛집': ['#b84a17', '🍜'], '카페·핫플': ['#6e4428', '☕'],
+    '신조어': ['#5236c4', '💬'], '노래·챌린지': ['#a82c6f', '🎵'], '음악': ['#a82c6f', '🎧'],
+    '패션': ['#0a6e63', '👟'], '미용': ['#0a6e63', '💄'], 'AI 프롬프트': ['#1f45c9', '🤖'],
+    'AI 동향': ['#1f45c9', '🤖'], 'AI': ['#1f45c9', '🤖'], '개발': ['#23304a', '💻'],
+    'n8n': ['#23304a', '⚙️'], '여행': ['#0f6a8a', '🧳'], '가전': ['#23304a', '🔌'],
+    '반려동물': ['#7a5418', '🐾'], '건강': ['#17704f', '🌿'], '생활': ['#17704f', '🏠'],
+    '과일': ['#c2410c', '🍊'], '해산물': ['#0f6a8a', '🦐'], '김장': ['#b84a17', '🥬'], '음식': ['#b84a17', '🍲'], '간식': ['#b84a17', '🍠'], '축제': ['#5236c4', '🎆'],
+    '추석': ['#7a5418', '🌕'], '명절': ['#7a5418', '🌕'], '뷰티': ['#0a6e63', '💄'],
+    'error': ['#9f1d35', '⚠️'],
   };
-  const EMOJI = {
-    '디저트': '🍰', '맛집': '🍜', '카페·핫플': '☕', '신조어': '💬',
-    '노래·챌린지': '🎵', '패션': '👟', 'AI 프롬프트': '🤖', 'AI 동향': '🤖',
-    'n8n': '⚙️', '음악': '🎧', 'error': '⚠️',
-  };
-  const cat = spec.cat || '한끗';
-  const accent = ACCENT[cat] || '#f0b429';
-  const emoji = EMOJI[cat] || '✨';
+  // 티스토리 카테고리명(AZTOMZ)이 분야 자리에 새면 의미가 없다 — 그땐 분야 태그를 숨긴다.
+  const rawCat = String(spec.cat || '').trim();
+  const cat = /^(AZTOMZ|한끗)?$/i.test(rawCat) ? '' : rawCat;
+  const key = Object.keys(THEME).find((k) => cat.includes(k));
+  const [bg, emoji] = THEME[key] || ['#1d2433', '📌'];
 
-  // 제목을 "핵심어, 나머지"로 쪼갠다 — 첫 절을 accent색 초대형으로 (유튜브 투톤 패턴).
-  // 쉼표가 없거나 첫 절이 너무 길면 통짜 한 덩어리로 둔다.
+  // 제목: "핵심, 나머지"면 핵심을 크게·나머지를 작게. 쉼표가 없으면 통째로.
   const t = String(spec.title || '').trim();
   const ci = t.indexOf(',');
   let head = t, rest = '';
-  if (ci > 1 && ci <= 20) { head = t.slice(0, ci).trim(); rest = t.slice(ci + 1).trim(); }
-  const headSize = head.length <= 8 ? 92 : head.length <= 12 ? 78 : head.length <= 16 ? 66
-                 : head.length <= 22 ? 56 : head.length <= 30 ? 48 : 42;
-  const restSize = rest.length <= 18 ? 40 : 36;
+  if (ci > 1 && ci <= 22) { head = t.slice(0, ci).trim(); rest = t.slice(ci + 1).trim(); }
+  // 120px 썸네일에서도 제목이 읽히도록 짧을수록 과감하게 키운다(3줄 넘치면 아래 측정-축소가 받는다).
+  const headSize = head.length <= 6 ? 124 : head.length <= 9 ? 108 : head.length <= 12 ? 94
+                 : head.length <= 16 ? 80 : head.length <= 22 ? 66 : head.length <= 30 ? 56 : 48;
+  const restSize = rest.length <= 16 ? 38 : 34;
 
   const hasScore = Number.isFinite(spec.ad) || Number.isFinite(spec.trust);
-
-  // 점수 — 숫자를 주인공으로: 초대형 + 형광펜 마커 (관찰 패턴 ②).
-  const score = (label, n, color) => !Number.isFinite(n) ? '' : `
-    <div class="sc">
-      <div class="sc-n" style="color:${color};background:linear-gradient(transparent 68%, ${color}2e 68%)">${n}</div>
-      <div class="sc-l">${esc(label)}</div>
-    </div>`;
+  // 라벨(한끗 판단 한 줄)은 점수 카드에서만 쓴다 — 정보글에선 제목과 겹치는 군더더기였다.
+  // 제목에 이미 들어있는 라벨도 뺀다(예: "핑크뮬리 명소" 제목 + "핑크뮬리 명소" 라벨).
+  const label = hasScore && spec.label && !t.replace(/\s/g, '').includes(String(spec.label).replace(/\s/g, '')) ? spec.label : '';
+  const score = (name, n) => !Number.isFinite(n) ? '' : `
+    <div class="sc"><div class="sc-n">${n}</div><div class="sc-l">${esc(name)}</div></div>`;
 
   const html = `<!doctype html><meta charset="utf-8">
 <style>
+  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css');
   *{margin:0;box-sizing:border-box}
-  body{width:1200px;height:630px;position:relative;overflow:hidden;
-       background:#0e0e12;color:#f7f4ee;
-       font-family:"Malgun Gothic","맑은 고딕",system-ui,sans-serif;
-       display:flex;align-items:center;justify-content:center}
-  /* 포인트색 발광 — 예전보다 세게, 위/아래 두 방향 */
-  .glow{position:absolute;width:1000px;height:1000px;border-radius:50%;
-        background:radial-gradient(circle, ${accent}40 0%, transparent 62%);
-        top:-420px;left:50%;transform:translateX(-50%)}
-  .glow2{position:absolute;width:800px;height:800px;border-radius:50%;
-         background:radial-gradient(circle, ${accent}20 0%, transparent 60%);
-         bottom:-380px;left:50%;transform:translateX(-50%)}
-  /* 좌우 잘리는 영역에 사선 스트라이프 — 목록에선 안 보여도 og:image 풀사이즈에서 풍성해 보인다 */
-  .stripes{position:absolute;top:0;bottom:0;width:150px;
-           background:repeating-linear-gradient(-55deg, ${accent}26 0 16px, transparent 16px 40px)}
-  /* 대형 이모지 워터마크 — 사진 없는 카드의 '이미지' 역할 (저작권 프리) */
-  .mark{position:absolute;font-size:330px;opacity:.10;top:50%;left:50%;
-        transform:translate(-50%,-54%) rotate(-8deg);
-        font-family:"Segoe UI Emoji","Malgun Gothic",sans-serif}
-  /* 맨 아래 accent 바 — 256px 크롭에서도 브랜드색이 살아남는 앵커 */
-  .bar{position:absolute;left:0;right:0;bottom:0;height:14px;background:${accent}}
-  /* 실제로 썸네일에 보이는 영역 — 여기 밖으로 중요한 걸 두지 않는다 */
-  .safe{position:relative;width:${SAFE}px;display:flex;flex-direction:column;
-        align-items:center;text-align:center}
-  /* 기울어진 스티커 칩 (관찰 패턴 ③) */
-  .chip{background:${accent};color:#131316;padding:10px 28px;border-radius:14px;
-        font-size:29px;font-weight:800;letter-spacing:-.01em;
-        transform:rotate(-2deg);box-shadow:0 6px 22px ${accent}55}
-  /* 투톤 스택 제목 (관찰 패턴 ①): 핵심어 accent 초대형 + 나머지 흰색 */
-  .head{font-size:${headSize}px;line-height:1.16;font-weight:800;letter-spacing:-.03em;
-        color:${accent};margin-top:28px;word-break:keep-all;
-        text-shadow:0 4px 26px ${accent}40;
+  body{width:1200px;height:630px;overflow:hidden;background:${bg};color:#fff;
+       font-family:Pretendard,"Malgun Gothic","맑은 고딕",system-ui,sans-serif;
+       display:flex;align-items:center;justify-content:center;word-break:keep-all}
+  /* 목록 썸네일(가운데 정사각형 크롭)에 실제로 보이는 영역 — 여기 밖에는 아무것도 두지 않는다 */
+  .safe{width:${SAFE}px;height:630px;padding:58px 34px 50px;display:flex;flex-direction:column;
+        align-items:center;justify-content:center;text-align:center}
+  /* 넘칠 때 flex 가 제목을 찌그러뜨려 잘리지 않게(차지 카드 실측) — 대신 아래에서 통째로 축소한다 */
+  .safe > *{flex-shrink:0}
+  .icon{margin-top:auto;font-size:88px;line-height:1;font-family:"Segoe UI Emoji","Apple Color Emoji",sans-serif}
+  .tag{margin-top:22px;font-size:26px;font-weight:700;letter-spacing:.02em;color:rgba(255,255,255,.78)}
+  .head{margin-top:16px;font-size:${headSize}px;line-height:1.14;font-weight:800;letter-spacing:-.035em;
+        display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+  .rule{width:64px;height:6px;background:#fff;margin-top:26px}
+  .rest{margin-top:22px;font-size:${restSize}px;line-height:1.3;font-weight:600;color:rgba(255,255,255,.88);
         display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-  .rest{font-size:${restSize}px;line-height:1.3;font-weight:800;letter-spacing:-.02em;
-        color:#f7f4ee;margin-top:14px;word-break:keep-all;
-        display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-  /* 한끗 판단 문구 — 도장 스타일 (관찰 패턴 ④) */
-  .stamp{margin-top:24px;padding:8px 22px;border:3px solid ${accent};border-radius:12px;
-         color:#f7f4ee;font-size:30px;font-weight:800;transform:rotate(-1.5deg);
-         display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden;
-         max-width:${SAFE}px}
-  .scores{display:flex;gap:56px;margin-top:26px}
-  .sc{display:flex;flex-direction:column;align-items:center}
-  .sc-n{font-size:84px;font-weight:800;line-height:1.05;padding:0 10px}
-  .sc-l{font-size:22px;color:#b5afa2;margin-top:6px;font-weight:700}
-  .foot{display:flex;align-items:center;gap:14px;margin-top:30px}
-  .brand{font-size:26px;font-weight:800;color:#131316;background:#f7f4ee;
-         padding:4px 16px;border-radius:8px;letter-spacing:.02em}
-  .note{font-size:20px;color:#8a8478;font-weight:600}
+  .label{margin-top:18px;font-size:30px;font-weight:700;color:rgba(255,255,255,.88)}
+  .scores{display:flex;margin-top:28px;background:rgba(0,0,0,.22);border-radius:10px}
+  .sc{padding:12px 34px;display:flex;flex-direction:column;align-items:center}
+  .sc + .sc{border-left:2px solid rgba(255,255,255,.18)}
+  .sc-n{font-size:64px;font-weight:800;line-height:1.05}
+  .sc-l{font-size:21px;font-weight:600;color:rgba(255,255,255,.75);margin-top:4px}
+  .foot{margin-top:auto;padding-top:24px;display:flex;align-items:baseline;gap:12px;
+        font-size:21px;color:rgba(255,255,255,.66);font-weight:600}
+  .brand{font-size:28px;font-weight:800;color:#fff;letter-spacing:-.02em}
 </style>
-<div class="glow"></div><div class="glow2"></div>
-<div class="stripes" style="left:0"></div>
-<div class="stripes" style="right:0"></div>
-<div class="mark">${emoji}</div>
-<div class="bar"></div>
 <div class="safe">
-  <span class="chip">${emoji} ${esc(cat)}</span>
+  <div class="icon">${emoji}</div>
+  ${cat ? `<div class="tag">${esc(cat)}</div>` : ''}
   <div class="head">${esc(head)}</div>
-  ${rest ? `<div class="rest">${esc(rest)}</div>` : ''}
-  ${spec.label ? `<div class="stamp">"${esc(spec.label)}"</div>` : ''}
-  ${hasScore ? `<div class="scores">
-    ${score('광고 의심도', spec.ad, '#ff6b52')}
-    ${score('후기 신뢰도', spec.trust, '#34d399')}
-  </div>` : ''}
-  <div class="foot">
-    <span class="brand">한끗</span>
-    <span class="note">${hasScore ? '추정치 · 확정 판정 아님 · ' : ''}${esc(spec.analyzedAt || '')}</span>
-  </div>
+  ${rest ? `<div class="rule"></div><div class="rest">${esc(rest)}</div>` : ''}
+  ${label ? `<div class="label">“${esc(label)}”</div>` : ''}
+  ${hasScore ? `<div class="scores">${score('광고 의심도', spec.ad)}${score('후기 신뢰도', spec.trust)}</div>` : ''}
+  <div class="foot"><span class="brand">한끗</span>
+    <span>${hasScore ? '추정치 · ' : ''}${esc(spec.analyzedAt || '')}</span></div>
 </div>`;
 
   const p = await ctx.newPage();
   await p.setViewportSize({ width: 1200, height: 630 });
   await p.setContent(html, { waitUntil: 'load' });
-  // 요소 조합(2줄 제목+도장+점수)에 따라 630px를 넘칠 수 있다 — 넘치면 통째로 축소.
-  // 크기 티어를 아무리 다듬어도 조합 폭발은 못 막는다. 측정-축소가 결정적이다.
+  // 웹폰트(Pretendard)가 다 받아진 뒤에 찍는다 — 안 기다리면 맑은 고딕으로 찍힌다(오프라인이면 그대로 폴백).
+  await p.evaluate(() => document.fonts.ready);
+  // 요소 조합(3줄 제목+보조+점수)에 따라 넘칠 수 있다 — 넘치면 통째로 축소. 측정-축소가 결정적이다.
   await p.evaluate(() => {
+    // 가운데 정렬이라 위로 넘친 부분은 scrollHeight 에 안 잡힌다 — 자식들의 실제 위·아래 끝으로 잰다.
     const el = document.querySelector('.safe');
-    const h = el.getBoundingClientRect().height;
-    if (h > 592) el.style.transform = `scale(${592 / h})`;
+    const rs = [...el.children].map((c) => c.getBoundingClientRect());
+    const h = Math.max(...rs.map((r) => r.bottom)) - Math.min(...rs.map((r) => r.top)) + 90;
+    if (h > 630) el.style.transform = `scale(${630 / h})`;
   });
   const file = join(outDir, `${id}.cover.png`);
   await p.screenshot({ path: file });
