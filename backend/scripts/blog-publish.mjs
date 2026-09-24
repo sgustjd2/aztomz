@@ -179,7 +179,7 @@ export async function makeCover(ctx, spec, id) {
         body{background:${panel}}
         .ph{position:absolute;left:0;top:0;width:1200px;height:360px;object-fit:cover}
         .safe{padding:390px 40px 30px}
-        .tagp{position:absolute;left:40px;top:30px;background:#fff;color:#15171c;font-weight:800;font-size:24px;padding:7px 14px;border-radius:8px}
+        .tagp{position:absolute;left:40px;top:30px;background:#fff;color:#15171c;font-weight:800;font-size:24px;padding:7px 14px;border-radius:8px;box-shadow:0 2px 10px rgba(0,0,0,.25)}
         .head{font-size:${hs(76)}px;line-height:1.12;font-weight:900;color:#fff;letter-spacing:-.04em}
         .rest{margin-top:12px;font-size:28px;font-weight:600;color:rgba(255,255,255,.88)}
         .sc{position:absolute;left:40px;top:258px;display:flex;gap:10px}
