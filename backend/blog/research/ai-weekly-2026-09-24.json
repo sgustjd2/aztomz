@@ -1,0 +1,147 @@
+{
+  "keyword": "이번 주 AI 소식 (2026-09-18~09-24) — Opus 5.5·GPT-6 Sol/Luna·MiMo-V2.6·Colab·펜타곤 AI 과잉의존",
+  "categoryId": "ai-trend",
+  "slug": "ai-weekly-2026-09-24",
+  "searchedAt": "2026-09-24",
+  "origin": "Claude Code WebSearch/WebFetch",
+  "dedupNote": "직전 발행(ai-weekly-2026-09-07, ai-trends-sept-2026)은 Claude Fable 5.1·Gemini 3.8 Flash·GPT-6 Astra(9/1~9/4 출시)를 다뤘다. 이번 주(9/18~24) 소식은 전부 그 이후 새 발표 — Claude Opus 5.5(9/22), GPT-6 Sol/Luna(9/22), Xiaomi MiMo-V2.6-Pro(9/21~22), Colab의 Google AI 요금제 편입(9/22), 펜타곤 AI 과잉의존 조사(기사 9/17~20)로 중복 없음.",
+  "queries": [
+    "Anthropic Claude Opus 5.5 announcement",
+    "GPT-6 Sol Luna OpenAI launch September 2026",
+    "Xiaomi MiMo-V2.6-Pro release",
+    "Google Colab included AI Pro Ultra plan September 2026",
+    "Pentagon Department of Defense AI overreliance study September 2026",
+    "\"GPT-6 Sol\" OR \"GPT-6 Luna\" openai.com/index official announcement",
+    "washingtontimes AI targeting investigation Democrats (접근 실패, 403)"
+  ],
+  "sources": [
+    {
+      "title": "Introducing Claude Opus 5.5",
+      "url": "https://www.anthropic.com/claude-opus-5-5",
+      "host": "anthropic.com",
+      "tier": "official",
+      "publishedAt": "2026-09-22",
+      "body": "Anthropic 공식 발표(2026-09-22)에 따르면 Claude Opus 5.5는 1M 토큰당 입력 $4, 출력 $20, 캐시 읽기 $0.20, 캐시 쓰기 $5로 책정됐다. 이는 Opus 5 대비 입출력 가격 20% 인하, 캐시 읽기 60% 인하다. 일반적인 워크로드 기준 비용은 Opus 5 대비 40% 절감되고, 출력 속도는 30% 이상 빨라졌다. Terminal-Bench 4.0·FrontierCode v1.1·CursorBench 4.0·GDPval-AA v2.1·AutomationBench·OSWorld 2.0·Chartography 등 다수 벤치마크에서 Fable 5.1을 넘어섰다고 밝힌다. Amazon Web Services·Google Cloud·Microsoft Azure를 포함한 모든 플랫폼에서 즉시 이용 가능하며, Claude Sonnet 5.5와 Claude Haiku 5.5가 향후 몇 주 안에 비슷한 성능·효율·안전성 개선과 함께 뒤따를 예정이라고 명시했다.",
+      "facts": [
+        "Claude Opus 5.5 출시일 2026-09-22, 가격 1M 토큰당 입력 $4/출력 $20/캐시읽기 $0.20/캐시쓰기 $5(Anthropic 공식).",
+        "Opus 5 대비: 입출력 가격 20%↓, 캐시 읽기 가격 60%↓, 일반 워크로드 비용 40%↓, 출력 속도 30%+↑.",
+        "Sonnet 5.5·Haiku 5.5는 '향후 몇 주 안'(in the coming weeks) 출시 예정이라고 Anthropic이 명시."
+      ]
+    },
+    {
+      "title": "Anthropic releases Opus 5.5, its first model since CEO Amodei called for AI slowdown",
+      "url": "https://techcrunch.com/2026/09/22/anthropic-releases-opus-5-5-with-lower-prices-and-fable-level-performance/",
+      "host": "techcrunch.com",
+      "tier": "press",
+      "publishedAt": "2026-09-22",
+      "body": "TechCrunch(2026-09-22)는 Opus 5.5가 CEO 다리오 아모데이가 'AI 능력 발전 속도를 의도적으로 늦춰 안전 대응이 따라올 시간을 확보해야 한다'는 취지의 블로그 글을 쓴 이후 나온 첫 모델이라고 전한다. Opus 5.5는 7월 24일 Opus 5 출시 이후 약 2개월 만에 발표됐다. Anthropic은 이 모델이 '현재까지 테스트한 가장 강력한 성능'을 낸다고 밝혔으며, Fable보다 많은 벤치마크에서 앞서면서도 비용은 현저히 낮다고 전했다. Anthropic은 생물학·사이버보안 분야 오남용 위험에 대해 Fable와 동일한 수준의 안전 조치를 적용했다고 밝혔다.",
+      "facts": [
+        "Opus 5는 2026-07-24 출시, Opus 5.5는 그로부터 약 2개월 뒤인 2026-09-22 출시(TechCrunch).",
+        "다리오 아모데이가 최근 블로그에서 'AI 능력 발전 속도를 의도적으로 늦춰야 한다'는 취지로 밝혔고, Opus 5.5는 그 이후 첫 모델 출시라고 TechCrunch가 전함."
+      ]
+    },
+    {
+      "title": "Announcing GPT-6 Sol and GPT-6 Luna in the API, Codex and ChatGPT",
+      "url": "https://community.openai.com/t/announcing-gpt-6-sol-and-gpt-6-luna-in-the-api-codex-and-chatgpt/1399925",
+      "host": "community.openai.com",
+      "tier": "official",
+      "publishedAt": "2026-09-22",
+      "body": "OpenAI 공식 개발자 커뮤니티(Announcements, 2026-09-22)에 올라온 공지. GPT-6 Sol과 Luna가 GPT-5.6 대비 API 가격 50% 인하됐다고 명시하고, GPT-5.6 대비 성능이 개선됐다고 밝힌다(구체 수치는 이 공지 본문에 명시 안 됨 — 아래 androidheadlines.com 기사로 보완 확인). 이용 가능 범위는 ChatGPT Work·Codex(Plus·Pro·Business·Enterprise·Edu 사용자), API, 데스크톱 앱(Free·Go 사용자는 Luna만)이다.",
+      "facts": [
+        "OpenAI 공식 공지(2026-09-22): GPT-6 Sol·Luna의 API 가격이 GPT-5.6 대비 50% 인하됐다.",
+        "이용 범위: ChatGPT Work·Codex(Plus/Pro/Business/Enterprise/Edu), API, 데스크톱 앱(Free·Go 사용자는 Luna만 이용 가능)."
+      ]
+    },
+    {
+      "title": "OpenAI launches GPT-6 Sol and Luna, boasting lower cost and fewer mistakes",
+      "url": "https://techcrunch.com/2026/09/22/openai-launches-gpt-6-sol-and-luna/",
+      "host": "techcrunch.com",
+      "tier": "press",
+      "publishedAt": "2026-09-22",
+      "body": "TechCrunch(2026-09-22)에 따르면 Sol은 코딩을 비롯한 복잡한 작업에, Luna는 문서 요약·정보 추출·빠른 질의응답 같은 고빈도 사무 작업에 맞춰졌다. GPT-6 Sol은 전작 대비 약 절반의 실수만 발생시켜 'Astra급 신뢰도를 훨씬 낮은 비용으로' 달성했다고 전한다. 가격 인하는 캐싱·추론 효율 개선에서 비롯됐다고 설명한다.",
+      "facts": [
+        "GPT-6 Sol: 코딩 등 복잡한 작업용, 전작 대비 오류(실수) 약 50% 감소해 'Astra급 신뢰도'를 저비용으로 달성(TechCrunch, OpenAI 인용).",
+        "GPT-6 Luna: 문서 요약·정보 추출 등 고빈도 사무 작업용 저비용 모델."
+      ]
+    },
+    {
+      "title": "OpenAI Launches GPT-6 Sol and Luna: Double the Accuracy at Half the Price",
+      "url": "https://www.androidheadlines.com/2026/09/openai-gpt-6-sol-luna-half-price-launch.html",
+      "host": "androidheadlines.com",
+      "tier": "press",
+      "publishedAt": "2026-09-23",
+      "body": "AndroidHeadlines(2026-09-23)는 GPT-6 Sol 가격이 1M 토큰당 입력 $2/출력 $10(프로모션 가격 대비 50% 인하), Luna는 입력 $0.10/출력 $0.50이라고 전한다. 반복 입력에 대한 프롬프트 캐싱 할인은 최대 90%다. GPT-6 Sol은 GPT-5.6 Sol 대비 사실적 오류율이 절반으로 줄었고, 미승인 지시를 따르는 비율이 52%에서 11%로 감소했다고 전한다. 모델은 현재 ChatGPT Plus·Pro·Business·Enterprise·Edu 구독자에게 출시 중이다.",
+      "facts": [
+        "GPT-6 Sol 가격: 1M 토큰당 입력 $2/출력 $10. GPT-6 Luna: 입력 $0.10/출력 $0.50. 프롬프트 캐싱 최대 90% 할인(AndroidHeadlines).",
+        "GPT-6 Sol의 '미승인 지시를 따르는 비율'이 GPT-5.6 Sol 대비 52%→11%로 감소했다고 보도."
+      ]
+    },
+    {
+      "title": "OpenAI's GPT-6 Sol and GPT-6 Luna now available",
+      "url": "https://github.blog/changelog/2026-09-22-openais-gpt-6-sol-and-gpt-6-luna-now-available/",
+      "host": "github.blog",
+      "tier": "official",
+      "publishedAt": "2026-09-22",
+      "body": "GitHub 공식 체인지로그(2026-09-22)에 따르면 GPT-6 Sol·Luna가 GitHub Copilot에 통합됐다. GPT-6 Sol은 '대화형 및 에이전트 코딩을 위한 균형잡힌 모델'로 Pro+·Max·Business·Enterprise 플랜에서, GPT-6 Luna는 '더 작고 빠른 작업을 위한 경량·저비용 모델'로 Pro·Pro+·Max·Business·Enterprise 플랜에서 사용량 기반 과금으로 제공된다. VS Code·GitHub Copilot 앱·github.com의 모델 선택기에서 고를 수 있다.",
+      "facts": [
+        "GitHub 공식 체인지로그(2026-09-22): GPT-6 Sol은 Copilot Pro+/Max/Business/Enterprise, GPT-6 Luna는 Pro/Pro+/Max/Business/Enterprise에 사용량 기반 과금으로 추가됐다."
+      ]
+    },
+    {
+      "title": "Xiaomi MiMo-V2.6 Series: 3 New Models Officially Released",
+      "url": "https://mimo.mi.com/models/en-US/mimo-v2.6-pro",
+      "host": "mimo.mi.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "샤오미 MiMo 공식 모델 페이지에 따르면 MiMo-V2.6-Pro는 'trillion-parameter'급 모델로 컨텍스트 윈도우 1M 토큰, 최대 출력 128K 토큰을 지원한다. 입력은 텍스트·이미지·비디오·오디오를 받고 출력은 텍스트만 지원하는 네이티브 멀티모달(옴니모달) 모델이다. Artificial Analysis 종합 지능 지수에서 46.32점을 기록했다고 명시돼 있다. Token Plan 구독 시 mimo-v2.6-flash와 MiMo V2.5 전체 모델군에 접근할 수 있다고 안내한다. API 레이트리밋은 분당 100 요청(RPM)·1,000만 토큰(TPM)이다.",
+      "facts": [
+        "MiMo-V2.6-Pro: 컨텍스트 윈도우 1M 토큰, 최대 출력 128K 토큰, 입력 텍스트·이미지·비디오·오디오 지원(출력은 텍스트만).",
+        "Artificial Analysis 종합 지능 지수 46.32점(샤오미 공식 페이지 표기)."
+      ]
+    },
+    {
+      "title": "'Better than DeepSeek': Xiaomi's MiMo-V2.6-Pro debuts as the top open weights model in the world alongside cheaper V2.6-Flash",
+      "url": "https://venturebeat.com/technology/better-than-deepseek-xiaomis-mimo-v2-6-pro-debuts-as-the-top-open-weights-model-in-the-world-alongside-cheaper-v2-6-flash",
+      "host": "venturebeat.com",
+      "tier": "press",
+      "publishedAt": "2026-09-22",
+      "body": "VentureBeat(2026-09-22)에 따르면 MiMo-V2.6-Pro는 전체 1.02조(1.02 trillion) 파라미터 중 420억 개(42 billion, VentureBeat 원문상 전작 V2.5-Pro 기준)가 활성화되는 MoE 구조이며, 2026-09-21 출시됐다. MIT 라이선스로 가중치를 공개했다. Artificial Analysis Intelligence Index에서 46점을 받아 같은 날 공개된 Grok 4.7과 동점으로 세계 최고 오픈웨이트 모델 자리에 올랐다(Grok 4.6은 44점, Gemini 3.8 Flash는 41점, DeepSeek V4.1 Flash는 39점). MiMo-V2.6-Flash는 3,100억 파라미터 중 150억 개 활성화되는 소형 모델로 가격은 입력 $0.14/출력 $0.28(1M 토큰당)이며 동일한 1M 토큰 컨텍스트 윈도우를 유지한다. 7,000개 이상의 RL 작업 환경, 엔드투엔드 RL 프레임워크, 기술 보고서를 함께 공개했다.",
+      "facts": [
+        "MiMo-V2.6-Pro: 1.02조 파라미터 중 420억 개 활성화(MoE, 원문상 전작 V2.5-Pro 기준), 2026-09-21 출시, MIT 라이선스로 가중치 공개(VentureBeat).",
+        "Artificial Analysis Intelligence Index 46점으로 Grok 4.7(같은 날 공개, 46점)과 동점 1위, Grok 4.6(44점)·Gemini 3.8 Flash(41점)·DeepSeek V4.1 Flash(39점)보다 높음.",
+        "MiMo-V2.6-Flash: 3,100억 파라미터 중 150억 개 활성화, 가격 입력 $0.14/출력 $0.28(1M 토큰당), 7,000개+ RL 작업 환경과 기술 보고서 공개."
+      ]
+    },
+    {
+      "title": "Colab is now part of your Google AI plan",
+      "url": "https://developers.googleblog.com/colab-is-now-part-of-your-google-ai-plan/",
+      "host": "developers.googleblog.com",
+      "tier": "official",
+      "publishedAt": "2026-09-22",
+      "body": "Google 공식 개발자 블로그(2026-09-22)에 따르면 Colab이 Google AI 요금제에 통합돼 구독자는 더 빠른 가속기와 더 강력한 머신에 우선 접근할 수 있게 됐다. Google AI Ultra 구독자는 중단 없는 백그라운드 실행과 프리미엄 GPU 접근성을 얻어 브라우저 탭을 열어두지 않아도 긴 학습 작업을 완료할 수 있다. Google AI 요금제는 확장된 클라우드 저장공간, Gemini 앱 기능 강화, Workspace 연동, Google Antigravity·Google AI Studio 같은 개발자 도구 프리미엄 접근도 함께 포함한다고 밝힌다. 다만 등급별 정확한 컴퓨트 유닛(CCU) 수치는 이 블로그 글에 구체적으로 명시돼 있지 않다.",
+      "facts": [
+        "Colab의 Google AI 요금제 통합 발표일 2026-09-22(Google 공식 개발자 블로그).",
+        "Google AI Ultra 구독자에게 중단 없는 백그라운드 실행 + 프리미엄 GPU 접근이 제공된다고 명시. Pro/Ultra별 정확한 컴퓨트 유닛(CCU) 수치는 이 공식 글에 없음(다른 매체가 'Pro 200 CCU'라 전했으나 직접 확인 못함 — unknowns 참고)."
+      ]
+    },
+    {
+      "title": "Pentagon Investigators Say Overreliance on Palantir AI Tech Contributed to U.S. Strike That Killed 123 Iranian Children",
+      "url": "https://gizmodo.com/pentagon-investigators-say-overreliance-on-palantir-ai-tech-contributed-to-u-s-strike-that-killed-123-iranian-children-2000814477",
+      "host": "gizmodo.com",
+      "tier": "press",
+      "publishedAt": "2026-09-20",
+      "body": "Gizmodo(2026-09-20)는 Bloomberg 보도를 인용해, 2026년 2월 이란 전쟁 초기 미군이 미나브(Minab) 소재 샤자라 타이예베 초등학교를 타격해 총 150명 이상이 숨졌고 그중 최소 123명이 어린이였다고 전한다. 펜타곤 조사관들은 이 타격의 원인으로 (1) 팔란티어가 만든 'Maven' AI 시스템에 대한 과도한 의존, (2) 2017년 이전의 오래된 위성 이미지 사용, (3) 민간인 피해 완화 담당 인력이 약 90% 감소한 상태였던 점, (4) 2019년 분석가 보고서가 기본 군사정보 데이터베이스와 연결되지 않은 별도 시스템에 기록돼 있었던 점을 꼽았다. 이에 미 하원 민주당 의원 120명 이상이 국방장관 피트 헤그세스에게 Maven을 비롯한 AI 도구의 역할에 대해 질의하는 서한을 보냈다.",
+      "facts": [
+        "2026년 2월 이란 전쟁 중 미군이 미나브 소재 초등학교를 타격해 150명 이상 사망(최소 123명 어린이) — 펜타곤 조사관은 팔란티어 'Maven' AI 시스템 과잉의존을 원인 중 하나로 지목(Bloomberg 보도 인용, Gizmodo 2026-09-20).",
+        "미 하원 민주당 의원 120명 이상이 국방장관 피트 헤그세스에게 Maven 등 AI 도구의 역할을 질의하는 서한을 발송했다고 보도."
+      ]
+    }
+  ],
+  "conflicts": [],
+  "unknowns": [
+    "Google AI Pro/Ultra 등급별 정확한 Colab 컴퓨트 유닛(CCU) 수치 — 공식 블로그(developers.googleblog.com)에 구체 수치가 없어 확인 못함(타 매체가 'Pro 200 CCU'라 언급했으나 직접 열람으로 재확인 불가).",
+    "MiMo-V2.6-Pro의 정확한 출시일이 9/21(VentureBeat)인지 9/22(일부 매체)인지 자료마다 하루 차이 — 출처 표기는 VentureBeat 9/21 기준.",
+    "GPT-6 Sol/Luna의 컨텍스트 윈도우 수치 — OpenAI 공식 공지(community.openai.com)·TechCrunch 모두 명시 안 함.",
+    "washingtontimes.com의 '상원의원 워너·리드·쿤스 서한' 관련 기사는 403으로 직접 열람 못해 이번 리서치에 반영 안 함 — 하원 120명+ 서한(Gizmodo 확인)과는 별개 사안일 가능성."
+  ]
+}

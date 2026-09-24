@@ -1,0 +1,366 @@
+{
+  "collectedAt": "2026-09-23",
+  "days": 3,
+  "results": {
+    "geeknews": {
+      "source": "geeknews",
+      "fetchedOk": true,
+      "sourceUrl": "https://news.hada.io/rss/news",
+      "items": [
+        {
+          "title": "구독 취소를 시도하면 모든 사용자에게 상식 밖의 메시지를 보내는 Grammarly",
+          "url": "",
+          "date": "2026-09-23T10:37:01.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Python 25줄로 구현한 Jev",
+          "url": "",
+          "date": "2026-09-23T10:34:01.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "일반 텍스트 파일이 위기에 처해 있다",
+          "url": "",
+          "date": "2026-09-23T09:02:55.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "전자담배에 중독된 사람들이 끊기 위해 시도하는 새 방법: 일반 담배",
+          "url": "",
+          "date": "2026-09-23T07:33:07.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Unreal Agent",
+          "url": "",
+          "date": "2026-09-23T06:34:06.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "캘리포니아가 관개 수로 위 태양광 패널에서 배우고 있는 것",
+          "url": "",
+          "date": "2026-09-23T04:34:26.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Show GN: 무료 AI 문서작성 에디터(canvas) 만들었습니다.",
+          "url": "",
+          "date": "2026-09-23T04:26:52.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "WordPress: 인증 없이 악용 가능한 경로 순회 취약점, 조건 충족 시 원격 코드 실행으로 이어짐",
+          "url": "",
+          "date": "2026-09-23T02:42:55.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "SAML: 잘못된 설계의 프랙털",
+          "url": "",
+          "date": "2026-09-23T02:39:55.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Show GN: xsoft comply - 대화 원문 없이 AI 운영 기록을 AI기본법 근거자료로 남기는 SDK",
+          "url": "",
+          "date": "2026-09-23T01:38:17.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "Microsoft가 개발을 중단한 FoxPro, FoxDev Studio로 되살아나다",
+          "url": "",
+          "date": "2026-09-23T01:34:25.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Colab이 이제 Google AI 요금제에 포함됨",
+          "url": "",
+          "date": "2026-09-23T01:06:41.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "샤오미 MiMo-V2.6-Pro, 성능과 API 비용 분석",
+          "url": "",
+          "date": "2026-09-23T00:40:52.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Filament - 데이터베이스와 SaaS 데이터를 옮기고 동기화하는 오픈소스 도구",
+          "url": "",
+          "date": "2026-09-23T00:40:01.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Drop - gVisor를 지원하는 루트 권한 없는 Linux 샌드박스",
+          "url": "",
+          "date": "2026-09-23T00:37:52.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Fluree DB - 이력과 검증, 브랜치 병합을 갖춘 그래프 데이터베이스",
+          "url": "",
+          "date": "2026-09-23T00:30:02.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Husky - MLX보다 최대 4.5배 빠른 모델 특화 추론 엔진",
+          "url": "",
+          "date": "2026-09-23T00:22:34.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Java 클래스 파일은 왜 0xCAFEBABE로 시작할까?",
+          "url": "",
+          "date": "2026-09-23T00:10:47.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "인자를 둘러싼 논쟁",
+          "url": "",
+          "date": "2026-09-23T00:07:46.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "수학과 인공지능 자문그룹",
+          "url": "",
+          "date": "2026-09-22T23:33:03.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "“우리가 FBI를 해킹했다”, 해커 그룹이 FBI 전체 직원의 정보 탈취 주장",
+          "url": "",
+          "date": "2026-09-22T22:33:11.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Claude Opus 5.5, 추론 설정별 성능과 비용 비교",
+          "url": "",
+          "date": "2026-09-22T21:35:00.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "2027년 GrapheneOS가 사전 설치된 기기가 판매될 가능성이 높음",
+          "url": "",
+          "date": "2026-09-22T20:41:31.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "미 국방부 조사, AI 과잉 의존이 이란 학교 미사일 공격에 일조",
+          "url": "",
+          "date": "2026-09-22T20:38:31.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "OpenAI가 Jev의 밥그릇을 빼앗을까?",
+          "url": "",
+          "date": "2026-09-22T18:42:03.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "GPT-6 Sol과 Luna 출시",
+          "url": "",
+          "date": "2026-09-22T18:39:03.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "분당 광고 9회: 2026 FIFA 월드컵, ‘아름다운 경기의 대가’",
+          "url": "",
+          "date": "2026-09-22T17:52:07.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Meta의 Muse에 파일시스템을 요청했더니 6.8GB를 보내왔다",
+          "url": "",
+          "date": "2026-09-22T17:49:07.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Claude Opus 5.5 출시",
+          "url": "",
+          "date": "2026-09-22T17:43:06.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "브라우저에서 부팅하는 Apple Copland D11E4",
+          "url": "",
+          "date": "2026-09-22T16:38:39.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "iOS 설정에 사라지지 않는 애플 서비스 광고, 사용자 반발",
+          "url": "",
+          "date": "2026-09-22T16:35:38.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "rift - macOS용 타일링 창 관리자",
+          "url": "",
+          "date": "2026-09-22T16:01:01.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "OpenAI GPT–6 Astra, 2005년부터 풀리지 않던 Enigma 암호문 해독",
+          "url": "",
+          "date": "2026-09-22T15:32:56.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "Show GN: FBO 파티클 데모 - Three.js로 구현한 GPU 파티클 데모",
+          "url": "",
+          "date": "2026-09-22T15:09:18.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "AMD의 난수 생성기는 0을 생성하지 못하는가?",
+          "url": "",
+          "date": "2026-09-22T14:47:16.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "HERMES 무전기, 초장거리 음성 및 데이터 통신 지원",
+          "url": "",
+          "date": "2026-09-22T14:44:15.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Show GN: NCP External Access 비공식 TS·Go 인증 라이브러리를 만들었습니다",
+          "url": "",
+          "date": "2026-09-22T14:08:40.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Git 2.56과 3.0을 내다보며",
+          "url": "",
+          "date": "2026-09-22T13:34:07.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "AI에게는 지혜가 없고 당신에게도 없게 될 것이다",
+          "url": "",
+          "date": "2026-09-22T13:11:39.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "gzip도 언어 모델이 될 수 있을까?",
+          "url": "",
+          "date": "2026-09-22T11:33:13.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "나는 거부했지만 Apple은 허용했다",
+          "url": "",
+          "date": "2026-09-22T10:32:31.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "이름 있는 인자와 선택적 인자는 정말 멋지다",
+          "url": "",
+          "date": "2026-09-22T10:06:45.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "내 하드웨어에서 실행하는 최첨단 AI",
+          "url": "",
+          "date": "2026-09-22T09:35:29.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "Jev 사용 후기",
+          "url": "",
+          "date": "2026-09-22T08:17:17.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "CGNAT 환경에서 셀프 호스팅하기",
+          "url": "",
+          "date": "2026-09-22T08:02:25.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "800달러 이하 수입품에 대한 소액 면세(de minimis) 행정상 면제 중단",
+          "url": "",
+          "date": "2026-09-22T07:31:24.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Show GN: PocketPM - AI챗간 인수인계를 해주는 크롬확장",
+          "url": "",
+          "date": "2026-09-22T07:06:37.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "Show GN: RouteMind – 인간의 개입은 RAG 성능을 얼마나 바꿀까?",
+          "url": "",
+          "date": "2026-09-22T06:43:02.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "Show GN: ITLAND - 짧게 플레이하고 기록을 겨루는 웹 게임 플랫폼",
+          "url": "",
+          "date": "2026-09-22T05:01:50.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "AI 코딩으로 병목이 된 CI, Linear는 어떻게 개선했나",
+          "url": "",
+          "date": "2026-09-22T03:42:20.000Z",
+          "aiRelated": true
+        }
+      ],
+      "note": "GeekNews Atom 피드에서 최근 3일 항목. aiRelated=true 는 제목 키워드 기준(본문은 조사 단계에서 확인)."
+    },
+    "inpa": {
+      "source": "inpa",
+      "fetchedOk": true,
+      "sourceUrl": "https://inpa.tistory.com/rss",
+      "items": [],
+      "note": "최근 3일 이내 작성된 글만. 날짜 없는 항목은 제외. 0건이면 어제·오늘 새 글이 없다는 뜻."
+    },
+    "goddaehee": {
+      "source": "goddaehee",
+      "fetchedOk": true,
+      "sourceUrl": "https://goddaehee.tistory.com/rss",
+      "items": [
+        {
+          "title": "Aside 브라우저란? Aside 브라우저(AI 브라우저) 사용방법 - Claude Code와 Codex에 브라우저를 연결하는 방법, Aside 사용 가이드",
+          "url": "https://goddaehee.tistory.com/645",
+          "date": "2026-09-21T08:00:56.000Z"
+        }
+      ],
+      "note": "최근 3일 이내 작성된 글만. 날짜 없는 항목은 제외. 0건이면 어제·오늘 새 글이 없다는 뜻."
+    },
+    "github": {
+      "source": "github",
+      "fetchedOk": true,
+      "sourceUrl": "https://github.com/trending?since=weekly",
+      "items": [
+        {
+          "repo": "davila7/claude-code-templates",
+          "url": "https://github.com/davila7/claude-code-templates",
+          "description": "CLI tool for configuring and monitoring Claude Code",
+          "starsThisWeek": 577
+        },
+        {
+          "repo": "danny-avila/LibreChat",
+          "url": "https://github.com/danny-avila/LibreChat",
+          "description": "Enhanced ChatGPT Clone: Features Agents, MCP, Skills, DeepSeek, Anthropic, AWS, OpenAI, Responses API, Azure, Groq, o1, GPT-5, Mistral, OpenRouter, Vertex AI, Gemini, Artifacts, AI model switching, message search, Code Interpreter, langchain, DALL-E-3, OpenAPI Actions, Functions, Secure Multi-User Auth, Presets, open-source for self-hosting. Active",
+          "starsThisWeek": 1262
+        },
+        {
+          "repo": "cline/cline",
+          "url": "https://github.com/cline/cline",
+          "description": "Autonomous coding agent as an SDK, IDE extension, or CLI assistant.",
+          "starsThisWeek": 1188
+        },
+        {
+          "repo": "cloudflare/security-audit-skill",
+          "url": "https://github.com/cloudflare/security-audit-skill",
+          "description": "A coding-agent skill for multi-phase security audits with independently verified, machine-readable findings",
+          "starsThisWeek": 15381
+        }
+      ],
+      "note": "주간 급상승 레포 중 plugin/extension/skill/cli/mcp 등 도구 성격 키워드가 잡힌 것만. dev-trending 과 겹치는 항목은 조사 단계에서 제외한다."
+    }
+  }
+}
