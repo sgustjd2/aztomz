@@ -4,7 +4,7 @@
 
    blog-publish.mjs(티스토리)와 같은 빌드 결과 backend/out/blog/<id>.{html,json} 을
    네이버 블로그(SmartEditor ONE)에 올린다. 글은 meta.platform 으로 한 플랫폼에만 배정되고(티스토리와
-   겹치지 않음), 평소엔 blog-queue.mjs(매일 12:00·18:00 스케줄작업)가 이 스크립트를 한 편씩 부른다.
+   겹치지 않음), 평소엔 blog-queue.mjs(매일 12:00·15:00·18:00 스케줄작업)가 이 스크립트를 한 편씩 부른다.
 
    ── 로그인은 자동화하지 않는다 (티스토리와 같은 철칙) ──
    전용 프로필(backend/.naver-profile)에 사람이 1번 로그인("로그인 상태 유지" 체크)하고 재사용.
