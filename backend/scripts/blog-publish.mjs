@@ -105,6 +105,37 @@ export async function findCoverPhoto(spec, head, id, key) {
   return null;
 }
 
+/* 커버 분야 테마. 🚫 주황색 계열 금지(2026-09-26부터 — 사용자: "주황색 커버는 별로").
+   사진 커버는 흰 패널·파랑 제목이고, 사진을 못 찾아 템플릿으로 떨어질 때도 주황(색상각 15~45°)을 쓰지 않는다.
+   --selftest 가 isOrange 로 막는다. */
+// [키워드, 템플릿, 색, Fluent 이름, 대체 이모지, 영문 워터마크]
+const THEMES = [
+  ['디저트', 'pop', '#ff5d8f', 'Shortcake', '🍰'], ['카페', 'pop', '#7b4a2d', 'Hot beverage', '☕'],
+  ['맛집', 'pop', '#dc2626', 'Steaming bowl', '🍜'], ['간식', 'pop', '#7b4a2d', 'Roasted sweet potato', '🍠'],
+  ['과일', 'pop', '#16a34a', 'Tangerine', '🍊'], ['해산물', 'pop', '#1f7ae0', 'Shrimp', '🦐'],
+  ['김장', 'pop', '#2f8f46', 'Leafy green', '🥬'], ['음식', 'pop', '#dc2626', 'Pot of food', '🍲'],
+  ['축제', 'pop', '#5b3cc4', 'Fireworks', '🎆'], ['추석', 'pop', '#6b4a2f', 'Full moon', '🌕'],
+  ['명절', 'pop', '#6b4a2f', 'Full moon', '🌕'], ['여행', 'pop', '#1f7ae0', 'Luggage', '🧳'],
+  ['신조어', 'chat', '#6c4cf0', 'Speech balloon', '💬'], ['밈', 'chat', '#6c4cf0', 'Speech balloon', '💬'],
+  ['n8n', 'editorial', '#c6f432', 'Gear', '⚙️'], ['개발', 'editorial', '#c6f432', 'Laptop', '💻'],
+  ['AI', 'editorial', '#c6f432', 'Robot', '🤖'], ['LLM', 'editorial', '#c6f432', 'Robot', '🤖'],
+  ['패션', 'magazine', '#0f5c55', 'Running shoe', '👟', 'FASHION'],
+  ['미용', 'magazine', '#a8325e', 'Lipstick', '💄', 'BEAUTY'], ['뷰티', 'magazine', '#a8325e', 'Lipstick', '💄', 'BEAUTY'],
+  ['노래', 'magazine', '#3b1f7a', 'Musical notes', '🎵', 'MUSIC'], ['챌린지', 'magazine', '#3b1f7a', 'Musical notes', '🎵', 'MUSIC'],
+  ['음악', 'magazine', '#3b1f7a', 'Headphone', '🎧', 'MUSIC'],
+  ['가전', 'clean', '#2563eb', 'Electric plug', '🔌'], ['반려', 'clean', '#0e7490', 'Paw prints', '🐾'],
+  ['건강', 'clean', '#16a34a', 'Herb', '🌿'], ['생활', 'clean', '#16a34a', 'House', '🏠'],
+  ['error', 'clean', '#dc2626', 'Warning', '⚠️'],
+];
+// 주황 판정: HSL 색상각 15~45° · 채도 있음(갈색 #7b4a2d 처럼 어두운 건 통과)
+export const isOrange = (hex) => {
+  const [r, g, b] = [1, 3, 5].map((i) => parseInt(hex.slice(i, i + 2), 16) / 255);
+  const mx = Math.max(r, g, b), mn = Math.min(r, g, b), d = mx - mn, l = (mx + mn) / 2;
+  if (d < 0.15 || l < 0.35) return false;
+  const h = mx === r ? 60 * (((g - b) / d) % 6) : mx === g ? 60 * ((b - r) / d + 2) : 60 * ((r - g) / d + 4);
+  return h >= 15 && h <= 45;
+};
+
 /* 대표 이미지 카드를 직접 만든다(1200x630).
    남의 사진(언론사·나무위키·인스타)을 내려받아 재업로드하지 않는다 — 출처를 밝혀도 저작권 침해다.
    우리 점수 데이터로 만든 카드는 저작권 문제가 없고, 브랜드도 일관되고, images 가 없는 신조어 글도 커버를 갖는다. */
@@ -130,25 +161,6 @@ export async function makeCover(ctx, spec, id) {
      아이콘은 Microsoft Fluent Emoji 3D(MIT 라이선스) — 남의 사진이 아니라 저작권 문제 없음.
      못 받아오면 시스템 이모지로 대체된다. 모든 요소는 가운데 정사각형(SAFE) 안 — 목록 썸네일 크롭 대비. */
   const FLUENT = (name) => `https://cdn.jsdelivr.net/gh/microsoft/fluentui-emoji@main/assets/${encodeURIComponent(name)}/3D/${name.toLowerCase().replace(/ /g, '_')}_3d.png`;
-  // [키워드, 템플릿, 색, Fluent 이름, 대체 이모지, 영문 워터마크]
-  const THEMES = [
-    ['디저트', 'pop', '#ff5d8f', 'Shortcake', '🍰'], ['카페', 'pop', '#7b4a2d', 'Hot beverage', '☕'],
-    ['맛집', 'pop', '#ff6b1a', 'Steaming bowl', '🍜'], ['간식', 'pop', '#f77f00', 'Roasted sweet potato', '🍠'],
-    ['과일', 'pop', '#ff8c00', 'Tangerine', '🍊'], ['해산물', 'pop', '#1f7ae0', 'Shrimp', '🦐'],
-    ['김장', 'pop', '#2f8f46', 'Leafy green', '🥬'], ['음식', 'pop', '#ff6b1a', 'Pot of food', '🍲'],
-    ['축제', 'pop', '#5b3cc4', 'Fireworks', '🎆'], ['추석', 'pop', '#6b4a2f', 'Full moon', '🌕'],
-    ['명절', 'pop', '#6b4a2f', 'Full moon', '🌕'], ['여행', 'pop', '#1f7ae0', 'Luggage', '🧳'],
-    ['신조어', 'chat', '#6c4cf0', 'Speech balloon', '💬'], ['밈', 'chat', '#6c4cf0', 'Speech balloon', '💬'],
-    ['n8n', 'editorial', '#c6f432', 'Gear', '⚙️'], ['개발', 'editorial', '#c6f432', 'Laptop', '💻'],
-    ['AI', 'editorial', '#c6f432', 'Robot', '🤖'], ['LLM', 'editorial', '#c6f432', 'Robot', '🤖'],
-    ['패션', 'magazine', '#0f5c55', 'Running shoe', '👟', 'FASHION'],
-    ['미용', 'magazine', '#a8325e', 'Lipstick', '💄', 'BEAUTY'], ['뷰티', 'magazine', '#a8325e', 'Lipstick', '💄', 'BEAUTY'],
-    ['노래', 'magazine', '#3b1f7a', 'Musical notes', '🎵', 'MUSIC'], ['챌린지', 'magazine', '#3b1f7a', 'Musical notes', '🎵', 'MUSIC'],
-    ['음악', 'magazine', '#3b1f7a', 'Headphone', '🎧', 'MUSIC'],
-    ['가전', 'clean', '#2563eb', 'Electric plug', '🔌'], ['반려', 'clean', '#d97706', 'Paw prints', '🐾'],
-    ['건강', 'clean', '#16a34a', 'Herb', '🌿'], ['생활', 'clean', '#16a34a', 'House', '🏠'],
-    ['error', 'clean', '#dc2626', 'Warning', '⚠️'],
-  ];
   // 티스토리 카테고리명(AZTOMZ)이 분야 자리에 새면 의미가 없다 — 그땐 분야 태그를 숨긴다.
   const rawCat = String(spec.cat || '').trim();
   const cat = /^(AZTOMZ|한끗)?$/i.test(rawCat) ? '' : rawCat;
@@ -612,6 +624,11 @@ async function findPermalink(title) {
    findPermalink 의 존재 이유 자체("발행 직후 실제 퍼머링크를 RSS 로 확정한다")를 라이브로 검증한다.
    RSS 최신 글로 왕복 대조 + 없는 제목이 null 인지, 두 가지만 본다. */
 async function selftest() {
+  const orange = THEMES.filter(([, , c]) => isOrange(c)).map(([k, , c]) => `${k} ${c}`);
+  if (orange.length) { console.error(`✗ 주황 커버 색 금지 — ${orange.join(', ')}`); process.exitCode = 1; }
+  else console.log('✓ 커버 테마에 주황색 없음');
+  const probe = ['#ff6b1a', '#f77f00', '#ff8c00', '#d97706'].every(isOrange) && !['#dc2626', '#7b4a2d', '#1a56db', '#16a34a'].some(isOrange);
+  if (!probe) { console.error('✗ isOrange 판정 오류'); process.exitCode = 1; }
   const res = await fetch(`${BASE}/rss`, { signal: AbortSignal.timeout(10000) });
   if (!res.ok) { console.error(`✗ RSS 조회 실패: ${res.status}`); process.exitCode = 1; return; }
   const xml = await res.text();
