@@ -169,23 +169,22 @@ export async function makeCover(ctx, spec, id) {
   const tag = cat ? esc(cat) : '';
   const date = esc(spec.analyzedAt || '');
 
-  // 실사진 카드: 위 사진(가로 전체) + 아래 분야색 단색 패널에 흰 제목. 그라데이션 오버레이 없음.
-  // 흰 글씨 대비를 위해 밝은 라임(editorial)은 검정 패널로 바꾼다.
+  // 실사진 카드: 위 사진(가로 전체) + 아래 흰 패널에 파랑 제목. 그라데이션 오버레이 없음.
+  // (2026-09-25 사용자: 분야색 단색 패널(주황 등)이 별로 → 흰 배경·파랑 글씨로 통일)
   const photo = spec.noPhoto ? null : await findCoverPhoto(spec, head, id, hit?.[0]);
   if (photo) console.log(`  · 커버 사진: ${photo.credit}`);
-  const panel = tplBase === 'editorial' ? '#101216' : hit ? color : '#1d2433';
   const PHOTO = () => `
       <style>
-        body{background:${panel}}
+        body{background:#fff}
         .ph{position:absolute;left:0;top:0;width:1200px;height:360px;object-fit:cover}
         .safe{padding:390px 40px 30px}
         .tagp{position:absolute;left:40px;top:30px;background:#fff;color:#15171c;font-weight:800;font-size:24px;padding:7px 14px;border-radius:8px;box-shadow:0 2px 10px rgba(0,0,0,.25)}
-        .head{font-size:${hs(76)}px;line-height:1.12;font-weight:900;color:#fff;letter-spacing:-.04em}
-        .rest{margin-top:12px;font-size:28px;font-weight:600;color:rgba(255,255,255,.88)}
+        .head{font-size:${hs(76)}px;line-height:1.12;font-weight:900;color:#1a56db;letter-spacing:-.04em}
+        .rest{margin-top:12px;font-size:28px;font-weight:600;color:#4b5a78}
         .sc{position:absolute;left:40px;top:258px;display:flex;gap:10px}
         .sc div{background:#fff;border-radius:12px;padding:8px 16px;font-size:18px;font-weight:700;color:#6b7080}
         .sc b{font-size:40px;font-weight:900;margin-right:6px}
-        .foot{color:rgba(255,255,255,.8)}
+        .foot{color:#8a93a6}
       </style>
       <img class="ph" src="${photo.url}">
       <div class="safe">
@@ -195,7 +194,7 @@ export async function makeCover(ctx, spec, id) {
           <div class="head">${esc(head)}</div>
           ${rest ? `<div class="rest">${esc(rest)}</div>` : ''}
         </div>
-        <div class="foot"><b style="color:#fff">한끗</b> ${hasScore ? '추정치 · ' : ''}${date}</div>
+        <div class="foot"><b style="color:#1a56db">한끗</b> ${hasScore ? '추정치 · ' : ''}${date}</div>
       </div>`;
 
   const BODY = {
