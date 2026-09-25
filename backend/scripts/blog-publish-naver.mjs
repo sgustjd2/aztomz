@@ -194,9 +194,11 @@ async function publish() {
     if (has('probe')) { await probe(f); await ctx.close(); return; }
 
     // "작성 중인 글이 있습니다" 팝업 → 취소(새 글), 도움말 패널 → 닫기
+    // isVisible 은 timeout 을 무시하고 한 번만 본다 — 팝업이 조금 늦게 뜨면 놓쳐서 뒤 클릭이 전부 막혔다
+    // (2026-09-25 두 번째 글이 앞 글 자동저장 팝업에 막혀 대기열 중단). waitFor 로 실제로 기다린다.
     for (const s of ['.se-popup-button-cancel', '.se-help-panel-close-button']) {
       const b = f.locator(s).first();
-      if (await b.isVisible({ timeout: 1500 }).catch(() => false)) await b.click();
+      if (await b.waitFor({ state: 'visible', timeout: 4000 }).then(() => true, () => false)) await b.click();
     }
 
     // ── 제목
