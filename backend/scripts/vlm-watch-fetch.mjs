@@ -57,15 +57,17 @@ const DAY_MS = 86400000;
 
 /* 모델 id/이름에서 파라미터 크기(단위 B=10억)를 뽑는다.
    "Qwen2.5-VL-3B-Instruct" → 3, "SmolVLM-256M" → 0.256, "InternVL2-1B" → 1,
-   "0.5B" → 0.5, "1.5B" → 1.5. 못 찾으면 null(→ 제외). */
+   "0.5B" → 0.5, "1.5B" → 1.5. 못 찾으면 null(→ 제외).
+   조직명은 보지 않고, 크기는 구분자(- _ . 시작)로 끊긴 토큰만 인정한다 — 예전엔 id 전체를 훑어
+   "r0b0tlab/…" 의 "0b0" 를 0B 로 읽어 125B MoE 가 경량 목록에 들어갔다(2026-09-25). */
 export function parseParamsB(id) {
-  const s = String(id);
-  // 큰 단위(B) 우선 — "3B", "3.8B", "72B"
-  const b = s.match(/(\d+(?:\.\d+)?)\s*[Bb](?![a-zA-Z])/);
-  if (b) return parseFloat(b[1]);
+  const s = String(id).split('/').pop();
+  // 큰 단위(B) 우선 — "3B", "3.8B", "72B", Gemma 의 "E4B"(effective). MoE 의 "A3B"(active)는 총량이 아니라 안 봄
+  const b = s.match(/(?:^|[-_.])[Ee]?(\d+(?:\.\d+)?)[Bb](?![a-zA-Z0-9])/);
+  if (b) return parseFloat(b[1]) > 0 ? parseFloat(b[1]) : null;
   // 백만 단위(M) — "256M", "500M" → B 로 환산
-  const m = s.match(/(\d+(?:\.\d+)?)\s*[Mm](?![a-zA-Z])/);
-  if (m) return parseFloat(m[1]) / 1000;
+  const m = s.match(/(?:^|[-_.])(\d+(?:\.\d+)?)[Mm](?![a-zA-Z0-9])/);
+  if (m) return parseFloat(m[1]) > 0 ? parseFloat(m[1]) / 1000 : null;
   return null;
 }
 
@@ -153,6 +155,10 @@ function selftest() {
     ['org/Foo-1.5B-VL', 1.5],
     ['Qwen/Qwen3.8-27B', 27],
     ['vikhyatk/moondream2', null],   // 크기 토큰 없음 → null
+    ['r0b0tlab/Qwen3.8-Flash-Next-EXL3-2.50bpw', null],   // 조직명 "r0b0t" 의 0b 를 0B 로 읽던 버그
+    ['Qwen/Qwen3-VL-30B-A3B-Instruct', 30],               // MoE 활성 파라미터(A3B)가 아닌 총량
+    ['google/gemma-3-4b-it', 4],
+    ['google/gemma-4-E4B-it', 4],                         // E(effective) 접두는 인정, A(active)는 아님
   ];
   let ok = true;
   for (const [id, want] of cases) {
@@ -207,4 +213,7 @@ const main = async () => {
   console.log(`\n후보 목록: backend/blog/research/vlm-watch/hf-vlm-${mode}-${today}.json`);
 };
 
-main().catch((e) => { console.error('✗', e.message); process.exit(1); });
+// import(테스트·재사용)만으로 실제 fetch 가 돌지 않게 — 직접 실행할 때만
+if (process.argv[1] && import.meta.url === (await import('node:url')).pathToFileURL(process.argv[1]).href) {
+  main().catch((e) => { console.error('✗', e.message); process.exit(1); });
+}
