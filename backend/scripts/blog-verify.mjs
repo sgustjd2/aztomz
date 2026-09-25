@@ -73,7 +73,7 @@ CLAUDE.md 의 철칙을 알고 있을 테니 그대로 적용해라.
 ${meta.title}
 
 ## 본문(HTML)
-${html.slice(0, 12000)}
+${html.slice(0, 60000) /* 12000 이던 시절 긴 글(n8n 26KB)은 후반부가 검증을 안 거쳤다(2026-09-25) */}
 
 ${trend ? `## 원본 데이터 (trends.json)\n\`\`\`json\n${JSON.stringify(trend, null, 1).slice(0, 4000)}\n\`\`\`` : '## 원본 데이터\n(없음 — 다주제 글)'}
 

@@ -1,0 +1,308 @@
+{
+  "source": "hf-models",
+  "fetchedOk": true,
+  "sourceUrl": "https://huggingface.co/api/models?limit=100&full=true",
+  "items": [
+    {
+      "id": "convaiinnovations/laya",
+      "url": "https://huggingface.co/convaiinnovations/laya",
+      "createdAt": "2026-09-18T05:05:55.000Z",
+      "lastModified": "2026-09-24T05:39:22.000Z",
+      "trendingScore": 3250,
+      "likes": 3406,
+      "downloads": 0,
+      "pipelineTag": "text-classification",
+      "tags": [
+        "transformers",
+        "safetensors",
+        "laya",
+        "system-one",
+        "calibrated-decisions",
+        "rlcd",
+        "classification",
+        "routing"
+      ]
+    },
+    {
+      "id": "abenzerps/Qwen-Image-2.1-Uncensored-GGUF",
+      "url": "https://huggingface.co/abenzerps/Qwen-Image-2.1-Uncensored-GGUF",
+      "createdAt": "2026-09-20T15:51:13.000Z",
+      "lastModified": "2026-09-23T15:53:11.000Z",
+      "trendingScore": 1437,
+      "likes": 1633,
+      "downloads": 575697,
+      "pipelineTag": "text-to-image",
+      "tags": [
+        "gguf",
+        "qwen",
+        "image-generation",
+        "comfyui",
+        "comfyui-gguf",
+        "text-to-image",
+        "base_model:Qwen/Qwen-Image-2.1",
+        "base_model:quantized:Qwen/Qwen-Image-2.1"
+      ]
+    },
+    {
+      "id": "Altworld/Hemmingway-1",
+      "url": "https://huggingface.co/Altworld/Hemmingway-1",
+      "createdAt": "2026-09-20T12:10:31.000Z",
+      "lastModified": "2026-09-22T16:48:00.000Z",
+      "trendingScore": 618,
+      "likes": 633,
+      "downloads": 4541,
+      "pipelineTag": "text-generation",
+      "tags": [
+        "transformers",
+        "safetensors",
+        "qwen3_5_text",
+        "text-generation",
+        "qwen3.8",
+        "chat",
+        "creative-writing",
+        "altworld"
+      ]
+    },
+    {
+      "id": "XiaomiMiMo/MiMo-V2.6-Pro-RL",
+      "url": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-RL",
+      "createdAt": "2026-09-21T15:39:33.000Z",
+      "lastModified": "2026-09-22T03:52:00.000Z",
+      "trendingScore": 469,
+      "likes": 479,
+      "downloads": 9841,
+      "pipelineTag": "text-generation",
+      "tags": [
+        "transformers",
+        "safetensors",
+        "mimo_v2",
+        "text-generation",
+        "multimodal",
+        "vision-language",
+        "audio",
+        "agent"
+      ]
+    },
+    {
+      "id": "XiaomiMiMo/MiMo-V2.6-Flash-RL",
+      "url": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Flash-RL",
+      "createdAt": "2026-09-21T15:39:51.000Z",
+      "lastModified": "2026-09-22T03:52:25.000Z",
+      "trendingScore": 441,
+      "likes": 446,
+      "downloads": 18821,
+      "pipelineTag": "text-generation",
+      "tags": [
+        "transformers",
+        "safetensors",
+        "mimo_v2",
+        "text-generation",
+        "multimodal",
+        "vision-language",
+        "audio",
+        "agent"
+      ]
+    },
+    {
+      "id": "XiaomiMiMo/MiMo-V2.6-Distill-Qwen-9B",
+      "url": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Distill-Qwen-9B",
+      "createdAt": "2026-09-21T18:18:40.000Z",
+      "lastModified": "2026-09-22T03:52:45.000Z",
+      "trendingScore": 423,
+      "likes": 431,
+      "downloads": 5705,
+      "pipelineTag": "image-text-to-text",
+      "tags": [
+        "transformers",
+        "safetensors",
+        "qwen3_5",
+        "image-text-to-text",
+        "mimo_v2",
+        "agentic",
+        "distillation",
+        "supervised-fine-tuning"
+      ]
+    },
+    {
+      "id": "Edge0/Audio8-ASR-Infinite",
+      "url": "https://huggingface.co/Edge0/Audio8-ASR-Infinite",
+      "createdAt": "2026-09-21T15:03:21.000Z",
+      "lastModified": "2026-09-24T03:39:57.000Z",
+      "trendingScore": 322,
+      "likes": 350,
+      "downloads": 347,
+      "pipelineTag": "automatic-speech-recognition",
+      "tags": [
+        "transformers",
+        "safetensors",
+        "audio8_asr_infinite",
+        "text-generation",
+        "streaming",
+        "realtime",
+        "speech-recognition",
+        "audio"
+      ]
+    },
+    {
+      "id": "convaiinnovations/laya-multilingual",
+      "url": "https://huggingface.co/convaiinnovations/laya-multilingual",
+      "createdAt": "2026-09-19T03:23:34.000Z",
+      "lastModified": "2026-09-24T05:39:24.000Z",
+      "trendingScore": 241,
+      "likes": 249,
+      "downloads": 0,
+      "pipelineTag": "text-classification",
+      "tags": [
+        "transformers",
+        "safetensors",
+        "laya",
+        "multilingual",
+        "mmbert",
+        "system-one",
+        "calibrated-decisions",
+        "rlcd"
+      ]
+    },
+    {
+      "id": "pottokao/Qwen-Image-2.1-Text-Encoder-Heretic-GGUF",
+      "url": "https://huggingface.co/pottokao/Qwen-Image-2.1-Text-Encoder-Heretic-GGUF",
+      "createdAt": "2026-09-20T17:08:40.000Z",
+      "lastModified": "2026-09-24T09:20:29.000Z",
+      "trendingScore": 226,
+      "likes": 243,
+      "downloads": 103226,
+      "pipelineTag": null,
+      "tags": [
+        "gguf",
+        "quantized",
+        "fp8",
+        "comfyui",
+        "qwen-image",
+        "abliterated",
+        "text-encoder",
+        "base_model:pottokao/Qwen-Image-2.1-Text-Encoder-Heretic"
+      ]
+    },
+    {
+      "id": "unsloth/Qwen-Image-2.1-GGUF",
+      "url": "https://huggingface.co/unsloth/Qwen-Image-2.1-GGUF",
+      "createdAt": "2026-09-21T13:04:48.000Z",
+      "lastModified": "2026-09-22T22:34:12.000Z",
+      "trendingScore": 194,
+      "likes": 199,
+      "downloads": 94368,
+      "pipelineTag": "text-to-image",
+      "tags": [
+        "gguf",
+        "quantized",
+        "unsloth",
+        "qwen",
+        "image-generation",
+        "text-to-image",
+        "en",
+        "zh"
+      ]
+    },
+    {
+      "id": "akhilaaa3/Jev-Omni",
+      "url": "https://huggingface.co/akhilaaa3/Jev-Omni",
+      "createdAt": "2026-09-20T21:43:20.000Z",
+      "lastModified": "2026-09-22T22:45:48.000Z",
+      "trendingScore": 192,
+      "likes": 197,
+      "downloads": 0,
+      "pipelineTag": "text-classification",
+      "tags": [
+        "transformers",
+        "safetensors",
+        "text-classification",
+        "multimodal",
+        "merged",
+        "base_model:google/gemma-4-12B-it",
+        "base_model:finetune:google/gemma-4-12B-it",
+        "license:apache-2.0"
+      ]
+    },
+    {
+      "id": "apple/LensVLM-9B",
+      "url": "https://huggingface.co/apple/LensVLM-9B",
+      "createdAt": "2026-09-21T18:18:20.000Z",
+      "lastModified": "2026-09-22T21:06:26.000Z",
+      "trendingScore": 190,
+      "likes": 191,
+      "downloads": 455,
+      "pipelineTag": "image-text-to-text",
+      "tags": [
+        "transformers",
+        "safetensors",
+        "qwen3_5",
+        "image-text-to-text",
+        "vision-language-model",
+        "long-context",
+        "visual-text-compression",
+        "conversational"
+      ]
+    },
+    {
+      "id": "bespokelabs/Bespoke-Nimble-9B",
+      "url": "https://huggingface.co/bespokelabs/Bespoke-Nimble-9B",
+      "createdAt": "2026-09-18T01:18:02.000Z",
+      "lastModified": "2026-09-24T06:05:07.000Z",
+      "trendingScore": 185,
+      "likes": 188,
+      "downloads": 2624,
+      "pipelineTag": "text-classification",
+      "tags": [
+        "peft",
+        "safetensors",
+        "lora",
+        "qwen3.5",
+        "text-classification",
+        "structured-prediction",
+        "evidence-grounding",
+        "en"
+      ]
+    },
+    {
+      "id": "Viggle/Qwen-Image-2.1-viggle-turbo",
+      "url": "https://huggingface.co/Viggle/Qwen-Image-2.1-viggle-turbo",
+      "createdAt": "2026-09-22T04:14:56.000Z",
+      "lastModified": "2026-09-24T05:39:55.000Z",
+      "trendingScore": 179,
+      "likes": 183,
+      "downloads": 12425,
+      "pipelineTag": "text-to-image",
+      "tags": [
+        "diffusers",
+        "safetensors",
+        "lora",
+        "text-to-image",
+        "image-to-image",
+        "image-editing",
+        "distillation",
+        "dmd"
+      ]
+    },
+    {
+      "id": "moondream/parakeet-redux",
+      "url": "https://huggingface.co/moondream/parakeet-redux",
+      "createdAt": "2026-09-18T11:02:15.000Z",
+      "lastModified": "2026-09-23T00:03:52.000Z",
+      "trendingScore": 147,
+      "likes": 149,
+      "downloads": 918,
+      "pipelineTag": "automatic-speech-recognition",
+      "tags": [
+        "safetensors",
+        "parakeet_tdt",
+        "ternary",
+        "parakeet",
+        "tdt",
+        "speech-recognition",
+        "cpu",
+        "apple-silicon"
+      ]
+    }
+  ],
+  "note": "no-sort(trendingScore 내림차순) 상위 100건 중 createdAt 최근 7일 이내인 것만 남김. "
+}

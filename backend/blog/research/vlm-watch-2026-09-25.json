@@ -1,0 +1,92 @@
+{
+  "keyword": "경량 VLM 2026년 9월 넷째 주 신규 후보 (보드·소비자 GPU)",
+  "categoryId": "vlm-watch",
+  "slug": "vlm-watch-2026-09-25",
+  "searchedAt": "2026-09-25",
+  "origin": "vlm-watch-fetch.mjs(결정적, HF API) + HuggingFace 모델 카드 원문(raw README) 직접 확인 + HF API 메타",
+  "note": "후보는 backend/blog/research/vlm-watch/hf-vlm-trending-2026-09-23.json(주 데이터)과 09-09·09-18 파일에서, 기발행 3편(vlm-watch-2026-08-21 /328, vlm-watch-2026-08-28 /349, lightweight-vlm-2026-09 /392)이 다루지 않은 모델만 남겼다. 기발행 모델: LFM2.5-VL-3B(+GGUF), Qwen3-VL-8B, Qwen2.5-VL-7B, llava-1.5-7b, gemma-3-4b-it, SmolVLM2-500M, Apertus-v1.5-8B, Mubsir-Qwen-2B-VL, webbrain-vl-2-450M, Supertron3-0.8B, MiniMax LoRA. 이번 주 09-23 목록 6개 중: LFM2.5-VL-3B는 기발행이라 제외. ATTRSENSE/Attr1.0-2B는 2026-09-25 조회 시 모델 페이지·API·README 모두 401(비공개 전환 또는 삭제 추정)이라 카드 확인 불가 → 제외. r0b0tlab/Qwen3.8-Flash-Next-EXL3-2.50bpw는 fetcher가 id에서 크기를 못 읽어 paramsB 0·VRAM 1.5GB로 잡았으나, 카드 원문은 125B MoE(활성 6B)의 2.5bpw 양자화로 RTX 3090 24GB + 호스트 RAM 59GB 구성에서 VRAM 약 20GB를 실측했다고 적혀 있어 경량 기준(8B 이하) 밖 → 소개 대상 아님(오분류 사례로만 언급). Timegravity/tamil-lm-2b-instruct는 카드상 텍스트 모델만 학습했고 비전 타워는 베이스 그대로 둔 타밀어 모델 → 이미지 점검용 VLM 아님(언급만). 실제 소개 대상: Mapika/decider-2b-vision, Qwen/Qwen-Drive-1.0-4B(09-09부터 트렌딩, 미발행), DeepCybo/PhysBrain1.5-2B(09-09 트렌딩, 미발행). VRAM(int4)·boardFit·좋아요·다운로드는 전부 fetcher 추정/수집값(카드 기재 아님)이다. 카드에 적힌 크기는 bf16 가중치 파일 크기다(decider 4.1GB, Qwen-Drive VLM 9.1GB). 좋아요·다운로드는 fetch 시점(2026-09-23) 값.",
+  "queries": [
+  "node backend/scripts/vlm-watch-fetch.mjs (2026-09-23 trending, 09-09·09-18 대조)",
+  "curl https://huggingface.co/<id>/raw/main/README.md (모델 카드 원문)",
+  "curl https://huggingface.co/api/models/<id> (라이선스·pipeline_tag·공개 여부 확인)"
+  ],
+  "sources": [
+    {
+      "title": "Mapika/decider-2b-vision — Hugging Face 모델 카드",
+      "url": "https://huggingface.co/Mapika/decider-2b-vision",
+      "host": "huggingface.co",
+      "tier": "official",
+      "kind": "모델 카드",
+      "body": "license: apache-2.0 · base_model: Qwen/Qwen3.5-2B-Base · language: en · pipeline_tag: image-text-to-text. 'decider-2b-vision: typed decisions from an image in one forward pass'. decider-2b의 v5 언어 가중치를 Qwen3.5-2B 비전-언어 모델에 이식하고, 이미지(사진·도표·게임 화면)+보기(A/B/C…)가 달린 질문을 넣으면 한 번의 순전파로 보기별 확률(calibrated probability)을 내도록 파인튜닝. 'No generation.' 256x240 게임 화면 1장 = 시각 토큰 64개. 텍스트만 넣는 질문도 가능. 패밀리 표: decider-2b-vision — Qwen3.5-2B vision-language, v5 text weights, 4.1 GB bf16, 'decisions from an image plus a question; game frames', Visual7W 0.89, Breakout 41 from pixels. 결과표(300문항씩): Pong 0.96, Breakout 0.96, Visual7W(held out) 0.89, A-OKVQA 0.85 / AI2D 0.93 / ScienceQA 0.95 / IconQA 0.94 / Raven 0.80 / Hateful Memes 0.80, ECE 0.02~0.07. 한계: 'Not a chat model and not a captioner: it answers lettered options at one slot.' 'English only; calibration is measured on the listed datasets, not on your images.' 사용 예시 코드는 .cuda() 사용. 학습: 게임 화면(Pong·Breakout·CliffWalking·MiniGrid·Super Mario Bros)+The Cauldron 객관식 이미지 과제+텍스트 리플레이 1 epoch 후 Breakout·Pong 픽셀 PPO."
+    },
+    {
+      "title": "Qwen/Qwen-Drive-1.0-4B — Hugging Face 모델 카드",
+      "url": "https://huggingface.co/Qwen/Qwen-Drive-1.0-4B",
+      "host": "huggingface.co",
+      "tier": "official",
+      "kind": "모델 카드",
+      "body": "license: apache-2.0 · base_model: Qwen/Qwen3.5-4B · pipeline_tag: image-text-to-text · tags: autonomous-driving, motion-planning, 3d-perception, visual-question-answering. Qwen3.5 비전-언어 모델 구조를 유지한 채 3D 인식·시각 질의응답(VQA)·주행 경로 계획(motion planning)을 하나로 묶은 자율주행용 모델. Qwen3.5-4B를 공유 VLM으로 두고 외부 모듈 두 개(BEV 인식 헤드: 3D 객체 검출·semantic occupancy·BEV 지도 분할 / Planning Expert: flow matching으로 미래 자차 궤적 생성)를 붙였다. 'The unchanged VLM answers free-form questions about driving scenes.' 카드는 이를 자율주행용 최초의 비전-언어 파운데이션 모델이라고 소개('the first vision-language foundation model for autonomous driving that unifies 3D perception and visual question answering at the pretraining stage'). 저장소 구성: VLM 루트 9.1 GB, planner-sft 2.1 GB, planner-rl 2.1 GB, perception 0.5 GB. 'Load the root directory without a planner and the VLM answers free-form driving questions on its own.' 예시 코드는 dtype=torch.bfloat16, attn_implementation='flash_attention_2', .to('cuda'). 벤치마크 예: NAVSIM PDMS Qwen-Drive-1.0-RL 90.7(SFT 88.2), best-of-6 91.4. 일반 비전-언어 능력은 'performing on par with the base Qwen3.5-4B'. 기술 보고서 arXiv 2609.00111."
+    },
+    {
+      "title": "DeepCybo/PhysBrain1.5-2B — Hugging Face 모델 카드",
+      "url": "https://huggingface.co/DeepCybo/PhysBrain1.5-2B",
+      "host": "huggingface.co",
+      "tier": "official",
+      "kind": "모델 카드",
+      "body": "base_model: Qwen/Qwen3-VL-2B-Instruct · language: en, zh · pipeline_tag: any-to-any(2026-09-09 fetch 때는 image-text-to-text로 잡힘) · tags: embodied-ai, vision-language-model, robotics, spatial-reasoning. 카드 메타데이터에 license 항목 없음(HF API에도 라이선스 태그 없음). 'PhysBrain 1.5 is an embodied vision-language model that unifies three core capabilities essential for physical interaction: understanding the observed world, generating goal-directed actions, and predicting how the environment will evolve.' 행동 토큰·시각 상태 토큰을 어휘에 추가해 언어 답변·공간 출력·엔드이펙터 궤적·미래 상태를 모두 토큰으로 예측. 평가: 28개 체화(embodied) 공간지능·계획 벤치마크에서 8B 모델이 overall 72.5. 'The 2B column is shown for reference and excluded from the open-source ranking.'(2B 수치는 이미지 표에만 있어 텍스트로 확인 불가). Qwen3-VL 백본이라 Transformers·vLLM·SGLang 등 기존 인프라로 추론 가능하다고 명시. 논문 arXiv 2609.14973. 개발: DeepCybo · Zhongguancun Academy · Zhongguancun Institute of Artificial Intelligence."
+    },
+    {
+      "title": "Timegravity/tamil-lm-2b-instruct — Hugging Face 모델 카드",
+      "url": "https://huggingface.co/Timegravity/tamil-lm-2b-instruct",
+      "host": "huggingface.co",
+      "tier": "official",
+      "kind": "모델 카드",
+      "body": "license: apache-2.0 · base_model: Qwen/Qwen3.5-2B-Base · language: ta, en. Qwen3.5-2B-Base를 타밀어로 계속 사전학습·토크나이저 확장·지시 튜닝한 2B 모델로, 일상 타밀어·Tanglish·타밀어-영어 번역용이며 폰에서 오프라인 구동을 목표로 함. 'The vision tower and the multi-token-prediction weights are the base model's, unchanged, kept so the files follow the upstream layout; the text model is what was trained.' 즉 image-text-to-text로 분류돼 있지만 학습된 건 텍스트 모델이다."
+    },
+    {
+      "title": "r0b0tlab/Qwen3.8-Flash-Next-EXL3-2.50bpw — Hugging Face 모델 카드",
+      "url": "https://huggingface.co/r0b0tlab/Qwen3.8-Flash-Next-EXL3-2.50bpw",
+      "host": "huggingface.co",
+      "tier": "official",
+      "kind": "모델 카드",
+      "body": "license: apache-2.0 · base_model: Qwen/Qwen3.8-Flash-Next (quantized) · library: exllamav3 · pipeline_tag: image-text-to-text. 'EXL3 (ExLlamaV3) quantization ... tuned for a 24 GB RTX 3090 ... using MoE expert CPU offload for the 125B model (6B active, plus a 51B-parameter n-gram table).' 저장소 총 61 GiB. 'Resource requirements (RTX 3090, 24 GB + 59 GB host RAM)'. VRAM 실측(RTX 3090, 한 시퀀스): 전체 262,144 토큰 컨텍스트 프리셋 loaded 20.0 GB / peak 20.7 GB, 짧은 컨텍스트 프리셋 loaded 21.3 GB / peak 22.4 GB."
+    },
+    {
+      "title": "Hugging Face API — image-text-to-text 모델 목록(vlm-watch-fetch.mjs 수집원)",
+      "url": "https://huggingface.co/api/models?pipeline_tag=image-text-to-text&limit=300&full=true",
+      "host": "huggingface.co",
+      "tier": "official",
+      "kind": "API(결정적 수집, 2026-09-23 · 09-09)",
+      "body": "vlm-watch-fetch.mjs 수집값(2026-09-23, 조건: image-text-to-text · id로 읽은 파라미터 8B 이하 · 최근 60일 생성, trendingScore 내림차순). VRAM은 int4 기준 대략 추정(확정 아님), boardFit은 그 추정치를 보드 예산과 비교한 것. 보드 예산: 라즈베리파이 5 8GB(CPU) 3GB(CPU 추론 — 매우 느림), Jetson Nano 4GB 2.5GB, Jetson Orin Nano 8GB 6GB, RTX 3070 8GB 8GB, RTX 4070 12GB 11GB, Jetson Orin NX 16GB 12GB, Jetson AGX Orin 32GB+ 28GB. Mapika/decider-2b-vision: 생성 2026-09-16, 좋아요 23, 다운로드 1,097, 2B, int4 VRAM 추정 2.5GB, 라즈베리파이 5(CPU)·Jetson Nano 4GB부터 전 보드 fits, apache-2.0. Qwen/Qwen-Drive-1.0-4B: 생성 2026-08-27, 좋아요 227, 다운로드 6,194, 4B, int4 VRAM 추정 3.5GB, 라즈베리파이 5·Jetson Nano 미달, Jetson Orin Nano 8GB부터 fits, apache-2.0. r0b0tlab/Qwen3.8-Flash-Next-EXL3-2.50bpw: paramsB 0(크기 못 읽음), VRAM 추정 1.5GB로 잘못 잡힘. ATTRSENSE/Attr1.0-2B: 생성 2026-09-23, 2B, apache-2.0(2026-09-25 조회 시 401로 접근 불가). Timegravity/tamil-lm-2b-instruct: 2B, 2.5GB. LiquidAI/LFM2.5-VL-3B: 기발행. (2026-09-09 수집) DeepCybo/PhysBrain1.5-2B: 생성 2026-09-08, 2B, int4 VRAM 추정 2.5GB, 라즈베리파이 5(CPU)·Jetson Nano 4GB부터 전 보드 fits, license null."
+    }
+  ],
+  "facts": [
+    "선정 기준: HF image-text-to-text · 파라미터 8B 이하 · 최근 60일 생성(vlm-watch-fetch.mjs), 기발행 3편에 없던 모델만.",
+    "decider-2b-vision: Qwen3.5-2B 비전-언어 모델 기반, apache-2.0, 영어 전용, 이미지+보기 달린 질문 → 보기별 확률을 한 번에 출력(생성 없음), 챗·캡션 모델 아님, bf16 4.1GB, Visual7W 0.89. int4 VRAM 추정 2.5GB(fetcher) → 라즈베리파이 5(CPU)·Jetson Nano 4GB부터.",
+    "Qwen-Drive-1.0-4B: Qwen3.5-4B 기반 자율주행 VLM + BEV 인식 헤드 + Planning Expert, apache-2.0, VLM 루트 9.1GB(bf16)·planner 각 2.1GB·perception 0.5GB, VLM 단독으로 주행 장면 VQA 가능, 일반 VL 능력은 베이스 Qwen3.5-4B와 비슷(카드). int4 VRAM 추정 3.5GB(fetcher, VLM 기준) → Jetson Orin Nano 8GB부터.",
+    "PhysBrain1.5-2B: Qwen3-VL-2B-Instruct 기반 체화(embodied) VLM, 이해·행동 생성·미래 상태 예측, 영어·중국어, 카드에 라이선스 표기 없음, 2B 벤치 수치는 이미지 표에만 있음. int4 VRAM 추정 2.5GB(fetcher) → 라즈베리파이 5(CPU)·Jetson Nano 4GB부터.",
+    "Qwen3.8-Flash-Next-EXL3-2.50bpw는 125B MoE(활성 6B) 양자화본으로 카드 실측 VRAM 약 20GB(RTX 3090) — fetcher의 1.5GB는 id에 크기가 없어 생긴 오분류.",
+    "tamil-lm-2b-instruct는 비전 타워를 베이스 그대로 두고 텍스트 모델만 학습한 타밀어 모델."
+  ],
+  "conflicts": [
+    {
+      "about": "Qwen3.8-Flash-Next-EXL3 크기",
+      "a": "vlm-watch-fetch.mjs: paramsB 0, int4 VRAM 추정 1.5GB(id에서 크기 못 읽음)",
+      "b": "모델 카드: 125B MoE(활성 6B), RTX 3090 24GB에서 VRAM 약 20GB + 호스트 RAM 59GB — 카드가 우선"
+    },
+    {
+      "about": "PhysBrain1.5-2B pipeline 태그",
+      "a": "2026-09-09 fetch: image-text-to-text",
+      "b": "2026-09-25 카드 원문: any-to-any"
+    }
+  ],
+  "cannotSay": [
+    "VRAM 추정치(int4)를 확정값처럼 쓰지 말 것 — 카드에 적힌 건 bf16 파일 크기뿐.",
+    "라이선스 법적 해석(상업 사용 가능/불가) 금지. PhysBrain1.5-2B는 '카드에 표기 없음'까지만. 베이스 모델 라이선스를 대신 적용하지 말 것.",
+    "decider-2b-vision·PhysBrain을 화재·안전장비 점검에 '바로 쓸 수 있다'고 보장 금지.",
+    "PhysBrain1.5-2B의 벤치마크 수치(2B)는 텍스트로 확인 못 함 — 8B의 72.5를 2B 성능처럼 쓰지 말 것.",
+    "Qwen-Drive를 실제 차량 주행에 쓸 수 있다고 쓰지 말 것.",
+    "라즈베리파이 5에서의 실제 속도·구동 성공 여부는 확인하지 않았다.",
+    "Attr1.0-2B의 성격·성능은 카드 접근 불가로 확인 못 함."
+  ]
+}

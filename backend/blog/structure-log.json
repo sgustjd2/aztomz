@@ -822,5 +822,168 @@
       "참고"
     ],
     "closingClichePatterns": []
+  },
+  {
+    "slug": "vlm-watch-2026-09-25",
+    "categoryId": "vlm-watch",
+    "date": "2026-09-25",
+    "h2": [
+      "이번 회 고른 방법",
+      "크기와 라이선스 비교표",
+      "새로 올라온 세 모델",
+      "보드별로 나눠 보면",
+      "빠진 후보와 이유",
+      "이번 주 요점",
+      "모델 카드 링크"
+    ],
+    "closingClichePatterns": []
+  },
+  {
+    "slug": "dev-trending-2026-09-25",
+    "categoryId": "dev-trending",
+    "date": "2026-09-25",
+    "h2": [
+      "이번 회 고른 방식",
+      "open-code-review — 알리바바 사내 코드리뷰 도구가 오픈소스로",
+      "Orca — 코딩 에이전트 여러 대를 나란히 돌리는 작업대",
+      "colibri — 744B급 MoE 모델을 디스크에서 불러 쓰는 C 엔진",
+      "laya — 글을 쓰지 않고 '결정'만 내리는 4억 파라미터 모델",
+      "parakeet-redux — 178MB로 줄인 CPU용 음성인식 모델",
+      "RecreationBench — 앱을 '똑같이 다시 만들기'로 AI를 재는 시험지",
+      "여섯 개 나란히 보기",
+      "이번 주 한 줄 요약",
+      "저장소·모델 링크"
+    ],
+    "closingClichePatterns": []
+  },
+  {
+    "slug": "n8n-googleform-notion-ai",
+    "categoryId": "automation-idea",
+    "date": "2026-09-25",
+    "h2": [
+      "전체 흐름 한눈에 보기",
+      "미리 준비할 것",
+      "1단계 — 구글폼 응답을 시트로 보내기",
+      "2단계 — Google Sheets Trigger로 새 응답 받기",
+      "3단계 — Text Classifier로 응답 분류하기",
+      "4단계 — 노션 데이터베이스에 페이지 만들기",
+      "막히기 쉬운 지점",
+      "만들기 전에 다시 보기",
+      "참고"
+    ],
+    "closingClichePatterns": []
+  },
+  {
+    "slug": "couple-photo-prompt-pack",
+    "categoryId": "ai-prompt-pack",
+    "date": "2026-09-25",
+    "h2": [
+      "여섯 장면 미리보기",
+      "☕ CAFE DATE 카페 데이트",
+      "🥂 ANNIVERSARY 기념일 커버",
+      "✈️ TRIP LOG 여행 기록",
+      "🏠 HOUSEWARMING 집들이 매거진",
+      "🌙 NIGHT WALK 밤 산책",
+      "🧺 PICNIC DAY 피크닉 데이",
+      "🎨 모든 컷에 공통으로 붙이는 룰",
+      "같이 써보면 좋은 프롬프트 팩"
+    ],
+    "closingClichePatterns": []
+  },
+  {
+    "slug": "kpop-8090-still-fresh",
+    "categoryId": "retro-revival",
+    "date": "2026-09-25",
+    "h2": [
+      "김현철 - 오랜만에",
+      "빛과 소금 - 샴푸의 요정",
+      "양준일 - 리베카",
+      "룰라 - 3!4!",
+      "비비 - 하늘땅 별땅",
+      "다시 듣기 전에 짚을 것",
+      "근거로 삼은 기사"
+    ],
+    "closingClichePatterns": []
+  },
+  {
+    "slug": "jangwonyoung-slang",
+    "categoryId": "hangeut-trend",
+    "date": "2026-09-25",
+    "h2": [
+      "한마디로 뭐냐면",
+      "다마고치에서 방송까지, 번진 경로",
+      "9월 24일 기준, 아직 오르는 중",
+      "이럴 때 꺼내 쓰면 돼요",
+      "처음 보면 헷갈리는 지점",
+      "한 줄로 줄이면",
+      "근거 링크"
+    ],
+    "closingClichePatterns": []
+  },
+  {
+    "slug": "chestnut-boil-storage-2026",
+    "categoryId": "hangeut-trend",
+    "date": "2026-09-25",
+    "h2": [
+      "햇밤은 언제 나오나요",
+      "좋은 밤은 크기보다 무게로 골라요",
+      "사 오자마자 물에 띄워 보세요",
+      "벌레 먹은 밤, 겉으로 다 안 보이는 이유",
+      "찌는 시간, 기사마다 20분에서 40분까지",
+      "껍질 잘 까는 요령",
+      "생밤 보관은 냉장, 온도 기준은 두 가지예요",
+      "삶은 밤은 식혀서 냉동",
+      "요점만 다시",
+      "확인한 자료"
+    ],
+    "closingClichePatterns": []
+  },
+  {
+    "slug": "shine-muscat-guide-2026",
+    "categoryId": "hangeut-trend",
+    "date": "2026-09-25",
+    "h2": [
+      "올해 샤인머스캣이 싸진 이유",
+      "색으로 고를 때, 매체마다 말이 달라요",
+      "색 말고 같이 볼 것 — 송이·알·줄기",
+      "사 온 뒤 보관 — 송이째, 씻지 말고",
+      "먹기 직전 씻는 순서",
+      "짧게 되짚기",
+      "참고한 곳"
+    ],
+    "closingClichePatterns": []
+  },
+  {
+    "slug": "boiler-check-2026",
+    "categoryId": "hangeut-trend",
+    "date": "2026-09-25",
+    "h2": [
+      "배기통부터 — 사고 원인 81%가 배기통 관련이었어요",
+      "일산화탄소 경보기, 우리 집에도 달려 있을까",
+      "보일러실 주변과 켠 직후 이상 신호",
+      "방마다 온도가 다르면 — 에어빼기는 증상 있을 때만",
+      "동파는 첫 가동 때부터 대비해요",
+      "점검 서비스는 어디서 받나요",
+      "교체를 고민한다면 — 연수보다 상태, 지원은 지역마다",
+      "체크리스트로 마무리",
+      "근거 자료"
+    ],
+    "closingClichePatterns": []
+  },
+  {
+    "slug": "cosmos-spots-2026",
+    "categoryId": "hangeut-trend",
+    "date": "2026-09-25",
+    "h2": [
+      "하동 북천 — 코스모스 28ha, 10월 5일까지 열려 있어요",
+      "안성팜랜드 — 11월 1일까지 이어지는 코스목동 축제",
+      "청주 상당산성 — 축제 없이 걷는 성곽 꽃길",
+      "홍천 서석 — 10월 3일부터 사흘, 면 단위 시골 축제",
+      "구리한강시민공원 — 10월 9일부터 사흘, 한강 변 코스모스",
+      "날짜별로 줄 세우면",
+      "가기 전 한 번 더",
+      "출처"
+    ],
+    "closingClichePatterns": []
   }
 ]

@@ -1,0 +1,191 @@
+{
+  "keyword": "구글폼 응답을 AI가 자동 분류해서 노션에 정리하는 n8n 워크플로",
+  "categoryId": "automation-idea",
+  "slug": "n8n-googleform-notion-ai",
+  "searchedAt": "2026-09-25",
+  "verifiedAt": "2026-09-25",
+  "origin": "Claude Code WebSearch/WebFetch + curl 본문 읽기",
+  "note": "n8n 공식 문서(docs.n8n.io) 기준으로 노드 실재·옵션을 확인했다. n8n에는 Google Forms 전용 노드/트리거가 없다 — n8n.io 통합 페이지는 Google Forms 연동을 'HTTP Request 노드 + 일반 인증'으로 안내한다. 그래서 흔한 경로는 Google Forms → 연결된 Google Sheets(응답 시트) → Google Sheets Trigger(Row added). Text Classifier는 카테고리별 출력 가지로 항목을 보내지만 출력 데이터에 카테고리 이름이 담기지 않는다는 커뮤니티 보고가 있어, 노션 '분류' 속성은 가지마다 고정값으로 넣거나 커뮤니티가 공유한 표현식을 쓴다(공식 문서 아님 — 헤지). Google Sheets Trigger가 폴링 방식이고 Poll Times 최소 1분이라는 내용은 공식 문서 페이지엔 없고 제3자 가이드(Hack'celeration)에서 확인 — 그 출처로 귀속할 것. Notion 'Database Page > Create'의 세부 입력 칸(제목·속성 매핑 UI 이름)은 공식 문서에 자세히 없어서 확인 못 함.",
+  "queries": [
+    "docs.n8n.io Google Sheets Trigger events common issues",
+    "docs.n8n.io Text Classifier node options",
+    "docs.n8n.io Notion node operations Database Page Create",
+    "docs.n8n.io Notion credentials share page connections",
+    "docs.n8n.io OpenAI Chat Model gateway credits",
+    "Google Forms choose where to save form responses Google Sheets support",
+    "n8n Google Forms trigger Google Sheets Trigger workflow template Notion",
+    "n8n \"Text Classifier\" node output branch for each category workflow template",
+    "n8n Google Sheets Trigger \"Poll Times\" every minute polling"
+  ],
+  "sources": [
+    {
+      "title": "Choose where to save form responses - Google Docs Editors Help",
+      "url": "https://support.google.com/docs/answer/2917686?hl=en",
+      "host": "support.google.com",
+      "tier": "official",
+      "kind": "Google 공식 도움말",
+      "body": "When responders fill out your form, you can find a summary of the responses in the form or you can store the responses in a linked Google Sheet. If you store your responses in a spreadsheet, Google Sheets automatically puts your data in a table. 방법: Open a form in Google Forms. At the top, click Responses > Summary. At the top right, click More > Select destination for responses. Select an option: Create a new spreadsheet / Select existing spreadsheet. Click Create or Select. Tips: When you create a new response spreadsheet, form collaborators automatically get access to it. Further changes to the permissions of the form won't synchronize automatically. Unlink: New responses won't be sent to the spreadsheet, but your current data remains intact. You can use 'Select destination for responses' to reconnect a spreadsheet later.",
+      "publishedAt": null
+    },
+    {
+      "title": "Google Sheets Trigger | n8n Docs",
+      "url": "https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.googlesheetstrigger/",
+      "host": "docs.n8n.io",
+      "tier": "official",
+      "kind": "n8n 공식 노드 문서",
+      "body": "Google Sheets Trigger 노드. Credentials: Refer to the Google credentials documentation for authentication information for this node. Events: Row added / Row updated / Row added or updated. n8n provides an app node for Google Sheets.",
+      "publishedAt": null
+    },
+    {
+      "title": "Google Sheets Trigger node common issues | n8n Docs",
+      "url": "https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.googlesheetstrigger/common-issues/",
+      "host": "docs.n8n.io",
+      "tier": "official",
+      "kind": "n8n 공식 문서(자주 나는 문제)",
+      "body": "Stuck waiting for trigger event: When testing the Google Sheets Trigger node with the Execute step or Execute workflow buttons, the execution may appear stuck and unable to stop listening for events. If this occurs, you may need to exit the workflow and open it again to reset the canvas. ... this behavior often occurs when you run n8n behind a reverse proxy without configuring websocket proxying. To resolve this issue, check your reverse proxy configuration (Nginx, Caddy, Apache HTTP Server, Traefik, etc.) to enable websocket support. Date and time columns are rendering as numbers: The serial number format represents dates as a decimal number. The whole number component represents the number of days since December 30, 1899. The decimal portion represents time as a portion of a 24-hour period (for example, .5 represents noon). To use a different format ... This is available when Trigger On is set to Row Added: Select Add option > DateTime Render > change to Formatted String. The number format depends on the spreadsheet's locale settings (File > Settings > General > Locale).",
+      "publishedAt": null
+    },
+    {
+      "title": "Text Classifier | n8n Docs",
+      "url": "https://docs.n8n.io/integrations/builtin/cluster-nodes/root-nodes/n8n-nodes-langchain.text-classifier/",
+      "host": "docs.n8n.io",
+      "tier": "official",
+      "kind": "n8n 공식 노드 문서(클러스터 루트 노드)",
+      "body": "Use the Text Classifier node to classify (categorize) incoming data. Using the categories provided in the parameters, each item is passed to the model to determine its category. Node parameters: Input Prompt defines the input to classify. This is usually an expression that references a field from the input items. For example, this could be {{ $json.chatInput }} if the input is a chat trigger. By default it references the text field. Categories: Add the categories that you want to classify your input as. Categories have a name and a description. Use the description to tell the model what the category means. This is important if the meaning isn't obvious. You can add as many categories as you like. Node options: Allow Multiple Classes To Be True — always output a single class per item (turned off), or allow the model to select multiple classes (turned on). When No Clear Match — Discard Item (the default): If the node doesn't detect any of the categories, it drops the item. Output on Extra, 'Other' Branch: Creates a separate output branch called Other. System Prompt Template — change the system prompt used for the classification. It uses the {categories} placeholder for the categories. Enable Auto-Fixing — automatically fixes model outputs to ensure they match the expected format by sending the schema parsing error to the LLM and asking it to fix it. (사이드바상 Text Classifier는 Cluster nodes > Root nodes 아래 — AI Agent, Basic LLM Chain, Information Extractor, Sentiment Analysis 등과 같은 층)",
+      "publishedAt": null
+    },
+    {
+      "title": "OpenAI Chat Model node documentation | n8n Docs",
+      "url": "https://docs.n8n.io/integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.lmchatopenai/",
+      "host": "docs.n8n.io",
+      "tier": "official",
+      "kind": "n8n 공식 노드 문서(서브 노드)",
+      "body": "On n8n Cloud, you can use the OpenAI Chat Model node with Gateway credits instead of your own OpenAI API key. Select Use Gateway credits in the node's credential field to run the node without an OpenAI account. Credentials: Refer to the OpenAI credentials documentation. Parameter resolution in sub-nodes: In sub-nodes, the expression always resolves to the first item. For example, given an input of five name values, the expression {{ $json.name }} always resolves to the first name. Model: Select the model to use to generate the completion. n8n dynamically loads models from OpenAI, and you'll only see the models available to your account.",
+      "publishedAt": null
+    },
+    {
+      "title": "Basic LLM Chain node documentation | n8n Docs",
+      "url": "https://docs.n8n.io/integrations/builtin/cluster-nodes/root-nodes/n8n-nodes-langchain.chainllm/",
+      "host": "docs.n8n.io",
+      "tier": "official",
+      "kind": "n8n 공식 노드 문서(클러스터 루트 노드)",
+      "body": "Use the Basic LLM Chain node to set the prompt that the model will use along with setting an optional parser for the response. Prompt: Take from previous node automatically (expects an input called chatInput) / Define below (static text or an expression in the Prompt (User Message) field). Require Specific Output Format: when turned on, n8n prompts you to connect one of these output parsers: Auto-fixing Output Parser, Item List Output Parser, Structured Output Parser. Chat Messages: System — Enter a system Message to include with the user input to help guide the model in what it should do.",
+      "publishedAt": null
+    },
+    {
+      "title": "Notion node documentation | n8n Docs",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.notion/",
+      "host": "docs.n8n.io",
+      "tier": "official",
+      "kind": "n8n 공식 노드 문서",
+      "body": "Use the Notion node to automate work in Notion. Credentials: Refer to Notion credentials. Operations — Block: Append After, Get Many, Get Markdown. Data Source: Get, Search. Database: Get. Database Page: Create, Get, Get Many, Update. Page: Archive, Create, Get Markdown, Search, Update Markdown. User: Get, Get Many. If this node doesn't support the operation you want to do, you can use the HTTP Request node to call the service's API with the same credential (Authentication > Predefined Credential Type).",
+      "publishedAt": null
+    },
+    {
+      "title": "Notion credentials | n8n Docs",
+      "url": "https://docs.n8n.io/integrations/builtin/credentials/notion/",
+      "host": "docs.n8n.io",
+      "tier": "official",
+      "kind": "n8n 공식 문서(인증)",
+      "body": "Supported authentication methods: API integration token (internal integrations), OAuth2 (public integrations). Using API integration token: Go to your Notion integration dashboard. Select + New integration. Enter a Name. Open the Capabilities tab. Select: Read content, Update content, Insert content, User information without email addresses. Select the Secrets tab. Copy the Internal Integration Token and add it as your n8n Internal Integration Secret. Share Notion page(s) with the integration: Visit the page in your Notion workspace. Select the triple dot menu at the top right of a page. In Connections, select Connect to. Use the search bar to find and select your integration. Once you share at least one page with the integration, you can start making API requests. If the page isn't shared, any API requests made will respond with an error. Internal integrations: Specific to a single workspace, simpler authentication (the integration secret), don't require any security review.",
+      "publishedAt": null
+    },
+    {
+      "title": "Notion node common issues | n8n Docs",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.notion/common-issues/",
+      "host": "docs.n8n.io",
+      "tier": "official",
+      "kind": "n8n 공식 문서(자주 나는 문제)",
+      "body": "Handle null and empty values: You may receive a validation error when working with the Notion node if you submit fields with empty or null values. This can occur any time you populate fields from previous nodes when that data is missing. To work around this, check for the existence of the field data before sending it to Notion or use a default value. To check for the data before executing the Notion node, use an If node to check whether the field is unset. This allows you to use the Edit Fields (Set) node to conditionally remove the field when it doesn't have a valid value. As an alternative, you can set a default value if the incoming data doesn't provide one. Relation property not displaying: The Notion node only supports displaying the data relation property for two-way relations.",
+      "publishedAt": null
+    },
+    {
+      "title": "Google Forms and Google Sheets: Automate Workflows with n8n",
+      "url": "https://n8n.io/integrations/google-forms/and/google-sheets/",
+      "host": "n8n.io",
+      "tier": "official",
+      "kind": "n8n 공식 통합 소개 페이지",
+      "body": "To set up Google Forms integration, add the HTTP Request node to your workflow canvas and authenticate it using a generic authentication method. The HTTP Request node makes custom API calls to Google Forms to query the data you need using the API endpoint URLs you provide. (Google Forms API endpoint 목록 — forms.responses list/get, forms.watches create/renew 등 — 은 'These API endpoints were generated using n8n ... Remember to check the Google Forms official documentation' 라고 스스로 밝힌 자동 수집 목록이다.)",
+      "publishedAt": null
+    },
+    {
+      "title": "Automated lead response template using Google Forms, Sheets, and Gmail | n8n workflow template",
+      "url": "https://n8n.io/workflows/6711-automated-lead-response-template-using-google-forms-sheets-and-gmail/",
+      "host": "n8n.io",
+      "tier": "community",
+      "kind": "n8n 공식 템플릿 갤러리(커뮤니티 작성, youpath)",
+      "body": "노드: Gmail, Sticky Note, Google Sheets Trigger. Workflow Overview — Trigger: A new row is added to a connected Google Sheet via Google Forms. Email to lead: Sends a custom confirmation message using Gmail. Email to team: Notifies internal staff with all the lead's submitted details. Setup: Connect your Google Form to a Sheet — In Google Forms, click the green Sheets icon under 'Responses'. Create or connect Gmail & Google Sheets credentials in n8n. Update node field references if needed. Your Google Sheet must include these columns: Timestamp, Full Name, Email, ... Notes: This workflow uses Spanish field labels — adapt field names if your form is in another language.",
+      "publishedAt": null
+    },
+    {
+      "title": "Google Sheet n8n Integration | Hack'celeration",
+      "url": "https://hackceleration.com/google-sheet-n8n",
+      "host": "hackceleration.com",
+      "tier": "third-party",
+      "kind": "제3자 가이드(n8n 공식 아님)",
+      "body": "The trigger watches one sheet inside one spreadsheet and starts the workflow when the event you selected happens there. Nothing has to be set up on the Google side, because the node works by polling: n8n re-reads the document at the interval set in Poll Times, once a minute at the fastest, so a new row waits up to that interval. Row Added: This event fires when a new row shows up in the watched sheet. Rows arrive at the bottom, each one starts an execution, and edits made further up the sheet stay silent. Use cases: a form writes a row and the workflow sends the confirmation. Keep in mind that the trigger only watches the sheet you selected, so an edit made in another tab of the same spreadsheet will not wake it up. Does the Google Sheets Trigger react in real time? No. ... Include in Output is effective only when the workflow runs automatically, so a manual execution will not show it.",
+      "publishedAt": null
+    },
+    {
+      "title": "Efficiently Retrieve Selected Branch Name from Text Classifier Node - n8n Community",
+      "url": "https://community.n8n.io/t/efficiently-retrieve-selected-branch-name-from-text-classifier-node/77318",
+      "host": "community.n8n.io",
+      "tier": "community",
+      "kind": "n8n 커뮤니티 포럼 질문 스레드",
+      "body": "Lucas_Zago (2025-02-12): I'm utilizing the Text Classifier node in my workflow, which directs the flow into over 20 different branches based on the classification. I'm seeking an efficient method to programmatically capture the name of the selected branch ... Manually configuring a Set node for each branch is impractical. Michael_Yates: It would be great if the output of the text classifer node included some kind of 'category' property. Lucas_Zago: Nope. I just put a individual edit field to define the name of each branch. Joachim_Brindeau (2025-05-20): Solved! {{ $input.params.categories.categories[$prevNode.outputIndex].category }}  needhelpn8n: FINALLY! Thank you for this.",
+      "publishedAt": "2025-02-12"
+    },
+    {
+      "title": "Processing Text Classifier Output - n8n Community",
+      "url": "https://community.n8n.io/t/processing-text-classifier-output/52224",
+      "host": "community.n8n.io",
+      "tier": "community",
+      "kind": "n8n 커뮤니티 포럼 질문 스레드",
+      "body": "CristianG (2024-08-21, n8n 1.53.2): I am looking for an efficient way of processing the output of the Text Classifier node. The node outputs an empty array through the category the AI model selects. I hoped to get the output in a 'category' or similar variable, but that's not the case. bartv (n8n 팀, 2024-08-27): I'm afraid we don't have an elegant solution for this at the moment; you can either set the fields in each output separately, or use a basic LLM chain.",
+      "publishedAt": "2024-08-21"
+    },
+    {
+      "title": "Google credentials | n8n Docs",
+      "url": "https://docs.n8n.io/integrations/builtin/credentials/google/",
+      "host": "docs.n8n.io",
+      "tier": "official",
+      "kind": "n8n 공식 문서(인증)",
+      "body": "OAuth2 single service: Create an OAuth2 credential for a specific service node. Two options exist: Managed OAuth2: Sign in with Google directly on n8n, with no setup required on the Google Cloud Console. Available for n8n Cloud users only, for certain Google nodes. Custom OAuth2: Configure an OAuth2 app in the Google Cloud Console and connect it to your n8n credential. Service Account: for some specific service nodes. OAuth2: Recommended because it is more widely available and easier to set up. Managed OAuth2 is available for the following Google nodes, for n8n Cloud users: Google Calendar, Google Calendar Trigger, Google Chat, Google Contacts, Google Docs, Google Drive, Google Drive Trigger, Google Mail, Google Mail Trigger, Google Sheets, Google Sheets Trigger, Google Slides, Google Tasks, YouTube.",
+      "publishedAt": null
+    }
+  ],
+  "facts": [
+    "Google Forms 응답은 연결된 Google Sheets로 보낼 수 있다: 응답 > 요약 > 더보기 > 응답 저장 위치 선택 > 새 스프레드시트 만들기 또는 기존 스프레드시트 선택 (Google 도움말).",
+    "n8n에는 Google Forms 전용 노드가 없고, n8n 통합 페이지는 Google Forms 연동을 HTTP Request 노드 + 일반 인증 방식으로 안내한다.",
+    "Google Sheets Trigger의 이벤트는 Row added / Row updated / Row added or updated 세 가지다 (n8n 문서).",
+    "n8n 템플릿 6711은 'Google Forms로 연결된 시트에 새 행이 추가되면' Google Sheets Trigger로 시작한다 — Forms→Sheets→Sheets Trigger 경로의 실례.",
+    "Hack'celeration 가이드에 따르면 Google Sheets Trigger는 폴링 방식이라 Poll Times 간격(가장 빨라야 1분)마다 문서를 다시 읽으며, 새 행은 그 간격만큼 기다릴 수 있다. 선택한 시트(탭)만 본다.",
+    "Sheets Trigger에서 날짜가 숫자(1899-12-30부터 센 일수)로 나오면 Row Added일 때 DateTime Render 옵션을 Formatted String으로 바꾼다 (n8n 문서).",
+    "리버스 프록시 뒤의 셀프호스팅 n8n에서 웹소켓 프록시를 설정 안 하면 Sheets Trigger 테스트가 '이벤트 대기' 상태로 멈춰 보일 수 있다 (n8n 문서).",
+    "Text Classifier: Input Prompt(기본은 text 필드), Categories(이름+설명, 설명이 모델에게 뜻을 알려줌), 옵션 Allow Multiple Classes To Be True / When No Clear Match(기본 Discard Item, 또는 Other 가지) / System Prompt Template({categories} 자리표시자) / Enable Auto-Fixing (n8n 문서).",
+    "커뮤니티 보고: Text Classifier는 카테고리별 가지로 흐름을 나누지만 출력에 카테고리 이름 필드가 없어, 가지마다 Edit Fields로 이름을 넣거나 표현식 {{ $input.params.categories.categories[$prevNode.outputIndex].category }} 을 쓴다고 공유됨(공식 문서 아님). n8n 팀원은 2024-08 시점 '각 출력에서 따로 필드를 넣거나 Basic LLM Chain을 쓰라'고 답했다.",
+    "OpenAI Chat Model 서브 노드는 n8n Cloud에서 Gateway credits로 OpenAI 계정 없이 쓸 수 있다. 모델 목록은 계정에서 쓸 수 있는 것만 보인다. 서브 노드의 표현식은 항상 첫 아이템으로 풀린다 (n8n 문서).",
+    "Notion 노드 Database Page 작업: Create, Get, Get Many, Update (n8n 문서).",
+    "Notion 인증: 내부 통합 토큰 방식은 Notion 통합 대시보드에서 통합 생성 → Capabilities(Read/Update/Insert content 등) → Secrets 탭의 토큰을 n8n에 입력. 페이지 ... 메뉴 > Connections > Connect to 로 통합을 연결해야 하고, 공유 안 하면 API 요청이 에러 (n8n 문서).",
+    "Notion 노드에 빈 값·null을 보내면 검증 에러가 날 수 있다 — If 노드로 확인하고 Edit Fields(Set)로 빼거나 기본값을 넣는다 (n8n 문서).",
+    "Basic LLM Chain은 프롬프트를 정하고 필요하면 출력 파서(Auto-fixing / Item List / Structured Output Parser)를 붙여 응답 형식을 강제할 수 있다 (n8n 문서).",
+    "n8n Cloud 사용자는 Google Sheets·Google Sheets Trigger 등에 Managed OAuth2(구글 클라우드 콘솔 설정 없이 n8n에서 바로 구글 로그인)를 쓸 수 있고, 그 외엔 구글 클라우드 콘솔에서 OAuth 앱을 만드는 Custom OAuth2 (n8n 문서)."
+  ],
+  "conflicts": [
+    "Google Sheets Trigger의 폴링 여부·Poll Times 최소 1분은 n8n 공식 문서 페이지에 명시가 없고 제3자 가이드(Hack'celeration)에만 있다 — 그 출처로 귀속."
+  ],
+  "unverified": [
+    "Notion Database Page > Create 노드의 세부 입력 칸 이름(제목 필드, Properties 추가 UI 라벨)은 공식 문서 페이지에 상세가 없어 확인 못 함.",
+    "커뮤니티 표현식($input.params.categories...)이 현재 n8n 버전에서도 동작하는지는 확인 못 함(2025-05 커뮤니티 게시)."
+  ],
+  "cannotSay": [
+    "워크플로 JSON 전체(임포트용) — 검증 불가, 쓰지 않는다.",
+    "OpenAI 요금·Gateway credits 한도 수치 — 조사 안 함.",
+    "분류 정확도 수치 — 근거 없음.",
+    "직접 만들어 돌려봤다는 체험 — 아니다."
+  ],
+  "internalLinkCandidates": [
+    "https://burning-go9me.tistory.com/434",
+    "https://burning-go9me.tistory.com/288"
+  ]
+}

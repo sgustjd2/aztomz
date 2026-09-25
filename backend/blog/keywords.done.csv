@@ -5,3 +5,6 @@ keyword,categoryId,priority,memo,pickedAt,slug
 "n8n + AI로 만드는 업무 자동화 아이디어 모음",automation-idea,1,4가지 아이디어(Gmail 분류·RSS 요약·문의폼 자동응답·아침 다이제스트)로 발행,2026-09-13,n8n-ai-automation-ideas
 "매일 아침 뉴스레터·RSS를 AI가 요약해서 슬랙/디스코드로 보내는 n8n 자동화",automation-idea,1,위 n8n 글의 아이디어 4번(Schedule Trigger→HTTP Request→OpenAI→Slack)으로 포함 발행,2026-09-13,n8n-ai-automation-ideas
 "우리 냥이 인생샷 만들기 AI 잡지컷 프롬프트",ai-prompt-pack,2,"기발행 /274(댕댕이)와 짝 — 캣타워·창가낮잠·간식·병원·슬로우선데이·박스탐험 6종으로 발행",2026-09-13,cat-photo-prompt-pack
+"구글폼 응답을 AI가 자동 분류해서 노션에 정리하는 n8n 워크플로",automation-idea,2,Google Forms/Notion 연동 노드 실재 확인 필수,2026-09-25,n8n-googleform-notion-ai
+"지금 들어도 안 늙은 8090 한국 가요",retro-revival,2,시티팝 편에 대응하는 국내판 — 커버·챌린지·드라마삽입 등 역주행 근거 있는 곡만 · 초유명곡 제외,2026-09-25,kpop-8090-still-fresh
+"커플 사진 AI 잡지컷 프롬프트 모음",ai-prompt-pack,2,실존 커플·연예인 예시 금지 — 상황 변형(데이트·기념일·여행·집들이 등) 4~6개,2026-09-25,couple-photo-prompt-pack

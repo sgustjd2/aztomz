@@ -1,0 +1,181 @@
+{
+  "source": "hf-datasets",
+  "fetchedOk": true,
+  "sourceUrl": "https://huggingface.co/api/datasets?limit=100&full=true",
+  "items": [
+    {
+      "id": "Harland/OmniVChat",
+      "url": "https://huggingface.co/datasets/Harland/OmniVChat",
+      "createdAt": "2026-09-18T12:24:57.000Z",
+      "lastModified": "2026-09-21T04:52:52.000Z",
+      "trendingScore": 38,
+      "likes": 38,
+      "downloads": 1299,
+      "pipelineTag": null,
+      "tags": [
+        "task_categories:video-text-to-text",
+        "language:en",
+        "language:zh",
+        "license:cc-by-nc-nd-4.0",
+        "size_categories:1K<n<10K",
+        "format:json",
+        "modality:text",
+        "modality:video"
+      ]
+    },
+    {
+      "id": "ZefanCai/Open-Jev",
+      "url": "https://huggingface.co/datasets/ZefanCai/Open-Jev",
+      "createdAt": "2026-09-20T20:13:01.000Z",
+      "lastModified": "2026-09-20T22:49:59.000Z",
+      "trendingScore": 29,
+      "likes": 29,
+      "downloads": 1634,
+      "pipelineTag": null,
+      "tags": [
+        "task_categories:text-classification",
+        "language:en",
+        "language:zh",
+        "language:tr",
+        "license:cc0-1.0",
+        "size_categories:100K<n<1M",
+        "format:parquet",
+        "modality:text"
+      ]
+    },
+    {
+      "id": "cua-ai/cua-s1-forms",
+      "url": "https://huggingface.co/datasets/cua-ai/cua-s1-forms",
+      "createdAt": "2026-09-18T16:11:41.000Z",
+      "lastModified": "2026-09-18T19:35:44.000Z",
+      "trendingScore": 14,
+      "likes": 14,
+      "downloads": 555,
+      "pipelineTag": null,
+      "tags": [
+        "task_categories:text-classification",
+        "license:mit",
+        "size_categories:100K<n<1M",
+        "format:json",
+        "modality:text",
+        "library:datasets",
+        "library:pandas",
+        "library:polars"
+      ]
+    },
+    {
+      "id": "Qwen/RecreationBench",
+      "url": "https://huggingface.co/datasets/Qwen/RecreationBench",
+      "createdAt": "2026-09-18T11:19:15.000Z",
+      "lastModified": "2026-09-21T05:03:16.000Z",
+      "trendingScore": 12,
+      "likes": 12,
+      "downloads": 4233,
+      "pipelineTag": null,
+      "tags": [
+        "task_categories:text-generation",
+        "language:en",
+        "license:other",
+        "size_categories:n<1K",
+        "modality:image",
+        "modality:text",
+        "arxiv:2609.22000",
+        "region:us"
+      ]
+    },
+    {
+      "id": "microsoft/ProgramDistill",
+      "url": "https://huggingface.co/datasets/microsoft/ProgramDistill",
+      "createdAt": "2026-09-24T14:01:23.000Z",
+      "lastModified": "2026-09-24T15:04:33.000Z",
+      "trendingScore": 9,
+      "likes": 9,
+      "downloads": 0,
+      "pipelineTag": null,
+      "tags": [
+        "task_categories:text-generation",
+        "language:en",
+        "license:mit",
+        "size_categories:1K<n<10K",
+        "library:harbor",
+        "arxiv:2609.18805",
+        "region:us",
+        "code"
+      ]
+    },
+    {
+      "id": "SargeDev/jev-distill-corpus-v3",
+      "url": "https://huggingface.co/datasets/SargeDev/jev-distill-corpus-v3",
+      "createdAt": "2026-09-21T13:50:58.000Z",
+      "lastModified": "2026-09-21T14:10:15.000Z",
+      "trendingScore": 8,
+      "likes": 8,
+      "downloads": 387,
+      "pipelineTag": null,
+      "tags": [
+        "task_categories:text-classification",
+        "language:en",
+        "license:apache-2.0",
+        "size_categories:100K<n<1M",
+        "format:json",
+        "modality:text",
+        "library:datasets",
+        "library:pandas"
+      ]
+    },
+    {
+      "id": "Rapidata/10k-human-favorite-number",
+      "url": "https://huggingface.co/datasets/Rapidata/10k-human-favorite-number",
+      "createdAt": "2026-09-22T12:07:42.000Z",
+      "lastModified": "2026-09-22T13:07:58.000Z",
+      "trendingScore": 8,
+      "likes": 8,
+      "downloads": 102,
+      "pipelineTag": null,
+      "tags": [
+        "language:en",
+        "license:cc-by-4.0",
+        "size_categories:10K<n<100K",
+        "format:parquet",
+        "modality:text",
+        "library:datasets",
+        "library:pandas",
+        "library:polars"
+      ]
+    },
+    {
+      "id": "jaredpalmer/kev-suites",
+      "url": "https://huggingface.co/datasets/jaredpalmer/kev-suites",
+      "createdAt": "2026-09-19T13:30:17.000Z",
+      "lastModified": "2026-09-21T16:48:14.000Z",
+      "trendingScore": 6,
+      "likes": 6,
+      "downloads": 1487,
+      "pipelineTag": null,
+      "tags": [
+        "region:us"
+      ]
+    },
+    {
+      "id": "ZefanCai/Open-Jev-v1.1",
+      "url": "https://huggingface.co/datasets/ZefanCai/Open-Jev-v1.1",
+      "createdAt": "2026-09-22T23:58:56.000Z",
+      "lastModified": "2026-09-23T07:49:18.000Z",
+      "trendingScore": 6,
+      "likes": 6,
+      "downloads": 217,
+      "pipelineTag": null,
+      "tags": [
+        "task_categories:text-classification",
+        "language:en",
+        "language:zh",
+        "license:other",
+        "size_categories:100K<n<1M",
+        "format:parquet",
+        "modality:text",
+        "library:datasets"
+      ]
+    }
+  ],
+  "note": "no-sort(trendingScore 내림차순) 상위 100건 중 createdAt 최근 7일 이내인 것만 남김. 데이터셋은 신규가 드물어 0건이 정상일 수 있음 — 억지로 채우지 않음."
+}

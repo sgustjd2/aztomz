@@ -1,0 +1,303 @@
+{
+  "keyword": "지금 들어도 안 늙은 8090 한국 가요",
+  "categoryId": "retro-revival",
+  "slug": "kpop-8090-still-fresh",
+  "searchedAt": "2026-09-25",
+  "verifiedAt": "2026-09-25",
+  "origin": "Claude Code WebSearch/WebFetch + youtube oembed(200 확인)",
+  "note": "시티팝 편(city-pop-80s-still-fresh)의 국내판. 곡마다 (a) 유튜브 실재 영상(oembed 200, 채널명 확인) (b) 기사 본문으로 확인한 재조명 근거(현역 아티스트 리메이크·방송 재출연·유튜브 재유행)가 둘 다 있는 곡만 남겼다. YOUTUBE_API_KEY 가 .env 에 없어 조회수·업로드일은 확인하지 못함 → 본문에 조회수 쓰지 말 것. 탈락: 이재민 '제 연인의 이름은'(발매연도가 1986/1987/1989로 자료마다 달라 확정 불가), 듀스 '여름 안에서'(싹쓰리 커버 발매일이 자료마다 달라 확정 불가, 초대형 히트곡에 가까움), 윤수일 '아파트'(초대형 히트곡).",
+  "queries": [
+    "90년대 가요 역주행 2025 커버 챌린지 원곡 다시 차트",
+    "80년대 가요 역주행 틱톡 챌린지 원곡 재조명 기사",
+    "양준일 리베카 역주행 슈가맨 유튜브 탑골GD 기사",
+    "빛과 소금 샴푸의 요정 시티팝 재조명 역주행",
+    "김현철 오랜만에 시티팝 역주행 재조명 해외 리스너",
+    "디깅클럽서울 리메이크 원곡 목록 김현철 오랜만에 죠지",
+    "투모로우바이투게더 샴푸의 요정 리메이크 빛과 소금 원곡",
+    "유니스 하늘땅 별땅 리메이크 비비 원곡 발매",
+    "앳하트 3!4! 룰라 리메이크 원곡 1996",
+    "원곡 1990년대 가요 리메이크 2025 원곡 재조명 음원 순위 상승"
+  ],
+  "sources": [
+    {
+      "title": "스포츠서울 — 시티팝 명곡 리메이크 '온스테이지 디깅클럽서울'…김현철X죠지 '오랜만에' 첫 주자 낙점",
+      "url": "http://www.sportsseoul.com/news/read/681309",
+      "host": "www.sportsseoul.com",
+      "tier": "press",
+      "publishedAt": "2018-09-17",
+      "body": "네이버문화재단과 뮤직 크리에이티브 그룹 스페이스오디티가 함께 기획하는 20세기 음악 발굴 프로젝트 '온스테이지 디깅클럽서울'. 큐레이터 추천곡 3곡과 일반인 추천곡 2곡, 총 5곡을 온스테이지 출연 뮤지션 5팀이 리메이크한다. 첫 곡은 김현철의 '오랜만에'로, 1989년 발표한 1집 수록곡이며 평단과 뮤지션들 사이에서 시대를 앞서간 명반으로 꼽힌다. '한국 시티팝을 이야기 할 때 제일 먼저 떠오르는 뮤지션, 김현철의 명곡'. 죠지가 재해석한 리메이크는 '오는 17일 낮 12시 각종 음원 사이트를 통해 발매한다'."
+    },
+    {
+      "title": "한국일보 — 시티팝으로 돌아온 김현철 \"요즘, 음악이 너무 재밌어졌어요\"",
+      "url": "https://www.hankookilbo.com/News/Read/A2021062312530005497",
+      "host": "www.hankookilbo.com",
+      "tier": "press",
+      "publishedAt": "2021-07-04",
+      "body": "고경석 기자. '몇 년 전부터 일본을 중심으로 시티팝이 다시 인기를 얻으면서 김현철의 초기 음악이 뒤늦게 한국식 시티팝으로 재조명됐다.' 2019년 정규 10집 '돛'으로 13년 공백을 깨고 돌아왔고, 이번 앨범은 '스무 살 청년 김현철이 하고자 했던 음악의 원형 중 오랜만에로 대표되는 DNA를 되살려 앨범 전체로 넓혔다'. 김현철 본인은 1~2집 제작 당시 스무드 재즈를 좋아했지 시티팝이라는 장르는 몰랐다고 회상."
+    },
+    {
+      "title": "서울앤 — 윤수일·김현철·빛과 소금…젊은층에 재발견된 '시티팝'",
+      "url": "https://www.seouland.com/arti/culture/culture_general/4324.html",
+      "host": "www.seouland.com",
+      "tier": "press",
+      "publishedAt": "2018-12-13",
+      "body": "최규성(대중음악평론가) 칼럼. 제8회 서울레코드페어에서 20~30대 젊은층이 한국 시티팝을 찾는 현상을 소개. 김현철 '춘천 가는 기차'(1989)·'오랜만에'(1989), 빛과 소금 '샴푸의 요정'(LP 수집가들 사이에서 인기) 등을 한국 시티팝으로 거론. 구체적인 스트리밍 수치나 리메이크는 언급하지 않음."
+    },
+    {
+      "title": "싱글리스트 — 투모로우바이투게더, '샴푸의 요정' 리메이크...신보 트랙리스트 공개",
+      "url": "http://www.slist.kr/news/articleView.html?idxno=153971",
+      "host": "www.slist.kr",
+      "tier": "press",
+      "publishedAt": "2020-05-06",
+      "body": "용원중 기자. 투모로우바이투게더 미니앨범 '꿈의 장: ETERNITY'가 18일 오후 6시 발매 예정. 3번 트랙 '샴푸의 요정'은 투모로우바이투게더가 처음으로 발표하는 리메이크곡. '1990년 가수 빛과 소금이 발표한 명곡'을 '다섯 멤버만의 스타일로 재해석'했고, 연준이 랩 메이킹에 참여했다."
+    },
+    {
+      "title": "데일리안 — [D:청출어람in가요] '샴푸의 요정' 재해석의 나쁜 예…TXT",
+      "url": "https://www.dailian.co.kr/news/view/892346/",
+      "host": "www.dailian.co.kr",
+      "tier": "press",
+      "publishedAt": "2020-05-25",
+      "body": "박정선 기자. '샴푸의 요정'은 '당초 1988년 사랑과 평화 4집에 먼저 발표된 뒤 빛과 소금 1집(1990)에 재수록된 곡이다.' MBC 드라마(홍학표·채시라 출연)로 알려졌고, 리더 장기호가 2004년 직접 다시 부르기도 했다. 투모로우바이투게더는 18일 두 번째 미니앨범 '꿈의 장: ETERNITY'를 발매했고 이 곡을 네오 사이키델릭의 하위 장르인 드림 팝으로 재해석했다. 기사 제목대로 필자는 이 재해석을 '나쁜 예'로 평가(비판적 리뷰)."
+    },
+    {
+      "title": "이데일리 — [양준일 신드롬]② 대중은 왜 '탑골 GD'에게 열광할까",
+      "url": "https://edaily.co.kr/News/Read?mediaCodeNo=258&newsId=01098806625635752",
+      "host": "edaily.co.kr",
+      "tier": "press",
+      "publishedAt": "2020-01-08",
+      "body": "윤기백 기자. 양준일은 1991년 데뷔(서태지와 아이들·김건모의 1992년 데뷔보다 앞섬), 장르는 뉴잭스윙. 대표곡 '리베카', '가나다라마바사', 'Dance with me 아가씨'. 유튜브에서 지드래곤을 닮은 '탑골 GD'로 회자되며 재조명됐고, JTBC '투유 프로젝트-슈가맨3'와 '뉴스룸' 출연으로 지금 세대에 알려졌다. 젊은 층은 그의 자유로운 태도에, 중장년층은 당시 외면했던 미안함에 반응했다는 분석."
+    },
+    {
+      "title": "이투데이 — 연예계 소문난 '리베카' 양준일 팬 누가 있나?",
+      "url": "https://www.etoday.co.kr/news/view/1835328",
+      "host": "www.etoday.co.kr",
+      "tier": "press",
+      "publishedAt": "2019-12-17",
+      "body": "유정선 기자. 양준일은 1991년 '리베카'로 데뷔. 온라인에서 '지드래곤을 닮은 90년대 가수'로 인기를 얻으며 이른바 '온라인 탑골공원'에서 화제가 됐다. 2019년 12월 6일 JTBC '슈가맨3'에 출연. 김숙·유세윤·김재환 등 연예인 팬이 공개적으로 호감을 드러냈다."
+    },
+    {
+      "title": "뉴스1 — '슈가맨3' 양준일, '리베카'로 소환 성공…시대 앞서간 천재",
+      "url": "https://www.news1.kr/entertain/broadcast-tv/3787489",
+      "host": "www.news1.kr",
+      "tier": "press",
+      "publishedAt": "2019-12-06",
+      "body": "박하나 기자. 제목: '슈가맨3' 양준일, '리베카'로 소환 성공…시대 앞서간 천재. (본문 추출 실패 — 제목·날짜만 확인. 세부 수치 인용 금지)"
+    },
+    {
+      "title": "뉴시스 — 앳하트, 룰라 '3!4!' 재해석…삐삐 치던 시절로 타임슬립",
+      "url": "https://www.newsis.com/view/NISX20260819_0003754234",
+      "host": "www.newsis.com",
+      "tier": "press",
+      "publishedAt": "2026-08-19",
+      "body": "이재훈 기자. 혼성그룹 룰라의 1996년 히트곡 '3!4!'를 걸그룹 앳하트가 리메이크해 8월 19일 오후 6시 음원 공개. '타임 트래블 프로젝트'의 두 번째 싱글(첫 싱글은 The Cardigans 'Lovefool' 재해석). 원곡의 '뉴잭스윙 리듬과 청량감'은 살리고, 도입부 우쿨렐레를 '일렉트릭 피아노와 기타 아르페지오'로 바꿨다. 편곡에 원작자 이현도가 박장근·팩티스트·조쉬와 함께 참여. 드라마 형식 영상에 룰라 채리나 출연, 연출 남태진."
+    },
+    {
+      "title": "국제뉴스 — 유니스, 비비 '하늘땅 별땅' 29년 만에 재해석...Y2K 감성 입힌다",
+      "url": "https://www.gukjenews.com/news/articleView.html?idxno=3688609",
+      "host": "www.gukjenews.com",
+      "tier": "press",
+      "publishedAt": "2026-09-08",
+      "body": "이대웅 기자. '원곡 하늘땅 별땅은 여성 듀오 비비가 1997년 발표한 곡이다.' 유니스가 각종 온라인 음원 사이트를 통해 리메이크 싱글 '하늘땅 별땅'을 발매. '8일 오후 6시 공개되는 프로모션 비디오에서 유니스는 당시를 떠올리게 하는 스타일링과 Y2K 감성을 활용해 곡의 경쾌한 분위기를 시각적으로 이어갈 예정'."
+    },
+    {
+      "title": "스타뉴스 — 29년 전 '하늘땅 별땅' 재탄생..유니스, 오늘(10일) '엠카' 출격",
+      "url": "https://www.starnewskorea.com/music/2026/09/10/2026091008095221020",
+      "host": "www.starnewskorea.com",
+      "tier": "press",
+      "publishedAt": "2026-09-10",
+      "body": "이승훈 기자. '이번 신곡은 1997년 발매된 여성 듀오 비비의 히트곡 하늘땅 별땅을 리메이크한 곡이다.' '원곡 특유의 통통 튀는 멜로디와 발랄한 에너지를 살리면서 Y2K 무드의 키치한 감성과 트렌디한 K팝 사운드를 더해 새롭게 완성했다.' 유니스는 10일 Mnet '엠카운트다운'에서 무대를 공개."
+    },
+    {
+      "title": "K-VIBE(연합뉴스) — 검증된 히트곡이 돌아온다…음원 시장, 리메이크 열풍 '새바람'",
+      "url": "https://korean-vibe.com/news/newsview.php?ncode=179543404649637",
+      "host": "korean-vibe.com",
+      "tier": "press",
+      "publishedAt": "2026-09-24",
+      "body": "과거 히트곡을 재해석한 리메이크곡이 음원 시장에서 잇따라 흥행하며 흐름이 됐다는 기사. 리센느의 카라 'Pretty Girl'(2008) 리메이크가 멜론 톱100 최고 4위. 태연 '만찬가'(원곡 츠키), 유니스 '하늘땅 별땅'(비비), 앳하트 '3!4!'(룰라) 등 리메이크 잇따라. '유니스의 하늘땅 별땅은 발매 후 멤버 엘리시아와 젤리당카의 고향인 필리핀에서 아이튠즈 톱 송 1위를 차지했다.' '앳하트의 3!4!는 원작자인 이현도가 편곡에 참여하고 룰라의 채리나가 퍼포먼스 기획에 힘을 보태며 눈길을 끌었다.' 리메이크 흐름이 신곡 점유율 하락을 가린다는 업계 우려도 함께 실림."
+    },
+    {
+      "title": "[Official Audio] 김현철 (Kim Hyun Chul) - 오랜만에 (It's Been a While)",
+      "url": "https://www.youtube.com/watch?v=hJXaQY8HfjM",
+      "host": "www.youtube.com",
+      "tier": "video",
+      "body": "채널 BEYOND MUSIC 비욘드 뮤직. oembed 200 (2026-09-25 확인)."
+    },
+    {
+      "title": "[Official Audio] 빛과 소금 (LIght & Salt) - 샴푸의 요정 (Fairy of Shampoo)",
+      "url": "https://www.youtube.com/watch?v=PU3nOSCq5TE",
+      "host": "www.youtube.com",
+      "tier": "video",
+      "body": "채널 BEYOND MUSIC 비욘드 뮤직. oembed 200 (2026-09-25 확인)."
+    },
+    {
+      "title": "빛과소금 - '샴푸의 요정' 【KBS 쇼 토요특급】",
+      "url": "https://www.youtube.com/watch?v=LSsSMIoJV88",
+      "host": "www.youtube.com",
+      "tier": "video",
+      "body": "채널 Again 가요톱10 : KBS KPOP Classic(KBS 공식 아카이브). oembed 200 (2026-09-25 확인)."
+    },
+    {
+      "title": "양준일 '리베카' [인기가요 Rewind] (화질개선판)",
+      "url": "https://www.youtube.com/watch?v=Ka-44FzOsFg",
+      "host": "www.youtube.com",
+      "tier": "video",
+      "body": "채널 SBS 옛날 예능 - 빽능(SBS 아카이브 채널). oembed 200 (2026-09-25 확인)."
+    },
+    {
+      "title": "[슈가송] 시대를 앞서간 비운의 천재 양준일의 '리베카' 슈가맨3(SUGARMAN3) 2회",
+      "url": "https://www.youtube.com/watch?v=8h3JPJjjbjQ",
+      "host": "www.youtube.com",
+      "tier": "video",
+      "body": "채널 JTBC Entertainment. 슈가맨3 2회 무대 클립. oembed 200 (2026-09-25 확인)."
+    },
+    {
+      "title": "Roo'Ra - Three!Four!, 룰라 - 3!4!, MBC Top Music 19960831",
+      "url": "https://www.youtube.com/watch?v=3f3ed4uQ7e0",
+      "host": "www.youtube.com",
+      "tier": "video",
+      "body": "채널 MBCkpop(MBC 공식). 1996년 8월 31일 방송 무대. oembed 200 (2026-09-25 확인)."
+    },
+    {
+      "title": "[Official Audio] 비비(B.B) - 하늘땅 별땅(Heaven's Land Star Land)",
+      "url": "https://www.youtube.com/watch?v=Ho9qZZ_SUr8",
+      "host": "www.youtube.com",
+      "tier": "video",
+      "body": "채널 RIAK OFFICIAL. oembed 200 (2026-09-25 확인)."
+    },
+    {
+      "title": "【인기가요 Rewind】 비비 / 하늘땅 별땅",
+      "url": "https://www.youtube.com/watch?v=ya17BzGfj3A",
+      "host": "www.youtube.com",
+      "tier": "video",
+      "body": "채널 SBS 옛날 예능 - 빽능. oembed 200 (2026-09-25 확인)."
+    },
+    {
+      "title": "UNIS(유니스) - 하늘땅 별땅 (Sky Land, Star Land) Performance Video",
+      "url": "https://www.youtube.com/watch?v=hrCCHVuo5yE",
+      "host": "www.youtube.com",
+      "tier": "video",
+      "body": "채널 INS Entertainment(유니스 소속사). 리메이크 퍼포먼스 영상. oembed 200 (2026-09-25 확인)."
+    },
+    {
+      "title": "샴푸의 요정/빛과 소금 - 벅스",
+      "url": "https://music.bugs.co.kr/track/51503",
+      "host": "music.bugs.co.kr",
+      "tier": "streaming",
+      "body": "벅스 곡 페이지(가사 포함). HTTP 200 확인."
+    }
+  ],
+  "songs": [
+    {
+      "artist": "김현철",
+      "title": "오랜만에",
+      "releaseYear": 1989,
+      "album": "1집(1989)",
+      "url": "https://www.youtube.com/watch?v=hJXaQY8HfjM",
+      "videoId": "hJXaQY8HfjM",
+      "channel": "BEYOND MUSIC 비욘드 뮤직",
+      "officialChannel": true,
+      "revival": [
+        {"driver": "최근 아티스트의 커버", "evidence": "2018-09-17 죠지 리메이크 발매 — 네이버문화재단·스페이스오디티 '온스테이지 디깅클럽서울' 첫 곡", "sourceUrl": "http://www.sportsseoul.com/news/read/681309"},
+        {"driver": "복고·뉴트로 재발견", "evidence": "일본발 시티팝 재유행으로 초기 음악이 '한국식 시티팝'으로 재조명, 2019년 10집 '돛'으로 복귀", "sourceUrl": "https://www.hankookilbo.com/News/Read/A2021062312530005497"}
+      ]
+    },
+    {
+      "artist": "빛과 소금",
+      "title": "샴푸의 요정",
+      "releaseYear": 1990,
+      "album": "빛과 소금 1집(1990) 재수록 — 1988년 사랑과 평화 4집에 먼저 발표",
+      "url": "https://www.youtube.com/watch?v=PU3nOSCq5TE",
+      "videoId": "PU3nOSCq5TE",
+      "channel": "BEYOND MUSIC 비욘드 뮤직",
+      "officialChannel": true,
+      "lyricsUrl": "https://music.bugs.co.kr/track/51503",
+      "relatedVideos": [
+        {"title": "빛과소금 - '샴푸의 요정' 【KBS 쇼 토요특급】", "url": "https://www.youtube.com/watch?v=LSsSMIoJV88", "videoId": "LSsSMIoJV88"}
+      ],
+      "revival": [
+        {"driver": "최근 아티스트의 커버", "evidence": "2020-05-18 투모로우바이투게더 '꿈의 장: ETERNITY' 수록 리메이크(그룹 첫 리메이크, 드림 팝 재해석, 연준 랩 메이킹)", "sourceUrl": "http://www.slist.kr/news/articleView.html?idxno=153971"}
+      ]
+    },
+    {
+      "artist": "양준일",
+      "title": "리베카",
+      "releaseYear": 1991,
+      "album": "데뷔곡(1991) — 앨범명·정확한 발매일은 이번 조사에서 확정 못 함",
+      "url": "https://www.youtube.com/watch?v=Ka-44FzOsFg",
+      "videoId": "Ka-44FzOsFg",
+      "channel": "SBS 옛날 예능 - 빽능",
+      "officialChannel": true,
+      "relatedVideos": [
+        {"title": "슈가맨3 2회 리베카", "url": "https://www.youtube.com/watch?v=8h3JPJjjbjQ", "videoId": "8h3JPJjjbjQ"}
+      ],
+      "revival": [
+        {"driver": "스트리밍 알고리즘 재유입", "evidence": "유튜브 '온라인 탑골공원'에서 '탑골 GD'로 회자", "sourceUrl": "https://www.etoday.co.kr/news/view/1835328"},
+        {"driver": "방송", "evidence": "2019-12-06 JTBC 슈가맨3 출연 후 '양준일 신드롬'", "sourceUrl": "https://edaily.co.kr/News/Read?mediaCodeNo=258&newsId=01098806625635752"}
+      ]
+    },
+    {
+      "artist": "룰라",
+      "title": "3!4!",
+      "releaseYear": 1996,
+      "album": "미확정(이번 조사 기사에 앨범명 없음)",
+      "url": "https://www.youtube.com/watch?v=3f3ed4uQ7e0",
+      "videoId": "3f3ed4uQ7e0",
+      "channel": "MBCkpop",
+      "officialChannel": true,
+      "revival": [
+        {"driver": "최근 아티스트의 커버", "evidence": "2026-08-19 앳하트 리메이크(타임 트래블 프로젝트 두 번째 싱글, 원작자 이현도 편곡 참여, 채리나 영상 출연)", "sourceUrl": "https://www.newsis.com/view/NISX20260819_0003754234"}
+      ]
+    },
+    {
+      "artist": "비비",
+      "title": "하늘땅 별땅",
+      "releaseYear": 1997,
+      "album": "미확정",
+      "url": "https://www.youtube.com/watch?v=Ho9qZZ_SUr8",
+      "videoId": "Ho9qZZ_SUr8",
+      "channel": "RIAK OFFICIAL",
+      "officialChannel": true,
+      "relatedVideos": [
+        {"title": "인기가요 Rewind 비비 하늘땅 별땅", "url": "https://www.youtube.com/watch?v=ya17BzGfj3A", "videoId": "ya17BzGfj3A"},
+        {"title": "UNIS 하늘땅 별땅 Performance Video", "url": "https://www.youtube.com/watch?v=hrCCHVuo5yE", "videoId": "hrCCHVuo5yE"}
+      ],
+      "revival": [
+        {"driver": "최근 아티스트의 커버", "evidence": "2026-09-08 유니스 리메이크 싱글 발매, 필리핀 아이튠즈 톱 송 1위", "sourceUrl": "https://korean-vibe.com/news/newsview.php?ncode=179543404649637"}
+      ]
+    }
+  ],
+  "facts": [
+    "김현철 '오랜만에'는 1989년 1집 수록곡. 2018년 9월 17일 죠지가 '온스테이지 디깅클럽서울'(네이버문화재단·스페이스오디티 기획) 첫 곡으로 리메이크해 발매. (스포츠서울 2018-09-17)",
+    "한국일보(2021-07-04)는 일본 중심의 시티팝 재유행으로 김현철 초기 음악이 '한국식 시티팝'으로 뒤늦게 재조명됐고, 2019년 10집 '돛'으로 13년 공백을 깼다고 보도. 김현철 본인은 1~2집 당시 시티팝이라는 장르를 몰랐다고 회상.",
+    "서울앤(2018-12-13) 최규성 칼럼은 제8회 서울레코드페어에서 20~30대가 한국 시티팝을 찾는다며 김현철·빛과 소금 '샴푸의 요정'을 거론.",
+    "'샴푸의 요정'은 1988년 사랑과 평화 4집에 먼저 발표된 뒤 빛과 소금 1집(1990)에 재수록. MBC 드라마로 알려짐. (데일리안 2020-05-25)",
+    "투모로우바이투게더는 2020년 5월 18일 미니앨범 '꿈의 장: ETERNITY'에 '샴푸의 요정' 리메이크를 실었고, 그룹의 첫 리메이크곡이며 연준이 랩 메이킹에 참여. (싱글리스트 2020-05-06) 데일리안은 드림 팝 재해석을 '나쁜 예'로 비판.",
+    "양준일은 1991년 '리베카'로 데뷔(뉴잭스윙). 유튜브 '온라인 탑골공원'에서 '탑골 GD'로 회자된 뒤 2019년 12월 6일 JTBC '슈가맨3'에 출연, 이후 '양준일 신드롬'. (이투데이 2019-12-17, 이데일리 2020-01-08)",
+    "룰라 '3!4!'(1996)를 앳하트가 2026년 8월 19일 리메이크 공개. '타임 트래블 프로젝트' 두 번째 싱글, 원작자 이현도가 편곡 참여, 뉴잭스윙 리듬 유지·도입부 우쿨렐레를 일렉트릭 피아노와 기타 아르페지오로 교체, 영상에 룰라 채리나 출연. (뉴시스 2026-08-19)",
+    "비비 '하늘땅 별땅'(1997)을 유니스가 2026년 9월 8일 리메이크 싱글로 발매, Y2K 감성 콘셉트. 발매 후 필리핀 아이튠즈 톱 송 1위. (국제뉴스 2026-09-08, 스타뉴스 2026-09-10, K-VIBE 2026-09-24)",
+    "K-VIBE(연합뉴스, 2026-09-24): 과거 히트곡 리메이크가 음원 시장의 흐름이 됐고, 리센느 'Pretty Girl' 리메이크 멜론 톱100 최고 4위. 동시에 리메이크 흐름이 신곡 점유율 하락을 가린다는 우려도 실림."
+  ],
+  "conflicts": [
+    "양준일 '리베카' 발매: 이투데이·이데일리는 '1991년 데뷔'로, 일부 검색 요약(나무위키 계열)은 1990년 11월 30일 앨범 '겨울나그네'로 표기. 본문엔 '1991년 데뷔곡'(언론 기준)으로만 쓰고 정확한 발매일·앨범명은 쓰지 않는다.",
+    "'샴푸의 요정' 발표 연도: 1988년(사랑과 평화 4집) vs 1990년(빛과 소금 1집 재수록) — 둘 다 사실, 순서대로 설명한다.",
+    "싱글리스트는 TXT 앨범을 '미니앨범', 데일리안은 '두 번째 미니앨범'으로 표기 — 충돌 아님."
+  ],
+  "unverified": [
+    "유튜브 조회수·업로드일(YOUTUBE_API_KEY 없음)",
+    "각 곡의 스트리밍 차트 재진입 수치(원곡 기준) — 이번 조사에서 원곡 자체의 차트 역주행 수치는 찾지 못함. 근거는 리메이크·방송·유튜브 재유행",
+    "룰라 '3!4!'·비비 '하늘땅 별땅'의 앨범명·작사/작곡(비비 곡은 유튜브 제목에 작사 강은경/작곡 이경섭 표기가 있으나 기사 본문 확인 못 함)",
+    "유니스 리메이크 발매 시각(12시 vs 오후 6시 프로모션 비디오) — 날짜(9월 8일)만 쓴다"
+  ],
+  "cannotSay": [
+    "원곡이 음원 차트에 역주행했다(원곡 차트 수치 없음) — '리메이크로 다시 불렸다', '다시 회자됐다'까지만",
+    "조회수·재생수 수치",
+    "가사 인용·번역, 가사 내용 해석(가사 내용 근거 자료 없음)",
+    "소리 묘사 — 3!4! 리메이크 편곡 변화(뉴시스)와 TXT 드림 팝 재해석(데일리안) 외 원곡 사운드 서술 금지",
+    "시티팝이 한국에서 '유행'한다는 일반화 — 서울앤 칼럼은 레코드페어 현장 관찰 1건",
+    "양준일 신드롬의 규모 수치(팬 수 등)"
+  ],
+  "internalLinkCandidates": [
+    {"title": "80년대 시티팝, 늘 나오는 그 곡 말고 다섯", "url": "https://burning-go9me.tistory.com/279"},
+    {"title": "오리콘 69위였던 곡, 지금은 공식 영상 3천만 뷰", "url": "https://burning-go9me.tistory.com/280"}
+  ]
+}
