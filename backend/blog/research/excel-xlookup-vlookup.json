@@ -1,0 +1,91 @@
+{
+  "keyword": "엑셀 XLOOKUP VLOOKUP 차이",
+  "categoryId": "hangeut-trend",
+  "slug": "excel-xlookup-vlookup",
+  "searchedAt": "2026-09-26",
+  "note": "Microsoft 지원(support.microsoft.com) 한국어 공식 문서 4건을 curl 로 본문 전체를 받아 텍스트로 확인했다(WebFetch 요약이 아닌 원문 대조). 예제 표·스크린샷 속 수식 일부(XLOOKUP 예제 1~4의 실제 수식 문자열)는 이미지라 본문 텍스트에 없다 — 예제 1은 문서가 인수(F2, B2:B11, D2:D11)를 문장으로 밝혀 둬서 그 조합만 인용 가능, 나머지는 쓰지 않는다. search_mode -2(내림차순 이진 검색)는 영어 문서 WebFetch 요약에만 나오고 한국어 원문 텍스트엔 2가 두 번 중복 표기돼 있어(번역 오류로 보임) 확인 못함 — 본문에 쓰지 않는다. 웹용 Excel 지원 여부는 두 문서의 적용 대상 목록에 없어 확인 못함. XLOOKUP 문서의 적용 대상 목록엔 Excel 2019·2016이 들어 있지만 같은 문서 본문 참고에 \"Excel 2016 및 Excel 2019에서 사용할 수 없습니다\"라고 명시돼 있어 본문 문장을 따른다.",
+  "queries": [
+    "XLOOKUP 함수 Microsoft 지원",
+    "VLOOKUP 함수 Microsoft 지원 range_lookup",
+    "Excel 2021 새로운 기능 XLOOKUP Microsoft 지원"
+  ],
+  "sources": [
+    {
+      "title": "XLOOKUP 함수 | Microsoft Support",
+      "url": "https://support.microsoft.com/ko-kr/excel/get-started/xlookup-function",
+      "host": "support.microsoft.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "XLOOKUP 함수를 사용하여 테이블 또는 범위에서 행별로 항목을 찾는다(예: 부품 번호로 자동차 부품 가격, 직원 ID로 직원 이름). \"XLOOKUP을 사용하면 반환 열이 어느 쪽에 있는지에 관계없이 한 열에서 검색어를 검색하고 다른 열의 같은 행에서 결과를 반환할 수 있습니다.\" 참고: \"XLOOKUP은 Excel 2016 및 Excel 2019에서 사용할 수 없습니다. 그러나 다른 사람이 최신 버전의 Excel을 사용하여 통합 문서를 만든 경우 XLOOKUP 함수가 포함된 통합 문서를 Excel 2016 또는 Excel 2019에서 사용하는 상황이 발생할 수 있습니다.\" 구문: =XLOOKUP(lookup_value, lookup_array, return_array, [if_not_found], [match_mode], [search_mode]). lookup_value 필수(생략하면 lookup_array에서 찾은 빈 셀 반환), lookup_array 필수(검색할 배열 또는 범위), return_array 필수(반환할 배열 또는 범위), [if_not_found] 선택(유효한 일치 항목이 없으면 제공한 텍스트 반환, 없고 생략하면 #N/A), [match_mode] 선택: 0 정확히 일치·못 찾으면 #N/A·기본값 / -1 정확히 일치, 못 찾으면 다음으로 작은 항목 / 1 정확히 일치, 못 찾으면 다음으로 큰 항목 / 2 *, ?, ~ 가 특별한 의미를 갖는 와일드카드 매치. [search_mode] 선택: 1 첫 번째 항목부터 검색·기본값 / -1 마지막 항목부터 역방향 검색 / 2 오름차순 정렬된 lookup_array에 의존하는 이진 검색, 정렬하지 않으면 잘못된 결과. 예제 1: 국가 이름을 조회해 전화 국가 코드 반환 — lookup_value 셀 F2, lookup_array B2:B11, return_array D2:D11, 기본이 정확히 일치라 match_mode 생략. \"XLOOKUP은 조회 배열과 반환 배열을 사용하는 반면, VLOOKUP은 단일 테이블 배열 뒤에 열 인덱스 번호를 사용합니다. 이 경우에 해당하는 VLOOKUP 수식은 =VLOOKUP(F2,B2:D11,3,FALSE)입니다.\" 예제 2: 직원 ID로 직원 정보 조회 — \"VLOOKUP과 달리 XLOOKUP은 여러 항목이 있는 배열을 반환할 수 있으므로 단일 수식이 C5:D14 셀에서 직원 이름과 부서를 모두 반환할 수 있습니다.\" 예제 3: 앞 예제에 if_not_found 인수 추가. 예제 4: C열에서 개인 소득(E2)을 찾고 B열에서 세율 반환, if_not_found 0, match_mode 1(없으면 다음으로 큰 항목), search_mode 1 — \"lookup_array 열은 return_array 열의 오른쪽에 있는 반면 VLOOKUP은 왼쪽에서 오른쪽으로만 볼 수 있습니다.\" 예제 5: 중첩 XLOOKUP으로 세로·가로 일치(INDEX+MATCH와 비슷), 팁: XLOOKUP으로 HLOOKUP도 대체 가능. 예제 6: =SUM(XLOOKUP(B3,B6:B10,E6:E10):XLOOKUP(C3,B6:B10,E6:E10)) — XLOOKUP이 범위를 반환하므로 가능(Excel MVP Bill Jelen 제안).",
+      "facts": [
+        "XLOOKUP 구문은 =XLOOKUP(lookup_value, lookup_array, return_array, [if_not_found], [match_mode], [search_mode])이다.",
+        "match_mode 기본값은 0(정확히 일치, 못 찾으면 #N/A).",
+        "if_not_found를 지정하면 못 찾았을 때 그 값을 반환하고, 생략하면 #N/A.",
+        "search_mode 기본 1(처음부터), -1은 마지막부터 역방향, 2는 오름차순 정렬 전제 이진 검색.",
+        "match_mode 2는 *, ?, ~ 와일드카드.",
+        "XLOOKUP은 반환 열이 어느 쪽에 있든 조회 가능(조회 열이 반환 열 오른쪽이어도 됨).",
+        "XLOOKUP은 Excel 2016·Excel 2019에서 사용할 수 없다.",
+        "예제 1 VLOOKUP 대응 수식: =VLOOKUP(F2,B2:D11,3,FALSE), XLOOKUP 인수는 F2·B2:B11·D2:D11.",
+        "XLOOKUP 하나로 여러 열(C5:D14, 이름과 부서)을 반환할 수 있다.",
+        "XLOOKUP으로 HLOOKUP도 대체할 수 있다."
+      ]
+    },
+    {
+      "title": "VLOOKUP 함수 | Microsoft Support",
+      "url": "https://support.microsoft.com/ko-kr/office/vlookup-%ED%95%A8%EC%88%98-0bbc8083-26fe-4963-8ab8-93a18ad188a1",
+      "host": "support.microsoft.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "팁: \"XLOOKUP 함수를 사용해 보세요. VLOOKUP의 개선된 버전으로, 어느 방향으로나 작동하며, 기본값으로 정확한 일치 항목을 반환하여 이전 버전보다 더 사용하기 쉽고 편리합니다.\" 구문 VLOOKUP(lookup_value, table_array, col_index_num, [range_lookup]). 예: =VLOOKUP(A2,A10:C20,2,TRUE), =VLOOKUP(\"장\",B2:E7,2,FALSE). lookup_value는 table_array 첫 번째 열에 있어야 한다(예: table_array가 B2:D7이면 B열). col_index_num은 table_array 가장 왼쪽 열을 1로 세는 반환 열 번호. range_lookup: 근사값 일치 1/TRUE는 첫 번째 열이 숫자·알파벳순으로 정렬돼 있다고 가정하고 가장 가까운 값을 검색하며 \"인수를 지정하지 않으면 이 방법이 기본적으로 사용됩니다\" / 정확히 일치 0/FALSE. \"항목을 지정하지 않으면, 기본값은 항상 TRUE나 유사 일치가 됩니다.\" 팁: 찾는 값이 반환 값의 왼쪽에 있도록 데이터를 구성. 일반적인 문제: range_lookup이 TRUE이거나 제외되면 첫 번째 열을 정렬해야 하며 정렬 안 돼 있으면 잘못된 값이 반환될 수 있음 → 정렬하거나 FALSE 사용. #N/A: TRUE일 때 lookup_value가 첫 열 최솟값보다 작으면, FALSE일 때 정확한 값을 못 찾으면. #REF!: col_index_num이 table_array 열 수보다 크면. #VALUE!: col_index_num(문서 표기상 table_array)이 1보다 작으면. #NAME?: 보통 따옴표 누락. 모범 사례: 절대 참조 사용, 숫자·날짜를 텍스트로 저장하지 않기, FALSE이고 텍스트면 와일드카드 ? * 사용 가능(~로 실제 문자 검색), 앞뒤 공백 등은 CLEAN·TRIM으로 정리.",
+      "facts": [
+        "VLOOKUP 구문은 VLOOKUP(lookup_value, table_array, col_index_num, [range_lookup]).",
+        "range_lookup을 생략하면 기본값은 TRUE(근사값 일치).",
+        "근사값 일치는 첫 번째 열이 정렬돼 있다고 가정하며, 정렬 안 돼 있으면 잘못된 값이 반환될 수 있다.",
+        "조회 값은 table_array 첫 번째 열에 있어야 한다.",
+        "col_index_num이 table_array 열 수보다 크면 #REF!.",
+        "FALSE일 때 정확한 값을 못 찾으면 #N/A.",
+        "VLOOKUP 문서 팁은 XLOOKUP을 개선된 버전으로 소개한다(어느 방향이든, 기본 정확히 일치)."
+      ]
+    },
+    {
+      "title": "Windows용 Excel 2021의 새로운 기능 | Microsoft Support",
+      "url": "https://support.microsoft.com/ko-kr/excel/what-s-new-in-excel-2021-for-windows",
+      "host": "support.microsoft.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "\"Windows용 Excel 2021을 사용하면 공동 작성, 동적 배열, XLOOKUP 및 LET 함수를 비롯한 새로운 Excel 기능을 사용하여...\" 참고: 아래 일부 기능은 상업용 고객을 위한 Excel LTSC 2021에 포함되지 않으며 해당 기능마다 표기(공동 작성, 최신 메모, 시각적 새로 고침, 시트 보기, 자동 저장 등). XLOOKUP 항목(\"왼쪽 보기, 오른쪽 보기 여기에 XLOOKUP이 있습니다!\")에는 LTSC 제외 표기가 없다. \"XLOOKUP을 사용하여 테이블 또는 범위에서 행별로 필요한 것을 찾습니다. 기본적으로 정확히 일치하는 항목을 반환합니다. 지정할 필요가 없습니다.\" 같은 문서에 LET, 동적 배열(FILTER·SORT·SORTBY·UNIQUE·SEQUENCE·RANDARRAY), XMATCH도 새 기능으로 소개.",
+      "facts": [
+        "XLOOKUP은 Windows용 Excel 2021의 새 기능으로 소개됐다.",
+        "Excel 2021 새 기능 문서의 XLOOKUP 항목에는 LTSC 2021 제외 표기가 없다.",
+        "같은 문서에 XMATCH, LET, 동적 배열 함수도 새 기능으로 있다."
+      ]
+    },
+    {
+      "title": "VLOOKUP, INDEX 또는 MATCH를 사용하여 값 조회 | Microsoft Support",
+      "url": "https://support.microsoft.com/ko-kr/excel/look-up-values-with-vlookup-index-or-match",
+      "host": "support.microsoft.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "팁: 새 XLOOKUP 및 XMATCH는 이 문서 함수의 향상된 버전으로 \"모든 방향으로 작동하고 기본적으로 정확히 일치하는 항목을 반환\". \"VLOOKUP 함수는 왼쪽에서 오른쪽으로만 값을 조회할 수 있습니다. 즉, 조회한 값이 포함된 열은 항상 반환 값이 포함된 열의 왼쪽에 위치해야 합니다.\" 그렇지 않으면 INDEX와 MATCH 조합 사용을 권함. 네 번째 인수에 TRUE를 입력하거나 비워 두면 거의 일치하는 값(근사값)을, FALSE면 정확히 일치하는 값을 반환. 예제 표(밀도·점도·온도, A2:C10): =VLOOKUP(1,A2:C10,2) → 1보다 작거나 같은 최댓값 0.946 행의 B열 2.17 / =VLOOKUP(0.7,A2:C10,3,FALSE) → 정확히 일치하는 값이 없어 #N/A / =VLOOKUP(2,A2:C10,2,TRUE) → 1.29 행의 1.71. 참고: Excel에서는 조회 마법사 기능을 더 이상 사용할 수 없다.",
+      "facts": [
+        "VLOOKUP은 왼쪽에서 오른쪽으로만 조회할 수 있어 조회 열이 반환 열 왼쪽에 있어야 한다.",
+        "네 번째 인수를 비우면 근사값 일치.",
+        "=VLOOKUP(0.7,A2:C10,3,FALSE)는 정확히 일치하는 값이 없어 #N/A.",
+        "=VLOOKUP(1,A2:C10,2)는 1 이하 최댓값 0.946 행의 B열 2.17을 반환."
+      ]
+    }
+  ],
+  "conflicts": [
+    {
+      "about": "XLOOKUP 지원 버전",
+      "a": "XLOOKUP 문서 적용 대상 목록: Microsoft 365, Excel 2024, Excel 2021, Excel 2019, Excel 2016, iPad·iPhone·Android용 Excel 등",
+      "b": "같은 문서 본문 참고: XLOOKUP은 Excel 2016 및 Excel 2019에서 사용할 수 없다 — 본문 문장을 따른다(적용 대상 목록은 문서 묶음 메타로 보임)"
+    }
+  ],
+  "unknowns": [
+    "search_mode -2(내림차순 이진 검색): 한국어 원문 텍스트에선 확인 못함(2가 중복 표기).",
+    "웹용 Excel에서 XLOOKUP 지원 여부: 확인한 문서의 적용 대상 목록에 없어 확인 못함.",
+    "XLOOKUP 예제 2~4의 정확한 수식 문자열: 이미지라 본문 텍스트로 확인 못함.",
+    "XLOOKUP과 VLOOKUP의 계산 속도 차이: 공식 문서에서 찾지 못함 — 쓰지 않는다."
+  ]
+}

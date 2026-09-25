@@ -1,0 +1,96 @@
+{
+  "keyword": "홈트·헬스장 인증샷 AI 잡지컷 프롬프트",
+  "categoryId": "ai-prompt-pack",
+  "searchedAt": "2026-09-26",
+  "freshnessWindow": "2026-08-27 ~ 2026-09-26 (30일)",
+  "method": "WebSearch 공개 검색결과 + 공개 웹페이지·기사 WebFetch 만 사용. 인스타그램·틱톡·스레드 게시물 페이지는 직접 열지 않고 검색결과 제목/스니펫만 참고(ToS).",
+  "queries": [
+    "헬스장 인증샷 AI 프롬프트 챗GPT 2026",
+    "gym selfie AI photo prompt trend September 2026",
+    "AI 바디프로필 사진 유행 기사 2026년 9월",
+    "오운완 인증샷 AI 사진 프롬프트 제미나이",
+    "러닝 인증샷 AI 이미지 프롬프트 러닝크루 유행",
+    "\"gym\" AI photo prompt Gemini Nano Banana viral fitness trend news",
+    "가을 마라톤 시즌 러닝 인증샷 2026년 9월 기사",
+    "AI gym mirror selfie prompt ChatGPT Images 2.5",
+    "헬스 운동 사진 AI 합성 SNS 유행 2026 기사 \"AI\" 오운완",
+    "threads 헬스 AI 사진 프롬프트 운동하는여자 유행챌린지",
+    "운동 인증샷 AI 프롬프트 블로그 챗GPT 이미지 헬스장 거울셀카",
+    "fitness magazine cover AI prompt workout photo September 2026",
+    "러닝 사진 AI 프롬프트 챗GPT 마라톤 완주 인증 이미지 만들기"
+  ],
+  "candidates": [
+    {
+      "theme": "운동 인증샷 AI 잡지컷 — 헬스장·홈트·러닝·요가·바디프로필·대회 완주 사진을 잡지 지면처럼",
+      "evidence": "서로 다른 여러 작성자가 헬스장·운동 사진용 AI 프롬프트를 공유: sushilprompt '10 Best Trending Gym Prompt ChatGPT'(2026-07-27, 미러 셀카·복싱·럭셔리 피트니스 포스터 등, 'AI-generated fitness images have become one of the biggest social media trends'라고 자체 서술), Vikas Editing 'Gym Body AI Photo Editing Prompt 2026'(2026-06-14), Pixomi 'Bodybuilder Prompt for Gemini 25+'(2026-01-03, 01-14 업데이트), Media.io 'Gemini Gym Photo Prompt 25+'(게시일 미표기, 필라테스·요가 매트·운동 후 거리 촬영 포함), PromptPlum 피트니스 라이브러리(러닝 'Race Day Stride' 포함, 게시일 미표기). 스레드 검색결과에 '#유행챌린지 #ai #운동하는여자 #헬스하는여자' 게시물도 잡힘(게시일 미확인, 게시물 직접 열람 안 함). 최근 30일 안 계기: 오픈AI가 2026-09-08 챗GPT 이미지 2.5를 내며 '참조 사진 속 피사체를 더 잘 유지'한다고 발표(9to5Mac) — 내 얼굴·몸을 그대로 둬야 하는 운동 인증샷 프롬프트의 재시도 계기. 스포츠경향 2026-09-22 기사가 '가을 러닝 시즌'을 현재형으로 다루며 09-13·09-20 마라톤 대회 개최를 전함 — 러닝·대회 완주 장면의 시즌성 계기.",
+      "sourceUrl": "https://sushilprompt.com/trending-gym-prompt-chatgpt/",
+      "freshness": "운동 사진 AI 프롬프트 공유 자체는 2026-01~07 전반에 걸쳐 확인. 최근 30일 안에는 신모델 발표(09-08)와 가을 러닝 시즌 보도(09-22)만 확인 — 30일 안에 새로 올라온 운동 인증샷 AI 게시물 다수는 검색으로 확인 못 함",
+      "volumeSignalsMet": "2/4 — (2)여러 작성자·사이트가 같은 스타일 공유 충족, (4)최근 30일 내 재점화 계기(09-08 챗GPT 이미지 2.5 피사체 보존 개선 + 9월 가을 러닝·마라톤 시즌) 충족. (1)최근 30일 내 다수 신규 게시물 미확인. (3)언론의 '운동 인증샷 AI 유행' 현재형 보도 미확인(중부일보 07-02 기사는 AI 신체 보정 문화를 비판적으로 다룬 것이고 30일 밖)"
+    },
+    {
+      "theme": "AI '드림 바디' 체형 변환(식스팩·근육 합성)",
+      "evidence": "India TV 'Gemini Nano Banana's dream gym body trend goes viral'(2025-09-17) — 인도·남아시아 중심, 1년 전. 중부일보 2026-07-02 '[AI 시대의 몸] 오운완·몸스타그램… 이미지에 갇힌 사람들'은 생성형 AI가 체형·비율까지 보정하는 문화를 비판적으로 다룸.",
+      "sourceUrl": "https://www.indiatvnews.com/technology/news/after-saree-and-hug-your-younger-self-gemini-nano-banana-s-dream-gym-body-trend-goes-viral-use-these-prompts-2025-09-17-1008592",
+      "freshness": "2025-09 — 30일 기준 미충족",
+      "volumeSignalsMet": "1/4 — (2)만 충족. 체형 과장은 신체 이미지 문제(중부일보 비판)와 부딪혀 채택 안 함 — 채택 테마의 룰북에 '체형 과장 금지'로 반영"
+    },
+    {
+      "theme": "러닝 기록 인증 AI 템플릿(러닝 사진 + 기록 합성)",
+      "evidence": "디시인사이드 러닝 마이너 갤러리 '러닝 인증샷 AI로 바꿔주는 서비스 써보실분!' 게시물(검색 스니펫, 게시일 미확인), 헤럴드경제 '인증샷은 필수…패션으로 달리는 러너들'(러닝 인증샷 문화 일반, AI 아님).",
+      "sourceUrl": "https://gall.dcinside.com/mgallery/board/view/?id=running&no=953932",
+      "freshness": "게시일 미확인 — 30일 기준 미확인. 단일 서비스 홍보 성격",
+      "volumeSignalsMet": "0~1/4 — 채택 안 함(러닝은 채택 테마의 변형 1개로 흡수)"
+    }
+  ],
+  "chosen": {
+    "theme": "운동 인증샷 AI 잡지컷 — 헬스장·홈트·러닝·요가·바디프로필·대회 완주 6장면",
+    "evidence": "후보 1(2/4 충족: 여러 작성자 공유 + 09-08 챗GPT 이미지 2.5 피사체 보존 개선·9월 가을 러닝 시즌). 본문에선 '대유행'이 아니라 '꾸준히 공유돼 온 스타일 + 최근 계기' 범위로만 쓴다.",
+    "limitation": "최근 30일 안에 새로 올라온 운동 인증샷 AI 게시물을 여러 건 직접 확인하진 못했다 — 본문에 한 줄로 밝힌다. '요즘 대유행' 류 표현 금지.",
+    "whyNowLine": "2026-09-08 챗GPT 이미지 2.5 발표(참조 사진 속 피사체를 더 잘 유지) + 9월 가을 러닝 시즌 개막(스포츠경향 09-22). 중부일보 07-02 기사가 지적한 AI 체형 보정 문제 → 룰북에 '몸을 부풀리지 않는다' 규칙 포함",
+    "avoidOverlap": "posted.json 확인: 운동·헬스 테마 프롬프트 팩 없음. 기발행 반려묘(/430)·커플(/486)·폴라로이드(/304)·Y2K(/287)·야구장(/285)과 테마 겹치지 않음. keywords.done.csv 에 홈트·헬스 행 없음."
+  },
+  "sources": [
+    {
+      "title": "OpenAI releases ChatGPT Images 2.5 with 'sharper details' and 'more precise editing'",
+      "url": "https://9to5mac.com/2026/09/08/openai-releases-chatgpt-images-2-5-with-sharper-details-and-more-precise-editing/",
+      "host": "9to5mac.com",
+      "publishedAt": "2026-09-08",
+      "body": "오픈AI가 2026-09-08 챗GPT 이미지 2.5를 공개. 원문: 'Images 2.5 produces more natural lighting and richer textures, is better at preserving the subjects in your reference photos'. 더 선명한 디테일, 더 정밀한 편집."
+    },
+    {
+      "title": "10 Best Trending Gym Prompt ChatGPT for Viral Fitness Photos (2026 Guide)",
+      "url": "https://sushilprompt.com/trending-gym-prompt-chatgpt/",
+      "host": "sushilprompt.com",
+      "publishedAt": "2026-07-27",
+      "body": "작성자 Sushil. 헬스장 미러 셀카·복싱 포트레이트·운동 후 회복 장면·운동선수 포트레이트·럭셔리 피트니스 포스터 프롬프트를 공유. 자체 서술: 'AI-generated fitness images have become one of the biggest social media trends'."
+    },
+    {
+      "title": "Gym Body AI Photo Editing Prompt 2026 (Gemini Copy Paste) - Vikas Editing",
+      "url": "https://editingbyvikas.com/gym-body-ai-photo-editing-prompt/",
+      "host": "editingbyvikas.com",
+      "publishedAt": "2026-06-14",
+      "body": "같은 얼굴·몸을 유지한 채 측면 조명·림라이트·어두운 헬스장 배경의 시네마틱 짐 포트레이트로 편집하는 프롬프트. 야외 운동선수 변형 포함."
+    },
+    {
+      "title": "Gemini Gym Photo Prompt | 25+ Copy-Paste Fitness Shots",
+      "url": "https://www.media.io/ai-prompts/gemini-gym-photo-prompt.html",
+      "host": "media.io",
+      "publishedAt": "미표기",
+      "body": "25개 이상 헬스장·운동 사진 프롬프트. 거울 셀카, 데드리프트 등 액션샷, 필라테스 스튜디오·요가 매트 등 환경별, 운동 후 거리 촬영, 4:5 인스타그램 비율 등."
+    },
+    {
+      "title": "\"가을 러닝 시즌에 전한 시원한 응원\"···마라톤 3개 대회 음료·생수 지원 (스포츠경향)",
+      "url": "https://sports.khan.co.kr/article/202609222212003/",
+      "host": "sports.khan.co.kr",
+      "publishedAt": "2026-09-22",
+      "body": "가을 러닝 시즌을 맞아 9월 13일 서울 마포구 '2026 스마일런 페스티벌', 9월 20일 '제19회 가평 자라섬 전국 마라톤대회'·'제20회 강동구 선사마라톤축제'가 열렸다고 전하는 기사(음료 기업 후원 기사)."
+    },
+    {
+      "title": "[AI 시대의 몸] 오운완·몸스타그램… 이미지에 갇힌 사람들 - 중부일보",
+      "url": "https://www.joongboo.com/news/articleView.html?idxno=363730410",
+      "host": "joongboo.com",
+      "publishedAt": "2026-07-02",
+      "body": "SNS와 AI 기술이 몸을 '끊임없이 개조하고 업데이트해야 할 프로젝트'로 만들고 있으며, 생성형 AI·사진 편집 서비스가 체형과 피부, 비율까지 자연스럽게 보정한다고 비판적으로 다룬 기사."
+    }
+  ]
+}

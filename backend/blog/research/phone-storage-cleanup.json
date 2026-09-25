@@ -1,0 +1,210 @@
+{
+  "keyword": "아이폰 저장공간 정리 · 갤럭시 저장공간 부족",
+  "categoryId": "hangeut-trend",
+  "slug": "phone-storage-cleanup",
+  "searchedAt": "2026-09-26",
+  "note": "제조사 공식 지원 문서(Apple 지원 3건, 삼성전자서비스 4건)를 뼈대로, 한국어 메뉴명은 2026년 보도(라디오코리아·위키트리·디지털포커스)와 Apple 커뮤니티로 보강했다. Apple 지원 문서는 한국어판 URL이 검색 결과에 나오지 않아 en-us 원문(영문)을 읽었고, 한국어 메뉴명은 한국어 자료에 나온 표기만 쓴다. 확인 못함: (1) Samsung Members(r1.community.samsung.com) 게시글들은 WebFetch·curl 모두 403이라 본문을 못 읽음 — '디바이스 케어 중복 파일은 큰 동영상·오디오만 표시', '배터리 및 디바이스 케어' 메뉴명 등은 검색 요약에만 있어 쓰지 않는다. (2) One UI 7·8에서 디바이스 케어 메뉴명이 바뀌었는지 공식 문서로 확인 못함. (3) 카카오톡 최신 버전의 저장공간 관리 메뉴 경로는 2023년 12월 기사로만 확인 — 현재 경로는 확인 못함. (4) Apple '사용하지 않는 앱 정리하기'가 App Store 설정에 있는 자동 옵션인지 iPhone 저장 공간 화면의 추천인지 — Apple 공식 한국어 문서로 확인 못함(CNET코리아 2023은 앱 스토어 옵션, Apple 커뮤니티 답변은 iPhone 저장 공간 화면이라고 함). (5) news.ajd.co.kr(552)은 '앱 정리하기'가 캐시를 지운다고 썼는데 Apple 원문은 '앱을 지우되 문서와 데이터는 유지'라 Apple 설명을 따른다. (6) news.ajd.co.kr(666)의 '내 파일 > Android 폴더 전체 삭제' 팁은 공식 근거가 없고 앱 데이터 손실 위험이 있어 쓰지 않는다. (7) earlyadopter.co.kr 기사는 인증서 만료로 못 읽음.",
+  "queries": [
+    "아이폰 저장 공간 확인 앱 정리하기 Apple 지원",
+    "삼성 갤럭시 저장공간 부족 해결 방법 디바이스 케어 삼성전자 서비스",
+    "iPhone 사진 저장 공간 최적화 iCloud 사진 Apple 지원",
+    "support.apple.com ko-kr iPhone 저장 공간 확인 사용하지 않는 앱 정리하기",
+    "\"iPhone 저장 공간\" \"사용하지 않는 앱 정리하기\" 설정 일반 Apple",
+    "\"최근 삭제된 항목\" 30일 iPhone 사진 Apple 지원 삭제된 사진 복구",
+    "갤럭시 휴지통 30일 갤러리 내 파일 휴지통 비우기 삼성전자서비스",
+    "삼성전자서비스 디바이스 케어 저장공간 관리 사용하지 않는 앱 중복 파일 큰 파일 One UI",
+    "카카오톡 저장공간 관리 캐시 데이터 삭제 방법 기사",
+    "iPhone 저장 공간 가득 참 업데이트 공간 부족 시스템 데이터 기타 줄이기 기사 2025",
+    "갤럭시 저장공간 부족 해결 디바이스 케어 기사 2025 OR 2026",
+    "\"앱 정리하기\" \"iPhone 저장 공간\" 문서 및 데이터 유지 Apple 지원"
+  ],
+  "sources": [
+    {
+      "title": "How to check the storage on your iPhone and iPad (iPhone 및 iPad의 저장 공간을 확인하는 방법)",
+      "url": "https://support.apple.com/en-us/108429",
+      "host": "support.apple.com",
+      "tier": "official",
+      "publishedAt": "2026-09-16",
+      "body": "Apple 지원 문서(영문 원문 확인). 설정 > 일반 > [기기] 저장 공간에서 추천 항목과 앱별 사용량 목록을 본다. 앱 이름을 누르면 상세 화면에서 두 가지를 할 수 있다: 'Offload the app. This frees up storage used by the app, but keeps its documents and data.' / 'Delete the app, which removes the app and its related data.' 기기 저장 공간이 부족하면 'it frees up space by removing items that you can download again or aren't needed, like unused apps and temporary files.' 'Storage Almost Full' 경고가 뜨면 추천을 확인하거나 동영상·앱 같은 콘텐츠를 지우라고 안내. 추천은 'Show All'로 전부 보고, 설명을 읽은 뒤 Enable로 켜거나 눌러서 지울 항목을 검토. 카테고리: System = 'Space taken by the operating system. This can vary based on your device and model.' Other = Siri 음성·서체·사전·지울 수 없는 로그와 캐시·Spotlight 색인·키체인 등 시스템 데이터. 캐시 파일: 스트리밍·열람 시 다음에 빨리 불러오려고 만들어지며 'Your device removes these files when your device needs more space.' 'To free up space, your device removes cached and temporary files, so you don't have to.' 'The system can't delete cached files'(사용자가 직접 지우는 대상이 아님). 캐시·임시 데이터는 사용량에 안 잡힐 수 있다('Cached data and temporary data might not count as usage').",
+      "facts": [
+        "iPhone 저장 공간 확인 경로: 설정 > 일반 > [기기] 저장 공간 — 추천과 앱별 사용량 목록이 나온다.",
+        "앱 오프로드(Offload)는 앱이 쓰던 저장 공간을 비우되 문서와 데이터는 남긴다. 앱 삭제는 앱과 관련 데이터를 모두 지운다.",
+        "저장 공간이 부족하면 기기가 다시 받을 수 있거나 필요 없는 항목(안 쓰는 앱·임시 파일)을 스스로 지운다.",
+        "캐시·임시 파일은 기기가 공간이 필요할 때 알아서 지우므로 사용자가 따로 지울 필요가 없다고 안내한다.",
+        "'시스템'은 운영체제가 차지하는 공간으로 기기·모델마다 다르다."
+      ]
+    },
+    {
+      "title": "Manage your photo and video storage (사진 및 비디오 저장 공간 관리하기)",
+      "url": "https://support.apple.com/en-us/105061",
+      "host": "support.apple.com",
+      "tier": "official",
+      "publishedAt": "2026-09-14",
+      "body": "Apple 지원 문서(영문 원문 확인). 기본적으로 사진·비디오는 원본 고해상도로 기기에 저장돼 공간을 많이 쓴다. iCloud 사진을 쓰면 'Optimize Storage is on by default'. 경로: Settings > [your name] > iCloud > Photos > 'Sync this iPhone' 켜기 > 'In iOS 27 or later, tap iPhone Storage.' > 'Optimize iPhone Storage' 켜기. 'When Optimize Storage is turned on, full-resolution photos and videos are stored in iCloud, and, when needed, space-saving copies are stored on your device.' 'When you sign up for iCloud, you automatically get 5 GB of free storage.' 더 필요하면 iCloud+로 업그레이드하거나, iCloud에 두기 싫은 사진·비디오는 컴퓨터로 옮긴다. 'With Recommended for You in iOS 17 or iPadOS 17 or later, you can check if there are photos, large files, or backups that you might not need anymore and can delete.' 중복 사진·비디오를 병합해 공간을 확보할 수 있다. iCloud 저장 공간 확인: 설정 > [이름] > iCloud.",
+      "facts": [
+        "iCloud 사진을 쓰면 '저장 공간 최적화'가 기본으로 켜진다 — 원본은 iCloud에, 기기엔 필요할 때 용량을 줄인 사본을 둔다.",
+        "켜는 경로: 설정 > [사용자 이름] > iCloud > 사진 > 이 iPhone 동기화 켜기 > (iOS 27 이상) iPhone 저장 공간 > iPhone 저장 공간 최적화.",
+        "iCloud 가입 시 무료 저장 공간 5GB가 자동 제공된다.",
+        "iOS 17 이상 'Recommended for You'로 필요 없을 수 있는 사진·큰 파일·백업을 확인할 수 있다."
+      ]
+    },
+    {
+      "title": "Delete photos on your iPhone or iPad",
+      "url": "https://support.apple.com/en-us/104967",
+      "host": "support.apple.com",
+      "tier": "official",
+      "publishedAt": "2026-03-31",
+      "body": "Apple 지원 문서(영문 원문 확인). 'When you delete photos and videos, they go to your Recently Deleted album for 30 days. After 30 days, they'll be permanently deleted.' iCloud 사진을 쓰면 한 기기에서 지운 사진이 같은 Apple 계정의 다른 기기에서도 지워진다 — 지우기 전 백업 권장. 중복 항목: 사진 > 아래 '컬렉션' > 위로 쓸어 '유틸리티'의 'Duplicates' 앨범 > 'Merge'. 병합하면 가장 좋은 화질과 관련 데이터를 합쳐 한 장을 남기고 'The other duplicate photos move to your Recently Deleted album.' Duplicates 앨범은 iOS 16·iPadOS 16.1 이상, 중복 감지는 자동이며 시간이 걸릴 수 있음. 최근 삭제된 항목: 컬렉션 > 유틸리티 > Recently Deleted, iOS 16 이상은 Face ID/Touch ID로 잠금 해제. 영구 삭제는 앨범에서 선택 후 More 버튼 > Delete(또는 Delete All). 앱 설정 경로 예: 'Open the Settings app. Tap Apps, then tap Photos.'",
+      "facts": [
+        "사진·비디오를 지우면 '최근 삭제된 항목'에 30일 머문 뒤 영구 삭제된다.",
+        "iCloud 사진 사용 시 한 기기에서 지우면 같은 계정의 다른 기기에서도 지워진다.",
+        "중복 항목 앨범(iOS 16 이상)에서 병합하면 한 장만 남고 나머지는 최근 삭제된 항목으로 간다.",
+        "최신 문서의 사진 앱 설정 경로는 '설정 > 앱 > 사진' 형태다."
+      ]
+    },
+    {
+      "title": "아이폰 용량 부족, 이렇게 해결하자···저장 공간 최적화 위한 꿀팁 공개",
+      "url": "https://www.cnet.co.kr/view/?no=20231101133150",
+      "host": "cnet.co.kr",
+      "tier": "press",
+      "publishedAt": "2023-11-02",
+      "body": "씨넷코리아 정하정 기자, 미국 씨넷 보도 인용(2023-11-02). 저장 공간 부족으로 운영체제를 업데이트하지 못하는 경우도 있다. 사진 저장 공간 최적화: 원본 사진·비디오는 iCloud에 두고 필요할 때 내려받는다(당시 경로 '설정 > 사진 > 아이폰 저장 공간 최적화'). 오프로드: 앱의 문서·데이터를 유지하며 앱을 비활성화, 다시 설치하면 이어서 쓸 수 있다 — 설정 > 일반 > 아이폰 저장소에서 앱 선택, 앱 스토어 옵션에서 '사용하지 않는 앱 오프로드'를 켜면 자동 수행(기사 번역 표기). 메시지: 설정 > 메시지 > 메시지 기록에서 메시지 보관 기간을 30일·1년·영구 중 선택. 사파리 캐시: 설정 > 사파리 > '방문 기록 및 웹 사이트 데이터 지우기' — 로그인된 웹사이트에서 로그아웃된다.",
+      "facts": [
+        "메시지 보관 기간은 30일·1년·영구 중 고를 수 있다(2023년 기사 기준 경로: 설정 > 메시지 > 메시지 기록).",
+        "사파리 '방문 기록 및 웹 사이트 데이터 지우기'를 하면 로그인된 사이트에서 로그아웃된다.",
+        "오프로드를 자동으로 수행하는 앱 스토어 옵션이 있다(2023년 기사 번역 표기 '사용하지 않는 앱 오프로드')."
+      ]
+    },
+    {
+      "title": "iPhone에서 사용하지 않는 앱 정리하기 기능을 비활성화하는 방법 (Apple 커뮤니티)",
+      "url": "https://discussionskorea.apple.com/thread/256122614",
+      "host": "discussionskorea.apple.com",
+      "tier": "community",
+      "publishedAt": "2025-08-24",
+      "body": "Apple 한국 커뮤니티 질의응답(2025-08-24). 저장공간 때문에 안 쓰는 앱을 자동으로 지우는 기능을 켰다가 끄는 법을 물음. 우수 답변: '설정 > 일반 > iPhone 저장 공간에서 사용하지 않는 앱 정리하기를 비활성화'. 공식 문서가 아니라 사용자 답변이며 iOS 버전은 명시 없음.",
+      "facts": [
+        "한국어 메뉴명 '사용하지 않는 앱 정리하기'는 켠 뒤 다시 끌 수 있다(커뮤니티 답변: 설정 > 일반 > iPhone 저장 공간)."
+      ]
+    },
+    {
+      "title": "3분 만에 아이폰 저장공간 늘리기(공유앨범 캐시삭제)",
+      "url": "https://news.ajd.co.kr/news/articleView.html?idxno=552",
+      "host": "news.ajd.co.kr",
+      "tier": "blog-press",
+      "publishedAt": null,
+      "body": "아정당뉴스(렌탈·통신 비교업체 운영 매체). 설정 > 일반 > iPhone 저장 공간에서 용량 큰 앱 확인, 안 쓰는 앱 삭제 또는 '앱 정리하기' 사용, iCloud 사진 + 'iPhone 저장 공간 최적화', 메신저 캐시 정리, 사파리 방문 기록 및 데이터 지우기 등을 소개. 단 '앱 정리하기가 캐시를 지운다'는 설명은 Apple 원문(앱을 지우되 문서·데이터 유지)과 다르다 — 이 글에서는 한국어 메뉴명('앱 정리하기') 표기 확인용으로만 쓴다.",
+      "facts": [
+        "iPhone 한국어 메뉴에서 오프로드 버튼 이름은 '앱 정리하기'다."
+      ]
+    },
+    {
+      "title": "[삼성 스마트폰] 메모리 저장공간이 부족합니다.",
+      "url": "https://www.samsungsvc.co.kr/solution/39991",
+      "host": "samsungsvc.co.kr",
+      "tier": "official",
+      "publishedAt": "2020-01-17",
+      "body": "삼성전자서비스 공식 해결 가이드(2020-01-17 게시). 원인: '다운로드 받은 애플리케이션이나, 용량이 큰 동영상, 사진, 음악 등이 많이 저장되어 있을 경우 발생할 수 있습니다.' 해결: 안드로이드 14~9는 앱스 화면·홈 화면에서 삭제할 앱을 길게 터치 > 설치 삭제 > 확인. 불필요한 사진·동영상·음악 삭제(내 파일 > 이미지/동영상/오디오). 외장메모리 Micro SD 400GB class 10까지 호환(일부 모델은 외장 메모리 미지원 — 사전 확인). 주의: 삭제 전 유료 앱 여부 확인, 중요한 파일은 PC 백업(Smart Switch 등) 권장.",
+      "facts": [
+        "삼성은 저장공간 부족의 원인을 설치한 앱과 용량 큰 동영상·사진·음악으로 안내한다.",
+        "앱 삭제: 앱을 길게 터치 > 설치 삭제 > 확인(안드로이드 14~9).",
+        "지우기 전 중요한 파일은 PC 등에 백업하라고 권한다.",
+        "외장 메모리를 지원하지 않는 모델도 있다."
+      ]
+    },
+    {
+      "title": "[삼성 스마트폰] 갤럭시 One UI 6, 내 파일 앱의 향상된 휴지통 기능 안내",
+      "url": "https://www.samsungsvc.co.kr/solution/1740572",
+      "host": "samsungsvc.co.kr",
+      "tier": "official",
+      "publishedAt": "2023-12-15",
+      "body": "삼성전자서비스 공식 안내(2023-12-15). One UI 6(안드로이드 14)부터 내 파일·갤러리·음성 녹음의 휴지통이 통합돼 한 곳에서 관리. 경로: 내 파일 > 휴지통 / 갤러리 > 메뉴(가로선 3개) > 휴지통 / 음성 녹음 > 더보기 > 휴지통, 또 '설정 > 디바이스 케어 > 저장공간 관리 > 휴지통'에서도 복원·삭제 가능. '삭제된 항목은 30일 동안 휴지통에 남아있습니다. 그 이후에는 자동으로 영구적으로 삭제됩니다.' '휴지통 기능은 항상 켜져 있으며 임의로 끌 수 없습니다.'",
+      "facts": [
+        "One UI 6(안드로이드 14)부터 내 파일·갤러리·음성 녹음 휴지통이 통합됐다.",
+        "휴지통 항목은 30일 뒤 자동 영구 삭제된다.",
+        "One UI 6 기준 휴지통 기능은 끌 수 없다.",
+        "경로: 내 파일 > 휴지통, 또는 설정 > 디바이스 케어 > 저장공간 관리 > 휴지통."
+      ]
+    },
+    {
+      "title": "[삼성 스마트폰] 갤러리에 저장된 사진 삭제 및 휴지통 복원 방법이 궁금합니다.",
+      "url": "https://www.samsungsvc.co.kr/solution/36956",
+      "host": "samsungsvc.co.kr",
+      "tier": "official",
+      "publishedAt": "2020-06-22",
+      "body": "삼성전자서비스 공식 안내(2020-06-22). 사진 삭제: 갤러리 > 사진 길게 터치 선택 > 삭제 > 휴지통으로 이동. 휴지통 복원: 안드로이드 12/11은 갤러리 > 메뉴 > 휴지통 > 복원. 보관 기간: 안드로이드 12·11·10은 30일, 안드로이드 9는 15일. 안드로이드 8·7은 휴지통 미지원.",
+      "facts": [
+        "갤러리에서 지운 사진은 휴지통으로 이동하며, 안드로이드 10 이상은 30일 보관(안드로이드 9는 15일)."
+      ]
+    },
+    {
+      "title": "[삼성 스마트폰] 갤럭시, 불필요한 파일 및 백그라운드에서 실행 중인 앱을 정리하고 싶어요.",
+      "url": "https://www.samsungsvc.co.kr/solution/41004",
+      "host": "samsungsvc.co.kr",
+      "tier": "official",
+      "publishedAt": "2025-04-30",
+      "body": "삼성전자서비스 공식 안내(2025-04-30). 디바이스 케어는 저장공간 확보, 불필요한 파일과 백그라운드 실행 앱 정리, 비정상 배터리 사용 정리, 악성 코드 검사로 디바이스 상태를 최적화한다. 경로: 설정 > 디바이스 케어 > 지금 최적화. 면책 문구: 모델·적용 소프트웨어·앱 버전에 따라 메뉴 이름과 화면 구성이 다를 수 있다. 계속 문제면 삼성전자 고객센터(1588-3366).",
+      "facts": [
+        "디바이스 케어 '지금 최적화'는 불필요한 파일과 백그라운드 앱 정리 등을 한 번에 한다(설정 > 디바이스 케어).",
+        "삼성은 모델·소프트웨어 버전에 따라 메뉴 이름과 화면 구성이 다를 수 있다고 밝힌다."
+      ]
+    },
+    {
+      "title": "아이폰·갤럭시 용량 꽉 찼다면?...몇 분 만에 저장공간 늘리는 방법",
+      "url": "https://www.radiokorea.com/news/article.php?uid=504647",
+      "host": "radiokorea.com",
+      "tier": "press",
+      "publishedAt": "2026-09-18",
+      "body": "라디오코리아 주정호 기자(2026-09-18). 아이폰: 설정 > 일반 > iPhone 저장 공간에서 용량 확인, 'iPhone 저장 공간 최적화'를 쓰면 원본 사진은 아이클라우드에, 휴대전화엔 축소 버전 보관. 갤럭시: 설정 > 디바이스 케어에서 확인, 기본 '내 파일' 앱에서도 대용량·중복 파일 확인 가능, Files by Google 앱으로도 정리 가능. 공통: 용량 큰 동영상 삭제로 수 기가바이트 확보 가능, 휴지통·최근 삭제된 항목 확인, 중요 자료는 백업 후 휴지통 정리 권장.",
+      "facts": [
+        "아이폰 한국어 경로: 설정 > 일반 > iPhone 저장 공간.",
+        "갤럭시 '내 파일' 앱에서도 대용량·중복 파일을 확인할 수 있다.",
+        "용량 큰 동영상 몇 개만 지워도 수 기가바이트를 확보할 수 있다고 보도.",
+        "휴지통·최근 삭제된 항목을 확인하되 중요 자료는 백업 후 비우라고 권한다."
+      ]
+    },
+    {
+      "title": "핸드폰 저장공간 부족해서 답답했다면 '여기'를 눌러 보세요…",
+      "url": "https://www.wikitree.co.kr/articles/1131478",
+      "host": "wikitree.co.kr",
+      "tier": "press",
+      "publishedAt": "2026-04-18",
+      "body": "위키트리 배민지 기자(2026-04-18, 수정 06-24). 메신저 앱(카카오톡·텔레그램 등) 캐시가 10GB 이상 차지할 수 있다. 갤럭시 '저장공간 분석' 메뉴, 아이폰 '복제된 항목' 앨범으로 중복 사진 정리. 브라우저 캐시·불필요한 앱 정리. OTT·음악 스트리밍 오프라인 저장물 점검 — 영화 1편 1~2GB, 드라마 1시즌 10GB 이상. 삭제한 파일이 최대 30일간 휴지통에 남아 있어 직접 비워야 한다.",
+      "facts": [
+        "메신저 앱 캐시가 10GB 이상 차지하는 경우가 있다고 보도.",
+        "OTT 오프라인 저장물은 영화 1편 1~2GB, 드라마 1시즌 10GB 이상이라고 보도.",
+        "삭제한 파일이 최대 30일 휴지통에 남으니 직접 비워야 공간이 확보된다고 보도."
+      ]
+    },
+    {
+      "title": "갤럭시 스마트폰 저장공간 부족 해결 완벽 가이드",
+      "url": "https://www.digitalfocus.news/news/articleView.html?idxno=13120",
+      "host": "digitalfocus.news",
+      "tier": "press",
+      "publishedAt": "2025-08-02",
+      "body": "디지털포커스 이채영 기자(2025-08-02). 플래그십이 최소 256GB를 줘도 오래 쓰면 저장공간 부족 알림이 뜨며 마이크로SD 슬롯 미지원이 문제를 키운다. 1) 휴지통 비우기: 설정 > 디바이스 케어 > 저장공간 > 휴지통(30일 보관 파일). 2) 중복 파일: 설정 > 디바이스 케어 > 저장공간 > 중복 파일. 3) 미사용 앱: 설정 > 디바이스 케어 > 저장공간 > 미사용 앱. 4) 앱 캐시: 설정 > 앱에서 크기순 정렬 후 각 앱 캐시 삭제 — 데이터 지우기는 주의. 5) 구글 포토·원드라이브 등 클라우드 백업. 6) 넷플릭스·유튜브 오프라인 콘텐츠 정기 점검. 월 1회 정도 정기 관리를 권함.",
+      "facts": [
+        "갤럭시 경로: 설정 > 디바이스 케어 > 저장공간 > 휴지통 / 중복 파일 / 미사용 앱.",
+        "앱 캐시는 설정 > 앱에서 앱별로 지우되 '데이터 지우기'는 주의해야 한다.",
+        "넷플릭스·유튜브 오프라인 저장 콘텐츠도 점검 대상."
+      ]
+    },
+    {
+      "title": "[슬기로운 5G생활] 카카오톡 캐시를 지워 저장공간 확보하기",
+      "url": "https://www.omate.kr/news/articleView.html?idxno=45931",
+      "host": "omate.kr",
+      "tier": "press",
+      "publishedAt": "2023-12-16",
+      "body": "OMATE 시니어 현태덕 기자(2023-12-16, 수정 12-18). 경로(당시): 친구/채팅 화면 > 설정 > 전체 설정 > 앱 관리 > 저장공간 관리 > 캐시 데이터 모두 삭제, 확인 체크 후 삭제. 캐시는 임시 저장 데이터만 지우며 '각 채팅방에 있는 대화 내용, 사진, 동영상 등이 삭제되는 것이 아니다'. 처음 실행이 약간 느릴 수 있다.",
+      "facts": [
+        "카카오톡 캐시 삭제는 대화 내용·사진·동영상을 지우지 않는다(2023년 기사).",
+        "2023년 기사 기준 경로: 설정 > 전체 설정 > 앱 관리 > 저장공간 관리 > 캐시 데이터 모두 삭제 — 현재 버전 경로는 확인 못함."
+      ]
+    }
+  ],
+  "unknowns": [
+    "Apple 한국어 지원 문서 원문(ko-kr)은 검색 결과에 URL이 나오지 않아 못 읽었다 — 한국어 메뉴명은 한국어 보도·커뮤니티 표기로만 확인.",
+    "One UI 7·8에서 '디바이스 케어' 메뉴 이름이 바뀌었는지(예: '배터리 및 디바이스 케어')는 Samsung Members 403으로 확인 못함.",
+    "카카오톡 최신 버전의 저장공간 관리 경로는 확인 못함(2023년 기사 경로만).",
+    "갤럭시 '중복 파일'이 어떤 파일 종류를 대상으로 하는지 공식 문서로 확인 못함."
+  ]
+}

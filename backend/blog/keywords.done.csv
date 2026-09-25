@@ -8,3 +8,4 @@ keyword,categoryId,priority,memo,pickedAt,slug
 "구글폼 응답을 AI가 자동 분류해서 노션에 정리하는 n8n 워크플로",automation-idea,2,Google Forms/Notion 연동 노드 실재 확인 필수,2026-09-25,n8n-googleform-notion-ai
 "지금 들어도 안 늙은 8090 한국 가요",retro-revival,2,시티팝 편에 대응하는 국내판 — 커버·챌린지·드라마삽입 등 역주행 근거 있는 곡만 · 초유명곡 제외,2026-09-25,kpop-8090-still-fresh
 "커플 사진 AI 잡지컷 프롬프트 모음",ai-prompt-pack,2,실존 커플·연예인 예시 금지 — 상황 변형(데이트·기념일·여행·집들이 등) 4~6개,2026-09-25,couple-photo-prompt-pack
+"홈트·헬스장 인증샷 AI 잡지컷 프롬프트",ai-prompt-pack,3,"상황 변형 6종(헬스장·거실홈트·새벽러닝·요가·바디프로필·대회완주)으로 발행",2026-09-26,homefit-photo-prompt-pack

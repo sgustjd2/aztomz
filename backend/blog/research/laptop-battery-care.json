@@ -1,0 +1,207 @@
+{
+  "keyword": "노트북 배터리 80% 충전 제한",
+  "categoryId": "hangeut-trend",
+  "slug": "laptop-battery-care",
+  "searchedAt": "2026-09-26",
+  "note": "제조사 공식 지원 문서(애플·마이크로소프트·삼성전자서비스·LG전자·ASUS)는 본문까지 읽었다. 레노버 공식 지원 페이지(support.lenovo.com 영상·HT103159)는 WebFetch 403으로 본문 확인 못함 — 레노버 내용은 다나와 기사·Microsoft Q&A 커뮤니티 답변·익스트림매뉴얼 2차 자료로만 쓰고, 수치가 자료마다 갈린다고 밝힌다. HP·델·MSI·에이서 공식 문서는 확인 못함(에이서는 다나와 기사 언급만) — 본문에 설정 경로를 쓰지 않는다. Apple 102338은 ko-kr 판(같은 문서 ID)으로 한국어 메뉴명을 확인했고, 인용 URL은 검색 결과에 나온 en-us 주소를 쓴다.",
+  "queries": [
+    "Mac 최적화된 배터리 충전 Apple 지원",
+    "삼성 노트북 배터리 보호 85% 충전 설정 삼성전자 서비스",
+    "LG 그램 배터리 수명 연장 모드 80% 충전",
+    "Lenovo Vantage conservation mode battery charge threshold",
+    "레노버 Vantage 배터리 절약 모드 충전 임계값 설정 레노버 지원",
+    "리튬이온 배터리 완충 고온 수명 단축 이유 노트북 기사",
+    "Windows 11 스마트 충전 배터리 80% Microsoft 지원",
+    "MyASUS 배터리 관리 모드 최대 수명 모드 60% ASUS 지원",
+    "Apple 배터리 최대 성능 온도 16~22°C 35°C 노트북",
+    "support.lenovo.com conservation mode Vantage battery 55-60% IdeaPad"
+  ],
+  "sources": [
+    {
+      "title": "Mac의 최적화된 배터리 충전 및 충전 한도에 관하여",
+      "url": "https://support.apple.com/en-us/102338",
+      "host": "support.apple.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "애플 공식 지원 문서. 최적화된 배터리 충전은 macOS Big Sur 11 이상에서 동작하며, Mac이 완전히 충전된 상태로 머무는 시간을 줄여 배터리 소모를 줄이고 수명을 늘리도록 설계됐다. 기기의 머신러닝이 일상 충전 패턴을 학습해 특정 상황에서 80%를 넘는 충전을 지연시키고, 이때 배터리 상태 메뉴에 '충전 대기 중'이 표시된다. 메뉴에서 '지금 완전 충전'으로 바로 끝까지 채울 수 있다. 설정 경로(macOS Ventura 13 이상): Apple 메뉴 > 시스템 설정 > 사이드바 배터리 > 정보 버튼. 충전 한도 기능은 macOS Tahoe 26.4 이상 + Apple 실리콘 Mac에서 쓸 수 있고, 80%~100% 사이에서 고른다. 한도 근처까지 충전되면 멈추고, 전원에 연결된 채로 충전량이 5% 넘게 떨어지면 충전을 다시 시작한다. 상태 메뉴에는 '[%] 한도까지 충전됨'이 뜬다. 경로: 시스템 설정 > 배터리 > 충전 옆 정보 버튼.",
+      "facts": [
+        "최적화된 배터리 충전: macOS Big Sur 11 이상, 충전 패턴을 학습해 80% 초과 충전을 지연, '충전 대기 중' 표시.",
+        "충전 한도: macOS Tahoe 26.4 이상 + Apple 실리콘 Mac, 80~100% 선택, 연결 상태에서 5% 넘게 떨어지면 충전 재개.",
+        "경로: 시스템 설정 > 배터리 > 정보 버튼(충전 옆)."
+      ]
+    },
+    {
+      "title": "배터리 사용 시간 및 수명 최대화",
+      "url": "https://www.apple.com/batteries/maximizing-performance/",
+      "host": "apple.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "애플 배터리 안내 페이지. MacBook은 주변 온도 10~35°C에서 가장 잘 작동한다. 35°C를 넘는 환경은 피하라고 안내하며, 높은 주변 온도에서 충전하면 기기가 더 손상될 수 있다고 적는다. 오래 보관할 때는 완전 충전도 완전 방전도 하지 말고 약 50%로 충전해 두라고 하며, 6개월 넘게 보관하면 6개월마다 50%로 충전하라고 안내한다.",
+      "facts": [
+        "MacBook 권장 주변 온도 10~35°C, 35°C 초과 환경은 피하고 고온에서 충전하면 더 손상될 수 있다.",
+        "장기 보관 시 약 50% 충전, 6개월 넘게 보관하면 6개월마다 50%로 재충전."
+      ]
+    },
+    {
+      "title": "Windows에서 스마트 충전 사용 | Microsoft Support",
+      "url": "https://support.microsoft.com/ko-kr/windows/experience/power-battery/use-smart-charging-in-windows",
+      "host": "support.microsoft.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "마이크로소프트 공식 지원 문서. 리튬 이온 배터리는 시간이 지나며 마모돼 새것처럼 충전을 유지하지 못할 수 있고, 이를 개선하려고 일부 디바이스 제조업체가 Windows 11에서 스마트 충전을 지원한다. 켜져 있으면 배터리가 항상 100%로 유지되지 않도록 더 낮은 수준으로 맞춘다. 작업 표시줄 배터리 아이콘에 하트 표시가 나타나면 켜진 상태다. '모든 디바이스 제조업체는 특정 디바이스에 최적화된 약간 다른 방식으로 스마트 충전을 구현'한다고 적혀 있어 지원 여부·방식이 제조사마다 다르다. 이 문서 자체에는 구체적인 제한 퍼센트가 명시되지 않았다.",
+      "facts": [
+        "Windows 스마트 충전은 일부 제조사가 지원하는 기능이며 제조사마다 구현 방식이 다르다.",
+        "켜져 있으면 작업 표시줄 배터리 아이콘에 하트 표시가 뜬다.",
+        "이 문서에는 구체적 제한 퍼센트가 없다."
+      ]
+    },
+    {
+      "title": "Windows에서 배터리 관리 | Microsoft Support",
+      "url": "https://support.microsoft.com/ko-kr/windows/experience/power-battery/caring-for-your-battery-in-windows",
+      "host": "support.microsoft.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "마이크로소프트 공식 지원 문서. 리튬 이온 배터리는 충방전을 반복하며 용량이 줄어들고, 성능 저하를 늦추려면 잦은 깊은 방전을 피하고 가능한 한 약 20%~80%의 적당한 충전 범위를 유지하라고 권한다. '일주일에 여러 번 배터리 잔량을 20%에서 80% 사이로 유지한 다음' 충전하라고 안내한다. 고온에서 사용하거나 충전하지 말라고 하며, 과도한 열은 리튬 이온 배터리를 더 빨리 악화시켜 용량을 영구적으로 줄일 수 있다고 적는다. 장기 보관은 약 40~60%로 충전해 시원하고 건조한 곳에 두라고 한다. Windows 11에서는 명령 프롬프트에서 powercfg /batteryreport 를 실행해 배터리 보고서(HTML)를 만들 수 있다.",
+      "facts": [
+        "약 20~80% 충전 범위 유지, 잦은 깊은 방전 피하기 권장.",
+        "고온에서 사용·충전하면 용량이 영구적으로 줄 수 있다.",
+        "장기 보관은 약 40~60% 충전 후 시원하고 건조한 곳.",
+        "powercfg /batteryreport 로 배터리 보고서 생성."
+      ]
+    },
+    {
+      "title": "Surface에서 스마트 충전 | Microsoft Support",
+      "url": "https://support.microsoft.com/ko-kr/surface/battery/smart-charging-on-surface",
+      "host": "support.microsoft.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "마이크로소프트 Surface 지원 문서. 스마트 충전은 배터리 성능 저하를 가속하거나 팽창으로 이어질 수 있는 조건(장시간 연결, 고온)에서 Surface 배터리를 보호한다. 켜지면 최대 충전량이 80%로 제한되고 배터리 아이콘에 하트가 표시된다. 배터리가 20% 미만으로 방전되거나 배터리를 자주 쓰면 자동으로 일시 중지돼 100%까지 충전된다. 직접 고정하려면 Surface 앱 > 배터리 & 충전 > 충전 모드에서 '80%로 제한'을 고른다. 이 설정은 '적응형' 또는 '100% 충전'으로 바꿀 때까지 유지된다.",
+      "facts": [
+        "Surface 스마트 충전: 최대 80% 제한, 20% 미만 방전·잦은 배터리 사용 시 자동 일시 중지.",
+        "Surface 앱 > 배터리 & 충전 > 충전 모드 > '80%로 제한'."
+      ]
+    },
+    {
+      "title": "[삼성 PC] 갤럭시 북, 배터리 보호모드(최대 85% 충전) 알아보기",
+      "url": "https://www.samsungsvc.co.kr/solution/1321764",
+      "host": "samsungsvc.co.kr",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "삼성전자서비스 공식 문서. 배터리 보호모드는 노트북이 장시간 어댑터에 연결돼 100%로 충전된 상태로 있을 때 배터리 수명이 줄어드는 것을 막기 위해 최대 충전량을 제한하는 기능이다. 경로: 삼성 설정(Samsung Settings) > 배터리 및 성능 > 배터리 보호를 켬. BIOS와 Samsung Settings 앱을 최신 버전으로 설치해야 정상 동작한다고 안내한다.",
+      "facts": [
+        "삼성 설정 > 배터리 및 성능 > 배터리 보호 켬.",
+        "BIOS·Samsung Settings 최신 버전이어야 정상 동작."
+      ]
+    },
+    {
+      "title": "[삼성 PC] 배터리 수명연장(충전량) 보호 모드 설정하는 방법",
+      "url": "https://www.samsungsvc.co.kr/solution/40342",
+      "host": "samsungsvc.co.kr",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "삼성전자서비스 공식 문서. 배터리 보호 기능은 '전원이 연결된 상태에서, 배터리를 분리하여 보관하는 것과 동일한 효과'로 수명을 늘린다. 운영체제별로 다르다. Windows 11: 기능명 '배터리 보호', 50~90% 범위에서 설정, 경로 삼성 설정 > 배터리 및 성능 > 배터리 보호. Windows 10: 'Battery Life Extender+' 또는 '배터리 보호', 85%까지 제한. Windows 8/8.1: '배터리 수명 연장 모드', 80% 고정(Easy Settings). 100% 충전이 필요하면 기능을 꺼야 하고, 모든 모델이 지원하지는 않는다.",
+      "facts": [
+        "Windows 11 삼성 노트북: '배터리 보호' 50~90% 범위 설정.",
+        "Windows 10: Battery Life Extender+ 또는 배터리 보호, 85% 제한.",
+        "100% 충전하려면 기능을 꺼야 하며 모든 모델이 지원하지는 않는다."
+      ]
+    },
+    {
+      "title": "[LG 노트북] 배터리가 80%까지만 충전돼요 | LG전자 고객지원",
+      "url": "https://www.lge.co.kr/support/solutions-20150758016176",
+      "host": "lge.co.kr",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "LG전자 공식 고객지원 문서. LG 노트북에는 '배터리 수명 연장' 기능이 있어 배터리 충전 기준을 100%에서 80%로 낮춰 수명을 늘린다. 설정 앱은 출시 시기별로 다르다: 2025년 이후 출시 노트북은 My gram, 2022년 4월 이후는 LG Smart Assistant, 2022년 4월 이전은 LG Control Center. 각 앱에서 ON/OFF로 조절하며, LG Control Center는 전원관리 설정 항목에서 끈다.",
+      "facts": [
+        "LG '배터리 수명 연장': 충전 기준 100% → 80%.",
+        "앱: 2025년 이후 My gram / 2022년 4월 이후 LG Smart Assistant / 2022년 4월 이전 LG Control Center."
+      ]
+    },
+    {
+      "title": "ASUS 배터리 헬스 충전 - 소개 | 공식지원 | ASUS 한국",
+      "url": "https://www.asus.com/kr/support/faq/1032726/",
+      "host": "asus.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "ASUS 공식 FAQ. 세 가지 모드: 최대 용량 모드(기본값, 100%까지), 균형 모드(80% 이상이면 충전 멈춤, 78% 미만이면 재충전), 최대 수명 모드(60% 이상이면 멈춤, 58% 미만이면 재충전). MyASUS에 통합돼 있으며 MyASUS의 장치 설정에서 Battery Care Mode를 확인할 수 있다. 지원 모델 목록으로 지원 여부를 확인하라고 안내하며, 일부 모델은 독립 실행형 버전을 따로 받아야 한다.",
+      "facts": [
+        "ASUS: 최대 용량(100%) / 균형(80% 멈춤·78% 미만 재충전) / 최대 수명(60% 멈춤·58% 미만 재충전).",
+        "MyASUS 장치 설정 > Battery Care Mode."
+      ]
+    },
+    {
+      "title": "노트북 배터리 '100% 충전' 하지 마세요! | 다나와",
+      "url": "https://v.daum.net/v/f2LYygXDAf",
+      "host": "v.daum.net",
+      "tier": "media",
+      "publishedAt": "2025-05-13",
+      "body": "다나와 기사(다음 뉴스 게재, 2025-05-13). 리튬이온 배터리는 쓰면서 내부 전해질과 전극 재료가 열화되고 전자가 오가는 경로가 막히거나 내부 저항이 커져 완충 용량이 줄어든다. 고온도 성능 저하와 폭발 위험을 키운다. 이상적 방식은 20~80% 범위에서 충방전 관리. 제조사 기능 소개: ASUS MyASUS 최대 수명 모드(60%), 레노버 Vantage 보존 모드(55~60% 유지), LG 배터리 수명 연장(80%), 삼성 Battery Life Extender+(85%), 에이서 Acer Care Center(80%). 교체 시점은 완충 용량이 설계 용량의 60~70% 이하로 떨어졌을 때, 교체 비용은 제조사별 9만~16만 원대라고 적었다.",
+      "facts": [
+        "열화 원리: 전해질·전극 재료 열화, 내부 저항 증가로 완충 용량 감소.",
+        "레노버 Vantage 보존 모드 55~60% 유지(기사 설명).",
+        "교체 시점: 완충 용량이 설계 용량의 60~70% 이하, 교체비 9만~16만 원대(기사 기준)."
+      ]
+    },
+    {
+      "title": "배터리 걱정 뚝! 기기별 배터리 수명 관리 노하우 | AhnLab",
+      "url": "https://www.ahnlab.com/ko/contents/content-center/33183",
+      "host": "ahnlab.com",
+      "tier": "media",
+      "publishedAt": null,
+      "body": "안랩 콘텐츠센터 글. 배터리 사이클은 총 용량만큼 충전한 횟수이며, 500회 이상이면 수명이 80% 이하로 떨어질 수 있다고 적는다. 노트북은 85% 정도 충전 유지를 권하고, 실내에서 충전기를 연결해 쓸 때 배터리 보호 모드를 켜라고 한다. 완전 충전 후에도 계속 충전하거나 너무 자주 충전하면 성능이 떨어진다며 30~80% 유지를 권한다.",
+      "facts": [
+        "배터리 사이클 = 총 용량만큼 충전한 횟수, 500회 이상이면 80% 이하로 떨어질 수 있다(안랩 설명).",
+        "노트북은 충전기 연결 사용 시 보호 모드 권장."
+      ]
+    },
+    {
+      "title": "노트북 배터리 80% 충전 제한 설정하는 방법 (제조사별 완전 정리) - 익스트림 매뉴얼",
+      "url": "https://extrememanual.net/59068",
+      "host": "extrememanual.net",
+      "tier": "blog",
+      "publishedAt": null,
+      "body": "IT 매뉴얼 블로그. Windows 11 자체에는 사용자가 고정 퍼센트를 정하는 충전 제한 메뉴가 없고, 스마트 충전은 어댑터 장시간 연결을 감지하면 80% 근처로 자동 제한할 뿐 퍼센트를 직접 정할 수 없다고 설명한다. 레노버는 Lenovo Vantage의 Conservation Mode(이 글은 75~80% 범위로 설명), HP는 BIOS에서만(비즈니스 라인 EliteBook·ProBook 한정), 델은 Dell Power Manager로 설정한다고 정리한다. Battery University를 인용해 20~80%로 유지하면 100%까지 충전할 때보다 사이클 수명이 대략 두 배라고 적었다(원 출처 본문은 확인 못함).",
+      "facts": [
+        "Windows 11 자체엔 고정 퍼센트 충전 제한 메뉴가 없다(블로그 설명).",
+        "레노버 Conservation Mode를 75~80%로 설명 — 다나와 기사(55~60%)와 수치가 다르다.",
+        "HP는 BIOS에서만, 비즈니스 라인 한정(블로그 설명, 공식 문서 미확인)."
+      ]
+    },
+    {
+      "title": "Conservation Mode In Lenovo Ideapad. - Microsoft Q&A",
+      "url": "https://learn.microsoft.com/en-us/answers/questions/2779292/conservation-mode-in-lenovo-ideapad",
+      "host": "learn.microsoft.com",
+      "tier": "community",
+      "publishedAt": null,
+      "body": "Microsoft Q&A 커뮤니티 답변(레노버 직원 아닌 자원봉사자). Conservation Mode는 전원을 연결해 쓸 때 배터리를 55~60%까지만 충전한다. Lenovo Vantage 앱에서 Hardware Settings > Power로 가면, 지원 기기는 on/off 토글이 보인다. 과거 앱 버전 문제로 메뉴가 사라졌다가 최신 앱에서 복구됐다는 답변도 있다.",
+      "facts": [
+        "IdeaPad Conservation Mode 55~60% (커뮤니티 답변).",
+        "Vantage > Hardware Settings > Power 에서 토글(커뮤니티 답변)."
+      ]
+    }
+  ],
+  "conflicts": [
+    {
+      "about": "레노버 Conservation Mode(보존 모드) 충전 상한",
+      "a": "다나와 기사(2025-05-13)·Microsoft Q&A 커뮤니티: 55~60%",
+      "b": "익스트림매뉴얼: 75~80% — 모델마다 다른 것으로 보이나 레노버 공식 문서(403)로 확인 못함"
+    },
+    {
+      "about": "권장 충전 범위",
+      "a": "마이크로소프트·다나와: 약 20~80%",
+      "b": "안랩: 30~80%, 노트북은 85% 정도 — 수치는 자료마다 조금씩 다르다"
+    },
+    {
+      "about": "삼성 충전 상한",
+      "a": "Windows 10: 85% 고정(Battery Life Extender+)",
+      "b": "Windows 11: 50~90% 범위 설정 — 운영체제·모델별 차이(같은 삼성전자서비스 문서)"
+    }
+  ],
+  "unknowns": [
+    "레노버 공식 지원 문서(support.lenovo.com)는 403으로 본문을 읽지 못했다 — 레노버 메뉴 경로·수치는 2차 자료 기준으로만 쓴다.",
+    "HP·델·MSI·에이서의 공식 설정 문서는 확인하지 못했다 — 본문에 설정 경로를 쓰지 않는다.",
+    "Battery University의 '20~80% 유지 시 사이클 수명 약 두 배' 원문은 확인하지 못했다 — 쓰지 않는다.",
+    "Windows 스마트 충전의 정확한 제한 퍼센트는 Windows 공식 문서에 명시돼 있지 않다(Surface 문서만 80% 명시)."
+  ]
+}
