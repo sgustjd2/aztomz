@@ -3,10 +3,15 @@
 채널 [AI Engineer](https://www.youtube.com/@aiDotEngineer) 의 새 영상을 Gemini 로 자동 요약한 모음입니다.
 생성: `backend/scripts/youtube-summarize.mjs` (GitHub Actions `youtube-summary` 크론).
 
-총 **196개**.
+총 **201개**.
 
 | 발행일 | 제목 |
 |---|---|
+| 2026-09-24 | [Robot Demos Are Easy. Reliability Is Hard — Jason Ma, Dyna Robotics](2026-09-24-Sjfz1TqxzEs.md) |
+| 2026-09-24 | [Robotics Has Been Stuck for 70 Years — Deepak Pathak, Skild AI](2026-09-24-jFHteJjRl8A.md) |
+| 2026-09-24 | [Physical AI's Next Bottleneck Is Finding the Right Video — Rafael Levi, Bright Data](2026-09-24-I_VEh7XSwyc.md) |
+| 2026-09-24 | [World Models Need Causality, Not Pretty Pixels — Christopher Manning, Moonlake AI](2026-09-24-4Gqg0HVe-AY.md) |
+| 2026-09-24 | [One Operator, Many Drones: Inside Skydio's Autonomy Stack — Suchet Bargoti, Skydio](2026-09-24-2wgPHvW0mG8.md) |
 | 2026-09-23 | [From VLM/VLA's to Embodied Agents — Armen Aghajanyan, Perceptron AI](2026-09-23-ZZcE0HeO-Hc.md) |
 | 2026-09-23 | [You’re Not Thinking Big Enough: Rebuilding Food Systems with AI Agents — Cody Menefee, Firecrawl](2026-09-23-ztlXKfPCT3Q.md) |
 | 2026-09-23 | [From Scratch to SOTA: Training a 3B State-Space Vision Model — Krishna Prasad Srinivasan, Sarvam](2026-09-23-T72nqdC92PM.md) |
