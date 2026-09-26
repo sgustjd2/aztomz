@@ -30,7 +30,8 @@ function inline(s) {
     .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
     // URL 안에 괄호가 있으면(위키백과 "Foo_(bar)" 류) 여기서 멈추던 걸 한 겹까지 허용한다 —
     // 안 그러면 작가가 [text](url) 대신 <url> 오토링크로 매번 우회해야 했다(실제로 두 번 겪음).
-    .replace(/\[([^\]]+)\]\((https?:\/\/(?:[^\s()]|\([^\s()]*\))+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>');
+    // 링크 텍스트도 대괄호 한 겹 허용 — 말머리 붙은 기사 제목([[동네변호사] …](url))이 링크가 안 되고 원문 노출되던 것(2026-09-26).
+    .replace(/\[((?:[^[\]]|\[[^[\]]*\])+)\]\((https?:\/\/(?:[^\s()]|\([^\s()]*\))+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>');
 }
 
 export function md2html(md) {
@@ -163,4 +164,8 @@ if (process.argv[1] && import.meta.url === (await import('node:url')).pathToFile
   a(/href="https:\/\/ja\.wikipedia\.org\/wiki\/MONOCHROME_\(%E5%90%89%E7%94%B0\)"/.test(wikiLink),
     'URL 안 괄호 한 겹(위키백과 Foo_(bar) 류)이 링크를 안 끊음');
   a(!/\)<\/a>\)/.test(wikiLink), '괄호 포함 URL 뒤에 남는 ) 없음');
+  const tagLink = md2html('- [[동네변호사] 가로수 은행](https://example.com/a) 와 [말머리] 일반 [b](https://example.com/b)');
+  a(/<a href="https:\/\/example\.com\/a"[^>]*>\[동네변호사\] 가로수 은행<\/a>/.test(tagLink), '말머리 [..] 로 시작하는 링크 텍스트도 링크로 변환');
+  a(/\[말머리\] 일반 <a href="https:\/\/example\.com\/b"/.test(tagLink), '링크 아닌 [..] 는 그대로, 뒤 링크는 정상');
+  a(!/\]\(http/.test(tagLink), '변환 안 된 ](http 잔재 없음');
 }
