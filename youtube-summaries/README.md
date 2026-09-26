@@ -3,10 +3,14 @@
 채널 [AI Engineer](https://www.youtube.com/@aiDotEngineer) 의 새 영상을 Gemini 로 자동 요약한 모음입니다.
 생성: `backend/scripts/youtube-summarize.mjs` (GitHub Actions `youtube-summary` 크론).
 
-총 **201개**.
+총 **205개**.
 
 | 발행일 | 제목 |
 |---|---|
+| 2026-09-26 | [Fixing the PR Bottleneck — Matt Pocock, AIHero](2026-09-26-LlgiOCmFG_w.md) |
+| 2026-09-25 | [Why LLM Recommenders Will Be AI's Biggest Consumer App — Devansh Tandon, Meta](2026-09-25-lIgdnF0s0kQ.md) |
+| 2026-09-25 | [Distill the LLM, Don't Serve It: Search & Personalization at DoorDash — Raghav Saboo, DoorDash](2026-09-25-ACPEpji5NV4.md) |
+| 2026-09-25 | [Teaching LLMs to Speak Spotify — Yves Raimond & Jacqueline Wood, Spotify](2026-09-25-2LRIAfng7eA.md) |
 | 2026-09-24 | [Robot Demos Are Easy. Reliability Is Hard — Jason Ma, Dyna Robotics](2026-09-24-Sjfz1TqxzEs.md) |
 | 2026-09-24 | [Robotics Has Been Stuck for 70 Years — Deepak Pathak, Skild AI](2026-09-24-jFHteJjRl8A.md) |
 | 2026-09-24 | [Physical AI's Next Bottleneck Is Finding the Right Video — Rafael Levi, Bright Data](2026-09-24-I_VEh7XSwyc.md) |
