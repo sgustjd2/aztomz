@@ -1,0 +1,249 @@
+{
+  "keyword": "윈도우 캡처 단축키",
+  "categoryId": "hangeut-trend",
+  "searchedAt": "2026-09-28",
+  "notes": "윈도우 화면 캡처 단축키(Win+Shift+S·PrtScn·Win+PrtScn·Alt+PrtScn·Win+Shift+R)가 각각 무엇을 찍고 어디에 두는지(클립보드/사진>스크린샷/비디오>화면 녹화)를 마이크로소프트 공식 지원 문서 원문 기준으로 정리한다. PrtScn 동작은 MS 문서끼리 설명이 어긋나므로(윈도우 11 바로 가기 키 문서=영역 선택 기본·끌 수 있음 / 캡처 도구 문서=전체 화면을 클립보드) 둘 다 적고 설정 토글로 바뀐다고 쓴다. 윈도우 10/11 차이는 바로 가기 키 문서의 Windows 10 탭과 캡처 도구 문서의 Windows 10 탭에 있는 것만 쓴다.",
+  "queries": [
+    "캡처 도구를 사용하여 스크린샷 캡처 support.microsoft.com ko-kr",
+    "Windows keyboard shortcut Print Screen screenshot Screenshots folder Windows logo key + PrtScn",
+    "Use the Print Screen key to open Snipping Tool Windows 11",
+    "Windows에서 바로 가기 키 support.microsoft.com ko-kr Windows 키+PrtScn",
+    "화면 인쇄를 위한 바로 가기 키 Microsoft 지원",
+    "(검색결과) Keyboard shortcuts in Windows en-us"
+  ],
+  "sources": [
+    {
+      "title": "캡처 도구를 사용하여 스크린샷 캡처 | Microsoft Support",
+      "url": "https://support.microsoft.com/ko-kr/windows/%EC%BA%A1%EC%B2%98-%EB%8F%84%EA%B5%AC%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%98%EC%97%AC-%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7-%EC%BA%A1%EC%B2%98-00246869-1843-655f-f220-97299b865f6b",
+      "host": "support.microsoft.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "적용 대상 Windows 11, Windows 10 (탭이 나뉨). [Windows 11 탭] 다음 중 어떤 유형으로도 캡처할 수 있습니다. 자유형 — 개체 주위에 자유형 도형을 그립니다. 직사각형 — 커서를 개체 둘레에 끌어서 사각형을 그립니다. 창 — 대화 상자 등과 같이 캡처하려는 창을 선택합니다. 전체 화면 — 전체 화면을 캡처합니다. 비디오 캡처 — 원하는 화면의 사각형 선택 영역의 비디오 클립을 Capture. 캡처 도구 열기: 시작 단추를 선택하고 캡처 도구를 입력한 다음 결과에서 캡처 도구를 선택합니다. Windows 로고 키 + Shift + S 를 눌러 캡처 도구 오버레이를 열어 이미지 스냅샷 캡처합니다. Windows 로고 키 + Shift + R 을 눌러 캡처 도구 오버레이를 열어 비디오 클립을 캡처합니다. 전체 화면의 정적 이미지 스냅샷 인쇄 화면(PrtSc)을 눌러 클립보드에 배치합니다. 비디오 캡처: 비디오 캡처를 캡처하려면 캡처 도구를 열고 기록 단추를 선택한 다음 새로 만들기를 선택하거나 Windows 로고 키 + Shift + R 을 누릅니다. 녹화할 화면 영역을 선택한 다음 시작을 선택합니다. 완료되면 중지를 선택합니다. 이 시점에서 녹음/녹화를 있는 그대로 저장하거나 Clipchamp 편집을 선택하여 Clipchamp 비디오 편집기에서 작업할 수 있습니다. 캡처 저장: 캡처한 캡처가 스크린샷 폴더에 자동으로 저장됩니다. 자동 저장 동작 또는 기본 스크린샷 폴더를 변경하려면 자세히 보기를 선택한 다음 설정을 선택합니다. 다른 이름으로 저장 단추를 선택하여 캡처의 추가 복사본을 저장한 다음, 위치 및 파일 이름을 선택하고 파일을 저장할 수도 있습니다. 텍스트 작업 단추를 선택하여 OCR(광학 문자 인식) 기능을 활성화합니다… 모든 텍스트 인식 프로세스는 디바이스에서 로컬로 수행됩니다. 캡처 도구에서 사용하는 바로 가기 키: Alt + M 캡처 모드 선택 / Alt + N 마지막 캡처와 같은 모드로 새 캡처 만들기 / Shift + 화살표 키 커서를 이동하여 다른 유형의 캡처에서 선택 / Alt + D 1~5초 지연 캡처 / Ctrl + C 캡처 내용을 클립보드로 복사 / Ctrl + S 캡처 저장. 스크린샷 지연: 먼저 캡처할 메뉴 또는 기타 구성 요소를 식별합니다. 캡처 도구에서 지연을 선택한 다음, 시간(예: 5초)을 선택합니다. 원하는 캡처 모드를 선택한 다음 새로 만들기를 선택하여 5초 카운트다운을 시작합니다. 5초 내에 메뉴를 열거나, 이미지를 작성합니다. 5초 후에 화면이 회색으로 바뀌면 마우스를 사용하여 원하는 영역을 그립니다. 완벽한 스크린샷·색 선택기는 Copilot+ PC만 사용할 수 있습니다. [Windows 10 탭] 캡처 유형: 자유형 캡처, 사각형 캡처, 창 캡처, 전체 화면 캡처(비디오 캡처 없음). 캡처 도구를 여는 방법에는 다음 세 가지가 있습니다. 시작 단추를 선택하고 캡처 도구를 입력한 다음 결과에서 캡처 도구를 선택합니다. Windows 로고 키 + Shift + S 를 누릅니다. 인쇄 화면(PrtSc)을 누릅니다. 메뉴 캡처: 캡처 도구를 열고 캡처할 메뉴를 엽니다. Ctrl + PrtSc 키를 누릅니다. 열린 메뉴를 포함하여 화면 전체가 회색으로 변합니다. 캡처 저장: 다른 이름으로 저장 상자에 파일 이름, 위치 및 형식을 입력한 다음 저장을 선택합니다. 바로 가기 키 표(Alt+M, Alt+N, Alt+D 1~5초 지연 캡처, Ctrl+C, Ctrl+S)와 스크린샷 지연 절차는 Windows 10 탭에도 같이 있음.",
+      "facts": [
+        "Win11: Windows 로고 키 + Shift + S = 캡처 도구 오버레이를 열어 이미지 스냅샷 캡처",
+        "Win11: Windows 로고 키 + Shift + R = 캡처 도구 오버레이를 열어 비디오 클립 캡처",
+        "Win11 캡처 도구 문서: PrtSc = 전체 화면 정적 이미지를 클립보드에 배치",
+        "Win11: 캡처는 스크린샷 폴더에 자동 저장, 자세히 보기 > 설정에서 자동 저장·기본 폴더 변경",
+        "Alt + D = 1~5초 지연 캡처 (Win11·Win10 탭 모두)",
+        "캡처 유형 4가지(자유형·직사각형·창·전체 화면), Win11은 비디오 캡처 추가",
+        "Win10 탭: Ctrl + PrtSc로 열린 메뉴 캡처",
+        "Win10 탭: 캡처 도구 여는 방법 3가지에 PrtSc 포함"
+      ]
+    },
+    {
+      "title": "Use Snipping Tool to capture screenshots | Microsoft Support",
+      "url": "https://support.microsoft.com/en-us/windows/apps/use-snipping-tool-to-capture-screenshots",
+      "host": "support.microsoft.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "Open Snipping Tool: Select the Start button, enter snipping tool, then select Snipping Tool from the results. You can use these shortcuts for getting things done with Snipping Tool faster: Windows logo key + Shift + S to open the snipping tool overlay to capture an image snapshot. Windows logo key + Shift + R to open the snipping tool overlay to capture a video clip. Press Print Screen (PrtSc) for a static image snapshot of your entire screen and place it in your clipboard. Save a snip: After you capture a snip, it is automatically saved to your Screenshots folder. To change the automatic save behavior or the default Screenshots folder, select See More, then select Settings. You can also save an additional copy of the captured snip by selecting the Save as button. Capture a video snip: To capture a video snip, open Snipping Tool, select the Record button, then select New, or press Windows logo key + Shift + R. Select the area of the screen you wish to record, then select Start. When you are done, select Stop. Keyboard shortcuts to use in Snipping Tool: Alt + D Delay capture by 1-5 seconds; Ctrl + C Copy the snip to clipboard; Ctrl + S Save the snip.",
+      "facts": [
+        "영문 원문: 'After you capture a snip, it is automatically saved to your Screenshots folder.'",
+        "영문 원문: 'Press Print Screen (PrtSc) for a static image snapshot of your entire screen and place it in your clipboard.'"
+      ]
+    },
+    {
+      "title": "Windows에서 바로 가기 키 | Microsoft Support",
+      "url": "https://support.microsoft.com/ko-kr/accessibility/windows/keyboard-shortcuts-in-windows",
+      "host": "support.microsoft.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "적용 대상 Windows 11, Windows 10 (탭이 나뉨). 스크린샷이나 화면을 캡처하려는 경우 캡처 도구를 사용하여 스크린샷 캡처를 참조하세요. [Windows 11 탭] Alt+PrtScn — 활성 창의 스크린샷을 Capture하여 클립보드에 복사합니다. PrtScn 또는 Print Screen — 스크린샷을 클립보드에 캡처할 화면 영역을 선택합니다. 그런 다음 캡처 도구를 열어 이미지를 공유하거나 마크업할 수 있습니다. 참고: 이 기본 동작을 끌 수 있습니다. 시작 > 설정 > 접근성 > 키보드 를 선택하고 인쇄 화면 단추를 사용하여 화면 캡처 열기 를 끄기로 설정합니다. Windows 키+PrtScn — 전체 화면 스크린샷을 Capture하여 Pictures 폴더의 Screenshots 하위 폴더에 있는 파일에 저장합니다. Windows 키+Shift+R — 비디오를 녹화할 화면 영역을 선택합니다. 그런 다음 캡처 도구 에서 화면 녹화가 열립니다. 기본적으로 이 화면 녹화는 비디오 폴더의 화면 녹화 하위 폴더에 MP4 파일로 자동으로 저장됩니다. Windows 키+Shift+S — 스크린샷을 클립보드에 캡처할 화면 영역을 선택합니다. 그런 다음 캡처 도구를 열어 이미지를 공유하거나 마크업할 수 있습니다. [Windows 10 탭] PrtScn — 전체 화면의 스크린샷을 생성하고 클립보드에 복사합니다. 참고: 스크린 캡처도 열어서 스크린샷을 편집할 수 있도록 이 바로 가기를 변경할 수 있습니다. 시작 > 설정 > 접근성 > 키보드 를 선택하고 Print Screen 바로 가기 에서 토글을 켭니다. (PrtScn 키를 사용하여 화면 캡처 열기). Windows 키+Shift+S — 화면 일부의 스크린샷을 찍습니다. (영문판 Win11 설정 항목명: 'Use the Print Screen button to open screen snipping' / Win10: Settings > Ease of Access > Keyboard, toggle under 'Print Screen shortcut')",
+      "facts": [
+        "Win11: Alt+PrtScn = 활성 창 스크린샷을 클립보드에 복사",
+        "Win11: PrtScn = 화면 영역 선택해 클립보드로(기본 동작), 설정 > 접근성 > 키보드에서 끌 수 있음",
+        "Win11: Windows 키+PrtScn = 전체 화면을 사진(Pictures) 폴더 > 스크린샷(Screenshots) 하위 폴더에 파일로 저장",
+        "Win11: Windows 키+Shift+R = 영역 녹화, 기본으로 비디오 폴더 > 화면 녹화 하위 폴더에 MP4 자동 저장",
+        "Win11: Windows 키+Shift+S = 영역 선택해 클립보드로, 캡처 도구로 공유·마크업",
+        "Win10: PrtScn = 전체 화면을 클립보드에 복사, 설정 > 접근성 > 키보드 'Print Screen 바로 가기' 토글을 켜면 화면 캡처도 열림",
+        "Win10: Windows 키+Shift+S = 화면 일부 스크린샷"
+      ]
+    },
+    {
+      "title": "Keyboard shortcuts in Windows | Microsoft Support",
+      "url": "https://support.microsoft.com/en-us/accessibility/windows/keyboard-shortcuts-in-windows",
+      "host": "support.microsoft.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "Applies To Windows 11, Windows 10. [Windows 11] Alt+PrtScn — Capture a screenshot of the active window and copy it to the clipboard. PrtScn or Print Screen — Select a region of the screen to capture a screenshot to the clipboard. You can then open the Snipping Tool to share or markup the image. Note: You can turn off this default behavior. Select Start > Settings > Accessibility > Keyboard, and set Use the Print Screen button to open screen snipping to Off. Windows key+PrtScn — Capture a full screen screenshot and save it to a file in the Screenshots subfolder of the Pictures folder. Windows key+Shift+R — Select a region of the screen to record a video. It then opens the screen recording in the Snipping Tool. By default, this screen recording is automatically saved as an MP4 file in the Screen Recordings subfolder of your Videos folder. Windows key+Shift+S — Select a region of the screen to capture a screenshot to the clipboard. [Windows 10] PrtScn — Take a screenshot of your whole screen and copy it to the clipboard. Note: You can change this shortcut so it also opens screen snipping, which lets you edit your screenshot. Select Start > Settings > Ease of Access > Keyboard, and turn on the toggle under Print Screen shortcut. Windows key+Shift+S — Take a screenshot of part of your screen.",
+      "facts": [
+        "Win11 설정 항목 영문명: 'Use the Print Screen button to open screen snipping'",
+        "Win10: Settings > Ease of Access > Keyboard, 'Print Screen shortcut' 토글"
+      ]
+    },
+    {
+      "title": "화면 인쇄를 위한 바로 가기 키",
+      "url": "https://support.microsoft.com/en-us/windows/keyboard-shortcut-for-print-screen-601210c0-b3a9-7b58-bc40-bae4dcf5f108",
+      "host": "support.microsoft.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "하드웨어에 따라 Windows 로고 키 + PrtScn 단추를 인쇄 화면의 바로 가기로 사용할 수 있습니다. 디바이스에 PrtScn 단추가 없는 경우 Fn + Windows 로고 키 + 스페이스바 를 사용하여 스크린샷을 만들 수 있습니다. 그러면 인쇄할 수 있습니다. 스크린샷을 찾으려면 작업 표시줄에서 파일 탐색기 엽니다. 측면 탐색 창에서 사진 폴더를 선택하고 스크린샷을 선택합니다. 캡처 도구를 사용하여 스크린샷을 캡처할 수도 있습니다. (영문) Depending on your hardware, you may use the Windows Logo Key + PrtScn button as a shortcut for print screen. If your device does not have the PrtScn button, you may use Fn + Windows logo key + Space Bar to take a screenshot, which can then be printed. To locate your screenshots, open File Explorer from the taskbar. On the side navigation pane, select the Pictures folder, and select Screenshots.",
+      "facts": [
+        "하드웨어에 따라 Windows 로고 키 + PrtScn 사용",
+        "PrtScn 단추가 없으면 Fn + Windows 로고 키 + 스페이스바",
+        "스크린샷 찾기: 작업 표시줄에서 파일 탐색기 > 측면 탐색 창 사진 폴더 > 스크린샷"
+      ]
+    },
+    {
+      "title": "창 또는 화면 내용 복사 | Microsoft Support",
+      "url": "https://support.microsoft.com/ko-KR/Office/copy-the-window-or-screen-contents",
+      "host": "support.microsoft.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "캡처 도구 사용: 캡처하려는 항목을 명확하게 볼 수 있도록 화면을 설정합니다. Windows 로고 키+Shift+S를 누릅니다. 바탕 화면이 어두워지면 스크린샷 영역을 선택할 수 있습니다. 미니 도구 모음이 나타나면 직사각형 모드, 자유 형식 모드, 창 모드 또는 전체 화면 모드 중 원하는 캡처 모드를 선택합니다. 직사각형 또는 자유형 모드를 선택한 다음 클릭하고 끌어 캡처할 영역을 강조 표시해야 합니다. 창 또는 전체 화면 모드를 선택한 경우 캡처가 즉시 수행됩니다. 스크린샷이 클립보드에 자동으로 복사됩니다. 스크린샷 촬영을 마치면 알림이 나타납니다. 알림을 선택하여 캡처 도구 편집기에서 이미지를 엽니다. 잉크 펜, 형광펜, 지우개 및 자르기 도구를 사용하여 필요에 따라 이미지를 편집합니다. PRINT SCREEN 키 사용: PRINT SCREEN을 누르면 전체 화면의 이미지가 캡처되어 컴퓨터 메모리의 클립보드에 복사됩니다. 그런 다음 이미지를 문서, 전자 메일 메시지 또는 기타 파일에 붙여넣기(CTRL+V)할 수 있습니다. PRINT SCREEN 키는 일반적으로 키보드의 오른쪽 상단 모서리에 있습니다. 키보드에 표시되는 텍스트는 PrtSc, PrtScn 또는 PrntScrn일 수 있습니다. Print Screen 키의 다른 텍스트는 일반적으로 SysRq입니다. 활성 창의 이미지만 복사: 활성 창은 현재 작업 중인 창입니다. 한 번에 하나의 창만 활성화할 수 있습니다. 복사할 창을 클릭합니다. ALT+PRINT SCREEN을 누릅니다. 이미지를 Office 프로그램이나 다른 응용 프로그램에 붙여넣기(CTRL+V)합니다. 화면에 전체 이미지 복사: PRINT SCREEN을 누릅니다. 캡처하려는 영역을 강조 표시하기 위해 클릭하고 끌어야 할 수도 있습니다.",
+      "facts": [
+        "Win+Shift+S: 바탕 화면이 어두워지고 미니 도구 모음에서 직사각형·자유 형식·창·전체 화면 모드 선택",
+        "창·전체 화면 모드는 즉시 캡처, 클립보드에 자동 복사 후 알림 → 알림 누르면 캡처 도구 편집기",
+        "PRINT SCREEN 키 표기: PrtSc, PrtScn, PrntScrn, 다른 표기 SysRq, 보통 키보드 오른쪽 위",
+        "ALT+PRINT SCREEN = 활성 창만 복사 → CTRL+V로 붙여넣기",
+        "PRINT SCREEN을 누르면 영역을 드래그해야 할 수도 있음"
+      ]
+    },
+    {
+      "title": "스크린샷을 찍거나 Surface에서 화면 녹화 | Microsoft Support",
+      "url": "https://support.microsoft.com/ko-kr/surface/cover-keyboard/take-a-screenshot-or-record-your-screen-on-surface",
+      "host": "support.microsoft.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "Windows 11에서 화면을 녹화하려면: (참고) Windows 10 사용자는 Clipchamp를 사용하여 화면을 녹화할 수 있습니다. 캡처 도구를 열고 비디오 아이콘을 선택한 다음 새 아이콘을 선택합니다. 녹화하려는 화면 영역에 대한 사각형 선택 영역을 선택하고 끕니다. 시작을 선택하여 녹음을 시작합니다. 녹음/녹화를 마쳤으면 녹음/녹화 중지(중지 단추)를 선택합니다. Windows 로고 키 + Shift + R 을 눌러 캡처 도구 오버레이를 열어 비디오 클립을 캡처할 수도 있습니다. Surface 스크린샷: Windows 로고 키 + PrtScn … 스크린샷은 파일 탐색기의 사진 > 스크린샷 폴더에 자동으로 저장됩니다.",
+      "facts": [
+        "캡처 도구 화면 녹화 안내는 'Windows 11에서 화면을 녹화하려면' 아래에 있고, 'Windows 10 사용자는 Clipchamp를 사용하여 화면을 녹화할 수 있습니다'라는 참고가 붙음",
+        "Windows 로고 키 + PrtScn 스크린샷은 사진 > 스크린샷 폴더에 자동 저장"
+      ]
+    },
+    {
+      "title": "Save screenshots to OneDrive automatically | Microsoft Support",
+      "url": "https://support.microsoft.com/en-us/office/save-screenshots-to-onedrive-automatically-d04df71c-1cb0-4ad6-9f9c-b08494d79d6a",
+      "host": "support.microsoft.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "The “Save screenshots to OneDrive” feature is no longer available in the OneDrive settings. To ensure your screenshots are backed up, you need to make sure your Pictures folder is part of your OneDrive. If it already is, you’re fine. If it isn’t read Back up your folders with OneDrive to learn how.",
+      "facts": [
+        "OneDrive 설정의 '스크린샷을 OneDrive에 저장' 기능은 더 이상 없음",
+        "스크린샷 백업을 원하면 사진(Pictures) 폴더를 OneDrive에 포함"
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "claim": "Win+Shift+S는 원하는 영역을 골라 클립보드에 담고, 알림을 누르면 캡처 도구에서 편집할 수 있다 (윈도우 10·11 모두 문서에 있음)",
+      "grade": "confirmed",
+      "evidence": [
+        "바로 가기 키 문서 Win11·Win10 탭 모두 Windows 키+Shift+S 수록",
+        "창 또는 화면 내용 복사: 미니 도구 모음 4개 모드, 클립보드 자동 복사, 알림 → 캡처 도구 편집기"
+      ],
+      "sourceUrls": [
+        "https://support.microsoft.com/ko-kr/accessibility/windows/keyboard-shortcuts-in-windows",
+        "https://support.microsoft.com/ko-KR/Office/copy-the-window-or-screen-contents"
+      ]
+    },
+    {
+      "claim": "Win+PrtScn은 전체 화면을 사진 > 스크린샷 폴더에 파일로 바로 저장한다. PrtScn 키가 없는 기기는 Fn+Win+스페이스바",
+      "grade": "confirmed",
+      "evidence": [
+        "바로 가기 키 문서 Win11 탭: Pictures 폴더의 Screenshots 하위 폴더에 저장",
+        "화면 인쇄 바로 가기 문서: 하드웨어에 따라, Fn + Windows 로고 키 + 스페이스바, 파일 탐색기 > 사진 > 스크린샷"
+      ],
+      "sourceUrls": [
+        "https://support.microsoft.com/ko-kr/accessibility/windows/keyboard-shortcuts-in-windows",
+        "https://support.microsoft.com/en-us/windows/keyboard-shortcut-for-print-screen-601210c0-b3a9-7b58-bc40-bae4dcf5f108"
+      ]
+    },
+    {
+      "claim": "Alt+PrtScn은 지금 쓰는 창(활성 창)만 클립보드에 복사한다 — 파일로 저장되지 않으니 Ctrl+V로 붙여넣어야 한다",
+      "grade": "confirmed",
+      "evidence": [
+        "바로 가기 키 Win11: 활성 창 스크린샷을 클립보드에 복사",
+        "창 또는 화면 내용 복사: ALT+PRINT SCREEN → CTRL+V"
+      ],
+      "sourceUrls": [
+        "https://support.microsoft.com/ko-kr/accessibility/windows/keyboard-shortcuts-in-windows",
+        "https://support.microsoft.com/ko-KR/Office/copy-the-window-or-screen-contents"
+      ]
+    },
+    {
+      "claim": "PrtScn 단독 키 동작은 문서·설정에 따라 다르다: 윈도우 11 바로 가기 키 문서는 영역 선택이 기본이고 설정 > 접근성 > 키보드에서 끌 수 있다고, 캡처 도구 문서·오피스 문서는 전체 화면을 클립보드에 담는다고 설명. 윈도우 10은 전체 화면→클립보드가 기본이고 같은 경로 토글을 켜면 화면 캡처가 열린다",
+      "grade": "unclear",
+      "evidence": [
+        "바로 가기 키 Win11 탭 vs 캡처 도구 Win11 탭이 어긋남 (conflicts 참고)",
+        "Win10 탭: 토글을 켜면 스크린 캡처도 열림"
+      ],
+      "sourceUrls": [
+        "https://support.microsoft.com/ko-kr/accessibility/windows/keyboard-shortcuts-in-windows",
+        "https://support.microsoft.com/ko-kr/windows/%EC%BA%A1%EC%B2%98-%EB%8F%84%EA%B5%AC%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%98%EC%97%AC-%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7-%EC%BA%A1%EC%B2%98-00246869-1843-655f-f220-97299b865f6b"
+      ]
+    },
+    {
+      "claim": "윈도우 11 캡처 도구는 캡처를 스크린샷 폴더에 자동 저장하고(자세히 보기 > 설정에서 변경), Win+Shift+R 화면 녹화는 비디오 > 화면 녹화 폴더에 MP4로 자동 저장된다. 윈도우 10 캡처 도구 문서에는 비디오 캡처가 없고, 서피스 문서는 윈도우 10 사용자는 Clipchamp로 녹화할 수 있다고 안내한다",
+      "grade": "confirmed",
+      "evidence": [
+        "캡처 도구 Win11 탭 '캡처 저장'",
+        "바로 가기 키 Win11 Windows 키+Shift+R",
+        "서피스 문서 참고"
+      ],
+      "sourceUrls": [
+        "https://support.microsoft.com/ko-kr/windows/%EC%BA%A1%EC%B2%98-%EB%8F%84%EA%B5%AC%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%98%EC%97%AC-%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7-%EC%BA%A1%EC%B2%98-00246869-1843-655f-f220-97299b865f6b",
+        "https://support.microsoft.com/ko-kr/accessibility/windows/keyboard-shortcuts-in-windows",
+        "https://support.microsoft.com/ko-kr/surface/cover-keyboard/take-a-screenshot-or-record-your-screen-on-surface"
+      ]
+    },
+    {
+      "claim": "메뉴처럼 금방 사라지는 화면은 캡처 도구의 지연(1~5초, Alt+D)으로 찍는다. 윈도우 10 문서는 Ctrl+PrtSc 메뉴 캡처도 안내한다",
+      "grade": "confirmed",
+      "evidence": [
+        "캡처 도구 문서 '스크린샷 지연' 절차·Alt+D 1~5초",
+        "Win10 탭 '메뉴 캡처' Ctrl + PrtSc"
+      ],
+      "sourceUrls": [
+        "https://support.microsoft.com/ko-kr/windows/%EC%BA%A1%EC%B2%98-%EB%8F%84%EA%B5%AC%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%98%EC%97%AC-%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7-%EC%BA%A1%EC%B2%98-00246869-1843-655f-f220-97299b865f6b"
+      ]
+    }
+  ],
+  "numbers": [
+    {
+      "what": "캡처 도구 지연 캡처 범위(Alt + D)",
+      "value": "1~5초",
+      "asOf": "2026-09-28 확인",
+      "sourceUrl": "https://support.microsoft.com/ko-kr/windows/%EC%BA%A1%EC%B2%98-%EB%8F%84%EA%B5%AC%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%98%EC%97%AC-%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7-%EC%BA%A1%EC%B2%98-00246869-1843-655f-f220-97299b865f6b"
+    },
+    {
+      "what": "지연 예시 시간",
+      "value": "5초(예시)",
+      "asOf": "2026-09-28 확인",
+      "sourceUrl": "https://support.microsoft.com/ko-kr/windows/%EC%BA%A1%EC%B2%98-%EB%8F%84%EA%B5%AC%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%98%EC%97%AC-%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7-%EC%BA%A1%EC%B2%98-00246869-1843-655f-f220-97299b865f6b"
+    },
+    {
+      "what": "Win+Shift+R 녹화 파일 형식",
+      "value": "MP4",
+      "asOf": "2026-09-28 확인",
+      "sourceUrl": "https://support.microsoft.com/ko-kr/accessibility/windows/keyboard-shortcuts-in-windows"
+    },
+    {
+      "what": "캡처 도구 캡처 모드 수",
+      "value": "4가지(자유형·직사각형·창·전체 화면), 윈도우 11은 비디오 캡처 추가",
+      "asOf": "2026-09-28 확인",
+      "sourceUrl": "https://support.microsoft.com/ko-kr/windows/%EC%BA%A1%EC%B2%98-%EB%8F%84%EA%B5%AC%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%98%EC%97%AC-%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7-%EC%BA%A1%EC%B2%98-00246869-1843-655f-f220-97299b865f6b"
+    }
+  ],
+  "conflicts": [
+    {
+      "about": "윈도우 11에서 PrtScn 단독 키 동작",
+      "a": "바로 가기 키 문서(Win11 탭): 스크린샷을 클립보드에 캡처할 화면 영역을 선택(기본 동작), 설정 > 접근성 > 키보드에서 끌 수 있음",
+      "b": "캡처 도구 문서(Win11 탭)·오피스 '창 또는 화면 내용 복사': 전체 화면 이미지를 클립보드에 배치(오피스 문서는 '영역을 드래그해야 할 수도 있음'을 덧붙임)"
+    }
+  ],
+  "dropped": [
+    {
+      "url": "https://learn.microsoft.com/en-us/answers/questions/5775212/missing-use-the-print-screen-key-to-open-snipping",
+      "why": "Microsoft Q&A 커뮤니티 답변 — 공식 문서 아님. 새 빌드에서 설정 위치가 '블루투스 및 장치 > 키보드'로 옮겨졌다는 주장은 공식 문서로 확인 안 돼 제외"
+    }
+  ],
+  "cannotCover": [
+    "윈도우 11 실제 설정 화면의 PrtScn 토글 한국어 표기(한국어 문서는 기계번역투 '인쇄 화면 단추를 사용하여 화면 캡처 열기', 영문은 'Use the Print Screen button to open screen snipping')",
+    "최신 윈도우 11 빌드에서 PrtScn 토글이 접근성 외 다른 메뉴로 옮겨졌는지 여부(커뮤니티 주장만 있음)",
+    "게임 바(Win+G·Win+Alt+R) 녹화 절차 — 이번에 공식 문서 본문을 확인하지 않음",
+    "윈도우 10에서 Win+PrtScn·Alt+PrtScn 동작 — 바로 가기 키 문서 Win10 탭 목록에 없음(되는지 안 되는지 문서로 확인 못 함)",
+    "스크린샷 파일 이름 규칙·파일 형식(PNG 등) — 공식 문서에서 확인 못 함"
+  ],
+  "songs": []
+}

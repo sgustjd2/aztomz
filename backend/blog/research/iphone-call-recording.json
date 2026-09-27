@@ -1,0 +1,113 @@
+{
+  "keyword": "아이폰 통화 녹음",
+  "categoryId": "hangeut-trend",
+  "notes": "Apple 공식 사용 설명서(한국어 iOS 18판·영문 최신판)와 기능 지원 여부 페이지를 1차 근거로 쓴다. 본문 원문은 curl 로 HTML 을 받아 문장 그대로 확인했다(WebFetch 요약 미사용). iOS 18 은 통화 화면의 '통화 녹음 시작 버튼', 최신 설명서(iOS 27 판)는 '더 보기 버튼 > 통화 녹음' 으로 메뉴가 다르다 — 버전별로 나눠 쓴다. 한국 출시 시점·지원 기종(XS 이상)은 애플 문서가 아니라 언론 보도로만 확인돼 '보도 기준'으로 쓴다. 갤럭시는 삼성전자서비스 공식 안내 범위(삼성 전화 앱 통화 중 녹음·자동 녹음·저장/청취 위치)만 비교한다. 녹음의 법적 판단은 다루지 않는다(애플 문서의 '상대 동의 확인' 권고만 인용).",
+  "sources": [
+    {
+      "title": "iPhone에서 통화 녹음 및 전사하기 - Apple 지원 (KR)",
+      "url": "https://support.apple.com/ko-kr/guide/iphone/iph57c6590e9/18.0/ios/18.0",
+      "host": "support.apple.com",
+      "tier": "official",
+      "body": "(iOS 18 판, 원문 문장) 일부 국가 및 지역에서는 한 명의 상대방과 통화하는 동안에만 전화 통화를 녹음할 수 있습니다. 특정 지역과 언어의 경우 메모 앱에서 통화 전사문을 볼 수 있습니다. 참고: 현재 아제르바이잔, 바레인, 이집트, 유럽 연합, 이란, 이라크, 요르단, 쿠웨이트, 모로코, 나이지리아, 오만, 파키스탄, 카타르, 러시아, 사우디 아라비아, 남아프리카, 튀르키예, 아랍 에미리트 연합국, 예멘에서는 통화 녹음 기능이 지원되지 않습니다. 시작하기 전에 iOS 및 iPadOS 기능 지원 여부 웹사이트로 이동하여 해당 언어 및 지역에서 통화 녹음 기능이 지원되는지 보고, 통화에 참여한 다른 사람이 녹음에 동의하는지 확인하십시오. iPhone에서 전화 앱으로 이동하십시오. 전화를 거십시오. 통화 중에 [통화 녹음 시작 버튼]을 탭하십시오. 통화 중인 두 사람 모두에게 통화가 녹음되고 있다는 음성 알림이 들립니다. 녹음을 중단하려면 [중단 버튼]을 탭하거나 그냥 전화를 끊으면 됩니다. 통화 녹음 내용은 메모 앱의 통화 녹음 폴더에 자동으로 저장됩니다. 메모 앱에서 통화 내용을 확인하려면 '저장된 통화를 봅니다.'를 탭하십시오. 녹음된 통화 재생하기: 메모 앱 > 통화 녹음 폴더에서 메모를 선택한 다음 [재생 버튼]을 탭. 통화 전사문 보기: 특정 지역과 언어의 경우 메모 앱에서 녹음된 통화 전사문을 볼 수 있습니다. 전사문이 바로 표시되지 않고 전사가 진행 중이라는 메시지가 표시될 수도 있습니다. 참고: 전사문을 사용하기 전에 내용이 정확한지 확인하십시오. 참고: 지원되는 언어로 말하는 내용은 자동으로 전사됩니다. '전사문'이 표시되지 않는 경우, iPhone이 최소 요구사항을 충족하지 않거나 지원되는 언어를 감지하지 못하는 상태입니다. 전사문에는 각 문장을 말한 사람이 누구인지 표시됩니다. 특정 지점부터 오디오 재생하기: 들으려는 텍스트를 선택하십시오. 전사문에서 찾기 · 메모에 전사문 추가 또는 전사문 복사 · 오디오 녹음 저장 또는 삭제. 참고: 오디오 녹음을 삭제하면 전사문도 삭제됩니다. 통화 녹음 끄기: 통화 녹음은 기본적으로 켜져 있지만 끌 수도 있습니다. 설정 > 앱 > 전화로 이동하십시오. 통화 녹음을 탭한 다음, 통화 녹음을 끄십시오."
+    },
+    {
+      "title": "Record and transcribe a call on iPhone - Apple Support",
+      "url": "https://support.apple.com/guide/iphone/record-and-transcribe-a-call-iph57c6590e9/ios",
+      "host": "support.apple.com",
+      "tier": "official",
+      "body": "(최신판 — 사이트 버전 선택지 iOS 27·26·18 중 기본, 원문 문장) In some countries and regions, you can record a phone call when you're talking to one other person. In select regions and languages, you can view the transcript of the call in the Notes app. And with Apple Intelligence, you can read a summary of the phone call in the Notes app. Note: Call recording isn't currently available in Azerbaijan, Bahrain, Egypt, the European Union, Iran, Iraq, Jordan, Kuwait, Morocco, Nigeria, Oman, Pakistan, Qatar, Russia, Saudi Arabia, South Africa, Turkey, United Arab Emirates, and Yemen. Apple Intelligence on iOS 27 or later is available on an Apple Intelligence-enabled iPhone 15 Pro, iPhone 15 Pro Max, or iPhone 16 model or later. Before you begin, check the iOS and iPadOS Feature Availability website to see if call recording is available in your language and region, and make sure the other call participant is willing to be recorded. Go to the Phone app on your iPhone. Make a call. During the call, tap [the More button], then tap Call Recording. Both call participants hear an audio notice that the call is being recorded. To stop recording, tap [the Stop button] or just hang up. iPhone automatically saves call recordings to a Call Recordings folder in the Notes app. To see the call in the Notes app, tap View Saved Call. Save the audio recording: Tap More, tap Save Audio Files, then select where you want to save the recording. Share the audio recording: Tap More, tap Share Audio. Note: Deleting the audio recording also deletes the transcript. View a summary: If your iPhone supports Apple Intelligence, tap Summary. Turn off Audio Call Recording: Call Recording is on by default, but you can turn it off. Go to the Settings app on your iPhone. Tap Apps, then tap Phone. Tap Audio Call Recording, then turn it off. (한국어 최신판 동일 문장: 통화 중에 [더 보기 버튼]을 탭한 다음, 통화 녹음을 탭하십시오 / 설정 앱 > 앱 > 전화 앱 > 오디오 통화 녹음을 끄십시오)"
+    },
+    {
+      "title": "How to record and transcribe a call on iPhone - Apple Support",
+      "url": "https://support.apple.com/en-us/121583",
+      "host": "support.apple.com",
+      "tier": "official",
+      "body": "(페이지 메타 설명·부제 원문 — 본문은 스크립트로 로드돼 확인 못 함) meta description: Starting in iOS 18.1, you can record a phone call or FaceTime audio call on your iPhone and find the recording and transcript later in Notes. With Apple Intelligence enabled on supported devices, you can view a generated summary of the call. 부제: Learn how to record a phone call or FaceTime audio call on your iPhone starting in iOS 18, or in the Phone app starting in iPadOS 26 or macOS Tahoe. Published Date: June 26, 2026. (참고: ko-kr/121583 은 '이 페이지는 고객님의 국가 또는 지역에서 사용할 수 없습니다' 로 뜸)"
+    },
+    {
+      "title": "iOS and iPadOS 27 - Feature Availability - Apple",
+      "url": "https://www.apple.com/ios/feature-availability/",
+      "host": "apple.com",
+      "tier": "official",
+      "body": "(원문 목록) Phone: Call Recording — Arabic, Cantonese (Hong Kong), Catalan, Czech, Danish, Dutch, English, Finnish, French, German, Greek, Hebrew, Hindi, Hungarian, Indonesian, Italian, Japanese, Korean, Malay, Mandarin Chinese, Norwegian, Polish, Portuguese, Romanian, Russian, Slovakian, Spanish, Swedish, Thai, Turkish, Ukrainian, Vietnamese. Phone: Call Transcription — ... Japanese (Japan), Korean (South Korea), ... Apple Intelligence: Phone: Call Transcription Summaries — Chinese (Traditional), English (...), Japanese (Japan), Korean (South Korea), Spanish (Mexico), Spanish (United States). 페이지 안내: Some iOS and iPadOS features are not currently available in every region or language."
+    },
+    {
+      "title": "아이폰 이용자 숙원 풀린다…애플, 내일 '통화녹음' 출시 :: 공감언론 뉴시스 ::",
+      "url": "https://www.newsis.com/view/NISX20241028_0002936498",
+      "host": "newsis.com",
+      "tier": "press",
+      "body": "(2024-10-28 보도, 원문 문장) 애플이 아이폰 출시 17년 만에 통화녹음 기능을 공식 지원하면서다. 애플은 인공지능(AI) 시스템 '애플 인텔리전스' 일부 기능을 탑재한 운영체제 iOS 18.1를 28일(현지시간) 출시할 예정이다. iOS18.1 업데이트는 아이폰XS 이상 기종부터 가능하다. 한국 아이폰 사용자들은 이번 업데이트를 통해 한국어 통화 녹음·전사·요약 기능까지 이용할 수 있게 될 전망이다. 사용 방법은 통화 중 좌측 상단 화면에서 통화 녹음 버튼을 누르면 된다. 단, 안드로이드폰과 달리 상대방에게 \"이 통화는 녹음됩니다\"라는 음성 안내가 자동으로 고지된 뒤 녹음이 시작된다. 통화 녹음 파일은 '메모 앱'에 저장되며 녹음을 글자로 옮겨주는 전사 기록도 함께 확인할 수 있다. 삼성 갤럭시 등 안드로이드폰은 통화 녹음이 기본 제공됐던 반면 애플은 프라이버시 보호 명목으로 통화 녹음 기능을 지원하지 않았다."
+    },
+    {
+      "title": "\"이 통화는 녹음됩니다\"…17년 만에 가능해진 아이폰 '녹음 기능' 써보니 | YTN",
+      "url": "https://www.ytn.co.kr/_ln/0103_202410301402215507",
+      "host": "ytn.co.kr",
+      "tier": "press",
+      "body": "(2024-10-30 보도, 원문 문장) 통화 중 녹음을 시작하면 자동으로 상대방에게 녹음이 시작된다는 안내가 전해지고 녹음이 시작된다. 통화 중 좌측 상단의 녹음 버튼만 누르면 녹음이 가능하다. 녹음된 통화 내용은 자동으로 메모 앱에 저장된다. '녹음 고지' 기능 때문이다. 녹음을 시작하면 \"이 통화는 녹음됩니다\", 녹음을 끝내면 \"이 통화는 더 이상 녹음되지 않습니다\"라고 안내한다. 그동안 아이폰은 사생활 보호 등을 이유로 통화 녹음 기능을 별도로 제공하지 않아 아이폰 이용자들은 따로 앱을 설치해 녹음 기능을 써야 했다."
+    },
+    {
+      "title": "[삼성 스마트폰] 갤럭시 노트9, 통화 중 녹음을 하고 싶어요?",
+      "url": "https://www.samsungsvc.co.kr/solution/23477",
+      "host": "samsungsvc.co.kr",
+      "tier": "official",
+      "body": "(원문 문장) 구글 정책으로 기본으로 제공되는 삼성 전화 앱을 통해서만 통화 중 녹음 기능 사용이 가능합니다. 통화 중 화면에서 '녹음' 선택 — 특정 대화 내용에 대해 녹음을 할 수 있습니다. 자동 통화 중 녹음 — 모든 통화에 대해 녹음이 됩니다. 삼성 전화(연락처)앱 → 더보기 → 설정 → 통화 녹음 → 통화 자동 녹음 → ON. (노트9 대상 문서)"
+    },
+    {
+      "title": "[삼성 스마트폰] 갤럭시 Z 플립, 통화 내용을 자동으로 녹음할 수 가 없는 것 같은데, 할 수 있는 방법이 있을까요?",
+      "url": "https://www.samsungsvc.co.kr/solution/26041",
+      "host": "samsungsvc.co.kr",
+      "tier": "official",
+      "body": "(원문 문장) 삼성 전화 앱을 이용하여 자동 녹음 기능을 사용할 수 있습니다. 삼성 전화 앱 > 더보기 > 설정 > 통화 녹음 > 통화 자동 녹음 > ① 모든 번호, ② 저장되지 않은 번호, ③ 선택한 번호만, 3가지 중 한 가지를 선택하여 자동 녹음 기능을 사용할 수 있습니다. 만일, 위와 같이 설정했는데 안 된다면 구글 정책으로 프리로드 된 전화 앱이 아닌 추가로 다운로드한 외부 전화 앱(T전화, 후후, 후스쿨 등)이 설치된 경우에 안 될 수 있습니다."
+    },
+    {
+      "title": "[삼성 스마트폰] 갤럭시, 녹음 내용 저장 위치 및 공유 방법이 궁금합니다.",
+      "url": "https://www.samsungsvc.co.kr/solution/23621",
+      "host": "samsungsvc.co.kr",
+      "tier": "official",
+      "body": "(원문 문장) 삼성 전화 앱의 통화 자동 녹음 설정이 활성화된 경우 통화가 종료되면 자동으로 저장되며, 통화 녹음 파일을 Quick Share, 메시지, 이메일, 블루투스 등으로 전송하거나 공유할 수 있습니다. 전화 앱으로 통화 녹음 목록 확인: 설정으로 진입하여 통화 녹음을 선택 > 녹음한 통화. 음성 녹음 앱으로 통화 녹음 목록 확인: 음성 녹음으로 진입하여 왼쪽 상단의 네비게이션 메뉴(≡) > 통화 녹음. ※ 통화 녹음 파일을 공유할 수 있는 방법은 모델에 따라 다를 수 있습니다."
+    }
+  ],
+  "claims": [
+    {"claim": "아이폰 기본 통화 녹음은 iOS 18.1부터 쓸 수 있고, 전화 통화와 FaceTime 오디오 통화를 녹음해 메모 앱에서 녹음·전사문을 찾는다", "grade": "confirmed", "evidence": ["Apple 121583 메타 설명 'Starting in iOS 18.1'"], "sourceUrls": ["https://support.apple.com/en-us/121583"]},
+    {"claim": "iOS 18에서는 통화 중 '통화 녹음 시작 버튼'을 탭한다", "grade": "confirmed", "evidence": ["Apple 한국어 사용 설명서 iOS 18판"], "sourceUrls": ["https://support.apple.com/ko-kr/guide/iphone/iph57c6590e9/18.0/ios/18.0"]},
+    {"claim": "최신 사용 설명서(iOS 27 판)에서는 통화 중 '더 보기' 버튼을 탭한 뒤 '통화 녹음'을 탭한다", "grade": "confirmed", "evidence": ["Apple 영문 최신판 'tap the More button, then tap Call Recording'"], "sourceUrls": ["https://support.apple.com/guide/iphone/record-and-transcribe-a-call-iph57c6590e9/ios"]},
+    {"claim": "녹음을 시작하면 통화 중인 두 사람 모두 녹음 중이라는 음성 알림을 듣는다 — 몰래 녹음은 안 된다", "grade": "confirmed", "evidence": ["Apple iOS 18판·최신판 공통 문장"], "sourceUrls": ["https://support.apple.com/ko-kr/guide/iphone/iph57c6590e9/18.0/ios/18.0", "https://support.apple.com/guide/iphone/record-and-transcribe-a-call-iph57c6590e9/ios"]},
+    {"claim": "한국어 안내 문구는 시작 시 '이 통화는 녹음됩니다', 종료 시 '이 통화는 더 이상 녹음되지 않습니다'", "grade": "reported", "evidence": ["YTN 2024-10-30 사용기 보도"], "sourceUrls": ["https://www.ytn.co.kr/_ln/0103_202410301402215507"]},
+    {"claim": "녹음 중단은 중단 버튼을 누르거나 전화를 끊으면 된다", "grade": "confirmed", "evidence": ["Apple 두 판 공통"], "sourceUrls": ["https://support.apple.com/ko-kr/guide/iphone/iph57c6590e9/18.0/ios/18.0"]},
+    {"claim": "녹음은 메모 앱의 '통화 녹음' 폴더에 자동 저장되고, 통화 직후 '저장된 통화를 봅니다'로 바로 열 수 있다. 메모에서 재생 버튼으로 듣는다", "grade": "confirmed", "evidence": ["Apple iOS 18판"], "sourceUrls": ["https://support.apple.com/ko-kr/guide/iphone/iph57c6590e9/18.0/ios/18.0"]},
+    {"claim": "오디오 파일은 더 보기 > 오디오 파일 저장으로 원하는 위치에 저장하거나 오디오 공유로 보낼 수 있다(최신판). 녹음을 지우면 전사문도 같이 지워진다", "grade": "confirmed", "evidence": ["Apple 최신판"], "sourceUrls": ["https://support.apple.com/guide/iphone/record-and-transcribe-a-call-iph57c6590e9/ios"]},
+    {"claim": "통화 녹음은 기본으로 켜져 있다. 끄는 곳: iOS 18판 설정 > 앱 > 전화 > 통화 녹음 / 최신판 설정 > 앱 > 전화 > 오디오 통화 녹음", "grade": "confirmed", "evidence": ["Apple 두 판"], "sourceUrls": ["https://support.apple.com/ko-kr/guide/iphone/iph57c6590e9/18.0/ios/18.0", "https://support.apple.com/guide/iphone/record-and-transcribe-a-call-iph57c6590e9/ios"]},
+    {"claim": "일부 국가·지역에서는 상대 한 명과 통화할 때만 녹음할 수 있고, EU·러시아·튀르키예·UAE 등 19개 국가·지역에서는 통화 녹음이 지원되지 않는다", "grade": "confirmed", "evidence": ["Apple 두 판 공통 목록(아제르바이잔~예멘, EU 포함 19개 항목)"], "sourceUrls": ["https://support.apple.com/ko-kr/guide/iphone/iph57c6590e9/18.0/ios/18.0"]},
+    {"claim": "애플 기능 지원 여부 페이지의 통화 녹음 언어 목록에 한국어가, 통화 전사문·통화 전사 요약 목록에 한국어(대한민국)가 있다", "grade": "confirmed", "evidence": ["Feature Availability 페이지 목록"], "sourceUrls": ["https://www.apple.com/ios/feature-availability/"]},
+    {"claim": "전사문은 특정 지역·언어에서만 보이고, 바로 안 뜨고 '전사 진행 중'일 수 있다. 전사문이 안 보이면 아이폰이 최소 요구사항을 못 맞추거나 지원 언어를 감지하지 못한 것. 전사는 정확한지 확인하고 써야 한다", "grade": "confirmed", "evidence": ["Apple iOS 18판"], "sourceUrls": ["https://support.apple.com/ko-kr/guide/iphone/iph57c6590e9/18.0/ios/18.0"]},
+    {"claim": "통화 요약은 Apple Intelligence 기능 — iOS 27 이상에서는 iPhone 15 Pro·15 Pro Max·16 이상 모델", "grade": "confirmed", "evidence": ["Apple 최신판 각주"], "sourceUrls": ["https://support.apple.com/guide/iphone/record-and-transcribe-a-call-iph57c6590e9/ios"]},
+    {"claim": "애플은 녹음 전 기능 지원 여부 확인과 상대방이 녹음에 동의하는지 확인하라고 안내한다", "grade": "confirmed", "evidence": ["Apple 두 판 공통"], "sourceUrls": ["https://support.apple.com/ko-kr/guide/iphone/iph57c6590e9/18.0/ios/18.0"]},
+    {"claim": "iOS 18.1은 2024년 10월 28일(현지시간) 출시 예정이었고, 아이폰 XS 이상에서 업데이트 가능하며 한국어 통화 녹음·전사·요약이 포함될 전망이라고 보도됐다", "grade": "reported", "evidence": ["뉴시스 2024-10-28"], "sourceUrls": ["https://www.newsis.com/view/NISX20241028_0002936498"]},
+    {"claim": "갤럭시는 삼성 전화 앱 통화 중 화면의 '녹음'으로 녹음하고, 더보기 > 설정 > 통화 녹음 > 통화 자동 녹음에서 모든 번호·저장되지 않은 번호·선택한 번호만 중 골라 자동 녹음할 수 있다. 외부 전화 앱이 깔려 있으면 안 될 수 있다", "grade": "confirmed", "evidence": ["삼성전자서비스 23477·26041"], "sourceUrls": ["https://www.samsungsvc.co.kr/solution/23477", "https://www.samsungsvc.co.kr/solution/26041"]},
+    {"claim": "갤럭시 통화 녹음 파일은 전화 앱 설정 > 통화 녹음 > 녹음한 통화, 또는 음성 녹음 앱 메뉴(≡) > 통화 녹음에서 본다", "grade": "confirmed", "evidence": ["삼성전자서비스 23621"], "sourceUrls": ["https://www.samsungsvc.co.kr/solution/23621"]},
+    {"claim": "안드로이드폰과 달리 아이폰은 상대방에게 음성 안내가 자동 고지된다고 보도됐다", "grade": "reported", "evidence": ["뉴시스 2024-10-28"], "sourceUrls": ["https://www.newsis.com/view/NISX20241028_0002936498"]}
+  ],
+  "numbers": [
+    {"what": "아이폰 기본 통화 녹음 시작 버전", "value": "iOS 18.1", "asOf": "2026-09-28", "sourceUrl": "https://support.apple.com/en-us/121583"},
+    {"what": "통화 녹음 미지원 국가·지역 목록 항목 수", "value": "19개(EU 포함)", "asOf": "2026-09-28", "sourceUrl": "https://support.apple.com/ko-kr/guide/iphone/iph57c6590e9/18.0/ios/18.0"},
+    {"what": "iOS 18.1 업데이트 가능 기종(보도)", "value": "아이폰 XS 이상", "asOf": "2024-10-28", "sourceUrl": "https://www.newsis.com/view/NISX20241028_0002936498"},
+    {"what": "통화 요약(Apple Intelligence) 지원 모델, iOS 27 이상", "value": "iPhone 15 Pro·15 Pro Max·iPhone 16 이상", "asOf": "2026-09-28", "sourceUrl": "https://support.apple.com/guide/iphone/record-and-transcribe-a-call-iph57c6590e9/ios"},
+    {"what": "갤럭시 자동 녹음 대상 선택지", "value": "3가지(모든 번호·저장되지 않은 번호·선택한 번호만)", "asOf": "2026-09-28", "sourceUrl": "https://www.samsungsvc.co.kr/solution/26041"}
+  ],
+  "dropped": [
+    {"url": "https://support.apple.com/ko-kr/121583", "why": "한국에서 '이 페이지는 고객님의 국가 또는 지역에서 사용할 수 없습니다'로 표시 — 영문판으로 대체"},
+    {"url": "https://www.etnews.com/20240902000141", "why": "iOS 18.1 베타 시점 전망 기사 — 정식판 이후 보도(뉴시스·YTN)와 애플 문서로 대체"},
+    {"url": "https://www.moyoplan.com/phones/contents/n/spec-call-record-iphone-update", "why": "요금제 비교 업체 콘텐츠 — 본문 미확인, 공식 문서로 대체"},
+    {"url": "https://www.samsungsvc.co.kr/solution/38162", "why": "통화 녹음이 아닌 일반 음성녹음 청취 — 23621 로 대체"}
+  ],
+  "cannotCover": [
+    "통화 녹음 버튼 자체의 기종 제한(애플 문서에 녹음 기능의 기종 조건 표기 없음 — iOS 18.1 설치 가능 기종은 보도로만 확인)",
+    "아이폰 자동 녹음·상대에게 알리지 않는 녹음 설정(애플 문서에 없음 — 쓰지 않음)",
+    "통신사 앱(에이닷·익시오 등)의 아이폰 통화 녹음 — 2024년 보도뿐이고 현재 제공 상태 미확인",
+    "통화 녹음의 법적 효력·합법성 판단 — 법률 조언이 되므로 다루지 않음",
+    "최신 iOS에서 녹음 파일의 오디오 형식·용량",
+    "3자 통화·그룹 통화 녹음 가능 여부의 한국 기준 명시(애플 문구는 '일부 국가 및 지역에서는 한 명의 상대방과 통화하는 동안에만')",
+    "갤럭시가 상대에게 녹음 사실을 알리는지에 대한 삼성 공식 문서(보도 문장만 있음)"
+  ],
+  "songs": []
+}
