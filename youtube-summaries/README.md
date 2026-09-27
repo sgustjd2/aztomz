@@ -3,13 +3,21 @@
 채널 [AI Engineer](https://www.youtube.com/@aiDotEngineer) 의 새 영상을 Gemini 로 자동 요약한 모음입니다.
 생성: `backend/scripts/youtube-summarize.mjs` (GitHub Actions `youtube-summary` 크론).
 
-총 **205개**.
+총 **213개**.
 
 | 발행일 | 제목 |
 |---|---|
+| 2026-09-26 | [How We Built an Agent That Improves Itself — Zubin Aysola, Weights & Biases](2026-09-26-XyV6bSMyq-I.md) |
+| 2026-09-26 | [Long-Horizon Agents Need Experiments, Not Just Prompts — Erina Karati](2026-09-26-x4e5O9zN0TE.md) |
+| 2026-09-26 | [Autoresearch Made Our Models 3x Faster — Tejas Bhakta, Morph](2026-09-26-vrDvatGtIxs.md) |
+| 2026-09-26 | [We Let Claude Code and Codex Race Human Researchers — Elie Bakouch, Prime Intellect](2026-09-26-oVsEddfhdxc.md) |
+| 2026-09-26 | [Beating RL With Reflection: GEPA and Optimize Anything — Lakshya A. Agrawal, GEPA](2026-09-26-OA-Mc60Rboo.md) |
 | 2026-09-26 | [Fixing the PR Bottleneck — Matt Pocock, AIHero](2026-09-26-LlgiOCmFG_w.md) |
+| 2026-09-26 | [An AI Research Agent That Runs Your Experiments — Tim Sweeney, Weights & Biases](2026-09-26-hd7TOvmyAxU.md) |
+| 2026-09-26 | [The Loop Is the Product — Roland Gavrilescu, Introspection](2026-09-26-7taOQBfjDyE.md) |
 | 2026-09-25 | [Why LLM Recommenders Will Be AI's Biggest Consumer App — Devansh Tandon, Meta](2026-09-25-lIgdnF0s0kQ.md) |
 | 2026-09-25 | [Distill the LLM, Don't Serve It: Search & Personalization at DoorDash — Raghav Saboo, DoorDash](2026-09-25-ACPEpji5NV4.md) |
+| 2026-09-25 | [AI-Generated Code Is Already Competing With Human Code — Daksh Gupta, Greptile](2026-09-25-474j-n1Ltxc.md) |
 | 2026-09-25 | [Teaching LLMs to Speak Spotify — Yves Raimond & Jacqueline Wood, Spotify](2026-09-25-2LRIAfng7eA.md) |
 | 2026-09-24 | [Robot Demos Are Easy. Reliability Is Hard — Jason Ma, Dyna Robotics](2026-09-24-Sjfz1TqxzEs.md) |
 | 2026-09-24 | [Robotics Has Been Stuck for 70 Years — Deepak Pathak, Skild AI](2026-09-24-jFHteJjRl8A.md) |
