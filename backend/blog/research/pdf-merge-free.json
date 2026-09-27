@@ -1,0 +1,119 @@
+{
+  "keyword": "PDF 합치기 무료",
+  "categoryId": "hangeut-trend",
+  "searchedAt": "2026-09-27",
+  "notes": "맥은 미리보기(썸네일 드래그로 합치기·데스크탑으로 드래그해 페이지 추출)와 Finder '빠른 동작 > PDF 생성'으로 설치 없이 합치고 나눌 수 있다(Apple 공식). 윈도우는 Edge로 PDF를 열어 인쇄 대화상자에서 '사용자 지정' 페이지 범위를 고르고 프린터를 Microsoft Print to PDF로 두면 원하는 페이지만 새 PDF로 남길 수 있다(Edge 인쇄 문서 + OneNote 인쇄 문서의 조합 — 합치기 기능은 공식 문서에 없음). Adobe Acrobat 온라인 도구는 무료로 합치기(최대 100개 파일·1,500쪽)·나누기(최대 20개·1GB·로그인 필요)를 제공하지만 파일이 Adobe 서버로 올라간다.",
+  "sources": [
+    {
+      "title": "Combine PDFs in Preview on Mac - Apple Support",
+      "url": "https://support.apple.com/guide/preview/combine-pdfs-prvw43696/mac",
+      "host": "support.apple.com",
+      "tier": "official",
+      "body": "In Preview on your Mac, you can add some or all pages from one PDF to another PDF. Combine PDFs: In the Preview app on your Mac, open the PDFs you want to combine. In each open PDF, choose View > Thumbnails to display page thumbnails in the sidebar. Drag the thumbnails you want to add from the sidebar of one PDF to the sidebar of the other PDF. To add an entire PDF, drag the PDF icon from the Finder to the sidebar of an open document. You can drag thumbnails to reorder pages. If the pages aren't adjacent, Command-click to select them before dragging. Changes you make to a Preview document are saved automatically. If you want to keep the original, choose File > Duplicate before making changes. The guide applies to macOS 27 Golden Gate through macOS Catalina 10.15 (version selector at top of page)."
+    },
+    {
+      "title": "Add, delete, or move PDF pages in Preview on Mac - Apple Support",
+      "url": "https://support.apple.com/guide/preview/add-delete-or-move-pdf-pages-prvw11793/mac",
+      "host": "support.apple.com",
+      "tier": "official",
+      "body": "In Preview on your Mac, you can add, delete, and move pages in a PDF, or move pages from one PDF to another. Insert a page: select the page you want to appear before the new page, choose Edit > Insert, then choose Page from File or Blank Page. The new page is inserted after the current page. Delete a page: choose View > Thumbnails or View > Contact Sheet, select the page or pages to delete, then press the Delete key or choose Edit > Delete. When you delete a page from a PDF, all the annotations on the page are removed as well. Move a page: choose View > Thumbnails or View > Contact Sheet, then drag the pages to their new location. Copy pages between PDFs: display thumbnails in each PDF and drag thumbnails from one to another. You can also create a new PDF by dragging thumbnails from a PDF sidebar to the desktop."
+    },
+    {
+      "title": "Combine files into a PDF on Mac - Apple Support",
+      "url": "https://support.apple.com/guide/mac-help/combine-files-into-a-pdf-mchl21ac2368/mac",
+      "host": "support.apple.com",
+      "tier": "official",
+      "body": "You can quickly combine multiple files into a PDF right from the desktop or a Finder window. Click the Finder icon in the Dock to open a Finder window. Select the files you want to combine into a PDF. Alternatively, select the files on your desktop. Note: The files appear in the PDF in the same order that you select them. Control-click the selected files, then choose Quick Actions > Create PDF. The file is automatically created with a name similar to the first file you selected. You can also select the files, then click the Create PDF button in the Preview pane on the right side of the Finder window. If you don't see the Preview pane, choose View > Show Preview."
+    },
+    {
+      "title": "Print in Microsoft Edge | Microsoft Support",
+      "url": "https://support.microsoft.com/en-us/edge/print-in-microsoft-edge",
+      "host": "support.microsoft.com",
+      "tier": "official",
+      "body": "Open the website or PDF document you want to print. Press Ctrl + P on Windows or Command + P on Mac to open the print dialog. Alternatively, select Settings and more (three dots) > Print, or right-click the page and select Print. Choose the printer you want to use. If you have multiple printers installed, select the one that suits your needs. Specify which pages to print. You can choose to print all pages, a range of pages, or even select specific pages. Select an appropriate option under Pages: All: This will print all pages. Odd pages only: This will print only odd numbered pages such as 1, 3, 5 and so on. Even pages only: This will print only even numbered pages such as 2, 4, 6 and so on. Custom: You'll see a checkbox where you can enter the range of pages such as 1-5, or even select specific pages separated by comma such as 3, 6, 8 and so on. Other options include layout orientation, color, paper size, quality (600 or 1200 dpi), margins, scale, headers and footers, background graphics."
+    },
+    {
+      "title": "Print notes in OneNote for Windows 10 | Microsoft Support",
+      "url": "https://support.microsoft.com/en-us/office/print-notes-in-onenote-for-windows-10-45edbbc5-fbb8-453f-99c7-aaadebe5c06a",
+      "host": "support.microsoft.com",
+      "tier": "official",
+      "body": "In OneNote for Windows 10 you can print notes from the print dialog, where you choose the printer, orientation, and which pages to print (current page, section, or notebook). To export to PDF, in the Printer list, select Microsoft Print to PDF. This shows that Microsoft Print to PDF appears in the Windows printer list as a virtual printer that produces a PDF file instead of paper output. (Only the Print to PDF sentence is used from this page.)"
+    },
+    {
+      "title": "View, print, and edit PDFs in a PDF reader | Microsoft Support",
+      "url": "https://support.microsoft.com/en-us/word/view-print-and-edit-pdfs-in-a-pdf-reader",
+      "host": "support.microsoft.com",
+      "tier": "official",
+      "body": "When you select a PDF from OneDrive or a team site library, it opens in your browser's built-in PDF reader. You can use this PDF reader to view your PDF, with no need for an additional viewer application on your computer. To print a PDF, open it in a modern browser such as Microsoft Edge or Chrome, use the browser's Print command, select Print, choose options such as page orientation, and print. If your browser doesn't have a built-in PDF viewer, download the file and print it from a desktop application. You can't edit the content with the PDF reader, but you can use the desktop version of Word to convert the file and make your changes."
+    },
+    {
+      "title": "Merge PDFs for free - Combine PDF files online | Adobe Acrobat",
+      "url": "https://www.adobe.com/acrobat/online/merge-pdf.html",
+      "host": "www.adobe.com",
+      "tier": "official",
+      "body": "Use Adobe Acrobat online services to merge PDFs for free. Click Select files or drag and drop files into the drop zone. Select the files you want to merge. Reorder the files if needed. Click Merge files. Download your merged file or sign in to share it with a link. The merged document can be up to 1,500 pages; you can combine up to 100 files, and each file can be up to 500 pages. No subscription required, no software install. Signing in is optional for download; sign in to share via link or to add, delete, move or rotate pages after merging. Files are securely handled by Adobe servers and deleted unless you sign in to save it. By using the tool you agree to Adobe's Terms of Use and Privacy Policy. No watermark added. Works on Mac, Windows and Linux and in mobile browsers without an app. Password-protected PDFs can be merged if you enter the password. Merging does not reduce the quality of images, text or formatting."
+    },
+    {
+      "title": "Split PDF files for free - Separate PDFs online | Adobe Acrobat",
+      "url": "https://www.adobe.com/acrobat/online/split-pdf.html",
+      "host": "www.adobe.com",
+      "tier": "official",
+      "body": "Split a PDF for free with Adobe Acrobat online. Click Select a file or drag and drop a PDF into the drop zone. Select the document to split. After Acrobat uploads your file, sign in. Select divider lines to set up the page ranges for each split PDF file. Click Continue, choose a folder, and click Save. You can split a PDF of up to 1GB and 1,500 pages or less into up to 20 files (19 divider lines). The split PDFs are saved in an Adobe cloud storage folder within your Acrobat account, where you can rename, download, or share them. Your documents are handled by Adobe servers and deleted unless you sign in and save them. Quality is retained when splitting. On Mac you can also split PDFs using the Preview app."
+    }
+  ],
+  "claims": [
+    {
+      "claim": "맥 미리보기에서 썸네일을 끌어 다른 PDF 사이드바에 놓으면 합쳐지고, 원본을 지키려면 먼저 복제해야 한다(자동 저장)",
+      "grade": "confirmed",
+      "evidence": ["보기 > 썸네일 → 한 PDF 썸네일을 다른 PDF 사이드바로 드래그", "Finder의 PDF 아이콘을 사이드바로 끌면 전체 추가", "떨어진 페이지는 Command-클릭으로 여러 개 선택", "변경 사항은 자동 저장 — 원본 유지하려면 파일 > 복제 먼저", "macOS Catalina 10.15 ~ macOS 27 Golden Gate 버전 안내"],
+      "sourceUrls": ["https://support.apple.com/guide/preview/combine-pdfs-prvw43696/mac"]
+    },
+    {
+      "claim": "맥 미리보기에서 썸네일을 데스크탑으로 끌면 그 페이지만 담긴 새 PDF가 생긴다(나누기), 페이지 삭제·순서 변경도 된다",
+      "grade": "confirmed",
+      "evidence": ["사이드바 썸네일을 데스크탑으로 드래그해 새 PDF 생성", "Delete 키 또는 편집 > 삭제로 페이지 삭제, 삭제한 페이지의 주석도 함께 사라짐", "편집 > 삽입 > 파일에서 페이지"],
+      "sourceUrls": ["https://support.apple.com/guide/preview/add-delete-or-move-pdf-pages-prvw11793/mac", "https://www.adobe.com/acrobat/online/split-pdf.html"]
+    },
+    {
+      "claim": "맥 Finder에서 여러 파일을 선택하고 빠른 동작 > PDF 생성을 고르면 한 PDF로 합쳐지며, 선택한 순서대로 들어간다",
+      "grade": "confirmed",
+      "evidence": ["Control-클릭 > 빠른 동작 > PDF 생성", "선택한 순서대로 PDF에 들어감", "첫 번째로 선택한 파일과 비슷한 이름으로 자동 생성", "Finder 미리보기 패널의 PDF 생성 버튼도 가능"],
+      "sourceUrls": ["https://support.apple.com/guide/mac-help/combine-files-into-a-pdf-mchl21ac2368/mac"]
+    },
+    {
+      "claim": "윈도우에서는 Edge로 PDF를 열고 인쇄(Ctrl+P)에서 페이지를 '사용자 지정'으로 고르고, 프린터를 Microsoft Print to PDF로 두면 원하는 페이지만 새 PDF로 저장할 수 있다(두 공식 문서 조합 — 합치기는 공식 문서로 확인 못 함)",
+      "grade": "confirmed",
+      "evidence": ["Edge 인쇄 문서: 웹사이트나 PDF 문서를 열고 Ctrl+P", "페이지: 모두/홀수/짝수/사용자 지정(1-5 범위, 3, 6, 8 쉼표 구분)", "OneNote 문서: PDF로 내보내려면 프린터 목록에서 Microsoft Print to PDF 선택", "PDF 리더 문서: Edge 등 브라우저 내장 PDF 리더로 추가 뷰어 없이 보기·인쇄, 내용 편집은 불가"],
+      "sourceUrls": ["https://support.microsoft.com/en-us/edge/print-in-microsoft-edge", "https://support.microsoft.com/en-us/office/print-notes-in-onenote-for-windows-10-45edbbc5-fbb8-453f-99c7-aaadebe5c06a", "https://support.microsoft.com/en-us/word/view-print-and-edit-pdfs-in-a-pdf-reader"]
+    },
+    {
+      "claim": "Adobe Acrobat 온라인 합치기·나누기는 무료지만 파일이 Adobe 서버로 올라가며, 나누기는 로그인이 필요하고 결과가 Adobe 클라우드에 저장된다",
+      "grade": "confirmed",
+      "evidence": ["합치기: 최대 100개 파일, 파일당 500쪽, 합친 문서 최대 1,500쪽, 설치·구독 불필요, 다운로드는 로그인 없이 가능, 워터마크 없음", "모바일 브라우저에서도 앱 없이 동작", "나누기: 1GB·1,500쪽 이하, 최대 20개 파일, 업로드 후 로그인 필요, Adobe 클라우드 폴더에 저장", "파일은 Adobe 서버에서 처리되고 로그인해 저장하지 않으면 삭제된다고 명시", "이용약관·개인정보처리방침 동의가 필요"],
+      "sourceUrls": ["https://www.adobe.com/acrobat/online/merge-pdf.html", "https://www.adobe.com/acrobat/online/split-pdf.html"]
+    }
+  ],
+  "numbers": [
+    { "what": "Adobe 온라인 합치기 최대 파일 수", "value": "100개", "asOf": "2026-09-27 페이지 확인", "sourceUrl": "https://www.adobe.com/acrobat/online/merge-pdf.html" },
+    { "what": "Adobe 온라인 합치기 파일당 최대 쪽수", "value": "500쪽", "asOf": "2026-09-27", "sourceUrl": "https://www.adobe.com/acrobat/online/merge-pdf.html" },
+    { "what": "Adobe 온라인 합친 문서 최대 쪽수", "value": "1,500쪽", "asOf": "2026-09-27", "sourceUrl": "https://www.adobe.com/acrobat/online/merge-pdf.html" },
+    { "what": "Adobe 온라인 나누기 최대 파일 크기·쪽수", "value": "1GB, 1,500쪽 이하", "asOf": "2026-09-27", "sourceUrl": "https://www.adobe.com/acrobat/online/split-pdf.html" },
+    { "what": "Adobe 온라인 나누기 최대 결과 파일 수", "value": "20개(구분선 19개)", "asOf": "2026-09-27", "sourceUrl": "https://www.adobe.com/acrobat/online/split-pdf.html" },
+    { "what": "Apple 미리보기 PDF 합치기 안내 적용 버전", "value": "macOS Catalina 10.15 ~ macOS 27 Golden Gate", "asOf": "2026-09-27", "sourceUrl": "https://support.apple.com/guide/preview/combine-pdfs-prvw43696/mac" },
+    { "what": "Edge 인쇄 사용자 지정 페이지 예시", "value": "1-5, 3, 6, 8", "asOf": "2026-09-27", "sourceUrl": "https://support.microsoft.com/en-us/edge/print-in-microsoft-edge" }
+  ],
+  "dropped": [
+    { "url": "https://learn.microsoft.com/en-us/answers/questions/4376858/article-how-to-add-or-reinstall-the-microsoft-pdf", "why": "커뮤니티 자원봉사자 글(공식 문서 아님)" },
+    { "url": "https://support.microsoft.com/en-us/office/collab-files/save-or-convert-to-pdf-or-xps-in-office-desktop-apps", "why": "Office 문서를 PDF로 저장하는 법 — PDF 합치기·나누기와 직접 관련 적음" },
+    { "url": "https://helpx.adobe.com/acrobat/web/edit-pdfs/organize-documents/split-pdfs.html", "why": "403으로 본문을 못 읽음" },
+    { "url": "https://support.apple.com/guide/iphone/modify-files-and-folders-iphc61044c11/ios", "why": "WebFetch로 본문이 안 읽힘(목차만) — 아이폰 파일 앱 'PDF 생성' 단계 확인 불가" },
+    { "url": "https://support.apple.com/guide/shortcuts/transform-actions-apd1d9413cfb/ios", "why": "본문 미확인 — 단축어 PDF 동작 확인 불가" }
+  ],
+  "cannotCover": [
+    "아이폰 파일 앱 '빠른 동작 > PDF 생성'·단축어로 PDF 합치기 — Apple 공식 iPhone 사용 설명서 본문을 읽지 못해 단계를 확인하지 못함",
+    "윈도우 기본 기능이나 Edge만으로 여러 PDF를 하나로 합치는 방법 — 공식 문서로 확인되지 않음",
+    "Adobe 외 무료 온라인 도구(Smallpdf 등)의 제한·가격",
+    "Microsoft Print to PDF가 윈도우에 없을 때 설치 방법(공식 문서 미확인)"
+  ],
+  "songs": []
+}

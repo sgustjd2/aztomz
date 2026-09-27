@@ -1,0 +1,104 @@
+{
+  "slug": "bedazzle-photo-prompt-pack",
+  "categoryId": "ai-prompt-pack",
+  "researchedAt": "2026-09-27",
+  "freshnessWindow": "2026-08-28 ~ 2026-09-27",
+  "method": "WebSearch 공개 검색결과 + 기사·블로그 본문 WebFetch. 인스타그램·틱톡·페이스북 직접 접근 없음(틱톡 discover 페이지는 검색결과 제목으로만 확인, 열지 않음).",
+  "candidates": [
+    {
+      "theme": "비다즐링(큐빅·보석 스티커로 반짝이게 꾸미기) AI 사진 프롬프트",
+      "evidence": "국내 언론이 9월 초까지 현재형으로 다룸(전남일보 9/6 '최근 … 비다즐링이 더욱 주목받고 있습니다', 뉴스플릭스 9/4 '비다즐링이 패션 소품을 넘어 얼굴로 영역을 넓히고 있다'). AI 쪽은 Picsart 블로그 8/31 '비다즐 트렌드' AI 영상 원본 21만 4천 회 재생, 태국 Rainmaker 9/14 비다즐 트렌드 프롬프트 배포글, Media.io 비다즐 얼굴 필터 페이지 등 서로 다른 작성자가 AI 버전을 올림. 국내 라이프스타일 유행 자체는 8월 중순~말 기사(뉴시스 8/24, 아시아경제·이투데이 8/27)에서 시작.",
+      "sourceUrl": "https://www.jnilbo.com/news/articleView.html?idxno=90000062890",
+      "freshness": "언론 현재형 기사 2026-09-04·09-06, AI 프롬프트/영상 글 2026-08-31·09-14 — 30일 이내",
+      "volumeSignalsMet": {
+        "count": 3,
+        "signals": [
+          "(1) 최근 30일 내 게시물 여러 개 — 충족(Picsart 8/31, Rainmaker 9/14, 뉴스플릭스 9/4, 전남일보 9/6). 단 국내 한국어 'AI 비다즐링 프롬프트' 글은 이번 검색에서 따로 확인하지 못함",
+          "(2) 여러 작성자가 같은 스타일 — 충족(Picsart·Rainmaker·Media.io 서로 다른 운영 주체)",
+          "(3) 언론 현재형 서술 — 충족(전남일보 '최근 … 주목받고 있습니다', 뉴스플릭스 '영역을 넓히고 있다')",
+          "(4) 최근 30일 재점화 계기 — 불충분(셀럽 계기는 8월 기사 기준, 30일 경계 밖)"
+        ],
+        "level": "지금 많이 올라온다(라이프스타일 유행) + AI 버전은 해외 중심으로 여러 곳에서 올라오는 중. 국내 AI 프롬프트 한정 물량은 확인 못 함"
+      }
+    },
+    {
+      "theme": "가을 단풍·가을 나들이 AI 인생샷 프롬프트",
+      "evidence": "한국어 검색에서 단풍 전용 AI 프롬프트 게시물을 찾지 못함. 영어권 Media.io 'Gemini AI prompt for autumn' 페이지와 Storyboard18 기사(할로윈 2025 직후 작성 — 약 11개월 전)만 확인.",
+      "sourceUrl": "https://www.storyboard18.com/digital/nano-banana-ai-prompts-for-autumn-create-visually-stunning-portraits-this-fall-season-83594.htm",
+      "freshness": "30일 이내 근거 없음(확인된 기사는 2025-11 무렵)",
+      "volumeSignalsMet": {
+        "count": 1,
+        "signals": [
+          "(4) 시즌성 계기(가을) — 부분 충족일 뿐 게시물 물량 확인 안 됨"
+        ],
+        "level": "언급이 있다 수준 — 채택 안 함. 또 기발행 '풍경'·'여행' 팩과 겹침"
+      }
+    },
+    {
+      "theme": "로맨틱 흑백 필름 사진 프롬프트",
+      "evidence": "HitPaw 'ChatGPT 트렌딩 프롬프트 모음'에 '다시 유행' 서술이 있으나 게시일·물량 확인 안 됨. 기발행 빈티지 디지캠·폴라로이드 팩과 결이 겹침.",
+      "sourceUrl": "https://online.hitpaw.kr/learn/chatgpt-trending-prompts.html",
+      "freshness": "날짜 미확인",
+      "volumeSignalsMet": {
+        "count": 0,
+        "signals": [],
+        "level": "언급이 있다 수준 — 채택 안 함"
+      }
+    }
+  ],
+  "chosen": {
+    "theme": "비다즐링 AI 잡지컷 프롬프트 — 셀카·폰케이스·케이크·마스크팩·텀블러·공연 날 소품을 큐빅으로 반짝이게",
+    "evidence": "9월 초 국내 기사가 비다즐링을 현재형으로 다루고(전남일보 9/6, 뉴스플릭스 9/4), 해외에서 AI 비다즐 영상·프롬프트 글이 8/31·9/14에 올라옴. volumeSignals 3/4.",
+    "whyNow": "큐빅과 보석 스티커를 붙여 반짝이게 꾸미는 '비다즐링'을 9월 초에도 여러 매체가 요즘 유행으로 다뤘고, 해외에서는 이걸 AI 사진·영상으로 만드는 프롬프트 글도 올라오고 있어요.",
+    "limits": "국내 한국어 'AI 비다즐링 프롬프트' 게시물 물량은 이번 조사에서 따로 확인하지 못함 — 본문에서 '국내에서 AI 프롬프트로 대유행'이라고 쓰지 말 것. 유행의 주인공은 실물 꾸미기이고 AI 버전은 해외 사례로만 말할 것.",
+    "cannotSay": [
+      "국내에서 AI 비다즐링 프롬프트가 급증·열풍이라는 서술",
+      "특정 셀럽·브랜드 이름(유행 계기로 기사에 나온 인물·브랜드 포함) — 프롬프트·본문 모두 금지",
+      "이 프롬프트로 이렇게 나왔다는 결과 서술"
+    ]
+  },
+  "sources": [
+    {
+      "title": "“꾸미지 못할 게 없네”…마스크팩·강아지도 반짝이는 ‘비다즐링’ - 전남일보",
+      "url": "https://www.jnilbo.com/news/articleView.html?idxno=90000062890",
+      "host": "www.jnilbo.com",
+      "publishedAt": "2026-09-06",
+      "body": "큐빅과 보석 스티커를 물건과 신체에 붙이는 '비다즐링'이 SNS에서 유행 중. 해외 셀럽과 국내 배우·K팝 아이돌이 스톤 스타일링을 선보이며 대중화. Y2K 패션·맥시멀리즘·개성 표현·SNS 문화가 맞물려 확산. 인용: '최근에는 … 스톤을 활용한 스타일링을 선보이면서 비다즐링이 더욱 주목받고 있습니다.' 전문가: '과거에는 부가적인 장식재였던 글리터와 스톤이 최근에는 메이크업의 핵심적인 요소가 됐다.' 제목에 마스크팩·강아지 등 꾸밈 대상 언급."
+    },
+    {
+      "title": "“여드름 패치도 꾸민다”…얼굴 위 ‘비다즐링’, 뷰티 트렌드로 확산 - 뉴스플릭스",
+      "url": "https://www.newsflix.co.kr/news/articleView.html?idxno=32285",
+      "host": "www.newsflix.co.kr",
+      "publishedAt": "2026-09-04",
+      "body": "인용: '보석이나 라인스톤을 촘촘하게 붙여 물건을 화려하게 장식하는 비다즐링이 패션 소품을 넘어 얼굴로 영역을 넓히고 있다.' 여드름 패치가 별 모양·파스텔 색으로 스타일링 요소가 되는 흐름을 다룸."
+    },
+    {
+      "title": "Bedazzle trend: the AI video that covers everything - Picsart Blog",
+      "url": "https://picsart.com/blog/bedazzle-trend/",
+      "host": "picsart.com",
+      "publishedAt": "2026-08-31",
+      "body": "아침 루틴 속 물건(침대·옷·액세서리·차)에 차례로 라인스톤을 입히는 AI 영상 클립 10개를 이어 붙이는 트렌드. 원본 영상이 21만 4천 회 재생을 넘었다고 소개."
+    },
+    {
+      "title": "แจก Prompt ‘Bedazzled Trend’ แปะเพชรระยิบระยับตามเทรนด์ Gen Z - Rainmaker",
+      "url": "https://www.rainmaker.in.th/bedazzled-trend-prompt-giveaway/",
+      "host": "www.rainmaker.in.th",
+      "publishedAt": "2026-09-14",
+      "body": "얼굴과 제품 사진에 라인스톤·크리스털을 붙인 이미지를 만드는 AI 프롬프트를 배포하는 글. 미니멀리즘에 지친 흐름에서 장식적 맥시멀리즘으로 넘어가는 Gen Z 트렌드로 설명, Y2K 감성의 귀환으로 정리. 브랜드는 제품 사진을 비다즐해 실시간 마케팅에 쓸 수 있다고 제안."
+    },
+    {
+      "title": "카일리 제너도 빠졌다! 요즘 뜨는 ‘비다즐링’이 뭐길래? - 코스모폴리탄 코리아",
+      "url": "https://www.cosmopolitan.co.kr/article/1908136",
+      "host": "www.cosmopolitan.co.kr",
+      "publishedAt": "2026-08-24",
+      "body": "큐빅과 젬스톤으로 일상의 모든 것을 반짝이게 꾸미는 젠지 트렌드로 소개. 생일 케이크·마스크팩·음료·폰케이스·메이크업까지 확장. 특별한 기술 없이 스톤 색과 위치만 골라 개성을 낼 수 있어 젠지에게 통한다고 설명. (30일 경계 밖 — 배경 설명용)"
+    },
+    {
+      "title": "AI 가을 인물 프롬프트 - Storyboard18",
+      "url": "https://www.storyboard18.com/digital/nano-banana-ai-prompts-for-autumn-create-visually-stunning-portraits-this-fall-season-83594.htm",
+      "host": "www.storyboard18.com",
+      "publishedAt": "2025-11 무렵(본문에 '할로윈 2025가 끝나고' 서술)",
+      "body": "할로윈 2025 이후 가을 분위기 인물 이미지를 만드는 프롬프트 소개. 30일 이내 근거가 아니라 단풍 테마를 기각한 근거로만 기록."
+    }
+  ]
+}
