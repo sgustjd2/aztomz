@@ -3,10 +3,19 @@
 채널 [AI Engineer](https://www.youtube.com/@aiDotEngineer) 의 새 영상을 Gemini 로 자동 요약한 모음입니다.
 생성: `backend/scripts/youtube-summarize.mjs` (GitHub Actions `youtube-summary` 크론).
 
-총 **213개**.
+총 **222개**.
 
 | 발행일 | 제목 |
 |---|---|
+| 2026-09-27 | [I Turned Coding Agents Into a Strategy Game — Ido Salomon, AgentCraft](2026-09-27-YIVkERhy8xo.md) |
+| 2026-09-27 | [What It Actually Takes to Build a Software Factory — Tereza Tížková, Factory](2026-09-27-vGCJ7diEtrw.md) |
+| 2026-09-27 | [Software Engineering Is Becoming Factory Engineering — Zach Lloyd, Warp](2026-09-27-tUPPVhBBcoM.md) |
+| 2026-09-27 | [Orchestras, Not Factories: How the Fastest Builders Work — Charlie Holtz, Conductor](2026-09-27-TRfzFJCJ7ZE.md) |
+| 2026-09-27 | [How Software Factories Improve Themselves — Suraj Gupta, Warp](2026-09-27-TN3mj92oZ8I.md) |
+| 2026-09-27 | [No, That's Not a Software Factory — Ryan Cooke, WorkOS](2026-09-27-HvboD89DyQ8.md) |
+| 2026-09-27 | [Get Out of the Model's Way — Kevin Hou, Google DeepMind](2026-09-27-buHC7bQE1X4.md) |
+| 2026-09-27 | [GLM-5.2: Open Weights, Near-Frontier Intelligence — Zixuan Li, Z.ai](2026-09-27-9JFGohx4E7U.md) |
+| 2026-09-27 | [Scale the Judgment, Not the Model — Andrew Orobator, Reddit](2026-09-27-6MudaeKdBSk.md) |
 | 2026-09-26 | [How We Built an Agent That Improves Itself — Zubin Aysola, Weights & Biases](2026-09-26-XyV6bSMyq-I.md) |
 | 2026-09-26 | [Long-Horizon Agents Need Experiments, Not Just Prompts — Erina Karati](2026-09-26-x4e5O9zN0TE.md) |
 | 2026-09-26 | [Autoresearch Made Our Models 3x Faster — Tejas Bhakta, Morph](2026-09-26-vrDvatGtIxs.md) |
