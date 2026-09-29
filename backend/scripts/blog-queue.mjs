@@ -118,8 +118,9 @@ async function main() {
       if (stopped.has(p)) continue;
       console.log(`\n[${i + 1}/${steps.length}] ${p} · ${id}  (${new Date().toLocaleTimeString('ko-KR')})`);
       // 무인 실행: 창을 화면 밖에(게임·작업 방해 X), 표준입력 없음(확인 프롬프트가 멈추지 않게).
+      // 사람이 붙어 있을 땐 BLOG_OFFSCREEN=0 으로 창을 보이게 — 티스토리 캡차를 직접 풀 수 있게.
       const r = spawnSync(process.execPath, [PLATFORMS[p].script, id],
-        { stdio: ['ignore', 'inherit', 'inherit'], env: { ...process.env, BLOG_OFFSCREEN: '1' } });
+        { stdio: ['ignore', 'inherit', 'inherit'], env: { ...process.env, BLOG_OFFSCREEN: process.env.BLOG_OFFSCREEN || '1' } });
       if (r.status !== 0) { stopped.add(p); console.error(`✗ ${p} 실패 — 오늘 ${p} 대기열 중단(세션·캡차 확인)`); }
       if (i < steps.length - 1 && stopped.size < 2) {
         const min = gapMin + Math.random() * (gapMax - gapMin);
