@@ -1,0 +1,174 @@
+{
+  "keyword": "윈도우 11 업데이트 일시중지",
+  "categoryId": "hangeut-trend",
+  "searchedAt": "2026-09-29",
+  "notes": "윈도우 11에서 업데이트를 잠시 미루는 공식 방법(설정 > Windows 업데이트 > 업데이트 일시 중지, 최대 35일)과 작업 중 재부팅을 막는 활성 시간(사용 시간)·다시 시작 예약을 마이크로소프트 지원 문서 원문 기준으로 정리한다. '완전히 끄기'는 FAQ가 '업데이트를 완전히 중지할 수는 없습니다'라고 명시하므로 방법을 안내하지 않고, 레지스트리·서비스 편집은 IT 관리자 문서조차 '권장되지 않습니다'라고 하므로 쓰지 않는다. 일시 중지 컨트롤 UI는 문서끼리 표현이 다르다(일시 중지 문서='날짜 선택', FAQ='원하는 일시 중지 길이 선택').",
+  "queries": [
+    "Windows 업데이트 일시 중지 Microsoft 지원 support.microsoft.com ko-kr",
+    "Windows 11 pause updates active hours Microsoft Support",
+    "\"사용 시간\" Windows 업데이트 다시 시작 support.microsoft.com 고급 옵션"
+  ],
+  "sources": [
+    {
+      "title": "Windows에서 업데이트 일시 중지 | Microsoft Support",
+      "url": "https://support.microsoft.com/ko-kr/windows/deployment/updates-lifecycle/pause-updates-in-windows",
+      "host": "support.microsoft.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "적용 대상: Windows 11 Windows 10. [Windows 11 탭] 시작 > 설정 > Windows 업데이트를 선택합니다. 업데이트 일시 중지 컨트롤에서 날짜 선택을 선택합니다. 현재 날짜로부터 최대 35일 동안 업데이트를 일시 중지할 수 있습니다. 다시 시작해야 할 수 있는 업데이트 일시 중지가 끝날 때까지 다운로드하거나 설치되지 않습니다. 일시 중지가 끝날 때까지 디바이스가 업데이트 설치를 완료하기 위해 자동으로 다시 시작되지 않습니다. 업데이트를 일시 중지할 때 업데이트가 진행 중인 경우 해당 업데이트가 취소됩니다. 일시 중지가 종료되면 디바이스가 사용 가능한 최신 업데이트를 검사, 다운로드 및 설치합니다. 이렇게 하면 자동 업데이트가 영구적으로 꺼지지 않습니다. 업데이트 일시 중지 확장: 업데이트가 이미 일시 중지되어 있고 더 많은 시간이 필요한 경우 일시 중지를 연장할 수 있습니다. 새 종료 날짜는 오늘부터 최대 35일이 될 수 있습니다. 언제든지 업데이트를 수동으로 다시 시작할 수 있습니다. 아무 작업도 수행하지 않으면 일시 중지가 만료되면 업데이트가 자동으로 다시 시작되어 디바이스를 안전하고 안정적으로 유지할 수 있습니다. [Windows 10 탭] Windows 10 권장 업데이트를 받을 준비가 되지 않은 경우 업데이트를 다운로드하고 설치하지 못하도록 일시 중지할 수 있습니다.",
+      "facts": [
+        "Win11 경로: 시작 > 설정 > Windows 업데이트 > 업데이트 일시 중지 컨트롤에서 날짜 선택",
+        "현재 날짜로부터 최대 35일 일시 중지",
+        "일시 중지 중에는 재시작이 필요할 수 있는 업데이트가 다운로드·설치되지 않고, 설치 완료를 위한 자동 재시작도 없음",
+        "일시 중지할 때 진행 중이던 업데이트는 취소됨",
+        "일시 중지가 끝나면 최신 업데이트를 검사·다운로드·설치 — 자동 업데이트가 영구적으로 꺼지지 않음",
+        "연장 가능하지만 새 종료 날짜도 오늘부터 최대 35일",
+        "언제든 수동으로 다시 시작 가능, 그냥 두면 만료 시 자동 재개"
+      ]
+    },
+    {
+      "title": "Pause updates in Windows | Microsoft Support",
+      "url": "https://support.microsoft.com/en-us/windows/deployment/updates-lifecycle/pause-updates-in-windows",
+      "host": "support.microsoft.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "[Windows 11] Select Start > Settings > Windows Update. Select Pick a date on the Pause updates control. You can pause updates for up to 35 days from the current date. Updates that might require a restart won't be downloaded or installed until the pause ends. Your device won't restart automatically to finish installation of the updates until the pause ends. If updates are in progress when you pause updates, those updates are canceled. After the pause ends, your device will check for, download, and install the latest available updates. Extend the pause: Select Start > Settings > Windows Update. Select a new end date on the Pause updates calendar. The new end date can be up to 35 days from today (previously paused time doesn't get added on). Pausing updates does not permanently turn off automatic updates. When you resume updates, Windows will check for updates again and may need to re-download and reinstall them.",
+      "facts": [
+        "연장 시 새 종료 날짜는 오늘부터 최대 35일 — 이미 일시 중지한 기간이 더해지지 않음",
+        "다시 시작(resume)하면 업데이트를 다시 검사하고 다시 다운로드·설치해야 할 수 있음"
+      ]
+    },
+    {
+      "title": "Windows 업데이트: FAQ | Microsoft Support",
+      "url": "https://support.microsoft.com/ko-kr/windows/deployment/updates-lifecycle/windows-update-faq",
+      "host": "support.microsoft.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "[Windows 11] 업데이트 다운로드 및 설치를 어떻게 중지할 수 있나요? 업데이트를 건너뛸 수 있나요? — 업데이트를 완전히 중지할 수는 없습니다. 업데이트를 하면 장치를 안전하게 유지하는 데 도움이 되므로 업데이트 설정에 관계없이 결국 업데이트를 다운로드하고 설치해야 합니다. 업데이트를 다운로드하고 설치하는 것을 일시적으로 중지하는 방법은 다음과 같습니다. Windows 11 시작 > 설정 > Windows 업데이트를 선택합니다. 업데이트 일시 중지 옆에 있는 원하는 일시 중지 길이를 선택합니다. 편리한 시간에 장치를 다시 시작하여 업데이트가 설치되도록 하려면 어떻게 해야 하나요? 1. 시작 > 설정 > Windows 업데이트를 선택합니다. 2. 다시 시작 예약을 선택하고 편리한 시간을 선택합니다. 장치를 사용하지 않을 때만 업데이트를 위해 자동으로 다시 시작하도록 사용 시간을 설정할 수 있습니다. 데이터 통신 연결의 경우, Windows용 일부 업데이트는 자동으로 설치되지 않습니다. (영문판) Windows 11 is the most secure Windows ever, and to keep it running smoothly, we recommend you stay updated to protect your PC from security risks.",
+      "facts": [
+        "업데이트를 완전히 중지할 수는 없음 — 결국 다운로드·설치해야 함(장치 안전 목적)",
+        "Win11 일시 중지: 업데이트 일시 중지 옆에서 원하는 일시 중지 길이 선택",
+        "다시 시작 예약: 시작 > 설정 > Windows 업데이트 > 다시 시작 예약 > 편리한 시간 선택",
+        "사용 시간을 설정하면 장치를 사용하지 않을 때만 자동 재시작",
+        "데이터 통신(요금제) 연결에서는 일부 업데이트가 자동 설치되지 않음",
+        "보안 위험으로부터 PC를 보호하려면 업데이트된 상태 유지를 권장"
+      ]
+    },
+    {
+      "title": "Windows Update: FAQ | Microsoft Support",
+      "url": "https://support.microsoft.com/en-us/windows/windows-update-faq-8a903416-6f45-0718-f5c7-375e92dddeb2",
+      "host": "support.microsoft.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "You can't stop updates entirely—because they help keep your device safe and secure, updates will eventually need to be installed and downloaded, regardless of your update settings. In Windows 11, select Start > Settings > Windows Update. Next to Pause updates, select the pause length you prefer. Select Start > Settings > Windows Update. Select Schedule the restart and choose a time that's convenient for you. You can set active hours to make sure automatic restarts for updates only happen when you're not using your device. If you're on a metered connection, some updates for Windows won't be installed automatically. Windows 11 is the most secure Windows ever, and to keep it running smoothly, we recommend you stay updated to protect your PC from security risks.",
+      "facts": [
+        "업데이트를 완전히 멈출 수 없음(영문 원문)",
+        "보안 위험으로부터 PC를 보호하려면 최신 상태 유지 권장"
+      ]
+    },
+    {
+      "title": "활성 시간을 사용하여 PC를 최신 상태로 유지 | Microsoft Support",
+      "url": "https://support.microsoft.com/ko-kr/windows/deployment/updates-lifecycle/keep-your-pc-up-to-date-with-active-hours",
+      "host": "support.microsoft.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "적용 대상 Windows 11, Windows 10. [Windows 11 탭] 최신 업데이트를 사용할 수 있을 때 자동으로 다운로드하고 설치하기 때문에(요금제 연결에 있지 않으면) … 경우에 따라 업데이트 설치를 완료하려면 PC를 다시 시작해야 할 수 있습니다. 사용 시간을 설정하여 일반적으로 PC를 사용하는 시간을 알리면 원하지 않을 때 다시 시작되지 않도록 할 수 있습니다. Windows가 디바이스의 활동에 따라 활성 시간을 자동으로 조정하게 합니다: 1. 시작 > 설정 > Windows 업데이트 > 고급 옵션을 선택합니다. 2. 활성 시간을 선택한 다음 활성 시간 조정 드롭다운에서 자동으로를 선택합니다. 사용자 고유의 활성 시간 선택: 1. 시작 > 설정 > Windows 업데이트 > 고급 옵션을 선택합니다. 2. 활성 시간을 선택한 다음, 활성 시간 조정 드롭다운에서 수동으로 선택합니다. [Windows 10 탭] 시작 > 설정 > 업데이트 & 보안 > Windows 업데이트 > 활성 시간 변경. 현재 사용 시간 옆의 변경을 선택합니다. 활성 시간의 시작 시간 및 종료 시간을 선택합니다. 그런 다음 저장을 선택합니다. 페이지 안내: Windows 10 지원은 2025년 10월 14일에 종료됨.",
+      "facts": [
+        "Win11 활성 시간 경로: 시작 > 설정 > Windows 업데이트 > 고급 옵션 > 활성 시간",
+        "활성 시간 조정 드롭다운: 자동으로(디바이스 활동에 따라 자동 조정) / 수동으로(시작·종료 시간 직접)",
+        "사용 시간을 알려 주면 원하지 않을 때 다시 시작되지 않도록 할 수 있음",
+        "Win10: 설정 > 업데이트 & 보안 > Windows 업데이트 > 활성 시간 변경",
+        "Windows 10 지원 종료 2025-10-14(페이지 안내)"
+      ]
+    },
+    {
+      "title": "업데이트 후 디바이스 다시 시작 관리 | Microsoft Learn",
+      "url": "https://learn.microsoft.com/ko-kr/windows/deployment/update/waas-restart",
+      "host": "learn.microsoft.com",
+      "tier": "official",
+      "publishedAt": "2025-09-26",
+      "body": "IT 관리자용 문서(그룹 정책·MDM·레지스트리). Windows 레지스트리를 직접 편집하는 것은 권장되지 않습니다. 사용 시간은 장치가 사용 중일 것으로 예상하는 시간을 나타냅니다. 업데이트가 활성 시간 외에 발생한 후 자동으로 다시 시작됩니다. 기본적으로 PC의 활성 시간은 오전 8시부터 오후 5시까지입니다. 사용자는 활성 시간을 수동으로 변경할 수 있습니다. Windows 10 버전 1607 및 Windows Server 2016 최대 활성 시간 길이는 12입니다. 이후 버전은 최대 활성 시간 길이 18시간을 지원합니다. (레지스트리 방식) 이 메서드는 권장되지 않으며 그룹 정책 또는 MDM을 사용할 수 없는 경우에만 사용해야 합니다. 레지스트리를 통해 구성된 모든 설정은 다른 메서드를 사용하는 기존 구성과 충돌할 수 있습니다. 팁: 디바이스에서 활성 시간을 수동으로 구성하려면 설정 > Windows 업데이트 > 고급 옵션으로 이동하여 활성 시간을 선택합니다.",
+      "facts": [
+        "활성 시간 기본값: 오전 8시~오후 5시",
+        "최대 활성 시간 길이 18시간(Windows 10 1607 이후 버전; 1607은 12시간)",
+        "활성 시간 밖에서 자동 재시작",
+        "레지스트리 직접 편집은 권장되지 않음, 다른 설정과 충돌할 수 있음"
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "claim": "윈도우 11에서 설정 > Windows 업데이트 > 업데이트 일시 중지로 현재 날짜부터 최대 35일까지 업데이트를 멈출 수 있다",
+      "grade": "confirmed",
+      "evidence": ["일시 중지 문서 ko/en Win11 탭", "FAQ Win11 일시 중지 절차"],
+      "sourceUrls": [
+        "https://support.microsoft.com/ko-kr/windows/deployment/updates-lifecycle/pause-updates-in-windows",
+        "https://support.microsoft.com/en-us/windows/deployment/updates-lifecycle/pause-updates-in-windows"
+      ]
+    },
+    {
+      "claim": "일시 중지 중에는 재시작이 필요할 수 있는 업데이트를 받지 않고 자동 재시작도 없다. 진행 중이던 업데이트는 취소된다",
+      "grade": "confirmed",
+      "evidence": ["일시 중지 문서 Win11 탭"],
+      "sourceUrls": ["https://support.microsoft.com/ko-kr/windows/deployment/updates-lifecycle/pause-updates-in-windows"]
+    },
+    {
+      "claim": "연장해도 새 종료일은 오늘부터 최대 35일 — 앞서 멈춘 기간이 더해지지 않는다. 기간이 끝나면 자동으로 업데이트가 재개된다",
+      "grade": "confirmed",
+      "evidence": ["일시 중지 문서 확장 절", "영문판 'previously paused time doesn't get added on'"],
+      "sourceUrls": [
+        "https://support.microsoft.com/ko-kr/windows/deployment/updates-lifecycle/pause-updates-in-windows",
+        "https://support.microsoft.com/en-us/windows/deployment/updates-lifecycle/pause-updates-in-windows"
+      ]
+    },
+    {
+      "claim": "활성 시간(사용 시간)은 고급 옵션에서 자동/수동으로 정하고, 그 시간에는 업데이트 재부팅이 일어나지 않게 한다. 기본값은 오전 8시~오후 5시, 최대 18시간",
+      "grade": "confirmed",
+      "evidence": ["활성 시간 문서 Win11 탭", "Learn 다시 시작 관리 문서"],
+      "sourceUrls": [
+        "https://support.microsoft.com/ko-kr/windows/deployment/updates-lifecycle/keep-your-pc-up-to-date-with-active-hours",
+        "https://learn.microsoft.com/ko-kr/windows/deployment/update/waas-restart"
+      ]
+    },
+    {
+      "claim": "다시 시작 예약으로 설치 완료 재부팅 시간을 편한 때로 정할 수 있다",
+      "grade": "confirmed",
+      "evidence": ["FAQ '편리한 시간에 장치를 다시 시작' 절"],
+      "sourceUrls": ["https://support.microsoft.com/ko-kr/windows/deployment/updates-lifecycle/windows-update-faq"]
+    },
+    {
+      "claim": "업데이트를 완전히 끌 수는 없고, 보안 위험에서 PC를 지키려면 최신 상태 유지가 권장된다. 레지스트리 직접 편집은 MS가 권장하지 않는다",
+      "grade": "confirmed",
+      "evidence": ["FAQ 'You can't stop updates entirely'", "Learn 문서 '레지스트리를 직접 편집하는 것은 권장되지 않습니다'"],
+      "sourceUrls": [
+        "https://support.microsoft.com/ko-kr/windows/deployment/updates-lifecycle/windows-update-faq",
+        "https://support.microsoft.com/en-us/windows/windows-update-faq-8a903416-6f45-0718-f5c7-375e92dddeb2",
+        "https://learn.microsoft.com/ko-kr/windows/deployment/update/waas-restart"
+      ]
+    }
+  ],
+  "numbers": [
+    {"what": "업데이트 일시 중지 최대 기간", "value": "현재 날짜로부터 최대 35일(연장 시에도 오늘부터 최대 35일)", "asOf": "2026-09-29 확인", "sourceUrl": "https://support.microsoft.com/ko-kr/windows/deployment/updates-lifecycle/pause-updates-in-windows"},
+    {"what": "활성 시간 기본값", "value": "오전 8시~오후 5시", "asOf": "2026-09-29 확인", "sourceUrl": "https://learn.microsoft.com/ko-kr/windows/deployment/update/waas-restart"},
+    {"what": "최대 활성 시간 길이", "value": "18시간(윈도우 10 1607은 12시간)", "asOf": "2026-09-29 확인", "sourceUrl": "https://learn.microsoft.com/ko-kr/windows/deployment/update/waas-restart"},
+    {"what": "Windows 10 지원 종료일", "value": "2025년 10월 14일", "asOf": "2026-09-29 확인", "sourceUrl": "https://support.microsoft.com/ko-kr/windows/deployment/updates-lifecycle/keep-your-pc-up-to-date-with-active-hours"}
+  ],
+  "conflicts": [
+    {
+      "about": "윈도우 11 업데이트 일시 중지 컨트롤 모양",
+      "a": "일시 중지 문서: 업데이트 일시 중지 컨트롤에서 '날짜 선택'(Pick a date)",
+      "b": "FAQ: 업데이트 일시 중지 옆에서 '원하는 일시 중지 길이'(pause length) 선택"
+    }
+  ],
+  "dropped": [
+    {"url": "https://www.lainyzine.com/ko/article/how-to-disable-windows-automatic-updates-on-windows-10/", "why": "자동 업데이트 영구 중지(서비스·정책) 안내 — 비공식이고 요청 범위상 레지스트리·서비스 해킹 권장 금지"},
+    {"url": "https://learn.microsoft.com/ko-kr/answers/questions/4133937/question-4133937", "why": "커뮤니티 Q&A — 공식 문서 아님"}
+  ],
+  "cannotCover": [
+    "일시 중지 드롭다운에 실제로 표시되는 단위(1주/주 단위 등) — 문서끼리 표현이 다르고 화면을 직접 확인하지 못함",
+    "활성 시간 '자동으로'가 어떤 기준으로 시간을 정하는지 세부 알고리즘",
+    "업데이트를 영구히 끄는 서비스·레지스트리·그룹 정책 방법 — 소비자용 공식 안내 없음(쓰지 않음)",
+    "윈도우 11 홈/프로 에디션별 차이 — 문서에 언급 없음"
+  ],
+  "songs": []
+}

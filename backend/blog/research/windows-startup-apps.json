@@ -1,0 +1,75 @@
+{
+  "keyword": "윈도우 11 시작프로그램 끄기",
+  "categoryId": "hangeut-trend",
+  "searchedAt": "2026-09-29",
+  "notes": "윈도우 11 시작 앱(시작프로그램) 끄는 방법 3가지(설정 > 앱 > 시작 / 작업 관리자 시작 앱 탭 / shell:startup 시작 폴더)와 작업 관리자의 '시작 영향' 등급 기준(CPU·디스크 수치)을 마이크로소프트 공식 지원 문서 기준으로 정리한다. 한국어 MS 문서의 설정 경로 표기는 '설정 > 시작 > 앱 > 시작'으로 깨져 있어 영문판 'Start > Settings > Apps > Startup'을 기준으로 쓴다. 설정 화면 실제 한국어 메뉴명('시작 프로그램' 여부)은 공식 문서로 확인하지 못함. 삼성전자서비스 문서는 Win+X로 작업 관리자 열기·꺼도 되는지 주의·재부팅 확인만 인용한다(서비스 항목·msconfig는 다루지 않음). 부팅 시간이 몇 초 줄어든다 같은 수치는 어떤 출처에도 없으므로 쓰지 않는다.",
+  "queries": [
+    "Windows 시작 시 자동으로 실행되도록 앱 구성 support.microsoft.com 시작 앱",
+    "Configure startup applications in Windows support.microsoft.com Task Manager Startup apps",
+    "Windows에서 PC 성능 향상을 위한 팁 support.microsoft.com 시작 프로그램 사용 안 함"
+  ],
+  "sources": [
+    {
+      "title": "Windows에서 시작 애플리케이션 구성 | Microsoft Support",
+      "url": "https://support.microsoft.com/ko-kr/windows/experience/startup-boot/configure-startup-applications-in-windows",
+      "host": "support.microsoft.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "적용 대상 Windows 11 Windows 10. Windows 디바이스 최적화와 관련하여 주요 최적화 영역 중 하나는 시작 프로세스입니다. [설정] (경로 표기: 설정>시작>앱>시작을 선택합니다 — 영문판은 Start > Settings > Apps > Startup) 로그인할 때 자동으로 앱을 시작하려면 토글을 켜기로 설정합니다. 해당 앱의 고급 설정을 변경하려면 펼침 단추를 선택하고 원하는 대로 변경합니다. [작업 관리자] 작업 관리자는 각 앱이 시작 프로세스에 미치는 영향을 포함하여 보다 자세한 보기를 제공합니다. 시작을 마우스 오른쪽 단추로 클릭하고 작업 관리자를 선택합니다. 시작 앱 탭을 선택합니다. 사용을 선택하여 로그인할 때 자동으로 앱을 시작합니다. 앱이 자동으로 시작되지 않도록 하려면 사용 안 함을 선택합니다. 영향 등급 — 없음: 시작 앱이 사용하지 않도록 설정됨. 측정되지 않음: 시작 앱을 측정하는 데 사용할 수 있는 데이터가 없으며 시작 앱이 사용하도록 설정되어 있습니다. 낮은 영향: 총 CPU 사용량은 300밀리초 미만이고 총 디스크 사용량은 292KB 미만입니다. 중간 영향: 총 CPU 사용량은 1초 미만이지만 300밀리초 이상 또는 총 디스크 사용량은 3메가바이트 미만이지만 292KB를 초과합니다. 높은 영향: 총 CPU 사용량이 1초 이상 걸리거나 총 디스크 사용량이 3메가바이트 이상입니다. [파일 탐색기] 시작을 마우스 오른쪽 단추로 클릭하고 실행을 선택한 후, 실행 대화 상자에 shell:startup 또는 shell:common startup을 입력하고 Enter 키를 선택합니다. 시작 폴더에서 애플리케이션을 제거하려면 두 번째 창에서 링크를 삭제합니다. [문제 해결] 설정에서 앱 제목으로 '이 앱을 찾을 수 없습니다'가 표시되면 앱은 이동식 드라이브, 네트워크 드라이브에 있거나 앱 경로가 없을 수 있습니다. 레지스트리 위치: HKLM\\Software\\Wow6432Node\\Microsoft\\Windows\\CurrentVersion\\Run, HKLM\\Software\\Microsoft\\Windows\\CurrentVersion\\Run, HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run",
+      "facts": [
+        "적용 대상 Windows 11, Windows 10",
+        "설정: 토글 켜기 = 로그인할 때 자동 시작, 펼침 단추로 고급 설정 변경",
+        "작업 관리자: 시작 단추 오른쪽 클릭 > 작업 관리자 > 시작 앱 탭 > 사용 / 사용 안 함",
+        "작업 관리자는 각 앱이 시작 프로세스에 미치는 영향을 포함한 자세한 보기를 제공",
+        "영향 등급: 없음(사용 안 함 상태) / 측정되지 않음(데이터 없음, 사용 중) / 낮음(CPU 300ms 미만·디스크 292KB 미만) / 중간(CPU 300ms~1초 또는 디스크 292KB~3MB) / 높음(CPU 1초 이상 또는 디스크 3MB 이상)",
+        "시작 폴더에서 앱 제거 = 두 번째 창에서 링크(바로 가기) 삭제",
+        "'이 앱을 찾을 수 없습니다' = 이동식·네트워크 드라이브에 있거나 경로가 없음"
+      ]
+    },
+    {
+      "title": "Configure Startup applications in Windows | Microsoft Support",
+      "url": "https://support.microsoft.com/en-us/windows/configure-startup-applications-in-windows-115a420a-0bff-4a6f-90e0-1934c844e473",
+      "host": "support.microsoft.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "Applies To Windows 11 Windows 10. The applications that run automatically when your device boots up can impact both the speed of your startup and the overall performance of your system. [Settings] Start > Settings > Apps > Startup. Set the toggle to On to start the app automatically when you sign in. Set the toggle to Off to prevent the app from starting automatically. If you want to change the advanced settings for that app, select the chevron and make changes as desired. [Task Manager] Right-click on Start and select Task Manager. Select the Startup apps tab. Select the app that you want to configure: Select Enable to start the app automatically when you sign in. Select Disable to prevent the app from starting automatically. None: Startup app is disabled | Not Measured: No data available to measure the startup app, startup app is enabled | Low Impact: Total CPU usage takes less than 300 milliseconds and total disk usage is less than 292 kilobytes | Medium Impact: Total CPU usage takes less than 1 second but more than 300 milliseconds or total disk usage is less than 3 megabytes but more than 292 kilobytes | High Impact: Total CPU usage takes more than 1 second or total disk usage is more than 3 megabytes. [File Explorer] If the app that you want to configure isn't listed in the startup list, you can configure its startup from File Explorer. In the Run dialog box, type shell:appsfolder and select Enter. A File Explorer window opens, containing a list of all applications installed on the device. Keep this first window open. In the Run dialog box, type either shell:startup or shell:common startup and select Enter. Drag and drop the applications that you want to start automatically from the first window to the second one. If you want to remove applications from the startup folder, delete the links from the second window. [Troubleshoot] If you see the message We couldn't find this app as an app title in Settings, the app could be on a removable drive, a network drive, or the path to the app might not exist. This could also happen if an app was uninstalled, therefore you can try to reinstall the app to try to fix it.",
+      "facts": [
+        "영문 원문: 'The applications that run automatically when your device boots up can impact both the speed of your startup and the overall performance of your system.'",
+        "설정 경로: Start > Settings > Apps > Startup",
+        "토글 Off = 자동 시작 안 함",
+        "시작 목록에 없는 앱은 파일 탐색기(시작 폴더)에서 설정",
+        "shell:startup(현재 사용자) 또는 shell:common startup 입력 → 시작 폴더 창, 지우려면 두 번째 창에서 링크 삭제",
+        "We couldn't find this app: 앱이 제거됐을 때도 생김, 재설치 시도"
+      ]
+    },
+    {
+      "title": "Tips to improve PC performance in Windows | Microsoft Support",
+      "url": "https://support.microsoft.com/en-us/windows/experience/performance-optimization/tips-to-improve-pc-performance-in-windows",
+      "host": "support.microsoft.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "Applies To Windows 11 Windows 10. Solution 5. Disable startup apps to reduce the background activity. Apps that run at startup can slow boot time and increase background usage. Press Ctrl + Shift + Esc to open Task Manager. Select Startup apps from the left-hand menu. Right-click the apps you want to disable, and then select Disable. (다른 해결책 제목: Install Windows updates and optional driver updates / Run a malware scan / Free up disk space / Uninstall unused apps / Turn off background apps and background permissions / Set Power mode to Best performance / Close unused apps and restart your PC)",
+      "facts": [
+        "영문 원문: 'Apps that run at startup can slow boot time and increase background usage.'",
+        "Ctrl + Shift + Esc = 작업 관리자 열기",
+        "왼쪽 메뉴에서 Startup apps 선택, 앱 오른쪽 클릭 > Disable",
+        "같은 문서의 다른 해결책: 윈도우 업데이트, 악성코드 검사, 디스크 공간 확보, 안 쓰는 앱 제거, 백그라운드 앱 끄기, 전원 모드 최고 성능, 안 쓰는 앱 닫고 다시 시작"
+      ]
+    },
+    {
+      "title": "[삼성 PC] 윈도우에서 시작프로그램 수정하는 방법이 궁금합니다.",
+      "url": "https://www.samsungsvc.co.kr/solution/39451",
+      "host": "www.samsungsvc.co.kr",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "Windows로고 키 + X 키를 누른 다음 [작업 관리자(T)]를 클릭. [시작 앱 (시작프로그램)]을 선택. 사용하지 않는 프로그램 이름을 선택한 후 [사용 안 함]을 클릭. 반복해서 사용하지 않는 프로그램을 [사용 안 함] 설정 후 오른쪽 위 X(닫기)를 누르세요. 일부 프로그램 중에는 컴퓨터 시작 시 자동으로 시작되어야 정상 동작되는 프로그램이 있습니다. 서비스 및 시작프로그램 등을 사용안함 설정 후 특정 프로그램이 동작되지 않을 경우 서비스 항목중 해당 프로그램을 찾아 컴퓨터가 켜질 때 실행 되도록 V 체크를 해줍니다. 시작프로그램 및 서비스항목 정리 후 컴퓨터를 재부팅 하고 윈도우가 정상 동작되는지 확인합니다.",
+      "facts": [
+        "Win + X > 작업 관리자(T)로도 열 수 있음",
+        "탭 이름 표기: 시작 앱(시작프로그램)",
+        "일부 프로그램은 컴퓨터 시작 시 자동으로 시작돼야 정상 동작",
+        "끈 뒤 특정 프로그램이 안 되면 다시 켜도록 설정",
+        "정리 후 재부팅하고 윈도우가 정상 동작하는지 확인"
+      ]
+    }
+  ]
+}

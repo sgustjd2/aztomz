@@ -1,0 +1,164 @@
+{
+  "keyword": "크롬 캐시 삭제",
+  "categoryId": "hangeut-trend",
+  "searchedAt": "2026-09-29",
+  "notes": "크롬(Chrome) 캐시·쿠키 삭제 방법을 Google 공식 고객센터 문서 원문 기준으로 정리한다. PC: 더보기 > 인터넷 사용 기록 삭제 / 단축키 Ctrl+Shift+Delete(Mac ⌘+Shift+Delete) / 기간 선택(문서 예시 '지난 1시간'·'전체 기간') / 특정 사이트만: 설정 > 개인 정보 보호 및 보안 > 서드 파티 쿠키 > 모든 사이트 데이터 및 권한 보기. 안드로이드·아이폰: 더보기 > 인터넷 사용 기록 삭제, 기본 기간 15분. 삭제 결과: 다시 로그인해야 할 수 있음, 일부 사이트 느려질 수 있음, 로그인 상태에서 삭제하면 다른 기기·Google 계정에서도 삭제. 문서에 없는 기간 선택지 목록(24시간·7일·4주 등)은 쓰지 않는다.",
+  "queries": [
+    "Chrome 인터넷 기록 삭제 캐시 쿠키 support.google.com",
+    "Chrome 캐시 및 쿠키 삭제 support.google.com accounts 32050",
+    "Chrome 단축키 인터넷 사용 기록 삭제 옵션 열기 Ctrl+Shift+Delete"
+  ],
+  "sources": [
+    {
+      "title": "캐시 및 쿠키 삭제 - 컴퓨터 - Google 계정 고객센터",
+      "url": "https://support.google.com/accounts/answer/32050?hl=ko&co=GENIE.Platform%3DDesktop",
+      "host": "support.google.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "Chrome 등 브라우저를 사용할 때 일부 웹사이트 정보는 캐시 및 쿠키 형태로 저장되며, 캐시와 쿠키를 삭제하여 웹사이트의 로드 및 서식 문제를 해결할 수 있습니다. 쿠키는 내가 방문하는 사이트에서 만드는 파일로, 인터넷 사용 기록을 저장하여 온라인 환경을 더 쉽게 이용할 수 있도록 해 줍니다. 캐시는 다음 방문 시 페이지를 빠르게 열 수 있도록 이미지 등 페이지의 일부를 기억합니다. Chrome에서: 컴퓨터에서 Chrome을 엽니다. 오른쪽 상단에서 더보기 > 인터넷 사용 기록 삭제를 선택합니다. 지난 1시간 또는 전체 기간과 같이 원하는 기간을 선택합니다. 쿠키 및 기타 사이트 데이터를 선택합니다. 삭제하려는 다른 항목을 선택합니다. 데이터 삭제를 선택합니다. 주소 표시줄에서 인터넷 사용 기록 삭제 대화상자로 빠르게 이동하려면 '인터넷 사용 기록 삭제'라고 입력한 후 작업 칩을 탭하세요. 캐시 및 쿠키를 삭제한 후: 사이트의 일부 설정이 삭제됩니다. 예를 들어, 로그인한 상태라면 다시 로그인해야 합니다. Chrome에서 동기화를 사용 설정하면 모든 기기의 데이터를 삭제하기 위해 동기화할 Google 계정에 로그인한 상태가 유지됩니다. 이미지 등 일부 콘텐츠를 다시 로드해야 하기 때문에 일부 사이트가 느려질 수 있습니다. Safari, Firefox 또는 다른 브라우저를 사용하는 경우 지원 사이트에서 자세한 내용을 확인하세요.",
+      "facts": [
+        "쿠키 = 방문 사이트가 만드는 파일, 인터넷 사용 기록을 저장해 온라인 환경을 쉽게",
+        "캐시 = 다음 방문 시 빠르게 열리도록 이미지 등 페이지 일부를 기억",
+        "더보기 > 인터넷 사용 기록 삭제 > 기간(지난 1시간·전체 기간 예시) > 쿠키 및 기타 사이트 데이터 > 데이터 삭제",
+        "주소 표시줄에 '인터넷 사용 기록 삭제' 입력 후 작업 칩",
+        "삭제 후: 로그인한 상태라면 다시 로그인해야 함 / 동기화 켜면 Google 계정 로그인은 유지 / 일부 사이트 느려질 수 있음"
+      ]
+    },
+    {
+      "title": "캐시 및 쿠키 삭제 - Android - Google 계정 고객센터",
+      "url": "https://support.google.com/accounts/answer/32050?hl=ko&co=GENIE.Platform%3DAndroid",
+      "host": "support.google.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "Android 기기에서 Chrome을 엽니다. 주소 표시줄 오른쪽에 있는 더보기 > 인터넷 사용 기록 삭제를 탭합니다. 기간을 선택하고 데이터 삭제를 탭합니다. 삭제할 데이터를 더 구체적으로 선택하려면 옵션 더보기를 탭합니다. 삭제할 인터넷 사용 기록 유형을 선택하고 데이터 삭제를 탭합니다. 사이트의 일부 설정이 삭제됩니다. 예를 들어, 로그인한 상태라면 다시 로그인해야 합니다. 이미지 등 일부 콘텐츠를 다시 로드해야 하기 때문에 일부 사이트가 느려질 수 있습니다. Chrome에 로그인하면 google.com 및 youtube.com과 같은 Google 웹사이트에서도 로그인한 상태가 유지됩니다.",
+      "facts": [
+        "Android: 주소 표시줄 오른쪽 더보기 > 인터넷 사용 기록 삭제 > 기간 선택 > 데이터 삭제",
+        "옵션 더보기로 유형을 골라 삭제",
+        "Chrome에 로그인하면 google.com·youtube.com 로그인 상태는 유지"
+      ]
+    },
+    {
+      "title": "캐시 및 쿠키 삭제 - iPhone 및 iPad - Google 계정 고객센터",
+      "url": "https://support.google.com/accounts/answer/32050?hl=ko&co=GENIE.Platform%3DiOS",
+      "host": "support.google.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "iPhone 또는 iPad에서 Chrome을 엽니다. 더보기 > 인터넷 사용 기록 삭제를 탭합니다. '기간' 옆에서 기간을 선택합니다. 기본 시간 범위는 15분입니다. 특정 데이터를 삭제하려면 인터넷 사용 기록을 탭하고 삭제할 인터넷 사용 기록 유형을 선택합니다. 비밀번호를 삭제하려면 기타 Google 데이터 관리 > 비밀번호 및 패스키로 이동합니다. 확인을 탭합니다. 인터넷 사용 기록 삭제를 탭합니다. 사이트의 일부 설정이 삭제됩니다. 예를 들어, 로그인한 상태라면 다시 로그인해야 합니다. 이미지 등 일부 콘텐츠를 다시 로드해야 하기 때문에 일부 사이트가 느려질 수 있습니다.",
+      "facts": [
+        "iOS: 더보기 > 인터넷 사용 기록 삭제 > '기간' 옆에서 기간 선택(기본 15분) > 인터넷 사용 기록 삭제",
+        "유형을 고르려면 '인터넷 사용 기록'을 탭해 선택 후 확인",
+        "비밀번호는 기타 Google 데이터 관리 > 비밀번호 및 패스키"
+      ]
+    },
+    {
+      "title": "Chrome에서 쿠키 삭제, 허용, 관리하기 - 컴퓨터 - Google Chrome 고객센터",
+      "url": "https://support.google.com/chrome/answer/95647?hl=ko&co=GENIE.Platform%3DDesktop",
+      "host": "support.google.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "모든 쿠키 삭제: 컴퓨터에서 Chrome을 엽니다. 오른쪽 상단에서 더보기 > 인터넷 사용 기록 삭제를 선택합니다. 지난 1시간 또는 전체 기간과 같이 원하는 기간을 선택합니다. 쿠키 및 기타 사이트 데이터를 선택합니다. 삭제하려는 다른 항목을 선택합니다. 데이터 삭제를 선택합니다. 쿠키를 삭제하면 내 정보를 기억하는 사이트에서 로그아웃될 수 있으며, 저장된 환경설정이 삭제될 수도 있습니다. 특정 쿠키 삭제하기: 컴퓨터에서 Chrome을 엽니다. 오른쪽 상단에서 더보기 > 설정을 선택합니다. 개인 정보 보호 및 보안 > 서드 파티 쿠키를 선택합니다. 모든 사이트 데이터 및 권한 보기를 선택합니다. 오른쪽 상단에서 웹사이트의 이름을 검색합니다. 사이트 이름의 오른쪽에서 삭제를 선택합니다. 확인하려면 삭제를 선택합니다.",
+      "facts": [
+        "특정 사이트만: 더보기 > 설정 > 개인 정보 보호 및 보안 > 서드 파티 쿠키 > 모든 사이트 데이터 및 권한 보기 > 사이트 검색 > 오른쪽 삭제 > 삭제",
+        "쿠키를 삭제하면 내 정보를 기억하는 사이트에서 로그아웃될 수 있고, 저장된 환경설정이 삭제될 수도 있음"
+      ]
+    },
+    {
+      "title": "Chrome에서 인터넷 사용 기록 삭제하기 - 컴퓨터 - Google Chrome 고객센터",
+      "url": "https://support.google.com/chrome/answer/2392709?hl=ko&co=GENIE.Platform%3DDesktop",
+      "host": "support.google.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "컴퓨터에서 Chrome을 엽니다. 오른쪽 상단에서 더보기 > 인터넷 사용 기록 삭제를 선택합니다. 지난 1시간 또는 전체 기간과 같이 원하는 기간을 선택합니다. 삭제하려는 항목을 선택합니다. 데이터 삭제를 선택합니다. 방문 기록: 방문한 웹 주소가 방문 기록 페이지에서 삭제됩니다. 쿠키 및 기타 사이트 데이터: 쿠키는 방문한 웹사이트에서 생성한 파일로, 인터넷 사용 정보를 저장하여 온라인 탐색을 더욱 쉽게 만들어 줍니다. 캐시된 이미지 및 파일: Chrome은 다음 방문 시 페이지가 열리는 속도를 높이기 위해 페이지의 일부를 기억합니다. Chrome에 로그인하면… 로그인한 상태에서 이 데이터를 삭제하면 Chrome에서는 다른 기기 및 Google 계정에서도 데이터를 삭제합니다.",
+      "facts": [
+        "삭제 항목 이름: 방문 기록 / 쿠키 및 기타 사이트 데이터 / 캐시된 이미지 및 파일",
+        "방문 기록 삭제 = 방문한 웹 주소가 방문 기록 페이지에서 삭제",
+        "로그인한 상태에서 삭제하면 다른 기기 및 Google 계정에서도 데이터 삭제"
+      ]
+    },
+    {
+      "title": "Chrome에서 인터넷 사용 기록 삭제하기 - Android - Google Chrome 고객센터",
+      "url": "https://support.google.com/chrome/answer/2392709?hl=ko&co=GENIE.Platform%3DAndroid",
+      "host": "support.google.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "기본 기간은 15분입니다. 옵션 더보기를 탭합니다. 삭제할 인터넷 사용 기록 유형을 선택하고 데이터 삭제를 탭합니다. 항목: 방문 기록, 탭, 쿠키 및 사이트 데이터, 캐시된 이미지 및 파일, 저장된 비밀번호, 자동 완성 양식 데이터, 사이트 설정.",
+      "facts": [
+        "Android 기본 기간은 15분",
+        "Android 옵션 더보기 항목: 쿠키 및 사이트 데이터, 캐시된 이미지 및 파일, 저장된 비밀번호 등"
+      ]
+    },
+    {
+      "title": "Chrome 단축키 - 컴퓨터 - Google Chrome 고객센터",
+      "url": "https://support.google.com/chrome/answer/157179?hl=ko&co=GENIE.Platform%3DDesktop",
+      "host": "support.google.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "Windows 및 Linux: 인터넷 사용 기록 삭제 옵션 열기 — Ctrl + Shift + Delete. 캐시 콘텐츠를 무시하고 현재 페이지 새로고침 — Shift + F5 또는 Ctrl + Shift + r. Mac: 인터넷 사용 기록 삭제 옵션 열기 — ⌘ + Shift + Delete. 캐시 콘텐츠를 무시하고 현재 페이지 새로고침 — ⌘ + Shift + r.",
+      "facts": [
+        "Win/Linux: Ctrl + Shift + Delete = 인터넷 사용 기록 삭제 옵션 열기",
+        "Mac: ⌘ + Shift + Delete",
+        "캐시 무시 새로고침: Shift + F5 또는 Ctrl + Shift + r (Mac ⌘ + Shift + r)"
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "claim": "PC 크롬에서 Ctrl+Shift+Delete(맥 ⌘+Shift+Delete)를 누르면 인터넷 사용 기록 삭제 창이 바로 열린다. 메뉴로는 더보기 > 인터넷 사용 기록 삭제",
+      "grade": "confirmed",
+      "evidence": ["Chrome 단축키 문서", "캐시 및 쿠키 삭제(컴퓨터)"],
+      "sourceUrls": [
+        "https://support.google.com/chrome/answer/157179?hl=ko&co=GENIE.Platform%3DDesktop",
+        "https://support.google.com/accounts/answer/32050?hl=ko&co=GENIE.Platform%3DDesktop"
+      ]
+    },
+    {
+      "claim": "기간(예: 지난 1시간·전체 기간)을 고르고 쿠키 및 기타 사이트 데이터·캐시된 이미지 및 파일을 체크해 데이터 삭제",
+      "grade": "confirmed",
+      "evidence": ["accounts 32050 데스크톱", "chrome 2392709 데스크톱"],
+      "sourceUrls": [
+        "https://support.google.com/accounts/answer/32050?hl=ko&co=GENIE.Platform%3DDesktop",
+        "https://support.google.com/chrome/answer/2392709?hl=ko&co=GENIE.Platform%3DDesktop"
+      ]
+    },
+    {
+      "claim": "특정 사이트 쿠키만: 설정 > 개인 정보 보호 및 보안 > 서드 파티 쿠키 > 모든 사이트 데이터 및 권한 보기 > 검색 > 삭제",
+      "grade": "confirmed",
+      "evidence": ["chrome 95647 데스크톱 '특정 쿠키 삭제하기'"],
+      "sourceUrls": ["https://support.google.com/chrome/answer/95647?hl=ko&co=GENIE.Platform%3DDesktop"]
+    },
+    {
+      "claim": "안드로이드·아이폰 크롬: 더보기 > 인터넷 사용 기록 삭제, 기본 기간 15분",
+      "grade": "confirmed",
+      "evidence": ["accounts 32050 Android·iOS", "chrome 2392709 Android"],
+      "sourceUrls": [
+        "https://support.google.com/accounts/answer/32050?hl=ko&co=GENIE.Platform%3DAndroid",
+        "https://support.google.com/accounts/answer/32050?hl=ko&co=GENIE.Platform%3DiOS",
+        "https://support.google.com/chrome/answer/2392709?hl=ko&co=GENIE.Platform%3DAndroid"
+      ]
+    },
+    {
+      "claim": "캐시·쿠키를 지우면 로그인한 사이트에 다시 로그인해야 할 수 있고, 일부 사이트가 느려질 수 있다. 로그인 상태로 지우면 다른 기기·Google 계정에서도 삭제된다",
+      "grade": "confirmed",
+      "evidence": ["accounts 32050 '캐시 및 쿠키를 삭제한 후'", "chrome 95647 참고", "chrome 2392709 동기화 문장"],
+      "sourceUrls": [
+        "https://support.google.com/accounts/answer/32050?hl=ko&co=GENIE.Platform%3DDesktop",
+        "https://support.google.com/chrome/answer/95647?hl=ko&co=GENIE.Platform%3DDesktop",
+        "https://support.google.com/chrome/answer/2392709?hl=ko&co=GENIE.Platform%3DDesktop"
+      ]
+    }
+  ],
+  "numbers": [
+    { "what": "모바일(안드로이드·아이폰) 기본 삭제 기간", "value": "15분", "asOf": "2026-09-29 확인", "sourceUrl": "https://support.google.com/accounts/answer/32050?hl=ko&co=GENIE.Platform%3DiOS" }
+  ],
+  "conflicts": [],
+  "dropped": [
+    { "url": "https://support.google.com/chrome/thread/228939298", "why": "커뮤니티 스레드 — 공식 문서 아님" }
+  ],
+  "cannotCover": [
+    "PC 기간 선택지 전체 목록(24시간·7일·4주 등) — 공식 문서는 '지난 1시간 또는 전체 기간' 예시만 제시",
+    "PC 기본 선택 기간 — 문서에서 확인 못 함",
+    "안드로이드·아이폰에서 특정 사이트만 삭제하는 절차 — 이번에 본문 확인 안 함",
+    "창을 닫을 때 쿠키 자동 삭제 설정 — 본문 확인 안 함"
+  ],
+  "songs": []
+}
