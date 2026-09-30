@@ -1,0 +1,365 @@
+{
+  "collectedAt": "2026-09-29",
+  "days": 3,
+  "results": {
+    "geeknews": {
+      "source": "geeknews",
+      "fetchedOk": true,
+      "sourceUrl": "https://news.hada.io/rss/news",
+      "items": [
+        {
+          "title": "America.gov",
+          "url": "",
+          "date": "2026-09-29T22:32:15.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "ChatGPT Pro 500",
+          "url": "",
+          "date": "2026-09-29T22:28:48.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "AI, 데이터센터 투자 붐 정당화하려면 연 매출 6조 달러 필요",
+          "url": "",
+          "date": "2026-09-29T21:49:36.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "Relapse - PS5 펌웨어 7.00~13.60용 커널 익스플로잇 공개",
+          "url": "",
+          "date": "2026-09-29T21:46:36.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Google, ChromeOS 지원을 2년 일찍 종료",
+          "url": "",
+          "date": "2026-09-29T21:43:36.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Tcl/Tk 9.1",
+          "url": "",
+          "date": "2026-09-29T21:40:36.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "OpenAI DevDay 2026 주요 발표 총정리",
+          "url": "",
+          "date": "2026-09-29T21:26:48.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "1993년에 부팅한 서버, 아직 가동 중이지만 은퇴가 머지않음 (2017)",
+          "url": "",
+          "date": "2026-09-29T19:33:04.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "전 세계 암 8건 중 1건은 감염이 원인이라는 연구 결과",
+          "url": "",
+          "date": "2026-09-29T18:46:37.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "DraftKings, AI로 상습 도박 이용자를 행동 기반 타기팅",
+          "url": "",
+          "date": "2026-09-29T18:43:37.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "OpenAI Dots - 상시 작동하는 AI 에이전트 공개",
+          "url": "",
+          "date": "2026-09-29T18:40:37.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "OpenAI, GPT-6.1 Sol 공개",
+          "url": "",
+          "date": "2026-09-29T17:37:48.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "Show GN: Blyck Video Understanding - Claude·Codex가 영상을 시각 근거와 함께 분석·검색하게 해주는 MCP",
+          "url": "",
+          "date": "2026-09-29T17:05:19.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "Claude 일부 서비스 장애",
+          "url": "",
+          "date": "2026-09-29T16:43:54.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "Jeeves - 판단 전에 추론하는 Jev 방식의 의사결정 모델",
+          "url": "",
+          "date": "2026-09-29T16:40:54.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "macOS Golden Gate는 버그투성이",
+          "url": "",
+          "date": "2026-09-29T16:37:54.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "탱크 몸체 문제",
+          "url": "",
+          "date": "2026-09-29T15:40:21.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "델리는 어떻게 전력 손실을 50%에서 5%로 줄였나",
+          "url": "",
+          "date": "2026-09-29T15:37:21.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "미국 제재로 네덜란드, Microsoft 떠나 NixOS 기반 대안으로 전환 추진",
+          "url": "",
+          "date": "2026-09-29T14:32:29.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "영국 역에서 얼굴 50만 건 스캔, 체포 0건에 오탐 1건",
+          "url": "",
+          "date": "2026-09-29T13:42:08.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "당신은 더 이상 저녁 식사에 초대받지 못한다",
+          "url": "",
+          "date": "2026-09-29T13:39:08.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "AI 기업들이 광고업체에 데이터를 유출함 [pdf]",
+          "url": "",
+          "date": "2026-09-29T12:32:57.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "Phyllotaxis - 소리에 반응하는 LED 디스플레이",
+          "url": "",
+          "date": "2026-09-29T10:33:01.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Show GN: Relio ERD - 브라우저에서 테이블과 관계를 설계하는 ERD 편집기",
+          "url": "",
+          "date": "2026-09-29T09:42:03.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "LLM Wiki의 불량 페이지를 Jev로 선별하는 것이 가능할까?",
+          "url": "",
+          "date": "2026-09-29T09:01:08.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "Show HN: 스틱맨으로 어떤 웹사이트든 파괴하기",
+          "url": "",
+          "date": "2026-09-29T08:37:32.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "미국 전략비축유, 1982년 이후 최저 수준으로 감소",
+          "url": "",
+          "date": "2026-09-29T08:34:31.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "와인 수요 감소로 포도 판매에 어려움을 겪는 캘리포니아 농가",
+          "url": "",
+          "date": "2026-09-29T06:33:49.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "서버 모니터링 분석 가이드",
+          "url": "",
+          "date": "2026-09-29T06:11:16.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Nvidia, AI 에이전트의 접근과 행동을 제한하는 안전 플랫폼 공개",
+          "url": "",
+          "date": "2026-09-29T05:32:55.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "Pluto - SOTA 스타크래프트 AI",
+          "url": "",
+          "date": "2026-09-29T04:44:47.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "cf - Cloudflare 전체 API를 다루는 에이전트용 CLI",
+          "url": "",
+          "date": "2026-09-29T04:35:45.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "RAG 인덱스와 에이전트 메모리를 Git처럼 버전 관리하기 (LambdaDB)",
+          "url": "",
+          "date": "2026-09-29T04:15:18.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "Reddit에는 여론 위장 마케팅 문제가 있을까? 데이터가 시사하는 것",
+          "url": "",
+          "date": "2026-09-29T03:35:37.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "그렇다, 이제 AI가 없는 것도 기능이다",
+          "url": "",
+          "date": "2026-09-29T03:02:08.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "MicroLLM Lab - 브라우저에서 초소형 LLM 7개 체험하기",
+          "url": "",
+          "date": "2026-09-29T02:33:22.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "글 쓰다가 막혔을 때 대처법",
+          "url": "",
+          "date": "2026-09-29T01:10:45.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "업데이트된 Google Maps에 드러난 라파 도시의 파괴",
+          "url": "",
+          "date": "2026-09-29T00:37:15.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Flock, 자사 감시 카메라의 가장 상세한 지도 사이트 폐쇄 요구",
+          "url": "",
+          "date": "2026-09-29T00:34:15.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "NobodyWho - 앱과 게임에 로컬 AI를 넣는 온디바이스 추론 엔진",
+          "url": "",
+          "date": "2026-09-29T00:30:02.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "전문가가 덧붙이는 별표 주석",
+          "url": "",
+          "date": "2026-09-29T00:15:29.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "그들을 뒤로하고",
+          "url": "",
+          "date": "2026-09-29T00:12:29.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Lisp는 왜 읽기 어려울까?",
+          "url": "",
+          "date": "2026-09-29T00:09:29.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Jeff - 집에서 학습한 Jev 호환 0.8B 의사결정 모델",
+          "url": "",
+          "date": "2026-09-28T22:43:38.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "페이페이 리의 World Labs, AMD에 합류",
+          "url": "",
+          "date": "2026-09-28T22:40:38.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "칼 뉴포트: AI 연구소를 조사할 때다",
+          "url": "",
+          "date": "2026-09-28T22:37:38.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "DuckDB 2.0이 더 빠른 이유",
+          "url": "",
+          "date": "2026-09-28T22:24:06.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "인덱스 하나 더의 참을 수 없는 가벼움",
+          "url": "",
+          "date": "2026-09-28T22:20:37.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Diskless Kafka: 브로커가 데이터를 소유하지 않으면 무엇이 달라질까?",
+          "url": "",
+          "date": "2026-09-28T22:14:45.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "대부분의 기술 혁명은 직원들의 일을 더 힘들게 만들었다. AI는 예외가 될 수 있다",
+          "url": "",
+          "date": "2026-09-28T22:08:08.000Z",
+          "aiRelated": true
+        }
+      ],
+      "note": "GeekNews Atom 피드에서 최근 3일 항목. aiRelated=true 는 제목 키워드 기준(본문은 조사 단계에서 확인)."
+    },
+    "inpa": {
+      "source": "inpa",
+      "fetchedOk": true,
+      "sourceUrl": "https://inpa.tistory.com/rss",
+      "items": [],
+      "note": "최근 3일 이내 작성된 글만. 날짜 없는 항목은 제외. 0건이면 어제·오늘 새 글이 없다는 뜻."
+    },
+    "goddaehee": {
+      "source": "goddaehee",
+      "fetchedOk": true,
+      "sourceUrl": "https://goddaehee.tistory.com/rss",
+      "items": [
+        {
+          "title": "GPT-6 Sol&middot;Luna 출시 정리 - Astra&middot;Sol&middot;Luna 차이와 선택 기준(Astra&middot;Sol&middot;Luna 용도와 API 가격 한눈에 보기)",
+          "url": "https://goddaehee.tistory.com/647",
+          "date": "2026-09-29T10:00:05.000Z"
+        },
+        {
+          "title": "Jev 사용법(Jev란?) - 생성형 AI와 다른 판정 모델 쉽게 이해하기(Jev 가격, 성능, 한계와 실제 활용 사례 정리)",
+          "url": "https://goddaehee.tistory.com/646",
+          "date": "2026-09-27T22:00:45.000Z"
+        }
+      ],
+      "note": "최근 3일 이내 작성된 글만. 날짜 없는 항목은 제외. 0건이면 어제·오늘 새 글이 없다는 뜻."
+    },
+    "github": {
+      "source": "github",
+      "fetchedOk": true,
+      "sourceUrl": "https://github.com/trending?since=weekly",
+      "items": [
+        {
+          "repo": "HKUDS/CLI-Anything",
+          "url": "https://github.com/HKUDS/CLI-Anything",
+          "description": "\"CLI-Anything: Making ALL Software Agent-Native\" -- CLI-Hub: <a href=\"https://clianything.cc/\" class=\"Link--inTextBlock\" rel=\"nofollow\">https://clianything.cc/</a>",
+          "starsThisWeek": 1227
+        },
+        {
+          "repo": "davila7/claude-code-templates",
+          "url": "https://github.com/davila7/claude-code-templates",
+          "description": "CLI tool for configuring and monitoring Claude Code",
+          "starsThisWeek": 1200
+        },
+        {
+          "repo": "cloudflare/security-audit-skill",
+          "url": "https://github.com/cloudflare/security-audit-skill",
+          "description": "A coding-agent skill for multi-phase security audits with independently verified, machine-readable findings",
+          "starsThisWeek": 3962
+        }
+      ],
+      "note": "주간 급상승 레포 중 plugin/extension/skill/cli/mcp 등 도구 성격 키워드가 잡힌 것만. dev-trending 과 겹치는 항목은 조사 단계에서 제외한다."
+    }
+  }
+}

@@ -1,0 +1,474 @@
+{
+  "keyword": "iOS 27 업데이트 방법 지원 기종 백업 저장공간 업데이트 안 뜰 때",
+  "categoryId": "hangeut-trend",
+  "searchedAt": "2026-09-30",
+  "queries": [
+    "iOS 27 정식 배포 지원 기종 애플",
+    "Apple iOS 27 now available compatible iPhone models newsroom",
+    "support.apple.com iPhone 소프트웨어 업데이트 방법 iOS 27",
+    "iPhone 소프트웨어 업데이트 안 될 때 support.apple.com/ko-kr",
+    "애플 뉴스룸 iOS 27 시리 AI 한국어 10월 지원",
+    "Apple Support back up your iPhone iCloud computer before updating iOS",
+    "Apple Support update iPhone using your computer Finder Apple Devices app",
+    "애플 뉴스룸 코리아 iOS 27 iPadOS 27 macOS 27 오늘부터 사용 가능 시리 AI",
+    "iOS 27.0.1 released September 28 2026 bug fixes security",
+    "iOS 27 업데이트 용량 GB 저장 공간 부족 업데이트 안 뜸 해결",
+    "iOS 27 update size GB storage required download install time",
+    "Apple Support free up storage to use Apple Intelligence iPhone storage requirement",
+    "iOS 27 배포 첫날 업데이트 오류 배터리 발열 이슈 iOS 27.0.1 배포 아이폰 11",
+    "How to get Siri AI (Beta) Apple Support join waitlist settings",
+    "iPhone Duo 출시일 폴더블 아이폰 듀오 판매 시작",
+    "iOS 27.1 beta release date iPhone Duo iOS 26.7 still offered Software Update Other Updates 27",
+    "iOS 26.7 released alongside iOS 27 upgrade option Settings Software Update bottom Upgrade to iOS 27",
+    "Apple iOS 26.7 release notes support.apple.com About iOS 26.7 updates"
+  ],
+  "sources": [
+    {
+      "title": "iOS 27 다운로드 방법 - Apple 지원 (KR)",
+      "url": "https://support.apple.com/ko-kr/128058",
+      "host": "support.apple.com",
+      "tier": "official",
+      "publishedAt": "2026-09-28",
+      "readMethod": "curl 로 받은 Apple 페이지 원문 텍스트(태그만 제거)",
+      "body": "iOS 27 다운로드 방법 - Apple 지원 (KR)\nApple\n스토어\nMac\niPad\niPhone\nWatch\nVision\nAirPods\nTV 및 홈\n엔터테인먼트\n액세서리\n고객지원\n0\n+\niOS 27 다운로드 방법\n사용 중인 iPhone이 iOS 27을 지원하는지 확인한 다음 자동으로 또는 수동으로 업데이트를 다운로드하고 설치합니다.\n업데이트하기 전에\n기기를 백업하여\n 중요한 정보의 사본을 보관합니다.\n호환성 확인하기\niPhone과 호환되는 업데이트만 표시됩니다. iPhone에서 이전 버전을 실행 중인 경우,\n해당 업데이트를 먼저 설치합니다\n.\niOS 27은 다음 iPhone 모델과 호환됩니다.\niPhone 18 Pro Max\niPhone 18 Pro\niPhone 17\niPhone 17 Pro\niPhone 17 Pro Max\niPhone 17e\niPhone Air\niPhone 16e\niPhone 16\niPhone 16 Plus\niPhone 16 Pro\niPhone 16 Pro Max\niPhone 15\niPhone 15 Plus\niPhone 15 Pro\niPhone 15 Pro Max\niPhone 14\niPhone 14 Plus\niPhone 14 Pro\niPhone 14 Pro Max\niPhone 13\niPhone 13 mini\niPhone 13 Pro\niPhone 13 Pro Max\niPhone 12\niPhone 12 mini\niPhone 12 Pro\niPhone 12 Pro Max\niPhone 11\niPhone 11 Pro\niPhone 11 Pro Max\niPhone SE(2세대) 및 이후 모델\niOS 27의 새로운 기능 알아보기\n.\n자동 업데이트 켜기\niPhone이 업데이트를 자동으로 설치하도록 설정할 수 있습니다:\n'설정'을 엽니다.\n'일반'을 탭합니다.\n'소프트웨어 업데이트'를 탭합니다.\n'자동 업데이트'를 탭합니다.\n'자동으로 설치' 또는 '자동으로 다운로드'를 선택합니다.\n자동으로 설치: iPhone이 충전 중이고 Wi-Fi에 연결된 상태에서 밤새 업데이트를 다운로드하고 설치합니다. iPhone에 업데이트가 설치되기 전에 알림이 표시됩니다.\n자동으로 다운로드: iPhone이 충전 중이고 잠겨 있는 동안 Wi-Fi를 통해 업데이트를 다운로드합니다. 그런 다음 사용자가 편한 시간에 설치할 수 있습니다. 이 옵션을 보려면 먼저 '자동 설치'를 끕니다.\niPhone 수동으로 업데이트하기\n언제든지 소프트웨어 업데이트를 확인하고 설치할 수 있습니다:\n'설정'을 엽니다.\n'일반'을 탭합니다.\n'소프트웨어 업데이트'를 탭합니다.\n사용 가능한 업데이트가 있으면 '다운로드 및 설치'를 탭합니다.\n화면의 지침을 따릅니다.\n소프트웨어 업데이트 설치\n업데이트가 이미 다운로드되었지만 설치되지 않은 경우:\n'설정'을 엽니다.\n'iOS 27로 업데이트'를 탭합니다.\n'지금 업데이트' 또는 '오늘 밤에 업데이트'를 탭합니다.\n화면의 지침을 따릅니다.\n세부사항 더 보기\n'세부사항 더 보기' 섹션에는 버전 번호 및 업데이트 세부사항이 표시됩니다.\n게시일:\n2026년 09월 28일",
+      "facts": [
+        "업데이트 전 백업: 「업데이트하기 전에 기기를 백업하여 중요한 정보의 사본을 보관합니다.」",
+        "「iPhone과 호환되는 업데이트만 표시됩니다. iPhone에서 이전 버전을 실행 중인 경우, 해당 업데이트를 먼저 설치합니다.」",
+        "iOS 27 호환 iPhone 목록은 32줄: iPhone 18 Pro Max · 18 Pro · 17 · 17 Pro · 17 Pro Max · 17e · Air · 16e · 16 · 16 Plus · 16 Pro · 16 Pro Max · 15 4종 · 14 4종 · 13 4종(13 mini 포함) · 12 4종(12 mini 포함) · 11 3종 · 「iPhone SE(2세대) 및 이후 모델」. 이 페이지 목록에는 iPhone Duo 표기가 없다",
+        "자동 업데이트 경로: 설정 > 일반 > 소프트웨어 업데이트 > 자동 업데이트 > 「자동으로 설치」 또는 「자동으로 다운로드」",
+        "「자동으로 설치」: 충전 중이고 Wi-Fi에 연결된 상태에서 밤새 다운로드·설치, 설치 전 알림이 표시됨. 「자동으로 다운로드」: 충전 중이고 잠겨 있는 동안 Wi-Fi로 다운로드, 이 옵션을 보려면 먼저 「자동 설치」를 꺼야 함",
+        "수동 업데이트 경로: 설정 > 일반 > 소프트웨어 업데이트 > (업데이트가 있으면) 「다운로드 및 설치」 > 화면 지침",
+        "이미 다운로드됐지만 설치 전이면: 설정 > 「iOS 27로 업데이트」 > 「지금 업데이트」 또는 「오늘 밤에 업데이트」",
+        "「세부사항 더 보기」 섹션에 버전 번호와 업데이트 세부사항이 표시됨. 이 KR 페이지 게시일 2026-09-28"
+      ]
+    },
+    {
+      "title": "How to download iOS 27 - Apple Support (US)",
+      "url": "https://support.apple.com/en-us/128058",
+      "host": "support.apple.com",
+      "tier": "official",
+      "publishedAt": "2026-09-17",
+      "readMethod": "curl 로 받은 Apple 페이지 원문 텍스트(태그만 제거)",
+      "body": "How to download iOS 27 - Apple Support\nApple\nStore\nMac\niPad\niPhone\nWatch\nVision\nAirPods\nTV & Home\nEntertainment\nAccessories\nSupport\n0\n+\nHow to download iOS 27\nCheck if your iPhone supports iOS 27, then download and install the update automatically or manually.\nBefore you update,\nback up your device\n to keep a copy of your important information.\nCheck compatibility\nYou'll see only updates compatible with your iPhone. If your iPhone is running an earlier version,\ninstall that update first\n.\niOS 27 is compatible with iPhone models:\niPhone 18 Pro Max\niPhone 18 Pro\niPhone 17\niPhone 17 Pro\niPhone 17 Pro Max\niPhone 17e\niPhone Air\niPhone 16e\niPhone 16\niPhone 16 Plus\niPhone 16 Pro\niPhone 16 Pro Max\niPhone 15\niPhone 15 Plus\niPhone 15 Pro\niPhone 15 Pro Max\niPhone 14\niPhone 14 Plus\niPhone 14 Pro\niPhone 14 Pro Max\niPhone 13\niPhone 13 mini\niPhone 13 Pro\niPhone 13 Pro Max\niPhone 12\niPhone 12 mini\niPhone 12 Pro\niPhone 12 Pro Max\niPhone 11\niPhone 11 Pro\niPhone 11 Pro Max\niPhone SE (2nd generation and later)\nLearn what's new in iOS 27\n.\nTurn on automatic updates\nYou can set up your iPhone to install updates automatically:\nOpen Settings.\nTap General.\nTap Software Update.\nTap Automatic Updates.\nChoose Automatically Install or Automatically Download.\nAutomatically Install: Your iPhone downloads and installs updates overnight when it's charging and connected to Wi-Fi. You're notified before iPhone installs an update.\nAutomatically Download: Your iPhone downloads updates over Wi-Fi while it's charging and locked. You can then install them at your convenience. To see this option, first turn off Automatically Install.\nUpdate iPhone manually\nAt any time, you can check for and install software updates:\nOpen Settings.\nTap General.\nTap Software Update.\nIf an update is available, tap Download and Install.\nFollow the onscreen instructions.\nInstall the software update\nIf an update is already downloaded but not installed:\nOpen Settings.\nTap Update to iOS 27.\nTap Update Now or Update Tonight.\nFollow the onscreen instructions.\nView more details\nThe More Details section shows the version number and update details.\nPublished Date:\nSeptember 17, 2026",
+      "facts": [
+        "US 판 게시일은 2026-09-17(KR 판은 2026-09-28) — 로케일별 게시일이 다름",
+        "호환 목록은 KR 판과 동일한 32줄이며 「iPhone SE (2nd generation and later)」로 표기, iPhone Duo 표기 없음",
+        "「If your iPhone is running an earlier version, install that update first.」"
+      ]
+    },
+    {
+      "title": "iPhone 또는 iPad 업데이트하기 - Apple 지원 (KR)",
+      "url": "https://support.apple.com/ko-kr/118575",
+      "host": "support.apple.com",
+      "tier": "official",
+      "publishedAt": "2026-09-22",
+      "readMethod": "curl 로 받은 Apple 페이지 원문 텍스트(태그만 제거)",
+      "body": "iPhone 또는 iPad 업데이트하기 - Apple 지원 (KR)\nApple\n스토어\nMac\niPad\niPhone\nWatch\nVision\nAirPods\nTV 및 홈\n엔터테인먼트\n액세서리\n고객지원\n0\n+\niPhone 또는 iPad 업데이트하기\niPhone 또는 iPad를 최신 버전의 iOS 또는 iPadOS로 업데이트하는 방법을 알아봅니다.\n무선으로 iPhone 또는 iPad를 최신 버전의 iOS 또는 iPadOS로 업데이트할 수 있습니다.\n기기에 업데이트가 나타나지 않는 경우 컴퓨터를 사용하여 기기를 업데이트할 수 있습니다. macOS Catalina 및 이후 버전이 설치된 Mac을 사용하는 경우\n기기를 업데이트하는 방법을 알아보십시오\n. macOS Mojave 및 이전 버전이 설치된 Mac이나 Windows PC를 사용하는 경우\n기기를 업데이트하는 방법을 알아보십시오\n.\niPhone 또는 iPad를 무선으로 업데이트하기\niCloud 또는 컴퓨터를 사용하여 기기를 백업\n합니다.\n기기를 전원에 연결하고\nWi-Fi로 인터넷에 연결\n합니다.\n'설정'을 엽니다.\n'일반'을 탭합니다.\n'소프트웨어 업데이트'를 탭합니다. 현재 설치된 iOS 버전과 업데이트 사용 가능 여부가 표시됩니다.\n업데이트를 사용할 수 있으면 '다운로드 및 설치'를 탭한 후 화면의 지침을 따릅니다.\n암호를 모르는 경우\n 수행할 작업을 알아봅니다.\n무선으로 업데이트할 때 경고가 표시되는 경우\n기기를 무선으로 업데이트하려고 시도할 때 경고 메시지가 표시되는 경우\n 수행할 작업을 알아봅니다.\n일부 소프트웨어의 경우 무선으로 업데이트할 수 없습니다. VPN 또는 프록시 연결로 인해 기기가 업데이트 서버에 접속하지 못할 수 있습니다.\n무선으로 업데이트할 때 추가 공간이 필요한 경우\n소프트웨어 업데이트를 위해 공간이 더 필요하므로 앱을 일시적으로 제거하라는 메시지가 나타나면 시스템이 앱을 제거할 수 있도록 '계속'을 탭합니다. 설치가 완료되면 제거된 앱이 자동으로 다시 설치됩니다. 또는 '취소'를 탭하고 사용자 기기에서\n직접 콘텐츠를 삭제\n하여 추가 공간을 확보할 수 있습니다.\n자동 업데이트 사용자화하기\nApple 제품의 보안을 유지하기 위해 반드시 해야 할 일 중 하나는 소프트웨어를 최신 상태로 유지하는 것입니다. 기기에서 최신 소프트웨어 릴리즈의 모든 기능, 보안 업데이트 및 버그 수정을 받을 수 있도록 하는 가장 좋은 방법은 기기를 처음 설정할 때 자동 업데이트를 켜는 것입니다.\n원하는 경우 이 설정을 관리하여 업데이트를 수동으로 다운로드하고 설치할 수 있습니다.\n자동 업데이트 관리하기\n'설정'을 엽니다.\n'일반'을 탭합니다.\n'소프트웨어 업데이트'를 탭합니다.\n'자동 업데이트'를 탭합니다.\n다음 중 하나를 켭니다.\n자동 설치: 사용 가능한 업데이트가 있는 경우 iPhone이 충전 중이고 Wi-Fi에 연결되어 있는 동안 밤새 업데이트가 다운로드되고 설치됩니다. iPhone에 업데이트가 설치되기 전에 알림이 표시됩니다.\n자동 다운로드: 나중에 설치할 수 있도록 백그라운드에서 업데이트를 다운로드합니다. '자동 설치'를 끄면 이 옵션이 보입니다.\n시스템 파일 업데이트 관리하기\n기기에서 소프트웨어 버전을 변경하지 않고도 기능을 향상하기 위해 시스템 파일 업데이트를 자동으로 다운로드하고 설치할 수 있습니다.\n'설정'을 엽니다.\n'일반'을 탭합니다.\n'소프트웨어 업데이트'를 탭합니다.\n'자동 업데이트'를 탭합니다.\n[기기] 업데이트 아래에서 '자동 설치'를 끕니다.\n시스템 파일 아래에서 '자동 설치'를 켭니다.\n기기 또는 국가 및 지역에 따라 사용 가능한 기능이 다를 수 있습니다. 네트워크 상태와 개인별 사용 방식을 비롯한 여러 요인이 배터리 및 시스템 성능에 영향을 줄 수 있으며, 결과는 다를 수 있습니다.\n추가적인 도움이 필요하십니까?\n문제에 대해 자세히 설명해 주시면 해결 방법을 제안해 드리겠습니다.\n제안받기\n게시일:\n2026년 09월 22일",
+      "facts": [
+        "무선 업데이트 절차: (1) iCloud 또는 컴퓨터로 기기 백업 (2) 전원 연결 + Wi-Fi 연결 (3) 설정 > 일반 > 소프트웨어 업데이트 — 현재 설치된 iOS 버전과 업데이트 사용 가능 여부가 표시됨 (4) 업데이트가 있으면 「다운로드 및 설치」 > 화면 지침",
+        "「기기에 업데이트가 나타나지 않는 경우 컴퓨터를 사용하여 기기를 업데이트할 수 있습니다.」",
+        "「일부 소프트웨어의 경우 무선으로 업데이트할 수 없습니다. VPN 또는 프록시 연결로 인해 기기가 업데이트 서버에 접속하지 못할 수 있습니다.」",
+        "공간이 더 필요하다는 메시지: 「계속」을 탭하면 시스템이 앱을 일시적으로 제거하고, 설치 완료 후 제거된 앱이 자동으로 다시 설치됨. 「취소」를 탭하면 직접 콘텐츠를 삭제해 공간 확보",
+        "자동 업데이트를 켜는 것이 보안 업데이트·버그 수정을 받는 가장 좋은 방법이라고 안내. 게시일 2026-09-22(US 판 2026-09-15)"
+      ]
+    },
+    {
+      "title": "iPhone 또는 iPad가 업데이트되지 않는 경우 - Apple 지원 (KR)",
+      "url": "https://support.apple.com/ko-kr/108905",
+      "host": "support.apple.com",
+      "tier": "official",
+      "publishedAt": "2026-09-22",
+      "readMethod": "curl 로 받은 Apple 페이지 원문 텍스트(태그만 제거)",
+      "body": "iPhone 또는 iPad가 업데이트되지 않는 경우 - Apple 지원 (KR)\nApple\n스토어\nMac\niPad\niPhone\nWatch\nVision\nAirPods\nTV 및 홈\n엔터테인먼트\n액세서리\n고객지원\n0\n+\niPhone 또는 iPad가 업데이트되지 않는 경우\niPhone 또는 iPad를 업데이트하려면 호환되는 기기, 인터넷 연결 및 충분한 저장 공간이 필요합니다. 또한 기기를 전원에 계속 연결해 두는 것도 도움이 됩니다.\niPhone 또는 iPad에 최신 버전의 iOS 또는 iPadOS를 설치할 수 없는 경우\niPhone 또는 iPad가 무선으로, 또는 OTA(over-the-air) 방식으로 업데이트되지 않을 수 있는 이유는 다음과 같습니다.\n기기에서 최신 소프트웨어를 지원하지 않음\n.\n기기에 사용 가능한 저장 공간이 부족함\n.\n업데이트 다운로드에 예상보다 시간이 오래 걸림\n.\n기기에서 업데이트 서버에 연결할 수 없음\n.\n업데이트가 완료되지 않음\n.\n기기에서 새로운 소프트웨어를 지원하지 않는 경우\n기기에서 새로운 소프트웨어를 지원하는지 확인하려면 다음을 수행합니다\n사용 중인 기기 확인:\niPhone\n 또는\niPad 모델\n.\niPhone 또는 iPad 모델이\n최신 버전 iOS\n 또는\niPadOS\n의 호환 기기 목록에 있는지 확인합니다.\n기기가 호환되는 경우 업데이트를 시도해 보십시오. 호환되는 기기가 업데이트되지 않는 경우 다음 해결 방법 중 하나를 시도해 보십시오.\n업데이트에 필요한 공간이 부족한 경우\n업데이트를 다운로드하려면 기기에 충분한 저장 공간이 필요합니다. 기기에서 개인 정보를 삭제하지 않고 공간을 확보하기 위해 앱 데이터를 일시적으로 제거할 수 있습니다.\n'설정'으로 이동합니다.\n'일반'을 탭합니다.\n'[기기] 저장 공간'을 탭합니다.\n'사용하지 않는 앱 정리하기' 옆에 있는 '활성화'를 탭합니다.\niPhone 또는 iPad에서\n수동으로 앱을 삭제\n할 수도 있습니다.\nApple Intelligence를 사용하기 위해\n저장 공간을 확보\n하는 방법에 대해 알아봅니다.\n다운로드하는 데 시간이 오래 걸리는 경우\n기기를 업데이트하려면 인터넷 연결이 필요합니다. 다운로드 시간은 업데이트 크기와 인터넷 속도에 따라 다릅니다. 다운로드하는 동안에도 기기를 사용할 수 있으며, 업데이트를 설치할 준비가 되면 기기에 알림이 표시됩니다.\n더 빠른 다운로드를 위해서는 다음을 수행합니다.\nWi-Fi 네트워크에 연결합니다.\n기기를 업데이트하는 동안 다른 콘텐츠 다운로드하지 않습니다.\n업데이트 서버에 연결할 수 없거나 업데이트를 확인할 수 없는 경우\n기기를 업데이트하려고 할 때 다음 알림 중 하나가 표시될 수 있습니다.\n\"업데이트 확인 불가. 소프트웨어 업데이트를 확인하는 동안 오류가 발생했습니다.\"\n\"업데이트 확인 불가. 인터넷에 연결되어 있지 않기 때문에 소프트웨어 업데이트를 확인하는 데 실패했습니다.\"라는 메시지가 표시됩니다.\n\"다운로드할 수 없음. 인터넷에 연결되어 있지 않기 때문에 이 업데이트를 사용할 수 없습니다.\"\n\"다운로드할 수 없음. 이 업데이트를 다운로드하려면 Wi‑Fi 네트워크 연결이 필요합니다.\"\n동일한 네트워크를 사용하여 기기를 다시 업데이트해 보십시오. 그래도 알림이 표시되면 다른 네트워크,\nMac\n,\n또는 iTunes\n를 사용하여 업데이트를 시도해 보십시오.\n여러 네트워크에서 업데이트를 시도한 후에도 문제가 다시 발생하는 경우\n업데이트를 제거\n할 수 있습니다.\n업데이트가 완료되지 않는 경우\n업데이트를 설치하는 중에 진행 속도가 느리게 보이면\n업데이트 진행 상황을 확인\n해 보십시오. 업데이트하는 데 걸리는 시간은 업데이트 크기와 기기의 저장 공간에 따라 다릅니다.\n무선으로 업데이트하는 동안에는 기기를 전원에 연결된 상태로 유지하십시오. 전원 부족으로 기기가 꺼지면 기기를 전원에 연결한 후 다시 켜서 업데이트 또는 복원을 완료하십시오.\n기기가 멈춘 경우\n수행할 작업에 대해 알아봅니다.\n여전히 최신 버전의 iOS 또는 iPadOS를 설치할 수 없는 경우\n여전히 최신 버전의 iOS 또는 iPadOS를 설치할 수 없는 경우 업데이트를 다시 다운로드할 수 있습니다.\n업데이트를 삭제하려면:\n'설정'으로 이동합니다.\n'일반'을 탭합니다.\n'[기기] 저장 공간'을 탭합니다.\n앱 목록에서 업데이트를 찾습니다.\n업데이트를 탭한 후 '업데이트 삭제'를 탭합니다.\n업데이트를 다시 다운로드하려면:\n'설정'으로 이동합니다.\n'일반'을 탭합니다.\n'소프트웨어 업데이트'를 탭하여 최신 업데이트를 다운로드합니다.\n앱 목록에 업데이트가 표시되지 않거나 문제가 다시 발생하는 경우\nMac을 사용\n하거나\niTunes를 사용\n하여 기기를 업데이트해야 합니다.\n컴퓨터가 기기를 인식하지 못하거나 화면에 진행 막대 없이 몇 분 동안 Apple 로고가 표시되는 경우\n복구 모드를 사용하는 방법을 알아봅니다\n.\n추가적인 도움이 필요하십니까?\n문제에 대해 자세히 설명해 주시면 해결 방법을 제안해 드리겠습니다.\n제안받기\n게시일:\n2026년 09월 22일",
+      "facts": [
+        "업데이트가 안 되는 이유 5가지(Apple 분류): 기기가 최신 소프트웨어를 지원하지 않음 · 저장 공간 부족 · 다운로드 시간이 예상보다 오래 걸림 · 기기가 업데이트 서버에 연결할 수 없음 · 업데이트가 완료되지 않음",
+        "공간 부족 시: 설정 > 일반 > [기기] 저장 공간 > 「사용하지 않는 앱 정리하기」 옆 「활성화」. 개인 정보를 삭제하지 않고 앱 데이터를 일시 제거해 공간 확보",
+        "다운로드가 느릴 때: Wi-Fi 연결, 업데이트 중 다른 콘텐츠 다운로드 금지. 「다운로드하는 동안에도 기기를 사용할 수 있으며, 업데이트를 설치할 준비가 되면 기기에 알림이 표시됩니다」",
+        "서버 연결 실패 알림(「업데이트 확인 불가」·「다운로드할 수 없음」) 시: 같은 네트워크로 재시도 → 다른 네트워크·Mac·iTunes로 시도 → 반복되면 업데이트 삭제",
+        "업데이트 삭제 경로: 설정 > 일반 > [기기] 저장 공간 > 앱 목록에서 업데이트 선택 > 「업데이트 삭제」. 재다운로드: 설정 > 일반 > 소프트웨어 업데이트. 목록에 업데이트가 안 보이면 Mac 또는 iTunes로 업데이트",
+        "무선 업데이트 중에는 전원 연결 유지. 전원 부족으로 꺼졌다면 전원 연결 후 다시 켜서 완료. Apple 로고가 진행 막대 없이 몇 분 이상 표시되면 복구 모드 안내 참조",
+        "게시일 2026-09-22(US 판 2026-09-17)"
+      ]
+    },
+    {
+      "title": "iCloud를 사용하여 iPhone 또는 iPad를 백업하는 방법 - Apple 지원 (KR)",
+      "url": "https://support.apple.com/ko-kr/108366",
+      "host": "support.apple.com",
+      "tier": "official",
+      "publishedAt": "2026-09-21",
+      "readMethod": "curl 로 받은 Apple 페이지 원문 텍스트(태그만 제거)",
+      "body": "iCloud를 사용하여 iPhone 또는 iPad를 백업하는 방법 - Apple 지원 (KR)\nApple\n스토어\nMac\niPad\niPhone\nWatch\nVision\nAirPods\nTV 및 홈\n엔터테인먼트\n액세서리\n고객지원\n0\n+\niCloud를 사용하여 iPhone 또는 iPad를 백업하는 방법\niPhone 또는 iPad를 백업해 두면 기기를 교체 또는 분실하거나 기기가 손상되는 경우 복사해 둔 정보를 사용할 수 있습니다. 기기를 수동으로 백업하거나 iCloud 백업을 켜서 기기를 자동 백업되는 상태로 유지할 수 있습니다.\niOS 8 및 이전 버전이 설치된 기기를 사용하는 경우\n기기 및 데이터를 계속 백업하는 방법을 알아봅니다\n.\n수동으로 백업하기\niCloud 백업을 사용하여 자동으로 백업하기\n수동으로 백업하기\n기기를 Wi-Fi 네트워크에 연결합니다\n.\n설정 앱을 열고 사용자 이름을 탭한 다음 'iCloud'를 탭합니다.\n'iCloud 백업'을 탭합니다.\n'지금 백업'을 탭합니다. 백업 절차가 완료될 때까지 Wi-Fi 네트워크 연결을 유지합니다. 지금 백업 아래에 가장 최근에 이루어진 백업 날짜 및 시간이 표시됩니다. 백업을 완료하기 위한 iCloud 저장 공간이 충분하지 않다는 경고가 표시되는 경우 화면에 표시되는 단계에 따라\niCloud 저장 공간을 더 구입\n합니다.\niCloud 백업을 사용하여 자동으로 백업하기\n설정 앱을 열고 사용자 이름을 탭합니다. 'iCloud'를 탭한 다음 'iCloud 백업'을 탭하고 이 [기기] 백업이 켜져 있는지 확인합니다.\n기기를 전원에 연결합니다.\n기기를 Wi-Fi 네트워크에 연결합니다\n.\n기기의 화면이 잠겨 있는지 확인합니다.\n백업을 완료하기 위한 iCloud 저장 공간이 충분하지 않다는 경고가 표시되는 경우 화면에 표시되는 단계에 따라\niCloud 저장 공간을 더 구입\n합니다.\n게시일:\n2026년 09월 21일",
+      "facts": [
+        "iCloud 수동 백업: Wi-Fi 연결 > 설정 앱 > 사용자 이름 > iCloud > iCloud 백업 > 「지금 백업」. 완료될 때까지 Wi-Fi 유지, 최근 백업 날짜·시간이 「지금 백업」 아래 표시됨",
+        "iCloud 저장 공간이 부족하면 경고가 표시되고 저장 공간을 더 구입하는 단계를 안내",
+        "자동 백업 조건: iCloud 백업 켜짐 + 전원 연결 + Wi-Fi 연결 + 화면 잠금",
+        "게시일 2026-09-21"
+      ]
+    },
+    {
+      "title": "Finder를 사용하여 iPhone, iPad 또는 iPod touch 업데이트하기 - Apple 지원 (KR)",
+      "url": "https://support.apple.com/ko-kr/109046",
+      "host": "support.apple.com",
+      "tier": "official",
+      "publishedAt": "2026-05-20",
+      "readMethod": "curl 로 받은 Apple 페이지 원문 텍스트(태그만 제거)",
+      "body": "Finder를 사용하여 iPhone, iPad 또는 iPod touch 업데이트하기 - Apple 지원 (KR)\nApple\n스토어\nMac\niPad\niPhone\nWatch\nVision\nAirPods\nTV 및 홈\n엔터테인먼트\n액세서리\n고객지원\n0\n+\nFinder를 사용하여 iPhone, iPad 또는 iPod touch 업데이트하기\n컴퓨터를 사용하여 iPhone, iPad 또는 iPod touch를 최신 버전의 iOS 또는 iPadOS로 업데이트하는 방법에 대해 알아봅니다.\n기기에서 무선으로 업데이트할 수 없는 경우 신뢰하는 컴퓨터에서 Finder를 사용하여 업데이트할 수 있습니다.\n업데이트 준비하기\niCloud 또는 컴퓨터를 사용하여 기기를 백업\n합니다.\n컴퓨터에서 macOS Catalina 및 이후 버전을 실행 중인지 확인합니다. macOS Mojave 및 이전 버전이 설치된 Mac을 사용하는 경우\niTunes를 사용하여 기기를 업데이트\n합니다.\n업데이트할 기기의 개인용 핫스팟을 사용하여 컴퓨터를 인터넷에 연결한 경우, 컴퓨터를 다른 Wi-Fi 또는 이더넷 네트워크에 연결합니다.\n컴퓨터를 사용하여 iPhone, iPad 또는 iPod touch 업데이트하기\nmacOS Catalina 및 이후 버전이 설치된 Mac에서 Finder 윈도우를 엽니다.\n기기를 컴퓨터에 연결합니다.\nFinder 윈도우의 왼쪽 사이드바에서 기기를 선택합니다.\n기기가 보이지 않습니까\n?\n'일반'을 클릭한 다음 '업데이트 확인'을 클릭합니다.\n'다운로드 및 업데이트'를 클릭합니다. 화면의 지침에 따라 계속 진행합니다.\n메시지가 나타나면 암호를 입력합니다.\n암호를 잊어버렸습니까\n?\n컴퓨터에 경고 메시지가 표시되는 경우\n컴퓨터를 사용하여 기기를 업데이트하는 동안 경고 메시지가 표시되는 경우\n 도움말을 확인합니다.\n업데이트하기 위해 추가 공간이 필요한 경우\n업데이트를 위한 추가 공간이 필요한 경우\n기기에서 수동으로 콘텐츠를 삭제\n할 수 있습니다.\n추가적인 도움이 필요하십니까?\n문제에 대해 자세히 설명해 주시면 해결 방법을 제안해 드리겠습니다.\n제안받기\n게시일:\n2026년 05월 20일",
+      "facts": [
+        "컴퓨터 업데이트 준비: iCloud 또는 컴퓨터로 백업 · macOS Catalina 및 이후 버전 확인(Mojave 이하는 iTunes 사용) · 업데이트할 기기의 개인용 핫스팟으로 컴퓨터가 인터넷에 연결돼 있으면 다른 Wi-Fi/이더넷으로 변경",
+        "절차: Finder 열기 > 기기를 컴퓨터에 연결 > 왼쪽 사이드바에서 기기 선택 > 「일반」 > 「업데이트 확인」 > 「다운로드 및 업데이트」 > 메시지가 나오면 암호 입력",
+        "추가 공간이 필요하면 기기에서 수동으로 콘텐츠를 삭제. 이 페이지 게시일 2026-05-20(iOS 27 이전 일반 문서 — iOS 27 전용 문구는 없음)"
+      ]
+    },
+    {
+      "title": "iPhone 사용 설명서 — Update iOS on iPhone (iOS 27 판) - Apple Support",
+      "url": "https://support.apple.com/guide/iphone/update-ios-iph3e504502/ios",
+      "host": "support.apple.com",
+      "tier": "official",
+      "publishedAt": null,
+      "readMethod": "curl 로 받은 Apple 페이지 원문 텍스트(태그만 제거)",
+      "body": "When you update to the latest version of iOS, your data and settings remain unchanged. You can also automatically install system file updates to improve the features of your iPhone without updating iOS.\nBefore you update, set up iPhone to\nback up\n automatically, or back up your device manually.\nUpdate iPhone automatically\nIf you didn’t turn on automatic updates when you first set up your iPhone, do the following:\nGo to the Settings app\n on your iPhone.\nTap General, tap Software Update, then tap Automatic Updates.\nTurn on one of the following:\nAutomatically Install:\nWhen an update is available, iPhone downloads and installs it overnight while charging and connected to Wi-Fi. You’re notified before an update is installed.\nAutomatically Download:\nDownloads an update automatically when your iPhone is connected to Wi‑Fi, charging, and locked so you can install the update later. To see this option, first turn off Automatically Install.\nUpdate iPhone manually\nAt any time, you can check for and install software updates.\nGo to the Settings app\n on your iPhone.\nTap General, then tap Software Update.\nThe currently installed version of iOS is shown, and whether an update is available.\nIf an update is available, tap Download and Install, then follow the onscreen instructions.\nStep-by-Step Help:\nGet guided and personalized support updating your iOS version.\nOpen Step-by-Step Help.\nUpdate using your computer\nConnect iPhone and your computer with a cable\n.\nDo one of the following:\nOn a Mac (macOS 10.15 or later):\nIn the Finder sidebar, select your iPhone, then click General at the top of the window.\nOn a Mac (macOS 10.14 or earlier) or a Windows device:\nOpen the iTunes app, click the button resembling an iPhone near the top left of the iTunes window, then click Summary.\nClick Check for Update.\nTo install an available update, click Update.\nAutomatically update system files only\niPhone can automatically download and install system file updates to improve iPhone features without updating iOS.\nGo to the Settings app\n on your iPhone.\nTap General, tap Software Update, then tap Automatic Updates.\nUnder iOS Updates, turn off Automatically Install.\nUnder System Files, turn on Automatically Install.\nSee also\nApple Support article: How to download iOS 27\nApple Support article: If you can’t update or restore your iPhone or iPod touch",
+      "facts": [
+        "「When you update to the latest version of iOS, your data and settings remain unchanged.」 — 업데이트해도 데이터·설정은 그대로 유지된다고 Apple이 명시",
+        "컴퓨터로 업데이트: 케이블로 연결 > Mac(macOS 10.15 이상)은 Finder 사이드바에서 iPhone 선택 후 상단 General, Mac(macOS 10.14 이하)·Windows는 iTunes 앱에서 iPhone 아이콘 > Summary > Check for Update > Update",
+        "시스템 파일만 자동 업데이트하는 옵션: 설정 > 일반 > 소프트웨어 업데이트 > 자동 업데이트에서 iOS Updates의 Automatically Install을 끄고 System Files의 Automatically Install을 켬",
+        "See also 항목에 「How to download iOS 27」 문서를 연결"
+      ]
+    },
+    {
+      "title": "Major updates for Apple’s software platforms are now available - Apple Newsroom",
+      "url": "https://www.apple.com/newsroom/2026/09/major-updates-for-apples-software-platforms-are-now-available/",
+      "host": "www.apple.com",
+      "tier": "official",
+      "publishedAt": "2026-09-14",
+      "readMethod": "curl 로 받은 Apple 페이지 원문 텍스트(태그만 제거)",
+      "body": "UPDATE\nSeptember 14, 2026\n        Major updates for Apple’s software platforms are now available\n                    Siri AI, the next generation of Apple Intelligence, powerful parental controls, and an expansive set of software improvements start rolling out today across iOS 27, iPadOS 27, macOS 27, and other Apple platforms\n                Available today, Apple’s latest software updates introduce Siri AI and deliver helpful new Apple Intelligence features that make the apps users interact with every day smarter and more useful.\nApple’s latest software updates introduce Siri AI, a more intelligent, knowledgeable, and capable version of Siri, and deliver helpful new Apple Intelligence features that make the apps users interact with day to day smarter and more useful. The updates also bring powerful and intuitive new features to help parents create safer, more enriching digital experiences for kids and introduce an expansive set of improvements that make Apple products more responsive, more delightful, and easier to use.\n[...중략...]\nThe 2027 software releases deliver platform improvements that span performance, connectivity, search, and more, making Apple products even more responsive, reliable, and delightful to use.\nPerformance\n: Users will experience faster performance on iPhone, iPad, and Mac. On iPhone and iPad, apps launch up to 30 percent faster,\n3\n photos load up to 70 percent faster after being taken,\n4\n and AirDrop transfers are up to 80 percent faster.\n5\n[...중략...]\nAvailability\nFeatures are subject to change. Some features may not be available in all languages or regions, and availability may vary due to local laws and regulations. For more information about availability, visit\napple.com\n.\nNew Apple Intelligence capabilities across apps are available for users with supported products set to a supported language. Siri AI begins rolling out as a beta in English, with French, Japanese, Korean, Portuguese, and Spanish coming in October.\nMac and Apple Vision Pro users in the EU will be able to access Siri AI when set to a supported language. Siri AI will not be available initially in the EU in iOS, iPadOS, and watchOS.\nSiri AI and the other new Apple Intelligence features will not be available in China while Apple works through regulatory requirements.\nUsers who enable Apple Intelligence on supported products set to a supported language will have access with iOS 27, iPadOS 27, macOS 27, watchOS 27, and visionOS 27.\nApple Intelligence is available with support for these languages: English, Danish, Dutch, French, German, Italian, Norwegian, Portuguese, Spanish, Swedish, Turkish, Vietnamese, Chinese (simplified), Chinese (traditional), Japanese, and Korean. Some features may not be available in all regions or languages. For feature and language availability and system requirements, see\napple.com/apple-intelligence\n.\nApple Intelligence and Siri AI in iOS 27, iPadOS 27, macOS 27, watchOS 27, and visionOS 27 are available on iPhone Duo, iPhone Air, iPhone 16 models or later, iPhone 15 Pro, iPhone 15 Pro Max, iPad mini (A17 Pro), iPad models with M1 or later, MacBook Neo (A18 Pro), Mac with M1 or later, Apple Vision Pro, Apple Watch Series 9 or later, Apple Watch Ultra 2 or later, and Apple Watch SE 3 when paired with an Apple Intelligence-enabled iPhone. Some features on Apple Watch require iPhone nearby.\nCertain Apple Intelligence features that rely on server-side models are subject to daily usage limits, including but not limited to Siri AI, intelligent photo editing tools, Image Playground, and AFM 3 Cloud models in Shortcuts. Daily limits may vary by feature, request complexity, system demand, system policies, and other factors. Expanded access to such features will be available for a fee in the future. Use of these features is subject to Apple Intelligence terms and conditions. Learn more at\napple.com/apple-intelligence\n. Siri AI is not available for users under 13.",
+      "facts": [
+        "뉴스룸 표기 날짜: September 14, 2026 (UPDATE). Siri AI·차세대 Apple Intelligence 등이 iOS 27·iPadOS 27·macOS 27 등에서 「start rolling out today」",
+        "「Siri AI begins rolling out as a beta in English, with French, Japanese, Korean, Portuguese, and Spanish coming in October.」",
+        "Apple Intelligence 및 Siri AI 대상: iPhone Duo, iPhone Air, iPhone 16 models or later, iPhone 15 Pro, iPhone 15 Pro Max (아이패드·맥·워치 별도)",
+        "Apple Intelligence 지원 언어 16개: English, Danish, Dutch, French, German, Italian, Norwegian, Portuguese, Spanish, Swedish, Turkish, Vietnamese, Chinese (simplified), Chinese (traditional), Japanese, Korean — 한국어 포함",
+        "「Siri AI will not be available initially in the EU in iOS, iPadOS, and watchOS.」 · 중국에서는 규제 요건 해결 전까지 Siri AI·신규 Apple Intelligence 기능 미제공 · 「Siri AI is not available for users under 13.」",
+        "서버 모델 기반 기능(Siri AI, 지능형 사진 편집 도구, Image Playground, 단축어의 AFM 3 Cloud 등)에는 일일 사용량 제한이 있으며 확장 이용은 향후 유료 제공 예정",
+        "SynthID는 「available in a software update later this year」 — 출시 시점엔 미제공",
+        "성능 주장(Apple 자체 측정): 「On iPhone and iPad, apps launch up to 30 percent faster, photos load up to 70 percent faster after being taken, and AirDrop transfers are up to 80 percent faster.」 각주상 앱 실행은 2026년 8월 iPhone 11 Pro Max(iOS 26.6 대비 prerelease iOS 27), 사진 로딩은 7월 iPhone 15(사진 5만 장 라이브러리), AirDrop은 7월 iPhone 16 Plus(사진 30MB 전송)로 측정했고 「Performance varies」라고 명시"
+      ]
+    },
+    {
+      "title": "차세대 Apple Intelligence, 오늘부터 이용 가능 - Apple 뉴스룸 (KR)",
+      "url": "https://www.apple.com/kr/newsroom/2026/09/the-next-generation-of-apple-intelligence-is-available-today/",
+      "host": "www.apple.com",
+      "tier": "official",
+      "publishedAt": "2026-09-14",
+      "readMethod": "curl 로 받은 Apple 페이지 원문 텍스트(태그만 제거)",
+      "body": "업데이트\n2026년 9월 14일\n        차세대 Apple Intelligence, 오늘부터 이용 가능\n                    완전히 새로운 버전의 Siri인 Siri AI, 곧 한국어 제공 예정\nSiri AI를 구동하고, 사용자가 매일 사용하는 앱과 경험을 그 어느 때보다 개인적이고 유용하게 만들어주는 차세대 Apple Intelligence가 오늘부터 제공된다.\nApple은 오늘 사용자가 매일 사용하는 앱과 경험에 강력한 AI 기능을 더하는 차세대 Apple Intelligence를 출시했다. 모든 단계에서 개인정보 보호를 염두에 두고 설계된 획기적인 신규 아키텍처를 기반으로 구축된 최신 Apple 파운데이션 모델은 운영체제 전반에 깊이 통합되어 iPhone, iPad, Mac, Apple Watch 및 Apple Vision Pro를 더욱 개인적이고 유용하게 만들어준다. 이제 사용자는 사진 앱에서 구도를 개선하고 편집하는 새로운 방법, Safari의 브라우징을 맞춤화하는 지능형 도구, 사실적인 이미지까지 지원하는 완전히 새로운 Image Playground로 창의력을 뽐낼 수 있다. 지원 언어로 설정된 지원 기기 사용자는 iOS 27, iPadOS 27, macOS 27, watchOS 27, visionOS 27을 통해 오늘부터 이러한 새로운 기능을 이용할 수 있다.\nApple은 또한 한층 더 개인적이고 유용하며, 자연스럽게 대화할 수 있도록 완전히 새로워진 Siri인 Siri AI가 10월부터 불어, 스페인어, 포르투갈어, 일본어에 더해 한국어로도 베타 버전으로 순차 제공될 예정이라고 밝혔다.\n[...중략...]\n출시 정보\niOS 27, iPadOS 27, macOS 27, watchOS 27, visionOS 27에서 Apple Intelligence는 iPhone 16 이후 모델, iPhone 15 Pro, iPhone 15 Pro Max, iPad mini(A17 Pro 모델), M1 이후 iPad 모델, MacBook Neo(A18 Pro 모델), M1 이후 Mac 모델, Apple Vision Pro, 그리고 페어링된 iPhone이 Apple Intelligence가 활성화된 상태로 가까이 있을 때 Apple Watch Series 9 이후 모델, Apple Watch Ultra 2 이후 모델, Apple Watch SE 3에서 사용할 수 있다.\nApple Intelligence를 사용하려면 Siri 및 기기 언어를 한국어, 중국어(간체), 중국어(번체), 덴마크어, 네덜란드어, 영어, 프랑스어, 독일어, 이탈리아어, 일본어, 노르웨이어, 포르투갈어, 스페인어, 스웨덴어, 튀르키예어, 베트남어 중 하나로 설정해야 한다. 일부 기능은 지역 또는 언어에 따라 제공되지 않을 수 있다. 일부 기기를 이용할 수 없는 국가도 있다.\nSiri AI는 iOS 27, iPadOS 27, macOS 27, watchOS 27, visionOS 27에서 영어 베타로 순차 제공되며, 지원 언어로 설정된 Apple Intelligence 지원 기기가 필요하다. Siri AI는 영어로 우선 출시된다.\nSiri AI는 초기에는 EU 지역의 iOS, iPadOS 및 watchOS에서는 사용할 수 없다. Siri AI에 의존하는 기능 역시 EU 지역의 iOS, iPadOS, watchOS에서는 사용할 수 없다. Apple은 사용자의 개인정보 보호 및 보안을 유지할 수 있는 방법을 찾기 위해 노력하고 있다.\n중국에서는 Apple이 규제 요건을 해결하는 동안 Siri AI와 그 밖의 새로운 Apple Intelligence 기능을 사용할 수 없다.\nSiri AI, 지능형 사진 편집 도구, Image Playground, 단축어의 AFM 3 Cloud 모델을 비롯해 서버 기반 모델에 의존하는 특정 Apple Intelligence 기능에는 일일 사용량 제한이 적용된다. 일일 제한은 기능, 요청 복잡도, 시스템 부하, 시스템 정책 및 기타 요인에 따라 다를 수 있다. 이와 같은 기능에 대한 확장된 액세스는 향후 유료로 제공될 예정이다. 이러한 기능의 사용은 Apple Intelligence 이용 약관에 따른다. 자세한 내용은\napple.com/kr/apple-intelligence\n에서 확인할 수 있다.\n아티클 공유\nMedia\n기사 텍스트\n2026년 9월 14일\n업데이트\n차세대 Apple Intelligence, 오늘부터 이용 가능\n완전히 새로운 버전의 Siri인 Siri AI, 곧 한국어 제공 예정\nApple은 오늘 사용자가 매일 사용하는 앱과 경험에 강력한 AI 기능을 더하는 차세대 Apple Intelligence를 출시했다. 모든 단계에서 개인정보 보호를 염두에 두고 설계된 획기적인 신규 아키텍처를 기반으로 구축된 최신 Apple 파운데이션 모델은 운영체제 전반에 깊이 통합되어 iPhone, iPad, Mac, Apple Watch 및 Apple Vision Pro를 더욱 개인적이고 유용하게 만들어준다. 이제 사용자는 사진 앱에서 구도를 개선하고 편집하는 새로운 방법, Safari의 브라우징을 맞춤화하는 지능형 도구, 사실적인 이미지까지 지원하는 완전히 새로운 Image Playground로 창의력을 뽐낼 수 있다. 지원 언어로 설정된 지원 기기 사용자는 iOS 27, iPadOS 27, macOS 27, watchOS 27, visionOS 27을 통해 오늘부터 이러한 새로운 기능을 이용할 수 있다.\nApple은 또한 한층 더 개인적이고 유용하며, 자연스럽게 대화할 수 있도록 완전히 새로워진 Siri인 Siri AI가 10월부터 불어, 스페인어, 포르투갈어, 일본어에 더해 한국어로도 베타 버전으로 순차 제공될 예정이라고 밝혔다.\n사진 앱의 강력한 편집 기능\n사진 앱이 한층 강력한 이미지 모델을 활용해 사진을 찍은 순간은 그대로 유지하면서도 놀라운 편집 기능을 제공한다.\n공간 프레임 재설정 기능을 통해 사용자는 사진을 촬영한 후에도 구도를 더 마음에 들게 조정할 수 있다. 이 기능은 Apple이 Apple Vision Pro를 통해 쌓은 공간 모델에 대한 깊은 이해를 바탕으로 작동하기 때문에, 사용자는 사진을 터치하고 드래그하면서 시점이 바뀌는 과정을 실시간으로 미리 확인할 수 있다. Apple Intelligence는 시점이 변경된 부분에서만 신규 콘텐츠를 생성하기 때문에, 프레임이 조정된 사진에서도 기존 장면과 일관성이 유지된다.\n사용자는 확장 도구를 사용해 이미지를 확장할 수도 있다. 단순히 피사체 주위에 더 넉넉한 여백을 만들거나, 종횡비를 조정하거나, 중요한 부분을 잘라내지 않고 기울어진 수평선을 바로잡고 싶을 때 확장 도구가 비어 있는 영역을 자연스럽게 채워준다.\n또한 많은 사용자들이 즐겨 쓰는 클린업 도구가 대폭 업그레이드되어, 배경이 복잡하더라도 더욱 뛰어난 품질로 방해 요소를 제거하고 지워진 부분은 더욱 사실적으로 채울 수 있다. 또한 곧 SynthID 표준을 지원함에 따라, 사용자는 Apple Intelligence 기반 도구를 사용해 AI로 생성하거나 편집한 이미지를 식별할 수 있다.\n1\nSafari 브라우징의 새로운 방식\nApple Intelligence의 강력한 성능을 바탕으로 새로운 도구들이 Safari의 웹 브라우징 방식을 탈바꿈시킨다. Safari의 인텔리전스는 개인정보 보호를 염두에 두고 설계되어, 개인 브라우징 데이터를 Apple을 비롯한 그 누구에게도 노출시키지 않으면서 유용한 기능을 제공한다.\n이제 Safari가 사용자의 탭을 관련 주제별로 자동 정리해 브라우징 경험을 간소화한다. 예를 들어, 사용자가 주말 여행을 계획 중이라면 Safari가 여행 계획과 관련된 탭들을 모두 하나의 주제로 묶어줄 수 있다. 사용자가 브라우징을 하는 동안 Safari가 계속해서 새 탭을 기존 주제로 분류하거나 새 주제를 생성한다.\n알림 받기를 이용하면 사용자는 Safari가 웹페이지에서 제품 재입고나 가격 인하 같은 변화를 모니터링하도록 요청해 중요한 업데이트를 바로 파악할 수 있다. 사용자는 Safari가 모니터링해 주기를 원하는 변경 사항을 설명하기만 하면 되며, Safari가 해당 웹페이지에서 변경 사항을 감지하면 사용자에게 알림을 전송해 필요한 조치를 취할 수 있다.\n확장 프로그램 설명 기능을 통해 사용자는 원하는 내용을 설명하기만 하면 맞춤 Safari 확장 프로그램을 생성할 수 있다. 그러면 Safari가 도구 막대에 바로 맞춤 확장 프로그램을 생성한다. 예를 들어, 사용자는 따라해 본 레시피를 저장하고 평가할 수 있는 버튼을 추가할 수 있다.\n새로운 Image Playground로 생성한 사실적인 이미지들\nImage Playground가 그 어느 때보다 강력하고 유용해져, 사용자가 자신을 표현할 수 있는 새로운 방법을 제공한다. 비공개 클라우드 컴퓨팅에서 실행되는 새로운 생성 모델을 통해 사용자는 창의력을 발휘해 사진처럼 사실적인 스타일을 포함한 거의 모든 스타일의 고품질 이미지를 생성할 수 있다. 이 기능은 새로운 Siri로도 확장되어, 사용자가 Siri AI 앱에서 원하는 내용을 설명하기만 하면 이미지를 생성할 수 있으며, 이 모든 과정은 Image Playground를 기반으로 매끄럽게 구현된다.\nImage Playground에서 이미지를 쉽고 직관적으로 수정할 수 있다. 변경하고 싶은 부분을 설명하거나, 간단히 탭하거나, 원을 그리거나, 브러시로 표시해 이동하거나 크",
+      "facts": [
+        "한국어 뉴스룸 표기 날짜 2026년 9월 14일(업데이트). 「Siri AI가 10월부터 불어, 스페인어, 포르투갈어, 일본어에 더해 한국어로도 베타 버전으로 순차 제공될 예정」",
+        "「Apple의 2027년 소프트웨어 출시를 시작으로, Siri AI가 오늘부터 영어 베타로 순차 제공되며, 다음 달에는 한국어, 프랑스어, 일본어, 포르투갈어, 스페인어가 추가된다.」",
+        "Apple Intelligence 사용 조건: Siri 및 기기 언어를 한국어·중국어(간체/번체)·덴마크어·네덜란드어·영어·프랑스어·독일어·이탈리아어·일본어·노르웨이어·포르투갈어·스페인어·스웨덴어·튀르키예어·베트남어(16개) 중 하나로 설정",
+        "iOS 27 Apple Intelligence 대상 iPhone: 「iPhone 16 이후 모델, iPhone 15 Pro, iPhone 15 Pro Max」",
+        "「Siri AI는 초기에는 EU 지역의 iOS, iPadOS 및 watchOS에서는 사용할 수 없다.」 · 「중국에서는 … Siri AI와 그 밖의 새로운 Apple Intelligence 기능을 사용할 수 없다.」 · 「Siri AI는 만 13세 미만의 사용자에게는 제공되지 않음.」",
+        "표현력 풍부한 음성 등 가장 강력한 온디바이스 모델 기능은 「iPhone Duo, iPhone 18 Pro, iPhone 18 Pro Max, iPhone Air, iPhone 17 Pro, iPhone 17 Pro Max」 등에서만 사용 가능",
+        "Mail 제안·통화 맥락·지능형 파일/폴더 이름 지정은 영어로 제공될 예정. 일일 사용량 제한(Siri AI·지능형 사진 편집 도구·Image Playground·AFM 3 Cloud)과 향후 유료 확장 안내"
+      ]
+    },
+    {
+      "title": "차세대 Apple Intelligence를 사용하는 방법 - Apple 지원 (KR)",
+      "url": "https://support.apple.com/ko-kr/121115",
+      "host": "support.apple.com",
+      "tier": "official",
+      "publishedAt": "2026-09-14",
+      "readMethod": "curl 로 받은 Apple 페이지 원문 텍스트(태그만 제거)",
+      "body": "차세대 Apple Intelligence를 사용하는 방법 - Apple 지원 (KR)\nApple\n스토어\nMac\niPad\niPhone\nWatch\nVision\nAirPods\nTV 및 홈\n엔터테인먼트\n액세서리\n고객지원\n0\n+\n차세대 Apple Intelligence를 사용하는 방법\n차세대 Apple Intelligence는 OS에 깊이 통합되어 있으며, 웹 브라우징, 거의 모든 스타일의 이미지 생성, 커뮤니케이션 및 일정 관리, 사진 편집 등 일상적으로 하는 작업을 간소화하는 유용한 기능을 다양한 앱에서 제공합니다.\n차세대 Apple Intelligence는 iOS, iPadOS, macOS, watchOS 및 visionOS 27.0 소프트웨어 릴리즈를 지원되는 지역에서 지원되는 언어로 업데이트하면 대상 기기에서 자동으로 사용할 수 있습니다.\nApple Intelligence는 완전히 새로운 버전의 Siri인 Siri AI도 구동합니다.\nSiri AI(베타)를 이용하는 방법을 알아보십시오\n.\n기기 요구 사항\niOS 27, iPadOS 27, macOS 27, watchOS 27 및 visionOS 27의 Apple Intelligence는 iPhone 16 및 이후 모델, iPhone 15 Pro, iPhone 15 Pro Max, iPhone Air, iPad mini(A17 Pro), MacBook Neo(A18 Pro), M1 및 이후 칩이 탑재된 iPad 모델, M1 및 이후 칩이 탑재된 Mac, Apple Vision Pro, Apple Watch Series 9 및 이후 모델, Apple Watch Ultra 2 및 이후 모델, Apple Watch SE 3를 Apple Intelligence 지원 iPhone과 페어링했을 때 사용할 수 있습니다. 일부 기능은 iPhone이 근처에 있어야 사용할 수 있습니다.\n시스템 요구 사항\niOS 27, iPadOS 27, macOS 27 Golden Gate, visionOS 27, watchOS 27\nM4 및 이후 칩과 최소 12GB의 통합 메모리가 탑재된 iPhone 17 Pro, iPhone 17 Pro Max, iPhone Air, iPad 모델과 M3 및 이후 칩과 최소 12GB의 통합 메모리가 탑재된 Mac 모델 및 Apple Vision Pro(M5)의 경우 최대 14GB의 기기 저장 공간 필요\n기타 Apple Intelligence 지원 iPhone, iPad, Mac 및 Apple Vision Pro 모델의 경우 최대 8GB의 저장 공간 필요*\nApple Watch의 경우 최대 1.5GB의 저장 공간 필요\n기기 언어 및 Siri 언어가 지원되는 언어와 동일한 언어로 설정되어야 함\nSiri 언어를 변경하면 새로운 Siri 언어가 완전히 다운로드되고 기기 언어와 일치할 때까지 Apple Intelligence의 사용이 불가능할 수 있습니다.\niPhone, iPad\n 또는\nMac\n에서 저장 공간을 확보하는 방법을 알아봅니다.\n지원되는 언어 및 지역\niOS 27, iPadOS 27 및 macOS 27이 설치된 호환되는 iPhone, iPad 및 Mac 모델을 사용하여 전 세계 대부분의 지역에서 다양한 Apple Intelligence 기능을 사용할 수 있습니다. Apple Intelligence는 한국어, 영어, 덴마크어, 네덜란드어, 프랑스어, 독일어, 이탈리아어, 노르웨이어, 포르투갈어, 스페인어, 스웨덴어, 튀르키예어, 베트남어, 중국어(간체), 중국어(번체), 일본어로 지원됩니다. 일부 기능은 일부 지역 또는 언어에서 사용하지 못할 수 있습니다. 일부 Apple Intelligence 기능은 Apple Intelligence 지원 iPhone과 페어링했을 때 watchOS 27에서 이러한 언어로 사용할 수 있습니다.\nvisionOS 27이 설치된 Apple Vision Pro에서 다양한 Apple Intelligence 기능을 한국어, 영어, 프랑스어, 독일어, 이탈리아어, 중국어(간체), 중국어(번체), 일본어 및 스페인어로 사용할 수 있습니다.\n기능 사용 가능 여부는 플랫폼, 언어 및 지역에 따라 다를 수 있습니다. 전 세계 다른 지역을 여행하는 경우에도 Apple Intelligence는 계속 사용할 수 있습니다.\n유럽 연합 거주자의 경우\n고급 사진 편집, 새롭게 디자인된 Image Playground, 브라우징을 위한 지능형 기능 등 앱 전반에서 제공되는 차세대 Apple Intelligence 기능은 지원되는 iPhone 및 iPad 모델에서 iOS 27 및 iPadOS 27을 사용하는 EU 거주자, 지원되는 Mac 모델에서 macOS 27 Golden Gate를 사용하는 EU 거주자 및 visionOS 27을 사용하는 EU 거주자에게 제공됩니다.\n중국 거주자의 경우\nApple Intelligence 기능은 현재 중국 본토에서 구입한 지원되는 기기에서 작동하지 않습니다. 중국 본토 이외의 다른 지역에서 지원되는 기기를 구입했더라도 중국 본토에 거주하고 Apple 계정의 국가 또는 지역도 중국 본토로 설정되어 있으면 현재 Apple Intelligence 기능은 작동하지 않습니다.\nApple Intelligence가 중국 본토에서 제공되는 경우 이전에 구입한 Apple Intelligence 지원 기기에서도 해당 지역에서 Apple Intelligence의 기본 기능을 활성화하고 사용할 수 있습니다. Apple이 규제 요구 사항을 해결하는 동안 중국에서는 새로운 Apple Intelligence 기능을 사용할 수 없습니다.\n기능 사용 제한\n서버 측 모델을 사용하는 특정 Apple Intelligence 기능에는 일일 사용량 제한이 적용됩니다. 여기에는 Siri AI, 지능형 사진 편집 도구, Image Playground, 단축어의 AFM 3 Cloud 모델 등이 포함되며, 이에 국한되지 않습니다. 일일 사용량 제한은 기능, 요청의 복잡성, 시스템 수요, 시스템 정책 및 기타 요인에 따라 달라질 수 있습니다. 이러한 기능에 대한 사용 범위를 확대하는 유료 옵션은 향후 제공될 예정입니다. 이러한 기능의 사용에는 Apple Intelligence 이용 약관이 적용됩니다.\nApple Intelligence 사용 약관\n에서 자세히 알아보십시오.",
+      "facts": [
+        "「차세대 Apple Intelligence는 iOS, iPadOS, macOS, watchOS 및 visionOS 27.0 소프트웨어 릴리즈를 지원되는 지역에서 지원되는 언어로 업데이트하면 대상 기기에서 자동으로 사용할 수 있습니다.」",
+        "저장 공간 요구: iPhone 17 Pro · 17 Pro Max · Air 등은 최대 14GB, 「기타 Apple Intelligence 지원 iPhone, iPad, Mac 및 Apple Vision Pro 모델의 경우 최대 8GB」, Apple Watch는 최대 1.5GB — 이 수치는 Apple Intelligence 기능용이며 iOS 27 업데이트 파일 크기가 아님",
+        "「기기 언어 및 Siri 언어가 지원되는 언어와 동일한 언어로 설정되어야 함」. Siri 언어를 바꾸면 새 언어가 다 내려받아질 때까지 Apple Intelligence를 못 쓸 수 있음",
+        "Apple Intelligence 지원 언어에 한국어 포함(16개 언어). 이 페이지(영문 판) 게시일 2026-09-14",
+        "중국 본토 구매 기기·계정은 Apple Intelligence 미작동, EU는 iOS 27에서 사진 편집·Image Playground 등 앱 내 기능은 제공(Siri AI는 별도 제한)",
+        "iOS 26 이후 버전에서 지원되는 기능(글쓰기 도구, 메시지·전화 실시간 번역, 알림 요약 등)과 iOS 27 신규 기능을 구분해 표로 안내"
+      ]
+    },
+    {
+      "title": "How to get Siri AI - Apple Support",
+      "url": "https://support.apple.com/en-us/127893",
+      "host": "support.apple.com",
+      "tier": "official",
+      "publishedAt": "2026-09-22",
+      "readMethod": "curl 로 받은 Apple 페이지 원문 텍스트(태그만 제거)",
+      "body": "How to get Siri AI\nSiri AI (Beta) is an entirely new version of Siri powered by the next generation of Apple Intelligence, and deeply integrated across your Apple devices. A more capable and conversational assistant, Siri AI can answer questions about almost anything and help you find what you need in the moment.\nSiri AI understands personal context across your messages, emails, photos, and more, so you can find what you need just by asking. It can answer questions about what's on your screen, or go out to the web for up-to-date information to generate a helpful answer. And with even more systemwide app actions, you can get more done across your apps.\nA dedicated Siri app uses iCloud to privately sync your conversation history across your devices, so you can start a conversation on iPhone and continue it on Mac, iPad, Apple Watch, or Apple Vision Pro.\nSiri AI is available in beta for iOS 27, iPadOS 27, macOS 27 Golden Gate, visionOS 27, and watchOS 27 when your\ndevice language\n and\nSiri language\n are set to the same supported language and your Apple Account is in an eligible region.\nTurn on Siri AI\nAfter you update your device, go to Settings, tap or click Siri, then tap or click Try Siri AI (Beta). If Siri is turned off, tap or click Turn On Siri first.\niPhone showing the Try Siri AI (Beta) option.\niPhone showing you are using Siri AI (Beta).\nFollow the onscreen instructions to pick a voice, complete voice enrollment, and review your privacy settings. This will add you to a waitlist, and wait times can vary. Siri AI will begin to download automatically when your wait is complete.\nSiri AI requirements\nTo use Siri AI, you need an Apple Intelligence–capable iPhone, iPad, Mac, Apple Watch, or Apple Vision Pro with\ndevice language\n and\nSiri language\n set to a supported language:\niOS 27 on iPhone 15 Pro models and later, iPhone 16 models or later, and iPhone Air\niPadOS 27 on iPad mini (A17 Pro), and iPad models with M1 or later\nmacOS 27 Golden Gate on MacBook Neo (A18 Pro) and Mac with M1 or later\nwatchOS 27 on Apple Watch Series 9 or later, Apple Watch Ultra 2 or later, and Apple Watch SE 3, when paired with an Apple Intelligence-enabled iPhone with Siri AI enabled\nvisionOS 27 on any Apple Vision Pro\nSupported languages and regions\nSiri AI is currently available in English. Availability varies by region and platform. After you turn on Siri AI, it will continue to work when you travel to other regions.\nFor European Union residents\nSiri AI is not available for iOS, iPadOS, or watchOS in the EU. It is available for macOS 27 Golden Gate and visionOS 27 if your\nApple Account region\n is in the EU and your device language and Siri language are both set to English.\nFor China mainland residents\nSiri AI will not currently work if your\nApple Account region\n is in mainland China.",
+      "facts": [
+        "켜는 법: 「After you update your device, go to Settings, tap or click Siri, then tap or click Try Siri AI (Beta).」 Siri가 꺼져 있으면 먼저 Turn On Siri",
+        "「This will add you to a waitlist, and wait times can vary. Siri AI will begin to download automatically when your wait is complete.」 — 대기자 명단 방식",
+        "Siri AI 대상 iPhone: iPhone 15 Pro models and later, iPhone 16 models or later, iPhone Air (이 문서에는 iPhone Duo 표기 없음)",
+        "「Siri AI is currently available in English.」 기기 언어와 Siri 언어가 같은 지원 언어여야 하고 Apple 계정이 지원 지역이어야 함",
+        "EU: iOS·iPadOS·watchOS에서 사용 불가, macOS·visionOS는 영어 설정 시 사용 가능. 중국 본토 계정은 작동하지 않음. 문서 게시일 2026-09-22"
+      ]
+    },
+    {
+      "title": "Requirements for Siri AI (Beta) - Apple Support",
+      "url": "https://support.apple.com/en-us/148218",
+      "host": "support.apple.com",
+      "tier": "official",
+      "publishedAt": "2026-09-14",
+      "readMethod": "curl 로 받은 Apple 페이지 원문 텍스트(태그만 제거)",
+      "body": "Requirements for Siri AI (Beta)\nSiri AI is available in beta in most regions. Set your device language and Siri language to a supported language.\niOS 27 on iPhone 15 Pro models, iPhone 16 models or later, and iPhone Air\niPadOS 27 on iPad mini (A17 Pro), and iPad models with M1 and later\nmacOS 27 Golden Gate on\nMac computers with Apple silicon\nvisionOS 27 on Vision Pro\nwatchOS 27 on Apple Watch Series 9 or later, Apple Watch Ultra 2 or later, and Apple Watch SE 3, with an Apple Intelligence-enabled iPhone nearby\nDevice language\n and\nSiri language\n set to English\nSiri AI is not available in the EU on iOS, iPadOS, or watchOS. It is available in the EU on macOS 27 Golden Gate and visionOS 27 if your Apple Account region is in the EU and your device language and Siri language are both set to English. Siri AI will not work in China mainland if your Apple Account region is in mainland China.\nLearn more about\nSiri AI\n and feature availability.\nPublished Date:\nSeptember 14, 2026",
+      "facts": [
+        "「iOS 27 on iPhone 15 Pro models, iPhone 16 models or later, and iPhone Air」 — Siri AI 베타 요구 기종",
+        "「Device language and Siri language set to English」 — 게시일 2026-09-14 시점 요구 언어는 영어",
+        "EU는 iOS·iPadOS·watchOS 불가, macOS 27·visionOS 27은 영어 설정 시 가능. 중국 본토 Apple 계정은 작동 불가"
+      ]
+    },
+    {
+      "title": "Apple security releases - Apple Support",
+      "url": "https://support.apple.com/en-us/100100",
+      "host": "support.apple.com",
+      "tier": "data",
+      "publishedAt": "2026-09-28",
+      "readMethod": "curl 로 받은 Apple 페이지 원문 텍스트(태그만 제거)",
+      "body": "The latest version of iOS and iPadOS is 27.0.1. Learn how to\nupdate the software on your iPhone or iPad\n.\nThe latest version of macOS is 27.0.1. Learn how to\nupdate the software on your Mac\n and how to allow important\nbackground updates\n.\nThe latest version of tvOS is 27. Learn how to\nupdate the software on your Apple TV\n.\nThe latest version of watchOS is 27.0.1. Learn how to\nupdate the software on your Apple Watch\n.\nThe latest version of visionOS is 27.0.1. Learn how to\nupdate the software on your Apple Vision Pro\n.\nNote that after a software update is installed for iOS, iPadOS, tvOS, watchOS, and visionOS, it cannot be downgraded to the previous version.\nApple security updates\nName and information link\nAvailable for\nRelease date\niOS 27.0.1 and iPadOS 27.0.1\nThis update has no published CVE entries.\niPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later\n28 Sep 2026\niOS 26.7.1 and iPadOS 26.7.1\niPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later\n28 Sep 2026\nmacOS Golden Gate 27.0.1\nThis update has no published CVE entries.\nmacOS Golden Gate\n28 Sep 2026\nmacOS Tahoe 26.7.1\nmacOS Tahoe\n28 Sep 2026\nmacOS Sequoia 15.8.1\nmacOS Sequoia\n28 Sep 2026\nwatchOS 27.0.1\nThis update has no published CVE entries.\nApple Watch Series 9 and later\n28 Sep 2026\nvisionOS 27.0.1\nThis update has no published CVE entries.\nApple Vision Pro (all models)\n28 Sep 2026\nwatchOS 27.0.1\nThis update has no published CVE entries.\nApple Watch Series 12 and Apple Watch Ultra 4\n23 Sep 2026\niOS 27 and iPadOS 27\niPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later\n14 Sep 2026\niOS 26.7 and iPadOS 26.7\niPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later\n14 Sep 2026",
+      "facts": [
+        "「The latest version of iOS and iPadOS is 27.0.1.」 — 문서 게시일 2026-09-28 기준 최신은 iOS 27.0.1",
+        "iOS 27 and iPadOS 27 릴리스일 14 Sep 2026, 대상 「iPhone 11 and later」. iOS 27.0.1은 28 Sep 2026, 「no published CVE entries」, 대상 iPhone 11 and later",
+        "iOS 26.7 and iPadOS 26.7도 14 Sep 2026, iOS 26.7.1은 28 Sep 2026 — iOS 26 계열 보안 업데이트가 iOS 27과 나란히 제공됨",
+        "「after a software update is installed for iOS, iPadOS, tvOS, watchOS, and visionOS, it cannot be downgraded to the previous version.」 — 업데이트 후 이전 버전으로 되돌릴 수 없다"
+      ]
+    },
+    {
+      "title": "About the security content of iOS 26.7 and iPadOS 26.7 - Apple Support",
+      "url": "https://support.apple.com/en-us/149041",
+      "host": "support.apple.com",
+      "tier": "official",
+      "publishedAt": "2026-09-14",
+      "readMethod": "curl 로 받은 Apple 페이지 원문 텍스트(태그만 제거)",
+      "body": "About the security content of iOS 26.7 and iPadOS 26.7 - Apple Support\nApple\nStore\nMac\niPad\niPhone\nWatch\nVision\nAirPods\nTV & Home\nEntertainment\nAccessories\nSupport\n0\n+\nAbout the security content of iOS 26.7 and iPadOS 26.7\nThis document describes the security content of iOS 26.7 and iPadOS 26.7.\nAbout Apple security updates\nFor our customers' protection, Apple doesn't disclose, discuss, or confirm security issues until an investigation has occurred and patches or releases are available. Recent releases are listed on the\nApple security releases\n page.\nApple security documents reference vulnerabilities by\nCVE-ID\n when possible.\nFor more information about security, see the\nApple Product Security\n page.\niOS 26.7 and iPadOS 26.7\nReleased September 14, 2026\nAccelerate Framework\nAvailable for: iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later\nImpact: Processing a maliciously crafted image may lead to unexpected process termination\nDescription: An out-of-bounds write issue was addressed with improved bounds checking.\nCVE-2026-86882: Peter Malone\nAccessibility\nAvailable for: iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later\nImpact: An app may be able to access sensitive user data\nDescription: This issue was addressed with improved data protection.\nCVE-2026-43664: Stuart Wallace, Rosyna Keller of Totally Not Malicious Software, Jian Lee (@speedyfriend433), Ilya Andr (andrd3v), Gongyu Ma (@Mezone0), David Strnadel, Daniel Febrero, CJ Vana, Asaf Cohen\nAPFS\nAvailable for: iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later\nImpact: An app may be able to cause unexpected system termination or write kernel memory\nDescription: An out-of-bounds write issue was addressed with improved bounds checking.\nCVE-2026-84523: Cem Onat Karagun, an anonymous researcher",
+      "facts": [
+        "「iOS 26.7 and iPadOS 26.7 — Released September 14, 2026」, 대상 「iPhone 11 and later」 등 — 문서 전체가 보안 수정 내역(CVE)으로만 구성됨",
+        "iOS 27과 같은 날(2026-09-14) 나온 iOS 26 계열 업데이트라, iOS 27 지원 기종(iPhone 11 이상)과 iOS 26.7 대상이 iPhone 기준으로 동일"
+      ]
+    },
+    {
+      "title": "iPhone models compatible with iOS 27 - iPhone User Guide (Apple Support)",
+      "url": "https://support.apple.com/guide/iphone/iphone-models-compatible-with-ios-27-iphe3fa5df43/ios",
+      "host": "support.apple.com",
+      "tier": "official",
+      "publishedAt": null,
+      "readMethod": "curl 로 받은 Apple 페이지 원문 텍스트(태그만 제거)",
+      "body": "iPhone models compatible with iOS 27\niPhone 11\niPhone 11 Pro\niPhone 11 Pro Max\niPhone SE (2nd generation)\niPhone 12 mini\niPhone 12\niPhone 12 Pro\niPhone 12 Pro Max\niPhone 13 mini\niPhone 13\niPhone 13 Pro\niPhone 13 Pro Max\niPhone SE (3rd generation)\niPhone 14\niPhone 14 Plus\niPhone 14 Pro\niPhone 14 Pro Max\niPhone 15\niPhone 15 Plus\niPhone 15 Pro\niPhone 15 Pro Max\niPhone 16\niPhone 16 Plus\niPhone 16 Pro\niPhone 16 Pro Max\niPhone 16e\niPhone 17\niPhone 17 Pro\niPhone 17 Pro Max\niPhone Air\niPhone 17e\niPhone 18 Pro\niPhone 18 Pro Max",
+      "facts": [
+        "사용 설명서 목차의 iOS 27 호환 iPhone은 33항목: iPhone 11 · 11 Pro · 11 Pro Max · SE(2세대) · 12 mini · 12 · 12 Pro · 12 Pro Max · 13 mini · 13 · 13 Pro · 13 Pro Max · SE(3세대) · 14 · 14 Plus · 14 Pro · 14 Pro Max · 15 · 15 Plus · 15 Pro · 15 Pro Max · 16 · 16 Plus · 16 Pro · 16 Pro Max · 16e · 17 · 17 Pro · 17 Pro Max · Air · 17e · 18 Pro · 18 Pro Max",
+        "이 목록에도 iPhone Duo는 없다. SE는 2세대·3세대가 각각 별도 항목으로 나열됨"
+      ]
+    },
+    {
+      "title": "iOS 27 - Apple (apple.com/os/ios)",
+      "url": "https://www.apple.com/os/ios/",
+      "host": "www.apple.com",
+      "tier": "official",
+      "publishedAt": null,
+      "readMethod": "WebFetch 추출 텍스트(요약 모델 경유 — 문장은 원문과 대조 시 확인 필요)",
+      "body": "iOS 27 Compatible Devices. 「iOS 27 is compatible with these devices」 — iPhone Duo, iPhone 18 Pro Max, iPhone 18 Pro, iPhone 17 Pro Max, iPhone 17 Pro, iPhone Air, iPhone 17, iPhone 17e, and earlier models back through iPhone SE (2nd generation and later). Apple Intelligence Availability. 「Apple Intelligence is available on all iPhone 16 models and later, iPhone 15 Pro, iPhone 15 Pro Max」 plus select iPad, Mac, Apple Vision Pro, and Apple Watch models when paired with an enabled iPhone and set to supported languages. Siri AI Beta Status and Languages. 「Siri AI is available in beta in iOS 27, iPadOS 27, macOS 27, watchOS 27, and visionOS 27 and requires an Apple Intelligence–enabled device set to a supported language. Available in English to start.」 The page notes that 「Siri AI will not be initially available in the EU on iOS, iPadOS, and watchOS.」",
+      "facts": [
+        "apple.com 제품 페이지의 호환 기종 목록에는 iPhone Duo가 맨 앞에 포함됨(지원 문서 128058·사용 설명서 목록에는 없음)",
+        "「iPhone SE (2nd generation and later)」까지 호환 — Apple Intelligence는 iPhone 16 모델 이후·15 Pro·15 Pro Max",
+        "Siri AI는 영어 베타로 시작, EU의 iOS·iPadOS·watchOS는 초기 미제공"
+      ]
+    },
+    {
+      "title": "Apple unveils iPhone Duo - Apple Newsroom",
+      "url": "https://www.apple.com/newsroom/2026/09/apple-unveils-iphone-duo/",
+      "host": "www.apple.com",
+      "tier": "official",
+      "publishedAt": "2026-09-09",
+      "readMethod": "WebFetch 추출 텍스트(요약 모델 경유 — 문장은 원문과 대조 시 확인 필요)",
+      "body": "iPhone Duo Opening and Availability. iPhone Duo features a breakthrough foldable design that's beautiful, versatile, and durable — the device unveiled on September 9, 2026. Apple introduced its first foldable iPhone, featuring a 7.6-inch inner display; closed, the 5.4-inch outer display. The device incorporates an A20 Pro processor. Availability Section: iPhone Duo launches in two finishes: star white and night sky. Pre-orders begin Friday, October 16 at 5 a.m. PT, with general availability starting Friday, October 23 in over 70 countries including Australia, Canada, France, Germany, India, Japan, Mexico, South Korea, UK, and US markets. Twenty-eight additional regions receive availability October 30. Storage options span 256GB, 512GB, 1TB, and 2TB configurations at a $1,999 starting price. The device ships with iOS 27.1 preinstalled.",
+      "facts": [
+        "iPhone Duo 발표 2026-09-09, 사전 주문 2026-10-16(5 a.m. PT), 일반 판매 2026-10-23(한국 포함 70개국 이상), 추가 28개 지역은 10-30",
+        "iPhone Duo는 iOS 27.1이 사전 설치된 채 출시 — 2026-09-30 시점에는 아직 판매 전이라 「내 iPhone이 iOS 27 되나」 질문의 대상 기종이 아님(추정: 지원 문서 목록에 Duo가 없는 이유일 수 있으나 Apple이 이유를 밝힌 문서는 못 찾음)"
+      ]
+    },
+    {
+      "title": "iOS 27 is Compatible With These iPhone Models - MacRumors",
+      "url": "https://www.macrumors.com/2026/09/14/ios-27-compatible-iphones/",
+      "host": "www.macrumors.com",
+      "tier": "press",
+      "publishedAt": "2026-09-14",
+      "readMethod": "WebFetch 추출 텍스트(요약 모델 경유 — 문장은 원문과 대조 시 확인 필요)",
+      "body": "Publication Date: Monday, September 14, 2026. Compatible iPhone Count: 34 models. Full Compatible List: iPhone 18 Pro, iPhone 18 Pro Max, iPhone Duo, iPhone 17e, iPhone 17, iPhone 17 Pro, iPhone 17 Pro Max, iPhone Air, iPhone 16e, iPhone 16, iPhone 16 Plus, iPhone 16 Pro, iPhone 16 Pro Max, iPhone 15, iPhone 15 Plus, iPhone 15 Pro, iPhone 15 Pro Max, iPhone 14, iPhone 14 Plus, iPhone 14 Pro, iPhone 14 Pro Max, iPhone 13, iPhone 13 mini, iPhone 13 Pro, iPhone 13 Pro Max, iPhone 12, iPhone 12 mini, iPhone 12 Pro, iPhone 12 Pro Max, iPhone 11, iPhone 11 Pro, iPhone 11 Pro Max, iPhone SE (2nd generation and later). Models Dropped: None. 「iOS 27 is compatible with the exact same iPhone models as iOS 26, meaning the update is available for the iPhone 11 series and newer.」 Opening: 「Following three months of beta testing, Apple today released iOS 27. Is the software update compatible with your iPhone?」 Feature Restrictions: 「Siri AI and other Apple Intelligence features require an iPhone 15 Pro or newer.」",
+      "facts": [
+        "MacRumors는 iOS 27 호환 iPhone을 34개로 집계(iPhone Duo 포함). 목록 항목은 iPhone SE를 「2nd generation and later」 한 줄로 묶어 33줄이며, SE 2·3세대를 따로 세면 34",
+        "「iOS 27 is compatible with the exact same iPhone models as iOS 26」 — iOS 26 대비 탈락 기종 없음, iPhone 11 시리즈 이후",
+        "「Siri AI and other Apple Intelligence features require an iPhone 15 Pro or newer.」 — 기본 OS는 iPhone 11부터, AI 기능은 15 Pro 이상"
+      ]
+    },
+    {
+      "title": "iOS 27 Available Now With These 8 New Features - MacRumors",
+      "url": "https://www.macrumors.com/2026/09/14/ios-27-features-available-tomorrow/",
+      "host": "www.macrumors.com",
+      "tier": "press",
+      "publishedAt": "2026-09-14",
+      "readMethod": "WebFetch 추출 텍스트(요약 모델 경유 — 문장은 원문과 대조 시 확인 필요)",
+      "body": "Release Date & Time: iOS 27 became available 「around 10 a.m. Pacific Time / 1 p.m. Eastern Time」 on Monday, September 14, 2026. How to Update: 「iOS 27 should be available … via the Settings app, under General → Software Update.」 Siri AI Access: No beta signup or waitlist is mentioned in this article. The article notes that 「Siri AI is limited to English to start, and the feature will be subject to daily usage limits, with expanded access to be available for a fee in the future.」 Publication Date: The article was published Monday, September 14, 2026 at 9:00 a.m. PDT, with an update at 10 a.m. confirming Apple had released iOS 27.",
+      "facts": [
+        "iOS 27 공개 시각: 2026-09-14 월요일 「around 10 a.m. Pacific Time」(미국 서부). 한국 시각으로는 다음날 2026-09-15 새벽에 해당(산술 환산: PDT=UTC-7, KST=UTC+9, 16시간 차)",
+        "업데이트 경로 「Settings app, under General → Software Update」",
+        "Siri AI는 영어로 시작, 일일 사용량 제한, 확장 이용은 향후 유료"
+      ]
+    },
+    {
+      "title": "Apple Releases iOS 26.7 With Security Fixes - MacRumors",
+      "url": "https://www.macrumors.com/2026/09/14/apple-releases-ios-26-7/",
+      "host": "www.macrumors.com",
+      "tier": "press",
+      "publishedAt": "2026-09-14",
+      "readMethod": "WebFetch 추출 텍스트(요약 모델 경유 — 문장은 원문과 대조 시 확인 필요)",
+      "body": "Apple Releases iOS 26.7 With Security Fixes. By Juli Clover, Monday September 14, 2026 10:32 am PDT. Apple has released iOS 26.7 alongside iOS 27. The update appears as the default option in the Software Update interface, with iOS 27 listed as an optional selection at the bottom. According to Apple's release notes, this version focuses exclusively on security improvements. 「iOS 26.7 includes security fixes, but it does not have any other features.」 Users preferring to remain on iOS 26 can install this update instead of moving to iOS 27. Apple typically promotes major versions as the primary option after several weeks, so iOS 27 will likely become the standard recommendation in the coming weeks. iOS 27 supports the same iPhone models as iOS 26. The release notes for iOS 27 indicate it addresses over 100 security vulnerabilities, while iOS 26.7 provides more than 80 security fixes, with approximately 75 being shared across both versions.",
+      "facts": [
+        "2026-09-14 iOS 26.7이 iOS 27과 함께 배포. 소프트웨어 업데이트 화면에서 iOS 26.7이 기본(default) 항목, iOS 27은 「optional selection at the bottom」(아래쪽 선택 항목)으로 표시",
+        "「iOS 26.7 includes security fixes, but it does not have any other features.」 — 보안 수정 전용",
+        "iOS 27은 100개 넘는 보안 취약점, iOS 26.7은 80개 넘는 수정, 약 75개는 두 버전 공통(MacRumors 집계)"
+      ]
+    },
+    {
+      "title": "iOS 27: What's New, Release Date, Compatibility - Macworld",
+      "url": "https://www.macworld.com/article/2986799/ios-27-new-iphone-features-release-date-beta-compatiblity-apple-intelligence-siri.html",
+      "host": "www.macworld.com",
+      "tier": "press",
+      "publishedAt": "2026-09-29",
+      "readMethod": "WebFetch 추출 텍스트(요약 모델 경유 — 문장은 원문과 대조 시 확인 필요)",
+      "body": "iOS 27: What's New, Release Information, and Compatibility. By Jason Cross and Karen Haslam. Updated September 29, 2026. Release Date: iOS 27 became available to the public on September 14, 2026. The first minor update, iOS 27.0.1, rolled out on September 28 and addressed critical issues including unexpected restarts after failed Face ID authentication and a camera color problem affecting iPhone 18 Pro models. It also resolved a touchscreen freeze occurring when simultaneously opening Notification Center and Control Center. Delayed Features Not Available at Launch: Redesigned Health app (later in 2026); Additional Siri AI languages: French, Japanese, Korean, Portuguese and Spanish support arrives in October; Smarter suggested replies in Messages were removed before launch; Automatic password changes were removed shortly before release; SynthID identification for AI images will arrive in a later 2026 software update. iOS 27 Compatibility List: iOS 27 supports devices back to iPhone 11 and iPhone SE (2nd generation). However, Apple Intelligence and Siri AI require newer hardware. Apple Intelligence requirements: iPhone 15 Pro or iPhone 16 or later. Siri AI requirements: iPhone 15 Pro or later.",
+      "facts": [
+        "Macworld(2026-09-29 갱신): iOS 27 공개 2026-09-14, 첫 수정 업데이트 iOS 27.0.1은 2026-09-28",
+        "출시 시점에 빠진 기능: 재설계된 Health 앱(연내), Siri AI 프랑스어·일본어·한국어·포르투갈어·스페인어(10월), 메시지 스마트 답장 개선(출시 전 제거), 자동 비밀번호 변경(출시 직전 제거), SynthID(연내 업데이트)",
+        "Macworld 호환 목록에는 iPhone SE 2·3세대가 포함되고 iPhone Duo는 없음(iPhone 17e가 최신 일반 기종으로 표기)"
+      ]
+    },
+    {
+      "title": "Apple releases iOS 27.0.1 for iPhone, here's what's new - 9to5Mac",
+      "url": "https://9to5mac.com/2026/09/28/apple-releases-ios-27-0-1-for-iphone-heres-whats-new/",
+      "host": "9to5mac.com",
+      "tier": "press",
+      "publishedAt": "2026-09-28",
+      "readMethod": "WebFetch 추출 텍스트(요약 모델 경유 — 문장은 원문과 대조 시 확인 필요)",
+      "body": "Apple releases iOS 27.0.1 for iPhone, here's what's new. By Ryan Christoffel, Sep 28 2026 - 10:08 am PT. Apple has launched iOS 27.0.1, a bug-fix update for iPhones. The software is available through Settings > General > Software Update. Key Fixes, according to Apple's release notes: iPhone 18 Pro and Pro Max devices may unexpectedly restart when Face ID fails authentication; a color artifact may appear on photos taken at 2x zoom under certain lighting conditions on some iPhone 18 Pro and Max devices; opening Notification Center and Control Center simultaneously may cause touchscreen unresponsiveness. The Face ID restart issue had been previously reported, with Apple promising a fix within the week. The Notification Center/Control Center glitch affects all iPhone models, though older devices will likely receive other unmentioned improvements. iOS 27, the major update released two weeks prior, introduced bugs during its public launch that hadn't surfaced during beta testing. iPadOS 27.0.1 is also available today with general bug fixes for iPad users.",
+      "facts": [
+        "iOS 27.0.1: 2026-09-28 배포, 설정 > 일반 > 소프트웨어 업데이트로 받음. Apple 릴리스 노트상 수정 3건 — iPhone 18 Pro/Pro Max Face ID 실패 시 재시작, 2x 줌 사진 색 아티팩트(18 Pro/Pro Max 일부), 알림센터·제어센터 동시 열 때 터치 무반응(전 기종)",
+        "9to5Mac: iOS 27은 공개 후 베타에서 안 드러난 버그가 있었다고 서술(일부 독자 댓글엔 iPhone 17 연락처 검색 지연 언급 — 개인 제보 수준)"
+      ]
+    },
+    {
+      "title": "애플, 오는 14일 아이폰용 운영체제 'iOS 27' 정식 출시 - ZDNet Korea",
+      "url": "https://zdnet.co.kr/view/?no=20260910074836",
+      "host": "zdnet.co.kr",
+      "tier": "press",
+      "publishedAt": "2026-09-10",
+      "readMethod": "WebFetch 추출 텍스트(요약 모델 경유 — 문장은 원문과 대조 시 확인 필요)",
+      "body": "애플, 오는 14일 아이폰용 운영체제 'iOS 27' 정식 출시. 권봉석 기자, 2026/09/10 08:06. 애플이 6월 WWDC에서 공개한 아이폰용 새 운영체제 'iOS 27'을 오는 14일 정식 출시한다고 밝혔다. 애플은 iOS 27과 워치OS 27, 맥OS 골든 게이트 등에 한층 강화된 시리 AI와 애플 인텔리전스 기능을 적용했다. 지난 7월 말 공개된 iOS 26.6에는 이를 위한 사전 준비 작업으로 스팟라이트 검색 색인 작업을 미리 진행할 수 있는 코드가 포함됐다. 애플은 9일 개발자 대상으로 iOS 27 최종 빌드인 '릴리스 후보(RC)'를 배포한 상태다. 특별한 문제가 발견되지 않는다면 오는 14일 최종 빌드를 기반으로 한 정식 버전이 배포된다. iOS 27은 아이폰11(2019년)과 아이폰SE2(2020년)부터 쓸 수 있다. 기기 내 설정 앱에서 무료로 업데이트할 수 있다. 애플은 9일 아이패드OS 27, 맥OS 골든게이트, 워치OS 27 RC도 개발자에게 배포했다. 아이패드OS 27 역시 14일 정식 출시될 전망이다.",
+      "facts": [
+        "ZDNet Korea(2026-09-10 08:06): 정식 출시를 「오는 14일」로 예고, 9일(현지)에 개발자용 RC 배포",
+        "「iOS 27은 아이폰11(2019년)과 아이폰SE2(2020년)부터 쓸 수 있다. 기기 내 설정 앱에서 무료로 업데이트할 수 있다.」",
+        "지난 7월 말 공개된 iOS 26.6에 스팟라이트 검색 색인 사전 준비 코드가 포함됐다고 보도(업데이트 직후 백그라운드 작업이 있을 수 있다는 정황이나 배터리 영향은 이 기사에서 다루지 않음)"
+      ]
+    },
+    {
+      "title": "\"업데이트할까 말까\"…오늘 출시된 iOS 27, 달라진 점 한눈에 - 위키트리",
+      "url": "https://www.wikitree.co.kr/articles/1159520",
+      "host": "www.wikitree.co.kr",
+      "tier": "press",
+      "publishedAt": "2026-09-15",
+      "readMethod": "WebFetch 추출 텍스트(요약 모델 경유 — 문장은 원문과 대조 시 확인 필요)",
+      "body": "\"업데이트할까 말까\"…오늘 출시된 iOS 27, 달라진 점 한눈에. 정혁진 기자, 2026-09-15 08:13. 애플이 15일부터 iOS 27 정식 업데이트를 배포 중입니다. 국내 사용자는 '설정→일반→소프트웨어 업데이트'에서 다운로드할 수 있습니다. Siri AI 개선: 기존 시리를 대폭 개선한 Siri AI가 가장 주요 변화입니다. 메시지, 이메일, 사진 등 기기 내 정보를 활용하여 더 구체적인 요청을 처리합니다. 다만 한국어는 연내 제공 예정입니다. 사진 편집 강화: 사진 바깥 영역을 자연스럽게 확장하거나 구도를 다시 잡는 기능이 추가되었고, 불필요한 물체 제거 기능도 개선되었습니다. 성능 및 디자인: 앱 실행이 최대 30% 빨라졌으며, 사진 불러오기와 에어드롭 전송 속도도 개선되었습니다. 지원 기기: iOS 27은 아이폰11 시리즈부터 지원되나, AI 기능은 아이폰15 프로 이상 기종에서만 사용 가능합니다. (WebFetch 추출: 「iOS 27은 아이폰11 시리즈부터 지원된다. 아이폰11·12·13·14·15·16·17 시리즈와 아이폰 에어, 아이폰18 프로 시리즈, 아이폰 듀오가 대상이다. 아이폰 SE는 2세대 이후 모델에서 설치할 수 있다.」)",
+      "facts": [
+        "위키트리(2026-09-15 08:13): 「애플은 15일부터 iOS 27 정식 업데이트 배포를 시작했다」 — 한국 날짜 기준 15일",
+        "국내 경로 「설정→일반→소프트웨어 업데이트」. 지원 「아이폰11 시리즈부터」, 「아이폰 SE는 2세대 이후 모델」, AI 기능은 아이폰15 프로 이상",
+        "위키트리의 「앱 실행이 최대 30% 빨라졌다」는 Apple 뉴스룸 「apps launch up to 30 percent faster」와 일치(뉴스룸 각주: iPhone 11 Pro Max로 Apple이 2026년 8월 측정, 결과는 기기·설정에 따라 다르다고 명시) — 실사용 보장 수치가 아님",
+        "한국어 Siri AI를 「연내 제공 예정」으로 서술 — Apple 공식(뉴스룸 KR)은 「10월부터 베타 순차 제공」"
+      ]
+    },
+    {
+      "title": "애플 iOS 27 Siri AI, 신청해야 쓰는 베타로 출시…한국어는 10월에야 지원 - 위키트리",
+      "url": "https://www.wikitree.co.kr/articles/1160057",
+      "host": "www.wikitree.co.kr",
+      "tier": "press",
+      "publishedAt": "2026-09-16",
+      "readMethod": "WebFetch 추출 텍스트(요약 모델 경유 — 문장은 원문과 대조 시 확인 필요)",
+      "body": "애플 iOS 27 Siri AI, 신청해야 쓰는 베타로 출시…한국어는 10월에야 지원. 송태섭 기자, 2026-09-16 23:02. 애플이 월요일(현지시각) 아이폰 운영체제 iOS 27을 정식 출시했다. Siri AI는 아직 베타 단계로, 사용자가 직접 신청해야 쓸 수 있고 사용량에도 제한이 걸린다. Siri AI는 현재 영어로만 베타 형태로 제공된다. 프랑스어, 일본어, 한국어, 포르투갈어, 스페인어 지원은 10월에 추가될 예정이다. iOS 27로 업그레이드한 뒤 가장 먼저 해야 할 일은 베타 신청이다. 설정 앱에서 Siri 메뉴로 들어가 Try Siri AI (Beta) 링크를 탭하고 이후 화면마다 계속을 눌러 진행하면 된다. 애플은 iOS 27과 함께 구버전 사용자를 위한 iOS 26.7도 같은 날 배포했다. iOS 27을 지원하는 기기라면 설정의 일반 > 소프트웨어 업데이트 화면에서 두 버전이 모두 표시되며, iOS 27을 선택해 26.7을 건너뛸 수 있다. iOS 27은 120개 넘는 보안 취약점을 패치했다. 같은 날 배포된 iOS 26.7도 80개에 가까운 취약점을 손봤다. iOS 27은 아이폰 X, XR, XS, XS 맥스와 SE 2세대에서는 설치할 수 없다. 아이패드에서는 8세대 아이패드, 미니 5세대, 에어 3세대, 프로 11인치 1세대·12.9인치 3세대가 iPadOS 27 지원 대상에서 빠졌다.",
+      "facts": [
+        "위키트리(2026-09-16): iOS 27 공개 「월요일(현지시각)」 = 2026-09-14. Siri AI는 영어 베타, 「프랑스어, 일본어, 한국어, 포르투갈어, 스페인어 지원은 10월에 추가될 예정」",
+        "베타 신청 경로 「설정 앱 > Siri > Try Siri AI (Beta)」 — Apple 지원 문서 127893과 일치",
+        "iOS 27을 지원하는 기기는 설정의 일반 > 소프트웨어 업데이트에 iOS 26.7과 iOS 27이 모두 표시되고 iOS 27을 골라 26.7을 건너뛸 수 있다고 서술",
+        "이 기사 원문은 「iOS 27은 아이폰 X, XR, XS, XS 맥스와 SE 2세대에서는 설치할 수 없다」고 씀 — Apple 지원 문서(128058)의 「iPhone SE(2세대) 및 이후 모델」 호환 표기와 어긋남(conflicts 참고)",
+        "이 기사는 iOS 26.7이 「애플 뮤직 신규 기능과 새 이모지, 에어팟 맥스 2 지원…」을 포함한다고 서술 — Apple 보안 문서·MacRumors의 「보안 수정 전용」과 어긋남(conflicts 참고)"
+      ]
+    },
+    {
+      "title": "애플, 시리 AI 탑재 'iOS 27' 배포 시작...차세대 아이폰 출격 채비 - AI타임스",
+      "url": "https://www.aitimes.com/news/articleView.html?idxno=215300",
+      "host": "www.aitimes.com",
+      "tier": "press",
+      "publishedAt": "2026-09-15",
+      "readMethod": "WebFetch 추출 텍스트(요약 모델 경유 — 문장은 원문과 대조 시 확인 필요)",
+      "body": "애플, 시리 AI 탑재 'iOS 27' 배포 시작...차세대 아이폰 출격 채비. 박찬 기자, 2026.09.15 17:25. 애플은 14일(현지시간) iOS 27을 배포하고 새로운 시리 AI 기능을 베타 형태로 선보였다. 새로운 시리를 사용하려면 아이폰의 설정 앱에서 별도로 참여를 신청해야 하며, 초기 이용 수요에 따라 대기자 명단에 등록될 수도 있다. 현재는 영어로만 이용할 수 있지만, 10월부터 한국어를 비롯해 프랑스어, 일본어, 포르투갈어, 스페인어 등을 지원할 예정이다. 다만 클라우드 서버를 활용하는 일부 시리 AI와 애플 인텔리전스 기능에는 일일 사용량 제한이 적용된다. 애플은 기능별 복잡도와 시스템 수요 등에 따라 한도가 달라질 수 있으며, 앞으로 비용을 지불하면 더 높은 사용량을 제공할 계획이라고 밝혔다. 한편, 새로운 시리 AI는 초기에는 유럽연합(EU)과 중국에서 제공되지 않는다. 애플은 규제 문제를 이유로 들었다.",
+      "facts": [
+        "AI타임스(2026-09-15): 「애플은 14일(현지시간) iOS 27을 배포」 — 배포일은 미국 현지 기준 14일로 표기",
+        "「새로운 시리를 사용하려면 아이폰의 설정 앱에서 별도로 참여를 신청해야 하며, 초기 이용 수요에 따라 대기자 명단에 등록될 수도 있다」 — Apple 지원 문서 127893의 waitlist 안내와 일치",
+        "한국어는 「10월부터」 지원 예정, 일부 시리 AI·Apple Intelligence 기능에 일일 사용량 제한"
+      ]
+    },
+    {
+      "title": "iOS 27 Acting Up? How to Tame Your iPhone's New Update - iDrop News",
+      "url": "https://www.idropnews.com/how-to/fix-ios-27-update-problems/268447/",
+      "host": "www.idropnews.com",
+      "tier": "blog",
+      "publishedAt": "2026-09-14",
+      "readMethod": "WebFetch 추출 텍스트(요약 모델 경유 — 문장은 원문과 대조 시 확인 필요)",
+      "body": "iOS 27 Acting Up? How to Tame Your iPhone's New Update. By Chris Hauk, Published: Sep 14th, 2026. I Don't See the iOS 27 Update: When navigating to Settings > General > Software Update, users may not find iOS 27 immediately available. 「iOS 26.7 was also released today, and it's the default update, as Apple doesn't want to force people into the new release quite yet.」 Several troubleshooting steps are recommended: 1. Look further down the Software Update screen, as iOS 27 appears as an optional update below the default option. 2. Disable beta updates if currently running a beta version. 3. Ensure sufficient storage space — at least 25 GB free is suggested. 4. Use a stable Wi-Fi connection rather than relying on cellular data. 5. Restart your iPhone. 6. Wait several hours or days for Apple's servers to handle the update volume. My iPhone's Warm, It's Slow, and the Battery is Draining Fast: 「It is normal for your iPhone to run a bit warm and a little slower after installing a major iOS update like this one.」 because 「your iPhone is indexing content, syncing data, processing photos, and doing other background tasks.」",
+      "facts": [
+        "(블로그·보조) 「업데이트가 안 뜬다」의 흔한 원인으로 iOS 26.7이 기본 항목으로 먼저 보이고 iOS 27은 화면 아래쪽 선택 항목이라는 점을 제시 — MacRumors(1차 보도)로 교차 확인됨",
+        "(블로그·비공식) 여유 공간 「at least 25 GB free」 권장 — Apple 문서에는 iOS 27 업데이트 파일 용량·필요 여유 공간 수치가 없어 확인 불가, 글에 쓸 때는 개인 권장치로만 표기",
+        "(블로그) 베타 사용 중이면 베타 업데이트를 끄라는 팁, 설치 직후 발열·배터리 소모는 색인·동기화 등 백그라운드 작업 때문일 수 있다는 개인 견해 — Apple 공식 확인 문서는 못 찾음"
+      ]
+    }
+  ],
+  "conflicts": [
+    {
+      "about": "정식 배포일 (9월 14일 vs 15일)",
+      "a": "Apple 뉴스룸(EN·KR 모두 2026년 9월 14일 표기), Apple 보안 릴리스 표(14 Sep 2026), MacRumors(2026-09-14 월요일 약 10 a.m. PT), AI타임스(14일 현지시간), ZDNet Korea(9/10 예고 「오는 14일」)는 14일",
+      "b": "위키트리 1159520(2026-09-15 08:13 「애플은 15일부터 iOS 27 정식 업데이트 배포를 시작했다」)·파이낸셜뉴스(15일부터)는 한국 날짜 기준 15일. 미국 서부 10 a.m. PDT는 한국 시각 다음날 새벽이라 시간대 차이로 보임(산술 환산) — 글에서는 「미국 현지 9월 14일, 한국 시각 9월 15일 새벽」처럼 병기 권장"
+    },
+    {
+      "about": "지원 기종 수와 iPhone Duo 포함 여부",
+      "a": "MacRumors는 34개(iPhone Duo 포함)로 집계, apple.com/os/ios 호환 목록과 Apple 뉴스룸 Apple Intelligence 대상 문구에도 iPhone Duo가 들어 있음",
+      "b": "Apple 지원 문서 「iOS 27 다운로드 방법」(KR/US 모두)은 32줄, iPhone 사용 설명서 「호환 모델」 목차는 33항목이며 둘 다 iPhone Duo가 없음. Macworld 목록에도 Duo 없음. iPhone Duo는 2026-10-23(한국 포함) 판매 예정이라 9/30 현재 일반 구매 불가 — 목록 차이의 원인은 Apple이 밝힌 바를 찾지 못함(추정). 「34개」 수치를 쓰려면 Duo를 포함한 MacRumors 집계라는 점을 밝혀야 함"
+    },
+    {
+      "about": "iPhone SE(2세대) 지원 여부",
+      "a": "Apple 지원 문서(128058) 「iPhone SE(2세대) 및 이후 모델」 호환, 사용 설명서 목록에 SE(2세대)·SE(3세대) 포함, MacRumors「exact same iPhone models as iOS 26」, Macworld·ZDNet Korea(「아이폰SE2(2020년)부터」)·위키트리 1159520도 SE 2세대 이후 지원으로 서술",
+      "b": "위키트리 1160057(2026-09-16)은 「iOS 27은 아이폰 X, XR, XS, XS 맥스와 SE 2세대에서는 설치할 수 없다」고 서술. Apple 공식과 어긋나므로 글에서는 Apple 지원 문서를 따르고 이 기사 문구는 쓰지 않는 것이 안전"
+    },
+    {
+      "about": "한국어 Siri AI 제공 시기",
+      "a": "Apple 뉴스룸(KR): 「10월부터 … 한국어로도 베타 버전으로 순차 제공될 예정」, EN: 「Korean … coming in October」, Macworld·위키트리 1160057·AI타임스도 10월",
+      "b": "위키트리 1159520은 「한국어는 연내 제공 예정」으로 서술(공식 표현 「10월」보다 넓고 모호). 또한 2026-09-30 현재 한국어 Siri AI가 실제로 열렸는지는 확인하지 못함"
+    },
+    {
+      "about": "iOS 26.7의 내용",
+      "a": "Apple 보안 문서(149041)는 보안 수정(CVE) 내역만 수록, MacRumors는 Apple 릴리스 노트를 인용해 「iOS 26.7 includes security fixes, but it does not have any other features.」",
+      "b": "위키트리 1160057은 iOS 26.7에 애플 뮤직 신규 기능·새 이모지·에어팟 맥스 2 지원·키보드 인식 개선이 포함됐다고 서술 — 공식 문서로 확인 못 함. 글에서는 「보안 수정 중심」으로만 쓰는 것이 안전"
+    },
+    {
+      "about": "업데이트에 필요한 저장 공간",
+      "a": "Apple 공식 문서에는 iOS 27 업데이트 파일 크기·필요 여유 공간 수치가 없음. 공식 수치는 Apple Intelligence 기능용 「최대 8GB(일반) / 최대 14GB(iPhone 17 Pro·17 Pro Max·Air 등)」뿐",
+      "b": "iDrop News 등은 「25 GB free 권장」을 제시(비공식 권장치). 벤더 블로그(tenorshare 등)는 9.8GB·5~7GB+10~20GB 같은 수치를 제시했으나 본문을 읽어 검증하지 못해 채택하지 않음"
+    }
+  ],
+  "unknowns": [
+    "iOS 27 업데이트 파일의 정확한 용량(GB)과 설치에 필요한 여유 공간: Apple 지원 문서에 수치 없음. 기기마다 다르며 설정 > 일반 > 소프트웨어 업데이트의 「세부사항 더 보기」에서 확인하라는 문구만 있음(비공식 블로그 수치는 검증 못 함)",
+    "iOS 27.0(초기) 빌드 번호: OS X Daily 기사에 24A437이 있었으나 블로그 단일 출처라 채택하지 않음, Apple 공식 문서에서는 못 찾음",
+    "한국어 Siri AI 베타가 2026-09-30 현재 실제 제공되고 있는지, 10월 며칠인지: 공식은 「10월」까지만. 확인 못 함",
+    "설치 직후 발열·배터리 소모에 대한 Apple의 공식 입장: 못 찾음(Apple 문서에는 「네트워크 상태와 개인별 사용 방식 등 여러 요인이 배터리 및 시스템 성능에 영향」이라는 일반 문구만 있음). cybernews 기사는 403으로 읽지 못함",
+    "iPhone 11·12 등 구형 기종에서 업데이트를 미루라는 Apple 고객센터 권고 여부: 중국 매체발 주장만 검색됐고 공식 확인 못 함",
+    "iOS 27.1 정식 배포일: MacRumors가 iPhone Duo 출시(10/23) 전 배포를 예상한다고 했으나 Apple 공식 일정은 못 찾음(iPhone Duo는 iOS 27.1 사전 설치로 출시 예정만 공식 확인)",
+    "iPhone Duo가 Apple 지원 문서의 iOS 27 호환 목록에서 빠진 이유: Apple 설명 못 찾음",
+    "Apple 한국 뉴스룸의 iOS 27 전체 소프트웨어 발표문(한국어): Apple Intelligence 관련 KR 뉴스룸만 확인, 전체 발표문은 US 판만 읽음"
+  ]
+}

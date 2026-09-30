@@ -1,0 +1,497 @@
+{
+  "keyword": "엑셀 중복값 제거 중복 찾기 조건부 서식 UNIQUE 함수",
+  "categoryId": "hangeut-trend",
+  "slug": "excel-remove-duplicates",
+  "searchedAt": "2026-09-30",
+  "notes": "1) 말할 수 있는 것: MS 공식 문서(ko/en/Mac)로 뒷받침되는 세 도구(조건부 서식 표시 · 고급 필터 '고유 레코드만' · 데이터 도구 중복 제거)의 역할 차이와 실행 규칙(열 조합이 키·첫 항목 유지·전체 행 삭제·개요/부분합 불가), '같은 값'의 판정이 화면 표시값 기준이라는 점, TRIM(32)·코드 160 한계, UNIQUE 구문·스필·적용 버전(2021 이상)과 2016/2019 지원 종료(2025-10-14).\n2) 말하면 안 되는 것: 중복 제거·UNIQUE의 대소문자 무시(공식 문장 없음, 블로그 보조만), '내 데이터에 머리글 표시' 체크박스(공식 문서에 없음), 한국어 버튼 라벨 단정, 2019에서 UNIQUE '불가' 단정(적용 대상에 없다까지만), '중복 제거 되돌리기' 단정(공식 문서 안에서 영구 삭제 vs Ctrl+Z가 갈림 — claim 6 unclear, 양쪽 병기).\n3) 직접 실행·스크린샷 없이 문서 기반으로만 쓴 조사(기준일 2026-09-30). ko 공식 문서 일부는 기계번역으로 메뉴 경로·COUNTIF 예제가 깨져 있어 그대로 인용 금지. 공식(tier official/data) 문서 위주라 신뢰도는 높으나 화면 라벨은 미확인.",
+  "sources": [
+    {
+      "title": "중복 값 찾아 제거하기 | Microsoft Support (ko-kr)",
+      "url": "https://support.microsoft.com/ko-kr/office/%EC%A4%91%EB%B3%B5-%EA%B0%92-%EC%B0%BE%EC%95%84-%EC%A0%9C%EA%B1%B0%ED%95%98%EA%B8%B0-00e35bea-b46a-4d5d-b28e-66a552dc138d",
+      "host": "support.microsoft.com",
+      "body": "중복 값 찾아 제거하기 적용 대상 Microsoft 365용 Excel Excel 2024 Excel 2021 Excel 2019 Excel 2016 중복 값을 제거하려면 어떻게 해야 하나요? 고유 값을 필터링하려면 어떻게 해야 하나요? 중복 항목을 찾고 제거하는 방법에 대해 Copilot의 도움을 받으세요. 중복 데이터가 유용한 경우도 있고 데이터를 이해하기 어렵게 만드는 경우도 있습니다. 조건부 서식을 사용하여 중복 데이터를 찾고 강조 표시하세요. 그러면 중복 값을 검토하고 제거 여부를 결정할 수 있습니다. 중복 값을 확인할 셀을 선택합니다. 참고 Excel에서는 피벗 테이블 보고서의 값 영역에 있는 중복 항목을 강조 표시할 수 없습니다. 홈 > , 조건부 서식 > , 셀 강조 표시, 규칙 > , 중복 값을 선택합니다. 값 다음 의 상자에서 중복 값에 적용할 서식을 선택한 다음 확인을 선택합니다 . 중복 값 제거 중복 제거 기능을 사용하면 중복 데이터가 영구적으로 삭제됩니다. 실수로 정보가 손실되지 않도록 중복 항목을 삭제하기 전에 원본 데이터를 다른 워크시트로 이동하거나 복사 하는 것이 좋습니다. 제거할 중복 값이 있는 셀 범위를 선택합니다. 팁 중복 값을 제거하기 전에 데이터에서 윤곽선이나 부분합을 제거 합니다. 데이터 > 중복 제거 를 선택한 다음 열 아래에서 중복을 제거할 열을 검사하거나 선택 취소합니다. 예를 들어 이 워크시트에서 1월 열에는 유지해야 하는 가격 정보가 있습니다. 이렇게 하려면 중복 제거 상자에서 1월 을 선택 취소합니다. 확인 을 선택합니다. 참고 제거 후 제공된 중복 및 고유 값의 수에는 빈 셀, 공백 등이 포함될 수 있습니다.",
+      "tier": "official",
+      "publishedAt": "2026-07-28",
+      "facts": [
+        "적용 대상 표기: Microsoft 365용 Excel · Excel 2024 · Excel 2021 · Excel 2019 · Excel 2016 (5종). 페이지 메타 ms.date=2026-07-28(문서 갱신 기준일).",
+        "조건부 서식 경로(ko 문서 표기 그대로): \"홈 > , 조건부 서식 > , 셀 강조 표시, 규칙 > , 중복 값을 선택합니다.\" 이어서 \"값 다음의 상자에서 중복 값에 적용할 서식을 선택한 다음 확인을 선택합니다.\" (영문판은 Home > Conditional Formatting > Highlight Cells Rules > Duplicate Values, 상자 이름 \"values with\")",
+        "\"Excel에서는 피벗 테이블 보고서의 값 영역에 있는 중복 항목을 강조 표시할 수 없습니다.\"",
+        "\"중복 제거 기능을 사용하면 중복 데이터가 영구적으로 삭제됩니다. 실수로 정보가 손실되지 않도록 중복 항목을 삭제하기 전에 원본 데이터를 다른 워크시트로 이동하거나 복사하는 것이 좋습니다.\"",
+        "팁: \"중복 값을 제거하기 전에 데이터에서 윤곽선이나 부분합을 제거\"한다.",
+        "\"데이터 > 중복 제거를 선택한 다음 열 아래에서 중복을 제거할 열을 검사하거나 선택 취소합니다.\" 문서 예: 1월 열에 유지해야 할 가격 정보가 있으면 중복 제거 상자에서 1월을 선택 취소.",
+        "\"제거 후 제공된 중복 및 고유 값의 수에는 빈 셀, 공백 등이 포함될 수 있습니다.\""
+      ]
+    },
+    {
+      "title": "고유 값 필터링 또는 중복 값 제거 | Microsoft Support (ko-kr, Windows·웹 탭)",
+      "url": "https://support.microsoft.com/ko-kr/excel/get-started/filter-for-unique-values-or-remove-duplicate-values",
+      "host": "support.microsoft.com",
+      "body": "고유 값 필터링 또는 중복 값 제거 적용 대상 Microsoft 365용 Excel Excel 2024 Excel 2021 Excel 2019 Excel 2016 고유 값을 필터링하거나 중복을 제거하는 방법에 대해 알려주세요. 고급 조건부 서식 규칙을 편집할 수 없다면 어떻게 하나요? 고유하거나 중복된 항목에 조건을 어떻게 적용해야 하나요? Windows 웹 Excel에서는 고유 값을 필터링하거나 중복 값을 제거하는 여러 가지 방법을 사용할 수 있습니다. 고유 값을 필터링하려면 데이터 > 정렬 & > 필터 고급 을 선택합니다. 중복 값을 제거하려면 Data > Data Tools > 중복 제거 를 선택합니다. 고유 또는 중복 값을 강조 표시하려면 홈 탭의 스타일 그룹에서 조건부 서식 명령을 사용합니다. 고유 값 필터링 또는 중복 값 제거에 대해 알아보기 고유 값 필터링 및 중복 값 제거는 고유 값 목록을 표시하는 것이 목적이므로 유사한 두 작업입니다. 그러나 중요한 차이점이 있습니다. 고유 값을 필터링하면 중복 값이 일시적으로만 숨겨집니다. 그러나 중복 값을 제거한다는 것은 중복 값이 영구적으로 삭제된다는 것을 의미합니다. 중복 값은 적어도 한 행의 모든 값이 다른 행의 모든 값과 동일한 값입니다. 중복 값 비교는 셀에 저장된 기본 값이 아니라 셀에 나타나는 내용에 따라 달라집니다. 예를 들어 서로 다른 셀에 동일한 날짜 값이 있는 경우 하나는 \"3/8/2006\"으로 서식이 지정되고 다른 하나는 \"Mar 8, 2006\"으로 지정되어 있으면 값이 고유합니다. 중복 제거 전에 확인: 중복 값을 제거하기 전에 먼저 고유한 값을 필터링하거나 조건부 서식을 지정하여 예상한 결과를 얻을 수 있는지 확인하는 것이 좋습니다. 고유 값 필터링 단계 셀 범위를 선택하거나 표에 활성 셀이 있는지 확인합니다. 정렬 & 필터 그룹에서 데이터 고급을 선택합니다 > . 고급 필터 팝업 상자에서 다음 중 하나를 수행합니다. 셀 또는 표 범위를 현재 위치에서 필터링하려면 목록 필터링을 선택합니다. 필터 결과를 다른 위치에 복사하려면 다음을 수행합니다. 다른 위치에 복사를 선택합니다. 복사 위치 상자에 셀 참조를 입력합니다. 또는 대화 상자 축소 를 선택하여 팝업 창을 일시적으로 숨기고 워크시트에서 셀을 선택한 다음 확장, 선택합니다. 고유 레코드만 선택한 다음 확인 을 선택합니다. 범위의 고유 값이 새 위치로 복사됩니다. 중복 값 제거 중복 값을 제거하면 셀 또는 표 범위의 값에만 영향이 적용됩니다. 셀이나 표의 범위 밖에 있는 다른 값은 변경되거나 이동되지 않습니다. 중복을 제거하면 목록에서 값의 첫 번째 항목은 유지되지만 다른 동일한 값은 삭제됩니다. 데이터를 영구적으로 삭제하므로 중복 값을 제거하기 전에 원래 셀 범위나 표를 다른 워크시트나 통합 문서에 복사하는 것이 좋습니다. 단계 셀 범위를 선택하거나 표에 활성 셀이 있는지 확인합니다. 데이터 탭에서 데이터 도구 그룹에서 중복 제거 를 선택합니다. 다음 중 하나 이상을 실행합니다. 열에서 하나 이상의 열을 선택합니다 . 모든 열을 빠르게 선택하려면 모두 선택 을 선택합니다. 모든 열을 빠르게 지우려면 모두 선택 취소 를 선택합니다. 셀 범위 또는 표에 열이 많은데 몇 개의 열만 선택하려는 경우 모두 선택 취소 를 선택한 다음 열 아래에서 해당 열을 선택하는 것이 더 쉬울 수 있습니다. 참고 이 단계에서 모든 열을 선택하지 않더라도 모든 열에서 데이터가 제거됩니다. 예를 들어 Column1과 Column2를 선택하고 Column3을 선택하지 않으면 중복을 찾는 데 사용되는 \"키\"는 BOTH Column1 & Column2의 값이 됩니다. 해당 열에서 중복이 발견되면 테이블 또는 범위의 다른 열을 포함하여 전체 행이 제거됩니다. 확인을 선택하면 제거된 중복 값 수 또는 남아 있는 고유 값의 수를 나타내는 메시지가 나타납니다. 확인 을 선택하여 이 메시지를 해제합니다. 실행 취소를 선택하거나 키보드에서 Ctrl+Z를 눌러 변경 내용을 실행 취소합니다. 개요 또는 부분합 데이터에서 중복 제거 문제 개요가 표시되거나 부분합이 있는 개요 데이터에서는 중복 값을 제거할 수 없습니다. 중복 항목을 제거하려면 윤곽선과 부분합을 모두 제거해야 합니다. 자세한 내용은 워크시트의 데이터 목록 개요 및 부분합 제거 를 참조하세요. 고유 값 또는 중복 값에 조건부 서식 지정 참고 피벗 테이블 보고서의 값 영역에 있는 필드는 고유 값이나 중복 값을 기준으로 조건부 서식을 지정할 수 없습니다. 팁 \"중복 값\" 서식 규칙을 사용할 때 \"Office 작성 언어 및 언어 교정\" 설정이 일본어와 같은 DBCS(더블바이트 문자 집합) 인코딩을 사용하는 언어로 설정된 경우 반자 및 전자는 동일하게 처리됩니다. 이 둘을 구분해야 하는 경우 COUNTIF 수식과 함께 \"수식을 사용하여 이 수식에 맞는지 확인\" 규칙 유형을 사용할 수 있습니다. 예를 들어 A2:A400 범위에서 중복 값을 식별하려면 조건부 서식에 \"=COUNTIF($A$2:$A$400,A2)> 1\" 수식을 적용합니다. 빠른 서식 지정 단계 범위, 표 또는 피벗 테이블 보고서에서 한 개 이상의 셀을 선택합니다. 홈 탭의 스타일 그룹에서 조건부 서식 에 대한 작은 화살표를 선택한 다음 셀 강조 규칙 을 선택하고 중복 값을 선택합니다. 사용할 값을 입력하고 서식을 선택합니다. 고급 서식 지정 단계 범위, 표 또는 피벗 테이블 보고서에서 한 개 이상의 셀을 선택합니다. 홈 탭의 스타일 그룹에서 조건부 서식 화살표를 선택한 다음 규칙 관리를 선택하여 조건부 서식 규칙 관리자 팝업 창을 표시합니다. 다음 중 하나를 실행합니다. 조건부 서식을 추가하려면 새 규칙을 선택하여 새 서식 규칙 팝업 창을 표시합니다. 조건부 서식을 변경하려면 서식 규칙 표시 목록에서 적절한 워크시트 또는 표가 선택되어 있는지 먼저 확인합니다. 필요한 경우 선택 축 소 축소 단추 팝업 창에서 축 일시적으로 숨깁니다. 워크시트에서 새 셀 범위를 선택한 다음 팝업 창 합니다. 규칙을 선택한 다음 규칙 편집 을 선택하여 서식 규칙 편집 팝업 창을 표시합니다. 규칙 유형 선택 에서 고유 또는 중복 값만 서식을 지정합니다. 규칙 설명 편집 의 모두 서식 목록에서 고유 또는 중복 을 선택합니다. 서식을 선택하여 셀 서식 팝업 창을 표시합니다. 셀 값이 조건을 만족할 때 적용할 숫자, 글꼴, 테두리 또는 채우기 서식을 선택한 다음 확인 을 선택합니다. 여러 개의 서식을 선택할 수 있습니다. 선택한 서식이 [미리 보기] 패널에 표시됩니다. 웹용 Excel에서 중복 값을 제거할 수 있습니다. 중복 값 제거 중복 값을 제거하면 셀 또는 표 범위의 값에만 영향이 적용됩니다. 셀이나 표의 범위 밖에 있는 다른 값은 변경되거나 이동되지 않습니다. 중복을 제거하면 목록에서 값의 첫 번째 항목은 유지되지만 다른 동일한 값은 삭제됩니다. 중요 중복 항목을 제거한 후에는 언제든지 실행 취소 를 선택하여 데이터를 다시 가져올 수 있습니다. 즉, 중복 값을 제거하기 전에 원래 셀 범위 또는 표를 다른 워크시트나 통합 문서에 복사하는 것이 좋습니다. 단계 셀 범위를 선택하거나 표에 활성 셀이 있는지 확인합니다. 데이터 탭에서 중복 제거를 선택합니다. 중복 제거 대화 상자에서 중복 값을 제거하지 않으려는 열을 선택 취소합니다. 참고 이 단계에서 모든 열을 선택하지 않더라도 모든 열에서 데이터가 제거됩니다. 예를 들어 Column1과 Column2를 선택하고 Column3을 선택하지 않으면 중복을 찾는 데 사용되는 \"키\"는 BOTH Column1 & Column2의 값이 됩니다. Column1 및 Column2에서 중복이 발견되면 Column3의 데이터를 포함하여 전체 행이 제거됩니다. 확인 을 선택하면 제거된 중복 값의 수를 나타내는 메시지가 나타납니다. 확인 을 선택하여 이 메시지를 해제합니다. 참고 데이터를 다시 가져오려면 실행 취소 를 선택하거나 키보드에서 Ctrl+Z 를 누르면 됩니다.",
+      "tier": "official",
+      "publishedAt": "2025-10-13",
+      "facts": [
+        "적용 대상: Microsoft 365용 Excel · Excel 2024 · 2021 · 2019 · 2016 (5종). 페이지에 \"Windows\" / \"웹\" 두 탭이 있다. 메타 ms.date=2025-10-13.",
+        "\"고유 값을 필터링하면 중복 값이 일시적으로만 숨겨집니다. 그러나 중복 값을 제거한다는 것은 중복 값이 영구적으로 삭제된다는 것을 의미합니다.\"",
+        "중복 값 정의: \"중복 값은 적어도 한 행의 모든 값이 다른 행의 모든 값과 동일한 값입니다. 중복 값 비교는 셀에 저장된 기본 값이 아니라 셀에 나타나는 내용에 따라 달라집니다.\" 예: 같은 날짜가 \"3/8/2006\"과 \"Mar 8, 2006\"으로 서식이 다르면 값이 고유.",
+        "\"중복 값을 제거하기 전에 먼저 고유한 값을 필터링하거나 조건부 서식을 지정하여 예상한 결과를 얻을 수 있는지 확인하는 것이 좋습니다.\"",
+        "고급 필터: 데이터 탭 정렬&필터 그룹 > 고급 → 고급 필터 상자에서 \"목록 필터링\"(현재 위치) 또는 \"다른 위치에 복사\"(복사 위치 상자에 셀 참조) → \"고유 레코드만\" 선택 → 확인. \"범위의 고유 값이 새 위치로 복사됩니다.\" (ko 문서 이 대목은 기계번역으로 어순이 깨져 있음: \"데이터 > 정렬 & > 필터 고급\")",
+        "중복 제거 경로: 데이터 탭 > 데이터 도구 그룹 > 중복 제거. 열 아래 하나 이상 선택, \"모두 선택\"/\"모두 선택 취소\" 버튼 있음.",
+        "\"중복을 제거하면 목록에서 값의 첫 번째 항목은 유지되지만 다른 동일한 값은 삭제됩니다.\" 셀·표 범위 밖의 값은 변경·이동되지 않는다.",
+        "참고: \"이 단계에서 모든 열을 선택하지 않더라도 모든 열에서 데이터가 제거됩니다.\" Column1·Column2만 선택하고 Column3은 선택하지 않으면 중복을 찾는 \"키\"는 Column1 & Column2 값 둘 다이고, 중복이 발견되면 Column3 데이터를 포함해 전체 행이 제거된다.",
+        "\"확인을 선택하면 제거된 중복 값 수 또는 남아 있는 고유 값의 수를 나타내는 메시지가 나타납니다.\" \"실행 취소를 선택하거나 키보드에서 Ctrl+Z를 눌러 변경 내용을 실행 취소합니다.\"",
+        "\"개요가 표시되거나 부분합이 있는 개요 데이터에서는 중복 값을 제거할 수 없습니다. 중복 항목을 제거하려면 윤곽선과 부분합을 모두 제거해야 합니다.\"",
+        "조건부 서식 빠른 서식: 홈 탭 스타일 그룹 > 조건부 서식 > 셀 강조 규칙 > 중복 값. 고급: 조건부 서식 > 규칙 관리 > 새 규칙 > 규칙 유형 \"고유 또는 중복 값만 서식을 지정합니다\" > 모두 서식 목록에서 \"고유\" 또는 \"중복\" 선택. 피벗 테이블 값 영역 필드는 고유/중복 기준 서식 지정 불가.",
+        "DBCS 팁: \"Office 작성 언어 및 언어 교정\" 설정이 일본어 등 DBCS 언어이면 \"중복 값\" 규칙은 반자와 전자를 동일하게 처리한다. 구분하려면 \"수식을 사용하여 이 수식에 맞는지 확인\" 규칙에 COUNTIF 수식(예: A2:A400 범위에 \"=COUNTIF($A$2:$A$400,A2)> 1\")을 쓴다.",
+        "웹 탭: \"웹용 Excel에서 중복 값을 제거할 수 있습니다.\" 안내되는 절차는 중복 제거뿐이다(데이터 탭 > 중복 제거 → 대화 상자에서 제거하지 않으려는 열 선택 취소 → 확인 → 제거된 수 메시지). 웹 탭에서 \"중요: 중복 항목을 제거한 후에는 언제든지 실행 취소를 선택하여 데이터를 다시 가져올 수 있습니다. 즉, 원래 셀 범위 또는 표를 다른 워크시트나 통합 문서에 복사하는 것이 좋습니다.\" 고급 필터·조건부 서식의 웹 지원 여부는 이 문서가 명시하지 않는다."
+      ]
+    },
+    {
+      "title": "Filter for unique values or remove duplicate values | Microsoft Support (en-us, Windows·Web tabs)",
+      "url": "https://support.microsoft.com/en-us/office/filter-for-unique-values-or-remove-duplicate-values-ccf664b0-81d6-449b-bbe1-8daaec1e83c2",
+      "host": "support.microsoft.com",
+      "body": "Filter for unique values or remove duplicate values Applies To Excel for Microsoft 365 Excel 2024 Excel 2021 Excel 2019 Excel 2016 Tell me about FILTER for UNIQUE values or remove duplicate What if I can't edit advanced conditional formatting rules? How should I apply conditional to UNIQUE or duplicate? Windows Web In Excel, there are several ways to filter for unique values—or remove duplicate values: To filter for unique values, select Data > Sort & Filter > Advanced . To remove duplicate values, select Data > Data Tools > Remove Duplicates . To highlight unique or duplicate values, from the Home tab, use the Conditional Formatting command in the Style group. Learn about filtering for unique values or removing duplicate values Filtering for unique values and removing duplicate values are two similar tasks, since the objective is to present a list of unique values. There is a critical difference, however: When you filter for unique values, the duplicate values are only hidden temporarily. However, removing duplicate values means that you are permanently deleting duplicate values. A duplicate value is one in which all values in at least one row are identical to all of the values in another row. A comparison of duplicate values depends on what appears in the cell—not the underlying value stored in the cell. For example, if you have the same date value in different cells, one formatted as \"3/8/2006\" and the other as \"Mar 8, 2006\", the values are unique. Check before removing duplicates: Before removing duplicate values, it's a good idea to first try to filter on—or conditionally format on—unique values to confirm that you achieve the results you expect. Filter for unique values Follow these steps: Select the range of cells or ensure that the active cell is in a table. Select Data > Advanced (in the Sort & Filter group). In the Advanced Filter popup box, do one of the following: To filter the range of cells or table in place: Select Filter the list, in-place . To copy the results of the filter to another location: Select Copy to another location . In the Copy to box, enter a cell reference. Alternatively, select Collapse Dialog to temporarily hide the popup window, select a cell on the worksheet, and then select Expand . Check the Unique records only , then select OK . The unique values from the range will copy to the new location. Remove duplicate values When you remove duplicate values, the only effect is on the values in the range of cells or table. Other values outside the range of cells or table will not change or move. When duplicates are removed, the first occurrence of the value in the list is kept, but other identical values are deleted. Because you are permanently deleting data, it's a good idea to copy the original range of cells or table to another worksheet or workbook before removing duplicate values. Follow these steps: Select the range of cells or ensure that the active cell is in a table. On the Data tab, select Remove Duplicates (in the Data Tools group). Do one or more of the following: Under Columns , select one or more columns. To quickly select all columns, select Select All . To quickly clear all columns, select Unselect All . If the range of cells or table contains many columns and you want to only select a few columns, you may find it easier to select Unselect All , and then under Columns , select those columns. Note Data will be removed from all columns, even if you don't select all the columns at this step. For example, if you select Column1 and Column2, but not Column3, then the “key” used to find duplicates is the value of BOTH Column1 & Column2. If a duplicate is found in those columns, then the entire row will be removed, including other columns in the table or range. Select OK , and a message will appear to indicate how many duplicate values were removed, or how many unique values remain. Select OK to dismiss this message. Undo the change by select Undo (or pressing Ctrl+Z on the keyboard). Problems removing duplicates from outlined or subtotaled data You cannot remove duplicate values from outline data that is outlined or that has subtotals. To remove duplicates, you must remove both the outline and the subtotals. For more information, see Outline a list of data in a worksheet and Remove subtotals . Conditionally format unique or duplicate values Note You cannot conditionally format fields in the Values area of a PivotTable report by unique or duplicate values. Tip When using the \"Duplicate Values\" formatting rule, if the \"Office authoring languages and proofing\" setting is set to a language that uses Double-byte character set (DBCS) encoding, such as Japanese, halfwidth and fullwidth characters are treated the same. If you need to differentiate between them, you can use the \"Use a formula to determine where this formula is true\" rule type with a COUNTIF formula. For example, to identify duplicate values in the range A2:A400, apply the formula \"=COUNTIF($A$2:$A$400,A2)> 1\" for conditional formatting. Quick formatting Follow these steps: Select one or more cells in a range, table, or PivotTable report. On the Home tab, in the Style group, select the small arrow for Conditional Formatting , and then select Highlight Cells Rules , and select Duplicate Values . Enter the values that you want to use and then choose a format. Advanced formatting Follow these steps: Select one or more cells in a range, table, or PivotTable report. On the Home tab, in the Styles group, select the arrow for Conditional Formatting , and then select Manage Rules to display the Conditional Formatting Rules Manager popup window. Do one of the following: To add a conditional format, select New Rule to display the New Formatting Rule popup window. To change a conditional format, begin by ensuring that the appropriate worksheet or table has been chosen in the Show formatting rules for list. If necessary, choose another range of cells by selecting Collapse button in the Applies to popup window temporarily hide it. Choose a new range of cells on the worksheet, then expand the popup window again . Select the rule, and then select Edit rule to display the Edit Formatting Rule popup window. Under Select a Rule Type , select Format only unique or duplicate values . In the Format all list of Edit the Rule Description , choose either unique or duplicate . Select Format to display the Format Cells popup window. Select the number, font, border, or fill format that you want to apply when the cell value satisfies the condition, and then select OK . You can choose more than one format. The formats that you select are displayed in the Preview panel. In Excel for the web, you can remove duplicate values. Remove duplicate values When you remove duplicate values, the only effect is on the values in the range of cells or table. Other values outside the range of cells or table will not change or move. When duplicates are removed, the first occurrence of the value in the list is kept, but other identical values are deleted. Important You can always select Undo to get back your data after you have removed the duplicates. That being said, it's a good idea to copy the original range of cells or table to another worksheet or workbook before removing duplicate values. Follow these steps: Select the range of cells or ensure that the active cell is in a table. On the Data tab, select Remove Duplicates . In the Remove Duplicates dialog box, unselect any columns where you don't want to remove duplicate values. Note Data will be removed from all columns, even if you don't select all the columns at this step. For example, if you select Column1 and Column2, but not Column3, then the “key” used to find duplicates is the value of BOTH Column1 & Column2. If a duplicate is found in Column1 and Column2, then the entire row will be removed, including data from Column3. Select OK , and a message will appear to indicate how many duplicate values were removed. Select OK to dismiss this message. Note If you want to get back your data, simply select Undo (or press Ctrl+Z on the keyboard).",
+      "tier": "official",
+      "publishedAt": "2025-10-13",
+      "facts": [
+        "Applies To: Excel for Microsoft 365, Excel 2024, Excel 2021, Excel 2019, Excel 2016. Tabs: Windows / Web. 메타 ms.date=2025-10-13.",
+        "\"A duplicate value is one in which all values in at least one row are identical to all of the values in another row. A comparison of duplicate values depends on what appears in the cell—not the underlying value stored in the cell. For example, if you have the same date value in different cells, one formatted as \"3/8/2006\" and the other as \"Mar 8, 2006\", the values are unique.\"",
+        "\"When duplicates are removed, the first occurrence of the value in the list is kept, but other identical values are deleted.\"",
+        "\"Because you are permanently deleting data, it's a good idea to copy the original range of cells or table to another worksheet or workbook before removing duplicate values.\"",
+        "Undo: \"Undo the change by select Undo (or pressing Ctrl+Z on the keyboard).\" Web tab: \"You can always select Undo to get back your data after you have removed the duplicates.\"",
+        "\"You cannot remove duplicate values from outline data that is outlined or that has subtotals. To remove duplicates, you must remove both the outline and the subtotals.\"",
+        "Web tab first line: \"In Excel for the web, you can remove duplicate values.\"",
+        "조건부 서식 빠른 서식 영문 경로: Home tab > Styles group > Conditional Formatting > Highlight Cells Rules > Duplicate Values; 고급: Manage Rules > New Rule > \"Format only unique or duplicate values\" > unique/duplicate."
+      ]
+    },
+    {
+      "title": "Filter for or remove duplicate values (Excel for Mac) | Microsoft Support",
+      "url": "https://support.microsoft.com/en-ie/office/filter-for-or-remove-duplicate-values-662c153f-cf21-4d7b-a5af-a9390648eb37?ui=en-us&rs=en-ie&ad=ie",
+      "host": "support.microsoft.com",
+      "body": "Filter for or remove duplicate values Applies To Excel for Microsoft 365 for Mac Excel 2024 for Mac Excel 2021 for Mac Tell me about FILTER for or remove duplicate values. Help me understand filtering for UNIQUE values or removing How do I find or highlight duplicates? Filtering for unique values and removing duplicate values are two closely related tasks because the displayed results are the same — a list of unique values. The difference, however, is important. When you filter for unique values, you temporarily hide duplicate values, but when you remove duplicate values, you permanently delete duplicate values. A duplicate value is one where all values in the row are an exact match of all values in another row. Duplicate values are determined by the value displayed in the cell and not necessarily the value stored in the cell. For example, if you have the same date value in different cells, one formatted as \"12/8/2017\" and the other as \"Dec 8, 2017\", the values are unique. It's a good idea to filter for or conditionally format unique values first to confirm that the results are what you want before removing duplicate values. Note If the formula in the cells is different, but the values are the same, they are considered duplicates. For example, if cell A1 contains the formula =2-1 and cell A2 contains the formula =3-2 , as long as the value is formatted the same, they are considered to be duplicate values. If the same value is formatted using different number formats, they are not considered duplicates. For example, if the value in cell A1 is formatted as 1.00 and the value in cell A2 is formatted as 1 , they are not considered duplicates. Filter for unique values Select the range of cells, or make sure that the active cell is in a table. On the Data tab, in the Sort & Filter group, click Advanced . Do one of the following: To Do this Filter the range of cells or table in place Select the range of cells, and then click Filter the list, in-place . Copy the results of the filter to another location Select the range of cells, click Copy to another location , and then in the Copy to box, enter a cell reference. Note: If you copy the results of the filter to another location, the unique values from the selected range are copied to the new location. The original data is not affected. Select the Unique records only check box, and then click OK . More options Remove duplicate values When you remove duplicate values, only the values in the selected range of cells or table are affected. Any other values outside the range of cells or table are not altered or moved. Because you are permanently deleting data, it's a good idea to copy the original range of cells or table to another sheet or workbook before removing duplicate values. Note You cannot remove duplicate values from data that is outlined or that has subtotals. To remove duplicates, you must remove both the outline and the subtotals first. Select the range of cells, or make sure that the active cell is in a table. On the Data tab, in the Data Tools group, click Remove Duplicates . Select one or more of the check boxes, which refer to columns in the table, and then click Remove Duplicates . Tip If the range of cells or table contains many columns and you want to only select a few columns, clear the Select All check box and select only the columns that you want. Apply conditional formatting to unique or duplicate values You can apply conditional formatting to unique or duplicate values so that they can be seen easily. Color coding duplicate data, for example, can help you locate and, if necessary, remove that data. Select one or more cells in a range, table, or PivotTable report. On the Home tab, in the Styles group, click Conditional Formatting , point to Highlight Cells Rules , and then click Duplicate Values . Select the options that you want in the New Formatting Rule dialog box, and then click OK . Apply advanced conditional formatting rules to unique or duplicate values You can create a rule to color code unique or duplicate data in your sheet. This is especially helpful when your data includes multiple sets of duplicate values. Select one or more cells in a range, table, or PivotTable report. On the Home tab, in the Styles group, click Conditional Formatting , and then click New Rule . In the Style list, choose Classic , and then in the Format only top or bottom ranked values list, choose Format only unique or duplicate values . In the values in the selected range list, choose either unique or duplicate . In the Format with list, select an option for how you want the unique or duplicate values to be formatted.",
+      "tier": "official",
+      "publishedAt": "2025-10-06",
+      "facts": [
+        "Applies To: Excel for Microsoft 365 for Mac, Excel 2024 for Mac, Excel 2021 for Mac (Mac용 3종만 표기, Mac 2019 는 표기 없음). 메타 ms.date=2025-10-06.",
+        "\"Duplicate values are determined by the value displayed in the cell and not necessarily the value stored in the cell.\" 예: \"12/8/2017\" vs \"Dec 8, 2017\" → 고유.",
+        "\"If the formula in the cells is different, but the values are the same, they are considered duplicates.\" (A1 =2-1, A2 =3-2, 서식이 같으면 중복)",
+        "\"If the same value is formatted using different number formats, they are not considered duplicates.\" 예: A1 \"1.00\" 형식, A2 \"1\" 형식 → 중복 아님.",
+        "Mac 경로: Data tab > Sort & Filter group > Advanced → \"Filter the list, in-place\" 또는 \"Copy to another location\"(Copy to 상자) → \"Unique records only\" 체크 → OK. \"If you copy the results of the filter to another location, the unique values from the selected range are copied to the new location. The original data is not affected.\"",
+        "Mac 중복 제거: Data tab > Data Tools group > Remove Duplicates → 표의 열에 해당하는 체크박스를 선택. 팁: 열이 많으면 Select All 을 지운 뒤 필요한 열만 선택. \"Because you are permanently deleting data, it's a good idea to copy the original range of cells or table to another sheet or workbook.\"",
+        "\"You cannot remove duplicate values from data that is outlined or that has subtotals.\"",
+        "Mac 조건부 서식: Home tab > Styles group > Conditional Formatting > Highlight Cells Rules > Duplicate Values. 고급: Conditional Formatting > New Rule > Style 목록 \"Classic\" > \"Format only unique or duplicate values\" > unique 또는 duplicate 선택."
+      ]
+    },
+    {
+      "title": "UNIQUE 함수 | Microsoft Support (ko-kr)",
+      "url": "https://support.microsoft.com/ko-kr/excel/functions/unique-function",
+      "host": "support.microsoft.com",
+      "body": "UNIQUE 함수 적용 대상 Microsoft 365용 Excel Mac용 Microsoft 365용 Excel Excel 2024 Mac용 Excel 2024 Excel 2021 Mac용 Excel 2021 Microsoft365.com iPad용 Excel iPhone용 Excel Android 태블릿용 Excel Android 휴대폰용 Excel UNIQUE 함수는 목록 또는 범위에서 고유 값의 목록을 반환합니다. 값 목록에서 고유 값 반환 이름 목록에서 고유 이름 반환 구문 =UNIQUE(array,[by_col],[exactly_once]) UNIQUE 함수에는 다음과 같은 인수가 사용됩니다. 인수 설명 array 필수 고유한 행 또는 열을 반환할 범위 또는 배열입니다 [by_col] 선택 사항 by_col 인수는 비교 방법을 나타내는 논리값입니다. TRUE 는 열을 서로 비교하고 고유한 열을 반환합니다 FALSE (또는 생략)는 행을 서로 비교하고 고유한 행을 반환합니다 [exactly_once] 선택 사항 exactly_once 인수는 범위 또는 배열에서 정확히 한 번 나타나는 행 또는 열을 반환하는 논리값입니다. 고유의 데이터베이스 개념입니다. TRUE 는 범위 또는 배열에서 정확히 한 번 발생하는 모든 고유 행 또는 열을 반환합니다 FALSE (또는 생략)는 범위 또는 배열에서 고유한 행 또는 열을 모두 반환합니다. 참고 배열은 값의 행이나 열, 또는 값의 행과 열의 조합으로 생각할 수 있습니다. 위의 예제에서 UNIQUE 수식의 배열 범위는 각각 D2:D11 및 D2:D17입니다. UNIQUE 함수는 배열을 반환합니다. 이 배열이 수식의 최종 결과인 경우에는 인접 셀로 결과를 분산됩니다. 즉, 사용자가 ENTER 키를 누르면 Excel은 적절한 크기의 배열 범위를 동적으로 생성합니다. 관련 데이터가 Excel 표 인 경우, 구조적 참조 를 사용하고 있다면 사용자가 배열 범위에서 데이터를 추가하거나 제거함에 따라 배열의 크기가 자동으로 조정됩니다. 자세한 내용은 분산된 배열 동작 에 대한 문서를 참조하세요. Excel에서는 통합 문서 간의 동적 배열을 제한적으로 지원하므로 이 시나리오는 두 통합 문서가 열려 있는 경우에만 지원됩니다. 원본 통합 문서를 닫는 경우 연결된 모든 동적 배열 수식은 새로 고칠 때 #REF! 오류를 반환합니다. 예제 예제 1 이 예제에서는 SORT와 UNIQUE를 함께 사용하여 고유한 이름 목록을 오름차순으로 반환합니다. 예제 2 이 예제에서는 exactly_once 인수가 TRUE로 설정되어 있으며 함수는 서비스를 한 번 받은 고객만 반환합니다. 이는 추가 서비스를 위해 돌아오지 않은 사람들을 식별하여 연락하려는 경우에 유용할 수 있습니다. 예제 3 이 예제에서는 앰퍼샌드(&)를 사용하여 성과 이름을 전체 이름으로 연결합니다. 수식은 A2:A12 및 B2:B12의 전체 이름 범위를 참조합니다. 이렇게 하면 Excel에서 모든 이름의 배열을 반환할 수 있습니다. 팁 Excel 표 로 이름 범위의 서식을 지정하면 이름을 추가하거나 제거할 때 수식이 자동으로 업데이트됩니다. 이름 목록을 정렬하려면 =SORT 함수 를 추가할 수 있습니다. =SORT(UNIQUE(B2:B12&\" \"&A2:A12)) 예제 4 이 예제에서는 두 열을 비교하고 열 사이의 고유 값만 반환합니다.",
+      "tier": "official",
+      "publishedAt": "2026-01-16",
+      "facts": [
+        "적용 대상 11종: Microsoft 365용 Excel, Mac용 Microsoft 365용 Excel, Excel 2024, Mac용 Excel 2024, Excel 2021, Mac용 Excel 2021, Microsoft365.com, iPad용 Excel, iPhone용 Excel, Android 태블릿용 Excel, Android 휴대폰용 Excel. Excel 2019·2016 은 목록에 없다. 메타 ms.date=2026-01-16 (영문판도 동일 날짜).",
+        "\"UNIQUE 함수는 목록 또는 범위에서 고유 값의 목록을 반환합니다.\" 구문: =UNIQUE(array,[by_col],[exactly_once])",
+        "array 필수: \"고유한 행 또는 열을 반환할 범위 또는 배열\". by_col 선택: TRUE 는 열끼리 비교해 고유한 열 반환, FALSE(또는 생략)는 행끼리 비교해 고유한 행 반환.",
+        "exactly_once 선택: TRUE 는 \"범위 또는 배열에서 정확히 한 번 발생하는 모든 고유 행 또는 열\"을 반환(문서: \"고유의 데이터베이스 개념\"), FALSE(또는 생략)는 고유한 행/열을 모두 반환.",
+        "\"UNIQUE 함수는 배열을 반환합니다. 이 배열이 수식의 최종 결과인 경우에는 인접 셀로 결과를 분산됩니다. 즉, 사용자가 ENTER 키를 누르면 Excel은 적절한 크기의 배열 범위를 동적으로 생성합니다.\" Excel 표 + 구조적 참조를 쓰면 데이터 추가·삭제에 따라 배열 크기가 자동 조정된다.",
+        "\"Excel에서는 통합 문서 간의 동적 배열을 제한적으로 지원하므로 이 시나리오는 두 통합 문서가 열려 있는 경우에만 지원됩니다. 원본 통합 문서를 닫는 경우 연결된 모든 동적 배열 수식은 새로 고칠 때 #REF! 오류를 반환합니다.\"",
+        "문서 예제: 예제1 SORT+UNIQUE 로 고유한 이름 오름차순, 예제2 exactly_once=TRUE 로 서비스를 한 번 받은 고객만, 예제3 =SORT(UNIQUE(B2:B12&\" \"&A2:A12)) 로 성+이름 연결 후 고유 목록, 예제4 두 열을 비교해 고유 값만 반환."
+      ]
+    },
+    {
+      "title": "Office 2021의 새로운 기능 | Microsoft Support (ko-kr)",
+      "url": "https://support.microsoft.com/ko-kr/office/whats-new/what-s-new-in-office-2021",
+      "host": "support.microsoft.com",
+      "body": "리본에서 현대화된 시작 환경 및 새로 고친 탭으로 작업하세요. 단색 아이콘, 무채색 팔레트, 부드러운 창 모서리로 깔끔하고 선명해진 스타일을 경험하세요. 이러한 업데이트는 작업을 전달하고 간단한 시각적 개체로 기능을 제공합니다. 새로운 기능: 참고 : 시각적 새로 고침은 Office LTSC 2021에서 사용할 수 없습니다. 왼쪽 보기, 오른쪽 보기 여기에 XLOOKUP이 있습니다! XLOOKUP을 사용하여 테이블 또는 범위에서 행별로 필요한 것을 찾습니다. 적용 대상: 자세한 정보 동적 배열 하나의 수식을 작성하고 값 배열을 반환합니다. 6가지 새로운 함수( FILTER , SORT , SORTBY , UNIQUE , SEQUENCE 및 RANDARRAY )로 계산과 인사이트의 속도를 높입니다. 적용 대상: 자세한 정보 LET 함수 LET 함수는 계산 결과에 이름을 할당합니다. 이를 통해 수식 안에 중간 계산, 값을 저장하거나 이름을 정의할 수 있습니다. 적용 대상: 자세한 정보 XMATCH 함수 XMATCH 함수는 배열 또는 셀 범위에서 지정된 항목을 검색한 다음 항목의 상대 위치를 반환합니다. XMATCH를 사용하여 배열의 값을 반환할 수도 있습니다. 적용 대상: 자세한 정보 시트 보기 다른 사용자를 방해하지 않고 Excel 워크시트에서 사용자 지정된 보기를 만듭니다. 적용 대상: 자세한 정보 참고 : 시트 보기는 Excel LTSC 2021에서 사용할 수 없습니다. 접근성 리본 접근성 리본은 접근성 있는 콘텐츠를 만드는 데 필요한 모든 도구를 한 곳에 배치합니다. 적용 대상: 자세한 정보 참고 : Excel LTSC 2021에서는 접근성 리본을 사용할 수 없습니다. 새롭게 개선된 슬라이드 쇼 녹화 이제 슬라이드 쇼 녹화가 비디오 녹음/녹화, 잉크 녹화 및 레이저 포인터 녹화를 지원합니다. 적용 대상: 자세한 정보",
+      "tier": "official",
+      "publishedAt": "2026-08-25",
+      "facts": [
+        "\"동적 배열: 하나의 수식을 작성하고 값 배열을 반환합니다. 6가지 새로운 함수(FILTER, SORT, SORTBY, UNIQUE, SEQUENCE 및 RANDARRAY)로 계산과 인사이트의 속도를 높입니다.\" (Office 2021 신기능 문서, 메타 ms.date=2026-08-25)",
+        "이 문서에는 Excel 2019 와의 직접 비교 문장이 없다(UNIQUE 가 2021 에서 새로 들어온 6개 함수 중 하나라는 것만 확인)."
+      ]
+    },
+    {
+      "title": "TRIM 함수 | Microsoft Support (ko-kr)",
+      "url": "https://support.microsoft.com/ko-kr/excel/functions/trim-function",
+      "host": "support.microsoft.com",
+      "body": "TRIM 함수 적용 대상 Microsoft 365용 Excel Mac용 Microsoft 365용 Excel Excel 2024 Mac용 Excel 2024 Excel 2021 Mac용 Excel 2021 Excel 2019 Excel 2016 이 문서에서는 Microsoft Excel의 TRIM 함수에 사용되는 수식 구문과 이 함수를 사용하는 방법을 설명합니다. 설명 단어 사이에 있는 하나의 공백을 제외하고 텍스트의 모든 공백을 제거합니다. 다른 응용 프로그램에서 받은 텍스트에 불필요한 공백이 있는 경우 TRIM 함수를 사용합니다. 중요 TRIM 함수는 텍스트에서 7비트 ASCII 공백 문자(값 32)를 잘라내도록 설계되었습니다. 유니코드 문자 집합에는 십진수 값이 160인 줄 바꿈하지 않는 공백 문자가 추가로 포함되어 있습니다. 이 문자는 일반적으로 웹 페이지에서 HTML 엔터티 ** **로 사용됩니다. TRIM 함수 단독으로는 줄 바꿈하지 않는 공백 문자를 제거할 수 없습니다. 텍스트에서 두 공백 문자를 모두 잘라내는 방법에 대한 예제는 데이터를 클린하는 상위 10가지 방법을 참조하세요. 구문 TRIM(text) TRIM 함수 구문은 텍스트 인수에 다음 중 하나를 사용합니다. 필수 요소입니다. 문자열 공백을 제거할 텍스트입니다. 텍스트는 따옴표로 묶어야 합니다. 셀 공백을 제거할 텍스트가 포함된 셀 참조입니다. 예제 예제 1: =TRIM(\" Sales report \")는 \"Sales report\"의 시작과 끝에서 공백을 제거합니다. 예제 2: =TRIM(C3)은 C3 셀 내용의 시작과 끝에 있는 공백을 제거합니다. 예제 3: =TRIM(CLEAN(B5))은 TRIM 및 CLEAN 함수를 결합하여 공백과 클린 문자열을 제거합니다. 예제 4: 다음 표의 예제 데이터를 복사하여 새 Excel 워크시트의 A1 셀에 붙여 넣습니다. 수식의 결과를 표시하려면 수식을 선택하고 F2 키를 누른 다음 Enter 키를 누릅니다. 필요한 경우 열 너비를 조정하면 데이터를 모두 표시할 수 있습니다. 수식 설명 결과 =TRIM(\" 1분기 수입 \") 수식에 있는 텍스트에서 앞/뒤 공백을 제거합니다(1분기 수입). 1분기 수입",
+      "tier": "official",
+      "publishedAt": "2026-01-07",
+      "facts": [
+        "\"단어 사이에 있는 하나의 공백을 제외하고 텍스트의 모든 공백을 제거합니다.\" 구문 TRIM(text). 적용 대상 8종(Microsoft 365 · Mac 365 · 2024 · Mac 2024 · 2021 · Mac 2021 · 2019 · 2016). 메타 ms.date=2026-01-07.",
+        "중요: \"TRIM 함수는 텍스트에서 7비트 ASCII 공백 문자(값 32)를 잘라내도록 설계되었습니다. 유니코드 문자 집합에는 십진수 값이 160인 줄 바꿈하지 않는 공백 문자가 추가로 포함되어 있습니다. 이 문자는 일반적으로 웹 페이지에서 HTML 엔터티로 사용됩니다. TRIM 함수 단독으로는 줄 바꿈하지 않는 공백 문자를 제거할 수 없습니다.\"",
+        "문서 예제: =TRIM(\" Sales report \") → 앞뒤 공백 제거, =TRIM(CLEAN(B5)) → 공백과 인쇄 안 되는 문자 함께 제거."
+      ]
+    },
+    {
+      "title": "데이터를 정리하는 10가지 주요 방법 | Microsoft Support (ko-kr)",
+      "url": "https://support.microsoft.com/ko-kr/excel/top-ten-ways-to-clean-your-data",
+      "host": "support.microsoft.com",
+      "body": "데이터를 정리하는 10가지 주요 방법 적용 대상 Microsoft 365용 Excel 중복 행 제거 중복 행은 데이터를 가져올 때 일반적으로 발생하는 문제입니다. 중복 값을 제거하기 전에 먼저 고유 값을 필터링하여 원하는 결과가 맞는지 확인하는 것이 좋습니다. 추가 정보 설명 텍스트에서 공백 및 인쇄되지 않는 문자 제거 경우에 따라 텍스트 값에 선행, 후행 또는 여러 개의 포함된 공백 문자(유니코드 문자 집합 값 32 및 160) 또는 인쇄할 수 없는 문자(유니코드 문자 집합 값 0 - 31, 127, 129, 141, 143, 144 및 157)가 포함될 수 있습니다. 이러한 문자로 인해 정렬, 필터링 또는 검색 시 예기치 않은 결과가 나올 수 있습니다. 예를 들어 외부 데이터 원본에서 사용자가 실수로 공백 문자를 추가하여 입력 오류를 만들거나 외부 원본에서 가져온 텍스트 데이터가 텍스트에 포함된 인쇄되지 않는 문자를 포함할 수 있습니다. 이러한 문자는 쉽게 인식되지 않으므로 예기치 않은 결과를 이해하기 어려울 수 있습니다. 원치 않는 문자를 제거하려면 TRIM, CLEAN, SUBSTITUTE 함수 조합을 사용할 수 있습니다. 추가 정보 설명 CODE 텍스트 문자열의 첫째 문자를 나타내는 코드값을 반환합니다. CLEAN 텍스트에서 7비트 ASCII 코드(값 0-31)의 인쇄되지 않는 처음 32자를 제거합니다. TRIM 텍스트에서 7비트 ASCII 공백 문자(값 32)를 제거합니다. SUBSTITUTE SUBSTITUTE 함수를 사용하여 상위 값 유니코드 문자(값 127, 129, 141, 143, 144, 157, 160)를 TRIM 및 CLEAN 함수가 설계된 7비트 ASCII 문자로 바꿀 수 있습니다. 숫자와 숫자 기호 수정 데이터를 정리해야 할 수도 있는 두 가지 주요 숫자 관련 문제는 실수로 숫자를 텍스트로 가져온 경우와 음수 기호를 조직의 표준으로 변경해야 하는 경우입니다.",
+      "tier": "official",
+      "publishedAt": "2026-04-30",
+      "facts": [
+        "\"중복 행은 데이터를 가져올 때 일반적으로 발생하는 문제입니다. 중복 값을 제거하기 전에 먼저 고유 값을 필터링하여 원하는 결과가 맞는지 확인하는 것이 좋습니다.\" (메타 ms.date=2026-04-30)",
+        "\"경우에 따라 텍스트 값에 선행, 후행 또는 여러 개의 포함된 공백 문자(유니코드 문자 집합 값 32 및 160) 또는 인쇄할 수 없는 문자(유니코드 문자 집합 값 0 - 31, 127, 129, 141, 143, 144 및 157)가 포함될 수 있습니다. 이러한 문자로 인해 정렬, 필터링 또는 검색 시 예기치 않은 결과가 나올 수 있습니다.\"",
+        "\"원치 않는 문자를 제거하려면 TRIM, CLEAN, SUBSTITUTE 함수 조합을 사용할 수 있습니다.\" CLEAN 은 값 0-31 의 인쇄 안 되는 처음 32자, TRIM 은 값 32 공백을 제거. \"SUBSTITUTE 함수를 사용하여 상위 값 유니코드 문자(값 127, 129, 141, 143, 144, 157, 160)를 TRIM 및 CLEAN 함수가 설계된 7비트 ASCII 문자로 바꿀 수 있습니다.\"",
+        "대소문자 정리 함수 3종: LOWER(소문자), UPPER(대문자), PROPER(단어 첫 글자만 대문자). 같은 페이지에 \"텍스트로 저장된 숫자를 숫자 서식으로 변환\" 링크도 있다(숫자가 텍스트로 들어온 경우가 흔한 정리 대상)."
+      ]
+    },
+    {
+      "title": "Microsoft Excel에서 COUNTIF 함수 사용 | Microsoft Support (ko-kr)",
+      "url": "https://support.microsoft.com/ko-kr/excel/get-started/use-the-countif-function-in-microsoft-excel",
+      "host": "support.microsoft.com",
+      "body": "Microsoft Excel에서 COUNTIF 함수 사용 적용 대상 Microsoft 365용 Excel Mac용 Microsoft 365용 Excel Excel 2024 Mac용 Excel 2024 Excel 2021 Mac용 Excel 2021 통계 함수 중 하나인 COUNTIF를 사용하여 조건에 맞는 셀의 수를 계산합니다. 예를 들어 특정 도시가 고객 목록에 표시되는 횟수를 세는 데 사용합니다. 가장 간단한 형식의 COUNTIF는 다음과 같은 의미입니다. =COUNTIF(찾으려는 위치, 찾으려는 항목) 예: =COUNTIF(A2:A5,\"런던\") =COUNTIF(A2:A5,A4) 구문 COUNTIF(range, criteria) 인수 이름 설명 range (필수 요소) 개수를 구하려는 셀의 그룹입니다. 범위에는 숫자, 배열, 명명된 범위 또는 숫자가 포함된 참조가 포함될 수 있습니다. Excel에서는 빈 값과 텍스트 값을 무시합니다. 워크시트에서 범위를 선택하는 방법 알아보기 criteria (필수 요소) COUNTIF 개수를 결정하는 숫자, 식, 셀 참조 또는 텍스트 문자열입니다. 예를 들어 32와 같은 숫자, \">32\"와 같은 비교, B4와 같은 셀 또는 \"사과\"와 같은 단어를 사용할 수 있습니다. COUNTIF는 하나의 조건만 사용합니다. 여러 개의 조건을 사용하려는 경우 COUNTIFS 를 사용합니다. Excel에서 COUNTIF 사용 예 Excel에서 이러한 예제를 사용하려면 다음 표의 데이터를 복사하여 새 워크시트의 A1 셀에 붙여 넣습니다. 데이터 데이터 사과 32 오렌지 54 복숭아 75 사과 86 수식 설명 =COUNTIF(A2:A5,\"오미자\") 셀 A2에서 A5까지의 범위에서 사과가 포함된 셀의 개수를 계산합니다. 결과는 2입니다. =COUNTIF(A2:A5,A4) 셀 A2에서 A5까지의 범위에서 복숭아(A4의 값)가 포함된 셀의 개수를 계산합니다. 결과는 1입니다. =COUNTIF(A2:A5,A2)+COUNTIF(A2:A5,A3) 셀 A2에서 A5까지 사과(A2의 값) 및 오렌지(A3의 값) 개수를 계산합니다. 결과는 3입니다. 이 수식에서는 COUNTIF를 두 번 사용하여 식당 조건 하나씩 여러 조건을 지정합니다. COUNTIFS 함수를 사용할 수도 있습니다. =COUNTIF(B2:B5,\">55\") 셀 B2에서 B5까지의 범위에서 값이 55보다 큰 셀의 개수를 계산합니다. 결과는 2입니다. =COUNTIF(B2:B5,\"\"<>&B4) 셀 B2에서 B5까지의 범위에서 값이 75가 아닌 셀의 개수를 계산합니다. 앰퍼샌드(&)는 같지 않음<>(\"\")의 비교 연산자와 B4의 값을 병합하여 =COUNTIF(B2:B5,\"<>75\")로 읽습니다. 결과는 3입니다. =COUNTIF(B2:B5,\">=32\")-COUNTIF(B2:B5,\"<=85\") B2부터 B5까지의 셀에서 값이 ()보다 크>거나 같거나 같거나 (=) 32이고 값이< ()보다 작거나 같은(=) 85인 셀의 수를 계산합니다. 결과는 1입니다. =COUNTIF(A2:A5,\"*\") 셀 A2에서 A5까지의 범위에서 텍스트가 포함된 셀의 개수를 계산합니다. 별표(*)가 임의의 문자와 일치시키는 와일드카드 문자로 사용됩니다. 결과는 4입니다. =COUNTIF(A2:A5,\"??자\") 셀 A2에서 A5까지의 범위에서 \"자\"로 끝나고 글자 수가 정확히 7개인 셀의 개수를 계산합니다. 물음표(?)가 개별 문자와 일치시키는 와일드카드 문자로 사용됩니다. 결과는 2입니다. Excel의 일반적인 COUNTIF 오류 문제 해결 문제 원인 긴 문자열에 대해 잘못된 값이 반환됩니다. COUNTIF 함수를 사용하여 255자를 초과하는 문자열을 일치시킬 경우 잘못된 결과가 반환됩니다. 255자를 초과하는 문자열과 일치시키려면 CONCATENATE 함수 또는 결합 연산자 &를 사용합니다. 예를 들어 =COUNTIF(A2:A5,\"긴 문자열\"&\"다른 긴 문자열\")을 사용할 수 있습니다. 값을 예상했지만 아무런 값이 반환되지 않습니다. criteria 인수는 따옴표로 묶어야 합니다. COUNTIF 수식에서 다른 워크시트를 참조할 때 #VALUE! 오류가 표시됩니다. 이 오류는 함수가 포함된 수식이 닫힌 워크시트의 셀 또는 범위를 참조하고 셀을 계산하는 경우 발생합니다. 이 기능이 작동하려면 다른 통합 문서가 열려 있어야 합니다. Excel에서 COUNTIF를 사용하는 모범 사례 방법 이유 COUNTIF는 텍스트 문자열에서 대소문자를 무시합니다. 조건은 대/소문자를 구분하지 않습니다. 즉, 문자열 \"apples\"와 문자열 \"APPLES\"는 동일한 셀과 일치합니다. 와일드카드 문자를 사용합니다. 조건 에 물음표(?) 및 별표(*) 와일드카드를 사용합니다. 물음표는 한 문자에 해당합니다. 별표는 개수에 상관없는 임의의 문자열에 해당합니다. 실제 물음표나 별표를 찾으려면 해당 문자 앞에 물결표(~)를 입력합니다. 예를 들어 =COUNTIF(A2:A5,\"apple?\")는 다를 수 있는 마지막 문자가 있는 \"apple\"의 모든 인스턴스 수를 계산합니다. 데이터에 잘못된 문자가 없는지 확인합니다. 텍스트 값을 계산할 때는 데이터에 앞/뒤 공백을 두거나, 곧은 따옴표와 둥근 따옴표를 일관성 없이 사용하거나, 인쇄할 수 없는 문자를 사용하지 않도록 주의하세요. 그럴 경우 COUNTIF에서 예기치 않은 값이 반환될 수 있습니다. CLEAN 함수 또는 TRIM 함수 를 사용해 보세요. 편의를 위해 이름이 지정된 범위를 사용합니다. COUNTIF는 =COUNTIF(fruit,\">=32\")-COUNTIF(fruit,\">85\")와 같은 수식에서 명명된 범위를 지원합니다. 이름이 지정된 범위는 현재 워크시트, 동일한 통합 문서의 다른 워크시트 또는 다른 통합 문서에 있을 수 있습니다. 다른 통합 문서에서 지정된 범위를 참조하려면 해당 통합 문서도 열려 있어야 합니다. 참고 COUNTIF 함수는 배경색이나 글꼴 색을 기준으로 셀 수를 계산할 수 없습니다. 그러나 VBA(Visual Basic for Applications)로 작성된 UDF(User-Defined 함수)를 사용하면 배경이나 글꼴 색에 따라 셀의 수를 계산하거나 다른 작업을 수행할 수 있습니다.",
+      "tier": "official",
+      "publishedAt": "2026-08-06",
+      "facts": [
+        "적용 대상 6종: Microsoft 365용 Excel · Mac용 Microsoft 365용 Excel · Excel 2024 · Mac용 Excel 2024 · Excel 2021 · Mac용 Excel 2021 (2019·2016 표기 없음). 메타 ms.date=2026-08-06.",
+        "구문 COUNTIF(range, criteria). 모범 사례: \"COUNTIF는 텍스트 문자열에서 대소문자를 무시합니다. 조건은 대/소문자를 구분하지 않습니다. 즉, 문자열 \"apples\"와 문자열 \"APPLES\"는 동일한 셀과 일치합니다.\"",
+        "\"COUNTIF 함수를 사용하여 255자를 초과하는 문자열을 일치시킬 경우 잘못된 결과가 반환됩니다.\" (255자 초과는 CONCATENATE 또는 & 로 이어 붙이라고 안내)",
+        "\"텍스트 값을 계산할 때는 데이터에 앞/뒤 공백을 두거나, 곧은 따옴표와 둥근 따옴표를 일관성 없이 사용하거나, 인쇄할 수 없는 문자를 사용하지 않도록 주의하세요. 그럴 경우 COUNTIF에서 예기치 않은 값이 반환될 수 있습니다. CLEAN 함수 또는 TRIM 함수를 사용해 보세요.\"",
+        "와일드카드: ? 는 한 문자, * 는 임의 개수 문자열, 실제 ?·* 를 찾으려면 앞에 ~ 를 붙인다.",
+        "주의: ko-kr 문서의 예제 표(=COUNTIF(A2:A5,\"오미자\") 설명이 \"사과가 포함된 셀\" 등)는 기계번역 흔적으로 수식과 설명이 맞지 않는다 — 예제 수식을 그대로 인용하지 말 것."
+      ]
+    },
+    {
+      "title": "EXACT 함수 | Microsoft Support (ko-kr)",
+      "url": "https://support.microsoft.com/ko-kr/excel/functions/exact-function",
+      "host": "support.microsoft.com",
+      "body": "EXACT 함수 적용 대상 Microsoft 365용 Excel Mac용 Microsoft 365용 Excel Excel 2024 Mac용 Excel 2024 Excel 2021 Mac용 Excel 2021 Excel 2019 Excel 2016 이 문서에서는 Microsoft Excel의 EXACT 함수에 사용되는 수식 구문과 이 함수를 사용하는 방법을 설명합니다. 설명 두 텍스트 문자열을 비교하여 정확히 같으면 TRUE를 반환하고 그렇지 않으면 FALSE를 반환합니다. EXACT는 대/소문자를 구분하지만 서식 차이는 무시합니다. EXACT 함수를 사용하여 문서에 입력되는 텍스트를 테스트합니다. 구문 EXACT(text1, text2) EXACT 함수 구문에는 다음과 같은 인수가 사용됩니다. 텍스트1 필수. 첫 번째 텍스트 문자열입니다. 텍스트2 필수. 두 번째 텍스트 문자열입니다. 예제 다음 표의 예제 데이터를 복사하여 새 Excel 워크시트의 A1 셀에 붙여 넣습니다. 수식의 결과를 표시하려면 수식을 선택하고 F2 키를 누른 다음 Enter 키를 누릅니다. 필요한 경우 열 너비를 조정하면 데이터를 모두 표시할 수 있습니다. 첫 번째 문자열 두 번째 문자열 word word Word word w ord word 수식 설명 결과 =EXACT(A2,B2) 첫 번째 행의 문자열이 일치하는지 여부를 확인합니다. TRUE =EXACT(A3,B3) 두 번째 행의 문자열이 일치하는지 여부를 확인합니다(A3의 \"W\"가 대문자임). FALSE =EXACT(A4,B4) 세 번째 행의 문자열이 일치하는지 확인합니다(A4에는 \"w\"와 \"ord\" 사이에 공백이 포함되어 있음). FALSE",
+      "tier": "official",
+      "publishedAt": "2026-01-01",
+      "facts": [
+        "\"두 텍스트 문자열을 비교하여 정확히 같으면 TRUE를 반환하고 그렇지 않으면 FALSE를 반환합니다. EXACT는 대/소문자를 구분하지만 서식 차이는 무시합니다.\" 구문 EXACT(text1, text2).",
+        "문서 예: \"word\" vs \"word\" → TRUE, \"Word\" vs \"word\" → FALSE(A3 의 W 가 대문자), \"w ord\" vs \"word\" → 공백 차이로 불일치. 적용 대상 8종(365·Mac 365·2024·Mac 2024·2021·Mac 2021·2019·2016). 메타 ms.date=2026-01-01."
+      ]
+    },
+    {
+      "title": "중복 값이 있는 범위에서 고유 값 개수 구하기 | Microsoft Support (ko-kr)",
+      "url": "https://support.microsoft.com/ko-kr/excel/count-unique-values-among-duplicates",
+      "host": "support.microsoft.com",
+      "body": "중복 값이 있는 범위에서 고유 값 개수 구하기 적용 대상 Microsoft 365용 Excel Mac용 Microsoft 365용 Excel Excel 2024 Mac용 Excel 2024 Excel 2021 Mac용 Excel 2021 Excel 2019 Excel 2016 중복된 값 중 고유 값을 계산하는 방법을 알려주세요. 예제를 다운로드하는 방법을 설명해주세요. 배열 상수에 대해 알려주세요. 중복 값이 포함된 범위에 고유 값이 얼마나 있는지 확인하려는 경우를 가정해 보겠습니다. 다음과 같은 예를 들 수 있습니다. 열에 값 5, 6, 7 및 6이 포함된 경우 세 가지 고유한 값 5, 6, 7이 결과입니다. 열에 값 \"Bradley\", \"Doyle\", \"Doyle\", \"Doyle\"가 포함된 경우 두 가지 고유한 값 \"Bradley\", \"Doyle\"가 결과입니다. 중복 항목 중에서 고유한 값을 계산하는 방법에는 여러 가지가 있습니다. 필터를 사용하여 고유 값 개수 계산 고급 필터 대화 상자를 사용하면 데이터 열에서 고유 값을 추출하여 새 위치로 붙여 넣을 수 있습니다. 그런 다음 ROWS 함수를 사용하여 새 범위에 있는 항목의 개수를 구할 수 있습니다. 셀 범위를 선택하거나 표에 활성 셀이 있는지 확인합니다. 셀 범위에 열 머리글이 있는지 확인합니다. 데이터 탭의 정렬 & 필터 그룹에서 고급 을 선택합니다. 고급 필터 대화 상자가 나타납니다. 다른 위치에 복사를 선택합니다. 복사 위치 상자에 셀 참조를 입력합니다. 또는 대화 상자 축소를 선택하여 대화 상자를 일시적으로 숨기고 워크시트에서 셀을 선택한 다음 대화 상자 확장을 누릅니다. 고유 레코드만 검사란을 선택하고 확인 을 선택합니다. 선택한 범위의 고유 값이 복사 위치 상자에 지정한 셀부터 새 위치로 복사됩니다. 범위의 마지막 셀 아래에 있는 빈 셀에 ROWS 함수를 입력합니다. 열 머리글을 제외하고 방금 인수로 복사한 고유 값의 범위를 사용합니다. 예를 들어 고유 값의 범위가 B2:B45인 경우 =ROWS(B2:B45) 를 입력합니다. 함수를 사용하여 고유 값 개수 계산 이 작업에는 IF , SUM , FREQUENCY , MATCH , LEN 함수를 조합하여 사용합니다. IF 함수를 사용하여 결과가 TRUE인 각 조건에 1을 할당합니다. SUM 함수를 사용하여 합계를 더합니다. FREQUENCY 함수를 사용하여 고유 값 개수를 계산합니다. FREQUENCY 함수는 텍스트 및 0 값을 무시합니다. 이 함수는 특정 값의 첫 번째 항목에 대해 해당 값의 항목 수와 동일한 숫자를 반환합니다. 첫 번째 이후에 동일한 값이 있을 때마다 이 함수는 0을 반환합니다. MATCH 함수를 사용하여 범위 내 텍스트 값의 위치를 반환합니다. 반환된 이 값은 해당하는 텍스트 값을 평가할 수 있도록 이후 FREQUENCY 함수에 대한 인수로 사용됩니다. LEN 함수를 사용하여 빈 셀을 찾습니다. 빈 셀의 길이는 0입니다. 예제 참고 이 예제의 수식은 배열 수식으로 입력해야 합니다. 현재 버전의 Microsoft 365 가 있는 경우 출력 범위의 왼쪽 위 셀에 수식을 입력한 다음 Enter 키를 눌러 수식을 동적 배열 수식으로 확인할 수 있습니다. 그렇지 않으면 먼저 출력 범위를 선택하여 출력 범위의 왼쪽 상단 셀에 수식을 입력한 다음, 확인을 위해 Ctrl+Shift+Enter 키를 눌러 수식을 레거시 배열 수식으로 입력해야 합니다. Excel에서는 수식의 시작과 끝에 중괄호가 삽입됩니다. 배열 수식에 대한 자세한 내용은 배열 수식 지침 및 예제 를 참조하세요. 단계별로 계산된 함수를 보려면 수식이 포함된 셀을 선택한 다음 수식 탭의 수식 분석 그룹에서 수식 계산을 선택합니다. 함수 정보 FREQUENCY 함수는 값의 범위 내에서 값의 발생 빈도를 계산하여 세로 배열 형태로 반환합니다. 예를 들어 FREQUENCY 를 사용하여 지정한 점수 범위에 들어가는 시험 성적의 개수를 구할 수 있습니다. 이 함수는 배열을 반환하므로 배열 수식으로 입력해야 합니다. MATCH 함수는 셀 범위에서 지정된 항목을 검색하고 범위에서 해당 항목의 상대 위치를 반환합니다. 예를 들어 A1:A3 범위에 값 5, 25, 38이 있는 경우 =MATCH(25,A1:A3,0) 수식은 25가 범위의 두 번째 항목이므로 숫자 2를 반환합니다. LEN 함수는 텍스트 문자열의 문자 수를 반환합니다. SUM 함수는 인수로 지정한 모든 숫자를 더합니다. 각 인수는 범위, 셀 참조, 배열, 상수, 수식 또는 다른 함수의 결과일 수 있습니다. 예를 들어 SUM(A1:A5) 은 A1~A5 셀에 포함된 모든 숫자를 더합니다. IF 함수는 지정한 조건이 TRUE이면 특정 값을 반환하고 해당 조건이 FALSE이면 다른 값을 반환합니다.",
+      "tier": "official",
+      "publishedAt": "2026-02-25",
+      "facts": [
+        "고급 필터로 고유 값을 뽑는 절차: \"셀 범위에 열 머리글이 있는지 확인합니다.\" → 데이터 탭 정렬&필터 그룹 > 고급 → \"다른 위치에 복사를\" 선택 → 복사 위치 상자에 셀 참조 → \"고유 레코드만\" 체크 → 확인. 그 뒤 ROWS 함수로 개수를 센다(열 머리글 제외 범위, 예: =ROWS(B2:B45)).",
+        "함수 방식은 IF·SUM·FREQUENCY·MATCH·LEN 조합의 배열 수식. \"현재 버전의 Microsoft 365가 있는 경우 … Enter 키를 눌러 수식을 동적 배열 수식으로 확인할 수 있습니다. 그렇지 않으면 … Ctrl+Shift+Enter 키를 눌러 수식을 레거시 배열 수식으로 입력해야 합니다.\" 적용 대상 8종(2019·2016 포함). 메타 ms.date=2026-02-25."
+      ]
+    },
+    {
+      "title": "End of support for Office 2016 and Office 2019 | Microsoft Support",
+      "url": "https://support.microsoft.com/en-us/office/system-requirements/end-of-support-for-office-2016-and-office-2019",
+      "host": "support.microsoft.com",
+      "body": "End of support for Office 2016 and Office 2019 Applies To Office 2019 Office 2016 Tell me about end of support for Office 2016 for Mac. Show me how to remove the conflicting 2013 app. Support for Office 2016 and Office 2019 ended on October 14, 2025 . While your Office 2016 and Office 2019 apps may continue to function, you could expose yourself to serious and potentially harmful security risks and the performance and quality of the apps may degrade over time. Buy or try Microsoft 365 Tip Not sure what version of Office you have? See Find details for other versions of Office to help you determine what version you're currently running. What end of support means for you after October 14, 2025 Microsoft may no longer provide technical support, bug fixes, or security fixes for Office 2016 and Office 2019 vulnerabilities which may be subsequently reported or discovered. This includes security updates which can help protect your PC from harmful viruses, spyware, and other malicious software. You'll no longer receive phone or chat technical support. No further updates to support content will be provided and most online help content will be retired. What are my options? We recommend you upgrade Office. Your options to upgrade will depend if you're using Office 2016 or Office 2019 at home or if your version of Office 2016 or Office 2019 is managed by the IT department or the IT admin at your work or school . Office 2016 or Office 2019 at home Office 2016 or Office 2019 at work or school If you're using Office 2016 or Office 2019 at home (such as, Office Home & Student 2016 or Office Home & Business 2016), you'll still be able to use it, but we recommend you upgrade to a newer version of Office so you can stay up to date with all the latest features, patches, and security updates. To learn more about upgrading see How do I upgrade Office? You can also buy or try the latest version of Office now. Buy or try Microsoft 365 For individuals at work: If your version of Office 2016 or Office 2019 is managed by your work or school, contact your IT Help Desk about how to upgrade. Your IT department will likely have their own upgrade plan.",
+      "tier": "official",
+      "publishedAt": "2026-04-24",
+      "facts": [
+        "\"Support for Office 2016 and Office 2019 ended on October 14, 2025.\" 앱은 계속 작동할 수 있으나 보안 위험이 생기고 성능·품질이 저하될 수 있다고 안내. 메타 ms.date=2026-04-24.",
+        "\"Microsoft may no longer provide technical support, bug fixes, or security fixes\" · \"No further updates to support content will be provided and most online help content will be retired.\" → 2026-09-30 현재 Excel 2016·2019 는 지원 종료 상태."
+      ]
+    },
+    {
+      "title": "How To Remove Duplicates in Excel (3 Easy Ways) - Xelplus (Leila Gharani)",
+      "url": "https://www.xelplus.com/excel-remove-duplicates/",
+      "host": "www.xelplus.com",
+      "body": "pressing <CTRL-C> to copy the selected data into memory, clicking in a new location on the sheet and pressing <CTRL-V> to paste the copy of the data into the new location. Original data set and its copy To remove the duplicate rows from the copy of the data set: Click in the newly copied data set. Select Data (tab) -> Data Tools (group) -> Remove Duplicates . Location of the Remove Duplicates feature in the Data tab of the Excel ribbon. In the Remove Duplicates dialog box, ensure all the listed column headings and the option labeled “My data has headers” are checked and press OK. Remove Duplicates dialog box The system reports back how many duplicate values were removed as well as how many unique values remain. Before and After Removing Duplicates Message box with the number of duplicates removed and unique values remaining. Removing duplicate values based on a single column | avoid selecting entire columns, e.g., A:A ). Go to Home (tab) -> Styles (group) -> Conditional Formatting -> Highlight Cells Rules -> Duplicate Values | Featured Course Excel Essentials for the Real World A hands-on Excel course for professionals who never had formal training. Fill in what got skipped, so you stop doing things the long way without knowing there was a shorter one. Learn More Method #2 – How to Remove Duplicates in Excel Using the UNIQUE Function This method of duplicate data removal works for subscribers of Office 365 and users of Excel for the Web and Excel 2021. | Notice that “Stevie Bridge” in “Asia” with “4378” in [Sales] is listed twice. “Missed” duplicates in the Power Query output. The reason this was “missed” is because Power Query is case-sensitive when it comes to analyzing data. Both the Remove Duplicates feature and the UNIQUE function are case-insensitive; they don’t discriminate between differing cases. Power Query | Published on: July 28, 2021 | Last modified: June 13, 2024",
+      "tier": "blog",
+      "publishedAt": "2021-07-28",
+      "facts": [
+        "(보조·개인 교육 블로그, 2021-07-28 게시 / 2024-06-13 수정) \"In the Remove Duplicates dialog box, ensure all the listed column headings and the option labeled \"My data has headers\" are checked and press OK.\" — MS 공식 문서 원문에서는 이 체크박스 문장을 찾지 못함.",
+        "\"Both the Remove Duplicates feature and the UNIQUE function are case-insensitive; they don't discriminate between differing cases.\" Power Query 는 대소문자를 구분해 대소문자만 다른 행을 별개로 취급한다고 설명.",
+        "단일 열 기준 제거 시 \"Only the row for the first encountered [Sales Agent] name is retained. All rows that follow with the same name are removed.\" (공식 문서의 \"첫 번째 항목은 유지\"와 일치)",
+        "\"This method of duplicate data removal works for subscribers of Office 365 and users of Excel for the Web and Excel 2021.\" 조건부 서식 중복 검사는 \"column-by-column basis rather than row by row\", 행 단위 비교는 값을 이어 붙인 보조 열 필요."
+      ]
+    },
+    {
+      "title": "엑셀에서 중복 데이터 제거하기 - 엑셀웍스",
+      "url": "https://xlworks.net/excel-remove-duplicates/",
+      "host": "xlworks.net",
+      "body": "이번 글에서는 이 중에서 ' 중복 데이터를 제거하는 방법 '을 알아 보겠습니다. 실습용 엑셀파일 다운로드 : 05-7.중복데이터제거-실습.xlsx , 05-7.중복데이터제거-완성.xlsx 1. 1개의 열에서 중복된 데이터 찾아서 제거하기 실습 시트: [1개열 중복] 아래와 같은 상품코드 정보가 있는데 누군가가 실수로 데이터를 중복으로 입력해 놓았습니다. 상품코드가 동일한 것이 2쌍이 있습니다. 상품코드가 NP0012인 것과 NP0015인 것이 중복으로 입력되어 있습니다. 데이터가 이런 상태로 계속 존재하면 동일한 상품코드인데 누군가는 실수로 다른 단가를 입력하는 등 문제가 생길 수 있으므로 반드시 중복데이터를 찾아서 제거해야 합니다. 참고)A열은 상품코드 정보에서는 실제로 필요없는 것인데 삭제 대상을 구별하기 쉽게 일부러 추가한 것입니다. 1) 조건부 서식을 이용하여 중복 데이터 표시 중복데이터를 바로 제거해도 되지만 제거하기 전에 중복건이 몇개나 있는지 엑셀의 조건부 서식을 이용해서 찾아 보겠습니다. 01 ① 중복 값을 체크 할 B열 전체를 선택하고 ② 리본 메뉴에서 [홈] 탭 → [스타일] 그룹 → [조건부 서식]→ [셀 강조 규칙]→ ③ [중복 값]를 선택합니다. 02 [중복 값] 대화상자의 ① [드롭다운 리스트]에서 '중복'을 선택하고 ② [적용할 서식]에서 '진한 빨강 텍스트가 있는 연한 빨강 채우기'를 선택하고 ③ <확인>을 누릅니다. 03 상품 코드가 중복된 데이터에 빨간색 표시가 된 것을 확인할 수 있습니다. 2) 중복 데이터 제거 이제 중복데이터를 삭제해 보겠습니다. 중복 데이터 중 아래에 있는 것이 제거 되므로 No.6, No.12가 제거되어야 정상적으로 제거 된 것입니다. 01 중복데이터가 있는 ① [B] 열 전체를 선택하고 ② 리본 메뉴에서 [데이터] 탭 → [데이터 도구] 그룹 → [중복된 항목 제거]를 누르면 [중복된 항목 제거 경고] 대화상자가 나타납니다. * 이 대화상자는 하나의 열만 선택하고 중복데이터를 제거하려고 할 때 나타납니다. 02 [중복된 항목 제거 경고] 대화상자에서 ① '선택 영역 확장'을 선택하고 ② <중복된 항목 제거>를 누릅니다. 03 ① [중복 값 제거] 대화상자의 [열] 표시에서 중복이 있는 열을 선택하고 ② <확인>을 누릅니다. 사실 '상품코드' 단위로 중복이 발생했기 때문에 '상품코드'열만 선택해도 됩니다만, 누군가가 동일한 상품코드인데 다른 상품명, 제조사, 단가를 입력했을 수도 있으므로 '상품코드,상품명,제조사,단가'를 모두 선택합니다. * 만약 상품코드가 동일한데 상품명,제조사,단가를 다르게 입력한 경우가 있다면 상품코드 단위로 삭제되지 않고 상품명,제조사,단가 단위로 중복인 데이터만 삭제됩니다. 아래와 같은 처리 메시지가 나타나면 ③ <확인> 버튼을 클릭합니다. 04 No. 6인 NP0012와 No. 12인 NP0015 상품코드 행이 삭제된 것을 확인할 수 있습니다. [알아 두면 좋아요] 선택한 열에서만 중복을 제거할 경우 - ‘현재 선택 영역으로 정렬’ 현재 선택 영역으로 정렬을 선택하고 B열만 선택하면 선택할 열 안에서만 중복을 제거해 줍니다. [B] 열에서만 중복을 제거했으므로 맨 아래에 빈 자리가 생기고 다른 열은 아무런 변화가 없습니다. 따라서 이 기능은 특정 열의 중복만 제거하고 싶을 때 사용합니다. 2. 2개의 이상의 열에서 중복된 데이터 찾아서 제거하기 실습 시트: [2개이상의열 중복] 어떤 회사에서 직원은 하루에 한번 출근한다고 하면 근무 기록 데이터는 하루에 하나만 입력되어야 합니다. 그런데 아래 그림과 같이 직원 박민수, 강영찬의 근무기록은 같은 날짜에 2건이 입력되어 있습니다(10월 4일에 2번 근무한 것으로 되어 있음). 누군가가 실수로 잘못 입력한 중복데이터 입니다. 참고)A열은 근무 정보에서는 실제로 필요없는 것인데 삭제 대상을 구별하기 쉽게 일부러 추가한 것입니다. 데이터가 중복으로 존재하면 근무시간이 실제 보다 많이 계산되는 등 많은 문제를 유발시킬 수 있으므로 반드시 중복데이터를 찾아서 제거해야 합니다. 1) 수식을 이용하여 중복 데이터 표시 중복을 제거하기 전에 먼저 어떤 데이터가 중복인지 찾아서 확인하는 것이 좋습니다. 위의 예에서는 1개의 열에서 중복된 행을 찾을 때 조건부 서식을 이용했는데 2개 이상의 열이 동시에 중복인 것은 조건부 서식의 '셀 강조 규칙'의 '중복 값' 표시 기능으로는 찾을 수 없고 다음 두 가지 방법 중에서 사용하기 편한 방법으로 찾으면 됩니다. 수식으로 중복인 개수를 표시 조건부 서식 대신에 다음과 같이 수식으로 중복인 표시하여 찾을 수 있습니다. [K2]셀에 다음 수식을 입력하고 나머지 [K3:K13] 범위에는 자동채우기를 합니다. =COUNTIFS($B$2:$B$13,B2,$C$2:$C$13,C2,$D$2:$D$13,D2) 이 수식은 사번, 이름, 근무일이 같은 행의 개수를 구해 줍니다. COUNTIFS 함수는 여러 조건을 만족하는 셀의 개수를 구해주므로 이 수식은 첫 번째 인수인 사번 범위에서 동일한 사번이면서, 이름 범위에서 동일한 이름이고, 근무일 범위에서 동일 근무일인 행의 개수를 구해줍니다. 결과적으로 행의 개수가 1보다 크면 중복건입니다. [ 참고 - COUNTIFS 함수 - 여러 조건을 만족하는 셀의 개수 구하기 ] 아래 그림에서 K열의 값이 2인 것은 동일 사번, 동일 이름, 동일 근무일이라서 중복인 것을 알 수 있습니다. 조건부 서식에서 수식으로 서식 지정 기능 사용 01 아래와 같이 ① 중복 데이터가 있는 범위를 선택합니다. ② [홈] 탭 → [스타일] 그룹 → [조건부 서식] → [새 규칙] → [규칙 유형 선택] 목록에서 '수식을 사용하여 서식을 지정할 셀 결정' 선택 → ③ 다음 수식을 입력하고 ④ 중복인 경우 표시할 서식을 지정하고 ⑤ <확인>을 누릅니다. =COUNTIFS($B$2:$B$13,$B2,$C$2:$C$13,$C2,$D$2:$D$13,$D2)>1 02 사번, 이름, 근무일이 같은 행이 1개 이상이면 색상으로 중복을 표시해 줍니다. 2) 중복 데이터 제거 중복인 데이터는 확인했으니 이제 중복데이터를 제거해 보겠습니다. 중복 데이터 중 아래에 있는 것이 제거 되므로 No.4, No.11이 제거되어야 정상적으로 제거 된 것입니다. 01 ① 근무 기록이 입력된 전체 범위를 선택합니다. ② 리본 메뉴에서 [데이터] 탭 → [데이터 도구] 그룹 → [중복된 항목 제거]를 누르면 [중복 값 제거] 대화상자가 나타납니다. 02 [중복 값 제거] 대화상자의 ① [열] 표시에서 중복이 있는 열을 선택한 후 ② [확인]을 누릅니다. 사실 '사번, 근무일' 단위로 중복이 발생했기 때문에 '사번, 근무일'열만 선택해도 됩니다만, 누군가가 동일한 사번인데 다른 이름을 입력했을 수도 있으므로 '사번, 이름, 근무일'를 모두 선택합니다. * 만약 사번이 동일한데 이름을 다르게 입력한 경우가 있다면 사번, 근무일 단위로 삭제되지 않고 사번,이름,근무일 단위로 중복인 데이터만 삭제됩니다. 03 No.4, No.11인 행이 삭제된 것을 확인할 수 있습니다.",
+      "tier": "blog",
+      "publishedAt": "2025-04-22",
+      "facts": [
+        "(보조·한국어 엑셀 강좌 블로그, 2025-04-22) 한국어 화면 기준 경로: \"[홈] 탭 → [스타일] 그룹 → [조건부 서식] → [셀 강조 규칙] → [중복 값]\" / \"[데이터] 탭 → [데이터 도구] 그룹 → [중복된 항목 제거]\", 대화상자 이름 \"[중복 값 제거]\".",
+        "열 하나만 선택하고 실행하면 \"[중복된 항목 제거 경고]\" 대화상자가 뜨며 \"선택 영역 확장\" 또는 \"현재 선택 영역으로 정렬\"을 고른다. 후자는 선택한 열 안에서만 제거해 맨 아래에 빈 자리가 생기고 다른 열은 변하지 않는다고 설명.",
+        "여러 열 기준 예: 사번·이름·근무일 열을 함께 선택해야 그 조합이 같은 행만 지워진다. 여러 열 중복 표시는 =COUNTIFS($B$2:$B$13,B2,$C$2:$C$13,C2,$D$2:$D$13,D2) (값 2 이상이면 중복), 조건부 서식 수식 규칙에는 =COUNTIFS(...)>1. 댓글 답변: 순번(No.) 열을 포함하면 행마다 값이 달라 중복으로 안 잡힌다."
+      ]
+    },
+    {
+      "title": "Excel UNIQUE function | Exceljet",
+      "url": "https://exceljet.net/functions/unique-function",
+      "host": "exceljet.net",
+      "body": "Next Excel 2021 Dynamic array UNIQUE Function by Dave Bruns · Updated 29 Jan 2026 Related functions FILTER SORT SORTBY RANDARRAY SEQUENCE Download Worksheet Summary The Excel UNIQUE function extracts unique values from a range or array. The result is a dynamic array that automatically updates when source data changes. UNIQUE is not case-sensitive and works with text, numbers, dates, and other data types. Purpose Extract unique values from range Return value Array of unique values Syntax =UNIQUE(array, [by_col], [exactly_once]) array - Range or array from which to extract unique values. | Extracts unique values from a range or array automatically. Returns a dynamic array that updates when source data changes. Case-insensitive: \"APPLE\", \"Apple\", and \"apple\" are treated as the same value. Set exactly_once to TRUE to return only values that appear once (distinct values). Set | For more details, see UNIQUE with non-adjacent columns . Notes UNIQUE is case-insensitive. \"APPLE\", \"Apple\", and \"apple\" are treated as identical. UNIQUE treats text and numbers as different types. The text \"10\" and the number 10 are considered different values. Empty cells appear as zeros (0) in results. Use FILTER to exclude blanks before UNIQUE runs. The empty string \"\" and truly empty cells may be treated differently. Use <>\"\" to filter both. UNIQUE returns #SPILL! if the destination range isn't empty or doesn't have room for results. Cross-workbook references require both workbooks to be open. Closed workbooks return #REF!. UNIQUE won't automatically adjust the source range if data is added or deleted. Use an Excel Table or dynamic range if needed. UNIQUE is one of over 50 new functions in Excel, available in Excel 2021+ and Excel 365",
+      "tier": "blog",
+      "publishedAt": "2026-01-29",
+      "facts": [
+        "(보조·Excel 전문 참고 사이트, 2026-01-29 갱신) \"UNIQUE is case-insensitive. \"APPLE\", \"Apple\", and \"apple\" are treated as identical.\"",
+        "\"UNIQUE treats text and numbers as different types. The text \"10\" and the number 10 are considered different values.\"",
+        "\"Empty cells appear as zeros (0) in results. Use FILTER to exclude blanks before UNIQUE runs.\" 예: =UNIQUE(FILTER(B5:B16,B5:B16<>\"\")). #SPILL! 은 대상 범위가 비어 있지 않거나 공간이 없을 때.",
+        "\"UNIQUE is one of over 50 new functions in Excel, available in Excel 2021+ and Excel 365.\" 소스 범위는 자동 조정되지 않으므로 표(Table)나 동적 범위 권장."
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "claim": "엑셀의 중복 처리 도구는 성격이 다르다 — 조건부 서식은 '찾아서 색만 칠하고', 고급 필터(고유 레코드만)는 '일시적으로 숨기거나 다른 곳에 복사'하고, 중복 제거는 '영구 삭제'한다. 그래서 순서는 표시 → 필터로 확인 → 제거.",
+      "grade": "confirmed",
+      "evidence": [
+        "MS ko(2025-10-13): \"고유 값을 필터링하면 중복 값이 일시적으로만 숨겨집니다. 그러나 중복 값을 제거한다는 것은 중복 값이 영구적으로 삭제된다는 것을 의미합니다.\"",
+        "MS ko: \"중복 값을 제거하기 전에 먼저 고유한 값을 필터링하거나 조건부 서식을 지정하여 예상한 결과를 얻을 수 있는지 확인하는 것이 좋습니다.\" 같은 권고가 데이터 정리 10가지 문서(2026-04-30)와 Mac 문서(2025-10-06)에도 있다.",
+        "경로(조건부 서식): 홈 탭 > 스타일 그룹 > 조건부 서식 > 셀 강조 규칙 > 중복 값 (MS ko 고유 값 문서 + 엑셀웍스 화면 기준 + 영문 Highlight Cells Rules 일치). 주의: MS ko '중복 값 찾아 제거하기'는 \"셀 강조 표시, 규칙\"으로 번역이 깨져 있으니 그대로 옮기지 말 것.",
+        "경로(고급 필터): 데이터 탭 > 정렬 및 필터 그룹 > 고급 → '목록 필터링'(현재 위치) 또는 '다른 위치에 복사'(복사 위치 상자에 셀 참조) → '고유 레코드만' → 확인. ko 문서 어순이 깨져 있어(\"데이터 > 정렬 & > 필터 고급\") en/Mac 문서로 교차 확인한 형태만 쓴다.",
+        "경로(중복 제거): 데이터 탭 > 데이터 도구 그룹 > 중복 제거(MS ko 표기). 엑셀웍스 화면 캡처 기준 버튼명은 '중복된 항목 제거' — 한국어 화면 라벨 미확정(cannotCover 참조).",
+        "Mac 문서: 다른 위치에 복사하면 \"The original data is not affected.\" 원본은 그대로. ko 문서: \"범위의 고유 값이 새 위치로 복사됩니다.\"",
+        "\"Excel에서는 피벗 테이블 보고서의 값 영역에 있는 중복 항목을 강조 표시할 수 없습니다.\" (MS ko 중복 값 찾아 제거하기, 2026-07-28)",
+        "고급 필터 전 준비: \"셀 범위에 열 머리글이 있는지 확인합니다.\" (MS ko 고유 값 개수 문서, 2026-02-25) — 공식 문서에서 머리글 관련 문장은 이것뿐."
+      ],
+      "sourceUrls": [
+        "https://support.microsoft.com/ko-kr/excel/get-started/filter-for-unique-values-or-remove-duplicate-values",
+        "https://support.microsoft.com/en-us/office/filter-for-unique-values-or-remove-duplicate-values-ccf664b0-81d6-449b-bbe1-8daaec1e83c2",
+        "https://support.microsoft.com/ko-kr/office/%EC%A4%91%EB%B3%B5-%EA%B0%92-%EC%B0%BE%EC%95%84-%EC%A0%9C%EA%B1%B0%ED%95%98%EA%B8%B0-00e35bea-b46a-4d5d-b28e-66a552dc138d",
+        "https://support.microsoft.com/en-ie/office/filter-for-or-remove-duplicate-values-662c153f-cf21-4d7b-a5af-a9390648eb37?ui=en-us&rs=en-ie&ad=ie",
+        "https://support.microsoft.com/ko-kr/excel/top-ten-ways-to-clean-your-data",
+        "https://support.microsoft.com/ko-kr/excel/count-unique-values-among-duplicates",
+        "https://xlworks.net/excel-remove-duplicates/"
+      ]
+    },
+    {
+      "claim": "중복 제거는 '선택한 열의 조합'을 키로 삼아 첫 항목만 남기고 나머지 행을 통째로 지운다 — 일부 열만 골라도 그 행의 다른 열 데이터까지 사라지고, 개요·부분합이 있으면 실행되지 않는다.",
+      "grade": "confirmed",
+      "evidence": [
+        "MS ko/en(2025-10-13): \"중복을 제거하면 목록에서 값의 첫 번째 항목은 유지되지만 다른 동일한 값은 삭제됩니다.\" 셀·표 범위 밖의 값은 변경되거나 이동되지 않는다.",
+        "MS: \"이 단계에서 모든 열을 선택하지 않더라도 모든 열에서 데이터가 제거됩니다.\" Column1·Column2를 선택하고 Column3을 선택하지 않으면 중복을 찾는 '키'는 Column1 & Column2 둘 다이고, 중복이 발견되면 Column3 데이터를 포함해 전체 행이 제거된다.",
+        "MS: \"개요가 표시되거나 부분합이 있는 개요 데이터에서는 중복 값을 제거할 수 없습니다. 중복 항목을 제거하려면 윤곽선과 부분합을 모두 제거해야 합니다.\" (Mac 문서도 동일, MS ko 중복 값 찾아 제거하기의 팁도 같은 취지)",
+        "MS: 열 선택은 '모두 선택' / '모두 선택 취소' 버튼으로 빠르게 바꿀 수 있고, 열이 많은데 몇 개만 고를 때는 '모두 선택 취소' 후 필요한 열만 체크하는 편이 쉽다고 안내.",
+        "MS: 확인을 누르면 \"제거된 중복 값 수 또는 남아 있는 고유 값의 수를 나타내는 메시지\"가 뜬다. 다만 MS ko 중복 값 찾아 제거하기: \"제거 후 제공된 중복 및 고유 값의 수에는 빈 셀, 공백 등이 포함될 수 있습니다.\"",
+        "(보조, 공식 문장 없음) 엑셀웍스 2025-04-22: 열 하나만 선택해 실행하면 '중복된 항목 제거 경고' 대화상자가 떠서 '선택 영역 확장' / '현재 선택 영역으로 정렬'을 고른다. 후자는 그 열 안에서만 제거해 맨 아래에 빈 자리가 생긴다고 설명. 같은 글 댓글 답변: 순번(No.) 열을 포함하면 행마다 값이 달라 중복으로 안 잡힌다."
+      ],
+      "sourceUrls": [
+        "https://support.microsoft.com/ko-kr/excel/get-started/filter-for-unique-values-or-remove-duplicate-values",
+        "https://support.microsoft.com/en-us/office/filter-for-unique-values-or-remove-duplicate-values-ccf664b0-81d6-449b-bbe1-8daaec1e83c2",
+        "https://support.microsoft.com/en-ie/office/filter-for-or-remove-duplicate-values-662c153f-cf21-4d7b-a5af-a9390648eb37?ui=en-us&rs=en-ie&ad=ie",
+        "https://support.microsoft.com/ko-kr/office/%EC%A4%91%EB%B3%B5-%EA%B0%92-%EC%B0%BE%EC%95%84-%EC%A0%9C%EA%B1%B0%ED%95%98%EA%B8%B0-00e35bea-b46a-4d5d-b28e-66a552dc138d",
+        "https://xlworks.net/excel-remove-duplicates/"
+      ]
+    },
+    {
+      "claim": "엑셀이 말하는 '같은 값'은 셀에 저장된 값이 아니라 화면에 보이는 값 기준이다 — 같은 날짜라도 표시 서식이 다르면 고유값이고, 1.00과 1도 다르다. 반대로 수식이 달라도 결과·서식이 같으면 중복이다.",
+      "grade": "confirmed",
+      "evidence": [
+        "MS ko/en: \"중복 값 비교는 셀에 저장된 기본 값이 아니라 셀에 나타나는 내용에 따라 달라집니다.\" 예: 같은 날짜가 \"3/8/2006\"과 \"Mar 8, 2006\"으로 서식이 다르면 값이 고유.",
+        "MS 정의: \"중복 값은 적어도 한 행의 모든 값이 다른 행의 모든 값과 동일한 값입니다.\" — 여러 열이면 행 단위 비교.",
+        "MS Mac 문서(2025-10-06): 같은 값이라도 숫자 서식이 다르면 중복이 아니다(A1 '1.00' 서식, A2 '1' 서식). 반대로 수식이 달라도(A1 =2-1, A2 =3-2) 서식이 같고 값이 같으면 중복. 이 두 예시는 Mac 문서에만 있고 Windows 문서에는 없다.",
+        "MS: 조건부 서식 '중복 값' 규칙은 Office 작성 언어·언어 교정 설정이 일본어 같은 DBCS 언어이면 반자·전자를 동일하게 처리한다. 구분해야 하면 '수식을 사용하여 이 수식에 맞는지 확인' 규칙에 COUNTIF 수식을 쓴다 — 문서 예: A2:A400 범위는 =COUNTIF($A$2:$A$400,A2)>1.",
+        "(보조, 공식 문장 없음) 엑셀웍스: 2개 이상 열이 동시에 같은 행은 '중복 값' 셀 강조 규칙으로 못 찾고 =COUNTIFS($B$2:$B$13,B2,$C$2:$C$13,C2,$D$2:$D$13,D2) 같은 수식으로 개수를 세거나 조건부 서식 '수식으로 서식 지정' 규칙에 =COUNTIFS(...)>1 을 넣는다. Xelplus도 조건부 서식 중복 검사는 \"column-by-column basis rather than row by row\", 행 단위 비교는 값을 이어 붙인 보조 열이 필요하다고 설명."
+      ],
+      "sourceUrls": [
+        "https://support.microsoft.com/ko-kr/excel/get-started/filter-for-unique-values-or-remove-duplicate-values",
+        "https://support.microsoft.com/en-us/office/filter-for-unique-values-or-remove-duplicate-values-ccf664b0-81d6-449b-bbe1-8daaec1e83c2",
+        "https://support.microsoft.com/en-ie/office/filter-for-or-remove-duplicate-values-662c153f-cf21-4d7b-a5af-a9390648eb37?ui=en-us&rs=en-ie&ad=ie",
+        "https://xlworks.net/excel-remove-duplicates/",
+        "https://www.xelplus.com/excel-remove-duplicates/"
+      ]
+    },
+    {
+      "claim": "값에 숨은 공백·특수문자가 섞이면 엑셀은 그것을 다른 문자열로 다뤄 정렬·필터·검색·COUNTIF 결과가 어긋난다. TRIM은 공백 코드 32만 지우고, 웹에서 복사해 온 '줄 바꿈하지 않는 공백'(코드 160)은 TRIM 혼자 못 지운다 — TRIM·CLEAN·SUBSTITUTE 조합이 필요하다.",
+      "grade": "confirmed",
+      "evidence": [
+        "MS TRIM(2026-01-07): \"TRIM 함수는 텍스트에서 7비트 ASCII 공백 문자(값 32)를 잘라내도록 설계되었습니다. 유니코드 문자 집합에는 십진수 값이 160인 줄 바꿈하지 않는 공백 문자가 추가로 포함되어 있습니다. … TRIM 함수 단독으로는 줄 바꿈하지 않는 공백 문자를 제거할 수 없습니다.\" TRIM은 \"단어 사이에 있는 하나의 공백을 제외하고 텍스트의 모든 공백을 제거\"한다.",
+        "MS 데이터 정리 10가지(2026-04-30): 텍스트에 선행·후행·중복 공백(값 32·160)이나 인쇄 불가 문자(값 0-31, 127, 129, 141, 143, 144, 157)가 있으면 \"정렬, 필터링 또는 검색 시 예기치 않은 결과\"가 나온다. \"TRIM, CLEAN, SUBSTITUTE 함수 조합\"으로 제거. CLEAN은 값 0-31의 인쇄 안 되는 처음 32자를, SUBSTITUTE는 상위 값(127, 129, 141, 143, 144, 157, 160)을 TRIM·CLEAN이 다루는 7비트 ASCII 문자로 바꾸는 데 쓴다.",
+        "MS 데이터 정리 문서: 이런 문자는 \"쉽게 인식되지 않으므로 예기치 않은 결과를 이해하기 어려울 수 있습니다.\" 원인 예: 외부 데이터 원본에서 사용자가 실수로 공백을 추가, 외부에서 가져온 텍스트의 인쇄 안 되는 문자.",
+        "MS COUNTIF(2026-08-06): \"텍스트 값을 계산할 때는 데이터에 앞/뒤 공백을 두거나, 곧은 따옴표와 둥근 따옴표를 일관성 없이 사용하거나, 인쇄할 수 없는 문자를 사용하지 않도록 주의하세요. 그럴 경우 COUNTIF에서 예기치 않은 값이 반환될 수 있습니다.\" → CLEAN·TRIM 권장. (COUNTIF 수식은 조건부 서식 중복 표시 수식 규칙에 쓰이므로 관련.)",
+        "MS EXACT(2026-01-01): \"두 텍스트 문자열을 비교하여 정확히 같으면 TRUE … EXACT는 대/소문자를 구분하지만 서식 차이는 무시합니다.\" 문서 예: \"word\" vs \"word\" TRUE, \"Word\" vs \"word\" FALSE, \"w ord\" vs \"word\" FALSE(공백 차이).",
+        "MS COUNTIF: \"COUNTIF는 텍스트 문자열에서 대소문자를 무시합니다.\" \"apples\"와 \"APPLES\"는 같은 셀과 일치한다 → 대소문자만 다른 값을 별개로 잡으려면 COUNTIF 단독으로는 안 되고 EXACT 같은 구분 함수가 따로 필요하다(각 함수의 동작만 공식 확인, 조합 수식은 자료에 없음).",
+        "(보조, 공식 문장 없음) Xelplus·Exceljet: Remove Duplicates 기능과 UNIQUE 함수는 대소문자를 구분하지 않는다(\"case-insensitive\"). Xelplus는 Power Query가 대소문자를 구분해 대소문자만 다른 행을 별개로 취급하는 반례를 보여준다.",
+        "주의: '중복 제거' 기능이나 조건부 서식의 '중복 값' 규칙이 공백 차이를 다른 값으로 본다는 직접 공식 문장은 자료에 없다. 확인된 것은 정렬·필터·검색·COUNTIF·EXACT 쪽이다."
+      ],
+      "sourceUrls": [
+        "https://support.microsoft.com/ko-kr/excel/functions/trim-function",
+        "https://support.microsoft.com/ko-kr/excel/top-ten-ways-to-clean-your-data",
+        "https://support.microsoft.com/ko-kr/excel/get-started/use-the-countif-function-in-microsoft-excel",
+        "https://support.microsoft.com/ko-kr/excel/functions/exact-function",
+        "https://www.xelplus.com/excel-remove-duplicates/",
+        "https://exceljet.net/functions/unique-function"
+      ]
+    },
+    {
+      "claim": "UNIQUE 함수는 고유 값 목록을 수식 결과로 펼쳐(스필) 돌려주는 동적 배열 함수이고, Excel 2021 이상에서 쓴다. Excel 2019·2016은 공식 적용 대상 목록에 없으며 두 버전 모두 2025-10-14에 지원이 끝났다.",
+      "grade": "confirmed",
+      "evidence": [
+        "MS ko(2026-01-16): \"UNIQUE 함수는 목록 또는 범위에서 고유 값의 목록을 반환합니다.\" 구문 =UNIQUE(array,[by_col],[exactly_once]).",
+        "인수: array 필수(고유한 행·열을 돌려줄 범위/배열). by_col 선택 — TRUE는 열끼리 비교해 고유한 열, FALSE(또는 생략)는 행끼리 비교해 고유한 행. exactly_once 선택 — TRUE는 \"범위 또는 배열에서 정확히 한 번 발생하는 모든 고유 행 또는 열\"(문서: '고유의 데이터베이스 개념'), FALSE(또는 생략)는 고유한 행·열 모두.",
+        "MS: \"이 배열이 수식의 최종 결과인 경우에는 인접 셀로 결과를 분산됩니다. 즉, 사용자가 ENTER 키를 누르면 Excel은 적절한 크기의 배열 범위를 동적으로 생성합니다.\" 관련 데이터가 Excel 표이고 구조적 참조를 쓰면 데이터 추가·삭제에 따라 배열 크기가 자동 조정된다.",
+        "MS: 통합 문서 간 동적 배열은 제한적 지원 — 두 통합 문서가 열려 있을 때만 되고, 원본을 닫으면 연결된 동적 배열 수식이 새로 고칠 때 #REF! 오류를 반환.",
+        "MS UNIQUE 문서 '적용 대상' 11종: Microsoft 365용 Excel, Mac용 365, Excel 2024, Mac용 2024, Excel 2021, Mac용 2021, Microsoft365.com, iPad·iPhone·Android 태블릿·Android 휴대폰용 Excel. Excel 2019·2016은 목록에 없다. 단, \"2019에서는 쓸 수 없다\"는 직접 문장은 자료에 없다 — '적용 대상에 없다'까지만 말할 것.",
+        "MS Office 2021 신기능(2026-08-25): \"동적 배열 … 6가지 새로운 함수(FILTER, SORT, SORTBY, UNIQUE, SEQUENCE 및 RANDARRAY)\" — UNIQUE는 2021에서 새로 들어온 함수. 이 문서에 Excel 2019와의 직접 비교 문장은 없다.",
+        "MS Office 2016·2019 지원 종료(문서 2026-04-24): \"Support for Office 2016 and Office 2019 ended on October 14, 2025.\" 앱이 계속 작동할 수는 있으나 보안 위험이 생기고 성능·품질이 떨어질 수 있다고 안내.",
+        "MS 문서 예제: SORT와 UNIQUE를 함께 써 고유한 이름을 오름차순으로, =SORT(UNIQUE(B2:B12&\" \"&A2:A12)) 로 성·이름을 이어 붙인 뒤 고유 목록, exactly_once=TRUE 로 서비스를 한 번만 받은 고객만 뽑는 예.",
+        "(보조) Exceljet(2026-01-29): UNIQUE는 대소문자를 구분하지 않고 텍스트 \"10\"과 숫자 10을 다른 값으로 본다. 빈 셀은 결과에 0으로 나오므로 =UNIQUE(FILTER(B5:B16,B5:B16<>\"\")) 처럼 FILTER로 먼저 거른다. 대상 범위가 비어 있지 않으면 #SPILL!. Xelplus(2021, 2024-06 수정): 이 방식은 Office 365 구독자, 웹용 Excel, Excel 2021 사용자에게 해당."
+      ],
+      "sourceUrls": [
+        "https://support.microsoft.com/ko-kr/excel/functions/unique-function",
+        "https://support.microsoft.com/ko-kr/office/whats-new/what-s-new-in-office-2021",
+        "https://support.microsoft.com/en-us/office/system-requirements/end-of-support-for-office-2016-and-office-2019",
+        "https://exceljet.net/functions/unique-function",
+        "https://www.xelplus.com/excel-remove-duplicates/"
+      ]
+    },
+    {
+      "claim": "중복 제거 후 데이터를 되돌릴 수 있는지는 공식 문서 안에서도 표현이 갈린다 — '영구 삭제'라는 문장과 'Ctrl+Z로 되돌린다'는 문장이 공존한다. 공통으로 안전한 결론은 지우기 전에 원본 복사본을 두라는 것.",
+      "grade": "unclear",
+      "evidence": [
+        "A. MS ko 중복 값 찾아 제거하기(2026-07-28): \"중복 제거 기능을 사용하면 중복 데이터가 영구적으로 삭제됩니다. 실수로 정보가 손실되지 않도록 중복 항목을 삭제하기 전에 원본 데이터를 다른 워크시트로 이동하거나 복사하는 것이 좋습니다.\"",
+        "B. MS ko/en 고유 값 필터링 또는 중복 값 제거(2025-10-13): \"실행 취소를 선택하거나 키보드에서 Ctrl+Z를 눌러 변경 내용을 실행 취소합니다.\" 웹 탭은 \"중복 항목을 제거한 후에는 언제든지 실행 취소를 선택하여 데이터를 다시 가져올 수 있습니다\"(영문: \"You can always select Undo\")라고 하면서도 곧바로 원본 복사를 권장.",
+        "문서에 없는 것: 저장하거나 파일을 닫은 뒤에도 되돌릴 수 있는지. 그래서 A·B가 모순인지 '작업 직후 한정'으로 양립하는지 자료로는 확정 불가.",
+        "양쪽 공통: 중복을 지우기 전에 원래 셀 범위·표를 다른 워크시트나 통합 문서에 복사해 두라는 권고(A, B, Mac 문서 모두).",
+        "작가 지침: '영구 삭제'와 'Ctrl+Z' 를 둘 다 적고 '백업 복사'로 수렴시킬 것. '언제든 되돌릴 수 있다' 또는 '한 번 지우면 복구 불가' 어느 쪽도 단정하지 말 것."
+      ],
+      "sourceUrls": [
+        "https://support.microsoft.com/ko-kr/office/%EC%A4%91%EB%B3%B5-%EA%B0%92-%EC%B0%BE%EC%95%84-%EC%A0%9C%EA%B1%B0%ED%95%98%EA%B8%B0-00e35bea-b46a-4d5d-b28e-66a552dc138d",
+        "https://support.microsoft.com/ko-kr/excel/get-started/filter-for-unique-values-or-remove-duplicate-values",
+        "https://support.microsoft.com/en-us/office/filter-for-unique-values-or-remove-duplicate-values-ccf664b0-81d6-449b-bbe1-8daaec1e83c2",
+        "https://support.microsoft.com/en-ie/office/filter-for-or-remove-duplicate-values-662c153f-cf21-4d7b-a5af-a9390648eb37?ui=en-us&rs=en-ie&ad=ie"
+      ]
+    }
+  ],
+  "numbers": [
+    {
+      "what": "중복 값 찾아 제거하기(ko) 문서 적용 버전 수·갱신일",
+      "value": "5종(Microsoft 365용 Excel · 2024 · 2021 · 2019 · 2016), ms.date 2026-07-28",
+      "asOf": "2026-07-28",
+      "sourceUrl": "https://support.microsoft.com/ko-kr/office/%EC%A4%91%EB%B3%B5-%EA%B0%92-%EC%B0%BE%EC%95%84-%EC%A0%9C%EA%B1%B0%ED%95%98%EA%B8%B0-00e35bea-b46a-4d5d-b28e-66a552dc138d"
+    },
+    {
+      "what": "고유 값 필터링 또는 중복 값 제거(Windows·웹) 문서 적용 버전 수",
+      "value": "5종(Microsoft 365 · 2024 · 2021 · 2019 · 2016), ms.date 2025-10-13",
+      "asOf": "2025-10-13",
+      "sourceUrl": "https://support.microsoft.com/ko-kr/excel/get-started/filter-for-unique-values-or-remove-duplicate-values"
+    },
+    {
+      "what": "Mac용 중복 값 문서 적용 버전 수",
+      "value": "3종(Mac용 Microsoft 365 · 2024 · 2021), Mac 2019 표기 없음",
+      "asOf": "2025-10-06",
+      "sourceUrl": "https://support.microsoft.com/en-ie/office/filter-for-or-remove-duplicate-values-662c153f-cf21-4d7b-a5af-a9390648eb37?ui=en-us&rs=en-ie&ad=ie"
+    },
+    {
+      "what": "UNIQUE 함수 문서 적용 대상 수",
+      "value": "11종(365 · Mac 365 · 2024 · Mac 2024 · 2021 · Mac 2021 · Microsoft365.com · iPad · iPhone · Android 태블릿 · Android 휴대폰). Excel 2019·2016 표기 없음",
+      "asOf": "2026-01-16",
+      "sourceUrl": "https://support.microsoft.com/ko-kr/excel/functions/unique-function"
+    },
+    {
+      "what": "UNIQUE 인수 개수",
+      "value": "3개 — array(필수), by_col(선택), exactly_once(선택)",
+      "asOf": "2026-01-16",
+      "sourceUrl": "https://support.microsoft.com/ko-kr/excel/functions/unique-function"
+    },
+    {
+      "what": "Office 2021에서 새로 들어온 동적 배열 함수 수",
+      "value": "6개 — FILTER, SORT, SORTBY, UNIQUE, SEQUENCE, RANDARRAY",
+      "asOf": "2026-08-25",
+      "sourceUrl": "https://support.microsoft.com/ko-kr/office/whats-new/what-s-new-in-office-2021"
+    },
+    {
+      "what": "Office 2016·2019 지원 종료일",
+      "value": "2025-10-14 (Support for Office 2016 and Office 2019 ended on October 14, 2025)",
+      "asOf": "2026-04-24",
+      "sourceUrl": "https://support.microsoft.com/en-us/office/system-requirements/end-of-support-for-office-2016-and-office-2019"
+    },
+    {
+      "what": "TRIM이 제거하는 공백 문자 코드 / 못 지우는 공백",
+      "value": "제거: 7비트 ASCII 공백 32 / 못 지움: 줄 바꿈하지 않는 공백 160(웹 페이지의 HTML 엔터티로 흔함)",
+      "asOf": "2026-01-07",
+      "sourceUrl": "https://support.microsoft.com/ko-kr/excel/functions/trim-function"
+    },
+    {
+      "what": "데이터 정리 문서가 드는 공백·인쇄 불가 문자 코드",
+      "value": "공백 32·160 / 인쇄 불가 0-31, 127, 129, 141, 143, 144, 157 / SUBSTITUTE로 바꾸라는 상위 값 127, 129, 141, 143, 144, 157, 160",
+      "asOf": "2026-04-30",
+      "sourceUrl": "https://support.microsoft.com/ko-kr/excel/top-ten-ways-to-clean-your-data"
+    },
+    {
+      "what": "CLEAN이 제거하는 범위",
+      "value": "7비트 ASCII 코드 0-31의 인쇄되지 않는 처음 32자",
+      "asOf": "2026-04-30",
+      "sourceUrl": "https://support.microsoft.com/ko-kr/excel/top-ten-ways-to-clean-your-data"
+    },
+    {
+      "what": "COUNTIF 문자열 길이 한계",
+      "value": "255자를 초과하는 문자열을 일치시키면 잘못된 결과 반환(CONCATENATE 또는 & 로 이어 붙이라고 안내)",
+      "asOf": "2026-08-06",
+      "sourceUrl": "https://support.microsoft.com/ko-kr/excel/get-started/use-the-countif-function-in-microsoft-excel"
+    },
+    {
+      "what": "MS 문서의 조건부 서식 중복 표시 수식 예시(A2:A400 범위)",
+      "value": "=COUNTIF($A$2:$A$400,A2)>1",
+      "asOf": "2025-10-13",
+      "sourceUrl": "https://support.microsoft.com/ko-kr/excel/get-started/filter-for-unique-values-or-remove-duplicate-values"
+    },
+    {
+      "what": "표시 서식만 다른 같은 날짜 예(고유로 취급)",
+      "value": "\"3/8/2006\" vs \"Mar 8, 2006\" (Windows 문서) / \"12/8/2017\" vs \"Dec 8, 2017\" (Mac 문서)",
+      "asOf": "2025-10-13",
+      "sourceUrl": "https://support.microsoft.com/ko-kr/excel/get-started/filter-for-unique-values-or-remove-duplicate-values"
+    },
+    {
+      "what": "숫자 서식이 달라 중복이 아닌 예 / 수식이 달라도 중복인 예(Mac 문서 한정)",
+      "value": "A1 서식 1.00 vs A2 서식 1 → 중복 아님 / A1 =2-1 vs A2 =3-2, 서식 같으면 중복",
+      "asOf": "2025-10-06",
+      "sourceUrl": "https://support.microsoft.com/en-ie/office/filter-for-or-remove-duplicate-values-662c153f-cf21-4d7b-a5af-a9390648eb37?ui=en-us&rs=en-ie&ad=ie"
+    }
+  ],
+  "dropped": [
+    {
+      "url": "https://support.microsoft.com/ko-kr/excel/excel-specifications-and-limits",
+      "why": "Excel 사양 및 제한(2026-04-13). 본문이 파일 이름 길이 218자·숫자 정밀도 15자리·수식 길이 8,192자 같은 한계 표뿐이고 중복 찾기·제거를 다루지 않는다. 조사 메모도 \"15자리 초과 숫자가 중복 판정에 어떤 영향을 주는지는 언급하지 않는다\"고 확인. '15자리 넘는 숫자는 중복으로 잘못 잡힌다'는 주장의 근거가 되지 못하므로 그 각도는 cannotCover 로 보냈다."
+    }
+  ],
+  "conflicts": [
+    {
+      "about": "조건부 서식 메뉴 이름(한국어 표기)",
+      "a": "ko-kr 공식 \"중복 값 찾아 제거하기\"(find-and-remove-duplicates): \"홈 > 조건부 서식 > 셀 강조 표시, 규칙 > 중복 값을 선택합니다\" — 어순이 깨진 기계번역 흔적(영문판은 Highlight Cells Rules)",
+      "b": "ko-kr 공식 \"고유 값 필터링 또는 중복 값 제거\": \"조건부 서식 … 셀 강조 규칙을 선택하고 중복 값을 선택\", 엑셀웍스(2025-04-22) 화면 기준도 \"[셀 강조 규칙] → [중복 값]\". 실제 한국어 Excel 화면은 이 조사에서 직접 확인하지 않음"
+    },
+    {
+      "about": "한국어 UI 의 중복 제거 버튼 이름",
+      "a": "MS ko-kr 공식 문서: \"데이터 > 데이터 도구 > 중복 제거\"(영문 Remove Duplicates)",
+      "b": "엑셀웍스(2025-04-22): \"[데이터] → [데이터 도구] → [중복된 항목 제거]\", 대화상자는 \"[중복 값 제거]\". 블로그가 화면 캡처 기준이라 실제 버튼명일 가능성이 높으나 이 조사에서 직접 확인은 못 함"
+    },
+    {
+      "about": "중복 제거 후 되돌리기 가능 여부",
+      "a": "ko-kr \"중복 값 찾아 제거하기\": \"중복 제거 기능을 사용하면 중복 데이터가 영구적으로 삭제됩니다\" — 원본을 다른 워크시트로 옮기거나 복사 권장",
+      "b": "ko-kr/en-us \"고유 값 필터링 또는 중복 값 제거\": \"실행 취소를 선택하거나 Ctrl+Z\" 로 되돌릴 수 있고, 웹 탭은 \"언제든지 실행 취소\" 라고 씀. 저장·파일 닫기 이후에도 되돌릴 수 있는지는 문서에 없음(그래서 복사본 백업 권장이 양쪽 공통)"
+    },
+    {
+      "about": "고급 필터 메뉴 경로 표기",
+      "a": "ko-kr 문서 텍스트: \"데이터 > 정렬 & > 필터 고급\", \"정렬 & 필터 그룹에서 데이터 고급을 선택합니다 >\" — 기계번역으로 어순이 깨짐",
+      "b": "en-us/Mac 문서: \"Data > Sort & Filter > Advanced\" (Sort & Filter group), 옵션명 \"Filter the list, in-place\" / \"Copy to another location\" / \"Unique records only\" (ko 옵션명: 목록 필터링 / 다른 위치에 복사 / 고유 레코드만)"
+    },
+    {
+      "about": "문서별 적용 버전 표기 범위",
+      "a": "Windows용 중복 값 문서(ko/en): Microsoft 365 · 2024 · 2021 · 2019 · 2016 (5종), 웹 탭은 중복 제거만 안내",
+      "b": "Mac 문서: Mac용 Microsoft 365 · 2024 · 2021 (3종). UNIQUE 문서: Windows·Mac 365/2024/2021 + Microsoft365.com·iPad·iPhone·Android 폰/태블릿, 2019·2016 표기 없음. COUNTIF 문서도 2019 표기 없음(TRIM·EXACT 는 2019 포함)"
+    },
+    {
+      "about": "COUNTIF ko-kr 예제 표기",
+      "a": "ko-kr COUNTIF 문서 예제 표: =COUNTIF(A2:A5,\"오미자\") 의 설명은 \"사과가 포함된 셀의 개수(결과 2)\", 다른 행은 \"런던\" 예시 등 수식과 설명 불일치",
+      "b": "같은 문서의 구문 설명(COUNTIF(range, criteria), 대소문자 무시, 255자)은 일관됨 — 예제 수식 인용은 피하고 구문·주의사항만 인용 권장"
+    }
+  ],
+  "cannotCover": [
+    "'내 데이터에 머리글 표시'(My data has headers) 체크박스 — MS 공식 문서(ko/en/Mac) 어디에도 머리글 언급이 없고 Xelplus(영문 블로그)에서만 확인됨. 한국어 화면 라벨도 미확인. 공식 문서에서 머리글이 나오는 곳은 고급 필터 전 '셀 범위에 열 머리글이 있는지 확인'(고유 값 개수 문서) 하나뿐. 이 체크박스를 단계 설명에 단정해 넣지 말 것.",
+    "한국어 화면의 정확한 버튼·대화상자 이름 — MS ko '중복 제거' vs 엑셀웍스 화면 캡처 '중복된 항목 제거'(대화상자 '중복 값 제거'), 조건부 서식 대화상자 세부 라벨과 기본 서식 이름('진한 빨강 텍스트가 있는 연한 빨강 채우기')도 블로그 표기뿐. 직접 실행 확인 없음 → 라벨을 단정하지 말고 '화면에 따라 표기가 조금 다를 수 있다'로 병기.",
+    "'중복 제거'와 UNIQUE가 대소문자를 구분하지 않는다는 마이크로소프트 공식 문장 — 공식 확인은 COUNTIF(무시)·EXACT(구분)뿐이고 나머지는 Xelplus·Exceljet(보조)만. 쓰려면 '보조 자료에 따르면'으로 출처를 밝히고 단정 금지.",
+    "'중복 제거'·조건부 서식 '중복 값' 규칙이 앞뒤 공백·NBSP 차이를 다른 값으로 보는지 — 공식 직접 문장 없음(정렬·필터·검색·COUNTIF만 공식). 구체적 정리 수식(예: SUBSTITUTE로 코드 160을 공백으로 바꾸는 식)도 자료에는 문장 설명만 있고 수식 원문이 없다.",
+    "Excel 2019에서 UNIQUE '사용 불가'라는 직접 문장 — 공식 UNIQUE 문서의 적용 대상에 2019·2016이 없다는 사실과 Office 2021 신기능 문서가 UNIQUE를 새 함수로 소개한다는 사실까지만. 2019 대체 방법(고급 필터·수식 조합)은 다뤄도 되지만 'UNIQUE가 2019에서 오류가 난다' 식 체험 서술은 금지.",
+    "웹용 Excel의 고급 필터·조건부 서식 '중복 값' 규칙 지원 여부 — 공식 웹 탭은 '중복 제거'만 안내하고 나머지는 언급 없음. 웹용 UNIQUE는 적용 대상에 Microsoft365.com이 있어 표기 확인만.",
+    "15자리 넘는 숫자(주민번호·카드번호·긴 코드)가 조건부 서식·COUNTIF 중복 판정에서 잘못 잡히는 현상 — 공식 문서는 숫자 정밀도 15자리만 명시하고 중복 판정과의 관계는 없음. 다루지 말 것.",
+    "실행 취소(Ctrl+Z)가 저장·파일 닫기 이후에도 가능한지 — 문서에 없음(claim 6 unclear).",
+    "Mac(한국어 UI)의 정확한 메뉴 라벨 — Mac 문서는 영문 본문만 읽었고 Windows와 같은 탭·그룹 구조라는 것까지만 확인.",
+    "2026-09 시점 Excel의 신규 중복 처리 기능(Copilot·새 데이터 정리 도구 등) — ko '중복 값 찾아 제거하기' 서두에 \"중복 항목을 찾고 제거하는 방법에 대해 Copilot의 도움을 받으세요.\" 문구가 있다는 사실만 확인, 기능 동작·요금·지원 범위는 자료 없음. 새 메뉴 개편 언급도 없었음.",
+    "Power Query·VBA·Google 스프레드시트로 중복 제거 — Xelplus가 Power Query 반례를 언급한 것 외에 공식 자료 없음. 이 글의 범위(조건부 서식·중복 제거·UNIQUE)에서 제외.",
+    "직접 실행한 스크린샷·소요 시간·'해봤더니' 같은 체험 서술 — 이 조사는 문서 읽기만 했고 화면 재현은 없음. 조사 문서 기반 안내 글로만 쓸 것.",
+    "ko-kr COUNTIF 문서의 예제 표(=COUNTIF(A2:A5,\"오미자\") 설명이 '사과' 등) — 기계번역으로 수식과 설명이 어긋나 인용 금지. 구문·대소문자·255자·공백 주의만 인용."
+  ],
+  "songs": []
+}
