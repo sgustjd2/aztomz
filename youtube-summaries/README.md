@@ -3,10 +3,14 @@
 채널 [AI Engineer](https://www.youtube.com/@aiDotEngineer) 의 새 영상을 Gemini 로 자동 요약한 모음입니다.
 생성: `backend/scripts/youtube-summarize.mjs` (GitHub Actions `youtube-summary` 크론).
 
-총 **222개**.
+총 **226개**.
 
 | 발행일 | 제목 |
 |---|---|
+| 2026-09-30 | [Your Agents Are in Solitary Confinement: Why MCP & A2A Aren't Enough — Vlad Luzin, Band](2026-09-30-UOcHfR3_tys.md) |
+| 2026-09-30 | [The State of AI in Software Development: Data from 400+ Orgs — Justin Reock, DX](2026-09-30-Se8jHLliLXE.md) |
+| 2026-09-30 | [The Chief AI Officer: Scientist, Architect, Coach — Rania Khalaf, WSO2](2026-09-30-9cJrbj23fOA.md) |
+| 2026-09-30 | [The Death of the Code Review: What the Data Actually Says — Laurie Voss, Arize AI](2026-09-30-_mi3alkqy4s.md) |
 | 2026-09-27 | [I Turned Coding Agents Into a Strategy Game — Ido Salomon, AgentCraft](2026-09-27-YIVkERhy8xo.md) |
 | 2026-09-27 | [What It Actually Takes to Build a Software Factory — Tereza Tížková, Factory](2026-09-27-vGCJ7diEtrw.md) |
 | 2026-09-27 | [Software Engineering Is Becoming Factory Engineering — Zach Lloyd, Warp](2026-09-27-tUPPVhBBcoM.md) |
