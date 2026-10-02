@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-10-01",
+  "generatedAt": "2026-10-02",
   "trends": [
     {
       "id": "dubai-choco",
       "type": "신뢰분석",
       "cat": "디저트",
       "coverCat": "cat-dessert",
-      "analyzedAt": "2026-08-28",
+      "analyzedAt": "2026-10-02",
       "title": "두바이 초콜릿 (편의점판)",
       "shops": [
         {
