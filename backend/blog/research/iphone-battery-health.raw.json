@@ -1,0 +1,140 @@
+{
+  "keyword": "아이폰 배터리 성능 최대치 확인·교체 기준",
+  "categoryId": "hangeut-trend",
+  "searchedAt": "2026-10-01",
+  "queries": [
+    "support.apple.com 배터리 성능 상태 및 충전 최대 용량",
+    "Apple iPhone battery maximum capacity 80% replacement support.apple.com",
+    "아이폰 배터리 교체 비용 애플 공식 가격 2026",
+    "iPhone 15 battery charge cycle count setting support.apple.com",
+    "site:support.apple.com 아이폰 배터리 서비스 가격 비용",
+    "애플 공식 아이폰 수리 비용 배터리 교체 지원.apple.com 가격표",
+    "iOS 27 battery health feature change support.apple.com",
+    "\"Adaptive Power\" iOS 27 battery support.apple.com 적응형 전원 모드"
+  ],
+  "sources": [
+    {
+      "title": "iPhone 배터리 및 성능 - Apple 지원 (KR)",
+      "url": "https://support.apple.com/ko-kr/101575",
+      "host": "support.apple.com",
+      "tier": "official",
+      "publishedAt": "2026-06-12",
+      "body": "설정 경로: 설정 앱을 연 다음 '배터리'를 탭한 후 '배터리 성능 상태'를 탭하면 배터리 성능 상태 화면을 확인할 수 있다. 이 화면은 새 제품 대비 현재 배터리 용량을 측정하는 '최대 용량'을 보여준다. iPhone이 제조된 시점과 활성화된 시점 사이 기간에 따라 배터리 용량이 100%보다 약간 낮게 표시될 수 있다. 최대 용량 기준: iPhone 14 이전 모델의 배터리는 이상적인 조건에서 전체 충전 사이클을 500번 반복했을 때 원래 용량의 80%를 유지하도록 설계되었고, iPhone 15 모델의 배터리는 전체 충전 사이클을 1,000번 반복했을 때 원래 용량의 80%를 유지하도록 설계되었다. 충전 사이클이란 배터리 용량의 100%에 해당하는 전력을 사용하면 완료되는 1번의 사이클을 말한다(한 번에 다 쓸 필요는 없음). 성능 관리(스로틀링) 기능은 예기치 않게 전원이 꺼지지 않도록 CPU·GPU 등 일부 시스템 구성요소의 최대 성능을 iOS가 동적으로 관리하는 기능이다.",
+      "facts": [
+        "설정 경로: 설정 > 배터리 > 배터리 성능 상태",
+        "iPhone 14 이전 모델은 충전 사이클 500회에서 원래 용량의 80% 유지하도록 설계",
+        "iPhone 15 모델은 충전 사이클 1,000회에서 원래 용량의 80% 유지하도록 설계",
+        "1 충전 사이클 = 배터리 용량 100%에 해당하는 전력 사용(누적 가능)",
+        "문서 게시일 2026-06-12"
+      ]
+    },
+    {
+      "title": "About the battery and performance of iPhone 11 and later - Apple 지원 (KR)",
+      "url": "https://support.apple.com/ko-kr/106348",
+      "host": "support.apple.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "iPhone 11 이후 모델의 배터리 성능 상태 문서. 최대 용량 80% 기준을 재확인: iPhone 14 이전 모델은 전체 충전 사이클 500번, iPhone 15 이후 모델은 1,000번 반복했을 때 원래 용량의 80%를 유지하도록 설계되었다고 명시한다. iPhone 15 모델 이상에서 iOS 17.4 이후 버전을 사용하면 설정 > 배터리 > 배터리 성능 상태 화면에서 '사이클 수', '배터리 제조일', '처음 사용일' 항목을 추가로 확인할 수 있다. 명시적인 숫자 기준(예: 몇 % 이하면 즉시 교체)은 이 문서에 나와 있지 않으며, 배터리 노화로 성능에 영향이 있어 지원이 필요하면 Apple 지원에 문의하라고 안내할 뿐 자체 교체 권장 임계값을 제시하지는 않는다.",
+      "facts": [
+        "iPhone 15 이후 + iOS 17.4 이후에서 배터리 성능 상태 화면에 사이클 수·제조일·처음 사용일 표시",
+        "80% 유지 기준은 500회(iPhone 14 이전)/1,000회(iPhone 15 이후) 충전 사이클"
+      ]
+    },
+    {
+      "title": "iPhone 배터리 충전 및 유지 관리하기 - Apple 지원 (KR)",
+      "url": "https://support.apple.com/ko-kr/105105",
+      "host": "support.apple.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "배터리 충전·유지 관리 가이드. 배터리 온도가 Apple이 권장하는 범위를 초과하면 소프트웨어가 충전을 80%까지만 제한할 수 있다고 설명한다(고온 보호 목적). 최적화된 배터리 충전 기능은 iPhone이 완전히 충전되는 데 걸리는 시간을 조정해 배터리 수명을 개선하도록 돕는 기능으로, 기기 내 머신러닝을 이용해 사용자가 iPhone을 쓰려는 시간에 맞춰 완전 충전이 끝나도록 충전 속도를 조절한다. 이 기능은 기본적으로 활성화되어 있다.",
+      "facts": [
+        "배터리 온도가 권장 범위를 초과하면 소프트웨어가 충전을 80%까지만 제한할 수 있음",
+        "최적화된 배터리 충전은 기기 내 머신러닝으로 사용자의 충전 패턴을 학습해 완전충전 시점을 늦추는 기능, 기본 활성화"
+      ]
+    },
+    {
+      "title": "About Charge Limit and Optimized Battery Charging on iPhone - Apple 지원 (KR)",
+      "url": "https://support.apple.com/ko-kr/108055",
+      "host": "support.apple.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "충전 한도(Charge Limit)와 최적화된 배터리 충전 기능을 비교 설명하는 문서. iPhone 15 이후 모델은 설정 > 배터리 > 충전 > 충전 한도에서 80%~100% 사이를 5% 단위로 직접 선택해 그 한도의 몇 퍼센트 포인트 이내까지만 충전되도록 설정할 수 있는 '충전 한도' 기능을 지원한다. iPhone 14 이전 모델은 이 세부 설정 없이 설정 > 배터리 > 배터리 성능 상태 및 충전 메뉴의 '최적화된 배터리 충전' 토글만 지원한다. 최적화된 배터리 충전은 기기 내 머신러닝으로 사용자의 일상적인 충전 패턴을 학습해, iPhone이 충전기에 장시간 연결되어 있을 것으로 예측되는 경우에만 활성화된다.",
+      "facts": [
+        "iPhone 15 이후: 설정 > 배터리 > 충전 > 충전 한도(80~100%, 5% 단위) 직접 설정 가능",
+        "iPhone 14 이전: 설정 > 배터리 > 배터리 성능 상태 및 충전 > 최적화된 배터리 충전 토글만 지원"
+      ]
+    },
+    {
+      "title": "About recalibration of battery health reporting in iOS 14.5 or later - Apple 지원 (KR)",
+      "url": "https://support.apple.com/ko-kr/119954",
+      "host": "support.apple.com",
+      "tier": "official",
+      "publishedAt": "2025-09-18",
+      "body": "iOS 14.5 이후 iPhone 11 / 11 Pro / 11 Pro Max 기종에서 일부 사용자에게 부정확하게 보고되던 배터리 성능 예측치 문제를 해결하기 위해 배터리 성능 리포트 시스템이 재조정(recalibration)된다는 공지. 재조정 과정은 몇 주 정도 소요될 수 있으며, 진행 중에는 설정 > 배터리 > 배터리 성능 상태 메뉴에 재조정 관련 메시지가 표시된다. Apple은 이러한 부정확한 리포트가 실제 배터리 성능 상태 자체에 문제가 있음을 의미하는 것은 아니라고 명시한다. 재조정 이후에도 문제가 지속되면 Apple 공인 서비스 제공업체를 통해 배터리를 무료로 교체받을 수 있다.",
+      "facts": [
+        "iPhone 11/11 Pro/11 Pro Max 한정, iOS 14.5 이후 배터리 성능 리포트 재조정 적용",
+        "재조정 기간은 수 주 소요, 문서 게시일 2025-09-18"
+      ]
+    },
+    {
+      "title": "Use Adaptive Power to extend the battery life of your iPhone - Apple 지원 (KR)",
+      "url": "https://support.apple.com/ko-kr/123707",
+      "host": "support.apple.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "적응형 전력 모드(Adaptive Power)는 iOS 26에서 도입된 기능으로(페이지 내 'ios-26' 표기 확인), iPhone을 평소보다 많이 사용하는 날 배터리 사용 시간을 늘리는 데 도움을 준다. 기기 내 인텔리전스로 최근 사용 패턴을 학습해(최소 7일간의 학습 기간 필요) 필요할 때를 예측하고, 화면 밝기를 낮추거나 백그라운드 활동을 제한하는 등 성능을 조정하며, 배터리가 20%에 도달하면 저전력 모드를 자동으로 켜기도 한다. iPhone 17 / 17 Pro / 17 Pro Max / iPhone Air는 기본 활성화, iPhone 16 시리즈·16e·15 Pro/Pro Max는 기본 비활성화 상태로 제공된다. 설정 경로는 설정 > 배터리 > 전력 모드 > 적응형 전력 모드.",
+      "facts": [
+        "적응형 전력 모드는 iOS 26 기능(문서상 iOS 27이 아님) — iPhone 17 계열·Air는 기본 ON, 16 계열·15 Pro/Pro Max는 기본 OFF",
+        "최소 7일 사용 패턴 학습 후 작동, 배터리 20% 도달 시 저전력 모드 자동 전환 포함"
+      ]
+    },
+    {
+      "title": "About iOS 27 Updates - Apple 지원 (KR)",
+      "url": "https://support.apple.com/ko-kr/149076",
+      "host": "support.apple.com",
+      "tier": "official",
+      "publishedAt": "2026-09-29",
+      "body": "iOS 27 업데이트 안내 문서(게시일 2026-09-29). 보안 업데이트 포함(세부는 support.apple.com/100100 참조). 주요 변경은 Apple Intelligence 확장(iPhone 16 이상·iPhone 15 Pro/Pro Max 대상 — 사진 앱 공간 프레임 재설정·확장 도구·클린업, Safari 주제별 구성, Image Playground 신규 생성형 모델, 단축어 설명, HomeKit 활동 알림 요약, 캘린더 자연어 이벤트 생성, 전화 통화 맥락 기능, 손쉬운 사용 VoiceOver·확대기·읽기 도구 강화), 자녀 안전 기능(자녀 계정 설정·브라우징 요청·스크린 타임 재설계), 시스템 향상(Liquid Glass 개선, 앱 실행·사진 로드·AirDrop 성능 최적화, 검색 강화)이다. 배터리 성능 상태·배터리 교체 기준·충전 사이클 표시와 관련된 변경사항은 이 문서에 전혀 언급되지 않는다 — 문서 하단에 '이와 같은 소프트웨어 업데이트에 포함된 새로운 기능 및 개선사항은 성능 및/또는 배터리 사용 시간에 영향을 줄 수 있습니다'라는 일반 문구만 있을 뿐, 구체적인 배터리 기능 변경은 명시되어 있지 않다.",
+      "facts": [
+        "iOS 27 공식 업데이트 문서(게시일 2026-09-29)에 배터리 성능 상태·사이클 표시 관련 변경사항 언급 없음",
+        "iOS 27 주요 변경은 Apple Intelligence 확장·자녀 안전·시스템 성능(Liquid Glass 등) 중심, 배터리 전용 신기능 아님"
+      ]
+    },
+    {
+      "title": "iPhone 배터리에 대한 Apple 서비스 및 수리 - Apple 지원 (KR)",
+      "url": "https://support.apple.com/ko-kr/iphone/repair/battery-replacement",
+      "host": "support.apple.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "Apple 공식 배터리 서비스·수리 안내 페이지. AppleCare+ 가입 상태에서 배터리 용량이 80% 미만으로 떨어지면 추가 비용 없이 배터리를 교체해 준다고 명시한다. 보증 기간은 iPhone 본체 구매일로부터 2년, 배터리는 1년이다. 모델별 구체적인 원화 수리비 표는 페이지 내 동적 견적 도구(제품 선택 후 산출)로 제공되어 정적 WebFetch로는 가격 숫자가 로드되지 않았다 — 페이지 자체는 '정확한 개별 견적을 안내해 드릴 수 있도록 제품을 점검해야 할 수 있습니다'라고 안내하며, 실제 비용은 기기 점검 후 결정된다고 밝힌다.",
+      "facts": [
+        "AppleCare+ 가입 시 배터리 용량 80% 미만이면 무상 교체",
+        "iPhone 보증 2년(본체) / 배터리 보증 1년 — 공식 고지"
+      ]
+    },
+    {
+      "title": "아이스토어 - Apple 공인 서비스센터 가격표",
+      "url": "https://asp.i-store.co.kr/web/price.do",
+      "host": "asp.i-store.co.kr",
+      "tier": "data",
+      "publishedAt": null,
+      "body": "아이스토어 주식회사(Apple 공인 서비스센터)가 공시한 수리 서비스 가격표. 배터리 교체는 AppleCare+ 보증수리·보증제외 수리 모두 89,000원(VAT 포함)으로 모델 구분 없이 동일 단가로 표시되어 있다. 비교로 디스플레이 수리는 AppleCare+ 40,000원/보증제외 479,000원, 후면 교체는 40,000원/799,000원, 제품 교체(기기 전체 교체)는 120,000원/859,000원이다. 문의 전화 02-854-2211. 페이지 내 '고시 기준일'이 '2023년 3월 0일'·'4628년 3월 0일' 등으로 일관되지 않게 표시되어 날짜 필드 자체는 신뢰하기 어렵다(페이지 렌더링 오류로 추정). 페이지는 '서비스 비용은 Apple Store 및 Apple의 서비스 제공 업체별로 다를 수 있습니다'라고 명시한다.",
+      "facts": [
+        "아이스토어(Apple 공인 서비스센터) 배터리 교체 가격: AppleCare+ 보증수리·보증제외 모두 89,000원(VAT 포함), 모델 구분 없음",
+        "같은 페이지 디스플레이 수리 보증제외 479,000원, 후면 교체 보증제외 799,000원(배터리 대비 참고용)"
+      ]
+    }
+  ],
+  "conflicts": [
+    {
+      "about": "모델별 배터리 교체 비용(원화)이 실제로 차등 적용되는지",
+      "a": "Apple 공식 지원 페이지(support.apple.com/ko-kr/iphone/repair/battery-replacement)는 정적 페치로는 구체적 원화 가격을 확인할 수 없었고, 비용은 '제품 점검 후' 결정된다고만 안내한다",
+      "b": "Apple 공인 서비스센터 아이스토어(asp.i-store.co.kr)는 배터리 교체를 AppleCare+·보증제외 구분 없이 모델 무관 89,000원 균일가로 고시한다 — 세간에 도는 '아이폰 16 Pro 179,000원 / 14~16+ 146,000원' 류의 모델별 차등 수치는 WebFetch로 원문을 직접 확인하지 못해(검색 스니펫에서만 등장, 실제 링크는 무관한 자동차 블로그로 확인됨) 이 조사에서는 사실로 채택하지 않았다"
+    }
+  ],
+  "unknowns": [
+    "Apple 온라인 스토어(apple.com/kr) 또는 Apple 공식 지원 페이지의 모델별(아이폰 13/14/15/16/17) 배터리 교체 '정가' 원화 수치 — 해당 페이지가 JS로 동적 렌더링되어 WebFetch(정적 파싱)로는 가격 숫자를 확인할 수 없었음. 확인된 유일한 실측 가격은 Apple 공인 서비스센터(아이스토어)의 89,000원 균일가뿐이며, 이것이 Apple Store 직영 가격과 동일한지는 확인하지 못함",
+    "iPhone 15 이전(14 이하) 기종에서 설정 메뉴에 사이클 수가 아예 표시되지 않는지, 혹은 다른 경로(예: 설정 진단 리포트)로 확인 가능한지 — 공식 문서는 'iPhone 15 이후 + iOS 17.4 이후'만 명시하고 이전 기종의 대안 확인법은 언급하지 않음",
+    "iOS 27에서 적응형 전력 모드(Adaptive Power)의 지원 기종이 iOS 26 대비 확대되었는지 여부 — 확인한 Adaptive Power 공식 문서는 iOS 26 기준으로만 기술되어 있고, iOS 27 업데이트 공식 문서에는 이 기능에 대한 별도 언급이 없었음"
+  ]
+}

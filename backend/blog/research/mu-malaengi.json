@@ -1,0 +1,168 @@
+{
+  "keyword": "무말랭이 만들기",
+  "categoryId": "hangeut-trend",
+  "notes": "무말랭이 만들기는 '좋은 무 고르기' 단계만 농촌진흥청 공식 자료로 뒷받침되고, 썰기 두께·건조 온도/시간·불리는 시간 등 '만드는 공정' 자체는 정부·공인기관 1차 표준이 확인되지 않아 모든 수치가 레시피 UGC·언론 보도마다 다르다(상충 자료는 하나로 단정하지 말고 병기). 생무/건조 무말랭이/무말랭이무침의 보관 온도·기간도 자료마다 소폭~크게 갈려 공식 수치와 민간 콘텐츠 수치를 구분해 제시해야 한다. 비타민D·항암효과 등 영양 효능 주장은 1차 연구 근거가 확인되지 않아 이 글에서 다루지 않는다.",
+  "sources": [
+    {
+      "title": "가을이 준 선물, 김장용 '무' 잘 고르려면?",
+      "url": "https://www.rda.go.kr/middlePopOpenPopNongsaroDBView.do?no=1345&sj=%EA%B0%80%EC%9D%84%EC%9D%B4+%EC%A4%80+%EC%84%A0%EB%AC%BC%2C+%EA%B9%80%EC%9E%A5%EC%9A%A9+%C2%B4%EB%AC%B4%C2%B4+%EC%9E%98+%EA%B3%A0%EB%A5%B4%EB%A0%A4%EB%A9%B4%3F",
+      "host": "rda.go.kr",
+      "tier": "official",
+      "body": "농촌진흥청 국립원예특작과학원 채소과(담당 최승국) 공식 자료, 2018-11-27 발행. 좋은 김장용 무는 모양이 곧고 잔뿌리가 없으며 표면이 희고 매끄럽고, 들었을 때 묵직하고 눌렀을 때 단단해야 함. 무 윗부분의 녹색이 전체 크기의 1/3 정도면 잘 자라서 좋은 영양소가 듬뿍 담긴 무. 종자를 뿌린 지 70일 지난 시점이 가장 맛있고(8월 말~9월 초 파종 시 11월 중순 수확 적기), 영하로 떨어지면 얼 수 있어 주의해야 함."
+    },
+    {
+      "title": "채소 > 근채류 무 - 가정에서의 보관방법",
+      "url": "https://www.nongsaro.go.kr/portal/ps/psz/psza/contentSub.ps?menuId=PS03796&pageIndex=1&pageSize=10&sSeCode=374001&cntntsNo=101927&sDetCode=&sType=sCntntsSj&sText=",
+      "host": "nongsaro.go.kr",
+      "tier": "official",
+      "body": "농촌진흥청 농사로 공식 전자정부 페이지, 등록 2006-12-14(작성 정대성). 무의 가정 보관 적정온도 0~4℃, 적정습도 90~95%, 동결온도 약 -1.5℃. 신문지에 싸서 냉장 보관하거나 겨울철 신문지로 싸 베란다에 두되 얼지 않도록 주의. 무말랭이(건조 무) 자체의 제조법은 다루지 않음 — 생무 보관법 한정 자료."
+    },
+    {
+      "title": "무 식재료 효능 영양성분 고르는법 손질법 보관법 음식궁합 활용음식 — 램프쿡",
+      "url": "http://www.lampcook.com/farm/food_material_view.php?idx_no=93",
+      "host": "lampcook.com",
+      "tier": "blog",
+      "body": "aT한국농수산식품유통공사·한국외식산업경영연구원·한국외식정보(주) 출처 표시 식재료 정보 페이지. 싱싱한 무는 하얗고 윤기 있고 단단하며 무청이 초록색. 보관 적정온도 4~5℃로 제시 — nongsaro.go.kr(0~4℃)과 소폭 다름(상충). 잎 제거하고 흙 묻은 채 랩/신문지 포장 시 5~7일 보관 가능."
+    },
+    {
+      "title": "오래 두고 먹는데도 영양소 살아 있는 무말랭이 '촉촉하게' 만드는 비법",
+      "url": "https://www.wikitree.co.kr/articles/1081223",
+      "host": "wikitree.co.kr",
+      "tier": "press",
+      "body": "위키트리 위키헬스, 2025-09-15. 무말랭이는 미지근한 물에 약 30분 불리면 부드러우면서 씹는 맛이 산다고 제시. 무쳐 먹을 경우 양념이 속까지 배는 데 약 하루, 무친 뒤 냉장 보관은 일주일 안에 섭취 권장. 썰기 두께·건조 온도·시간 등 제조 단계의 정량 수치는 제시하지 않음(조리 이후 단계 위주)."
+    },
+    {
+      "title": "무말랭이는 '이렇게' 해야 오독오독…백반집에서도 따라 합니다",
+      "url": "https://www.wikitree.co.kr/articles/1113952",
+      "host": "wikitree.co.kr",
+      "tier": "press",
+      "body": "위키트리 위키헬스, 2026-01-29. 써는 두께는 '손가락 한 마디보다 살짝 얇게'(정성적 표현, mm/cm 수치 없음). 건조 완료 기준은 구부렸을 때 부러지지 않고 천천히 펴지는 정도. 영상의 날씨를 골라야 하고 물에 씻지 않는 것이 핵심이며, 겨울 무말랭이에 소금·설탕을 미리 뿌려 말리는 방식은 비권장."
+    },
+    {
+      "title": "무 말랭이 만드는 법 식품 건조기 무우 말리기",
+      "url": "https://www.10000recipe.com/recipe/7038578",
+      "host": "10000recipe.com",
+      "tier": "blog",
+      "body": "만개의레시피 UGC. 손가락 굵기로 5~6cm 길이로 썰기. 식품건조기 70℃에서 10시간 말린 뒤 꾸덕해지면 55℃로 낮춰 5시간 추가(총 약 15시간), 트레이 위치를 수시로 바꿔가며 골고루 말릴 것을 권장. 개인 게시물, 공식 기관 자료 아님."
+    },
+    {
+      "title": "에어프라이어로 무말랭이만들기",
+      "url": "https://www.10000recipe.com/recipe/6912891",
+      "host": "10000recipe.com",
+      "tier": "blog",
+      "body": "만개의레시피 UGC. 적당한 크기로 굵게 채썰어 준비. 에어프라이어에 식품건조 전용 모드가 없으면 70℃·8시간으로 대체 설정. 정확한 두께(mm)나 중간에 뒤집는 횟수는 명시 안 됨. 빨리 불리려면 미지근한 물에 설탕을 약간 넣는 팁 제시."
+    },
+    {
+      "title": "무 말랭이 말리기",
+      "url": "https://www.10000recipe.com/recipe/6946888",
+      "host": "10000recipe.com",
+      "tier": "blog",
+      "body": "만개의레시피 UGC. 건조 후 수축을 고려해 1cm를 살짝 넘는 두께로 썰기를 권장. 오븐 사용 시 170~180℉에서 2~3시간 꾸덕하게 말린 뒤 실내에서 2일 추가 건조. 식품건조기는 '하룻밤' 건조로 간단 안내. 완전 건조 대신 70~80%만 말려 냉동 보관하는 방법도 제시."
+    },
+    {
+      "title": "무말랭이 만들기 & 무말랭이 무침",
+      "url": "https://www.10000recipe.com/recipe/6948493",
+      "host": "10000recipe.com",
+      "tier": "blog",
+      "body": "만개의레시피 UGC(자연건조). 새끼손가락 길이의 기둥 모양으로 썰어 채반에 펼쳐 베란다에서 7일간 건조, 이동식 건조대로 통풍시키면 곰팡이 방지. 건조기 사용 시 구체적 온도·시간은 본문에 없음."
+    },
+    {
+      "title": "무말랭이 보관법, 팁부터 주의사항까지 총정리",
+      "url": "https://display.cjonstyle.com/nfront/content/info/%EB%AC%B4%EB%A7%90%EB%9E%AD%EC%9D%B4-%EB%B3%B4%EA%B4%80%EB%B2%95/index.html",
+      "host": "cjonstyle.com",
+      "tier": "blog",
+      "body": "CJ온스타일 콘텐츠 마케팅 성격 가이드(공식 기관 자료 아님). 건무말랭이 냉장 7~14일·냉동 1~3개월, 양념한 무말랭이무침은 냉장 2~3일 내 맛·냄새 확인 권장. 불린 무말랭이는 24~48시간 내 조리, 냉동분 자연해동은 냉장실에서 6~12시간. 눅눅해지면 통풍되는 그늘에서 1~2시간 재건조해 식감 복구 가능."
+    },
+    {
+      "title": "무말랭이 맛있게 만드는법, 오독한 식감의 무말랭이 불리는 시간도 중요해요~",
+      "url": "http://www.menupan.com/cook/cookboard/cookboard_view.asp?id=50978",
+      "host": "menupan.com",
+      "tier": "blog",
+      "body": "메뉴판닷컴 요리게시판 UGC, 2015-01-05. 불리는 시간은 약 10분이면 충분하며, 너무 오래 불리면 아린맛이 사라지고 질겨진다고 주장 — 위키트리(30분 권장)와 불리는 시간·논리 모두 상충."
+    }
+  ],
+  "claims": [
+    {
+      "claim": "무말랭이를 만들기 전 좋은 가을·김장용 무를 고르는 기준은 농촌진흥청 공식 자료로 뒷받침된다",
+      "grade": "confirmed",
+      "evidence": [
+        "모양이 곧고 잔뿌리가 없으며 표면이 희고 매끄러운 무가 좋음 — 들었을 때 묵직하고 눌렀을 때 단단함이 느껴져야 함(농촌진흥청 국립원예특작과학원, 2018-11-27)",
+        "무 윗부분의 녹색이 전체 크기의 1/3 정도면 잘 자라서 영양소가 풍부한 무",
+        "김장용 무는 파종 후 70일 지난 시점이 가장 맛있음 — 8월 말~9월 초 파종 시 11월 중순 수확이 적기, 영하로 떨어지면 얼 수 있어 그 전에 수확",
+        "다만 이 기준은 '김장용 무 고르는 법'으로 제시된 것으로, 무말랭이 전용 선별 기준은 별도로 확인되지 않음 — 가을·김장무가 무말랭이에도 널리 쓰인다는 전제로만 참고 가능"
+      ],
+      "sourceUrls": [
+        "https://www.rda.go.kr/middlePopOpenPopNongsaroDBView.do?no=1345&sj=%EA%B0%80%EC%9D%84%EC%9D%B4+%EC%A4%80+%EC%84%A0%EB%AC%BC%2C+%EA%B9%80%EC%9E%A5%EC%9A%A9+%C2%B4%EB%AC%B4%C2%B4+%EC%9E%98+%EA%B3%A0%EB%A5%B4%EB%A0%A4%EB%A9%B4%3F"
+      ]
+    },
+    {
+      "claim": "무말랭이 썰기 두께·건조 온도/시간·불리는 시간 등 '만드는 공정' 자체는 정부·공인기관의 1차 표준이 없고, 확인되는 모든 수치는 레시피 UGC·언론 보도마다 제각각이며 일부는 서로 반대 주장을 편다",
+      "grade": "unclear",
+      "evidence": [
+        "농촌진흥청 공식 자료(rda.go.kr 2018, nongsaro.go.kr 2006)는 생무의 품질 기준·가정 보관법까지만 다루고, 무말랭이 건조 공정의 두께·온도·시간 표준은 제시하지 않음 — 'site:nongsaro.go.kr 무 건조 저장', '농촌진흥청 무말랭이' 등으로 검색해도 확인되지 않음(공식 자료 부재를 실제로 확인한 결과)",
+        "썰기 두께: '1cm를 살짝 넘게'(10000recipe 6946888, 정량 수치) vs '손가락 굵기'(10000recipe 7038578) vs '손가락 한 마디보다 살짝 얇게'(위키트리 2026-01-29, 정성적 표현만) — 세 자료가 서로 다른 기준",
+        "건조 방법·시간: 식품건조기 70℃ 10시간 후 55℃ 5시간 총 약 15시간(10000recipe 7038578) / 식품건조기 '하룻밤'(10000recipe 6946888, 시간 미상) / 에어프라이어 70℃ 8시간(10000recipe 6912891) / 오븐 170~180℉ 2~3시간+실내 2일 추가(10000recipe 6946888) / 자연건조(베란다) 7일(10000recipe 6948493) — 다섯 자료 모두 수치가 다름",
+        "건조 완료 판별은 정성적 기준만 존재: 구부렸을 때 부러지지 않고 천천히 펴지는 정도(위키트리 2026-01-29)",
+        "불리는 시간도 상충: 미지근한 물 약 30분(위키트리 2025-09-15, 부드러우면서 씹는 맛 유지 주장) vs 약 10분(메뉴판닷컴 2015-01-05, 오래 불리면 아린맛이 사라지고 질겨진다는 반대 주장) — 수치와 논리 모두 다름"
+      ],
+      "sourceUrls": [
+        "https://www.rda.go.kr/middlePopOpenPopNongsaroDBView.do?no=1345&sj=%EA%B0%80%EC%9D%84%EC%9D%B4+%EC%A4%80+%EC%84%A0%EB%AC%BC%2C+%EA%B9%80%EC%9E%A5%EC%9A%A9+%C2%B4%EB%AC%B4%C2%B4+%EC%9E%98+%EA%B3%A0%EB%A5%B4%EB%A0%A4%EB%A9%B4%3F",
+        "https://www.nongsaro.go.kr/portal/ps/psz/psza/contentSub.ps?menuId=PS03796&pageIndex=1&pageSize=10&sSeCode=374001&cntntsNo=101927&sDetCode=&sType=sCntntsSj&sText=",
+        "https://www.10000recipe.com/recipe/7038578",
+        "https://www.10000recipe.com/recipe/6912891",
+        "https://www.10000recipe.com/recipe/6946888",
+        "https://www.10000recipe.com/recipe/6948493",
+        "https://www.wikitree.co.kr/articles/1113952",
+        "https://www.wikitree.co.kr/articles/1081223",
+        "http://www.menupan.com/cook/cookboard/cookboard_view.asp?id=50978"
+      ]
+    },
+    {
+      "claim": "생무 보관 적정온도는 자료마다 소폭 다르고(0~4℃ vs 4~5℃), 건조 무말랭이·무말랭이무침·불린 무말랭이는 상태별로 보관법과 기간이 갈리며 구체적 보관일수는 공인기관이 아닌 민간 콘텐츠 수치뿐이다",
+      "grade": "reported",
+      "evidence": [
+        "생무 가정 보관: 농촌진흥청(nongsaro.go.kr, 2006-12-14) 0~4℃·습도 90~95%·동결온도 약 -1.5℃, 신문지에 싸서 냉장 또는 베란다 보관(얼지 않게 주의)",
+        "생무 보관(lampcook.com, aT 출처 표시 민간 식재료 정보 사이트): 4~5℃가 적합, 잎 제거하고 흙 묻은 채 랩/신문지 포장 시 5~7일 보관 — 농촌진흥청 수치(0~4℃)와 소폭 다름(상충)",
+        "건무말랭이 보관(CJ온스타일, 공식 기관 자료 아닌 콘텐츠 마케팅): 냉장 7~14일 / 냉동 1~3개월, 눅눅해지면 통풍되는 그늘에서 1~2시간 재건조해 복구 가능",
+        "무말랭이무침 보관: CJ온스타일은 '냉장 2~3일 내 맛·냄새 변화 확인'을 권장하지만 위키트리(2025-09-15)는 '일주일(7일) 이내 섭취 권장'으로 더 긴 기준을 제시(상충)",
+        "불린 무말랭이는 24~48시간 내 조리, 냉동 보관분 자연해동은 냉장실에서 6~12시간(CJ온스타일, 비공식 수치)"
+      ],
+      "sourceUrls": [
+        "https://www.nongsaro.go.kr/portal/ps/psz/psza/contentSub.ps?menuId=PS03796&pageIndex=1&pageSize=10&sSeCode=374001&cntntsNo=101927&sDetCode=&sType=sCntntsSj&sText=",
+        "http://www.lampcook.com/farm/food_material_view.php?idx_no=93",
+        "https://display.cjonstyle.com/nfront/content/info/%EB%AC%B4%EB%A7%90%EB%9E%AD%EC%9D%B4-%EB%B3%B4%EA%B4%80%EB%B2%95/index.html",
+        "https://www.wikitree.co.kr/articles/1081223"
+      ]
+    }
+  ],
+  "numbers": [
+    { "what": "김장용 무 수확 적기(파종 후 경과일)", "value": "파종 후 70일(8월 말~9월 초 파종 → 11월 중순 수확)", "asOf": "2018-11-27", "sourceUrl": "https://www.rda.go.kr/middlePopOpenPopNongsaroDBView.do?no=1345&sj=%EA%B0%80%EC%9D%84%EC%9D%B4+%EC%A4%80+%EC%84%A0%EB%AC%BC%2C+%EA%B9%80%EC%9E%A5%EC%9A%A9+%C2%B4%EB%AC%B4%C2%B4+%EC%9E%98+%EA%B3%A0%EB%A5%B4%EB%A0%A4%EB%A9%B4%3F" },
+    { "what": "좋은 무의 윗부분 녹색 비율 기준", "value": "전체 크기의 1/3 정도", "asOf": "2018-11-27", "sourceUrl": "https://www.rda.go.kr/middlePopOpenPopNongsaroDBView.do?no=1345&sj=%EA%B0%80%EC%9D%84%EC%9D%B4+%EC%A4%80+%EC%84%A0%EB%AC%BC%2C+%EA%B9%80%EC%9E%A5%EC%9A%A9+%C2%B4%EB%AC%B4%C2%B4+%EC%9E%98+%EA%B3%A0%EB%A5%B4%EB%A0%A4%EB%A9%B4%3F" },
+    { "what": "생무 가정 보관 적정온도·습도(농촌진흥청, 상충값 A)", "value": "0~4℃, 습도 90~95%, 동결온도 약 -1.5℃", "asOf": "2006-12-14", "sourceUrl": "https://www.nongsaro.go.kr/portal/ps/psz/psza/contentSub.ps?menuId=PS03796&pageIndex=1&pageSize=10&sSeCode=374001&cntntsNo=101927&sDetCode=&sType=sCntntsSj&sText=" },
+    { "what": "생무 보관 적정온도(lampcook, 상충값 B)", "value": "4~5℃, 5~7일 보관", "asOf": null, "sourceUrl": "http://www.lampcook.com/farm/food_material_view.php?idx_no=93" },
+    { "what": "무말랭이 불리는 시간(위키트리, 상충값 A)", "value": "미지근한 물 약 30분", "asOf": "2025-09-15", "sourceUrl": "https://www.wikitree.co.kr/articles/1081223" },
+    { "what": "무말랭이 불리는 시간(메뉴판닷컴, 상충값 B)", "value": "약 10분(오래 불리면 질겨짐)", "asOf": "2015-01-05", "sourceUrl": "http://www.menupan.com/cook/cookboard/cookboard_view.asp?id=50978" },
+    { "what": "무침 양념이 속까지 배는 시간", "value": "약 하루(1일)", "asOf": "2025-09-15", "sourceUrl": "https://www.wikitree.co.kr/articles/1081223" },
+    { "what": "무친 무말랭이 냉장 보관(위키트리)", "value": "약 일주일(7일) 이내 섭취 권장", "asOf": "2025-09-15", "sourceUrl": "https://www.wikitree.co.kr/articles/1081223" },
+    { "what": "무말랭이 썰기 두께(10000recipe 6946888, 정량)", "value": "1cm를 살짝 넘게", "asOf": null, "sourceUrl": "https://www.10000recipe.com/recipe/6946888" },
+    { "what": "무말랭이 써는 크기(10000recipe 7038578)", "value": "손가락 굵기, 길이 5~6cm", "asOf": null, "sourceUrl": "https://www.10000recipe.com/recipe/7038578" },
+    { "what": "식품건조기 건조 온도·시간(10000recipe 7038578)", "value": "70℃ 10시간 → 55℃ 5시간(총 약 15시간)", "asOf": null, "sourceUrl": "https://www.10000recipe.com/recipe/7038578" },
+    { "what": "에어프라이어 식품건조 대체 설정(10000recipe 6912891)", "value": "70℃, 8시간", "asOf": null, "sourceUrl": "https://www.10000recipe.com/recipe/6912891" },
+    { "what": "오븐 건조(10000recipe 6946888)", "value": "170~180℉ 2~3시간 + 실내 2일 추가 건조", "asOf": null, "sourceUrl": "https://www.10000recipe.com/recipe/6946888" },
+    { "what": "자연건조(베란다, 10000recipe 6948493)", "value": "7일", "asOf": null, "sourceUrl": "https://www.10000recipe.com/recipe/6948493" },
+    { "what": "건무말랭이 보관(CJ온스타일, 비공식)", "value": "냉장 7~14일 / 냉동 1~3개월", "asOf": null, "sourceUrl": "https://display.cjonstyle.com/nfront/content/info/%EB%AC%B4%EB%A7%90%EB%9E%AD%EC%9D%B4-%EB%B3%B4%EA%B4%80%EB%B2%95/index.html" },
+    { "what": "무말랭이무침 보관(CJ온스타일, 비공식)", "value": "냉장 2~3일", "asOf": null, "sourceUrl": "https://display.cjonstyle.com/nfront/content/info/%EB%AC%B4%EB%A7%90%EB%9E%AD%EC%9D%B4-%EB%B3%B4%EA%B4%80%EB%B2%95/index.html" },
+    { "what": "불린 무말랭이 조리 권장 시간 / 냉동분 해동 시간(CJ온스타일, 비공식)", "value": "조리 24~48시간 내 / 냉장실 해동 6~12시간", "asOf": null, "sourceUrl": "https://display.cjonstyle.com/nfront/content/info/%EB%AC%B4%EB%A7%90%EB%9E%AD%EC%9D%B4-%EB%B3%B4%EA%B4%80%EB%B2%95/index.html" }
+  ],
+  "dropped": [],
+  "cannotCover": [
+    "무말랭이 썰기 두께를 하나의 정답으로 단정 — '1cm 초과'(10000recipe)·'손가락 굵기'(10000recipe)·'손가락 한 마디보다 얇게'(위키트리) 세 표현이 모두 달라 양자택일 금지, 여러 안을 병기만 가능",
+    "무말랭이 불리는 시간을 하나의 정답으로 단정 — 위키트리(약 30분)와 메뉴판닷컴(약 10분, 반대 논리)이 상충, 둘 다 실어야 하며 하나로 결론 내지 말 것",
+    "생무 보관 적정온도를 하나의 정답으로 단정 — 농촌진흥청(0~4℃)과 lampcook(4~5℃)이 소폭 다름, 어느 쪽이 맞는지 확정할 근거 없음",
+    "무말랭이 완제품의 공식 소비기한(일/개월 단위) — 식품안전나라·한국식품산업협회(kfia.or.kr) 소비기한 참고값 페이지는 검색 인터페이스만 확인, 무말랭이 항목 실제 수치는 열람하지 못함",
+    "에어프라이어로 무말랭이를 말릴 때의 기종별 공인 보정값 — 블로거 추정치(70℃·8시간)만 있고 공식 가이드·기종별 편차 보정은 확인되지 않음",
+    "무말랭이가 생무 대비 비타민D·칼슘 함량이 몇 배 증가하는지, '항암 효과 20배' 등 효능 주장의 1차 연구 근거 — 언론 요약 주장만 확인되고 원 논문·농촌진흥청 보도자료는 확인하지 못해 다루지 않음",
+    "무청(무 잎)을 말려 저장할 때 카로틴이 2개월까지 80% 이상 보존된다는 수치(nongsaro.go.kr) — 이는 '무말랭이(뿌리)'가 아닌 무청(잎) 건조 저장, 즉 사실상 다른 식품(시래기류)에 관한 수치이므로 무말랭이 글에 섞어 쓰지 말 것"
+  ],
+  "songs": []
+}

@@ -1,0 +1,135 @@
+{
+  "keyword": "윈도우 11 절전 모드 해제·화면 꺼짐 시간 설정",
+  "categoryId": "hangeut-trend",
+  "notes": "윈도우 11 설정 앱·제어판에서 화면 꺼짐/절전 전환 시간, 덮개 닫기 동작, 최대 절전 모드 숨김 해제까지는 Windows 11 명시 공식 문서로 정확히 쓸 수 있다. powercfg 명령어(진단·분 단위 타임아웃 변경·최대절전 on/off)도 범용 공식 레퍼런스로 뒷받침된다. 반면 '절전 중 저절로 깨어남'(KB2799178)과 '빠른 시작 때문에 업데이트 안 됨'(KB4011287)은 근거 문서가 각각 Windows 8 / Windows 10 전용으로 명시돼 있어, 메커니즘만 참고 설명하고 '윈도우 11 공식 현상'으로 단정하면 안 된다.",
+  "sources": [
+    {
+      "title": "Windows 11 전원 설정",
+      "url": "https://support.microsoft.com/ko-kr/windows/experience/power-battery/power-settings-in-windows-11",
+      "host": "support.microsoft.com",
+      "body": "Windows 11 전원 및 절전 모드 설정 경로는 '시작 > 설정 > 시스템 > 전원 & 배터리 > 화면, 절전 & 최대 절전 모드 시간 제한'이다. 이 화면에서 두 가지 핵심 타이머를 설정한다: ① '다음 시간 후에 화면 끄기' — 장치를 쓰지 않을 때 화면을 끌 때까지 대기 시간, ② '다음 시간 후 내 장치를 절전 모드로 전환' — 절전 모드로 들어가기 전 대기 시간. 더 짧은 시간을 설정하면 유휴 전원 사용을 줄일 수 있다. '최신 대기(Modern Standby)'를 지원하는 최신 장치 기준으로, 배터리 사용 시 화면 끄기 기본값이 기존 4분에서 3분으로, 절전 모드 전환 기본값도 4분에서 3분으로 단축되었다. 이 수치 변경은 해당 세대 하드웨어에 한정되며, 구형(레거시 ACPI S3) 장치의 기본값 표는 이 문서에 없다.",
+      "tier": "official"
+    },
+    {
+      "title": "PC 종료, 절전 모드 또는 최대 절전 모드로 전환",
+      "url": "https://support.microsoft.com/ko-kr/windows/experience/power-battery/shut-down-sleep-or-hibernate-your-pc",
+      "host": "support.microsoft.com",
+      "body": "덮개(노트북 뚜껑)를 닫을 때 동작을 바꾸는 두 경로: (1) 설정 앱: '시작 > 설정 > 시스템 > 전원 & 절전 > 추가 전원 설정'. (2) 제어판: '제어판 > 시스템 및 보안 > 전원 옵션 > 전원 단추의 기능 선택'. 노트북이라면 '배터리 사용 중' 열의 '덮개를 닫을 때' 목록에서 '아무 것도 안 함 / 절전 모드 / 최대 절전 모드 / 시스템 종료' 중 선택한다. 최대 절전 모드를 전원 메뉴(시작 메뉴)에 표시하려면 같은 화면에서 '현재 사용할 수 없는 설정 변경' → '종료 설정' 섹션의 '최대 절전 모드' 확인란을 체크해야 한다. 최대 절전 모드 진입은 '시작 > 전원 > 최대 절전 모드' 또는 'Windows 로고 키 + X > 종료 또는 로그아웃 > 최대 절전 모드'.",
+      "tier": "official"
+    },
+    {
+      "title": "Powercfg 명령줄 옵션",
+      "url": "https://learn.microsoft.com/ko-kr/windows-hardware/design/device-experiences/powercfg-command-line-options",
+      "host": "learn.microsoft.com",
+      "body": "powercfg.exe 명령줄 전체 옵션 공식 레퍼런스(최초 게시 2017-10-27, 번역 갱신 2026-08-13 — 최신 Windows까지 유지보수). '/hibernate, /H — 최대 절전 모드 기능을 사용/사용 안 함으로 설정, 파일 크기도 설정'(powercfg /hibernate [on|off], /hibernate /size percent_size, /hibernate /type reduced|full). '/lastwake — 마지막 절전 모드 전환에서 해제한 원인 정보 보고'. '/waketimers — 활성 절전 모드 해제 타이머 열거(타이머 만료 시 절전·최대절전에서 깨움)'. '/requests — 애플리케이션·드라이버 전원 요청 열거(자동 화면 끄기/저전원 절전 전환 방지 항목)'. '/devicequery wake_armed — 모든 절전 상태에서 시스템을 깨우도록 구성된 디바이스 나열'. '/energy — 에너지 효율성·배터리 수명 문제 분석, 기본 60초 관찰 후 HTML 보고서 생성'. '/change monitor-timeout-ac 5' 처럼 monitor-timeout-ac/dc, standby-timeout-ac/dc, hibernate-timeout-ac/dc 값을 분 단위로 직접 변경 가능.",
+      "tier": "official"
+    },
+    {
+      "title": "최대 절전 모드를 사용하지 않도록 설정하고 다시 사용하도록 설정하는 방법",
+      "url": "https://learn.microsoft.com/ko-kr/troubleshoot/windows-client/setup-upgrade-and-drivers/disable-and-re-enable-hibernation",
+      "host": "learn.microsoft.com",
+      "body": "원래 KB 920730. 최대 절전 모드 끄기: 관리자 권한 명령 프롬프트에서 `powercfg.exe /hibernate off` → Enter → `exit`. 다시 켜기는 `powercfg.exe /hibernate on`. 경고: '하이브리드 절전 모드가 설정되어 있는 동안 최대 절전 모드를 사용할 수 없게 설정한 상태에서 정전이 발생하면 데이터가 손실될 수 있습니다. 최대 절전 모드를 사용할 수 없게 설정하면 하이브리드 절전 모드가 작동하지 않습니다.' 숨김 시스템 파일 Hiberfil.sys는 OS 설치 드라이브 루트에 있고 Windows 커널 전원 관리자가 설치 시 예약하며, 파일 크기는 설치된 RAM 크기와 거의 같다. 문서 ms.date 2026-02-12, 번역 업데이트 2026-09-22. 문서 안에 특정 Windows 버전 제한 문구는 없음(범용 절차로 유지보수).",
+      "tier": "official"
+    },
+    {
+      "title": "절전 모드 또는 최대 절전 모드에서 예기치 않게 절전 모드 해제",
+      "url": "https://learn.microsoft.com/ko-kr/troubleshoot/windows-client/setup-upgrade-and-drivers/desktop-wakes-up-unexpectedly-from-sleep-hibernation",
+      "host": "learn.microsoft.com",
+      "body": "원래 KB 2799178, 문서 상단에 '적용 대상: Windows 8'이라고 명시(2026-02-12 자로 최종 검토되었지만 대상 OS 표기는 Windows 8 그대로). 원인: '알림 센터 > 자동 유지 관리'의 '예약된 유지 관리가 예약된 시간에 컴퓨터를 깨우도록 허용' 확인란이 기본 활성화, 전원 정책의 '절전 모드 해제 타이머 허용'도 AC 전원 기준 기본 '사용'. Windows는 매일 오전 3:00에 실행되는 작업 스케줄러 '정기 유지 관리' 이벤트를 자동 구성한다. 해결책: '자동 유지 관리'에서 해당 확인란 끄기. 진단: 관리자 명령 프롬프트 `powercfg /waketimers` 실행 시 예약 작업명(예: 'NT TASK\\Microsoft\\Windows\\TaskScheduler\\Regular Maintenance')이 출력된다. 이벤트 뷰어 '응용 프로그램 및 서비스 로그 > Microsoft > Windows > TaskScheduler > Maintenance'에 이벤트 ID 808로 원인이 기록된다.",
+      "tier": "official"
+    },
+    {
+      "title": "Windows 10에서 빠른 시작으로 업데이트가 설치되지 않을 수 있음",
+      "url": "https://learn.microsoft.com/ko-kr/troubleshoot/windows-client/setup-upgrade-and-drivers/updates-not-install-with-fast-startup",
+      "host": "learn.microsoft.com",
+      "body": "원래 KB 4011287, 적용 대상 'Windows 10 - 모든 버전'(Windows 11 명시적 언급 없음). 빠른 시작 사용 시 '종료'는 컴퓨터를 전체 종료 대신 최대 절전 모드로 전환하며, 일부 Windows 업데이트는 전체 종료 후 시작할 때만 설치가 완료돼 '다시 시작'을 선택해야 보류 업데이트가 끝난다. 최대 절전 모드를 지원하는 PC에서는 빠른 시작이 기본 사용(On)이다. Microsoft Endpoint Manager(MEMCM) 2002 + Windows 10 21H1에서 관련 지연 문제가 해결됐다. 이 문서는 끄는 절차(제어판 메뉴 경로)를 직접 설명하지 않는다.",
+      "tier": "official"
+    }
+  ],
+  "claims": [
+    {
+      "claim": "윈도우 11 설정 앱에서 화면 꺼짐·절전 모드 전환 대기시간을 직접 지정할 수 있으며, 메뉴 경로와 이름이 공식 문서에 명시돼 있다.",
+      "grade": "confirmed",
+      "evidence": [
+        "설정 경로: 시작 > 설정 > 시스템 > 전원 & 배터리 > 화면, 절전 & 최대 절전 모드 시간 제한",
+        "두 타이머: '다음 시간 후에 화면 끄기' / '다음 시간 후 내 장치를 절전 모드로 전환'",
+        "최신 대기(Modern Standby) 지원 장치는 배터리 사용 시 화면 끄기·절전 전환 기본값이 4분 → 3분으로 단축(레거시 ACPI S3 장치 수치는 공식 문서에 없음)"
+      ],
+      "sourceUrls": ["https://support.microsoft.com/ko-kr/windows/experience/power-battery/power-settings-in-windows-11"]
+    },
+    {
+      "claim": "노트북 덮개를 닫을 때 동작(절전/최대절전/종료/아무 것도 안 함)은 전원 옵션에서 바꿀 수 있고, 최대 절전 모드가 시작 메뉴에 안 보이면 '종료 설정'에서 체크박스를 켜야 노출된다.",
+      "grade": "confirmed",
+      "evidence": [
+        "경로: 설정 > 시스템 > 전원 & 절전 > 추가 전원 설정, 또는 제어판 > 시스템 및 보안 > 전원 옵션 > 전원 단추의 기능 선택",
+        "덮개를 닫을 때 선택지 4가지: 아무 것도 안 함 / 절전 모드 / 최대 절전 모드 / 시스템 종료",
+        "최대 절전 모드를 전원 메뉴에 노출하려면 '현재 사용할 수 없는 설정 변경' → '종료 설정'에서 '최대 절전 모드' 체크 필요"
+      ],
+      "sourceUrls": ["https://support.microsoft.com/ko-kr/windows/experience/power-battery/shut-down-sleep-or-hibernate-your-pc"]
+    },
+    {
+      "claim": "powercfg 명령어로 절전 관련 상태를 진단하고 타임아웃을 분 단위로 세밀하게 조정할 수 있다 — GUI보다 정밀한 제어가 가능하다.",
+      "grade": "confirmed",
+      "evidence": [
+        "/lastwake: 마지막으로 절전을 해제시킨 원인 보고",
+        "/waketimers: 활성 절전 해제 타이머 열거",
+        "/requests: 화면·절전 전환을 막는 애플리케이션/드라이버 전원 요청 열거",
+        "/devicequery wake_armed: 시스템을 깨우도록 구성된 디바이스 나열",
+        "/energy: 기본 60초 관찰 후 에너지 문제 HTML 보고서 생성",
+        "/change monitor-timeout-ac <분> 등으로 화면/절전/최대절전 타임아웃을 분 단위로 직접 변경 가능"
+      ],
+      "sourceUrls": ["https://learn.microsoft.com/ko-kr/windows-hardware/design/device-experiences/powercfg-command-line-options"]
+    },
+    {
+      "claim": "최대 절전 모드 기능 자체는 powercfg /hibernate on|off 명령으로 끄고 켤 수 있으며, 끄면 하이브리드 절전도 함께 비활성화되고 정전 시 데이터 손실 위험이 있다는 경고가 공식 문서에 있다.",
+      "grade": "confirmed",
+      "evidence": [
+        "powercfg.exe /hibernate off / powercfg.exe /hibernate on (관리자 권한 명령 프롬프트)",
+        "경고: 하이브리드 절전 모드 사용 중 최대 절전 모드를 끄면 하이브리드 절전도 작동하지 않고, 그 상태에서 정전 시 데이터 손실 가능",
+        "Hiberfil.sys 파일 크기는 설치된 RAM 크기와 거의 동일(OS 설치 드라이브 루트)",
+        "원문 KB920730에는 특정 Windows 버전 제한 문구 없음(범용 절차로 유지보수, 번역 갱신 2026-09-22)"
+      ],
+      "sourceUrls": ["https://learn.microsoft.com/ko-kr/troubleshoot/windows-client/setup-upgrade-and-drivers/disable-and-re-enable-hibernation"]
+    }
+  ],
+  "numbers": [
+    {
+      "what": "최신 대기(Modern Standby) 지원 장치, 배터리 사용 시 화면 끄기 기본값",
+      "value": "4분 → 3분",
+      "asOf": "support.microsoft.com 현재 게시본",
+      "sourceUrl": "https://support.microsoft.com/ko-kr/windows/experience/power-battery/power-settings-in-windows-11"
+    },
+    {
+      "what": "최신 대기 지원 장치, 배터리 사용 시 절전 모드 전환 기본값",
+      "value": "4분 → 3분",
+      "asOf": "support.microsoft.com 현재 게시본",
+      "sourceUrl": "https://support.microsoft.com/ko-kr/windows/experience/power-battery/power-settings-in-windows-11"
+    },
+    {
+      "what": "powercfg /energy 기본 관찰 시간",
+      "value": "60초",
+      "asOf": "learn.microsoft.com 번역 갱신 2026-08-13",
+      "sourceUrl": "https://learn.microsoft.com/ko-kr/windows-hardware/design/device-experiences/powercfg-command-line-options"
+    },
+    {
+      "what": "Hiberfil.sys 파일 크기",
+      "value": "설치된 RAM 크기와 거의 동일",
+      "asOf": "KB920730, ms.date 2026-02-12",
+      "sourceUrl": "https://learn.microsoft.com/ko-kr/troubleshoot/windows-client/setup-upgrade-and-drivers/disable-and-re-enable-hibernation"
+    },
+    {
+      "what": "'자동 유지 관리(Regular Maintenance)' 예약 작업 기본 실행 시각 — 참고용, Windows 11 공식 확인 안 됨",
+      "value": "매일 오전 3:00",
+      "asOf": "KB2799178 — 적용 대상 Windows 8로 명시",
+      "sourceUrl": "https://learn.microsoft.com/ko-kr/troubleshoot/windows-client/setup-upgrade-and-drivers/desktop-wakes-up-unexpectedly-from-sleep-hibernation"
+    }
+  ],
+  "dropped": [],
+  "cannotCover": [
+    "'윈도우 11에서 절전 중 저절로 깨어나는 현상'을 마이크로소프트 윈도우 11 공식 발표로 단정하는 것 — 근거 KB2799178은 문서 상단에 '적용 대상: Windows 8'로 명시돼 있고 Win11 전용 공식 문서를 찾지 못했다. '예약 유지 관리 작업이 원인일 수 있다'는 메커니즘 설명과 powercfg /waketimers 진단법까지만 참고 설명 가능하다.",
+    "'빠른 시작(Fast Startup) 때문에 윈도우 11에서 업데이트가 안 깔린다'를 공식 현상으로 단정하는 것 — 근거 KB4011287은 적용 대상이 'Windows 10 - 모든 버전'으로만 명시돼 있다. 빠른 시작 기능 자체와 끄는 메뉴 경로(제어판 > 전원 옵션 > 전원 단추 작동 설정 > 종료 설정)는 설명 가능하지만 '윈도우 11 공식 KB'로 인용하면 안 된다.",
+    "구형(비-최신 대기, 레거시 ACPI S3) 장치의 윈도우 11 화면 끄기/절전 기본 타임아웃 수치표 — 공식 문서는 최신 대기 장치의 4분→3분 변경만 언급하고 레거시 장치 기본값은 밝히지 않는다.",
+    "최대 절전 모드 메뉴가 일부 PC에서 기본적으로 숨겨져 있는 이유 — 절차(체크박스 켜는 법)는 확인했으나 '왜 기본 숨김인지'에 대한 마이크로소프트 공식 설명은 찾지 못했다."
+  ],
+  "songs": []
+}

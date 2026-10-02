@@ -1,0 +1,172 @@
+{
+  "keyword": "엑셀 틀 고정 방법",
+  "categoryId": "hangeut-trend",
+  "searchedAt": "2026-10-01",
+  "queries": [
+    "엑셀 틀 고정 방법 support.microsoft.com",
+    "Excel freeze panes support.microsoft.com rows columns",
+    "엑셀 틀고정 안 될 때 페이지 레이아웃 셀 편집 통합문서 보호",
+    "Excel split window vs freeze panes difference",
+    "엑셀 인쇄 제목 반복할 행 틀고정 차이",
+    "Excel freeze panes keyboard shortcut Alt W F",
+    "\"freeze panes\" greyed out grayed out disabled page layout view cell editing",
+    "엑셀 틀고정 메뉴 회색 비활성화 안눌림 원인",
+    "Microsoft support \"Keyboard shortcuts in Excel\" freeze panes Alt",
+    "site:support.microsoft.com Excel Online view tab freeze panes",
+    "\"Excel for the web\" freeze panes support.microsoft.com 2026",
+    "엑셀 웹 오피스 틀고정 지원 메뉴 위치 보기 탭"
+  ],
+  "sources": [
+    {
+      "title": "틀을 고정하여 행과 열 잠그기",
+      "url": "https://support.microsoft.com/ko-kr/excel/get-started/freeze-panes-to-lock-rows-and-columns",
+      "host": "support.microsoft.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "Microsoft 공식 지원 문서. 적용 대상: Excel for Microsoft 365, Excel 2024, Excel 2021, Excel 2019, Excel 2016. 워크시트의 다른 영역으로 스크롤할 때 특정 영역을 계속 표시하기 위해 보기 탭에서 틀 고정 또는 분할을 사용할 수 있다고 설명한다. 처음 두 열을 고정하려면: 세 번째 열을 선택한 뒤 보기 > 틀 > 틀 고정 > 틀 고정을 선택한다. 행과 열을 함께 고정하려면: 스크롤할 때 계속 표시할 열의 오른쪽, 행의 아래쪽에 있는 셀을 선택한 뒤 같은 메뉴(보기 > 틀 > 틀 고정 > 틀 고정)를 선택한다. 틀 고정을 취소하려면 보기 탭 > 틀 > 틀 고정 취소를 선택한다. 보기 탭이 보이지 않으면 Excel Starter를 사용 중일 수 있으며, Excel Starter에서는 일부 기능이 지원되지 않는다고 명시돼 있다.",
+      "facts": [
+        "메뉴 경로: 보기 > 틀 > 틀 고정 > 틀 고정 (처음 두 열, 또는 행+열 동시 고정 모두 동일 경로)",
+        "처음 두 열 고정 시 '세 번째 열'을 선택한 뒤 틀 고정을 실행한다",
+        "행+열 동시 고정은 고정 범위의 '바로 아래·오른쪽 셀'을 선택한 뒤 실행한다(특정 셀 기준 고정)",
+        "틀 고정 취소 경로: 보기 > 틀 > 틀 고정 취소",
+        "이 문서의 적용 대상 버전: Excel for Microsoft 365, Excel 2024, Excel 2021, Excel 2019, Excel 2016",
+        "Excel Starter에서는 보기 탭 자체가 없어 일부 기능(틀 고정 포함 추정)이 지원되지 않는다"
+      ]
+    },
+    {
+      "title": "틀 고정 취소 (Unfreeze locked panes)",
+      "url": "https://support.microsoft.com/ko-kr/excel/unfreeze-locked-panes",
+      "host": "support.microsoft.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "Microsoft 공식 지원 문서. 적용 대상이 'Excel 2013'으로 명시돼 있다(위 '틀을 고정하여 행과 열 잠그기' 문서가 365/2016~2024를 대상으로 하는 것과 적용 버전 표기가 다르다). 워크시트를 스크롤할 때 특정 영역(예: 행 1)이 고정되어 움직이지 않는 현상은 이전에 틀 고정(창 고정) 기능을 활성화했기 때문이라고 설명한다. 해결 방법은 보기 탭에서 틀 고정 취소를 클릭하는 것으로, 메뉴 경로는 '보기 > 틀 고정 취소'로 안내된다. 페이지에는 행 1이 고정된 상태의 스크린샷 예시가 포함돼 있어, 사용자가 자신의 화면과 비교해 같은 증상인지 확인할 수 있게 한다.",
+      "facts": [
+        "이 문서의 적용 대상으로 명시된 버전: Excel 2013 (최신 문서와 표기 버전이 다름 — conflicts 참고)",
+        "틀 고정 취소 메뉴 경로: 보기 탭 > 틀 고정 취소",
+        "행이 고정돼 스크롤이 안 움직이는 증상은 '이전에 틀 고정을 켜뒀기 때문'이라고 원인을 명시"
+      ]
+    },
+    {
+      "title": "Mac용 Excel 에서 틀을 고정하여 첫 번째 행 또는 열 잠그기",
+      "url": "https://support.microsoft.com/ko-kr/office/mac%EC%9A%A9-excel-%EC%97%90%EC%84%9C-%ED%8B%80%EC%9D%84-%EA%B3%A0%EC%A0%95%ED%95%98%EC%97%AC-%EC%B2%AB-%EB%B2%88%EC%A7%B8-%ED%96%89-%EB%98%90%EB%8A%94-%EC%97%B4-%EC%9E%A0%EA%B7%B8%EA%B8%B0-b8eb717e-9d3e-4354-8c02-d779a4b404b2?ui=ko-kr&rs=ko-kr&ad=kr",
+      "host": "support.microsoft.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "Microsoft 공식 지원 문서(Mac용 Excel 전용). 보기 탭에서 '첫 행 고정', '첫 열 고정' 버튼이 Windows 리본과 별도로 개별 제공된다고 설명한다. 첫 행 고정을 선택하면 1행 아래 테두리가 진하게 표시되고, 첫 열 고정을 선택하면 A열 오른쪽 선이 진하게 표시된다. 첫 행과 첫 열을 동시에 고정하려면 B2 셀을 선택한 뒤 '틀 고정'을 선택한다. 여러 행/열을 고정하려면 고정할 마지막 행의 아래 또는 마지막 열의 오른쪽에 있는 셀을 선택한 뒤 '틀 고정'을 선택한다. 고정을 취소하려면 보기 탭에서 '고정 취소'를 선택한다. 문서는 Mac 버전 UI만 다루며 Windows와의 단축키 비교는 포함돡 있지 않다.",
+      "facts": [
+        "Mac용 Excel 보기 탭에는 '첫 행 고정'·'첫 열 고정' 전용 버튼이 별도로 존재한다",
+        "첫 행+첫 열 동시 고정은 B2 셀을 선택한 뒤 '틀 고정'을 실행한다 (Windows의 '행+열 동시 고정'과 같은 로직)",
+        "여러 행/열 고정은 고정 범위 마지막 행 아래·열 오른쪽 셀을 선택 후 실행",
+        "고정 취소는 보기 탭 > 고정 취소"
+      ]
+    },
+    {
+      "title": "iOS용 Excel에서 틀을 고정하여 첫 번째 행 또는 열 잠그기",
+      "url": "https://support.microsoft.com/ko-kr/excel/freeze-panes-to-lock-the-first-row-or-column-in-excel-for-ios",
+      "host": "support.microsoft.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "Microsoft 공식 지원 문서. 적용 대상: iPad용 Excel, iPhone용 Excel. 기본 고정은 '보기 > 틀 고정'을 탭한 다음 원하는 옵션(첫 행/첫 열 등)을 탭하는 방식으로 안내된다. 여러 행을 고정하려면 고정할 마지막 행 아래의 행을 먼저 선택해야 한다. 기기별로 메뉴 접근 경로가 다른데, iPad에서는 '보기 > 고정 패널'로 접근하고, iPhone에서는 화면이 좁아 '줄임표(...) > 홈 > 보기 > 틀 고정' 순으로 더 깊이 들어가야 한다. 고정을 취소하려면 다시 '보기 > 틀 고정'을 탭한 뒤 선택돼 있던 옵션의 선택을 해제한다. 문서에는 Windows 데스크톱판과의 기능 차이(예: 임의의 셀 기준 고정 가능 여부)에 대한 명시적 비교가 없다.",
+      "facts": [
+        "iOS(아이패드/아이폰)용 Excel 적용 대상 문서이며, 모바일에서는 보기 > 틀 고정 메뉴로 접근",
+        "iPad와 iPhone의 메뉴 접근 경로가 다름: iPad는 '보기 > 고정 패널', iPhone은 '... > 홈 > 보기 > 틀 고정'(화면 크기 제약 때문)",
+        "여러 행 고정 시 '고정할 마지막 행 아래의 행'을 먼저 선택해야 한다고 명시(데스크톱과 동일한 규칙)"
+      ]
+    },
+    {
+      "title": "Repeat specific rows or columns on every printed page",
+      "url": "https://support.microsoft.com/en-us/excel/repeat-specific-rows-or-columns-on-every-printed-page",
+      "host": "support.microsoft.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "Microsoft 공식 지원 문서. 인쇄 시 매 페이지 상단/좌측에 특정 행·열을 반복 표시하는 '인쇄 제목' 기능을 설명한다. 메뉴 경로는 페이지 레이아웃(Page Layout) 탭 > 페이지 설정 그룹 > 인쇄 제목(Print Titles)이다. 대화상자의 Sheet 탭에서 '맨 위에서 반복할 행(Rows to repeat at top)'에 열 머리글 참조(예: 첫 번째 행을 반복하려면 $1:$1)를, '왼쪽에서 반복할 열(Columns to repeat at left)'에는 행 머리글 참조를 입력한다. 문서는 이 기능이 인쇄 시에만 각 페이지마다 지정된 행/열을 반복 표시하며, 화면 스크롤에는 영향을 주지 않는다고 틀 고정과의 차이를 구분해 설명한다. 반대로 틀 고정은 화면 표시용 기능으로 인쇄 결과에는 영향을 주지 않는다.",
+      "facts": [
+        "인쇄 제목 메뉴 경로: 페이지 레이아웃 탭 > 페이지 설정 그룹 > 인쇄 제목(Print Titles) > Sheet 탭",
+        "'맨 위에서 반복할 행' 입력 예시: 첫 번째 행만 반복하려면 $1:$1 을 입력",
+        "인쇄 제목은 인쇄물에만 적용되고, 틀 고정은 화면 스크롤에만 적용된다 — 서로 독립적인 기능(둘 다 설정해도 서로 영향 없음)"
+      ]
+    },
+    {
+      "title": "Freeze columns and rows in Excel",
+      "url": "https://support.microsoft.com/en-us/topic/freeze-columns-and-rows-in-excel-e7d1fcd9-7a67-94c2-e75b-cf54cc34bb1a?ui=en-US&rs=en-US&ad=US",
+      "host": "support.microsoft.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "Microsoft 공식 지원 문서(영문, 범용 토픽 페이지). 적용 대상으로 'Excel for Microsoft 365, Excel 2024, Excel 2021, Excel 2019, Excel 2016'을 명시한다. 핵심 개념은 '워크시트의 다른 영역으로 스크롤하는 동안 한 영역을 계속 표시되게 유지'하는 것이며, 보기(View) 탭에서 Freeze Panes 또는 Split 중 하나를 선택하도록 안내한다. 처음 두 열을 고정하려면 세 번째 열을 선택한 뒤 View > Freeze Panes > Freeze Panes를 선택하고, 행과 열을 함께 고정하려면 고정 범위 바로 아래·오른쪽 셀을 선택한 뒤 동일 메뉴를 선택한다. 고정 취소는 View > Freeze Panes > Unfreeze Panes. 'Not all features are supported in Excel Starter'라는 주석이 포함돼 있다. 관련 문서로 'Split panes to lock rows or columns in separate worksheet areas'를 링크한다.",
+      "facts": [
+        "이 문서의 공식 적용 버전: Excel for Microsoft 365, Excel 2024, Excel 2021, Excel 2019, Excel 2016",
+        "Freeze Panes와 Split은 같은 보기(View) 탭 안에서 선택하는 서로 다른 옵션으로 병기된다",
+        "Excel Starter는 일부 기능을 지원하지 않는다고 공식 문서에 명시"
+      ]
+    },
+    {
+      "title": "Split panes to lock rows or columns in separate worksheet areas",
+      "url": "https://support.microsoft.com/en-us/excel/split-panes-to-lock-rows-or-columns-in-separate-worksheet-areas",
+      "host": "support.microsoft.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "Microsoft 공식 지원 문서. 분할(Split) 기능은 워크시트를 여러 개의 독립적으로 스크롤 가능한 영역으로 나누는 기능이라고 설명한다. 예시로 180행의 데이터를 상단 헤더를 놓치지 않고 비교하는 상황을 든다. 수평(행 기준), 수직(열 기준), 또는 두 방향 모두로 분할할 수 있다. 사용 방법: 가로 분할을 원하면 분할선 아래에 둘 행을 선택한 뒤 View > Window > Split을 선택한다. 세로 분할은 분할선 오른쪽에 둘 열을 선택, 행+열 모두 분할하려면 분할 지점의 아래·오른쪽 셀을 선택한 뒤 Split을 클릭한다. 분할을 제거하려면 View > Window > Split을 다시 선택해 토글 해제한다. 틀 고정과 달리 분할된 영역들은 서로 독립적으로 스크롤되며(틀 고정은 고정부가 전혀 스크롤되지 않음), 화면에 드래그로 위치 조절 가능한 분할선(바)이 표시된다는 점이 틀 고정과의 핵심 차이다.",
+      "facts": [
+        "분할(Split) 메뉴 경로: 보기(View) > 창(Window) > 분할(Split), 토글 방식(다시 클릭하면 해제)",
+        "분할된 영역은 서로 독립적으로 스크롤 가능 — 틀 고정은 고정 영역이 전혀 스크롤되지 않는다는 점이 핵심 차이",
+        "분할에는 드래그로 위치 조절 가능한 분할선(bar)이 화면에 표시되지만, 틀 고정에는 그런 바가 표시되지 않는다"
+      ]
+    },
+    {
+      "title": "Keyboard shortcuts in Excel",
+      "url": "https://support.microsoft.com/en-us/office/keyboard-shortcuts-in-excel-1798d9d5-842a-42b8-9c99-9b7213f0040f",
+      "host": "support.microsoft.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "Microsoft 공식 'Excel 키보드 단축키' 문서. Windows, macOS, iOS, Android, 웹용 Excel까지 전체 버전의 단축키를 정리한 공식 레퍼런스 페이지다. 이 문서 전체를 'freeze'(틀 고정) 키워드로 검색한 결과, 어떤 플랫폼 섹션에도 '틀 고정' 전용 단축키 항목이 존재하지 않는다. 즉 공식 문서는 틀 고정에 대해 지정된 단축키를 제공하지 않으며, 틀 고정은 오직 리본 메뉴(보기 탭)를 통한 마우스/탭 조작으로만 공식 안내된다. 다수의 서드파티 사이트(예: xelplus.com, myexcelonline.com, manycoders.com)가 'Alt, W, F, F'를 틀 고정 단축키라고 소개하지만, 이는 Windows 리본의 액세스 키(KeyTip) 순차 입력 방식(Alt로 리본 액세스키 모드 진입 → W로 보기 탭 → F로 틀 고정 드롭다운 → F로 틀 고정 실행)이며 공식 '단축키' 목록에 등재된 지정 단축키는 아니다.",
+      "facts": [
+        "공식 'Keyboard shortcuts in Excel' 문서에는 Windows/macOS/iOS/Android/웹 어떤 섹션에도 '틀 고정' 전용 단축키 항목이 없음",
+        "서드파티 사이트들이 소개하는 'Alt, W, F, F'는 공식 지정 단축키가 아니라 리본 액세스 키(KeyTip) 순차 입력 방식으로 추정됨 (conflicts 참고)"
+      ]
+    },
+    {
+      "title": "Excel Freeze Panes Not Working: 5 Causes and Solutions",
+      "url": "https://www.exceldemy.com/excel-freeze-panes-not-working/",
+      "host": "exceldemy.com",
+      "tier": "blog",
+      "publishedAt": null,
+      "body": "틀 고정이 작동하지 않는 5가지 원인과 해결책을 정리한 글. 원인1: 페이지 레이아웃(Page Layout) 보기가 활성화된 상태 — 해결책은 보기 탭에서 '기본(Normal)' 보기로 전환. 원인2: 시트 보호(Worksheet Protection)가 켜져 있는 상태 — 해결책은 검토 탭 > 시트 보호 해제(Unprotect Sheet) 후 틀 고정 적용. 원인3: 이전 버전 Excel에서 생성·보호된 통합 문서를 여는 경우 틀 고정이 작동하지 않을 수 있음 — 역시 보호 해제로 해결 가능. 원인4: 이미 설정된 틀 고정과 새로 설정하려는 틀 고정이 충돌하는 경우 — 보기 탭에서 기존 고정을 해제(Unfreeze Panes)한 뒤 재설정. 원인5: 파일 손상 — '파일 > 열기 옆 화살표 > 열기 및 복구'로 해결. 대안으로 데이터를 표(Table) 형식으로 변환하면 스크롤 시 헤더가 자동으로 고정된다고 소개한다.",
+      "facts": [
+        "원인1: 페이지 레이아웃(Page Layout) 보기에서는 틀 고정이 작동하지 않음 — 보기 탭에서 '기본(Normal)'으로 전환해야 함",
+        "원인2·3: 시트 보호(또는 이전 버전 Excel으로 보호된 통합문서)가 켜져 있으면 틀 고정이 막힘 — 검토 탭 > 시트 보호 해제 필요",
+        "원인4: 기존 틀 고정과 충돌 시 먼저 틀 고정 취소 후 재설정해야 함",
+        "대안: 데이터를 표(Table) 형식으로 변환하면 스크롤 시 헤더가 자동 고정됨"
+      ]
+    },
+    {
+      "title": "엑셀에서 고정된 창이 올바르게 작동하지 않을 때 해결 방법",
+      "url": "https://excel.chemboss.co.kr/entry/%EC%97%91%EC%85%80%EC%97%90%EC%84%9C-%EA%B3%A0%EC%A0%95%EB%90%9C-%EC%B0%BD%EC%9D%B4-%EC%98%AC%EB%B0%94%EB%A5%B4%EA%B2%8C-%EC%9E%91%EB%8F%99%ED%95%98%EC%A7%80-%EC%95%8A%EC%9D%84-%EB%95%8C-%ED%95%B4%EA%B2%B0-%EB%B0%A9%EB%B2%95-1",
+      "host": "excel.chemboss.co.kr",
+      "tier": "blog",
+      "publishedAt": null,
+      "body": "엑셀 틀 고정(고정된 창)이 올바르게 작동하지 않을 때의 원인과 해결을 정리한 한국어 블로그 글. 주요 원인으로 (1) 고정하려는 범위의 바로 아래·오른쪽 셀을 정확히 선택하지 않아 의도하지 않은 다른 범위가 고정되는 '셀 선택 오류', (2) 이미 설정된 틀 고정이 있는 상태에서 새로 설정하려 해 충돌하는 '중복된 설정', (3) 페이지 레이아웃 보기(뷰) 모드에서는 틀 고정 기능 자체를 사용할 수 없다는 '기능 비활성화', (4) 파일 손상 또는 엑셀 자체 버그로 인한 오작동을 든다. 해결 방법으로는 보기 탭에서 기존 틀 고정을 먼저 해제한 뒤 재설정할 것, 첫 번째 행을 고정하려면 2행의 첫 번째 셀을 선택하는 등 올바른 셀을 지정할 것, 엑셀 재시작, 파일 복구 기능 활용을 제시한다.",
+      "facts": [
+        "틀 고정 범위를 잘못 선택(바로 아래·오른쪽 셀이 아닌 다른 셀)하면 의도하지 않은 범위가 고정될 수 있음",
+        "페이지 레이아웃 보기 모드에서는 틀 고정 기능 자체를 사용할 수 없다고 명시(ExcelDemy 글과 동일 원인 중복 확인)",
+        "이미 틀 고정이 설정된 상태에서 재설정하면 충돌하므로 먼저 해제 후 다시 설정해야 함"
+      ]
+    }
+  ],
+  "conflicts": [
+    {
+      "about": "틀 고정 전용 키보드 단축키의 존재 여부",
+      "a": "다수의 서드파티 사이트(xelplus.com, myexcelonline.com, manycoders.com 등)는 'Alt, W, F, F'를 Excel의 틀 고정 '단축키'로 소개한다",
+      "b": "Microsoft 공식 'Keyboard shortcuts in Excel' 문서(support.microsoft.com)에는 Windows/macOS/iOS/Android/웹 어떤 섹션에도 '틀 고정' 전용 단축키 항목이 없다. 'Alt,W,F,F'는 리본 액세스 키(KeyTip) 순차 입력으로 보이며, 공식 지정 단축키로는 확인되지 않는다"
+    },
+    {
+      "about": "'틀 고정 취소' 공식 문서의 적용 버전 표기",
+      "a": "'틀을 고정하여 행과 열 잠그기' 문서는 적용 대상을 Excel for Microsoft 365, Excel 2024, Excel 2021, Excel 2019, Excel 2016으로 명시한다",
+      "b": "같은 Microsoft 공식 사이트의 '틀 고정 취소' 문서는 적용 대상을 'Excel 2013'으로만 명시한다 — 최신 리본 메뉴에서도 '보기 > 틀 고정 취소' 경로가 동일하게 동작하지만, 문서 자체가 최신 버전 표기로 갱신되지 않은 것으로 보인다"
+    }
+  ],
+  "unknowns": [
+    "Excel Online(웹용 Excel)만을 단독으로 다루는, 본문을 실제로 읽을 수 있는 공식 문서를 찾지 못함 — 'Tips for Excel for the web' 페이지는 폐기(retired)됨. 웹용 틀 고정이 데스크톱과 100% 동일한지는 일반 토픽 페이지(Freeze columns and rows in Excel)의 설명으로 유추했을 뿐, 웹 전용 공식 세부 문서로 확인하지 못함",
+    "Mac용 Excel의 틀 고정 전용 단축키(예: Windows의 Alt,W,F,F에 대응하는 Cmd 조합)는 공식 문서·서드파티 모두에서 명확히 확인하지 못함",
+    "통합문서 보호(Protect Workbook, 구조 보호)와 시트 보호(Protect Sheet) 중 정확히 어느 쪽이 틀 고정 메뉴를 회색 비활성화시키는지 공식 문서로는 확인하지 못함 — 블로그 출처(ExcelDemy)만 '시트 보호'를 원인으로 지목"
+  ]
+}

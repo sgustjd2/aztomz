@@ -1,0 +1,187 @@
+{
+  "keyword": "도라지 손질법",
+  "categoryId": "hangeut-trend",
+  "notes": "도라지 손질·쓴맛 제거·보관의 '표준 순서'는 정부 공식 자료(foodnuri.go.kr)로 뒷받침되지만, 쓴맛 제거 방식·제철 시기·건조 온도·보관일수는 출처마다 달라 둘 다 병기해야 한다. 사포닌 함량은 2024년 농촌진흥청 수치로 확정할 수 있지만, 감기예방·당뇨개선 같은 '효능'은 임상 근거가 없어 단정 표현을 쓸 수 없다. 도라지청 표준 레시피와 '10일 경과 시 약효 저하' 주장은 근거가 약해 이 글에서 다루지 않는다.",
+  "sources": [
+    {
+      "title": "도라지(제철농산물 상세)",
+      "url": "https://www.foodnuri.go.kr/portal/bbs/B0000283/view.do?nttId=219858&menuNo=300063&pageIndex=1",
+      "host": "foodnuri.go.kr",
+      "tier": "official",
+      "body": "농식품정보누리(농림축산식품부 산하 농림수산식품교육문화정보원). 생산시기(출하) 7~9월, 주요산지 여주·이천·김포·홍천·삼척. 통도라지는 잔뿌리 많고 원뿌리 2~3개로 갈라지며 흙 묻고 연노랑~흰색을 고르고, 깐도라지는 부드럽고 흰색·향 강한 것을 고른다. 손질: 잔뿌리 제거→칼로 표피 벗김→물세척→소금 주물러 쓴맛 제거→물에 담금. 보관: 종이 포장+서늘한 곳 또는 껍질 벗겨 햇볕 건조. 효능(감기예방·기관지염/인후염/편도선염 완화·천식 개선·혈당 정상화)을 나열하나 임상 근거 수치는 없음."
+    },
+    {
+      "title": "도라지(제철농산물) 요약 — 제철·구입요령·손질요령·효능",
+      "url": "http://www.lampcook.com/farm/food_farm_view.php?idx_no=113",
+      "host": "lampcook.com",
+      "tier": "reported",
+      "body": "민간 레시피 사이트가 농림수산식품교육문화정보원 데이터를 재게시. foodnuri.go.kr과 생산시기(7~9월)·구입요령·손질요령·효능 서술이 동일 — foodnuri 수치의 교차확인용으로만 사용, 독자 1차 출처는 아님."
+    },
+    {
+      "title": "길경(도라지) 작업일정 — 농사로",
+      "url": "https://www.nongsaro.go.kr/portal/ps/psb/psbl/workScheduleDtl.ps?menuId=PS00087&cntntsNo=30740&sKidofcomdtySeCode=IC03",
+      "host": "nongsaro.go.kr",
+      "tier": "official",
+      "body": "농촌진흥청 농사로 길경 생육과정표. 수확·조제 작업 10~12월, 씨뿌린 뒤 2~3년생 수확(약재용 3~4년 이상). 조제: 백길경(깐 것)은 물에 담갔다가 대칼로 껍질 벗김, 피길경(껍질째)은 세척 후 햇볕 또는 건조기 50~60℃ 유지 건조."
+    },
+    {
+      "title": "국산 도라지 사포닌, '뿌리'에 종류 다양, '새싹'에 양 많아 — 보도자료 (정책브리핑)",
+      "url": "https://m.korea.kr/briefing/pressReleaseView.do?newsId=156638396&pWise=mSub&pWiseSub=C3",
+      "host": "korea.kr",
+      "tier": "official",
+      "body": "농촌진흥청(국립농업과학원 식생활영양과) 2024-06-28 보도자료. 사포닌 배당체 종류 뿌리 37종·새싹 24종. 생체중량 100g 기준 함량 뿌리 235.1mg·새싹 271.5mg. 데친 뿌리는 플라티코사이드 이가 새로 생성되며 사포닌 함량 201.0mg으로 상당 부분 유지. 뿌리는 플라티코딘 디·플라티코사이드 이, 새싹은 플라티코딘 케이 함량이 높음."
+    },
+    {
+      "title": "국산 도라지 사포닌, '뿌리'에 종류 다양, '새싹'에 양 많아 — 농촌진흥청 게시판",
+      "url": "https://www.rda.go.kr/board/board.do?mode=view&prgId=day_farmprmninfoEntry&dataNo=100000796684",
+      "host": "rda.go.kr",
+      "tier": "official",
+      "body": "농촌진흥청 공식 게시판 원문. korea.kr 보도자료와 수치 완전 일치(뿌리 37종/235.1mg, 새싹 24종/271.5mg, 데친 뿌리 201.0mg) — 교차검증용."
+    },
+    {
+      "title": "도라지생채 쓴맛 안 잡히면 소금으로 '이 순서'대로 주무르세요",
+      "url": "https://www.wikitree.co.kr/articles/1162163",
+      "host": "wikitree.co.kr",
+      "tier": "press",
+      "body": "위키트리(2026-09-26). 소금 뿌려 힘주어 주무르기→흐르는 물에 헹굼→찬물에 담가 남은 쓴맛 빼기. 원리: 삼투압 작용으로 수분과 쓴맛 성분이 함께 빠져나옴. 소금량·시간 수치는 기사에 없음."
+    },
+    {
+      "title": "'도라지 손질법과 까는법, 보관법'",
+      "url": "https://www.newsam.co.kr/mobile/article.html?no=30312",
+      "host": "newsam.co.kr",
+      "tier": "press",
+      "body": "농기자재신문(2019-12-20). 미끄럼방지 장갑 권장. 물에 1시간 불린 뒤 윗동 자르고 문질러 벗기는 방식(불리기→벗기기 순). 보관: 깐도라지는 통풍 건조 또는 비닐팩+냉장, 생도라지는 신문지+서늘한 곳 또는 비닐팩+냉동. 구체적 보관일수는 제시 안 함."
+    },
+    {
+      "title": "'도라지 쓴맛제거와 말리기'",
+      "url": "https://www.newsam.co.kr/news/article.html?no=24898",
+      "host": "newsam.co.kr",
+      "tier": "press",
+      "body": "농기자재신문(2019-10-31). 쓴맛 제거를 '소금 넣은 끓는 물에 데치기'로 제시 — 주무르기·담그기 방식과 다름(상충). 건조는 건조기 70℃·6시간, 또는 골판지 깔고 햇볕 건조."
+    },
+    {
+      "title": "도라지 손질법, 잔뿌리 많아 주의…약효 떨어지지 않게 하는 것이 중요",
+      "url": "https://www.xportsnews.com/article/527266",
+      "host": "xportsnews.com",
+      "tier": "press",
+      "body": "엑스포츠뉴스(2014-11-29). 잔뿌리 제거→칼로 껍질 벗김→물 헹굼→잘게 찢어 소금 버무림→물에 약 1시간 담그기(시간 명시된 유일 자료). 보관은 신문지+서늘한 곳. '10일 경과 시 약효 저하' 주장은 근거·전문가 인용 없이 기사 자체 서술."
+    },
+    {
+      "title": "도라지 보관법",
+      "url": "https://wtable.co.kr/guide/63189",
+      "host": "wtable.co.kr",
+      "tier": "blog",
+      "body": "레시피 플랫폼(비공식). 생도라지 실온 약 3주/냉장 약 2~3개월, 깐도라지 냉장(소금물 밀폐 용기) 약 5일, 냉동(데친 뒤 소분) 약 4~5개월. 1차 출처 불명."
+    },
+    {
+      "title": "도라지청만들기 (사용자 레시피)",
+      "url": "https://www.10000recipe.com/recipe/6908528",
+      "host": "10000recipe.com",
+      "tier": "blog",
+      "body": "만개의레시피 UGC. 도라지 1.8kg : 설탕 1kg : 꿀 1kg. 숙성 1주일(끓여서 섭취) 또는 100일(생으로 섭취 가능). 공식 레시피 아님, 개인 1건."
+    }
+  ],
+  "claims": [
+    {
+      "claim": "도라지 손질(잔뿌리 제거→칼로 껍질 벗기기→물 세척→소금으로 쓴맛 빼기)은 여러 자료가 공통으로 제시하는 표준 순서다",
+      "grade": "confirmed",
+      "evidence": [
+        "foodnuri.go.kr(공식): '잔뿌리를 잘 다듬어 떼어 내고 표피는 칼로 긁어서 벗겨낸 후에 물로 깨끗이 씻는다' → 소금에 주물러 쓴맛 제거 → 물에 담금",
+        "엑스포츠뉴스(2014-11-29): 잔뿌리 제거→칼 벗기기→헹굼→잘게 찢어 소금 버무림→물에 약 1시간 담그기(시간을 명시한 유일 자료)",
+        "위키트리(2026-09-26): 소금 뿌려 주무르기→흐르는 물 헹굼→찬물 담그기, 삼투압 작용으로 쓴맛 성분이 빠져나온다는 원리 설명",
+        "농기자재신문(2019-12-20)은 순서가 다름: 먼저 물에 1시간 불린 뒤 윗동을 자르고 문질러 벗기는 방식(불리기→벗기기)"
+      ],
+      "sourceUrls": [
+        "https://www.foodnuri.go.kr/portal/bbs/B0000283/view.do?nttId=219858&menuNo=300063&pageIndex=1",
+        "https://www.xportsnews.com/article/527266",
+        "https://www.wikitree.co.kr/articles/1162163",
+        "https://www.newsam.co.kr/mobile/article.html?no=30312"
+      ]
+    },
+    {
+      "claim": "쓴맛(아린맛) 제거 방법은 '소금 주무르기+물에 담그기'가 다수지만, 일부 자료는 전혀 다른 '소금물에 데치기'를 제시해 방법 자체가 갈린다",
+      "grade": "unclear",
+      "evidence": [
+        "다수 자료(foodnuri.go.kr·위키트리·엑스포츠뉴스)는 소금으로 주무른 뒤 물에 담그는 방식을 공통 제시 — 담그는 시간은 엑스포츠뉴스만 '약 1시간'으로 명시, 나머지는 시간 미기재",
+        "농기자재신문(2019-10-31)은 '소금을 넣은 끓는 물에 데쳐주면 쓴맛이 제거된다'는 다른 방식(데치기)을 제시 — 주무르기·담그기 언급 없음",
+        "정부 공식자료(foodnuri.go.kr)가 주무르기+담그기 쪽을 지지하지만, 데치기는 언론 보도 1건뿐이라 둘 중 하나를 정답으로 단정할 수 없음 — 두 방법을 병기해야 함"
+      ],
+      "sourceUrls": [
+        "https://www.foodnuri.go.kr/portal/bbs/B0000283/view.do?nttId=219858&menuNo=300063&pageIndex=1",
+        "https://www.wikitree.co.kr/articles/1162163",
+        "https://www.xportsnews.com/article/527266",
+        "https://www.newsam.co.kr/news/article.html?no=24898"
+      ]
+    },
+    {
+      "claim": "도라지 제철(출하 시기)과 수확 시기는 기관 자료마다 다르게 안내된다",
+      "grade": "unclear",
+      "evidence": [
+        "농식품정보누리(농림수산식품교육문화정보원 자료): 생산시기(출하) 7월~9월, 주요산지 여주·이천·김포·홍천·삼척",
+        "농촌진흥청 농사로: 수확·조제 작업은 10월~12월, 씨뿌린 뒤 2~3년생 수확(약재용 3~4년 이상)",
+        "두 수치의 차이가 '출하 성수기'와 '실제 수확기' 차이인지는 자료에 설명이 없어 확정할 수 없음 — 두 시기를 병기해야 함"
+      ],
+      "sourceUrls": [
+        "https://www.foodnuri.go.kr/portal/bbs/B0000283/view.do?nttId=219858&menuNo=300063&pageIndex=1",
+        "https://www.nongsaro.go.kr/portal/ps/psb/psbl/workScheduleDtl.ps?menuId=PS00087&cntntsNo=30740&sKidofcomdtySeCode=IC03"
+      ]
+    },
+    {
+      "claim": "보관은 상태(흙도라지/깐도라지)와 건조 여부로 방법이 나뉘고, 건조 온도와 구체적 보관일수는 자료마다 다르다",
+      "grade": "reported",
+      "evidence": [
+        "foodnuri.go.kr(공식): 통도라지는 종이에 싸 서늘하게, 또는 껍질 벗겨 햇볕에 말리면 오래 보관",
+        "농촌진흥청 농사로(공식): 피길경(껍질째)은 세척 후 햇볕 또는 건조기 50~60℃ 유지; 백길경(깐 것)은 물에 담갔다가 대칼로 벗김",
+        "농기자재신문(2019-10-31)은 건조기 온도를 70℃·약 6시간으로 제시 — 농진청의 50~60℃와 불일치(상충, 둘 다 실어야 함)",
+        "농기자재신문(2019-12-20): 깐도라지는 통풍 건조 또는 비닐팩+냉장, 생도라지는 신문지+서늘한 곳 또는 비닐팩+냉동 — 구체적 일수는 없음",
+        "wtable.co.kr(비공식, blog tier)만 구체적 일수 제시: 생도라지 실온 약 3주/냉장 약 2~3개월, 깐도라지 냉장(소금물 밀폐) 약 5일, 냉동(데친 뒤 소분) 약 4~5개월 — 1차 출처 불명이라 숫자는 reported로만 취급"
+      ],
+      "sourceUrls": [
+        "https://www.foodnuri.go.kr/portal/bbs/B0000283/view.do?nttId=219858&menuNo=300063&pageIndex=1",
+        "https://www.nongsaro.go.kr/portal/ps/psb/psbl/workScheduleDtl.ps?menuId=PS00087&cntntsNo=30740&sKidofcomdtySeCode=IC03",
+        "https://www.newsam.co.kr/news/article.html?no=24898",
+        "https://www.newsam.co.kr/mobile/article.html?no=30312",
+        "https://wtable.co.kr/guide/63189"
+      ]
+    },
+    {
+      "claim": "2024년 농촌진흥청 분석으로 도라지 뿌리·새싹의 사포닌 함량 수치는 공식 확인됐지만, 이 수치가 곧바로 '효능'(감기예방·당뇨개선 등)을 입증하는 것은 아니다",
+      "grade": "confirmed",
+      "evidence": [
+        "농촌진흥청 국립농업과학원 식생활영양과(2024-06-28, korea.kr·rda.go.kr 수치 완전 일치로 교차확인): 사포닌 배당체 종류 뿌리 37종·새싹 24종, 생체중량 100g당 함량 뿌리 235.1mg·새싹 271.5mg",
+        "뿌리를 끓는 물에 데치면 플라티코사이드 이(Platycoside E)가 새로 생기고, 데친 뿌리 사포닌 함량은 201.0mg으로 상당 부분 유지",
+        "foodnuri.go.kr 등은 호흡기 점액분비 증가·감기예방·만성기관지염/인후염/편도선염 완화·천식 개선·혈당 정상화를 '효능'으로 나열하지만 임상 근거 수치나 연구 인용은 없음 — 사포닌 함량(confirmed)과 질병 예방·개선 효능 서술(근거 미제시, unclear) 사이에는 입증 단계 차이가 있어 '효능이 있다'는 단정 표현은 쓸 수 없음"
+      ],
+      "sourceUrls": [
+        "https://m.korea.kr/briefing/pressReleaseView.do?newsId=156638396&pWise=mSub&pWiseSub=C3",
+        "https://www.rda.go.kr/board/board.do?mode=view&prgId=day_farmprmninfoEntry&dataNo=100000796684",
+        "https://www.foodnuri.go.kr/portal/bbs/B0000283/view.do?nttId=219858&menuNo=300063&pageIndex=1"
+      ]
+    }
+  ],
+  "numbers": [
+    { "what": "도라지 생산시기(출하)", "value": "7월~9월", "asOf": "2015-12-07 게시", "sourceUrl": "https://www.foodnuri.go.kr/portal/bbs/B0000283/view.do?nttId=219858&menuNo=300063&pageIndex=1" },
+    { "what": "도라지(길경) 수확·조제 작업 시기", "value": "10월~12월", "asOf": null, "sourceUrl": "https://www.nongsaro.go.kr/portal/ps/psb/psbl/workScheduleDtl.ps?menuId=PS00087&cntntsNo=30740&sKidofcomdtySeCode=IC03" },
+    { "what": "피길경(껍질째) 건조기 건조 온도(농촌진흥청)", "value": "50~60℃", "asOf": null, "sourceUrl": "https://www.nongsaro.go.kr/portal/ps/psb/psbl/workScheduleDtl.ps?menuId=PS00087&cntntsNo=30740&sKidofcomdtySeCode=IC03" },
+    { "what": "건조기 건조 온도·시간(농기자재신문, 상충값)", "value": "70℃, 약 6시간", "asOf": "2019-10-31", "sourceUrl": "https://www.newsam.co.kr/news/article.html?no=24898" },
+    { "what": "쓴맛 제거 시 물에 담그는 시간(엑스포츠뉴스)", "value": "약 1시간", "asOf": "2014-11-29", "sourceUrl": "https://www.xportsnews.com/article/527266" },
+    { "what": "손질 전 도라지를 물에 불리는 시간(농기자재신문)", "value": "약 1시간", "asOf": "2019-12-20", "sourceUrl": "https://www.newsam.co.kr/mobile/article.html?no=30312" },
+    { "what": "사포닌 배당체 종류 수(뿌리 vs 새싹)", "value": "뿌리 37종 / 새싹 24종", "asOf": "2024-06-28", "sourceUrl": "https://m.korea.kr/briefing/pressReleaseView.do?newsId=156638396&pWise=mSub&pWiseSub=C3" },
+    { "what": "사포닌 함량(생체중량 100g 기준, 뿌리 vs 새싹)", "value": "뿌리 235.1mg / 새싹 271.5mg", "asOf": "2024-06-28", "sourceUrl": "https://m.korea.kr/briefing/pressReleaseView.do?newsId=156638396&pWise=mSub&pWiseSub=C3" },
+    { "what": "데친 뿌리의 사포닌 함량", "value": "201.0mg", "asOf": "2024-06-28", "sourceUrl": "https://m.korea.kr/briefing/pressReleaseView.do?newsId=156638396&pWise=mSub&pWiseSub=C3" },
+    { "what": "생도라지 보관기간(비공식, 블로그)", "value": "실온 약 3주 / 냉장 약 2~3개월", "asOf": null, "sourceUrl": "https://wtable.co.kr/guide/63189" },
+    { "what": "깐도라지 냉장 보관기간(소금물 밀폐, 비공식)", "value": "약 5일", "asOf": null, "sourceUrl": "https://wtable.co.kr/guide/63189" },
+    { "what": "깐도라지 냉동 보관기간(데친 뒤 소분, 비공식)", "value": "약 4~5개월", "asOf": null, "sourceUrl": "https://wtable.co.kr/guide/63189" },
+    { "what": "도라지청 재료 비율(개인 레시피, 비공식 1건)", "value": "도라지 1.8kg : 설탕 1kg : 꿀 1kg", "asOf": null, "sourceUrl": "https://www.10000recipe.com/recipe/6908528" },
+    { "what": "도라지청 숙성 기간(개인 레시피, 비공식 1건)", "value": "1주일(끓여서 섭취) 또는 100일(생으로 섭취 가능)", "asOf": null, "sourceUrl": "https://www.10000recipe.com/recipe/6908528" }
+  ],
+  "dropped": [],
+  "cannotCover": [
+    "사포닌 함량 수치를 근거로 한 구체적 효능(감기 예방, 기관지염/인후염/편도선염 완화, 천식 개선, 혈당·당뇨 개선) 단정 — 1차 자료에 효능 나열은 있으나 임상 근거 수치 없음, 효능 단정 금지",
+    "생도라지 보관 10일 경과 시 약효 저하 주장(엑스포츠뉴스) — 근거·전문가 인용 없는 미확인 주장, 사실처럼 쓰지 말 것",
+    "도라지청(설탕·꿀) 공식 표준 비율 — 농진청 등 공식 자료 없음, 개인 레시피 1건만 존재해 대표값으로 쓸 수 없음",
+    "쓴맛 제거 시 정확한 소금 농도·담그는 시간의 정부 공식 표준값 — 1차 자료에 분·시간 단위 표준 없음(자료마다 제각각)",
+    "흙도라지 상태와 깐 뒤 보관 중의 사포닌 손실량 비교 수치 — 2024 RDA 자료는 뿌리·새싹 비교만 있고 가공·보관 손실 비교는 없음"
+  ],
+  "songs": []
+}

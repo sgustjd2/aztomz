@@ -1,0 +1,174 @@
+{
+  "keyword": "모과청 만들기",
+  "categoryId": "hangeut-trend",
+  "notes": "모과는 9~10월 제철이고 날로 못 먹어 전통적으로 청·차·술로 가공해 온 식재료임은 공식·학술 출처로 확인됨. 다만 모과청 설탕비율·숙성기간은 전부 개인 블로그 레시피 예시이며 서로 15~30배 차이로 엇갈려 '정답 레시피'로 단정할 수 없음. 효능(기침·소화·숙취 등)은 한방 전통기록·언론 전언 수준이라 단정 금지, 씨 독성 경고만 비교적 확실한 안전 정보임.",
+  "sources": [
+    {
+      "title": "제철농식품(상세) - 모과",
+      "url": "https://www.foodnuri.go.kr/portal/bbs/B0000283/view.do?nttId=219913&menuNo=300063&selectMonth=10&searchCnd=&searchWrd=&deleteCd=0&pageIndex=3",
+      "host": "foodnuri.go.kr",
+      "body": "제철은 9월~10월(10월 수확). 주요산지 의성·청도·군위·공주, 주요품종 '천성'. 100g당 에너지 78kcal, 탄닌산·비타민C 풍부, 칼슘·칼륨 등 알칼리성 식품. 고르는 법: 색이 노랗고 향이 진하며 껍질이 얇고 붉은 기가 도는 것, 덜 익거나 과숙·병충해·상처 있는 것은 피함. 보관: 건조 후 밀폐용기+냉동, 생과는 종이봉투+냉장. 효능(소화촉진·기관지염완화·당뇨개선·숙취해소)은 자료 자체가 '주장' 수준으로 서술.",
+      "tier": "data"
+    },
+    {
+      "title": "모과(木瓜) - 한국민족문화대백과사전",
+      "url": "https://encykorea.aks.ac.kr/Article/E0018443",
+      "host": "encykorea.aks.ac.kr",
+      "body": "한국학중앙연구원 운영. 최종수정 2023-02-07. 모과는 산미 강하고 단단하며 향이 강함. 전통 가공: 과육을 꿀에 재워 정과 제조, 차·술로 가공. 모과차는 얇게 저며 꿀/설탕에 재운 뒤 끓는 물에 타서 음용. 한방 전통 기록상 서근·청간·화위·제습·조혈 등 효능이 전해지나 현대 의학적 확정 표현은 아님.",
+      "tier": "data"
+    },
+    {
+      "title": "'모과' 폴리페놀 풍부… 감기·천식·가래제거에 도움",
+      "url": "https://www.thinkfood.co.kr/news/articleView.html?idxno=1597",
+      "host": "thinkfood.co.kr",
+      "body": "식품음료신문(2000-11-17). 비타민C 386.6mg(기준 단위 본문 미명시) 등 영양성분 서술. 모과주: 모과1+소주3배량+설탕1/5~1/3, 3개월 숙성. 모과차: 2mm 두께로 썰어 건조 후 생강과 끓임. 효능 다수는 한의학 전통 '주장'으로 임상 근거 없음.",
+      "tier": "press"
+    },
+    {
+      "title": "모과손질법과 오래두고 먹을수있는법",
+      "url": "https://www.10000recipe.com/recipe/6945732",
+      "host": "10000recipe.com",
+      "body": "세척: 베이킹소다로 문질러 헹굼. 자르기: 가로로 반→4등분 후 씨 제거, 단단하므로 면장갑/실리콘장갑 권장. 슬라이스 \"0.2~0.3두께\"(원문 단위 없음). 건조기 60~70도 5~6시간 + 추가 1~2일 햇볕건조 후 지퍼백 소분 냉동.",
+      "tier": "blog"
+    },
+    {
+      "title": "모과청 담그기, 달콤한 모과차 만드는 법",
+      "url": "https://www.10000recipe.com/recipe/6921631",
+      "host": "10000recipe.com",
+      "body": "모과:설탕=1:1(모과 1.3kg:설탕1.3kg). 4등분 후 씨·딱딱한 부분 제거해 채썰기. 소독한 유리병에 담아 실온(베란다)에서 약 1개월 숙성 후 냉장(색 변하면 바로 냉장). 설탕 녹을 때까지 2시간, 30분마다 저어주고 덮어 먼지 방지.",
+      "tier": "blog"
+    },
+    {
+      "title": "모과청 만들기 ! 감기예방에 좋은 겨울음료 모과청 만드는법",
+      "url": "https://www.10000recipe.com/recipe/6992262",
+      "host": "10000recipe.com",
+      "body": "모과 2개(약 666g)에 설탕 650g(550g+100g 나눠 사용, 100g은 위에 덮듯)+꿀 50ml. 소독한 병에 담음(구체적 소독 절차 미기재). 실온에서 1~2일 숙성 후 냉장, 이틀 이상 숙성 후 맛보라고 안내.",
+      "tier": "blog"
+    },
+    {
+      "title": "모과 제철농산물 조리법 손질요령 구입요령 효능",
+      "url": "https://lampcook.com/farm/food_farm_view.php?idx_no=59",
+      "host": "lampcook.com",
+      "body": "색 노랗고 향 진한 것, 껍질 얇고 붉은 기 도는 것이 좋음. 표면 정유 성분으로 미끄러워 손질 시 주의. 보관: 건조 모과는 밀폐용기+냉동, 생과는 종이봉투+냉장. 조리법: 모과차·모과주가 일반적, 모과청은 설탕/꿀에 재움. 효능(소화촉진·기침완화·구토설사개선·피로회복·숙취해소)은 주장 수준.",
+      "tier": "blog"
+    },
+    {
+      "title": "모과 식재료 효능 영양성분 고르는법 손질법 보관법 음식궁합 활용음식",
+      "url": "http://lampcook.com/farm/food_material_view.php?idx_no=175",
+      "host": "lampcook.com",
+      "body": "제철 9~10월. 고르는 법: 노랗고 향 진하며 흠집 없는 것, 미끈한 표면 선호. 손질: 겉껍질 미끄럽고 단단해 주의. 보관: 신문지에 싸서 냉장고 채소칸 보관 시 약 2개월 신선 유지, 더 오래는 말려서 밀폐용기+냉동. 음식궁합: 철분과 상극이라며 세라믹칼 권장(근거 약함). 활용: 모과청·모과주·모과차·모과구이·정과·죽.",
+      "tier": "blog"
+    },
+    {
+      "title": "모과, 생강 먹으면 생기는 몸의 변화",
+      "url": "https://kormedi.com/1375274/",
+      "host": "kormedi.com",
+      "body": "코메디닷컴(2022-01-10). 기침·가래완화(사포닌), 기관지염완화, 감기예방(사과산·구연산·비타민C), 피로완화, 소화촉진, 혈액순환개선, 관절통·신경통완화 등 나열. '국립농업과학원에 따르면' 1건 외 구체적 임상 근거 없이 완곡 표현('도움을 준다') 위주로 서술된 전언 수준 기사.",
+      "tier": "press"
+    },
+    {
+      "title": "모과, 울퉁불퉁하지만 소화에 좋고 기침과 숨찬 증상에 효과",
+      "url": "https://www.100ssd.co.kr/news/articleView.html?idxno=76298",
+      "host": "100ssd.co.kr",
+      "body": "백세시대(2021-04-16). 모과씨 속 청산 성분이 소량으로는 전통적으로 기침 완화에 쓰였다고 소개하면서도, 씨는 독성이 있어 섭취하지 말라고 경고. 타닌 성분 많아 변비 있는 사람 과다섭취 주의, 태음인·소음인 체질론(검증 안 된 전통 이론) 언급. 모과청은 껍질째 담그면 향이 좋다는 팁.",
+      "tier": "press"
+    },
+    {
+      "title": "향도 좋고 건강에도 좋은 모과의 일석이조 효능 [푸드인사이트]",
+      "url": "https://news.hidoc.co.kr/news/articleView.html?idxno=28867",
+      "host": "news.hidoc.co.kr",
+      "body": "하이닥(2022-12-03). 기관지보호·근육이완·피로해소·항균·항산화 등 효능(주장) 나열, 비타민C로 피로해소·감기예방 서술. 사포닌이 기관지염·기침 완화한다고 설명. 모과씨 아미그달린→체내 시안화수소 전환, 다량섭취 시 사망 가능성까지 구체적으로 경고하며 씨 제거 필수 명시. 현대 가공법으로 청·잼·정과·파이 언급.",
+      "tier": "press"
+    }
+  ],
+  "claims": [
+    {
+      "claim": "모과는 9~10월이 제철이며, 색이 노랗고 향이 진하고 껍질이 얇으며 붉은 기가 도는 것을 고르는 게 좋다",
+      "grade": "confirmed",
+      "evidence": [
+        "제철은 9~10월(10월 수확), 주요산지 의성·청도·군위·공주, 주요품종 '천성' (foodnuri.go.kr)",
+        "고르는 법: 색이 노랗고 향이 진하며 껍질이 얇고 붉은 기가 도는 것이 좋음, 덜 익거나 과숙·병충해·상처 있는 것은 피함 (foodnuri.go.kr, lampcook 2건이 동일하게 안내)"
+      ],
+      "sourceUrls": [
+        "https://www.foodnuri.go.kr/portal/bbs/B0000283/view.do?nttId=219913&menuNo=300063&selectMonth=10&searchCnd=&searchWrd=&deleteCd=0&pageIndex=3",
+        "https://lampcook.com/farm/food_farm_view.php?idx_no=59",
+        "http://lampcook.com/farm/food_material_view.php?idx_no=175"
+      ]
+    },
+    {
+      "claim": "모과는 떫고 단단해 날로 먹기 어려워 전통적으로 꿀·설탕에 재운 청, 차, 술 등으로 가공해 먹어 온 과일이다",
+      "grade": "confirmed",
+      "evidence": [
+        "한국민족문화대백과사전(학술, 데이터 등급): 모과는 산미가 강하고 단단해 과육을 꿀에 재워 정과를 만들거나 차·술로 가공해 섭취해 온 전통 가공법 명시",
+        "현대에는 청·잼·정과·파이 등으로도 가공한다는 서술 (하이닥, 2022-12-03)"
+      ],
+      "sourceUrls": [
+        "https://encykorea.aks.ac.kr/Article/E0018443",
+        "https://news.hidoc.co.kr/news/articleView.html?idxno=28867"
+      ]
+    },
+    {
+      "claim": "모과 씨에는 아미그달린(청산 계열) 성분이 있어 체내에서 시안화수소로 바뀔 수 있으므로, 모과청·모과차를 만들 때 씨는 반드시 제거해야 한다",
+      "grade": "reported",
+      "evidence": [
+        "모과씨 속 아미그달린이 체내에서 시안화수소(청산가리 성분)로 바뀌며 다량 섭취 시 사망 가능성까지 경고, 씨 제거 필수 명시 (하이닥, 2022-12-03)",
+        "모과씨의 청산 성분을 언급하며 독성 위험으로 섭취 금지 권고 (백세시대, 2021-04-16)",
+        "식품안전나라(foodsafetykorea.go.kr)의 공식 경고 페이지는 JS 렌더링이라 본문을 직접 확인하지 못해 공식 출처로는 못 올렸고, 언론 2건 교차 확인만으로 reported 등급"
+      ],
+      "sourceUrls": [
+        "https://news.hidoc.co.kr/news/articleView.html?idxno=28867",
+        "https://www.100ssd.co.kr/news/articleView.html?idxno=76298"
+      ]
+    },
+    {
+      "claim": "모과청은 모과와 설탕을 비슷한 비율(1:1 안팎)로 재워 만드는 블로그 레시피가 여럿 있지만, 숙성 기간은 레시피마다 하루~한 달로 크게 엇갈려 하나의 '정답'으로 단정할 수 없다",
+      "grade": "unclear",
+      "evidence": [
+        "모과:설탕 = 1:1(모과 1.3kg : 설탕 1.3kg), 실온(베란다)에서 약 1개월 숙성 후 냉장 — 개인 레시피 예시 (10000recipe 6921631)",
+        "모과 666g : 설탕 650g + 꿀 50ml(약 1:1에 가까운 비율), 실온에서 1~2일만 숙성해도 냉장 보관 후 맛볼 수 있다는 개인 레시피 예시 (10000recipe 6992262)",
+        "두 레시피 간 숙성 기간 차이가 약 15~30배로 커 공식 기준 없이 서로 다른 개인 경험담 수준임"
+      ],
+      "sourceUrls": [
+        "https://www.10000recipe.com/recipe/6921631",
+        "https://www.10000recipe.com/recipe/6992262"
+      ]
+    },
+    {
+      "claim": "손질한 생모과는 종이봉투(또는 신문지)에 싸서 냉장 보관하고, 말린 모과는 밀폐용기에 담아 냉동 보관하면 장기간 저장할 수 있다",
+      "grade": "confirmed",
+      "evidence": [
+        "건조 모과는 밀폐용기에 담아 냉동 보관하면 장기 보관 가능, 생과는 종이봉투에 싸서 냉장 보관 (foodnuri.go.kr, data / lampcook idx59 동일)",
+        "다만 생과 냉장 보관 가능 기간은 자료마다 달라(lampcook idx175는 신문지+채소칸 약 2개월 제시, 나머지는 구체적 기간 미제시) 보관 '기간' 수치는 unclear로 별도 표기 필요"
+      ],
+      "sourceUrls": [
+        "https://www.foodnuri.go.kr/portal/bbs/B0000283/view.do?nttId=219913&menuNo=300063&selectMonth=10&searchCnd=&searchWrd=&deleteCd=0&pageIndex=3",
+        "https://lampcook.com/farm/food_farm_view.php?idx_no=59",
+        "http://lampcook.com/farm/food_material_view.php?idx_no=175"
+      ]
+    }
+  ],
+  "numbers": [
+    { "what": "제철", "value": "9~10월(10월 수확)", "asOf": "2015-12-07 게시", "sourceUrl": "https://www.foodnuri.go.kr/portal/bbs/B0000283/view.do?nttId=219913&menuNo=300063&selectMonth=10&searchCnd=&searchWrd=&deleteCd=0&pageIndex=3" },
+    { "what": "모과 100g당 에너지", "value": "78kcal", "asOf": "2015-12-07 게시", "sourceUrl": "https://www.foodnuri.go.kr/portal/bbs/B0000283/view.do?nttId=219913&menuNo=300063&selectMonth=10&searchCnd=&searchWrd=&deleteCd=0&pageIndex=3" },
+    { "what": "비타민C 함량(출처 간 불일치, unclear)", "value": "386.6mg(단위·기준 본문 미명시, thinkfood 2000-11-17) vs 39.5~61mg/100g(농사로 WebSearch 스니펫, 본문 미확인·신뢰도 낮음)", "asOf": "2000-11-17 / 미확인", "sourceUrl": "https://www.thinkfood.co.kr/news/articleView.html?idxno=1597" },
+    { "what": "모과청 레시피 예시① 모과:설탕 비율", "value": "1:1 (모과 1.3kg : 설탕 1.3kg)", "asOf": "개인 레시피(게시일 미표기)", "sourceUrl": "https://www.10000recipe.com/recipe/6921631" },
+    { "what": "모과청 레시피 예시① 숙성 기간", "value": "실온(베란다) 약 1개월 후 냉장", "asOf": "개인 레시피(게시일 미표기)", "sourceUrl": "https://www.10000recipe.com/recipe/6921631" },
+    { "what": "모과청 레시피 예시② 재료비", "value": "모과 666g : 설탕 650g + 꿀 50ml", "asOf": "개인 레시피(게시일 미표기)", "sourceUrl": "https://www.10000recipe.com/recipe/6992262" },
+    { "what": "모과청 레시피 예시② 숙성 기간", "value": "실온 1~2일 후 냉장", "asOf": "개인 레시피(게시일 미표기)", "sourceUrl": "https://www.10000recipe.com/recipe/6992262" },
+    { "what": "모과 슬라이스 두께(손질 예시)", "value": "0.2~0.3(원문 단위 없음 — 2026-10-01 팩트체크 확인)", "asOf": "개인 레시피(게시일 미표기)", "sourceUrl": "https://www.10000recipe.com/recipe/6945732" },
+    { "what": "건조 조건(손질 예시)", "value": "건조기 60~70도 5~6시간 + 추가 1~2일 햇볕건조", "asOf": "개인 레시피(게시일 미표기)", "sourceUrl": "https://www.10000recipe.com/recipe/6945732" },
+    { "what": "모과주 비율(전통 가공법 예시)", "value": "모과1 : 소주3배량 : 설탕1/5~1/3, 3개월 숙성", "asOf": "2000-11-17 게시", "sourceUrl": "https://www.thinkfood.co.kr/news/articleView.html?idxno=1597" },
+    { "what": "생과 냉장 보관 기간(unclear, 단일 출처만 수치 제시)", "value": "신문지+채소칸 보관 시 약 2개월", "asOf": "게시일 미표기", "sourceUrl": "http://lampcook.com/farm/food_material_view.php?idx_no=175" }
+  ],
+  "dropped": [],
+  "cannotCover": [
+    "모과의 건강 효능(기침완화·소화촉진·숙취해소·항균·항산화·혈액순환개선 등)은 한방 전통 기록 또는 언론의 완곡한 전언('도움을 준다') 수준으로만 확인되며 임상 근거가 없어 효능을 단정적으로 서술할 수 없음",
+    "병 소독의 구체적 절차(끓는 물 몇 분, 소독용 에탄올 분무 등 표준 방법)를 명시한 신뢰 가능한 자료를 찾지 못해 다룰 수 없음 — 레시피들은 모두 '소독한 병'이라고만 언급",
+    "완성된 모과청을 모과차로 희석해 마실 때의 물:청 비율(예: 1:3, 1:5 등)을 명시한 자료를 찾지 못해 다룰 수 없음",
+    "모과 비타민C의 정확한 수치는 출처 간 6배 이상 차이(386.6mg vs 39.5~61mg/100g, 후자는 본문 미확인)가 있어 특정 수치로 단정할 수 없음 — numbers에 병기만 함",
+    "의성·청도·공주 등 모과 주요 산지 지자체의 공식 모과청 레시피나 모과 축제 공식 자료는 검색되지 않아 '지자체 공식 레시피'로는 다룰 수 없음",
+    "농촌진흥청 농사로(nongsaro.go.kr)의 모과 재배·손질 공식 페이지는 WebFetch가 4회 모두 실패(404)해 본문을 확인하지 못했으므로 인용할 수 없음",
+    "식품안전나라(foodsafetykorea.go.kr)의 모과씨 아미그달린 공식 경고 페이지는 JS 렌더링이라 본문을 확인하지 못해 '공식 경고'로는 인용할 수 없고, 언론 교차확인(reported)까지만 가능"
+  ],
+  "songs": []
+}

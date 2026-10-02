@@ -1,0 +1,106 @@
+{
+  "keyword": "윈도우 11 블루투스 연결 안 될 때 해결",
+  "categoryId": "hangeut-trend",
+  "searchedAt": "2026-10-01",
+  "queries": [
+    "윈도우 11 블루투스 연결 안 될 때 문제 해결 Microsoft 지원",
+    "Fix Bluetooth problems in Windows Microsoft Support",
+    "Windows 11 Bluetooth 이어폰 소리 끊김 연결됐는데 소리 안 남",
+    "Bluetooth Support Service 재시작 services.msc Windows",
+    "Windows 11 비행기 모드 블루투스 꺼짐 확인 설정"
+  ],
+  "sources": [
+    {
+      "title": "Fix Bluetooth problems in Windows",
+      "url": "https://support.microsoft.com/en-us/windows/fix-bluetooth-problems-in-windows-723e092f-03fa-858b-5c80-131ec3fba75c",
+      "host": "support.microsoft.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "Microsoft 공식 지원 문서 원문(영문). Windows 11 메뉴 경로는 'Select Start > Settings > Bluetooth & devices'이고, 빠른 설정으로는 작업표시줄 우측의 Network·Sound·Battery 아이콘에서 조작한다. 블루투스를 끄고 켜는 절차는 'Turn off Bluetooth, wait a few seconds, then turn it back on'으로 명시돼 있다. 연결 안 되는 장치는 'In Devices, select More options for the Bluetooth device, and then select Remove device > Yes'로 제거 후 재추가한다. 문제 해결사는 'Select Start > Settings > System > Troubleshoot > Other troubleshooters. Next to Bluetooth, select Run'(Windows 11), Windows 10은 'Settings > Update & Security > Troubleshoot'에서 Bluetooth 선택 후 'Run the troubleshooter'. 드라이버 업데이트는 장치 관리자에서 'Press and hold (or right-click) the Bluetooth adapter, and then select Update driver > Search automatically for updated driver software'. 드라이버 제거는 'select Uninstall device' 후 'Action > Scan for hardware changes'로 재설치를 유도하거나 'Start > Power > Restart'로 재부팅한다.",
+      "facts": [
+        "Windows 11 블루투스 설정 경로는 'Start > Settings > Bluetooth & devices'(공식 영문 원문)",
+        "블루투스 재시작 절차: 'Turn off Bluetooth, wait a few seconds, then turn it back on'",
+        "장치 제거: 'Devices'에서 'More options' > 'Remove device' > 'Yes'",
+        "Windows 11 문제 해결사 경로: 'Settings > System > Troubleshoot > Other troubleshooters' > Bluetooth 옆 'Run'",
+        "Windows 10 문제 해결사 경로: 'Settings > Update & Security > Troubleshoot' > Bluetooth > 'Run the troubleshooter'",
+        "드라이버 업데이트: 장치 관리자에서 어댑터 우클릭 > 'Update driver > Search automatically for updated driver software'",
+        "드라이버 제거 후 재스캔: 'Uninstall device' 후 'Action > Scan for hardware changes'"
+      ]
+    },
+    {
+      "title": "Windows에서 Bluetooth 문제 해결",
+      "url": "https://support.microsoft.com/ko-kr/windows/hardware/bluetooth/fix-bluetooth-problems-in-windows",
+      "host": "support.microsoft.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "위 영문 문서의 한국어판. Windows 11 메뉴 경로는 '시작 > 설정 > Bluetooth & 장치'이며, Windows 10은 '시작 > 설정 > 장치 > Bluetooth & 기타 장치'다. 블루투스 껐다 켜기는 'Bluetooth를 끄고 몇 초 후 다시 켭니다'로 돼 있다. 장치 제거는 '장치에서 연결하는 데 문제가 있는 Bluetooth 장치에 대한 추가 옵션을 선택한 다음 장치 제거, 예를 선택합니다'로 안내한다. 문제 해결사는 Windows 11 기준 '시작 > 설정 > 시스템 > 문제 해결 > 기타 문제 해결사에서 Bluetooth 옆에 있는 실행을 선택', Windows 10은 '시작 > 설정 > 업데이트 & 보안 > 문제 해결에서 Bluetooth를 선택한 다음 문제 해결사 실행'이다. 드라이버 업데이트는 '장치 관리자에서 Bluetooth를 선택한 다음 Bluetooth 어댑터를 길게 누르거나 마우스 오른쪽 단추로 클릭한 다음 드라이버 > 업데이트 > 업데이트된 드라이버 소프트웨어를 자동으로 검색을 선택합니다'로 명시돼 있다.",
+      "facts": [
+        "Windows 11 설정 경로(한글 공식 원문): '시작 > 설정 > Bluetooth & 장치'",
+        "Windows 10 설정 경로(한글 공식 원문): '시작 > 설정 > 장치 > Bluetooth & 기타 장치'",
+        "Windows 11 문제 해결사 경로: '시작 > 설정 > 시스템 > 문제 해결 > 기타 문제 해결사' > Bluetooth 옆 '실행'",
+        "Windows 10 문제 해결사 경로: '시작 > 설정 > 업데이트 & 보안 > 문제 해결' > Bluetooth > '문제 해결사 실행'",
+        "드라이버 업데이트 메뉴 순서: 장치 관리자 > 어댑터 우클릭 > '드라이버 > 업데이트 > 업데이트된 드라이버 소프트웨어를 자동으로 검색'"
+      ]
+    },
+    {
+      "title": "Bluetooth keeps disconnecting in Windows",
+      "url": "https://support.microsoft.com/en-us/windows/bluetooth-keeps-disconnecting-in-windows-81a9cb1e-d15c-4e72-b025-cc0d992dca9f",
+      "host": "support.microsoft.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "블루투스가 연결은 되지만 자꾸 끊기거나 소리가 끊기는 문제를 다룬 공식 문서. 원인은 'This issue is often caused by power-saving settings, outdated drivers, or temporary system glitches'로 명시한다. 전원 관리 설정은 Device Manager의 블루투스 장치 속성 Power Management 탭에서 'Allow the computer to turn off this device to save power' 체크박스를 해제하라고 안내한다. 작업표시줄의 Energy Saver/Battery Saver 모드도 블루투스 연결에 간섭하므로 끄라고 권장한다. 서비스 재시작 절차는 본문에 그대로 등장한다: 'Select Windows key + R and type services.msc and then click Ok' 다음 'Scroll down to Bluetooth Support Service, right-click, and select Restart.' 이 두 문장은 Windows 11·10 섹션에 동일하게 반복된다. 드라이버 업데이트(Update driver)와 Get Help 앱의 자동화된 블루투스 문제 해결사 실행도 함께 권장된다.",
+      "facts": [
+        "연결 끊김 원인(공식 원문): 'This issue is often caused by power-saving settings, outdated drivers, or temporary system glitches'",
+        "전원관리 체크박스 해제 대상: Device Manager 블루투스 장치 Power Management 탭의 'Allow the computer to turn off this device to save power'",
+        "서비스 재시작 절차(공식 원문 그대로): 'Select Windows key + R and type services.msc and then click Ok' → 'Scroll down to Bluetooth Support Service, right-click, and select Restart.'",
+        "해당 서비스 재시작 안내는 Windows 11·10 섹션 둘 다에 동일하게 등장"
+      ]
+    },
+    {
+      "title": "Windows에서 Bluetooth는 연결되었지만 소리가 나지 않는 문제 해결",
+      "url": "https://support.microsoft.com/ko-kr/windows/hardware/bluetooth/fix-bluetooth-connected-but-no-sound-issue-on-windows",
+      "host": "support.microsoft.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "'연결됐는데 소리가 안 남' 증상 전용 공식 문서. Windows 11 출력 장치 확인 경로는 '시작 > 설정 > 시스템 > 사운드를 선택하고 출력에서 Bluetooth 장치가 출력으로 설정되어 있는지 확인합니다'이고, Windows 10은 '시작 > 설정 > 시스템 > 사운드를 선택합니다. 출력 장치 선택에서 Bluetooth 장치를 선택합니다'다. Windows 10 전용 오디오 품질 조정 절차로 작업표시줄 볼륨 아이콘 우클릭 > '소리' > 재생 탭에서 블루투스 장치 선택 후 속성 > 고급 탭에서 기본 형식을 '2채널, 16비트, 48000Hz(DVD 품질)'로 바꾸라고 안내한다. 그 외 블루투스 드라이버 업데이트, 장치 페어링 해제 후 재페어링, 블루투스 10초 대기 후 재시작, Windows 업데이트 확인, PC 재시작을 추가 조치로 제시한다.",
+      "facts": [
+        "Windows 11 출력장치 확인 경로: '시작 > 설정 > 시스템 > 사운드' > 출력에서 블루투스 장치 확인",
+        "Windows 10 출력장치 확인 경로: '시작 > 설정 > 시스템 > 사운드' > '출력 장치 선택'에서 블루투스 장치 선택",
+        "Windows 10 오디오 포맷 조정값(공식 원문): 기본 형식을 '2채널, 16비트, 48000Hz(DVD 품질)'로 설정",
+        "오디오 포맷 조정 메뉴 경로: 볼륨 아이콘 우클릭 > 소리 > 재생 탭 > 블루투스 장치 속성 > 고급 탭"
+      ]
+    },
+    {
+      "title": "Windows에서 Bluetooth 켜기 또는 끄기",
+      "url": "https://support.microsoft.com/ko-kr/windows/bluetooth-%EC%BC%A8%EA%B8%B0-%EB%98%90%EB%8A%94-%EB%81%84%EA%B8%B0-windows-9e92fddd-4e12-e32b-9132-5e36bdb2f75a",
+      "host": "support.microsoft.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "블루투스 온/오프 전용 공식 문서. Windows 11은 '시작 > Bluetooth & 장치 > 설정'을 선택한 뒤 'Bluetooth & 장치 창에서 Bluetooth 옆에 있는 Bluetooth를 켜거나 끕니다'로 조작한다. 빠른 설정 경로는 '시간/날짜 옆의 네트워크, 소리, 배터리 아이콘 선택' 후 'Bluetooth 타일을 선택하여 Bluetooth를 켜고 끕니다'다. Windows 10은 '시작 > 설정 > 장치'를 선택한 뒤 'Bluetooth & 기타 장치 창의 Bluetooth에서 Bluetooth를 켜거나 끕니다'로 안내하며, 알림 센터 아이콘에서 'Bluetooth 타일을 선택하여 Bluetooth를 켜고 끕니다'도 가능하다고 명시한다.",
+      "facts": [
+        "Windows 11 블루투스 온/오프 메뉴 경로(공식 원문): '시작 > Bluetooth & 장치 > 설정' > 'Bluetooth 옆에 있는 Bluetooth를 켜거나 끕니다'",
+        "Windows 11 빠른 설정 경로: 네트워크·소리·배터리 아이콘 선택 후 'Bluetooth 타일을 선택하여 켜고 끕니다'",
+        "Windows 10 메뉴 경로: '시작 > 설정 > 장치' > 'Bluetooth & 기타 장치' 창에서 켜거나 끔"
+      ]
+    },
+    {
+      "title": "Windows에서 Bluetooth 연결 안 함 문제 해결",
+      "url": "https://support.microsoft.com/ko-KR/Windows/Hardware/Bluetooth/troubleshoot-bluetooth-not-connecting-in-windows",
+      "host": "support.microsoft.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "연결 자체가 안 되는 증상 전용 공식 문서. 자동화된 문제 해결사 실행을 1순위로 안내한다: '자동화된 Bluetooth 문제 해결사를 실행하여 시작합니다. 자동으로 진단을 실행하고 이 Bluetooth 문제를 해결하려고 시도합니다.' 장치가 목록에 보이지만 연결이 안 될 때는 '장치가 Bluetooth 목록에 나타나지만 연결되지 않으면 제거했다가 다시 추가합니다'로 재페어링을 권한다. 배터리 부족 장치는 완전 충전 후 재부팅해 재시도하라고 안내하고, 블루투스 자체는 '끈 후 10초 대기 후 다시 켭니다'로 재시작 절차를 명시한다. 마지막으로 'PC가 Bluetooth를 지원하는지, Windows가 최신 버전인지 확인합니다'와 PC 재시작을 제시한다.",
+      "facts": [
+        "1차 조치는 Get Help 앱의 자동화된 블루투스 문제 해결사 실행(진단 자동 실행)",
+        "장치가 목록엔 보이나 연결 안 될 때: 제거 후 재추가 권장",
+        "블루투스 재시작 대기 시간(공식 원문): '끈 후 10초 대기 후 다시 켭니다'",
+        "배터리 부족 장치는 완전 충전 후 재부팅하여 페어링 재시도 권장"
+      ]
+    }
+  ],
+  "conflicts": [],
+  "unknowns": [
+    "비행기 모드(Airplane mode)가 블루투스를 끈다는 내용은 Microsoft Q&A/검색 스니펫 수준에서만 확인됨 — fix-bluetooth-problems-in-windows 등 1차 문서를 WebFetch로 직접 확인했을 때 '비행기 모드'를 명시적으로 언급하는 원문 문장은 찾지 못함(빠른 설정에 비행기 모드 타일이 같이 있다는 건 일반 UI 지식)",
+    "Bluetooth Audio Gateway Service·Bluetooth User Support Service·Device Association Service 등 '관련 서비스'가 공식 MS 문서에 직접 이름으로 언급되는지는 확인 못함 — 검색 스니펫(technobezz 등 비공식 블로그)에서만 등장, 공식 문서 WebFetch로는 'Bluetooth Support Service' 외 다른 서비스명을 찾지 못함"
+  ]
+}

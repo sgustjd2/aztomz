@@ -1,0 +1,151 @@
+{
+  "keyword": "이번 주 경량 VLM",
+  "categoryId": "vlm-watch",
+  "notes": "이번 회는 internlm Intern-Decision 3종(0.8B/2B/4B)과 mohit67890/imajev-4b 총 4개를 신규 후보로 다룰 수 있다. 전부 '의사결정형' VLM(이미지+상태 정보를 보고 질문에 답하는 유형)이라는 공통 앵글이 있다. 단, Intern-Decision-4B는 파라미터 수(4B vs 5B)가, imajev-4b는 모델명(4B)과 실제 학습 파라미터(0.12B)가 서로 다르다는 점을 반드시 구분해서 써야 한다. LFM2.5-VL-3B-DSpark는 독립 VLM이 아니라 가속용 draft 모델이라 본편 후보에서 뺐다(참고만 가능).",
+  "sources": [
+    {
+      "title": "internlm/Intern-Decision-4B · Hugging Face",
+      "url": "https://huggingface.co/internlm/Intern-Decision-4B",
+      "host": "huggingface.co",
+      "tier": "official",
+      "body": "모델 카드 원문(WebFetch 로 확인): 입력은 공유 상태(state)·명명된 질문 스키마(schema of named questions)·선택적 이미지이며, 한 번의 forward pass로 모든 질문에 대한 답변 분포(answer distribution)를 반환하는 구조화된 의사결정 모델이다. 베이스 모델은 Qwen3.5-4B. 카드 본문은 총 파라미터를 5B 로 명시하는데, 모델명·HuggingFace API 메타데이터(및 fetch 스크립트가 이름에서 추출한 값)는 4B 로 되어 있어 수치가 어긋난다. 컨텍스트 길이는 기본값 8,192 토큰이고 DecisionEngine 호출 시 조정 가능하다고 적혀 있다. 라이선스는 Apache 2.0 이며 Qwen 라이선스 조항을 재배포 시 유지해야 한다고 명시돼 있다. 벤치마크로 평균 정확도 90.02%, Brier 점수 0.347, ECE(Expected Calibration Error) 0.065, 평균 추론 지연시간 44.16ms 를 공개했다. 지원 언어는 카드 본문에 별도 명시가 없다. HuggingFace 수집 메타데이터(vlm-watch-fetch.mjs 2026-09-30 수집 기준)로는 저장소 생성일 2026-09-26, trendingScore 67, likes 68, downloads 1,074, int4 VRAM 추정 3.5GB, 최소 구동 보드는 Jetson Orin Nano 8GB 급부터(라즈베리파이 5·Jetson Nano 4GB 는 예산 미달)로 집계됐다."
+    },
+    {
+      "title": "internlm/Intern-Decision-2B · Hugging Face",
+      "url": "https://huggingface.co/internlm/Intern-Decision-2B",
+      "host": "huggingface.co",
+      "tier": "official",
+      "body": "모델 카드 원문(WebFetch 로 확인): Intern-Decision-4B 와 같은 구조 — 공유 상태·명명된 질문 스키마·선택적 이미지를 입력받아 질문별 답변 분포를 한 번의 forward pass로 반환한다. 베이스 모델은 Qwen3.5-2B 에서 파인튜닝됐고 파라미터는 2B 로 명명·본문 모두 일치한다(4B 모델과 달리 수치 불일치 없음). 컨텍스트 길이 기본값 8,192 토큰(DecisionEngine(max_length=8192) 로 조정 가능). 라이선스 Apache 2.0(Qwen 라이선스 유지 조건 동일). 벤치마크: Jevbench-Original 84.72%, Jevbench-Hard 63.96%, ToolACE 96.45%, 평균 성능 84.68%, Brier 점수 0.437. 지원 언어는 카드 본문에 별도 명시 없음. 2026-09-30 수집 메타데이터: 저장소 생성일 2026-09-26, trendingScore 13, likes 14, downloads 404, int4 VRAM 추정 2.5GB, 최소 구동 보드는 라즈베리파이 5(CPU)·Jetson Nano 4GB 급부터(모든 보드에 올라가는 크기)."
+    },
+    {
+      "title": "internlm/Intern-Decision-0.8B · Hugging Face",
+      "url": "https://huggingface.co/internlm/Intern-Decision-0.8B",
+      "host": "huggingface.co",
+      "tier": "official",
+      "body": "모델 카드 원문(WebFetch 로 확인): 같은 Intern-Decision 계열 구조(상태+질문 스키마+선택적 이미지 → 질문별 답변 분포, 단일 forward pass). 베이스 모델은 Qwen3.5-0.8B 에서 파인튜닝. 카드 본문은 파라미터를 '0.9B(약 9억 개)'로 적어, 모델명(0.8B)과 근소하게 다르다(4B 모델만큼 크게 어긋나지는 않음 — 반올림 차이로 보임). 컨텍스트 길이 기본값 8,192 토큰. 라이선스 Apache 2.0(Qwen 라이선스 유지 조건). 벤치마크: Jevbench-Easy 97.92%, Jevbench-Original 80.56%, Jevbench-Hard 52.25%, 평균 정확도 79.38%, Brier 0.530, ECE 0.066, RTX 4090 기준 평균 추론 지연시간 33.98ms(중앙값 33.44ms). 2026-09-30 수집 메타데이터: 저장소 생성일 2026-09-26, trendingScore 23, likes 24, downloads 779, int4 VRAM 추정 1.9GB, 최소 구동 보드는 라즈베리파이 5(CPU)·Jetson Nano 4GB 급부터 — 목록 모든 보드에 올라가는 크기."
+    },
+    {
+      "title": "mohit67890/imajev-4b · Hugging Face",
+      "url": "https://huggingface.co/mohit67890/imajev-4b",
+      "host": "huggingface.co",
+      "tier": "official",
+      "body": "모델 카드 원문(WebFetch 로 확인): 이미지와 기록(텍스트)을 대조해 모순되는 필드를 찾아내는 의사결정 시스템. 최대 이미지 2장, 상태 정보 최대 32KB, 질문 1~8개를 받아 'typed-decisions' 형식의 JSON(질문별 확률 포함)으로 응답한다고 적혀 있다. 베이스 모델은 Qwen3.5-4B(revision 851bf6e8, Apache-2.0, 가중치 동결·frozen)이고, 이 모델 자체가 학습한 파라미터는 LoRA 121.9M + 결정(readout) 65.536만(0.65536M) = 약 122.55M(0.12255B)에 불과하다 — 모델명의 '4b'와 fetch 가 집계한 paramsB=4 는 베이스 모델 크기를 가리키는 것으로, 이 저장소 자체의 학습 파라미터는 그보다 훨씬 작다. 가중치 파일 크기는 487.6MB(F32) + readout 2.6MB ≈ 490MB. 컨텍스트는 최대 4,096 토큰(상태 정보 32KB 제한과 별개). 지원 언어는 영어 전용. 라이선스 Apache-2.0. 벤치마크: ImajevBench v2.0-lite 83.9%(279개 중 234개), JevBench hard 72.1%(4회전+보정), DecisionBench 79.7%(23,900행 중 #3위/60), 인간 검증 슬라이스 76.2%(785개 의사결정). 평가 버전은 2026-09-26(revision c9e5f132)로 카드에 명시돼 있으나, HuggingFace 저장소 생성일(fetch 기준)은 2026-09-24 로 이틀 차이가 있다."
+    },
+    {
+      "title": "LiquidAI/LFM2.5-VL-3B-DSpark · Hugging Face",
+      "url": "https://huggingface.co/LiquidAI/LFM2.5-VL-3B-DSpark",
+      "host": "huggingface.co",
+      "tier": "official",
+      "body": "모델 카드 원문(WebFetch 로 확인): 'LFM2.5-VL-3B-DSpark is an experimental speculative-decoding draft model' — 즉 독립 VLM 이 아니라 타겟 모델 LiquidAI/LFM2.5-VL-3B(이전 회차에서 이미 다룬 모델)의 추론 속도를 높이기 위한 draft(초안) 모델이다. 단독으로 쓸 수 없고 타겟 모델과 쌍으로 구동해야 한다. 베이스는 LFM2.5-2.6B-Base, 파라미터는 BF16 기준 279.5M(0.2795B) — 모델명의 '3B'는 타겟 모델(LFM2.5-VL-3B)의 크기를 가리키는 것으로 이 저장소 자체 크기가 아니다. 라이선스는 lfm1.0. 벤치마크는 정확도가 아니라 가속 배수: H100(SGLang) 디코딩 최대 2.66배·종단간 2.27배, Apple M5 Max(MLX-VLM) 디코딩 최대 3.13배·종단간 2.59배, Apple M3 Ultra(llama.cpp) 디코딩 최대 2.14배·종단간 1.77배, 평균 draft 토큰 수락 개수 3.46~4.57개. 최대 출력 토큰 2,048, 컨텍스트 길이 별도 명시 없음. GGUF 빌드도 동시에 공개됐다. (※ 이번 글의 본편 후보에서는 제외 — 참고용 소스로만 보존)"
+    },
+    {
+      "title": "hf-vlm-trending-2026-09-30.json (vlm-watch-fetch.mjs, trending 모드)",
+      "url": "https://huggingface.co/api/models?pipeline_tag=image-text-to-text&limit=300&full=true",
+      "host": "huggingface.co",
+      "tier": "data",
+      "body": "HuggingFace API 에서 image-text-to-text 파이프라인 모델을 trendingScore 내림차순으로 받아 (1) 파라미터 8B 이하 (2) 최근 60일 이내 생성 두 조건으로 거른 로컬 수집 결과. 보드 7종(라즈베리파이 5 8GB CPU·Jetson Nano 4GB·Jetson Orin Nano 8GB·RTX 3070 8GB·RTX 4070 12GB·Jetson Orin NX 16GB·Jetson AGX Orin 32GB+)의 예산(GB)과 각 모델의 int4 VRAM 추정치를 비교해 boardFit 을 계산했다. 보드 예산(budgetGB): 라즈베리파이5 3·Jetson Nano 2.5·Jetson Orin Nano 6·RTX3070 8·RTX4070 11·Jetson Orin NX 12·Jetson AGX Orin 28. 9개 후보 중 신규(미발행)는 internlm/Intern-Decision-4B·-2B·-0.8B, mohit67890/imajev-4b, LiquidAI/LFM2.5-VL-3B-DSpark·-DSpark-GGUF 6개이고, Mapika/decider-2b-vision·Qwen/Qwen-Drive-1.0-4B·LiquidAI/LFM2.5-VL-3B 세 개는 이전 회차(09-25 글·여러 회)에서 이미 다뤘다."
+    },
+    {
+      "title": "hf-vlm-popular-2026-09-30.json (vlm-watch-fetch.mjs, popular 모드)",
+      "url": "https://huggingface.co/api/models?pipeline_tag=image-text-to-text&limit=300&sort=downloads&direction=-1&full=true",
+      "host": "huggingface.co",
+      "tier": "data",
+      "body": "HuggingFace API 에서 image-text-to-text 파이프라인 모델을 다운로드 내림차순(생성일 무관)으로 받아 파라미터 8B 이하만 남긴 로컬 수집 결과. 20개 항목 전부 Qwen2-VL/2.5-VL/3-VL/3.5 계열·gemma-3-4b-it·llava-1.5-7b-hf·SmolVLM2-500M-Video-Instruct·medgemma-4b-it·InternVL2-2B 등으로, 이번 수집에서 신규로 볼 모델은 없었다 — gemma-3-4b-it·llava-1.5-7b-hf·SmolVLM2-500M-Video-Instruct 는 08-21 글에서 이미 다뤘고, Qwen 계열 대부분은 popular 모드 특성상 원래부터 유명한 모델들이라 신규 소개 대상이 아니다. google/medgemma-4b-it(다운로드 1,014,026회)·OpenGVLab/InternVL2-2B(다운로드 719,648회)는 모델 카드 WebFetch 를 하지 않아 이번 회 후보로 쓰지 않았다(다음 회 검토 대상)."
+    }
+  ],
+  "claims": [
+    {
+      "claim": "internlm/Intern-Decision-4B는 상태 정보+질문 스키마+선택적 이미지를 입력받아 한 번의 forward pass로 여러 질문의 답변 분포를 반환하는 구조화 의사결정 VLM이다. Qwen3.5-4B 베이스·Apache 2.0 라이선스이며 평균 정확도 90.02%를 공개했다.",
+      "grade": "confirmed",
+      "evidence": [
+        "공유 상태+질문 스키마+선택적 이미지 입력 → 질문별 답변 분포를 단일 forward pass로 반환(모델 카드)",
+        "베이스 Qwen3.5-4B, 라이선스 Apache 2.0(Qwen 라이선스 조항 유지 조건), 컨텍스트 길이 기본값 8,192 토큰",
+        "벤치마크: 평균 정확도 90.02%, Brier 0.347, ECE 0.065, 평균 추론 지연시간 44.16ms (카드: \"Measured on a single RTX 4090 with the local HF inference path\" — 2026-10-01 WebFetch 확인)",
+        "int4 VRAM 추정 3.5GB, Jetson Orin Nano 8GB급부터 구동 추정(라즈베리파이5·Jetson Nano 4GB는 예산 미달)",
+        "⚠ 파라미터 수는 모델명·HF 메타데이터(4B)와 카드 본문(5B)이 서로 달라 불일치 — '정확히 4B'·'정확히 5B' 단정 금지, '약 4~5B'로만 표현"
+      ],
+      "sourceUrls": ["https://huggingface.co/internlm/Intern-Decision-4B"]
+    },
+    {
+      "claim": "internlm/Intern-Decision-2B는 -4B와 같은 구조의 더 작은 버전으로, Qwen3.5-2B 베이스·파라미터 2B(명명·카드 본문 일치)이며 int4 추정 VRAM 약 2.5GB로 라즈베리파이5·Jetson Nano 4GB급부터 돌아갈 것으로 추정된다.",
+      "grade": "confirmed",
+      "evidence": [
+        "Intern-Decision-4B와 동일 구조(상태+질문 스키마+이미지 → 질문별 답변 분포), 베이스 Qwen3.5-2B, 파라미터 2B는 명명·본문 모두 일치(수치 불일치 없음)",
+        "컨텍스트 길이 기본값 8,192 토큰, 라이선스 Apache 2.0",
+        "벤치마크: Jevbench-Original 84.72%, Jevbench-Hard 63.96%, ToolACE 96.45%, 평균 84.68%, Brier 0.437",
+        "int4 VRAM 추정 2.5GB, 라즈베리파이5(CPU)·Jetson Nano 4GB급부터 — 목록 모든 보드에 올라가는 크기"
+      ],
+      "sourceUrls": ["https://huggingface.co/internlm/Intern-Decision-2B"]
+    },
+    {
+      "claim": "internlm/Intern-Decision-0.8B는 Intern-Decision 계열 중 가장 작은 버전으로, Qwen3.5-0.8B 파인튜닝이며 int4 추정 VRAM 약 1.9GB로 라즈베리파이5·Jetson Nano 4GB급부터 돌아갈 것으로 추정된다.",
+      "grade": "confirmed",
+      "evidence": [
+        "같은 Intern-Decision 계열 구조, 베이스 Qwen3.5-0.8B",
+        "⚠ 카드 본문은 파라미터를 '0.9B(약 9억 개)'로 적어 모델명(0.8B)과 근소하게 다름 — 4B 모델처럼 크게 어긋나지는 않으며 반올림 차이로 보임, '약 0.8~0.9B'로 표현",
+        "벤치마크: Jevbench-Easy 97.92%, Jevbench-Original 80.56%, Jevbench-Hard 52.25%, 평균 79.38%, Brier 0.530, ECE 0.066",
+        "RTX 4090 기준 평균 추론 지연시간 33.98ms(중앙값 33.44ms)",
+        "int4 VRAM 추정 1.9GB, 라즈베리파이5(CPU)·Jetson Nano 4GB급부터 — 목록 모든 보드에 올라가는 크기"
+      ],
+      "sourceUrls": ["https://huggingface.co/internlm/Intern-Decision-0.8B"]
+    },
+    {
+      "claim": "mohit67890/imajev-4b는 이미지 최대 2장과 기록(텍스트)을 대조해 모순 필드를 찾아내는 모델이다. 이름은 '4b'지만 실제로 학습된 파라미터는 LoRA+readout 합쳐 약 0.12B뿐이고, '4b'는 동결된 베이스 Qwen3.5-4B를 가리키는 것으로 모델 크기를 그대로 나타내지 않는다.",
+      "grade": "confirmed",
+      "evidence": [
+        "입력: 이미지 최대 2장 + 상태 정보 최대 32KB + 질문 1~8개 → 'typed-decisions' JSON(질문별 확률 포함) 응답",
+        "베이스 Qwen3.5-4B(가중치 동결), 이 저장소 자체가 학습한 파라미터는 LoRA 121.9M + readout 0.655M ≈ 122.55M(0.12B) — 모델명 '4b'는 베이스 크기를 가리킬 뿐 실제 학습 파라미터가 아님",
+        "가중치 파일 크기 약 490MB(F32 487.6MB + readout 2.6MB), 컨텍스트 최대 4,096 토큰, 지원 언어 영어 전용, 라이선스 Apache-2.0",
+        "벤치마크: ImajevBench v2.0-lite 83.9%(234/279), JevBench hard 72.1%, DecisionBench 79.7%(#3/60), 인간 검증 슬라이스 76.2%(785건)",
+        "⚠ fetch가 추정한 int4 VRAM 3.5GB는 베이스(4B) 기준 추정치이며 실제 학습 파라미터(0.12B)와는 다른 수치 — 이 둘을 섞어 쓰지 말 것"
+      ],
+      "sourceUrls": ["https://huggingface.co/mohit67890/imajev-4b"]
+    }
+  ],
+  "numbers": [
+    { "what": "Intern-Decision-4B 파라미터(모델명·메타데이터 기준, 카드 본문은 5B로 불일치)", "value": "4B(명명) / 5B(카드 본문)", "asOf": "2026-09-30", "sourceUrl": "https://huggingface.co/internlm/Intern-Decision-4B" },
+    { "what": "Intern-Decision-4B 평균 정확도", "value": "90.02%", "asOf": "2026-09-26", "sourceUrl": "https://huggingface.co/internlm/Intern-Decision-4B" },
+    { "what": "Intern-Decision-4B Brier / ECE / 평균 지연시간", "value": "0.347 / 0.065 / 44.16ms", "asOf": "2026-09-26", "sourceUrl": "https://huggingface.co/internlm/Intern-Decision-4B" },
+    { "what": "Intern-Decision-4B int4 VRAM 추정 / 최소 보드", "value": "약 3.5GB / Jetson Orin Nano 8GB급부터", "asOf": "2026-09-30", "sourceUrl": "https://huggingface.co/internlm/Intern-Decision-4B" },
+    { "what": "Intern-Decision-2B 파라미터", "value": "2B", "asOf": "2026-09-26", "sourceUrl": "https://huggingface.co/internlm/Intern-Decision-2B" },
+    { "what": "Intern-Decision-2B 벤치마크(Jevbench-Original/Hard, ToolACE, 평균, Brier)", "value": "84.72% / 63.96% / 96.45% / 84.68% / 0.437", "asOf": "2026-09-26", "sourceUrl": "https://huggingface.co/internlm/Intern-Decision-2B" },
+    { "what": "Intern-Decision-2B int4 VRAM 추정 / 최소 보드", "value": "약 2.5GB / 라즈베리파이5·Jetson Nano 4GB급부터", "asOf": "2026-09-30", "sourceUrl": "https://huggingface.co/internlm/Intern-Decision-2B" },
+    { "what": "Intern-Decision-0.8B 파라미터(모델명 vs 카드 본문)", "value": "0.8B(명명) / 0.9B(카드 본문, 반올림 차이)", "asOf": "2026-09-26", "sourceUrl": "https://huggingface.co/internlm/Intern-Decision-0.8B" },
+    { "what": "Intern-Decision-0.8B 벤치마크(Jevbench-Easy/Original/Hard, 평균, Brier, ECE)", "value": "97.92% / 80.56% / 52.25% / 79.38% / 0.530 / 0.066", "asOf": "2026-09-26", "sourceUrl": "https://huggingface.co/internlm/Intern-Decision-0.8B" },
+    { "what": "Intern-Decision-0.8B RTX 4090 평균/중앙값 추론 지연시간", "value": "33.98ms / 33.44ms", "asOf": "2026-09-26", "sourceUrl": "https://huggingface.co/internlm/Intern-Decision-0.8B" },
+    { "what": "Intern-Decision-0.8B int4 VRAM 추정 / 최소 보드", "value": "약 1.9GB / 라즈베리파이5·Jetson Nano 4GB급부터", "asOf": "2026-09-30", "sourceUrl": "https://huggingface.co/internlm/Intern-Decision-0.8B" },
+    { "what": "imajev-4b 실제 학습 파라미터(LoRA+readout)", "value": "약 122.55M(0.12B) — 베이스 Qwen3.5-4B는 동결", "asOf": "2026-09-26", "sourceUrl": "https://huggingface.co/mohit67890/imajev-4b" },
+    { "what": "imajev-4b 가중치 파일 크기", "value": "약 490MB(F32 487.6MB + readout 2.6MB)", "asOf": "2026-09-26", "sourceUrl": "https://huggingface.co/mohit67890/imajev-4b" },
+    { "what": "imajev-4b 벤치마크(ImajevBench v2.0-lite, JevBench hard, DecisionBench, 인간검증 슬라이스)", "value": "83.9%(234/279) / 72.1% / 79.7%(#3/60) / 76.2%(785건)", "asOf": "2026-09-26", "sourceUrl": "https://huggingface.co/mohit67890/imajev-4b" },
+    { "what": "보드별 int4 VRAM 예산(budgetGB) — 라즈베리파이5/Jetson Nano/Jetson Orin Nano/RTX3070/RTX4070/Jetson Orin NX/Jetson AGX Orin", "value": "3 / 2.5 / 6 / 8 / 11 / 12 / 28 (GB)", "asOf": "2026-09-30", "sourceUrl": "https://huggingface.co/api/models?pipeline_tag=image-text-to-text&limit=300&full=true" },
+    { "what": "LFM2.5-VL-3B-DSpark 실제 파라미터(draft 모델, 참고용)", "value": "279.5M(0.2795B) — 모델명 '3B'는 타겟 모델 LFM2.5-VL-3B 크기를 가리킴", "asOf": "2026-09-18", "sourceUrl": "https://huggingface.co/LiquidAI/LFM2.5-VL-3B-DSpark" }
+  ],
+  "dropped": [
+    {
+      "url": "https://huggingface.co/LiquidAI/LFM2.5-VL-3B-DSpark",
+      "why": "독립 VLM이 아니라 이미 다룬 LiquidAI/LFM2.5-VL-3B 전용 speculative-decoding draft(가속) 모델 — 단독 구동 불가, 실제 파라미터는 0.28B. 본편 후보에서 제외하고 참고 데이터로만 보존."
+    },
+    {
+      "url": "https://huggingface.co/api/models?pipeline_tag=image-text-to-text&limit=300&full=true",
+      "why": "trending 9개 후보 중 Mapika/decider-2b-vision·Qwen/Qwen-Drive-1.0-4B·LiquidAI/LFM2.5-VL-3B 3개는 09-25 글·이전 회차에서 이미 다뤄 중복 제외."
+    },
+    {
+      "url": "https://huggingface.co/api/models?pipeline_tag=image-text-to-text&limit=300&sort=downloads&direction=-1&full=true",
+      "why": "popular 모드 20개 전부 기존에 이미 다뤘거나(gemma-3-4b-it·llava-1.5-7b-hf·SmolVLM2-500M-Video-Instruct 등 08-21 글) 원래부터 유명한 Qwen 계열이라 이번 회 신규 후보 없음."
+    }
+  ],
+  "cannotCover": [
+    "VRAM 추정치를 '정확히 N GB'·'무조건 돌아간다'로 단정 — int4 대략 추정치일 뿐, 실제 사용량은 이미지 해상도·컨텍스트·구현에 따라 달라진다는 전제를 반드시 붙일 것.",
+    "라이선스에 대해 '상업적 사용 가능/불가' 같은 법적 해석 단정 — 라이선스 명칭(Apache 2.0, lfm1.0 등)만 전달 가능.",
+    "모델 성능을 벤치마크 근거 없이 '더 낫다/최고다'로 단정 — 모델 카드에 있는 수치만 인용 가능.",
+    "'화재 감지·안전장비 확인에 바로 쓸 수 있다' 같은 특정 용도 성능 보장 — '이런 이미지+텍스트 점검에 시도해볼 만하다' 수준까지만.",
+    "Intern-Decision-4B의 정확한 파라미터 수를 '4B' 또는 '5B'로 단정 — 두 수치가 자료마다 달라 '약 4~5B'로만 표현 가능.",
+    "imajev-4b를 그냥 '4B 모델'로 부르는 것 — 실제 학습 파라미터(0.12B)와 동결된 베이스(4B)를 구분해서 설명해야 한다.",
+    "LFM2.5-VL-3B-DSpark를 독립적인 신규 경량 VLM으로 소개 — 타겟 모델 전용 가속용 draft이며 단독 구동 불가, 언급한다면 '참고'로만.",
+    "Intern-Decision 계열·imajev-4b의 한국어 등 다국어 지원 여부 — 카드에 지원 언어 목록이 없음(imajev-4b는 영어 전용만 명시).",
+    "Intern-Decision 계열의 safetensors 실제 파일 크기(GB) — 카드에 명시 없음, int4 VRAM 추정치만 있음.",
+    "Intern-Decision·imajev-4b의 정식 공개/릴리스 날짜 — 카드에 '공개일' 서술이 없고 HuggingFace 저장소 생성일만 확인됨(imajev-4b는 저장소 생성일 09-24와 카드 명시 평가버전일 09-26이 다르다는 점도 그대로만 언급).",
+    "google/medgemma-4b-it·OpenGVLab/InternVL2-2B — 이번 회 모델 카드를 WebFetch하지 않아 다룰 수 없음(다음 회 후보)."
+  ],
+  "songs": []
+}

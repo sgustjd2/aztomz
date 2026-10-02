@@ -1,0 +1,157 @@
+{
+  "keyword": "대봉감 홍시 만들기(후숙)",
+  "categoryId": "hangeut-trend",
+  "notes": "대봉감 같은 떫은 감이 왜 떫고 후숙하면 왜 달아지는지(타닌 불용화) 공식자료(농사로·식품나누리)로 설명할 수 있다. 가정에서 후숙을 앞당기는 두 방법 — 사과 동봉법·소주(알코올) 분무법 — 을 수치(일수·용량)와 함께 다룰 수 있되, 세부 일수는 출처마다 달라 단정하지 말고 범위로 병기해야 한다. 다 익은 홍시를 오래 두려면 얼려 보관해야 한다는 것(동결박피연시 포함)까지는 공식자료로 다룰 수 있지만, 가정용 냉동고 기준 정확한 보관 개월수와 대봉감 고유 당도(Brix) 수치는 다룰 수 없다. 탄산가스법·1-MCP·동결탈삽법 등 농가·유통용 공정은 배경 설명으로만 언급하고 가정 레시피로 제안하지 않는다.",
+  "sources": [
+    {
+      "title": "과수 > 감 가정에서의 보관방법",
+      "url": "https://www.nongsaro.go.kr/portal/ps/psz/psza/contentSub.ps?menuId=PS03797&sSeCode=374015&cntntsNo=102025&totalSearchYn=Y",
+      "host": "nongsaro.go.kr",
+      "tier": "official",
+      "body": "농촌진흥청 농사로 '과수 > 감' 가정 보관방법 페이지. 탈삽감(떫은맛을 없앤 생감)은 냉장고, 곶감은 냉동고에 보관하면 1년 내내 저장 가능. 다 익어 말랑해진 홍시(연시)는 얼린 뒤 흐르는 물에 씻으면 껍질이 저절로 벗겨지는 '동결박피연시'로 만들어 필요할 때 썰어 먹을 수 있다고 소개. 완숙과를 알코올 발효 후 초산 발효·여과·숙성해 감식초를 만드는 가공법도 제시. 구체적 저장 일수·온도·습도 수치는 없음."
+    },
+    {
+      "title": "감 홍시 저온저장 시에 장기간 보관할 경우 적정 온도와 습도",
+      "url": "http://nongsaro.go.kr/portal/ps/psz/psza/contentSub.ps?menuId=PS00078&cntntsNo=205481&totalSearchYn=Y",
+      "host": "nongsaro.go.kr",
+      "tier": "official",
+      "body": "농사로 영농 Q&A. 감은 떫은 감(땡감) 상태로 저장하는 것이 유리하며, 온도 0℃·습도 85~90%에서 약 2개월 저장 가능. 저장해둔 땡감은 상온에 꺼내두거나 에틸렌가스로 처리하면 3~4일 만에 홍시(연시)로 후숙됨. 반대로 이미 익은 홍시는 과육이 물러 자체 무게로 변형·파열 위험이 있어 최적 조건에서도 2주 미만만 저온 보관 가능. 더 오래 두려면 비닐랩 등으로 밀봉해 영하 25~40℃ 냉동 설비(가정용 냉동고보다 낮은 온도)에 보관해야 한다고 명시."
+    },
+    {
+      "title": "이제는 탈삽감이다! 새로운 감 시장 열릴까?",
+      "url": "https://www.nongsaro.go.kr/portal/ps/psa/psac/farmLocalNewsDtl.ps?pageIndex=1&pageSize=10&menuId=PS03939&keyval=100000760017",
+      "host": "nongsaro.go.kr",
+      "tier": "official",
+      "body": "농사로 지역농정소식(2019-11-19). 탈삽감의 기존 유통기한은 약 7일이었으나, 경북농업기술원 상주감연구소의 1-MCP 처리 기술로 21일 이상 연장. 청도반시 품종이 1-MCP 효과 우수. 당도(Brix) 수치는 제시 안 됨. ※ 유통·산업 공정이라 가정용 홍시 레시피로는 배경 설명 수준에서만 쓸 것."
+    },
+    {
+      "title": "[팩트체크] 떫은 감은 덜 익은 감일까?",
+      "url": "https://www.foodnuri.go.kr/portal/bbs/B0000284/view.do?nttId=234041&menuNo=300089&deleteCd=0&pageIndex=4",
+      "host": "foodnuri.go.kr",
+      "tier": "official",
+      "body": "식품나누리 팩트체크. 떫은 감(대봉감 등)과 단감은 익은 정도 차이가 아니라 서로 다른 품종. 단감은 수확 시점에 타닌 성질이 변해 떫은맛이 자연히 사라지지만, 떫은 감은 타닌 변화가 느리고 양도 많아 수확기에도 떫다. 감의 떫은맛은 물에 녹는 수용성 타닌 때문이며, 홍시·곶감으로 후숙시키면 타닌이 불용성으로 바뀌어 떫은맛이 사라지고 단감보다 더 달아진다. 2019년 농진청 육성 '봉황' 품종은 생감·홍시 둘 다 즐기는 단감 신품종."
+    },
+    {
+      "title": "\"떫은감을 맛있는 홍시로\" 대봉감 떫은 맛 없애는 5대 탈삽법",
+      "url": "https://www.esocialtimes.com/news/articleView.html?idxno=38233",
+      "host": "esocialtimes.com",
+      "tier": "press",
+      "body": "소셜타임스. 대봉감 탈삽법 5가지를 소개. ①사과법: 감 상자에 사과 2개를 넣으면 약 5일 후 홍시화(상자 크기는 원문에 없음). ②알코올법: 상자나 밀폐용기에 목면 또는 크라프트지를 깔고 감을 세운 뒤 알코올·소주를 분무해 밀봉, 20℃에서 1주일(용량은 원문에 없음). ③온탕법: 약 45℃ 온탕에 15~24시간. ④탄산가스법: 과실 15㎏당 드라이아이스 300~350g 밀봉(불완전 탈삽 단점). ⑤고온 병용탈삽법: 35℃에서 탄산가스+에탄올 병용 시 5일 만에 완료. 동결 탈삽법(영하 20℃, 20~80일)도 언급. ※ ③~⑤와 동결탈삽법은 가정에서 재현하기 어려운 농가·산업 공정이라 배경 설명 정도로만 쓸 것 — 가정용 핵심은 ①사과법·②알코올법."
+    },
+    {
+      "title": "\"땡감 있다면 냉장고 속 '이 액체' 부어보세요\"...텁텁함은 줄고 단맛이 확 살아납니다",
+      "url": "https://www.pickdailynews.com/news/articleView.html?idxno=5095",
+      "host": "pickdailynews.com",
+      "tier": "press",
+      "body": "픽데일리뉴스. 소주로 땡감 탈삽하는 단계별 가정 레시피. 소주는 15㎏ 한 상자 기준 약 160mL(소주 작은 병 반 병). ①감 세척 후 물기 제거 ②밀폐 상자 바닥에 신문지, 꼭지가 위로 가게 감을 펼쳐 담기 ③꼭지 부위 중심으로 소주를 분무/도포(꼭지가 호흡 통로라 알코올 전달이 잘 됨) ④신문지-감-신문지 켜켜이 쌓기 ⑤밀봉해 20℃ 안팎에 두기. 4~5일 뒤 1차 확인, 떫은맛 남으면 1~2일 추가. 원리: 밀봉으로 산소 차단 → 무기호흡 → 표면 알코올이 아세트알데히드로 바뀌어 타닌과 결합·불용성화되어 떫은맛이 사라짐."
+    },
+    {
+      "title": "[단감·연시 분석] 비타민C 사과의10배...'숨겨진 효능·최악 궁합 식품' 뭘까",
+      "url": "https://www.esocialtimes.com/news/articleView.html?idxno=33205",
+      "host": "esocialtimes.com",
+      "tier": "press",
+      "body": "소셜타임스. 단감·연시(홍시)·대봉 100g당 영양성분 비교. 비타민C: 단감 13.95mg, 대봉 10.29mg, 연시 1.22mg. 칼로리: 단감 51kcal, 연시 65kcal, 대봉 72kcal. 식이섬유: 단감 6.4g, 연시 6.5g, 대봉 2.7g. 비타민A: 단감 7㎍, 연시 26㎍, 대봉 20㎍. 베타카로틴: 단감 81㎍, 연시 308㎍, 대봉 239㎍. 궁합 안 좋은 음식: 소고기·도토리·바나나(타닌·철분 흡수 관련)."
+    }
+  ],
+  "claims": [
+    {
+      "claim": "대봉감 같은 떫은 감은 단감과 품종 자체가 달라 수확 직후엔 떫지만, 실온에서 후숙(홍시화)되면 타닌이 불용성으로 바뀌어 떫은맛이 사라지고 단감보다 더 달아진다",
+      "grade": "confirmed",
+      "evidence": [
+        "떫은 감(대봉감 등)과 단감은 익은 정도 차이가 아니라 서로 다른 품종이며, 떫은감은 타닌 변화 속도가 느리고 양도 많아 수확기에도 떫다(foodnuri 팩트체크, official)",
+        "떫은감은 홍시·곶감으로 후숙되며 수용성 타닌이 불용성으로 바뀌어 떫은맛이 사라지고 단감보다 더 달아진다(foodnuri 팩트체크, official)",
+        "0℃·습도 85~90%로 저장해둔 땡감을 상온에 꺼내두거나 에틸렌가스로 처리하면 3~4일 만에 홍시로 후숙된다(농사로 Q&A, official)"
+      ],
+      "sourceUrls": [
+        "https://www.foodnuri.go.kr/portal/bbs/B0000284/view.do?nttId=234041&menuNo=300089&deleteCd=0&pageIndex=4",
+        "http://nongsaro.go.kr/portal/ps/psz/psza/contentSub.ps?menuId=PS00078&cntntsNo=205481&totalSearchYn=Y"
+      ]
+    },
+    {
+      "claim": "가정에서 후숙(홍시화)을 앞당기는 대표 방법은 사과 동봉법과 소주(알코올) 분무법 두 가지다 — 공식자료는 에틸렌가스 처리 시 3~4일이면 홍시화된다고 확인하며, 언론 보도는 사과를 넣는 가정식은 약 5일, 소주를 꼭지에 바르는 방식은 20℃ 안팎에서 4일~1주일 정도 걸린다고 전한다",
+      "grade": "confirmed",
+      "evidence": [
+        "저장해둔 땡감을 상온 또는 에틸렌가스로 처리하면 3~4일 만에 홍시로 후숙된다(농사로 Q&A, official)",
+        "사과법(보도): 감 상자에 사과 2개를 넣으면 사과가 내뿜는 에틸렌가스로 약 5일 후 홍시가 됨, 상자 크기는 원문에 없음(esocialtimes, press)",
+        "알코올법(보도): 알코올·소주를 분무해 밀봉, 20℃에서 1주일, 용량은 원문에 없음(esocialtimes, press)",
+        "소주법(보도): 15㎏ 상자 기준 약 160mL, 꼭지 부위에 분무/도포 후 밀봉해 20℃ 안팎에서 4~5일, 떫은맛 남으면 1~2일 추가(pickdailynews, press)",
+        "소주법 원리(보도): 밀봉으로 산소를 차단해 감이 무기호흡을 하고, 표면 알코올이 아세트알데히드로 바뀌어 타닌과 결합·불용성화되며 떫은맛이 사라짐(pickdailynews, press)"
+      ],
+      "sourceUrls": [
+        "http://nongsaro.go.kr/portal/ps/psz/psza/contentSub.ps?menuId=PS00078&cntntsNo=205481&totalSearchYn=Y",
+        "https://www.esocialtimes.com/news/articleView.html?idxno=38233",
+        "https://www.pickdailynews.com/news/articleView.html?idxno=5095"
+      ]
+    },
+    {
+      "claim": "이미 말랑하게 익은 홍시는 상온·저온 보관이 오래가지 않으므로, 오래 두려면 얼려서 보관해야 한다 — 얼린 홍시는 흐르는 물에 씻으면 껍질이 저절로 벗겨지는 '동결박피연시'로 만들어 필요할 때 썰어 먹을 수 있다",
+      "grade": "confirmed",
+      "evidence": [
+        "다 익어 말랑해진 홍시를 얼린 뒤 흐르는 물에 씻으면 껍질이 저절로 벗겨지는 '동결박피연시'로 만들어 썰어 먹을 수 있다(농사로 가정보관방법, official)",
+        "이미 익은 홍시는 과육이 물러 자체 무게로 변형·파열 위험이 있어 최적 조건에서도 저온 보관은 2주 미만만 가능하다(농사로 Q&A, official)",
+        "더 오래 두려면 비닐랩 등으로 밀봉해 영하 25~40℃ 냉동 설비에 보관해야 하며, 이는 가정용 냉동고보다 낮은 온도라고 명시한다(농사로 Q&A, official) — 가정 냉동고 기준 정확한 보관 가능 기간은 공식자료에 없음"
+      ],
+      "sourceUrls": [
+        "https://www.nongsaro.go.kr/portal/ps/psz/psza/contentSub.ps?menuId=PS03797&sSeCode=374015&cntntsNo=102025&totalSearchYn=Y",
+        "http://nongsaro.go.kr/portal/ps/psz/psza/contentSub.ps?menuId=PS00078&cntntsNo=205481&totalSearchYn=Y"
+      ]
+    },
+    {
+      "claim": "사과 동봉법으로 홍시가 되는 데 걸리는 일수는 자료마다 다르게 나온다 — 단정하지 말고 둘 다 병기해야 한다",
+      "grade": "unclear",
+      "evidence": [
+        "농사로 Q&A(official): 저온 장기저장해둔 땡감을 상온 또는 에틸렌가스로 처리하면 3~4일 만에 홍시화",
+        "소셜타임스 5대 탈삽법(press): 막 구매한 감 상자에 사과 2개를 넣는 가정식 방법은 약 5일 소요",
+        "두 수치는 저장 조건이 다르다(공식 수치는 0℃·2개월 저온저장 후 가공 단계의 후숙 기간, 보도 수치는 상온 보관 중인 생감+사과 방식) — 글에서는 '빠르면 3~4일, 가정에서 사과를 넣으면 약 5일 정도'로 범위를 병기해야 한다"
+      ],
+      "sourceUrls": [
+        "http://nongsaro.go.kr/portal/ps/psz/psza/contentSub.ps?menuId=PS00078&cntntsNo=205481&totalSearchYn=Y",
+        "https://www.esocialtimes.com/news/articleView.html?idxno=38233"
+      ]
+    },
+    {
+      "claim": "소주(알코올)법의 처리 일수도 언론 보도끼리 서로 다르게 제시된다 — 단정하지 말고 범위로 병기해야 한다",
+      "grade": "unclear",
+      "evidence": [
+        "소셜타임스 5대 탈삽법(press): 20℃에서 1주일(7일)",
+        "픽데일리뉴스(press): 20℃ 안팎에서 4~5일 뒤 1차 확인, 필요시 1~2일 추가(총 4~7일)",
+        "에소셜타임스는 알코올법 용량을 밝히지 않고 픽데일리뉴스만 15㎏ 한 상자에 약 160mL(작은 병 반 병)로 제시한다. 처리 일수는 '4~7일'(픽데일리뉴스) 대 '7일'(에소셜타임스)로 범위가 다르게 제시된다 — 1차(공식) 자료가 없어 둘 다 보도 수치로만 병기해야 한다"
+      ],
+      "sourceUrls": [
+        "https://www.esocialtimes.com/news/articleView.html?idxno=38233",
+        "https://www.pickdailynews.com/news/articleView.html?idxno=5095"
+      ]
+    }
+  ],
+  "numbers": [
+    { "what": "땡감(떫은 감) 저온저장 조건·기간", "value": "온도 0℃·습도 85~90%에서 약 2개월", "asOf": "상시", "sourceUrl": "http://nongsaro.go.kr/portal/ps/psz/psza/contentSub.ps?menuId=PS00078&cntntsNo=205481&totalSearchYn=Y" },
+    { "what": "저장 땡감의 상온/에틸렌가스 후숙 소요일", "value": "3~4일", "asOf": "상시", "sourceUrl": "http://nongsaro.go.kr/portal/ps/psz/psza/contentSub.ps?menuId=PS00078&cntntsNo=205481&totalSearchYn=Y" },
+    { "what": "이미 익은 홍시의 저온 보관 한계", "value": "최적조건에서도 2주 미만", "asOf": "상시", "sourceUrl": "http://nongsaro.go.kr/portal/ps/psz/psza/contentSub.ps?menuId=PS00078&cntntsNo=205481&totalSearchYn=Y" },
+    { "what": "홍시 장기 냉동보관 권장 온도(농가 설비 기준)", "value": "영하 25~40℃", "asOf": "상시", "sourceUrl": "http://nongsaro.go.kr/portal/ps/psz/psza/contentSub.ps?menuId=PS00078&cntntsNo=205481&totalSearchYn=Y" },
+    { "what": "탈삽감 유통기한(1-MCP 처리 전/후, 배경)", "value": "약 7일 → 21일 이상", "asOf": "2019-11-19", "sourceUrl": "https://www.nongsaro.go.kr/portal/ps/psa/psac/farmLocalNewsDtl.ps?pageIndex=1&pageSize=10&menuId=PS03939&keyval=100000760017" },
+    { "what": "사과 동봉법 — 사과 개수·소요일", "value": "감 상자에 사과 2개, 약 5일(상자 크기는 원문에 없음)", "asOf": "상시", "sourceUrl": "https://www.esocialtimes.com/news/articleView.html?idxno=38233" },
+    { "what": "알코올법(에소셜타임스) — 용량·온도·소요일", "value": "용량은 원문에 없음, 20℃, 1주일", "asOf": "상시", "sourceUrl": "https://www.esocialtimes.com/news/articleView.html?idxno=38233" },
+    { "what": "소주법(픽데일리뉴스) — 용량·온도·소요일", "value": "15㎏당 약 160mL, 20℃ 안팎, 4~5일(+1~2일 추가 가능)", "asOf": "상시", "sourceUrl": "https://www.pickdailynews.com/news/articleView.html?idxno=5095" },
+    { "what": "온탕법(배경, 농가용)", "value": "약 45℃에서 15~24시간", "asOf": "상시", "sourceUrl": "https://www.esocialtimes.com/news/articleView.html?idxno=38233" },
+    { "what": "탄산가스법(배경, 농가용)", "value": "과실 15㎏당 드라이아이스 300~350g 밀봉", "asOf": "상시", "sourceUrl": "https://www.esocialtimes.com/news/articleView.html?idxno=38233" },
+    { "what": "고온 병용탈삽법(배경, 농가용)", "value": "35℃에서 탄산가스+에탄올 병용, 5일", "asOf": "상시", "sourceUrl": "https://www.esocialtimes.com/news/articleView.html?idxno=38233" },
+    { "what": "동결 탈삽법(배경, 농가용)", "value": "영하 20℃에서 20~80일", "asOf": "상시", "sourceUrl": "https://www.esocialtimes.com/news/articleView.html?idxno=38233" },
+    { "what": "비타민C(100g당, 배경 영양정보)", "value": "단감 13.95mg · 대봉 10.29mg · 연시 1.22mg", "asOf": "상시", "sourceUrl": "https://www.esocialtimes.com/news/articleView.html?idxno=33205" },
+    { "what": "칼로리(100g당, 배경 영양정보)", "value": "단감 51kcal · 연시 65kcal · 대봉 72kcal", "asOf": "상시", "sourceUrl": "https://www.esocialtimes.com/news/articleView.html?idxno=33205" },
+    { "what": "식이섬유(100g당, 배경 영양정보)", "value": "단감 6.4g · 연시 6.5g · 대봉 2.7g", "asOf": "상시", "sourceUrl": "https://www.esocialtimes.com/news/articleView.html?idxno=33205" }
+  ],
+  "dropped": [
+    {
+      "url": "http://www.nongsaro.go.kr/portal/ps/psb/psbb/farmUseTechDtl.mo?menuId=PS00072&farmPrcuseSeqNo=100000152212&totalSearchYn=Y",
+      "why": "상주둥시·도근조생이라는 특정 떫은감 품종의 수확시기별 저온저장-박피 한계일수를 다룬 농가용 곶감 가공 기술자료로, 대봉감·가정용 홍시 만들기와는 품종·용도(곶감 가공 타이밍)가 달라 이 글 범위 밖이라 드롭."
+    }
+  ],
+  "cannotCover": [
+    "대봉감 주산지(영암군 등) 지자체 농업기술센터가 발행한 홍시 만들기 전용 가이드 — 검색 범위에서 확인되지 않음, 중앙기관(농촌진흥청 농사로·식품나누리) 자료로 대체",
+    "대봉감(또는 탈삽감) 자체의 공식 당도(Brix) 수치 — 1차 공식 자료로 확인되지 않음(비공식 블로그·위키류 단편 언급만 있음, 신뢰 불가)",
+    "가정용 냉동고(보통 영하 18~20℃) 기준 홍시의 정확한 최대 보관 기간(개월 수) — 공식자료는 '1년 내내/겨울 내내' 또는 '영하 25~40℃ 전용 냉동설비' 기준만 제시, 가정 냉동고 조건의 정확한 상한은 없음",
+    "탄산가스법·1-MCP 처리·동결탈삽법·고온 병용탈삽법·온탕법은 가정에서 재현하기 어려운 농가·산업 공정이라 배경 설명 수준 이상으로 레시피화하지 않는다",
+    "상주둥시·도근조생 등 특정 품종별 저온저장-박피 한계일수(드롭한 자료, 대봉감과 무관)"
+  ],
+  "songs": []
+}
