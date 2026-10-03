@@ -3,10 +3,20 @@
 채널 [AI Engineer](https://www.youtube.com/@aiDotEngineer) 의 새 영상을 Gemini 로 자동 요약한 모음입니다.
 생성: `backend/scripts/youtube-summarize.mjs` (GitHub Actions `youtube-summary` 크론).
 
-총 **226개**.
+총 **236개**.
 
 | 발행일 | 제목 |
 |---|---|
+| 2026-10-03 | [Your LLM App Returned 200 OK. It Was Still Wrong. — Marina Petzel, Datadog](2026-10-03-rTojoVotlD8.md) |
+| 2026-10-03 | [YOLO Mode, Safely: MicroVM Sandboxes for Any Agent — Rowan Christmas, Docker](2026-10-03-OE_lLNCNfQo.md) |
+| 2026-10-02 | [The 5 Levels of Self-Driving Production — Eric Schwartz, Traversal](2026-10-02-y-OVWZD4j6U.md) |
+| 2026-10-02 | [MCP Doesn't Suck. Your Agent Does. — Jan Čurn, Apify](2026-10-02-pAnLpiAG6Es.md) |
+| 2026-10-02 | [Why AI Didn't Actually Make You Ship Faster — Gabriel Spencer-Harper, Meticulous](2026-10-02-HLTa7Vcs4X0.md) |
+| 2026-10-02 | [Lessons from Generating 12 Trillion Synthetic Tokens — Bogdan Gaza, DatologyAI](2026-10-02-FQwTqUmcbRg.md) |
+| 2026-10-02 | [Your Coding Agent Is 6 Months Out of Date — Jakub Hojsan, Exa](2026-10-02-cKhpeEBnT1o.md) |
+| 2026-10-02 | [Stop Renting Your AI's Memory — Dylan Couzon, Qdrant](2026-10-02-apyrzaWj0Z4.md) |
+| 2026-10-02 | [Why 99% Accurate Browser Agents Still Fail — Derek Meegan, Browserbase](2026-10-02-5xi_S1f9sDU.md) |
+| 2026-10-02 | [Stop Rationing Tokens: Let the Harness Pick the Model — Kimchi by Cast AI](2026-10-02-48YUYDjwfYY.md) |
 | 2026-09-30 | [Your Agents Are in Solitary Confinement: Why MCP & A2A Aren't Enough — Vlad Luzin, Band](2026-09-30-UOcHfR3_tys.md) |
 | 2026-09-30 | [The State of AI in Software Development: Data from 400+ Orgs — Justin Reock, DX](2026-09-30-Se8jHLliLXE.md) |
 | 2026-09-30 | [The Chief AI Officer: Scientist, Architect, Coach — Rania Khalaf, WSO2](2026-09-30-9cJrbj23fOA.md) |
