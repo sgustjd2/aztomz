@@ -1,0 +1,54 @@
+{
+  "keyword": "유자청 만들기",
+  "categoryId": "hangeut-trend",
+  "searchedAt": "2026-10-05",
+  "notes": "유자는 11~12월 제철(농식품정보누리)이라 지금(10월 초)은 담그기 전 준비 시점. 유자청의 공통 뼈대(씨 제거·껍질 채썰기·1:1 설탕·열탕 소독 병)는 여러 출처가 같으나, 씨를 왜 빼는지(독소 vs 쓴맛), 숙성 기간(하룻밤~1주일), 끓이는지 여부는 갈린다. 효능은 쓰지 않는다(전통·언론 전언). 병 소독 시간·희석 비율은 자료 없음.",
+  "sources": [
+    {"title":"제철농식품(상세) - 유자 - 농식품정보누리","url":"https://www.foodnuri.go.kr/portal/bbs/B0000283/view.do?nttId=219901&menuNo=300063&pageIndex=1","host":"foodnuri.go.kr","tier":"data","body":"유자는 11~12월이 제철, 전남 고흥·완도·진도와 경남 남해·거제가 주요 산지. 신라시대 중국에서 전래, 우리나라 유자가 향이 진하고 껍질이 두껍다고 알려져 있음. 비타민 C가 레몬보다 풍부, 플라보노이드는 과육보다 껍질에 더 많음. 100g당 비타민 C 105mg, 칼륨 194mg, 칼슘 49mg. 껍질이 광택 나고 울퉁불퉁한 것을 고름. 0~5℃에서 신문지에 싸 냉장하면 약 일주일. 철·구리 용기는 산화를 촉진하므로 피함. 신맛이 강해 생과육으로는 잘 먹지 않고 유자청 제조가 가장 일반적."},
+    {"title":"유자청(유자청차) 레시피 경남 향토음식 - 램프쿡","url":"https://www.lampcook.com/food/food_local_view.php?idx_no=84","host":"lampcook.com","tier":"data","body":"농촌진흥청 전통향토음식 자료(규합총서 수록 음청류, 경남). 재료 유자 1kg(9개), 설탕 1kg. 1) 유자는 씻어 물기를 제거하고 꼭지와 흙이 있는 부분은 도려낸다. 2) 4등분해 씨를 빼고 곱게 채 썰어 설탕을 넣고 버무린다. 3) 용기에 담고 윗면에 설탕을 뿌려 밀봉, 시원한 곳에서 숙성. 4) 끓인 물이나 얼음물에 타 마심. 비고: 과육 없이 껍질만 쓰는 방식도 있다."},
+    {"title":"유자 제철농산물 조리법 손질요령 구입요령 효능 - 램프쿡","url":"http://www.lampcook.com/farm/food_farm_view.php?idx_no=71","host":"lampcook.com","tier":"data","body":"출처 표기: 농림축산식품부·농림수산식품교육문화정보원. 구입: 껍질이 깨끗하고 광택, 단단하면서 울퉁불퉁, 노란빛 짙고 향 진한 것, 과즙 풍부하고 씨 적고 쓴맛 없는 것. 조리: 굵은 소금으로 껍질까지 씻고, 껍질은 채 썰고 과육은 적당히 잘라, 끓는 물로 소독한 유리병에 켜켜이 담고 같은 양의 설탕을 넣어 실온에서 약 1주일 숙성. 보관 0~5℃ 신문지 냉장 약 1주일. 금속 용기 금지. 흐르는 물에 씻고 비타민 C 손실 막으려 가열은 최소화."},
+    {"title":"비타민과 유기산이 풍부한 유자의 변신 - 농사로 전문가 칼럼(오승영)","url":"https://www.nongsaro.go.kr/portal/ps/psx/psxn/sptExpertDtl.ps?menuId=PS63117&infoNo=25&colmnNo=2&totalSearchYn=Y","host":"nongsaro.go.kr","tier":"official","publishedAt":"2021-12","body":"농촌진흥청 농사로 전문가 칼럼, 꽃차 전문가 오승영, 2021년 12월. 유자는 비타민 C·구연산 등 유기산과 무기질이 풍부하고 껍질에 항산화 성분(폴리페놀·플라보노이드)이 많다고 소개. 가공법으로 유자쌍화차, 유자정과(껍질을 얇게 썰어 설탕에 졸임), 유자씨를 막걸리에 2~4주 담근 에센스를 소개. 주의: 성질이 차서 몸이 찬 사람은 소화에 문제가 생길 수 있고, 산도가 높아 과하게 먹으면 치아를 상할 수 있으며 알레르기 있는 사람은 조심."},
+    {"title":"홈메이드 유자차 만드는법 유자청 유자손질하는법 - 만개의레시피","url":"https://www.10000recipe.com/recipe/6862139","host":"10000recipe.com","tier":"blog","body":"유자 2kg 설탕 2kg(같은 무게). 흐르는 물에 솔로 닦고 두 번 헹굼, 베이킹소다로 문질러 잠깐 담근 뒤 식초 몇 방울 푼 물에 헹굼. 꼭지를 떼고 가로로 잘라 씨를 빼기 쉽게, 유자씨는 독소가 있어서 제거. 과육과 껍질을 얇게 채 썲. 유자즙은 따로 모아 버리지 않음. 병은 끓는 물에 소독 후 완전히 건조. 유자와 설탕 1:1로 섞어 하룻밤 두면 많이 가라앉음, 다음 날 아침 병에 담음. 약 3병 분량."},
+    {"title":"유자청 만드는 법 - 만개의레시피","url":"https://www.10000recipe.com/recipe/5549847","host":"10000recipe.com","tier":"blog","body":"유자 10kg, 설탕은 손질한 유자와 같은 양. 무농약 유자는 흐르는 물에 씻고 베이킹소다로 문지르면 더 깨끗. 씨는 보관 중 쓴맛이 우러나므로 반드시 제거. 반 자르고 다시 반 잘라 포를 뜨듯 채 썲. 채 썬 유자와 같은 무게의 설탕을 섞어 소독한 유리병에 담음. 병은 끓는 물에 소독한 뒤 깨끗한 천이나 키친타월 위에서 닦지 않고 자연 건조. 난이도 중급, 소요 120분 이내."},
+    {"title":"[식품상식] 유자청 담그는 법 알아보기 - FT스포츠(윤동희 기자, 2019-02-18)","url":"https://www.ftimes.kr/news/articleView.html?idxno=3798","host":"ftimes.kr","tier":"press","publishedAt":"2019-02-18","body":"껍질을 함께 쓰므로 농약과 잔류물을 깨끗이 제거. 씨가 많지만 필수 단계는 아니나 씨는 점차 유자청의 맛을 쓰게 만든다고 알려져 있음. 껍질 채썰기: 플라보노이드·카로티노이드 등 영양소가 풍부하고 차 맛을 살림. 유자와 꿀 또는 설탕 1:1(취향 조절). 공기가 통하지 않게 밀폐해 냉장고 등 시원한 곳에 보관. 3~4일 후부터 따뜻한 물에 타 마시기를 권장."},
+    {"title":"감기예방하는 유자차, 지금 만들어두세요…유자청 만들기 - 레이디경향(2007-10-01)","url":"https://lady.khan.co.kr/cooking/article/10131","host":"lady.khan.co.kr","tier":"press","publishedAt":"2007-10-01","body":"재료 유자 3개, 설탕 1컵. 유자를 씻어 마른 수건으로 닦고 껍질과 과육을 분리해 하얀 속껍질을 벗겨낸 뒤 껍질을 잘게 채썬다. 냄비에 껍질과 남은 과육, 설탕을 넣고 약한 불에서 나무주걱으로 저으며 5분 정도 조린다. 소독한 도자기나 유리병에 꽉 채워 공기가 들어가지 않게 하고 식으면 냉장 보관. 번거로우면 껍질과 과육을 분리하지 않고 반달 모양으로 채썬 뒤 병에 설탕과 층층이 쌓는 방법도 가능."},
+    {"title":"[주간 특산물] 고흥 유자 한 잔 어때요 - 조선비즈(윤희훈 기자, 2025-12-13)","url":"https://v.daum.net/v/20251213060309640","host":"v.daum.net","tier":"press","publishedAt":"2025-12-13","body":"고흥은 전국 유자 생산량의 60% 이상을 책임지는 대표 산지, 매년 가을 수확기에 고흥유자축제 개최. 유자청 4단계: 소금으로 씻어 반으로 갈라 씨 제거, 유자와 설탕 1:1, 소독한 유리병에 담아 상온 숙성, 냉장고에서 2주 이상 숙성 후 활용. 냉장 보관 시 3개월 이내 섭취 권장."}
+  ],
+  "claims": [
+    {"claim":"유자는 11~12월이 제철이고 전남 고흥·완도·진도, 경남 남해·거제가 주요 산지다","grade":"confirmed","evidence":["제철 11~12월, 주요 산지 (foodnuri)"],"sourceUrls":["https://www.foodnuri.go.kr/portal/bbs/B0000283/view.do?nttId=219901&menuNo=300063&pageIndex=1"]},
+    {"claim":"유자는 껍질이 광택 나고 울퉁불퉁한 것, 노란빛 짙고 향 진한 것, 과즙 많고 씨 적은 것을 고른다","grade":"confirmed","evidence":["foodnuri: 껍질 광택·울퉁불퉁","lampcook(농림부 교육문화정보원 표기): 깨끗·광택·단단·노란빛 짙고 향 진함·과즙 풍부·씨 적음"],"sourceUrls":["https://www.foodnuri.go.kr/portal/bbs/B0000283/view.do?nttId=219901&menuNo=300063&pageIndex=1","http://www.lampcook.com/farm/food_farm_view.php?idx_no=71"]},
+    {"claim":"유자는 신맛이 강해 생과육으로는 잘 먹지 않고 유자청이 가장 일반적인 활용이다","grade":"confirmed","evidence":["foodnuri 조리 방법 항목"],"sourceUrls":["https://www.foodnuri.go.kr/portal/bbs/B0000283/view.do?nttId=219901&menuNo=300063&pageIndex=1"]},
+    {"claim":"껍질을 같이 쓰므로 세척이 중요하고, 굵은 소금 또는 베이킹소다로 문질러 씻는 레시피가 있다","grade":"confirmed","evidence":["lampcook: 굵은 소금","10000recipe 6862139·5549847: 베이킹소다","조선비즈: 소금","FT스포츠: 농약·잔류물 제거"],"sourceUrls":["http://www.lampcook.com/farm/food_farm_view.php?idx_no=71","https://www.10000recipe.com/recipe/6862139","https://www.10000recipe.com/recipe/5549847","https://v.daum.net/v/20251213060309640","https://www.ftimes.kr/news/articleView.html?idxno=3798"]},
+    {"claim":"씨는 빼는 게 일반적이나 이유 설명이 갈린다: 10000recipe 한 레시피는 독소가 있다고, 다른 자료는 보관 중 쓴맛이 우러난다고 설명","grade":"reported","evidence":["10000recipe 6862139: 독소","10000recipe 5549847: 보관 중 쓴맛","FT스포츠: 필수는 아니나 점차 쓴맛","조선비즈: 씨 제거 단계"],"sourceUrls":["https://www.10000recipe.com/recipe/6862139","https://www.10000recipe.com/recipe/5549847","https://www.ftimes.kr/news/articleView.html?idxno=3798","https://v.daum.net/v/20251213060309640"]},
+    {"claim":"농진청 전통향토음식 자료의 유자청은 유자 1kg(약 9개)에 설탕 1kg, 4등분해 씨를 빼고 곱게 채 썰어 버무려 시원한 곳에서 숙성한다","grade":"confirmed","evidence":["lampcook 경남 향토음식 레시피"],"sourceUrls":["https://www.lampcook.com/food/food_local_view.php?idx_no=84"]},
+    {"claim":"설탕 비율은 대부분 1:1(같은 무게)이다. FT스포츠는 취향에 따라 조절 가능이라고 적음","grade":"confirmed","evidence":["lampcook 2건, 10000recipe 2건, 조선비즈, FT스포츠 모두 1:1","레이디경향(2007)은 유자 3개에 설탕 1컵으로 무게 기준 아님"],"sourceUrls":["https://www.lampcook.com/food/food_local_view.php?idx_no=84","https://www.10000recipe.com/recipe/6862139","https://www.10000recipe.com/recipe/5549847","https://v.daum.net/v/20251213060309640","https://www.ftimes.kr/news/articleView.html?idxno=3798"]},
+    {"claim":"숙성·먹는 시점은 자료마다 다르다: 하룻밤 두고 병에 담기(10000recipe), 상온 약 1주일(lampcook), 3~4일 뒤부터 마시기(FT스포츠), 상온 숙성 뒤 냉장 2주 이상(조선비즈)","grade":"unclear","evidence":["위 4건"],"sourceUrls":["https://www.10000recipe.com/recipe/6862139","http://www.lampcook.com/farm/food_farm_view.php?idx_no=71","https://www.ftimes.kr/news/articleView.html?idxno=3798","https://v.daum.net/v/20251213060309640"]},
+    {"claim":"병은 끓는 물로 소독한다. 한 레시피는 소독 후 닦지 않고 자연 건조, 다른 레시피는 완전히 건조해서 쓴다","grade":"reported","evidence":["10000recipe 5549847: 천·키친타월 위 자연건조","10000recipe 6862139: 완전 건조","lampcook: 끓는 물 소독한 유리병"],"sourceUrls":["https://www.10000recipe.com/recipe/5549847","https://www.10000recipe.com/recipe/6862139","http://www.lampcook.com/farm/food_farm_view.php?idx_no=71"]},
+    {"claim":"대부분은 끓이지 않고 설탕에 재우지만, 2007년 레이디경향 레시피는 껍질·과육·설탕을 약한 불에서 5분 정도 졸이는 방식이다. 농림부 교육문화정보원 표기 자료는 비타민 C 손실을 막으려 가열을 최소화하라고 안내","grade":"confirmed","evidence":["레이디경향 2007-10-01","lampcook 유자 안내(가열 최소화)"],"sourceUrls":["https://lady.khan.co.kr/cooking/article/10131","http://www.lampcook.com/farm/food_farm_view.php?idx_no=71"]},
+    {"claim":"생유자는 0~5℃에서 신문지에 싸 냉장하면 약 일주일 유지되고, 철·구리 등 금속 용기는 산화를 촉진하니 피한다","grade":"confirmed","evidence":["foodnuri","lampcook(농림부 교육문화정보원 표기)"],"sourceUrls":["https://www.foodnuri.go.kr/portal/bbs/B0000283/view.do?nttId=219901&menuNo=300063&pageIndex=1","http://www.lampcook.com/farm/food_farm_view.php?idx_no=71"]},
+    {"claim":"완성한 유자청은 냉장 보관 시 3개월 이내 섭취를 권장한다는 보도가 있다(조선비즈 1건뿐)","grade":"reported","evidence":["조선비즈 2025-12-13"],"sourceUrls":["https://v.daum.net/v/20251213060309640"]},
+    {"claim":"농사로 칼럼은 유자가 성질이 차 몸이 찬 사람은 소화에 문제가 생길 수 있고, 산도가 높아 과하게 먹으면 치아를 상할 수 있으며 알레르기가 있으면 조심하라고 적었다","grade":"reported","evidence":["농사로 전문가 칼럼(오승영, 2021-12)"],"sourceUrls":["https://www.nongsaro.go.kr/portal/ps/psx/psxn/sptExpertDtl.ps?menuId=PS63117&infoNo=25&colmnNo=2&totalSearchYn=Y"]},
+    {"claim":"껍질에는 플라보노이드가 과육보다 더 많이 들어 있다고 소개되어, 껍질을 채 썰어 쓰는 이유로 제시된다","grade":"reported","evidence":["foodnuri","FT스포츠","농사로 칼럼"],"sourceUrls":["https://www.foodnuri.go.kr/portal/bbs/B0000283/view.do?nttId=219901&menuNo=300063&pageIndex=1","https://www.ftimes.kr/news/articleView.html?idxno=3798"]},
+    {"claim":"유자즙은 따로 모아 버리지 않고 쓰라는 레시피가 있다","grade":"reported","evidence":["10000recipe 6862139"],"sourceUrls":["https://www.10000recipe.com/recipe/6862139"]},
+    {"claim":"일부 레시피는 과육과 껍질을 분리해 하얀 속껍질을 벗겨낸다(2007년 레이디경향)","grade":"reported","evidence":["레이디경향 2007"],"sourceUrls":["https://lady.khan.co.kr/cooking/article/10131"]}
+  ],
+  "numbers": [
+    {"what":"유자 제철","value":"11~12월","asOf":"농식품정보누리 제철농식품 게시","sourceUrl":"https://www.foodnuri.go.kr/portal/bbs/B0000283/view.do?nttId=219901&menuNo=300063&pageIndex=1"},
+    {"what":"유자 100g당 비타민 C·칼륨·칼슘","value":"비타민 C 105mg, 칼륨 194mg, 칼슘 49mg","asOf":"농식품정보누리","sourceUrl":"https://www.foodnuri.go.kr/portal/bbs/B0000283/view.do?nttId=219901&menuNo=300063&pageIndex=1"},
+    {"what":"생유자 냉장 보관","value":"0~5℃, 신문지에 싸서 약 일주일","asOf":"농식품정보누리","sourceUrl":"https://www.foodnuri.go.kr/portal/bbs/B0000283/view.do?nttId=219901&menuNo=300063&pageIndex=1"},
+    {"what":"농진청 전통향토음식 유자청 분량","value":"유자 1kg(약 9개)·설탕 1kg","asOf":"램프쿡 게재","sourceUrl":"https://www.lampcook.com/food/food_local_view.php?idx_no=84"},
+    {"what":"완성 유자청 냉장 권장 기간","value":"3개월 이내","asOf":"조선비즈 2025-12-13","sourceUrl":"https://v.daum.net/v/20251213060309640"},
+    {"what":"고흥의 전국 유자 생산량 비중","value":"60% 이상","asOf":"조선비즈 2025-12-13","sourceUrl":"https://v.daum.net/v/20251213060309640"},
+    {"what":"졸이는 방식 가열 시간","value":"약한 불에서 5분 정도","asOf":"레이디경향 2007-10-01","sourceUrl":"https://lady.khan.co.kr/cooking/article/10131"}
+  ],
+  "dropped": [],
+  "cannotCover": [
+    "유자청의 건강 효능(감기 예방·피로 해소 등)은 전통·언론 전언 수준이라 단정해 쓰지 않는다",
+    "병 열탕 소독을 몇 분 끓이는지 명시한 자료는 찾지 못했다",
+    "유자청을 물에 타 마실 때의 물:청 비율을 명시한 자료는 찾지 못했다",
+    "유자씨 독소 여부는 자료마다 설명이 갈려 독성으로 단정하지 못한다(쓴맛 이유는 복수 자료)",
+    "농사로 재배·가공 공식 레시피 페이지와 지자체(고흥·남해) 공식 유자청 레시피는 확인하지 못했다",
+    "유자 가격·시세는 자료 시점이 달라 다루지 않는다"
+  ],
+  "songs": []
+}

@@ -1,0 +1,255 @@
+{
+  "keyword": "감자 보관법 싹 솔라닌 사과 속설 보관 온도 빛 차단 삶은 감자",
+  "categoryId": "hangeut-trend",
+  "slug": "potato-storage-guide",
+  "searchedAt": "2026-10-05",
+  "origin": "Claude Code WebSearch/WebFetch",
+  "notes": "감자는 빛 차단·통풍·서늘한 곳 보관, 싹·초록 부분 제거(솔라닌은 열에 안 분해), 냉장 시 전분→당 변화를 공공(농진청·식약처)+보도 자료로 말할 수 있다. 보관 온도는 출처마다 4℃/4~8℃/5~10℃/7~10℃/8℃ 이상으로 달라 하나로 못박지 말고 출처별로 귀속한다. 사과 동봉 속설은 공공 1차 근거가 없고 CJ온스타일은 반대 주장 → '널리 알려졌지만 근거 확인 못 함'. 솔라닌 mg 수치는 WebFetch 요약본이라 원문 재확인 못 했음, 효능 주장 금지.",
+  "sources": [
+    {
+      "title": "감자 수확 후 맛있게 오래오래 저장해요 (보도자료)",
+      "url": "https://www.korea.kr/briefing/pressReleaseView.do?newsId=155969269",
+      "host": "korea.kr",
+      "tier": "official",
+      "body": "농촌진흥청(청장 이양호) 2014년 6월 2일 보도자료. 예비 저장은 상대습도 90%, 온도 20℃ 정도에서 10~15일 보관하거나, 일반 농가는 바람이 잘 통하고 햇볕이 들지 않는 그늘에 15일 정도 널어놓는 방식. 수확 때 생긴 상처를 자연 치유하고 표피를 강화해 저장 수명을 늘리는 과정. 본 저장 온도는 식용 감자 약 4℃, 가공용 감자 7~8℃. 출고 20일 전부터 서서히 온도를 올려 약 20℃ 유지. 장기 저장 시 흑색심부(검은 속) 예방을 위해 바람이 잘 통하는 플라스틱이나 나무 상자에 보관하되 빽빽하게 쌓지 않을 것. (주의: 농가·유통 저장 기준이며 가정용 아님)"
+    },
+    {
+      "title": "‘더 오래 신선하게’ 똑똑한 과일, 채소 보관법 (농촌진흥청 보도자료)",
+      "url": "https://www.rda.go.kr/board/board.do?boardId=farmprmninfo&prgId=day_farmprmninfoEntry&mode=updateCnt&dataNo=100000790713",
+      "host": "rda.go.kr",
+      "tier": "official",
+      "body": "농촌진흥청 국립원예특작과학원 2023-09-27 보도자료. 사과는 식물 노화 호르몬인 에틸렌을 많이 배출하므로 브로콜리·상추·오이·수박·당근 등 에틸렌에 민감한 채소는 색이 누렇게 변하거나 반점이 생길 수 있어 따로 보관해야 한다고 안내. 감자는 4~8℃ 저장이 적절. 사과·배·포도·단감은 0℃, 상대습도 90~95%. 복숭아 5~10℃, 고구마 13~15℃, 무·마늘·양파·당근 0℃ 등 품목별 온도 표 포함."
+    },
+    {
+      "title": "감자 수확 후 오래오래 신선하게 저장하세요! (농촌진흥청 보도자료)",
+      "url": "https://rda.go.kr/board/board.do?boardId=farmprmninfo&currPage=1&dataNo=100000735068&mode=updateCnt&prgId=day_farmprmninfoEntry&searchEDate=&searchKey=&searchOrgDeptKey=&searchOrgDeptVal=&searchSDate=&searchVal=",
+      "host": "rda.go.kr",
+      "tier": "official",
+      "body": "농촌진흥청 보도자료(날짜 미확인, 위 korea.kr 2014 자료와 동일 계열 내용). 일반 소비 감자는 약 4℃, 단기(1개월 이내) 사용은 10℃ 또는 서늘한 그늘, 가공용은 7~8℃(당 축적 방지 위해 더 높게). 예비 저장은 20℃·상대습도 85%에서 10~15일: 호흡 안정, 껍질 경화, 수확 상처 치유. 흑색심부 예방을 위해 포대보다 통풍되는 플라스틱·나무 상자 사용. 출고 전 20일간 하루 0.5~0.7℃씩 올려 약 20℃. 건조한 날 수확."
+    },
+    {
+      "title": "'감자 싹' 도려내고 먹어야 안전 (농민신문)",
+      "url": "https://www.nongmin.com/article/20111206026024",
+      "host": "nongmin.com",
+      "tier": "press",
+      "body": "농민신문 2011-12-07 기사, 식품의약품안전청(현 식약처) 안내를 바탕으로 작성. 감자 싹과 녹색 부분에는 천연독소 솔라닌이 있어 먹으면 식중독을 일으킬 수 있고 열에 강해 조리 중 분해되지 않는다. 싹의 눈 부분이 남지 않게 칼로 깨끗이 도려내고 초록색으로 변한 부분도 제거. 보관은 8℃ 이상 서늘한 곳, 냉장 보관 금지로 안내. 사과 1~2개를 넣으면 에틸렌으로 발아 억제, 양파와 같이 두면 둘 다 상하기 쉬움. 조리는 삶기·찌기 120℃ 이하, 튀김 160℃ 미만, 오븐 200℃ 미만."
+    },
+    {
+      "title": "식품의약품안전처 식품정보 (감자 싹·솔라닌)",
+      "url": "https://mfds.go.kr/brd/m_511/view.do?seq=2912&srchFr=&srchTo=&srchWord=&srchTp=&itm_seq_1=0&itm_seq_2=0&multi_itm_seq=0&company_cd=&company_nm=&page=12",
+      "host": "mfds.go.kr",
+      "tier": "official",
+      "body": "식약처 식품정보 게시물(게시일 미확인, 구 식약청 안내 계열). WebFetch 추출 결과: 감자 싹에 솔라닌이 가장 많고(80~100mg/100g), 껍질, 과육 순으로 적다. 신선 감자 100g에는 보통 7mg 미만으로 안전 수준. 햇빛 노출·부적절한 보관은 솔라닌을 크게 늘린다. 100g당 20mg 초과 시 메스꺼움·구토·어지럼·목 자극 등 위험, 싹은 눈 부분이 남지 않게 완전히 제거, 초록 부분도 제거. 사과 1개가 감자 약 10kg 발아를 억제한다는 설명과 양파 동봉 시 둘 다 상한다는 설명 포함. 단 이 수치들은 도구가 요약한 것이라 원문 대조 필요."
+    },
+    {
+      "title": "감자 보관법, 감자+사과 ‘보관 환상궁합’ 감자 ‘발아’ 억제 가스 나와 (파이낸셜뉴스)",
+      "url": "https://www.fnnews.com/news/201508150040170637",
+      "host": "fnnews.com",
+      "tier": "press",
+      "body": "파이낸셜뉴스 2015-08-15. 직사광선을 받지 않게 햇빛이 닿지 않도록 박스에 담아 그늘에 보관, 온도는 5~10℃ 내외가 적당. 5℃ 이하 냉장고에 두면 전분이 당분으로 바뀌어 단맛만 늘어 좋지 않다. 감자 박스에 사과 한두 개를 넣으면 사과에서 나오는 에틸렌이 발아를 억제해 오래 보관 가능하다고 서술하나, 구체적 출처·수치·문헌은 기사에 없다(근거 미제시)."
+    },
+    {
+      "title": "[비건뉴스] 감자 냉장하면 삶은 식감·튀김 색 달라져",
+      "url": "https://www.vegannews.co.kr/news/article.html?no=390339",
+      "host": "vegannews.co.kr",
+      "tier": "press",
+      "body": "비건뉴스 기사로 농촌진흥청 국립원예특작과학원 안내를 인용. 감자는 7~10℃ 어둡고 통풍되는 곳에 보관, 종이상자 등으로 빛 차단. 냉장고 온도(약 4℃)에서는 감자 전분이 당으로 분해되는 속도가 빨라져, 냉장했던 감자는 삶았을 때 포슬포슬한 식감이 줄고 튀김·칩은 갈색으로 변할 수 있다. 상온 보관 시 1주일 안에 먹도록 권고, 튀김용은 장기 냉장 피하기."
+    },
+    {
+      "title": "감자 보관법, 신선함 오래 지키는 핵심 총정리 (CJ온스타일)",
+      "url": "https://display.cjonstyle.com/nfront/content/info/%EA%B0%90%EC%9E%90-%EB%B3%B4%EA%B4%80%EB%B2%95/index.html",
+      "host": "display.cjonstyle.com",
+      "tier": "blog",
+      "body": "CJ온스타일 상업 콘텐츠. 싹·물러짐·초록빛을 먼저 확인하고 종이봉투나 박스에 신문지를 깔아 빛을 차단하면서 통풍을 확보, 햇빛 안 드는 서늘한 곳, 주 1회 상태 점검. 감자전 반죽·으깬 감자·삶은 감자를 1회분씩 소분해 냉동하면 2~4주 내 활용하기 좋다. 냉장은 저온에서 전분이 당으로 바뀌어 볶음·조림용에 적합. 베란다처럼 온도가 급상승하는 곳은 피할 것. 과일에서 나오는 성분이 싹을 촉진할 수 있어 감자는 감자끼리 따로 보관하는 편이 좋다고 서술(사과 속설과 반대 주장)."
+    }
+  ],
+  "claims": [
+    {
+      "claim": "감자는 빛을 막고 통풍되는 서늘한 곳에 둔다(박스·종이봉투, 빽빽이 쌓지 않기)",
+      "grade": "confirmed",
+      "evidence": [
+        "농진청: 단기(1개월 이내)는 10℃ 또는 서늘한 그늘, 장기엔 통풍되는 플라스틱·나무 상자에 빽빽하지 않게(농가·유통 기준, 가정용 아님)",
+        "식약처 게시물(추출본): 햇빛 노출·부적절 보관이 솔라닌을 늘린다",
+        "비건뉴스(농진청 인용): 7~10℃ 어두운 곳, 종이상자로 빛 차단, 상온 보관은 1주일 이내 소비 권고",
+        "CJ온스타일(상업): 신문지 깐 종이봉투·박스, 주 1회 점검, 베란다 같은 급가열 장소 피하기"
+      ],
+      "sourceUrls": [
+        "https://rda.go.kr/board/board.do?boardId=farmprmninfo&currPage=1&dataNo=100000735068&mode=updateCnt&prgId=day_farmprmninfoEntry&searchEDate=&searchKey=&searchOrgDeptKey=&searchOrgDeptVal=&searchSDate=&searchVal=",
+        "https://mfds.go.kr/brd/m_511/view.do?seq=2912&srchFr=&srchTo=&srchWord=&srchTp=&itm_seq_1=0&itm_seq_2=0&multi_itm_seq=0&company_cd=&company_nm=&page=12",
+        "https://www.vegannews.co.kr/news/article.html?no=390339",
+        "https://display.cjonstyle.com/nfront/content/info/%EA%B0%90%EC%9E%90-%EB%B3%B4%EA%B4%80%EB%B2%95/index.html"
+      ]
+    },
+    {
+      "claim": "싹·눈 부분과 초록색으로 변한 부분은 도려내고, 솔라닌은 열에 안 없어지니 가열로 해결되지 않는다",
+      "grade": "confirmed",
+      "evidence": [
+        "식약처 게시물(추출본): 싹은 눈 부분이 남지 않게 완전 제거, 초록 부분도 제거",
+        "농민신문 2011(식약청 안내 인용): 솔라닌은 열에 강해 조리 중 분해되지 않음, 싹의 눈 부분을 칼로 도려내고 초록 부분 제거",
+        "수치(싹 80~100mg/100g, 신선 7mg 미만, 20mg 초과 위험)는 식약처 추출본에만 있고 원문 재확인 못 함 → 글에서는 수치 없이 쓰거나 '요약 기준' 명시"
+      ],
+      "sourceUrls": [
+        "https://mfds.go.kr/brd/m_511/view.do?seq=2912&srchFr=&srchTo=&srchWord=&srchTp=&itm_seq_1=0&itm_seq_2=0&multi_itm_seq=0&company_cd=&company_nm=&page=12",
+        "https://www.nongmin.com/article/20111206026024"
+      ]
+    },
+    {
+      "claim": "감자 보관 온도는 출처마다 다르다 — 하나의 정답으로 쓰지 말고 출처별로 적는다",
+      "grade": "confirmed",
+      "evidence": [
+        "농진청 2014 보도자료: 식용 본 저장 약 4℃, 가공용 7~8℃(농가·유통)",
+        "농진청 국립원예특작과학원 2023-09-27: 4~8℃",
+        "농진청 게시물: 단기 사용은 10℃ 또는 서늘한 그늘",
+        "비건뉴스(농진청 인용): 7~10℃ / 파이낸셜뉴스 2015: 5~10℃ / 농민신문 2011(식약청 인용): 8℃ 이상, 냉장 금지"
+      ],
+      "sourceUrls": [
+        "https://www.korea.kr/briefing/pressReleaseView.do?newsId=155969269",
+        "https://www.rda.go.kr/board/board.do?boardId=farmprmninfo&prgId=day_farmprmninfoEntry&mode=updateCnt&dataNo=100000790713",
+        "https://rda.go.kr/board/board.do?boardId=farmprmninfo&currPage=1&dataNo=100000735068&mode=updateCnt&prgId=day_farmprmninfoEntry&searchEDate=&searchKey=&searchOrgDeptKey=&searchOrgDeptVal=&searchSDate=&searchVal=",
+        "https://www.vegannews.co.kr/news/article.html?no=390339",
+        "https://www.fnnews.com/news/201508150040170637",
+        "https://www.nongmin.com/article/20111206026024"
+      ]
+    },
+    {
+      "claim": "냉장고 온도(약 4℃)에 두면 전분이 당으로 바뀌어 단맛이 늘고 삶은 식감·튀김 색이 달라질 수 있다",
+      "grade": "reported",
+      "evidence": [
+        "비건뉴스(농진청 원예특작과학원 인용, 원 안내 직접 확인 못 함): 약 4℃에서 전분→당 분해 가속, 삶으면 포슬함 감소, 튀김·칩 갈변",
+        "파이낸셜뉴스 2015: 5℃ 이하 냉장 시 전분이 당으로 변해 단맛만 증가",
+        "CJ온스타일(상업): 냉장 감자는 볶음·조림용에 적합"
+      ],
+      "sourceUrls": [
+        "https://www.vegannews.co.kr/news/article.html?no=390339",
+        "https://www.fnnews.com/news/201508150040170637",
+        "https://display.cjonstyle.com/nfront/content/info/%EA%B0%90%EC%9E%90-%EB%B3%B4%EA%B4%80%EB%B2%95/index.html"
+      ]
+    },
+    {
+      "claim": "감자 곁에 사과를 두면 싹이 안 난다는 속설은 근거가 확인되지 않는다",
+      "grade": "unclear",
+      "evidence": [
+        "농민신문 2011(식약청 인용)·파이낸셜뉴스 2015: 사과 1~2개 에틸렌이 발아 억제 — 파이낸셜뉴스는 출처·수치 없음, 식약처 원문 직접 확인 못 함",
+        "식약처 추출본에 '사과 1개가 감자 약 10kg 발아 억제' 설명이 있다고 하나 원문 대조 못 함",
+        "농진청 2023은 사과 에틸렌이 다른 채소를 변색시킨다고만 하고 감자 언급은 확인 못 함",
+        "CJ온스타일: 과일 성분이 싹을 촉진할 수 있어 감자끼리 보관(근거 미제시) — 정반대 주장"
+      ],
+      "sourceUrls": [
+        "https://www.nongmin.com/article/20111206026024",
+        "https://www.fnnews.com/news/201508150040170637",
+        "https://mfds.go.kr/brd/m_511/view.do?seq=2912&srchFr=&srchTo=&srchWord=&srchTp=&itm_seq_1=0&itm_seq_2=0&multi_itm_seq=0&company_cd=&company_nm=&page=12",
+        "https://www.rda.go.kr/board/board.do?boardId=farmprmninfo&prgId=day_farmprmninfoEntry&mode=updateCnt&dataNo=100000790713",
+        "https://display.cjonstyle.com/nfront/content/info/%EA%B0%90%EC%9E%90-%EB%B3%B4%EA%B4%80%EB%B2%95/index.html"
+      ]
+    },
+    {
+      "claim": "삶은·으깬 감자는 1회분씩 소분해 냉동하는 방법이 소개된다(2~4주 내 활용)",
+      "grade": "reported",
+      "evidence": [
+        "CJ온스타일(상업 콘텐츠, 공공기관 아님)만 근거 — 감자전 반죽·으깬 감자·삶은 감자 소분 냉동 2~4주 권장"
+      ],
+      "sourceUrls": [
+        "https://display.cjonstyle.com/nfront/content/info/%EA%B0%90%EC%9E%90-%EB%B3%B4%EA%B4%80%EB%B2%95/index.html"
+      ]
+    }
+  ],
+  "numbers": [
+    {
+      "what": "식용 감자 본 저장 온도(농가·유통)",
+      "value": "약 4℃ (가공용 7~8℃)",
+      "asOf": "농진청 2014-06-02",
+      "sourceUrl": "https://www.korea.kr/briefing/pressReleaseView.do?newsId=155969269"
+    },
+    {
+      "what": "감자 저장 적정 온도",
+      "value": "4~8℃",
+      "asOf": "농진청 원예특작과학원 2023-09-27",
+      "sourceUrl": "https://www.rda.go.kr/board/board.do?boardId=farmprmninfo&prgId=day_farmprmninfoEntry&mode=updateCnt&dataNo=100000790713"
+    },
+    {
+      "what": "단기(1개월 이내) 사용 감자 보관",
+      "value": "10℃ 또는 서늘한 그늘",
+      "asOf": "농진청 게시물(날짜 미확인)",
+      "sourceUrl": "https://rda.go.kr/board/board.do?boardId=farmprmninfo&currPage=1&dataNo=100000735068&mode=updateCnt&prgId=day_farmprmninfoEntry&searchEDate=&searchKey=&searchOrgDeptKey=&searchOrgDeptVal=&searchSDate=&searchVal="
+    },
+    {
+      "what": "감자 보관 온도(농진청 인용 보도)",
+      "value": "7~10℃, 상온 보관 1주일 이내",
+      "asOf": "비건뉴스(날짜 미확인)",
+      "sourceUrl": "https://www.vegannews.co.kr/news/article.html?no=390339"
+    },
+    {
+      "what": "감자 보관 온도(보도)",
+      "value": "5~10℃, 5℃ 이하 냉장 시 단맛 증가",
+      "asOf": "파이낸셜뉴스 2015-08-15",
+      "sourceUrl": "https://www.fnnews.com/news/201508150040170637"
+    },
+    {
+      "what": "감자 보관 온도(식약청 인용 보도)",
+      "value": "8℃ 이상, 냉장 금지",
+      "asOf": "농민신문 2011-12-07",
+      "sourceUrl": "https://www.nongmin.com/article/20111206026024"
+    },
+    {
+      "what": "예비 저장(큐어링) 조건(농가용)",
+      "value": "20℃ 10~15일, 상대습도 90%(korea.kr) vs 85%(rda.go.kr 추출본) — 불일치",
+      "asOf": "농진청 2014 / 날짜 미확인",
+      "sourceUrl": "https://www.korea.kr/briefing/pressReleaseView.do?newsId=155969269"
+    },
+    {
+      "what": "솔라닌 수치(원문 재확인 못 함)",
+      "value": "싹 80~100mg/100g, 신선 감자 7mg/100g 미만, 20mg/100g 초과 시 위험 — WebFetch 요약본",
+      "asOf": "식약처 게시물(날짜 미확인)",
+      "sourceUrl": "https://mfds.go.kr/brd/m_511/view.do?seq=2912&srchFr=&srchTo=&srchWord=&srchTp=&itm_seq_1=0&itm_seq_2=0&multi_itm_seq=0&company_cd=&company_nm=&page=12"
+    },
+    {
+      "what": "조리 온도 안내",
+      "value": "삶기·찌기 120℃ 이하, 튀김 160℃ 미만, 오븐 200℃ 미만",
+      "asOf": "농민신문 2011-12-07(식약청 인용)",
+      "sourceUrl": "https://www.nongmin.com/article/20111206026024"
+    },
+    {
+      "what": "삶은·으깬 감자 냉동 활용 기간(상업 콘텐츠)",
+      "value": "2~4주",
+      "asOf": "CJ온스타일(날짜 미확인)",
+      "sourceUrl": "https://display.cjonstyle.com/nfront/content/info/%EA%B0%90%EC%9E%90-%EB%B3%B4%EA%B4%80%EB%B2%95/index.html"
+    }
+  ],
+  "conflicts": [
+    {
+      "about": "감자 적정 보관 온도",
+      "a": "농촌진흥청 2014 보도자료: 식용 4℃ 내외(농가 저장). 2023 국립원예특작과학원: 4~8℃",
+      "b": "농민신문 2011(식약청 인용): 8℃ 이상, 냉장 금지 / 비건뉴스(농진청 인용): 7~10℃ / 파이낸셜뉴스: 5~10℃ / 농진청 단기용: 10℃ 또는 서늘한 그늘. 4℃ 냉장은 전분이 당으로 바뀌어 식감 변화 경고와 병존"
+    },
+    {
+      "about": "감자 곁에 사과를 두면 싹이 안 난다",
+      "a": "농민신문(식약청 인용)·파이낸셜뉴스: 사과 1~2개의 에틸렌이 발아 억제. 단 파이낸셜뉴스는 근거 미제시, 식약처 게시물 원문 직접 확인 못 함",
+      "b": "CJ온스타일: 과일 성분이 싹을 촉진할 수 있어 감자끼리 보관. 농진청 2023은 사과 에틸렌이 다른 채소를 변색시킨다고만 하고 감자 언급은 확인 못 함. 즉 공공기관 1차 근거는 불충분 -> 글에서 '확정'이 아닌 '널리 알려졌지만 근거 확인 못 함'으로 처리 권장"
+    },
+    {
+      "about": "예비 저장 상대습도",
+      "a": "korea.kr(농진청 2014): 90%",
+      "b": "rda.go.kr 게시물 추출본: 85%"
+    }
+  ],
+  "dropped": [
+    {
+      "url": "(나무위키·개인 블로그·daum 어그리게이터)",
+      "why": "raw 단계에서 드롭 — 비공식·중복"
+    },
+    {
+      "url": "10000recipe",
+      "why": "raw 단계에서 미열람"
+    }
+  ],
+  "cannotCover": [
+    "감자 효능·질병 관련 주장(쓰지 않음)",
+    "솔라닌 mg 수치의 확정 서술(식약처 원문 재확인 못 함)",
+    "사과 동봉이 싹을 막는다/촉진한다는 어느 쪽도 단정",
+    "삶은 감자 냉장 보관 일수의 공공기관 수치(냉동 2~4주는 상업 콘텐츠만)",
+    "가정용 단일 공식 보관 온도",
+    "예비 저장 습도 85% vs 90% 중 어느 쪽이 맞는지",
+    "농사로·농식품정보누리 감자 본문(미열람)"
+  ],
+  "songs": []
+}
