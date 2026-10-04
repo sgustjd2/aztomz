@@ -1,0 +1,195 @@
+{
+  "keyword": "홍합 손질법",
+  "categoryId": "hangeut-trend",
+  "notes": "이 글은 패류독소(계절성·가열해도 안 없어짐·정부 2026 조사 체계·허용기준치)와 홍합 손질(족사 제거·세척·해감 불필요)·보관·삶는 법 실무를 다룰 수 있다. 2026-02-05 거제 시방리 기준치 초과 사례는 단일 보도 기준으로 날짜·출처를 명시해 인용 가능하다. 삶는 시간은 출처가 엇갈려(10분 명시 vs 상태기준만 제시) 하나로 단정하지 말고 두 기준을 출처별로 병기해야 하며, 2026년 식약처(mfds) 유통단계 수거검사 수치와 상한 홍합의 구체적 병원체 확정은 다룰 수 없다.",
+  "sources": [
+    {
+      "title": "(본부) 2026년에도 홍합, 굴 등 패류독소 안전하게 관리한다",
+      "url": "https://www.nifs.go.kr/news/actionNewsView.do?MENU_ID=M0000307&NEWS_SEQ=4792&NEWS_D_DATE_BEGIN=2025-04-17&NEWS_D_DATE_END=2026-04-17&PARENT_NEWS_HG_CODE=&NEWS_D_SUBJECT=&selectPage=4",
+      "host": "nifs.go.kr",
+      "body": "국립수산과학원 보도자료(2026-01-02). 2026년 패류독소 안전성조사 계획을 연중 실시하며, 본격 확산 시기(3~6월)는 최대 120개 정점에서 주 1회 이상, 간헐적 발생 시기(1~2월·7~12월)는 최대 101개 정점에서 월 1회 조사한다. 1~2월과 7~10월 정점은 101개→102개로 확대. 부산·경남 10개 정점은 1~2월 조사를 월 1회→2회로 강화. 허용기준: 마비성 0.8mg/kg 이하, 설사성 0.16mg OA당량/kg 이하, 기억상실성 20mg/kg 이하. 마비성 패류독소 최초 발생일이 2021-01-12에서 2025-01-13으로 점차 당겨지는 추세.",
+      "tier": "official"
+    },
+    {
+      "title": "\"홍합·바지락 등 봄철 수산물, 모르고 먹으면 탈나요\"",
+      "url": "https://www.korea.kr/news/policyNewsView.do?newsId=148912682",
+      "host": "korea.kr",
+      "body": "정부 정책브리핑 기사(2023-03-14). 패류독소는 홍합·바지락 등 조개류나 멍게·미더덕 등 피낭류가 유독성 플랑크톤을 먹고 체내에 쌓인 독. 겨울→봄철 발생해 봄철 최고치, 6월 이후 수온 상승으로 자연 소멸. 해양수산부가 안전성조사를 추진하고 국립수산과학원이 결과를 nifs.go.kr에 공개. 허용기준 초과 해역은 조개류 채취·섭취 금지. 마비성 패류독소는 입술 주위 마비가 얼굴·목으로 확산, 두통·구토, 심하면 호흡곤란으로 생명 위독.",
+      "tier": "official"
+    },
+    {
+      "title": "Q&A로 알아보는 '패류독소 식중독' 궁금증",
+      "url": "https://www.korea.kr/news/healthView.do?newsId=148899781",
+      "host": "korea.kr",
+      "body": "정부 정책브리핑 Q&A. 패류독소는 냉장·동결·가열·조리로도 파괴되지 않아 제거가 불가능. 마비성패독은 섭취 후 30분 이내 입술 주위 마비 시작, 얼굴·목으로 확산, 두통·메스꺼움·구토, 심하면 호흡곤란으로 사망 가능. 한국은 3월부터 남해안 중심 발생, 6월 중순경 자연 소멸. 홍합·백합·바지락·가리비(이매패류), 멍게·미더덕(피낭류)이 6월까지 주의 대상.",
+      "tier": "official"
+    },
+    {
+      "title": "해양수산부, 2026년에도 홍합, 굴 등 패류독소 안전하게 관리한다",
+      "url": "https://www.gynews.kr/news/articleView.html?idxno=63788",
+      "host": "gynews.kr",
+      "body": "경기연합신문이 해수부·국립수산과학원 보도자료를 인용(2026-01-02). 2026년 조사 1~12월 연중, 집중기(3~6월) 최대 120개 정점 주1회 이상, 간헐기(1~2월·7~12월) 최대 102개 정점 월1회. 부산·경남 10개 정점 1~2월 월1회→2회 강화. 허용기준치 초과 해역은 '패류 채취 금지해역' 지정, 사전검사 적합분만 출하.",
+      "tier": "press"
+    },
+    {
+      "title": "거제 시방리 해역 자연산 홍합 패류독소 기준치 초과",
+      "url": "https://m.news.nate.com/view/20260205n38293",
+      "host": "news.nate.com",
+      "body": "2026-02-05 보도. 거제시 시방리 해역 자연산 홍합에서 마비성 패류독소 0.94mg/kg 검출, 허용기준(0.8mg/kg) 초과. 기사는 겨울철(2월) 기준치 초과로는 역사상 최초 사례라고 전함. 해당 해역 채취 중단·폐기·수거 조치.",
+      "tier": "press"
+    },
+    {
+      "title": "식약처 \"6월까지 홍합, 백합, 바지락 등 패류 섭취 '주의' 하세요\"",
+      "url": "https://www.foodnews.co.kr/news/articleView.html?idxno=95881",
+      "host": "foodnews.co.kr",
+      "body": "식품저널 기사(2022-03-02). 식약처가 이매패류·피낭류 6월까지 섭취 주의 당부. 17개 시도 및 도매시장·대형마트 납품업체 대상 수거·검사 기간 '22.3.2~6.30(2022년 자체 수치). 허용기준 초과 시 유통·판매 금지, 회수·폐기. 가열·냉동해도 독소량은 줄지 않음.",
+      "tier": "press"
+    },
+    {
+      "title": "홍합·바지락·멍게 등 패류독소 안전관리...490건 수거·검사",
+      "url": "https://www.pointe.co.kr/news/articleView.html?idxno=9350",
+      "host": "pointe.co.kr",
+      "body": "포인트경제 기사(2024-03-04). 식약처가 도매시장·대형마트 국내산 패류·피낭류 490건을 검사(2024-03-04~2024-06-28, 2024년 자체 수치). 대상 홍합·바지락·멍게·미더덕. 기준치: 마비성 0.8mg/kg·설사성 0.16mg/kg·기억상실성 20mg/kg 이하. 2023년 검사에서 홍합 1건이 마비성 기준 초과로 회수.",
+      "tier": "press"
+    },
+    {
+      "title": "홍합 손질법",
+      "url": "https://wtable.co.kr/guide/63077",
+      "host": "wtable.co.kr",
+      "body": "우리의식탁 조리 가이드. 족사(수염)는 이음새(뾰족한) 쪽으로 당기면 쉽게 제거. 껍데기 이물질은 솔로 문지르거나 홍합 끝의 날카롭고 넓은 부분으로 긁어 제거. 홍합은 해감하지 않고 이물질만 씻으면 되는데, 물에 오래 담그면 단맛이 빠지기 때문. 자연산은 껍데기가 더 단단하고 이물질이 많아 더 꼼꼼히 손질 필요.",
+      "tier": "blog"
+    },
+    {
+      "title": "홍합 보관법",
+      "url": "https://wtable.co.kr/guide/63076",
+      "host": "wtable.co.kr",
+      "body": "우리의식탁 보관 가이드. 생홍합은 수염 제거 후 씻어 밀폐 용기 냉장 1~2일. 삶은 홍합살은 소분해 밀폐 용기 냉동 1~2개월(국물용은 삶은 물과 함께 보관). 깐 홍합 냉장 1~2일/냉동 1~2개월. 건홍합 냉장 6개월/소분 냉동 1~2개월.",
+      "tier": "blog"
+    },
+    {
+      "title": "홍합탕 끓이는 법 해감 손질 요리 레시피 만드는 법",
+      "url": "https://www.10000recipe.com/recipe/7039286",
+      "host": "10000recipe.com",
+      "body": "만개의레시피. 족사 제거는 좁은 이음새 쪽으로 당기면 쉽게 떨어지며 이쪽저쪽으로 흔들면 더 쉬움. 소금 2큰술로 바락바락 치대 씻고 맑은 물 나올 때까지 3~4회 헹굼. 양식(줄 양식)이라 뻘이 없어 해감 불필요. 삶을 때 물이 끓고 입이 벌어지면 한 번 섞고 불을 끔 — 장시간 가열하면 질겨질 수 있음(분 단위 미제시).",
+      "tier": "blog"
+    },
+    {
+      "title": "홍합 제대로 삶는 법",
+      "url": "https://sharehows.com/62803",
+      "host": "sharehows.com",
+      "body": "쉐하 조리 가이드. 깨진 홍합 골라내고 수염을 이음새 쪽으로 당겨 제거, 홍합끼리 문질러 불순물 제거. 물에 홍합을 처음부터 넣고 청주 추가해 비린내 제거. 약 10분 정도 삶으며 입을 벌리면 익은 것으로 판단. 물 양·불 세기 수치는 미제시.",
+      "tier": "blog"
+    },
+    {
+      "title": "[바다정보다잇다] 내가 알던 홍합은 홍합이 아니다? 홍합의 모든 것",
+      "url": "https://marine.mt.co.kr/articleView.html?no=2019121109355760242&sec=totalNews",
+      "host": "marine.mt.co.kr",
+      "body": "머니투데이 해양/레저 섹션. 참담치(자연산, 강릉·속초 등 동해안)는 크기가 크고 껍질에 해초·따개비 부착. 지중해담치(양식, 통영·창원 등 남해안)는 크기가 작고(검지 길이) 껍질이 깨끗 — 시중 유통 대부분. 신선한 홍합은 껍질에 윤기 있고 입이 닫혀 있어야 함. 조리 후 이상한 맛이면 폐기 권장.",
+      "tier": "press"
+    },
+    {
+      "title": "\"억지로 입 열어서 먹었는데...\" 익혀도 입을 닫고 있는 홍합의 충격적인 이유",
+      "url": "https://www.thecarview.com/news/articleView.html?idxno=8630",
+      "host": "thecarview.com",
+      "body": "더카뷰 건강·라이프 기사. 조리 후에도 입을 열지 않는 홍합은 이미 죽었거나 부패했을 가능성이 커 억지로 열어 먹지 말고 버려야 함. 상한 홍합은 비브리오균·장염비브리오·노로바이러스 등으로 인한 식중독(복통·구토·설사·발열) 위험.",
+      "tier": "blog"
+    }
+  ],
+  "claims": [
+    {
+      "claim": "패류독소(마비성 등)는 열을 가하거나 얼려도 없어지지 않으며, 매년 3월부터 남해안을 중심으로 발생해 봄철 최고치를 찍은 뒤 6월 중순경 자연 소멸한다",
+      "grade": "confirmed",
+      "evidence": [
+        "패류독소는 냉장·동결·가열·조리로도 파괴되지 않는다(정부 공식 설명)",
+        "한국은 3월부터 남해안 중심 발생, 6월 중순경 자연 소멸 — korea.kr Q&A",
+        "패류독소는 겨울→봄철 발생, 봄철 최고치, 6월 이후 수온 상승으로 자연 소멸 — korea.kr 정책브리핑(2023-03-14)",
+        "허용기준치 초과 해역은 조개류 채취·섭취 금지"
+      ],
+      "sourceUrls": [
+        "https://www.korea.kr/news/healthView.do?newsId=148899781",
+        "https://www.korea.kr/news/policyNewsView.do?newsId=148912682"
+      ]
+    },
+    {
+      "claim": "2026년 해양수산부·국립수산과학원은 패류독소 안전성조사를 연중 실시하며, 집중 발생기(3~6월)는 최대 120개 정점에서 주 1회 이상, 간헐기(1~2월·7~12월)는 최대 101~102개 정점에서 월 1회 조사하고, 부산·경남 10개 정점은 1~2월 조사를 월 1회에서 2회로 강화했다. 허용기준은 마비성 0.8mg/kg·설사성 0.16mg OA당량/kg·기억상실성 20mg/kg 이하다",
+      "grade": "confirmed",
+      "evidence": [
+        "2026년 조사정점: 3~6월 최대 120개(주 1회 이상), 1~2월·7~12월 최대 101개(월 1회), 그중 1~2월·7~10월은 101개→102개로 확대 — nifs.go.kr 공식 보도자료(2026-01-02)",
+        "부산·경남 10개 정점은 1~2월 조사를 월 1회→2회로 강화",
+        "패류독소 허용기준: 마비성 0.8mg/kg 이하, 설사성 0.16mg OA당량/kg 이하, 기억상실성 20mg/kg 이하",
+        "마비성 패류독소 최초 발생일이 2021-01-12에서 2025-01-13으로 5년간 점차 당겨짐",
+        "gynews.kr이 동일 보도자료를 인용 보도해 정점 수·조사 주기 수치를 그대로 재확인"
+      ],
+      "sourceUrls": [
+        "https://www.nifs.go.kr/news/actionNewsView.do?MENU_ID=M0000307&NEWS_SEQ=4792&NEWS_D_DATE_BEGIN=2025-04-17&NEWS_D_DATE_END=2026-04-17&PARENT_NEWS_HG_CODE=&NEWS_D_SUBJECT=&selectPage=4",
+        "https://www.gynews.kr/news/articleView.html?idxno=63788"
+      ]
+    },
+    {
+      "claim": "2026년 2월 5일 거제시 시방리 해역의 자연산 홍합에서 마비성 패류독소 0.94mg/kg이 검출돼 허용기준(0.8mg/kg)을 초과했다 — 보도에 따르면 겨울철(2월) 기준치 초과로는 역사상 처음이었다",
+      "grade": "reported",
+      "evidence": [
+        "2026-02-05 거제 시방리 해역 자연산 홍합에서 마비성 패류독소 0.94mg/kg 검출, 기준치(0.8mg/kg) 초과",
+        "기사는 이를 겨울철(2월) 기준치 초과로는 역사상 최초 사례라고 보도(단일 매체 보도, 공식 발표 원문은 미확보)",
+        "해당 해역 채취 중단·폐기·수거 조치 시행"
+      ],
+      "sourceUrls": [
+        "https://m.news.nate.com/view/20260205n38293"
+      ]
+    },
+    {
+      "claim": "홍합은 양식(줄 양식)이 대부분이라 뻘이 없어 해감할 필요가 없고, 족사(수염)는 이음새(뾰족한) 쪽으로 당겨 제거한 뒤 솔질(또는 소금으로 치대기)과 헹굼만으로 손질이 끝난다",
+      "grade": "reported",
+      "evidence": [
+        "족사는 이음새(뾰족한) 쪽으로 당기면 쉽게 제거된다 — wtable.co.kr",
+        "홍합은 해감하지 않고 솔질+헹굼만 하면 된다 — 물에 오래 담그면 단맛이 빠지기 때문 — wtable.co.kr",
+        "족사 제거는 좁은 이음새 쪽으로 당기면 쉽게 떨어지며 이쪽저쪽으로 흔들면 더 쉽다 — 10000recipe.com",
+        "소금 2큰술로 치대 세척 후 맑은 물이 나올 때까지 3~4회 헹굼 — 10000recipe.com",
+        "홍합은 양식(줄에 매달아 키움)이라 뻘이 없어 해감 불필요 — 10000recipe.com",
+        "참고: 두 출처 모두 조리 블로그(2차 자료)로 서로 일치하며 어긋나는 부분은 없음 — 공식/데이터 기관이 손질법을 다룬 자료는 없음"
+      ],
+      "sourceUrls": [
+        "https://wtable.co.kr/guide/63077",
+        "https://www.10000recipe.com/recipe/7039286"
+      ]
+    },
+    {
+      "claim": "홍합을 삶는 시간에 대한 기준이 출처마다 다르다 — 한쪽은 '약 10분'이라는 구체적 시간을, 다른 쪽은 '입이 벌어지면 불을 끈다'는 상태 기준만 제시하며 장시간 가열 시 질겨질 수 있다고 경고한다",
+      "grade": "unclear",
+      "evidence": [
+        "sharehows.com: 물에 홍합을 처음부터 넣고 약 10분 정도 삶으며, 입을 벌리면 익은 것으로 판단(물 양·불 세기 수치는 미제시)",
+        "10000recipe.com: 분 단위를 제시하지 않고 '물이 끓은 뒤 입이 벌어지면 섞고 불을 끈다'는 상태 기준만 제시, 장시간 가열하면 질겨질 수 있다고 경고",
+        "두 출처 모두 조리 블로그(2차 자료)로 결론이 엇갈려 하나의 '정답 시간'으로 단정할 근거가 없음"
+      ],
+      "sourceUrls": [
+        "https://sharehows.com/62803",
+        "https://www.10000recipe.com/recipe/7039286"
+      ]
+    }
+  ],
+  "numbers": [
+    { "what": "마비성 패류독소 허용기준", "value": "0.8mg/kg 이하", "asOf": "2026-01-02", "sourceUrl": "https://www.nifs.go.kr/news/actionNewsView.do?MENU_ID=M0000307&NEWS_SEQ=4792&NEWS_D_DATE_BEGIN=2025-04-17&NEWS_D_DATE_END=2026-04-17&PARENT_NEWS_HG_CODE=&NEWS_D_SUBJECT=&selectPage=4" },
+    { "what": "설사성 패류독소 허용기준", "value": "0.16mg OA당량/kg 이하", "asOf": "2026-01-02", "sourceUrl": "https://www.nifs.go.kr/news/actionNewsView.do?MENU_ID=M0000307&NEWS_SEQ=4792&NEWS_D_DATE_BEGIN=2025-04-17&NEWS_D_DATE_END=2026-04-17&PARENT_NEWS_HG_CODE=&NEWS_D_SUBJECT=&selectPage=4" },
+    { "what": "기억상실성 패류독소 허용기준", "value": "20mg/kg 이하", "asOf": "2026-01-02", "sourceUrl": "https://www.nifs.go.kr/news/actionNewsView.do?MENU_ID=M0000307&NEWS_SEQ=4792&NEWS_D_DATE_BEGIN=2025-04-17&NEWS_D_DATE_END=2026-04-17&PARENT_NEWS_HG_CODE=&NEWS_D_SUBJECT=&selectPage=4" },
+    { "what": "2026년 집중 발생기(3~6월) 조사정점", "value": "최대 120개 정점, 주 1회 이상", "asOf": "2026-01-02", "sourceUrl": "https://www.nifs.go.kr/news/actionNewsView.do?MENU_ID=M0000307&NEWS_SEQ=4792&NEWS_D_DATE_BEGIN=2025-04-17&NEWS_D_DATE_END=2026-04-17&PARENT_NEWS_HG_CODE=&NEWS_D_SUBJECT=&selectPage=4" },
+    { "what": "2026년 간헐기(1~2월·7~12월) 조사정점", "value": "최대 101~102개 정점, 월 1회(1~2월·7~10월은 101개→102개로 확대)", "asOf": "2026-01-02", "sourceUrl": "https://www.nifs.go.kr/news/actionNewsView.do?MENU_ID=M0000307&NEWS_SEQ=4792&NEWS_D_DATE_BEGIN=2025-04-17&NEWS_D_DATE_END=2026-04-17&PARENT_NEWS_HG_CODE=&NEWS_D_SUBJECT=&selectPage=4" },
+    { "what": "부산·경남 10개 정점 1~2월 조사 횟수", "value": "월 1회 → 2회로 강화", "asOf": "2026-01-02", "sourceUrl": "https://www.nifs.go.kr/news/actionNewsView.do?MENU_ID=M0000307&NEWS_SEQ=4792&NEWS_D_DATE_BEGIN=2025-04-17&NEWS_D_DATE_END=2026-04-17&PARENT_NEWS_HG_CODE=&NEWS_D_SUBJECT=&selectPage=4" },
+    { "what": "마비성 패류독소 최초 발생일 추이(5년)", "value": "2021-01-12 → 2025-01-13", "asOf": "2026-01-02", "sourceUrl": "https://www.nifs.go.kr/news/actionNewsView.do?MENU_ID=M0000307&NEWS_SEQ=4792&NEWS_D_DATE_BEGIN=2025-04-17&NEWS_D_DATE_END=2026-04-17&PARENT_NEWS_HG_CODE=&NEWS_D_SUBJECT=&selectPage=4" },
+    { "what": "거제 시방리 해역 마비성 패류독소 검출치", "value": "0.94mg/kg (기준 0.8mg/kg 초과)", "asOf": "2026-02-05", "sourceUrl": "https://m.news.nate.com/view/20260205n38293" },
+    { "what": "생홍합 냉장 보관 기간", "value": "1~2일", "asOf": null, "sourceUrl": "https://wtable.co.kr/guide/63076" },
+    { "what": "삶은 홍합살 냉동 보관 기간", "value": "1~2개월", "asOf": null, "sourceUrl": "https://wtable.co.kr/guide/63076" },
+    { "what": "깐 홍합 보관 기간", "value": "냉장 1~2일 / 냉동 1~2개월", "asOf": null, "sourceUrl": "https://wtable.co.kr/guide/63076" },
+    { "what": "건홍합 보관 기간", "value": "냉장 6개월 / 냉동 1~2개월", "asOf": null, "sourceUrl": "https://wtable.co.kr/guide/63076" },
+    { "what": "홍합 삶는 시간(출처 A: sharehows)", "value": "약 10분(물에 처음부터 넣고 삶음, 입 벌어지면 완료)", "asOf": null, "sourceUrl": "https://sharehows.com/62803" },
+    { "what": "2024년 식약처 유통단계 수거·검사 건수·기간(2026년 수치 아님)", "value": "490건, 2024-03-04~2024-06-28", "asOf": "2024-03-04", "sourceUrl": "https://www.pointe.co.kr/news/articleView.html?idxno=9350" },
+    { "what": "2022년 식약처 유통단계 수거·검사 기간(2026년 수치 아님)", "value": "'22.3.2~6.30", "asOf": "2022-03-02", "sourceUrl": "https://www.foodnews.co.kr/news/articleView.html?idxno=95881" }
+  ],
+  "dropped": [],
+  "cannotCover": [
+    "2026년 식약처(mfds) 유통단계 수거·검사 건수·기간 — raw 자료엔 2022년(foodnews.co.kr)·2024년(pointe.co.kr) 수치만 있고 2026년판 원문은 확보 못함. 두 해 수치를 2026년 것처럼 쓰지 말 것",
+    "상하거나 입을 안 연 홍합을 먹었을 때 어떤 균(비브리오균 등)에 의한 식중독인지 확정하는 의학적 단정 — thecarview.com(블로그, 비공식) 하나뿐이라 특정 병원체를 단정해 서술할 수 없음. '식중독 위험이 있다' 수준까지만 가능",
+    "홍합을 삶을 때 필요한 물의 정확한 양(리터 등 정량 수치) — 모든 출처가 '잠길 정도'로만 표현, 정량 수치 없음",
+    "패류독소 주의 시기와 별개로 홍합이 가장 맛있는 제철(구체적 월) — 이를 다루는 공식 자료를 찾지 못함"
+  ],
+  "songs": []
+}
