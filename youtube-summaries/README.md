@@ -3,14 +3,20 @@
 채널 [AI Engineer](https://www.youtube.com/@aiDotEngineer) 의 새 영상을 Gemini 로 자동 요약한 모음입니다.
 생성: `backend/scripts/youtube-summarize.mjs` (GitHub Actions `youtube-summary` 크론).
 
-총 **242개**.
+총 **248개**.
 
 | 발행일 | 제목 |
 |---|---|
+| 2026-10-04 | [Keyword Search Is Dying. Is Your Catalog Ready for AI Agents? — PayPal](2026-10-04-YXb2Wx1r_Pk.md) |
 | 2026-10-04 | [Dashboards Are Dead — Sarah Simionescu, Composio](2026-10-04-YiFqcu9YA38.md) |
 | 2026-10-04 | [Stop Fine-Tuning to Fix Retrieval Problems — Anant Srivastava](2026-10-04-qflLT3SoVbw.md) |
+| 2026-10-04 | [We Built an AI Support Agent That Resolves 80% of Tickets — AssemblyAI](2026-10-04-pyvRID_CZZU.md) |
+| 2026-10-04 | [The Human Is an Async API — Melanie Warrick, Temporal](2026-10-04-jc3kbZkuHTo.md) |
+| 2026-10-04 | [AI Coding Agents Are Breaking Big Codebases — Dan Adler, Sourcegraph](2026-10-04-Bdrs3uAX0_M.md) |
+| 2026-10-04 | [Agents That Write Their Own Tools at Runtime — Sandhya Subramani, AWS](2026-10-04-33Oct2hqGnk.md) |
 | 2026-10-03 | [What Makes Open Models Fast in Production — Sujee Maniyam, Nebius](2026-10-03-TRe1u7dHYiA.md) |
 | 2026-10-03 | [Your LLM App Returned 200 OK. It Was Still Wrong. — Marina Petzel, Datadog](2026-10-03-rTojoVotlD8.md) |
+| 2026-10-03 | [I Built a Personal AI Agent on a Raspberry Pi — Jeremy Adams, Neo4j](2026-10-03-oUZEt4EiPbk.md) |
 | 2026-10-03 | [YOLO Mode, Safely: MicroVM Sandboxes for Any Agent — Rowan Christmas, Docker](2026-10-03-OE_lLNCNfQo.md) |
 | 2026-10-03 | [How VS Code Went from Monthly to Weekly Releases with AI — Harald Kirschner](2026-10-03-I2LL_wd89-A.md) |
 | 2026-10-03 | [GPU Died. Training Didn't: Self-Healing Training at Scale — Crusoe](2026-10-03-bRGyYaE0lxI.md) |
