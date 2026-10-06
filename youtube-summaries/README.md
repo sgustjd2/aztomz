@@ -3,10 +3,19 @@
 채널 [AI Engineer](https://www.youtube.com/@aiDotEngineer) 의 새 영상을 Gemini 로 자동 요약한 모음입니다.
 생성: `backend/scripts/youtube-summarize.mjs` (GitHub Actions `youtube-summary` 크론).
 
-총 **248개**.
+총 **257개**.
 
 | 발행일 | 제목 |
 |---|---|
+| 2026-10-06 | [How Many Credentials Should Your AI Agent Have? Zero. — Jim Clark, Docker](2026-10-06-ZUZVNKFSmTM.md) |
+| 2026-10-06 | [How AI Agents Pay: Checkout in ChatGPT and Google AI Mode — Sam Parsons, PayPal](2026-10-06-c5U-XbbEN-g.md) |
+| 2026-10-05 | [Research to Reality with Google DeepMind — Paige Bailey, Google DeepMind](2026-10-05-zQZiHOpkq_s.md) |
+| 2026-10-05 | [Your LLM Judge Is a Confident Liar: Building Better Verifiers — Browserbase](2026-10-05-xLxhT2ZI7UM.md) |
+| 2026-10-05 | [From Raw Documents to AI-Ready Data — Leo Platzer & Jeff Koss](2026-10-05-wzWNYDY7toc.md) |
+| 2026-10-05 | [Build the Right Thing: Product Engineering (Part 2) — Kent C. Dodds, EpicProduct.engineer](2026-10-05-s0hFne6EeOI.md) |
+| 2026-10-05 | [From Vibes to Production: Evaluating and Shipping AI Agents That Work 201 — Laurie Voss, Arize AI](2026-10-05-F0TNSmbo5hE.md) |
+| 2026-10-05 | [The Transcript Looked Fine. The Call Wasn't. — Debugging Voice Agents, Arize](2026-10-05-42Bz0TUfeOQ.md) |
+| 2026-10-05 | [Build the Right Thing: Product Engineering (Part 1) — Kent C. Dodds, EpicProduct.engineer](2026-10-05-_fHTqOs5wQA.md) |
 | 2026-10-04 | [Keyword Search Is Dying. Is Your Catalog Ready for AI Agents? — PayPal](2026-10-04-YXb2Wx1r_Pk.md) |
 | 2026-10-04 | [Dashboards Are Dead — Sarah Simionescu, Composio](2026-10-04-YiFqcu9YA38.md) |
 | 2026-10-04 | [Stop Fine-Tuning to Fix Retrieval Problems — Anant Srivastava](2026-10-04-qflLT3SoVbw.md) |
