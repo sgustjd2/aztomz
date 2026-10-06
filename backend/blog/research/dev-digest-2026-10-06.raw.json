@@ -1,0 +1,489 @@
+{
+  "keyword": "개발·IT 다이제스트 — 최근 3일(2026-10-03 ~ 2026-10-06) 개발판 소식 7건",
+  "categoryId": "dev-digest",
+  "slug": "dev-digest-2026-10-06",
+  "searchedAt": "2026-10-06",
+  "queries": [
+    "[후보] backend/blog/research/dev-digest/digest-2026-10-05.json (GeekNews RSS 50건·GitHub 3건) + news.hada.io/rss/news 재조회로 topic id 확보",
+    "Reflection AI Beam 501B open-weight model release",
+    "Reflection AI Beam open-weight model TechCrunch OR VentureBeat OR Reuters OR Bloomberg October 2026",
+    "Cloudflare Web Search API beta AI Gateway Ceramic Exa Linkup",
+    "Cloudflare Birthday Week 2026 Web Search API pricing per 1,000 requests Ceramic Exa Linkup",
+    "Cloudflare Web Search API AI Gateway Birthday Week 2026 news coverage The Register OR VentureBeat OR TechCrunch OR SiliconANGLE",
+    "Xray-core pinnedPeerCertSha256 vulnerability certificate verification bypass advisory",
+    "Xray-core RPRX response vulnerability disclosure allegation net4people issue 672 pinnedPeerCertSha256 October 2026",
+    "mold linker 3.0 rewritten in Rust release",
+    "ncdu Yorhel passed away maintainer fork Zig",
+    "Go garbage collector stop-the-world pause swap 40ms Fernando Simões"
+  ],
+  "items": [
+    {
+      "n": 1,
+      "topic": "mold 3.0.0 (C++→Rust 재작성 링커)",
+      "area": "dev-tool",
+      "geeknews": "https://news.hada.io/topic?id=34832",
+      "original": "https://github.com/rui314/mold/releases/tag/v3.0.0",
+      "originalDate": "2026-10-05"
+    },
+    {
+      "n": 2,
+      "topic": "Go GC STW 40ms 정지 — 스왑된 GC 메타데이터",
+      "area": "language-runtime",
+      "geeknews": "https://news.hada.io/topic?id=34816",
+      "original": "https://frn.sh/go-gc/",
+      "originalDate": "2026-09-13"
+    },
+    {
+      "n": 3,
+      "topic": "Xray-core pinnedPeerCertSha256 인증서 검증 우회 취약점 및 은폐 의혹(신고자 주장)",
+      "area": "security-infra",
+      "geeknews": "https://news.hada.io/topic?id=34810",
+      "original": "https://github.com/net4people/bbs/issues/672",
+      "originalDate": "2026-10-02"
+    },
+    {
+      "n": 4,
+      "topic": "ncdu 2.x(Zig) 업데이트 포크 — rcalixte/ncdu",
+      "area": "dev-tool",
+      "geeknews": "https://news.hada.io/topic?id=34818",
+      "original": "https://github.com/rcalixte/ncdu",
+      "originalDate": "2026-10-04"
+    },
+    {
+      "n": 5,
+      "topic": "SSH + nginx 만으로 자체 호스팅 HTTP 터널",
+      "area": "infra",
+      "geeknews": "https://news.hada.io/topic?id=34802",
+      "original": "https://vincent.bernat.ch/en/blog/2026-http-over-ssh",
+      "originalDate": "2026-10-03"
+    },
+    {
+      "n": 6,
+      "topic": "Cloudflare Web Search API 베타 (AI 에이전트용)",
+      "area": "AI(1/2)",
+      "geeknews": "https://news.hada.io/topic?id=34826",
+      "original": "https://developers.cloudflare.com/changelog/post/2026-10-02-introducing-web-search-api/",
+      "originalDate": "2026-10-02"
+    },
+    {
+      "n": 7,
+      "topic": "Reflection Beam — 501B 오픈웨이트 모델(가중치 이달 공개 예정)",
+      "area": "AI(2/2)",
+      "geeknews": "https://news.hada.io/topic?id=34839",
+      "original": "https://reflection.ai/blog/introducing-beam",
+      "originalDate": "2026-10-05"
+    }
+  ],
+  "sources": [
+    {
+      "title": "Release mold 3.0.0 · rui314/mold (GitHub release notes)",
+      "url": "https://github.com/rui314/mold/releases/tag/v3.0.0",
+      "host": "github.com",
+      "tier": "official",
+      "publishedAt": "2026-10-05",
+      "body": "mold 3.0.0 is a new major release of the high-speed linker. As we announced in the 2.42.1 release notes , we have rewritten mold from C++ to Rust, and this is the first release of the Rust version. 2.42.1 is the last release of the C++ version. The goal of mold 3.x is to close the remaining compatibility gaps with GNU ld, particularly in linker script support, and to pave the way for mold to be adopted as the default linker in Linux distributions.\nmold 3.0 is meant to be a drop-in replacement for 2.42.1. It accepts the same command-line options, supports the same target architectures, and produces the same output except for the bug fixes listed below. Linking performance remains on par with 2.42.1. We verified compatibility by running the test suite on every supported target, comparing linker output across a broad range of real-world workloads and option combinations, and building all Gentoo packages. We found no regressions.\nThe move to Rust also makes mold safer with corrupted input files. The C++ version could read memory out of bounds on such input and crash with a segmentation fault. In mold 3.0, those reads are bounds-checked, so mold stops with a panic at the faulty access instead.\nIf you build mold yourself, note that the build system has changed. See \"Build Changes\" below.\nBuild Changes\nmold is now built with Cargo instead of CMake. It requires Rust 1.95 or later and a C compiler. Run cargo build --release to build mold and ./install-mold.sh to install it; the install script accepts PREFIX and DESTDIR . The CMake options have been removed.\nIf you install mold's libraries into a directory other than $PREFIX/lib , such as /usr/lib64 , set the MOLD_LIBDIR environment variable to that directory both when building and when installing mold, so that mold -run can find mold-wrapper.so .\nmold no longer depends on oneTBB . It statically links mimalloc 3.5.3 as before; build with --features system-allocator to use the system's malloc instead. mold links the system's zlib if available and includes zstd and BLAKE3; set ZSTD_SYS_USE_PKG_CONFIG=1 to link the system's zstd. ( 56ee0f8 )\nThe MOLD_TARGETS CMake variable has been replaced with Cargo features. As before, distributions should build mold for all targets.\nThe test suite now runs with cargo test instead of ctest . install-build-deps.sh has been replaced with install-test-deps.sh , which you need only to run the tests.\n[...]\nmold no longer reserves 8 GiB of virtual address space at startup, so it works under ulimit -v . ( cc69390 , b18be91 )\nMOLD_JOBS now works if XDG_RUNTIME_DIR is an empty string. ( 8a360ff )",
+      "facts": [
+        "릴리스 시각 2026-10-05T10:23:19Z, 태그 v3.0.0, 커밋 8de38c3 (페이지 datetime 속성 기준).",
+        "원문: \"2.42.1 is the last release of the C++ version.\" — 3.0.0 이 Rust 버전 첫 릴리스.",
+        "원문: \"The goal of mold 3.x is to close the remaining compatibility gaps with GNU ld, particularly in linker script support, and to pave the way for mold to be adopted as the default linker in Linux distributions.\"",
+        "원문: \"mold 3.0 is meant to be a drop-in replacement for 2.42.1. It accepts the same command-line options, supports the same target architectures, and produces the same output except for the bug fixes listed below. Linking performance remains on par with 2.42.1.\" — 릴리스 노트에 정량 벤치마크 수치는 없음(성능은 \"on par\" 라는 서술뿐).",
+        "호환성 검증(자체 주장): \"running the test suite on every supported target, comparing linker output across a broad range of real-world workloads and option combinations, and building all Gentoo packages. We found no regressions.\"",
+        "원문: \"The C++ version could read memory out of bounds on such input and crash with a segmentation fault. In mold 3.0, those reads are bounds-checked, so mold stops with a panic at the faulty access instead.\" (손상된 입력 파일 대상)",
+        "빌드 변경: CMake 대신 Cargo, \"It requires Rust 1.95 or later and a C compiler\", oneTBB 의존 제거, mimalloc 3.5.3 정적 링크 유지. 설치는 `cargo build --release` + `./install-mold.sh`.",
+        "버그 수정 예: mold 가 시작 시 8 GiB 가상 주소 공간을 예약하지 않게 되어 `ulimit -v` 아래에서도 동작. 단일 대시 옵션 `-entry=main` 이 `-e ntry=main` 으로 잘못 읽히던 문제 수정(GNU ld 방식으로 해석).",
+        "스폰서 명단에 Cybozu, SAP, Mercedes-Benz Group 등이 언급됨(월 $32 이상 후원 조직)."
+      ]
+    },
+    {
+      "title": "Mold 3.0 High Speed Linker Released Following Rust Rewrite - Phoronix",
+      "url": "https://www.phoronix.com/news/Mold-3.0-Released",
+      "host": "www.phoronix.com",
+      "tier": "press",
+      "publishedAt": "2026-10-05",
+      "body": "The Mold high speed linker alternative to the likes of GNU Gold/LD and LLVM LLD recently has been going through a rewrite from C++ to Rust as well as having high ambitions of eventually becoming the default linker on Linux systems. Today marks the release of Mold 3.0 for this Rust-based high performance linker.\nMold 3.0 is said to be a drop-in replacement to Mold 2.42.1 as the prior stable release, albeit now written in the Rust programming language rather than C++. With Mold 3.x the main focus is on addressing remaining compatibility gaps with GNU LD:\n\"mold 3.0.0 is a new major release of the high-speed linker. As we announced in the 2.42.1 release notes, we have rewritten mold from C++ to Rust, and this is the first release of the Rust version. 2.42.1 is the last release of the C++ version. The goal of mold 3.x is to close the remaining compatibility gaps with GNU ld, particularly in linker script support, and to pave the way for mold to be adopted as the default linker in Linux distributions.\"\nIn using the Rust programming language, Mold 3.0 is said to be safer when dealing with corrupted input files. Mold 3.0 depends on Rust 1.95 or later, avoids the dependency now on Intel oneTBB, and is using Rust's Cargo build system rather than CMake.\nIn the process of the Mold 3.0 Rust rewrite, many bugs are said to have been fixed with this new version. The full list of fixes and other details on Mold 3.0 via this morning's release announcement .",
+      "facts": [
+        "Phoronix(Michael Larabel) 2026-10-05 06:29 AM EDT 기사. mold 3.0 을 \"drop-in replacement to Mold 2.42.1\" 로 소개.",
+        "기사 요약: Rust 1.95 이상 필요, Intel oneTBB 의존 제거, CMake 대신 Cargo 사용, 손상된 입력 파일에 더 안전. 독자적 벤치마크는 싣지 않음."
+      ]
+    },
+    {
+      "title": "Mold 링커 3.0.0 출시, Rust로 재작성 - GeekNews",
+      "url": "https://news.hada.io/topic?id=34832",
+      "host": "news.hada.io",
+      "tier": "blog",
+      "publishedAt": "2026-10-06",
+      "body": "고속 링커 mold 3.0.0 은 C++에서 Rust로 재작성한 첫 릴리스 이며, 2.42.1이 마지막 C++ 버전임\n2.42.1을 그대로 대체 하도록 설계해 기존 명령행 옵션과 지원 아키텍처를 유지하며, 버그 수정을 제외한 출력과 링크 성능도 기존 버전과 동등함\n손상된 입력 파일에서 발생할 수 있던 범위 밖 메모리 읽기에 경계 검사 를 적용해, 세그멘테이션 오류 대신 해당 접근 지점에서 패닉으로 중단함\n직접 빌드할 때는 CMake에서 Cargo로 전환 해야 하며, Rust 1.95 이상과 C 컴파일러가 필요함\nmold 3.x 는 특히 링커 스크립트 지원에서 GNU ld와의 호환성 격차를 줄이고, Linux 배포판의 기본 링커로 채택될 기반을 마련하는 것이 목표임\nRust 전환과 기존 버전 호환성\n2.42.1 릴리스 노트 에서 예고한 Rust 재작성 을 완료했으며, C++ 버전의 마지막 릴리스는 2.42.1임\nmold 3.0 은 기존 명령행 옵션과 대상 아키텍처를 유지하며, 아래 버그 수정에 따른 차이를 제외하면 2.42.1과 같은 출력을 생성함\n링크 성능도 기존 버전과 동등한 수준임\n호환성 검증 은 모든 지원 대상의 테스트 스위트 실행, 다양한 실제 작업과 옵션 조합의 링커 출력 비교, 모든 Gentoo 패키지 빌드로 수행했으며 회귀 문제를 발견하지 못함\n손상된 입력에 대한 메모리 접근 안전성 이 달라짐\nC++ 버전은 범위 밖 메모리를 읽다가 세그멘테이션 오류로 종료될 수 있었음\nRust 버전은 해당 읽기를 경계 검사하므로 잘못된 접근 지점에서 패닉으로 중단함\nGNU ld 호환성 , 특히 링커 스크립트 지원의 남은 격차를 줄이는 것이 3.x의 목표이며, Linux 배포판의 기본 링커 채택을 위한 기반을 마련하려 함\n직접 빌드하거나 패키징할 때의 변경점\n빌드 시스템이 Cargo 로 바뀌었고 기존 CMake 옵션은 제거됨\nRust 1.95 이상과 C 컴파일러가 필요함\ncargo build --release 로 빌드하고 ./install-mold.sh 로 설치하며, 설치 스크립트는 PREFIX 와 DESTDIR 를 지원함\n기존 MOLD_TARGETS CMake 변수는 Cargo 기능으로 대체됐으며, 배포판은 이전처럼 모든 대상을 지원하도록 빌드해야 함\n라이브러리를 $PREFIX/lib 이외의 위치, 예를 들어 /usr/lib64 에 설치한다면 빌드와 설치 양쪽에서 MOLD_LIBDIR 를 설정해야 함\nmold -run 이 mold-wrapper.so 를 찾는 데 이 설정이 필요함\noneTBB 의존성을 제거했으며, 메모리 할당기와 압축 라이브러리 구성은 다음과 같음\nmimalloc 3.5.3을 정적으로 링크하며, --features system-allocator 로 시스템 malloc을 사용할 수 있음\n시스템 zlib가 있으면 이를 링크하고, zstd와 BLAKE3는 포함함\nZSTD_SYS_USE_PKG_CONFIG=1 을 설정하면 시스템 zstd를 링크함\n테스트 명령은 cargo test 로 바뀌었으며, install-build-deps.sh 는 테스트 실행 시에만 필요한 install-test-deps.sh 로 대체됨",
+      "facts": [
+        "긱뉴스 topic(링크용). RSS 게시 2026-10-06T02:36:13+09:00. 원문은 위 GitHub 릴리스 노트.",
+        "긱뉴스 요약: \"2.42.1을 그대로 대체하도록 설계해 기존 명령행 옵션과 지원 아키텍처를 유지\" · \"링크 성능도 기존 버전과 동등한 수준\" · \"Rust 1.95 이상과 C 컴파일러가 필요함\"."
+      ]
+    },
+    {
+      "title": "A 40ms Go GC pause caused by swap · Fernando Simões",
+      "url": "https://frn.sh/go-gc/",
+      "host": "frn.sh",
+      "tier": "blog",
+      "publishedAt": "2026-09-13",
+      "body": "I’m writing this so you don’t slap your forehead like I almost did when I decided to run swap in production to absorb memory spikes.\nI had a cgroup with two processes: one is a Go process that calls io.ReadAll and then proto.Unmarshal , creating a blob and then a graph struct (which is marked as scan by Go’s allocator). The other process is an HTTP server that mostly stays quiet.\nWhenever the collector runs, it reads those scan spans, pointer by pointer, and decides what to do with them. So I thought: ok, under memory pressure, the kernel is going to evict pages to the swap device, but since the eviction is per cgroup, and not per process, both processes’ pages are going to be evicted - so there is only a small chance that this will turn into a sad dance of swap-in and swap-out between the kernel and the garbage collector.\nI was wrong. While experimenting with this, I found a problem that could’ve hurt me: Go’s garbage collector reads its metadata (outside the heap, in a region that is not freed ) in a stop-the-world pause, and that metadata can be in swap.\nI did a mock run on a Hetzner box using kernel 6.8 with MGLRU enabled 1 1 You can find everything about these experiments: plots, the mock allocator, bpf scripts, python scripts, etc., here: https://github.com/frnsimoes/go-gc-swap-cost . The median pause was around 51 us. With the metadata on the NVMe, the worst pause was 40ms.\nTo check where those 40ms went, I wrote a small bpf script that counts page faults while the world is stopped. This was the worst one: 39902 us, faults during it 228, 39013 us in faults . 39 of those 40ms were spent in 228 page faults. Those faults happened inside the GC’s bookkeeping:\n[... addr2line 스택 트레이스 생략 ...]\nThat’s a potential failure mode. Go’s GC has to stop the world at two points: when it performs a sweep termination , and when it performs a mark termination . We had 312 of those pauses in 30 minutes.\nSo here is why this happens: the runtime allocates those pages. They are not freed, but reused. Those pages are read in GC cycles. Because the kernel evicts pages by age , it sends the least recently accessed pages to swap. The GC runs, stops the world, tries to read those pages, but now we have a major page fault. The kernel needs to read PTEs , and then call do_swap_page , find a new frame , charge it to the cgroup , read the pages , submit a bio , wait for the disk , and put them back in memory - just to keep it short.\nThose 40ms seem harmless at first. But we are talking about a stop-the-world pause. Those 40ms mean everything has stopped - in Go’s terminology, every P has stopped , so, for example, if a goroutine was waiting for I/O, during that pause the I/O might return and there would be no one to handle it. 40ms is 800 times the median pause. It happens two or three times per memory spike during the test. It is a lot.\nAnd then I noticed another thing: building one 511 KiB message, which usually takes 3-5 ms, jumped to 105 ms on the NVMe and 903 ms on Hetzner’s network volume. Per message, this costs more than the metadata pause. But only the goroutine doing the allocation pays that price, so at least it’s localized, and not global like the metadata one.\nI haven’t confirmed where that time goes, but even so I wanted to mention it here, because that’s another cost you would have to pay. In any case, I agree with Chris Down , swap is not evil . But, yeah, it didn’t behave well with garbage collection, and, in production, I’m collecting a lot.\nUpdate, September 14 .\nSomeone asked me if Go 1.26’s Green Tea garbage collector changed the way the GC reads metadata. I measured it, and the impact is negligible.",
+      "facts": [
+        "저자가 직접 돌린 실험 글(1차 서술, 개인 블로그). 게시 2026-09-13, 2026-09-14 업데이트 추가. 실험 코드·그래프는 github.com/frnsimoes/go-gc-swap-cost (URL 도달 확인, 200).",
+        "환경: Hetzner 박스, 커널 6.8 + MGLRU 활성화, 한 cgroup 안에 Go 프로세스(io.ReadAll → proto.Unmarshal)와 조용한 HTTP 서버 프로세스. 한 가지 모의 워크로드 기준 결과임.",
+        "원문: \"Go’s garbage collector reads its metadata (outside the heap, in a region that is not freed) in a stop-the-world pause, and that metadata can be in swap.\"",
+        "수치: \"The median pause was around 51 us. With the metadata on the NVMe, the worst pause was 40ms.\" 최악 사례 \"39902 us, faults during it 228, 39013 us in faults\" — 40ms 중 약 39ms 가 228회 페이지 폴트.",
+        "원문: \"We had 312 of those pauses in 30 minutes.\" (STW 지점은 sweep termination 과 mark termination 두 곳.) 40ms 는 중앙값의 800배, 메모리 급증 한 번당 2~3번 발생한다고 저자가 서술.",
+        "원문: \"building one 511 KiB message, which usually takes 3-5 ms, jumped to 105 ms on the NVMe and 903 ms on Hetzner’s network volume.\" 저자 스스로 \"I haven’t confirmed where that time goes\" 라고 원인 미확인임을 밝힘. 이 지연은 할당한 고루틴만 겪는 국소적 비용이라고 서술.",
+        "2026-09-14 업데이트: \"Someone asked me if Go 1.26’s Green Tea garbage collector changed the way the GC reads metadata. I measured it, and the impact is negligible.\"",
+        "결론(원문): \"swap is not evil\" 이라는 Chris Down 의견에 동의하면서도 \"it didn’t behave well with garbage collection, and, in production, I’m collecting a lot.\""
+      ]
+    },
+    {
+      "title": "A 40ms Go garbage collector pause caused by swap (Hacker News 토론)",
+      "url": "https://news.ycombinator.com/item?id=49959654",
+      "host": "news.ycombinator.com",
+      "tier": "blog",
+      "publishedAt": "2026-10-05",
+      "body": "Hacker News 제출 2026-10-05T01:11:56Z, 조회 시점 106 points / 최상위 댓글 16개(HN Algolia API 기준). 발췌 댓글 — jacobgold: \"\\\"It hurts when I do this\\\" \\\"Stop doing that\\\" If you care about latency, disable swap. System wide or for the specific the cgroup.\" / soltanov: \"A GC latency SLO should include operating-system memory pressure. Otherwise, a page-fault problem will look like a collector problem and lead to the wrong fix.\" / ahmedmostafa16: \"The nasty bit is that swap doesn't just make the allocation slower; if GC metadata gets paged out, you have turned memory pressure into a stop-the-world latency spike.\" / pizlonator: \"Is there a reason why Go isn’t using on the fly GC, where there’s no STW at all?\" 이상은 커뮤니티 의견이며 사실 근거로 쓰지 말 것.",
+      "facts": [
+        "HN 제출 2026-10-05T01:11:56Z, 106 points·최상위 댓글 16개(조회 시점). 커뮤니티 반응 확인용 — 사실 근거 아님.",
+        "댓글 중 흔한 조언: 지연이 중요하면 스왑을 끄거나 해당 cgroup 에서만 끈다(jacobgold)."
+      ]
+    },
+    {
+      "title": "스왑으로 발생한 Go 가비지 컬렉터의 40ms 정지 - GeekNews",
+      "url": "https://news.hada.io/topic?id=34816",
+      "host": "news.hada.io",
+      "tier": "blog",
+      "publishedAt": "2026-10-05",
+      "body": "Go GC가 전체 실행 정지(STW) 중 읽는 힙 외부 메타데이터도 스왑으로 밀려날 수 있으며, 이를 다시 읽는 과정에서 최대 40ms 정지 가 발생함\n커널 6.8과 MGLRU를 사용한 Hetzner 실험에서 정지 시간 중앙값은 약 51µs 였지만, 최악의 정지에서는 228회 페이지 폴트 에 약 39ms를 소비함\n메타데이터를 읽는 동안 모든 P가 정지 하므로, 해당 시점에 I/O가 완료돼도 고루틴이 이를 처리할 수 없음\n511KiB 메시지 생성 도 평소 3~5ms에서 NVMe에서는 105ms, 네트워크 볼륨에서는 903ms로 늘어남. 원인은 확인되지 않았으며, 이 지연은 할당을 수행하는 고루틴에 국한 됨\nGo 1.26의 Green Tea GC 에서도 측정 결과 메타데이터 읽기 문제에 대한 영향은 미미했음\n스왑된 GC 메타데이터가 전체 실행을 멈추는 과정\n메모리 급증을 흡수하기 위해 프로덕션 스왑 사용 을 검토하며, 하나의 cgroup에 두 프로세스를 둔 구성을 실험함\nGo 프로세스는 io.ReadAll 다음 proto.Unmarshal 을 호출해 바이트 데이터와 그래프 구조체를 만들며, 그래프 구조체는 Go 할당기에서 scan 으로 표시됨\n다른 프로세스는 대부분 유휴 상태인 HTTP 서버임\nGC는 scan 스팬 을 포인터 단위로 읽음. 페이지 퇴거가 프로세스가 아닌 cgroup 단위로 이루어져 두 프로세스의 페이지가 함께 밀려나므로, 커널과 GC 사이의 반복적인 스왑 입출력 가능성이 작을 것으로 예상했지만 실험은 달랐음\nGC는 STW 중 힙 외부 메타데이터 를 읽으며, 이 영역은 해제되지 않고 재사용되지만 스왑 대상이 될 수 있음\n런타임이 할당한 메타데이터 페이지는 GC 주기마다 읽힘\n커널은 페이지의 접근 시점 을 기준으로 오래 접근하지 않은 페이지를 스왑으로 내보냄\n이후 GC가 전체 실행을 멈추고 해당 페이지를 읽으면 메이저 페이지 폴트 가 발생함\n페이지를 복구하려면 커널의 스왑 처리와 디스크 대기 를 거쳐야 함\nPTE 읽기 , do_swap_page 호출 , 새 프레임 확보 , cgroup에 메모리 사용량 부과 가 필요함\n페이지 읽기 , bio 제출 , 디스크 대기 , 메모리 복귀 가 이어짐\nGo GC는 스윕 종료 와 마킹 종료 두 지점에서 전체 실행을 정지함\n이때 모든 P가 정지 하므로, I/O를 기다리던 고루틴은 I/O가 완료돼도 정지 중에는 이를 처리할 수 없음\n측정 결과와 확인되지 않은 비용\n커널 6.8, MGLRU 활성화 상태의 Hetzner 서버에서 모의 실험을 수행함\n30분 동안 STW 정지 312회를 관측했으며, 중앙값은 약 51µs 였음\n메타데이터가 NVMe로 스왑된 경우 최악의 정지는 40ms로, 중앙값의 약 800배에 달함\n테스트에서 이러한 지연은 메모리 급증 한 번당 두세 차례 발생함\nBPF 스크립트 로 STW 중 페이지 폴트를 집계한 최악의 사례는 39,902µs 정지, 228회 폴트, 폴트 처리 39,013µs 였음\n약 40ms 가운데 39ms가 페이지 폴트에 쓰였음\n호출 스택은 runtime.(*spanSet).reset , runtime.nextMarkBitArenaEpoch , runtime.finishsweep_m , runtime.gcStart.func2 , runtime.systemstack , runtime.gcStart 등 GC 내부 관리 작업 을 가리켰음\n511KiB 메시지 하나를 생성하는 시간 도 평소 3~5ms에서 NVMe 사용 시 105ms, Hetzner 네트워크 볼륨 사용 시 903ms로 증가함\n메시지당 지연은 메타데이터로 인한 정지보다 컸지만, 할당을 수행하는 고루틴에만 영향 을 줌\n이 시간이 정확히 어디에 쓰였는지는 확인하지 못함\n스왑 자체가 나쁜 것은 아니라는 점에서는 Chris Down의 스왑 옹호 글 과 같은 입장임. 다만 이번 실험에서는 스왑과 GC의 조합 이 잘 작동하지 않았고, 대상 프로덕션 환경에서는 GC가 자주 실행됨\n9월 14일 추가 측정 에서 Go 1.26의 Green Tea GC 가 메타데이터 읽기에 미치는 영향은 미미했음\ngo-gc-swap-cost 에 그래프, 모의 할당기, BPF 스크립트, Python 스크립트 등 실험 자료를 공개함",
+      "facts": [
+        "긱뉴스 topic(링크용). RSS 게시 2026-10-05T17:41:37+09:00. 원문은 frn.sh 글(2026-09-13 작성) — 긱뉴스 게시일과 원문 작성일이 3주 가까이 다름.",
+        "긱뉴스 요약: \"정지 시간 중앙값은 약 51µs 였지만, 최악의 정지에서는 228회 페이지 폴트에 약 39ms를 소비함\"."
+      ]
+    },
+    {
+      "title": "Popular proxy software Xray-core covered up a certification verification bypass vulnerability for half a year · Issue #672 · net4people/bbs",
+      "url": "https://github.com/net4people/bbs/issues/672",
+      "host": "github.com",
+      "tier": "blog",
+      "publishedAt": "2026-10-02",
+      "body": "Disclaimer: I am the reporter of the vulnerability.\nXray-core maintainers look down on \"skip certificate verification\" feature (i.e. the allowInsecure option in Xray-core) or similar options in proxy software, arguing that this is equivalent to having no security measures at all and leaves users \"streaking\", exposing them to the risk of man-in-the-middle attacks. However, if a vulnerability in Xray-core itself causes users to be \"streaking\" and fall victim to man-in-the-middle attacks, Xray-core will cover it up and act as if nothing has happened.\nOn October 21, 2021 , the pinnedPeerCertificateChainSha256 option, with no known issues, was added to Xray-core. This provides a double layer of security: if this option is enabled, custom certificate chain pinning logic will be performed in addition to the regular certificate verification. This also facilitates the use of self-signed certificates: to use a self-signed certificate securely, a user can enable both allowInsecure and pinnedPeerCertificateChainSha256 to skip the regular certificate verification and perform only the custom certificate chain pinning logic.\nHowever, Xray-core later claimed that allowInsecure is insecure and enabling allowInsecure is like \"streaking\" and would leave users vulnerable to man-in-the-middle attacks.\nOn January 9, 2026 , Xray-core removed pinnedPeerCertificateChainSha256 and replaced it with a new option, pinnedPeerCertSha256 , to stop users from skipping certificate verification (or so-called \"streaking\"). For self-signed certificates, both allowInsecure and pinnedPeerCertSha256 must be enabled, which skips the regular certificate verification and only performs the custom certificate pinning logic. This should have helped the users to use self-signed certificates securely. However, pinnedPeerCertSha256 contains a certificate verification bypass vulnerability.\nOn January 13, 2026 , Xray-core released the first version containing this certificate verification bypass vulnerability. Since the old option had been removed, users had no choice but to migrate to the new vulnerable option. At this point, the certificate verification defense was already teetering on the brink of collapse. Fortunately, as long as users neither use a self-signed certificate nor enable allowInsecure , the regular certificate verification could still provide some protection.\nOn January 16, 2026 , Xray-core modified the logic of pinnedPeerCertSha256 , making it always skip the regular certificate verification and only performs the custom certificate pinning logic. This means a protection layer has been missing: the regular certificate verification is always skipped. If a verification bypass vulnerability exists in pinnedPeerCertSha256 (and unfortunately, it does), the custom certificate pinning logic will fail to function, effectively leaving no certificate verification in place, which allows a man-in-the-middle attack to be successfully performed. At this point, the certificate verification defense has completely collapsed.\nOn February 6, 2026, I found the above certificate verification bypass vulnerability in Xray-core’s pinnedPeerCertSha256 and privately reported to Xray-core maintainers. A man-in-the-middle attacker could insert a leaf certificate at any place in the certificate chain, and the custom certificate pinning logic would verify the leaf certificate successfully, thereby leading to the success of man-in-the-middle attacks. This is an overly simple vulnerability; even without advanced security knowledge, I was able to discover it at a glance.\nOn the same day , Xray-core silently fixed this certificate verification bypass vulnerability, but the commit message beat around the bush, claiming it was to \"simplify the code\".\nOn the same day , Xray-core released a new version without mentioning the security vulnerability at all. Users were kept in the dark.\nWhat's worse, on that same day , Xray-core posted the following statement on their Telegram channel: \"Software must be designed with security at its core, eliminating the influence of the human factor to ensure that even the endest users aren’t streaking (left completely unprotected).\" But this is the reality: due to Xray-core’s poor security design and the human factors it created, users were forced to migrate from a secure old option to an insecure new one, and the \"endest users\" have been unwittingly left exposed for nearly a month. Xray-core itself is exactly the human factor that has left users insecure and \"streaking\".\nXray-core could have taken corrective action by disclosing the security vulnerability to the users, thereby motivating them to upgrade to a new version that patches the vulnerability and minimizing the impact as much as possible. Unfortunately, they chose to cover it up.\nAs of July 3, 2026, Xray-core still had not disclosed the vulnerability to the users.\nOn July 3, 2026 , I found that Xray-core’s fix for the vulnerability was incomplete; under certain circumstances, certificate verification could still be bypassed. To prevent the vulnerability from being maliciously concealed again, I had no choice but to report it via a GitHub Security Advisory. By that point, due to Xray-core's human factor, users had been unwittingly \"streaking\" for nearly half a year.\nThis is written in the hope that more people will realize how poor Xray-core's security record is.",
+      "facts": [
+        "※ 이 글은 취약점 신고자 본인(dyhkwong)이 2026-10-02 에 올린 일방 주장이다. 원문 첫 줄이 \"Disclaimer: I am the reporter of the vulnerability.\" 이고, 제목도 \"covered up(은폐)\" 라는 신고자의 평가. 은폐 여부는 확정 사실이 아니라 \"의혹\".",
+        "신고자 주장 타임라인: 2026-01-09 `pinnedPeerCertificateChainSha256` 제거·`pinnedPeerCertSha256` 도입 / 2026-01-13 취약점이 든 첫 버전 릴리스 / 2026-01-16 새 옵션이 일반 인증서 검증을 항상 생략하도록 로직 변경 / 2026-02-06 신고자가 비공개 제보, 같은 날 \"silently fixed\"(커밋 메시지는 \"simplify the code\") 및 새 버전 릴리스 / 2026-07-03 수정이 불완전함을 발견해 GitHub Security Advisory 로 재신고.",
+        "신고자가 설명한 공격: \"A man-in-the-middle attacker could insert a leaf certificate at any place in the certificate chain, and the custom certificate pinning logic would verify the leaf certificate successfully.\"",
+        "신고자 표현: 사용자가 \"nearly half a year\" 동안 노출돼 있었다고 주장(2026-01-13 ~ 2026-07).",
+        "이 글 시점(2026-10-02)까지 Xray-core 유지보수자의 공개 반박·해명은 검색과 HN 스레드에서 찾지 못함(unknowns 참고)."
+      ]
+    },
+    {
+      "title": "GHSA-5wf9-h793-w73c: Pinning a CA certificate via pinnedPeerCertSha256 can lead to the success of MITM attacks (Hy2, gRPC) — XTLS/Xray-core Security Advisory",
+      "url": "https://github.com/XTLS/Xray-core/security/advisories/GHSA-5wf9-h793-w73c",
+      "host": "github.com",
+      "tier": "official",
+      "publishedAt": "2026-07-10",
+      "body": "Security\nAdvisories\nGHSA-5wf9-h793-w73c\nPinning a CA certificate via pinnedPeerCertSha256 can lead to the success of MITM attacks (Hy2, gRPC)\nLow\nRPRX\npublished\nGHSA-5wf9-h793-w73c\nJul 10, 2026\nPackage\ngomod\ngithub.com/xtls/xray-core\n( Go )\nAffected versions\n>= v26.1.13\nPatched versions\n>= v26.7.11\nDescription\nSummary\nPinning a CA certificate via pinnedPeerCertSha256 can lead to the success of MITM attacks in some cases.\nDetails\nXray-core/transport/internet/tls/config.go\nLines 333 to 347\nin\n45cf289\nif verifyResult == foundCA { // if found CA, we need to verify here\nopts := x509. VerifyOptions {\nRoots : CAs ,\nCurrentTime : time . Now (),\nIntermediates : x509 . NewCertPool (),\nDNSName : r . Config . ServerName ,\n}\nfor _ , cert := range certs [ 1 :] {\nopts . Intermediates . AddCert ( cert )\n}\n[...]\n+R4HfxBhOuY6cvD0vEROIRntaqsj4zJXahlZZ9uG1EAYrY2tGKkCUMKN2IBE+WWS\n3YTH4WIOsCZriuaHIAyjsCcv\n-----END PRIVATE KEY-----\nExpected behavior: The client will fail to establish the connection.\nActual behavior: The client succeeds in establishing the connection.\nImpact\nXray-core from v26.1.13 to the latest version\nSeverity\nLow\nCVE ID\nNo known CVE\nWeaknesses\nWeakness\nCWE-297",
+      "facts": [
+        "Xray-core 공식 보안 권고(게시자 RPRX), 게시일 2026-07-10. Severity 표기 \"Low\", CVE \"No known CVE\", CWE-297. 영향 버전 \">= v26.1.13\", 패치 버전 \">= v26.7.11\".",
+        "제목에 \"(Hy2, gRPC)\" — 영향이 Hysteria dialer·gRPC 경로 등 ServerName 이 비는 경우로 한정됨. 본문: \"Pinning a CA certificate via pinnedPeerCertSha256 can lead to the success of MITM attacks in some cases.\"",
+        "조건(OSV 판 본문 포함): \"If a user pins a well-known and non-self-signed CA, an attacker can issue a leaf certificate through the Root CA (using the attacker’s own domain name or IP address) and hijack the connections.\" 또한 \"In most cases ... ServerName will usually not be empty.\" 라고 범위를 한정."
+      ]
+    },
+    {
+      "title": "GHSA-5wf9-h793-w73c — OSV (Open Source Vulnerabilities)",
+      "url": "https://osv.dev/vulnerability/GHSA-5wf9-h793-w73c",
+      "host": "osv.dev",
+      "tier": "data",
+      "publishedAt": "2026-10-02",
+      "body": "GHSA-5wf9-h793-w73c | published 2026-10-02T22:35:51Z | modified 2026-10-02T22:45:04.333746369Z\nsummary: Xray-core: Pinning a CA certificate via pinnedPeerCertSha256 can lead to the success of MITM attacks\n### Summary\n\nPinning a CA certificate via `pinnedPeerCertSha256` can lead to the success of MITM attacks in some cases.\n\n### Details\n\nhttps://github.com/XTLS/Xray-core/blob/45cf2898ab12e97a55dd8f1f3d78d903340bdc9e/transport/internet/tls/config.go#L333-L347\n\nIf `r.Config.ServerName` is empty, `DNSName` will be empty and `certs[0].Verify(opts)` will not verify against dNSName or iPAddress.\n\nIf a user pins a well-known and non-self-signed CA, an attacker can issue a leaf certificate through the Root CA (using the attacker's own domain name or IP address) and hijack the connections.\n\nIn Go crypto/tls, either ServerName or InsecureSkipVerify must be specified in the `tls.Config`. If the user specifies `pinnedPeerCertSha256`, InsecureSkipVerify will always be true so  ServerName can be empty.\n\nIn most cases, if the user does not specify the `serverName`, Xray-core will use the server address as the `r.Config.ServerName`.\n\nThanks to `GetTLSConfig(tls.WithDestination(dest))`, ServerName will usually not be empty.\n\nHowever, there are some leftovers:\n\n- https://github.com/XTLS/Xray-core/blob/45cf2898ab12e97a55dd8f1f3d78d903340bdc9e/transport/internet/hysteria/dialer.go#L348\n\n  `GetTLSConfig()` without `tls.WithDestination(dest)`.\n\n- https://github.com/XTLS/Xray-core/blob/45cf2898ab12e97a55dd8f1f3d78d903340bdc9e/transport/internet/grpc/dial.go#L139-L142\n\n  `GetTLSConfig()` without `tls.WithDestination(dest)`. Although ServerName will not be empty if `address` is a domain name, ServerName will be left empty if `address` is an IP address.\n\n  ServerName is not equivalent to SNI.\n\n  > ServerName is used to verify the hostname on the returned certificates unless InsecureSkipVerify is given. It is also included in the client's handshake to support virtual hosting unless it is an IP address.\n\nIn these cases, if the user does not specify the `serverName`, Xray will not use the server address as the `r.Config.ServerName` and `r.Config.ServerName` will be left empty.\nseverity vector: [{\"type\":\"CVSS_V4\",\"score\":\"CVSS:4.0/AV:A/AC:H/AT:P/PR:N/UI:N/VC:H/VI:H/VA:N/SC:N/SI:N/SA:N\"}]; database_specific: {\"severity\":\"HIGH\",\"github_reviewed\":true,\"github_reviewed_at\":\"2026-10-02T22:35:51Z\",\"nvd_published_at\":null,\"cwe_ids\":[\"CWE-297\"]}\naffected ranges: [[{\"type\":\"SEMVER\",\"events\":[{\"introduced\":\"1.260113.0\"},{\"fixed\":\"1.260327.1-0.20260710210335-64fada32b5b9\"}]}]]\nreferences: https://github.com/XTLS/Xray-core/security/advisories/GHSA-5wf9-h793-w73c , https://github.com/XTLS/Xray-core/pull/6472 , https://github.com/XTLS/Xray-core/commit/64fada32b5b9e6ae064a038fa0e4e2b766499bd5 , https://github.com/XTLS/Xray-core , https://github.com/XTLS/Xray-core/releases/tag/v26.7.11",
+      "facts": [
+        "OSV(GitHub reviewed) 레코드: published 2026-10-02T22:35:51Z, severity HIGH, CVSS v4.0 벡터 \"CVSS:4.0/AV:A/AC:H/AT:P/PR:N/UI:N/VC:H/VI:H/VA:N/SC:N/SI:N/SA:N\", CWE-297. (2026-10-02 은 DB 등재/리뷰 시각이며 Xray-core 쪽 권고 게시일 2026-07-10 과 다름.)",
+        "영향 범위: introduced 1.260113.0 ~ fixed 1.260327.1-0.20260710210335-64fada32b5b9. 수정 커밋 64fada32b5b9e6ae064a038fa0e4e2b766499bd5, 참조 릴리스 v26.7.11.",
+        "PoC 요지: 같은 CA 가 발급한 인증서 server1.crt(127.0.0.1)·server2.crt(127.0.0.2) 로, 클라이언트가 CA 해시를 pin 했을 때 호스트 불일치 서버에도 연결이 성공(Expected: 실패, Actual: 성공)."
+      ]
+    },
+    {
+      "title": "GHSA-5wf9-h793-w73c: Xray-core: Pinning a CA certificate ... — GitLab Advisory Database",
+      "url": "https://advisories.gitlab.com/golang/github.com/xtls/xray-core/GHSA-5wf9-h793-w73c/",
+      "host": "advisories.gitlab.com",
+      "tier": "data",
+      "publishedAt": "2026-10-02",
+      "body": "Xray-core: Pinning a CA certificate via pinnedPeerCertSha256 can lead to the success of MITM attacks | GitLab Advisory Database (GLAD)\nAdvisory Database\nMobile menu\nAdvisories\nDependency Scanning\ngolang\n&#8250;\ngithub.com/xtls/xray-core\n&#8250;\nGHSA-5wf9-h793-w73c\nGHSA-5wf9-h793-w73c: Xray-core: Pinning a CA certificate via pinnedPeerCertSha256 can lead to the success of MITM attacks\nOctober 2, 2026\nPinning a CA certificate via pinnedPeerCertSha256 can lead to the success of MITM attacks in some cases.\nReferences\ngithub.com /XTLS/Xray-core/commit/64fada32b5b9e6ae064a038fa0e4e2b766499bd5\ngithub.com /XTLS/Xray-core/pull/6472\ngithub.com /XTLS/Xray-core/releases/tag/v26.7.11\ngithub.com /XTLS/Xray-core/security/advisories/GHSA-5wf9-h793-w73c\ngithub.com /advisories/GHSA-5wf9-h793-w73c\nCode Behaviors & Features\nDetect and mitigate GHSA-5wf9-h793-w73c with GitLab Dependency Scanning\nSecure your software supply chain by verifying that all open source dependencies used in your projects\ncontain no disclosed vulnerabilities.\nLearn more about Dependency Scanning &rarr;\nAffected versions\nAll versions starting from 1.260113.0 before 1.260327.1-0.20260710210335-64fada32b5b9\nFixed versions\n1.260327.1-0.20260710210335-64fada32b5b9\nSolution\nUpgrade to version 1.260327.1-0.20260710210335-64fada32b5b9 or above.\nImpact\n6.8\nMEDIUM\nCVSS:3.1/AV:A/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N\nLearn more about CVSS\nWeakness\nCWE-297 : Improper Validation of Certificate with Host Mismatch\nSource file\ngo/github.com/xtls/xray-core/GHSA-5wf9-h793-w73c.yml\nSpotted a mistake?\nEdit the file on GitLab .\nSite Repo\nAbout GitLab\nTerms\nPrivacy Statement",
+      "facts": [
+        "GitLab Advisory DB(2026-10-02 표기): Affected \"All versions starting from 1.260113.0 before 1.260327.1-0.20260710210335-64fada32b5b9\", Impact \"6.8 MEDIUM\" (CVSS:3.1/AV:A/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N), CWE-297.",
+        "※ 같은 취약점의 심각도가 출처마다 다름: GitHub 권고 \"Low\" / OSV \"HIGH\"(CVSS v4 벡터) / GitLab \"6.8 MEDIUM\"(CVSS 3.1). conflicts 참고."
+      ]
+    },
+    {
+      "title": "Release Xray-core v26.2.6 · XTLS/Xray-core",
+      "url": "https://github.com/XTLS/Xray-core/releases/tag/v26.2.6",
+      "host": "github.com",
+      "tier": "official",
+      "publishedAt": "2026-02-06",
+      "body": "v26.2.6, RPRX released this 2026-02-06T10:05:09Z. XHTTP transport: New options for bypassing CDN's potential detection #5414 & Finalmask: Add XICMP , XDNS (relies on mKCP, like DNSTT), header-*, mkcp-*\n为了捍卫通信自由，本次重点更新内容：\nXHTTP 新增了一些选项，以绕过潜在的 CDN 检测（尚未定型，不建议第三方实现现在跟进），详见 #5414\nXray-core HTTP 请求的 User-Agent 均由 Go 改为动态 Chrome（可被 headers 等配置覆写），详见 #5658\nFinalmask UDP 新增了 XICMP 、 XDNS 、header-*、mkcp-*，分享链接标准 #716 已更新 fm 、 pcs 、 vcn\nFinalmask UDP 支持了 WireGuard、SS AEAD/2022 等代理层协议产生的 UDP 流量，详见 #5643\nTLS 移除了 allowInsecure 配置项，请使用 pinnedPeerCertSha256 和 verifyPeerCertByName 代替，详见 2c92339\n进一步降低了 Xray-core 启动时的瞬时内存占用 #5581 ，对于 iOS/router 请测试 #5505\nv26.2.6 包含一些 v26.1.23 新增功能的配置项变更、重要修复，请及时升级 Xray-core 以及 GUI 客户端\n[...]\nWhat's Changed (발췌)\nTLS config: allowInsecure -> pinnedPeerCertSha256 ; verifyPeerCertInNames -> verifyPeerCertByName by @RPRX in 2c92339\nCommands: Print leaf cert's SHA256 in tls ping by @Fangliding @RPRX in #5628\nMPH domian matcher: Support building & using cache directly (instead of building from geosite.dat when Xray starts) by @hossinasaadi in #5505\n[...]\nTLS client: Simplify cert's verification code by @Fangliding in #5656\nFull Changelog : v26.1.23...v26.2.6",
+      "facts": [
+        "신고자 이슈가 \"취약점 은폐\" 라고 지목한 2026-02-06 릴리스. 내가 읽은 릴리스 노트(영문 변경 로그·중문 하이라이트) 어디에도 보안 취약점/권고 언급은 없고, 변경 로그에 \"TLS client: Simplify cert's verification code by @Fangliding in #5656\" 항목이 있음(신고자가 말한 \"simplify the code\" 표현과 일치).",
+        "같은 릴리스 중문 하이라이트: \"TLS 移除了 allowInsecure 配置项，请使用 pinnedPeerCertSha256 和 verifyPeerCertByName 代替\" (allowInsecure 옵션 제거, pinnedPeerCertSha256·verifyPeerCertByName 로 대체).",
+        "이 릴리스 노트가 보안 수정 사실을 \"숨겼다\"고 단정할 근거는 노트 자체에 없음 — 노트에 언급이 없다는 사실만 확인됨."
+      ]
+    },
+    {
+      "title": "프록시 소프트웨어 Xray-core, 인증서 검증 우회 취약점 반년간 은폐 의혹 - GeekNews",
+      "url": "https://news.hada.io/topic?id=34810",
+      "host": "news.hada.io",
+      "tier": "blog",
+      "publishedAt": "2026-10-05",
+      "body": "취약점 신고자는 Xray-core 가 인증서 고정 로직의 검증 우회 취약점을 비공개 신고받아 수정하고도 사용자에게 알리지 않았다고 비판함\n2026년 1월 기존 인증서 체인 고정 옵션을 pinnedPeerCertSha256 으로 교체하면서 취약점이 유입됐으며, 기존 옵션 삭제로 사용자는 새 옵션으로 이전해야 했음\n이후 새 옵션이 일반 인증서 검증을 항상 생략 하도록 바뀌면서, 취약한 인증서 고정 로직만으로 중간자 공격을 막아야 하는 상태가 됨\n신고 내용에 따르면 공격자는 인증서 체인 내 임의 위치에 말단 인증서 를 삽입해 고정 검증을 통과하고 중간자 공격을 수행할 수 있었음\n2월 6일 수정 이후에도 특정 조건에서 우회가 가능 하다는 사실을 7월 3일 발견한 신고자는 GitHub Security Advisory로 다시 신고함\n기존 인증서 고정 방식과 보안 논쟁\n이 이슈는 취약점 신고자 본인 이 공개한 문제 제기로, Xray-core의 보안 설계와 취약점 비공개 처리에 대한 비판을 담고 있음\nXray-core 유지보수자들은 allowInsecure 와 같은 인증서 검증 생략 기능을 보안 조치 없이 사용자를 중간자 공격에 노출하는 것으로 비판해 왔다고 함\n2021년 10월 21일 추가된 pinnedPeerCertificateChainSha256 은 일반 인증서 검증과 인증서 체인 고정 을 함께 수행했음\n신고자에 따르면 기존 옵션에는 알려진 문제가 없었음\n자체 서명 인증서를 쓸 때는 allowInsecure 와 함께 활성화해 일반 검증만 생략하고, 인증서 체인 고정으로 안전하게 사용할 수 있었음\n새 옵션 도입과 검증 보호 계층 제거\n2026년 1월 9일 변경 으로 기존 옵션을 삭제하고 pinnedPeerCertSha256 을 도입했으나, 새 인증서 고정 로직에는 검증 우회 취약점이 있었음\n검증 생략으로 인한 무방비 노출을 막으려는 변경이었지만, 당시 자체 서명 인증서 사용에는 여전히 allowInsecure 와 새 옵션을 함께 활성화해야 했음\nv26.1.13 은 취약점이 포함된 첫 릴리스 였으며, 기존 옵션을 사용하던 사용자는 새 옵션으로 이전해야 했음\n이 시점에는 자체 서명 인증서를 쓰지 않고 allowInsecure 도 활성화하지 않으면 일반 인증서 검증이 일부 보호를 제공할 수 있었음\n1월 16일 변경 이후 pinnedPeerCertSha256 은 일반 인증서 검증을 항상 생략 하고 자체 고정 로직만 실행하게 됨\n고정 로직까지 우회되면 유효한 인증서 검증이 남지 않아 중간자 공격 이 가능해짐\n2월 6일 신고와 취약점 공지 없는 수정\n신고자는 2026년 2월 6일 취약점을 발견해 유지보수자에게 비공개로 신고함\n공격자가 인증서 체인의 임의 위치에 말단 인증서 를 삽입하면 자체 고정 로직이 이를 검증에 성공한 것으로 처리하는 문제였음\n신고자는 고급 보안 지식 없이도 한눈에 발견할 만큼 단순한 취약점이었다고 평가함\n당일 수정 커밋 은 취약점 수정 대신 “ 코드 단순화 ”를 이유로 내세웠으며, 같은 날 나온 v26.2.6 도 보안 취약점을 알리지 않았다고 함\n같은 날 Xray-core Telegram 채널 은 보안 중심 설계 와 인적 요인 제거를 통해 최종 사용자까지 무방비 상태에 놓이지 않도록 해야 한다고 강조함\n신고자는 오히려 프로젝트의 설계 변경이 안전한 기존 옵션에서 취약한 새 옵션으로 이전을 강제해, 사용자를 거의 한 달 동안 자신도 모르게 노출했다고 비판함\n취약점 공개와 수정 버전 업그레이드 유도 로 피해를 최소화할 수 있었지만, 신고자에 따르면 7월 3일까지도 사용자에게 취약점이 공개되지 않았음\n불완전한 수정과 재신고\n신고자는 2026년 7월 3일 기존 수정이 불완전하며, 특정 상황에서 인증서 검증을 여전히 우회할 수 있음을 발견함\n재차 은폐되는 일을 막기 위해 GitHub Security Advisory, GHSA-5wf9-h793-w73c 를 통해 신고함\n신고자는 이 시점까지 사용자가 거의 반년 동안 취약성을 인지하지 못한 채 노출 됐다고 비판하며, Xray-core의 보안 대응 문제를 더 널리 알리고자 이슈를 공개함",
+      "facts": [
+        "긱뉴스 topic(링크용). RSS 게시 2026-10-05T15:40:03+09:00. 긱뉴스 제목 자체가 \"은폐 의혹\" 으로 의혹 표현을 씀.",
+        "긱뉴스 요약도 \"이 이슈는 취약점 신고자 본인이 공개한 문제 제기\" 라고 명시."
+      ]
+    },
+    {
+      "title": "Introducing Web Search API · Cloudflare Changelog",
+      "url": "https://developers.cloudflare.com/changelog/post/2026-10-02-introducing-web-search-api/",
+      "host": "developers.cloudflare.com",
+      "tier": "official",
+      "publishedAt": "2026-10-02",
+      "body": "Web Search API is now available in beta. Web Search API lets your AI agents and applications search the Internet and ground their responses in live information, instead of guessing URLs or relying on a model's training cutoff.\nAt launch, you can choose between three search providers: Ceramic.ai, Exa, and Linkup . All three support Zero Data Retention for requests made through Cloudflare, and all have committed to Cloudflare's verified bot crawling standards.\nWeb Search API runs through AI Gateway , so search requests appear in your gateway logs and are billed to your AI Gateway credits at each provider's list API price, with no additional markup. You can also bring your own provider API key.\nCall Web Search API with the REST API:\ncurl https://api.cloudflare.com/client/v4/accounts/ $CLOUDFLARE_ACCOUNT_ID /ai/websearch/ \\\n--request POST \\\n--header \"Authorization: Bearer $CLOUDFLARE_API_TOKEN \" \\\n--header \"Content-Type: application/json\" \\\n--data '{\n\"query\": \"What are some fun things to do in Salt Lake City as fall approaches?\",\n\"provider\": \"ceramic\",\n\"limit\": 5,\n\"options\": { \"gateway\": { \"id\": \"default\" } }\n}'\nOr from a Worker with the AI binding:\nconst response = await env. AI . websearch ({\ngatewayId: \"default\" ,\nquery: \"What are some fun things to do in Salt Lake City as fall approaches?\" ,\nprovider: \"exa\" ,\nlimit: 5 ,\n});\nconst results = await response. json ();",
+      "facts": [
+        "2026-10-02 변경 로그: \"Web Search API is now available in beta.\" 제공 업체 3곳 Ceramic.ai, Exa, Linkup.",
+        "원문: \"All three support Zero Data Retention for requests made through Cloudflare, and all have committed to Cloudflare's verified bot crawling standards.\" (※ 같은 회사 docs 의 Providers 표는 Exa 를 ZDR \"No\" 로 표기 — conflicts 참고.)",
+        "원문: \"Web Search API runs through AI Gateway, so search requests appear in your gateway logs and are billed to your AI Gateway credits at each provider's list API price, with no additional markup. You can also bring your own provider API key.\"",
+        "호출 방법: REST `POST https://api.cloudflare.com/client/v4/accounts/$CLOUDFLARE_ACCOUNT_ID/ai/websearch/` (예시 limit 5), 또는 Worker 의 `env.AI.websearch({gatewayId, query, provider, limit})`."
+      ]
+    },
+    {
+      "title": "Introducing Web Search API via AI Gateway · The Cloudflare Blog",
+      "url": "https://blog.cloudflare.com/introducing-web-search-api/",
+      "host": "blog.cloudflare.com",
+      "tier": "official",
+      "publishedAt": "2026-10-02",
+      "body": "Today, we’re announcing Cloudflare’s partnership with web search providers to bring you grounded intelligence via AI Gateway. We’re kicking off this launch with our partners from Ceramic.ai, Exa, and Linkup.\nWhat can I do with the Web Search API?\nAI models are only as good as the context you feed them. Models are typically trained and then frozen at a point in time, operating only on information that existed before their knowledge cut off date. This makes it quite hard to engage with models about recent events, changing APIs, or fast-evolving news.\nIntegrating Web Search API directly into your inference pipeline equips your agents with a dynamic context layer. Your applications get fresh, structured snippets from the web injected straight into context, which gives your models access to live information.\nFor example, if your agent was building with Cloudflare developer tools, it might miss all the new products and features we’re releasing during this Birthday Week ! With web search, you’ll be able to retrieve the latest and greatest documentation and releases, so you can build faster and smarter.\nElevating the industry standard for web search\nAt Cloudflare, we believe that crawlers should be honest, transparent, and respect all bot rules and preferences, and that site owners should have meaningful transparency and control over how their content is used. With our launch today, we’re excited to announce that our partners have committed to meeting Cloudflare’s bot crawling standards.\nThe crawler used by the web search provider must comply with Cloudflare’s publicly stated requirements for “Verified bots” as defined in our developer documentation , and web search responses must include a link to the location of crawled content. These rules are net-positive for a fair Internet, and allow creators to decide what they want to do with their data.\nWe’re extremely excited to be taking another step in setting the bar for what it means to be a good crawler on the Internet, and even more proud of the web search partners who have risen to the challenge to uphold these standards with us. When you use web search on Cloudflare, you choose to consume search knowledge from operators committed to providing the transparency, control, and visibility that helps build a better Internet, by identifying their crawlers, respecting robots.txt, and providing the source of search results.\nUsing Web Search API via AI Gateway\nCloudflare’s AI Gateway is the flagship integration point for our new Web Search API product. AI Gateway is designed to be the control plane for your applications, with observability, unified billing, security, and access controls all built-in. Naturally, we thought web search would fit right in: you can consume web search with your AI Gateway credits; collect logs and request data on web search calls; and control who gets access to what web search providers.\nRequests show up in your normal AI Gateway observability logs, and web search queries draw down from your AI Gateway credit balance. We will identify partners supporting Zero Data Retention (ZDR), so that you know that your data is not retained. We also offer web search directly at list API pricing from our partners, without any additional markup. More details can be found on the web search developer docs .\nWe also support Bring-Your-Own-Key (BYOK) with web search providers, as we do with model inference providers. This way, you’re able to bring your existing organizational setup and get started with AI Gateway and web search in a few simple steps.\nDirect REST API\nIf you’re making HTTP calls from an existing backend, mobile app, or external service, you can query web search directly through a standard REST endpoint. Simply pass your AI Gateway authentication token, specify your preferred provider in the payload, and it will return web search results.",
+      "facts": [
+        "2026-10-02 Cloudflare 블로그(Birthday Week 태그), 저자 Michelle Chen·Sam Else·Gabriel Massadas. 목적: 모델의 학습 시점 이후 정보 부족 문제를 검색 결과를 컨텍스트에 넣어 보완.",
+        "원문: \"The crawler used by the web search provider must comply with Cloudflare's publicly stated requirements for 'Verified bots' ... and web search responses must include a link to the location of crawled content.\"",
+        "원문: \"We will identify partners supporting Zero Data Retention (ZDR), so that you know that your data is not retained.\" — 블로그는 업체별 ZDR 여부를 본문에서 표로 밝히지 않음.",
+        "\"Coming soon: Server tools\" — AI Gateway 에 서버 도구를 내장할 예정, 웹 검색이 첫 도구 중 하나(출시일 미정)."
+      ]
+    },
+    {
+      "title": "Providers · Cloudflare Web Search API docs",
+      "url": "https://developers.cloudflare.com/web-search/providers/",
+      "host": "developers.cloudflare.com",
+      "tier": "official",
+      "publishedAt": "2026-10-02",
+      "body": "Web Search API supports the following search providers. Set the provider parameter in your request to choose one. If you do not set a provider, Web Search API uses Ceramic.ai as default.\nWhen you pay with AI Gateway credits , each search is billed at the provider's list API price, with no additional markup. If you bring your own key , the provider bills you directly under your own agreement with them.\nCeramic.ai ↗︎\nCeramic.ai is the default provider for Web Search API. Ceramic.ai runs its own independent web index of more than 40 billion pages, designed for AI agents and LLM applications rather than human search.\nCeramic.ai focuses on low-latency, low-cost search, which makes it a good fit for agents that run many searches per task, for grounding chatbot answers in current information, and for checking model output against live web sources. Results include long descriptions of each page, up to 8,000 characters.\nProperty\nValue\nprovider\nceramic\nZero Data Retention\nYes\nPrice\n$0.25 per 1,000 requests\nDocumentation\nCeramic.ai documentation ↗︎\nTerms\nTerms of service ↗︎\nExa ↗︎\nExa is a search engine built for AI, with its own index that combines traditional keyword search with embeddings-based search. Web Search API uses the Exa Search API ↗︎ .\nRequests use Exa's auto search type, a balanced mode that Exa optimizes for both result quality and speed. Each result includes highlights — the text snippets from the page that are most relevant to your query — returned as the result description. Exa is a good fit when you want to pass concise, query-relevant excerpts straight into a model's context.\nProperty\nValue\nprovider\nexa\nZero Data Retention\nNo\nPrice\n$7.00 per 1,000 requests\nSearch mode\nauto search type, with page highlights returned as the result description\nDocumentation\nExa Search API documentation ↗︎\nTerms\nExa Terms (PDF) ↗︎\nLinkup ↗︎\nLinkup provides web search built for AI applications, returning sourced results with text snippets from across the web. Web Search API uses the Linkup Search API ↗︎ .\nRequests use Linkup's fast search depth with raw search results, so Linkup returns results without generating an answer. This makes Linkup a good fit for agent tool calls that need quick, cited results from trusted sources.\nProperty\nValue\nprovider\nlinkup\nZero Data Retention\nYes\nPrice\n$5.00 per 1,000 requests\nSearch mode\nfast search depth\nDocumentation\nLinkup documentation ↗︎\nTerms\nTerms of use ↗︎",
+      "facts": [
+        "Cloudflare docs(Last updated Oct 2, 2026) Providers 페이지: 기본 제공업체는 Ceramic.ai(\"If you do not set a provider, Web Search API uses Ceramic.ai as default\").",
+        "업체별 표 — Ceramic.ai: ZDR Yes, $0.25 per 1,000 requests, 자체 인덱스 \"more than 40 billion pages\" / Exa: ZDR No, $7.00 per 1,000 requests / Linkup: ZDR Yes, $5.00 per 1,000 requests.",
+        "\"When you pay with AI Gateway credits, each search is billed at the provider's list API price, with no additional markup. If you bring your own key, the provider bills you directly under your own agreement with them.\""
+      ]
+    },
+    {
+      "title": "Cloudflare web search for AI agents costs $0.25 to $7 per 1,000 requests - PPC Land",
+      "url": "https://ppc.land/cloudflare-web-search-for-ai-agents-costs-0-25-to-7-per-1-000-requests/",
+      "host": "ppc.land",
+      "tier": "press",
+      "publishedAt": "2026-10-04",
+      "body": "AI Gateway as the control layer\nWeb Search API is built on AI Gateway, which Cloudflare calls the flagship integration point for the product and describes as a control plane with observability, unified billing, security and access controls built in. The gateway sits between an organization's applications and the AI providers it relies on, and it gained dollar-denominated spend limits in public beta on June 5, 2026 .\nFor search, requests appear in the normal AI Gateway logs, queries draw down the AI Gateway credit balance, and administrators decide which providers a gateway may reach. Cloudflare says it will identify partners that support Zero Data Retention (ZDR), so that the data is known not to be retained, and that it offers search at the providers' list API prices without additional markup. Bring-your-own-key (BYOK) is supported, as it is for model inference providers.\n[...]\nProvider Index and search mode Zero Data Retention List price per 1,000 requests\nCeramic.ai (default) Own index of more than 40 billion pages; descriptions up to 8,000 characters Yes $0.25\nExa Own index combining keyword and embeddings-based search; auto search type, page highlights returned as the description No $7.00\nLinkup fast search depth, raw results with no generated answer Yes $5.00\nThe spread between the cheapest and the dearest entry is 28-fold, but the products are not like for like. Exa returns query-relevant excerpts, Ceramic.ai returns long page descriptions and Linkup returns sourced snippets without composing an answer. For scale, an agent task that runs 20 searches would cost between half a US cent and 14 cents at list prices, arithmetic that excludes model tokens and any provider-side volume terms. With BYOK the provider bills the customer directly under its own agreement, and Cloudflare's credits drop out of the picture.\nBecause the default is Ceramic.ai, a client that omits the provider field lands on the cheapest entry and on one of the two that support ZDR. Ceramic.ai is also a counterparty elsewhere in Cloudflare's publisher programme: on July 1, 2026, Cloudflare said Ceramic.ai and You.com would pay publishers per query result rather than per page fetch , with Ceramic.ai's founder and chief executive, Anna Patterson, quoted in the announcement. The Web Search API post says nothing about publisher payments.",
+      "facts": [
+        "PPC Land(Luis Rijo) 2026-10-04 기사: 가격 차이는 최저 $0.25 ~ 최고 $7.00 으로 28배, 단 제공 결과 형태가 달라 동일 비교는 아님.",
+        "기사 표: Ceramic.ai(기본) ZDR Yes $0.25 / Exa ZDR No $7.00 / Linkup ZDR Yes $5.00 — docs 와 일치. \"a client that omits the provider field lands on the cheapest entry and on one of the two that support ZDR.\" (즉 ZDR 지원은 3곳 중 2곳.)",
+        "기사 지적: 블로그 샘플 코드가 선언 없는 `model`·`prompt` 변수를 써서 \"an outline rather than something that runs as printed\"."
+      ]
+    },
+    {
+      "title": "Cloudflare, AI 에이전트를 위한 Web Search API 베타 공개 - GeekNews",
+      "url": "https://news.hada.io/topic?id=34826",
+      "host": "news.hada.io",
+      "tier": "blog",
+      "publishedAt": "2026-10-05",
+      "body": "Cloudflare가 Web Search API 를 베타로 공개해, AI 에이전트와 애플리케이션이 인터넷을 검색하고 실시간 정보를 근거로 응답할 수 있게 함\n출시 시점에는 Ceramic.ai, Exa, Linkup 의 세 검색 제공업체를 선택할 수 있음\n세 제공업체 모두 Cloudflare를 통한 요청에 데이터 무보관(Zero Data Retention) 을 지원하며, Cloudflare의 검증된 봇 크롤링 표준을 준수하기로 약속함\n검색 요청은 AI Gateway 를 거쳐 로그에 기록되며, 추가 할증 없이 각 제공업체의 API 정가로 AI Gateway 크레딧에서 과금됨\nREST API 또는 Worker의 AI 바인딩으로 호출할 수 있으며, 사용자가 보유한 검색 제공업체 API 키도 사용할 수 있음\n실시간 웹 검색과 제공업체\nWeb Search API 가 베타로 제공됨\nAI 에이전트와 애플리케이션이 URL을 추측하거나 모델의 학습 시점에 의존하는 대신, 인터넷을 검색해 실시간 정보 를 응답의 근거로 사용할 수 있음\n출시 시 선택 가능한 검색 제공업체 는 Ceramic.ai, Exa, Linkup 임\n세 업체 모두 Cloudflare를 통한 요청에 데이터 무보관 을 지원함\n모두 Cloudflare의 검증된 봇 크롤링 표준 을 준수하기로 약속함\nAI Gateway 연동과 과금\n검색 요청은 AI Gateway 를 통해 처리되어 게이트웨이 로그에 표시됨\n비용은 각 제공업체의 API 정가 를 기준으로 AI Gateway 크레딧에서 청구되며, 추가 할증은 없음\n사용자가 보유한 제공업체 API 키 를 가져와 사용할 수도 있음\n호출 방식\nREST API 는 /client/v4/accounts/$CLOUDFLARE_ACCOUNT_ID/ai/websearch/ 에 POST 요청을 보내 호출함\n예제는 Bearer 토큰 인증과 JSON 본문을 사용하며, query , provider , limit , options.gateway.id 를 지정함\nWorker에서는 AI 바인딩 의 env.AI.websearch() 를 호출함\ngatewayId , query , provider , limit 를 전달하고, 반환된 응답을 response.json() 으로 읽음\n시작 절차는 Web Search API 사용 방법 에서 확인할 수 있음",
+      "facts": [
+        "긱뉴스 topic(링크용). RSS 게시 2026-10-05T22:37:41+09:00. 원문은 Cloudflare 변경 로그.",
+        "긱뉴스 요약은 \"세 제공업체 모두 Cloudflare를 통한 요청에 데이터 무보관(Zero Data Retention) 을 지원함\" 이라고 변경 로그 문장을 그대로 옮김 — docs 표(Exa=No)와 어긋남."
+      ]
+    },
+    {
+      "title": "Introducing Beam: Reflection’s 501B open-weight model — Reflection",
+      "url": "https://reflection.ai/blog/introducing-beam",
+      "host": "reflection.ai",
+      "tier": "official",
+      "publishedAt": "2026-10-05",
+      "body": "We are introducing Beam, Reflection’s first open-weight model. Beam is a sparse Mixture-of-Experts model with 501 billion total parameters, 23 billion active, built for coding, reasoning, and agentic workloads.\n Beam’s capabilities come from major investments in both pretraining and reinforcement learning (RL). We pretrained the model on 23.8 trillion diverse, curated, high-quality tokens from the web and proprietary licensed datasets, matching or outperforming available similar-sized open base models. In parallel, we developed the algorithms, training environments, and infrastructure needed to sustain high-compute RL at exceptional scale. Our high-compute RL run generated over 100 million rollouts on 10.5K NVIDIA GB300 GPUs over 4 weeks of training.\n Together, these efforts produced competitive open-weight performance with frontier inference compute efficiency.\n Beam is undergoing final red-teaming and evaluations. You can sign up here for early access to the model. We will release the weights, technical report, model card, and developer artifacts later this month.\n Model Capability\n We trained Beam with a particular focus on coding and agentic performance. Beam advances the Western open-weight frontier and is competitive with larger open models like GLM 5.2 and approaching Qwen 3.8-Max on coding and agentic tasks. Where frontier open models like Kimi K3 remain ahead on raw capability, Beam's advantage is efficiency at inference time.\n[...]\nSWE Bench Pro v1 65.5 54.3 46.4 62.1 NR NR 67.7 NR\nTerminal Bench v2.1 80.1 63.8 56.4 81.0 88.2 88.3 86.6 90.6\nAIME 2026 97.8 97.1 NR 99.2 NR NR NR NR\nGPQA Diamond 90.5 87.2 87 91.2 91.7 93.5 92.6 90.9\n(열 순서: Beam, Inkling, Nemotron 3 Ultra, GLM 5.2, GLM 5.3, Kimi K3, Qwen 3.8 Max, DeepSeek V4.1 Flash)\n[...]\nBeam pairs coding and agentic capabilities with highly efficient reasoning. On advanced reasoning benchmarks, it achieves scores comparable to GLM-5.2 while using 3–4× less inference compute. Efficiency gains are even more pronounced when comparing to models in the 2T+ parameter family like Qwen 3.8-Max, which require significantly more inference compute per token.\n[...]\nBeam was pretrained end-to-end in under four weeks on a cluster of 6,144 NVIDIA GB300 NVL72 GPUs. To achieve the reliability, performance, and development velocity required to train Beam at scale, we built nearly the entire infrastructure stack in-house. This included a novel topology-aware, Kubernetes-based scheduler across our clusters; an internal node lifecycle system with continuous health monitoring and alerts; and a silent data corruption (SDC) detection system capable of semi-autonomous rewinds and restarts. Together, these systems gave us the performance and operational control required to train our own frontier model efficiently and with greater stability.\n[...]\nThis preview shows what Beam can do today. We are making this early version of Beam available to a select group of users; you can sign up for the waitlist here .\n We want Beam to be widely accessible and easy to build on. This month, we will release the weights under an Apache 2.0 license, along with documentation and the full stack for running, evaluating, and fine-tuning the model. We will be launching Beam with an ecosystem of distribution partners, as well as integration with a broad range of open source libraries and harnesses, so developers can use Beam across existing open-source workflows.",
+      "facts": [
+        "2026-10-05 Reflection 공식 블로그. 원문: \"Beam is a sparse Mixture-of-Experts model with 501 billion total parameters, 23 billion active, built for coding, reasoning, and agentic workloads.\"",
+        "사전학습: \"We pretrained the model on 23.8 trillion diverse, curated, high-quality tokens\" — \"Beam was pretrained end-to-end in under four weeks on a cluster of 6,144 NVIDIA GB300 NVL72 GPUs.\" 강화학습(RL)은 별도로 \"over 100 million rollouts on 10.5K NVIDIA GB300 GPUs over 4 weeks of training\" (두 수치는 서로 다른 단계 — 합치지 말 것).",
+        "미세 구분: RL 단계 \"maximum context length of 256K tokens\", 중간학습(midtraining)으로 \"effective context length to 1M tokens\". \"approximately 1.3 billion sandboxes\", \"one million\" 규모 환경 풀.",
+        "자체 보고 벤치마크(표 일부, Beam vs GLM 5.2 vs Kimi K3 vs Qwen 3.8 Max): SWE Bench Pro v1 65.5 vs 62.1 vs NR vs 67.7 / Terminal Bench v2.1 80.1 vs 81.0 vs 88.3 vs 86.6 / AIME 2026 97.8 vs 99.2 / GPQA Diamond 90.5 vs 91.2 vs 93.5 vs 92.6. (NR = 미보고)",
+        "원문 포지셔닝: \"competitive with larger open models like GLM 5.2 and approaching Qwen 3.8-Max on coding and agentic tasks. Where frontier open models like Kimi K3 remain ahead on raw capability, Beam's advantage is efficiency at inference time.\" 효율: \"comparable to GLM-5.2 while using 3–4× less inference compute\" (advanced reasoning benchmarks 기준, FLOPs ≈ 2 × active parameter count × mean generated tokens 로 추정한 근사치 — 원문이 \"approximate compute comparison rather than measured inference cost\" 라고 밝힘).",
+        "공개 상태: \"Beam is undergoing final red-teaming and evaluations.\" 가중치는 \"This month, we will release the weights under an Apache 2.0 license\" — 즉 2026-10-06 현재 가중치 미공개, 대기자(waitlist) 대상 초기 버전만 제공."
+      ]
+    },
+    {
+      "title": "Reflection debuts Beam, an open-weight AI model to rival Chinese models at lower compute cost - TechCrunch",
+      "url": "https://techcrunch.com/2026/10/05/reflection-debuts-beam-a-open-weight-ai-model-to-rival-chinese-models-at-lower-compute-cost/",
+      "host": "techcrunch.com",
+      "tier": "press",
+      "publishedAt": "2026-10-05",
+      "body": "Reflection AI is officially unveiling Beam, its first frontier, open-weight AI model. The two-year-old, Brooklyn-based startup claims Beam matches the performance of leading Chinese open models on advanced reasoning benchmarks at dramatically lower costs, a claim that could heat up the race to build a Western answer to DeepSeek, Qwen, and Z.ai.\nReflection’s announcement confirms reporting from Axios over the weekend that the startup was close to a launch. The company shared new details in a lengthy blog post Monday , which described Beam as a text-only mixture-of-experts model trained on high-compute reinforcement learning to be effective at reasoning, coding, and agentic tasks at “a fraction of the token cost and inference time compute” of rivals.\nBeam is a 501-billion-parameter model with 23 billion active parameters. It was pretrained on 23.8 trillion tokens and has a 1 million token context window. To compare, Z.ai’s GLM-5.2 has roughly 744 billion total parameters with 40 billion active.\nReflection’s performance claims haven’t been independently verified, but on advanced reasoning benchmarks, the company says Beam scores on par with Z.ai’s GLM-5.2 and outperforms today’s leading Western open models while using “3-4x less inference compute.” Reflection calls it a “workhorse model” for enterprises, the public sector, and developers.\nReflection is positioning itself against closed labs like Anthropic and OpenAI, against popular open models from Chinese developers, and against Western players like Mistral, Meta, and Cohere. Its most direct U.S. rival might be Inkling , the open model from Mira Murati’s Thinking Machines Lab released in July. Reflection’s own benchmarks show that Beam outscores Inkling on four coding tests where both report results, but Inkling is a multimodal model and Beam is text-only.\nReflection was founded in 2024 by two former Google DeepMind researchers and has raised roughly $4.7 billion from backers, including Nvidia, Sequoia Capital, and Lightspeed Venture Partners, per PitchBook. Its last round valued the company at a $25 billion pre-money valuation .\nThe startup has also been locking up compute — a key ingredient needed to train frontier models capable of luring customers away from Anthropic’s and OpenAI’s closed models, as well as the cheaper open-weight models from Chinese labs. This summer, Reflection signed deals collectively worth more than $7 billion with SpaceX and Nebius to secure access to Nvidia’s GB300 chips through 2029.\nReflection is aiming Beam and future models at enterprises and sovereign nations. The pitch is to build “AI factories,” a product that would let institutions build their own customized, local AI system by training Reflection’s AI models on their own proprietary data. Nvidia CEO Jensen Huang, whose company backs Reflection, has long championed the “AI factory” idea and pushed to strengthen the open AI ecosystem — a vision that would also benefit Nvidia, whose GPUs would power those systems.\nAxios reported that hedge funds and trading firms are among those eager to build such systems. Reflection has already begun testing the concept of a sovereign AI factory partnership with Shinsegae Group in South Korea .\nReflection says it will release Beam’s weights and full technical details this month, with distribution through hyperscalers and neoclouds and integrations across open source libraries at launch.\nReflection did not respond in time to TechCrunch’s requests for more information.\nTopics\nAI , beam , nvidia , open source , open weight , reflection ai\nWhen you purchase through links in our articles, we may earn a small commission . This doesn’t affect our editorial independence.\nRebecca Bellan\nSenior Reporter\nRebecca Bellan is a senior reporter at TechCrunch where she covers the business, policy, and emerging trends shaping artificial intelligence. Her work has also appeared in Forbes, Bloomberg, The Atlantic, The Daily Beast, and other publications.\nYou can contact or verify outreach from Rebecca by emailing rebecca.bellan@techcrunch.com or via encrypted message at rebeccabellan.491 on Signal.\nView Bio\nOctober 13 &#8211; 15\nSan Francisco\nGet 50% off a second pass\nThe Disrupt experience is meant to be shared. Get your pass and bring a colleague, partner, or peer at 50% off. Cover more ground by making connections, building momentum, and discovering what’s next in the startup ecosystem.\nBOOK NOW\nMost Popular\nFederal judge calls Flock ‘indiscriminate mass surveillance’\nAnthony Ha\nAmazon responds to data center backlash, says it no longer uses NDAs\nAnthony Ha\nMeta wants your next gadget to be Muse-infused\nKirsten Korosec\nGoogle thinks SpaceX’s Starship has to launch 1,800 times before space data centers get off the ground\nTim Fernholz\nWorld’s first enhanced geothermal power plant completed in just 23 months\nTim De Chant\nGoogle releases Gemini 4 Argon, called its most powerful model yet\nLucas Ropek\nThe Pentagon taps Elon Musk and Palmer Luckey to help decide what the military should do next\nDominic-Madori Davis\nLoading the next article\nError loading the next article\nX\nLinkedIn\nFacebook\nInstagram\nyouTube\nMastodon\nThreads\nBluesky\nTechCrunch\nStaff\nContact Us\nAdvertise\nSite Map\nTerms of Service\nPrivacy Policy\nRSS Terms of Use\nCode of Conduct\nOpenAI\nHugging Face\nFlock\nStartup Battlefield\nDisrupt 2026\nTech Layoffs\nChatGPT\n© 2026 TechCrunch Media LLC.",
+      "facts": [
+        "TechCrunch(Rebecca Bellan) 2026-10-05 12:33 PM PDT. 핵심 단서: \"Reflection’s performance claims haven’t been independently verified\" — 성능 수치는 회사 자체 주장.",
+        "TechCrunch 서술: Beam 은 \"501-billion-parameter model with 23 billion active parameters. It was pretrained on 23.8 trillion tokens and has a 1 million token context window.\" 비교로 \"Z.ai’s GLM-5.2 has roughly 744 billion total parameters with 40 billion active\" (TechCrunch 서술, Reflection 블로그에는 없는 수치).",
+        "TechCrunch: Reflection 은 2024년 설립, PitchBook 기준 약 47억 달러 조달, 직전 라운드 평가가치 250억 달러(pre-money), 이번 여름 SpaceX·Nebius 와 70억 달러 이상 규모 GB300 접근 계약. \"Beam outscores Inkling on four coding tests where both report results, but Inkling is a multimodal model and Beam is text-only.\""
+      ]
+    },
+    {
+      "title": "Reflection AI Unveils Beam, a 501B-Parameter Open-Weight Model - Unite.AI",
+      "url": "https://www.unite.ai/reflection-ai-unveils-beam-a-501b-parameter-open-weight-model/",
+      "host": "www.unite.ai",
+      "tier": "press",
+      "publishedAt": "2026-10-05",
+      "body": "Reflection AI introduced Beam on October 5, 2026, its first open-weight model: a sparse Mixture-of-Experts system with 501 billion total parameters and 23 billion active, built for coding, reasoning, and agentic workloads.\nBeam is undergoing final red-teaming and evaluations, and an early version is being offered to a select group of users through a waitlist. Reflection described Beam as the first model in a series and said it is already training what comes next.\nCapability and Efficiency Claims\nReflection said it trained Beam with a particular focus on coding and agentic performance. The company described the model as competitive with larger open models such as GLM 5.2 and as approaching Qwen 3.8-Max on coding and agentic tasks, while acknowledging that Kimi K3 remains ahead on raw capability; it characterized Beam’s advantage as inference-time efficiency and said the model advances what it calls the Western open-weight frontier.\nScores Reflection reported from its evaluation suite include 80.1 on Terminal Bench v2.1, 80.9 on SWEBench Verified, 77.2 on SWE Bench Pro v2-Hard, 97.8 on AIME 2026, 36.2 on Humanity’s Last Exam without tools, and 90.5 on GPQA Diamond.\nOn efficiency, the company reported that Beam achieves scores comparable to GLM-5.2 on advanced reasoning benchmarks while using three to four times less inference compute, with larger gains against models with more than two trillion parameters, such as Qwen 3.8-Max. According to the post, the estimates draw on Artificial Analysis and DataCurve data and approximate generation compute as twice the active parameter count multiplied by mean generated tokens per attempt; because the figures exclude prompt prefill, attention operations, and serving overhead, Reflection described them as an approximate compute comparison rather than measured inference cost.\nReflection said it also trained Beam with a controllable length penalty that rewards successful solutions while discouraging unnecessary tokens, and that a user-facing reasoning-effort parameter lets users trade token usage against performance, with lower settings favoring shorter responses and higher settings allowing longer reasoning on demanding tasks.",
+      "facts": [
+        "Unite.AI 2026-10-05 기사. 바이라인이 \"Jonas Reeve, Cognitive AI & AGI AI Research Agent\"(AI 에이전트 표기) — 독립 취재 아닌 Reflection 발표 재서술로 보이므로 보조 확인용으로만.",
+        "재서술된 수치: Terminal Bench v2.1 80.1, SWEBench Verified 80.9, SWE Bench Pro v2-Hard 77.2, AIME 2026 97.8, HLE(no tools) 36.2, GPQA Diamond 90.5 — Reflection 블로그 표와 일치."
+      ]
+    },
+    {
+      "title": "Beam - Reflection의 5,010억 매개변수 오픈 웨이트 모델 - GeekNews",
+      "url": "https://news.hada.io/topic?id=34839",
+      "host": "news.hada.io",
+      "tier": "blog",
+      "publishedAt": "2026-10-05",
+      "body": "Reflection이 코딩, 추론, 에이전트 작업용 첫 오픈 웨이트 모델 Beam 을 소개함. 총 5,010억 개 중 230억 개 매개변수를 활성화하는 희소 MoE 구조이며, 현재 최종 레드팀 테스트와 평가를 진행 중임\n코딩과 에이전트 작업에서 GLM 5.2와 경쟁하고 Qwen 3.8-Max에 근접 하는 성능을 보임. Kimi K3 등에는 절대 성능에서 뒤지지만, 고급 추론 벤치마크에서는 GLM 5.2와 비슷한 점수를 추론 연산량의 3~4분의 1로 달성함\n23.8조 토큰 사전학습 과 대규모 강화학습을 결합함. 강화학습에는 NVIDIA GB300 GPU 10,500개를 4주간 투입했으며, 연산량을 늘리는 동안 평가 성능의 정체는 관찰되지 않음\n불필요한 토큰을 억제하는 길이 페널티 로 성능과 토큰 사용량의 절충을 개선함. 사용자는 추론 노력 설정을 통해 작업 난도와 연산 예산에 맞춰 응답 길이와 추론 수준을 조절할 수 있음\n이달 중 Apache 2.0 라이선스로 가중치를 공개하고, 기술 보고서, 모델 카드, 실행/평가/미세조정 도구를 제공할 계획임. 현재는 일부 사용자에게 초기 버전을 제공하며 조기 접근 신청을 받고 있음\n모델 성능과 추론 효율\nBeam 은 총 5,010억 개 매개변수 중 230억 개를 활성화하는 희소 혼합 전문가 모델(Mixture-of-Experts, MoE)로, 코딩과 에이전트 성능에 중점을 둠\n서구권 오픈 웨이트 모델의 성능 경계를 확장하며, 더 큰 GLM 5.2와 경쟁하고 코딩 및 에이전트 작업에서 Qwen 3.8-Max에 근접함\nKimi K3 같은 선도 오픈 모델은 절대 성능에서 앞서며, Beam의 차별점은 추론 시 효율에 있음\n코딩 벤치마크 에서는 GLM 5.2와 비슷하거나 일부 더 높은 점수를 기록했으나, 최신 상위 모델과의 격차도 남아 있음\nSWE Bench Pro v1은 Beam 65.5, GLM 5.2 62.1, Qwen 3.8 Max 67.7임\nTerminal Bench v2.1은 Beam 80.1, GLM 5.2 81.0, Qwen 3.8 Max 86.6, Kimi K3 88.3, DeepSeek V4.1 Flash 90.6임\nDeepSWE v1.1은 Beam 44.4, GLM 5.2 44.0, Kimi K3 68.0, DeepSeek V4.1 Flash 74.2임\nSWE Bench Pro v2-Hard 77.2, SWE Atlas Codebase QnA 34.6, SWEBench Multilingual 78.0, SWEBench Verified 80.9를 기록함\n추론 및 STEM 평가 에서는 AIME 2026 97.8, 도구 없는 HLE 36.2, SciCode 49.7, CriPT AA 16.3, GPQA Diamond 90.5를 기록함\nGLM 5.2는 AIME 2026 99.2, 도구 없는 HLE 40.5, GPQA Diamond 91.2를 기록함\n고급 추론 벤치마크에서 GLM 5.2와 비슷한 수준의 성능을 추론 연산량의 3~4분의 1 로 달성함\nQwen 3.8-Max 같은 2조 개 이상 매개변수 모델은 토큰당 훨씬 많은 추론 연산을 요구하므로 효율 차이가 더 커짐\n도구 호출과 검색 에서는 MCP Atlas 78.7로 GLM 5.2의 77.8을, AutomationBench public 37.0으로 GLM 5.2의 26.2를 웃돎\ntau3 banking은 38.0으로 GLM 5.2와 Kimi K3의 37.1보다 높지만 Qwen 3.8 Max의 55.2보다 낮음\n문맥 관리를 적용한 BrowseComp는 77.4, DeepSearchQA는 80.1이며, Kimi K3는 각각 91.2와 95.0임\n일반 역량 평가 에서는 AA-LCR 79.3, LongBench v2 65.5, IFBench 79.7, AA Omniscience 지수 13.0을 기록함\nAA Omniscience는 공개 분할만 사용한 Reflection 자체 평가이며, 비교표의 NR은 점수가 보고되지 않았다는 뜻임\nReflection은 이러한 성능과 효율의 조합을 기업용 코딩 및 에이전트 작업에서 비용을 낮추는 기반으로 삼음\n대규모 강화학습과 효율적인 추론\n고연산량 강화학습(RL) 을 핵심 확장 축으로 삼아 문제 해결 전략을 더 폭넓게 탐색하도록 학습함\n긴 실행 궤적(rollout)은 다단계 추론, 도구 사용, 환경 피드백에 대한 적응을 지원함\nNVIDIA GB300 GPU 10,500개로 4주간 1억 건 이상을 생성했으며, 최대 문맥 길이는 256K 토큰임\n학습과 채점에 약 13억 개 샌드박스를 사용하고, 코딩/에이전트/STEM 분야의 고품질 환경 약 100만 개를 확보함\nReflection은 이를 오픈 모델 연구 조직이 수행한 최대 규모 RL 실행 중 하나로 평가하며, 평가군 전반에서 연산량 증가에 따른 성능 정체는 관찰하지 못함\n비동기 정책 경사법 에서는 오래된 정책으로 생성한 데이터가 학습을 불안정하게 만드는 문제가 있음\n긴 실행 궤적에는 여러 모델 체크포인트가 생성한 토큰이 섞이고, 앞부분 토큰은 현재 정책과의 차이가 점차 커짐\n학습 엔진과 추론 엔진의 수치적 불일치가 문제를 가중함\n새 알고리듬과 파이프라인 전반의 불일치 감소를 통해, 하루 이상 전에 생성한 상호작용으로도 안정적인 완전 비동기 RL을 수행함\n조절 가능한 길이 페널티 는 성공적인 해결에 보상을 주면서 불필요한 토큰 사용을 억제함\nRL 초기에는 출력 길이가 줄면서도 성능이 개선됐고, 이후 에이전트 역량이 강해지면서 길이가 다시 늘었지만 추가 토큰이 성능 향상으로 이어짐\n전반적으로 성능과 토큰 사용량 사이의 절충이 개선됨\n사용자는 추론 노력 매개변수 를 낮춰 짧은 응답을 유도하거나, 높여 어려운 작업에 더 긴 추론을 허용할 수 있음\n학습 과제 밖으로의 일반화와 환경 품질\n추론, 소프트웨어 엔지니어링, 터미널 작업을 학습한 단계에서 브라우징 과제 없이도 브라우징 성능이 꾸준히 향상 됨\n이러한 전이는 영역을 넘나드는 더 일반적인 에이전트 역량을 학습했을 가능성을 뒷받침함\n웹 접근 권한을 주자 다른 대형 언어 모델을 검색하고 질의하거나, OCR API로 문서를 읽는 행동을 스스로 학습함\n텍스트 전용 모델 이지만 다른 모달리티의 정보도 텍스트로 표현하면 처리할 수 있음\n연구, 애플리케이션 개발, 게임 플레이, 머신러닝 작업 시연에서 추론, 코딩, 도구 사용을 결합함\n공개 데이터로 실시간 NYC 지하철 대시보드를 만들고, 상호작용형 앱과 모델 미세조정 노트북을 생성함\n학습 분포 밖 작업으로 최신 Gemma-4의 가장 작은 모델을 Text2SQL 작업에 미세조정",
+      "facts": [
+        "긱뉴스 topic(링크용). RSS 게시 2026-10-06T05:40:52+09:00(= 10-05 20:40 UTC). 원문은 Reflection 블로그.",
+        "긱뉴스 요약: \"강화학습에는 NVIDIA GB300 GPU 10,500개를 4주간 투입\" (블로그의 \"10.5K\" 를 환산), \"이달 중 Apache 2.0 라이선스로 가중치를 공개\"."
+      ]
+    },
+    {
+      "title": "rcalixte/ncdu — NCurses Disk Usage (an updated fork) · GitHub",
+      "url": "https://github.com/rcalixte/ncdu",
+      "host": "github.com",
+      "tier": "official",
+      "publishedAt": "2026-10-04",
+      "body": "ncdu-zig\nDescription\nNcdu is a disk usage analyzer with an ncurses interface. It is designed to find\nspace hogs on a remote server where you don't have an entire graphical setup\navailable, but it is a useful tool even on regular desktop systems. Ncdu aims\nto be fast, simple and easy to use, and should be able to run in any minimal\nPOSIX-like environment with ncurses installed.\nSee the ncdu 2 release announcement for\ninformation about the differences between this Zig implementation (2.x) and the\nC version (1.x).\nRequirements\nZig 0.17\nSome sort of POSIX-like OS\nncurses\nlibzstd\nInstall\nYou can use the Zig build system if you're familiar with that.\nThere's also a handy Makefile that supports the typical targets, e.g.:\nmake\nsudo make install PREFIX=/usr\nAbout\nNCurses Disk Usage (an updated fork)",
+      "facts": [
+        "README 원문: \"Ncdu is a disk usage analyzer with an ncurses interface. It is designed to find space hogs on a remote server where you don't have an entire graphical setup available, but it is a useful tool even on regular desktop systems.\"",
+        "요구 사항(README): \"Zig 0.17\", POSIX 계열 OS, ncurses, libzstd. 2.x = Zig 구현, 1.x = C 구현. 빌드는 Zig 빌드 시스템 또는 `make` / `sudo make install PREFIX=/usr`.",
+        "저장소 About 문구는 \"NCurses Disk Usage (an updated fork)\". 조회 시점 stars 34, forks 1(작은 신생 포크). 이 포크는 업스트림 공식 저장소가 아님.",
+        "포크 작성자 rcalixte 의 설명(lobste.rs 댓글): Zig 언어·라이브러리 변경 따라가기가 주 작업, \"Zig 0.16's Io changes\" 와 zig fmt 가 diff 의 대부분, \"Fedora is already packaging an alternate fork of this project as well\", Debian 은 Zig 패키징에 막혀 있음."
+      ]
+    },
+    {
+      "title": "ncdu: NCurses Disk Usage (an updated fork) | Lobsters",
+      "url": "https://lobste.rs/s/dsoh2w/ncdu_ncurses_disk_usage_updated_fork",
+      "host": "lobste.rs",
+      "tier": "blog",
+      "publishedAt": "2026-10-04",
+      "body": "ncdu: NCurses Disk Usage (an updated fork) | Lobsters\nLobsters\nActive\nRecent\nComments\nSearch\nLogin\n47\nncdu: NCurses Disk Usage (an updated fork)\nrelease\nzig\ngithub.com/rcalixte\nauthored by\nrcalixte\n2026-10-04 14:30:36\n|\ncaches\nArchive.org\nGhostarchive\n|\n18 comments\nPreview\n60\ntaschmex\n2026-10-04 17:10:55\nSome relevant context is that the original author, yorhel, passed away earlier this year .\n20\npm\n2026-10-04 19:10:35\nI didn't know this. Tragic news. I've used ncdu for many years. Tremendously useful piece of software. It turns the task of freeing up disk space from an annoying chore to a satisfying like break.\nRIP. If only each of us would leave something as useful in the world.\nDamn, 38 years old. Goes to show how thankful we should be for being here. Have you hacked something today? Have you had a good time today?\n5\nleela\n2026-10-04 21:32:57\nThat is so sad to hear. I listed ncdu as one of my favorite shell tools , so I'm glad it's getting picked up again.\n15\ntuxes\nedited\n2026-10-04 22:29:51",
+      "facts": [
+        "Lobsters 게시 2026-10-04 14:30:36(rcalixte 본인 제출, 태그 release·zig). 18 comments(조회 시점).",
+        "댓글 taschmex: \"Some relevant context is that the original author, yorhel, passed away earlier this year.\" — 원저자 별세 언급은 이 커뮤니티 댓글(및 아래 ResetEra 스레드)이 근거. 나이 \"38\" 은 댓글 한 건의 서술일 뿐 1차 확인 못 함.",
+        "rcalixte 댓글: \"I've forked and will aim to maintain it for the foreseeable future ... any potential issues will be handled on a best-effort basis.\" CI/CD 도입은 \"at some point\" 목표로만 언급."
+      ]
+    },
+    {
+      "title": "Yorhel’s Projects (upstream ncdu 공지 목록) — dev.yorhel.nl",
+      "url": "https://dev.yorhel.nl/",
+      "host": "dev.yorhel.nl",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "Yorhel’s Projects\n&#x2261; menu\nHome\nNcdu\nNcdc\nFU\nYxml\nNginx-cfg\nSQLBin\nTorreas\nYlib\nWriting\nCode dump\nGlobster\nTUWF\nContributing\nGuestbook\nprojects@yorhel.nl\nhome\n- git\n- @ayo\nYorhel’s Projects\nHello visitor!\nWelcome to my little website. I spend a fair amount of my free time\ndeveloping and contributing to free and open source software. This\nwebsite is home to several of these projects. I hope that you’ll find\nsomething useful among the crap I’ve written over the years. :)\nAnnouncements\n2026-01-10 - FU 1.4 released\nRenamed q() and Q() methods in FU::Pg, improved handling of EPIPE errors\nin FastCGI mode and other minor fixes. Homepage - Changelog .\n2025-10-24 - ncdu 2.9.2 released\nFix a hang that can happen when compiled with Zig 0.15.2. Homepage - Changelog .\n2025-09-04 - FU 1.3 released\nImproved UTF-8 validation and moved checking for control characters out\nof the JSON/URI parsing functions and into the Validation module. Homepage - Changelog .\n2025-08-21 - ncdu 2.9.1 released\nAdds support for building with Zig 0.15. Homepage -\nChangelog .\n2025-08-16 - ncdu 2.9 released\n2025-03-04 - ncdc 1.25 released",
+      "facts": [
+        "업스트림 ncdu 홈페이지 공지 목록의 가장 최근 ncdu 항목: \"2025-10-24 - ncdu 2.9.2 released — Fix a hang that can happen when compiled with Zig 0.15.2.\" (목록 맨 위는 2026-01-10 \"FU 1.4 released\" — 같은 저자의 다른 프로젝트).",
+        "이 페이지에서 원저자 별세에 관한 공식 문구는 확인하지 못함(페이지에 해당 서술 없음)."
+      ]
+    },
+    {
+      "title": "Yorhel, the creator of VNDB (visual novel database), has passed away - ResetEra",
+      "url": "https://www.resetera.com/threads/yorhel-the-creator-of-vndb-visual-novel-database-has-passed-away.1469494/",
+      "host": "www.resetera.com",
+      "tier": "blog",
+      "publishedAt": "2026-03-21",
+      "body": "[WebFetch 요약본 — 원문 직접 인용 아님] 개시글 날짜 2026-03-21. 개시글은 \"Yorhel, the creator of VNDB (visual novel database), has passed away\" 라고 알리며 VNDB 공식 공지(https://vndb.org/t24787)로 안내한다. 사망일·나이는 페이지에 명시되지 않았고, 한 댓글은 실명을 \"Yorhan Helling (Yorhel)\" 로 언급했다. 나는 vndb.org 공지 원문을 열지 못했다(브라우저 검증 페이지 503). 따라서 ncdu 원저자(Yoran Heling, 닉네임 yorhel)와 VNDB 제작자 Yorhel 이 동일인이라는 연결은 lobste.rs 댓글과 ResetEra 스레드 두 건의 2차 정보에 근거한다. 민감한 소재이므로 글에서는 \"원저자가 올해 초 세상을 떠난 것으로 알려졌다\" 정도로만 다루거나 생략하는 편이 안전하다.",
+      "facts": [
+        "ResetEra 개시글 2026-03-21: Yorhel 별세 알림, VNDB 공식 공지로 링크(vndb.org/t24787 — 직접 열지 못함, 미확인).",
+        "위 두 2차 출처만으로는 사망 원인·정확한 일자·나이 확인 불가."
+      ]
+    },
+    {
+      "title": "ncdu - NCurses 디스크 사용량 분석 도구(업데이트된 포크) - GeekNews",
+      "url": "https://news.hada.io/topic?id=34818",
+      "host": "news.hada.io",
+      "tier": "blog",
+      "publishedAt": "2026-10-05",
+      "body": "ncdu 는 ncurses 인터페이스로 디스크 사용량을 분석하며, 그래픽 환경이 없는 원격 서버에서 공간을 많이 차지하는 항목을 찾도록 설계됨\n원격 서버뿐 아니라 일반 데스크톱 환경 에서도 유용한 도구임\n빠르고 단순하며 사용하기 쉬운 도구 를 지향하며, ncurses가 설치된 최소한의 POSIX 계열 환경에서 실행하는 것을 목표로 함\n2.x는 Zig 구현 , 1.x는 C 구현이며, 두 버전의 차이는 별도의 ncdu 2 릴리스 공지에서 확인할 수 있음\n요구 사항은 Zig 0.17 , POSIX 계열 운영체제, ncurses, libzstd임\n용도와 설계 목표\nncurses 인터페이스 를 사용하는 디스크 사용량 분석 도구로, 완전한 그래픽 환경을 사용할 수 없는 원격 서버에서 공간을 많이 차지하는 항목을 찾는 데 초점을 맞춤\n일반 데스크톱 시스템 에서도 사용할 수 있으며, 빠른 속도와 단순함, 사용 편의성을 지향함\nncurses가 설치된 최소한의 POSIX 계열 환경 에서 실행할 수 있도록 하는 것이 목표임\n구현과 사용 요건\nncdu-zig 는 Zig로 구현한 2.x 버전이며, C로 구현한 1.x와의 차이는 ncdu 2 릴리스 공지 에서 확인할 수 있음\n사용 요건으로 Zig 0.17 , POSIX 계열 운영체제, ncurses, libzstd가 필요함\nZig 빌드 시스템 으로 빌드할 수 있으며, 일반적인 빌드와 설치 대상을 지원하는 Makefile도 제공함\n[GeekNews 댓글 요약 발췌] Lobste.rs 의견들\n원작자 yorhel 이 올해 초 세상을 떠났다는 사실 도 알아둘 만한 배경임.",
+      "facts": [
+        "긱뉴스 topic(링크용). RSS 게시 2026-10-05T19:04:38+09:00. 원문은 rcalixte/ncdu 저장소.",
+        "긱뉴스 요약: \"요구 사항은 Zig 0.17, POSIX 계열 운영체제, ncurses, libzstd임\"."
+      ]
+    },
+    {
+      "title": "Self-hosted HTTP tunnels with SSH and nginx — Vincent Bernat",
+      "url": "https://vincent.bernat.ch/en/blog/2026-http-over-ssh",
+      "host": "vincent.bernat.ch",
+      "tier": "blog",
+      "publishedAt": "2026-10-03",
+      "body": "A friend wants to proofread your work-in-progress blog post, but its preview\nonly runs on localhost:8080 . Several tools can help. Some run as a\ncommercial service, like ngrok or Cloudflare Quick Tunnels . Some are\nself-hostable but require a specific client, like frp or localtunnel .\nSome only require a plain SSH client but rely on a specific SSH server, like\nsish . Let’s implement a self-hosted solution with only OpenSSH and\nnginx !\n$ ssh -R 0 :localhost:8080 http-over-ssh\nAllocated port 41535 for remote forward to localhost:8080\nhttps://6J3jK1WmB15c6WmjW_X-Wg--1789928654@p41535.ssh.luffy.cx/\nBasic setup #\nFirst, we forward connections from a port on a remote server to your local\nservice:\n$ ssh -N -R 0 :localhost:8080 web02.luffy.cx\nAllocated port 41535 for remote forward to localhost:8080\nWhen you specify 0 as the remote port, the server allocates a free port.\nThen, we configure nginx to proxy requests from https://p41535.ssh.luffy.cx to\nhttp://127.0.0.1:41535 :\nserver {\nlisten 0.0.0.0 : 443 ssl ;\nlisten [::0]:443 ssl ;\nserver_name ~ ^p(?<port>\\d\\d\\d\\d\\d)\\.ssh\\.luffy\\.cx$;\nlocation / {\nproxy_pass http://127.0.0.1: $port ;\n}\n}\nWe also need to add DNS records for *.ssh.luffy.cx and get a wildcard\ncertificate through Let’s Encrypt :\n*.ssh.luffy.cx. CNAME web02.luffy.cx.\nssh.luffy.cx. CAA 0 issuewild \"letsencrypt.org\"\n_acme-challenge.ssh.luffy.cx CNAME ssh.luffy.cx.acme.luffy.cx.\nacme.luffy.cx is a zone hosted on Route 53. I use it for ACME DNS-01\nchallenges , both for wildcard certificates and for domains served by\nseveral web servers. In my case, NixOS gets the certificates\nautomatically .\nAccess control #\nThe port is the only “secret” 1 keeping the content confidential. Other\nforwarding solutions add a random string to the domain name to prevent an\nintruder from enumerating the possible values.\n1\nSince the kernel allocates it from the local port range, its entropy is low.\nMoreover, on Linux, we lose one more bit because the kernel favors odd\nports when it picks a random free port.\n$ sysctl -n net.ipv4.ip_local_port_range \\\n> | awk '{print $1\"—\"$2\" ≈ \"log($2-$1+1)/log(2)\" bits\"}'\n32768—60999 ≈ 14.785 bits\n❦\nThanks to ngx_http_secure_link_module , we can secure\nthis setup a bit. This module computes a hash 2 over a set of values,\nincluding a secret, and compares it with the hash from the request. The hash is\nbase64-encoded, so we cannot put it in the domain name, which is\ncase-insensitive. Instead, we put it in the URL as a username, along with its\nexpiration timestamp: 3\n2\nThe module relies on MD5. Its security is weak but good enough for this\nuse.  ❦\n3\nWe need an expiration date because a later session could reuse the port,\nand we have no way to detect this case.  ❦\nhttps://6J3jK1WmB15c6WmjW_X-Wg--1789928654@p41535.ssh.luffy.cx/en/blog\n╰─────────┬──────────╯ ╰───┬────╯ ╰─┬─╯ ╰──┬───╯\nhash expires port path\nThe client sends the username to the server with HTTP basic\nauthentication . This works with most HTTP clients, including curl .\nNginx exposes the username in the $remote_user variable. The module expects\nthe hash and the expiration timestamp separated by a comma. We use a map\ndirective to extract the two parts from $remote_user and join them with a\ncomma. 4 We also give the module the string to hash. It contains the\nexpiration timestamp, the port, and a secret:\n4\nThe username could use a comma directly instead of a double dash. But some\napplications do not recognize the URL correctly, making it harder to share.  ❦\nmap $remote_user $httpssh_link {\n\"~^([-_A-Za-z0-9]{22})--([0-9]+)$\" \" $1,$2\" ;\n}\nserver {\n# […]\nlocation / {\nsecure_link $httpssh_link ;\nsecure_link_md5 \" $secure_link_expires $port ZuPerS3cr3!\" ;\n}\n}\nThe module returns the status of the check in the $secure_link variable:\nempty if the hashes do not match,\n\"0\" if they match but the link has expired, or\n\"1\" otherwise.\nIf the hash is incorrect or missing, we return a 401 error with a\nWWW-Authenticate header to ask for credentials. If the link has expired, we\nreturn a 410 error. We remove the Authorization header before forwarding the\nrequest and add a few directives to proxy WebSocket connections .\nHere is the complete configuration: 5\n5\nThis configuration exposes any TCP port listening on 127.0.0.1 or\n0.0.0.0 to anyone with the secret, bypassing most firewall rules. You\ncould strengthen it by limiting the server_name regex to the ephemeral\nport range.  ❦\nmap $remote_user $httpssh_link {\n\"~^([-_A-Za-z0-9]{22})--([0-9]+)$\" \" $1,$2\" ;\n}\nserver {\nlisten 0.0.0.0 : 443 ssl ;\nlisten [::0]:443 ssl ;\nserver_name ~ ^p(?<port>\\d\\d\\d\\d\\d)\\.ssh\\.luffy\\.cx$;\nlocation / {\nsecure_link $httpssh_link ;\nsecure_link_md5 \" $secure_link_expires $port ZuPerS3cr3!\" ;\nif ( $secure_link = \"\") {\nadd_header WWW-Authenticate 'Basic realm=\"tunnel\"' always ;\nreturn 401 ;\n}\nif ( $secure_link = \"0\") {\nreturn 410 ;\n}\nproxy_pass http://127.0.0.1: $port ;\nproxy_set_header Host $host ;\nproxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for ;\nproxy_set_header Authorization \"\" ;\nproxy_http_version 1 .1 ;\nproxy_set_header Upgrade $http_upgrade ;\nproxy_set_header Connection \"upgrade\" ;\nproxy_buffering off ;\nproxy_read_timeout 30m ;\n}\n}",
+      "facts": [
+        "2026-10-03 게시(6분 분량). 원문 목표: \"Let’s implement a self-hosted solution with only OpenSSH and nginx!\" 비교 대상: ngrok·Cloudflare Quick Tunnels(상용), frp·localtunnel(자체 호스팅이지만 전용 클라이언트), sish(일반 SSH 클라이언트지만 전용 서버).",
+        "핵심 명령: `ssh -N -R 0:localhost:8080 web02.luffy.cx` — \"When you specify 0 as the remote port, the server allocates a free port.\" nginx 는 `server_name ~^p(?<port>\\d\\d\\d\\d\\d)\\.ssh\\.luffy\\.cx$;` 로 서브도메인에서 포트를 뽑아 `proxy_pass http://127.0.0.1:$port;` 로 전달.",
+        "접근 제어 수치: 커널이 로컬 포트 범위 32768—60999 에서 고르므로 \"≈ 14.785 bits\" 엔트로피(리눅스는 홀수 포트를 선호해 1비트 더 손실). 그래서 `ngx_http_secure_link_module`(MD5 해시 + 만료 타임스탬프)을 URL 의 username 자리에 넣어 검증. 저자는 MD5 가 \"weak but good enough for this use\" 라고 각주.",
+        "원문 각주 경고: \"This configuration exposes any TCP port listening on 127.0.0.1 or 0.0.0.0 to anyone with the secret, bypassing most firewall rules. You could strengthen it by limiting the server_name regex to the ephemeral port range.\"",
+        "헬퍼 스크립트는 조상 sshd-session 프로세스를 찾아 SSH 가 할당한 임시 포트를 알아내며(환경변수로 노출되지 않기 때문), 포트 소유 확인 단계에 sudo 가 필요(GeekNews 요약·원문 기준)."
+      ]
+    },
+    {
+      "title": "SSH와 Nginx로 직접 호스팅하는 HTTP 터널 - GeekNews",
+      "url": "https://news.hada.io/topic?id=34802",
+      "host": "news.hada.io",
+      "tier": "blog",
+      "publishedAt": "2026-10-05",
+      "body": "OpenSSH와 nginx 만으로 로컬 HTTP 서비스를 외부에 공유하는 터널을 구성할 수 있음. 짧은 SSH 명령 하나로 터널을 열고 공유용 HTTPS URL을 얻음\nSSH 원격 포트 포워딩 이 서버의 빈 포트를 로컬 서비스에 연결하고, nginx는 서브도메인에서 포트 번호를 추출해 해당 포트로 요청을 전달함\n포트 번호만으로는 접근을 충분히 제한하기 어려워, 만료 시각과 해시를 담은 인증 정보 를 URL에 넣고 nginx의 ngx_http_secure_link_module 로 검증함\n도우미 스크립트 가 SSH 세션 프로세스의 수신 포트를 찾아 인증 URL을 생성함. 포트 소유 프로세스를 확인하는 단계에는 sudo 권한이 필요함\n이 구성은 비밀값을 아는 사용자에게 서버의 다른 TCP 포트까지 노출 할 수 있음. server_name 정규식을 임시 포트 범위로 제한하면 보안을 강화할 수 있음\nOpenSSH와 nginx로 로컬 서비스 공유하기\nlocalhost:8080 에서만 실행되는 블로그 미리보기를 다른 사람에게 보여주는 상황에서 HTTP 터널 을 활용할 수 있음\n터널링 도구 마다 호스팅 방식과 클라이언트 요구사항이 다름\nngrok 과 Cloudflare Quick Tunnels 는 상용 서비스로 운영됨\nfrp 와 localtunnel 은 직접 호스팅할 수 있지만 전용 클라이언트가 필요함\nsish 는 일반 SSH 클라이언트로 사용할 수 있지만 특정 SSH 서버가 필요함\n서버에서 이미 실행 중인 OpenSSH와 nginx 를 활용하면, 최종적으로 ssh -R 0:localhost:8080 http-over-ssh 명령으로 터널과 공유 URL을 얻을 수 있음\n원격 포트와 HTTPS 프록시 연결\nssh -N -R 0:localhost:8080 web02.luffy.cx 처럼 원격 포트를 0 으로 지정 하면 서버가 빈 포트를 할당함\n예를 들어 41535 가 할당되면 해당 서버 포트로 들어오는 연결을 로컬의 localhost:8080 으로 전달함\nnginx는 server_name ~^p(?<port>\\d\\d\\d\\d\\d)\\.ssh\\.luffy\\.cx$ 로 서브도메인의 5자리 포트 번호 를 추출함\nhttps://p41535.ssh.luffy.cx 요청을 proxy_pass http://127.0.0.1:$port 로 전달함\nHTTPS 수신 설정은 IPv4와 IPv6 모두에 적용함\n*.ssh.luffy.cx 의 와일드카드 DNS 레코드와 인증서 도 필요함\n예제에서는 와일드카드 CNAME을 서버로 연결하고, CAA 레코드로 Let’s Encrypt 의 와일드카드 인증서 발급을 허용함\n_acme-challenge.ssh.luffy.cx 는 Route 53에서 호스팅하는 acme.luffy.cx 영역으로 연결함\n이 영역을 와일드카드 인증서와 여러 웹 서버에서 제공하는 도메인의 ACME DNS-01 검증 에 사용하며, 예제 환경에서는 NixOS가 인증서를 자동으로 발급받음\n포트 번호 대신 만료 가능한 인증 정보 사용\n기본 구성에서 콘텐츠를 보호하는 유일한 비밀은 포트 번호 라서 가능한 값을 열거하기 쉬움\n예시 로컬 포트 범위 32768–60999 의 엔트로피는 약 14.785비트 임\n커널이 빈 포트를 무작위로 선택할 때 홀수 포트를 선호 하므로 엔트로피가 약 1비트 더 줄어듦\n다른 포워딩 솔루션은 도메인 이름에 무작위 문자열을 추가해 열거를 방지함\nngx_http_secure_link_module 은 비밀값을 포함한 해시 를 계산하고 요청의 해시와 비교함\nMD5를 사용하며, 보안 강도는 약하지만 이 용도에는 충분하다는 전제임\n해시는 Base64로 인코딩하므로 대소문자를 구분하지 않는 도메인 이름 대신 URL의 사용자 이름 부분에 넣음\nURL 사용자 이름은 해시--만료타임스탬프 형식임\n이후 세션이 같은 포트를 재사용하는 상황을 감지할 방법이 없어 만료 시각이 필요함\n쉼표를 직접 구분자로 사용할 수도 있지만, 일부 애플리케이션이 URL을 제대로 인식하지 못해 공유하기 어려워지므로 -- 를 사용함\n클라이언트는 HTTP Basic 인증 으로 사용자 이름을 전송하며, curl 을 포함한 대부분의 HTTP 클라이언트에서 동작함\nnginx의 $remote_user 에서 인증 정보를 읽고, map 으로 해시와 만료 시각을 추출해 모듈이 요구하는 해시,만료시각 형식으로 바꿈\n해시 입력은 \"$secure_link_expires $port 비밀값\" 처럼 만료 시각, 포트, 비밀값을 조합함\n인증 결과 처리와 프록시 보안 범위\n$secure_link 값에 따라 요청을 처리함\n빈 문자열이면 해시가 일치하지 않는 상태이며, 인증 정보가 없거나 잘못된 요청에 WWW-Authenticate 헤더와 401 응답을 반환함\n\"0\" 이면 해시는 일치하지만 만료된 상태이므로 410 응답을 반환함\n\"1\" 이면 검증을 통과한 상태임\n백엔드로 전달하기 전에 Authorization 헤더를 제거 하고, Host 와 X-Forwarded-For 를 설정함\nWebSocket 프록시 를 위해 HTTP/1.1과 Upgrade , Connection 헤더를 설정함\n프록시 버퍼링을 끄고 읽기 타임아웃을 30m 으로 지정함\n이 구성은 비밀값을 아는 사용자 에게 127.0.0.1 또는 0.0.0.0 에서 수신 중인 모든 TCP 포트를 노출할 수 있으며, 대부분의 방화벽 규칙을 우회함\nserver_name 정규식을 임시 포트 범위 로 제한하면 보안을 강화할 수 있음\n수동으로 토큰을 생성할 때는 만료 시각을 현재 시각에서 86400초 후 로 설정한 뒤, 만료 시각과 포트, 비밀값을 공백으로 이어 붙임\nopenssl md5 -binary 와 openssl base64 를 거쳐 + , / 를 각각 - , _ 로 바꾸고 = 패딩을 제거함\n도우미 스크립트로 포트 검색과 URL 생성 자동화\nOpenSSH가 할당한 임시 포트는 환경 변수에 없으므로 , 스크립트가 현재 프로세스의 조상 중 sshd-session 프로세스를 찾음\n하나의 SSH 세션에 여러 터널이 있을 수 있고, 클라이언트가 언제든 터널을 추가하거나 제거할 수 있음\n별도 SSH_TUNNEL 환경 변수가 있는 ssh -w 의 tun 장치 포워딩과는 다름\nOpenSSH 9.8부터 세션 처리 프로세스 이름이 sshd-session 이며, 이전 버전에서는 sshd 를 찾아야 함\n해당 프로세스가 없으면 SSH 세션이 아니라는 오류를 내고 종료함\nsudo -n ss --listening --numeric --tcp --processes --no-header 결과를",
+      "facts": [
+        "긱뉴스 topic(링크용). RSS 게시 2026-10-05T12:40:05+09:00. 원문은 Vincent Bernat 블로그(2026-10-03).",
+        "긱뉴스 요약: \"이 구성은 비밀값을 아는 사용자에게 서버의 다른 TCP 포트까지 노출할 수 있음. server_name 정규식을 임시 포트 범위로 제한하면 보안을 강화할 수 있음\"."
+      ]
+    }
+  ],
+  "conflicts": [
+    {
+      "about": "Cloudflare Web Search API — 제공 3사의 Zero Data Retention(ZDR) 지원 여부",
+      "a": "Cloudflare 변경 로그(2026-10-02): \"All three support Zero Data Retention for requests made through Cloudflare\" — 긱뉴스 요약도 같은 문장을 그대로 옮김.",
+      "b": "Cloudflare docs Providers 페이지(Last updated Oct 2, 2026)와 PPC Land 표: Ceramic.ai ZDR Yes / Exa ZDR \"No\" / Linkup ZDR Yes — 3곳 중 2곳만 지원. 임의로 고르지 않음: 글에서는 \"공식 docs 표 기준 Exa 는 ZDR 아님, 변경 로그 문장과 어긋남\" 으로 쓰거나 ZDR 을 단정하지 말 것."
+    },
+    {
+      "about": "Xray-core GHSA-5wf9-h793-w73c 심각도",
+      "a": "XTLS/Xray-core 저장소의 GitHub 권고 페이지: Severity \"Low\", CVE 없음, 영향 \">= v26.1.13\", 패치 \">= v26.7.11\", 게시 2026-07-10, 제목에 \"(Hy2, gRPC)\".",
+      "b": "OSV(GitHub reviewed 레코드): severity HIGH + CVSS v4.0 벡터, published 2026-10-02T22:35:51Z / GitLab Advisory DB: \"6.8 MEDIUM\"(CVSS 3.1). 검색 결과 스니펫에는 \"7.6 HIGH (CVSS v4.0)\" 로 나왔으나 OSV 원본에는 점수 숫자 없이 벡터만 있어 확인 못 함 — 점수 숫자는 글에 쓰지 말 것."
+    },
+    {
+      "about": "Xray-core 권고 \"게시일\"",
+      "a": "GitHub 권고 페이지: 2026-07-10 게시(게시자 RPRX). 신고자 이슈도 7월 3일 GHSA 로 재신고했다고 서술.",
+      "b": "OSV·GitLab 표기: 2026-10-02(데이터베이스 등재일로 보임). 신고자 이슈 게시일 2026-10-02 와 같은 날이라 헷갈리기 쉬움."
+    },
+    {
+      "about": "Beam 학습 기간 \"4주\" 수치의 대상",
+      "a": "Reflection 블로그 RL 단계: \"10.5K NVIDIA GB300 GPUs over 4 weeks of training\"(100M+ rollouts).",
+      "b": "같은 블로그 사전학습 단계: \"pretrained end-to-end in under four weeks on a cluster of 6,144 NVIDIA GB300 NVL72 GPUs\". 두 수치는 서로 다른 단계이며 모순은 아니지만, 요약 시 GPU 수·기간을 합치면 오류가 됨."
+    },
+    {
+      "about": "Go GC 글 날짜 vs 긱뉴스 게시일",
+      "a": "원문 frn.sh 글: 2026-09-13 작성(09-14 업데이트).",
+      "b": "긱뉴스 게시 2026-10-05, HN 제출 2026-10-05. \"최근 며칠 소식\" 으로 쓰려면 \"긱뉴스·HN 에서 다시 화제\" 로 표현해야 정확함."
+    }
+  ],
+  "unknowns": [
+    "Xray-core 유지보수자(RPRX 등)의 신고자 주장에 대한 공개 반박·해명 — net4people 이슈, HN 스레드(item 49956003, 댓글 4건), 검색 결과에서 찾지 못함. byteiota.com 기사는 HTTP 406 으로 열리지 않아 읽지 못함(검색 스니펫만 확인).",
+    "ncdu 원저자(yorhel) 별세에 관한 1차 공식 공지 — vndb.org/t24787 이 브라우저 검증 페이지(503)로 열리지 않음. dev.yorhel.nl 에는 관련 문구 없음. lobste.rs 댓글·ResetEra 스레드(2026-03-21)가 근거의 전부. 나이(\"38\")·사망일은 미확인. 민감 소재라 생략 또는 \"알려졌다\" 수준 권장.",
+    "ncdu 포크는 rcalixte 외에도 BratishkaErik/ncdu 가 있고 Fedora 는 다른 포크를 패키징 중이라는 rcalixte 의 댓글이 있음 — 어느 포크가 사실상 표준이 될지, 어느 쪽이 Zig 0.17 을 먼저 지원했는지는 확인 못 함. rcalixte/ncdu 릴리스 버전·날짜·라이선스는 README 에 없음(미확인).",
+    "mold 3.0 의 정량 벤치마크(링크 시간 등) — 릴리스 노트는 \"on par with 2.42.1\" 서술만 있고 수치 없음. Phoronix 기사도 수치 없음.",
+    "Beam 의 독립 검증 벤치마크 — TechCrunch 가 \"haven’t been independently verified\" 라고 명시. 가중치 공개 후 서드파티 평가는 아직 없음(2026-10-06 기준). Beam 가중치 실제 공개일 미정(\"later this month\").",
+    "Cloudflare Web Search API 의 베타 한도(레이트 리밋)·GA 일정 — 변경 로그·블로그·docs 개요에서 확인 못 함. Server Tools 출시일도 \"soon\" 만 있고 미정.",
+    "2026-10-03 ~ 10-04 의 긱뉴스 항목 — 후보 파일(RSS 50건)은 2026-10-05 09:55 KST 이후 글만 담아 기간 앞쪽(10-03~04)을 커버하지 못함. 그래서 이번 7건은 사실상 10-05~06 긱뉴스 게시분 + 10-02~04 원문이다.",
+    "GitHub 급상승 3건(Agent-Reach·claude-skills·cursor/plugins)은 후보였으나 이번 선별에서 제외(AI 도구 집중 방지·dev-trending 중복 가능성). 본문 확인하지 않음.",
+    "blog.cloudflare.com 의 정확한 가격 수치는 블로그 본문에 없고 docs Providers 페이지에만 있음(그 외 FourWeekMBA·saascity 등 2차 매체는 읽지 않고 제외)."
+  ]
+}

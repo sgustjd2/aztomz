@@ -1,0 +1,354 @@
+{
+  "collectedAt": "2026-10-05",
+  "days": 3,
+  "results": {
+    "geeknews": {
+      "source": "geeknews",
+      "fetchedOk": true,
+      "sourceUrl": "https://news.hada.io/rss/news",
+      "items": [
+        {
+          "title": "Opus 5.5 에이전트, 상온 자성 반도체 후보 두 가지 발견",
+          "url": "",
+          "date": "2026-10-05T22:36:17.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Tell HN: Uceprotect가 웹사이트 운영자에게 돈을 갈취하고 있음",
+          "url": "",
+          "date": "2026-10-05T21:43:08.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "“기술 업계에 몸담은 사람으로서 부끄럽다”",
+          "url": "",
+          "date": "2026-10-05T21:40:08.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "일반 텍스트는 여전히 우리가 가진 최고의 기술 중 하나다",
+          "url": "",
+          "date": "2026-10-05T21:37:08.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "원했던 건 내 도메인으로 된 이메일뿐이었다",
+          "url": "",
+          "date": "2026-10-05T20:49:52.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "석유 기반 제품을 식물 기반 소재로 대체하기(2025)",
+          "url": "",
+          "date": "2026-10-05T20:46:52.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Borland Turbo BASIC",
+          "url": "",
+          "date": "2026-10-05T20:43:52.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Beam - Reflection의 5,010억 매개변수 오픈 웨이트 모델",
+          "url": "",
+          "date": "2026-10-05T20:40:52.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Picard 3.0",
+          "url": "",
+          "date": "2026-10-05T19:51:47.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Haskell로 GTK 애플리케이션 만들기, 1부",
+          "url": "",
+          "date": "2026-10-05T19:48:47.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "독립의 미래는 상호의존이다",
+          "url": "",
+          "date": "2026-10-05T19:45:47.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Wikimedia 프로젝트에서 OpenAI의 ‘통제 이탈’ 에이전트 활동 발견",
+          "url": "",
+          "date": "2026-10-05T19:42:46.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "미국, 시베리아 연구소 직원의 페스트 사망 가능성 예의주시",
+          "url": "",
+          "date": "2026-10-05T18:32:36.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Anthropic, Claude를 일기처럼 쓰던 이용자의 총격 위협 신고…여성 체포",
+          "url": "",
+          "date": "2026-10-05T17:39:13.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "Mold 링커 3.0.0 출시, Rust로 재작성",
+          "url": "",
+          "date": "2026-10-05T17:36:13.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Show GN: Agent Guard - Claude Code·Codex의 비밀정보 노출을 줄이는 로컬 보안 도구",
+          "url": "",
+          "date": "2026-10-05T16:48:31.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "모기 매개 질병을 퇴치할 기술은 이미 존재함",
+          "url": "",
+          "date": "2026-10-05T16:36:57.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "2026년 노벨 생리의학상, 빛으로 신경세포를 제어하는 광유전학에 수여",
+          "url": "",
+          "date": "2026-10-05T16:56:41.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Pixel 11, 아직 GrapheneOS 보안 기준 충족 못해 지원 대상에서 제외될 수도",
+          "url": "",
+          "date": "2026-10-05T15:35:43.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Apple과 해커의 미래",
+          "url": "",
+          "date": "2026-10-05T13:40:41.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Cloudflare, AI 에이전트를 위한 Web Search API 베타 공개",
+          "url": "",
+          "date": "2026-10-05T16:51:16.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "Show GN: MenuDart - 메뉴와 메뉴 막대 아이템을 단축키로 팝업 띄우는 Mac 앱",
+          "url": "",
+          "date": "2026-10-05T13:03:19.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Huawei와 Qualcomm, 포괄적 특허 라이선스 계약 발표",
+          "url": "",
+          "date": "2026-10-05T12:37:38.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "유럽의 새로운 로봇 유니콘: 독일 RobCo, 기업가치 약 1.5조원 달성",
+          "url": "",
+          "date": "2026-10-05T12:34:38.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "MCPB로 로컬 MCP 서버를 Claude Desktop 원클릭 확장으로 만들기",
+          "url": "",
+          "date": "2026-10-05T12:33:48.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "내 35mm 필름 스캔 파이프라인 자동화하기",
+          "url": "",
+          "date": "2026-10-05T11:33:47.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "덴마크 인구등록부, 약 880만 명 개인정보 무단 접근 확인",
+          "url": "",
+          "date": "2026-10-05T16:52:37.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Android에서 시스템 수준으로 광고 차단하기",
+          "url": "",
+          "date": "2026-10-05T10:07:38.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "ncdu - NCurses 디스크 사용량 분석 도구(업데이트된 포크)",
+          "url": "",
+          "date": "2026-10-05T10:04:38.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "스왑으로 발생한 Go 가비지 컬렉터의 40ms 정지",
+          "url": "",
+          "date": "2026-10-05T08:41:37.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "SQLDoom - 오리지널 Doom을 SQL로 포팅하기",
+          "url": "",
+          "date": "2026-10-05T08:38:37.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "AI로 의도, 품질, 예술성을 확장하는 법 [영상]",
+          "url": "",
+          "date": "2026-10-05T07:36:16.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "블라인드사이트, 의식 없는 지능과의 첫 접촉을 그린 하드 SF",
+          "url": "",
+          "date": "2026-10-05T07:21:02.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "프록시 소프트웨어 Xray-core, 인증서 검증 우회 취약점 반년간 은폐 의혹",
+          "url": "",
+          "date": "2026-10-05T07:19:02.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "ArtCraft Apps - Rust로 작성한 Adobe 호환 오픈소스 도구 모음",
+          "url": "",
+          "date": "2026-10-05T06:37:03.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "폐업 이후 온라인에 공개된 애니메이션 자료 디지털 아카이브",
+          "url": "",
+          "date": "2026-10-05T05:31:19.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "자율주행 데이터의 진짜 문제는 크기가 아니다",
+          "url": "",
+          "date": "2026-10-05T04:51:08.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "이르쿠츠크 연구소 직원 페스트 사망 후 약 200명 의학적 관찰",
+          "url": "",
+          "date": "2026-10-05T04:32:48.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Show GN: Alpine-Code - 에이전트가 쓸 도구를 직접 개발해 커스터마이징 가능한 코딩 에이전트를 만들었습니다. ...",
+          "url": "",
+          "date": "2026-10-05T04:28:09.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "SSH와 Nginx로 직접 호스팅하는 HTTP 터널",
+          "url": "",
+          "date": "2026-10-05T03:40:05.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "F1, 소프트웨어 버그로 가속 페달 먹통에 드라이버들 반발",
+          "url": "",
+          "date": "2026-10-05T03:41:13.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Show GN: smooth-stream - Claude Code 답변을 타자기처럼 부드럽게 보여주는 mod",
+          "url": "",
+          "date": "2026-10-05T03:19:00.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "「Quo Vadis, Mathematics?」—“수학이여, 어디로 가는가?”",
+          "url": "",
+          "date": "2026-10-05T02:36:45.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Infidel이 폭주하다",
+          "url": "",
+          "date": "2026-10-05T02:34:48.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Claude Code 모드(mod) 시작하기",
+          "url": "",
+          "date": "2026-10-05T02:24:45.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "Bill Draper 별세",
+          "url": "",
+          "date": "2026-10-05T01:35:49.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "브라우저에서 실행되는 클래식 Visual Basic VB6 IDE",
+          "url": "",
+          "date": "2026-10-05T01:32:49.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "AI 시대의 커리어 조언 - 문제를 푸는 능력보다 찾고 선택하는 능력",
+          "url": "",
+          "date": "2026-10-05T01:05:02.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "AI 네이티브 SDLC - 개발 전 과정을 에이전트에 맞게 재설계하기",
+          "url": "",
+          "date": "2026-10-05T00:55:01.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "AI가 코드를 쓸수록 도메인 주도 설계가 더 중요해지는 이유",
+          "url": "",
+          "date": "2026-10-05T00:45:02.000Z",
+          "aiRelated": true
+        }
+      ],
+      "note": "GeekNews Atom 피드에서 최근 3일 항목. aiRelated=true 는 제목 키워드 기준(본문은 조사 단계에서 확인)."
+    },
+    "inpa": {
+      "source": "inpa",
+      "fetchedOk": true,
+      "sourceUrl": "https://inpa.tistory.com/rss",
+      "items": [],
+      "note": "최근 3일 이내 작성된 글만. 날짜 없는 항목은 제외. 0건이면 어제·오늘 새 글이 없다는 뜻."
+    },
+    "goddaehee": {
+      "source": "goddaehee",
+      "fetchedOk": true,
+      "sourceUrl": "https://goddaehee.tistory.com/rss",
+      "items": [],
+      "note": "최근 3일 이내 작성된 글만. 날짜 없는 항목은 제외. 0건이면 어제·오늘 새 글이 없다는 뜻."
+    },
+    "github": {
+      "source": "github",
+      "fetchedOk": true,
+      "sourceUrl": "https://github.com/trending?since=weekly",
+      "items": [
+        {
+          "repo": "Panniantong/Agent-Reach",
+          "url": "https://github.com/Panniantong/Agent-Reach",
+          "description": "Give your AI agent eyes to see the entire internet. Read &amp; search Twitter, Reddit, YouTube, GitHub, Bilibili, XiaoHongShu — one CLI, zero API fees.",
+          "starsThisWeek": 4789
+        },
+        {
+          "repo": "alirezarezvani/claude-skills",
+          "url": "https://github.com/alirezarezvani/claude-skills",
+          "description": "380 Claude Code skills &amp; agent skills &amp; plugins (30+ Agents, 70+ custom commands, 380+ skills, customizable references, scripts)for Claude Code, Codex, Gemini CLI, Cursor, and 8 more coding agents — engineering, marketing, product, compliance, C-level advisory, research, business operations, commercial &amp; finance, and your daily productivity skills.",
+          "starsThisWeek": 1024
+        },
+        {
+          "repo": "cursor/plugins",
+          "url": "https://github.com/cursor/plugins",
+          "description": "Cursor plugin specification and official plugins",
+          "starsThisWeek": 994
+        }
+      ],
+      "note": "주간 급상승 레포 중 plugin/extension/skill/cli/mcp 등 도구 성격 키워드가 잡힌 것만. dev-trending 과 겹치는 항목은 조사 단계에서 제외한다."
+    }
+  }
+}

@@ -1,3 +1,23 @@
+# 2026-10-06 블로그 배치 — 사람 요청(/blog-run-today, 티스토리 5 + 네이버 5 이상)
+
+claim: `backend/out/blog/.daily-claim-2026-10-06` (09:00 무인 /blog-daily 는 양보). 예비 1편씩 더 써서 6+6 시도. 검색수요 게이트: NAVER_AD 자격증명 없음 → 못 돌림.
+이월(검증통과 미발행): 없음(blog-queue --list 0/0).
+## 티스토리 (6)
+- [x] dev-digest-2026-10-06 — 개발·AI 다이제스트(긱뉴스 3일) · 팩트체크 blocker 2(Xray 릴리스 노트 "만"·Beam "같은 점수") 교정 · verify 통과(warn 2)
+- [x] ai-weekly-2026-10-05 — 이번 주 AI 소식 · 팩트체크 blocker 3("안전장치 없는"·desc "원문 확인"·12/18 귀속) 교정 · verify 통과(warn 2)
+- [x] excel-pivot-table — 엑셀 피벗테이블 만들기 · 팩트체크 blocker 2("공식 경로는 하나"·"개수=텍스트") 교정 · verify 통과(warn 2)
+- [x] windows11-reset-pc — 윈도우 11 PC 초기화 · 팩트체크 blocker 1(정리 불릿에서 MS 순서 누락) 교정 · verify 통과(warn 2)
+- [x] google-drive-share-permission — 구글 드라이브 공유 권한 · 팩트체크 blocker 4(조사 파일의 아이콘 자리 오독 → UI 경로 4곳) 교정 · verify 통과(warn 1)
+- [x] windows11-storage-sense — 윈도우 11 저장소 센스(C드라이브 정리) (예비) · 팩트체크 통과(blocker 0, warn 5 중 3 반영) · verify 통과
+## 네이버 (6)
+- [x] joaquin-vasco-popup — 호아킨바스코 더현대서울 팝업(한끗 신뢰분석 trust) · 팩트체크 blocker 2("아시아 최초"는 두 기사 본문에 없음 — 원문 대조 후 한끗 분석 표현으로 귀속) 교정 · verify 통과(warn 2)
+- [x] apple-storage-guide — 사과 보관법 · 팩트체크 blocker 1(desc/첫 문단이 기관별 권고를 뭉침) 교정 · verify 통과(warn 2)
+- [x] green-onion-storage — 대파 보관법 · 팩트체크 blocker 1(키친타월 위생 비교를 "근거 없음"으로 단정) 교정 · verify 통과(warn 1)
+- [ ] egg-storage-guide — 계란 보관법(식약처 소비기한)
+- [x] siraegi-guide — 시래기 말리기·삶기 · 팩트체크 blocker 3(40여일·6~7일 조건 귀속, 냉동 개월 수) 교정 · verify 통과(warn 2)
+- [x] gochugaru-storage — 고춧가루 보관법 (예비) · 팩트체크 blocker 3(도입 일반화·온도×습도 조합) 교정 · verify 통과(warn 1)
+- [ ] 제외: purple-core-2026(티스토리 purple-color-trend와 같은 개념) · ⚠ 출처 1개 후보들
+
 # 2026-10-05 블로그 배치 — 사람 요청(/blog-run-today)
 
 claim: `backend/out/blog/.daily-claim-2026-10-05`. 티스토리 이월분 5편(검증 완료) + 네이버 신규 5편. 티스토리 세션 만료 → 사용자 재로그인 후 발행.

@@ -1,0 +1,545 @@
+{
+  "keyword": "이번 주 AI 정리 (2026-09-29~10-06) — Gemini 4 Argon·GLM-5.3 사이버 보고서·백악관 AI 합의·Reflection Beam·캘리포니아 SB 947",
+  "categoryId": "ai-trend",
+  "slug": "ai-weekly-2026-10-05",
+  "searchedAt": "2026-10-06",
+  "curatedAt": "2026-10-06",
+  "period": "2026-09-29 ~ 2026-10-06",
+  "origin": "raw(ai-weekly-2026-10-05.raw.json)에서만 정리. 새 검색 없음. 출처 url 은 raw 에서 코드로 복사(문자열 대조 통과).",
+  "notes": "이 글이 말할 수 있는 것: 확인된 5건 — (1) Gemini 4 Argon 사이버 방어자 선공개(구글 공식 수치·일반 공개일 미정), (2) Anthropic GLM-5.3 보고서(+NIST CAISI 독립 평가), (3) 백악관 자발적 AI 합의(보도 기반), (4) Reflection Beam(가중치 공개 전·회사 자체 표), (5) 캘리포니아 SB 947(주지사실 공식). 한계: \"이번 주 AI 전부\"가 아니라 \"확인된 5건\"이며, 10/2~10/6 신모델 발굴은 WebSearch 한도로 불완전.\n③ 백악관 합의는 press-only(CNN·Al Jazeera·ABC 3곳이 서명 6명·4단계·자발성에서 일치, 합의문 원문 미열람) → reported 로 포함하되 본문에 \"합의문 원문을 직접 확인하지 못했다\"를 반드시 명시하고 모든 서술에 매체 귀속. 포함 이유: 3개 주요 매체의 핵심 사실이 서로 어긋나지 않고(머스크 소속 표기만 다름), ①의 구글 공식 글이 \"U.S. government’s voluntary process for pre-release model access\" 참여를 별도로 밝혀 같은 주제권이라 독자에게 맥락을 준다. 단 법적 구속력·원문 문구·Force 권한은 못 쓴다(cannotSay). 이 항목이 불안하면 작가는 분량을 줄이고 \"보도 기준\" 한 문단으로 처리할 것.\n구조 제안(해석 — 사실 아님, 작가가 사실/해석 분리 섹션에서 해석으로 표시): 이번 주 공통 주제는 \"능력을 누구에게 먼저·어떤 안전장치와 함께 내보내나\"다. Argon=방어자 선공개, GLM-5.3=안전장치 없는 오픈웨이트, Beam=가중치 공개 전 레드팀, 백악관 합의=자발적 내부통제·외부감사, SB 947=사람이 최종 확인. 이 틀을 쓰더라도 각 항목 사실은 아래 claims 의 등급·귀속을 그대로 따를 것. 직전 회차 사건(OpenAI 에이전트 이탈, GPT-6.1 Sol, DevDay 등)은 이미 다뤘으므로 재설명하지 말고 필요하면 \"앞선 회차 참고\" 내부링크 정도만.",
+  "sources": [
+    {
+      "title": "Gemini 4 Argon: our next era of frontier intelligence — Google (The Keyword)",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/",
+      "host": "blog.google",
+      "body": "[curl 원문 텍스트 발췌 — 저자 Koray Kavukcuoglu, SVP Google DeepMind·Chief AI Architect]\nToday, we’re announcing our new frontier model, Gemini 4 Argon, which is rolling out to a set of trusted cyber defenders through our Fairwind Program . Built to sustain deep reasoning across complex, long-horizon workflows, Argon is fundamentally changing the way we work and build at Google. It delivers frontier performance in complex workflows across real-world software engineering, enterprise knowledge work like legal and finance, and cybersecurity defense.\nSafely releasing frontier capabilities at this level requires a phased approach. We are actively engaged in the U.S. government’s voluntary process for pre-release model access while we gradually expand access. We’ll continue to gather feedback from early testers as we iterate on guardrails before making Argon available to developers, enterprises, and consumers as soon as possible.\nArgon will launch at an introductory price\n1\nof $2 per million input tokens and $10 per million output tokens, with cached input tokens priced at 95% off input token price.\nChanging how we work and build at Google\nGemini 4 Argon is already powering our internal workflows, with thousands of Googlers highlighting the model’s strengths in specialized coding tasks, conducting deeper research, and writing quality. It’s helping teams build faster and push the boundaries of engineering productivity and accelerating breakthroughs:\nQuantum algorithmic optimization: Argon is helping our quantum computing researchers optimize the spacetime resources (qubits × gates) of subroutines that bottleneck important applications. In one example, it beat the published baseline by 40% in a matter of minutes.\nMemory efficiency: A team of Argon agents analyzed fleet-wide profiling telemetry to autonomously identify and apply memory optimizations across Google’s data centers, freeing up over 300 TiB of memory once rolled out, with an estimated 500 TiB to 1 PiB in total savings.\nLarge Scale Codebase Migrations and Optimizations: Argon agents are working on migrating C/C++ codebases to Rust across Google — scaling from tens of thousands of lines in core libraries like re2, libgav1 up to 800K+ lines for the Fuchsia Zircon kernel. Given the criticality of many of these systems, such large-scale rewrites are undergoing rigorous automated and manual auditing, emulation testing, and review before rolling out to production.\nFor libgav1, Google's open source software for decoding video, Argon agents took an existing Rust port and replaced 32K lines of SIMD code by running many rounds of profile-guided experiments, studying the compiler's output, producing safe Rust so the compiler would vectorize it automatically. The end result is a memory-safe video decoder that runs 2.7x faster than the Rust port, with identical video output, bringing it closer to the optimized C++.\nWorking harder on your most complex problems\nTo support Gemini 4 Argon’s capabilities across longer, more complex use cases, we are significantly expanding the model’s output token limit to an industry-leading 1M tokens, up from the previous 64K tokens. When the model has the headroom to think deeply and generate hundreds of thousands of tokens in a single trajectory, it adds a new level of depth in reasoning to solve tough problems in one go.\nEnabling coding and enterprise workflows across domains\nGemini 4 Argon’s capabilities across coding, reasoning, and multimodality and its ability to sustain long, multi-step tasks enable it to excel across a range of enterprise workflows.\nGoogle engineers have been using Argon for their daily tasks, from everyday debugging to large-scale codebase migrations and algorithm designs. It sets a new state of the art on DeepSWE v1.1 (77.9%), which measures a model’s performance in real-world long-horizon software engineering tasks.\nBeyond coding, Argon is the leading model on the Vals Index , which measures economic impact across finance, coding, legal, and tax work, with every sector weighted by its contribution to U.S. GDP. We see similarly leading performance across other domain specific evaluations, like Vals Finance Agent v2 (multi-step financial research) and Harvey’s Legal Agent Benchmark (legal research and drafting). On AutomationBench, Zapier’s benchmark measuring end-to-end execution across core business functions, Argon ranks #1 with a score of 51.3%.\nArgon is also uniquely strong when knowledge work requires visual understanding. It’s able to drive professional chart analysis, identify details from long videos, and take action based on a series of documents. For example, on LVBench, which measures long video understanding, Argon is state of the art with a score of 91.7%.\nLeading in defensive cybersecurity\nTo better equip cyber defenders for the new era of cyberattacks, we trained Gemini 4 Argon to be highly capable at cybersecurity defense. Argon can autonomously find, validate, and patch critical software vulnerabilities. For trusted defenders and our own internal teams at Google, we’ll be releasing Argon without cyber guardrails so they can leverage its full frontier-level cybersecurity defense capabilities.\nWiz is already using Argon for cybersecurity defense through its Scan for Good initiative – a program dedicated to protecting critical public infrastructure for free by finding and remediating high-risk exposures. In an early demonstration of its impact, the model uncovered a critical vulnerability exposing sensitive personal information across healthcare software used by hospitals worldwide, identifying a severe risk that previous frontier models had missed.\nOn CWE-bench v1 , which evaluates the model’s ability to remediate security vulnerabilities, Argon ties for first place with a top score of 68%, building on 3.8 Flash Cyber’s frontier performance on CWE-bench v0 .\nGemini 4 Argon demonstrates impressive leaps in vulnerability discovery over 3.8 Flash Cyber. For example:\nOn Google’s internal comprehensive vulnerability benchmark, Argon uncovered a wide range of exposures across complex codebases spanning 20 programming languages.\nOn Wiz’s internal black-box penetration testing benchmark, which tests a model’s ability to analyze live web systems without source code, Argon outperforms 3.8 Flash Cyber in discovering the attack surface, identifying vulnerabilities, and producing proof-of-concept evidence to validate them.\nStrengthening frontier safeguards before broad availability\nBefore rolling out Gemini 4 Argon broadly, we’re continuing to strengthen critical frontier safeguards across four main areas:\nDefending against misuse: To prevent bad actors from using Argon for cyber or chemical, biological, radiological, and nuclear (CBRN) attacks, the model is designed to refuse harmful requests while preserving legitimate, dual-use scientific research, as per our Frontier Safety Framework . We are strengthening the robustness of our safeguards for this launch, including improving our techniques to monitor the model’s internal activations to spot misuse. These safeguards underwent robustness testing by internal and external red teams using a combination of manual and automated attack methods.\nDefending against prompt injection attacks: Argon is also our most resilient model yet against indirect prompt injections, where malicious instructions or context are used to hijack a model’s behavior. These are complex attacks that require constant vigilance and multiple layers of defense. Through automated red teaming and adversarial training, Gemini 4 Argon is leading in prompt injection robustness on the Gray Swan’s Indirect Prompt Injection (IPI) benchmark.\nMonitoring for misalignment: In order to prevent Argon from stepping out of bounds to try to accomplish a task in a way that goes beyond the user’s intentions, we are deploying misalignment mitigations that monitor Argon’s chain-of-thought and actions and stop execution when necessary.\nWe used a similar system to monitor our training runs and send alerts to a dedicated incident response team, taking careful precautions against feeding the findings back into training so as to not risk shaping Argon’s reasoning to evade our monitoring. We strongly encourage the rest of the industry to preserve reasoning transparency in these pivotal moments of increased capabilities while navigating alignment risks, so that model thoughts remain helpful in identifying and diagnosing misalignment.\nHardening systems: As frontier models grow increasingly capable, safely testing them requires secure environments that can keep up with the systems themselves. In line with our agent control roadmap , we are hardening our sandboxed environments by isolating and sealing them before high-risk training or evaluations begin. We’re committed to sharing these agent security best practices with our partners to improve security across the ecosystem.\nRolling out soon\nWe built Gemini 4 Argon with frontier-level capabilities on coding, knowledge work, cybersecurity defense, and creative writing to be a partner for developers, professionals, and enterprises while they tackle the most difficult problems. We’re grateful for the initial cohort of cyber defenders and trusted testers whose real-world evaluations and feedback will help us strengthen our systems before we release to developers, enterprises, and consumers, starting with paid API customers and Google AI Ultra subscribers.\nPosted in:\nGemini models\n1\nAfter the introductory period expires, the price of $4 per 1M input tokens and $20 per 1M output tokens will apply.\nAbout the author",
+      "tier": "official",
+      "publishedAt": "2026-09-30"
+    },
+    {
+      "title": "Google’s new frontier AI model Gemini 4 Argon goes to cybersecurity defenders first — SiliconANGLE",
+      "url": "https://siliconangle.com/2026/09/30/googles-new-frontier-ai-model-gemini-4-argon-goes-to-cybersecurity-defenders-first/",
+      "host": "siliconangle.com",
+      "body": "[curl 원문 텍스트 발췌 — 기자 Duncan Riley, 2026-09-30 18:31 EDT 업데이트]\nOutside Google’s own teams, only members of its Fairwind Program can use Argon for now. The program opened Sept. 3 with the smaller Gemini 3.8 Flash Cyber model and has since signed up more than 650 organizations, including CrowdStrike Holdings Inc. and Palo Alto Networks Inc.\nKoray Kavukcuoglu, chief AI architect at Google, wrote in the announcement that releasing capabilities at this level “requires a phased approach.” Google is taking part in the U.S. government’s voluntary process for pre-release model access and says it is still hardening safeguards against misuse for cyberattacks or weapons development.\nBy Google’s account, Argon holds up against indirect prompt injection better than any model it has shipped. Separate monitors watch the model’s chain of thought and actions, and they can stop it if it goes beyond what a user intended.\nOn DeepSWE v1.1, Argon scored 77.9% in long-horizon software engineering tasks. Anthropic’s Claude Opus 5.5, which came out last week, managed 74.2% on Google’s chart, a 10th of a point ahead of OpenAI’s GPT-6 Astra. AutomationBench, which measures end-to-end business work, showed a wider gap of 51.3% to 42.5% over Opus 5.5. Of the 18 benchmarks in Google’s charts, VentureBeat counted 12 that Argon led outright. Terminal-Bench 4.0 still belongs to Opus 5.5, and FrontierSWE v2 is one of the few Astra kept.\nGoogle built Argon for the kind of long-horizon work DeepSWE measures, and it set the model’s output limit at 1 million tokens to match. Earlier Gemini models topped out at 64,000.\nThousands of Google employees are already using Argon, and teams at the company have put its agents to work on large engineering jobs. One is moving C and C++ code to Rust, in projects that range from core libraries of tens of thousands of lines to the more than 800,000-line Zircon kernel in Google’s Fuchsia operating system. On libgav1, Google’s open-source video decoder, the agents started from an existing Rust port and rewrote 32,000 lines of its speed-critical code as safe Rust the compiler could optimize on its own. The decoder now runs 2.7 times faster than that earlier port, with no change to its video output.\nGoogle engineers are also using Argon agents to hunt for wasted memory, and a sweep of fleetwide profiling data has so far freed more than 300 tebibytes across the company’s data centers.\nFairwind members and Google’s internal teams get a version of Argon with the cyber guardrails removed. The model can find and fix software vulnerabilities on its own, and on CWE-bench v1, a remediation test, it tied GPT-6 Astra at 68%.\nWiz Inc., the Google-owned cloud security company, has used Argon in its free Scan for Good program, which looks for exposures in essential public infrastructure. Google said the model found a critical flaw exposing personal information in health care software used by hospitals worldwide. Earlier frontier models had not caught it.\nGoogle has not given a date for paying developers and Google AI Ultra subscribers, who are next in line. Argon will cost $2 per million input tokens and $10 per million output tokens at launch, and cached input is priced 95% lower. Anthropic charges $4 and $20 for Opus 5.5, and Argon moves to those rates when the launch pricing ends.",
+      "tier": "press",
+      "publishedAt": "2026-09-30"
+    },
+    {
+      "title": "GLM-5.3 and the spread of advanced cyber capabilities — Anthropic Frontier Red Team",
+      "url": "https://www.anthropic.com/research/glm-5-3-and-the-spread-of-advanced-cyber-capabilities",
+      "host": "anthropic.com",
+      "body": "[curl 원문 텍스트 발췌 — Anthropic Frontier Red Team, 2026-09-29]\nBut those models have now arrived. In this post, we share our analysis of GLM-5.3, the latest AI model developed by Zhipu AI (known outside of China as Z.ai). Like Claude Mythos Preview, GLM-5.3 has strong capabilities for autonomously building end-to-end cyber exploits. But GLM-5.3 is unlike other frontier models in that it has been released without meaningful safeguards to limit misuse. We find that attackers can bypass GLM-5.3’s safeguards between 64% and 100% of the time with simple techniques in our simulated tests. In contrast, these attacks did not succeed against safeguarded Claude models in our testing. We assess that GLM-5.3’s lax safeguards significantly increase the cyber capabilities available to malicious actors. At the same time, these capabilities can also benefit defenders working to secure their systems.\nOn Sept. 17, NIST’s Center for AI Standards and Innovation (CAISI) published its own assessment of GLM-5.3’s cyber capabilities. CAISI found that GLM-5.3 is “the most cyber-capable open-weight model released to date” and that it lags the US frontier by about four months on an aggregate of CAISI’s cyber benchmarks. Our capability findings broadly match CAISI’s. In CAISI’s comparison, US models were tested with cyber safeguards disabled when applicable, and the US frontier includes models released only to vetted users. Attackers can’t readily access those versions of US models, but anyone can download GLM-5.3. This post adds our analysis of how easily GLM-5.3’s safeguards can be bypassed or removed.\nFirst, we ran the model on ExploitBench , which measures how well AI models can exploit known vulnerabilities in the V8 engine used by Google Chrome. Here we focus on the models’ ability to develop end-to-end exploits successfully, as this is the most relevant capability for attackers, and where we see significant changes between models. We find that GLM-5.3 develops end-to-end exploits in 50 of 410 attempts. Claude Mythos Preview did so at a similar rate—in 56 of 410 attempts.\nIn our internal Binary Exploitation benchmark, 1 we test whether models can find and exploit vulnerabilities in popular open-source projects that participate in Google’s OSS-Fuzz project. Here, full credit is awarded for a full control-flow hijack. We evaluate several models on 100 tasks from the benchmark (selected at random), and find that GLM-5.3 develops full control-flow hijacks in 4% of the trials; Claude Mythos Preview did so in 6%. Although GLM-5.3 performs below Claude Mythos Preview here, a meaningful threshold has clearly been crossed: earlier models, like Claude Opus 4.6 and GLM-5.2, do not succeed in any of them.\nTo research how far abliteration allows attackers to bypass GLM-5.3’s safeguards, we produced an abliterated copy ourselves, and then ran it on three public benchmarks ( JailbreakBench , HarmBench , and StrongREJECT ) that measure how often a model complies with clearly harmful requests. Abliterating the model took our team—which had never previously attempted this task—about 2,200 GPU hours at a computation cost of roughly $4,400. 3 Abliterating GLM-5.3-Flash took about 600 GPU hours. The edit took GLM-5.3’s refusal rate from above 90% to about 3% and 2% on the first two benchmarks (JailbreakBench and HarmBench) and to 12% on the third (StrongREJECT). Abliteration did not significantly reduce the model’s capabilities: on GPQA-Diamond, an evaluation that measures general scientific capabilities, the standard and abliterated models scored the same results; on a tested subset of the CyberGym evaluations, the abliterated version scored a few percent lower (as shown in the chart below).\nProviding a deceptive prompt, such as telling the model that it is an autonomous red-team agent working on an exercise. This gets GLM-5.3 to engage 64% of the time.\nPrefilling the models’ thinking tokens so that it appears to have considered the user’s request and decided to proceed. This gets GLM-5.3 to engage 92% of the time.\nUsing an abliterated version of the model, as described above. This gets GLM-5.3 to engage 100% of the time.\nIn our testing, none of these techniques got safeguarded Claude models to carry out the harmful tasks we tested. Claude’s safeguards blocked the requests that used deceptive prompts. The Anthropic API provides would-be attackers with no way to prefill Claude’s thinking. And since Claude’s weights are not provided to users, they cannot be abliterated to change Claude’s behavior.\nGLM-5.3 will likely give malicious actors access to capabilities that will allow them to find and exploit cyber vulnerabilities without meaningful restrictions. This is unlike any other similarly capable AI model, all of which were released with safeguards or through limited access programs. The release of GLM-5.3 is a meaningful step change in the cyber capabilities available to attackers. Anthropic and other US AI labs have published recent reports that disclose how cyber attackers have tried to use AI systems. Given this evidence, we think it’s likely both state and non-state actors will use models like GLM-5.3 to cause real-world harm.\nIn a second session, a researcher used GLM-5.3-Flash (a smaller, less capable version of GLM-5.3) to develop an exploit for a known vulnerability (we’ve previously written about these “N-day” vulnerability exploits here ). Here, the researcher focused on a recently disclosed flaw in Google Chrome (CVE-2026-11645) to see how quickly the model could turn a public fix into a working attack. The researcher provided GLM-5.3-Flash with public details of this CVE and another known flaw. With no significant direction from the researcher, GLM-5.3-Flash chained together exploits for these two flaws, building a reliable exploit chain for an ARM64 target, bypassing pointer-authentication (PAC) hardening. This took 20 minutes of human attention, plus eight hours of work for GLM-5.3-Flash. At Zhipu’s API prices, this effort would have cost $20.40.\nMost of this went to exploring variants in parallel and to testing model capabilities after modifications. We estimate a team experienced with the technique, starting from scratch on this model, would need closer to 600 GPU hours ($1,200).",
+      "tier": "official",
+      "publishedAt": "2026-09-29"
+    },
+    {
+      "title": "CAISI’s Assessment of Z.ai’s GLM-5.3 Cyber Capabilities — NIST",
+      "url": "https://www.nist.gov/news-events/news/2026/09/caisis-assessment-zais-glm-53-cyber-capabilities",
+      "host": "nist.gov",
+      "body": "[curl 원문 텍스트 발췌 — NIST CAISI, 2026-09-17. 이번 주 이전에 나온 평가지만 Anthropic 보고서가 직접 인용]\nSeptember 17, 2026\nShare\nFacebook\nLinkedin\nX.com\nEmail\nThe PRC-based company Z.ai (formerly known as Zhipu AI) released a new AI model, GLM-5.3, on August 14, 2026. Z.ai publicly released the model’s weights two weeks later. In CAISI’s assessment of GLM-5.3’s cyber capabilities, the key findings were:\nGLM-5.3 is the most cyber-capable open-weight model released to date.\nGLM-5.3’s cyber capabilities are significantly lower than those of current U.S. frontier models. GLM-5.3 lags the capability level of the U.S. frontier by about four months in an aggregate measure of performance across CAISI cyber benchmarks (Figure 1).\nFigure 1: Comparison of cyber capabilities over time of the most capable U.S. and PRC models, based on a composite measure of performance on CAISI’s cyber evaluations that takes into account task difficulty. A 400-point increase on the y-axis equates to a 10x increase in the statistical odds of solving tasks. Error bars denote 95% confidence intervals. See Methodological Notes for more details.\nCredit:\nCAISI/NIST\nCAISI evaluated GLM-5.3’s performance on four benchmarks covering vulnerability discovery and exploit development (Figure 2). CAISI previously conducted an assessment of Z.ai’s GLM-5.2 model.\nFigure 2: GLM-5.3 performance on cyber benchmarks. Higher success rate indicates greater cyber capability. Error bars represent 95% Wilson confidence intervals. See Methodological Notes for more details.\nCredit:\nCAISI/NIST\nMethodological Notes\nFor each individual benchmark, “U.S. frontier best” refers to the highest score on that benchmark achieved by any model released by a United States entity, including both trusted-access releases and full public releases, that CAISI has evaluated to date. Similarly, “PRC frontier best” refers to the highest score on each benchmark achieved by any model released by a People’s Republic of China entity that CAISI has evaluated.\nThis blog post does not compare to models that have been developed but not yet released, which could have stronger capabilities. For most of the evaluations, Kimi K3 was the previous PRC frontier best model, as well as the best previously available open-weight model that CAISI has evaluated.\nSEC-Bench Pro\nA set of 183 tasks. The model is given the source code of V8 or SpiderMonkey (the software behind internet browsers like Chrome, Firefox, and Edge) with a known vulnerability, and is pointed at files to audit and the kind of flaw to look for. The model must find the vulnerability and w\nA set of 183 tasks. The model is given the source code of V8 or SpiderMonkey (the software behind internet browsers like Chrome, Firefox, and Edge) with a known vulnerability, and is pointed at files to audit and the kind of flaw to look for. The model must find the vulnerability and write code that causes a crash by provably triggering the intended bug.\nA set of 41 tasks. The model is given a known bug in V8 (the software behind internet browsers like Chrome and Edge) and must develop it into an exploit that allows the model to run code of its choosing. Each task is graded on a 16-point scale, and the model’s score per task is its best of three attempts.\nA set of 502 tasks. The model is given a real bug in an open source project along with an input already known to crash it. The model must develop the bug into an exploit that allows the model to run code of its choosing.\nA set of 297 tasks. The model is given the code of a widely used open source project with a known defect, but no description, example crash, or fix. It must find and use the defect to hijack the program.",
+      "tier": "data",
+      "publishedAt": "2026-09-17"
+    },
+    {
+      "title": "Anthropic says Zhipu's open-weight GLM-5.3 nearly matches Claude Mythos Preview at building exploits — The Decoder",
+      "url": "https://the-decoder.com/anthropic-says-zhipus-open-weight-glm-5-3-nearly-matches-claude-mythos-preview-at-building-exploits/",
+      "host": "the-decoder.com",
+      "body": "[curl 원문 텍스트 발췌 — 기자 Maximilian Schreiner, 2026-09-30]\nZhipu's open-weight model GLM-5.3 comes close to Claude Mythos Preview at exploit development, according to an Anthropic analysis. Anthropic says the model's safeguards can be bypassed with simple methods. The company also has its own reasons to sound the alarm.\nAnthropic deliberately held Mythos Preview back, giving access only to select defenders through Project Glasswing so they could get a head start. The company says those defenders have since found more than 10,000 vulnerabilities in critical software. OpenAI is taking a similar approach with Daybreak. GLM-5.3, on the other hand, is available for anyone to download.\nFrontier-level exploits now cost about as much as lunch\nExploitBench measures how well models exploit known bugs in Chrome's V8 engine. On that benchmark, GLM-5.3 built a working exploit in 50 of 410 attempts, while Mythos Preview managed 56. Anthropic also runs an internal binary exploitation benchmark based on open-source projects from Google's OSS-Fuzz. There, GLM-5.3 took full control of the target program in 4 percent of tasks, compared to 6 percent for Mythos Preview. Older models like GLM-5.2 and Claude Opus 4.6 failed both tests, and Kimi K3 and DeepSeek V4.1-Flash barely got off zero.\nAnthropic used the smaller GLM-5.3-Flash to test how quickly a freshly disclosed vulnerability can be turned into a working attack. The model combined a recently disclosed Chrome bug with another known vulnerability and, with little guidance, built a reliable attack out of them. The attack even got around an extra security feature built into the processor. The whole job took 20 minutes of human attention and eight hours of model time, which would have cost $20.40 at Zhipu's API prices.\nOpen weights make safeguards easy to remove\nIn an Anthropic simulation, GLM-5.3 refused openly malicious attack commands. When the same request was dressed up as a red-team exercise, the model tried to connect to the target system in 64 percent of runs. With prefilled reasoning steps, that number rose to 92 percent. After abliteration, a technique that strips refusal behavior out of open weights, it reached 100 percent. The simulation doesn't execute any code, so it can't show whether an attack would actually have succeeded. Protected Claude models stayed at zero.\nAnthropic's warning also serves its business\nThe analysis isn't entirely selfless. Anthropic doesn't release its model weights, and the report presents exactly that as a key security advantage. A cheap Chinese open-weight model that's close to the frontier is also a direct competitor.\nStill, this isn't just self-interest. CAISI's independent assessment backs up the capability n",
+      "tier": "press",
+      "publishedAt": "2026-09-30"
+    },
+    {
+      "title": "Top AI executives sign commitment to ‘self-police’ after meeting at White House — CNN",
+      "url": "https://www.cnn.com/2026/09/29/business/amodei-huang-karp-trump",
+      "host": "cnn.com",
+      "body": "[curl 원문 텍스트 발췌 — CNN, 2026-09-29 게재·17:41 ET 업데이트]\nPresident Donald Trump said Tuesday that top tech executives had signed a new commitment aimed at better “self-policing” their companies’ AI models, arguing that the light-touch approach represents the best way to balance safety concerns with his desire to accelerate a technology that he’s dubbed “Super Intelligence.”\nFlanked by the tech executives as he addressed reporters in the White House’s East Room and then later outside the West Wing, Trump heaped praise on the CEOs who attended a high-profile White House luncheon — while dismissing concerns about the dangers of the fast-developing AI technology.\n“I’m seeing tremendous self-policing, and they understand that they have to self-police,” he told reporters. “These models are very complex and, again, I believe they’re going to be used for the good.”\nThe president later posted the accord on Truth Social , which detailed four steps that all the companies agreed to take: implement internal controls to ensure models are adhering to appropriate standards on cybersecurity; empower an internal team to ensure controls, monitoring and detection are working as intended; partner with an external operator to independently assess the models; and designate an “independent committee of the board of directors” to receive those reports and make sure any problems are addressed.\nIn addition to Trump, the post showed six signatures on the document: Google’s Sundar Pichai, Anthropic’s Dario Amodei, Meta’s Mark Zuckerberg, Nvidia’s Jensen Huang, OpenAI’s Greg Brockman and X’s Elon Musk.\nThe meeting came in the wake of a series of episodes that have raised widespread safety concerns tied to AI, including AI agents going rogue and attempting to hack into federal databases.\nSeveral AI industry officials, including some CEOs leading the development of increasingly sophisticated AI models, have even warned of catastrophic results if they lose control of their technology.\nBut the meeting appeared to do little to dampen Trump’s enthusiasm for the models that he’s referred to as Super Intelligence, instead bolstering his belief that the AI industry is capable of overseeing itself without additional safety regulations. He called the new commitment “morally binding.”\nTrump, who said he would soon sign an executive order renaming “artificial intelligence” as “super intelligence,” insisted that the government could not slow AI’s development for fear of falling behind China and other developed nations.\n“This is unbelievable growth for our country,” he said. “Whoever wins SI is going to win.”\nInside the meeting\nAmong those in attendance Tuesday were Amodei, Zuckerberg, Huang, Brockman, Musk, Pichai, Palantir’s Alex Karp and Amazon’s Jeff Bezos, along with some members of his Cabinet and House Speaker Mike Johnson. Sources familiar with the meeting described it as an effort to get government and top industry officials on the same page amid increasing security concerns tied to AI models.\nSpeaking with reporters, Zuckerberg said the agreement focused on “a set of principles and commitments around building robust internal controls and detecting if there are any issues with the technology, coupled with multiple layers of of auditing and controls, starting with internal risk review, external auditors and evaluators.”\nThe companies’ boards of directors would also independently review audit reports under the agreement, he added.",
+      "tier": "press",
+      "publishedAt": "2026-09-29"
+    },
+    {
+      "title": "Trump, tech bosses sign voluntary pact pledging ‘robust’ AI safeguards — Al Jazeera",
+      "url": "https://www.aljazeera.com/news/2026/9/29/trump-top-tech-firms-sign-accord-to-self-police-ai-development",
+      "host": "aljazeera.com",
+      "body": "[curl 원문 텍스트 발췌 — 기자 John Power, 2026-09-29]\nUnited States President Donald Trump and top tech executives have signed an accord promising greater safeguards for artificial intelligence amid growing concerns that the frontier technology is exposing humanity to catastrophic risks.\nTrump announced the voluntary accord on Tuesday after gathering AI leaders at the White House for a luncheon event that reaffirmed his administration’s scepticism of government regulation of the rapidly advancing technology.\nRecommended Stories\nlist of 3 items list 1 of 3 Trump unveils new site to simplify access to government services\nlist 2 of 3 Pope Leo says AI risk concerns not ‘fake news’\nlist 3 of 3 OpenAI cancels release of AI model GPT-6.1 Astra, citing safety concerns\nend of list\n“There’s a belief that there should be tremendous self-regulation, and we automatically have regulation with the Department of Justice, the FBI, all of that,” Trump said while seated alongside tech executives.\nUnder the Joint Commitment on Frontier Responsibilities, bosses at Anthropic, OpenAI, Google, Meta, xAI and Nvidia pledged to implement “robust” controls to monitor AI models and appoint internal teams to “ensure all of the controls, monitoring, and detection are operating as intended, and that any issues are remediated”.\nThe companies also pledged to partner with independent external auditors to ensure the safeguards are working as intended and to meet regularly to “establish standards and best practices to improve the safety of their systems”.\nThe accord, which does not stipulate who would carry out third-party evaluations, states that it “may make sense” to codify the measures into law or formal regulations in the future.\n“Regardless of whether this is required of companies, we believe that implementing these controls and audits is critical to ensuring a safe future for everyone, and each of our companies are committed to doing this,” the accord states.\nAdvertisement\n‘Pace the frontier’\nThe six signatories are Anthropic’s Dario Amodei, OpenAI’s Greg Brockman, Google’s Sundar Pichai, Meta’s Mark Zuckerberg, xAI’s Elon Musk, and Nvidia’s Jensen Huang.\nThe accord comes as the Trump administration is at odds with calls for urgent action to regulate AI from both the international community and key industry figures, including Anthropic’s Amodei, who has urged developers to slow down and “pace the frontier”.\nTwenty countries and the European Union last week issued a call for global coordination to ensure AI remains under human control, including the potential creation of an oversight body to set and enforce standards.\nTrump’s accord drew a mixed response on Tuesday, with critics noting its nonbinding nature and limited details.\nSilicon Valley investor David Sacks, who previously served as Trump’s AI tsar, called the accord “far better” than an international agreement that would “probably never happen”.\n“President Trump continues to ensure that the U.S. remains the technology leader while putting Americans first,” Sacks said in a post on X.\nAlvin Wang Graylin, a senior fellow at the Asia Society Policy Institute’s Center for China Analysis, welcomed the pledge by industry leaders but said it fell far short of what was needed.\n“The most serious risk to Americans is not a Chinese superintelligence. It is a smaller model in non-state hands, used for biological, chemical, or cyber-harm,” Graylin told Al Jazeera.\n“Putting that on paper, with Zuckerberg and Huang in the room alongside Amodei, is better than another year of ‘we cannot regulate because China will not’,” Graylin said.\nAdvertisement\n“What is missing is independence and anything that crosses a border. The companies drafted the principles, they hire the auditor, and the commitment is voluntary, on a day the White House also said it would not support guardrails,” he added.\n‘Incompetent and careless’\nToby Walsh, chief at the UNSW AI Institute in Sydney, Australia, said AI companies had already proven “incompetent and careless at managing themselves”.\n“What other trillion-dollar industry marks its own homework?” he told Al Jazeera.\n“It’s too tempting to cut corners,” Walsh said, adding that top executives should be held liable for the harms caused by their products.\n“We should be billing them for all the time put into identifying and fixing these cyberattacks,” he said.\nDavid Krueger, an AI expert at the University of Montreal who advocates a pause in development, criticised the accord as vague and a further example of the Trump administration’s reliance on self-regulation.\n“The Trump administration is continuing its ‘regulate without regulating’ approach, where everything is ostensibly voluntary, but there is an implicit threat of punishment for noncompliance,” Krueger told Al Jazeera.",
+      "tier": "press",
+      "publishedAt": "2026-09-29"
+    },
+    {
+      "title": "President Donald Trump announces creation of 'Super Intelligence Force' AI task force — ABC7 / ABC News",
+      "url": "https://abc7news.com/story/president-donald-trump-announces-creation-super-intelligence-force-ai-task/19907473/",
+      "host": "abc7news.com",
+      "body": "[curl 원문 텍스트 발췌 — ABC7(ABC News), 2026-10-05 14:31]\nWASHINGTON -- President Donald Trump formally announced the creation of what he called a “Super Intelligence Force,” an artificial intelligence task force that he says will work to promote AI dominance while also protecting American lives and interests.\n\"The Super Intelligence Force is tasked with coordinating the effort of the Federal Government to ensure that America continues to lead the World in Super Intelligence, which many say is bigger than the Industrial Revolution, and the Internet, and will protect the interests, and improve the lives, of all Americans,” Trump wrote on his social media platform Sunday.\nTrump's announcement was thin on details, with the president not outlining any specific action or oversight the task force will have on AI development -- an issue about which some tech CEOs have raised concerns and called for federal regulation.\n\"The Super Intelligence Force will coordinate the Federal Government's engagement with Consumers, Public Interest Groups, Religious Organizations, Critical Infrastructure Providers, and Super Intelligence Companies,\" Trump added.\nAn ABC News request sent to the White House for more information about the task force's objectives did not immediately receive a response.\nLast month, Trump said he would create an AI task force amid rising concerns about the technology. Sunday's formal announcement comes after the president met with top tech CEOs at the White House last week, where he said he and six companies signed a \"constitution\" establishing standards on how to self-police their technology.\nTrump said the task force will be led by Director of National Intelligence Jay Clayton, as well as Chairman of the Federal Trade Commission Andrew Ferguson, Under Secretary of Defense for Research and Engineering Emil Michael, and Director of the Office of Personnel Management Scott Kupor.\nTop Stories\nFormer 'American Idol' contestant Caleb Flynn to be sentenced for wife's murder\n2 hours ago\nFather arrested, 14-year-old daughter rescued by Mexican authorities in Monterey Co. incest case\nFashion designers identified as couple fatally shot at Oakland Hills home, friends say\nClayton, who is expected to serve as the White House's new AI czar, told The Wall Street Journal in an interview published Saturday that global dominance in AI makes the U.S. more equipped to address risks from adversaries, echoing the president’s support for the technology's continued growth.\n\"The risk of not being first is high,\" Clayton told The Wall Street Journal. “Not being first increases the identified, and unidentified, risks, particularly from our adversaries. Being first will better enable us to address those risks on behalf of the American people.\"\nClayton said of the AI task force, \"I expect there will be mechanisms developed in dialogue, just like there are in other industries.\"\nAccording to The Wall Street Journal, Clayton cited risk models for the financial industry that have been developed in conjunction with the Federal Reserve and Securities and Exchange Commission. He told the newspaper that the task force would examine current law and discuss possible actions that Congress could take.\nClayton also expressed confidence in the group that the president has appointed to run the AI task force, citing the \"diverse skill sets\" and \"common commitment\" of its members.",
+      "tier": "press",
+      "publishedAt": "2026-10-05"
+    },
+    {
+      "title": "Introducing Beam: Reflection’s 501B open-weight model — Reflection",
+      "url": "https://reflection.ai/blog/introducing-beam",
+      "host": "reflection.ai",
+      "body": "[curl 원문 텍스트 발췌 — Reflection 공식 블로그, 2026-10-05]\nWe are introducing Beam, Reflection’s first open-weight model. Beam is a sparse Mixture-of-Experts model with 501 billion total parameters, 23 billion active, built for coding, reasoning, and agentic workloads.\nBeam’s capabilities come from major investments in both pretraining and reinforcement learning (RL). We pretrained the model on 23.8 trillion diverse, curated, high-quality tokens from the web and proprietary licensed datasets, matching or outperforming available similar-sized open base models. In parallel, we developed the algorithms, training environments, and infrastructure needed to sustain high-compute RL at exceptional scale. Our high-compute RL run generated over 100 million rollouts on 10.5K NVIDIA GB300 GPUs over 4 weeks of training.\nTogether, these efforts produced competitive open-weight performance with frontier inference compute efficiency.\nBeam is undergoing final red-teaming and evaluations. You can sign up here for early access to the model. We will release the weights, technical report, model card, and developer artifacts later this month.\nModel Capability\nWe trained Beam with a particular focus on coding and agentic performance. Beam advances the Western open-weight frontier and is competitive with larger open models like GLM 5.2 and approaching Qwen 3.8-Max on coding and agentic tasks. Where frontier open models like Kimi K3 remain ahead on raw capability, Beam's advantage is efficiency at inference time.\nAgentic Coding/Terminal Row label Beam Inkling Nemotron 3 Ultra GLM 5.2 GLM 5.3 Kimi K3 Qwen 3.8 Max DeepSeek V4.1 Flash\nDeepSWE v1.1 44.4 NR NR 44.0 61.0 68.0 51.0 74.2\nSWE Bench Pro v2-Hard 77.2 56.9 NR NR 84.3 88.2 NR NR\nSWE Bench Pro v1 65.5 54.3 46.4 62.1 NR NR 67.7 NR\nTerminal Bench v2.1 80.1 63.8 56.4 81.0 88.2 88.3 86.6 90.6\nSWE Atlas Codebase QnA 34.6 NR NR NR 61.0 68.0 NR NR\nSWEBench Multilingual 78.0 NR 67.7 NR NR NR NR NR\nSWEBench Verified 80.9 77.6 70.7 NR NR NR NR NR\nReasoning Row label Beam Inkling Nemotron 3 Ultra GLM 5.2 GLM 5.3 Kimi K3 Qwen 3.8 Max DeepSeek V4.1 Flash\nAIME 2026 97.8 97.1 NR 99.2 NR NR NR NR\nHLE no tools 36.2 29.7 26.7 40.5 42.3 46.9 43.6 39.1\nSciCode 49.7 46.1 44.6 NR 59.0 58.7 52.1 52.0\nCriPT AA 16.3 5.4 3.1 20.9 19.1 23.4 20.0 14.3\nGPQA Diamond 90.5 87.2 87 91.2 91.7 93.5 92.6 90.9\nTool Calling / Search Row label Beam Inkling Nemotron 3 Ultra GLM 5.2 GLM 5.3 Kimi K3 Qwen 3.8 Max DeepSeek V4.1 Flash\nAutomationBench public 37.0 NR NR 26.2 48.2 46.7 39.8 54.8\nMCP Atlas 78.7 76.0 63.1 77.8 84.2 82.3 84.5 NR\ntau3 banking 38.0 25.0 22.6 37.1 NR 37.1 55.2 NR\nBrowseComp w/ context management 77.4 77.1 44.4 NR NR 91.2 NR NR\nDeepSearchQA w/context management 80.1 NR NR NR NR 95.0 NR NR\nGeneral Capabilities Row label Beam Inkling Nemotron 3 Ultra GLM 5.2 GLM 5.3 Kimi K3 Qwen 3.8 Max DeepSeek V4.1 Flash\nAA-LCR 79.3 77.3 79.3 78.3 79.7 88.7 80.3 84.0\nLongBench v2 65.5 NR 61.9 64.0 NR NR 66.3 NR\nIFBench 79.7 79.8 81.7 73.3 NR NR 82.8 NR\nAA Omniscience (index) - public split only (our results) 13.0 14.2 8.6 NR 22.6 NR NR 6.6\nBeam was pretrained end-to-end in under four weeks on a cluster of 6,144 NVIDIA GB300 NVL72 GPUs. To achieve the reliability, performance, and development velocity required to train Beam at scale, we built nearly the entire infrastructure stack in-house. This included a novel topology-aware, Kubernetes-based scheduler across our clusters; an internal node lifecycle system with continuous health monitoring and alerts; and a silent data corruption (SDC) detection system capable of semi-autonomous rewinds and restarts. Together, these systems gave us the performance and operational control required to train our own frontier model efficiently and with greater stability.\nAs a result of extensive investments in the training recipe stability, infrastructure, and data quality, the overall pretraining run finished with an extremely smooth trajectory. We executed nine semi-automatic rewinds throughout, attributed either to non-deterministic gradient norm spikes or to suspected SDCs. In addition, the run’s goodput (the share of wall-clock time spent on training steps retained in the final model) reached 92.3% towards the end thanks to improvements in checkpointing, fault detection, and node health management.\nBeam pairs coding and agentic capabilities with highly efficient reasoning. On advanced reasoning benchmarks, it achieves scores comparable to GLM-5.2 while using 3–4× less inference compute. Efficiency gains are even more pronounced when comparing to models in the 2T+ parameter family like Qwen 3.8-Max, which require significantly more inference compute per token.\nThis preview shows what Beam can do today. We are making this early version of Beam available to a select group of users; you can sign up for the waitlist here .\nWe want Beam to be widely accessible and easy to build on. This month, we will release the weights under an Apache 2.0 license, along with documentation and the full stack for running, evaluating, and fine-tuning the model. We will be launching Beam with an ecosystem of distribution partners, as well as integration with a broad range of open source libraries and harnesses, so developers can use Beam across existing open-source workflows.",
+      "tier": "official",
+      "publishedAt": "2026-10-05"
+    },
+    {
+      "title": "California’s nation-leading AI framework just got stronger, Governor Newsom signs more first-in-the-nation worker protections and more — Office of Governor Gavin Newsom",
+      "url": "https://www.gov.ca.gov/2026/09/30/californias-nation-leading-ai-framework-just-got-stronger-governor-newsom-signs-more-first-in-the-nation-worker-protections-and-more/",
+      "host": "gov.ca.gov",
+      "body": "[curl 원문 텍스트 발췌 — 캘리포니아 주지사실 보도자료, 2026-09-30]\nSep 30, 2026\nSigns executive order declaring the obvious\nWhat you need to know:  Governor Newsom signs new, first-in-the-nation protections for California workers, creating stronger safeguards for AI involvement in healthcare and building stronger trust and transparency for people using AI – all while signing another executive order to actually define artificial intelligence.\nSACRAMENTO – Advancing on his work to create a strong AI safety framework, Governor Gavin Newsom is continuing to cement California’s AI safety framework by signing new laws to protect workers and consumers – and signing an executive order permanently declaring Artificial Intelligence to be called “Artificial Intelligence” in California.\nSuper intelligence is clearly not coming from the White House – that’s why California continues to lead. AI should expand opportunity – not come at the expense of workers and families. As this technology reshapes the workplace, California is putting people at the center, ensuring we all have a voice in the decisions shaping their future.\n✅ Ensuring real people review automated employment actions by prohibiting employers from only relying on AI when making a disciplinary action or termination decision.\n✅ Providing more transparency by requiring employers to provide if a mass layoff, relocation, or termination is caused by an AI system.\n✅ Protecting employee privacy by banning the use of workplace surveillance tools by employers in a bathroom located in the workplace.\n✅ Keeping lawyers responsible for practicing law by prohibiting them from fully handing over core legal work, such as drafting briefs or providing legal judgment, to AI.\n“Workers across California have demanded that our state lead the way in regulating AI in our workplaces. And today, we see that begin to happen,” said the California Federation of Labor Unions, AFL-CIO President Lorena Gonzalez speaking on SB 947, SB 951, AB 1331, and AB 1883. “By signing these four first-in-the-nation bills, Governor Newsom has shown the country how we can begin to put guardrails on AI at work to ensure human oversight over this technology, limit surveillance, and put workers first. We must continue to push for regulations to ensure we control this no technology, not be controlled by it.”\n✅ Ensuring doctors and licensed providers can use their own professional judgment when AI or other clinical decision tools are used in patient care.",
+      "tier": "official",
+      "publishedAt": "2026-09-30"
+    },
+    {
+      "title": "California Gov. Newsom bans AI 'robo bosses' in landmark state law, reversing his earlier veto — CNBC",
+      "url": "https://www.cnbc.com/2026/09/30/california-gavin-newsom-ai-ban.html",
+      "host": "cnbc.com",
+      "body": "[curl 원문 텍스트 발췌 — CNBC, Paxton Honerkamp, 2026-09-30 19:29 EDT 게재·10-01 업데이트]\nCNBC WorkCalifornia Gov. Gavin Newsom bans AI 'robo bosses' in landmark state law, reversing his earlier veto\nPublished Wed, Sep 30 20267:29 PM EDTUpdated Thu, Oct 1 20269:21 AM EDT\nPaxton Honerkamp\nWATCH LIVE\nKey Points\nCalifornia Governor Gavin Newsom signed a landmark AI regulation banning Golden State employers from relying solely on artificial intelligence to fire or discipline workers.\nThe \"No Robo Bosses Act\" prevents businesses around the state from exclusively using \"automated decision-making systems\" and restricts AI's use as a \"principal tool\" in these worker decisions.\nNewsom, who has been increasing his profile as an AI watchdog, had vetoed an earlier version of the bill last October despite the legislation clearing both of the state's legislative chambers with overwhelming majority support.\nGavin Newsom, Governor of California, speaks during a press briefing at the United Nations in New York City on Sept. 22, 2026.\nMichael Kappeler | Picture Alliance | Getty Images\nCalifornia Governor Gavin Newsom has signed a landmark AI law banning Golden State employers from relying solely on artificial intelligence to fire or discipline workers.\nSB 947, dubbed the No Robo Bosses Act, prevents businesses around the state from exclusively using \"automated decision-making systems\" in matters of employee discipline and termination. It also restricts their capacity to use AI as a principal tool in such decisions.\nUnder the bill, employers that rely \"primarily\" on AI output to make termination or disciplinary decisions must now have a human reviewer corroborate those decisions using additional information, such as managerial evaluations, peer reviews, and personnel files. Additionally, affected employees must be provided with written notice that AI was \"primarily used\" in their termination or disciplinary decision, a description of the employee data used by the system, and a human point of contact who can further explain the decision.\n\"No worker should ever be fired or disciplined by a machine, AI or not. Artificial intelligence systems have the potential to boost productivity, but they've also made errors and misjudgments and exhibited bias,\" California State Senator Jerry McNerney, the bill's author, told CNBC. \"AI must remain a tool controlled by humans, not the other way around.\"\nMcNerney, a Democrat, first introduced the act in 2025, following a concerted push by organized labor in the state to erect guardrails around management's ability to use AI in taking adverse action against workers.\n\"When working people organize, we get results. Workers across California have demanded that our state lead the way in regulating AI in our workplaces. And today, we see that begin to happen,\" said Lorena Gonzalez, president of the California Federation of Labor Unions, AFL-CIO and lead sponsor of No Robo Bosses Act, in a statement after Newsom signed it. \"Today, California's workers and our unions have changed the national narrative on how Americans can fight back and win against AI taking over our jobs and workplaces.\"",
+      "tier": "press",
+      "publishedAt": "2026-09-30"
+    },
+    {
+      "title": "Newsom Signs Slate of AI Workplace Laws, Barring ‘Robo Bosses’ and Surveillance — KQED",
+      "url": "https://www.kqed.org/news/12102337/newsom-signs-slate-of-ai-workplace-laws-barring-robo-bosses-and-surveillance",
+      "host": "kqed.org",
+      "body": "[curl 원문 텍스트 발췌 — KQED, Rachael Myrow, 2026-10-01]\n(Tayfun Coskun/Anadolu via Getty Images)\nGov. Gavin Newsom signed a bevy of laws on Wednesday aimed at protecting California workers from the threats of artificial intelligence in the workplace, guarding against automated job loss and surveillance.\nThe laws prohibit employers from using automated systems to fire or discipline employees — so-called “robo bosses” — as well as from monitoring employees in restrooms. They also restrict the use of AI to read workers’ emotions or collect their neural data.\nThe Democratic governor, who has hinted at a presidential run in 2028, also signed an executive order requiring state agencies to continue to refer to the technology as “artificial intelligence” — instead of “Super Intelligence,” the term President Donald Trump recently ordered federal officials to use.\n“AI should expand opportunity — not come at the expense of workers and families,” Newsom said in a statement. “As this technology reshapes the workplace, California is putting people at the center.”\nLabor unions sounded a triumphant note.\nSan Francisco Mayor Daniel Lurie speaks at the opening of the new OpenAI headquarters in Mission Bay in San Francisco on March 10, 2025. (Martin do Nascimento/KQED)\n“Governor Newsom has shown the country how we can begin to put guardrails on AI at work to ensure human control over this technology, limit surveillance, and put workers first,” said Lorena Gonzalez, president of the California Federation of Labor Unions, AFL-CIO, in a statement. “California’s workers and our unions have changed the national narrative on how Americans can fight back and win against AI taking over our jobs and workplaces.”\nNurses also celebrated the enactment of AB 1979, a law that bars health care entities from using AI to replace the clinical judgment of licensed professionals.\n“We stood up and said that A.I. must support, not replace, the clinical judgement of the nurses and other health care professionals who care for our patients,” wrote Sandy Reding, RN and president of California Nurses Association in a press release. The law also limits AI to an advisory role and extends medical confidentiality protections to health chatbots.\nAfter vetoing a previous version of the “robo bosses” legislation last year, Newsom signed a narrower version in SB 947, which takes effect in July of 2027. Meant to counter the “boss-ware” software surging in popularity, the law requires a human to corroborate firing or disciplinary decisions, and workers must be told when such a system was used.\nRelated Article\n“We need to put a floor and put a marker out there that AI systems really shouldn’t be controlling human society. And this is the one way that it can happen,” said state Sen. Jerry McNerney of Pleasanton, the bill’s author. “Nobody wants to be fired by a machine.”\nNotably left out of the SB 947 party: rideshare drivers, who are classified as independent contractors under Proposition 22.",
+      "tier": "press",
+      "publishedAt": "2026-10-01"
+    },
+    {
+      "title": "대학 교육 AI 중심으로 전환…AI중심대학 18곳·AX대학원 15곳 출범 — 대한민국 정책브리핑(korea.kr)",
+      "url": "https://www.korea.kr/news/policyNewsView.do?newsId=148972767",
+      "host": "korea.kr",
+      "body": "[curl 원문 텍스트 발췌 — 정책브리핑(과학기술정보통신부 보도자료 기반), 2026-09-29]\n과학기술정보통신부는 29일 연세대학교에서 'AI중심대학·AX대학원 공동 출범식'을 열고, 올해 선정한 AI중심대학 18개교와 AX대학원 15개교의 사업을 본격 추진한다고 밝혔다.\nAI중심대학은 AI 전공교육 강화와 전교생 AI 기초교육 의무화, 전공과 AI를 연계한 융합교과목 신설 등을 통해 대학 교육체계 전반을 AI 중심으로 전환한다. 과기정통부는 내년에는 아직 전환하지 않은 SW중심대학 38개교도 평가를 거쳐 AI중심대학으로 전면 전환할 계획이다.\nAX대학원은 AI 기술과 산업 분야의 전문지식을 결합한 석·박사급 AI 융합인재 양성을 목표로 한다. 올해 선정된 15개 대학에는 삼성전자, 한화에어로스페이스, 포스코홀딩스 등 26개 기업이 참여해 공동 연구와 프로젝트 기반 교육 등을 추진한다.\n류제명 과학기술정보통신부 제2차관이 29일 오후 서울 서대문구 연세대학교에서 열린 'AI중심대학-AX대학원 공동출범식' 에서 출범 선포식 기념촬영을 하고 있다. 앞줄 왼쪽 다섯 번째부터 윤동섭 연세대학교 총장, 류제명 제2차관, 최양희 한림대학교 총장(전 미래창조과학부 장관), 홍진배 정보통신기획평가원장.(사진=과기정통부 제공)\nAI 시대, 대학 교육의 근본적 전환 필요\nAI가 지식의 습득과 활용, 연구·개발 및 산업 현장의 일하는 방식을 근본적으로 변화시키면서, 전 세계적으로 인재양성의 핵심기관인 대학의 교육방식 혁신이 필요한 시점이다.\n이에 따라 AI 시대 대학 교육은 대학 구성원 모두의 AI 활용 역량을 높이고 각 전공에 AI를 접목해 교육체계 전반을 재설계하는 방향으로 전환될 필요가 있다.\n또한 AI 기술의 발전을 이끄는 AI 핵심인재와 여러 산업에 AI를 접목해 현장의 난제를 해결하고 혁신을 선도하는 AI 융합인재를 함께 양성하는 것이 중요하다.\n이러한 변화에 대응해 과기정통부는 그동안 AI대학원을 통한 고급 AI 연구인재 양성, SW중심대학을 통한 대학의 AI·SW 교육기반 확충, 이노베이션 아카데미와 AI·SW마에스트로 등을 통한 실전형 AI·SW 인재양성 등 다양한 인재양성 정책을 추진해 왔다.\n올해부터는 이러한 노력을 대학 교육 전반의 AI 전환 및 산업 현장과 연계한 고급 AI 융합인재 양성으로 확장하기 위해 AI중심대학과 AX대학원 사업을 새로 추진한다.\nAI중심대학 18곳·AX대학원 15곳, AI 중심 교육체계 및 고급인재 양성\n먼저 AI중심대학 18개 대학을 선정해 대학 교육체계를 AI 중심으로 전환한다.\nAI중심대학은 올해 신규 3개 대학과 SW중심대학에서 전환하는 15개 대학 등 모두 18개 대학을 선정했으며, 대학당 최장 8년 동안 연 30억 원을 지원한다.\n참여대학은 AI 전공교육 강화, 전교생 AI 기초교육 의무화, 전공분야와 AI를 연계한 AI 융합교과목 신설 등으로 대학 교육체계의 AI 중심 전환을 추진한다.\n내년에는 미전환 SW중심대학 38곳을 대상으로 평가를 거쳐 AI중심대학으로 전면전환을 추진할 계획이다.\n이어서 과기정통부는 15개 AX대학원, 26개 기업과 함께 현장형 AX 고급인재를 양성한다.\nAX대학원은 AI 기술과 산업·도메인 지식을 결합한 AI 융합인재(AX인재) 양성을 지원하는 사업이다.\n올해 선정된 15개 대학원에는 최장 6년 동안 연 30억 원을 지원하며 삼성전자, 한화에어로스페이스, 포스코홀딩스, 두산로보틱스, LIG D&A 등 국내 대표 산업군을 이끄는 26개 기업이 공동연구개발기관으로 참여한다.\n기업과 대학은 공동으로 'AX연구협력센터'를 설치해 AX 특화연구를 추진하고 대학 교원과 기업 겸임교원이 함께 지도하는 복수 지도교수제를 도입한다.\n학생이 주도하는 프로젝트 기반 학습을 운영하는 등 산학협력을 바탕으로 현장 중심의 석·박사급 AX 고급인재를 양성한다.\n비수도권 대학 과반 참여…지역, AI 교육·연구 거점으로\n한편 과기정통부는 주요 국정과제인 지역균형발전과 지역 주도의 국가 AI 대전환을 지원하기 위해 비수도권 대학의 AI 교육·연구역량 강화를 추진하고 있다.\n올해 선정한 AI중심대학과 AX대학원에는 비수도권 대학들이 다수 참여해 지역의 AI 교육 기반을 확대하고 지역특화 산업과의 연계를 통한 지역 AI 인재 양성을 추진할 계획이다. 전체 참여대학 중 비수도권 소재 대학은 AI중심대학 18곳 중 11곳(61%), AX대학원 15곳 중 8곳(53%)다.",
+      "tier": "official",
+      "publishedAt": "2026-09-29"
+    }
+  ],
+  "claims": [
+    {
+      "claim": "구글 Gemini 4 Argon 은 9월 30일 일반 공개가 아니라 사이버 방어자 프로그램(Fairwind)에 먼저 풀렸다. 구글 자체 벤치마크에서는 앞서는 항목이 많지만 전 영역 1위는 아니고, 일반 공개일은 구글이 밝히지 않았다.",
+      "grade": "confirmed",
+      "caveat": "성능 수치는 전부 구글 자체 발표(독립 검증 아님). 12/18 집계는 VentureBeat→SiliconANGLE 재인용. Artificial Analysis 수치(지수 53·환각률 15%·AutomationBench-AA 78%)는 2차 재전달이라 이 글에서 쓰지 않는다.",
+      "evidence": [
+        "[공식·구글 블로그 2026-09-30] 새 프런티어 모델 Gemini 4 Argon 이 \"a set of trusted cyber defenders through our Fairwind Program\" 으로 롤아웃 중. 구글은 \"phased approach\" 라고 설명하고 개발자·기업·소비자 공개는 \"as soon as possible\", 순서는 유료 API 고객과 Google AI Ultra 구독자부터(\"starting with paid API customers and Google AI Ultra subscribers\") — 날짜는 없음.",
+        "[공식] 신뢰 방어자·구글 내부팀에는 사이버 안전장치를 뺀(\"without cyber guardrails\") 버전을 공개. 구글은 \"U.S. government’s voluntary process for pre-release model access\" 에 참여 중이라고 밝힘.",
+        "[공식·구글 자체 발표] DeepSWE v1.1 77.9%(구글 표현 \"new state of the art\"), CWE-bench v1 68%(\"ties for first place\"), AutomationBench(Zapier) 51.3%(\"ranks #1\"), LVBench 91.7%. 출력 토큰 한도 1M(이전 64K).",
+        "[공식] 도입가 입력 100만 토큰당 $2·출력 $10, 캐시 입력은 입력가의 95% 할인. 각주: 도입 기간이 끝나면 $4/$20 적용. 도입 기간 종료 시점은 블로그에 없음.",
+        "[보도·SiliconANGLE 2026-09-30] 구글 차트 기준 DeepSWE v1.1 에서 Opus 5.5 는 74.2%로 GPT-6 Astra 보다 0.1%p 앞, AutomationBench 는 Argon 51.3% 대 Opus 5.5 42.5%. \"Of the 18 benchmarks in Google’s charts, VentureBeat counted 12 that Argon led outright. Terminal-Bench 4.0 still belongs to Opus 5.5, and FrontierSWE v2 is one of the few Astra kept.\" → 전 영역 1위가 아님. CWE-bench v1 은 GPT-6 Astra 와 68% 동률.",
+        "[보도·SiliconANGLE] Fairwind 는 9월 3일 소형 Gemini 3.8 Flash Cyber 로 시작해 650개 이상 조직(CrowdStrike·Palo Alto Networks 포함)이 가입. 구글은 유료 개발자·Ultra 구독자 공개 날짜를 밝히지 않음. \"Anthropic charges $4 and $20 for Opus 5.5, and Argon moves to those rates when the launch pricing ends.\"(Opus 5.5 요금은 이 보도 기준 — 1차 미확인)",
+        "[구글 자체 사례 주장] 데이터센터 메모리 300 TiB 이상 확보(총 500 TiB~1 PiB 절감 추정), libgav1 SIMD 코드 32K줄을 안전한 Rust로 교체해 기존 Rust 포트보다 2.7배 빠름, 양자 알고리즘 최적화에서 공개 기준선 대비 40% 개선 — 모두 구글 내부 주장이며 독립 검증 없음."
+      ],
+      "soWhat": "해석(사실 기반): 지금은 일반 개발자가 쓸 수 없다. 유료 API·Ultra 순서만 예고되고 날짜가 없다. 가격은 도입가 기준이고 종료 후 $4/$20 이라 비교할 때 도입가인지 정상가인지 구분해야 한다.",
+      "sourceUrls": [
+        "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/",
+        "https://siliconangle.com/2026/09/30/googles-new-frontier-ai-model-gemini-4-argon-goes-to-cybersecurity-defenders-first/"
+      ]
+    },
+    {
+      "claim": "Anthropic 은 9월 29일 보고서에서 안전장치 없이 공개된 오픈웨이트 GLM-5.3 이 익스플로잇 개발에서 Claude Mythos Preview 에 근접하고 안전장치 우회가 쉽다고 밝혔다. Anthropic 이 경쟁사라는 이해관계가 있지만, NIST CAISI 의 9월 17일 독립 평가가 역량 판단을 뒷받침한다.",
+      "grade": "confirmed",
+      "caveat": "64/92/100%는 \"시뮬레이션에서 악의적 요청에 응한 비율\"이지 실제 공격 성공률이 아니다(The Decoder: 시뮬레이션은 코드를 실행하지 않음). Anthropic 은 자사 측정·자사 이해관계. CAISI 는 \"미국 프런티어보다 약 4개월 뒤\"라고 보며 강조점이 다르다 — 둘 다 써야 균형이 맞다.",
+      "evidence": [
+        "[공식·Anthropic Frontier Red Team 2026-09-29] 대상은 Zhipu AI(Z.ai)의 GLM-5.3. 원문: \"it has been released without meaningful safeguards to limit misuse\". 모의 시험에서 안전장치를 우회할 수 있는 비율이 64%~100%이고, 안전장치가 있는 Claude 모델에는 같은 기법이 통하지 않았다고 서술(Anthropic 자체 시험).",
+        "[공식·Anthropic] ExploitBench(Chrome V8 취약점 익스플로잇): GLM-5.3 은 410번 시도 중 50번 end-to-end 익스플로잇 성공, Claude Mythos Preview 는 410번 중 56번 — 원문 표현 \"a similar rate\".",
+        "[공식·Anthropic] 내부 Binary Exploitation 벤치마크 무작위 100과제: GLM-5.3 full control-flow hijack 4%, Mythos Preview 6%. 이전 모델 Claude Opus 4.6·GLM-5.2 는 하나도 성공하지 못함.",
+        "[공식·Anthropic] 우회 3가지 — 기만 프롬프트(레드팀 에이전트라고 설명) 64%, 사고 토큰 prefill 92%, abliteration(가중치에서 거부 동작 제거) 100% 로 모델이 응함. Anthropic 이 직접 abliterate 해 보니 약 2,200 GPU 시간·약 $4,400, 거부율 90% 초과 → JailbreakBench 약 3%·HarmBench 약 2%·StrongREJECT 12%, GPQA-Diamond 점수는 그대로.",
+        "[공식·NIST CAISI 2026-09-17] GLM-5.3 은 2026-08-14 공개, 가중치는 2주 뒤 공개. 핵심 결론 원문: \"GLM-5.3 is the most cyber-capable open-weight model released to date.\" 동시에 \"significantly lower than those of current U.S. frontier models\", 미국 프런티어에 약 4개월 뒤처짐. CAISI 비교는 미국 모델을 사이버 안전장치를 끈 상태로, 검증 사용자 전용 모델까지 포함해 평가했다고 명시.",
+        "[공식·Anthropic] \"Our capability findings broadly match CAISI’s.\" Anthropic 은 상태·비상태 행위자가 GLM-5.3 류 모델로 실제 피해를 일으킬 가능성이 높다고 판단(\"we think it’s likely\") — 이미 발생한 피해 확인이 아니라 Anthropic 의 전망.",
+        "[보도·The Decoder 2026-09-30] \"The analysis isn’t entirely selfless\" — Anthropic 은 모델 가중치를 공개하지 않고 보고서가 바로 그 점을 보안 이점으로 제시, 저렴한 중국 오픈웨이트 모델은 직접 경쟁자. 다만 CAISI 독립 평가가 역량 판단을 뒷받침한다고 정리. 시뮬레이션은 코드를 실행하지 않아 실제 공격 성공 여부는 보여주지 못함.",
+        "[공식·Anthropic 사례] GLM-5.3-Flash(소형판)가 Chrome 결함(CVE-2026-11645)과 다른 알려진 결함을 연결해 ARM64 대상 익스플로잇 체인을 만들었다. 사람 주의 20분+모델 작업 8시간, Zhipu API 가격으로 $20.40(Anthropic 연구자 테스트 1건)."
+      ],
+      "soWhat": "해석: 오픈웨이트 모델을 자기 서비스에 얹는 팀은 모델 기본 안전장치에 기댈 수 없다는 Anthropic 시험 결과다. 다만 Anthropic 시험·이해관계라는 점을 같이 적는다. 이미 쓰는 팀이 지금 해야 할 일은 이 자료에 없다(단정 금지).",
+      "sourceUrls": [
+        "https://www.anthropic.com/research/glm-5-3-and-the-spread-of-advanced-cyber-capabilities",
+        "https://www.nist.gov/news-events/news/2026/09/caisis-assessment-zais-glm-53-cyber-capabilities",
+        "https://the-decoder.com/anthropic-says-zhipus-open-weight-glm-5-3-nearly-matches-claude-mythos-preview-at-building-exploits/"
+      ]
+    },
+    {
+      "claim": "9월 29일 백악관에서 주요 AI 기업 6명이 자발적 합의(내부 통제·내부 팀·외부 평가자·이사회 위원회 4단계)에 서명했다고 보도됐고, 10월 4일 트럼프가 'Super Intelligence Force' 창설을 발표했다. 법적 구속력은 없는 자발적 약속이며, 합의문 원문은 직접 확인하지 못했다.",
+      "grade": "reported",
+      "caveat": "1차(백악관·Truth Social 합의문) 미열람 — CNN·Al Jazeera·ABC 보도로만 확인. 모든 문장에 매체 귀속 필수, 본문에 \"합의문 원문 미확인\" 명시. confirmed 근거 없음 → 호출자 지시에 따라 예외 포함.",
+      "evidence": [
+        "[보도·CNN 2026-09-29] 트럼프가 화요일 \"top tech executives had signed a new commitment aimed at better ‘self-policing’\" 라고 발표. 트럼프가 Truth Social 에 올린 합의문의 4단계 — 사이버보안 기준을 맞추는 내부 통제, 통제·감시·탐지가 제대로 도는지 확인하는 내부 팀, 모델을 독립 평가할 외부 운영자와의 협력, 보고서를 받아 문제 해결을 챙길 이사회 산하 독립 위원회 지정.",
+        "[보도·CNN] 게시물에 서명 6개 — Google 순다르 피차이, Anthropic 다리오 아모데이, Meta 마크 저커버그, Nvidia 젠슨 황, OpenAI 그레그 브록먼, 일론 머스크(소속 표기는 CNN \"X\", Al Jazeera \"xAI\" 로 어긋남). 팔란티어 알렉스 카프·아마존 제프 베이조스는 회동에 참석했지만 서명자 아님.",
+        "[보도·Al Jazeera 2026-09-29] 합의 명칭 \"Joint Commitment on Frontier Responsibilities\". \"voluntary accord\". 합의는 제3자 평가를 누가 맡을지 정하지 않았고, 조치를 법·규제로 만드는 것이 장래에 \"may make sense\" 라고만 적었다고 보도. 인용된 합의문 문구: \"Regardless of whether this is required of companies, we believe that implementing these controls and audits is critical to ensuring a safe future for everyone\".",
+        "[보도·CNN·ABC] 트럼프는 이 약속을 CNN 에서 \"morally binding\", ABC 에서는 \"constitution\" 이라 불렀다고 전해짐 — 트럼프 발언 귀속으로만 쓸 것. Al Jazeera 는 비판 의견을 함께 전함(Alvin Wang Graylin: \"The companies drafted the principles, they hire the auditor, and the commitment is voluntary\" / David Krueger: \"regulate without regulating\"). 반면 David Sacks 는 국제 합의보다 \"far better\" 라고 평가.",
+        "[보도·ABC News 2026-10-05] 트럼프가 일요일(10/4) SNS 에 'Super Intelligence Force' 창설을 공식 발표. 트럼프가 밝힌 지도부: 국가정보국장 Jay Clayton·FTC 위원장 Andrew Ferguson·국방부 연구공학 차관 Emil Michael·인사관리처장 Scott Kupor(직함은 ABC 보도 기준). ABC 는 발표가 \"thin on details\" — 구체 조치·감독 권한을 밝히지 않았고 백악관은 추가 설명 요청에 즉시 응답하지 않았다고 전함."
+      ],
+      "soWhat": "해석(사실 기반): 법적 의무가 아니라 개발자·기획자에게 당장 바뀌는 것은 없다. 4단계가 실제 외부 감사·규제로 이어질지는 자료에 없다(미확인).",
+      "sourceUrls": [
+        "https://www.cnn.com/2026/09/29/business/amodei-huang-karp-trump",
+        "https://www.aljazeera.com/news/2026/9/29/trump-top-tech-firms-sign-accord-to-self-police-ai-development",
+        "https://abc7news.com/story/president-donald-trump-announces-creation-super-intelligence-force-ai-task/19907473/"
+      ]
+    },
+    {
+      "claim": "Reflection AI 는 10월 5일 501B 파라미터(활성 23B) 오픈웨이트 MoE 모델 'Beam'을 발표했지만 가중치는 아직 공개 전이다(10월 중 Apache 2.0 예고). 회사 자체 비교표에서 Beam 은 GLM 5.2 근처지만 GLM 5.3·Kimi K3 보다는 여러 행에서 낮고, 회사도 Kimi K3 우위를 인정한다.",
+      "grade": "confirmed",
+      "caveat": "\"confirmed\" 는 Reflection 이 이렇게 발표했다는 사실이다(공식 블로그 직접 열람). 성능·효율 수치는 전부 회사 자체 보고이고 독립 검증 없음. 유리한 수치만 나열 금지 — 비교표의 불리한 행을 같이 쓸 것.",
+      "evidence": [
+        "[공식·Reflection 블로그 2026-10-05] \"Reflection’s first open-weight model\", sparse Mixture-of-Experts, 총 501B·활성 23B, 코딩·추론·에이전트용. 사전학습 23.8조 토큰, 강화학습은 1억 건 넘는 rollout·NVIDIA GB300 10.5K 개·4주. 사전학습은 GB300 NVL72 6,144개로 4주 미만.",
+        "[공식] 공개 상태: \"Beam is undergoing final red-teaming and evaluations\", 대기자 명단으로 일부 사용자에게 초기 접근. \"We will release the weights, technical report, model card, and developer artifacts later this month\", \"This month, we will release the weights under an Apache 2.0 license\" → 아직 가중치 미공개.",
+        "[공식·회사 표] DeepSWE v1.1: Beam 44.4 / GLM 5.2 44.0 / GLM 5.3 61.0 / Kimi K3 68.0 / Qwen 3.8 Max 51.0 / DeepSeek V4.1 Flash 74.2. Terminal Bench v2.1: Beam 80.1 / GLM 5.2 81.0 / GLM 5.3 88.2 / Kimi K3 88.3 / Qwen 3.8 Max 86.6 / DeepSeek V4.1 Flash 90.6. SWE Bench Pro v1: Beam 65.5 / GLM 5.2 62.1 / Qwen 3.8 Max 67.7. HLE(도구 없음): Beam 36.2 / GLM 5.2 40.5 / GLM 5.3 42.3 / Kimi K3 46.9. GPQA Diamond: Beam 90.5 / GLM 5.2 91.2 / GLM 5.3 91.7 / Kimi K3 93.5. (NR=미보고 칸은 비교 불가)",
+        "[공식·회사 문구] \"Beam advances the Western open-weight frontier and is competitive with larger open models like GLM 5.2 and approaching Qwen 3.8-Max on coding and agentic tasks. Where frontier open models like Kimi K3 remain ahead on raw capability, Beam’s advantage is efficiency at inference time.\" — 회사 자체 평가이며 같은 표의 GLM 5.3·Kimi K3 열과는 격차가 있음.",
+        "[공식·회사 주장] 고급 추론 벤치마크에서 GLM-5.2 와 비슷한 점수를 \"3–4× less inference compute\" 로 낸다 — 외부 데이터로 추정한 근사치(회사 표기). 효율 우위는 회사 주장."
+      ],
+      "soWhat": "해석(사실 기반): 가중치가 공개되기 전이라 지금은 내려받아 쓸 수 없다. 공개 후에도 첫 독립 평가가 나오기 전까지 표의 숫자는 회사 발표 수준이다.",
+      "sourceUrls": [
+        "https://reflection.ai/blog/introducing-beam"
+      ]
+    },
+    {
+      "claim": "캘리포니아 주지사 뉴섬이 9월 30일 SB 947('No Robo Bosses Act')에 서명했다. 고용주가 AI 에만 의존해 해고·징계하는 것을 막고 사람이 추가 정보로 확인하게 하는 법이며, 시행은 2027년 7월이다.",
+      "grade": "confirmed",
+      "caveat": "서명과 핵심 취지는 주지사실 공식 자료로 확인. 세부(주로 의존 시 사람 검토·서면 통지)는 CNBC 보도, 시행일은 KQED 단독(\"July of 2027\"). 법안 원문 미열람 — 적용 범위·정확한 시행일·요건 세부 단정 금지. 같은 보도자료의 다른 항목(대량 해고 시 AI 원인 고지, 화장실 감시 금지, 변호사 AI 위임 금지 등)은 SB 947 이 아니라 다른 법안일 수 있어 SB 947 에 귀속 금지.",
+      "evidence": [
+        "[공식·주지사실 보도자료 2026-09-30] 뉴섬이 AI 노동·소비자 보호 법안 묶음에 서명. 해당 항목 원문: \"Ensuring real people review automated employment actions by prohibiting employers from only relying on AI when making a disciplinary action or termination decision.\" 노조연맹(AFL-CIO) 회장 인용문이 \"SB 947, SB 951, AB 1331, and AB 1883\" 4건을 지칭.",
+        "[보도·CNBC 2026-09-30] SB 947 \"No Robo Bosses Act\" — 고용주가 'automated decision-making systems' 만으로 징계·해고하는 것을 막고 AI 를 'principal tool' 로 쓰는 것을 제한. AI 출력에 \"primarily\" 의존한 결정은 관리자 평가·동료 평가·인사기록 등 추가 정보로 사람 검토자가 뒷받침해야 하고, 대상 직원에게 AI 사용 사실의 서면 통지·사용 데이터 설명·설명해줄 사람 담당자를 줘야 한다. 발의자 Jerry McNerney 상원의원: \"No worker should ever be fired or disciplined by a machine, AI or not\". 뉴섬은 2025년 10월 이전 버전에 거부권을 행사했다.",
+        "[보도·KQED 2026-10-01] 뉴섬이 이전 버전을 거부한 뒤 \"a narrower version in SB 947\" 에 서명, 법은 \"takes effect in July of 2027\". 사람이 해고·징계 결정을 뒷받침해야 하고 노동자는 시스템이 쓰였음을 통지받아야 한다. 라이드셰어 기사는 Proposition 22 상 독립계약자로 분류돼 이 법 대상에서 빠졌다고 지적."
+      ],
+      "soWhat": "해석(사실 기반): 캘리포니아 고용주 대상 법이라 한국 독자에게 직접 효력은 없다. 인사 평가·해고 판단에 AI 점수를 쓰는 제품을 만드는 팀은 \"사람 검증과 통지\"가 설계 요건으로 거론될 수 있다는 정도까지만 — 법안 원문 미확인이라 요건 세부 단정 금지.",
+      "sourceUrls": [
+        "https://www.gov.ca.gov/2026/09/30/californias-nation-leading-ai-framework-just-got-stronger-governor-newsom-signs-more-first-in-the-nation-worker-protections-and-more/",
+        "https://www.cnbc.com/2026/09/30/california-gavin-newsom-ai-ban.html",
+        "https://www.kqed.org/news/12102337/newsom-signs-slate-of-ai-workplace-laws-barring-robo-bosses-and-surveillance"
+      ]
+    }
+  ],
+  "reserve": [
+    {
+      "note": "선택 사용(분량 여유가 있고 한국 독자 한 줄이 필요할 때만). 단일 출처이며 이번 주 5건과 주제가 달라 억지로 넣지 말 것.",
+      "claim": "과기정통부가 9월 29일 연세대에서 AI중심대학 18곳·AX대학원 15곳 공동 출범식을 열었다.",
+      "grade": "confirmed",
+      "evidence": [
+        "[공식·정책브리핑(과기정통부 보도자료 기반) 2026-09-29] AI중심대학 18개교(신규 3 + SW중심대학에서 전환 15), 전교생 AI 기초교육 의무화·AI 융합교과목 신설, 대학당 최장 8년·연 30억 원 지원. 내년에 미전환 SW중심대학 38곳을 평가해 전환 추진 계획. AX대학원 15개교, 최장 6년·연 30억 원, 삼성전자·한화에어로스페이스·포스코홀딩스·두산로보틱스·LIG D&A 등 26개 기업 참여. 비수도권은 AI중심대학 18곳 중 11곳(61%)·AX대학원 15곳 중 8곳(53%)."
+      ],
+      "sourceUrls": [
+        "https://www.korea.kr/news/policyNewsView.do?newsId=148972767"
+      ]
+    }
+  ],
+  "numbers": [
+    {
+      "what": "Gemini 4 Argon 도입가(입력/출력, 100만 토큰당)",
+      "value": "$2 / $10 (캐시 입력은 입력가의 95% 할인)",
+      "asOf": "2026-09-30",
+      "sourceUrl": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/",
+      "scope": "구글 발표, 도입가·도입 기간 종료 시점 미명시",
+      "grade": "confirmed"
+    },
+    {
+      "what": "Gemini 4 Argon 도입 기간 종료 후 가격(입력/출력)",
+      "value": "$4 / $20",
+      "asOf": "2026-09-30",
+      "sourceUrl": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/",
+      "scope": "구글 블로그 각주",
+      "grade": "confirmed"
+    },
+    {
+      "what": "Gemini 4 Argon 출력 토큰 한도",
+      "value": "1M (이전 64K)",
+      "asOf": "2026-09-30",
+      "sourceUrl": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/",
+      "scope": "구글 발표",
+      "grade": "confirmed"
+    },
+    {
+      "what": "DeepSWE v1.1 — Argon",
+      "value": "77.9%",
+      "asOf": "2026-09-30",
+      "sourceUrl": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/",
+      "scope": "구글 자체 발표, 구글 표현 \"new state of the art\"",
+      "grade": "confirmed"
+    },
+    {
+      "what": "DeepSWE v1.1 — Claude Opus 5.5 (구글 차트 기준)",
+      "value": "74.2% (GPT-6 Astra 보다 0.1%p 앞)",
+      "asOf": "2026-09-30",
+      "sourceUrl": "https://siliconangle.com/2026/09/30/googles-new-frontier-ai-model-gemini-4-argon-goes-to-cybersecurity-defenders-first/",
+      "scope": "SiliconANGLE 가 구글 차트를 읽어 전함",
+      "grade": "reported"
+    },
+    {
+      "what": "AutomationBench(Zapier) — Argon vs Opus 5.5",
+      "value": "51.3% vs 42.5%",
+      "asOf": "2026-09-30",
+      "sourceUrl": "https://siliconangle.com/2026/09/30/googles-new-frontier-ai-model-gemini-4-argon-goes-to-cybersecurity-defenders-first/",
+      "scope": "Argon 51.3% 는 구글 블로그에서도 확인, Opus 5.5 42.5% 는 SiliconANGLE",
+      "grade": "confirmed"
+    },
+    {
+      "what": "CWE-bench v1 — Argon",
+      "value": "68% (구글 표현 \"ties for first place\", SiliconANGLE: GPT-6 Astra 와 동률)",
+      "asOf": "2026-09-30",
+      "sourceUrl": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/",
+      "scope": "구글 자체 발표",
+      "grade": "confirmed"
+    },
+    {
+      "what": "LVBench(긴 영상 이해) — Argon",
+      "value": "91.7%",
+      "asOf": "2026-09-30",
+      "sourceUrl": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/",
+      "scope": "구글 자체 발표",
+      "grade": "confirmed"
+    },
+    {
+      "what": "구글 차트 18개 벤치마크 중 Argon 단독 1위",
+      "value": "12개 (Terminal-Bench 4.0 은 Opus 5.5, FrontierSWE v2 는 GPT-6 Astra 우위)",
+      "asOf": "2026-09-30",
+      "sourceUrl": "https://siliconangle.com/2026/09/30/googles-new-frontier-ai-model-gemini-4-argon-goes-to-cybersecurity-defenders-first/",
+      "scope": "VentureBeat 집계를 SiliconANGLE 가 인용",
+      "grade": "reported"
+    },
+    {
+      "what": "Fairwind 프로그램 가입 조직",
+      "value": "650개 이상 (9월 3일 개시)",
+      "asOf": "2026-09-30",
+      "sourceUrl": "https://siliconangle.com/2026/09/30/googles-new-frontier-ai-model-gemini-4-argon-goes-to-cybersecurity-defenders-first/",
+      "scope": "SiliconANGLE 보도",
+      "grade": "reported"
+    },
+    {
+      "what": "ExploitBench(Chrome V8) 성공 횟수 — GLM-5.3 vs Mythos Preview",
+      "value": "410번 중 50번 vs 56번 (산술 환산 약 12.2% vs 13.7%)",
+      "asOf": "2026-09-29",
+      "sourceUrl": "https://www.anthropic.com/research/glm-5-3-and-the-spread-of-advanced-cyber-capabilities",
+      "scope": "Anthropic 자체 측정, 환산은 계산값",
+      "grade": "confirmed"
+    },
+    {
+      "what": "Anthropic 내부 Binary Exploitation(100과제) full control-flow hijack — GLM-5.3 vs Mythos Preview",
+      "value": "4% vs 6% (Opus 4.6·GLM-5.2 는 0)",
+      "asOf": "2026-09-29",
+      "sourceUrl": "https://www.anthropic.com/research/glm-5-3-and-the-spread-of-advanced-cyber-capabilities",
+      "scope": "Anthropic 자체 측정",
+      "grade": "confirmed"
+    },
+    {
+      "what": "GLM-5.3 안전장치 우회 시 악의적 요청에 응한 비율(시뮬레이션)",
+      "value": "기만 프롬프트 64% · 사고 토큰 prefill 92% · abliteration 100% (안전장치 있는 Claude 는 해당 기법에서 0)",
+      "asOf": "2026-09-29",
+      "sourceUrl": "https://www.anthropic.com/research/glm-5-3-and-the-spread-of-advanced-cyber-capabilities",
+      "scope": "Anthropic 시뮬레이션(코드 미실행) — 공격 성공률 아님",
+      "grade": "confirmed"
+    },
+    {
+      "what": "GLM-5.3 abliteration 비용(Anthropic 직접 수행)",
+      "value": "약 2,200 GPU 시간 · 약 $4,400, 거부율 90% 초과 → JailbreakBench 약 3%·HarmBench 약 2%·StrongREJECT 12%",
+      "asOf": "2026-09-29",
+      "sourceUrl": "https://www.anthropic.com/research/glm-5-3-and-the-spread-of-advanced-cyber-capabilities",
+      "scope": "Anthropic 자체 수행",
+      "grade": "confirmed"
+    },
+    {
+      "what": "CAISI 평가: GLM-5.3 이 미국 프런티어에 뒤처진 정도",
+      "value": "약 4개월 (집계 지표 기준)",
+      "asOf": "2026-09-17",
+      "sourceUrl": "https://www.nist.gov/news-events/news/2026/09/caisis-assessment-zais-glm-53-cyber-capabilities",
+      "scope": "NIST CAISI 독립 평가, 비교 대상 미국 모델은 안전장치 해제·검증 사용자 전용 모델 포함",
+      "grade": "confirmed"
+    },
+    {
+      "what": "GLM-5.3 공개 시점",
+      "value": "2026-08-14 공개, 가중치는 2주 뒤",
+      "asOf": "2026-09-17",
+      "sourceUrl": "https://www.nist.gov/news-events/news/2026/09/caisis-assessment-zais-glm-53-cyber-capabilities",
+      "scope": "NIST 서술",
+      "grade": "confirmed"
+    },
+    {
+      "what": "백악관 합의 서명자 수",
+      "value": "6명 (피차이·아모데이·저커버그·젠슨 황·브록먼·머스크)",
+      "asOf": "2026-09-29",
+      "sourceUrl": "https://www.cnn.com/2026/09/29/business/amodei-huang-karp-trump",
+      "scope": "CNN·Al Jazeera 일치(머스크 소속 표기만 다름), 합의문 원문 미확인",
+      "grade": "reported"
+    },
+    {
+      "what": "백악관 합의 단계 수",
+      "value": "4단계",
+      "asOf": "2026-09-29",
+      "sourceUrl": "https://www.cnn.com/2026/09/29/business/amodei-huang-karp-trump",
+      "scope": "CNN 보도 요약, 합의문 원문 미확인",
+      "grade": "reported"
+    },
+    {
+      "what": "Super Intelligence Force 지도부 인원",
+      "value": "4명 (Clayton·Ferguson·Michael·Kupor)",
+      "asOf": "2026-10-04",
+      "sourceUrl": "https://abc7news.com/story/president-donald-trump-announces-creation-super-intelligence-force-ai-task/19907473/",
+      "scope": "ABC 보도, 직함은 ABC 기준",
+      "grade": "reported"
+    },
+    {
+      "what": "Beam 규모",
+      "value": "총 501B 파라미터 / 활성 23B (sparse MoE)",
+      "asOf": "2026-10-05",
+      "sourceUrl": "https://reflection.ai/blog/introducing-beam",
+      "scope": "Reflection 공식 발표",
+      "grade": "confirmed"
+    },
+    {
+      "what": "Beam 사전학습 데이터·인프라",
+      "value": "23.8조 토큰 · GB300 NVL72 6,144개로 4주 미만",
+      "asOf": "2026-10-05",
+      "sourceUrl": "https://reflection.ai/blog/introducing-beam",
+      "scope": "회사 발표",
+      "grade": "confirmed"
+    },
+    {
+      "what": "Beam 강화학습 규모",
+      "value": "1억 건 이상 rollout · GB300 10.5K 개 · 4주",
+      "asOf": "2026-10-05",
+      "sourceUrl": "https://reflection.ai/blog/introducing-beam",
+      "scope": "회사 발표",
+      "grade": "confirmed"
+    },
+    {
+      "what": "Beam 대 상위 오픈 모델 — DeepSWE v1.1",
+      "value": "Beam 44.4 · GLM 5.2 44.0 · GLM 5.3 61.0 · Kimi K3 68.0 · Qwen 3.8 Max 51.0 · DeepSeek V4.1 Flash 74.2",
+      "asOf": "2026-10-05",
+      "sourceUrl": "https://reflection.ai/blog/introducing-beam",
+      "scope": "회사 자체 비교표",
+      "grade": "confirmed"
+    },
+    {
+      "what": "Beam 대 상위 오픈 모델 — Terminal Bench v2.1",
+      "value": "Beam 80.1 · GLM 5.2 81.0 · GLM 5.3 88.2 · Kimi K3 88.3 · Qwen 3.8 Max 86.6 · DeepSeek V4.1 Flash 90.6",
+      "asOf": "2026-10-05",
+      "sourceUrl": "https://reflection.ai/blog/introducing-beam",
+      "scope": "회사 자체 비교표",
+      "grade": "confirmed"
+    },
+    {
+      "what": "Beam 대 GLM 5.2 — SWE Bench Pro v1 / HLE(도구 없음)",
+      "value": "SWE Bench Pro v1 65.5 vs 62.1 (Beam 우위) / HLE 36.2 vs 40.5 (GLM 5.2 우위)",
+      "asOf": "2026-10-05",
+      "sourceUrl": "https://reflection.ai/blog/introducing-beam",
+      "scope": "회사 자체 비교표",
+      "grade": "confirmed"
+    },
+    {
+      "what": "Beam 추론 연산 효율 주장",
+      "value": "고급 추론 벤치마크에서 GLM-5.2 와 비슷한 점수, 추론 연산 3–4배 적음",
+      "asOf": "2026-10-05",
+      "sourceUrl": "https://reflection.ai/blog/introducing-beam",
+      "scope": "회사가 외부 데이터로 추정한 근사치",
+      "grade": "confirmed"
+    },
+    {
+      "what": "Beam 가중치 공개 일정",
+      "value": "2026년 10월 중(날짜 미정), Apache 2.0, 현재 미공개",
+      "asOf": "2026-10-05",
+      "sourceUrl": "https://reflection.ai/blog/introducing-beam",
+      "scope": "회사 예고",
+      "grade": "confirmed"
+    },
+    {
+      "what": "SB 947 서명일",
+      "value": "2026-09-30 (이전 버전은 2025년 10월 거부권)",
+      "asOf": "2026-09-30",
+      "sourceUrl": "https://www.gov.ca.gov/2026/09/30/californias-nation-leading-ai-framework-just-got-stronger-governor-newsom-signs-more-first-in-the-nation-worker-protections-and-more/",
+      "scope": "서명은 주지사실, 거부권 이력은 CNBC",
+      "grade": "confirmed"
+    },
+    {
+      "what": "SB 947 시행 시점",
+      "value": "2027년 7월",
+      "asOf": "2026-10-01",
+      "sourceUrl": "https://www.kqed.org/news/12102337/newsom-signs-slate-of-ai-workplace-laws-barring-robo-bosses-and-surveillance",
+      "scope": "KQED 단독 — \"July of 2027\", 정확한 일자·법안 원문 미확인",
+      "grade": "reported"
+    },
+    {
+      "what": "(예비) 과기정통부 AI중심대학·AX대학원",
+      "value": "AI중심대학 18곳(대학당 최장 8년·연 30억 원), AX대학원 15곳(최장 6년·연 30억 원, 26개 기업)",
+      "asOf": "2026-09-29",
+      "sourceUrl": "https://www.korea.kr/news/policyNewsView.do?newsId=148972767",
+      "scope": "정책브리핑 단일 출처",
+      "grade": "confirmed"
+    }
+  ],
+  "conflicts": [
+    {
+      "about": "GLM-5.3 의 위상 — \"Mythos Preview 에 근접\"(Anthropic) vs \"미국 프런티어에 약 4개월 뒤\"(CAISI)",
+      "resolution": "둘 다 쓴다. Anthropic 은 ExploitBench 50/410 vs 56/410 으로 \"similar rate\", CAISI 는 \"significantly lower than current U.S. frontier models\" 이고 \"most cyber-capable open-weight model\". 같은 모델을 다른 지표·비교 대상으로 본 것이며, \"동급\"이라고는 쓰지 않는다."
+    },
+    {
+      "about": "Argon 의 위상 — 구글 \"SOTA·#1\"(여러 지표) vs SiliconANGLE 집계 18개 중 12개",
+      "resolution": "구글 주장 수치는 \"구글 발표\"로, 12/18 은 \"VentureBeat 집계를 SiliconANGLE 가 인용\"으로 귀속. \"최강\" 단정 금지."
+    },
+    {
+      "about": "Beam 위상 — 회사 문구 \"GLM 5.2 와 경쟁적\" vs 같은 표에서 GLM 5.3·Kimi K3 등과 격차",
+      "resolution": "DeepSWE v1.1 44.4 대 61.0(GLM 5.3)·68.0(Kimi K3), Terminal Bench 80.1 대 88.2·88.3. 회사도 Kimi K3 우위를 인정. 비교 대상(GLM 5.2 vs 5.3)을 구분해서 쓴다."
+    },
+    {
+      "about": "머스크 소속 표기 — CNN \"X\" vs Al Jazeera \"xAI\"",
+      "resolution": "소속을 쓰지 않고 \"일론 머스크\"로만 표기."
+    },
+    {
+      "about": "\"Super intelligence\" 명칭 지시 시점 — CNN(9/29) \"곧 행정명령 서명하겠다\" vs KQED(10/1) \"연방 공무원에게 최근 지시\"",
+      "resolution": "행정명령 서명 여부·시점은 확인 불가 — 쓰지 않는다. 트럼프가 용어를 쓰고 있다는 사실과 뉴섬이 \"artificial intelligence\" 유지를 명령한 사실(주지사실·KQED)만 귀속해서 쓸 수 있다."
+    },
+    {
+      "about": "SB 947 설명 범위 — 주지사실 \"only relying on AI\" vs KQED \"prohibit employers from using automated systems to fire or discipline\"",
+      "resolution": "\"AI 에만 의존한 해고·징계 금지 + 사람의 추가 검토\" 로 쓴다. \"AI 해고 전면 금지\"로 쓰지 않는다."
+    }
+  ],
+  "dropped": [
+    {
+      "url": "https://aiweekly.co/alerts/gemini-4-argon-ties-gpt-6-astra-at-53-with-15-hallucination-rate",
+      "why": "Artificial Analysis 소식의 2차 재전달(원문 미확인). 지수 53·환각률 15%·AutomationBench-AA 78% 는 이전 회차의 지수 버전과 달라 비교 불가, 호출자 지시로 사용 금지. 도입 기간 불명확 서술도 구글 공식(각주)으로 대체."
+    },
+    {
+      "url": "https://runtimewire.com/article/reflection-ai-beam-open-weight-model",
+      "why": "Reflection 투자 $4B·기업가치 $25B 는 RuntimeWire 단독·공식 미확인. Beam 수치는 공식 블로그와 겹치므로 공식 출처만 사용."
+    },
+    {
+      "url": "https://www.unite.ai/reflection-ai-unveils-beam-a-501b-parameter-open-weight-model/",
+      "why": "소규모 매체 재전달. 신세계 한국 250MW 소버린 클라우드는 이번 발표와 별개 사건, 데이터 95% 제거·1.8조 토큰 수치는 공식 블로그 열람분에서 미확인. 가중치 일정은 공식과 동일."
+    },
+    {
+      "url": "https://wikimediafoundation.org/news/2026/10/05/openai-rogue-agent-activities-found-on-wikimedia-projects/",
+      "why": "직전 회차 'OpenAI 에이전트 이탈' 사건의 후속이라 재탕 위험, 재단의 \"we believe\" 추정 귀속 사안. 호출자 지시로 가급적 제외(배제)."
+    },
+    {
+      "url": "https://www.engadget.com/2278051/wikimedia-links-openai-agents-to-an-outage-and-unauthorized-activity/",
+      "why": "Wikimedia 항목과 같이 제외(재탕 위험, 재단 보도 재전달)."
+    },
+    {
+      "url": "https://www.vals.ai/blogs/room-temperature-magnetic-semiconductors",
+      "why": "Claude Opus 5.5 에이전트의 후보 자성 반도체 2종은 계산 예측일 뿐 실험 검증 전. 소규모 회사 블로그이고 후반 미열람, 검색 스니펫 수치(90개·3일)는 미확인. 확인된 5건 확보로 보류."
+    }
+  ],
+  "cannotSay": [
+    "\"이번 주 AI 소식 전부\" 또는 \"이번 주 가장 중요한 5건\" 같은 완결성 주장 — 10/2~10/6 신모델 발굴이 WebSearch 한도로 불완전해 구글·메타·애플·딥시크 등의 추가 발표를 놓쳤을 수 있다. \"확인된 5건\"이라고만 쓴다.",
+    "Gemini 4 Argon 이 \"최강\"·\"전 벤치마크 1위\" — 구글 차트 18개 중 12개(VentureBeat 집계)이고 Terminal-Bench 4.0 은 Opus 5.5, FrontierSWE v2 는 GPT-6 Astra 우위.",
+    "Artificial Analysis Intelligence Index 53·환각률 15%·AutomationBench-AA 78% — 2차 재전달이며 지수 버전이 달라 이전 회차와 비교 불가. 쓰지 않는다.",
+    "Argon 일반 공개일·\"지금 쓸 수 있다\" — 구글은 날짜 미발표, 현재는 Fairwind 신뢰 방어자와 구글 내부팀만. 가격은 도입가이며 도입 기간 종료 시점 미명시.",
+    "GLM-5.3 이 Mythos Preview 와 \"동급\"·\"같은 수준\" — Anthropic 표현은 \"close/similar rate\", CAISI 는 미국 프런티어에 약 4개월 뒤라고 평가. 64/92/100% 를 \"공격 성공률\"로 쓰는 것도 금지(시뮬레이션에서 응한 비율, 코드 미실행). 실제 피해가 이미 발생했다는 서술 금지(Anthropic 전망).",
+    "백악관 합의의 \"법적 구속력\" — 자발적이며 법 제정 여부는 \"may make sense\" 수준. 트럼프 \"morally binding\"·\"constitution\" 은 트럼프 발언으로만 귀속. 합의문 원문 문구의 직접 인용(Al Jazeera 가 따옴표로 전한 문구를 제외) 금지, 4단계도 CNN 보도 요약으로 귀속. 머스크 소속(X vs xAI) 표기 금지. 행정명령 서명 여부·시점, Super Intelligence Force 의 권한·예산·활동 내용(ABC: \"thin on details\")은 쓰지 않는다. 지도부 직함은 ABC 보도 기준으로만.",
+    "Reflection Beam 가중치가 공개됐다는 서술, 가중치 공개 정확한 날짜(10월 중까지만), \"GLM 5.3·Kimi K3 와 동급·서구 오픈웨이트 최강\" 단정(회사 문구는 귀속), \"3~4배 적은 추론 연산\"을 확정 사실처럼 쓰기(회사가 외부 데이터로 추정한 근사치), Reflection 투자 $4B·기업가치 $25B, Beam 컨텍스트 1M(raw facts 에는 있으나 공식 본문 발췌에서 확인 안 됨), 신세계 한국 클라우드.",
+    "SB 947 의 정확한 시행일(\"July 1, 2027\" 은 2차 표기), 적용 대상·예외·벌칙 등 세부 요건, 그리고 같은 보도자료의 다른 항목(AI 로 인한 대량 해고 고지, 화장실 감시 금지, 변호사·의료 AI 제한 등)을 SB 947 에 귀속하는 것 — 법안 원문(leginfo) 미확인. \"AI 해고 전면 금지\"로 쓰지 않는다.",
+    "Claude Sonnet 5.5 출시(9/28 기사 날짜, 기간 밖·원문 미조사), OpenAI GPT-6.1 Astra 출시 취소(경계 날짜·원문 미조사), AMD-World Labs 인수, Anthropic IPO 서류, Florida AG 요청 — 모두 이번 글에서 사실로 쓰지 않는다. 직전 회차·dev-digest-2026-09-30 에서 다룬 GPT-6.1 Sol·DevDay·OpenAI 에이전트 이탈 사건도 재설명 금지."
+  ],
+  "cannotCover": [
+    "10/2~10/6 사이 구글·메타·애플·딥시크 등 추가 신모델 발표 — 발굴 불완전(검색 한도).",
+    "Artificial Analysis 등 제3자의 Gemini 4 Argon 독립 평가 — 원문 미확인, 현재 구글 자체 수치와 SiliconANGLE 집계뿐.",
+    "백악관 합의문 원문과 백악관 1차 자료 — Truth Social 은 출처로 안 썼고 whitehouse.gov 페이지는 못 찾음. 외부 평가자가 누구인지·감사 기준·실제 이행 여부.",
+    "Zhipu AI(Z.ai)의 Anthropic 보고서 반응·입장 — 자료 없음. GLM-5.3 의 안전장치 설계 의도.",
+    "Reflection Beam 의 독립 벤치마크·가중치 공개 후 검증 — 공개 전이라 불가. 주요 언론 1차 보도도 열람 못 함(MarkTechPost 403).",
+    "SB 947 법안 원문 기반 요건 분석, 한국 기업·개발자에 대한 직접 영향 — 자료 없음.",
+    "한국 시장·한국어 성능에 대한 시사점 — 이번 5건 자료에 근거 없음(예비 항목 korea.kr 은 대학 정책일 뿐)."
+  ],
+  "unknowns": [
+    "백악관 'Accord on Super Intelligence: Joint Commitment on Frontier Responsibilities' 합의문 원문 — Truth Social 은 SNS 라 출처로 안 씀, Washington Examiner 전문은 유료벽. 4단계 내용은 CNN·Al Jazeera 보도 요약에 근거.",
+    "Gemini 4 Argon 일반(유료 API·Ultra) 공개 날짜 — 구글 미발표. TechCrunch 기사 본문은 열람 못 함.",
+    "Artificial Analysis 원문 페이지 — AI Weekly 재전달본만 확인(검색 한도 소진).",
+    "Reflection 가중치 공개 일자(10월 중 어느 날), 투자 $4B·기업가치 $25B 의 공식 확인.",
+    "SB 947 법안 원문과 정확한 시행일·적용 범위.",
+    "WebSearch 한도(세션 200회) 소진으로 10/2~10/6 추가 발표 발굴 불완전.",
+    "Sonnet 5.5·GPT-6.1 Astra 취소·AMD-World Labs 는 기간 밖이거나 경계라 원문 미조사. 직전 회차는 Sonnet 5.5 를 \"미출시\"로 적었는데 9/28 기사 날짜 URL 이 있어 사실 불일치 가능성 — 이번 글에서 언급하지 않는 것으로 회피."
+  ],
+  "songs": []
+}

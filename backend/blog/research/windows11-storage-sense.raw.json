@@ -1,0 +1,367 @@
+{
+  "keyword": "윈도우 11 C드라이브 용량 정리 — 저장소 센스(Storage Sense)·임시 파일 삭제·디스크 정리·정리 권장 사항 (설정 > 시스템 > 저장소)",
+  "categoryId": "hangeut-trend",
+  "searchedAt": "2026-10-06",
+  "queries": [
+    "Windows에서 저장소 센스로 디스크 공간 관리 support.microsoft.com ko-kr",
+    "Windows 11 저장소 센스 임시 파일 삭제 정리 권장 사항 Microsoft 지원",
+    "Windows 디스크 정리 cleanmgr 도구 Microsoft 지원 ko-kr",
+    "Windows 11 Storage Sense configure learn.microsoft.com",
+    "Windows에서 드라이브 공간 확보 support.microsoft.com 저장소 센스 임시 파일 정리 권장 사항 (allowed_domains=support.microsoft.com)",
+    "Free up drive space in Windows Storage Sense temporary files cleanup recommendations support.microsoft.com (allowed_domains=support.microsoft.com)",
+    "Windows 11 설정 저장소 임시 파일 다운로드 폴더 \"임시 파일\" 삭제 경고 개인 파일 Microsoft",
+    "Windows 11 Settings Storage Temporary files Downloads folder warning \"personal files\" support.microsoft.com delete temporary files",
+    "Disk Cleanup cleanmgr.exe no longer being developed replaced Storage Sense Windows 10 features removed Microsoft",
+    "윈도우 11 저장소 임시 파일 \"다운로드\" 경고 \"개인 다운로드 폴더\" 저장소 센스 구성 고려하지 않습니다",
+    "Microsoft \"Disk Cleanup\" cleanmgr \"Storage Settings\" replacing Windows 10 version 1809 \"features we're no longer developing\" learn.microsoft.com",
+    "KB5074105 Storage settings UAC prompt Temporary files Microsoft confirmed admin Windows 11 2026",
+    "Windows 11 Storage settings Temporary files no longer shows Windows Update cleanup files elevation fixed 2026 release notes",
+    "(WebSearch 세션 한도 200/200 소진으로 이후 추가 검색 불가 — 이후는 WebFetch 만 사용. KB 릴리스노트 URL 2건은 검색이 아니라 fetch 한 기사(techwisezoneblog, windowslatest)의 외부 링크로 도달해 직접 fetch 로 200 확인)"
+  ],
+  "sources": [
+    {
+      "title": "Windows의 저장소 설정 (Microsoft 지원, ko-kr)",
+      "url": "https://support.microsoft.com/ko-kr/windows/windows%EC%9D%98-%EC%8A%A4%ED%86%A0%EB%A6%AC%EC%A7%80-%EC%84%A4%EC%A0%95-5bc98443-0711-8038-4621-6a18ddc904f2",
+      "host": "support.microsoft.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "[WebFetch 원문 발췌 — 기계번역(MT)이라 용어가 섞여 있음. 원문 그대로 옮김]\nWindows의 저장소 설정\n적용 대상 Windows 11 Windows 10\nWindows의 저장소 설정은 저장소가 어떻게 사용되고 있는지에 대한 자세한 보기를 제공합니다. 설치된 앱, 임시 파일, 예약된 시스템 & 등의 범주로 세분화된 저장소 사용량을 볼 수 있습니다.\n저장소 설정에 액세스하려면 다음을 수행합니다.\n1. Windows 설정 에서 시스템을 선택합니다.\n2. 스토리지 를 선택합니다.\n[시스템 예약 스토리지] 장치가 성공적으로 업데이트되고 최상의 상태로 실행되도록 하기 위해 Windows는 임시 파일, 캐시 및 기타 파일에서 사용할 수 있도록 장치의 저장소 공간의 일부를 예약합니다. 장치의 공간이 부족하면 Windows는 예약된 저장소를 지우므로 Windows 업데이트 같은 다른 프로세스에 사용할 수 있습니다.\n시스템 예약 저장소를 보려면 저장소 설정으로 이동하여 더 많은 범주 표시를 선택합니다.\n[저장 공간 센스] 저장 공간 센스를 사용하면 휴지통에 있는 임시 파일 및 항목과 같이 필요 없는 항목을 제거하여 드라이브 공간을 자동으로 확보할 수 있습니다. 자세한 내용은 저장 공간 센스를 사용하여 드라이브 공간 관리를 참조하세요.\n[정리 권장 사항] 추천 정리 항목은 저장 공간을 보다 효율적으로 관리하는 데 도움이 됩니다. 시스템을 분석하고 공간 확보를 위한 맞춤형 제안을 제공합니다. 이전 Windows 설치를 포함한 임시 파일, 대용량 또는 사용하지 않는 파일 및 거의 사용하지 않는 앱과 같이 안전하게 제거할 수 있는 파일 및 응용 프로그램을 식별합니다.\n[고급 저장소 설정] 다른 드라이브에 사용된 저장소 / 새 콘텐츠가 저장되는 위치 / 저장소 공간 / 디스크 & 볼륨 / 백업 옵션 / 드라이브 최적화.\n[다른 드라이브에 사용된 저장소] 특정 드라이브를 선택하면 문서, 사진, 비디오 등과 같은 다양한 파일 유형별로 분류된 저장소 사용량 분석을 볼 수 있습니다. 이렇게 하면 용량에 근접한 드라이브와 가장 많은 공간을 차지하는 파일 유형을 식별하여 스토리지를 보다 효과적으로 관리할 수 있습니다.\n[드라이브 최적화] ... SSD(솔리드 스테이트 드라이브)의 경우 효율적인 데이터 관리를 보장하기 위해 트리밍 작업을 수행합니다.",
+      "facts": [
+        "사용량 확인 경로(공식 ko-kr 원문): Windows 설정에서 '시스템' 선택 → '스토리지' 선택(같은 문서 제목은 '저장소 설정'). 표기가 문서 안에서도 '저장소'/'스토리지'로 섞여 있음.",
+        "저장소 설정은 '설치된 앱, 임시 파일, 예약된 시스템 & 등의 범주로 세분화된 저장소 사용량'을 보여준다고 설명함.",
+        "'시스템 예약 저장소를 보려면 저장소 설정으로 이동하여 더 많은 범주 표시를 선택합니다.'",
+        "정리 권장 사항은 '이전 Windows 설치를 포함한 임시 파일, 대용량 또는 사용하지 않는 파일 및 거의 사용하지 않는 앱'을 식별해 안전하게 제거할 수 있는 항목을 제안한다고 설명함.",
+        "고급 저장소 설정 하위 항목 6개: 다른 드라이브에 사용된 저장소 · 새 콘텐츠가 저장되는 위치 · 저장소 공간 · 디스크 & 볼륨 · 백업 옵션 · 드라이브 최적화."
+      ]
+    },
+    {
+      "title": "저장 공간 센스를 사용하여 드라이브 공간 관리 (Microsoft 지원, ko-kr)",
+      "url": "https://support.microsoft.com/ko-kr/windows/experience/storage-filemanagement/manage-drive-space-with-storage-sense",
+      "host": "support.microsoft.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "[WebFetch 원문 발췌 — MT 오탈자(예: '클린') 포함 원문 그대로]\n저장 공간 센스를 사용하여 드라이브 공간 관리\n적용 대상 Windows 11 Windows 10\n저장 공간 센스가 기본 설정으로 켜져 있으면 장치의 디스크 공간이 부족할 때 실행되고 불필요한 임시 파일을 클린합니다. 휴지통의 콘텐츠는 기본적으로 일정 시간이 지나면 삭제되지만 저장 공간 센스를 설정하지 않는 한 다운로드 폴더와 OneDrive(또는 다른 클라우드 공급자)의 항목은 그대로 유지됩니다.\n중요: 저장 공간 센스는 Windows 운영 체제를 포함하고 일반적으로 C:라고 하는 시스템 드라이브에서만 작동합니다. 다른 드라이브의 공간을 확보하려면 시작>설정>시스템>저장소>고급 저장소 설정>다른 드라이브에서 사용되는 저장소로 이동합니다.\n[저장 공간 센스 켜기] 1. 시작>설정>시스템>저장소로 이동합니다. 2. 저장 공간 센스를 켜기로 설정합니다.\n[저장 공간 센스 설정 선택] 참고: 선택한 모든 설정은 사용자에게만 적용됩니다. 장치의 다른 사용자는 자신의 설정을 관리할 수 있습니다. 1. 시작>설정>시스템>저장소로 이동합니다. 2. 저장 공간 센스를 선택합니다.\n[저장 공간 센스를 실행할 시점 선택] 1. 저장 공간 센스가 켜져 있는지 확인합니다. 2. 저장 공간 센스 실행 아래에서 온라인 상태이고 로그인되어 있을 때 저장 공간 센스를 실행할 빈도를 선택합니다. 참고: 사용 가능한 디스크 공간이 부족한지는 디스크 크기와 최소 작동 임계값에 따라 달라집니다. 시작>설정>시스템>저장소의 용량 표시줄이 빨간색으로 바뀌면 디스크 부족 상태에 있는 것입니다.\n[임시 파일 삭제에 대한 기본 설정 선택] 파일이 지난 경우 휴지통에서 파일 삭제: 및 다음보다 이상 열지 않은 경우 내 다운로드 폴더의 파일 삭제에서 휴지통 또는 다운로드 폴더의 파일을 삭제할 시기를 선택합니다.\n[로컬에서 사용 가능한 클라우드 콘텐츠 관리] 참고: 클라우드 계정에 로그인한 경우에만 클라우드 콘텐츠 설정이 표시됩니다. 클라우드 파일은 디스크에 로컬로 존재하거나 온라인에서만 사용할 수 있습니다. 비활성 파일을 온라인 전용으로 만드는 조건을 선택하려면 콘텐츠에서 그 이상 열지 않으면 온라인 전용이 됩니다. 원하는 시간을 선택합니다. Windows 11 버전 22H2부터 OneDrive 클라우드 파일의 기본값은 파일을 30일 이상 열지 않은 경우 온라인 전용으로 설정하는 것입니다.\n중요: 이 설정은 파일을 영구적으로 삭제하지 않습니다. 사용 가능한 디스크 공간과 네트워크 연결이 있는 경우 Files를 로컬에서 다시 사용할 수 있습니다. 이 디바이스에서 항상 유지로 표시된 모든 파일은 제외되며 저장 공간 센스에서 관리되지 않습니다.\n[FAQ] 저장 공간 센스가 기본적으로 켜져 있나요? 저장 공간 센스는 기본적으로 꺼져 있습니다. PC의 디스크 공간이 부족하고 과거에 저장 공간 센스와 상호 작용한 적이 없는 경우, 저장 공간 센스를 켜서 선택한 임시 파일을 관리한 다음 알려 줄 수 있습니다. ... 저장 공간 센스를 켜면 장치의 디스크 공간이 부족할 때 기본 설정이 실행됩니다. 지정하지 않는 한 다운로드 폴더와 클라우드 콘텐츠는 관리되지 않습니다.\n[FAQ] Windows.old 폴더 또는 이전 Windows 설치를 삭제어떻게 할까요? 1. 시작>설정>시스템>저장소로 이동합니다. 2. 디스크 사용량에서 임시 파일을 선택한 다음 이전 Windows 설치가 선택되어 있는지 확인하고 파일 제거를 선택합니다.\n[FAQ] 로그인하지 않은 상태에서 저장 공간 센스를 실행할 수 있나요? 아니요. 로그인한 상태에서 10분 이상 온라인 상태가 아니면 저장 공간 센스를 실행할 수 없습니다.\n[FAQ] 저장 공간 센스를 켜라는 알림이나 저장소 부족 알림을 받는 이유는 무엇인가요? 드라이브에 사용 가능한 공간이 부족할 때 이러한 알림이 표시됩니다. 이로 인해 장치 성능이 저하되고 시스템 업그레이드를 받기 어려워질 수 있습니다.",
+      "facts": [
+        "켜는 경로(공식 ko-kr): 시작 > 설정 > 시스템 > 저장소 → '저장 공간 센스'를 '켜기'로 설정. 세부 설정은 같은 경로에서 '저장 공간 센스'를 선택해 들어감.",
+        "공식 FAQ: '저장 공간 센스는 기본적으로 꺼져 있습니다.' 다만 디스크가 부족하고 과거에 상호작용한 적이 없으면 Windows가 센스를 켜서 선택한 임시 파일을 관리한 뒤 알릴 수 있다고 함. (conflicts 참고: learn.microsoft.com 문서는 '기본적으로 사용'이라고 씀)",
+        "저장 공간 센스는 시스템 드라이브(일반적으로 C:)에서만 작동한다. 다른 드라이브는 시작>설정>시스템>저장소>고급 저장소 설정>다른 드라이브에서 사용되는 저장소로 이동.",
+        "'저장 공간 센스 실행' 빈도는 '온라인 상태이고 로그인되어 있을 때' 기준. 용량 표시줄이 빨간색으로 바뀌면 디스크 부족 상태. 문서가 이 드롭다운의 선택지 값 목록은 적지 않음.",
+        "임시 파일 삭제 설정은 2개: '지난 경우 휴지통에서 파일 삭제:'(MT 표기)와 '다음보다 이상 열지 않은 경우 내 다운로드 폴더의 파일 삭제'(MT 표기). 영어 원문은 'Delete files in my recycle bin if they have been there for over:' / 'Delete files in my Downloads folder if they haven't been opened for more than:'.",
+        "기본 동작: 휴지통은 일정 시간 후 삭제되지만 '다운로드 폴더와 OneDrive(또는 다른 클라우드 공급자)의 항목은 저장 공간 센스를 설정하지 않는 한 그대로 유지'된다.",
+        "클라우드 콘텐츠 설정은 클라우드 계정에 로그인했을 때만 표시. Windows 11 22H2부터 OneDrive 클라우드 파일 기본값은 '30일 이상 열지 않으면 온라인 전용'. '이 디바이스에서 항상 유지'로 표시한 파일은 제외. 이 설정은 파일을 영구 삭제하지 않는다.",
+        "선택한 설정은 해당 사용자에게만 적용되고 같은 PC의 다른 사용자는 각자 설정을 관리한다.",
+        "Windows.old(이전 Windows 설치) 삭제 경로: 시작>설정>시스템>저장소 → 임시 파일 → '이전 Windows 설치' 체크 확인 → '파일 제거'.",
+        "저장 공간 센스는 로그인한 상태로 10분 이상 온라인이어야 실행된다(공식 FAQ 수치)."
+      ]
+    },
+    {
+      "title": "Manage drive space with Storage Sense (Microsoft Support, en-us — 영어 원문)",
+      "url": "https://support.microsoft.com/en-us/windows/experience/storage-filemanagement/manage-drive-space-with-storage-sense",
+      "host": "support.microsoft.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "[WebFetch 원문 발췌 — 위 ko-kr MT 문서의 영어 원본. 용어 대조용]\nManage drive space with Storage Sense\nApplies To Windows 11 Windows 10\nStorage Sense can automatically free up drive space for you by getting rid of items that you don't need, like temporary files and items in your Recycle Bin.\nIf Storage Sense is turned on with the default settings, it will run when your device is low on disk space and will clean up unnecessary temporary files. Content from the Recycle Bin will be deleted by default after some time, but items in your Downloads folder and OneDrive (or any other cloud provider) will not be touched unless you set up Storage Sense to do so.\nImportant: Storage Sense works on your system drive only, which contains the Windows operating system and is usually referred to as C:. To free up space on other drives, go to Start > Settings > System > Storage > Advanced storage settings > Storage used on other drives.\nTurn on Storage Sense: 1. Go to Start > Settings > System > Storage. 2. Set Storage Sense to On.\nChoose when to run Storage Sense: Under Run Storage Sense, select how frequently you want Storage Sense to run when you're online and signed in. Note: Low free disk space will vary depending on disk size and minimum operational thresholds. You're in a low disk state when the capacity bar in Start > Settings > System > Storage turns red.\nChoose your preferences for deleting temporary files: Under Delete files in my recycle bin if they have been there for over: and Delete files in my Downloads folder if they haven't been opened for more than:, choose when files from your Recycle Bin or Downloads folder are deleted.\nManage locally available cloud content: ... under Content will become online-only if not opened for more than: choose your preferred amount of time. Note that starting in Windows 11, version 22H2, the default for OneDrive cloud files is to make files online-only if not opened for more than 30 days.\nFAQ: Is Storage Sense on by default? Storage Sense is off by default. If your PC runs into low disk space and you have not interacted with Storage Sense in the past, we may turn on Storage Sense to manage select temporary files, then notify you.\nFAQ: Can Storage Sense run if I'm not signed in? No. Storage Sense cannot run unless you're signed and online for more than 10 minutes.",
+      "facts": [
+        "영어 원문 UI 라벨: 'Run Storage Sense' / 'Delete files in my recycle bin if they have been there for over:' / 'Delete files in my Downloads folder if they haven't been opened for more than:' / 'Content will become online-only if not opened for more than:'.",
+        "영어 원문: 'Storage Sense is off by default.' (ko-kr 번역본의 '기본적으로 꺼져 있습니다'와 일치)",
+        "영어 원문: 기본 설정으로 켜지면 '디스크 공간이 부족할 때 실행'. Downloads 폴더·OneDrive 항목은 'unless you set up Storage Sense to do so' 이전에는 건드리지 않음.",
+        "영어 원문 수치: OneDrive 클라우드 파일 기본값 30일(Windows 11 22H2~), 센스 실행 조건 'signed and online for more than 10 minutes'.",
+        "이 문서도 Run Storage Sense·휴지통·다운로드·클라우드 드롭다운의 선택지 값(예: 며칠 단위 목록)을 나열하지 않음."
+      ]
+    },
+    {
+      "title": "Windows에서 드라이브 공간 확보 (Microsoft 지원, ko-kr)",
+      "url": "https://support.microsoft.com/ko-kr/windows/experience/storage-filemanagement/free-up-drive-space-in-windows",
+      "host": "support.microsoft.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "[WebFetch 원문 발췌 — Windows 11 탭 / Windows 10 탭 구분 유지. MT 원문 그대로]\nWindows에서 드라이브 공간 확보\n적용 대상 Windows 11 Windows 10\nPC에 저장 공간이 부족하면 성능이 저하되거나 Windows 업데이트를 설치하는 데 문제가 발생할 수 있습니다. 공간을 확보하면 장치가 더 잘 실행되고 보안을 유지하는 데 도움이 될 수 있습니다. 다음은 Windows에서 공간을 확보하는 몇 가지 쉬운 방법입니다. 순서대로 시도해 보세요. 각 단계를 마친 후 다음 단계로 넘어가기 전에 충분한 공간을 확보했는지 검사하세요.\n[Windows 11 탭] Windows 11 장치에 남아 있는 총 디스크 공간을 검사하려면 작업 표시줄에서 파일 탐색기를 선택한 다음 왼쪽에서 내 PC를 선택합니다. 드라이브의 사용 가능한 공간이 장치 및 드라이브에 표시됩니다.\n[Windows 11 탭 / 추천 정리 항목을 사용하여 공간 확보] 저장 공간 센스를 사용하고 싶지 않다면 추천 정리 항목을 사용하여 장치에서 임시 파일과 시스템 파일을 식별하고 정리할 수 있습니다. 1. 시작>설정>시스템>저장소>정리 권장 사항을 선택합니다. 2. 임시 파일, 대용량 또는 사용되지 않는 파일, 클라우드에 동기화된 파일, 사용되지 않는 앱 등 각 범주를 검토하고 제거할 항목을 선택합니다. Windows에서 사용자를 위해 파일을 추천하고, 해당 항목을 제거할 시 확보할 수 있는 공간의 양을 표시합니다. 3. 제거할 항목을 선택한 후 각 섹션에 대해 정리 단추를 선택합니다. 참고: Windows를 업그레이드한 지 10일이 되지 않은 경우, 이전 버전의 Windows가 삭제할 수 있는 시스템 파일로 나열됩니다. 드라이브 공간을 확보해야 하는 경우, 이를 삭제할 수 있지만, 이전 버전의 Windows로 되돌릴 수 있는 옵션을 제공하는 파일이 포함된 Windows.old 폴더를 삭제하게 된다는 점을 명심하시기 바랍니다. 이전 버전의 Windows를 삭제하면 이를 실행 취소할 수 없으며, 이전 버전의 Windows로 되돌릴 수 없습니다.\n[Windows 11 탭 / 개인 파일] 비디오, 음악, 사진 및 다운로드 폴더에는 일반적으로 장치에 저장한 가장 큰 파일이 들어 있습니다. ... 임의의 파일을 삭제하면 휴지통을 비워 사용자 장치에서 완전히 제거하여 공간을 확보해야 합니다.\n[Windows 11 탭 / OneDrive 요청 기반 파일 관리 켜기] 하드 드라이브에 클라우드의 OneDrive 계정에 저장된 전체 크기 파일 대신 더 작은 자리 표시자 파일을 저장하는 OneDrive 요청 기반 파일 관리를 켜서 공간을 절약할 수 있습니다.\n[Windows 10 탭 / 디스크 정리를 사용하여 공간 확보] 시스템에 저장 공간 센스가 없는 경우, 디스크 정리 도구를 사용하여 장치의 임시 파일 및 시스템 파일을 삭제할 수 있습니다. 1. 작업 표시줄의 검색 상자에, 디스크 정리를 입력한 후에 검색 결과에서 선택합니다. 2. 파일을 클린할 드라이브를 선택한 다음 확인을 선택합니다. 3. 삭제하려는 파일 형식 옆의 확인란을 선택합니다. 각 파일 형식에 대한 설명을 보려면 이름을 선택합니다. 기본적으로 Downloaded Program Files, Temporary Internet Files 및 Thumbnails가 선택됩니다. 이러한 파일을 삭제하지 않으려면 해당 확인란의 선택을 취소해야 합니다. 4. 더 많은 공간을 확보하려면 시스템 파일 정리를 선택하고, 드라이브를 선택한 다음, 확인을 선택합니다. ... 5. 삭제하려는 파일 형식을 선택한 후 확인을 선택한 다음, 확인 창에서 확인을 선택한 다음 파일 삭제를 선택하여 정리를 시작합니다.\n[중요 / Windows 10 탭] OS 드라이브(Windows가 설치된 드라이브)를 압축하여 중요한 업데이트를 설치하기 위한 추가 공간을 확보할 수도 있습니다. 이 작업은 이 드라이브의 콘텐츠를 삭제하지 않으며 ...",
+      "facts": [
+        "C드라이브 남은 공간 확인(공식 ko-kr, Windows 11 탭): 작업 표시줄 '파일 탐색기' → 왼쪽 '내 PC' → '장치 및 드라이브'에서 드라이브 사용 가능 공간 확인.",
+        "정리 권장 사항 경로(공식): 시작 > 설정 > 시스템 > 저장소 > 정리 권장 사항. 범주 4개: 임시 파일 · 대용량 또는 사용되지 않는 파일 · 클라우드에 동기화된 파일 · 사용되지 않는 앱. 각 섹션의 '정리' 단추로 제거. Windows가 확보 가능한 공간 크기를 보여줌.",
+        "공식 주의: Windows를 업그레이드한 지 10일이 되지 않았다면 이전 Windows가 삭제 가능한 시스템 파일로 나열되며, 지우면 Windows.old 폴더가 삭제되어 이전 버전으로 되돌릴 수 없고 실행 취소 불가.",
+        "디스크 정리(cleanmgr) 절차는 이 공식 문서의 'Windows 10' 탭에만 있고 'Windows 11' 탭에는 없음(영어판 en-us 에서도 동일 확인). 10탭 설명은 '시스템에 저장 공간 센스가 없는 경우' 사용하는 도구로 소개. 기본 선택 항목 3개: Downloaded Program Files · Temporary Internet Files · Thumbnails.",
+        "디스크 정리 '시스템 파일 정리' → 드라이브 선택 → 확인 → 삭제할 시스템 파일 유형 선택. 문서는 '확보 가능한 공간 계산에 잠시 시간이 걸린다'고 적음.",
+        "공식 권고: 파일을 삭제하면 휴지통을 비워야 장치에서 완전히 제거되어 공간이 확보된다. 비디오·음악·사진·다운로드 폴더에 가장 큰 파일이 있는 경우가 많다고 안내.",
+        "OneDrive 요청 기반 파일 관리를 켜면 전체 크기 파일 대신 더 작은 '자리 표시자' 파일을 하드 드라이브에 저장해 공간을 절약한다고 설명."
+      ]
+    },
+    {
+      "title": "Free up drive space in Windows (Microsoft Support, en-us — 영어 원문)",
+      "url": "https://support.microsoft.com/en-us/windows/free-up-drive-space-in-windows-85529ccb-c365-490d-b548-831022bc9b32",
+      "host": "support.microsoft.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "[WebFetch 원문 발췌 — ko-kr MT 문서의 영어 원본, 탭 구분 확인용]\nFREE UP SPACE WITH STORAGE SENSE (Windows 11): Storage Sense can automatically free up drive space for you by getting rid of items that you don't need, like temporary files and items in your Recycle Bin.\nFREE UP SPACE WITH CLEANUP RECOMMENDATIONS (Windows 11): If you don't want to use Storage Sense, Cleanup recommendations can help you identify and clean up temporary files and system files from your device. 1. Select Start > Settings > System > Storage > Cleanup recommendations. 2. Review each of the categories, including Temporary files, Large or unused files, Files synced to the cloud, and Unused apps, and select the items you'd like to remove. Windows will suggest files for you and show the amount of space you'll save when you remove those items. 3. After you've selected items to remove, select the Clean up button for each section.\nNote: If it's been fewer than 10 days since you upgraded Windows, your previous version of Windows will be listed as a system file you can delete. If you need to free up drive space, you can delete it, but keep in mind that you'll be deleting your Windows.old folder, which contains files that give you the option to go back to your previous version of Windows. If you delete your previous version of Windows, this can't be undone, and you won't be able to go back to your previous version of Windows.\nFREE UP SPACE WITH DISK CLEANUP (Windows 10): If your system doesn't have Storage Sense, you can use the Disk Cleanup tool to delete temporary files and system files from your device. 1. In the search box on the taskbar, type disk cleanup, then select it from the results. 2. Select the drive you want to clean up files for, then select OK. 3. ... By default, Downloaded Program Files, Temporary Internet Files, and Thumbnails are selected. 4. To free up even more space, select Clean up system files, select a drive, select OK. ... 5. ... select Delete files in the confirmation window to start the cleanup.",
+      "facts": [
+        "영어 원문: 정리 권장 사항 = 'Cleanup recommendations', 경로 'Start > Settings > System > Storage > Cleanup recommendations', 범주 'Temporary files, Large or unused files, Files synced to the cloud, and Unused apps', 버튼 'Clean up'.",
+        "영어 원문: 'FREE UP SPACE WITH DISK CLEANUP' 섹션은 Windows 10 탭에만 있고 Windows 11 탭에는 Disk Cleanup 섹션이 없음.",
+        "영어 원문 수치: 'fewer than 10 days since you upgraded Windows' 일 때 이전 Windows 버전이 삭제 가능 시스템 파일로 표시."
+      ]
+    },
+    {
+      "title": "Windows에서 스토리지 센스 구성 (Microsoft Learn, ko-kr) — IT 관리자용 구성 문서",
+      "url": "https://learn.microsoft.com/ko-kr/windows/configuration/storage/storage-sense",
+      "host": "learn.microsoft.com",
+      "tier": "official",
+      "publishedAt": "2025-07-10",
+      "body": "[WebFetch 원문 발췌 — ms.date 2025-07-10, updated_at 2026-10-04, ms.translationtype: MT]\n스토리지 센스는 임시 파일, 휴지통의 항목 및 OneDrive의 오프라인 콘텐츠와 같은 불필요한 파일을 삭제하여 디스크 공간을 자동으로 확보하는 데 도움이 되는 Windows 기능입니다. ...\n[실제 시나리오] ... 예를 들어 공유 디바이스 프로그램에서 64GB Windows 노트북을 사용하는 학생은 캐시된 파일, 다운로드 및 앱 데이터로 인해 공간이 빠르게 부족할 수 있습니다. ...\n[구성] 기본적으로 스토리지 센스는 사용되며 디스크 공간이 부족할 때 자동으로 실행되도록 설정됩니다. IT 관리자는 조직 정책 및 사용자 요구 사항에 맞게 동작을 사용자 지정할 수 있습니다.\n사용 가능한 구성 옵션은 다음과 같습니다.\n- 시스템 수준에서 Storage Sense를 사용하거나 사용하지 않도록 설정합니다.\n- 사용자 임시 파일 정리를 사용하거나 사용하지 않도록 설정합니다.\n- 클라우드 지원 콘텐츠에 대한 보존 임계값 설정: 로컬 디바이스에서 파일을 오프로드하기 전에 파일에 액세스하지 않은 상태로 유지해야 하는 최소 일 수를 정의합니다(클라우드에서 계속 사용 가능).\n- Downloads 폴더 정리 구성: 삭제하기 전에 파일에 액세스하지 않은 상태로 유지해야 하는 최소 일 수를 지정합니다.\n- 휴지통 정리 구성: 영구 제거 전에 남은 항목 수를 설정합니다. (※ 영어 원문은 'set how many days items remain before permanent removal' — MT 오역)\n- 스토리지 센스에 대한 실행 주기 정의: 스토리지 센스를 매일, 매주, 매월 또는 디스크 공간이 부족한 경우에만 실행하도록 선택합니다.\n[Intune 표] 스토리지 센스 클라우드 콘텐츠 탈수 임계값 구성 / 스토리지 센스 구성 정리 임계값 다운로드 / 스토리지 센스 휴지통 정리 임계값 구성: 0-365 범위의 값 지정. 스토리지 센스 전역 주기 구성: 0 - 디스크 공간이 부족한 경우에만(기본값) / 1 - 매일 / 7 - 매주 / 30 - 매월.\n[설정 탭] 1. 설정 > 시스템 > 스토리지 스토리지 > 센스로 이동하거나 다음 바로 가기를 사용합니다. (※ MT 깨짐 — 영어 원문 'Settings > System > Storage > Storage Sense') 2. 다음 옵션을 구성합니다. - 임시 파일 정리 - 자동 사용자 콘텐츠 정리 - 로컬로 사용 가능한 클라우드 콘텐츠 - 정리 일정",
+      "facts": [
+        "공식 설정 화면의 4개 구성 항목(ko-kr): 임시 파일 정리 · 자동 사용자 콘텐츠 정리 · 로컬로 사용 가능한 클라우드 콘텐츠 · 정리 일정 (영어 원문: Cleanup of temporary files / Automatic User content cleanup / Locally available cloud content / Cleanup schedules).",
+        "정책 값(공식): 실행 주기 0=디스크 공간이 부족한 경우에만(기본값), 1=매일, 7=매주, 30=매월. 휴지통·다운로드·클라우드 콘텐츠 임계값은 0~365 범위(일 단위).",
+        "문서 예시 수치: 64GB Windows 노트북을 쓰는 학생은 캐시·다운로드·앱 데이터로 공간이 빠르게 부족할 수 있다.",
+        "이 문서(ko-kr)는 '기본적으로 스토리지 센스는 사용되며 디스크 공간이 부족할 때 자동으로 실행되도록 설정됩니다'라고 씀 — support.microsoft.com 의 '기본적으로 꺼져 있습니다'와 어긋남(conflicts 참고).",
+        "ko-kr 문서가 MT 라서 '스토리지 센스'로 표기, 설정 경로도 깨진 번역('스토리지 스토리지 > 센스'). 영어판(updated_at 2026-02-03)은 'Settings > System > Storage > Storage Sense'."
+      ]
+    },
+    {
+      "title": "Configure Storage Sense in Windows (Microsoft Learn, en-us)",
+      "url": "https://learn.microsoft.com/en-us/windows/configuration/storage/storage-sense",
+      "host": "learn.microsoft.com",
+      "tier": "official",
+      "publishedAt": "2025-07-10",
+      "body": "[WebFetch 원문 발췌 — ms.date 2025-07-10, updated_at 2026-02-03]\nStorage Sense is a Windows feature that helps automatically free up disk space by deleting unnecessary files—like temporary files, items in the recycle bin, and offline content from OneDrive. ...\nConfiguration: By default, Storage Sense is enabled and set to run automatically when disk space is running low. IT administrators can customize its behavior to align with organizational policies and user requirements.\nThe available configuration options include: Enable or disable Storage Sense at the system level. Enable or disable the cleanup of user temporary files. Set retention thresholds for cloud-backed content: define the minimum number of days a file must remain unaccessed before it's offloaded from the local device (while remaining available in the cloud). Configure cleanup of the Downloads folder: specify the minimum number of days files must remain unaccessed before deletion. Configure cleanup of the Recycle Bin: set how many days items remain before permanent removal. Define the execution cadence for Storage Sense: choose to run Storage Sense daily, weekly, monthly, or only when disk space is low.\nSettings tab: 1. Go to Settings > System > Storage > Storage Sense, or use the following shortcut: 2. Configure the following options: Cleanup of temporary files / Automatic User content cleanup / Locally available cloud content / Cleanup schedules\nGPO: Config Storage Sense Global Cadence — Choose from: During low free disk space (default), Every day, Every week, Every month.",
+      "facts": [
+        "영어 원문: 'By default, Storage Sense is enabled and set to run automatically when disk space is running low.' (support 문서의 'off by default'와 어긋남 — conflicts 참고)",
+        "영어 원문: 설정 경로 'Settings > System > Storage > Storage Sense', 구성 항목 4개: Cleanup of temporary files · Automatic User content cleanup · Locally available cloud content · Cleanup schedules.",
+        "영어 원문: 실행 주기 선택지 daily / weekly / monthly / only when disk space is low (GPO 표기: During low free disk space (default), Every day, Every week, Every month).",
+        "영어 원문: 휴지통은 'how many days items remain before permanent removal' — ko-kr MT 의 '남은 항목 수'는 오역."
+      ]
+    },
+    {
+      "title": "Storage Policy CSP (Microsoft Learn, en-us) — Storage Sense 정책 기본값",
+      "url": "https://learn.microsoft.com/en-us/windows/client-management/mdm/policy-csp-storage",
+      "host": "learn.microsoft.com",
+      "tier": "data",
+      "publishedAt": "2025-03-12",
+      "body": "[WebFetch 원문 발췌 — ms.date 2025-03-12, Windows 10 1903 이상 적용]\nAllowStorageSenseGlobal: Storage Sense can automatically clean some of the user's files to free up disk space. By default, Storage Sense is automatically turned on when the machine runs into low disk space and is set to run whenever the machine runs into storage pressure. This cadence can be changed in Storage settings or set with the \"Configure Storage Sense cadence\" group policy. ... Not Configured: By default, Storage Sense is turned off until the user runs into low disk space or the user enables it manually. Users can configure this setting in Storage settings.\nConfigStorageSenseGlobalCadence: Supported options are: daily, weekly, monthly, and during low free disk space. The default is 0 (during low free disk space). 0: During low free disk space (default); 1: Daily; 7: Weekly; 30: Monthly.\nConfigStorageSenseRecycleBinCleanupThreshold: Supported values are: 0 - 365. If you set this value to zero, Storage Sense won't delete files in the user's Recycle Bin. The default is 30 days. Disabled or Not Configured: By default, Storage Sense will delete files in the user's Recycle Bin that have been there for over 30 days. Users can configure this setting in Storage settings.\nConfigStorageSenseDownloadsCleanupThreshold: Supported values are: 0 - 365. If you set this value to zero, Storage Sense won't delete files in the user's Downloads folder. The default is 0, or never deleting files in the Downloads folder. Disabled or Not Configured: By default, Storage Sense won't delete files in the user's Downloads folder.\nConfigStorageSenseCloudContentDehydrationThreshold: Supported values are: 0 - 365. If you set this value to zero, Storage Sense won't dehydrate any cloud-backed content. The default value is 0, or never dehydrating cloud-backed content.\nAllowStorageSenseTemporaryFilesCleanup: Not Configured: By default, Storage Sense will delete the user's temporary files. Users can configure this setting in Storage settings.",
+      "facts": [
+        "정책 기본값(공식): 휴지통 보관 기본 30일 — '미구성 시 휴지통에 30일 넘게 있던 파일 삭제'. 허용 범위 0~365, 0이면 휴지통 자동 삭제 안 함.",
+        "정책 기본값(공식): 다운로드 폴더 자동 삭제 기본 0(= 삭제 안 함). 범위 0~365일. '미구성이면 Downloads 폴더 파일은 삭제하지 않음'.",
+        "정책 기본값(공식): 클라우드 콘텐츠 탈수(온라인 전용 전환) 기본 0(= 안 함), 범위 0~365일. (설정 앱의 OneDrive 기본 30일과 다른 층위 — conflicts 참고)",
+        "정책 기본값(공식): 실행 주기 0=디스크 공간 부족 시(기본), 1=매일, 7=매주, 30=매월.",
+        "정책 기본값(공식): 임시 파일 정리는 미구성이면 기본 삭제(1=허용이 기본). 센스 전체 허용(AllowStorageSenseGlobal) 미구성이면 'user runs into low disk space or enables it manually' 전까지 꺼짐.",
+        "이 문서도 설정 앱 드롭다운의 선택지 값 목록(예: 1일/14일/30일/60일)은 적지 않음 — 허용 범위만 0~365로 명시."
+      ]
+    },
+    {
+      "title": "cleanmgr (Microsoft Learn, ko-kr, Windows Server 명령 참조)",
+      "url": "https://learn.microsoft.com/ko-kr/windows-server/administration/windows-commands/cleanmgr",
+      "host": "learn.microsoft.com",
+      "tier": "official",
+      "publishedAt": "2024-01-18",
+      "body": "[WebFetch 원문 발췌 — ms.date 2024-01-18, updated_at 2026-01-21, ms.translationtype: MT]\n컴퓨터의 하드 디스크에서 불필요한 파일을 지웁니다. 명령줄 옵션을 사용하여 Cleanmgr 이 임시 파일, 인터넷 파일, 다운로드한 파일 및 휴지통 파일을 정리하도록 지정할 수 있습니다. 그런 다음 예약된 작업 도구를 사용하여 특정 시간에 실행되도록 작업을 예약할 수 있습니다.\nSyntax: cleanmgr [/d <driveletter>] [/sageset:n] [/sagerun:n] [/TUNEUP:n] [/LOWDISK] [/VERYLOWDISK]\n/sageset:n — 디스크 정리 설정 대화 상자를 표시하며 선택한 설정을 저장할 레지스트리 키도 만듭니다. ... n 값은 0에서 9999까지의 정수 값일 수 있습니다.\n/sagerun:n — /sageset 옵션을 사용하는 경우 n 값에 할당된 지정된 작업을 실행합니다.\n/lowdisk — 기본 설정으로 실행합니다. /verylowdisk — 기본 설정으로 실행하며, 사용자에게 프롬프트가 표시되지 않습니다. /autoclean — Windows 업그레이드 후 남은 파일을 자동으로 삭제합니다.\n[Options] 임시 설치 파일 / 다운로드한 프로그램 파일 / 임시 인터넷 파일 / 이전 Chkdsk 파일 / 휴지통(휴지통을 비우기 전까지 이러한 파일은 영구적으로 제거되지 않습니다) / 임시 파일(프로그램 종료 전에 프로그램은 일반적으로 이 정보를 삭제합니다. 지난 주에 수정되지 않은 임시 파일을 안전하게 삭제할 수 있습니다) / 임시 오프라인 파일 / 오프라인 파일 / 이전 파일 압축 / 콘텐츠 인덱서의 카탈로그 파일.\nNote: Windows 설치가 포함된 드라이브 정리를 지정하는 경우 디스크 정리 탭에서 이러한 모든 옵션을 사용할 수 있습니다. 다른 드라이브를 지정하는 경우 디스크 정리 탭에서 휴지통 및 콘텐츠 인덱스 카탈로그 파일 옵션만 사용할 수 있습니다.\nExamples: cleanmgr /sageset:1 / cleanmgr /sagerun:1 / cleanmgr /tuneup:1",
+      "facts": [
+        "공식 명령 참조(ko-kr): cleanmgr 구문 cleanmgr [/d <드라이브문자>] [/sageset:n] [/sagerun:n] [/TUNEUP:n] [/LOWDISK] [/VERYLOWDISK]; sageset 의 n 은 0~9999 정수.",
+        "공식 옵션 항목 10개: 임시 설치 파일 · 다운로드한 프로그램 파일 · 임시 인터넷 파일 · 이전 Chkdsk 파일 · 휴지통 · 임시 파일 · 임시 오프라인 파일 · 오프라인 파일 · 이전 파일 압축 · 콘텐츠 인덱서의 카탈로그 파일.",
+        "공식 문구: '지난 주에 수정되지 않은 임시 파일을 안전하게 삭제할 수 있습니다.'",
+        "공식 문구: Windows 가 설치된 드라이브를 지정하면 모든 옵션, 다른 드라이브를 지정하면 '휴지통'과 '콘텐츠 인덱스 카탈로그 파일' 옵션만 사용 가능.",
+        "이 문서는 Windows Server 명령 참조이며 옵션 설명에 'C:\\Winnt\\Downloaded Program Files' 경로가 그대로 적혀 있음."
+      ]
+    },
+    {
+      "title": "Windows용 OneDrive 요청 기반 파일 관리로 디스크 공간 절약 (Microsoft 지원, ko-kr)",
+      "url": "https://support.microsoft.com/ko-kr/onedrive/save-disk-space-with-onedrive-files-on-demand-for-windows",
+      "host": "support.microsoft.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "[WebFetch 원문 발췌 — MT 원문 그대로]\nOneDrive 요청 기반 파일 관리를 사용하면 파일을 다운로드하거나 컴퓨터의 저장소 공간을 사용하지 않고도 OneDrive의 클라우드 저장소에 있는 모든 파일에 액세스할 수 있습니다.\n참고: OneDrive 빌드 23.066부터 Files On-Demand는 기본적으로 모든 사용자에 대해 사용하도록 설정됩니다.\nFiles On-Demand를 사용하면 파일 탐색기에서 모든 파일을 온라인 전용 파일로 볼 수 있지만 공간을 차지하지는 않습니다. 인터넷에 연결되어 있으면 디바이스의 다른 모든 파일과 마찬가지로 파일을 사용할 수 있습니다.\nOneDrive 파일 또는 폴더 옆에 있는 파란색 구름 아이콘은 파일이 온라인에서만 사용할 수 있음을 나타냅니다. 온라인 전용 파일은 컴퓨터의 공간을 차지하지 않습니다. ... 장치가 인터넷에 연결되어 있지 않으면 온라인 전용 파일을 열 수 없습니다.\n온라인 전용 파일을 열면 장치에 다운로드되어 로컬에서 사용할 수 있는 파일이 됩니다. ... 공간이 더 필요한 경우 파일을 다시 온라인 전용으로 변경할 수 있습니다. 파일을 마우스 오른쪽 버튼으로 클릭하고 \"공간 확보\"를 선택하기만 하면 됩니다. 저장 공간 센스를 켜면 선택한 기간이 지나면 이러한 파일은 온라인 전용 파일이 됩니다.\n흰색 체크 표시가 있는 녹색 원은 \"항상 이 장치에 유지\"라고 표시한 파일에만 녹색 표시됩니다. 항상 사용할 수 있는 이러한 파일은 장치에 다운로드되어 공간을 차지하지만 오프라인 상태에서도 항상 사용할 수 있습니다.\n[파일을 온라인 전용으로 변경하면 해당 파일이 OneDrive에서 삭제되나요?] 아니요. 파일을 온라인 전용으로 변경해도 OneDrive에서 삭제되지는 않습니다. 파일이 더 이상 장치에서 공간을 차지하지 않으며, OneDrive 모바일 앱이나 웹 사이트에서 파일을 계속 볼 수 있습니다.\n[파일을 삭제하거나 휴지통으로 이동하면 어떻게 되나요?] 장치에서 온라인 전용 파일을 삭제하면 모든 장치와 온라인의 OneDrive에서 파일이 삭제됩니다. 개인 OneDrive는 웹 OneDrive 휴지통에서 최대 30일 동안, 직장 또는 학교용은 최대 93일 동안 복원할 수 있습니다.",
+      "facts": [
+        "공식(ko-kr): 'OneDrive 빌드 23.066부터 Files On-Demand는 기본적으로 모든 사용자에 대해 사용하도록 설정됩니다.'",
+        "공식 한국어 표기: 파일 우클릭 메뉴 '공간 확보'(온라인 전용으로 전환) / '항상 이 장치에 유지'(항상 로컬 보관). 파란색 구름 아이콘 = 온라인 전용(공간 안 차지), 흰 체크가 든 녹색 원 = '항상 이 장치에 유지'로 표시한 파일.",
+        "공식: '저장 공간 센스를 켜면 선택한 기간이 지나면 이러한 파일은 온라인 전용 파일이 됩니다.' 파일을 온라인 전용으로 바꿔도 OneDrive 에서 삭제되지 않음.",
+        "공식 주의: 장치에서 '온라인 전용 파일'을 삭제하면 모든 장치와 온라인의 OneDrive 에서 파일이 삭제됨(복원: 개인 OneDrive 웹 휴지통 최대 30일, 직장·학교용 최대 93일).",
+        "공식: Files On-Demand 는 Windows 10 1709 이상 또는 Windows Server 2019 필요. 이 문서의 '적용 대상'에는 SharePoint Server 2019 만 표시됨."
+      ]
+    },
+    {
+      "title": "Windows 업데이트를 위한 공간 확보 (Microsoft 지원, ko-kr)",
+      "url": "https://support.microsoft.com/ko-kr/windows/deployment/updates-lifecycle/free-up-space-for-windows-updates",
+      "host": "support.microsoft.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "[WebFetch 원문 발췌 — MT 원문 그대로. 기존 발행글(윈도우 업데이트)과 겹칠 수 있는 내용이라 수치만 참고]\nWindows 업데이트를 위한 공간 확보\n적용 대상 Windows 11 Windows 10\n[저장 공간 센스를 사용하여 공간 확보(권장)] 저장 공간 센스는 임시 파일을 자동으로 제거하고 Windows 업데이트에 필요한 공간을 확보할 수 있습니다. 1. 시작>설정>시스템>저장소를 선택합니다. 2. 저장 공간 센스를 켭니다. 3. 추천 정리를 선택하고 제안된 파일을 검토한 다음 정리를 선택합니다.\n[정리 권장 사항 사용] 추천 정리 항목을 사용하면 안전하게 제거할 수 있는 파일을 빠르게 찾을 수 있습니다. 1. 시작>설정>시스템>저장소를 선택합니다. 2. 추천 정리를 선택합니다. 3. 파일 범주를 검토하고 제거할 항목을 선택한 다음 정리를 선택합니다.\n[외부 저장소를 사용하여 업데이트 완료] 준비 사항: 10GB 이상의 여유 공간이 있는 외부 저장 장치, 인터넷 연결.\n[질문과 대답] 업데이트를 완료하는 데 필요한 사용 가능한 총 디스크 공간은 다릅니다. 일반적으로 기능 업데이트에는 6GB – 11GB 이상의 사용 가능한 공간이 필요하지만 품질 업데이트에는 2GB – 3GB 이상이 필요합니다.\n업데이트를 다운로드하고, 현재 설치된 옵션 기능 및 언어의 새 버전을 다운로드하고, 업데이트를 적용하려면 디스크 공간이 필요합니다. 일반적으로 10일 동안 업데이트 제거를 지원하기 위해 임시로 추가 공간이 필요합니다. 이 공간은 업데이트가 완료된 후 회수할 수 있습니다.\n[Windows 11로 업데이트하는 PC 예시 표] 최소 선택적 기능, 언어 및 업데이트: 오프라인 시간을 줄이기 위해 최적화됨 20GB / 최소 디스크 공간에 맞게 최적화됨 5.5GB+ / 외부 저장소를 사용하여 최소 디스크 공간에 맞게 최적화됨 4.5GB+. 많은 선택적 기능, 언어 및 업데이트: 20 GB+ / 13.75 GB+ / 7 GB+.",
+      "facts": [
+        "공식 수치: 기능 업데이트는 일반적으로 6GB~11GB 이상, 품질 업데이트는 2GB~3GB 이상의 여유 공간이 필요하다.",
+        "공식 수치: 외부 저장소로 업데이트를 완료하려면 10GB 이상 여유 공간이 있는 외부 저장 장치가 필요.",
+        "공식 수치(Windows 11 업데이트 PC 예시 표): 선택 기능·언어·업데이트가 적을 때 20GB(오프라인 시간 최소화) / 5.5GB+(최소 디스크 공간 최적화) / 4.5GB+(외부 저장소 병행). 많을 때 20GB+ / 13.75GB+ / 7GB+.",
+        "공식: 업데이트 제거를 지원하기 위해 일반적으로 10일 동안 임시로 추가 공간이 필요하며 업데이트 완료 후 회수 가능.",
+        "공식 한국어 표기가 같은 문서 안에서 '정리 권장 사항'과 '추천 정리'로 섞여 있음(MT)."
+      ]
+    },
+    {
+      "title": "KB5012334 — Delete the Windows.old folder using Storage sense in the Settings app (Microsoft Support)",
+      "url": "https://support.microsoft.com/en-us/servicing/os/windows/2022/02/kb5012334-delete-the-windows-old-folder-using-storage-sense-in-the-settings-app",
+      "host": "support.microsoft.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "[WebFetch 원문 — 영어. 적용 대상 Windows 11 / Windows 10 20H2~21H2]\nKB5012334—Delete the Windows.old folder using Storage sense in the Settings app\nThe Windows.old folder contains the previous version of Windows on your device. If you want to remove the previous version after you upgrade, the easiest method is to use Storage sense in the Settings app. Follow the steps below for your version of the Windows operating system.\nWindows 10: 1. Open Settings. 2. Select System. 3. Select Storage. 4. In the Storage sense section, choose Change how we free up space automatically. 5. In the Free up space now section, select the Delete previous version of Windows checkbox. 6. Then select the Clean now button.\nWindows 11: 1. Open Settings. 2. Select System. 3. Select Storage. 4. Select Cleanup recommendations. 5. Select the Previous Windows installation(s) checkbox. 6. Then select the Clean up button that displays the file size.",
+      "facts": [
+        "공식(영어): Windows.old 폴더에는 이전 Windows 버전이 들어 있고, 제거하는 가장 쉬운 방법은 설정 앱의 Storage sense.",
+        "공식(영어) Windows 11 절차 6단계: Settings > System > Storage > Cleanup recommendations → 'Previous Windows installation(s)' 체크 → 파일 크기가 표시된 'Clean up' 버튼.",
+        "같은 Windows.old 삭제가 support 'Storage Sense' FAQ(ko-kr)에서는 '저장소 > 임시 파일 > 이전 Windows 설치 > 파일 제거' 경로로 안내됨 — 같은 작업의 경로가 문서마다 다름(정리 권장 사항 경유 vs 임시 파일 경유)."
+      ]
+    },
+    {
+      "title": "January 29, 2026—KB5074105 (OS Builds 26200.7705 and 26100.7705) Preview (Microsoft Support 릴리스 노트)",
+      "url": "https://support.microsoft.com/en-us/servicing/os/windows-11/2026/01/january-29-2026-kb5074105-os-builds-26200-7705-and-26100-7705-preview",
+      "host": "support.microsoft.com",
+      "tier": "official",
+      "publishedAt": "2026-01-29",
+      "body": "[WebFetch 원문 발췌 — 해당 문장만]\nJanuary 29, 2026—KB5074105 (OS Builds 26200.7705 and 26100.7705) Preview\nTo help ensure that only authorized Windows users can access system files, Windows now displays a User Account Control (UAC) prompt when you open Storage settings (Settings > System > Storage).\n[같은 문서의 다른 항목] [User Account Control (UAC)] Fixed: This update addresses an issue where your PC might stop responding when attempting to run Windows Terminal elevated from a non-admin account.\n(이 페이지에서 'Temporary files' 라는 문구는 찾지 못함 — WebFetch 결과 기준)",
+      "facts": [
+        "공식 릴리스 노트(2026-01-29, OS 빌드 26200.7705·26100.7705 미리보기): '저장소 설정(설정 > 시스템 > 저장소)을 열 때 Windows가 UAC 프롬프트를 표시한다.' 목적: 인가된 사용자만 시스템 파일에 접근하도록 하기 위함.",
+        "릴리스 노트 제목에는 빌드 번호 26200.7705 · 26100.7705 두 개가 적혀 있음. 이 빌드가 Windows 11 24H2/25H2 에 해당한다는 대응은 이 조사에서 검색 결과 요약으로만 보았고 공식 노트 본문에서는 직접 확인하지 못함."
+      ]
+    },
+    {
+      "title": "May 26, 2026—KB5089573 (OS Builds 26200.8524 and 26100.8524) Preview (Microsoft Support 릴리스 노트)",
+      "url": "https://support.microsoft.com/en-us/servicing/os/windows-11/2026/05/may-26-2026-kb5089573-os-builds-26200-8524-and-26100-8524-preview",
+      "host": "support.microsoft.com",
+      "tier": "official",
+      "publishedAt": "2026-05-26",
+      "body": "[WebFetch 원문 발췌 — 해당 문장만]\nMay 26, 2026—KB5089573 (OS Builds 26200.8524 and 26100.8524) Preview\nIn Settings > System > Storage, you now see a User Account Control (UAC) prompt only when you choose to view temporary files, instead of immediately when opening the page.\n[같은 문서의 다른 항목] The dialog box for creating a Dev Drive now supports specifying the size in gigabytes (GB) instead of only megabytes (MB). This option is also available when resizing volumes in Settings > System > Storage.",
+      "facts": [
+        "공식 릴리스 노트(2026-05-26, OS 빌드 26200.8524·26100.8524 미리보기): '설정 > 시스템 > 저장소에서 이제 임시 파일을 보려고 선택할 때만 UAC 프롬프트가 나타난다(페이지를 열 때 즉시가 아님).'",
+        "즉 UAC 위치가 시점별로 다름: 2026-01 KB5074105 = 저장소 페이지를 열 때, 2026-05 KB5089573 이후 = '임시 파일' 보기를 선택할 때.",
+        "KB5089573 은 미리보기(Preview) 업데이트. 이후 정식(보안) 누적 업데이트에 포함되어 일반 사용자에게 배포됐는지는 이 조사에서 확인하지 못함(unknowns 참고)."
+      ]
+    },
+    {
+      "title": "Deprecated features in the Windows client (Microsoft Learn)",
+      "url": "https://learn.microsoft.com/en-us/windows/whats-new/deprecated-features",
+      "host": "learn.microsoft.com",
+      "tier": "official",
+      "publishedAt": "2026-09-23",
+      "body": "[WebFetch 원문 발췌 — ms.date 2026-09-23, updated_at 2026-09-25, word_count 4816. 표 전체를 읽고 'Disk Cleanup/cleanmgr' 행이 있는지 확인함]\nEach version of Windows client adds new features and functionality. Occasionally, new versions also remove features and functionality, often because they added a newer option. This article provides details about the features and functionalities that are no longer being developed in Windows client. ... The features in this article are no longer being actively developed, and might be removed in a future update. ... The following list is subject to change and might not include every affected feature or functionality.\n표에 올라 있는 행(일부): 3D Viewer(February 2026) / Legacy Web View(September 2025) / Windows Management Instrumentation command-line (WMIC) utility / Windows PowerShell 2.0 / Maps app(April 2025) / Paint 3D(August 2024) / WordPad(September 1, 2023) / Steps Recorder (psr.exe)(November 2023) / Tips(November 2023) / Dynamic Disks(2004) / ... Wi-Fi WEP and TKIP(1903) / Print 3D app(1903) / ... wusa.exe /uninstall(1507). 이 표에는 'Disk Cleanup' 또는 'cleanmgr' 행이 없음.",
+      "facts": [
+        "Microsoft Learn 'Deprecated features in the Windows client'(ms.date 2026-09-23) 표 전체에서 'Disk Cleanup'/'cleanmgr' 행을 찾지 못함 — 즉 공식 deprecated 목록 기준으로 디스크 정리는 deprecated 로 올라 있지 않음(2018년 블로그의 'is being deprecated' 서술과 어긋남 — conflicts 참고).",
+        "같은 표에 WordPad(2023-09-01 발표)·Steps Recorder·Tips·Paint 3D(2024-08)·3D Viewer(2026-02) 등은 올라 있어, 목록이 2026-09 기준으로 갱신 중인 것은 확인됨.",
+        "문서 자체 단서: 'The following list is subject to change and might not include every affected feature or functionality.'"
+      ]
+    },
+    {
+      "title": "After KB5074105, Windows 11 now asks for admin access to open Storage settings (Windows Latest)",
+      "url": "https://www.windowslatest.com/2026/02/05/after-kb5074105-windows-11-now-asks-for-admin-access-to-open-storage-settings-to-protect-your-files/",
+      "host": "www.windowslatest.com",
+      "tier": "press",
+      "publishedAt": "2026-02-05",
+      "body": "[WebFetch 원문 발췌 — 영어 기사. 2차 보도이므로 공식 릴리스 노트(위 KB5074105 항목)와 함께 읽을 것]\nWindows 11 KB5074105 (Build 26200.7705) shipped on January 29 as an optional update addressing an Nvidia GPU black-screen bug. The update introduced a requirement for admin permission when accessing Storage settings.\nMicrosoft's statement: \"To help ensure that only authorized Windows users can access system files, Windows now displays a User Account Control (UAC) prompt when you open Storage settings (Settings > System > Storage),\" according to the support document.\nThe UAC prompt description: \"By forcing an elevation check, Windows makes sure only an administrator-approved session can access system locations and protected files, which reduces the risk of a standard user account, a background process, or a bad attacker from deleting data.\"\nTemporary files categories affected: The Temporary files cleanup feature no longer displays Windows Update files, device drivers, and several other admin-restricted cleanup options. These items remain accessible through Disk Cleanup when elevated, but are hidden from the Settings-based cleanup scanner.\n\"Without an elevated token, the Settings cleanup scan either cannot read them reliably or is blocked from offering deletion, so Windows just hides them.\"",
+      "facts": [
+        "Windows Latest(2026-02-05): KB5074105(빌드 26200.7705)는 1월 29일 선택적(optional) 업데이트로 배포, Nvidia GPU 블랙스크린 버그 수정 목적 업데이트에 저장소 UAC 요구가 포함.",
+        "Windows Latest: UAC 없이 열면 '임시 파일'에서 Windows 업데이트 파일·장치 드라이버 등 관리자 권한이 필요한 정리 항목이 목록에서 빠지고, 이 항목들은 관리자로 실행한 '디스크 정리'에서는 계속 보인다고 보도(기사 주장 — 공식 릴리스 노트에는 이 부작용 서술 없음).",
+        "공식 노트와 일치하는 부분: UAC 프롬프트 문장은 공식 KB5074105 노트와 동일. 부작용(임시 파일 항목 누락)은 기사 측 관찰이며 Microsoft 문서로는 미확인."
+      ]
+    },
+    {
+      "title": "디스크 부족 경고 윈도우 11에서 추가 공간을 확보하는 12가지 방법 (ITWorld Korea)",
+      "url": "https://www.itworld.co.kr/article/3557336/%EB%94%94%EC%8A%A4%ED%81%AC-%EB%B6%80%EC%A1%B1-%EA%B2%BD%EA%B3%A0-%EC%9C%88%EB%8F%84%EC%9A%B0-11%EC%97%90%EC%84%9C-%EC%B6%94%EA%B0%80-%EA%B3%B5%EA%B0%84%EC%9D%84-%ED%99%95%EB%B3%B4.html",
+      "host": "www.itworld.co.kr",
+      "tier": "press",
+      "publishedAt": "2023-02-09",
+      "body": "[WebFetch 원문 발췌 — 한국어, 필자 Anyron Copeman(번역 기사). 한국어 Windows 11 UI 표기 대조용]\n윈도우 11의 '저장소 센스' 툴 사용하기\n불필요한 파일을 많이 삭제했지만 일부는 자동으로 삭제할 수 있다. '저장 공간 센스' 기능이다. 특정 기준이 충족될 때 필요하지 않은 파일을 제거하는데, 기본 설정은 꺼져 있으므로 이를 활성화해야 한다.\n1. 설정 > 시스템 > 저장소로 이동한다\n2. '저장소 관리'에서 '저장소 센스' 토글을 클릭하여 켠다\n3. '저장소 센스 구성 또는 지금 실행'을 클릭하면 다양한 옵션이 나타난다. 여기서 저장소 센스 실행 빈도를 결정하고, 다운로드 및 휴지통 파일을 제거할 시기를 선택하고, 클라우드에 이미 있는 파일을 삭제할 수 있다\n임시파일 삭제하기\n임시 파일은 사용자가 변경하는 동안 정보를 보관하는 용도이므로 이를 삭제해도 무방하다. 보통은 작업을 마치면 자동으로 삭제되지만, 여전히 남아 있는 것이 있다면 파일을 삭제하고 여유 공간을 확보할 수 있다.\n1. 설정 > 시스템 > 저장소로 간다\n2. '임시 파일'을 클릭한다\n3. 삭제할 항목 옆에 있는 상자를 선택한 다음 '파일 제거'를 클릭한다\n'디스크 정리' 사용\n디스크 정리는 기존의 윈도우 툴이지만 원치 않는 파일을 삭제하는 데 여전히 유용하다. ... 1. 시작 메뉴 옆의 검색 표시줄에 '디스크 정리'를 입력하고 관련 앱을 연다 2. 삭제할 7개 범주 옆에 있는 상자를 클릭한 다음 '시스템 파일 정리'를 클릭한다 3. 완료되면, 확인을 위해 'OK'를 클릭한다",
+      "facts": [
+        "ITWorld Korea(2023-02-09, 번역 기사)가 쓰는 한국어 UI 표기: '저장소 센스' 토글 · '저장소 센스 구성 또는 지금 실행'(기사는 Windows 11 안내로 적었고, ASUS 문서에서는 같은 표기가 Windows 10 섹션에 나옴) · '임시 파일' → '파일 제거' · '디스크 정리' → '시스템 파일 정리'. 이 기사는 2023년 것이라 2026-10 현재 Windows 11 25H2 화면과 다를 수 있음.",
+        "기사 서술: 저장소 센스 '기본 설정은 꺼져 있으므로 이를 활성화해야 한다' (support 문서의 FAQ 와 일치).",
+        "기사 서술: 디스크 정리에서 '삭제할 7개 범주' 체크 후 '시스템 파일 정리' 클릭(당시 Windows 11 화면 기준 수치 — 현재 화면의 항목 개수는 미확인)."
+      ]
+    },
+    {
+      "title": "[Windows 11/10] \"저장 공간 부족\"이 발생했을 때의 권장 조치 (ASUS Korea 공식 지원 FAQ — Microsoft 문서 아님, PC 제조사 문서)",
+      "url": "https://www.asus.com/kr/support/faq/1049096/",
+      "host": "www.asus.com",
+      "tier": "official",
+      "publishedAt": "2026-05-19",
+      "body": "[WebFetch 원문 발췌 — 마지막 업데이트 2026/05/19 22:31. ASUS 한국어 지원 문서. 한국어 UI 라벨 대조용 — 이 문서는 'Storage Sense' 를 영어로 표기하는 곳이 많음]\n[Windows 11 운영 체제] Storage Sense로 드라이브 공간 관리하기\nStorage Sense는 Microsoft 도구로, 임시 파일이나 휴지통의 항목처럼 필요하지 않은 항목을 삭제하여 자동으로 디바이스의 공간을 확보하는 데 도움을 줄 수 있습니다.\n참고: Storage Sense는 Windows 운영 체제가 포함되어 있는 시스템 드라이브(일반적으로 C:)에서만 작동합니다. 다른 드라이브의 공간을 확보하려면 [시작] > [설정] > [시스템] > [저장소]로 이동한 후, [고급 저장소 설정]에서 [다른 드라이브에서 사용된 저장소]를 선택하세요.\n1. Windows 검색창에 [Storage Sense 켜기]를 입력하고 검색하세요. 그런 다음 [열기]를 클릭하세요.\n2. [Storage Sense]를 선택하세요.\n3. [임시 파일 정리] 섹션의 상자를 선택하세요.\n4. 자동 사용자 콘텐츠 정리를 \"켜기\"로 토글하세요.\n5. 정리 일정을 구성하세요: Storage Sense를 실행할 시점을 선택할 수 있습니다. 드롭다운 메뉴를 통해 자동 및 주기적인 정리 실행 빈도를 선택할 수 있습니다. 내 휴지통의 파일 삭제 및 Downloads 폴더의 파일이 다음 기간 동안 열리지 않았다면 삭제에서 [휴지통] 또는 [다운로드] 폴더 내 파일이 얼마나 자주 삭제될지 선택하세요.\n6. 장치가 클라우드 계정에 로그인되어 있으면, 비활성 파일이 온라인 전용으로 전환되는 빈도를 선택할 수 있습니다. 참고: 클라우드 계정에 로그인되어 있어야 클라우드 콘텐츠 설정을 볼 수 있습니다.\n7. 또한 [지금 저장소 센스 실행]을 클릭하여 이전에 선택한 설정을 사용해 즉시 Storage Sense를 실행할 수 있습니다.\n[정리 권장 사항으로 파일 삭제하기] 1. Windows 검색창에 [디스크 정리 권장 사항]을 입력하고 검색한 후, [열기]를 클릭하세요. 2. [정리 권장 사항]을 선택하세요. 3. 임시 파일, 대용량 또는 미사용 파일, 클라우드와 동기화된 파일, 또는 사용하지 않는 앱 메뉴에서 각 메뉴에서 제거하려는 파일을 선택한 후, 각 섹션별로 [정리] 버튼을 선택하세요.\n[Windows 10 운영 체제] 디스크 정리로 파일 삭제하기: 정리할 드라이브를 선택하고 [확인]을 선택합니다. 시스템 파일을 삭제하여 더 많은 공간을 확보하려면 [시스템 파일 정리]를 선택하세요. Note: 시스템 파일을 정리하려면 관리자 권한이 있는 계정으로 로그인해야 합니다. ... 확인 창에서 [파일 삭제]를 클릭하여 정리를 시작합니다.",
+      "facts": [
+        "ASUS Korea FAQ(2026-05-19 갱신)의 Windows 11 한국어 UI 라벨: [임시 파일 정리] 섹션 · '자동 사용자 콘텐츠 정리' 켜기/끄기 토글 · '정리 일정' · '내 휴지통의 파일 삭제' · 'Downloads 폴더의 파일이 다음 기간 동안 열리지 않았다면 삭제' · [지금 저장소 센스 실행] 버튼 — 이 중 '임시 파일 정리'·'자동 사용자 콘텐츠 정리'·'정리 일정'은 Microsoft Learn ko-kr 의 설정 탭 표기와 일치(2개 출처 교차).",
+        "ASUS: 정리 권장 사항 범주 4개 = 임시 파일 · 대용량 또는 미사용 파일 · 클라우드와 동기화된 파일 · 사용하지 않는 앱, 각 섹션의 [정리] 버튼(Microsoft ko-kr 문서와 동일).",
+        "ASUS: 고급 저장소 설정 > 다른 드라이브에서 사용된 저장소 / 새 콘텐츠의 저장 위치(Microsoft 문서의 '새 콘텐츠가 저장되는 위치'와 표기 약간 다름).",
+        "ASUS: Windows 10 의 디스크 정리 '시스템 파일 정리'는 '관리자 권한이 있는 계정으로 로그인해야' 한다고 적음(Microsoft 공식 지원 문서에는 이 문구가 없었음 — 제조사 문서 단독 서술).",
+        "이 문서는 PC 제조사(ASUS) 문서이며 Microsoft 공식 문서가 아님. 'Storage Sense'를 영어로 쓰는 곳이 많아 '저장소 센스' 한국어 UI 표기의 근거로는 약함."
+      ]
+    },
+    {
+      "title": "In Storage - Should I click 'remove files' in 'downloads' from 'temporary files' ?! (Microsoft Q&A, 커뮤니티)",
+      "url": "https://learn.microsoft.com/en-us/answers/questions/4013811/in-storage-should-i-click-remove-files-in-download",
+      "host": "learn.microsoft.com",
+      "tier": "blog",
+      "publishedAt": "2024-06-03",
+      "body": "[WebFetch 원문 발췌 — 영어. Microsoft 가 운영하는 커뮤니티 Q&A. 질문자(익명)의 스크린샷 문구 인용 + 독립 어드바이저(DaveM121) 답변. 공식 문서 아님]\nQUESTION (Anonymous, 2024-06-03): when i click 'storage' - 'temporary files' - in 'downloads' - its showing space of around 11 GB and its written - 'Warning: These are files in your personal downloads folder. Select this if you'd like to delete everything. This does not respect your storage sense configuration.'\nANSWER 1 (DaveM121, Independent Advisor, 2024-06-03): The Downloads folder is where any files or software installers you have downloaded from the Internet are stored, it is not meant to be a folder where you permanently store files. Check in the Downloads folder if there are any files you need in there, and if there are, move them to another folder, then you can safely delete everything from the Downloads folder\nANSWER 3 (DaveM121, 2024-06-03): Yes, that is correct, move any files you wish to keep out of the Downloads folder, then you can either use the options in the settings ap to clear out the Downloads folder, or in File Explorer, you can just select everything (Ctrl + A) in the Downloads folder and press Delete, then empty your Recycle Bin.",
+      "facts": [
+        "설정 > 저장소 > 임시 파일 안의 '다운로드' 항목에 붙는 경고 문구(영어 UI, 사용자가 스크린샷에서 옮긴 것, 2024-06-03): 'Warning: These are files in your personal downloads folder. Select this if you'd like to delete everything. This does not respect your storage sense configuration.'  (문구는 'storage sense 구성을 따르지 않는다'고만 적음).",
+        "같은 사례에서 다운로드 항목이 약 11GB 로 표시됐다고 질문자가 적음(개인 사례 수치, 일반화 불가).",
+        "Microsoft 독립 어드바이저 조언(공식 입장 아님): 남길 파일을 다른 폴더로 옮긴 뒤에 지우고, 삭제 후 휴지통을 비워야 공간이 확보됨.",
+        "이 경고 문구는 공식 지원 문서에서 확인하지 못함(커뮤니티 Q&A 의 질문자 인용만). 한국어 UI 문구 원문도 미확인."
+      ]
+    },
+    {
+      "title": "저장공간을 삭제하고 싶은데 어떤 파일을 삭제할지 모르겠음 (Microsoft Q&A ko-kr, 커뮤니티 지원 전문가 답변)",
+      "url": "https://learn.microsoft.com/ko-kr/answers/questions/3873800/question-3873800",
+      "host": "learn.microsoft.com",
+      "tier": "blog",
+      "publishedAt": "2025-06-24",
+      "body": "[WebFetch 원문 발췌 — 한국어. 질문자 익명, 답변자 'Microsoft 커뮤니티 지원 전문가'. 공식 문서 아님]\n디스크 정리 도구 사용하기: 1. 시작 버튼을 마우스 오른쪽 클릭한 후 \"실행\"을 선택합니다. 2. cleanmgr을 입력하고 \"확인\"을 클릭합니다. 3. \"정리할 드라이브 선택\" 창이 뜨면 일반적으로 C: 드라이브가 기본으로 선택되어 있으므로 \"확인\"을 클릭합니다. 4. \"디스크 정리\" 창에서 \"시스템 파일 정리\" 버튼을 클릭합니다. (관리자 권한이 필요할 수 있습니다.) 5. 다시 드라이브를 선택하고 \"확인\"을 클릭하면 디스크 정리가 다시 시작됩니다. 6. 삭제할 수 있는 파일 목록이 표시되면 항목을 선택하세요. 특히 임시 파일, 정크 파일, Windows 업데이트 정리 항목은 많은 공간을 차지할 수 있습니다. 7. \"확인\"을 클릭한 후 \"파일 삭제\"를 클릭하여 정리를 진행합니다.\n스토리지 센스(Storage Sense) 사용하기: 1. 시작 버튼을 클릭한 후 \"설정\"으로 이동합니다. 2. \"시스템\" > \"저장소\"로 이동하면, 시스템이 디스크 공간 사용량(앱, 임시 파일, 사용자 파일 등)을 분석합니다. 3. \"스토리지 센스\"가 활성화되어 있다면 시스템이 자동으로 임시 파일이나 휴지통 파일을 정리합니다. 4. \"지금 공간 확보\", \"스토리지 센스 구성\", \"지금 실행\" 버튼을 눌러 구체적인 항목을 확인하고 직접 정리할 수 있습니다. 특히 \"임시 파일\" 항목에 주목하세요.",
+      "facts": [
+        "Microsoft 커뮤니티 지원 전문가 답변(2025-06-24, 공식 문서 아님): cleanmgr 실행 순서 = 시작 우클릭 > 실행 > cleanmgr 입력 > 확인 > 드라이브 선택(C: 기본) > 확인 > '시스템 파일 정리' > 드라이브 다시 선택 > 확인 > 항목 체크 > 확인 > '파일 삭제'. '시스템 파일 정리'는 관리자 권한이 필요할 수 있다고 안내.",
+        "같은 답변의 한국어 표기: '시스템 > 저장소' · '스토리지 센스' · '지금 공간 확보' · '스토리지 센스 구성' · '지금 실행' · '임시 파일'. 단 '지금 공간 확보/스토리지 센스 구성/지금 실행'은 Windows 11 25H2 화면의 실제 버튼과 일치하는지 이 조사에서 확인 못 함(공식 문서·ASUS 문서의 Windows 11 항목에는 없는 표기).",
+        "한국어 표기가 출처마다 '저장소 센스'(ITWorld) / '저장 공간 센스'(Microsoft support ko-kr) / '스토리지 센스'(Microsoft Learn ko-kr, 이 Q&A)로 갈림."
+      ]
+    },
+    {
+      "title": "Microsoft is Ditching Classic Disk Cleanup in Windows 10 (Winaero) — 2018 Microsoft 블로그 문구 인용",
+      "url": "https://winaero.com/classic-disk-cleanup-deprecated-windows-10/",
+      "host": "winaero.com",
+      "tier": "blog",
+      "publishedAt": "2018-09-14",
+      "body": "[WebFetch 원문 발췌 — 영어. 개인 블로그(Winaero)가 2018년 Microsoft 공식 블로그(TechNet) 문구를 인용한 2차 자료. 인용 당시 2018-09-14. 1차 출처는 이번 조사에서 직접 열지 못함]\nPublication Date: September 14, 2018\nMicrosoft's statement as quoted by Winaero: \"The Disk Cleanup experience (\"cleanmgr.exe\") is being deprecated. We're retaining the Disk Cleanup tool for compatibility reasons. There's no need to worry since Storage Sense's functionality is a superset of what the legacy Disk Cleanup provides!\"",
+      "facts": [
+        "2018-09-14 Winaero 가 인용한 Microsoft 문구: 'The Disk Cleanup experience (cleanmgr.exe) is being deprecated. We're retaining the Disk Cleanup tool for compatibility reasons. ... Storage Sense's functionality is a superset of what the legacy Disk Cleanup provides!' (2차 인용, Microsoft 원문 URL 미확인).",
+        "그러나 2026-09-23 갱신된 공식 'Deprecated features in the Windows client' 표에는 Disk Cleanup 행이 없고, 공식 support 문서(Windows 10 탭)와 Learn cleanmgr 명령 문서는 여전히 이 도구를 설명 중."
+      ]
+    }
+  ],
+  "conflicts": [
+    {
+      "about": "저장소 센스(Storage Sense)가 기본값으로 켜져 있는가 꺼져 있는가",
+      "a": "support.microsoft.com (ko-kr/en-us 'Manage drive space with Storage Sense') FAQ: '저장 공간 센스는 기본적으로 꺼져 있습니다' / 'Storage Sense is off by default.' (다만 디스크가 부족하고 과거에 상호작용한 적이 없으면 Windows가 켜서 알릴 수 있다고 함). Policy CSP 'Not Configured'도 'turned off until the user runs into low disk space or the user enables it manually'. ITWorld Korea(2023)도 '기본 설정은 꺼져 있으므로'.",
+      "b": "learn.microsoft.com 'Configure Storage Sense in Windows'(ko-kr 'Windows에서 스토리지 센스 구성' / en-us, en-us updated_at 2026-02-03): '기본적으로 스토리지 센스는 사용되며 디스크 공간이 부족할 때 자동으로 실행되도록 설정됩니다' / 'By default, Storage Sense is enabled and set to run automatically when disk space is running low.' — 같은 Microsoft 안에서 문서별로 서술이 어긋남. 일반 사용자 대상 support 문서(꺼짐)를 우선하되 '디스크 부족 시 Windows가 자동으로 켤 수 있음'을 함께 쓰는 것이 두 서술을 모두 포함하는 안전한 표현이지만, 어느 쪽이 맞는지 이 조사는 단정하지 않음."
+    },
+    {
+      "about": "클라우드(OneDrive) 콘텐츠를 며칠 뒤 '온라인 전용'으로 바꾸는 기본값",
+      "a": "support.microsoft.com 'Manage drive space with Storage Sense': 'Windows 11 버전 22H2부터 OneDrive 클라우드 파일의 기본값은 파일을 30일 이상 열지 않은 경우 온라인 전용으로 설정하는 것'(설정 앱 서술).",
+      "b": "Policy CSP ConfigStorageSenseCloudContentDehydrationThreshold: '기본값 0 = 클라우드 콘텐츠를 탈수(온라인 전용 전환)하지 않음, Disabled or Not Configured 면 기본적으로 탈수 안 함'. 두 문서가 서로 다른 층위(설정 앱 기본값 vs 정책 미구성 시 동작)를 말하는 것으로 보이나, 문서가 둘의 관계를 설명하지 않아 이 조사는 해석을 확정하지 않음. 또 센스 자체가 기본 꺼짐이라면 이 30일 규칙은 센스를 켠 뒤에만 의미가 있는지도 문서에 명시 없음."
+    },
+    {
+      "about": "'디스크 정리(cleanmgr)'가 deprecated 인가",
+      "a": "2018-09-14 Winaero 인용 Microsoft 문구: 'The Disk Cleanup experience (cleanmgr.exe) is being deprecated ... Storage Sense's functionality is a superset' (2차 인용, 원 블로그 URL 미확인).",
+      "b": "Microsoft Learn 'Deprecated features in the Windows client'(ms.date 2026-09-23) 표에는 Disk Cleanup/cleanmgr 행 없음. 공식 support 'Free up drive space in Windows'는 디스크 정리를 Windows 10 탭에만 설명하고 Windows 11 탭엔 정리 권장 사항만 나옴. Learn 'cleanmgr' 명령 참조(updated_at 2026-01-21)는 계속 유지 중. ITWorld Korea(2023)와 Microsoft 커뮤니티 지원 전문가 답변(2025-06-24), ASUS(Windows 10 항목)는 디스크 정리를 여전히 안내. 즉 '공식 deprecated 목록에는 없지만 공식 Windows 11 문서가 더 이상 안내하지 않음' 정도가 확인 가능한 범위."
+    },
+    {
+      "about": "저장소 설정 화면의 UAC(관리자 권한 확인) 프롬프트가 뜨는 시점",
+      "a": "KB5074105 공식 릴리스 노트(2026-01-29, 빌드 26200.7705 / 26100.7705): '저장소 설정(설정 > 시스템 > 저장소)을 열 때' UAC 프롬프트 표시.",
+      "b": "KB5089573 공식 릴리스 노트(2026-05-26, 빌드 26200.8524 / 26100.8524, 미리보기): '이제 임시 파일을 보려고 선택할 때만 UAC 프롬프트가 나타난다(페이지를 열 때 즉시가 아님).' — 시점에 따른 변경이며 사용자 PC의 빌드에 따라 화면이 다를 수 있음. 글에서는 '빌드에 따라 UAC 창이 뜰 수 있다'로 쓰는 것이 안전."
+    },
+    {
+      "about": "Windows.old(이전 Windows 설치)를 지우는 설정 앱 경로",
+      "a": "support.microsoft.com 'Manage drive space with Storage Sense' FAQ: 설정 > 시스템 > 저장소 > (디스크 사용량에서) 임시 파일 선택 → '이전 Windows 설치' 확인 → '파일 제거'.",
+      "b": "KB5012334(Windows 11): 설정 > 시스템 > 저장소 > 정리 권장 사항 → 'Previous Windows installation(s)' 체크 → 'Clean up'. 두 경로가 모두 공식 문서에 있음(서로 다른 진입점)."
+    },
+    {
+      "about": "한국어 Windows 11 UI 표기(저장소 센스 / 저장 공간 센스 / 스토리지 센스, 정리 권장 사항 / 추천 정리 항목 / 추천 정리)",
+      "a": "Microsoft support ko-kr 문서: '저장 공간 센스' + '정리 권장 사항'(일부 문서는 '추천 정리 항목'·'추천 정리'로 혼용), 저장소를 '저장소'와 '스토리지'로 혼용(MT).",
+      "b": "Microsoft Learn ko-kr: '스토리지 센스'. ITWorld Korea: '저장소 센스'. Microsoft Q&A ko-kr 전문가 답변: '스토리지 센스'. ASUS Korea(2026-05-19): 영어 'Storage Sense' 표기와 '저장소 센스' 혼용. 공통으로 교차 확인된 라벨은 '임시 파일 정리' · '자동 사용자 콘텐츠 정리' · '로컬로 사용 가능한 클라우드 콘텐츠'(ASUS는 '클라우드 콘텐츠 설정'으로 서술) · '정리 일정' · '정리 권장 사항' · '임시 파일' 정도. 실제 한국어 Windows 11 25H2 화면의 '센스' 표기는 직접 스크린샷으로 확인해야 함."
+    }
+  ],
+  "unknowns": [
+    "설정 앱 '저장소 센스' 드롭다운의 실제 선택지 값(예: 휴지통·다운로드·클라우드 '안 함/1일/14일/30일/60일' 같은 목록, 실행 주기 선택지의 한국어 라벨). Microsoft support(ko-kr/en-us)·Learn·Policy CSP 어느 문서에도 목록이 적혀 있지 않았음(문서는 정책 범위 0~365일, 실행 주기 0/1/7/30만 명시). Windows Central 기사는 본문이 수신되지 않았고, ElevenForum·TheWindowsClub 은 403, MakeUseOf·iTechGuides 는 값 목록 없음. 선택지 값은 실기기 화면으로 확인해야 하며, 이 JSON 의 어떤 항목도 추측으로 채우지 않음.",
+    "설정 > 저장소 > 임시 파일 안 '다운로드' 항목의 한국어 UI 경고 문구 원문과 공식 문서의 설명. 영어 UI 경고문('Warning: These are files in your personal downloads folder. Select this if you'd like to delete everything. This does not respect your storage sense configuration.')은 Microsoft Q&A 질문자의 스크린샷 인용(2024-06-03)으로만 확인했고 Microsoft 공식 지원 문서에서는 이 경고를 찾지 못함. 사용자 지시가 '공식 문서가 경고하는 것'이었으나 공식 문서 출처는 확보 못 함.",
+    "임시 파일 화면의 항목별 목록(예: 'Windows 업데이트 정리', '배달 최적화 파일', '썸네일', '임시 인터넷 파일', 'DirectX 셰이더 캐시' 등)과 항목별 한국어 라벨·설명을 담은 공식 문서. 공식 문서에서 확인된 건 정리 권장 사항의 범주 4개(임시 파일·대용량 또는 사용되지 않는 파일·클라우드에 동기화된 파일·사용되지 않는 앱)와 '이전 Windows 설치'뿐이고, 레거시 디스크 정리의 항목 10개는 Windows Server cleanmgr 문서에만 있음.",
+    "Windows.old·임시 파일·Windows 업데이트 정리 파일이 보통 몇 GB 를 차지하는지 같은 '확보되는 용량' 수치. 공식 문서에는 없음(Microsoft 문서의 용량 수치는 모두 '업데이트 설치에 필요한 여유 공간' 6~11GB·2~3GB·10GB·20GB 등과 64GB 노트북 예시뿐). 개인 사례 수치(Q&A 의 다운로드 11GB 등)는 일반화 불가.",
+    "실제 한국어 Windows 11(25H2) 설정 화면에서의 '센스' 표기(저장소 센스 / 저장 공간 센스 / 스토리지 센스)와 '지금 저장소 센스 실행' 버튼 이름. 공식 ko-kr 문서가 기계번역이라 서로 다르고, 실기기 스크린샷은 확보하지 못함.",
+    "KB5089573(2026-05-26 미리보기)의 'UAC 는 임시 파일 선택 시에만' 변경이 이후 정식(보안) 누적 업데이트로 일반 배포됐는지, 그리고 KB5074105 에서 보도된 '임시 파일에서 일부 항목(Windows 업데이트 정리·드라이버 패키지 등)이 UAC 없이는 빠지는' 동작이 현재도 유지되는지. 공식 릴리스 노트에는 부작용 서술이 없고, 이 부분은 Windows Latest 기사(2026-02-05)의 보도임. 한국어 UAC 문구도 미확인.",
+    "Microsoft 공식 블로그 원문(2018년 'Disk Cleanup is being deprecated' 문구)의 원본 URL. Winaero 의 인용으로만 확인했고 원 TechNet/블로그 URL 은 열지 못함.",
+    "저장소 센스가 '기본값 켜짐'인지 '꺼짐'인지에 대한 Microsoft 내부 서술 불일치의 해소 여부(support 문서 vs Learn 구성 문서). 어느 쪽이 현재 Windows 11 25H2 의 실제 동작인지는 실기기로 확인 필요.",
+    "WebSearch 세션 한도(200/200) 소진으로, 한국어 UI 문구·드롭다운 값·다운로드 항목 경고 문구를 찾는 추가 검색은 수행하지 못했음. 이후 보강하려면 CLAUDE_CODE_MAX_WEB_SEARCHES_PER_SESSION 한도를 늘리거나 실기기 스크린샷이 필요."
+  ]
+}
