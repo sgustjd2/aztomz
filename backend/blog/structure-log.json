@@ -2768,5 +2768,155 @@
       "이 글이 근거로 읽은 페이지"
     ],
     "closingClichePatterns": []
+  },
+  {
+    "slug": "lp-cafe-revival-2026",
+    "categoryId": "hangeut-trend",
+    "date": "2026-10-07",
+    "h2": [
+      "LP카페는 이런 곳이에요",
+      "숫자로 보는 LP 열기",
+      "지금은 어느 단계일까요",
+      "어디서 어떻게 즐기나요",
+      "가기 전에 알아두면 좋아요"
+    ],
+    "closingClichePatterns": []
+  },
+  {
+    "slug": "iphone-quick-start",
+    "categoryId": "hangeut-trend",
+    "date": "2026-10-07",
+    "h2": [
+      "옮기기 전에 확인할 세 가지",
+      "빠른 시작, 어떻게 시작하나",
+      "직접 전송과 iCloud 다운로드 비교",
+      "옛 폰 없이 iCloud 백업으로 복원하기",
+      "iCloud 공간이 모자랄 때",
+      "케이블이나 컴퓨터로 옮기는 길",
+      "정리",
+      "참고"
+    ],
+    "closingClichePatterns": []
+  },
+  {
+    "slug": "galaxy-smart-switch",
+    "categoryId": "hangeut-trend",
+    "date": "2026-10-07",
+    "h2": [
+      "네 가지 방식 중 내 상황에 맞는 길",
+      "두 폰으로 직접 옮기는 순서",
+      "옮겨지는 것과 빠지는 것",
+      "카카오톡은 새 폰에 깔기 전에 보내요",
+      "시작하기 전 챙길 것",
+      "정리",
+      "참고"
+    ],
+    "closingClichePatterns": []
+  },
+  {
+    "slug": "google-2step-verification",
+    "categoryId": "hangeut-trend",
+    "date": "2026-10-07",
+    "h2": [
+      "켜는 순서는 네 단계예요",
+      "두 번째 확인 수단, 표로 한눈에",
+      "기기를 잃어버려도 들어갈 길, 백업 코드",
+      "복구 정보와 기다리는 시간도 같이 챙겨요",
+      "정리",
+      "참고"
+    ],
+    "closingClichePatterns": []
+  },
+  {
+    "slug": "git-stash-guide",
+    "categoryId": "hangeut-trend",
+    "date": "2026-10-07",
+    "h2": [
+      "브랜치를 옮기려는데 고치던 파일이 걸릴 때",
+      "치우고 꺼내는 기본 순서",
+      "여러 개 쌓였을 때는 메시지를 달고 번호로 골라요",
+      "새 파일은 옵션을 따로 줘야 치워져요",
+      "꺼낼 때 충돌이 나면 stash는 남아요",
+      "정리",
+      "참고"
+    ],
+    "closingClichePatterns": []
+  },
+  {
+    "slug": "excel-if-ifs",
+    "categoryId": "hangeut-trend",
+    "date": "2026-10-07",
+    "h2": [
+      "점수를 등급으로 나누는 IF 중첩 모양",
+      "조건을 쓰는 순서가 바뀌면 생기는 일",
+      "IFS로 괄호 없이 쓰기",
+      "한 칸에서 모두 맞는지, 하나만 맞는지 따지기",
+      "세 방식 비교와 버전 확인",
+      "결과가 이상할 때 보는 오류 값",
+      "정리",
+      "참고"
+    ],
+    "closingClichePatterns": []
+  },
+  {
+    "slug": "garlic-storage-guide",
+    "categoryId": "hangeut-trend",
+    "date": "2026-10-07",
+    "h2": [
+      "통마늘은 마르고 시원한 곳이 먼저예요",
+      "냉장고가 상온보다 나을까요, 자료가 갈려요",
+      "깐 마늘은 물기를 없애고 며칠 안에 써요",
+      "오래 쓸 마늘은 다져서 얇게 얼려요",
+      "싹이 났거나 초록빛이 돌아요",
+      "김장용은 품종과 시기를 먼저 봐요",
+      "정리",
+      "참고"
+    ],
+    "closingClichePatterns": []
+  },
+  {
+    "slug": "burdock-prep-guide",
+    "categoryId": "hangeut-trend",
+    "date": "2026-10-07",
+    "h2": [
+      "껍질은 벗길까, 긁을까요",
+      "갈변과 아린맛은 물에 담가 잡아요",
+      "써는 방법은 요리마다 달라요",
+      "흙 우엉과 씻은 우엉, 이렇게 두어요",
+      "오래 둘 땐 데쳐서 얼린다는 안내가 있어요",
+      "정리",
+      "참고"
+    ],
+    "closingClichePatterns": []
+  },
+  {
+    "slug": "kkomak-boil-guide",
+    "categoryId": "hangeut-trend",
+    "date": "2026-10-07",
+    "h2": [
+      "사 온 꼬막, 종류와 상태부터 봐요",
+      "소금물에 담그고 어둡게 덮어요",
+      "기포가 올라올 때 넣고 한 방향으로 저어요",
+      "불 끄는 기준이 공식 위생 안내와 달라요",
+      "껍질은 숟가락으로 열고, 남으면 나눠 보관해요",
+      "정리",
+      "참고"
+    ],
+    "closingClichePatterns": []
+  },
+  {
+    "slug": "sweet-persimmon-guide",
+    "categoryId": "hangeut-trend",
+    "date": "2026-10-07",
+    "h2": [
+      "단감과 떫은 감은 익은 정도가 아니라 품종이 달라요",
+      "고를 땐 꼭지와 껍질, 색을 봐요",
+      "보관은 저온 쪽이 많지만 근거 수준은 달라요",
+      "껍질째 먹는지는 품종에 따라 달라요",
+      "공복이나 과다 섭취 주의는 단감 기준을 못 찾았어요",
+      "정리",
+      "참고"
+    ],
+    "closingClichePatterns": []
   }
 ]

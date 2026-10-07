@@ -1,0 +1,169 @@
+{
+  "keyword": "엑셀 IF 여러 조건 (중첩 IF, IFS, AND, OR)",
+  "categoryId": "hangeut-trend",
+  "notes": "공식 한국어 문서 6건(IF·IF+AND/OR/NOT·IF 중첩·IFS·#NAME?·NA)으로 IF 중첩의 한계, IFS 문법, AND/OR 조합, 흔한 오류 값의 원인을 정직하게 쓸 수 있다. IFS 지원 버전은 IFS 문서(Office 2019 또는 Microsoft 365, 적용 대상 줄에 2019·2021·2024)를 기준으로 쓰되 IF 중첩 문서가 '365 구독'만 언급해 표기가 다르다는 점을 밝힌다. 구버전에서 IFS를 입력했을 때의 오류 값, 한국어 #N/A 해결 문서 내용은 확인하지 못했으므로 쓰지 않는다.",
+  "sources": [
+    {
+      "title": "IF 함수 (Microsoft 지원)",
+      "url": "https://support.microsoft.com/ko-kr/office/if-%ED%95%A8%EC%88%98-69aed7c9-4e8a-4755-a9bc-aa8bbff73be2",
+      "host": "support.microsoft.com",
+      "body": "IF 함수는 Excel에서 가장 많이 사용되는 함수 중 하나로, 값과 예상한 값을 논리적으로 비교할 수 있다. 구문은 IF(logical_test, value_if_true, [value_if_false]). 인수: logical_test(필수), value_if_true(필수), value_if_false(선택). 예제: =IF(C2=\"Yes\",1,2) / =IF(C2>B2,\"Over Budget\",\"Within Budget\") 등. 수식에 텍스트를 쓸 때는 따옴표로 감싸야 하며 TRUE·FALSE는 예외다. 여러 IF 함수를 중첩해 복수 조건을 처리할 수 있다. 일반적인 문제: 셀에 0이 나오면 value_if_true 또는 value_if_false 인수에 대한 인수 텍스트가 없는 경우이고, 셀에 #NAME?이 나오면 일반적으로 수식의 철자가 잘못된 것이다. 적용 대상: Microsoft 365용 Excel, Excel 2024, 2021, 2019, 2016. 관련 논리 함수로 AND, OR, IFERROR, IFNA, IFS 등이 나열된다.",
+      "tier": "official"
+    },
+    {
+      "title": "Excel에서 AND, OR 및 NOT 함수와 함께 IF 사용",
+      "url": "https://support.microsoft.com/ko-kr/excel/using-if-with-and-or-and-not-functions-in-excel",
+      "host": "support.microsoft.com",
+      "body": "IF(AND(logical1, [logical2], ...), value_if_true, [value_if_false]) / IF(OR(logical1, [logical2], ...), value_if_true, [value_if_false]) / IF(NOT(logical1), value_if_true, [value_if_false]). AND는 모든 조건이 참, OR는 하나의 조건만 참이어도 되고, NOT은 조건이 기준을 충족하지 않는지 검사한다. 문서 문구: AND 및 OR 함수는 최대 255개의 개별 조건을 지원할 수 있지만 복잡하고 중첩된 수식은 빌드, 테스트 및 유지 관리가 매우 어려울 수 있으므로 몇 개 이상 사용하는 것은 바람직하지 않다. NOT 함수는 하나의 조건만 지원한다. 예제: =IF(AND(A2>0,B2<100),TRUE, FALSE) / =IF(OR(A4>0,B4<50),TRUE, FALSE) / =IF(NOT(A6>50),TRUE,FALSE). 적용 대상: Excel 2016~2024, Microsoft 365용 Excel.",
+      "tier": "official"
+    },
+    {
+      "title": "IF 함수: 중첩된 수식 및 오류 방지",
+      "url": "https://support.microsoft.com/ko-kr/excel/if-function-nested-formulas-and-avoiding-pitfalls",
+      "host": "support.microsoft.com",
+      "body": "Excel에서는 최대 64개의 서로 다른 IF 함수를 중첩할 수 있지만 그렇게 하는 것은 권장되지 않는다. 수식을 100% 정확하게 중첩하지 않으면 75%의 확률로 작동할 수 있지만 25%의 확률로 예기치 않은 결과를 반환한다. 여러 IF 문은 나중에 다시 볼 때 유지 관리가 매우 어렵다. 학점 예제: =IF(D2>89,\"A\",IF(D2>79,\"B\",IF(D2>69,\"C\",IF(D2>59,\"D\",\"F\")))). 판매 수수료 예제에서 조건을 오름차순($5,000부터)으로 쓰면 $12,500 수익도 첫 조건($5,000 초과)에서 걸려 10%만 반환된다. Alt+Enter로 긴 수식에 줄 바꿈을 넣을 수 있다. IFS 제안: =IFS(D2>89,\"A\",D2>79,\"B\",D2>69,\"C\",D2>59,\"D\",TRUE,\"F\")로 단순화할 수 있고 모든 IF 문과 괄호를 걱정할 필요가 없어 유용하다. IFS 안내 문구는 'Microsoft 365 구독이 있는 경우에만 사용할 수 있다'로 적혀 있고 버전별 지원은 따로 없다.",
+      "tier": "official"
+    },
+    {
+      "title": "IFS 함수",
+      "url": "https://support.microsoft.com/ko-kr/excel/functions/ifs-function",
+      "host": "support.microsoft.com",
+      "body": "IFS 함수는 하나 이상의 조건이 충족되는지 확인하고 첫 번째 TRUE 조건에 해당하는 값을 반환한다. 가용성: Office 2019를 사용 중이거나 Microsoft 365 구독을 사용 중인 경우 Windows 또는 Mac에서 사용할 수 있다(적용 대상 줄에는 Microsoft 365용 Excel, Excel 2024, Excel 2021, Excel 2019). 구문: IFS(logical_test1, value_if_true1, [logical_test2, value_if_true2], ...). logical_test2…127·value_if_true2…127은 선택 인수. 기본 결과를 지정하려면 최종 logical_test 인수에 TRUE를 입력한다. value_if_true 없이 logical_test 인수가 제공되면 오류 메시지를 표시한다. TRUE 조건이 발견되지 않으면 #N/A 오류를 반환한다. logical_test가 TRUE/FALSE가 아닌 값으로 평가되면 #VALUE! 오류. 최대 127개의 조건을 테스트할 수 있다. 예제: =IFS(A2>89,\"A\",A2>79,\"B\",A2>69,\"C\",A2>59,\"D\",TRUE,\"F\")",
+      "tier": "official"
+    },
+    {
+      "title": "#NAME? 오류를 수정하는 방법",
+      "url": "https://support.microsoft.com/ko-kr/office/-name-%EC%98%A4%EB%A5%98%EB%A5%BC-%EC%88%98%EC%A0%95%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95-b6d54e31-a743-4d7d-9b61-40002a7b4286",
+      "host": "support.microsoft.com",
+      "body": "#NAME? 오류의 가장 일반적인 원인은 수식 이름의 철자 오류다. Excel의 수식 마법사(함수 이름을 입력하기 시작하면 일치하는 함수 목록을 보여줌)를 쓰면 방지할 수 있다. 수식에 Excel에 정의되지 않은 이름에 대한 참조가 있으면 #NAME? 오류가 나며, 이름 관리자에서 이름을 먼저 정의해야 한다. 정의된 이름의 철자가 틀려도 마찬가지다. 텍스트 값은 따옴표로 묶어야 하고, 범위 참조에는 콜론이 필요하다(예: B2:B12). 특정 추가 기능을 사용할 수 있는 경우에만 작동하는 일부 Excel 함수가 있다.",
+      "tier": "official"
+    },
+    {
+      "title": "NA 함수",
+      "url": "https://support.microsoft.com/ko-kr/excel/functions/na-function",
+      "host": "support.microsoft.com",
+      "body": "NA 함수는 #N/A 오류 값을 반환한다. #N/A는 '사용할 수 있는 값이 없음'을 의미하는 오류 값이다. NA 함수는 빈 셀을 표시하는 데 사용되며, 정보가 누락된 셀에 #N/A를 입력하면 계산에서 빈 셀이 포함되지 않는다. 구문은 NA( )이며 인수가 없다. 함수 이름과 함께 빈 괄호를 사용해야 하며 그렇지 않으면 NA가 함수로 인식되지 않는다. 셀에 #N/A 값을 직접 입력할 수도 있고, NA 함수는 다른 스프레드시트 프로그램과의 호환을 위해 제공된다.",
+      "tier": "official"
+    },
+    {
+      "title": "엑셀 IF 다중 조건 사용법 - 중첩 IF, AND, OR, XOR 사용 (bluesharehub)",
+      "url": "https://bluesharehub.com/엑셀-if-다중-조건-사용법-중첩-if-and-or-xor-사용/",
+      "host": "bluesharehub.com",
+      "body": "개인 블로그 글. 예제: 단순 IF =IF(D2>=80,\"합격\",\"불합격\"). 중첩 IF =IF(B2>=80, IF(C2>=80, \"합격\", \"불합격\"), \"불합격\") 국어·영어 점수를 차례로 검사. AND =IF(AND(B2>=80, C2>=80), \"합격\", \"불합격\") 두 조건이 모두 참일 때만 합격이며, 글쓴이는 중첩 IF보다 AND 식이 더 직관적이라고 평가한다. OR =IF(OR(B7<60,C7<60), \"불합격\", \"합격\") 한 과목이라도 60점 미만이면 불합격. XOR 예제도 있다.",
+      "tier": "blog"
+    },
+    {
+      "title": "엑셀 OR 함수 (오빠두엑셀)",
+      "url": "https://www.oppadu.com/엑셀-or-함수",
+      "host": "www.oppadu.com",
+      "body": "OR 함수는 여러 조건 중 하나라도 참인지 확인하는 함수다. 하나 이상의 조건이 참이면 TRUE, 모든 조건이 거짓일 때만 FALSE를 반환한다. 기본 구문 =OR(논리식1, [논리식2], ...). 예제: =OR(A2>=100000, B2=\"VIP\"), =OR(B2=\"연차\", C2=\"재택\"). 판정 결과에 따라 문구를 표시하려면 IF 함수와 함께 쓴다. 주의: 모든 조건이 참이어야 하면 AND를 쓴다. 문자열 \"TRUE\"와 논리값 TRUE는 다르다. 숫자 0은 FALSE로 인식될 수 있으므로 비교식으로 명확히 판정하는 것이 좋다.",
+      "tier": "blog"
+    }
+  ],
+  "claims": [
+    {
+      "claim": "IF를 겹쳐 쓰면 여러 구간을 나눌 수 있지만, 공식 문서도 최대 64개까지 가능하되 권장하지 않는다고 하며 정확성과 유지 관리가 어렵다고 경고한다",
+      "grade": "confirmed",
+      "evidence": [
+        "최대 64개의 서로 다른 IF 함수 중첩 가능, 그렇게 하는 것은 권장되지 않음",
+        "정확하게 중첩하지 않으면 75% 작동·25% 예기치 않은 결과라는 문서 표현",
+        "여러 IF 문은 나중에 다시 볼 때 유지 관리가 매우 어려움"
+      ],
+      "sourceUrls": [
+        "https://support.microsoft.com/ko-kr/excel/if-function-nested-formulas-and-avoiding-pitfalls"
+      ]
+    },
+    {
+      "claim": "중첩 IF는 조건을 쓰는 순서가 결과를 좌우한다 — 첫 번째로 참이 되는 조건에서 멈춘다",
+      "grade": "confirmed",
+      "evidence": [
+        "수수료 예제에서 조건을 오름차순($5,000부터)으로 쓰면 $12,500 수익도 첫 조건($5,000 초과)에서 걸려 10%만 반환",
+        "학점 예제는 D2>89부터 큰 기준 순서로 작성",
+        "IFS 문서: 첫 번째 TRUE 조건에 해당하는 값을 반환"
+      ],
+      "sourceUrls": [
+        "https://support.microsoft.com/ko-kr/excel/if-function-nested-formulas-and-avoiding-pitfalls",
+        "https://support.microsoft.com/ko-kr/excel/functions/ifs-function"
+      ]
+    },
+    {
+      "claim": "IFS는 '조건, 값'을 쌍으로 나열하는 방식이라 괄호를 겹치지 않아도 되고, 마지막 조건에 TRUE를 넣으면 기본값이 된다. 참인 조건이 하나도 없으면 #N/A가 나온다",
+      "grade": "confirmed",
+      "evidence": [
+        "=IFS(D2>89,\"A\",D2>79,\"B\",D2>69,\"C\",D2>59,\"D\",TRUE,\"F\")",
+        "최대 127개의 조건 테스트 가능",
+        "마지막 logical_test에 TRUE를 넣으면 기본 결과 지정",
+        "TRUE 조건이 없으면 #N/A, logical_test가 TRUE/FALSE가 아니면 #VALUE!",
+        "value_if_true 없이 logical_test만 있으면 오류 메시지"
+      ],
+      "sourceUrls": [
+        "https://support.microsoft.com/ko-kr/excel/functions/ifs-function",
+        "https://support.microsoft.com/ko-kr/excel/if-function-nested-formulas-and-avoiding-pitfalls"
+      ]
+    },
+    {
+      "claim": "한 칸에서 '모두 만족' 또는 '하나라도 만족'을 따질 때는 IF 안에 AND·OR를 넣는다. AND·OR는 최대 255개 조건을 받지만 몇 개 이상은 권장하지 않는다",
+      "grade": "confirmed",
+      "evidence": [
+        "IF(AND(logical1, [logical2], ...), value_if_true, [value_if_false])",
+        "IF(OR(logical1, [logical2], ...), value_if_true, [value_if_false])",
+        "AND 및 OR 함수는 최대 255개의 개별 조건을 지원, 몇 개 이상 사용은 바람직하지 않음",
+        "NOT 함수는 하나의 조건만 지원"
+      ],
+      "sourceUrls": [
+        "https://support.microsoft.com/ko-kr/excel/using-if-with-and-or-and-not-functions-in-excel"
+      ]
+    },
+    {
+      "claim": "IFS는 모든 엑셀에서 되는 함수가 아니다 — IFS 문서는 Office 2019 또는 Microsoft 365 구독을 안내하고(적용 대상 줄에 2019·2021·2024), IF 중첩 문서는 365 구독만 언급해 표기가 다르다. IF·AND·OR 문서의 적용 대상에는 Excel 2016도 있다",
+      "grade": "unclear",
+      "evidence": [
+        "IFS 문서: Office 2019를 사용 중이거나 Microsoft 365 구독을 사용 중인 경우 Windows 또는 Mac에서 사용 가능",
+        "IF 중첩 문서: IFS 안내 문구가 'Microsoft 365 구독이 있는 경우에만 사용할 수 있다'로만 적혀 있음",
+        "IF 함수·AND/OR/NOT 문서 적용 대상에 Excel 2016 포함 / IFS 문서 적용 대상 줄에는 Excel 2016 없음"
+      ],
+      "sourceUrls": [
+        "https://support.microsoft.com/ko-kr/excel/functions/ifs-function",
+        "https://support.microsoft.com/ko-kr/excel/if-function-nested-formulas-and-avoiding-pitfalls",
+        "https://support.microsoft.com/ko-kr/office/if-%ED%95%A8%EC%88%98-69aed7c9-4e8a-4755-a9bc-aa8bbff73be2"
+      ]
+    },
+    {
+      "claim": "자주 보는 오류: #NAME?은 대개 함수 이름·텍스트 따옴표·범위 콜론 같은 철자·표기 문제, IF 결과가 0이면 value_if_true/false 인수가 비어 있는 경우, IFS의 #N/A는 참인 조건이 없다는 뜻",
+      "grade": "confirmed",
+      "evidence": [
+        "#NAME? 가장 일반적인 원인은 수식 이름 철자 오류, 텍스트 값 따옴표 누락, 범위 참조 콜론 누락",
+        "IF 문서: 셀에 0이 나오면 value_if_true 또는 value_if_false 인수 텍스트가 없는 경우",
+        "IFS 문서: TRUE 조건이 발견되지 않으면 #N/A, 조건이 TRUE/FALSE가 아니면 #VALUE!",
+        "NA 문서: #N/A는 '사용할 수 있는 값이 없음'을 의미"
+      ],
+      "sourceUrls": [
+        "https://support.microsoft.com/ko-kr/office/-name-%EC%98%A4%EB%A5%98%EB%A5%BC-%EC%88%98%EC%A0%95%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95-b6d54e31-a743-4d7d-9b61-40002a7b4286",
+        "https://support.microsoft.com/ko-kr/office/if-%ED%95%A8%EC%88%98-69aed7c9-4e8a-4755-a9bc-aa8bbff73be2",
+        "https://support.microsoft.com/ko-kr/excel/functions/ifs-function",
+        "https://support.microsoft.com/ko-kr/excel/functions/na-function"
+      ]
+    }
+  ],
+  "numbers": [
+    { "what": "IF 중첩 가능 최대 개수(권장하지 않음)", "value": "64개", "asOf": "문서 확인 2026-10-07", "sourceUrl": "https://support.microsoft.com/ko-kr/excel/if-function-nested-formulas-and-avoiding-pitfalls" },
+    { "what": "IFS 조건·값 쌍 최대 개수", "value": "127개", "asOf": "문서 확인 2026-10-07", "sourceUrl": "https://support.microsoft.com/ko-kr/excel/functions/ifs-function" },
+    { "what": "AND·OR 최대 개별 조건 수", "value": "255개", "asOf": "문서 확인 2026-10-07", "sourceUrl": "https://support.microsoft.com/ko-kr/excel/using-if-with-and-or-and-not-functions-in-excel" },
+    { "what": "문서 학점 예제 기준점", "value": "89 / 79 / 69 / 59 초과 (A·B·C·D, 나머지 F)", "asOf": "문서 확인 2026-10-07", "sourceUrl": "https://support.microsoft.com/ko-kr/excel/functions/ifs-function" },
+    { "what": "정확히 중첩하지 않았을 때 문서가 든 비율", "value": "75%는 작동, 25%는 예기치 않은 결과", "asOf": "문서 확인 2026-10-07", "sourceUrl": "https://support.microsoft.com/ko-kr/excel/if-function-nested-formulas-and-avoiding-pitfalls" },
+    { "what": "수수료 예제의 첫 조건(오름차순으로 쓰면 걸리는 기준)", "value": "$5,000 초과 → 10% (수익 $12,500인데도)", "asOf": "문서 확인 2026-10-07", "sourceUrl": "https://support.microsoft.com/ko-kr/excel/if-function-nested-formulas-and-avoiding-pitfalls" },
+    { "what": "IFS 지원 버전(IFS 문서)", "value": "Office 2019 또는 Microsoft 365 구독 (적용 대상 줄: 2019·2021·2024·365)", "asOf": "문서 확인 2026-10-07", "sourceUrl": "https://support.microsoft.com/ko-kr/excel/functions/ifs-function" }
+  ],
+  "dropped": [
+    { "url": "검색 스니펫의 'IF 중첩 최대 7개' 요약", "why": "본문을 직접 읽어 확인하지 못했고 IF 중첩 문서 본문(64개)과 어긋남 — 쓰지 않음" }
+  ],
+  "cannotCover": [
+    "IFS가 없는 구버전(예: Excel 2016)에 IFS를 입력했을 때 정확히 어떤 오류 값이 뜨는지 — 공식 문서에서 확인하지 못함(#NAME?과 연결하지 않는다)",
+    "한국어 '#N/A 오류를 수정하는 방법' 전용 문서 내용 — 찾지 못함(NA 함수 문서의 정의만 사용)",
+    "IF 함수 결과가 #VALUE!로 나오는 원인 — IF 문서에서 확인하지 못함(IFS 문서의 #VALUE! 설명만 사용)",
+    "IFS와 중첩 IF의 계산 속도·성능 차이 — 근거 없음",
+    "OR/AND 안에 오류 값이 섞였을 때의 동작 — 블로그 설명뿐이라 공식 확인 못 함",
+    "실제 엑셀에서 직접 입력해 본 결과 — 문서 기준 정리이며 직접 실행하지 않았음"
+  ],
+  "songs": []
+}

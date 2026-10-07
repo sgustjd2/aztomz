@@ -1,0 +1,199 @@
+{
+  "keyword": "git stash 사용법",
+  "categoryId": "hangeut-trend",
+  "notes": "git-scm.com 공식 레퍼런스·Pro Git(영문·한국어판)·git-switch 가 stash 의 역할, push/list/pop/apply/drop/branch, -u/-a, stash@{n} 지정, 충돌 시 stash 가 남는다는 점을 confirmed 로 뒷받침한다.\n자료 간 사실 충돌은 없지만 표현 차이가 세 곳: pop 적용 조건(영문 'working directory must match the index' vs 한국어판 '깨끗할 필요 없음'), 메시지 명령(push -m vs 구식 save), -k 설명(GitLab 표현은 공식과 약간 다름). 글에서는 공식 레퍼런스 표기를 따르고 차이는 밝힌다.\n출력 예시는 공식 문서·Pro Git 에 실린 것만 짧게 인용하고, 충돌 메시지 원문·gc 정리 시점·stash export/import 활용은 근거가 없어 다루지 않는다.",
+  "sources": [
+    {
+      "title": "git-stash Documentation (git-scm.com)",
+      "url": "https://git-scm.com/docs/git-stash",
+      "host": "git-scm.com",
+      "body": "Use git stash when you want to record the current state of the working directory and the index, but want to go back to a clean working directory. The command saves your local modifications away and reverts the working directory to match the HEAD commit. The modifications stashed away by this command can be listed with git stash list , inspected with git stash show , and restored (potentially on top of a different commit) with git stash apply . Calling git stash without any arguments is equivalent to git stash push . A stash is by default listed as \"WIP on <branchname> &#8230;&#8203;\", but you can give a more descriptive message on the command line when you create one. The latest stash you created is stored in refs/stash ; older stashes are found in the reflog of this reference and can be named using the usual reflog syntax (e.g. stash@{0} is the most recently created stash, stash@{1} is the one before it, stash@{2.hours.ago} is also possible). Stashes may also be referenced by specifying just the stash index (e.g. the integer <n> is equivalent to stash@{ <n> } ). COMMANDS push [ -p | --patch ] [ -S | --staged ] [ -k | -- [ no- ] keep-index ] [ -u | --include-untracked ] [ -a | --all ] [ -q | --quiet ] [( -m | --message ) <message> ] [ --pathspec-from-file= <file> [ --pathspec-file-nul ]] [ -- ] [ <pathspec> ...] Save your local modifications to a new stash entry and roll them back to HEAD (in the working tree and in the index). The <message> part is optional and gives the description along with the stashed state. For quickly making a snapshot, you can omit \"push\". In this mode, pathspec elements are only allowed after a double hyphen -- to prevent a misspelled subcommand from making an unwanted stash entry. save [ -p | --patch ] [ -S | --staged ] [ -k | -- [ no- ] keep-index ] [ -u | --include-untracked ] [ -a | --all ] [ -q | --quiet ] [ <message> ] This option is deprecated in favour of git stash push . It differs from \"stash push\" in that it cannot take pathspec. Instead, all non-option arguments are concatenated to form the stash message. list [ <log-options> ] List the stash entries that you currently have. Each stash entry is listed with its name (e.g. stash@{0} is the latest entry, stash@{1} is the one before, etc.), the name of the branch that was current when the entry was made, and a short description of the commit the entry was based on. stash@{0}: WIP on submit: 6ebd0e2... Update git-stash documentation stash@{1}: On master: 9cc0589... Add git-stash The command takes options applicable to the git log command to control what is shown and how. See git-log[1] . show [ -u | --include-untracked | --only-untracked ] [ <diff-options> ] [ <stash> ] Show the changes recorded in the stash entry as a diff between the stashed contents and the commit back when the stash entry was first created. By default, the command shows the diffstat, but it will accept any format known to git diff (e.g., git stash show -p stash@{1} to view the second most recent entry in patch form). If no <diff-option> is provided, the default behavior will be given by the stash.showStat , and stash.showPatch config variables. You can also use stash.showIncludeUntracked to set whether --include-untracked is enabled by default. pop [ --index ] [ -q | --quiet ] [ <stash> ] Remove a single stashed state from the stash list and apply it on top of the current working tree state, i.e., do the inverse operation of git stash push . The working directory must match the index. Applying the state can fail with conflicts; in this case, it is not removed from the stash list. You need to resolve the conflicts by hand and call git stash drop manually afterwards. apply [ --index ] [ -q | --quiet ] [ <stash> ] Like pop , but do not remove the state from the stash list. Unlike pop , <stash> may be any commit that looks like a commit created by stash push or stash create . branch <branchname> [ <stash> ] Creates and checks out a new branch named <branchname> starting from the commit at which the <stash> was originally created, applies the changes recorded in <stash> to the new working tree and index. If that succeeds, and <stash> is a reference of the form stash@{ <revision> } , it then drops the <stash> . This is useful if the branch on which you ran git stash push has changed enough that git stash apply fails due to conflicts. Since the stash entry is applied on top of the commit that was HEAD at the time git stash was run, it restores the originally stashed state with no conflicts. clear Remove all the stash entries. Note that those entries will then be subject to pruning, and may be impossible to recover (see EXAMPLES below for a possible strategy). drop [ -q | --quiet ] [ <stash> ] Remove a single stash entry from the list of stash entries. create Create a stash entry (which is a regular commit object) and return its object name, without storing it anywhere in the ref namespace. This is intended to be useful for scripts. It is probably not the command you want to use; see \"push\" above. store Store a given stash created via git stash create (which is a dangling merge commit) in the stash ref, updating the stash reflog. This is intended to be useful for scripts. It is probably not the command you want to use; see \"push\" above. export ( --print | --to-ref <ref> ) [ <stash> ...] Export the specified stashes, or all of them if none are specified, to a chain of commits which can be transferred using the normal fetch and push mechanisms, then imported using the import subcommand. import <commit> Import the specified stashes from the specified commit, which must have been created by export , and add them to the list of stashes. To replace the existing stashes, use clear first. OPTIONS -a --all This option is only valid for push and save commands. All ignored and untracked files are also stashed and then cleaned up with git clean . -u --include-untracked --no-include-untracked When used with the push and save commands, all untracked files ",
+      "tier": "official"
+    },
+    {
+      "title": "Pro Git — Stashing and Cleaning (git-scm.com)",
+      "url": "https://git-scm.com/book/en/v2/Git-Tools-Stashing-and-Cleaning",
+      "host": "git-scm.com",
+      "body": "Stashing Your Work To demonstrate stashing, you’ll go into your project and start working on a couple of files and possibly stage one of the changes. If you run git status , you can see your dirty state: $ git status Changes to be committed: (use \"git reset HEAD <file>...\" to unstage) modified: index.html Changes not staged for commit: (use \"git add <file>...\" to update what will be committed) (use \"git checkout -- <file>...\" to discard changes in working directory) modified: lib/simplegit.rb Now you want to switch branches, but you don’t want to commit what you’ve been working on yet, so you’ll stash the changes. To push a new stash onto your stack, run git stash or git stash push : $ git stash Saved working directory and index state \\ \"WIP on master: 049d078 Create index file\" HEAD is now at 049d078 Create index file (To restore them type \"git stash apply\") You can now see that your working directory is clean: $ git status # On branch master nothing to commit, working directory clean At this point, you can switch branches and do work elsewhere; your changes are stored on your stack. To see which stashes you’ve stored, you can use git stash list : $ git stash list stash@{0}: WIP on master: 049d078 Create index file stash@{1}: WIP on master: c264051 Revert \"Add file_size\" stash@{2}: WIP on master: 21d80a5 Add number to log In this case, two stashes were saved previously, so you have access to three different stashed works. You can reapply the one you just stashed by using the command shown in the help output of the original stash command: git stash apply . If you want to apply one of the older stashes, you can specify it by naming it, like this: git stash apply stash@{2} . If you don’t specify a stash, Git assumes the most recent stash and tries to apply it: $ git stash apply On branch master Changes not staged for commit: (use \"git add <file>...\" to update what will be committed) (use \"git checkout -- <file>...\" to discard changes in working directory) modified: index.html modified: lib/simplegit.rb no changes added to commit (use \"git add\" and/or \"git commit -a\") You can see that Git re-modifies the files you reverted when you saved the stash. In this case, you had a clean working directory when you tried to apply the stash, and you tried to apply it on the same branch you saved it from. Having a clean working directory and applying it on the same branch aren’t necessary to successfully apply a stash. You can save a stash on one branch, switch to another branch later, and try to reapply the changes. You can also have modified and uncommitted files in your working directory when you apply a stash — Git gives you merge conflicts if anything no longer applies cleanly. The changes to your files were reapplied, but the file you staged before wasn’t restaged. To do that, you must run the git stash apply command with a --index option to tell the command to try to reapply the staged changes. If you had run that instead, you’d have gotten back to your original position: $ git stash apply --index On branch master Changes to be committed: (use \"git reset HEAD <file>...\" to unstage) modified: index.html Changes not staged for commit: (use \"git add <file>...\" to update what will be committed) (use \"git checkout -- <file>...\" to discard changes in working directory) modified: lib/simplegit.rb The apply option only tries to apply the stashed work — you continue to have it on your stack. To remove it, you can run git stash drop with the name of the stash to remove: $ git stash list stash@{0}: WIP on master: 049d078 Create index file stash@{1}: WIP on master: c264051 Revert \"Add file_size\" stash@{2}: WIP on master: 21d80a5 Add number to log $ git stash drop stash@{0} Dropped stash@{0} (364e91f3f268f0900bc3ee613f9f733e82aaed43) You can also run git stash pop to apply the stash and then immediately drop it from your stack. Creative Stashing There are a few stash variants that may also be helpful. The first option that is quite popular is the --keep-index option to the git stash command. This tells Git to not only include all staged content in the stash being created, but simultaneously leave it in the index. $ git status -s M index.html M lib/simplegit.rb $ git stash --keep-index Saved working directory and index state WIP on master: 1b65b17 added the index file HEAD is now at 1b65b17 added the index file $ git status -s M index.html Another common thing you may want to do with stash is to stash the untracked files as well as the tracked ones. By default, git stash will stash only modified and staged tracked files. If you specify --include-untracked or -u , Git will include untracked files in the stash being created. However, including untracked files in the stash will still not include explicitly ignored files; to additionally include ignored files, use --all (or just -a ). $ git status -s M index.html M lib/simplegit.rb ?? new-file.txt $ git stash -u Saved working directory and index state WIP on master: 1b65b17 added the",
+      "tier": "official"
+    },
+    {
+      "title": "Pro Git 한국어판 — Stashing과 Cleaning (git-scm.com)",
+      "url": "https://git-scm.com/book/ko/v2/Git-%EB%8F%84%EA%B5%AC-Stashing%EA%B3%BC-Cleaning",
+      "host": "git-scm.com",
+      "body": "당신이 어떤 프로젝트에서 한 부분을 담당하고 있다고 하자. 그리고 여기에서 뭔가 작업하던 일이 있고 다른 요청이 들어와서 잠시 브랜치를 변경해야 할 일이 생겼다고 치자. 그런데 이런 상황에서 아직 완료하지 않은 일을 커밋하는 것이 껄끄럽다는 것이 문제다. 커밋하지 않고 나중에 다시 돌아와서 작업을 다시 하고 싶을 것이다. 이 문제는 git stash 라는 명령으로 해결할 수 있다. Stash 명령을 사용하면 워킹 디렉토리에서 수정한 파일들만 저장한다. Stash는 Modified이면서 Tracked 상태인 파일과 Staging Area에 있는 파일들을 보관해두는 장소다. 아직 끝내지 않은 수정사항을 스택에 잠시 저장했다가 나중에 다시 적용할 수 있다(브랜치가 달라져도 말이다). 노트 git stash push 로의 이동 2017년 10월 말 Git 메일링 리스트에는 엄청난 논의가 있었습니다. 논의는 git stash save 명령을 은퇴시키고 git stash push 로 대체하는 내용에 대한 것이었습니다. git stash push 명령의 경우 pathspec 으로 선택하여 Stash하는 옵션이 추가되었는데 git stash save 명령이 지원하지 못하는 것이었습니다. git stash save 명령이 곧바로 삭제되는 것은 아니기에 아직 이 명령을 쓰는 것에 대해 걱정할 필요는 없지만 git stash push 명령으로 대체하는 것에 대해 생각해볼 필요가 있습니다. 하던 일을 Stash 하기 예제 프로젝트를 하나 살펴보자. 파일을 두 개 수정하고 그 중 하나는 Staging Area에 추가한다. 그리고 git status 명령을 실행하면 아래와 같은 결과를 볼 수 있다. $ git status Changes to be committed: (use \"git reset HEAD <file>...\" to unstage) modified: index.html Changes not staged for commit: (use \"git add <file>...\" to update what will be committed) (use \"git checkout -- <file>...\" to discard changes in working directory) modified: lib/simplegit.rb 이제 브랜치를 변경해 보자. 아직 작업 중인 파일은 커밋할 게 아니라서 모두 Stash 한다. git stash 나 git stash save 를 실행하면 스택에 새로운 Stash가 만들어진다. $ git stash Saved working directory and index state \\ \"WIP on master: 049d078 added the index file\" HEAD is now at 049d078 added the index file (To restore them type \"git stash apply\") 대신 워킹 디렉토리는 깨끗해졌다. $ git status # On branch master nothing to commit, working directory clean 이제 아무 브랜치나 골라서 쉽게 바꿀 수 있다. 수정하던 것을 스택에 저장했다. 아래와 같이 git stash list 를 사용하여 저장한 Stash를 확인한다. $ git stash list stash@{0}: WIP on master: 049d078 added the index file stash@{1}: WIP on master: c264051 Revert \"added file_size\" stash@{2}: WIP on master: 21d80a5 added number to log Stash 두 개는 원래 있었다. 그래서 현재 총 세 개의 Stash를 사용할 수 있다. 이제 git stash apply 를 사용하여 Stash를 다시 적용할 수 있다. git stash 명령을 실행하면 Stash를 다시 적용하는 방법도 알려줘서 편리하다. git stash apply stash@{2} 처럼 Stash 이름을 입력하면 골라서 적용할 수 있다. 이름이 없으면 Git은 가장 최근의 Stash를 적용한다. $ git stash apply On branch master Changes not staged for commit: (use \"git add <file>...\" to update what will be committed) (use \"git checkout -- <file>...\" to discard changes in working directory) modified: index.html modified: lib/simplegit.rb no changes added to commit (use \"git add\" and/or \"git commit -a\") Git은 Stash에 저장할 때 수정했던 파일들을 복원해준다. 복원할 때의 워킹 디렉토리는 Stash 할 때의 그 브랜치이고 워킹 디렉토리도 깨끗한 상태였다. 하지만 꼭 깨끗한 워킹 디렉토리나 Stash 할 때와 같은 브랜치에 적용해야 하는 것은 아니다. 어떤 브랜치에서 Stash 하고 다른 브랜치로 옮기고서 거기에 Stash를 복원할 수 있다. 그리고 꼭 워킹 디렉토리가 깨끗한 상태일 필요도 없다. 워킹 디렉토리에 수정하고 커밋하지 않은 파일들이 있을 때도 Stash를 적용할 수 있다. 만약 충돌이 있으면 알려준다. Git은 Stash를 적용할 때 Staged 상태였던 파일을 자동으로 다시 Staged 상태로 만들어 주지 않는다. 그래서 git stash apply 명령을 실행할 때 --index 옵션을 주어 Staged 상태까지 적용한다. 그래야 원래 작업하던 상태로 돌아올 수 있다. $ git stash apply --index On branch master Changes to be committed: (use \"git reset HEAD <file>...\" to unstage) modified: index.html Changes not staged for commit: (use \"git add <file>...\" to update what will be committed) (use \"git checkout -- <file>...\" to discard changes in working directory) modified: lib/simplegit.rb apply 옵션은 단순히 Stash를 적용하는 것뿐이다. Stash는 여전히 스택에 남아 있다. git stash drop 명령을 사용하여 해당 Stash를 제거한다. $ git stash list stash@{0}: WIP on master: 049d078 added the index file stash@{1}: WIP on master: c264051 Revert \"added file_size\" stash@{2}: WIP on master: 21d80a5 added number to log $ git stash drop stash@{0} Dropped stash@{0} (364e91f3f268f0900bc3ee613f9f733e82aaed43) 그리고 git stash pop 이라는 명령도 있는데 이 명령은 Stash를 적용하고 나서 바로 스택에서 제거해준다. Stash를 만드는 새로운 방법 Stash를 만드는 방법은 여러 가지다. 주로 사용하는 옵션으로 stash save 명령과 같이 쓰는 --keep-index 이다. 이 옵션을 이용하면 이미 Staging Area에 들어 있는 파일을 Stash 하지 않는다. $ git status -s M index.html M lib/simplegit.rb $ git stash --keep-index Saved working directory and index state WIP on master: 1b65b17 added the index file HEAD is now at 1b65b17 added the index file $ git status -s M index.html 추적하지 않는 파일과 추적 중인 파일을 같이 Stash 하는 일도 꽤 빈번하다. 기본적으로 git stash 는 추적 중인 파일만 저장한다. 추적 중이지 않은 파일을 같이 저장하려면 Stash 명령을 사용할 때 --include-untracked 나 -u 옵션을 붙여준다. $ git status -s M index.html M lib/simplegit.rb ?? new-file.txt $ git stash -u Saved working directory and index state WIP on master: 1b65b17 added the index file HEAD is now at 1b65b17 added the index file $ git status -s $ 끝으로 --patch 옵션을 붙이면 Git은 수정된 모든 사항을 저장하지 않는다. 대신 대화형 프롬프트가 뜨며 변경된 데이터 중 저장할 것과 저장하지 않을 것을 지정할 수 있다. $ git stash --patch diff --git a/lib/simplegit.rb b/lib/simplegit.rb index 66d332e..8bb5674 100644 --- a/lib/simplegit.rb +++ b/lib/simplegit.rb @@ -16,6 +16,10 @@ class SimpleGit return `#{git_cmd} 2>&1`.chomp end end + + def show(treeish = 'master') + command(\"git show #{treeish}\") + end end test Stash this hunk [y,n,q,a,d,/,e,?]? y Saved working directory and index state WIP on master: 1b65b17 added the index file Stash를 적용한 브랜치 만들기 보통 Stash에 저장하면 한동안 그대로 유지한 채로 그 브랜치에서 계속 새로운 일을 한다. 그러면 이제 저장한 Stash를 적용하는 것이 문제가 된다. 수정한 파일에 Stash를 적용하면 충돌이 일어날 수도 있고 그러면 또 충돌을 해결해야 한다. 필요한 것은 Stash 한 것을 쉽게",
+      "tier": "official"
+    },
+    {
+      "title": "git-switch Documentation (git-scm.com)",
+      "url": "https://git-scm.com/docs/git-switch",
+      "host": "git-scm.com",
+      "body": "Switch to a specified branch. The working tree and the index are updated to match the branch. All new commits will be added to the tip of this branch. Optionally a new branch could be created with either -c , -C , automatically from a remote branch of same name (see --guess ), or detach the working tree from any branch with --detach , along with switching. Switching branches does not require a clean index and working tree (i.e. no differences compared to HEAD ). The operation is aborted however if the operation leads to loss of local changes, unless told otherwise with --discard-changes or --merge . OPTIONS <branch> Branch to switch to. <new-branch> Name for the new branch. <start-point> The starting point for the new branch. Specifying a <start-point> allows you to create a branch based on some other point in history than where HEAD currently points. (Or, in the case of --detach , allows you to inspect and detach from some other point.) You can use the @{- <N> } syntax to refer to the <N> -th last branch/commit switched to using git switch or git checkout operation. You may also specify - which is synonymous to @{-1} . This is often used to switch quickly between two branches, or to undo a branch switch by mistake. As a special case, you may use <rev-a> ... <rev-b> as a shortcut for the merge base of <rev-a> and <rev-b> if there is exactly one merge base. You can leave out at most one of <rev-a> and <rev-b> , in which case it defaults to HEAD . -c <new-branch> --create <new-branch> Create a new branch named <new-branch> starting at <start-point> before switching to the branch. This is the transactional equivalent of $ git branch <new-branch> $ git switch <new-branch> that is to say, the branch is not reset/created unless git switch is successful (e.g., when the branch is in use in another worktree, not just the current branch stays the same, but the branch is not reset to the start-point, either). -C <new-branch> --force-create <new-branch> Similar to --create except that if <new-branch> already exists, it will be reset to <start-point> . This is a convenient shortcut for: $ git branch -f _<new-branch>_ $ git switch _<new-branch>_ -d --detach Switch to a commit for inspection and discardable experiments. See the \"DETACHED HEAD\" section in git-checkout[1] for details. --guess --no-guess If <branch> is not found but there does exist a tracking branch in exactly one remote (call it <remote> ) with a matching name, treat as equivalent to $ git switch -c <branch> --track <remote>/ <branch> If the branch exists in multiple remotes and one of them is named by the checkout.defaultRemote configuration variable, we&#8217;ll use that one for the purposes of disambiguation, even if the <branch> isn&#8217;t unique across all remotes. Set it to e.g. checkout.defaultRemote=origin to always checkout remote branches from there if <branch> is ambiguous but exists on the origin remote. See also checkout.defaultRemote in git-config[1] . --guess is the default behavior. Use --no-guess to disable it. The default behavior can be set via the checkout.guess configuration variable. -f --force An alias for --discard-changes . --discard-changes Proceed even if the index or the working tree differs from HEAD . Both the index and working tree are restored to match the switching target. If --recurse-submodules is specified, submodule content is also restored to match the switching target. This is used to throw away local changes. -m --merge If you have local modifications to one or more files that are different between the current branch and the branch to which you are switching, the command normally refuses to switch branches in order to preserve your modifications in context. However, with this option, the conflicting local changes are automatically stashed before the switch and reapplied afterwards. If the local changes do not overlap with the differences between branches, the switch proceeds without stashing. If reapplying the stash results in conflicts, the entry is saved to the stash list. Resolve the conflicts and run git stash drop when done, or clear the working tree (e.g. with git reset --hard ) before running git stash pop later to re-apply your changes. --conflict= <style> The same as --merge option above, but changes the way the conflicting hunks are presented, overriding the merge.conflictStyle configuration variable. Possible values are merge (default), diff3 , and zdiff3 . -q --quiet Quiet, suppress feedback messages. --progress -",
+      "tier": "official"
+    },
+    {
+      "title": "git stash — Atlassian Git Tutorial",
+      "url": "https://www.atlassian.com/git/tutorials/saving-changes/git-stash",
+      "host": "www.atlassian.com",
+      "body": "git stash temporarily shelves (or stashes ) changes you've made to your working copy so you can work on something else, and then come back and re-apply them later on. Stashing is handy if you need to quickly switch context and work on something else, but you're mid-way through a code change and aren't quite ready to commit. Git Stash Stashing your work Re-applying your stashed changes Stashing untracked or ignored files Managing multiple stashes Viewing stash diffs Partial stashes Creating a branch from your stash Cleaning up your stash How git stash works Stashing your work The git stash command takes your uncommitted changes (both staged and unstaged), saves them away for later use, and then reverts them from your working copy. For example: 1 $ git status 2 On branch main 3 Changes to be committed: 4 5 new file: style.css 6 7 Changes not staged for commit: 8 9 modified: index.html 10 11 $ git stash 12 Saved working directory and index state WIP on main: 5002d47 our new homepage 13 HEAD is now at 5002d47 our new homepage 14 15 $ git status 16 On branch main 17 nothing to commit, working tree clean At this point you're free to make changes, create new commits, switch branches, and perform any other Git operations; then come back and re-apply your stash when you're ready. Note that the stash is local to your Git repository; stashes are not transferred to the server when you push. Re-applying your stashed changes You can reapply previously stashed changes with git stash pop : 1 $ git status 2 On branch main 3 nothing to commit, working tree clean 4 $ git stash pop 5 On branch main 6 Changes to be committed: 7 8 new file: style.css 9 10 Changes not staged for commit: 11 12 modified: index.html 13 14 Dropped refs/stash@{0} (32b3aa1d185dfe6d57b3c3cc3b32cbf3e380cc6a) Popping your stash removes the changes from your stash and reapplies them to your working copy. Alternatively, you can reapply the changes to your working copy and keep them in your stash with git stash apply : 1 $ git stash apply 2 On branch main 3 Changes to be committed: 4 5 new file: style.css 6 7 Changes not staged for commit: 8 9 modified: index.html This is useful if you want to apply the same stashed changes to multiple branches. Now that you know the basics of stashing, there is one caveat with git stash you need to be aware of: by default Git won't stash changes made to untracked or ignored files. Stashing untracked or ignored files By default, running git stash will stash: changes that have been added to your index (staged changes) changes made to files that are currently tracked by Git (unstaged changes) But it will not stash: new files in your working copy that have not yet been staged files that have been ignored So if we add a third file to our example above, but don't stage it (i.e. we don't run git add ), git stash won't stash it. 1 $ script.js 2 3 $ git status 4 On branch main 5 Changes to be committed: 6 7 new file: style.css 8 9 Changes not staged for commit: 10 11 modified: index.html 12 13 Untracked files: 14 15 script.js 16 17 $ git stash 18 Saved working directory and index state WIP on main: 5002d47 our new homepage 19 HEAD is now at 5002d47 our new homepage 20 21 $ git status 22 On branch main 23 Untracked files: 24 25 script.js Adding the -u option (or --include-untracked ) tells git stash to also stash your untracked files: 1 $ git status 2 On branch main 3 Changes to be committed: 4 5 new file: style.css 6 7 Changes not staged for commit: 8 9 modified: index.html 10 11 Untracked files: 12 13 script.js 14 15 $ git stash -u 16 Saved working directory and index state WIP on main: 5002d47 our new homepage 17 HEAD is now at 5002d47 our new homepage 18 19 $ git status 20 On branch main 21 nothing to commit, working tree clean You can include changes to ignored files as well by passing the -a option (or --all ) when running git stash . Managing multiple stashes You aren't limited to a single stash. You can run git stash several times to create multiple stashes, and then use git stash list to view them. By default, stashes are identified simply as a \"WIP\" – work in progress – on top of the branch and commit that you created the stash from. After a while it can be difficult to remember what each stash contains: 1 $ git stash list 2 stash@{0}: WIP on main: 5002d47 our new homepage 3 stash@{1}: WIP on main: 5002d47 our new homepage 4 stash@{2}: WIP on main: 5002d47 our new homepage To provide a bit more context, it's good practice to annotate your stashes with a description, using git stash save \"message\" : 1 $ git stash save \"add style to our site\" 2 Saved working directory and index state On main: add style to our site 3 HEAD is now at 5002d47 our new homepage 4 5 $ git stash list 6 stash@{0}: On main: add style to our site 7 stash@{1}: WIP on main: 5002d47 our new homepage 8 stash@{2}: WIP on main: 5002d47 our new homepage By default, git stash pop will re-apply the most recently created stash: stash@{0} You can choose which stas",
+      "tier": "blog"
+    },
+    {
+      "title": "Stash changes — GitLab Docs",
+      "url": "https://docs.gitlab.com/topics/git/stash/",
+      "host": "docs.gitlab.com",
+      "body": "Use git stash when you want to change to a different branch but you have uncommitted changes that are not ready to be committed. Create stash entries By default, git stash stores tracked changes in your working directory and any staged changes. You can use options to control which changes are included. To stash tracked changes: shell git stash To stash changes with a message: shell git stash push -m &#34;describe your changes here&#34; To stash changes but keep staged changes in your working directory: shell git stash push -k The -k ( --keep-index ) option stashes your changes but also keeps them in the working directory. Use this option when you want to temporarily save changes but keep working on them. To stash changes and include untracked files: shell git stash push -u The -u ( --include-untracked ) option also stashes files that Git is not yet tracking. Without this option, new files that have not been committed remain in your working directory. To stash only staged changes: shell git stash push -S The -S ( --staged ) option stashes only changes that are staged. Use this option when you want to save staged changes while you keep working on unstaged changes. Apply stash entries If you make many changes after you stash your work, conflicts might occur when you apply the stash. You must resolve these conflicts before the changes can be applied. To apply the most recent stash entry and keep it in the stash: shell git stash apply To apply a specific stash entry: shell git stash apply stash@ { 3 } To apply the most recent stash entry and remove it from the stash: shell git stash pop View stash entries To see all stash entries: shell git stash list To see stash entries with more detail: shell git stash list --stat Delete stash entries To delete the most recent stash entry: shell git stash drop To delete a specific stash entry: shell git stash drop <name> To delete all stash entries: shell git stash clear Example: Create and apply a stash entry To try using Git stashing: Modify a file in a Git repository. Stash the modification: shell git stash push -m &#34;Saving changes from edit&#34; View the stash list: shell git stash list Confirm there are no pending changes: shell git status Apply the stashed changes and remove the entry from the stash: shell git stash pop View the stash list to confirm the entry was removed: shell git stash list Related topics Official ",
+      "tier": "official"
+    }
+  ],
+  "claims": [
+    {
+      "claim": "git stash 는 하던 변경(tracked 수정 + staged)을 따로 저장하고 작업 디렉터리를 HEAD 에 맞춘 깨끗한 상태로 돌려, 커밋하지 않고도 브랜치를 옮길 수 있게 한다",
+      "grade": "confirmed",
+      "evidence": [
+        "git-stash: 작업 디렉터리와 index 상태를 기록하고 깨끗한 작업 디렉터리로 돌아가며, 로컬 수정을 저장하고 HEAD 에 맞춘다",
+        "Pro Git: modified tracked 파일과 staged 변경을 미완성 변경의 stack 에 저장, 다른 브랜치에서도 다시 적용 가능",
+        "git-switch: 전환은 깨끗한 트리를 요구하지 않지만 로컬 변경을 잃게 되면 중단된다; --merge 는 충돌하는 로컬 변경을 자동 stash 후 재적용"
+      ],
+      "sourceUrls": [
+        "https://git-scm.com/docs/git-stash",
+        "https://git-scm.com/book/en/v2/Git-Tools-Stashing-and-Cleaning",
+        "https://git-scm.com/docs/git-switch",
+        "https://git-scm.com/book/ko/v2/Git-%EB%8F%84%EA%B5%AC-Stashing%EA%B3%BC-Cleaning"
+      ]
+    },
+    {
+      "claim": "기본 흐름은 git stash(=git stash push) → git stash list → git stash pop. 메시지는 -m, 번호는 stash@{n}(정수 n 도 가능), 생략하면 최신(stash@{0})",
+      "grade": "confirmed",
+      "evidence": [
+        "git stash 는 git stash push 와 같고 기본 표기는 'WIP on <브랜치명> …', push 는 -m|--message",
+        "stash@{0} 최신, stash@{1} 그 전, 정수 n = stash@{n}, <stash> 생략 시 stash@{0}",
+        "list 출력 예: stash@{0}: WIP on submit: 6ebd0e2... Update git-stash documentation"
+      ],
+      "sourceUrls": [
+        "https://git-scm.com/docs/git-stash",
+        "https://docs.gitlab.com/topics/git/stash/",
+        "https://www.atlassian.com/git/tutorials/saving-changes/git-stash"
+      ]
+    },
+    {
+      "claim": "기본은 tracked 수정과 staged 변경만 stash 한다. 새(untracked) 파일은 -u/--include-untracked, ignored 파일까지는 -a/--all. --keep-index·--patch·--staged·pathspec 으로 범위를 좁힐 수 있다",
+      "grade": "confirmed",
+      "evidence": [
+        "Pro Git: --include-untracked 또는 -u 로 untracked 포함, ignored 는 여전히 빠지고 --all(-a) 로 포함",
+        "git-stash: -k index 의 변경 유지, -p 대화형 hunk 선택, -S staged 만, -- <pathspec> 은 그 파일만 기록하고 되돌림",
+        "Atlassian·GitLab: 새 파일은 -u 없이는 작업 디렉터리에 남는다"
+      ],
+      "sourceUrls": [
+        "https://git-scm.com/docs/git-stash",
+        "https://git-scm.com/book/en/v2/Git-Tools-Stashing-and-Cleaning",
+        "https://git-scm.com/book/ko/v2/Git-%EB%8F%84%EA%B5%AC-Stashing%EA%B3%BC-Cleaning",
+        "https://www.atlassian.com/git/tutorials/saving-changes/git-stash",
+        "https://docs.gitlab.com/topics/git/stash/"
+      ]
+    },
+    {
+      "claim": "pop 은 적용하고 stash 에서 제거, apply 는 적용만 하고 남긴다. 충돌이 나면 둘 다 stash 항목이 그대로 남고 종료 코드 1 — 손으로 충돌을 풀고 필요하면 git stash drop 으로 직접 지운다",
+      "grade": "confirmed",
+      "evidence": [
+        "git-stash pop: Applying the state can fail with conflicts; in this case, it is not removed from the stash list. You need to resolve the conflicts by hand and call git stash drop manually afterwards",
+        "EXIT STATUS: apply·pop·branch 는 충돌 시 1, 항목은 그대로 남음",
+        "Pro Git: apply 는 적용만 시도하고 stack 에 그대로 남는다; pop 은 적용하고 바로 제거"
+      ],
+      "sourceUrls": [
+        "https://git-scm.com/docs/git-stash",
+        "https://git-scm.com/book/en/v2/Git-Tools-Stashing-and-Cleaning",
+        "https://git-scm.com/book/ko/v2/Git-%EB%8F%84%EA%B5%AC-Stashing%EA%B3%BC-Cleaning",
+        "https://docs.gitlab.com/topics/git/stash/"
+      ]
+    },
+    {
+      "claim": "apply/pop 해도 staged 였던 상태는 자동으로 되살아나지 않는다 — --index 를 주면 index 변경까지 되살리려 시도한다(충돌 시 실패 가능)",
+      "grade": "confirmed",
+      "evidence": [
+        "Pro Git: apply 시 staged 파일이 자동으로 다시 staged 되지 않는다, --index 로 복원",
+        "git-stash --index: 작업 트리뿐 아니라 index 변경도 되살리려 시도, 충돌이 있으면 실패할 수 있음; stash.index 설정(기본 false)"
+      ],
+      "sourceUrls": [
+        "https://git-scm.com/docs/git-stash",
+        "https://git-scm.com/book/en/v2/Git-Tools-Stashing-and-Cleaning",
+        "https://git-scm.com/book/ko/v2/Git-%EB%8F%84%EA%B5%AC-Stashing%EA%B3%BC-Cleaning"
+      ]
+    },
+    {
+      "claim": "stash 가 쌓인 브랜치가 많이 바뀌어 apply 가 충돌한다면 git stash branch <새 브랜치> 로 stash 당시 커밋에서 새 브랜치를 만들어 되살린다(성공하면 stash drop)",
+      "grade": "confirmed",
+      "evidence": [
+        "git-stash branch: stash 를 만든 당시 커밋에서 새 브랜치 생성·체크아웃·적용, 성공하고 stash@{<revision>} 형태면 drop",
+        "Pro Git: 같은 설명, 한국어판도 동일"
+      ],
+      "sourceUrls": [
+        "https://git-scm.com/docs/git-stash",
+        "https://git-scm.com/book/en/v2/Git-Tools-Stashing-and-Cleaning",
+        "https://git-scm.com/book/ko/v2/Git-%EB%8F%84%EA%B5%AC-Stashing%EA%B3%BC-Cleaning",
+        "https://www.atlassian.com/git/tutorials/saving-changes/git-stash"
+      ]
+    },
+    {
+      "claim": "stash 는 내 로컬 저장소에만 있다(push 해도 서버로 가지 않는다) — 그리고 drop/clear 한 항목은 보통의 안전장치로 복구할 수 없다",
+      "grade": "reported",
+      "evidence": [
+        "Atlassian: stashes are not transferred to the server when you push (로컬 저장소 한정)",
+        "git-stash: 실수로 drop/clear 하면 normal safety mechanisms 로 복구 불가, fsck 로 찾는 방법이 EXAMPLES 에 있음(복구 절차 세부는 이 글에서 다루지 않음)"
+      ],
+      "sourceUrls": [
+        "https://www.atlassian.com/git/tutorials/saving-changes/git-stash",
+        "https://git-scm.com/docs/git-stash"
+      ]
+    }
+  ],
+  "numbers": [
+    {
+      "what": "git 최신 버전 / git-stash 문서 갱신 버전",
+      "value": "2.56.0 (릴리스 2026-09-28) / git-stash last updated in 2.56.0",
+      "asOf": "2026-10-07",
+      "sourceUrl": "https://git-scm.com/docs/git-stash"
+    },
+    {
+      "what": "git-switch 문서 갱신 버전",
+      "value": "2.55.0",
+      "asOf": "2026-10-07",
+      "sourceUrl": "https://git-scm.com/docs/git-switch"
+    },
+    {
+      "what": "git stash save 폐기 논의 시점",
+      "value": "2017년 10월 말, push 로 대체(deprecated)",
+      "asOf": "2026-10-07",
+      "sourceUrl": "https://git-scm.com/book/en/v2/Git-Tools-Stashing-and-Cleaning"
+    },
+    {
+      "what": "충돌 시 apply·pop·branch 종료 코드",
+      "value": "1 (stash 항목은 그대로 남음)",
+      "asOf": "2026-10-07",
+      "sourceUrl": "https://git-scm.com/docs/git-stash"
+    }
+  ],
+  "dropped": [
+    {
+      "url": "https://docs.github.com/en/desktop/making-changes-in-a-branch/stashing-changes-in-github-desktop",
+      "why": "GitHub Desktop GUI 안내(한 번에 한 묶음 stash)라 명령줄 git stash 와 다른 기능 — 이 글 범위 밖"
+    },
+    {
+      "url": "https://stackabuse.com/git-stashing-uncommitted-changes/",
+      "why": "검색 결과에만 나왔고 본문을 읽지 않음 — 개인 블로그 성격이라 제외"
+    },
+    {
+      "url": "https://oneuptime.com/blog/post/2026-01-24-git-stash-effectively/view",
+      "why": "검색 결과에만 나왔고 본문을 읽지 않음"
+    }
+  ],
+  "cannotCover": [
+    "충돌이 났을 때 터미널에 실제로 찍히는 메시지 원문과 충돌 파일 표시 방식",
+    "pop·apply 시 작업 디렉터리 상태 요건의 정확한 의미(영문 레퍼런스는 'must match the index', 한국어판은 깨끗할 필요 없다고 적어 표현이 다름) — 단정하지 않는다",
+    "stash 항목이 gc 로 언제 정리되는지, drop/clear 후 fsck 복구의 세부 절차",
+    "git stash export/import 의 실제 활용, git stash create/store 스크립트용 서브명령",
+    "stash 를 GUI(VS Code·GitHub Desktop 등)에서 쓰는 법",
+    "직접 실행해 본 결과 화면(문서를 읽고 쓰는 글임)"
+  ],
+  "songs": []
+}

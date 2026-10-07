@@ -1,0 +1,241 @@
+{
+  "keyword": "구글 2단계 인증 설정",
+  "categoryId": "hangeut-trend",
+  "notes": "구글 계정 2단계 인증을 켜는 경로(보안 및 로그인 > Google에 로그인하는 방법 > 2단계 인증 사용), 두 번째 확인 수단 종류, 백업 코드·복구 정보 설정, 7일 대기 같은 주의점을 구글 공식 도움말 6건으로 정확히 쓸 수 있다. KISA 보호나라 공지와 ITWorld 기사는 보조 근거(2차 인증 권고, 복구 정보·백업 코드 보관 의견)로만 쓴다. 패스키 등록 절차와 구글의 자동 2단계 인증 정책은 근거가 부족해 다루지 않는다.",
+  "sources": [
+    {
+      "title": "2단계 인증 사용 - 컴퓨터 - Google 계정 고객센터",
+      "url": "https://support.google.com/accounts/answer/185839?hl=ko&co=GENIE.Platform%3DDesktop",
+      "host": "support.google.com",
+      "body": "Google 도움말 '2단계 인증 사용'. 비밀번호가 도용되는 경우에 대비하여 계정 보안을 한층 강화할 수 있고, 설정 후에는 비밀번호와 2단계, 또는 패스키를 사용하여 로그인할 수 있다. 설정 단계: 1) Google 계정을 연다 2) 보안 및 로그인을 탭한다 3) 'Google에 로그인하는 방법'에서 2단계 인증 사용을 선택한다 4) 화면에 표시되는 단계를 따른다. 2단계 방법 목록: Google 메시지 사용(Google 메시지를 2단계로 사용하는 것이 좋다, 푸시 알림에서 '예' 또는 '아니요' 선택, SIM 스와프 및 전화번호 기반 해킹 차단. Android 휴대전화 또는 Gmail·Google 포토·YouTube·Google 앱이 설치된 iPhone으로 전송), 패스키 및 하드웨어 보안 키(지문·얼굴 스캔·기기 화면 잠금으로 로그인, 피싱 공격으로부터 보호), Google OTP 또는 기타 인증 코드 앱(인터넷 연결이나 모바일 서비스가 없는 경우에도 설정 가능), 문자 메시지 또는 전화(6자리 코드), QR 코드 사용(전화번호 기반 공격 및 악용에 덜 취약), 복구 코드 사용(8자리 복구 코드 세트를 인쇄하거나 다운로드해 안전한 장소에 보관). 주의: 직장·학교 등 그룹을 통해 쓰는 계정이면 이 단계가 적용되지 않을 수 있다. 새 전화번호는 Google이 신뢰하기까지 최대 7일이 걸릴 수 있다. 의심스러운 점이 감지되면 해당 번호를 사용 중지할 수 있고 30일 이내에 확인해야 한다. 인증 코드를 다른 사람과 공유하지 마라, Google은 코드 인증을 위해 전화를 걸지 않는다, 문자·전화로 오는 코드는 전화번호 기반 해킹에 취약할 수 있다. 복구 코드는 아무에게도 알려 주지 마라. 신뢰 기기 체크박스는 정기적으로 사용하며 다른 사용자와 공유하지 않는 기기에서만 선택한다.",
+      "tier": "official"
+    },
+    {
+      "title": "백업 코드로 로그인하기 - 컴퓨터 - Google 계정 고객센터",
+      "url": "https://support.google.com/accounts/answer/1187538?hl=ko",
+      "host": "support.google.com",
+      "body": "Google 도움말 '백업 코드로 로그인하기'. 백업 코드 만드는 경로: 1) Google 계정 방문 2) '보안 및 로그인' 클릭 3) 'Google에 로그인하는 방법'에서 '2단계 인증' 클릭 4) '백업 코드'에서 계속 버튼 클릭 5) '백업 코드 받기' 선택. 10개로 된 코드 세트를 만들 수 있고 각 코드는 8자리다. 로그인할 때 사용하지 않은 백업 코드 중 하나를 입력하며 각 코드는 한 번씩만 사용할 수 있다. 새로운 코드 세트를 생성하면 이전 세트는 자동으로 비활성화된다. 복구 코드를 누구와도 공유하지 말고, 여권이나 기타 중요한 문서를 보관하는 곳 등 안전한 장소에 보관할 것을 권장한다.",
+      "tier": "official"
+    },
+    {
+      "title": "복구 옵션 설정하기 - 컴퓨터 - Google 계정 고객센터",
+      "url": "https://support.google.com/accounts/answer/183723?hl=ko",
+      "host": "support.google.com",
+      "body": "Google 도움말 '복구 옵션 설정하기'. 복구 전화번호: Google 계정 > 보안 및 로그인 > 'Google에 로그인하는 방법'에서 복구 전화번호를 클릭해 설정한다. 용도는 계정에 액세스할 수 없게 된 경우 다시 사용할 수 있도록 코드를 전송, 다른 사람이 무단으로 계정을 사용하지 못하도록 차단, 간편하게 계정 소유 인증, 의심스러운 활동 발생 시 알림이다. 복구 전화번호를 추가하거나 변경하면 변경사항이 적용되기까지 최대 7일이 걸릴 수 있고, Google Voice 번호를 복구 전화번호로 사용하면 계정에 액세스하지 못할 수 있다. 복구 이메일 주소: 같은 경로에서 복구 이메일을 클릭해 설정한다. 사용자 이름 확인, 비밀번호를 기억하지 못할 때 계정 복구 지원, 저장공간 부족 알림, 의심스러운 활동 알림에 쓰인다. 정기적으로 사용하지만 Google 로그인 시 사용하는 이메일이 아닌 다른 주소를 선택하라고 권장한다.",
+      "tier": "official"
+    },
+    {
+      "title": "Google OTP로 인증 코드 받기 - Android - Google 계정 고객센터",
+      "url": "https://support.google.com/accounts/answer/1066447?hl=ko",
+      "host": "support.google.com",
+      "body": "Google 도움말 'Google OTP로 인증 코드 받기'(Android). 설정: Android 기기에서 Google 계정의 2단계 인증 설정으로 이동해 'OTP 설정'(일부 기기에서는 '시작하기')을 탭하고 화면 단계를 따른다. 설정 후 Google OTP가 로그인에 사용할 수 있는 옵션으로 표시되기까지 최대 7일이 걸릴 수 있다. 새 기기로 코드 옮기기: 이전 기기에서 메뉴 > '계정 전송' > '계정 내보내기', 새 기기에서 메뉴 > '계정 전송' > '계정 가져오기'. 이전 기기에서 QR 코드를 만든 뒤 새 기기에서 'QR 코드 스캔'을 탭해 스캔하며 스캔이 끝나면 확인 메시지가 표시된다. 여러 Google 계정의 코드 동기화, 개인정보 보호 화면 설정, 코드 검색·수정·정렬도 지원한다.",
+      "tier": "official"
+    },
+    {
+      "title": "2단계 인증에 보안 키 사용하기 - Android - Google 계정 고객센터",
+      "url": "https://support.google.com/accounts/answer/6103523?hl=ko",
+      "host": "support.google.com",
+      "body": "Google 도움말 '2단계 인증에 보안 키 사용하기'(Android). 보안 키 종류는 호환되는 휴대전화에 내장된 보안 키, Google 스토어의 Titan 보안 키, FIDO U2F 호환 보안 키다. 최신 버전의 브라우저를 사용해 보안 키를 등록하며 새로 추가된 키는 로그인에 사용되기까지 7일이 걸릴 수 있다. 로그인 시 NFC 또는 USB 연결 옵션이 있다. 보안 키 이름 변경, 삭제, 사용 가능 여부 확인이 가능하다. 보안 키를 분실하면 복구 코드, 인증 코드, Google 메시지 등 다른 인증 수단이 필요하고, 다른 2단계 인증이 없으면 계정 복구 절차를 따르며 최대 3~5일의 확인 기간이 소요될 수 있다.",
+      "tier": "official"
+    },
+    {
+      "title": "Google 메시지로 로그인 - Android - Google 계정 고객센터",
+      "url": "https://support.google.com/accounts/answer/7026266?hl=ko",
+      "host": "support.google.com",
+      "body": "Google 도움말 'Google 메시지로 로그인'(Android). 휴대전화에서 알림을 탭해 Google 계정 로그인을 확인하는 기능이다. 비밀번호 대신 휴대전화로 로그인하는 경우, 2단계 인증을 사용할 때, 계정 복구를 시도할 때 쓸 수 있다. Google 계정에 로그인한 모든 Android 휴대전화에서 Google 메시지를 받을 수 있다. 전화번호 기반 계정 해킹을 방지하고 의심스러운 활동을 차단하는 장점이 있다. Android 기기 설정의 '비밀번호 및 계정' > 'Google'에서 계정을 확인할 수 있으며, 메시지 미수신·타임아웃·휴대전화 미보유 등 상황별 해결 방안을 제시한다.",
+      "tier": "official"
+    },
+    {
+      "title": "추석연휴기간 사이버 공격 대비 보안공지 - KISA 보호나라&KrCERT/CC",
+      "url": "https://www.boho.or.kr/kr/bbs/view.do?bbsId=B0000133&menuNo=205020&pageIndex=1&nttId=71881",
+      "host": "www.boho.or.kr",
+      "body": "KISA 보호나라&KrCERT/CC 보안공지 '추석연휴기간 사이버 공격 대비 보안공지'(게시일 2025-10-02). 랜섬웨어 침해사고 예방을 위한 기본 보안 설정 강화 항목 가운데 '계정 관리 강화'에서 '계정 비밀번호 인증 이외의 추가적인 2차 인증수단 적용'을 권고한다. 백업 전략으로는 네트워크와 분리된 별도의 저장소에 정기적인 백업을 하고, 클라우드에 보관된 자료도 클라우드 자체의 랜섬웨어 감염에 대비해 정기적으로 백업하라고 강조한다. 이 공지는 개인용 구글 계정을 직접 다루는 글은 아니고, 기관·기업 환경을 포함한 일반 보안 수칙의 하나로 2차 인증을 권고하는 문서다.",
+      "tier": "official"
+    },
+    {
+      "title": "비밀번호 잊는 순간, 구글은 당신을 모른다 - ITWorld",
+      "url": "https://www.itworld.co.kr/article/4058963/비밀번호-잊는-순간-구글은-당신을-모른다.html",
+      "host": "www.itworld.co.kr",
+      "body": "ITWorld 코리아 2025-09-18 기사(저자 Alaina Yee). 구글 계정을 만들 때 계정에 다시 접근할 수 있는 복구 방법을 설정하는 것을 간과하는 사용자가 많다고 지적한다. 복구 정보는 비밀번호를 잊었을 때, 2단계 인증 수단을 잃어버렸을 때, 휴대폰이 도난당했을 때, 계정이 해킹당했을 때의 안전망이다. 대다수 사용자에게는 복구용 전화번호와 이메일 주소를 모두 설정하는 것이 바람직하며, 복구용 이메일은 별도의 다른 계정이어야 하고 강력하고 고유한 비밀번호로 보호되어야 한다고 권한다. 2단계 인증 설정 시 받는 백업 코드는 출력물로 오프라인 보관하거나 보안이 유지된 암호화 파일로 저장할 수 있지만 비밀번호 관리자에 저장하는 것은 권장하지 않는다고 쓴다. 기사에는 구체적인 통계 수치가 없다.",
+      "tier": "press"
+    }
+  ],
+  "claims": [
+    {
+      "claim": "2단계 인증은 Google 계정 > 보안 및 로그인 > 'Google에 로그인하는 방법'에서 2단계 인증 사용을 고르고 화면 단계를 따르면 켜진다.",
+      "grade": "confirmed",
+      "evidence": [
+        "설정 4단계: 계정 열기, 보안 및 로그인, 2단계 인증 사용 선택, 화면 단계 따르기",
+        "설정 후에는 비밀번호와 2단계, 또는 패스키로 로그인"
+      ],
+      "sourceUrls": [
+        "https://support.google.com/accounts/answer/185839?hl=ko&co=GENIE.Platform%3DDesktop"
+      ]
+    },
+    {
+      "claim": "두 번째 확인 수단은 Google 메시지, 패스키·보안 키, 인증 코드 앱, 문자·전화, QR 코드, 복구 코드 중에서 고른다. 문자·전화 코드는 전화번호 기반 해킹에 취약할 수 있다고 공식 문서가 밝힌다.",
+      "grade": "confirmed",
+      "evidence": [
+        "Google 메시지는 2단계로 쓰는 것을 권하고 SIM 스와프 등 전화번호 기반 해킹을 차단",
+        "패스키·보안 키는 피싱 공격으로부터 보호",
+        "OTP 앱은 인터넷 연결이나 모바일 서비스가 없어도 설정 가능",
+        "문자·전화는 6자리 코드, 전화번호 기반 해킹에 취약할 수 있음"
+      ],
+      "sourceUrls": [
+        "https://support.google.com/accounts/answer/185839?hl=ko&co=GENIE.Platform%3DDesktop",
+        "https://support.google.com/accounts/answer/1066447?hl=ko",
+        "https://support.google.com/accounts/answer/6103523?hl=ko",
+        "https://support.google.com/accounts/answer/7026266?hl=ko"
+      ]
+    },
+    {
+      "claim": "기기를 잃어버릴 때를 대비해 백업 코드(8자리 10개, 일회용)를 받아 안전한 곳에 보관한다. 새 세트를 만들면 이전 세트는 비활성화된다.",
+      "grade": "confirmed",
+      "evidence": [
+        "경로: 보안 및 로그인 > 2단계 인증 > 백업 코드 계속 > 백업 코드 받기",
+        "10개 세트, 각 8자리, 코드마다 한 번만 사용",
+        "새 세트 생성 시 이전 세트 자동 비활성화"
+      ],
+      "sourceUrls": [
+        "https://support.google.com/accounts/answer/1187538?hl=ko",
+        "https://support.google.com/accounts/answer/185839?hl=ko&co=GENIE.Platform%3DDesktop"
+      ]
+    },
+    {
+      "claim": "복구 전화번호·복구 이메일을 같이 최신으로 두어야 한다. 복구 전화번호 변경은 적용까지 최대 7일이 걸리고, Google Voice 번호는 계정 접근을 막을 수 있다.",
+      "grade": "confirmed",
+      "evidence": [
+        "복구 전화번호 추가·변경은 최대 7일",
+        "Google Voice 번호를 복구 전화번호로 쓰면 계정에 액세스하지 못할 수 있음",
+        "복구 이메일은 로그인에 쓰는 주소가 아닌 다른 주소를 권장"
+      ],
+      "sourceUrls": [
+        "https://support.google.com/accounts/answer/183723?hl=ko"
+      ]
+    },
+    {
+      "claim": "새 수단은 바로 안 쓰일 수 있다. 새 2단계 전화번호는 최대 7일, 새 보안 키는 7일, 새로 설정한 Google OTP는 최대 7일 뒤에 로그인 옵션으로 쓰일 수 있다. 보안 키를 잃고 다른 수단이 없으면 복구에 최대 3~5일이 걸릴 수 있다.",
+      "grade": "confirmed",
+      "evidence": [
+        "전화번호 신뢰 최대 7일",
+        "보안 키 로그인 사용까지 7일 가능",
+        "Google OTP 옵션 표시까지 최대 7일",
+        "보안 키 분실 시 다른 수단 없으면 최대 3~5일 확인 기간"
+      ],
+      "sourceUrls": [
+        "https://support.google.com/accounts/answer/185839?hl=ko&co=GENIE.Platform%3DDesktop",
+        "https://support.google.com/accounts/answer/6103523?hl=ko",
+        "https://support.google.com/accounts/answer/1066447?hl=ko"
+      ]
+    },
+    {
+      "claim": "KISA 보호나라 공지(2025-10-02)는 계정 관리 강화 항목에서 비밀번호 이외의 추가적인 2차 인증수단 적용을 권고한다.",
+      "grade": "confirmed",
+      "evidence": [
+        "추석 연휴 사이버 공격 대비 보안공지 안 계정 관리 강화 항목",
+        "개인용 구글 계정 전용 문서는 아님"
+      ],
+      "sourceUrls": [
+        "https://www.boho.or.kr/kr/bbs/view.do?bbsId=B0000133&menuNo=205020&pageIndex=1&nttId=71881"
+      ]
+    },
+    {
+      "claim": "ITWorld 기사는 복구 전화번호와 이메일을 모두 설정하고, 복구 이메일은 별도 계정으로 강한 비밀번호를 쓰라고 권한다. 백업 코드는 출력 보관 또는 암호화 파일 저장을 말하며 비밀번호 관리자 저장은 권하지 않는다.",
+      "grade": "reported",
+      "evidence": [
+        "2025-09-18 기사, 필자 의견",
+        "Google 도움말은 안전한 장소에 보관하라고만 안내"
+      ],
+      "sourceUrls": [
+        "https://www.itworld.co.kr/article/4058963/비밀번호-잊는-순간-구글은-당신을-모른다.html"
+      ]
+    }
+  ],
+  "numbers": [
+    {
+      "what": "백업 코드 한 세트 개수",
+      "value": "10개(각 8자리, 코드마다 1회용)",
+      "asOf": "2026-10-07 도움말 확인",
+      "sourceUrl": "https://support.google.com/accounts/answer/1187538?hl=ko"
+    },
+    {
+      "what": "새 2단계 전화번호를 Google이 신뢰하기까지",
+      "value": "최대 7일",
+      "asOf": "2026-10-07 도움말 확인",
+      "sourceUrl": "https://support.google.com/accounts/answer/185839?hl=ko&co=GENIE.Platform%3DDesktop"
+    },
+    {
+      "what": "의심스러운 점이 감지돼 사용 중지된 2단계 전화번호의 확인 기한",
+      "value": "30일 이내",
+      "asOf": "2026-10-07 도움말 확인",
+      "sourceUrl": "https://support.google.com/accounts/answer/185839?hl=ko&co=GENIE.Platform%3DDesktop"
+    },
+    {
+      "what": "복구 전화번호 추가·변경이 적용되기까지",
+      "value": "최대 7일",
+      "asOf": "2026-10-07 도움말 확인",
+      "sourceUrl": "https://support.google.com/accounts/answer/183723?hl=ko"
+    },
+    {
+      "what": "새 보안 키가 로그인에 쓰이기까지",
+      "value": "7일",
+      "asOf": "2026-10-07 도움말 확인",
+      "sourceUrl": "https://support.google.com/accounts/answer/6103523?hl=ko"
+    },
+    {
+      "what": "Google OTP가 로그인 옵션으로 표시되기까지",
+      "value": "최대 7일",
+      "asOf": "2026-10-07 도움말 확인",
+      "sourceUrl": "https://support.google.com/accounts/answer/1066447?hl=ko"
+    },
+    {
+      "what": "보안 키 분실 후 다른 수단이 없을 때 계정 복구 확인 기간",
+      "value": "최대 3~5일",
+      "asOf": "2026-10-07 도움말 확인",
+      "sourceUrl": "https://support.google.com/accounts/answer/6103523?hl=ko"
+    },
+    {
+      "what": "문자·전화로 받는 인증 코드 자릿수",
+      "value": "6자리",
+      "asOf": "2026-10-07 도움말 확인",
+      "sourceUrl": "https://support.google.com/accounts/answer/185839?hl=ko&co=GENIE.Platform%3DDesktop"
+    },
+    {
+      "what": "KISA 보호나라 공지 게시일",
+      "value": "2025-10-02",
+      "asOf": "공지 게시일",
+      "sourceUrl": "https://www.boho.or.kr/kr/bbs/view.do?bbsId=B0000133&menuNo=205020&pageIndex=1&nttId=71881"
+    }
+  ],
+  "dropped": [
+    {
+      "url": "https://www.kisa.or.kr/402/form?postSeq=2378",
+      "why": "인증서 오류로 본문을 읽지 못함"
+    },
+    {
+      "url": "https://kisa.or.kr/401/form?lang_type=KO&postSeq=2860",
+      "why": "인증서 오류로 본문을 읽지 못함"
+    },
+    {
+      "url": "https://extrememanual.net/47608",
+      "why": "개인 블로그, 검색 스니펫만 확인하고 본문 미열람"
+    },
+    {
+      "url": "https://funissu.com/google-account-security-2fa-setup/",
+      "why": "개인 블로그, 본문 미열람"
+    },
+    {
+      "url": "https://hothardware.com/news/google-issues-mandatory-2fa-warning",
+      "why": "본문 미열람, 개인 계정 가이드와 범위가 다를 수 있음"
+    }
+  ],
+  "cannotCover": [
+    "패스키를 등록하는 구체적인 메뉴 이름과 단계(공식 문서에 나오는 사실만 한 줄로 언급)",
+    "구글이 일부 계정에 2단계 인증을 자동으로 켜 두는 정책의 범위·수치",
+    "해킹 피해 통계, 2단계 인증으로 막은 비율 같은 수치",
+    "모바일 앱별 화면 이름과 iPhone Google 메시지의 세부 조건",
+    "백업 코드를 비밀번호 관리자에 넣어도 되는지의 우열(도움말은 안전한 장소라고만 안내, 기사는 비권장)",
+    "직장·학교 계정에서 2단계 인증이 어떻게 적용되는지(관리자 문의 안내만 있음)"
+  ],
+  "songs": []
+}

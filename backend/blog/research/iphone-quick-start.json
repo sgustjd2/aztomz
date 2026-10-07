@@ -1,0 +1,161 @@
+{
+  "keyword": "아이폰 데이터 옮기기 빠른 시작",
+  "categoryId": "hangeut-trend",
+  "notes": "애플 공식 한국어 지원 문서만으로 (1) 빠른 시작의 준비물·두 갈래(iCloud 다운로드/직접 전송), (2) 옛 기기 없이 iCloud 백업으로 복원, (3) iCloud 공간 부족 시 임시 저장 공간(21일), (4) 유선·컴퓨터 백업이라는 다른 길을 정확히 쓸 수 있다. 소요 시간·용량·앱별(왓츠앱·카카오톡) 이전 여부·최신 iOS 번호는 문서에 없어 다루지 않는다.",
+  "sources": [
+    {
+      "title": "빠른 시작을 사용하여 데이터를 새 iPhone 또는 iPad로 전송하기",
+      "url": "https://support.apple.com/ko-kr/102659",
+      "host": "support.apple.com",
+      "tier": "official",
+      "body": "빠른 시작을 사용하여 데이터를 새 iPhone 또는 iPad로 전송하기. iOS 11, iPadOS 13 및 이후 버전이 설치된 다른 iPhone 또는 iPad를 사용하는 경우 빠른 시작으로 새 기기를 자동으로 설정할 수 있다. 현재 기기에서 Wi-Fi에 연결하고 Bluetooth를 켜 둔다. 현재 기기의 잠금을 해제해 홈 화면으로 이동하고, 새 기기를 켠다. 설정 중 데이터 전송 방식으로 iCloud에서 다운로드하거나 이전 기기에서 직접 전송 중 선택한다. 'iCloud에서 다운로드하는 경우 앱과 데이터가 백그라운드에서 다운로드되므로 곧바로 새 기기를 사용할 수 있습니다.' '이전 기기에서 직접 전송하는 경우에는 두 기기 모두에서 전송이 완료되어야 기기를 사용할 수 있습니다.' 기기가 모두 최신 버전의 iOS 또는 iPadOS로 업데이트되었는지 확인하고, 현재 기기를 몇 분 동안 쓰지 않아도 되는 시간을 고른다. 전송이 끝날 때까지 두 기기를 서로 가까이에 두고 전원에 연결해 둔다. 새 기기가 Apple School Manager 또는 Apple Business에 등록된 경우 현재 기기의 데이터를 전송하는 데 빠른 시작을 사용할 수 없다. 전송에 걸리는 시간은 네트워크 상태, 전송하는 데이터 양 등의 요인에 따라 달라질 수 있다."
+    },
+    {
+      "title": "이전 iOS 또는 iPadOS 기기에서 새 iPhone 또는 iPad로 데이터 전송하기",
+      "url": "https://support.apple.com/ko-kr/119967",
+      "host": "support.apple.com",
+      "tier": "official",
+      "body": "이전 iOS 또는 iPadOS 기기에서 새 iPhone 또는 iPad로 데이터 전송하기. 시작하기 전에 확인할 것: 기기를 백업했는지 확인합니다. Apple 계정 암호를 준비합니다. SIM 카드 또는 eSIM을 새 기기로 옮기는 부분을 확인합니다. 새 기기를 구입했는데 iCloud 저장 공간이 부족하면 임시 iCloud 저장 공간을 이용할 수 있습니다. 전송 방법은 세 가지로 안내한다. 첫째, 빠른 시작: iPhone 또는 iPad를 사용하여 새 기기를 자동으로 설정합니다. 둘째, iCloud: 이전 기기의 iCloud 백업을 사용하여 개인 데이터 및 구입한 콘텐츠를 새 기기로 전송합니다. 셋째, Apple 기기 앱, iTunes 또는 Finder: Apple 기기 앱, iTunes 또는 Finder에서 만든 백업에서 개인 데이터 및 구입한 콘텐츠를 새 기기로 전송합니다. 각 방법의 자세한 절차는 별도 문서 링크로 제공한다."
+    },
+    {
+      "title": "iCloud를 사용하여 이전 iOS 또는 iPadOS 기기의 데이터를 새 iPhone 또는 iPad로 전송하기",
+      "url": "https://support.apple.com/ko-kr/108344",
+      "host": "support.apple.com",
+      "tier": "official",
+      "body": "iCloud를 사용하여 이전 iOS 또는 iPadOS 기기의 데이터를 새 iPhone 또는 iPad로 전송하기. 근처에 있는 기존 기기를 사용하여 데이터를 전송하려면 iOS 17.2, iPadOS 17.2 및 이후 버전이 필요합니다. 기존 기기에서 Wi-Fi와 Bluetooth를 켜고 두 기기를 나란히 둔 뒤, 빠른 시작 화면에서 카메라로 애니메이션을 스캔하고, 사용자 데이터 전송 화면에서 iCloud에서 다운로드를 선택한다. 기존 기기 없이 진행하는 방법: 새 기기 설정 중 앱 및 데이터 화면이 표시될 때까지 단계를 따른 다음 iCloud 백업에서 복원을 탭하고, Apple 계정으로 로그인해 백업을 선택한다(날짜와 크기 확인). 새 기기를 이미 설정한 경우, 이러한 단계를 수행하려면 먼저 새 기기를 지워야 합니다. iOS 15 이상은 설정 > 일반 > 전송 또는 [기기] 재설정 > 모든 콘텐츠 및 설정 지우기. 복원이 끝날 때까지 Wi-Fi에 연결하고 전원에 연결해 둔다."
+    },
+    {
+      "title": "백업에서 iPhone, iPad 또는 iPod touch 복원하기",
+      "url": "https://support.apple.com/ko-kr/118105",
+      "host": "support.apple.com",
+      "tier": "official",
+      "body": "백업에서 iPhone, iPad 또는 iPod touch 복원하기(게시일 2026년 07월 20일). iCloud 백업에서 복원: 기기를 켠다. '안녕하세요' 화면이 표시된다. 앱 및 데이터 전송 화면이 나올 때까지 화면에 표시되는 설정 단계를 따른 다음 'iCloud 백업에서'를 탭한다. Apple 계정에 로그인한다. 각 백업의 날짜와 크기를 살펴보고 가장 관련 있는 백업을 선택한다. 메시지가 표시되면 앱과 구입 항목을 복원할 Apple 계정에 로그인한다. Wi-Fi에 연결된 상태에서 진행 막대가 완료될 때까지 기다린다. 컴퓨터 백업에서 복원: Finder 또는 Apple 기기 앱을 열고 USB 케이블로 연결해 기기를 선택하고 '백업 복원'을 선택, 백업의 날짜를 보고 선택한 뒤 '복원'을 클릭한다. 기기가 재시동되면 연결한 상태로 두고 컴퓨터와 동기화될 때까지 기다린다. 기기를 지우고 이전 iCloud 백업에서 복원하지 않으면 새 기기로 설정한 후 생성된 새로운 iCloud 백업이 이전에 저장된 iCloud 백업을 덮어쓰게 된다."
+    },
+    {
+      "title": "새 iPhone 또는 iPad 구입 시 임시 iCloud 저장 공간 이용하기",
+      "url": "https://support.apple.com/ko-kr/104980",
+      "host": "support.apple.com",
+      "tier": "official",
+      "body": "새 iPhone 또는 iPad 구입 시 임시 iCloud 저장 공간 이용하기. 새 기기를 구입했는데 iCloud 저장 공간이 부족한 경우, 기존 기기를 최신 iOS 또는 iPadOS로 업데이트한 뒤 임시 백업을 만들 수 있다. 설정 앱에서 일반을 탭하고 아래로 스크롤해 전송 또는 [기기] 재설정을 탭한다. '새로운 [기기] 준비하기'에서 시작하기를 탭한다. 'iCloud 백업이 꺼져 있음'이 표시되면 '백업 켜서 전송하기'를 탭한다. 추가 공간을 무료로 제공한다는 메시지가 나오면 계속을 탭하고 백업이 끝날 때까지 기다린다. 임시 백업은 21일 안에 새 기기에 복원해야 하며 기간이 지나면 영구 삭제된다. 새 기기가 21일 내에 도착하지 않으면 기존 기기 설정에서 '백업 더 오래 유지하기'를 탭해 21일을 더 연장할 수 있다. 복원한 뒤 임시 백업은 7일 동안 유지되고 이후 영구 삭제된다. 임시 백업을 새 기기에 복원할 때까지 기존 iPhone 또는 iPad를 지우지 않는다."
+    },
+    {
+      "title": "iCloud를 사용하여 iPhone 또는 iPad를 백업하는 방법",
+      "url": "https://support.apple.com/ko-kr/108366",
+      "host": "support.apple.com",
+      "tier": "official",
+      "body": "iCloud를 사용하여 iPhone 또는 iPad를 백업하는 방법. 기기를 교체 또는 분실하거나 기기가 손상되는 경우 복사해 둔 정보를 사용할 수 있다. 수동 백업: Wi-Fi 네트워크에 연결하고, 설정 앱에서 사용자 이름을 탭한 뒤 iCloud를 선택, iCloud 백업을 선택하고 '지금 백업'을 탭한다. 백업이 끝날 때까지 Wi-Fi 연결을 유지한다. 자동 백업: iCloud 백업이 켜져 있는지 확인하고, 기기를 전원에 연결하고, Wi-Fi 네트워크에 연결하고, 화면이 잠긴 상태여야 자동으로 백업된다. iCloud 저장 공간이 충분하지 않으면 저장 공간을 추가로 구입해야 한다."
+    },
+    {
+      "title": "유선 연결을 사용하여 새 iPhone 또는 iPad로 데이터 전송하기",
+      "url": "https://support.apple.com/ko-kr/117383",
+      "host": "support.apple.com",
+      "tier": "official",
+      "body": "유선 연결을 사용하여 새 iPhone 또는 iPad로 데이터 전송하기(게시일 2025년 11월 07일). 필요한 케이블은 기기 조합에 따라 다르다. iPhone 15 이후 모델 간에는 USB-C 충전 케이블(60W), iPhone 14 이전 모델에서 iPhone 15 이후 모델로는 USB-C-Lightning 케이블(1m), iPhone 14 이전 모델 간에는 Lightning-USB 3 카메라 어댑터와 Lightning-USB 케이블(1m), 12W 이상의 전원 어댑터가 필요하다. 두 기기를 켜고 화면 지침을 따르고, 새 기기를 Wi-Fi 또는 셀룰러 네트워크에 연결하고, 필요하면 셀룰러 서비스를 활성화하고, Face ID 또는 Touch ID를 설정한다. 전송에 걸리는 시간은 네트워크 상태, 전송하는 데이터 양 등의 요인에 따라 달라질 수 있다."
+    },
+    {
+      "title": "Finder, Apple 기기 앱 또는 iTunes를 사용하여 이전 iOS 기기의 데이터를 새 iPhone 또는 iPad로 전송하기",
+      "url": "https://support.apple.com/ko-kr/120001",
+      "host": "support.apple.com",
+      "tier": "official",
+      "body": "Finder, Apple 기기 앱 또는 iTunes를 사용하여 이전 iOS 기기의 데이터를 새 iPhone 또는 iPad로 전송하기(게시일 2026년 04월 23일). 준비물은 Apple 기기 앱, Finder 또는 iTunes로 만든 이전 기기의 백업과, 백업을 만든 컴퓨터다. 새 기기를 이미 설정했다면 먼저 모든 콘텐츠 및 설정을 지운다. 새 기기를 켜서 앱 및 데이터 화면이 나오면 'Mac 또는 PC에서 복원'을 선택하고, 컴퓨터에 연결해 Finder 또는 iTunes에서 '백업 복원'을 선택한다. 백업이 암호화되어 있지 않은 경우 iOS 기기 또는 Apple Watch의 건강 및 활동 데이터가 전송되지 않는다. 암호화된 백업은 복원 시 암호를 입력해야 한다. 완료 후에는 Wi-Fi에 연결하고 전원에 연결해 두어 자동 다운로드가 이어지게 하는 것이 좋다."
+    }
+  ],
+  "claims": [
+    {
+      "claim": "빠른 시작은 옛 기기를 새 기기 옆에서 켜 놓고 화면 안내를 따르는 방식이며, 데이터는 iCloud에서 다운로드하거나 이전 기기에서 직접 전송 중 고른다.",
+      "grade": "confirmed",
+      "evidence": [
+        "iOS 11, iPadOS 13 이후 버전이 설치된 다른 iPhone·iPad가 있을 때 사용",
+        "현재 기기는 Wi-Fi 연결·Bluetooth 켜짐, 잠금 해제 후 홈 화면, 새 기기 켜기",
+        "iCloud 다운로드: 앱·데이터가 백그라운드로 내려받아져 곧바로 사용 가능",
+        "직접 전송: 두 기기 모두 전송이 끝나야 사용 가능"
+      ],
+      "sourceUrls": ["https://support.apple.com/ko-kr/102659"]
+    },
+    {
+      "claim": "빠른 시작 전에는 두 기기를 최신 iOS로 업데이트하고, 전송이 끝날 때까지 가까이 두고 전원에 연결하며, 현재 기기를 몇 분 못 쓰는 시간을 골라야 한다. 새 기기가 Apple School Manager·Apple Business에 등록돼 있으면 쓸 수 없다.",
+      "grade": "confirmed",
+      "evidence": [
+        "기기가 모두 최신 iOS/iPadOS인지 확인",
+        "두 기기를 서로 가까이 두고 전원에 연결",
+        "Apple School Manager 또는 Apple Business 등록 기기는 빠른 시작 불가",
+        "소요 시간은 네트워크 상태·데이터 양에 따라 다름(수치 없음)"
+      ],
+      "sourceUrls": ["https://support.apple.com/ko-kr/102659"]
+    },
+    {
+      "claim": "옛 기기 없이도 새 기기 설정 중 '앱 및 데이터' 화면에서 iCloud 백업을 골라 복원할 수 있고, 백업은 날짜와 크기를 보고 고른다. 새 기기를 이미 설정했다면 먼저 지워야 한다.",
+      "grade": "confirmed",
+      "evidence": [
+        "'안녕하세요' 화면 후 설정 단계를 따라 앱 및 데이터 전송 화면에서 iCloud 백업 선택",
+        "Apple 계정 로그인, 백업의 날짜와 크기 확인, Wi-Fi 연결 상태로 진행 막대 완료까지 대기",
+        "이미 설정한 새 기기는 먼저 지워야 함(iOS 15 이상: 설정 > 일반 > 전송 또는 [기기] 재설정 > 모든 콘텐츠 및 설정 지우기)",
+        "근처 기존 기기로 iCloud 전송은 iOS 17.2 이후 필요"
+      ],
+      "sourceUrls": [
+        "https://support.apple.com/ko-kr/118105",
+        "https://support.apple.com/ko-kr/108344"
+      ]
+    },
+    {
+      "claim": "옮기기 전에 백업을 했는지, Apple 계정 암호를 아는지, SIM·eSIM 이동을 확인하는 것이 공식 사전 점검이다. 백업은 iCloud 설정에서 '지금 백업'으로 직접 할 수 있다.",
+      "grade": "confirmed",
+      "evidence": [
+        "기기 백업 확인, Apple 계정 암호 준비, SIM·eSIM 이동 확인",
+        "경로: 설정 > [사용자 이름] > iCloud > iCloud 백업 > 지금 백업",
+        "백업이 끝날 때까지 Wi-Fi 연결 유지, 저장 공간이 부족하면 추가 구입 필요"
+      ],
+      "sourceUrls": [
+        "https://support.apple.com/ko-kr/119967",
+        "https://support.apple.com/ko-kr/108366"
+      ]
+    },
+    {
+      "claim": "iCloud 공간이 모자라면 새 기기 구입 시 임시 iCloud 저장 공간을 쓸 수 있다. 임시 백업은 21일 안에 복원해야 하고(연장 21일), 복원 후 7일 뒤 삭제되며, 복원 전에는 옛 기기를 지우면 안 된다.",
+      "grade": "confirmed",
+      "evidence": [
+        "경로: 설정 > 일반 > 전송 또는 [기기] 재설정 > 새로운 [기기] 준비하기 > 시작하기",
+        "임시 백업 복원 기한 21일, '백업 더 오래 유지하기'로 21일 연장",
+        "복원 후 7일 유지 뒤 영구 삭제",
+        "복원 전 기존 기기를 지우지 말 것"
+      ],
+      "sourceUrls": ["https://support.apple.com/ko-kr/104980"]
+    },
+    {
+      "claim": "빠른 시작·iCloud 말고도 유선 케이블 전송과 컴퓨터 백업 복원이 있다. 컴퓨터 백업이 암호화되지 않으면 건강·활동 데이터는 전송되지 않는다.",
+      "grade": "confirmed",
+      "evidence": [
+        "공식 분류는 빠른 시작·iCloud·Apple 기기 앱/iTunes/Finder 세 가지",
+        "유선 전송은 기기 조합마다 필요한 케이블이 다름",
+        "암호화되지 않은 백업은 건강 및 활동 데이터가 전송되지 않음"
+      ],
+      "sourceUrls": [
+        "https://support.apple.com/ko-kr/119967",
+        "https://support.apple.com/ko-kr/117383",
+        "https://support.apple.com/ko-kr/120001"
+      ]
+    }
+  ],
+  "numbers": [
+    { "what": "빠른 시작 사용 가능한 이전 기기 OS", "value": "iOS 11, iPadOS 13 및 이후 버전", "asOf": "문서 확인 2026-10-07", "sourceUrl": "https://support.apple.com/ko-kr/102659" },
+    { "what": "근처 기존 기기로 iCloud 전송할 때 필요한 OS", "value": "iOS 17.2, iPadOS 17.2 및 이후 버전", "asOf": "문서 확인 2026-10-07", "sourceUrl": "https://support.apple.com/ko-kr/108344" },
+    { "what": "임시 iCloud 백업 복원 기한", "value": "21일(백업 더 오래 유지하기로 21일 연장)", "asOf": "문서 확인 2026-10-07", "sourceUrl": "https://support.apple.com/ko-kr/104980" },
+    { "what": "복원 후 임시 백업 유지 기간", "value": "7일", "asOf": "문서 확인 2026-10-07", "sourceUrl": "https://support.apple.com/ko-kr/104980" },
+    { "what": "백업 복원 문서 게시일", "value": "2026년 7월 20일", "asOf": "문서 확인 2026-10-07", "sourceUrl": "https://support.apple.com/ko-kr/118105" },
+    { "what": "iPhone 15 이후 모델 간 유선 전송 케이블", "value": "USB-C 충전 케이블(60W)", "asOf": "문서 확인 2026-10-07", "sourceUrl": "https://support.apple.com/ko-kr/117383" }
+  ],
+  "dropped": [
+    { "url": "https://www.apeaksoft.com/ko/transfer-data/how-to-transfer-data-from-iphone-to-iphone/", "why": "제3자 유료 도구 홍보 성격, 공식 문서로 충분" },
+    { "url": "https://discussionskorea.apple.com/thread/256258670", "why": "사용자 커뮤니티 글, 본문 미확인" },
+    { "url": "https://support.apple.com/ko-kr/guide/iphone/iph3d1110d4/ios", "why": "페치 결과 주제가 달랐음(캘린더 문서), 근거로 못 씀" }
+  ],
+  "cannotCover": [
+    "빠른 시작·iCloud 복원의 구체적 소요 시간",
+    "필요한 저장 공간·용량 기준",
+    "WhatsApp·카카오톡·인증서·은행앱 등 개별 앱 데이터 이전 가능 여부",
+    "현재 최신 iOS 버전 번호",
+    "안드로이드에서 아이폰으로 옮기기(이 글 범위 밖)",
+    "직접 해본 소요 시간·체감 후기"
+  ],
+  "songs": []
+}
