@@ -109,7 +109,7 @@ git push origin main              # → Vercel 자동 재배포
 - 변경시 자동 커밋·푸시 (리포에만 저장, 배포되지 않음)
 
 **블로그 티스토리·네이버 일일 발행:**
-- 09:00 집필: Windows 스케줄작업 `AZ2MZ_Blog_Daily` → `claude -p /blog-daily` 스킬이 10편(티스토리 5+네이버 5, 서로 다른 글) 집필·검증. 로그: `backend/out/blog/blog-daily.log`
+- 09:00 집필: Windows 스케줄작업 `AZ2MZ_Blog_Daily` → `claude -p /blog-daily` 스킬이 4편(티스토리 2+네이버 2, 서로 다른 글 — 2026-10-07 토큰 절약으로 5+5에서 축소) 집필·검증. 로그: `backend/out/blog/blog-daily.log`
 - 12:00·15:00·18:00 발행: Windows 스케줄작업 `AZ2MZ_Blog_Queue` → `node backend/scripts/blog-queue.mjs`가 플랫폼별 순차 발행(T→N→T→N…, 글 사이 20~40분 랜덤, 각 플랫폼 하루 5편 한도). 로그: `backend/out/blog/blog-queue.log`
 - 로그인 자동화 없음(기존 철칙) — 전용 프로필(티스토리 `backend/.tistory-profile`, 네이버 `backend/.naver-profile`)에 1회 로그인 후 재사용
 

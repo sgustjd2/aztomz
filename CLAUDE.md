@@ -43,7 +43,7 @@
 | `blog-publish.mjs <id>` | Playwright로 티스토리 자동 발행. `--login`(1회) · `--keepalive`(세션 유지, 스케줄러 하루 1회) · `--dry` · `--draft` · `--probe` · `--categories` · `--cover` |
 | `blog-publish-naver.mjs <id>` | **네이버 블로그 발행**(SmartEditor ONE) — 클립보드 붙여넣기로 본문 주입(붙여넣은 뒤 사용자 클립보드 복원), 커버·그림은 [사진] 업로드, 유튜브 iframe은 링크로 변환, 카테고리는 `naverCategory()` 자동 매핑(한끗 트렌드/맛집·디저트·카페·핫플·신조어·밈·노래·음악·패션·뷰티 · AI·IT/AI 동향·개발·자동화 · 생활정보). **`meta.platform === "naver"` 글만** 올린다(`--force` 예외). `--login`(1회, 전용 프로필 `backend/.naver-profile`) · `--dry` · `--draft`(임시저장) · `--probe` · `--selftest`. 기록 `posted-naver.json`. 로그인·캡차는 사람 |
 | `blog-recover.mjs <id>|--all` | **발행된 티스토리 글의 커버만 교체** — 게시된 본문을 에디터에서 읽어 맨 앞 커버 이미지만 새 카드로 바꿈(본문 보존), 저장 후 공개 페이지 og:image 변경 확인, 편집 화면을 못 벗어나면 캡차로 보고 전체 중단. `--gap=60-120`(초) · `--until=HH:MM` · `--reuse`(렌더된 `<id>.cover.png` 사용) · `--list` · `--selftest`. 기록 `out/blog/cover-refresh.json`(다음 실행은 남은 글부터), 대기열과 같은 락 |
-| `blog-queue.mjs` | **블로그 자동 발행 대기열(티스토리+네이버, 서로 다른 글)** — `meta.platform`별로, **검증 통과 후 본문이 안 바뀐 글**(`meta.verified.html` = 현재 html sha1, `blog-verify.mjs`가 통과 시 기록)만 골라 T→N 번갈아 발행. 플랫폼당 하루 `--max`(5)편(한국 날짜 기준, 발행 기록으로 셈) · 글 사이 `--gap`(20-40)분 랜덤 · `builtAt` `--max-age`(7)일 이내 · 한 플랫폼 실패 시 그날 그 플랫폼만 중단 · 동시 실행 락(`out/blog/.queue.lock`) · 창은 화면 밖(`BLOG_OFFSCREEN=1`). `--list` · `--only=naver` · `--selftest` |
+| `blog-queue.mjs` | **블로그 자동 발행 대기열(티스토리+네이버, 서로 다른 글)** — `meta.platform`별로, **검증 통과 후 본문이 안 바뀐 글**(`meta.verified.html` = 현재 html sha1, `blog-verify.mjs`가 통과 시 기록)만 골라 T→N 번갈아 발행. 플랫폼당 하루 `--max`(5)편(한국 날짜 기준, 발행 기록으로 셈) · 글 사이 `--gap`(20-40)분 랜덤 · `builtAt` `--max-age`(7)일 이내 · 한 플랫폼 실패 시 그날 그 플랫폼만 중단 · 동시 실행 락(`out/blog/.queue.lock`) · 창은 기본 화면 가운데(`lib/window.mjs`, 위치 `BLOG_WIN_POS="x,y"`), 무인 시 화면 밖은 `BLOG_OFFSCREEN=1`. `--list` · `--only=naver` · `--selftest` |
 | `blog-extension-server.mjs` | **크롬 확장(`backend/tistory-extension/`) 로컬 브릿지** — `backend/out/blog/`를 읽어 확장에 초안(제목·카테고리·태그·본문)을 내려주는 HTTP 서버. `--port=`(기본 8137) · `--selftest`. 발행·로그인·캡차·커버 이미지 첨부는 여전히 사람이 직접 한다 — 확장은 "채우기"만, `blog-publish.mjs`(Playwright 완전자동)와는 별개의 반자동 경로다 |
 | `blog-feedback.mjs` | 노래 추천 피드백 → 선곡 기준 교훈 적립(다음 글에 주입). `--list` · `--good=` · `--bad=` · `--lesson=` |
 | `keyword-demand.mjs "<주제>" …` | **검색수요 게이트**(결정적·LLM 없음) — 네이버 검색광고 키워드도구 API 로 주제의 월간 검색수(PC+모바일) 조회, `--min`(기본 100) 미달이면 exit 1 로 그 주제 차단. `--json`·`--selftest`. 자격증명 `.env`: `NAVER_AD_API_KEY`·`NAVER_AD_SECRET`·`NAVER_AD_CUSTOMER`(searchad.naver.com 무료 발급). 발행 재개 시 주제 선정 게이트로 씀(seo-playbook §1) |
@@ -74,7 +74,7 @@ node backend/scripts/check-source.mjs backend/data/trends.json --only=<id>  # 5)
 | 매일 07:00 | 펄스 일일 조사(요일 로테이션) | **GitHub Actions** (PC 무관) | `pulse-daily.yml` → `pulse-research.mjs` (시크릿 `GEMINI_API_KEY`) |
 | 매일 08:00 | **YouTube 새 영상 한국어 요약**(AI Engineer 채널) | **GitHub Actions** (PC 무관) | `youtube-summary.yml` → `youtube-summarize.mjs` (시크릿 `GEMINI_API_KEY`) |
 | 월 06:00 | 트렌드 주간 재생성 | **GitHub Actions** (PC 무관) | `daily-refresh.yml`(내부 이름 `weekly-refresh`) → `refresh.mjs` |
-| 매일 09:00 | **블로그 일일 집필 10편**(티스토리 5 + 네이버 5, 서로 다른 주제 · 검증까지, 발행은 대기열) | Windows 스케줄작업 `AZ2MZ_Blog_Daily`(StartWhenAvailable, 제한 8h) | `tools/blog-daily.vbs`(wscript 숨김) → `claude -p /blog-daily` · 로그 `backend/out/blog/blog-daily.log`. (2026-09-24 Hermes 잡 `c49cb13870e0`에서 이관 — 그 잡은 50분 대기 한도라 10편 불가, **일시정지** 상태) |
+| 매일 09:00 | **블로그 일일 집필 4편**(티스토리 2 + 네이버 2 — 2026-10-07 토큰 절약 지시로 5+5에서 축소, 서로 다른 주제 · 검증까지, 발행은 대기열) | Windows 스케줄작업 `AZ2MZ_Blog_Daily`(StartWhenAvailable, 제한 8h) | `tools/blog-daily.vbs`(wscript 숨김) → `claude -p /blog-daily` · 로그 `backend/out/blog/blog-daily.log`. (2026-09-24 Hermes 잡 `c49cb13870e0`에서 이관 — 그 잡은 50분 대기 한도라 10편 불가, **일시정지** 상태) |
 | 매일 21:00 | 펄스/수집 분야 안내 | Hermes(로컬) | — |
 | 월 21:00 | 주간 갱신 | Hermes(로컬) | — |
 | 매일 21:15 | 광고/진짜 일일 재확인 | Hermes(로컬, no-agent) | `recheck_ad.py` → `recheck-ad.mjs` |
@@ -87,8 +87,8 @@ node backend/scripts/check-source.mjs backend/data/trends.json --only=<id>  # 5)
 - ⚠️ **Hermes 크론은 그 시각에 PC+게이트웨이가 켜져 있어야 실행됨**(`tools/start-hermes.bat`).
   PC는 보통 ~22:30까지만 켜짐 — 게이트를 22:00→**21:50**으로 당긴 이유(2026-06-23, 22:00엔 PC가 꺼져 미실행 잦았음).
 - GitHub Actions 2개는 클라우드라 PC 상태와 무관하게 돈다.
-- **블로그 발행은 2026-09-24부터 대기열로 자동화**(사용자 지시: 티스토리 5 + 네이버 5, 서로 다른 글). 09:00 `/blog-daily`(Windows 스케줄작업)가
-  10편을 쓰고 검증해 글마다 `meta.platform`을 배정 → 12:00·15:00·18:00 `blog-queue.mjs`가 순차 발행. 로그인·캡차는 여전히
+- **블로그 발행은 2026-09-24부터 대기열로 자동화**(사용자 지시: 티스토리 5 + 네이버 5 → **2026-10-07부터 토큰 절약으로 2 + 2**, 서로 다른 글). 09:00 `/blog-daily`(Windows 스케줄작업)가
+  4편(티스토리 2 + 네이버 2)을 쓰고 검증해 글마다 `meta.platform`을 배정 → 12:00·15:00·18:00 `blog-queue.mjs`가 순차 발행. 로그인·캡차는 여전히
   사람 몫이라(철칙) **티스토리 세션 만료·캡차가 뜨면 그날 티스토리만 멈춘다**(`blog-queue.log`에 남음 → `blog-publish.mjs --login`).
   세션은 `blog-publish.mjs --keepalive`로 연장된다. 네이버 세션은 30일 영구 쿠키라 상대적으로 안정적.
   (이전: 2026-08-19~09-24 티스토리 발행은 인터랙티브 세션에서 사람이 트리거, 09-13~09-24 일일 배치 중단.)
