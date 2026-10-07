@@ -1,0 +1,1264 @@
+{
+  "keyword": "ChatGPT · Claude · Gemini 개인(소비자) 요금제 비교 — 월 구독료, 무료 한도, 플랜별 차이",
+  "categoryId": "hangeut-trend",
+  "slug": "ai-subscription-plans",
+  "searchedAt": "2026-10-07",
+  "notes": "기준일 2026-10-07(모든 가격은 이날 조회). 이 글이 말할 수 있는 것은 세 가지예요.\n① 3사 개인 플랜 이름과 웹 USD 공식 가격: Claude Free $0·Pro $20(연간 선불 $200)·Max $100/$200, Gemini Free $0·AI Plus $4.99·AI Pro $19.99·AI Ultra $99.99/$199.99, ChatGPT Free $0·Go $8·Plus $20·Pro $100/$200/$500(OpenAI 공식 문서 기준).\n② 한도는 구조 수준의 공식 근거가 있어요(구체 수치는 못 찾았어요): Claude(Pro는 Free의 최소 5배, Max 5x/20x는 Pro의 5배/20배)와 Gemini(Plus 2배·Pro 4배, 구독 없음 기준)는 5시간 갱신+주간 한도, ChatGPT는 공식 문서(Codex 관점)의 Pro 5시간 한도 없음 문구와 언론 보도를 확인했어요. 무료 플랜의 구체 수치는 3사 모두 확보 못 했어요.\n③ 한국 원화는 경로별로 따로 봐야 해요: App Store 원화(3사 목록)와 Gemini 한국 페이지는 확인되지만 발췌에 세금 포함 여부 문구가 없고, 웹 정가는 Claude(한국어 페이지도 USD 표기)·ChatGPT(403)에서 못 읽었어요.\n자료가 갈리는 곳(unclear): c06 Claude 세금 처리, c09 Gemini Ultra 배수(5x 대 한국어 도움말 4x), c11 Gemini AI Plus 한국 가격(₩7,500 대 ₩11,900), c16 ChatGPT 한국 원화(Go ₩13,000 대 언론 ₩15,000). 보도 기반(reported): c13 ChatGPT Pro 개편, c14 Go 한도·광고.\n권장 각도(중립): 어느 쪽이 더 좋은가가 아니라 같은 가격대에서 공식 문구가 말하는 것과 말하지 않는 것. 가격 사다리(무료→저가→$20대→$100대 이상)를 3사 나란히 놓고, 한도 구조는 공통점, 경로(웹 USD 대 App Store 원화)와 세금은 주의점, 갈리는 곳은 자료마다 달라요로 병기해요. 성능·모델 우열·추천·환율 환산은 쓰지 않아요.\n뼈대 후보: 가격 사다리 c01·c07·c12 / 한도 구조 c02·c08 / 한국 원화 경로 c05·c10·c15 / 갈리는 지점 c09·c11·c16 / 최근 변경 c04·c07(Ultra $100 신설)·c13. 모든 가격 표에는 numbers의 channel(웹 USD·App Store 원화·한국 공식 페이지)과 tax를 같이 보여줘요.",
+  "cannotCover": [
+    "ChatGPT Free·Go·Plus의 메시지·파일·이미지 한도 공식 문구, Go는 무료의 10배라는 공식 원문, Pro 100/200/500의 Plus 대비 배수 공식 문구 — 확인 못 했어요. chatgpt.com·openai.com·help.openai.com(로케일 경로 포함)이 전부 HTTP 403이라 못 읽었어요.",
+    "ChatGPT 일반 기능(채팅·이미지·음성·메모리 등)의 플랜별 차이 — 확인 못 했어요. learn.chatgpt.com 가격 문서는 Codex 관점이고 chatgpt.com은 403이었어요.",
+    "ChatGPT Pro 500의 Plus 대비 배수 — 확인 못 했어요. 읽은 본문(The Next Web·Winbuzzer·learn.chatgpt.com)에 숫자가 없어요. 일부 검색 요약의 25배는 본문을 못 읽어서 쓰지 않아요.",
+    "[쓰지 말 것] The Next Web 본문의 \"GPT-6 Pro messages in chat fall from 200 to 100 a week.\" 문장 — 첫 조회에서만 나오고 재조회 발췌에서 사라져서 확인 못 했어요. 요약 모델이 만든 문장일 수 있어서 쓰지 않아요.",
+    "현재(2026-10-07) 신규 ChatGPT Pro 200 가입자에게 적용되는 정확한 배수 — 확인 못 했어요. 보도마다 표현이 달라요(The Next Web은 10월 30일부터 20배→10배, Winbuzzer는 조건에 해당하지 않는 신규 가입은 더 낮은 한도라고 적고 숫자는 발췌에 없음).",
+    "무료 플랜의 구체 수치(메시지·이미지 몇 번 등) — 3사 모두 확인 못 했어요. Claude는 \"Usage limits apply.\"와 5시간·주간 구조를 확인했고 숫자는 못 찾았어요, Gemini는 표준 한도와 컨텍스트 32k tokens를 확인했고 메시지 수는 못 찾았어요, ChatGPT는 공식 문구를 못 읽었어요.",
+    "한국 웹 결제의 원화 정가 — Claude(한국어 가격 페이지도 USD 표기)와 ChatGPT(공식 페이지 403)는 확인 못 했어요. Gemini는 gemini.google/kr의 AI Pro 카드에서 가격 줄을 못 찾아서 Google One 페이지와 App Store에서 확인했어요.",
+    "부가세(VAT) 포함 여부 — 한국 App Store 원화(3사), Gemini 한국 원화 페이지, ChatGPT 가격 문서는 세금 문구가 발췌에 없어서 확인 못 했어요. Claude 가격 페이지는 세금 미포함이라고 적지만 한국 결제에 그대로 적용되는지는 몰라요(c06).",
+    "[쓰지 말 것] App Store의 기간 미표기 줄을 월/연으로 단정하는 것 — ChatGPT Plus ₩299,000, Google AI Plus (400 GB) ₩75,000, Google AI Pro (5 TB) ₩290,000이 연간인지 다른 상품인지 확인 못 했어요. Claude 목록에는 Monthly/Annual이 적혀 있지만 ChatGPT·Gemini 목록 줄에는 기간 표기가 없어요. Gemini Ultra ₩119,000(5배)이 App Store 목록에 없는 이유(웹 한정인지)도 확인 못 했어요.",
+    "Google AI Plus 한국 현재 정가(₩7,500·400GB 대 ₩11,900·2TB) — 확정 못 했어요(c11). Engadget이 인용한 Google 제품 책임자의 인하 게시글 원문은 못 읽었고, 한국 출시 블로그의 가격 비교표는 이미지라 숫자를 못 읽었어요.",
+    "Gemini AI Pro 저장용량 — 구독 페이지·Google One 요금제 페이지·App Store는 5TB, Google One 도움말은 5 TB 또는 10 TB(어떤 조건에서 10TB인지 자료에서 확인 못 했어요). 5TB 하나로 단정하지 않고 출처를 병기해요.",
+    "Claude 2026-05-06 공지가 말한 세 가지 변경 중 세 번째 — 발췌에 없어서 확인 못 했어요. Claude 2026년 Pro·Max 가격·플랜 이름 변경 공지도 release notes에서 못 찾았어요(정독은 아니라서 변경이 없었다고 단정하지 않아요).",
+    "ChatGPT 광고의 한국 적용 여부·시점 — 확인 못 했어요(조회한 자료는 미국 기준 보도였어요).",
+    "ChatGPT·Gemini의 연간 결제 가격 — 확인 못 했어요. Claude Pro 연간($200 선불)은 공식 문구를 확인했지만 ChatGPT·Gemini는 못 찾았어요.",
+    "USD↔KRW 환산 — 기준 환율을 자료에서 못 찾았어요(산업일보의 19일 환율 기준에도 숫자가 발췌에 없어요). 달러 가격을 원화로 환산해 쓰지 않아요.",
+    "Claude 사용 크레딧 상품(App Store의 Usage Credits (20)·(50)·(250) 줄)의 괄호 숫자 단위 — 페이지에 설명이 없어서 확인 못 했어요. 쓰지 않아요.",
+    "성능·벤치마크·어느 쪽이 더 좋다는 비교, 모델 이름·버전별 접근 범위 — 수집하지 않았고 자료 간 표기·시점이 달라서 쓰지 않아요(Gemini Free 카드 3.6 Flash·3.1 Pro 대 블로그 Gemini 3.5 Flash, ChatGPT GPT-6 계열 이름 등).",
+    "Team·Business·Enterprise·Edu 등 개인용이 아닌 플랜 — 범위 밖이에요."
+  ],
+  "claims": [
+    {
+      "id": "c01",
+      "claim": "Claude 개인 플랜은 Free·Pro·Max(5x·20x)예요. 웹 기준 공식 가격은 Free $0, Pro 월 $20(연간 결제는 선불 $200이고 가격표에는 월 $17로 표시), Max 5x 월 $100, Max 20x 월 $200이에요(모두 USD, 2026-10-07 조회).",
+      "grade": "confirmed",
+      "caveat": "한국어 가격 페이지도 발췌에서는 달러($)로 표기돼 있고 원화(₩) 표기를 못 찾았어요(추출기 보고). 원화 웹 정가는 확인 못 했어요. $17은 선불 $200의 월 환산 표기예요(200÷12≈16.7 — 큐레이터 계산, 출처에는 계산 문구 없음). 세금은 c06, 한국 App Store 원화는 c05를 참고해요.",
+      "evidence": [
+        "[공식·claude.com/pricing] Pro 카드: \"$17 Per month with annual subscription discount ($200 billed up front). $20 if billed monthly.\"",
+        "[공식·claude.com/pricing] Max 카드: \"From $100 Per month\" / \"Choose 5x or 20x more usage than Pro*\"",
+        "[공식·Claude 도움말 Max] Max 5x는 \"$100 per month\", Max 20x는 \"$200 per month\"이고 \"These prices are for web subscriptions only.\" / \"The Max plan is currently available as a monthly subscription only.\"",
+        "[공식·claude.com/ko-kr/pricing] Free 카드: \"$0\" / \"모두에게 무료\" / \"사용 한도가 적용됩니다.\"",
+        "[공식·Claude 도움말 Pro] \"The Pro plan is available for $20 per month (US), with pricing in your local currency where supported.\"",
+        "[공식·claude.com/pricing] 플랜 구성: \"Everything in Free, plus: More usage*, Hand off and schedule tasks, Claude Design, Slides, Docs, Claude Code, Claude Science, Projects, More Claude models, Claude in Chrome and Microsoft 365\" / \"Everything in Pro, plus: Choose 5x or 20x more usage than Pro*, Higher output limits for all tasks, Early access to advanced Claude features, Priority access at high traffic times\"",
+        "[공식·claude.com/ko-kr/pricing] \"연간 구독은 Pro 및 Team 플랜에서 이용할 수 있습니다.\""
+      ],
+      "sourceUrls": [
+        "https://claude.com/pricing",
+        "https://support.claude.com/en/articles/11049741-what-is-the-max-plan",
+        "https://claude.com/ko-kr/pricing",
+        "https://support.claude.com/en/articles/8325606-what-is-the-pro-plan"
+      ]
+    },
+    {
+      "id": "c02",
+      "claim": "Claude는 모든 플랜에 5시간 단위 롤링 세션 한도가 있고, 유료 플랜은 주간 한도가 더해져요. 공식 문구상 Pro는 Free보다 5시간 세션당 최소 5배, Max는 Pro 대비 5배 또는 20배예요. Free의 구체 수치는 조회한 공식 문구에서 못 찾았어요.",
+      "grade": "confirmed",
+      "caveat": "무료 플랜의 메시지 수 등 구체 수치는 공식 문구에서 못 찾았어요(조사 기준, support의 사용 한도 안내에서도 숫자를 못 찾았어요). 배수는 5시간 세션당 기준이고 주간 한도의 배수는 조회한 자료에서 못 찾았어요.",
+      "evidence": [
+        "[공식·claude.com/pricing] FAQ: \"Every plan has usage limits that reset on a rolling five-hour session window, and paid plans add weekly limits on top.\"",
+        "[공식·claude.com/pricing] FAQ: \"Pro gives you at least 5x more usage per 5-hour session than Free.\" / \"Max gives you 5x or 20x more usage per 5-hour session than Pro.\"",
+        "[공식·Claude 도움말 Max] \"Max 5x includes five times the Pro plan's per-session usage allowance\" / \"Max 20x includes 20 times the Pro plan's per-session usage allowance\" / \"Max plans also have a weekly usage limit that applies across all models.\"",
+        "[공식·Claude 도움말 Pro] \"Pro plans also have a weekly usage limit that applies across all models.\" / \"we may limit your usage in other ways, such as weekly and monthly caps or model and feature usage\"",
+        "[공식·claude.com/ko-kr/pricing] FAQ: \"Pro는 Free 대비 5시간 세션당 최소 5배 더 많은 사용량을 제공합니다.\"",
+        "[공식·claude.com/pricing] Free 카드: \"Usage limits apply.\" — 구체 수치는 발췌에 없음"
+      ],
+      "sourceUrls": [
+        "https://claude.com/pricing",
+        "https://support.claude.com/en/articles/11049741-what-is-the-max-plan",
+        "https://support.claude.com/en/articles/8325606-what-is-the-pro-plan",
+        "https://claude.com/ko-kr/pricing"
+      ]
+    },
+    {
+      "id": "c03",
+      "claim": "Claude의 Fable 5·Fable 5.1 모델은 플랜마다 포함 범위가 달라요(2026-09-02 갱신 표기 문서). Free는 Fable 5를 쓸 수 없고, Pro는 플랜 한도에 포함되지 않아 사용 크레딧이 필요하며, Max는 주간 한도의 최대 50%까지 추가 비용 없이 쓸 수 있어요. 사용 크레딧은 유료 플랜(Pro·Max 5x·Max 20x) 구독자용으로 설명돼 있어요.",
+      "grade": "confirmed",
+      "caveat": "문서 갱신일 표기는 2026-09-02(사용 크레딧 문서는 정확한 갱신일 표기 없이 상대 표기로 적혀 있음)라 이후 바뀌었을 수 있어요. 사용 크레딧 문서가 Free를 목록에 넣지 않은 것이지, Free에서 쓸 수 없다고 적은 문구는 아니에요. 모델 성능 비교는 쓰지 않아요.",
+      "evidence": [
+        "[공식·Claude 도움말 Fable] \"Fable 5 isn't available on the Free plan.\"",
+        "[공식·Claude 도움말 Fable] \"Pro plans and standard seats on Team plans: Fable 5 and Fable 5.1 aren't included in your plan's usage limits.\" / \"On the Pro plan and standard seats on the Team plan, you can keep using Fable 5 with usage credits or by upgrading to the Max plan.\"",
+        "[공식·Claude 도움말 Fable] \"You can use up to 50% of your weekly usage limits on Fable models at no extra cost.\" / \"They draw from your plan's regular weekly usage limits and use them faster than other Claude models.\"",
+        "[공식·Claude 도움말 사용 크레딧] \"Usage credits allow individuals subscribed to paid Claude plans (Pro, Max 5x, and Max 20x)\" / \"Usage credits are billed at standard API rates\""
+      ],
+      "sourceUrls": [
+        "https://support.claude.com/en/articles/15424964-claude-fable-models-on-your-plan",
+        "https://support.claude.com/en/articles/12429409-manage-usage-credits-for-paid-claude-plans"
+      ]
+    },
+    {
+      "id": "c04",
+      "claim": "2026-05-06 Anthropic 공지에서 확인되는 한도 상향은 Claude Code 관련 두 가지예요. Pro·Max·Team·seat-based Enterprise의 Claude Code 5시간 한도를 2배로 올리고, Pro·Max 계정의 Claude Code 피크 시간 한도 감소를 없앴어요. 일반 채팅 한도를 올렸다는 문구는 조회한 발췌에서 못 찾았어요(공지가 말한 세 가지 변경 중 세 번째는 발췌에 없어요).",
+      "grade": "confirmed",
+      "caveat": "Claude 한도가 2배가 됐다처럼 쓰면 과장이에요. 대상은 Claude Code의 5시간 한도예요. 공지 문구는 Claude Code와 Claude API 한도를 언급해요. 현재(2026-10-07) 한도 수치는 이 자료에서 확인 못 했어요.",
+      "evidence": [
+        "[공식·Anthropic 2026-05-06] \"First, we're doubling Claude Code's five-hour rate limits for Pro, Max, Team, and seat-based Enterprise plans.\"",
+        "[공식·Anthropic 2026-05-06] \"Second, we're removing the peak hours limit reduction on Claude Code for Pro and Max accounts.\"",
+        "[공식·Anthropic 2026-05-06] \"This, along with our other recent compute deals, means that we've been able to increase our usage limits for Claude Code and the Claude API.\"",
+        "[공식·Anthropic 2026-05-06] \"The following three changes—all effective today—are aimed at improving the experience of using Claude for our most dedicated customers.\" (세 번째 변경은 발췌에 없음)"
+      ],
+      "sourceUrls": [
+        "https://www.anthropic.com/news/higher-limits-spacex"
+      ]
+    },
+    {
+      "id": "c05",
+      "claim": "한국 App Store의 Claude 인앱 구독 가격은 Pro 월 ₩33,000·연 ₩349,000, Max 5x 월 ₩199,000, Max 20x 월 ₩449,000이에요(2026-10-07 조회). Claude 도움말도 Max 가격은 웹 구독 기준이고 모바일 가격은 앱 플랫폼에 따라 다를 수 있다고 밝혀서, 웹 USD 가격과는 다른 경로의 가격이에요.",
+      "grade": "confirmed",
+      "caveat": "App Store 발췌에 세금(부가세) 포함 여부 문구가 없어요. 달러 가격을 원화로 환산해 비교하지 마세요(기준 환율을 자료에서 못 찾았어요). 한국 웹 원화 정가는 확인 못 했어요.",
+      "evidence": [
+        "[데이터·한국 App Store] 앱 내 구입 목록: \"Claude Pro - Monthly ￦33,000\" / \"Claude Max 5x - Monthly ￦199,000\" / \"Claude Pro - Annual ￦349,000\" / \"Claude Max 20x - Monthly ￦449,000\"",
+        "[공식·Claude 도움말 Max] \"These prices are for web subscriptions only. Mobile pricing may vary depending on your app platform.\"",
+        "[공식·Claude 도움말 Pro] \"The Pro plan is available for $20 per month (US), with pricing in your local currency where supported.\""
+      ],
+      "sourceUrls": [
+        "https://apps.apple.com/kr/app/claude-by-anthropic/id6473753684",
+        "https://support.claude.com/en/articles/11049741-what-is-the-max-plan",
+        "https://support.claude.com/en/articles/8325606-what-is-the-pro-plan"
+      ]
+    },
+    {
+      "id": "c06",
+      "claim": "Claude 가격의 세금 처리는 자료마다 달라서, 한국에서 실제로 결제하는 금액이 세금 포함인지는 확인 못 했어요. 가격 페이지(영문·한국어)는 표시된 가격에 세금이 포함되지 않는다고 적고, Pro 도움말은 지역에 따라 표시 가격에 세금이 포함되기도 하고 결제 때 더해지기도 한다고 적어요.",
+      "grade": "unclear",
+      "caveat": "한국이 어느 쪽인지 지원 문서만으로는 알 수 없어요. 세금 별도 또는 세금 포함으로 단정하지 말고, 가격 페이지 문구를 그대로 귀속해서 써요.",
+      "evidence": [
+        "[공식·claude.com/pricing] 카드 하단 주석: \"Usage limits apply. Prices shown don't include applicable tax.\"",
+        "[공식·claude.com/ko-kr/pricing] 카드 하단 주석: \"표시된 가격에는 해당 세금이 포함되지 않습니다.\"",
+        "[공식·Claude 도움말 Pro] \"Monthly pricing varies by region, and some regions include applicable taxes in the displayed price while others add tax at checkout.\""
+      ],
+      "sourceUrls": [
+        "https://claude.com/pricing",
+        "https://claude.com/ko-kr/pricing",
+        "https://support.claude.com/en/articles/8325606-what-is-the-pro-plan"
+      ]
+    },
+    {
+      "id": "c07",
+      "claim": "Gemini(Google AI) 개인 구독은 Free·AI Plus·AI Pro·AI Ultra(두 단계)이고, 미국 공식 구독 페이지 가격은 Free $0, Plus $4.99, Pro $19.99, Ultra $99.99(Pro 대비 5x)·$199.99(20x)예요(USD, 2026-10-07 조회). Ultra는 2026-05-19 공식 블로그가 $100 플랜 신설과 최상위 플랜 $250→$200 인하를 알렸어요. 플랜마다 클라우드 스토리지가 묶여 있고 Pro·Ultra에는 YouTube 혜택도 표기돼 있어요.",
+      "grade": "confirmed",
+      "caveat": "미국 페이지(달러) 기준이고 세금 문구는 발췌에 없어요. 블로그의 $100·$200은 페이지의 $99.99·$199.99와 5X/20X 배수가 같아 같은 플랜의 반올림 표기로 보이지만(큐레이터 해석), 자료에서 그렇게 적은 문장을 못 찾았어요. Pro 저장용량은 Google One 도움말이 5 TB 또는 10 TB로 달리 적어요(numbers 참고). YouTube 혜택의 지역별 제공 여부는 확인 못 했어요.",
+      "evidence": [
+        "[공식·gemini.google/us] \"$0/ month with a Google Account\" / \"$4.99/ month\" / \"$19.99/ month\"",
+        "[공식·gemini.google/us] \"Starting at: $99.99/ month\" / \"$99.99/ month: 5x higher usage limits vs. AI Pro\" / \"$199.99 / month: 20x higher usage limits vs. AI Pro\"",
+        "[공식·Google 블로그 2026-05-19] \"We're launching a $100/month AI Ultra plan, specifically tailored for developers, technical leads, knowledge workers and advanced creators.\" / \"We're also reducing the monthly price of our top-tier AI Ultra plan from $250 to $200.\"",
+        "[공식·gemini.google/us] 스토리지: \"15 GB of cloud storage across Gmail, Drive, and Photos\" / \"400 GB of cloud storage across Gmail, Drive, and Photos\" / \"5 TB of cloud storage across Gmail, Drive, and Photos\" / \"Cloud storage starting at 20 TB across Gmail, Drive, and Photos\"",
+        "[공식·gemini.google/us] YouTube: Pro \"YouTube Premium Lite plan\" / Ultra \"YouTube ad-free, offline, and in the background\"",
+        "[공식·gemini.google/us] \"Cancel anytime. No refunds for partial billing periods, except as required by applicable law.\""
+      ],
+      "sourceUrls": [
+        "https://gemini.google/us/subscriptions/",
+        "https://blog.google/products-and-platforms/products/google-one/google-ai-subscriptions"
+      ]
+    },
+    {
+      "id": "c08",
+      "claim": "Gemini 앱 사용 한도는 구독이 없을 때의 표준 한도가 기준이고, 공식 도움말 표에서 AI Plus는 2배, AI Pro는 4배예요(Ultra는 배수 표기가 자료마다 달라서 c09 참고). 한도는 5시간마다 갱신되고 주간 한도가 있어요. 컨텍스트 창은 구독 없음 32k, Plus 128k, Pro·Ultra는 1 million tokens예요. 구독자가 한도에 닿으면 Flash-Lite로 대화를 이어갈 수 있고, Pro·Ultra 구독자는 AI 크레딧을 사서 Flow·Antigravity 추가 사용량을 얻을 수 있어요.",
+      "grade": "confirmed",
+      "caveat": "무료 플랜(구독 없음)의 구체 수치는 표준 한도라는 표기 외에 숫자를 못 찾았어요. 한도는 제품·기능마다 달라요(Google One 도움말 문구는 evidence 마지막 줄).",
+      "evidence": [
+        "[공식·Gemini 도움말(영문)] \"Without an AI plan | Standard limits\" / \"AI Plus | 2x higher than standard limits\" / \"AI Pro | 4x higher than standard limits\"",
+        "[공식·Gemini 도움말(영문)] 컨텍스트 창: \"Without an AI plan | 32k tokens\" / \"AI Plus | 128k tokens\" / \"AI Pro & AI Ultra | 1 million tokens\"",
+        "[공식·Gemini 도움말(영문)] \"Your limit refreshes every 5 hours until you reach your weekly limit.\" / \"If you have a Google AI subscription and reach your limit, you can continue your conversation with Flash-Lite.\"",
+        "[공식·gemini.google/us] \"Get 2x higher usage limits than Free\" / \"Get 4x higher usage limits than Free\"",
+        "[공식·Gemini 도움말(한국어)] \"AI Plus | 표준 한도보다 2배 높음\" / \"AI Pro | 표준 한도보다 4배 높음\" / \"사용량 한도는 주간 한도에 도달할 때까지 5시간마다 갱신됩니다.\"",
+        "[공식·Google One 도움말] \"If you reach your plan's limit, Google AI Pro and Google AI Ultra members can purchase AI credits\" / \"you can purchase AI credits to get extra usage in Google Flow and Google Antigravity.\"",
+        "[공식·Google One 도움말] \"Each product has its own AI usage limits. Your usage limits depend on which features you are using and your Google AI plan.\""
+      ],
+      "sourceUrls": [
+        "https://support.google.com/gemini/answer/16275805?hl=en",
+        "https://gemini.google/us/subscriptions/",
+        "https://support.google.com/gemini/answer/16275805?hl=ko",
+        "https://support.google.com/googleone/answer/14534406?hl=en"
+      ]
+    },
+    {
+      "id": "c09",
+      "claim": "Gemini AI Ultra의 사용량 배수는 자료마다 달라요. 영문 도움말·gemini.google 구독 페이지(미국·한국)·공식 블로그는 AI Pro 대비 5배/20배라고 적는데, 조회한 자료 중 한국어 도움말 표 한 곳이 4배 또는 20배라고 적어요. 번역 오류인지 갱신 지연인지는 확인 못 했어요.",
+      "grade": "unclear",
+      "caveat": "5배/20배(영문 도움말·구독 페이지·블로그)와 4배 또는 20배(한국어 도움말 표)를 출처와 함께 병기해요. 어느 한쪽으로 확정하지 않아요.",
+      "evidence": [
+        "[공식·Gemini 도움말(영문)] \"AI Ultra | 5x or 20x higher than AI Pro limits depending on your subscription\"",
+        "[공식·Gemini 도움말(한국어)] \"AI Ultra | 구독에 따라 AI Pro 한도보다 4배 또는 20배 더 높음\"",
+        "[공식·gemini.google/us] \"$99.99/ month: 5x higher usage limits vs. AI Pro\" / \"$199.99 / month: 20x higher usage limits vs. AI Pro\"",
+        "[공식·gemini.google/kr] \"₩119,000 KRW/월: AI Pro 대비 5배 더 높은 사용량 한도\" / \"₩300,000 KRW /월: AI Pro 대비 20배 더 높은 사용량 한도\"",
+        "[공식·Google 블로그 2026-05-19] \"A 5X higher usage limit in the Gemini app and Google Antigravity than our Pro plan\" / \"a 20X higher usage limit in the Gemini app and Google Antigravity than our Pro plan\""
+      ],
+      "sourceUrls": [
+        "https://support.google.com/gemini/answer/16275805?hl=en",
+        "https://support.google.com/gemini/answer/16275805?hl=ko",
+        "https://gemini.google/us/subscriptions/",
+        "https://gemini.google/kr/subscriptions/?hl=ko",
+        "https://blog.google/products-and-platforms/products/google-one/google-ai-subscriptions"
+      ]
+    },
+    {
+      "id": "c10",
+      "claim": "한국 공식 Gemini 구독 페이지(원화)는 Free ₩0, AI Ultra ₩119,000/월(Pro 대비 5배)·₩300,000/월(20배)을 싣고, AI Pro 카드에서는 가격 줄을 못 찾았어요(조사 주석). AI Pro ₩29,000은 Google One 한국어 요금제 페이지(월 표기)와 한국 App Store 목록에서 확인돼요. App Store 목록에서는 Ultra ₩300,000(30 TB) 항목이 보이고 ₩119,000 항목은 못 찾았어요(2026-10-07 조회).",
+      "grade": "confirmed",
+      "caveat": "gemini.google/kr·Google One 페이지·App Store 모두 세금(VAT) 포함 여부 문구가 발췌에 없어요. App Store 줄에는 월/연 표기가 없어요(₩75,000·₩290,000 줄은 뜻을 확인 못 했어요). Ultra 저장용량은 구독 페이지 20TB 이상, App Store 항목 30 TB라 같은 단계 표기인지 알 수 없어요. 한국 AI Plus 가격은 c11을 참고해요. AI Pro 카드에서 가격 줄을 못 찾았다는 것은 조사 주석(여러 차례 조회)이에요.",
+      "evidence": [
+        "[공식·gemini.google/kr] \"Google 계정당 매월 ₩0 KRW\" / \"최저가: ₩119,000 KRW/월\" / \"₩119,000 KRW/월: AI Pro 대비 5배 더 높은 사용량 한도\" / \"₩300,000 KRW /월: AI Pro 대비 20배 더 높은 사용량 한도\"",
+        "[조사 주석·gemini.google/kr] \"[Google AI Pro — 카드에 가격 줄 없음]\" — Pro 카드는 \"무료 버전보다 4배 더 높은 사용량 혜택\" 설명만 있음",
+        "[공식·Google One 한국어] \"Google AI Pro (5TB)\" / \"₩29,000/월\"",
+        "[데이터·한국 App Store] \"Google AI Pro (5 TB) ￦29,000\" / \"Google AI Ultra (30 TB) ￦300,000\"",
+        "[공식·gemini.google/kr] Ultra 스토리지: \"Gmail, Drive, 포토에서 사용할 수 있는 20TB 이상의 클라우드 스토리지\""
+      ],
+      "sourceUrls": [
+        "https://gemini.google/kr/subscriptions/?hl=ko",
+        "https://one.google.com/about/plans?hl=ko",
+        "https://apps.apple.com/kr/app/google-gemini/id6477489729"
+      ]
+    },
+    {
+      "id": "c11",
+      "claim": "Google AI Plus의 한국 월 가격과 저장용량은 자료마다 달라요. gemini.google/kr은 월 ₩7,500·400GB, 한국 App Store도 400 GB ₩7,500인데, Google One 한국어 페이지는 2TB·₩11,900/월이에요. 한국 출시 블로그(2026-01-27)는 200GB, Engadget(2026-06-08)은 미국 기준 $7.99→$4.99 인하와 200GB→400GB 확대를 보도했어요. 어느 쪽이 현재 한국 정가인지는 확정 못 했어요.",
+      "grade": "unclear",
+      "caveat": "페이지 하나를 골라 한국 정가로 단정하지 말고 출처·기준일과 함께 병기하거나 페이지마다 달라요로 써요. ₩11,900·2TB가 구버전이나 다른 가입 경로의 값인지는 자료에서 확인 못 했어요. Engadget은 미국 기준 보도이고 한국 가격 변경 근거가 아니에요. Google 공식 인하 게시글 원문은 못 읽었고, 한국 출시 블로그의 가격 비교표는 이미지라 숫자를 못 읽었어요.",
+      "evidence": [
+        "[공식·gemini.google/kr] \"매월 ₩7,500 KRW\" / \"Gmail, Drive, 포토에서 사용할 수 있는 400GB의 클라우드 스토리지\"",
+        "[데이터·한국 App Store] \"Google AI Plus (400 GB) ￦7,500\"",
+        "[공식·Google One 한국어] \"Google AI Plus (2TB)\" / \"₩11,900/월\" / \"Google 포토, Drive, Gmail에 총 2TB의 스토리지 제공\"",
+        "[공식·Google 한국 블로그 2026-01-27] \"또한 본 요금제에는 200GB의 스토리지가 기본으로 제공되며\"",
+        "[보도·Engadget 2026-06-08] \"It now also comes with double the storage, 400GB instead of 200GB.\" / Google 제품 책임자 게시글 인용 \"down from $7.99\""
+      ],
+      "sourceUrls": [
+        "https://gemini.google/kr/subscriptions/?hl=ko",
+        "https://apps.apple.com/kr/app/google-gemini/id6477489729",
+        "https://one.google.com/about/plans?hl=ko",
+        "https://blog.google/intl/ko-kr/products/google-ai-plus-plans-kr/",
+        "https://engadget.com/2190039/google-cuts-the-price-of-its-ai-plus-plan-and-doubles-the-storage"
+      ]
+    },
+    {
+      "id": "c12",
+      "claim": "OpenAI 공식 문서(learn.chatgpt.com)의 개인 플랜 가격은 Free $0·Go $8·Plus $20·Pro From $100(월 $100·$200·$500 중 선택)이에요(USD, 2026-10-07 조회). Pro $500은 Astra Ultrafast 접근이 포함된 플랜이라고 2026-09-29 DevDay 문서에도 적혀 있어요.",
+      "grade": "confirmed",
+      "caveat": "learn.chatgpt.com/docs/pricing은 Codex 관점 문서예요(카드 설명이 코딩 기준). Pro의 5시간 한도 없음 문구도 이 문서에서 나온 것이라 일반 채팅 메시지 한도에도 같은 말인지 확인 못 했어요. Free·Go·Plus의 메시지·파일·이미지 한도 공식 문구는 chatgpt.com·help.openai.com이 HTTP 403이라 못 읽었어요. 세금 문구는 발췌에 없어요. 단계 이름(Pro 100/200/500)은 조회한 공식 문서 발췌에서 못 찾았고 App Store·언론 표기예요.",
+      "evidence": [
+        "[공식·learn.chatgpt.com/docs/pricing] Free \"$0/month\" / Go \"$8/month\" / Plus \"$20/month\"",
+        "[공식·learn.chatgpt.com/docs/pricing] Pro \"From $100/month\" / \"Choose the Pro plan that fits your usage.\" / \"Plans at $100, $200, or $500 USD per month\"",
+        "[공식·learn.chatgpt.com/docs/pricing] \"Astra Ultrafast access on Pro $500\" / \"Pro plans currently have no five-hour limit.\"",
+        "[공식·DevDay 2026 문서 2026-09-29] \"Use GPT-6 Astra Ultrafast in Codex and ChatGPT Work on the Pro $500/month plan and eligible Enterprise and Edu plans.\""
+      ],
+      "sourceUrls": [
+        "https://learn.chatgpt.com/docs/pricing",
+        "https://learn.chatgpt.com/docs/whats-new/devday-2026"
+      ]
+    },
+    {
+      "id": "c13",
+      "claim": "ChatGPT Pro 단계의 사용량은 보도 기준으로 바뀌는 중이에요. The Next Web(2026-09-29)은 Pro 200의 ChatGPT Work·Codex 포함 사용량이 10월 30일부터 Plus 대비 20배에서 10배로 줄고, 기존 가입자는 10월 29일까지 현재 한도를 유지하며 사용 크레딧 $2,500을 한 번 받는다고 전해요. Winbuzzer(2026-09-30)는 조건에 해당하지 않는 신규 Pro 200 가입은 더 낮은 한도라고 전해요. 공식 가격 문서에서는 이 배수를 못 찾았어요(조회한 발췌 기준).",
+      "grade": "reported",
+      "caveat": "배수는 ChatGPT Work and Codex 사용량 기준이고 채팅 메시지 한도와 별개예요. 공식 도움말 원문(help.openai.com)은 403이라 못 읽었어요. Pro 100의 5배는 2026-04 출시 시점·Codex 기준 보도(5월 31일까지 더 높은 한도 프로모션 언급)라 현재 값으로 단정하지 말아요. 현재(2026-10-07) 신규 가입자에게 적용되는 정확한 배수는 보도마다 표현이 달라 확인 못 했어요. Pro 500의 Plus 대비 배수는 읽은 본문에 숫자가 없어요.",
+      "evidence": [
+        "[보도·The Next Web 2026-09-29] \"OpenAI is halving the usage included in its $200 ChatGPT Pro plan and launching a $500 plan with its fastest speed tier.\"",
+        "[보도·The Next Web 2026-09-29] \"From 30 October, Pro 200's included usage in ChatGPT Work and Codex falls from 20 times to 10 times the Plus allowance, OpenAI said.\"",
+        "[보도·The Next Web 2026-09-29] \"Existing subscribers keep their current limits until 29 October and get a one-time grant of usage credits worth $2,500, which expire at the end of the year.\"",
+        "[보도·The Next Web 2026-09-29] \"A new Pro 500 plan costs $500 a month and is the only Pro plan with Ultrafast.\"",
+        "[보도·Winbuzzer 2026-09-30] \"New Pro 200 subscriptions that do not qualify for the old terms come with a lower included allowance\" / \"Pro 200 has more included usage than Pro 100, but neither lower tier includes Ultrafast\"",
+        "[보도·Winbuzzer 2026-09-30] \"Customers whose Pro 200 subscription was active at OpenAI's eligibility cutoff, or during the seven days before it, keep their previous allowance through October 29, 2026\"",
+        "[보도·TechCrunch 2026-04-09] \"The $100 Pro plan will offer 5x more Codex than the Plus plan.\" / \"OpenAI is offering even higher limits of Codex on the $100 plan through May 31.\"",
+        "[공식·learn.chatgpt.com/docs/pricing] 가격 문서에는 Pro 단계별 Plus 대비 배수가 없고 \"Pro plans currently have no five-hour limit.\"만 있음(조사 주석: 사용량 표 머리글은 \"Model\" / \"Plus\" / \"Standard Business\")"
+      ],
+      "sourceUrls": [
+        "https://thenextweb.com/news/openai-devday-pro-200-usage-cut-pro-500-plan",
+        "https://winbuzzer.com/2026/09/30/openai-adds-500-chatgpt-pro-cuts-allowance-new-200-subscribers-a005-xcxwbn/",
+        "https://techcrunch.com/2026/04/09/chatgpt-pro-plan-100-month-codex/",
+        "https://learn.chatgpt.com/docs/pricing"
+      ]
+    },
+    {
+      "id": "c14",
+      "claim": "ChatGPT Go는 무료 대비 메시지·파일 업로드·이미지 생성을 10배로 늘렸다고 회사가 설명했다고 언론(산업일보·바이라인네트워크, 2026-01)이 전해요. 광고는 TechCrunch(2026-04-09)가 무료와 Go에 붙고 Plus·Pro는 광고가 없다고 전하고, 바이라인네트워크(2026-01-17)는 무료·Go에서 광고 테스트를 시작할 계획이며 Plus·Pro·비즈니스·엔터프라이즈는 계속 광고 없이 제공된다고 전해요. 한국에서 광고가 노출되는지는 확인 못 했어요.",
+      "grade": "reported",
+      "caveat": "10배는 2026-01 출시 시점 보도(회사 설명 재인용)예요. 현재 한도는 공식 문서로 확인 못 했어요(chatgpt.com·help.openai.com 403). 광고는 미국 기준 보도이고 한국 적용 여부·시점은 확인 못 했어요. TechCrunch 문장은 2026-04-09 기준으로 귀속해요.",
+      "evidence": [
+        "[보도·바이라인네트워크 2026-01-17] \"무료 버전과 비교해 메시지, 파일 업로드, 이미지 생성이 10배 확대돼\" / \"고에 비해 플러스는 메시지, 파일 업로드, 메모리, 컨텍스트의 상한이 더 높아\"",
+        "[보도·산업일보 2026-01-19] Go 한도: \"무료 버전보다 10배 더 제공\" (기사 표현은 회사 측 설명 재인용)",
+        "[보도·바이라인네트워크 2026-01-17] \"무료 및 고 요금제에서 광고 테스트를 시작할 계획이다.\" / \"챗GPT 플러스, 프로, 비즈니스, 엔터프라이즈 등은 계속 광고 없이 제공된다.\"",
+        "[보도·TechCrunch 2026-04-09] \"Until now, plans were priced at: free (which now includes ads), an $8/month Go plan (that also includes ads), a $20/month Plus plan (ad free), and then all the way up to a $200 Pro plan (also ad free).\"",
+        "[보도·산업일보 2026-01-19] \"광고는 현재 대화와 관련된 스폰서 상품·서비스를 답변 하단에 표시하는 방식으로 시험 운영\""
+      ],
+      "sourceUrls": [
+        "https://byline.network/2026/01/17-544/",
+        "https://kidd.co.kr/news/244682",
+        "https://techcrunch.com/2026/04/09/chatgpt-pro-plan-100-month-codex/"
+      ]
+    },
+    {
+      "id": "c15",
+      "claim": "한국 App Store(2026-10-07 조회)의 ChatGPT 인앱 구독 목록은 Plus ₩29,000·Go ₩13,000·Pro 100 ₩159,000·Pro 200 ₩299,000·Pro 500 ₩790,000이에요. 목록에 ChatGPT Plus ₩299,000 줄이 한 번 더 있는데 뜻을 알 수 없고, 조회한 목록의 줄에는 월/연 표기가 없어요.",
+      "grade": "confirmed",
+      "caveat": "세금 포함 문구가 발췌에 없어요. 웹 결제의 한국 원화 정가는 확인 못 했어요(chatgpt.com 403). 기간 표기가 없으니 월 ₩29,000이라고 단정하지 말고 App Store 목록 ₩29,000으로 써요(언론은 2026-01에 Plus 월 2만 9천 원이라고 전했고 금액은 같아요). 줄에 월/연 표기가 없다는 것은 조사 주석이에요.",
+      "evidence": [
+        "[데이터·한국 App Store] 앱 내 구입 목록: \"ChatGPT Plus ￦29,000\" / \"ChatGPT Go ￦13,000\" / \"ChatGPT Pro 100 ￦159,000\" / \"ChatGPT Pro 200 ￦299,000\" / \"ChatGPT Pro 500 ￦790,000\"",
+        "[데이터·한국 App Store] 같은 목록의 다른 줄: \"ChatGPT Plus ￦299,000\""
+      ],
+      "sourceUrls": [
+        "https://apps.apple.com/kr/app/chatgpt/id6448311069"
+      ]
+    },
+    {
+      "id": "c16",
+      "claim": "ChatGPT 한국 원화 가격은 자료마다 달라요. Go는 App Store 목록에 ₩13,000인데, 언론은 산업일보(2026-01-19)가 월 1만 5천 원(8달러, 19일 환율 기준), 바이라인네트워크(2026-01-17)가 월 8달러(1만5000원)로 적어요. 산업일보의 Plus 월 2만 9천 원·Pro 월 29만 9천 원은 App Store의 Plus ₩29,000·Pro 200 ₩299,000과 금액이 같아요. 웹 결제의 원화 정가는 확인 못 했어요.",
+      "grade": "unclear",
+      "caveat": "산업일보는 19일 환율 기준이라고 밝혔지만 환율 숫자는 발췌에 없고, 바이라인네트워크도 발췌에서 원화 산정 근거를 적지 않았어요. 그렇다고 App Store 값이 웹 결제 값과 같다는 보장도 없어요. 두 값을 병기하고 기준일을 달아요(언론 2026-01, App Store 2026-10-07).",
+      "evidence": [
+        "[데이터·한국 App Store] \"ChatGPT Go ￦13,000\" / \"ChatGPT Plus ￦29,000\" / \"ChatGPT Pro 200 ￦299,000\"",
+        "[보도·산업일보 2026-01-19] \"월 1만 5천 원(8달러, 19일 환율 기준) 요금제인 'ChatGPT Go'를 출시했다\" / \"기존 개인용 ChatGPT 유료 요금제는 월 2만 9천 원의 Plus와 월 29만 9천 원의 Pro\"",
+        "[보도·바이라인네트워크 2026-01-17] \"오픈AI가 월 8달러(1만5000원) 요금의 '챗GPT 고(ChatGPT Go)'를 17일 한국 등 전세계에 출시했다.\""
+      ],
+      "sourceUrls": [
+        "https://apps.apple.com/kr/app/chatgpt/id6448311069",
+        "https://kidd.co.kr/news/244682",
+        "https://byline.network/2026/01/17-544/"
+      ]
+    }
+  ],
+  "numbers": [
+    {
+      "what": "Claude Free — 웹 USD 공식",
+      "value": "$0",
+      "asOf": "2026-10-07",
+      "sourceUrl": "https://claude.com/ko-kr/pricing",
+      "service": "Claude",
+      "plan": "Free",
+      "currency": "USD",
+      "channel": "웹 USD 공식",
+      "tax": "해당 없음(무료)",
+      "grade": "confirmed",
+      "quote": "\"$0\" / \"모두에게 무료\"",
+      "note": "한국어 가격 페이지(claude.com/ko-kr/pricing) 표기. 영문 페이지는 \"Free for everyone\"."
+    },
+    {
+      "what": "Claude Pro 월 결제 — 웹 USD 공식",
+      "value": "$20 / 월(월별 결제 시)",
+      "asOf": "2026-10-07",
+      "sourceUrl": "https://claude.com/pricing",
+      "service": "Claude",
+      "plan": "Pro 월 결제",
+      "currency": "USD",
+      "channel": "웹 USD 공식",
+      "tax": "미포함 — 가격 페이지 주석 \"Prices shown don't include applicable tax.\" (한국어판: \"표시된 가격에는 해당 세금이 포함되지 않습니다.\")",
+      "grade": "confirmed",
+      "quote": "$20 if billed monthly.",
+      "note": "Pro 도움말은 \"$20 per month (US), with pricing in your local currency where supported.\" — 세금 처리는 지역별로 다르다고도 적음(c06)."
+    },
+    {
+      "what": "Claude Pro 연간 결제 — 웹 USD 공식",
+      "value": "$200 선불(연 1회 청구) — 가격표에는 월 $17로 표시",
+      "asOf": "2026-10-07",
+      "sourceUrl": "https://claude.com/pricing",
+      "service": "Claude",
+      "plan": "Pro 연간 결제",
+      "currency": "USD",
+      "channel": "웹 USD 공식",
+      "tax": "미포함 — 가격 페이지 주석 \"Prices shown don't include applicable tax.\" (한국어판: \"표시된 가격에는 해당 세금이 포함되지 않습니다.\")",
+      "grade": "confirmed",
+      "quote": "$17 Per month with annual subscription discount ($200 billed up front).",
+      "note": "$17은 월 환산 표기예요(200÷12≈16.7 — 큐레이터 계산, 출처 문구 아님). ko-kr FAQ는 연간 구독을 Pro 및 Team 플랜에서 이용할 수 있다고 적어요."
+    },
+    {
+      "what": "Claude Max 5x — 웹 USD 공식",
+      "value": "$100 / 월",
+      "asOf": "2026-10-07",
+      "sourceUrl": "https://support.claude.com/en/articles/11049741-what-is-the-max-plan",
+      "service": "Claude",
+      "plan": "Max 5x",
+      "currency": "USD",
+      "channel": "웹 USD 공식",
+      "tax": "문구 없음 — 이 도움말 발췌에는 세금 문구가 없어요(가격 페이지 주석은 페이지에 표시된 가격에 대한 것). 한국 결제 기준 확인 못 함",
+      "grade": "confirmed",
+      "quote": "\"Max 5x\": $100 per month",
+      "note": "가격 페이지(claude.com/pricing)는 \"From $100 Per month\". 도움말: \"These prices are for web subscriptions only.\" 또 \"The Max plan is currently available as a monthly subscription only.\""
+    },
+    {
+      "what": "Claude Max 20x — 웹 USD 공식",
+      "value": "$200 / 월",
+      "asOf": "2026-10-07",
+      "sourceUrl": "https://support.claude.com/en/articles/11049741-what-is-the-max-plan",
+      "service": "Claude",
+      "plan": "Max 20x",
+      "currency": "USD",
+      "channel": "웹 USD 공식",
+      "tax": "문구 없음 — 이 도움말 발췌에는 세금 문구가 없어요(가격 페이지 주석은 페이지에 표시된 가격에 대한 것). 한국 결제 기준 확인 못 함",
+      "grade": "confirmed",
+      "quote": "\"Max 20x\": $200 per month",
+      "note": "가격 페이지 발췌에는 $200이 보이지 않고 Max 도움말에서 확인했어요(가격 페이지는 \"From $100\"과 \"Choose 5x or 20x\")."
+    },
+    {
+      "what": "Claude Pro 월 — 한국 App Store 원화",
+      "value": "₩33,000 / 월(\"Monthly\" 표기)",
+      "asOf": "2026-10-07",
+      "sourceUrl": "https://apps.apple.com/kr/app/claude-by-anthropic/id6473753684",
+      "service": "Claude",
+      "plan": "Pro 월",
+      "currency": "KRW",
+      "channel": "한국 App Store 원화",
+      "tax": "확인 못 함 — 발췌에 세금(VAT) 문구가 없어요",
+      "grade": "confirmed",
+      "quote": "Claude Pro - Monthly ￦33,000"
+    },
+    {
+      "what": "Claude Pro 연 — 한국 App Store 원화",
+      "value": "₩349,000 / 연(\"Annual\" 표기)",
+      "asOf": "2026-10-07",
+      "sourceUrl": "https://apps.apple.com/kr/app/claude-by-anthropic/id6473753684",
+      "service": "Claude",
+      "plan": "Pro 연",
+      "currency": "KRW",
+      "channel": "한국 App Store 원화",
+      "tax": "확인 못 함 — 발췌에 세금(VAT) 문구가 없어요",
+      "grade": "confirmed",
+      "quote": "Claude Pro - Annual ￦349,000"
+    },
+    {
+      "what": "Claude Max 5x 월 — 한국 App Store 원화",
+      "value": "₩199,000 / 월(\"Monthly\" 표기)",
+      "asOf": "2026-10-07",
+      "sourceUrl": "https://apps.apple.com/kr/app/claude-by-anthropic/id6473753684",
+      "service": "Claude",
+      "plan": "Max 5x 월",
+      "currency": "KRW",
+      "channel": "한국 App Store 원화",
+      "tax": "확인 못 함 — 발췌에 세금(VAT) 문구가 없어요",
+      "grade": "confirmed",
+      "quote": "Claude Max 5x - Monthly ￦199,000"
+    },
+    {
+      "what": "Claude Max 20x 월 — 한국 App Store 원화",
+      "value": "₩449,000 / 월(\"Monthly\" 표기)",
+      "asOf": "2026-10-07",
+      "sourceUrl": "https://apps.apple.com/kr/app/claude-by-anthropic/id6473753684",
+      "service": "Claude",
+      "plan": "Max 20x 월",
+      "currency": "KRW",
+      "channel": "한국 App Store 원화",
+      "tax": "확인 못 함 — 발췌에 세금(VAT) 문구가 없어요",
+      "grade": "confirmed",
+      "quote": "Claude Max 20x - Monthly ￦449,000"
+    },
+    {
+      "what": "Gemini(Google AI) Free — 웹 USD 공식(미국 페이지)",
+      "value": "$0 / 월",
+      "asOf": "2026-10-07",
+      "sourceUrl": "https://gemini.google/us/subscriptions/",
+      "service": "Gemini(Google AI)",
+      "plan": "Free",
+      "currency": "USD",
+      "channel": "웹 USD 공식(미국 페이지)",
+      "tax": "해당 없음(무료)",
+      "grade": "confirmed",
+      "quote": "$0/ month with a Google Account"
+    },
+    {
+      "what": "Gemini(Google AI) AI Plus — 웹 USD 공식(미국 페이지)",
+      "value": "$4.99 / 월",
+      "asOf": "2026-10-07",
+      "sourceUrl": "https://gemini.google/us/subscriptions/",
+      "service": "Gemini(Google AI)",
+      "plan": "AI Plus",
+      "currency": "USD",
+      "channel": "웹 USD 공식(미국 페이지)",
+      "tax": "확인 못 함 — 발췌에 세금(VAT) 문구가 없어요",
+      "grade": "confirmed",
+      "quote": "$4.99/ month",
+      "note": "2026-06-08 Engadget(보도)는 $7.99에서 인하라고 전함(c11)."
+    },
+    {
+      "what": "Gemini(Google AI) AI Pro — 웹 USD 공식(미국 페이지)",
+      "value": "$19.99 / 월",
+      "asOf": "2026-10-07",
+      "sourceUrl": "https://gemini.google/us/subscriptions/",
+      "service": "Gemini(Google AI)",
+      "plan": "AI Pro",
+      "currency": "USD",
+      "channel": "웹 USD 공식(미국 페이지)",
+      "tax": "확인 못 함 — 발췌에 세금(VAT) 문구가 없어요",
+      "grade": "confirmed",
+      "quote": "$19.99/ month"
+    },
+    {
+      "what": "Gemini(Google AI) AI Ultra (AI Pro 대비 5x) — 웹 USD 공식(미국 페이지)",
+      "value": "$99.99 / 월",
+      "asOf": "2026-10-07",
+      "sourceUrl": "https://gemini.google/us/subscriptions/",
+      "service": "Gemini(Google AI)",
+      "plan": "AI Ultra (AI Pro 대비 5x)",
+      "currency": "USD",
+      "channel": "웹 USD 공식(미국 페이지)",
+      "tax": "확인 못 함 — 발췌에 세금(VAT) 문구가 없어요",
+      "grade": "confirmed",
+      "quote": "$99.99/ month: 5x higher usage limits vs. AI Pro",
+      "note": "2026-05-19 공식 블로그는 같은 단계를 \"$100/month\"로 적음(반올림 표기로 보이나 같은 플랜이라고 적은 문장은 발췌에서 못 찾음)."
+    },
+    {
+      "what": "Gemini(Google AI) AI Ultra (AI Pro 대비 20x) — 웹 USD 공식(미국 페이지)",
+      "value": "$199.99 / 월",
+      "asOf": "2026-10-07",
+      "sourceUrl": "https://gemini.google/us/subscriptions/",
+      "service": "Gemini(Google AI)",
+      "plan": "AI Ultra (AI Pro 대비 20x)",
+      "currency": "USD",
+      "channel": "웹 USD 공식(미국 페이지)",
+      "tax": "확인 못 함 — 발췌에 세금(VAT) 문구가 없어요",
+      "grade": "confirmed",
+      "quote": "$199.99 / month: 20x higher usage limits vs. AI Pro",
+      "note": "공식 블로그: 최상위 플랜 \"from $250 to $200\" 인하(2026-05-19)."
+    },
+    {
+      "what": "Gemini(Google AI) Free — 한국 공식 페이지 원화(gemini.google/kr)",
+      "value": "₩0 / 월",
+      "asOf": "2026-10-07",
+      "sourceUrl": "https://gemini.google/kr/subscriptions/?hl=ko",
+      "service": "Gemini(Google AI)",
+      "plan": "Free",
+      "currency": "KRW",
+      "channel": "한국 공식 페이지 원화(gemini.google/kr)",
+      "tax": "해당 없음(무료)",
+      "grade": "confirmed",
+      "quote": "Google 계정당 매월 ₩0 KRW"
+    },
+    {
+      "what": "Gemini(Google AI) AI Plus — 한국 공식 페이지 원화(gemini.google/kr)",
+      "value": "₩7,500 / 월",
+      "asOf": "2026-10-07",
+      "sourceUrl": "https://gemini.google/kr/subscriptions/?hl=ko",
+      "service": "Gemini(Google AI)",
+      "plan": "AI Plus",
+      "currency": "KRW",
+      "channel": "한국 공식 페이지 원화(gemini.google/kr)",
+      "tax": "확인 못 함 — 추출기 보고: \"세금·부가세·VAT 관련 명시 문구는 페이지에서 찾지 못함\"",
+      "grade": "unclear",
+      "quote": "매월 ₩7,500 KRW",
+      "note": "Google One 한국어 페이지는 ₩11,900/월(2TB)로 달라요 — 어느 쪽이 현재 정가인지 확정 못 함(c11). 한국 App Store 목록은 (400 GB) ₩7,500."
+    },
+    {
+      "what": "Gemini(Google AI) AI Pro — 한국 공식 페이지 원화(gemini.google/kr)",
+      "value": "가격 줄을 못 찾음 — 조사 주석(여러 차례 조회에서 동일)",
+      "asOf": "2026-10-07",
+      "sourceUrl": "https://gemini.google/kr/subscriptions/?hl=ko",
+      "service": "Gemini(Google AI)",
+      "plan": "AI Pro",
+      "currency": "KRW",
+      "channel": "한국 공식 페이지 원화(gemini.google/kr)",
+      "tax": "확인 못 함 — 추출기 보고: \"세금·부가세·VAT 관련 명시 문구는 페이지에서 찾지 못함\"",
+      "grade": "confirmed",
+      "quote": "[Google AI Pro — 카드에 가격 줄 없음]",
+      "note": "조사 주석(여러 차례 조회에서 동일). Pro 한국 가격은 Google One 페이지(₩29,000/월)와 App Store(₩29,000)에서 확인."
+    },
+    {
+      "what": "Gemini(Google AI) AI Ultra (AI Pro 대비 5배) — 한국 공식 페이지 원화(gemini.google/kr)",
+      "value": "₩119,000 / 월(\"최저가\")",
+      "asOf": "2026-10-07",
+      "sourceUrl": "https://gemini.google/kr/subscriptions/?hl=ko",
+      "service": "Gemini(Google AI)",
+      "plan": "AI Ultra (AI Pro 대비 5배)",
+      "currency": "KRW",
+      "channel": "한국 공식 페이지 원화(gemini.google/kr)",
+      "tax": "확인 못 함 — 추출기 보고: \"세금·부가세·VAT 관련 명시 문구는 페이지에서 찾지 못함\"",
+      "grade": "confirmed",
+      "quote": "₩119,000 KRW/월: AI Pro 대비 5배 더 높은 사용량 한도",
+      "note": "한국 App Store 목록에서는 이 가격 항목을 못 찾았어요(웹 한정인지 확인 못 함)."
+    },
+    {
+      "what": "Gemini(Google AI) AI Ultra (AI Pro 대비 20배) — 한국 공식 페이지 원화(gemini.google/kr)",
+      "value": "₩300,000 / 월",
+      "asOf": "2026-10-07",
+      "sourceUrl": "https://gemini.google/kr/subscriptions/?hl=ko",
+      "service": "Gemini(Google AI)",
+      "plan": "AI Ultra (AI Pro 대비 20배)",
+      "currency": "KRW",
+      "channel": "한국 공식 페이지 원화(gemini.google/kr)",
+      "tax": "확인 못 함 — 추출기 보고: \"세금·부가세·VAT 관련 명시 문구는 페이지에서 찾지 못함\"",
+      "grade": "confirmed",
+      "quote": "₩300,000 KRW /월: AI Pro 대비 20배 더 높은 사용량 한도"
+    },
+    {
+      "what": "Gemini(Google AI) AI Plus (2TB) — 한국 공식 페이지 원화(one.google.com)",
+      "value": "₩11,900 / 월",
+      "asOf": "2026-10-07",
+      "sourceUrl": "https://one.google.com/about/plans?hl=ko",
+      "service": "Gemini(Google AI)",
+      "plan": "AI Plus (2TB)",
+      "currency": "KRW",
+      "channel": "한국 공식 페이지 원화(one.google.com)",
+      "tax": "확인 못 함 — 발췌에 세금(VAT) 문구가 없어요",
+      "grade": "unclear",
+      "quote": "\"Google AI Plus (2TB)\" / \"₩11,900/월\"",
+      "note": "gemini.google/kr은 ₩7,500·400GB, 한국 출시 블로그(2026-01-27)는 200GB — 자료끼리 어긋나요(c11)."
+    },
+    {
+      "what": "Gemini(Google AI) AI Pro (5TB) — 한국 공식 페이지 원화(one.google.com)",
+      "value": "₩29,000 / 월",
+      "asOf": "2026-10-07",
+      "sourceUrl": "https://one.google.com/about/plans?hl=ko",
+      "service": "Gemini(Google AI)",
+      "plan": "AI Pro (5TB)",
+      "currency": "KRW",
+      "channel": "한국 공식 페이지 원화(one.google.com)",
+      "tax": "확인 못 함 — 발췌에 세금(VAT) 문구가 없어요",
+      "grade": "confirmed",
+      "quote": "\"Google AI Pro (5TB)\" / \"₩29,000/월\"",
+      "note": "추출기 보고: 이 페이지에는 AI Ultra 카드가 없음."
+    },
+    {
+      "what": "Gemini(Google AI) AI Plus (400 GB) — 한국 App Store 원화",
+      "value": "₩7,500 (기간 표기 없음)",
+      "asOf": "2026-10-07",
+      "sourceUrl": "https://apps.apple.com/kr/app/google-gemini/id6477489729",
+      "service": "Gemini(Google AI)",
+      "plan": "AI Plus (400 GB)",
+      "currency": "KRW",
+      "channel": "한국 App Store 원화",
+      "tax": "확인 못 함 — 발췌에 세금(VAT) 문구가 없어요",
+      "grade": "confirmed",
+      "quote": "Google AI Plus (400 GB) ￦7,500"
+    },
+    {
+      "what": "Gemini(Google AI) AI Pro (5 TB) — 한국 App Store 원화",
+      "value": "₩29,000 (기간 표기 없음)",
+      "asOf": "2026-10-07",
+      "sourceUrl": "https://apps.apple.com/kr/app/google-gemini/id6477489729",
+      "service": "Gemini(Google AI)",
+      "plan": "AI Pro (5 TB)",
+      "currency": "KRW",
+      "channel": "한국 App Store 원화",
+      "tax": "확인 못 함 — 발췌에 세금(VAT) 문구가 없어요",
+      "grade": "confirmed",
+      "quote": "Google AI Pro (5 TB) ￦29,000"
+    },
+    {
+      "what": "Gemini(Google AI) AI Ultra (30 TB) — 한국 App Store 원화",
+      "value": "₩300,000 (기간 표기 없음)",
+      "asOf": "2026-10-07",
+      "sourceUrl": "https://apps.apple.com/kr/app/google-gemini/id6477489729",
+      "service": "Gemini(Google AI)",
+      "plan": "AI Ultra (30 TB)",
+      "currency": "KRW",
+      "channel": "한국 App Store 원화",
+      "tax": "확인 못 함 — 발췌에 세금(VAT) 문구가 없어요",
+      "grade": "confirmed",
+      "quote": "Google AI Ultra (30 TB) ￦300,000",
+      "note": "구독 페이지는 Ultra 저장용량을 \"20 TB 이상\"으로 적어요 — 같은 단계 표기인지 자료에서 확인 못 함."
+    },
+    {
+      "what": "Gemini(Google AI) AI Plus (400 GB) — 다른 가격 줄 — 한국 App Store 원화",
+      "value": "₩75,000 (월/연 표기 없음 — 의미 확인 못 함)",
+      "asOf": "2026-10-07",
+      "sourceUrl": "https://apps.apple.com/kr/app/google-gemini/id6477489729",
+      "service": "Gemini(Google AI)",
+      "plan": "AI Plus (400 GB) — 다른 가격 줄",
+      "currency": "KRW",
+      "channel": "한국 App Store 원화",
+      "tax": "확인 못 함 — 발췌에 세금(VAT) 문구가 없어요",
+      "grade": "unclear",
+      "quote": "Google AI Plus (400 GB) ￦75,000",
+      "note": "연간이라고 단정하지 마세요. 줄에 라벨이 없어요."
+    },
+    {
+      "what": "Gemini(Google AI) AI Pro (5 TB) — 다른 가격 줄 — 한국 App Store 원화",
+      "value": "₩290,000 (월/연 표기 없음 — 의미 확인 못 함)",
+      "asOf": "2026-10-07",
+      "sourceUrl": "https://apps.apple.com/kr/app/google-gemini/id6477489729",
+      "service": "Gemini(Google AI)",
+      "plan": "AI Pro (5 TB) — 다른 가격 줄",
+      "currency": "KRW",
+      "channel": "한국 App Store 원화",
+      "tax": "확인 못 함 — 발췌에 세금(VAT) 문구가 없어요",
+      "grade": "unclear",
+      "quote": "Google AI Pro (5 TB) ￦290,000",
+      "note": "연간이라고 단정하지 마세요. 줄에 라벨이 없어요."
+    },
+    {
+      "what": "ChatGPT Free — 웹 USD 공식",
+      "value": "$0 / 월",
+      "asOf": "2026-10-07",
+      "sourceUrl": "https://learn.chatgpt.com/docs/pricing",
+      "service": "ChatGPT",
+      "plan": "Free",
+      "currency": "USD",
+      "channel": "웹 USD 공식",
+      "tax": "해당 없음(무료)",
+      "grade": "confirmed",
+      "quote": "[Free] \"$0/month\""
+    },
+    {
+      "what": "ChatGPT Go — 웹 USD 공식",
+      "value": "$8 / 월",
+      "asOf": "2026-10-07",
+      "sourceUrl": "https://learn.chatgpt.com/docs/pricing",
+      "service": "ChatGPT",
+      "plan": "Go",
+      "currency": "USD",
+      "channel": "웹 USD 공식",
+      "tax": "확인 못 함 — 발췌에 세금(VAT) 문구가 없어요",
+      "grade": "confirmed",
+      "quote": "[Go] \"$8/month\""
+    },
+    {
+      "what": "ChatGPT Plus — 웹 USD 공식",
+      "value": "$20 / 월",
+      "asOf": "2026-10-07",
+      "sourceUrl": "https://learn.chatgpt.com/docs/pricing",
+      "service": "ChatGPT",
+      "plan": "Plus",
+      "currency": "USD",
+      "channel": "웹 USD 공식",
+      "tax": "확인 못 함 — 발췌에 세금(VAT) 문구가 없어요",
+      "grade": "confirmed",
+      "quote": "[Plus] \"$20/month\""
+    },
+    {
+      "what": "ChatGPT Pro ($100 단계, 이름 \"Pro 100\") — 웹 USD 공식",
+      "value": "$100 / 월",
+      "asOf": "2026-10-07",
+      "sourceUrl": "https://learn.chatgpt.com/docs/pricing",
+      "service": "ChatGPT",
+      "plan": "Pro ($100 단계, 이름 \"Pro 100\")",
+      "currency": "USD",
+      "channel": "웹 USD 공식",
+      "tax": "확인 못 함 — 발췌에 세금(VAT) 문구가 없어요",
+      "grade": "confirmed",
+      "quote": "\"Plans at $100, $200, or $500 USD per month\"",
+      "note": "공식 문서는 \"From $100/month\"와 \"$100, $200, or $500\"만 적어요. 단계 이름(Pro 100/200/500)은 App Store·언론 표기."
+    },
+    {
+      "what": "ChatGPT Pro ($200 단계, 이름 \"Pro 200\") — 웹 USD 공식",
+      "value": "$200 / 월",
+      "asOf": "2026-10-07",
+      "sourceUrl": "https://learn.chatgpt.com/docs/pricing",
+      "service": "ChatGPT",
+      "plan": "Pro ($200 단계, 이름 \"Pro 200\")",
+      "currency": "USD",
+      "channel": "웹 USD 공식",
+      "tax": "확인 못 함 — 발췌에 세금(VAT) 문구가 없어요",
+      "grade": "confirmed",
+      "quote": "\"Plans at $100, $200, or $500 USD per month\"",
+      "note": "사용량 배수 변경(20배→10배)은 보도 기반(c13)."
+    },
+    {
+      "what": "ChatGPT Pro ($500 단계, 이름 \"Pro 500\") — 웹 USD 공식",
+      "value": "$500 / 월",
+      "asOf": "2026-10-07",
+      "sourceUrl": "https://learn.chatgpt.com/docs/pricing",
+      "service": "ChatGPT",
+      "plan": "Pro ($500 단계, 이름 \"Pro 500\")",
+      "currency": "USD",
+      "channel": "웹 USD 공식",
+      "tax": "확인 못 함 — 발췌에 세금(VAT) 문구가 없어요",
+      "grade": "confirmed",
+      "quote": "\"Astra Ultrafast access on Pro $500\"",
+      "note": "2026-09-29 DevDay 공식 문서도 \"Pro $500/month plan\"을 명시."
+    },
+    {
+      "what": "ChatGPT Plus — 한국 App Store 원화",
+      "value": "₩29,000 (기간 표기 없음)",
+      "asOf": "2026-10-07",
+      "sourceUrl": "https://apps.apple.com/kr/app/chatgpt/id6448311069",
+      "service": "ChatGPT",
+      "plan": "Plus",
+      "currency": "KRW",
+      "channel": "한국 App Store 원화",
+      "tax": "확인 못 함 — 발췌에 세금(VAT) 문구가 없어요",
+      "grade": "confirmed",
+      "quote": "ChatGPT Plus ￦29,000",
+      "note": "산업일보(2026-01-19)의 \"월 2만 9천 원의 Plus\"와 금액이 같아요."
+    },
+    {
+      "what": "ChatGPT Go — 한국 App Store 원화",
+      "value": "₩13,000 (기간 표기 없음)",
+      "asOf": "2026-10-07",
+      "sourceUrl": "https://apps.apple.com/kr/app/chatgpt/id6448311069",
+      "service": "ChatGPT",
+      "plan": "Go",
+      "currency": "KRW",
+      "channel": "한국 App Store 원화",
+      "tax": "확인 못 함 — 발췌에 세금(VAT) 문구가 없어요",
+      "grade": "confirmed",
+      "quote": "ChatGPT Go ￦13,000",
+      "note": "언론은 환율 환산 \"1만 5천 원\"으로 적어 달라요(c16)."
+    },
+    {
+      "what": "ChatGPT Pro 100 — 한국 App Store 원화",
+      "value": "₩159,000 (기간 표기 없음)",
+      "asOf": "2026-10-07",
+      "sourceUrl": "https://apps.apple.com/kr/app/chatgpt/id6448311069",
+      "service": "ChatGPT",
+      "plan": "Pro 100",
+      "currency": "KRW",
+      "channel": "한국 App Store 원화",
+      "tax": "확인 못 함 — 발췌에 세금(VAT) 문구가 없어요",
+      "grade": "confirmed",
+      "quote": "ChatGPT Pro 100 ￦159,000"
+    },
+    {
+      "what": "ChatGPT Pro 200 — 한국 App Store 원화",
+      "value": "₩299,000 (기간 표기 없음)",
+      "asOf": "2026-10-07",
+      "sourceUrl": "https://apps.apple.com/kr/app/chatgpt/id6448311069",
+      "service": "ChatGPT",
+      "plan": "Pro 200",
+      "currency": "KRW",
+      "channel": "한국 App Store 원화",
+      "tax": "확인 못 함 — 발췌에 세금(VAT) 문구가 없어요",
+      "grade": "confirmed",
+      "quote": "ChatGPT Pro 200 ￦299,000",
+      "note": "산업일보(2026-01-19)의 \"월 29만 9천 원의 Pro\"와 금액이 같아요."
+    },
+    {
+      "what": "ChatGPT Pro 500 — 한국 App Store 원화",
+      "value": "₩790,000 (기간 표기 없음)",
+      "asOf": "2026-10-07",
+      "sourceUrl": "https://apps.apple.com/kr/app/chatgpt/id6448311069",
+      "service": "ChatGPT",
+      "plan": "Pro 500",
+      "currency": "KRW",
+      "channel": "한국 App Store 원화",
+      "tax": "확인 못 함 — 발췌에 세금(VAT) 문구가 없어요",
+      "grade": "confirmed",
+      "quote": "ChatGPT Pro 500 ￦790,000"
+    },
+    {
+      "what": "ChatGPT Plus — 다른 가격 줄 — 한국 App Store 원화",
+      "value": "₩299,000 (월/연 표기 없음 — 의미 확인 못 함)",
+      "asOf": "2026-10-07",
+      "sourceUrl": "https://apps.apple.com/kr/app/chatgpt/id6448311069",
+      "service": "ChatGPT",
+      "plan": "Plus — 다른 가격 줄",
+      "currency": "KRW",
+      "channel": "한국 App Store 원화",
+      "tax": "확인 못 함 — 발췌에 세금(VAT) 문구가 없어요",
+      "grade": "unclear",
+      "quote": "ChatGPT Plus ￦299,000",
+      "note": "Plus가 목록에 두 번 나와요. 연간이라고 단정하지 마세요."
+    },
+    {
+      "what": "ChatGPT Go (산업일보) — 언론 보도(원화 표기, 참고용)",
+      "value": "월 1만 5천 원 — 기사가 \"8달러, 19일 환율 기준\"으로 적은 환산값",
+      "asOf": "2026-01-19",
+      "sourceUrl": "https://kidd.co.kr/news/244682",
+      "service": "ChatGPT",
+      "plan": "Go (산업일보)",
+      "currency": "KRW",
+      "channel": "언론 보도(원화 표기, 참고용)",
+      "tax": "언급 없음(보도 기사 발췌)",
+      "grade": "reported",
+      "quote": "월 1만 5천 원(8달러, 19일 환율 기준)",
+      "note": "환율 숫자는 발췌에 없어요. App Store 목록 ₩13,000과 달라요(c16)."
+    },
+    {
+      "what": "ChatGPT Go (바이라인네트워크) — 언론 보도(원화 표기, 참고용)",
+      "value": "월 8달러(1만5000원)",
+      "asOf": "2026-01-17",
+      "sourceUrl": "https://byline.network/2026/01/17-544/",
+      "service": "ChatGPT",
+      "plan": "Go (바이라인네트워크)",
+      "currency": "KRW",
+      "channel": "언론 보도(원화 표기, 참고용)",
+      "tax": "언급 없음(보도 기사 발췌)",
+      "grade": "reported",
+      "quote": "월 8달러(1만5000원)",
+      "note": "원화 산정 근거를 기사가 적지 않았어요(c16)."
+    },
+    {
+      "what": "ChatGPT Plus (산업일보) — 언론 보도(원화 표기, 참고용)",
+      "value": "월 2만 9천 원",
+      "asOf": "2026-01-19",
+      "sourceUrl": "https://kidd.co.kr/news/244682",
+      "service": "ChatGPT",
+      "plan": "Plus (산업일보)",
+      "currency": "KRW",
+      "channel": "언론 보도(원화 표기, 참고용)",
+      "tax": "언급 없음(보도 기사 발췌)",
+      "grade": "reported",
+      "quote": "월 2만 9천 원의 Plus"
+    },
+    {
+      "what": "ChatGPT Pro (산업일보, 당시 단일 Pro) — 언론 보도(원화 표기, 참고용)",
+      "value": "월 29만 9천 원",
+      "asOf": "2026-01-19",
+      "sourceUrl": "https://kidd.co.kr/news/244682",
+      "service": "ChatGPT",
+      "plan": "Pro (산업일보, 당시 단일 Pro)",
+      "currency": "KRW",
+      "channel": "언론 보도(원화 표기, 참고용)",
+      "tax": "언급 없음(보도 기사 발췌)",
+      "grade": "reported",
+      "quote": "월 29만 9천 원의 Pro",
+      "note": "2026-01 시점 기사라 이후 Pro 100/500 추가 전 기준이에요."
+    },
+    {
+      "what": "Claude Pro 사용량 — Free 대비(5시간 세션당)",
+      "value": "최소 5배(at least 5x)",
+      "asOf": "2026-10-07",
+      "sourceUrl": "https://claude.com/pricing",
+      "grade": "confirmed",
+      "quote": "Pro gives you at least 5x more usage per 5-hour session than Free."
+    },
+    {
+      "what": "Claude Max 5x 사용량 — Pro 대비(세션당)",
+      "value": "5배(five times)",
+      "asOf": "2026-10-07",
+      "sourceUrl": "https://support.claude.com/en/articles/11049741-what-is-the-max-plan",
+      "grade": "confirmed",
+      "quote": "Max 5x includes five times the Pro plan's per-session usage allowance"
+    },
+    {
+      "what": "Claude Max 20x 사용량 — Pro 대비(세션당)",
+      "value": "20배(20 times)",
+      "asOf": "2026-10-07",
+      "sourceUrl": "https://support.claude.com/en/articles/11049741-what-is-the-max-plan",
+      "grade": "confirmed",
+      "quote": "Max 20x includes 20 times the Pro plan's per-session usage allowance",
+      "note": "5시간 세션당 기준이에요. 주간 한도의 배수는 자료에 없어요."
+    },
+    {
+      "what": "Claude Code 5시간 한도 상향(Pro·Max·Team·seat-based Enterprise)",
+      "value": "2배(doubling)",
+      "asOf": "2026-05-06",
+      "sourceUrl": "https://www.anthropic.com/news/higher-limits-spacex",
+      "grade": "confirmed",
+      "quote": "First, we're doubling Claude Code's five-hour rate limits for Pro, Max, Team, and seat-based Enterprise plans.",
+      "note": "Claude Code 한정 문구. 일반 채팅 한도를 올렸다는 문장은 발췌에 없음(c04)."
+    },
+    {
+      "what": "Claude Max의 Fable 모델 무료 포함 범위",
+      "value": "주간 한도의 최대 50%",
+      "asOf": "2026-09-02(문서 갱신일 표기)",
+      "sourceUrl": "https://support.claude.com/en/articles/15424964-claude-fable-models-on-your-plan",
+      "grade": "confirmed",
+      "quote": "You can use up to 50% of your weekly usage limits on Fable models at no extra cost."
+    },
+    {
+      "what": "Gemini AI Plus 사용량 — 구독 없음 대비",
+      "value": "2배",
+      "asOf": "2026-10-07",
+      "sourceUrl": "https://support.google.com/gemini/answer/16275805?hl=en",
+      "grade": "confirmed",
+      "quote": "AI Plus | 2x higher than standard limits"
+    },
+    {
+      "what": "Gemini AI Pro 사용량 — 구독 없음 대비",
+      "value": "4배",
+      "asOf": "2026-10-07",
+      "sourceUrl": "https://support.google.com/gemini/answer/16275805?hl=en",
+      "grade": "confirmed",
+      "quote": "AI Pro | 4x higher than standard limits"
+    },
+    {
+      "what": "Gemini AI Ultra 사용량 — AI Pro 대비(영문 도움말)",
+      "value": "5배 또는 20배",
+      "asOf": "2026-10-07",
+      "sourceUrl": "https://support.google.com/gemini/answer/16275805?hl=en",
+      "grade": "unclear",
+      "quote": "AI Ultra | 5x or 20x higher than AI Pro limits depending on your subscription",
+      "note": "gemini.google 미국·한국 페이지와 공식 블로그도 5x/20x. 조회한 자료 중 한국어 도움말 표가 다르게 적어요(c09)."
+    },
+    {
+      "what": "Gemini AI Ultra 사용량 — AI Pro 대비(한국어 도움말)",
+      "value": "4배 또는 20배",
+      "asOf": "2026-10-07",
+      "sourceUrl": "https://support.google.com/gemini/answer/16275805?hl=ko",
+      "grade": "unclear",
+      "quote": "AI Ultra | 구독에 따라 AI Pro 한도보다 4배 또는 20배 더 높음",
+      "note": "번역 오류인지 갱신 지연인지 확인 못 함(c09)."
+    },
+    {
+      "what": "Gemini 컨텍스트 창",
+      "value": "구독 없음 32k / AI Plus 128k / AI Pro·AI Ultra 1 million tokens(=100만 토큰)",
+      "asOf": "2026-10-07",
+      "sourceUrl": "https://support.google.com/gemini/answer/16275805?hl=en",
+      "grade": "confirmed",
+      "quote": "AI Pro & AI Ultra | 1 million tokens",
+      "note": "원문 단위 tokens. 같은 표에 \"Without an AI plan | 32k tokens\", \"AI Plus | 128k tokens\"."
+    },
+    {
+      "what": "Gemini 포함 스토리지(미국 구독 페이지)",
+      "value": "Free 15 GB / AI Plus 400 GB / AI Pro 5 TB / AI Ultra 20 TB부터",
+      "asOf": "2026-10-07",
+      "sourceUrl": "https://gemini.google/us/subscriptions/",
+      "grade": "confirmed",
+      "quote": "Cloud storage starting at 20 TB across Gmail, Drive, and Photos",
+      "note": "AI Pro는 Google One 도움말이 \"5 TB or 10 TB\"로 달리 적어요(아래 줄)."
+    },
+    {
+      "what": "Gemini AI Pro 스토리지(Google One 도움말)",
+      "value": "5 TB 또는 10 TB(멤버십 플랜에 따라)",
+      "asOf": "2026-10-07",
+      "sourceUrl": "https://support.google.com/googleone/answer/14534406?hl=en",
+      "grade": "unclear",
+      "quote": "5 TB or 10 TB of storage based on your specific Google AI Pro membership plan",
+      "note": "어느 조건에서 10 TB인지 자료에 없어요. 한국어판도 \"5TB 또는 10TB\"."
+    },
+    {
+      "what": "Gemini AI Ultra 가격 변경(공식 블로그)",
+      "value": "$100/월 단계 신설 · 최상위 플랜 $250 → $200 인하",
+      "asOf": "2026-05-19",
+      "sourceUrl": "https://blog.google/products-and-platforms/products/google-one/google-ai-subscriptions",
+      "grade": "confirmed",
+      "quote": "We're also reducing the monthly price of our top-tier AI Ultra plan from $250 to $200."
+    },
+    {
+      "what": "Gemini AI Plus 가격·스토리지 변경(Engadget 보도, Google 제품 책임자 게시글 인용)",
+      "value": "$7.99 → $4.99(또는 현지 환산) · 스토리지 200GB → 400GB",
+      "asOf": "2026-06-08",
+      "sourceUrl": "https://engadget.com/2190039/google-cuts-the-price-of-its-ai-plus-plan-and-doubles-the-storage",
+      "grade": "reported",
+      "quote": "doubling the included storage, from 200GB to 400GB",
+      "note": "미국 기준 보도예요. 한국 가격 변경 근거는 아님(c11)."
+    },
+    {
+      "what": "Gemini AI Plus 한국 출시 시 포함 스토리지(Google 한국 블로그)",
+      "value": "200GB",
+      "asOf": "2026-01-27",
+      "sourceUrl": "https://blog.google/intl/ko-kr/products/google-ai-plus-plans-kr/",
+      "grade": "confirmed",
+      "quote": "또한 본 요금제에는 200GB의 스토리지가 기본으로 제공되며",
+      "note": "추출기 보고: 본문 텍스트에서 원화 가격 숫자를 못 찾았고 비교표는 이미지."
+    },
+    {
+      "what": "ChatGPT Pro 200 포함 사용량(ChatGPT Work·Codex) — Plus 대비(보도)",
+      "value": "20배 → 10배(2026-10-30부터)",
+      "asOf": "2026-09-29",
+      "sourceUrl": "https://thenextweb.com/news/openai-devday-pro-200-usage-cut-pro-500-plan",
+      "grade": "reported",
+      "quote": "From 30 October, Pro 200's included usage in ChatGPT Work and Codex falls from 20 times to 10 times the Plus allowance, OpenAI said.",
+      "note": "공식 가격 문서에는 배수가 없어요(c13)."
+    },
+    {
+      "what": "ChatGPT 기존 Pro 200 가입자 이전 한도 유지 기한(보도)",
+      "value": "2026-10-29까지",
+      "asOf": "2026-09-30",
+      "sourceUrl": "https://winbuzzer.com/2026/09/30/openai-adds-500-chatgpt-pro-cuts-allowance-new-200-subscribers-a005-xcxwbn/",
+      "grade": "reported",
+      "quote": "keep their previous allowance through October 29, 2026"
+    },
+    {
+      "what": "ChatGPT 일회성 사용 크레딧(보도)",
+      "value": "$2,500(연말 만료) — 원문 주어는 Existing subscribers",
+      "asOf": "2026-09-29",
+      "sourceUrl": "https://thenextweb.com/news/openai-devday-pro-200-usage-cut-pro-500-plan",
+      "grade": "reported",
+      "quote": "a one-time grant of usage credits worth $2,500, which expire at the end of the year"
+    },
+    {
+      "what": "ChatGPT $100 Pro — Plus 대비 Codex(출시 시점 보도)",
+      "value": "5배(5x more Codex)",
+      "asOf": "2026-04-09",
+      "sourceUrl": "https://techcrunch.com/2026/04/09/chatgpt-pro-plan-100-month-codex/",
+      "grade": "reported",
+      "quote": "The $100 Pro plan will offer 5x more Codex than the Plus plan.",
+      "note": "5월 31일까지 더 높은 한도 프로모션 언급 — 현재 값으로 단정 금지(c13)."
+    },
+    {
+      "what": "ChatGPT Go — 무료 대비 메시지·파일 업로드·이미지 생성(보도)",
+      "value": "10배",
+      "asOf": "2026-01-17",
+      "sourceUrl": "https://byline.network/2026/01/17-544/",
+      "grade": "reported",
+      "quote": "무료 버전과 비교해 메시지, 파일 업로드, 이미지 생성이 10배 확대돼",
+      "note": "2026-01 출시 시점 보도. 현재 값은 공식 문서로 확인 못 함(c14)."
+    }
+  ],
+  "curatedAt": "2026-10-07",
+  "songs": [],
+  "sources": [
+    {
+      "title": "Claude Pricing — Free / Pro / Max (영문 가격 페이지)",
+      "url": "https://claude.com/pricing",
+      "host": "claude.com",
+      "tier": "official",
+      "body": "[WebFetch 원문 인용 발췌 · 2026-10-07 조회 · 라이브 가격 페이지(게시일 없음) · 여러 차례 조회에서 가격 문구 일치]\n[Free 카드] \"Free for everyone\" / \"Chat on web, desktop, and mobile\" / \"Search the web, create files, and run code\" / \"Memory across conversations\" / \"Connect your apps and tools\" / \"Create Artifacts\" / \"Usage limits apply.\"\n[Pro 카드] \"$17 Per month with annual subscription discount ($200 billed up front). $20 if billed monthly.\" / \"Everything in Free, plus: More usage*, Hand off and schedule tasks, Claude Design, Slides, Docs, Claude Code, Claude Science, Projects, More Claude models, Claude in Chrome and Microsoft 365\"\n[Max 카드] \"From $100 Per month\" / \"Everything in Pro, plus: Choose 5x or 20x more usage than Pro*, Higher output limits for all tasks, Early access to advanced Claude features, Priority access at high traffic times\"\n[카드 하단 주석] \"Usage limits apply. Prices shown don't include applicable tax.\"\n[FAQ - Plans and usage] \"Every plan has usage limits that reset on a rolling five-hour session window, and paid plans add weekly limits on top.\" / \"Pro gives you at least 5x more usage per 5-hour session than Free.\" / \"Max gives you 5x or 20x more usage per 5-hour session than Pro.\" / \"On Team plans, Standard seats give more than Pro and Premium seats give 5x more than Standard.\"\n[FAQ - Billing and payments] \"Yes, annual plans are designed to cost less than monthly subscriptions.\" / \"When you choose to pay annually, you're billed once up front for the year.\""
+    },
+    {
+      "title": "Claude 요금제 — Free / Pro / Max (한국어 가격 페이지)",
+      "url": "https://claude.com/ko-kr/pricing",
+      "host": "claude.com",
+      "tier": "official",
+      "body": "[WebFetch 원문 인용 발췌 · 2026-10-07 조회 · 한국어 페이지(ko-kr) · 여러 차례 조회에서 일치]\n[Free 카드] \"Claude 사용해 보기\" / \"$0\" / \"모두에게 무료\" / \"사용 한도가 적용됩니다.\"\n[Pro 카드] \"일상적인 업무에\" / \"$17\" / \"연간 구독 할인 적용 시 월 요금 (선불 $200). 월별 결제 시 $20.\"\n[Max 카드] \"하루 종일 Claude와 함께하는 분들을 위해\" / \"$100부터\" / \"월\" / \"Pro보다 5배 또는 20배 더 많은 사용량 선택\"\n[카드 하단 주석] \"표시된 가격에는 해당 세금이 포함되지 않습니다.\"\n[FAQ 요금제 및 사용량] \"모든 플랜에는 5시간 롤링 세션 단위로 초기화되는 사용 한도가\" / \"Pro는 Free 대비 5시간 세션당 최소 5배 더 많은 사용량을 제공합니다.\" / \"Max는 Pro 대비 5시간 세션당 5배 또는 20배 더 많은 사용량을 제공합니다.\"\n[FAQ 청구 및 결제] \"연간 플랜은 월간 구독보다 저렴하게 설계되어 있습니다.\" / \"연간 구독은 Pro 및 Team 플랜에서 이용할 수 있습니다.\" / \"Enterprise 플랜은 연간 구독으로만 제공됩니다.\"\n[추출기 보고(원문 아님)] 페이지 전체에서 원화(₩) 기호를 찾지 못함 — 가격은 달러($)로만 표기됨."
+    },
+    {
+      "title": "What is the Pro plan? — Claude Help Center",
+      "url": "https://support.claude.com/en/articles/8325606-what-is-the-pro-plan",
+      "host": "support.claude.com",
+      "tier": "official",
+      "body": "[WebFetch 원문 인용 발췌 · 2026-10-07 조회 · 페이지 표기 \"Updated over 2 weeks ago\"(정확한 갱신일 미표기)]\n[가격] \"The Pro plan is available for $20 per month (US), with pricing in your local currency where supported.\"\n[지역·세금] \"Monthly pricing varies by region, and some regions include applicable taxes in the displayed price while others add tax at checkout.\"\n[연간] \"You can choose to save with an annual subscription plan. Annual subscriptions are billed once yearly at a discounted rate.\"\n[한도] \"Your session-based usage limit will reset every five hours.\" / \"Pro plans also have a weekly usage limit that applies across all models.\" / \"Your reset day and time stay the same regardless of when you start using Claude or when your subscription begins\" / \"we may limit your usage in other ways, such as weekly and monthly caps or model and feature usage\"\n[포함 기능] \"More usage per session than the Free plan\" / \"Priority access to Claude during high-traffic periods\" / \"Early access to new features\" / \"Claude Code access\" / \"Longer, multi-step tasks\""
+    },
+    {
+      "title": "What is the Max plan? — Claude Help Center",
+      "url": "https://support.claude.com/en/articles/11049741-what-is-the-max-plan",
+      "host": "support.claude.com",
+      "tier": "official",
+      "body": "[WebFetch 원문 인용 발췌 · 2026-10-07 조회 · 페이지 표기 \"Updated over 2 weeks ago\"(정확한 갱신일 미표기)]\n[가격] \"Max 5x\": $100 per month / \"Max 20x\": $200 per month / \"These prices are for web subscriptions only. Mobile pricing may vary depending on your app platform.\"\n[구독 기간] \"The Max plan is currently available as a monthly subscription only.\"\n[사용량] \"Max 5x includes five times the Pro plan's per-session usage allowance\" / \"Max 20x includes 20 times the Pro plan's per-session usage allowance\" / \"Your session-based usage limit will reset every five hours. Max plans also have a weekly usage limit that applies across all models.\"\n[기능] \"Access to Claude Code\" / \"Priority access\" to new models and features / \"Higher usage limits that allow for deeper, more extensive work\"\n[연간 Pro에서 Max로 변경] \"When moving from an annual Pro plan to a Max plan, if the remaining balance on your annual Pro plan is greater than your Max plan price, you will receive a credit to your account for the remaining balance.\""
+    },
+    {
+      "title": "Higher usage limits for Claude and a compute deal with SpaceX — Anthropic",
+      "url": "https://www.anthropic.com/news/higher-limits-spacex",
+      "host": "www.anthropic.com",
+      "tier": "official",
+      "publishedAt": "2026-05-06",
+      "body": "[WebFetch 원문 인용 발췌 · 2026-10-07 조회 · 게시일 2026-05-06 (원문 표기 \"May 6, 2026\")]\n제목: \"Higher usage limits for Claude and a compute deal with SpaceX\"\n1. \"We've agreed to a partnership with SpaceX that will substantially increase our compute capacity.\"\n2. \"This, along with our other recent compute deals, means that we've been able to increase our usage limits for Claude Code and the Claude API.\"\n3. \"Below, we describe these changes and the progress we're making on compute.\"\n4. \"The following three changes—all effective today—are aimed at improving the experience of using Claude for our most dedicated customers.\"\n5. \"First, we're doubling Claude Code's five-hour rate limits for Pro, Max, Team, and seat-based Enterprise plans.\"\n6. \"Second, we're removing the peak hours limit reduction on Claude Code for Pro and Max accounts.\"\n[추출기 보고(원문 아님)] 세 번째 변경은 조회한 발췌에 없음."
+    },
+    {
+      "title": "Claude Fable models on your plan — Claude Help Center",
+      "url": "https://support.claude.com/en/articles/15424964-claude-fable-models-on-your-plan",
+      "host": "support.claude.com",
+      "tier": "official",
+      "publishedAt": "2026-09-02",
+      "body": "[WebFetch 원문 인용 발췌 · 2026-10-07 조회 · 갱신일 표기 2026-09-02 (원문 표기 \"September 2, 2026\") · 2회 조회에서 내용 일치 · 대괄호 소제목은 추출기 정리]\n\"Claude Fable 5 and Claude Fable 5.1 are available on all paid plans (Pro, Max, Team, and Enterprise).\"\n[Max 플랜, Team 프리미엄, Enterprise 프리미엄] \"Fable 5 and Fable 5.1 are included as a standard part of your plan. You can use up to 50% of your weekly usage limits on Fable models at no extra cost.\" / \"On Max plans, premium seats on Team plans, and premium seats on seat-based Enterprise plans: Fable 5 and Fable 5.1 are included as a standard part of your plan.\"\n[Pro 플랜, Team 표준] \"Fable 5 and Fable 5.1 aren't included in your plan's usage limits. You can use them with usage credits.\" / \"Pro plans and standard seats on Team plans: Fable 5 and Fable 5.1 aren't included in your plan's usage limits.\" / \"On the Pro plan and standard seats on the Team plan, you can keep using Fable 5 with usage credits or by upgrading to the Max plan.\"\n[Enterprise 표준(좌석 기반)] \"Fable 5 and Fable 5.1 aren't included in your plan's usage limits. You can use them if your organization has enabled usage credits.\"\n[Enterprise 사용량 기반, Claude API] \"Access to Fable 5 and Fable 5.1 is billed at standard API rates.\"\n[Free 플랜] \"Fable 5 isn't available on the Free plan.\"\n[공통] \"They draw from your plan's regular weekly usage limits and use them faster than other Claude models.\" / \"When you reach your Fable limit, you can keep using Fable models with usage credits, or switch to another model.\" / \"You can use them with usage credits, which let you pay for usage beyond what your plan includes.\""
+    },
+    {
+      "title": "Manage usage credits for paid Claude plans — Claude Help Center",
+      "url": "https://support.claude.com/en/articles/12429409-manage-usage-credits-for-paid-claude-plans",
+      "host": "support.claude.com",
+      "tier": "official",
+      "body": "[WebFetch 원문 인용 발췌 · 2026-10-07 조회(1회 조회) · 페이지 표기 \"Updated over a week ago\"(정확한 갱신일 미표기)]\n\"Usage credits allow individuals subscribed to paid Claude plans (Pro, Max 5x, and Max 20x)\"\n\"Usage credits are billed at standard API rates\"\n\"There is a daily redemption limit of $2000.\"\n\"If usage credits are enabled and you have funds available, you can choose to continue working.\"\n\"Your subsequent usage will be billed at standard API pricing rates.\"\n\"Your session limits reset every five hours as usual.\""
+    },
+    {
+      "title": "Claude by Anthropic — 한국 App Store 상품 페이지(앱 내 구입 목록)",
+      "url": "https://apps.apple.com/kr/app/claude-by-anthropic/id6473753684",
+      "host": "apps.apple.com",
+      "tier": "data",
+      "body": "[WebFetch 원문 인용 · 2026-10-07 조회 · 한국 App Store 상품 페이지 · 2회 조회에서 목록 일치]\n앱 이름 \"Claude by Anthropic\" / 개발자 \"Anthropic PBC\" / 가격 표기 \"무료 · 앱 내 구입\"\n[앱 내 구입 목록]\n1. \"Claude Pro - Monthly ￦33,000\"\n2. \"Claude Max 5x - Monthly ￦199,000\"\n3. \"Claude Pro - Annual ￦349,000\"\n4. \"Claude Max 20x - Monthly ￦449,000\"\n5. \"Usage Credits (250) ￦349,000\"\n6. \"Usage Credits (50) ￦77,000\"\n7. \"Usage Credits (20) ￦33,000\""
+    },
+    {
+      "title": "Google AI Pro & Ultra — Gemini 구독 페이지 (미국 /us/, 달러 표기)",
+      "url": "https://gemini.google/us/subscriptions/",
+      "host": "gemini.google",
+      "tier": "official",
+      "body": "[WebFetch 원문 인용 발췌 · 2026-10-07 조회 · 미국 페이지(달러 표기) · 2회 조회에서 가격·배수 일치]\n[Free] \"$0/ month with a Google Account\" / \"Access to 3.6 Flash\" / \"Varying access to 3.1 Pro\" / \"15 GB of cloud storage across Gmail, Drive, and Photos\"\n[Google AI Plus] \"$4.99/ month\" / \"Get 2x higher usage limits than Free\" / \"400 GB of cloud storage across Gmail, Drive, and Photos\" / \"Get 200 Google Flow Credits to use across our AI creative studio\" / \"More access to Nano Banana in Search\" / \"Access Gemini directly in Google apps\"\n[Google AI Pro] \"$19.99/ month\" / \"Get 4x higher usage limits than Free\" / \"5 TB of cloud storage across Gmail, Drive, and Photos\" / \"Get 1,000 Google Flow Credits to use across our AI creative studio\" / \"Higher access to Gemini 3 Pro, Deep Search, agentic capabilities, and more\" / \"Higher limits to our asynchronous coding agent for software developers\" / \"YouTube Premium Lite plan\"\n[Google AI Ultra] \"Starting at: $99.99/ month\" / \"$99.99/ month: 5x higher usage limits vs. AI Pro\" / \"$199.99 / month: 20x higher usage limits vs. AI Pro\" / \"Cloud storage starting at 20 TB across Gmail, Drive, and Photos\" / \"Get 10,000 or 25,000 Google Flow Credits to use across our AI creative studio\" / \"YouTube ad-free, offline, and in the background\"\n[하단] \"Cancel anytime. No refunds for partial billing periods, except as required by applicable law.\" / \"Google AI plans and Gemini for Gmail, Docs, and more are only available for ages 18+.\" / \"Rate limits may apply\" / \"Google AI Plus, Pro, and Ultra plans are available in more than 140 countries and territories\""
+    },
+    {
+      "title": "Google AI Pro 및 Ultra — Gemini 구독 페이지 (한국 /kr/, 원화 표기)",
+      "url": "https://gemini.google/kr/subscriptions/?hl=ko",
+      "host": "gemini.google",
+      "tier": "official",
+      "body": "[WebFetch 원문 인용 발췌 · 2026-10-07 조회 · 한국 페이지(원화 표기) · 여러 차례 조회(gemini.google/subscriptions, /kr/subscriptions/, /kr/subscriptions/?hl=ko)에서 가격값 일치]\n[무료] \"Google 계정당 매월 ₩0 KRW\"\n[Google AI Plus] \"매월 ₩7,500 KRW\" / \"무료 버전보다 2배 더 높은 사용량 혜택\" / \"Gmail, Drive, 포토에서 사용할 수 있는 400GB의 클라우드 스토리지\" / \"Google Flow 크레딧 200개를 받아 AI 크리에이티브 스튜디오에서 Gemini Omni Flash에 액세스\"\n[Google AI Pro — 카드에 가격 줄 없음] \"생산성을 높이고 창의력을 발휘할 수 있는 강력하고 새로운 기능을 더욱 많이 이용해 보세요.\" / \"무료 버전보다 4배 더 높은 사용량 혜택\" / \"무료 버전보다 4배 더 높은 사용량 한도가 적용되며 동영상 생성과 같은 더 많은 기능\" / \"Gmail, Drive, 포토에서 사용할 수 있는 5TB의 클라우드 스토리지\" / \"Google Flow 크레딧 1,000개를 받아 AI 크리에이티브 스튜디오에서 Gemini Omni Flash에 액세스\"\n[Google AI Ultra] \"최저가: ₩119,000 KRW/월\" / \"₩119,000 KRW/월: AI Pro 대비 5배 더 높은 사용량 한도\" / \"₩300,000 KRW /월: AI Pro 대비 20배 더 높은 사용량 한도\" / \"Pro 요금제보다 최대 20배 더 높은 Gemini 사용량 한도가 적용\" / \"Gmail, Drive, 포토에서 사용할 수 있는 20TB 이상의 클라우드 스토리지\" / \"Google Flow 크레딧 10,000개 또는 25,000개를 받아 AI 크리에이티브 스튜디오에서 액세스\"\n[하단] \"Google AI Plus, Pro, Ultra 요금제는 140개가 넘는 국가 및 지역에서 사용할 수 있습니다.\" / \"언제든지 취소할 수 있습니다. 관련 법규에 따라 요구되는 경우를 제외하고 남은 결제 기간은 환불되지 않습니다.\" / \"학생: 1년간 무료로 Plus 요금제를 이용하세요. 프로모션이 곧 만료됩니다.\"\n[추출기 보고(원문 아님)] 세금·부가세·VAT 관련 명시 문구는 페이지에서 찾지 못함."
+    },
+    {
+      "title": "Everything new in our Google AI subscriptions, fresh from I/O 2026 — Google Blog",
+      "url": "https://blog.google/products-and-platforms/products/google-one/google-ai-subscriptions",
+      "host": "blog.google",
+      "tier": "official",
+      "publishedAt": "2026-05-19",
+      "body": "[WebFetch 원문 인용 발췌 · 2026-10-07 조회 · 공식 Google 블로그 · 게시일 2026-05-19 (원문 표기 \"May 19, 2026\") · 글 제목은 검색 결과 표기]\n[가격] \"We're launching a $100/month AI Ultra plan, specifically tailored for developers, technical leads, knowledge workers and advanced creators.\" / \"We're also reducing the monthly price of our top-tier AI Ultra plan from $250 to $200.\"\n[사용량(추출기가 $100 플랜·$200 플랜 항목으로 구분)] \"A 5X higher usage limit in the Gemini app and Google Antigravity than our Pro plan\" / \"a 20X higher usage limit in the Gemini app and Google Antigravity than our Pro plan\"\n[스토리지] \"20TB of cloud storage to house massive datasets, codebases and media assets\"\n[플랜별 제공 범위] \"Gemini Omni (AI Plus, Pro and Ultra; global)\" / \"Gemini 3.5 Flash (AI Plus, Pro and Ultra; global)\" / \"AI Inbox in Gmail (AI Plus, Pro and Ultra; U.S. only)\" / \"Daily Brief in the Gemini app (AI Plus, Pro and Ultra; U.S. only)\" / \"Gemini Spark (AI Ultra $100 and $200; U.S. only)\" / \"Health Premium and Home Premium are also included in AI Pro and Ultra subscriptions\"\n[YouTube(추출기 정리)] \"YouTube Premium individual plan\"(AI Ultra $100·$200) / \"YouTube Premium Lite individual plan\"(AI Pro, 일부 국가)"
+    },
+    {
+      "title": "Gemini Apps limits & upgrades for Google AI subscribers — Gemini Apps Help (영문)",
+      "url": "https://support.google.com/gemini/answer/16275805?hl=en",
+      "host": "support.google.com",
+      "tier": "official",
+      "body": "[WebFetch 원문 인용 발췌 · 2026-10-07 조회 · 문서에서 갱신일 표기를 찾지 못함]\n[Usage limits 표] \"Without an AI plan | Standard limits\" / \"AI Plus | 2x higher than standard limits\" / \"AI Pro | 4x higher than standard limits\" / \"AI Ultra | 5x or 20x higher than AI Pro limits depending on your subscription\"\n[Context window 표] \"Without an AI plan | 32k tokens\" / \"AI Plus | 128k tokens\" / \"AI Pro & AI Ultra | 1 million tokens\"\n[한도 갱신] \"Your limit refreshes every 5 hours until you reach your weekly limit.\"\n[한도 도달 시] \"If you have a Google AI subscription and reach your limit, you can continue your conversation with Flash-Lite.\" / \"If you reach your five hour or weekly usage limits you can upgrade to a Google AI subscription with higher limits or wait until your model limit is refreshed.\""
+    },
+    {
+      "title": "Gemini 앱 사용 한도 및 업그레이드 — Gemini 앱 고객센터 (한국어판)",
+      "url": "https://support.google.com/gemini/answer/16275805?hl=ko",
+      "host": "support.google.com",
+      "tier": "official",
+      "body": "[WebFetch 원문 인용 발췌 · 2026-10-07 조회 · 한국어판 · 같은 문서를 3회 조회, \"4배 또는 20배\" 문구는 원문 그대로 인용을 요청한 재조회에서도 동일]\n[플랜별 한도] \"AI 요금제 미가입 | 표준 한도\" / \"AI Plus | 표준 한도보다 2배 높음\" / \"AI Pro | 표준 한도보다 4배 높음\" / \"AI Ultra | 구독에 따라 AI Pro 한도보다 4배 또는 20배 더 높음\"\n(첫 조회 요약에서는 행 이름이 \"Google AI Plus\"·\"Google AI Pro\"·\"Google AI Ultra\"로 표기됨)\n[한도 갱신] \"사용량 한도는 주간 한도에 도달할 때까지 5시간마다 갱신됩니다.\"\n[한도 도달 시] \"Google AI 구독을 이용 중 한도에 도달한 경우 Flash-Lite로 대화를 계속할 수 있습니다.\" / \"더 높은 한도를 제공하는 Google AI 구독으로 업그레이드하거나 모델 한도가 초기화될 때까지 기다리세요.\""
+    },
+    {
+      "title": "클라우드 스토리지 업그레이드를 위한 요금제 및 가격 책정 — Google One (한국어)",
+      "url": "https://one.google.com/about/plans?hl=ko",
+      "host": "one.google.com",
+      "tier": "official",
+      "body": "[WebFetch 원문 인용 발췌 · 2026-10-07 조회 · 한국어 · 가격은 원화(KRW)로 표시 · 여러 차례 조회에서 동일]\n페이지 제목 \"클라우드 스토리지 업그레이드를 위한 요금제 및 가격 책정 - Google One\" / \"모든 Google 계정에는 최대 15GB의 스토리지가 제공되며, 이 용량은 다른 Google One 요금제에서 제공하는 총 스토리지에 포함됩니다.\"\n[Basic] \"₩2,400/월\" / \"Google 포토, Drive, Gmail에 총 100GB의 스토리지 제공\"\n[Google AI Plus 카드] \"Google AI Plus (2TB)\" / \"₩11,900/월\" / \"최대 5명과 스토리지를 공유하세요.\" / \"새롭고 강력한 기능을 이용하세요.\" / \"Google 포토, Drive, Gmail에 총 2TB의 스토리지 제공\" / \"Google AI 요금제를 사용하지 않는 경우에 비해 2배 높은 Gemini 앱 사용량 한도와 함께 Flash 사고 모델 모델에 대한 액세스 권한 제공\" / \"Google의 창작 모델에 대한 확장 액세스를 제공하는 Google Flow\" / \"Gmail의 Gemini\" / \"추가 수준의 액세스가 제공되는 Gemini Notebook\" / \"Google 서비스 전반에 적용되는 추가 혜택\"\n[Google AI Pro 카드] \"Google AI Pro (5TB)\" / \"₩29,000/월\" / \"Google 포토, Drive, Gmail에 총 5TB의 스토리지 제공\"\n[영문판(?hl=en-US&g1_landing_page=60) 조회에서] \"Google AI Plus (2 TB)\" \"₩11,900/mo\", \"Google AI Pro (5 TB)\" \"₩29,000/mo\", \"Basic (100 GB)\" \"₩2,400/mo\", \"Cancel anytime. By subscribing, you agree to terms for Google One\"\n[추출기 보고(원문 아님)] 이 페이지에는 Google AI Ultra 요금제 카드가 없음."
+    },
+    {
+      "title": "Use Google AI Pro benefits — Google One Help",
+      "url": "https://support.google.com/googleone/answer/14534406?hl=en",
+      "host": "support.google.com",
+      "tier": "official",
+      "body": "[WebFetch 원문 인용 발췌 · 2026-10-07 조회 · 문서 제목 \"Use Google AI Pro benefits\" · 가격 문구는 문서에 없음(추출기 보고) · 같은 문서 한국어판(?hl=ko)도 조회: \"사용 중인 Google AI Pro 멤버십 요금제에 따라 5TB 또는 10TB의 스토리지 제공\"]\n[혜택 목록] \"AI-powered calling for local businesses to check pricing and availability in Google Search (US only)\" / \"Auto browse in Gemini in Chrome\" / \"Gemini 3 Pro model in \"AI Mode\"\" / \"Gemini app with 3 Pro and Veo\" / \"Gemini in Gmail, Docs, Vids, and more\" / \"Google Flow\" / \"Higher limits on Google Photos Generative AI\" / \"YouTube Premium Lite individual plan\" / \"5 TB or 10 TB of storage based on your specific Google AI Pro membership plan\"\n[한도] \"Each product has its own AI usage limits. Your usage limits depend on which features you are using and your Google AI plan.\"\n[추가 구매] \"If you reach your plan's limit, Google AI Pro and Google AI Ultra members can purchase AI credits\" / \"you can purchase AI credits to get extra usage in Google Flow and Google Antigravity.\"\n[지역] \"This feature is currently only available for countries where Google AI Pro and Gemini Notebook are available.\""
+    },
+    {
+      "title": "구글 AI 플러스(AI Plus) 요금제가 출시됩니다 — Google 한국 블로그",
+      "url": "https://blog.google/intl/ko-kr/products/google-ai-plus-plans-kr/",
+      "host": "blog.google",
+      "tier": "official",
+      "publishedAt": "2026-01-27",
+      "body": "[WebFetch 원문 인용 발췌 · 2026-10-07 조회 · 게시일 2026-01-27 (원문 표기 \"2026년 1월 27일\") · 가격 숫자는 본문 텍스트에 없고 요금제 비교표 이미지로만 제공(추출기 보고)]\n제목 \"구글 AI 플러스(AI Plus) 요금제가 출시됩니다\"\n1. \"오늘 구글 AI 플러스(AI Plus)가 한국을 포함한 35개 국가 및 지역에 새롭게 출시됩니다.\"\n2. \"구글 AI 요금제가 제공되는 모든 지역에서 이용 가능하며, 누구나 합리적인 가격으로 구글의 최신 AI 기능을 활용해 일상의 생산성과 창의성을 높일 수 있습니다.\"\n3. \"AI 플러스 요금제는 합리적인 가격으로 생산성과 창의성을 한 차원 높여주는 강력한 AI 모델과 툴을 제공합니다.\"\n4. \"여기에는 제미나이 앱의 제미나이 3 프로(Gemini 3 Pro)와 나노 바나나 프로(Nano Banana Pro)를 비롯해, 플로우(Flow)의 AI 영상 제작 툴, 노트북LM(NotebookLM)의 리서치 및 글쓰기 지원 기능 등이 모두 포함됩니다.\"\n5. \"또한 본 요금제에는 200GB의 스토리지가 기본으로 제공되며, 최대 5명의 가족 구성원과 이 모든 혜택을 공유할 수 있어 단 하나의 요금제로 온 가족이 업그레이드된 구글의 AI 경험을 함께 누릴 수 있습니다.\""
+    },
+    {
+      "title": "Google cuts the price of its AI Plus plan and doubles the storage — Engadget",
+      "url": "https://engadget.com/2190039/google-cuts-the-price-of-its-ai-plus-plan-and-doubles-the-storage",
+      "host": "engadget.com",
+      "tier": "press",
+      "publishedAt": "2026-06-08",
+      "body": "[WebFetch 원문 인용 발췌 · 2026-10-07 조회 · 게시일 2026-06-08 (원문 표기 \"June 8, 2026\") · 저자 Ian Carlos Campbell]\n\"Google is lowering the cost of its cheapest AI subscription to make Gemini models even easier to access. The Google AI Plus plan will now cost $5 per month, according to a post from Vikas Kansal, the company's Product Lead focused on Gemini AI subscriptions, down from its original $8 per month price. It now also comes with double the storage, 400GB instead of 200GB. The subscription plan became available in January 2026 as a cheaper way to access Google's Gemini 3 Pro model, Nano Banana Pro and Deep Research.\"\n[Kansal 게시글 인용(같은 기사에서)] \"Google AI Plus plan to $4.99/mo💰or local equivalent (down from $7.99)\" / \"doubling the included storage, from 200GB to 400GB\" / \"$4.99/mo or local equivalent\" / \"existing subscribers should see their extra storage space in the next few days, and the updated subscription price on their next bill\""
+    },
+    {
+      "title": "Google Gemini — 한국 App Store 상품 페이지(앱 내 구입 목록)",
+      "url": "https://apps.apple.com/kr/app/google-gemini/id6477489729",
+      "host": "apps.apple.com",
+      "tier": "data",
+      "body": "[WebFetch 원문 인용 · 2026-10-07 조회 · 한국 App Store 상품 페이지 · 2회 조회, 고유 가격값 일치(줄 중복 수는 조회마다 달랐음)]\n앱 이름 \"Google Gemini\" / 개발자 \"Google\" / 가격 표기 \"무료 · 앱 내 구입\"\n[1회차 조회 — 5줄] \"Google AI Pro (5 TB) ￦29,000\" / \"Google AI Plus (400 GB) ￦7,500\" / \"Google AI Plus (400 GB) ￦75,000\" / \"Google AI Pro (5 TB) ￦290,000\" / \"Google AI Ultra (30 TB) ￦300,000\"\n[2회차 조회 — 10줄(중복 포함)] \"Google AI Pro (5 TB) ￦29,000\"(5줄) / \"Google AI Plus (400 GB) ￦7,500\"(2줄) / \"Google AI Plus (400 GB) ￦75,000\" / \"Google AI Pro (5 TB) ￦290,000\" / \"Google AI Ultra (30 TB) ￦300,000\""
+    },
+    {
+      "title": "Pricing — ChatGPT Learn (OpenAI 공식 문서)",
+      "url": "https://learn.chatgpt.com/docs/pricing",
+      "host": "learn.chatgpt.com",
+      "tier": "official",
+      "body": "[WebFetch 원문 인용 발췌 · 2026-10-07 조회 · OpenAI 공식 문서 사이트 learn.chatgpt.com(마크다운판 /docs/pricing.md 도 조회) · 개인(Individual) 탭 · 카드 설명은 Codex 관점이지만 같은 플랜 가격 카드 · 3회 이상 조회에서 가격 일치]\n[Free] \"$0/month\" / \"Explore Codex capabilities on quick coding tasks.\" / \"GPT-6 Luna at Standard speed in the desktop app, subject to rollout\"\n[Go] \"$8/month\" / \"Use Codex for lightweight coding tasks.\" / \"GPT-6 Luna at Standard speed in the desktop app, subject to rollout\"\n[Plus] \"$20/month\" / \"Power a few focused coding sessions each week.\" / \"Codex on the web, in the CLI, in the IDE extension, and on iOS\" / \"Cloud-based integrations like automatic code review and Slack integration\" / \"GPT-6.1 Sol and GPT-6 Luna\" / \"Flexibly extend usage with ChatGPT credits\" / \"Other ChatGPT features as part of the Plus plan\"\n[Pro] \"From $100/month\" / \"Choose the Pro plan that fits your usage.\" / \"Plans at $100, $200, or $500 USD per month\" / \"Astra Ultrafast access on Pro $500\" / \"Other ChatGPT features as part of the Pro plan\" / \"Pro plans currently have no five-hour limit.\"\n[Credits] \"After you reach your included limits, available credits let you continue working.\" / \"Credits are the unit used to pay for eligible usage on credit-based plans.\" / \"Credit purchase prices and applicable discounts depend on your plan or agreement.\"\n[사용량 표] \"The estimates below show local messages per five-hour period for Plus and Standard Business.\" / \"Local messages and cloud chats share your plan's usage allowance. Weekly limits may also apply.\" / \"These estimates are not fixed message limits; check your usage dashboard\" (표 머리글: \"Model\" / \"Plus\" / \"Standard Business\" — Pro 5x·20x 열은 없음)"
+    },
+    {
+      "title": "DevDay 2026 — ChatGPT Learn (OpenAI 공식 문서)",
+      "url": "https://learn.chatgpt.com/docs/whats-new/devday-2026",
+      "host": "learn.chatgpt.com",
+      "tier": "official",
+      "publishedAt": "2026-09-29",
+      "body": "[WebFetch 원문 인용 발췌 · 2026-10-07 조회 · OpenAI 공식 문서 사이트 · 제목 \"DevDay 2026 | ChatGPT Learn\" · 페이지 날짜 2026-09-29 (원문 표기 \"September 29, 2026\")]\n[Codex 소제목 · Astra Ultrafast in Codex] \"Use GPT-6 Astra Ultrafast in Codex and ChatGPT Work on the Pro $500/month plan and eligible Enterprise and Edu plans.\"\n[Sites & plugins · Sign in with ChatGPT] \"Let users sign in with ChatGPT and, for eligible Plus and Pro users, use their ChatGPT plan for AI requests in your app.\"\n[Codex 소제목 · Reusable cloud environments] \"Describe your development setup, let Codex prepare and test it, then publish the\"\n[Codex 소제목 · Codex Security Cloud] \"Scan connected GitHub repositories or monitor new commits with the Security Cloud plugin,\"\n[추출기 보고(원문 아님)] 이 페이지에는 Pro 500 가격 비교·사용량 배수·Pro 200 변경 문장이 없음. \"Plans and usage\"는 /codex/pricing 링크로만 연결됨."
+    },
+    {
+      "title": "ChatGPT — 한국 App Store 상품 페이지(앱 내 구입 목록)",
+      "url": "https://apps.apple.com/kr/app/chatgpt/id6448311069",
+      "host": "apps.apple.com",
+      "tier": "data",
+      "body": "[WebFetch 원문 인용 · 2026-10-07 조회 · 한국 App Store 상품 페이지 · 2회 조회에서 목록 일치]\n앱 이름 \"ChatGPT\" / 개발자 \"OpenAI OpCo, LLC\" / 가격 표기 \"무료 · 앱 내 구입\"\n[앱 내 구입 목록(사용 가능)]\n1. \"ChatGPT Plus ￦29,000\"\n2. \"ChatGPT Go ￦13,000\"\n3. \"ChatGPT Pro 100 ￦159,000\"\n4. \"ChatGPT Pro 200 ￦299,000\"\n5. \"ChatGPT Plus ￦299,000\"\n6. \"ChatGPT Pro 500 ￦790,000\"\n[추출기 보고(원문 아님)] \"ChatGPT Plus\"가 두 번 나타남(￦29,000과 ￦299,000). 줄에 월/연 표기는 없음."
+    },
+    {
+      "title": "ChatGPT finally offers $100/month Pro plan — TechCrunch",
+      "url": "https://techcrunch.com/2026/04/09/chatgpt-pro-plan-100-month-codex/",
+      "host": "techcrunch.com",
+      "tier": "press",
+      "publishedAt": "2026-04-09",
+      "body": "[WebFetch 원문 인용 발췌 · 2026-10-07 조회 · 제목 \"ChatGPT finally offers $100/month Pro plan\" · 날짜 2026-04-09 (원문 표기 \"April 9, 2026\")]\n1. \"OpenAI announced on Thursday something that power users have been asking for forever: a $100/month plan.\"\n2. \"Until now, plans were priced at: free (which now includes ads), an $8/month Go plan (that also includes ads), a $20/month Plus plan (ad free), and then all the way up to a $200 Pro plan (also ad free).\"\n3. \"OpenAI's pricing plan page currently does not list a $200/month plan at all.\"\n4. \"However, that highest tier is still available, OpenAI confirmed to TechCrunch.\"\n5. \"The model maker says Plus (which remains at $20/month) and the new $100 Pro tier are geared to support daily usage of ChatGPT's coding tool Codex.\"\n6. \"The $100 Pro plan will offer 5x more Codex than the Plus plan.\"\n\"OpenAI makes no bones that this new pricing tier is to challenge Anthropic, which has long had a $100/month option for Claude.\"\n\"OpenAI is offering even higher limits of Codex on the $100 plan through May 31.\""
+    },
+    {
+      "title": "OpenAI halves Pro 200 usage and launches a $500 ChatGPT plan at DevDay — The Next Web",
+      "url": "https://thenextweb.com/news/openai-devday-pro-200-usage-cut-pro-500-plan",
+      "host": "thenextweb.com",
+      "tier": "press",
+      "publishedAt": "2026-09-29",
+      "body": "[WebFetch 원문 인용 발췌 · 2026-10-07 조회 · 게시 2026-09-29 (원문 표기 \"September 29, 2026 - 5:58 pm\")]\n1. \"OpenAI is halving the usage included in its $200 ChatGPT Pro plan and launching a $500 plan with its fastest speed tier.\"\n2. \"It also unveiled shared team workspaces, a meeting note-taker and @ChatGPT for Slack and Microsoft Teams.\"\n3. \"The launches came at DevDay 2026 in San Francisco on Tuesday, attended by 2,500 developers.\"\n4. \"They are among more than 20 launches in OpenAI's DevDay recap, alongside its always-on dots agents and its cheaper Sol model.\"\n5. \"Dots will not reach Pro users in the European Economic Area, Switzerland or the UK for now, OpenAI said in a statement sent to press.\"\n6. \"ChatGPT has 1.2 billion weekly users, and over 35 million people build with Work and Codex weekly, the company said.\"\n[Pro 500] \"A new Pro 500 plan costs $500 a month and is the only Pro plan with Ultrafast.\"\n[Pro 200] \"From 30 October, Pro 200's included usage in ChatGPT Work and Codex falls from 20 times to 10 times the Plus allowance, OpenAI said.\" / \"GPT-6 Pro messages in chat fall from 200 to 100 a week.\" (이 문장은 첫 조회에서만 인용됨 — 재조회 발췌에는 없음, 1회 조회 수준의 확인)\n[Ultrafast] \"OpenAI said Ultrafast generates up to 300 tokens per second in Codex, up to eight times faster than standard.\"\n[유예·크레딧] \"Existing subscribers keep their current limits until 29 October and get a one-time grant of usage credits worth $2,500, which expire at the end of the year.\""
+    },
+    {
+      "title": "OpenAI Adds $500 ChatGPT Pro Plan, Cuts Allowance for New $200 Plan Subscribers — Winbuzzer",
+      "url": "https://winbuzzer.com/2026/09/30/openai-adds-500-chatgpt-pro-cuts-allowance-new-200-subscribers-a005-xcxwbn/",
+      "host": "winbuzzer.com",
+      "tier": "press",
+      "publishedAt": "2026-09-30",
+      "body": "[WebFetch 원문 인용 발췌 · 2026-10-07 조회(1회 조회) · 게시 2026-09-30 (원문 표기 \"September 30, 2026 8:59 am CEST\") · 소제목은 추출기 정리]\n[Pro 500] \"New Pro Tier: OpenAI has added a $500 monthly ChatGPT Pro option with the highest included usage\"\n[기존 Pro 200] \"he said eligible existing Pro 200 subscribers would temporarily keep the previous 20X multiplier\" (발언 주체는 조회 발췌에 없음)\n[신규 Pro 200] \"New Pro 200 subscriptions that do not qualify for the old terms come with a lower included allowance\"\n[Pro 100과 비교] \"Pro 200 has more included usage than Pro 100, but neither lower tier includes Ultrafast\"\n[기준·유예] \"All three figures compare plan allowances with Plus as the 1X baseline. Customers whose Pro 200 subscription was active at OpenAI's eligibility cutoff, or during the seven days before it, keep their previous allowance through October 29, 2026\""
+    },
+    {
+      "title": "ChatGPT, 1만5천원 요금제 출시…무료·저가 요금제 광고 도입 추진 — 산업일보",
+      "url": "https://kidd.co.kr/news/244682",
+      "host": "kidd.co.kr",
+      "tier": "press",
+      "publishedAt": "2026-01-19",
+      "body": "[WebFetch 원문 인용 발췌 · 2026-10-07 조회 · 매체 산업일보 · 게시일 2026-01-19 17:35:34 · 기자 김대은 · 제목 \"ChatGPT, 1만5천원 요금제 출시…무료·저가 요금제 광고 도입 추진\"]\n\"미래에는 AI(인공지능) 사용료가 통신비처럼 필수 고정 지출이 될 것이다\"\n\"월 1만 5천 원(8달러, 19일 환율 기준) 요금제인 'ChatGPT Go'를 출시했다\"\n\"최신 모델인 'GPT-5.2 Instant'를 통한 메시지·파일 업로드·이미지 생성을 무료 버전보다 10배 더 제공\" (다른 조회에서는 문장 끝 \"…제공한다는 것이 회사 측의 설명이다.\")\n\"기존 개인용 ChatGPT 유료 요금제는 월 2만 9천 원의 Plus와 월 29만 9천 원의 Pro\"\n\"광고는 현재 대화와 관련된 스폰서 상품·서비스를 답변 하단에 표시하는 방식으로 시험 운영\""
+    },
+    {
+      "title": "오픈AI, 월 8달러 '챗GPT 고' 전세계 출시하며 광고 도입 — 바이라인네트워크",
+      "url": "https://byline.network/2026/01/17-544/",
+      "host": "byline.network",
+      "tier": "press",
+      "publishedAt": "2026-01-17",
+      "body": "[WebFetch 원문 인용 발췌 · 2026-10-07 조회 · 매체 바이라인네트워크 · 게시일 2026-01-17 · 제목 \"오픈AI, 월 8달러 '챗GPT 고' 전세계 출시하며 광고 도입\"]\n1. \"오픈AI가 월 8달러(1만5000원) 요금의 '챗GPT 고(ChatGPT Go)'를 17일 한국 등 전세계에 출시했다.\"\n2. \"그러면서 미국부터 챗GPT 무료 요금제와 저가 요금제에 광고를 붙이겠다고 발표했다.\"\n3. \"챗GPT 고는 챗GPT의 가장 인기 있는 기능에 대한 저가형 구독 서비스다.\"\n4. \"작년 8월 인도에서 처음 선보인 이후 170개 국가에 단계적으로 출시돼 왔다.\"\n5. \"챗GPT 고 출시 시장에서 글쓰기, 학습, 이미지 생성, 문제 해결 등 일상적인 작업 전반에서 강한 도입률과 꾸준한 사용 패턴이 확인됐으며, 이에 따라 챗GPT 고를 전 세계로 확대했다고 회사측은 설명했다.\"\n[한도] \"무료 버전과 비교해 메시지, 파일 업로드, 이미지 생성이 10배 확대돼\" / \"고에 비해 플러스는 메시지, 파일 업로드, 메모리, 컨텍스트의 상한이 더 높아\"\n[광고] \"무료 및 고 요금제에서 광고 테스트를 시작할 계획이다.\" / \"챗GPT 플러스, 프로, 비즈니스, 엔터프라이즈 등은 계속 광고 없이 제공된다.\""
+    }
+  ],
+  "dropped": [
+    {
+      "url": "https://claude.com/blog/cowork-is-now-claude",
+      "why": "플랜 가격·한도 비교와 직접 관련 없는 기능 롤아웃 공지(Cowork·채팅 통합이 Pro·Max에 먼저, Free·Team은 곧 따라온다는 2026-09-16 글). 문구가 \"over the next few weeks\"라 2026-10-07 현재 배포 상태를 단정할 수 없어 글의 근거로 쓰지 않음."
+    }
+  ]
+}

@@ -1,3 +1,28 @@
+# 2026-10-07 블로그 배치 — 사람 요청(/blog-run-today, 티스토리 5 + 네이버 5 이상)
+
+claim: `backend/out/blog/.daily-claim-2026-10-07` (07:07, 09:00 무인 /blog-daily 는 양보). 검색수요 게이트: NAVER_AD 자격증명 없음 → 못 돌림.
+이월(검증통과 미발행): 티스토리 windows11-storage-sense · 네이버 siraegi-guide. 중복 대조: posted.json 244 + posted-naver.json 65 + 초안 전체를 주제 핵심어로 grep.
+파이프라인: 조사(10 병렬, WebSearch 한도 소진) → 정리(10) → 집필(10) → SEO(10) → 팩트체크(Opus 10, **전편 반려→교정**) → 순차 assemble → selfreview → verify. 한끗 trend 2건은 수집 body 가 자리표시자라 A형 새 slug + alias stub.
+## 티스토리 (신규 5 — 검증 통과 5/5, 발행 1/5)
+- [x] excel-sumifs-countifs — 엑셀 SUMIFS·COUNTIFS · 팩트체크 통과(warn 9 중 정확성 반영) · verify 통과 · **발행 /525**
+- [ ] windows10-esu — 개인용 ESU 종료일 **2027-10-12**(2026-10-13 은 변경 전·상업용) · 팩트체크 blocker 2('개인용' 누락·EEA 60일 전제) 교정 · verify 통과 · **캡차 3회 미해결 → 발행 대기**
+- [ ] windows11-sound-fix — blocker 1(AC-3 '소리 문제 아님') 교정 · verify 통과 · 발행 대기
+- [ ] ai-subscription-plans — blocker 4(/385 요금 단계·원화 'Gemini만 있어요'·무료 플랜 주간 한도·'보도로만 전해진') 교정 · verify 통과 · 발행 대기
+- [ ] dev-trending-2026-10-07 — blocker 2(Clef '선두' 반박식 서술·MoE 설명) 교정 · verify 통과 · 발행 대기
+- [ ] 이월 windows11-storage-sense — 캡차 미해결(10:45), 오늘 5편 밖이라 내일
+## 네이버 (신규 5 + 이월 1 — 검증 통과, 발행 3/6)
+- [x] beer-pouring-standing-bar-guide — blocker 2 교정 · verify 통과 · **발행 224433829825**
+- [x] siraegi-guide(이월) — **발행 224433918401**
+- [x] humidifier-clean-guide — blocker 2(환경부 카드뉴스 범위 단정·/455 링크가 반대 규칙 서술) 교정 · **발행 224433926090**
+- [ ] pear-storage-guide — blocker 4(에틸렌 '사과 항목에만'·'기관마다 달라요'·2007 가정 수치) 교정 · 큐 대기
+- [ ] seoul-misik-2026-guide — blocker 1(투어·클래스 일정이 JS 탭에 있었음) 교정 · 큐 대기
+- [ ] japan-tax-free-refund-2026 — blocker 1(구매량 제한 누락) 교정 · 큐 대기
+- 네이버 큐: `blog-queue --only=naver --max=6` 11:31 시작(글 사이 20~40분)
+## 발행·마무리
+- [ ] 티스토리 4편 — 캡차를 사람이 창 보고 풀어야 함(3분·15분 모두 미입력으로 실패). 시작 신호 받으면 한 편씩
+- [ ] 조사파일 커밋·푸시 · 마무리(main==origin/main)
+- Found: ESU 종료일은 2027-10-12 · 한끗 trends.json beer-pouring 항목에 근거 없는 단정(미처리) · 발행된 티스토리 /385(Pro 월 200달러만)·/424·/455(가습기 세척 규칙) 본문이 최신 근거와 어긋남(미처리)
+
 # 2026-10-06 블로그 배치 — 사람 요청(/blog-run-today, 티스토리 5 + 네이버 5 이상)
 
 claim: `backend/out/blog/.daily-claim-2026-10-06` (09:00 무인 /blog-daily 는 양보). 예비 1편씩 더 써서 6+6 시도. 검색수요 게이트: NAVER_AD 자격증명 없음 → 못 돌림.

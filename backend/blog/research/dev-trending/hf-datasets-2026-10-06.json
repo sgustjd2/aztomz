@@ -1,0 +1,148 @@
+{
+  "source": "hf-datasets",
+  "fetchedOk": true,
+  "sourceUrl": "https://huggingface.co/api/datasets?limit=100&full=true",
+  "items": [
+    {
+      "id": "datasocial/tiktok-5.6B-videos",
+      "url": "https://huggingface.co/datasets/datasocial/tiktok-5.6B-videos",
+      "createdAt": "2026-10-03T11:14:37.000Z",
+      "lastModified": "2026-10-06T19:44:19.000Z",
+      "trendingScore": 61,
+      "likes": 64,
+      "downloads": 1181,
+      "pipelineTag": null,
+      "tags": [
+        "license:cc-by-nc-4.0",
+        "size_categories:1B<n<10B",
+        "format:parquet",
+        "modality:tabular",
+        "modality:text",
+        "library:datasets",
+        "library:dask",
+        "library:polars"
+      ]
+    },
+    {
+      "id": "ankitjh4/bharat-government-documents",
+      "url": "https://huggingface.co/datasets/ankitjh4/bharat-government-documents",
+      "createdAt": "2026-09-30T11:07:42.000Z",
+      "lastModified": "2026-10-04T19:19:07.000Z",
+      "trendingScore": 48,
+      "likes": 50,
+      "downloads": 520,
+      "pipelineTag": null,
+      "tags": [
+        "task_categories:question-answering",
+        "task_categories:text-retrieval",
+        "multilinguality:multilingual",
+        "license:other",
+        "size_categories:10K<n<100K",
+        "format:parquet",
+        "modality:text",
+        "library:datasets"
+      ]
+    },
+    {
+      "id": "cloud0day3/alania-synthetic-speech-tr",
+      "url": "https://huggingface.co/datasets/cloud0day3/alania-synthetic-speech-tr",
+      "createdAt": "2026-09-30T11:09:06.000Z",
+      "lastModified": "2026-10-04T18:01:02.000Z",
+      "trendingScore": 38,
+      "likes": 41,
+      "downloads": 2087,
+      "pipelineTag": null,
+      "tags": [
+        "task_categories:text-to-speech",
+        "task_categories:automatic-speech-recognition",
+        "language:tr",
+        "license:other",
+        "size_categories:1M<n<10M",
+        "format:parquet",
+        "modality:audio",
+        "modality:text"
+      ]
+    },
+    {
+      "id": "biglam/europeana_newspapers_images",
+      "url": "https://huggingface.co/datasets/biglam/europeana_newspapers_images",
+      "createdAt": "2026-09-30T15:49:27.000Z",
+      "lastModified": "2026-09-30T19:50:59.000Z",
+      "trendingScore": 14,
+      "likes": 14,
+      "downloads": 909,
+      "pipelineTag": null,
+      "tags": [
+        "task_categories:image-to-text",
+        "multilinguality:multilingual",
+        "source_datasets:biglam/europeana_newspapers",
+        "language:de",
+        "language:et",
+        "language:sr",
+        "language:fr",
+        "language:pl"
+      ]
+    },
+    {
+      "id": "Rapidata/text-to-image-human-preference-6M",
+      "url": "https://huggingface.co/datasets/Rapidata/text-to-image-human-preference-6M",
+      "createdAt": "2026-09-30T15:35:03.000Z",
+      "lastModified": "2026-10-01T11:49:56.000Z",
+      "trendingScore": 9,
+      "likes": 10,
+      "downloads": 463,
+      "pipelineTag": null,
+      "tags": [
+        "task_categories:text-to-image",
+        "language:en",
+        "license:cc-by-4.0",
+        "size_categories:100K<n<1M",
+        "format:parquet",
+        "modality:image",
+        "modality:tabular",
+        "modality:text"
+      ]
+    },
+    {
+      "id": "cloud0day3/alania-speech-captions-tr",
+      "url": "https://huggingface.co/datasets/cloud0day3/alania-speech-captions-tr",
+      "createdAt": "2026-10-01T21:18:45.000Z",
+      "lastModified": "2026-10-01T22:11:04.000Z",
+      "trendingScore": 8,
+      "likes": 8,
+      "downloads": 102,
+      "pipelineTag": null,
+      "tags": [
+        "task_categories:text-to-speech",
+        "task_categories:automatic-speech-recognition",
+        "task_categories:audio-classification",
+        "language:tr",
+        "license:other",
+        "size_categories:100K<n<1M",
+        "format:parquet",
+        "modality:tabular"
+      ]
+    },
+    {
+      "id": "imecai/chess-apo-bench",
+      "url": "https://huggingface.co/datasets/imecai/chess-apo-bench",
+      "createdAt": "2026-10-05T12:48:22.000Z",
+      "lastModified": "2026-10-05T13:19:36.000Z",
+      "trendingScore": 7,
+      "likes": 7,
+      "downloads": 36,
+      "pipelineTag": null,
+      "tags": [
+        "task_categories:text-generation",
+        "language:en",
+        "license:cc0-1.0",
+        "size_categories:1K<n<10K",
+        "format:csv",
+        "modality:tabular",
+        "modality:text",
+        "library:datasets"
+      ]
+    }
+  ],
+  "note": "no-sort(trendingScore 내림차순) 상위 100건 중 createdAt 최근 7일 이내인 것만 남김. 데이터셋은 신규가 드물어 0건이 정상일 수 있음 — 억지로 채우지 않음."
+}

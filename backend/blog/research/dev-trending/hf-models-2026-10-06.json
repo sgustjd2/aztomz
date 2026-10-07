@@ -1,0 +1,304 @@
+{
+  "source": "hf-models",
+  "fetchedOk": true,
+  "sourceUrl": "https://huggingface.co/api/models?limit=100&full=true",
+  "items": [
+    {
+      "id": "Cloudflare/clef",
+      "url": "https://huggingface.co/Cloudflare/clef",
+      "createdAt": "2026-09-30T21:15:35.000Z",
+      "lastModified": "2026-10-01T15:23:46.000Z",
+      "trendingScore": 1532,
+      "likes": 1668,
+      "downloads": 7255,
+      "pipelineTag": "image-text-to-text",
+      "tags": [
+        "transformers",
+        "safetensors",
+        "qwen3_5",
+        "image-text-to-text",
+        "clef",
+        "cloudflare",
+        "systemone",
+        "qwen3.8"
+      ]
+    },
+    {
+      "id": "autotrust/JEV-27B-VL",
+      "url": "https://huggingface.co/autotrust/JEV-27B-VL",
+      "createdAt": "2026-09-30T05:02:23.000Z",
+      "lastModified": "2026-10-03T11:00:42.000Z",
+      "trendingScore": 784,
+      "likes": 970,
+      "downloads": 1525286,
+      "pipelineTag": "image-text-to-text",
+      "tags": [
+        "transformers",
+        "safetensors",
+        "qwen3_5",
+        "image-text-to-text",
+        "jev",
+        "system-one",
+        "system-two",
+        "typed-decisions"
+      ]
+    },
+    {
+      "id": "Aleph-Alpha/Kolibri-1",
+      "url": "https://huggingface.co/Aleph-Alpha/Kolibri-1",
+      "createdAt": "2026-10-02T05:54:02.000Z",
+      "lastModified": "2026-10-03T08:43:53.000Z",
+      "trendingScore": 678,
+      "likes": 708,
+      "downloads": 4138,
+      "pipelineTag": "text-generation",
+      "tags": [
+        "vllm",
+        "safetensors",
+        "kolibri1",
+        "reasoning",
+        "moe",
+        "text-generation",
+        "conversational",
+        "de"
+      ]
+    },
+    {
+      "id": "Cloudflare/clef-flash",
+      "url": "https://huggingface.co/Cloudflare/clef-flash",
+      "createdAt": "2026-09-30T21:15:36.000Z",
+      "lastModified": "2026-10-01T15:23:49.000Z",
+      "trendingScore": 561,
+      "likes": 587,
+      "downloads": 10638,
+      "pipelineTag": "image-text-to-text",
+      "tags": [
+        "transformers",
+        "safetensors",
+        "qwen3_5",
+        "image-text-to-text",
+        "clef",
+        "cloudflare",
+        "systemone",
+        "qwen3.5"
+      ]
+    },
+    {
+      "id": "autotrust/GEV-26B-Decide",
+      "url": "https://huggingface.co/autotrust/GEV-26B-Decide",
+      "createdAt": "2026-10-02T04:20:21.000Z",
+      "lastModified": "2026-10-03T11:00:46.000Z",
+      "trendingScore": 536,
+      "likes": 674,
+      "downloads": 854574,
+      "pipelineTag": "text-classification",
+      "tags": [
+        "transformers",
+        "safetensors",
+        "gemma4",
+        "image-text-to-text",
+        "system-one",
+        "system-two",
+        "adaptive-thinking",
+        "typed-decisions"
+      ]
+    },
+    {
+      "id": "Infatoshi/GLM-5.3-UNCENSORED-EXL3-3.0bpw",
+      "url": "https://huggingface.co/Infatoshi/GLM-5.3-UNCENSORED-EXL3-3.0bpw",
+      "createdAt": "2026-10-01T03:42:00.000Z",
+      "lastModified": "2026-10-01T10:01:17.000Z",
+      "trendingScore": 229,
+      "likes": 262,
+      "downloads": 1660,
+      "pipelineTag": "text-generation",
+      "tags": [
+        "exllamav3",
+        "safetensors",
+        "glm_moe_dsa",
+        "exl3",
+        "glm",
+        "moe",
+        "uncensored",
+        "text-generation"
+      ]
+    },
+    {
+      "id": "Cactus-Compute/whistle",
+      "url": "https://huggingface.co/Cactus-Compute/whistle",
+      "createdAt": "2026-09-30T17:13:26.000Z",
+      "lastModified": "2026-10-02T07:27:29.000Z",
+      "trendingScore": 122,
+      "likes": 124,
+      "downloads": 1887,
+      "pipelineTag": "automatic-speech-recognition",
+      "tags": [
+        "cactus-needle",
+        "whistle",
+        "speech-recognition",
+        "speech-to-text",
+        "on-device",
+        "edge",
+        "quantization",
+        "webassembly"
+      ]
+    },
+    {
+      "id": "SC117/Qwen3.8-Flash-Next-GSQ-RCO-abliterated-GGUF",
+      "url": "https://huggingface.co/SC117/Qwen3.8-Flash-Next-GSQ-RCO-abliterated-GGUF",
+      "createdAt": "2026-10-02T03:42:33.000Z",
+      "lastModified": "2026-10-03T12:52:36.000Z",
+      "trendingScore": 108,
+      "likes": 116,
+      "downloads": 369229,
+      "pipelineTag": "image-text-to-text",
+      "tags": [
+        "gguf",
+        "llama-cpp",
+        "abliterated",
+        "uncensored",
+        "quantization",
+        "tensor-transplant",
+        "gsq",
+        "rco"
+      ]
+    },
+    {
+      "id": "canberkkkkkk/ema-lightning",
+      "url": "https://huggingface.co/canberkkkkkk/ema-lightning",
+      "createdAt": "2026-10-01T14:18:49.000Z",
+      "lastModified": "2026-10-06T19:52:35.000Z",
+      "trendingScore": 89,
+      "likes": 95,
+      "downloads": 10,
+      "pipelineTag": "text-to-speech",
+      "tags": [
+        "ema-lightning",
+        "text-to-speech",
+        "tts",
+        "turkish",
+        "speech-synthesis",
+        "flow-matching",
+        "tr",
+        "arxiv:2405.14867"
+      ]
+    },
+    {
+      "id": "perplexity-ai/pplx-decider-v1-27b",
+      "url": "https://huggingface.co/perplexity-ai/pplx-decider-v1-27b",
+      "createdAt": "2026-10-01T21:24:11.000Z",
+      "lastModified": "2026-10-01T21:24:15.000Z",
+      "trendingScore": 89,
+      "likes": 93,
+      "downloads": 1507,
+      "pipelineTag": "text-classification",
+      "tags": [
+        "pytorch",
+        "safetensors",
+        "qwen3_5",
+        "classification",
+        "multimodal",
+        "custom-code",
+        "text-classification",
+        "base_model:Qwen/Qwen3.8-27B"
+      ]
+    },
+    {
+      "id": "speach1sdef178/MiniMax-H3-X2-Detail-VAE",
+      "url": "https://huggingface.co/speach1sdef178/MiniMax-H3-X2-Detail-VAE",
+      "createdAt": "2026-09-30T19:59:27.000Z",
+      "lastModified": "2026-09-30T21:51:00.000Z",
+      "trendingScore": 82,
+      "likes": 84,
+      "downloads": 11003,
+      "pipelineTag": "image-to-video",
+      "tags": [
+        "minimax-h3",
+        "minimax",
+        "comfyui",
+        "vae",
+        "video-vae",
+        "video-generation",
+        "x2-upscaling",
+        "reference-image"
+      ]
+    },
+    {
+      "id": "ZhengmingYu/DMAD",
+      "url": "https://huggingface.co/ZhengmingYu/DMAD",
+      "createdAt": "2026-10-02T00:48:03.000Z",
+      "lastModified": "2026-10-06T18:45:29.000Z",
+      "trendingScore": 74,
+      "likes": 77,
+      "downloads": 0,
+      "pipelineTag": "text-to-video",
+      "tags": [
+        "diffusers",
+        "text-to-audio-video",
+        "audio-video-generation",
+        "distillation",
+        "lora",
+        "minimax-h3",
+        "text-to-video",
+        "arxiv:2610.02188"
+      ]
+    },
+    {
+      "id": "autotrust/GEV-26B-Decide-NVFP4",
+      "url": "https://huggingface.co/autotrust/GEV-26B-Decide-NVFP4",
+      "createdAt": "2026-10-05T01:31:09.000Z",
+      "lastModified": "2026-10-05T01:48:56.000Z",
+      "trendingScore": 74,
+      "likes": 89,
+      "downloads": 9282,
+      "pipelineTag": "text-classification",
+      "tags": [
+        "transformers",
+        "safetensors",
+        "gemma4",
+        "image-text-to-text",
+        "system-one",
+        "system-two",
+        "adaptive-thinking",
+        "typed-decisions"
+      ]
+    },
+    {
+      "id": "RunningHubAI/rh-qwen-image-2.1-lora-2104918997757157378",
+      "url": "https://huggingface.co/RunningHubAI/rh-qwen-image-2.1-lora-2104918997757157378",
+      "createdAt": "2026-09-30T09:35:01.000Z",
+      "lastModified": "2026-09-30T09:36:03.000Z",
+      "trendingScore": 65,
+      "likes": 71,
+      "downloads": 0,
+      "pipelineTag": "text-to-image",
+      "tags": [
+        "comfyui",
+        "lora",
+        "text-to-image",
+        "region:us"
+      ]
+    },
+    {
+      "id": "ausboss/Qwen-Image-2.1-Outfit-Swap-Consistency-LoRA",
+      "url": "https://huggingface.co/ausboss/Qwen-Image-2.1-Outfit-Swap-Consistency-LoRA",
+      "createdAt": "2026-10-04T04:03:30.000Z",
+      "lastModified": "2026-10-05T13:49:00.000Z",
+      "trendingScore": 65,
+      "likes": 68,
+      "downloads": 0,
+      "pipelineTag": "image-to-image",
+      "tags": [
+        "lora",
+        "image-editing",
+        "outfit-swap",
+        "consistency",
+        "virtual-try-on",
+        "qwen-image",
+        "qwen-image-2.1",
+        "comfyui"
+      ]
+    }
+  ],
+  "note": "no-sort(trendingScore 내림차순) 상위 100건 중 createdAt 최근 7일 이내인 것만 남김. "
+}

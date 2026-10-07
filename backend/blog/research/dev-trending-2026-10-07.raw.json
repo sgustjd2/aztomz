@@ -1,0 +1,1016 @@
+{
+  "keyword": "이번 주 개발 트렌드 — GitHub 주간 급상승 + HuggingFace 신규 모델·데이터셋 (2026-10-07)",
+  "categoryId": "dev-trending",
+  "slug": "dev-trending-2026-10-07",
+  "platform": "tistory",
+  "searchedAt": "2026-10-07",
+  "origin": "dev-trending-fetch.mjs 후보 3파일(2026-10-07 07:12 KST) + 항목별 README·모델 카드·데이터셋 카드를 gh api / curl 로 raw 텍스트 그대로 수집(WebFetch 요약 모델을 거치지 않음) + 블로그·보도자료·문서 페이지는 WebFetch 로 1차 확인 후 curl 로 원문 재확인. source.body 는 원문에서 기계적으로 잘라 옮긴 발췌, facts 의 모든 원문 인용구는 같은 source.body 안에 있음을 스크립트로 검증함.",
+  "note": "수치 기준: 후보 3파일(2026-10-07 07:12 KST). 항목별 README·카드·API 는 같은 날 직접 받아 대조했고 차이는 수 개(likes·스타) 수준(conflicts 참고).\n(1) GitHub 4건 모두 \"이번 주 생성\"이 아님 — 생성일 OpenShell 2026-02-24 · openrig 2026-04-01 · PageIndex 2025-04-01 · hyperframes 2026-03-10. \"새로 나왔다\" 금지, \"이번 주 스타가 몰린 저장소\"로만. 이번 주 스타/누적 비율(계산): openrig 68.8% · OpenShell 39.1% · PageIndex 7.4% · hyperframes 5.8%.\n(2) HF 모델·데이터셋은 createdAt 이 2026-09-30 이후(7일 창 안). HF API 의 downloads 는 \"최근 30일\" 필드, trendingScore 산식은 공개 설명 없음.\n(3) 성능·비용·순위 수치는 전부 개발사 자체 주장(Cloudflare Decision Index 0.2.1 자체 실행, Aleph Alpha 자체 평가표, Perplexity API 측정, Vectify 벤치마크·Mafin 2.5, Cactus 카드·그림, Rapidata 자체 순위) — \"~가 주장하는 바\"로만 귀속할 것. Whistle 은 개발사 요약에서도 TED-LIUM·AMI·MLS 평균은 Whisper base 가 앞선다고 밝힘(전반적 우위 단정 금지), Clef 는 카드 표 기준 1등 행이 Clef-flash 16·Clef 11·Jev 11.\n(4) 한국어 지원: Kolibri(독일어·영어) · Whistle(영어·독일어·프랑스어·스페인어·이탈리아어·네덜란드어·폴란드어) · alania(터키어) 모두 카드상 한국어 없음. openrig 는 네이티브 Windows 미지원(WSL2 미검증), OpenShell 은 Windows 는 WSL 2(실험적).\n(5) 항목 수 상한 9건(GitHub 4 + 모델 3 + 데이터셋 2). 분량(1,800~6,500자)이 빠듯하면 Rapidata(trendingScore 9) → hyperframes → alania 순으로 뺀다. Clef-flash·pplx-decider-v1-27b 는 독립 항목이 아니라 Clef 절 안의 비교용.\n(6) 라이선스 주의: Kolibri 는 Apache 2.0 이지만 카드가 \"가중치·설정 파일에만 적용\"이라고 명시, Rapidata 는 CC-BY-4.0 이 인간 주석·자체 프롬프트에만 해당(생성 이미지는 각 모델 약관), alania 는 크레딧 표기 조건 + cc-by-sa 설정은 같은 라이선스 유지. OpenShell·openrig 는 telemetry/훅 설정을 건드리므로 README 경고를 함께 전할 것(OpenShell: 익명 텔레메트리 수집 안내, openrig: 프로바이더 훅·워크스페이스 신뢰 설정 기록).\n(7) 중복: OpenShell 은 dev-digest-2026-09-30 에서, \"결정 모델\" 계열은 dev-trending-2026-09-25(laya)·vlm-watch-2026-10-01 에서 이미 다룸 — relatedPosted 의 실제 URL 로 내부링크 가능.\n(8) 데이터 위치: 후보 수치는 backend/blog/research/dev-trending/{github,hf-models,hf-datasets}-2026-10-06.json, 각 항목 source 의 head 첫머리에 \"[후보 파일 …]\" 줄로 옮겨 둠. facts 는 각 source 안에 중첩돼 있고 그 source.url 이 출처이며, 뒤쪽 \"원문:\" 인용구는 같은 source.body 안에 그대로 있다(스크립트로 전수 검증).",
+  "queries": [
+    "brief·카테고리 정의 읽기: backend/out/blog/_brief-2026-10-07.md, backend/blog/categories/dev-trending.json",
+    "후보 3파일 읽기(2026-10-07 07:12 KST 수집): backend/blog/research/dev-trending/{github,hf-models,hf-datasets}-2026-10-06.json",
+    "중복 점검: dev-trending-2026-09-25.json·github-2026-09-25.json·hf-models-2026-09-25.json·hf-datasets-2026-09-25.json 대조, posted.json·research·out 전체 키워드 grep(openrig, hyperframes, pageindex, openshell, clef, kolibri, whistle, cactus, rapidata, alania …)",
+    "gh api repos/<owner>/<repo> + gh api -H \"Accept: application/vnd.github.raw\" repos/<owner>/<repo>/readme — NVIDIA/OpenShell, mvschwarz/openrig, VectifyAI/PageIndex(+PageIndex-OSS-Benchmark, Mafin2.5-FinanceBench), heygen-com/hyperframes, cactus-compute/needle, 제외 판단용 thedotmack/claude-mem·pablostanley/yoinks·Panniantong/Agent-Reach·cursor/plugins·DuarteSantos8/openGym",
+    "curl https://huggingface.co/<id>/raw/main/README.md + https://huggingface.co/api/models/<id> — Cloudflare/clef, Cloudflare/clef-flash, Aleph-Alpha/Kolibri-1, Cactus-Compute/whistle, perplexity-ai/pplx-decider-v1-27b, autotrust/JEV-27B-VL, autotrust/GEV-26B-Decide",
+    "curl https://huggingface.co/datasets/<id>/raw/main/README.md + https://huggingface.co/api/datasets/<id> — cloud0day3/alania-synthetic-speech-tr, Rapidata/text-to-image-human-preference-6M, imecai/chess-apo-bench, datasocial/tiktok-5.6B-videos, ankitjh4/bharat-government-documents, biglam/europeana_newspapers_images",
+    "curl https://registry.npmjs.org/@openrig%2Fcli · /hyperframes, https://pypi.org/pypi/{openshell,pageindex,cactus-needle}/json",
+    "WebFetch https://blog.cloudflare.com/clef-decision-models → curl 로 원문 재확인(수치·문장은 curl 텍스트에서 인용)",
+    "WebFetch https://aleph-alpha.com/en/blog/kolibri-has-landed-a-sovereign-open-weight-model/ → curl 원문 재확인",
+    "WebFetch https://nvidianews.nvidia.com/news/open-agent-safety-platform, https://docs.nvidia.com/openshell/latest/ → curl 원문 재확인",
+    "WebFetch https://developers.cloudflare.com/workers-ai/models/clef/ → curl 원문 재확인(컨텍스트 65,536·$0.24/M 입력 토큰)",
+    "WebFetch https://huggingface.co/docs/hub/models-download-stats → curl 원문 재확인; WebFetch https://huggingface.co/docs/huggingface_hub/package_reference/hf_api (ModelInfo 속성 없음) → raw hf_api.py 소스 docstring 로 대체",
+    "WebSearch(standard) \"Hugging Face Hub API trendingScore definition models trending sort how calculated likes last 7 days\" — 산식 설명 못 찾음",
+    "curl https://github.com/trending?since=weekly 라이브 재확인(2026-10-07 07:29 KST), 모든 source URL HTTP 200 재확인(39건)",
+    "Whistle 벤치마크 SVG(assets/whistle-benchmarks.svg·whistle-model.svg) <text> 노드 추출 + 좌표·막대 길이로 값-라벨 짝 검산"
+  ],
+  "selected": [
+    {
+      "kind": "github",
+      "id": "NVIDIA/OpenShell",
+      "url": "https://github.com/NVIDIA/OpenShell",
+      "language": "Rust",
+      "license": "Apache-2.0",
+      "repoCreatedAt": "2026-02-24",
+      "starsThisWeek": 5915,
+      "totalStars": 15122,
+      "weekShareOfTotalPct": 39.1,
+      "candidateFile": "github-2026-10-06.json",
+      "reentry": "재진입 + 타 시리즈에서 이미 다룸: 저장소 생성 2026-02-24·PyPI 첫 릴리스 2026-03-10(이번 주 신작 아님). dev-digest-2026-09-30(https://burning-go9me.tistory.com/508)이 NVIDIA Open Agent Safety Platform(9/28) 뉴스 속 OpenShell 을 이미 소개함 → \"새로 나온\" 표현 금지, \"0.1.0(9/25)·NVIDIA 플랫폼 발표(9/28) 이후 스타가 몰린 저장소\"로 쓰고 그 글로 내부링크 가능.",
+      "primarySource": "https://github.com/NVIDIA/OpenShell",
+      "otherSources": [
+        "https://api.github.com/repos/NVIDIA/OpenShell",
+        "https://pypi.org/pypi/openshell/json",
+        "https://nvidianews.nvidia.com/news/open-agent-safety-platform",
+        "https://docs.nvidia.com/openshell/latest/"
+      ],
+      "role": "item",
+      "docs": "https://docs.nvidia.com/openshell/latest/",
+      "pypiLatest": "0.1.2 (2026-09-28)"
+    },
+    {
+      "kind": "github",
+      "id": "mvschwarz/openrig",
+      "url": "https://github.com/mvschwarz/openrig",
+      "language": "TypeScript",
+      "license": "Apache-2.0",
+      "repoCreatedAt": "2026-04-01",
+      "starsThisWeek": 3776,
+      "totalStars": 5487,
+      "weekShareOfTotalPct": 68.8,
+      "candidateFile": "github-2026-10-06.json",
+      "reentry": "재진입(저장소 생성 2026-04-01, 약 6개월). 이전 편·타 시리즈 중복 없음(research·out 전체 grep 0건). 후보 중 누적 스타의 대부분(68.8%)이 이번 주에 쌓인 유일한 항목.",
+      "primarySource": "https://github.com/mvschwarz/openrig",
+      "otherSources": [
+        "https://api.github.com/repos/mvschwarz/openrig",
+        "https://registry.npmjs.org/@openrig%2Fcli"
+      ],
+      "role": "item",
+      "docs": "https://openrig.dev/docs",
+      "npmLatest": "@openrig/cli 0.6.5 (2026-10-04)"
+    },
+    {
+      "kind": "github",
+      "id": "VectifyAI/PageIndex",
+      "url": "https://github.com/VectifyAI/PageIndex",
+      "language": "Python",
+      "license": "MIT",
+      "repoCreatedAt": "2025-04-01",
+      "starsThisWeek": 2860,
+      "totalStars": 38779,
+      "weekShareOfTotalPct": 7.4,
+      "candidateFile": "github-2026-10-06.json",
+      "reentry": "재진입(저장소 생성 2025-04-01, 약 1년 6개월). 이전 편·타 시리즈 중복 없음(VectifyAI grep 은 오늘 후보파일에만 있음). 성능·비용 수치는 모두 Vectify 자체 주장.",
+      "primarySource": "https://github.com/VectifyAI/PageIndex",
+      "otherSources": [
+        "https://api.github.com/repos/VectifyAI/PageIndex",
+        "https://pypi.org/pypi/pageindex/json",
+        "https://github.com/VectifyAI/PageIndex-OSS-Benchmark",
+        "https://github.com/VectifyAI/Mafin2.5-FinanceBench"
+      ],
+      "role": "item",
+      "docs": "https://docs.pageindex.ai/getting-started",
+      "pypiLatest": "pageindex 0.2.21 (2026-10-01)"
+    },
+    {
+      "kind": "github",
+      "id": "heygen-com/hyperframes",
+      "url": "https://github.com/heygen-com/hyperframes",
+      "language": "TypeScript",
+      "license": "Apache-2.0",
+      "repoCreatedAt": "2026-03-10",
+      "starsThisWeek": 3342,
+      "totalStars": 57894,
+      "weekShareOfTotalPct": 5.8,
+      "candidateFile": "github-2026-10-06.json",
+      "reentry": "재진입(저장소 생성 2026-03-10, 약 7개월). 이전 편·타 시리즈 중복 없음. 개발사는 영상 서비스 HeyGen(README 의 도입 사례는 자기 서술).",
+      "primarySource": "https://github.com/heygen-com/hyperframes",
+      "otherSources": [
+        "https://api.github.com/repos/heygen-com/hyperframes",
+        "https://registry.npmjs.org/hyperframes"
+      ],
+      "role": "item",
+      "docs": "https://hyperframes.heygen.com/introduction",
+      "npmLatest": "hyperframes 0.8.138 (2026-10-06)"
+    },
+    {
+      "kind": "hf-model",
+      "id": "Cloudflare/clef",
+      "url": "https://huggingface.co/Cloudflare/clef",
+      "createdAt": "2026-09-30T21:15:35.000Z",
+      "trendingScore": 1532,
+      "likes": 1668,
+      "downloads30d": 7255,
+      "candidateFile": "hf-models-2026-10-06.json",
+      "role": "item",
+      "license": "apache-2.0",
+      "baseModel": "Qwen/Qwen3.8-27B",
+      "params": {
+        "cardLabel": "27B (billion)",
+        "won": "약 270억",
+        "apiSafetensorsTotal": 27356728560,
+        "apiWon": "약 273.6억"
+      },
+      "reentry": "신규(createdAt 2026-09-30T21:15Z = 한국시간 10-01 06:15, 7일 창 안). 단 같은 \"결정(decision) 모델\" 계열이 직전 편 dev-trending-2026-09-25(laya, https://burning-go9me.tistory.com/484)과 vlm-watch-2026-10-01(Intern-Decision·imajev-4b, https://burning-go9me.tistory.com/516)에도 나옴 — 계열 연속 등장 맥락으로 쓰면 중복감 완화.",
+      "family": [
+        "Cloudflare/clef-flash (9B ≈ 90억, Qwen/Qwen3.5-9B 기반, 후보파일 trendingScore 561 / likes 587 / downloads 10,638)",
+        "perplexity-ai/pplx-decider-v1-27b (비교 한 문장용 보조, 후보파일 trendingScore 89 / likes 93 / downloads 1,507)"
+      ],
+      "primarySource": "https://huggingface.co/Cloudflare/clef",
+      "otherSources": [
+        "https://huggingface.co/api/models/Cloudflare/clef",
+        "https://blog.cloudflare.com/clef-decision-models",
+        "https://developers.cloudflare.com/workers-ai/models/clef/",
+        "https://huggingface.co/Cloudflare/clef-flash",
+        "https://huggingface.co/perplexity-ai/pplx-decider-v1-27b"
+      ]
+    },
+    {
+      "kind": "hf-model",
+      "id": "Aleph-Alpha/Kolibri-1",
+      "url": "https://huggingface.co/Aleph-Alpha/Kolibri-1",
+      "createdAt": "2026-10-02T05:54:02.000Z",
+      "trendingScore": 678,
+      "likes": 708,
+      "downloads30d": 4138,
+      "candidateFile": "hf-models-2026-10-06.json",
+      "role": "item",
+      "license": "apache-2.0 (카드: 가중치·설정 파일에만 적용, 코드·아키텍처·학습 방법 제외)",
+      "baseModel": "처음부터 학습(카드: Model Dependencies None); 이 저장소는 Kolibri-1-BF16 의 FP8 본",
+      "params": {
+        "cardLabel": "78B total (78,103,074,560) / 3.46B active (3,457,573,120)",
+        "won": "총 약 780억(정확값 약 781.0억) / 활성 약 34.6억",
+        "blogLabel": "78B total, 3B active (반올림)"
+      },
+      "languages": "독일어·영어(한국어 없음)",
+      "reentry": "신규(createdAt 2026-10-02T05:54Z, 카드 Release Date 2026-10-03). 이전 편·타 시리즈 중복 없음.",
+      "primarySource": "https://huggingface.co/Aleph-Alpha/Kolibri-1",
+      "otherSources": [
+        "https://huggingface.co/api/models/Aleph-Alpha/Kolibri-1",
+        "https://aleph-alpha.com/en/blog/kolibri-has-landed-a-sovereign-open-weight-model/"
+      ]
+    },
+    {
+      "kind": "hf-model",
+      "id": "Cactus-Compute/whistle",
+      "url": "https://huggingface.co/Cactus-Compute/whistle",
+      "createdAt": "2026-09-30T17:13:26.000Z",
+      "trendingScore": 122,
+      "likes": 124,
+      "downloads30d": 1887,
+      "candidateFile": "hf-models-2026-10-06.json",
+      "role": "item",
+      "license": "apache-2.0",
+      "baseModel": "Needle 엔진(.cact 컨테이너) 공유 — 파라미터 수는 카드에 없음, 파일 16.9 MB",
+      "params": {
+        "cardLabel": "16.9 MB 단일 파일(2~4비트)",
+        "note": "파라미터 수 미기재"
+      },
+      "languages": "영어·독일어·프랑스어·스페인어·이탈리아어·네덜란드어·폴란드어(한국어 없음)",
+      "reentry": "신규(createdAt 2026-09-30T17:13Z = 한국시간 10-01 02:13). 이전 편·타 시리즈 중복 없음.",
+      "primarySource": "https://huggingface.co/Cactus-Compute/whistle",
+      "otherSources": [
+        "https://huggingface.co/Cactus-Compute/whistle/resolve/main/assets/whistle-benchmarks.svg",
+        "https://huggingface.co/Cactus-Compute/whistle/resolve/main/assets/whistle-model.svg",
+        "https://huggingface.co/api/models/Cactus-Compute/whistle",
+        "https://github.com/cactus-compute/needle"
+      ]
+    },
+    {
+      "kind": "hf-dataset",
+      "id": "cloud0day3/alania-synthetic-speech-tr",
+      "url": "https://huggingface.co/datasets/cloud0day3/alania-synthetic-speech-tr",
+      "createdAt": "2026-09-30T11:09:06.000Z",
+      "trendingScore": 38,
+      "likes": 41,
+      "downloads30d": 2087,
+      "candidateFile": "hf-datasets-2026-10-06.json",
+      "role": "item",
+      "license": "CC BY 4.0 / CC BY-SA 4.0 (설정별, 크레딧 표기 조건; HF 표기는 other)",
+      "size": "3,411시간·2,037,461클립(≈2.13 TB)",
+      "languages": "터키어",
+      "reentry": "신규(createdAt 2026-09-30T11:09Z). 카드가 10-04 에 v1.2·v1.3 으로 개정돼 수치가 그 이후 기준.",
+      "primarySource": "https://huggingface.co/datasets/cloud0day3/alania-synthetic-speech-tr",
+      "otherSources": [
+        "https://huggingface.co/api/datasets/cloud0day3/alania-synthetic-speech-tr"
+      ]
+    },
+    {
+      "kind": "hf-dataset",
+      "id": "Rapidata/text-to-image-human-preference-6M",
+      "url": "https://huggingface.co/datasets/Rapidata/text-to-image-human-preference-6M",
+      "createdAt": "2026-09-30T15:35:03.000Z",
+      "trendingScore": 9,
+      "likes": 10,
+      "downloads30d": 463,
+      "candidateFile": "hf-datasets-2026-10-06.json",
+      "role": "item (분량이 빠듯하면 가장 먼저 뺀다 — trendingScore 9)",
+      "license": "혼합: 인간 주석·자체 프롬프트 CC-BY-4.0 / 공개 평가셋 프롬프트 원 라이선스 / 생성 이미지는 각 모델 약관",
+      "size": "행 680,548 · 투표 6,123,853 · 모델 43 · 프롬프트 1,514",
+      "reentry": "신규(createdAt 2026-09-30T15:35Z). 09-25 편의 후보에 같은 Rapidata 의 다른 데이터셋(10k-human-favorite-number)이 있었으나 본문에서 다루지 않았고 별개 저장소.",
+      "primarySource": "https://huggingface.co/datasets/Rapidata/text-to-image-human-preference-6M",
+      "otherSources": [
+        "https://huggingface.co/api/datasets/Rapidata/text-to-image-human-preference-6M"
+      ]
+    }
+  ],
+  "excluded": [
+    {
+      "id": "HunxByts/GhostTrack",
+      "why": "위치·전화번호 추적 도구 — 오남용·법적 민감(지시된 제외 기준). 후보파일 starsThisWeek 1,985."
+    },
+    {
+      "id": "boykopovar/AnyPS5",
+      "why": "콘솔 실행파일 우회·포팅 도구 — 법적 민감(지시된 제외 기준). starsThisWeek 2,657."
+    },
+    {
+      "id": "byoungd/up",
+      "why": "중영 이중언어 학습 가이드 — 개발 도구·모델이 아님(지시된 제외 기준). starsThisWeek 2,827."
+    },
+    {
+      "id": "pablostanley/yoinks",
+      "why": "YouTube·X·Instagram·Threads·TikTok 등 영상 다운로더(yt-dlp 래퍼) — README 스스로 \"Downloading content may violate a platform's terms of service\" 라고 경고(README 읽음). 약관 위반 소지로 제외. starsThisWeek 2,741, 마지막 push 2026-07-17."
+    },
+    {
+      "id": "Panniantong/Agent-Reach",
+      "why": "트위터·레딧·샤오홍슈 등을 API 비용 없이 읽는 스크래퍼(GitHub topics: twitter-scraper·reddit-scraper·web-scraper) + README 상단 후원사(BrowserAct 의 스텔스 브라우징·캡차 처리 등) 광고 — 약관·광고 소지로 제외. dev-digest 후보(09-18·10-05·10-06)로도 반복 등장. starsThisWeek 5,703(후보 2위)."
+    },
+    {
+      "id": "thedotmack/claude-mem",
+      "why": "예비(5번째 후보). README(읽음)에 서드파티 토큰(CMEM)·유료 호스팅 \"CMEM Pro\" 가입/30일 체험 안내가 있어 광고성 소지, 에이전트 항목은 openrig·OpenShell 로 충분. starsThisWeek 1,759 / 누적 97,118."
+    },
+    {
+      "id": "cursor/plugins",
+      "why": "GitHub API license 가 null(라이선스 확인 못 함) + dev-digest 후보(08-28·09-02·10-05·10-06)로 반복 등장. starsThisWeek 1,042."
+    },
+    {
+      "id": "DuarteSantos8/openGym",
+      "why": "셀프호스팅 운동 기록 앱(AGPL-3.0, 생성 2026-07-18) — 개발 도구·모델이 아님. starsThisWeek 2,702."
+    },
+    {
+      "id": "Infatoshi/GLM-5.3-UNCENSORED-EXL3-3.0bpw · SC117/Qwen3.8-Flash-Next-GSQ-RCO-abliterated-GGUF",
+      "why": "uncensored/abliterated 재배포 모델(지시된 제외 기준)."
+    },
+    {
+      "id": "RunningHubAI/rh-qwen-image-2.1-lora-… · ausboss/Qwen-Image-2.1-Outfit-Swap-Consistency-LoRA · ZhengmingYu/DMAD",
+      "why": "개인 LoRA(지시된 제외 기준). DMAD 는 arXiv:2610.02188 태그가 있으나 LoRA 라 동일 기준 적용."
+    },
+    {
+      "id": "speach1sdef178/MiniMax-H3-X2-Detail-VAE · canberkkkkkk/ema-lightning",
+      "why": "개인 업로드(ComfyUI용 VAE·터키어 TTS), 다운로드 11,003 / 10 — 근거 약함."
+    },
+    {
+      "id": "autotrust/JEV-27B-VL · autotrust/GEV-26B-Decide · autotrust/GEV-26B-Decide-NVFP4",
+      "why": "JEV-27B-VL(Qwen3.8-27B)·GEV-26B-Decide(google/gemma-4-26B-A4B-it) 는 카드 머리말이 base_model_relation: adapter(LoRA 어댑터)이고 GEV-26B-Decide-NVFP4 는 그 양자화본(HF API 태그 확인). 다운로드가 좋아요 대비 이례적(JEV 970 likes vs 1,525,286, GEV 674 vs 854,574)인데 원인 확인 못 함 → 인기 지표로 쓸 수 없어 제외."
+    },
+    {
+      "id": "perplexity-ai/pplx-decider-v1-27b",
+      "why": "독립 항목 아님 — Clef 절 안의 같은 계열 비교용 보조 source 로만 수집(카드 전문 읽음)."
+    },
+    {
+      "id": "Cloudflare/clef-flash",
+      "why": "독립 항목 아님 — Clef 항목에 포함(같은 계열 9B 변형)."
+    },
+    {
+      "id": "datasocial/tiktok-5.6B-videos",
+      "why": "TikTok 모바일 API 스크래핑으로 모은 영상 메타데이터(카드가 스크래퍼 소스코드·상업 라이선스 판매 홍보) — 약관·법적 민감, 프로젝트 철칙(틱톡 스크래핑 금지)과도 충돌. 카드 읽음. trendingScore 61(후보 1위)."
+    },
+    {
+      "id": "ankitjh4/bharat-government-documents",
+      "why": "예비. 카드(읽음)가 \"No blanket licence is granted over collected source text\" — 원 게시처별 권리라 재사용 가능 여부를 한 줄로 못 써 오해 위험. trendingScore 48."
+    },
+    {
+      "id": "biglam/europeana_newspapers_images",
+      "why": "예비(Public Domain Mark, 98,877쪽·1700s–1940s·10개 언어). 카드 일부만 읽음. trendingScore 14."
+    },
+    {
+      "id": "cloud0day3/alania-speech-captions-tr · imecai/chess-apo-bench",
+      "why": "예비/제외 — trendingScore 8·7, 다운로드 102·36 으로 근거가 약함(chess-apo-bench 는 카드 전문을 읽음: CC0, arXiv:2610.00416, 퍼즐 559개/분할)."
+    }
+  ],
+  "relatedPosted": [
+    {
+      "slug": "dev-trending-2026-09-25",
+      "url": "https://burning-go9me.tistory.com/484",
+      "title": "GitHub 트렌딩 한 주 1위는 알리바바 AI 코드리뷰 도구",
+      "why": "같은 시리즈 직전 편(내부링크 후보). 이번 후보 목록과 GitHub 12건·HF 모델 15건·HF 데이터셋 7건 모두 겹침 0건(09-25·08-08 후보 파일 대조, 스크립트로 확인)."
+    },
+    {
+      "slug": "dev-trending-2026-08-08",
+      "url": "https://burning-go9me.tistory.com/307",
+      "title": "GitHub 이번 주 1위는 보안 AI 툴 라우터였다",
+      "why": "같은 시리즈 첫 편(내부링크 후보)."
+    },
+    {
+      "slug": "dev-digest-2026-09-30",
+      "url": "https://burning-go9me.tistory.com/508",
+      "title": "GPT-6.1 Sol 가격 5분의 1 주장, 같은 기간 소식 6건",
+      "why": "NVIDIA Open Agent Safety Platform 뉴스(OpenShell 포함)를 이미 다룸 → OpenShell 재진입 표시·내부링크 후보."
+    },
+    {
+      "slug": "vlm-watch-2026-10-01",
+      "url": "https://burning-go9me.tistory.com/516",
+      "title": "의사결정형 경량 VLM 4종, 파라미터 표기가 서로 달랐다",
+      "why": "같은 결정(decision) 모델 계열(Intern-Decision·imajev-4b). Clef 절의 내부링크 후보."
+    }
+  ],
+  "sources": [
+    {
+      "title": "GitHub Trending (weekly) 후보 12건 — dev-trending-fetch.mjs 수집본 github-2026-10-06.json",
+      "url": "https://github.com/trending?since=weekly",
+      "host": "github.com",
+      "tier": "data",
+      "publishedAt": "2026-10-07",
+      "body": "[수집 파일 backend/blog/research/dev-trending/github-2026-10-06.json (파일 시각 2026-10-07 07:12 KST, fetchedOk=true, 파일명 날짜는 10-06). 같은 URL 을 2026-10-07 07:29 KST 에 직접 다시 받아 대조 — 주간 신규 스타는 동일(openrig 3,776 · hyperframes 3,342 · OpenShell 5,915 · PageIndex 2,860), 누적 스타만 소폭 증가(5,492 · 57,904 · 15,125 · 38,782).]\n\nmvschwarz/openrig | TypeScript | starsThisWeek 3776 | totalStars 5487\nheygen-com/hyperframes | TypeScript | starsThisWeek 3342 | totalStars 57894\ncursor/plugins | TypeScript | starsThisWeek 1042 | totalStars 10092\nNVIDIA/OpenShell | Rust | starsThisWeek 5915 | totalStars 15122\nVectifyAI/PageIndex | Python | starsThisWeek 2860 | totalStars 38779\nthedotmack/claude-mem | TypeScript | starsThisWeek 1759 | totalStars 97118\npablostanley/yoinks | TypeScript | starsThisWeek 2741 | totalStars 4843\nHunxByts/GhostTrack | Python | starsThisWeek 1985 | totalStars 17213\nDuarteSantos8/openGym | JavaScript | starsThisWeek 2702 | totalStars 5591\nboykopovar/AnyPS5 | C++ | starsThisWeek 2657 | totalStars 6343\nPanniantong/Agent-Reach | Python | starsThisWeek 5703 | totalStars 92598\nbyoungd/up | JavaScript | starsThisWeek 2827 | totalStars 67498\n\nnote: /trending?since=weekly HTML 파싱. \"N stars this week\" 는 위클리 페이지 자체 정의라 추가 날짜 필터가 필요 없다.",
+      "facts": [
+        "선정 4건의 이번 주 신규 스타 / 누적 스타(후보파일 값, 2026-10-07 07:12 KST 수집): OpenShell 5,915 / 15,122(Rust), openrig 3,776 / 5,487(TypeScript), hyperframes 3,342 / 57,894(TypeScript), PageIndex 2,860 / 38,779(Python) — 원문: \"NVIDIA/OpenShell | Rust | starsThisWeek 5915 | totalStars 15122\" / \"mvschwarz/openrig | TypeScript | starsThisWeek 3776 | totalStars 5487\" / \"heygen-com/hyperframes | TypeScript | starsThisWeek 3342 | totalStars 57894\" / \"VectifyAI/PageIndex | Python | starsThisWeek 2860 | totalStars 38779\"",
+        "후보 12건 중 이번 주 신규 스타 1위는 NVIDIA/OpenShell 5,915, 2위는 Panniantong/Agent-Reach 5,703(제외 항목), 3위는 mvschwarz/openrig 3,776 — 원문: \"NVIDIA/OpenShell | Rust | starsThisWeek 5915\" / \"Panniantong/Agent-Reach | Python | starsThisWeek 5703\" / \"mvschwarz/openrig | TypeScript | starsThisWeek 3776\"",
+        "이번 주 신규 스타 ÷ 누적 스타(계산, 후보파일 값 기준): openrig 3,776/5,487 = 68.8%, OpenShell 5,915/15,122 = 39.1%, PageIndex 2,860/38,779 = 7.4%, hyperframes 3,342/57,894 = 5.8% — openrig 만 누적 스타의 대부분이 이번 주에 쌓였고 나머지 셋은 이번 주 생성이 아닌 저장소의 재진입 — 원문: \"mvschwarz/openrig | TypeScript | starsThisWeek 3776 | totalStars 5487\" / \"VectifyAI/PageIndex | Python | starsThisWeek 2860 | totalStars 38779\"",
+        "\"이번 주 N stars\" 는 GitHub 위클리 페이지 자체 정의라 저장소 생성일과 무관(후보파일 note) — 원문: \"\"N stars this week\" 는 위클리 페이지 자체 정의라 추가 날짜 필터가 필요 없다.\"",
+        "2026-10-07 07:29 KST 라이브 재확인: 4건의 주간 신규 스타는 후보파일과 같고 누적 스타만 5,492 / 57,904 / 15,125 / 38,782 로 증가(openrig / hyperframes / OpenShell / PageIndex 순) — 원문: \"누적 스타만 소폭 증가(5,492 · 57,904 · 15,125 · 38,782)\""
+      ]
+    },
+    {
+      "title": "HuggingFace 모델 후보 15건(최근 7일 내 생성) — dev-trending-fetch.mjs 수집본 hf-models-2026-10-06.json",
+      "url": "https://huggingface.co/api/models?limit=100&full=true",
+      "host": "huggingface.co",
+      "tier": "data",
+      "publishedAt": "2026-10-07",
+      "body": "[수집 파일 backend/blog/research/dev-trending/hf-models-2026-10-06.json (파일 시각 2026-10-07 07:12 KST, fetchedOk=true). 검토한 7개 모델(clef · clef-flash · Kolibri-1 · whistle · pplx-decider-v1-27b · JEV-27B-VL · GEV-26B-Decide)의 개별 API(https://huggingface.co/api/models/<id>)를 2026-10-07 에 직접 호출해 likes·downloads 가 후보파일과 ±1 안에서 일치함을 확인.]\n\nCloudflare/clef | createdAt 2026-09-30T21:15:35.000Z | trendingScore 1532 | likes 1668 | downloads 7255 | image-text-to-text\nautotrust/JEV-27B-VL | createdAt 2026-09-30T05:02:23.000Z | trendingScore 784 | likes 970 | downloads 1525286 | image-text-to-text\nAleph-Alpha/Kolibri-1 | createdAt 2026-10-02T05:54:02.000Z | trendingScore 678 | likes 708 | downloads 4138 | text-generation\nCloudflare/clef-flash | createdAt 2026-09-30T21:15:36.000Z | trendingScore 561 | likes 587 | downloads 10638 | image-text-to-text\nautotrust/GEV-26B-Decide | createdAt 2026-10-02T04:20:21.000Z | trendingScore 536 | likes 674 | downloads 854574 | text-classification\nInfatoshi/GLM-5.3-UNCENSORED-EXL3-3.0bpw | createdAt 2026-10-01T03:42:00.000Z | trendingScore 229 | likes 262 | downloads 1660 | text-generation\nCactus-Compute/whistle | createdAt 2026-09-30T17:13:26.000Z | trendingScore 122 | likes 124 | downloads 1887 | automatic-speech-recognition\nSC117/Qwen3.8-Flash-Next-GSQ-RCO-abliterated-GGUF | createdAt 2026-10-02T03:42:33.000Z | trendingScore 108 | likes 116 | downloads 369229 | image-text-to-text\ncanberkkkkkk/ema-lightning | createdAt 2026-10-01T14:18:49.000Z | trendingScore 89 | likes 95 | downloads 10 | text-to-speech\nperplexity-ai/pplx-decider-v1-27b | createdAt 2026-10-01T21:24:11.000Z | trendingScore 89 | likes 93 | downloads 1507 | text-classification\nspeach1sdef178/MiniMax-H3-X2-Detail-VAE | createdAt 2026-09-30T19:59:27.000Z | trendingScore 82 | likes 84 | downloads 11003 | image-to-video\nZhengmingYu/DMAD | createdAt 2026-10-02T00:48:03.000Z | trendingScore 74 | likes 77 | downloads 0 | text-to-video\nautotrust/GEV-26B-Decide-NVFP4 | createdAt 2026-10-05T01:31:09.000Z | trendingScore 74 | likes 89 | downloads 9282 | text-classification\nRunningHubAI/rh-qwen-image-2.1-lora-2104918997757157378 | createdAt 2026-09-30T09:35:01.000Z | trendingScore 65 | likes 71 | downloads 0 | text-to-image\nausboss/Qwen-Image-2.1-Outfit-Swap-Consistency-LoRA | createdAt 2026-10-04T04:03:30.000Z | trendingScore 65 | likes 68 | downloads 0 | image-to-image\n\nnote: no-sort(trendingScore 내림차순) 상위 100건 중 createdAt 최근 7일 이내인 것만 남김. ",
+      "facts": [
+        "선정 모델의 후보파일 수치(trendingScore / likes / downloads): Cloudflare/clef 1,532 / 1,668 / 7,255, Aleph-Alpha/Kolibri-1 678 / 708 / 4,138, Cloudflare/clef-flash 561 / 587 / 10,638, Cactus-Compute/whistle 122 / 124 / 1,887, perplexity-ai/pplx-decider-v1-27b 89 / 93 / 1,507 — 원문: \"Cloudflare/clef | createdAt 2026-09-30T21:15:35.000Z | trendingScore 1532 | likes 1668 | downloads 7255\" / \"Aleph-Alpha/Kolibri-1 | createdAt 2026-10-02T05:54:02.000Z | trendingScore 678 | likes 708 | downloads 4138\" / \"Cloudflare/clef-flash | createdAt 2026-09-30T21:15:36.000Z | trendingScore 561 | likes 587 | downloads 10638\" / \"Cactus-Compute/whistle | createdAt 2026-09-30T17:13:26.000Z | trendingScore 122 | likes 124 | downloads 1887\" / \"perplexity-ai/pplx-decider-v1-27b | createdAt 2026-10-01T21:24:11.000Z | trendingScore 89 | likes 93 | downloads 1507\"",
+        "후보 15건의 createdAt 은 전부 2026-09-30 이후(7일 창 안) — Clef 계열 2건 09-30 21:15 UTC, Kolibri-1 10-02, 가장 늦은 것은 autotrust/GEV-26B-Decide-NVFP4 10-05 — 원문: \"autotrust/GEV-26B-Decide-NVFP4 | createdAt 2026-10-05T01:31:09.000Z\"",
+        "일부 후보는 좋아요 대비 다운로드가 이례적으로 큼 — autotrust/JEV-27B-VL 좋아요 970 vs 다운로드 1,525,286, autotrust/GEV-26B-Decide 좋아요 674 vs 다운로드 854,574(제외 항목, 원인 확인 못 함) — 원문: \"autotrust/JEV-27B-VL | createdAt 2026-09-30T05:02:23.000Z | trendingScore 784 | likes 970 | downloads 1525286\" / \"autotrust/GEV-26B-Decide | createdAt 2026-10-02T04:20:21.000Z | trendingScore 536 | likes 674 | downloads 854574\"",
+        "후보 선별 방식(후보파일 note): trendingScore 내림차순 상위 100건 중 createdAt 이 최근 7일 이내인 것만 남김 — 원문: \"no-sort(trendingScore 내림차순) 상위 100건 중 createdAt 최근 7일 이내인 것만 남김.\""
+      ]
+    },
+    {
+      "title": "HuggingFace 데이터셋 후보 7건(최근 7일 내 생성) — dev-trending-fetch.mjs 수집본 hf-datasets-2026-10-06.json",
+      "url": "https://huggingface.co/api/datasets?limit=100&full=true",
+      "host": "huggingface.co",
+      "tier": "data",
+      "publishedAt": "2026-10-07",
+      "body": "[수집 파일 backend/blog/research/dev-trending/hf-datasets-2026-10-06.json (파일 시각 2026-10-07 07:12 KST, fetchedOk=true).]\n\ndatasocial/tiktok-5.6B-videos | createdAt 2026-10-03T11:14:37.000Z | trendingScore 61 | likes 64 | downloads 1181\nankitjh4/bharat-government-documents | createdAt 2026-09-30T11:07:42.000Z | trendingScore 48 | likes 50 | downloads 520\ncloud0day3/alania-synthetic-speech-tr | createdAt 2026-09-30T11:09:06.000Z | trendingScore 38 | likes 41 | downloads 2087\nbiglam/europeana_newspapers_images | createdAt 2026-09-30T15:49:27.000Z | trendingScore 14 | likes 14 | downloads 909\nRapidata/text-to-image-human-preference-6M | createdAt 2026-09-30T15:35:03.000Z | trendingScore 9 | likes 10 | downloads 463\ncloud0day3/alania-speech-captions-tr | createdAt 2026-10-01T21:18:45.000Z | trendingScore 8 | likes 8 | downloads 102\nimecai/chess-apo-bench | createdAt 2026-10-05T12:48:22.000Z | trendingScore 7 | likes 7 | downloads 36\n\nnote: no-sort(trendingScore 내림차순) 상위 100건 중 createdAt 최근 7일 이내인 것만 남김. 데이터셋은 신규가 드물어 0건이 정상일 수 있음 — 억지로 채우지 않음.",
+      "facts": [
+        "선정 데이터셋의 후보파일 수치(trendingScore / likes / downloads): cloud0day3/alania-synthetic-speech-tr 38 / 41 / 2,087, Rapidata/text-to-image-human-preference-6M 9 / 10 / 463 — 원문: \"cloud0day3/alania-synthetic-speech-tr | createdAt 2026-09-30T11:09:06.000Z | trendingScore 38 | likes 41 | downloads 2087\" / \"Rapidata/text-to-image-human-preference-6M | createdAt 2026-09-30T15:35:03.000Z | trendingScore 9 | likes 10 | downloads 463\"",
+        "후보 7건 중 trendingScore 최고는 datasocial/tiktok-5.6B-videos 61, 최저는 imecai/chess-apo-bench 7 — 데이터셋은 모델보다 지표가 한 자릿수~두 자릿수로 작음 — 원문: \"datasocial/tiktok-5.6B-videos | createdAt 2026-10-03T11:14:37.000Z | trendingScore 61\" / \"imecai/chess-apo-bench | createdAt 2026-10-05T12:48:22.000Z | trendingScore 7\"",
+        "후보파일 note: 데이터셋은 신규가 드물어 0건이 정상일 수 있고 억지로 채우지 않음 — 원문: \"데이터셋은 신규가 드물어 0건이 정상일 수 있음 — 억지로 채우지 않음.\""
+      ]
+    },
+    {
+      "title": "NVIDIA/OpenShell — README (저장소 공식 문서)",
+      "url": "https://github.com/NVIDIA/OpenShell",
+      "host": "github.com",
+      "tier": "official",
+      "publishedAt": "2026-10-06",
+      "body": "[수집 2026-10-07 · gh api repos/NVIDIA/OpenShell/readme (raw 텍스트, 요약 없음) · README 원문 발췌. publishedAt 은 README 개별 날짜가 아니라 저장소 마지막 push(2026-10-06T22:21:07Z) 일자.]\n[후보 파일 github-2026-10-06.json] repo \"NVIDIA/OpenShell\" language \"Rust\" starsThisWeek 5915 totalStars 15122\n\n> [!IMPORTANT]\n> **New in OpenShell 0.1.x:** a stable release cadence, new isolation primitives, an expanded extension surface, and new APIs. [Read the 0.1.0 upgrade guide](https://docs.nvidia.com/openshell/latest/upgrade/0-1-0).\n\nOpenShell is the safe, private runtime for fleets of autonomous AI agents. Agents are most useful when they can read files, install packages, call APIs, and use credentials. OpenShell gives them that capability without giving them unrestricted access to your data, secrets, or network. You declare what each agent can touch in a policy, and OpenShell enforces it.\n\nOpenShell governs what agents can do in two ways: it instruments the kernel to enforce policy on every file access, system call, and network connection at runtime, and it uses formal verification to check what a policy change would allow before it is applied.\n\n- **Kernel-level enforcement.** Each agent runs in an isolated sandbox. Kernel controls confine which files it can access and which system calls it can make, and every network connection passes through a policy check before it leaves the sandbox. Agents never see real credentials; OpenShell adds them only to requests bound for approved endpoints.\n\n- **Formally verified policy changes.** Before a policy change is approved, OpenShell uses formal verification to flag risky new access it would grant, such as reaching a new host with credentials or calling a new API method, so those changes wait for human review.\n\nYou need Linux, macOS on Apple Silicon, or Windows with WSL 2 (experimental), plus Docker, Podman, or host virtualization.\n\n```shell\ncurl -LsSf https://raw.githubusercontent.com/NVIDIA/OpenShell/main/install.sh | sh\nopenshell sandbox create --name demo\n```\n\nThe installer sets up the CLI and a local gateway. The default sandbox image is minimal Ubuntu with no agent installed. To run a real agent, follow [Run Your First Agent](https://docs.nvidia.com/openshell/latest/about/run-your-first-agent): it runs OpenCode against a free OpenRouter model and shows how to approve new access as the agent needs it.\n\n| Language | Install | Docs |\n|---|---|---|\n| Python | `uv add openshell` | [README](python/openshell/) |\n| TypeScript | `npm install @nvidia/openshell-sdk` (GitHub Packages) | [README](sdk/typescript/README.md) |\n| Go | `go get github.com/NVIDIA/OpenShell/sdk/go@latest` | [README](sdk/go/README.md) |\n| Rust | `cargo add openshell-sdk --git https://github.com/NVIDIA/OpenShell --tag <release-tag>` | [Installation and usage](docs/sdk/rust.mdx) |\n\nOpenShell collects anonymous telemetry, limited to operational categories and counts, to help improve the project. It does not collect sandbox names, hostnames, file paths, prompts, credentials, provider or model names, or user content. To disable it, set `OPENSHELL_TELEMETRY_ENABLED=false` on the gateway, or `server.telemetryEnabled=false` for Helm installs.\n\nThis project is licensed under the [Apache License 2.0](https://github.com/NVIDIA/OpenShell/blob/main/LICENSE).",
+      "facts": [
+        "무엇: 자율 AI 에이전트 무리를 위한 안전한 사설 런타임 — 에이전트가 건드릴 수 있는 것을 정책으로 선언하면 OpenShell 이 강제한다(README 설명) — 원문: \"OpenShell is the safe, private runtime for fleets of autonomous AI agents.\" / \"You declare what each agent can touch in a policy, and OpenShell enforces it.\"",
+        "작동 방식(README 가 설명하는 바): 커널을 계측해 모든 파일 접근·시스템콜·네트워크 연결에 런타임 정책을 적용하고, 정책 변경은 적용 전에 형식 검증(formal verification)으로 새 접근 권한을 점검 — 원문: \"it instruments the kernel to enforce policy on every file access, system call, and network connection at runtime\" / \"it uses formal verification to check what a policy change would allow before it is applied\"",
+        "자격증명 처리(README): 에이전트는 실제 자격증명을 보지 못하고 OpenShell 이 승인된 엔드포인트로 가는 요청에만 붙인다 — 원문: \"Agents never see real credentials; OpenShell adds them only to requests bound for approved endpoints.\"",
+        "지원 환경: Linux, Apple Silicon macOS, Windows+WSL 2(실험적) 중 하나와 Docker·Podman·호스트 가상화 중 하나가 필요 — 원문: \"You need Linux, macOS on Apple Silicon, or Windows with WSL 2 (experimental), plus Docker, Podman, or host virtualization.\"",
+        "설치·첫 실행: 설치 스크립트를 받아 sh 로 실행한 뒤 `openshell sandbox create --name demo`; 기본 샌드박스 이미지는 에이전트가 설치되지 않은 최소 Ubuntu — 원문: \"openshell sandbox create --name demo\" / \"The default sandbox image is minimal Ubuntu with no agent installed.\"",
+        "SDK 4종: Python(`uv add openshell`), TypeScript(`npm install @nvidia/openshell-sdk`, GitHub Packages), Go, Rust — 원문: \"| Python | `uv add openshell` |\" / \"| TypeScript | `npm install @nvidia/openshell-sdk` (GitHub Packages) |\"",
+        "릴리스: README 상단 공지가 0.1.x 의 새 점을 \"안정 릴리스 주기, 새 격리 기본 요소, 확장 표면, 새 API\"로 소개 — 원문: \"a stable release cadence, new isolation primitives, an expanded extension surface, and new APIs\"",
+        "텔레메트리: README 는 익명 텔레메트리 수집을 밝히고 끄는 방법(`OPENSHELL_TELEMETRY_ENABLED=false`)을 안내 — 원문: \"OpenShell collects anonymous telemetry, limited to operational categories and counts\" / \"set `OPENSHELL_TELEMETRY_ENABLED=false` on the gateway\"",
+        "라이선스: Apache License 2.0 — 원문: \"This project is licensed under the [Apache License 2.0]\"",
+        "후보파일 수치: 이번 주 신규 스타 5,915 · 누적 15,122 · 언어 Rust — 원문: \"starsThisWeek 5915 totalStars 15122\" / \"language \"Rust\"\""
+      ]
+    },
+    {
+      "title": "NVIDIA/OpenShell — GitHub REST API 저장소 메타데이터",
+      "url": "https://api.github.com/repos/NVIDIA/OpenShell",
+      "host": "api.github.com",
+      "tier": "data",
+      "publishedAt": "2026-10-06",
+      "body": "[수집 2026-10-07 · gh api repos/NVIDIA/OpenShell (JSON 중 일부 필드를 그대로 옮김)]\n\n{\"full_name\":\"NVIDIA/OpenShell\",\"created_at\":\"2026-02-24T22:52:22Z\",\"pushed_at\":\"2026-10-06T22:21:07Z\",\"language\":\"Rust\",\"license\":\"Apache-2.0\",\"stargazers_count\":15124,\"forks_count\":1716,\"homepage\":\"https://docs.nvidia.com/openshell/latest/\",\"archived\":false,\"description\":\"OpenShell is the safe, private runtime for autonomous AI agents.\"}",
+      "facts": [
+        "저장소 생성일 2026-02-24(UTC) — 이번 주에 만든 저장소가 아니라 주간 스타가 급증한 재진입 — 원문: \"\"created_at\":\"2026-02-24T22:52:22Z\"\"",
+        "라이선스 Apache-2.0, 언어 Rust, 문서 홈페이지 https://docs.nvidia.com/openshell/latest/ — 원문: \"\"license\":\"Apache-2.0\"\" / \"\"language\":\"Rust\"\" / \"\"homepage\":\"https://docs.nvidia.com/openshell/latest/\"\"",
+        "2026-10-07 조회 시점 스타 15,124 · 포크 1,716 · 마지막 push 2026-10-06T22:21:07Z — 원문: \"\"stargazers_count\":15124\" / \"\"forks_count\":1716\" / \"\"pushed_at\":\"2026-10-06T22:21:07Z\"\""
+      ]
+    },
+    {
+      "title": "openshell — PyPI 릴리스 이력(파이썬 SDK)",
+      "url": "https://pypi.org/pypi/openshell/json",
+      "host": "pypi.org",
+      "tier": "data",
+      "publishedAt": "2026-09-28",
+      "body": "[수집 2026-10-07 · PyPI JSON API 에서 릴리스 업로드 시각을 추려 옮김]\n\nname: openshell\ninfo.version (latest): 0.1.2\nlicense: Apache-2.0\nrequires_python: >=3.11\nsummary: OpenShell is the safe, private runtime for autonomous AI agents. \nreleases with files: 94\nfirst release: 0.0.0a0 @ 2026-03-10T21:50:19.277587Z\nrelease 0.0.115 @ 2026-08-27T18:03:43.310742Z\nrelease 0.0.116 @ 2026-08-28T09:10:50.719527Z\nrelease 0.1.0 @ 2026-09-25T21:49:26.212216Z\nrelease 0.1.1 @ 2026-09-26T03:41:38.227814Z\nrelease 0.1.2 @ 2026-09-28T03:58:28.390606Z",
+      "facts": [
+        "PyPI 첫 릴리스 0.0.0a0 은 2026-03-10, 0.1.0 은 2026-09-25, 최신 0.1.2 는 2026-09-28(UTC) — 릴리스 94건 — 원문: \"first release: 0.0.0a0 @ 2026-03-10T21:50:19.277587Z\" / \"release 0.1.0 @ 2026-09-25T21:49:26.212216Z\" / \"release 0.1.2 @ 2026-09-28T03:58:28.390606Z\" / \"releases with files: 94\"",
+        "PyPI 메타: 라이선스 Apache-2.0, 파이썬 3.11 이상 — 원문: \"license: Apache-2.0\" / \"requires_python: >=3.11\""
+      ]
+    },
+    {
+      "title": "NVIDIA Launches Open Agent Safety Platform to Secure Agents From Testing to Deployment (NVIDIA 보도자료)",
+      "url": "https://nvidianews.nvidia.com/news/open-agent-safety-platform",
+      "host": "nvidianews.nvidia.com",
+      "tier": "official",
+      "publishedAt": "2026-09-28",
+      "body": "[수집 2026-10-07 · 보도자료 페이지 HTML 을 직접 받아 텍스트로 변환(요약 모델 미경유). 게시일 September 28, 2026.]\n\nNVIDIA Launches Open Agent Safety Platform to Secure Agents From Testing to Deployment\nOpen Software Platform and Reference System Design Brings Together Industry, Researchers and Public-Sector Organizations to Set Safer Boundaries for AI Agents, Share Best Practices and Foster International Cooperation to Raise the Bar for Safer AI Agent Deployment September 28, 2026\n\nNVIDIA Open Agent Safety Platform consists of NVIDIA OpenShell open source software and the NVIDIA Sentry reference system design that enables full-stack governance and control across software and the hardware, compute and robotics systems that run agents. OpenShell software provides a secure runtime boundary that traces all actions and enforces policy as agents run on NVIDIA Vera CPUs. As open source software, OpenShell can be extended to work with third-party compute platforms, including those from Arm and Intel. Sentry adds an out-of-band watchdog that runs on NVIDIA BlueField-4 DPUs to continuously monitor agent behavior. Sentry can quarantine agents that attempt to move outside their boundaries in milliseconds.\n\nIt includes NVIDIA OpenShell ™ secure runtime software that sets boundaries for agents running on CPUs. As agents take on more work across more systems, enterprises need an enforceable boundary outside of the model and agent harness. Now broadly available, OpenShell provides a secure runtime boundary for controlling how autonomous AI agents execute tasks across open and closed models. OpenShell delivers this protection with minimal overhead on NVIDIA Vera , the first purpose-built CPU for agentic AI. Together, OpenShell and Vera enable agents to operate securely while completing their work as quickly as possible. As open source software, OpenShell can also be extended to work with third-party compute platforms, including those from Arm and Intel .\n\nare also among the over 100 organizations working with NVIDIA Open Agent Safety Platform technologies.\n\nNVIDIA Open Agent Safety Platform software, including OpenShell and skills, are available through the NVIDIA developer resources page and GitHub .\n\nInitiated by NVIDIA alongside over 120 leading organizations and governed by the Linux Foundation, the Open Secure AI Alliance strengthens AI agent security through open research, skills and tools, as well as projects like the Shared AI Findings Exchange , or SAFE.",
+      "facts": [
+        "2026-09-28 보도자료: Open Agent Safety Platform 은 OpenShell(오픈소스 소프트웨어)과 Sentry(레퍼런스 시스템 설계)로 구성 — 원문: \"NVIDIA Open Agent Safety Platform consists of NVIDIA OpenShell open source software and the NVIDIA Sentry reference system design\"",
+        "OpenShell 은 NVIDIA Vera CPU 에서 에이전트의 모든 행동을 추적하고 정책을 강제하는 보안 런타임 경계이며, 오픈소스라 Arm·Intel 등 서드파티 컴퓨트로 확장할 수 있다고 설명 — 원문: \"OpenShell software provides a secure runtime boundary that traces all actions and enforces policy as agents run on NVIDIA Vera CPUs.\" / \"As open source software, OpenShell can be extended to work with third-party compute platforms, including those from Arm and Intel.\"",
+        "\"Now broadly available\" — OpenShell 이 열린 모델·닫힌 모델 모두에서 자율 에이전트 실행을 제어하는 경계를 제공한다고 소개 — 원문: \"Now broadly available, OpenShell provides a secure runtime boundary for controlling how autonomous AI agents execute tasks across open and closed models.\"",
+        "OpenShell 성능 오버헤드는 \"minimal overhead on NVIDIA Vera\" 라고만 쓰고 수치는 없음 — 원문: \"OpenShell delivers this protection with minimal overhead on NVIDIA Vera\"",
+        "Sentry(OpenShell 과 별개): BlueField-4 DPU 에서 도는 out-of-band 감시자, 경계를 벗어나려는 에이전트를 밀리초 안에 격리할 수 있다고 주장(NVIDIA 자체 설명) — 원문: \"Sentry adds an out-of-band watchdog that runs on NVIDIA BlueField-4 DPUs to continuously monitor agent behavior.\" / \"Sentry can quarantine agents that attempt to move outside their boundaries in milliseconds.\"",
+        "플랫폼 기술을 쓰는 조직 수: \"over 100 organizations\"(100곳 이상) — 원문: \"are also among the over 100 organizations working with NVIDIA Open Agent Safety Platform technologies.\"",
+        "별개 집단: Open Secure AI Alliance 는 NVIDIA 와 \"over 120 leading organizations\"(120곳 이상)가 시작 — 위 100곳 이상과 합치지 말 것 — 원문: \"Initiated by NVIDIA alongside over 120 leading organizations\"",
+        "공개 위치: OpenShell 과 skills 를 포함한 소프트웨어는 NVIDIA 개발자 리소스 페이지와 GitHub 에서 받을 수 있다 — 원문: \"NVIDIA Open Agent Safety Platform software, including OpenShell and skills, are available through the NVIDIA developer resources page and GitHub\""
+      ]
+    },
+    {
+      "title": "Overview of NVIDIA OpenShell (공식 문서 개요, docs.nvidia.com)",
+      "url": "https://docs.nvidia.com/openshell/latest/",
+      "host": "docs.nvidia.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "[수집 2026-10-07 · 문서 페이지 HTML 을 직접 받아 텍스트로 변환. 페이지에 게시일은 없고 버전 표기 \"Latest (v0.1.2)\" 만 있음.]\n\nLatest (v0.1.2)\n\nNVIDIA OpenShell is an open-source runtime for executing fleets of autonomous AI agents in sandboxed environments with kernel-level isolation. It combines sandbox runtime controls and a declarative YAML policy so teams can run agents without giving them unrestricted access to local files, credentials, and external networks. New in OpenShell 0.1.x: a stable release cadence , new isolation primitives , and an expanded extension surface , along with much more. See our upgrade guide for everything that’s changed.\n\nCredential theft Agent reads local secrets such as SSH keys or cloud credentials. Filesystem restrictions (Landlock) confine access to declared paths only.",
+      "facts": [
+        "공식 문서 개요: OpenShell 은 커널 수준 격리가 있는 샌드박스 환경에서 자율 AI 에이전트 무리를 실행하는 오픈소스 런타임이며, 샌드박스 런타임 제어와 선언형 YAML 정책을 결합 — 원문: \"NVIDIA OpenShell is an open-source runtime for executing fleets of autonomous AI agents in sandboxed environments with kernel-level isolation.\" / \"a declarative YAML policy\"",
+        "문서 최신 버전 표기는 v0.1.2(2026-10-07 조회 시점) — 원문: \"Latest (v0.1.2)\"",
+        "파일시스템 제한은 Landlock 으로 선언된 경로에만 접근하도록 가둔다고 문서가 설명 — 원문: \"Filesystem restrictions (Landlock) confine access to declared paths only.\""
+      ]
+    },
+    {
+      "title": "mvschwarz/openrig — README (저장소 공식 문서)",
+      "url": "https://github.com/mvschwarz/openrig",
+      "host": "github.com",
+      "tier": "official",
+      "publishedAt": "2026-10-06",
+      "body": "[수집 2026-10-07 · gh api repos/mvschwarz/openrig/readme (raw 텍스트, 요약 없음) · README 원문 발췌. publishedAt 은 저장소 마지막 push(2026-10-06T22:05:59Z) 일자.]\n[후보 파일 github-2026-10-06.json] repo \"mvschwarz/openrig\" language \"TypeScript\" starsThisWeek 3776 totalStars 5487\n\nA harness wraps a model. A rig wraps your harnesses. Define your agent team in YAML, boot it with one command. Claude Code and Codex in the same rig, managed as one system.\n\nOpenRig is open-source software for building and running your own network of agents. It turns AI coding agents from a pile of terminal sessions into a persistent, organized team.\n\nRequires Node.js 22 or 24 and tmux, on macOS or Linux. On Linux, the distribution's own Node.js can be older (Ubuntu 24.04's is 18); install a supported version with [nvm](https://github.com/nvm-sh/nvm) (`nvm install 22`) or NodeSource. On a Mac with Apple silicon, use Node.js 22 ([compatibility history](docs/releases/v0.5.15.md#known-compatibility-limitation)). Native Windows is not supported yet, and WSL2 has not been tested. Launching a rig writes provider hooks and workspace trust settings. Before running the commands below, read [what OpenRig changes on your machine](#what-openrig-changes-on-your-machine) and back up the relevant files.\n\n```bash\nnpm install -g @openrig/cli\nrig setup --dry-run\n```\n\nChoose the working account you already have: **Claude Code, Codex, or both**. Reuse an explicit choice; no second subscription is required.\n\n| Team | Agents | For |\n| --- | --- | --- |\n| `starter` | A builder (`dev-build`, Claude Code) and a reviewer (`dev-review`, Codex) | One bounded change |\n| `workshop` | A lead, a builder, QA and a reviewer | Ongoing work in one repository; a rig bundle the operator installs from its pinned listing |\n| `factory` | Seven: a lead, an advisor, build, QA, design and two independent reviewers | Sustained product work |\n\nrig specs preview starter --kind rig\nrig up starter --cwd . --plan\nrig up starter --cwd .\n```\n\nOpenRig writes instance state, provider integration and workspace files as part\nof setup and operation. These include **trust settings and executable hooks**.\n\nYOLO is **off by default**. An explicitly selected full-bypass policy selects\nClaude's `--dangerously-skip-permissions`\n\nOpenRig is a local daemon + CLI + terminal UI + MCP server, built on tmux. The older React web UI remains in maintenance mode with best-effort support.\n\nOpenRig is open source and self-hosted, with Claude Code and Codex in the same team. You operate it on your own infrastructure; the selected providers' model usage costs still apply.\n\n## License\n\nApache 2.0",
+      "facts": [
+        "한 줄 정의: 하네스는 모델을 감싸고 rig 는 하네스들을 감싼다 — 에이전트 팀을 YAML 로 정의하고 한 명령으로 띄우며 Claude Code 와 Codex 를 한 rig 에서 한 시스템처럼 관리 — 원문: \"A harness wraps a model. A rig wraps your harnesses. Define your agent team in YAML, boot it with one command.\" / \"Claude Code and Codex in the same rig, managed as one system.\"",
+        "무엇: 자기만의 에이전트 네트워크를 만들고 돌리는 오픈소스 소프트웨어 — 터미널 세션 더미였던 AI 코딩 에이전트를 지속되는 조직된 팀으로 바꾼다고 설명 — 원문: \"OpenRig is open-source software for building and running your own network of agents.\" / \"It turns AI coding agents from a pile of terminal sessions into a persistent, organized team.\"",
+        "요구 사항: Node.js 22 또는 24 + tmux, macOS 또는 Linux. 네이티브 Windows 는 아직 미지원이고 WSL2 는 검증 안 됨 — 원문: \"Requires Node.js 22 or 24 and tmux, on macOS or Linux.\" / \"Native Windows is not supported yet, and WSL2 has not been tested.\"",
+        "설치: `npm install -g @openrig/cli` 후 `rig setup --dry-run` 으로 설정 계획 미리보기 — 원문: \"npm install -g @openrig/cli\" / \"rig setup --dry-run\"",
+        "README 자체 경고: rig 를 띄우면 프로바이더 훅과 워크스페이스 신뢰 설정을 쓰므로 실행 전 해당 파일을 백업하라고 안내 — 원문: \"Launching a rig writes provider hooks and workspace trust settings.\" / \"back up the relevant files.\"",
+        "기본 팀 3종 — starter(빌더 1+리뷰어 1, 한 가지 변경), workshop(리드·빌더·QA·리뷰어), factory(7명: 리드·어드바이저·빌드·QA·디자인·독립 리뷰어 2) — 원문: \"| `starter` | A builder (`dev-build`, Claude Code) and a reviewer (`dev-review`, Codex) | One bounded change |\" / \"| `factory` | Seven: a lead, an advisor, build, QA, design and two independent reviewers | Sustained product work |\"",
+        "계정: Claude Code, Codex 중 이미 가진 계정을 고르면 되고 두 번째 구독은 필요 없다고 설명 — 원문: \"no second subscription is required.\"",
+        "구조: 로컬 데몬 + CLI + 터미널 UI + MCP 서버이며 tmux 위에서 동작, 예전 React 웹 UI 는 유지보수 모드 — 원문: \"OpenRig is a local daemon + CLI + terminal UI + MCP server, built on tmux.\" / \"The older React web UI remains in maintenance mode with best-effort support.\"",
+        "권한: YOLO(권한 우회)는 기본값이 꺼짐이고 명시적으로 고른 full-bypass 정책일 때만 Claude 의 `--dangerously-skip-permissions` 등을 선택 — 원문: \"off by default\" / \"An explicitly selected full-bypass policy selects Claude's `--dangerously-skip-permissions`\"",
+        "비용: 직접 운영·자체 호스팅이며 선택한 프로바이더의 모델 사용 비용은 그대로 든다 — 원문: \"the selected providers' model usage costs still apply.\"",
+        "라이선스 Apache 2.0 — 원문: \"## License Apache 2.0\"",
+        "후보파일 수치: 이번 주 신규 스타 3,776 · 누적 5,487 · 언어 TypeScript — 원문: \"starsThisWeek 3776 totalStars 5487\" / \"language \"TypeScript\"\""
+      ]
+    },
+    {
+      "title": "mvschwarz/openrig — GitHub REST API 저장소 메타데이터",
+      "url": "https://api.github.com/repos/mvschwarz/openrig",
+      "host": "api.github.com",
+      "tier": "data",
+      "publishedAt": "2026-10-06",
+      "body": "[수집 2026-10-07 · gh api repos/mvschwarz/openrig (JSON 중 일부 필드를 그대로 옮김)]\n\n{\"full_name\":\"mvschwarz/openrig\",\"created_at\":\"2026-04-01T06:22:40Z\",\"pushed_at\":\"2026-10-06T22:05:59Z\",\"language\":\"TypeScript\",\"license\":\"Apache-2.0\",\"stargazers_count\":5490,\"forks_count\":402,\"homepage\":\"https://openrig.dev\",\"archived\":false,\"description\":\"Build your own network of agents from Claude Code, Codex and Pi: persistent teams with roles, shared context and owned work.\"}",
+      "facts": [
+        "저장소 생성일 2026-04-01(UTC) — 약 6개월 된 저장소(이번 주 생성 아님) — 원문: \"\"created_at\":\"2026-04-01T06:22:40Z\"\"",
+        "라이선스 Apache-2.0, 언어 TypeScript, 홈페이지 https://openrig.dev — 원문: \"\"license\":\"Apache-2.0\"\" / \"\"language\":\"TypeScript\"\" / \"\"homepage\":\"https://openrig.dev\"\"",
+        "2026-10-07 조회 시점 스타 5,490 · 포크 402 · 마지막 push 2026-10-06T22:05:59Z — 원문: \"\"stargazers_count\":5490\" / \"\"forks_count\":402\" / \"\"pushed_at\":\"2026-10-06T22:05:59Z\"\""
+      ]
+    },
+    {
+      "title": "@openrig/cli — npm 레지스트리 메타데이터",
+      "url": "https://registry.npmjs.org/@openrig%2Fcli",
+      "host": "registry.npmjs.org",
+      "tier": "data",
+      "publishedAt": "2026-10-04",
+      "body": "[수집 2026-10-07 · npm registry JSON 에서 버전·시각 필드를 추려 옮김. (npmjs.com 웹페이지는 봇 차단 403 이라 레지스트리 API 를 사용)]\n\nname: @openrig/cli\ndist-tags.latest: 0.6.5\ntime.0.6.5: 2026-10-04T10:36:55.280Z\ntime.created: 2026-04-06T21:42:11.660Z\ntime.modified: 2026-10-04T10:36:55.527Z\nversions published: 55\nfirst version: 0.0.1 @ 2026-04-06T21:42:11.907Z\nlicense: Apache-2.0\nengines: {\"node\":\">=22\"}\ndescription: Build your own network of agents from Claude Code, Codex and Pi: persistent teams with roles, shared context and owned work.",
+      "facts": [
+        "npm 최신 버전 0.6.5 는 2026-10-04T10:36:55Z 발행, 첫 버전 0.0.1 은 2026-04-06, 지금까지 55개 버전 — 원문: \"dist-tags.latest: 0.6.5\" / \"time.0.6.5: 2026-10-04T10:36:55.280Z\" / \"first version: 0.0.1 @ 2026-04-06T21:42:11.907Z\" / \"versions published: 55\"",
+        "패키지 라이선스 Apache-2.0, Node 엔진 요건 >=22 — 원문: \"license: Apache-2.0\" / \"engines: {\"node\":\">=22\"}\""
+      ]
+    },
+    {
+      "title": "VectifyAI/PageIndex — README (저장소 공식 문서)",
+      "url": "https://github.com/VectifyAI/PageIndex",
+      "host": "github.com",
+      "tier": "official",
+      "publishedAt": "2026-10-06",
+      "body": "[수집 2026-10-07 · gh api repos/VectifyAI/PageIndex/readme (raw 텍스트, 요약 없음) · README 원문 발췌. publishedAt 은 저장소 마지막 push(2026-10-06T18:06:27Z) 일자. README 가 내세우는 성능·비용 수치는 모두 개발사(Vectify) 자체 주장.]\n[후보 파일 github-2026-10-06.json] repo \"VectifyAI/PageIndex\" language \"Python\" starsThisWeek 2860 totalStars 38779\n\n- [Aug '26] 🔥 [**PageIndex SDK**](#quickstart): `pip install -U pageindex` now ships **local mode**: index, retrieve, and chat entirely on your machine with your own LLM key, or point the same client at PageIndex Cloud with an API key.\n\nAre you frustrated with vector database retrieval accuracy for long and complex documents? Vector-based RAG retrieves by semantic **similarity**. But **similarity ≠ relevance** — what retrieval actually needs is relevance, and relevance requires **reasoning**. On professional documents that demand contextual understanding, domain expertise, and multi-step reasoning, similarity search misses what is relevant but not similar, and returns what is similar but not relevant.\n\nInspired by AlphaGo, **[PageIndex](https://vectify.ai/pageindex)** replaces the vector index with a **hierarchical tree index** and lets an LLM **reason** its way through it, the way a human expert turns to and reads the right section of a long report. Retrieval happens in two steps:\n\n1. **Index**: generate a **tree-structure index** for each document\n2. **Retrieve**: agentically **search that tree** with LLM reasoning\n\n<blockquote>PageIndex is a <b>vectorless</b>, <b>reasoning-based RAG</b> engine that <b>mirrors how humans read</b>, delivering <b>traceable</b>, <b>explainable</b>, and <b>context-aware</b> retrieval, with <b>no vector DBs</b> or <b>chunking</b>.</blockquote>\n\n| | Vector RAG | **PageIndex** |\n|---|---|---|\n| **Index** | vector index | tree index |\n| **Retrieval** | semantic similarity search | LLM reasoning over the tree |\n| **Result** | opaque, “vibe retrieval” | traceable to explicit references |\n| **Context** | query embedding only | full context: conversation history, domain knowledge, etc. |\n\nIt is ideal for financial reports, legal documents, regulatory filings, technical manuals, medical literature, academic textbooks, and any other long, complex professional document.\n\n```bash\npip install -U pageindex\n```\n\n\n```python\nimport os\nfrom pageindex import PageIndexClient\n\nos.environ[\"OPENAI_API_KEY\"] = \"your-openai-key\"\n\nclient = PageIndexClient(\n    index=\"gpt-5.6-luna\",               # model to build the tree index\n    chat=\"gpt-5.6-sol\",                 # model to search the tree\n)\ndoc_id = client.submit_document(\"report.pdf\")[\"doc_id\"]\n\nanswer = client.chat(\"What was the 2023 operating margin?\", doc_id=doc_id)\nprint(answer)\n```\n\nBuilding a tree locally runs **about $0.001 per page** with `gpt-5.6-luna` as the index model, so a 1,000-page textbook costs a little over a dollar and a few minutes, once, and every later question reuses it.\n\nIndexing time also scales predictably with document length. In the same local setup, the benchmark documents (9 to 1,098 pages) finished in roughly **13 seconds to 4.5 minutes**.\n\n[**PageIndex-OSS-Benchmark**](https://github.com/VectifyAI/PageIndex-OSS-Benchmark) measures exactly the setup in the quickstart above (`PageIndexClient()` in local mode, flash indexing, no OCR) on 62 lookup questions over 34 PDFs (1,945 pages) drawn from [MMLongBench-Doc-V2](https://github.com/VectifyAI/MMLongBench-Doc-V2).\n\nOn documents where both routes return the same answer, native PDF input costs **2.1× more at 52 pages and 16.6× more at 420** (`gpt-5.6-sol`, prompt caching excluded) — and at 805 pages the document no longer fits in the context window at all.\n\nPageIndex reached a state-of-the-art [**98.7% accuracy**](https://vectify.ai/blog/Mafin2.5) on [FinanceBench](https://arxiv.org/abs/2311.11944) (financial document QA benchmark), vastly outperforming vector-based RAG.\n\n| | **Local** | **Cloud** |\n|---|---|---|\n| Handles | Text-based PDFs | Text-based, scanned, and image-rich documents |\n| Indexing | On your machine | Managed by PageIndex |\n| Storage | Local directory | Cloud storage |\n| Citations | Page-level | Block-level |\n| OCR & image understanding | — | ✓ |\n| [Metadata](https://docs.pageindex.ai/sdk/documents#metadata-cloud) | — | ✓ |\n| [Folders](https://docs.pageindex.ai/sdk/documents#folders-cloud) | — | ✓ |\n| [MCP server](https://docs.pageindex.ai/mcp) | — | ✓ |",
+      "facts": [
+        "무엇(README): 벡터 DB·청킹 없이 문서마다 계층 트리 인덱스를 만들고 LLM 이 그 트리를 추론으로 탐색하는 \"vectorless, reasoning-based RAG\" 엔진 — 원문: \"replaces the vector index with a **hierarchical tree index**\" / \"tree-structure index\" / \"search that tree\" / \"no vector DBs\" / \"chunking\"",
+        "README 가 내세우는 논거: 벡터 RAG 는 의미 \"유사도\"로 찾지만 필요한 것은 \"관련성\"이고 관련성에는 추론이 필요하다(\"similarity ≠ relevance\") — 원문: \"similarity ≠ relevance\" / \"similarity search misses what is relevant but not similar\"",
+        "벡터 RAG 와의 비교(README 표): 인덱스는 vector index ↔ tree index, 검색은 semantic similarity search ↔ LLM reasoning over the tree — 원문: \"vector index | tree index\" / \"semantic similarity search | LLM reasoning over the tree\"",
+        "적합 문서(README): 재무 보고서·법률 문서·규제 제출물·기술 매뉴얼·의학 문헌·교재 등 길고 복잡한 전문 문서 — 원문: \"It is ideal for financial reports, legal documents, regulatory filings, technical manuals, medical literature, academic textbooks, and any other long, complex professional document.\"",
+        "설치·사용: `pip install -U pageindex` 후 `PageIndexClient(index=..., chat=...)` → `submit_document(\"report.pdf\")` → `chat(질문, doc_id=...)` — 원문: \"pip install -U pageindex\" / \"client = PageIndexClient(\" / \"client.submit_document(\"report.pdf\")\" / \"client.chat(\"What was the 2023 operating margin?\", doc_id=doc_id)\"",
+        "README 업데이트 공지 [Aug '26]: SDK 가 로컬 모드를 포함 — 내 머신에서 내 LLM 키로 인덱싱·검색·채팅하거나 같은 클라이언트를 PageIndex Cloud(API 키)로 돌릴 수 있다 — 원문: \"index, retrieve, and chat entirely on your machine with your own LLM key\" / \"point the same client at PageIndex Cloud with an API key\"",
+        "인덱싱 비용(README 자체 측정 주장): 로컬에서 gpt-5.6-luna 로 트리를 만들면 쪽당 약 $0.001, 1,000쪽 교재가 1달러 조금 넘고 몇 분 — 원문: \"about $0.001 per page\" / \"a 1,000-page textbook costs a little over a dollar and a few minutes\"",
+        "인덱싱 시간(README 주장): 9~1,098쪽 벤치마크 문서가 약 13초~4.5분 — 원문: \"(9 to 1,098 pages)\" / \"13 seconds to 4.5 minutes\"",
+        "쿼리 비용 비교(README 주장, gpt-5.6-sol·프롬프트 캐시 제외): PDF 를 통째로 넣는 방식은 52쪽에서 2.1배, 420쪽에서 16.6배 비싸고 805쪽은 컨텍스트 창에 안 들어간다 — 원문: \"2.1× more at 52 pages and 16.6× more at 420\" / \"at 805 pages the document no longer fits in the context window at all\"",
+        "README 가 내세우는 FinanceBench 정확도 98.7%(\"state-of-the-art\", 벡터 기반 RAG 를 크게 앞섰다고 서술) — 근거 링크는 Mafin 2.5 블로그/저장소(개발사 자체 평가) — 원문: \"PageIndex reached a state-of-the-art\" / \"98.7% accuracy\" / \"vastly outperforming vector-based RAG\"",
+        "README 가 안내하는 자체 벤치마크: 로컬 모드·flash 인덱싱·OCR 없음 설정에서 34개 PDF(1,945쪽)에 대한 62개 조회형 질문 — 원문: \"62 lookup questions over 34 PDFs (1,945 pages)\" / \"flash indexing, no OCR\"",
+        "로컬 vs 클라우드(README 표): 로컬은 텍스트 기반 PDF, OCR·이미지 이해·메타데이터·폴더·MCP 서버는 Cloud 전용 항목으로 표시 — 원문: \"| Handles | Text-based PDFs | Text-based, scanned, and image-rich documents |\" / \"| OCR & image understanding | — | ✓ |\" / \"| [MCP server](https://docs.pageindex.ai/mcp) | — | ✓ |\"",
+        "후보파일 수치: 이번 주 신규 스타 2,860 · 누적 38,779 · 언어 Python — 원문: \"starsThisWeek 2860 totalStars 38779\" / \"language \"Python\"\""
+      ]
+    },
+    {
+      "title": "VectifyAI/PageIndex — GitHub REST API 저장소 메타데이터",
+      "url": "https://api.github.com/repos/VectifyAI/PageIndex",
+      "host": "api.github.com",
+      "tier": "data",
+      "publishedAt": "2026-10-06",
+      "body": "[수집 2026-10-07 · gh api repos/VectifyAI/PageIndex (JSON 중 일부 필드를 그대로 옮김)]\n\n{\"full_name\":\"VectifyAI/PageIndex\",\"created_at\":\"2025-04-01T10:53:54Z\",\"pushed_at\":\"2026-10-06T18:06:27Z\",\"language\":\"Python\",\"license\":\"MIT\",\"stargazers_count\":38781,\"forks_count\":3358,\"homepage\":\"https://pageindex.ai\",\"archived\":false,\"description\":\"📑 PageIndex: Document Index for Vectorless, Reasoning-based RAG\"}",
+      "facts": [
+        "저장소 생성일 2025-04-01(UTC) — 1년 반 된 저장소가 주간 스타 2,860 으로 재진입(이번 주 생성 아님) — 원문: \"\"created_at\":\"2025-04-01T10:53:54Z\"\"",
+        "라이선스 MIT, 언어 Python, 홈페이지 https://pageindex.ai — 원문: \"\"license\":\"MIT\"\" / \"\"language\":\"Python\"\" / \"\"homepage\":\"https://pageindex.ai\"\"",
+        "2026-10-07 조회 시점 스타 38,781 · 포크 3,358 · 마지막 push 2026-10-06T18:06:27Z — 원문: \"\"stargazers_count\":38781\" / \"\"forks_count\":3358\" / \"\"pushed_at\":\"2026-10-06T18:06:27Z\"\""
+      ]
+    },
+    {
+      "title": "pageindex — PyPI 릴리스 이력(파이썬 SDK)",
+      "url": "https://pypi.org/pypi/pageindex/json",
+      "host": "pypi.org",
+      "tier": "data",
+      "publishedAt": "2026-10-01",
+      "body": "[수집 2026-10-07 · PyPI JSON API 에서 릴리스 업로드 시각을 추려 옮김]\n\nname: pageindex\ninfo.version (latest): 0.2.21\nlicense: MIT\nrequires_python: >=3.10\nsummary: Python SDK for PageIndex — reasoning-based, vectorless document retrieval, cloud and local\nreleases with files: 42\nfirst release: 0.1.0 @ 2025-03-12T13:38:00.149334Z\nrelease 0.2.17 @ 2026-09-13T10:36:29.036150Z\nrelease 0.2.18 @ 2026-09-16T13:31:49.815715Z\nrelease 0.2.19 @ 2026-09-21T04:49:22.241589Z\nrelease 0.2.20 @ 2026-09-28T14:03:28.274188Z\nrelease 0.2.21 @ 2026-10-01T15:26:17.282591Z",
+      "facts": [
+        "PyPI 최신 0.2.21 은 2026-10-01T15:26:17Z 업로드, 첫 릴리스 0.1.0 은 2025-03-12, 총 42개 릴리스(최근 5건 0.2.17~0.2.21 이 2026-09-13부터 10-01 사이에 3~7일 간격으로 올라옴) — 원문: \"info.version (latest): 0.2.21\" / \"release 0.2.21 @ 2026-10-01T15:26:17.282591Z\" / \"first release: 0.1.0 @ 2025-03-12T13:38:00.149334Z\" / \"releases with files: 42\" / \"release 0.2.17 @ 2026-09-13T10:36:29.036150Z\"",
+        "PyPI 메타: MIT, 파이썬 3.10 이상, 요약은 \"reasoning-based, vectorless document retrieval, cloud and local\" — 원문: \"license: MIT\" / \"requires_python: >=3.10\" / \"reasoning-based, vectorless document retrieval, cloud and local\""
+      ]
+    },
+    {
+      "title": "VectifyAI/PageIndex-OSS-Benchmark — README (개발사 자체 벤치마크)",
+      "url": "https://github.com/VectifyAI/PageIndex-OSS-Benchmark",
+      "host": "github.com",
+      "tier": "official",
+      "publishedAt": "2026-08-17",
+      "body": "[수집 2026-10-07 · gh api repos/VectifyAI/PageIndex-OSS-Benchmark/readme (raw). 저장소 생성 2026-08-16, 마지막 push 2026-08-17(UTC), GitHub API 의 license 는 null(라이선스 표기 없음), 스타 4. Vectify 가 자기 제품을 자기 데이터셋으로 잰 결과라 독립 검증이 아님.]\n\nA retrieval benchmark for **open-source PageIndex running locally** —\n`PageIndexClient()` with no API key, flash indexing, no OCR.\n\nWe collect 62 questions over 34 PDFs, drawn from\n[MMLongBench-Doc-V2](https://github.com/VectifyAI/MMLongBench-Doc-V2) and kept\nto cases where the answer is a fact stated in running text: no charts, no tables, no figures, and no counting or arithmetic\non top of what was retrieved. The point is to isolate **retrieval and reading**\nfrom everything else a document-QA system does — a wrong answer here is a\nretrieval or extraction failure, not a reasoning one.\n\nScoped to what the OSS local path can actually ingest: every document was\nverified to index under flash, and documents it refuses are excluded rather\nthan scored as failures. The set measures retrieval quality *within* PageIndex\nOSS's reach, and says nothing about the documents outside it.\n\n| model | effort | accuracy | avg $/question |\n|---|---|---|---:|\n| gpt-5.6-luna | none | 53/62 · 85.5% | $0.0031 |\n| gpt-5.6-luna | low | 53/62 · 85.5% | $0.0033 |\n| gpt-5.6-luna | medium | 57/62 · 91.9% | $0.0038 |\n| gpt-5.6-luna | high | 60/62 · 96.8% | $0.0036 |\n| gpt-5.6-terra | none | 56/62 · 90.3% | $0.0296 |\n| gpt-5.6-terra | low | 59/62 · 95.2% | $0.0324 |\n| gpt-5.6-terra | medium | 61/62 · 98.4% | $0.0303 |\n| gpt-5.6-terra | high | 62/62 · 100.0% | $0.0325 |\n| gpt-5.6-sol | none | 60/62 · 96.8% | $0.0759 |\n| gpt-5.6-sol | low | 60/62 · 96.8% | $0.0817 |\n| gpt-5.6-sol | medium | 62/62 · 100.0% | $0.0810 |\n| gpt-5.6-sol | high | 62/62 · 100.0% | $0.0819 |",
+      "facts": [
+        "벤치마크 구성(자체): 34개 PDF에서 뽑은 62개 질문 — 본문에 서술된 사실 하나를 묻는 조회형(차트·표·그림·계산 제외)이라 오답은 추론이 아니라 검색·읽기 실패 — 원문: \"We collect 62 questions over 34 PDFs\" / \"a wrong answer here is a retrieval or extraction failure, not a reasoning one\"",
+        "범위 한계(저자 스스로 명시): OSS 로컬 경로가 처리할 수 있는 문서만 대상이고 거부되는 문서는 실패로 채점하지 않고 제외 — 범위 밖 문서에 대해선 아무것도 말해 주지 않음 — 원문: \"documents it refuses are excluded rather than scored as failures\" / \"says nothing about the documents outside it\"",
+        "결과표(자체 측정): gpt-5.6-luna 는 effort none 53/62(85.5%)·질문당 $0.0031, high 60/62(96.8%)·$0.0036 — 원문: \"| gpt-5.6-luna | none | 53/62 · 85.5% | $0.0031 |\" / \"| gpt-5.6-luna | high | 60/62 · 96.8% | $0.0036 |\"",
+        "결과표(자체 측정): gpt-5.6-sol 은 medium·high 에서 62/62(100.0%), 질문당 약 $0.081~0.082 — sol medium 의 질문당 $0.0810 은 luna high 의 $0.0036 의 약 22.5배(계산: 0.0810 ÷ 0.0036) — 원문: \"| gpt-5.6-sol | medium | 62/62 · 100.0% | $0.0810 |\" / \"| gpt-5.6-sol | high | 62/62 · 100.0% | $0.0819 |\""
+      ]
+    },
+    {
+      "title": "VectifyAI/Mafin2.5-FinanceBench — README (README 의 FinanceBench 98.7% 근거 저장소)",
+      "url": "https://github.com/VectifyAI/Mafin2.5-FinanceBench",
+      "host": "github.com",
+      "tier": "official",
+      "publishedAt": "2025-10-20",
+      "body": "[수집 2026-10-07 · gh api repos/VectifyAI/Mafin2.5-FinanceBench/readme (raw). GitHub API: 저장소 생성 2025-02-19, 마지막 push 2025-10-20, description \"FinanceBench evaluation of Mafin 2.5 (Powered by PageIndex)\", license null, 스타 96. PageIndex README 의 98.7% 가 가리키는 평가의 출처.]\n\n**Mafin2.5** is our latest RAG model on Financial reports, built on **PageIndex** -- a vectorless, reasoning-based RAG framework.\n\nWe follow a **realistic and practical evaluation setup**, where all documents are stored in a **single database**, and Mafin2.5 is tested on the [FinanceBench public set](https://github.com/patronus-ai/financebench). This approach ensures that our model is evaluated under conditions that closely resemble real-world financial applications.  For transparency, we have **open-sourced our evaluation code** in **[Evaluation Code](https://github.com/VectifyAI/Mafin2.5-FinanceBench/blob/main/eval.py)**.  \n\nIn cases where questions are **ambiguous, have multiple valid answers, or are deemed invalid**, we rely on **expert human annotations** to ensure fair and accurate evaluation.\n\nThe latest iteration, **Mafin 2.5**, achieves a remarkable accuracy of **98.7%**, demonstrating major advancements in reasoning and retrieval capabilities.\n\nThe above figure illustrates its effectiveness across **ChatGPT 4o** and **Deepseek v3**, indicating that its strong performance is **independent of the underlying LLM**.",
+      "facts": [
+        "98.7% 는 PageIndex 오픈소스 자체가 아니라 Vectify 의 금융 보고서용 RAG 모델 \"Mafin 2.5\"(PageIndex 기반)를 FinanceBench 공개 세트로 평가한 결과 — 원문: \"**Mafin2.5** is our latest RAG model on Financial reports, built on **PageIndex**\" / \"tested on the [FinanceBench public set]\"",
+        "평가 방식(자체 서술): 모든 문서를 단일 DB 에 넣는 설정이고, 모호하거나 정답이 여럿이거나 무효로 본 질문은 전문가 사람 주석에 의존 — 원문: \"all documents are stored in a **single database**\" / \"expert human annotations\"",
+        "Mafin 2.5 정확도 98.7%(자체 서술) — 기반 모델을 ChatGPT 4o 와 Deepseek v3 로 바꿔도 같은 98.7% 라고 주장 — 원문: \"achieves a remarkable accuracy of **98.7%**\" / \"**ChatGPT 4o** and **Deepseek v3**\""
+      ]
+    },
+    {
+      "title": "heygen-com/hyperframes — README (저장소 공식 문서)",
+      "url": "https://github.com/heygen-com/hyperframes",
+      "host": "github.com",
+      "tier": "official",
+      "publishedAt": "2026-10-06",
+      "body": "[수집 2026-10-07 · gh api repos/heygen-com/hyperframes/readme (raw 텍스트, 요약 없음) · README 원문 발췌. publishedAt 은 저장소 마지막 push(2026-10-06T22:20:09Z) 일자. 개발사는 영상 서비스 HeyGen.]\n[후보 파일 github-2026-10-06.json] repo \"heygen-com/hyperframes\" language \"TypeScript\" starsThisWeek 3342 totalStars 57894\n\nWrite HTML. Render video. Built for agents.\n\nHyperFrames is an open-source framework for turning HTML, CSS, media, and seekable animations into deterministic MP4 videos. Use it locally with the CLI, from AI coding agents with skills, or as the rendering core behind hosted authoring workflows.\n\nclaude plugin marketplace add heygen-com/hyperframes\nclaude plugin install hyperframes@hyperframes\n\n> Using `/hyperframes`, create a 10-second product intro with a fade-in title, a background video, and subtle background music.\n\nThe skills teach agents the HyperFrames production loop: plan the video, write valid HTML, wire seekable animations, add media, lint, preview, and render. They work with Claude Code, Codex, Cursor, Gemini CLI, IBM Bob, and other coding agents that support skills.\n\nHyperFrames ships 21 skills agents load on demand.\n\nnpx hyperframes init my-video\ncd my-video\nnpx hyperframes preview      # preview in browser with live reload\nnpx hyperframes render       # render to MP4\n```\n\n**Requirements:** Node.js 22+, FFmpeg\n\nPreview instantly in the browser. Render locally or in Docker. The renderer seeks each frame in headless Chrome and encodes the result with FFmpeg, so the same input produces the same video.\n\n- **Deterministic:** same input, same frames, same output. Built for CI, regression tests, and automated rendering.\n- **No build step:** an `index.html` composition plays as-is and can be previewed directly in the browser.\n- **Adapter-based animation:** bring GSAP, CSS animations, Lottie, Three.js, Anime.js, WAAPI, or a custom runtime.\n- **Open source:** Apache 2.0 license, with no per-render fees or commercial-use thresholds.\n\n## HyperFrames vs Remotion\n\nHyperFrames is inspired by [Remotion](https://www.remotion.dev). Both tools render video with headless Chrome and FFmpeg. The main difference is the authoring model: Remotion's bet is React components; HyperFrames' bet is plain HTML that humans and agents can both write easily.\n\n|                          | **HyperFrames**                       | **Remotion**                            |\n| ------------------------ | ------------------------------------- | --------------------------------------- |\n| Authoring                | HTML + CSS + seekable animation       | React components                        |\n| Build step               | None; `index.html` plays as-is        | Bundler required                        |\n| Agent handoff            | Plain HTML files                      | JSX / React project                     |\n| Library-clock animations | Seekable, frame-accurate via adapters | Wall-clock animation patterns need care |\n| Distributed rendering    | Local and AWS Lambda render paths     | Remotion Lambda, mature cloud renderer  |\n| License                  | Apache 2.0                            | Source-available Remotion License       |\n\nHyperFrames is used in production at [HeyGen](https://www.heygen.com), with community examples from teams like [tldraw](https://tldraw.com), [TanStack](https://tanstack.com), and others in [ADOPTERS.md](ADOPTERS.md).\n\nThe repo uses [Git LFS](https://git-lfs.com) for golden regression-test baselines under `packages/producer/tests/**/output.mp4` (about 240 MB of `.mp4` files).",
+      "facts": [
+        "한 줄 정의: \"Write HTML. Render video. Built for agents.\" — HTML·CSS·미디어·seekable 애니메이션을 결정적(deterministic) MP4 로 만드는 오픈소스 프레임워크 — 원문: \"Write HTML. Render video. Built for agents.\" / \"turning HTML, CSS, media, and seekable animations into deterministic MP4 videos\"",
+        "사용 방식 3가지: 로컬 CLI, 스킬을 가진 AI 코딩 에이전트, 호스팅 저작 워크플로의 렌더링 코어 — 원문: \"Use it locally with the CLI, from AI coding agents with skills, or as the rendering core behind hosted authoring workflows.\"",
+        "Claude Code 설치: `claude plugin marketplace add heygen-com/hyperframes` → `claude plugin install hyperframes@hyperframes`; 스킬은 Claude Code·Codex·Cursor·Gemini CLI 등에서 동작 — 원문: \"claude plugin marketplace add heygen-com/hyperframes\" / \"claude plugin install hyperframes@hyperframes\" / \"They work with Claude Code, Codex, Cursor, Gemini CLI, IBM Bob, and other coding agents that support skills.\"",
+        "직접 CLI 로 쓸 때: `npx hyperframes init my-video` → `preview` → `render`, 요구 사항은 Node.js 22+ 와 FFmpeg — 원문: \"npx hyperframes init my-video\" / \"npx hyperframes render\" / \"**Requirements:** Node.js 22+, FFmpeg\"",
+        "스킬 21개를 에이전트가 필요할 때 불러 쓰는 구조(README) — 원문: \"HyperFrames ships 21 skills agents load on demand.\"",
+        "렌더 방식: 헤드리스 Chrome 으로 프레임을 하나씩 seek 해 FFmpeg 로 인코딩하므로 같은 입력이면 같은 영상이 나온다고 설명 — 원문: \"The renderer seeks each frame in headless Chrome and encodes the result with FFmpeg, so the same input produces the same video.\"",
+        "라이선스: Apache 2.0, 렌더당 요금이나 상업 사용 임계치 없음(README 서술). Remotion 비교표에서는 Remotion 쪽을 \"Source-available Remotion License\"로 표기(HyperFrames 측 서술) — 원문: \"**Open source:** Apache 2.0 license, with no per-render fees or commercial-use thresholds.\" / \"| License | Apache 2.0 | Source-available Remotion License |\"",
+        "도입 사례(README 서술): HeyGen 이 프로덕션에서 사용하고 tldraw·TanStack 등의 커뮤니티 예제가 ADOPTERS.md 에 있다 — 원문: \"HyperFrames is used in production at [HeyGen](https://www.heygen.com)\" / \"ADOPTERS.md\"",
+        "개발용 클론 주의: 회귀 테스트 기준 영상에 Git LFS 를 쓰며 .mp4 가 약 240 MB — 원문: \"(about 240 MB of `.mp4` files)\"",
+        "후보파일 수치: 이번 주 신규 스타 3,342 · 누적 57,894 · 언어 TypeScript — 원문: \"starsThisWeek 3342 totalStars 57894\" / \"language \"TypeScript\"\""
+      ]
+    },
+    {
+      "title": "heygen-com/hyperframes — GitHub REST API 저장소 메타데이터",
+      "url": "https://api.github.com/repos/heygen-com/hyperframes",
+      "host": "api.github.com",
+      "tier": "data",
+      "publishedAt": "2026-10-06",
+      "body": "[수집 2026-10-07 · gh api repos/heygen-com/hyperframes (JSON 중 일부 필드를 그대로 옮김)]\n\n{\"full_name\":\"heygen-com/hyperframes\",\"created_at\":\"2026-03-10T01:51:06Z\",\"pushed_at\":\"2026-10-06T22:20:09Z\",\"language\":\"TypeScript\",\"license\":\"Apache-2.0\",\"stargazers_count\":57898,\"forks_count\":5159,\"homepage\":\"https://hyperframes.dev\",\"archived\":false,\"description\":\"Write HTML. Render video. Built for agents.\"}",
+      "facts": [
+        "저장소 생성일 2026-03-10(UTC) — 약 7개월 된 저장소(이번 주 생성 아님) — 원문: \"\"created_at\":\"2026-03-10T01:51:06Z\"\"",
+        "라이선스 Apache-2.0, 언어 TypeScript, 홈페이지 https://hyperframes.dev — 원문: \"\"license\":\"Apache-2.0\"\" / \"\"language\":\"TypeScript\"\" / \"\"homepage\":\"https://hyperframes.dev\"\"",
+        "2026-10-07 조회 시점 스타 57,898 · 포크 5,159 · 마지막 push 2026-10-06T22:20:09Z — 원문: \"\"stargazers_count\":57898\" / \"\"forks_count\":5159\" / \"\"pushed_at\":\"2026-10-06T22:20:09Z\"\""
+      ]
+    },
+    {
+      "title": "hyperframes — npm 레지스트리 메타데이터",
+      "url": "https://registry.npmjs.org/hyperframes",
+      "host": "registry.npmjs.org",
+      "tier": "data",
+      "publishedAt": "2026-10-06",
+      "body": "[수집 2026-10-07 · npm registry JSON 에서 버전·시각 필드를 추려 옮김]\n\nname: hyperframes\ndist-tags.latest: 0.8.138\ntime.0.8.138: 2026-10-06T18:27:21.907Z\ntime.created: 2026-03-23T01:08:47.948Z\ntime.modified: 2026-10-06T18:27:22.970Z\nversions published: 492\nfirst version: 0.1.0 @ 2026-03-23T01:08:48.257Z\nlicense: Apache-2.0\nengines: {\"node\":\">=22\"}\ndescription: HyperFrames CLI — create, preview, and render HTML video compositions",
+      "facts": [
+        "npm 최신 0.8.138 은 2026-10-06T18:27:21Z 발행, 첫 버전 0.1.0 은 2026-03-23, 지금까지 492개 버전 — 약 6.5개월에 492회 발행(릴리스가 매우 잦음) — 원문: \"dist-tags.latest: 0.8.138\" / \"time.0.8.138: 2026-10-06T18:27:21.907Z\" / \"first version: 0.1.0 @ 2026-03-23T01:08:48.257Z\" / \"versions published: 492\"",
+        "패키지 라이선스 Apache-2.0, Node 엔진 요건 >=22 — 원문: \"license: Apache-2.0\" / \"engines: {\"node\":\">=22\"}\""
+      ]
+    },
+    {
+      "title": "Cloudflare/clef — Hugging Face 모델 카드",
+      "url": "https://huggingface.co/Cloudflare/clef",
+      "host": "huggingface.co",
+      "tier": "official",
+      "publishedAt": "2026-10-01",
+      "body": "[수집 2026-10-07 · https://huggingface.co/Cloudflare/clef/raw/main/README.md (raw 텍스트, 요약 없음) · 카드 원문 발췌. publishedAt 은 HF API lastModified(2026-10-01) 일자. 카드의 벤치마크는 Cloudflare 가 자체 실행한 결과.]\n[후보 파일 hf-models-2026-10-06.json] id \"Cloudflare/clef\" createdAt 2026-09-30T21:15:35.000Z trendingScore 1532 likes 1668 downloads 7255\n\nlicense: apache-2.0\nlibrary_name: transformers\npipeline_tag: image-text-to-text\nbase_model: Qwen/Qwen3.8-27B\nbase_model_relation: finetune\n\n- **Announcement:** [Clef decision models on the Cloudflare blog](https://blog.cloudflare.com/clef-decision-models)\n- **Decision Index leaderboard:** [clef-evals.workers-ai-mle.workers.dev](https://clef-evals.workers-ai-mle.workers.dev)\n\nClef is a 27B multimodal model that turns a state and a schema of typed\nquestions into decisions. It reads the state as text, JSON, images, or video, and returns a\nprobability for every allowed option of every question in a single forward pass. There is no\nfree-form text generation and no output parsing.\n\nThe Clef API is fully compatible with Jev and SystemOne.\n\nClef is post-trained from [Qwen/Qwen3.8-27B](https://huggingface.co/Qwen/Qwen3.8-27B). See\n[Clef-Flash](https://huggingface.co/Cloudflare/clef-flash) for the\nsmaller, faster variant.\n\n- **Backbone:** Qwen/Qwen3.8-27B with its vision encoder, stored as standard sharded safetensors.\n- **Joint schema head:** a small transformer head that reads the backbone's final hidden states,\n  routes evidence from the state to each question, and scores all options of all questions jointly.\n- **Output:** one logit per allowed option for each question. Apply a softmax per question to get\n  probabilities.\n\nTested with `torch` 2.11 and `transformers` 5.10.2 on a single H200. Image and video inputs also\nneed `pillow`.\n\n`encode_record` accepts `max_length` (default 16,384 tokens) and `max_state_tokens` to bound the input.\n\nPer-benchmark results from our internal run of the [Decision Index](https://clef-evals.workers-ai-mle.workers.dev) 0.2.1 suite. Scores are percentages; ForecastBench is a Brier score, where lower is better. The last two rows are request latency in milliseconds, where lower is better. The best value in each row is in bold.\n\n| Benchmark | Clef | Clef-flash | Jev | DiffusionGemma Jev | Kev 9B | Laya |\n|---|---|---|---|---|---|---|\n| BFCL (case exact accuracy) | 98.5 | **98.8** | 95.8 | 96.5 | 94.5 | 38.1 |\n| ToolRet (nDCG@10) | **69.2** | 66.4 | 65.3 | 61.2 | 64.3 | 12.8 |\n| API-Bank (accuracy) | 91.9 | **93.1** | 88.2 | 83.7 | 56.3 | 11.5 |\n| BANKING77 (macro-F1) | **94.2** | 90.9 | 79.7 | 74.3 | 84.8 | 14.3 |\n| CLINC150+OOS (macro-F1) | **97.4** | 66.8 | 89.3 | 83.5 | 79.0 | 3.2 |\n| RouterBench (selected quality) | 79.7 | 79.9 | 79.9 | 79.0 | **80.0** | 57.1 |\n| Home appliance simulator (case exact accuracy) | 83.0 | **97.7** | 52.3 | 42.0 | 25.0 | 0.0 |\n| SGD/SGD-X (macro-F1) | 43.8 | 34.2 | 43.0 | 40.6 | **64.0** | 42.4 |\n| ContractNLI (macro-F1) | 81.4 | **84.3** | 71.7 | 76.0 | 57.8 | 29.0 |\n| ANLI (macro-F1) | 69.8 | 59.1 | **74.8** | 66.4 | 56.3 | 48.7 |\n| BPoMP (accuracy) | **96.9** | 95.4 | 90.6 | 86.9 | 67.0 | 51.6 |\n| Humicroedit (accuracy) | 66.7 | **75.1** | 61.9 | 63.0 | 55.8 | 47.2 |\n| POP909-CL (accuracy) | 15.8 | 1.6 | **18.1** | 2.5 | 10.8 | 5.1 |\n| cfcolor (accuracy) | **66.0** | 65.8 | 64.7 | 58.2 | 56.3 | 52.3 |\n| MMLU (accuracy) | 90.3 | **91.8** | 91.7 | 79.3 | 75.3 | 30.7 |\n| GPQA Diamond (accuracy) | 48.0 | 51.0 | **78.3** | 44.9 | 38.8 | 27.6 |\n| ARC-Easy (accuracy) | 99.0 | **99.5** | 99.3 | 98.2 | 97.7 | 47.0 |\n| ARC-Challenge (accuracy) | 97.7 | **98.3** | 97.8 | 94.5 | 93.7 | 28.6 |\n| WinoGrande (accuracy) | 93.5 | **97.5** | 92.0 | 73.6 | 73.2 | 50.5 |\n| HellaSwag (accuracy) | 98.2 | **98.6** | 94.5 | 83.3 | 81.9 | 33.1 |\n| GSM8K (accuracy) | **80.8** | 67.3 | 79.9 | 50.3 | 48.7 | 21.6 |\n| ChessBench (accuracy) | **24.7** | 23.0 | 17.2 | 14.2 | 11.2 | 7.7 |\n| MuSR (accuracy) | 83.5 | **86.0** | 66.1 | 61.2 | 57.9 | 43.2 |\n| SATA-Bench (case exact accuracy) | 33.8 | **36.7** | 26.4 | 27.5 | 26.7 | 0.3 |\n| BRIGHT (nDCG@10) | 45.9 | 39.3 | **47.5** | 42.9 | 38.5 | 19.9 |\n| Amazon ESCI (macro-F1) | **57.5** | 57.4 | 55.2 | 53.4 | 49.2 | 24.4 |\n| ACOS (per-review F1) | **33.3** | 25.9 | 29.5 | 24.5 | 18.3 | 3.5 |\n| FinEntity (macro-F1) | 96.2 | **97.1** | 87.0 | 89.0 | 88.4 | 61.0 |\n| VAST (macro-F1) | 59.5 | 49.6 | **64.6** | 55.7 | 55.4 | 40.5 |\n| NLI4CT (macro-F1) | 82.9 | 78.6 | **84.1** | 78.4 | 74.9 | 47.7 |\n| CRUXEval (accuracy) | **86.7** | 86.1 | 73.0 | 64.7 | 51.2 | 40.2 |\n| CLadder (accuracy) | 94.0 | **97.7** | 72.6 | 67.8 | 62.0 | 52.9 |\n| ForecastBench (Brier, lower is better) | 13.9 | **10.6** | 17.4 | 29.6 | 17.6 | 41.1 |\n| Habermas Machine (accuracy) | 68.7 | **71.8** | 45.9 | 45.0 | 39.4 | 33.4 |\n| PhishNChips (accuracy) | 79.6 | 75.0 | 62.5 | **85.4** | 50.7 | 50.1 |\n| MMLU-Pro (accuracy) | 65.9 | 65.3 | **82.7** | 56.9 | 51.1 | 13.6 |\n| BBH (accuracy) | 73.7 | 68.9 | **92.9** | 70.7 | 65.2 | 34.1 |\n| RAGTruth (hallucination F1) | **79.4** | 35.6 | 76.5 | 70.4 | 46.2 | 48.8 |\n| HoVer (accuracy) | 65.2 | 61.2 | **72.9** | 70.9 | 58.8 | 55.8 |\n| When2Call MCQ (accuracy) | 72.4 | 65.6 | **81.0** | 75.4 | 49.6 | 11.9 |\n| New Yorker (accuracy) | 69.5 | 66.1 | **70.1** | 63.6 | 58.1 | 27.1 |\n| Median latency (ms) | 209.3 | 38.8 | 524.1 | 84.4 | 51.4 | **5.8** |\n| p95 latency (ms) | 238.6 | **122.4** | 536.0 | 211.2 | 187.9 | 222.5 |\n\nDecision accuracy on four end-to-end business workflows from [Typesafe Evals](https://evals.typesafe.ai/), scored against consensus reference labels. All models are scored on the same dataset revision and case cohort.\n\n| Workflow | Metric | Clef | Clef-flash | Jev |\n|---|---|---:|---:|---:|\n| Invoice processing | Exact actions | **64.7** | 57.1 | 61.8 |\n| Invoice processing | Primary action | **86.2** | 73.3 | 83.1 |\n| Customer service | Exact actions | 76.3 | **77.0** | 76.0 |\n| Security incidents | Exact actions | **62.9** | 61.7 | 61.7 |\n| Agent trace observability | Primary action | 68.5 | 69.8 | **71.6** |\n\nReleased under the Apache-2.0 license, following the base model\n[Qwen/Qwen3.8-27B](https://huggingface.co/Qwen/Qwen3.8-27B).",
+      "facts": [
+        "무엇: 27B(원문 billion 표기, 약 270억) 멀티모달 모델 — 상태(state)와 타입 질문 스키마를 받아 결정으로 바꾼다. 텍스트·JSON·이미지·영상을 읽고 허용된 모든 선택지의 확률을 한 번의 forward pass 로 반환하며 자유 텍스트 생성이나 출력 파싱이 없다 — 원문: \"Clef is a 27B multimodal model that turns a state and a schema of typed questions into decisions.\" / \"It reads the state as text, JSON, images, or video\" / \"There is no free-form text generation and no output parsing.\"",
+        "베이스: Qwen/Qwen3.8-27B 를 post-train(finetune), 비전 인코더 포함 표준 샤딩 safetensors, 더 작고 빠른 변형이 Clef-Flash — 원문: \"base_model: Qwen/Qwen3.8-27B\" / \"base_model_relation: finetune\" / \"smaller, faster variant\"",
+        "구조: 백본 최종 은닉 상태를 읽는 작은 트랜스포머 \"joint schema head\" 가 상태에서 각 질문으로 증거를 라우팅해 모든 질문의 모든 선택지를 함께 점수화, 출력은 질문별 선택지당 logit 하나(질문별 softmax 로 확률) — 원문: \"**Joint schema head:**\" / \"Apply a softmax per question to get probabilities.\"",
+        "호환성: 카드는 Clef API 가 Jev·SystemOne 과 완전 호환이라고 적음 — 원문: \"The Clef API is fully compatible with Jev and SystemOne.\"",
+        "실행 환경(카드 서술): torch 2.11 · transformers 5.10.2 · 단일 H200 에서 시험 — 원문: \"Tested with `torch` 2.11 and `transformers` 5.10.2 on a single H200.\"",
+        "입력 길이: 오픈소스 헬퍼 `encode_record` 의 max_length 기본값은 16,384 토큰 — 원문: \"`encode_record` accepts `max_length` (default 16,384 tokens)\"",
+        "라이선스: Apache-2.0(베이스 모델 Qwen/Qwen3.8-27B 의 라이선스를 따른다고 명시) — 원문: \"Released under the Apache-2.0 license, following the base model\"",
+        "벤치마크 출처: Cloudflare 가 자체 실행한 Decision Index 0.2.1 스위트 결과(점수는 %, ForecastBench 는 Brier·낮을수록 좋음, 마지막 두 행은 요청 지연 ms) — 원문: \"Per-benchmark results from our internal run of the\" / \"Decision Index\" / \"0.2.1 suite.\"",
+        "표 발췌(카드 원문, 열: Clef / Clef-flash / Jev / DiffusionGemma Jev / Kev 9B / Laya): BFCL 98.5 / 98.8 / 95.8 / 96.5 / 94.5 / 38.1, BANKING77 94.2 / 90.9 / 79.7 / 74.3 / 84.8 / 14.3 — 원문: \"| BFCL (case exact accuracy) | 98.5 | **98.8** | 95.8 | 96.5 | 94.5 | 38.1 |\" / \"| BANKING77 (macro-F1) | **94.2** | 90.9 | 79.7 | 74.3 | 84.8 | 14.3 |\"",
+        "표 발췌 — Jev 가 1등인 행: GPQA Diamond 48.0(Clef) / 51.0(Clef-flash) / 78.3(Jev), MMLU-Pro 65.9 / 65.3 / 82.7, BBH 73.7 / 68.9 / 92.9 — 원문: \"| GPQA Diamond (accuracy) | 48.0 | 51.0 | **78.3** | 44.9 | 38.8 | 27.6 |\" / \"| MMLU-Pro (accuracy) | 65.9 | 65.3 | **82.7** | 56.9 | 51.1 | 13.6 |\" / \"| BBH (accuracy) | 73.7 | 68.9 | **92.9** | 70.7 | 65.2 | 34.1 |\"",
+        "지연(ms, 카드 표): 중앙값 Clef 209.3 · Clef-flash 38.8 · Jev 524.1 · DiffusionGemma Jev 84.4 · Kev 9B 51.4 · Laya 5.8, p95 238.6 · 122.4 · 536.0 · 211.2 · 187.9 · 222.5 — 원문: \"| Median latency (ms) | 209.3 | 38.8 | 524.1 | 84.4 | 51.4 | **5.8** |\" / \"| p95 latency (ms) | 238.6 | **122.4** | 536.0 | 211.2 | 187.9 | 222.5 |\"",
+        "카드 표의 굵은 글씨(행별 1등) 직접 집계(계산): 지연 2행을 뺀 41개 벤치마크 행에서 Clef-flash 16행, Clef 11행, Jev 11행, Kev 9B 2행, DiffusionGemma Jev 1행, Laya 0행 — 카드 표만 보면 Clef 본체가 1등인 행은 11개 — 원문: \"| Benchmark | Clef | Clef-flash | Jev | DiffusionGemma Jev | Kev 9B | Laya |\"",
+        "워크플로 평가(카드가 Typesafe Evals 로 소개): Invoice processing Primary action 86.2(Clef) / 73.3(Clef-flash) / 83.1(Jev), Agent trace observability Primary action 68.5 / 69.8 / 71.6(Jev 최고) — 원문: \"| Invoice processing | Primary action | **86.2** | 73.3 | 83.1 |\" / \"| Agent trace observability | Primary action | 68.5 | 69.8 | **71.6** |\"",
+        "후보파일 수치: trendingScore 1,532 · 좋아요 1,668 · 다운로드 7,255 · createdAt 2026-09-30T21:15:35Z — 원문: \"trendingScore 1532 likes 1668 downloads 7255\""
+      ]
+    },
+    {
+      "title": "Cloudflare/clef — Hugging Face API 메타데이터",
+      "url": "https://huggingface.co/api/models/Cloudflare/clef",
+      "host": "huggingface.co",
+      "tier": "data",
+      "publishedAt": "2026-10-01",
+      "body": "[수집 2026-10-07 · HF Hub API JSON 중 일부 필드를 그대로 옮김. downloads 는 huggingface_hub 문서상 \"최근 30일\" 값.]\n\n{\"id\":\"Cloudflare/clef\",\"createdAt\":\"2026-09-30T21:15:35.000Z\",\"lastModified\":\"2026-10-01T15:23:46.000Z\",\"likes\":1668,\"downloads\":7255,\"library_name\":\"transformers\",\"pipeline_tag\":\"image-text-to-text\",\"license\":\"apache-2.0\",\"base_model\":\"Qwen/Qwen3.8-27B\",\"safetensors\":{\"parameters\":{\"BF16\":27356728560},\"total\":27356728560},\"usedStorage\":54989721117,\"gated\":false}",
+      "facts": [
+        "safetensors 총 파라미터 27,356,728,560(BF16) → 약 273.6억(카드 표기 \"27B\" = 270억과 근사), 저장소 용량 54,989,721,117 바이트(≈55.0 GB, 계산) — 원문: \"\"safetensors\":{\"parameters\":{\"BF16\":27356728560},\"total\":27356728560}\" / \"\"usedStorage\":54989721117\"",
+        "저장소 생성 2026-09-30T21:15:35Z(= 한국시간 10-01 06:15), 라이선스 apache-2.0, 베이스 Qwen/Qwen3.8-27B — 원문: \"\"createdAt\":\"2026-09-30T21:15:35.000Z\"\" / \"\"license\":\"apache-2.0\"\" / \"\"base_model\":\"Qwen/Qwen3.8-27B\"\"",
+        "2026-10-07 조회 시점 좋아요 1,668 · 다운로드 7,255(최근 30일 기준 필드) — 원문: \"\"likes\":1668\" / \"\"downloads\":7255\""
+      ]
+    },
+    {
+      "title": "Introducing Clef: our open-source decision models, and new RL fine-tuning platform (Cloudflare Blog)",
+      "url": "https://blog.cloudflare.com/clef-decision-models",
+      "host": "blog.cloudflare.com",
+      "tier": "official",
+      "publishedAt": "2026-10-01",
+      "body": "[수집 2026-10-07 · 블로그 HTML 을 직접 받아 텍스트로 변환(요약 모델 미경유). 게시일 October 1, 2026. 아래 성능 서술은 모두 Cloudflare 자체 주장.]\n\nOctober 1, 2026 Introducing Clef: our open-source decision models, and new RL fine-tuning platform Michelle Chen , Alex Reneau , and Kevin Flansburg 10 minute read\n\nToday, we’re releasing two Cloudflare-trained decision models, Clef and Clef-flash, hosted on Workers AI . Clef is currently the leader when evaluated against the Jev Decision Index , you can view full results on the live benchmark demo site . These models are smarter, faster, and fully Jev-API compatible, so you can experiment with these hosted models easily. We’re fully open-sourcing these models on Hugging Face under an Apache 2.0 license for you to run locally and experiment with yourselves.\n\nWhat is a decision model? A decision model makes classifications to help agents decide how to act, based on certain probabilities. For example, you can pass in a customer support message (inputs) and ask if it is urgent and which team should handle it. A decision model will return typed answers with probabilities (outputs), which your code can use to route the ticket, trigger an escalation, or defer to a human. This means that a human does not necessarily need to be in the loop for agentic decisions anymore — agents can programmatically gather context, make decisions, and take actions on tasks, or defer to a human when needed.\n\nSpecifically at Cloudflare, we’ve been testing our new Clef model on our Threat Intelligence team to help us classify website domains. By giving a domain to Clef (with Browser Run) it can quickly identify categories that the domain falls under — for example, it might classify a domain with a 95% chance it is a fashion website, 85% ecommerce, <1% phishing, etc. This classification took our Clef model 2.2s to fetch, render, and classify the website. In contrast, our fastest general LLM gpt-oss-120b took 4.7s in the same workflow, and only returned two classifications. As a user, you can imagine how a 2x savings in latency and results can help us improve our threat intelligence workflows and be faster in identifying malicious or legitimate domains.\n\nHow is Clef different from other decision models? Although the market is getting increasingly saturated with decision models, Clef has some unique properties that make us excited to release it to the public. First, it has a vision encoder so it’s able to take in images and classify visual content. This is different from Jev, which only does text classification today. Secondly, our model has a 64k context window (compared to Jev’s 32k), which allows users to squeeze more input state for the model to classify against.\n\nWe also ran benchmarks across Typesafe’s own eval suite and our Clef models fared well, beating Jev in 3 out of 4 areas. Notably, our Clef-flash performs exceptionally well, given how much faster it is. Workflow Clef Clef-flash Jev Invoice processing 64.7 57.1 61.8 Customer service 76.3 77 76.0 Security incidents 62.9 61.7 61.7 Agent trace observability 68.5 69.8 71.6\n\nAcross the 43 eval benchmarks that we ran, our Clef models beat the decision models on latency (except for Laya which is very fast but trades off quality in the benchmarks above): Benchmark Clef Clef-flash Jev DiffusionGemma Jev Kev-9B Laya Median latency · ms 209.3 38.8 524.1 84.4 51.4 5.8 p95 latency · ms 238.6 122.4 536.0 211.2 187.9 222.5\n\nClef also produces strictly typed outputs similar to Jev and is fully API-compatible, so you can make the swap extremely easily. The larger Clef model is your more powerful precision model, while the Clef-Flash model is great for latency-critical decisions. The models are enterprise-ready with our guarantee that we don’t read, store, or train on your requests or responses (unless you want to use our fine-tuning product, which we go into below). You can get started with the Clef models today, starting with our developer documentation or play around with the open-source model on the Hugging Face repo.\n\nBy freezing Qwen3.8-27B for Clef and Qwen3.5-9B for Clef-flash, we jointly optimized the routing head alongside rank-256 low-rank adapters.",
+      "facts": [
+        "2026-10-01 게시, 제목 \"Introducing Clef: our open-source decision models, and new RL fine-tuning platform\", 필자 Michelle Chen·Alex Reneau·Kevin Flansburg — 원문: \"October 1, 2026 Introducing Clef: our open-source decision models, and new RL fine-tuning platform Michelle Chen , Alex Reneau , and Kevin Flansburg 10 minute read\"",
+        "공개 내용: Cloudflare 가 학습한 결정 모델 Clef·Clef-flash 두 개를 Workers AI 에 호스팅하고 Hugging Face 에 Apache 2.0 으로 오픈소스 — 원문: \"releasing two Cloudflare-trained decision models, Clef and Clef-flash, hosted on Workers AI\" / \"open-sourcing these models on Hugging Face under an Apache 2.0 license\"",
+        "Cloudflare 주장: \"Clef is currently the leader when evaluated against the Jev Decision Index\" — 자사 벤치마크 사이트 기준 — 원문: \"Clef is currently the leader when evaluated against the Jev Decision Index\"",
+        "결정 모델 정의(블로그): 에이전트가 어떻게 행동할지 정하도록 확률에 기반한 분류를 하고, 질문에 대해 확률이 붙은 타입 답을 돌려준다 — 원문: \"A decision model makes classifications to help agents decide how to act, based on certain probabilities.\" / \"A decision model will return typed answers with probabilities\"",
+        "자사 위협 인텔리전스 팀 사례(Cloudflare 서술): 도메인을 가져와 렌더링·분류하는 데 Clef 2.2초, 가장 빠른 범용 LLM gpt-oss-120b 는 4.7초이면서 분류를 2개만 반환 — 원문: \"This classification took our Clef model 2.2s to fetch, render, and classify the website.\" / \"our fastest general LLM gpt-oss-120b took 4.7s in the same workflow, and only returned two classifications\"",
+        "Jev 와의 차이(블로그 서술): 비전 인코더가 있어 이미지도 분류(Jev 는 현재 텍스트 분류만), 컨텍스트 창 64k(Jev 32k) — 원문: \"it has a vision encoder\" / \"Jev, which only does text classification today\" / \"our model has a 64k context window\"",
+        "지연(ms, 블로그 표): 중앙값 Clef 209.3 · Clef-flash 38.8 · Jev 524.1 · DiffusionGemma Jev 84.4 · Kev-9B 51.4 · Laya 5.8, p95 238.6 · 122.4 · 536.0 · 211.2 · 187.9 · 222.5 — 원문: \"Median latency · ms 209.3 38.8 524.1 84.4 51.4 5.8\" / \"p95 latency · ms 238.6 122.4 536.0 211.2 187.9 222.5\"",
+        "블로그 주장: 평가 벤치마크 \"43개\"에서 Laya(매우 빠르지만 품질을 희생)를 제외한 결정 모델들보다 지연이 낮다 — 원문: \"Across the 43 eval benchmarks that we ran, our Clef models beat the decision models on latency (except for Laya\"",
+        "Typesafe 자체 평가 4개 영역 중 3개에서 Jev 를 앞섰다고 주장 — Invoice 64.7(Clef)/57.1(Clef-flash)/61.8(Jev), Customer service 76.3/77/76.0, Security incidents 62.9/61.7/61.7, Agent trace observability 68.5/69.8/71.6 — 원문: \"beating Jev in 3 out of 4 areas\" / \"Invoice processing 64.7 57.1 61.8\" / \"Agent trace observability 68.5 69.8 71.6\"",
+        "학습(블로그 서술): Clef 는 Qwen3.8-27B, Clef-flash 는 Qwen3.5-9B 를 얼린 채 라우팅 헤드와 rank-256 저랭크 어댑터를 함께 최적화 — 원문: \"By freezing Qwen3.8-27B for Clef and Qwen3.5-9B for Clef-flash, we jointly optimized the routing head alongside rank-256 low-rank adapters.\"",
+        "시작 방법: 개발자 문서 또는 Hugging Face 저장소의 오픈소스 모델 — 원문: \"You can get started with the Clef models today\""
+      ]
+    },
+    {
+      "title": "clef — Cloudflare Workers AI 모델 카탈로그 페이지",
+      "url": "https://developers.cloudflare.com/workers-ai/models/clef/",
+      "host": "developers.cloudflare.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "[수집 2026-10-07 · 페이지 HTML 을 직접 받아 텍스트로 변환. 페이지에 게시일 없음 — 가격·컨텍스트는 2026-10-07 조회 시점 값.]\n\nClef is a 27B multimodal decision model that turns a state and a schema of typed questions into decisions. It reads the state as text, JSON, images, or video, and returns a probability for every allowed option of every question. Model Info Context Window ↗ 65,536 tokens Terms and License link ↗ More information link ↗ Vision Yes Unit Pricing $0.24 per M input tokens",
+      "facts": [
+        "Workers AI 설명: \"Clef is a 27B multimodal decision model that turns a state and a schema of typed questions into decisions.\" — 원문: \"Clef is a 27B multimodal decision model that turns a state and a schema of typed questions into decisions.\"",
+        "호스팅 컨텍스트 창 65,536 토큰(= 64×1,024, 블로그의 \"64k\"와 산술상 같은 값. 모델 카드 헬퍼 `encode_record` 의 기본 max_length 16,384 와는 다른 층위의 값) — 원문: \"65,536 tokens\"",
+        "요금: 입력 토큰 100만 개당 $0.24 (2026-10-07 조회 기준), 비전 지원 Yes — 원문: \"$0.24 per M input tokens\" / \"Vision Yes\""
+      ]
+    },
+    {
+      "title": "Cloudflare/clef-flash — Hugging Face 모델 카드",
+      "url": "https://huggingface.co/Cloudflare/clef-flash",
+      "host": "huggingface.co",
+      "tier": "official",
+      "publishedAt": "2026-10-01",
+      "body": "[수집 2026-10-07 · https://huggingface.co/Cloudflare/clef-flash/raw/main/README.md (raw 텍스트) · 카드 원문 발췌. Clef 본체 카드와 같은 형식.]\n[후보 파일 hf-models-2026-10-06.json] id \"Cloudflare/clef-flash\" createdAt 2026-09-30T21:15:36.000Z trendingScore 561 likes 587 downloads 10638\n\nlicense: apache-2.0\nlibrary_name: transformers\npipeline_tag: image-text-to-text\nbase_model: Qwen/Qwen3.5-9B\nbase_model_relation: finetune\n\nClef-Flash is a 9B multimodal model that turns a state and a schema of typed\nquestions into decisions. It reads the state as text, JSON, images, or video, and returns a\nprobability for every allowed option of every question in a single forward pass. There is no\nfree-form text generation and no output parsing.\n\nThe Clef-Flash API is fully compatible with Jev and SystemOne.\n\nClef-Flash is post-trained from [Qwen/Qwen3.5-9B](https://huggingface.co/Qwen/Qwen3.5-9B). See\n[Clef](https://huggingface.co/Cloudflare/clef) for the\nlarger variant.",
+      "facts": [
+        "Clef-Flash: 9B(원문 billion 표기, 약 90억) 멀티모달 결정 모델 — Clef 의 더 작고 빠른 변형, 베이스는 Qwen/Qwen3.5-9B(finetune) — 원문: \"Clef-Flash is a 9B multimodal model\" / \"base_model: Qwen/Qwen3.5-9B\" / \"Clef-Flash is post-trained from [Qwen/Qwen3.5-9B]\"",
+        "라이선스 apache-2.0, 파이프라인 image-text-to-text — 원문: \"license: apache-2.0\" / \"pipeline_tag: image-text-to-text\"",
+        "후보파일 수치: trendingScore 561 · 좋아요 587 · 다운로드 10,638 · createdAt 2026-09-30T21:15:36Z — 원문: \"trendingScore 561 likes 587 downloads 10638\""
+      ]
+    },
+    {
+      "title": "perplexity-ai/pplx-decider-v1-27b — Hugging Face 모델 카드 (같은 결정형 계열 비교용 보조 항목)",
+      "url": "https://huggingface.co/perplexity-ai/pplx-decider-v1-27b",
+      "host": "huggingface.co",
+      "tier": "official",
+      "publishedAt": "2026-10-01",
+      "body": "[수집 2026-10-07 · https://huggingface.co/perplexity-ai/pplx-decider-v1-27b/raw/main/README.md (raw 텍스트) · 카드 전문 발췌. 독립 항목이 아니라 Clef 와 같은 주에 나온 같은 계열 모델로 비교 한 문장용. 카드 표의 수치는 Perplexity API 로 측정한 값.]\n[후보 파일 hf-models-2026-10-06.json] id \"perplexity-ai/pplx-decider-v1-27b\" createdAt 2026-10-01T21:24:11.000Z trendingScore 89 likes 93 downloads 1507\n\nlicense: apache-2.0\nbase_model: Qwen/Qwen3.8-27B\nbase_model_relation: finetune\nlibrary_name: pytorch\npipeline_tag: text-classification\n\npplx-decider-v1-27b is a decision model fine-tuned from Qwen3.8-27B.\n\nAccuracy across 11 benchmarks. The pplx-decider-v1-27b results were measured through the Perplexity API.\n\n| Benchmark | Jev | Qwen3.8-27B | pplx-decider-v1-27b |\n| --- | ---: | ---: | ---: |\n| WinoGrande | **90.70%** | 73.10% | 83.30% |\n| FinancialPhraseBank | 76.98% | 75.68% | **84.18%** |\n| RAGTruth | 77.27% | 61.53% | **88.80%** |\n| JudgeBench | **78.57%** | 68.86% | 78.29% |\n| BBH | **94.27%** | 72.80% | 82.80% |\n| JevBench public hard | **73.27%** | 72.28% | 70.30% |\n| TabFact | 89.80% | 78.60% | **90.60%** |\n| ContractNLI | 77.45% | **80.78%** | **80.78%** |\n| Circa | 84.60% | 87.00% | **89.20%** |\n| Belebele | **95.00%** | 93.20% | 94.00% |\n| TruthfulQA binary | **92.00%** | 82.80% | 85.40% |\n| Overall | 84.51% | 74.76% | **85.71%** |\n\nBold marks the best score in each row.\n\nPython 3.12+ and a CUDA GPU with room for approximately 49 GiB of weights plus working memory.",
+      "facts": [
+        "Perplexity 의 결정 모델: Qwen3.8-27B 에서 파인튜닝, 11개 벤치마크 정확도를 보고하며 pplx-decider 결과는 Perplexity API 로 측정 — 원문: \"pplx-decider-v1-27b is a decision model fine-tuned from Qwen3.8-27B.\" / \"Accuracy across 11 benchmarks.\" / \"The pplx-decider-v1-27b results were measured through the Perplexity API.\"",
+        "Overall(카드 표): Jev 84.51% · Qwen3.8-27B 74.76% · pplx-decider-v1-27b 85.71% — 원문: \"| Overall | 84.51% | 74.76% | **85.71%** |\"",
+        "행별로는 갈림: RAGTruth 88.80%(pplx) vs 77.27%(Jev), BBH 82.80%(pplx) vs 94.27%(Jev) — 원문: \"| RAGTruth | 77.27% | 61.53% | **88.80%** |\" / \"| BBH | **94.27%** | 72.80% | 82.80% |\"",
+        "실행 요건: Python 3.12+ 와 가중치 약 49 GiB + 작업 메모리가 들어가는 CUDA GPU — 원문: \"Python 3.12+ and a CUDA GPU with room for approximately 49 GiB of weights plus working memory.\"",
+        "라이선스 apache-2.0, 베이스 Qwen/Qwen3.8-27B — 원문: \"license: apache-2.0\" / \"base_model: Qwen/Qwen3.8-27B\"",
+        "후보파일 수치: trendingScore 89 · 좋아요 93 · 다운로드 1,507 — 원문: \"trendingScore 89 likes 93 downloads 1507\""
+      ]
+    },
+    {
+      "title": "Aleph-Alpha/Kolibri-1 — Hugging Face 모델 카드",
+      "url": "https://huggingface.co/Aleph-Alpha/Kolibri-1",
+      "host": "huggingface.co",
+      "tier": "official",
+      "publishedAt": "2026-10-03",
+      "body": "[수집 2026-10-07 · https://huggingface.co/Aleph-Alpha/Kolibri-1/raw/main/README.md (raw 텍스트, 236 KB) · 카드 원문 발췌. publishedAt 은 카드의 Release Date(3 October 2026). 평가표는 카드 안의 HTML 표를 태그만 벗겨 \"|\" 로 옮긴 행이며 Aleph Alpha 자체 평가.]\n[수집자 주: HTML 표의 colspan 으로 읽은 열 묶음 — 열 순서는 Kolibri, Kolibri Origin, GLM-4.7 Flash 30B-A3B, Nemotron 3 Nano 30B-A3B, Qwen3.5 35B-A3B, Qwen3.6 35B-A3B, Qwen3-Next 80B-A3B Thinking(이상 7열 활성 3B), Gemma 4 26B-A4B IT, GPT-OSS 120B, Mistral Small 4 119B-A6B(활성 4-6B 3열), GLM-4.5 Air 106B-A12B, Nemotron 3 Super 120B-A12B(활성 12B 2열), Qwen3.8 27B(Dense 27B), Apertus 70B Instruct(Dense 70B). 카드가 \"dense 모델은 회색·표시 없음\"이라 밝힘.]\n[후보 파일 hf-models-2026-10-06.json] id \"Aleph-Alpha/Kolibri-1\" createdAt 2026-10-02T05:54:02.000Z trendingScore 678 likes 708 downloads 4138\n\nlicense: \"apache-2.0\"\npipeline_tag: text-generation\nlibrary_name: vllm\nbase_model: Aleph-Alpha/Kolibri-1-BF16\ntags:\n  - reasoning\n  - moe\nlanguage:\n  - de\n  - en\n\nKolibri is Aleph Alpha's mixture-of-experts (MoE) reasoning model, with a\nfocus on German and English. The model supports an explicit reasoning mode\nand tool calling. It is optimized for long-context and inference efficiency.\n\n| Model | Kolibri 1 |\n| --- | --- |\n| Model Provider | Aleph Alpha GmbH |\n| Model Developer | Aleph Alpha Research GmbH |\n| Architecture | Mixture-of-Experts |\n| Total parameters | 78B (`78,103,074,560`) |\n| Active parameters / token | 3.46B (`3,457,573,120`) |\n| Languages | German, English |\n| Context length | `1,048,576 tokens`; we recommend ≤262,144 tokens for serving efficiency and complex tasks |\n| Precision | `float8_e4m3fn` weights in 128×128 blocks with dynamically quantized activations, evaluated with an FP8 KV cache; embeddings, LM head, norms and MoE router in `bfloat16` |\n| Reasoning mode | Yes |\n| Tool calling | Yes |\n| License | Apache 2.0 |\n| Knowledge cutoff | EN: June 18, 2026, DE: June 18, 2026<br>*This only affects implicit knowledge, the model may use more recent information through tool use.* |\n| Hardware requirements | Model memory footprint: ~78 GB (FP8 weights). Minimum: 2× A100 80 GB, 2× H100 SXM5, 1× H200, 1× B200 or 1× B300. Recommended: 2× H100 SXM5, 2× H200, 1× B200 or 1× B300. |\n| Best for | Multi-step reasoning, retrieval-augmented generation, agentic tool calling, coding, German- and English-language assistant |\n| Release Date | 3rd of October 2026 |\n| Code of Practice | Aleph Alpha is a signatory of the EU GPAI Code of Practice, see <https://digital-strategy.ec.europa.eu/en/policies/contents-code-gpai>. |\n| Training Data | Pre-training: Trained on 20T tokens of a filtered, bilingual corpus (~62.5% English, ~23.9% German, ~13.6% code) combining curated web data, synthetic rephrasings and translations, and high-quality sources. Additionally trained on 3.44T in mid-training and 201B for long-context extension.<br>Post-training: The SFT mix contained filtered, bilingual data that combines open-source datasets and synthetically generated data. For RL we used a broad mix of environments that cover reasoning, agentic, and instruction following use-cases. |\n| Training method | We trained a transformer 50-layer MoE model with 4:1 SWA:GQA attention, using Muon and Exact Quantile Balancing on 384 experts per layer, with 1 shared and 6 routed. |\n| Computing Resources | *Pre-training* (based on actual measurements), *excluding mid-training and long-context*: Hardware: 768 NVIDIA B200 (96 HGX 8xB200 nodes); Parallelism: EP8 FSDP16 DP6; Time: 21 days (511h, 392k GPUh)<br>*Mid-training*: 5 days, 90k GPUh (same setup as above)<br>*Long-Context*: 13h, 10k GPUh (same setup as above except parallelism: FSDP128 DP6)<br>FLOPS: **6.4e23** |\n| Tech Report | <https://aleph-alpha.com/downloads/tech-report.pdf> |\n\nKolibri is intended to process text input and output in German and English\nand to perform a wide range of tasks beyond natural-language generation, for\nexample multi-step reasoning, coding, structured extraction,\nretrieval-augmented generation, long-document processing and agentic tool\ncalling.\n\nKolibri was pre-trained on sequences of 16,384 tokens, mid-trained on 65,536\nand trained on 262,144 tokens in a final long-context phase, which is its\nnative context length. Because positional encoding is applied only in the\nsliding-window layers, the context can be extended beyond that length\nwithout any position scaling, in principle to arbitrary lengths. We have\nvalidated quality and serving efficiency up to 1,048,576 tokens. For\nlatency- or throughput-sensitive deployments and for complex tasks, we\nrecommend contexts of at most 262,144 tokens.\n\nKolibri is intended for integration into conversational assistants and\nagentic workflows in German and English, in which a person reviews the\nmodel's output before it is acted on rather than autonomous systems that act\nunreviewed. It suits document-processing and drafting systems,\nquestion-answering systems over an organisation's own material, and internal\nknowledge and research tools. Its tool-calling and structured-output\ncapabilities make it appropriate for orchestration layers that call APIs,\nexecute code or run searches, provided the calling system validates the\nresults. In decision-support systems it belongs on the advisory side,\nsurfacing evidence and drafting options for a human to weigh, and it is not\nintended as the deciding component. More broadly, it is built for human-AI\ncollaboration rather than unsupervised operation.\n\nKolibri requires the **aleph-alpha-inference** package that provides the\nKolibri vLLM plugin. You can either use the provided container image\n`ghcr.io/aleph-alpha/aleph-alpha-inference`, or install the package from\n[Aleph-Alpha/aleph-alpha-inference](https://github.com/Aleph-Alpha/aleph-alpha-inference),\nwhich also installs the vLLM version it supports:\n\n```bash\npip install 'aleph-alpha-inference>=1'\n```\n\nServe the model with reasoning and tool-calling enabled:\n\n```bash\nvllm serve Aleph-Alpha/Kolibri-1 --kv-cache-dtype fp8 \\\n  --reasoning-parser kolibri1 \\\n  --tool-call-parser kolibri1 \\\n  --enable-auto-tool-choice\n```\n\nTo serve contexts beyond 262,144 tokens, add `--max-model-len 1048576\n--hf-overrides '{\"max_position_embeddings\": 1048576}'`.\n\nThe recommended sampling parameters for the model are `temperature=1.0`,\n`top_p=0.97` and `top_k=128`.\n\nKolibri supports explicit thinking effort levels that need to be configured\nthrough the chat template. You can pass `reasoning_effort` values `low`,\n`medium` and `high` to configure the amount of effort our model puts into\nfinding the answer. You can disable thinking altogether by setting\n`reasoning_effort` to `none` or passing `enable_thinking=false`. The model\nwill then immediately respond.\n\n[평가표 — 후행학습(Post-training), 카드 HTML 표 행 옮김]\nType | MoE | Dense\nActive parameters | 3B | 4-6B | 12B | 27B | 70B\nEval | Kolibri | Kolibri Origin | GLM-4.7 Flash 30B-A3B | Nemotron 3 Nano 30B-A3B | Qwen3.5 35B-A3B | Qwen3.6 35B-A3B | Qwen3-Next 80B-A3B Thinking | Gemma 4 26B-A4B IT | GPT-OSS 120B | Mistral Small 4 119B-A6B | GLM-4.5 Air 106B-A12B | Nemotron 3 Super 120B-A12B | Qwen3.8 27B | Apertus 70B Instruct\nOverall (EN) | 75.5 | 54.1 | 64.7 | 65.6 | 74.7 | 71.4 | 62.4 | 71.9 | 72.3 | 63.1 | 64.4 | 73.0 | 80.2 | –\nOverall (DE) | 70.8 | 46.4 | 50.4 | 59.3 | 69.8 | 67.3 | 58.0 | 66.3 | 70.2 | 61.4 | 64.8 | 67.9 | 79.9 | –\nGPQA Diamond (EN) | 84.3 | 68.1 | 73.1 | 73.9 | 83.8 | 83.4 | 76.1 | 81.1 | 76.4 | 74.7 | 73.2 | 78.0 | 89.2 | 29.5\nAIME 2026 (EN) | 96.0 | 81.5 | 88.3 | 87.9 | 92.1 | 91.0 | 88.5 | 87.5 | 90.8 | 83.1 | 83.8 | 90.4 | 97.7 | 0.6\nLiveCodeBench v6 | 85.9 | 59.2 | 46.5 | 71.3 | 77.8 | 82.5 | 73.9 | 82.3 | 87.5 | 71.2 | 67.8 | 82.0 | 93.8 | 8.7\nSWE-Bench Verified | 66.4 | – | 51.0 | 38.6 | 71.6 | 73.8 | – | 57.8 | – | 60.8 | 11.6 | 60.2 | 72.6 | –\nTerminalBench 2.1 | 27.7 | – | 20.2 | 9.7 | 39.7 | – | 8.6 | – | 29.2 | 21.0 | – | 39.7 | 76.8 | –\nTau2-Bench (Telecom) | 94.7 | 67.5 | 95.9 | 45.9 | 97.7 | 99.1 | 43.9 | 45.3 | 73.1 | 41.5 | 53.8 | 68.1 | 82.5 | 10.8\nBFCL v4 (overall) | 61.4 | 36.4 | 65.4 | 61.5 | 70.5 | 67.2 | 51.0 | 68.2 | 57.3 | 58.0 | 67.2 | 61.0 | 73.2 | –\nLongBench Pro | 64.5 | – | – | 53.2 | 70.3 | 70.8 | 63.8 | 64.3 | – | 56.4 | – | 62.9 | 76.9 | –\nAA-LCR | 68.3 | – | 49.7 | 42.3 | 66.3 | 69.7 | 46.3 | 68.3 | – | 52.3 | – | 67.0 | 81.3 | –\n\n### Model Dependencies\n\nNone. The model was trained from scratch.\n\n| Vocabulary size | 128,000 |\n| Number of layers | 50 |\n| Attention type | 4:1 causal sliding-window GQA to full causal GQA |\n| Sliding window | 512 preceding tokens plus the current token |\n| Hidden size | 2,560 |\n| Attention heads | 48 |\n| Key-value heads | 4 |\n| Head size | 128 |\n| QK normalization | Per-head RMSNorm |\n| Expert hidden size | 512 |\n| MLP type | SwiGLU |\n| Routed experts per MoE layer | 384 |\n| Experts selected per token | 6 |\n| Shared experts per MoE layer | 1 |\n| Routing | Token-choice, top-6 sigmoid routing |\n| Pretraining sequence length | 16,384 |\n| Maximum context length | 262,144 native; 1,048,576 by extrapolation |\n| Position embeddings | RoPE, base 10,000, applied only in sliding-window layers |\n\n**Note:** The use of language models in high-stake environments, for\ncritical decisions or to support a user's wellbeing should be performed with\nadditional guardrails in place. All use of our model as part of a downstream\nAI system must meet all applicable regulatory and legal requirements,\nespecially Regulation (EU) 2024/1689 (EU AI Act).\n\nThe model weights are published by Aleph Alpha GmbH under Apache 2.0 license.\nThe rights granted thereunder only apply to the weights and configuration files\npublished in this repository. For the avoidance of doubt, any other artifacts\nnot included in the repository are excluded from the license. The license\nespecially does not extend to underlying code, model architecture, parameter\nsettings or any training method. Aleph Alpha retains all rights to its\nartifacts, code, model architecture, training methods, parameter settings and\nintellectual property rights.",
+      "facts": [
+        "무엇: Aleph Alpha 의 MoE(전문가 혼합) 추론 모델, 독일어·영어 중심, 명시적 추론 모드와 툴 호출 지원, 장문맥·추론 효율에 최적화 — 원문: \"Kolibri is Aleph Alpha's mixture-of-experts (MoE) reasoning model, with a focus on German and English.\" / \"The model supports an explicit reasoning mode and tool calling.\"",
+        "파라미터(카드 표기): 총 78B(`78,103,074,560`) → 약 780억(정확값 약 781.0억), 토큰당 활성 3.46B(`3,457,573,120`) → 약 34.6억 — 원문: \"| Total parameters | 78B (`78,103,074,560`) |\" / \"| Active parameters / token | 3.46B (`3,457,573,120`) |\"",
+        "컨텍스트: 표기상 1,048,576 토큰이고 서빙 효율·복잡한 작업에는 262,144 토큰 이하를 권장 — 네이티브 길이는 최종 장문맥 단계에서 학습한 262,144 토큰이며 1,048,576 토큰까지 품질·서빙 효율을 검증했다고 서술 — 원문: \"| Context length | `1,048,576 tokens`; we recommend ≤262,144 tokens for serving efficiency and complex tasks |\" / \"trained on 262,144 tokens in a final long-context phase, which is its native context length.\" / \"We have validated quality and serving efficiency up to 1,048,576 tokens.\"",
+        "정밀도·하드웨어: FP8 가중치 메모리 약 78 GB, 최소 2× A100 80 GB / 2× H100 SXM5 / 1× H200 / 1× B200 / 1× B300 — 원문: \"Model memory footprint: ~78 GB (FP8 weights). Minimum: 2× A100 80 GB, 2× H100 SXM5, 1× H200, 1× B200 or 1× B300.\"",
+        "공개일(카드): 2026년 10월 3일, 지식 컷오프는 영어·독일어 모두 2026년 6월 18일 — 원문: \"| Release Date | 3rd of October 2026 |\" / \"Knowledge cutoff | EN: June 18, 2026, DE: June 18, 2026\"",
+        "라이선스: Apache 2.0 — 다만 부여되는 권리는 이 저장소에 게시된 가중치·설정 파일에만 적용되고 기반 코드·모델 아키텍처·파라미터 설정·학습 방법에는 미치지 않는다고 카드가 명시 — 원문: \"| License | Apache 2.0 |\" / \"The rights granted thereunder only apply to the weights and configuration files published in this repository.\" / \"The license especially does not extend to underlying code, model architecture, parameter settings or any training method.\"",
+        "학습(카드): 필터링된 이중언어 코퍼스 20T 토큰(영어 ~62.5%·독일어 ~23.9%·코드 ~13.6%) + 중간학습 3.44T + 장문맥 확장 201B, NVIDIA B200 768장으로 사전학습 21일(511h, 392k GPUh), FLOPS 6.4e23 — 원문: \"Trained on 20T tokens of a filtered, bilingual corpus (~62.5% English, ~23.9% German, ~13.6% code)\" / \"Additionally trained on 3.44T in mid-training and 201B for long-context extension.\" / \"Hardware: 768 NVIDIA B200 (96 HGX 8xB200 nodes)\" / \"Time: 21 days (511h, 392k GPUh)\" / \"FLOPS: **6.4e23**\"",
+        "처음부터 학습(카드): 다른 모델에 의존하지 않음(\"Model Dependencies: None. The model was trained from scratch.\") — 원문: \"None. The model was trained from scratch.\"",
+        "구조(카드 표): 50층, 층마다 라우티드 전문가 384개 중 토큰당 6개 선택 + 공유 전문가 1개, 어휘 128,000 — 원문: \"| Number of layers | 50 |\" / \"| Routed experts per MoE layer | 384 |\" / \"| Experts selected per token | 6 |\" / \"| Shared experts per MoE layer | 1 |\" / \"| Vocabulary size | 128,000 |\"",
+        "사용: vLLM 플러그인 패키지 `pip install 'aleph-alpha-inference>=1'` 후 `vllm serve Aleph-Alpha/Kolibri-1 --kv-cache-dtype fp8 --reasoning-parser kolibri1 --tool-call-parser kolibri1 --enable-auto-tool-choice`, 권장 샘플링 temperature=1.0 · top_p=0.97 · top_k=128 — 원문: \"pip install 'aleph-alpha-inference>=1'\" / \"vllm serve Aleph-Alpha/Kolibri-1 --kv-cache-dtype fp8\" / \"`temperature=1.0`, `top_p=0.97` and `top_k=128`\"",
+        "추론 모드: reasoning_effort 를 low·medium·high 로 지정, none 이나 enable_thinking=false 로 끄면 바로 답한다 — 원문: \"You can pass `reasoning_effort` values `low`, `medium` and `high`\"",
+        "자체 평가표(Aleph Alpha 실행): Overall (EN) 75.5 · Overall (DE) 70.8 — 같은 표의 Qwen3.5 35B-A3B 는 74.7 / 69.8, Dense 27B Qwen3.8 은 80.2 / 79.9 — 원문: \"Overall (EN) | 75.5 | 54.1 | 64.7 | 65.6 | 74.7 | 71.4 | 62.4 | 71.9 | 72.3 | 63.1 | 64.4 | 73.0 | 80.2 | –\" / \"Overall (DE) | 70.8 | 46.4 | 50.4 | 59.3 | 69.8 | 67.3 | 58.0 | 66.3 | 70.2 | 61.4 | 64.8 | 67.9 | 79.9 | –\"",
+        "자체 평가표의 에이전트·코드 행(모든 칸에서 1등이 아님): SWE-Bench Verified 66.4(Qwen3.5 35B-A3B 71.6, Qwen3.6 35B-A3B 73.8), TerminalBench 2.1 27.7(Qwen3.5 35B-A3B 39.7, Qwen3.8 27B 76.8) — 원문: \"SWE-Bench Verified | 66.4 | – | 51.0 | 38.6 | 71.6 | 73.8 | – | 57.8 | – | 60.8 | 11.6 | 60.2 | 72.6 | –\" / \"TerminalBench 2.1 | 27.7 | – | 20.2 | 9.7 | 39.7 | – | 8.6 | – | 29.2 | 21.0 | – | 39.7 | 76.8 | –\"",
+        "권장 용도(카드): 사람이 출력을 검토하는 대화형 어시스턴트·에이전트 워크플로 — 의사결정 지원 시스템에서는 조언 쪽에 두고 \"결정하는 구성 요소\"로는 의도하지 않음 — 원문: \"in which a person reviews the model's output before it is acted on\" / \"it is not intended as the deciding component\"",
+        "카드 경고: 고위험 환경·중요한 결정·사용자 복지 지원에는 추가 안전장치가 필요하고 EU AI Act 등 규제를 충족해야 한다 — 원문: \"should be performed with additional guardrails in place\"",
+        "후보파일 수치: trendingScore 678 · 좋아요 708 · 다운로드 4,138 · createdAt 2026-10-02T05:54:02Z — 원문: \"trendingScore 678 likes 708 downloads 4138\""
+      ]
+    },
+    {
+      "title": "Aleph-Alpha/Kolibri-1 — Hugging Face API 메타데이터",
+      "url": "https://huggingface.co/api/models/Aleph-Alpha/Kolibri-1",
+      "host": "huggingface.co",
+      "tier": "data",
+      "publishedAt": "2026-10-03",
+      "body": "[수집 2026-10-07 · HF Hub API JSON 중 일부 필드를 그대로 옮김. downloads 는 huggingface_hub 문서상 \"최근 30일\" 값.]\n\n{\"id\":\"Aleph-Alpha/Kolibri-1\",\"createdAt\":\"2026-10-02T05:54:02.000Z\",\"lastModified\":\"2026-10-03T08:43:53.000Z\",\"likes\":709,\"downloads\":4138,\"library_name\":\"vllm\",\"pipeline_tag\":\"text-generation\",\"license\":\"apache-2.0\",\"base_model\":\"Aleph-Alpha/Kolibri-1-BF16\",\"language\":[\"de\",\"en\"],\"safetensors\":{\"parameters\":{\"BF16\":705058560,\"F8_E4M3\":77398016000},\"total\":78103074560},\"usedStorage\":78852606661,\"gated\":false}",
+      "facts": [
+        "safetensors 총 78,103,074,560(BF16 705,058,560 + F8_E4M3 77,398,016,000) → 약 781.0억, 저장소 용량 78,852,606,661 바이트(≈78.9 GB, 계산) — 원문: \"\"safetensors\":{\"parameters\":{\"BF16\":705058560,\"F8_E4M3\":77398016000},\"total\":78103074560}\" / \"\"usedStorage\":78852606661\"",
+        "저장소 생성 2026-10-02T05:54:02Z(카드의 Release Date 10월 3일보다 하루 이르다), 라이선스 apache-2.0, 언어 de·en, 이 저장소는 BF16 원본(Kolibri-1-BF16)의 FP8 양자화본 — 원문: \"\"createdAt\":\"2026-10-02T05:54:02.000Z\"\" / \"\"license\":\"apache-2.0\"\" / \"\"base_model\":\"Aleph-Alpha/Kolibri-1-BF16\"\" / \"\"language\":[\"de\",\"en\"]\"",
+        "2026-10-07 조회 시점 좋아요 709(후보파일 708) · 다운로드 4,138 — 원문: \"\"likes\":709\" / \"\"downloads\":4138\""
+      ]
+    },
+    {
+      "title": "Kolibri Has Landed: A Sovereign Open-Weight Model (Aleph Alpha 블로그)",
+      "url": "https://aleph-alpha.com/en/blog/kolibri-has-landed-a-sovereign-open-weight-model/",
+      "host": "aleph-alpha.com",
+      "tier": "official",
+      "publishedAt": "2026-10-03",
+      "body": "[수집 2026-10-07 · 블로그 HTML 을 직접 받아 텍스트로 변환(요약 모델 미경유). 게시일 표기 03/10/2026(일/월/연 형식 = 2026-10-03). 성능·효율 서술은 모두 Aleph Alpha 자체 주장.]\n\n03/10/2026 Kolibri Has Landed: A Sovereign Open-Weight Model On the Day of German Reunification, we are releasing our new model: Kolibri. Kolibri is an English-German Mixture-of-Experts Transformer with 78B total parameters, 3B active. It supports context lengths of up to 1M tokens. The model can be downloaded with the full weights on Hugging Face and used under the Apache 2.0 license terms.\n\nKolibri is a specialized language model built for sovereign mission-critical work in regulated areas including public administration, industrials and aerospace.\n\nWith Kolibri we optimize the trade-off between model capability and deployment costs, using 3B active parameters out of 78B total. Kolibri sits on the Pareto frontier for quality versus serving cost, for both English and German. The Pareto frontier is a concept from economics, marking the best achievable combinations of two objectives, where improving on one means giving up some of the other. None of the compared models delivers more quality at the same serving cost, or the same quality at lower cost.\n\nOut of 50 total layers, only 10 process full context, while the remaining 40 use a tight 512-token focused window. This keeps decode computation and memory bounded in those layers regardless of context length.\n\nThe latter drove the decision: 123B can handle only 3 long-context 256k-token user queries on two H100s, while 78B handles 18 concurrent requests and decodes 28% faster.\n\nWe trained Kolibri on 768 B200 GPUs in three stages: 20T tokens of pre-training at a 16k sequence length over 21 days, 3.44T tokens of mid-training at 64k, and 200B tokens of long-context adaptation at 256k. This is nearly 24T tokens in total, roughly three times what Kolibri Origin consumed. German accounts for more than a fifth of the pre-training mix, about 4.3T tokens, against roughly 62% English and 14% code.\n\nFinished pre-training 11 June 2026 11 September 2026 Release no public release 3 October 2026 Reasoning mode Yes (one mode only) Yes (none, low, medium, high) Total parameters 30.6B 78.1B Active parameters / token 3.27B 3.46B Pre-training tokens 7.51T 20T Layers 50 (2 dense + 48 MoE, 1 shared expert) 50 (all MoE, 1 shared expert) Pre-training context length 8,192 (8k) 16,384 (16k)\n\nOur model is available openly on Hugging Face under an Apache 2.0 License.",
+      "facts": [
+        "공개: 2026-10-03(독일 통일의 날) — \"Kolibri is an English-German Mixture-of-Experts Transformer with 78B total parameters, 3B active\", 컨텍스트 최대 1M 토큰, Hugging Face 에서 Apache 2.0 으로 가중치 전체 다운로드 — 원문: \"03/10/2026 Kolibri Has Landed: A Sovereign Open-Weight Model\" / \"On the Day of German Reunification, we are releasing our new model: Kolibri.\" / \"Kolibri is an English-German Mixture-of-Experts Transformer with 78B total parameters, 3B active.\" / \"It supports context lengths of up to 1M tokens.\"",
+        "블로그의 활성 파라미터 표기는 \"3B active\"(반올림)이고 같은 글의 비교표는 3.46B — 카드와 같은 값 — 원문: \"Active parameters / token 3.27B 3.46B\"",
+        "Kolibri Origin(공개 안 된 이전 모델) 대비: 총 30.6B → 78.1B, 활성 3.27B → 3.46B, 사전학습 7.51T → 20T 토큰, 공개일 \"no public release\" → 3 October 2026 — 원문: \"Total parameters 30.6B 78.1B\" / \"Pre-training tokens 7.51T 20T\" / \"Release no public release 3 October 2026\"",
+        "용도(블로그): 공공행정·산업·항공우주 등 규제 영역의 \"sovereign mission-critical work\" 에 특화한 언어 모델 — 원문: \"Kolibri is a specialized language model built for sovereign mission-critical work in regulated areas including public administration, industrials and aerospace.\"",
+        "Aleph Alpha 주장: 품질 대 서빙 비용 파레토 프런티어에 있고, 비교한 모델 중 같은 비용에 더 높은 품질이나 같은 품질에 더 낮은 비용을 내는 모델은 없다 — 원문: \"None of the compared models delivers more quality at the same serving cost, or the same quality at lower cost.\"",
+        "구조 효율(블로그): 50층 중 10층만 전체 컨텍스트를 처리하고 나머지 40층은 512토큰 윈도 — 123B 안과 비교해 두 H100 에서 256k 토큰 질의 3개 vs 78B 는 동시 18개, 디코딩 28% 빠름(자사 비교) — 원문: \"Out of 50 total layers, only 10 process full context\" / \"the remaining 40 use a tight 512-token focused window\" / \"123B can handle only 3 long-context 256k-token user queries on two H100s, while 78B handles 18 concurrent requests and decodes 28% faster.\"",
+        "학습(블로그): B200 768장, 20T 토큰 사전학습(16k 시퀀스·21일) + 3.44T 중간학습(64k) + 200B 장문맥 적응(256k) — 카드는 장문맥 확장을 201B 로 표기 — 원문: \"We trained Kolibri on 768 B200 GPUs in three stages: 20T tokens of pre-training at a 16k sequence length over 21 days, 3.44T tokens of mid-training at 64k, and 200B tokens of long-context adaptation at 256k.\"",
+        "사전학습 구성(블로그): 독일어 약 4.3T 토큰으로 사전학습 혼합의 5분의 1 이상, 영어 약 62%·코드 14% — 원문: \"German accounts for more than a fifth of the pre-training mix, about 4.3T tokens, against roughly 62% English and 14% code.\"",
+        "배포: Hugging Face 에서 Apache 2.0 으로 공개 — 원문: \"Our model is available openly on Hugging Face under an Apache 2.0 License.\""
+      ]
+    },
+    {
+      "title": "Cactus-Compute/whistle — Hugging Face 모델 카드",
+      "url": "https://huggingface.co/Cactus-Compute/whistle",
+      "host": "huggingface.co",
+      "tier": "official",
+      "publishedAt": "2026-10-02",
+      "body": "[수집 2026-10-07 · https://huggingface.co/Cactus-Compute/whistle/raw/main/README.md (raw 텍스트) · 카드 원문 발췌. publishedAt 은 HF API lastModified(2026-10-02) 일자. 카드의 벤치마크 수치는 그림(SVG)으로만 있어 별도 항목(whistle-benchmarks.svg)에 옮김.]\n[후보 파일 hf-models-2026-10-06.json] id \"Cactus-Compute/whistle\" createdAt 2026-09-30T17:13:26.000Z trendingScore 122 likes 124 downloads 1887\n\nlibrary_name: cactus-needle\npipeline_tag: automatic-speech-recognition\nlicense: apache-2.0\nlanguage:\n  - en\n  - de\n  - fr\n  - es\n  - it\n  - nl\n  - pl\ntags:\n  - speech-recognition\n  - speech-to-text\n  - on-device\n  - edge\n  - quantization\n  - webassembly\n\nA speech-to-text model for mobiles, wearables, robots, smart home, automotive and microcontrollers. The whole model is a single 16.9 MB file, and it runs on the same CPU engine as [Needle](https://huggingface.co/Cactus-Compute/needle3), from the same container and the same quantisation, with no dependencies and no GPU.\n\n- **Transcription**: 16 kHz mono audio, up to 30 seconds in one pass, in English, German, French, Spanish, Italian, Dutch and Polish. The language is detected unless you name it, and silence returns an empty transcript rather than an invented sentence.\n- **Word timestamps**: every word with its start, end and probability, aligned from the decoder's own attention, so an app can highlight, seek or cut on a word.\n- **Speech embedding**: the encoder output, one row per 80 ms frame, for matching and retrieval without decoding a transcript at all.\n\nWhistle is a log-mel front end and a convolutional stem feeding an audio encoder, read by a Needle-shaped decoder through gated cross attention at every layer. It reuses Needle's `.cact` container, Cactus Quants, SIMD kernels and KV cache, so a device that already runs Needle runs Whistle in the same binary with no second runtime. The decoder is laddered the way Needle's is: every depth from 2 layers up is a deployable model, picked at load time with `--audio-depth`. This repo holds `whistle.cact`; the engine and its platform folders are in [Cactus-Compute/needle3](https://huggingface.co/Cactus-Compute/needle3).\n\n- **Speed**: 10 s of audio on an Apple M4 Pro, each model on its official runtime at its defaults: Whistle's C++ engine at 5 beams, `openai-whisper`, and `moonshine-voice` non-streaming over whole audio. Time to first token is audio in to first token. Decode is tokens divided by the wall time after it, so the encoder is not counted twice.\n- **Precision**: Whistle 2 to 4 bit, Whisper fp32 in memory on the CPU, Moonshine int8.\n- **WER**: Whistle measured over 86,174 utterances. Whisper and Moonshine as published (Whisper paper Tables 9, 10 and 13, Moonshine paper Table 3). The Whisper row is the multilingual checkpoint, not `base.en`.\n- **A missing bar** means that model's authors never published that benchmark. Moonshine is English only; Whisper reports no SPGISpeech, Earnings-22 or AMI cleaned.\n- **AMI** includes empty references, per the Open ASR Leaderboard convention. Whisper's figure is AMI-IHM. **TED-LIUM** excludes the corpus's `ignore_time_segment_in_scoring` regions, as its scoring protocol specifies.\n- **FLEURS and MLS** are averaged over Whistle's seven languages (MLS over six, no English), the same set for every model.\n- **No test audio appears in Whistle's training or validation data**, verified by comparing audio checksums and speaker IDs across every reported test set.\n\n```sh\npip install cactus-needle\n```\n\nThe Python package and the source are on [GitHub](https://github.com/cactus-compute/needle). A 16 kHz WAV or raw samples need nothing beyond the base install; other sample rates and microphone capture need the `[mic]` extra.\n\n```python\nimport needle\n\nprint(needle.transcribe(\"clip.wav\")[\"text\"])\n# turn off the kitchen lights\n```\n\nEvery call returns the text, the language, the milliseconds to the first token and the decoder's tokens per second after it. `word_timestamps=True` adds each word with its start, end and probability, `keywords=[...]` favours the names your users say, and `language=\"de\"` forces the language instead of detecting it. The engine and the weights are fetched once and cached. `needle.Whistle()` is the same model as an object, for `embed(audio)` or to hold one tuned `.cact`. `needle whistle playground` transcribes from the microphone, and `needle whistle compare` puts Whistle next to Whisper and Moonshine on the same clip.",
+      "facts": [
+        "무엇: 모바일·웨어러블·로봇·스마트홈·차량·마이크로컨트롤러용 음성 인식(STT) 모델 — 모델 전체가 16.9 MB 단일 파일이고 Needle 과 같은 CPU 엔진·컨테이너·양자화로 의존성·GPU 없이 동작 — 원문: \"A speech-to-text model for mobiles, wearables, robots, smart home, automotive and microcontrollers.\" / \"The whole model is a single 16.9 MB file\" / \"with no dependencies and no GPU.\"",
+        "입력·언어: 16 kHz 모노 오디오를 한 번에 최대 30초, 영어·독일어·프랑스어·스페인어·이탈리아어·네덜란드어·폴란드어 7개 언어(한국어 없음), 언어 자동 감지, 무음은 지어낸 문장 대신 빈 전사 — 원문: \"16 kHz mono audio, up to 30 seconds in one pass, in English, German, French, Spanish, Italian, Dutch and Polish.\" / \"silence returns an empty transcript rather than an invented sentence\"",
+        "기능 3가지: 전사, 단어별 시작·끝·확률 타임스탬프, 디코딩 없이 매칭·검색에 쓰는 음성 임베딩(80 ms 프레임당 1행) — 원문: \"**Word timestamps**\" / \"one row per 80 ms frame\"",
+        "저장소 구성: 이 저장소는 `whistle.cact` 만 담고, 엔진과 플랫폼별 폴더는 Cactus-Compute/needle3 저장소에 있다(실행에는 두 저장소 모두 필요) — 원문: \"This repo holds `whistle.cact`; the engine and its platform folders are in [Cactus-Compute/needle3]\"",
+        "설치·사용: `pip install cactus-needle` 후 `needle.transcribe(\"clip.wav\")[\"text\"]` — 원문: \"pip install cactus-needle\" / \"print(needle.transcribe(\"clip.wav\")[\"text\"])\"",
+        "측정 조건(카드): Whistle 은 86,174개 발화로 WER 측정, Whisper·Moonshine 수치는 각 저자가 공개한 값; 속도는 Apple M4 Pro 에서 10초 오디오 — 원문: \"Whistle measured over 86,174 utterances.\" / \"Whisper and Moonshine as published\" / \"10 s of audio on an Apple M4 Pro\"",
+        "비교 정밀도가 다름(카드): Whistle 2~4비트, Whisper 는 CPU 메모리상 fp32, Moonshine 은 int8 — 원문: \"Whistle 2 to 4 bit, Whisper fp32 in memory on the CPU, Moonshine int8.\"",
+        "카드 주장: 테스트 오디오는 Whistle 학습·검증 데이터에 없음(오디오 체크섬·화자 ID 대조로 확인했다고 서술) — 원문: \"No test audio appears in Whistle's training or validation data\"",
+        "라이선스 apache-2.0(카드 머리말) — 원문: \"license: apache-2.0\"",
+        "후보파일 수치: trendingScore 122 · 좋아요 124 · 다운로드 1,887 · createdAt 2026-09-30T17:13:26Z — 원문: \"trendingScore 122 likes 124 downloads 1887\""
+      ]
+    },
+    {
+      "title": "Whistle 벤치마크 그림 — whistle-benchmarks.svg (모델 카드 첨부 이미지의 텍스트 라벨)",
+      "url": "https://huggingface.co/Cactus-Compute/whistle/resolve/main/assets/whistle-benchmarks.svg",
+      "host": "huggingface.co",
+      "tier": "official",
+      "publishedAt": "2026-10-02",
+      "body": "[수집 2026-10-07 · 모델 카드가 그림으로만 싣는 벤치마크 SVG 를 받아 <text> 노드를 문서 순서대로 \"|\" 로 이었다. 값-라벨 짝은 SVG 좌표(막대 높이·너비 ÷ 눈금)와 대조해 확인: 예) LibriSpeech test-clean 막대 높이 29.6px ÷ 6.87px/% = 4.31, 크기 막대 폭 184.7px = 145.3MB 기준 41.9MB 는 53.3px. 범례 순서는 Whistle → Whisper base → Moonshine tiny v2.]\n\nWhistle against Whisper and Moonshine | word error rate %, lower is better | Whistle | Whisper base | Moonshine tiny v2 | 10 | 20 | 30 | 4.31 | LibriSpeech | test-clean | 10.49 | LibriSpeech | test-other | 7.65 | SPGISpeech | 19.01 | Earnings-22 | 26.07 | AMI | 22.87 | AMI | cleaned | 7.61 | TED-LIUM | 21.4 | FLEURS | 24.9 | MLS | Size | MB, smaller is better | 16.9 | 145.3 | 41.9 | Time to first token | ms on a 10 s clip, smaller is better | 11.1 | 73.2 | 22.8 | Decode | tokens/s on a 10 s clip, larger is better | 1,319 | 266 | 262 | Whistle's figures are labelled; every bar is to the same scale. Whisper and Moonshine word error rates | as published; Whisper's AMI figure is AMI-IHM. FLEURS and MLS average the seven languages, MLS the six | without English. Speed is 10 s of audio on an Apple M4 Pro, at each engine's defaults.",
+      "facts": [
+        "Whistle 단어 오류율(WER %, 낮을수록 좋음): LibriSpeech test-clean 4.31 · test-other 10.49 · SPGISpeech 7.65 · Earnings-22 19.01 · AMI 26.07 · AMI cleaned 22.87 · TED-LIUM 7.61 · FLEURS(7개 언어 평균) 21.4 · MLS(영어 제외 6개 언어 평균) 24.9 — 원문: \"word error rate %, lower is better\" / \"4.31 | LibriSpeech | test-clean | 10.49 | LibriSpeech | test-other\" / \"7.65 | SPGISpeech | 19.01 | Earnings-22 | 26.07 | AMI | 22.87 | AMI | cleaned | 7.61 | TED-LIUM | 21.4 | FLEURS | 24.9 | MLS\" / \"FLEURS and MLS average the seven languages, MLS the six\"",
+        "크기(MB, 작을수록 좋음): Whistle 16.9 · Whisper base 145.3 · Moonshine tiny v2 41.9 — 원문: \"Whistle | Whisper base | Moonshine tiny v2\" / \"Size | MB, smaller is better | 16.9 | 145.3 | 41.9\"",
+        "첫 토큰까지(ms, 10초 클립): Whistle 11.1 · Whisper base 73.2 · Moonshine tiny v2 22.8 / 디코딩(tokens/s): 1,319 · 266 · 262 (Apple M4 Pro, 각 엔진 기본 설정) — 원문: \"Time to first token | ms on a 10 s clip, smaller is better | 11.1 | 73.2 | 22.8\" / \"Decode | tokens/s on a 10 s clip, larger is better | 1,319 | 266 | 262\" / \"Speed is 10 s of audio on an Apple M4 Pro, at each engine's defaults.\"",
+        "그림 주석: Whisper·Moonshine 의 WER 은 저자 공개치이고 Whisper 의 AMI 수치는 AMI-IHM — 원문: \"Whisper and Moonshine word error rates | as published; Whisper's AMI figure is AMI-IHM.\"",
+        "직접 계산(그림 값 기준): 크기 145.3 ÷ 16.9 ≈ 8.6배, 첫 토큰 73.2 ÷ 11.1 ≈ 6.6배, 디코딩 1,319 ÷ 266 ≈ 5.0배 — 비교 대상은 그림 범례의 Whisper base·Moonshine tiny v2 — 원문: \"16.9 | 145.3 | 41.9\" / \"11.1 | 73.2 | 22.8\" / \"1,319 | 266 | 262\""
+      ]
+    },
+    {
+      "title": "Whistle 요약 그림 — whistle-model.svg (모델 카드 첨부 이미지의 텍스트 라벨)",
+      "url": "https://huggingface.co/Cactus-Compute/whistle/resolve/main/assets/whistle-model.svg",
+      "host": "huggingface.co",
+      "tier": "official",
+      "publishedAt": "2026-10-02",
+      "body": "[수집 2026-10-07 · 모델 카드의 \"Whistle at a glance\" SVG 에서 <text> 노드를 문서 순서대로 \"|\" 로 이었다.]\n\nWhistle at a glance | INPUT | 16 kHz mono audio, up to 30 seconds in one pass | OUTPUT | the transcript, the language, per-word times, and the encoder embedding | MODEL | 16.9 MB at 2 to 4 bit: log-mel front end, conv stem, encoder, laddered decoder | SHARED | Needle's .cact container, Cactus Quants, SIMD kernels and KV cache | LANGUAGES | English, German, French, Spanish, Italian, Dutch and Polish | SPEED | 11.1 ms to the first token, 1,319 tokens/s, on an Apple M4 Pro CPU | LADDER | every decoder depth from 2 layers up is deployable, picked with --audio-depth",
+      "facts": [
+        "모델 16.9 MB(2~4비트): log-mel 프런트엔드·conv stem·인코더·laddered 디코더, Needle 의 .cact 컨테이너·Cactus Quants·SIMD 커널·KV 캐시 공유 — 원문: \"MODEL | 16.9 MB at 2 to 4 bit: log-mel front end, conv stem, encoder, laddered decoder\" / \"SHARED | Needle's .cact container, Cactus Quants, SIMD kernels and KV cache\"",
+        "속도: Apple M4 Pro CPU 에서 첫 토큰까지 11.1 ms, 1,319 tokens/s — 원문: \"SPEED | 11.1 ms to the first token, 1,319 tokens/s, on an Apple M4 Pro CPU\"",
+        "디코더는 2층 이상 어느 깊이든 배포 가능한 모델이며 `--audio-depth` 로 고른다 — 원문: \"LADDER | every decoder depth from 2 layers up is deployable, picked with --audio-depth\""
+      ]
+    },
+    {
+      "title": "Cactus-Compute/whistle — Hugging Face API 메타데이터",
+      "url": "https://huggingface.co/api/models/Cactus-Compute/whistle",
+      "host": "huggingface.co",
+      "tier": "data",
+      "publishedAt": "2026-10-02",
+      "body": "[수집 2026-10-07 · HF Hub API JSON 중 일부 필드를 그대로 옮김. downloads 는 huggingface_hub 문서상 \"최근 30일\" 값.]\n\n{\"id\":\"Cactus-Compute/whistle\",\"createdAt\":\"2026-09-30T17:13:26.000Z\",\"lastModified\":\"2026-10-02T07:27:29.000Z\",\"likes\":124,\"downloads\":1887,\"library_name\":\"cactus-needle\",\"pipeline_tag\":\"automatic-speech-recognition\",\"license\":\"apache-2.0\",\"language\":[\"en\",\"de\",\"fr\",\"es\",\"it\",\"nl\",\"pl\"],\"usedStorage\":237538027,\"gated\":false}",
+      "facts": [
+        "저장소 생성 2026-09-30T17:13:26Z(= 한국시간 10-01 02:13), 라이선스 apache-2.0, 라이브러리 cactus-needle, 파이프라인 automatic-speech-recognition — 원문: \"\"createdAt\":\"2026-09-30T17:13:26.000Z\"\" / \"\"license\":\"apache-2.0\"\" / \"\"library_name\":\"cactus-needle\"\" / \"\"pipeline_tag\":\"automatic-speech-recognition\"\"",
+        "지원 언어 7개: en · de · fr · es · it · nl · pl — 원문: \"\"language\":[\"en\",\"de\",\"fr\",\"es\",\"it\",\"nl\",\"pl\"]\"",
+        "저장소 사용량 237,538,027 바이트(≈237.5 MB, 계산) — 16.9 MB 모델 파일보다 훨씬 큰 이유는 확인 못 함, 2026-10-07 조회 시점 좋아요 124 · 다운로드 1,887(최근 30일 필드) — 원문: \"\"usedStorage\":237538027\" / \"\"likes\":124\" / \"\"downloads\":1887\""
+      ]
+    },
+    {
+      "title": "cactus-compute/needle — README (Whistle 이 얹히는 엔진 저장소)",
+      "url": "https://github.com/cactus-compute/needle",
+      "host": "github.com",
+      "tier": "official",
+      "publishedAt": "2026-10-06",
+      "body": "[수집 2026-10-07 · gh api repos/cactus-compute/needle/readme (raw 텍스트) · README 원문 발췌. GitHub API: 저장소 생성 2026-02-24T04:50:47Z, 라이선스 Apache-2.0, 스타 13,346, 마지막 push 2026-10-06T16:02:30Z, 언어 Python. Whistle 에 대한 개발사 자체 서술.]\n\nWhistle is our speech-to-text model, one 16.9 MB file on the CPU: 16 kHz mono audio, up to 30 seconds in one pass, in English, German, French, Spanish, Italian, Dutch and Polish. It shares Needle's `.cact` container, its quantisation and its C++ engine, so the two are one runtime, and its decoder is laddered the same way, with `--audio-depth N` running the N-layer rung of the same weights.\n\nAt 16.9 MB Whistle is 8.6x smaller than Whisper base and 6.6x quicker to the first token. It is ahead on LibriSpeech test-clean and test-other, on SPGISpeech, on Earnings-22 and on the FLEURS average. Whisper base is ahead on TED-LIUM, on AMI and on the MLS average.\n\nWord error rate on the full test splits, scored with the Whisper normalizers. Whisper and Moonshine figures are the ones their authors published. Latency and decode are 10 s of audio on an Apple M4 Pro, at each engine's defaults. The per-benchmark caveats are on [Hugging Face](https://huggingface.co/Cactus-Compute/whistle).",
+      "facts": [
+        "개발사 요약: 16.9 MB 의 Whistle 은 Whisper base 보다 8.6배 작고 첫 토큰까지 6.6배 빠르다 — LibriSpeech test-clean·test-other, SPGISpeech, Earnings-22, FLEURS 평균에서 앞서고, Whisper base 는 TED-LIUM·AMI·MLS 평균에서 앞선다 — 원문: \"At 16.9 MB Whistle is 8.6x smaller than Whisper base and 6.6x quicker to the first token.\" / \"Whisper base is ahead on TED-LIUM, on AMI and on the MLS average.\"",
+        "측정 조건: 전체 테스트 분할의 WER(Whisper 정규화기 사용), Whisper·Moonshine 값은 저자 공개치, 지연·디코딩은 Apple M4 Pro 에서 10초 오디오 — 원문: \"Word error rate on the full test splits, scored with the Whisper normalizers.\" / \"Whisper and Moonshine figures are the ones their authors published.\"",
+        "엔진 공유: Whistle 은 Needle 의 .cact 컨테이너·양자화·C++ 엔진을 공유해 둘이 하나의 런타임 — 원문: \"It shares Needle's `.cact` container, its quantisation and its C++ engine\""
+      ]
+    },
+    {
+      "title": "cloud0day3/alania-synthetic-speech-tr — Hugging Face 데이터셋 카드",
+      "url": "https://huggingface.co/datasets/cloud0day3/alania-synthetic-speech-tr",
+      "host": "huggingface.co",
+      "tier": "official",
+      "publishedAt": "2026-10-04",
+      "body": "[수집 2026-10-07 · https://huggingface.co/datasets/cloud0day3/alania-synthetic-speech-tr/raw/main/README.md (raw 텍스트) · 카드 영어 부분 원문 발췌. 카드 changelog 에 2026-10-04 v1.2·v1.3 개정이 있어 수치는 그 개정 이후 버전 기준. publishedAt 은 카드의 최신 changelog 일자.]\n[후보 파일 hf-datasets-2026-10-06.json] id \"cloud0day3/alania-synthetic-speech-tr\" createdAt 2026-09-30T11:09:06.000Z trendingScore 38 likes 41 downloads 2087\n\nlanguage:\n  - tr\nlicense: other\nlicense_name: cc-by-4.0-and-cc-by-sa-4.0\nlicense_link: LICENSE.md\npretty_name: Alania Turkish Synthetic Speech\nsize_categories:\n  - 1M<n<10M\ntask_categories:\n  - text-to-speech\n  - automatic-speech-recognition\ntags:\n  - turkish\n  - tts\n  - speech\n  - synthetic\n  - ai-generated\n  - voice-design\n  - instruction-tts\nconfigs:\n  - config_name: cc-by\n    data_files: data/cc-by/*.parquet\n    default: true\n  - config_name: cc-by-sa\n    data_files: data/cc-by-sa/*.parquet\n  - config_name: voices\n    data_files: voices/voices.parquet\n\n**3,411 hours** of 48 kHz Turkish speech in 2,037,461 clips, spoken by 2,752 designed voices plus\none-off voices, each clip paired with the written sentence, its spoken form and a plain-English description of the\nvoice. Every clip is **AI-generated**: no real person's voice is in this dataset.\n\n| Config | Text | Licence | Clips | Hours |\n|---|---|---|---:|---:|\n| `cc-by` (default) | our voice-agent sentences ([Alania Turkish Domain Text](https://huggingface.co/datasets/cloud0day3/alania-domain-text-tr)) and FineWeb-2 Turkish | CC BY 4.0 | 1,660,381 | 2,565 |\n| `cc-by-sa` | Turkish Wikipedia | CC BY-SA 4.0 | 377,080 | 846 |\n| `voices` | reference clip, transcript and description of each designed voice | CC BY 4.0 | 2,752 voices | |\n\nEvery clip passed automatic checks; failing clips were removed:\n\n- intelligibility: Whisper large-v3 (turbo) transcript against the text, character error rate at most 5% or one edit\n  (`qc_cer`);\n- naturalness: UTMOS22 at least 2.5 (`qc_utmos`); voice consistency: ECAPA similarity to the voice's reference\n  (`qc_speaker_sim`); gender of designed voices checked against their pitch (`qc_f0_median`);\n- no runaways or truncations: speaking rate between 7 and 25 characters per second;\n- a post-filter (`postfilter: resclip`) that removes a faint high-frequency \"whistle\" the generator adds in the\n  7–12 kHz band.\n\nMedians over the release: CER 0.0, UTMOS 3.59.\n\nfrom datasets import load_dataset\nds = load_dataset(\"cloud0day3/alania-synthetic-speech-tr\", \"cc-by\", split=\"train\", streaming=True)\nrow = next(iter(ds))\nprint(row[\"text\"], row[\"voice_description\"], row[\"audio\"][\"sampling_rate\"])\n\n- `cc-by` and `voices`: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). The FineWeb-2 text is used under\n  ODC-By 1.0 and remains subject to Common Crawl's terms of use; `text_doc_id` keeps its source id.\n- `cc-by-sa`: [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/), because it reads Turkish Wikipedia.\n  `text_source_url` links every clip to its article; derivatives must keep the same licence.\n\nYou may use it for any purpose, including commercial use and training models, **as long as you credit PatientDesk AI**:\n\n- **Generator:** [openbmb/VoxCPM2](https://huggingface.co/openbmb/VoxCPM2) (Apache-2.0) at revision 32279eff,\n  served with Nano-vLLM-VoxCPM, 10 diffusion steps, classifier-free guidance 2.0, September 2026.\n\n- **v1.3 (4 October 2026):** the clips removed in v1.2 were re-rendered with the corrected reading (same voice, mode\n  and seed); the 69,442 that passed full QC (163 hours) are back. The 14,349 whose re-render failed QC stay out and\n  are listed in [`known_issues/removed_v1.3.csv.gz`](known_issues/removed_v1.3.csv.gz).\n\n- **v1.2 (4 October 2026):** every clip now says what `text_spoken` says under our v1.2 normaliser. A native-speaker\n  review corrected our initialism readings: plain Turkish letter names joined into one word, with K as \"ka\" and H as\n  \"he\" (\"SGK\" → \"segeka\", \"TBMM\" → \"tebememe\", \"KDV\" → \"kadeve\"; v1.0 used formal spaced letter names, and the\n  \"es-ge-ka\" style we announced as the fix was also wrong). Amounts, decimals, lone letters, units and abbreviations\n  were corrected too (see [Alania Turkish Domain Text](https://huggingface.co/datasets/cloud0day3/alania-domain-text-tr)\n  v1.2). 95,850 clips (237 hours) were replaced by re-renders that say the corrected reading; 83,791 clips (196 hours)\n  without one were removed; v1.3 re-rendered them.\n\n- **This is synthetic speech.** It inherits VoxCPM2's accent, prosody and artefacts, and it is cleaner and more\n  uniform than real recordings. For ASR or TTS, mix it with real speech rather than training on it alone.",
+      "facts": [
+        "무엇: 48 kHz 터키어 음성 3,411시간, 2,037,461개 클립 — 설계된 목소리 2,752개와 일회성 목소리가 읽고, 클립마다 문장·읽은 형태·영어 목소리 설명이 붙는다. 터키어 전용(언어 태그 tr) — 원문: \"**3,411 hours** of 48 kHz Turkish speech in 2,037,461 clips, spoken by 2,752 designed voices plus one-off voices\" / \"each clip paired with the written sentence, its spoken form and a plain-English description of the voice\" / \"- tr\"",
+        "전부 AI 생성 음성: \"no real person's voice is in this dataset\" — 원문: \"no real person's voice is in this dataset.\"",
+        "구성(카드 표): CC BY 4.0 설정 1,660,381클립·2,565시간 + CC BY-SA 4.0 설정(터키어 위키백과 문장) 377,080클립·846시간, 합계는 2,037,461클립·3,411시간과 일치(계산: 1,660,381+377,080, 2,565+846) — 원문: \"| CC BY 4.0 | 1,660,381 | 2,565 |\" / \"| `cc-by-sa` | Turkish Wikipedia | CC BY-SA 4.0 | 377,080 | 846 |\"",
+        "품질 검사(카드): Whisper large-v3(turbo) 전사의 문자 오류율 5% 이하(또는 1글자 편집), UTMOS22 2.5 이상, 초당 7~25자 — 릴리스 중앙값 CER 0.0, UTMOS 3.59 — 원문: \"character error rate at most 5% or one edit\" / \"UTMOS22 at least 2.5\" / \"speaking rate between 7 and 25 characters per second\" / \"Medians over the release: CER 0.0, UTMOS 3.59.\"",
+        "라이선스: 상업 이용·모델 학습을 포함해 어떤 목적으로도 쓸 수 있으나 PatientDesk AI 크레딧 표기가 조건, cc-by-sa 설정의 파생물은 같은 라이선스 유지, FineWeb-2 텍스트는 ODC-By 1.0 이고 Common Crawl 이용약관의 적용을 받는다 — 원문: \"You may use it for any purpose, including commercial use and training models\" / \"derivatives must keep the same licence.\" / \"The FineWeb-2 text is used under ODC-By 1.0 and remains subject to Common Crawl's terms of use\"",
+        "생성 방식: openbmb/VoxCPM2(Apache-2.0)의 voice design, 2026년 9월 — 원문: \"**Generator:** [openbmb/VoxCPM2]\" / \"(Apache-2.0)\" / \"September 2026.\"",
+        "개정 이력(카드): v1.2(2026-10-04)에서 원어민 검토로 약어(initialism) 읽기 오류를 바로잡으며 95,850클립(237시간)을 재렌더하고 83,791클립(196시간)을 제거, v1.3(2026-10-04)에서 69,442클립(163시간)을 되살리고 14,349클립은 QC 실패로 제외 — 저장소 생성(09-30) 뒤 며칠 새 내용이 바뀐 데이터셋 — 원문: \"A native-speaker review corrected our initialism readings\" / \"95,850 clips (237 hours)\" / \"83,791 clips (196 hours)\" / \"69,442 that passed full QC (163 hours)\" / \"14,349 whose re-render failed QC stay out\"",
+        "카드 한계 서술: 합성 음성이라 실제 녹음보다 깨끗하고 균일하므로 ASR·TTS 에는 실제 음성과 섞어 쓰라고 권고 — 원문: \"For ASR or TTS, mix it with real speech rather than training on it alone.\"",
+        "불러오기: `load_dataset(\"cloud0day3/alania-synthetic-speech-tr\", \"cc-by\", split=\"train\", streaming=True)` — 원문: \"load_dataset(\"cloud0day3/alania-synthetic-speech-tr\", \"cc-by\", split=\"train\", streaming=True)\"",
+        "후보파일 수치: trendingScore 38 · 좋아요 41 · 다운로드 2,087 · createdAt 2026-09-30T11:09:06Z — 원문: \"trendingScore 38 likes 41 downloads 2087\""
+      ]
+    },
+    {
+      "title": "cloud0day3/alania-synthetic-speech-tr — Hugging Face API 메타데이터",
+      "url": "https://huggingface.co/api/datasets/cloud0day3/alania-synthetic-speech-tr",
+      "host": "huggingface.co",
+      "tier": "data",
+      "publishedAt": "2026-10-04",
+      "body": "[수집 2026-10-07 · HF Hub API JSON 중 일부 필드를 그대로 옮김. downloads 는 huggingface_hub 문서상 \"최근 30일\" 값.]\n\n{\"id\":\"cloud0day3/alania-synthetic-speech-tr\",\"createdAt\":\"2026-09-30T11:09:06.000Z\",\"lastModified\":\"2026-10-04T18:01:02.000Z\",\"likes\":41,\"downloads\":2087,\"license\":\"other\",\"license_name\":\"cc-by-4.0-and-cc-by-sa-4.0\",\"cardData_size_categories\":[\"1M<n<10M\"],\"tags_size_categories\":[\"size_categories:1M<n<10M\"],\"usedStorage\":2125690656584,\"gated\":false}",
+      "facts": [
+        "저장소 용량 2,125,690,656,584 바이트 ≈ 2.13 TB(계산) — 샘플 몇 개만 볼 때는 streaming 로딩이 필요한 크기 — 원문: \"\"usedStorage\":2125690656584\"",
+        "API 상 라이선스 표기는 \"other\"(license_name: cc-by-4.0-and-cc-by-sa-4.0), 생성 2026-09-30T11:09:06Z — 원문: \"\"license\":\"other\"\" / \"\"license_name\":\"cc-by-4.0-and-cc-by-sa-4.0\"\" / \"\"createdAt\":\"2026-09-30T11:09:06.000Z\"\"",
+        "2026-10-07 조회 시점 좋아요 41 · 다운로드 2,087(최근 30일 필드) — 원문: \"\"likes\":41\" / \"\"downloads\":2087\""
+      ]
+    },
+    {
+      "title": "Rapidata/text-to-image-human-preference-6M — Hugging Face 데이터셋 카드(Benchmark.ai Image Benchmark)",
+      "url": "https://huggingface.co/datasets/Rapidata/text-to-image-human-preference-6M",
+      "host": "huggingface.co",
+      "tier": "official",
+      "publishedAt": "2026-10-01",
+      "body": "[수집 2026-10-07 · https://huggingface.co/datasets/Rapidata/text-to-image-human-preference-6M/raw/main/README.md (raw 텍스트) · 카드 원문 발췌. publishedAt 은 HF API lastModified(2026-10-01) 일자. 순위는 Rapidata 가 자기 평가 서비스(Benchmark.ai)에서 모은 결과.]\n[후보 파일 hf-datasets-2026-10-06.json] id \"Rapidata/text-to-image-human-preference-6M\" createdAt 2026-09-30T15:35:03.000Z trendingScore 9 likes 10 downloads 463\n\nlicense: cc-by-4.0\ntask_categories:\n- text-to-image\nlanguage:\n- en\nsize_categories:\n- 1M<n<10M\npretty_name: Benchmark.ai Image Benchmark\n\n  splits:\n  - name: train\n    num_bytes: 1296532959\n    num_examples: 680548\n  download_size: 223881111\n  dataset_size: 1296532959\n\nThis dataset contains **6,123,853 human responses**, collected with the\n[Rapidata Python SDK](https://docs.rapidata.ai), comparing **43 text-to-image models** on\n**1,514 prompts**. Each row is a head-to-head comparison between two models' images for the **same**\nprompt, judged by human annotators on up to four questions — Alignment, Preference, Coherence and Text coherence.\n\nEvery image is ranked purely by human judgement, no automated metrics.\n\n| Head-to-head comparisons (rows) | **680,548** |\n| Human votes | **6,123,853** (Alignment 1,730,190 · Preference 1,731,352 · Coherence 1,730,112 · Text coherence 932,199) |\n| Models compared | **43** |\n| Prompts | **1,514** (616 of them ask for rendered text) |\n| Unique generated images | **64,266** |\n| Annotator countries | **148** |\n\n| # | Model | Lab | Overall | Alignment | Preference | Coherence | Text coherence |\n|---|-------|-----|---------|-----------|------------|-----------|----------------|\n| 1 | GPT Image 2.5 (Sunburst) | OpenAI | **1238.3** | 1326 | 1250 | 1246 | 1181 |\n| 2 | GPT Image 2.5 (Flare) | OpenAI | **1207.1** | 1341 | 1196 | 1219 | 1136 |\n| 3 | GPT Image 2.0 | OpenAI | **1167.3** | 1242 | 1135 | 1113 | 1186 |\n\nds = load_dataset(\"Rapidata/benchmark-ai-image-benchmark\", split=\"train\")\n\n- The `weighted_results_*` values are **userScore-weighted vote sums, not probabilities** — they do not sum to 1.\n  Divide by their sum for a normalised win share.\n- **Coherence and Text coherence are already flipped.** Annotators were asked which image has *more* glitches, but in\n  this dataset `votedFor` and `weighted_results_*` point to the image with **fewer** glitches, so a higher value is\n  better on every question.\n\nThis dataset combines material under different terms:\n\n- **Prompts.** Prompts taken from public evaluation sets (PartiPrompts, DrawBench, DiffusionDB, MONET, T2I-CompBench,\n  HRS-Bench, ABC-6K, DALLE3-EVAL) remain under their original licenses; Rapidata-original and community prompts are\n  released under **CC-BY-4.0**.\n- **Generated images.** Produced by third-party models. Model outputs are **governed by the terms of use of each\n  respective model provider**.\n- **Human annotations.** Collected via [Rapidata](https://www.rapidata.ai), released under **CC-BY-4.0**.",
+      "facts": [
+        "무엇: 사람 응답(투표) 6,123,853건 — 43개 text-to-image 모델을 1,514개 프롬프트로 비교, 한 행은 같은 프롬프트에서 두 모델이 만든 이미지의 맞대결(head-to-head) — 원문: \"This dataset contains **6,123,853 human responses**\" / \"43 text-to-image models\" / \"1,514 prompts\" / \"head-to-head comparison between two models\"",
+        "규모(카드 \"At a glance\"): 행 680,548 · 투표 6,123,853(Alignment 1,730,190 · Preference 1,731,352 · Coherence 1,730,112 · Text coherence 932,199) · 모델 43 · 프롬프트 1,514(렌더 텍스트 요청 616) · 고유 이미지 64,266 · 주석자 국가 148 — 원문: \"| Head-to-head comparisons (rows) | **680,548** |\" / \"| Human votes | **6,123,853** (Alignment 1,730,190 · Preference 1,731,352 · Coherence 1,730,112 · Text coherence 932,199) |\" / \"| Prompts | **1,514** (616 of them ask for rendered text) |\" / \"| Unique generated images | **64,266** |\" / \"| Annotator countries | **148** |\"",
+        "이름의 \"6M\" 은 행 수가 아니라 투표 수 — 행은 680,548개(투표÷행 ≈ 9.0, 계산). 머리말 size_categories 는 1M<n<10M 이지만 같은 머리말의 num_examples 는 680548 — 원문: \"- 1M<n<10M\" / \"num_examples: 680548\" / \"| Head-to-head comparisons (rows) | **680,548** |\"",
+        "다운로드 크기 223,881,111 바이트(≈224 MB) · 풀어서 1,296,532,959 바이트(≈1.30 GB) — 카드 머리말(계산 환산) — 원문: \"download_size: 223881111\" / \"dataset_size: 1296532959\"",
+        "카드 서술: 모든 이미지는 자동 지표 없이 사람 판단으로만 순위를 매겼고, 이 데이터가 Benchmark.ai 이미지 리더보드의 기반 — 원문: \"Every image is ranked purely by human judgement, no automated metrics.\"",
+        "종합 순위(ELO, 4개 질문 종합) 1~3위: GPT Image 2.5 (Sunburst) 1238.3 · GPT Image 2.5 (Flare) 1207.1 · GPT Image 2.0 1167.3(셋 다 OpenAI) — 원문: \"| 1 | GPT Image 2.5 (Sunburst) | OpenAI | **1238.3** | 1326 | 1250 | 1246 | 1181 |\" / \"| 2 | GPT Image 2.5 (Flare) | OpenAI | **1207.1** | 1341 | 1196 | 1219 | 1136 |\" / \"| 3 | GPT Image 2.0 | OpenAI | **1167.3** | 1242 | 1135 | 1113 | 1186 |\"",
+        "사용 주의(카드): weighted_results_* 는 userScore 가중 투표 합이라 확률이 아니고, Coherence·Text coherence 는 이미 뒤집혀 모든 질문에서 값이 높을수록 좋다 — 원문: \"userScore-weighted vote sums, not probabilities\" / \"**Coherence and Text coherence are already flipped.**\"",
+        "라이선스가 섞여 있음: 공개 평가셋 프롬프트는 원래 라이선스 유지, Rapidata 자체·커뮤니티 프롬프트와 인간 주석은 CC-BY-4.0, 생성 이미지는 각 모델 제공자의 이용약관이 적용 — 원문: \"remain under their original licenses\" / \"Produced by third-party models.\" / \"governed by the terms of use of each respective model provider\" / \"- **Human annotations.** Collected via [Rapidata](https://www.rapidata.ai), released under **CC-BY-4.0**.\"",
+        "카드의 불러오기 코드는 저장소 id 를 `Rapidata/benchmark-ai-image-benchmark` 로 적음 — 이 저장소 id 와 다름(HF API 로 그 id 를 조회하면 이 저장소 정보가 돌아옴) — 원문: \"ds = load_dataset(\"Rapidata/benchmark-ai-image-benchmark\", split=\"train\")\"",
+        "후보파일 수치: trendingScore 9 · 좋아요 10 · 다운로드 463 · createdAt 2026-09-30T15:35:03Z — 원문: \"trendingScore 9 likes 10 downloads 463\""
+      ]
+    },
+    {
+      "title": "Rapidata/text-to-image-human-preference-6M — Hugging Face API 메타데이터",
+      "url": "https://huggingface.co/api/datasets/Rapidata/text-to-image-human-preference-6M",
+      "host": "huggingface.co",
+      "tier": "data",
+      "publishedAt": "2026-10-01",
+      "body": "[수집 2026-10-07 · HF Hub API JSON 중 일부 필드를 그대로 옮김. downloads 는 huggingface_hub 문서상 \"최근 30일\" 값. API 가 자동으로 붙인 size_categories 태그와 카드 머리말 값이 다름.]\n\n{\"id\":\"Rapidata/text-to-image-human-preference-6M\",\"createdAt\":\"2026-09-30T15:35:03.000Z\",\"lastModified\":\"2026-10-01T11:49:56.000Z\",\"likes\":10,\"downloads\":463,\"license\":\"cc-by-4.0\",\"cardData_size_categories\":[\"1M<n<10M\"],\"tags_size_categories\":[\"size_categories:100K<n<1M\"],\"usedStorage\":527234828,\"gated\":false}",
+      "facts": [
+        "HF 자동 태그는 size_categories:100K<n<1M 인데 카드 머리말 size_categories 는 1M<n<10M — 실제 행 680,548 은 자동 태그와 맞음 — 원문: \"\"cardData_size_categories\":[\"1M<n<10M\"]\" / \"\"tags_size_categories\":[\"size_categories:100K<n<1M\"]\"",
+        "라이선스 cc-by-4.0, 생성 2026-09-30T15:35:03Z, 2026-10-07 조회 시점 좋아요 10 · 다운로드 463(최근 30일 필드) — 원문: \"\"license\":\"cc-by-4.0\"\" / \"\"createdAt\":\"2026-09-30T15:35:03.000Z\"\" / \"\"likes\":10\" / \"\"downloads\":463\""
+      ]
+    },
+    {
+      "title": "huggingface_hub — hf_api.py ModelInfo/DatasetInfo 필드 설명(downloads·downloads_all_time·trending_score)",
+      "url": "https://raw.githubusercontent.com/huggingface/huggingface_hub/main/src/huggingface_hub/hf_api.py",
+      "host": "raw.githubusercontent.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "[수집 2026-10-07 · Hugging Face 공식 파이썬 클라이언트 소스(main 브랜치) docstring 에서 해당 필드 설명만 발췌. 파일에 날짜는 없음.]\n\ndownloads (`int`): Number of downloads of the model over the last 30 days. downloads_all_time (`int`): Cumulated number of downloads of the model since its creation.\n\ndownloads (`int`): Number of downloads of the dataset over the last 30 days. downloads_all_time (`int`): Cumulated number of downloads of the dataset since its creation.\n\ntrending_score (`int`, *optional*): Trending score of the model.\n\ncreated_at (`datetime`, *optional*): Date of creation of the repo on the Hub.",
+      "facts": [
+        "모델·데이터셋 API 의 downloads 는 \"최근 30일\" 다운로드 수이고 downloads_all_time 이 생성 이후 누적 — 이번 후보파일의 downloads 도 최근 30일 기준 필드 — 원문: \"downloads (`int`): Number of downloads of the model over the last 30 days.\" / \"Cumulated number of downloads of the model since its creation.\"",
+        "trending_score 는 \"Trending score of the model.\" 한 줄뿐이고 산식 설명은 이 문서에 없음 — 원문: \"trending_score (`int`, *optional*): Trending score of the model.\"",
+        "created_at 은 \"repo 의 Hub 상 생성일\" — 원문: \"created_at (`datetime`, *optional*): Date of creation of the repo on the Hub.\""
+      ]
+    },
+    {
+      "title": "Models Download Stats (Hugging Face Hub 문서)",
+      "url": "https://huggingface.co/docs/hub/models-download-stats",
+      "host": "huggingface.co",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "[수집 2026-10-07 · 문서 페이지 HTML 을 직접 받아 텍스트로 변환(요약 모델 미경유). 페이지에 게시일 없음.]\n\nEvery HTTP request to these files, including GET and HEAD , will be counted as a download. By default, when no library is specified, the Hub uses config.json as the default query file.\n\nGGUF files are self-contained and are not tied to a single library, so all of them are counted for downloads. This will double count downloads in the case a user performs cloning of a whole repository, but most users and interfaces download a single GGUF file for a given repo.\n\nIf you need more granular download data, for instance to: distinguish config.json from model weights, exclude downloads from CI/CD pipelines, or deduplicate users (i.e. count unique downloaders),",
+      "facts": [
+        "다운로드 집계 방식: 쿼리 파일에 대한 GET·HEAD 요청마다 1회로 세고, 라이브러리 지정이 없으면 기본 쿼리 파일은 config.json — 사람 수가 아니라 요청 수 — 원문: \"will be counted as a download.\" / \"the Hub uses config.json as the default query file.\" / \"deduplicate users (i.e. count unique downloaders)\"",
+        "GGUF 파일은 모두 다운로드로 집계되며 저장소를 통째로 clone 하면 이중 집계될 수 있다 — 원문: \"all of them are counted for downloads.\" / \"This will double count downloads in the case a user performs cloning of a whole repository\""
+      ]
+    }
+  ],
+  "conflicts": [
+    {
+      "about": "Kolibri 활성 파라미터",
+      "a": "Aleph Alpha 블로그 본문: \"78B total parameters, 3B active\"(반올림 표기, 약 30억)",
+      "b": "모델 카드 표·블로그 비교표: 활성 3.46B(`3,457,573,120`, 약 34.6억)"
+    },
+    {
+      "about": "Kolibri 장문맥 확장 학습 토큰",
+      "a": "블로그: \"200B tokens of long-context adaptation at 256k\"",
+      "b": "모델 카드: \"201B for long-context extension\""
+    },
+    {
+      "about": "Kolibri 공개 시점",
+      "a": "HF API createdAt 2026-10-02T05:54:02Z(한국시간 10-02 14:54)",
+      "b": "모델 카드 Release Date \"3rd of October 2026\", 블로그 게시일 03/10/2026"
+    },
+    {
+      "about": "Clef 컨텍스트 길이",
+      "a": "Cloudflare 블로그 \"64k context window\", Workers AI 페이지 \"65,536 tokens\"(호스팅 기준)",
+      "b": "HF 모델 카드 `encode_record` 의 max_length 기본값 16,384 tokens(오픈소스 헬퍼 기본값, 조정 가능)"
+    },
+    {
+      "about": "Clef 가 1등인가",
+      "a": "Cloudflare 블로그: \"Clef is currently the leader when evaluated against the Jev Decision Index\"",
+      "b": "모델 카드 표(41개 벤치마크 행)의 굵은 글씨 집계(직접 계산): Clef-flash 16행 · Clef 11행 · Jev 11행 · Kev 9B 2행 · DiffusionGemma Jev 1행 — GPQA Diamond(Jev 78.3 vs Clef 48.0)·MMLU-Pro·BBH 는 Jev 가 크게 앞섬"
+    },
+    {
+      "about": "Clef 평가 벤치마크 개수",
+      "a": "블로그: \"Across the 43 eval benchmarks that we ran\"",
+      "b": "모델 카드 표: 벤치마크 41행 + 지연 2행 = 43행(직접 센 값) — \"43개 벤치마크에서 1등\"처럼 쓰면 틀림"
+    },
+    {
+      "about": "Rapidata 데이터셋 규모",
+      "a": "저장소 이름 \"6M\"·카드 머리말 size_categories 1M<n<10M",
+      "b": "카드 표 행 680,548·머리말 num_examples 680548·HF 자동 태그 100K<n<1M — 6,123,853 은 투표 수"
+    },
+    {
+      "about": "OpenShell 관련 조직 수",
+      "a": "NVIDIA 보도자료: 플랫폼 기술을 쓰는 조직 \"over 100 organizations\"",
+      "b": "같은 보도자료: Open Secure AI Alliance 는 NVIDIA 와 \"over 120 leading organizations\" 이 시작 — 서로 다른 집단이라 합치거나 바꿔 쓰면 안 됨"
+    },
+    {
+      "about": "OpenShell 이 \"새로 나온\" 것인가",
+      "a": "GitHub API 생성 2026-02-24 · PyPI 첫 릴리스 2026-03-10 · 0.1.0 은 2026-09-25",
+      "b": "NVIDIA 보도자료(2026-09-28): \"Now broadly available\" — 신작처럼 읽히지만 저장소는 7개월 전부터 존재"
+    },
+    {
+      "about": "PageIndex 98.7% 의 주체",
+      "a": "PageIndex README: \"PageIndex reached a state-of-the-art 98.7% accuracy on FinanceBench\"",
+      "b": "근거 저장소 설명 \"FinanceBench evaluation of Mafin 2.5 (Powered by PageIndex)\" — Vectify 의 금융 RAG 모델 Mafin 2.5 평가이며 로컬 OSS 모드(62문항 자체 벤치)와 조건이 다름"
+    },
+    {
+      "about": "후보파일 대 직접 조회 수치(시차)",
+      "a": "후보파일(2026-10-07 07:12 KST): Kolibri-1 likes 708, JEV-27B-VL likes 970, openrig 누적 5,487",
+      "b": "직접 조회(07:2x 이후): Kolibri-1 709, JEV-27B-VL 971, openrig 5,490~5,492 — 수집 시각 차이이며 글에는 후보파일 값 사용"
+    }
+  ],
+  "unknowns": [
+    "각 저장소·모델·데이터셋이 \"왜 하필 이번 주에\" 올랐는지(계기: 뉴스·SNS·해커뉴스 등) — README·카드에 직접 설명 없음. 공개 계기를 확인한 것은 OpenShell(0.1.0 릴리스 09-25·NVIDIA 플랫폼 보도자료 09-28), Clef(Cloudflare 블로그 10-01), Kolibri(Aleph Alpha 블로그 10-03)뿐이고 openrig·PageIndex·hyperframes·Whistle·alania·Rapidata 는 못 찾음 — 글에서 계기를 추측하지 말 것.",
+    "독립 검증 없음: PageIndex FinanceBench 98.7%(Vectify 자체·Mafin 2.5), PageIndex-OSS-Benchmark(62문항, 자체), Clef Decision Index(Cloudflare 자체 실행), Kolibri 평가표(Aleph Alpha 자체), pplx-decider(Perplexity API 로 Perplexity 가 측정), Whistle WER(카드·그림, 비교 대상 수치는 각 저자 공개치) — 제3자 재현·리뷰를 찾지 못함.",
+    "HF trendingScore 산식 — huggingface_hub docstring 은 \"Trending score of the model.\" 한 줄뿐이고 WebSearch 결과에서도 산식 설명을 못 찾음 → 글에서 산식을 설명하거나 \"인기 순위\"로 단정하지 말 것(후보 수치로만 표기).",
+    "OpenShell 의 성능 오버헤드 수치 — README·문서 개요·보도자료에 숫자 없음(\"minimal overhead on NVIDIA Vera\"). NVIDIA 기술 블로그는 이번에 읽지 않음.",
+    "openrig 의 스타 급증 원인(누적의 68.8% 가 이번 주) — README 에는 스타 히스토리 차트 링크뿐. Windows 사용자 대상 지원 계획도 README 에 없음(네이티브 Windows 미지원·WSL2 미검증만 명시).",
+    "Whistle: 파라미터 수가 카드에 없음(파일 16.9 MB 만), 저장소 사용량 237.5 MB 가 모델 파일보다 큰 이유 미확인, 언어별 WER·한국어 성능 없음(지원 언어에 한국어 없음), 카드가 언급한 \"per-benchmark caveats\" 본문은 확인 못 함.",
+    "Clef 표의 \"Laya\" 열이 직전 편(09-25)에서 다룬 convaiinnovations/laya 와 같은 모델인지 카드·블로그에 명시 없음. \"Jev\"·\"SystemOne\" 이 정확히 어떤 제품·규격인지, autotrust/JEV 와의 관계도 확인 못 함(카드는 \"API 호환\"만 말함) → 단정 금지.",
+    "autotrust/JEV-27B-VL·GEV-26B-Decide 의 다운로드(1,525,286 / 854,574)가 좋아요 대비 이례적으로 큰 이유 — 확인 못 함(제외 항목).",
+    "alania-synthetic-speech-tr 는 카드가 2026-10-04 에 v1.2·v1.3 으로 개정됨 — 이후 추가 개정으로 수치가 더 바뀔 수 있음(2026-10-07 조회 기준).",
+    "hyperframes README 가 쓴 Remotion 라이선스 서술(\"Source-available Remotion License\")은 HyperFrames 쪽 주장 — Remotion 측 원문은 읽지 않음.",
+    "링크만 확인하고 본문은 읽지 않은 것: Aleph Alpha 기술 보고서 PDF(aleph-alpha.com/downloads/tech-report.pdf), Cloudflare Decision Index 데모 사이트(clef-evals.workers-ai-mle.workers.dev), openrig·PageIndex·HyperFrames 공식 문서 사이트 본문(HTTP 200 만 확인, README 만 읽음).",
+    "README·카드에는 개별 작성일이 없어 publishedAt 은 저장소 마지막 push(GitHub)·API lastModified(HF)·카드 changelog/Release Date 로 대체함(각 source head 에 표시)."
+  ]
+}
