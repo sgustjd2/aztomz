@@ -3,11 +3,19 @@
 채널 [AI Engineer](https://www.youtube.com/@aiDotEngineer) 의 새 영상을 Gemini 로 자동 요약한 모음입니다.
 생성: `backend/scripts/youtube-summarize.mjs` (GitHub Actions `youtube-summary` 크론).
 
-총 **257개**.
+총 **265개**.
 
 | 발행일 | 제목 |
 |---|---|
+| 2026-10-07 | [Grep or Embeddings? Agentic Search Over Company Documents — George He, LlamaIndex](2026-10-07-X4w2Pkz5tDY.md) |
+| 2026-10-07 | [Every AI Company Is Accidentally Building a Bank — Dor Sasson, Stigg](2026-10-07-cf2IhzqeQH4.md) |
 | 2026-10-06 | [How Many Credentials Should Your AI Agent Have? Zero. — Jim Clark, Docker](2026-10-06-ZUZVNKFSmTM.md) |
+| 2026-10-06 | [Is Speculative Decoding Worth It? Profiling vLLM on NVIDIA Blackwell — Akamai](2026-10-06-XTpyNrEgJQ4.md) |
+| 2026-10-06 | [Harness Engineering: How to Build a Software Factory — Dru Knox, Tessl](2026-10-06-X6l4lpA0_NY.md) |
+| 2026-10-06 | [Move Fast and Don't Break Things: Scaling Databases for the AI Era — PlanetScale](2026-10-06-uKUA1a0Kdfc.md) |
+| 2026-10-06 | [The Self-Improving OSS Agent Stack — Marc Klingen, Langfuse](2026-10-06-TeErpYBUIeM.md) |
+| 2026-10-06 | [Why Building an Eval Platform Is Harder Than It Looks — Braintrust](2026-10-06-mUQoVz7THu0.md) |
+| 2026-10-06 | [The 6 Pillars of an Agentic Harness for Production — Varun Krovvidi, Resolve AI](2026-10-06-eXA2tjRZIbY.md) |
 | 2026-10-06 | [How AI Agents Pay: Checkout in ChatGPT and Google AI Mode — Sam Parsons, PayPal](2026-10-06-c5U-XbbEN-g.md) |
 | 2026-10-05 | [Research to Reality with Google DeepMind — Paige Bailey, Google DeepMind](2026-10-05-zQZiHOpkq_s.md) |
 | 2026-10-05 | [Your LLM Judge Is a Confident Liar: Building Better Verifiers — Browserbase](2026-10-05-xLxhT2ZI7UM.md) |
