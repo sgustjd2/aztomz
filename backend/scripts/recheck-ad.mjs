@@ -6,6 +6,8 @@
    - 대상: type==="신뢰분석" 중 analyzedAt이 가장 오래된 1건(라운드로빈 — 재확인하면 오늘이 되어 맨 뒤로).
    - 하는 일: 그 항목의 출처를 재검증 → 죽음(404)·무관 출처 제거. 살아있는 출처가 1개+면
      **analyzedAt=오늘로 갱신**(정직한 '재확인일'). 0개면 갱신 안 하고 '사람 확인 필요'로 보고.
+   - 근거 대조(2026-10-08~, lib/grounding.mjs): 출처는 살아 있어도 서술에 출처 밖 수치·매체·확산 표현이 있으면
+     홈으로 올리지 않고 '사람 확인 필요'로 보고한 뒤 다음으로 오래된 항목을 시도(최대 3건).
    - 이렇게 갱신되면 홈의 '오늘의 한끗'(가장 최근 분석)이 이 항목으로 회전한다.
    - 끝에 refresh + git pull/commit/push(Vercel 자동배포).
 
@@ -18,6 +20,7 @@
 import { readFileSync, writeFileSync } from 'node:fs';
 import { execFileSync } from 'node:child_process';
 import { acquireGitLock } from './lib/git-lock.mjs';
+import { groundingCheck } from './lib/grounding.mjs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 
@@ -71,41 +74,50 @@ const trends = Array.isArray(data) ? data : (data.trends || []);
 const ads = trends.filter(t => t.type === '신뢰분석');
 if (!ads.length) { console.log('· 신뢰분석 항목 없음 — 종료.'); process.exit(0); }
 
-let target;
-if (idArg) target = ads.find(t => t.id === idArg);
-else target = ads.slice().sort((a, b) => (a.analyzedAt || '').localeCompare(b.analyzedAt || ''))[0]; // 가장 오래된
-if (!target) { console.log(`· 대상 못 찾음(${idArg || '오래된 항목'}) — 종료.`); process.exit(0); }
+// 가장 오래된 순으로 최대 3건까지 — 출처는 살아 있는데 서술이 출처 밖(근거 대조 실패)이면 홈으로 올리지 않고 다음 후보로 넘긴다.
+// ponytail: 실패 항목은 고쳐질 때까지 매일 '사람 확인 필요'로 다시 보고된다(오래된 순 맨 앞에 남으므로) — 의도된 알람.
+const order = idArg ? ads.filter(t => t.id === idArg)
+  : ads.slice().sort((a, b) => (a.analyzedAt || '').localeCompare(b.analyzedAt || '')).slice(0, 3);
+if (!order.length) { console.log(`· 대상 못 찾음(${idArg || '오래된 항목'}) — 종료.`); process.exit(0); }
 
 console.log(`🔁 광고/진짜 일일 재확인 — ${TODAY}`);
-console.log(`   대상: [${target.id}] ${target.title} (기존 analyzedAt=${target.analyzedAt})\n`);
-
-const kws = titleKeywords(target);
-const kept = [], dropped = [];
-for (const [name, url] of (target.src || [])) {
-  const st = await httpStatus(url);
-  if (st === 404 || st === 410) { dropped.push([name, `죽음(${st})`]); console.log(`   ❌ ${st} 죽음 → 제거  ${name}`); continue; }
-  const body = extract(url);
-  if (body.length >= 80) {
-    const tHits = kws.filter(k => hasKw(body, k)).length;
-    if (tHits === 0) { dropped.push([name, '무관']); console.log(`   ❌ 무관(제목어 없음) → 제거  ${name}`); continue; }
-    console.log(`   ✅ 유효(제목어 ${tHits})  ${name}`);
-  } else {
-    console.log(`   ⏸ 이번엔 본문 못읽음(차단) → 유지(기존 검증분)  ${name}`);
+let target = null, kept = [], dropped = [];
+const needsHuman = [];
+for (const cand of order) {
+  console.log(`   대상: [${cand.id}] ${cand.title} (기존 analyzedAt=${cand.analyzedAt})`);
+  const kws = titleKeywords(cand);
+  const k = [], d = [], bodies = [];
+  for (const [name, url] of (cand.src || [])) {
+    const st = await httpStatus(url);
+    if (st === 404 || st === 410) { d.push([name, `죽음(${st})`]); console.log(`   ❌ ${st} 죽음 → 제거  ${name}`); continue; }
+    const body = extract(url);
+    if (body.length >= 80) {
+      const tHits = kws.filter(kw => hasKw(body, kw)).length;
+      if (tHits === 0) { d.push([name, '무관']); console.log(`   ❌ 무관(제목어 없음) → 제거  ${name}`); continue; }
+      console.log(`   ✅ 유효(제목어 ${tHits})  ${name}`);
+      bodies.push(body);
+    } else {
+      console.log(`   ⏸ 이번엔 본문 못읽음(차단) → 유지(기존 검증분)  ${name}`);
+    }
+    k.push([name, url]);
   }
-  kept.push([name, url]);
+  if (!k.length) { needsHuman.push(`${cand.title}: 살아있는 출처 0개(전부 죽음/무관)`); console.log(''); continue; }
+  // 이번에 본문을 읽은 출처가 없으면(전부 차단) 대조할 근거가 없으므로 기존 동작대로 통과시킨다.
+  const gr = bodies.length ? groundingCheck(cand, k.map(([n]) => n), bodies) : { pass: true, block: [] };
+  if (!gr.pass) { needsHuman.push(`${cand.title}: 근거 대조 실패 — ${gr.block.join(', ')}`); console.log(`   📏✋ ${gr.block.join(' / ')}\n`); continue; }
+  target = cand; kept = k; dropped = d; break;
 }
 
-const ok = kept.length >= 1;
+const ok = !!target;
 console.log('');
 if (ok) {
   target.src = kept;
   const before = target.analyzedAt;
   target.analyzedAt = TODAY;
-  console.log(`✅ 재확인 완료: 유효 출처 ${kept.length}개 · analyzedAt ${before} → ${TODAY} (오늘의 한끗으로 회전)`);
-  if (dropped.length) console.log(`   (제거된 출처 ${dropped.length}: ${dropped.map(d => `${d[0]}/${d[1]}`).join(', ')})`);
-} else {
-  console.log(`⚠️ ${target.title}: 살아있는 출처 0개(전부 죽음/무관) — analyzedAt 갱신 안 함. 사람 확인 필요.`);
+  console.log(`✅ 재확인 완료: [${target.id}] 유효 출처 ${kept.length}개 · analyzedAt ${before} → ${TODAY} (오늘의 한끗으로 회전)`);
+  if (dropped.length) console.log(`   (제거된 출처 ${dropped.length}: ${dropped.map(x => `${x[0]}/${x[1]}`).join(', ')})`);
 }
+for (const n of needsHuman) console.log(`⚠️ 사람 확인 필요 — ${n} · analyzedAt 갱신 안 함.`);
 
 if (DRY) { console.log('\n[DRY] 파일·git 변경 없이 종료.'); process.exit(0); }
 if (!ok) { console.log('\n· 갱신할 것 없음 — 종료.'); process.exit(0); }

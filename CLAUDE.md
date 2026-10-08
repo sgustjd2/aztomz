@@ -33,8 +33,8 @@
 | `validate-trends.mjs` | **스키마 스모크 게이트** — id 누락·중복, cat 7분류 이탈, stage 비정규 라벨, 영문 placeholder verdict, `analyzedAt` 형식 오류를 배포 전에 잡음 |
 | `check-links.mjs` | 출처 URL 상태(404) 점검 |
 | `check-source.mjs [파일] [--only=id,id]` | 출처 **본문 관련성** 점검(정확✅/약함⚠️/무관❌/차단🚫, LLM 없음) |
-| `auto-build.mjs [curate.json] [--no-git\|--dry\|--strict]` | 봇 수집분 자동검증 게이트 → 통과분만 `trends.json` 반영 → refresh → git push |
-| `recheck-ad.mjs` | "광고일까 진짜일까" 최고령 1건 출처 재검증(결정적·LLM 없음) |
+| `auto-build.mjs [curate.json] [--no-git\|--dry\|--strict]` | 봇 수집분 자동검증 게이트(출처 생존·관련성 + **근거 대조** `lib/grounding.mjs`) → 통과분만 `trends.json` 반영 → refresh → git push |
+| `recheck-ad.mjs` | "광고일까 진짜일까" 최고령 1건 출처 재검증(결정적·LLM 없음). 근거 대조 실패 시 홈 회전 안 하고 다음 오래된 항목 시도(최대 3) |
 | `blog-build.mjs <id>\|--latest` | **한끗** 트렌드 1건 → 티스토리용 HTML + 메타(`backend/out/blog/`). 커버는 자체 생성 카드. `--selftest` 있음 |
 | `post-build.mjs --category=<id>` | **다주제** 키워드 → 조사·초안·SEO·자가검수 → 같은 형식의 HTML+메타. `--research=<파일>`로 조사 결과 주입 · `--dry` |
 | `blog-assemble.mjs <slug>` | **에이전트 산출물 조립** — 마크다운 + 메타 → 발행용 HTML. URL 살균·임베드 검증(relatedVideos 포함). **구조 중복 방지**(같은 카테고리 최근 글과 소제목 3개 이상 일치 시 차단, 마무리 상투구 >50% 중복 시 경고). `--research=<파일>`로 조사파일-slug 분리 지원 |
@@ -239,6 +239,11 @@ Agent(
 - **자동 게시(검증 통과분만).** 일일 파이프라인(21:30)은 봇이 수집·분석 후 `auto-build.mjs`로
   **출처를 자동검증**해 통과한 항목만 `backend/data/trends.json`에 반영하고 **git push(자동 배포)**한다.
   사람 승인 대신 **자동 검증이 게이트** — 죽음(404)·무관·못읽음 출처만 있는 항목은 자동 보류(미게시).
+  · **근거 대조(2026-10-08~, `lib/grounding.mjs`)**: 출처가 주제를 다뤄도 서술(excerpt·verdict·article·shops)에
+    출처 본문에 없는 수치·매체명·확산 표현(웨이팅·전국·체인·여러 지점·급증…)이 있으면 보류. `recheck-ad.mjs` 도
+    같은 대조에 걸리면 홈('오늘의 한끗')으로 올리지 않는다. 전수 감사(182항목 중 139 근거 없는 서술,
+    `backend/out/audit/trends-audit-2026-10-08.md`)의 반성 — 단, 문자열 대조라 유래·인물 바꿔치기·뜻 좁히기·
+    오래된 출처로 '지금 피크' 같은 의미 오류는 못 잡는다(그건 사람 또는 LLM 대조).
   · 검증·JSON병합·git은 **결정적 스크립트가 전담**(봇이 trends.json·git을 직접 만지지 않는다).
   · 잘못 올라간 게 있으면 **사후에** 사람이 수정·삭제(자동은 검증 통과까지, 최종 책임은 사람).
 - **503 자동복구.** 메인 수집(21:30)이 Gemini 용량초과(503/429)로 죽은 날은 21:50 재시도 게이트가

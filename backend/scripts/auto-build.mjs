@@ -29,6 +29,7 @@ import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'node:fs';
 import { execFileSync } from 'node:child_process';
 import { validateTrends } from './validate-trends.mjs';
 import { acquireGitLock } from './lib/git-lock.mjs';
+import { groundingCheck } from './lib/grounding.mjs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 
@@ -186,7 +187,7 @@ for (const cand of candidates) {
   if (haveIds.has(cand.id) || haveTitles.has(normTitle(cand.title))) { skipped.push({ title, reason: '이미 사이트에 있음' }); continue; }
 
   const titleKws = titleKeywords(cand), extraKws = extraKeywords(cand);
-  const good = [];
+  const good = [], goodBodies = [];
   const ogImgs = [];   // 검증 통과 출처의 og:image (썸네일 자동 주입용)
   for (const [name, url] of srcPairs(cand)) {
     const st = await httpStatus(url);
@@ -194,10 +195,18 @@ for (const cand of candidates) {
     const body = extract(url);
     const rel = relevance(body, titleKws, extraKws);
     console.log(`   ${rel.pass ? '✅' : '✋'} ${rel.v}(${rel.note})  ${name}`);
-    if (rel.pass) { good.push([name, url]); for (const u of ogImages(body)) if (!ogImgs.includes(u)) ogImgs.push(u); }
+    if (rel.pass) { good.push([name, url]); goodBodies.push(body); for (const u of ogImages(body)) if (!ogImgs.includes(u)) ogImgs.push(u); }
   }
 
-  if (good.length >= 1) {
+  // 📏 근거 대조(2026-10-08~): 출처는 주제를 다루는데 서술이 출처 밖 수치·매체·확산 표현을 담으면 보류.
+  //    출처-주제 관련성만 보던 게이트가 '13번 출구'·'체인 전국 확장'·'170만 건' 같은 서술을 통과시킨 반성(전수 감사 182중 139).
+  const gr = good.length ? groundingCheck(cand, good.map(([n]) => n), goodBodies) : { pass: true, block: [], warn: [] };
+  for (const w of gr.warn) console.log(`   📏⚠ ${w}`);
+  if (good.length >= 1 && !gr.pass) {
+    for (const b of gr.block) console.log(`   📏✋ ${b}`);
+    held.push({ title, reason: `근거 대조 실패 — ${gr.block.join(', ')}` });
+    console.log(`  → 보류: ${title} (서술이 출처 밖 — 해당 문장을 출처에 있는 내용으로 고치거나 근거 출처를 src 에 추가)\n`);
+  } else if (good.length >= 1) {
     cand.src = good;
     // 🖼 썸네일 자동 주입: images가 비면 검증 통과 출처의 og:image로 채운다(추가 fetch 없음).
     //    봇이 images를 빠뜨려도 모든 자동 게시물이 커버 썸네일을 갖도록 보장(깨진 URL은 프론트 onerror가 폴백).
