@@ -1,0 +1,431 @@
+{
+  "keyword": "파이썬 가상환경 venv 만들기 (윈도우·맥 활성화, deactivate, requirements.txt)",
+  "categoryId": "hangeut-trend",
+  "notes": "이 글이 말할 수 있는 것: 파이썬 공식 문서(3.14.8)·PyPA·pip 문서·MS 문서로 확인된 범위 — venv 생성·셸별 활성화·deactivate, Windows PowerShell 실행 정책 해법(CurrentUser RemoteSigned), requirements.txt 만들기·설치와 pip freeze 한계, 가상환경은 Git 제외·일회용·이동 불가. 출처는 전부 1차(official 8 + data 1)이고 2차 보도는 없다.\n한계: py vs python, 확장자 없는 activate 표기, PowerShell 기본 실행 정책은 자료끼리 어긋나(claims 6~8 unclear) 단정하지 말고 어긋남 자체를 서술한다. 작가는 직접 실행하지 않았으므로 체험담·화면 출력은 쓸 수 없고, 명령은 공식 문서 인용으로만 제시한다.\n뼈대는 claims 1~4(전부 confirmed). claims 5는 선택(Windows python 명령 점검), claims 6~8은 단정 금지용 hedge — 본문에서는 \"문서마다 다르다 / 먼저 Get-ExecutionPolicy -List 로 확인\" 식으로만 쓴다.",
+  "cannotSay": [
+    "Windows 클라이언트 PowerShell 의 기본 실행 정책을 Restricted 또는 RemoteSigned 로 단정 금지 — 같은 MS 문서 안에서 어긋남(claims 8). \"기본값이 Restricted 라서 막힌다\" 금지. 허용 표현: \"정책이 스크립트를 막고 있으면\", \"먼저 Get-ExecutionPolicy -List 로 확인\".",
+    "Windows PowerShell 5.1(윈도우 내장 기본)도 7.6 문서와 똑같다고 쓰지 말 것 — 7.6 페이지만 읽었다.",
+    "\"running scripts is disabled on this system\" 류 오류 문구를 공식 메시지·원문으로 따옴표 인용 금지(미확인). 증상은 \"활성화 스크립트가 실행되지 않는다\" 수준으로만.",
+    "Set-ExecutionPolicy RemoteSigned 가 안전하다·위험 없다·누구나 해도 된다 금지 — MS 는 실행 정책을 \"보안 경계가 아니라 defense in depth\" 로만 설명. CurrentUser 에 관리자 권한이 \"필요 없다\"고 단정 금지(문서는 LocalMachine 에만 관리자 요구를 적었을 뿐).",
+    "\"RemoteSigned 라서 venv 가 만든 Activate.ps1 이 통과한다\"는 인과는 두 문서를 잇는 해석(추정) — 쓰려면 해석이라고 표시. 사실은 (a) Python 문서가 이 명령을 안내한다 (b) MS 문서가 RemoteSigned 를 이렇게 정의한다, 두 개.",
+    "정책 변경이 항상 막힘을 풀어준다 단정 금지 — 상위 범위 정책·Group Policy(\"Turn on Script Execution\")가 덮어쓸 수 있다고 MS 문서가 명시.",
+    "확장자 없는 .venv\\Scripts\\activate 가 PowerShell 에서 Activate.ps1 로, cmd 에서 activate.bat 로 실행된다고 단정 금지(출처 문서에 없음, 추정). 셸별 명령은 venv 레퍼런스 표 그대로(cmd = activate.bat, PowerShell = Activate.ps1).",
+    "Windows 에서 \"py 가 정답\" 또는 \"python 이 정답\" 단정 금지, \"py -3\" 권장 금지(3.14 새 설치 관리자 절에 없고 deprecated 옛 런처 절에만 있음). 공식 문서끼리 표기가 다르다는 사실만 쓴다.",
+    "macOS 에서 python 은 없고 python3 만 쓴다 등 macOS python/python3 차이 설명 금지 — PyPA 가 Unix/macOS 예시에 python3 를 쓴다는 사실까지만.",
+    "Debian/Ubuntu 의 \"ensurepip is not available\"·\"apt install python3-venv\" 언급 금지(공식 근거 미확인).",
+    "활성화하면 프롬프트 앞에 (venv) 또는 (.venv) 가 붙는다 단정 금지 — 확인된 건 튜토리얼 예시의 \"(tutorial-env) $\" 표기, 그리고 --prompt 가 접두어를 바꾼다는 간접 언급뿐.",
+    "\"직접 실행해 봤다·내 화면에서는·실제 출력은\" 같은 체험 서술 금지(실행하지 않음). 명령은 공식 문서 인용으로만 제시.",
+    "requirements.txt/pip freeze 를 lockfile·완전한 재현 보장으로 쓰지 말 것(pip 문서: lockfile/solver 결과 아님). pip-tools·poetry·uv·conda·pipenv·virtualenv 비교·추천 금지(자료 없음).",
+    "pip freeze 가 항상 pip·setuptools 를 목록에 넣는다/뺀다 금지 — Python 3.11 이하는 pip·setuptools·wheel·distribute 제외, 3.12 이상은 pip 만 제외(--all 로 전부 포함).",
+    ".gitignore 자동 생성은 Python 3.13 부터 — 3.12 이하에서도 자동 생성된다 금지, 자동 생성 .gitignore 의 내용 설명 금지(미확인). 폴더명을 .venv 로 \"해야 한다\" 금지 — PyPA 관례일 뿐, 튜토리얼은 tutorial-env, gitignore 템플릿은 .venv·venv/·env/ 등 여러 이름.",
+    "가상환경을 폴더째 복사·이동해도 된다 금지. venv 는 3.3 부터 있고(Added in 3.3) pip 기본 설치는 3.4 부터 — 둘을 섞지 말 것.",
+    "deactivate 의 내부 동작(PATH 원복 등) 단정 금지 — 공식 문서는 \"플랫폼별 내부 구현 상세\"로만 적음. 활성화가 \"필수\"라는 서술 금지(인터프리터 전체 경로로 직접 호출 가능).",
+    "Windows 한글 메뉴명(\"앱 실행 별칭 관리\" 등) 단정 금지 — 문서의 영어 표기 \"Manage app execution aliases\" 만 확인.",
+    "\"항상·모든 버전에서·최신\" 금지 — 기준은 Python 3.14.8 / pip 26.2.1 / PowerShell 7.6 문서(2026-10-08 조회). 독자 버전은 다를 수 있다고 표기.",
+    "PowerShell > 리다이렉션 인코딩, VS Code·PyCharm 인터프리터 선택 등 자료에 없는 팁 금지."
+  ],
+  "cannotCover": [
+    "Windows PowerShell 5.1(윈도우 내장 기본 PowerShell)의 기본 실행 정책 교차검증 — 5.1 문서 미열람.",
+    "Activate.ps1 실행 거부 오류 문구 원문 — 공식 문서에서 못 찾음(개인 블로그·포럼만, 본문 미열람).",
+    "Debian/Ubuntu 에서 python3-venv 패키지 설치·ensurepip 오류 — 공식 문서 못 찾음.",
+    "macOS 의 python vs python3 명령 차이 — 공식 문장 못 찾음.",
+    "확장자 없는 activate 의 PowerShell/cmd 해석 방식 — 공식 문장 못 찾음.",
+    "활성화 후 프롬프트 (venv)/(.venv) 표시 — venv 레퍼런스 본문에서 확인 못 함.",
+    "docs.python.org/3/using/windows.html 의 마지막 3,047자(전체 103,047자 중 앞 100,000자만 읽음).",
+    "Python 3.14 이외 버전(3.8~3.12 등)별 문서 사본 — 버전 이력은 3.14.8 문서의 Added/Changed in 표기만 인용.",
+    "virtualenv·conda·poetry·uv·pipenv 등 대안 도구 비교, IDE 연동, 의존성 충돌 해결, pip 업그레이드 상세.",
+    "직접 실행한 결과·스크린샷·소요 시간·디스크 용량 같은 실측 수치.",
+    "시점 의존: 위 버전 표기는 2026-10-08 fetch 기준이며 다른 시점·릴리스 채널에서는 달라질 수 있음."
+  ],
+  "claims": [
+    {
+      "claim": "venv 는 `python -m venv <폴더>` 로 만들고, 셸에 맞는 스크립트로 활성화하고, `deactivate` 로 끈다 — 파이썬 공식 문서가 보여주는 세 단계다.",
+      "grade": "confirmed",
+      "role": "core",
+      "evidence": [
+        "생성: python -m venv /path/to/new/virtual/environment (Windows 예: PS> python -m venv C:\\path\\to\\new\\virtual\\environment). 튜토리얼 예: python -m venv tutorial-env — 폴더가 없으면 만들고 그 안에 인터프리터 사본과 지원 파일 디렉터리를 만든다(튜토리얼 표현).",
+        "pyvenv.cfg 가 만들어지고 home 키가 명령을 실행한 Python 설치를 가리킨다. venv 는 명령을 실행한 그 Python 버전으로 환경을 만든다(튜토리얼: python3.12 로 실행하면 3.12).",
+        "활성화 표(venv 레퍼런스): bash/zsh = source <venv>/bin/activate · fish = source <venv>/bin/activate.fish · csh/tcsh = source <venv>/bin/activate.csh · POSIX pwsh = <venv>/bin/Activate.ps1 · Windows cmd.exe = <venv>\\Scripts\\activate.bat · Windows PowerShell = <venv>\\Scripts\\Activate.ps1",
+        "활성화 = bin(POSIX) 또는 Scripts(Windows) 디렉터리를 PATH 앞에 붙여 python 이 환경의 인터프리터를 가리키게 하는 것. 필수는 아님 — 인터프리터 전체 경로로 직접 호출해도 된다.",
+        "비활성화: 셸에서 deactivate 입력. 정확한 메커니즘은 플랫폼별 내부 구현 상세(venv 레퍼런스).",
+        "활성화한 가상환경은 PYTHONPATH 를 바꾸지 않는다 — 호환 안 되는 코드가 PYTHONPATH 에 있으면 예상 밖 결과가 날 수 있고, 튜토리얼의 모범 사례는 bash 에서 unset PYTHONPATH(또는 해당 셸의 동등 명령).",
+        "PyPA 가이드의 폴더명 관례는 .venv: Unix/macOS = python3 -m venv .venv, Windows = py -m venv .venv.",
+        "옵션: --system-site-packages · --clear(기존 폴더 내용 삭제 후 생성) · --without-pip(pip 부트스트랩 생략, 기본은 설치) · --prompt <PROMPT> · --upgrade-deps(pip 를 PyPI 최신으로)."
+      ],
+      "sourceUrls": [
+        "https://docs.python.org/3/library/venv.html",
+        "https://docs.python.org/ko/3/library/venv.html",
+        "https://docs.python.org/3/tutorial/venv.html",
+        "https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/"
+      ]
+    },
+    {
+      "claim": "Windows PowerShell 에서 Activate.ps1 이 막히면, 파이썬 공식 문서가 안내하는 해법은 사용자 범위(CurrentUser)의 실행 정책을 RemoteSigned 로 바꾸는 것이다. 단 \"필요할 수도 있다\"는 조건부 안내다.",
+      "grade": "confirmed",
+      "role": "core",
+      "evidence": [
+        "venv 레퍼런스 원문: \"On Microsoft Windows, it may be required to enable the Activate.ps1 script by setting the execution policy for the user.\" 명령: Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser. 한국어판: \"마이크로소프트 윈도우에서는 사용자에 대한 실행 정책을 설정하여 Activate.ps1 스크립트를 활성화해야 할 수도 있습니다\" — 모두에게 필요한 게 아니라 \"may be required / 할 수도 있다\".",
+        "MS: 실행 정책은 PowerShell 이 구성 파일을 로드하고 스크립트를 실행하는 조건을 제어하는 안전 기능이며 \"보안 경계가 아니라 defense in depth(다층 방어의 한 겹)\". 입력창에 스크립트 내용을 직접 타이핑하면 쉽게 우회된다고도 적음.",
+        "MS: Restricted = 개별 명령은 허용하되 .ps1 포함 모든 스크립트 파일 차단. RemoteSigned = 인터넷에서 내려받은 스크립트만 서명 요구, 로컬에서 작성한(내려받지 않은) 스크립트는 서명 불필요.",
+        "MS 범위: Process(현재 세션만, 종료 시 사라짐) > CurrentUser(사용자별) > LocalMachine(기본 범위, 모든 사용자). 우선순위는 이 순서. LocalMachine 변경은 관리자 권한 PowerShell 필요 — 문서가 관리자 요구를 적은 곳은 LocalMachine 뿐.",
+        "현재 상태 확인: Get-ExecutionPolicy, Get-ExecutionPolicy -List. 정책 변경은 즉시 적용되고 PowerShell 재시작이 필요 없다.",
+        "변경 명령이 성공해도 유효 정책이 안 바뀔 수 있다 — 예: LocalMachine 설정을 CurrentUser 정책이 덮어씀. Group Policy \"Turn on Script Execution\" 은 모든 범위의 PowerShell 설정을 덮어쓴다.",
+        "되돌리기: Set-ExecutionPolicy -ExecutionPolicy Undefined -Scope CurrentUser."
+      ],
+      "sourceUrls": [
+        "https://docs.python.org/3/library/venv.html",
+        "https://docs.python.org/ko/3/library/venv.html",
+        "https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_execution_policies"
+      ]
+    },
+    {
+      "claim": "환경 재생성 수단은 requirements.txt 다 — 활성화한 환경에서 `python -m pip freeze > requirements.txt` 로 만들고 `python -m pip install -r requirements.txt` 로 설치한다. 단 pip freeze 는 lockfile 이 아니다.",
+      "grade": "confirmed",
+      "role": "core",
+      "evidence": [
+        "튜토리얼: (tutorial-env) $ python -m pip freeze > requirements.txt / (tutorial-env) $ python -m pip install -r requirements.txt. \"requirements.txt 는 버전 관리에 커밋하고 애플리케이션과 함께 배포할 수 있다.\"",
+        "venv 레퍼런스 경고 박스: 환경을 옮기려면 새 위치에 다시 만들어야 하고, 재생성 수단으로 requirements.txt 를 두고 환경의 pip 로 pip install -r requirements.txt 를 실행하라고 명시.",
+        "pip 문서(v26.2.1) 표기: macOS/Linux = python -m pip freeze > requirements.txt, python -m pip install -r requirements.txt / Windows = py -m pip freeze > requirements.txt, py -m pip install -r requirements.txt. PyPA 가이드도 동일 계열(Unix/macOS = python3 -m pip, Windows = py -m pip).",
+        "pip freeze: 설치된 패키지를 requirements 형식으로 출력, 대소문자 구분 없는 정렬 순서. 기본 제외는 Python 3.11 이하 pip·setuptools·wheel·distribute / 3.12 이상 pip 만. --all 로 전부 포함, --exclude <package>·--exclude-editable 로 일부 제외.",
+        "pip 문서: \"pip freeze reports what is installed; it does not compute a lockfile or a solver result.\" — 설치된 것을 보고할 뿐 lockfile 이나 solver 결과가 아니다.",
+        "pip 사용자 가이드: freeze 결과를 담는 용도는 Repeatable Installs(재현 가능한 설치), 파일에는 freeze 시점에 설치된 모든 것의 pinned 버전이 들어간다. requirements 파일은 pip install 인자의 목록일 뿐이며 설치 순서에 의존하지 말라고 명시.",
+        "공식 예시: env1/bin/python -m pip freeze > requirements.txt → env2/bin/python -m pip install -r requirements.txt (다른 환경에서 재설치).",
+        "PyPA: \"The pip freeze command is useful for creating Requirements Files that can re-create the exact versions of all packages installed in an environment.\" (이 페이지는 > 리다이렉션을 직접 보여주지 않음)"
+      ],
+      "sourceUrls": [
+        "https://docs.python.org/3/tutorial/venv.html",
+        "https://docs.python.org/3/library/venv.html",
+        "https://pip.pypa.io/en/stable/cli/pip_freeze/",
+        "https://pip.pypa.io/en/stable/user_guide/",
+        "https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/"
+      ]
+    },
+    {
+      "claim": "가상환경 폴더는 Git 에 올리지 않고, 옮기지 않고, 지우고 다시 만드는 일회용으로 다룬다.",
+      "grade": "confirmed",
+      "role": "core",
+      "evidence": [
+        "venv 레퍼런스: 가상환경은 (1) \"Not checked into source control systems such as Git.\" (2) 일회용 — 삭제·재생성이 쉬워야 하며 프로젝트 코드는 환경 안에 두지 않는다 (3) 이동·복사 불가 — 새 위치에 다시 만들고 옛것을 지운다. 경고: 환경은 일반적으로 본질적으로 비이식적(inherently non-portable).",
+        "PyPA: \"You should exclude your virtual environment directory from your version control system using .gitignore or similar.\"",
+        "GitHub 공식 gitignore 템플릿(Python.gitignore) \"# Environments\" 절에 .env, .envrc, .venv, env/, venv/, ENV/, env.bak/, venv.bak/ 가 들어 있다(WebFetch 로 읽은 부분 기준).",
+        "Python 3.13 부터 venv 가 가상환경 폴더 안에 Git 용 .gitignore 를 기본으로 만든다(\"Changed in version 3.13\"), 끄는 옵션은 --without-scm-ignore-files(3.13 추가). 한국어판에서는 이 두 문장이 번역 안 된 영어 원문 상태."
+      ],
+      "sourceUrls": [
+        "https://docs.python.org/3/library/venv.html",
+        "https://docs.python.org/ko/3/library/venv.html",
+        "https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/",
+        "https://raw.githubusercontent.com/github/gitignore/main/Python.gitignore"
+      ]
+    },
+    {
+      "claim": "Windows 에서 python 입력이 안 먹거나 Microsoft Store 가 열리면, 공식 Windows 문서는 \"앱 실행 별칭\" 설정과 PATH 항목을 점검하라고 안내한다. (선택 항목)",
+      "grade": "confirmed",
+      "role": "optional",
+      "evidence": [
+        "Python 3.14 Windows 문서: python 이 \"command not found\" 를 내거나 터미널에서 Store 앱을 열면 시작 > \"Manage app execution aliases\" 에서 Python (default) 별칭이 켜져 있는지 확인하고, PATH 에 %UserProfile%\\AppData\\Local\\Microsoft\\WindowsApps 항목이 있는지 확인.",
+        "같은 문서: 프로젝트마다 가상환경을 만들고 터미널에서 <env>\\Scripts\\Activate 를 실행해 쓰라고 권장, 생성은 python -m venv <env path>.",
+        "같은 문서: python 명령은 실행하는 스크립트가 요청한 버전, 활성화된 가상환경, 또는 기본 설치 버전(별도 설정이 없으면 최신 안정판)을 실행한다."
+      ],
+      "sourceUrls": [
+        "https://docs.python.org/3/using/windows.html"
+      ]
+    },
+    {
+      "claim": "Windows 에서 가상환경 명령을 `py -m ...` 로 쓸지 `python -m ...` 로 쓸지는 공식 문서마다 다르게 적혀 있다 — 어느 한쪽을 정답으로 단정할 수 없다.",
+      "grade": "unclear",
+      "role": "hedge-only",
+      "evidence": [
+        "PyPA 가이드·pip 문서: Windows 는 전부 py -m venv .venv, py -m pip install -r requirements.txt (Unix/macOS 는 python3 -m ...). PyPA 가이드는 py 런처 자체를 설명하지 않는다.",
+        "docs.python.org venv 레퍼런스·튜토리얼·Windows 문서 도입부: python -m venv <path>.",
+        "Python 3.14 Windows 문서: py 는 \"여러 런타임 버전이 얽힌 모든 시나리오의 권장 명령\", python 은 \"실행할 때의 권장 명령\" — 둘 다 권장이라 둘 다 유효.",
+        "옛 Python launcher 는 3.14 에서 deprecated(Python Install Manager 로 대체). 옛 런처가 같이 깔려 있으면 py 명령은 옛 런처가 우선하고 \"can't open file\" 오류가 날 수 있다(해결: 설치된 앱에서 Python launcher 제거). 반대로 Store 별칭 때문에 python 이 Store 를 여는 경우도 있다(claims 5).",
+        "py -3 은 3.14 문서의 새 설치 관리자 절에는 없고 옛 런처 절에만 등장. 새 방식 예: py -V:3.14 (공식 릴리스이고 3 으로 시작하는 태그는 V: 생략 가능)."
+      ],
+      "sourceUrls": [
+        "https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/",
+        "https://pip.pypa.io/en/stable/user_guide/",
+        "https://docs.python.org/3/library/venv.html",
+        "https://docs.python.org/3/tutorial/venv.html",
+        "https://docs.python.org/3/using/windows.html"
+      ]
+    },
+    {
+      "claim": "Windows 활성화 명령의 확장자 표기가 문서마다 다르다(Activate.ps1 / activate.bat vs 확장자 없는 activate) — 확장자 없는 표기가 어느 셸에서 무엇으로 실행되는지는 출처에 없다.",
+      "grade": "unclear",
+      "role": "hedge-only",
+      "evidence": [
+        "venv 레퍼런스: cmd.exe = <venv>\\Scripts\\activate.bat, PowerShell = <venv>\\Scripts\\Activate.ps1 (확장자 명시, 셸별 구분).",
+        "튜토리얼·PyPA 가이드: 셸 구분 없이 확장자 없는 tutorial-env\\Scripts\\activate / .venv\\Scripts\\activate 한 줄만 표기. Windows 문서는 <env>\\Scripts\\Activate.",
+        "확장자 없는 표기가 cmd.exe 에서 activate.bat 로 해석되는 것이 일반적이라는 설명은 출처 문서에 없고 추정이다. PowerShell 에서 어떻게 해석되는지는 확인하지 못했다."
+      ],
+      "sourceUrls": [
+        "https://docs.python.org/3/library/venv.html",
+        "https://docs.python.org/3/tutorial/venv.html",
+        "https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/",
+        "https://docs.python.org/3/using/windows.html"
+      ]
+    },
+    {
+      "claim": "Windows 클라이언트에서 PowerShell 기본 실행 정책이 무엇인지는 MS 문서 안에서도 서술이 엇갈려 단정할 수 없다.",
+      "grade": "unclear",
+      "role": "hedge-only",
+      "evidence": [
+        "about_Execution_Policies(7.6) \"Default\" 항목: RemoteSigned for Windows clients and servers. \"RemoteSigned\" 항목: \"The default execution policy for Windows computers.\"",
+        "같은 문서 \"Undefined\" 항목: 모든 범위가 Undefined 이면 유효 정책은 Windows 클라이언트 Restricted, Windows Server RemoteSigned. \"Remove the execution policy\" 절: 아무 범위에도 정책이 없으면 유효 정책은 Restricted, \"which is the default for Windows clients\".",
+        "확인되지 않은 것: 윈도우 내장 Windows PowerShell 5.1 문서(본문 미열람). 안전한 서술은 \"Get-ExecutionPolicy -List 로 자기 PC 의 현재 값을 먼저 확인\"."
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_execution_policies"
+      ]
+    }
+  ],
+  "numbers": [
+    {
+      "what": "기준 Python 문서 버전",
+      "value": "3.14.8 (docs.python.org/3 가 3.14 로 해석됨)",
+      "asOf": "2026-10-07 (푸터 Last updated on Oct 07, 2026)·조회 2026-10-08",
+      "sourceUrl": "https://docs.python.org/3/library/venv.html"
+    },
+    {
+      "what": "기준 pip 문서 버전",
+      "value": "v26.2.1",
+      "asOf": "조회 2026-10-08",
+      "sourceUrl": "https://pip.pypa.io/en/stable/cli/pip_freeze/"
+    },
+    {
+      "what": "기준 PowerShell 문서 버전",
+      "value": "7.6 (ms.date 2026-08-31)",
+      "asOf": "2026-08-31",
+      "sourceUrl": "https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_execution_policies"
+    },
+    {
+      "what": "venv 모듈이 추가된 Python 버전",
+      "value": "3.3 (Added in version 3.3)",
+      "asOf": "3.14.8 문서",
+      "sourceUrl": "https://docs.python.org/3/library/venv.html"
+    },
+    {
+      "what": "pip 가 venv 에 기본 설치되기 시작한 버전",
+      "value": "3.4 (3.14.8 문서 변경 이력 기준)",
+      "asOf": "3.14.8 문서",
+      "sourceUrl": "https://docs.python.org/3/library/venv.html"
+    },
+    {
+      "what": "--upgrade-deps 옵션이 추가된 버전",
+      "value": "3.9",
+      "asOf": "3.14.8 문서",
+      "sourceUrl": "https://docs.python.org/3/library/venv.html"
+    },
+    {
+      "what": "venv 의 setuptools 가 핵심 의존성에서 빠진 버전",
+      "value": "3.12",
+      "asOf": "3.14.8 문서",
+      "sourceUrl": "https://docs.python.org/3/library/venv.html"
+    },
+    {
+      "what": "venv 가 .gitignore 를 기본 생성하기 시작한 버전 / --without-scm-ignore-files 추가",
+      "value": "3.13 / 3.13",
+      "asOf": "3.14.8 문서",
+      "sourceUrl": "https://docs.python.org/3/library/venv.html"
+    },
+    {
+      "what": "pip freeze 기본 제외 패키지",
+      "value": "Python 3.11 이하: pip·setuptools·wheel·distribute / 3.12 이상: pip 만",
+      "asOf": "pip 26.2.1 문서",
+      "sourceUrl": "https://pip.pypa.io/en/stable/cli/pip_freeze/"
+    },
+    {
+      "what": "옛 Python launcher 가 deprecated 된 버전",
+      "value": "3.14 (Python Install Manager 로 대체)",
+      "asOf": "3.14.8 문서",
+      "sourceUrl": "https://docs.python.org/3/using/windows.html"
+    }
+  ],
+  "conflicts": [
+    {
+      "about": "Windows 에서 가상환경을 만들 때 쓰는 명령: py 인가 python 인가",
+      "a": "packaging.python.org 가이드와 pip 문서는 Windows 에서 전부 'py -m venv .venv', 'py -m pip install -r requirements.txt' 를 쓴다",
+      "b": "docs.python.org venv 레퍼런스·튜토리얼·Windows 문서 도입부는 'python -m venv <path>' 를 쓴다. Windows 문서는 py(여러 버전 시나리오 권장)와 python(실행할 때 권장 명령) 둘 다 '권장'이라고 적고 있어 둘 다 유효. 단 옛 런처가 깔린 환경에서는 py 가 옛 런처로 동작할 수 있고, Microsoft Store 별칭 때문에 python 이 Store 를 여는 경우도 있다",
+      "handledIn": "claims 6 (unclear)",
+      "writerRule": "둘 다 표기하고 어느 쪽이 정답이라 쓰지 않는다"
+    },
+    {
+      "about": "Windows 활성화 명령 표기",
+      "a": "venv 레퍼런스: cmd.exe = <venv>\\Scripts\\activate.bat, PowerShell = <venv>\\Scripts\\Activate.ps1 (확장자 명시, 셸별로 구분)",
+      "b": "튜토리얼·packaging 가이드: 셸 구분 없이 확장자 없는 'tutorial-env\\Scripts\\activate' / '.venv\\Scripts\\activate' 한 줄만 표기. 확장자 없는 표기는 cmd.exe 에서 activate.bat 로 해석되는 것이 일반적이지만 이 해석 자체는 출처 문서에 적혀 있지 않음(추정) — PowerShell 에서 정확히 어떻게 해석되는지는 직접 확인하지 못함",
+      "handledIn": "claims 7 (unclear)",
+      "writerRule": "셸별 명령은 venv 레퍼런스 표 그대로, 확장자 없는 표기의 해석은 쓰지 않는다"
+    },
+    {
+      "about": "Windows 클라이언트의 PowerShell 기본 실행 정책 (같은 MS 문서 안에서 서로 어긋남)",
+      "a": "about_Execution_Policies(7.6) 의 'Default' 항목은 'RemoteSigned for Windows clients and servers', 'RemoteSigned' 항목은 'The default execution policy for Windows computers'",
+      "b": "같은 문서의 'Undefined' 항목은 '모든 범위가 Undefined 이면 유효 정책은 Windows 클라이언트에서 Restricted, Windows Server 에서 RemoteSigned', 'Remove the execution policy' 절은 'effective execution policy is Restricted, which is the default for Windows clients'. 블로그에서는 '기본값이 Restricted 라서 막히는 경우가 있다' 식으로 단정하지 말고, Get-ExecutionPolicy -List 로 확인하라는 식으로 쓰는 것이 안전",
+      "handledIn": "claims 8 (unclear)",
+      "writerRule": "기본값을 단정하지 않고 Get-ExecutionPolicy -List 로 확인하게 한다"
+    }
+  ],
+  "sources": [
+    {
+      "title": "venv — Creation of virtual environments (Python 3.14.8 documentation)",
+      "url": "https://docs.python.org/3/library/venv.html",
+      "host": "docs.python.org",
+      "body": "Virtual environments are created by executing the venv module: `python -m venv /path/to/new/virtual/environment`. On Windows: `PS> python -m venv C:\\path\\to\\new\\virtual\\environment`. This creates the target directory (including parent directories as needed) and places a pyvenv.cfg file in it with a home key pointing to the Python installation from which the command was run. The created pyvenv.cfg file also includes the include-system-site-packages key, set to true if venv is run with the --system-site-packages option, false otherwise. Activation table (page uses <venv> as the placeholder): POSIX bash/zsh `$ source <venv>/bin/activate`; POSIX fish `$ source <venv>/bin/activate.fish`; POSIX csh/tcsh `$ source <venv>/bin/activate.csh`; POSIX pwsh `$ <venv>/bin/Activate.ps1`; Windows cmd.exe `C:\\> <venv>\\Scripts\\activate.bat`; Windows PowerShell `PS C:\\> <venv>\\Scripts\\Activate.ps1`. 'On Microsoft Windows, it may be required to enable the Activate.ps1 script by setting the execution policy for the user. You can do this by issuing the following PowerShell command: PS C:\\> Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser. See About Execution Policies for more information.' 'You can deactivate a virtual environment by typing deactivate in your shell. The exact mechanism is platform-specific and is an internal implementation detail (typically, a script or shell function will be used).' A virtual environment may be 'activated' using a script in its binary directory (bin on POSIX; Scripts on Windows). This will prepend that directory to your PATH, so that running python will invoke the environment's Python interpreter. 'You don't specifically need to activate a virtual environment, as you can just specify the full path to that environment's Python interpreter when invoking Python.' A virtual environment is (1) 'Not checked into source control systems such as Git.' (2) 'Considered as disposable – it should be simple to delete and recreate it from scratch. You don't place any project code in the environment.' (3) 'Not considered as movable or copyable – you just recreate the same environment in the target location.' Warning: 'environments are inherently non-portable, in the general case. You should always have a simple means of recreating an environment (for example, if you have a requirements file requirements.txt, you can invoke pip install -r requirements.txt using the environment's pip to install all of the packages needed by the environment). If for any reason you need to move the environment to a new location, you should recreate it at the desired location and delete the one at the old location.' Options: --system-site-packages (give access to system site-packages), --clear (delete contents of the environment directory first), --upgrade, --without-pip (pip is bootstrapped by default), --prompt <PROMPT>, --upgrade-deps (upgrade pip to latest on PyPI).",
+      "tier": "official",
+      "publishedAt": "2026-10-07",
+      "facts": [
+        "생성 명령(문서 그대로): python -m venv /path/to/new/virtual/environment / Windows: PS> python -m venv C:\\path\\to\\new\\virtual\\environment",
+        "venv 모듈은 Python 3.3 에서 추가(Added in version 3.3). 3.4 부터 pip 기본 설치, 3.5 부터 venv 가 가상환경 생성 권장 도구(pyvenv 는 3.6 deprecated, 3.8 removed), 3.9 에 --upgrade-deps 추가, 3.12 에서 setuptools 는 더 이상 핵심 의존성이 아님",
+        "Python 3.13 부터 venv 가 기본으로 .gitignore 파일을 가상환경 폴더 안에 만든다(Changed in version 3.13: venv now creates a .gitignore file for Git by default). 끄려면 --without-scm-ignore-files(3.13 추가). 한국어판에는 이 문장이 영어 원문 그대로 남아 있음",
+        "활성화 표: POSIX bash/zsh = source <venv>/bin/activate · fish = source <venv>/bin/activate.fish · csh/tcsh = source <venv>/bin/activate.csh · POSIX pwsh = <venv>/bin/Activate.ps1 · Windows cmd.exe = <venv>\\Scripts\\activate.bat · Windows PowerShell = <venv>\\Scripts\\Activate.ps1",
+        "Windows 에서 Activate.ps1 을 쓰려면 실행 정책 설정이 필요할 수 있다고 공식 문서가 직접 안내: Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser (See About Execution Policies)",
+        "비활성화는 셸에서 deactivate 입력. 정확한 메커니즘은 플랫폼별 내부 구현(스크립트 또는 셸 함수)",
+        "활성화는 bin(POSIX) 또는 Scripts(Windows) 디렉터리를 PATH 앞에 붙여 python 이 가상환경의 인터프리터를 가리키게 하는 것. 활성화가 '필수'는 아님 — 인터프리터 전체 경로로 직접 호출해도 되고, 환경에 설치된 스크립트도 활성화 없이 실행 가능해야 한다",
+        "가상환경은 Git 같은 소스 컨트롤에 체크인하지 않는 것, 일회용(삭제·재생성이 쉬워야 함), 이동·복사 불가(옮겨야 하면 새 위치에 다시 만들고 옛것 삭제)로 간주된다. 프로젝트 코드는 환경 안에 넣지 않는다",
+        "재생성 수단으로 requirements.txt 를 두고 환경의 pip 로 pip install -r requirements.txt 를 실행하라고 경고 박스에서 명시",
+        "옵션 --system-site-packages(시스템 site-packages 접근 허용) · --clear(기존 폴더 내용 삭제 후 생성) · --without-pip(pip 부트스트랩 생략, 기본은 설치) · --prompt <PROMPT>(프롬프트 접두어 변경) · --upgrade-deps(pip 를 PyPI 최신으로)",
+        "이 페이지에는 '활성화하면 프롬프트에 (venv) 가 붙는다'는 문장이 없음 — 프롬프트 접두어는 --prompt 옵션·EnvBuilder prompt 설명에서만 간접 언급(기본값은 환경 폴더 이름, __VENV_PROMPT__ 는 '괄호로 감싼 환경 이름 + 공백')"
+      ]
+    },
+    {
+      "title": "venv — 가상 환경 생성 — Python 3.14.8 문서 (한국어판)",
+      "url": "https://docs.python.org/ko/3/library/venv.html",
+      "host": "docs.python.org",
+      "body": "[가상 환경]은 venv 모듈을 실행해서 만들어집니다: `python -m venv /path/to/new/virtual/environment`. 윈도우에서는, 다음과 같이 venv 명령을 호출하십시오: `PS> python -m venv C:\\path\\to\\new\\virtual\\environment`. 활성화 표 — POSIX bash/zsh: `$ source <venv>/bin/activate`, POSIX fish: `$ source <venv>/bin/activate.fish`, POSIX csh/tcsh: `$ source <venv>/bin/activate.csh`, POSIX pwsh: `$ <venv>/bin/Activate.ps1`, 윈도우 cmd.exe: `C:\\> <venv>\\Scripts\\activate.bat`, 윈도우 PowerShell: `PS C:\\> <venv>\\Scripts\\Activate.ps1`. 마이크로소프트 윈도우에서는 사용자에 대한 실행 정책을 설정하여 Activate.ps1 스크립트를 활성화해야 할 수도 있습니다. 다음 PowerShell 명령을 실행하여 이를 수행할 수 있습니다: `PS C:\\> Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser`. 셸에서 deactivate 를 입력하여 가상 환경을 비활성화할 수 있습니다. 정확한 메커니즘은 플랫폼에 따라 다르고 내부 구현 상세입니다 (보통, 스크립트나 셸 함수가 사용됩니다). 페이지 제목: 'venv — 가상 환경 생성 — Python 3.14.8 문서'. 변경 이력: '버전 3.13에서 변경: venv now creates a .gitignore file for Git by default.' (한국어 라벨 뒤에 영어 원문이 붙어 있음) '버전 3.13에서 변경: Added the --without-scm-ignore-files option.' 소스 컨트롤 관련 문구('Not checked into source control systems such as Git.')는 한국어판에서도 영어 원문 그대로.",
+      "tier": "official",
+      "publishedAt": null,
+      "facts": [
+        "한국어 공식 문서에서의 표현: 실행 정책 안내 '마이크로소프트 윈도우에서는 사용자에 대한 실행 정책을 설정하여 Activate.ps1 스크립트를 활성화해야 할 수도 있습니다' — 블로그가 한국어로 인용할 때 이 문장을 근거로 삼을 수 있음",
+        "한국어판도 Python 3.14.8 문서 기준. 활성화 표의 명령은 영문판과 동일(윈도우 cmd.exe = <venv>\\Scripts\\activate.bat, PowerShell = <venv>\\Scripts\\Activate.ps1, POSIX bash/zsh = source <venv>/bin/activate)",
+        "한국어판 deactivate 문구: '셸에서 deactivate를 입력하여 가상 환경을 비활성화할 수 있습니다'",
+        "3.13 부터 venv 가 Git 용 .gitignore 를 자동 생성하는 변경 이력과 --without-scm-ignore-files 옵션(3.13)은 한국어판에서 번역이 안 된 영어 원문 상태"
+      ]
+    },
+    {
+      "title": "Virtual Environments and Packages — Python 3.14.8 tutorial",
+      "url": "https://docs.python.org/3/tutorial/venv.html",
+      "host": "docs.python.org",
+      "body": "The module used to create and manage virtual environments is called venv. venv will install the Python version from which the command was run (as reported by the --version option). For instance, executing the command with python3.12 will install version 3.12. To create a virtual environment, decide upon a directory where you want to place it, and run the venv module as a script with the directory path: `python -m venv tutorial-env`. This will create the tutorial-env directory if it doesn't exist, and also create directories inside it containing a copy of the Python interpreter and various supporting files. Activation — On Windows, run: `tutorial-env\\Scripts\\activate`. On Unix or MacOS, run: `source tutorial-env/bin/activate` (This script is written for the bash shell. If you use the csh or fish shells, there are alternate activate.csh and activate.fish scripts you should use instead.) Note that the activated virtual environment does not alter the PYTHONPATH variable in any way. This may lead to unexpected results if the path includes references to code which is incompatible with the Python version the virtual environment is using. The best practice is to unset PYTHONPATH in bash or the equivalent for the shell you are using. `python -m pip freeze` will produce a similar list of the installed packages, but the output uses the format that `python -m pip install` expects. A common convention is to put this list in a requirements.txt file: `(tutorial-env) $ python -m pip freeze > requirements.txt`. The requirements.txt can then be committed to version control and shipped as part of an application. Users can then install all the necessary packages with install -r: `(tutorial-env) $ python -m pip install -r requirements.txt`.",
+      "tier": "official",
+      "publishedAt": null,
+      "facts": [
+        "튜토리얼 예시 폴더명은 tutorial-env: python -m venv tutorial-env — 해당 폴더가 없으면 만들고, 그 안에 인터프리터 사본과 지원 파일 디렉터리를 만든다",
+        "venv 는 '명령을 실행한 그 Python 버전'으로 환경을 만든다. 예: python3.12 로 실행하면 3.12 환경(--version 으로 확인되는 버전)",
+        "활성화(튜토리얼 표기): Windows = tutorial-env\\Scripts\\activate / Unix·macOS = source tutorial-env/bin/activate (bash 용 스크립트, csh·fish 는 activate.csh·activate.fish 별도)",
+        "활성화한 가상환경은 PYTHONPATH 를 바꾸지 않는다 — 호환 안 되는 코드가 PYTHONPATH 에 있으면 예상 밖 결과가 날 수 있으며, 모범 사례는 bash 에서 unset PYTHONPATH(또는 해당 셸의 동등 명령)",
+        "requirements.txt 생성: (tutorial-env) $ python -m pip freeze > requirements.txt / 설치: (tutorial-env) $ python -m pip install -r requirements.txt. 'requirements.txt 는 버전 관리에 커밋하고 애플리케이션과 함께 배포할 수 있다'",
+        "이 튜토리얼 페이지에는 python3 vs python 구분 노트, Windows py 런처 언급이 없다(WebFetch 로 확인)"
+      ]
+    },
+    {
+      "title": "Install packages using pip and virtual environments — Python Packaging User Guide",
+      "url": "https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/",
+      "host": "packaging.python.org",
+      "body": "Python Packaging User Guide (PyPA). Creating a virtual environment — Unix/macOS: `python3 -m venv .venv`; Windows: `py -m venv .venv`. Activating a virtual environment — Unix/macOS: `source .venv/bin/activate`; Windows: `.venv\\Scripts\\activate`. Leaving the virtual environment: `deactivate`. Installing from a requirements file — Unix/macOS: `python3 -m pip install -r requirements.txt`; Windows: `py -m pip install -r requirements.txt`. Freezing dependencies — Unix/macOS: `python3 -m pip freeze`; Windows: `py -m pip freeze`. 'The pip freeze command is useful for creating Requirements Files that can re-create the exact versions of all packages installed in an environment.' Version control advice: 'You should exclude your virtual environment directory from your version control system using .gitignore or similar.' The page uses the Windows py launcher in place of python3 in all Windows commands but does not explain the launcher itself.",
+      "tier": "official",
+      "publishedAt": null,
+      "facts": [
+        "PyPA 공식 가이드의 폴더명 관례는 .venv: Unix/macOS = python3 -m venv .venv, Windows = py -m venv .venv",
+        "활성화: Unix/macOS = source .venv/bin/activate, Windows = .venv\\Scripts\\activate (확장자 없이 표기)",
+        "비활성화: deactivate",
+        "requirements 설치: Unix/macOS = python3 -m pip install -r requirements.txt / Windows = py -m pip install -r requirements.txt",
+        "pip freeze: 'Requirements Files 를 만들 때 유용 — 환경에 설치된 모든 패키지의 정확한 버전을 재현할 수 있음'. 이 페이지는 'pip freeze' 명령만 보여주고 '> requirements.txt' 리다이렉션 표기는 직접 보여주지 않음(리다이렉션은 python 튜토리얼·pip 문서에 있음)",
+        "버전 관리 지침: 'You should exclude your virtual environment directory from your version control system using .gitignore or similar.' — 가상환경 폴더는 .gitignore 등으로 제외하라",
+        "Windows 명령은 모두 python3 대신 py 런처를 사용하지만, 이 페이지는 py 런처 자체를 설명하지는 않음"
+      ]
+    },
+    {
+      "title": "about_Execution_Policies — PowerShell | Microsoft Learn (PowerShell 7.6)",
+      "url": "https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_execution_policies",
+      "host": "learn.microsoft.com",
+      "body": "PowerShell's execution policy is a safety feature that controls the conditions under which PowerShell loads configuration files and runs scripts. This feature helps prevent the execution of malicious scripts. On a Windows computer you can set an execution policy for the local computer, for the current user, or for a particular session. The execution policy isn't a security boundary, it's defense in depth. For example, users can easily bypass a policy by typing the script contents at the command line when they can't run a script. Policies: Restricted — 'Permits individual commands, but doesn't allow scripts. Prevents running of all script files, including formatting and configuration files (.ps1xml), module script files (.psm1), and PowerShell profiles (.ps1).' RemoteSigned — 'The default execution policy for Windows computers. Scripts can run. Requires a digital signature from a trusted publisher on scripts and configuration files that are downloaded from the internet which includes email and instant messaging programs. Doesn't require digital signatures on scripts that are written on the local computer and not downloaded from the internet.' Undefined — 'There is no execution policy set in the current scope. If the execution policy in all scopes is Undefined, the effective execution policy is Restricted for Windows clients and RemoteSigned for Windows Server.' Scopes: MachinePolicy, UserPolicy (Group Policy), Process (only the current PowerShell session), CurrentUser (only the current user), LocalMachine (default scope; all users). Precedence: Process highest, then CurrentUser, then LocalMachine. 'In Windows Vista and later versions of Windows, to run commands that change the execution policy for the local computer, LocalMachine scope, start PowerShell with the Run as administrator option.' Examples: `Set-ExecutionPolicy -ExecutionPolicy RemoteSigned`; `Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser`; `Get-ExecutionPolicy`; `Get-ExecutionPolicy -List`. 'A command to change an execution policy can succeed but still not change the effective execution policy. For example, a command that sets the execution policy for the local computer can succeed but be overridden by the execution policy for the current user.' 'If no execution policy is set in any scope, the effective execution policy is Restricted, which is the default for Windows clients.' The Turn on Script Execution Group Policy setting overrides the execution policies set in PowerShell in all scopes.",
+      "tier": "official",
+      "publishedAt": "2026-08-31",
+      "facts": [
+        "실행 정책은 'PowerShell 이 구성 파일을 로드하고 스크립트를 실행하는 조건'을 제어하는 안전 기능이며 '보안 경계가 아니라 defense in depth(다층 방어의 한 겹)'라고 MS 가 명시",
+        "Restricted: 개별 명령은 허용하되 스크립트 파일(.ps1 포함)은 전부 차단 — Activate.ps1 이 막히는 상태. 아무 범위에도 정책이 없으면 유효 정책은 Restricted(Windows 클라이언트) / RemoteSigned(Windows Server)",
+        "RemoteSigned: 인터넷에서 내려받은 스크립트만 서명 요구, 로컬에서 작성한(내려받지 않은) 스크립트는 서명 불필요 — 그래서 venv 가 로컬에 만든 Activate.ps1 은 통과",
+        "범위(scope): Process(현재 세션만, 환경변수 $Env:PSExecutionPolicyPreference 에 저장, 세션 종료 시 삭제) > CurrentUser(사용자별 powershell.config.json) > LocalMachine(기본 범위, $PSHOME/powershell.config.json). 우선순위는 이 순서",
+        "LocalMachine 범위 변경은 '관리자 권한으로 실행'한 PowerShell 이 필요하지만 -Scope CurrentUser 는 관리자 권한 언급이 없음(문서가 LocalMachine 에만 관리자 요구를 적음)",
+        "공식 예시 명령: Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser (venv 문서와 동일). 확인: Get-ExecutionPolicy / Get-ExecutionPolicy -List",
+        "정책 변경은 즉시 적용되며 PowerShell 재시작이 필요 없다. 단 Process 범위로 설정하면 파일에 저장되지 않고 현재 프로세스·자식 프로세스가 닫히면 사라진다",
+        "변경 명령이 성공해도 유효 정책이 안 바뀔 수 있음 — 예: LocalMachine 에 설정했는데 CurrentUser 정책이 덮어씀. Group Policy 'Turn on Script Execution' 이 있으면 모든 범위의 PowerShell 설정을 덮어씀",
+        "정책을 되돌리려면 Undefined 로 설정: Set-ExecutionPolicy -ExecutionPolicy Undefined -Scope CurrentUser",
+        "이 페이지는 PowerShell 7.6 기준(다른 버전 링크: 5.1, 7.4, 7.5, 7.7). 윈도우 기본 내장 'Windows PowerShell' 은 5.1 인데 5.1 페이지 본문은 읽지 않음"
+      ]
+    },
+    {
+      "title": "pip freeze — pip documentation v26.2.1",
+      "url": "https://pip.pypa.io/en/stable/cli/pip_freeze/",
+      "host": "pip.pypa.io",
+      "body": "pip documentation v26.2.1 — pip freeze. Usage: Unix/macOS `python -m pip freeze [options]`; Windows `py -m pip freeze [options]`. Description: 'Output installed packages in requirements format. packages are listed in a case-insensitive sorted order.' Note: 'By default, pip freeze omits bootstrap packaging tools so the output focuses on your project's dependencies.' On Python 3.11 and earlier this excludes pip, setuptools, wheel and distribute; on Python 3.12 and later only pip is excluded. 'Use --all to include those packages when you need a complete environment snapshot.' 'pip freeze reports what is installed; it does not compute a lockfile or a solver result.' Options: --all ('Do not skip these packages in the output: pip, distribute, wheel, setuptools'), --exclude <package> ('Exclude specified package from the output'), --exclude-editable ('Exclude editable package from output.'). Examples: 'Generate output suitable for a requirements file' (python -m pip freeze → e.g. Jinja2==2.7.2, Sphinx==1.2.2). 'Generate a requirements file and then install from it in another environment': `env1/bin/python -m pip freeze > requirements.txt` then `env2/bin/python -m pip install -r requirements.txt`.",
+      "tier": "official",
+      "publishedAt": null,
+      "facts": [
+        "pip freeze 는 설치된 패키지를 requirements 형식으로 출력하고 대소문자 구분 없는 정렬 순서로 나열(pip v26.2.1 문서)",
+        "기본 제외 패키지: Python 3.11 이하는 pip, setuptools, wheel, distribute 제외 / Python 3.12 이상은 pip 만 제외. --all 로 전부 포함",
+        "'pip freeze 는 설치된 것을 보고할 뿐, lockfile 이나 의존성 solver 결과를 계산하지 않는다'",
+        "공식 예시: env1/bin/python -m pip freeze > requirements.txt → env2/bin/python -m pip install -r requirements.txt (다른 환경에서 재설치)",
+        "옵션 --exclude <package>, --exclude-editable 로 출력에서 특정 패키지·editable 설치 제외 가능"
+      ]
+    },
+    {
+      "title": "User Guide — Requirements Files (pip documentation v26.2.1)",
+      "url": "https://pip.pypa.io/en/stable/user_guide/",
+      "host": "pip.pypa.io",
+      "body": "pip documentation v26.2.1 — User Guide, Requirements Files. '“Requirements files” are files containing a list of items to be installed using pip install like so:' Unix/macOS `python -m pip install -r requirements.txt`; Windows `py -m pip install -r requirements.txt`. 'Details on the format of the files are here: Requirements File Format.' 'Logically, a Requirements file is just a list of pip install arguments placed in a file. Note that you should not rely on the items in the file being installed by pip in any particular order.' Requirements files can be served from a URL as well as from local files, so that they can be stored and served in a centralized place. First common use: 'Requirements files are used to hold the result from pip freeze for the purpose of achieving Repeatable Installs. In this case, your requirement file contains a pinned version of everything that was installed when pip freeze was run.' Commands: Unix/macOS `python -m pip freeze > requirements.txt` and `python -m pip install -r requirements.txt`; Windows `py -m pip freeze > requirements.txt` and `py -m pip install -r requirements.txt`.",
+      "tier": "official",
+      "publishedAt": null,
+      "facts": [
+        "pip 공식 사용자 가이드: requirements 파일은 'pip install 인자를 파일에 담은 목록'이며 설치 순서를 보장하지 않는다(should not rely on the items being installed in any particular order)",
+        "pip freeze 결과를 requirements 파일에 담는 용도가 Repeatable Installs(재현 가능한 설치) — 파일에는 pip freeze 시점에 설치돼 있던 모든 것의 고정(pinned) 버전이 들어간다",
+        "macOS/Linux = python -m pip freeze > requirements.txt , python -m pip install -r requirements.txt / Windows = py -m pip freeze > requirements.txt , py -m pip install -r requirements.txt (pip 26.2.1 문서 표기)"
+      ]
+    },
+    {
+      "title": "4. Using Python on Windows — Python 3.14.8 documentation",
+      "url": "https://docs.python.org/3/using/windows.html",
+      "host": "docs.python.org",
+      "body": "Using Python on Windows (Python 3.14.8 documentation). 4.1.2 Basic use: 'For all scenarios involving multiple runtime versions, the recommended command is py. This may be used anywhere in place of python or the older py.exe launcher. By default, py matches the behaviour of python, but also allows command line options to select a specific version as well as subcommands to manage installations.' 'The only difference between the two commands is when running without any arguments: py will launch your default interpreter, while pymanager will display help (pymanager exec ... provides equivalent behaviour to py ...).' Example: `py -m this`. To launch a specific runtime: `py -V:3.14 ...` (the V: may be omitted when the tag refers to an official release and starts with 3). Installed runtimes: `py list`; for compatibility with the old launcher `--list`, `--list-paths`, `-0`, `-0p` are retained and produce legacy formatted output. The legacy launcher section is marked 'Deprecated since version 3.14: The launcher and this documentation have been superseded by the Python Install Manager described above.' Note: 'The legacy launcher's py command will override PyManager's one by default.' On the default command: 'The recommended command for launching Python is python, which will either launch the version requested by the script being launched, an active virtual environment, or the default installed version, which will be the latest stable release unless configured otherwise.' Troubleshooting: 'python gives me a command not found error or opens the Store app when I type it in my terminal. Click Start, open Manage app execution aliases, and check that the aliases for Python (default) are enabled... Ensure your PATH variable contains the entry for %UserProfile%\\AppData\\Local\\Microsoft\\WindowsApps.' In general, we recommend that you create a virtual environment for each project and run <env>\\Scripts\\Activate in your terminal to use it. Create a virtual environment using `python -m venv <env path>`.",
+      "tier": "official",
+      "publishedAt": null,
+      "facts": [
+        "Python 3.14 Windows 문서: '여러 런타임 버전이 얽힌 모든 시나리오에서 권장 명령은 py' — python 이나 옛 py.exe 런처 자리에 어디서든 쓸 수 있고, 기본적으로 python 과 동작이 같되 버전 선택 옵션·설치 관리 하위 명령을 추가로 제공",
+        "py -3 는 3.14 문서의 새 설치 관리자(Python install manager) 절에는 문서화돼 있지 않고 deprecated 된 옛 런처 절에만 등장. 새 방식은 py -V:3.14 (공식 릴리스이면서 3 으로 시작하는 태그는 V: 생략 가능)",
+        "설치된 런타임 목록은 py list. 옛 런처 호환용 --list, --list-paths, -0, -0p 도 유지(레거시 형식 출력)",
+        "옛 Python launcher 는 'Deprecated since version 3.14' — Python Install Manager 로 대체. 단 옛 런처가 같이 깔려 있으면 py 명령은 옛 런처가 우선하며 'can't open file' 오류가 날 수 있음(해결: 설치된 앱에서 'Python launcher' 제거)",
+        "Windows 에서 python 입력 시 'command not found' 또는 Microsoft Store 가 열리면: 시작 > 'Manage app execution aliases' 에서 'Python (default)' 별칭이 켜져 있는지 확인, PATH 에 %UserProfile%\\AppData\\Local\\Microsoft\\WindowsApps 가 있는지 확인",
+        "Windows 문서도 프로젝트마다 가상환경을 만들고 터미널에서 <env>\\Scripts\\Activate 를 실행하라고 권장하며 생성은 python -m venv <env path>",
+        "이 페이지 텍스트는 103,047자인데 앞 100,000자까지만 읽었고 마지막 3,047자는 미확인. 이 페이지에는 'py -m venv' 문자열이 직접 나오지 않음(py 가 python 을 대체할 수 있다는 일반 설명만 있음)"
+      ]
+    },
+    {
+      "title": "github/gitignore — Python.gitignore",
+      "url": "https://raw.githubusercontent.com/github/gitignore/main/Python.gitignore",
+      "host": "raw.githubusercontent.com",
+      "body": "github/gitignore 저장소의 Python.gitignore 템플릿 일부(# Environments 절 이후, WebFetch 로 읽은 그대로): `# ActiveMQ / activemq-data/ / # SageMath parsed files / *.sage.py / # Environments / .env / .envrc / .venv / env/ / venv/ / ENV/ / env.bak/ / venv.bak/ / # Spyder project settings / .spyderproject / .spyproject / # Rope project settings / .ropeproject / # mkdocs/Zensical documentation / /site / # mypy / .mypy_cache/ / .dmypy.json / dmypy.json / # Pyre type checker / .pyre/ / # pytype static type analyzer / .pytype/`. 파일 첫 줄은 '# Byte-compiled / optimized / DLL files' 이며 별도 헤더 블록은 없음. 총 줄 수는 확인 불가.",
+      "tier": "data",
+      "publishedAt": null,
+      "facts": [
+        "GitHub 공식 gitignore 템플릿(Python.gitignore)의 '# Environments' 절에는 .env, .envrc, .venv, env/, venv/, ENV/, env.bak/, venv.bak/ 가 들어 있다 — 즉 .venv/ venv/ 같은 가상환경 폴더가 기본으로 무시 대상",
+        "같은 파일에 .mypy_cache/, .pyre/, .pytype/ 등 도구 캐시도 포함(가상환경과 별개)"
+      ]
+    }
+  ],
+  "dropped": [
+    {
+      "url": null,
+      "why": "raw 에 URL 이 없음 — \"Activate.ps1 cannot be loaded...\" 오류 문구 WebSearch 결과의 개인 블로그·포럼. 본문을 읽지 않아 근거로 쓸 수 없음(원 조사 단계에서 sources 제외)."
+    },
+    {
+      "url": null,
+      "why": "raw 에 URL 이 없음 — Enthought 지원 문서. WebFetch 404(raw unknowns 기록)."
+    },
+    {
+      "url": null,
+      "why": "raw 에 URL 이 없음 — \"ensurepip is not available\"/python3-venv 검색에 잡힌 포럼·버그 트래커. 본문 미열람, 공식 Debian/Ubuntu 문서 아님."
+    }
+  ],
+  "searchedAt": "2026-10-08",
+  "versionBasis": "Python 3.14.8 문서(docs.python.org/3 가 3.14 로 해석됨, 푸터 'Last updated on Oct 07, 2026'), pip 26.2.1 문서, PowerShell 7.6 문서(모니커 powershell-7.6, ms.date 2026-08-31). venv 모듈 자체는 'Added in version 3.3'.",
+  "songs": []
+}

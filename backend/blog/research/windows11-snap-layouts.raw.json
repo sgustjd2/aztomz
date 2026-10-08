@@ -1,0 +1,285 @@
+{
+  "keyword": "윈도우 11 화면 분할 (스냅 레이아웃, Win+방향키, Win+Z, 스냅 그룹, 끄는 법)",
+  "categoryId": "hangeut-trend",
+  "searchedAt": "2026-10-08",
+  "queries": [
+    "Snap your windows Windows 11 snap layouts support.microsoft.com",
+    "Windows에서 창 스냅 스냅 레이아웃 support.microsoft.com ko-kr",
+    "Windows 11 snap layouts number of layouts depends on screen size effective pixels width 1920 Windows Insider blog",
+    "blogs.windows.com Windows Insider snap layouts suggestions snap bar maximize button flyout Windows 11 build",
+    "learn.microsoft.com Windows 11 snap layouts snap groups multitasking settings enterprise policy snap",
+    "Windows 11 25H2 or 24H2 snap layouts change Snap Windows Insider blog 2025 snap bar inline tips build 26100.4770",
+    "윈도우 11 화면 분할 스냅 레이아웃 Win+Z 끄는 방법 설정 시스템 멀티태스킹 창 스냅",
+    "윈도우 11 설정 시스템 멀티태스킹 창 끌기 최대화 단추 끌기 레이아웃 표시 Microsoft 지원",
+    "Windows 11 2026 snap layouts new change Windows Insider snap bar snap assist update",
+    "Windows 11 turn off Snap windows does Win+Left Win+Right keyboard snapping still work after disabling",
+    "Windows 11 Win+Z snap layouts press number key choose layout then zone keyboard"
+  ],
+  "sources": [
+    {
+      "title": "Snap Your Windows (Microsoft Support, en-US) — 적용 대상 Windows 11·10",
+      "url": "https://support.microsoft.com/en-us/windows/snap-your-windows-885a9b1e-a983-a3b1-16cd-c531795e6241",
+      "host": "support.microsoft.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "[WebFetch 추출 — 원문 요지] Snap layouts: Open the Snap flyout by hovering over a window's restore or maximize button, or by pressing Windows key + Z. Select a layout, and Snap Assist then fills the rest. Drag a window to the top of the screen to show the Snap bar. 'Depending on the size of your display, you might see different predetermined layouts.' Win + Arrow keys: Press and hold the Windows Logo Key + an arrow key to snap the current app; Left, Right, Up, Down position it on that side of the screen; keep pressing arrow keys to adjust the position, then release the Windows Logo Key to place the window. Snap Assist: after you snap one window, thumbnails of your other open windows appear; select one to snap it to the other half of the screen. Snap groups: formed automatically when you snap multiple windows together; hover over a taskbar app icon that belongs to a group to restore the whole group or just that app; groups also appear in Task View and Alt + Tab. Settings > System > Multitasking > 'Snap windows' toggle, expand it; checkboxes: 'When I snap a window, show what I can snap next to it'; 'Show snap layouts when I hover over a window's maximize button'; 'Show snap layouts when I drag a window to the top of my screen'; 'Show my snapped windows when I hover over the taskbar apps, in Task View, and when I press Alt + Tab'; 'When I drag a window, let me snap it without dragging all the way to the screen edge'. Windows 10 version of the page lists only three options: 'When I snap a window, automatically size it to fill available space', 'When I snap a window, show what I can snap next to it', 'When I resize a snapped window, simultaneously resize any adjacent snapped window'; it does not mention snap layouts / flyout / Snap bar / Snap groups. Note on page: support for Windows 10 ended October 14, 2025. Page has no publication/update date; footer © Microsoft 2026.",
+      "facts": [
+        "스냅 레이아웃(Snap flyout)은 창의 복원/최대화 버튼에 마우스를 올리거나 Windows 키 + Z 로 연다 (en-US 원문: hover over a window's restore or maximize button, or press Windows key + Z).",
+        "창을 화면 맨 위로 끌면 Snap bar(스냅 막대)가 나타나 레이아웃을 고를 수 있다.",
+        "원문: 'Depending on the size of your display, you might see different predetermined layouts.' — 디스플레이 크기에 따라 보이는 미리 정해진 레이아웃이 달라질 수 있다(구체적 개수·기준 수치는 이 문서에 없음).",
+        "Windows 로고 키 + 방향키를 길게 누르면 현재 앱이 스냅되고, 방향키를 계속 눌러 위치를 조정한 뒤 Windows 키를 놓으면 확정된다.",
+        "스냅 그룹은 여러 창을 함께 스냅하면 자동 생성되며, 작업 표시줄의 해당 앱 아이콘에 마우스를 올리면 그룹 전체 또는 해당 앱만 복원할 수 있고 작업 보기·Alt+Tab 화면에도 표시된다.",
+        "설정 경로(en-US): Settings > System > Multitasking > 'Snap windows' 토글을 켜고 펼치면 체크박스 5개(스냅 어시스트 / 최대화 버튼 hover 레이아웃 / 화면 맨 위로 끌 때 레이아웃 / 스냅 그룹 표시 / 화면 가장자리까지 안 끌어도 스냅)가 나온다.",
+        "Windows 10 판 문서의 스냅 옵션은 3개뿐이고 스냅 레이아웃·Snap bar·스냅 그룹 설명이 없다. 문서에 'Windows 10 지원은 2025년 10월 14일 종료'라고 명시."
+      ]
+    },
+    {
+      "title": "창 스냅 (Microsoft 지원, ko-KR) — 적용 대상 Windows 11·10",
+      "url": "https://support.microsoft.com/ko-kr/windows/windows-%EB%81%8C%EA%B8%B0-885a9b1e-a983-a3b1-16cd-c531795e6241",
+      "host": "support.microsoft.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "[WebFetch 추출 — 한국어 원문 인용] 스냅 레이아웃 열기: 창의 최대화 단추 위에 마우스를 올리거나 Windows 키 + Z 를 누르면 스냅 플라이아웃이 열린다. 창을 화면 맨 위로 끌면 스냅 막대가 나타난다. '디스플레이 크기에 따라 미리 결정된 레이아웃이 다를 수 있습니다.' 키보드: 'Windows 로고 키 + 화살표를 길게 눌러 사용 중인 앱을 스냅합니다.' 스냅 도우미: 창을 한쪽에 스냅하면 열려 있는 다른 창의 축소판이 표시된다. 스냅 그룹: '스냅 그룹의 일부인 작업 표시줄의 앱 아이콘 위로 마우스를 가져가기만 하면 전체 그룹 또는 해당 앱만 복원할 수 있는 옵션이 표시됩니다.' 작업 보기와 Alt + Tab 화면에도 표시. 설정: '시스템' > '멀티태스킹' > '창 스냅' 토글. Windows 11 체크박스(원문 그대로): 1) '창을 스냅할 때 옆에 스냅할 수 있는 항목을 표시합니다.' 2) '창의 최대화 단추 위로 마우스를 가져가면 스냅 레이아웃 표시' 3) '창을 화면 맨 위로 끌 때 끌기 레이아웃 표시 스냅 막대' 4) '작업 보기에서 작업 표시줄 앱 위로 마우스를 가져가거나 Alt + Tab을 누르면 스냅된 창 표시' 5) '창을 끌 때 화면 가장자리까지 끌지 않고 스냅할 수 있습니다.' Windows 10 체크박스: '창을 맞추면 사용 가능한 공간을 채우도록 자동으로 크기를 조정합니다' / '창을 스냅할 때 옆에 스냅할 수 있는 항목을 표시합니다.' / '스냅된 창의 크기를 조정할 때 인접한 스냅된 창의 크기를 동시에 조정합니다.' Windows 10 지원은 2025년 10월 14일에 종료.",
+      "facts": [
+        "한국어 문서 제목은 '창 스냅'이고 URL 슬러그에는 '끌기'가 남아 있다(…/windows-끌기-885a9b1e-…) — 한국어 번역 용어가 '끌기'와 '스냅'으로 섞여 있다.",
+        "한국어 설정 경로: '시스템' > '멀티태스킹' > '창 스냅' 토글(en-US 'Snap windows'에 대응). 체크박스 5개의 한국어 문구는 body에 원문 그대로 남김.",
+        "한국어 체크박스 3번은 '창을 화면 맨 위로 끌 때 끌기 레이아웃 표시 스냅 막대'로 어순이 뒤섞여 있음 — en-US 원문은 'Show snap layouts when I drag a window to the top of my screen'.",
+        "한국어 문서도 'Windows 로고 키 + 화살표를 길게 눌러 사용 중인 앱을 스냅합니다'라고 안내하고, 레이아웃은 '디스플레이 크기에 따라 …다를 수 있습니다'라고만 쓴다(수치 없음).",
+        "Windows 10 체크박스는 3개: 사용 가능한 공간 자동 채우기 / 옆에 스냅할 항목 표시 / 인접 스냅 창 동시 크기 조정. Windows 10 지원 종료일 2025-10-14."
+      ]
+    },
+    {
+      "title": "How to multitask in Windows (Microsoft Support)",
+      "url": "https://support.microsoft.com/en-us/windows/how-to-multitask-in-windows-b4fa0333-98f8-ef43-e25c-06d4fb1d6960",
+      "host": "support.microsoft.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "[WebFetch 추출 — 원문 요지] 'Applies To: Windows 11, Windows 10'. Snap 설명: 'The Snap feature allows you to quickly resize and position windows on your screen by dragging them to the edges or corners.' Snap by dragging a window to the edge, or by pressing the 'Windows key + Arrow keys.' 'Windows key + Left Arrow snaps the window to the left half of the screen'; Right Arrow snaps a window to the right half of the screen. 'After you snap a window, Snap Assist will display thumbnails of your other open windows.' Multitasking 설정: 'select System > Multitasking' (page links to ms-settings:multitasking). 설정 이름: 'Show tabs from apps when snapping or pressing Alt+Tab' — 옵션 'Don't show tabs' (현재 데스크톱의 열린 창만 전환) / 'N most recent tabs' (최근 Microsoft Edge 탭 일정 수 포함). 이 페이지는 스냅 레이아웃·스냅 그룹을 언급하지 않는다.",
+      "facts": [
+        "Windows 키 + ← 는 창을 화면 왼쪽 절반, → 는 오른쪽 절반에 스냅한다(원문: 'snaps the window to the left half of the screen').",
+        "설정 > 시스템 > 멀티태스킹 에는 'Show tabs from apps when snapping or pressing Alt+Tab' 설정이 있고, 'Don't show tabs' 또는 'N most recent tabs'(최근 Edge 탭 N개 포함) 중에서 고른다.",
+        "스냅 후 스냅 어시스트가 열린 다른 창의 축소판을 보여준다 — 이 기능은 Windows 10·11 공통 문서에 적혀 있다."
+      ]
+    },
+    {
+      "title": "Keyboard shortcuts in Windows (Microsoft Support, en-US) — Windows key shortcuts",
+      "url": "https://support.microsoft.com/en-us/windows/keyboard-shortcuts-in-windows-dcc61a57-8ff0-cffe-9796-cb9706c75eec",
+      "host": "support.microsoft.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "[WebFetch 추출 — Windows key 표, 원문 인용] Windows 11 탭: Win+Alt+Down arrow: 'Snap the active window to the bottom half of the screen.' / Win+Alt+Up arrow: 'Snap the active window to the top half of the screen.' / Win+Down arrow: 'Minimize the active window.' / Win+Left arrow: 'Snap the window to the left side of the screen.' / Win+Right arrow: 'Snap the window to the right side of the screen.' / Win+Shift+Down arrow: 'If a window is snapped or maximized, restore it.' / Win+Shift+Left arrow: 'Move the active window to the monitor on the left.' / Win+Shift+Right arrow: 'Move the active window to the monitor on the right.' / Win+Shift+Up arrow: 'Stretch the desktop window to the top and bottom of the screen.' / Win+Home: 'Minimize or restore all windows except the active window.' / Win+Up arrow: 'Maximize the active window.' / Win+Z: 'Open the snap layouts.' Windows 10 탭: Win+Up 'Maximize the window.' / Win+Down 'Remove current app from screen or minimize the desktop window.' / Win+Left 'Maximize the app or desktop window to the left side of the screen.' / Win+Right '...to the right side of the screen.' / Win+Home 'Minimize all except the active desktop window (restores all windows on second stroke).' / Win+Shift+Down 'Restore or minimize active desktop windows vertically, maintaining width.' / Win+Shift+Left or Right 'Move an app or window in the desktop from one monitor to another.'",
+      "facts": [
+        "Windows 11: Win+Z = 'Open the snap layouts.', Win+← = 화면 왼쪽에 스냅, Win+→ = 오른쪽에 스냅, Win+↑ = 활성 창 최대화, Win+↓ = 활성 창 최소화.",
+        "Windows 11 표에는 Win+Alt+↑ = 위쪽 절반, Win+Alt+↓ = 아래쪽 절반 스냅이 따로 적혀 있다(도입 빌드는 문서에 없음).",
+        "Windows 11: Win+Shift+↓ = 스냅되거나 최대화된 창을 복원, Win+Shift+←/→ = 활성 창을 왼쪽/오른쪽 모니터로 이동, Win+Home = 활성 창 외 모든 창 최소화/복원.",
+        "Windows 10 표에서는 Win+←/→ 가 'Maximize the app or desktop window to the left/right side'로 표현되고, Win+Z 는 스냅 레이아웃이 아니라 전체 화면 앱 명령 표시(ko-KR 문서 기준)다."
+      ]
+    },
+    {
+      "title": "Windows의 바로 가기 키 / 키보드 단축키 (Microsoft 지원, ko-KR) — Windows 키 바로 가기",
+      "url": "https://support.microsoft.com/ko-kr/windows/windows-%ED%82%A4%EB%B3%B4%EB%93%9C-%EB%8B%A8%EC%B6%95%ED%82%A4-dcc61a57-8ff0-cffe-9796-cb9706c75eec",
+      "host": "support.microsoft.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "[WebFetch 추출 — 한국어 표 원문 인용] Windows 11 탭: Windows 키+Alt+아래쪽 화살표 '활성 창을 화면 아래쪽 절반에 맞춥니다.' / Windows 키+Alt+위쪽 화살표 '활성 창을 화면 위쪽 절반에 맞춥니다.' / Windows 키+Shift+왼쪽 화살표 '활성 창을 왼쪽 모니터로 이동합니다.' / Windows 키+Shift+오른쪽 화살표 '활성 창을 오른쪽에 있는 모니터로 이동합니다.' / Windows 키+Shift+위쪽 화살표 '바탕 화면 창을 화면 위쪽 및 아래쪽으로 벌립니다.' / Windows 키+Shift+아래쪽 화살표 '창이 스냅되거나 최대화된 경우 복원합니다.' / Windows 키+왼쪽 화살표 '창을 화면 왼쪽에 맞춥니다.' / Windows 키+오른쪽 화살표 '창을 화면 오른쪽에 맞춥니다.' / Windows 키+위쪽 화살표 '활성 창을 최대화합니다.' / Windows 키+아래쪽 화살표 '현재 창을 최소화합니다.' / Windows 키+홈 '활성 창을 제외한 모든 창을 최소화하거나 복원합니다.' / Windows 키+Z '스냅 레이아웃을 엽니다.' Windows 10 탭: Windows 키+왼쪽 화살표 '앱이나 바탕 화면 창을 화면의 왼쪽으로 최대화합니다.' / Windows 키+오른쪽 화살표 '...화면의 오른쪽으로 최대화합니다.' / Windows 키+위쪽 화살표 '창을 최대화합니다.' / Windows 키+아래쪽 화살표 '화면에서 현재 앱을 제거하거나, 바탕 화면 창을 최소화합니다.' / Windows 키+Z '전체 화면 모드에서 앱에서 사용 가능한 명령을 표시합니다.'",
+      "facts": [
+        "ko-KR 문서 Windows 11 탭: 'Windows 키+Z — 스냅 레이아웃을 엽니다.', 'Windows 키+왼쪽/오른쪽 화살표 — 창을 화면 왼쪽/오른쪽에 맞춥니다.'",
+        "ko-KR 문서 Windows 11 탭: 'Windows 키+위쪽 화살표 — 활성 창을 최대화합니다.', '아래쪽 화살표 — 현재 창을 최소화합니다.', 'Windows 키+Alt+위쪽/아래쪽 화살표 — 활성 창을 화면 위쪽/아래쪽 절반에 맞춥니다.'",
+        "ko-KR 문서 Windows 10 탭: 'Windows 키+Z — 전체 화면 모드에서 앱에서 사용 가능한 명령을 표시합니다.' — Windows 10 에서 Win+Z 는 스냅 레이아웃이 아니다.",
+        "ko-KR 문서는 한국어에서 '스냅'을 '맞춥니다'로 옮기고 'Snap windows' 토글을 '창 스냅'으로 옮겨, 같은 기능을 '맞춤/스냅/끌기'로 섞어 쓴다."
+      ]
+    },
+    {
+      "title": "Support snap layouts for desktop apps on Windows 11 (Microsoft Learn, ms.date 2026-06-16)",
+      "url": "https://learn.microsoft.com/en-us/windows/apps/desktop/modernize/ui/apply-snap-layout-menu",
+      "host": "learn.microsoft.com",
+      "tier": "official",
+      "publishedAt": "2026-06-16",
+      "body": "[WebFetch 추출 — 원문 인용] 'Snap layouts are a new Windows 11 feature to help introduce users to the power of window snapping. Snap layouts are easily accessible by hovering the mouse over a window's maximize button or pressing Win + Z. After invoking the menu that shows the available layouts, users can click on a zone in a layout to snap a window to that particular zone and then use Snap Assist to finish building an entire layout of windows. Snap layouts are tailored to the current screen size and orientation, including support for three side-by-side windows on large landscape screens and top/bottom stacked windows on portrait screens.' 'If the app's window has the maximize caption button available, the system will automatically show snap layouts when a user hovers the mouse over the window's maximize button. Snap layouts will appear automatically for most apps, but some desktop apps may not show snap layouts.' 앱 개발자용: custom title bar 이면 WM_NCHITTEST 에서 HTMAXBUTTON 반환 필요, Electron 은 v13 stable 이상. 'Your app should support a minimum width of at most 500 effective pixels (epx) to support snap layouts across the most common screen sizes. However, we recommend ... 330 epx or less.' 메타: ms.date 2026-06-16, updated_at 2026-06-17.",
+      "facts": [
+        "MS Learn(2026-06-16 기준): 스냅 레이아웃은 현재 화면 크기와 방향에 맞춰 달라지며, 큰 가로 화면에서는 창 3개 나란히, 세로 화면에서는 위/아래 배치를 지원한다 — 구체적인 인치·픽셀 기준은 없음.",
+        "스냅 레이아웃을 쓰려면 앱의 최소 창 너비는 최대 500 effective pixels(epx) 이하여야 하고, 권장은 330 epx 이하(그보다 크면 영역에 맞게 스냅되지 않을 수 있음).",
+        "최대화 캡션 버튼이 있는 대부분의 앱은 자동으로 스냅 레이아웃이 뜨지만, 커스텀 타이틀바 앱 일부는 뜨지 않을 수 있다(Electron 은 v13 이상 필요).",
+        "스냅 레이아웃에서 칸을 클릭하면 창이 그 칸에 스냅되고, 이어서 스냅 어시스트로 나머지 칸을 채운다."
+      ]
+    },
+    {
+      "title": "Announcing the first Insider Preview for Windows 11 (Windows Insider Blog, 2021-06-28)",
+      "url": "https://blogs.windows.com/windows-insider/2021/06/28/announcing-the-first-insider-preview-for-windows-11/",
+      "host": "blogs.windows.com",
+      "tier": "official",
+      "publishedAt": "2021-06-28",
+      "body": "[WebFetch 추출 — 원문 인용] Snap layouts: 'Just hover your mouse over a window's maximize button to see available snap layouts' — 칸을 클릭하면 창이 스냅되고 'You'll then be guided to snap windows to the rest of the zones within the layout with guided snap assist.' 'For smaller screens, you'll be offered a set of 4 snap layouts.' 'You can also invoke the snap layouts flyout with the WIN + Z keyboard shortcut.' Snap groups: 'Snap groups are a way to easily switch back to your snapped windows.' 'To try this out, snap together at least 2 app windows on your screen.' 'Hover over one of these open apps on the Taskbar to find the snap group and click to quickly switch back.' Desktops: 'Access your Desktops via Task View (WIN + Tab) on the Taskbar.' 글 게시일 June 28, 2021 (Windows 11 첫 Insider Preview 발표). 이 글은 6개 레이아웃이나 큰 화면 기준은 언급하지 않는다.",
+      "facts": [
+        "Windows 11 첫 Insider Preview 발표(2021-06-28) 글: 작은 화면에서는 스냅 레이아웃 4종 제공('For smaller screens, you'll be offered a set of 4 snap layouts.').",
+        "같은 글: WIN + Z 로 스냅 레이아웃 flyout 을 연다. 이미 2021년 첫 발표 때부터 Win+Z 가 단축키였다.",
+        "스냅 그룹은 '최소 2개 앱 창을 함께 스냅'하면 만들어지고, 작업 표시줄에서 그 앱 위에 마우스를 올려 그룹을 찾아 클릭하면 빠르게 돌아간다.",
+        "작업 보기(Task View)는 WIN + Tab 으로 연다."
+      ]
+    },
+    {
+      "title": "Announcing Windows 11 Insider Preview Build 22635.3130 (Beta Channel) — Snap Layouts suggestions (2024-01-25)",
+      "url": "http://blogs.windows.com/windows-insider/2024/01/25/announcing-windows-11-insider-preview-build-22635-3130-beta-channel/",
+      "host": "blogs.windows.com",
+      "tier": "official",
+      "publishedAt": "2024-01-25",
+      "body": "[WebFetch 추출 — 원문 요지] 2024년 1월 25일 게시, Windows 11 Insider Preview Build 22635.3130 (KB5034218), Beta Channel. 'Changes and Improvements gradually being rolled out to the Beta Channel with toggle on' 항목. 'We will show suggestions in Snap Layouts that help you instantly snap multiple app windows together.' 'When hovering over the Minimize or Maximize button on an app (or WIN + Z) to launch the layout box', 레이아웃 옵션 안에 앱 아이콘이 표시되어 최적 배치를 제안한다. Settings > Windows Update 의 'get the latest updates as they are available' 토글을 켠 Insider 가 먼저 받고, 토글을 끈 사용자는 준비되면 점진적으로 받는다.",
+      "facts": [
+        "2024-01-25 Beta 빌드 22635.3130(KB5034218): 스냅 레이아웃에 '여러 앱 창을 한 번에 스냅하도록 돕는 제안'이 추가 — 레이아웃 칸 안에 앱 아이콘이 표시된다(점진 배포).",
+        "이 글은 레이아웃 박스를 'Minimize 또는 Maximize 버튼에 마우스를 올리거나(WIN + Z)' 열 수 있다고 쓴다 — 지원 문서는 'restore 또는 maximize 버튼'이라고 쓴다."
+      ]
+    },
+    {
+      "title": "July 22, 2025—KB5062660 (OS Build 26100.4770) Preview — Snap 인라인 팁",
+      "url": "https://support.microsoft.com/en-us/topic/july-22-2025-kb5062660-os-build-26100-4770-preview-9c5bc200-52b6-4c1a-be70-80df6bbfe9c3",
+      "host": "support.microsoft.com",
+      "tier": "official",
+      "publishedAt": "2025-07-22",
+      "body": "[WebFetch 추출 — 원문 인용] Highlights 의 [Snap] 항목(표시 'New!'): 'Improvements make it easier to learn and use Snap in Windows 11.' 'Inline messages now appear when you accidentally open the Snap Bar by dragging an app to the upper center of your desktop' (이어서 최대화/최소화 버튼에 마우스를 올려 Snap 메뉴를 열었을 때도 동일). 'These messages provide helpful tips on Snap app windows and show keyboard shortcuts.' 업데이트 날짜 July 22, 2025, OS Build 26100.4770 (KB5062660, Windows 11 24H2, Preview). 이 페이지는 Snap 항목의 점진 배포 여부를 따로 명시하지 않는다.",
+      "facts": [
+        "2025-07-22 KB5062660(OS Build 26100.4770, Windows 11 24H2 미리보기 업데이트): 스냅 바를 실수로 열면 인라인 메시지로 팁과 키보드 단축키를 보여주도록 개선.",
+        "'upper center of your desktop'로 창을 끌 때 Snap 바가 열린다 — 즉 Snap 바는 화면 위쪽 가운데로 끌 때 나온다는 설명이다."
+      ]
+    },
+    {
+      "title": "How to: Use Snap Layouts and Snap groups in Windows 11 (Microsoft Q&A, 커뮤니티 모더레이터 글, 2025-07-02)",
+      "url": "https://learn.microsoft.com/en-us/answers/questions/2337358/how-to-use-snap-layouts-and-snap-groups-in-windows",
+      "host": "learn.microsoft.com",
+      "tier": "blog",
+      "publishedAt": "2025-07-02",
+      "body": "[WebFetch 추출] 작성자 'Sumit'(Volunteer Moderator, 커뮤니티 — Microsoft 직원 아님), 2025-07-02. 'To invoke snap layouts, on the active Window, either press Windows key+Z or hover over the maximize button.' 'When the first app is snapped, Snap Assist would show up, asking you to select the app you want to snap on the second layout.' Snap groups: 'In the taskbar, it displays the title as Group.' 'Snap groups remember the layouts used when multiple apps have been snapped mutually into a group using the Snap Layouts feature so that you can quickly resume where you left off.' 'On traditional displays, you would see four layout choices and for ultrawide screens, you would see six layout choices.' 설정: 'Open Settings>System. Navigate to Multi-tasking. Turn off the settings you like, under snapping.' (개별 토글 이름은 없음) 'Coming Soon' 절에 Insider 22557 이상 빌드의 상단 끌기 신기능 설명이 남아 있음(오래된 내용).",
+      "facts": [
+        "커뮤니티 모더레이터 글(비공식): '일반 디스플레이에서는 레이아웃 4개, 울트라와이드에서는 6개가 보인다'고 서술 — MS 공식 문서에는 이 수치가 없고 2021 Insider 블로그의 'smaller screens: 4'와만 맞는다.",
+        "같은 글: 스냅 그룹은 작업 표시줄에서 'Group'이라는 제목으로 표시된다고 서술."
+      ]
+    },
+    {
+      "title": "Microsoft Q&A: 'WIN+SHIFT+left/right arrow' 가 Snap windows 설정과 묶여 있음 (사용자 답변 모음, 2023-05 ~ 2024-11)",
+      "url": "https://learn.microsoft.com/en-us/answers/a/7450750",
+      "host": "learn.microsoft.com",
+      "tier": "blog",
+      "publishedAt": "2023-05-30",
+      "body": "[WebFetch 추출] 원 질문(2023-05-30, 익명): 'WIN + SHIFT + left/right arrow used to move windows between monitors.' 답변(익명 사용자, Microsoft 확인 아님): 2023-09-22 '(100+ 추천) What worked for me was to turn on the Snap windows setting.' Settings > System > Multitasking 에서 켜면 'The previously not working shorcuts started to work again right after. No restart needed.' 2024-09-21: 'disabling it removes my ability to Win+Shift+Left or Right'. 2024-11-11: 'if you disable all of the options below Snap Windows ... then all or at least most of the annoying behaviour of snap windows goes away ... And windows shift right or left arrow still works.' 페이지 정리: Win+Shift+Left/Right 는 'Snap windows' 메인 토글이 꺼지면 동작하지 않고, 토글을 켠 채 하위 옵션만 끄면 동작한다는 사용자 보고. Win+Up/Down, Win+R 은 질문자가 '된다'고만 언급, Snap 설정과의 관계는 페이지에 없음.",
+      "facts": [
+        "사용자 보고(비공식): 설정 > 시스템 > 멀티태스킹의 'Snap windows' 메인 토글을 끄면 Win+Shift+←/→(모니터 간 창 이동)가 안 되고, 다시 켜면 재시작 없이 바로 복구됐다(2023-09-22 답변 100+ 추천).",
+        "사용자 보고(비공식): 메인 토글은 켠 채 하위 옵션만 모두 끄면 자동 스냅 동작 대부분이 사라지면서 Win+←/→ 이동은 유지된다(2024-11-11 답변).",
+        "Win+←/→(스냅)·Win+Z 가 메인 토글 OFF 에서 동작하는지는 이 페이지에도 없다."
+      ]
+    },
+    {
+      "title": "[삼성 PC] 스냅 레이아웃(Snap Layout) 기능 사용 방법 (삼성전자서비스, 2022-01-07)",
+      "url": "https://www.samsungsvc.co.kr/solution/587292",
+      "host": "www.samsungsvc.co.kr",
+      "tier": "blog",
+      "publishedAt": "2022-01-07",
+      "body": "[WebFetch 추출 — 한국어, 제조사 지원 문서(Microsoft 아님)] 본문 요지: '새로운 기능인 Snap Layout(스냅 레이아웃) 기능이 Windows 11에 추가 되었으며'로 시작. 1) '실행된 창 우측 상단 [최대화] 버튼에 마우스 커서를 올려놓으면 [스냅 레이아웃] 설정 창이 나타납니다.' 2) '한 화면에 선택된 레이아웃의 구역으로 앱의 위치가 바뀌며 나머지 구역에 실행 중이던 앱 목록이 표시됩니다.' 3) '선택한 앱이 구역에 표시되며 한 화면에 두 앱이 모두 보이는 것을 확인 할 수 있습니다.' 참고: '※ 화면 사이즈 및 픽셀에 따라 적용 가능한 레이아웃이 다를 수 있습니다.' '모니터가 24인치 이상이거나 가로 해상도가 1920 pixel 이상인 경우 나타나는 레이아웃 형태입니다.' '※ 앱 별로 지원하는 최소 크기가 레이아웃의 크기와 다를 수 있으며, 이 경우 스냅 레이아웃에서 지정한 영역과 다르게 표시될 수 있습니다.' 조회수 8,058(수집 시점).",
+      "facts": [
+        "삼성전자서비스(2022-01-07): '화면 사이즈 및 픽셀에 따라 적용 가능한 레이아웃이 다를 수 있습니다', '모니터가 24인치 이상이거나 가로 해상도가 1920 pixel 이상인 경우 나타나는 레이아웃 형태' — 제조사 문서의 수치이며 MS 공식 문서에는 없는 기준.",
+        "같은 문서: 앱마다 지원하는 최소 크기가 레이아웃 칸보다 커서 지정 영역과 다르게 표시될 수 있다(MS Learn 의 500/330 epx 최소 너비 설명과 같은 맥락)."
+      ]
+    },
+    {
+      "title": "How to Snap apps on Windows 11 (Pureinfotech)",
+      "url": "https://pureinfotech.com/snap-keyboard-mouse-windows-11/",
+      "host": "pureinfotech.com",
+      "tier": "blog",
+      "publishedAt": "2024-03-06",
+      "body": "[WebFetch 추출] 키보드: Win + 좌/우 화살표로 포커스 창을 해당 쪽에 스냅 후 Snap Assist 로 다른 창 선택. 'Win + Left/Right + Up/Down snaps the window into a quarter of the screen.' Snap Layouts: Win + Z 로 flyout 을 열고 '숫자를 눌러 레이아웃을 고른 뒤 숫자를 눌러 칸(zone)을 고른다'. 마우스: 가장자리로 끌기, 모서리로 끌면 4분할(3~4개 창), 붙은 두 창의 가운데 경계를 끌어 크기 조절, 최대화 버튼 hover, 화면 위쪽으로 끌면 Snap Layouts 드롭다운. 'The available layouts will appear according to the screen size if you use Snap Layouts.' 레이아웃 개수는 사용자가 바꿀 수 없다. 버전 요건: 레이아웃 제안(AI)은 Moment 5 이후, 스냅 그룹·화면 위쪽 레이아웃·키보드 숫자 레이아웃은 22H2 이상. 끄기: Settings > System > Multitasking > 'Snap windows' 토글 OFF; 하위 옵션 'When I snap a window, suggest what I can snap next to it', 'Show snap layouts when I hover over a window's maximize button', 'Show snap layouts when I drag a window to the top of my screen', 'Show my snapped windows when I hover over taskbar apps, in Task View, and when I press Alt+Tab', 'When I drag a window, let me snap it without dragging all the way to the edge of the screen', 'Show Microsoft Edge tabs when snapping or pressing Alt + Tab'. 게시·갱신 2024-03-06.",
+      "facts": [
+        "(블로그) Win+Z 로 연 뒤 숫자 키로 레이아웃을 고르고 다시 숫자 키로 칸을 고르는 방식 — MS 공식 문서에서는 확인 못함(조사 한계에 기록). 이 글은 숫자 키 레이아웃이 22H2 이상 필요하다고 서술.",
+        "(블로그) Win+←/→ 로 좌/우 절반, 이어서 ↑/↓ 를 더하면 화면의 1/4(모서리)에 스냅된다 — Thurrott 도 같은 동작을 서술(별도 source).",
+        "(블로그) 'Show Microsoft Edge tabs when snapping or pressing Alt + Tab' 로 적었으나 MS 지원 문서의 해당 설정 이름은 'Show tabs from apps when snapping or pressing Alt+Tab' 이다(빌드/문서별 문구 차이)."
+      ]
+    },
+    {
+      "title": "Snap (23H2 + Moment 5) — Windows 11 Field Guide (Paul Thurrott, 2024-03-05)",
+      "url": "https://www.thurrott.com/books/windows-11-field-guide/multitasking/298820/snap-23h2-moment-5",
+      "host": "www.thurrott.com",
+      "tier": "press",
+      "publishedAt": "2024-03-05",
+      "body": "[WebFetch 추출] 저자 Paul Thurrott, 2024-03-05, 제목 'Snap (23H2 + Moment 5) (Archived)'. Snap layouts 는 'determine how multiple windows will be snapped' 하고, Moment 5 에서 'now offers layout suggestions based on which apps are currently open.' 모서리 스냅(화면의 25%): 왼쪽 위 모서리는 'type WINKEY + LEFT ARROW and then, while holding down WINKEY, type UP ARROW.' Win 키와 방향키를 계속 조합해 다른 위치로 옮길 수 있다. Snap groups 는 'helps you return to previously created Snap layouts.' Snap assist 는 스냅 후 나머지 공간을 채울 다른 열린 창을 보여준다. 발췌본이라 설정 경로·Win+Z·레이아웃 개수는 이 글에 없다.",
+      "facts": [
+        "Thurrott(2024-03-05): 모서리 스냅은 화면의 25% 를 차지하며, 왼쪽 위 모서리는 Win+← 를 누른 뒤 Win 을 누른 채 ↑ 를 누르는 순서로 만든다.",
+        "Thurrott: Moment 5 부터 스냅 레이아웃이 '현재 열려 있는 앱을 기준으로 한 레이아웃 제안'을 제공한다 — 2024-01-25 Insider 블로그 항목과 같은 기능."
+      ]
+    },
+    {
+      "title": "알아둘 만한 윈도우 11 단축키 8선 (CIO Korea, 2022-07-06)",
+      "url": "https://www.cio.com/article/3517692/%EC%95%8C%EC%95%84%EB%91%98-%EB%A7%8C%ED%95%9C-%EC%9C%88%EB%8F%84%EC%9A%B0-11-%EB%8B%A8%EC%B6%95%EA%B8%B0-8%EC%84%A0.html",
+      "host": "www.cio.com",
+      "tier": "press",
+      "publishedAt": "2022-07-06",
+      "body": "[WebFetch 추출 — 한국어 원문 인용] 저자 천신응(CIO Korea 편집장), 2022-07-06. 'Win+Z: 스냅(Snap)에 빠른 접근을 구현하는 단축키(윈도우 키 + z)가 돋보인다.' '스냅은 여러 윈도우 앱에 대한 6가지 배치를 제시하고 고를 수 있게 하는 기능이다.' '윈도우 키와 왼쪽 또는 오른쪽 화살표를 클릭하면 창이 왼쪽 또는 오른쪽에 간단히 정렬된다.' 숫자 키 동작은 언급하지 않고, Windows 11 에서 PowerToys 로 더 많은 사용자 지정 레이아웃을 쓸 수 있다고 덧붙인다. (기사 범주: 뉴스, 1분 분량. 해당 기사는 Windows 11 에서 눈에 띄는 단축키 8개 중 하나로 Win+Z 를 소개하며, Win+방향키 항목은 좌/우 정렬만 서술하고 위/아래·모서리 동작은 다루지 않는다.)",
+      "facts": [
+        "CIO Korea(2022-07-06, 한국어 매체): 'Win+Z 로 스냅 레이아웃을 연다', '스냅은 여러 윈도우 앱에 대한 6가지 배치를 제시한다' — 큰 화면 기준 6종이라는 서술과 맞지만 기준 해상도는 명시 안 함.",
+        "같은 기사: 윈도우 키 + 왼쪽/오른쪽 화살표로 창을 해당 쪽에 정렬. 더 다양한 사용자 지정 레이아웃은 PowerToys 로 가능."
+      ]
+    },
+    {
+      "title": "윈도우11 화면 분할 끄기, 창 정렬 비활성화 하는 2가지 방법 (익스트림매뉴얼, 2024-11-11)",
+      "url": "https://extrememanual.net/45669",
+      "host": "extrememanual.net",
+      "tier": "blog",
+      "publishedAt": "2024-11-11",
+      "body": "[WebFetch 추출 — 한국어 블로그] 경로: '시스템 > 멀티테스킹'(원문 표기 그대로, 오타 '멀티테스킹'). 토글: '창 끌기'(켬 → 끔). 하위 체크박스: '창을 끌 때 화면 가장자리까지 끌지 않고 창을 맞춥니다.' 옵션 문구: '창을 스냅할 때 옆에 맞춤할 수 있는 항목을 제안합니다.' / '현재 드래그한 창과 함께 배열로 표시할 창을 팝업합니다. 가장 최근에 열린 창이 표시됩니다.' / '창의 최대화 단추를 마우스로 가리킬 때 끌기 레이아웃 표시' / '창을 화면 맨 위로 끌 때 끌기 레이아웃 표시' / '작업 표시줄 앱 위로 마우스를 가져갈 때, 작업 보기에서 Alt+Tab을 누를 때 내 스냅된 창 표시'. 방법 2(레지스트리): HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced 아래 DWORD(32비트) 'EnableSnapAssistFlyout' 을 만들고 값 0=비활성화, 1=활성화. 게시일 2024년 11월 11일. Win+Z/Win+방향키 언급 없음.",
+      "facts": [
+        "(블로그, 2024-11-11) 한국어 설정 화면 토글이 '창 끌기'로 표기됐다고 서술 — MS ko-KR 지원 문서의 '창 스냅'과 표기가 다르다.",
+        "(블로그) 레지스트리 방식: HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced 의 DWORD(32비트) EnableSnapAssistFlyout 을 0 으로 두면 최대화 버튼 flyout 비활성(1=활성) — MS 공식 문서에서는 확인 못함, 레지스트리 수정은 위험하다는 단서 필요.",
+        "(블로그) 토글을 켠 채 '창을 끌 때 화면 가장자리까지 끌지 않고 창을 맞춥니다' 하위 옵션만 남겨 Windows 10 식 가장자리 정렬만 쓰는 방법을 소개."
+      ]
+    },
+    {
+      "title": "윈도우11 스냅 레이아웃 사용법과 활용 팁: Win+Z로 창 분할 끝내기 (bluesharehub, 2025-11-09)",
+      "url": "https://bluesharehub.com/windows11-snap-layout/",
+      "host": "bluesharehub.com",
+      "tier": "blog",
+      "publishedAt": "2025-11-09",
+      "body": "[WebFetch 추출 — 한국어 블로그] 게시일 2025-11-09. 경로: '설정 → 시스템 → 멀티태스킹', '창 끌기(스냅)' 켜기. 하위 옵션 표현(정확한 UI 라벨 아님): '최대화 버튼에 마우스 올릴 때 레이아웃 표시(호버 사용)', '스냅 시 나머지 칸에 추천 앱 띄우기', '스냅된 창 크기 조정 시 이웃 창도 함께 비율 유지', 'Alt+Tab에 탭/앱 표시 범위(최근 3개·5개 등)'. Win+Z: '현재 창의 스냅 레이아웃 패널 열기', 이후 숫자키(1~6)로 레이아웃/칸 선택. Win+방향키: '클래식 스냅(좌/우/사분면)으로 빠르게 이동·정렬', Win+←/→ 좌우, Win+↑/↓ 위/아래·최대화/복원/최소화. 분할 수는 '2~6분할'(2분할, 3분할, 4분할(2×2), 고해상도용 5~6칸)이라 쓰고 '사용 가능한 레이아웃은 모니터 해상도·배율·가로세로비에 따라 달라집니다.'",
+      "facts": [
+        "(블로그, 2025-11-09) 한국어 토글을 '창 끌기(스냅)'로 표기 — 사용자 눈에 '창 끌기'와 '창 스냅' 두 표기가 모두 보일 수 있다는 정황(실제 화면은 확인 못함).",
+        "(블로그) '사용 가능한 레이아웃은 모니터 해상도·배율·가로세로비에 따라 달라집니다', 2분할~6분할 — 배율(스케일)도 영향을 준다는 서술이지만 MS 문서에는 배율 언급이 없음(Learn 은 effective pixels 로 최소 너비만 언급)."
+      ]
+    }
+  ],
+  "conflicts": [
+    {
+      "about": "Win+↑/↓ 가 하는 일",
+      "a": "Microsoft 지원 'Snap your windows' 문서: 'Left, Right, Up, and Down position it on that side of the screen' — 방향키를 계속 눌러 위치를 조정(모서리 포함 암시). Thurrott/Pureinfotech 도 Win+← 뒤에 ↑ 를 눌러 모서리 1/4 스냅 서술",
+      "b": "Microsoft 키보드 단축키 표(en-US·ko-KR 동일): Win+↑ = 활성 창 최대화, Win+↓ = 활성 창 최소화, 위/아래 절반 스냅은 Win+Alt+↑/↓ 로 따로 적힘. 즉 '창이 이미 스냅된 상태에서' ↑/↓ 는 모서리 이동, '일반 창'에서는 최대화/최소화로 동작이 갈리는데 어느 문서도 이 조건을 명시하지 않음(글에서 직접 PC 확인 필요)"
+    },
+    {
+      "about": "스냅 레이아웃 flyout 을 여는 버튼",
+      "a": "Microsoft 지원·Learn 문서: 창의 복원(restore) 또는 최대화(maximize) 버튼에 마우스 올리기",
+      "b": "Windows Insider 블로그 22635.3130(2024-01-25): 'Minimize or Maximize button' 에 올리면 레이아웃 박스가 열린다고 서술. KB5062660(2025-07-22)도 'hovering over the Minimize or Maximize button'. 최소화 버튼도 되는지 정식 지원 문서와 어긋남"
+    },
+    {
+      "about": "한국어 설정 화면의 토글 이름 ('창 스냅' vs '창 끌기')",
+      "a": "Microsoft ko-KR 지원 문서: '시스템 > 멀티태스킹 > 창 스냅' 토글. 문서 제목도 '창 스냅'",
+      "b": "익스트림매뉴얼(2024-11-11)·bluesharehub(2025-11-09): '창 끌기'(후자는 '창 끌기(스냅)'). MS ko-KR 문서 URL 슬러그에도 '끌기'가 남아 있음. 체크박스 문구도 MS ko-KR('창을 화면 맨 위로 끌 때 끌기 레이아웃 표시 스냅 막대')와 블로그('…끌 때 끌기 레이아웃 표시')가 다름. 실제 한국어 Windows 11 설정 화면 스크린샷으로 대조 못함"
+    },
+    {
+      "about": "화면 크기별 스냅 레이아웃 개수·기준",
+      "a": "Microsoft 공식: 2021 Insider 블로그 'For smaller screens, you'll be offered a set of 4 snap layouts', Learn 문서 '큰 가로 화면은 3창 나란히, 세로 화면은 위/아래' — 구체 인치·픽셀 기준 수치 없음, 6종이라는 언급도 없음",
+      "b": "비공식: CIO Korea(2022) '6가지 배치', MS Q&A 모더레이터 '일반 4개 / 울트라와이드 6개', 삼성전자서비스(2022-01) '24인치 이상이거나 가로 1920 pixel 이상'일 때 나타나는 형태, bluesharehub '2~6분할, 해상도·배율·가로세로비에 따라 다름'(ElevenForum 의 24인치/1920px 서술은 403 으로 본문 못 읽어 미검증)"
+    },
+    {
+      "about": "Windows 10 의 Win+Z",
+      "a": "Windows 11 표: Win+Z = 스냅 레이아웃 열기(en-US 'Open the snap layouts.', ko-KR '스냅 레이아웃을 엽니다.')",
+      "b": "Windows 10 탭(ko-KR): Win+Z = '전체 화면 모드에서 앱에서 사용 가능한 명령을 표시합니다.' — 같은 키가 OS 에 따라 다른 기능"
+    },
+    {
+      "about": "멀티태스킹 설정의 Alt+Tab 탭 옵션 이름",
+      "a": "Microsoft 지원(multitask 문서): 'Show tabs from apps when snapping or pressing Alt+Tab' (옵션: Don't show tabs / N most recent tabs)",
+      "b": "Pureinfotech(2024-03): 'Show Microsoft Edge tabs when snapping or pressing Alt + Tab'. 또 스냅 어시스트 문구도 MS 'show what I can snap next to it' vs Pureinfotech 'suggest what I can snap next to it' — 빌드/시점에 따라 라벨이 바뀐 것으로 보이나 확인 못함"
+    }
+  ],
+  "unknowns": [
+    "Win+Z 로 연 뒤 숫자 키로 레이아웃·칸을 고르는 동작: Microsoft 공식 문서에서는 확인 못함(support/Learn 문서에 숫자 키 언급 없음). Pureinfotech·bluesharehub 블로그 서술만 있고, TechRadar·Windows Central 기사는 본문이 잘려 읽지 못했다.",
+    "'Snap windows' 메인 토글을 껐을 때 Win+←/→ (스냅)와 Win+Z 가 동작하는지: 공식 문서에 없음. MS Q&A 사용자 보고로는 Win+Shift+←/→ (모니터 간 이동)가 멈춘다는 것만 확인. 글에는 '직접 확인해 보라'로 처리해야 함.",
+    "스냅 레이아웃 개수가 달라지는 정확한 해상도·배율·인치 기준: Microsoft 공식 문서에 수치 없음(삼성전자서비스 24인치/1920px는 2022년 제조사 문서). ElevenForum 튜토리얼(24인치/1920 effective pixels 서술로 검색 스니펫에 나옴)은 403 으로 본문 못 읽음.",
+    "Win+Alt+↑/↓ (위/아래 절반 스냅)가 도입된 Windows 11 빌드/버전: 단축키 표에 버전 표기 없음.",
+    "실제 한국어 Windows 11 설정 화면의 정확한 라벨('창 스냅' vs '창 끌기', 체크박스 문구): 스크린샷 대조 못함. 집필 시 로컬 PC 설정 화면으로 확인하거나 'Snap windows(창 스냅/창 끌기)'처럼 병기 필요.",
+    "2026-10 현재(25H2·최신 미리보기) 스냅 레이아웃 UI 개편 여부: 2026년 Insider/Release notes 에서 스냅 레이아웃 UI를 바꾼 공식 글을 찾지 못함(2025-07 KB5062660 인라인 팁이 마지막 공식 확인 항목). Windows Central 2026-02 기사('드래그 상단 스냅 트레이가 불편')는 본문을 읽지 못해 source 로 쓰지 않음.",
+    "Microsoft 지원 'Snap your windows'·단축키 문서의 최종 수정일: 페이지에 날짜 없음(© Microsoft 2026 만 표기)."
+  ]
+}

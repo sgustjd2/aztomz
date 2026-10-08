@@ -1,3 +1,22 @@
+# 2026-10-08 블로그 배치 — 내일(10-09) 몫 미리, 사람 요청(티스토리 5 + 네이버 5 이상)
+
+claim: `backend/out/blog/.daily-claim-2026-10-09` (10-09 09:00 무인 /blog-daily 는 양보). 검색수요 게이트: NAVER_AD 자격증명 없음 → 못 돌림. 이월: 티스토리 windows11-storage-sense(검증 통과, 대기열).
+중복 대조: posted/posted-naver/초안 667 제목을 핵심어 grep. 제외: purple-core-2026(purple-color-trend 와 같은 개념) · 식재료 보관·손질류 대부분 기발행.
+## 티스토리 (5)
+- [x] git-amend-guide — git 커밋 메시지 수정(amend) · 1차 조사 40분+ 무산출 → 중단·상한 걸고 재조사 · 팩트체크 blocker 1(HEAD~N 의 N 을 "고칠 커밋 수"로 오기 — Pro Git·GitHub Docs 원문) 교정 · selfreview 1건 · verify 통과(warn 1 — git-push 인용은 curl 로 원문 일치 확인)
+- [x] python-venv-guide — 파이썬 가상환경 venv · 팩트체크 blocker 1(pip 문서 Unix 표기 python vs python3) 코디네이터 교정 · selfreview 무수정 · verify 통과(warn 2)
+- [x] excel-merge-cells-keep-text — 엑셀 셀 합치기 내용 유지 · 팩트체크 blocker 4(TEXTJOIN 숫자 처리는 delimiter 설명·요약 소제목 따옴표·#VALUE! 인과 역전·문서 날짜) 코디네이터 교정 · verify 통과(warn 3)
+- [x] windows11-snap-layouts — 윈도우 11 화면 분할 · 제목 교체(미끼형→답 서술형) · 팩트체크 blocker 1(모서리 1/4 스냅은 MS 문서에 있음 — curl 원문 대조, 조사파일도 정정) 교정 · verify 통과(warn 3)
+- [x] iphone-photos-to-pc — 아이폰 사진 PC로 옮기기 · 팩트체크 blocker 3(MS 한국어 문서 순서 오독 — curl 원문 대조·원본 유지 인과·삭제 연동 조건 누락) 교정 · verify 통과(warn 1)
+## 네이버 (5)
+- [x] hairtail-prep-guide — 갈치 손질법 · 1차 팩트체크 blocker 8(조사파일 원문 오독 — 씻기·토막 순서·은갈치/먹갈치·식약처 귀속·해동 대상 등) → curl 원문 대조 교정 · 2차 blocker 1(국산/수입 눈 색 단서 누락) 코디네이터 교정 · verify 통과(warn 2)
+- [x] kiwi-ripening-guide — 키위 후숙 · 팩트체크 blocker 1(Zespri 36°F 조건과 냉장 일수 결합) 교정 · selfreview 1건 수정 · verify 통과(warn 2)
+- [x] ginkgo-road-spots-2026 — 은행나무 단풍 절정 2026(명소 5곳 → 조사상 2026 일정 확인 1곳+부분 1곳이라 각도 재설정) · 팩트체크 blocker 2(홍천 2026 일정 단정) 교정 · selfreview 3건 · verify 통과(warn 2 — 제목 "일정"→"정보" 반영)
+- [x] leather-jacket-care — 가죽 자켓 관리법 · 팩트체크 blocker 3(땀 근거 없음·곰팡이 원칙 STRUM 단독·SBS 공정위 경고 대상 오기) 교정 · verify 통과(warn 2)
+- [x] jongno3ga-yajang-guide — 종로3가 야장(A형 재조사 + alias stub yajang-jongno3ga-2026) · 팩트체크 blocker 5(검색량 근거 없음·유행 단계 과장·커버 "세계 1위" 귀속 없음·60대 "가장"·민원 기간 "5월 말" — curl 원문 대조) 교정 · selfreview 1건 · verify 통과(warn 2)
+## 마무리
+- [ ] 조사 파일·structure-log 로컬 커밋 · blog-queue --list 확인
+
 # 2026-10-07 블로그 배치 — 사람 요청(/blog-run-today, 티스토리 5 + 네이버 5 이상)
 
 claim: `backend/out/blog/.daily-claim-2026-10-07` (07:07, 09:00 무인 /blog-daily 는 양보). 검색수요 게이트: NAVER_AD 자격증명 없음 → 못 돌림.

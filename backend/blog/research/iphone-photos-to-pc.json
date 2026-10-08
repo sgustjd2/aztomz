@@ -1,0 +1,507 @@
+{
+  "keyword": "아이폰 사진 컴퓨터로 옮기기 (윈도우 PC — USB 케이블 + 사진 앱 가져오기, Windows용 iCloud, HEIC 변환·원본 유지)",
+  "categoryId": "hangeut-trend",
+  "notes": "말할 수 있는 것: 윈도우 PC 로 USB 가져오기 순서(잠금 해제·신뢰·시작>사진>가져오기>연결된 장치), 안 잡힐 때 점검, iCloud 사진을 켠 경우 원본 선행 다운로드, HEIC/HEVC 의 JPEG/H.264 변환 가능성과 '원본 유지', Windows용 iCloud·iCloud.com 대안 — 전부 Apple·Microsoft 공식 문서(요약본) 근거.\n말할 수 없는 것: 현행 iPhone 한국어 화면 라벨 실측, Apple 기기 앱 필수 여부, 드라이버, HEVC 확장 현재 가격, 소요 시간. 모든 body 는 WebFetch 요약본이며 실기기·실PC 확인이 없다.\n톤: '문서에 이렇게 안내돼 있다' 로 귀속하고, 메뉴 라벨은 'iOS 버전에 따라 다를 수 있어요' 단서를 붙인다. '자동/원본 유지' 표기는 쓰지 않는다(2017 자료만).",
+  "cannotSay": [
+    "'설정 > 사진 > Mac 또는 PC로 전송 > 자동/원본 유지' 를 현재 iPhone 경로처럼 쓰지 말 것 — 이 표기는 2017 Cult of Mac(iOS 11, 맥 기준)뿐이고 Apple 최신 문서(116944)엔 '자동'·'Mac 또는 PC로 전송' 이 없다. 현행은 Apple 문서의 '설정 > 앱 > 사진 > (아래로 스크롤) 원본 유지' 만 쓰고, 반드시 '기기 화면 라벨은 iOS 버전에 따라 다를 수 있어요' 단서를 붙인다.",
+    "'원본 유지를 끄면 무조건 JPEG 로 바뀐다 / 켜면 항상 HEIC 그대로' 단정 금지 — Apple 은 'might be converted(변환될 수 있다)' 까지만 말한다. Windows 실측 근거 없음.",
+    "Apple Devices(Apple 기기) 앱 없이도 사진 가져오기가 되는지/반드시 필요한지 단정 금지 — Apple 은 1단계로 안내, Microsoft 사진 가져오기 문서엔 설치 단계가 아예 없다 (conflicts 3). 둘 다 '문서에 이렇게 적혀 있다' 로만.",
+    "별도 USB 드라이버 설치가 필요하다/필요 없다 어느 쪽도 단정 금지 — 공식 문서 어디에도 드라이버 언급이 없다. Apple Mobile Device Service(AMDS) 재시작·services.msc 절차는 본문 미확인이니 쓰지 말 것.",
+    "HEVC 비디오 확장 가격($0.99) 을 '현재 가격' 으로 쓰지 말 것 — 날짜 없는 Windows 10 대상 문서의 값이다. 쓰려면 '문서에 적힌 가격' 귀속, 또는 빼기. 한국 스토어 가격·제조사 기본 탑재(무료) 여부 미확인.",
+    "Microsoft 확장 프로그램 문서는 '사진 앱 비디오 편집기 오류(Can't view this file type)' 안내다 — '윈도우에서 HEIC 열기 일반 가이드' 로 일반화 금지. 'Applies To: Windows 10', 게시일 없음.",
+    "구 사진 앱의 'USB 장치에서' 라벨, 라이브 포토가 사진+MOV 로 분리 저장된다는 얘기는 쓰지 말 것 (본문 미확인 — 현행 Microsoft 문서 경로는 '시작 > 사진 > 가져오기 > 연결된 장치').",
+    "body 는 WebFetch 요약본이다 — 큰따옴표 원문 인용처럼 쓰지 말 것 (Microsoft 'You'll need both…' 문장 포함). 풀어 쓰고 '문서 안내' 로 귀속.",
+    "'직접 해 보니 / 내 PC 에서 확인' 같은 실측 화법 금지 — 실제 iPhone·Windows 화면을 본 자료가 없다. 한국어 UI 라벨(iPhone 저장 공간 최적화·원본 다운로드 및 유지·Windows용 iCloud 고효율 옵션 등) 단정 금지, 'Download and Keep Originals' 는 Apple 문서에서 확인 안 된 명칭.",
+    "Apple 120267 문서 게시일을 일 단위로 단정 금지 — 한국어판 2026-09-22 / 영문판 2026-09-14 로 어긋남. 쓰려면 '2026년 9월 표기' 수준.",
+    "충전 전용 케이블이 원인이라고 단정 금지 — Apple 은 '데이터 전송과 충전을 모두 지원하는 다른 케이블 시도' 까지만. '위치 및 개인정보 보호 재설정' 이 정확히 무엇을 초기화하는지도 요약본에 없으니 경로만 전하고 영향 범위는 단정 금지.",
+    "'PC 에서 지우면 폰에서도 지워진다' 일반화 금지 — 문서는 'iCloud for Windows 14.2 이상 + iCloud 사진을 켠 기기' 에 한해 Microsoft 사진 앱에서 이동·삭제가 반영된다고 한다. USB 가져오기 뒤 폰 원본이 지워지는지/삭제 옵션 여부도 요약본에 없음.",
+    "Windows 11 필수/Windows 10 도 된다 단정 금지 — 'Windows용 iCloud 는 Windows 11 이상 권장' 만 확인. 사진 앱 USB 가져오기의 Windows 버전 요건은 문서에 없다."
+  ],
+  "cannotCover": [
+    "맥(사진 앱·이미지 캡처)으로 옮기기 — Windows PC 글 범위 밖 (Apple 문서 요약에 일부 있으나 쓰지 않는다)",
+    "안드로이드 폰, 무선(Wi-Fi)·AirDrop 대체, OneDrive·구글 포토 앱 자동 업로드 설정 — 조사하지 않음 (OneDrive 는 HEIC 변환 대안으로 한 줄 언급만 근거 있음)",
+    "서드파티 도구(CopyTrans·iMazing 등) 비교·추천 — 1차 자료 없음",
+    "Apple 기기 앱 설치가 필수인지, 별도 USB 드라이버가 필요한지 (공식 문서 간 어긋남/무언급)",
+    "현재 iOS(26/27) 한국어 화면에서 '원본 유지' 정확한 위치·라벨, '자동' 옵션 존속 여부 — 기기에서 직접 확인 필요",
+    "HEIC→JPEG 변환이 Windows USB 가져오기에서 실제로 일어나는지 최신 iOS 실측, 라이브 포토·동영상 변환 후 파일 형식 상세",
+    "사진 앱 가져오기 화면의 세부 옵션(폴더 정리·가져온 뒤 삭제 등) — Microsoft 요약본엔 '가져올 항목과 저장 위치 선택' 수준만",
+    "전송 소요 시간·속도·대용량 한도, 에러 메시지별 해결 — 수치 근거 없음 (Microsoft 요약본의 '몇 분' 외 없음)",
+    "HEVC 확장 현재 가격·한국 스토어 가격, Windows 11 기본 탑재 여부",
+    "Windows용 iCloud ko-kr 사용 설명서 사진 다운로드/업로드 한국어판 본문 (영문 가이드만 직접 읽음)"
+  ],
+  "claims": [
+    {
+      "claim": "윈도우 PC 로 옮기는 기본 길은 'USB 케이블 연결 → 아이폰 잠금 해제 → 신뢰/허용 → 시작 > 사진 > 가져오기 > 연결된 장치' 순서다. Apple 도 같은 흐름을 안내하되 사진 앱 화면 설명은 Microsoft 문서로 넘긴다.",
+      "grade": "confirmed",
+      "role": "core",
+      "evidence": [
+        "Microsoft 한국어 문서(날짜 없음, 요약본): 파일 전송이 가능한 USB 케이블로 연결 → 휴대폰 잠금 해제(잠겨 있으면 PC 가 장치를 못 찾음) → 이 컴퓨터를 신뢰할지 묻는 메시지 승인 → 시작 > 사진 → 가져오기 > 연결된 장치 → 안내에 따라 항목·저장 위치를 고른 뒤 검색·전송이 끝날 때까지 몇 분 대기. 영문판도 같은 순서(Start > Photos > Import > connected device).",
+        "Apple 120267(한국어 2026-09 표기)의 Windows 순서: Microsoft Store 에서 Apple 기기 앱 설치 → USB 연결 → 암호로 잠금 해제 → 기기에서 '신뢰' 또는 '허용' → Microsoft 사진 앱 가져오기(5단계). 문서 자체는 사진 앱 가져오기 화면을 설명하지 않고 Microsoft 안내를 보라고 한다.",
+        "Apple 기기 앱의 역할(Apple 지원 개요 문서): 연결된 기기가 사이드바에 보이고 소프트웨어 업데이트·백업(Windows 또는 iCloud)·복원을 제공. iPhone→PC 사진 가져오기 설명은 그 페이지에 없다 — 가져오기 화면은 Windows 사진 앱이다.",
+        "Apple 기기 앱 설치는 Microsoft Store 에서 'Apple 기기' 검색 후 설치하는 3단계(설치 문서에 Windows 버전 요건·iTunes·드라이버 언급 없음).",
+        "주의: 이 순서의 '앱 설치' 단계가 실제로 필수인지는 Apple(1단계로 안내)과 Microsoft(언급 없음)가 어긋난다 → 단정 금지(conflicts 3)."
+      ],
+      "sourceUrls": [
+        "https://support.microsoft.com/ko-kr/windows/apps/photos/import-photos-and-videos-from-phone-to-pc",
+        "https://support.microsoft.com/en-us/windows/apps/photos/import-photos-and-videos-from-phone-to-pc",
+        "https://support.apple.com/ko-kr/120267",
+        "https://support.apple.com/en-us/120267",
+        "https://support.apple.com/ko-kr/guide/devices-windows/mchl923c1147/windows",
+        "https://support.apple.com/ko-kr/guide/devices-windows/mchl5ded2763/1.4/windows/10"
+      ]
+    },
+    {
+      "claim": "아이폰이 PC 에 안 잡히면 먼저 잠금 해제·'신뢰' 알림·케이블을 본다. 신뢰를 거절했거나 알림이 안 뜨면 '위치 및 개인정보 보호 재설정' 으로 알림을 다시 띄우는 공식 경로가 있다.",
+      "grade": "confirmed",
+      "role": "core",
+      "evidence": [
+        "Microsoft(ko/en): 휴대폰이 잠겨 있으면 PC 가 장치를 찾을 수 없다. 'Trust This Computer' 류 메시지가 뜨면 신뢰/허용을 선택한다.",
+        "Apple 109054(2025-12-11): '신뢰' 를 누르면 컴퓨터가 동기화하고 사진·비디오·연락처 등에 접근할 수 있고, 이 설정은 직접 바꾸거나 기기를 초기화하기 전까지 유지. '신뢰하지 않음' 이면 그 컴퓨터는 콘텐츠에 접근할 수 없고 연결할 때마다 알림이 다시 나타난다.",
+        "알림이 안 뜨거나 실수로 거부했을 때 Apple 경로: 설정 > 일반 > 전송 또는 '[기기] 재설정' > 재설정 > 위치 및 개인정보 보호 재설정. 재설정 뒤 이전에 신뢰했던 컴퓨터에 연결하면 신뢰 알림이 다시 표시된다.",
+        "Apple 108643(2026-08-28)의 점검 항목: USB 케이블·연결 상태, 충전 포트 이물질, 데이터 전송과 충전을 모두 지원하는 다른 케이블, 다른 USB 포트 또는 다른 컴퓨터, 소프트웨어 충돌, 최신 Windows 및 iOS/iPadOS. Windows 에서는 Apple 기기 앱 사이드바에 기기가 표시되면 인식된 것.",
+        "Microsoft 는 '파일 전송이 가능한 USB 케이블' 을 요구한다."
+      ],
+      "sourceUrls": [
+        "https://support.microsoft.com/ko-kr/windows/apps/photos/import-photos-and-videos-from-phone-to-pc",
+        "https://support.microsoft.com/en-us/windows/apps/photos/import-photos-and-videos-from-phone-to-pc",
+        "https://support.apple.com/ko-kr/109054",
+        "https://support.apple.com/ko-kr/108643"
+      ]
+    },
+    {
+      "claim": "iCloud 사진을 켜 둔 상태라면, 폰에 원본이 내려받아져 있어야 USB 가져오기가 제대로 된다. 저장 공간 최적화를 쓰면 기기엔 작은 버전만 있고 원본은 iCloud 에 있다.",
+      "grade": "confirmed",
+      "role": "core",
+      "evidence": [
+        "Apple 120267(ko·en): iCloud 사진이 켜져 있으면 PC 로 가져오기 전에 원본(전체 해상도)을 기기에 먼저 다운로드해야 한다.",
+        "Microsoft(ko/en): iCloud 가 켜져 있고 사진·동영상이 iCloud 에만 있고 기기에는 없으면 가져오기로 다운로드되지 않을 수 있다 → 그때는 Windows용 iCloud 로 열거나 PC 로 가져온다.",
+        "Apple 108782(영문, 2026-09-14 표기): Optimize Storage 는 기기에 작은 버전을 두고 전체 해상도 원본은 iCloud 가 보관, 원본 다운로드는 기기에 풀사이즈를 유지. iPhone 경로(문서 표기): 설정 > [이름] > iCloud > 사진 > iPhone Storage 에서 Optimize Storage 선택, iOS 26 이하는 사진 설정에서 바로 선택.",
+        "Apple 120267(en): iCloud 사진은 항상 전체 해상도 원본을 업로드하고, 각 기기는 원본 또는 기기 최적화 버전 중 하나를 보관한다.",
+        "주의: 'Download and Keep Originals' 라는 이름은 108782 에 없다. 한국어 UI 라벨은 미확인 → 메뉴 이름을 단정하지 말고 '원본을 기기에 내려받는 설정' 처럼 기능으로 설명."
+      ],
+      "sourceUrls": [
+        "https://support.apple.com/ko-kr/120267",
+        "https://support.apple.com/en-us/120267",
+        "https://support.microsoft.com/ko-kr/windows/apps/photos/import-photos-and-videos-from-phone-to-pc",
+        "https://support.microsoft.com/en-us/windows/apps/photos/import-photos-and-videos-from-phone-to-pc",
+        "https://support.apple.com/en-us/108782"
+      ]
+    },
+    {
+      "claim": "iPhone 7 이후 기기는 HEIF(사진)/HEVC(동영상)로 촬영할 수 있고, USB 로 PC 에 가져올 때 JPEG/H.264 로 바뀔 수 있다. 막으려면 설정 > 앱 > 사진 > '원본 유지', 앞으로 찍을 것만 바꾸려면 카메라 > 포맷 > 높은 호환성이다.",
+      "grade": "confirmed",
+      "role": "core",
+      "evidence": [
+        "Apple 116944(ko·en): HEIF/HEVC 촬영은 iPhone 7 이후(일부 iPad·Apple Vision Pro 포함). 설정 > 카메라 > 포맷에서 '높은 호환성'(영문 Most Compatible)은 JPEG·H.264, '고효율'(High Efficiency)은 HEIF·HEVC 로 기록. 포맷 항목은 HEIF/HEVC 촬영을 지원하는 기기에만 보인다.",
+        "같은 문서: 사진 앱·이미지 캡처·PC 로 가져올 때 HEIF/HEVC 가 JPEG/H.264 로 변환될 수 있음(영문 'might be converted'). 변환을 막으려면 설정 > 앱 > 사진 에서 아래로 스크롤해 '원본 유지' 를 켠다(영문: Settings > Apps > Photos > Keep Originals). 영문판 게시 2025-12-05.",
+        "'높은 호환성' 은 이후 촬영분만 JPEG/H.264 로 저장 — 이미 찍은 사진을 바꾸지 않는다. Apple 120267 도 Windows 호환성을 높이려면 설정 > 카메라 > 포맷 > 높은 호환성을 안내.",
+        "공유 방식별: iCloud 사진으로 공유하면 원래 포맷·해상도 유지, AirDrop·메시지·이메일은 수신 기기가 새 포맷을 지원하지 않으면 JPEG/H.264 로 자동 변환될 수 있다.",
+        "Microsoft 확장 프로그램 문서(Applies To: Windows 10, 게시일 없음, 사진 앱 비디오 편집기 'Can't view this file type' 오류 안내): 가장 쉬운 방법은 HEIF Image Extensions(HEIF/HEIC 사진, 무료) + HEVC Video Extensions(HEVC 동영상, 문서에 $0.99) 둘 다 Microsoft Store 에서 설치 후 사진 앱 재시작 — 사진만 쓸 때도 둘 다 필요하다고 안내. 대안: 폰에서 다시 가져오기(기기가 자동 변환하기도 함)·메일로 보내기·사진은 OneDrive 업로드로 변환. 현재 가격·적용 범위는 단정 금지."
+      ],
+      "sourceUrls": [
+        "https://support.apple.com/ko-kr/116944",
+        "https://support.apple.com/en-us/116944",
+        "https://support.apple.com/ko-kr/120267",
+        "https://support.microsoft.com/en-us/windows/apps/photos/photos-app-video-editor-error-can-t-view-this-file-type"
+      ]
+    },
+    {
+      "claim": "케이블 없이 옮기려면 Windows용 iCloud 의 'iCloud 사진' 또는 iCloud.com/photos 로 내려받을 수 있다. 다운로드 방식(섬네일 더블클릭·고정)과 삭제 연동에 주의점이 있다.",
+      "grade": "confirmed",
+      "role": "core",
+      "evidence": [
+        "Windows용 iCloud 다운로드 문서(2026-08-06): Microsoft Store 에서 내려받고 Windows 11 이상 권장. 관리형 Apple 계정은 지원하지 않는다.",
+        "iCloud 사진 켜기(Apple 한국어 iCloud 사용 설명서): Windows용 iCloud 실행 → 'iCloud 사진' 오른쪽 화살표 → 'iCloud 사진' 켜기 → '완료'. 모든 기기에서 같은 Apple 계정으로 로그인돼 있어야 사진에 접근할 수 있다. 보기는 파일 탐색기 탐색 패널의 'iCloud 사진'(안 보이면 '이미지' → 'iCloud 사진' 더블클릭).",
+        "로컬 저장 위치(영문 가이드): C:\\Users\\[사용자 이름]\\Pictures\\iCloud Photos\\Photos. 섬네일을 더블클릭하면 그 파일이 다운로드돼 열리고, 다운로드 전에는 섬네일만 보인다. 아이콘으로 다운로드 상태 표시.",
+        "'Always keep on this device'(파일 탐색기 우클릭, 체크=고정): 원본을 PC 에 내려받아 두는 문서 명시 경로. 고정을 해제해도 PC 파일이 지워지지는 않는다.",
+        "iCloud.com/photos: Apple 계정 로그인 → Ctrl 로 다중 선택 → 오른쪽 위 다운로드. 한 번에 최대 1,000개(Apple 문서 2026-04-10).",
+        "iCloud for Windows 14.2 이상: Microsoft 사진 앱에서 사진을 옮기거나 삭제하면 iCloud 사진을 켠 모든 기기에 반영된다(삭제 주의). Windows 에서 편집한 파일은 Apple 기기·iCloud.com 에 반영되지 않는다. 'View in Microsoft Photos' 는 다운로드를 마친 사진에만 작동."
+      ],
+      "sourceUrls": [
+        "https://support.apple.com/ko-kr/103232",
+        "https://support.apple.com/ko-kr/guide/icloud/mm7e90c1ba48/1.0/icloud",
+        "https://support.apple.com/guide/icloud-windows/set-up-photos-icw9f0ba665f/1.0/icloud/1.0",
+        "https://support.apple.com/guide/icloud-windows/download-and-view-photos-and-videos-icw2ed20ffd1/1.0/icloud/1.0",
+        "https://support.apple.com/guide/icloud-windows/keep-photos-and-videos-downloaded-icw524278130/1.0/icloud/1.0",
+        "https://support.apple.com/en-us/108994",
+        "https://support.apple.com/en-us/111762"
+      ]
+    }
+  ],
+  "numbers": [
+    {
+      "what": "HEIF/HEVC 촬영 가능 기기(iPhone)",
+      "value": "iPhone 7 이후 (일부 iPad, Apple Vision Pro 포함)",
+      "asOf": "Apple 116944 (영문판 2025-12-05 게시)",
+      "sourceUrl": "https://support.apple.com/ko-kr/116944"
+    },
+    {
+      "what": "HEIF/HEVC 열람·편집·복제 최소 OS(Apple 기기 기준)",
+      "value": "iOS 11 이후 / macOS High Sierra 10.13 이후",
+      "asOf": "Apple 116944",
+      "sourceUrl": "https://support.apple.com/ko-kr/116944"
+    },
+    {
+      "what": "더 널리 호환되는 동영상 조건",
+      "value": "1080p 이하, 60fps 이하",
+      "asOf": "Apple 116944",
+      "sourceUrl": "https://support.apple.com/ko-kr/116944"
+    },
+    {
+      "what": "HEVC 비디오 확장 가격 (HEIF 이미지 확장은 무료)",
+      "value": "$0.99 — 문서 표기, 현재 가격 아님",
+      "asOf": "날짜 없음 (Microsoft 문서, Applies To: Windows 10, 푸터 © 2026)",
+      "sourceUrl": "https://support.microsoft.com/en-us/windows/apps/photos/photos-app-video-editor-error-can-t-view-this-file-type"
+    },
+    {
+      "what": "iCloud.com 한 번에 선택·다운로드 가능한 최대 항목 수",
+      "value": "1,000개",
+      "asOf": "Apple 111762 (2026-04-10 게시)",
+      "sourceUrl": "https://support.apple.com/en-us/111762"
+    },
+    {
+      "what": "'고효율 형식 다운로드' 옵션·Microsoft 사진 앱 이동/삭제 연동에 필요한 Windows용 iCloud 버전",
+      "value": "14.2 이상",
+      "asOf": "Apple iCloud for Windows 사용 설명서 (날짜 없음)",
+      "sourceUrl": "https://support.apple.com/guide/icloud-windows/set-up-photos-icw9f0ba665f/1.0/icloud/1.0"
+    },
+    {
+      "what": "Windows용 iCloud 권장 Windows 버전",
+      "value": "Windows 11 이상 권장 (필수 아님으로 읽을 것)",
+      "asOf": "Apple 103232 (2026-08-06 게시)",
+      "sourceUrl": "https://support.apple.com/ko-kr/103232"
+    },
+    {
+      "what": "iCloud 사진 로컬 저장 경로(Windows용 iCloud)",
+      "value": "C:\\Users\\[사용자 이름]\\Pictures\\iCloud Photos\\Photos",
+      "asOf": "Apple iCloud for Windows 사용 설명서 (날짜 없음)",
+      "sourceUrl": "https://support.apple.com/guide/icloud-windows/set-up-photos-icw9f0ba665f/1.0/icloud/1.0"
+    },
+    {
+      "what": "Apple 'iPhone 또는 iPad에서 사진 전송하기' 문서 게시일",
+      "value": "한국어 2026-09-22 / 영문 2026-09-14 — 어긋남, 일 단위 단정 금지",
+      "asOf": "조회 2026-10-08",
+      "sourceUrl": "https://support.apple.com/ko-kr/120267"
+    },
+    {
+      "what": "'이 컴퓨터를 신뢰하겠습니까' 알림 문서 게시일",
+      "value": "2025-12-11",
+      "asOf": "Apple 109054",
+      "sourceUrl": "https://support.apple.com/ko-kr/109054"
+    },
+    {
+      "what": "컴퓨터가 iPhone 을 인식하지 못하는 경우 문서 게시일",
+      "value": "2026-08-28",
+      "asOf": "Apple 108643",
+      "sourceUrl": "https://support.apple.com/ko-kr/108643"
+    },
+    {
+      "what": "Set up and use iCloud Photos 문서 게시일",
+      "value": "2026-09-14",
+      "asOf": "Apple 108782",
+      "sourceUrl": "https://support.apple.com/en-us/108782"
+    }
+  ],
+  "conflicts": [
+    {
+      "about": "iPhone에서 HEIC 전송 방식을 정하는 설정의 위치·이름",
+      "a": "Apple 공식 문서 116944(ko-kr·en-us, en-us 2025-12-05 게시)는 '설정 > 앱 > 사진 > (아래로 스크롤) 원본 유지'만 언급하고 '자동' 옵션과 'Mac 또는 PC로 전송'이라는 제목은 언급하지 않는다",
+      "b": "Cult of Mac(2017-09-20, iOS 11 기준)은 '설정 > 사진 > Mac 또는 PC로 전송'에서 '자동'(JPG)/'원본 유지'(HEIC) 두 옵션을 설명. 의뢰 지시문의 '설정 > 사진 > Mac 또는 PC로 전송: 자동/원본 유지'는 이쪽 표기와 일치. 현재(iOS 26/27) 한국어 화면의 정확한 위치·라벨은 공식 문서로 확인 못함 — 집필 시 '기기에서 직접 확인' 단서 필요",
+      "writerGuide": "현행 경로는 Apple 116944 의 '설정 > 앱 > 사진 > 원본 유지' 만. '자동'·'Mac 또는 PC로 전송' 은 쓰지 않는다(2017 자료, dropped). '화면 라벨은 iOS 버전에 따라 다를 수 있어요' 단서."
+    },
+    {
+      "about": "Apple 'iPhone 또는 iPad에서 사진 전송하기'(120267) 게시일",
+      "a": "한국어판(support.apple.com/ko-kr/120267) 게시일 2026-09-22",
+      "b": "영문판(support.apple.com/en-us/120267) 'Published Date: September 14, 2026' (영문판 제목은 'Transfer photos and videos from your iPhone or iPad to your Mac or PC'로 fetch됨, 검색 결과 제목은 'Transfer photos from your iPhone or iPad'). 번역·개정 시점 차이로 추정(미확인) — 글에서는 날짜를 단정하지 말 것",
+      "writerGuide": "날짜를 쓰지 않거나 '2026년 9월 표기' 수준으로만."
+    },
+    {
+      "about": "Windows에서 사진 가져오기에 Apple Devices 앱 설치가 필요한가",
+      "a": "Apple 120267(ko/en)은 Windows 가져오기 1단계로 'Microsoft Store에서 Apple 기기(Apple Devices) 앱 설치'를 안내하고, 108643도 Apple 기기 앱 실행 후 연결하는 순서를 안내",
+      "b": "Microsoft 사진 가져오기 문서(ko/en)의 단계에는 Apple Devices 앱 설치가 전혀 없다(잠금 해제 > 케이블 > 신뢰 > 사진 > 가져오기). 앱 없이도 사진 가져오기가 되는지는 공식 문서로 확인하지 못함. 어느 공식 문서에도 별도 USB 드라이버 설치 언급은 없음",
+      "writerGuide": "'Apple 은 Apple 기기 앱 설치부터 안내하고, Microsoft 사진 가져오기 문서엔 그 단계가 없다' 를 둘 다 그대로 전하고, 필수 여부는 단정하지 않는다."
+    },
+    {
+      "about": "iCloud 사진 저장 방식 선택 메뉴의 이름 (Optimize vs 원본 유지)",
+      "a": "Apple 108782를 WebFetch로 읽은 결과: iPhone은 Settings > [이름] > iCloud > Photos > iPhone Storage에서 'Optimize Storage'를 고르는 것으로 표기(iOS 26 이하는 Photos 설정에서 바로 선택), 'Download and Keep Originals'라는 이름은 이 페이지에 없고 Mac에만 'Download Originals to this Mac'이 있음",
+      "b": "같은 주제의 WebSearch 요약은 'Download and Keep Originals'(iPhone Storage 하위)라는 명칭과 'Optimize iPhone Storage'를 제시. 요약 도구 출력이라 원문 대조가 안 됨 — 한국어 UI 라벨('iPhone 저장 공간 최적화'/'원본 다운로드 및 유지' 등)은 미확인",
+      "writerGuide": "메뉴 이름 대신 기능('기기에 원본을 내려받는 설정')으로 설명. 영문 라벨은 '영문 문서 표기' 로만 언급."
+    }
+  ],
+  "sources": [
+    {
+      "title": "iPhone 또는 iPad에서 사진 전송하기 - Apple 지원 (한국어)",
+      "url": "https://support.apple.com/ko-kr/120267",
+      "host": "support.apple.com",
+      "body": "[WebFetch 요약본 — 페이지 원문 전체 아님] 문서 제목: 「iPhone 또는 iPad에서 사진 전송하기」 (Apple 지원, 게시일 2026년 9월 22일). Windows PC로 가져오기 단계: 1) Microsoft Store에서 Apple 기기 앱을 설치합니다. 2) USB 케이블로 iPhone 또는 iPad를 PC에 연결합니다. 3) 기기 잠금 암호를 입력해 잠금을 해제합니다. 4) 기기에 뜬 컴퓨터 신뢰 확인 창에서 '신뢰' 또는 '허용'을 선택합니다. 5) Microsoft 지원 사이트에서 Windows 사진 앱으로 사진을 가져오는 방법을 확인합니다(Apple 문서는 사진 앱 가져오기 화면 자체는 설명하지 않고 Microsoft 안내로 넘김). 추가 안내: iCloud 사진이 켜져 있으면, 먼저 원본 사진을 기기에 전체 해상도로 다운로드한 뒤 PC로 가져와야 합니다. Windows와의 호환성을 높이려면 설정 앱에서 카메라 > 포맷으로 이동해 '높은 호환성'을 선택하면 이후 카메라는 JPEG와 H.264 형식으로 사진과 비디오를 촬영합니다.",
+      "tier": "official",
+      "publishedAt": "2026-09-22",
+      "facts": [
+        "Apple 한국어 문서(게시 2026-09-22)의 Windows 가져오기 순서: Microsoft Store에서 'Apple 기기' 앱 설치 > USB 케이블 연결 > 암호로 잠금 해제 > 기기에서 '신뢰' 또는 '허용' > Microsoft 사진 앱에서 가져오기(5단계)",
+        "iCloud 사진이 켜져 있으면 PC로 가져오기 전에 원본 전체 해상도 사진을 iPhone/iPad에 먼저 다운로드해야 한다",
+        "Windows 호환성을 위해 설정 > 카메라 > 포맷 > '높은 호환성'을 고르면 이후 촬영분이 JPEG와 H.264로 저장된다",
+        "Apple 문서 자체는 Windows 사진 앱의 가져오기 화면을 설명하지 않고 Microsoft 안내를 참고하라고 안내한다"
+      ]
+    },
+    {
+      "title": "Transfer photos and videos from your iPhone or iPad to your Mac or PC - Apple Support (en-us)",
+      "url": "https://support.apple.com/en-us/120267",
+      "host": "support.apple.com",
+      "body": "[WebFetch 요약본 — 원문 전체 아님] Title: 'Transfer photos and videos from your iPhone or iPad to your Mac or PC' (Published Date: September 14, 2026). iCloud Photos keeps photos and videos up to date across Apple devices, iCloud.com and PCs so manual import is unnecessary; it always uploads full-resolution originals, and each device can keep originals or smaller device-optimized versions, using iCloud storage. Import to Mac (Photos app): connect by USB, click Allow if prompted, open Photos, the Import screen should appear (otherwise click the device name in the sidebar), unlock with passcode / tap Trust, choose a destination album, select items and click Import Selected or Import All New Items, wait, then disconnect. If iCloud Photos is on, photos sync automatically; use USB only if iCloud Photos is off or iCloud storage is full. Import to Windows PC: install the Apple Devices app from the Microsoft Store, connect by USB, unlock with passcode if asked, tap Trust or Allow on the device, follow Microsoft's guide to import into the Microsoft Photos app. If iCloud Photos is on, download the original full-resolution versions to the device before importing to the PC. Camera format: Settings > Camera > Formats > Most Compatible captures JPEG and H.264. Mac alternative: Image Capture imports directly into a folder.",
+      "tier": "official",
+      "publishedAt": "2026-09-14",
+      "facts": [
+        "영문판 Apple 문서의 게시일은 2026-09-14(한국어판은 2026-09-22로 표기 — conflicts 참고)",
+        "맥(사진 앱) 가져오기 8단계: USB 연결 > 액세서리 연결 허용 > 사진 앱 열기 > 가져오기 화면(안 뜨면 사이드바에서 기기 이름 클릭) > 암호/신뢰 > 목적지 앨범 선택 > 'Import Selected' 또는 'Import All New Items' > 완료 후 분리",
+        "iCloud 사진이 켜져 있으면 맥에서는 자동 동기화되므로 USB 방식은 iCloud 사진이 꺼져 있거나 iCloud 저장공간이 가득 찼을 때만 쓰라고 안내",
+        "iCloud 사진은 항상 전체 해상도 원본을 업로드하고, 각 기기는 원본 또는 기기 최적화 버전 중 하나를 보관한다",
+        "맥에서는 이미지 캡처(Image Capture)로 폴더에 직접 가져오는 대안도 안내"
+      ]
+    },
+    {
+      "title": "Apple 기기에서 HEIF 또는 HEVC 미디어 사용하기 - Apple 지원 (한국어)",
+      "url": "https://support.apple.com/ko-kr/116944",
+      "host": "support.apple.com",
+      "body": "[WebFetch 요약본 — 원문 전체 아님] 1) 캡처 포맷: iPhone 7 이후, 일부 iPad, Apple Vision Pro에서 HEIF(사진)와 HEVC(동영상)로 촬영 가능. 이전 포맷으로 촬영하려면 설정 > 카메라 > 포맷에서 '높은 호환성'을 선택하면 이후 촬영분은 JPEG 또는 H.264로 저장. 2) 호환성: 열람·편집·복제에는 iOS 11 이후, macOS High Sierra 10.13 이후 필요. 일부 구형 기기는 동영상 해상도와 프레임률에 따라 HEVC를 지원하지 않으며 1080p 이하, 60fps 이하가 더 넓게 호환. 3) 공유: iCloud 사진으로 공유하면 원래 포맷·해상도·프레임률 유지. AirDrop, 메시지, 이메일 등은 수신 기기가 최신 포맷을 지원하지 않으면 JPEG 또는 H.264로 자동 변환될 수 있음. 4) 수동 변환(Mac): 사진/미리보기 파일 > 내보내기 > JPEG 또는 PNG, QuickTime Player 파일 > 다음으로 내보내기 > H.264 호환 옵션. 5) USB로 PC 등에 가져오기: 사진 앱, 이미지 캡처, PC로 가져올 때 JPEG 또는 H.264로 변환될 수 있음. 변환을 막으려면 설정 > 앱 > 사진에서 아래로 스크롤해 '원본 유지'를 켭니다.",
+      "tier": "official",
+      "publishedAt": null,
+      "facts": [
+        "HEIF/HEVC 촬영은 iPhone 7 이후 기기에서 가능(일부 iPad, Apple Vision Pro 포함)",
+        "USB로 사진 앱·이미지 캡처·PC로 가져올 때 HEIF/HEVC가 JPEG/H.264로 변환될 수 있고, 막으려면 설정 > 앱 > 사진 > 아래로 스크롤 > '원본 유지'",
+        "HEIF/HEVC 열람·편집에는 iOS 11 이후 / macOS High Sierra 10.13 이후가 필요하고, 1080p 이하·60fps 이하가 더 널리 호환된다",
+        "이 한국어 문서에는 'Mac 또는 PC로 전송'이라는 별도 제목이나 '자동' 옵션 언급이 없다(원본 유지만 언급)",
+        "설정 > 카메라 > 포맷 > '높은 호환성'은 이후 촬영분만 JPEG/H.264로 저장(기존 사진 변환 아님)"
+      ]
+    },
+    {
+      "title": "Using HEIF or HEVC media on Apple devices - Apple Support (en-us)",
+      "url": "https://support.apple.com/en-us/116944",
+      "host": "support.apple.com",
+      "body": "[WebFetch 요약본 — 원문 전체 아님] Published Date: December 05, 2025. When you import HEIF or HEVC media from an attached iPhone or iPad into Photos, Image Capture, or a PC, the media 'might be converted to JPEG or H.264.' To prevent conversion, open Settings, tap Apps, tap Photos, then tap Keep Originals. The page doesn't mention an 'Automatic' option or a 'Transfer to Mac or PC' setting. Camera formats: Settings > Camera > Formats; Most Compatible records JPEG and H.264, High Efficiency records HEIF and HEVC; the Formats option appears only on devices that support HEIF/HEVC capture. Compatibility: viewing, editing and duplicating HEIF/HEVC requires iOS 11 or later or macOS High Sierra 10.13 or later; supported capture devices include iPhone 7 and later, several iPad models, Apple Vision Pro; on Macs running macOS Tahoe 26 or later HDR screenshots save as HEIF and screen recordings as HEVC. Sharing via iCloud Photos keeps the original format; AirDrop, Messages or email may convert to JPEG or H.264 if the receiving device doesn't support the newer formats. Manual conversion: Photos/Preview File > Export (JPEG or PNG); QuickTime Player File > Export As > Greater Compatibility (H.264).",
+      "tier": "official",
+      "publishedAt": "2025-12-05",
+      "facts": [
+        "Apple 영문 문서(2025-12-05 게시): PC로 가져올 때 HEIF/HEVC가 'might be converted'(변환될 수 있음) 이며, 막는 경로는 Settings > Apps > Photos > Keep Originals",
+        "이 문서에는 'Automatic' 옵션이나 'Transfer to Mac or PC' 설정 명칭이 없다",
+        "Settings > Camera > Formats: Most Compatible = JPEG/H.264, High Efficiency = HEIF/HEVC",
+        "macOS Tahoe 26 이상에서는 HDR 스크린샷이 HEIF, 화면 녹화가 HEVC로 저장된다"
+      ]
+    },
+    {
+      "title": "휴대폰에서 PC로 사진 및 비디오 가져오기 - Microsoft 지원 (한국어)",
+      "url": "https://support.microsoft.com/ko-kr/windows/apps/photos/import-photos-and-videos-from-phone-to-pc",
+      "host": "support.microsoft.com",
+      "body": "[WebFetch 요약본 — 원문 전체 아님] 제목: 「휴대폰에서 PC로 사진 및 비디오 가져오기」. iPhone 가져오기 단계: 1) 잠금 해제: 휴대폰이 잠겨 있으면 PC에서 장치를 찾을 수 없으니 먼저 잠금을 풉니다. 2) 케이블 연결: 파일 전송이 가능한 USB 케이블로 휴대폰과 PC를 연결합니다. 3) 신뢰 설정: 휴대폰에 이 컴퓨터를 신뢰할지 묻는 메시지가 뜨면 승인합니다. 4) 사진 앱 열기: PC에서 시작 단추를 누른 뒤 사진을 선택합니다. 5) 가져오기: '가져오기'에서 '연결된 장치'를 선택하고 안내를 따릅니다. 가져올 항목과 저장 위치를 고른 뒤 검색과 전송이 끝날 때까지 몇 분 기다립니다. iCloud 사진 문제 해결: 사진이나 동영상이 iCloud에만 있고 기기에는 없으면 다운로드되지 않을 수 있습니다. 이때는 Windows용 iCloud를 사용해 해당 파일을 열거나 PC로 가져옵니다. 본문에 게시일·수정일 없음(페이지 하단 저작권 표기 © Microsoft 2026). HEIC/HEVC 관련 내용은 이 페이지에 없음. [코디네이터 원문 대조 2026-10-08, curl] 번호 목록 앞에 \"먼저, 파일을 전송할 수 있는 USB 케이블을 사용하여 사용자 휴대폰을 PC에 연결합니다.\" 다음 1번이 잠금 해제 — 연결→잠금 해제 순서로 Apple·MS 영문과 같음.",
+      "tier": "official",
+      "publishedAt": null,
+      "facts": [
+        "Microsoft 한국어 문서 메뉴 경로: 시작 > 사진 > 가져오기 > 연결된 장치 (iPhone을 USB로 연결·잠금 해제·'신뢰' 승인 후)",
+        "'파일 전송이 가능한 USB 케이블'이 필요하고, 휴대폰이 잠겨 있으면 PC에서 장치를 찾을 수 없다",
+        "iCloud가 켜져 있고 사진이 iCloud에만 있고 기기에는 없으면 가져오기로 다운로드되지 않을 수 있으며, 이때 Windows용 iCloud를 쓰라고 안내",
+        "이 페이지에는 게시일·수정일이 없고 HEIC/HEVC 언급도 없다"
+      ]
+    },
+    {
+      "title": "Import photos and videos from phone to PC - Microsoft Support (en-us)",
+      "url": "https://support.microsoft.com/en-us/windows/apps/photos/import-photos-and-videos-from-phone-to-pc",
+      "host": "support.microsoft.com",
+      "body": "[WebFetch 요약본 — 원문 전체 아님] Title: 'Import photos and videos from phone to PC'. No publication or update date (footer only: © Microsoft 2026). Importing from an iPhone: 1) Connect the iPhone to the PC with a USB cable that can transfer files. 2) Unlock the iPhone — 'Your PC can't find the device if the device is locked.' 3) If the iPhone shows a prompt, select Trust or Allow ('might see a prompt on the iOS device asking you to Trust This Computer'). 4) On the PC, select Start, then select Photos to open the Photos app. 5) Select Import, then select your connected device, then follow the instructions. iCloud troubleshooting: 'If iCloud is enabled on your iOS device, you may not be able to download your photos or videos if they exist on iCloud but not on your device.' To open or import those photos on your PC, use iCloud for Windows. The page doesn't mention HEIC or HEVC, file extension costs, or format information.",
+      "tier": "official",
+      "publishedAt": null,
+      "facts": [
+        "Microsoft 영문 문서 경로: Start > Photos > Import > (your connected device), 한국어판의 '가져오기 > 연결된 장치'와 일치",
+        "'Your PC can't find the device if the device is locked' — 잠금 상태에서는 PC가 기기를 찾지 못한다",
+        "iCloud에만 있고 기기에 없는 사진은 가져오기로 받지 못할 수 있으며 Windows용 iCloud를 쓰라고 안내",
+        "이 페이지에는 HEIC/HEVC·확장 프로그램 비용 언급이 없다"
+      ]
+    },
+    {
+      "title": "Photos app Video Editor error: Can't view this file type - Microsoft Support",
+      "url": "https://support.microsoft.com/en-us/windows/apps/photos/photos-app-video-editor-error-can-t-view-this-file-type",
+      "host": "support.microsoft.com",
+      "body": "[WebFetch 요약본 — 원문 전체 아님] Option 1 ('easiest'): install HEIF Image Extensions (for HEIF/HEIC photos): free; and HEVC Video Extensions (for HEVC videos): $0.99. Quote: 'You'll need both, even if you only plan on using photos and not videos.' Both are obtained from the Microsoft Store (page links productId 9PMMSR1CGPWG for HEIF and 9NMZLZ57R3T7 for HEVC). Steps: buy both extensions and install them on a PC that meets system requirements, then restart the Photos app. Option 2: re-import the files from your iPhone or Android, or email them to yourself — some devices convert HEIC/HEVC files automatically; you may need to change the Camera and Photo settings on your phone. Option 3 (photos only): upload the files to OneDrive, which converts them. The page gives no article date (footer © Microsoft 2026) and lists 'Windows 10' under Applies To.",
+      "tier": "official",
+      "publishedAt": null,
+      "facts": [
+        "HEIF Image Extensions(HEIC 사진용)는 무료, HEVC Video Extensions(HEVC 동영상용)는 $0.99 — 둘 다 Microsoft Store (페이지 날짜 없음, 'Applies To: Windows 10')",
+        "문서 인용: 'You'll need both, even if you only plan on using photos and not videos.'",
+        "대안: 폰에서 다시 가져오기(기기가 HEIC/HEVC를 자동 변환하기도 함) / 메일로 보내기 / 사진은 OneDrive 업로드로 변환",
+        "확장 설치 후 사진 앱을 다시 시작하라고 안내"
+      ]
+    },
+    {
+      "title": "iPhone, iPad 또는 iPod touch의 '이 컴퓨터를 신뢰하겠습니까' 알림 메시지에 관하여 - Apple 지원",
+      "url": "https://support.apple.com/ko-kr/109054",
+      "host": "support.apple.com",
+      "body": "[WebFetch 요약본 — 원문 전체 아님] 제목: 「iPhone, iPad 또는 iPod touch의 '이 컴퓨터를 신뢰하겠습니까' 알림 메시지에 관하여」 (게시일 2025년 12월 11일). 알림의 의미: 기기를 컴퓨터나 다른 기기에 처음 연결하면, 그 기기가 내 기기의 데이터에 접근하도록 허용할지 묻는 알림이 나타납니다. 선택 결과: '신뢰'를 누르면 컴퓨터가 기기와 동기화하고 사진, 비디오, 연락처 등에 접근할 수 있으며, 신뢰 설정은 직접 변경하거나 기기를 초기화하기 전까지 유지됩니다. '신뢰하지 않음'을 누르면 해당 컴퓨터는 기기의 콘텐츠에 접근할 수 없으며, 기기를 연결할 때마다 알림이 다시 나타납니다. 알림이 나타나지 않을 때(위치 및 개인정보 보호 재설정 경로): 설정 > 일반 > 전송 또는 '[기기] 재설정' > 재설정 > 위치 및 개인정보 보호 재설정. 재설정 후 이전에 신뢰했던 컴퓨터에 연결하면 신뢰 여부를 묻는 알림이 다시 표시됩니다.",
+      "tier": "official",
+      "publishedAt": "2025-12-11",
+      "facts": [
+        "'신뢰'를 누르면 컴퓨터가 사진·비디오·연락처 등에 접근 가능, 이 설정은 직접 바꾸거나 기기를 초기화하기 전까지 유지된다",
+        "'신뢰하지 않음'을 누르면 연결할 때마다 알림이 다시 나타난다",
+        "알림이 안 뜨거나 실수로 거부했을 때: 설정 > 일반 > 전송 또는 '[기기] 재설정' > 재설정 > 위치 및 개인정보 보호 재설정 (5단계 경로, 문서 게시 2025-12-11)",
+        "재설정 후 같은 컴퓨터에 다시 연결하면 신뢰 알림이 다시 뜬다"
+      ]
+    },
+    {
+      "title": "컴퓨터가 iPhone 또는 iPad를 인식하지 못하는 경우 - Apple 지원",
+      "url": "https://support.apple.com/ko-kr/108643",
+      "host": "support.apple.com",
+      "body": "[WebFetch 요약본 — 원문 전체 아님] 제목: 「컴퓨터가 iPhone 또는 iPad를 인식하지 못하는 경우」 (게시일 2026년 08월 28일). Windows 관련 단계: 1) Apple 기기 앱을 실행합니다. 2) USB 케이블로 Apple 기기를 PC에 연결합니다. 3) 기기에 '이 컴퓨터를 신뢰하겠습니까?' 알림이 뜨면 '신뢰'를 선택합니다. 알림이 없거나 실수로 '신뢰하지 않음'을 누른 경우에는 위치 및 개인정보 보호 설정을 재설정합니다. 4) 연결되면 Apple 기기 앱 창 사이드바에 기기가 표시됩니다. 인식되지 않을 때 확인할 사항: USB 케이블과 연결 상태 및 충전 포트의 이물질 여부, 데이터 전송과 충전을 모두 지원하는 다른 케이블, 다른 USB 포트 또는 다른 컴퓨터, 소프트웨어 충돌 여부, 최신 버전의 Windows 및 iOS 또는 iPadOS 사용 여부. 신뢰 알림 초기화 경로 자체는 이 페이지에 없고 별도 문서('이 컴퓨터를 신뢰하겠습니까' 알림에 관하여)로 안내.",
+      "tier": "official",
+      "publishedAt": "2026-08-28",
+      "facts": [
+        "Apple 한국어 문서(게시 2026-08-28): Windows에서는 Apple 기기 앱 실행 > USB 연결 > '신뢰' 선택 > 앱 사이드바에 기기 표시 순서",
+        "인식 안 될 때 점검: 데이터 전송과 충전을 모두 지원하는 케이블, 다른 USB 포트/컴퓨터, 충전 포트 이물질, 소프트웨어 충돌, Windows·iOS 최신 버전",
+        "영문판 검색 요약에는 Apple Mobile Device Service 재시작(services.msc) 절차가 있으나 이 한국어 페이지 본문에서는 확인하지 못함"
+      ]
+    },
+    {
+      "title": "Windows용 iCloud 다운로드하기 - Apple 지원",
+      "url": "https://support.apple.com/ko-kr/103232",
+      "host": "support.apple.com",
+      "body": "[WebFetch 요약본 — 원문 전체 아님] 제목: 「Windows용 iCloud 다운로드하기」 (Apple 지원, 게시일 2026년 8월 6일). 시스템 요구사항: Windows 11 이상을 권장하며, Outlook 2021 이상이 필요합니다. 최신 버전을 쓰려면 PC를 이 버전으로 업데이트하라고 안내합니다. 설치 방법: Microsoft Store에서 'Microsoft Store에서 Windows용 iCloud 다운로드하기' 링크를 통해 내려받습니다. 로그인 방법: 원문에는 구체적인 로그인 절차가 없습니다. 설치 후 기능 설정 방법은 별도 Apple 지원 가이드로 연결됩니다. 참고: Windows용 iCloud는 관리형 Apple 계정을 지원하지 않습니다.",
+      "tier": "official",
+      "publishedAt": "2026-08-06",
+      "facts": [
+        "Windows용 iCloud 다운로드 문서(게시 2026-08-06): Windows 11 이상 권장, Outlook 2021 이상 필요, Microsoft Store에서 내려받음",
+        "Windows용 iCloud는 관리형 Apple 계정을 지원하지 않는다",
+        "페이지에는 구체적 로그인 절차가 없고 기능 설정은 별도 가이드로 연결"
+      ]
+    },
+    {
+      "title": "iCloud 사진 설정 및 사용하기 (iCloud 사용 설명서, 한국어) - Apple 지원",
+      "url": "https://support.apple.com/ko-kr/guide/icloud/mm7e90c1ba48/1.0/icloud",
+      "host": "support.apple.com",
+      "body": "[WebFetch 요약본 — 원문 전체 아님] Windows 기기에서 iCloud 사진 설정: 1) iCloud가 설치되어 있지 않다면 Windows용 iCloud를 다운로드합니다(안내 문서 support.apple.com/103232 링크). 2) Windows용 iCloud를 실행합니다. 3) 'iCloud 사진' 항목 오른쪽의 화살표 버튼을 클릭한 다음 'iCloud 사진'을 켭니다. 4) '완료'를 클릭합니다. iCloud 사진 보기: 파일 탐색기를 열고 탐색 패널에서 'iCloud 사진'을 클릭합니다. 'iCloud 사진'이 보이지 않으면 탐색 패널에서 '이미지'를 클릭한 다음 'iCloud 사진'을 더블클릭합니다. 참고: 모든 기기에서 같은 Apple 계정으로 로그인되어 있어야 하며 그렇지 않으면 사진과 비디오에 접근할 수 없습니다. 사진 다운로드·업로드 세부 절차는 이 페이지에 없고 Windows용 iCloud 사용 설명서의 'Windows 컴퓨터에서 iCloud 사진 다운로드 및 보기' 및 'Windows 컴퓨터에서 iCloud에 사진 및 비디오 추가' 문서로 안내.",
+      "tier": "official",
+      "publishedAt": null,
+      "facts": [
+        "Windows용 iCloud에서 iCloud 사진 켜기: Windows용 iCloud 실행 > 'iCloud 사진' 오른쪽 화살표 버튼 > 'iCloud 사진' 켜기 > '완료'",
+        "iCloud 사진 보기: 파일 탐색기 탐색 패널의 'iCloud 사진'(안 보이면 '이미지' 클릭 후 'iCloud 사진' 더블클릭)",
+        "모든 기기에서 같은 Apple 계정으로 로그인되어 있어야 사진·비디오에 접근할 수 있다"
+      ]
+    },
+    {
+      "title": "Set up Photos in iCloud for Windows - Apple Support",
+      "url": "https://support.apple.com/guide/icloud-windows/set-up-photos-icw9f0ba665f/1.0/icloud/1.0",
+      "host": "support.apple.com",
+      "body": "[WebFetch 요약본 — 원문 전체 아님] Title: 'Set up Photos in iCloud for Windows'. Set up iCloud Photos: 1) Open iCloud for Windows. 2) Click the arrow button to the right of iCloud Photos. 3) To access iCloud Photos and iCloud Shared Photo Library on your PC, turn on iCloud Photos. Files are stored in C:\\Users\\[user name]\\Pictures\\iCloud Photos\\Photos. 4) (Optional) Select 'Download High-Efficiency format photos and videos' or 'Download HDR videos'. This requires iCloud for Windows 14.2 or later. 5) To access iCloud Shared Albums on your PC, turn on Shared Albums. 6) Click Done. Change where Shared Albums photos and videos are stored: open iCloud for Windows, select Photos, click the arrow button, scroll to Shared Albums, click Change and choose a new location. The new location must be a folder on the C: drive, since 'External drives aren't supported.' The page doesn't mention HEIC or original-file handling beyond the High-Efficiency download option.",
+      "tier": "official",
+      "publishedAt": null,
+      "facts": [
+        "iCloud 사진 파일 저장 위치: C:\\Users\\[사용자 이름]\\Pictures\\iCloud Photos\\Photos",
+        "선택 옵션 'Download High-Efficiency format photos and videos' / 'Download HDR videos' 는 iCloud for Windows 14.2 이상에서만 가능",
+        "공유 앨범 저장 위치는 C: 드라이브 폴더만 가능('External drives aren't supported')",
+        "Windows 설정 6단계: 앱 열기 > iCloud Photos 오른쪽 화살표 > iCloud Photos 켜기 > (선택)고효율 형식 다운로드 > (선택)공유 앨범 > Done"
+      ]
+    },
+    {
+      "title": "Download and view photos and videos - iCloud for Windows User Guide - Apple Support",
+      "url": "https://support.apple.com/guide/icloud-windows/download-and-view-photos-and-videos-icw2ed20ffd1/1.0/icloud/1.0",
+      "host": "support.apple.com",
+      "body": "[WebFetch 요약본 — 원문 전체 아님] Viewing iCloud Photos in File Explorer: 1) Open File Explorer and click iCloud Photos in the Navigation pane. If it isn't listed, click Pictures in the Navigation pane, then double-click iCloud Photos. 2) 'Double-click a thumbnail to download and view it.' Icons beside each filename show its download status and whether it's part of an iCloud Shared Photo Library. Viewing iCloud Photos in Microsoft Photos: open iCloud for Windows; below iCloud Photos, click View in Microsoft Photos — this works only after you've downloaded the photos and videos. Other details: items appear as thumbnails until you download them. In iCloud for Windows 14.2 or later, moving or deleting a photo in Microsoft Photos affects all devices with iCloud Photos turned on. Edits you make on Windows don't appear on Apple devices or iCloud.com; to add an edited file to iCloud Photos, upload it as a new file. The page doesn't say whether originals or optimized versions are downloaded.",
+      "tier": "official",
+      "publishedAt": null,
+      "facts": [
+        "섬네일을 더블클릭하면 그 사진/동영상이 다운로드되어 열리고, 다운로드 전에는 섬네일만 보인다",
+        "iCloud for Windows 14.2 이상: Microsoft 사진 앱에서 사진을 옮기거나 삭제하면 iCloud 사진을 켠 모든 기기에 반영된다(삭제 주의)",
+        "Windows에서 편집한 파일은 Apple 기기·iCloud.com에 반영되지 않으며, 올리려면 새 파일로 업로드해야 한다",
+        "'View in Microsoft Photos'는 다운로드를 마친 사진에만 작동"
+      ]
+    },
+    {
+      "title": "Keep photos and videos downloaded - iCloud for Windows User Guide - Apple Support",
+      "url": "https://support.apple.com/guide/icloud-windows/keep-photos-and-videos-downloaded-icw524278130/1.0/icloud/1.0",
+      "host": "support.apple.com",
+      "body": "[WebFetch 요약본 — 원문 전체 아님] Title: 'Keep photos and videos downloaded in iCloud for Windows'. Pin a photo or video ('Always keep on this device'): 1) Open File Explorer and click iCloud Photos in the Navigation pane; if you don't see it, click Pictures, then double-click iCloud Photos. 2) Right-click the item and choose 'Always keep on this device'. A checkmark next to that option means the item is pinned. Unpin a photo or video: open iCloud Photos in File Explorer as above, then right-click the item and choose 'Always keep on this device' again to remove the checkmark. Free up space: unpinning doesn't remove the item from your PC; to free up space see 'Remove iCloud files and photos to free up space on your PC.'",
+      "tier": "official",
+      "publishedAt": null,
+      "facts": [
+        "파일 탐색기 > iCloud Photos > 항목 우클릭 > 'Always keep on this device' 에 체크가 있으면 PC에 고정(pin)된 것",
+        "고정을 해제(체크 제거)해도 PC에서 파일이 지워지지는 않으며, 공간 확보는 별도 절차('Remove iCloud files and photos to free up space on your PC')",
+        "PC로 안전하게 옮겨두려면 'Always keep on this device'로 고정해 원본이 PC에 내려받아지게 하는 방법이 문서에 명시된 경로"
+      ]
+    },
+    {
+      "title": "Use iCloud Photos on your PC - Apple Support",
+      "url": "https://support.apple.com/en-us/108994",
+      "host": "support.apple.com",
+      "body": "[WebFetch 요약본 — 원문 전체 아님] Title: 'Use iCloud Photos on your PC' (Published April 30, 2025). The page doesn't list a Windows version. It says 'With iCloud for Windows, you can access your photos and videos stored in iCloud.' Setup steps: 1) Set up Photos in iCloud for Windows on your PC (links to a separate iCloud for Windows guide). 2) Access your files through File Explorer or iCloud.com. Download methods: File Explorer — open File Explorer and click iCloud Photos, double-click a photo or video to download and view it, hold Ctrl to select several. iCloud.com — go to iCloud.com/photos, sign in with your Apple Account, select photos or videos (hold Ctrl for multiple), then click the download button in the upper-right corner. The page says iCloud Photos 'safely stores all your photos and videos in iCloud,' but it doesn't give a local folder path or discuss original-quality files.",
+      "tier": "official",
+      "publishedAt": "2025-04-30",
+      "facts": [
+        "Windows에서 iCloud 사진에 접근하는 2가지 길: 파일 탐색기의 iCloud Photos 폴더 / iCloud.com/photos (문서 게시 2025-04-30)",
+        "파일 탐색기에서는 Ctrl을 누르고 여러 항목을 선택할 수 있고, iCloud.com에서는 Ctrl 다중 선택 후 오른쪽 위 다운로드 버튼을 누른다",
+        "이 페이지는 Windows 버전 요구사항·원본 품질·로컬 폴더 경로를 다루지 않는다"
+      ]
+    },
+    {
+      "title": "Set up and use iCloud Photos - Apple Support",
+      "url": "https://support.apple.com/en-us/108782",
+      "host": "support.apple.com",
+      "body": "[WebFetch 요약본 — 원문 전체 아님] Title: 'Set up and use iCloud Photos' (Published Date: September 14, 2026). Turn on iCloud Photos (iPhone, iPad or Apple Vision Pro): open Settings, tap your name, tap iCloud, tap Photos, turn on Sync this device. Optimize Storage vs keeping originals: on iPhone/iPad/Apple Vision Pro open Settings, tap your name, then iCloud; under 'Saved to iCloud' tap Photos, tap iPhone Storage, and choose Optimize Storage; in iOS 26 or earlier, choose Optimize Storage directly from the Photos settings. Mac: in the Photos app open Settings from the Photos menu, click the iCloud tab, choose a storage setting; to keep full-size originals on the Mac select 'Download Originals to this Mac.' Optimize Storage keeps smaller versions on your device while iCloud stores the full-resolution originals; downloading originals keeps full-size copies on the device. The page doesn't mention a 'Download and Keep Originals' option by that name and has no Windows steps; it links to 'Use iCloud Photos on your PC' (support.apple.com/en-us/108994).",
+      "tier": "official",
+      "publishedAt": "2026-09-14",
+      "facts": [
+        "iPhone에서 iCloud 사진 켜기(2026-09-14판): Settings > [내 이름] > iCloud > Photos > 'Sync this device' 켜기",
+        "Optimize Storage는 기기에 작은 버전만 두고 전체 해상도 원본은 iCloud에 보관 — 그래서 원본이 기기에 없으면 USB 가져오기가 안 될 수 있다",
+        "iOS 26 이하에서는 Photos 설정에서 바로 Optimize Storage를 고르고, 최신판은 iPhone Storage 하위에서 고르는 것으로 안내(문서 표기)",
+        "Mac의 원본 유지 설정 이름은 'Download Originals to this Mac'"
+      ]
+    },
+    {
+      "title": "Download iCloud photos and videos - Apple Support",
+      "url": "https://support.apple.com/en-us/111762",
+      "host": "support.apple.com",
+      "body": "[WebFetch 요약본 — 원문 전체 아님] Title: 'Download iCloud photos and videos' (Published April 10, 2026). Methods: iPhone or iPad (Photos app), Mac (Photos app), iCloud.com on iPhone or iPad, iCloud.com on Mac or PC. iPhone/iPad steps: update to the latest iOS or iPadOS and connect to Wi-Fi; in the Photos app go to Library; tap Select and choose items; tap the Share button then 'Export Unmodified Originals'; choose a save location in Files (defaults to iCloud Drive; use the Back arrow to pick another location such as an external storage device); tap Save. iCloud.com on Mac or PC: go to iCloud.com/photos, sign in with your Apple Account, select one or more items (hold Command on a Mac or Control on a PC), click the Download button in the upper-right corner, or click More and choose 'More Download Options', then click Download. On iCloud.com on iPhone/iPad the 'More Download Options' offer Unmodified Originals, Highest Resolution, or Most Compatible. Limit: on iCloud.com you can select up to 1,000 items at a time (all devices). The page does not mention zip archives or file-size limits.",
+      "tier": "official",
+      "publishedAt": "2026-04-10",
+      "facts": [
+        "iCloud.com에서는 한 번에 최대 1,000개 항목까지 선택해 다운로드할 수 있다(문서 게시 2026-04-10)",
+        "iPhone/iPad의 사진 앱에서 선택 > 공유 > 'Export Unmodified Originals'로 수정 안 된 원본을 파일에 저장할 수 있다",
+        "iCloud.com 'More Download Options'에는 Unmodified Originals / Highest Resolution / Most Compatible 선택지가 있다(iPhone/iPad의 iCloud.com 기준)",
+        "맥은 사진 > 설정 > iCloud에서 'Download Originals to this Mac'(원본) 또는 'Optimize Mac Storage'(낮은 해상도) 선택"
+      ]
+    },
+    {
+      "title": "Windows에 Apple 기기 앱 설치하기 - Apple 지원 (한국어)",
+      "url": "https://support.apple.com/ko-kr/guide/devices-windows/mchl5ded2763/1.4/windows/10",
+      "host": "support.apple.com",
+      "body": "[WebFetch 요약본 — 원문 전체 아님] 제목: 「Windows에 Apple 기기 앱 설치하기」. 시스템 요구사항(Windows 버전)은 페이지에 명시되어 있지 않습니다. 설치 방법(Microsoft Store): 1) Windows 기기에서 Microsoft Store를 엽니다. 2) 'Apple 기기'를 검색합니다. 3) Apple 기기 앱을 선택한 뒤 설치합니다. 참고 사항: '음악 및 TV 앱을 Apple 기기 앱과 함께 사용하려면 해당 앱을 미리 설치해둬야 합니다.' iTunes와의 관계 및 드라이버 관련 내용은 이 페이지에 언급되어 있지 않습니다. (영문 Install the Apple Devices app on Windows 페이지도 동일하게 Microsoft Store에서 'Apple Devices'를 검색해 설치하는 3단계이며, Windows 버전 요구사항과 iTunes·드라이버 언급이 없음을 확인함.)",
+      "tier": "official",
+      "publishedAt": null,
+      "facts": [
+        "Apple 기기 앱 설치는 Microsoft Store에서 'Apple 기기'(영문 'Apple Devices') 검색 후 설치하는 3단계",
+        "이 설치 문서에는 Windows 버전 요구사항·iTunes와의 관계·드라이버 설치 언급이 없다",
+        "음악·TV 앱과 함께 쓰려면 해당 앱을 미리 설치해 두어야 한다(사진 가져오기와는 무관)",
+        "URL은 문서의 Windows 10 안내 변형(…/1.4/windows/10) — 같은 문서의 영문판은 support.apple.com/guide/devices-windows/install-the-apple-devices-app-mchl5ded2763/windows"
+      ]
+    },
+    {
+      "title": "Windows 기기와 Apple 기기 동기화 개요 - Apple 지원 (한국어)",
+      "url": "https://support.apple.com/ko-kr/guide/devices-windows/mchl923c1147/windows",
+      "host": "support.apple.com",
+      "body": "[WebFetch 요약본 — 원문 전체 아님] Apple 기기 앱의 역할: Windows PC에 iPhone, iPad 또는 iPod을 연결하면 Apple 기기 앱 사이드바에 기기가 나타납니다. 기기를 선택하면 기기 소프트웨어를 관리하고 Windows 기기와 항목을 동기화하는 옵션이 표시됩니다. 일반 패널에서는 소프트웨어 업데이트 확인, Windows 기기나 iCloud로의 백업, 백업에서 데이터 복원 등을 할 수 있습니다. iCloud 사진이 켜져 있을 때의 제한: iCloud를 사용해 음악이나 사진을 업데이트하면, 해당 항목의 사진 동기화 같은 동기화 옵션이 꺼집니다. 해당 항목을 Apple 기기와 동기화하려면 iCloud 사진을 끄면 됩니다. 자세한 내용은 'Windows용 iCloud에서 사진 설정하기'를 참조하라고 안내합니다. 이 페이지에는 iTunes에 대한 설명과 사진 가져오기(iPhone에서 PC로) 설명은 없음.",
+      "tier": "official",
+      "publishedAt": null,
+      "facts": [
+        "Apple 기기 앱은 연결된 기기를 사이드바에 보여주고 소프트웨어 업데이트·백업(Windows 또는 iCloud)·복원을 제공 — 사진 가져오기 화면은 이 앱이 아니라 Windows 사진 앱",
+        "iCloud 사진을 켜 두면 Apple 기기 앱의 '사진 동기화'(PC→iPhone) 옵션이 꺼진다",
+        "이 페이지에는 iPhone→PC 사진 가져오기 설명이 없다"
+      ]
+    }
+  ],
+  "dropped": [
+    {
+      "url": "https://www.cultofmac.com/?p=503857",
+      "why": "2017-09-20 iOS 11 시절 Cult of Mac 글(press) — 현행 iOS 메뉴와 다르고 맥(이미지 캡처) 기준 실험이라 Windows 근거 아님. '자동/원본 유지' 표기의 유일한 출처라 현재 경로로 쓰면 오해 → 본문 근거에서 제외(conflicts 1 에만 흔적)."
+    },
+    {
+      "url": "https://support.apple.com/en-us/120402",
+      "why": "Apple Devices 앱 '파일 공유(File Sharing)' 문서 — File Sharing 지원 앱의 파일용이고 사진 언급 없음. 사진 전송 경로로 오해될 소지 → 제외."
+    }
+  ],
+  "searchedAt": "2026-10-08",
+  "songs": []
+}

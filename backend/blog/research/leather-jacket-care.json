@@ -1,0 +1,412 @@
+{
+  "keyword": "가죽 자켓 관리법 (물세탁 되나, 비·얼룩 묻었을 때, 보관법·곰팡이, 인조가죽(합성피혁)과 차이)",
+  "categoryId": "hangeut-trend",
+  "notes": "근거 수준: 한국 공공기관 1차 문서 없음. official 은 캐나다 CCI(박물관 소장품 기준)·삼성전자서비스(가전 제조사)·STRUM(브랜드 자체 가이드)뿐이고, 소비자원·공정위 내용은 언론(문화일보·SBS Biz·중부일보) 경유다.\n말할 수 있는 것: 열·직사광선·건조기는 가죽에 금물, 습기·밀폐가 곰팡이 원인(통풍 커버·가끔 입기), 보관 직전 오일은 지양, 곰팡이는 번지지 않게 한 부위씩+테스트. 인조가죽은 '표시·광고' 보도(reported)까지만.\n말할 수 없는 것: 물세탁 가부(갈림 → 케어라벨 확인), 비 맞은 가죽 의류 공식 절차, 인조가죽 수명·가수분해, 에탄올 농도, 세탁 배상 내용연수.",
+  "cannotSay": [
+    "천연가죽 자켓은 물세탁 된다/안 된다 단정 금지 — 삼성전자서비스 '세탁 불가' vs GQ '찬물 손세탁'으로 갈리고 공공기관 판정 없음. '의견이 갈린다 + 케어라벨 확인'으로만.",
+    "CCI 수치(RH 45~55%, 18~20도, 곰팡이 2일/10일/100일)를 옷장 보관 기준처럼 단정 금지 — 박물관 소장품 기준 '참고치'로 귀속.",
+    "비 맞은 가죽 '의류' 공식 지침처럼 쓰기 금지 — 삼성전자서비스 페이지엔 비 맞은 경우 안내 없음, 근거는 가방 기사(경기일보 2013)·서울신문 1997·브랜드(STRUM)뿐. '여러 곳이 같은 말'로만.",
+    "PU 인조가죽 수명(N년)·'가수분해로 벗겨진다' 단정 금지 — 소비자원 인조가죽 보도에 '가수분해'란 말 없음('내구성 낮다'까지). 2008 초록은 TPU 실험실 수치.",
+    "세탁 배상 내용연수: 가죽 자켓 몇 년 단정 금지, 중부일보 제목 '자켓 3년' 인용 금지(본문에 없음). 쓰려면 glasswallet '2차 자료 기준·고시 원문 미대조' 귀속, 아니면 빼기.",
+    "1372 세탁 분쟁 건수를 '가죽 자켓 분쟁'처럼 쓰기 금지 — 세탁서비스 전체 수치. 가죽 의류 별도 통계 없음.",
+    "민간요법 권유 금지: 바나나 껍질(GQ vs 레이디경향 정반대)·식초/레몬즙·베이킹소다·올리브오일·양초+드라이어. 비닐 포장 보관 권장 금지(레이디경향 단독). 에탄올 농도(70% 등) 금지. 표백제는 도구·작업면용이지 가죽용 아님.",
+    "'크림/오일 바르지 마라' 또는 '꼭 발라라' 단정 금지 — STRUM(보관 전 금지·일본 다습 기후)·CCI(박물관, 일반 비권장) vs GQ·경기일보(권장)로 갈림.",
+    "레이디경향(게재일 불명, 페이지 표기 2004-01-01 신뢰 낮음) 단독 근거 금지 — conflicts 의 한쪽으로만.",
+    "'천연=친환경' 또는 '인조=에코' 단정 금지 — 공정위는 천연 가죽도 친환경과 거리가 멀다고 봤고 '에코레더' 표기는 부당 광고 경고 대상(SBS Biz)."
+  ],
+  "cannotCover": [
+    "인조가죽(합성피혁) 자켓 별도 관리법·보관 습도·수명 — 자료 없음. 소비자원/공정위 '친환경 표시광고' 보도(reported)가 전부라 관리법 비교 섹션은 만들지 말 것.",
+    "비 맞은 가죽 의류(자켓)의 공식·전문기관 지침.",
+    "한국 공공기관(소비자원·국가기술표준원·한국피혁연구원)의 가죽 물세탁 가부 공식 안내.",
+    "소독용 에탄올 권장 농도·안전성, 곰팡이 제거 후 전문 세탁소 의뢰 기준.",
+    "가죽 의류 한정 세탁 피해 건수·유형, 가죽 자켓의 세탁 배상 내용연수(고시 원문 미대조).",
+    "KS K 0021 / KS K ISO 3758 원문 및 가죽 전용 케어라벨 기호(삼성전자서비스의 'KSK-0021' 표기 번호도 미확인).",
+    "스웨이드·누박·양가죽 등 가죽 종류별 케어, 제품·브랜드 추천, 전문 세탁소 비용 — 자료 없음."
+  ],
+  "claims": [
+    {
+      "claim": "가죽 자켓은 열·직사광선·건조기에 약하다. 젖었을 때도 드라이어·햇볕·난로 대신 마른 수건으로 눌러 닦고 그늘에서 자연 건조하라는 게 출처들의 공통 원칙이다.",
+      "grade": "confirmed",
+      "evidence": [
+        "삼성전자서비스(2021-09-10 등록): 열을 가하거나 다리미를 쓰면 가죽이 수축해 원상 복구가 어렵다",
+        "삼성전자서비스(2023-12-22 등록): 가죽·모피·깃털·벨벳은 변형 우려로 '건조하면 안 되는 세탁물'로 분류",
+        "STRUM(브랜드 자체 가이드): 젖은 가죽은 그늘 자연 건조, 헤어드라이어 금지(열풍에 오래 노출되면 유분이 빠진다), 직사광선 금지(염색 가죽 퇴색), 에어컨 바람 직접 쐬기 금지",
+        "CCI 8/2(박물관 기준): 직사광선·스포트라이트 회피, 라디에이터 위 보관 금지",
+        "[보조·reported] 서울신문 1997: 눈·비 젖은 가죽은 직사광선·난롯불 금물, 마른 수건으로 물기 닦고 통풍 그늘 건조 / 경기일보 2013(가방, 브랜드 소개): 문지르지 말고 눌러 닦기, 열은 수분과 함께 탈수시켜 변형",
+        "[주의] 삼성전자서비스 28674 에는 '비 맞은 경우' 안내가 없다. 비 맞은 가죽 의류 공식 지침은 못 찾음 — 절차는 '여러 곳이 같은 말'로만 쓸 것."
+      ],
+      "sourceUrls": [
+        "https://www.samsungsvc.co.kr/solution/28674",
+        "https://www.samsungsvc.co.kr/solution/41123",
+        "https://strum.jp/en/pages/hokan",
+        "https://www.canada.ca/en/conservation-institute/services/conservation-preservation-publications/canadian-conservation-institute-notes/care-alum-vegetable-mineral-leather.html",
+        "https://www.seoul.co.kr/news/1997/03/12/19970312029003",
+        "https://www.kyeonggi.com/article/201307030519663"
+      ]
+    },
+    {
+      "claim": "가죽 자켓 물세탁 가부는 출처가 갈려 단정할 수 없다. 안전한 결론은 케어라벨(물통 X, 전문 세탁만 표시)을 먼저 확인하는 것이다.",
+      "grade": "unclear",
+      "evidence": [
+        "삼성전자서비스(2021): 가죽은 세탁도 할 수 없어 관리가 까다롭다는 취지 — 가전 제조사 안내, 가죽 전문기관 아님",
+        "삼성전자서비스(2023-12-22): 물세탁·손세탁·드라이클리닝 기호 설명은 싣지 않고 제품 설명서·의류 라벨을 확인하라고 안내 (이 부분만 official 근거)",
+        "GQ Korea 2026-03-13: 가죽 재킷은 전용 세제와 찬물로 빠르게 손세탁, 오염 부위만 닦고 가죽 크림 마무리 / GQ 2025-02: 약한 중성 비누 거품으로 살살 — 둘 다 전문가·기관 인용 없음",
+        "위키트리 2026-10-04(일반 의류, 가죽 언급 없음): 물통 X = 물세탁 금지, 손 모양 = 손빨래, 전문 세탁만 허용 표시면 집에서 물에 빨아 시험하지 말 것",
+        "한국소비자원·국가기술표준원의 '가죽 물세탁 가능/불가' 공식 판정은 찾지 못함"
+      ],
+      "sourceUrls": [
+        "https://www.samsungsvc.co.kr/solution/28674",
+        "https://www.samsungsvc.co.kr/solution/41123",
+        "https://www.gqkorea.co.kr/2026/03/13/%ec%95%84%eb%81%bc%eb%8a%94-%ea%b2%a8%ec%9a%b8%ec%98%b7-%ec%88%98%eb%aa%85-%eb%8a%98%eb%a6%ac%eb%8a%94-%ed%95%9c-%eb%81%97-%ec%95%8c%ec%95%84%eb%91%90%eb%a9%b4-%eb%8f%88-%ec%95%84%eb%81%bc%eb%8a%94-5/",
+        "https://www.gqkorea.co.kr/?p=316352",
+        "https://www.wikitree.co.kr/articles/1163811"
+      ]
+    },
+    {
+      "claim": "곰팡이는 습기와 정체된 공기가 원인이라, 보관은 비닐 대신 통풍되는 커버를 쓰고 옷장에 계속 넣어두지 말고 가끔 입는 게 핵심이다.",
+      "grade": "confirmed",
+      "evidence": [
+        "삼성전자서비스: 습기 많은 곳에 보관하면 곰팡이가 필 수 있다 / 어깨 폭이 딱 맞는 옷걸이에 한쪽으로 쏠리지 않게 걸어야 변형이 적다",
+        "STRUM: 옷장에 3~4개월 계속 넣어두는 것이 곰팡이에 가장 위험, 비닐백 금지(수분·공기 불통), 부직포 커버 사용, 보관 전 먼지 털고 꽉 짠 수건으로 닦아 그늘 통풍 건조를 월 1회 정도",
+        "CCI 8/1: 곰팡이는 RH 65~100%·따뜻한 온도·정체된 공기에서 번성 / CCI 8/2: RH 65% 초과 곰팡이 촉진, 30% 미만 경화, 습한 지하실·결로 파이프 근처 피함 (모두 박물관 소장품 기준 참고치)",
+        "[보조·reported] 서울신문 1997('반드시 커버')·경기일보 2013(비닐 대신 더스트백)도 같은 방향",
+        "[반대 의견] 레이디경향(게재일 불명)만 비닐 포장 보관을 권함 — 단독이고 다수와 반대라 쓰지 말 것"
+      ],
+      "sourceUrls": [
+        "https://www.samsungsvc.co.kr/solution/28674",
+        "https://strum.jp/en/pages/hokan",
+        "https://www.canada.ca/en/conservation-institute/services/conservation-preservation-publications/canadian-conservation-institute-notes/removing-mould-leather.html",
+        "https://www.canada.ca/en/conservation-institute/services/conservation-preservation-publications/canadian-conservation-institute-notes/care-alum-vegetable-mineral-leather.html",
+        "https://www.seoul.co.kr/news/1997/03/12/19970312029003",
+        "https://www.kyeonggi.com/article/201307030519663"
+      ]
+    },
+    {
+      "claim": "가죽 크림·오일은 만능이 아니다. 보관 직전에 바르면 오히려 곰팡이 영양분이 될 수 있어 STRUM 은 보관 전 금지, 바른다면 표면이 건조해 보일 때 착용 전에 바르라고 한다.",
+      "grade": "confirmed",
+      "evidence": [
+        "STRUM: 보관 전 오일 금지('Oil is a nourishment for mold'), 약간 건조해 보일 때 착용 전에 바를 것 — 일본 고온다습 기후 전제",
+        "CCI 8/2(박물관 보존 기준): 가죽 드레싱·새들 비누는 현재 일반적으로 권장되지 않음 — 드레싱은 가죽을 뻣뻣하게·어둡게 할 수 있고 새들 비누는 강알칼리",
+        "[상충] 경기일보 2013(가방)·GQ Korea 2026-03-13(자켓)은 가죽 크림 마무리를 권함, GQ 2025-02 올리브오일 보습은 STRUM 지적과 정면 상충 — 모두 전문가·기관 인용 없음",
+        "[주의] '바르지 마라/꼭 발라라' 단정 금지 → '보관 직전엔 피하고, 쓰려면 착용 전에 조금' 수준으로"
+      ],
+      "sourceUrls": [
+        "https://strum.jp/en/pages/hokan",
+        "https://www.canada.ca/en/conservation-institute/services/conservation-preservation-publications/canadian-conservation-institute-notes/care-alum-vegetable-mineral-leather.html",
+        "https://www.kyeonggi.com/article/201307030519663",
+        "https://www.gqkorea.co.kr/2026/03/13/%ec%95%84%eb%81%bc%eb%8a%94-%ea%b2%a8%ec%9a%b8%ec%98%b7-%ec%88%98%eb%aa%85-%eb%8a%98%eb%a6%ac%eb%8a%94-%ed%95%9c-%eb%81%97-%ec%95%8c%ec%95%84%eb%91%90%eb%a9%b4-%eb%8f%88-%ec%95%84%eb%81%bc%eb%8a%94-5/"
+      ]
+    },
+    {
+      "claim": "곰팡이를 발견하면 번지지 않게 한 부위씩 다루고, 액체는 눈에 안 띄는 곳에서 먼저 테스트하라는 원칙은 출처가 일치한다. 구체적 약품·방법은 출처마다 달라 정답을 단정할 수 없다.",
+      "grade": "confirmed",
+      "evidence": [
+        "STRUM: 한 부위씩 닦을 것(전체를 한 번에 닦으면 곰팡이가 다른 곳으로 번진다), 액체 쓰기 전 눈에 안 띄는 곳에서 얼룩 테스트(가죽이 액체를 쉽게 흡수). 순서는 꽉 짠 수건 → 구두솔 → 소독용 에탄올 가볍게 분무 → 새 수건 → 그늘 통풍 건조 (에탄올 농도·분무량 미기재)",
+        "CCI 8/1(박물관 객체): 곰팡이처럼 보이는 흰 침착물이 왁스·기름일 수 있음 / 가까이 대고 진공 흡입(전체 2회, HEPA 권장)이 가장 효과적인 방법 중 하나 / 표백제 10:1 희석액은 도구·작업면 소독용이지 가죽용이 아님 / 소량(1m2 이하)도 N95 마스크·일회용 장갑·고글이 최소, 알레르기·호흡기 질환자는 접촉 피함",
+        "[상충] GQ 2025-02: 레몬즙·식초 1:1로 닦기 — 근거 인용 없음, 쓰지 말 것. 에탄올 농도를 명시한 1차 자료는 못 찾음"
+      ],
+      "sourceUrls": [
+        "https://strum.jp/en/pages/mold",
+        "https://www.canada.ca/en/conservation-institute/services/conservation-preservation-publications/canadian-conservation-institute-notes/removing-mould-leather.html",
+        "https://www.gqkorea.co.kr/?p=316352"
+      ]
+    }
+  ],
+  "numbers": [
+    {
+      "what": "곰팡이가 번성하는 상대습도(RH) 범위",
+      "value": "RH 65~100%",
+      "asOf": "CCI Notes 8/1 (1993 초판, 2016 개정)",
+      "sourceUrl": "https://www.canada.ca/en/conservation-institute/services/conservation-preservation-publications/canadian-conservation-institute-notes/removing-mould-leather.html",
+      "grade": "confirmed",
+      "note": "박물관 소장품 대상 참고치"
+    },
+    {
+      "what": "곰팡이 발생까지 대략 소요 기간",
+      "value": "RH 90~100% 약 2일 · RH 80% 약 10일 · RH 70% 약 100일",
+      "asOf": "CCI Notes 8/1 (2016 개정)",
+      "sourceUrl": "https://www.canada.ca/en/conservation-institute/services/conservation-preservation-publications/canadian-conservation-institute-notes/removing-mould-leather.html",
+      "grade": "confirmed",
+      "note": "approximate. 박물관 객체 기준, 옷장 환경 단정 금지"
+    },
+    {
+      "what": "박물관 권장 보존 환경(안정된 RH·온도)",
+      "value": "RH 45~55%, 18~20도 (RH 30% 미만 경화, 65% 초과 곰팡이 촉진)",
+      "asOf": "CCI Notes 8/2 (웹페이지 2019-02-22)",
+      "sourceUrl": "https://www.canada.ca/en/conservation-institute/services/conservation-preservation-publications/canadian-conservation-institute-notes/care-alum-vegetable-mineral-leather.html",
+      "grade": "confirmed",
+      "note": "박물관 보존 참고치. 입는 옷 보관 기준으로 단정 금지"
+    },
+    {
+      "what": "옷장에 계속 넣어두면 곰팡이에 가장 위험하다고 한 기간",
+      "value": "3~4개월",
+      "asOf": "STRUM OFFICIAL © 2026",
+      "sourceUrl": "https://strum.jp/en/pages/hokan",
+      "grade": "confirmed",
+      "note": "브랜드 자체 가이드(일본 기후 전제)"
+    },
+    {
+      "what": "보관 전 손질(먼지 털기·꽉 짠 수건 닦기·그늘 건조) 권장 주기",
+      "value": "월 1회 정도",
+      "asOf": "STRUM OFFICIAL © 2026",
+      "sourceUrl": "https://strum.jp/en/pages/hokan",
+      "grade": "confirmed",
+      "note": "브랜드 자체 가이드"
+    },
+    {
+      "what": "한국소비자원 1372 세탁서비스 분쟁 상담 건수",
+      "value": "2023년 9,829건 · 2024년 9,583건 · 2025년 9,404건 (3년 합계 3만여 건)",
+      "asOf": "중부일보 2026-05-03 보도",
+      "sourceUrl": "https://v.daum.net/v/20260503152006509",
+      "grade": "reported",
+      "note": "세탁서비스 전체 수치. 가죽 의류 별도 통계 아님"
+    },
+    {
+      "what": "같은 3년간 섬유제품(양복·모피·가죽 의류) 구매 관련 상담",
+      "value": "약 1만7천 건 (기사: 세탁 분쟁이 구매 분쟁의 약 2배)",
+      "asOf": "중부일보 2026-05-03 보도",
+      "sourceUrl": "https://v.daum.net/v/20260503152006509",
+      "grade": "reported",
+      "note": "양복·모피·가죽 의류 묶음 수치"
+    },
+    {
+      "what": "한국소비자원 인조가죽 상품 표시·광고 조사 결과",
+      "value": "오픈마켓 6곳, 부당 광고 53건, 사업자 27곳 (의류 14건 26.4% · 가방 9건 17.0% · 가구 5건 9.4%)",
+      "asOf": "조사 지난해 11월 기준, 문화일보 2026-03-18 보도",
+      "sourceUrl": "https://www.munhwa.com/article/11575365",
+      "grade": "reported",
+      "note": "친환경 표기 광고 조사이며 내구성 시험이 아님. 소비자원 보도자료 원문 미도달"
+    },
+    {
+      "what": "공정위가 인조가죽 친환경 광고로 경고한 사업자 수",
+      "value": "4곳 (이랜드월드·신성통상·무신사·자라) — 자라는 동물 가죽 의류 건",
+      "asOf": "SBS Biz 2025-05-15 보도",
+      "sourceUrl": "https://biz.sbs.co.kr/amp/article/20000234779",
+      "grade": "reported",
+      "note": "사업자별 제재 날짜는 기사에 없음"
+    }
+  ],
+  "conflicts": [
+    {
+      "about": "가죽 재킷 물세탁(손세탁) 가능 여부",
+      "a": "삼성전자서비스(2021): 가죽은 세탁이 불가능해 관리가 까다롭다",
+      "b": "GQ Korea(2026-03-13): 가죽 전용 세제+찬물 손세탁 / GQ(2025-02): 중성 비누 거품으로 살살. 두 기사 모두 전문가·기관 인용 없음",
+      "handle": "한쪽을 정답으로 고르지 말고 '의견이 갈린다 + 케어라벨 확인'",
+      "sourceUrls": [
+        "https://www.samsungsvc.co.kr/solution/28674",
+        "https://www.gqkorea.co.kr/2026/03/13/%ec%95%84%eb%81%bc%eb%8a%94-%ea%b2%a8%ec%9a%b8%ec%98%b7-%ec%88%98%eb%aa%85-%eb%8a%98%eb%a6%ac%eb%8a%94-%ed%95%9c-%eb%81%97-%ec%95%8c%ec%95%84%eb%91%90%eb%a9%b4-%eb%8f%88-%ec%95%84%eb%81%bc%eb%8a%94-5/",
+        "https://www.gqkorea.co.kr/?p=316352"
+      ]
+    },
+    {
+      "about": "가죽 옷 보관 시 비닐 사용",
+      "a": "STRUM: 비닐백 금지 / 경기일보 2013(가방): 비닐 대신 더스트백 / 서울신문 1997: 반드시 커버",
+      "b": "레이디경향(게재일 불명): 계절이 바뀌면 비닐로 포장해 보관",
+      "handle": "다수 의견(통풍 커버)만 쓰고 레이디경향은 근거로 쓰지 않음",
+      "sourceUrls": [
+        "https://strum.jp/en/pages/hokan",
+        "https://www.kyeonggi.com/article/201307030519663",
+        "https://www.seoul.co.kr/news/1997/03/12/19970312029003",
+        "https://lady.khan.co.kr/fashion/article/4079"
+      ]
+    },
+    {
+      "about": "바나나 껍질로 가죽 광택내기",
+      "a": "GQ Korea(2025-02): 문지르면 윤기가 돈다",
+      "b": "레이디경향(게재일 불명): 잘못된 정보, 오히려 얼룩이 진해진다",
+      "handle": "둘 다 근거 인용 없음 — 언급하지 않음",
+      "sourceUrls": [
+        "https://www.gqkorea.co.kr/?p=316352",
+        "https://lady.khan.co.kr/fashion/article/4079"
+      ]
+    },
+    {
+      "about": "곰팡이 제거 방법",
+      "a": "CCI 8/1(박물관): 진공 흡입 우선, 표백제는 도구·작업면용 / STRUM: 꽉 짠 수건+구두솔+소독용 에탄올(농도 미기재)",
+      "b": "GQ(2025): 레몬즙·식초 1:1, 에탄올은 볼펜 자국용(많이 쓰면 변색)",
+      "handle": "공통 원칙(한 부위씩·테스트)만 쓰고 약품·농도는 단정 금지",
+      "sourceUrls": [
+        "https://www.canada.ca/en/conservation-institute/services/conservation-preservation-publications/canadian-conservation-institute-notes/removing-mould-leather.html",
+        "https://strum.jp/en/pages/mold",
+        "https://www.gqkorea.co.kr/?p=316352"
+      ]
+    },
+    {
+      "about": "가죽 크림/오일 사용",
+      "a": "STRUM: 보관 전 오일 금지 / CCI 8/2: 드레싱 일반 비권장 (박물관)",
+      "b": "경기일보 2013(가방)·GQ 2026-03: 가죽 크림 마무리 권장 / GQ 2025: 올리브오일 보습",
+      "handle": "'보관 직전엔 피하고 쓰려면 착용 전에' 수준 귀속",
+      "sourceUrls": [
+        "https://strum.jp/en/pages/hokan",
+        "https://www.canada.ca/en/conservation-institute/services/conservation-preservation-publications/canadian-conservation-institute-notes/care-alum-vegetable-mineral-leather.html",
+        "https://www.kyeonggi.com/article/201307030519663",
+        "https://www.gqkorea.co.kr/2026/03/13/%ec%95%84%eb%81%bc%eb%8a%94-%ea%b2%a8%ec%9a%b8%ec%98%b7-%ec%88%98%eb%aa%85-%eb%8a%98%eb%a6%ac%eb%8a%94-%ed%95%9c-%eb%81%97-%ec%95%8c%ec%95%84%eb%91%90%eb%a9%b4-%eb%8f%88-%ec%95%84%eb%81%bc%eb%8a%94-5/",
+        "https://www.gqkorea.co.kr/?p=316352"
+      ]
+    },
+    {
+      "about": "세탁 배상 내용연수에서 가죽 자켓의 연수",
+      "a": "glasswallet(2차, 고시 원문 미대조): 피혁제품 돈피·파충류 3년/기타 5년, 자켓·점퍼 하복 3년·춘추/동복 4년",
+      "b": "중부일보 본문: 정장 4년(하복 3년)·코트 4년만 열거, '자켓 3년' 본문 미확인. 가죽 자켓이 피혁제품/자켓·점퍼 중 어디인지 불명",
+      "handle": "unclear — 가죽 자켓 연수 단정 금지, 쓰려면 '2차 자료 기준' 귀속",
+      "sourceUrls": [
+        "https://glasswallet.com/calculate/laundry-shop-cost/damage-compensation-standard/",
+        "https://v.daum.net/v/20260503152006509"
+      ]
+    },
+    {
+      "about": "삼성전자서비스 페이지의 '비 맞은 경우' 안내",
+      "a": "검색 요약은 삼성전자서비스 가죽 페이지가 비 맞은 경우를 다루는 듯 보임",
+      "b": "본문 직접 확인 결과 28674 에는 비 맞은 경우 안내 없음(액체가 묻으면 즉시 닦으라는 일반 안내뿐)",
+      "handle": "비 맞은 경우 근거로 삼성전자서비스를 인용하지 말 것",
+      "sourceUrls": [
+        "https://www.samsungsvc.co.kr/solution/28674"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "title": "Removing Mould from Leather – Canadian Conservation Institute (CCI) Notes 8/1",
+      "url": "https://www.canada.ca/en/conservation-institute/services/conservation-preservation-publications/canadian-conservation-institute-notes/removing-mould-leather.html",
+      "host": "canada.ca",
+      "body": "Canadian Conservation Institute (Government of Canada) CCI Notes 8/1, by Janet Mason. Originally published 1993, revised 2016. Mould thrives at relative humidity (RH) between 65 and 100%, warm temperatures and poor air circulation. Approximate growth times: about two days at 90-100% RH, 10 days at 80% RH and 100 days at 70% RH. Oils and waxes can leave a white deposit that resembles mould; test with a swab dipped in mineral spirits, and if the deposit disappears it is likely wax ('If in doubt, treat as a mould covered object'). Steps: isolate the object (seal in a bag/container to stop spores spreading); dry wet objects quickly or freeze them in sealed polyethylene (freezing kills active growth but spores remain viable); thaw in the sealed bag then air-dry once at room temperature, away from people and air intakes; vacuum the whole object twice, second pass perpendicular to the first (close vacuuming is one of the most effective methods, HEPA-filtered vacuum strongly recommended); clean work surfaces and tools with detergent and water then disinfect with bleach diluted 10:1 with water, 10-minute contact time (bleach is for tools/surfaces, not the leather itself); double-bag debris and discard outdoors. Safety: for 1 m2 or less of visible mould the minimum is N95/N100 respirator, disposable gloves, disposable apron and non-vented goggles; people with allergies, respiratory conditions or weakened immune systems should avoid contact. (WebFetch 추출 요약본 기반 — 페이지 원문은 museum 객체 대상.)",
+      "tier": "official",
+      "publishedAt": null
+    },
+    {
+      "title": "Care of Alum, Vegetable and Mineral-tanned Leather – Canadian Conservation Institute (CCI) Notes 8/2",
+      "url": "https://www.canada.ca/en/conservation-institute/services/conservation-preservation-publications/canadian-conservation-institute-notes/care-alum-vegetable-mineral-leather.html",
+      "host": "canada.ca",
+      "body": "CCI Notes 8/2, Canadian Conservation Institute (copyright line: (c) Communications Canada, 1992; web page dated 2019-02-22). Recommends 'A stable RH in the range of 45% to 55% and a temperature of 18oC to 20oC.' RH below 30% causes loss of moisture and embrittlement; RH above 65% encourages mould. Light: unpainted leather can take up to 150 lux (UV under 75 microwatt/lumen); painted or dyed leather is far more sensitive and 'should not be exposed to more than 50 lux'; keep leather away from spotlights, direct sunlight and daylight. Cleaning: remove surface dust with a soft brush toward a gauze-covered vacuum nozzle; water is not discussed as a cleaning method, and alum-tawed leathers 'are easily damaged by water or moisture'. Leather dressings and saddle soap are 'now not generally recommended as a treatment for leather' — dressings can stiffen and darken leather and saddle soap is highly alkaline. Storage: store in the dark where possible; avoid radiators, damp basements and sweating pipes; wrap in acid-free tissue or cotton. 'Providing adequate support is the most important aspect of the handling of leather.' (WebFetch 추출 요약본 기반; 박물관 소장품 보존 기준이라 입는 옷에 그대로 적용하면 과하다 — 수치는 '보존 환경의 참고 기준'으로만 인용할 것.)",
+      "tier": "official",
+      "publishedAt": "2019-02-22"
+    },
+    {
+      "title": "가죽 옷 관리 — 삼성전자서비스 고객 Q&A (solution/28674)",
+      "url": "https://www.samsungsvc.co.kr/solution/28674",
+      "host": "samsungsvc.co.kr",
+      "body": "삼성전자서비스 고객 Q&A 페이지(등록일 2021-09-10, 조회수 10,716). 가죽옷 관리 관련 원문: '가죽은 습기가 많은 곳에 보관하면 곰팡이가 필수 있습니다.' 열 관련: '이때 열을 가하거나 다리미를 사용하면 가죽이 수축하여 원상 복구가 어렵습니다.' 액체가 묻었을 때는 '액체가 묻었다면 즉시 닦아주세요.', 먼지는 '마른 수건이나 브러시로 가볍게 털어주시고'라고 안내. 옷걸이는 '어깨가 딱 맞는 옷걸이에 걸어야 변형이 적으며' 한쪽으로 쏠리지 않게 걸면 모양을 오래 유지한다고 설명. 가죽은 습기·직사광선에 약하고 세탁이 불가능해 관리가 까다롭다는 취지. 단, 이 페이지에는 '비 맞은 경우'에 대한 직접 안내는 없었다(검색 요약이 비 맞은 경우를 언급했으나 본문 확인 결과 없음). 가전 제조사의 의류관리기(에어드레서 등) 안내 문맥이라 가죽 전문 기관의 기준은 아님. (WebFetch 추출 기반)",
+      "tier": "official",
+      "publishedAt": "2021-09-10"
+    },
+    {
+      "title": "건조 방법·취급 표시 아이콘 — 삼성전자서비스 (solution/41123)",
+      "url": "https://www.samsungsvc.co.kr/solution/41123",
+      "host": "samsungsvc.co.kr",
+      "body": "삼성전자서비스 고객 안내 페이지(등록일 2023-12-22). 취급 표시(케어라벨) 아이콘 중 건조 관련 표를 싣고 있다: 건조/줄에 널어서 건조/뉘어서 건조, 옷걸이에 걸어서 건조/옷걸이에 걸어서 그늘 건조, 건조기 사용 가능/사용 금지, 건조 금지, 고온·중온·저온 건조, 가열 금지, 섬세/건조에 약함, 젖은 채로 건조, 구김방지 가공(다림질 불필요). 페이지에 'KSK-0021 규격'이라고 적혀 있으나 KS 번호의 정확성은 확인하지 못했다. '건조하면 안 되는 세탁물' 항목에 '가죽, 모피, 깃털, 벨벳 제품 -변형 우려'라고 명시. 물세탁·손세탁·드라이클리닝 아이콘 설명은 이 페이지에 없고 제품 사용설명서/의류 라벨을 확인하라고 안내한다. (WebFetch 추출 기반)",
+      "tier": "official",
+      "publishedAt": "2023-12-22"
+    },
+    {
+      "title": "How to store leather jackets: What should not be done? — STRUM OFFICIAL",
+      "url": "https://strum.jp/en/pages/hokan",
+      "host": "strum.jp",
+      "body": "STRUM OFFICIAL(strum.jp, © 2026, 도쿄 매장 표기가 있는 일본 가죽재킷 브랜드로 추정 — 페이지가 국적을 명시하진 않음)의 보관 가이드. Do: 보관 전에 먼지를 털고 꽉 짠 수건으로 닦은 뒤 'dry it in a shady, well-ventilated place', 이를 월 1회 정도 할 것; 옷장에서는 부직포(non-woven) 커버 사용; 가끔 입을 것 — 옷장에 '3 or 4 months, all the time' 넣어두는 것이 곰팡이에 가장 위험; 젖은 가죽은 그늘에서 자연 건조; 안감은 뒤집어서 그늘에서 말림. Don't: 비닐백 사용 금지('Plastic bags... do not allow moisture or air to pass through'); 보관 전 오일 금지('Oil is a nourishment for mold' — 일본 고온다습 기후 전제, 표면이 약간 건조해 보일 때 착용 전에 바를 것); 에어컨 바람 직접 쐬지 말 것('will cause the leather to lose moisture and become dry'); 젖은 가죽을 헤어드라이어로 말리지 말 것('if the leather is exposed to hot air for a long time, the oil will be lost'); 직사광선 금지(염색 가죽은 변색·퇴색 가능); 안감 얼룩에 소독/탈취 스프레이 의존 금지. 옷걸이·실리카겔·구체적 습도/온도 수치는 언급 없음. 브랜드 자체 가이드라 보조 근거로만 사용.",
+      "tier": "official",
+      "publishedAt": null
+    },
+    {
+      "title": "Collection: How to remove mildew from leather jacket & how to care for it — STRUM OFFICIAL",
+      "url": "https://strum.jp/en/pages/mold",
+      "host": "strum.jp",
+      "body": "STRUM OFFICIAL 곰팡이 제거 가이드(브랜드 자체 가이드). 순서: (1) 타월을 적신 뒤 물이 전혀 나오지 않을 때까지 꽉 짜서 곰팡이를 닦아냄. (2) 한 부위씩 작업 — 'If you wipe the entire area, the mold will spread to other areas.' (3) 구두솔(돼지털 또는 나일론)로 방금 닦은 부위를 솔질 — 가죽 주름과 섬유 속 곰팡이 뿌리를 제거, 재발 방지를 위해 곰팡이 없는 면까지 전체를 솔질 권장. (4) 'disinfectant ethanol'을 재킷 전체에 가볍게 분무한 뒤 꽉 짠 (1번과 다른) 수건으로 닦음 — 약국 등에서 파는 소독용 에탄올이라고 설명하나 농도·분무량은 기재하지 않음. (5) 통풍 좋은 그늘에 걸어 건조. 주의: 'Since it easily absorbs liquids, please make sure to check for stains in an inconspicuous place before using any liquids.' 블랙 가죽재킷은 이 과정에 문제없다고 서술. 전문 세탁소로 보내야 하는 기준은 언급 없음, 시간·측정값 등 수치 없음. 브랜드 가죽(무표백·염색·마감 처리) 기준이므로 코팅/인조가죽 등에 일반화 금지.",
+      "tier": "official",
+      "publishedAt": null
+    },
+    {
+      "title": "“셔츠 내용연수는 2년, 자켓은 3년”...‘세탁 사고’ 배상기준에 소비자 불만 빗발 (중부일보, 다음뉴스)",
+      "url": "https://v.daum.net/v/20260503152006509",
+      "host": "v.daum.net",
+      "body": "중부일보(다음뉴스 게재, 2026-05-03 15:20, 최진규·최윤호 기자). 한국소비자원 '소비자분쟁기준' 세탁 사고 배상 내용연수: 셔츠류 2년, 정장류 4년(하복 3년), 스커트·바지류 4년(하복 3년), 코트류 4년, 스웨터 3년, 청바지 4년(특수워싱 3년), 작업복 2년, 학생복 3년, 한복류 4년. 제목의 '자켓 3년'이라는 항목은 본문에서 확인되지 않았고 가죽 의류 별도 내용연수도 본문에 없다. 배상금액 = 구매가 x 배상비율. 사례: 120만 원 정장 상·하의, 사용일수 1,450일, 내용연수 4년 적용 → 배상비율 30%, 약 35만 원 — 소비자는 새 옷과 다름없다며 불만. 한국소비자원 1372 상담 기준 세탁서비스 분쟁 상담: 2023년 9,829건, 2024년 9,583건, 2025년 9,404건(3년간 3만여 건), 매년 상담의 30% 이상이 경기도에서 발생. 같은 기간 섬유제품(양복·모피·가죽 의류) 구매 관련 상담은 1만7천여 건으로 세탁 분쟁이 구매 분쟁보다 약 2배 잦다고 보도. (WebFetch 추출 기반)",
+      "tier": "press",
+      "publishedAt": "2026-05-03"
+    },
+    {
+      "title": "한국소비자원 인조가죽 상품 그린워싱 표시·광고 조사 — 문화일보",
+      "url": "https://www.munhwa.com/article/11575365",
+      "host": "munhwa.com",
+      "body": "문화일보(기사 입력일 2026-03-18). 한국소비자원이 국내 주요 오픈마켓 6곳의 인조가죽 상품을 조사(조사 시점: 지난해 11월 기준)한 결과 부당 광고 53건, 사업자 27곳 적발. 광고 위치별: 상품명 67.9%(36건), 광고 내용 18.9%(10건), 제품 정보 11.3%(6건). 품목별: 의류 26.4%(14건), 가방 17.0%(9건), 가구(소파) 9.4%(5건). 소비자원 설명: 인조가죽은 석유화학 기반 소재이고, 생산 과정에서 디메틸포름아미드 등 인체와 환경에 해로운 물질이 배출되며, 내구성과 생분해성이 낮아 사용과 폐기 단계에서도 친환경으로 보기 어렵다. 소비자원 관계자는 '인조가죽 상품이라는 이유로 특별한 근거 없이 에코 레더 등 표현을 사용하는 것은 부당 광고'라고 언급. 기사에 '가수분해'라는 용어는 없고 내구성·생분해성이 언급됨. 한국소비자원 보도자료 원문(kca.go.kr)에는 도달하지 못했다.",
+      "tier": "press",
+      "publishedAt": "2026-03-18"
+    },
+    {
+      "title": "가죽옷 팔면서 친환경 위장…이랜드·무신사·자라 딱 걸렸네 — SBS Biz",
+      "url": "https://biz.sbs.co.kr/amp/article/20000234779",
+      "host": "biz.sbs.co.kr",
+      "body": "SBS Biz (기사 입력일 2025-05-15). 공정거래위원회가 인조가죽을 '친환경'으로 광고한 4개 사업자에 경고 조치: 이랜드월드(미쏘·스파오 인조가죽 재킷, '에코 퍼'·'에코 레더'·'지속가능한'·'친환경 소재' 표현), 신성통상(탑텐 가죽치마 등, '환경을 생각하는' 표현), 무신사(인조가죽 재킷을 '에코레더'로 광고), 자라(동물 가죽 의류를 친환경으로 광고 — 인조가죽 아님). 공정위 설명: 인조가죽은 폴리에스터, 폴리우레탄 등 석유화학 원단으로 만들어지고 생산 단계에서 미세플라스틱 등 오염물질을 배출, 생분해성이 낮음. 기사에 내구성 언급은 없음. 공정위는 양가죽·소가죽 제품도 폐수·탄소 배출 등 환경오염을 일으킬 수 있어 친환경과 거리가 멀다고 봤다. 사업자별 제재 날짜는 기사에 없음. (WebFetch 추출 기반) [정정 2026-10-08 팩트체크 원문 대조] 기사에 '4개 사업자'라는 표현 없음, 자라는 동물 가죽 의류 건이라 '인조가죽 4개 사업자' 묶음은 부정확. 원문 표현은 '친환경과는 거리가 있다'.",
+      "tier": "press",
+      "publishedAt": "2025-05-15"
+    },
+    {
+      "title": "◎모피중간중간 털며 그늘서 건조/가죽눈·비 젖은옷 직사광선 금물/모직옷걸이에 방충제 넣어 보관 — 서울신문 (1997)",
+      "url": "https://www.seoul.co.kr/news/1997/03/12/19970312029003",
+      "host": "seoul.co.kr",
+      "body": "서울신문 29면(1997-03-12, 김균미 기자). 가죽 손질 및 보관: '눈이나 비에 젖었을 때 직사광선이나 난롯불에 말리는 것이 금물이다.' 젖은 가죽은 뜨거운 햇볕이나 난로 불을 피하고, 마른 수건으로 물기를 먼저 닦은 뒤 통풍이 잘되는 그늘에서 말리라고 안내. 보관: '가죽제품은 곰팡이가 생기기 쉬워 반드시 커버를 씌우고 습기가 적은 곳에 보관해야 한다.' 방충제를 함께 넣고, 곰팡이가 보이면 마른 천으로 닦아 그늘에서 통풍시키라고 권함. 1997년 기사로 매우 오래된 자료 — 현재 기준의 근거라기보다 '수십 년째 같은 원칙(직사광선·열풍 금지, 그늘 통풍 건조)'이라는 보조 근거로만 사용. (WebFetch 추출 기반)",
+      "tier": "press",
+      "publishedAt": "1997-03-12"
+    },
+    {
+      "title": "가방 비 맞았을 때 관리 요령 — 경기일보 (2013)",
+      "url": "https://www.kyeonggi.com/article/201307030519663",
+      "host": "kyeonggi.com",
+      "body": "경기일보(2013-07-03 11:03, 장혜준 기자). 가죽 '가방' 장마철 관리를 일러스트 브랜드 소노비의 소개로 전한 기사(전문가·공공기관 인용 없음). 비에 젖은 뒤 '당황해 문지르거나 빨리 말리기 위해 따뜻한 곳에 두는 경우가 많다'며 이를 문제로 지적. 가죽은 사람 피부와 비슷해 '열과 닿으면 수분과 함께 탈수돼 변형이 발생한다'. 젖은 직후 마른 수건으로 물기를 살짝 눌러 닦고 직사광선을 피해 통풍이 잘되는 곳에서 말린 뒤 가죽 전용 크림을 바르면 상태 회복에 도움. 금속 장식은 틈으로 스며든 성분 때문에 녹이 슬거나 부식될 수 있어 물기를 닦고 니스칠을 하면 부식 가속을 예방. 장마철 보관: 사용하지 않는 가죽 가방은 비닐 대신 더스트백을 씌워 통풍, 보관함에 신문지를 깔거나 가방 안을 신문지로 채워 적정 습도 유지. 가방 대상 기사이고 브랜드 출처라 의류(자켓)에 그대로 일반화하지 말 것.",
+      "tier": "press",
+      "publishedAt": "2013-07-03"
+    },
+    {
+      "title": "케어라벨 '이것'부터 해보세요 — 위키트리 (2026-10-04)",
+      "url": "https://www.wikitree.co.kr/articles/1163811",
+      "host": "wikitree.co.kr",
+      "body": "위키트리(윤시현 기자, 작성 2026-10-04 07:24). 케어라벨 읽는 법: 라벨은 왼쪽에서 오른쪽으로 세탁, 표백, 건조, 다림질, 전문 세탁의 다섯 칸을 순서대로 읽는다. 세탁(물통 기호): 가위표(X)가 있으면 물세탁을 하지 않는다. 손 모양이 있으면 손빨래. 통 안의 점은 허용되는 물 온도 단계를 나타내며 점이 많을수록 더 높은 온도를 견딘다. 통 아래 선이 한 줄이면 순한 코스, 두 줄이면 더 순하게. 표백: 가위표가 있으면 표백제 사용 금지. 건조: 네모 안 동그라미는 건조기 사용 가능, 가위표는 건조기 금지, 눕혀서 말리라는 지시는 그대로 따른다. 전문 세탁만 허용된다는 표시가 있으면 집에서 물에 빨아 시험하지 않는 것이 좋다고 권함. 본문에 가죽 관련 내용은 없고 인용 기관·전문가도 없으며, 일부 이미지는 'AI 이미지'로 표기. 가죽 전용 기호가 아니라 일반 의류 기호 설명이다.",
+      "tier": "press",
+      "publishedAt": "2026-10-04"
+    },
+    {
+      "title": "아끼는 겨울옷 수명 늘리는 한 끗, 알아두면 돈 아끼는 5분 체크리스트 — GQ Korea",
+      "url": "https://www.gqkorea.co.kr/2026/03/13/%ec%95%84%eb%81%bc%eb%8a%94-%ea%b2%a8%ec%9a%b8%ec%98%b7-%ec%88%98%eb%aa%85-%eb%8a%98%eb%a6%ac%eb%8a%94-%ed%95%9c-%eb%81%97-%ec%95%8c%ec%95%84%eb%91%90%eb%a9%b4-%eb%8f%88-%ec%95%84%eb%81%bc%eb%8a%94-5/",
+      "host": "gqkorea.co.kr",
+      "body": "GQ Korea(2026-03-13, 이재영). 겨울옷 관리 체크리스트 기사 중 가죽 재킷 관련 문장: '가죽 재킷은 전용 세제를 사용해 찬물로 빠르게 손세탁하는 것이 좋으며 오염된 부분만 닦아내고 가죽 크림으로 마무리하는 것이 가장 좋다.' 요약하면 가죽 전용 세제 + 찬물로 짧게 손세탁, 더러운 부분에만 국소 처리, 가죽 크림으로 마무리. 원문에 가죽 보관 방법은 없음. 기사 내 다른 숫자: 모피 장식 전문 클리닝 '2~3년에 한 번', 드라이클리닝 비닐 커버 제거 후 '약 반나절' 자연 바람 쐬기(가죽과 무관). 패션 매체 기사로 전문가·기관 인용 없음 — 삼성전자서비스 '가죽은 세탁도 할 수 없다'와 어긋나는 조언이라 단정 근거로 쓰지 말고 '의견이 갈린다'로 처리할 것. (WebFetch 추출 기반)",
+      "tier": "press",
+      "publishedAt": "2026-03-13"
+    },
+    {
+      "title": "전용 세정제 없이, 집에서 쉽게 가죽 관리하는 법 10 — GQ Korea (2025-02-17)",
+      "url": "https://www.gqkorea.co.kr/?p=316352",
+      "host": "gqkorea.co.kr",
+      "body": "GQ Korea(2025-02-17, 박한빛누리 에디터) '집에서 가죽 관리하는 법 10가지'. 우유로 광택, 식초:물 1:1 얼룩 제거(많이 쓰면 가죽 건조), 베이킹소다를 기름 얼룩 위에 4~5시간 두었다 닦기, 올리브 오일 보습(과하면 기름기), 레몬즙:물 1:1로 곰팡이 제거 후 통풍 건조, 바나나 껍질로 광택, 약한 중성 비누 거품으로 살살 닦고 물기 최대한 제거 후 자연 건조, 양초 문지른 뒤 드라이어로 살짝 가열해 방수 효과, 에탄올 면봉으로 볼펜 자국(많이 쓰면 변색), 커피 찌꺼기 냄새 제거. 원문에 물세탁 가능 여부·비 맞았을 때 관리법은 없다. 모두 민간요법 성격으로 전문가·기관 근거 없음 — 특히 올리브 오일(곰팡이 영양분이 될 수 있다는 STRUM 지적과 상충), 바나나 껍질(레이디경향은 '잘못된 정보'라고 반박), 드라이어 가열(여러 곳에서 열 금지)은 근거 없이 인용 금지. (WebFetch 추출 기반)",
+      "tier": "press",
+      "publishedAt": "2025-02-17"
+    },
+    {
+      "title": "눈비 맞은 겨울 옷, 바로 손질하기 — 레이디경향",
+      "url": "https://lady.khan.co.kr/fashion/article/4079",
+      "host": "lady.khan.co.kr",
+      "body": "레이디경향 패션 기사. 페이지에는 입력 날짜가 '2004년 1월 1일'로 표시되어 있으나 아카이브 기본값으로 보여 신뢰하기 어렵다(게재일 불명). 가죽 재킷 손질: '가죽은 한 번 입고 나서는 간단한 손질만 해준다면 고유의 부드러운 감촉을 오래 유지할 수 있다.' 입은 뒤에는 스펀지나 마른 걸레로 깨끗이 닦고 가죽 전용 스프레이를 뿌려 관리, 계절이 바뀌면 비닐로 포장해 간격을 넉넉히 두고 보관(→ STRUM의 '비닐 금지'와 상충). 눈·비를 맞았을 때: '얼룩 주변에 물을 약간 뿌린 뒤 바로 마른 걸레로 물기를 없애고 가죽의 주름을 살살 펴 준다'(얼룩 가장자리 번짐 방지용 기법으로 보이나 근거 없음 — 인용 비권장). 잘못된 상식: '바나나 껍질로 가죽을 닦으면 좋다는 말은 잘못된 정보'이며 오히려 얼룩을 진하게 만들어 옷을 상하게 한다고 서술. 전문가·기관 인용 없는 오래된 패션지 기사.",
+      "tier": "press",
+      "publishedAt": null
+    },
+    {
+      "title": "세탁물 훼손·분실 배상 기준 — 소비자분쟁해결기준 배상비율표 (2026년) — glasswallet",
+      "url": "https://glasswallet.com/calculate/laundry-shop-cost/damage-compensation-standard/",
+      "host": "glasswallet.com",
+      "body": "민간 계산기 사이트 glasswallet.com의 세탁물 배상 기준 페이지. 공정위 고시 제2025-14호(2025.12.18. 일부개정·시행) 별표2 '세탁업'을 '원문 발췌'로 표시하며 품목별 평균 내용연수를 싣는다: 코트(오바코트·레인코트) 4년; 스커트·바지·자켓·점퍼 하복 3년 / 춘추복·동복 4년; 신사정장·여성정장 하복 3년 / 춘추복·동복 4년; 피혁제품 돈피·파충류 3년 / 기타 5년; 모피제품 토끼털 3년 / 기타 5년; 가방류 가죽가방 3년 / 일반가방 2년. 내용연수 1~6년 구간의 공통 배상비율표가 모든 품목에 적용된다고 설명. 배상액 = 구입가 x 배상비율, 소비자와 세탁업자 간 별도 특약이 있으면 배상비율표보다 우선. 2차(민간) 자료이고 공정위·법제처 원문과 대조하지 못했다 — 가죽 자켓이 '피혁제품'(5년?)인지 '자켓·점퍼'(4년?)로 분류되는지 이 자료만으로 알 수 없다. 본문 인용 시 '확인 필요'로 표기할 것.",
+      "tier": "blog",
+      "publishedAt": null
+    }
+  ],
+  "dropped": [
+    {
+      "url": "https://m.seoul.co.kr/news/2017/01/07/20170107020008",
+      "why": "2017 세탁 인수증 기사(운동화 사례). 가죽 자켓 관리법 주제 밖이고 현행 고시(2025-14호)와 일치 여부 미확인"
+    },
+    {
+      "url": "https://koreascience.kr/article/CFKO200810335354463.pdf",
+      "why": "2008 TPU 실험실 인장강도 유지율뿐 — 시중 PU 인조가죽 자켓 수명 근거가 못 됨. 한글 본문 폰트 깨짐으로 PU 서술 확인 불가"
+    },
+    {
+      "url": "https://consumernews.co.kr/goso/view.html?idxno=1838",
+      "why": "2011 소비자 제보 게시판 글. 담당자 답변은 한국소비자원 공식 판정 아님, 개별 피해 사례 하나"
+    }
+  ],
+  "songs": []
+}

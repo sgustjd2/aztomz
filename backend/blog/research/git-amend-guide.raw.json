@@ -1,0 +1,127 @@
+{
+  "keyword": "git 커밋 메시지 수정 (git commit --amend, 이미 push한 커밋, 여러 개 전 커밋은 rebase -i reword)",
+  "categoryId": "hangeut-trend",
+  "searchedAt": "2026-10-08",
+  "queries": [
+    "(WebSearch 미사용 — 지시대로 공식 URL 6건 직접 WebFetch: git-commit, git-push, git-rebase, Pro Git ko 히스토리 단장하기, GitHub Docs changing-a-commit-message, Pro Git en Rewriting History)"
+  ],
+  "sources": [
+    {
+      "title": "git-commit Documentation (git-scm.com)",
+      "url": "https://git-scm.com/docs/git-commit",
+      "host": "git-scm.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "SYNOPSIS: git commit [-a | --interactive | --patch] [-s] [-v] [-u[<mode>]] [--amend] [--dry-run] <commit>__ | --fixup [(amend|reword):]<commit>] [-F <file> | -m <msg>] [--reset-author] [--allow-empty] [--allow-empty-message] [--no-verify] [-e] [--author=<author>] [--date=<date>] [--cleanup=<mode>] [--[no-]status] [-i | -o] [--pathspec-from-file=<file> [--pathspec-file-nul]] [(--trailer <token>[(=|:)<value>])...] [-S[<keyid>]] [--] [<pathspec>...]\n\n--amend (원문): Replace the tip of the current branch by creating a new commit. The recorded tree is prepared as usual (including the effect of the -i and -o options and explicit pathspec), and the message from the original commit is used as the starting point, instead of an empty message, when no other message is specified from the command line via options such as -m, -F, -c, etc. The new commit has the same parents and author as the current one (the --reset-author option can countermand this).\n\nIt is a rough equivalent for:\n\t$ git reset --soft HEAD^\n\t$ ... do something else to come up with the right tree ...\n\t$ git commit -c ORIG_HEAD\nbut can be used to amend a merge commit.\n\nYou should understand the implications of rewriting history if you amend a commit that has already been published. (See the \"RECOVERING FROM UPSTREAM REBASE\" section in git-rebase[1].)\n\n--no-edit (원문): Use the selected commit message without launching an editor. For example, git commit --amend --no-edit amends a commit without changing its commit message.\n\n-m <msg> / --message=<msg> (원문): Use <msg> as the commit message. If multiple -m options are given, their values are concatenated as separate paragraphs. The -m option is mutually exclusive with -c, -C, and -F.\n\n[수집 메모: WebFetch 가 반환한 원문 인용 발췌. 페이지 전체가 아니라 SYNOPSIS·--amend·--no-edit·-m 항목만 읽음]",
+      "facts": [
+        "--amend 는 'Replace the tip of the current branch by creating a new commit' — 현재 브랜치 끝을 새 커밋으로 교체한다(기존 커밋을 제자리 수정하는 게 아니라 새 커밋을 만든다).",
+        "amend 로 만든 새 커밋은 'same parents and author as the current one' — 부모와 작성자는 그대로이고 --reset-author 로 작성자를 바꿀 수 있다.",
+        "-m 등 다른 메시지 옵션이 없으면 원래 커밋 메시지가 편집 시작점으로 쓰인다(빈 메시지가 아님).",
+        "--amend 는 'a rough equivalent' 로 git reset --soft HEAD^ → (트리 준비) → git commit -c ORIG_HEAD 와 대략 같다고 문서에 적혀 있다. 머지 커밋 amend 는 이 방식으론 안 되고 --amend 로만 가능('can be used to amend a merge commit').",
+        "git commit --amend --no-edit 는 문서에 그대로 예시로 나오며 'amends a commit without changing its commit message' (메시지 변경 없이 amend).",
+        "-m 을 여러 번 주면 값들이 'separate paragraphs' 로 이어 붙는다. -m 은 -c, -C, -F 와 동시에 쓸 수 없다(mutually exclusive).",
+        "이미 publish(push)한 커밋을 amend 하면 히스토리 재작성의 영향을 이해해야 한다고 경고하며 git-rebase 의 'RECOVERING FROM UPSTREAM REBASE' 절을 참조하라고 안내한다."
+      ]
+    },
+    {
+      "title": "git-push Documentation (git-scm.com) — --force / --force-with-lease",
+      "url": "https://git-scm.com/docs/git-push",
+      "host": "git-scm.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "-f / --force (원문): Usually, git push will refuse to update a branch that is not an ancestor of the commit being pushed. This flag disables that check, the other safety checks in PUSH RULES below, and the checks in --force-with-lease. It can cause the remote repository to lose commits; use it with care.\n\nNote that --force applies to all the refs that are pushed, hence using it with push.default set to matching or with multiple push destinations configured with remote.<name>.push may overwrite refs other than the current branch (including local refs that are strictly behind their remote counterpart). To force a push to only one branch, use a + in front of the refspec to push (e.g git push origin +master to force a push to the master branch).\n\n--force-with-lease (원문): Usually, git push refuses to update a remote ref that is not an ancestor of the local ref used to overwrite it. This option overrides this restriction if the current value of the remote ref is the expected value. git push fails otherwise.\n\nImagine that you have to rebase what you have already published. You will have to bypass the \"must fast-forward\" rule in order to replace the history you originally published with the rebased history. If somebody else built on top of your original history while you are rebasing, the tip of the branch at the remote may advance with their commit, and blindly pushing with --force will lose their work.\n\nThis option allows you to say that you expect the history you are updating is what you rebased and want to replace. If the remote ref still points at the commit you specified, you can be sure that no other people did anything to the ref. It is like taking a \"lease\" on the ref without explicitly locking it, and the remote ref is updated only if the \"lease\" is still valid.\n\n--force-with-lease alone, without specifying the details, will protect all remote refs that are going to be updated by requiring their current value to be the same as the remote-tracking branch we have for them. --force-with-lease=<refname>:<expect> will protect <refname> (alone) by requiring its current value to be the same as the specified value <expect>.\n\nA general note on safety: supplying this option without an expected value, i.e. as --force-with-lease or --force-with-lease=<refname> interacts very badly with anything that implicitly runs git fetch on the remote to be pushed to in the background, e.g. git fetch origin on your repository in a cronjob. The protection it offers over --force is ensuring that subsequent changes your work wasn't based on aren't clobbered, but this is trivially defeated if some background process is updating refs in the background.\n\n문서 예시:\n  git fetch              # update 'master' from remote\n  git tag base master    # mark our base point\n  git rebase -i master   # rewrite some commits\n  git push --force-with-lease=master:base master:master\n\nAlternatively, specifying --force-if-includes as an ancillary option along with --force-with-lease[=<refname>] will verify if updates from the remote-tracking refs that may have been implicitly updated in the background are integrated locally before allowing a forced update.\n\n[수집 메모: WebFetch 가 반환한 원문 인용 발췌. --force·--force-with-lease 항목만 읽음]",
+      "facts": [
+        "--force 는 'disables that check, the other safety checks in PUSH RULES below, and the checks in --force-with-lease' — 비-fast-forward 거부를 포함한 안전 검사를 모두 끄며 'It can cause the remote repository to lose commits'.",
+        "--force 는 push 되는 모든 ref 에 적용된다. push.default=matching 이거나 remote.<name>.push 로 목적지가 여러 개면 현재 브랜치 외 ref 도 덮어쓸 수 있다. 한 브랜치만 강제하려면 refspec 앞에 + (예: git push origin +master).",
+        "--force-with-lease 는 '원격 ref 의 현재 값이 기대값일 때만' 덮어쓰고 아니면 git push 가 실패한다. 이미 publish 한 걸 rebase 했는데 누군가 그 위에 커밋을 얹었다면 'blindly pushing with --force will lose their work' 라고 문서가 설명한다.",
+        "인자 없는 --force-with-lease 의 기대값은 우리 로컬의 remote-tracking branch 값이다. 백그라운드에서 git fetch(예: cronjob 의 git fetch origin, 에디터 자동 fetch)가 돌면 보호가 'trivially defeated' 된다고 문서가 경고한다.",
+        "명시적 형태 --force-with-lease=<refname>:<expect> 만 안정 형태이고, 나머지 형태는 문서 기준 'still experimental and their semantics may change'.",
+        "보강책: --force-if-includes 를 --force-with-lease 와 함께 쓰면 백그라운드 fetch 로 갱신된 remote-tracking 내용이 로컬에 통합됐는지 확인한 뒤에만 강제 업데이트한다.",
+        "문서 예시 4줄(git fetch → git tag base master → git rebase -i master → git push --force-with-lease=master:base master:master) 로 '내가 본 지점(base)' 을 태그로 박아두는 방법을 보여준다."
+      ]
+    },
+    {
+      "title": "git-rebase Documentation (git-scm.com) — INTERACTIVE MODE / reword",
+      "url": "https://git-scm.com/docs/git-rebase",
+      "host": "git-scm.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "INTERACTIVE MODE (원문): Rebasing interactively means that you have a chance to edit the commits which are rebased. You can reorder the commits, and you can remove them (weeding out bad or otherwise unwanted patches).\n\nSometimes the thing fixed in b.2. cannot be amended to the not-quite perfect commit it fixes, because that commit is buried deeply in a patch series. That is exactly what interactive rebase is for: use it after plenty of \"a\"s and \"b\"s, by rearranging and editing commits, and squashing multiple commits into one.\n\nStart it with the last commit you want to retain as-is:\n\n  git rebase -i <after-this-commit>\n\nAn editor will be fired up with all the commits in your current branch (ignoring merge commits), which come after the given commit. You can reorder the commits in this list to your heart's content, and you can remove them. The list looks more or less like this:\n\n  pick deadbee The oneline of this commit\n  pick fa1afe1 The oneline of the next commit\n  ...\n\nThe oneline descriptions are purely for your pleasure; git rebase will not look at them but at the commit names (\"deadbee\" and \"fa1afe1\" in this example), so do not delete or edit the names.\n\nBy replacing the command \"pick\" with the command \"edit\", you can tell git rebase to stop after applying that commit, so that you can edit the files and/or the commit message, amend the commit, and continue rebasing.\n\nIf you just want to edit the commit message for a commit, replace the command \"pick\" with the command \"reword\".\n\nTo drop a commit, replace the command \"pick\" with \"drop\", or just delete the matching line.\n\nIf you want to fold two or more commits into one, replace the command \"pick\" for the second and subsequent commits with \"squash\" or \"fixup\".\n\ngit rebase will stop when \"pick\" has been replaced with \"edit\" or when a command fails due to merge errors. When you are done editing and/or resolving conflicts you can continue with git rebase --continue.\n\nRECOVERING FROM UPSTREAM REBASE (원문): Rebasing (or any other form of rewriting) a branch that others have based work on is a bad idea: anyone downstream of it is forced to manually fix their history. This section explains how to do the fix from the downstream's point of view. The real fix, however, would be to avoid rebasing the upstream in the first place.\n\n[수집 메모: WebFetch 가 반환한 원문 인용 발췌. 'reword' 는 별도 항목 없이 INTERACTIVE MODE 안의 한 문장으로만 설명됨]",
+      "facts": [
+        "시작 명령은 'git rebase -i <after-this-commit>' — 유지하고 싶은 마지막 커밋(그 직전)을 지정한다. 에디터에는 그 이후 커밋들이 'pick <해시> <한 줄 메시지>' 형태로 뜬다(머지 커밋은 무시).",
+        "문서 문장: 'If you just want to edit the commit message for a commit, replace the command \"pick\" with the command \"reword\".' — 메시지만 고치려면 해당 줄의 pick 을 reword 로 바꾼다.",
+        "'edit' 는 그 커밋을 적용한 뒤 멈춰서 파일·메시지를 수정하고 amend 한 뒤 계속하게 하며, 이어가려면 'git rebase --continue'.",
+        "todo 목록에서 해시 부분은 건드리면 안 된다: 'git rebase will not look at them (oneline descriptions) but at the commit names ... so do not delete or edit the names' — 한 줄 설명을 고쳐도 실제 커밋 메시지는 안 바뀐다.",
+        "drop(또는 줄 삭제)은 커밋 제거, squash/fixup 은 2번째 이후 커밋을 앞 커밋에 합침 — reword 와 같은 todo 목록에서 쓰는 명령들.",
+        "'Rebasing (or any other form of rewriting) a branch that others have based work on is a bad idea: anyone downstream of it is forced to manually fix their history.' — 다른 사람이 그 위에 작업한 브랜치를 재작성하는 건 나쁜 생각이라는 공식 경고."
+      ]
+    },
+    {
+      "title": "Pro Git (한국어) — Git 도구 - 히스토리 단장하기",
+      "url": "https://git-scm.com/book/ko/v2/Git-도구-히스토리-단장하기",
+      "host": "git-scm.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "마지막 커밋 수정하기 (git commit --amend)\n커밋 메시지만 수정할 때:\n  $ git commit --amend\n파일을 마지막 커밋에 추가할 때는 파일을 수정하고 git add 로 Staging Area 에 넣은 뒤 같은 명령으로 커밋한다:\n  $ git commit --amend\n메시지를 그대로 두고 싶을 때:\n  $ git commit --amend --no-edit\n\n주의 문장 (원문 요지): 이때 SHA-1 값이 바뀌기 때문에 과거의 커밋을 변경할 때 주의해야 한다. Rebase와 같이 이미 Push 한 커밋은 수정하면 안 된다.\n\n여러 개의 커밋 메시지 수정하기 (git rebase -i)\n마지막 커밋 3개를 대상으로 하는 예시:\n  $ git rebase -i HEAD~3\n원문은 pick 을 edit 로 바꾸어 해당 커밋에서 멈추는 방식을 설명한다. 스크립트 도움말에는 메시지만 고치는 reword 도 나와 있다.\n  edit f7f3f6d changed my name a bit\n  pick 310154e updated README formatting and added blame\n  pick a5f4a0d added cat-file\n멈춘 뒤의 작업 순서:\n  $ git commit --amend\n  $ git rebase --continue\n나머지 커밋도 같은 방식으로 edit 로 표시해 반복할 수 있다.\n\n주의 문장 (원문 요지): 다시 강조하지만 이미 중앙서버에 Push 한 커밋은 절대 고치지 말아야 한다. Push 한 커밋을 Rebase 하면 결국 같은 내용을 두 번 Push 하는 것이기 때문에 다른 개발자들이 혼란스러워 할 것이다.\n\n[수집 메모: WebFetch 요약 모델이 정리해 돌려준 내용이라 한국어 문장은 '원문 요지'이며 글자 단위 인용은 아님. 영문판(아래 source)과 내용 일치 확인. 집필 시 문장을 그대로 따옴표 인용하지 말고 의미만 쓸 것]",
+      "facts": [
+        "마지막 커밋 메시지만 고칠 땐 'git commit --amend', 메시지를 그대로 두고 staged 파일만 추가할 땐 'git commit --amend --no-edit' (Pro Git 한국어판 안내).",
+        "Pro Git 은 amend 시 'SHA-1 값이 바뀌기 때문에' 과거 커밋 변경은 주의가 필요하고, 이미 Push 한 커밋은 수정하면 안 된다고 안내한다(해시 변경 = 새 커밋이라는 의미).",
+        "여러 커밋은 예시 'git rebase -i HEAD~3'(마지막 3개) 로 시작한다. Pro Git 본문 예시는 'edit' 로 멈춘 뒤 'git commit --amend' → 'git rebase --continue' 순서이고, 메시지만 고칠 땐 reword 도 도움말에 나온다.",
+        "Pro Git 은 '이미 중앙서버에 Push 한 커밋은 절대 고치지 말아야 한다 / 같은 내용을 두 번 Push 하는 것이라 다른 개발자들이 혼란스러워 한다' 고 강하게 경고(원문 요지) — GitHub 문서는 force-with-lease 절차를 제시해 서로 다른 톤이다(conflicts 참조)."
+      ]
+    },
+    {
+      "title": "Changing a commit message - GitHub Docs",
+      "url": "https://docs.github.com/en/pull-requests/committing-changes-to-your-project/creating-and-editing-commits/changing-a-commit-message",
+      "host": "docs.github.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "1. Rewriting the most recent commit message (git commit --amend). Use this when the commit exists only in your local repository. Go to the repository that contains the commit. Run: git commit --amend. Edit the message in your text editor and save. Push the commit to GitHub.com.\n\n2. Amending a commit that has already been pushed. Amend the message locally using the steps above. Force push over the old commit:\n  git push --force-with-lease origin EXAMPLE-BRANCH\nWarning: \"Force pushing can disrupt collaborators who have based work on the old commits.\"\n\n3. Rewriting older or multiple commit messages. Start an interactive rebase for the last n commits:\n  git rebase -i HEAD~n\nIn the commit list, change pick to reword for each commit you want to edit, for example:\n  pick e499d89 Delete CNAME\n  reword 0c39034 Better README\n  reword f7fde4a Change the commit message\nSave and close the commit list. In each commit message file that opens, enter the new message, then save and close it. Force push the rewritten history:\n  git push --force-with-lease origin EXAMPLE-BRANCH\nWarning: \"force pushing an amended commit might not remove the original commit from GitHub.\"\n\nIf the message contained sensitive information, the source says to contact GitHub Support through the support portal with the old commit ID so it can be purged from the remote repository.\n\n[수집 메모: WebFetch 요약 모델이 정리해 돌려준 내용. 명령·경고 따옴표 문구는 반환된 그대로 기록. 페이지 원문 대조는 못 함]",
+      "facts": [
+        "GitHub 문서: 가장 최근 커밋 메시지 수정은 'git commit --amend' 후 에디터에서 메시지를 고치고 저장 — 이 방법은 커밋이 로컬 저장소에만 있을 때용.",
+        "GitHub 문서: 이미 push 한 커밋을 amend 한 뒤에는 'git push --force-with-lease origin EXAMPLE-BRANCH' 로 이전 커밋 위에 강제 push 한다.",
+        "GitHub 문서 경고: 'Force pushing can disrupt collaborators who have based work on the old commits.' 및 'force pushing an amended commit might not remove the original commit from GitHub.' (원래 커밋이 GitHub 에서 사라지지 않을 수 있음).",
+        "GitHub 문서: 여러/오래된 커밋 메시지는 'git rebase -i HEAD~n' 후 목록에서 고칠 커밋의 pick 을 reword 로 바꾸고 저장하면 커밋마다 메시지 편집창이 열린다. 예시 목록은 3줄(pick 1개 + reword 2개)이다.",
+        "GitHub 문서: 메시지에 민감 정보가 있었다면 옛 커밋 ID 를 들고 GitHub Support 에 문의해 원격 저장소에서 제거(purge)를 요청하라고 안내."
+      ]
+    },
+    {
+      "title": "Pro Git (English) — Git Tools - Rewriting History",
+      "url": "https://git-scm.com/book/en/v2/Git-Tools-Rewriting-History",
+      "host": "git-scm.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "Changing the Last Commit (원문): If you simply want to modify your last commit message, that's easy:  $ git commit --amend\nThe command above loads the previous commit message into an editor session, where you can make changes to the message, save those changes and exit. When you save and close the editor, the editor writes a new commit containing that updated commit message and makes it your new last commit.\nIf, on the other hand, you want to change the actual content of your last commit, the process works basically the same way - first make the changes you think you forgot, stage those changes, and the subsequent git commit --amend replaces that last commit with your new, improved commit.\nYou need to be careful with this technique because amending changes the SHA-1 of the commit. It's like a very small rebase - don't amend your last commit if you've already pushed it.\nTip: if your amendments are suitably trivial (fixing a silly typo or adding a file you forgot to stage) such that the earlier commit message is just fine, you can simply make the changes, stage them, and avoid the unnecessary editor session entirely with:  $ git commit --amend --no-edit\n\nChanging Multiple Commit Messages (원문): To modify a commit that is farther back in your history, you must move to more complex tools. ... You can run rebase interactively by adding the -i option to git rebase. You must indicate how far back you want to rewrite commits by telling the command which commit to rebase onto.\nFor example, if you want to change the last three commit messages, or any of the commit messages in that group, you supply as an argument to git rebase -i the parent of the last commit you want to edit, which is HEAD~2^ or HEAD~3. It may be easier to remember the ~3 because you're trying to edit the last three commits, but keep in mind that you're actually designating four commits ago, the parent of the last commit you want to edit:  $ git rebase -i HEAD~3\nRemember again that this is a rebasing command - every commit in the range HEAD~3..HEAD with a changed message and all of its descendants will be rewritten. Don't include any commit you've already pushed to a central server - doing so will confuse other developers by providing an alternate version of the same change.\ntodo 도움말(원문 일부): # p, pick <commit> = use commit / # r, reword <commit> = use commit, but edit the commit message / # e, edit <commit> = use commit, but stop for amending / # s, squash <commit> = use commit, but meld into previous commit / # f, fixup <commit> = like \"squash\", but discard this commit's log message / # d, drop <commit> = remove commit / # These lines can be re-ordered; they are executed from top to bottom. / # If you remove a line here THAT COMMIT WILL BE LOST.\nIt's important to note that these commits are listed in the opposite order than you normally see them using the log command ... It lists the oldest at the top, rather than the newest, because that's the first one it will replay.\nPro Git 본문 예시는 pick 을 edit 로 바꿔 멈춘 뒤:  $ git commit --amend  → 메시지 수정 → $ git rebase --continue.\n[수집 메모: WebFetch 가 반환한 영문 원문 인용. 한국어판 요지와 내용 일치 확인]",
+      "facts": [
+        "Pro Git(영문): amend 는 에디터에 이전 커밋 메시지를 불러오고, 저장·종료하면 갱신된 메시지를 담은 'a new commit' 을 써서 그것을 새 마지막 커밋으로 만든다 — 해시가 바뀐다('amending changes the SHA-1 of the commit', 'like a very small rebase').",
+        "Pro Git(영문): 'don't amend your last commit if you've already pushed it' — 이미 push 했다면 마지막 커밋도 amend 하지 말라는 기본 권고.",
+        "Pro Git(영문) 팁: 사소한 수정(오타, staged 빠뜨린 파일)이라 이전 메시지가 괜찮다면 파일을 고쳐 stage 한 뒤 'git commit --amend --no-edit' 로 에디터 없이 amend.",
+        "Pro Git(영문): 마지막 3개 메시지를 고치려면 git rebase -i HEAD~3 (= HEAD~2^). 인자는 '고칠 마지막 커밋의 부모' 라서 '~3' 은 실제로 'four commits ago'(고칠 3개의 부모, 즉 4번째 이전 커밋)를 가리킨다.",
+        "Pro Git(영문): rebase -i 범위(HEAD~3..HEAD)에서 메시지를 바꾼 커밋 'and all of its descendants' 가 모두 재작성된다 — 하나만 reword 해도 그 뒤 커밋 해시는 전부 바뀐다.",
+        "Pro Git(영문): todo 목록은 git log 와 반대로 오래된 커밋이 위, 위에서 아래로 실행된다. 도움말에 'r, reword <commit> = use commit, but edit the commit message' 가 직접 나오며, 줄을 지우면 'THAT COMMIT WILL BE LOST'.",
+        "Pro Git(영문): 이미 중앙 서버에 push 한 커밋은 범위에 포함하지 말라 — 'confuse other developers by providing an alternate version of the same change'."
+      ]
+    }
+  ],
+  "conflicts": [
+    {
+      "about": "이미 push 한 커밋의 메시지를 amend/rebase 로 고쳐도 되는가",
+      "a": "Pro Git 한국어판(git-scm.com, 원문 요지): '이미 중앙서버에 Push 한 커밋은 절대 고치지 말아야 한다 … 같은 내용을 두 번 Push 하는 것이라 다른 개발자들이 혼란스러워 한다.'",
+      "b": "GitHub Docs: 이미 push 한 커밋도 로컬에서 amend 한 뒤 'git push --force-with-lease origin EXAMPLE-BRANCH' 로 덮어쓰는 절차를 제시하되 'Force pushing can disrupt collaborators who have based work on the old commits.' 경고를 붙임. (사실상 '혼자 쓰는 브랜치면 가능, 공유 브랜치면 피하라' 로 합쳐 읽을 수 있으나 어느 자료도 그렇게 명시하진 않음 — 정리 단계에서 해석으로 쓰려면 해석이라고 밝힐 것)"
+    },
+    {
+      "about": "여러 개 전 커밋 메시지를 고칠 때 todo 에서 쓰는 명령",
+      "a": "git-rebase 공식 문서·GitHub Docs: 메시지만 고치려면 pick 을 reword 로 바꾼다.",
+      "b": "Pro Git 한국어판 본문 예시: pick 을 edit 로 바꿔 멈춘 뒤 git commit --amend → git rebase --continue (reword 는 스크립트 도움말에 나온다고만 언급). 결과는 같지만 절차가 다르다(reword 는 멈춤 없이 편집창만 열림)."
+    }
+  ],
+  "unknowns": [
+    "WebSearch 는 지시(최대 3회, 한도 소진 가능성)에 따라 쓰지 않았다. 1차 보도·커뮤니티 자료는 수집하지 않음.",
+    "Pro Git 한국어판은 WebFetch 요약 모델 경유라 한국어 문장이 글자 단위 원문이 아니다('원문 요지'). 영문판은 따로 읽어 내용 일치를 확인했다(영문은 원문 인용).",
+    "GitHub Docs 본문도 요약 모델 경유 — 페이지의 정확한 단계 번호·문구와 글자 단위로 대조하지 못했다.",
+    "git 버전별 차이(--force-if-includes 가 도입된 버전, git rebase -i 의 reword 도입 버전)는 확인 못 함 — 글에 버전을 단정하지 말 것.",
+    "페이지 게시일·최종 수정일은 세 공식 문서 모두 확인 못 해 publishedAt 을 null 로 둠.",
+    "첫 커밋(루트 커밋)을 reword 하는 'git rebase -i --root' 는 이번 범위에서 확인 못 함.",
+    "amend 직전 상태 복구(git reflog 로 이전 해시 되찾기)는 undo 글과 겹치는 각도라 조사 제외."
+  ]
+}
