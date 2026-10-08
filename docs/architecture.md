@@ -44,7 +44,7 @@ frontend/data/trends.js  ← backend/scripts/refresh.mjs 생성물(직접 편집
 ```
 .pipeline/curate.json (선택: Hermes 후보)
     ↓
-backend/scripts/auto-build.mjs (선택: 출처 검증 + canonical 병합)
+backend/scripts/auto-build.mjs (선택: 출처 검증 + 근거 대조(`lib/grounding.mjs`) + canonical 병합)
     ↓
 backend/data/trends.json (canonical 원본)
     ↓

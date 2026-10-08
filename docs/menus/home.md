@@ -4,4 +4,4 @@
 - 표시 데이터: `H.TRENDS` 전체. 신뢰분석은 `type`, `ad`, `trust`, `sat`, `label`, `analyzedAt`, `buzz`를 쓰고, 트렌드 카드는 `cat`, `stage`, `title`, `images`, `analyzedAt`와 `H.summary()`가 고른 짧은 설명(`excerpt`/`def`/`stageMsg`/`verdict`/`pull`)을 표시한다.
 - 현재 상태: 구현됨. 홈은 광고 분석 상위 6개, 트렌드 상위 8개를 미리 보여주며 더보기는 `list.html?type=ad`와 `list.html?type=trend`로 이동한다.
 - 관련 코드: `frontend/index.html`의 필터 모드/오늘의 한끗/미리보기 렌더링, `frontend/assets/app.js`의 `H.renderMast()`, `H.adRowHTML()`, `H.trendCardHTML()`, `H.summary()`, `H.freshChip()`, `backend/data/trends.json`.
-- 비고: 오늘의 한끗은 가장 최근 재확인된 신뢰분석을 기준으로 회전한다. 정적 데이터 생성은 GitHub Actions `weekly-refresh` 또는 수동 `refresh.mjs` 실행으로 반영하고, 로컬 Hermes 재확인은 실제 출처 재검증이 된 항목만 `analyzedAt`을 갱신한다. 점수는 모두 추정치로 표기한다.
+- 비고: 오늘의 한끗은 가장 최근 재확인된 신뢰분석을 기준으로 회전한다(같은 날짜가 여럿이면 날짜 기준으로 순환). 재확인 때 출처 생존·관련성은 통과해도 서술의 수치·매체·확산 표현이 출처 본문에 없으면(근거 대조 실패) `analyzedAt`이 갱신되지 않아 홈에 올라가지 않는다(이번 회차에 본문을 못 읽은 출처만 남았으면 대조를 건너뛴다). 정적 데이터 생성은 GitHub Actions `weekly-refresh` 또는 수동 `refresh.mjs` 실행으로 반영하고, 로컬 Hermes 재확인은 실제 출처 재검증이 된 항목만 `analyzedAt`을 갱신한다. 점수는 모두 추정치로 표기한다.

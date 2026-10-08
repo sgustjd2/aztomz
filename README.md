@@ -19,8 +19,9 @@
 | `backend/` | 비공개(배포 안 됨) — 데이터 원본 + 빌드 스크립트 |
 | `backend/data/trends.json`·`pulse.json` | ★ **canonical 데이터 원본** (사람·스크립트가 수정) |
 | `youtube-summaries/` | 생성물 — AI Engineer(@aiDotEngineer) 채널 새 영상 한국어 상세 요약 모음(영상별 `.md` + 인덱스). **배포 대상 아님**(frontend/만 Vercel 배포) |
-| `backend/scripts/auto-build.mjs` | **자동 게시 엔진** — 출처 자동검증(404/410/관련성) · 중복 제거 · 통과분만 trends.json 반영 · images 필드 자동 주입(og:image) · shops 배열 URL 생존성 검증(죽은 링크 제거) · git push |
-| `backend/scripts/recheck-ad.mjs` | **광고/진짜 일일 재확인** — 가장 오래된 신뢰분석 1건의 출처 재검증(ddgs) → 살아있으면 analyzedAt=오늘 갱신(→ 홈 featured 회전) |
+| `backend/scripts/auto-build.mjs` | **자동 게시 엔진** — 출처 자동검증(404/410/관련성) · **근거 대조**(서술의 수치·매체·확산 표현이 출처 본문에 없으면 보류) · 중복 제거 · 통과분만 trends.json 반영 · images 필드 자동 주입(og:image) · shops 배열 URL 생존성 검증(죽은 링크 제거) · git push |
+| `backend/scripts/recheck-ad.mjs` | **광고/진짜 일일 재확인** — 가장 오래된 신뢰분석 1건의 출처 재검증(ddgs) → 살아있으면 analyzedAt=오늘 갱신(→ 홈 featured 회전). 근거 대조 실패 항목은 회전 없이 '사람 확인 필요' 보고 후 다음 오래된 항목(최대 3건) 시도 |
+| `backend/scripts/lib/grounding.mjs` | **근거 대조 게이트**(결정적·LLM 없음) — 항목 서술(excerpt·verdict·article·shops)의 수치·매체명·확산 표현이 검증 통과 출처 본문에 있는지 문자열 대조. 유래·인물 바꿔치기·의미 오류는 못 잡음. 셀프테스트: `node backend/scripts/lib/grounding.mjs` |
 | `backend/scripts/youtube-summarize.mjs` | AI Engineer 채널 새 영상 → **Gemini 한국어 상세 요약** (URL 직수신 — 자막 스크래핑·yt-dlp 불필요) → `youtube-summaries/<날짜>-<id>.md` 저장. RSS로 신규 감지, 파일 존재로 중복 스킵. `--limit`·`--lowres`·`--channel` 등 옵션 지원 |
 | `backend/scripts/refresh.mjs` 등 | 정적 데이터 생성·출처검증·이미지 스크립트 |
 | `tools/hermes-admin/` | 🔧 **Hermes 로컬 관리 콘솔** — 크론·설정·실행기록 관리(비배포, 127.0.0.1 전용) |
@@ -65,7 +66,7 @@ node tools/hermes-admin/server.mjs            # 수동 시작
 .pipeline/curate.json (Hermes가 생성한 후보 항목들)
     ↓
 backend/scripts/auto-build.mjs (자동검증 + 썸네일 주입)
-  · 중복 제거 · 출처 404/410 제거 · 본문 관련성 검증
+  · 중복 제거 · 출처 404/410 제거 · 본문 관련성 검증 · 근거 대조(서술의 수치·매체·확산 표현 ↔ 출처 본문, `lib/grounding.mjs`)
   · images 필드 빈 항목 → 출처의 og:image 자동 추출·주입 (추가 fetch 없음)
     ↓
 검증 통과분만 → backend/data/trends.json (canonical 원본)
@@ -83,7 +84,7 @@ Vercel 자동 배포 (git push 시)
 
 **핵심:** 
 - trends.json만 수정. trends.js는 건드리지 말 것.
-- auto-build.mjs가 출처 자동검증(게이트) — 죽음·무관·못읽음 출처만 있으면 자동 보류
+- auto-build.mjs가 출처 자동검증(게이트) — 죽음·무관·못읽음 출처만 있으면 자동 보류 · 출처가 통과해도 서술이 출처 밖 수치·매체·확산 표현이면 보류(근거 대조)
 - 자동 게시 항목의 썸네일은 auto-build.mjs가 출처 og:image로 자동 주입 — 모든 아이템이 커버 이미지 보장
 - 저장/후기/펄스 아이디어는 서버에 저장되지 않는 로컬 개인화(localStorage) 기능
 - 다른 브라우저·다른 기기와 동기화되지 않으며, `H.*`는 향후 백엔드가 필요할 때를 위한 추상화 계층으로 유지
@@ -140,7 +141,7 @@ git push origin main              # → Vercel 자동 재배포
 | **점수** | 모든 점수는 **추정치**이며 확정 판정이 아님. 단정 표현 금지 |
 | **신뢰도 ≠ 만족도** | 신뢰도(믿을 만한가) ≠ 만족도(좋은가) — 별개 축으로 표기. 신뢰도 높아도 내용이 '별로'면 neg |
 | **신조어** | 출처에 "2024 신조어" 류 표시면 2026.6 기준으로 한물 의심. 재검증 필수. 한물간 신조어는 `fresh:false` 또는 stage에 '끝물'·'한물' 표시 → 사전 '최신'에서 빠지고 '지난 유행어'로 보관 |
-| **게시 정책** | auto-build.mjs가 출처 검증(관련성·생존성) 후 통과분만 자동 게시. 거짓·무관·404 출처만 있으면 자동 보류 |
+| **게시 정책** | auto-build.mjs가 출처 검증(관련성·생존성) + 근거 대조 후 통과분만 자동 게시. 거짓·무관·404 출처만 있으면 자동 보류, 서술이 출처 밖이면(근거 대조 실패) 보류 |
 
 ---
 

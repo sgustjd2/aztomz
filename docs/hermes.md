@@ -16,7 +16,7 @@ Hermes는 [Nous Research](https://nousresearch.com)의 AI 에이전트 런타임
                               │
                               ▼ (09:10 자동 진행)
                     auto-build.mjs 자동검증
-                   (중복·404/410·관련성 제거)
+                   (중복·404/410·관련성·근거 대조 제거)
                               │
                     검증통과분만 ┌─────────────────────────┐
                               │                           │
@@ -30,7 +30,7 @@ Hermes는 [Nous Research](https://nousresearch.com)의 AI 에이전트 런타임
 
 - **수집·분석:** 고구미봇 온디맨드(디스코드 "한끗 실행" 명령).
 - **자동검증·게시:** auto-build.mjs가 매일 저녁 21:00 자동 실행 → 통과분만 사이트에 올라감 (사람 승인 불필요).
-- **보류:** 출처가 404·무관·못읽음만 있는 항목은 자동 보류, 디스코드에 보고.
+- **보류:** 출처가 404·무관·못읽음만 있는 항목, 또는 서술이 출처 밖 수치·매체·확산 표현(근거 대조 실패)인 항목은 자동 보류, 디스코드에 보고.
 
 ---
 
@@ -108,7 +108,7 @@ Hermes는 [Nous Research](https://nousresearch.com)의 AI 에이전트 런타임
 |---|---|---|
 | **블로그 일일 초안** (`c49cb13870e0`) | 매일 **09:00** | **2026-09-24 일시정지** — Windows 스케줄작업 `AZ2MZ_Blog_Daily`로 이관. `claude -p /blog-daily` 스킬이 4편(티스토리 2+네이버 2, 각각 다른 글 — 2026-10-07 토큰 절약으로 5+5에서 축소) 집필·검증. 발행은 `blog-queue.mjs`가 12:00·15:00·18:00에 담당. |
 | **한끗 자동 수집·게시** (신규) | 매일 **21:00** | `hangeut-run`(수집·분석) → `auto-build.mjs`(자동검증·게시). 검증통과분만 사이트 반영 · git push → Vercel 배포. **요일 로테이션 → 목 21:00 = 신조어(주간 사전 갱신)** |
-| **한끗 광고/진짜 일일 재확인** (신규) | 매일 **21:15** | `recheck_ad.py`(no-agent) — 가장 오래된 신뢰분석 1건의 출처 재검증(recheck-ad.mjs) → 살아있으면 analyzedAt 갱신(→ 홈 featured 회전). 메인(21:00)과 trends.json 쓰기 충돌 방지로 15분 뒤 |
+| **한끗 광고/진짜 일일 재확인** (신규) | 매일 **21:15** | `recheck_ad.py`(no-agent) — 가장 오래된 신뢰분석 1건의 출처 재검증(recheck-ad.mjs) → 살아있으면 analyzedAt 갱신(→ 홈 featured 회전). 근거 대조(`lib/grounding.mjs`) 실패 시엔 회전 없이 '사람 확인 필요'로 보고하고 다음 오래된 항목(최대 3건)을 시도. 메인(21:00)과 trends.json 쓰기 충돌 방지로 15분 뒤 |
 | **한끗 주간 갱신** (`dc54cec90b5e`) | 매주 월 **21:00** | `hangeut_daily.py`(no-agent) — trends.json 날짜 스탬프 + 신선도 리포트. 무료·안 죽음 |
 | **한끗 펄스 — 오늘의 분야** (`f3a0b6724fa4`) | 매일 **21:00** | `pulse_categories.py`(no-agent) — 오늘 분석할 펄스 분야를 디스코드로 안내 |
 | **한끗 — 오늘의 수집 분야** (`bc1a98451fb7`) | 매일 **21:00** | `trend_categories.py`(no-agent) — 오늘 수집할 트렌드 분야 안내 |
@@ -152,7 +152,7 @@ Hermes는 [Nous Research](https://nousresearch.com)의 AI 에이전트 런타임
 고구미봇 ─writes─▶ .pipeline/curate.json (후보)
                         │
                         ▼
-            auto-build.mjs (자동검증: 중복·404·관련성)
+            auto-build.mjs (자동검증: 중복·404·관련성·근거대조)
                         │
         검증통과분 ──▶ backend/data/trends.json (canonical 원본)
                         │ node backend/scripts/refresh.mjs
@@ -167,15 +167,15 @@ Hermes는 [Nous Research](https://nousresearch.com)의 AI 에이전트 런타임
 ```
 
 - 고구미봇이 채우는 **상세페이지 필드**: `verdict`(한 줄) · `article`(블로그형 본문) · `video`(유튜브/틱톡 임베드) · `images`(대표 이미지) · `prompt`(AI 명령어, 길고 디테일하게) · `pureKorean`(신조어 우리말).
-- auto-build.mjs가 **검증 게이트**: 중복(id/title 기존재) 제거 · 404/410 링크 제거 · 본문에 제목 핵심어 없으면 무관으로 제거.
+- auto-build.mjs가 **검증 게이트**: 중복(id/title 기존재) 제거 · 404/410 링크 제거 · 본문에 제목 핵심어 없으면 무관으로 제거 · 서술의 수치·매체·확산 표현이 출처 본문에 없으면 보류(근거 대조, `lib/grounding.mjs`).
 - 펄스(창업 레이더)는 `backend/data/pulse.json`의 `daily[]`(주간 픽)만 소유. 빌트인 110개(`trends[]`)는 read-only.
 
 ---
 
 ## 핵심 원칙
 
-1. **자동 게시(검증 통과분만)** — auto-build.mjs가 출처 자동검증 후 통과분만 사이트 반영. 거짓·무관·404 출처만 있으면 자동 보류.
-   - 검증 게이트: 중복(id/title) · 404/410(죽음) · 본문 관련성(제목 핵심어 0개면 무관)
+1. **자동 게시(검증 통과분만)** — auto-build.mjs가 출처 자동검증 후 통과분만 사이트 반영. 거짓·무관·404 출처만 있으면 자동 보류. 서술이 출처 밖이면(근거 대조 실패) 보류.
+   - 검증 게이트: 중복(id/title) · 404/410(죽음) · 본문 관련성(제목 핵심어 0개면 무관) · 근거 대조(서술 수치·매체·확산 표현 ↔ 출처 본문)
    - 잘못 올라간 건 **사후에 사람이** 수정/삭제. 최종 책임은 사람.
 2. **거짓 신선도 금지** — 실제 재분석한 것만 오늘 날짜(`analyzedAt`). 안 한 항목은 그대로.
 3. **추측 출처 금지** — 검색결과 실제 URL만. auto-build.mjs가 404/410 + 본문 관련성 검증.
