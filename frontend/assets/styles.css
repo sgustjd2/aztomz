@@ -304,6 +304,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
 .sat-pos{background:var(--trust-soft);color:var(--trust)}
 .sat-neg{background:var(--danger-soft);color:var(--danger)}
 .sat-mix{background:var(--pulse-soft);color:var(--pulse)}
+.sat-none{background:var(--paper-soft);color:var(--ink-2);border:1px solid var(--line)}  /* 맛 후기 0건 — 혼재로 오해 안 되게 */
 
 /* ---------- 신선도 칩 (오늘 날짜 대비) ---------- */
 .fresh-chip{display:inline-block;font-size:12.5px;font-weight:900;padding:3px 9px;border-radius:999px;

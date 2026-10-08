@@ -124,7 +124,7 @@
         <div class="track"><i style="width:${t.trust}%"></i></div>
         ${R.trust?`<div class="s-why"><b>왜 이 점수?</b> ${H.esc(R.trust)}</div>`:''}</div>
     </div>
-    <div style="font-size:14.5px;margin:2px 0 4px">만족도 <span class="sat-badge sat-${t.sat}">${({pos:'긍정',neg:'부정',mix:'혼재'})[t.sat]}</span> <span class="muted">${H.esc(t.satTxt)}</span></div>
+    <div style="font-size:14.5px;margin:2px 0 4px">만족도 <span class="sat-badge sat-${t.sat}">${({pos:'긍정',neg:'부정',mix:'혼재',none:'판단 불가'})[t.sat]}</span> <span class="muted">${H.esc(t.satTxt)}</span></div>
     ${R.sat?`<div class="sat-why"><b>근거</b> ${H.esc(R.sat)}</div>`:''}`;
   }
 

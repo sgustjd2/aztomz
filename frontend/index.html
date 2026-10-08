@@ -138,7 +138,7 @@
       <div class="fx-scores">
         <span class="s ad">광고 의심 <b>${f.ad}</b></span>
         <span class="s tr">후기 신뢰 <b>${f.trust}</b></span>
-        <span class="s">만족도 ${({pos:'긍정',neg:'부정',mix:'혼재'})[f.sat]}</span>
+        <span class="s">만족도 ${({pos:'긍정',neg:'부정',mix:'혼재',none:'판단 불가'})[f.sat]}</span>
       </div>
       <p class="excerpt">${H.esc(f.excerpt)}</p>
       <a class="more" href="${href(f.id)}">전체 분석 읽기 →</a>

@@ -51,7 +51,7 @@ export function validateTrends(trends) {
       for (const k of ['ad', 'trust']) {
         if (typeof t[k] !== 'number' || t[k] < 0 || t[k] > 100) errors.push(`${at} ${k} 0~100 숫자 아님: ${JSON.stringify(t[k])}`);
       }
-      if (t.sat && !['pos', 'neg', 'mix'].includes(t.sat)) warnings.push(`${at} sat 값 비표준: ${JSON.stringify(t.sat)} (pos/neg/mix)`);
+      if (t.sat && !['pos', 'neg', 'mix', 'none'].includes(t.sat)) warnings.push(`${at} sat 값 비표준: ${JSON.stringify(t.sat)} (pos/neg/mix/none — none=맛 후기 0건)`);
     } else {
       // 트렌드 타입은 scoresBlock()이 stage-box(유행 단계)를 그린다 — 두 필드 다 필수.
       if (!STAGES.includes(t.stage)) errors.push(`${at} stage 비정규값(내부 파이프라인 값 유출 의심): ${JSON.stringify(t.stage)} (허용: ${STAGES.join('/')})`);
