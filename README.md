@@ -20,8 +20,9 @@
 | `backend/data/trends.json`·`pulse.json` | ★ **canonical 데이터 원본** (사람·스크립트가 수정) |
 | `youtube-summaries/` | 생성물 — AI Engineer(@aiDotEngineer) 채널 새 영상 한국어 상세 요약 모음(영상별 `.md` + 인덱스). **배포 대상 아님**(frontend/만 Vercel 배포) |
 | `backend/scripts/auto-build.mjs` | **자동 게시 엔진** — 출처 자동검증(404/410/관련성) · **근거 대조**(서술의 수치·매체·확산 표현이 출처 본문에 없으면 보류) · 중복 제거 · 통과분만 trends.json 반영 · images 필드 자동 주입(og:image) · shops 배열 URL 생존성 검증(죽은 링크 제거) · git push |
-| `backend/scripts/recheck-ad.mjs` | **광고/진짜 일일 재확인** — 가장 오래된 신뢰분석 1건의 출처 재검증(ddgs) → 살아있으면 analyzedAt=오늘 갱신(→ 홈 featured 회전). 근거 대조 실패 항목은 회전 없이 '사람 확인 필요' 보고 후 다음 오래된 항목(최대 3건) 시도 |
-| `backend/scripts/lib/grounding.mjs` | **근거 대조 게이트**(결정적·LLM 없음) — 항목 서술(excerpt·verdict·article·shops)의 수치·매체명·확산 표현이 검증 통과 출처 본문에 있는지 문자열 대조. 유래·인물 바꿔치기·의미 오류는 못 잡음. 셀프테스트: `node backend/scripts/lib/grounding.mjs` |
+| `backend/scripts/recheck-ad.mjs` | **광고/진짜 일일 재확인** — 가장 오래된 신뢰분석 1건의 출처 재검증(ddgs) → 살아있으면 analyzedAt=오늘 갱신(→ 홈 featured 회전). 근거 대조 실패 항목은 회전 없이 '사람 확인 필요' 보고 후 다음 오래된 항목(최대 3건) 시도 · ddgs 차단으로 본문을 못 읽은 출처는 삭제하지 않고 '유지' |
+| `backend/scripts/lib/websearch.mjs` | **ddgs 래퍼**(공용 `extract`) — 차단(HTTP 430/432/500 등)되면 ddgs가 `DDGSException`을 stdout에 찍고 0으로 끝나는데, 이를 빈 본문으로 돌려줘 '무관'이 아니라 '차단(못 읽음)'으로 처리. auto-build·recheck-ad·check-source가 이 함수를 같이 쓴다 |
+| `backend/scripts/lib/grounding.mjs` | **근거 대조 게이트**(결정적·LLM 없음) — 항목 서술(excerpt·pull·verdict·satTxt·article·shops·reasons)의 수치·매체명·확산 표현이 검증 통과 출처 본문에 있는지 문자열 대조. 유래·인물 바꿔치기·의미 오류는 못 잡음. 셀프테스트: `node backend/scripts/lib/grounding.mjs` |
 | `backend/scripts/youtube-summarize.mjs` | AI Engineer 채널 새 영상 → **Gemini 한국어 상세 요약** (URL 직수신 — 자막 스크래핑·yt-dlp 불필요) → `youtube-summaries/<날짜>-<id>.md` 저장. RSS로 신규 감지, 파일 존재로 중복 스킵. `--limit`·`--lowres`·`--channel` 등 옵션 지원 |
 | `backend/scripts/refresh.mjs` 등 | 정적 데이터 생성·출처검증·이미지 스크립트 |
 | `tools/hermes-admin/` | 🔧 **Hermes 로컬 관리 콘솔** — 크론·설정·실행기록 관리(비배포, 127.0.0.1 전용) |
@@ -156,7 +157,7 @@ git push origin main              # → Vercel 자동 재배포
 - `analyzedAt` (YYYY-MM-DD) — 분석 날짜(재분석 시 갱신)
 - `ad` (0~100) — 광고 의심도
 - `trust` (0~100) — 실제 후기 신뢰도
-- `sat` (pos|neg|mix) — 만족도 (긍정·부정·혼재)
+- `sat` (pos|neg|mix|none) — 만족도 (긍정·부정·혼재, `none`=맛 후기 0건 → 화면 '판단 불가', 혼재 아님)
 - `label` (string) — 한끗 판정 (예: "SNS 기대치 조절 필요")
 - `verdict` (string) — 장문 분석
 - `src` (array) — 출처 [제목, URL] 쌍
