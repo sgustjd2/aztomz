@@ -19,6 +19,7 @@
    ============================================================ */
 import { readFileSync, writeFileSync } from 'node:fs';
 import { execFileSync } from 'node:child_process';
+import { extract as ddgsExtract } from './lib/websearch.mjs';
 import { acquireGitLock } from './lib/git-lock.mjs';
 import { groundingCheck } from './lib/grounding.mjs';
 import { fileURLToPath } from 'node:url';
@@ -33,8 +34,6 @@ const NO_GIT = args.includes('--no-git');
 const DRY = args.includes('--dry');
 const idArg = (args.find(a => a.startsWith('--id=')) || '').slice(5) || null;
 
-const DDGS = process.env.DDGS_EXE ||
-  'E:/workspace/side_project/hermes/hermes-agent/venv/Scripts/ddgs.exe';
 const UA = { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124 Safari/537.36' };
 
 function kstISO() {
@@ -50,14 +49,8 @@ function titleKeywords(t) {
   return [...new Set((t.title || '').replace(/[()'’"]/g, ' ').replace(/[·,/]/g, ' ')
     .split(/\s+/).map(s => s.trim()).filter(s => s.length >= 2 && !STOP.has(s)))];
 }
-function extract(url) {
-  try {
-    return execFileSync(DDGS, ['extract', '-u', url, '-f', 'text'], {
-      encoding: 'utf-8', maxBuffer: 64 * 1024 * 1024, timeout: 40000, windowsHide: true,
-      env: { ...process.env, PYTHONIOENCODING: 'utf-8', PYTHONUTF8: '1' },
-    }) || '';
-  } catch (e) { return (e.stdout && e.stdout.toString()) || ''; }
-}
+// 차단된 출처의 'DDGSException' 출력을 본문으로 오인하지 않는 공용 래퍼(lib/websearch.mjs). 원문 전체가 필요해 길이 제한 없음.
+const extract = (url) => ddgsExtract(url, { maxChars: Infinity });
 const hasKw = (body, k) => new RegExp(k.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).test(body);
 async function httpStatus(url) {
   try {

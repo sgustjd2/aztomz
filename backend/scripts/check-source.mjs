@@ -7,10 +7,8 @@
 // 종료코드: 무관(❌) 출처가 하나라도 있으면 1, 아니면 0.
 
 import { readFileSync } from 'node:fs';
-import { execFileSync } from 'node:child_process';
+import { extract as ddgsExtract } from './lib/websearch.mjs';
 
-const DDGS = process.env.DDGS_EXE ||
-  'E:/workspace/side_project/hermes/hermes-agent/venv/Scripts/ddgs.exe';
 
 const args = process.argv.slice(2);
 const file = args.find(a => !a.startsWith('--')) || 'backend/data/trends.json';
@@ -51,20 +49,8 @@ function keywordsOf(t) {
   return [...new Set([...raw, ...extra])];
 }
 
-function extract(url) {
-  try {
-    const out = execFileSync(DDGS, ['extract', '-u', url, '-f', 'text'], {
-      encoding: 'utf-8', maxBuffer: 64 * 1024 * 1024, timeout: 40000,
-      windowsHide: true,
-      // ⚠️ ddgs(=python+click)는 Windows 콘솔 cp949로 출력하다 본문에 한자·키릴·악센트가
-      // 나오면 UnicodeEncodeError로 크래시→본문이 잘린다. UTF-8을 강제해 전체 본문을 받는다.
-      env: { ...process.env, PYTHONIOENCODING: 'utf-8', PYTHONUTF8: '1' },
-    });
-    return out || '';
-  } catch (e) {
-    return (e.stdout && e.stdout.toString()) || '';
-  }
-}
+// 차단된 출처의 'DDGSException' 출력을 본문으로 오인하지 않는 공용 래퍼(lib/websearch.mjs). 원문 전체가 필요해 길이 제한 없음.
+const extract = (url) => ddgsExtract(url, { maxChars: Infinity });
 
 function verdict(body, kws) {
   if (body.length < 80) return { v: '차단', icon: '🚫', hits: [], note: `본문 ${body.length}자(추출 실패/차단)` };

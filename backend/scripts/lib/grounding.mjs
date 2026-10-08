@@ -25,20 +25,23 @@ export function claimText(t) {
   const parts = [t.excerpt, t.pull, t.verdict, t.stageMsg, t.buzz, t.satTxt];
   for (const b of t.article || []) if (Array.isArray(b) && b[0] !== 'q') parts.push(Array.isArray(b[1]) ? b[1].join(' ') : b[1]);
   for (const s of t.shops || []) parts.push(s && s.rep, s && s.note);
+  if (t.reasons && typeof t.reasons === 'object') parts.push(...Object.values(t.reasons).flat(Infinity).filter((v) => typeof v === 'string'));  // 점수 근거(화면 '근거' 줄)
   return parts.filter(Boolean).join('\n');
 }
 
 // srcNames: 출처 이름 목록(매체명 대조용), bodies: 검증 통과 출처 본문 문자열 배열
 export function groundingCheck(t, srcNames, bodies) {
-  const text = claimText(t);
+  // '유일한 출처'처럼 우리 근거 수준을 밝히는 메타 문장은 확산·과장 주장이 아니다.
+  const text = claimText(t).replace(/유일한 출처/g, '');
   const all = bodies.map(stripHtml).join('\n');
   const B = norm(all);
+  const BNC = B.replace(/,/g, '');   // 출처가 '3,300'(원 없이)로 써도 '3,300원'을 찾도록
   const names = srcNames.join(' ');
   const block = [], warn = [];
   for (const m of MEDIA) if (text.includes(m) && !names.includes(m) && !all.includes(m)) block.push(`출처에 없는 매체 '${m}'`);
   for (const n of new Set(text.match(NUM_RE) || [])) {
     const digits = n.match(/\d[\d,.]*/)[0].replace(/,/g, '');
-    if (!B.includes(norm(n)) && !B.includes(digits) && !B.includes(norm(n.replace(/,/g, '')))) block.push(`출처에 없는 수치 '${n.trim()}'`);
+    if (!B.includes(norm(n)) && !B.includes(digits) && !BNC.includes(digits) && !B.includes(norm(n.replace(/,/g, '')))) block.push(`출처에 없는 수치 '${n.trim()}'`);
   }
   for (const h of HYPE_BLOCK) if (text.includes(h) && !B.includes(norm(h))) block.push(`출처에 없는 표현 '${h}'`);
   for (const h of HYPE_WARN) if (text.includes(h) && !B.includes(norm(h))) warn.push(`출처에 없는 표현 '${h}'`);
@@ -60,6 +63,8 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
   assert.ok(chain.includes("'체인'") && chain.includes("'여러 지점'"), chain);
   const ad = groundingCheck({ verdict: '냉장 디저트 280% 증가' }, [], ["<script>defineSlot([[336,280]])</script><p>냉장 디저트</p>"]);
   assert.equal(ad.pass, false, '스크립트 속 숫자는 근거가 아님');
+  assert.equal(groundingCheck({ verdict: '읽을 수 있었던 유일한 출처는 블로그 1건' }, [], [body]).pass, true, '메타 문장');
+  assert.equal(groundingCheck({ verdict: '세트 11,000원' }, [], ['세트 메뉴 11,000']).pass, true, '쉼표 숫자·원 생략');
   const vibe = groundingCheck({ verdict: '요즘 대세' }, [], [body]);
   assert.equal(vibe.pass, true); assert.equal(vibe.warn.length, 1);
   console.log('✓ grounding selftest 통과');

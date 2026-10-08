@@ -46,12 +46,16 @@ export function search(query, { timelimit = 'm', max = 8, region = null } = {}) 
   } catch { return []; }
 }
 
-/** 페이지 본문을 읽는다. 못 읽으면 빈 문자열(로그인벽·JS앱). */
+/** 페이지 본문을 읽는다. 못 읽으면 빈 문자열(로그인벽·JS앱·봇 차단).
+ *  ddgs 는 차단(HTTP 430/432/500 등)돼도 'DDGSException: …' 한 줄을 stdout 에 찍고 0 으로 끝난다 —
+ *  그걸 본문으로 받으면 차단된 출처가 '무관'으로 판정돼 recheck-ad 가 멀쩡한 출처를 지운다(2026-10-09 실측: fmkorea·trip.com). */
 export function extract(url, { maxChars = 2500 } = {}) {
   try {
     const t = execFileSync(DDGS, ['extract', '-u', url, '-f', 'text'],
-      { env: PYENV, timeout: 60000, encoding: 'utf-8', stdio: ['ignore', 'pipe', 'pipe'] });
-    return String(t || '').replace(/\s+/g, ' ').trim().slice(0, maxChars);
+      { env: PYENV, timeout: 60000, encoding: 'utf-8', stdio: ['ignore', 'pipe', 'pipe'], windowsHide: true, maxBuffer: 64 * 1024 * 1024 });
+    const s = String(t || '');
+    if (/^\s*DDGSException/.test(s)) return '';
+    return s.replace(/\s+/g, ' ').trim().slice(0, maxChars);
   } catch { return ''; }
 }
 
