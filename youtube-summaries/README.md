@@ -3,11 +3,18 @@
 채널 [AI Engineer](https://www.youtube.com/@aiDotEngineer) 의 새 영상을 Gemini 로 자동 요약한 모음입니다.
 생성: `backend/scripts/youtube-summarize.mjs` (GitHub Actions `youtube-summary` 크론).
 
-총 **265개**.
+총 **273개**.
 
 | 발행일 | 제목 |
 |---|---|
+| 2026-10-08 | [Why Bigger Context Windows Won't Save Your Agent — Elizabeth Fuentes Leone, AWS](2026-10-08-DrfyORO8RqA.md) |
+| 2026-10-07 | [Redesigning How Software Gets Built With AI Agents — Sonar & McKinsey Panel](2026-10-07-XqF-IFHBCkM.md) |
 | 2026-10-07 | [Grep or Embeddings? Agentic Search Over Company Documents — George He, LlamaIndex](2026-10-07-X4w2Pkz5tDY.md) |
+| 2026-10-07 | [From 36% to 100%: How Self-Improving Agents Write Their Own Skills — Rafal Wilinski, Runlayer](2026-10-07-u-o0sW9nwmk.md) |
+| 2026-10-07 | [Why Your AI Agents Can't Talk to Each Other (Yet) — Vlad Luzin, BAND](2026-10-07-toq-jyGLZDk.md) |
+| 2026-10-07 | [Why AI Agents Should Have Their Own Sandbox — Philipp Schmid, Google DeepMind](2026-10-07-oWTEiYpxl80.md) |
+| 2026-10-07 | [AI Hackers Are Faster Than Your Pen Test — Eli Cohen, Snyk](2026-10-07-f3o0-9Dlw3E.md) |
+| 2026-10-07 | [The Software Factory: From Bug Report to Production Code — Davis Palmie, Factory](2026-10-07-exiwa9QbQXI.md) |
 | 2026-10-07 | [Every AI Company Is Accidentally Building a Bank — Dor Sasson, Stigg](2026-10-07-cf2IhzqeQH4.md) |
 | 2026-10-06 | [How Many Credentials Should Your AI Agent Have? Zero. — Jim Clark, Docker](2026-10-06-ZUZVNKFSmTM.md) |
 | 2026-10-06 | [Is Speculative Decoding Worth It? Profiling vLLM on NVIDIA Blackwell — Akamai](2026-10-06-XTpyNrEgJQ4.md) |
@@ -20,6 +27,7 @@
 | 2026-10-05 | [Research to Reality with Google DeepMind — Paige Bailey, Google DeepMind](2026-10-05-zQZiHOpkq_s.md) |
 | 2026-10-05 | [Your LLM Judge Is a Confident Liar: Building Better Verifiers — Browserbase](2026-10-05-xLxhT2ZI7UM.md) |
 | 2026-10-05 | [From Raw Documents to AI-Ready Data — Leo Platzer & Jeff Koss](2026-10-05-wzWNYDY7toc.md) |
+| 2026-10-05 | [Agentic Search vs Vector Search for Coding Agents: We Ran the Eval — Braintrust](2026-10-05-T3SS931wU0I.md) |
 | 2026-10-05 | [Build the Right Thing: Product Engineering (Part 2) — Kent C. Dodds, EpicProduct.engineer](2026-10-05-s0hFne6EeOI.md) |
 | 2026-10-05 | [From Vibes to Production: Evaluating and Shipping AI Agents That Work 201 — Laurie Voss, Arize AI](2026-10-05-F0TNSmbo5hE.md) |
 | 2026-10-05 | [The Transcript Looked Fine. The Call Wasn't. — Debugging Voice Agents, Arize](2026-10-05-42Bz0TUfeOQ.md) |
