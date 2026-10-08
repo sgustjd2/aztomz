@@ -12941,7 +12941,7 @@ window.HANGEUT_DATA = {
       "cat": "카페·핫플",
       "coverCat": "cat-bakery",
       "collectedAt": "2026-09-02",
-      "analyzedAt": "2026-09-02",
+      "analyzedAt": "2026-10-08",
       "buzz": "화제성 높음",
       "ad": 40,
       "trust": 65,
