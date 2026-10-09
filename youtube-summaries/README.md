@@ -3,11 +3,22 @@
 채널 [AI Engineer](https://www.youtube.com/@aiDotEngineer) 의 새 영상을 Gemini 로 자동 요약한 모음입니다.
 생성: `backend/scripts/youtube-summarize.mjs` (GitHub Actions `youtube-summary` 크론).
 
-총 **273개**.
+총 **284개**.
 
 | 발행일 | 제목 |
 |---|---|
+| 2026-10-09 | [AI Writes More PRs. Who Validates Them? — Ali-Reza Adl-Tabatabai, Sonar](2026-10-09-uuwDWRbxoYo.md) |
+| 2026-10-09 | [Why 80% Reliability Isn't Good Enough — Felipe Blanes, Amazon AGI Lab](2026-10-09-Emo5FGGY-wM.md) |
+| 2026-10-08 | [Your AI Agent Has No Nervous System — Matt Gibiec, Dynatrace](2026-10-08-YNT7Plf9KIg.md) |
+| 2026-10-08 | [Turning Agent Memory Into Skills That Work — Will Lyon, Neo4j](2026-10-08-XPj3mIKEtI4.md) |
+| 2026-10-08 | [Brains vs Hands: How to Run AI Agents Safely in Production — Viren Baraiya](2026-10-08-NaOkR3VSfR4.md) |
+| 2026-10-08 | [Giving AI Agents Memory That Learns — Jake Broekhuizen, LangChain](2026-10-08-KGFyOtl5ktI.md) |
+| 2026-10-08 | [We Mapped 115 Microservices for Our Coding Agents — Kamalakannan Nandagopal, Postman](2026-10-08-k2ClBT4aqAg.md) |
+| 2026-10-08 | [Why We Deleted Our MCP Server and Rebuilt It — Abhi Arya, Reducto](2026-10-08-jJQoVkd5yLg.md) |
+| 2026-10-08 | [Let Anyone at Your Company Ship Internal Apps with AI — Garrett Galow, WorkOS](2026-10-08-HTzgC3FoYsI.md) |
 | 2026-10-08 | [Why Bigger Context Windows Won't Save Your Agent — Elizabeth Fuentes Leone, AWS](2026-10-08-DrfyORO8RqA.md) |
+| 2026-10-08 | [AI Engineer NYC Livestream \| Bridgewater, Anthropic, Two Sigma, Arize, Coatue, Nous, Gen. Intuition](2026-10-08-akEqiXFo3GM.md) |
+| 2026-10-08 | [How a Remote Company Builds AI Fluency — Em Shreve, Automattic](2026-10-08-3XI90A3ENSg.md) |
 | 2026-10-07 | [Redesigning How Software Gets Built With AI Agents — Sonar & McKinsey Panel](2026-10-07-XqF-IFHBCkM.md) |
 | 2026-10-07 | [Grep or Embeddings? Agentic Search Over Company Documents — George He, LlamaIndex](2026-10-07-X4w2Pkz5tDY.md) |
 | 2026-10-07 | [From 36% to 100%: How Self-Improving Agents Write Their Own Skills — Rafal Wilinski, Runlayer](2026-10-07-u-o0sW9nwmk.md) |
