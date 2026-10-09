@@ -1243,5 +1243,55 @@
     "at": "2026-10-07 03:37",
     "url": "https://burning-go9me.tistory.com/529",
     "title": "GitHub 주간 급상승 3곳과 HF 신규 모델 3종, 10월 7일 기준"
+  },
+  "excel-if-ifs": {
+    "at": "2026-10-07 22:06",
+    "url": "https://burning-go9me.tistory.com/530",
+    "title": "엑셀 IF 여러 조건, 중첩 IF 한계와 IFS·AND·OR 고르는 기준"
+  },
+  "galaxy-smart-switch": {
+    "at": "2026-10-07 23:39",
+    "url": "https://burning-go9me.tistory.com/531",
+    "title": "갤럭시 데이터 옮기기 스마트 스위치, 연결 방식 4가지와 카톡 주의점"
+  },
+  "git-stash-guide": {
+    "at": "2026-10-07 23:40",
+    "url": "https://burning-go9me.tistory.com/532",
+    "title": "git stash 사용법, 작업 중 변경을 치우고 브랜치 옮기는 순서"
+  },
+  "google-2step-verification": {
+    "at": "2026-10-07 23:41",
+    "url": "https://burning-go9me.tistory.com/533",
+    "title": "구글 2단계 인증 설정 경로, 폰을 잃어버려도 들어갈 길까지"
+  },
+  "iphone-quick-start": {
+    "at": "2026-10-07 23:41",
+    "url": "https://burning-go9me.tistory.com/534",
+    "title": "아이폰 데이터 옮기기 빠른 시작, 직접 전송과 iCloud 복원 차이"
+  },
+  "excel-merge-cells-keep-text": {
+    "at": "2026-10-08 23:07",
+    "url": "https://burning-go9me.tistory.com/535",
+    "title": "엑셀 셀 합치기 했더니 글자가 사라졌다면? 병합 대신 쓸 수식 3가지"
+  },
+  "git-amend-guide": {
+    "at": "2026-10-08 23:07",
+    "url": "https://burning-go9me.tistory.com/536",
+    "title": "git 커밋 메시지 수정, 마지막 커밋과 몇 개 전 커밋은 명령이 달라요"
+  },
+  "iphone-photos-to-pc": {
+    "at": "2026-10-08 23:08",
+    "url": "https://burning-go9me.tistory.com/537",
+    "title": "아이폰 사진 컴퓨터로 옮기면 iCloud에만 있는 사진은 빠질 수 있어요"
+  },
+  "python-venv-guide": {
+    "at": "2026-10-08 23:08",
+    "url": "https://burning-go9me.tistory.com/538",
+    "title": "파이썬 가상환경 venv 만들기부터 requirements.txt까지"
+  },
+  "windows11-snap-layouts": {
+    "at": "2026-10-08 23:08",
+    "url": "https://burning-go9me.tistory.com/539",
+    "title": "윈도우 11 화면 분할은 최대화 버튼과 Win+Z에서 시작해요"
   }
 }
