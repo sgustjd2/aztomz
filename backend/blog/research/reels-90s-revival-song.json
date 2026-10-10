@@ -1,0 +1,152 @@
+{
+  "keyword": "90년대 곡인데 요즘 릴스에서 다시 도는 노래",
+  "categoryId": "retro-revival",
+  "slug": "lenny-kravitz-it-aint-over",
+  "_slugNote": "글 slug가 조사 파일명(reels-90s-revival-song)과 다르다 — 조립 시 blog-assemble.mjs <slug> --research=reels-90s-revival-song 로 분리 지정한다.",
+  "searchedAt": "2026-10-10",
+  "verifiedAt": "2026-10-10",
+  "origin": "Claude Code WebSearch(raw.json) → 정리(Curator)",
+  "notes": "이 글은 Lenny Kravitz 'It Ain't Over 'Til It's Over'(1991)가 2026년 TikTok 'US Songs of the Summer' 3위에 올랐다는 공식 발표와, FX 드라마 삽입→틱톡 크리에이터 BGM 확산이라는 역주행 경로를 중심으로 쓴다. 곡 기본정보(1991년 발매, 빌보드 2위, Mama Said 앨범, Virgin Records)는 위키피디아로 확정된다. 작곡 배경(이혼 테마)·편성 디테일(Phenix Horns)은 2차 보도 1건뿐이라 핵심 주장에서 뺐고, 한국 내 역주행 근거는 전혀 없다(조사 키워드는 '릴스'였지만 실제 근거는 전부 미국 TikTok).",
+  "sources": [
+    {
+      "title": "TikTok's Global and US Song of the Summer 2026: Katy Perry's 'The One That Got Away'",
+      "url": "https://newsroom.tiktok.com/tiktoks-global-and-us-song-of-the-summer-2026-katy-perrys-the-one-that-got-away?lang=en",
+      "host": "newsroom.tiktok.com",
+      "tier": "official",
+      "body": "TikTok 공식 뉴스룸이 2026년 9월 1일 발표한 'Songs of the Summer 2026' 보도자료. US 랭킹 3위가 Lenny Kravitz 'It Ain't Over 'Til It's Over'(1991년 발매). 'Its resurgence was helped by its appearance in FX's Love Story: John F. Kennedy Jr. and Carolyn Bessette, before TikTok creators began using it heavily across relationship, television and even pet videos'라고 명시. 1위 Katy Perry 'The One That Got Away'(2011), 2위 Mac Miller 'Cinderella', 4위 Malcolm Todd 'Earrings', 9위 Shakira & Burna Boy 'Dai Dai'. 한국 1위는 CORTIS 'REDRED', 캐나다 1위는 Mac Miller 'Cinderella'."
+    },
+    {
+      "title": "TikTok's top 10 songs of summer 2026 show that old music is winning again",
+      "url": "https://routenote.com/radar/tiktoks-top-10-songs-of-summer-2026-show-that-old-music-is-winning-again/",
+      "host": "routenote.com",
+      "tier": "press",
+      "body": "RouteNote(2026-09-01)가 TikTok 발표를 분석. 'The third biggest track is Lenny Kravitz's It Ain't Over 'Til It's Over. Release year: 1991. The song is around 35 years old. Its resurgence was helped by its appearance in FX's Love Story...before TikTok creators began using it heavily across relationship, television and even pet videos.' 2026년 여름 TikTok 상위권 다수가 과거 발매곡(catalogue music)이라는 흐름 속 사례로 소개."
+    },
+    {
+      "title": "It Ain't Over 'til It's Over (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/It_Ain%27t_Over_%27til_It%27s_Over",
+      "host": "en.wikipedia.org",
+      "tier": "data",
+      "body": "Lenny Kravitz가 작사·작곡·프로듀스(호른 The Phenix Horns). 두 번째 정규앨범 'Mama Said'(1991-04-02 발매) 수록곡, 싱글 발매 1991-06-03, 레이블 Virgin Records. Billboard Hot 100 최고 2위 — Kravitz 커리어 최초 톱10 히트이자 지금까지 최고 순위. 뮤직비디오 감독 Jesse Dylan."
+    },
+    {
+      "title": "Behind The Heartbreaking Song Of Divorce, 'It Ain't Over 'Til It's Over' By Lenny Kravitz",
+      "url": "https://americansongwriter.com/behind-the-heartbreaking-song-of-divorce-it-aint-over-til-its-over-by-lenny-kravitz/?nb=1",
+      "host": "americansongwriter.com",
+      "tier": "press",
+      "body": "American Songwriter(2024-02-18). Kravitz가 Lisa Bonet과의 결혼(1987년) 파탄 시기(1991년경, 공식 이혼 1993년)에 LA 호텔 방에서 작곡했다고 전함. 현악·호른을 제외한 모든 악기는 Kravitz 본인 연주, 현악·호른은 Earth, Wind & Fire의 호른 섹션 The Phenix Horns가 연주. Motown·필리 소울풍 미드템포 발라드로 묘사. 단일 2차 보도 — 다른 자료로 재확인되지 않음."
+    },
+    {
+      "title": "YouTube oEmbed — Lenny Kravitz - It Ain't Over 'Til It's Over (Official Music Video)",
+      "url": "https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=TmENMZFUU_0&format=json",
+      "host": "www.youtube.com",
+      "tier": "data",
+      "body": "oEmbed 200 OK. title 'Lenny Kravitz - It Ain't Over 'Til It's Over (Official Music Video)', author_name 'LennyKravitzVEVO'(공식 Vevo 채널), iframe embed 코드 포함 — 임베드 가능 확인. 조회수·게시일은 응답에 없음."
+    },
+    {
+      "title": "TikTok reveals Songs Of The Summer including Oasis, Katy Perry and UK garage",
+      "url": "https://www.musicweek.com/digital/read/tiktok-reveals-songs-of-the-summer-including-oasis-katy-perry-and-uk-garage/094866",
+      "host": "www.musicweek.com",
+      "tier": "press",
+      "body": "Music Week 보도. Global/US 1위 Katy Perry 'The One That Got Away', UK 1위 Kyla & DJ Paleface 'Do You Mind', UK 2위 Oasis 'Wonderwall'(2026년 재상승). US 2~10위 전체 목록은 이미지로만 제공돼 본문 텍스트로는 Kravitz 곡 3위를 재확인하지 못함(같은 TikTok 발표에 대한 보도라는 맥락 근거로만 사용)."
+    },
+    {
+      "title": "It Ain't Over 'til It's Over — Songfacts",
+      "url": "https://www.songfacts.com/facts/lenny-kravitz/it-aint-over-til-its-over",
+      "host": "www.songfacts.com",
+      "tier": "blog",
+      "body": "곡 정보 아카이브. 임베드된 영상 썸네일로 공식 뮤직비디오 videoId(TmENMZFUU_0) 교차 확인용으로만 사용(보조 자료, oEmbed 검증은 YouTube 응답으로 별도 확인함)."
+    }
+  ],
+  "songs": [
+    {
+      "artist": "Lenny Kravitz",
+      "title": "It Ain't Over 'Til It's Over",
+      "releaseYear": 1991,
+      "album": "Mama Said(1991-04-02 발매, Virgin Records) — 싱글은 1991-06-03 발매",
+      "url": "https://www.youtube.com/watch?v=TmENMZFUU_0",
+      "videoId": "TmENMZFUU_0",
+      "channel": "LennyKravitzVEVO",
+      "officialChannel": true,
+      "relatedVideos": [],
+      "revival": [
+        {
+          "driver": "드라마·영화·광고 삽입",
+          "evidence": "FX 드라마 'Love Story: John F. Kennedy Jr. and Carolyn Bessette'에 곡이 삽입된 뒤 틱톡 크리에이터들이 연애·방송·반려동물 영상에 쓰기 시작",
+          "sourceUrl": "https://newsroom.tiktok.com/tiktoks-global-and-us-song-of-the-summer-2026-katy-perrys-the-one-that-got-away?lang=en"
+        },
+        {
+          "driver": "틱톡·릴스 챌린지",
+          "evidence": "TikTok 'US Songs of the Summer 2026' 공식 집계 3위(2026-09-01 발표, Katy Perry·Mac Miller 다음)",
+          "sourceUrl": "https://newsroom.tiktok.com/tiktoks-global-and-us-song-of-the-summer-2026-katy-perrys-the-one-that-got-away?lang=en"
+        }
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "claim": "Lenny Kravitz 'It Ain't Over 'Til It's Over'(1991)는 2026년 TikTok 'US Songs of the Summer' 공식 집계 3위에 올랐다",
+      "grade": "confirmed",
+      "evidence": [
+        "TikTok 뉴스룸 공식 발표(2026-09-01) 'US Songs of the Summer 2026'에서 3위 — 1위 Katy Perry 'The One That Got Away'(2011), 2위 Mac Miller 'Cinderella'(feat. Ty Dolla $ign), 4위 Malcolm Todd 'Earrings', 9위 Shakira & Burna Boy 'Dai Dai'",
+        "RouteNote(2026-09-01)도 같은 발표를 'the third biggest track'으로 재확인, 발매연도 1991년·2026년 기준 약 35년 전 곡이라고 명시",
+        "집계 기준(스트림 수 vs 영상 사용 건수, 집계 기간)은 Katy Perry 곡 외엔 공개되지 않아 Kravitz 곡 몫의 구체적 수치(영상 수 등)는 확인 불가"
+      ],
+      "sourceUrls": [
+        "https://newsroom.tiktok.com/tiktoks-global-and-us-song-of-the-summer-2026-katy-perrys-the-one-that-got-away?lang=en",
+        "https://routenote.com/radar/tiktoks-top-10-songs-of-summer-2026-show-that-old-music-is-winning-again/"
+      ]
+    },
+    {
+      "claim": "이 곡의 2026년 역주행은 FX 드라마 삽입을 계기로 틱톡 크리에이터들이 연애·방송·반려동물 영상 BGM으로 쓰기 시작하면서 퍼졌다",
+      "grade": "confirmed",
+      "evidence": [
+        "TikTok 공식 발표 원문: FX 드라마 'Love Story: John F. Kennedy Jr. and Carolyn Bessette'에 곡이 삽입된 뒤, 틱톡 크리에이터들이 연애·TV·반려동물 영상에 쓰기 시작했다고 직접 명시",
+        "RouteNote가 TikTok 발표 원문을 그대로 인용해 같은 경로를 재확인",
+        "2026년 여름 틱톡 상위권 다수가 과거 발매곡(catalogue music)이라는 산업 흐름 속 대표 사례로 소개됨(RouteNote)"
+      ],
+      "sourceUrls": [
+        "https://newsroom.tiktok.com/tiktoks-global-and-us-song-of-the-summer-2026-katy-perrys-the-one-that-got-away?lang=en",
+        "https://routenote.com/radar/tiktoks-top-10-songs-of-summer-2026-show-that-old-music-is-winning-again/"
+      ]
+    },
+    {
+      "claim": "곡은 1991년 Lenny Kravitz 두 번째 정규앨범 'Mama Said' 수록곡으로, 빌보드 핫100 최고 2위에 오른 그의 커리어 첫 톱10 히트다",
+      "grade": "confirmed",
+      "evidence": [
+        "싱글 발매 1991-06-03(앨범 'Mama Said'는 1991-04-02 발매), 레이블 Virgin Records",
+        "작사·작곡·프로듀스 Lenny Kravitz (호른은 The Phenix Horns 연주 — 2026-10-10 팩트체크로 '연주 모두 본인' 정정)",
+        "Billboard Hot 100 최고 2위 — Kravitz 커리어 최초 톱10 히트이자 지금까지 최고 순위 (주차·톱10 체류 주수는 원문에 없어 삭제)",
+        "공식 뮤직비디오 감독 Jesse Dylan",
+        "유튜브 공식 채널(LennyKravitzVEVO) 업로드 영상 oEmbed 200 확인(videoId TmENMZFUU_0) — 임베드 가능"
+      ],
+      "sourceUrls": [
+        "https://en.wikipedia.org/wiki/It_Ain%27t_Over_%27til_It%27s_Over",
+        "https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=TmENMZFUU_0&format=json"
+      ]
+    }
+  ],
+  "_droppedClaimsNote": "후보였지만 confirmed 근거가 하나도 없어 핵심 주장에서 뺀 것: (1) 작곡 배경(Lisa Bonet과의 결혼 파탄·이혼 테마) — American Songwriter 단일 2차 보도뿐. (2) 편성/크레딧(Kravitz 단독 연주 + Phenix Horns 현악·호른) — 같은 단일 출처뿐. 둘 다 cannotSay 에 남겨 글에서 핵심 주장처럼 쓰지 않도록 막는다.",
+  "numbers": [
+    { "what": "싱글 발매일", "value": "1991-06-03", "asOf": "1991-06-03", "sourceUrl": "https://en.wikipedia.org/wiki/It_Ain%27t_Over_%27til_It%27s_Over" },
+    { "what": "앨범 'Mama Said' 발매일", "value": "1991-04-02", "asOf": "1991-04-02", "sourceUrl": "https://en.wikipedia.org/wiki/It_Ain%27t_Over_%27til_It%27s_Over" },
+    { "what": "Billboard Hot 100 최고 순위", "value": "2위", "asOf": "1991", "sourceUrl": "https://en.wikipedia.org/wiki/It_Ain%27t_Over_%27til_It%27s_Over" },
+    { "what": "TikTok 'US Songs of the Summer 2026' 순위", "value": "3위", "asOf": "2026-09-01", "sourceUrl": "https://newsroom.tiktok.com/tiktoks-global-and-us-song-of-the-summer-2026-katy-perrys-the-one-that-got-away?lang=en" },
+    { "what": "곡 발매 후 경과(2026년 기준)", "value": "약 35년", "asOf": "2026-09-01", "sourceUrl": "https://routenote.com/radar/tiktoks-top-10-songs-of-summer-2026-show-that-old-music-is-winning-again/" }
+  ],
+  "dropped": [],
+  "cannotSay": [
+    "'한국 릴스/국내 음원차트에서 역주행했다'는 주장 — 조사 키워드는 '릴스'였지만 실제 근거는 전부 미국 TikTok 집계(US Songs of the Summer)뿐. 한국 관련 유일한 수치는 TikTok 발표의 '한국 1위 CORTIS REDRED'이며 Kravitz 곡과는 무관 — 한국 내 역주행을 암시하는 문장 금지.",
+    "작곡 배경(Lisa Bonet과의 결혼 파탄·이혼을 그린 곡이라는 서술) — American Songwriter 단일 2차 보도뿐, confirmed 근거 없음. 핵심 주장에서 제외. '어떤 이야기인가' 섹션은 생략하거나, 쓴다면 추정·단일 출처임을 명시해야 한다.",
+    "편성·연주 디테일(Kravitz가 직접 연주한 악기들, 현악·호른을 연주한 Earth, Wind & Fire의 Phenix Horns) — 같은 American Songwriter 단일 출처뿐. '소리 묘사' 섹션은 생략한다.",
+    "공식 가사 페이지 링크(멜론·벅스 등) — 조사에서 찾지 못했다. URL을 지어내지 말 것 — 가사 페이지 링크 없이 발행하거나 공식 뮤직비디오 링크로만 대체한다.",
+    "틱톡 영상 수·스트림 증가율 등 Kravitz 곡 몫의 구체적 집계 수치 — TikTok 발표가 Katy Perry 곡 외엔 공개하지 않았다. 수치를 지어내지 말 것.",
+    "뮤직비디오 조회수·게시일 — oEmbed 응답에 없고 다른 자료로도 확인 못 함.",
+    "Ruel의 triple j 'Like A Version' 커버, Dua Lipa·Kravitz MSG 듀엣 무대 — 보도에 언급되나 임베드 가능한 videoId를 확인 못 해 relatedVideos 0건. 링크 없이 텍스트로만 언급하거나 생략한다.",
+    "그래미 노미네이션 여부 — 확인된 자료 없음."
+  ],
+  "internalLinkCandidates": [
+    { "title": "80년대 시티팝, 늘 나오는 그 곡 말고 다섯", "url": "https://burning-go9me.tistory.com/279" },
+    { "title": "8090 가요 다시 불린 다섯 곡, 오랜만에부터 하늘땅 별땅까지", "url": "https://burning-go9me.tistory.com/487" }
+  ]
+}
