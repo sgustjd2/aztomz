@@ -3,12 +3,20 @@
 채널 [AI Engineer](https://www.youtube.com/@aiDotEngineer) 의 새 영상을 Gemini 로 자동 요약한 모음입니다.
 생성: `backend/scripts/youtube-summarize.mjs` (GitHub Actions `youtube-summary` 크론).
 
-총 **284개**.
+총 **292개**.
 
 | 발행일 | 제목 |
 |---|---|
+| 2026-10-10 | [Small Models, Big Results: Training a Finance Agent for Under $500 — Charles Dickens, Snorkel AI](2026-10-10-TyPpSRXGhbc.md) |
+| 2026-10-10 | [From 15% to 90% GPU Utilization: Fix the Data Pipeline, Not the Model](2026-10-10-tNAV259UhCM.md) |
 | 2026-10-09 | [AI Writes More PRs. Who Validates Them? — Ali-Reza Adl-Tabatabai, Sonar](2026-10-09-uuwDWRbxoYo.md) |
 | 2026-10-09 | [Why 80% Reliability Isn't Good Enough — Felipe Blanes, Amazon AGI Lab](2026-10-09-Emo5FGGY-wM.md) |
+| 2026-10-09 | [Stop Prompting — Greg Pstrucha, Sentry](2026-10-09-E3KbFLAGD6A.md) |
+| 2026-10-09 | [Why Your Company Needs a Context Graph (and How to Build It) — Gil Feig, Merge](2026-10-09-cSz7aL2nl2U.md) |
+| 2026-10-09 | [From Context to Memory: Your Agents Need a Real Memory Layer — Anders Swanson, Oracle](2026-10-09-BIhiYL4U9_M.md) |
+| 2026-10-09 | [Building on the Codex Harness — Dominik Kundel, OpenAI](2026-10-09-9WiBJRO84yY.md) |
+| 2026-10-09 | [Generation Is Cheap, Review Is Expensive: How to Stop Shipping AI Slop — Gabriel Martinez, G2i](2026-10-09-6qkzlT962es.md) |
+| 2026-10-09 | [Designing CLIs for Agents, Not Humans — Pedro Lopez, Airbyte](2026-10-09-3wj6sgbi1YA.md) |
 | 2026-10-08 | [Your AI Agent Has No Nervous System — Matt Gibiec, Dynatrace](2026-10-08-YNT7Plf9KIg.md) |
 | 2026-10-08 | [Turning Agent Memory Into Skills That Work — Will Lyon, Neo4j](2026-10-08-XPj3mIKEtI4.md) |
 | 2026-10-08 | [Brains vs Hands: How to Run AI Agents Safely in Production — Viren Baraiya](2026-10-08-NaOkR3VSfR4.md) |
