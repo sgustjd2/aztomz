@@ -1,3 +1,23 @@
+# 2026-10-10 블로그 배치 — 내일(10-11) 몫 미리, 사람 요청(티스토리 5 + 네이버 5 이상)
+
+claim: `backend/out/blog/.daily-claim-2026-10-11` (10-11 09:00 무인 /blog-daily 양보). 10-10 09:00 /blog-daily(2+2)는 그대로 돈다 → 깨끗한 trends 후보(animal-challenge·poor-upbringing-meme·chaek-eop-kwae)는 그쪽 몫으로 두고 이쪽은 전부 조사형.
+검색수요 게이트: NAVER_AD 자격증명 없음 → 못 돌림. 이월: 티스토리 windows11-storage-sense(검증 통과, 대기열).
+중복 대조: posted 259 + posted-naver 81 + 초안 523 제목을 핵심어 grep — 아래 10개는 0건.
+## 티스토리 (5)
+- [x] windows-printer-offline — 윈도우 11 프린터 오프라인 해결 · official 6 · 팩트체크 blocker 2(재발방지 불릿에 Learn 출처 오귀속 → KB 4496876·HP·Brother 분리, "가장 많이 보이는" 과장) 교정 · selfreview 1건(지시어 모호) · verify 통과(warn 2)
+- [x] gitignore-not-working — .gitignore 적용 안 될 때 · official 6 · 팩트체크 blocker 1(git rm 일반 규칙을 --cached 예외 없이 붙인 주의 박스 — 삭제) + warn 3 교정 · selfreview 무수정 · verify 통과(warn 2)
+- [x] windows-battery-report — 노트북 배터리 수명 확인 powercfg /batteryreport · official 4 · 팩트체크 통과(warn 3 — Enter/확인·"고장 아님" 완화 반영) · selfreview 무수정 · verify 통과(warn 2)
+- [x] excel-line-break-in-cell — 엑셀 셀 안 줄바꿈 · official 6·blog 1 · 팩트체크 blocker 2(모바일 절차 태블릿/폰 오기 → Android/iOS, Ctrl+J 댓글 출처 뒤집힘 → 삭제) 교정 · **selfreview 가 조사파일 오요약을 근거로 모바일 표를 다시 틀리게 되돌림 → curl 원문(탭 5개) 대조로 본문·조사파일 정정** · verify 통과(warn 2)
+- [x] windows-clipboard-history — 윈도우 클립보드 기록 Win+V · official 7 · 팩트체크 통과(warn 4 — 고정 항목 문장 반전·공유PC 지우기 보완·PowerToys 설치 문장·괄호 규칙 반영) · selfreview 무수정 · verify 통과(warn 2)
+## 네이버 (5)
+- [x] shrimp-prep-guide — 새우 손질법 · official 5·press 1·blog 2(손질 순서는 레시피 1건 귀속) · 팩트체크 blocker 2(재냉동 예외 문장 원문과 어긋남·영업자 기준 혼입, 알레르기 19개 기준 연도) + warn(해동 소제목 전자레인지 누락) 교정 · selfreview 무수정 · verify 통과(warn 2)
+- [x] broccoli-wash-guide — 브로콜리 세척 · official 4·press 3 · 팩트체크 blocker 1(공식 자료 범위 과장 → "이번에 읽은 자료 중"·식약처 2024-08 한정) 교정 · selfreview 가 "싱싱함"→"아삭함" 되돌림(조사파일 WebFetch 요약 오류) → curl 원문 대조로 본문·조사파일 정정 · verify 통과
+- [x] tumbler-cleaning-guide — 텀블러 세척 · official 2·press 4 · 팩트체크 통과(warn 3 — 도입 귀속·"뚜껑 틈새"·인용 경로) 반영 · selfreview 무수정 · verify 통과(warn 2)
+- [x] ~~microfiber-blanket-wash~~ 보류(official 1·2015 기사 3건 동문) → houseplant-winter-care — 실내 화분 겨울나기 · official 4·press 1·blog 1 · 팩트체크 blocker 1(조사파일 요약이 농진청 원문과 반대 — "화분에 심은 상태라면 지온영향을 받지 못합니다", curl 확인 후 본문·조사파일 정정) + warn 3 · selfreview 1건(보온=완료 조건 암시) · verify 통과(warn 2)
+- [x] ~~trench-coat-care~~ 보류(트렌치 전용 관리 출처 0) → ice-pack-disposal — 아이스팩 버리는 법 · official 5·data 1·press 1 · 팩트체크 blocker 1(환경부 조사 기간 "3~5월" → "3월부터 두 달간", 조사파일도 정정) + warn 3 교정 · selfreview 2건(최신 자료 일반화·2021 재사용 경로 현재형) · verify 통과(warn 1)
+## 마무리
+- [ ] 조사 파일 커밋·푸시 · blog-queue --list
+
 # 2026-10-08 블로그 배치 — 내일(10-09) 몫 미리, 사람 요청(티스토리 5 + 네이버 5 이상)
 
 claim: `backend/out/blog/.daily-claim-2026-10-09` (10-09 09:00 무인 /blog-daily 는 양보). 검색수요 게이트: NAVER_AD 자격증명 없음 → 못 돌림. 이월: 티스토리 windows11-storage-sense(검증 통과, 대기열).

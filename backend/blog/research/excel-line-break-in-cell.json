@@ -1,0 +1,192 @@
+{
+  "keyword": "엑셀 셀 안에서 줄바꿈",
+  "categoryId": "hangeut-trend",
+  "notes": "말할 수 있는 것: Windows·웹·Mac·모바일별 셀 안 줄바꿈 입력법(공식), Wrap Text 와 행 높이 문제(공식 영문), 줄바꿈 문자 CHAR(10) 을 CLEAN·SUBSTITUTE 로 지우거나 바꾸는 법(CLEAN 은 공식 예제, SUBSTITUTE 는 블로그).\n말할 수 없는 것: Ctrl+J 찾기/바꾸기 트릭(공식 근거 없음), 한국어판 Wrap Text 버튼 라벨, 수식 줄바꿈이 Wrap Text 를 켜야 보인다는 규칙, Mac 키의 단일 정답, 문서 날짜 기준 표현.\nsources 의 body 는 WebFetch 요약본이라 원문 HTML 이 아니다. 원문 큰따옴표 인용을 피하고 의미만 옮길 것.",
+  "sources": [
+    {
+      "title": "Wrap text in a cell in Excel (Microsoft Support, en-us)",
+      "url": "https://support.microsoft.com/en-us/Excel/wrap-text-in-a-cell-in-excel",
+      "host": "support.microsoft.com",
+      "body": "[WebFetch 요약본 — 원문 HTML 아님] Wrap text automatically: 1. Select the cells you want to format. 2. On the Home tab, in the Alignment group, select Wrap Text. Notes: Wrapped text adjusts when you change the column width. If wrapped text isn't fully visible, the row may have a fixed height or the text may be in merged cells. Adjust row height to show all wrapped text: 1. Select the cell or range. 2. On the Home tab, in the Cells group, select Format. 3. Under Cell Size, select AutoFit Row Height, or select Row Height and enter a value. Tip: You can also drag the bottom border of the row until all wrapped text shows. Enter a line break: 1. Double-click the cell, or select it and press F2. 2. Place the cursor where you want the break and press Alt + Enter. Applies to: Excel for Microsoft 365, Excel 2024, Excel 2021, Excel 2019, Excel 2016. The page has no Mac-specific steps and no Control+Option+Return shortcut. Related links: Excel Tech Community, Microsoft Community (Excel forum).",
+      "tier": "official"
+    },
+    {
+      "title": "Start a new line of text inside a cell in Excel (Microsoft Support, en-gb)",
+      "url": "https://support.microsoft.com/en-gb/office/start-a-new-line-of-text-inside-a-cell-in-excel-33e41eab-8b5e-4193-93d6-9a06ecf812b3",
+      "host": "support.microsoft.com",
+      "body": "[WebFetch 요약본 — 원문 HTML 아님] Purpose: Start a new line of text, or add spacing between lines or paragraphs, inside a worksheet cell. Windows (Excel for Microsoft 365, 2024, 2021, 2019, 2016): 1. Double-click the cell. 2. Select the spot where the line should break. 3. Press Alt+Enter to insert the line break. macOS (Excel for Microsoft 365 for Mac, 2024 for Mac, 2021 for Mac): 1. Double-click the cell. 2. Select the spot where the line should break. 3. Press CONTROL+OPTION+RETURN to insert the line break. Web: 1. Double-click the cell, or select it and press F2. 2. Select the spot where the line should break. 3. Press Alt+Enter to insert the line break. Excel for iPad and Android tablets: 1. Double-tap within the cell. 2. Tap and hold where you want the break. 3. Tap New Line in the contextual menu. Excel for iPhone and Android phones: 1. Tap the keyboard toggle button to open the numeric keyboard. 2. Tap and hold where you want the break. 3. Tap New Line in the contextual menu. Applies to: Excel for Microsoft 365, Microsoft 365 for Mac, 2024, 2024 for Mac, 2021, 2021 for Mac, 2019, 2016, Excel for iPad, iPhone, Android tablets, Android phones. No last-updated date on the page (only '© Microsoft 2026'). [2026-10-10 curl 원문 대조 정정] en-gb 원문 탭은 Windows / macOS / Web / Office for Android / Office for iOS 다섯 개다. Office for Android: Double-tap within the cell → Tap and hold where you want a line break → Tap New Line in the contextual menu. Office for iOS: Tap the keyboard toggle button to open the numeric keyboard → Tap and hold where you want a line break → Tap New Line. Windows 탭은 Double-click, Web 탭은 Double-click (or select the cell and then press F2). macOS 탭은 CONTROL+OPTION+RETURN. 앞선 요약의 태블릿/폰 구분은 요약 오류다.",
+      "tier": "official"
+    },
+    {
+      "title": "Excel 셀 안에서 새 텍스트 줄 시작 (Microsoft 지원, ko-kr)",
+      "url": "https://support.microsoft.com/ko-kr/office/start-a-new-line-of-text-inside-a-cell-in-excel-33e41eab-8b5e-4193-93d6-9a06ecf812b3",
+      "host": "support.microsoft.com",
+      "body": "[WebFetch 요약본(한국어) — 원문 HTML 아님] Windows (Microsoft 365, Excel 2024/2021/2019/2016): 줄을 바꿀 셀을 두 번 클릭하거나, 셀을 선택한 뒤 F2 키를 누릅니다. 셀 안에서 줄을 나눌 위치를 선택합니다. Alt+Enter를 눌러 줄 바꿈을 삽입합니다. macOS (Microsoft 365, Excel 2024/2021): 줄을 바꿀 셀을 두 번 클릭합니다. 줄을 나눌 위치를 선택합니다. CONTROL+OPTION+RETURN을 눌러 줄 바꿈을 삽입합니다. 웹: Windows와 같은 방식으로, 셀을 두 번 클릭하거나 선택 후 F2를 누릅니다. 줄을 나눌 위치를 선택한 뒤 Alt+Enter를 누릅니다. Android 및 iOS (태블릿/휴대폰): 셀 안을 두 번 탭합니다. 줄을 바꿀 위치를 길게 누릅니다. 상황에 맞는 메뉴에서 새 줄을 탭합니다. iOS에서 숫자 키보드가 필요하면 키보드 토글 단추를 탭해 숫자 키보드를 연 뒤 같은 방법으로 진행합니다. 페이지 하단 Copilot 질문 제안에는 줄 바꿈된 모든 텍스트가 보이도록 행 높이를 조정하는 방법도 포함되어 있습니다.",
+      "tier": "official"
+    },
+    {
+      "title": "CHAR 함수 (Microsoft 지원, ko-kr)",
+      "url": "https://support.microsoft.com/ko-kr/office/char-함수-bbd249c8-b36e-4a91-8017-1c133f9b837a",
+      "host": "support.microsoft.com",
+      "body": "[WebFetch 요약본 — 원문 HTML 아님] Applies to: Excel for Microsoft 365 (Mac), Excel 2024 (Windows and Mac), Excel 2021 (Windows and Mac), Excel 2019, Excel 2016. Description: 숫자가 지정하는 문자를 반환합니다. 다른 시스템의 파일에서 가져온 코드 페이지 번호를 문자로 변환합니다. 운영 환경과 문자 집합: Macintosh = 'Macintosh 문자 집합', Windows = 'ANSI'. ANSI는 Windows 95 및 Windows NT를 통해 Windows 운영 체제에서 사용되는 표준 문자 집합이었으며 이후 유니코드로 대체되었고, 218개 문자를 갖고 그중 다수는 ASCII/유니코드와 숫자 코드를 공유한다고 설명. Syntax: CHAR(number). number (필수): 문자를 지정하는 1에서 255 사이의 숫자. 문자는 컴퓨터에서 사용하는 문자 집합에 속함. 웹용 Excel 주의: 웹용 Excel은 CHAR(9), CHAR(10), CHAR(13) 및 32 이상의 숫자만 지원. 예: =CHAR(65) → A, =CHAR(33) → !. 이 페이지에는 CHAR(10)을 줄 바꿈으로 쓰는 예제가 없다. CHAR(10) 언급은 웹용 Excel 지원 코드 목록의 한 군데뿐이다.",
+      "tier": "official"
+    },
+    {
+      "title": "CLEAN 함수 (Microsoft 지원, ko-kr)",
+      "url": "https://support.microsoft.com/ko-kr/office/clean-함수-26f3d7c5-475f-4a9c-90e5-4b8ba987ba41",
+      "host": "support.microsoft.com",
+      "body": "[WebFetch 요약본 — 원문 HTML 아님] Applies to: Microsoft 365 Excel (Windows and Mac), Excel 2024 (Windows and Mac), Excel 2021 (Windows and Mac), Excel 2019, Excel 2016. Description: '인쇄할 수 없는 문자를 텍스트에서 모두 제거합니다.' 다른 응용 프로그램에서 가져온 텍스트에 현재 운영 체제에서 인쇄할 수 없는 문자가 있을 때 사용. 예로 데이터 파일 시작이나 끝에 자주 나타나는 하위 수준 컴퓨터 코드를 제거. Syntax: CLEAN(text). text (필수): 인쇄할 수 없는 문자를 제거할 워크시트 정보. Remarks: '7비트 ASCII 코드에서 인쇄할 수 없는 0번에서 31번까지 처음 32개 문자를 제거하기 위해 설계된 함수입니다.' 유니코드에는 추가로 인쇄할 수 없는 문자(127, 129, 141, 143, 144, 157)가 있으며 CLEAN 단독으로는 제거되지 않는다고 명시, '데이터 정리 방법 상위 10개' 문서 안내. 예제: 데이터 셀 A2 = =CHAR(9)&\"월간 보고서\"&CHAR(10), 수식 =CLEAN(A2) → 인쇄할 수 없는 문자 CHAR(9)와 CHAR(10)을 제거한 '월간 보고서'. 줄 바꿈에 대한 일반 규칙 문장은 없고, 예제에서 CHAR(10)(줄 바꿈 문자, line feed)이 제거되며 이는 0~31 범위에 속한다.",
+      "tier": "official"
+    },
+    {
+      "title": "Excel의 바로 가기 키 (Microsoft 지원, ko-kr)",
+      "url": "https://support.microsoft.com/ko-kr/office/excel의-바로-가기-키-1798d9d5-842a-42b8-9c99-9b7213f0040f",
+      "host": "support.microsoft.com",
+      "body": "[WebFetch 요약본 — 원문 HTML 아님] Windows: '선택 및 작업 수행을 위한 바로 가기 키' 섹션 — '같은 셀에서 새 줄을 시작합니다.' = Alt+Enter. '기타 유용한 바로 가기 키' — 'Alt+Enter를 누르면 같은 셀에서 새 줄이 시작됩니다.' F2 키 — '활성 셀을 편집하고 해당 내용 끝부분에 삽입 지점을 둡니다.' Windows 표에는 Ctrl+F·Ctrl+H 행이 없고, Ctrl+J 는 'Excel의 Copilot 바로 가기 키' 섹션에만 있으며 'Excel 작업창의 Copilot에서 선택한 파일의 사용을 확인합니다.'로 설명되어 찾기/바꾸기/줄 바꿈 단축키가 아니다. macOS: '자주 사용하는 바로 가기' — '바꾸기' 대화 상자 = Ctrl+H 또는 Cmd+Shift+H. '시트 또는 통합 문서에서 이동 및 스크롤' — '찾기' 대화 상자 = Ctrl+F 또는 Shift+F5. '시트에 데이터 입력' — '선택한 셀을 편집합니다.' = F2 키; '같은 셀에서 새 줄을 시작합니다.' = Option+Return 또는 Ctrl+Option+Return. '데이터 서식 지정 및 편집' — '셀에 줄 바꿈을 삽입합니다.' = Cmd+Option+Return 또는 Ctrl+Option+Return. Copilot = Cmd+J. iOS: '셀 내에 줄 바꿈을 삽입합니다.' = Cmd+Option+Return 또는 Ctrl+Option+Return. Android: '셀 내에 줄 바꿈을 삽입합니다.' = Alt+Enter. 웹용 Excel: '같은 셀에서 새 줄을 시작합니다.' = Alt+Enter; '선택한 셀을 편집합니다.' = F2 키; '\"찾기\"를 사용합니다.' = Ctrl+F 또는 Shift+F3; 웹용 표에는 Ctrl+H 행이 없고 Ctrl+J 는 Copilot 용(Ctrl+J 또는 Cmd+J). Applies to: Microsoft 365용 Excel, Mac용 Microsoft 365용 Excel, Excel 2024, Mac용 Excel 2024, Excel 2021, Mac용 Excel 2021, Excel 2019, Excel 2016, iPad용·iPhone용·Android 태블릿용·Android 휴대폰용 Excel, Excel Mobile.",
+      "tier": "official"
+    },
+    {
+      "title": "엑셀 셀 줄바꿈 제거 공식 (오빠두엑셀)",
+      "url": "https://www.oppadu.com/formulas/remove-line-breaks/",
+      "host": "www.oppadu.com",
+      "body": "[WebFetch 요약본 — 원문 HTML 아님] 오빠두엑셀 '엑셀 셀 줄바꿈 제거 공식' (응용 공식). Excel 2013 이하~2024, M365, 웹용 Excel 지원을 표기. 방법: SUBSTITUTE 와 CHAR(10). 구문 =SUBSTITUTE(텍스트, CHAR(10), 바꿀문자). Alt+Enter 로 입력한 줄 바꿈은 CHAR(10) 문자로 저장된다고 설명. 바꿀문자를 \"\" 로 하면 붙여 쓰기, \", \" 같은 구분자도 가능. 예: =SUBSTITUTE(A2&CHAR(10)&B2,CHAR(10),\", \") 는 A2 '서울', B2 '본사' 를 '서울, 본사' 로 반환. 원리: =CHAR(10) 은 셀 안에서 줄을 구분하는 LF 문자를 반환하고, SUBSTITUTE 가 결합 텍스트에서 그 문자를 찾아 선택한 구분자로 바꾼다. 댓글(작성자 공식 안내 아님): 찾기 및 바꾸기에서 '찾을 내용'에 Ctrl+J 를 누르고 '바꿀 내용'에 쉼표를 넣은 뒤 모두 바꾸기를 누르면 된다는 독자 댓글이 있고, 작성자는 어떤 오류인지 되물음. 다른 댓글: 다운로드 파일이 아닌 다른 통합 문서로 시트를 복사해 작업하니 바꾸기가 됐다는 보고. 페이지에 CLEAN·TRIM·CHAR(13)·Mac 키 설명 없음. 게시/수정 날짜 없음(댓글은 2020년, 푸터 Copyright 2026).",
+      "tier": "blog"
+    }
+  ],
+  "claims": [
+    {
+      "claim": "셀 안에서 줄을 바꾸는 기본 방법은 셀을 편집 상태로 만들고 줄 나눌 위치에서 Alt+Enter 를 누르는 것이다 (Windows, 웹용 Excel).",
+      "grade": "confirmed",
+      "evidence": [
+        "Windows(Microsoft 365, 2024, 2021, 2019, 2016): 셀 더블클릭, 줄 나눌 위치 선택, Alt+Enter (en-gb 지원 문서).",
+        "웹용 Excel 도 같은 Alt+Enter. 편집 진입은 셀 더블클릭 또는 선택 후 F2 (en-gb, ko-kr 지원 문서).",
+        "한국어판 Windows 절차에도 더블클릭 또는 F2 가 함께 적혀 있다. en-gb 요약본의 Windows 절차는 더블클릭만 있는데 요약본 차이로 보이며, 바로 가기 키 문서가 F2 = 선택한 셀 편집을 따로 확인해 준다.",
+        "바로 가기 키 문서(ko-kr): 같은 셀에서 새 줄 시작 = Alt+Enter (Windows, 웹용 모두). F2 는 활성 셀을 편집하며 내용 끝에 삽입 지점을 둔다고 설명하므로, F2 로 들어가면 줄 나눌 위치로 커서를 옮겨야 한다 (en-us 문서도 줄 나눌 위치에 커서를 둔 뒤 Alt+Enter)."
+      ],
+      "sourceUrls": [
+        "https://support.microsoft.com/en-gb/office/start-a-new-line-of-text-inside-a-cell-in-excel-33e41eab-8b5e-4193-93d6-9a06ecf812b3",
+        "https://support.microsoft.com/ko-kr/office/start-a-new-line-of-text-inside-a-cell-in-excel-33e41eab-8b5e-4193-93d6-9a06ecf812b3",
+        "https://support.microsoft.com/en-us/Excel/wrap-text-in-a-cell-in-excel",
+        "https://support.microsoft.com/ko-kr/office/excel의-바로-가기-키-1798d9d5-842a-42b8-9c99-9b7213f0040f"
+      ]
+    },
+    {
+      "claim": "Wrap Text(영문 UI 기준)는 열 너비에 따라 줄이 다시 나뉘며, 줄 바꿈한 내용이 다 안 보이면 행 높이 고정이나 병합 셀을 의심하고 행 높이를 맞추면 된다.",
+      "grade": "confirmed",
+      "evidence": [
+        "영문 메뉴 경로: Home 탭 > Alignment 그룹 > Wrap Text (en-us 지원 문서). 한국어판 버튼 라벨은 열람한 문서에서 확인 못 했다.",
+        "열 너비를 바꾸면 줄 바뀐 텍스트도 따라서 조정된다 (문서 설명).",
+        "내용이 다 안 보이는 원인으로 문서가 든 것은 두 가지: 행 높이가 특정 값으로 고정됨, 텍스트가 병합된 셀 범위에 있음.",
+        "행 높이 맞춤 경로: Home > Cells 그룹 > Format > Cell Size 아래 AutoFit Row Height 또는 Row Height 값 입력. 행 아래 경계선을 끌어도 된다.",
+        "적용 대상 5개 버전: Microsoft 365, 2024, 2021, 2019, 2016."
+      ],
+      "sourceUrls": [
+        "https://support.microsoft.com/en-us/Excel/wrap-text-in-a-cell-in-excel"
+      ]
+    },
+    {
+      "claim": "Mac 에서는 Control+Option+Return 이 공식 문서 세 곳에 공통으로 나오지만, 문서마다 표기가 달라 단일 키로 단정하면 안 된다.",
+      "grade": "confirmed",
+      "evidence": [
+        "지원 문서 en-gb·ko-kr (Mac용 Microsoft 365, 2024, 2021): CONTROL+OPTION+RETURN 하나만 안내.",
+        "바로 가기 키 문서(ko-kr) macOS 표의 시트에 데이터 입력 항목: Option+Return 또는 Ctrl+Option+Return.",
+        "같은 문서 데이터 서식 지정 및 편집 항목: Cmd+Option+Return 또는 Ctrl+Option+Return.",
+        "세 곳 모두에 들어 있는 조합은 Ctrl+Option+Return 뿐이다. Option+Return 단독과 Cmd+Option+Return 은 한 문서의 한 항목에만 있고 서로 어긋나므로 대표 키로 쓰지 말 것.",
+        "모두 WebFetch 요약본 기준이라 원문 대조는 못 했다."
+      ],
+      "sourceUrls": [
+        "https://support.microsoft.com/en-gb/office/start-a-new-line-of-text-inside-a-cell-in-excel-33e41eab-8b5e-4193-93d6-9a06ecf812b3",
+        "https://support.microsoft.com/ko-kr/office/start-a-new-line-of-text-inside-a-cell-in-excel-33e41eab-8b5e-4193-93d6-9a06ecf812b3",
+        "https://support.microsoft.com/ko-kr/office/excel의-바로-가기-키-1798d9d5-842a-42b8-9c99-9b7213f0040f"
+      ]
+    },
+    {
+      "claim": "모바일 Excel 앱에서는 줄 나눌 위치를 길게 눌러 메뉴의 새 줄(New Line)을 고른다. 문서는 Android와 iOS로 나눠 적는다.",
+      "grade": "confirmed",
+      "evidence": [
+        "Android: 셀 안 더블탭, 위치 길게 누르기, 메뉴에서 New Line (en-gb·ko-kr 원문 대조 — 2026-10-10 팩트체크 정정, 이전 요약의 태블릿/폰 구분은 오기).",
+        "iOS(iPhone·iPad): 키보드 전환 버튼으로 숫자 키보드를 연 뒤 위치를 길게 눌러 New Line (en-gb·ko-kr 원문 대조 — 2026-10-10 팩트체크 정정).",
+        "바로 가기 키 문서에는 iOS 가 Cmd+Option+Return 또는 Ctrl+Option+Return, Android 가 Alt+Enter 로 적혀 있다. 외부 키보드 전제인지는 문서에 명시되지 않았다.",
+        "검색 요약에 iPhone 은 새 줄 불가라는 구문서 스니펫이 있었으나 현행 문서 두 건과 어긋나 근거로 쓰지 않는다."
+      ],
+      "sourceUrls": [
+        "https://support.microsoft.com/en-gb/office/start-a-new-line-of-text-inside-a-cell-in-excel-33e41eab-8b5e-4193-93d6-9a06ecf812b3",
+        "https://support.microsoft.com/ko-kr/office/start-a-new-line-of-text-inside-a-cell-in-excel-33e41eab-8b5e-4193-93d6-9a06ecf812b3",
+        "https://support.microsoft.com/ko-kr/office/excel의-바로-가기-키-1798d9d5-842a-42b8-9c99-9b7213f0040f"
+      ]
+    },
+    {
+      "claim": "Alt+Enter 로 넣은 줄 바꿈은 CHAR(10) 문자이고, CLEAN 이나 SUBSTITUTE 로 지우거나 다른 문자로 바꿀 수 있다 (공식은 CLEAN 예제까지, SUBSTITUTE 와 CHAR(10)=Alt+Enter 대응은 블로그 설명).",
+      "grade": "reported",
+      "evidence": [
+        "[공식] CLEAN 은 7비트 ASCII 인쇄 불가 문자 0번~31번(처음 32개)을 제거하도록 설계됐다. 유니코드의 127, 129, 141, 143, 144, 157 은 CLEAN 단독으로 제거되지 않는다고 문서가 밝힌다.",
+        "[공식] CLEAN 예제: A2 = CHAR(9)&\"월간 보고서\"&CHAR(10) 에 =CLEAN(A2) 를 쓰면 탭과 CHAR(10) 이 제거돼 월간 보고서만 남는다.",
+        "[공식] CHAR 문서: 웹용 Excel 은 CHAR(9), CHAR(10), CHAR(13) 과 32 이상의 숫자만 지원한다.",
+        "[공식 한계] CHAR·CLEAN 문서 어디에도 CHAR(10) 이 줄 바꿈이라는 직접 문장이 없다. 둘 사이는 CLEAN 예제로 간접 확인될 뿐이다.",
+        "[블로그 오빠두] Alt+Enter 로 입력한 줄 바꿈은 CHAR(10) 문자로 저장된다. =SUBSTITUTE(텍스트, CHAR(10), 바꿀문자) 로 바꾸거나 빈 문자열이면 붙여 쓰기. 예 =SUBSTITUTE(A2&CHAR(10)&B2,CHAR(10),\", \") 는 서울, 본사 를 돌려준다.",
+        "CLEAN 은 지우기용이다. 줄 바꿈을 공백 등으로 바꾸는 건 SUBSTITUTE 영역이라는 설명은 공식 문서로 확인 못 했다."
+      ],
+      "sourceUrls": [
+        "https://support.microsoft.com/ko-kr/office/clean-함수-26f3d7c5-475f-4a9c-90e5-4b8ba987ba41",
+        "https://support.microsoft.com/ko-kr/office/char-함수-bbd249c8-b36e-4a91-8017-1c133f9b837a",
+        "https://www.oppadu.com/formulas/remove-line-breaks/"
+      ]
+    }
+  ],
+  "numbers": [
+    {
+      "what": "Wrap Text 문서의 적용 대상 Excel 버전 수",
+      "value": "5개 (Microsoft 365, 2024, 2021, 2019, 2016)",
+      "asOf": "2026-10-10 열람 (공식 문서 게시·수정일 미표기)",
+      "sourceUrl": "https://support.microsoft.com/en-us/Excel/wrap-text-in-a-cell-in-excel"
+    },
+    {
+      "what": "셀 안 줄 바꿈 지원 문서의 적용 제품 라인 수",
+      "value": "12개 (Windows·Mac 데스크톱, iPad, iPhone, Android 태블릿·폰 포함)",
+      "asOf": "2026-10-10 열람 (공식 문서 게시·수정일 미표기)",
+      "sourceUrl": "https://support.microsoft.com/en-gb/office/start-a-new-line-of-text-inside-a-cell-in-excel-33e41eab-8b5e-4193-93d6-9a06ecf812b3"
+    },
+    {
+      "what": "CHAR 함수 number 인수 범위",
+      "value": "1~255",
+      "asOf": "2026-10-10 열람 (공식 문서 게시·수정일 미표기)",
+      "sourceUrl": "https://support.microsoft.com/ko-kr/office/char-함수-bbd249c8-b36e-4a91-8017-1c133f9b837a"
+    },
+    {
+      "what": "웹용 Excel 의 CHAR 지원 코드",
+      "value": "CHAR(9), CHAR(10), CHAR(13) 및 32 이상의 숫자",
+      "asOf": "2026-10-10 열람 (공식 문서 게시·수정일 미표기)",
+      "sourceUrl": "https://support.microsoft.com/ko-kr/office/char-함수-bbd249c8-b36e-4a91-8017-1c133f9b837a"
+    },
+    {
+      "what": "CLEAN 이 제거하도록 설계된 인쇄 불가 문자 범위",
+      "value": "0번~31번 (처음 32개)",
+      "asOf": "2026-10-10 열람 (공식 문서 게시·수정일 미표기)",
+      "sourceUrl": "https://support.microsoft.com/ko-kr/office/clean-함수-26f3d7c5-475f-4a9c-90e5-4b8ba987ba41"
+    },
+    {
+      "what": "CLEAN 단독으로 제거 안 되는 유니코드 인쇄 불가 코드",
+      "value": "127, 129, 141, 143, 144, 157",
+      "asOf": "2026-10-10 열람 (공식 문서 게시·수정일 미표기)",
+      "sourceUrl": "https://support.microsoft.com/ko-kr/office/clean-함수-26f3d7c5-475f-4a9c-90e5-4b8ba987ba41"
+    }
+  ],
+  "dropped": [
+    {
+      "url": "https://support.microsoft.com/ko-kr/office/textjoin-함수-357b449a-ec91-49d0-80c3-0e8fc845691c",
+      "why": "TEXTJOIN 함수 문서. 줄 바꿈을 다루지 않고 구분자 예제도 쉼표뿐이라 주제와 무관. TEXTJOIN 에 CHAR(10) 구분자를 쓰는 방법은 공식 근거가 없어 cannotCover 로 보냄."
+    }
+  ],
+  "cannotCover": [
+    "Ctrl+J 찾기 및 바꾸기 트릭은 공식 문서에서 확인 못 했다 (바로 가기 키 문서의 Ctrl+J 는 Copilot 항목뿐). 근거는 오빠두 독자 댓글뿐이다. 굳이 쓴다면 공식 문서엔 없고 사용자들이 쓰는 방법이라고만 귀속하고, 웹용 Excel 동작은 단정 금지 (웹용 바로 가기 표에는 Ctrl+H 행이 없음).",
+    "한국어판 Wrap Text 버튼 라벨(텍스트 줄 바꿈인지 자동 줄 바꿈인지)은 미확인. 한쪽으로 단정하지 말고 영문 Wrap Text 를 병기하거나 실제 한국어 UI 를 확인할 것.",
+    "수식(=A1&CHAR(10)&B1, TEXTJOIN(CHAR(10),...))으로 만든 줄 바꿈이 Wrap Text 를 켜야 보인다는 공식 문장은 없다. 단정 금지.",
+    "TEXTJOIN 구분자로 CHAR(10)을 쓰는 방법, CHAR(13) 데이터 처리, SUBSTITUTE 중첩 수식은 공식 문서·열람 자료로 확인 못 했다.",
+    "공식 문서 게시일·최종 수정일 불명. 최신 업데이트 기준 같은 날짜 단정 금지.",
+    "Mac 단축키의 단일 정답은 확정 못 한다 (공식 문서끼리 표기 상이, 실기기·원문 대조 안 됨). GeeksforGeeks 의 Control+Command+Return 표기는 미열람 스니펫이라 근거로 쓰지 않는다."
+  ],
+  "songs": [],
+  "corrections": [
+    "2026-10-10: 모바일 절차는 Android(더블탭)·iOS(숫자 키보드) 구분이 원문 — curl 대조. 태블릿/폰 구분 요약은 오류."
+  ]
+}

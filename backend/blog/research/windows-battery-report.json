@@ -1,0 +1,177 @@
+{
+  "keyword": "노트북 배터리 수명 확인 powercfg /batteryreport",
+  "categoryId": "hangeut-trend",
+  "notes": "이 글은 powercfg /batteryreport 로 리포트를 만들고 Installed batteries 의 Design Capacity vs Full Charge Capacity 를 비교하는 방법을, 공식 4건(MS Learn·Dell·ASUS·MS Support)으로 말할 수 있다. 교체 판단 수치는 Dell 40%(Dell 안내) 하나뿐이라 일반화할 수 없고, CYCLE COUNT·Battery capacity history·Battery life estimates 의 공식 정의는 없어 항목명 소개 수준까지만 쓴다. Dell·ASUS·MS Support body 는 WebFetch 요약 추출본이라 큰따옴표 원문 인용 금지(의미만 풀어쓸 것). 충전 제한(20~80%) 내용은 기발행 \"노트북 배터리 80% 충전 제한\" 글과 겹쳐 쓰지 않는다.",
+  "sources": [
+    {
+      "title": "Powercfg command-line options | Microsoft Learn",
+      "url": "https://learn.microsoft.com/en-us/windows-hardware/design/device-experiences/powercfg-command-line-options",
+      "host": "learn.microsoft.com",
+      "body": "[WebFetch 추출본 — /batteryreport 구간 발췌, 영문 원문 그대로] Use powercfg.exe to control power plans - also called power schemes - to use the available sleep states, to control the power states of individual devices, and to analyze the system for common energy-efficiency and battery-life problems. Syntax: powercfg /option [arguments] [/?]. Option table row: '/batteryreport | Generates a report of battery usage.' ### /batteryreport — Generates a report of battery usage characteristics over the lifetime of the system. Running powercfg /batteryreport generates an HTML report file in the current path. Syntax: powercfg /batteryreport [ /output file_name ] [ /xml ] ; powercfg /batteryreport [ /duration days ]. Arguments: /output file_name — Specify the path and file name to store the battery report HTML. /output file_name /xml — Formats the battery report file as XML. /duration days — Specifies the number of days to analyze for the report. Examples: powercfg /batteryreport /output \"batteryreport.html\" ; powercfg /batteryreport /duration 4. ### /energy (별개 명령) — Analyzes the system for common energy-efficiency and battery-life problems and generates a report, an HTML file, in the current path. Syntax: powercfg /energy [ /output file_name] [ /xml ] [ /duration seconds ]. The /energy option should be used when the computer is idle and has no open programs or documents. /duration seconds: Specifies the number of seconds to observe system behavior. Default is 60 seconds. Page metadata: ms.date 2017-10-27, updated_at 2021-12-15.",
+      "tier": "official",
+      "publishedAt": "2021-12-15"
+    },
+    {
+      "title": "How to Generate a Battery Report Using the POWERCFG Command (Dell KB 000130117)",
+      "url": "https://www.dell.com/support/kbdoc/en-au/000130117/how-to-generate-battery-report-using-the-powercfg-command",
+      "host": "www.dell.com",
+      "body": "[WebFetch 추출본(요약형 — 원문 verbatim 아님)] Generating the report: Open the Run dialog (Windows logo key + R), type cmd, and press Enter. At the Command Prompt, run powercfg /batteryreport. The article notes there must be a space between powercfg and /batteryreport. The report is saved as battery-report.html in your user folder, under C:\\Users\\<username>. Open it in File Explorer and double-click to view it in a browser. Before these steps, the article says you should have already completed the basics on Dell's Battery Support page, such as checking battery health in SupportAssist and updating BIOS and power drivers. Sections to review: (1) Installed batteries (Design Capacity vs. Full Charge Capacity): a battery is significantly degraded and should be replaced if Full Charge Capacity is below 40% of Design Capacity. (2) Recent usage: look for periods of unexpectedly high drain or applications that prevented sleep. (3) Battery life estimates: compare these to your actual experience. The BIOS can also be checked for battery health. Design vs. Full Charge Capacity: these values often differ and this does not necessarily indicate a problem. Full Charge Capacity changes with factors such as external and ambient temperature, system heat, the number of discharges to 0%, and the number of full charge cycles. Design Capacity includes a 10% buffer to allow for changes during use, such as heat causing a cell to overvolt slightly, which helps prevent spikes that could shorten battery life. Standard industry practice; the battery is working as designed. Article number 000130117, type How To, Version 12, Last modified 15 July 2026.",
+      "tier": "official",
+      "publishedAt": "2026-07-15"
+    },
+    {
+      "title": "How can I check battery's status in Windows? (ASUS FAQ 1055747)",
+      "url": "https://www.asus.com/au/support/FAQ/1055747",
+      "host": "www.asus.com",
+      "body": "[WebFetch 추출본(요약형 — 원문 verbatim 아님)] Generating the report (from the ASUS FAQ): 1. Press Windows Key + R, type cmd, and click OK. 2. At the command prompt, type powercfg /batteryreport and press Enter. 3. Open File Explorer, go to the folder the report was saved to, and double-click the HTML file to open it in your browser. Where the file is saved: the article says the report is 'an HTML file that's stored in a folder on your PC.' It doesn't name a default folder; it says the file location will be shown in the Command Prompt window. Fields and health judgment: the article doesn't mention 'Design capacity,' 'Full charge capacity,' or 'Cycle count' by those names. It says to look at: battery health, comparing current capacity with original capacity; how many full charge cycles the battery has gone through; your usual charging habits and patterns. Thresholds: the article gives no thresholds for judging battery health. Last updated: 2025/08/21 15:13.",
+      "tier": "official",
+      "publishedAt": "2025-08-21"
+    },
+    {
+      "title": "Caring for your battery in Windows (Microsoft Support)",
+      "url": "https://support.microsoft.com/en-us/windows/experience/power-battery/caring-for-your-battery-in-windows",
+      "host": "support.microsoft.com",
+      "body": "[WebFetch 추출본(요약형 — 원문 verbatim 아님)] Battery report in Windows 11 (from the page's 'Get a detailed battery report' section). Command: open an elevated Command Prompt (Start, type 'Command prompt,' right-click, and choose Run as administrator). Then type powercfg /batteryreport and press Enter. Output location: the report is saved as an HTML file in a folder on your PC. The Command Prompt window shows the path. Open that folder in File Explorer and double-click the file to view it in your browser. Sections to check first: Installed battery, Recent usage, and Battery usage. Not on this page: the sections Battery capacity history and Battery life estimates, guidance on comparing Full Charge Capacity with Design Capacity, and any percentage thresholds for the report. The page shows no last-updated date, only '© Microsoft 2026'. Charge-range recommendations: keep the battery 'within a moderate charge range (roughly 20%-80%)' when possible; for maximum health, keep the level 'between 20% and 80%' several times a week; for storage, keep the battery 'charged to around 40-60%.'",
+      "tier": "official",
+      "publishedAt": null
+    }
+  ],
+  "claims": [
+    {
+      "claim": "powercfg /batteryreport 한 줄이면 배터리 리포트(HTML)가 만들어지고, 옵션으로 저장 파일명·분석 기간·XML 형식도 정할 수 있다",
+      "grade": "confirmed",
+      "evidence": [
+        "MS Learn: 이 명령은 시스템 수명 동안의 배터리 사용 특성 리포트를 HTML 파일로 현재 경로에 만든다",
+        "MS Learn 구문: powercfg /batteryreport [ /output file_name ] [ /xml ] ; powercfg /batteryreport [ /duration days ] — 공식 예시는 /output \"batteryreport.html\" 과 /duration 4(4일치 분석)",
+        "Dell·ASUS 절차: Windows 키 + R → cmd → Enter → powercfg /batteryreport. Dell 은 powercfg 와 /batteryreport 사이에 공백이 있어야 한다고 명시",
+        "만들어진 HTML 파일은 파일 탐색기에서 더블클릭하면 브라우저로 열린다(Dell·ASUS·MS Support 공통)",
+        "저장 위치 표현이 출처마다 다름 — MS Learn \"현재 경로\", MS Support·ASUS \"명령 프롬프트 창에 표시되는 경로\", Dell \"C:\\Users\\<사용자명>\\battery-report.html\" → 글에서는 \"프롬프트에 표시되는 경로를 확인\" 으로 쓰는 편이 안전",
+        "관리자 권한 여부도 출처마다 다름 — MS Support 는 관리자 권한 명령 프롬프트(Run as administrator) 안내, Dell·ASUS 는 Win+R → cmd 로 연 일반 프롬프트 안내. 필수 여부는 읽은 문서로 판정 불가",
+        "powercfg /energy 는 별개 명령 — 에너지 효율·배터리 수명 문제 분석 리포트(HTML), 기본 관찰 60초, 컴퓨터를 idle 로 두고 쓰라고 명시"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/windows-hardware/design/device-experiences/powercfg-command-line-options",
+        "https://www.dell.com/support/kbdoc/en-au/000130117/how-to-generate-battery-report-using-the-powercfg-command",
+        "https://www.asus.com/au/support/FAQ/1055747",
+        "https://support.microsoft.com/en-us/windows/experience/power-battery/caring-for-your-battery-in-windows"
+      ]
+    },
+    {
+      "claim": "배터리 건강은 리포트 Installed batteries 의 Design Capacity(설계 용량)와 Full Charge Capacity(완충 용량)를 견줘 보며, 두 값이 다른 것 자체는 고장이 아니다",
+      "grade": "confirmed",
+      "evidence": [
+        "Dell: Installed batteries 구간에서 Design Capacity 와 Full Charge Capacity 를 비교하라고 안내",
+        "Dell: 두 값이 다른 것은 흔하며 그 자체가 문제를 뜻하지 않는다. Full Charge Capacity 는 외부·주변 온도, 시스템 발열, 0%까지 방전한 횟수, 완충 사이클 횟수에 따라 달라진다",
+        "Dell 설명: Design Capacity 에는 10% 버퍼가 포함돼 사용 중 변화(발열로 셀이 약간 과전압되는 등)를 흡수하며, 업계 표준 관행이라 설계대로 동작하는 것 — Dell 단독 서술이므로 \"Dell 은 이렇게 설명한다\" 로 쓸 것",
+        "ASUS: Design/Full Charge Capacity 라는 항목명은 쓰지 않고 \"현재 용량 vs 원래 용량\" 비교, 완충 사이클 횟수, 충전 습관을 보라고만 안내 — CYCLE COUNT 라는 항목명·정의는 공식 문서에 없음",
+        "MS Support(Windows 11): 먼저 볼 섹션으로 Installed battery, Recent usage, Battery usage 를 꼽음(용량 비교 방법은 이 페이지에 없음). 라벨이 단수/복수 어느 쪽인지 실제 리포트 화면은 직접 확인 안 됨"
+      ],
+      "sourceUrls": [
+        "https://www.dell.com/support/kbdoc/en-au/000130117/how-to-generate-battery-report-using-the-powercfg-command",
+        "https://www.asus.com/au/support/FAQ/1055747",
+        "https://support.microsoft.com/en-us/windows/experience/power-battery/caring-for-your-battery-in-windows"
+      ]
+    },
+    {
+      "claim": "교체 시점을 가르는 공식 % 기준은 제조사마다 다르거나 아예 없고, 이번에 읽은 공식 문서에서 수치를 준 곳은 Dell 의 40% 하나뿐이다",
+      "grade": "confirmed",
+      "evidence": [
+        "Dell KB 000130117(Version 12, 2026-07-15 수정): Full Charge Capacity 가 Design Capacity 의 40% 미만이면 크게 열화되어 교체 대상 — Dell 안내 한정이며 모든 노트북의 기준으로 일반화 금지",
+        "ASUS FAQ(2025-08-21): 배터리 건강 판정 수치(%) 기준을 제시하지 않음",
+        "MS Support: 용량 비교 기준·% 임계값이 페이지에 없음 / MS Learn 은 명령 옵션 문서라 해당 없음",
+        "Dell 은 리포트를 보기 전 사전 점검으로 SupportAssist 배터리 상태 확인·BIOS 및 전원 드라이버 업데이트를 안내하고, BIOS 에서도 배터리 상태를 볼 수 있다고 함",
+        "따라서 글의 결론은 \"% 하나로 단정하지 말고 제조사 안내와 체감 시간을 함께 본다\" 쪽으로 — 점수·판정은 추정이지 확정이 아님"
+      ],
+      "sourceUrls": [
+        "https://www.dell.com/support/kbdoc/en-au/000130117/how-to-generate-battery-report-using-the-powercfg-command",
+        "https://www.asus.com/au/support/FAQ/1055747",
+        "https://support.microsoft.com/en-us/windows/experience/power-battery/caring-for-your-battery-in-windows",
+        "https://learn.microsoft.com/en-us/windows-hardware/design/device-experiences/powercfg-command-line-options"
+      ]
+    },
+    {
+      "claim": "용량 숫자만 보지 말고 리포트의 Recent usage·Battery life estimates 로 최근 소모 패턴과 체감 사용 시간도 같이 점검한다",
+      "grade": "confirmed",
+      "evidence": [
+        "Dell: Recent usage 에서는 비정상적으로 큰 소모나 절전(sleep)을 막은 앱이 있는지 본다",
+        "Dell: Battery life estimates 는 실제 체감과 비교해 보라고만 안내 — 항목의 공식 정의·계산 방식은 읽은 문서에 없음, 항목명 소개 수준까지만",
+        "MS Support: 먼저 볼 섹션에 Recent usage 와 Battery usage 포함. Battery capacity history·Battery life estimates 는 이 페이지에서 언급 없음"
+      ],
+      "sourceUrls": [
+        "https://www.dell.com/support/kbdoc/en-au/000130117/how-to-generate-battery-report-using-the-powercfg-command",
+        "https://support.microsoft.com/en-us/windows/experience/power-battery/caring-for-your-battery-in-windows"
+      ]
+    }
+  ],
+  "numbers": [
+    {
+      "what": "Dell 의 교체 대상 판단 기준: Full Charge Capacity 가 Design Capacity 의 몇 % 미만인가",
+      "value": "40% 미만 (Dell 안내 한정, 다른 제조사에 일반화 금지)",
+      "asOf": "2026-07-15 (Dell KB 000130117 Version 12)",
+      "sourceUrl": "https://www.dell.com/support/kbdoc/en-au/000130117/how-to-generate-battery-report-using-the-powercfg-command"
+    },
+    {
+      "what": "Dell 이 설명하는 Design Capacity 안의 버퍼",
+      "value": "10%",
+      "asOf": "2026-07-15 (Dell KB 000130117 Version 12)",
+      "sourceUrl": "https://www.dell.com/support/kbdoc/en-au/000130117/how-to-generate-battery-report-using-the-powercfg-command"
+    },
+    {
+      "what": "Dell 안내상 리포트 저장 경로·파일명",
+      "value": "C:\\Users\\<사용자명>\\battery-report.html",
+      "asOf": "2026-07-15 (Dell KB 000130117 Version 12)",
+      "sourceUrl": "https://www.dell.com/support/kbdoc/en-au/000130117/how-to-generate-battery-report-using-the-powercfg-command"
+    },
+    {
+      "what": "MS Learn 공식 예시: /duration 값",
+      "value": "4 (4일치 분석)",
+      "asOf": "updated_at 2021-12-15 (ms.date 2017-10-27)",
+      "sourceUrl": "https://learn.microsoft.com/en-us/windows-hardware/design/device-experiences/powercfg-command-line-options"
+    },
+    {
+      "what": "powercfg /energy 기본 관찰 시간 (별개 명령)",
+      "value": "60초",
+      "asOf": "updated_at 2021-12-15 (ms.date 2017-10-27)",
+      "sourceUrl": "https://learn.microsoft.com/en-us/windows-hardware/design/device-experiences/powercfg-command-line-options"
+    },
+    {
+      "what": "ASUS FAQ 최종 업데이트",
+      "value": "2025/08/21",
+      "asOf": "2025-08-21",
+      "sourceUrl": "https://www.asus.com/au/support/FAQ/1055747"
+    }
+  ],
+  "conflicts": [
+    {
+      "about": "관리자 권한 필요 여부",
+      "detail": "MS Support 는 관리자 권한 명령 프롬프트, Dell·ASUS 는 Win+R → cmd 일반 실행 안내. 필수라고도 불필요라고도 단정하지 말고 \"출처마다 안내가 다르다\" 수준으로."
+    },
+    {
+      "about": "저장 위치",
+      "detail": "MS Learn \"현재 경로\", MS Support·ASUS \"프롬프트에 표시되는 경로\", Dell \"C:\\Users\\<사용자명>\\battery-report.html\". 관리자 실행 시 실제 폴더(흔히 System32 라는 설)는 읽은 문서에 없어 쓰지 말 것 — \"프롬프트에 뜨는 경로를 보라\" 로."
+    },
+    {
+      "about": "Dell 40% vs 25%",
+      "detail": "Dell 페이지 직접 열람은 40%(v12)뿐. 25%(Version 6, 1년 기준) 주장은 검색 요약문이라 미열람 → 사용 금지. 기준이 문서 버전·언어판마다 다를 수 있다고만 쓸 수 있음."
+    }
+  ],
+  "dropped": [
+    {
+      "url": "https://support.microsoft.com/en-us/windows/experience/power-battery/caring-for-your-battery-in-windows",
+      "why": "소스는 유지. 단 \"20%~80% 충전 범위·보관 40~60%\" 문단은 기발행 \"노트북 배터리 80% 충전 제한\" 글과 겹쳐 이 글에서 쓰지 않는다"
+    }
+  ],
+  "cannotCover": [
+    "Dell 25% 기준(Full Charge < Design 의 25% 이고 1년 넘으면 정상 등) — 본문 미열람 검색 요약일 뿐이라 쓰지 말 것",
+    "서드파티 교체 기준(80% 미만 마모, 75%, 50% 이하, 사이클 300~500·500회 초과 등) — 본문 미열람이고 서로 크게 어긋남. 수치로도 출처로도 쓰지 말 것",
+    "삼성·LG·Lenovo·HP 의 교체 기준과 공식 안내 — 공식 페이지를 못 찾았거나(HP 지식베이스는 403 으로 미열람) 확인 못 함",
+    "CYCLE COUNT / Battery capacity history / Battery life estimates 의 공식 정의·읽는 법 — 공식 문서에 없음. 항목명 소개 수준까지만 (사이클 몇 회부터 교체 같은 수치 금지)",
+    "리포트 화면의 실제 라벨 표기(대소문자, Installed battery 단/복수) — 직접 확인 못 함. 스크린샷 없이 라벨을 단정하지 말 것",
+    "관리자 권한 실행 시 기본 저장 폴더, PowerShell·Windows Terminal 에서의 공식 지원 여부 — 읽은 문서에 명시 없음",
+    "Windows 11 최신 빌드에서 리포트 항목이 바뀌었는지 — MS Learn powercfg 문서는 2021-12-15 이후 갱신 흔적 없음",
+    "원문 큰따옴표 인용: Dell·ASUS·MS Support body 는 WebFetch 요약 추출본(verbatim 아님)이라 인용 금지, 의미만 풀어쓸 것. 영문 원문 그대로인 건 MS Learn 뿐",
+    "충전 제한(20~80%) 설정법·원리 — 기발행 글과 중복, 이 글에서 다루지 않음",
+    "출처가 공식 4건(조사 한도 소진)이라 실사용자 후기·제조사 서비스센터 사례는 없음"
+  ],
+  "songs": []
+}

@@ -1,0 +1,220 @@
+{
+  "keyword": "윈도우 11 프린터 오프라인 해결",
+  "categoryId": "hangeut-trend",
+  "notes": "말할 수 있는 것: 윈도우 11 프린터 오프라인 대응의 공식 순서 — 전원·네트워크 점검 → 기본 프린터·대기열 취소 → Print Spooler 재시작(필요하면 스풀 폴더 비우기) → 제거 후 재추가 → PC 재시작. 전부 MS 공식 문서 2건 이상 또는 제조사 공식 문서로 뒷받침됨.\n말할 수 없는 것: 윈도우 11 에서 프린터 오프라인 사용 체크 해제가 통한다는 단정(공식 근거는 윈도우 10 탭·Brother 윈도우 10 이하뿐), IP·포트 변경, 드라이버 재설치 상세 절차, 한국어 화면 문구. 원인별 확률·성공률 수치도 자료에 없음.\n주의: sources.body 는 WebFetch 요약 추출본이라 UI 문구 원문이 아니다. 큰따옴표로 인용하지 말고 의미만 쓸 것. 메뉴 경로는 영문 UI 기준이며 한국어 화면과 대조되지 않았다. Epson 문서는 XP-800 단일 모델·윈도우 8 이하라 윈도우 11 근거로 쓰지 말 것.",
+  "sources": [
+    {
+      "title": "Troubleshooting offline printer problems in Windows (Microsoft Support, KB 4496876)",
+      "url": "https://support.microsoft.com/help/4496876",
+      "host": "support.microsoft.com",
+      "body": "[WebFetch 2회 응답 정리] 페이지 제목 'Troubleshooting offline printer problems in Windows'. 구성: 'Run the Windows printer troubleshooter'(Windows 11 / Windows 10 탭), 'General troubleshooting'(Windows 11 / Windows 10 탭, Step 1~7), Note(Windows 11 탭: ARM PC 프린터 설치 / Windows 10 탭: Windows 10 지원 종료), Related topics. 먼저 Get Help 앱의 자동 프린터 문제 해결사를 실행하라고 안내('Run the troubleshooter in Get Help'). [Windows 11] Step 1 프린터 전원 끄고 플러그 뽑고 약 30초 대기 후 다시 켜기. Step 2 프린터가 기기와 같은 Wi-Fi 네트워크에 연결됐는지 확인. Step 3 기본 프린터 지정: 'Select Start > Settings > Bluetooth & devices > Printers & scanners.' / 'Select your printer and then select Set as default.' / 'If you don't see the Set as default option, the Let Windows manage my default printer option may be selected.' Step 4 대기열 확인: 'Select your printer and on the page that opens, select Open print queue.' / 'Click on ... (ellipsis) and select Cancel all if there are any pending jobs.' Step 5 인쇄 대기열 서비스 초기화: 'Go to Search in the taskbar, type services, and then select Services in the list of results.' / 'Scroll down to the Print Spooler service, select and hold (right-click) it, and select Restart.' Step 6 제거 후 재설치: 'Select the printer you want to uninstall, select Remove, and then select Yes.' / 'Next to Add a printer or scanner, select Add device and follow the instructions to add your printer.' Step 7 PC 재시작. [Windows 10] Step 3: 'Select Start > Settings > Devices > Printers & scanners.' / 'Select your printer and then select Open queue.' / 'Select Printer, then select Set As Default Printer, and clear Pause Printing and Use Printer Offline if they are selected.' Step 4: 'Select your printer and then select Open queue.' / 'Under Document Name, select any documents listed, then select Document, and select Cancel.' Step 5: 'Find the Print Spooler service, select and hold (right-click) it, and select Restart.' Step 6: 'Select your printer, select Remove device, and then select Yes.' / 'Select Add a printer or scanner and follow the instructions to reinstall your printer.' Steps 1·2·7 은 두 버전 동일, Step 3~6 은 메뉴 경로·버튼 이름이 다르다. 이 문서에는 IP 주소·포트 변경 단계가 없다(WebFetch 가 명시).",
+      "tier": "official"
+    },
+    {
+      "title": "Fix print job stuck in queue errors in Windows (Microsoft Support)",
+      "url": "https://support.microsoft.com/en-us/windows/hardware/printer/fix-print-job-stuck-in-queue-errors-in-windows",
+      "host": "support.microsoft.com",
+      "body": "[WebFetch 응답 정리] 제목 'Fix print job stuck in queue errors in Windows'. 적용 대상: Windows 11, Windows 10. Step 1 Windows 설정에서 모든 인쇄 작업 취소: 설정 > 프린터 페이지 > 프린터 선택 > 인쇄 대기열 열기, 작업을 우클릭해 'Cancel'. Step 2 인쇄 스풀러 서비스 재시작: 실행창에서 services.msc 로 Services 앱을 열고 'Print Spooler' 우클릭 > 'Restart'. Step 3 스풀 폴더 수동 비우기(작업 취소로 대기열이 안 비워질 때만): Services 앱에서 Print Spooler 서비스를 중지 > 파일 탐색기에서 C:\\Windows\\System32\\spool\\PRINTERS 로 이동 > 폴더 안의 모든 파일 삭제 > Print Spooler 서비스를 다시 시작. Step 4 프린터를 끄고 최소 60초 기다렸다 켠 뒤 PC 재시작. 버전 차이: Windows 11 = Start > Settings > 'Bluetooth & devices' > 'Printers & scanners', 큐 버튼 'Open print queue'. Windows 10 = Start > Settings > 'Devices' > 'Printers & scanners', 큐 버튼 'Open queue'. 문서에 'Windows 10 support ended on October 14, 2025' 안내가 있다. 관리자 권한 필요 여부는 문서(WebFetch 기준)에 명시되지 않음.",
+      "tier": "official"
+    },
+    {
+      "title": "Printing issues caused by Print Spooler service not running - Windows Server (Microsoft Learn)",
+      "url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/printing/print-spooler-service-not-running",
+      "host": "learn.microsoft.com",
+      "body": "[WebFetch 응답 — 원문에 가깝게 반환됨] 'This article helps troubleshoot printing issues caused by the Print Spooler service not running.' 증상: 프린터 설치, 네트워크 프린터 연결, 인쇄에 문제. 'The Print Spooler service usually starts with Windows and runs until the operating system shuts down.' 해결 방법 목록: Restart the Print Spooler service / Check for system instability or resource issues / Verify Group Policy settings / Update drivers / Check for conflicts with anti-virus software. 'Restart the Print Spooler service to clear any stuck print jobs by using one of the following methods:' (1) Manually restart the service — 'In the Services application, right-click Print Spooler in the list, and select Restart.' (2) Use Command Prompt — 검색창에 cmd 입력, Command Prompt 우클릭, 'Run as administrator' 후 net stop spooler, net start spooler 순서로 실행. (3) Use Windows PowerShell — 관리자 권한 PowerShell 에서 Restart-Service -Name spooler. 'Update drivers: Ensure all relevant drivers are up to date. Outdated drivers and print components might cause the Print Spooler service to stop responding.' Group Policy 로 스풀러가 꺼져 있지 않은지(보안 완화책으로 끄는 경우 있음), 안티바이러스가 스풀 폴더를 막지 않는지('Create exclusions for the spool folder') 확인. 문서 메타데이터: ms.date 2026-02-12, updated_at 2026-02-19, 제목에 'Windows Server' 가 붙은 문서이나 Windows 클라이언트 'print,fax,and scan' 지원 분류.",
+      "tier": "official"
+    },
+    {
+      "title": "The printer status is Offline or Paused. (Brother support FAQ faq00002646)",
+      "url": "https://support.brother.com/g/b/faqend.aspx?c=gb&lang=en&prod=hl5350dn_eu&faqid=faq00002646_000",
+      "host": "support.brother.com",
+      "body": "[WebFetch 응답 정리] 이 FAQ 는 Offline/Paused 원인 목록과 Print Spooler·드라이버 재설치 단계를 싣지 않고, USB·네트워크 문제는 별도 FAQ(faq00002706 USB, faq00002656 네트워크)로 넘긴다. Step A 전원·오류 확인(LCD 가 꺼져 있으면 전원 확인, 'Paper Jam' 같은 오류 해소). Step B 연결 확인(이더넷은 케이블 양쪽, 이더넷·무선은 네트워크 설정 페이지를 출력해 IP 주소 확인). Step C 기본 프린터: Control Panel > 'Hardware and Sound' > 'Devices and Printers'(Windows 8·10)에서 체크 표시가 Brother 기기에 없으면 우클릭 > 'Set as default printer'. Windows 11 은 애플리케이션 인쇄 설정에서 Brother 기기를 선택. Step D 인쇄 작업 삭제: Windows 11 = 'Start' > 'Settings' > 'Bluetooth & devices' > 'Printers & scanners' > Brother 기기 선택 > 'Open print queue' > 메뉴에서 'Cancel all'. Windows 10 이하 = 기기 아이콘 우클릭 > 'See what's printing' > 'Printer' > 'Cancel All Documents'. 회색이면 'Open As Administrator' 클릭, 관리자 비밀번호 입력, 'Yes'. Step E (Windows 10 이하만) 오프라인/일시정지 해제: 'See what's printing' > 'Printer' 에서 'Use Printer Offline' 해제(Paused 는 'Pause Printing' 해제), 회색이면 'Open As Administrator'. Step F 드라이버 복사본 확인: 'Brother [model name] (Copy 1)' 같은 항목이 있으면 작동 안 하는 드라이버일 수 있음. Windows 11 은 'Printers & scanners' 의 상태가 'Idle' 이면 그 드라이버가 작동, Windows 7~10 은 아이콘에 마우스를 올려 'Offline' 이면 다른 드라이버 선택. macOS 는 System Preferences > Print & Scan 에서 AirPrint 대신 CUPS 드라이버 추가.",
+      "tier": "official"
+    },
+    {
+      "title": "Epson XP-800 'Printer is Offline' (USB) FAQ (epson.com faq-226657)",
+      "url": "https://epson.com/faq/SPT_C11CC45201~faq-226657",
+      "host": "epson.com",
+      "body": "[WebFetch 응답 정리] 이 FAQ 는 Epson XP-800 을 USB 로 연결했을 때 'Printer is Offline' 메시지가 뜨는 경우를 다룬다. 지원 OS 는 Windows 8, 7, Vista, XP 및 Mac OS X 로 표기돼 있고 Windows 10·11 안내는 없다. Windows 8 에서 큐 열기: 'Navigate to the Start screen, right-click the screen, and select All Apps' 후 Control Panel > Hardware and Sound > Devices and Printers. Windows 7 은 Start 메뉴에서 Devices and Printers. 'Use Printer Offline' 단계(Windows 8): 'Right-click your printer icon, click See what's printing, and select Printer and then select Use Printer Offline.' Vista·XP 는 'Use Printer Online' 항목을 쓴다. Mac OS X 는 Print & Fax 또는 Print & Scan 에서 프린터를 제거했다 다시 추가. USB 점검: 'If you're using a USB hub with your printer, connect the printer directly to your computer.' 'Make sure the USB cable is a shielded \"AB\" cable not more than 6.5 feet (2 meters) long.' 'If there are multiple copies of the same printer driver, remove the ones not in use.' 프린터 LCD 오류 확인, 다른 USB 포트·케이블 시도, 안 되면 Epson 지원. 이 FAQ 는 대기 작업 삭제, 포트·IP 설정, 스풀러 재시작, 드라이버 재설치는 다루지 않는다.",
+      "tier": "official"
+    },
+    {
+      "title": "HP Printer Offline Issues - How to Fix (HP Support)",
+      "url": "https://support.hp.com/us-en/help/printer/printer-offline",
+      "host": "support.hp.com",
+      "body": "[WebFetch 응답 정리] 페이지 본문은 짧다. 원인: 'printer offline' 오류는 기기가 프린터와 통신하지 못할 때 나타나며 이유는 여러 가지(원인 목록은 페이지에 없음). 기본 해결 4단계: (1) 'Turn off your printer and disconnect it from the power supply.' (2) 인쇄하려는 기기와 인터넷 공유기를 재시작. (3) 프린터를 다시 켜고 인쇄 시도. (4) 프린터와 기기가 같은 네트워크에 있는지 확인(별도 Wi-Fi 도움말로 연결). HP 앱 'Diagnose & Fix': 앱을 열거나 내려받고, Windows 에서는 왼쪽 아래 렌치 아이콘 선택, Mac 은 상단 메뉴 막대의 프린터 드롭다운, 이후 화면 안내를 따른다. 지원 환경: Windows 10 이상, iOS 14 이상, Android 7.0 이상, macOS 10.14 이상. 날짜 표기는 없고 저작권 표기만 2021, 2024. 이 페이지 자체에는 Settings 경로, 'Let Windows manage my default printer', Services, Function Discovery, 네트워크 프로필 Private 설명이 없고, HP Print and Scan Doctor 는 링크와 'Retired Product' 라벨만 있다.",
+      "tier": "official"
+    }
+  ],
+  "claims": [
+    {
+      "claim": "프린터 오프라인은 PC 가 프린터와 통신하지 못한다는 뜻이고, 공식 문서가 가장 먼저 시키는 건 설정 변경이 아니라 전원·네트워크·재시작 같은 기본 점검이다",
+      "grade": "confirmed",
+      "evidence": [
+        "HP 공식: 오프라인 오류는 기기가 프린터와 통신하지 못할 때 나타나며 이유는 여러 가지다. 기본 4단계는 프린터 전원 끄고 전원 분리 → 인쇄할 기기와 공유기 재시작 → 프린터 켜고 재시도 → 같은 네트워크인지 확인.",
+        "Microsoft KB 4496876: 맨 앞에 Get Help 앱의 자동 프린터 문제 해결사 실행을 안내한 뒤, 일반 점검 7단계로 넘어간다. 윈도우 11·10 모두 Step 1(프린터 전원 껐다 켜기), Step 2(프린터가 PC 와 같은 Wi-Fi 인지 확인), Step 7(PC 재시작)은 동일.",
+        "프린터 전원을 끄고 기다리는 시간은 문서마다 다르다: KB 4496876 은 약 30초, 인쇄 대기열 오류 문서는 최소 60초. 글에서는 30초 이상, 넉넉하게 60초 정도로 쓰고 한쪽을 정답처럼 단정하지 말 것.",
+        "Brother 공식: 전원·LCD 오류(용지 걸림 등) 확인, 이더넷·무선은 연결 상태와 IP 확인을 먼저 하라고 안내."
+      ],
+      "sourceUrls": [
+        "https://support.microsoft.com/help/4496876",
+        "https://support.hp.com/us-en/help/printer/printer-offline",
+        "https://support.brother.com/g/b/faqend.aspx?c=gb&lang=en&prod=hl5350dn_eu&faqid=faq00002646_000",
+        "https://support.microsoft.com/en-us/windows/hardware/printer/fix-print-job-stuck-in-queue-errors-in-windows"
+      ]
+    },
+    {
+      "claim": "윈도우 11 설정 앱에서 할 일은 두 가지다 — 기본 프린터로 지정하고, 밀려 있는 인쇄 작업을 모두 취소한다",
+      "grade": "confirmed",
+      "evidence": [
+        "윈도우 11 경로(영문 UI 기준): Start > Settings > Bluetooth & devices > Printers & scanners. 윈도우 10 은 Start > Settings > Devices > Printers & scanners 로 경로가 다르다(KB 4496876, 대기열 오류 문서 일치).",
+        "기본 프린터: 프린터를 선택하고 기본값으로 설정. 이 버튼이 안 보이면 윈도우가 기본 프린터를 자동 관리하는 옵션이 켜져 있을 수 있다(KB 4496876, 윈도우 11 Step 3).",
+        "대기열: 프린터 선택 → 인쇄 대기열 열기 버튼(윈도우 11 은 Open print queue, 윈도우 10 은 Open queue) → 줄임표(...) 메뉴에서 전체 취소. 대기열 오류 문서는 작업을 하나씩 우클릭해 취소하는 방식을 안내(KB·Brother 는 전체 취소 메뉴). 두 방식 모두 공식.",
+        "Brother 공식도 윈도우 11 에서 같은 경로로 Open print queue 후 Cancel all 을 안내한다."
+      ],
+      "sourceUrls": [
+        "https://support.microsoft.com/help/4496876",
+        "https://support.microsoft.com/en-us/windows/hardware/printer/fix-print-job-stuck-in-queue-errors-in-windows",
+        "https://support.brother.com/g/b/faqend.aspx?c=gb&lang=en&prod=hl5350dn_eu&faqid=faq00002646_000"
+      ]
+    },
+    {
+      "claim": "대기열이 안 비워지거나 인쇄가 멈춰 있으면 Print Spooler 서비스를 재시작하고, 그래도 안 비워질 때만 스풀 폴더를 직접 비운다",
+      "grade": "confirmed",
+      "evidence": [
+        "KB 4496876 Step 5(윈도우 11·10 공통): 작업 표시줄 검색에 services 입력 → Services → Print Spooler 우클릭 → Restart.",
+        "Microsoft Learn: 스풀러 재시작 방법 3가지 — Services 앱에서 우클릭 Restart / 관리자 권한 Command Prompt 에서 net stop spooler 후 net start spooler / 관리자 권한 PowerShell 에서 Restart-Service -Name spooler.",
+        "대기열 오류 문서 Step 3(작업 취소로 대기열이 안 비워질 때만): Print Spooler 중지 → C:\\Windows\\System32\\spool\\PRINTERS 의 모든 파일 삭제 → Print Spooler 다시 시작. 폴더 자체를 지우는 게 아니라 안의 파일을 지운다.",
+        "Learn 은 스풀러가 멈추는 원인으로 시스템 불안정·자원 부족, 그룹 정책으로 비활성화, 오래된 드라이버, 안티바이러스 충돌을 든다. 단 이 문서 제목은 Windows Server 이고 윈도우 11 전용 문서가 아니다(증상·재시작 방법은 클라이언트에도 해당).",
+        "대기열 오류 문서가 관리자 권한을 요구하는지는 자료에 명시 없음. 관리자 권한 필수로 명시된 건 Learn 의 cmd·PowerShell 방법뿐."
+      ],
+      "sourceUrls": [
+        "https://support.microsoft.com/help/4496876",
+        "https://support.microsoft.com/en-us/windows/hardware/printer/fix-print-job-stuck-in-queue-errors-in-windows",
+        "https://learn.microsoft.com/en-us/troubleshoot/windows-server/printing/print-spooler-service-not-running"
+      ]
+    },
+    {
+      "claim": "그래도 오프라인이면 프린터를 제거했다가 다시 추가하고 PC 를 재시작한다 — 중복 드라이버(Copy 1)가 있으면 어느 쪽이 작동하는지도 확인한다",
+      "grade": "confirmed",
+      "evidence": [
+        "KB 4496876 윈도우 11 Step 6: 제거할 프린터를 선택해 Remove → Yes, 이어서 Add a printer or scanner 옆의 Add device 로 다시 추가. 윈도우 10 은 버튼 이름이 Remove device 로 다르다. 윈도우 11 버튼 이름은 검색 요약이 Remove device 라고 달리 적어 어긋남 → 글에서는 제거 버튼이라고만 쓰고 화면 문구를 단정하지 말 것.",
+        "KB 4496876 Step 7: PC 재시작으로 프린터와 통신하는 서비스를 새로 고친다.",
+        "Brother 공식(윈도우 11): 같은 모델명 뒤에 Copy 1 이 붙은 항목이 있으면 작동 안 하는 드라이버일 수 있고, Printers & scanners 의 상태가 Idle 인 쪽이 작동하는 드라이버.",
+        "Epson 공식 FAQ(XP-800, 윈도우 8 이하 문서)도 같은 프린터 드라이버 복사본이 여러 개면 쓰지 않는 것을 제거하라고 안내. USB 허브를 쓰면 PC 에 직접 연결, 케이블은 차폐 AB 케이블 2m(6.5피트) 이하. 윈도우 11 근거로는 쓰지 말고 USB 연결 보조 팁으로만.",
+        "HP 앱 Diagnose & Fix 는 윈도우에서 왼쪽 아래 렌치 아이콘으로 실행(윈도우 10 이상 지원). HP 프린터 한정 보조 수단.",
+        "드라이버 업데이트는 Learn 에 오래된 드라이버가 스풀러를 멈출 수 있으니 최신으로 유지하라는 한 줄뿐이다. 장치 관리자·인쇄 서버 속성에서의 드라이버 완전 제거·재설치 절차는 공식 근거 없음."
+      ],
+      "sourceUrls": [
+        "https://support.microsoft.com/help/4496876",
+        "https://support.brother.com/g/b/faqend.aspx?c=gb&lang=en&prod=hl5350dn_eu&faqid=faq00002646_000",
+        "https://epson.com/faq/SPT_C11CC45201~faq-226657",
+        "https://support.hp.com/us-en/help/printer/printer-offline",
+        "https://learn.microsoft.com/en-us/troubleshoot/windows-server/printing/print-spooler-service-not-running"
+      ]
+    },
+    {
+      "claim": "많이 알려진 프린터 오프라인 사용 체크 해제는 공식 문서에서 윈도우 10(이하) 안내에만 나온다 — 윈도우 11 에서도 같다고 단정할 수 없다",
+      "grade": "confirmed",
+      "evidence": [
+        "KB 4496876: 프린터 오프라인 사용 해제는 윈도우 10 탭 Step 3(Open queue → Printer → 기본 프린터 지정, 일시 중지·오프라인 사용이 체크돼 있으면 해제)에만 있고, 윈도우 11 탭 본문에는 나오지 않는다(WebFetch 기준).",
+        "Brother 공식도 이 해제(Step E)를 Windows 10 이하 항목으로만 안내. 윈도우 11 용으로는 Open print queue 후 전체 취소와 Idle 상태 확인을 안내.",
+        "Brother: 해당 메뉴가 회색이면 Open As Administrator 를 눌러 관리자 비밀번호 입력 후 Yes (윈도우 10 이하 절차).",
+        "Epson 공식 FAQ 의 오프라인 사용 단계는 윈도우 8 의 Devices and Printers 기준.",
+        "검색 요약(커뮤니티·블로그 인용)은 윈도우 11 에서도 큐 창의 Printer 메뉴에서 해제하라고 하지만 공식 문서 본문을 읽은 근거가 아니다. 글에서는 대기열 창 Printer 메뉴에 해당 항목이 보이면 해제 정도의 조건부로만 쓰고, 공식 근거는 윈도우 10 문서임을 구분할 것."
+      ],
+      "sourceUrls": [
+        "https://support.microsoft.com/help/4496876",
+        "https://support.brother.com/g/b/faqend.aspx?c=gb&lang=en&prod=hl5350dn_eu&faqid=faq00002646_000",
+        "https://epson.com/faq/SPT_C11CC45201~faq-226657"
+      ]
+    }
+  ],
+  "numbers": [
+    {
+      "what": "프린터 전원 끈 뒤 대기 시간(KB 4496876 Step 1)",
+      "value": "약 30초(플러그 뽑은 상태)",
+      "asOf": "조사일 2026-10-10 기준 페이지(게시일 미표기)",
+      "sourceUrl": "https://support.microsoft.com/help/4496876"
+    },
+    {
+      "what": "프린터 전원 끈 뒤 대기 시간(인쇄 대기열 오류 문서 Step 4)",
+      "value": "최소 60초 후 켜고 PC 재시작",
+      "asOf": "조사일 2026-10-10 기준 페이지(게시일 미표기)",
+      "sourceUrl": "https://support.microsoft.com/en-us/windows/hardware/printer/fix-print-job-stuck-in-queue-errors-in-windows"
+    },
+    {
+      "what": "일반 점검 단계 수(KB 4496876)",
+      "value": "7단계 + 맨 앞 Get Help 앱 자동 문제 해결사",
+      "asOf": "조사일 2026-10-10 기준 페이지(게시일 미표기)",
+      "sourceUrl": "https://support.microsoft.com/help/4496876"
+    },
+    {
+      "what": "스풀 폴더 경로",
+      "value": "C:\\Windows\\System32\\spool\\PRINTERS (서비스 중지 후 안의 파일 삭제, 다시 시작)",
+      "asOf": "조사일 2026-10-10 기준 페이지(게시일 미표기)",
+      "sourceUrl": "https://support.microsoft.com/en-us/windows/hardware/printer/fix-print-job-stuck-in-queue-errors-in-windows"
+    },
+    {
+      "what": "Print Spooler 재시작 방법 수(Learn)",
+      "value": "3가지(Services 앱 / 관리자 cmd net stop·net start spooler / 관리자 PowerShell Restart-Service -Name spooler)",
+      "asOf": "문서 ms.date 2026-02-12, updated_at 2026-02-19",
+      "sourceUrl": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/printing/print-spooler-service-not-running"
+    },
+    {
+      "what": "윈도우 10 지원 종료일(대기열 오류 문서가 명시)",
+      "value": "2025-10-14",
+      "asOf": "조사일 2026-10-10 기준 페이지(게시일 미표기)",
+      "sourceUrl": "https://support.microsoft.com/en-us/windows/hardware/printer/fix-print-job-stuck-in-queue-errors-in-windows"
+    },
+    {
+      "what": "HP 공식 기본 점검 단계 수",
+      "value": "4단계(전원 분리 → 기기·공유기 재시작 → 재시도 → 같은 네트워크 확인)",
+      "asOf": "조사일 2026-10-10 기준 페이지(게시일 미표기)",
+      "sourceUrl": "https://support.hp.com/us-en/help/printer/printer-offline"
+    },
+    {
+      "what": "HP 앱 지원 환경",
+      "value": "Windows 10 이상, iOS 14 이상, Android 7.0 이상, macOS 10.14 이상",
+      "asOf": "조사일 2026-10-10 기준 페이지(게시일 미표기)",
+      "sourceUrl": "https://support.hp.com/us-en/help/printer/printer-offline"
+    },
+    {
+      "what": "Epson FAQ USB 케이블 규격(XP-800 단일 모델, 윈도우 8 이하 문서)",
+      "value": "차폐 AB 케이블, 길이 6.5피트(2m) 이하",
+      "asOf": "조사일 2026-10-10 기준 페이지(게시일 미표기)",
+      "sourceUrl": "https://epson.com/faq/SPT_C11CC45201~faq-226657"
+    }
+  ],
+  "dropped": [
+    {
+      "url": "https://support.microsoft.com/help/4496876",
+      "why": "문서 자체는 채택. 단 두 번째 검색 요약이 이 URL 이 프린터 속성 포트 탭에서 IP 갱신을 안내한다고 적은 부분은 WebFetch 2회 결과(IP·포트 단계 없음)와 어긋나 그 단계만 버림."
+    },
+    {
+      "url": null,
+      "why": "검색 요약에만 있던 윈도우 11 에서 오프라인 사용 해제, 포트·IP(WSD → Standard TCP/IP) 변경, 설정 > 시스템 > 문제 해결 경로, HP Function Discovery 서비스·네트워크 프로필 Private 전환 안내 — 공식 본문을 읽은 근거가 없어 버림(URL 없음)."
+    },
+    {
+      "url": null,
+      "why": "Canon 공식 문서(ART137255)는 페치 시 CSS 오류 화면만 반환돼 본문을 못 읽고 소스에서 제외(raw 에 전체 URL 없음). helpdeskgeek·geekrewind 등 서드파티 블로그도 본문 미열람으로 제외."
+    },
+    {
+      "url": null,
+      "why": "HP Print and Scan Doctor 의 취약점·지원 종료 설명은 다른 HP 페이지를 페치하지 못한 검색 요약뿐 — 미확인이라 버림. 확인된 건 Retired Product 라벨뿐."
+    }
+  ],
+  "cannotCover": [
+    "윈도우 11 에서 프린터 오프라인 사용 체크 해제로 해결된다는 단정 금지 — 공식 근거는 윈도우 10 탭과 Brother 윈도우 10 이하뿐, 윈도우 11 에 그 메뉴가 있다는 공식 근거 없음.",
+    "윈도우 11 에서 일시 중지(Pause Printing) 해제 위치 — MS 문서는 윈도우 10 탭에만 언급.",
+    "IP 주소·포트 변경(WSD → Standard TCP/IP 등) 절차 — 공식 근거 없음. KB 4496876 에는 없다.",
+    "드라이버 완전 제거·재설치 상세 절차(장치 관리자, 인쇄 서버 속성, 제조사 최신 드라이버) — 공식 근거 없음. 제거 후 재추가와 드라이버 업데이트 한 줄까지만.",
+    "설정 > 시스템 > 문제 해결 > 기타 문제 해결사 > 프린터 실행 경로 — KB 는 Get Help 앱으로만 안내. 설정 경로는 공식 미확인.",
+    "HP Function Discovery 서비스 점검, 네트워크 프로필 Private 전환, Canon 별도 절차 — 공식 미확인(HP 페이지 본문에 없음, Canon 본문 못 읽음).",
+    "윈도우 11 24H2·25H2 에서 오프라인 원인이 달라졌는지(WSD·IPP 클래스 드라이버, Windows protected print mode) — 조사 안 함.",
+    "한국어 화면의 정확한 메뉴·버튼 문구 — 영문 UI 기준 요약만 있어 대조 못 함. 윈도우 11 제거 버튼 표기도 요약 간 어긋남.",
+    "각 MS·제조사 문서의 정확한 게시·개정일(Learn 제외) — 페이지에 날짜 없음. 어느 원인이 가장 흔한지 같은 통계·확률 수치도 자료 없음.",
+    "문서 간 전원 대기 시간 차이(30초 vs 60초) — 어느 쪽이 맞다고 단정 불가, 병기만."
+  ],
+  "songs": []
+}

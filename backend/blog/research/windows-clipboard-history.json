@@ -1,0 +1,222 @@
+{
+  "keyword": "윈도우 클립보드 기록 Win+V",
+  "categoryId": "hangeut-trend",
+  "notes": "말할 수 있는 것: Win+V 로 켜기, 25개·항목당 4MB 한도, 재시작 시 고정 외 삭제, 고정·삭제·전체 지우기, 같은 계정 동기화와 정책으로 끄기, 공유 PC 민감정보 주의가 공식 문서(지원 문서·Learning Center·Policy CSP)로 확인됨.\n일반 텍스트 붙여넣기는 PowerToys Advanced Paste 근거만 있고, 핀 조작법·'...' 메뉴 텍스트로 붙여넣기·Ctrl+Shift+V·동기화 용량/보존·저장 위치/암호화는 근거가 없어 쓸 수 없음. 2018 포럼 수치(1MB/5MB, 100KB·12시간)는 폐기.\n한국어 지원 문서는 요약본이라 UI 라벨을 큰따옴표로 인용하지 말고, 지원 문서 2건은 게시일이 없어 '2026년 최신' 같은 서술을 피한다(Learning Center 2026-04-09만 날짜 확인).",
+  "sources": [
+    {
+      "title": "클립보드 사용 (Windows 지원, 한국어판)",
+      "url": "https://support.microsoft.com/ko-kr/windows/apps/using-the-clipboard",
+      "host": "support.microsoft.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "[WebFetch 추출본 — 페이지 원문을 소형 모델이 요약·인용한 결과이며 문장 그대로의 전문은 아님. 페이지에 게시일 없음, 푸터 저작권 2026] 클립보드 기록 켜기: Windows 로고 키 + V를 누른 뒤 '켜기'를 선택합니다. 설정 경로: 시작 > 설정 > 시스템 > 클립보드. 기기 간 동기화(Windows 11): '디바이스 전체에서 클립보드 기록' 토글을 켭니다. 동기화 방식은 '복사하는 텍스트를 자동으로 동기화'와 '복사한 텍스트를 수동으로 동기화' 중에서 고를 수 있고, 수동 동기화를 선택하면 클립보드 기록 창(Windows 로고 키 + V)에서 항목별 동기화 버튼을 눌러야 클라우드에 올라갑니다. 모든 기기에서 같은 Microsoft 계정 또는 회사 계정으로 로그인해야 합니다. 기록 지우기: 고정한 항목을 제외하고 모두 지우려면 '클립보드 지우기 데이터' 영역에서 '지우기'를 선택하거나, 기록 창 상단의 '모두 지우기'를 선택합니다. 개별 항목은 항목 옆의 '...'을 누른 뒤 '삭제'를 선택합니다. 문제 해결: 기록이 보이지 않으면 기능이 켜져 있는지 확인하고, 고정한 항목을 제외하고 PC를 다시 시작하면 기록이 지워집니다. 동기화가 안 되면 같은 계정 로그인 여부를 확인하며 Windows 10에서는 최신 업데이트가 필요합니다. 항목당 크기 제한은 4MB이며 지원 형식은 텍스트, HTML, 비트맵입니다. 기록은 25개 항목으로 제한되고 새 항목이 들어오면 고정하지 않은 오래된 항목부터 자동 제거됩니다. 이 페이지에 따르면 Windows 10 지원은 2025년 10월 14일에 종료되었습니다. 이 페이지에는 일반 텍스트로 붙여넣기 관련 내용이 없고 항목 고정의 구체적 단계도 설명되어 있지 않습니다."
+    },
+    {
+      "title": "Using the clipboard (Windows 지원, 영문판 help/4464215)",
+      "url": "https://support.microsoft.com/en-us/help/4464215",
+      "host": "support.microsoft.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "[WebFetch 추출본 — 소형 모델의 요약. 최종 URL·게시일은 페이지에 표시되지 않음, 푸터 '© Microsoft 2026'] Turning on clipboard history: Press Windows logo key + V, then select Turn on. Settings path: Start > Settings > System > Clipboard (the page also has an 'Open Clipboard settings' link). Syncing across devices: on Windows 11, turn on the 'Clipboard history across your devices' toggle (on Windows 10 the toggle is under 'Sync across devices'). Windows 11 offers 'Automatically sync text that I copy' or manual sync, where you select the sync button on an item in Win+V. Sync uses the same Microsoft or work account on all devices. Windows 10 sync requires the latest Windows 10 update. Clearing history: in Settings, under 'Clear clipboard data', select Clear — this clears everything except pinned items, on the device and in the cloud. In the Win+V panel, use the 'Clear all' option. Deleting one item: press Win+V, select See more (...) next to the item, then select Delete. Limits and behavior: history is limited to 25 copied entries; older unpinned items are removed automatically. Each item can be up to 4 MB. Text, HTML, and Bitmap formats are supported. History is cleared on PC restart, except for pinned items. The page does not describe pinning steps, paste as plain text, or emoji features."
+    },
+    {
+      "title": "Microsoft Windows Learning Center — How to Use Windows 11 Clipboard History",
+      "url": "https://www.microsoft.com/en-us/windows/learning-center/how-to-use-clipboard-history-in-windows-11",
+      "host": "www.microsoft.com",
+      "tier": "official",
+      "publishedAt": "2026-04-09",
+      "body": "[WebFetch 추출본 — 페이지 날짜 April 09, 2026 표시] Turning on and opening: 'Press Windows logo key + V, then select Turn on.' 'Use Windows logo key + V while writing to open clipboard history without leaving your current app.' To clear all saved items, press Windows logo key + V and select 'Clear all.' Standard shortcuts listed: Ctrl + C copy, Ctrl + X cut, Ctrl + V 'Paste the most recent item on the clipboard', Ctrl + A select all. Syncing across devices: Go to 'Start > Settings > System > Clipboard', turn on 'Clipboard history across your devices', select 'Automatically sync text that I copy.' 'Clipboard sync is tied to your Microsoft account or work account.' Footnote: 'This feature is only available if your Microsoft account is syncing with Windows.' Pinning: 'Pinning keeps a copied item saved in your clipboard list even after restarting your PC.' Pinned items 'remain available until you remove them.' Deleting and clearing: 'Settings > System > Clipboard > Clear clipboard data.' 'Clearing the clipboard deletes all unpinned items.' 'Pinned items remain safe until you remove them manually.' Size and content types: supported content includes 'text and images (up to 4 MB)'; the article also says it 'stores what you copy or cut—like text, links, and images.' Privacy: 'Avoid leaving sensitive information in clipboard history on shared devices.' If your organization has IT policies or you want to limit cross-device access, you can turn off clipboard sync. Troubleshooting: confirm 'Settings > System > Clipboard > Clipboard history > On'; some apps don't register copies right away; on managed work PCs, IT policies may limit clipboard features. Not in the source: item count limit, emoji/GIF/symbols tabs, deleting a single unpinned item, whether unpinned items survive a restart."
+    },
+    {
+      "title": "AllowCrossDeviceClipboard — Policy CSP - Privacy (Microsoft Learn)",
+      "url": "https://learn.microsoft.com/en-us/windows/client-management/mdm/policy-csp-privacy",
+      "host": "learn.microsoft.com",
+      "tier": "official",
+      "publishedAt": "2026-09-10",
+      "body": "[WebFetch 추출본 — 페이지 전체 247,585자 중 앞 100,000자만 읽음. ms.date 2026-09-10, updated_at 2026-09-23] AllowCrossDeviceClipboard. Description (verbatim): 'This policy setting determines whether Clipboard contents can be synchronized across devices. If you enable this policy setting, Clipboard contents are allowed to be synchronized across devices logged in under the same Microsoft account or Microsoft Entra account. If you disable this policy setting, Clipboard contents can't be shared to other devices. Policy change takes effect immediately. Most restrictive value is 0 to not allow cross-device clipboard.' Supported values: 0 = Not allowed; 1 (Default) = Allowed. Group Policy / ADMX: Name AllowCrossDeviceClipboard; Friendly Name 'Allow Clipboard synchronization across devices'; Location Computer Configuration; Path System > OS Policies; Registry Key Name Software\\Policies\\Microsoft\\Windows\\System; Registry Value Name AllowCrossDeviceClipboard; ADMX File OSPolicy.admx. The page has no explicit 'Added in' line; Applicable OS: Windows 10, version 1809 [10.0.17763] and later. AllowClipboardHistory was not in the portion read, so its presence on this page is unconfirmed."
+    },
+    {
+      "title": "Windows 10 버전 1809 새 기능 — Cloud Clipboard (Microsoft Learn, 보관 문서)",
+      "url": "https://learn.microsoft.com/en-us/windows/whats-new/whats-new-windows-10-version-1809",
+      "host": "learn.microsoft.com",
+      "tier": "official",
+      "publishedAt": "2023-01-31",
+      "body": "[WebFetch 원문 수신 — 보관(archived) 문서, canonical: learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-10/whats-new/whats-new-windows-10-version-1809, ms.date 2023-01-31] ## Cloud Clipboard — 'Cloud clipboard helps users copy content between devices. It also manages the clipboard history so that you can paste your old copied data. You can access it by using Windows+V. Set up Cloud clipboard: 1. Go to Windows Settings and select Systems. 2. On the left menu, click on Clipboard. 3. Turn on Clipboard history. 4. Turn on Sync across devices. Choose whether or not to automatically sync copied text across your devices.' (Windows 10 1809 기준 문서이며 현행 Windows 11 메뉴 이름과 다름. 같은 페이지의 나머지는 Autopilot·BitLocker 등 무관한 항목.)"
+    },
+    {
+      "title": "클립보드 형식 - Win32 apps (Microsoft Learn 한국어판) — 클라우드 클립보드 및 클립보드 기록 형식",
+      "url": "https://learn.microsoft.com/ko-kr/windows/win32/dataxchg/clipboard-formats",
+      "host": "learn.microsoft.com",
+      "tier": "official",
+      "publishedAt": "2018-05-31",
+      "body": "[WebFetch 원문 수신 — 기계번역(ms.translationtype: MT) 한국어판, ms.date 2018-05-31, updated_at 2026-07-05] ## 클라우드 클립보드 및 클립보드 기록 형식 — '일부 버전의 Windows에는 최근 클립보드 데이터 항목의 기록을 유지하고 사용자의 디바이스 간에 동기화할 수 있는 Cloud Clipboard가 포함됩니다. 애플리케이션이 클립보드에 배치하는 데이터를 클립보드 기록에 포함하거나 다른 디바이스와 동기화하지 않으려면 애플리케이션은 이름이 Windows 시스템에 알려진 등록된 특정 클립보드 형식으로 데이터를 배치하여 이 동작을 제어할 수 있습니다.' ExcludeClipboardContentFromMonitorProcessing: '모든 클립보드 형식이 클립보드 기록에 포함되거나 사용자의 다른 디바이스와 동기화되지 않도록 이 형식으로 클립보드에 데이터를 배치합니다.' CanIncludeInClipboardHistory: '모든 클립보드 형식이 클립보드 기록에 포함되지 않도록 이 형식의 직렬화된 DWORD 값을 클립보드에 배치하거나 ... 명시적으로 요청하기 위해 1의 값을 배치합니다. 사용자의 다른 디바이스에 대한 동기화에는 영향을 주지 않습니다.' CanUploadToCloudClipboard: '모든 클립보드 형식이 사용자의 다른 디바이스와 동기화되지 않도록 클립보드에 직렬화된 DWORD 값을 0으로 배치하거나 ... 다른 디바이스에 동기화하도록 명시적으로 요청하기 위해 하나의 값을 배치합니다. 로컬 디바이스의 클립보드 기록에는 영향을 주지 않습니다.'"
+    },
+    {
+      "title": "Advanced Paste Tool for Clipboard Management in PowerToys (Microsoft Learn)",
+      "url": "https://learn.microsoft.com/en-us/windows/powertoys/advanced-paste",
+      "host": "learn.microsoft.com",
+      "tier": "official",
+      "publishedAt": "2026-08-25",
+      "body": "[WebFetch 원문 수신 — ms.date 2026-08-25] PowerToys Advanced Paste converts clipboard content into the format you need. You can paste as plain text, Markdown, JSON, or files such as .txt, .html, and .png by using either the Advanced Paste window or direct keyboard shortcuts. Non-AI paste actions run locally on your device. Paste with AI is optional (off by default). 'Open the Advanced Paste window with the activation shortcut (default: Win+Shift+V).' Settings table: 'Open Advanced Paste window — The default shortcut is Win+Shift+V.' 'Access Clipboard History — Show and select previously copied items from the Advanced Paste window.' 'Paste as plain text directly — Paste plain text without opening the Advanced Paste window. The default shortcut is Ctrl+Win+Alt+V.' ### Paste as Plain Text — 'enables you to paste text stored in your clipboard, excluding any text-formatting, by using a quick key shortcut. The feature replaces any formatting included with the clipboard text with an unformatted version of the text.' 'Paste as Plain Text is a feature that runs locally and doesn't use AI.' Important: 'You can set Ctrl+V as an activation shortcut. This choice isn't recommended, as overriding this shortcut might have unintended consequences.'"
+    }
+  ],
+  "claims": [
+    {
+      "claim": "Win+V로 클립보드 기록을 켜서 쓴다. 기록 기능(클라우드 클립보드)은 Windows 10 버전 1809에서 도입됐고, 설정 > 시스템 > 클립보드 경로에서도 같은 기능을 확인할 수 있다.",
+      "grade": "confirmed",
+      "evidence": [
+        "Windows 로고 키 + V를 누른 뒤 켜는 선택지를 고르면 기록이 켜진다. 영문 원문: 'Press Windows logo key + V, then select Turn on.' (Learning Center 2026-04-09, 지원 문서 영문판 동일, 한국어판도 같은 취지)",
+        "설정 경로: Start > Settings > System > Clipboard (영문 원문). 설정에서 Clipboard history 가 On 인지 확인하라는 문제 해결 안내가 Learning Center 에 있음",
+        "글 쓰는 중에도 Win+V 로 현재 앱을 벗어나지 않고 기록을 열 수 있다 (Learning Center)",
+        "Ctrl+V 는 클립보드의 가장 최근 항목을 붙여넣는다 (Learning Center 원문 'Paste the most recent item on the clipboard')",
+        "Cloud clipboard 가 Windows 10 버전 1809 문서(보관본, ms.date 2023-01-31)에 'Windows+V 로 접근'으로 소개됨. 단 1809 당시 메뉴 이름·경로(Sync across devices 등)는 현행 Windows 11 과 다름",
+        "Policy CSP 문서의 적용 OS 가 Windows 10 버전 1809 [10.0.17763] 이상 — 도입 시점과 일치"
+      ],
+      "sourceUrls": [
+        "https://support.microsoft.com/en-us/help/4464215",
+        "https://support.microsoft.com/ko-kr/windows/apps/using-the-clipboard",
+        "https://www.microsoft.com/en-us/windows/learning-center/how-to-use-clipboard-history-in-windows-11",
+        "https://learn.microsoft.com/en-us/windows/whats-new/whats-new-windows-10-version-1809",
+        "https://learn.microsoft.com/en-us/windows/client-management/mdm/policy-csp-privacy"
+      ]
+    },
+    {
+      "claim": "기록은 25개, 항목당 4MB 한도 안에서 텍스트·HTML·비트맵을 저장한다. 가득 차면 고정하지 않은 오래된 항목부터 자동으로 빠지고, PC를 다시 시작하면 고정한 항목 외에는 지워진다.",
+      "grade": "confirmed",
+      "evidence": [
+        "기록 한도 25 copied entries, 가득 차면 고정하지 않은 오래된 항목부터 자동 제거 (지원 문서 영문판·한국어판 일치)",
+        "항목당 최대 4 MB, 지원 형식 Text·HTML·Bitmap (지원 문서 영문판·한국어판 일치)",
+        "Learning Center(2026-04-09)도 'text and images (up to 4 MB)' 로 항목당 4MB 를 확인. 단 이 페이지에는 25개 한도·재시작 시 비고정 항목 동작 설명이 없음 (25개와 재시작 삭제는 지원 문서 2건에만 근거)",
+        "PC 재시작 시 고정 항목 제외하고 기록이 지워짐 (지원 문서 영문 원문 'History is cleared on PC restart, except for pinned items')",
+        "형식 표현 차이: 지원 문서는 Text·HTML·Bitmap, Learning Center 는 'text, links, and images' — 모순인지 표현 차이인지 미확인이므로 글에서는 '텍스트와 이미지' 수준으로만 쓴다"
+      ],
+      "sourceUrls": [
+        "https://support.microsoft.com/en-us/help/4464215",
+        "https://support.microsoft.com/ko-kr/windows/apps/using-the-clipboard",
+        "https://www.microsoft.com/en-us/windows/learning-center/how-to-use-clipboard-history-in-windows-11"
+      ]
+    },
+    {
+      "claim": "항목을 고정하면 재시작 후에도 남고, 전체 지우기는 고정 항목을 제외하며, 개별 항목은 항목 옆 더보기(...) 메뉴에서 삭제한다.",
+      "grade": "confirmed",
+      "evidence": [
+        "Learning Center 원문: 'Pinning keeps a copied item saved in your clipboard list even after restarting your PC.' 고정 항목은 사용자가 직접 지울 때까지 남음 ('Pinned items remain available until you remove them')",
+        "설정의 Clear clipboard data > Clear 는 고정 항목을 제외하고 모두 지우며, 기기와 클라우드 양쪽에서 지운다 (지원 문서 영문판)",
+        "Win+V 패널의 Clear all 로도 전체 삭제 (지원 문서 영문판·Learning Center). Learning Center: 'Clearing the clipboard deletes all unpinned items.'",
+        "개별 삭제: Win+V > 항목 옆 See more (...) > Delete (지원 문서 영문판·한국어판)"
+      ],
+      "sourceUrls": [
+        "https://www.microsoft.com/en-us/windows/learning-center/how-to-use-clipboard-history-in-windows-11",
+        "https://support.microsoft.com/en-us/help/4464215",
+        "https://support.microsoft.com/ko-kr/windows/apps/using-the-clipboard"
+      ]
+    },
+    {
+      "claim": "기기 간 동기화는 같은 Microsoft(또는 회사) 계정으로 로그인한 기기끼리만 되고, 자동·수동 방식을 고를 수 있으며, 설정이나 정책으로 끌 수 있다. 공유 PC의 기록에는 민감 정보를 남기지 말라고 안내한다.",
+      "grade": "confirmed",
+      "evidence": [
+        "Windows 11 토글 영문 원문 'Clipboard history across your devices'. 방식은 'Automatically sync text that I copy' 또는 수동(Win+V 의 항목별 sync 버튼으로 클라우드에 올림)",
+        "동기화는 Microsoft 계정 또는 회사 계정에 묶임, 모든 기기에서 같은 계정 필요. Learning Center 각주: 'This feature is only available if your Microsoft account is syncing with Windows.'",
+        "Windows 10 에서 동기화하려면 최신 Windows 10 업데이트 필요 (지원 문서). Windows 10 지원은 2025년 10월 14일 종료 (한국어판 페이지 안내)",
+        "정책으로 차단 가능: AllowCrossDeviceClipboard, 0 = 허용 안 함 / 1 = 허용(기본값). 같은 Microsoft 계정 또는 Microsoft Entra 계정 기기 간 동기화 (Policy CSP, ms.date 2026-09-10)",
+        "Learning Center 원문: 'Avoid leaving sensitive information in clipboard history on shared devices.' 조직 정책이 있거나 기기 간 접근을 줄이고 싶으면 동기화를 끌 수 있고, 관리되는 회사 PC 는 IT 정책이 클립보드 기능을 제한할 수 있음",
+        "앱 개발자는 특정 클립보드 형식(ExcludeClipboardContentFromMonitorProcessing 등)으로 데이터를 두어 기록·동기화에서 빠지게 할 수 있음 (Win32 문서, 개발자용·기계번역본). 어떤 앱이 실제로 쓰는지는 문서에 없음"
+      ],
+      "sourceUrls": [
+        "https://support.microsoft.com/en-us/help/4464215",
+        "https://support.microsoft.com/ko-kr/windows/apps/using-the-clipboard",
+        "https://www.microsoft.com/en-us/windows/learning-center/how-to-use-clipboard-history-in-windows-11",
+        "https://learn.microsoft.com/en-us/windows/client-management/mdm/policy-csp-privacy",
+        "https://learn.microsoft.com/ko-kr/windows/win32/dataxchg/clipboard-formats"
+      ]
+    },
+    {
+      "claim": "서식 없이 붙여넣기는 PowerToys Advanced Paste 문서에 근거가 있다. Windows 기본 Win+V 동작으로 확인된 방법은 아니다.",
+      "grade": "confirmed",
+      "evidence": [
+        "PowerToys Advanced Paste 는 클립보드 내용을 plain text, Markdown, JSON 등으로 바꿔 붙여넣는다 (Learn, ms.date 2026-08-25)",
+        "일반 텍스트로 직접 붙여넣기 기본 단축키는 Ctrl+Win+Alt+V (설정에서 변경 가능한 기본값). Advanced Paste 창 기본 단축키는 Win+Shift+V — Windows 기본 Win+V 와 별개",
+        "Paste as Plain Text 는 로컬에서 실행되며 AI 를 쓰지 않음. 원문: 'replaces any formatting included with the clipboard text with an unformatted version of the text.'",
+        "Windows 기본 지원 문서 2건(영문·한국어)에는 일반 텍스트 붙여넣기 설명이 없다고 명시됨 (조사자 추출 메모) — 즉 기본 기능의 존재 여부는 이 자료로 판단 불가"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/windows/powertoys/advanced-paste",
+        "https://support.microsoft.com/en-us/help/4464215",
+        "https://support.microsoft.com/ko-kr/windows/apps/using-the-clipboard"
+      ]
+    }
+  ],
+  "numbers": [
+    {
+      "what": "기록 보관 항목 수 한도",
+      "value": "25개 (가득 차면 고정하지 않은 오래된 항목부터 제거)",
+      "asOf": "게시일 미표기, 푸터 저작권 2026",
+      "sourceUrl": "https://support.microsoft.com/en-us/help/4464215"
+    },
+    {
+      "what": "항목당 최대 크기",
+      "value": "4MB",
+      "asOf": "지원 문서 푸터 2026 / Learning Center 2026-04-09",
+      "sourceUrl": "https://www.microsoft.com/en-us/windows/learning-center/how-to-use-clipboard-history-in-windows-11"
+    },
+    {
+      "what": "지원 형식(지원 문서 표기)",
+      "value": "텍스트·HTML·비트맵 (Learning Center 표기는 텍스트·링크·이미지)",
+      "asOf": "게시일 미표기, 푸터 저작권 2026",
+      "sourceUrl": "https://support.microsoft.com/en-us/help/4464215"
+    },
+    {
+      "what": "클립보드 기록 도입 버전",
+      "value": "Windows 10 버전 1809 (10.0.17763)",
+      "asOf": "보관 문서 ms.date 2023-01-31",
+      "sourceUrl": "https://learn.microsoft.com/en-us/windows/whats-new/whats-new-windows-10-version-1809"
+    },
+    {
+      "what": "Windows 10 지원 종료일(한국어 지원 문서 안내)",
+      "value": "2025-10-14",
+      "asOf": "게시일 미표기, 푸터 저작권 2026",
+      "sourceUrl": "https://support.microsoft.com/ko-kr/windows/apps/using-the-clipboard"
+    },
+    {
+      "what": "AllowCrossDeviceClipboard 정책 값",
+      "value": "0 = 허용 안 함, 1 = 허용(기본값)",
+      "asOf": "ms.date 2026-09-10",
+      "sourceUrl": "https://learn.microsoft.com/en-us/windows/client-management/mdm/policy-csp-privacy"
+    },
+    {
+      "what": "PowerToys Advanced Paste 창 기본 단축키",
+      "value": "Win+Shift+V",
+      "asOf": "ms.date 2026-08-25",
+      "sourceUrl": "https://learn.microsoft.com/en-us/windows/powertoys/advanced-paste"
+    },
+    {
+      "what": "PowerToys 일반 텍스트 직접 붙여넣기 기본 단축키",
+      "value": "Ctrl+Win+Alt+V",
+      "asOf": "ms.date 2026-08-25",
+      "sourceUrl": "https://learn.microsoft.com/en-us/windows/powertoys/advanced-paste"
+    }
+  ],
+  "dropped": [
+    {
+      "url": "https://learn.microsoft.com/en-us/archive/msdn-technet-forums/bf74f4e6-383a-4c27-b21e-cb2a169e55ce",
+      "why": "2018-12-24 MSDN/TechNet 보관 포럼 글(Windows 10 1809 기준, 제품 문서 아님). 항목당 1MB·합계 5MB, 동기화 100KB·12시간 등 수치가 현행 공식 문서(항목당 4MB)와 어긋나고 현행 여부 불명이라 본문 근거에서 제외. 이 수치와 '기본값 꺼짐', 핀 아이콘 클릭 서술, 2019 사용자 비밀번호 평문 보관 제보는 글에 쓰지 않는다."
+    }
+  ],
+  "cannotCover": [
+    "핀(고정) 아이콘 위치와 누르는 순서 — 현행 공식 문서에 단계 설명 없음(고정하면 유지된다는 사실까지만 쓴다)",
+    "Win+V 창 항목의 '...' 메뉴 안 '텍스트로 붙여넣기' 버튼 — 공식 근거 없음(검색 스니펫만)",
+    "Ctrl+Shift+V 일반 텍스트 붙여넣기 — 본문 미열람, 근거 없음. Win+Shift+V 를 Windows 기본 일반 텍스트 붙여넣기라고 쓰는 것도 금지(공식 문서상 PowerToys Advanced Paste 창 단축키)",
+    "일반 텍스트 붙여넣기를 Win+V 기본 기능으로 소개하는 것 — 지원 문서에 설명이 없다는 것만 확인됨. PowerToys 근거로만 쓴다",
+    "동기화 항목의 용량 한도·보존 시간·동기화 대상(텍스트 외 이미지 포함 여부) — 현행 문서에 없음. 2018 포럼의 100KB·12시간·1MB·5MB 는 옛 수치라 쓰지 않는다",
+    "저장 위치·암호화 여부·원격 접근 가능성 — 공식 문서에 없음. '안전하다/위험하다' 단정 금지",
+    "기록 기능의 기본값(꺼짐 여부) — 현행 문서에 직접 서술 없음(2018 포럼에만 있음). 켜는 방법까지만",
+    "AllowClipboardHistory(기록 자체를 끄는 정책) — Policy CSP 앞 100,000자만 읽어 확인 못 함. AllowCrossDeviceClipboard 만 쓴다",
+    "25개·4MB 상향 시점 등 변경 이력, 지원 문서 2건의 게시·갱신 날짜 — 확인 불가. '최근 늘어났다' 식 서술 금지",
+    "한국어 UI 라벨 큰따옴표 인용 — 한국어 지원 문서는 소형 모델 요약본이고 '지우기' 영역 라벨 어순도 자료끼리 다름(클립보드 지우기 데이터 / 클립보드 데이터 지우기). 영문 원문 인용 또는 의미 풀이로 쓴다",
+    "지원 문서 형식 표기(Text·HTML·Bitmap)와 Learning Center 표기(텍스트·링크·이미지)의 정확한 관계 — 불명확. '텍스트와 이미지' 수준으로만",
+    "특정 비밀번호 관리자 앱이 기록에서 빠지는지 — Win32 문서는 앱이 제외할 수 있는 방법만 설명하고 앱 이름은 없음",
+    "이모지·GIF·기호 탭 — 이 자료 어디에도 근거 없음(Learning Center 에도 없음)",
+    "Windows 10 화면의 상세 조작 — 지원 종료 안내와 동기화에 최신 업데이트가 필요하다는 점만 있음"
+  ],
+  "songs": []
+}
