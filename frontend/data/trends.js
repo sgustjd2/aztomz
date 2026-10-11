@@ -17502,6 +17502,99 @@ window.HANGEUT_DATA = {
       "images": [
         "https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&fname=https%3A%2F%2Ft1.daumcdn.net%2Ftistory_admin%2Fstatic%2Fimages%2FopenGraph%2Fopengraph.png"
       ]
+    },
+    {
+      "id": "halloween-ai-costume-prompt",
+      "type": "트렌드",
+      "cat": "AI 프롬프트",
+      "coverCat": "cat-ai",
+      "collectedAt": "2026-10-11",
+      "analyzedAt": "2026-10-11",
+      "buzz": "화제성 상승 (10월 할로윈 시즌 맞아 셀카→할로윈 코스튬 AI 변환 콘텐츠·툴이 여럿 공개됨)",
+      "stage": "상승",
+      "stageMsg": "할로윈(10/31)이 다가오며 셀카를 마녀·뱀파이어·유령 코스튬으로 바꾸는 AI 변환이 시즌 유행으로 떠오르는 중",
+      "label": "지금 써도 됨",
+      "labelCls": "good",
+      "title": "할로윈 AI 코스튬 변신 프롬프트 — 셀카 한 장으로 분장 완성",
+      "def": "셀카나 아기·반려동물 사진을 마녀·뱀파이어·유령 등 할로윈 코스튬 모습으로 바꿔주는 AI 이미지 프롬프트",
+      "excerpt": "할로윈이 다가오면서 셀카 한 장을 마녀·뱀파이어·유령 분장 모습으로 바꿔주는 AI 사진 생성 콘텐츠와 무료 툴이 동시에 늘고 있다.",
+      "pull": "셀카를 업로드하면 AI가 할로윈 코스튬 사진으로 바꿔드려요. 뱀파이어·마녀 등 11가지 스타일 — X Imagine AI",
+      "verdict": "10월 들어 할로윈 시즌 콘텐츠가 몰리는 건 매년 있는 흐름이지만, 올해는 '직접 분장'보다 '사진 업로드 → AI가 코스튬 합성'이 중심이다. X Imagine AI·OpenArt.ai처럼 무료로 셀카를 할로윈 코스튬 사진으로 바꿔주는 전용 생성기가 9월 말~10월 초 잇따라 공개됐고, 짧은 프롬프트('할로윈 분장시켜줘')만 넣으면 의상·배경이 랜덤으로 섞이는 경우가 많아 원하는 느낌을 위해 의상과 배경을 구체적으로 지정하라는 팁이 공통적으로 나온다. 계절 이벤트에 얹힌 콘텐츠라 과장할 필요 없이 딱 10월 한 달 즐기면 되는 유행이다.",
+      "recs": [
+        [
+          "할로윈 시즌 한정으로 가볍게",
+          "◎",
+          1
+        ],
+        [
+          "의상·배경을 구체적으로 지정",
+          "◎",
+          1
+        ],
+        [
+          "11월 이후까지 우려먹기",
+          "✕",
+          0
+        ]
+      ],
+      "src": [
+        [
+          "X Imagine AI",
+          "https://ximagineai.com/ko/halloween-ai-photo"
+        ],
+        [
+          "OpenArt.ai",
+          "https://openart.ai/ko/blog/couples-halloween-costume-ideas/"
+        ]
+      ],
+      "tags": [
+        "AI프롬프트",
+        "할로윈",
+        "시즌트렌드"
+      ],
+      "video": {
+        "youtube": "dlzWXN6lJbc",
+        "cap": "I tried Gemini AI for Halloween pics (TenorshareOfficial)"
+      },
+      "prompt": "[셀카 → 할로윈 코스튬 변환 프롬프트]\n이 사진 속 인물의 얼굴 특징(눈·코·입 비율, 피부톤, 헤어스타일)은 그대로 유지하고, 다음 조건으로 할로윈 코스튬을 입은 모습으로 바꿔줘.\n- 의상: [마녀 / 뱀파이어 / 유령 / 호박 분장] 중 하나를 명확히 지정 (예: '검은 망토와 챙 넓은 모자를 쓴 마녀 의상')\n- 소품: 지정한 의상에 맞는 소품 1~2개만 (예: 마녀 지팡이, 호박 바구니)\n- 배경: 할로윈 분위기 배경 하나만 지정 (예: '보름달이 뜬 밤, 호박 등이 늘어선 골목')\n- 조명: 주황빛·보라빛이 섞인 은은한 할로윈 조명\n- 분위기: 무섭지 않고 귀엽고 유쾌한 톤으로\n※ '할로윈 분장시켜줘'처럼 짧게만 쓰면 AI가 의상·배경을 임의로 섞어버리니, 의상 하나·배경 하나는 꼭 직접 정해줄 것.",
+      "article": [
+        [
+          "h",
+          "셀카 한 장이면 분장 끝 — 올해 할로윈은 AI로"
+        ],
+        [
+          "p",
+          "할로윈(10/31)이 다가오면서 직접 분장하는 대신 셀카 한 장을 AI로 코스튬 사진으로 바꾸는 콘텐츠가 늘고 있다. 마녀·뱀파이어·유령 같은 클래식 분장을 사진만 올리면 몇 초 안에 합성해주는 방식이다."
+        ],
+        [
+          "h",
+          "짧게 쓰면 랜덤, 구체적으로 쓰면 원하는 그림"
+        ],
+        [
+          "p",
+          "X Imagine AI 같은 전용 생성기는 11가지 스타일을 미리 골라둔 템플릿형이라 쉽다. 반면 챗GPT 등 범용 AI에 '할로윈 분장시켜줘'처럼 짧게만 입력하면 AI가 의상과 배경을 마음대로 섞어버린다는 게 여러 사용자의 공통된 후기다."
+        ],
+        [
+          "q",
+          "의상 하나, 배경 하나 — 두 가지만 직접 정하면 원하는 느낌이 나온다."
+        ],
+        [
+          "h",
+          "한끗 정리"
+        ],
+        [
+          "ul",
+          [
+            "가도 될 때: 10월 한 달, 가족·반려동물 사진으로 가볍게",
+            "주의할 점: 짧은 프롬프트는 랜덤 결과 — 의상·배경을 직접 지정할 것",
+            "꿀팁: 무서운 느낌보다 귀엽고 유쾌한 톤을 추가하면 아기·반려동물 사진에 더 잘 맞음"
+          ]
+        ]
+      ],
+      "images": [
+        "https://media-cdn.ximagineai.com/ximagineai/pages/halloween-ai-photo/panel-examples/halloween-cute-monster-impact.webp",
+        "https://media-cdn.ximagineai.com/ximagineai/pages/halloween-ai-photo/halloween-witch-portrait.png"
+      ]
     }
   ]
 };
