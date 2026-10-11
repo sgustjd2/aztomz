@@ -62,56 +62,57 @@ export function toParts(html) {
     .filter((p) => p.img || p.html);
 }
 
-/* 네이버 모바일 가독성 양식(2026-10-11 사용자 지시 — 참고: 가운데 정렬·짧은 줄·밑줄형 인용구 소제목·기울임 없음).
+/* 네이버 가독성 양식(2026-10-11 사용자 지시 — 기울임 없음 · 왼쪽 정렬 · 짧은 문단. 가운데 정렬+20자 줄끊기는 써 보니 오히려 읽기 불편해 철회).
    티스토리용 HTML 을 네이버에서만 이렇게 바꾼다:
-   · 문단 → 가운데 정렬, 문장마다 줄을 바꾸고 긴 문장은 띄어쓰기에서 약 20자 폭으로 끊음, 문단 사이 빈 줄
+   · 문단 → 문장 2개씩 끊은 짧은 문단(16px), 문단 사이 빈 줄
    · h2 → <blockquote>(붙여넣으면 인용구 컴포넌트) → 발행 전 underlineQuotes() 가 '인용구 4(밑줄형)'로 바꾼다
-   · 콜아웃 blockquote(💡⚠️📌) → 인용구 말고 가운데 문단(기본 인용구 스타일이 큰 기울임체라서)
-   · 목록 → 가운데 '· ' 줄, <strong> → 굵게+강조색, <em>/<i> 는 지운다 */
+   · 콜아웃 blockquote(💡⚠️📌) → 인용구 말고 굵은 머리말 + 문단(기본 인용구 스타일이 큰 기울임체라서)
+   · <strong> → 굵게+강조색, <em>/<i> 는 지운다, 목록은 네이버 목록 그대로(글자만 16px) */
 const ACCENT = '#0b7a5e';
-const center = (inner) => `<p style="text-align:center">${inner}</p>`;
-const BLANK = center('&nbsp;');
+const P = (inner) => `<p style="line-height:1.8"><span style="font-size:16px">${inner}</span></p>`;
+const BLANK = '<p class="sp">&nbsp;</p>';   // class 는 붙여넣기에서 버려진다 — 아래 <p> 변환이 빈 줄을 다시 잡지 않게 구분용
+const VOID = /^<(br|img|hr|wbr)\b/i;
 
-/* 한글 1칸, 그 밖의 글자 0.55칸으로 세어 maxW 를 넘기 전에 띄어쓰기에서 <br>. 문장 끝(한글/닫는 괄호 뒤 . ? !)은 항상 줄바꿈.
-   링크·코드 안에서는 끊지 않는다. ponytail: 폭은 글자 수 근사 — 실제 렌더 폭을 재지 않음. */
-export function wrapLines(inner, maxW = 20) {
-  let out = '', w = 0, depth = 0;
+/* 문단을 문장 per 개씩 끊는다. 문장 끝 = 한글/닫는 괄호 뒤 . ? ! — 태그(굵게·링크 등)가 열린 채로는 끊지 않고 닫힌 뒤에 끊는다. */
+export function chunkSentences(inner, per = 2) {
+  const chunks = [];
+  let cur = '', n = 0, depth = 0, due = false;
   for (const t of inner.match(/<[^>]+>|[^<\s]+|\s+/g) || []) {
     if (t[0] === '<') {
-      if (/^<(a|code)\b/i.test(t)) depth++;
-      else if (/^<\/(a|code)>/i.test(t)) depth--;
-      out += t;
-      continue;
+      if (/^<\//.test(t)) depth--;
+      else if (!VOID.test(t) && !t.endsWith('/>')) depth++;
+      cur += t;
+    } else {
+      if (due && !depth && /^\s+$/.test(t)) { chunks.push(cur.trim()); cur = ''; due = false; continue; }
+      cur += t;
+      if (/([ㄱ-힣]|\))[.?!]["'”’)]*$/.test(t) && ++n >= per) { due = true; n = 0; }
     }
-    if (/^\s+$/.test(t)) { if (w) out += ' '; continue; }
-    const tw = [...t].reduce((s, ch) => s + (/[ㄱ-힣]/.test(ch) ? 1 : 0.55), 0);
-    if (w && w + tw > maxW && !depth) { out = out.replace(/ $/, '') + '<br>'; w = 0; }
-    out += t;
-    w += tw + 0.3;
-    if (!depth && /([ㄱ-힣]|\))[.?!]["'”’)]*$/.test(t)) { out += '<br>'; w = 0; }
   }
-  return out.replace(/<br>\s*/g, '<br>').replace(/(<br>|\s)+((?:<\/[^>]+>)*)$/, '$2');
+  if (cur.trim()) chunks.push(cur.trim());
+  return chunks;
 }
 
 export function naverize(html) {
+  const body = (inner) => chunkSentences(inner).map(P).join(BLANK);
   const callout = (inner) => {
     const i = inner.indexOf(' — ');
-    return i < 0 ? `${BLANK}${center(wrapLines(inner))}${BLANK}`
-      : `${BLANK}${center(`<b>${inner.slice(0, i)}</b>`)}${center(wrapLines(inner.slice(i + 3)))}${BLANK}`;
+    return i < 0 ? `${BLANK}${body(inner)}${BLANK}`
+      : `${BLANK}${P(`<b>${inner.slice(0, i)}</b>`)}${body(inner.slice(i + 3))}${BLANK}`;
   };
-  const list = (items, ordered) => items.map((it, n) => center(wrapLines(`${ordered ? `${n + 1}.` : '·'} ${it}`))).join('') + BLANK;
-  const h = html
+  return html
     .replace(/<\/?(em|i)>/g, '')
     .replace(/<hr\b[^>]*>\s*(?=<h2)/g, '')
     .replace(/<strong>([\s\S]*?)<\/strong>/g, `<b><span style="color:${ACCENT}">$1</span></b>`)
     .replace(/<blockquote\b[^>]*>([\s\S]*?)<\/blockquote>/g, (_, inner) => callout(inner.replace(/<\/?p>/g, '').trim()))
-    .replace(/<h3>([\s\S]*?)<\/h3>/g, (_, t) => center(`<b>${t}</b>`))
-    .replace(/<(ul|ol)>([\s\S]*?)<\/\1>/g, (_, tag, body) => list([...body.matchAll(/<li>([\s\S]*?)<\/li>/g)].map((m) => m[1].trim()), tag === 'ol'))
-    .replace(/<p>([\s\S]*?)<\/p>/g, (_, t) => center(wrapLines(t.trim())) + BLANK)
-    .replace(/<p style="font-size:[^"]*">([\s\S]*?)<\/p>/g, (_, t) => center(`<span style="font-size:13px;color:#6b7280">${t}</span>`))
-    .replace(/<h2>([\s\S]*?)<\/h2>/g, (_, t) => `${BLANK}<blockquote><p style="text-align:center">${t}</p></blockquote>`);   // <p> 변환 뒤에 — 인용구 안 문단은 그대로
-  return h.replace(new RegExp(`(${BLANK.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\s*){2,}`, 'g'), BLANK);
+    .replace(/<h3>([\s\S]*?)<\/h3>/g, (_, t) => P(`<b>${t}</b>`))
+    .replace(/<li>([\s\S]*?)<\/li>/g, (_, t) => `<li><span style="font-size:16px">${t.trim()}</span></li>`)
+    .replace(/<\/(ul|ol)>/g, `</$1>${BLANK}`)
+    .replace(/<p>([\s\S]*?)<\/p>/g, (_, t) => body(t.trim()) + BLANK)
+    .replace(/<p style="font-size:[^"]*">([\s\S]*?)<\/p>/g, (_, t) => `<p><span style="font-size:13px;color:#6b7280">${t}</span></p>`)
+    .replace(/<h2>([\s\S]*?)<\/h2>/g, (_, t) => `${BLANK}<blockquote><p>${t}</p></blockquote>`)   // <p> 변환 뒤에 — 인용구 안 문단은 그대로
+    .replace(/(<p class="sp">&nbsp;<\/p>\s*){2,}/g, BLANK);
 }
+
 
 /* 붙여넣은 인용구(= h2 소제목)를 '인용구 4(밑줄형)'로 바꾼다. 기본 인용구는 큰 기울임체라 하나라도 못 바꾸면 발행을 멈춘다.
    셀렉터는 2026-10-11 실측(인용구를 클릭하면 뜨는 컨텍스트 툴바 button[data-name=quotation-layout]). */
@@ -377,13 +378,15 @@ function selftest() {
     && !parts[3].html.includes('iframe');
   console.log(ok ? '✓ toParts selftest' : `✗ toParts selftest: ${JSON.stringify(parts)}`);
   if (!ok) process.exitCode = 1;
-  const nv = naverize('<hr style="x"><h2>소제목</h2><p>첫 문장이에요. 아주 긴 두 번째 문장은 스무 자를 넘기면 띄어쓰기에서 줄이 바뀌어야 해요. '
-    + '<a href="https://ex.com/a">링크 안의 여러 낱말은 끊지 않아요</a> <em>기울임</em></p>'
-    + '<blockquote style="border-left:4px">⚠️ <strong>주의</strong> — 콜아웃 본문이에요.</blockquote><ul><li>하나</li><li>둘</li></ul>');
-  const nvOk = !/<em>|<i>|<hr|border-left/.test(nv) && nv.includes('<blockquote><p style="text-align:center">소제목</p></blockquote>')
-    && nv.includes('첫 문장이에요.<br>') && nv.includes('<a href="https://ex.com/a">링크 안의 여러 낱말은 끊지 않아요</a>')
-    && nv.includes('<b><span style="color:#0b7a5e">주의</span></b>') && nv.includes('· 하나') && !/<blockquote style/.test(nv)
-    && nv.split(/<br>|<\/p>/).every((l) => l.replace(/<[^>]+>/g, '').length <= 40);
+  const nv = naverize('<hr style="x"><h2>소제목</h2><p>첫 문장이에요. 둘째 문장도 짧아요. 셋째 문장은 <strong>굵게 끝나요.</strong> '
+    + '넷째는 <a href="https://ex.com/a">링크 안. 마침표</a>가 있어요. <em>기울임</em></p>'
+    + '<blockquote style="border-left:4px">⚠️ <strong>주의</strong> — 콜아웃 본문이에요.</blockquote><ul><li>하나</li></ul>');
+  const paras = nv.match(/<p style="line-height:1.8"><span style="font-size:16px">[\s\S]*?<\/span><\/p>/g) || [];
+  const nvOk = !/<em>|<i>|<hr|border-left|text-align:center|<blockquote style/.test(nv) && nv.includes('<blockquote><p>소제목</p></blockquote>')
+    && paras.length === 5 && paras[0].includes('첫 문장이에요. 둘째 문장도 짧아요.') && !paras[0].includes('셋째')
+    && paras[1].includes('<b><span style="color:#0b7a5e">굵게 끝나요.</span></b>') && paras[1].includes('<a href="https://ex.com/a">링크 안. 마침표</a>')
+    && paras[3].includes('<span style="color:#0b7a5e">주의</span>') && nv.includes('<li><span style="font-size:16px">하나</span></li>')
+    && !/(<p class="sp">&nbsp;<\/p>\s*){2,}/.test(nv) && !/font-size:16px">&nbsp;/.test(nv);
   console.log(nvOk ? '✓ naverize selftest' : `✗ naverize selftest: ${nv}`);
   if (!nvOk) process.exitCode = 1;
 }

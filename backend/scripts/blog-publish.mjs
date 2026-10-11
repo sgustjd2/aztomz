@@ -180,7 +180,9 @@ export async function makeCover(ctx, spec, id) {
   const icon = (size) => `<img class="ic" style="width:${size}px;height:${size}px" src="${FLUENT(fluent)}"
     onerror="this.outerHTML='<span class=&quot;ic&quot; style=&quot;font-size:${Math.round(size * 0.8)}px;line-height:1&quot;>${emoji}</span>'">`;
   const tag = cat ? esc(cat) : '';
-  const date = esc(spec.analyzedAt || '');
+  // 아래 줄(푸터): 2026-10-11 사용자 지시로 '한끗' 브랜드·날짜 제거. 점수 카드는 '추정치' 고지만 남긴다(점수는 확정 판정이 아님).
+  // 빈 div 도 남겨 둔다 — 제목 블록 축소 계산이 푸터 위치를 기준으로 한다.
+  const FOOT = `<div class="foot">${hasScore ? '추정치' : ''}</div>`;
 
   // 실사진 카드: 위 사진(가로 전체) + 아래 흰 패널에 파랑 제목. 그라데이션 오버레이 없음.
   // (2026-09-25 사용자: 분야색 단색 패널(주황 등)이 별로 → 흰 배경·파랑 글씨로 통일)
@@ -207,7 +209,7 @@ export async function makeCover(ctx, spec, id) {
           <div class="head">${esc(head)}</div>
           ${rest ? `<div class="rest">${esc(rest)}</div>` : ''}
         </div>
-        <div class="foot"><b style="color:#1a56db">한끗</b> ${hasScore ? '추정치 · ' : ''}${date}</div>
+        ${FOOT}
       </div>`;
 
   const BODY = {
@@ -233,7 +235,7 @@ export async function makeCover(ctx, spec, id) {
         ${rest ? `<div class="rest">${esc(rest)}</div>` : ''}
         </div>
         ${icon(230)}
-        <div class="foot"><b>한끗</b> ${date}</div>
+        ${FOOT}
       </div>`,
 
     chat: () => `
@@ -256,7 +258,7 @@ export async function makeCover(ctx, spec, id) {
         <div class="b a">${esc(head)}${rest ? `<small>${esc(rest)}</small>` : ''}</div>
         </div>
         ${icon(150)}
-        <div class="foot"><b>한끗</b> ${date}</div>
+        ${FOOT}
       </div>`,
 
     editorial: () => `
@@ -278,7 +280,7 @@ export async function makeCover(ctx, spec, id) {
         ${rest ? `<div class="rest">${esc(rest)}</div>` : ''}
         </div>
         ${icon(200)}
-        <div class="foot"><b style="color:#fff">한끗</b> ${date}</div>
+        ${FOOT}
       </div>`,
 
     clean: () => `
@@ -303,7 +305,7 @@ export async function makeCover(ctx, spec, id) {
         </div>
         <div class="circle"></div>
         ${icon(210)}
-        <div class="foot"><b style="color:#15171c">한끗</b> ${date}</div>
+        ${FOOT}
       </div>`,
 
     magazine: () => `
@@ -325,7 +327,7 @@ export async function makeCover(ctx, spec, id) {
         ${rest ? `<div class="rest">${esc(rest)}</div>` : ''}
         </div>
         ${icon(210)}
-        <div class="foot"><b style="color:#fff">한끗</b> ${date}</div>
+        ${FOOT}
       </div>`,
 
     score: () => `
@@ -353,7 +355,7 @@ export async function makeCover(ctx, spec, id) {
         ${label ? `<div class="say">“${esc(label)}”</div>` : ''}
         </div>
         ${icon(150)}
-        <div class="foot"><b style="color:#15171c">한끗</b> 추정치 · ${date}</div>
+        ${FOOT}
       </div>`,
   };
 

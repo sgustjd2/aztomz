@@ -69,7 +69,7 @@ frontend/*.html
 - 트렌드 정적 데이터 생성: GitHub Actions `weekly-refresh`가 매주 월요일 06:00 KST에 `backend/scripts/refresh.mjs`를 실행한다. 수동 `workflow_dispatch`도 가능하다.
 - 펄스 데이터: GitHub Actions `pulse-daily`가 매일 07:00 KST에 펄스 데이터를 갱신한다.
 - 블로그 티스토리·네이버 일일 발행: 09:00 `AZ2MZ_Blog_Daily` → `claude -p /blog-daily` 스킬이 4편(T2+N2, 각각 다른 글 — 2026-10-07 토큰 절약으로 5+5에서 축소) 집필·검증 → 12:00·15:00·18:00 `AZ2MZ_Blog_Queue` → `node backend/scripts/blog-queue.mjs`가 플랫폼 교대 순차 발행(20~40분 간격, 각 5편/일). 로그: `backend/out/blog/blog-daily.log`, `blog-queue.log`.
-  - 발행 세부(네이버): 붙여넣기 전 `naverize()`로 모바일 양식 변환 — 가운데 정렬·문장마다 줄바꿈(약 20자 폭)·문단 사이 빈 줄, h2 → 밑줄형 인용구(변환 실패 시 발행 중단), 콜아웃은 가운데 문단, 목록은 가운데 `· ` 줄. 티스토리 본문은 변환 없이 발행한다.
+  - 발행 세부(네이버): 붙여넣기 전 `naverize()`로 가독성 양식 변환 — 왼쪽 정렬·문장 2개씩 짧은 문단(16px·줄간격 1.8)·문단 사이 빈 줄, h2 → 밑줄형 인용구(변환 실패 시 발행 중단), 콜아웃은 굵은 머리말+문단(기울임 인용구 금지), 목록은 네이버 목록 그대로. 티스토리 본문은 변환 없이 발행한다.
   - 발행 창 위치: `backend/scripts/lib/window.mjs`가 정한다 — 기본 `--window-position=230,0`(고정 좌표, 가운데 근사), `BLOG_OFFSCREEN=1`이면 화면 밖, `BLOG_WIN_POS="x,y"`로 덮어쓴다. 티스토리 캡차 대기 시간은 `BLOG_CAPTCHA_MS`(기본 180000ms = 3분).
   - ⚠ 검토 필요: `tools/blog-queue.vbs`(AZ2MZ_Blog_Queue)는 `BLOG_OFFSCREEN`을 설정하지 않으므로, 2026-10-11 커밋(842a8aa) 이후 무인 대기열 창도 화면에 뜬다. 이전에는 `blog-queue.mjs`가 기본값 `BLOG_OFFSCREEN=1`을 자식 프로세스에 강제했다. 화면 밖을 원하면 스케줄 실행 환경에 변수를 넣어야 하며, 어느 쪽으로 할지는 미결정.
 - 로컬 Hermes 운영과 검증 게이트의 자세한 흐름은 [docs/hermes.md](hermes.md)를 따른다.
