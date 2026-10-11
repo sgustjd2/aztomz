@@ -25,6 +25,7 @@
 import { readFile, writeFile } from 'node:fs/promises';
 import { existsSync, readFileSync, writeFileSync, unlinkSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
+import { windowArgs } from './lib/window.mjs';
 import { dirname, join } from 'node:path';
 
 const repoRoot = join(dirname(fileURLToPath(import.meta.url)), '..', '..');
@@ -139,7 +140,7 @@ const main = async () => {
   const pub = await import('./blog-publish.mjs');
   const ctx = await chromium.launchPersistentContext(profileDir, {
     headless: process.env.HEADLESS === '1', viewport: { width: 1440, height: 960 },
-    args: process.env.BLOG_OFFSCREEN === '1' ? ['--window-position=-32000,-32000'] : [],
+    args: windowArgs(),
   });
   if (existsSync(statePath)) await ctx.addCookies(JSON.parse(readFileSync(statePath, 'utf8')).cookies || []);
   const page = ctx.pages()[0] || await ctx.newPage();

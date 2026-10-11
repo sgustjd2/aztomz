@@ -26,6 +26,7 @@
 import { readFile, writeFile } from 'node:fs/promises';
 import { existsSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
+import { windowArgs } from './lib/window.mjs';
 import { dirname, join } from 'node:path';
 import { createInterface } from 'node:readline/promises';
 
@@ -748,7 +749,7 @@ async function publish() {
     headless: process.env.HEADLESS === '1',
     viewport: { width: 1440, height: 960 },
     // blog-queue.mjs(무인)가 부를 땐 창을 화면 밖에 — 게임·작업 중에 튀어나오지 않게.
-    args: process.env.BLOG_OFFSCREEN === '1' ? ['--window-position=-32000,-32000'] : [],
+    args: windowArgs(),
   });
   // 프로필에 안 남는 세션 쿠키를 --login 때 떠둔 storageState 에서 되살린다.
   if (existsSync(statePath)) {
@@ -944,7 +945,7 @@ async function publish() {
     // 안 함, [[tistory-publish-captcha]]) 넉넉히 3분 준다 — 정말 안 풀면 그때 실패로 친다.
     await page.waitForURL(
       (u) => (/\/\d+\/?$/.test(u.pathname) && !u.pathname.includes('/manage/')) || u.pathname.includes('/manage/posts'),
-      { timeout: 180000 }
+      { timeout: Number(process.env.BLOG_CAPTCHA_MS) || 180000 } // ponytail: 기본 3분, 사람이 늦게 오는 날은 BLOG_CAPTCHA_MS=600000
     ).catch(() => { throw new Error('발행 후 이동을 확인하지 못했습니다(캡차 미해결일 수 있음). 티스토리에서 직접 확인하세요.'); });
 
     // /manage/posts/ 로 튕겼으면 page.url() 은 진짜 글 주소가 아니다 — RSS 로 퍼머링크를 확정한다.

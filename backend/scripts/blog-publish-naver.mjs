@@ -25,6 +25,7 @@
 import { readFile, writeFile } from 'node:fs/promises';
 import { existsSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
+import { windowArgs } from './lib/window.mjs';
 import { dirname, join } from 'node:path';
 import { createInterface } from 'node:readline/promises';
 
@@ -59,6 +60,74 @@ export function toParts(html) {
   return clean.split(/<!--(COVER|FIG:[A-Za-z0-9_-]+)-->/)
     .map((s, i) => (i % 2 ? { img: s } : { html: s.trim() }))
     .filter((p) => p.img || p.html);
+}
+
+/* 네이버 모바일 가독성 양식(2026-10-11 사용자 지시 — 참고: 가운데 정렬·짧은 줄·밑줄형 인용구 소제목·기울임 없음).
+   티스토리용 HTML 을 네이버에서만 이렇게 바꾼다:
+   · 문단 → 가운데 정렬, 문장마다 줄을 바꾸고 긴 문장은 띄어쓰기에서 약 20자 폭으로 끊음, 문단 사이 빈 줄
+   · h2 → <blockquote>(붙여넣으면 인용구 컴포넌트) → 발행 전 underlineQuotes() 가 '인용구 4(밑줄형)'로 바꾼다
+   · 콜아웃 blockquote(💡⚠️📌) → 인용구 말고 가운데 문단(기본 인용구 스타일이 큰 기울임체라서)
+   · 목록 → 가운데 '· ' 줄, <strong> → 굵게+강조색, <em>/<i> 는 지운다 */
+const ACCENT = '#0b7a5e';
+const center = (inner) => `<p style="text-align:center">${inner}</p>`;
+const BLANK = center('&nbsp;');
+
+/* 한글 1칸, 그 밖의 글자 0.55칸으로 세어 maxW 를 넘기 전에 띄어쓰기에서 <br>. 문장 끝(한글/닫는 괄호 뒤 . ? !)은 항상 줄바꿈.
+   링크·코드 안에서는 끊지 않는다. ponytail: 폭은 글자 수 근사 — 실제 렌더 폭을 재지 않음. */
+export function wrapLines(inner, maxW = 20) {
+  let out = '', w = 0, depth = 0;
+  for (const t of inner.match(/<[^>]+>|[^<\s]+|\s+/g) || []) {
+    if (t[0] === '<') {
+      if (/^<(a|code)\b/i.test(t)) depth++;
+      else if (/^<\/(a|code)>/i.test(t)) depth--;
+      out += t;
+      continue;
+    }
+    if (/^\s+$/.test(t)) { if (w) out += ' '; continue; }
+    const tw = [...t].reduce((s, ch) => s + (/[ㄱ-힣]/.test(ch) ? 1 : 0.55), 0);
+    if (w && w + tw > maxW && !depth) { out = out.replace(/ $/, '') + '<br>'; w = 0; }
+    out += t;
+    w += tw + 0.3;
+    if (!depth && /([ㄱ-힣]|\))[.?!]["'”’)]*$/.test(t)) { out += '<br>'; w = 0; }
+  }
+  return out.replace(/<br>\s*/g, '<br>').replace(/(<br>|\s)+((?:<\/[^>]+>)*)$/, '$2');
+}
+
+export function naverize(html) {
+  const callout = (inner) => {
+    const i = inner.indexOf(' — ');
+    return i < 0 ? `${BLANK}${center(wrapLines(inner))}${BLANK}`
+      : `${BLANK}${center(`<b>${inner.slice(0, i)}</b>`)}${center(wrapLines(inner.slice(i + 3)))}${BLANK}`;
+  };
+  const list = (items, ordered) => items.map((it, n) => center(wrapLines(`${ordered ? `${n + 1}.` : '·'} ${it}`))).join('') + BLANK;
+  const h = html
+    .replace(/<\/?(em|i)>/g, '')
+    .replace(/<hr\b[^>]*>\s*(?=<h2)/g, '')
+    .replace(/<strong>([\s\S]*?)<\/strong>/g, `<b><span style="color:${ACCENT}">$1</span></b>`)
+    .replace(/<blockquote\b[^>]*>([\s\S]*?)<\/blockquote>/g, (_, inner) => callout(inner.replace(/<\/?p>/g, '').trim()))
+    .replace(/<h3>([\s\S]*?)<\/h3>/g, (_, t) => center(`<b>${t}</b>`))
+    .replace(/<(ul|ol)>([\s\S]*?)<\/\1>/g, (_, tag, body) => list([...body.matchAll(/<li>([\s\S]*?)<\/li>/g)].map((m) => m[1].trim()), tag === 'ol'))
+    .replace(/<p>([\s\S]*?)<\/p>/g, (_, t) => center(wrapLines(t.trim())) + BLANK)
+    .replace(/<p style="font-size:[^"]*">([\s\S]*?)<\/p>/g, (_, t) => center(`<span style="font-size:13px;color:#6b7280">${t}</span>`))
+    .replace(/<h2>([\s\S]*?)<\/h2>/g, (_, t) => `${BLANK}<blockquote><p style="text-align:center">${t}</p></blockquote>`);   // <p> 변환 뒤에 — 인용구 안 문단은 그대로
+  return h.replace(new RegExp(`(${BLANK.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\s*){2,}`, 'g'), BLANK);
+}
+
+/* 붙여넣은 인용구(= h2 소제목)를 '인용구 4(밑줄형)'로 바꾼다. 기본 인용구는 큰 기울임체라 하나라도 못 바꾸면 발행을 멈춘다.
+   셀렉터는 2026-10-11 실측(인용구를 클릭하면 뜨는 컨텍스트 툴바 button[data-name=quotation-layout]). */
+async function underlineQuotes(page, f) {
+  const qs = f.locator('.se-component.se-quotation');
+  for (let i = 0, n = await qs.count(); i < n; i++) {
+    const q = qs.nth(i);
+    if ((await q.getAttribute('class')).includes('quotation_underline')) continue;
+    await q.scrollIntoViewIfNeeded();
+    await q.locator('.se-text-paragraph').first().click();
+    await (await firstVisible(f, '인용구 밑줄형', ['button[data-name="quotation-layout"][data-value="quotation_underline"]'], 4000)).click();
+    await page.waitForTimeout(300);
+  }
+  const left = await f.locator('.se-component.se-quotation:not(.se-l-quotation_underline)').count();
+  if (left) throw new Error(`인용구 ${left}개를 밑줄형으로 못 바꿈 — 기울임 인용구로 나가지 않게 중단(--probe 로 툴바 확인)`);
+  await f.locator('.se-component.se-text .se-text-paragraph').last().click().catch(() => {});
 }
 
 /* 티스토리 카테고리 + 커버 분야(coverSpec.cat) → 네이버 카테고리(2026-09-24 생성: 한끗 트렌드 5개 하위 ·
@@ -160,7 +229,7 @@ async function publish() {
     process.exit(1);
   }
   const meta = JSON.parse(await readFile(metaPath, 'utf8'));
-  const parts = toParts(await readFile(htmlPath, 'utf8'));
+  const parts = toParts(await readFile(htmlPath, 'utf8')).map((p) => (p.html ? { html: naverize(p.html) } : p));
   const posted = existsSync(postedPath) ? JSON.parse(await readFile(postedPath, 'utf8')) : {};
   // 티스토리 배정 글(platform 없음 = tistory)은 올리지 않는다 — 두 블로그에 같은 글이 가지 않게.
   if (meta.platform !== 'naver' && !has('force') && !has('dry') && !has('probe')) {
@@ -181,7 +250,7 @@ async function publish() {
     viewport: { width: 1440, height: 960 },
     permissions: ['clipboard-read', 'clipboard-write'],
     // 대기열(무인)은 창을 화면 밖에 띄운다 — 게임·작업 중에 창이 튀어나오지 않게. headless 는 봇 신호라 안 씀.
-    args: process.env.BLOG_OFFSCREEN === '1' ? ['--window-position=-32000,-32000'] : [],
+    args: windowArgs(),
   });
   if (existsSync(statePath)) await ctx.addCookies(JSON.parse(await readFile(statePath, 'utf8')).cookies || []);
   const page = ctx.pages()[0] || await ctx.newPage();
@@ -224,9 +293,16 @@ async function publish() {
     }
     const len = await f.locator('.se-content').first().innerText().then((t) => t.length);
     if (len < 200) throw new Error(`본문 붙여넣기가 비어 보입니다(${len}자) — 클립보드 권한/에디터 확인`);
+    await underlineQuotes(page, f);
 
     if (has('dry')) {
-      await page.screenshot({ path: join(outDir, `${id}.naver-dry.png`) });
+      await page.mouse.move(700, 500);
+      await page.mouse.wheel(0, -200000);   // 에디터는 자체 스크롤 영역이라 window.scrollTo 가 안 먹는다 — 휠로 맨 위부터
+      for (let i = 0; i < 6; i++) {   // 양식 확인용 — 위에서부터 6장
+        if (i) await page.mouse.wheel(0, 760);
+        await page.waitForTimeout(500);
+        await page.screenshot({ path: join(outDir, `${id}.naver-dry${i ? `-${i}` : ''}.png`) });
+      }
       console.log(`✓ dry: 제목·본문 주입 완료(본문 ${len}자) → 카테고리 "${naverCategory(meta)}" 예정. 스크린샷: backend/out/blog/${id}.naver-dry.png`);
       if (process.stdin.isTTY) await ask('> 확인 후 엔터(창 닫힘): ');
       await ctx.close();
@@ -301,6 +377,15 @@ function selftest() {
     && !parts[3].html.includes('iframe');
   console.log(ok ? '✓ toParts selftest' : `✗ toParts selftest: ${JSON.stringify(parts)}`);
   if (!ok) process.exitCode = 1;
+  const nv = naverize('<hr style="x"><h2>소제목</h2><p>첫 문장이에요. 아주 긴 두 번째 문장은 스무 자를 넘기면 띄어쓰기에서 줄이 바뀌어야 해요. '
+    + '<a href="https://ex.com/a">링크 안의 여러 낱말은 끊지 않아요</a> <em>기울임</em></p>'
+    + '<blockquote style="border-left:4px">⚠️ <strong>주의</strong> — 콜아웃 본문이에요.</blockquote><ul><li>하나</li><li>둘</li></ul>');
+  const nvOk = !/<em>|<i>|<hr|border-left/.test(nv) && nv.includes('<blockquote><p style="text-align:center">소제목</p></blockquote>')
+    && nv.includes('첫 문장이에요.<br>') && nv.includes('<a href="https://ex.com/a">링크 안의 여러 낱말은 끊지 않아요</a>')
+    && nv.includes('<b><span style="color:#0b7a5e">주의</span></b>') && nv.includes('· 하나') && !/<blockquote style/.test(nv)
+    && nv.split(/<br>|<\/p>/).every((l) => l.replace(/<[^>]+>/g, '').length <= 40);
+  console.log(nvOk ? '✓ naverize selftest' : `✗ naverize selftest: ${nv}`);
+  if (!nvOk) process.exitCode = 1;
 }
 
 let chromium;
