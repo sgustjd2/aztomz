@@ -1,6 +1,29 @@
+# 2026-10-11 블로그 배치 — 내일(10-12) 몫 미리, 사람 요청(티스토리 5 + 네이버 5 이상)
+
+claim: 만들지 않음(10-10 선례 — 사용자가 09:00 무인 2+2 도 돌게 함). 10-11 09:00 무인 /blog-daily 가 12:18 지연 시작해 동시 진행 중 → trends 깨끗한 후보(leather-jacket-silhouette·light-padding-jacket·purple-core)는 그쪽 몫, 이쪽은 전부 조사형.
+검색수요 게이트: NAVER_AD 자격증명 없음 → 못 돌림. 티스토리 세션 만료(10-11 03:19) → 사람 `blog-publish.mjs --login` 필요.
+중복 대조: posted 264 + posted-naver 87 + 초안 제목을 핵심어 grep — 아래 10개는 0건.
+## 티스토리 (5)
+- [x] excel-datedif — 엑셀 DATEDIF 날짜 계산 · official 6 · 팩트체크 blocker 4(YTN 인용 "이번 연도"를 "기준 연도"로 바꿈·Mac판 범위 2016까지 확대 — 조사파일도 정정·Lotus 문장 오독·시행일 시제) 교정 · selfreview 무수정 · verify 통과(warn 2)
+- [x] github-ssh-key — 깃허브 SSH 키 등록 · official 12·data 2 · 팩트체크 blocker 1(Mac/Linux 탭 지문 확인 명령 혼동 — Linux 5번은 md5/ssh-add -l, 조사파일 numbers 에 탭 구분 추가) + gh --type 자리표시자 교정 · 조립이 인라인 `https://` 를 URL 로 잡아 문장 수정 · selfreview 무수정 · verify 통과(warn 1 → 제목 "5단계" 삭제)
+- [x] windows-remote-desktop — 윈도우 11 원격 데스크톱 · official 12 · 팩트체크 blocker 2(Android 앱 이름 Windows App — 조사파일 보강, 1809 조건 범위) 교정 · selfreview 3건(근거 없는 문서 날짜 2개 삭제·macOS 스토어) · verify 통과(warn 2)
+- [x] chrome-translate — 크롬 번역 안 될 때 · official 6(독립 3)·data 6(Chromium 소스) · 기기 탭 URL 은 sources 그대로·googlesource 링크 미사용 · 팩트체크 blocker 2("도움말 조치는 새로고침뿐" — translate.google.com 대안 누락, 조사파일도 정정 / desc 가 사이트별 차단까지 공식 도움말로 귀속) 교정 · selfreview 무수정 · verify 통과(warn 2)
+- [x] windows-mobile-hotspot — 윈도우 11 모바일 핫스팟 · official 5 · 집필 후 출처 없는 로컬 PC 서비스명 삭제 · 팩트체크 blocker 2(윈10 대역 "문구 없음" 오기 — 조사파일도 정정, Wi-Fi 재공유를 "공식 문서에 답 없음"으로 씀 → 제목·소제목 교체) 교정 · selfreview 무수정 · verify 통과(warn 2)
+## 네이버 (5)
+- [x] nakji-prep-guide — 낙지 손질법 · official 4→6(2016-10 해수부 선정 자료 추가) · 손질 순서는 만개의레시피 7건 귀속 · 팩트체크 blocker 3(해수부 선정 이력 "2019 한 건뿐" 오류 — 2016-10 확인 후 조사파일 보강, 분량 2~4마리 근거 없음, 공공누리 변경금지 문장 풀어쓰기) 교정 · selfreview 1건(헹굼 횟수 지어냄) · verify 통과(warn 1)
+- [x] medicine-disposal-guide — 폐의약품 버리는 법(서울 기준) · official 3·press 다수 · 팩트체크 blocker 4(미디어허브 시민기자 영상 문구를 서울시 포스터로 오귀속 — 조사파일도 정정, 표 기준 문장, 2025-10 보도 수치 현재형 단정, desc 범위 표시) 교정 · selfreview 2건(근거 없는 약국 수거 중단·캡슐 누락 한정) · verify 통과(warn 2)
+- [x] kitchen-sponge-hygiene — 수세미 교체 주기(해외 연구 기준 — 한국 공식 지침 없음) · official 1·data 7 · 팩트체크 blocker 1("362종은 논문과 다르다" 오류 — 논문이 97% OTU 를 종 경계로 설명, 다른 건 540억 단위뿐 · 조사파일도 정정) + warn 교정 · selfreview 1건(초록 1편 결과 일반화) · verify 통과(warn 1)
+- [x] towel-smell-guide — 수건 냄새 제거 · official 4·data 2 · 집필 후 작가가 만든 확인 기준·범위 밖 LG 서비스 문장 삭제 · 팩트체크 blocker 4(Lam "저자 전원 P&G"→12명 중 10명 — 조사파일도 정정, WA DOH 락스 혼합 범위 축소 — 조사파일도 정정, 근거 없는 "세제 종류보다", 세계일보 인용 대상) 교정 · selfreview 무수정 · verify 통과(warn 2)
+- [x] walnut-storage-guide — 호두 보관법 · official 3(독립) · 팩트체크 통과(warn 10 중 곰팡이 일반기준 준용·껍질째 원문·의약일보 귀속·태그 범위 반영) · selfreview 무수정 · verify 통과 → 세계일보 산패 신호 묶음 오기 1건 고쳐 재검증 통과(warn 2)
+## 사용자 추가 요청(13시대)
+- [x] 티스토리 로그인 후 발행 — 대기열 --only=tistory 수동 실행(5편, 20~40분 간격) · 1편째 /545
+- [x] 네이버 양식 개편(참고: blog.naver.com/lms5348123) — blog-publish-naver.mjs naverize(): 가운데 정렬·문장마다 줄바꿈·약 20자 폭 줄 끊기·문단 사이 빈 줄, h2 → 인용구 4(밑줄형), 콜아웃 → 기울임 없는 가운데 문단, 목록 → 가운데 · 줄, 굵게+강조색 · 공개 화면 기울임 0 확인(towel-smell-guide 224437895779)
+## 마무리
+- [x] 조사 파일·스크립트 로컬 커밋 · blog-queue --list
+
 # 2026-10-10 블로그 배치 — 내일(10-11) 몫 미리, 사람 요청(티스토리 5 + 네이버 5 이상)
 
-claim: `backend/out/blog/.daily-claim-2026-10-11` (10-11 09:00 무인 /blog-daily 양보). 10-10 09:00 /blog-daily(2+2)는 그대로 돈다 → 깨끗한 trends 후보(animal-challenge·poor-upbringing-meme·chaek-eop-kwae)는 그쪽 몫으로 두고 이쪽은 전부 조사형.
+claim: `.daily-claim-2026-10-11` 만들었다가 사용자 요청으로 삭제(10-10) → 10-11 09:00 무인 /blog-daily(2+2)는 정상 실행. 10-10 09:00 /blog-daily(2+2)는 그대로 돈다 → 깨끗한 trends 후보(animal-challenge·poor-upbringing-meme·chaek-eop-kwae)는 그쪽 몫으로 두고 이쪽은 전부 조사형.
 검색수요 게이트: NAVER_AD 자격증명 없음 → 못 돌림. 이월: 티스토리 windows11-storage-sense(검증 통과, 대기열).
 중복 대조: posted 259 + posted-naver 81 + 초안 523 제목을 핵심어 grep — 아래 10개는 0건.
 ## 티스토리 (5)

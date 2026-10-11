@@ -1,0 +1,545 @@
+{
+  "keyword": "깃허브 SSH 키 등록",
+  "categoryId": "hangeut-trend",
+  "notes": "(1) GitHub Docs 5단계 공식 흐름(기존 키 확인 → ed25519 생성 → ssh-agent 등록 → 공개키 GitHub 등록 → ssh -T 테스트 → git remote set-url)을 Mac/Windows/Linux 차이 중심으로 쓸 수 있고, 모든 명령에 1차 자료 원문이 있다. (2) 시의성 훅은 GitHub Changelog 2026-09-22: 2026-10-14 이후 업로드 RSA 키는 3072비트 이상, SHA-1 ssh-rsa 서명은 2027-01-13 제거(브라운아웃 2026-11-04·2026-12-09), 신규 키는 Ed25519 권장, https 원격은 영향 없음. 발행 대기열이 최대 7일이라 \"곧/3일 뒤\" 대신 절대 날짜만 쓸 것. (3) Windows 는 GitHub(Git Bash + 관리자 PowerShell, StartupType Manual)와 MS Learn(PowerShell/CMD, Automatic)이 어긋나므로 귀속 분리, StartupType 은 unclear. 핵심 주장 5(confirmed) + 주의 1(unclear). (4) 주장 색인: C1 공식 5단계 순서·키 생성 공통(confirmed) / C2 ssh-agent 등록 OS별·Git for Windows 충돌(confirmed) / C3 공개키 복사·웹 등록·gh CLI(confirmed) / C4 ssh -T·지문·종료코드 1·git 사용자·set-url(confirmed) / C5 Changelog 2026-09-22 일정·Ed25519 권장(confirmed) / C6 Windows StartupType Manual vs Automatic(unclear).",
+  "cannotSay": [
+    "Windows ssh-agent 서비스 StartupType 을 \"Manual 이 맞다/Automatic 이 맞다\"로 단정 금지. 반드시 \"GitHub Docs 는 Manual, Microsoft Learn 은 Automatic\" 으로 귀속.",
+    "Microsoft Learn 의 \"에이전트 등록 후 개인키를 안전한 곳에 백업하고 로컬에서 삭제 권고\"는 MS 단독(GitHub Docs 엔 없음, 예시는 ECDSA). 기본 절차에 넣지 말 것. 쓰려면 \"Microsoft Learn 은 ~ 권고한다\"로 귀속.",
+    "Changelog 상단 \"Retired\" 라벨은 이유 불명 — 언급 금지.",
+    "\"GitHub 가 Ed25519 를 의무화\" 금지. 원문은 \"we recommend using an Ed25519 key whenever possible\" (권장). RSA 도 3072비트 이상이면 새로 만들 수 있다.",
+    "\"기존 RSA 키는 모두 새로 만들어야 한다\" 금지. 원문: 기존 키를 새로 만들 필요 없음, 클라이언트가 RSA with SHA-2(rsa-sha2-256/512)를 지원하면 같은 키 계속 사용. 업로드 시점 3072비트 요건만 언급돼 있고 이미 올라간 작은 RSA 키의 장래 처리는 원문에 없음.",
+    "키 타입 ssh-rsa(RSA 키 전체)와 서명 타입 ssh-rsa(SHA-1 RSA)를 혼동해 쓰지 말 것. 제거되는 것은 서명 타입 쪽(원문이 혼동 주의를 명시).",
+    "10월 14일 \"당일 업로드\" 포함 여부 단정 금지. 원문은 \"uploaded after October 14, 2026\" 과 일정표 \"October 14, 2026: take effect\" 를 함께 씀 — 일정표 표현대로 \"2026-10-14 시행\"으로 쓰기.",
+    "Adding 페이지 Windows 탭의 복사 명령(clip < ~/.ssh/id_ed25519.pub)은 페이지 본문이 셸 이름(Git Bash)을 적지 않음. \"문서가 Git Bash 라고 명시\"라고 쓰지 말 것. 문서가 명시한 것은 PowerShell 계열에서 \"<\" 가 ParseError 를 낸다는 것과 그때 cat ... | clip 을 쓰라는 것.",
+    "MS Learn 의 PowerShell/CMD 흐름(ssh-keygen -t ecdsa 예시)을 GitHub 절차에 섞어 쓰지 말 것. 서로 다른 문서의 흐름이다.",
+    "\"rsa -b 4096 은 3072 기준을 만족한다\"는 서술은 산술(4096 ≥ 3072)로만 가능하며 원문이 직접 말한 것이 아님 — 쓰려면 \"4096은 3072 이상이라\" 식으로 풀어 쓸 것."
+  ],
+  "cannotCover": [
+    "ssh-keygen 에서 -t 를 생략했을 때의 기본 알고리즘 논쟁(MS Learn \"Ed25519 사용\" vs OpenSSH 9.5 이전 버전) — 다루지 않음. 글은 항상 -t ed25519 를 명시하는 형태로만.",
+    "Windows 10/11 에 OpenSSH Client 가 기본 설치돼 있는지 — 자료에 명시 없음. \"ssh-keygen 을 찾을 수 없다고 나오면\" 확인 명령(Get-WindowsCapability …)으로만 안내.",
+    "ssh-agent 서비스가 Disabled 일 때 Start-Service 만 하면 나는 에러 문구 — 어느 문서에도 원문 없음.",
+    "GitHub Docs 각 페이지의 최종 수정일 — 표기 없음. \"최근 개정된 문서\" 같은 서술 금지.",
+    "GitHub Docs 가 PowerShell 에서 ssh-keygen 을 실행하는 경우를 따로 안내하는지 — 없음(Docs 는 Git Bash 전제).",
+    "ed25519 키 생성 완료 후 출력 화면(Your identification has been saved… / randomart) — GitHub Docs 에 없음(MS Learn 의 ecdsa 예시만 있음). 스크린샷·출력 예시를 지어내지 말 것.",
+    "ssh -T 종료 코드 1 을 확인하는 명령(echo $? 등) — 원문은 \"The remote command should exit with code 1.\" 한 줄뿐.",
+    "한국어 상위 노출 글(티스토리·네이버) 구성·경쟁 분석 — 이번 조사에서 수집 안 함.",
+    "GitHub Enterprise Server(3.24/3.25)·post-quantum 키 교환(mlkem768x25519-sha256)·diffie-hellman-group-exchange-sha256 상세, 하드웨어 보안키(-sk) — 자료는 있으나 독자 행동과 무관한 범위 밖. 다루지 않는 것을 권장.",
+    "Linux 배포판별 차이(Agent admitted failure to sign 원인 등) 상세 — Docs 가 \"certain Linux distributions 의 알려진 문제\" 라고만 함.",
+    "GitHub CLI(gh auth login) 인증 절차 상세 — \"사전에 gh auth login 필요\" 한 줄만 확인됨."
+  ],
+  "claims": [
+    {
+      "claim": "공식 흐름은 GitHub Docs \"Connect to GitHub with SSH\" 시리즈 순서다. 기존 키 확인(Step 2) → 새 키 생성 + ssh-agent 등록(Step 3) → 공개키를 GitHub 계정에 등록(Step 4) → ssh -T 로 연결 테스트(Step 5) → 로컬 저장소는 git remote set-url 로 SSH 주소로 전환. 키 생성 명령 ssh-keygen -t ed25519 는 세 OS 가 같고, OS 차이는 터미널(Mac/Linux=Terminal, Windows=Git Bash)과 이후 agent·복사 단계에서 생긴다.",
+      "grade": "confirmed",
+      "evidence": [
+        "Docs 각 페이지 하단 표기: Checking for existing SSH keys = \"Step 2 of 5\", Generating a new SSH key and adding it to the ssh-agent = \"Step 3 of 5 in Connect to GitHub with SSH\", Adding a new SSH key to your GitHub account = \"Step 4 of 5\", Testing your SSH connection = Step 5 (Step 1 페이지는 이번 자료에 없음 — \"1단계\"라고 쓰지 말 것).",
+        "기존 키 확인: \"ls -al ~/.ssh\". GitHub 가 지원하는 기본 공개키 파일명은 id_rsa.pub / id_ecdsa.pub / id_ed25519.pub. ~/.ssh 가 없다는 에러가 나면 기본 위치에 키 쌍이 없다는 뜻이라 새로 만들면 됨.",
+        "키 생성 원문 명령: ssh-keygen -t ed25519 -C \"your_email@example.com\" — 이메일은 \"using the provided email as a label\"(라벨일 뿐). Ed25519 미지원 레거시 시스템 대안: ssh-keygen -t rsa -b 4096 -C \"your_email@example.com\".",
+        "저장 위치 프롬프트(탭별 원문): Mac \"Enter a file in which to save the key (/Users/YOU/.ssh/id_ALGORITHM): [Press enter]\" / Windows(Git Bash) \"Enter file in which to save the key (/c/Users/YOU/.ssh/id_ALGORITHM):[Press enter]\" / Linux \"Enter a file in which to save the key (/home/YOU/.ssh/id_ALGORITHM):[Press enter]\". 기존 키가 있어 덮어쓰기를 묻으면 \"we recommend creating a custom-named SSH key\".",
+        "패스프레이즈 프롬프트 \"Enter passphrase (empty for no passphrase):\" → \"Enter same passphrase again:\". 패스프레이즈를 걸면 키를 쓸 때마다 입력해야 하고, ssh-agent 가 키를 관리하며 패스프레이즈를 기억해 준다. 나중에 바꾸기: ssh-keygen -p -f ~/.ssh/id_ed25519 (키 재생성 없이).",
+        "터미널 매핑: Mac=Terminal, Linux=Terminal, Windows=Git Bash (Checking·Generating·Testing·Managing remote repositories 네 페이지 모두 동일).",
+        "원격 전환(Managing remote repositories, \"Switching remote URLs from HTTPS to SSH\"): git remote -v 로 원격 이름 확인 → git remote set-url origin git@github.com:OWNER/REPOSITORY.git → git remote -v 로 변경 확인. Adding 페이지도 \"키 등록 후 로컬 저장소를 SSH 로 재설정 가능\"이라며 이 문서로 안내."
+      ],
+      "sourceUrls": [
+        "https://docs.github.com/en/authentication/connecting-to-github-with-ssh/checking-for-existing-ssh-keys",
+        "https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent",
+        "https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account",
+        "https://docs.github.com/en/authentication/connecting-to-github-with-ssh/testing-your-ssh-connection",
+        "https://docs.github.com/en/get-started/git-basics/managing-remote-repositories#switching-remote-urls-from-https-to-ssh",
+        "https://docs.github.com/en/authentication/connecting-to-github-with-ssh/working-with-ssh-key-passphrases"
+      ]
+    },
+    {
+      "claim": "ssh-agent 등록 단계가 OS 별로 가장 크게 갈린다. Mac 은 eval + ~/.ssh/config 3줄 + ssh-add --apple-use-keychain, Linux 는 eval + ssh-add, Windows 는 (GitHub Docs 기준) 관리자 PowerShell 로 서비스를 켠 뒤 일반 터미널에서 ssh-add. 명령을 탭끼리 섞으면 안 된다.",
+      "grade": "confirmed",
+      "evidence": [
+        "[Mac] eval \"$(ssh-agent -s)\" (출력 예 \"> Agent pid 59566\") → macOS Sierra 10.12.2 이상이면 ~/.ssh/config 수정(없으면 touch ~/.ssh/config): Host github.com / AddKeysToAgent yes / UseKeychain yes / IdentityFile ~/.ssh/id_ed25519 → ssh-add --apple-use-keychain ~/.ssh/id_ed25519. 패스프레이즈를 안 걸었으면 UseKeychain 줄 생략·--apple-use-keychain 없이 실행. \"Bad configuration option: usekeychain\" 에러면 IgnoreUnknown UseKeychain 추가. Monterey(12.0) 이전엔 --apple-use-keychain/--apple-load-keychain 대신 -K/-A. macports·homebrew 등 외부 설치본이 아닌 기본 macOS ssh-add 를 쓸 것.",
+        "[Linux] eval \"$(ssh-agent -s)\" → ssh-add ~/.ssh/id_ed25519. 환경에 따라 sudo -s -H 로 root 권한을 먼저 얻거나 exec ssh-agent bash / exec ssh-agent zsh 가 필요할 수 있음.",
+        "[Windows · GitHub Docs] \"In a new admin elevated PowerShell window\" 에서 Get-Service -Name ssh-agent | Set-Service -StartupType Manual 그리고 Start-Service ssh-agent, 이어서 \"In a terminal window without elevated permissions\" 에서 ssh-add c:/Users/YOU/.ssh/id_ed25519. Windows 탭은 eval 을 쓰지 않는다. 대안으로 Working with SSH key passphrases 의 Git Bash 자동 실행 스크립트(~/.profile 또는 ~/.bashrc)를 안내.",
+        "[Windows · GitHub 내부 불일치 주의] Error: Permission denied (publickey) 페이지 Windows 탭은 Git Bash 에서 eval \"$(ssh-agent -s)\" 를 안내하면서 \"These commands may fail if ssh-agent already runs as a background system service\" 라고 Note 를 둠. 즉 서비스 방식과 eval 방식은 택일이지 병행이 아님.",
+        "[Windows · Git for Windows 충돌 / GitHub Docs] PowerShell 로 Windows agent 에 패스프레이즈를 저장해도 git push 때 계속 묻는 경우가 있음 — Git for Windows 가 번들 ssh.exe(MSYS2)를 써서 Windows ssh-agent 서비스와 통신 못 하기 때문. 해결: git config --global core.sshCommand \"C:/Windows/System32/OpenSSH/ssh.exe\" 및 git config --global gpg.ssh.program \"C:/Windows/System32/OpenSSH/ssh-keygen.exe\". 대안: Git for Windows 재설치 시 \"Use external OpenSSH\" 선택.",
+        "[Windows · MS Learn 귀속] MS 는 PowerShell 또는 Command Prompt 에서 ssh-keygen 을 실행하는 흐름(예시 알고리즘은 ECDSA)을 안내하고 ssh-add $env:USERPROFILE\\.ssh\\id_ecdsa 를 씀. ssh-keygen 이 없을 때 설치 확인: Get-WindowsCapability -Online | Where-Object Name -like 'OpenSSH*' (미설치면 State : NotPresent) → Add-WindowsCapability -Online -Name OpenSSH.Client~~~~0.0.1.0 (관리자 PowerShell). 전제는 Windows 10 build 1809 이상. 기본 설치 여부는 문서에 명시 없음."
+      ],
+      "sourceUrls": [
+        "https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent",
+        "https://docs.github.com/en/authentication/connecting-to-github-with-ssh/working-with-ssh-key-passphrases",
+        "https://docs.github.com/en/authentication/troubleshooting-ssh/error-permission-denied-publickey",
+        "https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_keymanagement",
+        "https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse?tabs=gui&pivots=windows-11"
+      ]
+    },
+    {
+      "claim": "공개키 복사는 OS 별 명령이 다르고(Mac pbcopy, Windows clip — PowerShell 에서는 cat | clip, Linux 는 cat 출력 복사), 웹 UI 의 Settings > SSH and GPG keys > New SSH key 에서 Title·키 유형·Key 를 채워 등록한다. 개행·공백을 섞지 않는 게 핵심이고, 웹 대신 gh ssh-key add 로도 가능하다.",
+      "grade": "confirmed",
+      "evidence": [
+        "복사 명령(Adding 페이지 탭별 원문): Mac \"pbcopy < ~/.ssh/id_ed25519.pub\" / Windows \"clip < ~/.ssh/id_ed25519.pub\" / Linux \"cat ~/.ssh/id_ed25519.pub\" 후 화면에서 선택·복사. \"When copying your key, don't add any newlines or whitespace.\"",
+        "Windows PowerShell 함정(원문): Windows Terminal/PowerShell 에서는 \"ParseError stating that The '<' operator is reserved for future use\" 가 날 수 있고, 이때는 cat ~/.ssh/id_ed25519.pub | clip. pbcopy/clip 이 안 되면 숨김 폴더 .ssh 의 .pub 파일을 에디터로 열어 복사. WSL 에서는 clip.exe 사용 가능.",
+        "웹 UI 순서(원문): ① 아무 GitHub 페이지 우측 상단 프로필 사진 → Settings ② 사이드바 \"Access\" 섹션의 \"SSH and GPG keys\" ③ \"New SSH key\" 또는 \"Add SSH key\" ④ \"Title\" 에 설명 라벨(예 \"Personal laptop\") ⑤ 키 유형 선택: authentication 또는 signing ⑥ \"Key\" 필드에 공개키 붙여넣기 ⑦ \"Add SSH key\" ⑧ 요청되면 계정 접근 확인(Sudo mode).",
+        "같은 키를 인증과 커밋 서명 둘 다에 쓰려면 두 번 업로드해야 한다. 업로드하는 것은 공개키(.pub)이며 개인키가 아니다(\"add the public key\").",
+        "GitHub CLI 대안(원문): gh ssh-key add KEY-FILE --type {authentication|signing}, 제목은 -t/--title. 사전에 gh auth login 필요. 문서의 예시 명령은 gh ssh-key add ~/.ssh/id_ed25519.pub --type signing — 예시가 signing 유형이므로 인증용은 authentication 으로 바꿔야 함."
+      ],
+      "sourceUrls": [
+        "https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account"
+      ]
+    },
+    {
+      "claim": "연결 테스트는 ssh -T git@github.com 이고, 성공해도 종료 코드는 1 이 정상이다. 첫 접속 때 뜨는 ED25519 지문이 GitHub 지문 페이지의 Ed25519 값과 같을 때만 yes 를 입력한다. 사용자명은 반드시 git 이어야 하고 sudo 는 쓰지 않는다.",
+      "grade": "confirmed",
+      "evidence": [
+        "테스트 명령(원문, 세 OS 동일): ssh -T git@github.com (주석 \"# Attempts to ssh to GitHub\"). Windows 는 Git Bash.",
+        "첫 접속 프롬프트(원문): \"The authenticity of host 'github.com (IP ADDRESS)' can't be established.\" / \"ED25519 key fingerprint is SHA256:+DiY3wvvV6TuJJhbpZisF/zLDA0zPMSvHdkr4UvCOqU.\" / \"Are you sure you want to continue connecting (yes/no)?\" → \"Verify that the fingerprint in the message you see matches GitHub's public key fingerprint. If it does, then type yes\".",
+        "GitHub 지문 페이지(data) 원문: SHA256:+DiY3wvvV6TuJJhbpZisF/zLDA0zPMSvHdkr4UvCOqU (Ed25519) — 위 프롬프트 지문과 일치. 같은 페이지의 다른 지문은 numbers 참조. known_hosts 사전 등록도 가능(\"to avoid manually verifying GitHub hosts\").",
+        "성공 메시지(원문): \"Hi USERNAME! You've successfully authenticated, but GitHub does not provide shell access.\" + Note \"The remote command should exit with code 1.\" — 성공이어도 종료 코드 1. 결과 메시지에 본인 username 이 들어 있는지 확인하라고 안내.",
+        "실패 시: \"permission denied\" 면 Error: Permission denied (publickey) 문서 참조. Linux 일부 배포판의 \"Agent admitted failure to sign using the key.\" / \"Permission denied (publickey).\" 는 알려진 문제로 별도 문서 안내.",
+        "사용자명(Permission denied 페이지 원문): \"All connections, including those for remote URLs, must be made as the \\\"git\\\" user.\" GitHub 사용자명으로 접속하면 ssh -T GITHUB-USERNAME@github.com → \"Permission denied (publickey).\" 원격 URL 에 사용자명을 쓰고 있다면 git 사용자로 바꿀 것.",
+        "sudo(원문): \"You should not be using the sudo command or elevated privileges, such as administrator permissions, with Git.\" sudo 없이 만든 키로 sudo git push 하면 같은 키를 쓰지 않는다. 확인용 ssh -vT git@github.com 출력에 \"Connecting to github.com port 22.\" 이 보여야 함(SSH over HTTPS 설정 제외). 비기본 파일명 키는 ssh -i ~/.ssh/KEY-FILE -vT git@github.com."
+      ],
+      "sourceUrls": [
+        "https://docs.github.com/en/authentication/connecting-to-github-with-ssh/testing-your-ssh-connection",
+        "https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/githubs-ssh-key-fingerprints",
+        "https://docs.github.com/en/authentication/troubleshooting-ssh/error-permission-denied-publickey"
+      ]
+    },
+    {
+      "claim": "시의성: GitHub Changelog(2026-09-22)에 따라 2026-10-14 이후 새로 올리는 RSA SSH 키는 3072비트 이상이어야 하고, SHA-1 기반 ssh-rsa 서명 타입은 2026-11-04·2026-12-09 브라운아웃을 거쳐 2027-01-13 에 제거된다. 새 키는 Ed25519 를 권장하며, 원격이 https:// 로 시작하면 영향이 없다. 그래서 지금 새로 만든다면 ed25519 가 가장 단순하다.",
+      "grade": "confirmed",
+      "evidence": [
+        "원문: \"All new RSA SSH keys uploaded after October 14, 2026 must be at least 3072 bits in size, both for signing and authentication.\" 일정표: October 14, 2026 새 RSA 키 크기 요건 시행.",
+        "일정표 원문: November 4, 2026 = ssh-rsa 서명 타입(SHA-1 RSA)과 diffie-hellman-group-exchange-sha256 키 교환 제거의 brownout / December 9, 2026 = 또 한 번 brownout / January 13, 2027 = \"We’ll remove the ssh-rsa signature type and diffie-hellman-group-exchange-sha256 key exchange algorithm.\"",
+        "권고 원문: \"For generating new keys, we recommend using an Ed25519 key whenever possible. However, if you still need an RSA key for compatibility with other services, you can generate one as long as it as at least 3072 bits in size.\" / \"All Ed25519 and ECDSA keys we support are strong, secure, and will continue to work for the indefinite future.\"",
+        "기존 RSA 키 사용자(원문): 새 키를 만들 필요 없음 — 모든 RSA 키는 모든 해시 알고리즘으로 서명할 수 있으므로, SSH 프로그램·라이브러리가 RSA with SHA-2(rsa-sha2-256, rsa-sha2-512)를 지원하면 같은 키를 계속 쓸 수 있고 대부분의 구현이 자동 선택함. 오래된 소프트웨어를 못 올리면 Ed25519 또는 ECDSA 키로 대체 가능.",
+        "영향 범위 원문: \"The only affected users are those connecting with a Git client over SSH or those using the unauthenticated Git protocol on GitHub Enterprise Server. If your Git remotes start with https://, nothing here will affect you.\"",
+        "RSA with SHA-2 를 기본 설정에서 안정적으로 지원하는 최소 버전(원문 표): OpenSSH 7.2p1 / JSch 0.1.66 / TeamCity 2021.2.3 / Go SSH 0.16.0 / libssh2 1.11.0 / PuTTY 0.82.",
+        "GitHub Docs 의 레거시 대안 ssh-keygen -t rsa -b 4096 은 4096 ≥ 3072 이므로 새 요건 이내(산술 추론, 원문이 직접 말한 것은 아님). 별개로 Docs 노트: 2022-03-15 에 DSA(ssh-dss) 지원 중단, 2021-11-02 이후 생성된 RSA 키는 SHA-2 서명 필수."
+      ],
+      "sourceUrls": [
+        "https://github.blog/changelog/2026-09-22-security-improvements-for-ssh/",
+        "https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent"
+      ]
+    },
+    {
+      "claim": "[주의 · unclear] Windows 에서 ssh-agent 서비스의 시작 유형은 두 공식 문서가 다르다. GitHub Docs 는 Manual 로 바꾼 뒤 Start-Service, Microsoft Learn 은 Automatic 으로 바꾼 뒤 Start-Service 를 안내한다. 어느 쪽이 맞는지 자료만으로 판정할 수 없다. 글에서는 단정하지 말고 문서별로 귀속한다.",
+      "grade": "unclear",
+      "evidence": [
+        "GitHub Docs(Generating… Windows 탭, 관리자 PowerShell): Get-Service -Name ssh-agent | Set-Service -StartupType Manual → Start-Service ssh-agent. 코드 주석 \"# start the ssh-agent in the background\".",
+        "Microsoft Learn(Key-Based Authentication in OpenSSH for Windows): 주석 \"# By default, the ssh-agent service is disabled. Configure it to start automatically.\" / \"# Run the following command as an administrator.\" → Get-Service ssh-agent | Set-Service -StartupType Automatic → Start-Service ssh-agent → Get-Service ssh-agent (Running 확인) → ssh-add $env:USERPROFILE\\.ssh\\id_ecdsa. 설명: 컴퓨터를 재시작할 때마다 자동 시작하도록 구성.",
+        "공통점: 둘 다 관리자 권한 PowerShell 에서 서비스를 켜는 것. 차이점은 StartupType 값 하나(Manual vs Automatic)와, 이후 ssh-add 를 실행하는 셸/경로 표기(GitHub: 일반 터미널 + c:/Users/YOU/.ssh/id_ed25519, MS: $env:USERPROFILE\\.ssh\\id_ecdsa).",
+        "Windows 에서 키를 만드는 셸도 귀속이 갈린다: GitHub = Git Bash(경로 /c/Users/YOU/.ssh/…), MS = PowerShell 또는 Command Prompt(경로 C:\\Users\\username/.ssh/…).",
+        "ssh-agent 가 Disabled 상태일 때 Start-Service 만 하면 나는 에러 문구는 어느 문서에도 원문이 없다."
+      ],
+      "sourceUrls": [
+        "https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent",
+        "https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_keymanagement"
+      ]
+    }
+  ],
+  "numbers": [
+    {
+      "what": "GitHub 신규 RSA SSH 키 최소 크기(2026-10-14 이후 업로드, 서명·인증 모두)",
+      "value": "3072 bits",
+      "asOf": "2026-09-22 공지",
+      "sourceUrl": "https://github.blog/changelog/2026-09-22-security-improvements-for-ssh/"
+    },
+    {
+      "what": "새 RSA 키 크기 요건 시행일",
+      "value": "October 14, 2026 (2026-10-14)",
+      "asOf": "2026-09-22 공지",
+      "sourceUrl": "https://github.blog/changelog/2026-09-22-security-improvements-for-ssh/"
+    },
+    {
+      "what": "ssh-rsa 서명 타입 제거 1차 brownout",
+      "value": "November 4, 2026 (2026-11-04)",
+      "asOf": "2026-09-22 공지",
+      "sourceUrl": "https://github.blog/changelog/2026-09-22-security-improvements-for-ssh/"
+    },
+    {
+      "what": "ssh-rsa 서명 타입 제거 2차 brownout",
+      "value": "December 9, 2026 (2026-12-09)",
+      "asOf": "2026-09-22 공지",
+      "sourceUrl": "https://github.blog/changelog/2026-09-22-security-improvements-for-ssh/"
+    },
+    {
+      "what": "ssh-rsa 서명 타입(SHA-1 RSA) 및 diffie-hellman-group-exchange-sha256 제거일",
+      "value": "January 13, 2027 (2027-01-13)",
+      "asOf": "2026-09-22 공지",
+      "sourceUrl": "https://github.blog/changelog/2026-09-22-security-improvements-for-ssh/"
+    },
+    {
+      "what": "RSA with SHA-2 를 기본 설정에서 지원하는 최소 버전",
+      "value": "OpenSSH 7.2p1 / JSch 0.1.66 / TeamCity 2021.2.3 / Go SSH 0.16.0 / libssh2 1.11.0 / PuTTY 0.82",
+      "asOf": "2026-09-22 공지",
+      "sourceUrl": "https://github.blog/changelog/2026-09-22-security-improvements-for-ssh/"
+    },
+    {
+      "what": "영향 없는 원격 형태",
+      "value": "Git remote 가 https:// 로 시작하면 영향 없음",
+      "asOf": "2026-09-22 공지",
+      "sourceUrl": "https://github.blog/changelog/2026-09-22-security-improvements-for-ssh/"
+    },
+    {
+      "what": "DSA(ssh-dss) 지원 중단일",
+      "value": "March 15, 2022 (2022-03-15)",
+      "asOf": "2026-10-11 열람(GitHub Docs 페이지에 수정일 표기 없음)",
+      "sourceUrl": "https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent"
+    },
+    {
+      "what": "RSA 키 SHA-2 서명 필수 기준(valid_after)",
+      "value": "November 2, 2021 이후 생성된 RSA 키는 SHA-2 서명 필수 (이전 키는 어떤 서명 알고리즘도 가능)",
+      "asOf": "2026-10-11 열람(GitHub Docs 페이지에 수정일 표기 없음)",
+      "sourceUrl": "https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent"
+    },
+    {
+      "what": "GitHub 지문 Ed25519",
+      "value": "SHA256:+DiY3wvvV6TuJJhbpZisF/zLDA0zPMSvHdkr4UvCOqU",
+      "asOf": "2026-10-11 열람(GitHub Docs 페이지에 수정일 표기 없음)",
+      "sourceUrl": "https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/githubs-ssh-key-fingerprints"
+    },
+    {
+      "what": "GitHub 지문 RSA",
+      "value": "SHA256:uNiVztksCsDhcc0u9e8BujQXVUpKZIDTMczCvj3tD2s",
+      "asOf": "2026-10-11 열람(GitHub Docs 페이지에 수정일 표기 없음)",
+      "sourceUrl": "https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/githubs-ssh-key-fingerprints"
+    },
+    {
+      "what": "GitHub 지문 ECDSA",
+      "value": "SHA256:p2QAMXNIC1TJYWeIOttrVc98/R1BUFWu3/LiyKgUfQM",
+      "asOf": "2026-10-11 열람(GitHub Docs 페이지에 수정일 표기 없음)",
+      "sourceUrl": "https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/githubs-ssh-key-fingerprints"
+    },
+    {
+      "what": "GitHub 지문 DSA",
+      "value": "SHA256:br9IjFspm1vxR3iA35FWE+4VTyz1hYVLIE2t1/CeyWQ (DSA - closing down)",
+      "asOf": "2026-10-11 열람(GitHub Docs 페이지에 수정일 표기 없음)",
+      "sourceUrl": "https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/githubs-ssh-key-fingerprints"
+    },
+    {
+      "what": "known_hosts 사전 등록 Ed25519 항목",
+      "value": "github.com ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOMqqnkVzrm0SdG6UOoqKLsabgH5C9okWi0dh2l9GKJl",
+      "asOf": "2026-10-11 열람(GitHub Docs 페이지에 수정일 표기 없음)",
+      "sourceUrl": "https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/githubs-ssh-key-fingerprints"
+    },
+    {
+      "what": "ssh -T 성공 시 종료 코드",
+      "value": "1 (원문 \"The remote command should exit with code 1.\")",
+      "asOf": "2026-10-11 열람(GitHub Docs 페이지에 수정일 표기 없음)",
+      "sourceUrl": "https://docs.github.com/en/authentication/connecting-to-github-with-ssh/testing-your-ssh-connection"
+    },
+    {
+      "what": "SSH 접속 포트(기본)",
+      "value": "22 (SSH over HTTPS 설정을 덮어쓴 경우 제외)",
+      "asOf": "2026-10-11 열람(GitHub Docs 페이지에 수정일 표기 없음)",
+      "sourceUrl": "https://docs.github.com/en/authentication/troubleshooting-ssh/error-permission-denied-publickey"
+    },
+    {
+      "what": "SSH 접속 사용자명",
+      "value": "git (GitHub 사용자명으로 접속하면 Permission denied (publickey).)",
+      "asOf": "2026-10-11 열람(GitHub Docs 페이지에 수정일 표기 없음)",
+      "sourceUrl": "https://docs.github.com/en/authentication/troubleshooting-ssh/error-permission-denied-publickey"
+    },
+    {
+      "what": "GitHub 지원 기본 공개키 파일명",
+      "value": "id_rsa.pub / id_ecdsa.pub / id_ed25519.pub",
+      "asOf": "2026-10-11 열람(GitHub Docs 페이지에 수정일 표기 없음)",
+      "sourceUrl": "https://docs.github.com/en/authentication/connecting-to-github-with-ssh/checking-for-existing-ssh-keys"
+    },
+    {
+      "what": "Docs 시리즈 단계 표기",
+      "value": "Checking=Step 2 of 5 / Generating=Step 3 of 5 / Adding=Step 4 of 5 / Testing=Step 5 (Step 1 은 자료 없음)",
+      "asOf": "2026-10-11 열람(GitHub Docs 페이지에 수정일 표기 없음)",
+      "sourceUrl": "https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent"
+    },
+    {
+      "what": "macOS 버전 기준(config 수정 필요)",
+      "value": "macOS Sierra 10.12.2 이상",
+      "asOf": "2026-10-11 열람(GitHub Docs 페이지에 수정일 표기 없음)",
+      "sourceUrl": "https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent"
+    },
+    {
+      "what": "macOS 버전 기준(-K/-A 문법)",
+      "value": "Monterey(12.0) 이전에는 --apple-use-keychain/--apple-load-keychain 대신 -K/-A",
+      "asOf": "2026-10-11 열람(GitHub Docs 페이지에 수정일 표기 없음)",
+      "sourceUrl": "https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent"
+    },
+    {
+      "what": "MS Learn: Windows 최소 요건(OpenSSH 설치 문서)",
+      "value": "Windows Server 2019 또는 Windows 10 (build 1809) 이상, PowerShell 5.1 이상",
+      "asOf": "2026-10-11 열람(MS Learn ms.date 2025-09-04)",
+      "sourceUrl": "https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse?tabs=gui&pivots=windows-11"
+    },
+    {
+      "what": "명령 · 기존 키 확인(전 OS)",
+      "value": "ls -al ~/.ssh",
+      "asOf": "2026-10-11 열람(GitHub Docs 페이지에 수정일 표기 없음)",
+      "sourceUrl": "https://docs.github.com/en/authentication/connecting-to-github-with-ssh/checking-for-existing-ssh-keys"
+    },
+    {
+      "what": "명령 · 키 생성(전 OS)",
+      "value": "ssh-keygen -t ed25519 -C \"your_email@example.com\"",
+      "asOf": "2026-10-11 열람(GitHub Docs 페이지에 수정일 표기 없음)",
+      "sourceUrl": "https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent"
+    },
+    {
+      "what": "명령 · 레거시용 RSA 키 생성",
+      "value": "ssh-keygen -t rsa -b 4096 -C \"your_email@example.com\"",
+      "asOf": "2026-10-11 열람(GitHub Docs 페이지에 수정일 표기 없음)",
+      "sourceUrl": "https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent"
+    },
+    {
+      "what": "명령 · 패스프레이즈 변경(키 재생성 없이)",
+      "value": "ssh-keygen -p -f ~/.ssh/id_ed25519",
+      "asOf": "2026-10-11 열람(GitHub Docs 페이지에 수정일 표기 없음)",
+      "sourceUrl": "https://docs.github.com/en/authentication/connecting-to-github-with-ssh/working-with-ssh-key-passphrases"
+    },
+    {
+      "what": "명령 · Mac ssh-agent 시작",
+      "value": "eval \"$(ssh-agent -s)\"",
+      "asOf": "2026-10-11 열람(GitHub Docs 페이지에 수정일 표기 없음)",
+      "sourceUrl": "https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent"
+    },
+    {
+      "what": "명령 · Mac config 파일 확인/생성",
+      "value": "open ~/.ssh/config  /  touch ~/.ssh/config",
+      "asOf": "2026-10-11 열람(GitHub Docs 페이지에 수정일 표기 없음)",
+      "sourceUrl": "https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent"
+    },
+    {
+      "what": "설정 · Mac ~/.ssh/config 내용",
+      "value": "Host github.com\n  AddKeysToAgent yes\n  UseKeychain yes\n  IdentityFile ~/.ssh/id_ed25519",
+      "asOf": "2026-10-11 열람(GitHub Docs 페이지에 수정일 표기 없음)",
+      "sourceUrl": "https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent"
+    },
+    {
+      "what": "설정 · Mac \"Bad configuration option: usekeychain\" 시 추가",
+      "value": "Host github.com\n  IgnoreUnknown UseKeychain",
+      "asOf": "2026-10-11 열람(GitHub Docs 페이지에 수정일 표기 없음)",
+      "sourceUrl": "https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent"
+    },
+    {
+      "what": "명령 · Mac 키 등록",
+      "value": "ssh-add --apple-use-keychain ~/.ssh/id_ed25519",
+      "asOf": "2026-10-11 열람(GitHub Docs 페이지에 수정일 표기 없음)",
+      "sourceUrl": "https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent"
+    },
+    {
+      "what": "명령 · Windows(GitHub Docs, 관리자 PowerShell) 서비스 설정",
+      "value": "Get-Service -Name ssh-agent | Set-Service -StartupType Manual",
+      "asOf": "2026-10-11 열람(GitHub Docs 페이지에 수정일 표기 없음)",
+      "sourceUrl": "https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent"
+    },
+    {
+      "what": "명령 · Windows(GitHub Docs, 관리자 PowerShell) 서비스 시작",
+      "value": "Start-Service ssh-agent",
+      "asOf": "2026-10-11 열람(GitHub Docs 페이지에 수정일 표기 없음)",
+      "sourceUrl": "https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent"
+    },
+    {
+      "what": "명령 · Windows(GitHub Docs, 비관리자 터미널) 키 등록",
+      "value": "ssh-add c:/Users/YOU/.ssh/id_ed25519",
+      "asOf": "2026-10-11 열람(GitHub Docs 페이지에 수정일 표기 없음)",
+      "sourceUrl": "https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent"
+    },
+    {
+      "what": "명령 · Windows Git for Windows 충돌 해결 1",
+      "value": "git config --global core.sshCommand \"C:/Windows/System32/OpenSSH/ssh.exe\"",
+      "asOf": "2026-10-11 열람(GitHub Docs 페이지에 수정일 표기 없음)",
+      "sourceUrl": "https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent"
+    },
+    {
+      "what": "명령 · Windows Git for Windows 충돌 해결 2",
+      "value": "git config --global gpg.ssh.program \"C:/Windows/System32/OpenSSH/ssh-keygen.exe\"",
+      "asOf": "2026-10-11 열람(GitHub Docs 페이지에 수정일 표기 없음)",
+      "sourceUrl": "https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent"
+    },
+    {
+      "what": "명령 · Linux ssh-agent 시작 및 키 등록",
+      "value": "eval \"$(ssh-agent -s)\"  →  ssh-add ~/.ssh/id_ed25519",
+      "asOf": "2026-10-11 열람(GitHub Docs 페이지에 수정일 표기 없음)",
+      "sourceUrl": "https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent"
+    },
+    {
+      "what": "명령 · Linux 환경별 대안",
+      "value": "sudo -s -H  /  exec ssh-agent bash  /  exec ssh-agent zsh",
+      "asOf": "2026-10-11 열람(GitHub Docs 페이지에 수정일 표기 없음)",
+      "sourceUrl": "https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent"
+    },
+    {
+      "what": "명령 · Mac 공개키 복사",
+      "value": "pbcopy < ~/.ssh/id_ed25519.pub",
+      "asOf": "2026-10-11 열람(GitHub Docs 페이지에 수정일 표기 없음)",
+      "sourceUrl": "https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account"
+    },
+    {
+      "what": "명령 · Windows 공개키 복사(Adding 페이지 Windows 탭, 셸 이름 명시 없음)",
+      "value": "clip < ~/.ssh/id_ed25519.pub",
+      "asOf": "2026-10-11 열람(GitHub Docs 페이지에 수정일 표기 없음)",
+      "sourceUrl": "https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account"
+    },
+    {
+      "what": "명령 · Windows PowerShell 에서 공개키 복사(ParseError 시)",
+      "value": "cat ~/.ssh/id_ed25519.pub | clip",
+      "asOf": "2026-10-11 열람(GitHub Docs 페이지에 수정일 표기 없음)",
+      "sourceUrl": "https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account"
+    },
+    {
+      "what": "명령 · Linux 공개키 출력 후 복사",
+      "value": "cat ~/.ssh/id_ed25519.pub",
+      "asOf": "2026-10-11 열람(GitHub Docs 페이지에 수정일 표기 없음)",
+      "sourceUrl": "https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account"
+    },
+    {
+      "what": "명령 · GitHub CLI 로 키 등록",
+      "value": "gh ssh-key add KEY-FILE --type {authentication|signing}  /  gh ssh-key add KEY-FILE --title \"personal laptop\"",
+      "asOf": "2026-10-11 열람(GitHub Docs 페이지에 수정일 표기 없음)",
+      "sourceUrl": "https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account"
+    },
+    {
+      "what": "명령 · 연결 테스트(전 OS)",
+      "value": "ssh -T git@github.com",
+      "asOf": "2026-10-11 열람(GitHub Docs 페이지에 수정일 표기 없음)",
+      "sourceUrl": "https://docs.github.com/en/authentication/connecting-to-github-with-ssh/testing-your-ssh-connection"
+    },
+    {
+      "what": "명령 · 로드된 키 지문 확인",
+      "value": "ssh-add -l -E sha256",
+      "asOf": "2026-10-11 열람(GitHub Docs 페이지에 수정일 표기 없음)",
+      "sourceUrl": "https://docs.github.com/en/authentication/troubleshooting-ssh/error-permission-denied-publickey",
+      "note": "[팩트체크 정정] 탭 구분: Mac 은 eval 후 sha256, Linux 키 확인(4)은 sha256, 공개키 대조(5)는 OpenSSH 6.8+ md5 / 6.7 이하 ssh-add -l."
+    },
+    {
+      "what": "명령 · 상세 디버그 접속",
+      "value": "ssh -vT git@github.com  /  ssh -i ~/.ssh/KEY-FILE -vT git@github.com",
+      "asOf": "2026-10-11 열람(GitHub Docs 페이지에 수정일 표기 없음)",
+      "sourceUrl": "https://docs.github.com/en/authentication/troubleshooting-ssh/error-permission-denied-publickey"
+    },
+    {
+      "what": "명령 · 원격 확인",
+      "value": "git remote -v",
+      "asOf": "2026-10-11 열람(GitHub Docs 페이지에 수정일 표기 없음)",
+      "sourceUrl": "https://docs.github.com/en/get-started/git-basics/managing-remote-repositories#switching-remote-urls-from-https-to-ssh"
+    },
+    {
+      "what": "명령 · 원격 HTTPS→SSH 전환",
+      "value": "git remote set-url origin git@github.com:OWNER/REPOSITORY.git",
+      "asOf": "2026-10-11 열람(GitHub Docs 페이지에 수정일 표기 없음)",
+      "sourceUrl": "https://docs.github.com/en/get-started/git-basics/managing-remote-repositories#switching-remote-urls-from-https-to-ssh"
+    },
+    {
+      "what": "명령 · (MS Learn 귀속) Windows ssh-agent 서비스",
+      "value": "Get-Service ssh-agent | Set-Service -StartupType Automatic  →  Start-Service ssh-agent  →  Get-Service ssh-agent",
+      "asOf": "2026-10-11 열람(MS Learn ms.date 2025-10-03 / updated_at 2026-04-21)",
+      "sourceUrl": "https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_keymanagement"
+    },
+    {
+      "what": "명령 · (MS Learn 귀속) Windows 키 등록",
+      "value": "ssh-add $env:USERPROFILE\\.ssh\\id_ecdsa",
+      "asOf": "2026-10-11 열람(MS Learn ms.date 2025-10-03 / updated_at 2026-04-21)",
+      "sourceUrl": "https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_keymanagement"
+    },
+    {
+      "what": "명령 · (MS Learn 귀속) OpenSSH Client 설치 확인",
+      "value": "Get-WindowsCapability -Online | Where-Object Name -like 'OpenSSH*'",
+      "asOf": "2026-10-11 열람(MS Learn ms.date 2025-09-04)",
+      "sourceUrl": "https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse?tabs=gui&pivots=windows-11"
+    },
+    {
+      "what": "명령 · (MS Learn 귀속) OpenSSH Client 설치(관리자 PowerShell)",
+      "value": "Add-WindowsCapability -Online -Name OpenSSH.Client~~~~0.0.1.0",
+      "asOf": "2026-10-11 열람(MS Learn ms.date 2025-09-04)",
+      "sourceUrl": "https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse?tabs=gui&pivots=windows-11"
+    }
+  ],
+  "sources": [
+    {
+      "title": "Generating a new SSH key and adding it to the ssh-agent - GitHub Docs",
+      "url": "https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent",
+      "host": "docs.github.com",
+      "body": "※ [[탭=… 블록 시작]] 은 원문 HTML 의 ghd-tool/platform-* 클래스 위치(curl 로 받은 서버 렌더 HTML 에 3개 탭 내용이 모두 들어 있음). 다음 표시 전까지가 그 탭 내용이나, 탭 밖 공통 문장이 섞일 수 있음.\nGenerating a new SSH key and adding it to the ssh-agent\nAfter you've checked for existing SSH keys, you can generate a new SSH key to use for authentication, then add it to the ssh-agent.\nCopy markdown\nPlatform navigation\nMac\nWindows\nLinux\nIn this article\nAbout SSH key passphrases\nGenerating a new SSH key\nAdding your SSH key to the ssh-agent\nGenerating a new SSH key for a hardware security key\nFurther reading\nUp next\nAdding a new SSH key to your GitHub account\nAbout SSH key passphrases\nYou can access and write data in repositories on GitHub using SSH (Secure Shell Protocol). When you connect via SSH, you authenticate using a private key file on your local machine. For more information, see About SSH.\nWhen you generate an SSH key, you can add a passphrase to further secure the key. Whenever you use the key, you must enter the passphrase. If your key has a passphrase and you don't want to enter the passphrase every time you use the key, you can add your key to the SSH agent. The SSH agent manages your SSH keys and remembers your passphrase.\nIf you don't already have an SSH key, you must generate a new SSH key to use for authentication. If you're unsure whether you already have an SSH key, you can check for existing keys. For more information, see Checking for existing SSH keys.\nIf you want to use a hardware security key to authenticate to GitHub, you must generate a new SSH key for your hardware security key. You must connect your hardware security key to your computer when you authenticate with the key pair. For more information, see the OpenSSH 8.2 release notes.\nGenerating a new SSH key\nYou can generate a new SSH key on your local machine. After you generate the key, you can add the public key to your account on GitHub.com to enable authentication for Git operations over SSH.\nNote\nGitHub improved security by dropping older, insecure key types on March 15, 2022.\nAs of that date, DSA keys (ssh-dss) are no longer supported. You cannot add new DSA keys to your personal account on GitHub.\nRSA keys (ssh-rsa) with a valid_after before November 2, 2021 may continue to use any signature algorithm. RSA keys generated after that date must use a SHA-2 signature algorithm. Some older clients may need to be upgraded in order to use SHA-2 signatures.\nOpen\n[[탭=Mac 블록 시작]]\nTerminal\n[[탭=Linux 블록 시작]]\nTerminal\n[[탭=Windows 블록 시작]]\nGit Bash.\nPaste the text below, replacing the email used in the example with your GitHub email address.\nssh-keygen -t ed25519 -C \"your_email@example.com\"\nNote\nIf you are using a legacy system that doesn't support the Ed25519 algorithm, use:\nssh-keygen -t rsa -b 4096 -C \"your_email@example.com\"\nThis creates a new SSH key, using the provided email as a label.\n> Generating public/private ALGORITHM key pair.\nWhen you're prompted to \"Enter a file in which to save the key\", you can press Enter to accept the default file location. Please note that if you created SSH keys previously, ssh-keygen may ask you to rewrite another key, in which case we recommend creating a custom-named SSH key. To do so, type the default file location and replace id_ALGORITHM with your custom key name.\n[[탭=Mac 블록 시작]]\n> Enter a file in which to save the key (/Users/YOU/.ssh/id_ALGORITHM): [Press enter]\n[[탭=Windows 블록 시작]]\n> Enter file in which to save the key (/c/Users/YOU/.ssh/id_ALGORITHM):[Press enter]\n[[탭=Linux 블록 시작]]\n> Enter a file in which to save the key (/home/YOU/.ssh/id_ALGORITHM):[Press enter]\nAt the prompt, type a secure passphrase. For more information, see Working with SSH key passphrases.\n> Enter passphrase (empty for no passphrase): [Type a passphrase]\n> Enter same passphrase again: [Type passphrase again]\nAdding your SSH key to the ssh-agent\nBefore adding a new SSH key to the ssh-agent to manage your keys, you should have checked for existing SSH keys and generated a new SSH key.\n[[탭=Mac 블록 시작]]\nWhen adding your SSH key to the agent, use the default macOS ssh-add command, and not an application installed by macports, homebrew, or some other external source.\n[[탭=Mac 블록 시작]]\nStart the ssh-agent in the background.\n$ eval \"$(ssh-agent -s)\"\n> Agent pid 59566\nDepending on your environment, you may need to use a different command. For example, you may need to use root access by running sudo -s -H before starting the ssh-agent, or you may need to use exec ssh-agent bash or exec ssh-agent zsh to run the ssh-agent.\nIf you're using macOS Sierra 10.12.2 or later, you will need to modify your ~/.ssh/config file to automatically load keys into the ssh-agent and store passphrases in your keychain.\nFirst, check to see if your ~/.ssh/config file exists in the default location.\n$ open ~/.ssh/config\n> The file /Users/YOU/.ssh/config does not exist.\nIf the file doesn't exist, create the file.\ntouch ~/.ssh/config\nOpen your ~/.ssh/config file, then modify the file to contain the following lines. If your SSH key file has a different name or path than the example code, modify the filename or path to match your current setup.\nText\nHost github.com\n  AddKeysToAgent yes\n  UseKeychain yes\n  IdentityFile ~/.ssh/id_ed25519\nHost github.com\n  AddKeysToAgent yes\n  UseKeychain yes\n  IdentityFile ~/.ssh/id_ed25519\nNote\nIf you chose not to add a passphrase to your key, you should omit the UseKeychain line.\nIf you see a Bad configuration option: usekeychain error, add an additional line to the configuration's' Host *.github.com section.\nText\nHost github.com\n  IgnoreUnknown UseKeychain\nHost github.com\n  IgnoreUnknown UseKeychain\nAdd your SSH private key to the ssh-agent and store your passphrase in the keychain. If you created your key with a different name, or if you are adding an existing key that has a different name, replace id_ed25519 in the command with the name of your private key file.\nssh-add --apple-use-keychain ~/.ssh/id_ed25519\nNote\nThe --apple-use-keychain option stores the passphrase in your keychain for you when you add an SSH key to the ssh-agent. If you chose not to add a passphrase to your key, run the command without the --apple-use-keychain option.\nThe --apple-use-keychain option is in Apple's standard version of ssh-add. In macOS versions prior to Monterey (12.0), the --apple-use-keychain and --apple-load-keychain flags used the syntax -K and -A, respectively.\nIf you don't have Apple's standard version of ssh-add installed, you may receive an error. For more information, see Error: ssh-add: illegal option -- apple-use-keychain.\nIf you continue to be prompted for your passphrase, you may need to add the command to your ~/.zshrc file (or your ~/.bashrc file for bash).\nAdd the SSH public key to your account on GitHub. For more information, see Adding a new SSH key to your GitHub account.\n[[탭=Windows 블록 시작]]\nIf you have GitHub Desktop installed, you can use it to clone repositories and not deal with SSH keys.\nIn a new admin elevated PowerShell window, ensure the ssh-agent is running. You can use the \"Auto-launching the ssh-agent\" instructions in Working with SSH key passphrases, or start it manually:\n# start the ssh-agent in the background\nGet-Service -Name ssh-agent | Set-Service -StartupType Manual\nStart-Service ssh-agent\nIn a terminal window without elevated permissions, add your SSH private key to the ssh-agent.\nIf you created your key with a different name, or if you are adding an existing key that has a different name, replace id_ed25519 in the command with the name of your private key file.\nssh-add c:/Users/YOU/.ssh/id_ed25519\nAdd the SSH public key to your account on GitHub. For more information, see Adding a new SSH key to your GitHub account.\nTroubleshooting SSH agent conflicts in Windows\nIn Windows environments, the native Windows OpenSSH implementation and the one included with Git for Windows (based on MSYS2/Bash) can coexist.\nIf you configure and save your passphrases in the Windows agent using PowerShell, Git may still prompt you for your passphrase during operations like git push. This can happen when Git for Windows uses its bundled ssh.exe (from MSYS2) instead of the Windows system OpenSSH client, and therefore can't talk to the Windows ssh-agent service.\nTo ensure Git uses the agent where you've stored your credentials, force Git to use the system's SSH binary by running:\ngit config --global core.sshCommand \"C:/Windows/System32/OpenSSH/ssh.exe\"\nYou may need to specify which ssh-keygen binary Git should use to avoid conflicts with the binary bundled with Git for Windows. To define which binary is used, run the following command:\ngit config --global gpg.ssh.program \"C:/Windows/System32/OpenSSH/ssh-keygen.exe\"\nAlternatively, you can reinstall Git for Windows and select the Use external OpenSSH option during the installation process.\n[[탭=Linux 블록 시작]]\nStart the ssh-agent in the background.\n$ eval \"$(ssh-agent -s)\"\n> Agent pid 59566\nDepending on your environment, you may need to use a different command. For example, you may need to use root access by running sudo -s -H before starting the ssh-agent, or you may need to use exec ssh-agent bash or exec ssh-agent zsh to run the ssh-agent.\nAdd your SSH private key to the ssh-agent.\nIf you created your key with a different name, or if you are adding an existing key that has a different name, replace id_ed25519 in the command with the name of your private key file.\nssh-add ~/.ssh/id_ed25519\nAdd the SSH public key to your account on GitHub. For more information, see Adding a new SSH key to your GitHub account.\nGenerating a new SSH key for a hardware security key\nIf you are using macOS or Linux, you may need to update your SSH client or install a new SSH client prior to generating a new SSH key. For more information, see Error: Unknown key type.\nInsert your hardware security key into your computer.\nOpen\n[[탭=Mac 블록 시작]]\nTerminal\n[[탭=Linux 블록 시작]]\nTerminal\n[[탭=Windows 블록 시작]]\nGit Bash.\nPaste the text below, replacing the email address in the example with the email address associated with your GitHub account.\n[[탭=Mac 블록 시작]]\nssh-keygen -t ed25519-sk -C \"your_email@example.com\"\n[[탭=Windows 블록 시작]]\nssh-keygen -t ed25519-sk -C \"your_email@example.com\"\n[[탭=Linux 블록 시작]]\nssh-keygen -t ed25519-sk -C \"your_email@example.com\"\nNote\nIf the command fails and you receive the error invalid format or feature not supported, you may be using a hardware security key that does not support the Ed25519 algorithm. Enter the following command instead.\nssh-keygen -t ecdsa-sk -C \"your_email@example.com\"\nWhen you are prompted, touch the button on your hardware security key.\nWhen you are prompted to \"Enter a file in which to save the key,\" press Enter to accept the default file location.\n[[탭=Mac 블록 시작]]\n> Enter a file in which to save the key (/Users/YOU/.ssh/id_ed25519_sk): [Press enter]\n[[탭=Windows 블록 시작]]\n> Enter a file in which to save the key (c:\\Users\\YOU\\.ssh\\id_ed25519_sk):[Press enter]\n[[탭=Linux 블록 시작]]\n> Enter a file in which to save the key (/home/YOU/.ssh/id_ed25519_sk):[Press enter]\nWhen you are prompted to type a passphrase, press Enter.\n> Enter passphrase (empty for no passphrase): [Type a passphrase]\n> Enter same passphrase again: [Type passphrase again]\nAdd the SSH public key to your account on GitHub. For more information, see Adding a new SSH key to your GitHub account.\nFurther reading\nGitHub credential types reference\nUp next\nAdding a new SSH key to your GitHub account\nStep 3 of 5 in Connect to GitHub with SSH",
+      "tier": "official"
+    },
+    {
+      "title": "Adding a new SSH key to your GitHub account - GitHub Docs",
+      "url": "https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account",
+      "host": "docs.github.com",
+      "body": "※ [[탭=… 블록 시작]] 은 원문 HTML 의 ghd-tool/platform-* 클래스 위치(curl 로 받은 서버 렌더 HTML 에 3개 탭 내용이 모두 들어 있음). 다음 표시 전까지가 그 탭 내용이나, 탭 밖 공통 문장이 섞일 수 있음.\nAdding a new SSH key to your GitHub account\nTo configure your account on GitHub.com to use your new (or existing) SSH key, you'll also need to add the key to your account.\nCopy markdown\nPlatform navigation\nMac\nWindows\nLinux\nTool navigation\nGitHub CLI\nWeb browser\nIn this article\nAbout addition of SSH keys to your account\nPrerequisites\nAdding a new SSH key to your account\nFurther reading\nUp next\nTesting your SSH connection\nAbout addition of SSH keys to your account\nYou can access and write data in repositories on GitHub using SSH (Secure Shell Protocol). When you connect via SSH, you authenticate using a private key file on your local machine. For more information, see About SSH.\nYou can also use SSH to sign commits and tags. For more information about commit signing, see About commit signature verification.\nAfter you generate an SSH key pair, you must add the public key to GitHub.com to enable SSH access for your account.\nPrerequisites\nBefore adding a new SSH key to your account on GitHub.com, complete the following steps.\nCheck for existing SSH keys. For more information, see Checking for existing SSH keys.\nGenerate a new SSH key and add it to your machine's SSH agent. For more information, see Generating a new SSH key and adding it to the ssh-agent.\nAdding a new SSH key to your account\nYou can add an SSH key and use it for authentication, or commit signing, or both. If you want to use the same SSH key for both authentication and signing, you need to upload it twice.\nAfter adding a new SSH authentication key to your account on GitHub.com, you can reconfigure any local repositories to use SSH. For more information, see Managing remote repositories.\nNote\nGitHub improved security by dropping older, insecure key types on March 15, 2022.\nAs of that date, DSA keys (ssh-dss) are no longer supported. You cannot add new DSA keys to your personal account on GitHub.\nRSA keys (ssh-rsa) with a valid_after before November 2, 2021 may continue to use any signature algorithm. RSA keys generated after that date must use a SHA-2 signature algorithm. Some older clients may need to be upgraded in order to use SHA-2 signatures.\nCopy the SSH public key to your clipboard.\nIf your SSH public key file has a different name than the example code, modify the filename to match your current setup. When copying your key, don't add any newlines or whitespace.\n[[탭=Mac 블록 시작]]\n$ pbcopy < ~/.ssh/id_ed25519.pub\n# Copies the contents of the id_ed25519.pub file to your clipboard\nTip\nIf pbcopy isn't working, you can locate the hidden .ssh folder, open the file in your favorite text editor, and copy it to your clipboard.\n[[탭=Windows 블록 시작]]\n$ clip < ~/.ssh/id_ed25519.pub\n# Copies the contents of the id_ed25519.pub file to your clipboard\nNote\nWith Windows Subsystem for Linux (WSL), you can use clip.exe. Otherwise if clip isn't working, you can locate the hidden .ssh folder, open the file in your favorite text editor, and copy it to your clipboard.\nOn newer versions of Windows that use the Windows Terminal, or anywhere else that uses the PowerShell command line, you may receive a ParseError stating that The '<' operator is reserved for future use. In this case, the following alternative clip command should be used:\n$ cat ~/.ssh/id_ed25519.pub | clip\n# Copies the contents of the id_ed25519.pub file to your clipboard\n[[탭=Linux 블록 시작]]\n$ cat ~/.ssh/id_ed25519.pub\n# Then select and copy the contents of the id_ed25519.pub file\n# displayed in the terminal to your clipboard\nTip\nAlternatively, you can locate the hidden .ssh folder, open the file in your favorite text editor, and copy it to your clipboard.\nIn the upper-right corner of any page on GitHub, click your profile picture, then click\n Settings.\nIn the \"Access\" section of the sidebar, click\n SSH and GPG keys.\nClick New SSH key or Add SSH key.\nIn the \"Title\" field, add a descriptive label for the new key. For example, if you're using a personal laptop, you might call this key \"Personal laptop\".\nSelect the type of key, either authentication or signing. For more information about commit signing, see About commit signature verification.\nIn the \"Key\" field, paste your public key.\nClick Add SSH key.\nIf prompted, confirm access to your account on GitHub. For more information, see Sudo mode.\nNote\nTo learn more about GitHub CLI, see About GitHub CLI.\nBefore you can use the GitHub CLI to add an SSH key to your account, you must authenticate to the GitHub CLI. For more information, see gh auth login in the GitHub CLI documentation.\nTo add an SSH key to your GitHub account, use the ssh-key add subcommand, specifying your public key. For authentication keys, if you're prompted to request additional scopes, follow the instructions in the command line.\ngh ssh-key add KEY-FILE --type {authentication|signing}\nTo include a title for the new key, use the -t or --title flag.\ngh ssh-key add KEY-FILE --title \"personal laptop\"\nIf you generated your SSH key by following the instructions in Generating a new SSH key and adding it to the ssh-agent, you can add the key to your account with this command.\ngh ssh-key add ~/.ssh/id_ed25519.pub --type signing\nFurther reading\nAuthorizing an SSH key for use with single sign-on\nUp next\nTesting your SSH connection\nStep 4 of 5 in Connect to GitHub with SSH",
+      "tier": "official"
+    },
+    {
+      "title": "Testing your SSH connection - GitHub Docs",
+      "url": "https://docs.github.com/en/authentication/connecting-to-github-with-ssh/testing-your-ssh-connection",
+      "host": "docs.github.com",
+      "body": "※ [[탭=… 블록 시작]] 은 원문 HTML 의 ghd-tool/platform-* 클래스 위치(curl 로 받은 서버 렌더 HTML 에 3개 탭 내용이 모두 들어 있음). 다음 표시 전까지가 그 탭 내용이나, 탭 밖 공통 문장이 섞일 수 있음.\nTesting your SSH connection\nAfter you've set up your SSH key and added it to GitHub, you can test your connection.\nCopy markdown\nPlatform navigation\nMac\nWindows\nLinux\nBefore testing your SSH connection, you should have already:\nChecked for existing SSH keys\nGenerated a new SSH key\nAdded a new SSH key to your GitHub account\nYou'll need to authenticate this action using your password, which is the SSH key passphrase you created earlier. See Working with SSH key passphrases.\nOpen\n[[탭=Mac 블록 시작]]\nTerminal\n[[탭=Linux 블록 시작]]\nTerminal\n[[탭=Windows 블록 시작]]\nGit Bash.\nEnter the following:\nShell\nssh -T git@github.com\n# Attempts to ssh to GitHub\nssh -T git@github.com\n# Attempts to ssh to GitHub\nYou may see a warning like this:\n> The authenticity of host 'github.com (IP ADDRESS)' can't be established.\n> ED25519 key fingerprint is SHA256:+DiY3wvvV6TuJJhbpZisF/zLDA0zPMSvHdkr4UvCOqU.\n> Are you sure you want to continue connecting (yes/no)?\nVerify that the fingerprint in the message you see matches GitHub's public key fingerprint. If it does, then type yes:\n> Hi USERNAME! You've successfully authenticated, but GitHub does not\n> provide shell access.\n[[탭=Linux 블록 시작]]\nYou may see this error message:\n...\nAgent admitted failure to sign using the key.\ndebug1: No more authentication methods to try.\nPermission denied (publickey).\nThis is a known problem with certain Linux distributions. For more information, see Error: Agent admitted failure to sign.\nNote\nThe remote command should exit with code 1.\nVerify that the resulting message contains your username. If you receive a \"permission denied\" message, see Error: Permission denied (publickey).\nTip\n If you are accessing GitHub at a different domain such as octocorp.ghe.com, then you need to replace git@github.com with octocorp@octocorp.ghe.com.\nssh -T octocorp@octocorp.ghe.com\n# Attempts to ssh to octocorp.ghe.com",
+      "tier": "official"
+    },
+    {
+      "title": "GitHub's SSH key fingerprints - GitHub Docs",
+      "url": "https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/githubs-ssh-key-fingerprints",
+      "host": "docs.github.com",
+      "body": "GitHub&#x27;s SSH key fingerprints\nPublic key fingerprints can be used to validate a connection to a remote server.\nCopy markdown\nThese are GitHub&#x27;s public key fingerprints:\nSHA256:uNiVztksCsDhcc0u9e8BujQXVUpKZIDTMczCvj3tD2s (RSA)\nSHA256:br9IjFspm1vxR3iA35FWE+4VTyz1hYVLIE2t1/CeyWQ (DSA - closing down)\nSHA256:p2QAMXNIC1TJYWeIOttrVc98/R1BUFWu3/LiyKgUfQM (ECDSA)\nSHA256:+DiY3wvvV6TuJJhbpZisF/zLDA0zPMSvHdkr4UvCOqU (Ed25519)\nYou can add the following ssh key entries to your ~/.ssh/known_hosts file to avoid manually verifying GitHub hosts:\ngithub.com ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOMqqnkVzrm0SdG6UOoqKLsabgH5C9okWi0dh2l9GKJl\ngithub.com ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBEmKSENjQEezOmxkZMy7opKgwFB9nkt5YRrYMjNuG5N87uRgg6CLrbo5wAdT/y6v0mKV0U2w0WZ2YB/++Tpockg=\ngithub.com ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCj7ndNxQowgcQnjshcLrqPEiiphnt+VTTvDP6mHBL9j1aNUkY4Ue1gvwnGLVlOhGeYrnZaMgRK6+PKCUXaDbC7qtbW8gIkhL7aGCsOr/C56SJMy/BCZfxd1nWzAOxSDPgVsmerOBYfNqltV9/hWCqBywINIR+5dIg6JTJ72pcEpEjcYgXkE2YEFXV1JHnsKgbLWNlhScqb2UmyRkQyytRLtL+38TGxkxCflmO+5Z8CSSNY7GidjMIZ7Q4zMjA2n1nGrlTDkzwDCsw+wqFPGQA179cnfGWOWRVruj16z6XyvxvjJwbz0wQZ75XK5tKSb7FNyeIEs4TT4jk+S4dhPeAUC5y+bDYirYgM4GC7uEnztnZyaVWQ7B381AK4Qdrwt51ZqExKbQpTUNn+EjqoTwvqNj4kqx5QUCI0ThS/YkOxJCXmPUWZbhjpCg56i+2aB6CmK2JGhn57K5mj0MNdBXA4/WnwH6XoPWJzK5Nyu2zB3nAZp+S5hpQs+p1vN1/wsjk=\nFor more information, see REST API endpoints for meta data.",
+      "tier": "data"
+    },
+    {
+      "title": "Checking for existing SSH keys - GitHub Docs",
+      "url": "https://docs.github.com/en/authentication/connecting-to-github-with-ssh/checking-for-existing-ssh-keys",
+      "host": "docs.github.com",
+      "body": "※ [[탭=… 블록 시작]] 은 원문 HTML 의 ghd-tool/platform-* 클래스 위치(curl 로 받은 서버 렌더 HTML 에 3개 탭 내용이 모두 들어 있음). 다음 표시 전까지가 그 탭 내용이나, 탭 밖 공통 문장이 섞일 수 있음.\nChecking for existing SSH keys\nBefore you generate an SSH key, you can check to see if you have any existing SSH keys.\nCopy markdown\nPlatform navigation\nMac\nWindows\nLinux\nIn this article\nAbout SSH keys\nChecking for existing SSH keys\nUp next\nGenerating a new SSH key and adding it to the ssh-agent\nAbout SSH keys\nYou can use SSH to perform Git operations in repositories. For more information, see About SSH.\nIf you have an existing SSH key, you can use the key to authenticate Git operations over SSH.\nChecking for existing SSH keys\nBefore you generate a new SSH key, you should check your local machine for existing keys.\nNote\nGitHub improved security by dropping older, insecure key types on March 15, 2022.\nAs of that date, DSA keys (ssh-dss) are no longer supported. You cannot add new DSA keys to your personal account on GitHub.\nRSA keys (ssh-rsa) with a valid_after before November 2, 2021 may continue to use any signature algorithm. RSA keys generated after that date must use a SHA-2 signature algorithm. Some older clients may need to be upgraded in order to use SHA-2 signatures.\nOpen\n[[탭=Mac 블록 시작]]\nTerminal\n[[탭=Linux 블록 시작]]\nTerminal\n[[탭=Windows 블록 시작]]\nGit Bash.\nEnter ls -al ~/.ssh to see if existing SSH keys are present.\n$ ls -al ~/.ssh\n# Lists the files in your .ssh directory, if they exist\nCheck the directory listing to see if you already have a public SSH key. By default, the filenames of supported public keys for GitHub are one of the following.\nid_rsa.pub\nid_ecdsa.pub\nid_ed25519.pub\nTip\nIf you receive an error that ~/.ssh doesn't exist, you do not have an existing SSH key pair in the default location. You can create a new SSH key pair in the next step.\nEither generate a new SSH key or upload an existing key.\nIf you don't have a supported public and private key pair, or don't wish to use any that are available, generate a new SSH key.\nIf you see an existing public and private key pair listed (for example, id_rsa.pub and id_rsa) that you would like to use to connect to GitHub, you can add the key to the ssh-agent.\nFor more information about generation of a new SSH key or addition of an existing key to the ssh-agent, see Generating a new SSH key and adding it to the ssh-agent.\nUp next\nGenerating a new SSH key and adding it to the ssh-agent\nStep 2 of 5 in Connect to GitHub with SSH",
+      "tier": "official"
+    },
+    {
+      "title": "Working with SSH key passphrases - GitHub Docs",
+      "url": "https://docs.github.com/en/authentication/connecting-to-github-with-ssh/working-with-ssh-key-passphrases",
+      "host": "docs.github.com",
+      "body": "※ [[탭=… 블록 시작]] 은 원문 HTML 의 ghd-tool/platform-* 클래스 위치(curl 로 받은 서버 렌더 HTML 에 3개 탭 내용이 모두 들어 있음). 다음 표시 전까지가 그 탭 내용이나, 탭 밖 공통 문장이 섞일 수 있음.\nWorking with SSH key passphrases\nYou can secure your SSH keys and configure an authentication agent so that you won't have to reenter your passphrase every time you use your SSH keys.\nCopy markdown\nPlatform navigation\nMac\nWindows\nIn this article\nAbout passphrases for SSH keys\nAdding or changing a passphrase\nAuto-launching ssh-agent on Git for Windows\nSaving your passphrase in the keychain\nAbout passphrases for SSH keys\nWith SSH keys, if someone gains access to your computer, the attacker can gain access to every system that uses that key. To add an extra layer of security, you can add a passphrase to your SSH key. To avoid entering the passphrase every time you connect, you can securely cache the key in the SSH agent.\nAdding or changing a passphrase\nYou can change the passphrase for an existing private key without regenerating the keypair by typing the following command:\n$ ssh-keygen -p -f ~/.ssh/id_ed25519\n> Enter old passphrase: [Type old passphrase]\n> Key has comment 'your_email@example.com'\n> Enter new passphrase (empty for no passphrase): [Type new passphrase]\n> Enter same passphrase again: [Repeat the new passphrase]\n> Your identification has been saved with the new passphrase.\nIf your key already has a passphrase, you will be prompted to enter it before you can change to a new passphrase.\n[[탭=Windows 블록 시작]]\nAuto-launching ssh-agent on Git for Windows\nYou can run ssh-agent automatically when you open bash or Git shell. Copy the following lines and paste them into your ~/.profile or ~/.bashrc file in Git shell:\nenv=~/.ssh/agent.env\nagent_load_env () { test -f \"$env\" && . \"$env\" >| /dev/null ; }\nagent_start () {\n    (umask 077; ssh-agent >| \"$env\")\n    . \"$env\" >| /dev/null ; }\nagent_load_env\n# agent_run_state: 0=agent running w/ key; 1=agent w/o key; 2=agent not running\nagent_run_state=$(ssh-add -l >| /dev/null 2>&1; echo $?)\nif [ ! \"$SSH_AUTH_SOCK\" ] || [ $agent_run_state = 2 ]; then\n    agent_start\n    ssh-add\nelif [ \"$SSH_AUTH_SOCK\" ] && [ $agent_run_state = 1 ]; then\n    ssh-add\nfi\nunset env\nIf your private key is not stored in one of the default locations (like ~/.ssh/id_rsa), you'll need to tell your SSH authentication agent where to find it. To add your key to ssh-agent, type ssh-add ~/path/to/my_key. For more information, see Generating a new SSH key and adding it to the ssh-agent.\nTip\nIf you want ssh-agent to forget your key after some time, you can configure it to do so by running ssh-add -t <seconds>.\nNow, when you first run Git Bash, you are prompted for your passphrase:\n> Initializing new SSH agent...\n> succeeded\n> Enter passphrase for /c/Users/YOU/.ssh/id_rsa:\n> Identity added: /c/Users/YOU/.ssh/id_rsa (/c/Users/YOU/.ssh/id_rsa)\n> Welcome to Git (version 1.6.0.2-preview20080923)\n>\n> Run 'git help git' to display the help index.\n> Run 'git help <command>' to display help for specific commands.\nThe ssh-agent process will continue to run until you log out, shut down your computer, or kill the process.\n[[탭=Mac 블록 시작]]\nSaving your passphrase in the keychain\nOn Mac OS X Leopard through OS X El Capitan, these default private key files are handled automatically:\n.ssh/id_rsa\n.ssh/identity\nThe first time you use your key, you will be prompted to enter your passphrase. If you choose to save the passphrase with your keychain, you won't have to enter it again.\nOtherwise, you can store your passphrase in the keychain when you add your key to the ssh-agent. For more information, see Generating a new SSH key and adding it to the ssh-agent.",
+      "tier": "official"
+    },
+    {
+      "title": "Error: Permission denied (publickey) - GitHub Docs",
+      "url": "https://docs.github.com/en/authentication/troubleshooting-ssh/error-permission-denied-publickey",
+      "host": "docs.github.com",
+      "body": "※ [[탭=… 블록 시작]] 은 원문 HTML 의 ghd-tool/platform-* 클래스 위치(curl 로 받은 서버 렌더 HTML 에 3개 탭 내용이 모두 들어 있음). 다음 표시 전까지가 그 탭 내용이나, 탭 밖 공통 문장이 섞일 수 있음.\nError: Permission denied (publickey)\nA \"Permission denied\" error means that the server rejected your connection. There could be several reasons why, and the most common examples are explained below.\nCopy markdown\nPlatform navigation\nMac\nWindows\nLinux\nIn this article\nShould the sudo command or elevated privileges be used with Git?\nCheck that you are connecting to the correct server\nAlways use the \"git\" user\nMake sure you have a key that is being used\nVerify the public key is attached to your account\nShould the sudo command or elevated privileges be used with Git?\nYou should not be using the sudo command or elevated privileges, such as administrator permissions, with Git.\nIf you have a very good reason you must use sudo, then ensure you are using it with every command. If you generate SSH keys without sudo and then try to use a command like sudo git push, you won't be using the same keys that you generated.\nCheck that you are connecting to the correct server\nTo make sure you are connecting to the right domain, you can enter the following command:\nShell\nssh -vT git@github.com\nssh -vT git@github.com\nYou should see this output:\n> OpenSSH_8.1p1, LibreSSL 2.7.3\n> debug1: Reading configuration data /Users/YOU/.ssh/config\n> debug1: Reading configuration data /etc/ssh/ssh_config\n> debug1: /etc/ssh/ssh_config line 47: Applying options for *\n> debug1: Connecting to github.com port 22.\nThe connection should be made on port 22, unless you're overriding settings to use SSH over HTTPS.\nAlways use the \"git\" user\nAll connections, including those for remote URLs, must be made as the \"git\" user. If you try to connect with your GitHub username, it will fail:\n$ ssh -T GITHUB-USERNAME@github.com\n> Permission denied (publickey).\nIf your connection failed and you're using a remote URL with your GitHub username, you can change the remote URL to use the \"git\" user.\nYou should verify your connection by typing:\nShell\nssh -T git@github.com\nssh -T git@github.com\nYou should see this output:\n> Hi USERNAME! You've successfully authenticated...\nMake sure you have a key that is being used\n[[탭=Mac 블록 시작]]\nOpen\n[[탭=Mac 블록 시작]]\nTerminal\n[[탭=Linux 블록 시작]]\nTerminal\n[[탭=Windows 블록 시작]]\nGit Bash.\nVerify that you have a private key generated and loaded into SSH.\n# start the ssh-agent in the background\n$ eval \"$(ssh-agent -s)\"\n> Agent pid 59566\n$ ssh-add -l -E sha256\n> 2048 SHA256:274ffWxgaxq/tSINAykStUL7XWyRNcRTlcST1Ei7gBQ /Users/USERNAME/.ssh/id_rsa (RSA)\n[[탭=Windows 블록 시작]]\nIf you have GitHub Desktop installed, you can use it to clone repositories and not deal with SSH keys.\nIf you are using Git Bash, turn on ssh-agent:\n# start the ssh-agent in the background\n$ eval \"$(ssh-agent -s)\"\n> Agent pid 59566\nIf you are using another terminal prompt, such as Git for Windows, turn on ssh-agent:\n# start the ssh-agent in the background\n$ eval $(ssh-agent -s)\n> Agent pid 59566\nNote\nThe eval commands above start ssh-agent manually in your environment. These commands may fail if ssh-agent already runs as a background system service. If that happens, we recommend you check the relevant documentation for your environment.\nVerify that you have a private key generated and loaded into SSH.\n$ ssh-add -l -E sha256\n> 2048 SHA256:274ffWxgaxq/tSINAykStUL7XWyRNcRTlcST1Ei7gBQ /Users/USERNAME/.ssh/id_rsa (RSA)\n[[탭=Linux 블록 시작]]\nOpen\n[[탭=Mac 블록 시작]]\nTerminal\n[[탭=Linux 블록 시작]]\nTerminal\n[[탭=Windows 블록 시작]]\nGit Bash.\nVerify that you have a private key generated and loaded into SSH.\n$ ssh-add -l -E sha256\n> 2048 SHA256:274ffWxgaxq/tSINAykStUL7XWyRNcRTlcST1Ei7gBQ /Users/USERNAME/.ssh/id_rsa (RSA)\nThe ssh-add command should print out a long string of numbers and letters. If it does not print anything, you will need to generate a new SSH key and associate it with GitHub.\nTip\nOn most systems the default private keys (~/.ssh/id_rsa and ~/.ssh/identity) are automatically added to the SSH authentication agent. You shouldn't need to run ssh-add path/to/key unless you override the file name when you generate a key.\nGetting more details\nYou can also check that the key is being used by trying to connect to git@github.com:\nShell\nssh -vT git@github.com\nssh -vT git@github.com\nIf you use a private key with a non-default file name, use the -i option to specify the path to the key:\nShell\nssh -i ~/.ssh/KEY-FILE -vT git@github.com\nssh -i ~/.ssh/KEY-FILE -vT git@github.com\nYou'll see output like this:\n> ...\n> debug1: identity file /Users/YOU/.ssh/id_rsa type -1\n> debug1: identity file /Users/YOU/.ssh/id_rsa-cert type -1\n> debug1: identity file /Users/YOU/.ssh/id_dsa type -1\n> debug1: identity file /Users/YOU/.ssh/id_dsa-cert type -1\n> ...\n> debug1: Authentications that can continue: publickey\n> debug1: Next authentication method: publickey\n> debug1: Trying private key: /Users/YOU/.ssh/id_rsa\n> debug1: Trying private key: /Users/YOU/.ssh/id_dsa\n> debug1: No more authentication methods to try.\n> Permission denied (publickey).\nIn this example, SSH did not find any keys.\n\"-1\" at the end of the \"identity file\" lines means SSH couldn't find a file to use.\n\"Trying private key\" lines indicate that no file was found.\nIf a file existed, those lines would be \"1\" and \"Offering public key\", as in this output:\n> ...\n> debug1: identity file /Users/YOU/.ssh/id_rsa type 1\n> ...\n> debug1: Authentications that can continue: publickey\n> debug1: Next authentication method: publickey\n> debug1: Offering RSA public key: /Users/YOU/.ssh/id_rsa\nVerify the public key is attached to your account\nYou must provide your public key to GitHub to establish a secure connection.\n[[탭=Mac 블록 시작]]\nOpen Terminal.\nStart SSH agent in the background.\n$ eval \"$(ssh-agent -s)\"\n> Agent pid 59566\nFind and take a note of your public key fingerprint.\n$ ssh-add -l -E sha256\n> 2048 SHA256:274ffWxgaxq/tSINAykStUL7XWyRNcRTlcST1Ei7gBQ /Users/USERNAME/.ssh/id_rsa (RSA)\nIn the upper-right corner of any page on GitHub, click your profile picture, then click\n Settings.\nIn the \"Access\" section of the sidebar, click\n SSH and GPG keys.\nCompare the list of SSH keys with the output from the ssh-add command.\n[[탭=Windows 블록 시작]]\nOpen the command line.\nStart SSH agent in the background.\n$ ssh-agent -s\n> Agent pid 59566\nFind and take a note of your public key fingerprint.\n$ ssh-add -l -E sha256\n> 2048 SHA256:274ffWxgaxq/tSINAykStUL7XWyRNcRTlcST1Ei7gBQ /Users/USERNAME/.ssh/id_rsa (RSA)\nIn the upper-right corner of any page on GitHub, click your profile picture, then click\n Settings.\nIn the \"Access\" section of the sidebar, click\n SSH and GPG keys.\nCompare the list of SSH keys with the output from the ssh-add command.\n[[탭=Linux 블록 시작]]\nOpen Terminal.\nStart SSH agent in the background.\n$ eval \"$(ssh-agent -s)\"\n> Agent pid 59566\nFind and take a note of your public key fingerprint. If you're using OpenSSH 6.7 or older:\n$ ssh-add -l\n> 2048 a0:dd:42:3c:5a:9d:e4:2a:21:52:4e:78:07:6e:c8:4d /Users/USERNAME/.ssh/id_rsa (RSA)\nIf you're using OpenSSH 6.8 or newer:\n$ ssh-add -l -E md5\n> 2048 MD5:a0:dd:42:3c:5a:9d:e4:2a:21:52:4e:78:07:6e:c8:4d /Users/USERNAME/.ssh/id_rsa (RSA)\nIn the upper-right corner of any page on GitHub, click your profile picture, then click\n Settings.\nIn the \"Access\" section of the sidebar, click\n SSH and GPG keys.\nCompare the list of SSH keys with the output from the ssh-add command.\nIf you don't see your public key in GitHub, you'll need to add your SSH key to GitHub to associate it with your computer.\nWarning\nIf you see an SSH key you're not familiar with on GitHub, delete it immediately and contact us through the GitHub Support portal for further help. An unidentified public key may indicate a possible security concern. For more information, see Reviewing your SSH keys.",
+      "tier": "official"
+    },
+    {
+      "title": "Managing remote repositories - GitHub Docs (Switching remote URLs from HTTPS to SSH 절)",
+      "url": "https://docs.github.com/en/get-started/git-basics/managing-remote-repositories#switching-remote-urls-from-https-to-ssh",
+      "host": "docs.github.com",
+      "body": "※ [[탭=… 블록 시작]] 은 원문 HTML 의 ghd-tool/platform-* 클래스 위치(curl 로 받은 서버 렌더 HTML 에 3개 탭 내용이 모두 들어 있음). 다음 표시 전까지가 그 탭 내용이나, 탭 밖 공통 문장이 섞일 수 있음.\nSwitching remote URLs from HTTPS to SSH\nOpen\n[[탭=Mac 블록 시작]]\nTerminal\n[[탭=Linux 블록 시작]]\nTerminal\n[[탭=Windows 블록 시작]]\nGit Bash.\nChange the current working directory to your local project.\nList your existing remotes in order to get the name of the remote you want to change.\n$ git remote -v\n> origin  https://github.com/OWNER/REPOSITORY.git (fetch)\n> origin  https://github.com/OWNER/REPOSITORY.git (push)\nChange your remote's URL from HTTPS to SSH with the git remote set-url command.\ngit remote set-url origin git@github.com:OWNER/REPOSITORY.git\nVerify that the remote URL has changed.\n$ git remote -v\n# Verify new remote URL\n> origin  git@github.com:OWNER/REPOSITORY.git (fetch)\n> origin  git@github.com:OWNER/REPOSITORY.git (push)\n",
+      "tier": "official"
+    },
+    {
+      "title": "Key-Based Authentication in OpenSSH for Windows - Microsoft Learn",
+      "url": "https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_keymanagement",
+      "host": "learn.microsoft.com",
+      "body": "Key-based authentication in OpenSSH for Windows\nApplies to: ✅ Windows Server 2025, ✅ Windows Server 2022, ✅ Windows Server 2019, ✅ Windows 11, ✅ Windows 10\nFeedback\nSummarize this article for me\nIn this article\nMost authentication in Windows environments is done with a username/password pair, which works well for systems that share a common domain. When you work across domains, such as between on-premises and cloud-hosted systems, this type of authentication becomes vulnerable to brute force intrusions.\nBy comparison, Linux environments commonly use public/private key pairs to drive authentication that doesn't require the use of guessable passwords. OpenSSH includes tools to help support key-based authentication, specifically:\nssh-keygen for generating secure keys.\nssh-agent and ssh-add for securely storing private keys.\nscp and sftp to securely copy public key files during initial use of a server.\nThis document provides an overview of how to use these tools on Windows to begin using key-based authentication with Secure Shell (SSH). If you're not familiar with SSH key management, we strongly recommend that you review NIST document IR 7966, titled Security of Interactive and Automated Access Management Using Secure Shell (SSH).\nKey-based authentication in OpenSSH for Windows works with local Windows accounts and Active Directory (domain) accounts. Microsoft Entra ID accounts don't support key-based authentication.\nNote\nWindows OpenSSH doesn't support the\nAuthorizedKeysCommand and\nAuthorizedKeysCommandUser directives. Meaning you can't dynamically fetch SSH keys from Active Directory using these directives as you might on Linux system. For more information about the supported configuration options, see OpenSSH Server configuration for Windows Server and Windows.\nKey pairs\nKey pairs refer to the public and private key files that are used by certain authentication protocols.\nSSH public key authentication uses asymmetric cryptographic algorithms to generate two key files—one private and the other public. Each private key file is the equivalent of a password and should stay protected under all circumstances. If someone acquires your private key, they can sign in as you to any SSH server you have access to. The public key is what is placed on the SSH server and can be shared without compromising the private key.\nThe SSH server and client can use key-based authentication to compare the public key for a user name provided against the private key. If the server-side public key can't be validated against the client-side private key, authentication fails.\nYou can implement multifactor authentication with key pairs by entering a passphrase when you generate the key pair. For more information, see User key generation. The user is prompted for the passphrase during authentication. The passphrase combined with the presence of the private key is used on the SSH client to authenticate the user.\nImportant\nA remote session opened via key-based authentication doesn't have associated user credentials. As a result, the session isn't capable of outbound authentication as the user. This behavior is by design.\nHost key generation\nPublic keys have specific access control list (ACL) requirements that, on Windows, equate to only allowing access to administrators and the System user. The first time the\nsshd service is used, the key pair for the host is automatically generated.\nImportant\nYou need to install OpenSSH Server before you can run the commands in this article. For more information, see Get started with OpenSSH for Windows.\nBy default, you need to start\nsshd manually. To configure it to start automatically each time the server is restarted, run the following commands from an elevated PowerShell prompt on your server:\n# Set the sshd service to be started automatically.\nGet-Service -Name sshd | Set-Service -StartupType Automatic\n# Start the sshd service.\nStart-Service sshd\nBecause there's no user associated with the\nsshd service, the host keys are stored under C:\\ProgramData\\ssh.\nUser key generation\nTo use key-based authentication, you first need to generate public/private key pairs for your client. You can use\nssh-keygen.exe to generate key files. You can specify the following key-generation algorithms:\nDigital Signature Algorithm (DSA)\nRivest–Shamir–Adleman (RSA)\nElliptic Curve Digital Signature Algorithm (ECDSA)\nEd25519\nIf you don't specify an algorithm, Ed25519 is used. A strong algorithm and key length should be used, such as ECDSA in this example.\nTo generate key files by using the ECDSA algorithm, run the following command in a PowerShell or Command Prompt window on your client:\nssh-keygen -t ecdsa\nThe output from the command should look like the following lines, except that\nusername is replaced with your username:\nGenerating public/private ecdsa key pair.\nEnter file in which to save the key (C:\\Users\\username/.ssh/id_ecdsa):\nAt the prompt, you can select Enter to accept the default file path, or you can specify a path or file name for your generated keys.\nNext, you're prompted to use a passphrase to encrypt your private key files. In general, we don't recommend using an empty passphrase, because the passphrase works with the key file to provide two-factor authentication. But for this example, you can leave the passphrase empty.\nEnter passphrase (empty for no passphrase):\nEnter same passphrase again:\nYour identification has been saved in C:\\Users\\username/.ssh/id_ecdsa.\nYour public key has been saved in C:\\Users\\username/.ssh/id_ecdsa.pub.\nThe key fingerprint is:\nSHA256:OIzc1yE7joL2Bzy8!gS0j8eGK7bYaH1FmF3sDuMeSj8 username@LOCAL-HOSTNAME\nThe key's randomart image is:\n+--[ECDSA 256]--+\n| . |\n| o |\n| . + + . |\n| o B * = . |\n| o= B S . |\n| .=B O o |\n| + =+% o |\n| *oo.O.E |\n|+.o+=o. . |\n+----[SHA256]-----+\nNow you have a public/private ECDSA key pair in the specified location. The .pub file is the public key, and the file without an extension is the private key:\nMode LastWriteTime Length Name\n---- ------------- ------ ----\n-a---- 6/3/2021 2:55 PM 464 id_ecdsa\n-a---- 6/3/2021 2:55 PM 103 id_ecdsa.pub\nA private key file is the equivalent of a password and should be protected the same way you protect your password.\nYou can use\nssh-agent to securely store your private keys within a Windows security context that's associated with your Windows account. To configure the\nssh-agent service to start automatically each time your computer is restarted, and to use\nssh-add to store the private key, run the following commands at an elevated PowerShell prompt on your server:\n# By default, the ssh-agent service is disabled. Configure it to start automatically.\n# Run the following command as an administrator.\nGet-Service ssh-agent | Set-Service -StartupType Automatic\n# Start the service.\nStart-Service ssh-agent\n# The following command should return a status of Running.\nGet-Service ssh-agent\n# Load your key files into ssh-agent.\nssh-add $env:USERPROFILE\\.ssh\\id_ecdsa\nAfter you add the key to the\nssh-agent service on your client, the\nssh-agent service automatically retrieves the local private key and passes it to your SSH client.\nImportant\nWe recommend that you back up your private key to a secure location and then delete it\nfrom the local system after you add it to the\nssh-agent service. The private key can't be retrieved from\nthe agent when a strong algorithm, such as ECDSA in this example, is used. If you lose\naccess to the private key, you have to create a new key pair and update the public key on all\nsystems you interact with.\nDeploy the public key\nTo use the user key that you created previously, you need to place the contents of your public key (\\.ssh\\id_ecdsa.pub) on the server into a text file. The name and location of the file depend on whether the user account is a member of the local administrator group or a standard user account. The following sections cover both standard and administrative users.\nStandard user\nY",
+      "tier": "official"
+    },
+    {
+      "title": "Get started with OpenSSH for Windows - Microsoft Learn",
+      "url": "https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse?tabs=gui&pivots=windows-11",
+      "host": "learn.microsoft.com",
+      "body": "Get started with OpenSSH for Windows\nApplies to: ✅ Windows Server 2025, ✅ Windows Server 2022, ✅ Windows Server 2019, ✅ Windows 11, ✅ Windows 10\n Feedback\n Summarize this article for me\n In this article\nOpenSSH is a connectivity tool for remote sign-in that uses the SSH protocol. It encrypts all traffic between client and server to eliminate eavesdropping, connection hijacking, and other attacks.\nAn OpenSSH-compatible client can be used to connect to Windows Server and Windows client devices.\nThis article uses the in-box OpenSSH Feature on Demand in Windows and Windows Server. Microsoft supports and services this version through Windows Update, so it's the recommended option for most users.\nMicrosoft also maintains PowerShell/openssh-portable, a fork of the upstream, open-source OpenSSH project. Its releases might differ from the version in Windows.\nPrerequisites\nBefore you start, your computer must meet the following requirements:\nA device running at least Windows Server 2019 or Windows 10 (build 1809).\nPowerShell 5.1 or later.\nAn account that is a member of the built-in Administrators group.\nPrerequisites check\nTo validate your environment, open an elevated PowerShell session and do the following:\nEnter winver.exe and press enter to see the version details for your Windows device.\nRun \n$PSVersionTable.PSVersion. Verify your major version is at least 5, and your minor version \n…(중략)…\nInstall OpenSSH Server & Client\nGUI\nPowerShell\nTo install the OpenSSH components on Windows Server devices:\nSelect Start, type Optional Features in the search box, then select Optional Features.\nScan the list to see if the OpenSSH is already installed. If not, at the top of the page, select Views features, then:\nSearch for and select OpenSSH Client, then select Add\nSearch for and select OpenSSH Server, then select Add\nOpen the Services desktop app. (Select Start, type services.msc in the search box, and then select the Services app or press ENTER.)\nIn the details pane, double-click OpenSSH SSH Server.\nOn the General tab, from the Startup type drop-down menu, select Automatic and then select Ok.\nTo start the service, select Start.\nNote\nInstalling OpenSSH Server creates and enables a firewall rule named \nOpenSSH-Server-In-TCP. This rule allows inbound SSH traffic on port 22. If this rule isn't enabled and this port isn't open, connections are refused or reset.\nTo install OpenSSH using PowerShell:\nRun PowerShell as an Administrator.\nRun the following cmdlet to make sure that OpenSSH is available:\nGet-WindowsCapability -Online | Where-Object Name -like 'OpenSSH*'\nThe command should return the following output if neither are already installed:\nName : OpenSSH.Client~~~~0.0.1.0\nState : NotPresent\nName : OpenSSH.Server~~~~0.0.1.0\nState : NotPresent\nAfter that, run the following cmdlets to install the server or client components as needed:\n# Install the OpenSSH Client\nAdd-WindowsCapability -Online -Name OpenSSH.Client~~~~0.0.1.0\n# Install the OpenSSH Server\nAdd-WindowsCapability -Online -Name OpenSSH.Server~~~~0.0.1.0\nBoth commands should return the following output:\nPath :\nOnline",
+      "tier": "official"
+    },
+    {
+      "title": "GitHub Changelog: Security improvements for SSH (2026-09-22)",
+      "url": "https://github.blog/changelog/2026-09-22-security-improvements-for-ssh/",
+      "host": "github.blog",
+      "body": "We’re removing several SSH algorithms, adding a new algorithm, and requiring larger RSA SSH keys to improve security.\nThe changes are as follows:\nWe’re removing the ability to use RSA keys using SHA-1 in SSH (i.e., the ssh-rsa signature type, including ssh-rsa-cert-v01@openssh.com certificates using SHA-1).\nWe’re removing the key exchange mechanism diffie-hellman-group-exchange-sha256.\nAll new RSA SSH keys uploaded after October 14, 2026 must be at least 3072 bits in size, both for signing and authentication.\nWe’re additionally supporting the post-quantum key exchange method mlkem768x25519-sha256 for SSH sessions on github.com and GitHub Enterprise Cloud with Data Residency, except for the U.S. region.\nAdding ML-KEM lets us offer a newer, more performant key exchange method that is secure against quantum computers.\nWe’re also removing the older Diffie-Hellman method, a slow, little-used algorithm that could be broken with advances in quantum computing. For RSA, we’re removing the use of SHA-1 since it’s known to be weak, as well as increasing key sizes to align with 128-bit security requirements.\nSchedule\nOctober 14, 2026: The new RSA key size requirements take effect.  In addition, mlkem768x25519-sha256 will be enabled on github.com and GitHub Enterprise Cloud with Data Residency (except for the U.S. region).\nNovember 4, 2026: We’ll have a brownout of the removal of the ssh-rsa signature type (i.e., RSA keys using SHA-1) and the diffie-hellman-group-exchange-sha256 key exchange algorithm.\nDecember 9, 2026: We’ll have another brownout for the ssh-rsa signature type and the diffie-hellman-group-exchange-sha256 key exchange algorithm.\nJanuary 13, 2027: We’ll remove the ssh-rsa signature type and diffie-hellman-group-exchange-sha256 key exchange algorithm.\nThese changes will all take effect in GitHub Enterprise Server in version 3.25, except for the addition of mlkem768x25519-sha256, which will take effect in version 3.24.\nPreparing for these changes\nThe only affected users are those connecting with a Git client over SSH or those using the unauthenticated Git protocol on GitHub Enterprise Server. If your Git remotes start with https://, nothing here will affect you.\nRSA key changes\nIf you’re using an existing RSA key, make sure you’re using RSA with SHA-2 (i.e., the rsa-sha2-256 and rsa-sha2-512 signature types). You do not need to generate a new key, since all RSA keys are capable of signing with all hash algorithms. As long as the SSH program or library you’re using supports RSA with SHA-2, you can continue to use the same key without a problem and most SSH implementations supporting RSA with SHA-2 will choose it automatically.\nNote the distinction between the key type ssh-rsa, which applies generically to all RSA keys regardless of signature algorithm, and the confusingly named signature type ssh-rsa, which indicates an RSA key using SHA-1 (as opposed to rsa-sha2-256 and rsa-sha2-512, which refer to RSA keys using SHA-256 and SHA-512, respectively).\nHere’s a list of some common software that uses SSH to connect to GitHub and the version necessary to support RSA with SHA-2 robustly with the default configuration:\nSoftware\nMinimum Version\nOpenSSH\n7.2p1\nJSch\n0.1.66 from this fork\nTeamCity\n2021.2.3\nGo SSH\n0.16.0\nlibssh2\n1.11.0\nPuTTY\n0.82\nAlternatively, if you’re using older software and can’t upgrade, you may be able to use an Ed25519 or ECDSA key instead. All Ed25519 and ECDSA keys we support are strong, secure, and will continue to work for the indefinite future.\nFor generating new keys, we recommend using an Ed25519 key whenever possible. However, if you still need an RSA key for compatibility with other services, you can generate one as long as it as at least 3072 bits in size.\nRemoval of diffie-hellman-group-exchange-sha256\nIf you’re using one of the SSH implementations above that supports RSA with SHA-2, it should also support a strong key exchange mechanism.\nNew post-quantum algorithms\nThe addition of the mlkem768x25519-sha256 shouldn’t require any changes from users. SSH clients will automatically use the new algorithm by default if configured to prefer it. Users who use an older SSH client should automatically fall back to an older key exchange algorithm.",
+      "tier": "official"
+    }
+  ],
+  "dropped": [
+    {
+      "url": "https://www.openssh.com/txt/release-9.5",
+      "why": "검색 결과에 나온 URL 이 아니라 조사 에이전트가 직접 입력해 연 주소 → 본문 링크 금지(sources 에서 제외). 용도는 ssh-keygen 기본 알고리즘 변경(9.5)뿐인데 그 논쟁은 글에서 다루지 않음(cannotCover)."
+    },
+    {
+      "url": "https://docs.github.com/en/authentication/troubleshooting-ssh/error-host-key-verification-failed",
+      "why": "호스트 키 불일치 트러블슈팅 부록. 이번 각도(생성→등록→테스트→원격 전환, Mac/Windows/Linux 차이)와 무관하고, 첫 접속 지문 확인은 Testing·지문 페이지로 충분."
+    },
+    {
+      "url": "https://github.blog/news-insights/company-news/we-updated-our-rsa-ssh-host-key/",
+      "why": "2023-03-24 GitHub.com RSA 호스트 키 교체 사건. 시의성 훅(2026-09-22 Changelog)과 별개의 옛 사건이고 호스트 키 문제라 사용자 키 등록 글의 흐름을 흐림. Ed25519/ECDSA 사용자는 영향 없었다는 점만 참고용."
+    }
+  ],
+  "songs": []
+}
