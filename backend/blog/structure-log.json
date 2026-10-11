@@ -1,147 +1,5 @@
 [
   {
-    "slug": "suneung-checklist-2026",
-    "categoryId": "hangeut-trend",
-    "date": "2026-09-16",
-    "h2": [
-      "시험장에 가져갈 수 있는 것",
-      "반입 금지 물품",
-      "수험표와 신분증",
-      "시험 당일 유의사항",
-      "정리",
-      "참고"
-    ],
-    "closingClichePatterns": []
-  },
-  {
-    "slug": "winter-car-check-2026",
-    "categoryId": "hangeut-trend",
-    "date": "2026-09-16",
-    "h2": [
-      "왜 미리 점검해야 하나요",
-      "배터리 — 겨울 방전 1순위",
-      "타이어 — 공기압과 마모",
-      "냉각수·워셔액·브레이크",
-      "겨울 점검 한눈에",
-      "정리",
-      "참고"
-    ],
-    "closingClichePatterns": []
-  },
-  {
-    "slug": "heating-mat-guide-2026",
-    "categoryId": "hangeut-trend",
-    "date": "2026-09-17",
-    "h2": [
-      "전기장판과 온수매트, 뭐가 다른가요",
-      "전자파, 온수매트가 정말 안전할까요",
-      "전기요금은 어느 쪽이 쌀까요",
-      "안전이 가장 중요해요",
-      "살 때·쓸 때 체크리스트",
-      "정리",
-      "참고"
-    ],
-    "closingClichePatterns": []
-  },
-  {
-    "slug": "wedding-guest-look-2026",
-    "categoryId": "hangeut-trend",
-    "date": "2026-09-17",
-    "h2": [
-      "하객룩 기본 매너",
-      "올블랙, 입어도 될까요",
-      "가을엔 이런 컬러·소재",
-      "관계·상황에 따라 톤 맞추기",
-      "정리",
-      "참고"
-    ],
-    "closingClichePatterns": []
-  },
-  {
-    "slug": "halloween-costume-ideas-2026",
-    "categoryId": "hangeut-trend",
-    "date": "2026-09-17",
-    "h2": [
-      "올해 인기 코스튬 흐름",
-      "집에 있는 옷으로",
-      "커플·가족·반려동물",
-      "렌즈·분장 안전하게",
-      "정리",
-      "참고"
-    ],
-    "closingClichePatterns": []
-  },
-  {
-    "slug": "condensation-mold-prevention-2026",
-    "categoryId": "hangeut-trend",
-    "date": "2026-09-17",
-    "h2": [
-      "결로는 왜 생기나요",
-      "환기와 습도로 막기",
-      "배치와 단열로 막기",
-      "곰팡이 안전하게 제거하기",
-      "욕실 곰팡이 막는 법",
-      "정리",
-      "참고"
-    ],
-    "closingClichePatterns": []
-  },
-  {
-    "slug": "winter-comforter-guide-2026",
-    "categoryId": "hangeut-trend",
-    "date": "2026-09-17",
-    "h2": [
-      "충전재부터 고르기",
-      "라벨에서 꼭 볼 것",
-      "구스는 거위털 80%가 기준",
-      "필파워·충전량 숫자 읽는 법",
-      "소재별 세탁법",
-      "정리",
-      "참고"
-    ],
-    "closingClichePatterns": []
-  },
-  {
-    "slug": "humidifier-guide-2026",
-    "categoryId": "hangeut-trend",
-    "date": "2026-09-18",
-    "h2": [
-      "가습기 종류, 원리부터 다릅니다",
-      "사실 제일 중요한 건 '세척'입니다",
-      "우리 집 평수엔 몇 ml짜리?",
-      "살 때 체크리스트 & 적정 온습도",
-      "참고"
-    ],
-    "closingClichePatterns": []
-  },
-  {
-    "slug": "autumn-nail-trend-2026",
-    "categoryId": "hangeut-trend",
-    "date": "2026-09-18",
-    "h2": [
-      "올가을 네일 컬러, 딥 & 뉴트럴",
-      "컬러에 깊이를 더하는 텍스처 기법",
-      "제철 과일에서 온 가을 네일 아이디어",
-      "셀프네일, 오래 예쁘게 쓰는 법",
-      "참고"
-    ],
-    "closingClichePatterns": []
-  },
-  {
-    "slug": "autumn-outerwear-guide-2026",
-    "categoryId": "hangeut-trend",
-    "date": "2026-09-18",
-    "h2": [
-      "기온별로 뭘 걸칠까",
-      "간절기 대표 아우터 4가지",
-      "올가을 트렌치코트, 이렇게 입어요",
-      "2026 F/W 소재·트렌드 힌트",
-      "정리",
-      "참고"
-    ],
-    "closingClichePatterns": []
-  },
-  {
     "slug": "autumn-hotspring-travel-2026",
     "categoryId": "hangeut-trend",
     "date": "2026-09-18",
@@ -3278,6 +3136,184 @@
       "냄새나 색으로는 수세미 교체 시점을 못 가려요",
       "항균 스펀지와 하룻밤 건조는 달랐을까요",
       "수세미 자료에서 찾지 못한 것",
+      "정리",
+      "참고"
+    ],
+    "closingClichePatterns": []
+  },
+  {
+    "slug": "wsl-install-guide",
+    "categoryId": "hangeut-trend",
+    "date": "2026-10-11",
+    "h2": [
+      "WSL이 뭔지, 그리고 한 줄 설치가 생긴 배경",
+      "WSL 설치 전에 확인할 Windows 요구 사항",
+      "1단계 — 관리자 PowerShell에서 wsl --install 입력하기",
+      "2단계 — 재시작 후 WSL 리눅스 사용자 이름과 비밀번호 만들기",
+      "3단계 — wsl --version, --status, -l -v로 WSL 설치 확인하기",
+      "4단계 — apt update와 upgrade로 Ubuntu 패키지 업데이트하기",
+      "다른 WSL 배포판 설치하기 — wsl --list --online와 -d 옵션",
+      "WSL 1과 WSL 2 차이 — 기본값 WSL 2를 바꿔야 할 때",
+      "WSL 설치가 막힐 때 — 오류 코드별 점검",
+      "WSL 3.0.1 릴리스와 공식 설치 문서의 시차",
+      "정리",
+      "참고"
+    ],
+    "closingClichePatterns": []
+  },
+  {
+    "slug": "windows11-taskbar-settings",
+    "categoryId": "hangeut-trend",
+    "date": "2026-10-11",
+    "h2": [
+      "작업 표시줄 설정은 빈 곳 우클릭에서 열려요",
+      "Step 1. 작업 표시줄 아이콘을 왼쪽으로 옮기는 맞춤(정렬) 설정",
+      "Step 2. 작업 표시줄의 검색·위젯·작업 보기를 끄고 줄이는 법",
+      "Step 3. 작업 표시줄 시스템 트레이 아이콘 정리하기",
+      "Step 4. 작업 표시줄에 앱을 고정하고 해제하는 법",
+      "Step 5. 작업 표시줄 자동 숨기기로 화면 넓게 쓰기",
+      "Step 6. 작업 표시줄을 위·옆으로 옮기는 설정은 2026-08-27 노트에 나와요",
+      "작업 표시줄 설정이 문서와 다르게 보일 때",
+      "정리",
+      "참고"
+    ],
+    "closingClichePatterns": []
+  },
+  {
+    "slug": "excel-iferror-na",
+    "categoryId": "hangeut-trend",
+    "date": "2026-10-11",
+    "h2": [
+      "덮기 전에 확인할 #N/A 원인 5가지",
+      "IFERROR 와 IFNA, 가려지는 오류의 범위가 달라요",
+      "IFERROR 로 덮기 전에 MS 문서가 먼저 보라고 한 것",
+      "XLOOKUP 은 네 번째 인수 if_not_found 로 처리해요",
+      "함수별 적용 버전, 한 문서 안에서 어긋나는 곳도 있어요",
+      "그래도 #N/A 가 남을 때 확인할 3가지",
+      "정리",
+      "참고"
+    ],
+    "closingClichePatterns": []
+  },
+  {
+    "slug": "excel-print-one-page",
+    "categoryId": "hangeut-trend",
+    "date": "2026-10-11",
+    "h2": [
+      "한 페이지 인쇄 전에 버전과 라벨 표기부터 확인해요",
+      "Step 1. Page Setup에서 Fit to를 1페이지 × 1페이지로 맞춰요",
+      "Step 2. 리본 Scale to Fit에서 Width·Height를 1 page로 두는 방법",
+      "Step 3. 인쇄 미리 보기에서 한 장으로 나오는지 확인해요",
+      "한 페이지로 줄였더니 글씨가 작을 때 손볼 것들",
+      "인쇄 영역을 정하면 한 장에 담을 범위가 줄어요",
+      "페이지 나누기 미리 보기로 나뉘는 자리를 읽어요",
+      "Windows·Mac·웹의 한 페이지 인쇄 경로 비교",
+      "막히면 — 인쇄 결과가 설정과 다르게 나올 때",
+      "정리",
+      "참고"
+    ],
+    "closingClichePatterns": []
+  },
+  {
+    "slug": "covid-vaccine-2026",
+    "categoryId": "hangeut-trend",
+    "date": "2026-10-11",
+    "h2": [
+      "코로나19 예방접종이 필수예방접종으로 바뀐 배경",
+      "코로나19 예방접종 대상과 시작일",
+      "코로나19 예방접종에 쓰는 XFG 백신과 접종 횟수",
+      "코로나19와 독감 예방접종 같이 맞기",
+      "코로나19 예방접종 기관 찾기와 준비물",
+      "면역저하자 코로나19 예방접종 하한 연령, 자료마다 달라요",
+      "코로나19 예방접종 비용과 효과 FAQ",
+      "정리",
+      "참고"
+    ],
+    "closingClichePatterns": []
+  },
+  {
+    "slug": "battery-disposal-guide",
+    "categoryId": "hangeut-trend",
+    "date": "2026-10-11",
+    "h2": [
+      "폐건전지·보조배터리를 내기 전에 확인할 세 가지",
+      "배터리를 종량제봉투에 섞으면 안 되는 이유는 수거 중 화재예요",
+      "1단계 — 일반 건전지, 보조배터리, 배터리 내장 기기를 갈라요",
+      "2단계 — 전용 수거함은 지역마다 달라서 위치부터 찾아요",
+      "3단계 — 부푼 보조배터리는 버리기 전에 사용과 충전부터 멈춰요",
+      "수거함이 안 보이거나 안내가 서로 다를 때",
+      "정리",
+      "참고"
+    ],
+    "closingClichePatterns": []
+  },
+  {
+    "slug": "git-merge-conflict",
+    "categoryId": "hangeut-trend",
+    "date": "2026-10-11",
+    "h2": [
+      "병합 충돌이 나는 이유 — 같은 줄을 서로 다르게 고쳤을 때",
+      "충돌 마커 읽는 법 — 7글자 표시 세 개와 위·아래 두 덩어리",
+      "충돌 해결 순서 — 마커를 지우고 add, 그다음 병합 마무리",
+      "병합 충돌이 겁날 때 — merge --abort 의 한계와 reset --hard",
+      "rebase 중 충돌 — ours 와 theirs 가 뒤바뀌어요",
+      "충돌 상황별로 고를 명령 한눈표",
+      "정리",
+      "참고"
+    ],
+    "closingClichePatterns": []
+  },
+  {
+    "slug": "cabbage-storage-guide",
+    "categoryId": "hangeut-trend",
+    "date": "2026-10-11",
+    "h2": [
+      "통양배추는 겉잎 2~3장을 떼어 바깥 잎으로 싸요",
+      "자른 양배추는 단면에 키친타월을 대라고 보도들이 조언해요",
+      "양배추 보관 온도·기간 숫자는 집 냉장고 기준이 아니에요",
+      "양배추 세척은 겉잎 2~3장을 떼고 흐르는 물에 씻어요",
+      "양배추 냉동은 한국 공식 방법이 없어 미국 자료로만 말해요",
+      "양배추 보관에서 아직 확인되지 않은 것",
+      "정리",
+      "참고"
+    ],
+    "closingClichePatterns": []
+  },
+  {
+    "slug": "rice-cooker-cleaning",
+    "categoryId": "hangeut-trend",
+    "date": "2026-10-11",
+    "h2": [
+      "이 글이 읽은 밥솥 설명서 다섯 가지",
+      "밥솥 청소 전에 챙길 것",
+      "1단계 — 밥솥 내솥은 부드러운 스펀지로 닦고 쌀은 다른 그릇에서 씻어요",
+      "2단계 — 밥솥 뚜껑과 압력패킹은 떼어서 중성세제로 씻어요",
+      "3단계 — 밥솥 패킹은 몇 년마다 바꿔야 할까요, 문서마다 달라요",
+      "4단계 — 밥솥 증기배출구는 모델별 방법으로 따로 닦아요",
+      "5단계 — 밥솥 냄새가 심하면 자동세척 눈금 물에 식초 1큰술을 넣어요",
+      "6단계 — 스테인리스 밥솥 내솥의 얼룩은 문서마다 안내가 달라요",
+      "청소했는데도 밥솥에서 냄새가 나거나 김이 샐 때",
+      "밥솥 설명서에서 확인하지 못한 칸",
+      "정리",
+      "참고"
+    ],
+    "closingClichePatterns": []
+  },
+  {
+    "slug": "mackerel-prep-guide",
+    "categoryId": "hangeut-trend",
+    "date": "2026-10-11",
+    "h2": [
+      "고등어 손질·보관 글, 말마다 출처가 달라서 먼저 갈라 봐요",
+      "신선한 고등어 고르기는 해수부 한 문장이 찾은 공식 근거의 전부예요",
+      "고등어 손질 순서는 만개의레시피에서 공통 네 단계와 용도별 마무리로 소개돼요",
+      "고등어 손질에서 레시피 글과 어류 보관 안내가 겹치는 곳",
+      "사 온 고등어를 상온에 두면 안 되는 이유는 히스타민이에요",
+      "고등어를 상온에 두면 위험해지는 시간은 하루와 2~3시간으로 갈려요",
+      "고등어 냉장·냉동·해동 안내를 표로 봐요",
+      "확인한 범위에서 고등어는 해수부 이달의 수산물에 8번, 모두 9~11월이에요",
+      "고등어 제철과 산란기, 해수부 설명도 연도마다 달라요",
+      "고등어 글에서 비워 둔 것",
       "정리",
       "참고"
     ],

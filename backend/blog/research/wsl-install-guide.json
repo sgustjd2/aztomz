@@ -1,0 +1,259 @@
+{
+  "keyword": "WSL 설치",
+  "categoryId": "hangeut-trend",
+  "notes": "공식 문서(learn.microsoft.com 5편·support.microsoft.com·devblog)와 GitHub 릴리스(data)로 설치 한 줄·첫 계정 설정·배포판/버전 선택·오류 점검을 쓸 수 있다. 설치 문서 개정(ms.date 2025-06-09)이 GitHub 최신 3.0.1(2026-09-29)보다 앞서 3.x 이후 변경은 확인 못 했다. claims 1~4 가 뼈대, 5 는 문서 간 표기 차이 주의용(unclear).",
+  "cannotSay": [
+    "'직접 실행해 보니'·'필자 PC 에서 WSL 2.4.13.0' 등 특정 PC 결과 서술 금지 (localObservations 는 URL 없는 로컬 관찰이라 근거 아님)",
+    "배포판 이름 목록(Ubuntu-26.04 등)을 '지원 목록'으로 단정 금지 — 'wsl --list --online 으로 직접 확인하라'로만",
+    "WSL 3.x 에서도 설치 방법이 그대로라고 단정 금지(릴리스 노트에 언급이 없을 뿐). 3.0.2·3.0.3 은 언급 금지(curl 미확인)",
+    "Windows 11 Home/Pro 에디션별 설치 가능 여부 단정 금지",
+    "설치 소요 시간·다운로드 용량 수치 금지(공식 문서에 없음)"
+  ],
+  "cannotCover": [
+    "Windows 11 Home / Pro 에디션 제한 (읽은 문서에 언급 없음)",
+    "작업 관리자 > 성능 > CPU '가상화: 사용' 확인법 (공식 근거 없음 — 가상화 확인은 UEFI/BIOS 진입 경로까지만)",
+    "설치 후 Ubuntu 첫 실행 화면의 프롬프트 원문 (공식 문서는 'User Name and Password 를 만든다'까지만)",
+    "한국어 Windows 에서 뜨는 오류 문구 원문 (en-us 문서만 읽음)",
+    "wsl --update rollback (2021 devblog 에만 있고 현행 basic-commands 에 없음 — 현행 여부 미확인)",
+    "WSL 3.x 이후 wsl --install 기본 동작·기본 배포판 변화",
+    "ARM64·가상 머신(중첩 가상화) 설치의 실제 동작 (troubleshooting 문구만 확인)"
+  ],
+  "claims": [
+    {
+      "claim": "WSL 설치는 Windows 10 2004(Build 19041) 이상 또는 Windows 11 에서 PowerShell 에 wsl --install 한 줄을 입력하고 재시작하면 끝난다",
+      "grade": "confirmed",
+      "evidence": [
+        "요구 사항 원문: \"You must be running Windows 10 version 2004 and higher (Build 19041 and higher) or Windows 11 to use the commands below.\" 더 낮은 버전은 수동 설치 페이지를 보라고 안내",
+        "install 문서: PowerShell 을 관리자 모드(Run as administrator)로 열고 wsl --install 입력 후 컴퓨터 재시작",
+        "이 명령은 WSL 에 필요한 기능을 켜고 Ubuntu 배포판을 설치(기본 배포판은 변경 가능)",
+        "environment 문서가 정리한 --install 동작: WSL·Virtual Machine Platform 선택 구성요소 활성화 / 최신 Linux 커널 다운로드·설치 / WSL 2 를 기본값으로 설정 / Ubuntu 다운로드·설치(재부팅 필요할 수 있음). \"You will need to restart your machine during this installation process.\"",
+        "install 문서 Note: 이 명령은 WSL 이 전혀 설치돼 있지 않을 때만 동작(\"only works if WSL is not installed at all\"). 이미 설치된 상태에서 입력해 도움말이 나오면 wsl --list --online 로 목록을 보고 wsl --install -d <DistroName> 사용",
+        "첫 실행 시 콘솔 창이 열리고 파일 압축 해제·저장을 기다리라고 안내, 이후 실행은 \"less than a second\"",
+        "2021 devblog 도 같은 내용: 명령 하나로 선택 기능 활성화 + 기본 Ubuntu + 최신 WSL 커널 설치, 재시작 후 배포판이 시작되며 설치 완료",
+        "GitHub 최신 릴리스는 3.0.1(2026-09-29, Latest). 릴리스 노트 본문에 wsl --install 동작 변경 언급은 없음(변경 없다는 보증은 아님)"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/windows/wsl/install",
+        "https://learn.microsoft.com/en-us/windows/wsl/setup/environment",
+        "https://devblogs.microsoft.com/commandline/install-wsl-with-a-single-command-now-available-in-windows-10-version-2004-and-higher/",
+        "https://github.com/microsoft/WSL/releases/tag/3.0.1"
+      ]
+    },
+    {
+      "claim": "설치가 끝나면 시작 메뉴에서 배포판을 열어 리눅스 사용자 이름·비밀번호를 만들고, wsl 명령으로 상태를 확인하며 패키지를 직접 업데이트해야 한다",
+      "grade": "confirmed",
+      "evidence": [
+        "environment 문서: 시작 메뉴로 배포판(기본 Ubuntu)을 열면 User Name 과 Password 를 만들라고 요청. 이 계정은 배포판마다 따로이며 Windows 사용자 이름과 무관",
+        "비밀번호 입력 중 화면에 아무것도 안 나타나는 것은 정상(\"blind typing\")",
+        "만든 계정이 그 배포판의 기본 사용자가 되어 실행 시 자동 로그인되고, sudo 로 관리 명령을 실행할 수 있는 Linux administrator",
+        "배포판을 추가·재설치·초기화할 때마다 계정을 다시 만들어야 함. 비밀번호 변경은 배포판 안에서 passwd",
+        "비밀번호를 잊었을 때: PowerShell 에서 wsl -u root (기본 배포판) 또는 wsl -d <DistroName> -u root → passwd <username> → exit",
+        "패키지 업데이트: Ubuntu/Debian 은 sudo apt update && sudo apt upgrade. 문서는 Windows 가 리눅스 배포판을 자동 업데이트하지 않는다고 명시",
+        "확인 명령(basic-commands): wsl --version(WSL 과 구성요소 버전), wsl --status(기본 배포판 종류·기본 배포판·커널 버전), wsl -l -v(배포판 상태 running/stopped 와 WSL 1/2), WSL 자체 업데이트는 wsl --update"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/windows/wsl/setup/environment",
+        "https://learn.microsoft.com/en-us/windows/wsl/basic-commands",
+        "https://learn.microsoft.com/en-us/windows/wsl/install"
+      ]
+    },
+    {
+      "claim": "기본은 Ubuntu 와 WSL 2 이고, 다른 배포판은 wsl --list --online 로 이름을 확인해 wsl --install -d 로 고르며, WSL 1 은 Windows 파일을 주로 다룰 때만 고려한다",
+      "grade": "confirmed",
+      "evidence": [
+        "install 문서: 기본 설치 배포판은 Ubuntu, -d 플래그로 변경(wsl.exe --install -d [Distro]). 목록은 wsl.exe --list --online (짧게 wsl -l -o, basic-commands)",
+        "basic-commands 는 배포판 이름을 고정 목록으로 주지 않고 \"For a valid list of distribution names, run wsl --list --online.\" 로 안내 — 이름은 명령으로 확인",
+        "install 문서 소개문: Ubuntu, OpenSUSE, Kali, Debian, Arch Linux 등을 설치할 수 있다고 예시. 목록에 없는 배포판은 TAR 파일 import 또는 경우에 따라 .appx 로 설치 가능",
+        "wsl --install 로 설치한 새 배포판은 기본 WSL 2. 확인 wsl -l -v, 전환 wsl --set-version Ubuntu 2(install 문서 예시), 새 설치 기본값 wsl --set-default-version 2, 기본 배포판 wsl --set-default <Distro>(예 wsl -s Debian)",
+        "basic-commands 경고 원문: WSL 1 과 2 사이 전환은 시간이 오래 걸리거나 실패할 수 있어, 큰 프로젝트는 변환 전 파일 백업 권장",
+        "compare-versions 기능 표: Full Linux Kernel·전체 시스템 콜 호환·systemd 는 WSL 2 만 지원(WSL 1 ❌), OS 간 파일 시스템 성능은 WSL 1 이 우위(WSL 2 ❌). WSL 1 을 고려할 사례: 프로젝트 파일이 Windows 파일 시스템에 있어야 할 때",
+        "compare-versions 성능 수치 원문은 \"Initial versions of WSL 2\" 기준(tarball 해제 최대 20배, git clone·npm install·cmake 약 2~5배) — 초기 버전 수치이므로 현재 성능으로 쓰지 말 것"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/windows/wsl/install",
+        "https://learn.microsoft.com/en-us/windows/wsl/basic-commands",
+        "https://learn.microsoft.com/en-us/windows/wsl/compare-versions",
+        "https://devblogs.microsoft.com/commandline/install-wsl-with-a-single-command-now-available-in-windows-10-version-2004-and-higher/"
+      ]
+    },
+    {
+      "claim": "설치가 막히면 오류 코드별로 가상화(BIOS/UEFI)·Virtual Machine Platform·hypervisorlaunchtype·시스템 드라이브를 순서대로 점검한다",
+      "grade": "confirmed",
+      "evidence": [
+        "troubleshooting 원문: \"Error: 0x80370102 The virtual machine could not be started because a required feature is not installed.\" → Virtual Machine Platform Windows 기능을 켜고 BIOS 에서 가상화가 켜져 있는지 확인, 기능을 켠 뒤 재시작",
+        "0x80070003 또는 0x80370102: BIOS 에서 가상화 사용 설정 필요. 방법은 컴퓨터마다 다르며 대개 CPU 관련 옵션 아래",
+        "0x80070003 (단독 항목): WSL 은 시스템 드라이브(보통 C:)에서만 실행 — 배포판 저장 위치 확인. Windows 11 경로 Settings -> System -> Storage -> Advanced storage settings -> Where new content is saved",
+        "0x8007019e (WslRegisterDistribution failed): WSL 선택 구성요소가 꺼져 있음 → Control Panel -> Programs and Features -> Turn Windows Feature on or off -> Windows Subsystem for Linux 체크",
+        "하이퍼바이저 확인(관리자 PowerShell): bcdedit /enum | findstr -i hypervisorlaunchtype → Off 면 bcdedit /set hypervisorlaunchtype Auto",
+        "타사 가상화: VMware 15.5.5+ / VirtualBox 6+ 처럼 Hyper-V 를 지원하는 최신 버전이어야 하고, 아니면 꺼 둘 것",
+        "CPU 조건: WSL 2 는 SLAT 지원 필요(Intel Nehalem=Core 1세대, AMD Opteron 이후). Core 2 Duo 같은 구형은 Virtual Machine Platform 이 설치돼도 WSL 2 불가",
+        "install 문서: 설치가 0.0% 에서 멈추면 wsl --install --web-download -d <DistroName>",
+        "wsl 이 cmdlet 으로 인식되지 않으면 선택 구성요소 설치 확인(ARM64 PowerShell 은 wsl.exe 를 PowerShell Core 나 명령 프롬프트에서). \"Windows Subsystem for Linux has no installed distributions\" 는 배포판을 한 번 실행한 뒤 호출",
+        "UEFI(BIOS) 진입(Windows 11, support.microsoft.com): Settings > System > Recovery > Advanced startup 옆 Restart now > Troubleshoot > Advanced options > UEFI Settings > Restart. 화면 모양은 제조사마다 다르고, 필요한 설정만 바꿀 것(다른 설정을 건드리면 Windows 접근에 문제). 문서는 많은 기기가 이미 가상화가 켜져 있다고 안내"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/windows/wsl/troubleshooting",
+        "https://support.microsoft.com/windows/c5578302-6e43-4b4b-a449-8ced115f58e1",
+        "https://learn.microsoft.com/en-us/windows/wsl/install"
+      ]
+    },
+    {
+      "claim": "문서끼리 표기가 어긋나는 지점(-d 생략 가능 여부, 관리자 권한, 빌드 기준, 켜지는 기능)은 단정하지 말고 install 문서 기준으로 쓰되 차이를 밝힌다",
+      "grade": "unclear",
+      "evidence": [
+        "-d: install 문서·2021 devblog 는 wsl --install -d <DistroName> 형태만 제시. basic-commands 는 wsl --install <Distribution Name>(-d 없음)도 안내하면서, Windows 10 또는 구버전에서는 -d 가 필요할 수 있다는 Note 를 붙임 → 글에서는 -d 형태를 기본으로",
+        "관리자 권한: install 문서 \"Open PowerShell in administrator mode\", 2021 devblog \"admin privileges\" vs environment 문서 \"Open PowerShell (or Windows Command Prompt) and enter:\" (관리자 언급 없음) → install 문서 기준(관리자)으로 안내",
+        "빌드 기준 3종은 서로 다른 기능의 기준: wsl --install 은 Build 19041+ 또는 Windows 11 (install·environment), WSL 2 자체는 Windows 10 Version 1903 Build 18362+ 또는 Windows 11 (compare-versions·basic-commands), --install 이 스토어판 WSL 서비스 업데이트를 설치하는 것은 Build 19044+ (compare-versions). 설치 요구 사항은 install 문서 원문만 인용",
+        "켜지는 기능: environment 문서는 WSL 과 Virtual Machine Platform 구성요소 활성화라 하고, basic-commands 의 --enable-wsl1 설명(스토어판 설치 시 'Windows Subsystem for Linux' 선택 구성요소도 같이 켬)은 스토어판 기본 설치가 그 구성요소를 켜지 않는다는 뜻으로 읽히나 문서가 명시하진 않음 → 세부 단정 금지",
+        "문서 개정일: install ms.date 2025-06-09, basic-commands 2025-12-01 (updated_at 메타는 2026-06-02). GitHub 최신 3.0.1(2026-09-29)과 시차가 있어 3.x 반영 여부 미확인"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/windows/wsl/install",
+        "https://learn.microsoft.com/en-us/windows/wsl/basic-commands",
+        "https://learn.microsoft.com/en-us/windows/wsl/setup/environment",
+        "https://learn.microsoft.com/en-us/windows/wsl/compare-versions",
+        "https://devblogs.microsoft.com/commandline/install-wsl-with-a-single-command-now-available-in-windows-10-version-2004-and-higher/",
+        "https://github.com/microsoft/WSL/releases/tag/3.0.1"
+      ]
+    }
+  ],
+  "numbers": [
+    {
+      "what": "wsl --install 을 쓸 수 있는 Windows 요구 사항",
+      "value": "Windows 10 version 2004 and higher (Build 19041 and higher) or Windows 11",
+      "asOf": "install 문서 ms.date 2025-06-09",
+      "sourceUrl": "https://learn.microsoft.com/en-us/windows/wsl/install"
+    },
+    {
+      "what": "WSL 2 가 가능한 Windows 기준",
+      "value": "Windows 11 또는 Windows 10 Version 1903 (Build 18362 or later)",
+      "asOf": "compare-versions ms.date 2024-11-19",
+      "sourceUrl": "https://learn.microsoft.com/en-us/windows/wsl/compare-versions"
+    },
+    {
+      "what": "WSL 이 아예 지원되지 않는 빌드",
+      "value": "14393 미만 (builds lower than 14393)",
+      "asOf": "compare-versions ms.date 2024-11-19",
+      "sourceUrl": "https://learn.microsoft.com/en-us/windows/wsl/compare-versions"
+    },
+    {
+      "what": "wsl.exe --install 이 스토어판 WSL 서비스 업데이트를 설치하는 빌드",
+      "value": "Windows version 19044 or higher",
+      "asOf": "compare-versions ms.date 2024-11-19",
+      "sourceUrl": "https://learn.microsoft.com/en-us/windows/wsl/compare-versions"
+    },
+    {
+      "what": "WSL 2 CPU 조건(SLAT)",
+      "value": "Intel Nehalem(Core 1세대)·AMD Opteron 이후. Core 2 Duo 등 구형은 WSL 2 불가",
+      "asOf": "troubleshooting ms.date 2026-04-15",
+      "sourceUrl": "https://learn.microsoft.com/en-us/windows/wsl/troubleshooting"
+    },
+    {
+      "what": "타사 가상화 최소 버전",
+      "value": "VMware 15.5.5+ / VirtualBox 6+ (또는 꺼 둠)",
+      "asOf": "troubleshooting ms.date 2026-04-15",
+      "sourceUrl": "https://learn.microsoft.com/en-us/windows/wsl/troubleshooting"
+    },
+    {
+      "what": "WSL 2 초기 버전 성능 비교(WSL 1 대비)",
+      "value": "zip tarball 해제 최대 20배, git clone·npm install·cmake 약 2~5배 빠름 (\"Initial versions of WSL 2\" 기준)",
+      "asOf": "compare-versions ms.date 2024-11-19",
+      "sourceUrl": "https://learn.microsoft.com/en-us/windows/wsl/compare-versions"
+    },
+    {
+      "what": "첫 실행 이후 배포판 시작 시간",
+      "value": "less than a second (공식 문서 표현)",
+      "asOf": "install 문서 ms.date 2025-06-09",
+      "sourceUrl": "https://learn.microsoft.com/en-us/windows/wsl/install"
+    },
+    {
+      "what": "GitHub microsoft/WSL 최신 릴리스",
+      "value": "3.0.1 (Latest, 변경 범위 2.9.13...3.0.1, WSLc GA 발표 릴리스)",
+      "asOf": "2026-09-29",
+      "sourceUrl": "https://github.com/microsoft/WSL/releases/tag/3.0.1"
+    },
+    {
+      "what": "공식 문서 개정일(ms.date)",
+      "value": "install 2025-06-09 · basic-commands 2025-12-01 · troubleshooting 2026-04-15 · environment 2026-04-16 · compare-versions 2024-11-19",
+      "asOf": "2026-10-11 조사 시점",
+      "sourceUrl": "https://learn.microsoft.com/en-us/windows/wsl/install"
+    }
+  ],
+  "sources": [
+    {
+      "title": "How to install Linux on Windows with WSL",
+      "url": "https://learn.microsoft.com/en-us/windows/wsl/install",
+      "host": "learn.microsoft.com",
+      "body": "How to install Linux on Windows with WSL\nFeedback\nSummarize this article for me\nIn this article\nDevelopers can access the power of both Windows and Linux at the same time on a Windows machine. The Windows Subsystem for Linux (WSL) lets developers install a Linux distribution (such as Ubuntu, OpenSUSE, Kali, Debian, Arch Linux, etc) and use Linux applications, utilities, and Bash command-line tools directly on Windows, unmodified, without the overhead of a traditional virtual machine or dualboot setup.\nPrerequisites\nYou must be running Windows 10 version 2004 and higher (Build 19041 and higher) or Windows 11 to use the commands below. If you are on earlier versions please see the manual install page.\nInstall WSL command\nYou can now install everything you need to run WSL with a single command. Open PowerShell in administrator mode by right-clicking and selecting \"Run as administrator\", enter the wsl --install command, then restart your machine.\nwsl --install\nThis command will enable the features necessary to run WSL and install the Ubuntu distribution of Linux. (This default distribution can be changed).\nIf you're running an older build, or just prefer not to use the install command and would like step-by-step directions, see WSL manual installation steps for older versions.\nThe first time you launch a newly installed Linux distribution, a console window will open and you'll be asked to wait for files to de-compress and be stored on your machine. All future launches should take less than a second.\nNote\nThe above command only works if WSL is not installed at all. If you run wsl --install and see the WSL help text, please try running wsl --list --online to see a list of available distros and run wsl --install -d <DistroName> to install a distro.\nIf the install process hangs at 0.0%, run wsl --install --web-download -d <DistroName> to first download the distribution prior to installing.\nTo uninstall WSL, see Uninstall legacy version of WSL or unregister or uninstall a Linux distribution.\nChange the default Linux distribution installed\nBy default, the installed Linux distribution will be Ubuntu. This can be changed using the -d flag.\nTo change the distribution installed, enter:\nwsl.exe --install -d [Distro]\nReplace [Distro] with the name of the distribution you would like to install.\nTo see a list of available Linux distributions available for download through the online store, enter:\nwsl.exe --list --online\nIf you run into an issue during the install process, check the installation section of the troubleshooting guide.\nTo install a Linux distribution that is not listed as available, you can import any Linux distribution using a TAR file. Or in some cases you can install using an .appx file. You can also create your own custom Linux distribution to use with WSL.\nSet up your Linux user info\nOnce you have installed WSL, you will need to create a user account and password for your newly installed Linux distribution. See the Best practices for setting up a WSL development environment guide to learn more.\nSet up and best practices\nWe recommend following our Best practices for setting up a WSL development environment guide for a step-by-step walk-through of how to set up a user name and password for your installed Linux distribution(s), using basic WSL commands, installing and customizing Windows Terminal, set up for Git version control, code editing and debugging using the VS Code remote server, good practices for file storage, setting up a database, mounting an external drive, setting up GPU acceleration, and more.\nCheck which version of WSL you are running\nYou can list your installed Linux distributions and check the version of WSL each is set to by entering the command:\nwsl.exe --list --verbose\nTo set the default version to WSL 1 or WSL 2 when a new Linux distribution is installed, use the command:\nwsl.exe --set-default-version <1|2>\nTo set the default Linux distribution used with the wsl command, enter:\nwsl.exe --set-default <Distro>\nReplacing <Distro> with the name of the Linux distribution you would like to use.\nFor example, from PowerShell, enter: wsl -s Debian to set the default distribution to Debian.\nNow running wsl npm init from Powershell will run the npm init command in Debian.\nTo run a specific wsl distribution from within PowerShell without changing your default distribution, use the command:\nwsl.exe --distribution <DistroName>\nReplacing <DistroName> with the name of the distribution you want to use.\nLearn more in the guide to Basic commands for WSL.\nUpgrade version from WSL 1 to WSL 2\nNew Linux installations, installed using the wsl --install command, will be set to WSL 2 by default.\nTo see whether your Linux distribution is set to WSL 1 or WSL 2, use the command: wsl -l -v.\nUpgrading from WSL 1 to WSL 2 or downgrading from WSL 2 to WSL 1 can be done using the following command:\nwsl.exe --set-version <Distro> <1|2>\nReplacing <Distro> with the name of the Linux distribution that you want to update.\nFor example, wsl --set-version Ubuntu 2 will set your Ubuntu distribution to use WSL 2.\nIf you manually installed WSL prior to the wsl --install command being available, you may also need to enable the virtual machine optional component used by WSL 2 and install the kernel package if you haven't already done so.\nTo learn more, see the Command reference for WSL for a list of WSL commands, Comparing WSL 1 and WSL 2 for guidance on which to use for your work scenario, or Best practices for setting up a WSL development environment for general guidance on setting up a good development workflow with WSL.\nWays to run multiple Linux distributions with WSL\nWSL supports running as many different Linux distributions as you would like to install. This can include choosing distributions from the Microsoft Store, importing a custom distribution, or building your own custom distribution.\nThere are several ways to run your Linux distributions once installed:\nFrom Windows Terminal (Recommended) Using Windows Terminal supports as many command lines as you would like to install and enables you to open them in multiple tabs or window panes and quickly switch between multiple Linux distributions or other command lines (PowerShell, Command Prompt, Azure CLI, etc). You can fully customize your terminal with unique color schemes, font styles, sizes, background images, and custom keyboard shortcuts. Learn more.\nYou can directly open your Linux distribution by visiting the Windows Start menu and typing the name of your installed distributions. For example: \"Ubuntu\". This will open Ubuntu in its own console window.\nFrom PowerShell, you can enter the name of your installed distribution. For example: ubuntu\nFrom PowerShell, you can open your default Linux distribution inside your current command line, by entering: wsl.exe.",
+      "tier": "official",
+      "publishedAt": "2025-06-09"
+    },
+    {
+      "title": "Basic commands for WSL",
+      "url": "https://learn.microsoft.com/en-us/windows/wsl/basic-commands",
+      "host": "learn.microsoft.com",
+      "body": "The WSL commands below are listed in a format supported by PowerShell or Windows Command Prompt. To run these commands from a Bash / Linux distribution command line, you must replace wsl with wsl.exe. For a full list of commands, run wsl --help. If you have not yet done so, we recommend updating to the version of WSL installed from Microsoft Store in order to receive WSL updates as soon as they are available. (Learn more about installing WSL via Microsoft Store.).\nInstall\nwsl --install\nInstall WSL and the default Ubuntu distribution of Linux. Learn more. You can also use this command to install additional Linux distributions by running wsl --install <Distribution Name>. For a valid list of distribution names, run wsl --list --online.\nOptions include:\n--distribution: Specify the Linux distribution to install. You can find available distributions by running wsl --list --online.\n--no-launch: Install the Linux distribution but do not launch it automatically.\n--web-download: Install from an online source rather than using the Microsoft Store.\n--location: Specify which folder you would like to install the WSL distribution to.\nWhen WSL is not installed options include:\n--inbox: Installs WSL using the Windows component instead of using the Microsoft Store. (WSL updates will be received via Windows updates, rather than pushed out as-available via the store).\n--enable-wsl1: Enables WSL 1 during the install of the Microsoft Store version of WSL by also enabling the \"Windows Subsystem for Linux\" optional component.\n--no-distribution: Do not install a distribution when installing WSL.\nNote\nIf you run WSL on Windows 10 or an older version, you may need to include the -d flag with the --install command to specify a distribution: wsl --install -d <distribution name>.\nList available Linux distributions\nwsl --list --online\nSee a list of the Linux distributions available through the online store. This command can also be entered as: wsl -l -o.\nList installed Linux distributions\nwsl --list --verbose\nSee a list of the Linux distributions installed on your Windows machine, including the state (whether the distribution is running or stopped) and the version of WSL running the distribution (WSL 1 or WSL 2). Comparing WSL 1 and WSL 2. This command can also be entered as: wsl -l -v. Additional options that can be used with the list command include: --all to list all distributions, --running to list only distributions that are currently running, or --quiet to only show distribution names.\nSet WSL version to 1 or 2\nwsl --set-version <distribution name> <versionNumber>\nTo designate the version of WSL (1 or 2) that a Linux distribution is running on, replace <distribution name> with the name of the distribution and replace <versionNumber> with 1 or 2. Comparing WSL 1 and WSL 2. WSL 2 is only available in Windows 11 or Windows 10, Version 1903, Build 18362 or later.\nWarning\nSwitching between WSL 1 and WSL 2 can be time-consuming and result in failures due to the differences between the two architectures. For distributions with large projects, we recommend backing up files before attempting a conversion.\nSet default WSL version\nwsl --set-default-version <Version>\nTo set a default version of WSL 1 or WSL 2, replace <Version> with either the number 1 or 2. For example, wsl --set-default-version 2. The number represents the version of WSL to default to for new Linux distribution installations. Comparing WSL 1 and WSL 2. WSL 2 is only available in Windows 11 or Windows 10, Version 1903, Build 18362 or later.\nSet default Linux distribution\nwsl --set-default <Distribution Name>\nTo set the default Linux distribution that WSL commands will use to run, replace <Distribution Name> with the name of your preferred Linux distribution.\nStart WSL in user home directory\nwsl ~\nThe ~ can be used with wsl to start in the user's home directory. To jump from any directory back to home from within a WSL command prompt, you can use the command: cd ~.\nRun a specific Linux distribution from PowerShell or CMD\nwsl --distribution <Distribution Name> --user <User Name>\nTo run a specific Linux distribution with a specific user, replace <Distribution Name> with the name of your preferred Linux distribution (ie. Debian) and <User Name> with the name of an existing user (ie. root). If the user doesn't exist in the WSL distribution, you will receive an error. To print the current user name, use the command whoami.\nUpdate WSL\nwsl --update\nUpdate your WSL version to the latest version. Options include:\n--web-download: Download the latest update from the GitHub rather than the Microsoft Store.\nCheck WSL status\nwsl --status\nSee general information about your WSL configuration, such as default distribution type, default distribution, and kernel version.\nCheck WSL version\nwsl --version\nCheck the version information about WSL and its components.\nHelp command\nwsl --help\nSee a list of options and commands available with WSL.\nRun as a specific user\nwsl --user <Username>\nTo run WSL as a specified user, replace <Username> with the name of a user that exists in the WSL distribution.\nChange the default user for a distribution",
+      "tier": "official",
+      "publishedAt": "2025-12-01"
+    },
+    {
+      "title": "Troubleshooting Windows Subsystem for Linux (Installation issues)",
+      "url": "https://learn.microsoft.com/en-us/windows/wsl/troubleshooting",
+      "host": "learn.microsoft.com",
+      "body": "Installation issues\nInstallation failed with error 0x80070003\nThe Windows Subsystem for Linux only runs on your system drive (usually this is your C: drive). Make sure that distributions are stored on your system drive:\nOn Windows 10 open Settings -> System -> Storage -> More Storage Settings: Change where new content is saved\nOn Windows 11 open Settings -> System -> Storage -> Advanced storage settings -> Where new content is saved\nWslRegisterDistribution failed with error 0x8007019e\nThe Windows Subsystem for Linux optional component is not enabled:\nOpen Control Panel -> Programs and Features -> Turn Windows Feature on or off -> Check Windows Subsystem for Linux, or using the PowerShell cmdlet mentioned at the step 1.\nInstallation failed with error 0x80070003 or error 0x80370102\nPlease make sure that virtualization is enabled inside of your computer's BIOS. The instructions on how to do this will vary from computer to computer, and will most likely be under CPU related options.\nWSL2 requires that your CPU supports the Second Level Address Translation (SLAT) feature, which was introduced in Intel Nehalem processors (Intel Core 1st Generation) and AMD Opteron. Older CPUs (such as the Intel Core 2 Duo) will not be able to run WSL2, even if the Virtual Machine Platform is successfully installed.\nError when trying to upgrade, Invalid command line option: wsl --set-version Ubuntu 2\nEnsure that you have the Windows Subsystem for Linux enabled, and that you're using Windows Build version 18362 or later. To enable WSL run this command in a PowerShell prompt with admin privileges:\nEnable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux\nThe requested operation could not be completed due to a virtual disk system limitation. Virtual hard disk files must be uncompressed and unencrypted and must not be sparse.\nDeselect \"Compress contents\" (as well as \"Encrypt contents\" if that’s checked) by opening the profile folder for your Linux distribution. It should be located in a folder on your Windows file system, something like: %LocalAppData%\\Packages\\CanonicalGroupLimited...\nIn this Linux distro profile, there should be a LocalState folder. Right-click this folder to display a menu of options. Select Properties > Advanced and then ensure that the \"Compress contents to save disk space\" and \"Encrypt contents to secure data\" checkboxes are unselected (not checked). If you are asked whether to apply this to just to the current folder or to all subfolders and files, select \"just this folder\" because you are only clearing the compress flag. After this, the wsl --set-version command should work.\nNote\nIn my case, the LocalState folder for my Ubuntu 18.04 distribution was located at C:\\Users\\<my-user-name>\\AppData\\Local\\Packages\\CanonicalGroupLimited.Ubuntu18.04onWindows_79rhkp1fndgsc\nCheck WSL Docs GitHub thread #4103 where this issue is being tracked for updated information.\nThe term 'wsl' is not recognized as the name of a cmdlet, function, script file, or operable program.\nEnsure that the Windows Subsystem for Linux Optional Component is installed. Additionally, if you are using an ARM64 device and running this command from PowerShell, you will receive this error. Instead run wsl.exe from PowerShell Core, or Command Prompt.\nError: Windows Subsystem for Linux has no installed distributions.\n====\n\"Error: 0x80370102 The virtual machine could not be started because a required feature is not installed.\"\nPlease enable the Virtual Machine Platform Windows feature and ensure virtualization is enabled in the BIOS.\nCheck the Hyper-V system requirements\nIf your machine is a VM, enable nested virtualization manually. Launch powershell with admin, and run the following command, replacing <VMName> with the name of the virtual machine on your host system (you can find the name in your Hyper-V Manager):\nSet-VMProcessor -VMName <VMName> -ExposeVirtualizationExtensions $true\nPlease follow guidelines from your PC's manufacturer on how to enable virtualization. In general, this can involve using the system BIOS to ensure that these features are enabled on your CPU. Instructions for this process can vary from machine to machine, please see Enable virtualization on Windows.\nRestart your machine after enabling the Virtual Machine Platform optional component.\nMake sure that the hypervisor launch is enabled in your boot configuration. You can validate this by running elevated powershell:\nbcdedit /enum | findstr -i hypervisorlaunchtype\nIf you see hypervisorlaunchtype    Off, then the hypervisor is disabled. To enable it run in an elevated powershell:\nbcdedit /set hypervisorlaunchtype Auto\nAdditionally, if you have 3rd party hypervisors installed (Such as VMware or VirtualBox) then please ensure you have these on the latest versions which can support HyperV (VMware 15.5.5+ and VirtualBox 6+) or are turned off.\nIf you are receiving this error on an Azure Virtual Machine, check to ensure that Trusted Launch is disabled. Nested Virtualization is not supported on Azure virtual machines with Trusted Launch.\nLearn more about how to Configure Nested Virtualization when running Hyper-V in a Virtual Machine.\n====\nInstallation issues after Windows system restore\nDelete the %SystemRoot%\\System32\\Tasks\\Microsoft\\Windows\\Windows Subsystem for Linux folder.\nWarning\nDo not do this if your optional feature is fully installed and working.\nEnable the WSL optional feature (if not already)\nReboot\nRun wsl --unregister <DistroName> to remove the legacy WSL distribution (for older legacy WSL, lxrun /uninstall /full was used)\nReinstall the Linux distribution from the Microsoft Store",
+      "tier": "official",
+      "publishedAt": "2026-04-15"
+    },
+    {
+      "title": "Comparing WSL Versions",
+      "url": "https://learn.microsoft.com/en-us/windows/wsl/compare-versions",
+      "host": "learn.microsoft.com",
+      "body": "Learn more about different WSL versions, including why WSL 2 is now the default and the specific scenarios or exceptions that may warrant switching your installed Linux distribution to the earlier WSL 1 architecture.\nComparing WSL 1 and WSL 2\nThis guide will compare WSL 1 and WSL 2, including exceptions for using WSL 1 rather than WSL 2. The primary differences between WSL 1 and WSL 2 are the use of an actual Linux kernel inside a managed VM, support for full system call compatibility, and performance across the Linux and Windows operating systems. WSL 2 is the current default version when installing a Linux distribution and uses the latest and greatest in virtualization technology to run a Linux kernel inside of a lightweight utility virtual machine (VM). WSL2 runs Linux distributions as isolated containers inside the managed VM. If your distribution is currently running WSL 1 and you want to update to WSL 2, see update from WSL 1 to WSL 2.\nComparing features\nFeature\nWSL 1\nWSL 2\nIntegration between Windows and Linux\n✅\n✅\nFast boot times\n✅\n✅\nSmall resource foot print compared to traditional Virtual Machines\n✅\n✅\nRuns with current versions of VMware and VirtualBox\n✅\n❌\nManaged VM\n❌\n✅\nFull Linux Kernel\n❌\n✅\nFull system call compatibility\n❌\n✅\nPerformance across OS file systems\n✅\n❌\nsystemd support\n❌\n✅\nIPv6 support\n✅\n✅\nAs you can tell from the comparison table above, the WSL 2 architecture outperforms WSL 1 in several ways, with the exception of performance across OS file systems, which can be addressed by storing your project files on the same operating system as the tools you are running to work on the project.\nWSL 2 is only available in Windows 11 or Windows 10, Version 1903, Build 18362 or later. Check your Windows version by selecting the Windows logo key + R, type winver, select OK. (Or enter the ver command in Windows Command Prompt). You may need to update to the latest Windows version. For builds lower than 14393, WSL is not supported at all.\nFor more info on the latest WSL 2 updates, see the Windows Command Line blog, including Systemd support is now available in WSL and WSL September 2023 update for more info on IPv6 support.\nNote\nWSL 2 will work with VMware 15.5.5+ and although VirtualBox 6+ states that there is WSL support, there are still significant challenges that make it unsupported. Learn more in our FAQs.\nWhat's new in WSL 2\nWSL 2 is a major overhaul of the underlying architecture and uses virtualization technology and a Linux kernel to enable new features. The primary goals of this update are to increase file system performance and add full system call compatibility.\nWSL 2 system requirements\nSet your Linux distribution version from WSL 1 to WSL 2\nFrequently Asked Questions about WSL 2\nWSL 2 architecture\nA traditional VM experience can be slow to boot up, is isolated, consumes a lot of resources, and requires your time to manage it. WSL 2 does not have these attributes.\nWSL 2 provides the benefits of WSL 1, including seamless integration between Windows and Linux, fast boot times, a small resource footprint, and requires no VM configuration or management. While WSL 2 does use a VM, it is managed and run behind the scenes, leaving you with the same user experience as WSL 1.\nFull Linux kernel\nThe Linux kernel in WSL 2 is built by Microsoft from the latest stable branch, based on the source available at kernel.org. This kernel has been specially tuned for WSL 2, optimizing for size and performance to provide an amazing Linux experience on Windows. The kernel will be serviced by Windows updates, which means you will get the latest security fixes and kernel improvements without needing to manage it yourself.\nThe WSL 2 Linux kernel is open source. If you'd like to learn more, check out the blog post Shipping a Linux Kernel with Windows written by the team that built it.\nLearn more in the Release Notes for Windows Subsystem for Linux kernel.\nIncreased file IO performance\nFile intensive operations like git clone, npm install, apt update, apt upgrade, and more are all noticeably faster with WSL 2.\nThe actual speed increase will depend on which app you're running and how it is interacting with the file system. Initial versions of WSL 2 run up to 20x faster compared to WSL 1 when unpacking a zipped tarball, and around 2-5x faster when using git clone, npm install and cmake on various projects.\nFull system call compatibility\nLinux binaries use system calls to perform functions such as accessing files, requesting memory, creating processes, and more. Whereas WSL 1 used a translation layer that was built by the WSL team, WSL 2 includes its own Linux kernel with full system call compatibility. Benefits include:\nA whole new set of apps that you can run inside of WSL, such as Docker and more.\nAny updates to the Linux kernel are immediately ready for use (you don't have to wait for the WSL team to implement updates and add the changes).\nExceptions for using WSL 1 rather than WSL 2\nWe recommend that you use WSL 2 as it offers faster performance and 100% system call compatibility. However, there are a few specific scenarios where you might prefer using WSL 1. Consider using WSL 1 if:\nYour project files must be stored in the Windows file system. WSL 1 offers faster access to files mounted from Windows.\nIf you will be using your WSL Linux distribution to access project files on the Windows file system, and these files cannot be stored on the Linux file system, you will achieve faster performance across the OS files systems by using WSL 1.\nA project which requires cross-compilation using both Windows and Linux tools on the same files.\nFile performance across the Windows and Linux operating systems is faster in WSL 1 than WSL 2, so if you are using Windows applications to access Linux files, you will currently achieve faster performance with WSL 1.\nYour project needs access to a serial port or USB device. However, USB device support is now available for WSL 2 via the USBIPD-WIN project. See Connect USB devices for set up steps.\nWSL 2 does not include support for accessing serial ports. Learn more in the FAQs or in WSL GitHub repo issue on serial support.\nYou have strict memory requirements\nWSL 2's memory usage grows and shrinks as you use it. When a process frees memory this is automatically returned to Windows. However, as of right now WSL 2 does not yet release cached pages in memory back to Windows until the WSL instance is shut down. If you have long running WSL sessions, or access a very large amount of files, this cache can take up memory on Windows. We are tracking the work to improve this experience on the WSL GitHub repository issue 4166.\nFor those using VirtualBox, be sure to use the latest version of both VirtualBox and WSL 2. See the related FAQ.\nIf you rely on a Linux distribution to have an IP address in the same network as your host machine, you may need to set up a workaround in order to run WSL 2. WSL 2 is running as a Hyper-V virtual machine. This is a change from the bridged network adapter used in WSL 1, meaning that WSL 2 uses a Network Address Translation (NAT) service for its virtual network, instead of making it bridged to the host Network Interface Card (NIC) resulting in a unique IP address that will change on restart. To learn more about the issue and workaround that forwards TCP ports of WSL 2 services to the host OS, see WSL GitHub repository issue 4150, NIC Bridge mode (TCP Workaround).\nNote\nConsider trying the VS Code Remote WSL Extension to enable you to store your project files on the Linux file system, using Linux command line tools, but also using VS Code on Windows to author, edit, debug, or run your project in an internet browser without any of the performance slow-downs associated with working across the Linux and Windows file systems. Learn more.\nWSL in the Microsoft Store\nWSL has lifted the update functionality out of the Windows OS image into a package that is available via the Microsoft Store. This means faster updates and servicing as soon as they're available, rather than needing to wait for an update of your Windows operating system.\nWSL was originally included in the Windows operating system as an optional component that need to be enabled in order to install a Linux distribution. WSL in the Store has the same user experience, and is the same product, but receives updates and servicing as a store package, rather than as an entire OS update. Beginning in Windows version 19044 or higher, running the wsl.exe --install command will install the WSL servicing update from the Microsoft Store. (See the blog post announcing this update). If you are already using WSL, you can update to ensure that you're receiving the latest WSL features and servicing from the store by running wsl.exe --update.\nNote\nIf the Microsoft Store is inaccessible within your organization, you can still utilize this WSL version by appending --web-download to the --update command, such as wsl --update --web-download. You need to manually update WSL every time a new release becomes available using this method.",
+      "tier": "official",
+      "publishedAt": "2024-11-19"
+    },
+    {
+      "title": "Set up a WSL development environment (Linux username and password)",
+      "url": "https://learn.microsoft.com/en-us/windows/wsl/setup/environment",
+      "host": "learn.microsoft.com",
+      "body": "A step-by-step guide to the best practices for setting up a WSL development environment. Learn how to run the command to install the default Bash shell that uses Ubuntu or can be set to install other Linux distributions, use basic WSL commands, set up Visual Studio Code or Visual Studio, Git, Windows Credential Manager, databases like MongoDB, Postgres, or MySQL, set up GPU acceleration, run GUI apps, and more.\nGet started\nWindows Subsystem for Linux comes with the Windows operating system, but you must enable it and install a Linux distribution before you can begin using it.\nOpen PowerShell (or Windows Command Prompt) and enter:\nNote\nThe wsl --install command requires Windows 10 version 2004 (Build 19041) or later, or Windows 11. If you prefer to install a different Linux distribution, or would prefer to complete these steps manually, see the WSL installation page for more details.\nwsl --install\nThe --install command performs the following actions:\nEnables the optional WSL and Virtual Machine Platform components\nDownloads and installs the latest Linux kernel\nSets WSL 2 as the default\nDownloads and installs the Ubuntu Linux distribution (reboot may be required)\nYou will need to restart your machine during this installation process.\nCheck the troubleshooting installation article if you run into any issues.\nSet up your Linux username and password\nOnce the process of installing your Linux distribution with WSL is complete, open the distribution (Ubuntu by default) using the Start menu. You will be asked to create a User Name and Password for your Linux distribution.\nThis User Name and Password is specific to each separate Linux distribution that you install and has no bearing on your Windows user name.\nPlease note that whilst entering the Password, nothing will appear on screen. This is called blind typing. You won't see what you are typing, this is completely normal.\nOnce you create a User Name and Password, the account will be your default user for the distribution and automatically sign-in on launch.\nThis account will be considered the Linux administrator, with the ability to run sudo (Super User Do) administrative commands.\nEach Linux distribution running on WSL has its own Linux user accounts and passwords.  You will have to configure a Linux user account every time you add a distribution, reinstall, or reset.\nNote\nLinux distributions installed with WSL are a per-user installation and can't be shared with other Windows user accounts. Encountering a username error? StackExchange: What characters should I use or not use in usernames on Linux?\nTo change or reset your password, open the Linux distribution and enter the command: passwd. You will be asked to enter your current password, then asked to enter your new password, and then to confirm your new password.\nIf you forgot the password for your Linux distribution:\nOpen PowerShell and enter the root of your default WSL distribution using the command: wsl -u root\nIf you need to update the forgotten password on a distribution that is not your default, use the command: wsl -d <DistroName> -u root, replacing <DistroName> with the name of your targeted distribution.\nOnce your WSL distribution has been opened at the root level inside PowerShell, you can use this command to update your password: passwd <username> where <username> is the username of the account in the distribution whose password you've forgotten.\nYou will be prompted to enter a new UNIX password and then confirm that password. Once you're told that the password has updated successfully, close WSL inside of PowerShell using the command: exit.\nUpdate and upgrade packages\nWe recommend that you regularly update and upgrade your packages using the preferred package manager for the distribution. For Ubuntu or Debian, use the command:\nsudo apt update && sudo apt upgrade",
+      "tier": "official",
+      "publishedAt": "2026-04-16"
+    },
+    {
+      "title": "Enable Virtualization on Windows",
+      "url": "https://support.microsoft.com/windows/c5578302-6e43-4b4b-a449-8ced115f58e1",
+      "host": "support.microsoft.com",
+      "body": "Virtualization lets your Windows device emulate a different operating system, like Android or Linux. Enabling virtualization gives you access to a larger library of apps to use and install on your device. If you upgraded your device from Windows 10 to Windows 11, these steps help you enable virtualization.\nNote\nMany Windows devices already have virtualization enabled, so you might not need to follow these steps.\nBefore you begin, determine your device model and manufacturer. You'll need this information later in the process.\n1. Access the UEFI (or BIOS)\nBefore you begin, we recommend opening this page on a different device. Here's how to get to the UEFI from Windows:\nIn the\nSettings app on your Windows device, select System > Recovery.\nOpen Recovery settings\nNote\nIn Windows 10, you can access from  Update & Security > Recovery.\nUnder Recovery options, next to Advanced startup, select Restart now.\nYour PC will restart in the Windows Recovery Environment. Select Troubleshoot > Advanced options > UEFI Settings > Restart.\nYour PC will restart again and you'll be in the UEFI utility. At this step, you might see the UEFI referred to as the BIOS on your PC.\n2. Make changes in the UEFI (or BIOS)\nThe way the UEFI (or BIOS) appears depends on your PC manufacturer. Once you've enabled virtualization and exited the UEFI, your PC will restart.\nImportant\nOnly change what you need to in the UEFI (or BIOS). Adjusting other settings might prevent you from accessing Windows.\nInstructions based on your PC manufacturer\nChoose your PC manufacturer for specific instructions on enabling virtualization. If you don't see your manufacturer listed, refer to your device documentation.\nThese are external links to the manufacturers' websites.\nPC manufacturer",
+      "tier": "official",
+      "publishedAt": null
+    },
+    {
+      "title": "Install WSL with a single command now available in Windows 10 version 2004 and higher",
+      "url": "https://devblogs.microsoft.com/commandline/install-wsl-with-a-single-command-now-available-in-windows-10-version-2004-and-higher/",
+      "host": "devblogs.microsoft.com",
+      "body": "Install WSL with a single command now available in Windows 10 version 2004 and higher\nJuly 30th, 2021\n2 reactions\nInstall WSL with a single command now available in Windows 10 version 2004 and higher\nCraig Loewen\nPrincipal Product Manager\nShow more\nIn the latest Windows Insider Preview builds, you can install everything you need to run WSL just by running wsl.exe --install. We’re excited to announce that this functionality is now officially backported to Windows 10 version 2004 and higher, which will make installing WSL on those builds much easier!\nUsing wsl --install\nThe process to set up WSL was previously too complicated, involving turning on multiple settings and installing multiple packages. We’ve simplified the process down to just one command, simply open a command prompt window with admin privileges and run wsl.exe --install. Once you hit enter, the process will automatically enable the WSL optional features required, install the Ubuntu distribution by default, and install the latest WSL Linux kernel version onto your machine. When it’s completed and you restart your machine, your distribution will start after you boot up again, completing the installation.\nAdditionally, you can find a list of Linux distributions available to install by entering the command wsl --list --online in PowerShell or Windows Command Prompt. To install a distribution other than, or in addition to, the Ubuntu default, use this command: wsl --install -d <DistroName>\nReplace <DistroName> with the name of a Linux distribution found in the previous list command. This install command can be used for first time installation or for adding additional distributions after you already have WSL installed with the default Ubuntu distribution.\nAdditional commands\nWe’ve also included some additional commands to help you manage your WSL instances with this backport.\nYou can use wsl --update to manually update your WSL Linux kernel, and you can use wsl --update rollback to rollback to a previous WSL Linux kernel version.\nLastly, you can use wsl --status to see general information about your WSL configuration, such as default distro type, default distro, and kernel version.\nUpdate your Windows 10 version to support these commands\nYou can get this backport just by updating Windows like normal. To manually do this open Windows Settings, go to ‘Updates and Security’ and hit ‘Check for Updates’.\nThis update is part of KB5004296 and you can find full instructions on how to ensure you have it installed and its changes here. At the time of writing, when you click “Check for Updates” you might see an available optional update, ensure that it has the same number as KB5004296, install it, and you’ll get access to wsl --update.",
+      "tier": "official",
+      "publishedAt": "2021-07-30"
+    },
+    {
+      "title": "WSL release 3.0.1 (Latest) — microsoft/WSL GitHub",
+      "url": "https://github.com/microsoft/WSL/releases/tag/3.0.1",
+      "host": "github.com",
+      "body": "GPG key ID: B5690EEEBB952194\nVerified\nLearn about vigilant mode.\nWSLc is generally available.\nLinux containers are central to modern development, from cloud-native applications to AI workloads. We're making those workflows simpler and easier to access on Windows with WSL containers, which is generally available today. Read more about the feature below.\nOfficial announcement: https://blogs.windows.com/windowsdeveloper/2026/09/29/wsl-containers-now-generally-available/\nArchitecture deep dive: https://devblogs.microsoft.com/commandline/wslc-architecture-deep-dive/\nWhat's Changed\nSimplify event reader cleanup by beena352 in #41667\nFix config's handling of non-ascii characters by Feng Wang (@chemwolf6922) in #41657\nPrevent potential invalid access for string array pretty print by Feng Wang (@chemwolf6922) in #41673\nFollow up to PR #41512 by Feng Wang (@chemwolf6922) in #41642\nUse a static CRT in debug builds by Blue (@OneBlue) in #41684\nIncrease the VM termination timeout to 30 seconds by Blue (@OneBlue) in #41688\nImpersonate the caller before making various filesystem operations by Blue (@OneBlue) in #41689\nSupport STDIN through SDK by JohnMcPMS in #41698\nFollowup to STDIN PR by JohnMcPMS in #41703\nRemove references to WSLC being in preview by Blue (@OneBlue) in #41704\nFull Changelog: 2.9.13...3.0.1",
+      "tier": "data",
+      "publishedAt": "2026-09-29"
+    }
+  ],
+  "dropped": [
+    {
+      "url": "(raw.localObservations — URL 없음)",
+      "why": "이 PC 에서 돌린 로컬 실행 결과(WSL 2.4.13.0, --list --online 목록 등). 출처 URL 이 없어 claims/numbers 근거에서 제외"
+    },
+    {
+      "url": "(github.com/microsoft/WSL/releases 목록의 3.0.2·3.0.3 항목)",
+      "why": "WebFetch 요약만 있고 curl 미검증, 연도도 불명 — 쓰지 않음"
+    }
+  ],
+  "songs": []
+}

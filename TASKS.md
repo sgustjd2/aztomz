@@ -1,3 +1,23 @@
+# 2026-10-11 저녁 블로그 배치 — 10-12치 미리, 사람 요청(티스토리 5 + 네이버 5)
+
+claim: 만들지 않음(10-10 선례). 대기열 하루 플랫폼당 5편 상한이라 백로그(티스토리 3·네이버 2+@)와 내일 09:00 무인 2+2가 겹쳐 며칠에 나눠 나감.
+중복 대조: posted+posted-naver+초안 382 제목 핵심어 grep — 아래 10개 0건.
+## 티스토리 (5)
+- [x] excel-iferror-na — 엑셀 #N/A IFERROR·IFNA · official 6 · 팩트체크 blocker 2(#N/A Solution 의 두 방법에 없는 순서를 붙임 — 조사파일도 정정, XLOOKUP 어긋남을 "문서끼리"로 — 실제론 한 문서 안 Note↔Applies To) 교정 · selfreview 무수정 · verify 통과(warn 1)
+- [x] excel-print-one-page — 엑셀 한 페이지에 인쇄 · official 11 · 팩트체크 blocker 2(프린터 용지 경고 비교 대상 오기 — "Excel 설정"이 아니라 "실제 들어 있는 용지", 조사파일도 정정) 교정 · selfreview 1건(조건부 원인 단정) · verify 통과 → 근거 없는 한국어 라벨 1행 고쳐 재검증 통과(warn 1)
+- [x] wsl-install-guide — WSL 설치 · official 7·data 1 · 로컬 관찰(이 PC 버전·배포판 목록)은 근거 제외 · 팩트체크 통과(blocker 0, 절 이름·"빌드→버전" warn 반영) · selfreview 무수정 · verify 통과(warn 2)
+- [x] git-merge-conflict — git 병합 충돌 해결 · official 7 · 로컬 재현(종료 코드·실제 출력)은 근거 제외 · 팩트체크 blocker 3(Pro Git 에 없는 "그래서 abort 먼저" 이유 — 조사파일도 정정, 삭제 충돌 조건 누락, GitHub Docs 예시에 없는 add 파일명) 교정 · selfreview 무수정 · verify 통과(warn 2)
+- [x] windows11-taskbar-settings — 윈도우 11 작업 표시줄 설정 · official 4 · 시의성: KB5120998(2026-08-27) 위치 이동 점진 출시 · 팩트체크 통과(warn 6 중 4 반영 — 제목에 윈도우 11, 작은 작업 표시줄도 점진 출시 등) · selfreview 2건(자동 숨기기 조건·문서 상태 기준일) · verify 통과(warn 2)
+## 네이버 (5)
+- [x] mackerel-prep-guide — 고등어 손질·보관 · official 15·data 3(해수부 이달의 수산물 고등어 8회 확인 범위 명시) · 집필 단계가 조사파일 "2016년 12개월 전부" 과장 지적 → 정정 · 제목 "상온 하루 vs 2~3시간"은 보관 가능 시간 오해 소지라 교체 · 팩트체크 blocker 2(레시피 6단계를 5단계·구이용/조림용 반대로 — 조사파일도 정정, 공식 안내 범위 과장) 교정 · selfreview 1건(장보기 단계 수 지어냄) · verify 통과(warn 3)
+- [x] battery-disposal-guide — 폐건전지·보조배터리 버리는 법 · 1차 조사 official 약함 → 추가 조사로 경기도 2026.09 소식지·서울시 카드뉴스 보강(official 5) · 팩트체크 blocker 1(서울시 카드뉴스를 "전용 폐가전 수거함" 근거로 귀속 — 원문엔 수거함 언급 없음) 교정 · selfreview 1건(목포 교환 제도 귀속) · verify 통과 → 표 칸 정리 후 재검증 통과(warn 2, 제목에서 설치 중 수치 제거)
+- [x] rice-cooker-cleaning — 전기밥솥 청소 · 쿠쿠·쿠첸 설명서·FAQ official 7 · 팩트체크 blocker 3(쿠쿠 11쪽을 첫 사용 세척으로만 축소 — 조사파일도 정정, 설명서에 없는 "네 곳"·온도감지기 청소 누락 — PDF 원문 확인 후 추가, 자동세척 알림 서술) 교정 · selfreview 무수정 · verify 통과(warn 2)
+- [x] covid-vaccine-2026 — 코로나19 예방접종 2026-2027절기 · KDCA 2026-09-17 시행계획·10-02 보도(official 4) · 정리 단계가 독감 일정 비교 지시 오류를 원문대로 교정 · 팩트체크 통과(warn 4 중 요양시설 별도 일정·커버 사진 반영) · selfreview 무수정 · verify 통과(warn 2)
+- [x] ~~range-hood-cleaning~~ 보류(독립 official 1 — 삼성전자서비스 같은 문구 2페이지, 환경부 수치는 2015~16 언론 재인용뿐) → cabbage-storage-guide
+- [x] cabbage-storage-guide — 양배추 보관법 · official 3·data 3 · 팩트체크 blocker 2(기관명 국립농업과학원→국립식량과학원 — 조사파일도 정정, 단면용 키친타월 표현을 심 자리에 섞음) 교정 · selfreview 1건(정리의 냉동 문장) · verify 통과(warn 2)
+## 마무리
+- [x] 로컬 커밋(푸시는 사용자 요청 시)
+
 # 2026-10-11 블로그 배치 — 내일(10-12) 몫 미리, 사람 요청(티스토리 5 + 네이버 5 이상)
 
 claim: 만들지 않음(10-10 선례 — 사용자가 09:00 무인 2+2 도 돌게 함). 10-11 09:00 무인 /blog-daily 가 12:18 지연 시작해 동시 진행 중 → trends 깨끗한 후보(leather-jacket-silhouette·light-padding-jacket·purple-core)는 그쪽 몫, 이쪽은 전부 조사형.

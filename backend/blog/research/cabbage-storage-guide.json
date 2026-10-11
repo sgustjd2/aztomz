@@ -1,0 +1,276 @@
+{
+  "keyword": "양배추 보관법",
+  "categoryId": "hangeut-trend",
+  "notes": "[구분] 가정 보관=농식품올바로(농진청 국립식량과학원) 문장(온도·기간 수치 없음) · 세척=식약처 카드(겉잎 2~3장+흐르는 물) · 온도·습도·기간 수치=USDA 상업저장·KCI 고랭지 실험이라 가정 냉장 기준 아님.\n말할 수 있는 것: 통양배추 보관 요령(confirmed)·자른 양배추 단면 관리(reported)·세척(confirmed)·냉동은 미국 자료 귀속만. 못 하는 것: 집 냉장고에서 며칠 가는지, 식초물 효과, 공식 제철 표기.\n식약처 카드뉴스는 공공누리 출처표시+상업적이용금지+변경금지 → 사실 요약·출처 표기만, 문구·이미지 전재 금지.",
+  "cannotSay": [
+    "온도·습도·기간 수치를 \"집 냉장고 기준\"으로 쓰기 — USDA 0℃·98~100% RH는 상업 저장고, KCI 3℃·85% RH 9~10일은 고랭지 양배추 실험 조건. 가정 냉장고 수치 자료는 없음(대상 바꿔치기)",
+    "식약처 카드 배추/양배추 세척에 시간 붙이기 — 캡션엔 시간 없고 그림의 \"5분\" 아이콘은 의미 미확인. \"5분 담근 후 흐르는 물 30초\"는 깻잎·상추 항목이라 양배추에 옮기면 안 됨",
+    "경향신문 \"찬물 5~10분\"을 위생·농약 세척 기준으로 쓰기 — 쓴맛 완화 목적이며 경향신문 귀속으로만",
+    "위키트리 \"냉장 2~3일\"을 생·자른 양배추 보관기간으로 쓰기 — 원문은 데친 양배추 소분 기준. 위키트리 \"냉동 약 1개월\"도 근거 없는 기사 서술이라 쓰지 않음",
+    "식초물·소금물·베이킹소다 세척 효과 — 근거 자료 없음. YTN 식초 단면 변색 방지는 요리연구가 1인 설명(2018)이라 효과 단정 금지",
+    "봄 4~6월·겨울 11~3월을 공식 제철처럼 쓰기 — 경향신문 서술(reported). 농식품올바로는 \"제철\" 단어 없이 수확 시기만 적음",
+    "USDA 호흡률을 \"상하는 속도\"나 \"며칠\"로 환산하기 — 호흡이 빨라진다는 측정치까지만, 보관일수는 문서에 없음",
+    "농식품올바로 \"겉잎 2~3장 떼어 놓고 바깥쪽 잎으로 싸서\"와 위키트리·코메디닷컴 \"겉잎은 그대로\"를 한 문장으로 합치거나 해석 덧붙이기 — 출처별 귀속, 키친타월 교체는 \"며칠 간격\"(일수 미명시) 그대로"
+  ],
+  "cannotCover": [
+    "한국 공식 기관의 가정 냉장 보관 가능 기간(통양배추·자른 양배추 며칠) — 자료 없음",
+    "농촌진흥청 농사로의 양배추 전용 저장 온도·습도 — 접근 불가, 검색된 저온저장 페이지는 과실 기준(양배추 0건)이라 사용 금지",
+    "한국 공식 양배추 냉동 방법(데치기 시간 등) — 미국 NCHFP(조지아대) 자료만 있음",
+    "식초물·소금물·베이킹소다 세척 효과, 식약처 양배추 세척 권장 시간",
+    "농림축산식품부·aT 공식 양배추 제철 표기",
+    "UC Davis Postharvest 양배추 fact sheet, FSIS FoodKeeper — 403으로 접근 못 함(미확인)"
+  ],
+  "claims": [
+    {
+      "claim": "통양배추는 겉잎 2~3장을 떼어 놓고 바깥쪽 잎으로 싸고, 줄기(심)를 잘라낸 자리에 물에 적신 키친타월을 채워 랩으로 싸 보관한다 — 농진청 국립식량과학원 가정 보관 요령(온도·기간 수치는 없음)",
+      "grade": "confirmed",
+      "evidence": [
+        "[confirmed·official] 농식품올바로 보관법 원문: \"양배추 겉잎을 2~3장 떼어 놓고, 바깥쪽 잎으로 싸서 보관하면 마르거나 갈변현상을 막을 수 있음.\"",
+        "[confirmed·official] 같은 페이지: \"양배추는 잎보다 줄기가 먼저 썩는 성질이 있으므로, 줄기를 잘라낸 후 물에 적신 키친타월로 줄기 부분을 채운 후 랩으로 싸면 싱싱하게 보관할 수 있음.\" 이 페이지에 보관 온도·기간 수치는 없음",
+        "[reported·코메디닷컴 2026-05-11] 칼로 심지를 도려내고 촉촉한 키친타월을 넣은 뒤 랩이나 비닐로 감싸 채소칸에 보관이 일반적. 키친타월은 \"며칠 간격\"으로 새것 교체(일수 미명시), 물기가 너무 많으면 무를 수 있어 살짝 촉촉하거나 마른 정도가 적당 [팩트체크 정정: 코메디닷컴의 '살짝 촉촉하거나 마른 정도'는 자른 단면에 대는 키친타월 얘기 — 심 자리는 '촉촉한']",
+        "[reported·YTN 2018-06-13] 요리연구가: 심지를 도려내고 적신 뒤 적당히 짠 키친타월을 넣어 랩으로 감싸 냉장 보관 — 방향은 농식품올바로와 같으나 오래된 방송 설명",
+        "[reported·위키트리 2026-01-18] 통째 보관은 냉장고 채소 칸이 가장 좋고 겉잎은 떼어내지 않고 그대로 두라(수분 증발 막는 보호막)는 서술 — 농식품올바로 문장과 표현이 다름. 바깥 잎을 보호막으로 쓴다는 방향만 같으니 출처별로 귀속",
+        "[confirmed·data·USDA 2016] 상업 저장은 wrapper leaves 3~6장만 남기고 느슨한 잎은 모두 제거. 소매 진열에선 수분 손실이 최대 문제라 투명 필름으로 한 통씩 싸서 막는다고 함 — 랩 보관의 방향성 근거일 뿐 가정 기준 아님"
+      ],
+      "sourceUrls": [
+        "https://www.nics.go.kr/food/kfi/foodMonth/view?fd_se=286&menu_tab=0&fd_snn=35",
+        "https://kormedi.com/2815121/",
+        "https://www.ytn.co.kr/_ln/0483_201806130359300000",
+        "https://www.wikitree.co.kr/articles/1110770",
+        "https://www.ars.usda.gov/ARSUserFiles/oc/np/CommercialStorage/CommercialStorage.pdf"
+      ]
+    },
+    {
+      "claim": "자르거나 썬 양배추는 단면 관리가 핵심이다 — 절단면에 키친타월을 대고 랩·밀폐용기에 냉장하고, 쓴맛을 피하려면 먹기 직전에 썬다(보도 조언. 호흡이 빨라진다는 측정치만 1차 자료)",
+      "grade": "reported",
+      "evidence": [
+        "[reported·위키트리] 남은 양배추는 절단면에 키친타월을 밀착시켜 덮은 뒤 랩으로 감싸거나 밀폐용기에 넣어 냉장. 절단면이 아래로 향하게 두면 수분 손실이 줄고, 키친타월은 단면 수분을 흡수해 무름을 막는다는 서술(근거 출처 없음)",
+        "[reported·코메디닷컴] 반으로 자른 양배추는 단면에 키친타월을 한 장 먼저 댄 뒤 랩으로 감싸면 수분 유지에 도움이 될 수 있음",
+        "[reported·경향신문 2026-07-25] 절단면이 공기에 오래 노출되면 이소티오시아네이트 생성이 계속돼 쓴맛이 강해질 수 있어 가능한 먹기 직전에 썰기. 시큼하거나 자극적인 냄새가 나거나 곰팡이가 보이면 폐기",
+        "[confirmed·data·USDA 2016, Gorny 1997 인용] 2℃ 공기 중 호흡률(mg CO2/kg/h): 4분의 1통 8 · 굵게 썬 것(1×3cm) 16~18 · 곱게 썬 것(0.5~1.5cm) 18~24. 5℃: 10~12 · 22~34 · 26~40. 잘게 썰수록 호흡이 빨라진다는 사실까지만, 보관일수는 문서에 없음"
+      ],
+      "sourceUrls": [
+        "https://www.wikitree.co.kr/articles/1110770",
+        "https://kormedi.com/2815121/",
+        "https://www.khan.co.kr/article/202607250700011/",
+        "https://www.ars.usda.gov/ARSUserFiles/oc/np/CommercialStorage/CommercialStorage.pdf"
+      ]
+    },
+    {
+      "claim": "양배추 저장 온도·습도·기간 숫자는 조건이 제각각이라 한 줄로 합칠 수 없다 — 가정 보관 요령(수치 없음) / 미국 상업 저장 기준(0℃·98~100% RH) / 고랭지 양배추 실험(3℃·85% RH 9~10일)",
+      "grade": "confirmed",
+      "evidence": [
+        "[confirmed·data·USDA 농업 핸드북 66, 2016] 양배추는 0℃(32°F), 상대습도 98~100%에서 저장. -1℃는 얼 수 있고 1℃는 특히 6개월 같은 장기 저장에서 노화 관련 손실을 키울 수 있음. 어는점 -0.9~-0.83℃, 저온장해에는 둔감. 보관일수는 품종·품질·조건에 따라 다르다고만 하고 표는 없음. 대상은 상업 저장(commercial storage)",
+        "[confirmed·data·KCI 한국생물환경조절학회지 2012] 해발 750m 이상 고랭지 양배추 6품종 실험: 저온(3℃, 85% RH) 9~10일, 상온(25℃, 60% RH) 3~5일. 수침·시들음·냉해는 4일경부터 발생해 상품성 상실. 8월 3일 수확분(수확 전후 기상 나쁨)은 상온 2일·저온 4일",
+        "[confirmed·data·USDA] 통양배추 호흡률(mg CO2/kg/h): 0℃ 4~6 · 4~5℃ 9~12 · 10℃ 17~19 · 20~21℃ 28~49 — 온도가 오를수록 호흡이 빨라진다는 수치(Hardenburg 1986 인용)",
+        "[confirmed·official] 농식품올바로 가정 보관 요령에는 온도·기간 수치가 없음. 가정 냉장고 온도 자료는 이 조사에서 확보 못 함 — 세 조건을 평균내거나 서로 환산 금지"
+      ],
+      "sourceUrls": [
+        "https://www.ars.usda.gov/ARSUserFiles/oc/np/CommercialStorage/CommercialStorage.pdf",
+        "https://db.koreascholar.com/Article/Detail/252661",
+        "https://www.nics.go.kr/food/kfi/foodMonth/view?fd_se=286&menu_tab=0&fd_snn=35"
+      ]
+    },
+    {
+      "claim": "양배추 세척은 식약처 카드 기준으로 겉잎을 2~3장 떼어내고 흐르는 물에 씻는 것이다(잔류농약 세척법) — 시간 기준은 그 카드의 양배추 항목에 글로 적혀 있지 않다",
+      "grade": "confirmed",
+      "evidence": [
+        "[confirmed·official] 식약처·식생활안전관리원 카드뉴스(2024-08-08) 7번 \"채소류의 잔류농약 세척법\" 중 배추/양배추 캡션: \"겉잎을 2~3장 떼어내고 흐르는 물에 씻기\". 목적은 잔류농약 세척",
+        "[unclear 부분] 같은 칸 그림에 \"5분 동안\" 알람 아이콘이 붙은 물그릇 단계가 있으나 캡션 글에는 시간이 없음 — 의미 미확인이라 시간 단정 금지",
+        "[confirmed·official] 같은 카드 다른 항목: 깻잎·상추 \"물에 5분 동안 담근 후 흐르는 물에 30초 정도 씻기\", 파 \"외피 한 장 떼어내고 물로 세척하기\" — 양배추 기준으로 옮기지 말 것. 식초물·소금물 언급은 이 카드 7번에 없음",
+        "[reported·경향신문 2026-07-25] 쓴맛 양배추는 찬물에 5~10분 담가 보라(이소티오시아네이트가 물에 일부 녹음). 너무 오래 담그면 비타민 C 등 수용성 영양소가 빠져 5~10분이 적당하다는 서술 — 쓴맛 완화 목적, 위생 세척 시간과 별개"
+      ],
+      "sourceUrls": [
+        "https://dietary4u.mfds.go.kr/gallery.es?mid=a61304010000&bid=A101&list_no=9639&act=view",
+        "https://www.khan.co.kr/article/202607250700011/"
+      ]
+    },
+    {
+      "claim": "냉동은 한국 공식 방법을 못 찾았고, 미국 조지아대 NCHFP 자료로만 말할 수 있다 — 익혀 먹는 용도 한정, 1½분 데친 뒤 급냉해 밀봉(곁가지 단락용)",
+      "grade": "confirmed",
+      "evidence": [
+        "[confirmed·data·미국 조지아대 협동조합 확장서비스, So Easy to Preserve 6판 2014] 냉동 양배추는 익혀 먹는 용도로만 적합. 굵게 채 썰거나 얇은 쐐기 모양으로 자르거나 잎을 분리 → 1½분 물에 데치기 → 바로 식히고 물기 빼서 포장(약 ½인치=약 1.3cm 여유 공간) → 밀봉 냉동",
+        "[reported·코메디닷컴] 살짝 데쳐 찬물에 식히고 물기를 충분히 제거해 한 끼 분량씩 나눠 담고, 해동 없이 냉동 상태 그대로 조리하면 식감 손상이 적다는 서술 — 데치는 시간 수치 없음",
+        "한국 기관 자료 아님. 냉동 보관 기간(위키트리 \"약 1개월\")은 근거 없는 기사 서술이라 제외"
+      ],
+      "sourceUrls": [
+        "https://nchfp.uga.edu/how/freeze/vegetable/freezing-cabbage-or-chinese-cabbage/",
+        "https://kormedi.com/2815121/"
+      ]
+    }
+  ],
+  "numbers": [
+    {
+      "what": "가정 보관 — 겉잎 떼어 놓는 장수(농식품올바로)",
+      "value": "2~3장 (바깥쪽 잎으로 싸서 보관)",
+      "asOf": "2026-10-11 확인(게시일 미표기)",
+      "sourceUrl": "https://www.nics.go.kr/food/kfi/foodMonth/view?fd_se=286&menu_tab=0&fd_snn=35"
+    },
+    {
+      "what": "식약처 카드 배추/양배추 세척 — 떼어내는 겉잎 장수",
+      "value": "2~3장 + 흐르는 물 (캡션에 시간 없음)",
+      "asOf": "2024-08-08",
+      "sourceUrl": "https://dietary4u.mfds.go.kr/gallery.es?mid=a61304010000&bid=A101&list_no=9639&act=view"
+    },
+    {
+      "what": "식약처 카드 깻잎·상추 세척(양배추 아님 — 인용 금지)",
+      "value": "물에 5분 담근 후 흐르는 물 30초",
+      "asOf": "2024-08-08",
+      "sourceUrl": "https://dietary4u.mfds.go.kr/gallery.es?mid=a61304010000&bid=A101&list_no=9639&act=view"
+    },
+    {
+      "what": "USDA 상업 저장 최적 조건(가정 냉장 기준 아님)",
+      "value": "0℃(32°F), 상대습도 98~100%",
+      "asOf": "2016-02",
+      "sourceUrl": "https://www.ars.usda.gov/ARSUserFiles/oc/np/CommercialStorage/CommercialStorage.pdf"
+    },
+    {
+      "what": "USDA 상업 저장 — 1℃/-1℃ 주의",
+      "value": "-1℃ 동결 우려 · 1℃ 장기(예 6개월) 노화 손실 촉진 가능 · 어는점 -0.9~-0.83℃",
+      "asOf": "2016-02",
+      "sourceUrl": "https://www.ars.usda.gov/ARSUserFiles/oc/np/CommercialStorage/CommercialStorage.pdf"
+    },
+    {
+      "what": "USDA 상업 저장 — 남기는 wrapper leaves",
+      "value": "3~6장 (느슨한 잎은 모두 제거)",
+      "asOf": "2016-02",
+      "sourceUrl": "https://www.ars.usda.gov/ARSUserFiles/oc/np/CommercialStorage/CommercialStorage.pdf"
+    },
+    {
+      "what": "USDA 통양배추 호흡률(mg CO2/kg/h)",
+      "value": "0℃ 4~6 · 4~5℃ 9~12 · 10℃ 17~19 · 20~21℃ 28~49",
+      "asOf": "2016-02 (Hardenburg 1986 인용)",
+      "sourceUrl": "https://www.ars.usda.gov/ARSUserFiles/oc/np/CommercialStorage/CommercialStorage.pdf"
+    },
+    {
+      "what": "USDA 자른 정도별 호흡률, 2℃(mg CO2/kg/h)",
+      "value": "4분의 1통 8 · 굵게 썬 것(1×3cm) 16~18 · 곱게 썬 것(0.5~1.5cm) 18~24",
+      "asOf": "2016-02 (Gorny 1997 인용)",
+      "sourceUrl": "https://www.ars.usda.gov/ARSUserFiles/oc/np/CommercialStorage/CommercialStorage.pdf"
+    },
+    {
+      "what": "USDA 자른 정도별 호흡률, 5℃(mg CO2/kg/h)",
+      "value": "4분의 1통 10~12 · 굵게 22~34 · 곱게 26~40",
+      "asOf": "2016-02 (Gorny 1997 인용)",
+      "sourceUrl": "https://www.ars.usda.gov/ARSUserFiles/oc/np/CommercialStorage/CommercialStorage.pdf"
+    },
+    {
+      "what": "KCI 고랭지 양배추 6품종 실험 — 저온 저장 가능 기간(3℃, 85% RH)",
+      "value": "9~10일 (기상 나쁜 8/3 수확분은 4일)",
+      "asOf": "2012-06-30",
+      "sourceUrl": "https://db.koreascholar.com/Article/Detail/252661"
+    },
+    {
+      "what": "KCI 고랭지 양배추 6품종 실험 — 상온 저장 가능 기간(25℃, 60% RH)",
+      "value": "3~5일 (기상 나쁜 8/3 수확분은 2일)",
+      "asOf": "2012-06-30",
+      "sourceUrl": "https://db.koreascholar.com/Article/Detail/252661"
+    },
+    {
+      "what": "KCI 실험 — 생리장해(수침·시들음·냉해) 발생 시작",
+      "value": "저장 4일경부터, 상품성 상실",
+      "asOf": "2012-06-30",
+      "sourceUrl": "https://db.koreascholar.com/Article/Detail/252661"
+    },
+    {
+      "what": "NCHFP(미국 조지아대) 냉동 전 데치기 시간",
+      "value": "1½분 (여유 공간 ½인치≈1.3cm, 익혀 먹는 용도만)",
+      "asOf": "So Easy to Preserve 6판 2014(페이지 날짜 미표기)",
+      "sourceUrl": "https://nchfp.uga.edu/how/freeze/vegetable/freezing-cabbage-or-chinese-cabbage/"
+    },
+    {
+      "what": "경향신문 쓴맛 양배추 찬물 담그기(쓴맛 완화 목적, 위생 기준 아님)",
+      "value": "5~10분",
+      "asOf": "2026-07-25",
+      "sourceUrl": "https://www.khan.co.kr/article/202607250700011/"
+    },
+    {
+      "what": "경향신문 서술 — 봄양배추·겨울양배추 시기(공식 제철표 아님, reported)",
+      "value": "봄 4~6월 · 겨울 11~3월",
+      "asOf": "2026-07-25",
+      "sourceUrl": "https://www.khan.co.kr/article/202607250700011/"
+    },
+    {
+      "what": "농식품올바로 수확 시기(제철 단어 없음)",
+      "value": "여름재배(6~8월 파종) 11월~다음해 4월 수확 · 가을재배(9월 중순~10월 초 파종) 다음해 4~7월 수확 · 겨울 산지 제주 40%",
+      "asOf": "2026-10-11 확인(게시일 미표기)",
+      "sourceUrl": "https://www.nics.go.kr/food/kfi/foodMonth/view?fd_se=286&menu_tab=0&fd_snn=35"
+    }
+  ],
+  "sources": [
+    {
+      "title": "농식품 올바로 - 건강식단 - 이달의 식재료 상세보기: 양배추 (농촌진흥청 국립식량과학원)",
+      "url": "https://www.nics.go.kr/food/kfi/foodMonth/view?fd_se=286&menu_tab=0&fd_snn=35",
+      "host": "www.nics.go.kr",
+      "body": "[curl 로 받은 원문 발췌 — 양배추 직접 언급] ■ 구입요령 - 겉결구가 단단하고 겉잎이 제거되었으며 속대가 없는 것. - 겉잎은 연한녹색이며 부드럽고 윤활감이 있으며 표면에 상처와 시든 것이 없는 것. - 양손으로 눌러보아 쉽게 들어가는 느낌이들거나 뿌리부분을 잘랐을 때 속이 빈 것은 피할 것. ■ 보관법 - 양배추 겉잎을 2~3장 떼어 놓고, 바깥쪽 잎으로 싸서 보관하면 마르거나 갈변현상을 막을 수 있음. - 양배추는 잎보다 줄기가 먼저 썩는 성질이 있으므로, 줄기를 잘라낸 후 물에 적신 키친타월로 줄기 부분을 채운 후 랩으로 싸면 싱싱하게 보관할 수 있음. ■ 재배: 겨울 산지인 제주도가 40%를 차지, 여름 산지인 평창과 기타 무안, 서산 등 특정시군으로 산지가 집중된 특징이 있음. 재배법은 크게 봄, 여름, 가을재배로 나눌 수 있는데 봄재배는 고랭지에 적합, 여름재배는 6~8월에 파종하여 11월~다음해 4월까지 수확. 가을재배는 남부지방에 적합, 9월중순~10월초에 파종하고 다음해 4~7월에 수확. ■ 섭취: 양배추에 함유된 대부분의 영양소는 열에 취약하기 때문에 생식이나 즙, 주스로 이용 또는 살짝 볶거나 데쳐서 사용. (보관 온도·기간 수치는 이 페이지에 없음)",
+      "tier": "official"
+    },
+    {
+      "title": "잔류농약을 줄이는 세척법으로 과일·채소류 안전하게 먹기 — 카드뉴스 (식품의약품안전처 · 식생활안전관리원 어린이·사회복지급식관리지원센터)",
+      "url": "https://dietary4u.mfds.go.kr/gallery.es?mid=a61304010000&bid=A101&list_no=9639&act=view",
+      "host": "dietary4u.mfds.go.kr",
+      "body": "[페이지 본문 + 카드뉴스 이미지(2480x2480 jpg 8장)를 직접 열어 읽음. 본문 텍스트는 목차뿐이고 내용은 이미지] 잔류농약을 줄이는 세척법으로 과일·채소류 안전하게 먹기 | 카드뉴스 | 홍보자료 | 자료마당 : 어린이·사회복지급식관리지원센터 - 식생활안전관리원. 작성일 2024.08.08 15:33. 목차: 농약과 잔류농약이란? / 농약 허용물질목록 관리제도(PLS) / 농약, 농산물에 남아 있으면? / 과일류 잔류농약 세척법 / 채소류 잔류농약 세척법. 본 공공저작물은 공공누리 '출처표시+상업적이용금지+변경금지' 조건에 따라 이용할 수 있습니다. [카드 7번 '채소류의 잔류농약 세척법' 이미지 판독] 파: '외피 한 장 떼어내고 물로 세척하기' / 배추/양배추: '겉잎을 2~3장 떼어내고 흐르는 물에 씻기' (그림에는 '5분 동안' 알람 아이콘이 붙은 물그릇 단계가 있음) / 깻잎, 상추: '물에 5분 동안 담근 후 흐르는 물에 30초 정도 씻기'.",
+      "tier": "official"
+    },
+    {
+      "title": "The Commercial Storage of Fruits, Vegetables, and Florist and Nursery Stocks (USDA Agriculture Handbook 66, Revised Feb 2016) — Chapter 'Cabbage' (Robert K. Prange), pp.255-258",
+      "url": "https://www.ars.usda.gov/ARSUserFiles/oc/np/CommercialStorage/CommercialStorage.pdf",
+      "host": "www.ars.usda.gov",
+      "body": "[WebFetch 가 저장한 PDF(792쪽)에서 PyMuPDF 로 '양배추' 장(PDF 265~269쪽, 인쇄 쪽 255~258)을 직접 추출] Optimum Storage Conditions: Cabbage should be stored at 0 °C (32 °F) with 98 to 100% RH. Storage at -1 °C (31 °F) may cause freezing, while storage at 1 °C (34 °F) may promote senescence-related storage losses, especially if held in long-term storage—for example, 6 mo (R. Prange, unpublished data). High RH minimizes decay and trimming losses (van den Berg 1987). The presence of light in the storage room reduces physiological disorders such as leaf yellowing and weight loss. Cabbage is stored in bins or in bulk. Only three to six wrapper leaves should be left on the head. All loose leaves should be trimmed before storage because they will interfere with air circulation between heads. Storage life depends on cultivar (for example, early-maturing cultivars tend to have shorter storage life than late-maturing cultivars), quality (for example, freedom from decay), and storage conditions. Chilling Sensitivity: Cabbage is not chilling sensitive. The freezing point is -0.9 to -0.83 °C (30.4 to 30.5 °F).",
+      "tier": "data"
+    },
+    {
+      "title": "Quality Change during Harvest Time and Storage of Various Cabbages Grown on High Land by Different Transplanting Times (한국생물환경조절학회지 21(2), 2012.06, pp.95-101)",
+      "url": "https://db.koreascholar.com/Article/Detail/252661",
+      "host": "db.koreascholar.com",
+      "body": "[curl 로 받은 초록 원문 발췌] 본 연구는 해발 750m 이상의 고랭지에서 재배된 양배추의 정식시기 및 수확 시 기상환경이 품질에 미치는 영향과 수확 후 저장 중 품질변화를 조사하기 위해서 수행하였다. ... 양배추 저장은 8월 3일(1차), 8월 23일(3차), 그리고 9월 10일(4차)에 수확된 양배추를 상온(25℃, 60% RH)과 저온(3℃, 85% RH)에 각각 저장하여, 수확시기와 수확기의 기상환경이 상온 및 저온저장에 미치는 영향을 확인하였다. 양배추의 생리장해는 수침, 시들음, 냉해가 저장기간 4일경부터 발생하여 상품성을 상실하였다. 양배추 6개 품종의 저장기간은 수확 시 기상환경에 따라 상온저장의 경우 3~5일, 저온저장의 경우 9~10일 정도 가능하였다. 특히 8월 3일(1차)에 수확한 양배추는 수확일 전후의 열악한 기상환경으로 실온 및 저온 저장기간이 가장 짧아 실온 2일 그리고 저온은 4일의 저장기간을 보였다.",
+      "tier": "data"
+    },
+    {
+      "title": "Freezing Cabbage or Chinese Cabbage — National Center for Home Food Preservation (University of Georgia Cooperative Extension)",
+      "url": "https://nchfp.uga.edu/how/freeze/vegetable/freezing-cabbage-or-chinese-cabbage/",
+      "host": "nchfp.uga.edu",
+      "body": "[curl 로 받은 원문] Freezing Cabbage or Chinese Cabbage. Preparation – Frozen cabbage or Chinese cabbage are suitable for use only as a cooked vegetable. Select freshly picked, solid heads. Trim coarse outer leaves from head. Cut into medium to coarse shreds or thin wedges, or separate head into leaves. Water blanch 1½ minutes. Cool promptly, drain and package, leaving ½-inch headspace. Seal and freeze. This document was extracted from \"So Easy to Preserve\", 6th ed. 2014. Bulletin 989, Cooperative Extension Service, The University of Georgia, Athens. Revised by Elizabeth L. Andress, Ph.D. and Judy A. Harrison, Ph.D., Extension Foods Specialists.",
+      "tier": "data"
+    },
+    {
+      "title": "쓰다 남은 양배추는 이렇게 보관하세요...돈이 절로 굳습니다 (위키트리)",
+      "url": "https://www.wikitree.co.kr/articles/1110770",
+      "host": "www.wikitree.co.kr",
+      "body": "[curl 로 받은 원문 발췌] 겨울철 양배추 보관의 핵심은 수분 조절과 절단면 관리다. 통째로 보관할 경우 가장 좋은 장소는 냉장고 채소 칸이다. 양배추는 낮은 온도에서 호흡 속도가 느려져 신선도가 오래 유지된다. 이때 겉잎은 떼어내지 않고 그대로 두는 것이 좋다. 겉잎은 내부를 보호하는 역할을 하며 수분 증발을 막아준다. 신문지나 키친타월로 한 번 감싼 뒤 비닐봉지에 넣어 보관하면 건조를 예방하는 데 도움이 된다. 쓰다 남은 양배추는 절단면 관리가 가장 중요하다. 남은 양배추는 절단면에 키친타월을 밀착시켜 덮은 뒤 랩으로 감싸거나 밀폐용기에 넣어 냉장 보관하는 것이 좋다. 데친 양배추는 소분해 밀폐용기에 담아 냉장 보관하는 것이 좋다. 냉장 보관 기준으로는 2일에서 3일 이내에 섭취하는 것이 안전하다. 냉동한 양배추는 약 1개월 정도 보관이 가능하며, 해동할 때는 따로 해동하지 않고 바로 조리에 사용하는 것이 식감 손상을 줄이는 방법이다.",
+      "tier": "press"
+    },
+    {
+      "title": "“양배추 너무 큰 거 샀나?”…랩만 씌우지 말고, ‘이렇게’ 보관해야 오래간다? (코메디닷컴)",
+      "url": "https://kormedi.com/2815121/",
+      "host": "kormedi.com",
+      "body": "[curl 로 받은 원문 발췌] 반으로 자른 양배추는 단면에 키친타월을 한 장 먼저 댄 뒤, 랩으로 감싸면 수분 유지에 도움이 될 수 있다. ... 다만 물기가 너무 많으면 무를 수 있어 살짝 촉촉하거나 마른 상태 정도가 적당하다. 오래 먹으려면 '심지 제거' 보관법이 효과적이다. 칼로 심지 부분을 도려낸 뒤 그 자리에 촉촉한 키친타월을 넣어두면 수분 유지에 도움이 될 수 있다. 이후 랩이나 비닐로 감싼 뒤 채소칸에 넣어 보관하는 방식이 일반적이다. 양배추는 심지 부분에서 수분과 영양 소비가 계속되기 때문에, 이를 제거하면 상대적으로 신선도가 오래 유지되는 원리다. 키친타월은 며칠 간격으로 새것으로 교체해주는 것이 좋다. 냉동할 때는 살짝 데친 뒤 찬물에 식히고 물기를 충분히 제거한 후 한 끼 분량씩 나눠 담는 방식이 많이 사용된다. 사용할 때는 해동하지 말고 냉동 상태 그대로 조리하는 편이 식감 손상을 줄이는 데 도움이 될 수 있다.",
+      "tier": "press"
+    },
+    {
+      "title": "양배추 신선 보관법 (YTN, 요리연구가 한명숙)",
+      "url": "https://www.ytn.co.kr/_ln/0483_201806130359300000",
+      "host": "www.ytn.co.kr",
+      "body": "[curl 로 받은 원문 발췌] 쓰고 남은 양배추의 자른 단면이 검게 변한 경우 많이 보셨죠? 한명숙 요리연구가: 자른 단면이 공기와 닿아서 검게 산화되는 것인데요. 변색을 막는 방법: 식초를 사용하시면 됩니다. 식초의 산성 성분이 양배추의 변색을 막아 주는데요. 먼저 양배추를 자른 단면에 이렇게 식초를 발라주세요. 식초를 바르실 때는 너무 두껍게 바르는 것보다는 가볍게 발라주시는 것이 좋습니다. 그리고 이렇게 비닐 랩으로 감싸주시면 단면이 검게 변하는 것을 막을 수 있습니다. 양배추를 신선하고 오래 보관하는 방법도 알려드립니다. 먼저 양배추 심지를 도려내 주세요. 키친타월을 적신 후 물을 적당히 짜내고, 심지를 도려낸 부분에 넣어주세요. 그리고 양배추를 비닐 랩으로 감싸 냉장 보관하면 양배추를 신선하게 먹을 수 있습니다. 물먹은 키친타월이 양배추에 비해 수분함량이 높기 때문에 양배추의 신선도를 오랫동안 유지시켜줍니다.",
+      "tier": "press"
+    },
+    {
+      "title": "달큰할 줄 알았던 초록 양배추, 쓴맛이 나는 이유는 (경향신문)",
+      "url": "https://www.khan.co.kr/article/202607250700011/",
+      "host": "www.khan.co.kr",
+      "body": "[curl 로 받은 원문 발췌] 안타깝게도 쓴맛 양배추에 당첨됐다면, 일단 찬물에 5~10분 정도 담가보자. 양배추의 쓴맛은 대부분 자연적으로 생성되는 성분이나 보관·조리 과정에서 생기는 변화 때문이다. 달큰할 줄 알았던 양배추에서 쓴맛이 나는 가장 큰 원인은 이소티오시아네이트라는 성분이다. 절단면이 공기에 오래 노출되면 이소티오시아네이트 생성이 계속 진행돼 쓴맛이 더 강하게 느껴질 수 있다. 따라서 양배추는 가능한 한 먹기 직전에 썰어 사용하는 것이 가장 맛있다. 보통 4월에서 6월에 판매되는 봄양배추는 잎이 부드럽고 결이 성글며, 윤기가 있고 탄력이 있는 것이 좋다. 11월부터 3월까지 만날 수 있는 겨울양배추는 속이 단단하게 차 있고 묵직한 것이 단맛이 강하다. 이소티오시아네이트는 물에 일부 녹는 성질이 있어 짧게 물에 담가두면 쓴맛을 완화하는 데 도움이 된다. 너무 오래 담가두면 비타민 C 등 수용성 영양소가 빠져나갈 수 있어 5~10분 정도가 적당하다.",
+      "tier": "press"
+    }
+  ],
+  "dropped": [
+    {
+      "url": "https://www.fda.gov/food/buy-store-serve-safe-food/selecting-and-serving-produce-safely",
+      "why": "양배추 직접 언급 없는 농산물 일반 지침(FDA). 보관·세척 각도에서 양배추 근거로 쓸 수 없고 식초물 언급도 없음"
+    },
+    {
+      "url": "https://v.daum.net/v/zw9lqLLxp5",
+      "why": "고르는 법(밑동 5갈래 선)이라 이 글 각도(보관·세척) 밖. 기자 서술이며 근거·발행일 미확인"
+    }
+  ],
+  "songs": []
+}

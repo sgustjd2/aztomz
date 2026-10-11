@@ -1,0 +1,154 @@
+{
+  "keyword": "윈도우 11 작업 표시줄 설정",
+  "categoryId": "hangeut-trend",
+  "searchedAt": "2026-10-11",
+  "queries": [
+    "Windows 11 작업 표시줄 사용자 지정 support.microsoft.com 작업 표시줄 맞춤 왼쪽",
+    "Customize the taskbar in Windows support.microsoft.com taskbar alignment taskbar behaviors",
+    "\"Windows에서 작업 표시줄 사용자 지정\" support.microsoft.com ko-kr (allowed_domains=support.microsoft.com)",
+    "Windows 11 taskbar move to top left right KB5120998 August 2026 optional update rollout"
+  ],
+  "sources": [
+    {
+      "title": "Customize the Taskbar in Windows (Windows 11 / Windows 10 탭)",
+      "url": "https://support.microsoft.com/en-us/windows/experience/personalization/customize-the-taskbar-in-windows",
+      "host": "support.microsoft.com",
+      "tier": "official",
+      "publishedAt": "2026-02-23",
+      "body": "The Windows taskbar is a central part of the Windows operating system that helps you launch apps, switch between open windows, and access system features like notifications, search, and the Start menu. In Windows 11 and Windows 10, the taskbar can be customized to better match how you work—whether that means centering taskbar icons, pinning your most-used apps, or controlling which system tray icons are visible.\nCustomizing the taskbar lets you streamline multitasking and keep essential tools within easy reach. You can change icon alignment, add or remove apps, and show or hide system icons to reduce clutter and improve focus.\nThis article walks you through how to customize the Windows taskbar step by step. You’ll learn how to adjust taskbar alignment, manage pinned apps, and control system tray visibility so you can personalize the taskbar to fit your workflow and preferences\nWindows 11\nWindows 10\nConfigure the taskbar layout\nThe Windows taskbar consists of various components, each serving a unique purpose:\n1. Widgets\n2. Start\n3. Search\n4. Task view\n5. Applications\n6. System tray\nWhile some components can be customized or removed to suit your preferences, others are essential for the proper functioning of Windows and cannot be removed. Expand each section to learn more about each component or area of the taskbar and discover how you can personalize the taskbar to better suit your needs.\nNote\nBy default, the taskbar is centered in Windows 11. If you'd like it aligned to the left instead, see Change the taskbar alignment.\nWidgets\nWidgets are interactive elements that display dynamic content and provide quick access to various apps and features. They are designed to help you staying informed and organized by presenting personalized information at a glance.\nTo open the widgets board, you can:\nHover over, or select, the Widgets button on the taskbar\nPress the Windows key\n+ W\nSwipe from the side of the screen, if the taskbar is aligned to the center\nTo show or hide Widgets from the taskbar:\nRight-click on the taskbar and select Taskbar settings\n, or use the following shortcut:\nTaskbar\nUnder Taskbar items, toggle the Widgets switch to On or Off\nTo learn more about Widgets, see Stay Up to Date With Widgets in Windows.\nStart\nThe Start menu is a central hub that provides quick access to your apps, settings, and files. The Start menu is divided into several sections, including Pinned, All, and Recommended apps, allowing you to easily find and launch your most-used applications and recent files. It's designed to be intuitive and customizable, helping you to efficiently navigate your system and personalize your Windows experience.\nAdditionally, the Start menu includes user account options, allowing you to sign in, sign out, lock your device, or switch user accounts.\nTo open the Start menu, you can:\nSelect the Start button\non the taskbar\nPress the Windows key\non your keyboard\nSwipe from the bottom of the screen\nWhile you can't remove the Start menu from the taskbar, you can change its position to be aligned on the side instead of being centered. For more information, see Change the taskbar alignment.\nTo learn more about the Start menu, see Customize the Windows Start menu.\nSearch\nWindows Search is a powerful feature that allows you to find files, applications, settings, and even web results directly from your desktop. The search box, conveniently located on the taskbar, provides a seamless way to access this functionality. Additionally, Windows Search integrates web search capabilities from Microsoft Bing, enabling you to get search results without opening a browser.\nTo open the Search, you can:\nTo start a search using Windows Search you can:\nUse the Search box on the taskbar: select the search box located on the taskbar and start typing your query. This will bring up a list of relevant results, including files, applications, settings, and web results powered by Microsoft Bing\nPress the Windows key\n+ S to open the search box\nStart Menu Search: you can also start a search by opening the Start menu and then typing your query directly\nTo configure Search on the taskbar:\nRight-click on the taskbar and select Taskbar settings\n, or use the following shortcut:\nTaskbar\nUnder Taskbar items, use the dropdown menu to configure the search area. You can choose from the following options:\nSearch box: Displays a full text box to enter your search\nSearch icon and label: Shows a search icon along with the label \"Search\"\nSearch icon only: Displays only the search icon\nHide: Removes the search feature from the taskbar\nTo learn more, see Search for anything, anywhere.\nTask view\nThe task view button on the taskbar is designed to enhance your multitasking experience in Windows. It allows you to quickly access and manage all your open windows and multiple desktops. When you open task view, a thumbnail view of all your active applications is displayed, making it easy to switch between tasks or close unnecessary windows. Additionally, task view enables you to create and manage multiple desktops, providing a clutter-free workspace tailored to different projects or activities. This feature is particularly useful when you need to organize your workflow efficiently and maintain focus on specific tasks.\nTo open task view, you can:\nSelect the task view button\non the taskbar\nPress the Windows key\n+ Tab\nTo show or hide the task view button from the taskbar:\nRight-click on the taskbar and select Taskbar settings\n, or use the following shortcut:\nTaskbar\nUnder Taskbar items, toggle the Task view switch to On or Off\nTo learn more, see How to Multitask in Windows and Configure Multiple Desktops in Windows.\nApplications\nThe area of the taskbar used for apps in Windows is designed to provide quick access and management of your applications. You can pin your favorite apps to the taskbar or unpin unused apps. Additionally, you can rearrange the icons by selecting and dragging them to your preferred order.\nRunning apps are displayed on the taskbar with a line under the icon to indicate they are open. The currently active app is highlighted with the Windows accent color, making it easy to identify which app is in use. This setup allows for efficient multitasking and quick navigation between your applications.\nPin an app to the taskbar\nThere are different ways to pin apps to the taskbar. For example:\nIn the Search\nbox on the taskbar, type the name of the app you want to pin to the taskbar. Right-click on the app, then select Pin to ta",
+      "facts": [
+        "(curl 확인) 문서 ms.date=02/23/2026. 설정 페이지 진입: 'Right-click on the taskbar and select Taskbar settings' 또는 문서 내 바로 가기 링크 ms-settings:taskbar (Taskbar).",
+        "(curl 확인) Windows 11 탭 - 맞춤 변경: 'Right-click on the taskbar and select Taskbar settings ... Expand Taskbar behaviors and select your desired option for Taskbar alignment'. 노트: 'The taskbar settings allow you to align taskbar icons in the center or on the left. There are no settings for moving a taskbar to the top or to the side of the screen. The taskbar is positioned at the bottom of the screen.' (2026-02 시점 문서)",
+        "(curl 확인) 'By default, the taskbar is centered in Windows 11.' / 'While you can't remove the Start menu from the taskbar, you can change its position to be aligned on the side instead of being centered.'",
+        "(curl 확인) 검색: 'Under Taskbar items, use the dropdown menu to configure the search area' - 옵션 4개: Search box / Search icon and label / Search icon only / Hide ('Removes the search feature from the taskbar').",
+        "(curl 확인) 작업 보기: 'Under Taskbar items, toggle the Task view switch to On or Off'. 위젯: 'Under Taskbar items, toggle the Widgets switch to On or Off'.",
+        "(curl 확인) 앱 고정: 검색창에서 앱 이름 입력 후 'Right-click on the app, then select Pin to taskbar' / 이미 열린 앱은 작업 표시줄 아이콘 우클릭 'Pin to taskbar'. 해제: 'right-click on the pinned icon on the taskbar, then select Unpin from taskbar'. 순서 변경은 아이콘 드래그.",
+        "(curl 확인) 시스템 트레이: 'Under System tray icons' 옵션 3개 = Pen Menu, Touch keyboard, Virtual Touchpad. 'Under Other system tray icons, select if you want to enable the hidden icon menu (also referred to as overflow area), and which icons can appear in the system tray'. 아이콘은 드래그로 overflow area <-> system tray 이동.",
+        "(curl 확인) 자동 숨기기: 'Press and hold (or right-click) any empty space on the taskbar, select Taskbar settings, select Taskbar behaviors, and select Automatically hide the taskbar.' 숨은 뒤 보려면 'hover your mouse over, or touch, the bottom edge of your screen.' (Taskbar behaviors에서 체크박스 'Automatically hide the taskbar')",
+        "(curl 확인) Taskbar behaviors 의 다른 항목 이름: Show badges on taskbar apps / Show flashing on taskbar apps / Share any window from my taskbar / Show my taskbar on all displays / Select the far corner of the taskbar to show the desktop.",
+        "(curl 확인) 같은 문서의 Windows 10 탭에는 'Taskbar location on screen' 에서 Left/Top/Right/Bottom 선택, 'taskbar is unlocked' 일 때 위치 변경 가능이라고 적혀 있음 - Windows 10 전용이며 Windows 11 탭과 혼동 금지. 문서 주석: 'Support for Windows 10 has ended on October 14, 2025'.",
+        "(curl 확인) 팁: 앱 점프 목록 표시 여부는 'Settings > Personalization > Start' 의 'Show recently opened items in Jump Lists on Start or the taskbar'."
+      ]
+    },
+    {
+      "title": "Windows에서 작업 표시줄 사용자 지정 (Windows 11 / Windows 10 탭, 한국어판)",
+      "url": "https://support.microsoft.com/ko-kr/windows/experience/personalization/customize-the-taskbar-in-windows",
+      "host": "support.microsoft.com",
+      "tier": "official",
+      "publishedAt": "2026-02-23",
+      "body": "Windows 작업 표시줄은 앱을 시작하고, 열려 있는 창 사이를 전환하고, 알림, 검색 및 시작 메뉴와 같은 시스템 기능에 액세스하는 데 도움이 되는 Windows 운영 체제의 핵심 부분입니다. Windows 11 및 Windows 10에서는 작업 표시줄 아이콘을 중앙에 배치하거나, 자주 사용하는 앱을 고정하거나, 표시되는 시스템 트레이 아이콘을 제어하는 등 작업 방식과 더 잘 일치하도록 작업 표시줄을 사용자 지정할 수 있습니다.\n작업 표시줄을 사용자 지정하면 멀티태스킹을 간소화하고 필수 도구를 쉽게 접근할 수 있는 곳에 보관할 수 있습니다. 아이콘 정렬을 변경하고, 앱을 추가 또는 제거하고, 시스템 아이콘을 표시하거나 숨기기 통해 혼란을 줄이고 집중력을 높일 수 있습니다.\n이 문서에서는 Windows 작업 표시줄을 단계별로 사용자 지정하는 방법을 안내합니다. 작업 표시줄 맞춤을 조정하고, 고정된 앱을 관리하고, 시스템 트레이 표시 유형을 제어하여 워크플로 및 기본 설정에 맞게 작업 표시줄을 개인 설정하는 방법을 알아봅니다\nWindows 11\nWindows 10\n작업 표시줄 레이아웃 구성\nWindows 작업 표시줄은 다양한 구성 요소로 구성되며 각 구성 요소는 고유한 역할을 합니다.\n1. 위젯\n2. 시작\n3. 검색\n4. 작업 보기\n5. 응용 프로그램\n6. 시스템 트레이\n일부 구성 요소는 기본 설정에 맞게 사용자 지정하거나 제거할 수 있지만 다른 구성 요소는 Windows가 제대로 작동하는 데 필수적이며 제거할 수 없습니다. 각 섹션을 확장하여 작업 표시줄의 각 구성 요소 또는 영역에 대해 자세히 알아보고 요구 사항에 더 적합하도록 작업 표시줄을 개인 설정하는 방법을 알아보세요.\n참고\n기본적으로 작업 표시줄은 Windows 11의 중앙에 있습니다. 대신 왼쪽에 정렬하려면 작업 표시줄 맞춤 변경을 참조하세요.\n위젯\n위젯은 동적 콘텐츠를 표시하고 다양한 앱과 기능에 대한 빠른 액세스를 제공하는 대화형 요소입니다. 개인화된 정보를 한눈에 제공하여 정보를 유지하고 체계적으로 정리할 수 있도록 설계되었습니다.\n위젯 보드를 열려면 다음을 수행할 수 있습니다.\n작업 표시줄의 위젯 버튼을 마우스로 가리키거나 선택합니다.\nWindows 키\n+ W 누르기\n작업 표시줄이 가운데에 정렬되어 있는 경우 화면 측면에서 살짝 밉니다.\n작업 표시줄에서 위젯을 표시하거나 숨기려면:\n작업 표시줄을 마우스 오른쪽 단추로 클릭하고 작업 표시줄 설정 을 선택하거나 다음 바로 가기를 사용합니다.\n작업 표시줄\n작업 표시줄 항목에서위젯 스위치를 켜기 또는 끄기로 전환합니다.\n위젯에 대한 자세한 내용은 Windows의 위젯을 사용하여 최신 상태 유지하기를 참조하세요.\n시작\n시작 메뉴는 앱, 설정 및 파일에 빠르게 액세스할 수 있는 중앙 허브입니다. 시작 메뉴는 고정된 앱, 모든 앱, 권장 앱 등 여러 섹션으로 나누어져 있어 자주 사용하는 응용 프로그램과 최근 파일을 쉽게 찾아 시작할 수 있습니다. 직관적이고 사용자 지정 가능하도록 설계되어 시스템을 효율적으로 탐색하고 Windows 환경을 개인 설정하는 데 도움이 됩니다.\n또한 시작 메뉴에는 로그인, 로그아웃, 장치 잠그기 또는 사용자 계정 전환을 수행할 수 있는 사용자 계정 옵션이 포함되어 있습니다.\n시작 메뉴를 열려면 다음을 수행할 수 있습니다.\n작업 표시줄에서 시작 단추  를 선택합니다\n키보드에서 Windows 키 누르기\n화면 아래에서 살짝 밀기\n작업 표시줄에서 시작 메뉴를 제거할 수는 없지만 가운데가 아닌 측면에 정렬되도록 위치를 변경할 수 있습니다. 자세한 내용은 작업 표시줄 맞춤 변경을 참조하세요.\n시작 메뉴에 대한 자세한 내용은 Windows 시작 메뉴 사용자 지정을 참조하세요.\n검색\nWindows Search는 데스크톱에서 직접 파일, 응용 프로그램, 설정 및 웹 결과를 찾을 수 있는 강력한 기능입니다. 작업 표시줄에 편리하게 위치한 검색창은 이 기능에 원활하게 액세스할 수 있는 방법을 제공합니다. 또한 Windows Search는 Microsoft Bing의 웹 검색 기능을 통합하여 브라우저를 열지 않고도 검색 결과를 얻을 수 있도록 합니다.\n검색을 열려면 다음을 수행할 수 있습니다.\nWindows Search를 사용하여 검색을 시작하려면 다음을 수행할 수 있습니다.\n작업 표시줄의 검색 상자 사용: 작업 표시줄에 있는 검색 상자를 선택하고 쿼리 입력을 시작합니다. 그러면 Microsoft Bing에서 제공하는 파일, 애플리케이션, 설정 및 웹 결과를 비롯한 관련 결과 목록이 표시됩니다\nWindows 키\n+ S를 눌러 검색 상자 열기\n시작 메뉴 검색: 시작 메뉴를 연 다음 쿼리를 직접 입력하여 검색을 시작할 수도 있습니다.\n작업 표시줄에서 검색을 구성하려면 다음을 수행합니다.\n작업 표시줄을 마우스 오른쪽 단추로 클릭하고 작업 표시줄 설정 을 선택하거나 다음 바로 가기를 사용합니다.\n작업 표시줄\n작업 표시줄 항목에서 드롭다운 메뉴를 사용하여 검색 영역을 구성합니다. 다음 옵션 중에서 선택할 수 있습니다.\n검색 상자: 검색을 입력할 전체 텍스트 상자를 표시합니다.\n검색 아이콘 및 레이블: \"검색\" 레이블과 함께 검색 아이콘 표시\n검색 아이콘만: 검색 아이콘만 표시\n숨기기: 작업 표시줄에서 검색 기능을 제거합니다.\n자세한 내용은 어디서나 무엇이든 검색하기를 참조하세요.\n보기를 클릭합니다\n작업 표시줄의 작업 보기 버튼은 Windows의 멀티태스킹 환경을 향상하도록 설계되었습니다. 열려 있는 모든 창과 여러 바탕 화면에 빠르게 액세스하고 관리할 수 있습니다. 작업 보기를 열면 모든 활성 응용 프로그램의 축소판 그림 보기가 표시되므로 쉽게 작업 간에 전환하거나 불필요한 창을 닫을 수 있습니다. 또한 작업 보기를 사용하면 여러 데스크톱을 만들고 관리할 수 있어 다양한 프로젝트나 활동에 맞는 깔끔한 작업 공간을 제공할 수 있습니다. 이 기능은 워크플로를 효율적으로 구성하고 특정 작업에 집중해야 하는 경우에 특히 유용합니다.\n작업 보기를 열려면 다음을 수행할 수 있습니다.\n작업 표시줄에서 작업 보기 단추를 선택합니다.\nWindows 키\n+ 탭 누르기\n작업 표시줄에서 작업 보기 단추를 표시하거나 숨기려면:\n작업 표시줄을 마우스 오른쪽 단추로 클릭하고 작업 표시줄 설정 을 선택하거나 다음 바로 가기를 사용합니다.\n작업 표시줄\n작업 표시줄 항목에서작업 보기 스위치를 켜기 또는 끄기로 전환합니다\n자세한 내용은 Windows에서 멀티태스킹하는 방법 및 Windows에서 여러 데스크톱 구성을 참조하세요.\n적용\nWindows의 앱에 사용되는 작업 표시줄 영역은 응용 프로그램에 빠르게 액세스하고 관리할 수 있도록 설계되었습니다. 즐겨 찾는 앱을 작업 표시줄에 고정하거나 사용하지 않는 앱을 고정 해제할 수 있습니다. 또한 아이콘을 선택하고 원하는 순서로 끌어 아이콘을 다시 정렬할 수 있습니다.\n실행 중인 앱은 열려 있음을 나타내는 아이콘 아래에 선과 함께 작업 표시줄에 표시됩니다. 현재 활성 상태의 앱은 Windows 강조 색으로 강조 표시되어 사용 중인 앱을 쉽게 식별할 수 있습니다. 이 설정을 통해 효율적인 멀티태스킹과 애플리케이션 간의 빠른 탐색이 가능합니다.\n앱을 작업 표시줄에 고정\n앱을 작업 표시줄에 고정하는 방법에는 여러 가지가 있습니다. 예를 들면 다음과 같습니다.\n작업 표시줄의 검색 상자에 작업 표시줄에 고정할 앱의 이름을 입력합니다. 앱을 마우스 오른쪽 단추로 클릭한 다음 작업 표시줄에 고정을 선택합니다.\n앱이 이미 열려 있는 경우 작업 표시줄의 아이콘을 마우스 오른쪽 단추로 클릭한 다음 작업 표시줄에 고정을 선택합니다\n작업 표시줄에서 앱 고정 해제\n앱을 고정 해제하려면 작업 표시줄의 고정된 아이콘을 마우스 오른쪽 단추로 클릭한 다음 작업 표시줄 에서 고정 해제를 선택합니다.\n작업 표시줄에서 앱 다시 정렬\n작업 표시줄에서 앱 단추의 순서를 변경하려면 앱의 아이콘을 현재 위치에서 다른 위치로 끌어옵니다.\n팁\n작업 표시줄의 각 앱은 점프 목록을 제공하여 최근 파일 열기 또는 자주 사용하는 기능 액세스와 같은 특정 작업을 빠르게 수행할 수 있습니다. 점프 목록에 액세스하려면 앱 아이콘을 마우스 오른쪽 버튼으로 클릭하기만 하면 됩니다. 점프 목록 표시를 제어하려면 설정>개인 설정>시작 으로 이동하여 시작 또는 작업 표시줄의 점프 목록에 최근에 연 항목 표시 옵션을 토글합니다.\n시스템 트레이\n작업 표시줄의 시스템 트레이 영역에는 시스템 기능 및 알림에 빠르게 액세스할 수 있는 다양한 버튼과 요소가 포함되어 있습니다. 시스템 트레이의 각 부분을 원하는 대로 사용자 지정할 수 있습니다.\n백그라운드 앱 및 시스템 도구\n작업 표시줄의 시스템 트레이에는 백그라운드 앱의 아이콘이 표시되므로 쉽게 모니터링하고 상호 작용할 수 있습니다. 펜 메뉴, 터치 키보드 및 가상 터치 패드와 같은 앱 및 시스템 도구를 표시하도록 사용자 지정하여 작업 표시줄을 정리하고 중요한 사항에 집중할 수 있습니다. 또한 시스템 트레이에는 위치, 마이크 및 카메라 액세스에 대한 실시간 정보를 표시하는 동적 개인 정보 표시기가 있어 개인 정보 설정에 대한 투명성과 제어를 제공합니다.\n시스템 트레이 영역을 사용자 지정하려면 다음을 수행합니다.\n작업 표시줄을 마우스 오른쪽 단추로 클릭하고 작업 표시줄 설정 을 선택하거나 다음 바로 가기를 사용합니다.\n작업 표시줄\n시스템 트레이 아이콘 아래에서 시스템 트레이에 표시할 아이콘을 선택합니다. 옵션은 펜 메뉴, 터치 키보드 및 가상 터치패드입니다\n기타 시스템 트레이 아이콘에서 숨겨진 아이콘 메뉴(오버플로 영역이라고도 함)를 사용하도록 설정할지와 시스템 트레이에 나타날 수 있는 아이콘을 선택합니다\n시스템 트레이 영역의 아이콘을 다시 정렬하려면 아이콘을 끌어서 놓으면 됩니다. 오버플로 영역  에 있는 아이콘뿐만 아니라 시스템 트레이에 현재 표시되는 아이콘을 이동할 수 있습니다. 아이콘을 표시하려면 오버플로 영역에서 시스템 트레이로 끕니다. 반대로 아이콘을 숨기려면 시스템 트레이에서 오버플로 영역으로 다시 끕니다.\n빠른 설정\n빠른 설정은 메뉴를 탐색하지 않고도 자주 사용하는 설정에 액세스하고 수정할 수 있는 편리한 방법을 제공합니다. 예를 들어 빠르게 볼륨을 조정하거나, 화면 밝기를 변경하거나, 네트워크Wi-Fi 전환하거나, 접근성 도구를 켤 수 있습니다.\n빠른 설정 영역은 다음으로 구성됩니다.\n네트워크 아이콘: 이 아이콘은 Wi-Fi 또는 이더넷 연결을 나타냅니다.\n볼륨 아이콘: 이 아이콘은 소리 설정을 나타냅니다.\n배터리 아이콘: 이 아이콘은 노트북 및 태블릿의 배터리 상태를 나타냅니다\n빠른 설정을 열려면 다음을 수행할 수 있습니다.\n작업 표시줄에서 빠른 설정 영역 선택\nWindows 키\n+ A 누르기\n빠른 설정 영역의 아래쪽에서 살짝 밉니다.\n작업 표시줄에서 빠른 설정을 제거할 수는 없지만 원하는 대로 요소를 이동하고 정렬하여 사용자 지정할 수 있습니다.\n팁\n빠른 설정 영역 아이콘 중 하나를 마우스 오른쪽 단추로 클릭하면 설정 또는 진단 옵션에 빠르게 액세스할 수 있습니다.\nCalendar 및 알림 영역\n일정 및 알림 영역은 일정에 액세스할 수 있는 편리한 방법을 제공하며, 여기서 포커스 세션과 알림 센터를 시작할 수 있습니다. 알림 센터에는 들어오는 전자 메일, 업데이트 및 기타 시스템 활동에 대한 경고 및 알림이 표시됩니다.\n일정 및 알림 센터 플라이아웃을 열려면 다음을 수행할 수 있습니다.\n작업 표시줄에서 시계 또는 알림 종 아이콘을 선택합니다\nWindows 키\n+ N 누르기\n화면 측면에서 살짝 밀기\n작업 표시줄에서 시간과 날짜를 표시하거나 숨기려면:\n작업 표시줄의 시계를 마우스 오른쪽 단추로 클릭하고 날짜 및 시간 조정을 선택하거나 다음 바로 가기를 사용합니다.\n날짜 & 시간\n시스템 트레이에서 시간 및 날짜 표시 스위치를 켜기 또는 끄기로 전환합니다.\n켜기로 설정하면 시스템 트레이 시계에 초 표시(더 많은 전력 사용) 옵션을 선택하여 시스템 트레이 시계에서 시간 및 분과 함께 초를 표시할 수 있습니다.\n자세한 내용은 Windows에서 포커스를 사용하는 방법 과 Windows의 알림 및 방해 금지를 참조하세요.\n작업 표시줄 색상 변경\nWindows 색 모드를 변경하거나 강조색을 구성하여 작업 표시줄의 색을 수정할 수 있습니다.\n자세한 내용은 Windows에서 색 개인 설정을 참조하세요.\n작업 표시줄 동작 구성\n작업 표시줄의 레이아웃을 사용자 지정하는 것 외에도 다양한 동작을 변경하여 사용자 환경을 개선할 수 있습니다. 이러한 동작에는 사용하지 않을 때 자동으로 숨기기, 작업 표시줄 단추에 배지 표시, 시스템 알림 관리 등 작업 표시줄이 다양한 작업에 반응하는 방식이 포함됩니다. 이러한 설정을 조정하면 특정 요구 사항에 맞는 보다 효율적이고 개인화된 워크플로를 만들 수 있습니다. 자세히 알아보려면 각 섹션을 확장합니다.\n작업 표시줄 맞춤 변경\n일반적으로 작업 표시줄 아이콘은 가운데에 있지만 작업 표시줄 측면에 맞출 수도 있습니다.\n작업 표시줄을 마우스 오른쪽 단추로 클릭하고 작업 표시줄 설정 을 선택하거나 다음 바로 가기를 사용합니다.\n작업 표시줄\n작업 표시줄 동작을 확장하고 작업 표시줄 정렬에 대해 원하는 옵션을 선택합니다\n참고\n작업 표시줄 설정을 사용하면 작업 표시줄 아이콘을 가운데나 왼쪽에 맞출 수 있습니다",
+      "facts": [
+        "(curl 확인) 문서 ms.date=02/23/2026. 'Windows 11 및 Windows 10에서는 작업 표시줄 ...' 한 문서에 두 탭. 설정 진입: '작업 표시줄을 마우스 오른쪽 단추로 클릭하고 작업 표시줄 설정을 선택하거나 다음 바로 가기를 사용합니다.' (바로 가기 = ms-settings:taskbar 링크)",
+        "(curl 확인) 맞춤: 제목 '작업 표시줄 맞춤 변경', 단계 '작업 표시줄 동작을 확장하고 작업 표시줄 정렬에 대해 원하는 옵션을 선택합니다'. 노트: '작업 표시줄 설정을 사용하면 작업 표시줄 아이콘을 가운데나 왼쪽에 맞출 수 있습니다. 작업 표시줄을 화면 상단이나 측면으로 이동하기 위한 설정은 없습니다. 작업 표시줄은 화면 맨 아래에 있습니다.' (이 문서 안에서 '맞춤'(제목)과 '정렬'(단계 문구)이 섞여 있음)",
+        "(curl 확인) '기본적으로 작업 표시줄은 Windows 11의 중앙에 있습니다. 대신 왼쪽에 정렬하려면 작업 표시줄 맞춤 변경을 참조하세요.' / '작업 표시줄에서 시작 메뉴를 제거할 수는 없지만 가운데가 아닌 측면에 정렬되도록 위치를 변경할 수 있습니다.'",
+        "(curl 확인) 위젯/작업 보기: '작업 표시줄 항목에서 위젯 스위치를 켜기 또는 끄기로 전환합니다.' / '작업 표시줄 항목에서 작업 보기 스위치를 켜기 또는 끄기로 전환합니다'.",
+        "(curl 확인) 검색(Windows 11 탭): '작업 표시줄 항목에서 드롭다운 메뉴를 사용하여 검색 영역을 구성합니다.' 옵션 4개 = 검색 상자 / 검색 아이콘 및 레이블 / 검색 아이콘만 / 숨기기('작업 표시줄에서 검색 기능을 제거합니다').",
+        "(curl 확인) 앱 고정: '작업 표시줄에 고정' / '작업 표시줄에서 고정 해제' (아이콘 우클릭 메뉴 이름). 순서는 아이콘 끌어서 변경.",
+        "(curl 확인) 시스템 트레이: '시스템 트레이 아이콘 아래에서 시스템 트레이에 표시할 아이콘을 선택합니다. 옵션은 펜 메뉴, 터치 키보드 및 가상 터치패드입니다' / '기타 시스템 트레이 아이콘에서 숨겨진 아이콘 메뉴(오버플로 영역이라고도 함)를 사용하도록 설정할지와 시스템 트레이에 나타날 수 있는 아이콘을 선택합니다'. 오버플로 영역 <-> 시스템 트레이 드래그.",
+        "(curl 확인) 자동 숨기기: 소제목 '자동으로 작업 표시줄 숨기기', 본문 '작업 표시줄 설정과 작업 표시줄 동작을 차례로 선택한 다음, 자동으로 작업 표시줄 숨기기를 선택합니다', 체크박스 안내 '작업 표시줄 자동 숨기기 옵션을 검사하거나 선택 취소합니다' - 같은 문서 안에서 항목 이름이 두 가지로 적힘(실제 UI 라벨은 문서만으로 확정 불가). '숨겨진 작업 표시줄을 보려면 화면 아래쪽 가장자리 위로 마우스를 가져가거나 터치합니다.'",
+        "(curl 확인) 다른 동작 항목 이름: 작업 표시줄 앱에 배지 표시 / 작업 표시줄 앱에 깜박임 표시 / 내 작업 표시줄에서 모든 창 공유 / 모든 디스플레이에 내 작업 표시줄 표시 / 작업 표시줄의 맨 끝 모서리를 선택하여 바탕 화면을 표시.",
+        "(curl 확인) 한국어판 Windows 10 탭의 검색 옵션은 '작업 표시줄을 마우스 오른쪽 버튼으로 클릭하고 검색을 선택' 후 숨김/검색 아이콘만 표시/검색 상자 표시/검색 하이라이트 표시 - Windows 11 경로와 다름. 'Windows 10에 대한 지원이 2025년 10월 14일에 종료되었습니다.'"
+      ]
+    },
+    {
+      "title": "2026년 8월 27일 — KB5120998(OS 빌드 26200.9278 및 26100.9278) 미리 보기",
+      "url": "https://support.microsoft.com/ko-kr/servicing/os/windows-11/2026/08/kb5120998-windows-11-24h2-25h2-update",
+      "host": "support.microsoft.com",
+      "tier": "official",
+      "publishedAt": "2026-08-27",
+      "body": "Windows 11 버전 25H2 및 24H2(KB5120998)용 이 누적 업데이트에는 프로덕션 품질 개선 사항이 포함되어 있습니다.\n공지 사항 및 메시지\n이 섹션에서는 공지 사항, 변경 로그, 지원 종료 공지 등 이번 릴리스와 관련된 주요 알림을 제공합니다.\nWindows 보안 부팅 인증서 만료\n중요: 대부분의 Windows 디바이스에서 사용되는 보안 부팅 인증서는 2026년 6월부터 만료됩니다. Microsoft는 지난 몇 개월 동안 소비자 및 관리되지 않는 비즈니스 장치에서 이러한 인증서를 업데이트해 왔습니다. 최신 인증서를 받지 못한 장치는 계속 정상적으로 시작되어 작동하며, 표준 Windows 업데이트는 계속 설치됩니다. 업데이트된 인증서는 향후 몇 개월 내에 Windows 업데이트를 통해 계속 제공됩니다. 자세한 내용은 Windows 보안 부팅 인증서 만료 및 CA 업데이트를 참조하세요.\n업데이트 종료\nWindows 11, 버전 24H2 Home 및 Pro 버전은 2026년 10월 13일에 업데이트가 종료됩니다. 이러한 버전을 실행하는 장치는 알려진 문제에 대한 수정, 표준 시간대 업데이트, 기술 지원 또는 최신 보안 위협으로부터의 보호를 포함하는 월별 보안 및 미리 보기 업데이트를 더 이상 받지 못합니다.\nEnterprise 및 Education 버전은 2027년 10월 12일까지 계속 지원됩니다.\n보호된 최신 상태를 유지하려면 최신 버전의 Windows 11로 업그레이드하는 것이 좋습니다.\n로그 변경\n날짜 변경\n설명 변경\n2026년 9월 24일\n알려진 문제 추가: 로그인 후 장치에 검은색 화면이 표시되거나 바탕 화면 로딩 문제가 발생할 수 있습니다.\n2026년 9월 14일\n릴리스 정보 추가: [위젯] 새로운! 잠금 화면에서 더 조용하고 집중적인 위젯 환경을 제공하기 위해 이제 날씨가 기본적으로 표시되는 유일한 위젯입니다. 설정 > 개인 설정 > 잠금 화면에서 다른 위젯을 추가할 수 있습니다. 이 변경 내용은 7월에 새 사용자에게 배포되기 시작했으며 현재 기존 사용자에게 배포되고 있습니다.\n2026년 9월 4일\n알려진 문제 추가: 일부 장치에서 바탕 화면 배경 설정이 손실되거나 초기화됩니다.\n2026년 9월 3일\n알려진 문제 추가됨: Microsoft Teams 및 Outlook이 ARM 기반 장치에서 실행되지 않을 수 있습니다.\n2026년 9월 2일\n추가된 알려진 문제: 마우스 사용자 지정이 영어가 아닌 Windows 장치에서 다시 설정됩니다.\n2026년 9월 2일\n알려진 문제 \"Microsoft Teams 및 Outlook이 ARM 기반 장치에서 실행되지 않을 수 있습니다\"가 추가되었습니다.\n중요한 정보\n이 업데이트는 점진적 출시 및 일반 출시의 두 가지 릴리스 단계를 통해 제공됩니다.\n점진적 출시는 단계적으로 업데이트를 제공하므로 기능이 한 번에 도달하는 것이 아니라 시간이 지남에 따라 장치에 도달하므로 사용 가능 여부가 장치마다 다릅니다.\n일반적인 출시는 일반적으로 GA(일반 공급)에 도달할 때 모든 적격 장치에 동시에 광범위한 릴리스를 제공하는 것입니다.\n점진적 출시\n다음 요약에서는 개선 사항 및 수정 사항과 함께 새로운 Windows 11 PC 환경을 간략하게 설명합니다. 대괄호 안의 굵은 텍스트는 변경 항목 또는 영역을 나타냅니다.\n작업 표시줄\n이 업데이트는 작업 방식과 화면 공간을 더 잘 활용하도록 작업 표시줄을 사용자 지정하는 더 많은 방법을 제공합니다.\n새로운 기능! 이제 작업 표시줄을 화면의 아래쪽, 위쪽, 왼쪽 또는 오른쪽에 표시할지 선택할 수 있습니다. 이러한 다른 위치에서는 도구 설명, 플라이아웃 및 애니메이션이 여전히 작업 표시줄에서 제공되며 작업 표시줄 아이콘을 결합하지 않는 것과 같은 대부분의 사용자 지정 설정은 모든 위치에서 작동합니다. 검색 상자와 더 작은 작업 표시줄은 현재 위쪽 및 아래쪽 위치에만 지원됩니다. 작업 표시줄의 위치를 변경하려면 설정 > 개인 설정 > 작업 표시줄 > 동작 작업 표시줄 위치 >\n새로운 기능! 이제 더 작은 장치에서 화면 공간을 최대화하는 데 도움이 되는 더 작은 작업 표시줄 옵션을 사용할 수 있습니다. 이 환경은 시작, 검색 및 시스템 트레이와 같은 주요 기능에 대한 액세스를 유지하면서 작업 표시줄 아이콘의 크기와 작업 표시줄 높이를 줄여줍니다. 작업 표시줄 크기를 변경하려면 설정 > 개인 설정 > 작업 표시줄 > 동작 작업 표시줄 크기>로 이동합니다.\n작게 설정하면 아이콘과 작업 표시줄 높이가 모두 작아집니다.\n새로운 기능! 이제 작업 표시줄 설정 페이지의 작업 표시줄 동작 섹션이 기본적으로 확장되어 검색 기능이 향상되었습니다.\n이 업데이트는 터치식 입력이 아닌 PC에서 작업 표시줄의 시스템 트레이 영역을 로드하는 안정성을 개선합니다.",
+      "facts": [
+        "(curl 확인) 문서 ms.date=08/13/2026, 제목상 릴리스일 2026-08-27, 'Windows 11 버전 25H2 및 24H2(KB5120998)용 이 누적 업데이트' / 비보안 미리 보기(선택적 업데이트: 문서에 '옵션> 선택적 업데이트를 엽니다' 문구). 빌드 26200.9278(25H2) 및 26100.9278(24H2).",
+        "(curl 확인) '새로운 기능! 이제 작업 표시줄을 화면의 아래쪽, 위쪽, 왼쪽 또는 오른쪽에 표시할지 선택할 수 있습니다.' 변경 경로 원문: '설정 > 개인 설정 > 작업 표시줄 > 동작 작업 표시줄 위치 >' (어순 섞임 원문 그대로 - '작업 표시줄 동작' 섹션 안의 '작업 표시줄 위치').",
+        "(curl 확인) 제한: '검색 상자와 더 작은 작업 표시줄은 현재 위쪽 및 아래쪽 위치에만 지원됩니다.' / 다른 위치에서도 '도구 설명, 플라이아웃 및 애니메이션이 여전히 작업 표시줄에서 제공되며 작업 표시줄 아이콘을 결합하지 않는 것과 같은 대부분의 사용자 지정 설정은 모든 위치에서 작동합니다.'",
+        "(curl 확인) '새로운 기능! ... 더 작은 작업 표시줄 옵션' 경로: '설정 > 개인 설정 > 작업 표시줄 > 동작 작업 표시줄 크기>' 이며 '작게 설정하면 아이콘과 작업 표시줄 높이가 모두 작아집니다.'",
+        "(curl 확인) '새로운 기능! 이제 작업 표시줄 설정 페이지의 작업 표시줄 동작 섹션이 기본적으로 확장되어 검색 기능이 향상되었습니다.'",
+        "(curl 확인) 이 작업 표시줄 항목은 문서의 '점진적 출시' 머리글 아래에 있음: '점진적 출시는 단계적으로 업데이트를 제공하므로 기능이 한 번에 도달하는 것이 아니라 시간이 지남에 따라 장치에 도달하므로 사용 가능 여부가 장치마다 다릅니다.'"
+      ]
+    },
+    {
+      "title": "2026년 9월 8일 — KB5124008(OS 빌드 26200.9445 및 26100.9445)",
+      "url": "https://support.microsoft.com/ko-kr/servicing/os/windows-11/2026/09/kb5124008-windows-11-24h2-25h2-security-update",
+      "host": "support.microsoft.com",
+      "tier": "official",
+      "publishedAt": "2026-09-08",
+      "body": "대부분의 Windows 디바이스에서 사용되는 보안 부팅 인증서가 2026년 6월에 만료되기 시작했습니다. Microsoft는 지난 몇 달 동안 PC 및 관리되지 않는 비즈니스 장치에서 이러한 인증서를 업데이트해 왔습니다. 최신 인증서를 받지 못한 장치는 계속 시작되고 표준 Windows 업데이트는 계속 설치됩니다. 앞으로 몇 달 동안 Windows 업데이트를 통해 최신 인증서를 계속 설치할 예정입니다.\n업데이트 종료\nWindows 11, 버전 24H2 Home 및 Pro 버전은 2026년 10월 13일에 업데이트가 종료됩니다. 이러한 버전을 실행하는 장치는 알려진 문제에 대한 수정, 표준 시간대 업데이트, 기술 지원 또는 최신 보안 위협으로부터의 보호를 포함하는 월별 보안 및 미리 보기 업데이트를 더 이상 받지 못합니다.\nEnterprise 및 Education 버전은 2027년 10월 12일까지 계속 지원됩니다.\n보호 상태를 유지하고 최신 상태로 유지하려면 최신 버전의 Windows 11로 업그레이드하는 것이 좋습니다.\n개선 사항\n이 업데이트에는 이전에 릴리스된 다음과 같은 업데이트의 개선 사항이 포함되어 있습니다.\n2026년 8월 27일-KB5120998(OS 빌드 26200.9278 및 26100.9278)\n다음 요약은 이 업데이트에서 해결된 주요 품질 개선 사항을 간략하게 설명합니다. 대괄호 안의 굵은 텍스트는 변경 항목 또는 영역을 나타냅니다.",
+      "facts": [
+        "(curl 확인) 문서 ms.date=09/08/2026. 9월 정기 보안 업데이트(빌드 26200.9445 / 26100.9445). 문서 본문에 작업 표시줄 항목은 없음(grep '작업 표시줄' 0건).",
+        "(curl 확인) '이 업데이트에는 이전에 릴리스된 다음과 같은 업데이트의 개선 사항이 포함되어 있습니다. 2026년 8월 27일-KB5120998(OS 빌드 26200.9278 및 26100.9278)' - 즉 8월 미리 보기 내용(작업 표시줄 위치 포함)이 9월 8일 누적 업데이트에 포함됨. 단 활성화는 점진적 출시라 장치마다 다를 수 있음.",
+        "(curl 확인) 'Windows 11, 버전 24H2 Home 및 Pro 버전은 2026년 10월 13일에 업데이트가 종료됩니다.'"
+      ]
+    },
+    {
+      "title": "Microsoft remembers that taskbars used to move (The Register)",
+      "url": "https://www.theregister.com/personal-tech/2026/05/18/microsoft-remembers-that-taskbars-used-to-move/5241875",
+      "host": "www.theregister.com",
+      "tier": "press",
+      "publishedAt": "2026-05-18",
+      "body": "WebFetch 요약 발췌(원문 직접 읽음): 2026-05-18 The Register(Richard Speed). 작업 표시줄을 화면 위/아래/왼쪽/오른쪽에 둘 수 있고 위치별로 아이콘 정렬을 따로 설정 가능. Start/Search 플라이아웃은 작업 표시줄 위치 기준으로 열림. 'never combine' 옵션은 앱 창을 이름표 붙은 개별 버튼으로 표시. Windows Insider 'Experimental channel' 대상. 한계: 자동 숨기기는 대체 위치에서 아직 미지원, 검색 상자는 검색 아이콘으로만 표시. 'will receive more polishing before reaching production' (출시일 언급 없음). Windows Design Director Diego Baca 인용: 'The taskbar was modernized during Windows 11 to support better animations, more states, and several other features.'",
+      "facts": [
+        "2026-05-18 시점: 작업 표시줄 위/아래/왼쪽/오른쪽 배치가 Windows Insider 'Experimental channel' 에서 테스트 중이었음(기사). 위치별 아이콘 정렬 별도 설정 가능.",
+        "2026-05 Insider 빌드 기준 한계: 자동 숨기기는 대체 위치에서 미지원, 검색 상자는 아이콘으로만 표시. (이후 8월 KB5120998 공식 노트와 한계 서술이 다름 - conflicts 참고)"
+      ]
+    },
+    {
+      "title": "Windows 11 finally brings back Taskbar repositioning with top, left, and right docking (Pureinfotech)",
+      "url": "https://pureinfotech.com/windows-11-taskbar-move-top-left-right-bottom/",
+      "host": "pureinfotech.com",
+      "tier": "blog",
+      "publishedAt": "2026-03-23",
+      "body": "WebFetch 요약 발췌(원문 직접 읽음): 2026-03-23 게시, 2026-03-26 갱신. 'Microsoft says the Taskbar can dock the Taskbar to the top, left, right, or bottom of the screen' 취지. 'Initial rollout is expected through the Windows Insider Program starting in April.' 'a full public release timeline remains unknown.' 설정 경로는 기사에서 확인되지 않음: 'Although it's likely that the Taskbar settings will also include an option to change its position, there's currently no evidence of such an entry in the available information.' Windows 11 출시 이후 작업 표시줄은 화면 아래에 고정('locked to the bottom') 이었다고 서술.",
+      "facts": [
+        "2026-03 시점 보도: 작업 표시줄 위치 이동 기능 도입 예고, Insider 초기 롤아웃 4월 예정, 일반 출시 시점은 미정. (후속: 2026-05 Register, 2026-08 공식 KB5120998)"
+      ]
+    },
+    {
+      "title": "윈도우 11 작업 표시줄, 윈도우 10처럼 왼쪽으로 돌려보자 (ITWorld Korea)",
+      "url": "https://www.itworld.co.kr/article/3575430/how-to-%EC%9C%88%EB%8F%84%EC%9A%B0-11-%EC%9E%91%EC%97%85-%ED%91%9C%EC%8B%9C%EC%A4%84-%EC%9C%88%EB%8F%84%EC%9A%B0-10%EC%B2%98%EB%9F%BC-%EC%99%BC%EC%AA%BD%EC%9C%BC%EB%A1%9C-%EB%8F%8C%EB%A0%A4.html",
+      "host": "www.itworld.co.kr",
+      "tier": "press",
+      "publishedAt": "2021-07-07",
+      "body": "WebFetch 요약 발췌(원문 직접 읽음): 기사 상단 날짜 2021.07.07(윈도우 11 프리뷰 시절). 단계: 빈 작업 표시줄 우클릭 -> '작업 표시줄 설정' -> 설정의 작업 표시줄 메뉴에서 아래로 스크롤해 'Taskbar behaviors' 항목을 펼침 -> 'Taskbar alignment'를 '가운데'에서 '왼쪽'으로 변경. 기사 인용: '윈도우 10과 달리, 윈도우 11에서는 작업 표시줄을 가로나 세로, 화면 아래와 측면 등 여기저기로 옮길 수 있는 옵션이 없고, 작업 표시줄의 폭을 조절할 수도 없다.' 검색·작업 보기·위젯·자동 숨기기는 이 기사에서 다루지 않음.",
+      "facts": [
+        "2021-07-07 ITWorld Korea 기사 - 프리뷰 시절 영문 UI 라벨 'Taskbar behaviors' / 'Taskbar alignment' 로 표기, 옵션 가운데/왼쪽. 2021년 기사라 낡은 정보로 단독 인용 금지."
+      ]
+    },
+    {
+      "title": "윈도우11 작업표시줄 아이콘 왼쪽으로 정렬하는 방법 (extrememanual)",
+      "url": "https://extrememanual.net/46053",
+      "host": "extrememanual.net",
+      "tier": "blog",
+      "publishedAt": "2023-05-02",
+      "body": "WebFetch 요약 발췌(원문 직접 읽음): 발행일 2023-05-02. 1) Win+i 로 Windows 설정 2) 왼쪽 메뉴 '개인 설정' 3) 목록에서 '작업 표시줄' 4) '작업 표시줄 동작' 항목 펼침 5) '작업 표시줄 맞춤' 옵션을 '가운데'에서 '왼쪽'으로 변경. 선택지: 가운데 / 왼쪽. 초기 빌드에서는 작업 표시줄을 왼쪽으로 바꿔도 시작 메뉴가 가운데에 남았고(왼쪽 정렬하려면 Explorer Patcher 필요), 최신 빌드에서는 시작 메뉴도 왼쪽에 나타남('시작 메뉴 또한 왼쪽에 나타나'). 설정에서 언제든 가운데로 복귀 가능.",
+      "facts": [
+        "2023-05 한국어 블로그가 적은 한국어 UI 경로: 설정(Win+i) > 개인 설정 > 작업 표시줄 > '작업 표시줄 동작' > '작업 표시줄 맞춤' = 가운데/왼쪽. (MS 한국어 문서는 '작업 표시줄 정렬'로도 표기 - conflicts 참고)",
+        "작업 표시줄을 왼쪽 맞춤하면 시작 메뉴도 왼쪽에 열림(최신 빌드 기준, 2023 블로그). 초기 빌드는 시작 메뉴가 가운데 유지."
+      ]
+    }
+  ],
+  "conflicts": [
+    {
+      "about": "Windows 11에서 작업 표시줄을 화면 위/옆으로 옮길 수 있는가",
+      "a": "MS 영문·한국어 '작업 표시줄 사용자 지정' 문서(ms.date 2026-02-23)는 Windows 11 탭에 '작업 표시줄을 화면 상단이나 측면으로 이동하기 위한 설정은 없습니다. 작업 표시줄은 화면 맨 아래에 있습니다.' 라고 적음.",
+      "b": "MS KB5120998 릴리스 노트(2026-08-27 미리 보기, 25H2/24H2)는 '이제 작업 표시줄을 화면의 아래쪽, 위쪽, 왼쪽 또는 오른쪽에 표시할지 선택할 수 있습니다' (설정 > 개인 설정 > 작업 표시줄 > 동작 작업 표시줄 위치) 로 점진적 출시. 두 공식 문서의 시점이 달라 어긋남 - 글에서는 '2026-02 문서 기준 불가, 2026-08 업데이트부터 점진 도입(장치별 상이)'로 시점을 밝혀야 함."
+    },
+    {
+      "about": "위치 이동 기능의 한계(자동 숨기기/검색 상자)",
+      "a": "The Register(2026-05-18, Insider Experimental): 자동 숨기기는 대체 위치에서 아직 미지원, 검색 상자는 아이콘으로만 표시.",
+      "b": "KB5120998(2026-08-27 공식): '검색 상자와 더 작은 작업 표시줄은 현재 위쪽 및 아래쪽 위치에만 지원됩니다.' (자동 숨기기 제한은 노트에 언급 없음 - 현 시점 지원 여부 확인 안 됨)."
+    },
+    {
+      "about": "한국어 UI 에서 맞춤 옵션 이름 / 자동 숨기기 옵션 이름",
+      "a": "extrememanual(2023 블로그): '작업 표시줄 동작' 안의 '작업 표시줄 맞춤'.",
+      "b": "MS 한국어 문서: 제목은 '작업 표시줄 맞춤 변경', 단계 문구는 '작업 표시줄 정렬에 대해 원하는 옵션을 선택'. 자동 숨기기도 '자동으로 작업 표시줄 숨기기'(소제목)와 '작업 표시줄 자동 숨기기'(체크박스 안내)가 한 문서에 혼재. 실제 UI 라벨은 화면 캡처로 확인 필요."
+    }
+  ],
+  "unknowns": [
+    "실제 한국어 Windows 11 설정 화면의 정확한 라벨('작업 표시줄 맞춤' vs '작업 표시줄 정렬', '작업 표시줄 자동 숨기기' vs '자동으로 작업 표시줄 숨기기') - MS 한국어 문서 안에서도 혼재, 화면 캡처로 확정 못 함.",
+    "작업 표시줄 위치(위/왼쪽/오른쪽) 기능이 2026-10-11 현재 모든 25H2/24H2 PC에서 켜져 있는지 - KB5120998은 '점진적 출시'라 장치별 상이, 일반 출시(GA) 완료를 확인하는 공식 문서는 못 찾음. 9월 22일 KB5124010 노트에는 작업 표시줄 위치 항목이 없었음(grep).",
+    "Windows Central 기사('windows 11 is dangerously close to letting you move the taskbar')가 '9월 패치 화요일 배포'라고 했다는 검색 요약이 있었으나 WebFetch 로 본문을 읽지 못해(본문 잘림) 근거로 쓰지 않음.",
+    "작업 표시줄 위치 변경 시 자동 숨기기 지원 여부(현재 공식 노트 기준) - 확인 안 됨.",
+    "Windows 11 '작업 표시줄 항목'에 기본 노출되는 항목(위젯·작업 보기·검색 외 Copilot 등)의 빌드별 차이, 숨겨진 아이콘 메뉴의 개별 앱 토글 UI 문구 - 문서에서 확인 못 함.",
+    "레지스트리·서드파티(Explorer Patcher, StartAllBack 등) 방식은 이번 조사에서 수집하지 않음(extrememanual 이 Explorer Patcher 를 초기 빌드 시작 메뉴 왼쪽 정렬 용도로 언급만)."
+  ]
+}
