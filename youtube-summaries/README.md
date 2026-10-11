@@ -3,12 +3,19 @@
 채널 [AI Engineer](https://www.youtube.com/@aiDotEngineer) 의 새 영상을 Gemini 로 자동 요약한 모음입니다.
 생성: `backend/scripts/youtube-summarize.mjs` (GitHub Actions `youtube-summary` 크론).
 
-총 **292개**.
+총 **299개**.
 
 | 발행일 | 제목 |
 |---|---|
+| 2026-10-11 | [An AI Future Without the Lock-In — Remy Guercio, Tailscale](2026-10-11-s-glGHAa1a4.md) |
+| 2026-10-10 | [Zero Cold Starts: Serverless AI Agents on Akamai Functions — Thorsten Hans](2026-10-10-Zf_e45GiNCE.md) |
 | 2026-10-10 | [Small Models, Big Results: Training a Finance Agent for Under $500 — Charles Dickens, Snorkel AI](2026-10-10-TyPpSRXGhbc.md) |
 | 2026-10-10 | [From 15% to 90% GPU Utilization: Fix the Data Pipeline, Not the Model](2026-10-10-tNAV259UhCM.md) |
+| 2026-10-10 | [Beyond RAG: A Relational Context Engine That Cuts Token Burn — Unblocked](2026-10-10-ORVh4GivEU0.md) |
+| 2026-10-10 | [How MiniMax M3 Was Built: Sparse Attention and Native Multimodality — Olive Song](2026-10-10-htod7Nv1cBc.md) |
+| 2026-10-10 | [From Your Laptop to the Pipeline: Scaling Custom Agents with GitHub Copilot](2026-10-10-b9UhZkKjX_A.md) |
+| 2026-10-10 | [The Lethal Trifecta Is Already on Your Laptops — Michael Patterson, Coder](2026-10-10-abw_m-DRi1k.md) |
+| 2026-10-10 | [AI Agents Don't Read Your Policy Docs. They Hit Your APIs — Gravitee](2026-10-10-7v2myBde05o.md) |
 | 2026-10-09 | [AI Writes More PRs. Who Validates Them? — Ali-Reza Adl-Tabatabai, Sonar](2026-10-09-uuwDWRbxoYo.md) |
 | 2026-10-09 | [Why 80% Reliability Isn't Good Enough — Felipe Blanes, Amazon AGI Lab](2026-10-09-Emo5FGGY-wM.md) |
 | 2026-10-09 | [Stop Prompting — Greg Pstrucha, Sentry](2026-10-09-E3KbFLAGD6A.md) |
