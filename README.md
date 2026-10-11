@@ -114,6 +114,7 @@ git push origin main              # → Vercel 자동 재배포
 - 09:00 집필: Windows 스케줄작업 `AZ2MZ_Blog_Daily` → `claude -p /blog-daily` 스킬이 4편(티스토리 2+네이버 2, 서로 다른 글 — 2026-10-07 토큰 절약으로 5+5에서 축소) 집필·검증. 로그: `backend/out/blog/blog-daily.log`
 - 12:00·15:00·18:00 발행: Windows 스케줄작업 `AZ2MZ_Blog_Queue` → `node backend/scripts/blog-queue.mjs`가 플랫폼별 순차 발행(T→N→T→N…, 글 사이 20~40분 랜덤, 각 플랫폼 하루 5편 한도). 로그: `backend/out/blog/blog-queue.log`
 - 로그인 자동화 없음(기존 철칙) — 전용 프로필(티스토리 `backend/.tistory-profile`, 네이버 `backend/.naver-profile`)에 1회 로그인 후 재사용
+- 네이버 본문은 붙여넣기 전 `naverize()`로 모바일 가독성 양식(가운데 정렬·짧은 줄·밑줄형 인용구 소제목)으로 바꾼다. 발행 창 위치는 `backend/scripts/lib/window.mjs`에서 정하며 `BLOG_OFFSCREEN=1`이면 화면 밖이다. 세부·주의사항은 [docs/architecture.md](docs/architecture.md)
 
 ---
 
