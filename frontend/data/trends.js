@@ -7,7 +7,7 @@ window.HANGEUT_DATA = {
       "type": "신뢰분석",
       "cat": "디저트",
       "coverCat": "cat-dessert",
-      "analyzedAt": "2026-10-09",
+      "analyzedAt": "2026-10-12",
       "title": "두바이 초콜릿 (편의점판)",
       "shops": [
         {
