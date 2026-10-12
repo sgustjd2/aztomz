@@ -1,0 +1,249 @@
+{
+  "keyword": "엑셀 텍스트 나누기",
+  "categoryId": "hangeut-trend",
+  "notes": "공식(support.microsoft.com) 문서 6건으로 마법사 7단계·덮어쓰기 주의·플랫폼/버전 표기 차이·TEXTSPLIT·Flash Fill·함수 분할을 문서별 귀속으로 말할 수 있다. 버전·Mac·웹 표기는 문서마다 달라 문서별로 인용하고 합치지 않는다. 고정 너비·열 데이터 서식·경고창 문구·한국어 UI 라벨은 자료가 없어 쓰지 않는다.",
+  "cannotSay": [
+    "마법사(Text to Columns)의 Mac 지원·Mac 메뉴 경로 단정 금지 — 마법사 문서 Applies To 에 Mac 표기 없음",
+    "[unclear] 웹에서 TEXTSPLIT 사용 가능 여부 단정 금지 — Split a cell 문서엔 'TEXTSPLIT (Excel on the web)' 절이 있으나 TEXTSPLIT 문서 Applies To 엔 웹이 없음. 쓰려면 '문서끼리 다르게 적혀 있다' 수준으로만",
+    "Flash Fill 켜는 경로(Tools > Options > Advanced > …) 쓰지 말 것 — 실제 Windows 메뉴와 다를 수 있어 확인 못 함. 실행은 Data > Flash Fill / Ctrl+E 만",
+    "Flash Fill 문서의 단계 예시는 이름 '결합'(C2에 풀네임 입력)이다. 분리용 입력 순서는 원문에 없음 — 문서 단계처럼 쓰지 말 것",
+    "한국어 UI 라벨(데이터 탭·텍스트 나누기·구분 기호로 분리됨 등) 단정 금지 — 영문 메뉴명(Data > Text to Columns) 병기. 한국어판 URL 없음, 본문 링크는 en-us",
+    "원문에 없는 순서·이유 덧붙임 금지 — 예: 'Destination 을 바꾸면 덮어쓰기를 피한다', 'TEXTSPLIT 은 원본을 건드리지 않는다', '마법사는 N단계 중 N번째', 'Web 에서도 Next/Finish'",
+    "Windows(마법사 Next/Finish)와 Web(Split Text to Columns → Apply) 흐름을 한 순서로 섞기 금지"
+  ],
+  "cannotCover": [
+    "고정 너비(Fixed width) 선택 시 단계 — 현행 마법사 문서에 없음",
+    "열 데이터 서식(General/Text/Date)·'열 가져오지 않음' 옵션 — 공식 문서에 없음(UGA 가 General 언급만)",
+    "나눈 뒤 날짜가 바뀌거나 앞자리 0 이 사라지는 문제와 해결법 — 근거 없음",
+    "덮어쓰기 경고창의 정확한 문구 — 공식엔 'overwrite' 안내만, 팝업 존재는 2차(UGA)만",
+    "마법사 단계 수('3단계 중 N')·창 제목 표기",
+    "Mac 메뉴 경로, Flash Fill 켜는 경로, 한국어 UI 표기"
+  ],
+  "claims": [
+    {
+      "claim": "엑셀 텍스트 나누기는 Data 탭의 Text to Columns 로 시작해, 마법사에서 Delimited → 구분 기호 선택 → Destination → Finish 순서로 끝난다(마법사 문서 기준 7단계).",
+      "grade": "confirmed",
+      "evidence": [
+        "마법사 문서 원문 7단계: 1) 나눌 텍스트가 있는 셀 또는 열 선택 2) Data > Text to Columns 3) Convert Text to Columns Wizard 에서 Delimited > Next 4) 데이터의 Delimiters 선택(예: Comma and Space, Data preview 창에서 미리보기) 5) Next 6) 나눈 데이터가 나타날 Destination 선택 7) Finish",
+        "도입 원문: \"Take text in one or more cells and split it into multiple cells using the Convert Text to Columns Wizard.\" 같은 문서 끝 'Want more?' 에 'Split text into different columns with functions' 링크",
+        "Distribute 문서 Windows 탭 원문: \"On the Data tab, in the Data Tools group, select Text to Columns.\" 그다음 \"Follow the instructions in the Convert Text to Columns Wizard to specify how you want to divide the text into separate columns.\"",
+        "Distribute 문서 예시: 'Full Name' 열을 'First Name' 열과 'Last Name' 열 2개로 분할",
+        "마법사 문서 Applies To 원문: Excel for Microsoft 365 / Excel 2024 / Excel 2021 / Excel 2019 / Excel 2016 (5개, Mac 표기 없음)"
+      ],
+      "sourceUrls": [
+        "https://support.microsoft.com/en-us/office/split-text-into-different-columns-30b14928-5550-41f5-97ca-7a3e9c363ed7",
+        "https://support.microsoft.com/en-US/Excel/distribute-the-contents-of-a-cell-into-adjacent-columns"
+      ]
+    },
+    {
+      "claim": "나눈 결과는 오른쪽 셀을 덮어쓰므로, 시작 전에 오른쪽에 빈 열을 충분히 남겨 두어야 한다(나눌 범위는 행은 몇 개든 되지만 열은 1개만).",
+      "grade": "confirmed",
+      "evidence": [
+        "Distribute 문서 Windows 탭 Note 원문: \"A range containing a column that you want to split can include any number of rows, but it can include no more than one column. Keep enough blank columns to the right of the selected column to prevent data in any adjacent columns from being overwritten by the data that is to be distributed. If necessary, insert empty columns to contain each of the constituent parts of the distributed data.\"",
+        "Split a cell 문서 Important 원문: \"When you split the contents, they will overwrite the contents in the next cell to the right, so make sure to have empty space there.\"",
+        "(2차 보조·공식 아님) 조지아대 재무회계부서 헬프 문서: 새 빈 열을 먼저 삽입하지 않으면 기존 열이 원본 텍스트로 덮어쓰이며, 마지막 단계에서 덮어쓸지 묻는 확인 팝업이 뜬다고 서술(팝업 문구 자체는 원문 미인용)"
+      ],
+      "sourceUrls": [
+        "https://support.microsoft.com/en-US/Excel/distribute-the-contents-of-a-cell-into-adjacent-columns",
+        "https://support.microsoft.com/en-us/excel/split-a-cell-in-excel",
+        "https://uga.teamdynamix.com/TDClient/3109/FandA/KB/ArticleDet?ID=149693"
+      ]
+    },
+    {
+      "claim": "같은 '텍스트 나누기'라도 문서·플랫폼마다 메뉴 이름·흐름·적용 버전이 다르게 적혀 있어, 한 흐름으로 뭉뚱그리지 말고 문서별로 귀속해 써야 한다.",
+      "grade": "confirmed",
+      "evidence": [
+        "Distribute 문서는 'Windows' / 'Web' 탭 2개. Windows 탭: Data tab > Data Tools group > Text to Columns 후 마법사. Web 탭 원문: \"On the Data tab, in the Data Tools group, select Split Text to Columns.\" → \"Select the delimiters that you want to use, and then select Apply.\" (마법사가 아니라 Apply 흐름)",
+        "Split a cell 문서 Note 원문: \"Excel for the web doesn't have the Text to Columns Wizard. Instead, you can Split text into different columns with functions.\" 같은 문서의 단계는 탭 구분 없이 \"Select Data > Data Tools > Text to Columns\" → 구분 기호 선택 → Apply(\"Use Custom to split at comma + space\")로 서술",
+        "Applies To 가 문서마다 다름: 마법사 문서 5개(365·2024·2021·2019·2016) / Distribute 문서 3개(365·2024·2021) / Split a cell 문서 5개(365·2024·2021·2019·2016)",
+        "Split a cell 문서 도입: \"Excel does not support splitting a single cell like Word tables do.\" 대신 셀 내용을 인접 셀(열 또는 행)로 나누거나 행·열을 삽입하는 방식"
+      ],
+      "sourceUrls": [
+        "https://support.microsoft.com/en-US/Excel/distribute-the-contents-of-a-cell-into-adjacent-columns",
+        "https://support.microsoft.com/en-us/excel/split-a-cell-in-excel",
+        "https://support.microsoft.com/en-us/office/split-text-into-different-columns-30b14928-5550-41f5-97ca-7a3e9c363ed7"
+      ]
+    },
+    {
+      "claim": "TEXTSPLIT 은 마법사와 같은 일을 수식으로 하는 함수이며, 문서의 Applies To 는 Microsoft 365·365 Mac·2024·2024 Mac 4개뿐이다.",
+      "grade": "confirmed",
+      "evidence": [
+        "원문: \"The TEXTSPLIT function works the same as the Text-to-Columns wizard, but in formula form. It allows you to split across columns or down by rows. It is the inverse of the TEXTJOIN function.\"",
+        "Applies To 원문 목록: Excel for Microsoft 365 / Excel for Microsoft 365 for Mac / Excel 2024 / Excel 2024 for Mac (4개). Excel 2021·2019·2016 과 Excel for the web 은 이 목록에 없음",
+        "구문 원문: =TEXTSPLIT(text,col_delimiter,[row_delimiter],[ignore_empty], [match_mode], [pad_with]) — 인수 6개, 구문상 대괄호 없음 2개(text·col_delimiter) — 원문 Required 명시는 text 만",
+        "기본값 원문: ignore_empty 기본 FALSE(연속 구분 기호가 빈 셀을 만듦), match_mode 기본 0(대소문자 구분, 1 이면 구분 안 함), pad_with 기본 #N/A",
+        "Remarks 원문: 구분 기호가 둘 이상이면 배열 상수를 써야 한다. 예) 쉼표와 마침표 모두로 나누려면 =TEXTSPLIT(A1,{\",\",\".\"})",
+        "예시 원문: =TEXTSPLIT(A2, \" \") 로 'Dakota Lennon Sanchez'·'To be or not to be' 분할, =TEXTSPLIT(A2,\",\",\";\") 로 '1,2,3;4,5,6' 을 2X3 array 로 분할. Example 7 Tip 원문: \"To remove the #NA error, use the IFNA function. Or add the pad_with argument.\" (원문 표기는 '#NA')"
+      ],
+      "sourceUrls": [
+        "https://support.microsoft.com/en-us/excel/textsplit-function"
+      ]
+    },
+    {
+      "claim": "구분 기호가 일정하지 않거나 패턴이 보이면 Flash Fill(Data > Flash Fill 또는 Ctrl+E), 글자 위치로 쪼갤 땐 LEFT·MID·RIGHT·SEARCH·LEN 함수를 대안으로 쓸 수 있다.",
+      "grade": "confirmed",
+      "evidence": [
+        "Flash Fill 문서 원문: \"Flash Fill automatically fills your data when it senses a pattern. For example, you can use Flash Fill to separate first and last names from a single column, or combine first and last names from two different columns.\"",
+        "Flash Fill 실행 원문: \"Data > Flash Fill\" 또는 Ctrl+E (Windows·macOS 두 탭 모두에 있음). Applies To 7개: 365 / 2024 / 2024 for Mac / 2021 / 2021 for Mac / 2019 / 2016",
+        "Split a cell 문서 원문: \"When your text split isn't consistent or you just want Excel to \\\"figure it out\\\", you can use Flash Fill.\"",
+        "함수 분할 문서 원문: \"You can use the LEFT, MID, RIGHT, SEARCH, and LEN text functions to manipulate strings of text in your data. For example, you can distribute the first, middle, and last names from a single cell into three separate columns.\" Applies To 9개(365·365 Mac·2024·2024 Mac·2021·2021 Mac·2019·2016·Excel Web App)",
+        "함수 분할 문서 Example 1('Jeff Smith', 공백 1개): 이름 =LEFT(A2, SEARCH(\" \",A2,1)), 성 =RIGHT(A2,LEN(A2)-SEARCH(\" \",A2,1)). 원문 설명상 이름 수식은 공백 위치(5번째)까지 \"returns five characters in cell A2, starting from the left\"",
+        "함수 분할 문서: 중간 이름이 있으면 SEARCH 를 중첩해 두 번째 공백을 찾아야 한다(MID 예시 수식 있음). 이름 패턴 예시 표는 11행"
+      ],
+      "sourceUrls": [
+        "https://support.microsoft.com/en-us/excel/using-flash-fill-in-excel",
+        "https://support.microsoft.com/en-us/excel/split-a-cell-in-excel",
+        "https://support.microsoft.com/en-us/excel/split-text-into-different-columns-with-functions"
+      ]
+    }
+  ],
+  "numbers": [
+    {
+      "what": "마법사 문서의 원문 단계 수",
+      "value": "7단계(Data > Text to Columns → Delimited > Next → Delimiters → Next → Destination → Finish, 시작은 셀·열 선택)",
+      "asOf": "문서 ms.date 2026-07-28",
+      "sourceUrl": "https://support.microsoft.com/en-us/office/split-text-into-different-columns-30b14928-5550-41f5-97ca-7a3e9c363ed7"
+    },
+    {
+      "what": "마법사 문서 Applies To 버전 수",
+      "value": "5개(365·2024·2021·2019·2016, Mac 표기 없음)",
+      "asOf": "문서 ms.date 2026-07-28",
+      "sourceUrl": "https://support.microsoft.com/en-us/office/split-text-into-different-columns-30b14928-5550-41f5-97ca-7a3e9c363ed7"
+    },
+    {
+      "what": "Distribute 문서 Applies To 버전 수",
+      "value": "3개(365·2024·2021)",
+      "asOf": "문서 ms.date 2026-08-10",
+      "sourceUrl": "https://support.microsoft.com/en-US/Excel/distribute-the-contents-of-a-cell-into-adjacent-columns"
+    },
+    {
+      "what": "Distribute 문서 — 한 번에 나눌 수 있는 열 수",
+      "value": "열은 최대 1개(행 수는 제한 표기 없음)",
+      "asOf": "문서 ms.date 2026-08-10",
+      "sourceUrl": "https://support.microsoft.com/en-US/Excel/distribute-the-contents-of-a-cell-into-adjacent-columns"
+    },
+    {
+      "what": "Split a cell 문서 Applies To 버전 수",
+      "value": "5개(365·2024·2021·2019·2016)",
+      "asOf": "문서 ms.date 2026-03-09",
+      "sourceUrl": "https://support.microsoft.com/en-us/excel/split-a-cell-in-excel"
+    },
+    {
+      "what": "TEXTSPLIT Applies To 버전 수",
+      "value": "4개(365·365 for Mac·2024·2024 for Mac)",
+      "asOf": "문서 ms.date 2026-01-01",
+      "sourceUrl": "https://support.microsoft.com/en-us/excel/textsplit-function"
+    },
+    {
+      "what": "TEXTSPLIT 인수 개수",
+      "value": "6개(구문상 대괄호 없음 2: text·col_delimiter, Required 명시는 text 만 / 대괄호 4: row_delimiter·ignore_empty·match_mode·pad_with)",
+      "asOf": "문서 ms.date 2026-01-01",
+      "sourceUrl": "https://support.microsoft.com/en-us/excel/textsplit-function"
+    },
+    {
+      "what": "TEXTSPLIT 인수 기본값",
+      "value": "ignore_empty=FALSE, match_mode=0(대소문자 구분), pad_with=#N/A",
+      "asOf": "문서 ms.date 2026-01-01",
+      "sourceUrl": "https://support.microsoft.com/en-us/excel/textsplit-function"
+    },
+    {
+      "what": "TEXTSPLIT 구분 기호 여러 개 예시 수식",
+      "value": "=TEXTSPLIT(A1,{\",\",\".\"}) (배열 상수 필수)",
+      "asOf": "문서 ms.date 2026-01-01",
+      "sourceUrl": "https://support.microsoft.com/en-us/excel/textsplit-function"
+    },
+    {
+      "what": "Flash Fill 단축키·메뉴",
+      "value": "Ctrl+E / Data > Flash Fill",
+      "asOf": "문서 ms.date 2026-04-22",
+      "sourceUrl": "https://support.microsoft.com/en-us/excel/using-flash-fill-in-excel"
+    },
+    {
+      "what": "Flash Fill Applies To 버전 수",
+      "value": "7개(365·2024·2024 Mac·2021·2021 Mac·2019·2016)",
+      "asOf": "문서 ms.date 2026-04-22",
+      "sourceUrl": "https://support.microsoft.com/en-us/excel/using-flash-fill-in-excel"
+    },
+    {
+      "what": "함수 분할 문서 Applies To 버전 수",
+      "value": "9개(365·365 Mac·2024·2024 Mac·2021·2021 Mac·2019·2016·Excel Web App)",
+      "asOf": "문서 ms.date 2026-01-27",
+      "sourceUrl": "https://support.microsoft.com/en-us/excel/split-text-into-different-columns-with-functions"
+    },
+    {
+      "what": "함수 분할 문서 Example 1 수식",
+      "value": "이름 =LEFT(A2, SEARCH(\" \",A2,1)) / 성 =RIGHT(A2,LEN(A2)-SEARCH(\" \",A2,1)) (데이터 'Jeff Smith', 이름 수식 반환 5글자)",
+      "asOf": "문서 ms.date 2026-01-27",
+      "sourceUrl": "https://support.microsoft.com/en-us/excel/split-text-into-different-columns-with-functions"
+    }
+  ],
+  "sources": [
+    {
+      "title": "Split text into different columns with the Convert Text to Columns Wizard",
+      "url": "https://support.microsoft.com/en-us/office/split-text-into-different-columns-30b14928-5550-41f5-97ca-7a3e9c363ed7",
+      "host": "support.microsoft.com",
+      "body": "Split text into different columns with the Convert Text to Columns Wizard\n Applies To\nExcel for Microsoft 365 Excel 2024 Excel 2021 Excel 2019 Excel 2016 \nGet help with Copilot\n How do I split text into different columns?\n Learn about the Text Wizard in Excel.\n Help me split text into different columns.\nTake text in one or more cells and split it into multiple cells using the Convert Text to Columns Wizard.\nTry it!\nSelect the cell or column that contains the text you want to split.\nSelect Data > Text to Columns.\nIn the Convert Text to Columns Wizard, select Delimited > Next.\nSelect the Delimiters for your data. For example, Comma and Space. You can see a preview of your data in the Data preview window.\nSelect Next.\nSelect the Destination in your worksheet which is where you want the split data to appear.\nSelect Finish.\nWant more?\nSplit text into different columns with functions",
+      "tier": "official",
+      "publishedAt": "2026-07-28"
+    },
+    {
+      "title": "Distribute the contents of a cell into adjacent columns",
+      "url": "https://support.microsoft.com/en-US/Excel/distribute-the-contents-of-a-cell-into-adjacent-columns",
+      "host": "support.microsoft.com",
+      "body": "Distribute the contents of a cell into adjacent columns\n Applies To\nExcel for Microsoft 365 Excel 2024 Excel 2021 \nGet help with Copilot\n Tell me about distribute the contents of a cell\n How do I merge columns to create a new column?\n How do I split text into different columns?\nWindows\nWeb\nYou can divide the contents of a cell and distribute the elements into multiple adjacent cells. For example, if your worksheet contains a column Full Name, you can split that column into two columns—a First Name column and Last Name column.\nTip\nFor an alternative method of distributing text across columns, see the article, Split text into different columns with functions.\nYou can combine cells with the CONCAT function or the CONCATENATE function.\nFollow these steps:\nNote\nA range containing a column that you want to split can include any number of rows, but it can include no more than one column. Keep enough blank columns to the right of the selected column to prevent data in any adjacent columns from being overwritten by the data that is to be distributed. If necessary, insert empty columns to contain each of the constituent parts of the distributed data.\nSelect the cell, range, or entire column that contains the text values that you want to split.\nOn the Data tab, in the Data Tools group, select Text to Columns.\nFollow the instructions in the Convert Text to Columns Wizard to specify how you want to divide the text into separate columns.  \nNote\nFor help with completing all the steps of the wizard, see the article, Split text into different columns with the Convert Text to Columns Wizard, or select Help. \n in the Convert to Text Columns Wizard.\nYou can divide the contents of a cell and distribute the elements into multiple adjacent cells. For example, if your worksheet contains a column Full Name, you can split that column into two columns—a First Name column and Last Name column.\nSelect the cell, range, or entire column that contains the text values that you want to split.\nOn the Data tab, in the Data Tools group, select Split Text to Columns.\nSelect the delimiters that you want to use, and then select Apply.\nNeed more help?\nYou can always ask an expert in the Excel Tech Community or get support in Communities.\nSee Also\nOverview of formulas in Excel\nHow to avoid broken formulas in Excel\nDetect formula errors in Excel\nKeyboard shortcuts in Excel\nTEXT functions (reference)\nExcel functions (alphabetical)\nExcel functions (by category)",
+      "tier": "official",
+      "publishedAt": "2026-08-10"
+    },
+    {
+      "title": "TEXTSPLIT function",
+      "url": "https://support.microsoft.com/en-us/excel/textsplit-function",
+      "host": "support.microsoft.com",
+      "body": "TEXTSPLIT function\n Applies To\nExcel for Microsoft 365 Excel for Microsoft 365 for Mac Excel 2024 Excel 2024 for Mac \nRelease notes\nCurrent Channel\nMonthly Enterprise Channel\nSemi-Annual Enterprise Channel\nSemi-Annual Enterprise Channel (Preview)\nOffice for Mac\nSplits text strings by using column and row delimiters.\nThe TEXTSPLIT function works the same as the Text-to-Columns wizard, but in formula form. It allows you to split across columns or down by rows. It is the inverse of the TEXTJOIN function. \nSyntax\n=TEXTSPLIT(text,col_delimiter,[row_delimiter],[ignore_empty], [match_mode], [pad_with])\nThe TEXTSPLIT function syntax has the following arguments:\ntext    The text you want to split. Required. \ncol_delimiter    The text that marks the point where to spill the text across columns.\nrow_delimiter    The text that marks the point where to spill the text down rows. Optional.\nignore_empty    Specify TRUE to ignore consecutive delimiters. Defaults to FALSE, which creates an empty cell. Optional.\nmatch_mode Specify 1 to perform a case-insensitive match. Defaults to 0, which does a case-sensitive match. Optional.\npad_with        The value with which to pad the result. The default is #N/A.\nRemarks\nIf there is more than one delimiter, then an array constant must be used. For example, to split by both a comma, and a period, use =TEXTSPLIT(A1,{\",\",\".\"}).\nExamples\nCopy the example data and paste it in cell A1 of a new Excel worksheet. If you need to, you can adjust the column widths to see all the data. \nExample 1\nSplit a name and a sentence by using a common delimiter.\nData\nDakota Lennon Sanchez\nTo be or not to be\nFormulas\n=TEXTSPLIT(A2, \" \")\n=TEXTSPLIT(A3, \" \")\nThe following illustration shows the results.\nExample 2\nSplit the array constants in A2 into a 2X3 array.\nData\n1,2,3;4,5,6\nFormulas\n=TEXTSPLIT(A2,\",\",\";\")\nThe following illustration shows the results.\nExample 3\nData\nDo. Or do not. There is no try. -Anonymous\nFormulas\n=TEXTSPLIT(A2,\".\")\n=TEXTSPLIT(A2,{\".\",\"-\"})\n=TEXTSPLIT(A2,{\".\",\"-\"},,FALSE)\nThe following illustration shows the results.\nExample 4\nData\nDo. Or do not. There is no try. -Anonymous\nFormulas\n=TEXTSPLIT(A2,,\".\")\nThe following illustration shows the results.\nExample 5\nData\nDo. Or do not. There is no try. -Anonymous\nFormulas\n=TEXTSPLIT(A2,,{\".\",\"-\"})\nThe following illustration shows the results.\nExample 6\nData\nDo. Or do not. There is no try. -Anonymous\nFormulas\n=TEXTSPLIT(A2,,{\".\",\"-\"},TRUE)\nThe following illustration shows the results.\nExample 7\nTip   To remove the #NA error, use the IFNA function. Or add the pad_with argument.\nData\nDo. Or do not. There is no try. -Anonymous\nFormulas\n=TEXTSPLIT(A2,\" \",\".\",TRUE)\nThe following illustration shows the results.",
+      "tier": "official",
+      "publishedAt": "2026-01-01"
+    },
+    {
+      "title": "Using Flash Fill in Excel",
+      "url": "https://support.microsoft.com/en-us/excel/using-flash-fill-in-excel",
+      "host": "support.microsoft.com",
+      "body": "Using Flash Fill in Excel\n Applies To\nExcel for Microsoft 365 Excel 2024 Excel 2024 for Mac Excel 2021 Excel 2021 for Mac Excel 2019 Excel 2016 \nGet help with Copilot\n Help me use Flash Fill in Excel.\n Explain how to split a column of data based on what I type.\n How should I start flash fill manually?\nFlash Fill automatically fills your data when it senses a pattern. For example, you can use Flash Fill to separate first and last names from a single column, or combine first and last names from two different columns.\nWindows\nmacOS\nLet's say column A contains first names, column B has last names, and you want to fill column C with first and last names combined. If you establish a pattern by typing the full name in column C, Excel's Flash Fill feature will fill in the rest for you based on the pattern you provide.\nEnter the full name in cell C2, and press ENTER.\nStart typing the next full name in cell C3. Excel will sense the pattern you provide, and show you a preview of the rest of the column filled in with your combined text.\nTo accept the preview, press ENTER.\nIf Flash Fill doesn't generate the preview, it might not be turned on. You can go to Data > Flash Fill to run it manually, or press Ctrl+E. To turn Flash Fill on, go to Tools > Options > Advanced > Editing Options > check the Automatically Flash Fill box.\nLet's say column A contains first names, column B has last names, and you want to fill column C with first and last names combined. If you establish a pattern by typing the full name in column C, Excel's Flash Fill feature will fill in the rest for you based on the pattern you provide.\nEnter the full name in cell C2, and press ENTER.\nGo to Data > Flash Fill, or press Ctrl+E.\nExcel will sense the pattern you provided in C2, and fill the cells below.\nNeed more help?\nYou can always ask an expert in the Excel Tech Community or get support in Communities.\nSee Also\nCombine text from two or more cells into one cell",
+      "tier": "official",
+      "publishedAt": "2026-04-22"
+    },
+    {
+      "title": "Split text into different columns with functions",
+      "url": "https://support.microsoft.com/en-us/excel/split-text-into-different-columns-with-functions",
+      "host": "support.microsoft.com",
+      "body": "Split text into different columns with functions\n Applies To\nExcel for Microsoft 365 Excel for Microsoft 365 for Mac Excel 2024 Excel 2024 for Mac Excel 2021 Excel 2021 for Mac Excel 2019 Excel 2016 Excel Web App \nGet help with Copilot\n How do I split text into different columns with functions?\n What if I can't use the trim function?\n Explain how to find function.\nYou can use the LEFT, MID, RIGHT, SEARCH, and LEN text functions to manipulate strings of text in your data. For example, you can distribute the first, middle, and last names from a single cell into three separate columns.\nThe key to distributing name components with text functions is the position of each character within a text string. The positions of the spaces within the text string are also important because they indicate the beginning or end of name components in a string.\nFor example, in a cell that contains only a first and last name, the last name begins after the first instance of a space. Some names in your list may contain a middle name, in which case, the last name begins after the second instance of a space.\nThis article shows you how to extract various components from a variety of name formats using these handy functions. You can also split text into different columns with the Convert Text to Columns Wizard\nExample name\nDescription\nFirst name\nMiddle name\nLast name\nSuffix\n1\nJeff Smith\nNo middle name\nJeff\nSmith\n2\nEric S. Kurjan\nOne middle initial\nEric\nS.\nKurjan\n3\nJanaina B. G. Bueno\nTwo middle initials\nJanaina\nB. G.\nBueno\n4\nKahn, Wendy Beth\nLast name first, with comma\nWendy\nBeth\nKahn\n5\nMary Kay D. Andersen\nTwo-part first name\nMary Kay\nD.\nAndersen\n6\nPaula Barreto de Mattos\nThree-part last name\nPaula\nBarreto de Mattos\n7\nJames van Eaton\nTwo-part last name\nJames\nvan Eaton\n8\nBacon Jr., Dan K.\nLast name and suffix first, with comma\nDan\nK.\nBacon\nJr.\n9\nGary Altman III\nWith suffix\nGary\nAltman\nIII\n10\nMr. Ryan Ihrig\nWith prefix\nRyan\nIhrig\n11\nJulie Taft-Rider\nHyphenated last name\nJulie\nTaft-Rider\nNote\nIn the graphics in the following examples, the highlight in the full name shows the character that the matching SEARCH formula is looking for.\nExample 1: Separating Jeff and Smith\nThis example separates two components: first name and last name. A single space separates the two names.\nCopy the cells in the table and paste into an Excel worksheet at cell A1. The formula you see on the left will be displayed for reference, while Excel will automatically convert the formula on the right into the appropriate result.\nHint Before you paste the data into the worksheet, set the column widths of columns A and B to 250.\nExample name\nDescription\nJeff Smith\nNo middle name\nFormula\nResult (first name)\n'=LEFT(A2, SEARCH(\" \",A2,1))\n=LEFT(A2, SEARCH(\" \",A2,1))\nFormula\nResult (last name)\n'=RIGHT(A2,LEN(A2)-SEARCH(\" \",A2,1))\n=RIGHT(A2,LEN(A2)-SEARCH(\" \",A2,1))\nFirst name\nThe first name starts with the first character in the string (J) and ends at the fifth character (the space). The formula returns five characters in cell A2, starting from the left.\nUse the SEARCH function to find the value for num_chars:\nSearch for the numeric position of the space in A2, starting from the left.\nLast name\nThe last name starts at the space, five characters from the right, and ends at the last character on the right (h). The formula extracts five characters in A2, starting from the right.\nUse the SEARCH and LEN functions to find the value for num_chars:\nSearch for the numeric position of the space in A2, starting from the left. (5)\nCount the total length of the text string, and then subtract the number of characters to the left of the first space, as found in step 1.\nExample 2: Eric S. Kurjan: Extract first and last names, plus middle initial\nThis example uses a first name, middle initial, and last name. A space separates each name component.\nCopy the cells in the table and paste into an Excel worksheet at cell A1. The formula you see on the left will be displayed for reference, while Excel will automatically convert the formula on the right into the appropriate result.\nHint Before you paste the data into the worksheet, set the column widths of columns A and B to 250.\nExample name\nDescription\nEric S. Kurjan\nOne middle initial\nFormula\nResult (first name)\n'=LEFT(A2, SEARCH(\" \",A2,1))\n=LEFT(A2, SEARCH(\" \",A2,1))\nFormula\nResult (middle initial)\n'=MID(A2,SEARCH(\" \",A2,1)+1,SEARCH(\" \",A2,SEARCH(\" \",A2,1)+1)-SEARCH(\" \",A2,1))\n=MID(A2,SEARCH(\" \",A2,1)+1,SEARCH(\" \",A2,SEARCH(\" \",A2,1)+1)-SEARCH(\" \",A2,1))\nFormula\nLive Result (last name)\n'=RIGHT(A2,LEN(A2)-SEARCH(\" \",A2,SEARCH(\" \",A2,1)+1))\n=RIGHT(A2,LEN(A2)-SEARCH(\" \",A2,SEARCH(\" \",A2,1)+1))\nFirst name\nThe first name starts with the first character from the left (E) and ends at the fifth character (the first space). The formula extracts the first five characters in A2, starting from the left.\nUse the SEARCH function to find the value for num_chars:\nSearch for the numeric position of the space in A2, starting from the left. (5)\nMiddle name\nThe middle name starts at the sixth character position (S), and ends at the eighth position (the second space). This formula involves nesting SEARCH functions to find the second instance of a space.\nThe formula extracts three characters, starting from the sixth position.\nUse the SEARCH function to find the value for start_num:\nSearch for the numeric position of the first space in A2, starting from the first character from the left. (5).\nAdd 1 to get the position of the character after the first space (S). This numeric position is the starting position of the middle name. (5 + 1 = 6)\nUse nested SEARCH functions to find the value for num_chars:\nSearch for the numeric position of the first space in A2, starting from the first character from the left. (5)\nAdd 1 to get the position of the character after the first space (S). The result is the character number at which you want to start searching for the second instance of space. (5 + 1 = 6)\nSearch for the second instance of space in A2, starting ",
+      "tier": "official",
+      "publishedAt": "2026-01-27"
+    },
+    {
+      "title": "Split a cell in Excel",
+      "url": "https://support.microsoft.com/en-us/excel/split-a-cell-in-excel",
+      "host": "support.microsoft.com",
+      "body": "Split a cell in Excel\n Applies To\nExcel for Microsoft 365 Excel 2024 Excel 2021 Excel 2019 Excel 2016 \nGet help with Copilot\n How do I split the content from one cell into two or more?\n Show me how split text from one cell into multiple cells.\n Split a cell in Excel for me.\nYou might want to split a cell into two smaller cells within a single column. Unfortunately, Excel does not support splitting a single cell like Word tables do. \nIn Word, a table is a layout tool for arranging text on a page. Cells can be split or merged freely because they don’t represent structured data.\nIn Excel, a cell is the smallest unit of data. Every cell must live at a specific row and column intersection. Excel worksheets are like graph paper — each square already has a fixed position, so you add more squares instead of cutting one in half. Because of that, Excel cannot split a single cell into multiple cells the way Word can.\nInstead, Excel lets you:\nSplit the contents of a cell into adjacent cells (columns or rows), or\nInsert new rows or columns to hold additional data.\nSee the following screenshots for an example:\nSplit the content from one cell into two or more cells\nNote\nExcel for the web doesn't have the Text to Columns Wizard. Instead, you can Split text into different columns with functions.\nSelect the cell or cells whose contents you want to split. For example,\nImportant\nWhen you split the contents, they will overwrite the contents in the next cell to the right, so make sure to have empty space there.\nSelect Data > Data Tools > Text to Columns.\nChoose the delimiter or delimiters to define the places where you want to split the cell content, and then select Apply. Use Custom to split at comma + space.\nThe cell is spit across three columns.\nNote\nYou can transpose columns to rows. After you finish splitting the cell, copy the results then choose Paste Special > Transpose Rows and Columns.\nUse Flash Fill to split cells\nWhen your text split isn't consistent or you just want Excel to \"figure it out\", you can use Flash Fill. This is good when you want to separate names from a single column or combine first and last names from two different columns. \nFor an example, see Using Flash Fill in Excel.\nSplit cell into two or more columns or rows using TEXTSPLIT (Excel on the web)\nIn Excel on the web, if your data is in one cell and separated by a delimiter (comma, semicolon, line break, etc.) you can use the TEXTSPLIT function.\nEnter \"Apple, Banana, Cherry\" into a cell A1.\nIn the cell immediately to the right, enter the formula =TEXTSPLIT(A1,,\", \") and press Enter.\nThe result is the column is split into three rows at the delimiter.\nSee Also\nMerge and unmerge cells\nMerging and splitting cells or data",
+      "tier": "official",
+      "publishedAt": "2026-03-09"
+    },
+    {
+      "title": "Splitting Text into Different Columns (University of Georgia F&A knowledge base)",
+      "url": "https://uga.teamdynamix.com/TDClient/3109/FandA/KB/ArticleDet?ID=149693",
+      "host": "uga.teamdynamix.com",
+      "body": "Overview    \nYou can take text in one column and split it into two or more columns. \nThis might be useful if you have a column of query results that has employee first name and last name in the same column. Splitting the data into two columns allows you to filter by either first or last name.\nIn this article, you will learn the steps to split text in one column into two different columns in an Excel worksheet.\nFor this example, you will split a column that contains employee names into two separate columns, one for first name and one for last name.\n 1. Step 1 \nIn order to split text into two columns, you will need to insert a new blank column to which you want to move the data. Otherwise, an existing column will be overwritten with the text from the source column.\nTo insert a column, right-click the column header to the right of the one you want to split.\nExample shown here: split the employee names in column C into two columns. To insert a blank column next to column C,   right-click the D column header.\n 2. Step 2 \nA pop-up menu is displayed.\nClick the Insert option.\n 3. Step 3 \nA new blank column is displayed.\nSelect the appropriate source column that contains the data you want to split.    \nExample shown here:  C column header.\n 4. Step 4 \nWith the source column selected, click the Data tab within the ribbon menu.\n 5. Step 5 \nClick the Text to Columns...  button.\n 6. Step 6 \nThe Convert Text to Columns Wizard is displayed with a preview of the selected data. From the wizard, choose the type of data that best describes the data you want to split into a different column.\nBy default, the Delimited option is checked, which means the data in the column you want to split is separated by a type of delimiter, such as a comma.\nWith the appropriate data type selected, click the Next > button.\n 7. Step 7 \nNext, select the appropriate delimiter(s) that your data contains, then click the Next > button.  \nExample shown here: Accepted the preselected delimiters (Tab and Space) clicked the Next >  button.\n 8. Step 8 \nSelect the data format and appropriate destination column(s) where you will send your data, then click the  Finish  button.\nExample shown here: Accepted the preselected Column data format (General ) and the Destination (which is autopopulated based on the cells you selected), clicked the Finish button.\n 9. Step 9 \nA pop-up window appears asking if you are sure you want to overwrite the data in the selected column.\nClick the OK button.\n 10. Step 10 \nThe selected data has been split between the source and destination columns. Adjust the column names as needed  \n Sign in to leave feedback\n 0 reviews\n Blank\n Blank\n Blank\nBlank\nPrint Article\nDeleting...\n Powered by TeamDynamix | Site Map",
+      "tier": "blog",
+      "publishedAt": null
+    }
+  ],
+  "dropped": [
+    {
+      "url": "https://support.microsoft.com/en-us/excel/functions/textbefore-function",
+      "why": "official 이지만 이번 각도(마법사·TEXTSPLIT·Flash Fill·LEFT/MID/RIGHT) 밖 — 함수 분할 문서 See Also 에 이름만 있음"
+    },
+    {
+      "url": "https://support.microsoft.com/en-us/excel/functions/textafter-function",
+      "why": "official 이지만 이번 각도 밖 — TEXTBEFORE 와 같은 이유"
+    }
+  ],
+  "songs": []
+}

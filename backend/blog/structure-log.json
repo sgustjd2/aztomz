@@ -1,73 +1,5 @@
 [
   {
-    "slug": "autumn-hotspring-travel-2026",
-    "categoryId": "hangeut-trend",
-    "date": "2026-09-18",
-    "h2": [
-      "국내 대표 온천 5곳",
-      "단풍과 함께 즐기는 가을 온천 코스",
-      "온천욕, 이렇게 하면 더 좋아요",
-      "참고"
-    ],
-    "closingClichePatterns": []
-  },
-  {
-    "slug": "heating-bill-saving-2026",
-    "categoryId": "hangeut-trend",
-    "date": "2026-09-18",
-    "h2": [
-      "적정 실내온도, 20도가 기준",
-      "보일러·단열·배관, 돈 되는 실천 팁",
-      "옷과 습도로 체감온도 올리기",
-      "챙기면 좋은 난방비 지원(에너지바우처)",
-      "정리",
-      "참고"
-    ],
-    "closingClichePatterns": []
-  },
-  {
-    "slug": "fw-hair-trend-2026",
-    "categoryId": "hangeut-trend",
-    "date": "2026-09-19",
-    "h2": [
-      "올가을 펌·컷, 키워드는 '자연스러운 C컬'",
-      "앞머리만 바꿔도 분위기가 달라져요",
-      "염색은 '컬러 멜팅'과 은은한 톤 다운",
-      "정리",
-      "참고"
-    ],
-    "closingClichePatterns": []
-  },
-  {
-    "slug": "window-insulation-2026",
-    "categoryId": "hangeut-trend",
-    "date": "2026-09-19",
-    "h2": [
-      "겨울 열 손실 1위는 '창문'입니다",
-      "가성비 최강은 뽁뽁이(에어캡)",
-      "문풍지·단열필름·방풍비닐은 어떨까",
-      "결로까지 같이 잡는 법",
-      "정리",
-      "참고"
-    ],
-    "closingClichePatterns": []
-  },
-  {
-    "slug": "winter-padding-guide-2026",
-    "categoryId": "hangeut-trend",
-    "date": "2026-09-19",
-    "h2": [
-      "충전재 3종: 구스다운·덕다운·웰론",
-      "라벨의 숫자 읽는 법",
-      "'구스다운'이라고 다 거위털은 아니에요",
-      "2026 F/W 패딩 트렌드",
-      "오래 입는 세탁·보관법",
-      "정리",
-      "참고"
-    ],
-    "closingClichePatterns": []
-  },
-  {
     "slug": "autumn-train-trip-2026",
     "categoryId": "hangeut-trend",
     "date": "2026-09-19",
@@ -3142,26 +3074,6 @@
     "closingClichePatterns": []
   },
   {
-    "slug": "wsl-install-guide",
-    "categoryId": "hangeut-trend",
-    "date": "2026-10-11",
-    "h2": [
-      "WSL이 뭔지, 그리고 한 줄 설치가 생긴 배경",
-      "WSL 설치 전에 확인할 Windows 요구 사항",
-      "1단계 — 관리자 PowerShell에서 wsl --install 입력하기",
-      "2단계 — 재시작 후 WSL 리눅스 사용자 이름과 비밀번호 만들기",
-      "3단계 — wsl --version, --status, -l -v로 WSL 설치 확인하기",
-      "4단계 — apt update와 upgrade로 Ubuntu 패키지 업데이트하기",
-      "다른 WSL 배포판 설치하기 — wsl --list --online와 -d 옵션",
-      "WSL 1과 WSL 2 차이 — 기본값 WSL 2를 바꿔야 할 때",
-      "WSL 설치가 막힐 때 — 오류 코드별 점검",
-      "WSL 3.0.1 릴리스와 공식 설치 문서의 시차",
-      "정리",
-      "참고"
-    ],
-    "closingClichePatterns": []
-  },
-  {
     "slug": "windows11-taskbar-settings",
     "categoryId": "hangeut-trend",
     "date": "2026-10-11",
@@ -3314,6 +3226,110 @@
       "확인한 범위에서 고등어는 해수부 이달의 수산물에 8번, 모두 9~11월이에요",
       "고등어 제철과 산란기, 해수부 설명도 연도마다 달라요",
       "고등어 글에서 비워 둔 것",
+      "정리",
+      "참고"
+    ],
+    "closingClichePatterns": []
+  },
+  {
+    "slug": "wsl-install-guide",
+    "categoryId": "hangeut-trend",
+    "date": "2026-10-12",
+    "h2": [
+      "WSL이 뭔지, 그리고 한 줄 설치가 생긴 배경",
+      "WSL 설치 전에 확인할 Windows 요구 사항",
+      "1단계 — 관리자 PowerShell에서 wsl --install 입력하기",
+      "2단계 — 재시작 후 WSL 리눅스 사용자 이름과 비밀번호 만들기",
+      "3단계 — wsl --version, --status, -l -v로 WSL 설치 확인하기",
+      "4단계 — apt update와 upgrade로 Ubuntu 패키지 업데이트하기",
+      "다른 WSL 배포판 설치하기 — wsl --list --online와 -d 옵션",
+      "WSL 1과 WSL 2 차이 — 기본값 WSL 2를 바꿔야 할 때",
+      "WSL 설치가 막힐 때 — 오류 코드별 점검",
+      "WSL 3.0.1 릴리스와 공식 설치 문서의 시차",
+      "정리",
+      "참고"
+    ],
+    "closingClichePatterns": []
+  },
+  {
+    "slug": "excel-text-to-columns",
+    "categoryId": "hangeut-trend",
+    "date": "2026-10-12",
+    "h2": [
+      "텍스트 나누기 마법사 7단계, Data 탭에서 시작해요",
+      "텍스트 나누기 전에 오른쪽 열을 비워 두세요",
+      "텍스트 나누기 화면이 문서마다 달라요, Windows 마법사와 웹 Apply 비교",
+      "텍스트 나누기 대안 3가지, 적용 버전이 달라요",
+      "TEXTSPLIT 구문, 구분 기호가 여러 개일 때",
+      "Flash Fill 과 LEFT·MID·RIGHT 로 텍스트 나누기",
+      "텍스트 나누기 결과가 이상할 때 확인할 5가지",
+      "정리",
+      "참고"
+    ],
+    "closingClichePatterns": []
+  },
+  {
+    "slug": "pip-externally-managed",
+    "categoryId": "hangeut-trend",
+    "date": "2026-10-12",
+    "h2": [
+      "externally-managed-environment 오류의 정체 — pip 고장이 아니라 PEP 668 마커예요",
+      "pip externally-managed 해결 순서 — apt 패키지, venv, pipx",
+      "macOS Homebrew 파이썬의 externally-managed 오류 — venv와 brew install pipx",
+      "pip install --break-system-packages 우회 세 가지 — 안내 순서상 맨 뒤예요",
+      "externally-managed-environment 연표 — PEP 668에서 pip 23.0.1까지",
+      "그래도 pip가 막힐 때 — 확인할 것 세 가지",
+      "정리",
+      "참고"
+    ],
+    "closingClichePatterns": []
+  },
+  {
+    "slug": "water-meter-freeze",
+    "categoryId": "hangeut-trend",
+    "date": "2026-10-12",
+    "h2": [
+      "서울 수도계량기 동파대책 기간과 3대 예방수칙",
+      "서울시가 밝힌 수도계량기 동파 건수는 이렇게 읽어요",
+      "수도계량기함 보온재 채우기, 젖었으면 새것으로 바꿔요",
+      "한파에 수도꼭지 틀기, 계량기 동파 예보 단계부터 봐요",
+      "얼어붙은 수도계량기 녹이기, 뜨거운 열은 피해요",
+      "계량기 유리가 깨지거나 부풀면 동파 신고처를 확인해요",
+      "동파로 수도계량기를 교체하면 비용은 누가 낼까, 연도마다 안내가 달랐어요",
+      "수도계량기 동파 대비가 막힐 때 자주 걸리는 상황",
+      "정리",
+      "참고"
+    ],
+    "closingClichePatterns": []
+  },
+  {
+    "slug": "carrot-storage-guide",
+    "categoryId": "hangeut-trend",
+    "date": "2026-10-12",
+    "h2": [
+      "당근 보관 전에 준비할 것",
+      "당근 보관은 잎을 떼고 밀폐해 냉장하는 데서 시작해요",
+      "당근을 씻어 넣을지는 자료마다 말이 달라요",
+      "당근 0℃ 고습 숫자는 집 냉장고가 아닌 농가 저장 기준이에요",
+      "당근 냉동은 UNH 자료로 순서대로 따라가요",
+      "시든 당근은 찬물에 담그고, 무르고 끈적이면 버려요",
+      "당근 보관에서 아직 확인되지 않은 것",
+      "정리",
+      "참고"
+    ],
+    "closingClichePatterns": []
+  },
+  {
+    "slug": "health-checkup-2026",
+    "categoryId": "hangeut-trend",
+    "date": "2026-10-12",
+    "h2": [
+      "2026년 일반건강검진 대상과 검진 기간",
+      "건강검진 대상 조회부터 금식까지 준비 순서",
+      "2026년 일반건강검진에 추가된 폐기능 검사 56세와 66세",
+      "국가암검진 6종 대상 연령과 본인부담",
+      "건강검진 결과 통보와 확진검사 기한",
+      "건강검진 안내가 헷갈릴 때 확인할 것",
       "정리",
       "참고"
     ],

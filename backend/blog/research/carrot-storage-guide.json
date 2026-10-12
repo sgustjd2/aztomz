@@ -1,0 +1,324 @@
+{
+  "keyword": "당근 보관법",
+  "categoryId": "hangeut-trend",
+  "notes": "한국 공식 가정 냉장 기준 없음 — 해외 대학 자료 + 농가 저장 시험 구분.\n말할 수 있는 것: 해외 대학 extension 3곳의 가정 냉장 요령(잎 제거·밀폐, 2주 vs 수 주 병기) · 0℃·고습은 농가·지하실 장기 저장 기준이라는 구분 · UNH 냉동 방법(데치기 통 5분·썬 것 2분, 표 직접 확인) · 시든·상한 당근 판단. 씻기·말리기는 자료가 갈려 하나로 못 고름.\n못 하는 것: 집 냉장고에서 며칠 가는지 단정, 가정 냉장 온도, 국내 공식 기관 보관·제철·고르는 법, 자른 당근.",
+  "cannotSay": [
+    "0~1℃·상대습도 93~98%(경기도농업기술원 보고서가 농촌진흥청 2018을 재인용), UMaine Q&A 32°F·98~100% RH 를 \"집 냉장고 기준\"으로 쓰기 — 농가·지하실 장기 저장 기준(대상 바꿔치기). 경기도 보고서가 인용한 농진청 2018 원문(농업기술길잡이 153 당근)은 열람 못 했으니 \"농진청이 말한다\"고 단정 말고 \"경기도농업기술원 보고서가 농진청 2018 자료로 인용한 값\"이라 쓴다.",
+    "경기도 보고서 산지 실측(저장고 설정 1.5℃·3.0℃, 온도 변동폭 14.3℃·8.2℃, 종이박스 원물 4주차부터 감모율 5% 이상, 1℃ 저장 PE필름 16주 감모 1% 미만·종이박스 대조 8주 후 9.9%)을 가정 보관 기간·포장 효과로 옮기기 — 전부 학교급식 출하회 저온저장고·농가 포장 시험.",
+    "\"2주\"(UMaine·Purdue)와 \"수 주\"(UNH)를 하나의 기간으로 합치거나 \"냉장고에서 2주는 간다\"처럼 단정 — 기관별 귀속 병기, 포장·온도 조건이 자료에 명시 안 됨. 국내 공식 기관의 가정 냉장 당근 기간은 못 찾음.",
+    "NDSU \"Carrots will maintain their freshness longer at or around 32 degrees Fahrenheit\"를 가정 냉장고 설정 온도 안내로 쓰기 — 가정 냉장 문단에 있지만 냉장고 설정을 지시한 문장이 아님. NDSU 잎 자르는 길이(\"cut about ¼ inch\")는 PDF 분수 글리프가 깨져 미확인 — 길이 수치 쓰지 않음.",
+    "잎(줄기)을 떼는 이유를 수분 이동 등 메커니즘으로 설명하기 — UMaine \"The tops can cause the carrots to wilt\" 한 문장뿐.",
+    "씻기·말리기·포장(씻어 말려 넣기 vs 씻지 않기 vs 흙째 신문지)에 정답을 매기기 — 자료끼리 어긋남(unclear). Purdue \"젖은 키친타월(damp)\"과 레이디경향 \"종이 타월로 감싸\"(젖은지 명시 없음)를 같은 방법으로 합치기 금지.",
+    "레이디경향 기사의 \"전문가\"를 기관·논문 근거로 쓰기 — 기관명·수치 없음. 식초(1:3)·베이킹소다(찬물 2컵당 1티스푼) 세척은 기사 서술일 뿐 효과 근거 없음.",
+    "푸드투데이 2017 칼럼(흙째 신문지, 서늘한 곳)을 냉장 보관법·기간 근거로 쓰기 — 냉장 여부·기간·근거 없음. 보도(reported)로 귀속.",
+    "농촌진흥청 그린매거진 2023-04 \"담갔다 흐르는 물에 씻어내세요\"를 당근 세척 근거로 쓰기 — 당근 항목 없음(쌈채소·파·오이·고추·사과·딸기·포도). 쌈채소 세척 수치도 당근 아님.",
+    "농촌진흥청 그린매거진 2021-10 재배 글의 \"수확 봄 재배 7~8월·가을 재배 10~11월\"을 공식 제철로 단정 — 재배 일정 문장이며 \"제철\" 단정 문장 아님. 같은 글의 비타민A 효능(\"50g이면 하루 필요량\")은 이 글 각도 아님. 기관명은 \"농촌진흥청 국립원예특작과학원 도시농업과\"(페이지 표기) — 국립식량과학원·국립농업과학원 아님.",
+    "데치지 않은 냉동 당근의 품질 저하 정도, 자른·껍질 깐 당근의 보관법 — 자료 없음.",
+    "UNH 냉동 시트(2019-04 갱신)를 한국 기준이나 최신 연구인 것처럼 쓰기 — 미국 대학 자료, UGA \"So Easy to Preserve\" 6판(2014) 각색본. 냉동 보관 8~12개월은 \"high quality\" 유지 기간(영하 18℃ 이하 = 0°F 이하)."
+  ],
+  "cannotCover": [
+    "농촌진흥청 \"농식품 올바로\" 당근 편(이달의 식재료) — 검색에 안 나옴, 존재 여부 미확인",
+    "농사로(nongsaro) 당근 저장 조건 — 사이트 장애로 열람 못 함 / 농진청 2018 농업기술길잡이 153 당근 원문 미열람",
+    "식약처·식품안전나라 채소 세척 카드뉴스 — 원문·공공누리 유형 미확보",
+    "aT 농식품정보누리 등 국내 공식 당근 제철(월) 표기",
+    "국내 공식 기관의 신선한 당근 고르는 법(해외 UMaine·Purdue 와 푸드투데이 2017 칼럼만 있음)",
+    "자른 당근·껍질 깐 당근·미니 당근 보관법 (Purdue \"baby carrots will not last as long\" 한 줄뿐)",
+    "가정 냉장고 온도(예: 5℃ 안팎)에서의 당근 보관 일수 수치",
+    "MSU Extension(Incapsula 차단)·UMass Extension(403)·GQ Korea(\"한 달\") — 검색 스니펫만, 본문 미열람 → 근거 금지",
+    "당근 냉동 후 해동·조리 품질, 당근 세척 효과(식초·베이킹소다) 근거"
+  ],
+  "claims": [
+    {
+      "claim": "집 냉장고 당근 보관은 한국 공식 수치가 없고, 해외 대학 extension 이 공통으로 \"잎을 떼고 비닐봉지(UMaine은 닫은 봉지나 용기)에 넣어 냉장\"하라고 한다(Purdue·UNH 는 닫힘 언급 없는 plastic bag) — 기간은 UMaine·Purdue 최대 2주, UNH 수 주(several weeks)로 기관마다 다르다.",
+      "grade": "confirmed",
+      "evidence": [
+        "UMaine Extension(2024-11-14, Kate Yerxa): \"store them in a closed plastic bag or container in the refrigerator. They can stay fresh for up to two weeks.\" / \"If you purchase or harvest carrots with leafy green tops, remove them before storing the carrots in the refrigerator. The tops can cause the carrots to wilt.\" — 온도·습도 수치는 이 글에 없음",
+        "Purdue Extension FoodLink(연도 미표기): \"Remove the stems and leaves (if still attached) and place carrots in a plastic bag with a damp paper towel. Store in the refrigerator up to 2 weeks.\" 아기 당근(baby carrots)은 \"will not last as long in the refrigerator\"",
+        "UNH Extension(2018-10-08): \"Remove the leaves … store in a plastic bag in a dark and cool place, such as the drawer of your refrigerator. They will stay good for several weeks.\"",
+        "세 곳 모두 가정 냉장 기준 문장이며 포장·냉장 온도 조건은 명시하지 않음. 국내 공식 기관의 가정 냉장 당근 기간은 이번 자료에서 못 찾음."
+      ],
+      "sourceUrls": [
+        "https://extension.umaine.edu/food-health/2024/11/14/carrots-101-selection-storage-and-cooking-tips-for-maximum-flavor/",
+        "https://extension.purdue.edu/foodlink/includes/pubs/Print4perpaper/4vegetablesprint/4CARROT_2print.pdf",
+        "https://extension.unh.edu/node/3468"
+      ]
+    },
+    {
+      "claim": "\"당근은 0℃·습도 높게\" 라는 수치는 농가 저온저장고·지하실 장기 저장 기준이지 가정 냉장 기준이 아니다 — 경기도 산지 저장 실측은 오히려 권장 온도보다 높고 들쭉날쭉했다.",
+      "grade": "confirmed",
+      "evidence": [
+        "경기도농업기술원 2025 시험연구보고서(환경농업연구과): \"일반적으로 당근의 최적 저장온도는 0~1℃, 상대습도는 93~98%로 알려져 있으며 … (농촌진흥청, 2018)\" — 참고문헌 \"농촌진흥청. 2018. 농업기술길잡이 153 당근\" 의 재인용이며 원문은 미열람",
+        "같은 보고서 실측(학교급식 출하회 저온저장고): 설정 온도 안성 1.5℃·파주 3.0℃, 온도 변동폭 안성 14.3℃(1.3~15.6℃)·파주 8.2℃(1.5~9.7℃). 20kg 종이박스 원물 저장. [정정] 저장 4주차부터 감모율 5% 이상·조직 연화·표면 주름은 이 출하회 저장고 실측이 아니라 경기도농업기술원 저온저장고(1℃)에서 4농가 봄당근을 20kg 종이박스에 담아 둔 시험(표 11)",
+        "같은 보고서 영문 초록(1℃ 저장 시험): PE필름 처리구 16주까지 감모 1% 미만, 대조구(종이박스 관행) 8주 후 9.9% — 농가용 포장 시험이지 가정 보관법이 아님",
+        "UMaine Extension Q&A(2020-05-18, 수정 2021-01-22, 지하실 장기 저장): \"cold (32°F) and humid (98-100% relative humidity) storage condition … you will probably need to store your carrots in a plastic bag\" — 32°F = 0℃",
+        "Purdue 장기 보관: \"Store unwashed in a cool damp place (like a cellar or cold room). Cut off stems and leaves and pack in damp cloths. Use within a few months.\""
+      ],
+      "sourceUrls": [
+        "https://nongup.gg.go.kr/wp-content/uploads/sites/2/2026/06/report_25_envi_11.pdf",
+        "https://extension.umaine.edu/gardening/2020/05/18/storing-carrots-long-term/",
+        "https://extension.purdue.edu/foodlink/includes/pubs/Print4perpaper/4vegetablesprint/4CARROT_2print.pdf"
+      ]
+    },
+    {
+      "claim": "당근 냉동은 미국 대학 자료(UNH)로만 말할 수 있다 — 잎 제거·씻어 껍질 벗기기·데치기(통당근 5분, 썬 당근 2분)·식히기·물기 빼기, 포장 때 1/2 inch 여유 공간, 0°F(약 -18℃) 이하에서 8~12개월 품질 유지.",
+      "grade": "confirmed",
+      "evidence": [
+        "UNH Cooperative Extension \"Freezing Vegetables\"(Updated April 2019; UMaine Publications #4384 게시본) 당근 행: \"Remove tops, wash and peel. Cut as desired. Leave small carrots whole. Blanch, cool, drain and package leaving 1/2 inch head space. Label, date and freeze.\"",
+        "데치기 시간: 같은 표 Blanching Time (minutes) 열에서 Carrots = \"Whole - 5 / Cut - 2\". PDF 3쪽을 직접 받아 렌더링해 표 셀로 확인함(Brussel Sprouts Small-3·Medium-4·Large-5 와 Cauliflower 3 사이 칸) — 2026-10-12 확인",
+        "일반 지침: \"Blanching is a must for most vegetables that are frozen.\" / 데친 뒤 \"Cool immediately in ice water or cold water (60 degrees F or below) for the same time used in blanching\" / \"Frozen vegetables will maintain high quality for 8 to 12 months at zero degrees F or lower.\" / 물 \"1 gallon water per pound of prepared vegetables\"",
+        "UMaine Carrots 101(2024)·NDSU FN2037 도 냉동 가능만 언급하고 방법은 각각 #4384·FN187 로 안내 — 데치기 시간은 UNH 표만 확인",
+        "시트 말미 \"Adapted from: E. Andress, J. Harrison. So Easy to Preserve, Sixth Edition. The University of Georgia, Bulletin 989, 2014\" — 미국 대학 자료 귀속"
+      ],
+      "sourceUrls": [
+        "https://extension.umaine.edu/publications/wp-content/uploads/sites/52/2019/08/4384-Freezing-Vegetables-Fact-Sheet-NHExtension-2019.pdf",
+        "https://extension.umaine.edu/food-health/2024/11/14/carrots-101-selection-storage-and-cooking-tips-for-maximum-flavor/",
+        "https://www.ndsu.edu/agriculture/sites/default/files/2026-09/fn2037.pdf"
+      ]
+    },
+    {
+      "claim": "씻기·말리기·포장 방식은 자료마다 갈려 하나로 못 고른다 — Purdue(장기)는 씻지 않기, NDSU 는 씻어서 말려 밀폐 비닐에 넣기, 국내 보도는 씻지 않고 키친타월·밀폐 또는 흙째 신문지.",
+      "grade": "unclear",
+      "evidence": [
+        "NDSU FN2037(Reviewed Sept. 2026, 텃밭 수확 직후 기준): \"Fresh-harvested carrots should be scrubbed to remove excess dirt and washed in cold water. Then cut about … from the top of each carrot, removing the greens. Air-dry the carrots and store them in an air-tight plastic bag in the refrigerator to maintain proper humidity. If the carrots are not in air-tight bags, they may become limp in the refrigerator.\"",
+        "Purdue 장기 보관: \"Store unwashed in a cool damp place\" / 단기는 젖은 키친타월 + 비닐봉지(씻는지 안 씻는지 명시 없음)",
+        "레이디경향(2025-03-12, 이유진 기자, 보도·reported): \"당근은 사용하기 직전까지 씻지 않는 것이 좋다 … 껍질을 벗기지 않은 상태로 냉장고의 채소칸에 보관 … 종이 타월로 감싸 비닐봉지나 밀폐 용기에 보관하면 습기 차단 효과를 높일 수 있다\" — 보관 문단에 근거로 든 기관·전문가·수치 없음(기자 서술; '전문가'는 먹기 전 세척 문단에만 등장)",
+        "푸드투데이 칼럼(2017-01-11, 보도·reported): \"흙이 묻은 상태로 보관하는 것이 가장 좋고 … 하나씩 신문으로 싸서 … 햇볕이 곧바로 내리쬐지 않는 곳\" — 냉장 여부·기간·근거 없음",
+        "습도를 이유로 든 곳은 NDSU 하나(나머지는 이유 미기재). 어느 쪽이 더 오래 가는지 비교한 자료는 없음."
+      ],
+      "sourceUrls": [
+        "https://www.ndsu.edu/agriculture/sites/default/files/2026-09/fn2037.pdf",
+        "https://extension.purdue.edu/foodlink/includes/pubs/Print4perpaper/4vegetablesprint/4CARROT_2print.pdf",
+        "https://lady.khan.co.kr/cooking/article/202503121659001",
+        "https://www.foodtoday.or.kr/news/article.html?no=146227"
+      ]
+    },
+    {
+      "claim": "시든 당근은 찬물에 담가 살릴 수 있고, 무르거나 끈적이면 버리는 게 맞다 — 겉이 마른 정도는 먹을 수 있다는 보도도 있다.",
+      "grade": "confirmed",
+      "evidence": [
+        "UMaine Extension(2024): \"If your carrots become wilted, you can revive them by soaking them in cold water.\"",
+        "Purdue Extension: \"Discard if they become soft or slimy.\"",
+        "레이디경향(2025-03-12, 보도·reported): \"당근이 건조해져 겉이 마른 정도는 먹을 수 있으나 표면이 끈적거리거나, 지나치게 부드럽거나, 변색하거나, 불쾌한 냄새가 나면서 갈라지기 시작하면 더 이상 신선하지 않은 상태다. 먹기 의심스러운 상태라면 버리는 것이 좋다.\"",
+        "고를 때: UMaine·Purdue 모두 단단하고 갈라지거나 쭈글쭈글하지 않은 것, 윗부분이 푸르게 변하지 않은 것(Purdue \"green at the top\" 회피) — 해외 대학 기준"
+      ],
+      "sourceUrls": [
+        "https://extension.umaine.edu/food-health/2024/11/14/carrots-101-selection-storage-and-cooking-tips-for-maximum-flavor/",
+        "https://extension.purdue.edu/foodlink/includes/pubs/Print4perpaper/4vegetablesprint/4CARROT_2print.pdf",
+        "https://lady.khan.co.kr/cooking/article/202503121659001"
+      ]
+    }
+  ],
+  "numbers": [
+    {
+      "what": "가정 냉장 보관 기간 — UMaine(밀폐 봉지·용기, 잎 제거)",
+      "value": "최대 2주 (up to two weeks)",
+      "asOf": "2024-11-14",
+      "sourceUrl": "https://extension.umaine.edu/food-health/2024/11/14/carrots-101-selection-storage-and-cooking-tips-for-maximum-flavor/"
+    },
+    {
+      "what": "가정 냉장 단기 보관 — Purdue(젖은 키친타월 + 비닐봉지)",
+      "value": "최대 2주 (up to 2 weeks), 아기 당근은 이보다 덜 감",
+      "asOf": "연도 미표기(2026-10-12 확인)",
+      "sourceUrl": "https://extension.purdue.edu/foodlink/includes/pubs/Print4perpaper/4vegetablesprint/4CARROT_2print.pdf"
+    },
+    {
+      "what": "가정 냉장 — UNH(비닐봉지, 냉장고 채소칸 같은 어둡고 서늘한 곳)",
+      "value": "수 주 (several weeks)",
+      "asOf": "2018-10-08",
+      "sourceUrl": "https://extension.unh.edu/node/3468"
+    },
+    {
+      "what": "지하실 장기 저장 — UMaine Q&A (가정 냉장 아님)",
+      "value": "32°F(0℃) · 상대습도 98~100% · 비닐봉지로 습도 확보",
+      "asOf": "2020-05-18 게시, 2021-01-22 수정",
+      "sourceUrl": "https://extension.umaine.edu/gardening/2020/05/18/storing-carrots-long-term/"
+    },
+    {
+      "what": "장기 보관(지하실·냉한 방) — Purdue",
+      "value": "씻지 않고 젖은 천으로 싸서, 사용은 몇 달 안에 (a few months)",
+      "asOf": "연도 미표기(2026-10-12 확인)",
+      "sourceUrl": "https://extension.purdue.edu/foodlink/includes/pubs/Print4perpaper/4vegetablesprint/4CARROT_2print.pdf"
+    },
+    {
+      "what": "농가 저온저장 최적 조건(경기도농업기술원 보고서가 농촌진흥청 2018 을 재인용 — 가정 냉장 아님)",
+      "value": "0~1℃ · 상대습도 93~98%",
+      "asOf": "2025년도 시험연구보고서(참고문헌 농진청 2018, 원문 미열람)",
+      "sourceUrl": "https://nongup.gg.go.kr/wp-content/uploads/sites/2/2026/06/report_25_envi_11.pdf"
+    },
+    {
+      "what": "산지 저온저장고 설정 온도 실측(학교급식 출하회)",
+      "value": "안성 1.5℃ · 파주 3.0℃",
+      "asOf": "2025년도 시험연구보고서",
+      "sourceUrl": "https://nongup.gg.go.kr/wp-content/uploads/sites/2/2026/06/report_25_envi_11.pdf"
+    },
+    {
+      "what": "산지 저온저장고 온도 변동폭 실측",
+      "value": "안성 14.3℃(1.3~15.6℃) · 파주 8.2℃(1.5~9.7℃)",
+      "asOf": "2025년도 시험연구보고서",
+      "sourceUrl": "https://nongup.gg.go.kr/wp-content/uploads/sites/2/2026/06/report_25_envi_11.pdf"
+    },
+    {
+      "what": "봄당근 20kg 종이박스 원물 저장 — 감모율",
+      "value": "저장 4주차부터 5% 이상, 조직 연화·표면 주름 시작",
+      "asOf": "2025년도 시험연구보고서",
+      "sourceUrl": "https://nongup.gg.go.kr/wp-content/uploads/sites/2/2026/06/report_25_envi_11.pdf"
+    },
+    {
+      "what": "1℃ 저장 포장 시험 — 감모율(농가용, 가정 보관법 아님)",
+      "value": "PE필름 처리구 16주까지 1% 미만 / 종이박스 대조구 8주 후 9.9%",
+      "asOf": "2025년도 시험연구보고서(영문 초록)",
+      "sourceUrl": "https://nongup.gg.go.kr/wp-content/uploads/sites/2/2026/06/report_25_envi_11.pdf"
+    },
+    {
+      "what": "국내 당근 재배면적(보고서가 국가데이터처 2026 을 인용)",
+      "value": "2023년 2,486ha → 2025년 3,904ha, 제주 50% 이상",
+      "asOf": "2025년도 시험연구보고서 인용",
+      "sourceUrl": "https://nongup.gg.go.kr/wp-content/uploads/sites/2/2026/06/report_25_envi_11.pdf"
+    },
+    {
+      "what": "냉동용 데치기 시간 — UNH 표(Blanching Time, minutes)",
+      "value": "통당근(Whole) 5분 · 썬 당근(Cut) 2분",
+      "asOf": "Updated April 2019 (PDF 3쪽 직접 확인 2026-10-12)",
+      "sourceUrl": "https://extension.umaine.edu/publications/wp-content/uploads/sites/52/2019/08/4384-Freezing-Vegetables-Fact-Sheet-NHExtension-2019.pdf"
+    },
+    {
+      "what": "냉동 포장 여유 공간 · 식힘 물 온도 · 식힘 시간",
+      "value": "1/2 inch head space · 60°F(약 16℃) 이하 얼음물·찬물 · 데친 시간과 같은 시간",
+      "asOf": "Updated April 2019",
+      "sourceUrl": "https://extension.umaine.edu/publications/wp-content/uploads/sites/52/2019/08/4384-Freezing-Vegetables-Fact-Sheet-NHExtension-2019.pdf"
+    },
+    {
+      "what": "냉동 보관 온도·품질 유지 기간 — UNH",
+      "value": "0°F(약 -18℃) 이하에서 8~12개월 high quality",
+      "asOf": "Updated April 2019",
+      "sourceUrl": "https://extension.umaine.edu/publications/wp-content/uploads/sites/52/2019/08/4384-Freezing-Vegetables-Fact-Sheet-NHExtension-2019.pdf"
+    },
+    {
+      "what": "데치는 물 양 — UNH 일반 지침",
+      "value": "손질한 채소 1파운드당 물 1갤런",
+      "asOf": "Updated April 2019",
+      "sourceUrl": "https://extension.umaine.edu/publications/wp-content/uploads/sites/52/2019/08/4384-Freezing-Vegetables-Fact-Sheet-NHExtension-2019.pdf"
+    },
+    {
+      "what": "NDSU — 가정 냉장 문단의 신선도 서술(냉장고 설정 온도 안내 아님)",
+      "value": "\"at or around 32 degrees Fahrenheit\" 에서 신선도가 더 오래 감",
+      "asOf": "Reviewed Sept. 2026",
+      "sourceUrl": "https://www.ndsu.edu/agriculture/sites/default/files/2026-09/fn2037.pdf"
+    },
+    {
+      "what": "텃밭 재배 일정 — 수확 시기(제철 단정 아님)",
+      "value": "봄 재배 7~8월 · 가을 재배 10~11월 (파종 후 90~120일)",
+      "asOf": "농촌진흥청 그린매거진 2021-10호(URL 경로 추정)",
+      "sourceUrl": "https://rda.go.kr/webzine/2021/10/sub4-2.html"
+    },
+    {
+      "what": "당근 세척 보도 — 레이디경향(기관·근거 수치 없음)",
+      "value": "베이킹소다 찬물 2컵당 1티스푼 · 식초:물 = 1:3 (기사 서술, 효과 근거 없음)",
+      "asOf": "2025-03-12",
+      "sourceUrl": "https://lady.khan.co.kr/cooking/article/202503121659001"
+    }
+  ],
+  "sources": [
+    {
+      "title": "Carrots 101: Selection, Storage, and Cooking Tips for Maximum Flavor (University of Maine Cooperative Extension, Kate Yerxa)",
+      "url": "https://extension.umaine.edu/food-health/2024/11/14/carrots-101-selection-storage-and-cooking-tips-for-maximum-flavor/",
+      "host": "extension.umaine.edu",
+      "body": "Carrots have been a staple in diets for centuries. While the orange variety is most common, carrots come in various colors, including red, purple, yellow, black, and white. A fun fact about carrots is that they are a member of the parsley family. Carrots are packed with nutrients. Their bright orange color is a giveaway that they are packed with beta-carotene, which your body converts into vitamin A. Vitamin A is an antioxidant essential for eye health, immune function, and skin health. Beyond vitamin A, carrots are also a good source of another antioxidant – vitamin C, and carrots are high in fiber which helps to keep your digestive system running smoothly. Choosing Carrots When selecting carrots, look for ones that are firm and well-colored. Avoid carrots with a large amount of green at the top or wilted, flabby, cracked carrots. If you buy carrots with the greens still attached, choose the carrots that have bright green tops and are fresh-looking. Another fun fact about carrots is that smaller carrots tend to be more tender than larger ones. Storing Carrots To keep your carrots fresh for longer, store them in a closed plastic bag or container in the refrigerator. They can stay fresh for up to two weeks. If you purchase or harvest carrots with leafy green tops, remove them before storing the carrots in the refrigerator. The tops can cause the carrots to wilt. If your carrots become wilted, you can revive them by soaking them in cold water. Carrots can be preserved through freezing or canning with a pressure canner. For more information on how to preserve carrots, visit University of Maine Cooperative Extension bulletin #4384, Freezing Vegetables or #4382, Canning Vegetables In a Pressure Canner . Ways to Enjoy Carrots",
+      "tier": "data",
+      "publishedAt": "2024-11-14",
+      "license": "해외 대학 extension — 짧은 인용·요약 + 출처 표기, 장문 전재 금지"
+    },
+    {
+      "title": "CARROT (Purdue Extension FoodLink)",
+      "url": "https://extension.purdue.edu/foodlink/includes/pubs/Print4perpaper/4vegetablesprint/4CARROT_2print.pdf",
+      "host": "extension.purdue.edu",
+      "body": "Purdue Extension\nFoodLink\nwww.purdue.edu/FoodLink\n\nCARROT\nTypes\nOrange, purple, white\nSelection Info\nCarrots should be firm, evenly shaped, and smooth with a bright skin color. Avoid carrots that are cracked, rough, shriveled, or green at the top.\nPreparation\nPeel carrots or scrub well with a brush to remove dirt. Raw: shred carrots with a box grater or food processor and add to salads or pastas. Slice or cut into long sticks by cutting across into the length of desired sticks, then make cut lengthwise through the middle of the carrot. Lay each half flat side down on a cutting board and continue to make cuts lengthwise to finish the sticks. Top salads with shredded carrots or add to your favorite sandwich or wrap. Saut: Cut carrots into rounds about  inch thick. Cook over medium heat in a skillet with salt and 1-2 tablespoons of butter or oil. Add maple syrup and 2 tablespoons of water and cook until tender. Stir Fry: Saut rounds or sticks with other vegetables in 1-2 tablespoons of olive oil or butter. Note: carrots\n\ntake longer to saut or stir-fry than many other vegetables like peppers, zucchini, onions, eggplant, or celery. So, if you are making a stir-fry, add the carrots first and allow them to cook a few minutes before adding the rest of the vegetables. Boil: Cut carrots into rounds and boil for 5-7 minutes. Microwave: using a microwave-safe bowl, add a 1/4 cup of water to the bottom, cover and cook for about 5-6 minutes or until tender. Roast: Carrots can be baked or roasted by slicing and placing on baking sheet with cooking spray for about 25-30 minutes at 400F.\nStorage\nShort-Term Storage: Remove the stems and leaves (if still attached) and place carrots in a plastic bag with a damp paper towel. Store in the refrigerator up to 2 weeks. Discard if they become soft or slimy. Baby carrots and large carrots are stored the same way; however, baby carrots will not last as long in the refrigerator. Long-Term Storage: Store unwashed in a cool damp place (like a cellar or cold room). Cut off stems and leaves and pack in damp cloths. Use within a few months. Carrots can be frozen, canned, pickled, dried, fermented like sauerkraut, or frozen.\n\n",
+      "tier": "data",
+      "publishedAt": null,
+      "license": "해외 대학 extension — 짧은 인용·요약 + 출처 표기, 장문 전재 금지"
+    },
+    {
+      "title": "Storing Fall Vegetables (University of New Hampshire Extension)",
+      "url": "https://extension.unh.edu/node/3468",
+      "host": "extension.unh.edu",
+      "body": "Fall Vegetables Save money and reduce food waste this autumn SHARE email facebook linkedin twitter pinterest Monday, October 08, 2018 The changing weather bring different crops into season in New Hampshire. Even though it’s getting colder, farmers markets run year-round, and finding your local market is easy . It’s the perfect time to stock up on fall vegetables. These vegetables tend to last a long time, if stored properly. Save money and reduce food waste by properly storing your fall vegetables and preventing them from spoiling. Beets : Remove the leaves (but keep them, they are great sautéed!) and leave two inches of stem attached to the root. Store the trimmed beets in a plastic bag in a dark and cool place, such as the drawer in your refrigerator. They are good for up to 7-10 days. Carrots : Remove the leaves (again, keep them, they make a great addition to homemade pesto!) and store in a plastic bag in a dark and cool place, such as the drawer of your refrigerator. They will stay good for several weeks. Onions :",
+      "tier": "data",
+      "publishedAt": "2018-10-08",
+      "license": "해외 대학 extension — 짧은 인용·요약 + 출처 표기, 장문 전재 금지"
+    },
+    {
+      "title": "Freezing Vegetables (UNH Cooperative Extension fact sheet, Updated April 2019 — UMaine Extension Publications #4384 게시본)",
+      "url": "https://extension.umaine.edu/publications/wp-content/uploads/sites/52/2019/08/4384-Freezing-Vegetables-Fact-Sheet-NHExtension-2019.pdf",
+      "host": "extension.umaine.edu",
+      "body": "Bringing information and education into the communities of the Granite State\n\nFreezing Vegetables\nWhy Blanch Vegetables? Blanching is the process of scalding vegetables in boiling water or steam for a short amount of time. Blanching is a must for most vegetables that are frozen. The blanching process is important to slow or stop enzyme action that causes loss of flavor, color and texture. Blanching time is important and varies with the vegetable and size of the pieces. Under blanching stimulates the activity of enzymes and is actually worse than no blanching. Over blanching causes the loss of flavor, color, vitamins and minerals.\nBlanching Directions 1. Wash, drain, sort, trim and cut vegetables. 2. Use 1 gallon water per pound of prepared vegetables or 2\ngallons water per pound of leafy greens. 3. Put vegetables into blancher (wire basket, coarse mesh bag\nor perforated metal strainer) and lower into boiling water.  Or steam blanch: Add 1-2 inches of water to a pot and bring to boil then put a single layer of vegetables in the basket.\n4. Cover. Start counting blanching time as soon as water returns to a boil.  If steam blanching, start counting immediately.\n5. Keep heat high for the time given in the directions. 6. Cool immediately in ice water or cold water (60 degrees F\nor below) for the same time used in blanching (except for corn-on-the-cob for which cooling time is twice the time of blanching). Stir vegetables several times during cooling. 7. Drain vegetables thoroughly. 8. Pack the vegetables either by dry-pack or tray-pack.\n Dry-pack: Pack vegetable tightly into containers or  freezer bags. Press out air and seal tightly.\n\nBlanching pot with basket\nImportant Note Freeze food at zero degrees Fahrenheit or lower. Do not overload the freezer when freezing vegetables. It will take longer to freeze.\nFrozen vegetables will maintain high quality for 8 to 12 months at zero degrees F or lower.\n\n\f Tray-pack: Put a single layer of the vegetables on a shallow pan and put the pan into the freezer. As soon as the vegetables are frozen, put them into a freezer bag or container. Press out air and seal tightly.\n9. Freeze. 10. Frozen vegetables will maintain high quality for 8 to 12 \nmonths at zero degrees F or lower.\nContainers for Freezing Using proper packaging material for freezing food is important to help protect flavor, color, moisture content and nutritive valu",
+      "tier": "data",
+      "publishedAt": "2019-04-01",
+      "license": "해외 대학 extension — 짧은 인용·요약 + 출처 표기, 장문 전재 금지"
+    },
+    {
+      "title": "Carrots! FN2037 (North Dakota State University Extension, Reviewed Sept. 2026)",
+      "url": "https://www.ndsu.edu/agriculture/sites/default/files/2026-09/fn2037.pdf",
+      "host": "www.ndsu.edu",
+      "body": "FN2037 (Reviewed Sept. 2026)\nCarro ts !\n\nJulie Garden-Robinson, Ph.D., R.D., L.R.D., food and nutrition specialist Ally Eikmeier, dietetic intern (former) Tom Kalb, horticulture specialist\nD id you know that carrots first were used as a medicine for a variety of ailments, not for eating? Carrots come in more colors than just orange. You can find purple, red, white and yellow varieties of this vegetable.\n\nGrowing\n\nPreparing\n\nNantes varieties are generally recommended for home gardeners. Before sowing seeds, prepare the soil. Deep, loose, well-drained soils will produce the straightest, smoothest carrots. Compost may be added to improve soil fertility.\nSow in early spring to midsummer. Sow seeds a inch apart,  inch deep, in rows spaced 18 to 24 inches apart. If necessary, thin seedlings to stand 1 to 2 inches apart.\nDon't allow the soil to crust until seedlings emerge; this may take up to three weeks. Carrot beds can be sprinkled with mulch to retain moisture and to block sunlight that turns carrot crowns green.\nHarvesting\nDig carrots when they reach a desired length. This is usually 60 to 80 days after sowing. Keeping the roots in the ground for a month or longer after this time may reduce taste qualities and lead to cracking.\nStoring\n\nCarrots can be cooked in the oven, microwave, on the stove top or in a slow cooker. For example, cover carrots with foil for cooking in the oven; bake at 425 F for 30 minutes. Cut larger carrots into strips or smaller coin shapes, depending on the cooking plan. Toss carrots in olive oil, salt, pepper and other seasonings for added flavor. Garlic, balsamic vinegar, butter, brown sugar, honey, maple syrup, lemon zest, chives, green onions and chili powder are good accompaniments to carrots.\nPreserving\nDid you know that carrots were the first",
+      "tier": "data",
+      "publishedAt": null,
+      "license": "해외 대학 extension — 짧은 인용·요약 + 출처 표기, 장문 전재 금지"
+    },
+    {
+      "title": "How do I store carrots long term in my basement? (UMaine Extension Gardening, Q&A)",
+      "url": "https://extension.umaine.edu/gardening/2020/05/18/storing-carrots-long-term/",
+      "host": "extension.umaine.edu",
+      "body": "Question: How do I store carrots long term in my basement? Do I need to cover them with anything? Answer: Carrots should be stored with their tops removed in a cold (32°F) and humid (98-100% relative humidity) storage condition. In order to achieve high humidity, you will probably need to store your carrots in a plastic bag. For more information about proper storage conditions, check out Bulletin #4135, Storage Conditions: Fruits and Vegetables, and this video about Preserving the Maine Harvest: Winter Storage. Additional resources mentioned in the video can be found on the UMaine Extension Food & Health website. (본문 출처: WordPress REST JSON https://extension.umaine.edu/gardening/wp-json/wp/v2/posts/15912 의 content.rendered 를 curl 로 받아 태그 제거. 글 permalink 위 URL, 수정일 2021-01-22)",
+      "tier": "data",
+      "publishedAt": "2020-05-18",
+      "license": "해외 대학 extension — 짧은 인용·요약 + 출처 표기, 장문 전재 금지"
+    },
+    {
+      "title": "2025년도 시험연구보고서 — 경기지역 당근 저장성 향상기술 개발 (경기도농업기술원 환경농업연구과)",
+      "url": "https://nongup.gg.go.kr/wp-content/uploads/sites/2/2026/06/report_25_envi_11.pdf",
+      "host": "nongup.gg.go.kr",
+      "body": "  2025년도 시험연구보고서\n과제구분 기관고유 수행시기 전반기\n연구과제 및 세부과제 연구분야 수행기간 연구실 책임자\n 기후변화 적응 안정생산기술 개발 기후자원 ’24~’26 환경농업연구과 조동현\n 경기지역 당근 저장성 향상기술 개발 기후자원 ’24~’25 환경농업연구과 조동현\n1. 연구목표\n  국내 당근 재배면적은 2023년 2,486ha에서 2025년 3,904ha로 증가 추세에 있으며, \n주산지는 월동 재배가 가능한 제주도로 전체 재배면적의 50% 이상을 차지하고 있다\n(국가데이터처, 2026). 경기도는 친환경 공공급식 지원정책에 따라 친환경 당근은 주\n로 학교급식으로 공급되고 연간 700톤 이상의 수요가 발생하고 있다. 이에 따라 경\n기지역 당근 재배면적과 생산량이 점차 증가하고 있다. 특히 봄당근은 병해충 관리가 \n비교적 용이하여 친환경 재배가 가능하다는 장점으로 인해 재배농가와 생산량이 증\n가하는 추세이다. 그러나 산지 유통과정에서 세척, 선별 등 수확후 관리 과정이 없이 \n원물 상태(종이박스 포장)로 저장하고 있어 품질저하가 나타나고 있다. 이는 무름병 \n등으로 저장 중 품질 저하가 발생하기 쉽기 때문이다. 이로 인해 현재 경기지역 학\n교급식용 당근은 관외 지역(남부지역, 제주도)에서 대량으로 유입되고 있는 실정이다. \n따라서 경기지역 당근의 안정적인 공급과 자급률 향상을 위해서는 봄당근의 저장성 \n향상을 위한 수확 후 관리기술 개발이 필요하다.\n  이와 관련된 당근 부패 저감을 위한 연구로는 세척 및 PE 필름을 이용한 MA 포장, \n항균성 식물추출물 처리, UV-LED 조사 등이 있다(김 등, 2005; 김 등, 2014; 배 등, \n2016). 이들 연구에 따르면, 당근 저장 중 품질 저하의 주요 원인은 증산과 호흡작용에 \n따른 감모 및 맹아 발생과 미생물에 의한 부패이다. 저장 중 지속적인 수분 손실과 \n저장양분의 소모로 인해 감모율이 증가하고 표면이 주름지거나 갈변하는 등 외관 품질 \n저하가 나타난다. 일반적으로 당근의 최적 저장온도는 0~1℃, 상대습도는 93~98%로 \n알려져 있으며, 이는 증산과 호흡을 억제하고 부패 및 맹아 발생을 최소화하기 위한 \n저장조건이다(농촌진흥청, 2018).\n  이러한 기술적 배경에서 당근 세척시설이나 UV-LED 처리 시설이 도입되고 있으나 \nস \u0001ো ҳ \u0001\u0001\u0001\n  2025년도 시험연구보고서\n  경기도 학교급식에 납품되는 봄당근의 저장 실태를 조사하였으며, 그 결과는 표 4와 \n같다. 봄당근은 지역 학교급식 출하회 저온저장고에 저장한 후 납품 일정에 따라 주\n차별로 출하되었다. 4농가 모두 봄당근 수확 직후 별도의 전처리 없이 20kg 종이박스\n에 포장하여 친환경출하회 저온저장고에 저장하였다. 학교급식 출하회의 저온저장고 \n설정 온도는 안성은 1.5℃, 파주는 3.0℃로 당근의 적정 저장온도인 0~1℃(농촌진흥청, \n2018)보다 높았다. 저장기간 동안 온도를 측정한 결과, 다품목 농산물의 빈번한 입출하로 \n인해 온도 변동폭은 안성 14.3℃(1.3~15.6℃), 파주 8.2℃(1.5~9.7℃)로 각각 나타났다\n(그림 1). 이러한 온도 편차는 당근의 호흡량 증가와 수분 손실을 촉진하여 저장 중 \n품질 저하를 가속화할 수 있으므로, 저장 온도를 낮추고 저장고의 입출하 관리를 개\n \n  저장기간에 따른 봄당근 감모율은 농가 간 큰 차이를 보이지 않았으며, 저장 4주\n차부터 감모율이 5% 이상으로 증가하면서 조직 연화와 표면 주름이 발생하여 상품\n성이 저하되기 시작하였다(표 11).",
+      "tier": "official",
+      "publishedAt": null,
+      "license": "표시 미확인 — 수치·문장 단위 인용 + 출처(경기도농업기술원 2025 시험연구보고서) 표기"
+    },
+    {
+      "title": "텃밭에서 당근 키우기 (농촌진흥청 그린매거진 — 국립원예특작과학원 도시농업과)",
+      "url": "https://rda.go.kr/webzine/2021/10/sub4-2.html",
+      "host": "rda.go.kr",
+      "body": " 그린매거진 --> 그린웹툰 도시농부 농가맛집 도시농부 그린웹툰 도시농부 농가맛집 텃밭에서 당근 키우기 --> 정리 ㅣ 김제림 자료 ㅣ 농촌진흥청 국립원예특작과학원 도시농업과 윤형권 농업연구관 당근은 채소 가운데 파슬리 다음으로 비타민A 함량이 많아 뿌리부분을 50g만 먹어도 성인의 하루 필요량을 충족시킬 수 있다. 발육 촉진, 주름 방지, 항암효과 등이 있는 알칼리성 식품인 당근을 텃밭에서 키울 수 있는 재배법에 대해 알아보자.   하나! 종자 준비하기 당근은 가까운 농자재상이나 종묘사에 가서 마음에 드는 품종을 구매하여 심는다. 일반적인 당근과 미니당근과 같은 특수한 용도의 당근으로 나눌 수 있다. 일반당근은 뿌리의 길이에 따라 8치당근, 5치당근, 긴당근으로 분류하는데 우리나라에서는 5치당근을 가장 많이 재배한다. 텃밭에서는 파종시기에 따라 봄 재배에는 봄5촌, 여름5촌 등을, 가을 재배에는 신흑전5촌, 무쌍, 삼복5촌, 대복여름, 하파5촌 등을 선택한다. 둘! 재배 일정 알아보기 당근은 주로 노지에서 재배하며 4월에서 5월에 파종하는 봄 재배와 7월에서 8월에 파종하는 가을 재배가 보통이다. 수확은 대개 봄 재배는 7~8월에, 가을 재배는 10~11월에 한다. 텃밭에서는 일 년 내내 재배가 가능하지만, 당근은 서늘한 기후를 좋아하기 때문에 여름철에는 생육이 잘 되지 못한다. 텃밭 재배에서는 여름을 피하여 파종하도록 한다. 셋! 밭 만들기 텃밭을 만들 땅을 먼저 평평하게 고르고 퇴비거름을 땅이 덮일 정도로 뿌리고 밑거름을 흩어 뿌린다. 퇴비와 비료가 골고루 섞이도록 하여 삽으로 깊이 뒤집어 놓는다. 당근은 뿌리 작물이기 때문에 조금 깊게 파서 뿌리가 잘 발육하도록 하는 것이 중요하다. 이랑과 골을 합하여 약 1m를 기준으로 하여 삽으로 골을 파 올려서 파종한 면이 60cm 정도 되게 높게 두둑을 만든다. 파종할 면은 쇠갈퀴와 같은 도구로 평평하게 하는데 이때 돌이나 거친 흙을 골라낸다. 넷! 당근 심기 약 1m의 폭으로 이랑을 타면 두둑은 약 60cm 정도의 면이 되는데 3줄로 당근을 세울 수 있다. 줄의 간격은 20cm 정도로 하고 심는 간격은 8~10cm로 하여 3~4립씩 파종한다. 일반적으로 호미로 3줄로 5cm 정도의 깊이로 긁어서 줄뿌림을 하고 다시 평평하게 덮어준다. 종자의 발아를 돕기 위하여 약간 두드려 주기도 하고 표면에 짚을 덮어서 수분 증발을 막아주면 발아를 도울 수 있다. 다섯! 당근 가꾸기 당근을 파종하고 나서 약 한 달이 지나면 잎이 3~4매가 되는데 하나만 남기고 뽑아낸다. 안전하게 수확하기 위해서는 2번에 걸쳐서 솎음을 하기도 하는데, 첫 번째는 두 개체를 남겼다가 보름이 지나서 한 개체만 남기고 솎음을 한다. 솎음을 할 때는 가장 튼튼한 것을 남기도록 하고 옆의 것이 흔들리지 않게 뽑아낸다. 웃거름은 생육을 보아가면서 적당량 나누어 주는 것이 좋다. 여섯! 당근 수확하기 당근의 수확은 파종한 날로부터 90~120일 이후에 가능하다. 미니당근은 70일경에는 수확할 수 있다. 당근을 수확할 때는 잎줄기의 아랫부분을 잡고서 힘껏 당겨 올리면 뽑히는데, 토양이 단단한 경우에는 뿌리가 뽑히지 않을 수 있으므로 호미나 삽으로 수확해야 한다. 뽑은 후에는 햇빛에 오랜 시간 두면 색이 변하거나 말라 상품가치가 떨어지므로 그늘로 옮기는 것이 좋다. --> ",
+      "tier": "official",
+      "publishedAt": null,
+      "license": "공공누리 표시 미확인 — 문장 단위 출처 표기만, 이미지 금지"
+    },
+    {
+      "title": "금방 말라버리는 ‘당근’…잘 씻고, 잘 보관하는 법 (레이디경향, 이유진 기자)",
+      "url": "https://lady.khan.co.kr/cooking/article/202503121659001",
+      "host": "lady.khan.co.kr",
+      "body": "냉장고 속 당근은 익숙한 식재료다. 그럴수록 더 헷갈린다. 당근 어떻게 보관하지? 픽셀즈 당근은 늘 냉장고 속에 있다. 그것이 늘 말라비틀어져 있어서 문제다. 최근에 화제가 된 ‘당근 라페’를 제외하곤 당근은 어디까지나 음식의 부재료로 쓰였기 때문이다. 당근 온전히 잘 보관하며 먹을 방법은? 국내산의 상징, 흙당근은 꼭 꼼꼼히 씻어야 할까? 어차피 요리할 때는 대부분 껍질을 벗기기 때문이다. 전문가는 당근 표면에 보이지 않는 먼지, 잔류 농약, 박테리아 등 유해 미생물이 있을 수 있어 노로바이러스 같은 식중독을 예방하려면 모든 농산물은 흐르는 물에 씻어야 한다고 설명한다. 당근을 올바르게 씻는 방법 당근을 씻을 때는 흐르는 찬물에 헹구면서 껍질을 벗기는 것이 가장 좋다. 또한, 당근 표면에 균열이나 흠집이 확인한 후 해당 부위를 제거해야 한다. 필러(껍질 벗기는 도구)를 사용한 후에는 필러도 깨끗이 헹궈야 박테리아가 당근 사이에서 교차 오염되는 것을 방지할 수 있다. 비누, 세제, 상업용 농산물 세척제를 사용할 필요는 없다. 오히려 이들이 잔류하면 오히려 건강을 해칠 수 있기 때문이다. 더 철저하게 세척하고 싶다면 베이킹소다나 식초를 활용할 수 있다. 베이킹소다 : 찬물 2컵당 베이킹소다 1티스푼을 섞어 당근을 담근다. 식초 : 백식초와 물을 1:3으로 섞어 당근을 담궈 세척한다. 당근 올바른 보관법 당근은 사용하기 직전까지 씻지 않는 것이 좋다. 당근을 씻으면 잔여 수분으로 인해 더 빠르게 상할 수 있기 때문이다. 올바른 보관법은 껍질을 벗기지 않은 상태로 냉장고의 채소칸에 보관하는 것이 가장 신선하게 유지하는 방법이다. 당근을 종이 타월로 감싸 비닐봉지나 밀폐 용기에 보관하면 습기 차단 효과를 높일 수 있다. 이런 당근, 먹지 마세요! 당근이 건조해져 겉이 마른 정도는 먹을 수 있으나 표면이 끈적거리거나, 지나치게 부드럽거나, 변색하거나, 불쾌한 냄새가 나면서 갈라지기 시작하면 더 이상 신선하지 않은 상태다. 먹기 의심스러운 상태라면 버리는 것이 좋다.",
+      "tier": "press",
+      "publishedAt": "2025-03-12",
+      "license": "언론 기사 — 요약·짧은 인용 + 출처 표기"
+    },
+    {
+      "title": "당근 (푸드투데이 오피니언 칼럼, 2017-01-11)",
+      "url": "https://www.foodtoday.or.kr/news/article.html?no=146227",
+      "host": "www.foodtoday.or.kr",
+      "body": "뿌리채소 당근.잘알려져 있는 당근의 대표적인 효능은 시력개선 효과이다. 당근에는 시각기능에 영향을 주는 비타민A와 카로틴 성분이 풍부하게 들어있는데 비타민A가 체내에 흡수되면 레티놀로 전환되어 베타카로틴이 풍부해진다. 베타카로틴은 눈의 피로함을 풀어주고 시력을 보호해주는 역할을 한다. 그러므로 장시간 컴퓨터를 사용하는 직장인이나 책을 자주보는 수험생들에게 참 좋은 식재료이다. 또한 베타카로틴은 시력뿐만아니라 면역력을 향상 시켜주고 위와 장 등에 약해진 내장기능을 튼튼하게 만들어주는 효능 또한 가지고 있다. 당근에 대한 새로운 사실하나 더! 바로 항암효가 있다는 것이다. 당근 속에는 팰캐리놀 이라는 성분이 들어있는데 이는 암세포를 파괴시켜 항암효과를 낸다고 한다. 당근을 익혀먹는 것보다 생으로 먹거나 즙을내서 주스로 먹었을 때 효과가 더좋으므로 참고 바란다. 이 외에도 당근은 치아와 입술 건강에도 도움을 준다. 당근이 잇몸을 자극하고 알칼리 성분인 타액의 분비를 촉진시켜 산성 박테리아와 밸런스를 조절해 주기 때문이다. 또한 당근에 포함되어 있는 미네랄성분은 입에 유해한 세균을 죽이는 역할을 하여 충치예방에 효과적이다. 당근을 고르는 방법은 색이 선명하고 표면이 매끈한 것이 좋다. 수염뿌리가 많은 것은 좋은편에 속하지 않으며 한손에 쥐어 보았을 때 단단한 느낌의 당근이 신선한 당근이다. 당근을 보관할 때는 흙이 묻은 상태로 보관하는 것이 가장좋고 여러개를 겹쳐 보관하는 것 보다 하나씩 신문으로 싸서 서늘한 곳보다는 햇볕이 곧바로 내리쬐지 않는 곳에 두는 곳이 오래도록 보관할수 있는 방법중 하나이다.",
+      "tier": "press",
+      "publishedAt": "2017-01-11",
+      "license": "언론 칼럼 — 요약·짧은 인용 + 출처 표기"
+    }
+  ],
+  "dropped": [
+    {
+      "url": "https://rda.go.kr/webzine/2023/04/sub3-2.html",
+      "why": "농진청 그린매거진 2023-04 \"담갔다 흐르는 물에 씻어내세요\" — 당근 항목 없음(쌈채소·파·오이·고추·사과·딸기·포도). 당근 세척 근거로 못 씀"
+    },
+    {
+      "url": "https://v.daum.net/v/XfeffUgR17",
+      "why": "Daum 게시 건강정보(blog 등급) — FDA·CDC·USDA 를 전언하나 원문 URL 없고 본 조사에서 원문 미열람. 단단한 채소 솔 세척·\"씻고 나서 껍질\" 문장은 2차 전언이라 근거 부적합"
+    }
+  ],
+  "songs": []
+}
