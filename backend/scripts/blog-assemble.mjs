@@ -158,6 +158,11 @@ if (isTrend) {
    게 실제 원인 중 하나였다. LLM 지시("다르게 써라")만으로는 도지지 않아(오늘도 지시 없이 자연히
    수렴) 기계로 겹침을 잡는다. */
 const warnings = [];
+// 2026-10-12 티스토리가 제목에 #·/ 가 든 글("엑셀 #N/A, …")을 "게시글을 작성하는데 실패했습니다"로 거부했다(제목에서 빼니 발행됨).
+// 주소(permalink)에 그대로 들어가는 문자라 가장 유력한 원인 — 확정은 아니라 막지 않고 경고만(네이버는 해당 없음).
+if (meta.platform !== 'naver' && /[#/]/.test(meta.title || '')) {
+  warnings.push(`제목에 # 또는 / 가 있다("${meta.title}") — 티스토리 발행이 "게시글을 작성하는데 실패"로 거부된 적 있다. 빼거나 바꿔라`);
+}
 const h2s = [...md.matchAll(/^##\s+(.+)$/gm)].map((m) => m[1].trim());
 const paras = md.split(/\n{2,}/).map((p) => p.trim()).filter(Boolean);
 const closing = paras.slice(-2).join('\n\n');
