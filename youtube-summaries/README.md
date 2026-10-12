@@ -3,11 +3,24 @@
 채널 [AI Engineer](https://www.youtube.com/@aiDotEngineer) 의 새 영상을 Gemini 로 자동 요약한 모음입니다.
 생성: `backend/scripts/youtube-summarize.mjs` (GitHub Actions `youtube-summary` 크론).
 
-총 **299개**.
+총 **312개**.
 
 | 발행일 | 제목 |
 |---|---|
+| 2026-10-12 | [Containment Is Lying to You: Measuring AI Agents Like Employees — Druid AI](2026-10-12-PwCSYy-oGsM.md) |
+| 2026-10-11 | [Build with Perception Agents — Emile Baizel & Shruti Arora, Amazon AGI Lab](2026-10-11-ZGzthw4BZiA.md) |
+| 2026-10-11 | [AI Apps in a Flash: Ship to GPUs Without Docker — Dean Quiñanola, Runpod](2026-10-11-XczFLWEntiE.md) |
 | 2026-10-11 | [An AI Future Without the Lock-In — Remy Guercio, Tailscale](2026-10-11-s-glGHAa1a4.md) |
+| 2026-10-11 | [Hill-Climbing Skills: Improve Agents Without Changing the Model — Shubhankar Srivastava, Browserbase](2026-10-11-p7gaxmCUiIU.md) |
+| 2026-10-11 | [Continuously Improving Agents with Langfuse — Annabell Schäfer & Lotte Verheyden, ClickHouse](2026-10-11-BOCjybvJYM4.md) |
+| 2026-10-11 | [SonarQube + OpenAI: Agentic Development — Killian Carlsen-Phelan, Sonar](2026-10-11-bI8WyG9YB0I.md) |
+| 2026-10-11 | [Burn Your Flags: Interactive CLIs for Agents — Mark Lummus & Navinkumar Patil, PayPal](2026-10-11-aV_vgUSatqs.md) |
+| 2026-10-11 | [Parameter Golf with AutoResearch — Vayum Arora, Zhengyao Jiang, Dixing Xu & Dhruv Srikanth, Weco AI](2026-10-11-7RFJRDYroic.md) |
+| 2026-10-11 | [Taming the AI Hardware Cambrian Explosion — Abdul Dakkak, Modular](2026-10-11-7BcQdtRA3Tc.md) |
+| 2026-10-11 | [Build a Platform and Watch It Burn — Michael Forrester, Accenture & Whitney Lee, Datadog](2026-10-11-1tpqdglI3T0.md) |
+| 2026-10-11 | [Stop Renting Intelligence: The Train-to-Deploy Loop for Specialized AI — Fireworks AI](2026-10-11-13YZ1EB9hjU.md) |
+| 2026-10-11 | [Let Your Agent Cook: Using Skills to Evaluate and Improve Your App — Ankur Duggal, Arize AI](2026-10-11-_zUp6y9bDU8.md) |
+| 2026-10-11 | [Same Model, Different Speed: Why Your Inference Provider Matters — FriendliAI](2026-10-11-_naLJOqVOEI.md) |
 | 2026-10-10 | [Zero Cold Starts: Serverless AI Agents on Akamai Functions — Thorsten Hans](2026-10-10-Zf_e45GiNCE.md) |
 | 2026-10-10 | [Small Models, Big Results: Training a Finance Agent for Under $500 — Charles Dickens, Snorkel AI](2026-10-10-TyPpSRXGhbc.md) |
 | 2026-10-10 | [From 15% to 90% GPU Utilization: Fix the Data Pipeline, Not the Model](2026-10-10-tNAV259UhCM.md) |
