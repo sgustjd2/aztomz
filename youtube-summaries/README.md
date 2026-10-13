@@ -3,11 +3,26 @@
 채널 [AI Engineer](https://www.youtube.com/@aiDotEngineer) 의 새 영상을 Gemini 로 자동 요약한 모음입니다.
 생성: `backend/scripts/youtube-summarize.mjs` (GitHub Actions `youtube-summary` 크론).
 
-총 **312개**.
+총 **327개**.
 
 | 발행일 | 제목 |
 |---|---|
+| 2026-10-12 | [Your Agent Is a Lethal Trifecta (And What to Do About It) — Kim Maida, Keycard](2026-10-12-ws9XcGGPBDk.md) |
+| 2026-10-12 | [Decoupling the Brain from the Hands: Claude Managed Agents (Part 1 of 4) — Anthropic](2026-10-12-Uv0nAf_7tyU.md) |
+| 2026-10-12 | [Building AIE: Open Q&A and Feedback Session with swyx](2026-10-12-snTZtttfL70.md) |
+| 2026-10-12 | [Your GPU Neighbor Can Hear Your Model — Branislav Brzak, Stealthium](2026-10-12-SacJfmp33vM.md) |
+| 2026-10-12 | [Agents in Orbit: Workflows, Not Autopilot — Eduardo Simon & Javier Casal, Flywire](2026-10-12-rAUyRDOFyHU.md) |
+| 2026-10-12 | [Claude Managed Agents Q&A: Evals, CI/CD and Multi-Tenancy (Part 4 of 4) — Anthropic](2026-10-12-QSeaZ6qHyXs.md) |
+| 2026-10-12 | [Scheduled Agents, Dreaming and Q&A: Claude Managed Agents (Part 3 of 4) — Anthropic](2026-10-12-qJtcEDc_WJU.md) |
 | 2026-10-12 | [Containment Is Lying to You: Measuring AI Agents Like Employees — Druid AI](2026-10-12-PwCSYy-oGsM.md) |
+| 2026-10-12 | [Please… Enough with the Sloppy, One-Shot SaaS Replacements — Mahmoud Abdelwahab, Railway](2026-10-12-oixzVKMAXG0.md) |
+| 2026-10-12 | [Auth for Agents: Let AI Sign Up for Your Product with auth.md — Michael Grinich, WorkOS](2026-10-12-nSkmXakJ6eo.md) |
+| 2026-10-12 | [The Next Trillion Internet Users Still Don’t Have an Identity — Adi Singh, AgentMail](2026-10-12-mBNVKkyfnE0.md) |
+| 2026-10-12 | [We Let Our Financial Planners Write the Agents — Matthew Ragone, Range](2026-10-12-gpmze-6ueGU.md) |
+| 2026-10-12 | [Build a Research Agent with Claude Managed Agents (Part 2 of 4) — Anthropic](2026-10-12-FGftGOzfohc.md) |
+| 2026-10-12 | [Just-in-Time Ontologies: What Cheap Intelligence Means for Data — Hrishi Olickel, Southbridge AI](2026-10-12-Fa3hQVIKShw.md) |
+| 2026-10-12 | [Reliable, Smart Workflows for Finance, Wealth and Insurance — Karthic Rao, Perpetual](2026-10-12-8g0g1ncwzG0.md) |
+| 2026-10-12 | [How Inference Keeps Up with Our Insatiable Need for Tokens — Cerebras & Gimlet Labs](2026-10-12-_cRgl3maiT8.md) |
 | 2026-10-11 | [Build with Perception Agents — Emile Baizel & Shruti Arora, Amazon AGI Lab](2026-10-11-ZGzthw4BZiA.md) |
 | 2026-10-11 | [AI Apps in a Flash: Ship to GPUs Without Docker — Dean Quiñanola, Runpod](2026-10-11-XczFLWEntiE.md) |
 | 2026-10-11 | [An AI Future Without the Lock-In — Remy Guercio, Tailscale](2026-10-11-s-glGHAa1a4.md) |
