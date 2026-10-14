@@ -17715,6 +17715,94 @@ window.HANGEUT_DATA = {
         "https://blogthumb.pstatic.net/MjAyNjEwMDdfMjM1/MDAxNzkxMzAzMTg5MTYw.zB1rWUM-lpAfVjNTWuRN_CeezCYdA352CTKcDlwuf3Ug.lGusVbw8Fx6gWVuPO-PatyeXScro9wDfpqeYN5pZN8Qg.JPEG/002.jpg?type=w2",
         "https://blogthumb.pstatic.net/MjAyNjA5MTdfMjcx/MDAxNzg5NjE5NDg5ODM1.WYhb-N0T3yO2AxdC_KcvfeqUAlETNs6SQKSQdGruW-Yg.SF0WHJYM7NqOr4UIMM_Jp61tCqxmve6GuXaeTh97ve0g.JPEG/IMG_0281.jpg?type=w2"
       ]
+    },
+    {
+      "id": "jangchung-lounge-r-seoul-cafe-50-2026",
+      "type": "트렌드",
+      "cat": "카페·핫플",
+      "coverCat": "cat-cafe",
+      "collectedAt": "2026-10-14",
+      "analyzedAt": "2026-10-14",
+      "buzz": "서울시 선정 목록에 포함",
+      "stage": "발견",
+      "stageMsg": "올해 처음 발표된 서울 카페·디저트 50선에 이름을 올린 장소",
+      "label": "가을 나들이 후보로 참고",
+      "labelCls": "good",
+      "title": "스타벅스 장충라운지R, 서울 카페·디저트 50선 선정",
+      "def": "서울시가 올해 처음 발표한 카페·디저트 50선에 선정된 장충라운지R점",
+      "excerpt": "서울시의 첫 카페·디저트 50선에 장충라운지R점이 포함됐다는 보도가 이어졌어요.",
+      "pull": "",
+      "verdict": "장충라운지R점이 서울시의 첫 ‘서울 카페·디저트 50선’에 선정됐다는 보도가 10월 12~13일 나왔어요. 선정 소식은 방문 후보를 찾는 데 참고할 만하지만, 목록에 들었다는 사실만으로 개인 취향에 맞는 맛이나 만족도까지 보장되는 건 아니에요.",
+      "recs": [
+        [
+          "선정 목록 참고",
+          "◎",
+          1
+        ],
+        [
+          "방문 전 운영 정보 확인",
+          "○",
+          1
+        ],
+        [
+          "선정만 보고 맛을 단정",
+          "✕",
+          0
+        ]
+      ],
+      "src": [
+        [
+          "현대경제신문 — 장충라운지R 서울 카페·디저트 50선 선정",
+          "https://www.finomy.com/news/articleView.html?idxno=263293"
+        ],
+        [
+          "뉴스웍스 — 장충라운지R점 선정 보도",
+          "https://www.newsworks.co.kr/news/articleView.html?idxno=856229"
+        ]
+      ],
+      "images": [
+        "https://www.bing.com/th?id=ONUT.qGvGF4C90WAjBMf1f1iyMA"
+      ],
+      "tags": [
+        "카페",
+        "서울",
+        "장충라운지R",
+        "서울미식"
+      ],
+      "article": [
+        [
+          "h",
+          "서울시 첫 카페·디저트 50선에 이름 올린 장충라운지R"
+        ],
+        [
+          "p",
+          "장충라운지R점이 서울시가 올해 처음 발표한 ‘서울 카페·디저트 50선’에 선정됐다는 보도가 10월 12~13일 나왔어요. 기존 서울미식 100선과 함께 카페·디저트 공간을 별도 목록으로 소개한 점이 눈에 띕니다."
+        ],
+        [
+          "h",
+          "선정 소식, 어떻게 보면 좋을까?"
+        ],
+        [
+          "p",
+          "여러 매체가 장충라운지R점의 선정을 전했어요. 선정 목록은 서울에서 가볼 곳을 탐색하는 출발점으로 쓸 수 있지만, 개인의 입맛이나 방문 만족도를 대신 판단해 주지는 않아요."
+        ],
+        [
+          "q",
+          "목록에 선정된 사실과 내 취향에 잘 맞는지는 별개의 문제예요."
+        ],
+        [
+          "h",
+          "한끗 정리"
+        ],
+        [
+          "ul",
+          [
+            "서울 카페 후보를 찾을 때 목록을 참고하기",
+            "방문 전 영업시간·이용 정보를 매장 안내에서 확인하기",
+            "선정 사실만으로 맛이나 만족도를 단정하지 않기"
+          ]
+        ]
+      ]
     }
   ]
 };
