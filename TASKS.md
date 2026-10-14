@@ -1,3 +1,16 @@
+# 2026-10-14 블로그 배치 — 무인 /blog-daily (티스토리 2 + 네이버 2)
+
+claim: `backend/out/blog/.daily-claim-2026-10-14`. 트렌드 후보 jogwang-nonhyeon-hwoguo(네이버 블로그 2건 근거 신뢰분석)는 근거가 얇아 보류하고 최근 배치처럼 조사형 4편으로 감.
+중복 대조: posted·posted-naver·초안 제목 grep — 겹친 건 git-stash(브랜치 '옮기기'만 언급)·winter-seafood(굴 '제철 시기' 모음)뿐이라 개념이 다름.
+## 티스토리
+- [x] excel-transpose — 엑셀 행 열 바꾸기(전치 붙여넣기·TRANSPOSE) · official 5 · 팩트체크 blocker 6(주 출처 404 → /office/ 주소·조사파일도 정정, 절대참조 경고 반대로·조사파일 보강, 근거 없는 '값 고정/연동' 표, 365 범위 선택, Convert to Range 경로, 삽입 탭 서술) 교정 → 2차 통과 · 제목 조사 다듬음 · selfreview 1건(90도 회전 비유) · verify 통과(warn 0)
+- [x] git-branch-rename — git 브랜치 이름 변경·삭제(로컬·원격) · official 8 · 팩트체크 blocker 5(GitHub 2020-10-01 날짜 근거 없음·조사파일도 정정, 원격 삭제 후 남는 이유=추적 참조/fetch 는 prune 안 함, Actions 대상 넓힘·조사파일도 정정, admin 이유 지어냄) 교정 → 2차 통과 · selfreview 2건 · verify 통과(warn 2)
+## 네이버
+- [x] oyster-wash-storage — 굴 세척법·보관법 · official 2(식약처 웹진)·press 1·blog 2 · 팩트체크 blocker 7(위키트리가 식약처 수칙 인용한 걸 '매체 설명'으로 거꾸로 귀속, 냉장 5℃·냉동 누락, 제목 단정, 인과 지어냄 등 — 조사파일도 정정) → 2차 blocker 1('가무'를 '간수(bittern)'로 오기 — 조사파일 오기, 원문 WebFetch 확인 후 코디네이터 직접 교정) · selfreview 3건 · verify 통과(warn 2)
+- [x] cutting-board-cleaning — 도마 세척·소독법 · 1차 조사 official 1 → 보강(USDA FSIS r.jina.ai·하와이 보건부) official 3 · 팩트체크 blocker 2(보건소 77℃/71℃는 식기·행주 기준인데 도마 기준으로 씀 — 조사파일도 정정, 세계일보 날짜) → 2차 blocker 1(도입부 '열로 소독') 코디네이터 직접 교정 · selfreview 1건 · verify 통과(warn 1)
+## 마무리
+- [x] 조립·selfreview·verify 4/4 통과 → queue --list → 로컬 커밋
+
 # 2026-10-13 발행 — 사용자 요청("블로그 작성시작"), 어제 저녁 미리 만든 10-13치 5+5 발행
 
 - 티스토리 5/5(/555~/559, 10:23~10:28): windows11-storage-sense(/555)·excel-text-to-columns(/556)·pip-externally-managed(/557)·windows-printer-offline(/558)·lenny-kravitz-it-aint-over(/559). 세션이 밤새 만료돼 사용자가 --login 후 `blog-publish.mjs <id>` 직접 순차 발행(대기열 거치지 않음), 모두 permalink 200.

@@ -1,63 +1,5 @@
 [
   {
-    "slug": "autumn-train-trip-2026",
-    "categoryId": "hangeut-trend",
-    "date": "2026-09-19",
-    "h2": [
-      "2026 가을, 지금 다니는 관광열차",
-      "'여행가는 가을' 할인 (10~11월)",
-      "단풍 시기 맞춰 가려면",
-      "예매 팁",
-      "정리",
-      "참고"
-    ],
-    "closingClichePatterns": []
-  },
-  {
-    "slug": "dryer-buying-guide-2026",
-    "categoryId": "hangeut-trend",
-    "date": "2026-09-19",
-    "h2": [
-      "히트펌프식 vs 히터식, 뭐가 다를까",
-      "용량은 몇 kg으로 (표준용량 함정 주의)",
-      "설치: 배기식 vs 콘덴싱(무배관)",
-      "전기료·소음과 관리법",
-      "2026년 가격대 (참고)",
-      "정리",
-      "참고"
-    ],
-    "closingClichePatterns": []
-  },
-  {
-    "slug": "air-purifier-guide-2026",
-    "categoryId": "hangeut-trend",
-    "date": "2026-09-23",
-    "h2": [
-      "표준사용면적은 어떤 조건에서 잰 숫자일까",
-      "사용 공간의 130%, 왜 넉넉하게 권할까",
-      "CA인증이 보는 항목과 공개되지 않은 부분",
-      "필터 유지비, 조사 회차마다 범위가 갈려요",
-      "호환필터 시험 결과와 2026년 신제품",
-      "정리",
-      "참고"
-    ],
-    "closingClichePatterns": []
-  },
-  {
-    "slug": "winter-seafood-2026",
-    "categoryId": "hangeut-trend",
-    "date": "2026-09-23",
-    "h2": [
-      "굴, 생으로 먹을 것과 익혀 먹을 것이 따로 있어요",
-      "방어값이 겨울 초입마다 들썩이는 배경",
-      "과메기가 청어에서 꽁치로 바뀐 사연",
-      "대게와 물메기는 달력을 다르게 봐야 해요",
-      "한눈에 정리",
-      "참고 자료"
-    ],
-    "closingClichePatterns": []
-  },
-  {
     "slug": "fw-shoes-trend-2026",
     "categoryId": "hangeut-trend",
     "date": "2026-09-23",
@@ -3332,6 +3274,70 @@
       "건강검진 안내가 헷갈릴 때 확인할 것",
       "정리",
       "참고"
+    ],
+    "closingClichePatterns": []
+  },
+  {
+    "slug": "git-branch-rename",
+    "categoryId": "hangeut-trend",
+    "date": "2026-10-14",
+    "h2": [
+      "로컬에서 이름만 바꾸는 한 줄, git branch -m",
+      "GitHub 웹에서 바꾸면 자동으로 따라오는 것과 안 따라오는 것",
+      "협업자 PC 쪽은 4단계 명령으로 맞춰요",
+      "지우는 건 이름 바꾸는 것과 완전히 다른 명령이에요",
+      "이름 바꾸기와 기본 브랜치 바꾸기는 다른 절차예요",
+      "master 대신 main을 쓰게 된 배경",
+      "자주 헷갈리는 질문",
+      "정리",
+      "참고"
+    ],
+    "closingClichePatterns": []
+  },
+  {
+    "slug": "excel-transpose",
+    "categoryId": "hangeut-trend",
+    "date": "2026-10-14",
+    "h2": [
+      "전치, 두 가지 길 중 뭐가 다를까요",
+      "Step 1. 복사부터 해요, 잘라내기는 안 통해요",
+      "Step 2. 붙여넣기 옵션에서 전치(T) 선택하기",
+      "엑셀 표(Table)라면 이야기가 달라져요",
+      "TRANSPOSE 함수로 바꾸는 법, 확정 방식이 버전마다 달라요",
+      "#VALUE! 오류가 났을 때, 버전별로 고치는 법이 달라요",
+      "정리",
+      "참고"
+    ],
+    "closingClichePatterns": []
+  },
+  {
+    "slug": "oyster-wash-storage",
+    "categoryId": "hangeut-trend",
+    "date": "2026-10-14",
+    "h2": [
+      "식중독 신고가 전년보다 8배 뛴 적이 있어요",
+      "가열조리용 표시, 85℃에서 1분 이상 가열해야 안전해요",
+      "소금물 세척법, 공식 기준은 없고 민간 레시피 둘의 수치가 달라요",
+      "씻은 굴을 상온에 오래 두면 안 되는 이유",
+      "냉장은 식약처 수칙으로 5℃ 이하, 냉동 기간은 아직 확인하지 못했어요",
+      "정리",
+      "참고"
+    ],
+    "closingClichePatterns": []
+  },
+  {
+    "slug": "cutting-board-cleaning",
+    "categoryId": "hangeut-trend",
+    "date": "2026-10-14",
+    "h2": [
+      "생고기 도마와 채소 도마를 따로 써야 하는 이유",
+      "쓰고 난 직후, 뜨거운 물과 세제로 먼저 씻어요",
+      "보건소 소독 기준은 대상별로 달라요, 그리고 미국식 블리치 희석법",
+      "원목 도마를 식기세척기에 넣어도 될까요 — 미국 USDA와 국내 보도가 갈려요",
+      "칼자국·냄새·색, 교체 신호는 이렇게 봐요",
+      "도마 세척·소독에서 아직 확인 못 한 것",
+      "정리",
+      "참고한 자료"
     ],
     "closingClichePatterns": []
   }

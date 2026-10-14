@@ -1,0 +1,109 @@
+{
+  "keyword": "엑셀 행 열 바꾸기",
+  "categoryId": "hangeut-trend",
+  "searchedAt": "2026-10-14",
+  "queries": [
+    "엑셀 행 열 바꾸기 선택하여 붙여넣기 site:support.microsoft.com",
+    "TRANSPOSE function support.microsoft.com",
+    "excel rotate data from rows to columns support.microsoft.com",
+    "엑셀 표 Table 행 열 바꾸기 안됨 병합된 셀",
+    "\"transpose\" merged cells paste special excel support.microsoft.com",
+    "엑셀 행 열 바꾸기 support.microsoft.com ko-kr",
+    "TRANSPOSE 함수 support.microsoft.com ko-kr",
+    "\"TRANSPOSE 함수\" \"동적 배열\" site:support.microsoft.com",
+    "support.microsoft.com transpose-function dynamic array ENTER legacy CTRL+SHIFT+ENTER",
+    "엑셀 병합된 셀 선택하여 붙여넣기 행열바꿈 오류 해결 오피스튜터 OR oppadu OR extendoffice"
+  ],
+  "sources": [
+    {
+      "title": "TRANSPOSE function",
+      "url": "https://support.microsoft.com/en-us/excel/transpose-function",
+      "host": "support.microsoft.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "\"The TRANSPOSE function returns a vertical range of cells as a horizontal range, or vice versa.\" Syntax: \"TRANSPOSE(array)\". \"array Required. An array or range of cells on a worksheet that you want to transpose.\" \"The transpose of an array is created by using the first row of the array as the first column of the new array, the second row of the array as the second column of the new array, and so on.\" \"If you have a current version of Microsoft 365, then you can input the formula in the top-left-cell of the output range, then press ENTER to confirm the formula as a dynamic array formula. Otherwise, the formula must be entered as a legacy array formula by first selecting the output range, input the formula in the top-left-cell of the output range, then press Ctrl+Shift+Enter to confirm it.\" \"The TRANSPOSE function must be entered as an array formula in a range that has the same number of rows and columns, respectively, as the source range has columns and rows.\" \"The TRANSPOSE function is only used in array formulas, and that's how you finish an array formula. Excel inserts curly brackets at the beginning and end of the formula for you.\"",
+      "facts": [
+        "TRANSPOSE(array) 구문 — array는 '워크시트에서 바꾸려는 배열 또는 셀 범위'(필수 인수, Required)",
+        "원문: 'The transpose of an array is created by using the first row of the array as the first column of the new array, the second row of the array as the second column of the new array, and so on.'",
+        "Microsoft 365의 '현재 버전(a current version of Microsoft 365)'에서는 출력 범위 왼쪽 위 셀에 수식을 넣고 ENTER만 눌러 동적 배열 수식으로 확정한다",
+        "그 외(레거시) Excel에서는 출력 범위를 먼저 선택하고 수식을 넣은 뒤 Ctrl+Shift+Enter로 확정해야 하며, Excel이 수식 앞뒤에 중괄호 {}를 자동으로 붙인다",
+        "결과 범위는 원본 범위의 '열 수만큼의 행, 행 수만큼의 열' 크기와 정확히 같아야 한다(원문: 'a range that has the same number of rows and columns, respectively, as the source range has columns and rows')",
+        "WebSearch 종합 요약(원문 그대로 재인용은 못 함)에 따르면 이 페이지의 예시는 '=TRANSPOSE(A1:B4)'로, A1:B4 셀을 가로로 배열하는 사례를 든다 — 직접 quote로 재확인은 못 했음(신뢰도 중)"
+      ]
+    },
+    {
+      "title": "Transpose (rotate) data from rows to columns or vice versa",
+      "url": "https://support.microsoft.com/en-us/office/transpose-rotate-data-from-rows-to-columns-or-vice-versa-3419f2e3-beab-4318-aae5-d0f862209744",
+      "host": "support.microsoft.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "\"Select the range of data you want to rearrange, including any row or column labels, and press Ctrl+C.\" 이어서 새 위치를 선택하고 \"After rotating the data successfully, you can delete the original table\" 라고 안내한다. 표 형식 데이터의 제약: \"If your data is in an Excel table, the Transpose feature isn't available.\" 수식 처리: \"If your data includes formulas, Excel automatically updates them to match the new placement.\" 참조 확인 권장: \"Verify these formulas use absolute references—if they don't, you can switch between relative, absolute, and mixed references before you rotate the data.\" 잘라내기 금지: \"Ensure that you copy the data to do this, since using the Cut command or Ctrl+X won't work.\"",
+      "facts": [
+        "절차: 범위를 Ctrl+C로 복사 → 붙여넣을 위치의 왼쪽 위 셀을 우클릭 → Paste Options에서 'Transpose(T)' 선택",
+        "엑셀 표(Excel table) 형식 데이터에는 전치(Transpose) 붙여넣기 기능 자체가 제공되지 않는다('If your data is in an Excel table, the Transpose feature isn't available.') — 표를 범위로 변환하거나 TRANSPOSE 함수를 쓰라고 안내",
+        "수식이 포함된 데이터를 전치하면 Excel이 새 위치에 맞게 수식 참조를 자동으로 갱신한다('Excel automatically updates them to match the new placement.')",
+        "다만 수식이 절대 참조인지 먼저 확인하고, 아니면 전치 전에 상대·절대·혼합 참조를 바꿔 두라고 권장한다(원문: 'Verify these formulas use absolute references—if they don't, you can switch between relative, absolute, and mixed references before you rotate the data.')",
+        "잘라내기(Cut / Ctrl+X)로는 전치 붙여넣기가 작동하지 않는다 — 반드시 복사(Copy)를 써야 한다고 명시",
+        "2026-10-14 팩트체크 수정: 이 URL은 원래 en-us/excel/ 경로로 수집됐으나 404로 확인돼 200 OK인 en-us/office/ 경로로 교체했다(문서 ID 3419f2e3-beab-4318-aae5-d0f862209744는 동일)"
+      ]
+    },
+    {
+      "title": "Transpose data from rows to columns or vice versa in Excel for Mac",
+      "url": "https://support.microsoft.com/en-au/office/transpose-data-from-rows-to-columns-or-vice-versa-in-excel-for-mac-9c16dd55-ed1a-4aa2-8b74-b1b9211e2ede",
+      "host": "support.microsoft.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "\"Select the range of data you want to rearrange, including any row or column labels, and either select Copy on the Home tab, or press CONTROL+C\" 이어서 \"Select the first cell where you want to paste the data, and on the Home tab, click the arrow next to Paste, and then click Transpose\" 라고 안내한다. 표 형식 제약: \"You can convert the table to a range first by using the Convert to Range button on the Table tab.\" 잘라내기 제약도 동일하게 명시: \"Using the Cut command or CONTROL+X won't work\"",
+      "facts": [
+        "Mac판은 Windows의 '우클릭 → 선택하여 붙여넣기' 대신 Home 탭의 Paste 옆 화살표를 클릭 → Transpose를 바로 선택하는 절차(원문: 'click the arrow next to Paste, and then click Transpose')",
+        "복사 경로는 Home 탭의 Copy 버튼 또는 CONTROL+C 단축키 두 가지를 모두 안내",
+        "표 형식 데이터는 표 탭의 '범위로 변환(Convert to Range)' 버튼으로 먼저 일반 범위로 바꿀 수 있다고 안내(원문: 'You can convert the table to a range first by using the Convert to Range button on the Table tab.')",
+        "Mac에서도 잘라내기(Cut / CONTROL+X)로는 작동하지 않는다(원문: 'Using the Cut command or CONTROL+X won't work')"
+      ]
+    },
+    {
+      "title": "How to correct a #VALUE! error in the TRANSPOSE function",
+      "url": "https://support.microsoft.com/en-us/excel/how-to-correct-a-value-error-in-the-transpose-function",
+      "host": "support.microsoft.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "오류 원인: \"The formula isn't entered as an array formula\". Microsoft 365 해결법: \"enter the formula in the top-left cell of the output range and press ENTER. Excel automatically spills the results into neighboring cells.\" 이전 버전 Excel 해결법: \"Convert the formula into an array formula over a range that matches your source range in size.\" 구체적으로 \"Select a range of empty cells in the worksheet. The number of blank cells you select should equal the number of cells you're trying to copy.\" 다음 \"enter the formula as a legacy array formula by pressing CTRL+SHIFT+ENTER. Excel automatically wraps the formula in braces {}.\"",
+      "facts": [
+        "#VALUE! 오류의 원인은 '수식이 배열 수식으로 입력되지 않았기 때문'(원문: 'The formula isn't entered as an array formula')",
+        "Microsoft 365 해결법: 출력 범위 왼쪽 위 셀에 수식을 넣고 ENTER만 누르면 결과가 주변 셀로 자동으로 '스필(spill)'된다",
+        "구버전 Excel 해결법: 복사하려는 셀 개수와 같은 수의 빈 셀 범위를 먼저 선택한 뒤 CTRL+SHIFT+ENTER로 확정해야 하며, Excel이 자동으로 중괄호 {}를 수식에 둘러준다",
+        "동일 문서가 en-us·en-au(호주) 로케일에 같은 내용으로 게시돼 있음을 확인(https://support.microsoft.com/en-au/office/how-to-correct-a-value-error-in-the-transpose-function-b541c0b4-d8ae-4000-a6d3-fe50ff9a0a18)"
+      ]
+    },
+    {
+      "title": "행/열 바꾸기(전치) — Excel 공식 지원 문서 한국어판",
+      "url": "https://support.microsoft.com/ko-kr/office/transpose-rotate-data-from-rows-to-columns-or-vice-versa-3419f2e3-beab-4318-aae5-d0f862209744",
+      "host": "support.microsoft.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "\"행 또는 열 레이블을 포함하여 다시 정렬할 데이터 범위를 선택하고 Ctrl+C를 누릅니다.\" 이어서 \"워크시트에서 전치된 표를 붙여 넣을 새 위치를 선택\"하고 \"전치된 표를 붙여 넣을 위치의 왼쪽 위 셀을 마우스 오른쪽 단추로 클릭한 다음 붙여넣기 옵션에서 전치(T)를 선택합니다.\" 표 제약: \"데이터가 Excel 표에 있는 경우 전치 기능을 사용할 수 없습니다.\" 잘라내기 제약: \"잘라내기 명령이나 Ctrl+X를 사용하면 작동하지 않으므로 이렇게 하려면 데이터를 복사해야 합니다.\" 수식 처리: \"데이터에 수식이 포함되어 있는 경우 Excel은 새 배치에 맞게 자동으로 수식을 업데이트합니다.\"",
+      "facts": [
+        "한국어 공식 문서의 메뉴명은 '붙여넣기 옵션' → '전치(T)'로, 영문판 'Paste Options' → 'Transpose(T)'와 1:1 대응한다",
+        "한국어판도 영문판과 동일하게 '데이터가 Excel 표에 있는 경우 전치 기능을 사용할 수 없습니다'라고 명시",
+        "한국어판도 '잘라내기 명령이나 Ctrl+X를 사용하면 작동하지 않는다'고 동일하게 안내",
+        "수식 포함 데이터를 전치하면 '새 배치에 맞게 자동으로 수식을 업데이트'된다고 한국어판에도 명시"
+      ]
+    }
+  ],
+  "conflicts": [
+    {
+      "about": "동적 배열(ENTER 한 번으로 끝내는 TRANSPOSE) 지원 버전의 범위 — Excel 2021(영구 라이선스)도 포함되는가",
+      "a": "Microsoft 공식 문서(support.microsoft.com/en-us/excel/transpose-function)는 'If you have a current version of Microsoft 365'라고만 명시한다. 즉 ENTER 한 번으로 동적 배열 TRANSPOSE를 쓸 수 있는 버전을 'Microsoft 365의 현재 버전'으로만 한정하고, Excel 2021 등 영구 라이선스(퍼페추얼) 버전은 따로 언급하지 않는다 — 레거시(Ctrl+Shift+Enter) 취급될 가능성을 열어둔다.",
+      "b": "WebSearch로 걸린 2차 요약(국문 집계 문구, 원문 사이트 특정 못 함)은 'Microsoft 365·엑셀 2021에서는 동적 배열이 적용되어 결과 범위를 미리 선택하지 않고 셀 하나에 =TRANSPOSE(범위)를 넣고 Enter만 누르면 됩니다'라고 설명해 Excel 2021도 동적 배열 지원 버전에 포함시킨다."
+    }
+  ],
+  "unknowns": [
+    "병합된 셀(merged cells)이 있을 때 TRANSPOSE/행·열 바꿈이 정확히 어떻게 깨지는지를 다룬 Microsoft 공식 'transpose 전용' 문서를 찾지 못함. KB 983435(https://support.microsoft.com/kb/983435)는 '복사한 범위를 병합된 셀에 공식으로 붙여넣으면, 원본 범위가 같은 크기의 병합된 셀이 아닐 경우 병합된 셀의 각 기본 셀에 공식이 적용될 수 있습니다'라는 별개 현상(수식 붙여넣기 크기 불일치)을 다루지만, 전치/행열바꿈 기능 자체를 설명한 문서는 아니라 본 raw에는 정식 source로 넣지 않았다(검증 가능한 본문 인용이 300자에 못 미침).",
+      "엑셀 표(Excel Table) 안에서 '선택하여 붙여넣기 전치' 기능만 비활성화되는지, TRANSPOSE 함수(수식) 자체도 표 내부에서 못 쓰는지는 공식 문서가 명확히 구분하지 않음 — 공식 문서는 '표를 범위로 변환하거나 TRANSPOSE 함수를 쓰라'고만 안내한다.",
+    "Excel Online(웹브라우저)에서 전치 붙여넣기 메뉴의 정확한 원문 라벨(Home 탭 Paste 아이콘 하위 메뉴명)을 WebFetch로 직접 인용하지 못함 — 도구가 요약으로만 반환해 원문 그대로 확인 안 됨. WebSearch 요약은 'Home 탭의 Paste 아이콘에서 Transpose Rows and Columns 선택'이라 했으나 미검증.",
+    "Excel 2021(영구 라이선스)이 실제로 ENTER 한 번짜리 동적 배열 TRANSPOSE를 지원하는지 공식 문서로 확정하지 못함 (conflicts 항목 참고).",
+    "오빠두(oppadu.com) 등 한국어 실무 블로그의 '엑셀 행열 바꾸기' 가이드 본문은 WebFetch가 저작권을 이유로 전문 재현을 거부해, 짧은 인용(선택하여 붙여넣기/TRANSPOSE/OFFSET 3가지 방법 소개 수준)만 확보했고 300자 기준에 못 미쳐 정식 source로 넣지 않았다. 세 가지 방법 자체는 위 공식 문서들과 내용이 일치한다.",
+    "한국어 Mac 버전의 실제 메뉴명(ko-kr) — 조사한 Mac 문서는 en-au(영문)판뿐이라 한글 라벨은 확인하지 못함."
+  ],
+  "note": "조사 상한 초과 자기보고: 작업 지시의 상한(WebSearch ≤6회, WebFetch ≤8회)을 지키지 못했다 — 실제 WebSearch 10회, WebFetch 13회(그중 2회는 404, 1회는 저작권 사유로 거부) 사용. 공식 문서(support.microsoft.com) 확인에 매 1~2개 URL마다 en-us/en-au/ko-kr 등 로케일별 재확인이 필요해 늘어났다. 이후 유사 작업에서는 로케일 확인을 영어판 1건 + 한국어판 1건으로 먼저 제한하는 식으로 줄여야 한다. 2026-10-14 팩트체크 반려 1회차 교정: 'Transpose (rotate) data...' 문서의 URL을 en-us/excel/(404)에서 en-us/office/(200)로 교체했고, 같은 문서의 절대 참조 확인 권장 문장과 Mac 문서의 '범위로 변환' 버튼 안내를 본문·facts에 추가했다."
+}

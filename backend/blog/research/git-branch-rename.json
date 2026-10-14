@@ -1,0 +1,159 @@
+{
+  "keyword": "git 브랜치 이름 변경",
+  "categoryId": "hangeut-trend",
+  "notes": "로컬 브랜치 이름 변경(git branch -m/-M)과 원격·GitHub 쪽 동기화(자동 리다이렉트 여부, Actions·PR 영향, 수동 4단계 명령)를 공식 문서 그대로 설명할 수 있다. 로컬 삭제(-d/-D)와 원격 삭제(push --delete)의 차이, 그리고 '브랜치 이름 변경'과 별개인 '기본 브랜치 지정 변경' 절차·역사(Git 2.28, GitHub의 기본 브랜치명 전환)까지 다룰 수 있다. 모든 근거가 git-scm.com·docs.github.com·github.blog·github.com 1차 공식 문서라 전부 confirmed 등급이다.",
+  "cannotSay": [
+    "로컬에서 git branch -m 으로 이름을 바꾸면 원격이나 협업자 환경에 자동으로 전파된다 — 자료상 로컬 rename과 원격 반영은 별개이며 push/4단계 명령이 각각 필요하다",
+    "GitHub 웹 UI로 브랜치 이름을 바꾸면 모든 링크·참조가 전부 자동으로 따라온다 — raw 파일 URL과 GitHub Actions 참조는 자동 리다이렉트/추적되지 않는다고 명시돼 있다",
+    "기본 브랜치 변경과 브랜치 이름 변경을 같은 절차로 뭉뚱그려 설명 — GitHub 문서 체계상 서로 다른 별개 문서/절차다",
+    "GitLab·Bitbucket 등 다른 플랫폼도 GitHub과 같은 절차라고 일반화 — 자료에 해당 플랫폼 절차 정보가 없다",
+    "GitHub이 신규 저장소 기본 브랜치명을 main으로 바꾼 정확한 날짜 — github/renaming에는 'now main'이라는 현재 상태만 있고 전환 날짜는 없다",
+    "git fetch(플래그 없이)만으로 삭제된 원격 브랜치의 추적 참조가 로컬에서 지워진다 — git-fetch 문서는 --prune이나 fetch.prune=true 없이는 지우지 않는다고 설명한다"
+  ],
+  "cannotCover": [
+    "다른 워크트리에 체크아웃된 브랜치를 git branch -f 로 강제 변경하려 할 때 실제로 뜨는 에러 메시지 전문(raw unknowns에 '못 찾음'으로 명시)",
+    "GitHub에서 기본 브랜치를 변경할 때 저장소 홈페이지에 표시되는 안내 문구의 정확한 전체 텍스트(요약만 확인됨)",
+    "GitLab, Bitbucket, Azure DevOps 등 GitHub 이외 플랫폼에서의 브랜치 이름 변경/기본 브랜치 변경 구체 절차(자료 없음)",
+    "VS Code 등 GUI 클라이언트에서의 브랜치 이름 변경 방법(자료 없음, CLI·GitHub 웹 UI만 조사됨)",
+    "브랜치 이름 변경이 CI/CD(GitHub Actions 외 다른 도구), 배포 파이프라인, 로컬 git hooks에 미치는 영향의 세부 사례(일반적 'Actions는 안 따라간다'는 사실만 있고 다른 도구는 자료 없음)",
+    "GitHub이 신규 저장소 기본 브랜치명을 main으로 전환한 정확한 날짜(github/renaming에 날짜 명시 없음)"
+  ],
+  "claims": [
+    {
+      "claim": "로컬 브랜치 이름 변경은 git branch -m(또는 강제 -M) 한 명령으로 끝나며, 설정과 reflog까지 함께 옮겨진다.",
+      "grade": "confirmed",
+      "evidence": [
+        "git branch -m <old> <new> 는 브랜치를 '설정(config)과 reflog까지 함께' 옮기는(rename) 동작이다 (공식 문구: \"Move/rename a branch, together with its config and reflog.\")",
+        "-M 은 --move --force 의 축약형이며, 이미 같은 이름의 브랜치가 있어도 강제로 덮어쓴다"
+      ],
+      "sourceUrls": ["https://git-scm.com/docs/git-branch"]
+    },
+    {
+      "claim": "로컬에서 이름을 바꾼 뒤 GitHub·원격 쪽은 별도로 동기화해야 한다 — GitHub 리네임 UI는 브랜치 URL·PR 베이스는 자동으로 바꿔주지만 raw 파일 URL과 Actions 참조는 안 따라가고, 직접 로컬에서 하려면 4단계 명령이 필요하다.",
+      "grade": "confirmed",
+      "evidence": [
+        "GitHub 웹 UI에서 브랜치 이름을 바꾸면 해당 브랜치를 가리키는 URL은 자동 리다이렉트되지만, raw 파일 URL은 리다이렉트되지 않는다",
+        "GitHub Actions 워크플로우는 브랜치 이름 변경을 따라가지 않는다 — 이 저장소가 액션(action)을 배포하고 있다면, 그 액션을 @옛브랜치이름으로 쓰는 다른 사람들의 워크플로가 깨질 수 있다",
+        "이름을 바꾸려는 브랜치가 어떤 열린 풀 리퀘스트의 head branch이면, 그 풀 리퀘스트는 닫힌다",
+        "협업자 로컬 동기화 4단계: git branch -m OLD-BRANCH-NAME NEW-BRANCH-NAME → git fetch origin → git branch -u origin/NEW-BRANCH-NAME NEW-BRANCH-NAME → git remote set-head origin -a (옵션: git remote prune origin)"
+      ],
+      "sourceUrls": ["https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-branches-in-your-repository/renaming-a-branch"]
+    },
+    {
+      "claim": "브랜치 삭제는 로컬과 원격이 별개 명령이고 안전장치도 다르다 — 로컬 -d는 병합 여부를 검사해 거부할 수 있지만, 원격 push --delete는 포인터만 지우는 것이라 바로 복구 가능성이 남는다.",
+      "grade": "confirmed",
+      "evidence": [
+        "git branch -d 로 삭제하려면 그 브랜치가 upstream(또는 추적 설정이 없으면 HEAD)에 '완전히 병합(fully merged)'되어 있어야 하며, 아니면 git은 거부한다",
+        "-D 는 --delete --force 의 축약형으로 병합 상태와 무관하게 강제 삭제한다",
+        "git push origin --delete <branchname> 은 git push origin :<branchname> 과 완전히 동일한 효과(원격 ref 삭제)를 낸다",
+        "원격 브랜치 삭제(git push origin --delete serverfix)는 서버의 포인터(ref)만 제거하는 것이고, 실제 데이터는 garbage collection 전까지 한동안 남아있어 실수로 지워도 복구가 쉬운 경우가 많다고 Pro Git은 설명한다"
+      ],
+      "sourceUrls": [
+        "https://git-scm.com/docs/git-branch",
+        "https://git-scm.com/docs/git-push",
+        "https://git-scm.com/book/en/v2/Git-Branching-Remote-Branches"
+      ]
+    },
+    {
+      "claim": "저장소의 '기본 브랜치'를 바꾸는 것은 브랜치 이름 자체를 바꾸는 것과 GitHub 문서상 별개 절차이며, 둘 다 저장소 admin 권한이 필요하다.",
+      "grade": "confirmed",
+      "evidence": [
+        "기본 브랜치·보호된 브랜치는 저장소 관리자(admin)만 이름을 바꿀 수 있다",
+        "기본 브랜치 변경은 저장소에 브랜치가 2개 이상 있어야 가능하고 admin 권한이 필요하다",
+        "절차는 Settings → Default branch 섹션의 전환 아이콘 클릭 → 새 브랜치 선택 → Update 클릭 → 경고 확인(\"I understand, update the default branch\") 4단계",
+        "GitHub 문서 체계에서 '기본 브랜치 지정 변경'과 '브랜치 이름 변경(rename)'은 서로 다른 문서로 분리되어 있다"
+      ],
+      "sourceUrls": [
+        "https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-branches-in-your-repository/renaming-a-branch",
+        "https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-branches-in-your-repository/changing-the-default-branch"
+      ]
+    },
+    {
+      "claim": "Git 2.28의 init.defaultBranch 설정으로 master 대신 다른 이름을 쓰려는 흐름을 Git 쪽에서 지원하게 됐고, GitHub도 지금은 새로 만드는 저장소의 기본 브랜치명을 main으로 쓰며 기존 저장소는 이 변경의 영향을 받지 않는다.",
+      "grade": "confirmed",
+      "evidence": [
+        "Git 2.28 (2020-07-27 공개)에서 init.defaultBranch 설정이 새로 도입돼, git init 시 'master' 하드코딩 대신 이 설정값을 쓰게 되었다",
+        "git config --global init.defaultBranch main 으로 새로 만드는 저장소의 기본 브랜치명을 바꿀 수 있다 — 단, 이미 있는 저장소의 브랜치를 자동으로 바꿔주진 않는다",
+        "GitHub도 지금은 GitHub.com에서 새로 만드는 저장소의 기본 브랜치명을 main으로 쓰고, 기존 저장소는 이 변경의 영향을 받지 않는다(github/renaming: \"The default branch name for new repositories created on GitHub is now main\", \"Existing repositories are also not impacted\")"
+      ],
+      "sourceUrls": [
+        "https://github.blog/2020-07-27-highlights-from-git-2-28/",
+        "https://github.com/github/renaming"
+      ]
+    }
+  ],
+  "numbers": [
+    {
+      "what": "Git 2.28 공개일(init.defaultBranch 도입)",
+      "value": "2020-07-27",
+      "asOf": "2020-07-27",
+      "sourceUrl": "https://github.blog/2020-07-27-highlights-from-git-2-28/"
+    },
+    {
+      "what": "GitHub에서 기본 브랜치 변경이 가능하려면 저장소에 있어야 할 최소 브랜치 수",
+      "value": "2개 이상",
+      "asOf": null,
+      "sourceUrl": "https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-branches-in-your-repository/changing-the-default-branch"
+    }
+  ],
+  "sources": [
+    {
+      "title": "git-branch Documentation",
+      "url": "https://git-scm.com/docs/git-branch",
+      "host": "git-scm.com",
+      "body": "SYNOPSIS 중 이름 변경·삭제 관련 부분: \"git branch (-m|--move) [<old-branch>] <new-branch>\" / \"git branch (-M) [<old-branch>] <new-branch>\" / \"git branch (-d|--delete) [-r] <branch-name>…\" / \"git branch (-D) [-r] <branch-name>…\". OPTIONS 설명: -m, --move — \"Move/rename a branch, together with its config and reflog.\" -M은 \"Shortcut for --move --force.\" -d, --delete — \"Delete a branch. The branch must be fully merged in its upstream branch, or in HEAD if no upstream was set with --track or --set-upstream-to.\" -D는 \"Shortcut for --delete --force.\" -u, --set-upstream-to 설명: \"Set up <branch-name>'s tracking information so <upstream> is considered <branch-name>'s upstream branch.\" -f, --force 설명: \"Reset <branch-name> to <start-point>, even if <branch-name> exists already. Without -f, git branch refuses to change an existing branch. In combination with -d (or --delete), allow deleting the branch irrespective of its merged status, or whether it even points to a valid commit. In combination with -m (or --move), allow renaming the branch even if the new branch name already exists, the same applies for -c (or --copy). Note that git branch -f <branch-name> [<start-point>], even with -f, refuses to change an existing branch <branch-name> that is checked out in another worktree linked to the same repository.\"",
+      "tier": "official"
+    },
+    {
+      "title": "Renaming a branch",
+      "url": "https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-branches-in-your-repository/renaming-a-branch",
+      "host": "docs.github.com",
+      "body": "About renaming branches: \"You can rename a branch in a repository on GitHub.com.\" 브랜치 이름을 바꾸면 해당 브랜치를 가리키던 URL은 자동으로 새 이름의 URL로 리다이렉트되고, 브랜치 보호 규칙(branch protection)과 열려 있는 풀 리퀘스트의 베이스 브랜치(base branch)도 함께 업데이트된다. 단, raw 파일 URL은 자동 리다이렉트되지 않으며, git pull로 옛 브랜치 이름을 쓰는 경우도 리다이렉트가 적용되지 않는다. GitHub Actions 워크플로우는 브랜치 이름 변경을 따라가지 않는다. 문서 원문: \"GitHub Actions workflows do not follow renames, so if your repository publishes an action, anyone using that action with @{old-branch-name} will break.\" 즉 이 저장소가 액션(action)을 배포하고 있을 때, 그 액션을 @옛브랜치이름으로 쓰는 다른 사람들의 워크플로가 깨진다는 뜻이다. 이름을 바꾸려는 브랜치가 열려 있는 풀 리퀘스트의 head branch(비교 브랜치)로 쓰이고 있으면 그 풀 리퀘스트는 닫힌다(종료됨). 쓰기 권한이 있는 사용자는 대부분의 브랜치 이름을 바꿀 수 있지만, 기본 브랜치(default branch)나 보호된 브랜치(protected branch)는 저장소 관리자만 바꿀 수 있다. 기본 브랜치를 바꾼 경우 GitHub는 저장소 홈페이지에 협업자들이 로컬 Git 환경을 갱신하도록 안내하는 문구를 보여준다. 문서는 로컬 동기화를 위해 다음 명령을 안내한다: \"git branch -m OLD-BRANCH-NAME NEW-BRANCH-NAME\", \"git fetch origin\", \"git branch -u origin/NEW-BRANCH-NAME NEW-BRANCH-NAME\", \"git remote set-head origin -a\", 그리고 선택적으로 \"git remote prune origin\"(이전 브랜치의 추적 참조 정리).",
+      "tier": "official"
+    },
+    {
+      "title": "Changing the default branch",
+      "url": "https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-branches-in-your-repository/changing-the-default-branch",
+      "host": "docs.github.com",
+      "body": "About changing the default branch: 저장소에 브랜치가 두 개 이상 있으면 그중 어느 브랜치든 기본 브랜치(default branch)로 지정할 수 있다. 기본 브랜치는 풀 리퀘스트와 코드 커밋의 기준(base) 브랜치가 된다. 기본 브랜치 변경에는 저장소 admin 권한이 필요하다. 절차: 1) 저장소 메인 페이지에서 저장소명 아래 Settings 탭 클릭(안 보이면 드롭다운 메뉴에서 선택). 2) \"Default branch\" 섹션에서 현재 기본 브랜치명 옆의 전환(switch) 아이콘 클릭. 3) 드롭다운 메뉴에서 새 기본 브랜치명을 선택. 4) \"Update\" 버튼을 클릭하고 경고 메시지를 읽은 뒤 \"I understand, update the default branch\"를 클릭해 확정한다. 문서는 기본 브랜치 이름 자체를 바꾸는 것(renaming)은 별도 문서인 \"Renaming a branch\"를 참고하라고 안내한다 — 즉 '어느 브랜치를 기본으로 쓸지 바꾸는 것'과 '브랜치 이름 자체를 바꾸는 것'은 GitHub 문서 체계상 서로 다른 절차로 분리돼 있다. 문서는 admin 권한이 왜 필요한지에 대한 별도 이유는 설명하지 않는다.",
+      "tier": "official"
+    },
+    {
+      "title": "git-push Documentation",
+      "url": "https://git-scm.com/docs/git-push",
+      "host": "git-scm.com",
+      "body": "-d, --delete 옵션 설명: \"All listed refs are deleted from the remote repository. This is the same as prefixing all refs with a colon.\" 즉 git push origin --delete <branchname> 은 git push origin :<branchname> 과 동일한 효과를 낸다. <refspec> 섹션: \"If <src> is empty, it deletes the <dst> ref from the remote repository. For example, git push origin :dev will delete the dev branch.\" -u, --set-upstream 옵션 설명: \"For every branch that is up to date or successfully pushed, add upstream (tracking) reference, used by argument-less git-pull[1] and other commands. For more information, see branch.<name>.merge in git-config[1].\"",
+      "tier": "official"
+    },
+    {
+      "title": "git-fetch Documentation",
+      "url": "https://git-scm.com/docs/git-fetch",
+      "host": "git-scm.com",
+      "body": "--prune, -p 옵션 설명: \"Before fetching, remove any remote-tracking references that no longer exist on the remote.\" 문서는 기본 동작에 대해 \"Git has a default disposition of keeping data unless it's explicitly thrown away\"라고 설명하며, 원격에서 브랜치가 지워져도 그냥 fetch만으로는 로컬의 원격 추적 참조(remote-tracking reference, origin/<branch> 형태)가 자동으로 지워지지 않는다고 적는다. 추적 참조를 지우려면 --prune 플래그를 명시하거나 fetch.prune 설정을 true로 켜야 한다.",
+      "tier": "official"
+    },
+    {
+      "title": "Git Branching - Remote Branches (Pro Git)",
+      "url": "https://git-scm.com/book/en/v2/Git-Branching-Remote-Branches",
+      "host": "git-scm.com",
+      "body": "Pushing 섹션: \"If you have a branch named serverfix that you want to work on with others, you can push it up the same way you pushed your first branch. Run git push <remote> <branch>\": \"$ git push origin serverfix\" → \"* [new branch] serverfix -> serverfix\". Git은 serverfix 를 refs/heads/serverfix:refs/heads/serverfix 로 자동 확장한다고 설명하며, \"You can also do git push origin serverfix:serverfix, which does the same thing\"라 안내하고, 이름을 다르게 push 하는 예로 \"git push origin serverfix:awesomebranch\"를 든다. Deleting Remote Branches 섹션: \"You can delete a remote branch using the --delete option to git push. If you want to delete your serverfix branch from the server, you run the following: $ git push origin --delete serverfix\" → 결과 \"- [deleted] serverfix\". 이어서 \"Basically all this does is to remove the pointer from the server. The Git server will generally keep the data there for a while until a garbage collection runs, so if it was accidentally deleted, it's often easy to recover.\"",
+      "tier": "official"
+    },
+    {
+      "title": "Highlights from Git 2.28",
+      "url": "https://github.blog/2020-07-27-highlights-from-git-2-28/",
+      "host": "github.blog",
+      "body": "\"When you initialize a new Git repository from scratch with git init, Git has always created an initial first branch with the name master. In Git 2.28, a new configuration option, init.defaultBranch is being introduced to replace the hard-coded term.\" 사용자는 git config --global init.defaultBranch main 으로 기본값을 바꿀 수 있다. \"This configuration variable only affects new repositories, and does not cause branches in existing projects to be renamed. git clone will also continue to respect the HEAD of the repository you're cloning from, so you won't see a change in branch names until a maintainer initiates one.\" 이 변경은 GitHub, GitLab, Bitbucket 등 여러 플랫폼이 기본 브랜치명을 master 에서 바꾸려는 움직임을 지원하기 위한 것이라고 설명한다. 글 발행일은 2020년 7월 27일(이후 2021년 3월 12일 업데이트). 이 글에는 GitHub.com 자체가 신규 저장소 기본 브랜치명을 언제 main으로 바꿨는지에 대한 날짜는 없다.",
+      "tier": "official"
+    },
+    {
+      "title": "github/renaming",
+      "url": "https://github.com/github/renaming",
+      "host": "github.com",
+      "body": "저장소 README: \"The default branch name for new repositories created on GitHub is now main. Existing repositories are also not impacted by this change and will continue to use the branch name they currently have.\" 이 저장소는 조직·개인 저장소에서 기존 master 브랜치를 main으로 일괄 전환할 때 쓰는 GitHub Actions 워크플로를 제공한다. 전환 정책이 적용된 정확한 날짜는 이 문서에 나오지 않는다.",
+      "tier": "official"
+    }
+  ],
+  "dropped": [],
+  "songs": []
+}

@@ -1,0 +1,153 @@
+{
+  "keyword": "도마 세척 소독법",
+  "categoryId": "hangeut-trend",
+  "searchedAt": "2026-10-14",
+  "queries": [
+    "식품안전나라 도마 세척 소독 교차오염 식약처",
+    "한국소비자원 도마 세척 소독 락스 희석 비율",
+    "foodsafetykorea.go.kr 도마 칼 구분 교차오염",
+    "USDA FSIS cutting board cleaning sanitizing bleach dilution",
+    "fsis.usda.gov cutting boards fact sheet",
+    "한국소비자원 도마 위생 실태조사 세균",
+    "\"fsis.usda.gov\" \"cutting board\" site:fsis.usda.gov",
+    "식품안전나라 \"손보구가세\" 식중독예방 칼 도마 구분",
+    "한국소비자원 kca.go.kr 도마 보도자료",
+    "fsis.usda.gov \"Cutting Boards and Food Safety\" site:fsis.usda.gov",
+    "foodsafetykorea.go.kr 도마 교차오염 세척 소독 식중독예방",
+    "fsis.usda.gov \"cutting-boards-and-food-safety\" OR \"Cutting Boards and Food Safety\" fact sheet URL",
+    "foodsafety.gov cutting boards clean sanitize bleach cross contamination",
+    "식품안전나라 foodsafetykorea.go.kr 도마 칼 구분 사용 손보구가세",
+    "site:fsis.usda.gov filetype:pdf cutting boards"
+  ],
+  "sources": [
+    {
+      "title": "\"자취할 때 도마 하나로 3년 썼는데\"…아끼다 '식중독' 지뢰 키웠다",
+      "url": "https://www.segye.com/newsView/20260320510168",
+      "host": "segye.com",
+      "tier": "press",
+      "publishedAt": "2026-03-25",
+      "body": "한국소비자원 조사에서 도마의 위생 문제가 드러났으며, 관리 상태가 좋지 않은 도마에서는 세균이 검출됐고, 비위생적으로 사용된 도마에서는 대장균군과 황색포도상구균이 나왔다. 식품의약품안전처 권고사항으로 식재료를 구분하여 사용할 것(육류·어류와 채소·과일 분리), 사용 직후 바로 세척, 주방 세제와 뜨거운 물로 표면과 칼집 부분을 함께 닦기, 생고기나 생선 손질 후 칼집 사이 이물질을 꼼꼼히 씻어내기가 제시됐다. 세척·건조 방법으로는 베이킹소다로 닦거나 식초로 헹구어 냄새를 제거하고, 세척 후 물기를 닦고 세워둔 뒤 충분히 건조할 것, 칼집이 깊어진 도마는 일정 기간 사용 후 교체할 것이 언급됐다. 기사에는 세균 검출 수치, 구체적 비율, 온도 등 수치는 제시되지 않았다.",
+      "facts": [
+        "한국소비자원 조사에서 비위생적으로 관리된 도마에서 대장균군과 황색포도상구균이 검출됨",
+        "식약처 권고: 육류·어류용과 채소·과일용 도마를 구분 사용",
+        "세척 후 세워서 충분히 건조, 칼집이 깊어진 도마는 교체 권고"
+      ]
+    },
+    {
+      "title": "도마, 알고보면 변기보다 더러울지도…제대로 씻는 법 따로 있다",
+      "url": "https://lady.khan.co.kr/cooking/article/202602121519001",
+      "host": "lady.khan.co.kr (경향신문)",
+      "tier": "press",
+      "publishedAt": "2026-02-12",
+      "body": "미국 애리조나대학교 환경미생물학과 찰스 거바 교수는 \"도마 표면에는 변기 좌석보다 훨씬 높은 수준의 박테리아가 발견되는 경우가 흔하다\"고 말했다. 미국 농무부(USDA)는 도마의 흠집이나 홈이 살모넬라균과 대장균의 번식 공간이 된다고 경고했다. 세척 방법으로는 뜨거운 물과 주방세제로 사용 직후 세척, 냄새 제거를 위해 베이킹소다 반죽을 10~15분 올려두거나 소금과 레몬으로 문지르기, 식초를 이용한 약한 살균 작용 활용이 제시됐다. 예방 관리로는 채소용과 육류용 도마를 분리해서 사용하고, 세척 후 물기를 제거한 뒤 세워서 건조할 것을 권장했다. 한국소비자원이나 식약처의 직접 인용, 구체적 세균 수·비율·온도 수치는 이 기사에 포함되어 있지 않다.",
+      "facts": [
+        "미국 애리조나대 찰스 거바 교수: 도마 표면 박테리아 수준이 변기 좌석보다 높은 경우가 흔하다",
+        "미국 농무부(USDA): 도마의 흠집·홈이 살모넬라·대장균 번식 공간",
+        "냄새 제거: 베이킹소다 반죽 10~15분 방치"
+      ]
+    },
+    {
+      "title": "지금 바로 도마 확인해 보세요… 표면에 '이것' 많으면 당장 바꿔야 합니다",
+      "url": "https://www.wikitree.co.kr/articles/1145244",
+      "host": "wikitree.co.kr",
+      "tier": "press",
+      "publishedAt": "2026-07-07",
+      "body": "도마 교체 기준으로 \"칼자국이 깊게 패여 손가락이나 손톱이 걸릴 정도라면 교체를 고려\"해야 한다고 제시했다. 또한 \"특정 식재료의 냄새가 오래 남거나 색이 깊게 배어 세척 후에도 지워지지 않는다면 교체 시기\"라고 설명했다. 권장 교체 주기는 \"1년~1년 6개월\"로 제시됐다. 세척·관리 방법으로는 \"흐르는 물과 주방 세제로 깨끗이 세척한 뒤 물기를 털어내고 세운 상태로 통풍이 잘되는 곳에서 완전히 건조\"하도록 권장했다. 식품의약품안전처의 중요성을 강조하는 언급은 있으나, 구체적 출처 URL, 한국소비자원 인용, 전문가 실명은 기사에 명시되지 않았다.",
+      "facts": [
+        "도마 교체 기준: 칼자국이 깊어 손가락·손톱이 걸릴 정도면 교체",
+        "권장 교체 주기: 1년~1년 6개월",
+        "세척 후 세운 상태로 통풍 좋은 곳에서 완전 건조"
+      ]
+    },
+    {
+      "title": "나무 도마 마른 뒤 식용유 대신 '미네랄오일' 바르세요, 갈라짐 없이 오래 씁니다",
+      "url": "https://www.wikitree.co.kr/articles/1161729",
+      "host": "wikitree.co.kr",
+      "tier": "press",
+      "publishedAt": "2026-09-23",
+      "body": "나무 도마 오일 관리법으로 \"도마가 완전히 마른 상태에서 가끔 식품용 미네랄오일을 얇게 발라주는 방법\"을 제시했다. 오일을 펴 바른 후 충분히 흡수하도록 두고, 표면의 남은 여분은 마른 천으로 닦아낸다. 식용유·올리브유 사용은 피해야 하는데, \"식물성 기름은 시간이 지나면서 산화돼 쩐 냄새가 나는 산패 현상이 일어나기 쉽다\"는 반면 \"식품용 미네랄오일은 산화가 잘 일어나지 않아 도마에 발라둬도 냄새가 배지 않는다\"는 차이가 있다고 설명했다. 건조법으로는 \"도마를 눕혀 두지 말고 세워서 양쪽 면에 바람이 통하도록 말리는 것이 중요\"하며, \"물에 담가두거나 식기세척기 사용은 피해야 합니다\"라고 명시했다. 기자명 윤시현.",
+      "facts": [
+        "나무 도마 오일 관리: 완전히 마른 상태에서 식품용 미네랄오일을 얇게 도포, 여분은 마른 천으로 제거",
+        "식용유·올리브유는 시간이 지나면 산패해 냄새가 나므로 나무 도마에 부적합 — 미네랄오일은 산화가 적음",
+        "나무 도마는 물에 담그거나 식기세척기 사용을 피해야 함 — 세워서 양면 통풍 건조 권장"
+      ]
+    },
+    {
+      "title": "금천구보건소 식품위생 안내 — 조리기구·식기 소독기준",
+      "url": "https://www.geumcheon.go.kr/health/contents.do?key=1443",
+      "host": "geumcheon.go.kr",
+      "tier": "official",
+      "publishedAt": "2019-12-26",
+      "body": "조리기구 재질 및 관리 기준으로 \"딱딱한 고무나 아크릴로 만든 것으로 틈이나 금이 없어야 한다\"고 명시했다. 식재료별 구분 사용에 대해 \"조리되지 않은 식품과 조리된 음식, 생선류, 채소류를 다루는 도마는 구분해서 사용하여 교차오염을 방지한다\"고 안내했다. 자외선 소독 시 \"조사 시간을 충분히 한다\"고 했고, 보관은 \"청결하고 건조된 상태로 보관한다\"고 안내했다. 소독 방법은 네 가지로 구분해 제시했다: 자비소독(열탕소독, 대상: 식기·행주) 77℃에서 30초 이상, 건열소독(대상: 식기) 표면온도 71℃ 이상, 자외선 소독, 화학소독(대상: 칼·도마·기구) 용도에 맞는 \"기구 등의 균소독제\"를 용법·용량에 맞게 사용. 행주는 5분 이상 열탕소독이 필수라고 명시했다. 이 페이지는 지자체 보건소 공식 홈페이지이며, 최종수정일은 2019-12-26으로 표기되어 있고 식약처를 직접 인용한 문구는 없었다.",
+      "facts": [
+        "자비(열탕)소독 기준 (대상: 식기·행주): 77℃에서 30초 이상",
+        "건열소독 기준 (대상: 식기): 표면온도 71℃ 이상",
+        "화학소독 대상: 칼·도마·기구 — 용도에 맞는 \"기구 등의 균소독제\"를 용법·용량에 맞게 사용",
+        "행주는 5분 이상 열탕소독 필수",
+        "조리기구는 조리되지 않은 식품·조리된 음식·생선류·채소류별로 구분 사용해 교차오염 방지"
+      ]
+    },
+    {
+      "title": "식중독 경고, 똑똑한 예방법은",
+      "url": "https://www.sciencetimes.co.kr/news/%EC%8B%9D%EC%A4%91%EB%8F%85-%EA%B2%BD%EA%B3%A0-%EB%98%91%EB%98%91%ED%95%9C-%EC%98%88%EB%B0%A9%EB%B2%95%EC%9D%80",
+      "host": "sciencetimes.co.kr",
+      "tier": "press",
+      "publishedAt": "2018-07-30",
+      "body": "식중독 예방을 위한 일반 식품안전 수칙을 다뤘다. 교차오염 방지 관련해 \"육류나 어패류 또는 날 음식을 썬 다음에는 칼이나 도마, 손을 반드시 씻어야 한다\"고 안내했다. 보관 온도 기준으로 냉장 0~4℃, 냉동 -18℃ 이하를 제시했고, 남은 음식 재가열 온도는 74℃로 명시했다. 손 씻기는 30초 이상을 권장했다. 저장 시간 기준으로 상하기 쉬운 음식은 구매 후 1시간 이내 냉장보관, 남은 음식은 2시간 이내 냉장보관, 냉장 보관한 육류·가금류는 48시간 이내 조리하지 않으면 냉동보관해야 한다고 안내했다. 이 기사는 도마 자체의 소독 방법(락스 희석 비율 등)에 대한 구체적 기술은 제시하지 않으며, 일반 식품안전 수칙 중 일부로만 도마·칼 세척을 언급했다.",
+      "facts": [
+        "냉장 보관 기준: 0~4℃ / 냉동 기준: -18℃ 이하",
+        "남은 음식 재가열 온도: 74℃",
+        "손 씻기 권장 시간: 30초 이상",
+        "냉장 보관 육류·가금류는 48시간 이내 미조리 시 냉동 보관 필요"
+      ]
+    },
+    {
+      "title": "Cutting Boards and Food Safety (USDA FSIS 공식 팩트시트)",
+      "url": "https://www.fsis.usda.gov/es/node/3305",
+      "host": "fsis.usda.gov",
+      "tier": "official",
+      "publishedAt": "2024-08-27",
+      "body": "미국 농무부 식품안전검사청(USDA FSIS)의 공식 소비자용 팩트시트 'Cutting Boards'(최종 업데이트 2024-08-27). 재질 선택에 대해 \"Consumers may choose either wood or a nonporous surface cutting board such as plastic, marble, glass, or pyroceramic. Nonporous surfaces are easier to clean than wood.\"라고 안내했다. 교차오염 방지로는 \"Consider using one cutting board for fresh produce and bread and a separate one for raw meat, poultry, and seafood. This will prevent bacteria on a cutting board that is used for raw meat, poultry, or seafood from contaminating a food that requires no further cooking.\"라고 명시했다. 세척은 \"washing them with hot, soapy water after each use; then rinse with clear water and air dry or pat dry with clean paper towels\"로, 식기세척기 사용에 대해서는 \"Nonporous acrylic, plastic, or glass boards and solid wood boards can be washed in a dishwasher (laminated boards may crack and split).\"라고 명시해 **단단한 원목(solid wood) 도마는 식기세척기 사용이 가능하다**고 밝혔다. 소독(살균)은 \"Both wooden and plastic cutting boards can be sanitized with a solution of 1 tablespoon of unscented, liquid chlorine bleach per gallon of water. Flood the surface with the bleach solution and allow it to stand for several minutes. Rinse with clear water and air dry or pat dry with clean paper towels.\"로 구체적 희석비율을 제시했다. 대나무 도마에 대해서는 \"Bamboo cutting boards are harder and less porous than hardwoods. Bamboo absorbs very little moisture and resists scarring from knives, so they are more resistant to bacteria than other woods.\"라고 설명했다. 교체 기준은 \"All plastic and wooden cutting boards wear out over time. Once cutting boards become excessively worn or develop hard-to-clean grooves, they should be discarded.\"로 명시했다. 이 URL은 FSIS 사이트의 노드 기반 영구링크이며 WebFetch 직접 접속은 403으로 막혀 있어 리더 프록시(r.jina.ai)를 통해 본문을 확인했으나, 본문·제목·최종수정일이 복수의 독립 검색 결과와 일치해 출처는 fsis.usda.gov 공식 페이지로 확인됨.",
+      "facts": [
+        "USDA FSIS: 소독(살균) 시 무향 액체 염소 블리치 1테이블스푼을 물 1갤런에 희석한 용액을 표면에 부어 몇 분간 두었다가 헹굼",
+        "USDA FSIS: 비다공성 아크릴·플라스틱·유리 도마와 단단한 원목(solid wood) 도마는 식기세척기 사용 가능(합판·적층 도마는 갈라질 수 있어 제외)",
+        "USDA FSIS: 흠집·홈이 깊어 세척이 어려워지면 플라스틱·나무 도마 모두 폐기 권장",
+        "USDA FSIS 페이지 최종 업데이트일: 2024-08-27",
+        "USDA FSIS: 생과일·빵용 도마와 생육류·가금류·해산물용 도마를 구분해 교차오염 방지 권장"
+      ]
+    },
+    {
+      "title": "식품안전 참고표 (한국어판) — Hawaii State Department of Health, Food Safety Branch",
+      "url": "https://health.hawaii.gov/san/files/2022/02/food-safety-card-korean-rev-2.8.2022.pdf",
+      "host": "health.hawaii.gov",
+      "tier": "official",
+      "publishedAt": "2022-02-08",
+      "body": "미국 하와이주 보건부(Hawaii State Department of Health) 환경보건서비스과(Environmental Health Services Branch) 산하 식품안전과(Food Safety Branch)가 배포한 한국어판 '식품안전 참고표'. '교차오염' 항목에서 \"다른 식품을 다룰 때 도마는 세척 → 헹굼 → 살균하여 사용하거나 도마를 지정해서 사용한다\"고 명시했고, \"행주와 부엌 용기는 세척 살균한다\"고 덧붙였다. 냉장고 내 식품 보관 구분으로 위쪽 선반에는 채소/먹기 직전의 음식/조리된 음식/해산물을, 아래쪽 선반에는 간 쇠고기/간 돼지고기/닭고기를 두도록 안내해 교차오염을 예방하도록 했다. 조리기구 세척 살균제 농도 표에서는 클로린(염소) 소독액 농도를 자동세척기·3조씽크 공통 25~100ppm, 요오드 12.5~25ppm, 암모니아 200ppm, 뜨거운 물 180°F로 제시했다(단, PDF 본문 중 일부 중첩된 텍스트 블록에는 클로린 50~200ppm으로도 표기돼 있어 숫자가 두 가지로 나타남 — 더 명확한 표 레이아웃 쪽인 25~100ppm을 채택). 최저 조리 내부온도는 달걀·생선·쇠고기/돼지고기 145°F, 간 쇠고기/간 돼지고기 155°F, 닭고기·속을 넣은 음식·재가열 음식 165°F로 명시했다. 파일명 기준 개정일은 2022-02-08(rev 2.8.2022)로 표기돼 있다.",
+      "facts": [
+        "하와이주 보건부 식품안전과: 도마는 '세척→헹굼→살균' 순서로 쓰거나 식품별로 지정해 사용 권고",
+        "같은 자료: 조리기구 살균 소독액 농도 — 클로린(염소) 25~100ppm, 요오드 12.5~25ppm, 암모니아 200ppm, 뜨거운 물 180°F(자동세척기·3조씽크 공통, 단 PDF 내 일부 텍스트는 클로린 50~200ppm으로도 표기돼 수치 불일치 있음)",
+        "최저 조리 내부온도: 달걀·생선·쇠고기/돼지고기 145°F, 간 쇠고기/간 돼지고기 155°F, 닭고기 등 165°F",
+        "문서 개정일(파일명 기준): 2022-02-08"
+      ]
+    }
+  ],
+  "conflicts": [
+    {
+      "about": "나무(원목) 도마의 식기세척기 사용 가능 여부",
+      "a": "wikitree(2026-09-23, 본문 직접 확인) — \"물에 담가두거나 식기세척기 사용은 피해야 합니다\"라며 나무 도마는 식기세척기를 피하라고 권고",
+      "b": "USDA FSIS 공식 팩트시트(fsis.usda.gov, 2026-10-14 r.jina.ai 프록시로 본문 직접 확인, 최종업데이트 2024-08-27) — \"Nonporous acrylic, plastic, or glass boards and solid wood boards can be washed in a dishwasher (laminated boards may crack and split).\"라며 단단한 원목(solid wood) 도마는 식기세척기 사용이 가능하다고 명시. 합판/적층 도마만 갈라짐 위험으로 제외. 두 출처 모두 신뢰 가능한 1차 자료이며 미국(USDA)과 한국 언론(wikitree)의 권고가 실제로 다름 — 국가·도마 종류(원목 vs 합판)를 명시해 둘 다 전달하는 것을 권장"
+    },
+    {
+      "about": "조리기구(도마 등) 염소(클로린) 소독액 농도",
+      "a": "Hawaii DOH 한국어 식품안전 참고표 PDF의 선명한 표 레이아웃 — 클로린 25~100ppm(자동세척기·3조씽크 공통)",
+      "b": "같은 PDF 내 다른(겹친) 텍스트 블록 — 클로린 50~200ppm으로 표기. OCR 추출 시 레이아웃이 중첩돼 발생한 것으로 추정되나 원인 미확정 — 어느 쪽이 최종 인쇄본 수치인지 추가 확인 필요"
+    }
+  ],
+  "unknowns": [
+    "식품의약품안전처(식품안전나라, foodsafetykorea.go.kr) 공식 페이지의 실제 URL을 찾지 못함 — 보강 조사에서도 검색 결과에 해당 도메인의 직접 링크가 노출되지 않았음. '손보구가세' 캠페인명도 1차 출처로 확인 못함(언론 2차 인용에서만 유사 내용 확인)",
+    "한국소비자원(kca.go.kr) 도마 위생 실태조사의 원 보도자료 URL을 찾지 못함 — 언론(세계일보 등)의 2차 인용만 확보, 조사 시점·표본 수·세균 검출 수치(예: 몇 %, 몇 CFU) 등 원자료 수치는 확인 못함",
+    "가정용 락스(차아염소산나트륨) 도마 소독 희석 비율의 한국 공식(식약처/소비자원) 기준을 찾지 못함 — USDA FSIS 기준(1테이블스푼:1갤런)만 확인됨, 한국 기준은 미확인",
+    "FDA(미국 식품의약국) 자료 직접 확인 시도(fda.gov/media/163609/download) — 404로 실패, 확인 못함",
+    "나무 도마 vs 플라스틱 도마의 세균 번식 비교에 대한 한국 공식기관(식약처/한국소비자원)의 1차 실측 수치는 확인 못함"
+  ]
+}
