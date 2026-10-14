@@ -3,12 +3,20 @@
 채널 [AI Engineer](https://www.youtube.com/@aiDotEngineer) 의 새 영상을 Gemini 로 자동 요약한 모음입니다.
 생성: `backend/scripts/youtube-summarize.mjs` (GitHub Actions `youtube-summary` 크론).
 
-총 **327개**.
+총 **340개**.
 
 | 발행일 | 제목 |
 |---|---|
+| 2026-10-13 | [Tokens Are the Cheap Part — Steve Jamison, Jellyfish](2026-10-13-U7ZYBCcdJPg.md) |
+| 2026-10-13 | [Judge a Transaction by the Company It Keeps — Somya Rai & MD Sharique, EXL](2026-10-13-SHvwutPSeZg.md) |
+| 2026-10-13 | [What Technical Due Diligence Finds When the Deck Says “70% Automated” — Soukaïna Abelhad](2026-10-13-gDRCpTMCqEU.md) |
+| 2026-10-13 | [Every Building Is a Balance Sheet: Spatial Memory for Real-World Assets — Jordi Spranger, Spranic](2026-10-13-Fe4aSMXsOZ4.md) |
+| 2026-10-13 | [I Believe Everything My Agents Tell Me: Three Levels of Review — Corey Gallon, Rexmore](2026-10-13-dYh7TQkuYFE.md) |
+| 2026-10-13 | [Deploying AI Inside a Bank Is Not an Engineering Problem — Paden Gayle, Applied AI Engineers](2026-10-13-3ZlQk4-knWM.md) |
+| 2026-10-13 | [The Agent Works. Does Anyone Trust It? — Michele Grant, Leading at Scale](2026-10-13--a2oTS9J67U.md) |
 | 2026-10-12 | [Your Agent Is a Lethal Trifecta (And What to Do About It) — Kim Maida, Keycard](2026-10-12-ws9XcGGPBDk.md) |
 | 2026-10-12 | [Decoupling the Brain from the Hands: Claude Managed Agents (Part 1 of 4) — Anthropic](2026-10-12-Uv0nAf_7tyU.md) |
+| 2026-10-12 | [Inside the AI Economy: What Stripe's Data Reveals — Nilofer Rajpurkar, Stripe](2026-10-12-T3wRyXg_yVg.md) |
 | 2026-10-12 | [Building AIE: Open Q&A and Feedback Session with swyx](2026-10-12-snTZtttfL70.md) |
 | 2026-10-12 | [Your GPU Neighbor Can Hear Your Model — Branislav Brzak, Stealthium](2026-10-12-SacJfmp33vM.md) |
 | 2026-10-12 | [Agents in Orbit: Workflows, Not Autopilot — Eduardo Simon & Javier Casal, Flywire](2026-10-12-rAUyRDOFyHU.md) |
@@ -18,12 +26,17 @@
 | 2026-10-12 | [Please… Enough with the Sloppy, One-Shot SaaS Replacements — Mahmoud Abdelwahab, Railway](2026-10-12-oixzVKMAXG0.md) |
 | 2026-10-12 | [Auth for Agents: Let AI Sign Up for Your Product with auth.md — Michael Grinich, WorkOS](2026-10-12-nSkmXakJ6eo.md) |
 | 2026-10-12 | [The Next Trillion Internet Users Still Don’t Have an Identity — Adi Singh, AgentMail](2026-10-12-mBNVKkyfnE0.md) |
+| 2026-10-12 | [1,000 Agent Tasks in a Sandbox: What Breaks When LLMs Run Code — Kevin Orellana, AWS](2026-10-12-k72eLcYpVys.md) |
+| 2026-10-12 | [Sandboxes Aren't Optional: 4 Ways to Isolate Coding Agents — Robert Brennan, OpenHands](2026-10-12-iH_wV8BbS24.md) |
 | 2026-10-12 | [We Let Our Financial Planners Write the Agents — Matthew Ragone, Range](2026-10-12-gpmze-6ueGU.md) |
 | 2026-10-12 | [Build a Research Agent with Claude Managed Agents (Part 2 of 4) — Anthropic](2026-10-12-FGftGOzfohc.md) |
 | 2026-10-12 | [Just-in-Time Ontologies: What Cheap Intelligence Means for Data — Hrishi Olickel, Southbridge AI](2026-10-12-Fa3hQVIKShw.md) |
+| 2026-10-12 | [Hiring Employable Agents + Startup Battlefield Finals — Howie Liu, HyperAgent](2026-10-12-EEt3ZSG4a1s.md) |
 | 2026-10-12 | [Reliable, Smart Workflows for Finance, Wealth and Insurance — Karthic Rao, Perpetual](2026-10-12-8g0g1ncwzG0.md) |
 | 2026-10-12 | [How Inference Keeps Up with Our Insatiable Need for Tokens — Cerebras & Gimlet Labs](2026-10-12-_cRgl3maiT8.md) |
 | 2026-10-11 | [Build with Perception Agents — Emile Baizel & Shruti Arora, Amazon AGI Lab](2026-10-11-ZGzthw4BZiA.md) |
+| 2026-10-11 | [From Zero to Leaderboard: Agent Evaluation — Wolfram Ravenwolf, Weights & Biases](2026-10-11-YIxzNZDDy1A.md) |
+| 2026-10-11 | [How Secrets Leak Through AI Agents (and How to Stop It) — Venice AI](2026-10-11-xn8EsW0wxyc.md) |
 | 2026-10-11 | [AI Apps in a Flash: Ship to GPUs Without Docker — Dean Quiñanola, Runpod](2026-10-11-XczFLWEntiE.md) |
 | 2026-10-11 | [An AI Future Without the Lock-In — Remy Guercio, Tailscale](2026-10-11-s-glGHAa1a4.md) |
 | 2026-10-11 | [Hill-Climbing Skills: Improve Agents Without Changing the Model — Shubhankar Srivastava, Browserbase](2026-10-11-p7gaxmCUiIU.md) |
