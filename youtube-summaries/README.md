@@ -3,7 +3,7 @@
 채널 [AI Engineer](https://www.youtube.com/@aiDotEngineer) 의 새 영상을 Gemini 로 자동 요약한 모음입니다.
 생성: `backend/scripts/youtube-summarize.mjs` (GitHub Actions `youtube-summary` 크론).
 
-총 **348개**.
+총 **349개**.
 
 | 발행일 | 제목 |
 |---|---|
@@ -37,6 +37,7 @@
 | 2026-10-12 | [1,000 Agent Tasks in a Sandbox: What Breaks When LLMs Run Code — Kevin Orellana, AWS](2026-10-12-k72eLcYpVys.md) |
 | 2026-10-12 | [Sandboxes Aren't Optional: 4 Ways to Isolate Coding Agents — Robert Brennan, OpenHands](2026-10-12-iH_wV8BbS24.md) |
 | 2026-10-12 | [We Let Our Financial Planners Write the Agents — Matthew Ragone, Range](2026-10-12-gpmze-6ueGU.md) |
+| 2026-10-12 | [The Highest Loop — swyx](2026-10-12-Fva8hFosqyQ.md) |
 | 2026-10-12 | [Build a Research Agent with Claude Managed Agents (Part 2 of 4) — Anthropic](2026-10-12-FGftGOzfohc.md) |
 | 2026-10-12 | [Just-in-Time Ontologies: What Cheap Intelligence Means for Data — Hrishi Olickel, Southbridge AI](2026-10-12-Fa3hQVIKShw.md) |
 | 2026-10-12 | [Hiring Employable Agents + Startup Battlefield Finals — Howie Liu, HyperAgent](2026-10-12-EEt3ZSG4a1s.md) |
