@@ -1,123 +1,5 @@
 [
   {
-    "slug": "fw-shoes-trend-2026",
-    "categoryId": "hangeut-trend",
-    "date": "2026-09-23",
-    "h2": [
-      "런웨이가 반복해서 꺼낸 부츠 디테일",
-      "부츠 컬러를 두고 갈리는 이야기",
-      "로퍼 다섯 갈래와 1936년에 시작된 이름",
-      "가죽값이 오른다는 이야기의 근거",
-      "신어보기 전에 확인할 것과 스웨이드 손질",
-      "핵심 요약",
-      "출처"
-    ],
-    "closingClichePatterns": []
-  },
-  {
-    "slug": "winter-perfume-guide-2026",
-    "categoryId": "hangeut-trend",
-    "date": "2026-09-23",
-    "h2": [
-      "라벨의 그 영어, 부향률 표기예요",
-      "향이 바뀌는 세 단계, 탑에서 베이스까지",
-      "겨울엔 왜 향이 빨리 사라질까요",
-      "뿌리는 자리, 그리고 두는 자리",
-      "성분표에서 한 줄만 확인해요",
-      "요점만 다시",
-      "참고한 자료"
-    ],
-    "closingClichePatterns": []
-  },
-  {
-    "slug": "bungeoppang-street-food-2026",
-    "categoryId": "hangeut-trend",
-    "date": "2026-09-23",
-    "h2": [
-      "667원과 1350원이 한 동네에 같이 있어요",
-      "팥값이 올랐다는 방향만 같고 숫자는 갈려요",
-      "겨울 간식이 편의점과 카페 진열대로 옮겨가요",
-      "어느 노점이 열었는지는 제보 지도로 봐요",
-      "마무리 체크",
-      "참고 링크"
-    ],
-    "closingClichePatterns": []
-  },
-  {
-    "slug": "korea-sale-festa-2026",
-    "categoryId": "hangeut-trend",
-    "date": "2026-09-23",
-    "h2": [
-      "코리아세일페스타에서 K-세일페스타로",
-      "예고된 혜택, 확인된 것과 갈리는 것",
-      "작년 숫자와 나란히 보면",
-      "할인 폭에 기대를 얼마나 걸까",
-      "요점 정리",
-      "근거 자료"
-    ],
-    "closingClichePatterns": []
-  },
-  {
-    "slug": "winter-pet-care-2026",
-    "categoryId": "hangeut-trend",
-    "date": "2026-09-23",
-    "h2": [
-      "산책 나가도 되는 날씨, 숫자가 자료마다 달라요",
-      "눈길 다녀온 발, 씻기는 게 먼저예요",
-      "따뜻하게 해주려던 전기장판이 남기는 자국",
-      "정작 불은 주방 쪽에서 더 많이 나요",
-      "건조한 실내와 줄어드는 활동량",
-      "짧게 정리",
-      "참고 문서"
-    ],
-    "closingClichePatterns": []
-  },
-  {
-    "slug": "knit-storage-2026",
-    "categoryId": "hangeut-trend",
-    "date": "2026-09-23",
-    "h2": [
-      "라벨 속 숫자와 밑줄이 말하는 것",
-      "물 온도 30도 이하, 손세탁 4단계",
-      "줄어든 니트를 되살리는 순서",
-      "소재별로 다른 보풀 걷어내기",
-      "겨우내 형태를 지키는 자리 잡기",
-      "오늘의 요점",
-      "인용 출처"
-    ],
-    "closingClichePatterns": []
-  },
-  {
-    "slug": "jeju-october-travel-2026",
-    "categoryId": "hangeut-trend",
-    "date": "2026-09-23",
-    "h2": [
-      "첫날 짐 쌀 때 제일 헷갈리는 게 기온이에요",
-      "은빛 능선 세 곳, 걷는 시간이 다 달라요",
-      "축제 날짜부터 맞춰두면 동선이 쉬워져요",
-      "단풍이 목적이라면 10월은 조금 이른 편이에요",
-      "비행기표와 렌터카, 그리고 걷고 싶을 때",
-      "기억할 것",
-      "참고한 곳"
-    ],
-    "closingClichePatterns": []
-  },
-  {
-    "slug": "japan-autumn-foliage-2026",
-    "categoryId": "hangeut-trend",
-    "date": "2026-09-23",
-    "h2": [
-      "2026년 예상은 뒤로 밀렸어요",
-      "교토 절정일이 자료마다 다른 이유",
-      "도쿄와 닛코는 고도 차이가 관건",
-      "야간 조명은 확정된 것만",
-      "숙소 값이 움직이는 구간",
-      "정리하면",
-      "자료"
-    ],
-    "closingClichePatterns": []
-  },
-  {
     "slug": "kimjang-recipe-2026",
     "categoryId": "hangeut-trend",
     "date": "2026-09-23",
@@ -3338,6 +3220,122 @@
       "도마 세척·소독에서 아직 확인 못 한 것",
       "정리",
       "참고한 자료"
+    ],
+    "closingClichePatterns": []
+  },
+  {
+    "slug": "jogwang-nonhyeon-hwoguo",
+    "categoryId": "hangeut-trust",
+    "date": "2026-10-15",
+    "h2": [
+      "조광 논현이 어떤 곳인가요",
+      "광고일까, 진짜 후기일까",
+      "맛에 대한 반응은 어땠을까",
+      "한끗 판단",
+      "가볼까 말까 — 상황별로 정리"
+    ],
+    "closingClichePatterns": []
+  },
+  {
+    "slug": "windows11-pin-reset",
+    "categoryId": "hangeut-trend",
+    "date": "2026-10-15",
+    "h2": [
+      "한 줄로 말하면",
+      "Microsoft 계정과 로컬 계정, 복구 버튼부터 달라요",
+      "로컬 계정에서 PIN을 통째로 잊었을 때",
+      "PIN을 기억하면서 새 PIN으로 바꾸고 싶을 때",
+      "PIN이 비밀번호보다 안전하다고 하는 이유",
+      "공식 문서로 확인하지 못한 것들",
+      "정리",
+      "참고"
+    ],
+    "closingClichePatterns": []
+  },
+  {
+    "slug": "scallop-cleaning-guide",
+    "categoryId": "hangeut-trend",
+    "date": "2026-10-15",
+    "h2": [
+      "가리비도 패류독소 검사를 받아요, 다만 지금 상황은 확인 못 했어요",
+      "고를 때는 껍데기와 살, 그리고 냄새를 봐요",
+      "해감, 소금물 30분부터 맹물 10분까지 — 넷 다 달라요",
+      "씻는 법도 레시피마다 달라요, 한 레시피는 물을 약 6번 갈아요",
+      "찌는 시간은 7~10분 사이, 레시피마다 조건이 달라요",
+      "남으면 냉장은 하루~이틀, 냉동 기간은 모른다고 적을게요",
+      "정리",
+      "참고"
+    ],
+    "closingClichePatterns": []
+  },
+  {
+    "slug": "excel-text-to-number",
+    "categoryId": "hangeut-trend",
+    "date": "2026-10-15",
+    "h2": [
+      "초록 삼각형 오류 표시기로 바로 바꾸기",
+      "VALUE 함수로 바꾸기, 꼭 필요한 건 아니에요",
+      "선택하여 붙여넣기 Multiply로 범위 한 번에 바꾸기",
+      "숫자 서식을 직접 적용해 바꾸기",
+      "앞자리 0이 사라지고, 긴 코드가 뭉개지는 이유",
+      "방법별로 뭐가 다른가요",
+      "텍스트 나누기로도 된다는 말, 공식 문서엔 안 나와요",
+      "정리",
+      "참고"
+    ],
+    "closingClichePatterns": []
+  },
+  {
+    "slug": "jangchung-lounge-r-seoul-cafe-50-2026",
+    "categoryId": "hangeut-trend",
+    "date": "2026-10-16",
+    "h2": [
+      "선정 소식, 핵심만 짚어볼게요",
+      "서울미식 100선과는 뭐가 다른가요",
+      "지금은 발견 단계예요",
+      "선정 목록, 방문 전에 이렇게 참고하세요",
+      "정리",
+      "참고"
+    ],
+    "closingClichePatterns": []
+  },
+  {
+    "slug": "opera-gloves-2026",
+    "categoryId": "hangeut-trend",
+    "date": "2026-10-16",
+    "h2": [
+      "손목장갑과는 다른 길이, 뭐가 바뀌었나요",
+      "어디서 시작된 흐름인가요",
+      "지금 얼마나 퍼졌을까요, 솔직하게 말하면",
+      "실제로 어떻게 매치하나요",
+      "한끗 정리"
+    ],
+    "closingClichePatterns": []
+  },
+  {
+    "slug": "sailormoon-transform-prompt",
+    "categoryId": "hangeut-trend",
+    "date": "2026-10-16",
+    "h2": [
+      "한 줄로 말하면",
+      "무슨 계기로 뜬 걸까요",
+      "얼마나 뜨거운가요",
+      "직접 해보면 이래요",
+      "참고"
+    ],
+    "closingClichePatterns": []
+  },
+  {
+    "slug": "halloween-ai-costume-prompt",
+    "categoryId": "hangeut-trend",
+    "date": "2026-10-16",
+    "h2": [
+      "한 줄로 말하면",
+      "왜 하필 지금인가요",
+      "지금 상황이 이래요",
+      "복사해서 쓰는 변신 프롬프트",
+      "한끗 정리",
+      "참고한 출처"
     ],
     "closingClichePatterns": []
   }
