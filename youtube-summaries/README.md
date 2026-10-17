@@ -3,13 +3,15 @@
 채널 [AI Engineer](https://www.youtube.com/@aiDotEngineer) 의 새 영상을 Gemini 로 자동 요약한 모음입니다.
 생성: `backend/scripts/youtube-summarize.mjs` (GitHub Actions `youtube-summary` 크론).
 
-총 **349개**.
+총 **351개**.
 
 | 발행일 | 제목 |
 |---|---|
+| 2026-10-16 | [AI Agents Cut 3-Day Portfolio Builds to Minutes — Jack McDonald, Apollo & Michael Manapat, Rowspace](2026-10-16-BOWYujhIQuo.md) |
 | 2026-10-14 | [The Cost of Accessibility in AI — Jemima Abu, CAIS](2026-10-14-ZccJsdOE54M.md) |
 | 2026-10-14 | [Your AI Isn’t the Problem. Your Infrastructure Is. — Jiachen Jiang, Coder](2026-10-14-Wb2v9Phhnns.md) |
 | 2026-10-14 | [Paving the Road to Production: Governed Enterprise AI Agents — Harish Gaggar, Credit Karma](2026-10-14-tZycGA_Fbfo.md) |
+| 2026-10-14 | [65 seconds inside AI Engineer New York](2026-10-14-N58CCnPqNoo.md) |
 | 2026-10-14 | [AI Engineer NYC: OpenAI, Blackstone, Ramp, Coinbase, Apollo, Citadel, Basis, Runway, Compute Trading](2026-10-14-jiUC6IUMdvc.md) |
 | 2026-10-14 | [Your Fridge Is a Valid Payment Device — Eleonora Drykina & Nina Žižakić, In The Pocket](2026-10-14-gonAewBZxfU.md) |
 | 2026-10-14 | [How to Actually Tokenmaxx and Save Millions — Alvin Pane, OutRival](2026-10-14-8g1N_a3h9H0.md) |
