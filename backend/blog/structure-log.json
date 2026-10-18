@@ -1,175 +1,5 @@
 [
   {
-    "slug": "kimjang-recipe-2026",
-    "categoryId": "hangeut-trend",
-    "date": "2026-09-23",
-    "h2": [
-      "절임배추 50kg에 들어가는 양념 배합",
-      "소금물 농도와 절이는 시간, 왜 자료마다 다를까",
-      "사 온 절임배추를 다루는 위생 요령",
-      "담근 뒤 몇 도에서 며칠을 기다려야 할까",
-      "김장 비용은 지금 어디까지 나와 있나",
-      "요약",
-      "출처 목록"
-    ],
-    "closingClichePatterns": []
-  },
-  {
-    "slug": "jibang-writing-guide-2026",
-    "categoryId": "hangeut-trend",
-    "date": "2026-09-23",
-    "h2": [
-      "지방은 신주가 없을 때 대신 세우는 종이예요",
-      "가로 6cm, 세로 22cm 백지에 세로로 써요",
-      "현고학생부군신위, 다섯 칸으로 쪼개면 읽혀요",
-      "차례 순서는 자료마다 단계가 갈려요",
-      "성균관 권고안이 열어둔 선택지",
-      "핵심 정리",
-      "참고 출처"
-    ],
-    "closingClichePatterns": []
-  },
-  {
-    "slug": "chuseok-leftover-food-2026",
-    "categoryId": "hangeut-trend",
-    "date": "2026-09-23",
-    "h2": [
-      "연휴에 음식이 남는 건 해마다 비슷해요",
-      "냉장 며칠, 냉동 몇 달인지부터 갈라요",
-      "전과 송편은 낱개로 얼려야 안 붙어요",
-      "나물과 잡채는 냉동실 대신 팬으로",
-      "남은 전과 나물을 다시 한 끼로",
-      "한눈 요약",
-      "참고 자료 링크"
-    ],
-    "closingClichePatterns": []
-  },
-  {
-    "slug": "sulbing-hershey-bingsu",
-    "categoryId": "hangeut-trust",
-    "date": "2026-09-24",
-    "h2": [
-      "설빙과 허쉬가 함께 낸 초코 라인업",
-      "점수로 뜯어보는 광고 의심도와 후기 신뢰도",
-      "실제로 먹어본 사람들 반응은",
-      "한끗이 내린 판단",
-      "이런 분껜 추천, 이런 분껜 글쎄",
-      "참고"
-    ],
-    "closingClichePatterns": []
-  },
-  {
-    "slug": "chagee-milktea-korea",
-    "categoryId": "hangeut-trust",
-    "date": "2026-09-24",
-    "h2": [
-      "차지(CHAGEE)가 정확히 뭔가요",
-      "보도자료가 많다는 것과 진짜 후기가 있다는 것은 다른 질문이에요",
-      "줄 서서 마신 사람들은 실제로 뭐라고 하나요",
-      "그래서 지금 이 브랜드를 어떻게 보면 될까요",
-      "어떤 사람한테 맞고, 어떤 사람한테는 아직 이를까요",
-      "매장을 가본다면 참고할 곳"
-    ],
-    "closingClichePatterns": []
-  },
-  {
-    "slug": "dev-digest-2026-09-24",
-    "categoryId": "dev-digest",
-    "date": "2026-09-24",
-    "h2": [
-      "이번 회 기준",
-      "새로 공개된 도구 넷 — 샌드박스부터 그래프 DB까지",
-      "Woof 하나만 위해 만든 추론 엔진, Husky",
-      "인증 없이도 뚫리는 워드프레스 경로 순회 취약점",
-      "Colab이 구독 요금제 안으로 들어왔어요",
-      "브라우저에 에이전트를 심다, Aside",
-      "GitHub에서 이번 주 스타가 몰린 두 저장소",
-      "한눈에 정리",
-      "참고"
-    ],
-    "closingClichePatterns": []
-  },
-  {
-    "slug": "ai-weekly-2026-09-24",
-    "categoryId": "ai-trend",
-    "date": "2026-09-24",
-    "h2": [
-      "이번 주에 나온 것부터 짚어볼게요",
-      "이게 왜 신경 쓰이나 하면",
-      "그래서 나는 뭘 바꾸면 되나",
-      "아직 물음표로 남은 것들",
-      "오늘 자로 정리하면",
-      "참고"
-    ],
-    "closingClichePatterns": []
-  },
-  {
-    "slug": "pink-muhly-spots-2026",
-    "categoryId": "hangeut-trend",
-    "date": "2026-09-24",
-    "h2": [
-      "어떻게 다섯 곳을 골랐어요",
-      "1. 서울 올림픽공원 — 지하철로 바로 닿는 야생화단지",
-      "2. 서울 하늘공원 — 억새축제와 한 자리를 나눠 써요",
-      "3. 경주 첨성대 동부사적지 — 무료로 상시 열려있어요",
-      "4. 양주 나리농원 — 천일홍 축제 속 산책로",
-      "5. 제주 허브동산 — 낮과 밤이 다른 표정",
-      "한눈에 비교",
-      "예쁘지만 논란도 있어요 — 위해성 2급과 밭 에티켓",
-      "정리",
-      "참고"
-    ],
-    "closingClichePatterns": []
-  },
-  {
-    "slug": "daeha-jeoneo-festival-2026",
-    "categoryId": "hangeut-trend",
-    "date": "2026-09-24",
-    "h2": [
-      "이 정리의 기준",
-      "홍성 남당항 대하축제 — 지금 진행 중",
-      "보령 무창포 가을 대하·전어 축제 — 지금 진행 중",
-      "서천 홍원항 자연산 전어·꽃게 축제 — 이미 끝났어요",
-      "세 축제 한눈에 비교",
-      "대하 가격, 어디 기준인지 보고 봐야 해요",
-      "자연산 대하와 양식 새우, 구별할 수 있을까",
-      "정리"
-    ],
-    "closingClichePatterns": []
-  },
-  {
-    "slug": "sweet-potato-storage-2026",
-    "categoryId": "hangeut-trend",
-    "date": "2026-09-24",
-    "h2": [
-      "준비물 — 온도·습도·용기부터 확인하세요",
-      "Step 1. 보관 장소부터 정하기",
-      "Step 2. 통풍되는 용기 고르기",
-      "Step 3. 생고구마와 익힌 고구마는 다르게 두기",
-      "Step 4. 싹과 반점, 상태 구분하기",
-      "밤고구마 vs 호박고구마, 뭐가 다를까",
-      "막히면 — 자주 하는 실수",
-      "정리",
-      "참고"
-    ],
-    "closingClichePatterns": []
-  },
-  {
-    "slug": "tangerine-guide-2026",
-    "categoryId": "hangeut-trend",
-    "date": "2026-09-24",
-    "h2": [
-      "지금 보이는 귤, 노지일까 하우스일까",
-      "10월 1일 이전 출하되는 극조생, 별도 검사를 거쳐요",
-      "맛있는 귤 고르는 법",
-      "보관법 — 냉장이냐 상온이냐, 자료마다 달라요",
-      "자주 헷갈리는 것들",
-      "정리",
-      "참고"
-    ],
-    "closingClichePatterns": []
-  },
-  {
     "slug": "vlm-watch-2026-09-25",
     "categoryId": "vlm-watch",
     "date": "2026-09-25",
@@ -3177,22 +3007,6 @@
     "closingClichePatterns": []
   },
   {
-    "slug": "excel-transpose",
-    "categoryId": "hangeut-trend",
-    "date": "2026-10-14",
-    "h2": [
-      "전치, 두 가지 길 중 뭐가 다를까요",
-      "Step 1. 복사부터 해요, 잘라내기는 안 통해요",
-      "Step 2. 붙여넣기 옵션에서 전치(T) 선택하기",
-      "엑셀 표(Table)라면 이야기가 달라져요",
-      "TRANSPOSE 함수로 바꾸는 법, 확정 방식이 버전마다 달라요",
-      "#VALUE! 오류가 났을 때, 버전별로 고치는 법이 달라요",
-      "정리",
-      "참고"
-    ],
-    "closingClichePatterns": []
-  },
-  {
     "slug": "oyster-wash-storage",
     "categoryId": "hangeut-trend",
     "date": "2026-10-14",
@@ -3336,6 +3150,204 @@
       "복사해서 쓰는 변신 프롬프트",
       "한끗 정리",
       "참고한 출처"
+    ],
+    "closingClichePatterns": []
+  },
+  {
+    "slug": "excel-transpose",
+    "categoryId": "hangeut-trend",
+    "date": "2026-10-17",
+    "h2": [
+      "전치, 두 가지 길 중 뭐가 다를까요",
+      "Step 1. 복사부터 해요, 잘라내기는 안 통해요",
+      "Step 2. 붙여넣기 옵션에서 전치(T) 선택하기",
+      "엑셀 표(Table)라면 이야기가 달라져요",
+      "TRANSPOSE 함수로 바꾸는 법, 확정 방식이 버전마다 달라요",
+      "#VALUE! 오류가 났을 때, 버전별로 고치는 법이 달라요",
+      "정리",
+      "참고"
+    ],
+    "closingClichePatterns": []
+  },
+  {
+    "slug": "dishwasher-filter-spray-arm-cleaning",
+    "categoryId": "hangeut-trend",
+    "date": "2026-10-17",
+    "h2": [
+      "먼저 제품 설명서를 확인해요",
+      "1. 필터를 꺼내 찌꺼기를 씻어요",
+      "2. 분사암 구멍과 회전을 확인해요",
+      "3. 식기 적재가 물길을 막지 않는지 살펴요",
+      "청소 간격은 설명서의 사용량 기준으로",
+      "쉽게 말하면",
+      "참고"
+    ],
+    "closingClichePatterns": []
+  },
+  {
+    "slug": "knife-honing-vs-sharpening-guide",
+    "categoryId": "hangeut-trend",
+    "date": "2026-10-17",
+    "h2": [
+      "두 작업은 목적이 달라요",
+      "절삭감이 달라졌는지 확인해요",
+      "숫돌과 샤프너는 천천히 다뤄요",
+      "톱니날은 일반 칼과 다르게 봐요",
+      "쉽게 말하면",
+      "참고"
+    ],
+    "closingClichePatterns": []
+  },
+  {
+    "slug": "ddp-design-fair-2026",
+    "categoryId": "hangeut-trend",
+    "date": "2026-10-17",
+    "h2": [
+      "서울디자인위크 안의 DDP디자인페어",
+      "오늘과 내일 운영시간·입장 마감",
+      "입장권 가격과 현장 구매",
+      "어떤 전시 구역이 있나요",
+      "학생 디자이너 작업도 볼 수 있어요",
+      "방문 전에 공식 정보로 다시 확인할 점",
+      "정리",
+      "참고"
+    ],
+    "closingClichePatterns": []
+  },
+  {
+    "slug": "seoul-wow-book-festival-2026",
+    "categoryId": "hangeut-trend",
+    "date": "2026-10-17",
+    "h2": [
+      "축제 일정과 주제",
+      "장소가 나뉘어 있어요",
+      "10월 17일 토요일 시간표",
+      "티켓과 관람 전 확인할 점",
+      "관람할 프로그램을 고르는 순서",
+      "참고"
+    ],
+    "closingClichePatterns": []
+  },
+  {
+    "slug": "gangdong-prehistoric-festival-2026",
+    "categoryId": "hangeut-trend",
+    "date": "2026-10-17",
+    "h2": [
+      "10월 17일 주요 일정",
+      "입장료와 상설 프로그램은 구분해요",
+      "차량 통제와 버스 우회 확인",
+      "임시주차장 네 곳",
+      "오늘 방문 전 마지막 확인",
+      "참고"
+    ],
+    "closingClichePatterns": []
+  },
+  {
+    "slug": "car-cabin-filter-replacement",
+    "categoryId": "hangeut-trend",
+    "date": "2026-10-18",
+    "h2": [
+      "교체 주기는 차종 매뉴얼마다 달라요",
+      "먼지 많은 길을 자주 달리면 더 일찍 봐요",
+      "히터 켜는 계절 전에 확인하는 이유",
+      "준비물과 먼저 확인할 것",
+      "Step 1. 글로브박스 고정부를 분리해요",
+      "Step 2. 글로브박스 양옆을 눌러 아래로 내려요",
+      "Step 3. 필터 커버를 빼요",
+      "Step 4. 화살표가 아래를 향하게 새 필터를 넣어요",
+      "Step 5. 분해의 역순으로 조립해요",
+      "막히면 이렇게 봐요",
+      "정리",
+      "참고"
+    ],
+    "closingClichePatterns": []
+  },
+  {
+    "slug": "suneung-lunchbox-2026",
+    "categoryId": "hangeut-trend",
+    "date": "2026-10-18",
+    "h2": [
+      "먼저 확인할 것 — 점심시간과 반입 규정",
+      "Step 1. 보온도시락은 메뉴에 맞춰 골라요",
+      "Step 2. 평소 먹던 음식으로 메뉴를 정해요",
+      "Step 3. 조리는 식중독 6대 수칙대로 해요",
+      "Step 4. 담을 때는 김을 빼고 뚜껑을 닫아요",
+      "막히면 — 자주 헷갈리는 것",
+      "한눈에 보기",
+      "참고"
+    ],
+    "closingClichePatterns": []
+  },
+  {
+    "slug": "baesuk-pear-recipe",
+    "categoryId": "hangeut-trend",
+    "date": "2026-10-18",
+    "h2": [
+      "배숙은 원래 '끓여서 식히는' 화채예요",
+      "전통 배숙 만드는 순서",
+      "배 속을 파서 찌는 배숙(배찜) 손질",
+      "통후추·대추·꿀, 레시피마다 넣는 게 달라요",
+      "찌는 시간, 도구별로 비교",
+      "전기밥솥 vs 찜기, 무엇이 다를까요",
+      "만든 뒤 보관과 먹는 법",
+      "배숙 만들기 전에 짚을 다섯 가지",
+      "배숙 참고 자료"
+    ],
+    "closingClichePatterns": []
+  },
+  {
+    "slug": "duvet-washing-guide",
+    "categoryId": "hangeut-trend",
+    "date": "2026-10-18",
+    "h2": [
+      "먼저 세탁기 설명서에서 이불 코스 한도를 봐요",
+      "한 장씩, 물에 잠기게 넣어요",
+      "코스는 이불 코스, 세제는 적게 써요",
+      "소재별로 달라지는 부분",
+      "건조는 중간에 꺼내 흔들어요",
+      "막히면 — 자주 생기는 문제",
+      "정리",
+      "참고"
+    ],
+    "closingClichePatterns": []
+  },
+  {
+    "slug": "air-fryer-cleaning",
+    "categoryId": "hangeut-trend",
+    "date": "2026-10-18",
+    "h2": [
+      "시작 전에 설명서부터 펼쳐요",
+      "Step 1. 전원을 뽑고 충분히 식혀요",
+      "Step 2. 바스켓과 트레이는 불려서 닦아요",
+      "코팅은 얼마나 쉽게 벗겨질까",
+      "식기세척기, 넣어도 될까요",
+      "Step 3. 열선 쪽 기름때는 물 없이 가볍게",
+      "Step 4. 바깥과 통풍구까지 마무리해요",
+      "종이호일·전용 시트, 이렇게 쓰면 위험해요",
+      "자주 막히는 순간",
+      "한 번에 보는 요약",
+      "출처"
+    ],
+    "closingClichePatterns": []
+  },
+  {
+    "slug": "git-cherry-pick-guide",
+    "categoryId": "hangeut-trend",
+    "date": "2026-10-18",
+    "h2": [
+      "시작 전에: 받는 브랜치로 옮기고 작업 트리를 비워요",
+      "Step 1. 커밋 하나만 골라 오기",
+      "Step 2. 여러 커밋을 콕콕 집어 오기",
+      "Step 3. 범위로 가져오기, A..B와 A^..B의 한 커밋 차이",
+      "Step 4. 충돌이 나면 --continue, --skip, --abort 중 하나로 빠져나와요",
+      "-x로 \"어디서 가져왔는지\" 꼬리표 달기",
+      "병합 커밋을 가져올 땐 -m으로 기준 부모를 정해요",
+      "-n으로 커밋 없이 변경만 모으기",
+      "이럴 땐 cherry-pick보다 병합이 나아요",
+      "GitHub Desktop에서는 우클릭으로 해요",
+      "처음 써 볼 때 많이 막히는 지점",
+      "한 장으로 다시 보기",
+      "근거로 삼은 git 문서"
     ],
     "closingClichePatterns": []
   }

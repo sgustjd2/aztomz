@@ -1,0 +1,49 @@
+{
+  "slug": "git-cherry-pick-guide",
+  "keyword": "git cherry-pick 사용법",
+  "date": "2026-10-18",
+  "sources": [
+    {
+      "title": "Git - git-cherry-pick Documentation",
+      "url": "https://git-scm.com/docs/git-cherry-pick",
+      "host": "git-scm.com",
+      "body": "공식 매뉴얼(페이지 표기 버전 2.56.0, 2026-09-28 갱신). SYNOPSIS: `git cherry-pick [--edit] [-n] [-m <parent-number>] [-s] [-x] [--ff] [-S[<keyid>]] <commit>…` 와 `git cherry-pick (--continue | --skip | --abort | --quit)`. DESCRIPTION: \"Given one or more existing commits, apply the change each one introduces, recording a new commit for each. This requires your working tree to be clean (no modifications from the HEAD commit).\" 변경을 적용하기 애매할 때(충돌): 현재 브랜치와 HEAD는 마지막으로 성공한 커밋에 머물고, CHERRY_PICK_HEAD ref가 적용하기 어려운 변경을 들여온 커밋을 가리킨다(--no-commit을 준 경우 제외). 깔끔하게 적용된 경로는 인덱스와 작업 트리 둘 다 갱신되고, 충돌 경로는 작업 트리 파일에 <<<<<<< 와 >>>>>>> 충돌 마커로 표시된다. 그 밖의 수정은 하지 않는다. OPTIONS: -e/--edit 커밋 전에 메시지 편집. -x: 커밋을 기록할 때 원래 메시지에 \"(cherry picked from commit …)\" 줄을 덧붙여 어느 커밋에서 가져왔는지 표시한다. 충돌 없이 끝난 cherry-pick에만 붙는다. 개인 브랜치에서 가져올 땐 받는 사람에게 쓸모없는 정보라 쓰지 말고, 공개된 두 브랜치 사이(예: 개발 브랜치의 수정을 옛 릴리스 유지보수 브랜치로 백포트)라면 유용하다. -m <parent-number>/--mainline: \"Usually you cannot cherry-pick a merge because you do not know which side of the merge should be considered the mainline.\" 메인라인 부모 번호(1부터 시작)를 지정하면 그 부모 기준으로 변경을 재생한다. -n/--no-commit: 커밋을 만들지 않고 변경을 작업 트리와 인덱스에만 적용한다. 이때는 인덱스가 HEAD와 같지 않아도 된다. 여러 커밋의 효과를 연달아 인덱스에 모을 때 유용하다. CHERRY_PICK_HEAD를 기록하지 않아 이후 git commit은 본인을 작성자로 기록한다. -s/--signoff: Signed-off-by 트레일러 추가. --ff: 현재 HEAD가 가져올 커밋의 부모와 같으면 fast forward. --allow-empty: 원래 빈 커밋은 기본적으로 실패하는데 이를 보존. --empty=(drop|keep|stop): 현재 히스토리에 이미 있는 변경과 중복(redundant)인 커밋 처리 방법. drop=버림, keep=유지, stop=적용 시점에 멈춰서 검토하게 함(기본 동작). --keep-redundant-commits는 --empty=keep의 deprecated 동의어. SEQUENCER: --continue: .git/sequencer 정보를 써서 진행 중인 작업을 이어감, 실패한 cherry-pick의 충돌을 해결한 뒤 계속할 때 쓴다. --skip: 현재 커밋을 건너뛰고 나머지 순서를 계속. --quit: 진행 중 작업을 잊음(sequencer 상태 정리). --abort: 작업을 취소하고 시작 전 상태로 돌아감. EXAMPLES: `git cherry-pick master` = master 끝 커밋의 변경을 새 커밋으로. `git cherry-pick ..master` 또는 `git cherry-pick ^HEAD master` = master의 조상이지만 HEAD의 조상은 아닌 모든 커밋의 변경을 새 커밋들로. `git cherry-pick maint next ^master` 또는 `git cherry-pick maint master..next`. `git cherry-pick master~4 master~2` = master가 가리키는 뒤에서 다섯 번째와 세 번째 커밋의 변경을 적용해 새 커밋 2개 생성. `git cherry-pick -n master~1 next` = 커밋은 만들지 않고 작업 트리와 인덱스에만 적용. 충돌 예시: `git cherry-pick topic^` → 패치가 깔끔히 적용되지 않아 충돌 정보가 인덱스와 작업 트리에 쓰이고 새 커밋은 생기지 않음 → `git diff`로 맞춰야 할 변경 요약 → `git cherry-pick --abort`로 cherry-pick 전 상태로 돌아감(작업 트리의 로컬 수정은 보존) → `git cherry-pick -Xpatience topic^`로 문맥 줄 매칭에 시간을 더 써서 재시도."
+    },
+    {
+      "title": "Git - gitrevisions Documentation",
+      "url": "https://git-scm.com/docs/gitrevisions",
+      "host": "git-scm.com",
+      "body": "두 점 범위 표기: \"you can ask for commits that are reachable from r2 excluding those that are reachable from r1 by ^r1 r2 and it can be written as r1..r2.\" 즉 r1..r2는 r2에서 닿는 커밋 중 r1과 그 조상을 뺀 것(r1 자신은 포함되지 않음). ^ 접두 표기: ^r1 r2는 r2에서 닿는 커밋 중 r1(r1과 그 조상)을 제외. 접미 <rev>^는 그 커밋의 첫 번째 부모, ^<n>은 n번째 부모. <rev>~<n>은 첫 부모만 따라 n세대 위 조상(<rev>~3 = <rev>^^^). r1^! 표기는 r1 하나만 가리킨다. <rev>^-<n>은 <rev>^<n>..<rev>의 줄임."
+    },
+    {
+      "title": "5.3 Distributed Git - Maintaining a Project (Pro Git)",
+      "url": "https://git-scm.com/book/en/v2/Distributed-Git-Maintaining-a-Project",
+      "host": "git-scm.com",
+      "body": "Rebasing and Cherry-Picking Workflows 절: \"A cherry-pick in Git is like a rebase for a single commit. It takes the patch that was introduced in a commit and tries to reapply it on the branch you're currently on.\" 토픽 브랜치에 커밋이 여러 개인데 그중 하나만 통합하고 싶을 때, 또는 토픽 브랜치에 커밋이 하나뿐이라 rebase 대신 cherry-pick하고 싶을 때 유용하다. 예시 `$ git cherry-pick e43a6` 출력에 master에 새 커밋 a0a41a9가 생김. \"This pulls the same change introduced in e43a6, but you get a new commit SHA-1 value, because the date applied is different.\" 이후 토픽 브랜치를 지우고 원치 않는 커밋은 버리면 된다."
+    },
+    {
+      "title": "Git - gitworkflows Documentation",
+      "url": "https://git-scm.com/docs/gitworkflows",
+      "host": "git-scm.com",
+      "body": "\"There are two main tools that can be used to include changes from one branch on another: git-merge and git-cherry-pick. Merges have many advantages, so we try to solve as many problems as possible with merges alone. Cherry-picking is still occasionally useful\" \"Most importantly, merging works at the branch level, while cherry-picking works at the commit level.\" Rule: Merge upwards — 수정은 그것이 필요한 가장 오래된 지원 브랜치에 커밋하고 통합 브랜치를 위로 병합한다. master에 적용한 수정이 maint에도 필요하면 cherry-pick으로 아래로 가져와야 하며, \"This will happen a few times and is nothing to worry about unless you do it very frequently.\""
+    },
+    {
+      "title": "Cherry-picking a commit in GitHub Desktop (GitHub Docs)",
+      "url": "https://docs.github.com/en/desktop/managing-commits/cherry-picking-a-commit-in-github-desktop",
+      "host": "docs.github.com",
+      "body": "\"You can cherry-pick a commit on one branch to create a copy of the commit with the same changes on another branch.\" 잘못된 브랜치에 커밋했거나 같은 변경을 다른 브랜치에도 하고 싶을 때, PR을 만들거나 병합하기 전에 특정 변경을 먼저 적용할 때(예: 기능 브랜치에 커밋한 버그 수정을 다른 브랜치로) 쓴다. 일부 프로젝트는 기여를 cherry-pick으로 받는다. GitHub Desktop 절차: Current Branch 클릭 → 가져올 커밋이 있는 브랜치 선택 → History → 커밋 선택(Command/Ctrl 또는 Shift로 여러 개) → 우클릭 Cherry pick commit 후 대상 브랜치 선택(또는 커밋을 Current Branch 드롭다운으로 드래그) → 원격에 푸시."
+    }
+  ],
+  "cannotSay": [
+    "Atlassian 튜토리얼 본문(본문을 직접 읽지 못해 인용하지 않음)",
+    "cherry-pick 후 원본 브랜치를 merge하면 항상 충돌한다는 단정",
+    "충돌 해결 후 git add 등 구체적 해결 절차(조사 범위 밖 — 충돌 해결 글 개념 언급만)",
+    "직접 명령을 실행해 봤다는 표현",
+    "GitLab·Bitbucket 웹 UI 절차"
+  ],
+  "notes": [
+    "A^..B 가 A를 포함한다는 설명은 gitrevisions의 r1..r2(r1 제외)와 <rev>^(첫 부모) 정의를 조합한 것이며, 직선 히스토리 기준으로만 쓴다.",
+    "명령 문법은 git-scm.com 2.56.0 매뉴얼 SYNOPSIS·EXAMPLES와 일치시켰다.",
+    "공식 자료 5건(git-scm 4, GitHub Docs 1)을 본문까지 읽었다."
+  ]
+}
