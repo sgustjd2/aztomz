@@ -3,10 +3,13 @@
 채널 [AI Engineer](https://www.youtube.com/@aiDotEngineer) 의 새 영상을 Gemini 로 자동 요약한 모음입니다.
 생성: `backend/scripts/youtube-summarize.mjs` (GitHub Actions `youtube-summary` 크론).
 
-총 **351개**.
+총 **354개**.
 
 | 발행일 | 제목 |
 |---|---|
+| 2026-10-17 | [The AI Bill Is Too Damn High: Tokenomics 101 — Eugene Cheah, Featherless AI](2026-10-17-Ti-BmGU1_mQ.md) |
+| 2026-10-17 | [Memory-Aware Agent Harnesses for Anti-Money Laundering — Nacho Martinez, Oracle](2026-10-17-KtBivPzmOM8.md) |
+| 2026-10-17 | [An AI Agent Got Its User Banned From Resy — Keycard, JPMorgan Chase & AAuth](2026-10-17-IavxrdVnwXM.md) |
 | 2026-10-16 | [AI Agents Cut 3-Day Portfolio Builds to Minutes — Jack McDonald, Apollo & Michael Manapat, Rowspace](2026-10-16-BOWYujhIQuo.md) |
 | 2026-10-14 | [The Cost of Accessibility in AI — Jemima Abu, CAIS](2026-10-14-ZccJsdOE54M.md) |
 | 2026-10-14 | [Your AI Isn’t the Problem. Your Infrastructure Is. — Jiachen Jiang, Coder](2026-10-14-Wb2v9Phhnns.md) |
