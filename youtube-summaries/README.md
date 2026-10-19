@@ -3,10 +3,14 @@
 채널 [AI Engineer](https://www.youtube.com/@aiDotEngineer) 의 새 영상을 Gemini 로 자동 요약한 모음입니다.
 생성: `backend/scripts/youtube-summarize.mjs` (GitHub Actions `youtube-summary` 크론).
 
-총 **354개**.
+총 **358개**.
 
 | 발행일 | 제목 |
 |---|---|
+| 2026-10-18 | [Insurance Claims Are AI's Messiest Data Problem — Denys Linkov, Wisedocs](2026-10-18-W4pnzOURwHQ.md) |
+| 2026-10-18 | [Evals for High-Stakes AI Agents — Doneyli De Jesus & Annabell Schäfer, Langfuse](2026-10-18-obfPzbapMIM.md) |
+| 2026-10-18 | [Stop Telling Agents How — Dan Barrett, Raymond Weitekamp & Jose Montes de Oca, OpenProse](2026-10-18-7T-gldvgfpo.md) |
+| 2026-10-18 | [Why AI Agents Still Won't Pay for Anything — Jan Curn, Apify](2026-10-18--AOxpwVeIWw.md) |
 | 2026-10-17 | [The AI Bill Is Too Damn High: Tokenomics 101 — Eugene Cheah, Featherless AI](2026-10-17-Ti-BmGU1_mQ.md) |
 | 2026-10-17 | [Memory-Aware Agent Harnesses for Anti-Money Laundering — Nacho Martinez, Oracle](2026-10-17-KtBivPzmOM8.md) |
 | 2026-10-17 | [An AI Agent Got Its User Banned From Resy — Keycard, JPMorgan Chase & AAuth](2026-10-17-IavxrdVnwXM.md) |
