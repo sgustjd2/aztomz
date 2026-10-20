@@ -273,7 +273,7 @@
       <a class="wordmark" href="index.html">한<b>끗</b></a>
       <span class="issue">오늘 ${H.todayStr()} 기준</span>
       <button class="nav-toggle" type="button" aria-label="메뉴 열기" aria-expanded="false" aria-controls="mastNav">☰</button>
-      <nav id="mastNav">
+      <nav id="mastNav" aria-label="주 메뉴">
         <a href="index.html">오늘의 한끗</a>
         <a href="list.html?type=ad">광고일까 진짜일까</a>
         <a href="list.html?type=trend">요즘 트렌드</a>
@@ -308,7 +308,7 @@
         a.setAttribute('aria-current','page');
       }
     });
-    // 모바일 메뉴 토글 (≤760px). 링크 누르면 닫힘.
+    // 좁은 화면의 사이드 드로어 토글. 링크를 누르거나 바깥을 누르면 닫힘.
     const tg=host.querySelector('.nav-toggle'), nv=host.querySelector('#mastNav');
     if(tg && nv){
       const setOpen=(o)=>{ nv.classList.toggle('open',o); tg.setAttribute('aria-expanded',String(o)); tg.setAttribute('aria-label',o?'메뉴 닫기':'메뉴 열기'); tg.textContent=o?'✕':'☰'; };
