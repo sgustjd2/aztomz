@@ -3,10 +3,16 @@
 채널 [AI Engineer](https://www.youtube.com/@aiDotEngineer) 의 새 영상을 Gemini 로 자동 요약한 모음입니다.
 생성: `backend/scripts/youtube-summarize.mjs` (GitHub Actions `youtube-summary` 크론).
 
-총 **358개**.
+총 **364개**.
 
 | 발행일 | 제목 |
 |---|---|
+| 2026-10-19 | [Version-Controlled Search: The Web as It Was — Ryan Ahern, Exa](2026-10-19-vS2IA9pq0Q4.md) |
+| 2026-10-19 | [The Model Swap Workshop: GPT-5.5 vs Kimi vs DeepSeek vs Mistral — Pamela Fox, Microsoft](2026-10-19-UGjk3Uk0MxM.md) |
+| 2026-10-19 | [Backtest Your Agent Against Yesterday's Web — Ryan Ahern, Exa](2026-10-19-L4dUFimVDKU.md) |
+| 2026-10-19 | [Buy, Build, Deploy: Using M&A to Drive AI Transformation — Prathik Naidu, Long Lake](2026-10-19-J7n3WJnFTto.md) |
+| 2026-10-19 | [Smarter Models Killed the Harness. Here's What's Left — Jediah Katz, SpaceXAI](2026-10-19-7Y4sbZgBdnc.md) |
+| 2026-10-19 | [How to Know When an AI Agent Can Work Unsupervised — Evan Kormos, Coinbase](2026-10-19-_4Ph2dhmUFI.md) |
 | 2026-10-18 | [Insurance Claims Are AI's Messiest Data Problem — Denys Linkov, Wisedocs](2026-10-18-W4pnzOURwHQ.md) |
 | 2026-10-18 | [Evals for High-Stakes AI Agents — Doneyli De Jesus & Annabell Schäfer, Langfuse](2026-10-18-obfPzbapMIM.md) |
 | 2026-10-18 | [Stop Telling Agents How — Dan Barrett, Raymond Weitekamp & Jose Montes de Oca, OpenProse](2026-10-18-7T-gldvgfpo.md) |
