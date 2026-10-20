@@ -15,7 +15,7 @@
 <meta name="twitter:title" content="내 보관함 — 한끗" />
 <meta name="twitter:description" content="이 브라우저에만 저장된 한끗 로컬 보관함입니다." />
 <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-<link rel="stylesheet" href="assets/styles.css" />
+<link rel="stylesheet" href="assets/styles.css?v=yozm-editorial-20261021" />
 <style>
   .vault-hero{padding:34px 0 10px;border-bottom:1px solid var(--line)}
   .vault-hero h1{font-size:34px;font-weight:900;line-height:1.12;letter-spacing:0;margin:12px 0 8px}
@@ -51,7 +51,7 @@
   <div class="wrap reading"><div id="main"></div></div>
 
 <script src="data/trends.js"></script>
-<script src="assets/app.js"></script>
+<script src="assets/app.js?v=yozm-editorial-20261021"></script>
 <script>
   H.boot();
   render();
@@ -89,7 +89,7 @@
     box.innerHTML = items.map(t=>`
       <a class="savedrow" href="trend.html?id=${t.id}">
         ${H.coverHTML(t)}
-        <span><span class="s-t">${H.esc(t.title)}</span><br><span class="s-l">${H.esc(t.label)} ${H.freshChip(t.analyzedAt)}</span></span>
+        <span><span class="s-t">${H.esc(t.title)}</span><br><span class="s-l">${H.esc(t.label)}</span></span>
         <button class="unsave" data-id="${t.id}">저장 해제</button>
       </a>`).join('');
     H.qa('.unsave').forEach(b=> b.onclick=async (e)=>{ e.preventDefault(); await H.resolve(H.toggleSave(b.dataset.id)); H.toast('저장을 해제했어요'); renderSaved(); });

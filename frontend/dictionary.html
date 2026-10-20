@@ -15,7 +15,7 @@
 <meta name="twitter:title" content="MZ 사전 — 요즘 말, 1초에 해석 | 한끗" />
 <meta name="twitter:description" content="요즘 유행어·밈·신조어를 뜻, 예문, 예쁜 우리말, 출처와 함께 확인하세요." />
 <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-<link rel="stylesheet" href="assets/styles.css" />
+<link rel="stylesheet" href="assets/styles.css?v=yozm-editorial-20261021" />
 <style>
   .lead{padding:36px 0 8px;border-bottom:1px solid var(--line)}
   .lead h1{font-size:38px;font-weight:900;line-height:1.12;letter-spacing:0;margin:12px 0 10px}
@@ -29,19 +29,19 @@
   .dict-search:focus{outline:none;border-color:var(--pulse)}
   .dict-count{font-size:13px;color:var(--ink-2);font-family:var(--serif)}
   /* 단어 카드 그리드 */
-  .dlist{display:grid;grid-template-columns:repeat(auto-fill,minmax(228px,1fr));gap:14px;margin:8px 0 30px}
-  .dword{display:flex;flex-direction:column;background:var(--card);border:1.5px solid var(--line);border-radius:14px;
-    padding:17px 16px;text-decoration:none;color:inherit;transition:.14s}
-  .dword:hover{border-color:var(--pulse);transform:translateY(-2px);box-shadow:0 10px 24px rgba(44,38,27,.08)}
-  .dw-top{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:9px}
-  .dw-term{font-size:22px;font-weight:900;letter-spacing:0;color:var(--ink);margin-right:auto}
-  .dw-def{margin:0;font-size:14.5px;color:var(--body);line-height:1.5;word-break:keep-all}
-  .dw-ex{margin-top:11px;font-size:13px;color:var(--ink-2);background:var(--paper-2);border-radius:9px;
-    padding:9px 11px;line-height:1.45;word-break:keep-all}
-  .dw-kr{margin-top:11px;font-size:13px;color:var(--trust);font-weight:800}
-  .dw-more{margin-top:11px;font-size:12px;color:var(--ink-2);font-weight:700}
-  .dw-arch{font-size:11.5px;font-weight:800;color:var(--ink-2);background:var(--paper-2);
-    border:1px solid var(--line);border-radius:4px;padding:2px 7px}
+  .dlist{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin:8px 0 28px;align-items:start}
+  .dword{display:flex;flex-direction:column;background:var(--card);border:1px solid var(--line);border-radius:11px;
+    padding:14px;text-decoration:none;color:inherit;transition:border-color .14s,background .14s}
+  .dword:hover{border-color:#c5ceda;background:var(--paper-soft)}
+  .dw-top{display:flex;align-items:center;gap:7px;flex-wrap:wrap;margin-bottom:7px}
+  .dw-term{font-size:18px;font-weight:800;line-height:1.35;letter-spacing:-.02em;color:var(--ink);margin-right:auto}
+  .dw-def{margin:0;font-size:13.5px;color:var(--body);line-height:1.55;word-break:keep-all}
+  .dw-ex{margin-top:9px;font-size:12.5px;color:var(--ink-2);background:transparent;border-left:2px solid var(--line);
+    padding:2px 0 2px 9px;line-height:1.5;word-break:keep-all}
+  .dw-kr{margin-top:8px;font-size:12.5px;color:var(--trust);font-weight:750}
+  .dw-more{margin-top:8px;font-size:11.5px;color:var(--ink-2);font-weight:700}
+  .dw-arch{font-size:10.5px;font-weight:750;color:var(--ink-2);background:var(--paper-2);
+    border:1px solid var(--line);border-radius:4px;padding:1px 6px}
   .dword.is-arch{opacity:.62}
   .dword.is-arch:hover{opacity:.85}
   .dict-empty{padding:40px 0;text-align:center;color:var(--ink-2)}
@@ -77,23 +77,22 @@
   </div>
 
 <script src="data/trends.js"></script>
-<script src="assets/app.js"></script>
+<script src="assets/app.js?v=yozm-editorial-20261021"></script>
 <script>
   H.boot();
   const SLANG = H.TRENDS.filter(t=>t.coverCat==='cat-slang' || t.cat==='신조어')
     // 신선한 단어 먼저, 한물간 건 뒤로(가나다순)
     .sort((a,b)=> (H.isFreshSlang(b)-H.isFreshSlang(a)) || (a.title||'').localeCompare(b.title||'', 'ko'));
 
-  const ff = H.feedFreshness();
-  H.q('#freshline').innerHTML = `오늘 <b style="font-style:normal;color:var(--ink)">${H.todayStr()}</b> 기준 · 단어 ${SLANG.length}개`
-    + (H.generatedAt ? ` · 마지막 갱신 ${H.fmtISO(H.generatedAt)} <span class="fresh-chip ${ff.cls}" style="font-style:normal">${ff.text}</span>` : '');
+  H.q('#freshline').innerHTML = `단어 ${SLANG.length}개`
+    + (H.generatedAt ? ` · 기준일 ${H.fmtISO(H.generatedAt)}` : '');
 
   const def = (t)=> t.def || (t.excerpt||'').split(/(?<=[.!?。])\s/)[0] || t.excerpt || '';
   const row = (t)=>`
     <a class="dword${H.isFreshSlang(t)?'':' is-arch'}" href="trend.html?id=${encodeURIComponent(t.id)}">
       <div class="dw-top">
         <span class="dw-term">${H.esc(t.title)}</span>
-        ${H.isFreshSlang(t)?H.freshChip(t.analyzedAt):'<span class="dw-arch">지난</span>'}
+        ${t.analyzedAt ? `<time class="dw-date" datetime="${H.esc(t.analyzedAt)}" aria-label="분석일 ${H.fmtISO(t.analyzedAt)}">${H.fmtISO(t.analyzedAt)}</time>` : ''}
       </div>
       <p class="dw-def">${H.esc(def(t))}</p>
       ${t.example?`<div class="dw-ex">"${H.esc(t.example)}"</div>`:''}

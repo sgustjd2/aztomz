@@ -10,8 +10,6 @@
 
   const CATS = ['전체', '테크', 'K뷰티', '헬스', '푸드', '금융', '교육', '패션', '엔터', '라이프', '등산', '관광'];
   const PI = { Google: 'G', YouTube: 'YT', Instagram: 'IG', TikTok: 'TT', X: 'X' };
-  // 분야 → 커버 색(슬러그). styles.css의 .pcat-* 와 매칭
-  const PCAT = { '테크': 'tech', 'K뷰티': 'beauty', '헬스': 'health', '푸드': 'food', '금융': 'finance', '교육': 'edu', '패션': 'fashion', '엔터': 'enter', '라이프': 'life', '등산': 'hiking', '관광': 'travel' };
   const IDEA_CAP = 80;
 
   /* ---------- 점수 → tier/라벨 (한끗 토큰 기반) ---------- */
@@ -54,25 +52,24 @@
   H.pulse.card = function (t, opts) {
     opts = opts || {};
     const tt = tierOf(t.total);
-    const stamp = opts.today ? '이번 주' : `${tt.mark}${tt.label}`;
-    const pcat = PCAT[t.cat] || 'life';
+    const stamp = opts.today ? '이번 주' : tt.label;
     return `<article class="tp-card" data-id="${H.esc(t.id)}">
-      <div class="cover tp-cover pcat-${pcat}">
-        <span class="c-kicker">${H.esc(t.cat)}</span>
-        <span class="c-buzz">▲ +${H.esc(t.gr)}%</span>
-        <span class="c-stamp">${H.esc(stamp)}</span>
-        <span class="c-title">${H.esc(t.kw)}</span>
-      </div>
       <div class="tp-body">
+        <div class="tp-card-head">
+          <span class="tp-cat">${H.esc(t.cat)}</span>
+          <span class="tp-growth">+${H.esc(t.gr)}%</span>
+          <span class="tp-badge ${tt.tier}">${H.esc(stamp)}</span>
+        </div>
+        <h3 class="tp-kw">${H.esc(t.kw)}</h3>
         <div class="tp-meta">
           <span class="tp-pl">${platformsHTML(t.pl)}</span>
-          ${H.freshChip(t.date || D.generatedAt)}
+          ${(t.date || D.generatedAt) ? `<time class="tp-date" datetime="${H.esc(t.date || D.generatedAt)}">수집 ${H.fmtISO(t.date || D.generatedAt)}</time>` : ''}
           <span class="tp-spark ${tt.tier}">${spark(t.sp, 66, 20)}</span>
         </div>
         <p class="tp-why">${H.esc(t.why)}</p>
         ${t.angle ? `<div class="tp-angle"><b>핵심 각도</b> · ${H.esc(t.angle)}</div>` : ''}
-        <div class="tp-more">빠른 창업 아이디어 3개 보기</div>
-        <div class="tp-ideas" hidden>
+        <button class="tp-more" type="button" aria-expanded="false" aria-controls="tpIdeas-${H.esc(t.id)}-${opts.today ? 'week' : 'radar'}">아이디어 3개 보기</button>
+        <div class="tp-ideas" id="tpIdeas-${H.esc(t.id)}-${opts.today ? 'week' : 'radar'}" hidden>
           <div class="tp-ideas-h">빠른 창업 아이디어 3</div>
           <ol class="tp-idea-list">${quickIdeasOf(t).map((s) => `<li>${H.esc(s)}</li>`).join('')}</ol>
           <div class="tp-ideas-foot">
@@ -114,7 +111,7 @@
     const box = H.q('#tpDaily'); if (!box) return;
     const daily = (D.daily || []);
     if (!daily.length) {
-      box.innerHTML = `<div class="tp-daily-empty">아직 이번 주 트렌드가 없어요. 매주 자동으로 채워집니다.${D.generatedAt ? ' · ' + H.freshChip(D.generatedAt) : ''}</div>`;
+      box.innerHTML = `<div class="tp-daily-empty">아직 이번 주 트렌드가 없어요. 매주 자동으로 채워집니다.</div>`;
       return;
     }
     box.innerHTML = daily.map((t) => H.pulse.card(t, { today: true })).join('');
@@ -222,8 +219,16 @@
       }
       if (e.target.closest('[data-future]')) { H.toast('라이브 AI 분석은 곧 제공됩니다'); return; }
       const card = e.target.closest('.tp-card'); if (!card) return;
-      const ideas = H.q('.tp-ideas', card); if (ideas) ideas.hidden = !ideas.hidden;
-      card.classList.toggle('open');
+      const ideas = H.q('.tp-ideas', card);
+      if (ideas) {
+        ideas.hidden = !ideas.hidden;
+        const disclosure = H.q('.tp-more', card);
+        if (disclosure) {
+          disclosure.setAttribute('aria-expanded', String(!ideas.hidden));
+          disclosure.textContent = ideas.hidden ? '아이디어 3개 보기' : '아이디어 접기';
+        }
+        card.classList.toggle('open', !ideas.hidden);
+      }
     };
     // 카드 펼침 + 빠른 아이디어
     H.q('#tpRadar').addEventListener('click', handleCardArea);
@@ -247,9 +252,8 @@
   H.pulse.init = function () {
     const fresh = H.q('#tpFresh');
     if (fresh) {
-      const f = H.pulse.feedFreshness();
       fresh.innerHTML = `트렌드 ${D.trends.length}건` +
-        (D.generatedAt ? ` · 마지막 갱신 ${H.fmtISO(D.generatedAt)} <span class="fresh-chip ${f.cls}">${f.text}</span>` : '');
+        (D.generatedAt ? ` · 기준일 ${H.fmtISO(D.generatedAt)}` : '');
     }
     S.view = (['weekly','radar','ideas'].includes(H.param('tab'))) ? H.param('tab') : 'weekly';
     renderTabs(); renderFilter(); renderList(); renderDaily();

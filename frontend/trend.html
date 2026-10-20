@@ -15,7 +15,7 @@
 <meta name="twitter:title" content="한끗 — 트렌드 분석" />
 <meta name="twitter:description" content="광고 의심도·실제 후기 신뢰도·만족도를 나눠 보는 한끗 트렌드 상세 분석." />
 <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-<link rel="stylesheet" href="assets/styles.css" />
+<link rel="stylesheet" href="assets/styles.css?v=yozm-editorial-20261021" />
 <style>
   .crumb{font-size:13.5px;color:var(--ink-2);margin:18px 0 14px}
   .crumb a{color:var(--accent);text-decoration:none;font-weight:700}
@@ -89,7 +89,7 @@
   <div class="wrap reading"><div id="main"></div></div>
 
 <script src="data/trends.js"></script>
-<script src="assets/app.js"></script>
+<script src="assets/app.js?v=yozm-editorial-20261021"></script>
 <script>
   H.boot();
   const id = H.param('id');
@@ -196,24 +196,22 @@
     const related = (sameCat.length ? sameCat : H.TRENDS.filter(x=>x.id!==t.id)).slice(0,2);
     const relatedTitle = t.cat==='신조어' ? '관련 사전 항목' : '함께 보기';
     main.innerHTML = `
-      <div class="crumb"><a href="index.html">홈</a> › ${H.esc(t.cat)}</div>
-      ${H.coverHTML(t,{tall:true})}
-      <div class="d-head"><span class="kicker">${H.esc(t.cat)} · ${H.esc(t.buzz)}</span></div>
-      <h1 class="d-title">${H.esc(t.title)}</h1>
-      ${t.def?`<p class="d-def">${H.esc(t.def)}</p>`:''}
-      <div><span class="label ${t.labelCls}">${H.esc(t.label)}</span></div>
-      <div class="tags">
-        <a class="tag-chip date" href="index.html?date=${encodeURIComponent(t.collectedAt||t.analyzedAt)}">${H.esc(t.collectedAt||t.analyzedAt)} 수집</a>
-        ${(t.tags||[]).map(tg=>`<a class="tag-chip" href="index.html?tag=${encodeURIComponent(tg)}">#${H.esc(tg)}</a>`).join('')}
-      </div>
-      <div class="freshline">분석일 ${H.fmtISO(t.analyzedAt)} ${H.freshChip(t.analyzedAt)} · 오늘 ${H.todayStr()} 기준</div>
-      ${H.freshness(t.analyzedAt).cls==='stale' ? `<div class="stale-banner">주의: 이 분석은 ${H.daysSince(t.analyzedAt)}일 전 기준이에요. 유행은 빨리 바뀌니 방문 전 최신 상황을 다시 확인하세요.</div>` : ''}
-      <div class="d-actions">
-        <button class="save-btn ${saved?'on':''}" id="saveBtn">${saved?'저장됨':'저장'}</button>
-        <button class="save-btn" id="shareBtn">공유</button>
-      </div>
-      ${videoBlock()}
+      <header class="detail-header">
+        <div class="crumb"><a href="index.html">홈</a> <span aria-hidden="true">/</span> ${H.esc(t.cat)}</div>
+        ${H.coverHTML(t,{tall:true})}
+        <div class="detail-title-group">
+          <div class="d-head"><span class="kicker">${H.esc(t.cat)}${t.buzz?` · ${H.esc(t.buzz)}`:''}</span></div>
+          <h1 class="d-title">${H.esc(t.title)}</h1>
+          ${t.def?`<p class="d-def">${H.esc(t.def)}</p>`:''}
+          <div class="detail-meta"><span class="label ${H.esc(t.labelCls||'mid')}">${H.esc(t.label)}</span><span class="freshline"><a class="detail-date-link" href="index.html?date=${encodeURIComponent(t.collectedAt||t.analyzedAt||'')}">수집 ${H.fmtISO(t.collectedAt||t.analyzedAt)}</a>${t.analyzedAt&&t.analyzedAt!==(t.collectedAt||t.analyzedAt)?` · 분석 ${H.fmtISO(t.analyzedAt)}`:''}</span></div>
+          <div class="tags">${(t.tags||[]).map(tg=>`<a class="tag-chip" href="index.html?tag=${encodeURIComponent(tg)}">#${H.esc(tg)}</a>`).join('')}</div>
+          <div class="d-actions"><button class="save-btn ${saved?'on':''}" id="saveBtn">${saved?'저장됨':'저장'}</button><button class="save-btn" id="shareBtn">공유</button></div>
+        </div>
+      </header>
+      ${H.freshness(t.analyzedAt).cls==='stale' ? `<div class="stale-banner">오래된 분석이에요. 유행은 빨리 바뀌니 방문 전 최신 상황을 다시 확인하세요.</div>` : ''}
       ${scoresBlock()}
+      ${t.type==='신뢰분석'? `<section class="analysis-summary"><div class="media-h">한끗 판단</div><p class="verdict">${H.esc(t.verdict)}</p></section>`:''}
+      ${videoBlock()}
       ${t.pull?`<blockquote class="pull">${H.esc(t.pull)}</blockquote>`:''}
       ${galleryBlock()}
       ${t.prompt?`<div class="prompt-box">
@@ -225,7 +223,7 @@
       </div>`:''}
       ${t.example?`<div class="usage"><div class="u-label">이렇게 써요</div><p class="u-ex">"${H.esc(t.example)}"</p></div>`:''}
       ${t.pureKorean?`<div class="pure-kr"><b>예쁜 우리말로 바꾼다면</b> · ${H.esc(t.pureKorean)}</div>`:''}
-      <p class="verdict">${H.esc(t.verdict)}</p>
+      ${t.type!=='신뢰분석'? `<p class="verdict">${H.esc(t.verdict)}</p>`:''}
       ${articleBlock()}
       ${shopsBlock()}
       <div class="sec-head"><span class="no">·</span><h2>이런 분께</h2></div>

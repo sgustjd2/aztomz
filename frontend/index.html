@@ -15,45 +15,39 @@
 <meta name="twitter:title" content="한끗 — 요즘 유행, 광고야 진짜야?" />
 <meta name="twitter:description" content="SNS 맛집·디저트의 광고 의심도, 후기 신뢰도, 만족도를 따로 보는 트렌드 번역소." />
 <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-<link rel="stylesheet" href="assets/styles.css" />
-<style>
-  .lead{padding:40px 0 8px;border-bottom:1px solid var(--line)}
-  .lead h1{font-size:42px;font-weight:900;line-height:1.12;letter-spacing:0;margin:14px 0 12px;text-wrap:balance}
-  .lead h1 .hl{color:var(--accent)}
-  /* 줄을 균형 있게 — 끝에 '다.' 한 글자만 남는 고아줄 방지(특히 모바일). 폭도 살짝 좁혀 비율 정리 */
-  .lead p{font-size:16px;color:var(--body);max-width:40ch;margin:0;text-wrap:balance;word-break:keep-all}
-  .lead .meta{margin-top:16px;font-family:var(--serif);font-style:normal;font-size:13.5px;color:var(--ink-2)}
-  @media(max-width:520px){.lead h1{font-size:33px}}
-  .fx-scores{display:flex;gap:8px;margin:6px 0 14px;flex-wrap:wrap}
-  .fx-scores .s{font-size:13.5px;font-weight:900;border:1px solid var(--line);border-radius:999px;padding:6px 11px;background:var(--paper-soft)}
-  .fx-scores .s b{font-family:var(--serif)}
-  .fx-scores .s.ad b{color:var(--accent)} .fx-scores .s.tr b{color:var(--green)}
-</style>
+<link rel="stylesheet" href="assets/styles.css?v=yozm-editorial-20261021" />
+
 </head>
-<body>
+<body class="home-redesign app-redesign">
   <div data-mast></div>
-  <div class="wrap">
+  <main class="wrap home-content">
+    <div class="home-intro" id="homeIntro">
 
     <section class="lead">
-      <span class="kicker">AZ와 MZ는 한 끗 차이</span>
-      <h1>요즘 그 맛집,<br><span class="hl">광고야 진짜야?</span></h1>
-      <p>SNS 노출이 많다고 좋은 곳은 아니에요. 광고 의심도·실제 후기 신뢰도·만족도를 <b>따로</b> 분석해, 지금 가도 될지 1분에 알려드립니다.</p>
+      <span class="kicker">TREND & REVIEW</span>
+      <h1>요즘의 발견,<br><span class="hl">한끗으로 읽다</span></h1>
+      <p>새로운 트렌드와 맛집 후기를 살펴보고, 광고 신호와 실제 반응을 나눠 정리합니다.</p>
       <div class="freshline" id="freshline"></div>
     </section>
 
     <article class="featured reveal" id="featured"></article>
+    </div>
 
-    <div class="sec-head" id="ad"><span class="no">01</span><h2>광고일까 진짜일까</h2><span class="note">노출 ≠ 좋은 곳</span></div>
-    <nav class="index" id="indexList" aria-label="광고 분석 랭킹"></nav>
-    <div class="more-row" id="adMore" hidden></div>
+    <section class="home-section" id="trend">
+      <div class="sec-head"><span class="no">01</span><h2>지금 주목할 한끗</h2><a class="trend-all" href="list.html?type=trend">전체 보기 →</a></div>
+      <div class="cat-filter" id="catFilter" role="group" aria-label="카테고리 필터"></div>
+      <div class="strip" id="stripList"></div>
+      <div class="strip-empty" id="stripEmpty" hidden>이 카테고리엔 아직 트렌드가 없어요.</div>
+      <div class="more-row" id="stripMore" hidden></div>
+    </section>
 
-    <div class="sec-head" id="trend"><span class="no">02</span><h2>요즘 트렌드</h2><span class="note">지금 따라 해도 되나?</span></div>
-    <div class="cat-filter" id="catFilter" role="tablist" aria-label="카테고리 필터"></div>
-    <div class="strip" id="stripList"></div>
-    <div class="strip-empty" id="stripEmpty" hidden>이 카테고리엔 아직 트렌드가 없어요.</div>
-    <div class="more-row" id="stripMore" hidden></div>
+    <section class="home-section" id="ad">
+      <div class="sec-head"><span class="no">02</span><h2>최근 분석</h2><span class="note">광고 신호와 후기 신뢰도를 함께 살펴봤어요</span></div>
+      <nav class="index" id="indexList" aria-label="최근 광고 분석"></nav>
+      <div class="more-row" id="adMore" hidden></div>
+    </section>
 
-    <section class="empty" style="margin-top:34px">
+    <section class="empty home-request" style="margin-top:34px">
       <div class="e-mark">Ask</div>
       <h3>이것도 광고야 진짜야?</h3>
       <p>궁금한 맛집·디저트를 던져주시면 다음 호에 분석해 올려요</p>
@@ -67,10 +61,10 @@
       <div class="fwm">한<b>끗</b></div>
       AZ와 MZ는 한 끗 차이 · 트렌드 번역소<br>SNS 이미지 무단 사용 없이 링크·자체요약 중심으로 운영합니다.
     </footer>
-  </div>
+  </main>
 
 <script src="data/trends.js"></script>
-<script src="assets/app.js"></script>
+<script src="assets/app.js?v=yozm-editorial-20261021"></script>
 <script>
   H.boot();
   const href = (id)=>`trend.html?id=${encodeURIComponent(id)}`;
@@ -78,8 +72,15 @@
   // 🔖 필터 모드: ?tag=X(해시태그) 또는 ?date=YYYY-MM-DD(수집일) → 해당 트렌드만, 나머지 홈 숨김
   const _tag = H.param('tag');
   const _date = H.param('date');
+  const collectionRow = (t)=>{
+    const image = H.coverImg(t);
+    const thumb = image
+      ? `<img src="${H.esc(image)}" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove();this.parentNode.classList.add('is-empty')"><span class="collection-fallback">${H.esc(String(t.cat||'한끗').slice(0,2))}</span>`
+      : `<span class="collection-fallback" style="display:flex">${H.esc(String(t.cat||'한끗').slice(0,2))}</span>`;
+    const kind = t.type==='신뢰분석' ? '광고 분석' : '트렌드';
+    return `<a class="collection-row" href="${href(t.id)}"><span class="collection-thumb" aria-hidden="true">${thumb}</span><span><span class="collection-meta"><span class="collection-type">${kind}</span><span aria-hidden="true">·</span><span>${H.esc(t.cat||'')}</span>${t.buzz?`<span aria-hidden="true">·</span><span>${H.esc(t.buzz)}</span>`:''}</span><span class="collection-title">${H.esc(t.title)}</span>${H.summary(t)?`<span class="collection-summary">${H.esc(H.summary(t, 120))}</span>`:''}</span></a>`;
+  };
   if(_tag || _date){
-    const card = (t)=>`<a class="chip-card" href="${href(t.id)}">${H.coverHTML(t)}<div class="cc-meta"><div class="cc-stage">${H.esc(t.cat)}</div><div class="cc-title">${H.esc(t.title)}</div></div></a>`;
     const sec = document.createElement('section');
     sec.style.margin = '8px 0 20px';
     if(_date === 'all'){
@@ -88,15 +89,15 @@
       H.TRENDS.forEach(t=>{ const d=t.collectedAt||t.analyzedAt||'미상'; (g[d]=g[d]||[]).push(t); });
       const dates = Object.keys(g).sort().reverse();
       sec.innerHTML = `<div class="sec-head"><span class="no">날짜</span><h2>수집 기록</h2><span class="note">${H.TRENDS.length}개 · <a href="index.html" style="color:var(--accent);font-weight:700">← 전체 트렌드</a></span></div>`
-        + dates.map(d=>`<div class="date-group"><div class="date-group-h">${H.esc(d)} <span>${g[d].length}개</span></div><div class="strip" style="margin-top:10px">${g[d].map(card).join('')}</div></div>`).join('');
+        + dates.map(d=>`<div class="date-group"><div class="date-group-h">${H.esc(H.fmtISO(d))} <span>${g[d].length}개</span></div><div class="collection-list">${g[d].sort((a,b)=>(b.analyzedAt||'').localeCompare(a.analyzedAt||'')).map(collectionRow).join('')}</div></div>`).join('');
       document.title = `수집 기록 — 한끗`;
     } else {
       const matched = _date
         ? H.TRENDS.filter(t=>(t.collectedAt||t.analyzedAt)===_date)
         : H.TRENDS.filter(t=>(t.tags||[]).includes(_tag));
-      const head = _date ? `${H.esc(_date)} 수집` : `#${H.esc(_tag)}`;
+      const head = _date ? `${H.esc(H.fmtISO(_date))} 수집` : `#${H.esc(_tag)}`;
       sec.innerHTML = `<div class="sec-head"><span class="no">${_date?'날짜':'#'}</span><h2>${head}</h2><span class="note">${matched.length}개 · <a href="index.html" style="color:var(--accent);font-weight:700">← 전체 트렌드</a></span></div>`
-        + (matched.length ? `<div class="strip" style="margin-top:14px">${matched.map(card).join('')}</div>` : `<div class="strip-empty" style="display:block">해당 ${_date?'날짜':'태그'}의 트렌드가 없어요. <a href="index.html" style="color:var(--accent)">전체 보기</a></div>`);
+        + (matched.length ? `<div class="collection-list">${matched.map(collectionRow).join('')}</div>` : `<div class="strip-empty" style="display:block">해당 ${_date?'날짜':'태그'}의 트렌드가 없어요. <a href="index.html" style="color:var(--accent)">전체 보기</a></div>`);
       document.title = `${head} — 한끗`;
     }
     const wrap = document.querySelector('#featured').closest('.wrap');  // 본문 wrap (헤더 .wrap 아님)
@@ -105,20 +106,19 @@
   }
 
   // 오늘 날짜 + 데이터 신선도 (브라우저 시계 기준, 라이브)
-  const ff = H.feedFreshness();
   H.q('#freshline').innerHTML =
-    `오늘 <b style="font-style:normal;color:var(--ink)">${H.todayStr()}</b> 기준 · 분석 ${H.TRENDS.length}건`
-    + (H.generatedAt ? ` · 마지막 갱신 ${H.fmtISO(H.generatedAt)} <span class="fresh-chip ${ff.cls}" style="font-style:normal">${ff.text}</span>` : '');
+    `분석 ${H.TRENDS.length}건`
+    + (H.generatedAt ? ` · 기준일 ${H.fmtISO(H.generatedAt)}` : '');
 
   // 수집일별 보기 — 최근 수집일 칩(클릭 → ?date= 필터)
   const _colDates = [...new Set(H.TRENDS.map(t=>t.collectedAt||t.analyzedAt).filter(Boolean))].sort().reverse().slice(0,7);
   if(_colDates.length){
     const dn = document.createElement('div');
     dn.className = 'date-nav';
-    dn.innerHTML = '<span class="date-nav-label">수집일별</span>'
-      + _colDates.map(d=>`<a class="tag-chip" href="index.html?date=${encodeURIComponent(d)}">${d}</a>`).join('')
-      + `<a class="tag-chip" href="index.html?date=all" style="font-weight:800;border-color:var(--ink-2)">전체 기록 →</a>`;
-    H.q('#freshline').insertAdjacentElement('afterend', dn);
+    dn.innerHTML = `<span class="date-nav-label">수집일</span><div class="date-nav-list" role="group" aria-label="최근 수집일">`
+      + _colDates.map(d=>`<a class="date-nav-date" href="index.html?date=${encodeURIComponent(d)}" aria-label="${d} 수집 기록 보기">${H.esc(H.fmtISO(d))}</a>`).join('')
+      + `</div><a class="date-nav-all" href="index.html?date=all">전체 기록 <span aria-hidden="true">→</span></a>`;
+    H.q('#ad .sec-head').insertAdjacentElement('afterend', dn);
   }
 
   // 오늘의 한끗 = '가장 최근 재확인된' 광고/진짜 분석. 매일 1건씩 재확인되면(recheck-ad) 그게 뜬다.
@@ -132,7 +132,7 @@
     <a href="${href(f.id)}" style="text-decoration:none;color:inherit">${H.coverHTML(f,{tall:true})}</a>
     <div class="fx-body">
       <div style="display:flex;align-items:center;gap:8px;margin-top:2px">
-        <span class="kicker">오늘의 한끗</span>${H.freshChip(f.analyzedAt)}
+        <span class="kicker">오늘의 한끗</span><span class="it-date">분석 ${H.fmtISO(f.analyzedAt)}</span>
       </div>
       <h3>${H.esc(f.title)}</h3>
       <div class="fx-scores">
@@ -144,14 +144,14 @@
       <a class="more" href="${href(f.id)}">전체 분석 읽기 →</a>
     </div>`;
 
-  // 홈은 '미리보기' — 상위 N개만 노출하고 나머지는 더보기 → 전체 목록(list.html)
+  // 홈은 짧은 미리보기만 노출하고 나머지는 더보기 → 전체 목록(list.html)
   const HOME_AD_MAX = 6;     // 광고 분석 (2단 × 3행)
   const HOME_TREND_MAX = 8;  // 트렌드 카드 (대략 2행)
 
   // ranked index = 신뢰분석들 (최근 재확인 순 → 매일 재확인된 항목이 위로)
   const analyses = H.TRENDS.filter(t=>t.type==='신뢰분석')
     .sort((a,b)=> (b.analyzedAt||'').localeCompare(a.analyzedAt||''));
-  H.q('#indexList').innerHTML = analyses.slice(0, HOME_AD_MAX).map((t,i)=>H.adRowHTML(t, i+1)).join('');
+  H.q('#indexList').innerHTML = analyses.slice(0, HOME_AD_MAX).map((t,i)=>H.adRowHTML(t, i+1, {editorial:true})).join('');
   const adMore = H.q('#adMore');
   if(analyses.length > HOME_AD_MAX){
     adMore.innerHTML = `<a class="btn more-btn" href="list.html?type=ad">광고 분석 전체보기 <b>+${analyses.length-HOME_AD_MAX}</b></a>`;
@@ -167,6 +167,7 @@
 
   function renderStrip(){
     const list = activeCat==='전체' ? trends : trends.filter(t=>t.cat===activeCat);
+    H.q('.trend-all').href = `list.html?type=trend${activeCat==='전체'?'':`&cat=${encodeURIComponent(activeCat)}`}`;
     H.q('#stripList').innerHTML = list.slice(0, HOME_TREND_MAX).map(H.trendCardHTML).join('');
     H.q('#stripEmpty').hidden = list.length>0;
     const more = H.q('#stripMore');
@@ -182,7 +183,7 @@
   function renderFilter(){
     H.q('#catFilter').innerHTML = cats.map(c=>{
       const n = c==='전체' ? trends.length : trends.filter(t=>t.cat===c).length;
-      return `<button class="cat-chip${c===activeCat?' on':''}" role="tab" aria-selected="${c===activeCat}" data-cat="${H.esc(c)}">${H.esc(c)} <span class="cc-n">${n}</span></button>`;
+      return `<button class="cat-chip${c===activeCat?' on':''}" aria-pressed="${c===activeCat}" data-cat="${H.esc(c)}">${H.esc(c)} <span class="cc-n">${n}</span></button>`;
     }).join('');
     H.qa('#catFilter .cat-chip').forEach(b=> b.onclick=()=>{
       if(activeCat===b.dataset.cat) return;

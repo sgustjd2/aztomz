@@ -15,9 +15,9 @@
 <meta name="twitter:title" content="전체 목록 — 한끗" />
 <meta name="twitter:description" content="한끗의 광고 분석과 요즘 트렌드 전체 목록을 카테고리와 페이지로 둘러보세요." />
 <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-<link rel="stylesheet" href="assets/styles.css" />
+<link rel="stylesheet" href="assets/styles.css?v=yozm-editorial-20261021" />
 <style>
-  .list-lead{padding:34px 0 14px;border-bottom:1px solid var(--line)}
+  .list-lead{padding:24px 0 20px;border-bottom:1px solid var(--line)}
   .list-lead h1{font-size:34px;font-weight:900;line-height:1.14;letter-spacing:0;margin:12px 0 10px;text-wrap:balance}
   .list-lead h1 .hl{color:var(--pulse)}
   .list-lead p{font-size:15.5px;color:var(--body);max-width:42ch;margin:0;word-break:keep-all}
@@ -49,7 +49,7 @@
   </div>
 
 <script src="data/trends.js"></script>
-<script src="assets/app.js"></script>
+<script src="assets/app.js?v=yozm-editorial-20261021"></script>
 <script>
   H.boot();
 
@@ -81,7 +81,7 @@
     H.q('#lDesc').textContent = '밈·신조어·음식·디저트·핫플을 한곳에. 카테고리로 좁혀 보세요.';
   }
   H.q('#lFresh').innerHTML = `전체 <b style="font-style:normal;color:var(--ink)">${ALL.length}</b>건`
-    + (H.generatedAt ? ` · 마지막 갱신 ${H.fmtISO(H.generatedAt)}` : '');
+    + (H.generatedAt ? ` · 기준일 ${H.fmtISO(H.generatedAt)}` : '');
 
   const cats = ['전체', ...new Set(ALL.map(t=>t.cat))];
   const filtered = ()=> activeCat==='전체' ? ALL : ALL.filter(t=>t.cat===activeCat);
@@ -111,11 +111,17 @@
     H.q('#lEmpty').hidden = list.length > 0;
     const host = H.q('#lList');
     if(type==='ad'){
-      host.className = 'index';
-      host.innerHTML = slice.map((t,i)=>H.adRowHTML(t, start + i + 1)).join('');
+      host.className = 'index editorial-feed';
+      host.innerHTML = slice.map(t=>{
+        const tags=(t.tags||[]).slice(0,4).map(tag=>`<span class="it-tag">#${H.esc(tag)}</span>`).join('');
+        const date=t.analyzedAt?t.analyzedAt.replace(/-/g,'.'):'';
+        return `<a class="analysis-card" href="${H.detailHref(t.id)}">${H.thumbHTML(t)}<span class="analysis-card-body"><span class="it-cat">${H.esc(t.cat)}${t.buzz?`<span aria-hidden="true">·</span>${H.esc(t.buzz)}`:''}</span><span class="it-title">${H.esc(t.title)}</span>${H.summary(t)?`<span class="it-desc">${H.esc(H.summary(t,96))}</span>`:''}${tags?`<span class="it-tags">${tags}</span>`:''}<span class="it-foot"><span class="label it-label ${H.esc(t.labelCls||'mid')}">${H.esc(t.label)}</span>${date?`<span class="it-date">분석 ${H.esc(date)}</span>`:''}</span>${H.scoreMetersHTML(t)}</span></a>`;
+      }).join('');
     } else {
-      host.className = 'strip';
-      host.innerHTML = slice.map(H.trendCardHTML).join('');
+      host.className = 'index editorial-feed';
+      host.innerHTML = slice.map((t,i)=>{
+        return H.trendCardHTML(t);
+      }).join('');
     }
     renderPager(pages);
   }

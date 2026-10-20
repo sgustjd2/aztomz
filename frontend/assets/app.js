@@ -139,6 +139,8 @@
   H.coverImg = (t)=>{
     if(t && t.video && t.video.youtube) return `https://i.ytimg.com/vi/${t.video.youtube}/hqdefault.jpg`;
     const im = t && t.images && t.images[0];
+    // 수집 원문에 대표 사진이 없는 항목은 안전한 편집 이미지로 보완
+    if(!im && t && t.id==='dotori-oven-seongsu') return 'assets/generated/dotori-oven-editorial.png';
     return im ? (typeof im==='string'?im:im.u) : '';
   };
   H.coverHTML = (t, opts={})=>{
@@ -154,23 +156,52 @@
       ${stamp}
     </div>`;
   };
+  H.thumbHTML = (t)=>{
+    const image=H.coverImg(t);
+    if(image) return `<span class="idx-thumb has-image" aria-hidden="true"><img src="${H.esc(image)}" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove();this.parentNode.classList.add('is-empty')"><span class="idx-thumb-fallback">${H.esc(String(t.cat||'한끗').slice(0,2))}</span></span>`;
+    return `<span class="idx-thumb is-generated" aria-hidden="true">${H.coverHTML(t)}</span>`;
+  };
   // 상세 페이지 링크 (모든 페이지가 frontend/ 루트에 있어 상대경로로 동작)
   H.detailHref = (id)=> `trend.html?id=${encodeURIComponent(id)}`;
+  H.scoreMetersHTML = (t)=>{
+    const meter=(key,label)=>{
+      const value=Math.max(0,Math.min(100,Number(t[key])||0));
+      return `<span class="mrow ${key==='ad'?'ad':'trust'}" role="group" aria-label="${label} ${value}점"><span class="m-label">${label}</span><b class="m-value">${value}</b><span class="mbar" role="meter" aria-label="${label} 점수" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${value}" aria-valuetext="${value}점"><i style="width:${value}%;${value?'min-width:4px;':''}"></i></span></span>`;
+    };
+    return `<span class="mini" role="group" aria-label="분석 점수">${meter('ad','광고 의심')}${meter('trust','후기 신뢰')}</span>`;
+  };
   // 광고 분석 랭킹 행 (홈 #ad · list.html?type=ad 공용) — rank: 1-based 표시 순번
-  H.adRowHTML = (t, rank)=>`
-    <a class="idx-row" href="${H.detailHref(t.id)}">
+  H.adRowHTML = (t, rank, opts={})=>{
+    if(!opts.editorial){
+      return `
+      <a class="idx-row" href="${H.detailHref(t.id)}">
+        <span class="rank">${String(rank).padStart(2,'0')}</span>
+        <span class="t">
+          <span class="it-cat">${H.esc(t.cat)} · ${H.esc(t.buzz)}</span>
+          <span class="it-title">${H.esc(t.title)}</span>
+          <span class="label it-label ${H.esc(t.labelCls||'mid')}">${H.esc(t.label)}</span>
+          ${H.summary(t)?`<span class="it-desc">${H.esc(H.summary(t, 96))}</span>`:''}
+        </span>
+        ${H.scoreMetersHTML(t)}
+      </a>`;
+    }
+    const thumb = H.thumbHTML(t);
+    const tags = (t.tags||[]).slice(0,5).map(tag=>`<span class="it-tag">#${H.esc(tag)}</span>`).join('');
+    const analyzedDate = t.analyzedAt ? t.analyzedAt.replace(/-/g,'.') : '';
+    return `
+    <a class="idx-row has-thumb" href="${H.detailHref(t.id)}">
+      ${thumb}
       <span class="rank">${String(rank).padStart(2,'0')}</span>
       <span class="t">
-        <span class="it-title">${H.freshChip(t.analyzedAt)}${H.esc(t.title)}</span>
-        <span class="it-cat">${H.esc(t.cat)} · ${H.esc(t.buzz)}</span>
-        <span class="label it-label ${H.esc(t.labelCls||'mid')}">${H.esc(t.label)}</span>
+        <span class="it-cat"><span>${H.esc(t.cat)}</span>${t.buzz?`<span aria-hidden="true">·</span><span>${H.esc(t.buzz)}</span>`:''}</span>
+        <span class="it-title">${H.esc(t.title)}</span>
         ${H.summary(t)?`<span class="it-desc">${H.esc(H.summary(t, 96))}</span>`:''}
+        ${tags?`<span class="it-tags">${tags}</span>`:''}
+        <span class="it-foot"><span class="label it-label ${H.esc(t.labelCls||'mid')}">${H.esc(t.label)}</span>${analyzedDate?`<span class="it-date">분석 ${H.esc(analyzedDate)}</span>`:''}</span>
       </span>
-      <span class="mini">
-        <span class="mrow">광고 ${t.ad} <span class="mbar"><i style="width:${t.ad}%;background:var(--accent)"></i></span></span>
-        <span class="mrow">신뢰 ${t.trust} <span class="mbar"><i style="width:${t.trust}%;background:var(--green)"></i></span></span>
-      </span>
+      ${H.scoreMetersHTML(t)}
     </a>`;
+  };
   // 요즘 트렌드 카드 (홈 #trend · list.html?type=trend 공용)
   H.trendCardHTML = (t)=>`
     <a class="chip-card" href="${H.detailHref(t.id)}">
@@ -181,7 +212,7 @@
         ${H.summary(t)?`<div class="cc-desc">${H.esc(H.summary(t, 72))}</div>`:''}
         ${t.pureKorean?`<div class="cc-pure">우리말 · ${H.esc(t.pureKorean.split('(')[0].trim())}</div>`:''}
         ${t.prompt?`<div class="cc-prompt">프롬프트 포함</div>`:''}
-        <div class="cc-foot">${H.freshChip(t.analyzedAt)}</div>
+        <div class="cc-foot">${t.analyzedAt?`분석 ${H.esc(t.analyzedAt.replace(/-/g,'.'))}`:''}</div>
       </div>
     </a>`;
   H.toast = (msg)=>{
@@ -222,12 +253,21 @@
     set(t){ t=(t==='dark')?'dark':'light'; try{ LS.setItem(THEME_KEY,t); }catch(e){} H.theme.apply(t); H.updateThemeBtn(t); },
     toggle(){ H.theme.set(H.theme.get()==='dark'?'light':'dark'); }
   };
-  H.updateThemeBtn = (t)=>{ const b=H.q && H.q('.theme-toggle'); if(b){ b.textContent=(t==='dark')?'☀':'🌙'; b.setAttribute('aria-label',(t==='dark')?'라이트 모드로 전환':'다크 모드로 전환'); } };
+  H.updateThemeBtn = (t)=>{
+    const b=H.q && H.q('.theme-toggle');
+    if(!b) return;
+    const dark=t==='dark', label=dark?'라이트 모드':'다크 모드';
+    if(document.body.classList.contains('app-redesign')){
+      b.innerHTML=`<span class="nav-icon icon-${dark?'sun':'moon'}" aria-hidden="true"></span><span>${label}</span>`;
+    } else b.textContent=dark?'☀':'🌙';
+    b.setAttribute('aria-label',label);
+  };
   H.theme.apply(H.theme.get());  // 로드 즉시 적용(테마 깜빡임 최소화)
 
   /* ---------- masthead, injected into [data-mast] ---------- */
   H.renderMast = ()=>{
     const host=H.q('[data-mast]'); if(!host) return;
+    if(!document.body.classList.contains('home-redesign')) document.body.classList.add('app-redesign');
     host.className='mast';
     host.innerHTML=`<div class="wrap">
       <a class="wordmark" href="index.html">한<b>끗</b></a>
@@ -238,15 +278,40 @@
         <a href="list.html?type=ad">광고일까 진짜일까</a>
         <a href="list.html?type=trend">요즘 트렌드</a>
         <a href="dictionary.html">MZ 사전</a>
-        <a href="pulse.html">트렌드 펄스</a>
         <a class="vault-link" href="me.html">내 보관함</a>
         <button class="theme-toggle" type="button" aria-label="테마 전환">🌙</button>
       </nav>
     </div>`;
-    // 모바일 햄버거 토글 (≤560px). 링크 누르면 닫힘.
+    const navIcons = [
+      ['a[href="index.html"]','house'],
+      ['a[href="list.html?type=ad"]','scan-search'],
+      ['a[href="list.html?type=trend"]','chart-no-axes-combined'],
+      ['a[href="dictionary.html"]','book-open'],
+      ['a.vault-link','bookmark']
+    ];
+    navIcons.forEach(([selector,name])=>{
+      const link=host.querySelector(selector);
+      if(link && !link.querySelector('.nav-icon')){
+        const icon=document.createElement('span'); icon.className=`nav-icon icon-${name}`;
+        icon.setAttribute('aria-hidden','true'); link.prepend(icon);
+      }
+    });
+    const current = new URL(location.href);
+    const currentHref = current.pathname.split('/').pop() || 'index.html';
+    const currentListType = current.searchParams.get('type') || 'trend';
+    host.querySelectorAll('nav a').forEach(a=>{
+      const target = new URL(a.href, location.href);
+      const samePage = target.pathname.split('/').pop()===currentHref;
+      const sameListType = currentHref!=='list.html' || target.searchParams.get('type')===currentListType;
+      if(samePage && sameListType){
+        a.classList.add('is-active');
+        a.setAttribute('aria-current','page');
+      }
+    });
+    // 모바일 메뉴 토글 (≤760px). 링크 누르면 닫힘.
     const tg=host.querySelector('.nav-toggle'), nv=host.querySelector('#mastNav');
     if(tg && nv){
-      const setOpen=(o)=>{ nv.classList.toggle('open',o); tg.setAttribute('aria-expanded',String(o)); tg.textContent=o?'✕':'☰'; };
+      const setOpen=(o)=>{ nv.classList.toggle('open',o); tg.setAttribute('aria-expanded',String(o)); tg.setAttribute('aria-label',o?'메뉴 닫기':'메뉴 열기'); tg.textContent=o?'✕':'☰'; };
       tg.addEventListener('click',()=> setOpen(!nv.classList.contains('open')));
       nv.querySelectorAll('a').forEach(a=> a.addEventListener('click',()=> setOpen(false)));
       document.addEventListener('click',(e)=>{ if(nv.classList.contains('open') && !host.contains(e.target)) setOpen(false); });
