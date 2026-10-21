@@ -3,10 +3,15 @@
 채널 [AI Engineer](https://www.youtube.com/@aiDotEngineer) 의 새 영상을 Gemini 로 자동 요약한 모음입니다.
 생성: `backend/scripts/youtube-summarize.mjs` (GitHub Actions `youtube-summary` 크론).
 
-총 **364개**.
+총 **369개**.
 
 | 발행일 | 제목 |
 |---|---|
+| 2026-10-20 | [The Investor's Edge Lives in Their Head — Anekha Sokhal, Moshi](2026-10-20-UHbODjuviAU.md) |
+| 2026-10-20 | [Why AI Agents Will Need Their Own Bank Accounts — Lincoln Murr, Coinbase](2026-10-20-f_HwzoYrZ7s.md) |
+| 2026-10-20 | [Shipping AI Into 5 Major Banks Without a 12-Month Compliance Wait — Al Chen, Cisco](2026-10-20-Bz1HFxQA1o8.md) |
+| 2026-10-20 | [A Bank Built Its Own Coding Agent. It Took Off — Felipe Felisola Caso & Francesco Galletta, Monzo](2026-10-20-adfw3xJBx1o.md) |
+| 2026-10-20 | [Same GPU, 50% More Output: Why the Operator Matters — Oliver Kennon, SemiAnalysis](2026-10-20-3axY1wz2OvA.md) |
 | 2026-10-19 | [Version-Controlled Search: The Web as It Was — Ryan Ahern, Exa](2026-10-19-vS2IA9pq0Q4.md) |
 | 2026-10-19 | [The Model Swap Workshop: GPT-5.5 vs Kimi vs DeepSeek vs Mistral — Pamela Fox, Microsoft](2026-10-19-UGjk3Uk0MxM.md) |
 | 2026-10-19 | [Backtest Your Agent Against Yesterday's Web — Ryan Ahern, Exa](2026-10-19-L4dUFimVDKU.md) |
