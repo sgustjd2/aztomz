@@ -3,10 +3,15 @@
 채널 [AI Engineer](https://www.youtube.com/@aiDotEngineer) 의 새 영상을 Gemini 로 자동 요약한 모음입니다.
 생성: `backend/scripts/youtube-summarize.mjs` (GitHub Actions `youtube-summary` 크론).
 
-총 **369개**.
+총 **374개**.
 
 | 발행일 | 제목 |
 |---|---|
+| 2026-10-21 | [Is a Faster Model Actually Faster? Test the Whole Job — Morgan Suo, MiniMax](2026-10-21-YvQ4BVTWfHI.md) |
+| 2026-10-21 | [AI Cut Our Research Time From 7 Days to 15 Minutes — Gareth Yoder, Vanguard](2026-10-21-uA4ah-dVHvU.md) |
+| 2026-10-21 | [One Day, $1,000 in Tokens: An AI War Room for Legacy Code — Ford Prior, GEICO](2026-10-21-DouK81O8R3o.md) |
+| 2026-10-21 | [The AI Content System Behind 200M Views — Sarah Chieng, Cerebras & Cova Lee, OpenAI](2026-10-21-CFbnVpSsDFQ.md) |
+| 2026-10-21 | [Does Code Quality Still Matter? It Depends on This — Max Kanat-Alexander, Capital One](2026-10-21-bU5gDVyu_28.md) |
 | 2026-10-20 | [The Investor's Edge Lives in Their Head — Anekha Sokhal, Moshi](2026-10-20-UHbODjuviAU.md) |
 | 2026-10-20 | [Why AI Agents Will Need Their Own Bank Accounts — Lincoln Murr, Coinbase](2026-10-20-f_HwzoYrZ7s.md) |
 | 2026-10-20 | [Shipping AI Into 5 Major Banks Without a 12-Month Compliance Wait — Al Chen, Cisco](2026-10-20-Bz1HFxQA1o8.md) |
