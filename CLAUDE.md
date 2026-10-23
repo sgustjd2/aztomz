@@ -33,7 +33,8 @@
 | `validate-trends.mjs` | **스키마 스모크 게이트** — id 누락·중복, cat 7분류 이탈, stage 비정규 라벨, 영문 placeholder verdict, `analyzedAt` 형식 오류를 배포 전에 잡음 |
 | `check-links.mjs` | 출처 URL 상태(404) 점검 |
 | `check-source.mjs [파일] [--only=id,id]` | 출처 **본문 관련성** 점검(정확✅/약함⚠️/무관❌/차단🚫, LLM 없음) |
-| `auto-build.mjs [curate.json] [--no-git\|--dry\|--strict]` | 봇 수집분 자동검증 게이트(출처 생존·관련성 + **근거 대조** `lib/grounding.mjs`) → 통과분만 `trends.json` 반영 → refresh → git push |
+| `auto-build.mjs [curate.json] [--no-git\|--dry\|--strict\|--approved\|--none]` | 봇 수집분 자동검증 게이트(출처 생존·관련성 + **근거 대조** `lib/grounding.mjs`) → 통과분만 `trends.json` 반영 → refresh → git push. **실행마다 `backend/out/pipeline/runs.jsonl` 1줄 + 마지막 줄 `SUMMARY {json}`**(후보·게시·보류·중복·사유 코드 — 디스코드 보고 숫자의 기준), 보류 후보는 `.pipeline/review-queue.json`으로. `--none`=후보 0건 기록만, `--approved`=사람 승인분(관련성·근거 대조 대신 사람 판단, 살아 있는 출처 1개+는 필수) |
+| `pipeline-review.mjs` | **보류 후보 사람 검수 + 수집 수치** — `--list [--json]` · `--approve=<id>`(→ `auto-build --approved`) · `--reject=<id>` · `--stats [--days=14]`(날짜별 후보·게시·보류·중복·승인·버림, 기록 없는 날=수집 안 돈 날) · `--selftest`. 결정 기록 `backend/out/pipeline/reviews.jsonl`. 디스코드에서 "검수" → Hermes `hangeut-approve` 스킬이 항목별 [게시/버리기/나중에] 버튼으로 이 스크립트를 부른다 |
 | `recheck-ad.mjs` | "광고일까 진짜일까" 최고령 1건 출처 재검증(결정적·LLM 없음). 근거 대조 실패 시 홈 회전 안 하고 다음 오래된 항목 시도(최대 3) |
 | `blog-build.mjs <id>\|--latest` | **한끗** 트렌드 1건 → 티스토리용 HTML + 메타(`backend/out/blog/`). 커버는 자체 생성 카드. `--selftest` 있음 |
 | `post-build.mjs --category=<id>` | **다주제** 키워드 → 조사·초안·SEO·자가검수 → 같은 형식의 HTML+메타. `--research=<파일>`로 조사 결과 주입 · `--dry` |
@@ -248,6 +249,13 @@ Agent(
     오래된 출처로 '지금 피크' 같은 의미 오류는 못 잡는다(그건 사람 또는 LLM 대조).
   · 검증·JSON병합·git은 **결정적 스크립트가 전담**(봇이 trends.json·git을 직접 만지지 않는다).
   · 잘못 올라간 게 있으면 **사후에** 사람이 수정·삭제(자동은 검증 통과까지, 최종 책임은 사람).
+  · **보류분은 사람이 버튼으로 정한다(2026-10-23~)**: 보류 후보는 `.pipeline/review-queue.json`에 쌓이고, 디스코드에서
+    "검수"라고 하면 Hermes `hangeut-approve`가 [게시/버리기/나중에] 버튼을 띄운다. 크론 실행 중에는 Hermes가 `clarify`(버튼)를
+    못 쓰므로(`cron/scheduler.py`) 검수는 크론 보고 뒤 일반 대화에서 한다.
+  · **수치는 스크립트가 센다**: 디스코드 보고의 후보·게시·보류·중복 수는 auto-build의 `SUMMARY` 줄을 그대로 옮긴다(LLM이 세지 않음).
+    후보 0건인 날도 `auto-build.mjs --none`으로 기록한다. 2주 표: `node backend/scripts/pipeline-review.mjs --stats`.
+  · `auto-build.mjs`는 `process.exit()`를 쓰지 않는다 — fetch 뒤 `process.exit()`는 Windows Node 24에서 libuv assert로 exit 127이
+    된다(2026-10-23 재현). 종료는 `done()`(exitCode + Exit 신호)로.
 - **503 자동복구.** 메인 수집(21:30)이 Gemini 용량초과(503/429)로 죽은 날은 21:50 재시도 게이트가
   같은 모델로 1회 재실행(성공·미실행이면 no-op). 게이트까지 못 돈 날(PC 꺼짐)은 수동 백필.
   근본 대책은 **PC를 22:30까지 켜두기**. 503은 모델 무관 — GA(2.5-pro)·유료키로도 21:30엔 남.

@@ -17,11 +17,19 @@
    ▶ 신뢰 철칙 준수: 사람 대신 '자동 검증'이 게이트. 가짜·죽은 출처는 사이트에 안 올라간다.
    ▶ 게시는 검증 통과분만 — LLM이 지어낸 URL은 ddgs 본문검증에서 걸러진다.
 
+   ▶ 수치 기록(2026-10-23~): 실행마다 backend/out/pipeline/runs.jsonl 에 1줄(후보·게시·보류·중복 수,
+     보류 사유 코드)을 남기고, 마지막 줄에 `SUMMARY {json}` 을 찍는다. 디스코드 보고는 이 숫자를 그대로 쓴다.
+     보류 후보 원본은 .pipeline/review-queue.json 에 쌓여 사람이 디스코드 버튼으로 게시/버리기를 정한다
+     (pipeline-review.mjs).
+
    사용:
-     node backend/scripts/auto-build.mjs [.pipeline/curate.json] [--no-git] [--dry] [--strict]
-       --no-git : 파일은 갱신하되 git commit/push 생략 (로컬 테스트)
-       --dry    : 아무것도 쓰지 않고 검증 결과만 보고
-       --strict : '정확(핵심어 2종+)'만 통과 (기본은 '약함'(1종)도 통과)
+     node backend/scripts/auto-build.mjs [.pipeline/curate.json] [--no-git] [--dry] [--strict] [--approved]
+       --no-git   : 파일은 갱신하되 git commit/push 생략 (로컬 테스트)
+       --dry      : 아무것도 쓰지 않고 검증 결과만 보고 (기록도 안 남김)
+       --strict   : '정확(핵심어 2종+)'만 통과 (기본은 '약함'(1종)도 통과)
+       --approved : 사람이 검수 버튼으로 승인한 후보(pipeline-review.mjs 전용). 관련성·근거 대조는
+                    사람 판단으로 대신하고, 살아 있는(404/410 아님) 출처가 1개+일 때만 게시한다.
+       --none     : 오늘 후보 0건 — 아무것도 검증하지 않고 runs.jsonl 기록만 남긴다.
    종료코드: 게시 0건이어도 0(정상). 치명 오류만 1.
    env: DDGS_EXE(ddgs 실행경로, 기본 로컬 venv) — Actions에선 pip ddgs + DDGS_EXE=ddgs
    ============================================================ */
@@ -31,6 +39,7 @@ import { extract as ddgsExtract } from './lib/websearch.mjs';
 import { validateTrends } from './validate-trends.mjs';
 import { acquireGitLock } from './lib/git-lock.mjs';
 import { groundingCheck } from './lib/grounding.mjs';
+import { appendRun, enqueueHeld, loadQueue } from './lib/pipeline-log.mjs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 
@@ -44,6 +53,7 @@ const NO_GIT = args.includes('--no-git');
 const DRY = args.includes('--dry');
 const STRICT = args.includes('--strict');
 const BLOG = args.includes('--blog');       // 배포 성공 후 티스토리까지 발행
+const APPROVED = args.includes('--approved');   // 사람 승인분(pipeline-review.mjs) — 관련성·근거 게이트 대신 사람 판단
 const scriptsDir = join(repoRoot, 'backend', 'scripts');
 const curatePath = args.find(a => !a.startsWith('--')) || join(repoRoot, '.pipeline', 'curate.json');
 
@@ -158,46 +168,78 @@ function sanitizeItem(t) {
   return t;
 }
 
-// ── curate 로드
-if (!existsSync(curatePath)) { console.log(`· curate 없음(${curatePath}) — 게시할 것 없음.`); process.exit(0); }
+// ── 실행 기록: 어떤 경로로 끝나든 runs.jsonl 1줄 + `SUMMARY {json}` 1줄(--dry는 기록 안 함).
+//    디스코드 보고의 숫자는 LLM이 세지 말고 이 SUMMARY를 그대로 옮긴다.
+const published = [], held = [], skipped = [];
+let candidateCount = 0;
+const ON_SITE = new Set(['pushed', 'files_only', 'git_deferred']);   // 파일(trends.json)까지 반영된 종료
+// fetch 뒤 process.exit()는 Windows Node 24에서 libuv assert로 exit 127이 된다(2026-10-23 재현, 본문을 읽어도 같음).
+// 그래서 종료코드만 정하고 Exit 신호로 남은 흐름을 끊은 뒤 프로세스가 스스로 끝나게 둔다.
+class Exit extends Error {}
+process.on('uncaughtException', (e) => { if (e instanceof Exit) return; console.error(e); process.exitCode = 1; });
+function done(outcome, code = 0) { record(outcome); process.exitCode = code; throw new Exit(); }
+function record(outcome) {
+  const onSite = ON_SITE.has(outcome);
+  const summary = {
+    date: TODAY, at: new Date().toISOString(), mode: APPROVED ? 'approved' : 'auto', outcome,
+    candidates: candidateCount, passed: published.length, published: onSite ? published.length : 0,
+    held: held.length, duplicate: skipped.length,
+    publishedItems: onSite ? published.map(t => ({ id: t.id, title: t.title, cat: t.cat, sources: t.src.length })) : [],
+    heldItems: held.map(({ id, title, code: c, reason }) => ({ id, title, code: c, reason })),
+  };
+  if (!DRY) {
+    const toQueue = APPROVED ? [] : held.filter(h => h.id && h.cand)
+      .map(({ id, title, code: c, reason, checks, cand }) => ({ id, title, code: c, reason, heldAt: TODAY, checks, cand }));
+    summary.pendingReview = toQueue.length ? enqueueHeld(toQueue) : loadQueue().length;
+    appendRun(summary);
+  }
+  console.log('SUMMARY ' + JSON.stringify(summary));
+}
+
+// ── curate 로드 (--none: 오늘 후보 0건을 기록만 한다. 봇 파일 도구가 curate.json 덮어쓰기를 거부한 날이 있어 따로 둠)
+if (args.includes('--none')) { console.log('· 오늘 후보 없음(--none) — 기록만 남김.'); done('no_candidates'); }
+if (!existsSync(curatePath)) { console.log(`· curate 없음(${curatePath}) — 게시할 것 없음.`); done('no_candidates'); }
 let curate;
 try { curate = JSON.parse(readFileSync(curatePath, 'utf-8')); }
-catch (e) { console.error('✗ curate.json 파싱 실패:', e.message); process.exit(1); }
+catch (e) { console.error('✗ curate.json 파싱 실패:', e.message); done('curate_parse_error', 1); }
 const candidates = Array.isArray(curate) ? curate : (curate.trends || curate.candidates || curate.items || []);
-if (!candidates.length) { console.log('· curate 비어있음 — 게시할 것 없음.'); process.exit(0); }
+candidateCount = candidates.length;
+if (!candidates.length) { console.log('· curate 비어있음 — 게시할 것 없음.'); done('no_candidates'); }
 
 const data = JSON.parse(readFileSync(trendsPath, 'utf-8'));
 const trends = Array.isArray(data) ? data : (data.trends || []);
 const haveIds = new Set(trends.map(t => t.id));
 const haveTitles = new Set(trends.map(t => normTitle(t.title)));
 
-console.log(`🤖 자동 빌드 — ${TODAY} · 후보 ${candidates.length}개${STRICT ? ' (strict)' : ''}${DRY ? ' [DRY]' : ''}\n`);
+console.log(`🤖 자동 빌드 — ${TODAY} · 후보 ${candidates.length}개${STRICT ? ' (strict)' : ''}${APPROVED ? ' [사람 승인]' : ''}${DRY ? ' [DRY]' : ''}\n`);
 
-const published = [], held = [], skipped = [];
 for (const cand of candidates) {
   const title = cand.title || cand.id || '(무제)';
-  if (!cand.id) { held.push({ title, reason: 'id 없음' }); continue; }
+  if (!cand.id) { held.push({ title, code: 'no_id', reason: 'id 없음' }); continue; }
   if (haveIds.has(cand.id) || haveTitles.has(normTitle(cand.title))) { skipped.push({ title, reason: '이미 사이트에 있음' }); continue; }
 
+  const original = structuredClone(cand);   // 보류되면 검수 대기열에 원본 그대로 넣는다
   const titleKws = titleKeywords(cand), extraKws = extraKeywords(cand);
-  const good = [], goodBodies = [];
+  const good = [], goodBodies = [], checks = [];
   const ogImgs = [];   // 검증 통과 출처의 og:image (썸네일 자동 주입용)
   for (const [name, url] of srcPairs(cand)) {
     const st = await httpStatus(url);
-    if (st === 404 || st === 410) { console.log(`   ❌ ${st} 죽음  ${name}`); continue; }
+    if (st === 404 || st === 410) { console.log(`   ❌ ${st} 죽음  ${name}`); checks.push({ name, url, status: st, verdict: '죽음' }); continue; }
     const body = extract(url);
     const rel = relevance(body, titleKws, extraKws);
-    console.log(`   ${rel.pass ? '✅' : '✋'} ${rel.v}(${rel.note})  ${name}`);
-    if (rel.pass) { good.push([name, url]); goodBodies.push(body); for (const u of ogImages(body)) if (!ogImgs.includes(u)) ogImgs.push(u); }
+    const pass = rel.pass || APPROVED;   // 사람 승인분은 '살아 있음'만 확인
+    console.log(`   ${pass ? '✅' : '✋'} ${rel.v}(${rel.note})${APPROVED && !rel.pass ? ' → 사람 승인으로 통과' : ''}  ${name}`);
+    checks.push({ name, url, status: st, verdict: rel.v, note: rel.note });
+    if (pass) { good.push([name, url]); goodBodies.push(body); for (const u of ogImages(body)) if (!ogImgs.includes(u)) ogImgs.push(u); }
   }
 
   // 📏 근거 대조(2026-10-08~): 출처는 주제를 다루는데 서술이 출처 밖 수치·매체·확산 표현을 담으면 보류.
   //    출처-주제 관련성만 보던 게이트가 '13번 출구'·'체인 전국 확장'·'170만 건' 같은 서술을 통과시킨 반성(전수 감사 182중 139).
   const gr = good.length ? groundingCheck(cand, good.map(([n]) => n), goodBodies) : { pass: true, block: [], warn: [] };
   for (const w of gr.warn) console.log(`   📏⚠ ${w}`);
-  if (good.length >= 1 && !gr.pass) {
+  if (good.length >= 1 && !gr.pass && !APPROVED) {
     for (const b of gr.block) console.log(`   📏✋ ${b}`);
-    held.push({ title, reason: `근거 대조 실패 — ${gr.block.join(', ')}` });
+    held.push({ id: cand.id, title, code: 'grounding', reason: `근거 대조 실패 — ${gr.block.join(', ')}`, checks, cand: original });
     console.log(`  → 보류: ${title} (서술이 출처 밖 — 해당 문장을 출처에 있는 내용으로 고치거나 근거 출처를 src 에 추가)\n`);
   } else if (good.length >= 1) {
     cand.src = good;
@@ -217,7 +259,8 @@ for (const cand of candidates) {
     haveIds.add(cand.id); haveTitles.add(normTitle(cand.title));
     console.log(`  → 게시: ${title} (검증 출처 ${good.length}개)\n`);
   } else {
-    held.push({ title, reason: '검증 통과 출처 0개(죽음/무관/못읽음)' });
+    held.push({ id: cand.id, title, code: 'no_valid_source', checks, cand: original,
+      reason: APPROVED ? '살아 있는 출처 0개(사람 승인으로도 게시 불가)' : '검증 통과 출처 0개(죽음/무관/못읽음)' });
     console.log(`  → 보류: ${title} (검증 통과 출처 없음)\n`);
   }
 }
@@ -231,22 +274,22 @@ const report = [
 ].join('\n');
 console.log('\n' + report);
 
-if (!published.length) { console.log('\n· 게시할 검증통과 항목 없음 — 변경 없이 종료.'); process.exit(0); }
-if (DRY) { console.log('\n[DRY] 파일·git 변경 없이 종료.'); process.exit(0); }
+if (!published.length) { console.log('\n· 게시할 검증통과 항목 없음 — 변경 없이 종료.'); done('no_publish'); }
+if (DRY) { console.log('\n[DRY] 파일·git 변경 없이 종료.'); done('dry'); }
 
 // ── trends.json 갱신 + refresh
 trends.push(...published);
 const out = Array.isArray(data) ? trends : (data.trends = trends, data);
 // ── 스키마 게이트: cat 7분류 이탈·id 중복·analyzedAt 형식오류 등 깨진 데이터는 빌드/배포 전 중단
 const _v = validateTrends(Array.isArray(out) ? out : out.trends);
-if (!_v.ok) { console.error('\n⛔ 스키마 검증 실패 — 빌드·배포 중단:\n' + _v.errors.map((e) => '  · ' + e).join('\n')); process.exit(1); }
+if (!_v.ok) { console.error('\n⛔ 스키마 검증 실패 — 빌드·배포 중단:\n' + _v.errors.map((e) => '  · ' + e).join('\n')); done('schema_fail', 1); }
 if (_v.warnings.length) console.warn(`⚠ 스키마 경고 ${_v.warnings.length}건(배포는 계속)`);
 console.log('✓ 스키마 검증 통과');
 writeFileSync(trendsPath, JSON.stringify(out, null, 2) + '\n', 'utf-8');
 execFileSync('node', [refreshPath], { cwd: repoRoot, stdio: 'inherit', windowsHide: true });
 
 // ── git: 충돌 방지 위해 commit 후 pull --rebase → push
-if (NO_GIT) { console.log('\n--no-git: git 단계 생략. 게시', published.length, '건 파일 반영 완료.'); process.exit(0); }
+if (NO_GIT) { console.log('\n--no-git: git 단계 생략. 게시', published.length, '건 파일 반영 완료.'); done('files_only'); }
 
 // 다른 브랜치에 커밋해도 아래는 계속 origin/main에 push한다 — 그 결과 로컬이 branch A, 배포는
 // origin/main인 상태로 며칠간 조용히 어긋난 사고가 있었다(2026-08-09~08-15, generatedAt 6일 정체).
@@ -255,32 +298,36 @@ const curBranch = sh('git', ['rev-parse', '--abbrev-ref', 'HEAD']).trim();
 if (curBranch !== 'main') {
   console.error(`⛔ 현재 브랜치가 main이 아니라 '${curBranch}' — git 단계 중단(파일은 반영됨). ` +
     `이 스크립트는 origin/main에 push하도록 고정돼 있다. 'git checkout main' 후 재실행하거나 브랜치를 확인할 것.`);
-  process.exit(1);
+  done('git_deferred', 1);
 }
 
 // 다른 프로세스(다른 크론 실행, 인터랙티브 세션의 수동 git)와 동시에 git 단계를 밟으면
 // rebase가 깨진 채 남는다(2026-08-16 실측). 락을 못 얻으면 파일은 이미 반영됐으니 그냥 종료.
 if (!acquireGitLock(repoRoot, 'auto-build.mjs')) {
   console.log('· git 단계 보류(다른 프로세스 작업 중) — 파일은 반영됨. 다음 실행이나 수동 push로 따라잡힌다.');
-  process.exit(0);
+  done('git_deferred');
 }
 
 try {
   sh('git', ['add', 'backend/data/trends.json', 'frontend/data/trends.js']);
-  sh('git', ['commit', '-m', `auto: 트렌드 자동 게시(검증통과 ${published.length}) ${TODAY}`,
+  sh('git', ['commit', '-m', APPROVED
+      ? `review: 사람 승인 게시 ${published.length}건 ${TODAY}`
+      : `auto: 트렌드 자동 게시(검증통과 ${published.length}) ${TODAY}`,
     '-m', published.map(t => `- ${t.title}`).join('\n')]);
   try { sh('git', ['pull', '--rebase', '--autostash', 'origin', 'main']); }
   catch (e) {
     // rebase 실패를 그냥 두면 .git/rebase-merge가 남아 다음 실행까지 계속 막는다(실측: 5일간 방치).
     try { sh('git', ['rebase', '--abort']); } catch {}
     console.error('⚠ pull --rebase 실패(충돌) — abort 완료, push 보류:', (e.stderr || e.message || '').toString().slice(0, 200));
-    process.exit(0);
+    done('git_deferred');
   }
   sh('git', ['push', 'origin', 'main']);
   console.log(`\n✓ 자동 게시·배포: ${published.length}건 push 완료 → Vercel 재배포.`);
+  record('pushed');   // 블로그(--blog) 단계는 트렌드 게시 성공과 별개 — 기록은 여기서 끝낸다
 } catch (e) {
+  if (e instanceof Exit) throw e;   // 위 rebase 실패 경로가 이미 기록·종료함
   console.error('⚠ git 단계 오류(파일은 반영됨):', (e.stderr || e.message || '').toString().slice(0, 300));
-  process.exit(0);
+  done('git_deferred');
 }
 
 // ── 블로그 발행(--blog): 사이트 배포가 끝난 뒤에만 티스토리로 넘어간다.

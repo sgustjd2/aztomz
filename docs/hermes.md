@@ -14,14 +14,18 @@ Hermes는 [Nous Research](https://nousresearch.com)의 AI 에이전트 런타임
                          │
    수집 ─▶ 분석 ─▶ 정리 ─▶ .pipeline/curate.json(후보)
                               │
-                              ▼ (09:10 자동 진행)
+                              ▼ (21:30 수집 직후 자동 진행)
                     auto-build.mjs 자동검증
                    (중복·404/410·관련성·근거 대조 제거)
                               │
                     검증통과분만 ┌─────────────────────────┐
                               │                           │
                               ▼                           ▼
-      ✅ backend/data/trends.json 반영    ✋ 보류(거짓/무관/못읽음만)
+      ✅ backend/data/trends.json 반영    ✋ 보류 → .pipeline/review-queue.json
+                              │                 │ 디스코드 "검수" → 사람이 [게시/버리기/나중에]
+                              │                 ▼ pipeline-review.mjs --approve → auto-build --approved
+                              │
+      실행마다 backend/out/pipeline/runs.jsonl 1줄 + stdout `SUMMARY {json}` (보고 숫자의 기준)
                               │
           refresh.mjs ─▶ frontend/data/trends.js
                               │
@@ -29,8 +33,9 @@ Hermes는 [Nous Research](https://nousresearch.com)의 AI 에이전트 런타임
 ```
 
 - **수집·분석:** 고구미봇 온디맨드(디스코드 "한끗 실행" 명령).
-- **자동검증·게시:** auto-build.mjs가 매일 저녁 21:00 자동 실행 → 통과분만 사이트에 올라감 (사람 승인 불필요).
-- **보류:** 출처가 404·무관·못읽음만 있는 항목, 또는 서술이 출처 밖 수치·매체·확산 표현(근거 대조 실패)인 항목은 자동 보류, 디스코드에 보고.
+- **자동검증·게시:** 매일 21:30 hangeut-run 수집 후 auto-build.mjs가 실행 → 통과분만 사이트에 올라감 (사람 승인 불필요).
+- **보류:** 출처가 404·무관·못읽음만 있는 항목, 또는 서술이 출처 밖 수치·매체·확산 표현(근거 대조 실패)인 항목은 자동 보류(`.pipeline/review-queue.json`). 디스코드 보고의 수치는 auto-build의 `SUMMARY` 줄을 그대로 쓴다.
+- **사람 검수(2026-10-23~):** 디스코드에서 "검수"라고 하면 `hangeut-approve` 스킬이 보류 항목을 하나씩 버튼 카드(게시/버리기/나중에)로 보여준다. "게시"는 `pipeline-review.mjs --approve=<id>` → `auto-build.mjs --approved`로 처리하며, 살아 있는 출처 1개 이상이라는 조건은 그대로 지킨다. 결정은 `backend/out/pipeline/reviews.jsonl`에 남는다.
 
 ---
 
@@ -51,8 +56,12 @@ Hermes는 [Nous Research](https://nousresearch.com)의 AI 에이전트 런타임
 
 | 항목 | 내용 |
 |---|---|
-| 모델 | `gemini-2.5-pro(GA)` (API키, 유료 Tier-1) · provider `gemini` 단독 — fallback 없음 (2026-06-23 확정) |
-| 재시도 | `agent.api_max_retries=6` — 유료 쿼터지만 21:30 **503 잦음** → 재시도 게이트 별도(`21:50`) |
+| 주 모델 | `gpt-6-luna-900k` · provider `openai-codex`(base `chatgpt.com/backend-api/codex`) — Codex CLI와 **5시간 사용 한도를 공유** |
+| 폴백 | `fallback_providers`: provider `anthropic` · model `claude-sonnet-5` (2026-10-23 추가). 주 모델이 429 `usage_limit_reached` 등으로 실패하면 이 모델로 넘어간다 |
+| 되돌리기·주의 | 폴백 제거는 `config.yaml`의 `fallback_providers`를 지운다. 크론 잡이 모델을 고정(pin)해 두면 폴백을 타지 않는다 (2026-10-22 21:30·21:50 수집이 Codex 한도로 실패한 것이 계기) |
+| 이전 구성 | 2026-06-23~10-23: `gemini-2.5-pro`(GA) · provider `gemini` 단독, fallback 없음 |
+| 재시도 | `agent.api_max_retries=6`(config). 21:30 수집이 실패하면 `21:50` 재시도 게이트(`hangeut_retry_gate.py`)가 1회 다시 큐잉 |
+| 확인 필요 | 이전 Gemini 기준으로 적힌 "무료 쿼터·cron 3분 하드제한" 제약은 현재 Codex 구성에서 재검증하지 않았다. 실제 한도는 Codex 한도 기준으로 봐야 한다 |
 | 검색 | `ddgs.exe`(DuckDuckGo, 키 불필요) — 브라우저(Chrome)는 안 됨 |
 | 화제성 | `scripts/youtube_search.py`(YouTube Data API) — 조회수·댓글·업로드일 |
 | **한계** | 무료 쿼터(분당 소량) + **cron 3분 하드제한** → 복잡한 자동 크론은 불가. **온디맨드(인터랙티브)** 또는 **가벼운 no-agent 크론**이 현실적 |
@@ -69,6 +78,7 @@ Hermes는 [Nous Research](https://nousresearch.com)의 AI 에이전트 런타임
 | 스킬 | 역할 |
 |---|---|
 | `hangeut-run` | **원샷 오케스트레이터** — 수집→분석→정리를 한 세션에서 (검증 제외). 진입점("한끗 실행"). 결과는 `.pipeline/curate.json` 저장 |
+| `hangeut-approve` | **보류 후보 검수** — 디스코드 "검수"에 보류 항목을 버튼 카드(게시/버리기/나중에)로 띄우고 `pipeline-review.mjs`를 호출. "수집 통계"는 `--stats` 표 |
 | `hangeut-collect` | SNS·웹에서 전 분야(디저트·식당·카페·신조어·노래·패션·AI프롬프트) 수집 |
 | `hangeut-review` | PRD 룰셋으로 광고/신뢰/만족 분석 (인게이지먼트 팟=품앗이 댓글 = 광고 신호) |
 | `hangeut-curate` | JSON 정리·중복제거·디스코드 초안 |
@@ -89,6 +99,8 @@ Hermes는 [Nous Research](https://nousresearch.com)의 AI 에이전트 런타임
 | `hangeut-bgm` | 쇼츠·릴스·틱톡 **유행 배경음악** 큐레이터 (음악은 제일 빨리 식어 유튜브 급상승으로 최신성 검증) |
 | `hangeut-pulse` | **창업 트렌드 펄스** — 요일별 분야 로테이션, 트렌드별 상세 창업 아이디어 3개 |
 | `hangeut-learn` | 사용자 피드백·정정("이건 광고 아냐")을 `learnings.md`에 기록 → 다음부터 반영 |
+| `hangeut-blog` | 게시된 트렌드 1건의 검색 제목·태그·메타설명을 정해 `blog-build.mjs` → `blog-publish.mjs`로 티스토리 발행 |
+| `hangeut-shops` | 디저트·음식 트렌드의 파는 가게 목록(`shops`)을 실제 검색으로 조사 |
 
 ---
 
@@ -107,13 +119,14 @@ Hermes는 [Nous Research](https://nousresearch.com)의 AI 에이전트 런타임
 | 작업 | 주기 | 내용 |
 |---|---|---|
 | **블로그 일일 초안** (`c49cb13870e0`) | 매일 **09:00** | **2026-09-24 일시정지** — Windows 스케줄작업 `AZ2MZ_Blog_Daily`로 이관. `claude -p /blog-daily` 스킬이 4편(티스토리 2+네이버 2, 각각 다른 글 — 2026-10-07 토큰 절약으로 5+5에서 축소) 집필·검증. 발행은 `blog-queue.mjs`가 12:00·15:00·18:00에 담당. |
-| **한끗 자동 수집·게시** (신규) | 매일 **21:00** | `hangeut-run`(수집·분석) → `auto-build.mjs`(자동검증·게시). 검증통과분만 사이트 반영 · git push → Vercel 배포. **요일 로테이션 → 목 21:00 = 신조어(주간 사전 갱신)** |
+| **한끗 자동 수집·게시** (`9ddacd750b48`) | 매일 **21:30** | `hangeut-run`(수집·분석) → `auto-build.mjs`(자동검증·게시). 검증통과분만 사이트 반영 · git push → Vercel 배포. 보류분은 review-queue에 쌓이고, 후보 0건인 날은 `--none`으로 runs.jsonl에만 기록. **요일 로테이션 → 목 21:30 = 신조어(주간 사전 갱신)** |
+| **한끗 수집 재시도 게이트** | 매일 **21:50** | `hangeut_retry_gate.py`(no-agent) — 그날 21:30 수집이 error로 끝났을 때만 1회 재실행을 큐잉. 성공했거나 실행이 없었으면 아무것도 안 함 |
 | **한끗 광고/진짜 일일 재확인** (신규) | 매일 **21:15** | `recheck_ad.py`(no-agent) — 가장 오래된 신뢰분석 1건의 출처 재검증(recheck-ad.mjs) → 살아있으면 analyzedAt 갱신(→ 홈 featured 회전). 근거 대조(`lib/grounding.mjs`) 실패 시엔 회전 없이 '사람 확인 필요'로 보고하고 다음 오래된 항목(최대 3건)을 시도. 메인(21:00)과 trends.json 쓰기 충돌 방지로 15분 뒤 |
 | **한끗 주간 갱신** (`dc54cec90b5e`) | 매주 월 **21:00** | `hangeut_daily.py`(no-agent) — trends.json 날짜 스탬프 + 신선도 리포트. 무료·안 죽음 |
 | **한끗 펄스 — 오늘의 분야** (`f3a0b6724fa4`) | 매일 **21:00** | `pulse_categories.py`(no-agent) — 오늘 분석할 펄스 분야를 디스코드로 안내 |
 | **한끗 — 오늘의 수집 분야** (`bc1a98451fb7`) | 매일 **21:00** | `trend_categories.py`(no-agent) — 오늘 수집할 트렌드 분야 안내 |
 
-> ⏰ **전부 21시대(KST)** — 아침엔 PC가 꺼져 있어 저녁으로 옮김. 메인 수집·게시 21:00, 재확인만 21:15(파일 쓰기 충돌 방지). Hermes는 **로컬**이라 그 시각에 PC+게이트웨이가 켜져 있어야 실행된다(`tools/start-hermes.bat`, 로그인 시 자동 시작).
+> ⏰ **전부 21시대(KST)** — 아침엔 PC가 꺼져 있어 저녁으로 옮김. 메인 수집·게시 21:30, 재확인 21:15(파일 쓰기 충돌 방지), 재시도 게이트 21:50. Hermes는 **로컬**이라 그 시각에 PC+게이트웨이가 켜져 있어야 실행된다(`tools/start-hermes.bat`, 로그인 시 자동 시작).
 > **⚠️ auto-build.mjs·recheck-ad.mjs는 현재 브랜치가 `main`이어야 한다.** feature 브랜치에서 실행되면 pull --rebase가 silent fail → origin/main으로 push 안 됨 → 라이브 사이트가 정체됨(2026-08-09~15 사고). 안전장치 추가: 현재 브랜치 != `main`이면 exit 1 + git rebase 실패 시 abort 자동 실행.
 > 
 > **⚠️ git 동시 작업 방지 락** — auto-build.mjs·recheck-ad.mjs는 `.git/az2mz-auto.lock`으로 서로의 git 단계(pull/commit/push)를 보호해 rebase 중단을 방지한다. **단, 인터랙티브 세션의 수동 git 명령까지는 강제할 수 없다**(계기: 2026-08-16 21:15경 인터랙티브 세션과 recheck-ad 충돌). 권장: 21:00~21:15 구간(크론 시간대)에는 수동 git 작업을 피할 것.
@@ -138,8 +151,9 @@ Hermes는 [Nous Research](https://nousresearch.com)의 AI 에이전트 런타임
 
 | 명령 | 동작 |
 |---|---|
-| `한끗 실행` | hangeut-run — 수집·분석·정리 후 `.pipeline/curate.json` 저장. (저녁 21:00 자동검증·게시 또는 "한끗 개발 반영"으로 수동 실행) |
+| `한끗 실행` | hangeut-run — 수집·분석·정리 후 `.pipeline/curate.json` 저장. (저녁 21:30 자동검증·게시 또는 "한끗 개발 반영"으로 수동 실행) |
 | `한끗 개발 반영` | hangeut-build(auto-build.mjs 호출) — curate.json 항목을 자동검증 후 통과분만 trends.json 반영 + git push |
+| `검수` · `보류 검수` · `수집 통계` | hangeut-approve — 보류 후보를 버튼(게시/버리기/나중에)으로 하나씩 처리. "수집 통계"는 `pipeline-review.mjs --stats`(14일 표) |
 | `한끗 펄스` | 오늘 요일의 창업 트렌드 분야를 깊게 분석 (상세 아이디어 3개) |
 | `한끗 디자인` | 새 카드 디자인 제안 |
 | `기억해둬: …` | hangeut-learn — 교훈을 learnings.md에 기록 |
@@ -153,7 +167,9 @@ Hermes는 [Nous Research](https://nousresearch.com)의 AI 에이전트 런타임
                         │
                         ▼
             auto-build.mjs (자동검증: 중복·404·관련성·근거대조)
-                        │
+                        │                 ├─▶ 보류 ─▶ .pipeline/review-queue.json
+                        │                 │          └─ 사람 "검수" → pipeline-review.mjs → auto-build --approved
+                        │                 └─▶ runs.jsonl 1줄 + SUMMARY (수치 기록)
         검증통과분 ──▶ backend/data/trends.json (canonical 원본)
                         │ node backend/scripts/refresh.mjs
                         ▼
@@ -174,7 +190,7 @@ Hermes는 [Nous Research](https://nousresearch.com)의 AI 에이전트 런타임
 
 ## 핵심 원칙
 
-1. **자동 게시(검증 통과분만)** — auto-build.mjs가 출처 자동검증 후 통과분만 사이트 반영. 거짓·무관·404 출처만 있으면 자동 보류. 서술이 출처 밖이면(근거 대조 실패) 보류.
+1. **자동 게시(검증 통과분만)** — auto-build.mjs가 출처 자동검증 후 통과분만 사이트 반영. 거짓·무관·404 출처만 있으면 자동 보류. 서술이 출처 밖이면(근거 대조 실패) 보류. 보류분은 사람이 디스코드 "검수"로 게시 또는 버리기를 정한다(승인분도 살아 있는 출처 1개 이상은 필수).
    - 검증 게이트: 중복(id/title) · 404/410(죽음) · 본문 관련성(제목 핵심어 0개면 무관) · 근거 대조(서술 수치·매체·확산 표현 ↔ 출처 본문)
    - 잘못 올라간 건 **사후에 사람이** 수정/삭제. 최종 책임은 사람.
 2. **거짓 신선도 금지** — 실제 재분석한 것만 오늘 날짜(`analyzedAt`). 안 한 항목은 그대로.

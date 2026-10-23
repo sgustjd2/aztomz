@@ -45,6 +45,8 @@ frontend/data/trends.js  ← backend/scripts/refresh.mjs 생성물(직접 편집
 .pipeline/curate.json (선택: Hermes 후보)
     ↓
 backend/scripts/auto-build.mjs (선택: 출처 검증 + 근거 대조(`lib/grounding.mjs`) + canonical 병합)
+    ├─ 보류 후보 → .pipeline/review-queue.json → backend/scripts/pipeline-review.mjs (사람 검수: 게시=--approved / 버리기)
+    └─ 실행 기록 → backend/out/pipeline/runs.jsonl (+ 결정은 reviews.jsonl) · stdout 마지막 줄 SUMMARY {json}
     ↓
 backend/data/trends.json (canonical 원본)
     ↓
@@ -74,6 +76,7 @@ frontend/*.html
   - ⚠ 검토 필요: `tools/blog-queue.vbs`(AZ2MZ_Blog_Queue)는 `BLOG_OFFSCREEN`을 설정하지 않으므로, 2026-10-11 커밋(842a8aa) 이후 무인 대기열 창도 화면에 뜬다. 이전에는 `blog-queue.mjs`가 기본값 `BLOG_OFFSCREEN=1`을 자식 프로세스에 강제했다. 화면 밖을 원하면 스케줄 실행 환경에 변수를 넣어야 하며, 어느 쪽으로 할지는 미결정.
 - 로컬 Hermes 운영과 검증 게이트의 자세한 흐름은 [docs/hermes.md](hermes.md)를 따른다.
 
+- 한끗 자동 수집·게시: 매일 21:30 Hermes(로컬)가 `hangeut-run`으로 후보를 만들고 `backend/scripts/auto-build.mjs`가 검증·게시한다(검증 통과분만 `trends.json` 반영 후 git push). 재시도 게이트는 21:50, 광고/진짜 재확인은 21:15. 보류분은 사람이 디스코드 "검수"로 `pipeline-review.mjs`를 통해 게시 또는 버리기를 정한다.
 ## 보안 메모
 - 로그인/가입은 현재 일반 플로우에서 사용하지 않는다. `login.html`, `signup.html`은 안내 페이지로만 유지한다.
 - 사용자가 브라우저 데이터를 지우거나 다른 기기를 쓰면 저장, 후기, 펄스 아이디어가 이어지지 않는다.

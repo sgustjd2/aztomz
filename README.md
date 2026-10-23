@@ -19,7 +19,8 @@
 | `backend/` | 비공개(배포 안 됨) — 데이터 원본 + 빌드 스크립트 |
 | `backend/data/trends.json`·`pulse.json` | ★ **canonical 데이터 원본** (사람·스크립트가 수정) |
 | `youtube-summaries/` | 생성물 — AI Engineer(@aiDotEngineer) 채널 새 영상 한국어 상세 요약 모음(영상별 `.md` + 인덱스). **배포 대상 아님**(frontend/만 Vercel 배포) |
-| `backend/scripts/auto-build.mjs` | **자동 게시 엔진** — 출처 자동검증(404/410/관련성) · **근거 대조**(서술의 수치·매체·확산 표현이 출처 본문에 없으면 보류) · 중복 제거 · 통과분만 trends.json 반영 · images 필드 자동 주입(og:image) · shops 배열 URL 생존성 검증(죽은 링크 제거) · git push |
+| `backend/scripts/auto-build.mjs` | **자동 게시 엔진** — 출처 자동검증(404/410/관련성) · **근거 대조**(서술의 수치·매체·확산 표현이 출처 본문에 없으면 보류) · 중복 제거 · 통과분만 trends.json 반영 · images 필드 자동 주입(og:image) · shops 배열 URL 생존성 검증(죽은 링크 제거) · git push · 실행마다 `backend/out/pipeline/runs.jsonl` 1줄 + `SUMMARY {json}` 출력 · 보류 후보는 `.pipeline/review-queue.json`에 적재 · `--none`(후보 0건 기록) · `--approved`(사람 승인분 게시) |
+| `backend/scripts/pipeline-review.mjs` | **보류 후보 사람 검수 + 수집 수치** — `--list` · `--approve=<id>`(→ auto-build `--approved`) · `--reject=<id>` · `--stats [--days=14]` · `--selftest`. 결정은 `backend/out/pipeline/reviews.jsonl`에 기록. 디스코드 "검수"에서 Hermes `hangeut-approve`가 호출 |
 | `backend/scripts/recheck-ad.mjs` | **광고/진짜 일일 재확인** — 가장 오래된 신뢰분석 1건의 출처 재검증(ddgs) → 살아있으면 analyzedAt=오늘 갱신(→ 홈 featured 회전). 근거 대조 실패 항목은 회전 없이 '사람 확인 필요' 보고 후 다음 오래된 항목(최대 3건) 시도 · ddgs 차단으로 본문을 못 읽은 출처는 삭제하지 않고 '유지' |
 | `backend/scripts/lib/websearch.mjs` | **ddgs 래퍼**(공용 `extract`) — 차단(HTTP 430/432/500 등)되면 ddgs가 `DDGSException`을 stdout에 찍고 0으로 끝나는데, 이를 빈 본문으로 돌려줘 '무관'이 아니라 '차단(못 읽음)'으로 처리. auto-build·recheck-ad·check-source가 이 함수를 같이 쓴다 |
 | `backend/scripts/lib/grounding.mjs` | **근거 대조 게이트**(결정적·LLM 없음) — 항목 서술(excerpt·pull·verdict·satTxt·article·shops·reasons)의 수치·매체명·확산 표현이 검증 통과 출처 본문에 있는지 문자열 대조. 유래·인물 바꿔치기·의미 오류는 못 잡음. 셀프테스트: `node backend/scripts/lib/grounding.mjs` |
@@ -86,7 +87,8 @@ Vercel 자동 배포 (git push 시)
 **핵심:** 
 - trends.json만 수정. trends.js는 건드리지 말 것.
 - auto-build.mjs가 출처 자동검증(게이트) — 죽음·무관·못읽음 출처만 있으면 자동 보류 · 출처가 통과해도 서술이 출처 밖 수치·매체·확산 표현이면 보류(근거 대조)
-- 자동 게시 항목의 썸네일은 auto-build.mjs가 출처 og:image로 자동 주입 — 모든 아이템이 커버 이미지 보장
+- 보류 후보는 `.pipeline/review-queue.json`에 쌓이며, 사람이 디스코드에서 "검수"로 게시 또는 버리기를 정한다(`pipeline-review.mjs`). 게시도 살아 있는 출처 1개 이상은 필수
+- 자동 게시 항목의 썸네일은 auto-build.mjs가 출처 og:image로 자동 주입을 시도하며, 공통 카드에서 대표 이미지가 없거나 로드에 실패하면 `frontend/assets/defaults/`의 카테고리별 기본 일러스트 SVG로 대체하고 기본 이미지임을 표시한다
 - 저장/후기/펄스 아이디어는 서버에 저장되지 않는 로컬 개인화(localStorage) 기능
 - 다른 브라우저·다른 기기와 동기화되지 않으며, `H.*`는 향후 백엔드가 필요할 때를 위한 추상화 계층으로 유지
 - 디자인 톤은 `frontend/assets/styles.css`의 warm paper 기반 Neo Editorial Trend Radar를 따른다
@@ -123,7 +125,7 @@ git push origin main              # → Vercel 자동 재배포
 - **[docs/prd.md](docs/prd.md)** — 프로젝트 기획·비전
 - **[docs/architecture.md](docs/architecture.md)** — 정적 멀티페이지 구조·로컬 스토어 계약
 - **[docs/local-first.md](docs/local-first.md)** — 정적 운영·localStorage 기반 로컬 개인화 전략
-- **[docs/hermes.md](docs/hermes.md)** — 🤖 **Hermes(고구미봇) 작동 방식** — 파이프라인·스킬 12개·검증 게이트·cron
+- **[docs/hermes.md](docs/hermes.md)** — 🤖 **Hermes(고구미봇) 작동 방식** — 파이프라인·스킬 15개·검증 게이트·검수·cron
 - **[docs/menus/](docs/menus/)** — 메뉴별 상세 문서
   - [오늘의 한끗(홈)](docs/menus/home.md) / [MZ 사전](docs/menus/dictionary.md)
   - [광고일까 진짜일까](docs/menus/ad-or-real.md) / [요즘 음식](docs/menus/food.md)
