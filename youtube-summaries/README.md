@@ -3,10 +3,15 @@
 채널 [AI Engineer](https://www.youtube.com/@aiDotEngineer) 의 새 영상을 Gemini 로 자동 요약한 모음입니다.
 생성: `backend/scripts/youtube-summarize.mjs` (GitHub Actions `youtube-summary` 크론).
 
-총 **374개**.
+총 **379개**.
 
 | 발행일 | 제목 |
 |---|---|
+| 2026-10-22 | [Why AI Startups Will Disappear Without Compute Markets — Evan Conrad, San Francisco Compute](2026-10-22-Wk2bUUGFC_o.md) |
+| 2026-10-22 | [Better AI Models Won't Fix Your Engineering Team — Nicholas Arcolano, Jellyfish](2026-10-22-Ve2bAarPA2I.md) |
+| 2026-10-22 | [1,368 AI Failures and What They Teach About Evals — Vishal Srivastava & Tanmay Sah, New York Life](2026-10-22-mMw3arwQsL0.md) |
+| 2026-10-22 | [How to Test AI Agents When No Benchmark Exists — Nathanael Weill, Air Canada](2026-10-22-c_SPW__jF9w.md) |
+| 2026-10-22 | [Why AI Writing Still Reads Like Slop — Louis-François Bouchard, Towards AI](2026-10-22-_dTF3NpPzGo.md) |
 | 2026-10-21 | [Is a Faster Model Actually Faster? Test the Whole Job — Morgan Suo, MiniMax](2026-10-21-YvQ4BVTWfHI.md) |
 | 2026-10-21 | [AI Cut Our Research Time From 7 Days to 15 Minutes — Gareth Yoder, Vanguard](2026-10-21-uA4ah-dVHvU.md) |
 | 2026-10-21 | [One Day, $1,000 in Tokens: An AI War Room for Legacy Code — Ford Prior, GEICO](2026-10-21-DouK81O8R3o.md) |
