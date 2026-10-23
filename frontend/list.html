@@ -15,7 +15,7 @@
 <meta name="twitter:title" content="전체 목록 — 한끗" />
 <meta name="twitter:description" content="한끗의 광고 분석과 요즘 트렌드 전체 목록을 카테고리와 페이지로 둘러보세요." />
 <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-<link rel="stylesheet" href="assets/styles.css?v=sidebar-nav-20261021" />
+<link rel="stylesheet" href="assets/styles.css?v=shared-card-tracks-20261023" />
 <style>
   .list-lead{padding:24px 0 20px;border-bottom:1px solid var(--line)}
   .list-lead h1{font-size:34px;font-weight:900;line-height:1.14;letter-spacing:0;margin:12px 0 10px;text-wrap:balance}
@@ -35,7 +35,7 @@
       <div class="freshline" id="lFresh"></div>
     </section>
 
-    <div class="cat-filter" id="lCatFilter" role="tablist" aria-label="카테고리 필터" hidden></div>
+    <div class="cat-filter" id="lCatFilter" role="group" aria-label="카테고리 필터" hidden></div>
     <div id="lList"></div>
     <div class="strip-empty" id="lEmpty" hidden>해당 목록이 아직 없어요.</div>
     <nav class="pager" id="lPager" aria-label="페이지 이동"></nav>
@@ -49,7 +49,7 @@
   </div>
 
 <script src="data/trends.js"></script>
-<script src="assets/app.js?v=sidebar-nav-20261021"></script>
+<script src="assets/app.js?v=shared-card-tracks-20261023"></script>
 <script>
   H.boot();
 
@@ -92,7 +92,7 @@
     const host = H.q('#lCatFilter'); host.hidden = false;
     host.innerHTML = cats.map(c=>{
       const n = c==='전체' ? ALL.length : ALL.filter(t=>t.cat===c).length;
-      return `<button class="cat-chip${c===activeCat?' on':''}" role="tab" aria-selected="${c===activeCat}" data-cat="${H.esc(c)}">${H.esc(c)} <span class="cc-n">${n}</span></button>`;
+      return `<button class="cat-chip${c===activeCat?' on':''}" aria-pressed="${c===activeCat}" data-cat="${H.esc(c)}">${H.esc(c)} <span class="cc-n">${n}</span></button>`;
     }).join('');
     H.qa('#lCatFilter .cat-chip').forEach(b=> b.onclick=()=>{
       if(activeCat===b.dataset.cat) return;

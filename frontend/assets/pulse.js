@@ -103,7 +103,7 @@
   function renderFilter() {
     H.q('#tpCatFilter').innerHTML = CATS.map((c) => {
       const n = c === '전체' ? D.trends.length : D.trends.filter((t) => t.cat === c).length;
-      return `<button class="cat-chip${c === S.cat ? ' on' : ''}" role="tab" aria-selected="${c === S.cat}" data-cat="${H.esc(c)}">${H.esc(c)} <span class="cc-n">${n}</span></button>`;
+      return `<button class="cat-chip${c === S.cat ? ' on' : ''}" aria-pressed="${c === S.cat}" data-cat="${H.esc(c)}">${H.esc(c)} <span class="cc-n">${n}</span></button>`;
     }).join('');
   }
 
@@ -180,7 +180,7 @@
       { k: 'ideas', l: `저장한 아이디어 (${ideaCount()})` }
     ];
     H.q('#tpTabs').innerHTML = tabs.map((t) =>
-      `<button class="tp-tab${S.view === t.k ? ' on' : ''}" role="tab" aria-selected="${S.view === t.k}" data-view="${t.k}">${t.l}</button>`).join('');
+      `<button class="tp-tab${S.view === t.k ? ' on' : ''}" aria-pressed="${S.view === t.k}" data-view="${t.k}">${t.l}</button>`).join('');
     H.q('#tpWeekly').hidden = S.view !== 'weekly';
     H.q('#tpRadar').hidden = S.view !== 'radar';
     H.q('#tpIdeas').hidden = S.view !== 'ideas';

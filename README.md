@@ -14,7 +14,7 @@
 | `frontend/me.html` | 내 보관함 — 이 브라우저에 저장한 트렌드·후기·펄스 아이디어 |
 | `frontend/login.html`·`signup.html` | 직접 접근 안정성을 위한 noindex 안내 페이지(서비스 내 링크 없음) |
 | `frontend/pulse.html` | 트렌드 펄스 — 이번 주 트렌드 / 트렌드 레이더 / 저장한 아이디어 탭 |
-| `frontend/assets/styles.css`·`app.js`·`pulse.js` | warm paper 기반 Neo Editorial Trend Radar 디자인 시스템 / localStorage 스토어와 공통 헬퍼(`H.*`) / 펄스 |
+| `frontend/assets/styles.css`·`app.js`·`pulse.js` | 로컬 Pretendard 기반 에디토리얼 디자인 시스템 / localStorage 스토어와 공통 헬퍼(`H.*`) / 펄스 |
 | `frontend/data/trends.js`·`pulse.js` | 브라우저가 로드하는 **생성물** — **직접 편집 금지** |
 | `backend/` | 비공개(배포 안 됨) — 데이터 원본 + 빌드 스크립트 |
 | `backend/data/trends.json`·`pulse.json` | ★ **canonical 데이터 원본** (사람·스크립트가 수정) |
@@ -91,7 +91,7 @@ Vercel 자동 배포 (git push 시)
 - 자동 게시 항목의 썸네일은 auto-build.mjs가 출처 og:image로 자동 주입을 시도하며, 공통 카드에서 대표 이미지가 없거나 로드에 실패하면 `frontend/assets/defaults/`의 카테고리별 기본 일러스트 SVG로 대체하고 기본 이미지임을 표시한다
 - 저장/후기/펄스 아이디어는 서버에 저장되지 않는 로컬 개인화(localStorage) 기능
 - 다른 브라우저·다른 기기와 동기화되지 않으며, `H.*`는 향후 백엔드가 필요할 때를 위한 추상화 계층으로 유지
-- 디자인 톤은 `frontend/assets/styles.css`의 warm paper 기반 Neo Editorial Trend Radar를 따른다
+- 디자인 톤은 `frontend/assets/styles.css`와 [DESIGN.md](DESIGN.md)의 에디토리얼 원칙을 따른다. 1025px 이상은 하단 접기 버튼이 있는 사이드바, 1024px 이하는 상단 오른쪽 메뉴 버튼과 슬라이드 메뉴를 사용한다
 
 ---
 
@@ -122,6 +122,7 @@ git push origin main              # → Vercel 자동 재배포
 
 ## 문서 인덱스
 
+- **[DESIGN.md](DESIGN.md)** — 디자인 토큰·반응형 메뉴·화면 패턴
 - **[docs/prd.md](docs/prd.md)** — 프로젝트 기획·비전
 - **[docs/architecture.md](docs/architecture.md)** — 정적 멀티페이지 구조·로컬 스토어 계약
 - **[docs/local-first.md](docs/local-first.md)** — 정적 운영·localStorage 기반 로컬 개인화 전략

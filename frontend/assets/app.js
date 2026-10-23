@@ -139,28 +139,19 @@
   H.coverImg = (t)=>{
     if(t && t.video && t.video.youtube) return `https://i.ytimg.com/vi/${t.video.youtube}/hqdefault.jpg`;
     const im = t && t.images && t.images[0];
-    // 수집 원문에 대표 사진이 없는 항목은 안전한 편집 이미지로 보완
-    if(!im && t && t.id==='dotori-oven-seongsu') return 'assets/generated/dotori-oven-editorial.png';
     return im ? (typeof im==='string'?im:im.u) : '';
   };
+  H.COVER_DEFAULTS = {'맛집':'food','디저트':'dessert','카페·핫플':'cafe','신조어':'words','노래·챌린지':'music','패션':'fashion','AI 프롬프트':'ai'};
+  H.coverDefault = (t)=>`assets/defaults/${H.COVER_DEFAULTS[t && t.cat]||'general'}.svg`;
   H.coverHTML = (t, opts={})=>{
-    const stamp = t.label ? `<span class="c-stamp">${H.esc(t.label)}</span>` : '';
-    const img = H.coverImg(t);
-    // 이미지가 깨지면 has-img를 떼서 기존 색 커버로 자연스럽게 폴백
-    const bg = img ? `<img class="c-bg" src="${img}" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.parentNode.classList.remove('has-img');this.remove()">` : '';
-    return `<div class="cover ${t.coverCat} ${opts.tall?'tall':''} ${img?'has-img':''}">
-      ${bg}
-      <span class="c-kicker">${H.esc(t.cat)}</span>
-      <span class="c-buzz">${H.esc(t.buzz||'')}</span>
-      <span class="c-title">${H.esc(t.title)}</span>
-      ${stamp}
-    </div>`;
+    const img = H.coverImg(t), fallback = H.coverDefault(t);
+    const tag = opts.inline ? 'span' : 'div';
+    return `<${tag} class="cover ${H.esc(t.coverCat||'')} ${opts.tall?'tall':''} has-img ${img?'':'is-editorial-cover'}">
+      <img class="c-bg" src="${H.esc(img||fallback)}" alt="" loading="${opts.tall?'eager':'lazy'}" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='${fallback}';this.parentNode.classList.add('is-editorial-cover')">
+      <span class="cover-credit">${H.esc(t.cat||'한끗')} · 기본 이미지</span>
+    </${tag}>`;
   };
-  H.thumbHTML = (t)=>{
-    const image=H.coverImg(t);
-    if(image) return `<span class="idx-thumb has-image" aria-hidden="true"><img src="${H.esc(image)}" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove();this.parentNode.classList.add('is-empty')"><span class="idx-thumb-fallback">${H.esc(String(t.cat||'한끗').slice(0,2))}</span></span>`;
-    return `<span class="idx-thumb is-generated" aria-hidden="true">${H.coverHTML(t)}</span>`;
-  };
+  H.thumbHTML = (t)=>`<span class="idx-thumb" aria-hidden="true">${H.coverHTML(t,{inline:true})}</span>`;
   // 상세 페이지 링크 (모든 페이지가 frontend/ 루트에 있어 상대경로로 동작)
   H.detailHref = (id)=> `trend.html?id=${encodeURIComponent(id)}`;
   H.scoreMetersHTML = (t)=>{
@@ -258,7 +249,7 @@
     if(!b) return;
     const dark=t==='dark', label=dark?'라이트 모드':'다크 모드';
     if(document.body.classList.contains('app-redesign')){
-      b.innerHTML=`<span class="nav-icon icon-${dark?'sun':'moon'}" aria-hidden="true"></span><span>${label}</span>`;
+      b.innerHTML=`<span class="nav-icon icon-${dark?'sun':'moon'}" aria-hidden="true"></span><span class="nav-label">${label}</span>`;
     } else b.textContent=dark?'☀':'🌙';
     b.setAttribute('aria-label',label);
   };
@@ -269,53 +260,87 @@
     const host=H.q('[data-mast]'); if(!host) return;
     if(!document.body.classList.contains('home-redesign')) document.body.classList.add('app-redesign');
     host.className='mast';
-    host.innerHTML=`<div class="wrap">
-      <a class="wordmark" href="index.html">한<b>끗</b></a>
-      <span class="issue">오늘 ${H.todayStr()} 기준</span>
-      <button class="nav-toggle" type="button" aria-label="메뉴 열기" aria-expanded="false" aria-controls="mastNav">☰</button>
-      <nav id="mastNav" aria-label="주 메뉴">
-        <a href="index.html">오늘의 한끗</a>
-        <a href="list.html?type=ad">광고일까 진짜일까</a>
-        <a href="list.html?type=trend">요즘 트렌드</a>
-        <a href="dictionary.html">MZ 사전</a>
-        <a class="vault-link" href="me.html">내 보관함</a>
-        <button class="theme-toggle" type="button" aria-label="테마 전환">🌙</button>
-      </nav>
-    </div>`;
-    const navIcons = [
-      ['a[href="index.html"]','house'],
-      ['a[href="list.html?type=ad"]','scan-search'],
-      ['a[href="list.html?type=trend"]','chart-no-axes-combined'],
-      ['a[href="dictionary.html"]','book-open'],
-      ['a.vault-link','bookmark']
+    const menu = [
+      ['index.html','오늘의 한끗','house'],
+      ['list.html?type=ad','광고일까 진짜일까','scan-search'],
+      ['list.html?type=trend','요즘 트렌드','chart-no-axes-combined'],
+      ['dictionary.html','MZ 사전','book-open'],
+      ['me.html','내 보관함','bookmark']
     ];
-    navIcons.forEach(([selector,name])=>{
-      const link=host.querySelector(selector);
-      if(link && !link.querySelector('.nav-icon')){
-        const icon=document.createElement('span'); icon.className=`nav-icon icon-${name}`;
-        icon.setAttribute('aria-hidden','true'); link.prepend(icon);
-      }
-    });
+    const categories = ['맛집','디저트','카페·핫플','신조어','노래·챌린지','패션','AI 프롬프트'];
+    host.innerHTML=`<div class="wrap">
+      <div class="mast-brand"><a class="wordmark" href="index.html" aria-label="한끗 홈">한<b>끗</b></a></div>
+      <button class="nav-toggle" type="button" aria-label="메뉴 접기" aria-expanded="true" aria-controls="mastPanel"><span class="nav-icon icon-panel-left-close" aria-hidden="true"></span></button>
+      <div class="mast-panel" id="mastPanel" tabindex="-1">
+        <button class="drawer-close" type="button" aria-label="메뉴 닫기"><span class="nav-icon icon-x" aria-hidden="true"></span></button>
+        <nav id="mastNav" aria-label="주 메뉴">${menu.map(([url,label,icon])=>`<a href="${url}" title="${label}" aria-label="${label}"><span class="nav-icon icon-${icon}" aria-hidden="true"></span><span class="nav-label">${label}</span></a>`).join('')}</nav>
+        <nav class="nav-categories" aria-label="트렌드 카테고리"><span class="nav-section-label">카테고리</span>${categories.map(cat=>`<a href="list.html?type=trend&cat=${encodeURIComponent(cat)}">${H.esc(cat)}</a>`).join('')}</nav>
+        <button class="theme-toggle" type="button" aria-label="테마 전환"></button>
+      </div>
+    </div><button class="nav-scrim" type="button" aria-label="메뉴 닫기" tabindex="-1" hidden></button>`;
     const current = new URL(location.href);
     const currentHref = current.pathname.split('/').pop() || 'index.html';
     const currentListType = current.searchParams.get('type') || 'trend';
-    host.querySelectorAll('nav a').forEach(a=>{
+    host.querySelectorAll('#mastNav a').forEach(a=>{
       const target = new URL(a.href, location.href);
       const samePage = target.pathname.split('/').pop()===currentHref;
       const sameListType = currentHref!=='list.html' || target.searchParams.get('type')===currentListType;
       if(samePage && sameListType){
         a.classList.add('is-active');
-        a.setAttribute('aria-current','page');
+        a.setAttribute('aria-current',current.searchParams.has('cat')?'location':'page');
       }
     });
-    // 좁은 화면의 사이드 드로어 토글. 링크를 누르거나 바깥을 누르면 닫힘.
-    const tg=host.querySelector('.nav-toggle'), nv=host.querySelector('#mastNav');
-    if(tg && nv){
-      const setOpen=(o)=>{ nv.classList.toggle('open',o); tg.setAttribute('aria-expanded',String(o)); tg.setAttribute('aria-label',o?'메뉴 닫기':'메뉴 열기'); tg.textContent=o?'✕':'☰'; };
-      tg.addEventListener('click',()=> setOpen(!nv.classList.contains('open')));
-      nv.querySelectorAll('a').forEach(a=> a.addEventListener('click',()=> setOpen(false)));
-      document.addEventListener('click',(e)=>{ if(nv.classList.contains('open') && !host.contains(e.target)) setOpen(false); });
-    }
+    host.querySelectorAll('.nav-categories a').forEach(a=>{
+      if(currentHref==='list.html' && currentListType==='trend' && new URL(a.href).searchParams.get('cat')===current.searchParams.get('cat')){
+        a.classList.add('is-active'); a.setAttribute('aria-current','page');
+      }
+    });
+    const tg=host.querySelector('.nav-toggle'), panel=host.querySelector('.mast-panel');
+    const close=host.querySelector('.drawer-close'), scrim=host.querySelector('.nav-scrim');
+    const compact=global.matchMedia('(max-width:1024px)');
+    let collapsed=read('hangeut.navCollapsed',false)===true, opened=false;
+    const backgroundState=new Map();
+    const sync=()=>{
+      document.body.classList.toggle('nav-collapsed',collapsed);
+      host.classList.toggle('nav-open',opened);
+      document.body.classList.toggle('nav-open',opened);
+      panel.inert=compact.matches && !opened;
+      scrim.hidden=!opened;
+      if(compact.matches && opened){panel.setAttribute('role','dialog');panel.setAttribute('aria-modal','true');panel.setAttribute('aria-label','사이트 메뉴');}
+      else {panel.removeAttribute('role');panel.removeAttribute('aria-modal');panel.removeAttribute('aria-label');}
+      const label=compact.matches?(opened?'메뉴 닫기':'메뉴 열기'):(collapsed?'메뉴 펼치기':'메뉴 접기');
+      tg.setAttribute('aria-label',label); tg.title=label;
+      tg.setAttribute('aria-expanded',String(compact.matches?opened:!collapsed));
+      tg.innerHTML=compact.matches||collapsed?'<span class="nav-icon icon-menu" aria-hidden="true"></span>':label;
+    };
+    const setOpen=(value,restore=true)=>{
+      opened=Boolean(value) && compact.matches;
+      if(opened){
+        [...document.body.children].filter(el=>el!==host && !['SCRIPT','STYLE'].includes(el.tagName)).forEach(el=>{if(!backgroundState.has(el))backgroundState.set(el,el.inert);el.inert=true;});
+      }else {backgroundState.forEach((value,el)=>{el.inert=value;});backgroundState.clear();}
+      sync();
+      if(opened)global.requestAnimationFrame(()=>{if(opened)close.focus({preventScroll:true});});
+      else if(restore)tg.focus({preventScroll:true});
+    };
+    tg.addEventListener('click',()=>{
+      if(compact.matches)setOpen(!opened);
+      else {collapsed=!collapsed;write('hangeut.navCollapsed',collapsed);sync();}
+    });
+    close.addEventListener('click',()=>setOpen(false));
+    scrim.addEventListener('click',()=>setOpen(false));
+    panel.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{if(opened)setOpen(false,false);}));
+    document.addEventListener('keydown',e=>{
+      if(!opened)return;
+      if(e.key==='Escape'){e.preventDefault();setOpen(false);return;}
+      if(e.key==='Tab'){
+        const items=[...panel.querySelectorAll('a[href],button')].filter(el=>el.getClientRects().length && !el.disabled);
+        const first=items[0],last=items[items.length-1];
+        if(e.shiftKey && (document.activeElement===first || !panel.contains(document.activeElement))){e.preventDefault();last.focus();}
+        else if(!e.shiftKey && (document.activeElement===last || !panel.contains(document.activeElement))){e.preventDefault();first.focus();}
+      }
+    });
+    compact.addEventListener('change',()=>{const focusInside=panel.contains(document.activeElement);setOpen(false,false);if(compact.matches && focusInside)tg.focus();});
+    sync();
     const tb=host.querySelector('.theme-toggle');
     if(tb){ H.updateThemeBtn(H.theme.get()); tb.addEventListener('click',()=> H.theme.toggle()); }
   };
