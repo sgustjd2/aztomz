@@ -298,10 +298,14 @@ Agent(
 - OS: Windows 11 / 셸: PowerShell (Bash 도구도 사용 가능)
 - 배포: GitHub `sgustjd2/aztomz`(public, 구 `GO9ME/aztomz`에서 이전 — 구 URL은 리다이렉트) → Vercel 정적 배포, push마다 자동 재배포
 - **Hermes(고구미봇)**: 별도 레포 `E:\workspace\side_project\hermes`. 크론 시각은 위 "크론 일람" 표가 유일한 기준.
-  - **모델: `claude-sonnet-5` · provider Anthropic(Claude Code 구독 자격증명 OAuth) · effort `medium` (2026-09-23 전환).**
-    구독 주간 한도를 이 계정의 인터랙티브 Claude Code 사용과 **공유** — 무거운 무인 크론(특히 블로그)이 한도를
-    빨리 태우니 사용량 관찰. **폴백 없음**(한도 소진·실패 시 그날 자동화 중단). effort=thinking 토큰 예산
-    (medium=8k), 올릴수록 소모↑. 되돌리기: `hermes model` → Google/Gemini → `schtasks /Run /TN Hermes_Gateway`.
+  - **모델(2026-10-23 확인): 주 `gpt-6-luna-900k` · provider `openai-codex`(ChatGPT Team) → 폴백 `claude-sonnet-5` · provider `anthropic`.**
+    주 모델 한도는 **5시간 창**이고 같은 ChatGPT 계정의 **Codex CLI 사용과 공유** — 2026-10-22 저녁 Codex 작업이
+    한도를 다 써서 21:30 수집·21:50 재시도가 둘 다 `HTTP 429 usage_limit_reached`로 실패했다(로그엔 재시도가
+    "Gateway connection failed"로 보임). 그래서 `config.yaml`에 `fallback_providers: [{provider: anthropic, model: claude-sonnet-5}]`를
+    추가했다(백업 `config.yaml.bak.20261023_fallback`). 429·접속 실패 시 폴백이 받는다(`agent/error_classifier.py` `_ROTATE_FALLBACK`).
+    폴백은 Claude Code 구독 한도를 **공유**하니 사용량 관찰. 크론 잡에 provider/model을 고정(pin)하면 전역 폴백을 안 쓴다 —
+    수집 잡 `9ddacd750b48`·재시도 `cb8938c4f951`은 고정 안 함. effort `medium`. 되돌리기: 백업 파일 복원 → `schtasks /Run /TN Hermes_Gateway`.
+    · (이전, 2026-09-23~?) `claude-sonnet-5`·provider Anthropic 단독, 폴백 없음.
     · (이전, 2026-06-23~09-23) `gemini-2.5-pro`(GA)·provider `gemini`(유료 Tier-1) 단독. 대안 폐기 이력:
     프리뷰(`gemini-3-flash-preview`) 21:30 503 잦음 · 무료 OAuth(cloudcode) 병렬 툴콜 400 버그 ·
     OpenRouter 크레딧 $0(백업 `auth.json.bak.20260611_openrouter`) · lite 리서치 부실.
