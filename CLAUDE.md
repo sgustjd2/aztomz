@@ -292,6 +292,9 @@ Agent(
   · **LLM 검수는 누락에 약하다.** 링크 개수·출처 URL 일치 같은 사실은 `hardChecks` 로 문자열 대조한다.
   · 링크할 이전 글이 없는데 "내부링크 2개" 를 요구하면 `example.com` 을 지어낸다 — 모순된 지시를 주지 말 것.
 - 인스타/틱톡/페북 **직접 스크래핑 금지(ToS).** ddgs 공개검색 + 유튜브 API만 사용.
+  · **인스타·X 언급 신호(2026-10-24~)**: 검색엔진 경유 `ddgs text -q "site:instagram.com 키워드"`(duckduckgo, 0건이면 bing 1회)·`site:x.com 키워드`(bing만 됨)의
+    **결과 요약문(게시 날짜·좋아요 수)만** 유행 단계 판단 근거로 쓴다. 페이지를 열지 않고(로그인 벽·약관), 인스타·X URL을 `src`에 넣지 않으며,
+    SNS 수치를 excerpt·verdict·article에 쓰지 않는다(근거 대조 게이트에 보류됨). 규칙 원문: Hermes `hangeut-collect` 2-1 · `hangeut-run` 1단계.
 - 실서비스(Supabase) 전환 시 **UI/페이지는 손대지 말고** `app.js`의 `H.*` 내부 구현만 교체.
 
 ### 비밀 · 보안
