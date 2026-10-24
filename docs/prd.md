@@ -254,9 +254,9 @@ AZ와 MZ는 글자 하나 차이지만, 실제로는 트렌드를 아느냐 모�
 
 \- `backend/data/trends.json`을 canonical 데이터 원본으로 두고, `backend/scripts/refresh.mjs`가 `frontend/data/trends.js`를 생성한다.
 
-\- 저장/후기/펄스 아이디어는 서버 계정 없이 브라우저 localStorage 기반 로컬 개인화 기능이다. 로그인/회원가입은 현재 일반 플로우에서 제거했다.
+\- 방문자 후기와 내 보관함은 우선 화면에서 제외했다. `H.FEATURES.visitorReviews:false`, `personalCollection:false`로 후기·보관함·저장 UI를 비노출하며, 기존 localStorage 데이터와 스토어 함수는 보존한다. 로그인/회원가입은 현재 일반 플로우에서 제거했다.
 
-\- `me.html`은 계정 페이지가 아니라 내 보관함/스크랩북 페이지이며, `login.html`과 `signup.html`은 noindex 안내 페이지로만 유지한다.
+\- `me.html` 직접 접근은 홈으로 이동한다. `login.html`과 `signup.html`은 홈·트렌드 읽기로 연결하는 noindex 안내 페이지로 유지한다. 펄스는 아이디어 펼침을 유지하고 저장 버튼·저장 아이디어 탭은 표시하지 않는다. 공유와 분석 점수는 유지한다.
 
 \- 로컬 개인화 데이터는 공개 서버에 저장되지 않으며 다른 기기와 동기화되지 않는다.
 

@@ -26,6 +26,8 @@
 
   /* ---------- 헬퍼 ---------- */
   const H = {};
+  // Temporarily exclude personal features from the public interface.
+  H.FEATURES = Object.freeze({ visitorReviews:false, personalCollection:false });
   H.TRENDS = TRENDS;
   H.generatedAt = _DATA.generatedAt;
   H.trend = (id)=> TRENDS.find(t=>t.id===id) || null;
@@ -291,7 +293,7 @@
       ['list.html?type=ad','광고일까 진짜일까','scan-search'],
       ['list.html?type=trend','요즘 트렌드','chart-no-axes-combined'],
       ['dictionary.html','MZ 사전','book-open'],
-      ['me.html','내 보관함','bookmark']
+      ...(H.FEATURES.personalCollection ? [['me.html','내 보관함','bookmark']] : [])
     ];
     const categories = H.NAV_CATEGORIES;
     host.innerHTML=`<div class="wrap">

@@ -17,7 +17,7 @@
 <link rel="icon" type="image/svg+xml" href="favicon.svg" />
 <link rel="apple-touch-icon" href="apple-touch-icon.png" />
 <link rel="manifest" href="site.webmanifest" />
-<link rel="stylesheet" href="assets/styles.css?v=category-sync-20261024" />
+<link rel="stylesheet" href="assets/styles.css?v=public-content-20261024" />
 <style>
   .crumb{font-size:13.5px;color:var(--ink-2);margin:18px 0 14px}
   .crumb a{color:var(--accent);text-decoration:none;font-weight:700}
@@ -85,14 +85,14 @@
   .shops .sh-note{flex-basis:100%;font-size:14px;color:var(--body);line-height:1.55;word-break:keep-all;margin-top:1px}
   .shops-note{font-size:12.5px;color:var(--ink-2);margin:9px 0 2px}
 </style>
-<link rel="stylesheet" href="assets/detail.css?v=category-sync-20261024" />
+<link rel="stylesheet" href="assets/detail.css?v=public-content-20261024" />
 </head>
 <body class="detail-page">
   <div data-mast></div>
   <div class="wrap reading"><div id="main"></div></div>
 
 <script src="data/trends.js"></script>
-<script src="assets/app.js?v=category-sync-20261024"></script>
+<script src="assets/app.js?v=public-content-20261024"></script>
 <script>
   H.boot();
   const id = H.param('id');
@@ -214,7 +214,7 @@
   }
 
   function render(){
-    const saved = H.isSaved(t.id);
+    const saved = H.FEATURES.personalCollection && H.isSaved(t.id);
     const sameCat = H.TRENDS.filter(x=>x.id!==t.id && x.cat===t.cat);
     const related = (sameCat.length ? sameCat : H.TRENDS.filter(x=>x.id!==t.id)).slice(0,2);
     const relatedTitle = t.cat==='신조어' ? '관련 사전 항목' : '함께 보기';
@@ -228,14 +228,14 @@
           ${t.def?`<p class="d-def">${H.esc(t.def)}</p>`:''}
           <div class="detail-meta"><span class="label ${H.esc(t.labelCls||'mid')}">${H.esc(t.label)}</span><span class="freshline"><a class="detail-date-link" href="index.html?date=${encodeURIComponent(t.collectedAt||t.analyzedAt||'')}">수집 ${H.fmtISO(t.collectedAt||t.analyzedAt)}</a>${t.analyzedAt&&t.analyzedAt!==(t.collectedAt||t.analyzedAt)?` · 분석 ${H.fmtISO(t.analyzedAt)}`:''}</span></div>
           <div class="tags">${(t.tags||[]).map(tg=>`<a class="tag-chip" href="index.html?tag=${encodeURIComponent(tg)}">#${H.esc(tg)}</a>`).join('')}</div>
-          <div class="d-actions"><button class="save-btn ${saved?'on':''}" id="saveBtn" type="button" aria-pressed="${saved}">${detailIcon("bookmark")}<span>${saved?'저장됨':'저장'}</span></button><button class="save-btn" id="shareBtn" type="button">${detailIcon("share")}<span>공유</span></button></div>
+          <div class="d-actions">${H.FEATURES.personalCollection?`<button class="save-btn ${saved?'on':''}" id="saveBtn" type="button" aria-pressed="${saved}">${detailIcon("bookmark")}<span>${saved?'저장됨':'저장'}</span></button>`:''}<button class="save-btn" id="shareBtn" type="button">${detailIcon("share")}<span>공유</span></button></div>
         </div>
       </header>
       <nav class="detail-jumps" aria-label="상세 내용 바로가기">
         ${t.type==='신뢰분석'?'<a href="#judgment">한끗 판단</a>':''}
         ${t.article?.length?'<a href="#story">자세히 읽기</a>':''}
         ${t.shops?.length?'<a href="#places">판매처</a>':''}
-        ${t.prompt?'<a href="#prompt">프롬프트</a>':''}<a href="#recommendations">추천 대상</a><a href="#sources">출처</a><a href="#reviews">후기</a>
+        ${t.prompt?'<a href="#prompt">프롬프트</a>':''}<a href="#recommendations">추천 대상</a><a href="#sources">출처</a>${H.FEATURES.visitorReviews?'<a href="#reviews">후기</a>':''}
       </nav>
       ${H.freshness(t.analyzedAt).cls==='stale' ? `<div class="stale-banner">${detailIcon("clock")}<span>오래된 분석이에요. 유행은 빨리 바뀌니 방문 전 최신 상황을 다시 확인하세요.</span></div>` : ''}
       ${scoresBlock()}
@@ -260,17 +260,17 @@
       <details class="src" id="sources"><summary>${detailIcon("link")} 참고 출처 <span class="source-count">${t.src.length}개</span></summary>
         <div class="src-list">${t.src.map(s=>`<a href="${s[1]}" target="_blank" rel="noopener"><span>${H.esc(s[0])}</span>${detailIcon("arrow")}</a>`).join('')}</div></details>
 
-      <div class="sec-head" id="reviews"><h2>${detailIcon("message")} 방문자 후기</h2><span class="note" id="rvAvg"></span></div>
+      ${H.FEATURES.visitorReviews?`<div class="sec-head" id="reviews"><h2>${detailIcon("message")} 방문자 후기</h2><span class="note" id="rvAvg"></span></div>
       <div id="rvForm"></div>
-      <div class="reviews" id="rvList"></div>
+      <div class="reviews" id="rvList"></div>`:''}
 
       <div class="sec-head"><h2>${detailIcon("book")} ${relatedTitle}</h2></div>
       <div class="related">${related.map(x=>`<a href="trend.html?id=${x.id}">${H.coverHTML(x)}<div class="r-t">${H.esc(x.title)}</div></a>`).join('')}</div>
 
-      <div class="disc footer-disclaimer">${detailIcon("shield")}<span>점수는 공개 정보 기반 <b>추정치</b>이며 확정 판정이 아닙니다. 방문자 후기는 이용자가 직접 작성한 내용입니다.</span></div>
+      <div class="disc footer-disclaimer">${detailIcon("shield")}<span>점수는 공개 정보 기반 <b>추정치</b>이며 확정 판정이 아닙니다.</span></div>
       <footer class="site"><a class="fwm footer-brand" href="index.html" aria-label="한끗 홈">한<b>끗</b></a><div class="footer-copy">AZ와 MZ는 한 끗 차이 · 트렌드 번역소</div></footer>`;
 
-    H.q('#saveBtn').onclick = async ()=>{
+    if(H.q('#saveBtn'))H.q('#saveBtn').onclick = async ()=>{
       const r = await H.resolve(H.toggleSave(t.id));
       const b=H.q('#saveBtn'); b.classList.toggle('on', r.saved);
       b.innerHTML = detailIcon('bookmark')+`<span>${r.saved?'저장됨':'저장'}</span>`; b.setAttribute('aria-pressed',String(r.saved)); H.toast(r.saved?'저장했어요':'저장을 해제했어요');
@@ -279,8 +279,7 @@
       const text=`[한끗] ${t.title} — ${t.type==='신뢰분석'?`광고 ${t.ad}/신뢰 ${t.trust}`:t.stage} · ${t.label}`;
       await H.share({title:'한끗', text, url:location.href});
     };
-    renderReviews();
-    renderForm();
+    if(H.FEATURES.visitorReviews){ renderReviews(); renderForm(); }
   }
 
   function renderReviews(){

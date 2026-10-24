@@ -73,7 +73,7 @@
           <div class="tp-ideas-h">빠른 창업 아이디어 3</div>
           <ol class="tp-idea-list">${quickIdeasOf(t).map((s) => `<li>${H.esc(s)}</li>`).join('')}</ol>
           <div class="tp-ideas-foot">
-            <button class="tp-quick" data-quick="${H.esc(t.id)}">저장</button>
+            ${H.FEATURES.personalCollection?`<button class="tp-quick" data-quick="${H.esc(t.id)}">저장</button>`:''}
             <button class="tp-future" data-future disabled title="라이브 AI는 추후 제공됩니다">AI 상세 창업 아이템 (준비 중)</button>
           </div>
         </div>
@@ -177,7 +177,7 @@
     const tabs = [
       { k: 'weekly', l: '이번 주 트렌드' },
       { k: 'radar', l: `트렌드 레이더 ${D.trends.length}개` },
-      { k: 'ideas', l: `저장한 아이디어 (${ideaCount()})` }
+      ...(H.FEATURES.personalCollection ? [{ k: 'ideas', l: `저장한 아이디어 (${ideaCount()})` }] : [])
     ];
     H.q('#tpTabs').innerHTML = tabs.map((t) =>
       `<button class="tp-tab${S.view === t.k ? ' on' : ''}" aria-pressed="${S.view === t.k}" data-view="${t.k}">${t.l}</button>`).join('');
@@ -186,7 +186,7 @@
     H.q('#tpIdeas').hidden = S.view !== 'ideas';
   }
 
-  function setView(v) { S.view = v; renderTabs(); if (v === 'ideas') renderIdeas(); }
+  function setView(v) { if(v==='ideas'&&!H.FEATURES.personalCollection)return; S.view = v; renderTabs(); if (v === 'ideas') renderIdeas(); }
 
   /* ---------- 이벤트 ---------- */
   function wire() {
@@ -255,7 +255,8 @@
       fresh.innerHTML = `트렌드 ${D.trends.length}건` +
         (D.generatedAt ? ` · 기준일 ${H.fmtISO(D.generatedAt)}` : '');
     }
-    S.view = (['weekly','radar','ideas'].includes(H.param('tab'))) ? H.param('tab') : 'weekly';
+    const views=H.FEATURES.personalCollection?['weekly','radar','ideas']:['weekly','radar'];
+    S.view = views.includes(H.param('tab')) ? H.param('tab') : 'weekly';
     renderTabs(); renderFilter(); renderList(); renderDaily();
     if (S.view === 'ideas') renderIdeas();
     wire();

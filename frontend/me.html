@@ -4,6 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="color-scheme" content="light dark" />
+<meta name="robots" content="noindex,follow" />
 <title>내 보관함 — 한끗</title>
 <meta name="description" content="이 브라우저에 저장한 한끗 트렌드, 후기, 펄스 아이디어를 모아봅니다." />
 <meta property="og:type" content="website" />
@@ -17,7 +18,7 @@
 <link rel="icon" type="image/svg+xml" href="favicon.svg" />
 <link rel="apple-touch-icon" href="apple-touch-icon.png" />
 <link rel="manifest" href="site.webmanifest" />
-<link rel="stylesheet" href="assets/styles.css?v=category-sync-20261024" />
+<link rel="stylesheet" href="assets/styles.css?v=public-content-20261024" />
 <style>
   .vault-hero{padding:34px 0 10px;border-bottom:1px solid var(--line)}
   .vault-hero h1{font-size:34px;font-weight:900;line-height:1.12;letter-spacing:0;margin:12px 0 8px}
@@ -53,10 +54,11 @@
   <div class="wrap reading"><div id="main"></div></div>
 
 <script src="data/trends.js"></script>
-<script src="assets/app.js?v=category-sync-20261024"></script>
+<script src="assets/app.js?v=public-content-20261024"></script>
 <script>
   H.boot();
-  render();
+  if(H.FEATURES.personalCollection)render();
+  else location.replace('index.html');
 
   function render(){
     const main = H.q('#main');
