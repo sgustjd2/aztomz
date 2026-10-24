@@ -207,7 +207,7 @@
     ];
     const categories = H.NAV_CATEGORIES;
     host.innerHTML=`<div class="wrap">
-      <div class="mast-brand"><a class="wordmark" href="index.html" aria-label="한끗 홈">한<b>끗</b></a></div>
+      <div class="mast-brand"><a class="wordmark" href="index.html" aria-label="한끗 홈"><img class="wordmark-mascot" src="assets/mascot.png" alt="" width="34" height="34">한<b>끗</b></a></div>
       <button class="nav-toggle" type="button" aria-label="메뉴 접기" aria-expanded="true" aria-controls="mastPanel"><span class="nav-icon icon-panel-left-close" aria-hidden="true"></span></button>
       <div class="mast-panel" id="mastPanel" tabindex="-1">
         <button class="drawer-close" type="button" aria-label="메뉴 닫기"><span class="nav-icon icon-x" aria-hidden="true"></span></button>

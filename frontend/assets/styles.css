@@ -76,6 +76,8 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
 .mast .wrap{display:flex;align-items:center;gap:16px;min-height:64px}
 .wordmark{font-size:26px;font-weight:900;letter-spacing:0;text-decoration:none;white-space:nowrap;flex:none}
 .wordmark b{color:var(--accent-text)}
+.wordmark{display:inline-flex;align-items:center;gap:6px}
+.wordmark-mascot{width:1.15em;height:1.15em;flex:none}
 .issue{font-family:var(--serif);font-style:normal;font-size:13.5px;color:var(--ink-2);
   border-left:1px solid var(--line);padding-left:14px;white-space:nowrap;flex:none}
 .mast nav{margin-left:auto;display:flex;gap:8px;align-items:center;justify-content:flex-end;flex-wrap:wrap;
