@@ -278,8 +278,12 @@ if (!published.length) { console.log('\n· 게시할 검증통과 항목 없음 
 if (DRY) { console.log('\n[DRY] 파일·git 변경 없이 종료.'); done('dry'); }
 
 // ── trends.json 갱신 + refresh
-trends.push(...published);
-const out = Array.isArray(data) ? trends : (data.trends = trends, data);
+// 쓰기 직전에 다시 읽는다 — 검증하는 몇 분 사이 restage.mjs·recheck-ad.mjs가 쓴 변경을 덮지 않게(2026-10-24).
+const latest = JSON.parse(readFileSync(trendsPath, 'utf-8'));
+const latestTrends = Array.isArray(latest) ? latest : (latest.trends || []);
+const latestIds = new Set(latestTrends.map(t => t.id));
+latestTrends.push(...published.filter(t => !latestIds.has(t.id)));
+const out = Array.isArray(latest) ? latestTrends : (latest.trends = latestTrends, latest);
 // ── 스키마 게이트: cat 7분류 이탈·id 중복·analyzedAt 형식오류 등 깨진 데이터는 빌드/배포 전 중단
 const _v = validateTrends(Array.isArray(out) ? out : out.trends);
 if (!_v.ok) { console.error('\n⛔ 스키마 검증 실패 — 빌드·배포 중단:\n' + _v.errors.map((e) => '  · ' + e).join('\n')); done('schema_fail', 1); }

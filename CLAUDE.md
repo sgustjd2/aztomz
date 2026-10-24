@@ -35,6 +35,7 @@
 | `check-source.mjs [파일] [--only=id,id]` | 출처 **본문 관련성** 점검(정확✅/약함⚠️/무관❌/차단🚫, LLM 없음) |
 | `auto-build.mjs [curate.json] [--no-git\|--dry\|--strict\|--approved\|--none]` | 봇 수집분 자동검증 게이트(출처 생존·관련성 + **근거 대조** `lib/grounding.mjs`) → 통과분만 `trends.json` 반영 → refresh → git push. **실행마다 `backend/out/pipeline/runs.jsonl` 1줄 + 마지막 줄 `SUMMARY {json}`**(후보·게시·보류·중복·사유 코드 — 디스코드 보고 숫자의 기준), 보류 후보는 `.pipeline/review-queue.json`으로. `--none`=후보 0건 기록만, `--approved`=사람 승인분(관련성·근거 대조 대신 사람 판단, 살아 있는 출처 1개+는 필수) |
 | `pipeline-review.mjs` | **보류 후보 사람 검수 + 수집 수치** — `--list [--json]` · `--approve=<id> [--note=코멘트]`(→ `auto-build --approved`) · `--reject=<id> [--note=코멘트]` · `--stats [--days=14]`(날짜별 후보·게시·보류·중복·승인·버림, 기록 없는 날=수집 안 돈 날) · `--selftest`. 결정 기록 `backend/out/pipeline/reviews.jsonl`(코멘트 포함, `--stats` 하단에 최근 10건). 디스코드에서 "검수" → Hermes `hangeut-approve` 스킬이 항목별 [게시/버리기/나중에] 버튼 → 이유 버튼(직접 입력 가능)으로 이 스크립트를 부른다. 코멘트는 `learnings.md`에 `(검수/버림|승인)` 한 줄로도 쌓여 다음 수집이 읽는다 |
+| `restage.mjs` | **게시된 트렌드의 유행 단계 재판정**(판단은 Hermes `hangeut-restage`, 쓰기는 이 스크립트) — `--pick=3 [--json]`(분석일 오래된 트렌드형, 최근 14일 재판정분 제외) · `--apply=<판정.json> [--no-git|--dry]`(정규 stage만, 근거=열리고 제목 핵심어가 나오는 비SNS URL 1개+ → stage·stageMsg·analyzedAt 갱신, 근거 1개를 src에 추가, 하락·끝물이면 라벨 '이제는 늦은 느낌'/mid·buzz '화제성 하락', 밈화면 '밈으로만 즐겨요', 본문은 안 고치고 어긋나면 conflict 보고 → 검증·refresh·git push) · `--selftest`. 기록 `backend/out/pipeline/restage.jsonl`, 마지막 줄 `SUMMARY` |
 | `recheck-ad.mjs` | "광고일까 진짜일까" 최고령 1건 출처 재검증(결정적·LLM 없음). 근거 대조 실패 시 홈 회전 안 하고 다음 오래된 항목 시도(최대 3) |
 | `blog-build.mjs <id>\|--latest` | **한끗** 트렌드 1건 → 티스토리용 HTML + 메타(`backend/out/blog/`). 커버는 자체 생성 카드. `--selftest` 있음 |
 | `post-build.mjs --category=<id>` | **다주제** 키워드 → 조사·초안·SEO·자가검수 → 같은 형식의 HTML+메타. `--research=<파일>`로 조사 결과 주입 · `--dry` |
@@ -78,6 +79,7 @@ node backend/scripts/check-source.mjs backend/data/trends.json --only=<id>  # 5)
 | 매일 09:00 | **블로그 일일 집필 4편**(티스토리 2 + 네이버 2 — 2026-10-07 토큰 절약 지시로 5+5에서 축소, 서로 다른 주제 · 검증까지, 발행은 대기열) | Windows 스케줄작업 `AZ2MZ_Blog_Daily`(StartWhenAvailable, 제한 8h) | `tools/blog-daily.vbs`(wscript 숨김) → `claude -p /blog-daily` · 로그 `backend/out/blog/blog-daily.log`. (2026-09-24 Hermes 잡 `c49cb13870e0`에서 이관 — 그 잡은 50분 대기 한도라 10편 불가, **일시정지** 상태) |
 | 매일 21:00 | 펄스/수집 분야 안내 | Hermes(로컬) | — |
 | 월 21:00 | 주간 갱신 | Hermes(로컬) | — |
+| 매일 21:05 | **유행 단계 재판정**(게시된 트렌드 3건/일, 분석일 오래된 순) | Hermes(로컬, 에이전트 · 잡 `2bfe2a1c0d40`) | hangeut-restage → `restage.mjs --apply` |
 | 매일 21:15 | 광고/진짜 일일 재확인 | Hermes(로컬, no-agent) | `recheck_ad.py` → `recheck-ad.mjs` |
 | 매일 21:30 | **한끗 자동 수집·게시** (목=신조어 주간 사전) | Hermes(로컬, 에이전트) | hangeut-run → `auto-build.mjs`(`.pipeline/curate.json`) |
 | 매일 21:50 | 수집 재시도 게이트(21:30이 503/429로 죽었을 때만 1회 재실행) | Hermes(로컬, no-agent) | `hangeut_retry_gate.py` |
@@ -254,6 +256,10 @@ Agent(
     "검수"라고 하면 Hermes `hangeut-approve`가 [게시/버리기/나중에] 버튼을 띄우고, 게시·버리기면 이유 버튼(프리셋 + 직접 입력)을 한 번 더 묻는다. 그 코멘트는 결정 기록과 `learnings.md`에 남는다. 크론 실행 중에는 Hermes가 `clarify`(버튼)를
     못 쓰므로(`cron/scheduler.py`) 검수는 크론 보고 뒤 일반 대화에서 한다.
   · **수치는 스크립트가 센다**: 디스코드 보고의 후보·게시·보류·중복 수는 auto-build의 `SUMMARY` 줄을 그대로 옮긴다(LLM이 세지 않음).
+  · **유행 단계 자동 재판정(2026-10-24~)**: 매일 21:05 Hermes `hangeut-restage`가 분석일 오래된 트렌드 3건을 최근 뉴스·웹·유튜브·인스타/X 검색 요약문으로
+    다시 보고 `restage.mjs --apply`로 stage를 갱신한다(근거 URL 검증·analyzedAt 갱신은 실제 재판정한 항목만 — 거짓 신선도 아님). 본문은 고치지 않고, 새 단계와
+    어긋나는 표현(예: 하락인데 '지금 피크')은 디스코드에 '본문 확인 필요'로 보고 → 사람이 고친다. 2026-10-24 기준 트렌드 159건 중 상승 91·피크 36이 8월 분석이라 시작했다.
+  · `auto-build.mjs`는 `trends.json`을 **쓰기 직전에 다시 읽는다** — 검증하는 몇 분 사이 restage·recheck-ad가 쓴 변경을 덮지 않게.
     후보 0건인 날도 `auto-build.mjs --none`으로 기록한다. 2주 표: `node backend/scripts/pipeline-review.mjs --stats`.
   · `auto-build.mjs`는 `process.exit()`를 쓰지 않는다 — fetch 뒤 `process.exit()`는 Windows Node 24에서 libuv assert로 exit 127이
     된다(2026-10-23 재현). 종료는 `done()`(exitCode + Exit 신호)로.
