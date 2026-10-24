@@ -1,7 +1,7 @@
 /* ============================================================
    한끗 · 트렌드 펄스 — 페이지 로직 (정적, 백엔드 0)
    데이터: window.PULSE_DATA (data/pulse.js). 헬퍼: 기존 H.* 재사용.
-   라이브 AI(창업아이템·경쟁사·기획서매칭)는 범위 외 → 비활성 data-future 자리표시.
+   빠른 아이디어는 공개 트렌드 콘텐츠를 바탕으로 화면에서 펼쳐 본다.
    ============================================================ */
 (function (global) {
   'use strict';
@@ -10,7 +10,6 @@
 
   const CATS = ['전체', '테크', 'K뷰티', '헬스', '푸드', '금융', '교육', '패션', '엔터', '라이프', '등산', '관광'];
   const PI = { Google: 'G', YouTube: 'YT', Instagram: 'IG', TikTok: 'TT', X: 'X' };
-  const IDEA_CAP = 80;
 
   /* ---------- 점수 → tier/라벨 (한끗 토큰 기반) ---------- */
   function tierOf(total) {
@@ -72,10 +71,7 @@
         <div class="tp-ideas" id="tpIdeas-${H.esc(t.id)}-${opts.today ? 'week' : 'radar'}" hidden>
           <div class="tp-ideas-h">빠른 창업 아이디어 3</div>
           <ol class="tp-idea-list">${quickIdeasOf(t).map((s) => `<li>${H.esc(s)}</li>`).join('')}</ol>
-          <div class="tp-ideas-foot">
-            ${H.FEATURES.personalCollection?`<button class="tp-quick" data-quick="${H.esc(t.id)}">저장</button>`:''}
-            <button class="tp-future" data-future disabled title="라이브 AI는 추후 제공됩니다">AI 상세 창업 아이템 (준비 중)</button>
-          </div>
+
         </div>
       </div>
     </article>`;
@@ -117,76 +113,19 @@
     box.innerHTML = daily.map((t) => H.pulse.card(t, { today: true })).join('');
   }
 
-  /* ---------- 아이디어 저장(H.* store) ---------- */
-  function loadIdeas() { return H.pulseIdeas ? H.pulseIdeas.list() : []; }
-  function saveIdeas(arr) { return H.pulseIdeas ? H.pulseIdeas.save(arr.slice(0, IDEA_CAP)) : { ok:false }; }
-
-  function makeQuickIdeas(t) {
-    const now = new Date().toISOString();
-    const base = (t.angle || '').split('또는')[0].trim() || t.angle || t.kw;
-    return [
-      { id: 'i-' + Date.now(), fromTrend: t.kw, gr: t.gr, text: `${base}\n\n트렌드: ${t.kw} (+${t.gr}%)\n배경: ${t.why}`, createdAt: now },
-      { id: 'i-' + (Date.now() + 1), fromTrend: t.kw, gr: t.gr, text: `${t.kw} 전문 커뮤니티/미디어 (콘텐츠 비즈니스)\n\n트렌드: ${t.kw} (+${t.gr}%)\n배경: ${t.why}`, createdAt: now },
-      { id: 'i-' + (Date.now() + 2), fromTrend: t.kw, gr: t.gr, text: `${t.kw} 데이터 분석·큐레이션 도구 (SaaS)\n\n트렌드: ${t.kw} (+${t.gr}%)\n배경: ${t.why}`, createdAt: now },
-    ];
-  }
-
-  function ideaCount() { return loadIdeas().length; }
-
-  /* ---------- 다운로드 (data: URI — 샌드박스 안전) ---------- */
-  function download(content, filename, md) {
-    const mime = md ? 'text/markdown' : 'text/plain';
-    const a = document.createElement('a');
-    a.href = `data:${mime};charset=utf-8,` + encodeURIComponent(content);
-    a.download = filename;
-    document.body.appendChild(a); a.click(); document.body.removeChild(a);
-  }
-  function ideaFile(idea, fmt) {
-    const fn = (idea.fromTrend || 'idea').replace(/[^a-zA-Z0-9가-힣]/g, '_');
-    const dt = idea.createdAt ? H.fmtDate(idea.createdAt) : '';
-    const body = fmt === 'md'
-      ? `# 창업 아이디어: ${idea.fromTrend}\n\n> ${dt}\n\n---\n\n${idea.text}\n\n---\n*한끗 · 트렌드 펄스*\n`
-      : `[ 창업 아이디어 ] ${idea.fromTrend}\n${dt}\n================================\n\n${idea.text}\n\n================================\n한끗 · 트렌드 펄스\n`;
-    download(body, fn + (fmt === 'md' ? '.md' : '.txt'), fmt === 'md');
-  }
-
-  /* ---------- 아이디어 뷰 ---------- */
-  function renderIdeas() {
-    const box = H.q('#tpIdeas'); if (!box) return;
-    const ideas = loadIdeas();
-    if (!ideas.length) {
-      box.innerHTML = `<div class="empty"><span class="empty-icon nav-icon icon-activity" aria-hidden="true"></span><h3>저장한 아이디어가 없어요</h3><p>트렌드 카드를 펼쳐 아이디어 아래 '저장'을 눌러보세요.</p></div>`;
-      return;
-    }
-    box.innerHTML = ideas.map((idea) => {
-      const fl = (idea.text.split('\n')[0] || '').slice(0, 60);
-      return `<div class="tp-idea" data-idea="${H.esc(idea.id)}">
-        <div class="tp-idea-top"><span class="tp-idea-from">${H.esc(idea.fromTrend)}</span><span class="tp-idea-date">${idea.createdAt ? H.fmtDate(idea.createdAt) : ''}</span></div>
-        <div class="tp-idea-line">${H.esc(fl)}</div>
-        <div class="tp-idea-actions">
-          <button class="tp-idea-dl" data-dl="md" data-id="${H.esc(idea.id)}">.md</button>
-          <button class="tp-idea-dl" data-dl="txt" data-id="${H.esc(idea.id)}">.txt</button>
-          <button class="tp-idea-del" data-del="${H.esc(idea.id)}">삭제</button>
-        </div>
-      </div>`;
-    }).join('');
-  }
-
-  /* ---------- 탭(레이더 / 저장 아이디어) ---------- */
+  /* ---------- 공개 트렌드 보기 전환 ---------- */
   function renderTabs() {
     const tabs = [
       { k: 'weekly', l: '이번 주 트렌드' },
-      { k: 'radar', l: `트렌드 레이더 ${D.trends.length}개` },
-      ...(H.FEATURES.personalCollection ? [{ k: 'ideas', l: `저장한 아이디어 (${ideaCount()})` }] : [])
+      { k: 'radar', l: `트렌드 레이더 ${D.trends.length}개` }
     ];
     H.q('#tpTabs').innerHTML = tabs.map((t) =>
       `<button class="tp-tab${S.view === t.k ? ' on' : ''}" aria-pressed="${S.view === t.k}" data-view="${t.k}">${t.l}</button>`).join('');
     H.q('#tpWeekly').hidden = S.view !== 'weekly';
     H.q('#tpRadar').hidden = S.view !== 'radar';
-    H.q('#tpIdeas').hidden = S.view !== 'ideas';
   }
 
-  function setView(v) { if(v==='ideas'&&!H.FEATURES.personalCollection)return; S.view = v; renderTabs(); if (v === 'ideas') renderIdeas(); }
+  function setView(v) { if(!['weekly','radar'].includes(v))return; S.view=v; renderTabs(); }
 
   /* ---------- 이벤트 ---------- */
   function wire() {
@@ -205,19 +144,6 @@
       tmr = setTimeout(() => { S.q = v; renderList(); }, 120);
     });
     const handleCardArea = (e) => {
-      const quick = e.target.closest('[data-quick]');
-      if (quick) {
-        e.stopPropagation();
-        const id = quick.dataset.quick;
-        const t = D.trends.find((x) => String(x.id) === id) || (D.daily || []).find((x) => String(x.id) === id);
-        if (!t) return;
-        const ideas = makeQuickIdeas(t).concat(loadIdeas());
-        saveIdeas(ideas);
-        renderTabs();
-        H.toast('빠른 아이디어 3개를 저장했어요');
-        return;
-      }
-      if (e.target.closest('[data-future]')) { H.toast('라이브 AI 분석은 곧 제공됩니다'); return; }
       const card = e.target.closest('.tp-card'); if (!card) return;
       const ideas = H.q('.tp-ideas', card);
       if (ideas) {
@@ -233,16 +159,7 @@
     // 카드 펼침 + 빠른 아이디어
     H.q('#tpRadar').addEventListener('click', handleCardArea);
     H.q('#tpWeekly').addEventListener('click', handleCardArea);
-    // 아이디어 뷰: 다운로드 / 삭제
-    H.q('#tpIdeas').addEventListener('click', (e) => {
-      const dl = e.target.closest('[data-dl]');
-      if (dl) { const idea = loadIdeas().find((i) => i.id === dl.dataset.id); if (idea) ideaFile(idea, dl.dataset.dl); return; }
-      const del = e.target.closest('[data-del]');
-      if (del) {
-        saveIdeas(loadIdeas().filter((i) => i.id !== del.dataset.del));
-        renderIdeas(); renderTabs(); H.toast('삭제했어요');
-      }
-    });
+
   }
 
   /* ---------- 발행 라인(데이터 신선도) ---------- */
@@ -255,10 +172,9 @@
       fresh.innerHTML = `트렌드 ${D.trends.length}건` +
         (D.generatedAt ? ` · 기준일 ${H.fmtISO(D.generatedAt)}` : '');
     }
-    const views=H.FEATURES.personalCollection?['weekly','radar','ideas']:['weekly','radar'];
+    const views=['weekly','radar'];
     S.view = views.includes(H.param('tab')) ? H.param('tab') : 'weekly';
     renderTabs(); renderFilter(); renderList(); renderDaily();
-    if (S.view === 'ideas') renderIdeas();
     wire();
   };
 

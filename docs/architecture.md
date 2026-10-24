@@ -9,35 +9,30 @@ backend/   ← canonical 데이터·검증·생성 스크립트(비공개)
 
 frontend/index.html      홈 — 오늘의 한끗 · 광고일까 진짜일까 · 요즘 트렌드
 frontend/list.html       전체 목록 — 광고분석/트렌드 목록 + 페이지네이션
-frontend/trend.html?id=  상세 — 점수 · 만족도 · 판단 · 출처 · 후기 · 함께 보기
+frontend/trend.html?id=  상세 — 점수 · 만족도 · 판단 · 출처 · 공유 · 함께 보기
 frontend/dictionary.html MZ 사전 — 신조어 검색/열람
-frontend/login.html      로그인 없이 사용 안내(noindex)
-frontend/signup.html     가입 없이 사용 안내(noindex)
-frontend/me.html         내 보관함 — 저장한 트렌드 · 내가 쓴 후기 · 펄스 아이디어
 frontend/pulse.html      트렌드 펄스 — 창업 트렌드 레이더
-frontend/assets/styles.css  warm paper 기반 Neo Editorial Trend Radar 디자인 시스템
-frontend/assets/app.js      H.* 로컬 스토어 추상화 + 공통 UI 헬퍼
+frontend/assets/styles.css  로컬 Pretendard 기반 에디토리얼 디자인 시스템
+frontend/assets/app.js      H.* 공개 데이터 조회·공유·화면 설정 헬퍼
 backend/data/trends.json ★ 트렌드 canonical 원본
 frontend/data/trends.js  ← backend/scripts/refresh.mjs 생성물(직접 편집 금지)
 ```
 
 ## 운영 원칙
-- 한끗은 현재 **정적 멀티페이지 + 정적 데이터 갱신 + localStorage 기반 로컬 개인화**로 운영한다.
-- 저장/후기/펄스 아이디어는 서버 계정 없이 브라우저 localStorage에 저장되는 개인화 기능이다.
-- 로컬 개인화 데이터는 공개 서버에 저장되지 않고, 다른 브라우저나 다른 기기와 동기화되지 않는다.
-- `H.*`는 로컬 스토어 추상화 계층으로 유지한다. 향후 백엔드를 붙이더라도 우선 교체 대상은 `H.*` 내부이며, 페이지 UI 계약은 유지한다.
-- UI 톤은 `frontend/assets/styles.css`의 warm paper, bento editorial grid, compact radar cards 원칙을 따른다.
-- Supabase 전환은 현재 확정 계획이 아니다. 필요가 생기면 별도 RFC/마이그레이션 계획으로 다시 검토한다.
+- 한끗은 현재 **정적 멀티페이지 + 정적 데이터 갱신 + 공개 콘텐츠 읽기/공유**로 운영한다.
+- 로그인·계정·개인 저장·방문자 후기·보관함·개인 아이디어 저장 구현은 제거했다. 펄스는 공개 아이디어 펼침과 검색을 제공한다.
+- localStorage는 테마·메뉴 접기 설정에만 사용한다. 기존 개인 데이터에 대한 삭제 명령은 실행하지 않는다.
+- `H.*`는 공개 정적 데이터·화면·공유 헬퍼다. 인증·개인 저장소 API와 기능 플래그는 제거했다. `login.html`·`signup.html`·`me.html` 파일은 삭제했으며 Vercel은 기존 3개 주소를 홈으로 영구 리다이렉트한다.
+- UI 톤은 `frontend/assets/styles.css`와 `DESIGN.md`의 에디토리얼 원칙을 따른다.
+- 계정·인증 백엔드는 서비스 범위에 포함하지 않는다.
 
-## 로컬 스토어 계약
-`frontend/assets/app.js`의 `H.*`가 브라우저 저장소를 감싼다.
+## 화면 설정과 데이터 계약
+`frontend/assets/app.js`는 공개 정적 데이터와 화면 설정을 제공한다.
 
 | 인터페이스 | 현재 저장소 | 역할 |
 |---|---|---|
-| `H.signup/login/logout/user` | deprecated | 오래된 링크/스크립트 안정성을 위해 남긴 호환 API |
-| `H.saves/toggleSave/isSaved` | `hangeut.saves` | 단일 로컬 보관함의 저장한 트렌드 ID |
-| `H.reviews/addReview/myReviews` | `hangeut.reviews` | 이 브라우저에 남긴 방문자 후기 |
-| `H.pulseIdeas` | `hangeut.pulseIdeas` | 펄스에서 저장한 창업 아이디어 |
+| `H.theme` | `hangeut.theme` | 라이트/다크 테마 설정 |
+| `H.renderMast()` | `hangeut.navCollapsed` | 데스크톱 메뉴 접기 설정 |
 | `H.TRENDS`, `H.trend(id)` | `frontend/data/trends.js` | 생성된 정적 트렌드 데이터 |
 
 ## 데이터 흐름
@@ -81,6 +76,5 @@ frontend/*.html
 - 게시된 트렌드의 유행 단계 재판정: 매일 21:05 Hermes(로컬, `hangeut-restage`)가 분석일 오래된 5건을 골라 `backend/scripts/restage.mjs`로 반영한다. 정규 stage 라벨과 살아 있는 비SNS 근거 URL 1개 이상만 통과하며, `stage`·`stageMsg`·`analyzedAt`(실제 재판정한 항목만)·근거 `src`를 바꾼다. 본문은 고치지 않고, 어긋나는 표현은 conflict로 보고한다. 기록은 `backend/out/pipeline/restage.jsonl`.
 - `auto-build.mjs`와 `restage.mjs`는 `trends.json`을 쓰기 직전에 다시 읽어, 서로(및 `recheck-ad.mjs`)의 변경을 덮어쓰지 않는다.
 ## 보안 메모
-- 로그인/가입은 현재 일반 플로우에서 사용하지 않는다. `login.html`, `signup.html`은 안내 페이지로만 유지한다.
-- 사용자가 브라우저 데이터를 지우거나 다른 기기를 쓰면 저장, 후기, 펄스 아이디어가 이어지지 않는다.
-- 공개 후기처럼 보이지만 현재는 해당 브라우저 안에서만 보이는 로컬 후기다.
+- 로그인·회원가입 기능은 도입하지 않는다. 인증/계정 API와 `login.html`·`signup.html`·`me.html` 파일은 제거했으며, Vercel에서 기존 주소를 홈으로 영구 리다이렉트한다.
+- 개인 저장·방문자 후기·개인 아이디어 저장 기능은 제거했다. 과거 localStorage 데이터의 삭제 명령은 실행하지 않으며 현재 코드는 테마·메뉴 접기 설정만 사용한다.

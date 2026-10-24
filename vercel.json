@@ -7,14 +7,37 @@
     {
       "source": "/(.*)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate"
+        }
       ]
     },
     {
       "source": "/favicon.svg",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=86400" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=86400"
+        }
       ]
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/login.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/signup.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/me.html",
+      "destination": "/",
+      "permanent": true
     }
   ]
 }

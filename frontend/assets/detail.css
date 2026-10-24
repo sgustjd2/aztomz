@@ -10,12 +10,12 @@
 .detail-page .detail-title-group .label{padding:0;border:0;background:transparent;font-size:13px}
 .detail-page .detail-title-group .tags{gap:6px;margin:12px 0}
 .detail-page .detail-title-group .tag-chip{border:0;background:var(--paper-soft);font-size:12px;padding:4px 8px}
-.detail-page .d-actions .save-btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;min-height:42px;font-size:14px}
+.detail-page .d-actions .detail-action{display:inline-flex;align-items:center;justify-content:center;gap:7px;min-height:42px;font-size:14px}
 .detail-page .d-actions .detail-icon{width:18px;height:18px}
 .detail-page .detail-jumps{display:flex;flex-wrap:wrap;gap:4px 20px;padding:12px 0;margin:0 0 24px;border-block:1px solid var(--line)}
 .detail-page .detail-jumps a{color:var(--body);font-size:14px;font-weight:600;text-decoration:none;min-height:36px;display:inline-flex;align-items:center}
 .detail-page .detail-jumps a:hover{color:var(--accent-text)}
-.detail-page :is([id="story"],[id="judgment"],[id="places"],[id="recommendations"],[id="sources"],[id="reviews"]){scroll-margin-top:84px}
+.detail-page :is([id="story"],[id="judgment"],[id="places"],[id="recommendations"],[id="sources"]){scroll-margin-top:84px}
 .detail-page .stale-banner{display:flex;align-items:flex-start;gap:10px;padding:13px 16px;margin:18px 0;color:var(--body);border:1px solid var(--line);border-radius:6px;background:var(--paper-soft);font-size:14px;line-height:1.7}
 .detail-page .stale-banner .detail-icon{width:18px;height:18px;margin-top:3px;color:var(--muted)}
 .detail-page .scores-note{margin:24px 0 12px;padding:0;border:0;background:none;color:var(--muted);font-size:14px;line-height:1.8}
@@ -64,12 +64,6 @@
 .detail-page .src-list a{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:12px 0;border-top:1px solid var(--line);font-size:15px;line-height:1.7;color:var(--body);text-decoration:none;overflow-wrap:anywhere}
 .detail-page .src-list a:hover{color:var(--accent-text)}
 .detail-page .src-list .detail-icon{width:18px;height:18px;color:var(--muted)}
-.detail-page .rv-form{padding:22px;border:1px solid var(--line);border-radius:6px;background:var(--paper)}
-.detail-page .rv-form textarea{font-size:16px;line-height:1.8;min-height:120px}
-.detail-page .reviews>.empty{padding:24px 16px;background:var(--paper-soft);border-radius:6px}
-.detail-page .reviews>.empty .e-mark{display:none}
-.detail-page .reviews>.empty h3{font-size:17px}
-.detail-page .reviews>.empty p{font-size:14px;line-height:1.8}
 .detail-page .related{gap:24px}
 .detail-page .related .cover{min-height:0;aspect-ratio:1.8;border-radius:6px}
 .detail-page .related .r-t{font-size:17px;line-height:1.6;margin-top:12px}
@@ -95,7 +89,6 @@
  .detail-page .article .art-p,.detail-page .article .art-ul li,.detail-page .analysis-summary .verdict{font-size:16px;line-height:1.95}
  .detail-page .article .art-h,.detail-page .sec-head h2,.detail-page .detail-section-title{font-size:20px}
  .detail-page .sec-head{flex-wrap:wrap}
- .detail-page .rv-form{padding:18px}
 }
 
 /* Shop cards share title, location, menu, description and action rows. */

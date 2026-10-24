@@ -1,7 +1,7 @@
-# 로그인 / 회원가입 안내
-- 목적: 과거 정적 링크 안정성을 위해 `login.html`, `signup.html`을 유지하되, 현재 한끗은 로그인 없이 사용할 수 있음을 안내한다.
-- 진입/화면: 일반 서비스 플로우에서는 노출하지 않는다. 사용자가 직접 `frontend/login.html` 또는 `frontend/signup.html`에 접근하면 noindex 안내 페이지와 "홈으로 이동", "요즘 트렌드 보기" 버튼을 보여준다.
-- 표시 데이터: 별도 입력 폼 없음. 트렌드와 분석 콘텐츠를 로그인 없이 읽을 수 있다는 안내 문구를 표시한다.
-- 현재 상태: 로그인/회원가입 UI 제거됨. 방문자 후기와 보관함·저장 UI는 현재 기능 플래그로 비노출하며, 기존 로컬 스토어 함수와 데이터는 보존한다.
-- 관련 코드: `frontend/login.html`, `frontend/signup.html`, `frontend/assets/app.js`의 deprecated `H.signup()`, `H.login()`, `H.logout()`, `H.user()`.
-- 비고: `login.html`과 `signup.html`은 직접 접근 안정성용 파일이며 검색 노출을 막기 위해 `noindex,nofollow`를 둔다.
+# 로그인 / 회원가입 (미도입)
+- 목적: 로그인 기능을 도입하지 않고 공개 콘텐츠를 바로 읽는 서비스 범위를 기록한다.
+- 진입/화면: `frontend/login.html`·`frontend/signup.html`은 삭제했다. Vercel에서 두 기존 주소는 홈(`/`)으로 영구 리다이렉트한다.
+- 표시 데이터: 계정·세션·인증 입력 폼 없음.
+- 현재 상태: 로그인·회원가입을 제공하지 않는다. 인증 호환 API·계정 키·세션 처리와 개인 저장 기능도 제거했다.
+- 관련 코드: `vercel.json`의 `/login.html`·`/signup.html` 리다이렉트, `frontend/assets/app.js`의 공개 콘텐츠 헬퍼.
+- 비고: 삭제된 정적 파일을 대신하는 리다이렉트는 Vercel 설정이다. 단순 로컬 정적 서버에서는 해당 파일을 제공하지 않는다.

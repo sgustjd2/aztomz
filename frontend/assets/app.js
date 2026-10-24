@@ -1,7 +1,6 @@
 /* ============================================================
-   한끗 — 공유 스토어 + 헬퍼 (데이터는 data/trends.js 에서 로드)
-   저장/후기/펄스 아이디어는 localStorage 기반 로컬 개인화.
-   ▶ H.* 는 로컬 스토어 추상화 계층. 향후 백엔드를 붙여도 UI는 이 인터페이스만 사용.
+   한끗 — 공개 콘텐츠 + 화면 헬퍼 (데이터는 data/trends.js 에서 로드)
+   로그인·계정·개인 저장 없이 콘텐츠 읽기와 공유를 제공한다.
    ▶ 신선도: 항상 '오늘'(브라우저 new Date) 대비 analyzedAt 으로 계산해 라이브 표시.
    ============================================================ */
 (function (global) {
@@ -13,21 +12,11 @@
 
   /* ---------- 저수준 storage ---------- */
   const LS = global.localStorage;
-  const K = {
-    users:'hangeut.users',
-    session:'hangeut.session',
-    saves:'hangeut.saves',
-    reviews:'hangeut.reviews',
-    pulseIdeas:'hangeut.pulseIdeas'
-  };
   function read(k, def){ try{ return JSON.parse(LS.getItem(k)) ?? def; }catch(e){ return def; } }
   function write(k, v){ try{ LS.setItem(k, JSON.stringify(v)); }catch(e){} }
-  function hash(s){ let h=5381; for(let i=0;i<s.length;i++){ h=((h<<5)+h)+s.charCodeAt(i); h|=0; } return 'h'+(h>>>0).toString(36); }
 
   /* ---------- 헬퍼 ---------- */
   const H = {};
-  // Temporarily exclude personal features from the public interface.
-  H.FEATURES = Object.freeze({ visitorReviews:false, personalCollection:false });
   H.TRENDS = TRENDS;
   H.generatedAt = _DATA.generatedAt;
   H.trend = (id)=> TRENDS.find(t=>t.id===id) || null;
@@ -37,33 +26,11 @@
   H.bandTxt = (v)=> v<=20?'낮음':v<=40?'약간':v<=60?'보통':v<=80?'높음':'매우 높음';
   H.fmtDate = (ts)=>{ const d=new Date(ts); const p=n=>String(n).padStart(2,'0'); return `${d.getFullYear()}.${p(d.getMonth()+1)}.${p(d.getDate())}`; };
   H.param = (k)=> new URLSearchParams(global.location.search).get(k);
-  H.resolve = (v)=> Promise.resolve(v);
   H.trunc = (s, n=88)=> {
     s = String(s || '').trim().replace(/\s+/g, ' ');
     return s.length > n ? `${s.slice(0, n - 1)}…` : s;
   };
   H.summary = (t, n=88)=> H.trunc((t && (t.excerpt || t.def || t.stageMsg || t.verdict || t.pull)) || '', n);
-
-  const SAFE_PAGES = new Set(['index.html','list.html','trend.html','dictionary.html','login.html','signup.html','me.html','pulse.html']);
-  H.safeNext = (next, fallback='index.html')=>{
-    const fb = SAFE_PAGES.has(fallback) ? fallback : 'index.html';
-    const raw = String(next || '').trim();
-    if(!raw) return fb;
-    if(/^(?:[a-z][a-z0-9+.-]*:|\/\/|\/|\\)/i.test(raw)) return fb;
-    try{
-      const u = new URL(raw, 'https://hangeut.local/');
-      if(u.origin !== 'https://hangeut.local') return fb;
-      const page = (u.pathname.replace(/^\/+/, '') || 'index.html');
-      if(!SAFE_PAGES.has(page) || page.includes('/') || page.includes('\\')) return fb;
-      return `${page}${u.search}${u.hash}`;
-    }catch(e){ return fb; }
-  };
-  H.currentPage = ()=>{
-    const page = (global.location.pathname.split('/').pop() || 'index.html');
-    return H.safeNext(`${page}${global.location.search}${global.location.hash}`);
-  };
-  H.loginHref = (next)=> H.safeNext(next || 'me.html', 'me.html');
-  H.signupHref = (next)=> H.safeNext(next || 'me.html', 'me.html');
 
   /* ---------- 오늘 / 신선도 (라이브) ---------- */
   H.todayStr = ()=>{ const d=new Date(); const p=x=>String(x).padStart(2,'0'); return `${d.getFullYear()}.${p(d.getMonth()+1)}.${p(d.getDate())}`; };
@@ -80,63 +47,7 @@
   // 데이터 묶음 신선도(홈 발행라인용)
   H.feedFreshness = ()=> H.freshness(H.generatedAt);
 
-  /* ---------- deprecated auth API (kept for old links/scripts) ---------- */
-  H.user = ()=> null;
-  H.signup = ({name,email,password})=>{
-    return {ok:true, deprecated:true};
-  };
-  H.login = ({email,password})=>{
-    return {ok:true, deprecated:true};
-  };
-  H.logout = ()=>{ LS.removeItem(K.session); };
-
-  /* ---------- saves (bookmarks) ---------- */
-  function uniq(arr){ return [...new Set((arr || []).filter(Boolean))]; }
-  function savedIds(){
-    const raw = read(K.saves, []);
-    if(Array.isArray(raw)) return uniq(raw);
-    if(raw && typeof raw === 'object'){
-      const all = [];
-      Object.keys(raw).forEach(k=>{ if(Array.isArray(raw[k])) all.push(...raw[k]); });
-      return uniq(all);
-    }
-    return [];
-  }
-  function writeSavedIds(arr){ write(K.saves, uniq(arr).slice(0, 200)); }
-  H.saves = ()=> savedIds();
-  H.isSaved = (id)=> H.saves().includes(id);
-  H.toggleSave = (id)=>{
-    const arr=savedIds();
-    const i=arr.indexOf(id);
-    if(i>=0) arr.splice(i,1); else arr.unshift(id);
-    writeSavedIds(arr);
-    return {saved: i<0};
-  };
-
-  /* ---------- reviews ---------- */
-  H.reviews = (trendId)=> read(K.reviews, []).filter(r=>r.trendId===trendId).sort((a,b)=>b.ts-a.ts);
-  H.myReviews = ()=> read(K.reviews,[]).sort((a,b)=>b.ts-a.ts);
-  H.addReview = (trendId,{rating,text})=>{
-    rating=Number(rating)||0; text=(text||'').trim();
-    if(rating<1||rating>5) return {ok:false,error:'별점을 선택해주세요.'};
-    if(text.length<5) return {ok:false,error:'후기를 5자 이상 적어주세요.'};
-    const all=read(K.reviews,[]);
-    all.push({ trendId, email:'local', name:'나', rating, text, ts: Date.now(), local:true });
-    write(K.reviews, all);
-    return {ok:true};
-  };
-  H.avgRating = (trendId)=>{ const rs=H.reviews(trendId); if(!rs.length) return null; return rs.reduce((s,r)=>s+r.rating,0)/rs.length; };
-
-  /* ---------- pulse ideas (local store; 향후 백엔드 전환 시 이 레이어만 교체) ---------- */
-  H.pulseIdeas = {
-    list: ()=> read(K.pulseIdeas, []),
-    save: (items)=>{ write(K.pulseIdeas, (items || []).slice(0, 80)); return {ok:true}; },
-    addMany: (items)=>{ const next = (items || []).concat(H.pulseIdeas.list()).slice(0, 80); write(K.pulseIdeas, next); return next; },
-    remove: (id)=>{ const next = H.pulseIdeas.list().filter(i=>i.id!==id); write(K.pulseIdeas, next); return next; }
-  };
-
   /* ---------- UI helpers ---------- */
-  H.starHTML = (n)=>{ let s=''; for(let i=1;i<=5;i++) s+=`<span class="${i<=Math.round(n)?'':'off'}">★</span>`; return s; };
   // 커버 썸네일용 대표 이미지: 영상 트렌드는 유튜브 썸네일, 아니면 첫 대표 이미지
   H.coverImg = (t)=>{
     if(t && t.video && t.video.youtube) return `https://i.ytimg.com/vi/${t.video.youtube}/hqdefault.jpg`;
@@ -292,8 +203,7 @@
       ['index.html','오늘의 한끗','house'],
       ['list.html?type=ad','광고일까 진짜일까','scan-search'],
       ['list.html?type=trend','요즘 트렌드','chart-no-axes-combined'],
-      ['dictionary.html','MZ 사전','book-open'],
-      ...(H.FEATURES.personalCollection ? [['me.html','내 보관함','bookmark']] : [])
+      ['dictionary.html','MZ 사전','book-open']
     ];
     const categories = H.NAV_CATEGORIES;
     host.innerHTML=`<div class="wrap">

@@ -1,6 +1,6 @@
 # 한끗 — 트렌드 번역소
 
-> **AZ와 MZ는 한 끗 차이** | 요즘 유행(밈·신조어·음식·디저트·핫플)을 1분에 번역하고, SNS 맛집이 광고인지 실후기인지 분석해주는 의존성 0·빌드 0·외부 폰트 CDN 0 정적 모바일 웹. 방문자 후기와 내 보관함은 현재 화면에서 제외했습니다.
+> **AZ와 MZ는 한 끗 차이** | 요즘 유행(밈·신조어·음식·디저트·핫플)을 1분에 번역하고, SNS 맛집이 광고인지 실후기인지 분석해주는 의존성 0·빌드 0·외부 폰트 CDN 0 정적 모바일 웹. 로그인·개인 저장·방문자 후기 없이 공개 콘텐츠 읽기와 공유를 제공합니다.
 
 ## 구조 한눈에
 
@@ -11,10 +11,9 @@
 | `frontend/list.html?type=ad\|trend` | 전체 목록 — 광고분석(10/페이지) 또는 트렌드(12/페이지) + 페이지네이션. `cat=음식`→`맛집`, `cat=핫플`→`카페·핫플` 별칭 매핑 |
 | `frontend/trend.html?id=` | 상세 — 점수(광고의심도/신뢰도)·만족도·판단·추천·출처·공유·같은 카테고리 우선 관련 콘텐츠 |
 | `frontend/dictionary.html` | MZ 사전 — 신조어 카드(뜻·예문·예쁜 우리말·출처) 검색 + 최신 신조어/지난 유행어 분리 |
-| `frontend/me.html` | 내 보관함 비노출 — 직접 접근 시 홈으로 이동 |
-| `frontend/login.html`·`signup.html` | 직접 접근 안정성을 위한 noindex 안내 페이지(서비스 내 링크 없음) |
-| `frontend/pulse.html` | 트렌드 펄스 — 이번 주 트렌드 / 트렌드 레이더 — 아이디어 펼침 유지, 저장 UI 비노출 |
-| `frontend/assets/styles.css`·`app.js`·`pulse.js` | 로컬 Pretendard 기반 에디토리얼 디자인 시스템 / localStorage 스토어와 공통 헬퍼(`H.*`) / 펄스 |
+| 기존 `/login.html`·`/signup.html`·`/me.html` | 파일 삭제. Vercel에서 홈(`/`)으로 영구 리다이렉트 |
+| `frontend/pulse.html` | 트렌드 펄스 — 이번 주 트렌드 / 트렌드 레이더 — 아이디어 펼침·공개 검색 제공, 개인 저장 기능 없음 |
+| `frontend/assets/styles.css`·`app.js`·`pulse.js` | 로컬 Pretendard 기반 에디토리얼 디자인 시스템 / 화면 설정과 공통 헬퍼(`H.*`) / 펄스 |
 | `frontend/data/trends.js`·`pulse.js` | 브라우저가 로드하는 **생성물** — **직접 편집 금지** |
 | `backend/` | 비공개(배포 안 됨) — 데이터 원본 + 빌드 스크립트 |
 | `backend/data/trends.json`·`pulse.json` | ★ **canonical 데이터 원본** (사람·스크립트가 수정) |
@@ -92,8 +91,8 @@ Vercel 자동 배포 (git push 시)
 - 게시된 트렌드의 유행 단계(stage)는 `restage.mjs`가 매일 21:05 5건씩 재판정한다(분석일 오래된 순). 본문은 고치지 않고, 근거 URL 1개 이상이 있을 때만 단계·분석일을 바꾼다
 - `auto-build.mjs`는 `trends.json`을 쓰기 직전에 다시 읽어, 검증하는 사이 `restage.mjs`·`recheck-ad.mjs`가 쓴 변경을 덮어쓰지 않는다
 - 자동 게시 항목의 썸네일은 auto-build.mjs가 출처 og:image로 자동 주입을 시도하며, 공통 카드에서 대표 이미지가 없거나 로드에 실패하면 `frontend/assets/defaults/`의 카테고리별 기본 일러스트 SVG로 대체하고 기본 이미지임을 표시한다
-- `H.FEATURES`의 `visitorReviews:false`, `personalCollection:false`로 방문자 후기·보관함·저장 UI를 비노출한다. 기존 localStorage 데이터와 스토어 함수는 보존한다
-- 다른 브라우저·다른 기기와 동기화되지 않으며, `H.*`는 향후 백엔드가 필요할 때를 위한 추상화 계층으로 유지
+- 로그인·계정·개인 저장·방문자 후기·보관함·개인 아이디어 저장 구현을 제거했다. localStorage는 테마와 메뉴 접기 설정에만 사용하며, 과거 저장 데이터의 삭제 명령은 실행하지 않는다
+- `H.*`는 정적 데이터 조회·화면 렌더링·공유·화면 설정을 위한 공통 헬퍼이며, 인증/개인 저장소 API는 제공하지 않는다
 - 디자인 톤은 `frontend/assets/styles.css`와 [DESIGN.md](DESIGN.md)의 에디토리얼 원칙을 따른다. 1025px 이상은 하단 접기 버튼이 있는 사이드바, 1024px 이하는 상단 오른쪽 메뉴 버튼과 슬라이드 메뉴를 사용한다
 
 ---
@@ -127,14 +126,14 @@ git push origin main              # → Vercel 자동 재배포
 
 - **[DESIGN.md](DESIGN.md)** — 디자인 토큰·반응형 메뉴·화면 패턴
 - **[docs/prd.md](docs/prd.md)** — 프로젝트 기획·비전
-- **[docs/architecture.md](docs/architecture.md)** — 정적 멀티페이지 구조·로컬 스토어 계약
-- **[docs/local-first.md](docs/local-first.md)** — 정적 운영·localStorage 기반 로컬 개인화 전략
+- **[docs/architecture.md](docs/architecture.md)** — 정적 멀티페이지 구조·화면 설정 계약
+- **[docs/local-first.md](docs/local-first.md)** — 정적 공개 콘텐츠 운영·화면 설정
 - **[docs/hermes.md](docs/hermes.md)** — 🤖 **Hermes(고구미봇) 작동 방식** — 파이프라인·스킬 16개·검증 게이트·검수·cron
 - **[docs/menus/](docs/menus/)** — 메뉴별 상세 문서
   - [오늘의 한끗(홈)](docs/menus/home.md) / [MZ 사전](docs/menus/dictionary.md)
   - [광고일까 진짜일까](docs/menus/ad-or-real.md) / [요즘 음식](docs/menus/food.md)
   - [요즘 디저트](docs/menus/dessert.md) / [요즘 핫플](docs/menus/hotplace.md)
-  - [검색](docs/menus/search.md) / [공유](docs/menus/share.md) / [내 보관함(비노출)](docs/menus/mypage.md) / [로그인 안내](docs/menus/auth.md)
+  - [검색](docs/menus/search.md) / [공유](docs/menus/share.md) / [내 보관함(제거)](docs/menus/mypage.md) / [로그인 미도입](docs/menus/auth.md)
 - **[learnings.md](learnings.md)** — 고구미봇이 쌓는 분석 교훈
 - **[CLAUDE.md](CLAUDE.md)** — 개발 철칙·메모
 
