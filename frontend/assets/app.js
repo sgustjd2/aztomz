@@ -125,7 +125,7 @@
     clearTimeout(H._tt); H._tt=setTimeout(()=>el.classList.remove('show'),1900);
   };
 
-  /* ---------- 신조어 신선도: 한물간 단어는 사전 '최신'에서 빠지고 '지난 유행어'로 보관 ---------- */
+  /* ---------- 신조어 신선도: 한물간 단어는 사전 '최신'에서 빠지고 '지난 유행어'로 분류 ---------- */
   // 한물 조건: stage에 끝물/한물/지남 표시 OR analyzedAt이 14일+ 미갱신(재확인 안 된 옛 단어).
   H.SLANG_STALE_DAYS = 14;
   H.isFreshSlang = (t)=>{

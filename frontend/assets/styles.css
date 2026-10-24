@@ -470,7 +470,7 @@ i{font-style:normal}
 .tp-lead p{font-size:16px;color:var(--body);max-width:46ch;margin:0}
 .tp-lead .freshline{margin-top:16px}
 
-/* 탭(레이더 / 저장 아이디어) */
+/* 공개 트렌드 보기 전환 */
 .tp-tabs{display:flex;gap:9px;margin:28px 0 12px;flex-wrap:wrap}
 .tp-tab{font-family:var(--sans);font-size:14px;font-weight:800;cursor:pointer;
   border:1px solid var(--line);background:var(--card);color:var(--ink-2);
@@ -546,7 +546,7 @@ i{font-style:normal}
 .tp-daily-empty{color:var(--ink-2);font-size:14px;padding:16px 14px;border:1px dashed var(--line);
   border-radius:var(--r);display:flex;align-items:center;gap:8px;flex-wrap:wrap}
 
-/* 저장한 아이디어 */
+/* 공개 아이디어 목록 */
 #tpIdeas{display:flex;flex-direction:column;gap:10px;margin-top:8px}
 
 /* 다크 보정 — 파스텔 배경 위 진한 글씨 + 스파크/성장률 가시 */
