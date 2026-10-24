@@ -3,10 +3,18 @@
 채널 [AI Engineer](https://www.youtube.com/@aiDotEngineer) 의 새 영상을 Gemini 로 자동 요약한 모음입니다.
 생성: `backend/scripts/youtube-summarize.mjs` (GitHub Actions `youtube-summary` 크론).
 
-총 **379개**.
+총 **387개**.
 
 | 발행일 | 제목 |
 |---|---|
+| 2026-10-23 | [How to Let AI Agents Sign Up for Your App Safely — Isabelle Williams, WorkOS](2026-10-23-uTrY8slys0w.md) |
+| 2026-10-23 | [A Bank Trained Its Own Foundation Model to Catch Fraud — Freddy Lecue, Wells Fargo](2026-10-23-UB6hoWyh3B0.md) |
+| 2026-10-23 | [How OpenAI Built ChatGPT for Bankers and Analysts — Joseph Kim, OpenAI](2026-10-23-opHmX7qClzE.md) |
+| 2026-10-23 | [Inside Arca's Long-Horizon Agents That Run the Business - Aman Singh, Arca](2026-10-23-oP2WLFpMoDY.md) |
+| 2026-10-23 | [Buying GPUs Should Work Like Buying Stocks — Carmen Li, Compute Exchange](2026-10-23-laQ8wMysnkk.md) |
+| 2026-10-23 | [Why Compute Still Trades in Group Chats — Affaan Mustafa & Alejandro Soumah Fernandez, Jump Trading](2026-10-23-GCse4OMzY8U.md) |
+| 2026-10-23 | [Don't Trust Your AI Agents. Test Them Like a Scientist — Stephanie Jarmak, Omni Analytics](2026-10-23-A3FL_zTQKU0.md) |
+| 2026-10-23 | [Real AI Agent Attacks and What Would Have Stopped Them — Andrey Rybka, Bloomberg](2026-10-23-5O6jLtoeKrg.md) |
 | 2026-10-22 | [Why AI Startups Will Disappear Without Compute Markets — Evan Conrad, San Francisco Compute](2026-10-22-Wk2bUUGFC_o.md) |
 | 2026-10-22 | [Better AI Models Won't Fix Your Engineering Team — Nicholas Arcolano, Jellyfish](2026-10-22-Ve2bAarPA2I.md) |
 | 2026-10-22 | [1,368 AI Failures and What They Teach About Evals — Vishal Srivastava & Tanmay Sah, New York Life](2026-10-22-mMw3arwQsL0.md) |
