@@ -15,7 +15,7 @@
 <meta name="twitter:title" content="전체 목록 — 한끗" />
 <meta name="twitter:description" content="한끗의 광고 분석과 요즘 트렌드 전체 목록을 카테고리와 페이지로 둘러보세요." />
 <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-<link rel="stylesheet" href="assets/styles.css?v=shared-card-tracks-20261023" />
+<link rel="stylesheet" href="assets/styles.css?v=category-sync-20261024" />
 <style>
   .list-lead{padding:24px 0 20px;border-bottom:1px solid var(--line)}
   .list-lead h1{font-size:34px;font-weight:900;line-height:1.14;letter-spacing:0;margin:12px 0 10px;text-wrap:balance}
@@ -40,24 +40,20 @@
     <div class="strip-empty" id="lEmpty" hidden>해당 목록이 아직 없어요.</div>
     <nav class="pager" id="lPager" aria-label="페이지 이동"></nav>
 
-    <div class="disc">⚠️ 모든 점수는 공개 정보 기반 <b>추정치</b>이며 확정 판정이 아닙니다.</div>
+    <div class="disc footer-disclaimer"><span>모든 점수는 공개 정보 기반 <b>추정치</b>이며 확정 판정이 아닙니다.</span></div>
 
-    <footer class="site">
-      <div class="fwm">한<b>끗</b></div>
-      AZ와 MZ는 한 끗 차이 · 트렌드 번역소<br>SNS 이미지 무단 사용 없이 링크·자체요약 중심으로 운영합니다.
-    </footer>
+    <footer class="site"><a class="fwm footer-brand" href="index.html" aria-label="한끗 홈">한<b>끗</b></a><div class="footer-copy">AZ와 MZ는 한 끗 차이 · 트렌드 번역소<br>SNS 이미지 무단 사용 없이 링크·자체요약 중심으로 운영합니다.</div></footer>
   </div>
 
 <script src="data/trends.js"></script>
-<script src="assets/app.js?v=shared-card-tracks-20261023"></script>
+<script src="assets/app.js?v=category-sync-20261024"></script>
 <script>
   H.boot();
 
   // ?type=ad | trend (기본 trend), ?cat=, ?page=
   const type = (H.param('type')==='ad') ? 'ad' : 'trend';
   const PAGE_SIZE = type==='ad' ? 10 : 12;
-  const CAT_ALIAS = { '음식':'맛집', '핫플':'카페·핫플', '밈':'신조어', '유행어':'신조어' };
-  const normalizeCat = (c)=> CAT_ALIAS[c] || c || '전체';
+  const normalizeCat = H.normalizeCategory;
   let activeCat = normalizeCat(H.param('cat'));
   let page = Math.max(1, parseInt(H.param('page')||'1', 10) || 1);
 
@@ -83,7 +79,8 @@
   H.q('#lFresh').innerHTML = `전체 <b style="font-style:normal;color:var(--ink)">${ALL.length}</b>건`
     + (H.generatedAt ? ` · 기준일 ${H.fmtISO(H.generatedAt)}` : '');
 
-  const cats = ['전체', ...new Set(ALL.map(t=>t.cat))];
+  const cats = ['전체', ...H.NAV_CATEGORIES.map(([cat])=>cat).filter(cat=>ALL.some(t=>t.cat===cat))];
+  if(type!=='trend' || !cats.includes(activeCat))activeCat='전체';
   const filtered = ()=> activeCat==='전체' ? ALL : ALL.filter(t=>t.cat===activeCat);
 
   // 카테고리 필터 (트렌드 전용 — 홈 광고 섹션과 동일하게 광고 목록엔 미노출)
@@ -157,16 +154,27 @@
     });
   }
 
-  function syncURL(){
+  function syncURL(replace=false){
     const u = new URLSearchParams();
     u.set('type', type);
     if(activeCat !== '전체') u.set('cat', activeCat);
     if(page > 1) u.set('page', String(page));
-    history.replaceState(null, '', `list.html?${u.toString()}`);
+    const next=`list.html?${u.toString()}`;
+    if(location.pathname.split('/').pop()+location.search!==next){
+      history[replace?'replaceState':'pushState'](null, '', next);
+    }
+    H.syncMastCurrent();
   }
 
+  window.addEventListener('popstate',()=>{
+    activeCat=normalizeCat(H.param('cat'));
+    if(type!=='trend' || !cats.includes(activeCat))activeCat='전체';
+    page=Math.max(1,parseInt(H.param('page')||'1',10)||1);
+    renderFilter(); render(); syncURL(true);
+  });
   renderFilter();
   render();
+  syncURL(true);
 </script>
 </body>
 </html>

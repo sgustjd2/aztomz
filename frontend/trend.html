@@ -15,7 +15,7 @@
 <meta name="twitter:title" content="한끗 — 트렌드 분석" />
 <meta name="twitter:description" content="광고 의심도·실제 후기 신뢰도·만족도를 나눠 보는 한끗 트렌드 상세 분석." />
 <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-<link rel="stylesheet" href="assets/styles.css?v=shared-card-tracks-20261023" />
+<link rel="stylesheet" href="assets/styles.css?v=category-sync-20261024" />
 <style>
   .crumb{font-size:13.5px;color:var(--ink-2);margin:18px 0 14px}
   .crumb a{color:var(--accent);text-decoration:none;font-weight:700}
@@ -83,13 +83,14 @@
   .shops .sh-note{flex-basis:100%;font-size:14px;color:var(--body);line-height:1.55;word-break:keep-all;margin-top:1px}
   .shops-note{font-size:12.5px;color:var(--ink-2);margin:9px 0 2px}
 </style>
+<link rel="stylesheet" href="assets/detail.css?v=category-sync-20261024" />
 </head>
-<body>
+<body class="detail-page">
   <div data-mast></div>
   <div class="wrap reading"><div id="main"></div></div>
 
 <script src="data/trends.js"></script>
-<script src="assets/app.js?v=shared-card-tracks-20261023"></script>
+<script src="assets/app.js?v=category-sync-20261024"></script>
 <script>
   H.boot();
   const id = H.param('id');
@@ -105,27 +106,47 @@
     render();
   }
 
+  // Shared outline icons for detail headings and actions.
+  function detailIcon(name){
+    const paths={
+      book:'<path d="M4 4h7v16H4zM13 4h7v16h-7z"/>',
+      chart:'<path d="M4 3v17h17M8 15v-4m5 4V7m5 8V4"/>',
+      shield:'<path d="m12 3 8 3v6c0 5-8 9-8 9S4 17 4 12V6zM8 12l3 3 5-6"/>',
+      message:'<path d="M4 4h16v12H9l-5 4zM8 8h8M8 12h5"/>',
+      pin:'<path d="M19 10c0 5-7 11-7 11S5 15 5 10a7 7 0 0 1 14 0z"/><circle cx="12" cy="10" r="2.5"/>',
+      users:'<circle cx="9" cy="7" r="3"/><path d="M3 21v-3a6 6 0 0 1 12 0v3M16 4a3 3 0 0 1 0 6m2 4a5 5 0 0 1 3 4v3"/>',
+      link:'<path d="m10 13 4-4M8 16l-2 2a4 4 0 0 1-6-6l5-5a4 4 0 0 1 6 0m2 1 2-2a4 4 0 0 1 6 6l-5 5a4 4 0 0 1-6 0" transform="translate(1 0)"/>',
+      arrow:'<path d="M4 12h16m-6-6 6 6-6 6"/>',
+      bookmark:'<path d="M6 3h12v18l-6-4-6 4z"/>',
+      share:'<circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m9 10 6-4m-6 8 6 4"/>',
+      clock:'<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',
+      image:'<rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8" cy="8" r="1"/><path d="m3 17 5-5 4 4 4-7 5 8"/>',
+      heart:'<path d="M20 5c-3-3-6-1-8 1-2-2-5-4-8-1-5 5 8 15 8 15S25 10 20 5z"/>'
+    };
+    return `<svg class="detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">${paths[name]||paths.book}</svg>`;
+  }
+
   function scoresBlock(){
     if(t.type!=='신뢰분석') return `
       <div class="stage-box">
-        <div class="sb-k">유행 단계</div>
+        <div class="sb-k">${detailIcon("chart")} 유행 단계</div>
         <div class="sb-v">${H.esc(t.stage)}</div>
         <div class="muted" style="font-size:14px;margin-top:4px">${H.esc(t.stageMsg)}</div>
       </div>`;
     const R = t.reasons || {};
     return `<div class="scores-note">두 지표는 각각 <b>0~100 독립 점수</b>예요 — 서로 더하는 값이 아니라, “광고일까?”와 “후기를 믿을 만한가?”를 따로 잰 거예요.</div>
     <div class="scores">
-      <div class="score ad"><div class="s-label">광고 의심도</div>
-        <div class="s-num">${t.ad}</div><div class="s-band">${H.bandTxt(t.ad)} · 높을수록 광고 가능성</div>
+      <div class="score ad"><div class="s-label">${detailIcon("chart")} 광고 의심도</div>
+        <div class="s-num">${t.ad}<span>/ 100</span></div><div class="s-band">${H.bandTxt(t.ad)} · 높을수록 광고 가능성</div>
         <div class="track"><i style="width:${t.ad}%"></i></div>
         ${R.ad?`<div class="s-why"><b>왜 이 점수?</b> ${H.esc(R.ad)}</div>`:''}</div>
-      <div class="score trust"><div class="s-label">실제 후기 신뢰도</div>
-        <div class="s-num">${t.trust}</div><div class="s-band">${H.bandTxt(t.trust)} · 높을수록 믿을 만함</div>
+      <div class="score trust"><div class="s-label">${detailIcon("shield")} 실제 후기 신뢰도</div>
+        <div class="s-num">${t.trust}<span>/ 100</span></div><div class="s-band">${H.bandTxt(t.trust)} · 높을수록 믿을 만함</div>
         <div class="track"><i style="width:${t.trust}%"></i></div>
         ${R.trust?`<div class="s-why"><b>왜 이 점수?</b> ${H.esc(R.trust)}</div>`:''}</div>
     </div>
-    <div style="font-size:14.5px;margin:2px 0 4px">만족도 <span class="sat-badge sat-${t.sat}">${({pos:'긍정',neg:'부정',mix:'혼재',none:'판단 불가'})[t.sat]}</span> <span class="muted">${H.esc(t.satTxt)}</span></div>
-    ${R.sat?`<div class="sat-why"><b>근거</b> ${H.esc(R.sat)}</div>`:''}`;
+    <div class="detail-satisfaction"><div class="sat-heading">${detailIcon("heart")} 만족도 <span class="sat-badge sat-${t.sat}">${({pos:'긍정',neg:'부정',mix:'혼재',none:'판단 불가'})[t.sat]}</span> <span class="muted">${H.esc(t.satTxt)}</span></div>
+    ${R.sat?`<div class="sat-why"><b>근거</b> ${H.esc(R.sat)}</div>`:''}</div>`;
   }
 
   // 영상 임베드(유튜브/틱톡) — 데이터에 t.video 있을 때만
@@ -137,7 +158,7 @@
     else if(v.url) src=v.url;
     if(!src) return '';
     return `<div class="media">
-      <div class="media-h">지금 뜨는 영상</div>
+      <h2 class="media-h">${detailIcon("image")} 지금 뜨는 영상</h2>
       <div class="embed-frame ${vertical?'vertical':''}">
         <iframe src="${src}" title="${H.esc(t.title)} 영상" loading="lazy"
           referrerpolicy="strict-origin-when-cross-origin"
@@ -155,7 +176,7 @@
     const uniq=[...new Set(all.map(x=>typeof x==='string'?x:x.u))].filter(Boolean);
     if(!uniq.length) return '';
     return `<div class="media">
-      <div class="media-h">대표 이미지</div>
+      <h2 class="media-h">${detailIcon("image")} 대표 이미지</h2>
       <div class="gallery">${uniq.map(u=>`<a href="${u}" target="_blank" rel="noopener">
         <img src="${u}" alt="${H.esc(t.title)}" loading="lazy" referrerpolicy="no-referrer"
           onerror="this.closest('a').remove()"></a>`).join('')}</div>
@@ -172,21 +193,21 @@
       if(type==='ul') return `<ul class="art-ul">${(c||[]).map(li=>`<li>${H.esc(li)}</li>`).join('')}</ul>`;
       return `<p class="art-p">${H.esc(c)}</p>`;
     }).join('');
-    return `<div class="article"><div class="media-h">자세히 읽기</div>${body}</div>`;
+    return `<section class="article" id="story"><h2 class="detail-section-title">${detailIcon("book")} 자세히 읽기</h2>${body}</section>`;
   }
 
   // 어디서 사 먹지? — t.shops 있을 때만. [{name, area?, url?, note?}]
   function shopsBlock(){
     const s = t.shops; if(!s || !s.length) return '';
     const rows = s.map(sh=>{
-      const rep = sh.rep?`<span class="sh-rep">${H.esc(sh.rep)}</span>`:'';
-      const area = sh.area?`<span class="sh-area">${H.esc(sh.area)}</span>`:'';
-      const link = sh.url?`<a class="sh-link" href="${sh.url}" target="_blank" rel="noopener">보기 ↗</a>`:'';
-      const note = sh.note?`<span class="sh-note">${H.esc(sh.note)}</span>`:'';
-      return `<li class="sh-row"><div class="sh-main"><span class="sh-name">${H.esc(sh.name)}</span>${rep}${area}</div>${link}${note}</li>`;
+      const rep = sh.rep?`<div class="shop-menu"><span class="shop-eyebrow">소개 메뉴</span><span>${H.esc(sh.rep)}</span></div>`:'';
+      const area = sh.area?`<p class="shop-location">${detailIcon("pin")}<span>${H.esc(sh.area)}</span></p>`:'';
+      const link = sh.url?`<a class="shop-source" href="${H.esc(sh.url)}" target="_blank" rel="noopener" aria-label="${H.esc(sh.name)} 소개 및 출처 보기 · 새 창">소개·출처 보기 ${detailIcon("arrow")}</a>`:'';
+      const note = sh.note?`<p class="shop-description">${H.esc(sh.note)}</p>`:'';
+      return `<li class="shop-card"><h3 class="shop-name">${H.esc(sh.name)}</h3>${area}${rep}${note}${link}</li>`;
     }).join('');
-    return `<div class="sec-head"><span class="no">▣</span><h2>어디서 사 먹지?</h2></div>
-      <ul class="shops">${rows}</ul>
+    return `<div class="sec-head" id="places"><h2>${detailIcon("pin")} 어디서 사 먹지?</h2></div>
+      <ul class="shops shop-cards">${rows}</ul>
       <div class="shops-note">맛집으로 소문난 곳 위주로 골랐어요. 메뉴·가격·영업은 방문 전 다시 확인하세요.</div>`;
   }
 
@@ -205,16 +226,22 @@
           ${t.def?`<p class="d-def">${H.esc(t.def)}</p>`:''}
           <div class="detail-meta"><span class="label ${H.esc(t.labelCls||'mid')}">${H.esc(t.label)}</span><span class="freshline"><a class="detail-date-link" href="index.html?date=${encodeURIComponent(t.collectedAt||t.analyzedAt||'')}">수집 ${H.fmtISO(t.collectedAt||t.analyzedAt)}</a>${t.analyzedAt&&t.analyzedAt!==(t.collectedAt||t.analyzedAt)?` · 분석 ${H.fmtISO(t.analyzedAt)}`:''}</span></div>
           <div class="tags">${(t.tags||[]).map(tg=>`<a class="tag-chip" href="index.html?tag=${encodeURIComponent(tg)}">#${H.esc(tg)}</a>`).join('')}</div>
-          <div class="d-actions"><button class="save-btn ${saved?'on':''}" id="saveBtn">${saved?'저장됨':'저장'}</button><button class="save-btn" id="shareBtn">공유</button></div>
+          <div class="d-actions"><button class="save-btn ${saved?'on':''}" id="saveBtn" type="button" aria-pressed="${saved}">${detailIcon("bookmark")}<span>${saved?'저장됨':'저장'}</span></button><button class="save-btn" id="shareBtn" type="button">${detailIcon("share")}<span>공유</span></button></div>
         </div>
       </header>
-      ${H.freshness(t.analyzedAt).cls==='stale' ? `<div class="stale-banner">오래된 분석이에요. 유행은 빨리 바뀌니 방문 전 최신 상황을 다시 확인하세요.</div>` : ''}
+      <nav class="detail-jumps" aria-label="상세 내용 바로가기">
+        ${t.type==='신뢰분석'?'<a href="#judgment">한끗 판단</a>':''}
+        ${t.article?.length?'<a href="#story">자세히 읽기</a>':''}
+        ${t.shops?.length?'<a href="#places">판매처</a>':''}
+        ${t.prompt?'<a href="#prompt">프롬프트</a>':''}<a href="#recommendations">추천 대상</a><a href="#sources">출처</a><a href="#reviews">후기</a>
+      </nav>
+      ${H.freshness(t.analyzedAt).cls==='stale' ? `<div class="stale-banner">${detailIcon("clock")}<span>오래된 분석이에요. 유행은 빨리 바뀌니 방문 전 최신 상황을 다시 확인하세요.</span></div>` : ''}
       ${scoresBlock()}
-      ${t.type==='신뢰분석'? `<section class="analysis-summary"><div class="media-h">한끗 판단</div><p class="verdict">${H.esc(t.verdict)}</p></section>`:''}
+      ${t.type==='신뢰분석'? `<section class="analysis-summary" id="judgment"><h2 class="detail-section-title">${detailIcon("shield")} 한끗 판단</h2><p class="verdict">${H.esc(t.verdict)}</p></section>`:''}
       ${videoBlock()}
       ${t.pull?`<blockquote class="pull">${H.esc(t.pull)}</blockquote>`:''}
       ${galleryBlock()}
-      ${t.prompt?`<div class="prompt-box">
+      ${t.prompt?`<div class="prompt-box" id="prompt">
         <div class="pb-top">
           <span class="pb-label">프롬프트 · ${t.prompt.split('\n').length}줄 — 복사해서 ChatGPT·제미나이·미드저니에 붙여넣기</span>
           <button class="pb-copy" type="button" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.pb-text').innerText).then(()=>{this.textContent='복사됨';setTimeout(()=>this.textContent='복사',1500)}).catch(()=>{this.textContent='복사 실패'})">복사</button>
@@ -226,25 +253,25 @@
       ${t.type!=='신뢰분석'? `<p class="verdict">${H.esc(t.verdict)}</p>`:''}
       ${articleBlock()}
       ${shopsBlock()}
-      <div class="sec-head"><span class="no">·</span><h2>이런 분께</h2></div>
+      <div class="sec-head" id="recommendations"><h2>${detailIcon("users")} 이런 분께</h2></div>
       <ul class="recs">${t.recs.map(r=>`<li><span>${H.esc(r[0])}</span><span class="v ${r[2]?'ok':''}">${H.esc(r[1])}</span></li>`).join('')}</ul>
-      <details class="src"><summary>참고 출처 ${t.src.length}개</summary>
-        <div class="src-list">${t.src.map(s=>`<a href="${s[1]}" target="_blank" rel="noopener">${H.esc(s[0])}</a>`).join('<br>')}</div></details>
+      <details class="src" id="sources"><summary>${detailIcon("link")} 참고 출처 <span class="source-count">${t.src.length}개</span></summary>
+        <div class="src-list">${t.src.map(s=>`<a href="${s[1]}" target="_blank" rel="noopener"><span>${H.esc(s[0])}</span>${detailIcon("arrow")}</a>`).join('')}</div></details>
 
-      <div class="sec-head" id="reviews"><span class="no">★</span><h2>방문자 후기</h2><span class="note" id="rvAvg"></span></div>
+      <div class="sec-head" id="reviews"><h2>${detailIcon("message")} 방문자 후기</h2><span class="note" id="rvAvg"></span></div>
       <div id="rvForm"></div>
       <div class="reviews" id="rvList"></div>
 
-      <div class="sec-head"><span class="no">→</span><h2>${relatedTitle}</h2></div>
+      <div class="sec-head"><h2>${detailIcon("book")} ${relatedTitle}</h2></div>
       <div class="related">${related.map(x=>`<a href="trend.html?id=${x.id}">${H.coverHTML(x)}<div class="r-t">${H.esc(x.title)}</div></a>`).join('')}</div>
 
-      <div class="disc">⚠️ 점수는 공개 정보 기반 <b>추정치</b>이며 확정 판정이 아닙니다. 방문자 후기는 이용자가 직접 작성한 내용입니다.</div>
-      <footer class="site"><div class="fwm">한<b>끗</b></div>AZ와 MZ는 한 끗 차이 · 트렌드 번역소</footer>`;
+      <div class="disc footer-disclaimer">${detailIcon("shield")}<span>점수는 공개 정보 기반 <b>추정치</b>이며 확정 판정이 아닙니다. 방문자 후기는 이용자가 직접 작성한 내용입니다.</span></div>
+      <footer class="site"><a class="fwm footer-brand" href="index.html" aria-label="한끗 홈">한<b>끗</b></a><div class="footer-copy">AZ와 MZ는 한 끗 차이 · 트렌드 번역소</div></footer>`;
 
     H.q('#saveBtn').onclick = async ()=>{
       const r = await H.resolve(H.toggleSave(t.id));
       const b=H.q('#saveBtn'); b.classList.toggle('on', r.saved);
-      b.textContent = r.saved?'저장됨':'저장'; H.toast(r.saved?'저장했어요':'저장을 해제했어요');
+      b.innerHTML = detailIcon('bookmark')+`<span>${r.saved?'저장됨':'저장'}</span>`; b.setAttribute('aria-pressed',String(r.saved)); H.toast(r.saved?'저장했어요':'저장을 해제했어요');
     };
     H.q('#shareBtn').onclick = async ()=>{
       const text=`[한끗] ${t.title} — ${t.type==='신뢰분석'?`광고 ${t.ad}/신뢰 ${t.trust}`:t.stage} · ${t.label}`;

@@ -256,6 +256,32 @@
   H.theme.apply(H.theme.get());  // 로드 즉시 적용(테마 깜빡임 최소화)
 
   /* ---------- masthead, injected into [data-mast] ---------- */
+  H.NAV_CATEGORIES = [['맛집','utensils'],['디저트','cake-slice'],['카페·핫플','coffee'],['신조어','message-square'],['노래·챌린지','music'],['패션','shirt'],['AI 프롬프트','sparkles']];
+  H.normalizeCategory = (cat)=>({'음식':'맛집','핫플':'카페·핫플','밈':'신조어','유행어':'신조어'}[cat]||cat||'전체');
+  // Refresh active links without rebuilding the menu or losing drawer/focus state.
+  H.syncMastCurrent = ()=>{
+    const host=H.q('[data-mast]'); if(!host)return;
+    const current = new URL(location.href);
+    const currentHref = current.pathname.split('/').pop() || 'index.html';
+    const currentListType = current.searchParams.get('type') || 'trend';
+    const currentCat = H.normalizeCategory(current.searchParams.get('cat'));
+    host.querySelectorAll('#mastNav a').forEach(a=>{
+      a.classList.remove('is-active'); a.removeAttribute('aria-current');
+      const target = new URL(a.href, location.href);
+      const samePage = target.pathname.split('/').pop()===currentHref;
+      const sameListType = currentHref!=='list.html' || target.searchParams.get('type')===currentListType;
+      if(samePage && sameListType){
+        a.classList.add('is-active');
+        a.setAttribute('aria-current',currentCat!=='전체'?'location':'page');
+      }
+    });
+    host.querySelectorAll('.nav-categories a').forEach(a=>{
+      a.classList.remove('is-active'); a.removeAttribute('aria-current');
+      if(currentHref==='list.html' && currentListType==='trend' && H.normalizeCategory(new URL(a.href).searchParams.get('cat'))===currentCat){
+        a.classList.add('is-active'); a.setAttribute('aria-current','page');
+      }
+    });
+  };
   H.renderMast = ()=>{
     const host=H.q('[data-mast]'); if(!host) return;
     if(!document.body.classList.contains('home-redesign')) document.body.classList.add('app-redesign');
@@ -267,34 +293,18 @@
       ['dictionary.html','MZ 사전','book-open'],
       ['me.html','내 보관함','bookmark']
     ];
-    const categories = ['맛집','디저트','카페·핫플','신조어','노래·챌린지','패션','AI 프롬프트'];
+    const categories = H.NAV_CATEGORIES;
     host.innerHTML=`<div class="wrap">
       <div class="mast-brand"><a class="wordmark" href="index.html" aria-label="한끗 홈">한<b>끗</b></a></div>
       <button class="nav-toggle" type="button" aria-label="메뉴 접기" aria-expanded="true" aria-controls="mastPanel"><span class="nav-icon icon-panel-left-close" aria-hidden="true"></span></button>
       <div class="mast-panel" id="mastPanel" tabindex="-1">
         <button class="drawer-close" type="button" aria-label="메뉴 닫기"><span class="nav-icon icon-x" aria-hidden="true"></span></button>
         <nav id="mastNav" aria-label="주 메뉴">${menu.map(([url,label,icon])=>`<a href="${url}" title="${label}" aria-label="${label}"><span class="nav-icon icon-${icon}" aria-hidden="true"></span><span class="nav-label">${label}</span></a>`).join('')}</nav>
-        <nav class="nav-categories" aria-label="트렌드 카테고리"><span class="nav-section-label">카테고리</span>${categories.map(cat=>`<a href="list.html?type=trend&cat=${encodeURIComponent(cat)}">${H.esc(cat)}</a>`).join('')}</nav>
+        <nav class="nav-categories" aria-label="트렌드 카테고리"><span class="nav-section-label">카테고리</span>${categories.map(([cat,icon])=>`<a href="list.html?type=trend&cat=${encodeURIComponent(cat)}"><span class="nav-icon icon-${icon}" aria-hidden="true"></span><span class="nav-label">${H.esc(cat)}</span></a>`).join('')}</nav>
         <button class="theme-toggle" type="button" aria-label="테마 전환"></button>
       </div>
     </div><button class="nav-scrim" type="button" aria-label="메뉴 닫기" tabindex="-1" hidden></button>`;
-    const current = new URL(location.href);
-    const currentHref = current.pathname.split('/').pop() || 'index.html';
-    const currentListType = current.searchParams.get('type') || 'trend';
-    host.querySelectorAll('#mastNav a').forEach(a=>{
-      const target = new URL(a.href, location.href);
-      const samePage = target.pathname.split('/').pop()===currentHref;
-      const sameListType = currentHref!=='list.html' || target.searchParams.get('type')===currentListType;
-      if(samePage && sameListType){
-        a.classList.add('is-active');
-        a.setAttribute('aria-current',current.searchParams.has('cat')?'location':'page');
-      }
-    });
-    host.querySelectorAll('.nav-categories a').forEach(a=>{
-      if(currentHref==='list.html' && currentListType==='trend' && new URL(a.href).searchParams.get('cat')===current.searchParams.get('cat')){
-        a.classList.add('is-active'); a.setAttribute('aria-current','page');
-      }
-    });
+    H.syncMastCurrent();
     const tg=host.querySelector('.nav-toggle'), panel=host.querySelector('.mast-panel');
     const close=host.querySelector('.drawer-close'), scrim=host.querySelector('.nav-scrim');
     const compact=global.matchMedia('(max-width:1024px)');

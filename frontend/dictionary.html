@@ -15,7 +15,7 @@
 <meta name="twitter:title" content="MZ 사전 — 요즘 말, 1초에 해석 | 한끗" />
 <meta name="twitter:description" content="요즘 유행어·밈·신조어를 뜻, 예문, 예쁜 우리말, 출처와 함께 확인하세요." />
 <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-<link rel="stylesheet" href="assets/styles.css?v=shared-card-tracks-20261023" />
+<link rel="stylesheet" href="assets/styles.css?v=category-sync-20261024" />
 <style>
   .lead{padding:36px 0 8px;border-bottom:1px solid var(--line)}
   .lead h1{font-size:38px;font-weight:900;line-height:1.12;letter-spacing:0;margin:12px 0 10px}
@@ -70,14 +70,11 @@
     <div class="dlist" id="archList"></div>
     <div class="dict-empty" id="empty" hidden>그 단어는 아직 사전에 없어요. <a href="index.html" style="color:var(--accent)">전체 트렌드</a>에서 찾아보세요.</div>
 
-    <footer class="site">
-      <div class="fwm">한<b>끗</b></div>
-      AZ와 MZ는 한 끗 차이 · 트렌드 번역소<br>뜻은 출처를 확인해 싣지만, 신조어는 빨리 변해요. 날짜를 함께 봐주세요.
-    </footer>
+    <footer class="site"><a class="fwm footer-brand" href="index.html" aria-label="한끗 홈">한<b>끗</b></a><div class="footer-copy">AZ와 MZ는 한 끗 차이 · 트렌드 번역소<br>뜻은 출처를 확인해 싣지만, 신조어는 빨리 변해요. 날짜를 함께 봐주세요.</div></footer>
   </div>
 
 <script src="data/trends.js"></script>
-<script src="assets/app.js?v=shared-card-tracks-20261023"></script>
+<script src="assets/app.js?v=category-sync-20261024"></script>
 <script>
   H.boot();
   const SLANG = H.TRENDS.filter(t=>t.coverCat==='cat-slang' || t.cat==='신조어')

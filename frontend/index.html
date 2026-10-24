@@ -15,7 +15,7 @@
 <meta name="twitter:title" content="한끗 — 요즘 유행, 광고야 진짜야?" />
 <meta name="twitter:description" content="SNS 맛집·디저트의 광고 의심도, 후기 신뢰도, 만족도를 따로 보는 트렌드 번역소." />
 <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-<link rel="stylesheet" href="assets/styles.css?v=shared-card-tracks-20261023" />
+<link rel="stylesheet" href="assets/styles.css?v=category-sync-20261024" />
 
 </head>
 <body class="home-redesign app-redesign">
@@ -48,23 +48,20 @@
     </section>
 
     <section class="empty home-request" style="margin-top:34px">
-      <div class="e-mark">Ask</div>
+      <span class="request-icon nav-icon icon-message-square" aria-hidden="true"></span>
       <h3>이것도 광고야 진짜야?</h3>
       <p>궁금한 맛집·디저트를 던져주시면 다음 호에 분석해 올려요</p>
       <!-- ▼ 카카오 오픈채팅/구글폼 링크로 교체 — "재요청" = 1순위 수요 신호 -->
       <button class="btn accent" type="button" id="requestBtn">분석 요청하기</button>
     </section>
 
-    <div class="disc">⚠️ 모든 점수는 공개 정보 기반 <b>추정치</b>이며 확정 판정이 아닙니다. 광고 의심도는 "광고일 수 있다"는 가능성일 뿐, 특정 업체의 광고를 단정하지 않습니다.</div>
+    <div class="disc footer-disclaimer"><span>모든 점수는 공개 정보 기반 <b>추정치</b>이며 확정 판정이 아닙니다. 광고 의심도는 "광고일 수 있다"는 가능성일 뿐, 특정 업체의 광고를 단정하지 않습니다.</span></div>
 
-    <footer class="site">
-      <div class="fwm">한<b>끗</b></div>
-      AZ와 MZ는 한 끗 차이 · 트렌드 번역소<br>SNS 이미지 무단 사용 없이 링크·자체요약 중심으로 운영합니다.
-    </footer>
+    <footer class="site"><a class="fwm footer-brand" href="index.html" aria-label="한끗 홈">한<b>끗</b></a><div class="footer-copy">AZ와 MZ는 한 끗 차이 · 트렌드 번역소<br>SNS 이미지 무단 사용 없이 링크·자체요약 중심으로 운영합니다.</div></footer>
   </main>
 
 <script src="data/trends.js"></script>
-<script src="assets/app.js?v=shared-card-tracks-20261023"></script>
+<script src="assets/app.js?v=category-sync-20261024"></script>
 <script>
   H.boot();
   const href = (id)=>`trend.html?id=${encodeURIComponent(id)}`;

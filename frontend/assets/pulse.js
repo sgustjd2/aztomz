@@ -155,7 +155,7 @@
     const box = H.q('#tpIdeas'); if (!box) return;
     const ideas = loadIdeas();
     if (!ideas.length) {
-      box.innerHTML = `<div class="empty"><div class="e-mark">Idea</div><h3>저장한 아이디어가 없어요</h3><p>트렌드 카드를 펼쳐 아이디어 아래 '저장'을 눌러보세요.</p></div>`;
+      box.innerHTML = `<div class="empty"><span class="empty-icon nav-icon icon-activity" aria-hidden="true"></span><h3>저장한 아이디어가 없어요</h3><p>트렌드 카드를 펼쳐 아이디어 아래 '저장'을 눌러보세요.</p></div>`;
       return;
     }
     box.innerHTML = ideas.map((idea) => {

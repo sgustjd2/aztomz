@@ -939,7 +939,7 @@ body.app-redesign.nav-collapsed{--nav-width:76px}
 .app-redesign #lCatFilter .cat-chip{padding:7px 12px;border-radius:5px;font-size:var(--text-meta);font-weight:650}
 .app-redesign #lCatFilter .cat-chip.on{background:var(--ink);border-color:var(--ink);color:var(--on-ink)}
 .app-redesign #lCatFilter .cc-n{font-family:var(--sans);font-size:var(--text-meta)}
-.app-redesign .editorial-feed{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:28px 22px;margin:24px 0 14px}
+.app-redesign .editorial-feed{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,250px),1fr));gap:28px 22px;margin:24px 0 14px}
 .app-redesign .analysis-card{display:flex;min-width:0;flex-direction:column;overflow:hidden;color:inherit;text-decoration:none;border-bottom:1px solid var(--line);padding:0 0 16px;transition:color .16s}
 .app-redesign .analysis-card:hover .it-title,.app-redesign .chip-card:hover .cc-title{color:var(--accent-text)}
 .app-redesign .analysis-card .idx-thumb{position:relative;display:flex;width:100%;height:auto;aspect-ratio:1.62;overflow:hidden;align-items:center;justify-content:center;margin-bottom:11px;border-radius:5px;background:var(--paper-soft)}
@@ -1221,4 +1221,86 @@ body.app-redesign.nav-collapsed{--nav-width:76px}
   .app-redesign .tp-body>.tp-angle{grid-row:5}
   .app-redesign .tp-body>.tp-more{grid-row:6;margin-top:0;align-self:end}
   .app-redesign .tp-body>.tp-ideas{grid-row:7}
+}
+
+/* Quiet, consistent footer and supporting information. */
+.app-redesign .disc.footer-disclaimer{display:grid;grid-template-columns:18px minmax(0,1fr);align-items:start;gap:9px;margin:32px 0 0;padding:16px 0;border:0;border-radius:0;background:transparent;color:var(--muted);font-size:13px;line-height:1.8;font-weight:400}
+.app-redesign .footer-disclaimer:not(:has(>.detail-icon))::before{content:"";width:17px;height:17px;margin-top:3px;background:currentColor;mask:url("icons/lucide/info.svg") center/contain no-repeat}
+.app-redesign .footer-disclaimer>.detail-icon{width:18px;height:18px;margin-top:3px}
+.app-redesign .footer-disclaimer b{font-weight:600}
+.app-redesign footer.site{display:flex;align-items:flex-start;gap:18px 28px;margin:12px 0 0;padding:24px 0 8px;border-top:1px solid var(--line);color:var(--muted);font-size:13px;line-height:1.9}
+.app-redesign footer.site .footer-brand{flex:none;display:inline-block;margin:0;padding:0;color:var(--ink);font:800 23px/1.4 var(--sans);letter-spacing:-.05em;text-decoration:none}
+.app-redesign footer.site .footer-brand b{color:var(--accent-text)}
+.app-redesign .footer-copy{min-width:0;overflow-wrap:anywhere;font-size:13px;line-height:1.9}
+@media(max-width:600px){
+ .app-redesign footer.site{flex-direction:column;gap:10px;padding-top:22px}
+ .app-redesign .disc.footer-disclaimer{font-size:12px;line-height:1.9;margin-top:24px}
+ .app-redesign .footer-copy{font-size:12px}
+}
+
+/* Supporting and empty states follow the editorial layout as well. */
+.app-redesign .icon-info::before{mask-image:url("icons/lucide/info.svg")}
+.app-redesign .icon-message-square::before{mask-image:url("icons/lucide/message-square.svg")}
+.app-redesign .empty{display:grid;grid-template-columns:28px minmax(0,1fr);gap:6px 14px;align-items:start;text-align:left;margin:14px 0;padding:22px;border:1px solid var(--line);border-radius:6px;background:var(--paper-soft)}
+.app-redesign .empty>.e-mark{display:none}
+.app-redesign .empty>*{grid-column:2;min-width:0}
+.app-redesign .empty>.empty-icon{grid-column:1;grid-row:1/span 2;width:26px;height:26px;color:var(--muted);margin-top:1px}
+.app-redesign .empty .empty-icon::before{width:26px;height:26px}
+.app-redesign .empty h3{font-size:17px;line-height:1.6;font-weight:700;margin:0}
+.app-redesign .empty p{font-size:14px;line-height:1.85;margin:0 0 6px;color:var(--muted);overflow-wrap:anywhere}
+.app-redesign .empty .btn{justify-self:start;min-height:40px;padding:9px 13px;border-radius:5px;font-size:13px;font-weight:650;line-height:1.6}
+.app-redesign .auth-card.info-card{margin:28px auto;padding:24px 0;border-top:1px solid var(--line);border-bottom:0}
+.app-redesign .auth-info-icon{display:block;margin-bottom:14px;width:28px;height:28px;color:var(--muted)}
+.app-redesign .auth-info-icon::before{width:28px;height:28px}
+.app-redesign .auth-card.info-card .kicker{color:var(--muted);font-size:13px;letter-spacing:0}
+.app-redesign .auth-card.info-card h1{max-width:26ch;margin-top:8px;line-height:1.5}
+.app-redesign .auth-actions .btn{min-height:44px;border-radius:5px}
+.home-redesign .request-icon{color:var(--muted);margin-bottom:8px}
+.app-redesign .tp-more{font-size:13px;line-height:1.7}
+.app-redesign .tp-ideas-h{font-size:13px;color:var(--ink-2);font-weight:650}
+.app-redesign .tp-idea-list li{font-size:15px;line-height:1.8}
+.app-redesign .tp-quick{min-height:42px;border-radius:5px;background:var(--ink);border-color:var(--ink);color:var(--on-ink);font-size:14px}
+.app-redesign .tp-future{min-height:42px;border:1px solid var(--line);border-radius:5px;background:transparent;color:var(--muted);font-size:13px}
+.app-redesign .tp-daily-empty{border:1px solid var(--line);border-radius:6px;background:var(--paper-soft);font-size:15px;line-height:1.8}
+@media(max-width:600px){
+ .app-redesign .empty{padding:18px;gap:6px 10px}
+ .app-redesign .empty h3{font-size:16px}
+ .app-redesign .auth-card.info-card{margin:16px auto}
+ .app-redesign .auth-actions{gap:10px}
+}
+
+.app-redesign .empty:not(:has(>.empty-icon))::before{content:"";grid-column:1;grid-row:1/span 2;width:26px;height:26px;margin-top:1px;background:var(--muted);mask:url("icons/lucide/info.svg") center/contain no-repeat}
+
+.app-redesign .empty :is(h3,p),.app-redesign .auth-card.info-card :is(h1,.sub){word-break:keep-all;overflow-wrap:anywhere;text-wrap:pretty}
+.app-redesign .auth-card.info-card h1{text-wrap:balance}
+
+/* Category navigation uses the same outline icon system as primary links. */
+.app-redesign .icon-utensils::before{mask-image:url("icons/lucide/utensils.svg")}
+.app-redesign .icon-cake-slice::before{mask-image:url("icons/lucide/cake-slice.svg")}
+.app-redesign .icon-coffee::before{mask-image:url("icons/lucide/coffee.svg")}
+.app-redesign .icon-music::before{mask-image:url("icons/lucide/music.svg")}
+.app-redesign .icon-shirt::before{mask-image:url("icons/lucide/shirt.svg")}
+.app-redesign .icon-sparkles::before{mask-image:url("icons/lucide/sparkles.svg")}
+ .app-redesign .nav-categories .nav-icon::before{width:19px;height:19px}
+
+/* Fit standard laptop heights without hiding overflow on shorter screens. */
+@media(min-width:1025px){
+ .app-redesign .mast>.wrap{padding:14px 12px;gap:12px}
+ .app-redesign .mast-brand{min-height:36px;padding:0 10px}
+ .app-redesign .mast-panel{gap:14px;overscroll-behavior:contain}
+ .app-redesign .mast nav{gap:2px}
+ .app-redesign .mast nav a{min-height:42px;padding:8px 10px;font-size:15px;line-height:1.4}
+ .app-redesign .mast .nav-categories{gap:0;padding-top:12px}
+ .app-redesign .nav-section-label{font-size:12px;line-height:18px;padding-bottom:6px}
+ .app-redesign .mast .nav-categories a{min-height:34px;padding:6px 10px;font-size:14px;line-height:1.4}
+ .app-redesign .theme-toggle{min-height:40px;padding:8px 10px;font-size:14px}
+ .app-redesign .mast .nav-toggle{height:36px;min-height:36px}
+}
+@media(min-width:1025px) and (max-height:740px){
+ .app-redesign .mast>.wrap{padding-block:12px;gap:10px}
+ .app-redesign .mast-panel{gap:10px}
+ .app-redesign .mast nav a{min-height:38px;padding-block:7px}
+ .app-redesign .mast .nav-categories a{min-height:30px;padding-block:5px}
+ .app-redesign .mast .nav-categories{padding-top:10px}
+ .app-redesign .theme-toggle{min-height:36px;padding-block:6px}
 }
