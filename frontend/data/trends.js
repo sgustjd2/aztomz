@@ -968,11 +968,11 @@ window.HANGEUT_DATA = {
       "type": "트렌드",
       "cat": "패션",
       "coverCat": "cat-fashion",
-      "analyzedAt": "2026-06-05",
+      "analyzedAt": "2026-10-24",
       "title": "벌룬 팬츠",
       "buzz": "화제성 상승",
-      "stage": "상승",
-      "stageMsg": "지금 알면 빠른 편",
+      "stage": "안정화",
+      "stageMsg": "유행은 이어지지만 새 상승 신호는 약함",
       "label": "도전해도 됨",
       "labelCls": "good",
       "excerpt": "바람 머금은 듯 부푼 실루엣의 팬츠. 2026 S/S 런웨이·리얼웨이 동시 강세. 레깅스 다음 주자.",
@@ -1003,6 +1003,10 @@ window.HANGEUT_DATA = {
         [
           "2026 봄여름 뭘 입지(W코리아)",
           "https://www.wkorea.com/2026/03/19/2026%EB%85%84-%EB%B4%84-%EC%97%AC%EB%A6%84-%EB%AD%98-%EC%9E%85%EC%96%B4%EC%95%BC-%ED%95%A0%EC%A7%80-%EA%B3%A0%EB%AF%BC%EC%9D%B4%EB%9D%BC%EB%A9%B4"
+        ],
+        [
+          "note(2026-10-20)",
+          "https://note.com/sabanohesiko/n/n4b87c5ab7f4f?hl=ko"
         ]
       ],
       "images": [
