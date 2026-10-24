@@ -783,11 +783,11 @@ window.HANGEUT_DATA = {
       "type": "트렌드",
       "cat": "신조어",
       "coverCat": "cat-slang",
-      "analyzedAt": "2026-06-05",
+      "analyzedAt": "2026-10-24",
       "title": "난리자베스",
       "buzz": "화제성 높음",
-      "stage": "상승 → 피크",
-      "stageMsg": "2026 상반기 신상 — 지금 쓰면 자연스러움",
+      "stage": "안정화",
+      "stageMsg": "신조어 모음에 남아 있지만 새 확산 신호는 약함",
       "label": "지금 써도 됨",
       "labelCls": "good",
       "excerpt": "\"난리\"+\"엘리자베스\". 갑자기 분위기가 대혼란에 빠진 상황을 익살스럽게 부르는 2026 상반기 신조어. 단톡방·댓글창에서 확산.",
@@ -818,6 +818,10 @@ window.HANGEUT_DATA = {
         [
           "난리자베스 뜻과 활용법(해피라이프)",
           "https://happylife.sosurim.com/%EA%B0%91%EC%9E%90%EA%B8%B0-%EB%B6%84%EC%9C%84%EA%B8%B0-%EB%8C%80%ED%98%BC%EB%9E%80-%EB%82%9C%EB%A6%AC%EC%9E%90%EB%B2%A0%EC%8A%A4-%EB%9C%BB%EA%B3%BC-%EC%99%84%EB%B2%BD-%ED%99%9C%EC%9A%A9%EB%B2%95/"
+        ],
+        [
+          "한글도구함(2026-10-02)",
+          "https://hangeul-tool.com/blog/newword-2026"
         ]
       ],
       "pureKorean": "난리법석 (또는 \"발칵 뒤집힘\")",
@@ -1317,7 +1321,7 @@ window.HANGEUT_DATA = {
       "cat": "신조어",
       "coverCat": "cat-slang",
       "collectedAt": "2026-06-06",
-      "analyzedAt": "2026-06-06",
+      "analyzedAt": "2026-10-24",
       "buzz": "화제성 높음",
       "label": "지금 써도 됨",
       "labelCls": "good",
@@ -1350,8 +1354,8 @@ window.HANGEUT_DATA = {
       "def": "옛 감성·나이 든 웃음. 요즘 유행을 못 따라가는 웃음",
       "excerpt": "‘영크크’의 반대말. 옛날 감성이거나 요즘 유행을 못 따라가는 ‘나이 든 웃음’을 가리킨다. “영크크 모르면 늙크크”처럼 짝지어 쓴다.",
       "pureKorean": "옛웃음",
-      "stage": "피크",
-      "stageMsg": "영크크와 세트로 유행 중",
+      "stage": "안정화",
+      "stageMsg": "간헐적으로 쓰이고 신조어 정리에 함께 등장",
       "src": [
         [
           "‘영크크’ 모르면 ‘늙크크’(인사이트)",
@@ -1360,6 +1364,10 @@ window.HANGEUT_DATA = {
         [
           "영크크·늙크크 뜻(감사라이프)",
           "https://gamsalife.com/posts/%EC%98%81%ED%81%AC%ED%81%AC-%EB%9C%BB-%EC%99%84%EB%B2%BD-%EC%A0%95%EB%A6%AC-MZ%EC%84%B8%EB%8C%80-%EB%B0%88-%EC%9C%A0%EB%9E%98%EB%B6%80%ED%84%B0-%EB%8A%99%ED%81%AC%ED%81%AC%EA%B9%8C%EC%A7%80"
+        ],
+        [
+          "우먼센스(2026-10-14)",
+          "https://www.womansense.co.kr/news/articleView.html?idxno=63407"
         ]
       ],
       "example": "어제 그 밈 나만 모르겠더라… 나 늙크크인가 봐.",
@@ -1483,12 +1491,12 @@ window.HANGEUT_DATA = {
       "cat": "신조어",
       "coverCat": "cat-slang",
       "collectedAt": "2026-06-06",
-      "analyzedAt": "2026-06-06",
-      "buzz": "화제성 높음",
-      "stage": "상승",
-      "stageMsg": "2026 상반기 화제",
-      "label": "지금 써도 됨",
-      "labelCls": "good",
+      "analyzedAt": "2026-10-24",
+      "buzz": "화제성 하락",
+      "stage": "안정화 → 끝물",
+      "stageMsg": "여름 이후 새 확산 신호가 드문 편",
+      "label": "이제는 늦은 느낌",
+      "labelCls": "mid",
       "title": "아자스",
       "def": "가볍게 고마움을 전하는 감탄사 (맥락 따라 비꼼도)",
       "excerpt": "일본어 ‘아리가토 고자이마스’를 빠르게 줄인 말. 가벼운 ‘땡큐’ 느낌으로 쓰지만, 조롱성 댓글 뒤에 붙여 비꼬는 풍자로도 써서 진심인지 아이러니인지는 맥락으로 갈린다.",
@@ -1519,6 +1527,10 @@ window.HANGEUT_DATA = {
         [
           "다음뉴스",
           "https://v.daum.net/v/3H7PLoWICl"
+        ],
+        [
+          "럭키비키",
+          "https://luckyvicky.moamoang.co.kr/trends/azas-meaning/"
         ]
       ],
       "tags": [
