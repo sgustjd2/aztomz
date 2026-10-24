@@ -41,7 +41,7 @@
 | `blog-assemble.mjs <slug>` | **에이전트 산출물 조립** — 마크다운 + 메타 → 발행용 HTML. URL 살균·임베드 검증(relatedVideos 포함). **구조 중복 방지**(같은 카테고리 최근 글과 소제목 3개 이상 일치 시 차단, 마무리 상투구 >50% 중복 시 경고). `--research=<파일>`로 조사파일-slug 분리 지원 |
 | `blog-selfreview.mjs <slug>` | **집필 직후 자체 피드백→반영** — `claude -p`가 초안을 냉정히 자기비평하고 실제 결함만 **외과적 find/replace**로 고쳐 넣은 뒤 재조립(전면 재작성 금지·드리프트 방지). blog-verify 앞 단계. `--dry`(제안만)·`--selftest` |
 | `blog-verify.mjs <id>` | **발행 전 최종 검증** — `claude -p`가 원본 왜곡·단정·지어낸 사실·저작권을 본다. 반려 시 exit 1. `--warn` |
-| `blog-publish.mjs <id>` | Playwright로 티스토리 자동 발행. `--login`(1회) · `--keepalive`(세션 유지, 스케줄러 하루 1회) · `--dry` · `--draft` · `--probe` · `--categories` · `--cover` |
+| `blog-publish.mjs <id>` | Playwright로 티스토리 자동 발행. 세션 만료 시 전용 프로필의 저장 자동완성 정보로 1회 로그인 시도(비밀번호를 직접 읽거나 저장하지 않음); 자동완성 부재·2단계/기기 인증·CAPTCHA는 사람에게 넘김. `--login`(자동완성 우선, 필요 시 수동 로그인) · `--keepalive`(유효 세션만 갱신, 자동 로그인 안 함) · `--daily-session`(매일 사전 확인 및 저장정보 자동로그인 시도) · `--dry` · `--draft` · `--probe` · `--categories` · `--cover` |
 | `blog-publish-naver.mjs <id>` | **네이버 블로그 발행**(SmartEditor ONE) — 클립보드 붙여넣기로 본문 주입(붙여넣은 뒤 사용자 클립보드 복원). 붙이기 전 `naverize()`로 **네이버 가독성 양식**(2026-10-11~: 왼쪽 정렬·문장 2개씩 짧은 문단(16px·줄간격 1.8)·문단 사이 빈 줄, h2 → 밑줄형 인용구, 콜아웃 → 기울임 없는 굵은 머리말+문단 — 기본 인용구는 기울임체라 금지), 커버·그림은 [사진] 업로드, 유튜브 iframe은 링크로 변환, 카테고리는 `naverCategory()` 자동 매핑(한끗 트렌드/맛집·디저트·카페·핫플·신조어·밈·노래·음악·패션·뷰티 · AI·IT/AI 동향·개발·자동화 · 생활정보). **`meta.platform === "naver"` 글만** 올린다(`--force` 예외). `--login`(1회, 전용 프로필 `backend/.naver-profile`) · `--dry` · `--draft`(임시저장) · `--probe` · `--selftest`. 기록 `posted-naver.json`. 로그인·캡차는 사람 |
 | `blog-recover.mjs <id>|--all` | **발행된 티스토리 글의 커버만 교체** — 게시된 본문을 에디터에서 읽어 맨 앞 커버 이미지만 새 카드로 바꿈(본문 보존), 저장 후 공개 페이지 og:image 변경 확인, 편집 화면을 못 벗어나면 캡차로 보고 전체 중단. `--gap=60-120`(초) · `--until=HH:MM` · `--reuse`(렌더된 `<id>.cover.png` 사용) · `--list` · `--selftest`. 기록 `out/blog/cover-refresh.json`(다음 실행은 남은 글부터), 대기열과 같은 락 |
 | `blog-queue.mjs` | **블로그 자동 발행 대기열(티스토리+네이버, 서로 다른 글)** — `meta.platform`별로, **검증 통과 후 본문이 안 바뀐 글**(`meta.verified.html` = 현재 html sha1, `blog-verify.mjs`가 통과 시 기록)만 골라 T→N 번갈아 발행. 플랫폼당 하루 `--max`(5)편(한국 날짜 기준, 발행 기록으로 셈) · 글 사이 `--gap`(20-40)분 랜덤 · `builtAt` `--max-age`(7)일 이내 · 한 플랫폼 실패 시 그날 그 플랫폼만 중단 · 동시 실행 락(`out/blog/.queue.lock`) · 창은 기본 화면 가운데(`lib/window.mjs`, 위치 `BLOG_WIN_POS="x,y"`), 무인 시 화면 밖은 `BLOG_OFFSCREEN=1`. `--list` · `--only=naver` · `--selftest` |
@@ -82,6 +82,7 @@ node backend/scripts/check-source.mjs backend/data/trends.json --only=<id>  # 5)
 | 매일 21:30 | **한끗 자동 수집·게시** (목=신조어 주간 사전) | Hermes(로컬, 에이전트) | hangeut-run → `auto-build.mjs`(`.pipeline/curate.json`) |
 | 매일 21:50 | 수집 재시도 게이트(21:30이 503/429로 죽었을 때만 1회 재실행) | Hermes(로컬, no-agent) | `hangeut_retry_gate.py` |
 | 매일 12:00 · 15:00 · 18:00 | **블로그 자동 발행 대기열**(티스토리·네이버 각 하루 5편, 글 사이 20~40분 랜덤 대기 · 뒤 회차는 늦게 검증된 글 따라잡기) | Windows 스케줄작업 `AZ2MZ_Blog_Queue`(StartWhenAvailable) | `tools/blog-queue.vbs`(wscript 숨김) → `blog-queue.mjs` · 로그 `backend/out/blog/blog-queue.log` |
+| 매일 11:00 | **티스토리 발행 전 세션 사전 확인** — 유효하면 쿠키 갱신, 만료면 전용 프로필의 저장 자동완성 정보로 1회 로그인 시도; 추가 인증은 사용자 처리 | Windows 스케줄작업 `AZ2MZ_Tistory_Daily_Session`(대화형 사용자 세션) | `tools/tistory-daily-session.vbs` → `blog-publish.mjs --daily-session`; 등록: `tools/register-tistory-daily-session.ps1` |
 | 매일 08:00~23:00 2시간마다 | **티스토리 세션 유지**(인증이 세션 쿠키라 한동안 안 쓰면 끊김 — 끊겼으면 로그만 남기고 자동 로그인은 안 함) | Windows 스케줄작업 `AZ2MZ_Tistory_Keepalive` | `tools/tistory-keepalive.vbs`(wscript 숨김) → `blog-publish.mjs --keepalive` · 로그 `backend/out/blog/tistory-keepalive.log` |
 | 수 20:00 | **개발/IT 소스 fetch**(경량 VLM·개발 다이제스트 후보만 갱신 — 집필·발행·git 없음) | Hermes(로컬, no-agent) | `dev_it_fetch.py`(잡 `441ad100e8b3`) → `vlm-watch-fetch.mjs`·`dev-digest-fetch.mjs` |
 
@@ -90,7 +91,7 @@ node backend/scripts/check-source.mjs backend/data/trends.json --only=<id>  # 5)
 - GitHub Actions 2개는 클라우드라 PC 상태와 무관하게 돈다.
 - **블로그 발행은 2026-09-24부터 대기열로 자동화**(사용자 지시: 티스토리 5 + 네이버 5 → **2026-10-07부터 토큰 절약으로 2 + 2**, 서로 다른 글). 09:00 `/blog-daily`(Windows 스케줄작업)가
   4편(티스토리 2 + 네이버 2)을 쓰고 검증해 글마다 `meta.platform`을 배정 → 12:00·15:00·18:00 `blog-queue.mjs`가 순차 발행. 로그인·캡차는 여전히
-  사람 몫이라(철칙) **티스토리 세션 만료·캡차가 뜨면 그날 티스토리만 멈춘다**(`blog-queue.log`에 남음 → `blog-publish.mjs --login`).
+  사람 몫이라(철칙) **티스토리 캡차가 뜨면 그날 티스토리만 멈춘다**(`blog-queue.log`에 남음). 세션 만료는 발행 때 전용 프로필 자동완성으로 1회 로그인 시도하고, 추가 인증은 사람이 처리한다. 매일 11:00 `--daily-session`이 12:00 큐 전에 세션을 확인한다. Windows 작업 등록은 `tools/register-tistory-daily-session.ps1`을 실행한다.
   세션은 `blog-publish.mjs --keepalive`로 연장된다. 네이버 세션은 30일 영구 쿠키라 상대적으로 안정적.
   (이전: 2026-08-19~09-24 티스토리 발행은 인터랙티브 세션에서 사람이 트리거, 09-13~09-24 일일 배치 중단.)
 - 크론이 안 돈 날은 수동 백필: `hermes cron run 9ddacd750b48`.
