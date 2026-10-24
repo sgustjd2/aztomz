@@ -5,15 +5,15 @@
    blog-build.mjs 가 만든 backend/out/blog/<id>.{html,json} 을 읽어
    burning-go9me.tistory.com 에 글을 올린다.
 
-   ── 로그인은 자동화하지 않는다 ──
-   전용 크롬 프로필(backend/.tistory-profile)에 사람이 딱 1번 로그인해 두고,
-   이후엔 그 프로필을 그대로 재사용한다. 카카오 로그인 셀렉터·2단계인증·기기인증이
-   전부 우회되고, 깨질 구석이 사라진다. (CDP attach 는 크롬 136+ 에서 기본 프로필이
-   막혀 있어 flag+토글 이중 조건이 필요 — 전용 프로필이 훨씬 결정적이다.)
+   ── 로그인 ──
+   전용 크롬 프로필(backend/.tistory-profile)에 저장된 브라우저 자동완성 정보가 있으면
+   로그인 폼에 자동 입력된 값을 사용해 1회 로그인한다. 비밀번호를 읽거나 저장하지 않는다.
+   자동완성이 없거나 2단계 인증·기기 인증·CAPTCHA가 나타나면 사람에게 넘긴다.
 
    실행 (레포 루트에서):
-     node backend/scripts/blog-publish.mjs --login      # ① 최초 1회: 창 열리면 직접 로그인 후 엔터
+     node backend/scripts/blog-publish.mjs --login      # 최초 로그인/인증: 저장된 자동완성 우선, 안 되면 직접 로그인
      node backend/scripts/blog-publish.mjs --keepalive  # 세션 유지(스케줄러 하루 1회) — 만료면 exit 1
+     node backend/scripts/blog-publish.mjs --daily-session # 매일 세션 확인, 만료면 자동완성 로그인 1회 시도
      node backend/scripts/blog-publish.mjs <id> --dry   # ② 에디터까지만 채우고 멈춤(셀렉터 점검)
      node backend/scripts/blog-publish.mjs <id>         # ③ 공개 발행
      node backend/scripts/blog-publish.mjs <id> --draft # 비공개 저장
@@ -650,15 +650,67 @@ async function selftest() {
   else { console.error(`✗ 없는 제목인데 매치됨: ${missing}`); process.exitCode = 1; }
 }
 
+const isLoginPage = (page) => /login|accounts\.kakao/i.test(page.url());
+
+/* 전용 브라우저 프로필의 저장된 자동완성만 사용한다. 비밀번호 값은 메모리에서
+   채워졌는지 여부만 확인하고 출력·파일 저장하지 않는다. 보안확인/CAPTCHA는 멈춘다. */
+async function trySavedKakaoLogin(page) {
+  const challenge = async () => {
+    const text = await page.locator('body').innerText().catch(() => '');
+    return /captcha|캡차|보안 확인|기기 인증|추가 인증|본인 확인|인증번호|2단계 인증/i.test(text)
+      || await page.locator('iframe[src*="captcha"], [class*="captcha"], [id*="captcha"]').count().catch(() => 0) > 0;
+  };
+  if (await challenge()) return { ok: false, reason: '보안 확인/CAPTCHA가 필요합니다.' };
+
+  const idField = page.locator('#loginId--1, input[name="loginId"], input[type="email"]').first();
+  const passwordField = page.locator('#password--2, input[name="password"], input[type="password"]').first();
+  if (!await idField.count().catch(() => 0) || !await passwordField.count().catch(() => 0)) {
+    return { ok: false, reason: '카카오 로그인 입력란을 찾지 못했습니다.' };
+  }
+
+  // Chromium이 저장된 자동완성 항목을 적용할 시간을 준다. 어떤 값도 직접 채우지 않는다.
+  await idField.click({ timeout: 3000 }).catch(() => {});
+  await page.waitForTimeout(900);
+  const [hasId, hasPassword] = await Promise.all([
+    idField.inputValue().then((v) => v.trim().length > 0).catch(() => false),
+    passwordField.inputValue().then((v) => v.length > 0).catch(() => false),
+  ]);
+  if (!hasId || !hasPassword) return { ok: false, reason: '저장된 로그인 자동완성 정보가 없습니다.' };
+  if (await challenge()) return { ok: false, reason: '보안 확인/CAPTCHA가 필요합니다.' };
+
+  const staySignedIn = page.locator('input[type="checkbox"]').first();
+  if (await staySignedIn.count().catch(() => 0)) {
+    const label = await staySignedIn.evaluate((el) => `${el.id} ${el.name} ${el.parentElement?.innerText || ''}`).catch(() => '');
+    if (/stay|유지|로그인 상태/i.test(label) && !await staySignedIn.isChecked().catch(() => true)) {
+      await staySignedIn.check().catch(() => {});
+    }
+  }
+  const submit = page.locator('button[type="submit"], button:has-text("로그인")').first();
+  if (!await submit.count().catch(() => 0)) return { ok: false, reason: '로그인 버튼을 찾지 못했습니다.' };
+  await submit.click();
+  await page.waitForFunction(() => !/login|accounts\.kakao/i.test(location.href), null, { timeout: 20000 }).catch(() => {});
+  if (await challenge()) return { ok: false, reason: '추가 보안 확인/CAPTCHA가 필요합니다.' };
+  return { ok: !isLoginPage(page), reason: isLoginPage(page) ? '카카오 로그인이 완료되지 않았습니다.' : '' };
+}
+
 async function login() {
   const ctx = await chromium.launchPersistentContext(profileDir, { headless: false, viewport: null });
   const page = ctx.pages()[0] || await ctx.newPage();
   await page.goto(`${BASE}/manage/newpost/`, { waitUntil: 'domcontentloaded' });
-  console.log('\n브라우저에서 카카오 로그인을 끝내세요. 로그인 화면에 "로그인 상태 유지"가 있으면 반드시 체크하세요.'
-    + '\n글쓰기 화면이 뜨면 이 터미널에서 엔터를 누르세요.');
-  const rl = createInterface({ input: process.stdin, output: process.stdout });
-  await rl.question('> 로그인 완료 후 엔터: ');
-  rl.close();
+  if (isLoginPage(page)) {
+    const result = await trySavedKakaoLogin(page);
+    if (result.ok) {
+      await page.goto(`${BASE}/manage/newpost/`, { waitUntil: 'domcontentloaded' });
+      console.log('✓ 저장된 브라우저 자동완성 정보로 로그인했습니다.');
+    } else {
+      console.log(`\n자동 로그인은 진행하지 않았습니다: ${result.reason}`
+        + '\n열린 브라우저에서 카카오 로그인 또는 보안 확인을 마치세요. 비밀번호는 스크립트가 읽거나 저장하지 않습니다.'
+        + '\n로그인 상태 유지가 있으면 체크한 뒤 글쓰기 화면에서 엔터를 누르세요.');
+      const rl = createInterface({ input: process.stdin, output: process.stdout });
+      await rl.question('> 로그인 완료 후 엔터: ');
+      rl.close();
+    }
+  }
   const url = page.url();
   const ok = url.includes('/manage/newpost');
   if (ok) await ctx.storageState({ path: statePath });   // 닫기 전에 — 세션 쿠키까지 포함된다
@@ -669,15 +721,13 @@ async function login() {
   process.exit(ok ? 0 : 1);
 }
 
-/* --keepalive: 봇탐지 우회가 아니라, 세션이 idle 로 죽지 않게 살려두는 정당한 방법.
-   관리페이지를 한 번 열어 서버 세션을 갱신하고, 롤링된 쿠키를 .tistory-state.json 에 최신값으로
-   다시 떠둔다(발행 때 re-inject 하는 그 파일). 만료됐으면 자동 로그인은 하지 않고(철칙) exit 1 로
-   "사람이 --login 필요"를 알린다. 무인 스케줄러(Task Scheduler/Hermes)에서 하루 1회 돌리는 용도라
-   기본 headless(--head 로 창 보기). */
-async function keepalive() {
+/* 세션 확인 공통 루틴. 방문으로 서버 세션을 갱신하고, 롤링된 쿠키를 저장한다.
+   --keepalive 경로는 만료 세션에서 자동 로그인하지 않는다. 일일 사전확인과 발행 경로만
+   로그인 화면에서 전용 프로필의 저장 자동완성으로 1회 시도한다. */
+async function checkAndRefreshSession() {
   if (!existsSync(profileDir)) {
     console.error('✗ 로그인 프로필이 없습니다. 먼저: node backend/scripts/blog-publish.mjs --login');
-    process.exit(1);
+    return false;
   }
   const ctx = await chromium.launchPersistentContext(profileDir, { headless: !has('head') });
   if (existsSync(statePath)) {
@@ -690,18 +740,33 @@ async function keepalive() {
   try {
     await page.goto(`${BASE}/manage/`, { waitUntil: 'domcontentloaded' });
     if (/login|accounts\.kakao/.test(page.url())) {
-      console.error(`✗ 세션 만료 (${now()}) — 재로그인 필요: node backend/scripts/blog-publish.mjs --login`);
+      console.error(`✗ 세션 만료 (${now()}) — 저장된 브라우저 로그인 정보를 확인합니다.`);
       await ctx.close();
-      process.exit(1);
+      return false;
     }
     await ctx.storageState({ path: statePath });   // 방문으로 갱신된 쿠키를 최신값으로 다시 저장
     console.log(`✓ 세션 살아있음 — 갱신 완료 (${now()})`);
     await ctx.close();
+    return true;
   } catch (e) {
     await ctx.close().catch(() => {});
     console.error(`✗ keep-alive 실패 (${now()}): ${e.message}`);
-    process.exit(1);
+    return null;
   }
+}
+
+async function keepalive() {
+  if (await checkAndRefreshSession() !== true) process.exit(1);
+}
+
+/* 하루 사전 확인: 세션이 유효하면 조용히 갱신하고, 만료됐을 때만
+   전용 프로필 자동완성 로그인을 1회 시도한다. 보안 확인은 login()에서 사람에게 넘긴다. */
+async function dailySession() {
+  const sessionOk = await checkAndRefreshSession();
+  if (sessionOk === true) return;
+  if (sessionOk === null) process.exit(1);
+  console.log('\n세션이 만료됐습니다. 저장된 브라우저 로그인 정보를 먼저 사용합니다.');
+  await login();
 }
 
 async function publish() {
@@ -771,20 +836,29 @@ async function publish() {
     (contentReady ? d.accept() : d.dismiss()).catch(() => {});
   });
 
+  let needsHumanLogin = false;
   const fail = async (e) => {
     const shot = join(outDir, `${id}.error.png`);
     await page.screenshot({ path: shot, fullPage: false }).catch(() => {});
     console.error(`✗ 발행 실패: ${e.message}\n  현재 URL: ${page.url()}\n  스크린샷: ${shot}`);
-    if (!has('keep-open')) await ctx.close();
+    if (needsHumanLogin) console.error('  사람 확인이 필요해 로그인 브라우저를 열어 두었습니다.');
+    else if (!has('keep-open')) await ctx.close();
     process.exit(1);
   };
 
   try {
     await page.goto(editPostId ? `${BASE}/manage/newpost/${editPostId}` : `${BASE}/manage/newpost/`, { waitUntil: 'domcontentloaded' });
 
-    if (/login|accounts\.kakao/.test(page.url())) {
-      throw new Error('로그인 세션이 만료됐습니다. --login 을 다시 실행하되, '
-        + '카카오 로그인 화면의 "로그인 상태 유지"를 반드시 체크하세요(안 하면 세션 쿠키라 금방 끊깁니다).');
+    if (isLoginPage(page)) {
+      const result = await trySavedKakaoLogin(page);
+      if (!result.ok) {
+        needsHumanLogin = true;
+        throw new Error(`로그인 세션이 만료됐고 자동 로그인은 중단됐습니다: ${result.reason} `
+          + '화면에서 보안 확인/CAPTCHA를 직접 처리하거나 --login 으로 로그인하세요.');
+      }
+      await ctx.storageState({ path: statePath });
+      await page.goto(editPostId ? `${BASE}/manage/newpost/${editPostId}` : `${BASE}/manage/newpost/`, { waitUntil: 'domcontentloaded' });
+      if (isLoginPage(page)) throw new Error('저장된 정보로 로그인한 뒤 글쓰기 화면에 진입하지 못했습니다. --login 으로 확인하세요.');
     }
 
     // ── 제목
@@ -993,10 +1067,11 @@ const isMain = process.argv[1]
 if (isMain) {
   if (has('login')) await login();
   else if (has('keepalive')) await keepalive();
+  else if (has('daily-session')) await dailySession();
   else if (has('selftest')) await selftest();
   else if (has('cover') && id) await coverOnly();
   else if (!id) {
-    console.error('사용법:\n  node backend/scripts/blog-publish.mjs --login\n  node backend/scripts/blog-publish.mjs --keepalive   # 세션 유지(스케줄러용, 하루 1회)\n  node backend/scripts/blog-publish.mjs <id> [--dry|--draft]\n  node backend/scripts/blog-publish.mjs --selftest');
+    console.error('사용법:\n  node backend/scripts/blog-publish.mjs --login  # 저장된 자동완성 우선, 필요한 경우 사람 인증\n  node backend/scripts/blog-publish.mjs --keepalive   # 세션 유지\n  node backend/scripts/blog-publish.mjs --daily-session  # 세션 확인 및 저장된 정보로 1회 자동 로그인\n  node backend/scripts/blog-publish.mjs <id> [--dry|--draft]\n  node backend/scripts/blog-publish.mjs --selftest');
     process.exit(1);
   } else await publish();
 }

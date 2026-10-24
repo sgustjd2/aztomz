@@ -215,7 +215,7 @@ EOF
 - 플랫폼별(티스토리 N/2 · 네이버 N/2)로 편마다: 키워드·카테고리·최종 제목·`backend/out/blog/<slug>.html`
 - 검증 결과(blocker/warn 개수, 있었던 재작성 라운드)
 - `node backend/scripts/blog-queue.mjs --list` 결과(오늘 발행 대기 편수)
-- **"발행: 12:00·15:00·18:00 스케줄작업 AZ2MZ_Blog_Queue 가 플랫폼별 하루 5편씩 순차 발행(로그 backend/out/blog/blog-queue.log). 티스토리 세션 만료 시 `blog-publish.mjs --login` 필요"** 안내를 마지막 줄에
+- **"발행: 12:00·15:00·18:00 스케줄작업 AZ2MZ_Blog_Queue 가 플랫폼별 하루 5편씩 순차 발행(로그 backend/out/blog/blog-queue.log). 티스토리 세션 만료 시 11:00 사전확인 작업이 저장된 자동완성 정보로 1회 로그인 시도하며, 추가 인증은 사람이 처리"** 안내를 마지막 줄에
 - 실패/보류했다면 사유와, 다음엔 어느 키워드가 시도될지
 
 ## 실패 시
