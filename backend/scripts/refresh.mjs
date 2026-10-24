@@ -52,5 +52,7 @@ const stale = data.trends.filter((t) => {
   a.setHours(0, 0, 0, 0); b.setHours(0, 0, 0, 0);
   return Math.round((b - a) / 86400000) >= 14;
 });
+// 이 줄은 recheck_ad.py가 디스코드로 그대로 보낸다 — id 전체(170개+)를 찍으면 읽을 수 없는 벽이 돼 앞 5개만 보인다(2026-10-24).
+const preview = stale.slice(0, 5).map((t) => t.id).join(', ') + (stale.length > 5 ? ` 외 ${stale.length - 5}건` : '');
 console.log(`✓ refreshed: generatedAt=${data.generatedAt}, ${data.trends.length} trends` +
-  (stale.length ? `, ${stale.length} stale(>=14d): ${stale.map((t) => t.id).join(', ')}` : ', none stale'));
+  (stale.length ? `, ${stale.length} stale(>=14d): ${preview}` : ', none stale'));

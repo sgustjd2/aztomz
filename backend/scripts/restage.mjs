@@ -48,9 +48,13 @@ function kstISO(d = new Date()) {
 const readJsonl = (p) => (existsSync(p) ? readFileSync(p, 'utf-8').split('\n').filter(Boolean).flatMap((l) => { try { return [JSON.parse(l)]; } catch { return []; } }) : []);
 
 // 재판정 후보: 트렌드형만, 분석일 오래된 순. 최근 14일 안에 재판정한 항목은 건너뛴다(같은 항목 반복 방지).
-export function pick(trends, log, n, today = kstISO()) {
+export function recentlyRestaged(log, today = kstISO()) {
   const cut = new Date(`${today}T00:00:00+09:00`); cut.setDate(cut.getDate() - 14);
-  const recent = new Set(log.filter((r) => r.date >= kstISO(cut)).map((r) => r.id));
+  return new Set(log.filter((r) => r.date >= kstISO(cut)).map((r) => r.id));
+}
+
+export function pick(trends, log, n, today = kstISO()) {
+  const recent = recentlyRestaged(log, today);
   return trends.filter((t) => t.type === '트렌드' && !recent.has(t.id))
     .sort((a, b) => String(a.analyzedAt || '').localeCompare(String(b.analyzedAt || '')))
     .slice(0, n);
@@ -130,7 +134,12 @@ async function apply(file) {
   const base = JSON.parse(readFileSync(PATHS.trends, 'utf-8'));
   const byId = new Map((base.trends || base).map((t) => [t.id, t]));
   const checked = [];
-  for (const j of list) checked.push({ j, ...(await checkJudgment(j, byId, httpGet)) });
+  // 최근 14일 안에 재판정한 항목은 다시 반영하지 않는다 — 봇이 같은 날 판정 파일에 덧붙여 같은 항목을 또 넣은 사례(2026-10-24).
+  const recent = recentlyRestaged(readJsonl(PATHS.log), today);
+  for (const j of list) {
+    if (recent.has(j?.id) && !flag('force')) { checked.push({ j, ok: false, errs: ['최근 14일 안에 이미 재판정함(--force로만 다시)'], live: [] }); continue; }
+    checked.push({ j, ...(await checkJudgment(j, byId, httpGet)) });
+  }
   const rejected = checked.filter((c) => !c.ok).map((c) => ({ id: c.j?.id, errs: c.errs }));
   for (const r of rejected) console.log(`✋ 반영 안 함 ${r.id}: ${r.errs.join(', ')}`);
 
@@ -172,6 +181,8 @@ async function selftest() {
   const trends = [T('old', '2026-06-01'), T('mid', '2026-08-01'), T('new', '2026-10-20'), { id: 'shop', type: '신뢰분석', analyzedAt: '2026-01-01' }, T('recent', '2026-05-01')];
   const picked = pick(trends, [{ date: '2026-10-20', id: 'recent' }], 2, '2026-10-24');
   assert(picked.map((t) => t.id).join() === 'old,mid', '오래된 순·신뢰분석 제외·14일 내 재판정 제외');
+  const rec = recentlyRestaged([{ date: '2026-10-24', id: 'a' }, { date: '2026-10-01', id: 'b' }], '2026-10-24');
+  assert(rec.has('a') && !rec.has('b'), '14일 안 재판정만 다시 반영 금지 대상');
   const byId = new Map(trends.map((t) => [t.id, t]));
   const status = async (u) => (u.includes('dead') ? { status: 404, body: '' } : u.includes('offtopic') ? { status: 200, body: '전혀 다른 기사' } : { status: 200, body: 'OLD 관련 기사 MID' });
   let r = await checkJudgment({ id: 'old', stage: '하락 (한물감)', stageMsg: '이제 늦음', evidence: [{ url: 'https://www.instagram.com/p/1' }, { url: 'https://dead.kr/x' }] }, byId, status);
