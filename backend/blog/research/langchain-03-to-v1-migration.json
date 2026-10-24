@@ -1,0 +1,39 @@
+{
+  "keyword": "LangChain 0.3 마이그레이션 하면서 깨진 것들",
+  "categoryId": "llm-howto",
+  "slug": "langchain-03-to-v1-migration",
+  "searchedAt": "2026-10-23",
+  "origin": "LangChain 공식 문서 대조",
+  "note": "개인 프로젝트를 실제 이전한 경험담이 아니라 LangChain 공식 migration guide와 v1 release notes를 기준으로 정리한다. 예제는 문서에 명시된 API 형태를 설명하는 최소 스니펫이며, 실제 앱에서 실행했다고 주장하지 않는다. 검색광고 API 자격증명이 없어 검색량은 확인하지 못했다.",
+  "sources": [
+    {
+      "title": "Migrate to LangChain v1",
+      "url": "https://docs.langchain.com/oss/python/migrate/langchain-v1",
+      "host": "docs.langchain.com",
+      "tier": "official",
+      "kind": "migration-guide",
+      "body": "LangChain 공식 마이그레이션 문서. Python 패키지의 핵심 네임스페이스가 정리되고, 기존 chains/retrievers/indexing/hub/embeddings 관련 구현 중 일부는 langchain-classic으로 이동했다고 안내한다. LangGraph의 create_react_agent를 langchain.agents.create_agent로 대체하고, 기존 prompt 인자를 system_prompt로 옮기는 흐름을 설명한다. 미들웨어, 구조화 출력, 표준 콘텐츠 블록 등 변경 지점과 마이그레이션 가이드를 제시한다."
+    },
+    {
+      "title": "LangChain v1 release notes",
+      "url": "https://docs.langchain.com/oss/python/releases/langchain-v1",
+      "host": "docs.langchain.com",
+      "tier": "official",
+      "kind": "release-notes",
+      "body": "LangChain 공식 v1 릴리스 노트. v1의 중심 에이전트 API는 create_agent이며, 표준 콘텐츠 블록을 통해 텍스트·이미지·오디오 등 모델 응답의 여러 형태를 다루고, langchain 네임스페이스를 핵심 기능 중심으로 간결하게 유지한다고 설명한다. Python 최소 버전 변경과 새 패키지 설치, 레거시 기능 위치는 migration 문서를 함께 확인하도록 연결한다."
+    }
+  ],
+  "facts": [
+    { "claim": "v1의 대표 에이전트 생성 API는 langchain.agents.create_agent이다.", "source": "https://docs.langchain.com/oss/python/migrate/langchain-v1" },
+    { "claim": "기존 일부 체인·리트리버·인덱싱 계열은 langchain-classic으로 옮겨졌다.", "source": "https://docs.langchain.com/oss/python/migrate/langchain-v1" },
+    { "claim": "create_react_agent에서 create_agent로 옮길 때 prompt 인자를 system_prompt로 바꾸는 흐름이 안내된다.", "source": "https://docs.langchain.com/oss/python/migrate/langchain-v1" },
+    { "claim": "v1은 표준 콘텐츠 블록을 제공해 여러 모달리티의 메시지 내용을 다룬다.", "source": "https://docs.langchain.com/oss/python/releases/langchain-v1" },
+    { "claim": "LangChain v1 패키지의 Python 최소 지원 버전은 3.10이다.", "source": "https://docs.langchain.com/oss/python/migrate/langchain-v1" },
+    { "claim": "legacy chains, retrievers, indexing API, hub 모듈 등은 langchain-classic 설치와 import 변경 안내 대상이다.", "source": "https://docs.langchain.com/oss/python/migrate/langchain-v1" },
+    { "claim": "구조화 출력을 위해 response_format에 ToolStrategy 또는 ProviderStrategy를 전달하는 방식을 안내한다.", "source": "https://docs.langchain.com/oss/python/migrate/langchain-v1" }
+  ],
+  "limitations": [
+    "Naver 검색광고 API 환경 자격증명이 없어 키워드 검색량은 확인하지 못함.",
+    "각 프로젝트의 import 경로와 의존 패키지는 실제 잠금 파일 및 테스트 결과로 별도 확인해야 함."
+  ]
+}

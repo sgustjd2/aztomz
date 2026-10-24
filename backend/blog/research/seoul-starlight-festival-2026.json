@@ -1,0 +1,73 @@
+{
+  "keyword": "서울시립과학관 별빛축제 2026 일정 천체관측 무료",
+  "categoryId": "life-info",
+  "searchedAt": "2026-10-22",
+  "notes": [
+    "2026-10-22 기준 서울시립과학관 공식 행사 안내 및 서울시 공공서비스예약 페이지를 확인했다.",
+    "축제 관람과 예약이 필요한 개별 워크숍을 구분한다. 예약 현황은 변동될 수 있으므로 신청 화면에서 다시 확인하도록 안내한다.",
+    "천체관측은 우천 시 취소된다는 과학관 안내를 명시한다."
+  ],
+  "cannotSay": [
+    "별 관측이 실제로 가능하다고 날씨와 관계없이 보장하지 않는다.",
+    "모든 워크숍이 무료라고 안내하지 않는다. 개별 강좌 페이지에서 비용과 예약 조건을 확인해야 한다.",
+    "행사 당일의 예약 잔여석, 교통 혼잡, 주차 가능 여부는 기준일 현재 확정하지 않는다."
+  ],
+  "cannotCover": [
+    "실제 별자리 가시성, 당일 구름량과 관측 품질 예측",
+    "개별 예약 프로그램의 취소·대기 명단 운영 상황"
+  ],
+  "sources": [
+    {
+      "title": "2026년 별빛축제 — 서울시립과학관",
+      "url": "https://wf1.seoul.go.kr/sciEvent/starlight/read?menuId=76&progMstId=2338",
+      "host": "wf1.seoul.go.kr",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "서울시립과학관 공식 행사 페이지는 2026 별빛축제가 10월 24일부터 25일까지 과학관에서 열린다고 안내한다. 누구나 참여할 수 있고 축제 비용은 무료로 표시되어 있다. 10월 24일에는 야간 개장과 천체 관측회가 오후 9시까지 진행될 예정이다. 공개 천체 관측, 천문 특강, 과학 체험 부스, 과학과 예술을 결합한 워크숍, 전시 해설 프로그램이 소개돼 있다. 사전 예약 여부와 무관하게 천체 관측과 전시 관람은 참여할 수 있다고 안내하지만, 일부 프로그램은 별도 사전 접수가 필요하다. 우천 시 천체 관측 프로그램은 취소되고 다른 프로그램은 정상 운영된다고 적혀 있다. 페이지는 강좌별 일정·정원·예약 링크도 제공한다.",
+      "facts": [
+        "행사는 2026-10-24부터 10-25까지 서울시립과학관에서 열린다.",
+        "10월 24일 야간 개장과 천체관측회는 21시까지 안내돼 있다.",
+        "일부 프로그램은 별도 사전 접수가 필요하다.",
+        "우천 시 천체관측 프로그램은 취소되고 다른 프로그램은 정상 운영된다."
+      ]
+    },
+    {
+      "title": "2026 별빛축제 사전예약 — 서울시 공공서비스예약",
+      "url": "https://yeyak.seoul.go.kr/web/reservation/selectReservView.do?reSvc=N&rsv_svc_id=S261015114537399809",
+      "host": "yeyak.seoul.go.kr",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "서울시 공공서비스예약의 별빛축제 사전예약 페이지는 2026년 10월 24일 토요일에 서울시립과학관에서 열리는 축제 프로그램을 예약 대상으로 안내한다. 페이지에 따라 신청 기간, 참가 대상, 정원, 이용료, 취소 가능 시점이 각각 다르다. 일부는 성인·청소년·초등학생 대상으로 나뉘고 초등학생은 보호자 동반이 필요하다고 표시되어 있다. 별강정·달강정 등 일부 프로그램에는 유료 표시와 선착순 정원도 있다. 따라서 행사 전체의 무료 입장 안내와 개별 체험 프로그램의 예약·이용료는 따로 확인해야 한다. 예약 상태는 신청 페이지에서 변할 수 있다.",
+      "facts": [
+        "예약은 프로그램별로 접수 기간·정원·비용·대상이 다르다.",
+        "초등학생 대상 프로그램 중 보호자 동반이 필요한 항목이 있다.",
+        "일부 체험은 유료이거나 선착순 예약으로 안내된다."
+      ]
+    },
+    {
+      "title": "서울시 가을 주말 행사 안내 — FUN SEOUL",
+      "url": "https://festival.seoul.go.kr/festival/main/festivalView.do?festacode=924",
+      "host": "festival.seoul.go.kr",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "서울시 FUN SEOUL 행사 페이지는 별빛축제를 2026년 10월 24일부터 25일까지 서울시립과학관에서 열리는 자연·경관 행사로 안내한다. 서울시 공식 축제 안내에서 확인되는 기본 일정과 개최 장소를 교차 확인하는 데 쓸 수 있다. 개별 과학관 프로그램의 세부 일정과 별도 예약 여부는 과학관 자체 행사 페이지와 서울시 공공서비스예약에서 확인하도록 안내한다. FUN SEOUL의 행사 목록은 주말 문화·축제 정보를 확인하는 시 공식 경로이며, 프로그램 세부 내용의 근거로는 세부 페이지를 우선한다.",
+      "facts": [
+        "FUN SEOUL은 행사 날짜를 2026-10-24~25로 안내한다.",
+        "개최 장소는 서울시립과학관이다."
+      ]
+    }
+  ],
+  "claims": [
+    {"claim":"2026 별빛축제는 10월 24~25일 서울시립과학관에서 열리고 누구나 참여할 수 있다.","grade":"confirmed","evidence":["과학관 공식 행사 페이지와 FUN SEOUL 행사 안내."],"sourceUrls":["https://wf1.seoul.go.kr/sciEvent/starlight/read?menuId=76&progMstId=2338","https://festival.seoul.go.kr/festival/main/festivalView.do?festacode=924"]},
+    {"claim":"10월 24일 야간 개장 및 천체관측회는 오후 9시까지 운영 예정이라고 안내되어 있다.","grade":"confirmed","evidence":["서울시립과학관 공식 행사 페이지."],"sourceUrls":["https://wf1.seoul.go.kr/sciEvent/starlight/read?menuId=76&progMstId=2338"]},
+    {"claim":"관람·천체관측은 사전 예약 없이도 참여할 수 있으나 일부 워크숍·강연은 별도 접수가 필요하다.","grade":"confirmed","evidence":["과학관 공식 페이지는 일부 프로그램 별도 사전 접수, 관측·전시 관람은 예약과 무관하게 가능하다고 안내한다."],"sourceUrls":["https://wf1.seoul.go.kr/sciEvent/starlight/read?menuId=76&progMstId=2338"]},
+    {"claim":"비가 오면 천체관측 프로그램은 취소되고 다른 프로그램은 정상 운영된다.","grade":"confirmed","evidence":["과학관 공식 행사 페이지의 우천 안내."],"sourceUrls":["https://wf1.seoul.go.kr/sciEvent/starlight/read?menuId=76&progMstId=2338"]},
+    {"claim":"별빛축제 사전예약 프로그램은 프로그램별로 참가 대상, 정원, 비용, 접수 일정이 다르다.","grade":"confirmed","evidence":["서울시 공공서비스예약 페이지의 개별 프로그램 정보."],"sourceUrls":["https://yeyak.seoul.go.kr/web/reservation/selectReservView.do?reSvc=N&rsv_svc_id=S261015114537399809"]}
+  ],
+  "numbers": [
+    {"what":"행사 날짜","value":"2026-10-24~2026-10-25","asOf":"2026-10-22","sourceUrl":"https://wf1.seoul.go.kr/sciEvent/starlight/read?menuId=76&progMstId=2338"},
+    {"what":"10월 24일 야간 운영 종료","value":"21:00","asOf":"과학관 공식 안내","sourceUrl":"https://wf1.seoul.go.kr/sciEvent/starlight/read?menuId=76&progMstId=2338"},
+    {"what":"별빛축제 일반 비용 안내","value":"무료","asOf":"과학관 공식 안내; 일부 예약 체험은 개별 페이지에서 비용 확인","sourceUrl":"https://wf1.seoul.go.kr/sciEvent/starlight/read?menuId=76&progMstId=2338"}
+  ],
+  "songs": []
+}

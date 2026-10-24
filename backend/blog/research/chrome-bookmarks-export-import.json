@@ -1,0 +1,172 @@
+{
+  "keyword": "크롬 북마크 내보내기·가져오기·백업",
+  "categoryId": "life-info",
+  "notes": "이 글은 구글 공식 Chrome 도움말 기준으로 북마크 내보내기/가져오기 메뉴 경로, 로그인 동기화로 계정당 최대 10만 개까지 자동 백업되는 사실, 그리고 OS별 프로필 폴더 위치(수동 백업)까지는 자신 있게 쓸 수 있다. 다만 동기화 상한이 데스크톱/모바일로 나뉘는지(10만 vs 2만)는 1차 자료(크로미움 소스)와 2차 보도(Android Police)가 엇갈려 단정할 수 없고, 'Bookmarks.bak 이름 바꿔 복구' 요령은 비공식 블로그 한 곳에만 있어 팁 수준으로만 다뤄야 한다. 모바일 앱에 북마크 내보내기가 아예 없다는 주장은 공식 문서로 확인되지 않으므로 글에 쓰지 않는다.",
+  "sources": [
+    {
+      "title": "Import Chrome bookmarks & settings",
+      "url": "https://support.google.com/chrome/answer/96816?hl=en",
+      "host": "support.google.com",
+      "body": "공식 가져오기 경로: 더보기 > Bookmarks and lists > Import bookmarks and settings > Choose file > Open > Done. 크롬에 기존 북마크가 없으면 북마크 바에 바로 들어가고, 있으면 'Other bookmarks' 폴더로 들어간다. 크롬북은 Bookmark manager > Import Bookmarks from HTML file 경로로 다르다.",
+      "tier": "official"
+    },
+    {
+      "title": "Create, find and edit bookmarks in Chrome",
+      "url": "https://support.google.com/chrome/answer/188842?hl=en",
+      "host": "support.google.com",
+      "body": "공식 내보내기 경로: 더보기 > Bookmarks and lists > Bookmark Manager > 상단 더보기 > Export Bookmarks → HTML 파일 생성. 주소창 '@bookmarks' 검색, Organize 메뉴의 정렬 옵션 5가지(최신순/오래된순/마지막 열람순/가나다순/역순)도 명시.",
+      "tier": "official"
+    },
+    {
+      "title": "Sign in and sync in Chrome",
+      "url": "https://support.google.com/chrome/answer/185277?hl=en",
+      "host": "support.google.com",
+      "body": "구글 계정 로그인 후 동기화를 켜면 북마크·비밀번호 등을 여러 기기에서 쓸 수 있고, 기기를 분실/교체해도 복구할 수 있다고 명시. 공용 PC에서는 동기화 대신 게스트 모드를 쓰라고 권고.",
+      "tier": "official"
+    },
+    {
+      "title": "Get your bookmarks, passwords, and more on all your devices",
+      "url": "https://support.google.com/chrome/answer/165139?hl=en",
+      "host": "support.google.com",
+      "body": "구글 계정에는 북마크를 최대 10만 개까지 저장해 기기 간 접근할 수 있다고 명시(공식 수치). 더보기 > 설정 > You and Google > 계정 선택 > Choose what to save in your Google Account 에서 항목별 동기화 on/off 가능.",
+      "tier": "official"
+    },
+    {
+      "title": "User Data Directory (Chromium docs)",
+      "url": "https://chromium.googlesource.com/chromium/src/+/HEAD/docs/user_data_dir.md",
+      "host": "chromium.googlesource.com",
+      "body": "북마크 파일이 들어있는 프로필 폴더 위치: Windows %LOCALAPPDATA%\\Google\\Chrome\\User Data(기본 프로필 폴더 'Default'), macOS ~/Library/Application Support/Google/Chrome, Linux ~/.config/google-chrome. 정확한 경로는 chrome://version 의 'Profile Path' 필드로 확인 가능.",
+      "tier": "data"
+    },
+    {
+      "title": "sync_bookmarks/constants.h (Chromium source)",
+      "url": "https://chromium.googlesource.com/chromium/src.git/+/fafff21/components/sync_bookmarks/constants.h",
+      "host": "chromium.googlesource.com",
+      "body": "크로미움 소스 코드에 동기화 북마크 상한 상수 kSyncBookmarksLimit = 100000 이 정의되어 있고, 이 값을 초과하면 'bookmarks limit exceeded' 오류 상태가 된다고 주석에 명시. 같은 상수가 안드로이드 쪽 자바 코드에서도 참조된다는 주석이 있어, 데스크톱/모바일을 나누는 별도 상수는 이 파일에서는 확인되지 않음.",
+      "tier": "data"
+    },
+    {
+      "title": "Google quietly capped Chrome's bookmark syncing (Android Police)",
+      "url": "https://www.androidpolice.com/google-chrome-bookmark-sync-limit/",
+      "host": "androidpolice.com",
+      "body": "2023-03-27 보도. 2023-03-21부터 별도 경고 없이 동기화 상한이 적용됐다며, 데스크톱 10만 개 / 모바일 2만 개로 나뉜다고 보도(크로미움 소스의 단일 10만 상수와 상충). chrome://sync-internals > About > Bookmarks 행에서 'Local bookmarks count exceed limit' 로 자가진단 가능하다고 설명.",
+      "tier": "press"
+    },
+    {
+      "title": "What is a BAK file? (Chromium Bookmarks.bak)",
+      "url": "https://docs.fileformat.com/misc/bak-chromium",
+      "host": "docs.fileformat.com",
+      "body": "비공식 third-party 자료. 크로미움 계열 브라우저가 Bookmarks.bak 이라는 JSON 형식 백업 파일을 자동 생성하며, 텍스트 에디터로 열 수 있고 북마크 유실 시 복구용으로 쓰인다고 설명. 경로 예시는 'Chromium' 폴더명 기준이라 실제 크롬('Google\\Chrome')에는 폴더명을 바꿔 대입해야 함. 구글 공식 문서는 아님.",
+      "tier": "blog"
+    }
+  ],
+  "claims": [
+    {
+      "claim": "크롬에서 북마크를 HTML 파일로 내보내거나, 다른 브라우저/파일에서 가져오는 절차는 공식 메뉴 경로로 확정된다.",
+      "grade": "confirmed",
+      "evidence": [
+        "내보내기: 더보기 > Bookmarks and lists > Bookmark Manager > 상단 더보기 > Export Bookmarks → HTML 파일 생성",
+        "가져오기: 더보기 > Bookmarks and lists > Import bookmarks and settings > Choose file > Open > Done",
+        "가져온 북마크는 기존 북마크가 없으면 북마크 바에, 있으면 'Other bookmarks' 폴더에 들어감",
+        "크롬북은 Bookmark manager > Import Bookmarks from HTML file 로 경로가 다름"
+      ],
+      "sourceUrls": [
+        "https://support.google.com/chrome/answer/188842?hl=en",
+        "https://support.google.com/chrome/answer/96816?hl=en"
+      ]
+    },
+    {
+      "claim": "구글 계정 로그인 후 동기화를 켜면 북마크가 클라우드에 저장되어 기기 간 자동 백업/복구가 되며, 계정당 저장 한도는 공식적으로 10만 개다.",
+      "grade": "confirmed",
+      "evidence": [
+        "로그인 경로: 프로필 아이콘 > Sign in to Chrome, 동기화 켜기: 프로필 아이콘 > Turn on sync > Yes, I'm in",
+        "기기를 분실/교체해도 저장된 정보(북마크 포함)를 새 기기에서 복구할 수 있다고 공식 명시",
+        "구글 계정에는 북마크를 최대 10만 개까지 저장해 기기 간 접근 가능(공식 수치)",
+        "항목별 동기화 on/off는 더보기 > 설정 > You and Google > 계정 > Choose what to save in your Google Account 에서 조정"
+      ],
+      "sourceUrls": [
+        "https://support.google.com/chrome/answer/185277?hl=en",
+        "https://support.google.com/chrome/answer/165139?hl=en"
+      ]
+    },
+    {
+      "claim": "동기화 외에 수동 파일 백업을 하려면 북마크 파일이 들어있는 프로필 폴더를 직접 찾으면 되고, 위치는 OS마다 다르며 chrome://version 에서 정확히 확인된다.",
+      "grade": "confirmed",
+      "evidence": [
+        "Windows 기본 경로: %LOCALAPPDATA%\\Google\\Chrome\\User Data\\Default",
+        "macOS 기본 경로: ~/Library/Application Support/Google/Chrome",
+        "Linux 기본 경로: ~/.config/google-chrome",
+        "현재 실제 경로는 chrome://version 의 'Profile Path' 필드로 확인(그 상위 폴더가 User Data 디렉터리)"
+      ],
+      "sourceUrls": [
+        "https://chromium.googlesource.com/chromium/src/+/HEAD/docs/user_data_dir.md"
+      ]
+    },
+    {
+      "claim": "크롬 북마크 동기화에는 개수 상한이 있지만, 그 상한이 데스크톱·모바일 공통 10만 개 하나인지 아니면 모바일만 2만 개로 더 낮은지는 자료마다 엇갈려 어느 한쪽을 사실로 단정할 수 없다.",
+      "grade": "unclear",
+      "evidence": [
+        "크로미움 소스 코드: kSyncBookmarksLimit = 100000 이라는 단일 상수만 확인되고, 같은 값이 안드로이드 자바 코드에서도 참조된다는 주석이 있음(분리된 모바일 전용 상수는 이 파일에서 확인 안 됨)",
+        "Android Police(2023-03-27 보도): 2023-03-21부터 적용된 상한을 데스크톱 10만 개 / 모바일 2만 개로 나눠 보도 — 1차 소스와 상충",
+        "상한 초과 시 UI 경고 없이 신규 북마크가 다른 기기로 동기화되지 않는다는 점은 두 자료 모두 공통으로 언급",
+        "자가진단 경로(보도 기준): chrome://sync-internals > About 탭 > Bookmarks 행, 'Local bookmarks count exceed limit' 표시 시 상한 도달"
+      ],
+      "sourceUrls": [
+        "https://chromium.googlesource.com/chromium/src.git/+/fafff21/components/sync_bookmarks/constants.h",
+        "https://www.androidpolice.com/google-chrome-bookmark-sync-limit/"
+      ]
+    },
+    {
+      "claim": "크롬 계열 브라우저는 Bookmarks.bak 이라는 로컬 백업 파일을 자동 생성한다고 알려져 있고, 이 파일 이름을 바꿔 북마크를 복구하는 방법이 흔히 소개되지만, 이는 구글 공식 문서가 아닌 비공식 블로그 한 곳에서만 확인되는 요령이라 사실로 단정하지 말고 참고용 팁으로만 다뤄야 한다.",
+      "grade": "unclear",
+      "evidence": [
+        "Bookmarks.bak은 JSON 형식의 백업 파일로, 텍스트 에디터로 열람 가능하다고 third-party 자료가 설명(비공식 출처)",
+        "해당 자료의 예시 경로는 'Chromium' 폴더명 기준이라, 실제 구글 크롬에서는 폴더명을 'Google\\Chrome'으로 바꿔 대입해야 함(공식 user_data_dir.md의 기본 경로 표와 교차 확인 필요)",
+        "이 'Bookmarks.bak 이름 바꿔 복구' 절차를 다루는 support.google.com 공식 문서는 이번 조사에서 발견되지 않음"
+      ],
+      "sourceUrls": [
+        "https://docs.fileformat.com/misc/bak-chromium"
+      ]
+    }
+  ],
+  "numbers": [
+    {
+      "what": "구글 계정당 저장 가능한 북마크 최대 개수(공식 고지)",
+      "value": "100,000개",
+      "asOf": null,
+      "sourceUrl": "https://support.google.com/chrome/answer/165139?hl=en"
+    },
+    {
+      "what": "크로미움 소스 코드상 동기화 북마크 상한 상수 kSyncBookmarksLimit",
+      "value": "100,000",
+      "asOf": null,
+      "sourceUrl": "https://chromium.googlesource.com/chromium/src.git/+/fafff21/components/sync_bookmarks/constants.h"
+    },
+    {
+      "what": "Android Police 보도 기준 동기화 상한(데스크톱/모바일 분리 주장, 1차 자료와 상충)",
+      "value": "데스크톱 100,000개 / 모바일 20,000개",
+      "asOf": "2023-03-27",
+      "sourceUrl": "https://www.androidpolice.com/google-chrome-bookmark-sync-limit/"
+    },
+    {
+      "what": "보도 기준 동기화 상한 적용 시작일",
+      "value": "2023-03-21",
+      "asOf": "2023-03-27",
+      "sourceUrl": "https://www.androidpolice.com/google-chrome-bookmark-sync-limit/"
+    },
+    {
+      "what": "북마크 매니저 Organize 메뉴의 정렬 옵션 개수",
+      "value": "5가지(최신순/오래된순/마지막 열람순/가나다순/역순)",
+      "asOf": null,
+      "sourceUrl": "https://support.google.com/chrome/answer/188842?hl=en"
+    }
+  ],
+  "dropped": [],
+  "cannotCover": [
+    "모바일(Android/iOS) 크롬 앱에 북마크 HTML 내보내기 기능이 아예 없다는 것 — 공식 support.google.com 문서로 확인되지 않고, 비공식 요약 기사만 있으므로 사실로 단정해 쓰지 않는다.",
+    "Bookmarks.bak 이름 바꿔 복구하는 절차를 구글이 공식 지원 문서로 안내하는지 — 이번 조사에서 공식 문서를 찾지 못했다(비공식 블로그 1건뿐).",
+    "안드로이드 쪽 모바일 전용 동기화 상한(2만 개로 보도된 값)에 대응하는 실제 자바 상수명/값 — 크로미움 소스 내 교차 검증 안 됨.",
+    "크롬 상단 메뉴 'Bookmarks and lists' 명칭이 언제부터 이렇게 바뀌었는지 — 공식 변경 로그를 찾지 못함."
+  ],
+  "songs": []
+}

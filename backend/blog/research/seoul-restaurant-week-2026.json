@@ -1,0 +1,22 @@
+{
+  "keyword": "2026 서울레스토랑위크 할인 네이버페이",
+  "categoryId": "life-info",
+  "slug": "seoul-restaurant-week-2026",
+  "searchedAt": "2026-10-23",
+  "origin": "서울시 공식 내 손안에 서울 안내",
+  "note": "서울시 안내에 게시된 행사 기간, 참여 업장 수, 혜택 방식, Npay 조건을 확인했다. 업장별 할인율과 제공 메뉴는 각 매장별로 달라 전체에 적용되는 것처럼 표현하지 않는다.",
+  "sources": [
+    { "title": "맛집 가세요? 할인·무료 혜택 챙기세요! 서울레스토랑위크", "url": "https://mediahub.seoul.go.kr/archives/2019820", "host": "mediahub.seoul.go.kr", "tier": "official", "kind": "city-guide", "body": "서울시 내 손안에 서울의 2026-10-22 안내. 서울레스토랑위크는 10월 23~29일 서울 전역 124개 음식점·카페·바에서 진행되고 할인, 행사 한정 메뉴, 무료 디저트 등의 혜택은 업장별로 다르다고 안내한다. Npay 협력 프로모션은 참여 매장에서 Npay QR결제 또는 페이스사인으로 결제할 경우 1인 1회, 결제금액의 50%를 최대 1만원까지 즉시 포인트 적립한다. 매장별 특별 할인 예시와 대상 매장 네이버 이벤트 페이지를 연결하고, 업장별 혜택과 참여 매장은 서울미식주간 공식 누리집에서 확인하도록 안내한다. 서울미식마켓은 10월 24~25일 DDP에서, 서울미식어워즈는 10월 25일 DDP에서 열린다." },
+    { "title": "2026 서울미식주간 공식 안내", "url": "https://tasteofseoul.visitseoul.net/", "host": "tasteofseoul.visitseoul.net", "tier": "official", "kind": "event-website", "body": "2026 Taste of Seoul 공식 홈페이지. 프로그램 메뉴에 서울레스토랑위크, 서울미식마켓, 서울미식투어, 서울미식클래스, 서울미식어워즈와 미식 가이드가 별도 구성되어 있다. 업장 및 행사 프로그램의 최신 참여 정보를 확인할 수 있는 공식 누리집으로 서울시 안내가 연결한다." },
+    { "title": "FUN SEOUL — 2026 서울미식주간", "url": "https://festival.seoul.go.kr/festival/main/festivalView.do?festacode=353", "host": "festival.seoul.go.kr", "tier": "official", "kind": "city-event-listing", "body": "서울시 FUN SEOUL 행사 정보. 2026 서울미식주간은 10월 23~29일 DDP와 서울 전역에서 진행된다. 서울레스토랑위크는 서울미식 100선 레스토랑과 전통시장 등에서 기간 한정 특별 메뉴와 할인을 제공하고, 미식마켓·전통시장 투어·클래스·워크숍 등 프로그램을 안내한다." },
+    { "title": "2026 서울미식주간 Npay 이벤트", "url": "https://mkt.naver.com/event/mo/taste_of_seoul", "host": "mkt.naver.com", "tier": "official", "kind": "payment-promotion", "body": "Npay 공식 이벤트 페이지. 2026년 10월 23~29일 Npay Connect가 설치된 가맹점에서 포인트·머니로 QR 또는 페이스사인 결제 시 50%를 즉시 포인트로 적립한다. 1인당 1회, 회당 최대 1만원이다. 이벤트 참여 매장 확인 버튼에서 대상 업장을 확인하며, 프로모션 참여 업장은 행사 기간 중 계속 갱신될 수 있다." }
+  ],
+  "facts": [
+    { "claim": "서울레스토랑위크는 2026년 10월 23일부터 29일까지 서울 전역에서 열린다.", "source": "https://mediahub.seoul.go.kr/archives/2019820" },
+    { "claim": "124개 음식점·카페·바가 참여하고 업장마다 할인 및 한정 메뉴 혜택이 다르다.", "source": "https://mediahub.seoul.go.kr/archives/2019820" },
+    { "claim": "Npay 참여 매장에서 QR결제 또는 페이스사인 결제 시 1인 1회 50%, 최대 1만원 포인트 적립 안내가 있다.", "source": "https://mediahub.seoul.go.kr/archives/2019820" },
+    { "claim": "참여 매장과 혜택은 네이버 이벤트 페이지와 서울미식주간 공식 누리집에서 확인한다.", "source": "https://mediahub.seoul.go.kr/archives/2019820" },
+    { "claim": "Npay Connect 설치 가맹점에서 포인트·머니로 QR 또는 페이스사인 결제하면 50% 즉시 적립, 1인 1회·최대 1만원이다.", "source": "https://mkt.naver.com/event/mo/taste_of_seoul" }
+  ],
+  "limitations": ["실제 할인 여부·메뉴·재고·결제 조건은 참여 업장별로 다름.", "검색광고 API 자격증명이 없어 키워드 검색량은 확인하지 못함."]
+}

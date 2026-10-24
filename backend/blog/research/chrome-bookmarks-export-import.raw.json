@@ -1,0 +1,139 @@
+{
+  "keyword": "크롬 북마크 내보내기·가져오기·백업",
+  "categoryId": "hangeut-trend",
+  "searchedAt": "2026-10-21",
+  "queries": [
+    "Chrome Help \"Import bookmarks & settings\" support.google.com",
+    "site:support.google.com chrome bookmarks export import",
+    "Chrome Bookmarks file location Windows profile folder \"Bookmarks.bak\"",
+    "chromium.googlesource.com user data directory profile path documentation",
+    "support.google.com chrome \"Sign in and sync in Chrome\" bookmarks",
+    "크롬 북마크 내보내기 가져오기 공식 지원",
+    "support.google.com chrome answer \"Create, view, or edit bookmarks\" OR \"organize bookmarks\" export",
+    "Chrome bookmarks restore deleted Bookmarks.bak official support rename",
+    "Chrome Android iPhone import bookmarks limitation \"Import bookmarks\" mobile support.google.com",
+    "macOS Chrome Bookmarks file path \"Application Support/Google/Chrome/Default\"",
+    "Chrome 100,000 bookmarks sync limit support.google.com 165139",
+    "\"Bookmarks.bak\" chrome official google support OR chromium documentation backup file",
+    "Chrome Android app export bookmarks not supported \"Bookmark Manager\" mobile support.google.com",
+    "chromium bug tracker bookmark sync count limit 100000 20000 official",
+    "support.google.com chrome \"Android\" OR \"iPhone\" bookmarks app \"Bookmark Manager\" sync settings"
+  ],
+  "sources": [
+    {
+      "title": "Import Chrome bookmarks & settings",
+      "url": "https://support.google.com/chrome/answer/96816?hl=en",
+      "host": "support.google.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "Google's official Chrome Help page for importing bookmarks and settings from another browser. Steps: open Chrome, select More (three dots, top right) > 'Bookmarks and lists' > 'Import bookmarks and settings' > Choose file > select the HTML file > Open > Done. To import from most other browsers (e.g. Firefox, Safari), the page instructs the user to first export/save that browser's bookmarks as an HTML file following that browser's own instructions, then import the file into Chrome. Placement rule: if Chrome had no existing bookmarks, the imported bookmarks appear directly on the bookmarks bar; if Chrome already had bookmarks, the imported ones are added into an 'Other bookmarks' folder at the end of the bookmarks bar instead of merging into the bar itself. On Chromebooks, the same operation is reached via a different path: More > 'Bookmarks and lists' > 'Bookmark manager', then a dropdown menu offering 'Import Bookmarks from HTML file'. The page also separately covers importing passwords from other apps via Google Password Manager (distinct flow from bookmark import).",
+      "facts": [
+        "Official import path (Windows/Mac): More > Bookmarks and lists > Import bookmarks and settings > Choose file > Open > Done.",
+        "Chromebook import path differs: Bookmark manager > Organize/dropdown > 'Import Bookmarks from HTML file'.",
+        "If Chrome already has bookmarks, imported items land in an 'Other bookmarks' folder at the end of the bookmarks bar instead of the bar itself."
+      ]
+    },
+    {
+      "title": "Create, find and edit bookmarks in Chrome",
+      "url": "https://support.google.com/chrome/answer/188842?hl=en",
+      "host": "support.google.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "Google's official Chrome Help page covering bookmark creation, search, editing and export. To create a bookmark, navigate to a page and select the 'Bookmark this page' (star) icon next to the address bar. To find bookmarks, the page lists three methods: typing '@bookmarks' in the address bar then Tab/Space and a search keyword; More > 'Bookmarks and lists' > 'Bookmark Manager'; or More > 'Bookmarks and lists' > 'Show all bookmarks' to use the side navigation panel. To edit, go to Bookmark Manager (or the side panel), select More next to a bookmark, then Edit. The page also documents organizing: More > 'Bookmarks and lists' > 'Show all bookmarks' > 'Organize', which offers sort options — Sort by newest, Sort by oldest, Sort by last opened, Sort by A to Z, Sort by Z to A — plus manual drag-and-drop reordering and copy/paste of bookmarks. Exporting bookmarks as an HTML file is done from the same Bookmark Manager screen via More (top) > 'Export Bookmarks', which produces an HTML file usable to import bookmarks into another browser.",
+      "facts": [
+        "Official export path: More > Bookmarks and lists > Bookmark Manager > More (top) > Export Bookmarks, producing an HTML file.",
+        "Address-bar search shortcut for bookmarks: type '@bookmarks' then Tab or Space, then a keyword.",
+        "Organize menu offers 5 sort options: newest, oldest, last opened, A to Z, Z to A."
+      ]
+    },
+    {
+      "title": "Sign in and sync in Chrome",
+      "url": "https://support.google.com/chrome/answer/185277?hl=en",
+      "host": "support.google.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "Google's official Chrome Help page on signing in and turning on sync. States that signing in with a Google Account lets a user 'get your bookmarks, passwords, and more on all your devices', and that if a device is lost or replaced, saved info (including bookmarks) can be recovered on a new device. Steps to sign in: open Chrome > select Profile icon (top right) > 'Sign in to Chrome' > enter account info > Next. Steps to turn on sync: Profile icon > 'Turn on sync' > 'Yes, I'm in'. The page explicitly warns to only turn on sync on devices the user owns, and to use Guest mode instead on a public/shared computer. The fetched excerpt did not include a dedicated sub-section with toggle-by-toggle instructions for disabling sync for the 'Bookmarks' data type specifically (that granular control is covered on a separate official page, answer/165139, under 'Choose what to save in your Google Account').",
+      "facts": [
+        "Sign-in path: Profile icon (top right) > Sign in to Chrome.",
+        "Sync turn-on path: Profile icon > Turn on sync > Yes, I'm in.",
+        "Official guidance: only enable sync on devices you own; use Guest mode on public computers."
+      ]
+    },
+    {
+      "title": "Get your bookmarks, passwords, and more on all your devices",
+      "url": "https://support.google.com/chrome/answer/165139?hl=en",
+      "host": "support.google.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "Google's official Chrome Help page describing what syncs to a Google Account when signed into Chrome: bookmarks, reading list, passwords, payment info, identity documents/contact/travel info, extensions, web apps, and settings/preferences, plus optionally tabs and browsing history. The page states a concrete numeric limit: 'you can save up to 100,000 bookmarks in your Google Account to access them across your devices.' It also documents how to manage what syncs: More > Settings > 'You and Google' > select the account name > 'Choose what to save in your Google Account', which is where individual data types (including bookmarks) can be toggled. The page additionally covers the optional sync passphrase feature, noting that using 'Google's cloud to store your Chrome data without letting Google read it' via a custom passphrase disables certain features such as password-breach checking on passwords.google.com.",
+      "facts": [
+        "Official stated cap: up to 100,000 bookmarks can be saved in a Google Account for cross-device access.",
+        "Sync data types listed: bookmarks, reading list, passwords, payment info, identity/contact/travel info, extensions, web apps, settings/preferences; tabs and history are optional additions.",
+        "Granular sync control path: More > Settings > You and Google > [account] > Choose what to save in your Google Account."
+      ]
+    },
+    {
+      "title": "User Data Directory (Chromium docs)",
+      "url": "https://chromium.googlesource.com/chromium/src/+/HEAD/docs/user_data_dir.md",
+      "host": "chromium.googlesource.com",
+      "tier": "data",
+      "publishedAt": null,
+      "body": "Official Chromium project documentation describing the user data directory and per-profile layout used by Chrome/Chromium (where bookmarks, history, cookies, and other per-installation local state live). It explains how to find the current path on a running browser: open chrome://version and read the 'Profile Path' field — the parent folder of that path is the user data directory. Example given: a Windows Profile Path of 'C:\\Users\\Alice\\AppData\\Local\\Google\\Chrome\\User Data\\Default' implies a User Data Dir of 'C:\\Users\\Alice\\AppData\\Local\\Google\\Chrome\\User Data'. Default locations by platform are listed: Windows Chrome uses '%LOCALAPPDATA%\\Google\\Chrome\\User Data' (Chromium uses '%LOCALAPPDATA%\\Chromium\\User Data'); macOS Chrome uses '~/Library/Application Support/Google/Chrome' (Chromium: '~/Library/Application Support/Chromium'); Linux Chrome Stable uses '~/.config/google-chrome' (Chromium: '~/.config/chromium', overridable via $CHROME_CONFIG_HOME or $XDG_CONFIG_HOME); ChromeOS uses '/home/chronos'; Android uses an app-sandboxed path like '/data/user/0/com.android.chrome/app_chrome'; iOS uses an app-sandboxed 'Library/Application Support/Google/Chrome'. The directory can be overridden on most platforms with the --user-data-dir command-line flag, e.g. 'chrome.exe --user-data-dir=c:\\foo' on Windows.",
+      "facts": [
+        "Default Windows Chrome user data dir: %LOCALAPPDATA%\\Google\\Chrome\\User Data (profile subfolder commonly 'Default').",
+        "Default macOS Chrome path: ~/Library/Application Support/Google/Chrome; default Linux path: ~/.config/google-chrome.",
+        "Current path can always be confirmed via chrome://version, field 'Profile Path' (its parent folder is the user data dir)."
+      ]
+    },
+    {
+      "title": "sync_bookmarks/constants.h (Chromium source)",
+      "url": "https://chromium.googlesource.com/chromium/src.git/+/fafff21/components/sync_bookmarks/constants.h",
+      "host": "chromium.googlesource.com",
+      "tier": "data",
+      "publishedAt": null,
+      "body": "Chromium source code file defining the sync bookmark count limit actually enforced by the browser. It declares a single constant, kSyncBookmarksLimit, set to 100000, documented in-code as 'The maximum number of bookmarks that are allowed to be synced. If the number of local bookmarks exceeds this limit, sync will enter a bookmarks limit exceeded error state.' The constant lives in the sync_bookmarks namespace and carries a lint/comment annotation tying it to a corresponding Java-side definition used in the Android codebase (SyncService.java), i.e. the same 100,000 threshold is referenced from both the C++ desktop/shared sync code and the Android Java layer rather than the header defining two separate desktop/mobile numbers. This is the primary-source engineering definition behind the sync cap that tech press has reported on (see Android Police source below), and it directly conflicts with some press reporting that describes a lower, separate mobile-only limit.",
+      "facts": [
+        "Chromium source constant kSyncBookmarksLimit = 100000, described as the max bookmarks allowed to sync before entering a 'bookmarks limit exceeded' error state.",
+        "The same constant is cross-referenced from the Android-side Java sync code, per an in-file comment, rather than the header defining a separate lower Android-specific number."
+      ]
+    },
+    {
+      "title": "Google quietly capped Chrome's bookmark syncing (Android Police)",
+      "url": "https://www.androidpolice.com/google-chrome-bookmark-sync-limit/",
+      "host": "androidpolice.com",
+      "tier": "press",
+      "publishedAt": "2023-03-27",
+      "body": "Tech press report (Android Police, published 2023-03-27) on Google enforcing a bookmark sync cap in Chrome starting March 21, 2023, with no on-screen warning shown to affected users when they cross the threshold. The article reports the cap as 100,000 bookmarks for desktop and 20,000 bookmarks for mobile devices, framing the change as a measure to 'guard against users with way too many bookmarks in sync' and to prevent the sync merge operation (which runs on the UI thread) from freezing the browser interface when processing very large bookmark sets. The article explains how an affected user can self-diagnose: visit chrome://sync-internals, open the 'About' tab, and look under 'Type Info' for the Bookmarks row — if capped, it shows an error message reading 'Local bookmarks count exceed limit'. New bookmarks beyond the cap simply fail to propagate to other signed-in devices rather than Chrome showing a dialog or notification.",
+      "facts": [
+        "Reports the bookmark sync cap took effect on 2023-03-21, with no in-app warning to users.",
+        "States the enforced cap as 100,000 bookmarks on desktop and 20,000 on mobile (conflicts with the single 100,000 constant found in Chromium source code — see conflicts).",
+        "Diagnostic method given: chrome://sync-internals > About tab > Bookmarks row under Type Info, error text 'Local bookmarks count exceed limit' if capped."
+      ]
+    },
+    {
+      "title": "What is a BAK file? (Chromium Bookmarks.bak)",
+      "url": "https://docs.fileformat.com/misc/bak-chromium",
+      "host": "docs.fileformat.com",
+      "tier": "blog",
+      "publishedAt": null,
+      "body": "Third-party reference page explaining the Bookmarks.bak file that Chromium-based browsers (including Google Chrome and Microsoft Edge) automatically generate. It describes Bookmarks.bak as a JSON-format backup of the bookmarks file, routinely (re)created by the browser to allow recovery from accidental bookmark loss, and openable in any plain-text editor (VS Code, Notepad, TextEdit, Sublime Text) since it is JSON rather than a binary format. It lists example file locations (using Chromium branding, not Google Chrome's own folder name): Windows 'C:\\Users\\<YourUsername>\\AppData\\Local\\Chromium\\User Data\\Default\\Bookmarks.bak', macOS '~/Library/Application Support/Chromium/Default/Bookmarks.bak', Linux '~/.config/chromium/Default/Bookmarks.bak'. Note: this is not an official Google support page; for actual Google Chrome (not the open-source Chromium build) the equivalent folder name is 'Google\\Chrome' rather than 'Chromium', per the official chromium.googlesource.com user_data_dir.md default-locations table above.",
+      "facts": [
+        "Bookmarks.bak is described as a JSON-format backup file Chromium-based browsers routinely recreate.",
+        "Example paths given use the 'Chromium' (not 'Google\\Chrome') folder name, which only matches an actual Chrome install if the folder names are substituted per the official user_data_dir.md table."
+      ]
+    }
+  ],
+  "conflicts": [
+    {
+      "about": "Whether the Chrome bookmark sync cap is a single 100,000 limit or a split 100,000 (desktop) / 20,000 (mobile) limit",
+      "a": "Chromium's own source code (components/sync_bookmarks/constants.h) defines exactly one constant, kSyncBookmarksLimit = 100000, with an in-file comment stating the same constant is referenced by the Android Java sync code — implying one shared threshold.",
+      "b": "Tech press (Android Police, 2023-03-27) and other outlets report the enforced cap as 100,000 bookmarks on desktop but only 20,000 bookmarks on mobile — a lower, separate mobile limit not visible in the single constants.h value found."
+    }
+  ],
+  "unknowns": [
+    "Whether Google has ever published an official support.google.com page documenting the Bookmarks.bak rename-to-restore procedure — only third-party/community sources (docs.fileformat.com, various tech blogs) describe this; no official Google Help Center page was found covering it.",
+    "Whether Chrome for Android/iOS officially lacks a bookmark HTML export feature — no official support.google.com page was found stating this explicitly; all evidence that mobile Chrome apps have no 'Export bookmarks' option comes from third-party roundup articles, not Google's own documentation.",
+    "The exact Java-side constant name/value for the Android mobile bookmark sync limit referenced in constants.h's comment — the comment confirms cross-referencing but its literal value was not independently verified in Android-side source within this research pass.",
+    "The date Chrome's top-right menu item was renamed from 'Bookmarks' to 'Bookmarks and lists' in the official UI — observed as the current wording on all fetched official pages, but no official changelog entry or date was found for this rename."
+  ]
+}

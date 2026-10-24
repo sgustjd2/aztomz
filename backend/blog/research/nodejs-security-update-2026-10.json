@@ -1,0 +1,129 @@
+{
+  "keyword": "Node.js 보안 업데이트 2026년 10월 21일: Brotli CVE와 브랜치별 패치 차이",
+  "categoryId": "ai-trend",
+  "notes": "2026년 10월 21일 Node.js는 22.x·24.x·26.x 보안 릴리스를 냈고, 10월 24일 기준 수정 버전은 각각 22.23.4·24.22.1·26.12.1이에요.\nBrotli CVE-2026-111497은 세 지원 브랜치 모두에 영향이 있지만, 수정 목록 전체는 브랜치별로 다르고 26.x만 ZIP·Permission Model 취약점 두 건이 더 포함돼요.\nTLS CVE-2026-106072는 릴리스 노트의 묶음 표기와 상세 권고의 개별 심각도가 달라, 상세 권고 기준으로 구분하고 표기 차이를 밝혀요.",
+  "sources": [
+    {
+      "title": "Wednesday, October 21, 2026 Security Releases",
+      "url": "https://nodejs.org/en/blog/vulnerability/october-2026-security-releases",
+      "host": "nodejs.org",
+      "tier": "official",
+      "body": "Node.js 프로젝트의 2026년 10월 21일 보안 권고는 26.x·24.x·22.x를 대상으로 수정 릴리스를 안내한다. 높은 심각도 항목에는 DNS의 NUL 문자 처리, TLS 인증서 호스트 확인 문제와 Brotli 디코더 out-of-bounds write가 포함된다. Brotli 문제(CVE-2026-111497)는 애플리케이션이 node:zlib를 통해 공격자가 제공한 Brotli 데이터를 풀 때 프로세스 메모리를 손상할 수 있고, 결과로 크래시·메모리 노출·원격 코드 실행이 가능하다고 설명한다. 이 취약점은 22.x, 24.x, 26.x 모두에 영향을 준다. 권고는 구체적인 재현 절차가 아니라 영향 범위와 수정 버전을 안내하며, 지원 종료 버전도 보안 릴리스 발생 시 영향을 받는다고 적는다."
+    },
+    {
+      "title": "Node.js 22.23.4 (LTS)",
+      "url": "https://nodejs.org/en/blog/release/v22.23.4",
+      "host": "nodejs.org",
+      "tier": "official",
+      "body": "Node.js 22.23.4는 2026년 10월 21일 배포된 Jod LTS 보안 릴리스다. 릴리스 노트는 TLS 항목에서 CVE-2026-106069와 CVE-2026-106072를 함께 적고 High로 표시하지만, 상세 보안 권고는 두 CVE를 별도 항목으로 나누어 CVE-106069를 High, CVE-106072를 Medium으로 분류한다. 상세 권고 기준으로는 DNS NUL 입력 검증(CVE-2026-105482)과 Brotli(CVE-2026-111497)가 High, HTTP Agent keep-alive 응답 처리(CVE-2026-105481)와 crypto snapshot 캐시(CVE-2026-106074)가 Medium, Permission Model의 realpathSync 검사(CVE-2026-106073)가 Low다. 이 22.x 릴리스 목록에는 CVE-2026-105483, CVE-2026-106070, CVE-2026-106071이 들어 있지 않다. 배포 버전은 22.23.4이고 프로젝트 다운로드 페이지와 서명된 파일 목록을 제공한다."
+    },
+    {
+      "title": "Node.js 24.22.1 (LTS)",
+      "url": "https://nodejs.org/en/blog/release/v24.22.1",
+      "host": "nodejs.org",
+      "tier": "official",
+      "body": "Node.js 24.22.1은 2026년 10월 21일 공개된 Krypton LTS 보안 릴리스다. 릴리스 노트는 TLS 항목에서 CVE-2026-106069와 CVE-2026-106072를 한 묶음으로 High 표시하지만, 같은 날 상세 보안 권고는 CVE-106069를 High, CVE-106072를 Medium으로 분류한다. 상세 권고 기준으로 CVE-105482, CVE-105483, CVE-111497도 High다. HTTP Agent keep-alive 응답 처리(CVE-2026-105481)와 snapshot crypto entropy cache(CVE-2026-106074), TLS의 CVE-106072는 Medium, Permission Model의 fs.realpathSync 검사(CVE-2026-106073)는 Low다. 24.x에는 26.x 전용으로 기록된 ZIP 처리(CVE-2026-106070)와 wildcard 권한 과다 허용(CVE-2026-106071)은 이 목록에 없다. 수정된 24.x 버전은 24.22.1이다."
+    },
+    {
+      "title": "Node.js 26.12.1 (Current)",
+      "url": "https://nodejs.org/en/blog/release/v26.12.1/",
+      "host": "nodejs.org",
+      "tier": "official",
+      "body": "Node.js 26.12.1은 2026년 10월 21일 배포된 Current 보안 릴리스다. 릴리스 노트는 TLS 항목에서 CVE-2026-106069와 CVE-2026-106072를 함께 High로 표시하지만, 같은 날 상세 보안 권고는 CVE-106069를 High, CVE-106072를 Medium으로 구분한다. 상세 권고의 26.x High에는 CVE-105482, CVE-105483, CVE-106069, CVE-111497이 포함된다. Medium은 CVE-105481, CVE-106072, CVE-106074다. Low는 ZIP 헤더 캐시 CVE-106070, Permission Model wildcard 조회 CVE-106071, fs.realpathSync 검사 CVE-106073다. 따라서 26.x에는 22.x·24.x 목록보다 ZIP과 wildcard 권한 취약점 두 건이 추가로 해당한다. 수정된 26.x 버전은 26.12.1이다."
+    },
+    {
+      "title": "Node.js Releases and release schedule",
+      "url": "https://nodejs.org/en/about/previous-releases",
+      "host": "nodejs.org",
+      "tier": "official",
+      "body": "Node.js 공식 릴리스 표는 v26을 Current, v24와 v22를 LTS로 표시하고 각 주요 버전의 마지막 업데이트 날짜를 갱신한다. 페이지 설명에 따르면 Current 단계는 통상 6개월이며, production 애플리케이션에는 Active LTS 또는 Maintenance LTS를 사용해야 한다. 이 기준에서 26.x는 기능 변경이 진행되는 Current 계열이고, 22.x·24.x는 장기지원 계열이다. 운영자는 같은 10월 21일 보안 업데이트를 적용하더라도 현재 사용 중인 주 버전에 맞는 22.23.4, 24.22.1 또는 26.12.1을 골라야 한다. 26.12.1로 바꾸는 것은 보안 패치만이 아니라 Current 주 계열을 선택하는 일이므로, 보안 수정과 major 버전 전환은 별도 판단으로 다뤄야 한다."
+    },
+    {
+      "title": "Node.js Security Reporting",
+      "url": "https://nodejs.org/en/security/",
+      "host": "nodejs.org",
+      "tier": "official",
+      "body": "Node.js 보안 페이지는 프로젝트의 취약점 보고 및 보안 대응 경로를 안내하는 공식 정책 문서다. 보안 공지와 지원 릴리스는 Node.js 프로젝트가 직접 공개하며, 보안 릴리스에 포함된 각 취약점 설명은 영향 주 버전과 수정 사항을 구분해 적는다. 이 글에서는 해당 정책 페이지를 보안 대응의 출처로만 쓰고, 외부 서비스의 런타임 배포 방식이나 실제 침해 여부를 추정하는 근거로 쓰지 않는다. 취약점이 있는 버전을 운영하는지 확인할 때는 애플리케이션 저장소의 package.json만 보지 말고 실제 실행 중인 Node.js 런타임을 확인해야 하지만, 이 운영 점검 조언은 프로젝트 권고의 취지를 실무에 적용한 편집상 해석이다."
+    }
+  ],
+  "claims": [
+    {
+      "claim": "2026-10-21 Node.js 프로젝트는 22.x·24.x·26.x의 보안 릴리스를 공개했다. 2026-10-24 기준 현재 수정 버전은 22.23.4·24.22.1·26.12.1이다.",
+      "grade": "confirmed",
+      "evidence": [
+        "공식 보안 권고가 22.x·24.x·26.x를 대상으로 업데이트를 알린다.",
+        "각 브랜치의 공식 2026-10-21 릴리스 노트는 22.23.4, 24.22.1, 26.12.1을 보안 릴리스로 표시한다."
+      ],
+      "sourceUrls": [
+        "https://nodejs.org/en/blog/vulnerability/october-2026-security-releases",
+        "https://nodejs.org/en/blog/release/v22.23.4",
+        "https://nodejs.org/en/blog/release/v24.22.1",
+        "https://nodejs.org/en/blog/release/v26.12.1/"
+      ]
+    },
+    {
+      "claim": "Brotli 결함 CVE-2026-111497은 22.x·24.x·26.x 모두에 영향을 준다. 다만 위험은 Node.js를 사용한다는 사실만으로 자동 발생하는 것이 아니라, 애플리케이션이 공격자가 제어하는 Brotli 입력을 node:zlib로 압축 해제하는 경로에 노출됐을 때 설명된 영향이 성립한다.",
+      "grade": "confirmed",
+      "evidence": [
+        "상세 권고는 내장 Brotli decoder의 out-of-bounds write가 메모리 손상, crash, 메모리 노출 또는 RCE로 이어질 수 있다고 한다.",
+        "권고는 공격자 제공 Brotli 데이터가 node:zlib로 압축 해제되는 조건을 명시하고 세 브랜치 모두 영향을 받는다고 적는다."
+      ],
+      "sourceUrls": ["https://nodejs.org/en/blog/vulnerability/october-2026-security-releases"]
+    },
+    {
+      "claim": "브랜치별 수정 범위가 다르다. 22.x는 상세 권고상 7개, 24.x는 8개, 26.x는 10개 CVE가 포함되며, CVE-2026-106070 ZIP 처리와 CVE-2026-106071 Permission Model wildcard 문제는 26.x에만 해당한다.",
+      "grade": "confirmed",
+      "evidence": [
+        "22.23.4 release note는 7개 취약점 수정 사항을 나열한다.",
+        "24.22.1 release note는 8개를 나열하며 CVE-105483을 추가로 포함한다.",
+        "26.12.1 release note는 10개를 나열하며 CVE-106070과 CVE-106071은 상세 권고에서 26.x만 영향받는다고 한다."
+      ],
+      "sourceUrls": [
+        "https://nodejs.org/en/blog/vulnerability/october-2026-security-releases",
+        "https://nodejs.org/en/blog/release/v22.23.4",
+        "https://nodejs.org/en/blog/release/v24.22.1",
+        "https://nodejs.org/en/blog/release/v26.12.1/"
+      ]
+    },
+    {
+      "claim": "상세 보안 권고 심각도를 적용하면 22.x는 High 3·Medium 3·Low 1, 24.x는 High 4·Medium 3·Low 1, 26.x는 High 4·Medium 3·Low 3이다. 릴리스 노트는 TLS CVE-2026-106069와 CVE-2026-106072를 한 항목에 묶어 High로 표기하지만, 상세 권고는 CVE-106069를 High, CVE-106072를 Medium으로 나눈다.",
+      "grade": "confirmed",
+      "evidence": [
+        "10월 21일 상세 보안 권고는 취약점별 심각도와 각 영향을 받는 주 버전을 각각 기재한다.",
+        "브랜치별 release note는 CVE-106069와 CVE-106072를 함께 High로 표기해 세부 권고의 분류와 범위가 달라 보인다."
+      ],
+      "sourceUrls": [
+        "https://nodejs.org/en/blog/vulnerability/october-2026-security-releases",
+        "https://nodejs.org/en/blog/release/v22.23.4",
+        "https://nodejs.org/en/blog/release/v24.22.1",
+        "https://nodejs.org/en/blog/release/v26.12.1/"
+      ]
+    },
+    {
+      "claim": "공식 릴리스 표상 22.x와 24.x는 LTS, 26.x는 Current다. 따라서 보안 수정 적용과 26.x로의 주 버전 이동은 같은 결정으로 취급하지 말아야 한다.",
+      "grade": "confirmed",
+      "evidence": [
+        "Node.js Releases 표는 22와 24를 LTS, 26을 Current로 구분한다.",
+        "공식 릴리스 설명은 production 애플리케이션에 Active LTS 또는 Maintenance LTS를 사용하도록 안내한다."
+      ],
+      "sourceUrls": ["https://nodejs.org/en/about/previous-releases"]
+    }
+  ],
+  "numbers": [
+    {"what":"보안 공지 날짜","value":"2026-10-21","asOf":"2026-10-24","sourceUrl":"https://nodejs.org/en/blog/vulnerability/october-2026-security-releases"},
+    {"what":"수정 버전","value":"22.x → 22.23.4","asOf":"2026-10-24","sourceUrl":"https://nodejs.org/en/blog/release/v22.23.4"},
+    {"what":"수정 버전","value":"24.x → 24.22.1","asOf":"2026-10-24","sourceUrl":"https://nodejs.org/en/blog/release/v24.22.1"},
+    {"what":"수정 버전","value":"26.x → 26.12.1","asOf":"2026-10-24","sourceUrl":"https://nodejs.org/en/blog/release/v26.12.1/"},
+    {"what":"상세 권고 기준 22.x 심각도별 취약점 수","value":"High 3 · Medium 3 · Low 1","asOf":"2026-10-21","sourceUrl":"https://nodejs.org/en/blog/vulnerability/october-2026-security-releases"},
+    {"what":"상세 권고 기준 24.x 심각도별 취약점 수","value":"High 4 · Medium 3 · Low 1","asOf":"2026-10-21","sourceUrl":"https://nodejs.org/en/blog/vulnerability/october-2026-security-releases"},
+    {"what":"상세 권고 기준 26.x 심각도별 취약점 수","value":"High 4 · Medium 3 · Low 3","asOf":"2026-10-21","sourceUrl":"https://nodejs.org/en/blog/vulnerability/october-2026-security-releases"}
+  ],
+  "dropped": [],
+  "cannotCover": [
+    "특정 앱이 공격자 제어 Brotli 데이터 경로에 노출되는지는 소스와 런타임 구성 확인 없이 단정하지 않는다.",
+    "EOL 주 버전의 과거별 수정 버전은 공식 권고에 완전한 표가 없어 특정 버전 번호를 제시하지 않는다.",
+    "침해 사례 수, 실제 악용 여부, 클라우드 호스팅별 자동 패치 완료 여부는 확인되지 않았다.",
+    "보안 취약점 재현·악용 절차는 쓰지 않는다."
+  ],
+  "songs": []
+}

@@ -1,0 +1,190 @@
+{
+  "keyword": "엑셀 텍스트 숫자 변환",
+  "categoryId": "hangeut-trend",
+  "notes": "이 글은 텍스트로 저장된 숫자를 숫자로 바꾸는 공식 방법들(오류 표시기로 '숫자로 변환', VALUE 함수, 숫자 서식 직접 적용, 빈 셀에 1 입력 후 Multiply)을 중심으로 쓸 수 있다. 'Fix text-formatted numbers by applying a number format' 문서는 Technique 1(오류 표시기)·Technique 2(Multiply)·Technique 3(숫자 서식 적용)을 안내하므로 공식 방법을 '세 가지'로 한정하면 안 되고(VALUE 함수까지 포함하면 최소 네 가지), 각 기법을 독립 항목으로 다뤄야 한다. 앞자리 0 삭제·15자리 정밀도 한계·16자리 이상 코드는 텍스트 서식이 필요하다는 점도 공식 문서로 뒷받침된다. 텍스트 나누기로 숫자 변환·SUM이 0 되는 이유는 비공식 커뮤니티 답변뿐이라 '공식 방법'처럼 쓰면 안 되고 참고 팁 수준으로만 다뤄야 한다.",
+  "cannotSay": [
+    "텍스트 나누기(Text to Columns) 마법사가 텍스트 숫자를 숫자로 바꿔준다고 공식 기능처럼 서술하지 말 것 — Microsoft 공식 지원 문서(Split text into different columns)에는 이 용도의 절차가 없고, 비공식 커뮤니티 답변(techcommunity.microsoft.com, 2020-09-08, 자원봉사자 SergeiBaklan)에서만 확인된다.",
+    "SUM 함수가 0을 반환하는 이유를 '텍스트를 무시해서'라고 공식 사실처럼 단정하지 말 것 — Microsoft 공식 지원 문서는 이 인과를 명시하지 않으며, 비공식 Microsoft Q&A(learn.microsoft.com/answers, 2015-09-22/23 게시)에서만 구체적으로 설명한다.",
+    "'선택하여 붙여넣기 > Multiply(곱하기)' 단계의 Operation 메뉴 항목명(곱하기 등)을 확정된 한국어 화면 표기로 단정하지 말 것 — ko-kr 소스 facts에 이 메뉴명이 직접 인용되어 있지 않다. 영어 라벨(Multiply) 기준으로 쓰고 '한국어 화면 표기는 다를 수 있음'을 명시해야 한다.",
+    "공식 방법을 '딱 세 가지뿐'로 한정하지 말 것 — 'Fix text-formatted numbers by applying a number format' 문서에 Technique 3(숫자 서식 직접 적용)이 별도로 있고, VALUE 함수까지 합치면 최소 네 가지다. '대표적인 방법들' 식으로 범위를 열어 둬야 한다.",
+    "한국어판 문서의 'Ctrl+Shift+V' 단축키를 Multiply(선택하여 붙여넣기 Operation) 절차의 단축키로 쓰지 말 것 — ko-kr 원문은 이 단축키를 VALUE 함수 절차 마지막 '선택하여 붙여넣기 > 값(값 붙여넣기)' 단계에 붙여 설명한다. Multiply 절차와는 무관하다."
+  ],
+  "cannotCover": [
+    "숫자 앞에 아포스트로피(')를 입력해 텍스트로 강제하는 방법 — Microsoft 공식 지원 문서에서 확인되지 않았다(제3 블로그에서만 언급, 300자 기준 미충족·비공식이라 raw에 정식 source로 포함되지 않음).",
+    "Excel for Mac에서 '숫자로 변환' 오류 표시기 메뉴가 데스크톱(Windows)과 동일하게 동작하는지 — 공식 문서의 'Applies To' 범위에 Mac이 별도 언급되지 않아 확인하지 못했다.",
+    "Excel for the web(온라인)에서 '선택하여 붙여넣기 > Multiply'(빈 셀 1 곱하기) 메뉴가 데스크톱과 동일한 위치로 제공되는지 — 'Fix text-formatted numbers' 문서는 데스크톱 Home 탭 리본 기준으로만 설명한다."
+  ],
+  "claims": [
+    {
+      "claim": "텍스트로 저장된 숫자는 셀 좌측 상단의 초록 삼각형 오류 표시기로 식별할 수 있고, 이 표시기(또는 Alt+Shift+F10)를 선택해 메뉴에서 '숫자로 변환'을 고르면 숫자로 바뀐다.",
+      "grade": "confirmed",
+      "evidence": [
+        "영문 공식문서(Convert numbers stored as text): 오류 표시기는 셀 좌측 상단에 나타나며 선택 단축키는 Alt+Shift+F10이다(원문: 'or use the keyboard shortcut Alt+Shift+F10')",
+        "영문 공식문서(Convert numbers stored as text): 변환 메뉴에서 'Convert to Number'를 선택한다",
+        "영문 공식문서(Fix text-formatted numbers by applying a number format): 텍스트로 포맷된 숫자는 좌측 정렬되고 좌측 상단에 작은 초록색 삼각형(a small green triangle)이 표시된다",
+        "한국어 공식문서(ko-kr판 Convert numbers stored as text): 오류 표시기 선택은 'Alt+Shift+F10', 메뉴에서는 '숫자로 변환'을 선택한다고 명시 — 영문판 'Convert to Number'와 1:1 대응"
+      ],
+      "sourceUrls": [
+        "https://support.microsoft.com/en-us/office/convert-numbers-stored-as-text-to-numbers-40105f2a-fe79-4477-a171-c5bad0f0a885",
+        "https://support.microsoft.com/en-us/excel/fix-text-formatted-numbers-by-applying-a-number-format",
+        "https://support.microsoft.com/ko-kr/office/convert-numbers-stored-as-text-to-numbers-40105f2a-fe79-4477-a171-c5bad0f0a885"
+      ]
+    },
+    {
+      "claim": "VALUE 함수(=VALUE(텍스트참조))로 텍스트를 숫자로 변환할 수 있지만, Excel이 보통 자동으로 텍스트→숫자 변환을 하기 때문에 꼭 써야 하는 경우는 많지 않다. 변환 결과는 선택하여 붙여넣기 > 값(Paste Special > Values)으로 원래 열에 덮어쓰며, 한국어판 문서는 이 단계의 단축키로 Ctrl+Shift+V를 함께 적는다.",
+      "grade": "confirmed",
+      "evidence": [
+        "영문 공식문서(VALUE function, GUID URL): 구문은 VALUE(text), text는 필수 인수로 '따옴표로 묶인 텍스트 또는 변환하려는 텍스트가 포함된 셀 참조'",
+        "영문 공식문서(VALUE function) 원문: 'You do not generally need to use the VALUE function in a formula because Excel automatically converts text to numbers as necessary; this function is provided for compatibility with other spreadsheet programs.'",
+        "영문 공식문서(VALUE function): 인식 형식 밖이면 #VALUE! 오류 값을 반환한다",
+        "영문 공식문서(Convert numbers stored as text): VALUE 함수를 쓸 땐 텍스트 옆에 새 열을 삽입하고 '=VALUE()' 안에 셀 참조를 넣은 뒤 채우기 핸들(+ 모양)로 아래 셀까지 드래그한 다음, 그 결과를 복사해 원본 열 첫 셀에 'Paste Special > Values'로 붙여넣는다",
+        "한국어 공식문서(ko-kr): 'VALUE 함수 절차... 영문판과 동일한 순서로 안내한다'고 확인됨 — 한국어 화면에서도 같은 함수명(VALUE)·절차를 쓴다",
+        "한국어 공식문서(ko-kr): 'VALUE 함수 절차와 선택하여 붙여넣기 절차(Ctrl+Shift+V 단축키 포함)도 영문판과 동일한 순서로 안내한다' — 이 Ctrl+Shift+V는 VALUE 결과를 '선택하여 붙여넣기 > 값'으로 원본 열에 덮어쓰는 단계에 붙은 단축키다(Multiply 절차와는 무관)"
+      ],
+      "sourceUrls": [
+        "https://support.microsoft.com/en-us/office/value-function-257d0108-07dc-437d-ae1c-bc2d3953d8c2",
+        "https://support.microsoft.com/en-us/office/convert-numbers-stored-as-text-to-numbers-40105f2a-fe79-4477-a171-c5bad0f0a885",
+        "https://support.microsoft.com/ko-kr/office/convert-numbers-stored-as-text-to-numbers-40105f2a-fe79-4477-a171-c5bad0f0a885"
+      ]
+    },
+    {
+      "claim": "빈 셀(서식이 General인 셀)에 1을 입력해 복사한 뒤, 텍스트 숫자 범위에 선택하여 붙여넣기(Paste Special)의 'Multiply(곱하기)' 연산을 적용하면 텍스트가 숫자로 바뀐다. 끝나면 1을 입력했던 보조 셀은 지워도 된다.",
+      "grade": "confirmed",
+      "evidence": [
+        "영문 공식문서(Fix text-formatted numbers by applying a number format, Technique 2): 먼저 서식이 General인 빈 셀을 선택 → 1 입력→ENTER→Ctrl+C 복사→텍스트 숫자 범위 선택→Home 탭 Paste 화살표→Paste Special 클릭→Operation에서 Multiply 선택 후 OK → 작업이 끝나면 1을 입력했던 보조 셀은 삭제(또는 워크시트 빈 영역에 남겨 둠)해도 된다",
+        "영문 공식문서(Format numbers as text)도 '빈 셀에 1을 넣어 Multiply로 선택하여 붙여넣기' 절차를 동일하게 안내한다(이 문서에는 아포스트로피로 텍스트를 강제하는 방법은 언급되지 않음)",
+        "Multiply(곱하기) 연산 자체의 한국어 화면 메뉴명은 ko-kr 소스 facts에 직접 인용되어 있지 않아 확정하지 않음 — 영어 라벨 'Multiply' 기준으로 쓰고 한국어 화면 표기는 다를 수 있음"
+      ],
+      "sourceUrls": [
+        "https://support.microsoft.com/en-us/excel/fix-text-formatted-numbers-by-applying-a-number-format",
+        "https://support.microsoft.com/en-us/excel/format-numbers-as-text"
+      ]
+    },
+    {
+      "claim": "텍스트로 저장된 숫자에는 숫자 서식을 직접 적용하는 방법도 있다(Technique 3). Home 탭의 Number 그룹에서 Dialog Box Launcher(확장 아이콘)를 클릭하고 Category에서 원하는 숫자 서식을 고르면 된다. 이 절차가 제대로 끝나려면 숫자에 여분의 공백이나 출력되지 않는 문자가 없어야 하며, 있으면 TRIM 함수나 CLEAN 함수로 먼저 지워야 한다.",
+      "grade": "confirmed",
+      "evidence": [
+        "영문 공식문서(Fix text-formatted numbers by applying a number format, Technique 3) 원문: \"On the Home tab, in the Number group, click the Dialog Box Launcher next to Number.\" → \"In the Category box, click the number format that you want to use.\"",
+        "영문 공식문서(Fix text-formatted numbers by applying a number format) 원문: \"For this procedure to complete successfully, make sure that the numbers that are stored as text do not include extra spaces or nonprintable characters.\" — 있으면 TRIM 또는 CLEAN 함수로 먼저 제거해야 한다고 안내(이 주의 문구는 Technique 3에 붙은 것으로, Technique 2 Multiply 절차의 주의가 아니다)"
+      ],
+      "sourceUrls": [
+        "https://support.microsoft.com/en-us/excel/fix-text-formatted-numbers-by-applying-a-number-format"
+      ]
+    },
+    {
+      "claim": "숫자 앞 0은 Excel이 기본적으로 삭제하며, 신용카드 번호 등 16자리 이상 숫자 코드는 Excel의 15자리 정밀도 한계 때문에 반드시 텍스트 서식으로 저장해야 한다(그렇지 않으면 16번째 자리부터 0으로 바뀐다).",
+      "grade": "confirmed",
+      "evidence": [
+        "영문 공식문서(Format numbers as text) 원문: 'When you enter a number that begins with a zero—for example, a product code—Excel will delete the zero by default.'",
+        "영문 공식문서(Format numbers as text) 원문: 'Excel has a maximum of 15 digits of precision' — 16자리 이상 숫자 코드(신용카드 번호 등)는 반드시 텍스트 서식을 써야 한다고 명시",
+        "영문 공식문서(Format numbers as text): 텍스트 서식 숫자는 좌측 정렬로 식별하며(우측 정렬이 정상), 이 공식문서에는 아포스트로피로 텍스트를 강제하는 방법이 언급되지 않는다 — Number 서식 대화상자에서 Text 범주를 먼저 지정한 뒤 입력하는 절차만 설명"
+      ],
+      "sourceUrls": [
+        "https://support.microsoft.com/en-us/excel/format-numbers-as-text"
+      ]
+    },
+    {
+      "claim": "텍스트 나누기(Text to Columns) 마법사의 3단계에서 'General'을 선택하면 텍스트 숫자를 일반 숫자로 바꿀 수 있고, SUM 함수가 텍스트로 저장된 숫자를 만나면 무시해 합계가 0(또는 실제보다 적게)이 된다는 설명은 Microsoft 공식 지원 문서가 아니라 비공식 커뮤니티 답변에서만 확인된다.",
+      "grade": "reported(비공식)",
+      "evidence": [
+        "영문 공식문서(Split text into different columns with the Convert Text to Columns Wizard)는 구분 기호로 셀을 여러 열로 나누는 용도만 설명하며, 텍스트 숫자를 숫자로 바꾸는 절차나 'Column data format = General' 선택에 대한 내용이 없다",
+        "비공식 커뮤니티(techcommunity.microsoft.com, 2020-09-08, 답변자 SergeiBaklan — Microsoft 직원 아닌 'Diamond Contributor' 자원봉사자): '열 선택 후 Data > Text to Columns 실행, 마법사 3단계에서도 General(기본값) 선택 후 Finish'로 텍스트 숫자를 숫자로 바꿀 수 있다고 설명 — 공식 문서엔 없는 절차",
+        "영문 공식문서(Convert numbers stored as text)는 텍스트로 저장된 숫자가 'an uncalculated formula showing instead of a result' 같은 예기치 않은 결과를 부를 수 있다는 일반적 서술만 하며, SUM이 0을 반환하는 구체적 인과를 명시하지 않는다",
+        "비공식 Microsoft Q&A(learn.microsoft.com/answers, 2015-09-22 익명 답변): SUM이 텍스트 숫자를 '스마트하게' 인식하지 못해 0이 되며, 범위 선택 후 뜨는 노란 팝업에서 '숫자로 변환'을 선택하면 해결된다고 설명",
+        "비공식 Microsoft Q&A 동일 스레드(2015-09-23, 'Volunteer Moderator' 직함 Vijay A. Verma): 빈 셀을 복사한 뒤 'Paste Special > Add(더하기)' 연산을 텍스트 숫자 범위에 적용하면 숫자로 바뀐다는 변형 방법 제시 — 공식문서의 Multiply(곱하기) 방법과는 다른 연산(Add)"
+      ],
+      "sourceUrls": [
+        "https://support.microsoft.com/en-us/office/split-text-into-different-columns-30b14928-5550-41f5-97ca-7a3e9c363ed7",
+        "https://techcommunity.microsoft.com/t5/excel/change-text-to-a-number/td-p/1645685",
+        "https://support.microsoft.com/en-us/office/convert-numbers-stored-as-text-to-numbers-40105f2a-fe79-4477-a171-c5bad0f0a885",
+        "https://learn.microsoft.com/en-us/answers/questions/4875368/excel-2013-sum-function-returns-0-for-range-of-non"
+      ]
+    }
+  ],
+  "numbers": [
+    {
+      "what": "VALUE(\"$1,000\") 함수 결과 (통화기호·천단위 구분기호 포함 텍스트)",
+      "value": "1000",
+      "asOf": "조사일 2026-10-15",
+      "sourceUrl": "https://support.microsoft.com/en-us/office/value-function-257d0108-07dc-437d-ae1c-bc2d3953d8c2"
+    },
+    {
+      "what": "VALUE(\"16:48:00\")-VALUE(\"12:00:00\") 함수 결과 (시간 텍스트 차이)",
+      "value": "0.2",
+      "asOf": "조사일 2026-10-15",
+      "sourceUrl": "https://support.microsoft.com/en-us/office/value-function-257d0108-07dc-437d-ae1c-bc2d3953d8c2"
+    },
+    {
+      "what": "Excel 숫자 최대 정밀도 자릿수",
+      "value": "15자리",
+      "asOf": "조사일 2026-10-15",
+      "sourceUrl": "https://support.microsoft.com/en-us/excel/format-numbers-as-text"
+    },
+    {
+      "what": "반드시 텍스트 서식으로 저장해야 하는 숫자 코드 자릿수 기준(신용카드 번호 등)",
+      "value": "16자리 이상",
+      "asOf": "조사일 2026-10-15",
+      "sourceUrl": "https://support.microsoft.com/en-us/excel/format-numbers-as-text"
+    }
+  ],
+  "sources": [
+    {
+      "title": "Convert numbers stored as text to numbers",
+      "url": "https://support.microsoft.com/en-us/office/convert-numbers-stored-as-text-to-numbers-40105f2a-fe79-4477-a171-c5bad0f0a885",
+      "host": "support.microsoft.com",
+      "tier": "official",
+      "body": "\"Most of the time, Excel will recognize this, and you'll see an alert next to the cell where numbers are being stored as text.\" 변환 절차(오류 표시기): \"Select the cells you want to convert, and then select the error indicator in the top left corner (or use the keyboard shortcut Alt+Shift+F10).\" \"Select Convert to Number from the menu.\" VALUE 함수 절차: \"Insert a new column next to the cells with text.\" \"In one of the cells of the new column, type =VALUE() and inside the parentheses, type a cell reference that contains text stored as numbers.\" \"Next, fill the cell's formula down, into the other cells. To do this, hover your cursor on the lower-right corner of the cell until it changes to a plus sign.\" \"Click and drag down to fill the formula to the other cells.\" 선택하여 붙여넣기 절차: \"Select the cells with the new formula.\" \"Press Ctrl + C. Select the first cell of the original column.\" \"On the Home tab, select the arrow below Paste, and then select Paste Special > Values\" 이 문서에는 텍스트 나누기(Text to Columns) 절차는 포함돼 있지 않다."
+    },
+    {
+      "title": "Fix text-formatted numbers by applying a number format",
+      "url": "https://support.microsoft.com/en-us/excel/fix-text-formatted-numbers-by-applying-a-number-format",
+      "host": "support.microsoft.com",
+      "tier": "official",
+      "body": "식별 방법: \"Numbers that are formatted as text are left-aligned instead of right-aligned in the cell, and are often marked with an error indicator\" — \"a small green triangle in the upper-left corner of the cell\". Technique 2 곱하기 1 절차: 먼저 서식이 General인 빈 셀을 선택한 뒤 \"In the cell, type 1, and then press ENTER.\" \"Select the cell, and then press Ctrl+C to copy the value to the Clipboard.\" 텍스트 숫자 범위를 선택한 뒤 \"On the Home tab, in the Clipboard group, click the arrow below Paste, and then click Paste Special.\" \"Under Operation, select Multiply, and then click OK.\" 끝나면 1을 입력했던 보조 셀은 삭제하거나 워크시트 빈 영역에 남겨 둬도 된다. Technique 3 숫자 서식 직접 적용: \"On the Home tab, in the Number group, click the Dialog Box Launcher next to Number.\" → \"In the Category box, click the number format that you want to use.\" 주의(Technique 3에 귀속): \"For this procedure to complete successfully, make sure that the numbers that are stored as text do not include extra spaces or nonprintable characters.\" 필요하면 TRIM 함수나 CLEAN 함수를 쓰라고 안내한다."
+    },
+    {
+      "title": "VALUE function",
+      "url": "https://support.microsoft.com/en-us/office/value-function-257d0108-07dc-437d-ae1c-bc2d3953d8c2",
+      "host": "support.microsoft.com",
+      "tier": "official",
+      "body": "구문: \"VALUE(text)\". \"Text Required. The text enclosed in quotation marks or a reference to a cell containing the text you want to convert.\" 사용 불필요 안내: \"You do not generally need to use the VALUE function in a formula because Excel automatically converts text to numbers as necessary; this function is provided for compatibility with other spreadsheet programs.\" 인식 형식: \"Text can be in any of the constant number, date, or time formats recognized by Microsoft Excel.\" 오류: \"If text is not in one of these formats, VALUE returns the #VALUE! error value.\" 예제: \"=VALUE(\\\"$1,000\\\")\" 결과 1000. \"=VALUE(\\\"16:48:00\\\")-VALUE(\\\"12:00:00\\\")\" 결과 0.2(4시간 48분의 소수 표현). (이전에 쓰던 GUID 없는 URL은 404 — 이 GUID 포함 URL이 실제로 열리는 문서다.)"
+    },
+    {
+      "title": "Format numbers as text",
+      "url": "https://support.microsoft.com/en-us/excel/format-numbers-as-text",
+      "host": "support.microsoft.com",
+      "tier": "official",
+      "body": "앞자리 0 삭제 문제: \"When you enter a number that begins with a zero—for example, a product code—Excel will delete the zero by default.\" 텍스트 서식이 필요한 경우: \"if you are using credit card numbers, or other number codes that contain 16 digits or more, you must use a text format. That's because Excel has a maximum of 15 digits of precision\" — 15자리를 넘는 숫자는 16번째 자리부터 0으로 반올림(round down to zero)된다고 설명. 식별법: \"It's easy to tell at a glance if a number is formatted as text, because it will be left-aligned instead of right-aligned in the cell.\" 이 문서는 '빈 셀에 1을 넣어 Multiply로 선택하여 붙여넣기' 절차로 텍스트→숫자 역변환도 함께 안내하지만, 숫자 앞에 아포스트로피(')를 입력해 텍스트로 강제하는 방법은 이 문서에 언급되지 않는다 — Number 서식 대화상자에서 Text 범주를 먼저 선택한 뒤 입력하는 방식만 설명한다."
+    },
+    {
+      "title": "텍스트로 저장된 숫자를 숫자로 변환 — Excel 공식 지원 문서 한국어판",
+      "url": "https://support.microsoft.com/ko-kr/office/convert-numbers-stored-as-text-to-numbers-40105f2a-fe79-4477-a171-c5bad0f0a885",
+      "host": "support.microsoft.com",
+      "tier": "official",
+      "body": "오류 표시 설명: \"녹색 오류 표시기가 있는 텍스트로 저장된 숫자\"가 있으면 \"결과 대신 계산되지 않은 수식이 표시되는 등 예기치 않은 결과\"가 생길 수 있다고 안내한다. '숫자로 변환' 절차: \"변환할 셀을 선택한 다음 왼쪽 위 모서리에서 오류 표시기를 선택하거나 바로 가기 키 Alt+Shift+F10을 사용\" → \"메뉴에서 숫자로 변환을 선택\" → 결과로 \"값이 왼쪽에 정렬되고 녹색 삼각형 경고가 제거\"된다(※ 영문판은 변환 후 '좌측 정렬'이라 썼지만 실제로는 숫자 변환 후 우측 정렬이 되는 것이 정상 동작이며, 이는 한국어 문서가 영문 원문의 서술을 그대로 직역하며 생긴 표현상 차이로 보인다 — 두 언어 문서 모두 동일한 원문 구조를 따름). VALUE 함수 절차와 선택하여 붙여넣기 절차(이 절차 마지막 '선택하여 붙여넣기 > 값' 단계의 단축키로 Ctrl+Shift+V 포함)도 영문판과 동일한 순서로 안내한다 — 이 단축키는 Multiply 절차가 아니라 VALUE 함수 절차에 속한다."
+    },
+    {
+      "title": "Split text into different columns with the Convert Text to Columns Wizard",
+      "url": "https://support.microsoft.com/en-us/office/split-text-into-different-columns-30b14928-5550-41f5-97ca-7a3e9c363ed7",
+      "host": "support.microsoft.com",
+      "tier": "official",
+      "body": "기본 절차: \"Select the cell or column that contains the text you want to split\" → \"Select Data > Text to Columns\" → \"In the Convert Text to Columns Wizard, select Delimited > Next\" → \"Select the Delimiters for your data (for example, Comma and Space)\" → \"Select Next\" → \"Select the Destination in your worksheet which is where you want the split data to appear\" → \"Select Finish\". 주의사항: \"A range containing a column that you want to split can include any number of rows, but it can include no more than one column.\" 이 공식 문서는 '텍스트로 저장된 숫자'를 이 마법사로 실제 숫자(General)로 바꾸는 절차나 'Column data format' 단계에서 General을 선택해 숫자로 변환한다는 내용을 명시적으로 설명하지 않는다 — 구분 기호로 셀을 여러 열로 나누는 용도 중심의 설명만 담고 있다."
+    },
+    {
+      "title": "Change text to a number (Microsoft Excel 포럼 스레드)",
+      "url": "https://techcommunity.microsoft.com/t5/excel/change-text-to-a-number/td-p/1645685",
+      "host": "techcommunity.microsoft.com",
+      "tier": "blog",
+      "body": "Microsoft 커뮤니티(techcommunity.microsoft.com) Excel 포럼 스레드 'Change text to a number'(2020-09-08 게시). 질문은 텍스트로 저장된 숫자 열을 어떻게 일반 숫자로 바꾸는지였고, 답변자 SergeiBaklan(커뮤니티 표기상 Diamond Contributor — Microsoft 직원이 아닌 커뮤니티 자원봉사자)이 텍스트 나누기 마법사로 텍스트를 숫자로 바꾸는 절차를 다음과 같이 답했다: \"select column, be sure it is in General format (at least not Text), on ribbon Data->Text to Columns, on third step of the wizard also General (default one), Finish\". 이는 위 공식 문서 'Split text into different columns'에는 명시되지 않은 절차로, 공식 문서는 구분 기호 분리(Delimited) 설명 중심이고 텍스트→숫자 변환 용도의 'Column data format = General' 선택 절차는 다루지 않는다. 이 포럼 답변은 Microsoft 공식 지원 콘텐츠가 아닌 사용자 생성 커뮤니티 답변이라 신뢰도는 공식 문서보다 낮다."
+    },
+    {
+      "title": "Excel 2013 sum function returns 0 for range of nonzero numbers (Microsoft Q&A)",
+      "url": "https://learn.microsoft.com/en-us/answers/questions/4875368/excel-2013-sum-function-returns-0-for-range-of-non",
+      "host": "learn.microsoft.com",
+      "tier": "blog",
+      "body": "Microsoft Q&A(learn.microsoft.com/answers, 커뮤니티 질의응답 — Microsoft 공식 지원 문서가 아님) 스레드. 질문은 'SUM 함수가 0이 아닌 숫자들의 합을 0으로 반환하는 이유'. 익명 답변자가 2015-09-22 게시: \"Your numbers are stored as a Text in your range... When you sum individually with 'equal to' sign excel smartly recognizes those text numbers and convert it into number for solution. To solve it, you have to select your range and then you will see a small yellow pop in right corner, click it and from there select convert to number.\" 추가로 'Volunteer Moderator'(비공식 자원봉사자) 직함의 답변자 Vijay A. Verma가 2015-09-23 같은 스레드에 다른 해결법을 제시했다: \"Copy a blank cell. Select the cells or the entire column where values are in text. Paste Special > Add. Your all text numbers will be converted into numbers and non-numbers will be left untouched.\" 이는 공식 문서의 '빈 셀에 1 입력 후 Multiply'와 달리 '빈 셀(값 없음, 즉 0) 복사 후 Add(더하기)' 연산을 쓰는 변형 방법이다."
+    }
+  ],
+  "dropped": [],
+  "songs": []
+}

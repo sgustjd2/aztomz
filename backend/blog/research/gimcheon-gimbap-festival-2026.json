@@ -1,0 +1,148 @@
+{
+  "keyword": "김천김밥축제 2026 방문 일정·교통·주문",
+  "categoryId": "life-info",
+  "notes": "2026-10-24 기준 오늘과 내일 방문을 위한 공식 일정·교통·QR 주문 정보를 안내해요. QR 적용 범위는 일부 음식 메뉴이며 잔여 수량이나 주차 현황은 추정할 수 없어요. 셔틀·주차 세부 안내는 공식 공지 이미지를 기준으로 요약하고 실시간 운행 여부는 보장하지 않아요.",
+  "sources": [
+    {
+      "title": "2026 김천김밥축제 공식 홈페이지",
+      "url": "https://gimbapcity.kr/main/main.html",
+      "host": "gimbapcity.kr",
+      "body": "기간은 2026년 10월 23일~25일이에요. 금요일 10:00~18:00, 토·일요일 09:00~18:00 운영이며 장소는 직지문화공원·사명대사공원·친환경생태공원 일원이에요. 네 개 테마 구역을 소개하고 일부 프로그램을 행사기간 상시 운영으로 표시해요. 테마 구역의 이름은 김밥광장, 김밥천국, 이벤트김밥존, 김밥놀이터예요.",
+      "tier": "official"
+    },
+    {
+      "title": "2026 김천김밥축제 편의시설 안내",
+      "url": "https://gimbapcity.kr/aboard/view.html?a_tname=aboard_list_notice&b_cate_sel=&b_idx=13&keyword=&page=0&search=",
+      "host": "gimbapcity.kr",
+      "body": "2026년 10월 19일 공지이며 편의시설 안내는 게시물에 첨부 이미지 형태로 제공돼요. 세부 시설 위치 및 운영은 현장 상황을 실시간 제공하지 않으므로 출발 전 공식 첨부 이미지를 확인하도록 안내해요.",
+      "tier": "official"
+    },
+    {
+      "title": "2026 김천김밥축제 주차장 안내",
+      "url": "https://gimbapcity.kr/aboard/view.html?a_tname=aboard_list_notice&b_cate_sel=&b_idx=14&keyword=&page=0&search=",
+      "host": "gimbapcity.kr",
+      "body": "2026년 10월 19일 게시된 주차장 지도에는 P1 500대, P2 200대, P3 150대, P4 250대 표기가 있어요. 주최 측은 행사장 인근 주차장이 오전 일찍 만차가 예상된다고 안내하고 셔틀 이용을 권해요. 예상 문구는 현재 주차장 잔여 공간을 뜻하지 않아요. 첨부 지도는 각 주차장의 위치를 표시하고 P1 극락전 주차장 500대, P2 대웅전 주차장 200대, P3 극락전 주차장 150대, P4 직지공영주차장 250대로 안내해요.",
+      "tier": "official"
+    },
+    {
+      "title": "2026 김천김밥축제 셔틀버스 운행 안내",
+      "url": "https://gimbapcity.kr/aboard/view.html?a_tname=aboard_list_notice&b_cate_sel=&b_idx=10&keyword=&page=0&search=",
+      "host": "gimbapcity.kr",
+      "body": "축제 공식 셔틀은 김천종합스포츠타운주차장·KTX김천구미역·김천역을 잇고 20분 간격 배차로 안내돼요. 10월 24~25일 운행 구간은 08:00~12:00, 13:00~16:00, 17:00~19:00이며 점심과 오후에 각각 한 시간 노선 휴식이 있어요. 교통 상황에 따라 변동될 수 있어요.",
+      "tier": "official"
+    },
+    {
+      "title": "줄 안 서고 먹는 김밥 QR로 주문하세요.",
+      "url": "https://gimbapcity.kr/aboard/view.html?a_tname=aboard_list_notice&b_cate_sel=&b_idx=12&keyword=&page=0&search=",
+      "host": "gimbapcity.kr",
+      "body": "QR 주문 대상은 김밥공장·김밥디저트·분식 등이며 그 밖의 메뉴는 현장 결제예요. 토·일요일 주문 개시 시각은 09:00예요. 업체당 1인 2줄 제한(김밥공장 제외)이 안내돼요. 주문 후 카카오톡 알림의 부스 번호를 확인해 수령하는 방식이며 실시간 잔여 수량은 알 수 없어요. QR 코드를 스캔해 원하는 김밥을 선택해 주문하고, 카카오톡 알림을 받으면 안내된 부스 번호를 확인해 수령하는 절차예요.",
+      "tier": "official"
+    },
+    {
+      "title": "2026 김천김밥축제 카카오 T 직행 셔틀 운행·예약 안내",
+      "url": "https://gimbapcity.kr/aboard/view.html?a_tname=aboard_list_notice&b_cate_sel=&b_idx=9&keyword=&page=0&search=",
+      "host": "gimbapcity.kr",
+      "body": "서울·대전·대구·광주·부산과 축제장을 잇는 카카오 T 직행 셔틀 안내예요. 앱에서 전체 서비스 보기, 셔틀, 지역축제, 2026 김천김밥축제 순서로 예약하는 방법이 소개돼요. 좌석 잔여나 당일 예약 가능 여부는 알 수 없어요.",
+      "tier": "official"
+    },
+    {
+      "title": "2026 김천김밥축제 구역별 타임테이블 안내",
+      "url": "https://gimbapcity.kr/aboard/view.html?a_tname=aboard_list_notice&b_cate_sel=&b_idx=11&keyword=&page=0&search=",
+      "host": "gimbapcity.kr",
+      "body": "2026년 10월 19일 공지된 구역별 일정표예요. 토요일 10월 24일 김밥광장 메인무대 박영진 토크콘서트는 13:30~14:30으로 안내돼요. 김밥천국 등 다른 구역의 공연도 해당 날짜별로 표시돼 있으며, 현장 변경 여부는 별도 확인이 필요해요. 10월 24일 박영진 토크콘서트 외에 김밥천국 구역 송미해 13:00~13:30, 이지연 15:00~15:30 일정도 표시돼요.",
+      "tier": "official"
+    }
+  ],
+  "claims": [
+    {
+      "claim": "축제는 2026년 10월 23~25일 열리고 토·일요일 운영시간은 09:00~18:00예요.",
+      "grade": "confirmed",
+      "evidence": [
+        "공식 홈페이지가 행사 기간 10/23~25 및 토·일 09:00~18:00를 표시해요."
+      ],
+      "sourceUrls": [
+        "https://gimbapcity.kr/main/main.html"
+      ]
+    },
+    {
+      "claim": "10월 24~25일 셔틀은 김천종합스포츠타운주차장·KTX김천구미역·김천역을 잇고, 안내된 시간대에 운행해요.",
+      "grade": "confirmed",
+      "evidence": [
+        "공식 셔틀 안내 이미지에 20분 간격, 세 승하차 거점, 08:00~12:00·13:00~16:00·17:00~19:00 운행, 12~13시·16~17시 휴식이 표시돼요. 교통 상황에 따라 변동 가능해요."
+      ],
+      "sourceUrls": [
+        "https://gimbapcity.kr/aboard/view.html?a_tname=aboard_list_notice&b_cate_sel=&b_idx=10&keyword=&page=0&search="
+      ]
+    },
+    {
+      "claim": "일부 음식 부스는 QR 주문이며 QR 시작 시각은 토·일 09:00예요.",
+      "grade": "confirmed",
+      "evidence": [
+        "공식 QR 안내 이미지에 김밥공장·김밥디저트·분식 등 대상, 기타 메뉴 현장 결제, 주말 QR 개시 09:00, 업체별 구매 제한이 표시돼요."
+      ],
+      "sourceUrls": [
+        "https://gimbapcity.kr/aboard/view.html?a_tname=aboard_list_notice&b_cate_sel=&b_idx=12&keyword=&page=0&search="
+      ]
+    },
+    {
+      "claim": "행사장 근처 주차장은 오전 일찍 만차가 예상된다고 공식 안내돼 있지만 당일 실시간 주차 상황은 확인할 수 없어요.",
+      "grade": "confirmed",
+      "evidence": [
+        "공식 주차 안내 이미지에 인근 주차장 오전 일찍 만차 예상 문구가 있어요. 대수는 주차장 표기 정보이며 실시간 잔여 면수는 아님을 구분해요."
+      ],
+      "sourceUrls": [
+        "https://gimbapcity.kr/aboard/view.html?a_tname=aboard_list_notice&b_cate_sel=&b_idx=14&keyword=&page=0&search="
+      ]
+    },
+    {
+      "claim": "10월 24일 김밥광장 메인무대에는 13:30~14:30 박영진 토크콘서트가 예정돼 있어요.",
+      "grade": "confirmed",
+      "evidence": [
+        "10월 19일 공식 구역별 타임테이블 이미지가 10월 24일 토요일 박영진 토크콘서트를 13:30~14:30으로 표시해요."
+      ],
+      "sourceUrls": [
+        "https://gimbapcity.kr/aboard/view.html?a_tname=aboard_list_notice&b_cate_sel=&b_idx=11&keyword=&page=0&search="
+      ]
+    }
+  ],
+  "numbers": [
+    {
+      "what": "축제 기간",
+      "value": "2026-10-23~2026-10-25",
+      "asOf": "2026-10-24",
+      "sourceUrl": "https://gimbapcity.kr/main/main.html"
+    },
+    {
+      "what": "토·일 운영시간",
+      "value": "09:00~18:00",
+      "asOf": "2026-10-24",
+      "sourceUrl": "https://gimbapcity.kr/main/main.html"
+    },
+    {
+      "what": "토·일 셔틀 운행시간",
+      "value": "08:00~12:00, 13:00~16:00, 17:00~19:00",
+      "asOf": "2026-10-24",
+      "sourceUrl": "https://gimbapcity.kr/aboard/view.html?a_tname=aboard_list_notice&b_cate_sel=&b_idx=10&keyword=&page=0&search="
+    },
+    {
+      "what": "토·일 QR주문 개시",
+      "value": "09:00",
+      "asOf": "2026-10-24",
+      "sourceUrl": "https://gimbapcity.kr/aboard/view.html?a_tname=aboard_list_notice&b_cate_sel=&b_idx=12&keyword=&page=0&search="
+    },
+    {
+      "what": "토요일 박영진 토크콘서트",
+      "value": "13:30~14:30",
+      "asOf": "2026-10-24",
+      "sourceUrl": "https://gimbapcity.kr/aboard/view.html?a_tname=aboard_list_notice&b_cate_sel=&b_idx=11&keyword=&page=0&search="
+    }
+  ],
+  "dropped": [],
+  "cannotCover": [
+    "10월 24일 실시간 주차장 만차 여부·교통량·현장 대기",
+    "각 부스의 당일 잔여 수량과 품절",
+    "셔틀의 실시간 위치·지연·좌석",
+    "첨부 이미지에서 확인할 수 없는 세부 편의시설 운영 조건"
+  ],
+  "songs": []
+}

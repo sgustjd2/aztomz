@@ -1293,5 +1293,160 @@
     "at": "2026-10-08 23:08",
     "url": "https://burning-go9me.tistory.com/539",
     "title": "윈도우 11 화면 분할은 최대화 버튼과 Win+Z에서 시작해요"
+  },
+  "animal-challenge-boynextdoor": {
+    "at": "2026-10-10 00:39",
+    "url": "https://burning-go9me.tistory.com/540",
+    "title": "보이넥스트도어 애니멀 챌린지, 지금 춰도 될 타이밍일까"
+  },
+  "windows-battery-report": {
+    "at": "2026-10-10 00:47",
+    "url": "https://burning-go9me.tistory.com/541",
+    "title": "노트북 배터리 수명 확인 명령어, 리포트 속 용량 숫자 두 개 비교"
+  },
+  "windows-clipboard-history": {
+    "at": "2026-10-10 00:48",
+    "url": "https://burning-go9me.tistory.com/542",
+    "title": "윈도우 클립보드 기록 Win+V, 25개 한도와 재시작 후 남는 항목"
+  },
+  "excel-line-break-in-cell": {
+    "at": "2026-10-10 00:48",
+    "url": "https://burning-go9me.tistory.com/543",
+    "title": "엑셀 셀 안에서 줄바꿈 Alt+Enter, Mac과 폰은 입력법이 달라요"
+  },
+  "gitignore-not-working": {
+    "at": "2026-10-10 00:48",
+    "url": "https://burning-go9me.tistory.com/544",
+    "title": ".gitignore 적용 안 됨? 추적 중인 파일엔 rm --cached부터"
+  },
+  "chrome-translate": {
+    "at": "2026-10-11 03:58",
+    "url": "https://burning-go9me.tistory.com/545",
+    "title": "크롬 번역 안 될 때 점검 순서, 설정 토글에서 회사 PC 정책까지"
+  },
+  "excel-datedif": {
+    "at": "2026-10-11 04:12",
+    "url": "https://burning-go9me.tistory.com/546",
+    "title": "엑셀 DATEDIF 날짜 차이 단위 6종, MD 비권장과 만 나이"
+  },
+  "github-ssh-key": {
+    "at": "2026-10-11 04:12",
+    "url": "https://burning-go9me.tistory.com/547",
+    "title": "깃허브 SSH 키 등록 순서와 2026년 10월 RSA 3072비트 규칙"
+  },
+  "windows-mobile-hotspot": {
+    "at": "2026-10-11 04:13",
+    "url": "https://burning-go9me.tistory.com/548",
+    "title": "윈도우 11 모바일 핫스팟 켜는 순서, 공식 문서로 답이 안 나는 3가지"
+  },
+  "windows-remote-desktop": {
+    "at": "2026-10-11 04:13",
+    "url": "https://burning-go9me.tistory.com/549",
+    "title": "원격 데스크톱 연결, Home은 접속만 되고 받는 PC는 Pro부터"
+  },
+  "excel-print-one-page": {
+    "at": "2026-10-12 00:05",
+    "url": "https://burning-go9me.tistory.com/550",
+    "title": "엑셀 한 페이지 인쇄 Fit to 설정, 글씨 작아짐과 Mac 경로 차이"
+  },
+  "git-merge-conflict": {
+    "at": "2026-10-12 00:08",
+    "url": "https://burning-go9me.tistory.com/551",
+    "title": "git 충돌 해결 4단계, rebase에선 ours와 theirs가 뒤바뀜"
+  },
+  "windows11-taskbar-settings": {
+    "at": "2026-10-12 00:09",
+    "url": "https://burning-go9me.tistory.com/552",
+    "title": "윈도우 11 작업 표시줄 왼쪽 정렬과 위치 이동, 2026년 10월 기준"
+  },
+  "wsl-install-guide": {
+    "at": "2026-10-12 00:09",
+    "url": "https://burning-go9me.tistory.com/553",
+    "title": "WSL 설치, 윈도우 어느 버전부터 되고 오류 코드는 어떻게 풀까?"
+  },
+  "excel-iferror-na": {
+    "at": "2026-10-12 00:10",
+    "url": "https://burning-go9me.tistory.com/554",
+    "title": "엑셀 NA 오류, IFERROR로 덮어도 될까? 원인 5가지와 IFNA 차이"
+  },
+  "windows11-storage-sense": {
+    "at": "2026-10-13 01:25",
+    "url": "https://burning-go9me.tistory.com/555",
+    "title": "윈도우 11 저장 공간 센스, 지우기 전에 멈춰야 할 2가지"
+  },
+  "excel-text-to-columns": {
+    "at": "2026-10-13 01:26",
+    "url": "https://burning-go9me.tistory.com/556",
+    "title": "엑셀 텍스트 나누기 마법사 7단계, 오른쪽에 빈 열부터 두세요"
+  },
+  "pip-externally-managed": {
+    "at": "2026-10-13 01:26",
+    "url": "https://burning-go9me.tistory.com/557",
+    "title": "pip externally-managed 오류, 원인은 PEP 668 마커"
+  },
+  "windows-printer-offline": {
+    "at": "2026-10-13 01:28",
+    "url": "https://burning-go9me.tistory.com/558",
+    "title": "윈도우 11 프린터 오프라인 뜰 때, 전원 확인부터 스풀러 재시작까지"
+  },
+  "lenny-kravitz-it-aint-over": {
+    "at": "2026-10-13 01:28",
+    "url": "https://burning-go9me.tistory.com/559",
+    "title": "레니 크라비츠 'It Ain't Over', 미국 틱톡 서머송 3위"
+  },
+  "halloween-ai-costume-prompt": {
+    "at": "2026-10-16 04:43",
+    "url": "https://burning-go9me.tistory.com/560",
+    "title": "할로윈 AI 코스튬 프롬프트, 셀카 한 장이면 분장 끝"
+  },
+  "windows11-pin-reset": {
+    "at": "2026-10-16 04:59",
+    "url": "https://burning-go9me.tistory.com/561",
+    "title": "윈도우 11 PIN 잊어버렸을 때 복구 버튼은 로컬 계정엔 없다"
+  },
+  "excel-transpose": {
+    "at": "2026-10-16 23:56",
+    "url": "https://burning-go9me.tistory.com/562",
+    "title": "엑셀 행 열 바꾸기, 전치 붙여넣기는 잘라내기로 안 돼요"
+  },
+  "git-cherry-pick-guide": {
+    "at": "2026-10-18 01:35",
+    "url": "https://burning-go9me.tistory.com/563",
+    "title": "git cherry-pick 사용법: 커밋 하나만 골라 오고 A..B 범위는 시작점이 빠져요"
+  },
+  "git-squash-commits": {
+    "at": "2026-10-19 00:32",
+    "url": "https://burning-go9me.tistory.com/564",
+    "title": "git 커밋 합치기 네 가지, 같은 squash인데 결과가 달라요"
+  },
+  "cheffle-lotte-cheese-desserts-2026": {
+    "at": "2026-10-19 21:59",
+    "url": "https://burning-go9me.tistory.com/565",
+    "title": "치플레 롯데웰푸드 치즈 디저트, 맛 후기는 기다릴 때"
+  },
+  "chrome-bookmarks-export-import": {
+    "at": "2026-10-21 00:23",
+    "url": "https://burning-go9me.tistory.com/566",
+    "title": "크롬 북마크 내보내기와 가져오기, HTML 백업 및 동기화 정리"
+  },
+  "php-critical-security-update-2026-10": {
+    "at": "2026-10-21 22:06",
+    "url": "https://burning-go9me.tistory.com/567",
+    "title": "PHP 보안 업데이트 2026, 수정 버전과 서버 점검 순서"
+  },
+  "langchain-03-to-v1-migration": {
+    "at": "2026-10-22 23:26",
+    "url": "https://burning-go9me.tistory.com/568",
+    "title": "LangChain 0.3에서 v1로 마이그레이션: import와 에이전트 변경점"
+  },
+  "nodejs-security-update-2026-10": {
+    "at": "2026-10-24 00:29",
+    "url": "https://burning-go9me.tistory.com/569",
+    "title": "Node.js 보안 업데이트 2026년 10월, 22·24·26 버전 비교"
+  },
+  "git-pull-divergent-branches": {
+    "at": "2026-10-24 03:00",
+    "url": "https://burning-go9me.tistory.com/570",
+    "title": "git divergent branches 오류, merge냐 rebase냐"
   }
 }

@@ -1,0 +1,106 @@
+{
+  "keyword": "윈도우 11 PIN 잊어버렸을 때 — 로그인 화면 재설정, Microsoft 계정 vs 로컬 계정, PIN 변경·제거(설정 > 계정 > 로그인 옵션), PIN이 비밀번호보다 안전한 이유, 'PIN 사용 불가' 오류",
+  "categoryId": "hangeut-trend",
+  "searchedAt": "2026-10-15",
+  "queries": [
+    "site:support.microsoft.com Windows 11 \"PIN을 잊어버렸습니다\" 재설정",
+    "site:support.microsoft.com \"forgot your PIN\" Windows sign-in reset PIN",
+    "support.microsoft.com ko-kr \"PIN을 잊어버렸습니다\" 또는 \"Windows에서 PIN 변경 또는 다시 설정\"",
+    "Microsoft Windows Hello PIN \"more secure than a password\" explanation support.microsoft.com OR learn.microsoft.com",
+    "(WebSearch 4회 소진 후 추가 공식 문서는 WebFetch 로 알려진 Microsoft Learn 캐노니컬 URL — learn.microsoft.com/.../hello-for-business/, /pin-reset — 직접 접속해 확인. support.microsoft.com/en-us/windows/fix-windows-hello-issues-in-windows-dd3a8491-... 는 WebFetch 결과 404 라 출처에서 제외.)"
+  ],
+  "fetchNote": "WebFetch 도구는 원문 전체가 아니라 소형 모델이 정리한 요약+짧은 인용을 돌려준다(단, Microsoft Learn 두 문서는 frontmatter 포함 원문에 가깝게 반환됨). 따옴표 안 문구는 도구가 인용으로 돌려준 것이며, 원문 재대조는 집필 단계 몫. support.microsoft.com/ko-kr 경로로 요청한 'Change or reset your PIN' 문서는 두 번 페치했는데 두 번 다 한국어가 아니라 영어 본문이 반환됐다 — 이 URL 의 정식 한국어 번역판을 찾지 못했다는 뜻으로 기록(아래 unknowns 참고). WebSearch 4회, WebFetch 8회(그중 1회 404) 사용.",
+  "sources": [
+    {
+      "title": "Reset your PIN when you aren't signed in to Windows (Microsoft Support)",
+      "url": "https://support.microsoft.com/en-us/help/4580013",
+      "host": "support.microsoft.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "[WebFetch 응답 정리, Applies To: Windows 11, Windows 10] 로그인 화면에서 PIN 입력란 아래 'I forgot my PIN' 옵션이 보이면 선택해 안내를 따른다. 공식 문구: 'This option is only available for Microsoft accounts, not for local accounts.' 이 옵션이 안 보이면 비밀번호로 로그인한 뒤 Settings 앱에서 PIN 을 재설정해야 한다: 'Select Sign-in options and then select Enter your password.' PIN 과 비밀번호를 둘 다 잊은 경우: Microsoft 계정은 로그인 화면의 'I forgot my password' 선택 또는 비밀번호 재설정 포털 방문. 로컬 계정은 로그인 화면에서 '비밀번호 입력 버튼 선택' 후 'Select OK then Reset password' 를 눌러 계정 생성 시 만든 보안 질문에 답한다. 핵심 구분 문구: 'The PIN you use to access your device is different from your Microsoft account password.'",
+      "facts": [
+        "공식(영문 원문): 'I forgot my PIN' 옵션은 'only available for Microsoft accounts, not for local accounts.' — 로컬 계정 사용자는 이 옵션이 로그인 화면에 뜨지 않는다.",
+        "로컬 계정으로 PIN 을 잊었을 때 공식 절차: 비밀번호로 로그인 → Settings → 'Sign-in options' → 'Enter your password' 선택.",
+        "로컬 계정 비밀번호까지 잊은 경우: 로그인 화면에서 비밀번호 입력 버튼 선택 → 'OK' → 'Reset password' → 계정 생성 시 설정한 보안 질문에 답변.",
+        "이 KB 문서 번호는 4580013 (support.microsoft.com/en-us/help/4580013), Applies To 는 Windows 11·Windows 10 둘 다."
+      ]
+    },
+    {
+      "title": "Change or reset your PIN in Windows (Microsoft Support)",
+      "url": "https://support.microsoft.com/en-us/help/4026196",
+      "host": "support.microsoft.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "[WebFetch 응답 정리] 로그인 안 된 상태: 로그인 화면 PIN 입력란 아래 'I forgot my PIN' — 'only available for Microsoft accounts, not for local accounts.' 안 보이면 비밀번호로 로그인 후 Settings 에서 재설정. 로그인된 상태(PIN 변경 절차, 메뉴 경로 원문): 1) Settings 앱 열기 → 2) 'Accounts' > 'Sign-in options' 로 이동 → 3) 'PIN (Windows Hello)' > 'Change PIN' 선택 → 4) 'You must enter your old PIN in order to change to a new one' — 기존 PIN 을 입력해야 새 PIN 으로 바꿀 수 있다. 기존 PIN 을 잊었으면 'I forgot my PIN' 을 선택해 본인 확인 절차를 따른다. 비밀번호 재설정(로그인 안 된 상태): Microsoft 계정은 로그인 화면 'I forgot my password', 'Web sign-in' 옵션, 또는 account.live.com/ResetPassword.aspx 방문 중 하나. 로컬 계정은 비밀번호 입력 버튼 → 'Reset password' → 사전 설정한 보안 질문 답변, 또는 미리 만들어둔 password reset disk 사용. 핵심 구분 문구(위 문서와 동일): 'The PIN you use to access your device is different from your Microsoft account password.' 이 문서는 PIN 보안상 장점(왜 비밀번호보다 나은지)을 설명하지 않는다고 WebFetch 가 명시.",
+      "facts": [
+        "로그인된 상태에서 PIN 변경 경로(공식 원문): Settings → Accounts → Sign-in options → 'PIN (Windows Hello)' → 'Change PIN'.",
+        "공식 문구: 'You must enter your old PIN in order to change to a new one.' — 기존 PIN 입력이 필수.",
+        "Microsoft 계정 비밀번호 재설정 경로 3가지(공식): 로그인 화면 'I forgot my password' / 'Web sign-in' / account.live.com/ResetPassword.aspx.",
+        "KB 번호 4026196. 이 문서에는 PIN '제거' 전용 버튼이나 PIN 을 완전히 없애는 절차는 WebFetch 응답에 나오지 않았다(제거 경로는 unknowns 참고)."
+      ]
+    },
+    {
+      "title": "Change or reset your PIN in Windows — ko-kr 경로로 요청했으나 영어 본문 반환 (Microsoft Support)",
+      "url": "https://support.microsoft.com/ko-kr/windows/security/change-or-reset-your-pin-in-windows",
+      "host": "support.microsoft.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "[WebFetch 2회 모두 동일 결과] 이 ko-kr URL 로 페치했지만 반환된 본문은 한국어가 아니라 영어였다. 1차 응답: '제공하신 웹페이지 콘텐츠는 영어로만 되어 있습니다. 한국어 원문이 없습니다.' 라고 명시하며 영문 요약(Applies To Windows 11/Windows 10, I forgot my PIN, Settings > Accounts > Sign-in options > PIN (Windows Hello) > Change PIN, Microsoft 계정/로컬 계정 구분)만 돌려줬다. 2차 응답(원문 그대로 인용하라고 재요청)도 'The page is in English and covers how to change or reset your PIN...' 로 시작해 영문 내용만 인용했다. 즉 이 특정 ko-kr 슬러그는 한국어 번역판이 확인되지 않았거나, 적어도 WebFetch 가 접근한 시점엔 영어로 폴백됐다. windows11-storage-sense 조사 때 확인된 다른 support.microsoft.com ko-kr 문서들(저장소 설정 등)은 기계번역 한국어로 정상 반환됐던 것과 대조적이다.",
+      "facts": [
+        "같은 ko-kr URL 을 WebFetch 로 2회 요청했는데 2회 모두 한국어가 아닌 영어 본문이 반환됨 — 이 PIN 변경/재설정 문서는 (적어도 이 경로에서는) 한국어 번역이 확인되지 않음.",
+        "영어로 반환된 내용 자체는 위 4026196/4580013 문서와 동일한 절차(I forgot my PIN, Settings > Accounts > Sign-in options > PIN (Windows Hello) > Change PIN)를 담고 있어 사실관계는 일치함."
+      ]
+    },
+    {
+      "title": "Windows Hello (Microsoft 공식 제품 페이지, microsoft.com)",
+      "url": "https://www.microsoft.com/en-us/windows/tips/windows-hello",
+      "host": "microsoft.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "[WebFetch 응답 정리] 페이지 제목 'Windows Hello for Security | Microsoft Windows'. 공식 인용문: 'Your PIN is local to your device, helping protect against password theft and phishing.' 그리고 'Your biometric data and PIN stay on your device, protected by hardware, not shared with Microsoft or anyone else.' WebFetch 는 이 페이지가 TPM(신뢰 플랫폼 모듈)이나 디바이스 바인딩 같은 상세 기술 용어는 쓰지 않고, 'PIN 이 기기에 로컬로 저장되어 비밀번호 탈취·피싱을 막아준다'는 수준의 소비자용 설명만 한다고 명시. 페이지에 게시/수정일은 보이지 않음.",
+      "facts": [
+        "공식 소비자용 설명 문구: 'Your PIN is local to your device, helping protect against password theft and phishing.'",
+        "공식 문구: 'Your biometric data and PIN stay on your device, protected by hardware, not shared with Microsoft or anyone else.'",
+        "이 페이지는 TPM·비대칭키 같은 기술적 근거는 언급하지 않는다(그 근거는 아래 Microsoft Learn Windows Hello for Business 문서에만 있음 — 기업용 문서라는 점에 유의)."
+      ]
+    },
+    {
+      "title": "Windows Hello for Business overview (Microsoft Learn) — 기업용 문서, 개인용 PIN 과 범위 다름",
+      "url": "https://learn.microsoft.com/en-us/windows/security/identity-protection/hello-for-business/",
+      "host": "learn.microsoft.com",
+      "tier": "official",
+      "publishedAt": "2026-03-29",
+      "body": "[WebFetch 원문에 가깝게 반환, frontmatter 포함. ms.date 2026-03-29T00:00:00Z, updated_at 2026-10-08T11:38:00Z] 'Windows Hello for Business' 는 'Windows Hello' 의 확장(extension) 으로 기업용 보안·관리 기능(디바이스 attestation, 인증서 기반 인증, 조건부 액세스)을 더한 것. 비교표: Windows Hello(개인) 는 'key-based authentication' 사용, 'There's no symmetric secret (password) which can be stolen from a server or phished from a user and used remotely.' Windows Hello for Business(기업) 는 key-based 또는 certificate-based 인증 사용, 같은 문장 반복. 로컬 계정에서 쓰는 Windows Hello 는 다음과 같이 명시: 'This configuration isn't backed by asymmetric (public/private) key, so it doesn't offer the same level of security as key-based or certificate-based authentication that is available with MSA or Microsoft Entra accounts.' 이득(Benefits) 섹션: 'An attacker must have both the device and the biometric or PIN, making it much more difficult to gain access without the user's knowledge', 'it circumvents phishing and brute force attacks... because the credentials are asymmetric and generated within isolated environments of TPMs', 'Windows Hello has built-in brute force protection, and the PIN never leaves the device.' 생체인증 센서 수치(참고용, PIN 과 직접 관련은 아님): 지문 터치 센서 FAR <0.001~0.002%, 안면인식 FAR <0.001%·FRR(안티스푸핑 없음) <5%·실사용 FRR(안티스푸핑 적용) <10%.",
+      "facts": [
+        "공식(기업용 문서) 핵심 근거 문장: PIN/생체인증 기반 Windows Hello 는 'key-based authentication' 이라 'There's no symmetric secret (password) which can be stolen from a server or phished from a user and used remotely.'",
+        "공식: 'An attacker must have both the device and the biometric or PIN' 이어야 접근 가능 — 기기+PIN 두 가지가 모두 필요하다는 설명.",
+        "공식: 'Windows Hello has built-in brute force protection, and the PIN never leaves the device.' (PIN 이 기기 밖으로 나가지 않는다는 근거)",
+        "공식 수치(생체인증, 참고): 지문 터치 센서 False Accept Rate(FAR) <0.001~0.002%, 얼굴인식 FAR <0.001%, 안티스푸핑 미적용 FRR <5%, 적용 시 실사용 FRR <10%.",
+        "이 문서는 ms.date 2026-03-29, updated_at 2026-10-08 — 기업용(Windows Hello for Business) 문서이며, 로컬 계정/개인 Microsoft 계정의 일반 PIN 과는 보안 수준이 다르다고 문서 스스로 구분한다('doesn't offer the same level of security')."
+      ]
+    },
+    {
+      "title": "PIN reset (Windows Hello for Business, Microsoft Learn) — 기업용 PIN 재설정, 소비자용과 범위 다름",
+      "url": "https://learn.microsoft.com/en-us/windows/security/identity-protection/hello-for-business/pin-reset",
+      "host": "learn.microsoft.com",
+      "tier": "official",
+      "publishedAt": "2026-03-29",
+      "body": "[WebFetch 원문에 가깝게 반환, frontmatter 포함. ms.date 2026-03-29T00:00:00Z, updated_at 2026-10-08T11:38:00Z] 이 문서는 'Microsoft PIN reset service'(기업 전용, Microsoft Entra 가입 디바이스)를 다룬다 — 일반 소비자 PIN 재설정과 별개. PIN 재설정 두 종류: 'Destructive PIN reset'(기존 PIN·키·인증서를 삭제하고 새로 발급, 기본값, 별도 구성 불필요) / 'Non-destructive PIN reset'(컨테이너·키는 유지하고 PIN 만 바꿈, Microsoft PIN reset service 배포 + 클라이언트 정책 구성 필요). Non-destructive 재설정은 로컬에서 256비트 AES 키를 생성해 'PIN reset protector' 로 추가하고 Microsoft PIN reset service 의 공개키로 암호화해 클라이언트에 저장한다. 설정에서 재설정하는 절차(원문, Windows 10 기준 표기): '1. Sign-in to Windows 10 using an alternate credential 2. Open Settings > Accounts > Sign-in options 3. Select PIN (Windows Hello) > I forgot my PIN and follow the instructions.' 잠금화면에서 재설정(Microsoft Entra 가입 기기): 'Sign-in options' 링크 확장 → PIN 패드 아이콘 선택 → 'I forgot my PIN' 선택 → 인증 방법 선택(Password, PIN, Security key 등) → 안내에 따라 재발급. Entra 하이브리드 가입 기기는 'I forgot my PIN' 후 비밀번호 입력 후 Enter. 오류 사례(이 기업용 문서에만 있음, 일반 소비자 PIN 오류와는 다름): 웹 로그인(web sign-in)이 허용되지 않은 도메인으로 이동하려 하면 'We can't open that page right now' 오류가 뜬다고 명시. Azure Government 환경에서는 알려진 이슈로 PIN reset 시도 시 같은 오류가 뜰 수 있어 ConfigureWebSignInAllowedUrls 정책에 login.microsoftonline.us 를 넣는 우회법을 안내.",
+      "facts": [
+        "공식(기업용): PIN 재설정은 'Destructive PIN reset'(기본값, 구성 불필요)과 'Non-destructive PIN reset'(Microsoft PIN reset service 배포 필요) 두 종류로 나뉜다.",
+        "공식 수치: Non-destructive PIN reset 은 로컬에서 '256-bit AES' 키를 생성해 PIN reset protector 로 사용한다.",
+        "공식 원문 절차(설정 화면에서): 'Open Settings > Accounts > Sign-in options' → 'Select PIN (Windows Hello) > I forgot my PIN'.",
+        "공식 오류 문구(기업용 web sign-in 한정): 허용되지 않은 도메인으로 이동 시 'We can't open that page right now' — 이것은 소비자용 일반 PIN 오류 메시지가 아니라 Microsoft Entra 가입 기기의 web sign-in 제한에서 나오는 오류다.",
+        "이 문서(ms.date 2026-03-29, updated_at 2026-10-08)는 Windows Hello for Business 전용이며, 일반 개인 Microsoft 계정/로컬 계정의 소비자용 PIN 재설정 절차(위 KB 4580013·4026196)와는 적용 대상이 다르다 — 혼용해서 쓰면 안 된다."
+      ]
+    }
+  ],
+  "conflicts": [],
+  "unknowns": [
+    "로그인 화면의 'I forgot my PIN' 한국어 정식 UI 라벨('PIN을 잊어버렸습니다' 등) — ko-kr 공식 문서가 영어로만 반환되어 확인하지 못함. 집필 시 '한국어 Windows 에서는 비슷한 문구로 표시된다' 정도로만 쓰고 정확한 한글 버튼 문구를 단정하지 말 것.",
+    "소비자용 Settings 화면에 PIN 을 '제거'(완전히 끄는) 전용 버튼/절차가 있는지 — KB 4026196·4580013 은 '변경(Change)'·'재설정'만 다루고 '제거' 절차는 WebFetch 응답에 없었음. (일반적으로 Sign-in options 의 PIN 섹션에 Remove 버튼이 있다고 알려져 있으나 이번 조사의 공식 출처로는 확인 못 함 — 추측 금지, 빈 칸으로 남김)",
+    "'PIN을 사용할 수 없음'(Something happened and your PIN isn't available 등) 소비자용 오류 메시지에 대한 공식 안내 문서 — 시도한 support.microsoft.com/en-us/windows/fix-windows-hello-issues-in-windows-dd3a8491-... URL 은 WebFetch 결과 404. 다른 공식 URL 을 찾지 못함(WebSearch 예산 소진). 찾은 것은 기업용(Entra 가입) web sign-in 오류 'We can't open that page right now' 뿐이며 이는 범위가 다름.",
+    "support.microsoft.com ko-kr 의 'Reset your PIN when you aren't signed in' (KB 4580013) 한국어 버전 URL — 이번 조사는 ko-kr 슬러그를 WebSearch 결과에서 따로 확보하지 못해 en-us 만 확인함.",
+    "Windows 11 설정 앱의 정확한 메뉴 라벨이 버전(23H2/24H2/25H2)별로 달라졌는지 — 두 공식 문서 모두 'Settings > Accounts > Sign-in options > PIN (Windows Hello) > Change PIN' 으로 동일하게 적을 뿐, 버전별 변경 이력은 다루지 않음."
+  ]
+}

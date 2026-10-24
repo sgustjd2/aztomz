@@ -1,0 +1,342 @@
+{
+  "collectedAt": "2026-10-14",
+  "days": 3,
+  "results": {
+    "geeknews": {
+      "source": "geeknews",
+      "fetchedOk": true,
+      "sourceUrl": "https://news.hada.io/rss/news",
+      "items": [
+        {
+          "title": "즐거움을 위한 프로그래밍",
+          "url": "",
+          "date": "2026-10-14T09:42:15.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Felix Rieseberg 홈페이지",
+          "url": "",
+          "date": "2026-10-14T09:39:15.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Grace Hopper Celebration 취소",
+          "url": "",
+          "date": "2026-10-14T09:36:15.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "ZX Spectrum용 데모씬 인트로 만들기",
+          "url": "",
+          "date": "2026-10-14T08:44:54.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "테크 업계를 떠나며",
+          "url": "",
+          "date": "2026-10-14T08:41:54.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "AOSP 소스 공개가 너무 늦어 개발자들이 버그 신고를 위해 라이브러리를 역어셈블함",
+          "url": "",
+          "date": "2026-10-14T08:38:54.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Show GN: TV 리모컨 - 폰으로 삼성·LG·소니·구글 TV를 조작하는 무료 안드로이드 앱",
+          "url": "",
+          "date": "2026-10-14T08:20:21.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "MIT 수업 프로젝트, FDA 허가를 받은 떨림 치료 기기로 발전",
+          "url": "",
+          "date": "2026-10-14T06:32:27.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Show GN: 싱글 겟앰프드 웹버전",
+          "url": "",
+          "date": "2026-10-14T05:12:36.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Apple, 새 ‘Switch to Safari’ 캠페인으로 Chrome을 떠나야 할 이유 소개",
+          "url": "",
+          "date": "2026-10-14T02:32:56.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "로보틱스를 위한 Gemini 4 Argon",
+          "url": "",
+          "date": "2026-10-14T01:34:07.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "Show GN: 자신이 독서를 기록하고 공유하는 사이트",
+          "url": "",
+          "date": "2026-10-14T01:21:59.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "AesCode - 이미지의 디자인을 참고해 HTML/CSS를 생성하는 AI 모델",
+          "url": "",
+          "date": "2026-10-14T00:40:02.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "영국의 1인당 전력 생산량, 1970년대보다 적어짐",
+          "url": "",
+          "date": "2026-10-14T00:34:00.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Rebalancer - 복잡한 제약 조건에 맞춰 작업과 자원을 배치하는 Meta의 최적화 도구",
+          "url": "",
+          "date": "2026-10-14T00:30:02.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "AI 코딩이 그렇게 뛰어나다면, 새롭고 좋은 소프트웨어는 다 어디에 있나?",
+          "url": "",
+          "date": "2026-10-14T00:06:50.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "Gentoo 개발자, 순수 Python 패키지에 uv-build를 쓰지 말아 달라고 호소",
+          "url": "",
+          "date": "2026-10-14T00:03:50.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Guitoro, 키보드로 줄을 튕겨 연주하는 가상 기타",
+          "url": "",
+          "date": "2026-10-13T23:38:28.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "OpenAI 엔지니어, 임원 회의실 도청 혐의로 체포",
+          "url": "",
+          "date": "2026-10-13T23:35:27.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "Hacker News에 서비스를 소개했더니 AI 봇 트래픽이 밀려들었다",
+          "url": "",
+          "date": "2026-10-13T21:41:29.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "Minions - 유휴 Mac의 GPU를 모아 머신러닝 추론 작업을 분산하는 Apple의 시스템",
+          "url": "",
+          "date": "2026-10-13T21:38:29.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Ledger, 지갑 암호화폐 도난 원인으로 삽입된 스파이 칩 확인",
+          "url": "",
+          "date": "2026-10-13T21:35:29.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Apple, 새로운 Apple TV 4K 공개",
+          "url": "",
+          "date": "2026-10-13T19:46:48.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Anthropic, AI 코딩으로 늘어난 변경량에 대응해 Git을 자체 버전 관리 시스템 Scion으로 교체",
+          "url": "",
+          "date": "2026-10-13T19:43:48.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "iOS용 Thunderbird",
+          "url": "",
+          "date": "2026-10-13T19:40:48.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "AI 캐릭터 챗봇 Character.ai, 파산보호 신청하고 매각 추진",
+          "url": "",
+          "date": "2026-10-13T18:33:05.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "Google, Gemini 4 Argon 정식 출시 - 긴 추론과 대규모 코드 작업 지원",
+          "url": "",
+          "date": "2026-10-13T17:35:14.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "Apple HomeView - Siri AI와 스마트홈 제어를 결합한 7인치 가정용 디스플레이",
+          "url": "",
+          "date": "2026-10-13T15:34:16.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "Show GN: Flats – AI 에이전트가 만든 웹사이트를 내 컴퓨터에서 호스팅",
+          "url": "",
+          "date": "2026-10-13T14:59:52.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "MacBook Air에서 1시간 분량 오디오를 약 13초 만에 전사",
+          "url": "",
+          "date": "2026-10-13T14:37:50.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Mozilla, Firefox Enterprise 공개",
+          "url": "",
+          "date": "2026-10-13T14:34:50.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "프랑스 슈퍼마켓 체인들, 사이버공격으로 냉장설비 가동 중단",
+          "url": "",
+          "date": "2026-10-13T14:02:23.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "튀르키예에서 히타이트 왕실 문서고 발견",
+          "url": "",
+          "date": "2026-10-13T13:44:02.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Janas - SSD를 활용해 RAM보다 큰 MoE 언어 모델을 실행하는 추론 엔진",
+          "url": "",
+          "date": "2026-10-13T13:41:02.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "CFTC 직원들, 의심스러운 원유 거래 분석 철회 지시받아",
+          "url": "",
+          "date": "2026-10-13T13:38:02.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Show GN: 나래 한글(나래팩) – AI 에이전트용 HWP/HWPX 편집·생성 CLI/스킬/템플릿 패키지",
+          "url": "",
+          "date": "2026-10-13T13:03:01.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "OpenAI가 주장하는 더 빠른 푸리에 변환의 수학 살펴보기",
+          "url": "",
+          "date": "2026-10-13T12:40:08.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "Rust 빌림 검사기에서 11년 된 건전성 버그들 발견",
+          "url": "",
+          "date": "2026-10-13T12:37:08.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "벽면 콘센트에 꽂아 쓰는 태양광 패널",
+          "url": "",
+          "date": "2026-10-13T09:34:12.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Show GN: claude-bulkhead: PC에서 병렬로 돌리는 Claude Code 세션들의 프로세스, 포트, 메모리 충돌을 막는 플...",
+          "url": "",
+          "date": "2026-10-13T08:53:00.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "Firefox에서 대용량 다운로드를 재개할 수 있게 하기",
+          "url": "",
+          "date": "2026-10-13T08:47:40.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Intel D270 - 최대 480GB LPDDR5X를 탑재한 AI 추론용 GPU",
+          "url": "",
+          "date": "2026-10-13T08:44:40.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "AI 모델은 임의의 능력을 숨길 수 있으며, 이를 이론적으로 증명할 수 있음",
+          "url": "",
+          "date": "2026-10-13T08:41:39.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "vfmaddrnd231pd는 누구인가?",
+          "url": "",
+          "date": "2026-10-13T07:32:32.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Show GN: 트립파파야(TripPapaya) - 무한 캔버스에서 자유롭게 여행 일정을 계획하는 도구",
+          "url": "",
+          "date": "2026-10-13T06:56:12.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Show GN: Bohm - AI로 만든 웹앱을 데이터와 함께 내 PC에서 계속 쓰게 해주는 AI 브라우저",
+          "url": "",
+          "date": "2026-10-13T06:30:18.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "Kevin Kelly가 2016년에 내다본 AI의 미래, 10년 뒤 다시 읽기",
+          "url": "",
+          "date": "2026-10-13T05:43:55.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "단세포의 불가사의한 지능 (2024)",
+          "url": "",
+          "date": "2026-10-13T05:40:55.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Show GN: false-green-detector: 무의미한 테스트를 잡아내는 에이전트 스킬",
+          "url": "",
+          "date": "2026-10-13T05:19:58.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "미 연방 수사당국, Don Lemon의 프로듀서 추적에 가짜 기지국을 사용하기 위한 영장 확보",
+          "url": "",
+          "date": "2026-10-13T04:31:34.000Z",
+          "aiRelated": false
+        }
+      ],
+      "note": "GeekNews Atom 피드에서 최근 3일 항목. aiRelated=true 는 제목 키워드 기준(본문은 조사 단계에서 확인)."
+    },
+    "inpa": {
+      "source": "inpa",
+      "fetchedOk": true,
+      "sourceUrl": "https://inpa.tistory.com/rss",
+      "items": [],
+      "note": "최근 3일 이내 작성된 글만. 날짜 없는 항목은 제외. 0건이면 어제·오늘 새 글이 없다는 뜻."
+    },
+    "goddaehee": {
+      "source": "goddaehee",
+      "fetchedOk": true,
+      "sourceUrl": "https://goddaehee.tistory.com/rss",
+      "items": [],
+      "note": "최근 3일 이내 작성된 글만. 날짜 없는 항목은 제외. 0건이면 어제·오늘 새 글이 없다는 뜻."
+    },
+    "github": {
+      "source": "github",
+      "fetchedOk": true,
+      "sourceUrl": "https://github.com/trending?since=weekly",
+      "items": [
+        {
+          "repo": "twostraws/SwiftUI-Agent-Skill",
+          "url": "https://github.com/twostraws/SwiftUI-Agent-Skill",
+          "description": "SwiftUI agent skill for Claude Code, Codex, and other AI tools.",
+          "starsThisWeek": 911
+        }
+      ],
+      "note": "주간 급상승 레포 중 plugin/extension/skill/cli/mcp 등 도구 성격 키워드가 잡힌 것만. dev-trending 과 겹치는 항목은 조사 단계에서 제외한다."
+    }
+  }
+}

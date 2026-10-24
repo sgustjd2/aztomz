@@ -1,0 +1,360 @@
+{
+  "collectedAt": "2026-10-21",
+  "days": 3,
+  "results": {
+    "geeknews": {
+      "source": "geeknews",
+      "fetchedOk": true,
+      "sourceUrl": "https://news.hada.io/rss/news",
+      "items": [
+        {
+          "title": "Muse, 대화 공유 시 사용자의 개인 및 업무상 비밀 노출",
+          "url": "",
+          "date": "2026-10-21T10:32:34.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Mastodon 5.0 자세히 살펴보기: UI 전면 개편과 설계 결정",
+          "url": "",
+          "date": "2026-10-21T10:02:05.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "크래프톤, 자체 개발 30B급 고효율 LLM &#039;Raon-1 mini&#039; 프리뷰 공개",
+          "url": "",
+          "date": "2026-10-21T10:00:19.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "또 다른 유행병: 벤조디아제핀을 끊으려는 시도",
+          "url": "",
+          "date": "2026-10-21T09:37:18.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Show HN: VoidAccess - 검색 질의에서 그래프까지, 오픈소스 다크웹 OSINT",
+          "url": "",
+          "date": "2026-10-21T08:31:18.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "PHP, 중대 취약점 대응 보안 릴리스 예정",
+          "url": "",
+          "date": "2026-10-21T08:01:01.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "미 연방 수사당국, 몸값 협상가의 ShinyHunters 갈취 사이트 운영 관여 의심",
+          "url": "",
+          "date": "2026-10-21T07:37:45.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Tell HN: CVSS 10.0인 PHP 원격 코드 실행 CVE 2건 공개 예정",
+          "url": "",
+          "date": "2026-10-21T07:34:45.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "2026년 JavaScript 동향",
+          "url": "",
+          "date": "2026-10-21T07:18:40.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "IKEA - 실제 조립 설명서를 따라가는 3D 가이드",
+          "url": "",
+          "date": "2026-10-21T06:39:30.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "CSS의 미래 - Interop 2027에서 기대하는 10가지 기능",
+          "url": "",
+          "date": "2026-10-21T06:36:30.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "PHP, 치명적 취약점 2건 수정하는 보안 업데이트 예고",
+          "url": "",
+          "date": "2026-10-21T04:31:25.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "학계는 Wikipedia 같은 개방형 지식 체계를 지킬 의무가 있음",
+          "url": "",
+          "date": "2026-10-21T03:33:34.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "2026년은 Rust 컴파일러에게도, 나에게도 흥미진진한 해",
+          "url": "",
+          "date": "2026-10-21T02:33:55.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "나의 친구 Bob Cringely",
+          "url": "",
+          "date": "2026-10-21T00:37:52.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Deepwater Horizon 사고 16년 후에도 심해 생물의 회복 징후는 미미함",
+          "url": "",
+          "date": "2026-10-21T00:34:52.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "OpenIntelligentUI - ChatGPT Intelligent UI의 오픈소스 대체 구현",
+          "url": "",
+          "date": "2026-10-21T00:30:02.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "macOS에서 Touch ID로 SSH 키 설정하기",
+          "url": "",
+          "date": "2026-10-21T00:07:12.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "eMudhra 중간 인증서 침해에 따른 Firefox 사용자 보호 조치",
+          "url": "",
+          "date": "2026-10-21T00:04:12.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "바이브 코더들이 몰려들자, Steam 이용자들 ‘AI 게임 제외’ 필터 요구",
+          "url": "",
+          "date": "2026-10-20T22:43:00.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "NixOS 덕분에 새 소프트웨어 설치가 덜 두려워졌다",
+          "url": "",
+          "date": "2026-10-20T22:40:00.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "AI 시대, 아들에게 무엇을 가르쳐야 할까?",
+          "url": "",
+          "date": "2026-10-20T22:37:00.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "Google, PyTorch 모델을 TPU에서 실행하는 TorchTPU 오픈소스 공개",
+          "url": "",
+          "date": "2026-10-20T20:36:23.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "SimCity, 다만 인허가가 필요한 도시 건설 게임",
+          "url": "",
+          "date": "2026-10-20T20:33:23.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Ofcom, 4chan 사건에서 패배 인정",
+          "url": "",
+          "date": "2026-10-20T18:38:22.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Voxtral 3 - 음성 인식과 합성, 도구 호출을 연결하는 Mistral의 실시간 음성 AI",
+          "url": "",
+          "date": "2026-10-20T18:35:22.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "tsrs - TypeScript 컴파일러의 Rust 이식판",
+          "url": "",
+          "date": "2026-10-20T17:37:54.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Tor 출구 노드 300개 이상을 퇴출시킨 과정",
+          "url": "",
+          "date": "2026-10-20T17:34:54.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "eMudhra 중간 CA 개인 키 유출",
+          "url": "",
+          "date": "2026-10-20T16:43:24.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "가짜 통계 5만 페이지를 올렸더니 ChatGPT와 논문, 은행 보고서가 인용했다",
+          "url": "",
+          "date": "2026-10-20T16:40:24.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Facebook, 이제 월 2개를 초과하는 외부 링크 게시에 요금 부과",
+          "url": "",
+          "date": "2026-10-20T16:37:24.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "맥락 속에서 - 변화하는 데이터를 다루는 Clojure의 설계 [영상]",
+          "url": "",
+          "date": "2026-10-20T16:06:07.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "네덜란드, Microsoft 의존에서 벗어나기 위해 자체 Linux OS 개발 중",
+          "url": "",
+          "date": "2026-10-20T16:03:07.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "iPadOS 27, 발표 중 다른 앱을 누르면 비공개 메모까지 화면에 노출",
+          "url": "",
+          "date": "2026-10-20T15:32:52.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Google Cloud 런던 전력 장애로 Revolut 등 영국 은행 서비스 중단",
+          "url": "",
+          "date": "2026-10-20T14:31:28.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Show GN: Pear - Apple Silicon Mac용 Windows Steam 런처",
+          "url": "",
+          "date": "2026-10-20T14:05:46.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "0.000000000000000000542%의 경우에 발생하는 버그를 고치기 위해 모든 나눗셈을 느리게 만들기",
+          "url": "",
+          "date": "2026-10-20T14:02:19.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "MicroG: Google의 독점 Android 사용자 공간을 자유 소프트웨어로 재구현",
+          "url": "",
+          "date": "2026-10-20T13:31:26.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "거부 기능을 제거한 ‘Abliterated’ AI 모델을 내려받았다가 해킹당할 수 있는 이유",
+          "url": "",
+          "date": "2026-10-20T12:33:54.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "Show GN: MacNotify - Mac 알림이 오면 MX Master 4가 진동하는 로지텍 플러그인",
+          "url": "",
+          "date": "2026-10-20T11:55:46.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Show GN: AI Quota Monitor - AI 할당량 소진 되셨나요? vs-code 상태바에서 모니터링 하세요!",
+          "url": "",
+          "date": "2026-10-20T11:54:22.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "AfD 유출: 해킹된 이메일 421,179건이 드러낸 독일 극우의 실상",
+          "url": "",
+          "date": "2026-10-20T11:31:59.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "DeepSeek, 실서비스 추론 엔진 DeepInfer를 오픈소스로 공개",
+          "url": "",
+          "date": "2026-10-20T10:35:37.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "독일 극우 정당 AfD 내부 문서 50만 건 유출",
+          "url": "",
+          "date": "2026-10-20T10:32:37.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "OpenBSD 8.0 릴리스에 Linux 6.18 기반 inteldrm/radeondrm/amdgpu 드라이버 포함 예정",
+          "url": "",
+          "date": "2026-10-20T08:42:58.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "프랑스 슈퍼마켓 냉장고, 수개월 동안 온라인에서 취약한 상태로 노출돼 있었음",
+          "url": "",
+          "date": "2026-10-20T08:39:58.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Nordwand Mono - 글자 모양과 비율을 바꿀 수 있는 코딩용 고정폭 글꼴",
+          "url": "",
+          "date": "2026-10-20T08:36:58.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "광고 없는 Android TV 만들기",
+          "url": "",
+          "date": "2026-10-20T07:38:41.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "DeepSeek, 미 국토안보부 새 명령으로 연방 민간기관에서 사용 금지",
+          "url": "",
+          "date": "2026-10-20T07:35:41.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Show GN: HiCapture - 캡처, 편집, 화면 녹화를 한 앱에서 하는 맥 앱",
+          "url": "",
+          "date": "2026-10-20T07:35:00.000Z",
+          "aiRelated": false
+        }
+      ],
+      "note": "GeekNews Atom 피드에서 최근 3일 항목. aiRelated=true 는 제목 키워드 기준(본문은 조사 단계에서 확인)."
+    },
+    "inpa": {
+      "source": "inpa",
+      "fetchedOk": true,
+      "sourceUrl": "https://inpa.tistory.com/rss",
+      "items": [],
+      "note": "최근 3일 이내 작성된 글만. 날짜 없는 항목은 제외. 0건이면 어제·오늘 새 글이 없다는 뜻."
+    },
+    "goddaehee": {
+      "source": "goddaehee",
+      "fetchedOk": true,
+      "sourceUrl": "https://goddaehee.tistory.com/rss",
+      "items": [],
+      "note": "최근 3일 이내 작성된 글만. 날짜 없는 항목은 제외. 0건이면 어제·오늘 새 글이 없다는 뜻."
+    },
+    "github": {
+      "source": "github",
+      "fetchedOk": true,
+      "sourceUrl": "https://github.com/trending?since=weekly",
+      "items": [
+        {
+          "repo": "mksglu/context-mode",
+          "url": "https://github.com/mksglu/context-mode",
+          "description": "Context window optimization for AI coding agents. Sandboxes tool output (98% reduction), persists session memory, and enforces routing across 17 platforms via MCP + hooks.",
+          "starsThisWeek": 3556
+        },
+        {
+          "repo": "ruvnet/ruflo",
+          "url": "https://github.com/ruvnet/ruflo",
+          "description": "🌊 The original agent harness. Deploy intelligent multi-player swarms, coordinate autonomous workflows, and build conversational AI systems. Features adaptive memory, self-learning intelligence, federation, vector RAG integration, and native Claude Code / Codex / Hermes and many more Integrated",
+          "starsThisWeek": 3143
+        },
+        {
+          "repo": "cursor/plugins",
+          "url": "https://github.com/cursor/plugins",
+          "description": "Cursor plugin specification and official plugins",
+          "starsThisWeek": 2040
+        },
+        {
+          "repo": "wshobson/agents",
+          "url": "https://github.com/wshobson/agents",
+          "description": "Multi-harness agentic plugin marketplace for Claude Code, Codex, Cursor, OpenCode, GitHub Copilot, Google Antigravity, and Pi",
+          "starsThisWeek": 665
+        }
+      ],
+      "note": "주간 급상승 레포 중 plugin/extension/skill/cli/mcp 등 도구 성격 키워드가 잡힌 것만. dev-trending 과 겹치는 항목은 조사 단계에서 제외한다."
+    }
+  }
+}

@@ -83,12 +83,14 @@ async function main() {
   const today = kstDay(Date.now());
   const read = (p) => (existsSync(p) ? JSON.parse(readFileSync(p, 'utf8')) : {});
   const posted = Object.fromEntries(Object.entries(PLATFORMS).map(([k, v]) => [k, read(v.posted)]));
+  const skipped = read(join(outDir, 'queue-skipped.json'));
   const postedAll = new Set(Object.values(posted).flatMap(Object.keys));
   const posts = loadPosts();
 
   const plan = {};
   for (const p of Object.keys(PLATFORMS)) {
-    const all = candidates(posts, postedAll, p, today, maxAge);
+    const all = candidates(posts, postedAll, p, today, maxAge)
+      .filter((id) => !skipped[p]?.[id]);
     const doneToday = Object.values(posted[p]).filter((v) => kstDay(atMs(v.at)) === today).length;
     plan[p] = only && only !== p ? [] : all.slice(0, Math.max(0, max - doneToday));
     console.log(`${p}: 후보 ${all.length}편 · 오늘 이미 ${doneToday}편 · 이번 ${plan[p].length}편${has('list') && all.length ? '\n  ' + all.join('\n  ') : ''}`);

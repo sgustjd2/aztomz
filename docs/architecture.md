@@ -66,15 +66,17 @@ frontend/*.html
 ## 자동/수동 갱신
 - 트렌드 정적 데이터 생성: GitHub Actions `weekly-refresh`가 매주 월요일 06:00 KST에 `backend/scripts/refresh.mjs`를 실행한다. 수동 `workflow_dispatch`도 가능하다.
 - 펄스 데이터: GitHub Actions `pulse-daily`가 매일 07:00 KST에 펄스 데이터를 갱신한다.
-- 블로그 티스토리·네이버 일일 발행: 09:00 `AZ2MZ_Blog_Daily` → `claude -p /blog-daily` 스킬이 4편(T2+N2, 각각 다른 글 — 2026-10-07 토큰 절약으로 5+5에서 축소) 집필·검증 → 12:00·15:00·18:00 `AZ2MZ_Blog_Queue` → `node backend/scripts/blog-queue.mjs`가 플랫폼 교대 순차 발행(20~40분 간격, 각 5편/일). 로그: `backend/out/blog/blog-daily.log`, `blog-queue.log`.
+- 블로그 티스토리·네이버 일일 발행: 09:00 `AZ2MZ_Blog_Daily` → `claude -p /blog-daily` 스킬이 최대 6편(T1+N5, 각각 다른 글 — 2026-10-17부터, 품질 기준 미달 시 축소) 집필·검증 → 12:00·15:00·18:00 `AZ2MZ_Blog_Queue` → `node backend/scripts/blog-queue.mjs`가 플랫폼 교대 순차 발행(20~40분 간격, 플랫폼별 최대 5편/일). 로그: `backend/out/blog/blog-daily.log`, `blog-queue.log`.
+  - 티스토리 세션: 매일 11:00 `AZ2MZ_Tistory_Daily_Session`이 `tools/tistory-daily-session.vbs` → `blog-publish.mjs --daily-session`을 실행한다. 세션이 살아 있으면 쿠키를 갱신하고, 만료된 경우에는 로그인 브라우저를 열어 사용자가 직접 카카오 로그인을 완료한다. 작업 등록 스크립트: `tools/register-tistory-daily-session.ps1`.
+  - 기존 `AZ2MZ_Tistory_Keepalive`는 매일 08:00~23:00 2시간마다 계속 실행한다. 유효한 세션은 갱신하지만, 만료 시 자동 로그인하지 않고 로그를 남긴다(`backend/out/blog/tistory-keepalive.log`).
   - 발행 세부(네이버): 붙여넣기 전 `naverize()`로 가독성 양식 변환 — 왼쪽 정렬·문장 2개씩 짧은 문단(16px·줄간격 1.8)·문단 사이 빈 줄, h2 → 밑줄형 인용구(변환 실패 시 발행 중단), 콜아웃은 굵은 머리말+문단(기울임 인용구 금지), 목록은 네이버 목록 그대로. 티스토리 본문은 변환 없이 발행한다.
   - 발행 창 위치: `backend/scripts/lib/window.mjs`가 정한다 — 기본 `--window-position=230,0`(고정 좌표, 가운데 근사), `BLOG_OFFSCREEN=1`이면 화면 밖, `BLOG_WIN_POS="x,y"`로 덮어쓴다. 티스토리 캡차 대기 시간은 `BLOG_CAPTCHA_MS`(기본 180000ms = 3분).
   - ⚠ 검토 필요: `tools/blog-queue.vbs`(AZ2MZ_Blog_Queue)는 `BLOG_OFFSCREEN`을 설정하지 않으므로, 2026-10-11 커밋(842a8aa) 이후 무인 대기열 창도 화면에 뜬다. 이전에는 `blog-queue.mjs`가 기본값 `BLOG_OFFSCREEN=1`을 자식 프로세스에 강제했다. 화면 밖을 원하면 스케줄 실행 환경에 변수를 넣어야 하며, 어느 쪽으로 할지는 미결정.
-- 로컬 Hermes 운영과 검증 게이트의 자세한 흐름은 [docs/hermes.md](hermes.md)를 따른다.
-
 - 한끗 자동 수집·게시: 매일 21:30 Hermes(로컬)가 `hangeut-run`으로 후보를 만들고 `backend/scripts/auto-build.mjs`가 검증·게시한다(검증 통과분만 `trends.json` 반영 후 git push). 재시도 게이트는 21:50, 광고/진짜 재확인은 21:15. 보류분은 사람이 디스코드 "검수"로 `pipeline-review.mjs`를 통해 게시 또는 버리기를 정한다(이유 코멘트는 `reviews.jsonl`·`learnings.md`에 남는다).
 - 게시된 트렌드의 유행 단계 재판정: 매일 21:05 Hermes(로컬, `hangeut-restage`)가 분석일 오래된 5건을 골라 `backend/scripts/restage.mjs`로 반영한다. 정규 stage 라벨과 살아 있는 비SNS 근거 URL 1개 이상만 통과하며, `stage`·`stageMsg`·`analyzedAt`(실제 재판정한 항목만)·근거 `src`를 바꾼다. 본문은 고치지 않고, 어긋나는 표현은 conflict로 보고한다. 기록은 `backend/out/pipeline/restage.jsonl`.
 - `auto-build.mjs`와 `restage.mjs`는 `trends.json`을 쓰기 직전에 다시 읽어, 서로(및 `recheck-ad.mjs`)의 변경을 덮어쓰지 않는다.
+- 로컬 Hermes 운영과 검증 게이트의 자세한 흐름은 [docs/hermes.md](hermes.md)를 따른다.
+
 ## 보안 메모
 - 로그인·회원가입 기능은 도입하지 않는다. 인증/계정 API와 `login.html`·`signup.html`·`me.html` 파일은 제거했으며, Vercel에서 기존 주소를 홈으로 영구 리다이렉트한다.
 - 개인 저장·방문자 후기·개인 아이디어 저장 기능은 제거했다. 과거 localStorage 데이터의 삭제 명령은 실행하지 않으며 현재 코드는 테마·메뉴 접기 설정만 사용한다.

@@ -1,0 +1,75 @@
+{
+  "keyword": "2026 김장철 김장쓰레기 음식물 일반쓰레기 배출 방법 지역별 차이",
+  "categoryId": "life-info",
+  "slug": "gimjang-waste-guide-2026",
+  "searchedAt": "2026-10-20",
+  "origin": "공식 지자체 원문 직접 확인(WebSearch + 원문 페이지 대조)",
+  "queries": [
+    "2026 김장쓰레기 배출 site:go.kr 2026.11.1",
+    "김장쓰레기 수거기간 운영 안내 2026 site:go.kr",
+    "부산 동구 음식물폐기물 배출요령 김장쓰레기"
+  ],
+  "sources": [
+    {
+      "title": "김장쓰레기 수거기간 운영 안내 (2026-10-01) — 구로구청 청소행정과",
+      "url": "https://www.guro.go.kr/www/selectBbsNttView.do?bbsNo=861&key=4963&nttNo=240932&pageIndex=1&pageUnit=10",
+      "host": "guro.go.kr",
+      "tier": "official",
+      "body": "구로구 청소행정과 게시물의 작성일은 2026년 10월 1일이다. 겨울 김장철 김장쓰레기 배출방법을 2026년 11월 1일부터 12월 31일까지 한시적으로 운영한다고 안내한다. 모든 김장쓰레기는 종량제봉투에 배출하며, 20L 이상은 흰색 일반쓰레기 종량제봉투 20L·30L·50L, 20L 미만은 황색 음식물쓰레기 종량제봉투 1L·2L·3L·5L·10L를 사용한다. RFID 종량기를 사용하는 공동주택에서 20L 이상은 흰색 일반쓰레기 봉투에 김장쓰레기만 담아 RFID 종량기 근처에 내놓으라고 안내한다. 일반쓰레기(김장 비닐 포함)와 김장쓰레기를 혼합배출하면 과태료 10만원 부과 대상이라고 명시한다. 이 방식과 적용기간은 구로구의 2026년 한시 안내이며 다른 지역 규칙으로 일반화하지 않는다. 페이지에 청소행정과 전화번호 02-860-2903이 표시된다."
+    },
+    {
+      "title": "음식물폐기물 배출요령 — 부산광역시 동구청",
+      "url": "https://www.bsdonggu.go.kr/index.donggu?menuCd=DOM_000000104005003000",
+      "host": "bsdonggu.go.kr",
+      "tier": "official",
+      "body": "부산광역시 동구청의 현재 음식물폐기물 배출요령 페이지는 음식물류에 배추·무 등 김장쓰레기와 김치를 포함한다. 음식물류 배출 전 물기를 제거하고 이물질을 분리하라고 안내한다. 일반쓰레기 예시로 파·양파·마늘 등의 뿌리와 마늘·양파·옥수수 등의 껍질, 육류의 뼈, 어패류 껍데기를 든다. 이 자료는 부산 동구의 현재 상시 안내로, 구로구의 2026년 한시적 김장철 봉투 안내와 적용범위가 다르다."
+    },
+    {
+      "title": "김장철 김장 쓰레기 배출 방법 안내 (2025-10-24) — 서초구청",
+      "url": "https://www.seocho.go.kr/site/seocho/ex/bbs/View.do?bcIdx=405074&cbIdx=57",
+      "host": "seocho.go.kr",
+      "tier": "official",
+      "body": "서초구청 공지 등록일은 2025년 10월 24일이다. 이 공지의 음식물쓰레기 항목에는 배추·절임배추·무·무청·젓갈류 등이, 일반쓰레기 항목에는 쪽파·대파·양파 뿌리, 고추씨·고추대, 양파·마늘·생강 껍질 등이 적혀 있다. 배출방법은 음식물종량제봉투와 일반종량제봉투로 구분한다. 본문은 이 내용이 2025년 공지임을 밝히는 역사적 비교에만 사용한다. 2026년 서초구 시행 규칙이라고 쓰지 않으며, 2026년 새 공지가 확인되지 않았다는 이유로 현행 규칙을 단정하지 않는다."
+    }
+  ],
+  "claims": [
+    {
+      "claim": "구로구는 2026년 11월 1일~12월 31일 김장쓰레기 한시 배출안내를 운영하며 20L 기준으로 일반·음식물 종량제봉투를 나눈다.",
+      "grade": "confirmed",
+      "evidence": ["2026-10-01 구로구청 청소행정과 공지: 20L 이상 흰색 일반 종량제봉투, 20L 미만 황색 음식물 종량제봉투", "적용기간 2026-11-01~2026-12-31"],
+      "sourceUrls": ["https://www.guro.go.kr/www/selectBbsNttView.do?bbsNo=861&key=4963&nttNo=240932&pageIndex=1&pageUnit=10"]
+    },
+    {
+      "claim": "모든 지역이 구로구의 2026년 임시 20L 기준을 따르는 것은 아니며, 거주지 지자체의 현재 공지가 적용 기준이다.",
+      "grade": "confirmed",
+      "evidence": ["구로구 원문은 구로구의 한시 안내로만 기간과 봉투 구분을 명시함", "부산 동구 상시 안내는 김치와 배추·무 김장쓰레기를 음식물류로 분류함", "서초구 2025 공지는 별도 이전 연도 안내이므로 2026 규칙으로 사용할 수 없음"],
+      "sourceUrls": ["https://www.guro.go.kr/www/selectBbsNttView.do?bbsNo=861&key=4963&nttNo=240932&pageIndex=1&pageUnit=10", "https://www.bsdonggu.go.kr/index.donggu?menuCd=DOM_000000104005003000", "https://www.seocho.go.kr/site/seocho/ex/bbs/View.do?bcIdx=405074&cbIdx=57"]
+    },
+    {
+      "claim": "부산 동구의 상시 배출요령은 배추·무 김장쓰레기와 김치를 음식물류에 포함하고, 뿌리·껍질·뼈·껍데기 등은 일반쓰레기 예시로 든다.",
+      "grade": "confirmed",
+      "evidence": ["부산 동구청 음식물폐기물 배출요령 페이지의 음식물·일반쓰레기 항목"],
+      "sourceUrls": ["https://www.bsdonggu.go.kr/index.donggu?menuCd=DOM_000000104005003000"]
+    },
+    {
+      "claim": "2026년 10월 20일 기준, 모든 지자체가 2026년 김장철 특별 배출 공지를 이미 게시했다고 확인할 수 없다.",
+      "grade": "confirmed",
+      "evidence": ["공식 지자체 사이트 검색과 직접 확인에서 2026년 공지로 확인된 것은 구로구이며, 검색 결과의 전년도 공지들은 해당 연도 표기를 직접 확인함. 검색으로 전국 공지 현황을 완전하게 증명할 수 없으므로 본문은 '확인한 범위'로 제한."],
+      "sourceUrls": ["https://www.guro.go.kr/www/selectBbsNttView.do?bbsNo=861&key=4963&nttNo=240932&pageIndex=1&pageUnit=10"]
+    }
+  ],
+  "numbers": [
+    {"what":"구로구 2026 한시 안내 적용 시작일","value":"2026-11-01","asOf":"2026년 공지","sourceUrl":"https://www.guro.go.kr/www/selectBbsNttView.do?bbsNo=861&key=4963&nttNo=240932&pageIndex=1&pageUnit=10"},
+    {"what":"구로구 2026 한시 안내 적용 종료일","value":"2026-12-31","asOf":"2026년 공지","sourceUrl":"https://www.guro.go.kr/www/selectBbsNttView.do?bbsNo=861&key=4963&nttNo=240932&pageIndex=1&pageUnit=10"},
+    {"what":"구로구 김장쓰레기 봉투 구분 기준","value":"20L 미만/이상","asOf":"2026-11-01~2026-12-31 구로구 한시 안내","sourceUrl":"https://www.guro.go.kr/www/selectBbsNttView.do?bbsNo=861&key=4963&nttNo=240932&pageIndex=1&pageUnit=10"},
+    {"what":"구로구 혼합배출 과태료 대상 금액","value":"10만원","asOf":"2026년 구로구 공지","sourceUrl":"https://www.guro.go.kr/www/selectBbsNttView.do?bbsNo=861&key=4963&nttNo=240932&pageIndex=1&pageUnit=10"},
+    {"what":"서초구 비교 공지 등록일","value":"2025-10-24","asOf":"지난해 공지; 2026 현행 안내가 아님","sourceUrl":"https://www.seocho.go.kr/site/seocho/ex/bbs/View.do?bcIdx=405074&cbIdx=57"}
+  ],
+  "dropped": [],
+  "cannotCover": [
+    "모든 시·군·구의 2026년 김장철 특별 수거기간과 적용 규칙의 완전한 전국 목록",
+    "2026년 10월 20일 현재 검색에서 직접 확인하지 못한 지역의 최신 공지 여부",
+    "독자가 거주하는 지자체의 정확한 배출 요일·시간·장소 및 단독주택/공동주택별 예외"
+  ],
+  "songs": []
+}

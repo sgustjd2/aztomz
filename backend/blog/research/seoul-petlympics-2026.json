@@ -1,0 +1,24 @@
+{
+  "keyword": "2026 서울펫림픽 일정 월드컵공원 참가비",
+  "categoryId": "life-info",
+  "slug": "seoul-petlympics-2026",
+  "searchedAt": "2026-10-23",
+  "origin": "서울시 보도자료와 FUN SEOUL 행사 상세",
+  "note": "서울시 보도자료는 참가 종목과 부대 프로그램을, FUN SEOUL 상세는 운영 시간과 참가비를 안내한다. 대회 참가와 방문 관람 조건은 구분하고, 공개된 자료에 없는 관람 요금은 단정하지 않는다.",
+  "sources": [
+    { "title": "서울펫림픽 보도자료", "url": "https://www.seoul.go.kr/news/news_report.do?nttNo=465560&srchCtgry=471", "host": "seoul.go.kr", "tier": "official", "kind": "press-release", "body": "서울시는 2026 서울펫림픽을 10월 24~25일 월드컵공원 평화광장에서 개최한다고 안내한다. 시민 참여 4종은 기다려, 이리와, 꼬깔 S자 통과, 보호자와 반려견이 함께 뛰는 15m 팀 달리기다. 행사에는 어질리티, 프리스비, 독댄스, 플라이볼과 약 4km 도그트레일이 포함된다. 출전 종목별 신청 인원은 제한되어 있으며, 현장에는 펫티켓 챌린지, 페이스페인팅, DIY, 응급처치 교육, 무료 건강·행동 상담 등이 안내되어 있다. 출전 참가비는 종목당 4만원, 당일 2종목 참가도 4만원으로 공지되었다. 참가 신청은 9월 14일부터 선착순으로 접수한다고 적혀 있다." },
+    { "title": "FUN SEOUL — 2026 서울펫림픽 행사 상세", "url": "https://festival.seoul.go.kr/festival/main/festivalView.do?festacode=924", "host": "festival.seoul.go.kr", "tier": "official", "kind": "city-event-listing", "body": "서울시 FUN SEOUL 행사 상세 페이지. 2026년 10월 24~25일, 10:00~17:00, 월드컵공원 평화광장에서 진행된다고 적혀 있다. 행사 대상은 반려인과 시민이며, 경기 종목 참가비는 종목당 40,000원, 당일 2종목의 경우 40,000원으로 안내한다. 주요 경기로 어질리티, 프리스비, 플라이볼, 독댄스와 펫림픽 4종을 소개한다. 무료 건강·행동 상담과 응급처치 교육 등 현장 프로그램을 별도 안내하고, 문의 전화는 0502-1949-0514다." }
+  ],
+  "facts": [
+    { "claim": "행사는 10월 24~25일 월드컵공원 평화광장에서 10시~17시 열린다.", "source": "https://festival.seoul.go.kr/festival/main/festivalView.do?festacode=924" },
+    { "claim": "펫림픽 4종은 기다려·이리와·꼬깔 S자 통과·15m 팀 달리기다.", "source": "https://www.seoul.go.kr/news/news_report.do?nttNo=465560&srchCtgry=471" },
+    { "claim": "기초 훈련을 한 반려견과 반려인은 네 가지 시민 참여 종목에 도전할 수 있다.", "source": "https://www.seoul.go.kr/news/news_report.do?nttNo=465560&srchCtgry=471" },
+    { "claim": "기다려 종목은 지정된 시간 동안 대기하는 경기다.", "source": "https://www.seoul.go.kr/news/news_report.do?nttNo=465560&srchCtgry=471" },
+    { "claim": "이리와 종목은 보호자의 호출에 반응해 달려오는 경기다.", "source": "https://www.seoul.go.kr/news/news_report.do?nttNo=465560&srchCtgry=471" },
+    { "claim": "꼬깔 S자 통과 종목은 꼬깔을 S자 형태로 지그재그 통과한다.", "source": "https://www.seoul.go.kr/news/news_report.do?nttNo=465560&srchCtgry=471" },
+    { "claim": "15m 팀 달리기는 보호자와 반려견이 한 팀이 되어 15m 코스를 달린다.", "source": "https://www.seoul.go.kr/news/news_report.do?nttNo=465560&srchCtgry=471" },
+    { "claim": "참가 경기 비용은 종목당 4만원, 같은 날 2종목 참가도 4만원으로 안내됐다.", "source": "https://festival.seoul.go.kr/festival/main/festivalView.do?festacode=924" },
+    { "claim": "대회 출전자 외에도 현장 상담과 교육 프로그램이 안내되어 있다.", "source": "https://www.seoul.go.kr/news/news_report.do?nttNo=465560&srchCtgry=471" }
+  ],
+  "limitations": ["공식 보도자료는 참가 신청이 9월 14일부터 선착순으로 열린다고 안내하지만 확인한 자료에 마감일이나 현재 잔여 자리는 없다.", "일반 관람객 입장료는 확인한 공식 안내에 명시되지 않아 단정하지 않음.", "검색광고 API 자격증명이 없어 검색량은 확인하지 못함."]
+}

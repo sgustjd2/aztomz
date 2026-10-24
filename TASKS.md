@@ -1,3 +1,36 @@
+# 2026-10-21 블로그 배치 — blog-run-today 재개 (티스토리 1 + 네이버 5)
+
+claim: `.daily-claim-2026-10-21` (08:36). 앞선 실행의 writer 6개는 회수 불가(세션 종료, md 산출물 없음) → 기존 조사 파일로 집필 재실행.
+## 티스토리
+- [ ] chrome-bookmarks-export-import — 집필 → SEO → 팩트체크 → assemble/selfreview/verify → 발행
+## 네이버
+- [x] purple-core-2026 — 제외: 08-30 티스토리 /345 "퍼플 컬러 트렌드, 2026 가을 핵심은 보라색"과 같은 개념(플랫폼 간 중복 금지)
+- [ ] november-2026-changes — 대체 편: 정리(curator) → 집필 → …
+- [ ] range-hood-filter-cleaning — 집필 → …
+- [ ] muffler-tying-guide — 집필 → …
+- [ ] spinach-blanching-storage — 정리(curator) → 집필 → …
+- [ ] dongchimi-making-guide — 정리(curator) → 집필 → …
+
+# 2026-10-19 블로그 배치 — 사용자 요청 blog-run-today (티스토리 1 + 네이버 5)
+
+claim: `backend/out/blog/.daily-claim-2026-10-19` (08:34). 09:00 무인 /blog-daily 는 claim 보고 아무것도 안 씀. 조사는 끝난 상태(다시 안 함). 1차 팩트체크 5편 모두 반려 → 작가 교정은 이미 반영됨(md가 check.json보다 새것). 그런데 4편은 2차 팩트체크 없이 verify 해시가 붙어 있어 12:00 대기열이 그대로 발행할 수 있었음 → 2차 팩트체크부터 진행.
+## 티스토리
+- [ ] git-squash-commits — 1차 blocker 3 교정됨 → 2차 팩트체크 → assemble/selfreview/verify → 발행
+## 네이버
+- [ ] dried-sweet-potato-making — 1차 blocker 1 교정됨 → 2차 팩트체크 → …
+- [ ] gim-laver-storage — 1차 blocker 4 교정됨 → 2차 팩트체크 → …
+- [ ] hot-pack-disposal-safety — 1차 blocker 6 교정됨(09:07, verify 전) → 2차 팩트체크 → …
+- [ ] electric-blanket-washing — 1차 blocker 4 교정됨 → 2차 팩트체크 → …
+- [x] move-in-report-online — **보류 확정(10-19 재검토)**: 출처 2건(서울시 2019 안내 — 공인인증서 시절·정부24 공지)뿐, cannotCover가 정작 '온라인 방법'(인증수단·처리시간·확정일자 분기)을 막아 제목 약속을 못 지킴 → 집필 안 함
+- [x] dried-sweet-potato-making 2차 blocker('같은 자료는'→'농사로 자료는') + warn(견과류→땅콩) 코디네이터 교정 → 재조립 · selfreview 무수정 · verify 통과(warn 2)
+- [x] hot-pack-disposal-safety · electric-blanket-washing — 현재 본문으로 verify 재실행 통과(warn 2·1)
+- [x] gim-laver-storage — verify 통과 후 warn 2건(냉동 '거의 변화 없음'→9.4meq/kg, 표 아래 별표 노출) 교정 → 재조립·재검증 통과(warn 1)
+- [x] git-squash-commits — verify warn('--force' 조상 관계 거꾸로) 교정 → 재조립·재검증 통과(warn 2 — fast-forward 표현은 GitHub Docs 원문과 일치)
+- queue --list(09:2x): tistory 1 · naver 4 대기
+- [ ] 발행: 이 세션에선 blog-publish*·blog-queue·schtasks /Run 이 권한 승인 필요로 막힘 → 12:00 AZ2MZ_Blog_Queue 가 발행
+## 마무리
+- [ ] 발행 기록(posted.json·posted-naver.json)·permalink 확인. 커밋·푸시 안 함(사용자 지시)
+
 # 2026-10-14 블로그 배치 — 무인 /blog-daily (티스토리 2 + 네이버 2)
 
 claim: `backend/out/blog/.daily-claim-2026-10-14`. 트렌드 후보 jogwang-nonhyeon-hwoguo(네이버 블로그 2건 근거 신뢰분석)는 근거가 얇아 보류하고 최근 배치처럼 조사형 4편으로 감.

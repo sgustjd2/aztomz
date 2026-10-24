@@ -1,0 +1,37 @@
+{
+  "id": "life-info",
+  "tistoryCategory": "AZTOMZ",
+  "persona": "공식 문서와 제조사 안내를 대조해 생활 정보를 정리하는 작성자",
+  "readerProfile": "생활·행정·계절 정보를 확인 가능한 기준으로 알고 싶은 사람",
+  "searchIntent": "정보형",
+  "structureTemplate": "howto",
+  "tone": {
+    "formality": "해요체",
+    "emoji": false,
+    "sentenceMax": 3
+  },
+  "mustInclude": [
+    "공식 근거 링크",
+    "적용 범위와 기준일",
+    "확인되지 않은 사항"
+  ],
+  "banned": [
+    "무조건",
+    "완벽한",
+    "최고의",
+    "강추",
+    "반드시"
+  ],
+  "wordCount": [
+    1400,
+    2200
+  ],
+  "imagePolicy": {
+    "min": 1,
+    "altRequired": true,
+    "ownOnly": true
+  },
+  "ctaType": "관련 생활정보 내부링크 1개",
+  "affiliateDisclosure": false,
+  "publishDefault": "draft"
+}

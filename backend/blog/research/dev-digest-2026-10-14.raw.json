@@ -1,0 +1,109 @@
+{
+  "keyword": "개발·IT 다이제스트 — 최근 2일(2026-10-13~14) 개발판 소식",
+  "categoryId": "dev-digest",
+  "slug": "dev-digest-2026-10-14",
+  "searchedAt": "2026-10-15",
+  "picked": [
+    {
+      "name": "Google Gemini 4 Argon — 출시 범위 논란(GeekNews '정식 출시' vs 언론 'Fairwind 제한 롤아웃')",
+      "why": "AI 코딩 보조모델의 실제 접근 범위를 둘러싼 구체적 불일치가 있어 개발자가 '지금 당장 쓸 수 있는지' 확인이 필요한 소식. 벤치마크 수치(DeepSWE v1.1 77.9% 등)도 확인됨.",
+      "primaryUrl": "https://www.fonearena.com/blog/493843/google-gemini-4-argon-features.html"
+    },
+    {
+      "name": "claude-bulkhead — 병렬 Claude Code 세션 충돌 방지 플러그인(Show GN)",
+      "why": "Claude Code를 여러 창에서 동시에 돌리는 개발자가 바로 설치해 쓸 수 있는 도구. 포트 점유·RAM 부족·git checkout 충돌을 막는 7개 가드의 동작 방식까지 README에 구체적으로 적혀 있어 1차 출처로 충분히 확인됨.",
+      "primaryUrl": "https://github.com/Myeongseok-Kang/claude-bulkhead"
+    },
+    {
+      "name": "SwiftUI-Agent-Skill — SwiftUI 전용 에이전트 스킬(Claude Code/Codex/Cursor/Gemini)",
+      "why": "GitHub 주간 급상승(911 stars) 포착 항목. Paul Hudson(@twostraws)이 만든 공식 오픈소스로, iOS 개발자가 AI 코딩 보조에 바로 적용 가능. 설치 명령·지원 도구·요구 버전이 README에 명시돼 1차 출처로 확인됨.",
+      "primaryUrl": "https://github.com/twostraws/SwiftUI-Agent-Skill"
+    }
+  ],
+  "dropped": [
+    { "name": "Anthropic, Git을 자체 버전관리 시스템 'Scion'으로 교체", "reason": "WebSearch 4회 중 1회를 썼으나 Anthropic 공식 발표·언론 기사를 전혀 찾지 못함(검색 결과는 전부 무관한 서드파티 VCS 프로젝트·Git 대체 트렌드 일반론). 'Scion'이라는 이름 자체가 검색에 안 걸림 — 긱뉴스 제목 오역/과장 가능성을 배제할 수 없어 1차 출처 없이는 못 씀." },
+    { "name": "Rust 빌림 검사기에서 11년 된 건전성 버그들 발견", "reason": "WebSearch 결과 '11년 된 버그'에 해당하는 건을 찾지 못함. 대신 2026-08 Rust 1.98.0의 다른 vtable 버그(별개 사안, Rust 1.98.1에서 수정)만 발견돼 제목과 매칭 안 됨 — 혼동 위험으로 제외." },
+    { "name": "Gentoo 개발자, 순수 Python 패키지에 uv-build를 쓰지 말아 달라고 호소", "reason": "발언 취지는 WebSearch 스니펫으로 확인했지만(uv의 포터빌리티 문제), 긱뉴스 게시일(2026-10-13)과 정확히 맞는 메일링리스트/포럼 원문 URL을 특정하지 못함(검색된 public-inbox 링크는 2025-03 날짜로 다른 글). WebFetch 예산 소진으로 추가 확인 불가." },
+    { "name": "Rebalancer — Meta의 작업/자원 배치 최적화 도구", "reason": "GitHub API 검색(rebalancer+scheduler) 결과 0건 관련, 전부 암호화폐 리밸런서·ECS 스케줄러 등 무관한 개인 프로젝트뿐. Meta 공식 블로그/저장소를 특정하지 못해 제외." },
+    { "name": "Janas — SSD를 활용해 RAM보다 큰 MoE 모델을 실행하는 추론 엔진", "reason": "GitHub API 검색 2회(janas+MoE+SSD, ssd+offload+MoE+inference) 모두 'Janas' 저장소를 찾지 못함(유사 프로젝트 Edge0-cn 은 이름이 다른 별개 프로젝트). 1차 출처 특정 실패." },
+    { "name": "AesCode — 이미지의 디자인을 참고해 HTML/CSS를 생성하는 AI 모델", "reason": "GitHub API 검색 2회 모두 0건. HuggingFace 등 다른 플랫폼일 가능성이 있으나 WebFetch 예산(12회) 소진으로 추가 탐색 불가." },
+    { "name": "Minions — 유휴 Mac의 GPU를 모아 추론을 분산하는 Apple의 시스템", "reason": "GitHub API 검색 0건. Apple Machine Learning Research 공식 블로그 URL을 특정하지 못함(예산 소진)." },
+    { "name": "로보틱스를 위한 Gemini 4 Argon", "reason": "Gemini 4 Argon 일반 항목과 중복 가능성이 있는 별도 기사로 추정되나 개별 검증 못함(예산 소진)." },
+    { "name": "그 외 GeekNews 후보(AOSP 역어셈블 논란·Intel D270·Rebalancer·AI 능력 은폐 증명·HN AI 봇 트래픽 등)", "reason": "WebSearch 4회·WebFetch 12회 상한을 이미 소진해 착수하지 못함." }
+  ],
+  "sources": [
+    {
+      "title": "Gemini 4 Argon announcement (기사 제목 미확인 — URL 슬러그 기준)",
+      "url": "https://9to5google.com/2026/09/30/gemini-4-argon-announcement/",
+      "host": "9to5google.com",
+      "tier": "press",
+      "publishedAt": "2026-09-30",
+      "body": "9to5Google 기사는 Gemini 4 Argon을 Google의 'next era of frontier intelligence'로, 'deep reasoning across complex, long-horizon workflows'를 위한 모델로 소개한다. 출력 토큰 한도가 기존 64K에서 1M 토큰으로 늘었다고 서술한다. 내부적으로는 이미 수천 명의 구글 직원이 전문 코딩 작업·심층 리서치·글쓰기 품질 향상에 이 모델을 쓰고 있다고 밝힌다. 대규모 코딩 사례로 Argon 에이전트가 re2·libgav1 같은 핵심 라이브러리(수만 줄)부터 Fuchsia OS의 Zircon 커널(80만 줄 이상)까지 C/C++ 코드베이스를 Rust로 마이그레이션하는 작업을 구글 전사에서 수행 중이라고 설명한다. 다만 기사는 일반 개발자·공개 API 대상의 정식 출시 날짜를 제시하지 않으며, Argon이 Fairwind 프로그램을 통해 신뢰받는 사이버 방어팀(cyber defenders)에게 먼저 롤아웃되고, 개발자·엔터프라이즈용 공개 접근은 그 이후라고만 서술한다. 기사 안에는 공식 google.com·deepmind.google 블로그로 연결되는 링크가 없다(9to5Google 자체 기사만 인용).",
+      "facts": [
+        "출력 토큰 한도: 기존 64K → 1M 토큰으로 확대.",
+        "Argon 에이전트가 담당한 Rust 마이그레이션 규모: re2·libgav1 등 핵심 라이브러리(수만 줄) ~ Fuchsia OS Zircon 커널 80만(800K)줄 이상.",
+        "일반 개발자·공개 API용 정식 출시 날짜는 기사에 없음 — 'Fairwind 프로그램을 통한 신뢰 테스터(사이버 방어팀) 우선 롤아웃'만 명시."
+      ]
+    },
+    {
+      "title": "Google rolls out Gemini 4 Argon with 1M-token output limit and cybersecurity capabilities - Fonearena",
+      "url": "https://www.fonearena.com/blog/493843/google-gemini-4-argon-features.html",
+      "host": "www.fonearena.com",
+      "tier": "press",
+      "publishedAt": "2026-10-01",
+      "body": "2026-10-01 게시. 기사 원문: \"Gemini 4 Argon is initially rolling out to a set of trusted cyber defenders through Google's Fairwind Program.\" 이어서 \"The company will gather feedback from early testers and continue iterating on its guardrails before broader availability.\" 그리고 \"Broader access will start with paid API customers and Google AI Ultra subscribers.\" 라고 명시해, 2026-10-01 시점 기준 '정식(일반) 출시'는 아니고 제한된 테스터 단계임을 분명히 한다. 출력 토큰 관련: \"Gemini 4 Argon increases the output token limit to 1 million tokens, up from the previous 64,000-token limit.\" 벤치마크 수치로 \"DeepSWE v1.1: 77.9%, measuring performance on real-world, long-horizon software engineering tasks.\"를 제시한다. 가격 정보로 도입 요율 1M 입력토큰당 $2·1M 출력토큰당 $10(캐시된 입력 토큰은 입력가의 95% 할인), 정식 요율은 입력 $4·출력 $20(1M 토큰당)이라고 기사에서 밝힌다. 보안 벤치마크 CWE-bench v1에서 68%로 공동 1위, AutomationBench에서 51.3%로 1위, 영상 이해 LVBench에서 91.7%로 state of the art라고 소개한다.",
+      "facts": [
+        "출력 토큰 한도: 64,000 → 1,000,000 토큰.",
+        "DeepSWE v1.1 벤치마크 77.9%.",
+        "CWE-bench v1 68%(공동 1위), AutomationBench 51.3%(1위), LVBench 91.7%(state of the art).",
+        "가격: 도입 요율 입력 $2/1M·출력 $10/1M(캐시 입력 95% 할인) → 정식 요율 입력 $4/1M·출력 $20/1M.",
+        "2026-10-01 기준 \"initially rolling out to a set of trusted cyber defenders through Google's Fairwind Program\" — 일반 공개 아님. \"Broader access will start with paid API customers and Google AI Ultra subscribers\"(시점 미확정)."
+      ]
+    },
+    {
+      "title": "Myeongseok-Kang/claude-bulkhead — GitHub README",
+      "url": "https://github.com/Myeongseok-Kang/claude-bulkhead",
+      "host": "github.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "저장소 설명(원문): \"Hooks that stop parallel Claude Code sessions on one machine from killing each other's servers or running it out of RAM.\" README는 7개의 가드(guard)와 슬롯 기반 큐잉 시스템으로 동작한다고 설명한다: kill-guard(다른 세션에 영향을 주는 `pkill node` 같은 이름 기반 프로세스 종료를 막고 PID 지정 종료만 허용), port-guard(다른 세션이 이미 쓰는 포트에서 서버를 새로 띄우는 것을 막음), memory-guard·bulkhead-slot(가용 RAM이 3GB 또는 전체의 15% 밑으로 떨어지면 무거운 명령을 대기열에 넣음), checkout-guard(활성 세션이 있는 공유 저장소에 영향을 주는 git 작업을 막음), wait-guard(180초를 넘는 포그라운드 폴링 루프를 막음), orphan-reaper(세션 종료 시 고아 프로세스를 자동 정리), basics(루트 디렉터리의 `rm -rf`나 강제 push 같은 파괴적 명령을 막음). 동작 원리(원문 요지): \"Each guard is a separate Node script with no dependencies. Claude Code pipes the tool call to it as JSON. The guard reads the command text, and only when the command matches does it look further: at the process table, the listening ports, the session files Claude Code keeps in ~/.claude/sessions, free RAM, or git status.\" 차단 시 종료 코드 2와 안내 메시지를 반환하고, 허용 시 종료 코드 0을 반환한다. 설치는 `/plugin marketplace add Myeongseok-Kang/claude-bulkhead` 후 `/plugin install bulkhead@bulkhead`, Node 18+ 필요. 주요 명령: `bulkhead status`, `bulkhead top`, `bulkhead log`, `bulkhead doctor`. README에는 구체적 버전 번호나 출시일이 적혀 있지 않고 CHANGELOG.md를 참조하라고만 돼 있다.",
+      "facts": [
+        "GitHub 스타 22개(검색 시점).",
+        "가드 7종: kill-guard·port-guard·memory-guard/bulkhead-slot·checkout-guard·wait-guard·orphan-reaper·basics.",
+        "memory-guard 임계값: 가용 RAM 3GB 또는 전체의 15% 미달 시 대기열 적용.",
+        "wait-guard: 180초 초과 포그라운드 폴링 차단.",
+        "요구 사항: Node.js 18 이상. 차단 시 종료 코드 2, 허용 시 0."
+      ]
+    },
+    {
+      "title": "twostraws/SwiftUI-Agent-Skill — GitHub README",
+      "url": "https://github.com/twostraws/SwiftUI-Agent-Skill",
+      "host": "github.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "README 원문 소개: \"An agent skill that helps AI coding assistants write smarter, simpler, and more modern SwiftUI, including guidance on API usage, design, performance, and accessibility.\" LLM이 자주 저지르는 실수(VoiceOver에 안 보이는 버튼 만들기, 폐기된 API 사용, 성능 문제 유발 등)를 교정하는 것을 목표로 한다고 설명한다. 지원 도구로 Claude Code·Codex·Gemini·Cursor 및 Agent Skills 포맷을 쓰는 다른 플랫폼을 명시한다. 설치는 npx 명령 `npx skills add https://github.com/twostraws/swiftui-agent-skill --skill swiftui-pro`(Node.js 필요, Homebrew로 설치 가능) 또는 Claude Code 사용자는 `/plugin marketplace add twostraws/SwiftUI-Agent-Skill` 후 `/plugin install swiftui-pro@swiftui-agent-skill`. 사용 예시로 Claude Code에서는 `/swiftui-pro`, Codex에서는 `$swiftui-pro`, 자연어로 \"Use the SwiftUI Pro skill to look for performance problems\" 등을 제시한다. 요구 사항은 iOS 26 이상·Swift 6.4 이상이며, 제작자는 Paul Hudson(@twostraws), 라이선스는 MIT.",
+      "facts": [
+        "요구 사항: iOS 26+, Swift 6.4+.",
+        "라이선스: MIT. 제작자: Paul Hudson(@twostraws).",
+        "지원 AI 도구: Claude Code, Codex, Gemini, Cursor 및 Agent Skills 포맷 지원 플랫폼.",
+        "GitHub 주간 급상승 911 stars(dev-digest-fetch.mjs 수집 수치, 2026-10-14 기준 — README 자체에는 스타 수 표기 없어 재검증 못함)."
+      ]
+    }
+  ],
+  "conflicts": [
+    {
+      "about": "Gemini 4 Argon의 '정식 출시' 여부(2026-10-13 기준)",
+      "a": "GeekNews(2026-10-13T17:35 게시) 제목: \"Google, Gemini 4 Argon 정식 출시 - 긴 추론과 대규모 코드 작업 지원\" — '정식 출시'라는 표현을 씀.",
+      "b": "9to5Google(2026-09-30)·Fonearena(2026-10-01) 기사는 \"initially rolling out to a set of trusted cyber defenders through Google's Fairwind Program\"이라며 신뢰 테스터(사이버 방어팀) 한정 롤아웃만 확인되고, \"Broader access will start with paid API customers and Google AI Ultra subscribers\"라고 시점 미정의 확대 계획만 언급한다. 두 언론 기사 모두 전면적 일반 공개(GA) 날짜를 제시하지 않는다. 2026-10-13 시점에 실제로 GA가 됐는지는 이번 조사에서 별도 확인하지 못함(아래 unknowns)."
+    }
+  ],
+  "unknowns": [
+    "Gemini 4 Argon이 2026-10-13 시점에 실제로 '정식(GA)' 단계로 넘어갔는지 — 9to5Google·Fonearena 기사는 2주 전인 09-30~10-01 시점 '제한 롤아웃' 상태만 확인했고, 10-13 전후의 추가 공식 발표(구글 공식 블로그)는 WebFetch 예산 소진으로 확인하지 못함.",
+    "claude-bulkhead의 구체적 버전 번호·최초 출시일 — README에 명시 안 됨, CHANGELOG.md 미확인.",
+    "Anthropic의 'Scion' VCS 교체 소식 자체의 실존 여부 — 공식 발표·언론 보도를 전혀 찾지 못해 사실인지 긱뉴스 제목의 오역/과장인지 확인 불가.",
+    "Rust '11년 된 빌림 검사기 건전성 버그' 건의 정확한 내용 — 검색으로 못 찾음(별개의 2026-08 vtable 버그만 발견).",
+    "Gentoo uv-build 호소 발언의 정확한 원문 URL(날짜가 2026-10-13과 맞는 메일링리스트/포럼 스레드) — 특정 못함.",
+    "Rebalancer(Meta)·Janas(SSD MoE 추론 엔진)·AesCode(이미지→HTML/CSS AI)·Minions(Apple 유휴 Mac GPU 분산 추론)의 공식 저장소/발표 URL — GitHub API 검색에서 전부 특정 실패.",
+    "오늘 후보 JSON(digest-2026-10-14.json)의 GeekNews 항목 url 필드가 전부 빈 문자열(\"\")로 와 있어, 개별 topic 링크(news.hada.io/topic?id=...)를 하나도 확보하지 못함 — dev-digest-fetch.mjs의 RSS 파싱이 link 필드를 안 채우는 버그로 추정됨(스크립트 점검 필요)."
+  ]
+}

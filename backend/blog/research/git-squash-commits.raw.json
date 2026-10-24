@@ -1,0 +1,106 @@
+{
+  "keyword": "git 커밋 합치기 squash",
+  "categoryId": "hangeut-trend",
+  "searchedAt": "2026-10-19",
+  "queries": [
+    "git rebase -i squash fixup documentation git-scm.com",
+    "git merge --squash git-scm documentation",
+    "GitHub docs about merge methods squash and merge",
+    "git push force-with-lease after rebase squash commits already pushed",
+    "Pro Git book 7.6 Rewriting History squashing commits",
+    "Atlassian git squash commits tutorial interactive rebase",
+    "docs.github.com about merge methods squash merge pull request commits",
+    "Atlassian git merging vs rebasing interactive rebase tutorial",
+    "\"golden rule of rebasing\" atlassian never rebase public branch"
+  ],
+  "sources": [
+    {
+      "title": "git-rebase - Git 공식 문서 (git-rebase(1))",
+      "url": "https://git-scm.com/docs/git-rebase",
+      "host": "git-scm.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "인터랙티브 리베이스 todo 목록의 각 줄은 명령어(p/r/e/s/f/x 등)로 커밋 처리 방식을 지정한다. squash와 fixup은 '두 개 이상의 커밋을 하나로 접는다(fold)'는 점에서 동일하지만 커밋 메시지 처리 방식이 다르다. 공식 문서 원문: \"If you want to fold two or more commits into one, replace the command 'pick' for the second and subsequent commits with 'squash' or 'fixup'. If the commits had different authors, the folded commit will be attributed to the author of the first commit. The suggested commit message for the folded commit is the concatenation of the first commit's message with those identified by 'squash' commands, omitting the messages of commits identified by 'fixup' commands, unless 'fixup -c' is used.\" fixup에는 -c/-C 변형이 있다: \"In that case the suggested commit message is only the message of the 'fixup -c' commit, and an editor is opened allowing you to edit the message... You can also use 'fixup -C' to get the same behavior as 'fixup -c' except without opening an editor.\" autosquash 기능: 커밋 메시지가 'squash! ', 'fixup! ', 'amend! '로 시작하면 해당 문자열 뒤가 커밋 식별자로 간주되어 rebase todo 목록에서 자동으로 대상 커밋 바로 뒤로 이동되고 action이 squash/fixup/fixup -C로 바뀐다. 원문: \"Automatically squash commits with specially formatted messages into previous commits being rebased. If a commit message starts with 'squash! ', 'fixup! ' or 'amend! ', the remainder of the title is taken as a commit specifier...\" 이런 접두사 커밋은 git-commit의 --fixup/--squash/--fixup=amend:/--fixup=reword: 옵션으로 만드는 것이 권장된다: \"The recommended way to create commits with squash markers is by using the --squash, --fixup, --fixup=amend: or --fixup=reword: options of git-commit[1], which take the target commit as an argument and automatically fill in the title of the new commit from that.\" 설정 변수 rebase.autoSquash를 true로 하면 인터랙티브 리베이스에서 autosquash가 기본 활성화되고, --no-autosquash로 끌 수 있다.",
+      "facts": [
+        "squash는 접히는 커밋의 메시지를 이전 커밋 메시지와 '연결'하고, fixup은 해당 커밋의 로그 메시지를 버린다(단 'fixup -c'/'fixup -C' 사용 시 그 커밋의 메시지만 쓴다)",
+        "fixup -c는 에디터를 열어 메시지를 수정할 기회를 주고, fixup -C는 에디터 없이 동일하게 동작한다",
+        "커밋 메시지가 'squash! ', 'fixup! ', 'amend! ' 중 하나로 시작하면 git rebase -i --autosquash(또는 rebase.autoSquash=true 설정)에서 해당 커밋이 대상 커밋 바로 뒤로 자동 이동되고 action이 자동 변경된다",
+        "이런 접두사 커밋은 git commit --squash <target>, git commit --fixup <target>, --fixup=amend:<target>, --fixup=reword:<target> 옵션으로 생성하는 것이 git 공식 권장 방법이다"
+      ]
+    },
+    {
+      "title": "Pro Git — 7.6 Git Tools: Rewriting History (Squashing Commits)",
+      "url": "https://git-scm.com/book/en/v2/Git-Tools-Rewriting-History",
+      "host": "git-scm.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "Pro Git 책(Scott Chacon·Ben Straub, git-scm.com 공식 호스팅) 7.6절은 interactive rebase로 여러 커밋을 한 커밋으로 합치는 절차를 예시로 설명한다. 3개 커밋을 합치려면 'git rebase -i HEAD~3'을 실행한다. 원본 todo 목록은 'pick f7f3f6d Change my name a bit / pick 310154e Update README formatting and add blame / pick a5f4a0d Add cat-file' 형태이며, 두 번째·세 번째 줄의 pick을 squash로 바꾸면 'pick f7f3f6d .../ squash 310154e .../ squash a5f4a0d ...'가 된다. 저장 후 종료하면 Git이 커밋 메시지 병합 에디터를 띄우는데 다음과 같은 안내가 뜬다: '# This is a combination of 3 commits. / # The first commit's message is: / Change my name a bit / # This is the 2nd commit message: / Update README formatting and add blame / # This is the 3rd commit message: / Add cat-file'. 결과는 세 변경사항을 모두 포함하는 단일 커밋이다. 각 todo 명령의 의미는 다음과 같이 정의된다: 'p, pick = use commit', 's, squash = use commit, but meld into previous commit', 'f, fixup = like squash, but discard this commit's log message'. 이 절은 공유 전 히스토리 정리 용도로 설명되며, 바로 이어지는 Note에서 강한 경고가 나온다: \"One of the cardinal rules of Git is that, since so much work is local within your clone, you have a great deal of freedom to rewrite your history locally. However, once you push your work, it is a different story entirely, and you should consider pushed work as final unless you have good reason to change it. In short, you should avoid pushing your work until you're happy with it and ready to share it with the rest of the world.\" 또한 Interactive Rebase 섹션에서: \"every commit in the range HEAD~3..HEAD with a changed message and all of its descendants will be rewritten. Don't include any commit you've already pushed to a central server — doing so will confuse other developers by providing an alternate version of the same change.\"",
+      "facts": [
+        "git rebase -i HEAD~3 명령으로 최근 3개 커밋을 인터랙티브 리베이스 대상으로 올린다",
+        "예시에서 f7f3f6d/310154e/a5f4a0d 3개 커밋 중 2·3번째를 pick→squash로 바꾸면, 저장 시 'This is a combination of 3 commits.'라는 메시지 병합 화면이 뜨고 세 커밋의 원래 메시지(1st/2nd/3rd)가 모두 나열된다",
+        "squash는 'meld into previous commit'(메시지 유지하며 합침), fixup은 'discard this commit's log message'(메시지 버림)로 공식 정의된다",
+        "이미 중앙 서버(원격)에 push한 커밋은 리베이스/스쿼시 대상 범위에 포함시키지 말라고 명시적으로 경고한다 — 다른 개발자에게 혼란을 준다는 이유"
+      ]
+    },
+    {
+      "title": "git-merge - Git 공식 문서 (git-merge(1)) — --squash 옵션",
+      "url": "https://git-scm.com/docs/git-merge",
+      "host": "git-scm.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "git-merge 공식 문서의 --squash/--no-squash 옵션 설명: \"Produce the working tree and index state as if a real merge happened (except for the merge information), but do not actually make a commit, move the HEAD, or record $GIT_DIR/MERGE_HEAD (to cause the next git commit command to create a merge commit). This allows you to create a single commit on top of the current branch whose effect is the same as merging another branch (or more in case of an octopus).\" 즉 --squash는 실제 커밋을 만들지 않고 작업 트리와 인덱스만 병합된 것처럼 준비해 두며, 이후 사용자가 직접 git commit을 한 번 실행해 단일 커밋을 완성해야 한다. \"With --no-squash perform the merge and commit the result. This option can be used to override --squash.\" 그리고 제약: \"With --squash, --commit is not allowed, and will fail.\" 용도 설명(일반 문서 서술): 토픽 브랜치에서 자잘한 시행착오 커밋을 많이 쌓은 뒤, 완성되면 그 일련의 변경을 메인라인 위에 커밋 하나로 남기고 싶을 때 쓴다. EXAMPLES 섹션의 관련 예시로 'git merge --no-commit maint'가 있으며 \"This can be used when you want to include further changes to the merge, or want to write your own merge commit message.\"가 설명으로 붙는다(--no-commit과 --squash는 별개 옵션이지만 둘 다 '자동 커밋을 만들지 않는다'는 점이 같다).",
+      "facts": [
+        "git merge --squash는 실제 커밋을 만들거나 HEAD를 옮기지 않고, $GIT_DIR/MERGE_HEAD도 기록하지 않는다 — 병합된 상태만 작업 트리/인덱스에 준비해 두고 commit은 사용자가 별도로 해야 한다",
+        "--squash와 --commit 옵션은 동시에 쓸 수 없으며 함께 쓰면 실패(fail)한다",
+        "--no-squash는 --squash를 무효화하고 일반 병합 커밋을 생성한다"
+      ]
+    },
+    {
+      "title": "git-push - Git 공식 문서 (git-push(1)) — --force-with-lease",
+      "url": "https://git-scm.com/docs/git-push",
+      "host": "git-scm.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "git-push 공식 문서는 --force와 --force-with-lease의 차이를 명확히 구분한다. --force: \"This flag disables that check [that a branch being pushed is an ancestor of the remote], the other safety checks in PUSH RULES below, and the checks in --force-with-lease. It can cause the remote repository to lose commits; use it with care.\" --force-with-lease(기본형, 조건 지정 없음): \"This option overrides this restriction if the current value of the remote ref is the expected value. git push fails otherwise.\" 사용 배경 설명: \"Imagine that you have to rebase what you have already published... If somebody else built on top of your original history while you are rebasing, the tip of the branch at the remote may advance with their commit, and blindly pushing with --force will lose their work. This option allows you to say that you expect the history you are updating is what you rebased and want to replace. If the remote ref still points at the commit you specified, you can be sure that no other people did anything to the ref.\" 세 가지 사용 형태가 문서에 정의돼 있다: (1) '--force-with-lease' 단독 — 업데이트될 모든 remote ref를 보호하며 현재 로컬이 갖고 있는 remote-tracking branch 값과 같아야 한다고 요구, (2) '--force-with-lease=<refname>' — 특정 ref만 같은 방식으로 보호, (3) '--force-with-lease=<refname>:<expect>' — 기대값을 명시적으로 지정해 보호. 안전상의 함정도 명시: \"supplying this option without an expected value... interacts very badly with anything that implicitly runs git fetch on the remote to be pushed to in the background, e.g. git fetch origin on your repository in a cronjob.\" 권장 명시적 패턴 예시: 'git fetch # update master / git tag base master / git rebase -i master / git push --force-with-lease=master:base master:master'. 추가 보완 옵션으로 --force-if-includes가 언급된다: 백그라운드에서 remote-tracking ref가 암묵적으로 갱신된 변경이 로컬에 통합돼 있는지 확인 후에만 강제 업데이트를 허용한다.",
+      "facts": [
+        "--force는 모든 안전장치(PUSH RULES, --force-with-lease 체크 포함)를 비활성화하며 원격 저장소의 커밋을 잃게 할 수 있다고 공식 문서가 경고한다",
+        "--force-with-lease는 원격 ref의 현재 값이 '예상한 값'과 같을 때만 강제 업데이트를 허용하고, 다르면 push가 실패(fail)한다",
+        "--force-with-lease는 지정 방식에 따라 3가지 형태가 있다: 단독 사용, '=<refname>'만 지정, '=<refname>:<expect>'로 기대 커밋까지 명시",
+        "cron 등 백그라운드에서 자동 git fetch가 도는 환경에서는 기대값 없이 --force-with-lease만 쓰면 보호 효과가 쉽게 무력화된다고 공식 문서가 명시 경고한다",
+        "더 엄격한 보호를 위해 --force-if-includes를 --force-with-lease와 함께 쓸 수 있다"
+      ]
+    },
+    {
+      "title": "About merge methods on GitHub",
+      "url": "https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/about-merge-methods-on-github",
+      "host": "docs.github.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "GitHub 공식 문서는 PR을 머지하는 세 가지 방식(merge commit / squash and merge / rebase and merge)을 비교 설명한다. Squash and merge: \"the pull request's commits are squashed into a single commit\" — 토픽 브랜치의 개별 커밋들이 하나로 합쳐져 기본 브랜치에 들어간다. 병합 방식: \"Pull requests with squashed commits are merged using the fast-forward option.\" 즉 별도의 merge commit을 만들지 않고 fast-forward로 처리한다. 권한 요구사항: \"To squash and merge pull requests, you must have write permissions in the repository, and the repository must allow squash merging.\" 장점 서술: work-in-progress 커밋들은 피처 브랜치 작업 중엔 유용하지만 기본 브랜치 히스토리에 남길 필요는 없으므로 squash로 묶으면 \"you can retain the original changes with a clear Git history.\" 비교로 일반 merge(merge commit)는 \"all commits from the feature branch are added to the base branch in a merge commit\"이고, rebase and merge는 \"all commits from the topic branch are added onto the base branch individually without a merge commit\"이다. 단점도 명시: squash and merge를 쓰면 \"You lose information about when specific changes were originally made and who authored the squashed commits\"(개별 변경 시점·작성자 정보 소실), 그리고 squash된 적 있는 브랜치를 나중에 다시 PR로 올리면 이미 머지된 커밋들이 새 PR의 diff/커밋 목록에 재등장할 수 있다는 점이 알려진 이슈로 언급된다.",
+      "facts": [
+        "GitHub의 'Squash and merge'는 PR의 모든 커밋을 1개 커밋으로 합치고, merge commit 없이 fast-forward 방식으로 base 브랜치에 반영한다",
+        "squash and merge를 쓰려면 저장소 write 권한이 있어야 하고, 저장소 설정에서 squash merging이 허용되어 있어야 한다",
+        "일반 merge는 merge commit을 만들고(all commits ... in a merge commit), rebase and merge는 merge commit 없이 각 커밋을 개별적으로 올린다 — GitHub가 제공하는 3가지 머지 방식 중 'squash and merge'만 로컬 git merge --squash·git rebase -i squash와 별개로 PR 웹 UI에서 버튼 클릭으로 동작한다",
+        "squash and merge의 단점으로 개별 커밋의 작성 시점·작성자 정보가 사라진다는 점을 공식 문서가 직접 명시한다"
+      ]
+    },
+    {
+      "title": "The Golden Rule of Rebasing in Git",
+      "url": "https://gitkraken.com/blog/golden-rule-of-rebasing-in-git",
+      "host": "gitkraken.com",
+      "tier": "blog",
+      "publishedAt": null,
+      "body": "GitKraken 블로그 글은 '리베이스의 황금률'을 정리한다. 원문 핵심 문장: \"Never rebase while you're on a public branch.\" 리베이스는 \"taking changes that have been made somewhere else, incorporating them into your branch, and then replaying all of your changes on top of that new base\" 과정으로 설명되며, 이 과정에서 기존 커밋이 새 SHA를 가진 커밋으로 대체된다(히스토리 재작성). 이미 원격에 올라간 브랜치를 로컬에서 리베이스/스쿼시한 뒤 반영하려면 보통의 push가 거부되고 강제 push가 필요한데, 글은 그 위험성을 이렇게 요약한다: \"The force push literally replaces the remote branch with what we have locally.\" 즉 원격에 남아 있던, 로컬에는 없는 다른 사람의 커밋이 그대로 사라질 수 있다는 것이다. 이 글은 interactive rebase의 squash/fixup 명령 자체를 직접 설명하지 않고, 일반적인 리베이스(히스토리 재작성)의 공유 브랜치 위험성만 다루는 보조 자료다.",
+      "facts": [
+        "GitKraken 블로그가 정리한 리베이스 황금률: '공유(public) 브랜치에서는 리베이스하지 말라'",
+        "리베이스/스쿼시로 히스토리를 재작성한 뒤 이미 push된 원격 브랜치에 반영하려면 force push가 필요하며, force push는 원격 브랜치를 로컬 상태로 그대로 덮어써 다른 사람의 커밋을 잃을 수 있다"
+      ]
+    }
+  ],
+  "conflicts": [],
+  "unknowns": [
+    "git commit --fixup/--squash 옵션과 fixup -c/-C 변형이 각각 git 버전 몇에서 처음 추가됐는지 — 공식 문서에 도입 버전 명시가 없어 확인 못함",
+    "Atlassian 공식 튜토리얼(atlassian.com/git/tutorials/merging-vs-rebasing, /rewriting-history)의 본문 — 페이지가 JS로 렌더링돼 WebFetch로는 네비게이션만 읽혔고 실제 본문(인터랙티브 리베이스 squash 설명·골든룰 서술)을 확인하지 못함. 대신 GitKraken 블로그로 황금률만 보조 확인",
+    "GitHub Docs가 설명한 'PR 커밋 개수가 1개/여러개일 때 기본 커밋 메시지 생성 규칙이 다르다'는 서술의 구체적 규칙(정확히 어떤 문자열이 기본 제목/본문에 들어가는지) — 검색 스니펫에만 암시돼 있고 이번에 fetch한 본문에서 구체 규칙 문장을 찾지 못함"
+  ]
+}

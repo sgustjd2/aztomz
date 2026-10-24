@@ -1,0 +1,206 @@
+{
+  "keyword": "2026 PHP 보안 업데이트 CVE-2026-109618 CVE-2026-109619",
+  "categoryId": "ai-trend",
+  "searchedAt": "2026-10-24",
+  "notes": [
+    "기준일은 2026-10-24. PHP 공식 보안 권고와 릴리스 기록, PHP Foundation 설명, 영국 NCSC 권고를 대조했다.",
+    "공식 권고의 취약점·영향 범위·수정 버전 및 8.6 RC4 공지 내용만 쓴다. 구체적인 공격 방법이나 침해 여부는 설명하지 않는다.",
+    "플랫폼 패키지 배포 시점은 공급자별로 다르므로 운영체제·호스팅 제공자의 공지를 따르도록 안내한다."
+  ],
+  "cannotSay": [
+    "특정 사이트나 서버가 실제 공격받았다고 단정하지 않는다.",
+    "완화 설정이 완전한 해결책이라고 쓰지 않는다. PHP 공식 권고에서 전체 해결책은 수정 버전 업데이트뿐이라고 명시한다.",
+    "모든 웹 서버에 mod_php 취약 경로가 동일하게 적용된다고 일반화하지 않는다. PHP 공식 권고는 mod_php에서 위험이 특히 높다고 설명한다.",
+    "PHP 8.1 이하에는 정기 프로젝트 업데이트가 없지만, 이 권고 대응으로 PHP 보안팀이 7.4·8.0·8.1용 최소 소스 백포트를 제공했다. 이를 일반적인 유지보수 지원이 계속된다는 뜻으로 쓰지 않는다."
+  ],
+  "cannotCover": [
+    "CVE를 재현하는 익스플로잇 코드나 공격 절차",
+    "개별 클라우드·호스팅 업체의 패키지 배포 현황(기준일에 모두 직접 확인하지 않음)",
+    "특정 WordPress 플러그인 또는 PHP 앱에 대한 취약 여부 판단"
+  ],
+  "sources": [
+    {
+      "title": "Security advisory: Critical remote code execution vulnerabilities, update now",
+      "url": "https://www.php.net/archive/2026.php#2026-10-21-5",
+      "host": "php.net",
+      "tier": "official",
+      "publishedAt": "2026-10-21",
+      "body": "2026-10-21 PHP 공식 보안 권고. CVE-2026-109618은 메모리 부족 처리 중 일부만 초기화된 요청 데이터를 정리 코드가 정상 데이터처럼 취급할 수 있는 문제다. CVE-2026-109619는 요청에 속한 내부 상태가 메모리 해제 뒤에도 남아 같은 worker의 다음 요청이 초기화 전 이를 사용할 수 있는 문제다. 두 취약점 모두 인증되지 않은 원격 코드 실행으로 이어질 수 있다. 수정 안정판은 PHP 8.5.12, 8.4.27, 8.3.36, 8.2.35다. 영향 대상은 PHP-FPM, Apache mod_php, php-cgi, FrankenPHP, LiteSpeed 등을 포함해 웹 요청을 받는 PHP 설치이며, PHP 프로젝트는 mod_php 위험이 가장 높다고 설명한다. PHP 8.1 이하에는 일반적인 프로젝트 업데이트가 없지만, 이번 심각도 때문에 PHP 보안팀은 소스 빌드나 LTS 업체를 이용할 수 없는 사용자를 위해 7.4·8.0·8.1용 최소 소스 백포트를 제공했다. 일부 배포판과 LTS 업체도 자체 백포트를 제공한다. 완전한 해결은 수정판 업데이트이며 임시 완화는 특정 경로만 줄인다.",
+      "facts": [
+        "2026-10-21 권고에 CVE-2026-109618과 CVE-2026-109619가 공개됐다.",
+        "PHP 8.5.12·8.4.27·8.3.36·8.2.35가 수정 버전이다.",
+        "웹 요청을 처리하는 PHP 설치가 영향 범위이며, 권고는 mod_php 위험이 특히 높다고 설명한다.",
+        "PHP 8.1 이하의 프로젝트 업데이트는 없고 일부 공급자 백포트는 가능하다."
+      ]
+    },
+    {
+      "title": "Today's PHP Security Release, and How We're Strengthening PHP Security",
+      "url": "https://thephp.foundation/blog/2026/10/21/todays-php-security-release-and-how-were-strengthening-php-security/",
+      "host": "thephp.foundation",
+      "tier": "official",
+      "publishedAt": "2026-10-21",
+      "body": "PHP Foundation은 2026년 10월 21일 보안 릴리스의 배경과 공개 조정 과정을 설명했다. 취약점 두 건의 CVE 번호가 계획된 공개보다 이틀 앞서 온라인에 퍼졌고, 공개 시각과 CVSS 점수에 잘못된 정보가 함께 돌았다고 적었다. PHP 프로젝트는 사전 공지를 10월 20일로 앞당겼고, 수정 배포는 원래 10월 22일 14:00 UTC에서 10월 21일 14:00 UTC로 조정했다. Foundation은 지난 수개월 동안 보안 대응팀의 의사결정 절차를 바꾸고 인력·조정 지원을 늘리고 있다고 설명했다. AI 보조 보안 분석으로 보고가 늘어도 패치 판단과 검토는 사람이 맡는다는 입장을 밝혔다. 이 문서는 취약점의 세부 기술 분석보다 프로젝트의 공개·수정 과정과 보안 조직 변화를 다룬다.",
+      "facts": [
+        "CVE 식별자가 공개 예정일 이틀 전인 10월 20일에 온라인에 유통되기 시작했다고 Foundation이 밝혔다.",
+        "PHP 프로젝트는 수정 릴리스를 10월 22일 14:00 UTC에서 10월 21일 14:00 UTC로 앞당겼다.",
+        "Foundation은 보안팀 의사결정 절차와 인력 지원 변화를 설명했다."
+      ]
+    },
+    {
+      "title": "Critical security issue affecting PHP",
+      "url": "https://www.ncsc.gov.uk/news/critical-security-issue-affecting-php",
+      "host": "ncsc.gov.uk",
+      "tier": "official",
+      "publishedAt": "2026-10-21",
+      "body": "영국 NCSC의 2026-10-21 안내. 인터넷에 공개된 시스템을 포함해 인프라 전체에서 PHP 버전을 찾고, 외부에 노출된 PHP 시스템을 우선 모니터링하라고 권고했다. 수정 버전이 공개되면 업데이트를 적용하고, PHP를 함께 포함하는 서드파티 제품과 서비스 공급자의 보안 공지도 확인하라고 했다. 즉시 수정할 수 없는 경우 완화책만으로 안전하다고 보지 말고 대응 방안을 검토하라는 내용이다. 영국 조직을 대상으로 한 안내이므로 한국 환경의 법적 의무로 확대하지 않고 운영 점검 순서 참고로만 쓴다.",
+      "facts": [
+        "NCSC는 인터넷 노출 PHP 시스템을 우선 식별하고 모니터링하라고 권고했다.",
+        "번들 PHP를 포함하는 서드파티 제품·서비스 공급자의 보안 공지도 확인 대상이다.",
+        "이 권고는 영국 기관의 보안 안내다."
+      ]
+    },
+    {
+      "title": "PHP 8.2.35 Release Announcement",
+      "url": "https://www.php.net/releases/8_2_35.php",
+      "host": "php.net",
+      "tier": "official",
+      "publishedAt": "2026-10-21",
+      "body": "PHP 개발팀의 8.2.35 릴리스 공지는 이 버전이 보안 릴리스이며 PHP 8.2 사용자가 업그레이드하도록 안내한다. PHP 8.2는 2026년 12월 31일 지원 종료 예정이므로, 이번 수정판 설치와 별개로 이후 지원받을 버전으로의 계획을 세우라고 적었다. 다운로드는 PHP 공식 다운로드 페이지에서 제공되며 변경 사항은 ChangeLog에 기록된다. 이 글은 8.2 계열 공지의 확인 내용만 사용하며 개별 배포판 패키지 제공 시점을 대신하지 않는다.",
+      "facts": [
+        "PHP 8.2.35는 2026-10-21에 공개된 보안 릴리스다.",
+        "PHP 8.2는 2026-12-31 지원 종료 예정이라고 공식 공지가 안내한다."
+      ]
+    },
+    {
+      "title": "PHP 8.6.0 RC4 available for testing",
+      "url": "https://www.php.net/archive/2026.php",
+      "host": "php.net",
+      "tier": "official",
+      "publishedAt": "2026-10-21",
+      "body": "PHP 공식 릴리스 기록은 2026년 10월 21일 PHP 8.6.0 RC4 테스트 빌드를 알렸다. 두 치명적 취약점 수정도 포함됐으나 초기 테스트 릴리스이므로 운영 환경에서 사용하지 말라고 안내했다.",
+      "facts": [
+        "PHP 8.6.0 RC4에는 두 취약점의 수정이 포함됐다.",
+        "RC4는 production 사용 금지인 사전 테스트 릴리스다."
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "claim": "PHP 프로젝트는 2026년 10월 21일 두 건의 심각한 취약점을 수정하는 보안 릴리스를 공개했다.",
+      "grade": "confirmed",
+      "evidence": [
+        "PHP 공식 보안 권고와 각 버전 릴리스 공지."
+      ],
+      "sourceUrls": [
+        "https://www.php.net/archive/2026.php#2026-10-21-5"
+      ]
+    },
+    {
+      "claim": "CVE-2026-109618은 OOM 처리 중 부분 초기화된 요청 내부 데이터를 잘못 정리할 수 있는 문제다.",
+      "grade": "confirmed",
+      "evidence": [
+        "PHP 공식 권고의 OOM corruption 설명."
+      ],
+      "sourceUrls": [
+        "https://www.php.net/archive/2026.php#2026-10-21-5"
+      ]
+    },
+    {
+      "claim": "CVE-2026-109619은 해제된 요청 메모리와 연결된 상태가 worker에 남아 다음 요청이 오래된 상태를 사용할 수 있는 문제다.",
+      "grade": "confirmed",
+      "evidence": [
+        "PHP 공식 권고의 stale global state 설명."
+      ],
+      "sourceUrls": [
+        "https://www.php.net/archive/2026.php#2026-10-21-5"
+      ]
+    },
+    {
+      "claim": "두 취약점은 인증되지 않은 원격 코드 실행으로 이어질 수 있으며 수정 버전은 8.5.12·8.4.27·8.3.36·8.2.35다.",
+      "grade": "confirmed",
+      "evidence": [
+        "PHP 공식 권고와 릴리스 공지."
+      ],
+      "sourceUrls": [
+        "https://www.php.net/archive/2026.php#2026-10-21-5"
+      ]
+    },
+    {
+      "claim": "PHP 공식 권고는 웹 요청을 처리하는 설치를 영향 범위로 들고 mod_php에서 위험이 특히 높다고 설명한다.",
+      "grade": "confirmed",
+      "evidence": [
+        "PHP 공식 보안 권고의 affected systems 설명."
+      ],
+      "sourceUrls": [
+        "https://www.php.net/archive/2026.php#2026-10-21-5"
+      ]
+    },
+    {
+      "claim": "PHP 8.1 이하 사용자는 프로젝트 공식 업데이트 여부와 배포판·LTS 공급자의 백포트 제공 여부를 따로 확인해야 한다.",
+      "grade": "confirmed",
+      "evidence": [
+        "PHP 공식 권고는 8.1 이하가 프로젝트 업데이트를 받지 않지만 일부 배포판·LTS 공급자는 백포트를 제공할 수 있다고 설명한다."
+      ],
+      "sourceUrls": [
+        "https://www.php.net/archive/2026.php#2026-10-21-5"
+      ]
+    },
+    {
+      "claim": "PHP 8.2.35 릴리스 공지는 PHP 8.2 지원 종료 예정일을 2026년 12월 31일로 안내한다.",
+      "grade": "confirmed",
+      "evidence": [
+        "PHP 8.2.35 Release Announcement."
+      ],
+      "sourceUrls": [
+        "https://www.php.net/releases/8_2_35.php"
+      ]
+    },
+    {
+      "claim": "NCSC는 외부 노출 PHP 시스템 식별·모니터링과 공급자 보안 공지 확인을 권고했다.",
+      "grade": "confirmed",
+      "evidence": [
+        "UK NCSC advisory."
+      ],
+      "sourceUrls": [
+        "https://www.ncsc.gov.uk/news/critical-security-issue-affecting-php"
+      ]
+    },
+    {
+      "claim": "PHP 8.6.0 RC4는 테스트용 사전 공개 버전이며 두 취약점 수정이 포함됐지만 운영 환경에는 쓰지 말라고 공식 공지가 경고한다.",
+      "grade": "confirmed",
+      "evidence": [
+        "2026-10-21 PHP 8.6.0 RC4 공지: 두 취약점 수정 포함, 테스트 버전이며 production 사용 금지."
+      ],
+      "sourceUrls": [
+        "https://www.php.net/archive/2026.php"
+      ]
+    }
+  ],
+  "numbers": [
+    {
+      "what": "공개일",
+      "value": "2026-10-21",
+      "asOf": "PHP official advisory",
+      "sourceUrl": "https://www.php.net/archive/2026.php#2026-10-21-5"
+    },
+    {
+      "what": "CVE count",
+      "value": "2",
+      "asOf": "CVE-2026-109618 and CVE-2026-109619",
+      "sourceUrl": "https://www.php.net/archive/2026.php#2026-10-21-5"
+    },
+    {
+      "what": "fixed branches",
+      "value": "8.5.12, 8.4.27, 8.3.36, 8.2.35",
+      "asOf": "2026-10-21",
+      "sourceUrl": "https://www.php.net/archive/2026.php#2026-10-21-5"
+    },
+    {
+      "what": "PHP 8.2 end of life",
+      "value": "2026-12-31",
+      "asOf": "PHP 8.2.35 release announcement",
+      "sourceUrl": "https://www.php.net/releases/8_2_35.php"
+    }
+  ],
+  "songs": []
+}

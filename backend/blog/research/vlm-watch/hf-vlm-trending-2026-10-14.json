@@ -1,0 +1,1372 @@
+{
+  "source": "hf-vlm",
+  "mode": "trending",
+  "fetchedOk": true,
+  "sourceUrl": "https://huggingface.co/api/models?pipeline_tag=image-text-to-text&limit=300&full=true",
+  "filter": {
+    "pipeline": "image-text-to-text",
+    "maxParamsB": 8,
+    "freshDays": 60
+  },
+  "boards": [
+    {
+      "name": "라즈베리파이 5 8GB (CPU)",
+      "budgetGB": 3,
+      "kind": "edge-cpu",
+      "note": "CPU 추론 — 매우 느림, 초경량(≈1B 이하) 위주"
+    },
+    {
+      "name": "Jetson Nano 4GB",
+      "budgetGB": 2.5,
+      "kind": "edge"
+    },
+    {
+      "name": "Jetson Orin Nano 8GB",
+      "budgetGB": 6,
+      "kind": "edge"
+    },
+    {
+      "name": "RTX 3070 8GB",
+      "budgetGB": 8,
+      "kind": "gpu"
+    },
+    {
+      "name": "RTX 4070 12GB",
+      "budgetGB": 11,
+      "kind": "gpu"
+    },
+    {
+      "name": "Jetson Orin NX 16GB",
+      "budgetGB": 12,
+      "kind": "edge"
+    },
+    {
+      "name": "Jetson AGX Orin 32GB+",
+      "budgetGB": 28,
+      "kind": "edge"
+    }
+  ],
+  "items": [
+    {
+      "id": "LiquidAI/d1-3B",
+      "url": "https://huggingface.co/LiquidAI/d1-3B",
+      "createdAt": "2026-10-05T09:55:28.000Z",
+      "trendingScore": 375,
+      "likes": 386,
+      "downloads": 14854,
+      "paramsB": 3,
+      "vramInt4GB": 3,
+      "minBoardBudgetGB": 3,
+      "boardFit": [
+        {
+          "name": "라즈베리파이 5 8GB (CPU)",
+          "kind": "edge-cpu",
+          "budgetGB": 3,
+          "fits": true
+        },
+        {
+          "name": "Jetson Nano 4GB",
+          "kind": "edge",
+          "budgetGB": 2.5,
+          "fits": false
+        },
+        {
+          "name": "Jetson Orin Nano 8GB",
+          "kind": "edge",
+          "budgetGB": 6,
+          "fits": true
+        },
+        {
+          "name": "RTX 3070 8GB",
+          "kind": "gpu",
+          "budgetGB": 8,
+          "fits": true
+        },
+        {
+          "name": "RTX 4070 12GB",
+          "kind": "gpu",
+          "budgetGB": 11,
+          "fits": true
+        },
+        {
+          "name": "Jetson Orin NX 16GB",
+          "kind": "edge",
+          "budgetGB": 12,
+          "fits": true
+        },
+        {
+          "name": "Jetson AGX Orin 32GB+",
+          "kind": "edge",
+          "budgetGB": 28,
+          "fits": true
+        }
+      ],
+      "license": "other",
+      "tags": [
+        "transformers",
+        "safetensors",
+        "lfm2_vl",
+        "image-text-to-text",
+        "liquid",
+        "lfm2.5",
+        "edge",
+        "decision"
+      ]
+    },
+    {
+      "id": "openbmb/MiniCPM-V-4.7-1B",
+      "url": "https://huggingface.co/openbmb/MiniCPM-V-4.7-1B",
+      "createdAt": "2026-10-06T17:40:13.000Z",
+      "trendingScore": 224,
+      "likes": 315,
+      "downloads": 2543,
+      "paramsB": 1,
+      "vramInt4GB": 2,
+      "minBoardBudgetGB": 2.5,
+      "boardFit": [
+        {
+          "name": "라즈베리파이 5 8GB (CPU)",
+          "kind": "edge-cpu",
+          "budgetGB": 3,
+          "fits": true
+        },
+        {
+          "name": "Jetson Nano 4GB",
+          "kind": "edge",
+          "budgetGB": 2.5,
+          "fits": true
+        },
+        {
+          "name": "Jetson Orin Nano 8GB",
+          "kind": "edge",
+          "budgetGB": 6,
+          "fits": true
+        },
+        {
+          "name": "RTX 3070 8GB",
+          "kind": "gpu",
+          "budgetGB": 8,
+          "fits": true
+        },
+        {
+          "name": "RTX 4070 12GB",
+          "kind": "gpu",
+          "budgetGB": 11,
+          "fits": true
+        },
+        {
+          "name": "Jetson Orin NX 16GB",
+          "kind": "edge",
+          "budgetGB": 12,
+          "fits": true
+        },
+        {
+          "name": "Jetson AGX Orin 32GB+",
+          "kind": "edge",
+          "budgetGB": 28,
+          "fits": true
+        }
+      ],
+      "license": "apache-2.0",
+      "tags": [
+        "transformers",
+        "safetensors",
+        "minicpmv4_7",
+        "image-text-to-text",
+        "minicpm-v",
+        "multimodal",
+        "On-Device Model",
+        "lightweight"
+      ]
+    },
+    {
+      "id": "LiquidAI/d1-omni-600M",
+      "url": "https://huggingface.co/LiquidAI/d1-omni-600M",
+      "createdAt": "2026-10-05T17:18:48.000Z",
+      "trendingScore": 119,
+      "likes": 120,
+      "downloads": 12388,
+      "paramsB": 0.6,
+      "vramInt4GB": 1.8,
+      "minBoardBudgetGB": 2.5,
+      "boardFit": [
+        {
+          "name": "라즈베리파이 5 8GB (CPU)",
+          "kind": "edge-cpu",
+          "budgetGB": 3,
+          "fits": true
+        },
+        {
+          "name": "Jetson Nano 4GB",
+          "kind": "edge",
+          "budgetGB": 2.5,
+          "fits": true
+        },
+        {
+          "name": "Jetson Orin Nano 8GB",
+          "kind": "edge",
+          "budgetGB": 6,
+          "fits": true
+        },
+        {
+          "name": "RTX 3070 8GB",
+          "kind": "gpu",
+          "budgetGB": 8,
+          "fits": true
+        },
+        {
+          "name": "RTX 4070 12GB",
+          "kind": "gpu",
+          "budgetGB": 11,
+          "fits": true
+        },
+        {
+          "name": "Jetson Orin NX 16GB",
+          "kind": "edge",
+          "budgetGB": 12,
+          "fits": true
+        },
+        {
+          "name": "Jetson AGX Orin 32GB+",
+          "kind": "edge",
+          "budgetGB": 28,
+          "fits": true
+        }
+      ],
+      "license": "other",
+      "tags": [
+        "transformers",
+        "safetensors",
+        "d1_omni",
+        "feature-extraction",
+        "liquid",
+        "lfm2.5",
+        "edge",
+        "decision"
+      ]
+    },
+    {
+      "id": "lightonai/LightOnOCR-3-4B",
+      "url": "https://huggingface.co/lightonai/LightOnOCR-3-4B",
+      "createdAt": "2026-10-06T16:12:40.000Z",
+      "trendingScore": 82,
+      "likes": 82,
+      "downloads": 7896,
+      "paramsB": 4,
+      "vramInt4GB": 3.5,
+      "minBoardBudgetGB": 6,
+      "boardFit": [
+        {
+          "name": "라즈베리파이 5 8GB (CPU)",
+          "kind": "edge-cpu",
+          "budgetGB": 3,
+          "fits": false
+        },
+        {
+          "name": "Jetson Nano 4GB",
+          "kind": "edge",
+          "budgetGB": 2.5,
+          "fits": false
+        },
+        {
+          "name": "Jetson Orin Nano 8GB",
+          "kind": "edge",
+          "budgetGB": 6,
+          "fits": true
+        },
+        {
+          "name": "RTX 3070 8GB",
+          "kind": "gpu",
+          "budgetGB": 8,
+          "fits": true
+        },
+        {
+          "name": "RTX 4070 12GB",
+          "kind": "gpu",
+          "budgetGB": 11,
+          "fits": true
+        },
+        {
+          "name": "Jetson Orin NX 16GB",
+          "kind": "edge",
+          "budgetGB": 12,
+          "fits": true
+        },
+        {
+          "name": "Jetson AGX Orin 32GB+",
+          "kind": "edge",
+          "budgetGB": 28,
+          "fits": true
+        }
+      ],
+      "license": "apache-2.0",
+      "tags": [
+        "transformers",
+        "safetensors",
+        "qwen3_5",
+        "image-text-to-text",
+        "ocr",
+        "document-understanding",
+        "visual-grounding",
+        "vision-language"
+      ]
+    },
+    {
+      "id": "h2oai/h2o-lightning-4b",
+      "url": "https://huggingface.co/h2oai/h2o-lightning-4b",
+      "createdAt": "2026-10-02T19:19:51.000Z",
+      "trendingScore": 65,
+      "likes": 66,
+      "downloads": 2568,
+      "paramsB": 4,
+      "vramInt4GB": 3.5,
+      "minBoardBudgetGB": 6,
+      "boardFit": [
+        {
+          "name": "라즈베리파이 5 8GB (CPU)",
+          "kind": "edge-cpu",
+          "budgetGB": 3,
+          "fits": false
+        },
+        {
+          "name": "Jetson Nano 4GB",
+          "kind": "edge",
+          "budgetGB": 2.5,
+          "fits": false
+        },
+        {
+          "name": "Jetson Orin Nano 8GB",
+          "kind": "edge",
+          "budgetGB": 6,
+          "fits": true
+        },
+        {
+          "name": "RTX 3070 8GB",
+          "kind": "gpu",
+          "budgetGB": 8,
+          "fits": true
+        },
+        {
+          "name": "RTX 4070 12GB",
+          "kind": "gpu",
+          "budgetGB": 11,
+          "fits": true
+        },
+        {
+          "name": "Jetson Orin NX 16GB",
+          "kind": "edge",
+          "budgetGB": 12,
+          "fits": true
+        },
+        {
+          "name": "Jetson AGX Orin 32GB+",
+          "kind": "edge",
+          "budgetGB": 28,
+          "fits": true
+        }
+      ],
+      "license": "apache-2.0",
+      "tags": [
+        "transformers",
+        "safetensors",
+        "qwen3_5",
+        "image-text-to-text",
+        "decision-model",
+        "decision-making",
+        "calibration",
+        "jevbench"
+      ]
+    },
+    {
+      "id": "lightonai/LightOnOCR-3-0.8B",
+      "url": "https://huggingface.co/lightonai/LightOnOCR-3-0.8B",
+      "createdAt": "2026-10-07T10:23:52.000Z",
+      "trendingScore": 61,
+      "likes": 63,
+      "downloads": 3009,
+      "paramsB": 0.8,
+      "vramInt4GB": 1.9,
+      "minBoardBudgetGB": 2.5,
+      "boardFit": [
+        {
+          "name": "라즈베리파이 5 8GB (CPU)",
+          "kind": "edge-cpu",
+          "budgetGB": 3,
+          "fits": true
+        },
+        {
+          "name": "Jetson Nano 4GB",
+          "kind": "edge",
+          "budgetGB": 2.5,
+          "fits": true
+        },
+        {
+          "name": "Jetson Orin Nano 8GB",
+          "kind": "edge",
+          "budgetGB": 6,
+          "fits": true
+        },
+        {
+          "name": "RTX 3070 8GB",
+          "kind": "gpu",
+          "budgetGB": 8,
+          "fits": true
+        },
+        {
+          "name": "RTX 4070 12GB",
+          "kind": "gpu",
+          "budgetGB": 11,
+          "fits": true
+        },
+        {
+          "name": "Jetson Orin NX 16GB",
+          "kind": "edge",
+          "budgetGB": 12,
+          "fits": true
+        },
+        {
+          "name": "Jetson AGX Orin 32GB+",
+          "kind": "edge",
+          "budgetGB": 28,
+          "fits": true
+        }
+      ],
+      "license": "apache-2.0",
+      "tags": [
+        "transformers",
+        "safetensors",
+        "qwen3_5",
+        "image-text-to-text",
+        "ocr",
+        "document-understanding",
+        "visual-grounding",
+        "vision-language"
+      ]
+    },
+    {
+      "id": "microsoft/AesCode-8B",
+      "url": "https://huggingface.co/microsoft/AesCode-8B",
+      "createdAt": "2026-09-29T13:04:44.000Z",
+      "trendingScore": 54,
+      "likes": 54,
+      "downloads": 356,
+      "paramsB": 8,
+      "vramInt4GB": 5.5,
+      "minBoardBudgetGB": 6,
+      "boardFit": [
+        {
+          "name": "라즈베리파이 5 8GB (CPU)",
+          "kind": "edge-cpu",
+          "budgetGB": 3,
+          "fits": false
+        },
+        {
+          "name": "Jetson Nano 4GB",
+          "kind": "edge",
+          "budgetGB": 2.5,
+          "fits": false
+        },
+        {
+          "name": "Jetson Orin Nano 8GB",
+          "kind": "edge",
+          "budgetGB": 6,
+          "fits": true
+        },
+        {
+          "name": "RTX 3070 8GB",
+          "kind": "gpu",
+          "budgetGB": 8,
+          "fits": true
+        },
+        {
+          "name": "RTX 4070 12GB",
+          "kind": "gpu",
+          "budgetGB": 11,
+          "fits": true
+        },
+        {
+          "name": "Jetson Orin NX 16GB",
+          "kind": "edge",
+          "budgetGB": 12,
+          "fits": true
+        },
+        {
+          "name": "Jetson AGX Orin 32GB+",
+          "kind": "edge",
+          "budgetGB": 28,
+          "fits": true
+        }
+      ],
+      "license": "apache-2.0",
+      "tags": [
+        "transformers",
+        "safetensors",
+        "qwen3_vl",
+        "image-text-to-text",
+        "code-generation",
+        "html",
+        "multimodal",
+        "reinforcement-learning"
+      ]
+    },
+    {
+      "id": "openbmb/MiniCPM-V-4.7-1B-gguf",
+      "url": "https://huggingface.co/openbmb/MiniCPM-V-4.7-1B-gguf",
+      "createdAt": "2026-10-06T18:05:12.000Z",
+      "trendingScore": 54,
+      "likes": 56,
+      "downloads": 12963,
+      "paramsB": 1,
+      "vramInt4GB": 2,
+      "minBoardBudgetGB": 2.5,
+      "boardFit": [
+        {
+          "name": "라즈베리파이 5 8GB (CPU)",
+          "kind": "edge-cpu",
+          "budgetGB": 3,
+          "fits": true
+        },
+        {
+          "name": "Jetson Nano 4GB",
+          "kind": "edge",
+          "budgetGB": 2.5,
+          "fits": true
+        },
+        {
+          "name": "Jetson Orin Nano 8GB",
+          "kind": "edge",
+          "budgetGB": 6,
+          "fits": true
+        },
+        {
+          "name": "RTX 3070 8GB",
+          "kind": "gpu",
+          "budgetGB": 8,
+          "fits": true
+        },
+        {
+          "name": "RTX 4070 12GB",
+          "kind": "gpu",
+          "budgetGB": 11,
+          "fits": true
+        },
+        {
+          "name": "Jetson Orin NX 16GB",
+          "kind": "edge",
+          "budgetGB": 12,
+          "fits": true
+        },
+        {
+          "name": "Jetson AGX Orin 32GB+",
+          "kind": "edge",
+          "budgetGB": 28,
+          "fits": true
+        }
+      ],
+      "license": "apache-2.0",
+      "tags": [
+        "transformers",
+        "gguf",
+        "minicpm-v",
+        "multimodal",
+        "On-Device Model",
+        "lightweight",
+        "image-text-to-text",
+        "base_model:openbmb/MiniCPM-V-4.7-1B"
+      ]
+    },
+    {
+      "id": "LiquidAI/d1-3B-GGUF",
+      "url": "https://huggingface.co/LiquidAI/d1-3B-GGUF",
+      "createdAt": "2026-10-06T10:36:09.000Z",
+      "trendingScore": 53,
+      "likes": 54,
+      "downloads": 22527,
+      "paramsB": 3,
+      "vramInt4GB": 3,
+      "minBoardBudgetGB": 3,
+      "boardFit": [
+        {
+          "name": "라즈베리파이 5 8GB (CPU)",
+          "kind": "edge-cpu",
+          "budgetGB": 3,
+          "fits": true
+        },
+        {
+          "name": "Jetson Nano 4GB",
+          "kind": "edge",
+          "budgetGB": 2.5,
+          "fits": false
+        },
+        {
+          "name": "Jetson Orin Nano 8GB",
+          "kind": "edge",
+          "budgetGB": 6,
+          "fits": true
+        },
+        {
+          "name": "RTX 3070 8GB",
+          "kind": "gpu",
+          "budgetGB": 8,
+          "fits": true
+        },
+        {
+          "name": "RTX 4070 12GB",
+          "kind": "gpu",
+          "budgetGB": 11,
+          "fits": true
+        },
+        {
+          "name": "Jetson Orin NX 16GB",
+          "kind": "edge",
+          "budgetGB": 12,
+          "fits": true
+        },
+        {
+          "name": "Jetson AGX Orin 32GB+",
+          "kind": "edge",
+          "budgetGB": 28,
+          "fits": true
+        }
+      ],
+      "license": "other",
+      "tags": [
+        "gguf",
+        "liquid",
+        "lfm2.5",
+        "edge",
+        "decision",
+        "classification",
+        "calibration",
+        "system-one"
+      ]
+    },
+    {
+      "id": "LiquidAI/d1-omni-600M-GGUF",
+      "url": "https://huggingface.co/LiquidAI/d1-omni-600M-GGUF",
+      "createdAt": "2026-10-06T15:30:13.000Z",
+      "trendingScore": 42,
+      "likes": 42,
+      "downloads": 6477,
+      "paramsB": 0.6,
+      "vramInt4GB": 1.8,
+      "minBoardBudgetGB": 2.5,
+      "boardFit": [
+        {
+          "name": "라즈베리파이 5 8GB (CPU)",
+          "kind": "edge-cpu",
+          "budgetGB": 3,
+          "fits": true
+        },
+        {
+          "name": "Jetson Nano 4GB",
+          "kind": "edge",
+          "budgetGB": 2.5,
+          "fits": true
+        },
+        {
+          "name": "Jetson Orin Nano 8GB",
+          "kind": "edge",
+          "budgetGB": 6,
+          "fits": true
+        },
+        {
+          "name": "RTX 3070 8GB",
+          "kind": "gpu",
+          "budgetGB": 8,
+          "fits": true
+        },
+        {
+          "name": "RTX 4070 12GB",
+          "kind": "gpu",
+          "budgetGB": 11,
+          "fits": true
+        },
+        {
+          "name": "Jetson Orin NX 16GB",
+          "kind": "edge",
+          "budgetGB": 12,
+          "fits": true
+        },
+        {
+          "name": "Jetson AGX Orin 32GB+",
+          "kind": "edge",
+          "budgetGB": 28,
+          "fits": true
+        }
+      ],
+      "license": "other",
+      "tags": [
+        "gguf",
+        "liquid",
+        "lfm2.5",
+        "edge",
+        "decision",
+        "classification",
+        "calibration",
+        "system-one"
+      ]
+    },
+    {
+      "id": "lightonai/LightOnOCR-3-1B",
+      "url": "https://huggingface.co/lightonai/LightOnOCR-3-1B",
+      "createdAt": "2026-10-07T09:25:46.000Z",
+      "trendingScore": 21,
+      "likes": 21,
+      "downloads": 1641,
+      "paramsB": 1,
+      "vramInt4GB": 2,
+      "minBoardBudgetGB": 2.5,
+      "boardFit": [
+        {
+          "name": "라즈베리파이 5 8GB (CPU)",
+          "kind": "edge-cpu",
+          "budgetGB": 3,
+          "fits": true
+        },
+        {
+          "name": "Jetson Nano 4GB",
+          "kind": "edge",
+          "budgetGB": 2.5,
+          "fits": true
+        },
+        {
+          "name": "Jetson Orin Nano 8GB",
+          "kind": "edge",
+          "budgetGB": 6,
+          "fits": true
+        },
+        {
+          "name": "RTX 3070 8GB",
+          "kind": "gpu",
+          "budgetGB": 8,
+          "fits": true
+        },
+        {
+          "name": "RTX 4070 12GB",
+          "kind": "gpu",
+          "budgetGB": 11,
+          "fits": true
+        },
+        {
+          "name": "Jetson Orin NX 16GB",
+          "kind": "edge",
+          "budgetGB": 12,
+          "fits": true
+        },
+        {
+          "name": "Jetson AGX Orin 32GB+",
+          "kind": "edge",
+          "budgetGB": 28,
+          "fits": true
+        }
+      ],
+      "license": "apache-2.0",
+      "tags": [
+        "transformers",
+        "safetensors",
+        "mistral3",
+        "text-generation",
+        "ocr",
+        "document-understanding",
+        "visual-grounding",
+        "vision-language"
+      ]
+    },
+    {
+      "id": "mohit67890/imajev-4b",
+      "url": "https://huggingface.co/mohit67890/imajev-4b",
+      "createdAt": "2026-09-24T04:06:19.000Z",
+      "trendingScore": 15,
+      "likes": 104,
+      "downloads": 2789,
+      "paramsB": 4,
+      "vramInt4GB": 3.5,
+      "minBoardBudgetGB": 6,
+      "boardFit": [
+        {
+          "name": "라즈베리파이 5 8GB (CPU)",
+          "kind": "edge-cpu",
+          "budgetGB": 3,
+          "fits": false
+        },
+        {
+          "name": "Jetson Nano 4GB",
+          "kind": "edge",
+          "budgetGB": 2.5,
+          "fits": false
+        },
+        {
+          "name": "Jetson Orin Nano 8GB",
+          "kind": "edge",
+          "budgetGB": 6,
+          "fits": true
+        },
+        {
+          "name": "RTX 3070 8GB",
+          "kind": "gpu",
+          "budgetGB": 8,
+          "fits": true
+        },
+        {
+          "name": "RTX 4070 12GB",
+          "kind": "gpu",
+          "budgetGB": 11,
+          "fits": true
+        },
+        {
+          "name": "Jetson Orin NX 16GB",
+          "kind": "edge",
+          "budgetGB": 12,
+          "fits": true
+        },
+        {
+          "name": "Jetson AGX Orin 32GB+",
+          "kind": "edge",
+          "budgetGB": 28,
+          "fits": true
+        }
+      ],
+      "license": "apache-2.0",
+      "tags": [
+        "peft",
+        "safetensors",
+        "typed-decisions",
+        "jev",
+        "decision-model",
+        "vision-language",
+        "calibrated-probabilities",
+        "lora"
+      ]
+    },
+    {
+      "id": "bartowski/AesCode-8B-GGUF",
+      "url": "https://huggingface.co/bartowski/AesCode-8B-GGUF",
+      "createdAt": "2026-10-11T07:32:43.000Z",
+      "trendingScore": 12,
+      "likes": 12,
+      "downloads": 3843,
+      "paramsB": 8,
+      "vramInt4GB": 5.5,
+      "minBoardBudgetGB": 6,
+      "boardFit": [
+        {
+          "name": "라즈베리파이 5 8GB (CPU)",
+          "kind": "edge-cpu",
+          "budgetGB": 3,
+          "fits": false
+        },
+        {
+          "name": "Jetson Nano 4GB",
+          "kind": "edge",
+          "budgetGB": 2.5,
+          "fits": false
+        },
+        {
+          "name": "Jetson Orin Nano 8GB",
+          "kind": "edge",
+          "budgetGB": 6,
+          "fits": true
+        },
+        {
+          "name": "RTX 3070 8GB",
+          "kind": "gpu",
+          "budgetGB": 8,
+          "fits": true
+        },
+        {
+          "name": "RTX 4070 12GB",
+          "kind": "gpu",
+          "budgetGB": 11,
+          "fits": true
+        },
+        {
+          "name": "Jetson Orin NX 16GB",
+          "kind": "edge",
+          "budgetGB": 12,
+          "fits": true
+        },
+        {
+          "name": "Jetson AGX Orin 32GB+",
+          "kind": "edge",
+          "budgetGB": 28,
+          "fits": true
+        }
+      ],
+      "license": "apache-2.0",
+      "tags": [
+        "gguf",
+        "code-generation",
+        "html",
+        "multimodal",
+        "reinforcement-learning",
+        "design",
+        "image-text-to-text",
+        "en"
+      ]
+    },
+    {
+      "id": "AtomicChat/d1-3B-GGUF",
+      "url": "https://huggingface.co/AtomicChat/d1-3B-GGUF",
+      "createdAt": "2026-10-07T18:06:29.000Z",
+      "trendingScore": 10,
+      "likes": 10,
+      "downloads": 1808,
+      "paramsB": 3,
+      "vramInt4GB": 3,
+      "minBoardBudgetGB": 3,
+      "boardFit": [
+        {
+          "name": "라즈베리파이 5 8GB (CPU)",
+          "kind": "edge-cpu",
+          "budgetGB": 3,
+          "fits": true
+        },
+        {
+          "name": "Jetson Nano 4GB",
+          "kind": "edge",
+          "budgetGB": 2.5,
+          "fits": false
+        },
+        {
+          "name": "Jetson Orin Nano 8GB",
+          "kind": "edge",
+          "budgetGB": 6,
+          "fits": true
+        },
+        {
+          "name": "RTX 3070 8GB",
+          "kind": "gpu",
+          "budgetGB": 8,
+          "fits": true
+        },
+        {
+          "name": "RTX 4070 12GB",
+          "kind": "gpu",
+          "budgetGB": 11,
+          "fits": true
+        },
+        {
+          "name": "Jetson Orin NX 16GB",
+          "kind": "edge",
+          "budgetGB": 12,
+          "fits": true
+        },
+        {
+          "name": "Jetson AGX Orin 32GB+",
+          "kind": "edge",
+          "budgetGB": 28,
+          "fits": true
+        }
+      ],
+      "license": "other",
+      "tags": [
+        "gguf",
+        "llama.cpp",
+        "liquid",
+        "lfm2.5",
+        "decision",
+        "classification",
+        "system-one",
+        "imatrix"
+      ]
+    },
+    {
+      "id": "Qwen/Qwen-Drive-1.0-4B",
+      "url": "https://huggingface.co/Qwen/Qwen-Drive-1.0-4B",
+      "createdAt": "2026-08-27T08:14:27.000Z",
+      "trendingScore": 8,
+      "likes": 249,
+      "downloads": 5204,
+      "paramsB": 4,
+      "vramInt4GB": 3.5,
+      "minBoardBudgetGB": 6,
+      "boardFit": [
+        {
+          "name": "라즈베리파이 5 8GB (CPU)",
+          "kind": "edge-cpu",
+          "budgetGB": 3,
+          "fits": false
+        },
+        {
+          "name": "Jetson Nano 4GB",
+          "kind": "edge",
+          "budgetGB": 2.5,
+          "fits": false
+        },
+        {
+          "name": "Jetson Orin Nano 8GB",
+          "kind": "edge",
+          "budgetGB": 6,
+          "fits": true
+        },
+        {
+          "name": "RTX 3070 8GB",
+          "kind": "gpu",
+          "budgetGB": 8,
+          "fits": true
+        },
+        {
+          "name": "RTX 4070 12GB",
+          "kind": "gpu",
+          "budgetGB": 11,
+          "fits": true
+        },
+        {
+          "name": "Jetson Orin NX 16GB",
+          "kind": "edge",
+          "budgetGB": 12,
+          "fits": true
+        },
+        {
+          "name": "Jetson AGX Orin 32GB+",
+          "kind": "edge",
+          "budgetGB": 28,
+          "fits": true
+        }
+      ],
+      "license": "apache-2.0",
+      "tags": [
+        "transformers",
+        "safetensors",
+        "qwen_drive",
+        "autonomous-driving",
+        "motion-planning",
+        "3d-perception",
+        "visual-question-answering",
+        "qwen"
+      ]
+    },
+    {
+      "id": "prithivMLmods/LightOnOCR-3-4B-GGUF",
+      "url": "https://huggingface.co/prithivMLmods/LightOnOCR-3-4B-GGUF",
+      "createdAt": "2026-10-08T17:33:47.000Z",
+      "trendingScore": 8,
+      "likes": 8,
+      "downloads": 3370,
+      "paramsB": 4,
+      "vramInt4GB": 3.5,
+      "minBoardBudgetGB": 6,
+      "boardFit": [
+        {
+          "name": "라즈베리파이 5 8GB (CPU)",
+          "kind": "edge-cpu",
+          "budgetGB": 3,
+          "fits": false
+        },
+        {
+          "name": "Jetson Nano 4GB",
+          "kind": "edge",
+          "budgetGB": 2.5,
+          "fits": false
+        },
+        {
+          "name": "Jetson Orin Nano 8GB",
+          "kind": "edge",
+          "budgetGB": 6,
+          "fits": true
+        },
+        {
+          "name": "RTX 3070 8GB",
+          "kind": "gpu",
+          "budgetGB": 8,
+          "fits": true
+        },
+        {
+          "name": "RTX 4070 12GB",
+          "kind": "gpu",
+          "budgetGB": 11,
+          "fits": true
+        },
+        {
+          "name": "Jetson Orin NX 16GB",
+          "kind": "edge",
+          "budgetGB": 12,
+          "fits": true
+        },
+        {
+          "name": "Jetson AGX Orin 32GB+",
+          "kind": "edge",
+          "budgetGB": 28,
+          "fits": true
+        }
+      ],
+      "license": "apache-2.0",
+      "tags": [
+        "transformers",
+        "gguf",
+        "text-generation-inference",
+        "llama-cpp",
+        "ocr",
+        "document-understanding",
+        "visual-grounding",
+        "vision-language"
+      ]
+    },
+    {
+      "id": "internlm/Intern-Decision-4B",
+      "url": "https://huggingface.co/internlm/Intern-Decision-4B",
+      "createdAt": "2026-09-26T05:36:37.000Z",
+      "trendingScore": 7,
+      "likes": 86,
+      "downloads": 3723,
+      "paramsB": 4,
+      "vramInt4GB": 3.5,
+      "minBoardBudgetGB": 6,
+      "boardFit": [
+        {
+          "name": "라즈베리파이 5 8GB (CPU)",
+          "kind": "edge-cpu",
+          "budgetGB": 3,
+          "fits": false
+        },
+        {
+          "name": "Jetson Nano 4GB",
+          "kind": "edge",
+          "budgetGB": 2.5,
+          "fits": false
+        },
+        {
+          "name": "Jetson Orin Nano 8GB",
+          "kind": "edge",
+          "budgetGB": 6,
+          "fits": true
+        },
+        {
+          "name": "RTX 3070 8GB",
+          "kind": "gpu",
+          "budgetGB": 8,
+          "fits": true
+        },
+        {
+          "name": "RTX 4070 12GB",
+          "kind": "gpu",
+          "budgetGB": 11,
+          "fits": true
+        },
+        {
+          "name": "Jetson Orin NX 16GB",
+          "kind": "edge",
+          "budgetGB": 12,
+          "fits": true
+        },
+        {
+          "name": "Jetson AGX Orin 32GB+",
+          "kind": "edge",
+          "budgetGB": 28,
+          "fits": true
+        }
+      ],
+      "license": "apache-2.0",
+      "tags": [
+        "transformers",
+        "safetensors",
+        "qwen3_5",
+        "image-text-to-text",
+        "decision-making",
+        "multimodal",
+        "structured-prediction",
+        "conversational"
+      ]
+    },
+    {
+      "id": "LiquidAI/d1-3B-w8a8",
+      "url": "https://huggingface.co/LiquidAI/d1-3B-w8a8",
+      "createdAt": "2026-10-07T18:58:54.000Z",
+      "trendingScore": 7,
+      "likes": 7,
+      "downloads": 239,
+      "paramsB": 3,
+      "vramInt4GB": 3,
+      "minBoardBudgetGB": 3,
+      "boardFit": [
+        {
+          "name": "라즈베리파이 5 8GB (CPU)",
+          "kind": "edge-cpu",
+          "budgetGB": 3,
+          "fits": true
+        },
+        {
+          "name": "Jetson Nano 4GB",
+          "kind": "edge",
+          "budgetGB": 2.5,
+          "fits": false
+        },
+        {
+          "name": "Jetson Orin Nano 8GB",
+          "kind": "edge",
+          "budgetGB": 6,
+          "fits": true
+        },
+        {
+          "name": "RTX 3070 8GB",
+          "kind": "gpu",
+          "budgetGB": 8,
+          "fits": true
+        },
+        {
+          "name": "RTX 4070 12GB",
+          "kind": "gpu",
+          "budgetGB": 11,
+          "fits": true
+        },
+        {
+          "name": "Jetson Orin NX 16GB",
+          "kind": "edge",
+          "budgetGB": 12,
+          "fits": true
+        },
+        {
+          "name": "Jetson AGX Orin 32GB+",
+          "kind": "edge",
+          "budgetGB": 28,
+          "fits": true
+        }
+      ],
+      "license": "other",
+      "tags": [
+        "transformers",
+        "safetensors",
+        "lfm2_vl",
+        "image-text-to-text",
+        "liquid",
+        "lfm2.5",
+        "edge",
+        "decision"
+      ]
+    },
+    {
+      "id": "docling-project/DeskForge-Qwen3.5-4B",
+      "url": "https://huggingface.co/docling-project/DeskForge-Qwen3.5-4B",
+      "createdAt": "2026-09-30T18:15:26.000Z",
+      "trendingScore": 6,
+      "likes": 9,
+      "downloads": 6418,
+      "paramsB": 4,
+      "vramInt4GB": 3.5,
+      "minBoardBudgetGB": 6,
+      "boardFit": [
+        {
+          "name": "라즈베리파이 5 8GB (CPU)",
+          "kind": "edge-cpu",
+          "budgetGB": 3,
+          "fits": false
+        },
+        {
+          "name": "Jetson Nano 4GB",
+          "kind": "edge",
+          "budgetGB": 2.5,
+          "fits": false
+        },
+        {
+          "name": "Jetson Orin Nano 8GB",
+          "kind": "edge",
+          "budgetGB": 6,
+          "fits": true
+        },
+        {
+          "name": "RTX 3070 8GB",
+          "kind": "gpu",
+          "budgetGB": 8,
+          "fits": true
+        },
+        {
+          "name": "RTX 4070 12GB",
+          "kind": "gpu",
+          "budgetGB": 11,
+          "fits": true
+        },
+        {
+          "name": "Jetson Orin NX 16GB",
+          "kind": "edge",
+          "budgetGB": 12,
+          "fits": true
+        },
+        {
+          "name": "Jetson AGX Orin 32GB+",
+          "kind": "edge",
+          "budgetGB": 28,
+          "fits": true
+        }
+      ],
+      "license": "apache-2.0",
+      "tags": [
+        "transformers",
+        "safetensors",
+        "qwen3_5",
+        "image-text-to-text",
+        "gui-grounding",
+        "computer-use",
+        "gui-agent",
+        "desktop"
+      ]
+    },
+    {
+      "id": "Abiray/MiniCPM-V-4.7-1B-abliterated-heretic-GGUF",
+      "url": "https://huggingface.co/Abiray/MiniCPM-V-4.7-1B-abliterated-heretic-GGUF",
+      "createdAt": "2026-10-14T09:38:17.000Z",
+      "trendingScore": 6,
+      "likes": 6,
+      "downloads": 0,
+      "paramsB": 1,
+      "vramInt4GB": 2,
+      "minBoardBudgetGB": 2.5,
+      "boardFit": [
+        {
+          "name": "라즈베리파이 5 8GB (CPU)",
+          "kind": "edge-cpu",
+          "budgetGB": 3,
+          "fits": true
+        },
+        {
+          "name": "Jetson Nano 4GB",
+          "kind": "edge",
+          "budgetGB": 2.5,
+          "fits": true
+        },
+        {
+          "name": "Jetson Orin Nano 8GB",
+          "kind": "edge",
+          "budgetGB": 6,
+          "fits": true
+        },
+        {
+          "name": "RTX 3070 8GB",
+          "kind": "gpu",
+          "budgetGB": 8,
+          "fits": true
+        },
+        {
+          "name": "RTX 4070 12GB",
+          "kind": "gpu",
+          "budgetGB": 11,
+          "fits": true
+        },
+        {
+          "name": "Jetson Orin NX 16GB",
+          "kind": "edge",
+          "budgetGB": 12,
+          "fits": true
+        },
+        {
+          "name": "Jetson AGX Orin 32GB+",
+          "kind": "edge",
+          "budgetGB": 28,
+          "fits": true
+        }
+      ],
+      "license": "apache-2.0",
+      "tags": [
+        "gguf",
+        "vision",
+        "multimodal",
+        "minicpm-v",
+        "abliterated",
+        "heretic",
+        "uncensored",
+        "llama.cpp"
+      ]
+    }
+  ],
+  "note": "image-text-to-text 모델을 trendingScore 내림차순으로 받아 (1) 파라미터 <= 8B (2) 최근 60일 이내 생성 두 조건으로 좁힘. 크기 못 읽는 모델 제외. VRAM 은 int4 기준 대략 추정(확정 아님). boardFit 은 그 추정치를 경량 보드~소비자 GPU 예산과 비교한 것 — 특정 GPU 로 한정하지 않음."
+}

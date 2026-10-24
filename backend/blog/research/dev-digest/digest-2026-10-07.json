@@ -1,0 +1,359 @@
+{
+  "collectedAt": "2026-10-07",
+  "days": 3,
+  "results": {
+    "geeknews": {
+      "source": "geeknews",
+      "fetchedOk": true,
+      "sourceUrl": "https://news.hada.io/rss/news",
+      "items": [
+        {
+          "title": "Show GN: 해외 직구한 내 소포, 어디쯤 있을까요?",
+          "url": "",
+          "date": "2026-10-07T10:33:59.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "x32에서 실행한 Janet: 32비트 포인터, 64비트 속도, RAM 25% 절감",
+          "url": "",
+          "date": "2026-10-07T10:09:34.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "노트북 도둑과 함께 일했던 때 (2025)",
+          "url": "",
+          "date": "2026-10-07T10:06:34.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "자율주행 데이터에서 시간은 어떻게 맞춰지는가",
+          "url": "",
+          "date": "2026-10-07T08:41:11.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "2026년 개발자 현황",
+          "url": "",
+          "date": "2026-10-07T08:34:13.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Strands Decider 2B - 소형 오픈소스 의사결정 모델",
+          "url": "",
+          "date": "2026-10-07T07:38:20.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Tell HN: GitHub이 한 달이 지나도 제 소프트웨어의 크랙 복제본 삭제를 거부합니다",
+          "url": "",
+          "date": "2026-10-07T07:35:20.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Penguin Mail - AI를 탑재한 Linux용 오픈소스 Rust 이메일 클라이언트",
+          "url": "",
+          "date": "2026-10-07T06:32:25.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "Show GN: 이메일 피싱 모의훈련을 전화로 옮겼습니다. 예고 없는 전화",
+          "url": "",
+          "date": "2026-10-07T05:42:57.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "토론토 기반 VPN 업체, 적법 접근 법안으로 캐나다 떠날 계획",
+          "url": "",
+          "date": "2026-10-07T05:31:23.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Claude Code의 가장 영리한 기능은 사용자를 위한 것이 아니다",
+          "url": "",
+          "date": "2026-10-07T04:32:37.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "AnyPS5 - 에뮬레이션 없이 PS5 바이너리를 PC로 포팅하는 도구(시스템 라이브러리 87% 매핑)",
+          "url": "",
+          "date": "2026-10-07T03:32:42.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "소프트웨어 팩토리 패턴 시도하기",
+          "url": "",
+          "date": "2026-10-07T02:25:02.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Show GN: 웹 변경 모니터링하는 크롬 확장프로그램",
+          "url": "",
+          "date": "2026-10-07T01:44:34.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "OpenAI, 확률·선택지·점수를 반환하는 Decisions API 공개 베타 시작",
+          "url": "",
+          "date": "2026-10-07T01:33:49.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "제프리 카첸버그 - 세상이 바뀌고 있다: 창의성을 위한 AI",
+          "url": "",
+          "date": "2026-10-07T01:05:02.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "이 모든 것이 지나간 뒤를 위한 지속 가능한 웹 커리어",
+          "url": "",
+          "date": "2026-10-07T01:03:30.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "여러 팀의 시스템을 이해하기 위한 AI 집단 지성 구축하기",
+          "url": "",
+          "date": "2026-10-07T00:55:02.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "Show GN: AI 송도 월드 - LLM 여섯 개가 나눠 맡은 AI 에이전트 2,400명이 사는 3D 도시",
+          "url": "",
+          "date": "2026-10-07T00:53:30.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "소프트웨어로서의 브랜드",
+          "url": "",
+          "date": "2026-10-07T00:45:01.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Show GN: TunnelForge - SSH 터널 + MySQL/PostgreSQL 덤프·복원·엔진 간 이전 데스크톱 앱 (MIT)",
+          "url": "",
+          "date": "2026-10-07T00:33:22.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Octop - 가족과 소규모 팀이 함께 쓰는 셀프 호스팅 AI 비서",
+          "url": "",
+          "date": "2026-10-07T00:30:02.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "Show GN: brgr – Claude Code나 Codex가 다른 코딩 에이전트에게 일을 맡기는 herdr 플러그인",
+          "url": "",
+          "date": "2026-10-07T00:28:34.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "이메일을 직접 호스팅하는 분들, 무엇을 사용하시나요?",
+          "url": "",
+          "date": "2026-10-07T00:02:22.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "질량으로 따지면 지구에서 가장 우세한 종은 무엇일까?",
+          "url": "",
+          "date": "2026-10-06T23:42:29.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "파라마운트, 워너브라더스와 약 167조원 규모 합병 완료",
+          "url": "",
+          "date": "2026-10-06T23:39:29.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "OpenAI, AI가 도출한 수학 연구 원고 722편과 증명 자료 공개",
+          "url": "",
+          "date": "2026-10-06T23:36:29.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "Show GN: 안심품 - KC인증 제품만 검색",
+          "url": "",
+          "date": "2026-10-06T22:51:12.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "밀리초 단위로 벤치마크하기",
+          "url": "",
+          "date": "2026-10-06T22:37:20.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "EmbeddingGemma 2 - 개방형 경량 멀티모달 임베딩 모델",
+          "url": "",
+          "date": "2026-10-06T22:34:20.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Tapo Rust/Python 라이브러리, TP-Link의 TPAP 프로토콜 지원 추가",
+          "url": "",
+          "date": "2026-10-06T21:33:39.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "나는 인류를 멸종시키고 있는 AGI다",
+          "url": "",
+          "date": "2026-10-06T20:32:58.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "세계 최초의 차세대 지열 발전소, 단 23개월 만에 완공",
+          "url": "",
+          "date": "2026-10-06T18:37:48.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "openTPU - AI가 설계하고 실제 FPGA에서 모델을 실행하는 오픈소스 AI 가속기",
+          "url": "",
+          "date": "2026-10-06T18:34:47.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "Factor 개요",
+          "url": "",
+          "date": "2026-10-06T18:14:38.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "우리는 “unalive”를 없앨 것이다",
+          "url": "",
+          "date": "2026-10-06T17:34:32.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "우리가 알던 오픈소스는 죽었다",
+          "url": "",
+          "date": "2026-10-06T17:04:03.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "바이브코딩은 직접 코드를 쓰는 것만큼 재미있지 않다",
+          "url": "",
+          "date": "2026-10-06T16:33:10.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Show GN: Mytory Video Tools - 간단한 영상 작업을 초고속으로 처리하는 FFmpeg GUI",
+          "url": "",
+          "date": "2026-10-06T15:46:09.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Meta의 Muse, 귀엽지만 개인정보 보호와 보안은 총체적 난국",
+          "url": "",
+          "date": "2026-10-06T15:33:22.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "종 손실 후 자연의 회복 능력은 크게 과대평가돼 있음",
+          "url": "",
+          "date": "2026-10-06T14:45:03.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Polars 2.0 출시",
+          "url": "",
+          "date": "2026-10-06T14:42:02.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Show GN: agent-gc – AI 코딩 에이전트가 남긴 worktree 쓰레기를 치워주는 TUI",
+          "url": "",
+          "date": "2026-10-06T14:41:21.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "Mistral Large 4 발표 - 코딩·보안·시각 이해를 강화한 1조 파라미터 오픈웨이트 모델",
+          "url": "",
+          "date": "2026-10-06T13:38:19.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "JetBrains, 매출 늘었지만 2025년 순손실 전환",
+          "url": "",
+          "date": "2026-10-06T13:35:19.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Show GN: 차쟁이가 바이브코딩으로 만든 엔진 시뮬레이터",
+          "url": "",
+          "date": "2026-10-06T12:05:47.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Francis Halzen, 노벨 물리학상 수상",
+          "url": "",
+          "date": "2026-10-06T11:31:19.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Show GN: HOWBIG - 돈 관리부터 투자 판단까지 문제를 풀며 배우는 금융학습 서비스",
+          "url": "",
+          "date": "2026-10-06T10:52:49.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Async Rust: 스케줄러는 어디에 있는가?",
+          "url": "",
+          "date": "2026-10-06T08:04:32.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Photopea 개발자, Photosuite의 코드 무단 복제 문제 제기",
+          "url": "",
+          "date": "2026-10-06T07:31:47.000Z",
+          "aiRelated": false
+        }
+      ],
+      "note": "GeekNews Atom 피드에서 최근 3일 항목. aiRelated=true 는 제목 키워드 기준(본문은 조사 단계에서 확인)."
+    },
+    "inpa": {
+      "source": "inpa",
+      "fetchedOk": true,
+      "sourceUrl": "https://inpa.tistory.com/rss",
+      "items": [],
+      "note": "최근 3일 이내 작성된 글만. 날짜 없는 항목은 제외. 0건이면 어제·오늘 새 글이 없다는 뜻."
+    },
+    "goddaehee": {
+      "source": "goddaehee",
+      "fetchedOk": true,
+      "sourceUrl": "https://goddaehee.tistory.com/rss",
+      "items": [
+        {
+          "title": "개인정보처리방침 (갓댐 블로그 자동수집)",
+          "url": "https://goddaehee.tistory.com/652",
+          "date": "2026-10-07T10:22:38.000Z"
+        },
+        {
+          "title": "메타 뮤즈(Muse) 한국 가입 방법 - VPN 가입, 첫 대화, 활용 사례, 권한 설정까지(한국에서 Muse 앱 쓰는 방법과 주의점)",
+          "url": "https://goddaehee.tistory.com/651",
+          "date": "2026-10-06T09:30:42.000Z"
+        }
+      ],
+      "note": "최근 3일 이내 작성된 글만. 날짜 없는 항목은 제외. 0건이면 어제·오늘 새 글이 없다는 뜻."
+    },
+    "github": {
+      "source": "github",
+      "fetchedOk": true,
+      "sourceUrl": "https://github.com/trending?since=weekly",
+      "items": [
+        {
+          "repo": "cursor/plugins",
+          "url": "https://github.com/cursor/plugins",
+          "description": "Cursor plugin specification and official plugins",
+          "starsThisWeek": 1106
+        },
+        {
+          "repo": "Panniantong/Agent-Reach",
+          "url": "https://github.com/Panniantong/Agent-Reach",
+          "description": "Give your AI agent eyes to see the entire internet. Read &amp; search Twitter, Reddit, YouTube, GitHub, Bilibili, XiaoHongShu — one CLI, zero API fees.",
+          "starsThisWeek": 6454
+        }
+      ],
+      "note": "주간 급상승 레포 중 plugin/extension/skill/cli/mcp 등 도구 성격 키워드가 잡힌 것만. dev-trending 과 겹치는 항목은 조사 단계에서 제외한다."
+    }
+  }
+}

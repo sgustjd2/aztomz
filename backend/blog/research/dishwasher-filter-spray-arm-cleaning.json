@@ -1,0 +1,14 @@
+{
+  "slug": "dishwasher-filter-spray-arm-cleaning",
+  "keyword": "식기세척기 필터 청소 분사암 관리",
+  "date": "2026-10-17",
+  "sources": [
+    {"title":"LG Dishwasher - How To Clean The Filter","url":"https://www.lg.com/us/support/help-library/lg-dishwasher-how-to-clean-the-filter--20153082659663","host":"www.lg.com","body":"LG 안내는 하단 바구니를 빼고 필터를 꺼내 음식물 찌꺼기를 제거한 뒤 흐르는 물로 씻고 역순으로 재설치하도록 설명한다. 제품마다 이미지와 내용이 다를 수 있어 사용 설명서를 확인하라고 명시한다."},
+    {"title":"LG Dishwasher - Maintenance","url":"https://www.lg.com/us/support/help-library/lg-dishwasher-maintenance--1433962981524","host":"www.lg.com","body":"LG 2026-09 안내는 필터 청소 주기를 사용 설명서의 사용량별 표로 확인하라고 한다. 분사 노즐을 막은 음식물은 핀이나 적합한 뾰족한 도구로 제거하며, 필터를 잘못 조립하면 성능에 영향을 준다고 안내한다."},
+    {"title":"How to Properly Clean Your Dishwasher Filter","url":"https://www.bosch-home.com/us/owner-support/get-support/support-selfhelp-dishwashers-cleaning-dishwasher-filter","host":"www.bosch-home.com","body":"Bosch는 모델 설명서에 따라 하단 필터를 분리하고 순한 비누와 부드러운 솔로 흐르는 물에서 세척한 뒤 필터와 분사암을 다시 장착하라고 설명한다."},
+    {"title":"How to Clean your Dishwasher Spray Arms","url":"https://www.bosch-home.com/us/en/c/spotlight/blt6555927d0a0b6695/how-to-clean-dishwasher-spray-arms","host":"www.bosch-home.com","body":"Bosch는 분사암을 몇 달마다 확인하고 따뜻한 물로 헹구면서 이쑤시개로 막힌 구멍의 이물질을 제거하는 방법을 설명한다."},
+    {"title":"Dishwasher Troubleshooting: Dishwasher Not Cleaning Dishes","url":"https://www.bosch-home.com/us/owner-support/get-support/support-selfhelp-dishwasher-not-cleaning-dishes","host":"www.bosch-home.com","body":"Bosch는 필터 청소와 분사암 막힘 확인, 접시를 올바르게 적재하는 방법을 안내한다. 큰 음식물은 긁어내되 일반적으로 사전 헹굼은 필요하지 않다고 한다."}
+  ],
+  "cannotSay": ["제품별 차이를 무시한 청소 주기와 분해 방법", "청소하면 세척력이 반드시 회복된다는 보장", "직접 제품을 사용해 확인했다는 표현"],
+  "notes": ["출처는 모두 제조사 공식 지원 문서다.", "LG와 Bosch 안내가 다를 수 있으므로 해당 제품의 설명서를 우선한다."]
+}
