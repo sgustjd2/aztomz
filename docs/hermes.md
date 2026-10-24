@@ -100,7 +100,7 @@ Hermes는 [Nous Research](https://nousresearch.com)의 AI 에이전트 런타임
 | `hangeut-write` | 짧은 한 줄(verdict) 너머 **블로그형 본문(`article`)** — 문단 짧게·소제목·줄바꿈 깔끔 |
 | `hangeut-bgm` | 쇼츠·릴스·틱톡 **유행 배경음악** 큐레이터 (음악은 제일 빨리 식어 유튜브 급상승으로 최신성 검증) |
 | `hangeut-pulse` | **창업 트렌드 펄스** — 요일별 분야 로테이션, 트렌드별 상세 창업 아이디어 3개 |
-| `hangeut-restage` | **게시된 트렌드 유행 단계 재판정** — 분석일 오래된 3건을 `restage.mjs --pick`으로 받아 최근 검색 신호로 단계를 판단하고 `restage.mjs --apply`로 반영 요청(정규 단계·근거 URL 검증은 스크립트가 함) |
+| `hangeut-restage` | **게시된 트렌드 유행 단계 재판정** — 분석일 오래된 5건을 `restage.mjs --pick`으로 받아 최근 검색 신호로 단계를 판단하고 `restage.mjs --apply`로 반영 요청(정규 단계·근거 URL 검증은 스크립트가 함) |
 | `hangeut-learn` | 사용자 피드백·정정("이건 광고 아냐")을 `learnings.md`에 기록 → 다음부터 반영 |
 | `hangeut-blog` | 게시된 트렌드 1건의 검색 제목·태그·메타설명을 정해 `blog-build.mjs` → `blog-publish.mjs`로 티스토리 발행 |
 | `hangeut-shops` | 디저트·음식 트렌드의 파는 가게 목록(`shops`)을 실제 검색으로 조사 |
@@ -125,7 +125,7 @@ Hermes는 [Nous Research](https://nousresearch.com)의 AI 에이전트 런타임
 | **한끗 자동 수집·게시** (`9ddacd750b48`) | 매일 **21:30** | `hangeut-run`(수집·분석) → `auto-build.mjs`(자동검증·게시). 검증통과분만 사이트 반영 · git push → Vercel 배포. 보류분은 review-queue에 쌓이고, 후보 0건인 날은 `--none`으로 runs.jsonl에만 기록. **요일 로테이션 → 목 21:30 = 신조어(주간 사전 갱신)** |
 | **한끗 수집 재시도 게이트** | 매일 **21:50** | `hangeut_retry_gate.py`(no-agent) — 그날 21:30 수집이 error로 끝났을 때만 1회 재실행을 큐잉. 성공했거나 실행이 없었으면 아무것도 안 함 |
 | **한끗 광고/진짜 일일 재확인** (신규) | 매일 **21:15** | `recheck_ad.py`(no-agent) — 가장 오래된 신뢰분석 1건의 출처 재검증(recheck-ad.mjs) → 살아있으면 analyzedAt 갱신(→ 홈 featured 회전). 근거 대조(`lib/grounding.mjs`) 실패 시엔 회전 없이 '사람 확인 필요'로 보고하고 다음 오래된 항목(최대 3건)을 시도. 메인(21:00)과 trends.json 쓰기 충돌 방지로 15분 뒤 |
-| **한끗 유행 단계 재판정** (`2bfe2a1c0d40`) | 매일 **21:05** | `hangeut-restage` — 게시 트렌드 3건의 유행 단계 재판정 → `restage.mjs --apply`(검증·반영·git push). 최근 14일 재판정분은 제외. 기록 `backend/out/pipeline/restage.jsonl` |
+| **한끗 유행 단계 재판정** (`2bfe2a1c0d40`) | 매일 **21:05** | `hangeut-restage` — 게시 트렌드 5건의 유행 단계 재판정 → `restage.mjs --apply`(검증·반영·git push). 최근 14일 재판정분은 제외. 기록 `backend/out/pipeline/restage.jsonl` |
 | **한끗 주간 갱신** (`dc54cec90b5e`) | 매주 월 **21:00** | `hangeut_daily.py`(no-agent) — trends.json 날짜 스탬프 + 신선도 리포트. 무료·안 죽음 |
 | **한끗 펄스 — 오늘의 분야** (`f3a0b6724fa4`) | 매일 **21:00** | `pulse_categories.py`(no-agent) — 오늘 분석할 펄스 분야를 디스코드로 안내 |
 | **한끗 — 오늘의 수집 분야** (`bc1a98451fb7`) | 매일 **21:00** | `trend_categories.py`(no-agent) — 오늘 수집할 트렌드 분야 안내 |

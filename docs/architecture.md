@@ -78,7 +78,7 @@ frontend/*.html
 - 로컬 Hermes 운영과 검증 게이트의 자세한 흐름은 [docs/hermes.md](hermes.md)를 따른다.
 
 - 한끗 자동 수집·게시: 매일 21:30 Hermes(로컬)가 `hangeut-run`으로 후보를 만들고 `backend/scripts/auto-build.mjs`가 검증·게시한다(검증 통과분만 `trends.json` 반영 후 git push). 재시도 게이트는 21:50, 광고/진짜 재확인은 21:15. 보류분은 사람이 디스코드 "검수"로 `pipeline-review.mjs`를 통해 게시 또는 버리기를 정한다(이유 코멘트는 `reviews.jsonl`·`learnings.md`에 남는다).
-- 게시된 트렌드의 유행 단계 재판정: 매일 21:05 Hermes(로컬, `hangeut-restage`)가 분석일 오래된 3건을 골라 `backend/scripts/restage.mjs`로 반영한다. 정규 stage 라벨과 살아 있는 비SNS 근거 URL 1개 이상만 통과하며, `stage`·`stageMsg`·`analyzedAt`(실제 재판정한 항목만)·근거 `src`를 바꾼다. 본문은 고치지 않고, 어긋나는 표현은 conflict로 보고한다. 기록은 `backend/out/pipeline/restage.jsonl`.
+- 게시된 트렌드의 유행 단계 재판정: 매일 21:05 Hermes(로컬, `hangeut-restage`)가 분석일 오래된 5건을 골라 `backend/scripts/restage.mjs`로 반영한다. 정규 stage 라벨과 살아 있는 비SNS 근거 URL 1개 이상만 통과하며, `stage`·`stageMsg`·`analyzedAt`(실제 재판정한 항목만)·근거 `src`를 바꾼다. 본문은 고치지 않고, 어긋나는 표현은 conflict로 보고한다. 기록은 `backend/out/pipeline/restage.jsonl`.
 - `auto-build.mjs`와 `restage.mjs`는 `trends.json`을 쓰기 직전에 다시 읽어, 서로(및 `recheck-ad.mjs`)의 변경을 덮어쓰지 않는다.
 ## 보안 메모
 - 로그인/가입은 현재 일반 플로우에서 사용하지 않는다. `login.html`, `signup.html`은 안내 페이지로만 유지한다.

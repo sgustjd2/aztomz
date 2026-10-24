@@ -21,7 +21,7 @@
 | `youtube-summaries/` | 생성물 — AI Engineer(@aiDotEngineer) 채널 새 영상 한국어 상세 요약 모음(영상별 `.md` + 인덱스). **배포 대상 아님**(frontend/만 Vercel 배포) |
 | `backend/scripts/auto-build.mjs` | **자동 게시 엔진** — 출처 자동검증(404/410/관련성) · **근거 대조**(서술의 수치·매체·확산 표현이 출처 본문에 없으면 보류) · 중복 제거 · 통과분만 trends.json 반영 · images 필드 자동 주입(og:image) · shops 배열 URL 생존성 검증(죽은 링크 제거) · git push · 실행마다 `backend/out/pipeline/runs.jsonl` 1줄 + `SUMMARY {json}` 출력 · 보류 후보는 `.pipeline/review-queue.json`에 적재 · `--none`(후보 0건 기록) · `--approved`(사람 승인분 게시) |
 | `backend/scripts/pipeline-review.mjs` | **보류 후보 사람 검수 + 수집 수치** — `--list` · `--approve=<id>`(→ auto-build `--approved`) · `--reject=<id>` · `--stats [--days=14]` · `--selftest`. 결정은 `backend/out/pipeline/reviews.jsonl`에 기록. 디스코드 "검수"에서 Hermes `hangeut-approve`가 호출 |
-| `backend/scripts/restage.mjs` | **게시된 트렌드의 유행 단계 재판정** — `--pick=3 [--json]`(분석일 오래된 트렌드형, 최근 14일 재판정분 제외) · `--apply=<판정.json> [--no-git\|--dry]`(정규 stage만, 근거는 열리는 비SNS URL 1개 이상 · stage·stageMsg·analyzedAt 갱신 · 근거를 src에 추가 · 하락·끝물이면 label/buzz 조정 · 본문은 안 고치고 어긋나면 conflict 보고 → 검증·refresh·git push) · `--selftest`. 기록 `backend/out/pipeline/restage.jsonl`. Hermes `hangeut-restage`(매일 21:05)가 판단하고 이 스크립트가 쓴다 |
+| `backend/scripts/restage.mjs` | **게시된 트렌드의 유행 단계 재판정** — `--pick=5 [--json]`(분석일 오래된 트렌드형, 최근 14일 재판정분 제외) · `--apply=<판정.json> [--no-git\|--dry]`(정규 stage만, 근거는 열리는 비SNS URL 1개 이상 · stage·stageMsg·analyzedAt 갱신 · 근거를 src에 추가 · 하락·끝물이면 label/buzz 조정 · 본문은 안 고치고 어긋나면 conflict 보고 → 검증·refresh·git push) · `--selftest`. 기록 `backend/out/pipeline/restage.jsonl`. Hermes `hangeut-restage`(매일 21:05)가 판단하고 이 스크립트가 쓴다 |
 | `backend/scripts/recheck-ad.mjs` | **광고/진짜 일일 재확인** — 가장 오래된 신뢰분석 1건의 출처 재검증(ddgs) → 살아있으면 analyzedAt=오늘 갱신(→ 홈 featured 회전). 근거 대조 실패 항목은 회전 없이 '사람 확인 필요' 보고 후 다음 오래된 항목(최대 3건) 시도 · ddgs 차단으로 본문을 못 읽은 출처는 삭제하지 않고 '유지' |
 | `backend/scripts/lib/websearch.mjs` | **ddgs 래퍼**(공용 `extract`) — 차단(HTTP 430/432/500 등)되면 ddgs가 `DDGSException`을 stdout에 찍고 0으로 끝나는데, 이를 빈 본문으로 돌려줘 '무관'이 아니라 '차단(못 읽음)'으로 처리. auto-build·recheck-ad·check-source가 이 함수를 같이 쓴다 |
 | `backend/scripts/lib/grounding.mjs` | **근거 대조 게이트**(결정적·LLM 없음) — 항목 서술(excerpt·pull·verdict·satTxt·article·shops·reasons)의 수치·매체명·확산 표현이 검증 통과 출처 본문에 있는지 문자열 대조. 유래·인물 바꿔치기·의미 오류는 못 잡음. 셀프테스트: `node backend/scripts/lib/grounding.mjs` |
@@ -89,7 +89,7 @@ Vercel 자동 배포 (git push 시)
 - trends.json만 수정. trends.js는 건드리지 말 것.
 - auto-build.mjs가 출처 자동검증(게이트) — 죽음·무관·못읽음 출처만 있으면 자동 보류 · 출처가 통과해도 서술이 출처 밖 수치·매체·확산 표현이면 보류(근거 대조)
 - 보류 후보는 `.pipeline/review-queue.json`에 쌓이며, 사람이 디스코드에서 "검수"로 게시 또는 버리기를 정한다(`pipeline-review.mjs`). 게시도 살아 있는 출처 1개 이상은 필수. 게시·버리기 뒤에는 이유를 버튼(프리셋 또는 직접 입력)으로 남길 수 있고, 그 코멘트는 `reviews.jsonl`과 `learnings.md`에 기록된다(`--note`)
-- 게시된 트렌드의 유행 단계(stage)는 `restage.mjs`가 매일 21:05 3건씩 재판정한다(분석일 오래된 순). 본문은 고치지 않고, 근거 URL 1개 이상이 있을 때만 단계·분석일을 바꾼다
+- 게시된 트렌드의 유행 단계(stage)는 `restage.mjs`가 매일 21:05 5건씩 재판정한다(분석일 오래된 순). 본문은 고치지 않고, 근거 URL 1개 이상이 있을 때만 단계·분석일을 바꾼다
 - `auto-build.mjs`는 `trends.json`을 쓰기 직전에 다시 읽어, 검증하는 사이 `restage.mjs`·`recheck-ad.mjs`가 쓴 변경을 덮어쓰지 않는다
 - 자동 게시 항목의 썸네일은 auto-build.mjs가 출처 og:image로 자동 주입을 시도하며, 공통 카드에서 대표 이미지가 없거나 로드에 실패하면 `frontend/assets/defaults/`의 카테고리별 기본 일러스트 SVG로 대체하고 기본 이미지임을 표시한다
 - `H.FEATURES`의 `visitorReviews:false`, `personalCollection:false`로 방문자 후기·보관함·저장 UI를 비노출한다. 기존 localStorage 데이터와 스토어 함수는 보존한다

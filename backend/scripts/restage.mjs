@@ -3,11 +3,11 @@
    한끗 · 이미 게시된 트렌드의 유행 단계 재판정 (판단은 봇, 쓰기는 이 스크립트)
 
    게시 뒤 몇 달 지나도 stage가 '상승'·'피크'로 남는 문제(2026-10-24: 트렌드 159건 중 상승 91·피크 36,
-   85건은 8월 분석)를 매일 조금씩 고친다. Hermes(hangeut-restage)가 오래된 항목을 골라 최근 검색 신호로
+   85건은 8월 분석)를 매일 조금씩 고친다. Hermes(hangeut-restage)가 매일 오래된 항목 5건을 골라 최근 검색 신호로
    단계를 판단하고, 이 스크립트가 검증·반영·배포한다.
 
    사용:
-     node backend/scripts/restage.mjs --pick=3 [--json]       재판정할 항목(분석일 오래된 순, 최근 14일 재판정분 제외)
+     node backend/scripts/restage.mjs --pick=5 [--json]       재판정할 항목(분석일 오래된 순, 최근 14일 재판정분 제외)
      node backend/scripts/restage.mjs --apply=<judgments.json> [--no-git] [--dry]
        judgments: [{ "id", "stage", "stageMsg", "reason", "evidence": [{ "name", "url", "date"? }] }]
      node backend/scripts/restage.mjs --selftest
@@ -200,10 +200,10 @@ async function selftest() {
 if (flag('selftest')) await selftest();
 else if (flag('pick')) {
   const data = JSON.parse(readFileSync(PATHS.trends, 'utf-8'));
-  const list = pick(data.trends || data, readJsonl(PATHS.log), Number(flag('pick')) || 3);
+  const list = pick(data.trends || data, readJsonl(PATHS.log), (typeof flag('pick') === 'string' ? Number(flag('pick')) : 0) || 5);
   const rows = list.map((t) => ({ id: t.id, title: t.title, cat: t.cat, stage: t.stage, stageMsg: t.stageMsg, label: t.label,
     analyzedAt: t.analyzedAt, collectedAt: t.collectedAt, verdict: String(t.verdict || '').slice(0, 140) }));
   if (flag('json')) console.log(JSON.stringify(rows, null, 2));
   else for (const r of rows) console.log(`• [${r.cat}] ${r.title} (id: ${r.id}) — ${r.stage} · 분석 ${r.analyzedAt}`);
 } else if (flag('apply')) await apply(String(flag('apply')));
-else { console.log('사용: --pick=3 [--json] | --apply=<judgments.json> [--no-git] [--dry] | --selftest'); process.exitCode = 1; }
+else { console.log('사용: --pick=5 [--json] | --apply=<judgments.json> [--no-git] [--dry] | --selftest'); process.exitCode = 1; }
