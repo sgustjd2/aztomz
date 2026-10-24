@@ -847,18 +847,33 @@ async function publish() {
   };
 
   try {
-    await page.goto(editPostId ? `${BASE}/manage/newpost/${editPostId}` : `${BASE}/manage/newpost/`, { waitUntil: 'domcontentloaded' });
+    const editorUrl = editPostId ? `${BASE}/manage/newpost/${editPostId}` : `${BASE}/manage/newpost/`;
+    await page.goto(editorUrl, { waitUntil: 'domcontentloaded' });
 
     if (isLoginPage(page)) {
       const result = await trySavedKakaoLogin(page);
       if (!result.ok) {
+        const canWaitForHuman = process.stdin.isTTY && process.env.HEADLESS !== '1';
+        if (!canWaitForHuman) {
+          throw new Error(`로그인 세션이 만료됐고 자동 로그인은 중단됐습니다: ${result.reason} `
+            + '대화형 화면에서 --login 으로 인증을 완료한 뒤 다시 실행하세요.');
+        }
         needsHumanLogin = true;
-        throw new Error(`로그인 세션이 만료됐고 자동 로그인은 중단됐습니다: ${result.reason} `
-          + '화면에서 보안 확인/CAPTCHA를 직접 처리하거나 --login 으로 로그인하세요.');
+        console.log(`\n자동 로그인을 멈췄습니다: ${result.reason}`
+          + '\n열린 브라우저에서 카카오 로그인/CAPTCHA/추가 인증을 직접 완료한 뒤 엔터를 누르면 발행을 이어갑니다.');
+        const rl = createInterface({ input: process.stdin, output: process.stdout });
+        await rl.question('> 사람 인증 완료 후 엔터: ');
+        rl.close();
+        if (isLoginPage(page)) throw new Error('사람 인증 후에도 로그인 화면에 있습니다. 인증 상태를 확인하세요.');
+        await ctx.storageState({ path: statePath });
+        await page.goto(editorUrl, { waitUntil: 'domcontentloaded' });
+        if (isLoginPage(page)) throw new Error('인증 후 글쓰기 화면으로 돌아오지 못했습니다. --login 으로 확인하세요.');
+        needsHumanLogin = false;
+      } else {
+        await ctx.storageState({ path: statePath });
+        await page.goto(editorUrl, { waitUntil: 'domcontentloaded' });
+        if (isLoginPage(page)) throw new Error('저장된 정보로 로그인한 뒤 글쓰기 화면에 진입하지 못했습니다. --login 으로 확인하세요.');
       }
-      await ctx.storageState({ path: statePath });
-      await page.goto(editPostId ? `${BASE}/manage/newpost/${editPostId}` : `${BASE}/manage/newpost/`, { waitUntil: 'domcontentloaded' });
-      if (isLoginPage(page)) throw new Error('저장된 정보로 로그인한 뒤 글쓰기 화면에 진입하지 못했습니다. --login 으로 확인하세요.');
     }
 
     // ── 제목
