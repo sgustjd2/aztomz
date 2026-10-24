@@ -35,7 +35,9 @@ Hermes는 [Nous Research](https://nousresearch.com)의 AI 에이전트 런타임
 - **수집·분석:** 고구미봇 온디맨드(디스코드 "한끗 실행" 명령).
 - **자동검증·게시:** 매일 21:30 hangeut-run 수집 후 auto-build.mjs가 실행 → 통과분만 사이트에 올라감 (사람 승인 불필요).
 - **보류:** 출처가 404·무관·못읽음만 있는 항목, 또는 서술이 출처 밖 수치·매체·확산 표현(근거 대조 실패)인 항목은 자동 보류(`.pipeline/review-queue.json`). 디스코드 보고의 수치는 auto-build의 `SUMMARY` 줄을 그대로 쓴다.
-- **사람 검수(2026-10-23~):** 디스코드에서 "검수"라고 하면 `hangeut-approve` 스킬이 보류 항목을 하나씩 버튼 카드(게시/버리기/나중에)로 보여준다. "게시"는 `pipeline-review.mjs --approve=<id>` → `auto-build.mjs --approved`로 처리하며, 살아 있는 출처 1개 이상이라는 조건은 그대로 지킨다. 결정은 `backend/out/pipeline/reviews.jsonl`에 남는다.
+- **사람 검수(2026-10-23~):** 디스코드에서 "검수"라고 하면 `hangeut-approve` 스킬이 보류 항목을 하나씩 버튼 카드(게시/버리기/나중에)로 보여준다. "게시"는 `pipeline-review.mjs --approve=<id>` → `auto-build.mjs --approved`로 처리하며, 살아 있는 출처 1개 이상이라는 조건은 그대로 지킨다. 결정은 `backend/out/pipeline/reviews.jsonl`에 남는다. 게시·버리기 뒤에는 이유 버튼(프리셋 또는 직접 입력)이 뜨고, 코멘트는 `pipeline-review.mjs --note`로 `reviews.jsonl`과 `learnings.md`에 남아 다음 수집이 참고한다.
+- **유행 단계 재판정(2026-10-24~):** 이미 게시된 트렌드 중 분석일이 오래된 것을 매일 21:05에 3건 골라 `hangeut-restage`가 최근 검색 신호로 단계를 다시 판단한다. `restage.mjs --apply`가 정규 단계 라벨·근거 URL(살아 있는 비SNS 출처 1개 이상)을 검증해 통과분만 반영하고(`stage`·`stageMsg`·`analyzedAt`, 근거를 `src`에 추가), 하락·끝물이면 label·buzz를 함께 낮춘다. 본문(verdict·excerpt·article)은 고치지 않고 어긋나는 표현은 conflict로 보고만 한다. 기록은 `backend/out/pipeline/restage.jsonl`.
+- **수집 봇의 SNS 신호(2026-10-24~):** 인스타·X 언급은 직접 스크래핑하지 않고, 검색엔진 `site:` 검색 요약문으로만 판단에 쓴다.
 
 ---
 
@@ -70,9 +72,9 @@ Hermes는 [Nous Research](https://nousresearch.com)의 AI 에이전트 런타임
 
 ---
 
-## 스킬 12개
+## 스킬 16개
 
-`hermes/skills/hangeut/<slug>/SKILL.md`. 전부 enabled.
+`hermes/skills/hangeut/<slug>/SKILL.md`. 전부 enabled. (디렉터리 기준 16개)
 
 ### 파이프라인 (메인 트렌드)
 | 스킬 | 역할 |
@@ -98,6 +100,7 @@ Hermes는 [Nous Research](https://nousresearch.com)의 AI 에이전트 런타임
 | `hangeut-write` | 짧은 한 줄(verdict) 너머 **블로그형 본문(`article`)** — 문단 짧게·소제목·줄바꿈 깔끔 |
 | `hangeut-bgm` | 쇼츠·릴스·틱톡 **유행 배경음악** 큐레이터 (음악은 제일 빨리 식어 유튜브 급상승으로 최신성 검증) |
 | `hangeut-pulse` | **창업 트렌드 펄스** — 요일별 분야 로테이션, 트렌드별 상세 창업 아이디어 3개 |
+| `hangeut-restage` | **게시된 트렌드 유행 단계 재판정** — 분석일 오래된 3건을 `restage.mjs --pick`으로 받아 최근 검색 신호로 단계를 판단하고 `restage.mjs --apply`로 반영 요청(정규 단계·근거 URL 검증은 스크립트가 함) |
 | `hangeut-learn` | 사용자 피드백·정정("이건 광고 아냐")을 `learnings.md`에 기록 → 다음부터 반영 |
 | `hangeut-blog` | 게시된 트렌드 1건의 검색 제목·태그·메타설명을 정해 `blog-build.mjs` → `blog-publish.mjs`로 티스토리 발행 |
 | `hangeut-shops` | 디저트·음식 트렌드의 파는 가게 목록(`shops`)을 실제 검색으로 조사 |
@@ -122,11 +125,12 @@ Hermes는 [Nous Research](https://nousresearch.com)의 AI 에이전트 런타임
 | **한끗 자동 수집·게시** (`9ddacd750b48`) | 매일 **21:30** | `hangeut-run`(수집·분석) → `auto-build.mjs`(자동검증·게시). 검증통과분만 사이트 반영 · git push → Vercel 배포. 보류분은 review-queue에 쌓이고, 후보 0건인 날은 `--none`으로 runs.jsonl에만 기록. **요일 로테이션 → 목 21:30 = 신조어(주간 사전 갱신)** |
 | **한끗 수집 재시도 게이트** | 매일 **21:50** | `hangeut_retry_gate.py`(no-agent) — 그날 21:30 수집이 error로 끝났을 때만 1회 재실행을 큐잉. 성공했거나 실행이 없었으면 아무것도 안 함 |
 | **한끗 광고/진짜 일일 재확인** (신규) | 매일 **21:15** | `recheck_ad.py`(no-agent) — 가장 오래된 신뢰분석 1건의 출처 재검증(recheck-ad.mjs) → 살아있으면 analyzedAt 갱신(→ 홈 featured 회전). 근거 대조(`lib/grounding.mjs`) 실패 시엔 회전 없이 '사람 확인 필요'로 보고하고 다음 오래된 항목(최대 3건)을 시도. 메인(21:00)과 trends.json 쓰기 충돌 방지로 15분 뒤 |
+| **한끗 유행 단계 재판정** (`2bfe2a1c0d40`) | 매일 **21:05** | `hangeut-restage` — 게시 트렌드 3건의 유행 단계 재판정 → `restage.mjs --apply`(검증·반영·git push). 최근 14일 재판정분은 제외. 기록 `backend/out/pipeline/restage.jsonl` |
 | **한끗 주간 갱신** (`dc54cec90b5e`) | 매주 월 **21:00** | `hangeut_daily.py`(no-agent) — trends.json 날짜 스탬프 + 신선도 리포트. 무료·안 죽음 |
 | **한끗 펄스 — 오늘의 분야** (`f3a0b6724fa4`) | 매일 **21:00** | `pulse_categories.py`(no-agent) — 오늘 분석할 펄스 분야를 디스코드로 안내 |
 | **한끗 — 오늘의 수집 분야** (`bc1a98451fb7`) | 매일 **21:00** | `trend_categories.py`(no-agent) — 오늘 수집할 트렌드 분야 안내 |
 
-> ⏰ **전부 21시대(KST)** — 아침엔 PC가 꺼져 있어 저녁으로 옮김. 메인 수집·게시 21:30, 재확인 21:15(파일 쓰기 충돌 방지), 재시도 게이트 21:50. Hermes는 **로컬**이라 그 시각에 PC+게이트웨이가 켜져 있어야 실행된다(`tools/start-hermes.bat`, 로그인 시 자동 시작).
+> ⏰ **전부 21시대(KST)** — 아침엔 PC가 꺼져 있어 저녁으로 옮김. 유행 단계 재판정 21:05, 재확인 21:15(파일 쓰기 충돌 방지), 메인 수집·게시 21:30, 재시도 게이트 21:50. Hermes는 **로컬**이라 그 시각에 PC+게이트웨이가 켜져 있어야 실행된다(`tools/start-hermes.bat`, 로그인 시 자동 시작).
 > **⚠️ auto-build.mjs·recheck-ad.mjs는 현재 브랜치가 `main`이어야 한다.** feature 브랜치에서 실행되면 pull --rebase가 silent fail → origin/main으로 push 안 됨 → 라이브 사이트가 정체됨(2026-08-09~15 사고). 안전장치 추가: 현재 브랜치 != `main`이면 exit 1 + git rebase 실패 시 abort 자동 실행.
 > 
 > **⚠️ git 동시 작업 방지 락** — auto-build.mjs·recheck-ad.mjs는 `.git/az2mz-auto.lock`으로 서로의 git 단계(pull/commit/push)를 보호해 rebase 중단을 방지한다. **단, 인터랙티브 세션의 수동 git 명령까지는 강제할 수 없다**(계기: 2026-08-16 21:15경 인터랙티브 세션과 recheck-ad 충돌). 권장: 21:00~21:15 구간(크론 시간대)에는 수동 git 작업을 피할 것.
@@ -153,7 +157,7 @@ Hermes는 [Nous Research](https://nousresearch.com)의 AI 에이전트 런타임
 |---|---|
 | `한끗 실행` | hangeut-run — 수집·분석·정리 후 `.pipeline/curate.json` 저장. (저녁 21:30 자동검증·게시 또는 "한끗 개발 반영"으로 수동 실행) |
 | `한끗 개발 반영` | hangeut-build(auto-build.mjs 호출) — curate.json 항목을 자동검증 후 통과분만 trends.json 반영 + git push |
-| `검수` · `보류 검수` · `수집 통계` | hangeut-approve — 보류 후보를 버튼(게시/버리기/나중에)으로 하나씩 처리. "수집 통계"는 `pipeline-review.mjs --stats`(14일 표) |
+| `검수` · `보류 검수` · `수집 통계` | hangeut-approve — 보류 후보를 버튼(게시/버리기/나중에)으로 하나씩 처리. 게시·버리기 뒤에는 이유 버튼(프리셋·직접 입력)을 묻고 `--note`로 기록. "수집 통계"는 `pipeline-review.mjs --stats`(14일 표) |
 | `한끗 펄스` | 오늘 요일의 창업 트렌드 분야를 깊게 분석 (상세 아이디어 3개) |
 | `한끗 디자인` | 새 카드 디자인 제안 |
 | `기억해둬: …` | hangeut-learn — 교훈을 learnings.md에 기록 |
@@ -182,6 +186,7 @@ Hermes는 [Nous Research](https://nousresearch.com)의 AI 에이전트 런타임
                 사이트(index/trend/pulse.html)가 로드
 ```
 
+- 게시된 항목의 **유행 단계**는 `restage.mjs`가 21:05에 재판정해 `trends.json`에 반영한다(`--apply`, 검증 통과분만 · 본문 불변 · 충돌은 보고).
 - 고구미봇이 채우는 **상세페이지 필드**: `verdict`(한 줄) · `article`(블로그형 본문) · `video`(유튜브/틱톡 임베드) · `images`(대표 이미지) · `prompt`(AI 명령어, 길고 디테일하게) · `pureKorean`(신조어 우리말).
 - auto-build.mjs가 **검증 게이트**: 중복(id/title 기존재) 제거 · 404/410 링크 제거 · 본문에 제목 핵심어 없으면 무관으로 제거 · 서술의 수치·매체·확산 표현이 출처 본문에 없으면 보류(근거 대조, `lib/grounding.mjs`).
 - 펄스(창업 레이더)는 `backend/data/pulse.json`의 `daily[]`(주간 픽)만 소유. 빌트인 110개(`trends[]`)는 read-only.
