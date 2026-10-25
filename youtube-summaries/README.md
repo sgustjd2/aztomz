@@ -3,10 +3,15 @@
 채널 [AI Engineer](https://www.youtube.com/@aiDotEngineer) 의 새 영상을 Gemini 로 자동 요약한 모음입니다.
 생성: `backend/scripts/youtube-summarize.mjs` (GitHub Actions `youtube-summary` 크론).
 
-총 **387개**.
+총 **392개**.
 
 | 발행일 | 제목 |
 |---|---|
+| 2026-10-24 | [Proving Alpha: How a Hedge Fund Measures AI's ROI - Hari Kumar, Contour Asset Management](2026-10-24-ZMZlAn6Pyfg.md) |
+| 2026-10-24 | [Can AI Understand a Distressed Credit? - Harneet Kaur, Axim Intelligence](2026-10-24-WOszaC1WWbQ.md) |
+| 2026-10-24 | [Your Agent Fix Just Broke Something Else - Sofia Jakovcevic, Arize AI](2026-10-24-v5tm5EAzsAs.md) |
+| 2026-10-24 | [AI Writes the Code. So What's Left for Engineers? - Laurie Voss, Arize AI](2026-10-24-kspZP5BgkEU.md) |
+| 2026-10-24 | [How Bridgewater Turned 100 Million Documents Into an Edge - Sam Green & Aaron Linsky, Bridgewater](2026-10-24-CLve4Nx_RwI.md) |
 | 2026-10-23 | [How to Let AI Agents Sign Up for Your App Safely — Isabelle Williams, WorkOS](2026-10-23-uTrY8slys0w.md) |
 | 2026-10-23 | [A Bank Trained Its Own Foundation Model to Catch Fraud — Freddy Lecue, Wells Fargo](2026-10-23-UB6hoWyh3B0.md) |
 | 2026-10-23 | [How OpenAI Built ChatGPT for Bankers and Analysts — Joseph Kim, OpenAI](2026-10-23-opHmX7qClzE.md) |
