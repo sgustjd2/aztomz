@@ -3,10 +3,16 @@
 채널 [AI Engineer](https://www.youtube.com/@aiDotEngineer) 의 새 영상을 Gemini 로 자동 요약한 모음입니다.
 생성: `backend/scripts/youtube-summarize.mjs` (GitHub Actions `youtube-summary` 크론).
 
-총 **392개**.
+총 **398개**.
 
 | 발행일 | 제목 |
 |---|---|
+| 2026-10-25 | [Can Your AI Analyst Keep a Secret? - Aaron Linsky, Bridgewater & Nikhil Benesch, turbopuffer](2026-10-25-u_jvuCjuvEk.md) |
+| 2026-10-25 | [What Does an AI Engineer Do Now? - Aparna Dhinakaran, Arize AI](2026-10-25-ImnZ7s68jw8.md) |
+| 2026-10-25 | [How to Write Your First AI Eval - SallyAnn DeLucia, Arize AI](2026-10-25-gv4w23xYj-0.md) |
+| 2026-10-25 | [Do Not Let Models Invent Numbers - Vinoo Ganesh, Kepler](2026-10-25-dZgA6btnb_s.md) |
+| 2026-10-25 | [How to Build Financial Agents That Work Across the Web - Jay Sahnan & Arik Bird, Browserbase](2026-10-25-DZ24Xbm9Joc.md) |
+| 2026-10-25 | [Why Frontier Models Fail as Buy-Side Analysts - Janie Gu, Google DeepMind & Suyeol Yun, LinqAlpha](2026-10-25-aVbRSIQO2dE.md) |
 | 2026-10-24 | [Proving Alpha: How a Hedge Fund Measures AI's ROI - Hari Kumar, Contour Asset Management](2026-10-24-ZMZlAn6Pyfg.md) |
 | 2026-10-24 | [Can AI Understand a Distressed Credit? - Harneet Kaur, Axim Intelligence](2026-10-24-WOszaC1WWbQ.md) |
 | 2026-10-24 | [Your Agent Fix Just Broke Something Else - Sofia Jakovcevic, Arize AI](2026-10-24-v5tm5EAzsAs.md) |
