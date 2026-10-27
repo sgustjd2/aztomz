@@ -3,10 +3,15 @@
 채널 [AI Engineer](https://www.youtube.com/@aiDotEngineer) 의 새 영상을 Gemini 로 자동 요약한 모음입니다.
 생성: `backend/scripts/youtube-summarize.mjs` (GitHub Actions `youtube-summary` 크론).
 
-총 **398개**.
+총 **403개**.
 
 | 발행일 | 제목 |
 |---|---|
+| 2026-10-26 | [Build Your Own Team of Managed Agents - Jack Wotherspoon, Google DeepMind](2026-10-26-Y_p3y6zP5QE.md) |
+| 2026-10-26 | [Agents That Self Improve While You Sleep - Fuad Ali, Arize AI](2026-10-26-UGuNt2_Oz8s.md) |
+| 2026-10-26 | [How to Build Voice Agents That Don't Fall Apart When You Interrupt - Jesse Hall, LiveKit](2026-10-26-OmyqelTwpOo.md) |
+| 2026-10-26 | [How to Test Your Agents on Real Tasks With Harbor - Xander Song, Arize AI](2026-10-26-kRJjSOYqW0I.md) |
+| 2026-10-26 | [How to Build an AI Code Review Agent - Daksh Gupta, Greptile](2026-10-26-4UtrRVtUN_g.md) |
 | 2026-10-25 | [Can Your AI Analyst Keep a Secret? - Aaron Linsky, Bridgewater & Nikhil Benesch, turbopuffer](2026-10-25-u_jvuCjuvEk.md) |
 | 2026-10-25 | [What Does an AI Engineer Do Now? - Aparna Dhinakaran, Arize AI](2026-10-25-ImnZ7s68jw8.md) |
 | 2026-10-25 | [How to Write Your First AI Eval - SallyAnn DeLucia, Arize AI](2026-10-25-gv4w23xYj-0.md) |
