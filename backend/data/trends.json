@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-27",
+  "generatedAt": "2026-10-28",
   "trends": [
     {
       "id": "dubai-choco",
@@ -2060,10 +2060,10 @@
       "cat": "신조어",
       "coverCat": "cat-slang",
       "collectedAt": "2026-06-06",
-      "analyzedAt": "2026-06-06",
+      "analyzedAt": "2026-10-28",
       "buzz": "화제성 높음",
-      "stage": "피크",
-      "stageMsg": "2026 상반기 화제",
+      "stage": "상승",
+      "stageMsg": "개발 현장과 교육 행사로 활용이 확산 중",
       "label": "지금 써도 됨",
       "labelCls": "good",
       "title": "바이브 코딩",
@@ -2096,6 +2096,10 @@
         [
           "프리플라이",
           "https://preply.com/ko/blog/korea-slang-words/"
+        ],
+        [
+          "AI타임스(2026-10-15)",
+          "https://www.aitimes.com/news/articleView.html?idxno=216259"
         ]
       ],
       "tags": [
