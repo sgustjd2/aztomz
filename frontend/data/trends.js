@@ -8423,7 +8423,7 @@ window.HANGEUT_DATA = {
       "cat": "카페·핫플",
       "coverCat": "cat-cafe",
       "collectedAt": "2026-07-22",
-      "analyzedAt": "2026-10-09",
+      "analyzedAt": "2026-10-28",
       "buzz": "개관 초 방문객이 몰렸다는 방문기 2건(2026-07)",
       "ad": 20,
       "trust": 50,
