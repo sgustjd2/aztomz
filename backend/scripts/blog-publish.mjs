@@ -655,22 +655,100 @@ const isLoginPage = (page) => /login|accounts\.kakao/i.test(page.url());
 /* 전용 브라우저 프로필의 저장된 자동완성만 사용한다. 비밀번호 값은 메모리에서
    채워졌는지 여부만 확인하고 출력·파일 저장하지 않는다. 보안확인/CAPTCHA는 멈춘다. */
 async function trySavedKakaoLogin(page) {
+  let authPage = page;
   const challenge = async () => {
-    const text = await page.locator('body').innerText().catch(() => '');
+    const text = await authPage.locator('body').innerText().catch(() => '');
     return /captcha|캡차|보안 확인|기기 인증|추가 인증|본인 확인|인증번호|2단계 인증/i.test(text)
-      || await page.locator('iframe[src*="captcha"], [class*="captcha"], [id*="captcha"]').count().catch(() => 0) > 0;
+      || await authPage.locator('iframe[src*="captcha"], [class*="captcha"], [id*="captcha"]').count().catch(() => 0) > 0;
   };
   if (await challenge()) return { ok: false, reason: '보안 확인/CAPTCHA가 필요합니다.' };
 
-  const idField = page.locator('#loginId--1, input[name="loginId"], input[type="email"]').first();
-  const passwordField = page.locator('#password--2, input[name="password"], input[type="password"]').first();
+  const idSelector = '#loginId--1, input[name="loginId"], input[type="email"]';
+  const passwordSelector = '#password--2, input[name="password"], input[type="password"]';
+  let idField = authPage.locator(idSelector).first();
+  let passwordField = authPage.locator(passwordSelector).first();
+
+  // Tistory may first show its own login landing page. Continue to Kakao's
+  // credential form before checking browser autofill; never use a generic
+  // login button that could select another provider.
+  if (!await idField.count().catch(() => 0) || !await passwordField.count().catch(() => 0)) {
+    const kakaoLogin = page.locator([
+      'a[href*="accounts.kakao.com"]',
+      'a[href*="kauth.kakao.com"]',
+      'a:has-text("카카오계정으로 로그인")',
+      'a:has-text("카카오 계정으로 로그인")',
+      'button:has-text("카카오계정으로 로그인")',
+      'button:has-text("카카오 계정으로 로그인")',
+      'button:has-text("카카오 로그인")',
+      '[role="button"]:has-text("카카오계정으로 로그인")',
+    ].join(', ')).first();
+    if (!await kakaoLogin.count().catch(() => 0)) {
+      return { ok: false, reason: '티스토리의 카카오 로그인 버튼을 찾지 못했습니다.' };
+    }
+    const popupPromise = page.waitForEvent('popup', { timeout: 10000 }).catch(() => null);
+    await kakaoLogin.click({ timeout: 5000 });
+    const samePagePromise = page.waitForFunction((selectors) => {
+      const url = location.href;
+      return /accounts\.kakao\.com|kauth\.kakao\.com/i.test(url)
+        || (document.querySelector(selectors.id) && document.querySelector(selectors.password));
+    }, { id: idSelector, password: passwordSelector }, { timeout: 10000 }).then(() => null).catch(() => null);
+    const popup = await Promise.race([popupPromise, samePagePromise]);
+    if (popup) {
+      authPage = popup;
+      await authPage.waitForURL(/accounts\.kakao\.com|kauth\.kakao\.com/i, { timeout: 10000 }).catch(() => {});
+      await authPage.waitForLoadState('domcontentloaded').catch(() => {});
+    }
+    if (await challenge()) return { ok: false, reason: '추가 보안 확인/CAPTCHA가 필요합니다.' };
+    idField = authPage.locator(idSelector).first();
+    passwordField = authPage.locator(passwordSelector).first();
+
+    // Kakao can show a remembered-account chooser instead of a password form.
+    // Auto-select only when exactly one visible clickable account identifier
+    // is present; never guess between accounts or print the identifier.
+    const chooserText = await authPage.locator('body').innerText().catch(() => '');
+    if (/간편\s*로그인|계정\s*선택/.test(chooserText) && !await idField.count().catch(() => 0)) {
+      const result = await authPage.evaluate(() => {
+        const clickable = 'button, a, [role="button"], [role="option"], [tabindex="0"]';
+        const candidates = new Set();
+        const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+        const emailPattern = /[\w.+-]+@[\w.-]+\.[A-Z]{2,}/i;
+        for (let node = walker.nextNode(); node; node = walker.nextNode()) {
+          if (!emailPattern.test(node.nodeValue || '')) continue;
+          let parent = node.parentElement;
+          while (parent && !parent.matches(clickable)) parent = parent.parentElement;
+          if (!parent) continue;
+          const style = getComputedStyle(parent);
+          if (style.display === 'none' || style.visibility === 'hidden' || !parent.getClientRects().length) continue;
+          candidates.add(parent);
+        }
+        if (candidates.size !== 1) return { count: candidates.size };
+        const candidate = candidates.values().next().value;
+        candidate.setAttribute('data-aztomz-kakao-account-choice', 'true');
+        return { count: 1 };
+      }).catch(() => ({ count: 0 }));
+      if (result.count !== 1) {
+        return { ok: false, reason: `간편로그인 계정 선택 항목을 하나로 확인하지 못했습니다(${result.count}개).` };
+      }
+      console.log('· 카카오 간편로그인 계정 1개를 선택합니다. 계정 정보는 출력하지 않습니다.');
+      await authPage.locator('[data-aztomz-kakao-account-choice="true"]').click({ timeout: 5000 });
+      await authPage.waitForFunction(() => !/accounts\.kakao\.com|kauth\.kakao\.com/i.test(location.href), null, { timeout: 20000 }).catch(() => {});
+      if (await challenge()) return { ok: false, reason: '추가 보안 확인/CAPTCHA가 필요합니다.' };
+      // The account chooser can complete Kakao auth and return to Tistory
+      // without ever showing a password form. Let login() verify the editor
+      // URL and persist the resulting session state.
+      if (!isLoginPage(authPage)) return { ok: true, reason: '' };
+      if (authPage.isClosed() && !isLoginPage(page)) return { ok: true, reason: '' };
+      idField = authPage.locator(idSelector).first();
+      passwordField = authPage.locator(passwordSelector).first();
+    }
+  }
   if (!await idField.count().catch(() => 0) || !await passwordField.count().catch(() => 0)) {
     return { ok: false, reason: '카카오 로그인 입력란을 찾지 못했습니다.' };
   }
 
   // Chromium이 저장된 자동완성 항목을 적용할 시간을 준다. 어떤 값도 직접 채우지 않는다.
   await idField.click({ timeout: 3000 }).catch(() => {});
-  await page.waitForTimeout(900);
+  await authPage.waitForTimeout(900);
   const [hasId, hasPassword] = await Promise.all([
     idField.inputValue().then((v) => v.trim().length > 0).catch(() => false),
     passwordField.inputValue().then((v) => v.length > 0).catch(() => false),
@@ -685,12 +763,12 @@ async function trySavedKakaoLogin(page) {
       await staySignedIn.check().catch(() => {});
     }
   }
-  const submit = page.locator('button[type="submit"], button:has-text("로그인")').first();
+  const submit = authPage.locator('button[type="submit"], button:has-text("로그인"), input[type="submit"]').first();
   if (!await submit.count().catch(() => 0)) return { ok: false, reason: '로그인 버튼을 찾지 못했습니다.' };
   await submit.click();
-  await page.waitForFunction(() => !/login|accounts\.kakao/i.test(location.href), null, { timeout: 20000 }).catch(() => {});
+  await authPage.waitForFunction(() => !/login|accounts\.kakao/i.test(location.href), null, { timeout: 20000 }).catch(() => {});
   if (await challenge()) return { ok: false, reason: '추가 보안 확인/CAPTCHA가 필요합니다.' };
-  return { ok: !isLoginPage(page), reason: isLoginPage(page) ? '카카오 로그인이 완료되지 않았습니다.' : '' };
+  return { ok: !isLoginPage(authPage), reason: isLoginPage(authPage) ? '카카오 로그인이 완료되지 않았습니다.' : '' };
 }
 
 async function login() {
