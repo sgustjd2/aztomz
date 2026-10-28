@@ -3,10 +3,16 @@
 채널 [AI Engineer](https://www.youtube.com/@aiDotEngineer) 의 새 영상을 Gemini 로 자동 요약한 모음입니다.
 생성: `backend/scripts/youtube-summarize.mjs` (GitHub Actions `youtube-summary` 크론).
 
-총 **403개**.
+총 **409개**.
 
 | 발행일 | 제목 |
 |---|---|
+| 2026-10-27 | [We Kept Rebuilding Our AI Agent. Here's What Survived - Fuad Ali, Arize AI](2026-10-27-YIhvrvHtonk.md) |
+| 2026-10-27 | [What a $900M Bank Error Teaches Us About AI Agents - John Feminella, Two Sigma](2026-10-27-iniryju23Sk.md) |
+| 2026-10-27 | [Why Are We Still Governing AI Agents Like Software? - Tim Tyler, Gravitee](2026-10-27-h8jgniNJcbQ.md) |
+| 2026-10-27 | [Stop Giving Your Agent Tools. Give It a Sandbox - Mikyo King, Arize AI](2026-10-27-dAoOYFx7ZYw.md) |
+| 2026-10-27 | [300 Agents, 60 People: How We Secured Our Own AI Agents - Aiden Sochowski, Runlayer](2026-10-27-BgLdvF7Qkh8.md) |
+| 2026-10-27 | [How a Trading Firm Ships New AI Models the Same Day - Noyan Tokgozoglu, Optiver](2026-10-27-aGIUg8zKI8A.md) |
 | 2026-10-26 | [Build Your Own Team of Managed Agents - Jack Wotherspoon, Google DeepMind](2026-10-26-Y_p3y6zP5QE.md) |
 | 2026-10-26 | [Agents That Self Improve While You Sleep - Fuad Ali, Arize AI](2026-10-26-UGuNt2_Oz8s.md) |
 | 2026-10-26 | [How to Build Voice Agents That Don't Fall Apart When You Interrupt - Jesse Hall, LiveKit](2026-10-26-OmyqelTwpOo.md) |
