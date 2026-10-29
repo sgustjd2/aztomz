@@ -3,10 +3,15 @@
 채널 [AI Engineer](https://www.youtube.com/@aiDotEngineer) 의 새 영상을 Gemini 로 자동 요약한 모음입니다.
 생성: `backend/scripts/youtube-summarize.mjs` (GitHub Actions `youtube-summary` 크론).
 
-총 **409개**.
+총 **414개**.
 
 | 발행일 | 제목 |
 |---|---|
+| 2026-10-28 | [Exploits Now Beat Patches: Open Source Security in the AI Era - Patrick Smyth, Chainguard](2026-10-28-xZX3pmaB8Hk.md) |
+| 2026-10-28 | [AI That Hunts Logic Bugs Before Attackers Do - Taylor Luttrell-Williams, Sonar](2026-10-28-UW8Qkk7MG8A.md) |
+| 2026-10-28 | [Stop Guessing Your vLLM Config: Benchmarking LLMs on Runpod - Chris Vela, Runpod](2026-10-28-P_0_Th_ZzIg.md) |
+| 2026-10-28 | [How Anthropic Merges 30,000 Code Changes a Day - Manish Kapur, Sonar & Addy Osmani, Anthropic](2026-10-28-AnsXWH2_EBU.md) |
+| 2026-10-28 | [Who Is Making This Request? Agent Auth 101 - Kamil Potrec, Keycard](2026-10-28-58ulJViGFgU.md) |
 | 2026-10-27 | [We Kept Rebuilding Our AI Agent. Here's What Survived - Fuad Ali, Arize AI](2026-10-27-YIhvrvHtonk.md) |
 | 2026-10-27 | [What a $900M Bank Error Teaches Us About AI Agents - John Feminella, Two Sigma](2026-10-27-iniryju23Sk.md) |
 | 2026-10-27 | [Why Are We Still Governing AI Agents Like Software? - Tim Tyler, Gravitee](2026-10-27-h8jgniNJcbQ.md) |
