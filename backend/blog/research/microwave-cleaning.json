@@ -1,0 +1,141 @@
+{
+  "keyword": "전자레인지 청소",
+  "categoryId": "life-info",
+  "notes": "말할 수 있는 것: 삼성 캐나다(일반 삼성 모델)와 LG 미국(over-the-range 모델) 공식 지원 페이지가 안내하는 스팀 청소 절차, 회전판·도어 실 관리, 피할 세제. 반드시 '국가·브랜드·모델군' 단서를 붙여 쓸 것(한국 모델·모든 전자레인지로 일반화 금지). 삼성 500mL High 약 5분과 LG 한 컵 2~3분은 서로 다른 문서의 서로 다른 값이라 합치지 않는다. '식초보다 수증기가 핵심'과 '문 닫고 5~10분'은 레이디경향 보도뿐이라 reported 로만 쓴다.",
+  "cannotSay": [
+    "한국 삼성·LG 사용설명서에 무엇이 있다/없다는 말 (한국 설명서 본문은 읽지 못했다. '설명서에 없다'는 쓰지 말 것)",
+    "운모판을 떼면 안 된다는 경고 (LG 한국 제품 페이지 검색 스니펫만 있고 원문 미확인)",
+    "wikitree 등 생활 기사의 레몬 구연산, 식초 3대1 비율, 마이카 코팅 경고 (검색 요약만 봄, 출처로 쓰지 말 것)",
+    "LG 한국 '사용 불가 용기 및 청소 방법이 궁금해요' 문서의 내용 (제목만 확인, 문서가 존재한다는 사실만 말할 수 있음)",
+    "삼성 UAE '회전판 레몬즙 희석 후 최대 출력 10분' (접속 실패, 검색 요약만)",
+    "식초가 모든 전자레인지에 안전하거나 안전하지 않다는 단정"
+  ],
+  "cannotCover": [
+    "한국 제조사(삼성·LG·쿠쿠) 공식 청소 절차와 한국 모델별 금지사항 (본문 미확인)",
+    "한국소비자원 등 공적 기관의 청소 안내",
+    "운모판 관리법",
+    "식초 vs 레몬 vs 맹물의 실제 세정 효과 비교 (제조사·기관 실험 자료 없음, 보도의 주장만 있음)",
+    "도어 실·환기구 관련 한국 제조사 문구",
+    "베이킹소다 등 다른 청소 재료의 효과"
+  ],
+  "claims": [
+    {
+      "claim": "삼성 캐나다 지원 페이지(일반 삼성 전자레인지, 모델 미지정) 기준 스팀 청소는 물 500mL를 High로 약 5분 끓이는 방식이다",
+      "grade": "confirmed",
+      "evidence": [
+        "삼성 캐나다: 1리터 전자레인지용 그릇에 물 500mL를 담아 High로 약 5분, 끓을 때까지 가열",
+        "삼성 캐나다: 가열 후 1~2분 둔 뒤 그릇을 꺼내고 마른 수건으로 내부를 닦음. 고집 센 오염은 반복",
+        "삼성 캐나다: 레몬즙 'a splash'는 선택사항으로 명시. 식초는 언급 없음",
+        "삼성 캐나다: 모델에 Steam Clean 기능이 있으면 사용설명서 방법을 대신 쓰라고 안내"
+      ],
+      "sourceUrls": ["https://www.samsung.com/ca/support/home-appliances/clean-your-samsung-microwave/"]
+    },
+    {
+      "claim": "LG 미국 over-the-range 모델 안내 기준 스팀은 물 한 컵 2~3분이고, 냄새 제거에는 레몬즙 또는 식초를 넣는다 (삼성 캐나다와 양·시간이 다른 별개 안내)",
+      "grade": "confirmed",
+      "evidence": [
+        "LG 미국 OTR 모델: 고집 센 얼룩은 물 한 컵을 2~3분 끓여 불림",
+        "LG 미국 OTR 모델: 냄새 제거는 물 한 컵에 레몬즙 또는 식초를 넣어 끓임 (제조사 자료에서 식초가 나온 사례)",
+        "LG 미국 OTR 모델: 주 1회 청소 권장",
+        "해당 페이지는 over-the-range 대상이며 카운터탑 등 다른 모델로 일반화할 수 없음"
+      ],
+      "sourceUrls": ["https://lg.com/us/support/help-library/lg-over-the-range-microwave-oven-cleaning-your-microwave-CT00000303-1366666908230"]
+    },
+    {
+      "claim": "두 제조사 지원 페이지 모두 연마성 세제와 강한 용제를 피하라고 하지만, 금지 목록은 문서마다 다르다",
+      "grade": "confirmed",
+      "evidence": [
+        "삼성 캐나다: 연마성 세제, 알코올·벤젠·암모니아·페인트 시너 같은 강한 용제를 피함. 철수세미와 표백제는 마감 손상·녹 우려로 피함",
+        "삼성 캐나다: 컨트롤 패널에 스프레이·과다한 물 금지, 외부 청소 시 환기구에 액체가 들어가지 않게 함",
+        "LG 미국 OTR 모델: 벤젠·시너 금지, 세정제를 오븐에 직접 분사 금지, 연마성 제품 금지, 순한 비연마성 세제만 사용. 외부는 플러그를 뽑고 닦음",
+        "LG 미국 페이지에는 환기구 언급이 없고, 철수세미·표백제 항목도 확인되지 않음 (문서별 차이)"
+      ],
+      "sourceUrls": [
+        "https://www.samsung.com/ca/support/home-appliances/clean-your-samsung-microwave/",
+        "https://lg.com/us/support/help-library/lg-over-the-range-microwave-oven-cleaning-your-microwave-CT00000303-1366666908230"
+      ]
+    },
+    {
+      "claim": "회전판·지지링과 도어 실 부위도 청소 대상이다 (삼성 캐나다, LG 미국 OTR 각각의 안내)",
+      "grade": "confirmed",
+      "evidence": [
+        "삼성 캐나다: 회전판은 매주, 롤러 링은 매월 청소 권장. 회전판은 식기세척기 가능, 아니면 따뜻한 비눗물로 손세척 후 완전히 말려 식힌 뒤 재장착",
+        "삼성 캐나다: 도어 실에 때가 끼면 문이 제대로 안 닫힐 수 있음. 유리문은 순한 비누+물+부드러운 천, 응결수는 정상",
+        "LG 미국 OTR 모델: 내부 청소 전 회전판과 지지링을 먼저 분리. 회전판과 지지대 모두 식기세척기 사용 가능, 마르고 깨끗해진 뒤 재장착",
+        "LG 미국 OTR 모델: 도어와 오븐 프레임이 닿는 부분(도어 실 부위)을 깨끗이 유지"
+      ],
+      "sourceUrls": [
+        "https://www.samsung.com/ca/support/home-appliances/clean-your-samsung-microwave/",
+        "https://lg.com/us/support/help-library/lg-over-the-range-microwave-oven-cleaning-your-microwave-CT00000303-1366666908230"
+      ]
+    },
+    {
+      "claim": "식초가 꼭 필요한 건 아니라는 해석은 보도 기준이다. 제조사 자료 중 식초를 언급한 곳은 LG 미국뿐이고, 삼성 캐나다는 레몬즙만 선택사항으로 둔다",
+      "grade": "reported",
+      "evidence": [
+        "[보도] 레이디경향(2026-06-30, 기자 작성): 식초물의 효과는 식초보다 뜨거운 수증기에서 나오며, 가벼운 얼룩은 끓인 물만으로 충분한 경우가 많다는 주장. 인용한 전문가·기관 없음",
+        "[보도] 같은 기사: 가열 후 문을 닫은 채 5~10분 두라고 안내 (기사의 유일한 수치)",
+        "[보도] 같은 기사: 식초·베이킹소다는 모든 전자레인지에 맞지 않을 수 있어 설명서를 먼저 확인하라고 권고. 연마성 세제는 내부 코팅 손상. 심하게 눌어붙은 오염은 수증기만으로 안 지워질 수 있음",
+        "[공식] 삼성 캐나다는 식초를 언급하지 않고 레몬즙만 선택사항으로 언급, LG 미국 OTR은 냄새 제거에 레몬즙 또는 식초를 안내 (제조사 자료가 식초 필요성을 판정한 것은 아님)"
+      ],
+      "sourceUrls": [
+        "https://lady.khan.co.kr/cooking/article/202606301016001",
+        "https://www.samsung.com/ca/support/home-appliances/clean-your-samsung-microwave/",
+        "https://lg.com/us/support/help-library/lg-over-the-range-microwave-oven-cleaning-your-microwave-CT00000303-1366666908230"
+      ]
+    }
+  ],
+  "numbers": [
+    { "what": "삼성 캐나다 스팀 청소 물 양", "value": "500mL (1리터 전자레인지용 그릇)", "asOf": "페이지 게재일 미상, 2026-10-29 조회", "sourceUrl": "https://www.samsung.com/ca/support/home-appliances/clean-your-samsung-microwave/" },
+    { "what": "삼성 캐나다 스팀 가열 시간", "value": "High 약 5분(끓을 때까지), 이후 1~2분 둔 뒤 꺼냄", "asOf": "2026-10-29 조회", "sourceUrl": "https://www.samsung.com/ca/support/home-appliances/clean-your-samsung-microwave/" },
+    { "what": "삼성 캐나다 회전판 청소 주기", "value": "매주", "asOf": "2026-10-29 조회", "sourceUrl": "https://www.samsung.com/ca/support/home-appliances/clean-your-samsung-microwave/" },
+    { "what": "삼성 캐나다 롤러 링 청소 주기", "value": "매월", "asOf": "2026-10-29 조회", "sourceUrl": "https://www.samsung.com/ca/support/home-appliances/clean-your-samsung-microwave/" },
+    { "what": "LG 미국 OTR 모델 얼룩 불리기", "value": "물 한 컵, 2~3분 끓임", "asOf": "2026-10-29 조회", "sourceUrl": "https://lg.com/us/support/help-library/lg-over-the-range-microwave-oven-cleaning-your-microwave-CT00000303-1366666908230" },
+    { "what": "LG 미국 OTR 모델 청소 권장 주기", "value": "주 1회", "asOf": "2026-10-29 조회", "sourceUrl": "https://lg.com/us/support/help-library/lg-over-the-range-microwave-oven-cleaning-your-microwave-CT00000303-1366666908230" },
+    { "what": "레이디경향(보도) 가열 후 문 닫고 두는 시간", "value": "5~10분", "asOf": "2026-06-30 기사", "sourceUrl": "https://lady.khan.co.kr/cooking/article/202606301016001" },
+    { "what": "삼성전자 한국 전자레인지 FAQ의 청소 관련 문항 수", "value": "2건 (세라믹 조리실, 실내등). 세제·연마제·스팀 절차 항목 없음", "asOf": "2026-10-29 조회", "sourceUrl": "https://www.samsung.com/sec/home-appliances/faq-micro-wave-ovens/" }
+  ],
+  "sources": [
+    {
+      "title": "How to clean your Samsung microwave (Samsung Canada support)",
+      "url": "https://www.samsung.com/ca/support/home-appliances/clean-your-samsung-microwave/",
+      "host": "samsung.com/ca",
+      "tier": "official",
+      "body": "삼성 캐나다 지원 페이지(삼성 전자레인지 일반 대상, 모델 번호 미지정). 스팀 청소 항목: 1리터 전자레인지용 그릇에 물 500mL를 담아 High로 약 5분, 끓을 때까지 가열 -> 1~2분 둔 뒤 그릇을 꺼냄 -> 고집 센 오염은 반복 -> 선택사항으로 'a splash of lemon juice' 추가 -> 마른 수건으로 내부를 닦음. 모델에 Steam Clean 기능이 있으면 사용설명서 방법을 대신 쓰라고 함. 회전판은 매주, 롤러 링은 매월 청소; 회전판은 식기세척기 가능, 아니면 따뜻한 비눗물로 손세척 후 완전히 말려 재장착(식힌 뒤). 도어 실은 때가 끼면 문이 제대로 안 닫힐 수 있으니 청결 유지, 유리문은 순한 비누+물+부드러운 천, 응결수는 정상. 금지: 연마성 세제와 강한 용제(알코올, 벤젠, 암모니아, 페인트 시너 예시), 철수세미와 표백제는 마감 손상/녹 우려로 피함, 외부 청소 시 환기구에 액체 들어가지 않게 함. 컨트롤 패널은 스프레이·과다한 물 금지. 식초는 언급 없음, 산성 첨가물은 레몬즙만 언급."
+    },
+    {
+      "title": "LG over-the-range microwave oven: cleaning your microwave (LG USA help library CT00000303)",
+      "url": "https://lg.com/us/support/help-library/lg-over-the-range-microwave-oven-cleaning-your-microwave-CT00000303-1366666908230",
+      "host": "lg.com/us",
+      "tier": "official",
+      "body": "LG 미국 도움말(영상 기반, LG over-the-range 전자레인지 대상 - 모델 번호 미지정이라 카운터탑 등 다른 모델로 일반화 금지). 'For maximum performance, it is recommended that you clean your LG microwave on a weekly basis.' 내부 청소 전 회전판과 지지링을 먼저 분리. 따뜻한 비눗물과 부드러운 천/스펀지, 순한 비연마성 세제만 사용. 고집 센 얼룩은 물 한 컵을 2~3분 끓여 불림. 도어와 오븐 프레임이 닿는 부분(도어 실 부위)을 깨끗이 유지. 회전판과 지지대는 순한 비눗물로 세척, 둘 다 식기세척기 사용 가능, 마르고 깨끗해진 뒤 재장착. 냄새: 물 한 컵에 레몬즙 또는 식초를 넣어 끓임. 금지: 'DO NOT use benzene or thinners', 세정제를 오븐에 직접 분사 금지, 연마성 제품 금지. 외부는 플러그를 뽑고 닦음, 앞 유리는 중성 유리세정제. 환기구 관련 언급 없음."
+    },
+    {
+      "title": "삼성전자 전자레인지 FAQ (삼성전자 한국)",
+      "url": "https://www.samsung.com/sec/home-appliances/faq-micro-wave-ovens/",
+      "host": "samsung.com/sec",
+      "tier": "official",
+      "body": "삼성전자 한국 전자레인지 FAQ 페이지에는 청소 관련 항목이 2개뿐이다. (1) 세라믹 조리실 FAQ - 얼룩과 냄새에 강한 위생적인 조리 표면으로 청소가 쉽고 내구성이 뛰어나다고 안내(탑재 여부는 모델별로 다름). (2) 실내등 FAQ - 조리 중 이물질이 조리실 조명에 튀었을 경우 닦아내고 조리실을 깨끗이 청소하라고 안내. 그 외 FAQ에는 청소 내용이 없다. 즉 이 FAQ 페이지에는 세제 종류, 연마제 금지, 레몬/식초 스팀 안내가 없다(사용설명서는 읽지 않음)."
+    },
+    {
+      "title": "LG전자 MW22CA 고객지원 페이지 (LG전자 한국)",
+      "url": "https://www.lge.co.kr/support/product-MW22CA",
+      "host": "lge.co.kr",
+      "tier": "official",
+      "body": "지원 글 제목만 확인되고 본문은 없음. 확인된 제목: '[LG 광파오븐레인지/전자레인지] 사용 불가 용기 및 청소 방법이 궁금해요'(분류: 냄새/이물 > 청소 방법). 소모품으로 회전유리 고정 지지대, 광파오븐 회전링, 반사판(전열지)이 나열됨. 운모판·세제·문 패킹·금지사항 문구는 이 페이지에서 확인되지 않았다. 글에서는 '청소 방법 문서가 존재한다'는 사실 이상으로 쓰지 말 것."
+    },
+    {
+      "title": "전자레인지 묵은 때 제거, 식초보다 중요한 건 따로 있다 (레이디경향, 장회정)",
+      "url": "https://lady.khan.co.kr/cooking/article/202606301016001",
+      "host": "lady.khan.co.kr",
+      "tier": "press",
+      "body": "레이디경향 2026-06-30 기사. 요지: 식초물을 돌려 닦는 방법의 효과는 식초보다 뜨거운 수증기에서 나오며, 수증기가 굳은 기름·음식물을 불려 힘 들이지 않고 닦이게 한다. 가벼운 얼룩은 끓인 물만으로 충분한 경우가 많다. 식초의 아세트산은 냄새 완화·물때 같은 알칼리성 침전물에 도움이 될 수 있으나 만능은 아니다. 심하게 방치된 눌어붙은 음식은 수증기만으로 안 지워질 수 있다. 식초·베이킹소다는 모든 전자레인지에 맞지 않을 수 있으니 사용설명서를 먼저 확인하라고 함. 방법: 큰 찌꺼기 제거 -> 전자레인지용 용기에 물(식초 선택) -> 수 분 가열 -> 문 닫은 채 5~10분 둠 -> 부드러운 천/극세사로 닦기 -> 깨끗한 물 적신 천으로 재닦기 -> 마른 수건으로 물기 제거. 고집 오염은 희석한 중성세제 적신 천을 올려 불린 뒤 닦기; 연마성 세제는 내부 코팅 손상. 가열 시간은 '수 분'으로 수치 없음, 인용 전문가·기관 없음(기자 작성 기사)."
+    }
+  ],
+  "dropped": [
+    { "url": "wikitree (raw unknowns 기재, URL 없음)", "why": "검색 요약만 보고 본문 미확인(레몬 구연산, 식초 3대1, 마이카 코팅 경고). 출처로 쓰지 말라고 raw 에 명시" },
+    { "url": "삼성 UAE 지원 페이지 (URL 미기재)", "why": "사이트 접속 실패(ENOTFOUND), 본문 못 읽음" },
+    { "url": "삼성 미국 지원 페이지 ANS00062285 (URL 미기재)", "why": "302 리다이렉트로 본문 못 읽음" }
+  ],
+  "songs": []
+}

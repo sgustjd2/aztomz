@@ -1,0 +1,168 @@
+{
+  "keyword": "꿀 보관법, 꿀 굳었을 때(결정) 녹이는 법",
+  "categoryId": "life-info",
+  "notes": "말할 수 있는 것: 결정화는 포도당이 석출되는 자연 현상이라 변질·불순 지표가 아니다(Ohio State Extension, 식약처 설명 인용 보도). 보관은 상온·밀봉·직사광선 회피, 냉장은 결정화를 앞당긴다. 녹이는 법은 따뜻한 물 중탕이며 '50도 이하'는 식약처 설명을 인용한 보도 기준(reported). 12개월 미만 영아 금지는 식약처 공지로 confirmed. 식약처 수치는 원문이 아니라 뉴시스/파이낸셜뉴스 인용이므로 '식약처 설명을 인용한 보도에 따르면'으로 쓴다.",
+  "cannotSay": [
+    "굳은 꿀이니 가짜가 아니다/진짜 꿀이다 같은 진위 판정 (결정=변질·불순 지표 아님까지만 확인, 한국 벌꿀 규격·시럽 혼입 검사 원문 미확인)",
+    "NHB(National Honey Board)의 구체 가열 온도(110°F 등)와 전자레인지 30초 방법 (2차 인용 스니펫뿐, 원문 미확인)",
+    "45~50도 20~30분 같은 구체 시간 (커뮤니티 스니펫, 본문 미확인, 사용 불가)",
+    "꿀 품종별 결정화 난이도(유채·잡화·싸리 잘 굳음, 아카시아·밤 덜 굳음) 단정",
+    "꿀이 수십 년 보관된다는 식의 장기 보관 안정 주장",
+    "전자레인지·직화 등 고온 가열이 안전하거나 영양을 보존한다는 단정",
+    "식약처 수치를 식약처 원문 페이지에서 확인했다는 표현 (보도 인용으로만 확인)"
+  ],
+  "cannotCover": [
+    "농촌진흥청·국립농업과학원·한국양봉협회 1차 자료",
+    "National Honey Board 원문 (honey.org 접속 불가)",
+    "포도당/과당 비율 구체 수치(결정화 임계값)",
+    "품종별 결정화 난이도 비교",
+    "한국 벌꿀 규격·가짜 꿀 감별",
+    "가열 시 영양소·효소 변화 (자료 없음)"
+  ],
+  "claims": [
+    {
+      "claim": "꿀이 굳는 것(결정화)은 포도당이 결정으로 석출되는 자연 현상이며 변질·불순·오래됨의 지표가 아니다",
+      "grade": "confirmed",
+      "evidence": [
+        "Ohio State University Extension: 결정화는 포도당 분자가 질서 있게 배열되는 자연 과정이며 'not an indicator of spoilage, impurity, age or quality'. 결정화된 꿀도 먹어도 안전 (2016-02-05 답변, 약 10년 전 자료, NHB 안내 중계)",
+        "[보도] 식약처 설명 인용(뉴시스/파이낸셜뉴스 2025-06-10): 꿀은 포도당과 과당이 가득 찬 과포화 용액이라 온도가 내려가면 포도당이 석출되어 하얀 결정이 생김",
+        "[보도] 포도당 함량이 높을수록, 화분 등 입자가 있으면 결정이 더 잘 생김 (식약처 설명 인용)"
+      ],
+      "sources": [
+        "https://ask.extension.org/kb/faq.php?id=299672",
+        "https://www.fnnews.com/news/202506101203498859"
+      ],
+      "sourceUrls": [
+        "https://ask.extension.org/kb/faq.php?id=299672",
+        "https://www.fnnews.com/news/202506101203498859"
+      ]
+    },
+    {
+      "claim": "보관은 상온·밀봉·직사광선 회피가 기본이고, 냉장은 결정화를 앞당긴다",
+      "grade": "confirmed",
+      "evidence": [
+        "Ohio State Extension: 주방 조리대·팬트리 등 상온 보관, 냉장 보관은 결정화를 가속",
+        "[보도] 식약처 설명 인용: 상온 보관, 직사광선 피함, 뚜껑 밀봉, 장기 보관 시 밀폐 용기에 나눠 담기",
+        "[보도] 식약처 설명 인용: 결정이 가장 잘 생기는 온도 10~15도, 4도 이하에서는 느려지고 25도 이상에서는 거의 안 생김 (냉장과 상충해 보이는 지점: Extension은 냉장이 가속한다고 하고 식약처 인용은 4도 이하에서 느리다고 함. 냉장고 온도대와 결정화 관계를 단정하지 말 것)",
+        "[보도] 가급적 2년 이내 섭취 권장 (식약처 설명 인용)"
+      ],
+      "sources": [
+        "https://ask.extension.org/kb/faq.php?id=299672",
+        "https://www.fnnews.com/news/202506101203498859"
+      ],
+      "sourceUrls": [
+        "https://ask.extension.org/kb/faq.php?id=299672",
+        "https://www.fnnews.com/news/202506101203498859"
+      ]
+    },
+    {
+      "claim": "굳은 꿀은 따뜻한 물에 중탕해 녹일 수 있다. 구체 온도 '50도 이하'는 식약처 설명을 인용한 보도 기준이며 Ohio State는 온도를 지정하지 않는다",
+      "grade": "reported",
+      "evidence": [
+        "[보도] 식약처 설명 인용: 50도 이하의 따뜻한 물에 중탕하면 처음 상태로 되돌릴 수 있음",
+        "Ohio State Extension: 따뜻한 물에 담가 결정이 녹을 때까지 저음, 또는 끓였다가 불 끈 물에 뚜껑 열고 담가 식을 때까지 두고 필요 시 반복. 구체 온도 명시 없음",
+        "자료 어긋남: 식약처 인용은 50도 이하, Extension은 '끓였다 불 끈 물'이라 결이 다름. 글에서는 50도 이하 기준으로 쓰고 Extension 방식은 별개 안내로만 언급",
+        "[보도] 꿀물은 끓는 물에 타지 말고 70도 이하 물에 탐 (식약처 설명 인용)"
+      ],
+      "sources": [
+        "https://www.fnnews.com/news/202506101203498859",
+        "https://ask.extension.org/kb/faq.php?id=299672"
+      ],
+      "sourceUrls": [
+        "https://www.fnnews.com/news/202506101203498859",
+        "https://ask.extension.org/kb/faq.php?id=299672"
+      ]
+    },
+    {
+      "claim": "생후 12개월 미만 영아에게는 꿀을 주면 안 된다. 보툴리누스균 포자는 열에 강해 가열해도 안전해지지 않고, 그 밖 연령은 섭취를 제한할 필요가 없다",
+      "grade": "confirmed",
+      "evidence": [
+        "식약처 공지(2017-05-15 등록): 생후 12개월 미만에게 벌꿀을 먹이면 영아 보툴리누스증 식중독 위험",
+        "식약처 공지: 보툴리누스균 포자는 열에 매우 강해 일반적인 조리법으로 사멸되지 않음",
+        "식약처 공지: 1세 미만 영아를 제외한 다른 연령층은 벌꿀 섭취를 제한할 필요 없음",
+        "[보도] 뉴시스 2024-02-01: 식약처, 꿀을 그대로 또는 음식에 넣어서도 먹이지 말 것"
+      ],
+      "sources": [
+        "https://www.mfds.go.kr/brd/m_227/view.do?seq=27318",
+        "https://www.newsis.com/view/NISX20240131_0002611837"
+      ],
+      "sourceUrls": [
+        "https://www.mfds.go.kr/brd/m_227/view.do?seq=27318",
+        "https://www.newsis.com/view/NISX20240131_0002611837"
+      ]
+    }
+  ],
+  "numbers": [
+    { "what": "결정이 가장 잘 생기는 온도", "value": "10~15도 (4도 이하 느림, 25도 이상 거의 안 생김)", "asOf": "2025-06-10 보도(식약처 설명 인용)", "sourceUrl": "https://www.fnnews.com/news/202506101203498859" },
+    { "what": "굳은 꿀 중탕 물 온도", "value": "50도 이하", "asOf": "2025-06-10 보도(식약처 설명 인용)", "sourceUrl": "https://www.fnnews.com/news/202506101203498859" },
+    { "what": "꿀물 타는 물 온도", "value": "70도 이하 (끓는 물 금지)", "asOf": "2025-06-10 보도(식약처 설명 인용)", "sourceUrl": "https://www.fnnews.com/news/202506101203498859" },
+    { "what": "섭취 권장 기한", "value": "가급적 2년 이내", "asOf": "2025-06-10 보도(식약처 설명 인용)", "sourceUrl": "https://www.fnnews.com/news/202506101203498859" },
+    { "what": "꿀 금지 연령", "value": "생후 12개월 미만", "asOf": "2017-05-15 공지", "sourceUrl": "https://www.mfds.go.kr/brd/m_227/view.do?seq=27318" }
+  ],
+  "sources": [
+    {
+      "title": "1세 미만 영아 벌꿀 섭취 주의 홍보 포스터 및 리플릿",
+      "url": "https://www.mfds.go.kr/brd/m_227/view.do?seq=27318",
+      "host": "www.mfds.go.kr",
+      "tier": "official",
+      "publishedAt": "2017-05-15",
+      "body": "식품의약품안전처 식품기준과 공지(2017-05-15 등록). 생후 12개월 미만 아기에게 벌꿀을 먹이면 영아 보툴리누스증 식중독 위험이 있어 부모·양육자가 주의해야 한다는 내용. 벌꿀은 벌이 꽃의 꿀과 수액을 모아 벌집에 저장한 자연식품이라 보툴리누스균에 오염될 수 있고, 보툴리누스균의 포자는 열에 매우 강해 일반적인 조리법으로 사멸되지 않으므로 1세 미만 영아에게는 벌꿀을 주지 않아야 한다. 다른 연령층은 벌꿀 섭취를 제한할 필요가 없다. 포스터와 리플릿 PDF 첨부. (WebFetch 요약 기반이며 따옴표 문장은 페이지 원문 인용)",
+      "facts": [
+        "원문: \"생후 12개월 미만의 아기에게 벌꿀을 먹이면 '영아 보툴리누스증(Infant Botulism)' 식중독에 걸릴 위험이 있어\"",
+        "원문: \"보툴리누스균의 포자는 열에 매우 강해 일반적인 조리법으로 사멸되지 않으므로\"",
+        "1세 미만 영아를 제외한 다른 연령층은 벌꿀 섭취를 제한할 필요 없음",
+        "공지 등록일 2017-05-15, 식품기준과"
+      ]
+    },
+    {
+      "title": "굳은 꿀 가짜 아니다 — 식약처 설명 (뉴시스 송종호 기자, 파이낸셜뉴스 게재)",
+      "url": "https://www.fnnews.com/news/202506101203498859",
+      "host": "www.fnnews.com",
+      "tier": "press",
+      "publishedAt": "2025-06-10",
+      "body": "뉴시스 기사를 파이낸셜뉴스가 게재(2025.06.10 12:03), 식약처 설명 인용. 꿀은 포도당과 과당이 가득 찬 과포화 용액이며 온도가 내려가면 녹아 있던 포도당이 석출되어 하얀 결정을 형성한다. 포도당 함량이 높을수록 결정이 더 잘 생기고 화분 등 입자가 있으면 더 쉽게 일어난다. 결정이 가장 잘 생기는 온도는 10~15도, 4도 이하에서는 느려지고 25도 이상에서는 거의 일어나지 않는다. 50도 이하의 따뜻한 물에 중탕하면 처음 상태로 되돌릴 수 있다. 상온 보관·직사광선 회피·밀봉, 가급적 2년 이내 섭취 권장. 끓는 물에 타지 말고 꿀물은 70도 이하 물에. (WebFetch 요약 기반, 식약처 원문 직접 확인은 못 함)",
+      "facts": [
+        "결정이 가장 잘 생기는 온도 10~15도; 4도 이하에서 결정화 속도 느려짐; 25도 이상에서 거의 안 생김 (식약처 설명 인용)",
+        "녹이는 법: 50도 이하의 따뜻한 물에 중탕 (식약처 설명 인용)",
+        "보관: 상온, 직사광선 피함, 뚜껑 밀봉, 장기 보관 시 밀폐 용기에 나눠 담기",
+        "가급적 2년 이내 섭취 권장(변질 가능성)",
+        "꿀물은 70도 이하의 물에 타기, 끓는 물 금지",
+        "포도당 함량 높은 꿀일수록 결정이 잘 생김; 화분 등 입자가 있으면 결정화 쉬움"
+      ]
+    },
+    {
+      "title": "\"아기에게 꿀먹이면 위험\" 이유가 뭘까…식약처 답변은? (뉴시스)",
+      "url": "https://www.newsis.com/view/NISX20240131_0002611837",
+      "host": "www.newsis.com",
+      "tier": "press",
+      "publishedAt": "2024-02-01",
+      "body": "뉴시스 송종호 기자, 2024-02-01 05:01. 식약처는 만 1세 미만 아기에게 꿀을 그대로 또는 음식에 넣어 먹이지 않아야 한다고 설명. 꿀 속 보툴리누스균 포자가 영아의 미성숙한 장에서 독소를 만들어 영아 보툴리누스증을 일으킬 수 있고, 포자는 일반 조리로 사멸되지 않는다. 또한 이유식 대신 미숫가루나 선식만 먹이는 것은 바람직하지 않다고 답했는데, 철분·비타민이 분유보다 적고 씹는 연습을 할 수 없기 때문이다. 위생적으로 만든 직접 이유식이 가장 바람직하다고 함. (WebFetch 요약 기반)",
+      "facts": [
+        "식약처: 1세 미만 영아에게 꿀을 그대로 또는 음식에 섞어 먹이지 말 것",
+        "보툴리누스균 포자는 일반 조리로 사멸되지 않음",
+        "보도일 2024-02-01 (뉴시스)"
+      ]
+    },
+    {
+      "title": "Ask Extension #299672 - crystallized honey (Kate Shumaker, Ohio State University Extension)",
+      "url": "https://ask.extension.org/kb/faq.php?id=299672",
+      "host": "ask.extension.org",
+      "tier": "data",
+      "publishedAt": "2016-02-05",
+      "body": "Ohio State University Extension Holmes County, Kate Shumaker MS RD LD; question 2016-02-04, answer 2016-02-05. Crystallization is the natural process of glucose sugar molecules aligning into orderly arrangements known as crystals; it is not an indicator of spoilage, impurity, age or quality. Store honey at room temperature (kitchen counter or pantry shelf); refrigeration speeds crystallization. To liquefy: place container in warm water and stir until crystals dissolve, or place the open container in water that was brought to a boil and removed from heat, let cool, repeat as needed. No specific temperatures given. Crystallized honey is safe to eat. The answer relays National Honey Board guidance. (WebFetch 요약 기반)",
+      "facts": [
+        "원문: \"Crystallization is the natural process of glucose sugar molecules aligning into orderly arrangements known as crystals.\"",
+        "원문: 결정화는 \"not an indicator of spoilage, impurity, age or quality\"",
+        "냉장 보관은 결정화를 가속하므로 권하지 않음, 상온(주방 조리대·팬트리) 보관",
+        "녹이기: 따뜻한 물 중탕 또는 끓였다가 불 끈 물에 뚜껑 열고 담가 식을 때까지, 필요 시 반복. 구체 온도 명시 없음",
+        "작성 2016-02-05 (약 10년 전 자료)"
+      ]
+    }
+  ],
+  "dropped": [
+    { "url": "커뮤니티 글 (검색 스니펫, URL 없음)", "why": "45~50도 20~30분 주장, 본문 미확인이라 출처로 쓰지 않음" },
+    { "url": "honey.org (National Honey Board)", "why": "인증서 오류로 접속 불가, 2차 인용 스니펫뿐" },
+    { "url": "koreascience.or.kr PDF JAKO201820159112089", "why": "페치 타임아웃으로 미확인" }
+  ],
+  "songs": []
+}
