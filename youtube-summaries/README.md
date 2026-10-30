@@ -3,10 +3,15 @@
 채널 [AI Engineer](https://www.youtube.com/@aiDotEngineer) 의 새 영상을 Gemini 로 자동 요약한 모음입니다.
 생성: `backend/scripts/youtube-summarize.mjs` (GitHub Actions `youtube-summary` 크론).
 
-총 **414개**.
+총 **419개**.
 
 | 발행일 | 제목 |
 |---|---|
+| 2026-10-29 | [Why a One-Line Change Can Break Your Whole Stack - Cole Gannaway, Qodo](2026-10-29-YqxpPI7YUjE.md) |
+| 2026-10-29 | [Catch the Bugs Your Code Review Misses - Killian Carlsen-Phelan & Taylor Luttrell-Williams, Sonar](2026-10-29-wP3P89YB9fA.md) |
+| 2026-10-29 | [How Revolut Cut AI Coding Costs 90% With Self-Hosted Open Models - David Abitbol, Revolut](2026-10-29-Ok6QdZHCcI8.md) |
+| 2026-10-29 | [We Trust AI Agents That Break Every Day - Shy Ruparel, Temporal](2026-10-29-mJ7q8CuVmbw.md) |
+| 2026-10-29 | [Why Humans Can't Keep Up With AI-Written Code - Tariq Shaukat, Sonar](2026-10-29-LQW_Wvqhp04.md) |
 | 2026-10-28 | [Exploits Now Beat Patches: Open Source Security in the AI Era - Patrick Smyth, Chainguard](2026-10-28-xZX3pmaB8Hk.md) |
 | 2026-10-28 | [AI That Hunts Logic Bugs Before Attackers Do - Taylor Luttrell-Williams, Sonar](2026-10-28-UW8Qkk7MG8A.md) |
 | 2026-10-28 | [Stop Guessing Your vLLM Config: Benchmarking LLMs on Runpod - Chris Vela, Runpod](2026-10-28-P_0_Th_ZzIg.md) |
