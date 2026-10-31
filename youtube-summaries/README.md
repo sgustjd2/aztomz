@@ -3,10 +3,15 @@
 채널 [AI Engineer](https://www.youtube.com/@aiDotEngineer) 의 새 영상을 Gemini 로 자동 요약한 모음입니다.
 생성: `backend/scripts/youtube-summarize.mjs` (GitHub Actions `youtube-summary` 크론).
 
-총 **419개**.
+총 **424개**.
 
 | 발행일 | 제목 |
 |---|---|
+| 2026-10-30 | [Your Agent Just Paid for Nothing: 6 Attacks on x402 Payments - Ishween Kaur, SoFi](2026-10-30-YU1uD_YkpjU.md) |
+| 2026-10-30 | [Why AI Won't Replace Stock Pickers - Jack Woodruff, Candlestick & Vinoo Ganesh, Kepler](2026-10-30-y2dyD6slKxE.md) |
+| 2026-10-30 | [The Cheaper AI Model That Costs You More - Rayan Krishnan, Vals AI](2026-10-30-rWtbOgl5FTU.md) |
+| 2026-10-30 | [How to Decide What Your AI Agent Should Remember - Wojciech Pluta, Oracle](2026-10-30-qq2Hm4XNRgI.md) |
+| 2026-10-30 | [Your AI Agent Starts Every Session Like a New Hire - Killian Carlsen-Phelan, Sonar](2026-10-30-8vDzncmzxyg.md) |
 | 2026-10-29 | [Why a One-Line Change Can Break Your Whole Stack - Cole Gannaway, Qodo](2026-10-29-YqxpPI7YUjE.md) |
 | 2026-10-29 | [Catch the Bugs Your Code Review Misses - Killian Carlsen-Phelan & Taylor Luttrell-Williams, Sonar](2026-10-29-wP3P89YB9fA.md) |
 | 2026-10-29 | [How Revolut Cut AI Coding Costs 90% With Self-Hosted Open Models - David Abitbol, Revolut](2026-10-29-Ok6QdZHCcI8.md) |
