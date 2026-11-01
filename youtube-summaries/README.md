@@ -3,10 +3,15 @@
 채널 [AI Engineer](https://www.youtube.com/@aiDotEngineer) 의 새 영상을 Gemini 로 자동 요약한 모음입니다.
 생성: `backend/scripts/youtube-summarize.mjs` (GitHub Actions `youtube-summary` 크론).
 
-총 **424개**.
+총 **429개**.
 
 | 발행일 | 제목 |
 |---|---|
+| 2026-10-31 | [Your AI Agent Wants Your Data. Here's How to Lock It Down - Jeff Smith, Oracle](2026-10-31-LnQce-eHm8k.md) |
+| 2026-10-31 | [78% Wanted This AI Feature. Almost Nobody Used It - Supriya Subudhi, Bumble](2026-10-31-CvmZtAPmAW4.md) |
+| 2026-10-31 | [When Running Your Own AI Models Beats Paying for APIs - Steven Latré, imec](2026-10-31-9-Y_oS9OBLc.md) |
+| 2026-10-31 | [Voice AI Where One Wrong Question Breaks the Rules - Shiv Indap, Upstart & Brooke Hopkins, Coval](2026-10-31-3osCbSufv8g.md) |
+| 2026-10-31 | [Everyone Has the Same AI Models. Here's What Sets Agents Apart - Richmond Alake, Oracle](2026-10-31-1_lX0m64-aI.md) |
 | 2026-10-30 | [Your Agent Just Paid for Nothing: 6 Attacks on x402 Payments - Ishween Kaur, SoFi](2026-10-30-YU1uD_YkpjU.md) |
 | 2026-10-30 | [Why AI Won't Replace Stock Pickers - Jack Woodruff, Candlestick & Vinoo Ganesh, Kepler](2026-10-30-y2dyD6slKxE.md) |
 | 2026-10-30 | [The Cheaper AI Model That Costs You More - Rayan Krishnan, Vals AI](2026-10-30-rWtbOgl5FTU.md) |
