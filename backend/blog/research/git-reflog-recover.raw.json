@@ -1,0 +1,140 @@
+{
+  "keyword": "git reflog 복구 — reset --hard로 날린 커밋·삭제한 브랜치 되살리기",
+  "categoryId": "dev-tool",
+  "searchedAt": "2026-11-01",
+  "queries": [
+    "git reflog recover deleted branch git reset --hard lost commits uncommitted changes cannot recover",
+    "atlassian git reflog tutorial reflog 90 days expire local git reflog rewriting history (allowed: atlassian.com, docs.github.com, github.blog)"
+  ],
+  "sources": [
+    {
+      "title": "git-reflog Documentation",
+      "url": "https://git-scm.com/docs/git-reflog",
+      "host": "git-scm.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "Reference logs, or reflogs, record when the tips of branches and other references were updated in the local repository. Reflogs are useful in various Git commands, to specify the old value of a reference. The reflog covers all recent actions, and in addition the HEAD reflog records branch switching. git reflog show is an alias for git log -g --abbrev-commit --pretty=oneline. HEAD@{2} means where HEAD used to be two moves ago. master@{one.week.ago} means where master used to point to one week ago in this local repository. --expire=<time>: if not specified, taken from gc.reflogExpire, which defaults to 90 days. --expire-unreachable=<time>: taken from gc.reflogExpireUnreachable, which defaults to 30 days. --expire=all prunes entries regardless of age; --expire=never turns off pruning of reachable entries.",
+      "facts": [
+        "reflog는 '로컬 저장소에서' 브랜치 끝·기타 참조가 갱신된 시점을 기록한다 (공식 문구: updated in the local repository)",
+        "HEAD@{2} = HEAD가 두 번 이동하기 전 위치",
+        "master@{one.week.ago} = 이 로컬 저장소에서 master가 1주 전 가리키던 곳",
+        "git reflog show 는 git log -g --abbrev-commit --pretty=oneline 의 별칭",
+        "--expire 미지정 시 gc.reflogExpire 기본값 90일",
+        "--expire-unreachable 미지정 시 gc.reflogExpireUnreachable 기본값 30일 (현재 브랜치 끝에서 도달 불가능한 항목)",
+        "--expire=all 은 나이와 무관하게 항목을 지움 (위험)"
+      ]
+    },
+    {
+      "title": "git-gc Documentation",
+      "url": "https://git-scm.com/docs/git-gc",
+      "host": "git-scm.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "gc.reflogExpire default 90 days: git reflog expire removes reflog entries older than this. gc.reflogExpireUnreachable default 30 days: removes entries older than this that are also unreachable from the current branch tip; such entries are typically created by git commit --amend or git rebase and point to commits from before the amend or rebase, so the default is more aggressive. gc.pruneExpire default 2 weeks ago: when git gc runs it calls prune --expire 2.weeks.ago. 'now' prunes unreachable objects immediately with no grace period, increasing corruption risk if another process writes concurrently. 'never' suppresses pruning. Pattern form gc.<pattern>.reflogExpire, e.g. refs/stash, is supported.",
+      "facts": [
+        "gc.reflogExpire 기본 90일, gc.reflogExpireUnreachable 기본 30일, gc.pruneExpire 기본 2주(2.weeks.ago)",
+        "reflogExpireUnreachable 항목은 주로 git commit --amend 나 git rebase 가 만든, 수정 전 커밋을 가리키는 것",
+        "git gc 는 prune --expire 2.weeks.ago 를 호출 — 도달 불가능 객체 자체는 2주 유예 후 정리 대상",
+        "gc.pruneExpire=now 는 유예 없이 즉시 정리 (다른 프로세스가 동시에 쓰면 손상 위험)"
+      ]
+    },
+    {
+      "title": "git-fsck Documentation",
+      "url": "https://git-scm.com/docs/git-fsck",
+      "host": "git-scm.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "dangling <type> <object>: the object is present in the database but never directly used. A dangling commit could be a root node. unreachable objects exist in the database but cannot be reached from any head node (refs, reflogs, and the index when --cache is used). --lost-found: write dangling objects into .git/lost-found/commit/ or .git/lost-found/other/, depending on type. If the object is a blob, the contents are written into the file, rather than its object name. Commits go to .git/lost-found/commit/; trees, tags and other non-commit objects go to .git/lost-found/other/. --no-reflogs treats commits referenced only by reflog entries as unreachable, which helps find commits that were once on a ref but no longer are.",
+      "facts": [
+        "git fsck --lost-found 는 dangling 객체를 .git/lost-found/commit/ (커밋) 또는 .git/lost-found/other/ (그 외) 에 기록",
+        "blob 은 객체 이름이 아니라 파일 내용 그대로 기록됨",
+        "dangling = 데이터베이스에 있으나 직접 참조되지 않는 객체; 'A dangling commit could be a root node'",
+        "--no-reflogs 는 reflog 에만 걸린 커밋을 unreachable 로 취급해, 한때 ref 에 있었다가 사라진 커밋을 찾는 데 도움"
+      ]
+    },
+    {
+      "title": "git-reset Documentation",
+      "url": "https://git-scm.com/docs/git-reset",
+      "host": "git-scm.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "--hard: Overwrite all files and directories with the version from <commit>, and may overwrite untracked files. Tracked files not in <commit> are removed so that the working tree matches <commit>. Update the index to match the new HEAD, so nothing will be staged. Before the operation, ORIG_HEAD is set to the tip of the current branch. 'reset' copies the old head to .git/ORIG_HEAD. In the dirty working tree example: running git reset --hard ORIG_HEAD will let you go back to where you were, but it will discard your local changes, which you do not want; git reset --merge keeps your local changes. Undo commits permanently: do not do this if you have already given these commits to somebody else.",
+      "facts": [
+        "reset --hard 는 작업 트리 파일을 대상 커밋 버전으로 덮어쓰고, 추적 파일 중 대상에 없는 것은 삭제하며, 추적되지 않는 파일도 덮어쓸 수 있음",
+        "reset 전에 ORIG_HEAD 가 현재 브랜치 끝으로 설정됨 (git reset --hard ORIG_HEAD 로 되돌릴 수 있는 경우 있음)",
+        "공식 문서에 '커밋 안 한 변경은 복구 불가'라는 명시 문장은 없음 — 가장 가까운 문구는 'reset --hard ORIG_HEAD ... it will discard your local changes'",
+        "--merge 는 로컬 변경을 유지하며 되돌림"
+      ]
+    },
+    {
+      "title": "gitrevisions Documentation",
+      "url": "https://git-scm.com/docs/gitrevisions",
+      "host": "git-scm.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "<refname>@{<n>}: a ref followed by @ with an ordinal in braces specifies the n-th prior value of that ref. master@{1} is the immediate prior value of master while master@{5} is the 5th prior value. This suffix may only be used immediately following a ref name and the ref must have an existing log ($GIT_DIR/logs/<refname>). With an empty ref part, @{1} on branch blabla means blabla@{1}. @{-<n>} means the nth branch/commit checked out before the current one. <refname>@{<date>} such as {yesterday} or {1979-02-26 18:30:00} specifies the value of the ref at a prior point in time. Note that this looks up the state of your local ref at a given time; e.g., what was in your local master branch last week.",
+      "facts": [
+        "<ref>@{n} 은 해당 ref 의 n번째 이전 값. 반드시 로그($GIT_DIR/logs/<refname>)가 있는 ref 여야 함",
+        "ref 부분을 비우면(@{1}) 현재 브랜치의 reflog 항목",
+        "@{-1} 은 직전에 체크아웃했던 브랜치/커밋",
+        "master@{yesterday}, HEAD@{5 minutes ago} 같은 날짜 형식 가능; 공식 문서는 '로컬 ref 의 상태를 찾는 것'이라고 명시"
+      ]
+    },
+    {
+      "title": "git-branch Documentation",
+      "url": "https://git-scm.com/docs/git-branch",
+      "host": "git-scm.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "-d / --delete: Delete a branch. The branch must be fully merged in its upstream branch, or in HEAD if no upstream was set. -D is a shortcut for --delete --force: allow deleting the branch irrespective of its merged status, or whether it even points to a valid commit. With a -d or -D option, <branch-name> will be deleted. You may specify more than one branch for deletion. If the branch currently has a reflog then the reflog will also be deleted. Example: git branch -D test deletes the test branch even if the current branch does not have all commits from the test branch.",
+      "facts": [
+        "git branch -D 는 병합 여부와 무관하게 브랜치를 강제 삭제 (-d 는 병합된 브랜치만)",
+        "브랜치를 지우면 그 브랜치의 reflog 도 함께 삭제됨 → 삭제한 브랜치 이름으로는 reflog 를 못 찾고 HEAD reflog 나 삭제 시 출력된 SHA 를 써야 함 (이 추론은 문서 문장 2개의 조합이며 문서가 직접 말하진 않음)",
+        "공식 git-branch 문서에는 삭제 브랜치 복구 절차가 없음"
+      ]
+    },
+    {
+      "title": "Pro Git: Git Internals - Maintenance and Data Recovery",
+      "url": "https://git-scm.com/book/en/v2/Git-Internals-Maintenance-and-Data-Recovery",
+      "host": "git-scm.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "Often, the quickest way is to use a tool called git reflog. As you're working, Git silently records what your HEAD is every time you change it. Each time you commit or change branches, the reflog is updated. Example output: 1a410ef HEAD@{0}: reset: moving to 1a410ef / ab1afef HEAD@{1}: commit: Modify repo.rb a bit / 484a592 HEAD@{2}: commit: Create repo.rb. git log -g gives a normal log output for your reflog. It looks like the bottom commit is the one you lost, so you can recover it by creating a new branch at that commit: git branch recover-branch ab1afef. If the loss is not in the reflog (simulated by git branch -D recover-branch and rm -Rf .git/logs/), git fsck --full shows all objects that aren't pointed to by another object, e.g. 'dangling commit ab1afef80fac8e34258ff41fc1b867c702daa24b'; you can recover it the same way, by adding a branch that points to that SHA-1. The reflog data is kept in the .git/logs/ directory.",
+      "facts": [
+        "Pro Git 예시: git reset 후 reflog 에 'HEAD@{0}: reset: moving to 1a410ef' 가 남고, 잃은 커밋 ab1afef 는 HEAD@{1}",
+        "복구 = 잃은 커밋 SHA 로 새 브랜치 생성: git branch recover-branch ab1afef",
+        "git log -g 는 reflog 를 일반 로그 형식으로 보여줌",
+        "reflog 에도 없으면 git fsck --full 의 'dangling commit <SHA>' 를 찾아 같은 방식으로 브랜치를 만든다",
+        "reflog 데이터는 .git/logs/ 디렉터리에 저장됨 (이게 지워지면 reflog 없음)"
+      ]
+    },
+    {
+      "title": "Recovering lost commits with git reflog (Graphite guide)",
+      "url": "https://graphite.com/guides/recovering-lost-commits-git-reflog",
+      "host": "graphite.com",
+      "tier": "blog",
+      "publishedAt": null,
+      "body": "By default, reflog keeps history for a limited time (90 days for normal entries, 30 days for those with no refs). Accidental hard reset: run git reflog to find the entry before the reset, then git reset --hard <commit> to move the branch back, or git checkout -b recovered <commit> to create a new branch at that commit. Deleted branch: get the last commit hash from the deletion output, the reflog (git reflog --all), or git log --all --grep='<message>', then git checkout -b <branch-name> <commit>. Force push: git reflog show origin/<branch-name>. Reflog is local: each repository has its own reflog; it isn't pushed to remotes. A fresh clone does not include the original repository's reflog history. Avoid running git gc until you've recovered the commits you need.",
+      "facts": [
+        "보조 자료: 하드 리셋 복구 = git reflog 로 직전 항목 찾기 → git reset --hard <commit> 또는 git checkout -b recovered <commit>",
+        "보조 자료: 삭제한 브랜치 = 삭제 시 출력된 해시, git reflog --all, 또는 git log --all --grep 으로 마지막 커밋 찾아 git checkout -b <이름> <commit>",
+        "보조 자료: reflog 는 로컬 전용이며 remote 로 push 되지 않고 새 clone 에는 원본의 reflog 가 없다",
+        "보조 자료: 복구 전에는 git gc 를 돌리지 말 것"
+      ]
+    }
+  ],
+  "conflicts": [
+    {
+      "about": "브랜치 삭제 후 reflog",
+      "a": "git-branch 공식 문서: 브랜치 삭제 시 그 브랜치의 reflog 도 삭제된다",
+      "b": "Graphite 보조 글: 삭제 브랜치는 git reflog --all 로 마지막 커밋을 찾는다 — 브랜치 전용 reflog 는 없어져도 HEAD reflog 에 해당 커밋이 남아 있는 경우에 한해 성립(둘이 직접 모순은 아니나 글에서 'HEAD reflog 기준'으로 정확히 구분해 쓸 것)"
+    }
+  ],
+  "unknowns": [
+    "GitHub Docs 에서 reflog/복구 관련 공식 페이지: 검색 시도하지 않았거나 확인 못 함 (allowed_domains 검색에서 docs.github.com 결과 없음)",
+    "Atlassian git-reflog / refs-and-the-reflog / git-reset 튜토리얼: WebFetch 가 본문 없이 내비게이션만 반환해 본문을 읽지 못함 → sources 에서 제외. 검색 스니펫상 '기본 90일, 로컬 저장소에 커밋된 변경만 안전망'이라는 내용이 있으나 본문 미확인",
+    "'커밋 안 한 변경은 복구 불가'를 직접 명시한 공식 문장: git-reset 문서에 없음. 일반 지식(커밋·add 안 된 변경은 Git 객체로 저장되지 않음)이며 1차 자료로 확인 못 함. git add 했던 파일은 blob 으로 남아 fsck --lost-found 로 찾을 수 있다는 서술도 검색 요약의 일반 지식이라 미검증",
+    "'clone·push 로 reflog 가 안 옮겨진다'의 공식 문장: git-clone 문서에 reflog 언급 없음. git-reflog/gitrevisions 의 'local' 표현 + Graphite 보조 글로만 뒷받침",
+    "sources 의 publishedAt 은 공식 문서 페이지라 날짜 불명(null)"
+  ]
+}
