@@ -3,10 +3,15 @@
 채널 [AI Engineer](https://www.youtube.com/@aiDotEngineer) 의 새 영상을 Gemini 로 자동 요약한 모음입니다.
 생성: `backend/scripts/youtube-summarize.mjs` (GitHub Actions `youtube-summary` 크론).
 
-총 **429개**.
+총 **434개**.
 
 | 발행일 | 제목 |
 |---|---|
+| 2026-11-02 | [I Don't Fear AI Slop. I Fear Untold Stories - Zack Proser, WorkOS](2026-11-02-1et3Lb_KLQo.md) |
+| 2026-11-01 | [Most of Your Docs Readers Are Now AI Agents - Hahnbee Lee, Mintlify & Lincoln Murr, Coinbase](2026-11-01-YX4Z4XqZ9Vo.md) |
+| 2026-11-01 | [Why We Rebuilt Microsoft Office From Scratch for AI Agents - Yijia Liang, Compound AI](2026-11-01-v0UkV5qS9E4.md) |
+| 2026-11-01 | [I Made a Fruit Fly Review My Code - Nick Nisi, WorkOS](2026-11-01-geMAe-PLJF4.md) |
+| 2026-11-01 | [If Your AI Scores 100%, Your Eval Is Wrong - Ramakrishnan Lokanathan, eslams.com](2026-11-01-7WUzHIF32vA.md) |
 | 2026-10-31 | [Your AI Agent Wants Your Data. Here's How to Lock It Down - Jeff Smith, Oracle](2026-10-31-LnQce-eHm8k.md) |
 | 2026-10-31 | [78% Wanted This AI Feature. Almost Nobody Used It - Supriya Subudhi, Bumble](2026-10-31-CvmZtAPmAW4.md) |
 | 2026-10-31 | [When Running Your Own AI Models Beats Paying for APIs - Steven Latré, imec](2026-10-31-9-Y_oS9OBLc.md) |
