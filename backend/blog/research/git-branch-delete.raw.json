@@ -1,0 +1,178 @@
+{
+ "keyword": "git 브랜치 삭제",
+ "categoryId": "dev-tool",
+ "searchedAt": "2026-11-02",
+ "queries": [
+  "GitHub Docs deleting and restoring branches in a pull request",
+  "GitHub Docs managing the automatic deletion of branches",
+  "git branch -d \"Cannot delete branch\" \"checked out at\" worktree error message"
+ ],
+ "sources": [
+  {
+   "title": "git-branch Documentation",
+   "url": "https://git-scm.com/docs/git-branch",
+   "host": "git-scm.com",
+   "tier": "official",
+   "publishedAt": null,
+   "body": "-d / --delete: \"Delete a branch. The branch must be fully merged in its upstream branch, or in HEAD if no upstream was set with --track or --set-upstream-to.\" -D: \"Shortcut for --delete --force.\" DESCRIPTION: \"With a -d or -D option, <branch-name> will be deleted. You may specify more than one branch for deletion. If the branch currently has a reflog then the reflog will also be deleted.\" \"Use -r together with -d to delete remote-tracking branches. Note, that it only makes sense to delete remote-tracking branches if they no longer exist in the remote repository or if git fetch was configured not to fetch them again. See also the prune subcommand of git-remote for a way to clean up all obsolete remote-tracking branches.\"",
+   "facts": [
+    "-d / --delete: \"Delete a branch. The branch must be fully merged in its upstream branch, or in HEAD if no upstream was set with --track or --set-upstream-to.\"",
+    "-D: \"Shortcut for --delete --force.\"",
+    "-f / --force (in combination with -d): \"In combination with -d (or --delete), allow deleting the branch irrespective of its merged status, or whether it even points to a valid commit.\"",
+    "DESCRIPTION: \"With a -d or -D option, <branch-name> will be deleted. You may specify more than one branch for deletion. If the branch currently has a reflog then the reflog will also be deleted.\"",
+    "-r with -d: \"Use -r together with -d to delete remote-tracking branches. Note, that it only makes sense to delete remote-tracking branches if they no longer exist in the remote repository or if git fetch was configured not to fetch them again. See also the prune subcommand of git-remote for a way to clean up all obsolete remote-tracking branches.\"",
+    "-r / --remotes: \"List or delete (if used with -d) the remote-tracking branches.\"",
+    "-f note (about resetting a branch, not deleting): \"Note that git branch -f <branch-name> [<start-point>], even with -f, refuses to change an existing branch <branch-name> that is checked out in another worktree linked to the same repository.\"",
+    "The page as fetched on 2026-11-02 also documents a --delete-merged option: \"A branch is not deleted when: ... it is checked out in any worktree, ...\" and \"A branch whose work has not yet been merged into its upstream is silently skipped. Delete it with git branch -D if you want to remove it anyway.\" (introducing git version not confirmed; verify against installed git before recommending)",
+    "The page contains no sentence stating that -d refuses a branch checked out in a worktree, and no exact 'not fully merged' error text."
+   ]
+  },
+  {
+   "title": "git-push Documentation",
+   "url": "https://git-scm.com/docs/git-push",
+   "host": "git-scm.com",
+   "tier": "official",
+   "publishedAt": null,
+   "body": "--delete / -d: \"All listed refs are deleted from the remote repository. This is the same as prefixing all refs with a colon.\" Refspec rule: \"If <src> is empty, it deletes the <dst> ref from the remote repository. For example, git push origin :dev will delete the dev branch.\" These are the two documented ways to delete a remote branch: git push <remote> --delete <branch> and the colon-prefixed refspec form.",
+   "facts": [
+    "--delete / -d: \"All listed refs are deleted from the remote repository. This is the same as prefixing all refs with a colon.\"",
+    "Refspec: \"If <src> is empty, it deletes the <dst> ref from the remote repository. For example, git push origin :dev will delete the dev branch.\""
+   ]
+  },
+  {
+   "title": "git-fetch Documentation (prune)",
+   "url": "https://git-scm.com/docs/git-fetch",
+   "host": "git-scm.com",
+   "tier": "official",
+   "publishedAt": null,
+   "body": "-p / --prune: \"Before fetching, remove any remote-tracking references that no longer exist on the remote. Tags are not subject to pruning if they are fetched only because of the default tag auto-following or due to a --tags option. However, if tags are fetched due to an explicit refspec (either on the command line or in the remote configuration, for example if the remote was cloned with the --mirror option), then they are also subject to pruning. Supplying --prune-tags is a shorthand for providing the tag refspec.\"",
+   "facts": [
+    "-p / --prune: \"Before fetching, remove any remote-tracking references that no longer exist on the remote. Tags are not subject to pruning if they are fetched only because of the default tag auto-following or due to a --tags option. However, if tags are fetched due to an explicit refspec (either on the command line or in the remote configuration, for example if the remote was cloned with the --mirror option), then they are also subject to pruning. Supplying --prune-tags is a shorthand for providing the tag refspec.\"",
+    "PRUNING: \"Git has a default disposition of keeping data unless it’s explicitly thrown away; this extends to holding onto local references to branches on remotes that have themselves deleted those branches.\"",
+    "PRUNING: \"If left to accumulate, these stale references might make performance worse on big and busy repos that have a lot of branch churn, and e.g. make the output of commands like git branch -a --contains <commit> needlessly verbose, as well as impacting anything else that’ll work with the complete set of known references.\""
+   ]
+  },
+  {
+   "title": "git-remote Documentation (prune)",
+   "url": "https://git-scm.com/docs/git-remote",
+   "host": "git-scm.com",
+   "tier": "official",
+   "publishedAt": null,
+   "body": "prune: \"Delete stale references associated with <name>. By default, stale remote-tracking branches under <name> are deleted, but depending on global configuration and the configuration of the remote we might even prune local tags that haven't been pushed there. Equivalent to git fetch --prune <name>, except that no new references will be fetched.\" prune -n / --dry-run: \"With --dry-run option, report what branches would be pruned, but do not actually prune them.\"",
+   "facts": [
+    "prune: \"Delete stale references associated with <name>. By default, stale remote-tracking branches under <name> are deleted, but depending on global configuration and the configuration of the remote we might even prune local tags that haven't been pushed there. Equivalent to git fetch --prune <name>, except that no new references will be fetched.\"",
+    "prune -n / --dry-run: \"With --dry-run option, report what branches would be pruned, but do not actually prune them.\"",
+    "update --prune: \"With --prune option, run pruning against all the remotes that are updated.\""
+   ]
+  },
+  {
+   "title": "git-worktree Documentation",
+   "url": "https://git-scm.com/docs/git-worktree",
+   "host": "git-scm.com",
+   "tier": "official",
+   "publishedAt": null,
+   "body": "prune: \"Remove worktree information in $GIT_DIR/worktrees for worktrees whose working trees are missing. Useful after manually removing a working tree that is no longer needed (but use \"git worktree remove\" next time you want to do so).\" remove: \"Remove a worktree. Only clean worktrees (no untracked files and no modification in tracked files) can be removed. Unclean worktrees or ones with submodules can be removed with --force. The main worktree cannot be removed.\"",
+   "facts": [
+    "prune: \"Remove worktree information in $GIT_DIR/worktrees for worktrees whose working trees are missing. Useful after manually removing a working tree that is no longer needed (but use \"git worktree remove\" next time you want to do so).\"",
+    "remove: \"Remove a worktree. Only clean worktrees (no untracked files and no modification in tracked files) can be removed. Unclean worktrees or ones with submodules can be removed with --force. The main worktree cannot be removed.\"",
+    "--force: \"remove refuses to remove an unclean worktree unless --force is used. To remove a locked worktree, specify --force twice.\""
+   ]
+  },
+  {
+   "title": "git-reflog Documentation",
+   "url": "https://git-scm.com/docs/git-reflog",
+   "host": "git-scm.com",
+   "tier": "official",
+   "publishedAt": null,
+   "body": "\"Reference logs, or \"reflogs\", record when the tips of branches and other references were updated in the local repository.\" expire: \"Entries older than expire time, or entries older than expire-unreachable time and not reachable from the current tip, are removed from the reflog.\" Defaults: gc.reflogExpire defaults to 90 days; gc.reflogExpireUnreachable defaults to 30 days.",
+   "facts": [
+    "\"Reference logs, or \"reflogs\", record when the tips of branches and other references were updated in the local repository.\"",
+    "expire: \"Entries older than expire time, or entries older than expire-unreachable time and not reachable from the current tip, are removed from the reflog.\"",
+    "\"the expiration time is taken from the configuration setting gc.reflogExpire, which in turn defaults to 90 days.\"",
+    "\"the expiration time is taken from the configuration setting gc.reflogExpireUnreachable, which in turn defaults to 30 days.\""
+   ]
+  },
+  {
+   "title": "Deleting and restoring branches in a pull request - GitHub Docs",
+   "url": "https://docs.github.com/articles/deleting-and-restoring-branches-in-a-pull-request",
+   "host": "docs.github.com",
+   "tier": "official",
+   "publishedAt": null,
+   "body": "\"If you have write access in a repository, you can delete branches that are associated with closed or merged pull requests.\" \"You cannot delete branches that are associated with open pull requests.\" Delete branch button: \"This button isn't displayed if there's currently an open pull request for this branch.\" Restore: \"You can restore the head branch of a closed pull request.\" Near the bottom of the pull request, click Restore branch.",
+   "facts": [
+    "\"If you have write access in a repository, you can delete branches that are associated with closed or merged pull requests.\"",
+    "\"You cannot delete branches that are associated with open pull requests.\"",
+    "\"You can delete a branch that is associated with a pull request if the pull request has been merged or closed and there are no other open pull requests referencing the branch.\"",
+    "Delete branch button: \"This button isn't displayed if there's currently an open pull request for this branch.\"",
+    "Restore: \"You can restore the head branch of a closed pull request.\" Step: \"Near the bottom of the pull request, click Restore branch.\""
+   ]
+  },
+  {
+   "title": "Managing branches within your repository - GitHub Docs",
+   "url": "https://docs.github.com/en/pull-requests/how-tos/commit-changes/managing-branches-within-your-repository",
+   "host": "docs.github.com",
+   "tier": "official",
+   "publishedAt": null,
+   "body": "\"Delete branches that you no longer need, such as branches for merged or closed work.\" \"If the branch you want to delete is the repository's default branch, choose a new default branch first.\" \"If the branch is associated with an open pull request, merge or close the pull request before deleting the branch.\" \"If the branch is associated with at least one open pull request, deleting the branch closes the pull requests.\"",
+   "facts": [
+    "\"If the branch you want to delete is the repository's default branch, choose a new default branch first.\"",
+    "\"If the branch is associated with an open pull request, merge or close the pull request before deleting the branch.\"",
+    "\"If the branch is associated with at least one open pull request, deleting the branch closes the pull requests.\"",
+    "\"If you delete a head branch after its pull request has been merged, GitHub checks for any open pull requests\" and \"GitHub automatically updates any such pull requests, changing their base branch to the merged pull request's base branch.\""
+   ]
+  },
+  {
+   "title": "Managing the automatic deletion of branches - GitHub Docs",
+   "url": "https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/managing-the-automatic-deletion-of-branches",
+   "host": "docs.github.com",
+   "tier": "official",
+   "publishedAt": null,
+   "body": "\"You can have head branches automatically deleted after pull requests are merged in your repository.\" \"Anyone with admin permissions to a repository can enable or disable the automatic deletion of branches.\" \"Branch protection rules and repository rules can also prevent branches being automatically deleted.\" Path: Settings, General page, \"Pull Requests\" section, \"Automatically delete head branches\".",
+   "facts": [
+    "\"You can have head branches automatically deleted after pull requests are merged in your repository.\"",
+    "\"Anyone with admin permissions to a repository can enable or disable the automatic deletion of branches.\"",
+    "\"Branch protection rules and repository rules can also prevent branches being automatically deleted.\"",
+    "Fork PRs: GitHub uses the setting on the head repository (the fork); requires the setting enabled on the fork and \"The user merging the pull request has write access to the fork.\" \"If either requirement isn't met, the head branch isn't deleted automatically.\"",
+    "Path: Settings > General > \"Pull Requests\" > \"Automatically delete head branches\"."
+   ]
+  },
+  {
+   "title": "About protected branches - GitHub Docs",
+   "url": "https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches",
+   "host": "docs.github.com",
+   "tier": "official",
+   "publishedAt": null,
+   "body": "Intro (fragment quoted): branch protection rules by default \"prevents the matching branches from being deleted\". Allow deletions section: \"By default, you cannot delete a protected branch.\" Only fragments of this page were returned by the fetch tool, so the full sentence around the intro quote was not captured.",
+   "facts": [
+    "Intro fragment: protection rule \"prevents the matching branches from being deleted\" (full sentence not captured).",
+    "Allow deletions: \"By default, you cannot delete a protected branch.\""
+   ]
+  },
+  {
+   "title": "Git Error: Cannot Delete Branch Checked Out or Used by Worktree",
+   "url": "https://www.golinuxcloud.com/cannot-delete-branch-checked-out-at/",
+   "host": "golinuxcloud.com",
+   "tier": "blog",
+   "publishedAt": null,
+   "body": "Search-result summary only; page body was NOT fetched. Reported error form: Cannot delete branch 'feature/auth' checked out at '/path/that/no/longer/exists'. Reported fix: git worktree list, then git worktree remove <path>, or git worktree prune if the folder is already gone; -D does not override this check. Wording varies by git version (one proposed variant: used by worktree at).",
+   "facts": [
+    "Secondary, unfetched: error text 'Cannot delete branch X checked out at PATH'; -D does not bypass; fix is git worktree remove or git worktree prune."
+   ]
+  }
+ ],
+ "conflicts": [
+  {
+   "about": "worktree에 체크아웃된 브랜치 삭제",
+   "a": "git-branch 공식 문서에는 -d가 worktree에 체크아웃된 브랜치를 거부한다는 문장이 없다(-f 설명은 reset 한정, --delete-merged 제외 조건에만 worktree 언급)",
+   "b": "golinuxcloud(블로그, 본문 미확인)는 'Cannot delete branch ... checked out at ...' 오류로 -d/-D 모두 막힌다고 설명. 공식 문서로 확인 안 됨, 로컬 재현 필요"
+  }
+ ],
+ "unknowns": [
+  "git branch -d 미병합 시 실제 오류 문구 (공식 문서에 없음, 로컬 재현 필요)",
+  "현재 체크아웃 브랜치 삭제 오류 정확한 문구 (공식 문서에 없음)",
+  "--delete-merged 옵션이 도입된 git 버전 (페이지에서만 확인, 버전 미확인)",
+  "GitHub에서 삭제한 브랜치 복구 가능 기간 (공식 페이지에 기간 명시 없음)",
+  "로컬에서 삭제한 브랜치 복구 명령(git reflog + git branch <name> <sha>) 공식 문서 원문 미확인. 브랜치 삭제 시 그 브랜치 reflog도 삭제된다는 사실은 git-branch 문서 확인, HEAD reflog 경유 복구는 추론",
+  "GitHub 페이지 일부는 WebFetch가 문장을 125자 단위로 잘라 반환해 원문 전체 문단이 아닌 조각 인용임 (about-protected-branches 도입 문장 등)"
+ ]
+}

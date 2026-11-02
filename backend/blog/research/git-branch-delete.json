@@ -1,0 +1,182 @@
+{
+  "keyword": "git 브랜치 삭제",
+  "categoryId": "dev-tool",
+  "notes": "팩트체크 추가 근거(2026-11-02, git 소스 transport.c의 transport_update_tracking_ref→update_one_tracking_ref 확인, 임시 저장소 재현은 권한 문제로 못 함): 내 클론에서 git push --delete가 성공하면 그 클론의 remote-tracking 참조도 지워진다. fetch.prune이 true이면 fetch가 --prune처럼 동작한다(git-fetch 문서). 공식 문서(git-scm, GitHub Docs)로 확인된 것: 로컬 -d/-D 차이, 원격 삭제 두 문법, remote-tracking 정리(prune), GitHub의 PR 연동 삭제 규칙과 복구 버튼, reflog 보존 기간. 오류 문구·worktree 거부 동작·--delete-merged 버전·GitHub 복구 기간은 공식 근거가 없어 쓸 수 없다. 인용구는 영어 원문 그대로 쓰고 축약·의역으로 조건을 바꾸지 말 것.",
+  "sources": [
+    {
+      "title": "git-branch Documentation",
+      "url": "https://git-scm.com/docs/git-branch",
+      "host": "git-scm.com",
+      "tier": "official",
+      "body": "-d / --delete: \"Delete a branch. The branch must be fully merged in its upstream branch, or in HEAD if no upstream was set with --track or --set-upstream-to.\" -D: \"Shortcut for --delete --force.\" -f / --force (in combination with -d): \"In combination with -d (or --delete), allow deleting the branch irrespective of its merged status, or whether it even points to a valid commit.\" DESCRIPTION: \"With a -d or -D option, <branch-name> will be deleted. You may specify more than one branch for deletion. If the branch currently has a reflog then the reflog will also be deleted.\" \"Use -r together with -d to delete remote-tracking branches. Note, that it only makes sense to delete remote-tracking branches if they no longer exist in the remote repository or if git fetch was configured not to fetch them again. See also the prune subcommand of git-remote for a way to clean up all obsolete remote-tracking branches.\" -r / --remotes: \"List or delete (if used with -d) the remote-tracking branches.\""
+    },
+    {
+      "title": "git-push Documentation",
+      "url": "https://git-scm.com/docs/git-push",
+      "host": "git-scm.com",
+      "tier": "official",
+      "body": "--delete / -d: \"All listed refs are deleted from the remote repository. This is the same as prefixing all refs with a colon.\" Refspec: \"If <src> is empty, it deletes the <dst> ref from the remote repository. For example, git push origin :dev will delete the dev branch.\""
+    },
+    {
+      "title": "git-fetch Documentation (prune)",
+      "url": "https://git-scm.com/docs/git-fetch",
+      "host": "git-scm.com",
+      "tier": "official",
+      "body": "-p / --prune: \"Before fetching, remove any remote-tracking references that no longer exist on the remote. Tags are not subject to pruning if they are fetched only because of the default tag auto-following or due to a --tags option. However, if tags are fetched due to an explicit refspec (either on the command line or in the remote configuration, for example if the remote was cloned with the --mirror option), then they are also subject to pruning. Supplying --prune-tags is a shorthand for providing the tag refspec.\" PRUNING: \"Git has a default disposition of keeping data unless it’s explicitly thrown away; this extends to holding onto local references to branches on remotes that have themselves deleted those branches.\""
+    },
+    {
+      "title": "git-remote Documentation (prune)",
+      "url": "https://git-scm.com/docs/git-remote",
+      "host": "git-scm.com",
+      "tier": "official",
+      "body": "prune: \"Delete stale references associated with <name>. By default, stale remote-tracking branches under <name> are deleted, but depending on global configuration and the configuration of the remote we might even prune local tags that haven't been pushed there. Equivalent to git fetch --prune <name>, except that no new references will be fetched.\" prune -n / --dry-run: \"With --dry-run option, report what branches would be pruned, but do not actually prune them.\""
+    },
+    {
+      "title": "git-worktree Documentation",
+      "url": "https://git-scm.com/docs/git-worktree",
+      "host": "git-scm.com",
+      "tier": "official",
+      "body": "prune: \"Remove worktree information in $GIT_DIR/worktrees for worktrees whose working trees are missing. Useful after manually removing a working tree that is no longer needed (but use \"git worktree remove\" next time you want to do so).\" remove: \"Remove a worktree. Only clean worktrees (no untracked files and no modification in tracked files) can be removed. Unclean worktrees or ones with submodules can be removed with --force. The main worktree cannot be removed.\" (이 문서에는 '체크아웃된 브랜치의 삭제가 거부된다'는 문장이 없다)"
+    },
+    {
+      "title": "git-reflog Documentation",
+      "url": "https://git-scm.com/docs/git-reflog",
+      "host": "git-scm.com",
+      "tier": "official",
+      "body": "\"Reference logs, or \"reflogs\", record when the tips of branches and other references were updated in the local repository.\" expire: \"Entries older than expire time, or entries older than expire-unreachable time and not reachable from the current tip, are removed from the reflog.\" \"the expiration time is taken from the configuration setting gc.reflogExpire, which in turn defaults to 90 days.\" \"the expiration time is taken from the configuration setting gc.reflogExpireUnreachable, which in turn defaults to 30 days.\""
+    },
+    {
+      "title": "Deleting and restoring branches in a pull request - GitHub Docs",
+      "url": "https://docs.github.com/articles/deleting-and-restoring-branches-in-a-pull-request",
+      "host": "docs.github.com",
+      "tier": "official",
+      "body": "\"If you have write access in a repository, you can delete branches that are associated with closed or merged pull requests.\" \"You cannot delete branches that are associated with open pull requests.\" \"You can delete a branch that is associated with a pull request if the pull request has been merged or closed and there are no other open pull requests referencing the branch.\" Delete branch button: \"This button isn't displayed if there's currently an open pull request for this branch.\" Restore: \"You can restore the head branch of a closed pull request.\" Step: \"Near the bottom of the pull request, click Restore branch.\""
+    },
+    {
+      "title": "Managing branches within your repository - GitHub Docs",
+      "url": "https://docs.github.com/en/pull-requests/how-tos/commit-changes/managing-branches-within-your-repository",
+      "host": "docs.github.com",
+      "tier": "official",
+      "body": "\"Delete branches that you no longer need, such as branches for merged or closed work.\" \"If the branch you want to delete is the repository's default branch, choose a new default branch first.\" \"If the branch is associated with an open pull request, merge or close the pull request before deleting the branch.\" \"If the branch is associated with at least one open pull request, deleting the branch closes the pull requests.\" \"If you delete a head branch after its pull request has been merged, GitHub checks for any open pull requests\" and \"GitHub automatically updates any such pull requests, changing their base branch to the merged pull request's base branch.\""
+    },
+    {
+      "title": "Managing the automatic deletion of branches - GitHub Docs",
+      "url": "https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/managing-the-automatic-deletion-of-branches",
+      "host": "docs.github.com",
+      "tier": "official",
+      "body": "\"You can have head branches automatically deleted after pull requests are merged in your repository.\" \"Anyone with admin permissions to a repository can enable or disable the automatic deletion of branches.\" \"Branch protection rules and repository rules can also prevent branches being automatically deleted.\" Path: Settings, General page, \"Pull Requests\" section, \"Automatically delete head branches\". Fork PRs: GitHub uses the setting on the head repository (the fork); requires the setting enabled on the fork and \"The user merging the pull request has write access to the fork.\" \"If either requirement isn't met, the head branch isn't deleted automatically.\""
+    },
+    {
+      "title": "About protected branches - GitHub Docs",
+      "url": "https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches",
+      "host": "docs.github.com",
+      "tier": "official",
+      "body": "Allow deletions: \"By default, you cannot delete a protected branch.\" (도입부 조각: protection rule \"prevents the matching branches from being deleted\" — 앞뒤 문장은 fetch 결과가 잘려 확인 못 함. 인용은 'Allow deletions' 문장을 우선 쓸 것)"
+    }
+  ],
+  "claims": [
+    {
+      "claim": "로컬 브랜치 삭제는 -d(병합 확인)와 -D(강제)로 갈리고, 조건은 공식 문서 표현 그대로 써야 한다",
+      "grade": "confirmed",
+      "evidence": [
+        "-d / --delete: \"Delete a branch. The branch must be fully merged in its upstream branch, or in HEAD if no upstream was set with --track or --set-upstream-to.\" (기준은 upstream이 있으면 upstream, 없으면 HEAD)",
+        "-D: \"Shortcut for --delete --force.\"",
+        "-f with -d: \"In combination with -d (or --delete), allow deleting the branch irrespective of its merged status, or whether it even points to a valid commit.\"",
+        "\"You may specify more than one branch for deletion.\" (여러 개 동시 지정 가능)"
+      ],
+      "sourceUrls": ["https://git-scm.com/docs/git-branch"]
+    },
+    {
+      "claim": "원격 브랜치는 git push로 지우며, 문법은 --delete 와 콜론 refspec 두 가지다",
+      "grade": "confirmed",
+      "evidence": [
+        "--delete / -d: \"All listed refs are deleted from the remote repository. This is the same as prefixing all refs with a colon.\"",
+        "\"If <src> is empty, it deletes the <dst> ref from the remote repository. For example, git push origin :dev will delete the dev branch.\""
+      ],
+      "sourceUrls": ["https://git-scm.com/docs/git-push"]
+    },
+    {
+      "claim": "원격에서 브랜치가 사라져도 내 로컬의 remote-tracking 참조는 자동으로 안 지워지며, fetch --prune 또는 git remote prune으로 정리한다",
+      "grade": "confirmed",
+      "evidence": [
+        "\"Git has a default disposition of keeping data unless it’s explicitly thrown away; this extends to holding onto local references to branches on remotes that have themselves deleted those branches.\"",
+        "fetch -p / --prune: \"Before fetching, remove any remote-tracking references that no longer exist on the remote.\"",
+        "git remote prune: \"Equivalent to git fetch --prune <name>, except that no new references will be fetched.\"",
+        "prune -n / --dry-run: \"With --dry-run option, report what branches would be pruned, but do not actually prune them.\" (지우기 전 미리보기)",
+        "git branch -r -d: \"Use -r together with -d to delete remote-tracking branches.\" 단 \"it only makes sense to delete remote-tracking branches if they no longer exist in the remote repository or if git fetch was configured not to fetch them again.\""
+      ],
+      "sourceUrls": [
+        "https://git-scm.com/docs/git-fetch",
+        "https://git-scm.com/docs/git-remote",
+        "https://git-scm.com/docs/git-branch"
+      ]
+    },
+    {
+      "claim": "GitHub에서는 PR 상태·기본 브랜치·보호 규칙에 따라 삭제 가능 여부가 달라지고, 병합 후 자동 삭제 설정도 있다",
+      "grade": "confirmed",
+      "evidence": [
+        "\"If you have write access in a repository, you can delete branches that are associated with closed or merged pull requests.\"",
+        "\"You cannot delete branches that are associated with open pull requests.\" (삭제 버튼도 열린 PR이 있으면 안 보임)",
+        "\"If the branch you want to delete is the repository's default branch, choose a new default branch first.\"",
+        "\"If the branch is associated with at least one open pull request, deleting the branch closes the pull requests.\" (위 'cannot delete' 문장과 문서 간 표현 차이가 있으므로, 쓸 때 각 문장이 어느 문서·어느 경로(PR 화면 vs 브랜치 관리 화면)에 있는지 구분해 인용할 것)",
+        "\"By default, you cannot delete a protected branch.\"",
+        "\"Anyone with admin permissions to a repository can enable or disable the automatic deletion of branches.\" 경로: Settings > General > \"Pull Requests\" > \"Automatically delete head branches\"",
+        "\"Branch protection rules and repository rules can also prevent branches being automatically deleted.\"",
+        "포크 PR: 포크에서 설정이 켜져 있고 \"The user merging the pull request has write access to the fork.\" 둘 다 필요, \"If either requirement isn't met, the head branch isn't deleted automatically.\""
+      ],
+      "sourceUrls": [
+        "https://docs.github.com/articles/deleting-and-restoring-branches-in-a-pull-request",
+        "https://docs.github.com/en/pull-requests/how-tos/commit-changes/managing-branches-within-your-repository",
+        "https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/managing-the-automatic-deletion-of-branches",
+        "https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches"
+      ]
+    },
+    {
+      "claim": "삭제한 브랜치를 되살릴 공식 경로는 GitHub의 닫힌 PR 'Restore branch' 뿐이고, 로컬은 삭제 시 그 브랜치 reflog도 같이 지워진다",
+      "grade": "confirmed",
+      "evidence": [
+        "GitHub: \"You can restore the head branch of a closed pull request.\" 단계: \"Near the bottom of the pull request, click Restore branch.\"",
+        "git branch: \"If the branch currently has a reflog then the reflog will also be deleted.\" (브랜치 자체 reflog는 삭제 시 같이 사라짐)",
+        "git reflog: \"Reference logs, or \"reflogs\", record when the tips of branches and other references were updated in the local repository.\"",
+        "reflog 보존 기본값: gc.reflogExpire 90 days, gc.reflogExpireUnreachable 30 days (\"Entries older than expire time, or entries older than expire-unreachable time and not reachable from the current tip, are removed from the reflog.\")"
+      ],
+      "sourceUrls": [
+        "https://docs.github.com/articles/deleting-and-restoring-branches-in-a-pull-request",
+        "https://git-scm.com/docs/git-branch",
+        "https://git-scm.com/docs/git-reflog"
+      ]
+    },
+    {
+      "claim": "[추론] 로컬에서 실수로 지운 브랜치는 HEAD reflog에서 커밋 SHA를 찾아 git branch <name> <sha>로 되살릴 수 있다",
+      "grade": "unclear",
+      "evidence": [
+        "추론이다. 공식 문서로 직접 확인된 것은 '브랜치 삭제 시 그 브랜치의 reflog가 같이 삭제된다'와 reflog 보존 기본값(90일/30일)뿐이다.",
+        "HEAD reflog를 경유한 복구 절차(git reflog → git branch <name> <sha>)를 서술한 공식 문서 원문은 확인하지 못했다.",
+        "글에 쓴다면 '추론/일반적으로 알려진 방법' 으로 표시하고 확정 사실처럼 쓰지 말 것."
+      ],
+      "sourceUrls": [
+        "https://git-scm.com/docs/git-branch",
+        "https://git-scm.com/docs/git-reflog"
+      ]
+    }
+  ],
+  "numbers": [
+    { "what": "gc.reflogExpire 기본값", "value": "90 days", "asOf": "2026-11-02 조회", "sourceUrl": "https://git-scm.com/docs/git-reflog" },
+    { "what": "gc.reflogExpireUnreachable 기본값", "value": "30 days", "asOf": "2026-11-02 조회", "sourceUrl": "https://git-scm.com/docs/git-reflog" }
+  ],
+  "dropped": [
+    {
+      "url": "https://www.golinuxcloud.com/cannot-delete-branch-checked-out-at/",
+      "why": "블로그(2차), 본문 미확인(검색 요약만). 사용자 지시로 근거에서 제외. 'Cannot delete branch ... checked out at ...' 문구와 'worktree에 체크아웃된 브랜치는 -D로도 못 지운다'는 주장은 공식 확인 불가"
+    }
+  ],
+  "cannotCover": [
+    "git branch -d 가 미병합 브랜치에서 실패할 때의 정확한 오류 문구 (공식 문서에 없음, 로컬 재현 필요)",
+    "현재 체크아웃 중인 브랜치 / 다른 worktree에 체크아웃된 브랜치를 삭제할 때의 거부 동작과 정확한 문구 (git-branch 공식 문서에 해당 문장 없음. -f 설명의 worktree 언급은 'git branch -f 로 기존 브랜치를 reset하는 경우' 한정이라 삭제에 적용하면 안 됨)",
+    "--delete-merged 옵션이 도입된 git 버전 (git-branch 페이지에 옵션이 보이지만 버전 미확인. 설치된 git으로 확인하기 전에는 추천 금지)",
+    "GitHub에서 삭제한 브랜치를 복구할 수 있는 기간 (공식 페이지에 기간 명시 없음. '영구'나 'N일' 어느 쪽도 쓰지 말 것)",
+    "로컬 브랜치 복구 명령(git reflog + git branch <name> <sha>)의 공식 문서 원문 (추론으로만 서술 가능)",
+    "protected branches 도입부 전체 문장 (fetch 결과가 잘려 'Allow deletions' 문장만 인용 가능)"
+  ],
+  "songs": []
+}
