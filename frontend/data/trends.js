@@ -1670,10 +1670,10 @@ window.HANGEUT_DATA = {
       "cat": "신조어",
       "coverCat": "cat-slang",
       "collectedAt": "2026-06-06",
-      "analyzedAt": "2026-06-06",
+      "analyzedAt": "2026-11-02",
       "buzz": "화제성 높음",
-      "stage": "상승",
-      "stageMsg": "2026 상반기 화제",
+      "stage": "안정화",
+      "stageMsg": "가을 신조어 목록에도 실리며 쓰임이 이어짐",
       "label": "지금 써도 됨",
       "labelCls": "good",
       "title": "젬민이",
@@ -1702,6 +1702,10 @@ window.HANGEUT_DATA = {
         [
           "다음뉴스",
           "https://v.daum.net/v/Kinj1EmjMQ"
+        ],
+        [
+          "한글툴",
+          "https://hangeul-tool.com/blog/newword-2026-autumn"
         ]
       ],
       "tags": [
