@@ -11841,7 +11841,7 @@ window.HANGEUT_DATA = {
       "cat": "카페·핫플",
       "coverCat": "cat-cafe",
       "collectedAt": "2026-08-19",
-      "analyzedAt": "2026-10-09",
+      "analyzedAt": "2026-11-02",
       "buzz": "인기 있다는 방문 후기 1건(2026-07) · 누적 방문객 30여만 명 보도(서울신문 2024-05 기준)",
       "ad": 20,
       "trust": 50,
