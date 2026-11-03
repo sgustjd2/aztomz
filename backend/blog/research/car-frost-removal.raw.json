@@ -1,0 +1,142 @@
+{
+  "keyword": "자동차 성에 제거",
+  "categoryId": "life-info",
+  "searchedAt": "2026-11-03",
+  "queries": [
+    "현대자동차 겨울철 성에 제거 디프로스터 에어컨 외기 모드 고객 안내",
+    "자동차 앞유리 성에 뜨거운 물 금지 유리 파손 한국소비자원 OR 도로교통공단 OR 교통안전공단",
+    "Hyundai owner's manual windshield defrost defogging A/C fresh air mode",
+    "도로교통법 앞유리 성에 시야 확보 안전운전의무 제39조 OR 제48조 범칙금 성에 낀 채 운전",
+    "겨울철 앞유리 성에 김서림 제거 한국교통안전공단 OR 도로교통공단 OR 삼성화재 OR 현대자동차 블루핸즈 안내",
+    "기아 취급설명서 앞유리 성에 제거 에어컨 외기 디프로스트 ownersmanual.kia.com ko_KR",
+    "도로교통법 제48조 안전운전 의무 시행령 제29조 앞유리 시야 방해 성에 범칙금 3만원",
+    "앞유리 성에 시야 가린 채 운전 단속 도로교통법 안전운전의무 경찰 범칙금 겨울",
+    "Glass Doctor OR Safelite OR NRMA hot water windshield crack thermal shock defrost scraper wiper blades frozen"
+  ],
+  "sources": [
+    {
+      "title": "유리창 습기/성에 제거 방법 (현대자동차 DN8 2026 사용설명서, 한국어)",
+      "url": "https://ownersmanual.hyundai.com/full_webhelp/DN8/2026/ko_KR/id71225b967b5.html",
+      "host": "ownersmanual.hyundai.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "[WebFetch 요약본 — 원문 일부 인용] 바람 방향을 앞유리 성에 제거 위치로 선택하면 에어컨과 외기 유입 모드가 자동으로 작동한다(유리창 습기 방지 기능이 설정된 차량에 한함). 차량에 따라 풍량이 저단이면 중간단 부근으로 자동 설정된다. 에어컨 작동이나 외기 유입을 원하지 않으면 A/C 버튼이나 내기/외기 선택 버튼으로 해제할 수 있다. 바람 방향을 앞유리 위치 이외로 바꾸면 에어컨과 내기/외기 모드는 이전 설정으로 돌아간다. 겨울철 성에를 빠르게 제거하려면 엔진 회전수를 약 2,000 RPM으로 유지해 히터 냉각수 온도를 빠르게 올린 뒤 앞유리 서리 제거 버튼을 누르고 온도와 풍량을 최대로 설정한다. 경고/주의: 겨울철에 여름용 와셔액을 사용하면 유리창 표면이 결빙될 수 있으므로 겨울용 와셔액을 보충해 사용. 에어컨을 켠 채 서리 제거 모드로 장시간 주행하면 매우 습한 날씨에 앞유리 바깥 표면에 습기가 생길 수 있어, 와이퍼로 닦고 바람 방향을 중간 위치로 바꾼다. 외기 흡입구에 쌓인 눈·얼음·젖은 낙엽 등을 제거하면 유리창 습기 발생이 줄어든다.",
+      "facts": [
+        "현대차 매뉴얼: 앞유리 서리 제거 위치 선택 시 에어컨+외기 유입 자동 작동(습기 방지 기능 장착 차량), 해제는 A/C·내기/외기 버튼",
+        "급속 성에 제거: 엔진 회전수 약 2,000 RPM 유지로 히터 냉각수 온도를 올린 뒤 서리 제거 버튼, 온도·풍량 최대",
+        "겨울에 여름용 와셔액 사용 시 유리창 표면 결빙 가능 -> 겨울용 와셔액 보충",
+        "에어컨 켠 채 서리 제거 모드 장시간 주행 + 매우 습한 날씨 -> 앞유리 바깥면 습기 -> 와이퍼로 제거, 바람 방향을 중간 위치로",
+        "외기 흡입구의 눈·얼음·낙엽 제거 시 유리 습기 발생 감소"
+      ]
+    },
+    {
+      "title": "유리창 습기/성에 제거 방법 (현대자동차 NX4 2025 사용설명서, 한국어)",
+      "url": "https://ownersmanual.hyundai.com/full_webhelp/NX4/2025/ko_KR/convenience_device_windshield_defrosting_and_defogging.html",
+      "host": "ownersmanual.hyundai.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "[WebFetch 요약본] 1) 앞유리 서리 제거 위치 선택: 설정에 따라 에어컨과 외기 유입 모드가 자동으로 켜짐. 차종에 따라 풍량 저단이면 중간단 부근으로 자동 설정. 2) 자동 작동 해제: 에어컨이나 외기 유입이 필요 없으면 A/C 아이콘 터치 또는 내기/외기 선택 버튼. 3) 서리 제거 위치 외 바람 방향 선택 시 에어컨과 내기/외기 모드는 이전 설정으로 복귀. 4) 에어컨 때문에 춥게 느껴지면 온도 조절로 따뜻한 바람 설정. 5) 급속 성에 제거: 엔진 회전수 약 2000 RPM 유지로 히터용 냉각수 온도를 빠르게 올린 뒤 서리 제거 버튼을 누르고 온도와 풍량을 최대로 설정. 주의: 습한 날씨에 에어컨 켠 채 서리 제거 모드로 장시간 주행하면 외부와의 온도차로 바깥 표면에 습기 -> 와이퍼로 닦고 공기 방향 변경. 겨울에는 여름용 와셔액 금지, 겨울용 와셔액 사용.",
+      "facts": [
+        "NX4(2025) 한국어 매뉴얼도 DN8과 같은 절차: 서리 제거 위치 선택 -> 에어컨·외기 자동, 급속 제거 시 약 2000 RPM",
+        "서리 제거 위치 이외로 바꾸면 에어컨·내기/외기가 이전 설정으로 복귀"
+      ]
+    },
+    {
+      "title": "유리창 습기/성에 제거 방법 (기아 TK1 2026 사용설명서, 한국어)",
+      "url": "https://ownersmanual.kia.com/full_webhelp/TK1/2026/ko_KR/topics/t00518.html",
+      "host": "ownersmanual.kia.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "[WebFetch 요약본] 바람 방향을 앞유리와 발밑 위치로 선택하면 외기 유입이 자동으로 켜지고 에어컨도 자동 작동(유리창 습기 방지 기능 설정 시). 에어컨이나 실내 순환/외기 유입 버튼으로 해제 가능. 에어컨이 작동해 바람이 차가우면 온도 조절 버튼으로 따뜻한 바람이 나오게 한다. 매우 습한 날씨에 에어컨을 켜고 서리 제거 모드로 오래 주행하면 바깥 유리 표면에 습기가 맺힐 수 있어 와이퍼로 빨리 닦고 바람 방향을 발밑으로 바꾼다. 외부 공기 흡입구의 눈·얼음·낙엽을 치우면 습기 맺힘이 줄어든다. 혹한기 주의: 여름용 워셔액을 분사하지 말 것(앞유리에 얼어붙을 수 있음). 주정차된 차의 성에를 빨리 제거하려면 엔진 회전수 약 2,000 rpm 유지로 히터 냉각수 온도를 올린 뒤 서리 제거 위치에서 최대 온도·최대 풍량. 경고: 실내 순환 상태로 장시간 사용하지 말 것 - 유리창에 습기가 맺히기 쉽고 탑승객 호흡으로 실내 공기가 나빠져 두통과 졸음을 유발할 수 있음.",
+      "facts": [
+        "기아 TK1(2026) 매뉴얼: 혹한기 급속 성에 제거는 엔진 약 2,000 rpm 유지 후 서리 제거 위치·최대 온도·최대 풍량",
+        "기아 매뉴얼 경고: 실내 순환 상태 장시간 사용 금지 - 습기 맺힘 쉽고 두통·졸음 유발 가능",
+        "혹한기 여름용 워셔액 분사 금지(앞유리에 결빙 가능)"
+      ]
+    },
+    {
+      "title": "Windshield defrosting and defogging (Hyundai NH2 2026 owner's manual, 영문)",
+      "url": "https://ownersmanual.hyundai.com/full_webhelp/NH2/2026/en_GN/id4d9e581b9bb.html",
+      "host": "ownersmanual.hyundai.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "[WebFetch 요약본 + WebSearch 스니펫의 영문 인용] For maximum defrost performance, set the temperature control to the highest setting and the fan speed to the highest setting. Clear snow and ice from the windshield, rear window, mirrors, and side windows before driving; also clear the hood and air inlet, which improves heater and defroster efficiency and reduces the probability of fogging up the inside of the windshield. Warning: do not use the defrost level position during cooling operation in extremely humid weather; the outside of the windshield can fog and reduce visibility, which could lead to a collision. Use face level and lower fan speed instead. To defog the inside: adjust fan speed and temperature, press the defroster button; A/C turns on and outside air is selected based on detected ambient temperature; if not, adjust manually. To defrost the outside: fan highest, temperature HI, press defroster button.",
+      "facts": [
+        "Hyundai(NH2 2026 영문): 출발 전 앞유리·뒷유리·미러·옆유리의 눈·얼음 제거, 보닛·외기 흡입구 눈도 제거하면 히터·디프로스터 효율 상승 및 실내 김서림 확률 감소",
+        "Hyundai 경고: 매우 습한 날씨 냉방 중 디프로스트 위치 사용 금지(바깥면 김서림 -> 시야 저하 -> 충돌 위험)"
+      ]
+    },
+    {
+      "title": "Defrosting windows for safe driving (Kia 레바논 Owner Quick Tips)",
+      "url": "https://www.kia.com/lb/owners/owner-resources/quick-tips/car-care/defrosting-windows-for-safe-driving.html",
+      "host": "www.kia.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "[WebFetch 요약본] Defrosting with climate control: turn off the air intake control button so air circulates inside and outside the vehicle. Turn on the front windshield defroster, which directs air to the windshield, raises air volume and temperature, and activates the air conditioning including its dehumidifying function. For quick defrosting of the rear window and exterior mirrors, press the rear window defroster button. Cautions: 'Turn off the defroster after defrosting to avoid the risk of fire due to high heat.' 'Avoid pouring hot water on frosted windows as rapid temperature differences can cause damage to the glass.' 'Thaw the windshield and wiper blades before operating the wiper in winter to prevent damage to the blades.' (스크래퍼 언급 없음)",
+      "facts": [
+        "Kia 공식 안내: 얼어붙은 유리에 뜨거운 물을 붓지 말 것 - 급격한 온도 차로 유리 손상 가능",
+        "Kia 공식 안내: 겨울에 와이퍼 작동 전 앞유리와 와이퍼 블레이드를 먼저 녹일 것(블레이드 손상 방지)",
+        "Kia 공식 안내: 성에 제거 후 열선/디프로스터는 끌 것(고열로 인한 화재 위험)",
+        "Kia 레바논판 안내문이라 한국 출고 차량과 사양이 다를 수 있음"
+      ]
+    },
+    {
+      "title": "Defrosting outside windshield with manual climate control system (Kia K4(KA4) 2024 owner's manual, 영문)",
+      "url": "https://ownersmanual.kia.com/full_webhelp/KA4/2024/en_US/topics/t00292.html",
+      "host": "ownersmanual.kia.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "[WebFetch 요약본] Steps for defrosting the outside of the windshield with the manual climate control system: 1) Set the fan speed to the highest setting, the far-right position. 2) Set the temperature to the fully hot position. 3) Select the defrost position. 4) The system automatically selects outside (fresh) air and air conditioning. 본문이 짧아 요약만 확보 — 외기+A/C 자동 선택 동작을 교차 확인하는 용도.",
+      "facts": [
+        "Kia KA4(2024 미국판) 수동 공조: 풍량 최대 -> 온도 최고 -> 디프로스트 위치 선택 -> 외기·A/C 자동 선택"
+      ]
+    },
+    {
+      "title": "성에와 서리는 그만! 자동차 유리 서리를 없애는 방법 9 (GQ Korea)",
+      "url": "https://www.gqkorea.co.kr/2025/01/20/%EC%84%B1%EC%97%90%EC%99%80-%EC%84%9C%EB%A6%AC%EB%8A%94-%EA%B7%B8%EB%A7%8C-%EC%9E%90%EB%8F%99%EC%B0%A8-%EC%9C%A0%EB%A6%AC-%EC%84%9C%EB%A6%AC%EB%A5%BC-%EC%97%86%EC%95%A0%EB%8A%94-%EB%B0%A9%EB%B2%95-9",
+      "host": "www.gqkorea.co.kr",
+      "tier": "press",
+      "publishedAt": "2025-01-20",
+      "body": "[WebFetch 요약본] 서리를 제거하려고 뜨거운 물을 뿌리는 이들이 있으나 급격한 온도 변화는 유리의 열팽창을 유발해 유리가 깨질 수 있으니 사용하지 않는 것이 좋다고 설명. 부득이하면 미지근한 물을 천천히 붓는다. 유리 전용 플라스틱 스크레이퍼로 긁어내되 금속 스크레이퍼는 유리 표면을 손상시키고 잔기스를 남길 수 있어 피한다. 차량 커버/앞유리 전용 커버로 외부 공기와 유리 접촉을 막아 서리 생성을 줄인다. 김서림 방지 코팅제는 유리 표면에 친수성 층을 만들어 수분이 맺히지 않게 한다. 민간요법 수치: 소독용 알코올:물 2:1 분사 후 마른 천, 물 1리터+소금 2스푼 밤에 유리에 분사(차체 도장 부식 주의), 식초:물 3:1 분사. 와이퍼 관련 내용은 원문에 없음. 근거 수치는 기사에 출처 표기 없음.",
+      "facts": [
+        "GQ Korea(2025-01-20): 뜨거운 물은 급격한 온도 변화로 유리가 깨질 수 있어 비권장, 부득이하면 미지근한 물",
+        "GQ Korea: 유리 전용 플라스틱 스크레이퍼 사용, 금속 스크레이퍼는 잔기스 위험",
+        "GQ Korea 민간요법 수치(알코올:물 2:1, 식초:물 3:1, 물 1L+소금 2스푼)는 출처·검증 근거가 기사에 없음 - 본문 사용 시 단정 금지",
+        "GQ Korea: 앞유리 커버로 서리 생성 감소(수치 근거 없음)"
+      ]
+    },
+    {
+      "title": "자동차 앞유리 김서림 현상, 제거하려면 이 '버튼'만 기억하세요 (위키트리)",
+      "url": "https://www.wikitree.co.kr/articles/1071418",
+      "host": "www.wikitree.co.kr",
+      "tier": "press",
+      "publishedAt": "2025-08-08",
+      "body": "[WebFetch 요약본] 에어컨 가동 + 외기 모드: 에어컨 제습으로 습기를 줄이고, 내기 순환 모드는 습기를 계속 순환시켜 김서림이 오히려 심해질 수 있다. 히터와 디프로스터 병행으로 앞유리 쪽에 바람을 보낸다. 자동 김서림 방지 기능은 차량마다 조건이 다르니 설명서 확인. 차량용 제습제 비치, 젖은 우산·신발 닦아 보관, 바닥 매트 건조. 유막이 심하면 김서림이 잘 생겨 유막 제거제나 김서림 방지 코팅제 사용. 비누·치약을 유리에 바르는 방법은 유리면 손상 우려로 비추천. 기사에는 전문가·제조사 인용이나 구체 수치가 없고 이미지는 AI로 제작됐다고 명시됨(작성 2025-08-08, 기자 채석원).",
+      "facts": [
+        "위키트리(2025-08-08): 내기 순환 모드는 실내 습기를 계속 순환시켜 김서림 악화 가능, 에어컨+외기 권장 - 단 제조사·전문가 인용 없음(보조 근거)",
+        "위키트리: 비누·치약 도포는 유리면 손상 우려로 비추천"
+      ]
+    }
+  ],
+  "conflicts": [
+    {
+      "about": "급속 성에 제거 시 공조 설정",
+      "a": "현대·기아 한국어 매뉴얼: 서리 제거 위치 선택 시 에어컨+외기 자동, 급속 제거는 엔진 약 2,000 rpm + 최대 온도·풍량",
+      "b": "Kia 레바논 Quick Tips: 'air intake control button을 끄라(실내외 공기 순환)' 식 표현, 한국 매뉴얼과 용어 상이 - 차종·시장별 사양 차이이므로 본문은 '차 매뉴얼 확인' 단서 필요"
+    },
+    {
+      "about": "엔진 2,000rpm 공회전 유지의 현실성",
+      "a": "현대·기아 한국어 매뉴얼 문구는 그대로 인용 가능",
+      "b": "전기차(EV)·하이브리드는 해당 없음(히터 방식이 다름) — 매뉴얼은 내연기관 기준으로 보이며 EV 설명은 못 찾음(이 부분 해석은 정리 단계에서 단정 금지)"
+    }
+  ],
+  "unknowns": [
+    "한국교통안전공단·도로교통공단·삼성교통안전문화연구소·한국소비자원의 성에/김서림/뜨거운 물 관련 공식 자료를 찾지 못함 (검색 결과에 없음) — data 등급 0건",
+    "도로교통법 제48조 제1항 조문 본문과 성에 낀 채 운전 시 적용 조항·범칙금 — law.go.kr 와 elaw.klri.re.kr 페치에서 본문이 안 나와 미확인. 제48조 제목이 '안전운전 및 친환경 경제운전의 의무'임만 확인(elaw.klri.re.kr/kor_service/lawViewTitle.do?hseq=64085 목차). 국내 성에 단속 사례 없음, 영국·호주 사례만 검색됨 -> 한국 법 해석은 본문에서 단정 금지",
+    "뜨거운 물 금지에 대한 한국 기관·제조사 한국어 문구 — Kia 레바논판 영문 안내와 GQ Korea 기사뿐. 현대차 쪽 문구는 못 찾음",
+    "스크래퍼·와이퍼 주의 한국 제조사 공식 문구 — Kia 레바논판(와이퍼 블레이드 해동 후 작동)만 확인, 스크래퍼 공식 언급 없음",
+    "발수제/김서림 방지 코팅의 효과 수치 근거 — 공식·실험 자료 못 찾음(GQ·위키트리 서술뿐)",
+    "Glass Doctor(403), Tom's Guide(본문 미확보), Dublin Fire Brigade/Kildare Now(SSL 오류)는 본문을 못 읽어 sources에서 제외",
+    "대부분 매뉴얼 페이지의 발행일(null) 미확인; 현대 매뉴얼 URL의 연식 표기(2025/2026)만 확인"
+  ]
+}

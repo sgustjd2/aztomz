@@ -1,0 +1,166 @@
+{
+  "keyword": "git tag 사용법",
+  "categoryId": "dev-tool",
+  "notes": "전 자료가 공식 문서(git-scm.com, docs.github.com) 6건이라 명령어 사용법은 모두 confirmed 로 쓸 수 있다. 다룰 수 있는 범위: 태그 종류(주석/lightweight), 만들기·목록·삭제, 원격 push/삭제, 체크아웃(detached HEAD), 이미 push한 태그의 재사용 주의, GitHub 릴리스 연결. 날짜가 없는 문서라 '최신 동향'이 아닌 기본기 가이드로 써야 한다.",
+  "sources": [
+    {
+      "title": "git-tag Documentation",
+      "url": "https://git-scm.com/docs/git-tag",
+      "host": "git-scm.com",
+      "tier": "official",
+      "body": "주석 태그: git tag -a <name> -m <msg> (-m 만 줘도 -a 암묵 적용). 옵션 없는 git tag <name> 은 lightweight. 주석 태그는 생성일·태거 이름/이메일·메시지·선택적 서명을 담음. 공식: 'Annotated tags are meant for release while lightweight tags are meant for private or temporary object labels'. git describe 등은 lightweight 를 기본 무시. 목록: git tag / git tag --list 'v-*' (fnmatch). --points-at [<object>] (기본 HEAD). 삭제 -d, 교체 -f. 이미 push한 태그는 같은 이름 재사용 대신 새 이름(X.1) 권장, 받은 사람 교정: git tag -d X → git fetch origin tag X → git rev-parse X."
+    },
+    {
+      "title": "Pro Git: 2.6 Git Basics - Tagging",
+      "url": "https://git-scm.com/book/en/v2/Git-Basics-Tagging",
+      "host": "git-scm.com",
+      "tier": "official",
+      "body": "예시: git tag -a v1.4 -m \"my version 1.4\" / git tag v1.4-lw. git show 로 확인(주석은 Tagger·Date·메시지 표시, lightweight 는 커밋만). 과거 커밋 태그: git tag -a v1.2 9fceb02. 'By default, the git push command doesn't transfer tags to remote servers.' git push origin <tagname> / git push origin --tags(주석·lightweight 모두). --follow-tags 는 주석 태그만. 로컬 삭제 git tag -d 는 원격에서 지우지 않음. 원격 삭제: git push origin :refs/tags/<tagname> 또는 git push origin --delete <tagname>. git checkout v2.0.0 은 detached HEAD, 커밋하면 브랜치에 속하지 않음 → git checkout -b version2 v2.0.0. 와일드카드 목록은 -l/--list 필수."
+    },
+    {
+      "title": "git-push Documentation",
+      "url": "https://git-scm.com/docs/git-push",
+      "host": "git-scm.com",
+      "tier": "official",
+      "body": "--tags: refs/tags 아래 모든 ref push. --follow-tags: 원격에 없는 주석 태그 중 push 되는 ref 에서 도달 가능한 커밋을 가리키는 것만 함께 push. push.followTags=true 로 기본 활성화, --no-follow-tags 로 끔. git push origin tag v1.0 은 refs/tags/v1.0:refs/tags/v1.0 축약. --delete 는 ref 앞에 콜론을 붙이는 것과 같음."
+    },
+    {
+      "title": "git-checkout Documentation (DETACHED HEAD)",
+      "url": "https://git-scm.com/docs/git-checkout",
+      "host": "git-scm.com",
+      "tier": "official",
+      "body": "git checkout v2.0 처럼 하면 HEAD 가 브랜치가 아닌 특정 커밋을 직접 가리키는 detached HEAD. --detach 는 'for inspection and discardable experiments'. 벗어나기: git checkout -b foo 또는 git switch -c foo."
+    },
+    {
+      "title": "git-describe Documentation",
+      "url": "https://git-scm.com/docs/git-describe",
+      "host": "git-scm.com",
+      "tier": "official",
+      "body": "기본(--all/--tags 없이) git describe 는 주석 태그만 보여준다. --tags 를 주면 refs/tags 의 lightweight 태그도 매칭."
+    },
+    {
+      "title": "Managing releases in a repository - GitHub Docs",
+      "url": "https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository",
+      "host": "docs.github.com",
+      "tier": "official",
+      "body": "웹 UI: 기존 태그를 선택하거나 새 버전 번호 입력 후 Create new tag. 새 태그는 Target 드롭다운에서 브랜치 선택. CLI: gh release create TAG. 이 페이지는 lightweight/annotated 구분을 다루지 않고 릴리스 생성 권한도 명시하지 않는다."
+    }
+  ],
+  "claims": [
+    {
+      "claim": "태그는 두 종류다. 주석(annotated) 태그는 작성자·날짜·메시지를 담은 객체이고, lightweight 는 커밋을 가리키는 이름표일 뿐이라 릴리스에는 주석 태그를 쓴다",
+      "grade": "confirmed",
+      "evidence": [
+        "git tag -a v1.4 -m \"my version 1.4\" (주석) / git tag v1.4-lw (lightweight) — Pro Git 예시",
+        "주석 태그는 생성일·태거 이름/이메일·메시지·선택적 서명을 담는다 (git-tag 문서)",
+        "공식 문구: 'Annotated tags are meant for release while lightweight tags are meant for private or temporary object labels'",
+        "Pro Git: 'It's generally recommended that you create annotated tags'",
+        "-m 만 줘도 -a/-s/-u 가 없으면 -a 가 암묵 적용된다",
+        "git describe 는 기본으로 주석 태그만 보고, --tags 를 줘야 lightweight 도 매칭한다"
+      ],
+      "sourceUrls": [
+        "https://git-scm.com/docs/git-tag",
+        "https://git-scm.com/book/en/v2/Git-Basics-Tagging",
+        "https://git-scm.com/docs/git-describe"
+      ]
+    },
+    {
+      "claim": "태그는 git push 로 자동 전송되지 않는다. 하나씩(git push origin <tag>) 또는 한꺼번에(--tags, --follow-tags) 명시해서 올려야 한다",
+      "grade": "confirmed",
+      "evidence": [
+        "'By default, the git push command doesn't transfer tags to remote servers.' (Pro Git)",
+        "git push origin v1.5 / git push origin --tags",
+        "--tags 는 lightweight·주석 모두 push, lightweight 만 push 하는 옵션은 없음",
+        "--follow-tags 는 원격에 없는 주석 태그 중 push 되는 ref 에서 도달 가능한 것만 함께 push",
+        "push.followTags=true 로 기본 활성화, --no-follow-tags 로 끌 수 있음"
+      ],
+      "sourceUrls": [
+        "https://git-scm.com/book/en/v2/Git-Basics-Tagging",
+        "https://git-scm.com/docs/git-push"
+      ]
+    },
+    {
+      "claim": "태그 삭제는 로컬과 원격이 별개다. git tag -d 는 원격 태그를 지우지 않으며, 원격은 git push origin --delete 로 따로 지운다",
+      "grade": "confirmed",
+      "evidence": [
+        "git tag -d v1.4-lw → \"Deleted tag 'v1.4-lw' (was e7d5add)\"",
+        "Pro Git: 로컬 삭제는 원격 서버에서 태그를 제거하지 않는다",
+        "원격 삭제: git push origin :refs/tags/<tagname> 또는 더 직관적인 git push origin --delete <tagname>",
+        "git-push 문서: --delete 는 모든 ref 앞에 콜론을 붙이는 것과 같다(두 방법이 동치인 근거)"
+      ],
+      "sourceUrls": [
+        "https://git-scm.com/book/en/v2/Git-Basics-Tagging",
+        "https://git-scm.com/docs/git-push",
+        "https://git-scm.com/docs/git-tag"
+      ]
+    },
+    {
+      "claim": "태그를 체크아웃하면 detached HEAD 가 되므로, 거기서 작업하려면 새 브랜치를 따야 한다",
+      "grade": "confirmed",
+      "evidence": [
+        "git checkout v2.0.0 → detached HEAD (HEAD 가 브랜치가 아니라 특정 커밋을 직접 가리킴)",
+        "Pro Git: 커밋해도 태그는 그대로고, 새 커밋은 어떤 브랜치에도 속하지 않아 정확한 해시로만 닿는다",
+        "해결: git checkout -b version2 v2.0.0 또는 git switch -c foo",
+        "--detach 는 'for inspection and discardable experiments' 용"
+      ],
+      "sourceUrls": [
+        "https://git-scm.com/book/en/v2/Git-Basics-Tagging",
+        "https://git-scm.com/docs/git-checkout"
+      ]
+    },
+    {
+      "claim": "이미 push 한 태그는 같은 이름으로 덮어쓰지 말고 새 이름으로 발행한다. 과거 커밋에도 나중에 태그를 달 수 있다",
+      "grade": "confirmed",
+      "evidence": [
+        "git-tag 문서: push 전이면 git tag -f 로 교체 가능, push 후에는 'Just admit you screwed up, and use a different name' (X.1)",
+        "'Git does not (and it should not) change tags behind users back.'",
+        "이미 받은 사람의 교정: git tag -d X → git fetch origin tag X → git rev-parse X",
+        "과거 커밋에 태그: git tag -a v1.2 9fceb02 (체크섬 일부 가능)",
+        "목록: git tag, 패턴은 git tag --list 'v-*', 특정 객체의 태그만 보려면 --points-at"
+      ],
+      "sourceUrls": [
+        "https://git-scm.com/docs/git-tag",
+        "https://git-scm.com/book/en/v2/Git-Basics-Tagging"
+      ]
+    },
+    {
+      "claim": "GitHub 에서는 기존 태그를 골라 릴리스를 만들 수 있고, 새 태그를 만들며 릴리스를 만들 수도 있다 (웹 UI 또는 gh release create)",
+      "grade": "confirmed",
+      "evidence": [
+        "웹 UI: 기존 태그 선택, 또는 새 버전 번호 입력 후 'Create new tag'",
+        "새 태그는 Target 드롭다운에서 릴리스할 브랜치를 고른다",
+        "CLI: gh release create TAG"
+      ],
+      "sourceUrls": [
+        "https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository"
+      ]
+    }
+  ],
+  "numbers": [
+    {
+      "what": "Git 소스 저장소의 태그 수 (교재 기술)",
+      "value": "500개 이상",
+      "asOf": "Pro Git 교재 기술 시점(날짜 미표기)",
+      "sourceUrl": "https://git-scm.com/book/en/v2/Git-Basics-Tagging"
+    }
+  ],
+  "dropped": [],
+  "cannotSay": [
+    "git-push 문서의 'push 목적지가 태그(refs/tags/*)면 all updates will be rejected' 문구를 '이미 있는 태그는 push 로 덮어쓸 수 없다' 등으로 풀어 쓰는 것 — 원문 단독 인용만 있고 문맥 미확인. 쓰려면 문서 인용 없이 언급 금지",
+    "GitHub 릴리스를 누가 만들 수 있는지(권한) — 페치 본문에 없고 검색 스니펫뿐, 미확인",
+    "GitHub 가 lightweight/annotated 를 릴리스에서 어떻게 다루는지 — 해당 페이지가 다루지 않음",
+    "tag.sort / tag.gpgSign 등 git-config 설정 — 원문 미열람",
+    "원격 태그 확인(git ls-remote --tags), git fetch --prune-tags — 미조사",
+    "GPG 서명 태그(-s) 실습 절차 — 옵션 존재만 확인, 상세 절차 자료 없음",
+    "각 문서의 발행·갱신 날짜, '2026년 기준 최신' 같은 시점 표현 — 날짜 null"
+  ],
+  "cannotCover": [
+    "git-push 'tag 목적지 모든 갱신 거부' 문구의 의미 해석",
+    "GitHub 릴리스 생성 권한",
+    "tag.sort / tag.gpgSign 설정",
+    "원격 태그 조회 (ls-remote, --prune-tags)",
+    "서명 태그(-s) 상세 절차",
+    "최신성(날짜) 주장"
+  ],
+  "songs": []
+}

@@ -1,0 +1,111 @@
+{
+  "keyword": "git tag 사용법",
+  "categoryId": "dev-tool",
+  "searchedAt": "2026-11-03",
+  "queries": [
+    "GitHub Docs managing releases in a repository create release from tag",
+    "(WebFetch 직접 열람) git-scm.com/docs/git-tag · Pro Git 2.6 Tagging · git-push · git-checkout · git-describe · git-config · docs.github.com managing-releases"
+  ],
+  "sources": [
+    {
+      "title": "git-tag Documentation",
+      "url": "https://git-scm.com/docs/git-tag",
+      "host": "git-scm.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "SYNOPSIS: git tag [-a | -s | -u <key-id>] [-f] [-m <msg> | -F <file>] [-e] <tagname> [<commit> | <object>]; git tag -d <tagname>...; git tag [-n[<num>]] -l [--contains <commit>] [--no-contains <commit>] [--points-at <object>] [--sort=<key>] [--format=<format>] [--merged <commit>] [<pattern>...]; git tag -v <tagname>... OPTIONS: -a, --annotate: \"Make an unsigned, annotated tag object\". -m <msg>, --message=<msg>: \"Use <msg> (instead of prompting). If multiple -m options are given, their values are concatenated as separate paragraphs. Implies -a if none of -a, -s, or -u <key-id> is given.\" -d, --delete: \"Delete existing tags with the given names.\" -l, --list: \"List tags. With optional <pattern>..., e.g. git tag --list v-*', list only the tags that match the pattern(s). Running git tag without arguments also lists all tags. The pattern is a shell wildcard (i.e., matched using fnmatch(3)).\" -f, --force: \"Replace an existing tag with the given name (instead of failing)\". -v, --verify: verify the cryptographic signature. --points-at [<object>]: \"Only list tags of <object> (HEAD if not specified). Implies --list.\" DESCRIPTION: \"Otherwise, a tag reference that points directly at the given object (i.e., a lightweight tag) is created. Tag objects (created with -a, -s, or -u) are called 'annotated' tags; they contain a creation date, the tagger name and e-mail, a tagging message, and an optional cryptographic signature. Whereas a 'lightweight' tag is simply a name for an object (usually a commit object). Annotated tags are meant for release while lightweight tags are meant for private or temporary object labels. For this reason, some git commands for naming objects (like git describe) will ignore lightweight tags by default.\" ON RE-TAGGING: \"If you never pushed anything out, just re-tag it. Use -f to replace the old one.\" If already pushed: \"The sane thing. Just admit you screwed up, and use a different name\" (call it X.1). \"Git does not (and it should not) change tags behind users back.\" Fix for people who already got the old tag: git tag -d X ; git fetch origin tag X ; check with git rev-parse X. BACKDATING: GIT_COMMITTER_DATE=\"2006-10-02 10:31\" git tag -s v1.0.1.",
+      "facts": [
+        "git tag -a <name> -m <msg> 로 주석 태그를 만든다. -m 만 줘도 -a/-s/-u 가 없으면 -a 가 암묵 적용된다(공식 문서)",
+        "옵션 없이 git tag <name> 은 객체를 직접 가리키는 lightweight 태그를 만든다",
+        "주석 태그는 생성일·태거 이름/이메일·태그 메시지·선택적 서명을 담는다. 공식 문서: 'Annotated tags are meant for release while lightweight tags are meant for private or temporary object labels'",
+        "git describe 같은 일부 명령은 lightweight 태그를 기본으로 무시한다",
+        "git tag 단독 실행도 전체 목록을 출력한다. 패턴 필터는 git tag --list 'v-*' (shell wildcard, fnmatch(3))",
+        "git tag --points-at [<object>] 는 해당 객체(기본 HEAD)를 가리키는 태그만 나열한다(--list 암시)",
+        "git tag -d <tagname>... 로 로컬 삭제, git tag -f 로 기존 태그 교체(없으면 실패)",
+        "이미 push 한 태그는 같은 이름 재사용 대신 새 이름(X.1) 권장. 이미 받은 사람의 교정: git tag -d X → git fetch origin tag X → git rev-parse X"
+      ]
+    },
+    {
+      "title": "Pro Git: 2.6 Git Basics - Tagging",
+      "url": "https://git-scm.com/book/en/v2/Git-Basics-Tagging",
+      "host": "git-scm.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "Listing: \"Just type git tag (with optional -l or --list)\", alphabetical order. git tag -l \"v1.8.5*\" lists one series; \"If, however, you're supplying a wildcard pattern to match tag names, the use of -l or --list is mandatory.\" Types: \"A lightweight tag is very much like a branch that doesn't change — it's just a pointer to a specific commit. Annotated tags, however, are stored as full objects in the Git database. They're checksummed; contain the tagger name, email, and date; have a tagging message; and can be signed and verified with GNU Privacy Guard (GPG). It's generally recommended that you create annotated tags\". Annotated: $ git tag -a v1.4 -m \"my version 1.4\"; without a message Git launches your editor; git show v1.4 shows Tagger, Date, message, then the commit. Lightweight: $ git tag v1.4-lw; git show shows only the commit. Tagging later: $ git tag -a v1.2 9fceb02 (commit checksum or part of it). Sharing: \"By default, the git push command doesn't transfer tags to remote servers.\" git push origin <tagname> (e.g. git push origin v1.5); git push origin --tags transfers all tags not already there. \"git push <remote> --tags will push both lightweight and annotated tags. There is currently no option to push only lightweight tags, but if you use git push <remote> --follow-tags only annotated tags will be pushed to the remote.\" Deleting: git tag -d <tagname> prints \"Deleted tag 'v1.4-lw' (was e7d5add)\"; \"this does not remove the tag from any remote servers\"; remote: git push origin :refs/tags/<tagname>, or the \"more intuitive\" git push origin --delete <tagname>. Checking out: git checkout v2.0.0 puts the repository in \"detached HEAD\" state; \"if you make changes and then create a commit, the tag will stay the same, but your new commit won't belong to any branch and will be unreachable, except by the exact commit hash\"; instead git checkout -b version2 v2.0.0.",
+      "facts": [
+        "교재 예시: git tag -a v1.4 -m \"my version 1.4\" (주석), git tag v1.4-lw (lightweight)",
+        "과거 커밋에 나중에 태그: git tag -a v1.2 9fceb02 (커밋 체크섬 일부 가능)",
+        "git push 는 기본적으로 태그를 원격에 전송하지 않는다. git push origin <tagname> 또는 git push origin --tags",
+        "--tags 는 lightweight·주석 모두 push. lightweight 만 push 하는 옵션은 없고 --follow-tags 는 주석 태그만 push (Pro Git 원문)",
+        "로컬 삭제 git tag -d v1.4-lw → 'Deleted tag 'v1.4-lw' (was e7d5add)'. 원격 태그는 지워지지 않는다",
+        "원격 삭제 두 방법: git push origin :refs/tags/<tagname> / git push origin --delete <tagname>(더 직관적)",
+        "git checkout v2.0.0 은 detached HEAD. 거기서 커밋하면 브랜치에 속하지 않아 정확한 해시로만 닿는다 → git checkout -b version2 v2.0.0",
+        "와일드카드 패턴으로 목록을 볼 때는 -l/--list 가 필수. Git 소스 저장소의 태그는 500개 이상(교재 기술)"
+      ]
+    },
+    {
+      "title": "git-push Documentation",
+      "url": "https://git-scm.com/docs/git-push",
+      "host": "git-scm.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "--tags: \"All refs under refs/tags are pushed, in addition to refspecs explicitly listed on the command line.\" --follow-tags: \"Push all the refs that would be pushed without this option, and also push annotated tags in refs/tags that are missing from the remote but are pointing at commit-ish that are reachable from the refs being pushed. This can also be specified with configuration variable push.followTags.\" --delete: \"All listed refs are deleted from the remote repository. This is the same as prefixing all refs with a colon.\" Config push.followTags: \"If set to true, enable --follow-tags option by default. You may override this configuration at time of push by specifying --no-follow-tags.\" Refspec shorthand: \"tag <tag> expands to refs/tags/<tag>:refs/tags/<tag>. This is technically a special syntax for git push and not a refspec, since in git push origin tag v1.0 the arguments tag and v1.0 are separate.\" Expansion example: if v1.0 is a tag on the remote, HEAD:v1.0 expands to HEAD:refs/tags/v1.0. PUSH RULES item 2: \"If the push destination is a tag (refs/tags/*): all updates will be rejected. The source can be any object.\"",
+      "facts": [
+        "git push --tags: refs/tags 아래 모든 ref 를 (명령줄에 적은 refspec 에 더해) push",
+        "git push --follow-tags: 원격에 없는 주석 태그 중, push 되는 ref 에서 도달 가능한 커밋을 가리키는 것만 함께 push",
+        "push.followTags=true 로 --follow-tags 기본 활성화, push 때 --no-follow-tags 로 끌 수 있다",
+        "git push origin tag v1.0 은 refs/tags/v1.0:refs/tags/v1.0 의 특수 축약 문법",
+        "--delete 는 모든 ref 앞에 콜론을 붙이는 것과 같다(그래서 git push origin :refs/tags/<tag> 와 동치)",
+        "PUSH RULES: 목적지가 태그(refs/tags/*)인 경우 'all updates will be rejected' (문서 원문; 이미 있는 태그 덮어쓰기 push 가 거부되는 맥락은 원문 문맥 추가 확인 필요)"
+      ]
+    },
+    {
+      "title": "git-checkout Documentation (DETACHED HEAD)",
+      "url": "https://git-scm.com/docs/git-checkout",
+      "host": "git-scm.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "DETACHED HEAD: \"HEAD normally refers to a named branch (e.g. master). Meanwhile, each branch refers to a specific commit. It is sometimes useful to be able to checkout a commit that is not at the tip of any named branch, or even to create a new commit that is not referenced by a named branch.\" Example: $ git checkout v2.0 # or $ git checkout master^^ . \"Notice that regardless of which checkout command we use, HEAD now refers directly to commit b. This is known as being in detached HEAD state. It means simply that HEAD refers to a specific commit, as opposed to referring to a named branch.\" Exit: \"$ git checkout -b foo # or 'git switch -c foo'\" creates a new branch foo and \"we'll no longer be in detached HEAD state after this command.\" Options: -b <new-branch>: \"Create a new branch named <new-branch>, start it at <start-point>, and check the resulting branch out\". -d, --detach: \"Rather than checking out a branch to work on it, check out a commit for inspection and discardable experiments. This is the default behavior of git checkout <commit> when <commit> is not a branch name.\"",
+      "facts": [
+        "git checkout v2.0 처럼 태그를 체크아웃하면 HEAD 가 브랜치가 아닌 특정 커밋을 직접 가리키는 detached HEAD 상태가 된다",
+        "--detach 설명: 'for inspection and discardable experiments'. 브랜치 이름이 아닌 <commit> 체크아웃의 기본 동작",
+        "벗어나기/작업 이어가기: git checkout -b foo 또는 git switch -c foo (공식 예시)"
+      ]
+    },
+    {
+      "title": "git-describe Documentation",
+      "url": "https://git-scm.com/docs/git-describe",
+      "host": "git-scm.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "DESCRIPTION: \"By default (without --all or --tags) git describe only shows annotated tags. For more information about creating annotated tags see the -a and -s options to git-tag.\" OPTIONS --tags: \"Instead of using only the annotated tags, use any tag found in refs/tags namespace. This option enables matching a lightweight (non-annotated) tag.\" (Only these two passages were extracted from the fetched page; the rest of the page was not quoted.)",
+      "facts": [
+        "git describe 는 기본(--all/--tags 없이)으로 주석 태그만 보여준다",
+        "git describe --tags 를 주면 refs/tags 의 lightweight(비주석) 태그도 매칭한다"
+      ]
+    },
+    {
+      "title": "Managing releases in a repository - GitHub Docs",
+      "url": "https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository",
+      "host": "docs.github.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "Creating a release, web UI: to use an existing tag, \"click the tag.\" To create a new tag, \"type a version number for your release, then click Create new tag.\" For a new tag: \"select the Target dropdown menu, then click the branch that contains the project you want to release.\" Command line: \"To create a release, use the gh release create subcommand. Replace tag with the desired tag for the release.\" That is gh release create TAG; follow the interactive prompts or pass arguments to skip them. The search snippet for this page also says that when immutable releases are enabled, creating a draft first lets you attach all assets before the release is locked. The fetched page text did not state who may create releases and did not mention lightweight or annotated tags.",
+      "facts": [
+        "GitHub 릴리스 웹 UI: 기존 태그를 선택하거나, 새 버전 번호를 입력하고 'Create new tag' 로 새 태그를 만든다",
+        "새 태그를 만들 때는 Target 드롭다운에서 릴리스할 브랜치를 고른다",
+        "CLI: gh release create TAG (대화형 프롬프트를 따르거나 인자로 건너뜀)",
+        "이 GitHub 문서 페이지는 lightweight/annotated 구분을 다루지 않는다(확인)"
+      ]
+    }
+  ],
+  "conflicts": [],
+  "unknowns": [
+    "git-config 의 push.followTags / tag.sort / tag.gpgSign 원문 — 페이지가 44.8만 자라 앞 10만 자만 읽힘(push.followTags 는 git-push 문서에서 확인)",
+    "git-push PUSH RULES 'tag 목적지는 모든 갱신 거부' 문구의 정확한 문맥(덮어쓰기 push 거부 여부) — 원문 단독 인용만 확보",
+    "GitHub Docs 릴리스 생성 권한 문구 — 페치 본문엔 없고 검색 스니펫에만 있음(미확인)",
+    "각 공식 문서의 발행/갱신 날짜 — 페이지에 노출되지 않아 null",
+    "dev-tool 프로파일에 pipeline 필드 없음(확인함)",
+    "git fetch --prune-tags, git ls-remote --tags 등 원격 태그 확인 방법은 미조사"
+  ]
+}
