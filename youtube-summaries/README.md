@@ -3,11 +3,16 @@
 채널 [AI Engineer](https://www.youtube.com/@aiDotEngineer) 의 새 영상을 Gemini 로 자동 요약한 모음입니다.
 생성: `backend/scripts/youtube-summarize.mjs` (GitHub Actions `youtube-summary` 크론).
 
-총 **434개**.
+총 **439개**.
 
 | 발행일 | 제목 |
 |---|---|
+| 2026-11-03 | [You Can't Tell What's Real Anymore. Here's What Comes Next - Cristóbal Valenzuela, Runway](2026-11-03-q4ITwvlFplQ.md) |
+| 2026-11-02 | [Your AI Pilots Won't Move the P&L. Here's What Will - Adam Nahari, Apollo](2026-11-02-vUJDyDnqT4c.md) |
+| 2026-11-02 | [A Valid Key Let an AI Agent Delete Production - Sagar Batchu, Speakeasy](2026-11-02-JxNCuXkSWyQ.md) |
+| 2026-11-02 | [Your Company Should Train Its Own AI Models - Will Brown, Prime Intellect](2026-11-02-5SRjPT2Eo7A.md) |
 | 2026-11-02 | [I Don't Fear AI Slop. I Fear Untold Stories - Zack Proser, WorkOS](2026-11-02-1et3Lb_KLQo.md) |
+| 2026-11-02 | [AI Writes Code Faster Than Your Team Can Review It - Andrew Norrish, Sourcegraph](2026-11-02--X3yXTwGs9A.md) |
 | 2026-11-01 | [Most of Your Docs Readers Are Now AI Agents - Hahnbee Lee, Mintlify & Lincoln Murr, Coinbase](2026-11-01-YX4Z4XqZ9Vo.md) |
 | 2026-11-01 | [Why We Rebuilt Microsoft Office From Scratch for AI Agents - Yijia Liang, Compound AI](2026-11-01-v0UkV5qS9E4.md) |
 | 2026-11-01 | [I Made a Fruit Fly Review My Code - Nick Nisi, WorkOS](2026-11-01-geMAe-PLJF4.md) |
