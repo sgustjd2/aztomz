@@ -37,7 +37,7 @@
   --accent:var(--ad);
   --accent-soft:var(--ad-soft);
   --accent-text:#d83d50;
-  --accent-btn:#e96d7e;
+  --accent-btn:#cf3a4d;
   --on-accent:#fff;
   --green:var(--trust);
   --green-soft:var(--trust-soft);
@@ -567,7 +567,7 @@ i{font-style:normal}
   --ink:#172540; --muted:#697890; --ink-2:#697890; --faint:#8190a5;
   --line:#e4e9ef; --rule:#172540; --ad:#e54756; --ad-soft:#fff0f1;
   --accent:#e54756; --accent-soft:#fff0f1; --accent-text:#d83d50;
-  --accent-btn:#e96d7e; --trust:#21885a; --trust-soft:#e9f7ee;
+  --accent-btn:#cf3a4d; --trust:#21885a; --trust-soft:#e9f7ee;
   --green:#21885a; --green-soft:#e9f7ee; --body:#4c5b70; --track:#e8edf2;
   --on-ink:#fff; --shadow:0 10px 28px rgba(23,37,64,.08);
   background:var(--paper);color:var(--ink)
@@ -621,7 +621,7 @@ body.app-redesign.nav-collapsed{--nav-width:76px}
 .app-redesign .cover-credit{display:none;position:absolute;right:12px;bottom:12px;z-index:2;padding:5px 8px;background:rgba(255,255,255,.94);border-radius:3px;color:#334155;font-size:var(--text-meta);font-weight:600}
 .app-redesign .is-editorial-cover .cover-credit{display:block}
 .app-redesign .idx-thumb>.cover{width:100%;height:100%;min-height:0;aspect-ratio:auto;padding:0;border-radius:inherit}
-.app-redesign .idx-thumb .cover-credit{right:6px;bottom:6px;font-size:var(--text-meta)}
+.app-redesign .idx-row .idx-thumb .cover-credit{display:none} /* 홈 idx-row 작은 썸네일: 기본 이미지 자체 라벨과 겹침 → 숨김 (대표 카드에선 유지) */
 .app-redesign .list-lead{padding-top:8px}
 .app-redesign .idx-row{display:grid;grid-template-columns:190px minmax(0,1fr) 124px;gap:24px;align-items:center;padding:22px 0;border:0;border-bottom:1px solid var(--line);border-radius:0;background:transparent;box-shadow:none;text-decoration:none;color:inherit}
 .app-redesign .idx-row:hover{transform:none;border-color:var(--line);box-shadow:none}
@@ -1181,7 +1181,8 @@ body.app-redesign.nav-collapsed{--nav-width:76px}
 .app-redesign .empty h3{font-size:17px;line-height:1.6;font-weight:700;margin:0}
 .app-redesign .empty p{font-size:14px;line-height:1.85;margin:0 0 6px;color:var(--muted);overflow-wrap:anywhere}
 .app-redesign .empty .btn{justify-self:start;min-height:40px;padding:9px 13px;border-radius:5px;font-size:13px;font-weight:650;line-height:1.6}
-.home-redesign .request-icon{color:var(--muted);margin-bottom:8px}
+.home-redesign .request-icon{color:var(--muted)}
+.idx-row .t .it-cat>span:first-child{flex:none;white-space:nowrap} /* 카테고리가 줄지 않게 — 좁은 화면에서 "디저/트" 글자 단위 줄바꿈 방지 */
 .app-redesign .tp-more{font-size:13px;line-height:1.7}
 .app-redesign .tp-ideas-h{font-size:13px;color:var(--ink-2);font-weight:650}
 .app-redesign .tp-idea-list li{font-size:15px;line-height:1.8}
