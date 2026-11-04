@@ -1,156 +1,107 @@
 {
-  "keyword": "양털부츠 세탁",
+  "keyword": "양털부츠(어그) 세탁법·관리법 — 물세탁 되나, 얼룩·물자국, 건조, 보관",
   "categoryId": "life-info",
-  "searchedAt": "2026-11-02",
+  "searchedAt": "2026-11-04",
   "queries": [
-    "UGG how to clean care sheepskin boots official",
-    "어그 부츠 관리 세탁 방법 공식 UGG 코리아 케어",
-    "EMU Australia sheepskin boots care guide wash",
-    "한국소비자원 OR 세탁업중앙회 양털 부츠 세탁 주의",
-    "UGG customer care how to care for sheepskin boots ugg.com support (allowed_domains ugg/emu/koolaburra/bearpaw)",
-    "어그 공식 케어 가이드 양털 부츠 세탁 불가 UGG 코리아 고객센터",
-    "Koolaburra by UGG care instructions sheepskin boots clean",
-    "Bearpaw boots care instructions cleaning sheepskin wool",
-    "어그부츠 세탁 방법 소금 자국 겨울 제설제 양털 부츠 관리 보관",
-    "UGG salt stains boots remove winter sheepskin vinegar official advice"
+    "UGG care guide how to clean sheepskin boots",
+    "어그부츠 세탁법 물세탁 관리법 얼룩 물자국 건조 보관",
+    "EMU Australia sheepskin boot care cleaning instructions",
+    "UGG Care & Cleaning ugg.com sheepskin do not machine wash official",
+    "한국소비자원 양털 무스탕 어그부츠 세탁 취급주의 가죽 모피 세탁 소비자 피해",
+    "어그 코리아 공식 제품 관리 방법 양털 스웨이드 세탁 불가 케어"
   ],
   "sources": [
     {
-      "title": "\"걸레가 돼 돌아온 내 신발\" 세탁업체 책임이 절반 이상 (한국소비자원 신발세탁 피해 현황 보도)",
-      "url": "https://magazine.hankyung.com/business/article/202407053932b",
-      "host": "magazine.hankyung.com",
-      "tier": "data",
-      "publishedAt": "2024-07-05",
-      "body": "한국소비자원 신발세탁 피해 현황(2024년 7월 5일 보도). 2021~2023년 신발세탁 관련 소비자 불만은 총 3,893건으로 서비스 분야 피해 다발 품목 5위. 심의 신청 685건 분석 결과 세탁업체 잘못 52.7%(361건), 제조판매업체 품질 불량 25.4%(174건), 사업자 책임이 아닌 기타 21.2%(145건), 소비자 사용 미숙 0.7%(5건). 세탁업체 책임 361건 중 '세탁방법 부적합' 78.1%(282건), 과도한 세탁 12.7%(46건), 후손질 미흡 8.0%(29건). 신발은 취급표시가 제품에 고정되어 있지 않아 세탁자가 방법을 확인하지 못한 채 세탁하는 경우가 많다고 소비자원은 봄. 6월 크린토피아·월드크리닝·크린에이드·크린파트너 4개 업체와 간담회를 열어 세탁 전 주의사항 확인과 소비자 사전고지를 권고. (WebFetch 요약본에서 옮김; 양털 부츠 한정 통계는 아님)",
-      "facts": [
-        "2021~2023년 신발세탁 관련 소비자 불만 총 3,893건, 서비스 분야 피해 다발 품목 5위 (한국소비자원, 2024-07-05 보도)",
-        "심의 신청 685건 중 세탁업체 잘못 52.7%(361건), 제조판매업체 품질 불량 25.4%(174건), 기타 21.2%(145건), 소비자 사용 미숙 0.7%(5건)",
-        "세탁업체 책임 361건 중 '세탁방법 부적합' 78.1%(282건), 과도한 세탁 12.7%(46건), 후손질 미흡 8.0%(29건)",
-        "소비자원 당부: \"제품구입 시 품질표시와 취급 주의사항을 확인할 것\" / 맡길 때 제품 상태 점검·인수증 수령 / \"완성된 세탁물은 가급적 빨리 회수하고 하자 유무를 즉시 확인할 것\"",
-        "이 통계는 신발 전반이며 양털(시어링) 부츠만의 수치가 아니다"
-      ]
-    },
-    {
-      "title": "How to clean UGG boots (Cleanipedia, Unilever)",
-      "url": "https://www.cleanipedia.com/gb/clothing-care/how-to-clean-ugg-boots.html",
-      "host": "www.cleanipedia.com",
+      "title": "[장은석 기자의 호갱 탈출] 눈 올 때 신었더니 쪼그라든 어그부츠 어쩌죠?",
+      "url": "https://m.seoul.co.kr/news/2017/12/09/20171209020005",
+      "host": "m.seoul.co.kr",
       "tier": "press",
-      "publishedAt": null,
-      "body": "Unilever 운영 세탁 정보 사이트(UGG 자사 아님). 페이지 문구: \"the official UGG stance is to never use a washing machine or tumble dryer to clean your UGGs at home.\" 저온 울 세탁 코스가 괜찮아 보일 수 있으나 기계세탁은 권하지 않는다고 서술. 얼룩에는 연필 지우개를 제안하며 \"Be careful not to rub too hard as this could damage the sheepskin.\" 건조는 신문지를 채워 자연 건조, \"This can take up to sixteen hours.\" 소금 자국·냄새 항목은 해당 페이지에 없음. UGG 공식 입장을 제3자가 전달한 것이므로 UGG 원문 확인이 필요.",
+      "publishedAt": "2017-12-08",
+      "body": "(WebFetch 요약본 — 원문은 전재·AI 이용 금지라 전문 미확보) 20대 소비자가 약 20만원짜리 어그부츠를 첫눈에 신었다가 다음 날 쪼그라든 사례. 원인: 천연 양가죽은 물에 매우 취약, 제설용 염화칼슘이 가죽을 수축·경화시킬 수 있음. 소비자분쟁해결기준(한국소비자원 인용): 봉제·접착·염색 불량 등 하자는 무상수리→교환→환불 순. 가죽 변형은 수리가 어려워 교환·환불 가능성. 취급주의 표시를 어긴 소비자 과실이면 보상 어려움. 제조사가 설명서에 눈·제설제 주의를 적는 경우가 많고, 안내가 없었다면 소비자에게 유리. 가죽제품 품질보증 1년(일반 신발 6개월)이라고 기사가 서술. 분쟁 시 1372소비자상담센터·한국소비자원 피해구제. 관리: 젖으면 마른 천으로 즉시 닦고 서늘한 그늘에서 자연건조, 히터·드라이어는 가죽을 굳게 하니 피함, 신문지를 채워 형태 유지.",
       "facts": [
-        "Cleanipedia 인용: \"the official UGG stance is to never use a washing machine or tumble dryer to clean your UGGs at home.\" (제3자 전달, UGG 원문 미확인)",
-        "얼룩에 연필 지우개 제안: \"Be careful not to rub too hard as this could damage the sheepskin.\"",
-        "신문지를 채워 자연 건조, \"This can take up to sixteen hours.\"",
-        "소금 자국·냄새 제거는 이 페이지에 없음"
+        "기사 사례: 약 20만원 어그부츠가 첫눈 외출 다음 날 수축 (2017-12-08 기사)",
+        "원인으로 천연 양가죽의 물 취약성과 제설 염화칼슘(수축·경화)을 지목",
+        "기사 서술: 가죽제품 품질보증 1년, 일반 신발 6개월 (2017년 기준, 현행 기준은 미확인)",
+        "젖으면 마른 천으로 닦고 그늘에서 자연건조, 히터·드라이어 금지, 신문지로 형태 유지"
       ]
     },
     {
-      "title": "UGG Australia Product & Care Information (uggaustralia.com.au, 운영 주체 미확인)",
-      "url": "https://uggaustralia.com.au/pages/product-care-information",
-      "host": "uggaustralia.com.au",
-      "tier": "blog",
-      "publishedAt": null,
-      "body": "자사 안내(판매 사이트). 이 도메인이 Deckers/UGG 공식 운영인지 확인하지 못함(홈 페치가 429). 페이지 문구: \"we do not recommend washing UGG Australia® products\". \"Avoid excessive exposure to water.\" \"If your boots become wet, allow them to dry naturally at room temperature.\" \"Never place boots near heaters, fireplaces or direct heat sources.\" Water & Stain Protector는 \"reduce the risk of marks from spills and moisture.\"라고 설명(판매 문구, 사실 아님). 소금 자국·보관·냄새는 페이지에 없음.",
-      "facts": [
-        "자사 안내(운영주체 미확인): \"we do not recommend washing UGG Australia® products\"",
-        "자사 안내: \"Avoid excessive exposure to water.\"",
-        "자사 안내: \"If your boots become wet, allow them to dry naturally at room temperature.\"",
-        "자사 안내: \"Never place boots near heaters, fireplaces or direct heat sources.\"",
-        "소금·보관·냄새는 미언급"
-      ]
-    },
-    {
-      "title": "How To Clean Your Uggs (NBC Select, Bethany Heitman)",
-      "url": "https://www.nbcnews.com/select/shopping/how-to-clean-uggs-rcna184548",
-      "host": "www.nbcnews.com",
-      "tier": "press",
-      "publishedAt": "2024-12-17",
-      "body": "NBC Select, Bethany Heitman, 2024-12-17. 공식 UGG 지침이 아니라 외부 전문가 조언. William Wong(Arterton 디렉터): \"For a deeper clean, wipe boots down with a suede shampoo.\" \"Mix a shampoo that is specially formulated for suede with water.\" 기사 경고: \"You want to avoid soaking then, as that can cause water stains.\" 건조: \"Let dry, and then brush the nap before fully dry.\" 얼룩: \"If you still notice lingering stains — like water or dirt stains — try a suede eraser.\" UGG 키트 설명: \"Made by Ugg, this cleaning kit comes with a protector, cleaner and a renew spray.\" 소금은 다루지 않음. 제휴 쇼핑 매체 성격.",
-      "facts": [
-        "NBC Select(2024-12-17): \"You want to avoid soaking then, as that can cause water stains.\"",
-        "전문가(Arterton William Wong): \"Mix a shampoo that is specially formulated for suede with water.\"",
-        "\"If you still notice lingering stains — like water or dirt stains — try a suede eraser.\"",
-        "UGG 키트: \"Made by Ugg, this cleaning kit comes with a protector, cleaner and a renew spray.\" (쇼핑 기사 설명)"
-      ]
-    },
-    {
-      "title": "어그부츠 세탁? 차라리 버리세요 (오마이뉴스, 엄민 기자)",
-      "url": "https://m.ohmynews.com/NWS_Web/Mobile/at_pg.aspx?CNTN_CD=A0001321122",
-      "host": "m.ohmynews.com",
-      "tier": "press",
-      "publishedAt": "2010-02-10",
-      "body": "오마이뉴스 2010.02.10 엄민 기자. 한 백화점 직원 \"어그 세탁이요? 대책 없어요.\" 세탁비는 켤레당 보통 3만 원, 오염 심하면 3만 원 추가, 밑창 갈이·수선 1만5천~2만 원 (2010년 기준). 국내 어그부츠 10만 원대~40~50만 원대. 택배 세탁 2주 소요 사례, 2008년 세탁소가 'L사 어그부츠는 기계로 세탁할 수 없다'며 반환한 사례, 2009년 11월 압구정 세탁 후 짙은 브라운이 베이지로 변색된 사례. 한국소비자원 사이트에 세탁 분쟁 문의가 많다고 서술. 16년 전 기사라 가격·업계 상황은 현재와 다를 수 있음.",
-      "facts": [
-        "오마이뉴스 2010-02-10: 켤레당 세탁비 보통 3만 원, 오염 심하면 3만 원 추가, 밑창 갈이·수선 1만 5천~2만 원 (2010년 기준, 현재 가격 아님)",
-        "2009년 11월 압구정 세탁 업소에 맡긴 짙은 브라운 어그가 베이지로 변색돼 돌아온 사례(개인 주장)",
-        "2008년 세탁소가 'L사 어그부츠는 우리 세탁소의 기계로 세탁할 수 없다'며 반환한 사례",
-        "어그 전문 세탁소가 많지 않아 택배로 타 지역에 보내 2주 만에 받은 사례"
-      ]
-    },
-    {
-      "title": "털신의 계절! 작년에 산 털신도 새것처럼 신는 방법 (얼루어 코리아, 장성실)",
-      "url": "https://www.allurekorea.com/2023/11/07/%ed%84%b8%ec%8b%a0%ec%9d%98-%ea%b3%84%ec%a0%88-%ec%9e%91%eb%85%84%ec%97%90-%ec%82%b0-%ed%84%b8%ec%8b%a0%eb%8f%84-%ec%83%88%ea%b2%83%ec%b2%98%eb%9f%bc-%ec%8b%a0%eb%8a%94-%eb%b0%a9%eb%b2%95/",
-      "host": "www.allurekorea.com",
-      "tier": "press",
-      "publishedAt": "2023-11-07",
-      "body": "얼루어 코리아 장성실 기자 2023.11.07. 털 부분이 있는 내피: \"털 부분이 있는 내피는 두꺼운 솔에 물을 살짝 묻혀 닦는 것이 좋아요.\" 덜 말랐으면 드라이기로 말림. 어그처럼 스웨이드 외피는 눈·비에 얼룩지기 쉬워 미리 스웨이드 보호제 분사. 얼룩은 즉시 깨끗한 천으로 닦고 스웨이드 전용 솔. 냄새: 물기 남은 상태에서 방향제를 뿌리면 악취가 날 수 있어 \"햇볕이 잘 들고 통풍이 되는 곳에 신발을 반나절, 하루 정도 둔 다음 건조가 충분히 되었다면 그때 방향제를 한두 번 분사\". 보관 시 신문지 말아 넣기, 신발 전용 스타일러 추천. 브랜드 공식 지침 아님.",
-      "facts": [
-        "얼루어(2023-11-07): \"털 부분이 있는 내피는 두꺼운 솔에 물을 살짝 묻혀 닦는 것이 좋아요.\"",
-        "얼루어: 덜 마르면 드라이기로 물기를 말림 (UGG 자사 안내의 '열 금지'와 어긋남 - conflicts 참고)",
-        "얼루어: \"햇볕이 잘 들고 통풍이 되는 곳에 신발을 반나절, 하루 정도 둔 다음 건조가 충분히 되었다면 그때 방향제를 한두 번 분사해 주세요.\"",
-        "얼루어: 신지 않을 때는 신문지를 말아 넣어 습기 제거"
-      ]
-    },
-    {
-      "title": "어그를 더 오래, 더 예쁘게 신으려면! (보그 코리아, 오기쁨)",
+      "title": "어그를 더 오래 더 예쁘게 신으려면 (Vogue Korea)",
       "url": "https://www.vogue.co.kr/2022/11/30/%ec%96%b4%ea%b7%b8%eb%a5%bc-%eb%8d%94-%ec%98%a4%eb%9e%98-%eb%8d%94-%ec%98%88%ec%81%98%ea%b2%8c-%ec%8b%a0%ec%9c%bc%eb%a0%a4%eb%a9%b4/",
       "host": "www.vogue.co.kr",
       "tier": "press",
       "publishedAt": "2023-01-02",
-      "body": "보그 코리아 오기쁨. (URL 경로 날짜 2022/11/30, 본문 표기 2023.1.2 - 불일치, 아래 conflicts). 보관: \"직사광선을 피해 통풍이 잘되는 그늘에서 보관하는 것이 좋습니다.\" 겉면 오염을 먼저 지우고 수분을 충분히 제거해야 내부 털의 숨이 죽지 않음. 착용 시즌에는 전용 방수제를 미리 분사. 물 얼룩은 스웨이드 지우개. 시즌 끝: 부드러운 솔로 먼지 제거 후 제습제나 신문지를 넣어 보관, 습기 관리 소홀 시 곰팡이. 오염이 심하면 전문 세탁업체 추천. 브랜드 공식 지침 아님.",
+      "body": "(WebFetch 요약본) 오기쁨 기자. 보관 전 부드러운 솔로 겉면 먼지를 털고, 눈에 띄는 오염은 보관 전에 처리해 안쪽 털의 질감 손상을 막을 것. 오염이 심하면 전문 세탁 업체 권장. 자주 신기 전 전용 방수제를 겉면에 뿌리면 오염·젖음에 의한 가죽 손상을 줄이나 비·눈에는 여전히 주의. 가죽에 물 얼룩이 생기면 스웨이드 지우개 활용. 보관 전 수분을 충분히 제거해 안쪽 털 보존. 직사광선을 피한 통풍 그늘에 두고, 시즌 종료 후 제습제나 신문지를 안에 넣어 습기를 흡수시킬 것. 습기 관리를 소홀히 하면 다음 겨울에 곰팡이가 생길 수 있음.",
       "facts": [
-        "보그 코리아: \"직사광선을 피해 통풍이 잘되는 그늘에서 보관하는 것이 좋습니다.\"",
-        "보그 코리아: 시즌 종료 후 부드러운 솔로 먼지 제거, 내부에 제습제나 신문지를 넣어 보관, 습기 관리 소홀 시 곰팡이 가능",
-        "보그 코리아: 물 얼룩에는 스웨이드 지우개, 오염이 심하면 전문 세탁업체 권장"
+        "게재일 표기는 URL 2022-11-30, 본문 확인 2023-01-02로 어긋남 (URL 날짜와 기사 표기 날짜 차이)",
+        "물 얼룩에는 스웨이드 지우개, 사전 방수 스프레이 권장",
+        "보관: 직사광선 피한 통풍 그늘 + 제습제/신문지, 습기 방치 시 곰팡이 위험"
       ]
     },
     {
-      "title": "How To Remove Salt Stains From My Uggs (Hunker, Mel Frank)",
-      "url": "https://www.hunker.com/12001616/how-to-remove-salt-stains-from-my-uggs/",
-      "host": "www.hunker.com",
-      "tier": "blog",
-      "publishedAt": "2010-04-07",
-      "body": "Hunker, Mel Frank, 2010-04-07 (16년 전 글, 브랜드 공식 아님). 소금 자국 단계: 1) \"Pour 1 cup of water and 1/2 tsp. of dish soap into a cup.\" 2) 칫솔로 거품을 만들어 3) 거품만 떠서 소금 자국에 문지름 4) \"Moisten a cleaning cloth with plain water.\" 로 닦음 5) \"Dip the edge of a cleaning cloth into white vinegar.\" 로 안 지워진 곳 작은 원으로 6) \"Wipe a damp cloth over the boots\" 로 잔여물 제거. 어그 공식 소금 제거 지침이 아니므로 보조 근거로만 사용.",
+      "title": "어그부츠 세탁? 차라리 버리세요 (오마이뉴스)",
+      "url": "https://m.ohmynews.com/NWS_Web/Mobile/at_pg.aspx?CNTN_CD=A0001321122",
+      "host": "m.ohmynews.com",
+      "tier": "press",
+      "publishedAt": "2010-02-10",
+      "body": "(WebFetch 요약본) 엄민 인턴기자, 2010-02-10. 양털부츠는 세탁이 어려워 보통 세탁 전문점에 맡기며 매장에서 해결책이 없다고 하는 경우가 많다고 보도. 한 켤레 세탁 약 3만원, 심한 오염 시 3만원 추가, 밑창·수선 1.5~2만원 추가 (2010년 가격이라 현재와 다름). 전문점이 적어 타 지역 택배 발송, 2주 소요 사례. 한 독자는 밤색 부츠가 베이지색으로 변하고 겉이 거칠어진 채 돌아왔다고 주장, 한국소비자원 사이트에도 유사 불만 있다고 서술. 한 시즌 신고 버리는 문화가 있다고 언급.",
       "facts": [
-        "Hunker(2010-04-07, 개인 필자): 물 1컵 + 주방세제 1/2 tsp 거품을 칫솔로 소금 자국에 문지르고, 젖은 천 → 흰 식초 묻힌 천 → 젖은 천 순으로 닦는 방법",
-        "브랜드 공식 소금 제거 지침은 이번 조사에서 확인하지 못함"
+        "2010년 기사 기준 전문 세탁 약 3만원(오염 심하면 +3만원), 수선 1.5~2만원 — 현재 가격 아님",
+        "세탁 후 색 변화(밤색→베이지) 불만 사례 보도",
+        "기사 자체가 16년 전 자료라 최신 근거로 부적합"
+      ]
+    },
+    {
+      "title": "스웨이드 부츠(어그) 관리 — LG전자 생활꿀팁",
+      "url": "https://www.lge.co.kr/story/life-tips/staaack-uggboots",
+      "host": "www.lge.co.kr",
+      "tier": "blog",
+      "publishedAt": null,
+      "body": "(WebFetch 요약본) 1) 일상 오염: 분무기로 물을 뿌린 뒤 칫솔로 살살 문지르고 마른 수건으로 수분 제거 후 그늘 건조. 물자국이 생기지 않게 전체를 고르게 처리. 담그거나 세제 쓰지 말 것(젖은 상태가 길면 스웨이드는 오염에 더 취약). 2) 소독용 에탄올(식용 아님)을 겉면에 분사해 색 복원, 냄새는 마른 수건에 알코올을 묻혀 안쪽 닦기. 에어블로어로 먼지 제거 후 한 방향으로 브러싱. 3) 제설제(염화칼슘)는 소재를 딱딱하게 수축시킬 수 있어 눈 오는 날엔 신발장 보관. 기름·음식 얼룩 등은 전문 세탁 권장. 신문지로 형태 유지. LG전자 콘텐츠이며 제품 제조사(UGG) 공식 안내가 아님.",
+      "facts": [
+        "분무기+칫솔 건식 위주 관리, 세제·담금 금지, 그늘 건조",
+        "소독용 에탄올로 색 복원·냄새 제거를 제안 (제조사 공식 방법 아님, 시험 근거 미확인)",
+        "염화칼슘 제설제 회피 안내"
+      ]
+    },
+    {
+      "title": "털신의 계절! 작년에 산 털신도 새것처럼 신는 방법 (Allure Korea)",
+      "url": "https://www.allurekorea.com/2023/11/07/%ed%84%b8%ec%8b%a0%ec%9d%98-%ea%b3%84%ec%a0%88-%ec%9e%91%eb%85%84%ec%97%90-%ec%82%b0-%ed%84%b8%ec%8b%a0%eb%8f%84-%ec%83%88%ea%b2%83%ec%b2%98%eb%9f%bc-%ec%8b%a0%eb%8a%94-%eb%b0%a9%eb%b2%95/",
+      "host": "www.allurekorea.com",
+      "tier": "press",
+      "publishedAt": "2023-11-07",
+      "body": "(WebFetch 요약본) 장성실 기자, 2023-11-07. 털신 전반 중 어그 관련: 눈·비 전에 스웨이드 방수 스프레이로 방수력 보강, 새 얼룩은 바로 깨끗한 천으로 닦은 뒤 스웨이드 전용 브러시로 정리, 냄새가 나면 드라이어로 충분히 말리고 신문지를 채움. 안쪽 털은 두꺼운 브러시에 물을 살짝 묻혀 문지르고, 젖어 있으면 드라이어로 말린 뒤 통풍 좋은 곳에서 반나절~하루 자연건조, 완전히 마른 뒤 탈취제 1~2회 분사. 미착용 시 말아 둔 신문지를 넣어 보관. 주의: 이 기사의 드라이어 사용은 Seoul신문 기사(히터·드라이어 금지)와 상충.",
+      "facts": [
+        "안쪽 털: 물 묻힌 브러시 → 반나절~하루 자연건조 → 탈취제 1~2회",
+        "드라이어 사용을 권한 이 기사와 드라이어를 피하라는 서울신문 기사가 상충"
       ]
     }
   ],
   "conflicts": [
     {
-      "about": "열·햇볕 건조 허용 여부",
-      "a": "얼루어 코리아(2023-11-07): 덜 마르면 드라이기로 물기를 말리고, 햇볕 잘 드는 통풍 장소에 반나절~하루 둠",
-      "b": "uggaustralia.com.au 자사 안내(운영주체 미확인): \"Never place boots near heaters, fireplaces or direct heat sources.\" / 보그 코리아: 직사광선 피해 그늘 보관 (UGG 공식 사이트 원문은 못 읽음; 검색 도구 전달 요약은 'Avoid direct sunlight or heat' 였음)"
+      "about": "드라이어 사용",
+      "a": "서울신문(2017): 히터·드라이어는 가죽을 굳게 하므로 피한다. EMU 지원 문서(검색 요약만): 열 건조는 수축·변형 유발",
+      "b": "Allure Korea(2023): 젖은 안쪽 털을 드라이어로 말리고, 냄새 시에도 드라이어 건조를 권함"
     },
     {
-      "about": "물 사용 수준",
-      "a": "UGG 자사 안내: \"we do not recommend washing UGG Australia® products\" (운영주체 미확인) / Cleanipedia: UGG는 세탁기·건조기 금지",
-      "b": "얼루어: 내피는 솔에 물을 살짝 묻혀 닦음, NBC 전문가: 스웨이드 샴푸를 물에 섞어 닦음 — 완전 세탁은 아니고 부분 닦기 수준이라 표현 범위 차이"
-    },
-    {
-      "about": "보그 코리아 기사 날짜",
-      "a": "URL 경로: 2022/11/30",
-      "b": "본문 표기: 2023.1.2"
+      "about": "물 사용 여부",
+      "a": "UGG 공식 페이지(검색 요약만, 본문 미확인): 손세탁만, 세탁기 금지, 찬물 사용",
+      "b": "LG 생활팁: 분무기 물+칫솔 사용은 허용하되 담금·세제 금지 / 오마이뉴스·서울신문: 물에 취약하다고 서술"
     }
   ],
   "unknowns": [
-    "UGG 공식 케어 페이지(ugg.com/care-cleaning.html, help.ugg.com, ugg.com/ca)는 WebFetch가 Header overflow/인증서/연결 거부로 실패해 본문을 직접 읽지 못함. 검색 도구가 전달한 요약(hand wash only, 세탁기·드라이클리닝 금지, 종이 채워 24시간 이상 자연 건조, 직사광선·열 회피, 부드러운 솔로 결 방향 브러싱, 첫 착용 전 보호제, 프리셔너/프레시너 스프레이)은 원문 미확인이라 sources에 넣지 않음. 글 작성 전 사람이 원문 확인 필요",
-    "UGG 코리아(ugg.co.kr 등) 공식 케어 안내 접근 실패",
-    "EMU 공식 지원 문서(support.emuaustralia.com)는 403. 검색 요약 수준에서만 'spot clean with cold water + wool wash, dab', '세탁기 비권장' 확인, 본문 미확인",
-    "Koolaburra·Bearpaw 공식 케어 원문 미확인(Bearpaw product-care-backup 404, 검색상 NeverWet 언급 정도)",
-    "세탁업중앙회·한국소비자원의 양털/시어링 부츠 전용 세탁 안내 못 찾음 (신발 전반 통계만 확인)",
-    "소금(제설제) 자국에 대한 브랜드 공식 지침 못 찾음",
-    "uggaustralia.com.au가 Deckers 공식 운영인지 미확인"
-  ]
+    "UGG 공식 케어 가이드(ugg.com/care-sheepskin.html, care-cleaning.html, help.ugg.com 세탁기 FAQ) 본문 — WebFetch 가 Header overflow/ECONNREFUSED/인증서 오류로 실패, curl 은 권한 거부. 검색 결과 요약으로 '세탁기·드라이클리닝 금지, 손세탁, 찬물, 직접 열·직사광선 피함' 이 확인될 뿐 직접 읽지 못함 → sources 에 넣지 않음",
+    "EMU Australia 지원 문서(support.emuaustralia.com/hc/en-au/articles/9649230394767) — 403 으로 본문 미확인. 검색 요약만: 세탁기 비권장, 찬물+울워시 스팟 클리닝, 열 건조 금지, 과한 문지름은 라놀린 제거",
+    "uggdirect.com.au, whowhatwear 등 해외 2차 자료 — 429 로 본문 미확인",
+    "한국소비자원·공공기관 자료 본문(양털/가죽 신발 세탁 기준, 세탁 서비스 피해 4,855건 통계의 출처 원문) — 검색 요약에서만 확인, 원문 URL 미도달",
+    "어그 코리아(국내 공식) 관리 안내",
+    "소독용 에탄올 사용의 제조사 인정 여부, 현행 소비자분쟁해결기준(품질보증기간)의 최신 값",
+    "한국 사이트 중 UGG 제품 케어 라벨의 표기 기호"
+  ],
+  "completion": {
+    "sourceCount": 5,
+    "officialOrDataCount": 0,
+    "meetsCriteria": false,
+    "note": "official/data 0건 — 완료 기준(2건 이상) 미충족. press 4 + blog 1. 본문은 WebFetch 가 돌려준 요약본이며 원문 전문이 아님. 숫자 포함 facts 는 3개 이상(20만원, 1년/6개월, 3만원 등)이나 모두 2010~2017 보도 기반."
+  }
 }

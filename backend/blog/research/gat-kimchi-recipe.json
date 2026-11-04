@@ -1,0 +1,176 @@
+{
+  "keyword": "갓김치 담그는 법",
+  "categoryId": "life-info",
+  "notes": "공식 자료(농진청·여수시·논문)는 재배·성분·저장 품질만 다루고 절임 시간·소금 비율 공식 기준은 없다. 절임·양념 수치는 만개의레시피 3편(blog)과 레이디경향 2007뿐이므로 '레시피별 비교'로만 쓰고 정답 단정 금지. 숙성은 5도C 논문(2006)과 3개월 숙성 논문(2016)이 근거이며 연구 조건을 함께 밝혀야 한다.",
+  "sources": [
+    {
+      "title": "돌산갓 텃밭 재배 (농촌진흥청 웹진 2021-01)",
+      "url": "https://www.rda.go.kr/webzine/2021/01/sub4-2.html",
+      "host": "rda.go.kr",
+      "tier": "official",
+      "body": "도구 요약본. 여수시 육성 품종 10종(늦동이·순동이·신동이·짱돌이·쌈돌이·꽃돌이·자람이·자랑이·알싸미·매코미). 김장용 늦동이·순동이·짱돌이, 물김치용 꽃돌이·자람이·자랑이. 월동 재배 90~120일, 파종 후 40~60일·키 50cm 정도에 수확. 담그는 법은 없음."
+    },
+    {
+      "title": "농사로 동영상: 갓 재배 (여수시농업기술센터 협력, 2009)",
+      "url": "https://www.nongsaro.go.kr/portal/ps/psb/psby/vodPlay.ps?mvpNo=698",
+      "host": "nongsaro.go.kr",
+      "tier": "official",
+      "body": "도구 요약본(2009년 자료). 가을 재배 적기 8월 중하순~10월 상중순. 수확은 봄 약 60일, 여름·가을 40~50일, 월동 90~120일, 꽃대 나오기 전 이른 아침, 2~3kg 단위 묶음. 갓은 단백질과 비타민 A·C가 많고 갓김치·배추김치 양념에 향과 매운맛을 더한다고 설명."
+    },
+    {
+      "title": "돌산갓 김치 성분 (여수시농업기술센터 돌산갓연구팀)",
+      "url": "https://www.yeosu.go.kr/agr/info/dolsangat/kimchi/screen_print.pdf?page%3D1",
+      "host": "yeosu.go.kr",
+      "tier": "official",
+      "body": "도구 요약본(2021.05.26 업데이트, 자료출처 한국식품개발연구원 2007 시험성적, 시료 조건 불명). 100g당 열량 45kcal, 수분 86.5g, 단백질 2.9g, 탄수화물 4.8g, 식이섬유 4.2g, pH 4.63, 나트륨 1,150.5mg, 유산균 5.6x10^7 cfu/g. 매운맛 성분이 젖산균 형성에 관여해 다른 엽채류 김치보다 저장성이 뛰어나다고 페이지가 설명. 담그는 법 없음."
+    },
+    {
+      "title": "돌산갓김치가 유명한 마을 (농촌진흥청 웹진 2024-11)",
+      "url": "https://rda.go.kr/webzine/2024/11/sub2-4.html",
+      "host": "rda.go.kr",
+      "tier": "official",
+      "body": "도구 요약본. 여수 대율마을 소개. 갓은 평균 8시간 절이고 염도 3%, 고춧가루 전체의 2.5%, 젓갈류 3% 유지. 쏙·새우·조갯살 간 양념과 정어리 젓갈. 돌산갓은 1950년대 중반 일본에서 들여와 1990년대 초반 돌산으로 확산. 마을 사례이며 가정 레시피 기준이 아님."
+    },
+    {
+      "title": "갓김치(Brassica juncea) 숙성 중 영양성분 및 이화학적 특성 변화 (한국식품영양학회지 2016)",
+      "url": "https://koreascience.kr/article/JAKO201632747975969.page?lang=ko",
+      "host": "koreascience.kr",
+      "tier": "data",
+      "body": "도구가 요약한 초록. 갓김치를 최대 3개월 숙성하며 조사. pH 감소, 적정산도 점진 증가, 젖산은 3개월째 가장 크게 증가. K·Zn 제외 무기질은 2개월 숙성에서 최고. B2 제외 B군 비타민은 3개월 후 유의하게 감소. 초록에 염농도·발효 온도 등 제조 조건 없음."
+    },
+    {
+      "title": "Quality Changes of Mustard Leaf (Dolsangat) Kimchi During Low Temperature Storage (2006)",
+      "url": "https://koreascience.or.kr/article/JAKO200603042165769.page",
+      "host": "koreascience.or.kr",
+      "tier": "data",
+      "body": "도구가 요약한 초록. 돌산갓김치를 5도C에서 최대 60일 저장. 산도·비타민 C 기준 적숙기는 저장 20~40일, 산도 0.69~0.88%. 환원당은 60일째 1.34%로 기간이 길수록 감소. 제조 당일 시료의 비타민 C·식이섬유·항산화활성이 가장 높음. 5도C 한정 연구."
+    },
+    {
+      "title": "여수 돌산 갓 김치 쉽고 간단하게 집에서 만드는법 (만개의레시피 6987858)",
+      "url": "https://www.10000recipe.com/recipe/6987858",
+      "host": "10000recipe.com",
+      "tier": "blog",
+      "body": "도구 요약본. 갓 4kg에 천일염 약 250g 건식 절임, 30~40분마다 뒤집어 4~5시간, 구부렸을 때 잘 휘면 완료, 2~3번 헹굼. 고춧가루 6컵(원문 6컵/6큰술 표기 불일치), 까나리액젓 350cc, 매실즙 300cc, 찬밥 1공기로 풀 대체. 쪽파 300g, 당근 200g. 실온 1~2일 후 냉장."
+    },
+    {
+      "title": "돌산갓김치 맛있게 담그는법 갓김치 황금레시피 (만개의레시피 7037055)",
+      "url": "https://www.10000recipe.com/recipe/7037055",
+      "host": "10000recipe.com",
+      "tier": "blog",
+      "body": "도구 요약본. 갓 약 4kg을 물 3L+굵은소금 300ml 소금물에 잠깐 담근 뒤 굵은소금 100ml를 켜켜이 뿌려 눌러 둠. 줄기 굵으면 2시간, 여린 갓은 1시간 30분. 찹쌀가루 3큰술+육수 400ml 풀, 고춧가루 400ml, 멸치액젓 200ml. 실온 하루 후 냉장."
+    },
+    {
+      "title": "여수 돌산갓김치 만드는 법 (만개의레시피 7011272)",
+      "url": "https://www.10000recipe.com/recipe/7011272",
+      "host": "10000recipe.com",
+      "tier": "blog",
+      "body": "도구 요약본. 돌산갓 2단, 물 2L에 천일염 2컵, 줄기에 소금 추가 후 2~3시간, 중간에 뒤집고 낭창낭창 휘어질 만큼. 감자 1개+찬밥 1컵+물 2컵 풀(작성자는 이쪽이 더 시원하다는 개인 의견), 고춧가루 2컵, 까나리액젓 1컵. 실온 하루 후 냉장."
+    },
+    {
+      "title": "내 손으로 직접 담가 '더 맛있는' 김장 김치 (레이디경향, 2007-11-01)",
+      "url": "https://lady.khan.co.kr/cooking/article/10247",
+      "host": "lady.khan.co.kr",
+      "tier": "press",
+      "body": "도구 요약본(2007년 기사). 돌산갓 1단을 물 10컵+굵은소금 1큰술 소금물에 무거운 돌로 눌러 절임, 시간 명시 없이 휘어질 때까지. 찹쌀가루 2큰술+물 1컵 풀, 고춧가루 1컵, 황석어젓 1/3컵, 멸치육젓 1/4컵. 숙성 기간·온도 언급 없음."
+    }
+  ],
+  "claims": [
+    {
+      "claim": "갓김치는 어떤 갓을 언제 거두느냐부터 시작된다 — 김장용 품종과 수확 적기가 따로 있다",
+      "grade": "confirmed",
+      "evidence": [
+        "여수시 육성 돌산갓 품종 10종 중 김장용은 늦동이·순동이·짱돌이, 물김치용은 꽃돌이·자람이·자랑이 (농진청 웹진 2021)",
+        "파종 후 40~60일, 키 50cm 정도가 수확 적기. 월동 재배는 90~120일 (농진청 웹진 2021)",
+        "수확 시기는 봄 약 60일, 여름·가을 40~50일, 월동 90~120일이며 꽃대가 나오기 전 이른 아침에 거둔다 (농사로 2009 영상, 오래된 자료)"
+      ],
+      "sourceUrls": [
+        "https://www.rda.go.kr/webzine/2021/01/sub4-2.html",
+        "https://www.nongsaro.go.kr/portal/ps/psb/psby/vodPlay.ps?mvpNo=698"
+      ]
+    },
+    {
+      "claim": "절임은 '몇 시간'이 정답이 아니다 — 방식에 따라 1시간 30분에서 8시간까지 갈리고, 공통 기준은 갓을 구부렸을 때 휘는지다",
+      "grade": "confirmed",
+      "evidence": [
+        "공식 자료에는 가정용 절임 시간·소금 비율 기준이 없음. 마을 사례(농진청 웹진 2024)만 평균 8시간·염도 3%",
+        "만개의레시피 7037055: 줄기 굵으면 2시간, 여린 갓 1시간 30분 (물 3L+굵은소금 300ml 소금물 + 켜켜이 100ml)",
+        "만개의레시피 7011272: 줄기 소금 추가 2~3시간, 낭창낭창 휘어질 만큼 (물 2L+천일염 2컵)",
+        "만개의레시피 6987858: 건식 갓 4kg에 천일염 약 250g, 4~5시간, 30~40분마다 뒤집고 잘 휘면 완료",
+        "레이디경향 2007: 물 10컵+굵은소금 1큰술(훨씬 약한 소금물), 시간 명시 없이 숨 죽을 때까지",
+        "6987858·7011272와 기사는 '구부렸을 때 휘는 정도'를 완료 판단에 씀(7037055는 굵기별 시간만 제시 — 팩트체크 원문 대조로 정정). 이 수치들은 레시피별 사례이며 부피 단위라 % 염도로 환산 불가"
+      ],
+      "sourceUrls": [
+        "https://rda.go.kr/webzine/2024/11/sub2-4.html",
+        "https://www.10000recipe.com/recipe/7037055",
+        "https://www.10000recipe.com/recipe/7011272",
+        "https://www.10000recipe.com/recipe/6987858",
+        "https://lady.khan.co.kr/cooking/article/10247"
+      ]
+    },
+    {
+      "claim": "숙성은 '실온 하루 뒤 냉장'이 레시피의 공통 흐름이고, 냉장 5도C 연구에서는 20~40일이 먹기 좋은 때로 나왔다",
+      "grade": "confirmed",
+      "evidence": [
+        "돌산갓김치 5도C 저장 연구(2006): 산도·비타민 C 기준 적숙기는 저장 20~40일, 산도 0.69~0.88%. 5도C 한정이라 상온 숙성엔 적용 불가",
+        "같은 연구: 제조 당일 시료의 비타민 C·식이섬유·항산화활성이 가장 높았음",
+        "갓김치 3개월 숙성 연구(2016): 젖산은 3개월째 최대 증가, K·Zn 제외 무기질은 2개월에서 최고, B2 제외 B군 비타민은 3개월 후 감소. 초록에 제조 조건 없음",
+        "레시피 쪽 숙성: 7037055·7011272는 실온 하루 후 냉장, 6987858은 실온 1~2일 후 냉장 (blog, 기온에 따라 달라짐)"
+      ],
+      "sourceUrls": [
+        "https://koreascience.or.kr/article/JAKO200603042165769.page",
+        "https://koreascience.kr/article/JAKO201632747975969.page?lang=ko",
+        "https://www.10000recipe.com/recipe/7037055",
+        "https://www.10000recipe.com/recipe/7011272",
+        "https://www.10000recipe.com/recipe/6987858"
+      ]
+    },
+    {
+      "claim": "양념 구성은 레시피마다 풀 재료와 젓갈이 다르다 — 찹쌀풀이 기본이지만 찬밥·감자 풀도 쓰이고, 어느 쪽이 낫다는 건 작성자 취향이다",
+      "grade": "reported",
+      "evidence": [
+        "찹쌀풀: 7037055는 찹쌀가루 3큰술+육수 400ml, 레이디경향은 찹쌀가루 2큰술+물 1컵",
+        "찬밥 대체: 6987858은 찬밥 1공기, 7011272는 감자 1개+찬밥 1컵+물 2컵 (작성자가 '더 시원하다'고 적은 개인 의견)",
+        "젓갈: 까나리액젓(6987858 350cc, 7011272 1컵), 멸치액젓 200ml(7037055), 황석어젓·멸치육젓(레이디경향)",
+        "마을 방식(농진청 2024)은 고춧가루 전체의 2.5%, 젓갈 3%를 유지한다고 소개 — 가정 비율로 옮길 근거는 아님",
+        "고춧가루 양 6컵/400ml/2컵/1컵은 갓 양이 달라 직접 비교 불가. 6987858은 원문에 6컵/6큰술 표기 불일치"
+      ],
+      "sourceUrls": [
+        "https://www.10000recipe.com/recipe/7037055",
+        "https://www.10000recipe.com/recipe/6987858",
+        "https://www.10000recipe.com/recipe/7011272",
+        "https://lady.khan.co.kr/cooking/article/10247",
+        "https://rda.go.kr/webzine/2024/11/sub2-4.html"
+      ]
+    }
+  ],
+  "numbers": [
+    { "what": "월동 돌산갓 재배 기간", "value": "90~120일", "asOf": "2021-01 웹진", "sourceUrl": "https://www.rda.go.kr/webzine/2021/01/sub4-2.html" },
+    { "what": "수확 적기(파종 후 일수·키)", "value": "40~60일, 키 50cm 정도", "asOf": "2021-01 웹진", "sourceUrl": "https://www.rda.go.kr/webzine/2021/01/sub4-2.html" },
+    { "what": "수확 시기(봄/여름·가을)", "value": "약 60일 / 40~50일", "asOf": "2009 영상(오래됨)", "sourceUrl": "https://www.nongsaro.go.kr/portal/ps/psb/psby/vodPlay.ps?mvpNo=698" },
+    { "what": "마을 방식 절임 시간·염도", "value": "평균 8시간, 염도 3% (고춧가루 2.5%, 젓갈 3%)", "asOf": "2024-11 웹진, 대율마을 사례", "sourceUrl": "https://rda.go.kr/webzine/2024/11/sub2-4.html" },
+    { "what": "레시피 절임 시간 7037055", "value": "1시간 30분(여린 갓)~2시간(굵은 줄기)", "asOf": "게시일 불명", "sourceUrl": "https://www.10000recipe.com/recipe/7037055" },
+    { "what": "레시피 절임 시간 7011272", "value": "2~3시간", "asOf": "게시일 불명", "sourceUrl": "https://www.10000recipe.com/recipe/7011272" },
+    { "what": "레시피 절임 시간 6987858", "value": "4~5시간, 30~40분마다 뒤집기", "asOf": "게시일 불명", "sourceUrl": "https://www.10000recipe.com/recipe/6987858" },
+    { "what": "레시피 소금 6987858", "value": "갓 4kg에 천일염 약 250g(간수 뺀 것)", "asOf": "게시일 불명", "sourceUrl": "https://www.10000recipe.com/recipe/6987858" },
+    { "what": "레시피 소금 7037055", "value": "물 3L+굵은소금 300ml, 켜켜이 굵은소금 100ml (갓 약 4kg)", "asOf": "게시일 불명", "sourceUrl": "https://www.10000recipe.com/recipe/7037055" },
+    { "what": "레시피 소금 7011272", "value": "물 2L+천일염 2컵 + 줄기 소금 (2단)", "asOf": "게시일 불명", "sourceUrl": "https://www.10000recipe.com/recipe/7011272" },
+    { "what": "레시피 소금 레이디경향", "value": "물 10컵+굵은소금 1큰술 (1단)", "asOf": "2007-11-01(오래됨)", "sourceUrl": "https://lady.khan.co.kr/cooking/article/10247" },
+    { "what": "실온 숙성 후 냉장 전환", "value": "하루(7037055·7011272) / 1~2일(6987858)", "asOf": "게시일 불명", "sourceUrl": "https://www.10000recipe.com/recipe/6987858" },
+    { "what": "5도C 저장 적숙기", "value": "저장 20~40일, 산도 0.69~0.88%", "asOf": "2006 논문 초록, 5도C 한정", "sourceUrl": "https://koreascience.or.kr/article/JAKO200603042165769.page" },
+    { "what": "3개월 숙성 연구 지표", "value": "젖산 3개월째 최대 증가, 무기질 2개월 최고", "asOf": "2016 논문 초록, 제조 조건 불명", "sourceUrl": "https://koreascience.kr/article/JAKO201632747975969.page?lang=ko" },
+    { "what": "돌산갓김치 100g 영양", "value": "45kcal, 단백질 2.9g, 식이섬유 4.2g, 나트륨 1,150.5mg, pH 4.63", "asOf": "2007 시험성적(2021 게시), 시료 조건 불명", "sourceUrl": "https://www.yeosu.go.kr/agr/info/dolsangat/kimchi/screen_print.pdf?page%3D1" },
+    { "what": "돌산갓김치 유산균", "value": "5.6x10^7 cfu/g", "asOf": "2007 시험성적(2021 게시)", "sourceUrl": "https://www.yeosu.go.kr/agr/info/dolsangat/kimchi/screen_print.pdf?page%3D1" }
+  ],
+  "dropped": [],
+  "cannotCover": [
+    "공식 기관(농사로·여수시·aT·식약처)의 갓김치 담그는 법 기준 — 절임 시간·소금 비율 공식 수치 없음. '정석은 이것'이라고 단정 불가",
+    "소금 양의 % 염도 환산 — 레시피가 ml·컵 단위라 근거 없음. 마을 사례 3%를 가정 기준으로 쓰면 안 됨",
+    "세계김치연구소의 갓김치 전용 숙성·보관 기준 — 일반 김치 자료뿐",
+    "상온 숙성의 정확한 일수·맛 변화 — 논문은 5도C뿐, 레시피의 '하루~이틀'은 개인 경험",
+    "'찬밥 풀이 찹쌀풀보다 시원하다' 같은 맛 우열 — 작성자 개인 의견뿐",
+    "양념 재료 비율의 표준화 — 갓 양이 레시피마다 달라 직접 비교 불가",
+    "최신 생산량·가격·산지 현황 — 2009년 자료뿐 (연 생산량 약 3만 톤은 인용 비권장)",
+    "WebFetch 본문은 도구가 요약한 것이라 원문 전체 인용 불가"
+  ],
+  "songs": []
+}

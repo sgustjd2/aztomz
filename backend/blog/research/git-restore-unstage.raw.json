@@ -1,0 +1,124 @@
+{
+  "keyword": "git add 취소, git restore 사용법 (스테이징 취소·작업 내용 되돌리기, checkout과 차이)",
+  "categoryId": "dev-tool",
+  "searchedAt": "2026-11-04",
+  "queries": [
+    "WebFetch git-scm.com/docs/git-restore",
+    "WebFetch git-scm.com/docs/git-reset",
+    "WebFetch git-scm.com/docs/git-checkout",
+    "WebFetch git-scm.com/docs/git-switch",
+    "WebFetch git RelNotes 2.23.0",
+    "WebFetch git-scm.com Pro Git Undoing Things",
+    "WebFetch github.blog Highlights from Git 2.23"
+  ],
+  "sources": [
+    {
+      "title": "git-restore Documentation",
+      "url": "https://git-scm.com/docs/git-restore",
+      "host": "git-scm.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "git restore [<options>] [--source=<tree>] [--staged] [--worktree] [--] <pathspec>... 설명: 복원 소스의 내용으로 작업 트리의 지정 경로를 복원한다. 경로가 추적 중인데 복원 소스에 없으면 소스에 맞춰 삭제된다. --staged 를 주면 인덱스를 복원하고, --staged --worktree 를 함께 주면 둘 다 복원한다. 기본값: --staged 가 있으면 HEAD 에서, 없으면 인덱스에서 복원한다. --source 로 다른 커밋을 지정할 수 있다. -p/--patch 는 hunk 단위 선택. --worktree 는 위치 지정 옵션이며 아무것도 안 주면 작업 트리가 복원 대상. --overlay/--no-overlay: 기본은 no-overlay 로, 소스 트리에 없는 추적 파일은 제거한다. 예시: git restore --staged hello.c (git reset hello.c 와 동일), git restore --source=HEAD --staged --worktree hello.c (git checkout HEAD hello.c 와 동일), 짧게 git restore -s@ -SW hello.c, git restore . (현재 디렉터리 전부), git restore '*.c', git restore --source master~2 Makefile. SEE ALSO: git-checkout(1), git-reset(1). 페이지 하단에 'git-restore last updated in 2.55.0' 표기.",
+      "facts": [
+        "git restore --staged <파일> 은 인덱스만 HEAD 내용으로 되돌리며 git reset <파일> 과 동일하다고 공식 예시에 명시",
+        "기본 복원 소스: --staged 가 있으면 HEAD, 없으면 인덱스. 따라서 git restore <파일> 은 인덱스 버전으로 작업 트리를 덮어쓴다(= 스테이징 안 된 수정 폐기)",
+        "git restore --source=HEAD --staged --worktree <파일> 은 git checkout HEAD <파일> 과 동일(공식 예시)",
+        "-S/--staged, -W/--worktree, -s/--source, -p/--patch 옵션 존재. 짧은 형태 git restore -s@ -SW hello.c",
+        "기본이 no-overlay: 소스에 없는 추적 파일은 삭제된다",
+        "현재 문서 페이지에는 EXPERIMENTAL 표기가 없다(페이지 하단 'last updated in 2.55.0')"
+      ]
+    },
+    {
+      "title": "git-reset Documentation",
+      "url": "https://git-scm.com/docs/git-reset",
+      "host": "git-scm.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "git reset [-q] [<tree-ish>] [--] <pathspec>... : 지정한 파일/디렉터리의 스테이징된 버전을 지정 커밋/트리(기본 HEAD)의 버전으로 설정한다. 즉 git reset <pathspec> 은 git add <pathspec> 의 반대이며, 지정 파일의 변경을 unstage 한다. 이는 git restore --staged <pathspec>... 와 동일하다. 이 모드에서는 인덱스만 갱신하고 HEAD 나 작업 트리 파일은 건드리지 않는다. 파일과 인덱스 둘 다 갱신하려면 git-restore 를 쓰라고 안내한다. 커밋 형태 git reset [<mode>] [<commit>] 의 기본 모드는 --mixed: 작업 디렉터리 유지, 인덱스를 새 HEAD 에 맞춰 스테이징 비움. --soft: 작업 트리와 인덱스 유지. --hard: 모든 파일을 <commit> 버전으로 덮어쓰며 추적되지 않은 파일도 덮어쓸 수 있고 인덱스도 맞춘다. 'Undo add' 예시: git add frotz.c filfre.c 후 git reset 으로 인덱스만 되돌리면 작업 트리 변경은 그대로 남는다.",
+      "facts": [
+        "git reset <pathspec> 은 git add 의 반대이며 git restore --staged <pathspec> 와 동일(공식 문서 문구)",
+        "경로 형태의 git reset 은 인덱스만 갱신하고 HEAD·작업 트리 파일은 건드리지 않는다",
+        "커밋 형태 git reset 의 기본 모드는 --mixed(작업 디렉터리 유지·스테이징 비움). --hard 는 작업 트리 파일까지 덮어쓰며 추적 안 되는 파일도 덮어쓸 수 있음",
+        "공식 문서가 '파일과 인덱스 둘 다 갱신하려면 git-restore 를 쓰라'고 안내",
+        "'Undo add' 예시: 스테이징을 취소해도 작업 트리의 변경은 그대로 남는다"
+      ]
+    },
+    {
+      "title": "git-checkout Documentation",
+      "url": "https://git-scm.com/docs/git-checkout",
+      "host": "git-scm.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "git checkout 은 두 가지 주요 모드가 있다: 브랜치 전환, 그리고 파일의 다른 버전 복원. git checkout [-f|--ours|--theirs|-m|--conflict=<style>] [--] <pathspec>... : 지정한 파일/디렉터리를 인덱스의 버전으로 교체한다. 예: 커밋을 체크아웃하고 file.txt 를 편집했다가 실수였다면 git checkout file.txt 가 file.txt 의 스테이징 안 된 변경을 폐기한다. git checkout <tree-ish> [--] <pathspec>... : 지정 커밋/트리 버전으로 교체하고 인덱스에도 추가한다(예: git checkout main file.txt). -- 구분자는 인자를 경로로 강제 취급하게 하며, 없으면 file 이름이 브랜치명과 같을 때 브랜치 전환으로 해석된다. 브랜치 전환 시 커밋 안 된 변경이 대상 브랜치와 충돌하는 파일을 건드리면 실패하고, 아니면 변경은 유지된다. -f/--force 는 로컬 변경을 버린다. SEE ALSO 에 git-switch, git-restore 가 링크되어 있다.",
+      "facts": [
+        "git checkout <파일> (또는 -- <파일>) 은 인덱스 버전으로 덮어써 스테이징 안 된 변경을 폐기한다(공식 예시 문구 'discard any unstaged changes')",
+        "git checkout <tree-ish> <파일> 은 해당 버전으로 교체하면서 인덱스에도 추가한다 — git restore --source=<tree> --staged --worktree 에 해당",
+        "-- 구분자 없이 파일명이 브랜치명과 같으면 브랜치 전환으로 해석되는 모호성이 있다",
+        "checkout 문서는 'two main modes'(브랜치 전환·파일 복원)라고 설명하며 switch/restore 로 분리됐다고 직접 서술하지는 않는다(SEE ALSO 링크만)"
+      ]
+    },
+    {
+      "title": "git-switch Documentation",
+      "url": "https://git-scm.com/docs/git-switch",
+      "host": "git-scm.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "git switch [<options>] [--no-guess] <branch> / --detach [<start-point>] / (-c|-C) <new-branch> [<start-point>] / --orphan <new-branch>. 설명: 지정한 브랜치로 전환한다. 작업 트리와 인덱스가 브랜치에 맞게 갱신된다. 새 커밋은 그 브랜치 끝에 추가된다. -c, -C 로 새 브랜치를 만들거나 --guess 로 같은 이름의 원격 브랜치에서 자동 생성하거나 --detach 로 분리할 수 있다. 브랜치 전환은 깨끗한 인덱스·작업 트리를 요구하지 않는다. 다만 로컬 변경 손실로 이어지면 중단되며 --discard-changes 또는 --merge 로 달리 지시할 수 있다. checkout.defaultRemote 와 checkout.guess 설정을 git checkout 과 공유한다. 이 페이지에는 EXPERIMENTAL 표기가 없다. 파일 복원은 다루지 않으며 그건 git restore 의 몫이다.",
+      "facts": [
+        "git switch 는 브랜치 전환 전용이며 로컬 변경이 사라질 상황이면 중단된다(--discard-changes 또는 --merge 로만 우회)",
+        "git switch 문서에는 EXPERIMENTAL 표기가 없다(현재 시점 확인)",
+        "git switch -c <새브랜치> 로 브랜치 생성+전환(checkout -b 대응)"
+      ]
+    },
+    {
+      "title": "Git 2.23.0 Release Notes",
+      "url": "https://raw.githubusercontent.com/git/git/master/Documentation/RelNotes/2.23.0.adoc",
+      "host": "raw.githubusercontent.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "UI, Workflows & Features 항목: 'Two new commands \"git switch\" and \"git restore\" are introduced to split \"checking out a branch to work on advancing its history\" and \"checking out paths out of the index and/or a tree-ish to work on advancing the current history\" out of the single \"git checkout\" command.' 즉 2.23 에서 git checkout 하나가 하던 두 작업(브랜치 체크아웃 / 인덱스·트리에서 경로 체크아웃)을 git switch 와 git restore 로 나눴다는 공식 릴리스 노트 문장이다. git 프로젝트 저장소의 Documentation/RelNotes 에서 직접 열어 읽었다.",
+      "facts": [
+        "Git 2.23.0 릴리스 노트: 'git switch' 와 'git restore' 두 새 명령이 단일 'git checkout' 에서 작업을 분리하기 위해 도입됨",
+        "분리 기준: 브랜치 작업(checking out a branch) vs 인덱스/트리에서 경로 체크아웃(checking out paths)"
+      ]
+    },
+    {
+      "title": "Pro Git - 2.4 Git Basics - Undoing Things",
+      "url": "https://git-scm.com/book/en/v2/Git-Basics-Undoing-Things",
+      "host": "git-scm.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "Unstaging a Staged File: git add * 로 올린 뒤 git reset HEAD CONTRIBUTING.md 로 내리는 기존 방식과, git restore --staged CONTRIBUTING.md 방식이 병기되어 있다. 책은 'git reset 은 --hard 와 함께면 위험한 명령이지만 이 시나리오에서는 작업 디렉터리 파일이 건드려지지 않아 비교적 안전하다'고 말한다. Unmodifying a Modified File: git checkout -- CONTRIBUTING.md 또는 git restore CONTRIBUTING.md. 경고(Important): 'git restore <file> is a dangerous command. Any local changes you made to that file are gone — Git just replaced that file with the last staged or committed version. Don't ever use this command unless you absolutely know that you don't want those unsaved local changes.' git status 출력도 git restore --staged <file>... 와 git restore <file>... 를 안내한다.",
+      "facts": [
+        "Pro Git: 스테이징 취소 = git restore --staged <file> (기존 git reset HEAD <file>), 작업 트리 수정 폐기 = git restore <file> (기존 git checkout -- <file>)",
+        "Pro Git 경고: git restore <file> / git checkout -- <file> 은 로컬 변경이 사라지는 위험한 명령, 되돌릴 수 없는 저장 안 된 변경이다",
+        "git reset <file> 은 작업 디렉터리 파일을 건드리지 않아 비교적 안전하다고 책이 명시"
+      ]
+    },
+    {
+      "title": "Highlights from Git 2.23",
+      "url": "https://github.blog/open-source/git/highlights-from-git-2-23/",
+      "host": "github.blog",
+      "tier": "press",
+      "publishedAt": "2019-08-16",
+      "body": "GitHub 블로그의 Git 2.23 하이라이트. git checkout 은 브랜치 전환·생성·개별 파일 복원까지 많은 일을 해서 문서가 혼란스러웠고, 새 명령은 git switch 가 브랜치, git restore 가 파일을 맡는다. 'meant to eventually provide a better interface for the well-known git checkout'. 예: git switch my-feature, git switch -c my-new-feature (checkout -b 대응), git restore --source HEAD~3 --staged --worktree main.c (3커밋 전 내용으로 작업본과 인덱스 모두 복원). --worktree 가 기본이고 --staged 는 인덱스. --source 없으면 인덱스에서 가져온다. checkout 과 달리 restore 는 기본 --no-overlay 로 소스에 없는 추적 파일을 삭제한다. 글은 이 명령들이 실험적(experimental)으로 표시돼 있고 다음 릴리스에서 바뀔 수 있다고 적었다(2.23 시점).",
+      "facts": [
+        "Git 2.23 시점(2019) GitHub 블로그: git switch/restore 는 experimental 로 표시되어 변경될 수 있다고 설명",
+        "git restore --source HEAD~3 --staged --worktree main.c : 3커밋 전 내용을 작업본과 인덱스 모두에 복원하는 예시",
+        "checkout 과 달리 restore 는 기본 --no-overlay 라서 소스에 없는 추적 파일을 삭제"
+      ]
+    }
+  ],
+  "conflicts": [
+    {
+      "about": "git switch/restore 의 experimental 여부",
+      "a": "GitHub 블로그(2.23 시점, 2019)는 두 명령이 experimental 로 표시돼 바뀔 수 있다고 함",
+      "b": "현재 git-scm.com 의 git-restore/git-switch 문서에는 EXPERIMENTAL 표기가 없음 (시점 차이로 보이나, 언제 해제됐는지는 확인 못 함)"
+    }
+  ],
+  "unknowns": [
+    "git restore 의 experimental 표기가 언제 해제됐는지 (릴리스 노트에서 해당 항목 미확인)",
+    "git restore 가 '복구 불가' 인지에 대한 공식 문서 수치 — 공식 문서는 폐기된 변경을 되살리는 방법을 안내하지 않음(Pro Git 은 '사라진다'고만 서술). 단, git 에 커밋·스태시된 적 없는 작업 트리 변경은 reflog 대상이 아님은 문서에서 직접 확인 못 함",
+    "git restore --staged 로 신규(untracked→add 한) 파일을 내렸을 때 untracked 로 돌아가는 동작의 공식 문서 문구 (문서 직접 확인 못 함)"
+  ]
+}
