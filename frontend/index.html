@@ -74,14 +74,14 @@
   const collectionRow = (t)=>{
     const image = H.coverImg(t);
     const thumb = image
-      ? `<img src="${H.esc(image)}" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove();this.parentNode.classList.add('is-empty')"><span class="collection-fallback">${H.esc(String(t.cat||'한끗').slice(0,2))}</span>`
+      ? `<img src="${H.esc(image)}" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.parentNode.classList.add('is-empty');this.remove()"><span class="collection-fallback">${H.esc(String(t.cat||'한끗').slice(0,2))}</span>`
       : `<span class="collection-fallback" style="display:flex">${H.esc(String(t.cat||'한끗').slice(0,2))}</span>`;
     const kind = t.type==='신뢰분석' ? '광고 분석' : '트렌드';
     return `<a class="collection-row" href="${href(t.id)}"><span class="collection-thumb" aria-hidden="true">${thumb}</span><span><span class="collection-meta"><span class="collection-type">${kind}</span><span aria-hidden="true">·</span><span>${H.esc(t.cat||'')}</span>${t.buzz?`<span aria-hidden="true">·</span><span>${H.esc(t.buzz)}</span>`:''}</span><span class="collection-title">${H.esc(t.title)}</span>${H.summary(t)?`<span class="collection-summary">${H.esc(H.summary(t, 120))}</span>`:''}</span></a>`;
   };
   if(_tag || _date){
     const sec = document.createElement('section');
-    sec.style.margin = '8px 0 20px';
+    sec.className = 'home-section';
     if(_date === 'all'){
       // 📅 전체 수집 기록 — 날짜별로 묶어 타임라인(최신일 먼저)
       const g = {};
