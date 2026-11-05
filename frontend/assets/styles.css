@@ -64,6 +64,13 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
   outline:3px solid color-mix(in srgb, var(--accent) 72%, transparent);
   outline-offset:3px;
 }
+/* 탭 대상: 더블탭 확대 지연 제거 */
+a,button,input,select,textarea,summary,label,[role="button"]{touch-action:manipulation}
+/* 스킵 링크 — 포커스될 때만 화면에 */
+.skip-link{position:absolute;left:12px;top:-100px;z-index:1000;padding:10px 16px;border-radius:var(--r);
+  background:var(--ink);color:var(--paper);font-size:15px;font-weight:700;text-decoration:none}
+.skip-link:focus{top:12px}
+#main:focus{outline:none}
 .wrap{width:100%;max-width:var(--maxw);margin:0 auto;padding:0 clamp(16px,4vw,28px)}
 /* 본문 읽기 폭 — 긴 글(분석/마이페이지)은 가독성을 위해 좁게 유지 */
 .wrap.reading{max-width:var(--readw)}

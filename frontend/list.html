@@ -4,6 +4,8 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="color-scheme" content="light dark" />
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+<meta name="theme-color" content="#151a23" media="(prefers-color-scheme: dark)" />
 <title>전체 목록 — 한끗</title>
 <meta name="description" content="한끗의 광고 분석·요즘 트렌드 전체 목록. 카테고리로 좁히고 페이지로 넘겨 보세요." />
 <meta property="og:type" content="website" />
@@ -27,8 +29,9 @@
 </style>
 </head>
 <body>
+<a class="skip-link" href="#main">본문으로 건너뛰기</a>
   <div data-mast></div>
-  <div class="wrap">
+  <main class="wrap" id="main" tabindex="-1">
 
     <section class="lead list-lead">
       <span class="kicker" id="lKicker"></span>
@@ -45,7 +48,7 @@
     <div class="disc footer-disclaimer"><span>모든 점수는 공개 정보 기반 <b>추정치</b>이며 확정 판정이 아닙니다.</span></div>
 
     <footer class="site"><a class="fwm footer-brand" href="index.html" aria-label="한끗 홈">한<b>끗</b></a><div class="footer-copy">AZ와 MZ는 한 끗 차이 · 트렌드 번역소<br>SNS 이미지 무단 사용 없이 링크·자체요약 중심으로 운영합니다.</div></footer>
-  </div>
+  </main>
 
 <script src="data/trends.js"></script>
 <script src="assets/app.js?v=public-copy-20261024"></script>

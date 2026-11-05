@@ -4,6 +4,8 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="color-scheme" content="light dark" />
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+<meta name="theme-color" content="#151a23" media="(prefers-color-scheme: dark)" />
 <title>한끗 — 트렌드 분석</title>
 <meta name="description" content="광고 의심도·실제 후기 신뢰도·만족도 분석. 추정치이며 확정 판정이 아닙니다." />
 <meta property="og:type" content="article" />
@@ -87,8 +89,9 @@
 <link rel="stylesheet" href="assets/detail.css?v=public-copy-20261024" />
 </head>
 <body class="detail-page">
+<a class="skip-link" href="#main">본문으로 건너뛰기</a>
   <div data-mast></div>
-  <div class="wrap reading"><div id="main"></div></div>
+  <div class="wrap reading"><main id="main" tabindex="-1"></main></div>
 
 <script src="data/trends.js"></script>
 <script src="assets/app.js?v=public-copy-20261024"></script>
@@ -180,7 +183,7 @@
     return `<div class="media">
       <h2 class="media-h">${detailIcon("image")} 대표 이미지</h2>
       <div class="gallery">${uniq.map(u=>`<a href="${u}" target="_blank" rel="noopener">
-        <img src="${u}" alt="${H.esc(t.title)}" loading="lazy" referrerpolicy="no-referrer"
+        <img src="${u}" alt="${H.esc(t.title)}" width="640" height="480" loading="lazy" referrerpolicy="no-referrer"
           onerror="this.closest('a').remove()"></a>`).join('')}</div>
     </div>`;
   }

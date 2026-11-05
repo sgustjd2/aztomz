@@ -8,6 +8,7 @@
 
    사용:
      node backend/scripts/restage.mjs --pick=5 [--json]       재판정할 항목(분석일 오래된 순, 최근 14일 재판정분 제외)
+                                                               뽑힌 항목·거절된 판정도 기록해 7일간 다시 안 뽑음
      node backend/scripts/restage.mjs --apply=<judgments.json> [--no-git] [--dry]
        judgments: [{ "id", "stage", "stageMsg", "reason", "evidence": [{ "name", "url", "date"? }] }]
      node backend/scripts/restage.mjs --selftest
@@ -48,13 +49,21 @@ function kstISO(d = new Date()) {
 const readJsonl = (p) => (existsSync(p) ? readFileSync(p, 'utf-8').split('\n').filter(Boolean).flatMap((l) => { try { return [JSON.parse(l)]; } catch { return []; } }) : []);
 
 // 재판정 후보: 트렌드형만, 분석일 오래된 순. 최근 14일 안에 재판정한 항목은 건너뛴다(같은 항목 반복 방지).
-export function recentlyRestaged(log, today = kstISO()) {
+export function recentlyRestaged(log, today = kstISO()) {   // 반영된 판정만(picked·rejected 제외)
   const cut = new Date(`${today}T00:00:00+09:00`); cut.setDate(cut.getDate() - 14);
-  return new Set(log.filter((r) => r.date >= kstISO(cut)).map((r) => r.id));
+  return new Set(log.filter((r) => r.date >= kstISO(cut) && r.outcome !== 'picked' && r.outcome !== 'rejected').map((r) => r.id));
+}
+
+// 뽑혔거나(picked) 거절된(rejected) 항목은 7일간 다시 안 뽑는다 — 근거를 못 찾는 항목이 매일 되풀이되던 문제.
+// 같은 날 picked는 제외하지 않는다(크론 재시도가 같은 결과를 받도록).
+export function recentlyAttempted(log, today = kstISO()) {
+  const cut = new Date(`${today}T00:00:00+09:00`); cut.setDate(cut.getDate() - 7);
+  const from = kstISO(cut);
+  return new Set(log.filter((r) => r.date >= from && (r.outcome === 'rejected' || (r.outcome === 'picked' && r.date < today))).map((r) => r.id));
 }
 
 export function pick(trends, log, n, today = kstISO()) {
-  const recent = recentlyRestaged(log, today);
+  const recent = new Set([...recentlyRestaged(log, today), ...recentlyAttempted(log, today)]);
   return trends.filter((t) => t.type === '트렌드' && !recent.has(t.id))
     .sort((a, b) => String(a.analyzedAt || '').localeCompare(String(b.analyzedAt || '')))
     .slice(0, n);
@@ -167,6 +176,7 @@ async function apply(file) {
   if (!flag('dry')) {
     mkdirSync(dirname(PATHS.log), { recursive: true });
     for (const ch of changes) appendFileSync(PATHS.log, JSON.stringify({ date: today, ...ch, outcome }) + '\n', 'utf-8');
+    for (const r of rejected) if (r.id) appendFileSync(PATHS.log, JSON.stringify({ date: today, id: r.id, outcome: 'rejected', errs: r.errs }) + '\n', 'utf-8');
   }
   const moved = changes.filter((c) => c.from !== c.to).length;
   const summary = { date: today, outcome, judged: list.length, changed: moved, kept: changes.length - moved, rejected,
@@ -205,13 +215,25 @@ async function selftest() {
   assert(t2.label === '지금 써도 됨' && t2.src.length === 1, '상승·피크 쪽은 라벨 유지, 이미 있는 출처는 중복 추가 안 함');
   const t3 = { ...trends[0], stage: '안정화 → 끝물', verdict: '과거 피크 뒤 스테디셀러' };
   assert(applyOne(t3, { stage: '안정화 → 끝물', stageMsg: 'x' }, r.live, '2026-10-24').conflict === null, '단계가 그대로면 본문 충돌로 보지 않음');
+  // picked·rejected: 7일 제외, 같은 날 picked는 제외 안 함, recentlyRestaged는 둘 다 무시
+  const L = [{ date: '2026-10-23', id: 'old', outcome: 'picked' }, { date: '2026-10-21', id: 'mid', outcome: 'rejected', errs: ['x'] },
+    { date: '2026-10-16', id: 'new', outcome: 'picked' }, { date: '2026-10-24', id: 'recent', outcome: 'picked' }];
+  const p2 = pick(trends, L, 9, '2026-10-24').map((t) => t.id);
+  assert(!p2.includes('old') && !p2.includes('mid'), '어제 picked·3일 전 rejected는 제외');
+  assert(p2.includes('new'), '8일 전 picked는 다시 뽑힘');
+  assert(p2.includes('recent'), '같은 날 picked는 제외 안 함(재호출 시 같은 결과)');
+  assert(recentlyRestaged(L, '2026-10-24').size === 0, 'recentlyRestaged는 picked·rejected를 무시');
   console.log('✓ restage selftest 통과');
 }
 
 if (flag('selftest')) await selftest();
 else if (flag('pick')) {
   const data = JSON.parse(readFileSync(PATHS.trends, 'utf-8'));
-  const list = pick(data.trends || data, readJsonl(PATHS.log), (typeof flag('pick') === 'string' ? Number(flag('pick')) : 0) || 5);
+  const log = readJsonl(PATHS.log), today = kstISO();
+  const list = pick(data.trends || data, log, (typeof flag('pick') === 'string' ? Number(flag('pick')) : 0) || 5);
+  const done = new Set(log.filter((r) => r.date === today && r.outcome === 'picked').map((r) => r.id));   // 같은 날 재호출은 중복 기록 안 함
+  const fresh = list.filter((t) => !done.has(t.id));
+  if (fresh.length) { mkdirSync(dirname(PATHS.log), { recursive: true }); appendFileSync(PATHS.log, fresh.map((t) => JSON.stringify({ date: today, id: t.id, title: t.title, outcome: 'picked' })).join('\n') + '\n', 'utf-8'); }
   const rows = list.map((t) => ({ id: t.id, title: t.title, cat: t.cat, stage: t.stage, stageMsg: t.stageMsg, label: t.label,
     analyzedAt: t.analyzedAt, collectedAt: t.collectedAt, verdict: String(t.verdict || '').slice(0, 140) }));
   if (flag('json')) console.log(JSON.stringify(rows, null, 2));

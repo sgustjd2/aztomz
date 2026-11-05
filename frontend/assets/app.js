@@ -60,7 +60,7 @@
     const img = H.coverImg(t), fallback = H.coverDefault(t);
     const tag = opts.inline ? 'span' : 'div';
     return `<${tag} class="cover ${H.esc(t.coverCat||'')} ${opts.tall?'tall':''} has-img ${img?'':'is-editorial-cover'}">
-      <img class="c-bg" src="${H.esc(img||fallback)}" alt="" loading="${opts.tall?'eager':'lazy'}" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='${fallback}';this.parentNode.classList.add('is-editorial-cover')">
+      <img class="c-bg" src="${H.esc(img||fallback)}" alt="" width="640" height="480" loading="${opts.tall?'eager':'lazy'}" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='${fallback}';this.parentNode.classList.add('is-editorial-cover')">
       <span class="cover-credit">${H.esc(t.cat||'한끗')} · 기본 이미지</span>
     </${tag}>`;
   };
@@ -153,7 +153,7 @@
   const THEME_KEY='hangeut.theme';
   H.theme = {
     get(){ try{ return LS.getItem(THEME_KEY)==='dark' ? 'dark' : 'light'; }catch(e){ return 'light'; } },
-    apply(t){ if(global.document && document.documentElement) document.documentElement.setAttribute('data-theme', t==='dark'?'dark':'light'); },
+    apply(t){ if(global.document && document.documentElement){ document.documentElement.setAttribute('data-theme', t==='dark'?'dark':'light'); document.querySelectorAll('meta[name="theme-color"]').forEach(m=>{ m.content = t==='dark'?'#151a23':'#ffffff'; }); } },  // theme-color: 앱 테마(OS 무시)를 따름
     set(t){ t=(t==='dark')?'dark':'light'; try{ LS.setItem(THEME_KEY,t); }catch(e){} H.theme.apply(t); H.updateThemeBtn(t); },
     toggle(){ H.theme.set(H.theme.get()==='dark'?'light':'dark'); }
   };
