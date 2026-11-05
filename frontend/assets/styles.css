@@ -16,7 +16,7 @@
   --paper-soft:#f7f8fa;
   --card:#fff;
   --ink:#172540;
-  --muted:#697890;
+  --muted:#64738b;
   --faint:#8190a5;
   --line:#e4e9ef;
   --rule:#172540;
@@ -36,7 +36,7 @@
   --ink-2:var(--muted);
   --accent:var(--ad);
   --accent-soft:var(--ad-soft);
-  --accent-text:#d83d50;
+  --accent-text:#cf3a4d;
   --accent-btn:#cf3a4d;
   --on-accent:#fff;
   --green:var(--trust);
@@ -340,8 +340,6 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
   transition:border-color .12s,color .12s}
 .tag-chip:hover{border-color:var(--ink);color:var(--ink)}
 .tag-chip.date{color:var(--trust);background:var(--trust-soft);border-color:#bfe0cd;font-family:var(--serif);font-style:normal}
-.date-nav{display:flex;flex-wrap:wrap;align-items:center;gap:7px;margin:14px 0 2px}
-.date-nav-label{font-size:13px;font-weight:800;color:var(--ink-2)}
 /* 수집 기록 — 날짜별 그룹 */
 .date-group{margin:0 0 26px}
 .date-group-h{font-family:var(--serif);font-style:normal;font-size:18px;font-weight:700;color:var(--ink);
@@ -562,9 +560,9 @@ i{font-style:normal}
 /* Secondary pages use the same calm editorial shell as the redesigned home. */
 :root:not([data-theme="dark"]) body.app-redesign{
   --paper:#fff; --paper-soft:#f7f8fa; --paper-2:#f7f8fa; --card:#fff;
-  --ink:#172540; --muted:#697890; --ink-2:#697890; --faint:#8190a5;
+  --ink:#172540; --muted:#64738b; --ink-2:#64738b; --faint:#8190a5;
   --line:#e4e9ef; --rule:#172540; --ad:#e54756; --ad-soft:#fff0f1;
-  --accent:#e54756; --accent-soft:#fff0f1; --accent-text:#d83d50;
+  --accent:#e54756; --accent-soft:#fff0f1; --accent-text:#cf3a4d;
   --accent-btn:#cf3a4d; --trust:#21885a; --trust-soft:#e9f7ee;
   --green:#21885a; --green-soft:#e9f7ee; --body:#4c5b70; --track:#e8edf2;
   --on-ink:#fff; --shadow:0 10px 28px rgba(23,37,64,.08);
@@ -752,7 +750,7 @@ body.app-redesign.nav-collapsed{--nav-width:76px}
 .home-redesign .home-section .sec-head .no{display:inline;color:var(--faint);font-size:var(--text-meta);font-weight:600}
 .home-redesign .home-section .sec-head h2{font-size:22px;font-weight:800;letter-spacing:-.035em}
 .home-redesign .home-section .sec-head .note{margin-left:auto;color:var(--muted);font-size:var(--text-meta);font-weight:400}
-.home-redesign .trend-all{margin-left:auto;color:var(--accent-text);font-size:var(--text-body);font-weight:700;text-decoration:none;white-space:nowrap}
+.home-redesign .sec-link{display:inline-flex;align-items:center;min-height:24px;margin-left:auto;color:var(--accent-text);font-size:var(--text-body);font-weight:700;text-decoration:none;white-space:nowrap}
 .home-redesign .cat-filter{display:flex;flex-wrap:nowrap;gap:7px;margin:14px 0 7px;padding-bottom:5px;overflow-x:auto;scrollbar-width:thin}
 .home-redesign .cat-chip{flex:none;padding:6px 10px;border:1px solid var(--line);border-radius:4px;background:var(--paper);color:var(--muted);font-size:var(--text-meta)}
 .home-redesign .cat-chip:hover{border-color:var(--muted);color:var(--ink)}
@@ -797,13 +795,6 @@ body.app-redesign.nav-collapsed{--nav-width:76px}
 .home-redesign .more-row{margin:16px 0 0;text-align:center}
 .home-redesign .more-btn{border:1px solid var(--line);border-radius:4px;background:var(--paper);color:var(--ink);box-shadow:none}
 .home-redesign .more-btn:hover{border-color:var(--ink);background:var(--paper-soft)}
-.home-redesign .date-nav{display:flex;align-items:center;gap:10px;min-width:0;margin:0 0 5px;padding:9px 0 12px;border-bottom:1px solid var(--line)}
-.home-redesign .date-nav-label{flex:none;color:var(--muted);font-size:var(--text-meta);font-weight:700}
-.home-redesign .date-nav-list{display:flex;align-items:center;gap:6px;flex:1;min-width:0;overflow-x:auto;scrollbar-width:none;white-space:nowrap}
-.home-redesign .date-nav-list::-webkit-scrollbar{display:none}
-.home-redesign .date-nav-date{display:inline-flex;flex:none;align-items:center;min-height:30px;padding:0 9px;border:1px solid var(--line);border-radius:3px;background:var(--paper);color:var(--muted);font-size:var(--text-meta);font-weight:600;text-decoration:none;white-space:nowrap}
-.home-redesign .date-nav-date:hover{border-color:var(--ink);color:var(--ink)}
-.home-redesign .date-nav-all{display:inline-flex;flex:none;align-items:center;gap:4px;min-height:30px;padding:0 5px;color:var(--accent-text);font-size:var(--text-meta);font-weight:700;text-decoration:none;white-space:nowrap}
 .home-redesign .date-group{margin:16px 0 22px;padding:0 18px 8px;border:1px solid var(--line);border-radius:4px;background:var(--paper)}
 .home-redesign .date-group-h{padding:14px 0 8px;border-bottom:1px solid var(--line);font-size:var(--text-body);font-weight:700}
 .home-redesign .date-group-h span{font-size:var(--text-meta);color:var(--muted);font-weight:500}
@@ -822,14 +813,10 @@ body.app-redesign.nav-collapsed{--nav-width:76px}
 .home-redesign .collection-title{display:block;font-size:var(--text-card);font-weight:700;line-height:1.4;word-break:keep-all}
 .home-redesign .collection-summary{display:block;margin-top:3px;color:var(--muted);font-size:var(--text-body);line-height:1.5;word-break:keep-all}
 .home-redesign .strip-empty{margin:12px 0;color:var(--muted);font-size:var(--text-body)}
-.home-redesign .home-request{margin-top:30px;text-align:left;border:0;border-top:1px solid var(--line);border-radius:0;background:transparent;padding:22px 0}
-.home-redesign .home-request .e-mark{font-family:var(--sans);font-size:var(--text-meta);font-style:normal;font-weight:700;letter-spacing:0;color:var(--accent-text)}
-.home-redesign .home-request h3{margin:6px 0;font-size:var(--text-card)}
-.home-redesign .home-request p{font-size:var(--text-body)}
 .home-redesign .disc{border:1px solid var(--line);border-radius:4px;background:var(--paper-soft);color:var(--muted);font-size:var(--text-meta)}
 .home-redesign footer.site{margin:30px 0 0;border-top:1px solid var(--line);color:var(--muted);font-size:var(--text-meta)}
 :root[data-theme="dark"] .home-redesign .home-section .sec-head .no{color:var(--faint)}
-:root[data-theme="dark"] .home-redesign .date-nav-date,:root[data-theme="dark"] .home-redesign .more-btn{background:var(--card);color:var(--ink)}
+:root[data-theme="dark"] .home-redesign .more-btn{background:var(--card);color:var(--ink)}
 :root[data-theme="dark"] .home-redesign .cat-chip{background:var(--card)}
 :root[data-theme="dark"] .home-redesign .cat-chip.on{background:var(--ink);color:var(--paper)}
 :root[data-theme="dark"] .home-redesign .it-tag{background:var(--paper-soft);color:var(--muted)}
@@ -862,14 +849,11 @@ body.app-redesign.nav-collapsed{--nav-width:76px}
   .home-redesign .home-section .sec-head{align-items:baseline;flex-wrap:wrap;gap:6px 9px}
   .home-redesign .home-section .sec-head h2{font-size:var(--text-card)}
   .home-redesign .home-section .sec-head .note{width:100%;margin-left:21px;font-size:var(--text-meta)}
-  .home-redesign .trend-all{margin-left:auto;font-size:var(--text-meta)}
+  .home-redesign .sec-link{margin-left:auto;font-size:var(--text-meta)}
   .home-redesign .strip{grid-template-columns:1fr;gap:18px}
   .home-redesign .chip-card .cover{aspect-ratio:1.4}
   .home-redesign .chip-card .cc-title{font-size:var(--text-card)}
   .home-redesign .chip-card .cc-desc{font-size:var(--text-body)}
-  .home-redesign .date-nav{gap:7px;align-items:flex-start}
-  .home-redesign .date-nav-label{padding-top:7px}
-  .home-redesign .date-nav-all{align-self:center;padding:0 2px}
   .home-redesign .idx-row{grid-template-columns:96px minmax(0,1fr);align-items:start;gap:11px;padding:15px 0}
   .home-redesign .idx-row .idx-thumb{width:96px;height:74px}
   .home-redesign .idx-row .mini{grid-column:1/-1;width:100%;margin-top:0}
@@ -1181,7 +1165,6 @@ body.app-redesign.nav-collapsed{--nav-width:76px}
 .app-redesign .empty h3{font-size:17px;line-height:1.6;font-weight:700;margin:0}
 .app-redesign .empty p{font-size:14px;line-height:1.85;margin:0 0 6px;color:var(--muted);overflow-wrap:anywhere}
 .app-redesign .empty .btn{justify-self:start;min-height:40px;padding:9px 13px;border-radius:5px;font-size:13px;font-weight:600;line-height:1.6}
-.home-redesign .request-icon{color:var(--muted)}
 .idx-row .t .it-cat>span:first-child{flex:none;white-space:nowrap} /* 카테고리가 줄지 않게 — 좁은 화면에서 "디저/트" 글자 단위 줄바꿈 방지 */
 .app-redesign .tp-more{font-size:13px;line-height:1.7}
 .app-redesign .tp-ideas-h{font-size:13px;color:var(--ink-2);font-weight:600}
