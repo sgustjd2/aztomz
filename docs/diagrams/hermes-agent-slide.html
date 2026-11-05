@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI 비서 구성도 · 슬라이드</title>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500;600&family=Noto+Sans+KR:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    /* slide-16x9 preset · presentation ramp — 슬라이드에 그대로 넣는 이미지용. 제목은 슬라이드 쪽에 둔다 */
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{background:#f7f8fa;font-family:'Geist','Pretendard','Noto Sans KR',sans-serif}
+    .frame{overflow-x:auto}
+    svg{display:block;width:100%;min-width:1280px}
+  </style>
+</head>
+<body>
+  <div class="frame">
+  <svg viewBox="0 0 1280 720" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="hermes-agent-slide-title hermes-agent-slide-desc">
+  <title id="hermes-agent-slide-title">AI 비서(Hermes) 구성도</title>
+  <desc id="hermes-agent-slide-desc">디스코드와 크론이 Hermes 게이트웨이를 통해 AI 비서 에이전트를 실행하고, 에이전트는 Codex 주 모델과 Claude 폴백, 검색 도구로 후보를 만들며, 자동 검증 게이트를 통과한 것만 trends.json에 반영돼 Vercel로 배포되는 구조.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#56657c"/></marker>
+    <marker id="arrow-accent" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#c03346"/></marker>
+    <marker id="arrow-link" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#3656d4"/></marker>
+  </defs>
+  <rect width="100%" height="100%" fill="#f7f8fa"/>
+  
+  <rect x="40" y="96" width="200" height="408" rx="8" fill="rgba(23,37,64,0.02)" stroke="rgba(23,37,64,0.12)" stroke-width="0.8"/>
+  <rect x="56" y="100" width="56" height="12" rx="2" fill="#f7f8fa"/>
+  <text x="84" y="109" fill="#5b6a80" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.14em">TRIGGER</text>
+  
+  <rect x="272" y="96" width="492" height="408" rx="8" fill="rgba(23,37,64,0.02)" stroke="rgba(23,37,64,0.12)" stroke-width="0.8"/>
+  <rect x="460" y="100" width="116" height="12" rx="2" fill="#f7f8fa"/>
+  <text x="518" y="109" fill="#5b6a80" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.14em">HERMES · LOCAL PC</text>
+  
+  <rect x="796" y="96" width="444" height="408" rx="8" fill="rgba(23,37,64,0.02)" stroke="rgba(23,37,64,0.12)" stroke-width="0.8"/>
+  <rect x="1060" y="100" width="80" height="12" rx="2" fill="#f7f8fa"/>
+  <text x="1100" y="109" fill="#5b6a80" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.14em">AZTOMZ REPO</text>
+
+  <!-- arrows -->
+  <path d="M 224,196 H 368 Q 376,196 376,204 V 272" fill="none" stroke="#56657c" stroke-width="1.4" marker-end="url(#arrow)"/>
+  <path d="M 224,436 H 368 Q 376,436 376,428 V 344" fill="none" stroke="#56657c" stroke-width="1.4" marker-end="url(#arrow)"/>
+  <line x1="460" y1="308" x2="524" y2="308" stroke="#56657c" stroke-width="1.4" marker-end="url(#arrow)"/>
+  <line x1="634" y1="272" x2="634" y2="216" stroke="#3656d4" stroke-width="1.4" marker-end="url(#arrow-link)"/>
+  <line x1="634" y1="344" x2="634" y2="400" stroke="#56657c" stroke-width="1.4" marker-end="url(#arrow)"/>
+  <line x1="744" y1="308" x2="816" y2="308" stroke="#c03346" stroke-width="1.8" marker-end="url(#arrow-accent)"/>
+  <line x1="910" y1="344" x2="910" y2="400" stroke="#c03346" stroke-width="1.8" marker-end="url(#arrow-accent)"/>
+  <line x1="1004" y1="436" x2="1052" y2="436" stroke="#3656d4" stroke-width="1.4" marker-end="url(#arrow-link)"/>
+  <path d="M 910,272 V 72 Q 910,64 902,64 H 148 Q 140,64 140,72 V 160" fill="none" stroke="#56657c" stroke-width="1.2" stroke-dasharray="4,3" marker-end="url(#arrow)"/>
+
+  <!-- arrow labels -->
+  
+  <rect x="262" y="172" width="68" height="16" rx="2" fill="#f7f8fa"/>
+  <text x="296" y="184.5" fill="#5b6a80" font-size="12" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.06em" text-anchor="middle">MESSAGE</text>
+  
+  <rect x="262" y="412" width="76" height="16" rx="2" fill="#f7f8fa"/>
+  <text x="300" y="424.5" fill="#5b6a80" font-size="12" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.06em" text-anchor="middle">SCHEDULE</text>
+  
+  <rect x="474" y="284" width="36" height="16" rx="2" fill="#f7f8fa"/>
+  <text x="492" y="296.5" fill="#5b6a80" font-size="12" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.06em" text-anchor="middle">RUN</text>
+  
+  <rect x="640" y="236" width="76" height="16" rx="2" fill="#f7f8fa"/>
+  <text x="678" y="248.5" fill="#3656d4" font-size="12" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.06em" text-anchor="middle">LLM CALL</text>
+  
+  <rect x="642" y="364" width="60" height="16" rx="2" fill="#f7f8fa"/>
+  <text x="672" y="376.5" fill="#5b6a80" font-size="12" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.06em" text-anchor="middle">SEARCH</text>
+  
+  <rect x="750" y="284" width="60" height="16" rx="2" fill="#f7f8fa"/>
+  <text x="780" y="296.5" fill="#c03346" font-size="12" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.06em" text-anchor="middle">CURATE</text>
+  
+  <rect x="918" y="364" width="44" height="16" rx="2" fill="#f7f8fa"/>
+  <text x="940" y="376.5" fill="#c03346" font-size="12" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.06em" text-anchor="middle">PASS</text>
+  
+  <rect x="1006" y="412" width="44" height="16" rx="2" fill="#f7f8fa"/>
+  <text x="1028" y="424.5" fill="#3656d4" font-size="12" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.06em" text-anchor="middle">PUSH</text>
+  
+  <rect x="475" y="40" width="100" height="16" rx="2" fill="#f7f8fa"/>
+  <text x="525" y="52.5" fill="#5b6a80" font-size="12" font-weight="500" font-family="'Geist', 'Pretendard', 'Noto Sans KR', 'Malgun Gothic', sans-serif" text-anchor="middle">보류분 → 검수</text>
+
+  <!-- nodes -->
+  
+  <rect x="56" y="160" width="168" height="72" rx="6" fill="#f7f8fa"/>
+  <rect x="56" y="160" width="168" height="72" rx="6" fill="rgba(86,101,124,0.10)" stroke="#5b6a80" stroke-width="1.2"/>
+  <rect x="64" y="168" width="32" height="14" rx="2" fill="transparent" stroke="rgba(91,106,128,0.40)" stroke-width="0.8"/>
+  <text x="80" y="178" fill="#5b6a80" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.08em">CHAT</text>
+  <text x="140" y="198" fill="#172540" font-size="16" font-weight="600" font-family="'Geist', 'Pretendard', 'Noto Sans KR', 'Malgun Gothic', sans-serif" text-anchor="middle">디스코드 AI 비서</text>
+  <text x="140" y="218" fill="#56657c" font-size="12" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">chat · buttons</text>
+  
+  <rect x="56" y="400" width="168" height="72" rx="6" fill="#f7f8fa"/>
+  <rect x="56" y="400" width="168" height="72" rx="6" fill="rgba(86,101,124,0.10)" stroke="#5b6a80" stroke-width="1.2"/>
+  <rect x="64" y="408" width="32" height="14" rx="2" fill="transparent" stroke="rgba(91,106,128,0.40)" stroke-width="0.8"/>
+  <text x="80" y="418" fill="#5b6a80" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.08em">CRON</text>
+  <text x="140" y="438" fill="#172540" font-size="16" font-weight="600" font-family="'Geist', 'Pretendard', 'Noto Sans KR', 'Malgun Gothic', sans-serif" text-anchor="middle">저녁 크론 잡</text>
+  <text x="140" y="458" fill="#56657c" font-size="12" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">daily 21:00–21:50</text>
+  
+  <rect x="292" y="272" width="168" height="72" rx="6" fill="#f7f8fa"/>
+  <rect x="292" y="272" width="168" height="72" rx="6" fill="#ffffff" stroke="#172540" stroke-width="1.2"/>
+  <rect x="300" y="280" width="28" height="14" rx="2" fill="transparent" stroke="rgba(23,37,64,0.40)" stroke-width="0.8"/>
+  <text x="314" y="290" fill="#172540" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.08em">SVC</text>
+  <text x="376" y="310" fill="#172540" font-size="16" font-weight="600" font-family="'Geist', 'Pretendard', 'Noto Sans KR', 'Malgun Gothic', sans-serif" text-anchor="middle">Hermes 게이트웨이</text>
+  <text x="376" y="330" fill="#56657c" font-size="12" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">watchdog · autoupdate</text>
+  
+  <rect x="534" y="128" width="200" height="88" rx="6" fill="#f7f8fa"/>
+  <rect x="534" y="128" width="200" height="88" rx="6" fill="rgba(23,37,64,0.03)" stroke="rgba(23,37,64,0.30)" stroke-width="1.2"/>
+  <rect x="542" y="136" width="28" height="14" rx="2" fill="transparent" stroke="rgba(23,37,64,0.22)" stroke-width="0.8"/>
+  <text x="556" y="146" fill="#5b6a80" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.08em">API</text>
+  <text x="634" y="168" fill="#172540" font-size="16" font-weight="600" font-family="'Geist', 'Pretendard', 'Noto Sans KR', 'Malgun Gothic', sans-serif" text-anchor="middle">모델: 주 + 폴백</text>
+  <text x="634" y="188" fill="#56657c" font-size="12" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">codex gpt-6-luna-900k</text>
+  <text x="634" y="204" fill="#56657c" font-size="12" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">→ claude-sonnet-5</text>
+  
+  <rect x="524" y="272" width="220" height="72" rx="6" fill="#f7f8fa"/>
+  <rect x="524" y="272" width="220" height="72" rx="6" fill="rgba(192,51,70,0.08)" stroke="#c03346" stroke-width="1.2"/>
+  <rect x="532" y="280" width="36" height="14" rx="2" fill="transparent" stroke="rgba(192,51,70,0.50)" stroke-width="0.8"/>
+  <text x="550" y="290" fill="#c03346" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.08em">AGENT</text>
+  <text x="634" y="310" fill="#172540" font-size="16" font-weight="600" font-family="'Geist', 'Pretendard', 'Noto Sans KR', 'Malgun Gothic', sans-serif" text-anchor="middle">AI 비서 에이전트</text>
+  <text x="634" y="330" fill="#56657c" font-size="12" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">16 skills · SOUL.md</text>
+  
+  <rect x="538" y="400" width="192" height="72" rx="6" fill="#f7f8fa"/>
+  <rect x="538" y="400" width="192" height="72" rx="6" fill="#ffffff" stroke="#172540" stroke-width="1.2"/>
+  <rect x="546" y="408" width="32" height="14" rx="2" fill="transparent" stroke="rgba(23,37,64,0.40)" stroke-width="0.8"/>
+  <text x="562" y="418" fill="#172540" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.08em">TOOL</text>
+  <text x="634" y="438" fill="#172540" font-size="16" font-weight="600" font-family="'Geist', 'Pretendard', 'Noto Sans KR', 'Malgun Gothic', sans-serif" text-anchor="middle">검색 도구</text>
+  <text x="634" y="458" fill="#56657c" font-size="12" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">ddgs · YouTube API</text>
+  
+  <rect x="816" y="272" width="188" height="72" rx="6" fill="#f7f8fa"/>
+  <rect x="816" y="272" width="188" height="72" rx="6" fill="rgba(192,51,70,0.08)" stroke="#c03346" stroke-width="1.2"/>
+  <rect x="824" y="280" width="32" height="14" rx="2" fill="transparent" stroke="rgba(192,51,70,0.50)" stroke-width="0.8"/>
+  <text x="840" y="290" fill="#c03346" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.08em">GATE</text>
+  <text x="910" y="310" fill="#172540" font-size="16" font-weight="600" font-family="'Geist', 'Pretendard', 'Noto Sans KR', 'Malgun Gothic', sans-serif" text-anchor="middle">자동 검증 게이트</text>
+  <text x="910" y="330" fill="#56657c" font-size="12" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">auto-build.mjs</text>
+  
+  <rect x="816" y="400" width="188" height="72" rx="6" fill="#f7f8fa"/>
+  <rect x="816" y="400" width="188" height="72" rx="6" fill="rgba(23,37,64,0.05)" stroke="#56657c" stroke-width="1.2"/>
+  <rect x="824" y="408" width="32" height="14" rx="2" fill="transparent" stroke="rgba(86,101,124,0.50)" stroke-width="0.8"/>
+  <text x="840" y="418" fill="#56657c" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.08em">JSON</text>
+  <text x="910" y="438" fill="#172540" font-size="16" font-weight="600" font-family="'Geist', 'Pretendard', 'Noto Sans KR', 'Malgun Gothic', sans-serif" text-anchor="middle">트렌드 원본</text>
+  <text x="910" y="458" fill="#56657c" font-size="12" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">data/trends.json</text>
+  
+  <rect x="1052" y="400" width="172" height="72" rx="6" fill="#f7f8fa"/>
+  <rect x="1052" y="400" width="172" height="72" rx="6" fill="rgba(23,37,64,0.03)" stroke="rgba(23,37,64,0.30)" stroke-width="1.2"/>
+  <rect x="1060" y="408" width="28" height="14" rx="2" fill="transparent" stroke="rgba(23,37,64,0.22)" stroke-width="0.8"/>
+  <text x="1074" y="418" fill="#5b6a80" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.08em">EXT</text>
+  <text x="1138" y="438" fill="#172540" font-size="16" font-weight="600" font-family="'Geist', 'Pretendard', 'Noto Sans KR', 'Malgun Gothic', sans-serif" text-anchor="middle">한끗 배포본</text>
+  <text x="1138" y="458" fill="#56657c" font-size="12" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">az2mz.vercel.app</text>
+
+  <!-- legend strip -->
+  <line x1="40" y1="544" x2="1240" y2="544" stroke="rgba(23,37,64,0.10)" stroke-width="0.8"/>
+  <text x="40" y="576" fill="#56657c" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.18em">LEGEND</text>
+  <rect x="112" y="566" width="18" height="12" rx="2" fill="rgba(192,51,70,0.08)" stroke="#c03346" stroke-width="1"/><text x="138" y="577" fill="#56657c" font-size="12" font-family="'Geist', 'Pretendard', 'Noto Sans KR', 'Malgun Gothic', sans-serif">핵심</text>
+  <rect x="188" y="566" width="18" height="12" rx="2" fill="#ffffff" stroke="#172540" stroke-width="1"/><text x="214" y="577" fill="#56657c" font-size="12" font-family="'Geist', 'Pretendard', 'Noto Sans KR', 'Malgun Gothic', sans-serif">로컬 서비스</text>
+  <rect x="316" y="566" width="18" height="12" rx="2" fill="rgba(23,37,64,0.05)" stroke="#56657c" stroke-width="1"/><text x="342" y="577" fill="#56657c" font-size="12" font-family="'Geist', 'Pretendard', 'Noto Sans KR', 'Malgun Gothic', sans-serif">데이터</text>
+  <rect x="408" y="566" width="18" height="12" rx="2" fill="rgba(23,37,64,0.03)" stroke="rgba(23,37,64,0.30)" stroke-width="1"/><text x="434" y="577" fill="#56657c" font-size="12" font-family="'Geist', 'Pretendard', 'Noto Sans KR', 'Malgun Gothic', sans-serif">외부 서비스</text>
+  <rect x="536" y="566" width="18" height="12" rx="2" fill="rgba(86,101,124,0.10)" stroke="#5b6a80" stroke-width="1"/><text x="562" y="577" fill="#56657c" font-size="12" font-family="'Geist', 'Pretendard', 'Noto Sans KR', 'Malgun Gothic', sans-serif">입력·신호</text>
+  <line x1="664" y1="572" x2="694" y2="572" stroke="#c03346" stroke-width="1.8"  marker-end="url(#arrow-accent)"/><text x="704" y="577" fill="#56657c" font-size="12" font-family="'Geist', 'Pretendard', 'Noto Sans KR', 'Malgun Gothic', sans-serif">게시 경로</text>
+  <line x1="800" y1="572" x2="830" y2="572" stroke="#3656d4" stroke-width="1.4"  marker-end="url(#arrow-link)"/><text x="840" y="577" fill="#56657c" font-size="12" font-family="'Geist', 'Pretendard', 'Noto Sans KR', 'Malgun Gothic', sans-serif">외부 API·푸시</text>
+  <line x1="960" y1="572" x2="990" y2="572" stroke="#56657c" stroke-width="1.4"  marker-end="url(#arrow)"/><text x="1000" y="577" fill="#56657c" font-size="12" font-family="'Geist', 'Pretendard', 'Noto Sans KR', 'Malgun Gothic', sans-serif">호출</text>
+  <line x1="1040" y1="572" x2="1070" y2="572" stroke="#56657c" stroke-width="1.4" stroke-dasharray="4,3" marker-end="url(#arrow)"/><text x="1080" y="577" fill="#56657c" font-size="12" font-family="'Geist', 'Pretendard', 'Noto Sans KR', 'Malgun Gothic', sans-serif">보류 → 사람 검수</text>
+</svg>
+  </div>
+</body>
+</html>

@@ -1,0 +1,168 @@
+<body>
+
+<!-- 1 · 제목 -->
+<section class="slide">
+  <span class="corner c-tl">KMU AI에이전트실무 · 2026</span>
+  <span class="corner c-tr">MIDTERM · RESULT</span>
+  <span class="corner c-bl">WEEK · 09</span>
+  <span class="corner c-br">민현성</span>
+  <div class="kicker"><span class="hairline"></span>MVP 구현 결과 · 개인 프로젝트</div>
+  <h1 class="display"><span class="alt">한끗</span></h1>
+  <p class="accent" style="font-size:56px; margin-top:28px;">AZ(아재)와 MZ는 한 끗 차이.</p>
+  <p class="body" style="margin-top:18px; font-size:32px; color:var(--text-primary);">기획한 3개 기능, 배포 주소에서 동작</p>
+  <ul class="title-pts" style="margin-top:28px;">
+    <li>데모 · az2mz.vercel.app</li>
+    <li>저장소 · github.com/sgustjd2/aztomz</li>
+    <li>트렌드 193건 · 매일 밤 Hermes 수집 · 재판정</li>
+  </ul>
+  <p class="body" style="margin-top:48px; font-size:28px; color:var(--text-primary);">KMU AI에이전트실무 2026 · 02반 · 민현성</p>
+  <div class="meta-line"><span>— 중간 프로젝트 2단계</span><span>SLIDE · 01</span></div>
+</section>
+
+<!-- 2 · 동작하는 MVP -->
+<section class="slide dense">
+  <span class="corner c-tl">KMU AI에이전트실무 · 2026</span>
+  <span class="corner c-tr">CHAPTER · 01</span>
+  <span class="corner c-bl">한끗 · MVP 구현 결과</span>
+  <span class="corner c-br">SLIDE · 02</span>
+  <div class="kicker"><span class="hairline"></span>동작하는 MVP · 핵심 기능 3개</div>
+  <h2 class="h">기획한 핵심 기능 3개, 배포 화면 그대로.</h2>
+  <div class="shots" style="grid-template-columns: auto auto auto 1fr;">
+    <figure class="shot"><img src="{{IMG:list}}" alt="트렌드 목록 화면">
+      <figcaption><span class="num">기능 · 01</span><b>목록에서 발견</b><span>7개 분류 칩 · 159건</span></figcaption></figure>
+    <figure class="shot"><img src="{{IMG:d-yakgwa}}" alt="약과 트렌드 상세 화면">
+      <figcaption><span class="num">기능 · 02</span><b>1분 트렌드 상세</b><span>유행 단계 · 한 줄 판단 · 출처</span></figcaption></figure>
+    <figure class="shot"><img src="{{IMG:d-ube}}" alt="우베 트렌드 상세의 오래된 분석 안내">
+      <figcaption><span class="num">기능 · 03</span><b>신선도 표시</b><span>분석 08.16 → '오래된 분석' 안내</span></figcaption></figure>
+    <div class="links">
+      <div class="col-label">데모로 바로 확인</div>
+      <div class="item"><b>az2mz.vercel.app/list.html</b><span>분류 칩으로 좁혀 보기</span></div>
+      <div class="item"><b>…/trend.html?id=yakgwa</b><span>10/24 Hermes 재판정<br>안정화 → 끝물 확인 · 분석일 갱신</span></div>
+      <div class="item"><b>…/trend.html?id=ube</b><span>14일 넘은 분석 · 안내 노출</span></div>
+    </div>
+  </div>
+  <div class="meta-line"><span>화면 · 2026-10-27 배포본 휴대폰 폭(390px) 캡처</span><span>SLIDE · 02</span></div>
+</section>
+
+<!-- 3 · 실제 구현 페이지 -->
+<section class="slide dense">
+  <span class="corner c-tl">KMU AI에이전트실무 · 2026</span>
+  <span class="corner c-tr">CHAPTER · 02</span>
+  <span class="corner c-bl">한끗 · MVP 구현 결과</span>
+  <span class="corner c-br">SLIDE · 03</span>
+  <div class="kicker"><span class="hairline"></span>실제 구현 페이지</div>
+  <h2 class="h">홈에서 사전까지, 로그인 없이 읽기 · 공유.</h2>
+  <div class="shots" style="grid-template-columns: auto auto 1fr;">
+    <figure class="shot"><img src="{{IMG:home}}" alt="홈 화면">
+      <figcaption><b>홈</b><span>오늘의 한끗 · 분석 193건 · 기준일</span></figcaption></figure>
+    <figure class="shot"><img src="{{IMG:dict}}" alt="MZ 사전 화면">
+      <figcaption><b>MZ 사전</b><span>뜻 · 예문 · 우리말 · 출처 54개</span></figcaption></figure>
+    <div class="links">
+      <div class="col-label">페이지 구성</div>
+      <div class="item"><b>/</b><span>홈 · 오늘의 한끗 · 요즘 트렌드</span></div>
+      <div class="item"><b>/list.html</b><span>분류별 전체 목록 · 페이지 나눔</span></div>
+      <div class="item"><b>/trend.html?id=</b><span>상세 · 단계 · 판단 · 출처 · 공유</span></div>
+      <div class="item"><b>/dictionary.html</b><span>신조어 검색 · 최신 / 지난 유행어</span></div>
+      <div class="item"><b>/pulse.html</b><span>이번 주 트렌드 펄스</span></div>
+    </div>
+  </div>
+  <div class="meta-line"><span>정적 모바일 웹 · 의존성 0 · 빌드 0 · push 마다 자동 배포</span><span>SLIDE · 03</span></div>
+</section>
+
+<!-- 4 · 기획안과의 차이 -->
+<section class="slide dense">
+  <span class="corner c-tl">KMU AI에이전트실무 · 2026</span>
+  <span class="corner c-tr">CHAPTER · 03</span>
+  <span class="corner c-bl">한끗 · MVP 구현 결과</span>
+  <span class="corner c-br">SLIDE · 04</span>
+  <div class="kicker"><span class="hairline"></span>기획안과의 차이</div>
+  <h2 class="h">핵심 기능 3개는 그대로, 운영 방식 4곳 변경 · 1곳 동결.</h2>
+  <table class="tbl">
+    <colgroup><col style="width:17%"><col style="width:24%"><col style="width:29%"><col style="width:30%"></colgroup>
+    <tr><th>항목</th><th>기획안 (8주차)</th><th>실제 구현</th><th>이유</th></tr>
+    <tr><td>오래된 항목</td><td>14일 지나면 '갱신 필요' 표시만</td><td><b>매일 5건 유행 단계 재판정</b> · 근거 링크 검증 후 반영</td><td>상승 91 · 피크 36건이 8월 분석 → 표시만으로는 계속 낡음</td></tr>
+    <tr><td>보류 후보</td><td>사람이 결정</td><td><b>디스코드 버튼</b> 게시 · 버리기 · 나중에 + 이유</td><td>텍스트 보고만으로는 결정 누락 · 이유가 다음 수집의 교훈</td></tr>
+    <tr><td>SNS 신호</td><td>검색 요약만</td><td>인스타 · X 검색 결과 <b>요약문(날짜 · 좋아요)만</b> 단계 판단에 사용</td><td>약관 · 로그인 벽 → 페이지는 열지 않음, 출처로도 안 씀</td></tr>
+    <tr><td>회원가입 · 로그인</td><td>하지 않을 것</td><td><b>페이지 삭제</b> · 홈으로 리다이렉트</td><td>읽기 · 공유만으로 충분 · 개인정보 보관 없음</td></tr>
+    <tr><td>맛집 광고 분석</td><td>하지 않을 것</td><td>이전 단계 화면 그대로 · <b>새 개발 없음</b></td><td>기존 데이터라 삭제 대신 동결</td></tr>
+  </table>
+  <div class="meta-line"><span>바뀌지 않은 것 · 목록 발견 · 1분 상세 · 신선도 표시</span><span>SLIDE · 04</span></div>
+</section>
+
+<!-- 5 · 검증 결과 -->
+<section class="slide dense">
+  <span class="corner c-tl">KMU AI에이전트실무 · 2026</span>
+  <span class="corner c-tr">CHAPTER · 04</span>
+  <span class="corner c-bl">한끗 · MVP 구현 결과</span>
+  <span class="corner c-br">SLIDE · 05</span>
+  <div class="kicker"><span class="hairline"></span>검증 결과</div>
+  <h2 class="h">직접 돌려 본 검증 5건, 결과와 근거.</h2>
+  <table class="tbl">
+    <colgroup><col style="width:19%"><col style="width:45%"><col style="width:36%"></colgroup>
+    <tr><th>검증</th><th>결과</th><th>근거</th></tr>
+    <tr><td>데이터 형식</td><td><b>193건 통과</b> · 7개 분류 준수 · id 중복 0</td><td>검증 스크립트 실행 결과 (10/27)</td></tr>
+    <tr><td>Hermes 수집 동작</td><td>10/23~26 <b>매일 실행 4회</b> · 후보 1 · 게시 1 · 보류 0</td><td>실행 기록 집계표 (스크립트가 셈)</td></tr>
+    <tr><td>출처 생존</td><td>365개 중 <b>죽은 링크 1</b> · 차단 의심 4 (10/23 기준선 271개 중 2)</td><td>링크 전수 점검 (10/27) · 목표 0건 미달 → 교체</td></tr>
+    <tr><td>유행 단계 재판정</td><td>10/24~25 <b>7건 갱신</b> · 야르 상승 → 피크 → 하락 · 벌룬 팬츠 상승 → 안정화</td><td>재판정 기록 + 상세 화면 (약과, 2장)</td></tr>
+    <tr><td>신선도 표시</td><td>14일 넘은 항목에 <b>'오래된 분석' 안내</b> 노출</td><td>배포 화면 캡처 (우베 · 분석 08.16)</td></tr>
+  </table>
+  <div class="band"><strong>진행 중</strong> — 1분 이해 테스트 3명 · 설명과 원문 10건 직접 대조 → 10/30 전 결과 추가</div>
+  <div class="meta-line"><span>수치는 모두 스크립트 출력 그대로 · 사람이 세지 않음</span><span>SLIDE · 05</span></div>
+</section>
+
+<!-- 6 · 에이전트 작업 기록 -->
+<section class="slide dense">
+  <span class="corner c-tl">KMU AI에이전트실무 · 2026</span>
+  <span class="corner c-tr">CHAPTER · 05</span>
+  <span class="corner c-bl">한끗 · MVP 구현 결과</span>
+  <span class="corner c-br">SLIDE · 06</span>
+  <div class="kicker"><span class="hairline"></span>에이전트 작업 기록</div>
+  <h2 class="h">시킨 일 · 내가 확인한 것 · 막힌 곳과 복구.</h2>
+  <table class="tbl">
+    <colgroup><col style="width:22%"><col style="width:38%"><col style="width:40%"></colgroup>
+    <tr><th>에이전트에게 시킨 일</th><th>사람이 확인 · 고친 것</th><th>막힌 곳 → 복구</th></tr>
+    <tr><td>10/22 수집 실패 원인</td><td>로그의 '연결 실패' 대신 실제 원인 직접 확인</td><td>같은 계정 사용 한도 초과 → <b>대체 모델 자동 전환</b></td></tr>
+    <tr><td>수집 수치 보고</td><td>에이전트가 세던 숫자 → 스크립트 집계로 교체</td><td>보고 숫자 불일치 → <b>실행마다 요약 한 줄</b> 기록</td></tr>
+    <tr><td>디스코드 검수 버튼</td><td>홈 채널에 '검수' 직접 입력 · 버튼 · 이유 · 기록 실측</td><td>무반응 → 멘션 필수 설정 · 실행 경로 문제 → <b>채널 예외 · 경로 고정</b></td></tr>
+    <tr><td>유행 단계 재판정</td><td>디스코드 보고와 사이트 반영 대조</td><td>약과 하루 2번 재판정 → <b>14일 중복 방지</b></td></tr>
+    <tr><td>근거 대조 (10/08)</td><td>전수 감사 · 182건 중 139건 출처에 없는 서술</td><td>문자열 대조 게이트 추가 · <b>의미 오류는 사람 검수</b></td></tr>
+  </table>
+  <div class="meta-line"><span>판단 기준 · 예외는 사람 · 반복 작업과 검증은 에이전트와 스크립트</span><span>SLIDE · 06</span></div>
+</section>
+
+<!-- 7 · 공개와 재현 -->
+<section class="slide dense">
+  <span class="corner c-tl">KMU AI에이전트실무 · 2026</span>
+  <span class="corner c-tr">CHAPTER · 06</span>
+  <span class="corner c-bl">한끗 · MVP 구현 결과</span>
+  <span class="corner c-br">SLIDE · 07</span>
+  <div class="kicker"><span class="hairline"></span>공개와 재현</div>
+  <h2 class="h">공개 저장소 하나로 실행까지.</h2>
+  <div class="grid" style="grid-template-columns: 1fr 1fr; gap:56px;">
+    <div class="chk">
+      <div class="col-label">github.com/sgustjd2/aztomz</div>
+      <div class="item"><b>README.md</b><span>문제 · 데모 · 실행 방법</span></div>
+      <div class="item"><b>LICENSE</b><span>MIT</span></div>
+      <div class="item"><b>.gitignore</b><span>.env 제외</span></div>
+      <div class="item"><b>.env.example</b><span>필요한 키 이름만 · 값 없음</span></div>
+      <div class="item"><b>비밀정보 없음</b><span>키 패턴 검색 0건 · 키는 로컬 .env · Actions Secrets</span></div>
+    </div>
+    <div class="links">
+      <div class="col-label">실행 방법</div>
+      <div class="item"><b>git clone …/aztomz.git</b><span>저장소 받기</span></div>
+      <div class="item"><b>python -m http.server 8000 -d frontend</b><span>설치 · 빌드 없이 로컬 실행</span></div>
+      <div class="item"><b>localhost:8000</b><span>배포본과 같은 화면</span></div>
+    </div>
+  </div>
+  <div class="meta-line"><span>데모 · az2mz.vercel.app · 저장소 · github.com/sgustjd2/aztomz</span><span>SLIDE · 07</span></div>
+</section>
+
+<script>
+  // 클래스룸 보기 창(약 1177x662)에서 장 오른쪽이 잘리지 않게, 한 장이 창 안에 통째로 보이도록 줄인다.
+  function fit() {
+    var s = Math.min(1, (innerWidth - 16) / 1920, (innerHeight - 16) / 1120);
+    document.documentElement.style.setProperty('--fit', s.toFixed(4));
+  }
+  fit(); addEventListener('resize', fit);
+</script>
+</body></html>

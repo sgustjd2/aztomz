@@ -1,0 +1,323 @@
+<style>
+  body { margin:0; background:#09223f; }
+  .slide {
+    width: 1920px; height: 1080px; margin: 40px auto; box-sizing: border-box; word-break: keep-all; overflow-wrap: break-word;
+    background: var(--bg-canvas); color: var(--text-primary);
+    position: relative; padding: 160px 240px;
+    box-shadow: 0 40px 100px -40px rgba(9,34,63,0.6);
+    overflow: hidden;
+  }
+  .slide::before, .slide::after {
+    content:''; position:absolute; left:0; right:0; height:1px; background: var(--border);
+  }
+  .slide::before { top: 100px; }
+  .slide::after  { bottom: 100px; }
+  .corner {
+    position: absolute; font-family: var(--font-sans); font-size: 16px;
+    font-weight: 600; letter-spacing: 0.3em; text-transform: uppercase;
+    color: var(--text-meta);
+  }
+  .c-tl { top: 56px; left: 64px; }
+  .c-tr { top: 56px; right: 64px; }
+  .c-bl { bottom: 56px; left: 64px; }
+  .c-br { bottom: 56px; right: 64px; }
+  .kicker {
+    font-family: var(--font-sans); font-size: 18px; font-weight: 600;
+    letter-spacing: 0.32em; text-transform: uppercase;
+    color: var(--text-meta); margin-bottom: 32px;
+  }
+  .kicker .hairline {
+    display:inline-block; width: 36px; height: 1px;
+    background: var(--accent-brand); vertical-align: middle; margin-right: 16px;
+  }
+  .display { font-family:'Nanum Myeongjo',serif; font-weight:800; font-size:128px; line-height:1.1; letter-spacing:-0.02em; margin:0; }
+  .display .alt { color: var(--accent-brand); }
+  .accent { font-family:'Nanum Myeongjo',serif; font-weight:700; font-size:64px; line-height:1.2; margin:0; }
+  .body { font-family:'Noto Serif KR',serif; font-weight:400; font-size:32px; line-height:1.6; color: var(--text-secondary); margin-top: 40px; max-width: 1200px; }
+  .meta-line { position:absolute; bottom: 140px; left: 240px; right: 240px; display:flex; justify-content:space-between; font-family:var(--font-sans); font-size:16px; letter-spacing:0.16em; text-transform:uppercase; color: var(--text-meta); }
+
+  /* 보기 창 맞춤 — 1920x1080 장을 창 크기에 맞춰 줄이고(--fit), 스크롤하면 한 장씩 멈춘다 */
+  html { scroll-snap-type: y mandatory; }
+  .slide { zoom: var(--fit, 1); scroll-snap-align: center; }
+
+  /* 이 덱에서 더한 레이아웃 — 템플릿 토큰만 쓴다 */
+  .slide.dense { padding: 150px 200px 0; }
+  .slide.dense .meta-line { left: 200px; right: 200px; }
+  .h { font-family:'Nanum Myeongjo',serif; font-weight:700; font-size:52px; line-height:1.25; margin:0; }
+  .lead { font-family:var(--font-body); font-size:26px; line-height:1.6; color:var(--text-secondary); margin:20px 0 0; max-width:1400px; }
+  .grid { display:grid; gap:32px; margin-top:44px; }
+  .g2 { grid-template-columns: 1fr 1fr; }
+  .g3 { grid-template-columns: repeat(3, 1fr); }
+  .g4 { grid-template-columns: repeat(4, 1fr); }
+  .col-label { font-family:var(--font-sans); font-size:16px; font-weight:600; letter-spacing:0.2em; text-transform:uppercase; color:var(--text-meta); padding-bottom:14px; border-bottom:1px solid var(--border-strong); margin-bottom:8px; }
+  .item { padding:18px 0; border-bottom:1px solid var(--border); }
+  .item:last-child { border-bottom:0; }
+  .item b { display:block; font-family:var(--font-heading); font-weight:600; font-size:27px; line-height:1.35; color:var(--text-primary); }
+  .item span { display:block; font-family:var(--font-body); font-size:22px; line-height:1.55; color:var(--text-secondary); margin-top:6px; }
+  .num { font-family:var(--font-sans); font-weight:600; font-size:18px; letter-spacing:0.16em; color:var(--accent-brand); }
+  .card { background:var(--bg-surface); box-shadow:var(--shadow-sm); border-radius:var(--radius-md); padding:32px 34px; }
+  .card .num { display:block; margin-bottom:14px; }
+  .card h3 { font-family:var(--font-heading); font-weight:700; font-size:30px; line-height:1.3; margin:0; color:var(--text-primary); }
+  .card p { font-family:var(--font-body); font-size:22px; line-height:1.55; color:var(--text-secondary); margin:14px 0 0; }
+  .card .how { font-family:var(--font-body); font-size:20px; line-height:1.5; color:var(--text-muted); margin-top:16px; padding-top:14px; border-top:1px solid var(--border); }
+  .card .how em { font-style:normal; font-family:var(--font-sans); font-size:14px; font-weight:600; letter-spacing:0.16em; color:var(--text-meta); display:block; margin-bottom:4px; }
+  .on-navy { background:var(--bg-inverse); color:var(--text-on-dark); border-radius:var(--radius-md); padding:28px 34px 12px; }
+  .on-navy .col-label { color:var(--text-on-dark-muted); border-bottom-color:var(--border-on-dark); }
+  .on-navy .item { border-bottom-color:var(--border-on-dark); }
+  .on-navy .item b { color:var(--text-on-dark); }
+  .on-navy .item span { color:var(--text-on-dark-muted); }
+  .on-navy .point { color:var(--accent-on-dark); }
+  .band { margin-top:36px; background:var(--bg-subtle); border-radius:var(--radius-sm); padding:22px 30px; font-family:var(--font-body); font-size:23px; line-height:1.5; color:var(--text-primary); }
+  .band strong { font-weight:700; }
+  .band.hyp { display:grid; grid-template-columns:repeat(3,1fr); gap:0; padding:24px 0; }
+  .band.hyp > div { padding:0 30px; border-left:1px solid var(--border-subtle, rgba(0,0,0,.12)); }
+  .band.hyp > div:first-child { border-left:0; }
+  .band.hyp em { display:block; font-style:normal; font-weight:700; font-size:18px; letter-spacing:.08em; color:var(--accent-brand); margin-bottom:8px; font-family:var(--font-sans, inherit); }
+  .stat { font-family:var(--font-sans); font-variant-numeric:tabular-nums; font-weight:700; font-size:72px; line-height:1; color:var(--text-primary); }
+  .stat-label { font-family:var(--font-body); font-size:22px; color:var(--text-secondary); margin-top:10px; }
+  .no { list-style:none; padding:0; margin:0; }
+  .no li { font-family:var(--font-body); font-size:22px; line-height:1.5; color:var(--text-secondary); padding:13px 0; border-bottom:1px solid var(--border); }
+  .no li:last-child { border-bottom:0; }
+  .no li::before { content:'— '; color:var(--text-muted); }
+  .flow { display:flex; align-items:stretch; gap:14px; margin-top:40px; }
+  .flow .step { flex:1; background:var(--bg-surface); box-shadow:var(--shadow-sm); border-radius:var(--radius-md); padding:20px 24px; }
+  .flow .step .num { display:block; margin-bottom:8px; }
+  .flow .step b { display:block; font-family:var(--font-heading); font-weight:600; font-size:24px; line-height:1.3; color:var(--text-primary); }
+  .flow .step span:last-child { display:block; font-family:var(--font-body); font-size:19px; line-height:1.45; color:var(--text-secondary); margin-top:6px; }
+  .flow .arrow { align-self:center; font-family:var(--font-sans); font-size:24px; color:var(--text-muted); }
+  .ledger { display:grid; grid-template-columns:repeat(14,1fr); gap:8px; margin-top:28px; }
+  .ledger .day { border:1px solid var(--border-strong); border-radius:var(--radius-sm); padding:10px 0 12px; text-align:center; }
+  .ledger .day i { display:block; font-style:normal; font-family:var(--font-sans); font-size:14px; letter-spacing:0.04em; color:var(--text-meta); }
+  .ledger .day b { display:block; font-family:var(--font-sans); font-variant-numeric:tabular-nums; font-weight:700; font-size:26px; line-height:1.3; color:var(--text-muted); }
+  .ledger .day.pub { background:var(--bg-inverse); border-color:var(--bg-inverse); }
+  .ledger .day.pub i { color:var(--text-on-dark-muted); }
+  .ledger .day.pub b { color:var(--text-on-dark); }
+  /* 개조식 목록 · 정렬 */
+  .title-pts { list-style:none; padding:0; margin:36px 0 0; display:flex; flex-direction:column; gap:10px; }
+  .title-pts li { font-family:var(--font-body); font-size:30px; line-height:1.4; color:var(--text-secondary); }
+  .title-pts li::before { content:'— '; color:var(--text-muted); }
+  .card ul.pts { list-style:none; padding:0; margin:16px 0 0; }
+  .card ul.pts li { font-family:var(--font-body); font-size:22px; line-height:1.4; color:var(--text-secondary); padding:10px 0; border-top:1px solid var(--border); }
+  .card ul.pts li:first-child { border-top:0; padding-top:4px; }
+  .grid.eq .card p { min-height:2.9em; }             /* 설명 2줄 고정 → '확인 방법' 줄이 네 칸 모두 같은 높이 */
+  .grid.eq .card .how { min-height:3em; }
+  .side-human { border:2px solid var(--accent-brand); border-radius:var(--radius-md); padding:28px 34px 12px; }
+  .side-human .col-label { color:var(--accent-brand); }
+  .item span { overflow-wrap:anywhere; }
+  /* 요일별 수집 7칸 */
+  .week { display:grid; grid-template-columns:repeat(7,1fr); gap:18px; margin-top:40px; }
+  /* 이전 덱(v3) 5장 배치: 박스 없이 얇은 윗선 + 요일 글자 색, 3색 반복. 색은 공용 디자인 시스템 팔레트(blue·khaki·navy)로 — 원본의 코랄·노랑은 시스템 금지색 */
+  .week .day { border-top:4px solid var(--c, var(--accent-brand)); padding:22px 4px 0; }
+  .week .day:nth-child(3n+1) { --c: var(--color-blue); }
+  .week .day:nth-child(3n+2) { --c: var(--color-khaki); }
+  .week .day:nth-child(3n) { --c: var(--color-navy); }
+  .week .d { display:block; font-family:var(--font-editorial-ko); font-weight:800; font-size:52px; line-height:1; color:var(--c); }
+  .week b { display:block; font-family:var(--font-heading); font-weight:700; font-size:23px; line-height:1.3; color:var(--text-primary); margin-top:16px; }
+  .week span { display:block; font-family:var(--font-body); font-size:17px; line-height:1.5; color:var(--text-secondary); margin-top:8px; }
+  /* 전체 흐름도 — 노드 색으로 누가 하는지 구분(Hermes=navy, 스크립트=테두리, 사람=blue) */
+  .flow-map { position:relative; width:1520px; height:600px; margin-top:26px; }
+  .flow-map svg { position:absolute; inset:0; width:1520px; height:600px; overflow:visible; }
+  .flow-map svg path { fill:none; stroke:var(--text-muted); stroke-width:1.6; }
+  .flow-map svg marker path { fill:var(--text-muted); stroke:none; }
+  .fn { position:absolute; box-sizing:border-box; border-radius:var(--radius-md); padding:12px 20px; display:flex; flex-direction:column; justify-content:center; }
+  .fn b { font-family:var(--font-heading); font-weight:700; font-size:22px; line-height:1.3; }
+  .fn span { font-family:var(--font-body); font-size:16px; line-height:1.45; margin-top:4px; }
+  .fn.rule { background:var(--bg-subtle); color:var(--text-primary); text-align:center; }
+  .fn.rule span { color:var(--text-secondary); }
+  .fn.agent { background:var(--bg-inverse); color:var(--text-on-dark); }
+  .fn.agent span { color:var(--text-on-dark-muted); }
+  .fn.script { background:var(--bg-surface); border:1px solid var(--border-strong); color:var(--text-primary); }
+  .fn.script span { color:var(--text-secondary); }
+  .fn.human { background:var(--bg-surface); border:2px solid var(--accent-brand); color:var(--text-primary); }
+  .fn.human b { color:var(--accent-brand); }
+  .fn.human span { color:var(--text-secondary); }
+  .fn.center { text-align:center; }
+  .branch { position:absolute; transform:translate(-50%,-50%); background:var(--bg-canvas); border:1px solid var(--border-strong); border-radius:var(--radius-full); padding:2px 14px; font-family:var(--font-sans); font-size:15px; font-weight:600; color:var(--text-primary); }
+  .flow-legend { position:absolute; right:0; top:8px; display:flex; flex-direction:column; gap:8px; font-family:var(--font-sans); font-size:15px; color:var(--text-meta); }
+  .flow-legend i { display:inline-block; width:22px; height:14px; border-radius:var(--radius-sm); vertical-align:-2px; margin-right:8px; }
+  .flow-loop { position:absolute; left:0; right:0; top:574px; text-align:center; font-family:var(--font-body); font-size:18px; color:var(--text-secondary); }
+  .legend { font-family:var(--font-body); font-size:18px; line-height:1.5; color:var(--text-muted); margin:12px 0 0; }
+  .ledger .day.fail { border-color:var(--state-danger); }
+  .ledger .day.fail b { color:var(--state-danger); font-size:20px; line-height:1.6; }
+</style></head>
+<body>
+
+<!-- 1 · 제목 -->
+<section class="slide">
+  <span class="corner c-tl">KMU AI에이전트실무 · 2026</span>
+  <span class="corner c-tr">MIDTERM · MVP</span>
+  <span class="corner c-bl">WEEK · 08</span>
+  <span class="corner c-br">민현성</span>
+  <div class="kicker"><span class="hairline"></span>MVP 기획안 · 개인 프로젝트</div>
+  <h1 class="display"><span class="alt">한끗</span></h1>
+  <p class="accent" style="font-size:52px; margin-top:28px;">AZ와 MZ는 한 끗 차이.</p>
+  <p class="body" style="max-width:1300px;">요즘 유행어·디저트·맛집이 무슨 뜻인지, 지금도 유행인지, SNS 맛집 후기가 광고인지를 출처와 함께 1분 안에 알려 주는 모바일 웹입니다.</p>
+  <div class="meta-line"><span>KMU AI에이전트실무 2026 · 민현성</span><span>SLIDE · 01</span></div>
+</section>
+
+<!-- 2 · 문제와 사용자 -->
+<section class="slide dense">
+  <span class="corner c-tl">KMU AI에이전트실무 · 2026</span>
+  <span class="corner c-tr">CHAPTER · 01</span>
+  <span class="corner c-bl">한끗 · MVP</span>
+  <span class="corner c-br">SLIDE · 02</span>
+  <div class="kicker"><span class="hairline"></span>문제와 사용자</div>
+  <h2 class="h">낯선 유행을 만났을 때, 검색 결과는 많지만 판단 근거는 흩어져 있다.</h2>
+  <div class="grid g3">
+    <div>
+      <div class="col-label">누가</div>
+      <div class="item"><b>30~50대 직장인·부모</b><span>자녀·후배의 말과 SNS 피드에서 처음 보는 유행어와 메뉴를 자주 만나는 사람.</span></div>
+    </div>
+    <div>
+      <div class="col-label">어떤 상황에서</div>
+      <div class="item"><b>단톡방·회의·피드에서</b><span>"두쫀쿠 먹어 봤어요?" 같은 말을 듣고 그 자리에서 뜻과 맥락을 빨리 알아야 할 때.</span></div>
+      <div class="item"><b>주말 맛집을 고를 때</b><span>SNS에서 본 가게가 진짜 후기로 뜬 곳인지 광고로 뜬 곳인지 가려야 할 때.</span></div>
+    </div>
+    <div>
+      <div class="col-label">무엇 때문에 불편한가</div>
+      <div class="item"><b>뜻·시기·근거가 따로 논다</b><span>뜻은 사전에, 유행 시기는 기사에, 후기는 블로그에 흩어져 서너 번 검색해야 한다.</span></div>
+      <div class="item"><b>이미 한물간 정보와 광고</b><span>2024년 글이 지금 정보처럼 보이고, 협찬 후기가 실후기처럼 섞여 있다.</span></div>
+    </div>
+  </div>
+  <div class="band"><strong>한끗이 풀 문제.</strong> 뜻 · 지금 단계 · 근거 출처를 한 화면에, 광고 의심도와 후기 신뢰도는 추정치로 따로 보여 준다.</div>
+  <div class="meta-line"><span>문제와 사용자</span><span>SLIDE · 02</span></div>
+</section>
+
+<!-- 3 · MVP 기능과 하지 않을 것 -->
+<section class="slide dense">
+  <span class="corner c-tl">KMU AI에이전트실무 · 2026</span>
+  <span class="corner c-tr">CHAPTER · 02</span>
+  <span class="corner c-bl">한끗 · MVP</span>
+  <span class="corner c-br">SLIDE · 03</span>
+  <div class="kicker"><span class="hairline"></span>MVP 범위 · 9주차까지</div>
+  <h2 class="h">핵심 기능은 세 개로 고정한다.</h2>
+  <div class="grid" style="grid-template-columns: 1fr 1fr 1fr 0.9fr; gap:28px;">
+    <div class="card">
+      <span class="num">기능 · 01</span>
+      <h3>1분 트렌드 카드</h3>
+      <p>한 화면에 뜻 한 줄, 지금 단계(발견·상승·피크·하락), 근거 출처 링크를 함께 보여 준다.</p>
+    </div>
+    <div class="card">
+      <span class="num">기능 · 02</span>
+      <h3>광고일까 진짜일까</h3>
+      <p>맛집·디저트 항목에 광고 의심도와 후기 신뢰도를 별개의 두 축으로, 근거 문장과 함께 추정치로 표시한다.</p>
+    </div>
+    <div class="card">
+      <span class="num">기능 · 03</span>
+      <h3>검증 통과분만 게시</h3>
+      <p>Hermes가 모은 후보를 자동 검증 게이트가 출처 생존·관련성·근거로 걸러 통과한 것만 사이트에 올린다.</p>
+    </div>
+    <div>
+      <div class="col-label">이번에 하지 않을 것</div>
+      <ul class="no">
+        <li>인스타·틱톡 직접 수집(약관 위반)</li>
+        <li>실제 회원가입·로그인 서버</li>
+        <li>점수를 확정 판정처럼 표기</li>
+        <li>네이티브 앱·푸시 알림</li>
+        <li>사용자 후기 작성·댓글</li>
+      </ul>
+    </div>
+  </div>
+  <div class="band">완료 기준 — 사용자가 낯선 트렌드 하나를 검색해 <strong>1분 안에 뜻 · 지금 단계 · 출처 한 곳</strong>을 말할 수 있으면 MVP가 동작한 것으로 본다.</div>
+  <div class="meta-line"><span>MVP 기능과 하지 않을 것</span><span>SLIDE · 03</span></div>
+</section>
+
+<!-- 4 · 에이전트와 나의 역할 -->
+<section class="slide dense">
+  <span class="corner c-tl">KMU AI에이전트실무 · 2026</span>
+  <span class="corner c-tr">CHAPTER · 03</span>
+  <span class="corner c-bl">한끗 · MVP</span>
+  <span class="corner c-br">SLIDE · 04</span>
+  <div class="kicker"><span class="hairline"></span>에이전트와 사람의 역할</div>
+  <h2 class="h">Hermes는 모으고, 스크립트는 거르고, 판단은 내가 한다.</h2>
+  <div class="grid" style="grid-template-columns: 1.05fr 0.9fr 1.05fr; gap:28px;">
+    <div class="on-navy">
+      <div class="col-label">Hermes 에게 맡길 일</div>
+      <div class="item"><b>매일 21:30 후보 수집</b><span>요일별 분야 2~4건을 공개 검색으로 찾아 뜻·요약 초안을 쓴다.</span></div>
+      <div class="item"><b>출처 찾기와 초안</b><span>본문이 실제로 읽히는 기사·리뷰 URL만 모아 넘긴다.</span></div>
+      <div class="item"><b>매일 21:15 재확인</b><span>가장 오래된 분석 1건의 출처를 다시 확인한다.</span></div>
+    </div>
+    <div>
+      <div class="col-label">결정적 스크립트가 할 일</div>
+      <div class="item"><b>스키마 검사</b><span>분류 7개·단계 라벨·날짜 형식 위반을 막는다.</span></div>
+      <div class="item"><b>출처 게이트</b><span>404·무관·못 읽는 출처만 있는 항목은 자동 보류한다.</span></div>
+      <div class="item"><b>근거 대조</b><span>출처 본문에 없는 수치·확산 표현이 있으면 보류한다.</span></div>
+    </div>
+    <div>
+      <div class="col-label">내가 판단하고 확인할 일</div>
+      <div class="item"><b>기준을 정한다</b><span>광고 의심 신호(협찬 흔적·후기 품앗이)와 게시 기준을 설계한다.</span></div>
+      <div class="item"><b>보류 항목을 검토한다</b><span>게이트가 못 잡는 유래·인물 바꿔치기, 오래된 출처로 쓴 '지금 피크'를 본다.</span></div>
+      <div class="item"><b>최종 책임을 진다</b><span>단정 표현을 고치고, 잘못 올라간 항목은 사후에 수정·삭제한다.</span></div>
+    </div>
+  </div>
+  <div class="meta-line"><span>에이전트와 나의 역할</span><span>SLIDE · 04</span></div>
+</section>
+
+<!-- 5 · 검증 계획 -->
+<section class="slide dense">
+  <span class="corner c-tl">KMU AI에이전트실무 · 2026</span>
+  <span class="corner c-tr">CHAPTER · 04</span>
+  <span class="corner c-bl">한끗 · MVP</span>
+  <span class="corner c-br">SLIDE · 05</span>
+  <div class="kicker"><span class="hairline"></span>검증 계획</div>
+  <h2 class="h">동작한다고 말할 근거 네 가지와 확인 방법.</h2>
+  <div class="grid g4" style="gap:26px;">
+    <div class="card">
+      <span class="num">근거 · 01</span>
+      <h3>데이터 규칙 통과</h3>
+      <p>전체 항목이 분류 7개·단계 라벨·날짜 형식을 지키고 id 중복이 0건.</p>
+      <div class="how"><em>확인 방법</em>validate-trends.mjs 실행 결과 화면을 남긴다.</div>
+    </div>
+    <div class="card">
+      <span class="num">근거 · 02</span>
+      <h3>출처가 살아 있다</h3>
+      <p>게시된 출처 URL 중 404·접속 불가 0건.</p>
+      <div class="how"><em>확인 방법</em>check-links.mjs로 전체 URL을 점검하고 죽은 링크 수를 기록한다.</div>
+    </div>
+    <div class="card">
+      <span class="num">근거 · 03</span>
+      <h3>서술이 출처에 있다</h3>
+      <p>새로 게시된 항목의 근거 없는 서술 0건. 10월 8일 감사의 기준선은 182건 중 139건이다.</p>
+      <div class="how"><em>확인 방법</em>check-source.mjs와 근거 대조 결과에 표본 5건을 직접 원문과 비교한다.</div>
+    </div>
+    <div class="card">
+      <span class="num">근거 · 04</span>
+      <h3>1분 안에 이해한다</h3>
+      <p>참여자 3명 중 2명 이상이 낯선 트렌드의 뜻·지금 단계·출처를 1분 안에 말한다.</p>
+      <div class="how"><em>확인 방법</em>휴대폰으로 사이트를 주고 시간을 잰 뒤 답과 걸린 시간을 표로 남긴다.</div>
+    </div>
+  </div>
+  <div class="band">추가 확인 — 제출 전 7일 동안 <strong>Hermes 자동 수집 커밋이 매일 남는지</strong> git 기록으로 보고, 빠진 날은 원인을 적는다.</div>
+  <div class="meta-line"><span>검증 계획</span><span>SLIDE · 05</span></div>
+</section>
+
+<!-- 6 · 데이터·도구·위험 -->
+<section class="slide dense">
+  <span class="corner c-tl">KMU AI에이전트실무 · 2026</span>
+  <span class="corner c-tr">CHAPTER · 05</span>
+  <span class="corner c-bl">한끗 · MVP</span>
+  <span class="corner c-br">SLIDE · 06</span>
+  <div class="kicker"><span class="hairline"></span>데이터 · 도구 · 예상 위험</div>
+  <h2 class="h">지금 가진 데이터에서 출발하고, 위험은 미리 막는다.</h2>
+  <div class="grid g3" style="margin-top:40px;">
+    <div><div class="stat">192</div><div class="stat-label">게시된 트렌드 항목 · 7개 분류</div></div>
+    <div><div class="stat">356</div><div class="stat-label">근거로 붙인 출처 URL</div></div>
+    <div><div class="stat">34</div><div class="stat-label">광고 의심도·후기 신뢰도를 매긴 항목</div></div>
+  </div>
+  <div class="grid g2" style="margin-top:40px; gap:48px;">
+    <div>
+      <div class="col-label">쓸 데이터와 도구</div>
+      <div class="item"><b>공개 검색 결과와 YouTube API</b><span>본문이 읽히는 기사·리뷰만 쓴다. 원본은 trends.json 한 파일이다.</span></div>
+      <div class="item"><b>Hermes · Node 스크립트 · Vercel</b><span>수집은 Hermes, 검증·반영은 스크립트, 배포는 GitHub push마다 자동이다.</span></div>
+    </div>
+    <div>
+      <div class="col-label">예상 위험과 대응</div>
+      <div class="item"><b>LLM이 출처를 지어낸다</b><span>조사 먼저, 생성은 그다음. 근거 대조 게이트가 보류한다.</span></div>
+      <div class="item"><b>유행이 빨리 늙는다</b><span>분석일을 화면에 정직하게 표시하고, 재분석한 항목만 날짜를 바꾼다.</span></div>
+      <div class="item"><b>점수를 판정으로 오해한다</b><span>모든 점수에 '추정치' 라벨을 붙이고 근거 문장을 함께 보인다.</span></div>
+    </div>
+  </div>
+  <div class="meta-line"><span>데이터 기준 trends.json · 2026-10-23</span><span>SLIDE · 06</span></div>
+</section>
+
+</body></html>

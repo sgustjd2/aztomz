@@ -1,0 +1,18 @@
+  .shots { display:grid; gap:40px; margin-top:28px; align-items:start; }
+  .shot { margin:0; }
+  .shot img { display:block; height:440px; width:auto; border:1px solid var(--border); border-radius:var(--radius-sm); }
+  .shot figcaption { margin-top:16px; }
+  .shot figcaption b { display:block; font-family:var(--font-heading); font-weight:700; font-size:26px; color:var(--text-primary); }
+  .shot figcaption span { display:block; font-family:var(--font-body); font-size:20px; line-height:1.45; color:var(--text-secondary); margin-top:4px; }
+  .shot .num { display:block; margin-bottom:6px; }
+  .tbl { width:100%; border-collapse:collapse; margin-top:34px; font-family:var(--font-body); }
+  .tbl th { text-align:left; font-family:var(--font-sans); font-size:15px; font-weight:600; letter-spacing:0.16em; color:var(--text-meta); padding:0 18px 12px 0; border-bottom:1px solid var(--border-strong); }
+  .tbl td { font-size:21px; line-height:1.45; color:var(--text-secondary); padding:13px 18px 13px 0; border-bottom:1px solid var(--border); vertical-align:top; }
+  .tbl td:first-child { font-family:var(--font-heading); font-weight:600; color:var(--text-primary); }
+  .tbl td b { color:var(--text-primary); font-weight:700; }
+  .links .item b { font-family:var(--font-sans); font-size:22px; letter-spacing:0.02em; color:var(--accent-brand); }
+  .chk .item b::before { content:'— '; color:var(--text-muted); }
+  .shot figcaption span.num { font-family:var(--font-sans); font-size:16px; font-weight:600; letter-spacing:0.16em; color:var(--accent-brand); margin:0 0 6px; }
+  .chk .item { padding:11px 0; }
+  .chk .item b { font-size:24px; }
+  .chk .item span { font-size:20px; margin-top:2px; }
