@@ -29,11 +29,11 @@
 .detail-page .score .s-why{font-size:15px;line-height:1.85;color:var(--body);padding-top:14px;margin-top:16px;word-break:keep-all;overflow-wrap:anywhere}
 .detail-page .score .s-why b{display:block;margin-bottom:4px;font-size:13px;color:var(--muted)}
 .detail-page .detail-satisfaction{padding:18px 20px;border-left:3px solid var(--trust);background:var(--paper-soft);border-radius:0 6px 6px 0;margin-bottom:30px}
-.detail-page .sat-heading{display:flex;align-items:center;flex-wrap:wrap;gap:8px;font-size:15px;font-weight:650;line-height:1.8}
+.detail-page .sat-heading{display:flex;align-items:center;flex-wrap:wrap;gap:8px;font-size:15px;font-weight:600;line-height:1.8}
 .detail-page .sat-heading>.muted{flex-basis:100%;font-weight:400;color:var(--body)}
 .detail-page .sat-why{font-size:14px;line-height:1.8;margin:8px 0 0}
 .detail-page .analysis-summary{padding:24px 0;margin:32px 0;border-block:1px solid var(--line)}
-.detail-page .detail-section-title,.detail-page .sec-head h2,.detail-page h2.media-h{display:flex;align-items:center;gap:10px;font-size:21px;line-height:1.5;font-weight:750;letter-spacing:-.025em;color:var(--ink);margin:0}
+.detail-page .detail-section-title,.detail-page .sec-head h2,.detail-page h2.media-h{display:flex;align-items:center;gap:10px;font-size:21px;line-height:1.5;font-weight:700;letter-spacing:-.025em;color:var(--ink);margin:0}
 .detail-page .detail-section-title .detail-icon,.detail-page .sec-head .detail-icon,.detail-page h2.media-h .detail-icon{color:var(--muted)}
 .detail-page .analysis-summary .verdict{font-size:17px;line-height:1.95;margin-top:14px;max-width:72ch;word-break:keep-all;overflow-wrap:anywhere}
 .detail-page .pull{margin:28px 0;padding:0 0 0 18px;border:0;border-left:3px solid var(--line);font:600 18px/1.8 var(--sans);color:var(--body);background:none}
@@ -41,7 +41,7 @@
 .detail-page .article .detail-section-title{padding-bottom:14px;border-bottom:1px solid var(--line);margin-bottom:24px}
 .detail-page .article .art-h{font-size:21px;font-weight:700;line-height:1.5;letter-spacing:-.02em;margin:32px 0 12px}
 .detail-page .article .art-p,.detail-page .article .art-ul li{font-size:17px;line-height:1.95;color:var(--body);max-width:72ch;overflow-wrap:anywhere;margin-bottom:20px}
-.detail-page .article .art-q{font-size:17px;line-height:1.85;font-weight:550;padding:16px 20px;background:var(--paper-soft)}
+.detail-page .article .art-q{font-size:17px;line-height:1.85;font-weight:500;padding:16px 20px;background:var(--paper-soft)}
 .detail-page .sec-head{margin:38px 0 16px;padding:0 0 13px;gap:12px}
 .detail-page .sec-head .note{font-size:13px;margin-left:auto}
 .detail-page .shops .sh-row{padding:19px 0;gap:10px 16px}
@@ -94,13 +94,13 @@
 /* Shop cards share title, location, menu, description and action rows. */
 .detail-page .shop-cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin:20px 0 6px;align-items:stretch}
 .detail-page .shop-card{min-width:0;display:flex;flex-direction:column;gap:12px;padding:22px;border:1px solid var(--line);border-radius:8px;background:var(--paper)}
-.detail-page .shop-name{margin:0;color:var(--ink);font-size:20px;line-height:1.5;font-weight:720;letter-spacing:-.02em;overflow-wrap:anywhere}
+.detail-page .shop-name{margin:0;color:var(--ink);font-size:20px;line-height:1.5;font-weight:700;letter-spacing:-.02em;overflow-wrap:anywhere}
 .detail-page .shop-location{display:flex;align-items:flex-start;gap:6px;margin:0;color:var(--muted);font-size:14px;line-height:1.7;overflow-wrap:anywhere}
 .detail-page .shop-location .detail-icon{width:16px;height:16px;margin-top:3px}
 .detail-page .shop-menu{display:flex;flex-direction:column;gap:5px;padding:12px 14px;border-radius:5px;background:var(--paper-soft);color:var(--body);font-size:14px;line-height:1.75;overflow-wrap:anywhere}
-.detail-page .shop-eyebrow{color:var(--muted);font-size:12px;font-weight:650}
+.detail-page .shop-eyebrow{color:var(--muted);font-size:12px;font-weight:600}
 .detail-page .shop-description{margin:0;color:var(--body);font-size:16px;line-height:1.85;word-break:keep-all;overflow-wrap:anywhere}
-.detail-page .shop-source{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:44px;margin-top:auto;padding-top:12px;border-top:1px solid var(--line);color:var(--accent-text);font-size:14px;font-weight:650;line-height:1.6;text-decoration:none}
+.detail-page .shop-source{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:44px;margin-top:auto;padding-top:12px;border-top:1px solid var(--line);color:var(--accent-text);font-size:14px;font-weight:600;line-height:1.6;text-decoration:none}
 .detail-page .shop-source .detail-icon{width:18px;height:18px}
 .detail-page .shop-source:hover{text-decoration:underline;text-underline-offset:4px}
 @supports(grid-template-rows:subgrid){
@@ -122,12 +122,12 @@
 /* Prompt content is a reading tool, not a promotional banner. */
 .detail-page .prompt-box{margin:28px 0;padding:20px;border:1px solid var(--line);border-radius:6px;background:var(--paper-soft);color:var(--body);font-size:15px;line-height:1.85}
 .detail-page .prompt-box .pb-top{gap:14px;padding-bottom:14px;margin-bottom:16px;border-bottom:1px solid var(--line);align-items:flex-start}
-.detail-page .prompt-box .pb-label{font-size:14px;line-height:1.8;color:var(--ink);font-weight:650}
+.detail-page .prompt-box .pb-label{font-size:14px;line-height:1.8;color:var(--ink);font-weight:600}
 .detail-page .prompt-box .pb-copy{min-height:40px;border:1px solid var(--line);border-radius:5px;padding:8px 14px;background:var(--paper);color:var(--ink);font-size:14px}
 .detail-page .prompt-box .pb-text{font-size:15px;line-height:1.85;color:var(--body);overflow-wrap:anywhere}
 .detail-page .usage{padding:18px 20px;border:1px solid var(--line);border-radius:6px;background:var(--paper-soft)}
 .detail-page .usage .u-label{font-size:13px;color:var(--muted)}
-.detail-page .usage .u-ex{font-size:17px;font-weight:550;line-height:1.85}
+.detail-page .usage .u-ex{font-size:17px;font-weight:500;line-height:1.85}
 .detail-page .stage-box{margin:24px 0;padding:18px 20px;border:1px solid var(--line);border-radius:6px;background:var(--paper)}
 .detail-page .stage-box .sb-k{display:flex;align-items:center;gap:8px;color:var(--muted);font-size:14px}
 .detail-page .stage-box .sb-v{font-size:21px;line-height:1.6;margin-top:8px}

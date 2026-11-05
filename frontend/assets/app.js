@@ -161,15 +161,13 @@
     const b=H.q && H.q('.theme-toggle');
     if(!b) return;
     const dark=t==='dark', label=dark?'라이트 모드':'다크 모드';
-    if(document.body.classList.contains('app-redesign')){
-      b.innerHTML=`<span class="nav-icon icon-${dark?'sun':'moon'}" aria-hidden="true"></span><span class="nav-label">${label}</span>`;
-    } else b.textContent=dark?'☀':'🌙';
+    b.innerHTML=`<span class="nav-icon icon-${dark?'sun':'moon'}" aria-hidden="true"></span><span class="nav-label">${label}</span>`;
     b.setAttribute('aria-label',label);
   };
   H.theme.apply(H.theme.get());  // 로드 즉시 적용(테마 깜빡임 최소화)
 
   /* ---------- masthead, injected into [data-mast] ---------- */
-  H.NAV_CATEGORIES = [['맛집','utensils'],['디저트','cake-slice'],['카페·핫플','coffee'],['신조어','message-square'],['노래·챌린지','music'],['패션','shirt'],['AI 프롬프트','sparkles']];
+  H.NAV_CATEGORIES = [['맛집','utensils'],['디저트','cake-slice'],['카페·핫플','coffee'],['신조어','message-square'],['노래·챌린지','music'],['패션','shirt'],['AI 프롬프트','square-terminal']];
   H.normalizeCategory = (cat)=>({'음식':'맛집','핫플':'카페·핫플','밈':'신조어','유행어':'신조어'}[cat]||cat||'전체');
   // Refresh active links without rebuilding the menu or losing drawer/focus state.
   H.syncMastCurrent = ()=>{
@@ -267,19 +265,8 @@
     if(tb){ H.updateThemeBtn(H.theme.get()); tb.addEventListener('click',()=> H.theme.toggle()); }
   };
 
-  /* ---------- reveal on scroll (pure enhancement; default visible) ---------- */
-  H.initReveals = ()=>{
-    const els=H.qa('.reveal'); if(!els.length) return;
-    const reduce = global.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if(!('IntersectionObserver' in global) || reduce) return;
-    els.forEach(e=>e.classList.add('pre'));
-    const io=new IntersectionObserver((ents)=>{ ents.forEach(e=>{ if(e.isIntersecting){ e.target.classList.remove('pre'); io.unobserve(e.target);} }); },{threshold:0.08});
-    els.forEach(e=>io.observe(e));
-    setTimeout(()=>els.forEach(e=>e.classList.remove('pre')), 1500);
-  };
-
   /* ---------- per-page boot ---------- */
-  H.boot = ()=>{ H.renderMast(); H.initReveals(); };
+  H.boot = ()=>{ H.renderMast(); };
 
   global.H = H;
 })(window);
