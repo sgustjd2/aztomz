@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-04",
+  "generatedAt": "2026-11-05",
   "trends": [
     {
       "id": "dubai-choco",
@@ -2409,10 +2409,10 @@
       "cat": "디저트",
       "coverCat": "cat-dessert",
       "collectedAt": "2026-06-08",
-      "analyzedAt": "2026-06-08",
+      "analyzedAt": "2026-11-05",
       "buzz": "숏폼·SNS에서 급속히 유행",
-      "stage": "상승",
-      "stageMsg": "지금 막 뜨는 중",
+      "stage": "안정화",
+      "stageMsg": "유행성보다 메뉴로 이어지는 흐름",
       "label": "지금 써도 됨",
       "labelCls": "good",
       "title": "이튼메스",
@@ -2457,6 +2457,10 @@
         [
           "트립픽",
           "https://www.thetrippick.com/news/articleView.html?idxno=3827"
+        ],
+        [
+          "네이버 블로그(2026-10-28)",
+          "https://m.blog.naver.com/5th2/224457821643"
         ]
       ],
       "tags": [
