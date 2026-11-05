@@ -12440,7 +12440,7 @@ window.HANGEUT_DATA = {
       "cat": "맛집",
       "coverCat": "cat-food",
       "collectedAt": "2026-08-25",
-      "analyzedAt": "2026-10-09",
+      "analyzedAt": "2026-11-05",
       "buzz": "확인 어려움(업체 홍보 영상뿐)",
       "label": "업체 홍보 영상뿐, 판단 불가",
       "labelCls": "warn",
