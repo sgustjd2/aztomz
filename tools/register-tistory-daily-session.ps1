@@ -9,7 +9,7 @@ $start = $nextRun.ToString("yyyy-MM-dd'T'HH:mm:ssK")
 $xml = @"
 <?xml version="1.0" encoding="UTF-16"?>
 <Task version="1.3" xmlns="http://schemas.microsoft.com/windows/2004/02/mit/task">
-  <RegistrationInfo><Description>한끗: 매일 11:00 티스토리 세션 사전 확인. 저장 자동완성으로 1회 로그인 시도 후 추가 인증은 사용자에게 넘깁니다.</Description><URI>\AZ2MZ_Tistory_Daily_Session</URI></RegistrationInfo>
+  <RegistrationInfo><Description>한끗: 매일 11:00 티스토리 세션 사전 확인. 저장 자동완성으로 로그인하고, 사람 인증 뒤 글쓰기 화면에 도달하면 세션을 자동 저장합니다.</Description><URI>\AZ2MZ_Tistory_Daily_Session</URI></RegistrationInfo>
   <Principals><Principal id="Author"><UserId>$sid</UserId><LogonType>InteractiveToken</LogonType><RunLevel>LeastPrivilege</RunLevel></Principal></Principals>
   <Settings><MultipleInstancesPolicy>IgnoreNew</MultipleInstancesPolicy><DisallowStartIfOnBatteries>false</DisallowStartIfOnBatteries><StopIfGoingOnBatteries>false</StopIfGoingOnBatteries><RunOnlyIfIdle>false</RunOnlyIfIdle><ExecutionTimeLimit>PT2H</ExecutionTimeLimit><StartWhenAvailable>true</StartWhenAvailable><Enabled>true</Enabled></Settings>
   <Triggers><CalendarTrigger><StartBoundary>$start</StartBoundary><ScheduleByDay><DaysInterval>1</DaysInterval></ScheduleByDay></CalendarTrigger></Triggers>

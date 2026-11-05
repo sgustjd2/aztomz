@@ -1,0 +1,28 @@
+{
+  "keyword": "2026 파주 장단콩축제 일정 시간표 셔틀 주차장",
+  "categoryId": "life-info",
+  "notes": "2026-10-27에 파주시 공식 문화관광 페이지와 올해 축제 시간표를 확인했어요. 날짜·장소·주차 위치·셔틀을 우선 안내하고, 새 일정표에 보이는 대표 무대 프로그램을 요약해요. 작년까지의 가격표를 올해 가격으로 오인하지 않도록 주의하고, 세부 운영 변동은 공식 공지 재확인으로 남겨요.",
+  "sources": [
+    { "title": "파주시 문화관광 - 2026 파주장단콩축제 축제소개 및 방문 안내", "url": "https://tour.paju.go.kr/tour/festival/festival02/festival02_2/festival02_2_01/festival02_2_01_01.jsp", "host": "tour.paju.go.kr", "body": "파주시 문화관광의 축제소개 페이지예요. 축제 날짜는 2026년 11월 27일 금요일부터 29일 일요일까지 3일이고 장소는 임진각 광장이며, 27일 14시에 개막식이 열리는 것으로 안내해요. 주차장은 임진각 야외 보조주차장(문산읍 마정리 1177-8)과 평화주차장(문산읍 마정리 989-1)을 안내해요. 문산역 1번 출구 앞 무료 셔틀은 행사장까지 상시, 문산읍행정복지센터 무료 셔틀은 금요일을 제외한 주말 운행이고 운영시간은 09:00~17:00예요. 058A/B 마을버스, 문산역-임진강역 전철 시각표도 페이지에 있어요. 콩 판매가격 표는 2025년까지 과거 자료라 2026 가격이라고 단정할 수 없어요.", "tier": "official" },
+    { "title": "2026 파주장단콩축제 시간표 이미지", "url": "https://tour.paju.go.kr/webcontent/ckeditor/2026/10/22/e87d4649-3151-4f87-bbb4-6a68d1d8a34a.png", "host": "tour.paju.go.kr", "body": "파주시 문화관광 페이지에서 2026년 10월 22일자 경로로 제공하는 주무대 시간표 이미지예요. 11월 27일 금요일에는 문화예술공연, 개막식전 공연·개막식, 장단콩가래떡뽑기 등이 표시돼요. 28일 토요일에는 콩타작 난타공연, 랜덤플레이 댄스, 줄타기 공연, 제2회 파주 장단콩 가요제가 보이고, 29일 일요일에는 문화예술공연, 폐막공연 및 불꽃놀이가 표시돼요. 공연별 세부 시간은 30분 단위 격자 안에서 블록으로 묶여 있으므로 시간표 원본 이미지와 당일 공지를 확인하도록 안내해야 해요.", "tier": "official" },
+    { "title": "파주시청 - 2026년 파주농산물축제 참여자 모집 공고", "url": "https://www.paju.go.kr/user/board/BD_board.view.do?bbsCd=2001&seq=20260724182345116", "host": "paju.go.kr", "body": "파주시청 농업기술센터의 2026 파주농산물축제 참여자 모집 공고예요. 제30회 파주장단콩축제 개최일을 11월 27일부터 29일까지로 명시하고 장소를 파주 임진각관광지 및 평화누리공원 일원으로 적었어요. 농특산물 판매, 가공품, 즉석 가공 먹거리, 무료·유료 체험, 전문음식점 등 모집 분야도 나열돼요. 단, 이 공고는 부스 운영자 모집용이고 참가자용 프로그램 등록 공지가 아니며, 부문별 운영 내역이 축제 사정에 따라 변경될 수 있다고 밝히고 있어요.", "tier": "official" },
+    { "title": "파주시 문화관광 - 2026 파주장단콩축제 포스터", "url": "https://tour.paju.go.kr/webcontent/ckeditor/2026/10/21/8c2d2b8a-9ba7-403a-949d-000a9f2c2693.jpg", "host": "tour.paju.go.kr", "body": "파주시 문화관광 축제소개 페이지가 '2026 파주장단콩축제 포스터'라고 표시한 공식 홍보 이미지예요. 올해 행사명과 테마, 개최 기간을 확인하는 보조 자료로 쓸 수 있어요. 교통·주차 정보와 주무대 프로그램의 상세 일정은 포스터보다 별도로 제공되는 축제소개 본문 및 시간표 이미지를 기준으로 삼아요. 방문 전 변경 가능성이 있는 정보는 파주시 문화관광의 최신 공지에서 다시 확인하도록 안내해요.", "tier": "official" }
+  ],
+  "claims": [
+    { "claim": "제30회 2026 파주장단콩축제는 11월 27일 금요일부터 29일 일요일까지 임진각 광장에서 열린다.", "grade": "confirmed", "evidence": ["파주시 관광 안내와 시청 모집 공고가 같은 3일 개최일을 명시해요.", "행사장소는 임진각 광장/임진각관광지 및 평화누리공원 일원으로 안내돼요."], "sourceUrls": ["https://tour.paju.go.kr/tour/festival/festival02/festival02_2/festival02_2_01/festival02_2_01_01.jsp", "https://www.paju.go.kr/user/board/BD_board.view.do?bbsCd=2001&seq=20260724182345116"] },
+    { "claim": "자가용 방문자는 공식 페이지가 적은 두 곳의 주차장과 주소를 기준으로 목적지를 정할 수 있다.", "grade": "confirmed", "evidence": ["임진각 야외 보조주차장: 문산읍 마정리 1177-8.", "평화주차장: 문산읍 마정리 989-1."], "sourceUrls": ["https://tour.paju.go.kr/tour/festival/festival02/festival02_2/festival02_2_01/festival02_2_01_01.jsp"] },
+    { "claim": "문산역 출발 무료 셔틀과 주말 한정 추가 셔틀이 공식 안내돼 있다.", "grade": "confirmed", "evidence": ["문산역 1번 출구 앞에서 행사장까지 무료 셔틀 상시 운행.", "문산읍행정복지센터발 무료 셔틀은 주말 운행, 금요일 제외.", "운행시간 09:00~17:00."], "sourceUrls": ["https://tour.paju.go.kr/tour/festival/festival02/festival02_2/festival02_2_01/festival02_2_01_01.jsp"] },
+    { "claim": "올해 주무대 일정표는 금요일 개막, 토요일 체험·공연, 일요일 폐막과 불꽃놀이 등으로 구성돼 있다.", "grade": "confirmed", "evidence": ["금요일: 개막식전 공연, 개막식, 장단콩가래떡뽑기 등.", "토요일: 콩타작 난타공연, 랜덤플레이 댄스, 줄타기 공연, 제2회 장단콩 가요제.", "일요일: 폐막공연과 불꽃놀이."], "sourceUrls": ["https://tour.paju.go.kr/webcontent/ckeditor/2026/10/22/e87d4649-3151-4f87-bbb4-6a68d1d8a34a.png"] }
+  ],
+  "numbers": [
+    { "what": "축제 기간", "value": "2026-11-27~2026-11-29", "asOf": "2026-10-27 공식 안내 확인", "sourceUrl": "https://tour.paju.go.kr/tour/festival/festival02/festival02_2/festival02_2_01/festival02_2_01_01.jsp" },
+    { "what": "개막식", "value": "2026-11-27 14:00", "asOf": "2026-10-27 공식 안내 확인", "sourceUrl": "https://tour.paju.go.kr/tour/festival/festival02/festival02_2/festival02_2_01/festival02_2_01_01.jsp" },
+    { "what": "임진각 야외 보조주차장", "value": "문산읍 마정리 1177-8", "asOf": "2026-10-27 공식 안내 확인", "sourceUrl": "https://tour.paju.go.kr/tour/festival/festival02/festival02_2/festival02_2_01/festival02_2_01_01.jsp" },
+    { "what": "평화주차장", "value": "문산읍 마정리 989-1", "asOf": "2026-10-27 공식 안내 확인", "sourceUrl": "https://tour.paju.go.kr/tour/festival/festival02/festival02_2/festival02_2_01/festival02_2_01_01.jsp" },
+    { "what": "무료 셔틀 운영시간", "value": "09:00~17:00", "asOf": "2026-10-27 공식 안내 확인", "sourceUrl": "https://tour.paju.go.kr/tour/festival/festival02/festival02_2/festival02_2_01/festival02_2_01_01.jsp" },
+    { "what": "모집 공고 작성일", "value": "2026-07-24", "asOf": "공고 작성일", "sourceUrl": "https://www.paju.go.kr/user/board/BD_board.view.do?bbsCd=2001&seq=20260724182345116" }
+  ],
+  "dropped": [],
+  "cannotCover": ["2026년 콩 판매가격·판매 물량·재고", "주차요금과 주차장별 축제 당일 잔여 공간", "무료 셔틀의 배차 간격 및 실시간 운행 상황", "시간표 이미지에 없는 부스별 운영 시간·체험비·예약 방법", "행사일 교통통제와 현장 프로그램 변경"],
+  "songs": []
+}

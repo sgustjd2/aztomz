@@ -1,0 +1,87 @@
+{
+  "keyword": "Anthropic Agent Skills AAIF 기부 2026년 10월 22일",
+  "categoryId": "ai-company-watch",
+  "searchedAt": "2026-10-27",
+  "queries": [
+    "Anthropic official newsroom Agent Skills AAIF donation (selected by ai-watch-fetch)",
+    "Linux Foundation official AAIF Agent Skills contribution October 22 2026",
+    "official Agent Skills specification and contribution scope",
+    "Linux Foundation AAIF founding projects December 2025"
+  ],
+  "sources": [
+    {
+      "title": "Donating Agent Skills to the Agentic AI Foundation",
+      "url": "https://www.anthropic.com/news/donating-agent-skills-to-the-agentic-ai-foundation",
+      "host": "anthropic.com",
+      "tier": "official",
+      "publishedAt": "2026-10-22",
+      "body": "Anthropic announced on October 22, 2026 that it is donating Agent Skills to the Agentic AI Foundation (AAIF), under the Linux Foundation. Anthropic describes Agent Skills as an open standard that gives agents specialized knowledge and workflows. A skill is a folder containing a SKILL.md file, with optional scripts and reference material. The company says it published the standard in December 2025 and that more than 70 agent platforms integrated it; examples named include ChatGPT, Cursor, GitHub Copilot and VS Code. It reports one million skills published and nearly 280 million installed. The donation includes the Agent Skills name and logo, GitHub organization and agentskills.io domain. Engineers from Anthropic, Google, OpenAI and other companies will maintain the standard as individuals; David Soria Parra and Mahesh Murag are lead maintainers. A proposed initial roadmap includes versioned releases, a formal proposal process and security guidance. Anthropic says users can keep using and contributing without joining AAIF.",
+      "facts": [
+        "Anthropic published the announcement on 2026-10-22.",
+        "Anthropic says more than 70 platforms integrated Agent Skills since its December 2025 release; it reports 1 million skills published and nearly 280 million installed.",
+        "The donation covers the name and logo, GitHub organization, and agentskills.io domain.",
+        "Named lead maintainers are David Soria Parra and Mahesh Murag; they and others participate as individuals.",
+        "The initial roadmap is proposed, not a settled specification."
+      ]
+    },
+    {
+      "title": "Agentic AI Foundation Announces Four New Projects: Agent Skills, Open Responses, OpenEnv, and OpenSandbox",
+      "url": "https://www.linuxfoundation.org/press/agentic-ai-foundation-announces-four-new-projects-agent-skills-open-responses-openenv-and-opensandbox",
+      "host": "linuxfoundation.org",
+      "tier": "official",
+      "publishedAt": "2026-10-22",
+      "body": "The Linux Foundation announcement dated October 22, 2026 says the Agentic AI Foundation announced four hosted projects: Agent Skills contributed by Anthropic, Open Responses by OpenAI, OpenEnv by Hugging Face, and OpenSandbox by Alibaba. It says the foundation grew from three launch projects in December 2025 to ten hosted projects in its first year. The announcement places Agent Skills among four layers of an agent stack and calls it an open format for giving agents capabilities and domain expertise. Skills package instructions, scripts and resources in reusable form that agents can load on demand. The announcement says the projects were introduced alongside AGNTCon and MCPCon North America in San Jose on October 22–23. This is an AAIF/LF announcement; it does not describe a transfer of Anthropic itself or of Claude.",
+      "facts": [
+        "AAIF announced four new contributions on 2026-10-22.",
+        "AAIF count was 10 hosted projects, up from three at its December 2025 launch.",
+        "The four contributions came from Anthropic, OpenAI, Hugging Face and Alibaba."
+      ]
+    },
+    {
+      "title": "Agent Skills Overview",
+      "url": "https://agentskills.io/home",
+      "host": "agentskills.io",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "The Agent Skills overview describes the format as a lightweight open format for extending AI-agent capabilities with specialized knowledge and workflows. It says a skill is a folder whose required SKILL.md includes at least name and description metadata and instructions for a task. Optional resources include scripts, references and assets. Documentation describes three stages: discovery, activation and execution, with full instructions loaded when needed. It says the format was originally developed by Anthropic, released as an open standard and is open to contributions from the broader ecosystem. The overview links to the specification and the public GitHub discussion. It explains the format’s intended operation; it is not an announcement about the governance transfer.",
+      "facts": [
+        "A skill requires a SKILL.md file; scripts, references and assets are optional.",
+        "The documentation outlines three stages: discovery, activation and execution.",
+        "The overview calls for open contributions and points to the specification and GitHub."
+      ]
+    },
+    {
+      "title": "agentskills/agentskills repository",
+      "url": "https://github.com/agentskills/agentskills",
+      "host": "github.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "The public agentskills/agentskills repository identifies itself as the specification and documentation for Agent Skills. Its README repeats that a skill is a folder organized around a SKILL.md file and may include scripts, reference materials and other resources. The page links to the specification, documentation and contribution guidance, and lists an Apache 2.0 license for code and CC-BY-4.0 for documentation, while noting that individual directories can have their own terms. GitHub page metadata showed a public repository and 145 commits at retrieval. Repository metadata and README can establish that a public implementation/specification repository exists, but star counts and commit counts change and do not establish the donated legal scope.",
+      "facts": [
+        "The repository is public and titled agentskills/agentskills.",
+        "The page showed 145 commits at retrieval; this is a time-sensitive GitHub count.",
+        "The README lists Apache 2.0 for code and CC-BY-4.0 for documentation, with directory-specific exceptions possible."
+      ]
+    },
+    {
+      "title": "Linux Foundation Announces the Formation of the Agentic AI Foundation",
+      "url": "https://www.linuxfoundation.org/press/linux-foundation-announces-the-formation-of-the-agentic-ai-foundation?_bhlid=794175d0dc8bbd1e4786c6d7debc273bb0e98d97",
+      "host": "linuxfoundation.org",
+      "tier": "official",
+      "publishedAt": "2025-12-09",
+      "body": "The Linux Foundation announced formation of the Agentic AI Foundation on December 9, 2025. The announcement identifies founding project contributions from Anthropic (Model Context Protocol), Block (goose) and OpenAI (AGENTS.md), and describes the AAIF as a neutral open foundation intended to support transparent, collaborative development. It also lists the organizations’ initial project contributions and explains that the foundation is a governance home for open-source agent infrastructure. This establishes the AAIF’s founding context. It does not itself establish the specific Agent Skills donation announced in October 2026; that scope comes from the later Anthropic announcement.",
+      "facts": [
+        "The Linux Foundation announced AAIF formation on 2025-12-09.",
+        "Founding contributions named were MCP from Anthropic, goose from Block and AGENTS.md from OpenAI.",
+        "The AAIF formation predates the Agent Skills donation by about ten months."
+      ]
+    }
+  ],
+  "conflicts": [],
+  "unknowns": [
+    "The official announcement does not specify a completed legal transfer date separate from the announcement date.",
+    "The proposed roadmap is not evidence that versioned releases, proposal process or security guidance have already shipped.",
+    "The announcement does not enumerate every asset or repository transferred beyond the name/logo, GitHub organization and domain.",
+    "No claim is made that Agent Skills support will change for existing users."
+  ]
+}

@@ -108,11 +108,12 @@ async function main() {
   writeFileSync(lockPath, String(process.pid));
   try {
     const stopped = new Set();
-    // 티스토리 인증은 세션 쿠키라 idle 이면 끊긴다 — 회차마다 keepalive 로 갱신(발행할 글이 없어도).
-    // 이미 끊겼으면 자동 로그인은 안 하므로(철칙) 그날 티스토리만 건너뛴다.
-    if (!only || only === 'tistory') {
-      const k = spawnSync(process.execPath, [PLATFORMS.tistory.script, '--keepalive'], { stdio: ['ignore', 'inherit', 'inherit'] });
-      if (k.status !== 0) { stopped.add('tistory'); console.error('✗ 티스토리 세션 만료 — 오늘 티스토리 발행 건너뜀. 사람이: node backend/scripts/blog-publish.mjs --login'); }
+    // 발행할 티스토리 글이 있을 때 사전 세션 확인을 한다. 만료된 경우
+    // --daily-session 이 저장 자동완성/단일 계정 선택으로 자동 로그인을 시도한다.
+    // 추가 인증·CAPTCHA 등 사람 확인이 필요하면 그날 티스토리만 중단한다.
+    if ((!only || only === 'tistory') && plan.tistory.length > 0) {
+      const k = spawnSync(process.execPath, [PLATFORMS.tistory.script, '--daily-session'], { stdio: ['ignore', 'inherit', 'inherit'] });
+      if (k.status !== 0) { stopped.add('tistory'); console.error('✗ 티스토리 세션 확인/자동 로그인 실패 — 추가 인증이 필요할 수 있어 오늘 티스토리 발행을 건너뜁니다.'); }
     }
     const steps = interleave(plan.tistory, plan.naver);
     for (let i = 0; i < steps.length; i++) {

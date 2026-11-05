@@ -1,0 +1,16 @@
+{
+  "slug":"november-calendar-2026","keyword":"2026년 11월 달력, 11월달력, 11월공휴일","researchDate":"2026-10-26",
+  "claims":[
+    {"claim":"November 2026 starts on Sunday and has 30 days; the Saturdays are 7, 14, 21, 28 and Sundays are 1, 8, 15, 22, 29.","sourceUrls":["https://www.kasa.go.kr/prog/plcyBrf/brief/kor/sub01_01_04/view.do?plcyBrfNo=202"]},
+    {"claim":"There is no nationwide statutory public holiday in November 2026; the next public holiday is Christmas Day, Dec 25.","sourceUrls":["https://www.law.go.kr/LSW/lsLinkCommonInfo.do?chrClsCd=010202&lsJoLnkSeq=1018770115","https://www.kasa.go.kr/prog/plcyBrf/brief/kor/sub01_01_04/view.do?plcyBrfNo=202"]},
+    {"claim":"The 2027 academic-year CSAT is on Thursday, Nov 19, 2026.","sourceUrls":["https://www.moe.go.kr/boardCnts/viewRenew.do?boardID=294&boardSeq=100526&lev=0&m=020402&opType=N&s=moe&statusYN=W"]},
+    {"claim":"Nov 7 is Ip-dong and Nov 22 is So-seol according to the 2026 calendar reference.","sourceUrls":["https://astro.kasi.re.kr/kor/life/post/almanac?search_year=2026"]}
+  ],
+  "sources":[
+    {"title":"2026년 월력요항 발표","url":"https://www.kasa.go.kr/prog/plcyBrf/brief/kor/sub01_01_04/view.do?plcyBrfNo=202","host":"kasa.go.kr","body":"Korea AeroSpace Administration release, 2025-06-30, establishes the official 2026 calendar criteria and public holidays. November dates calculated from Gregorian calendar; official release also confirms the year’s statutory holiday framework."},
+    {"title":"관공서의 공휴일에 관한 규정","url":"https://www.law.go.kr/LSW/lsLinkCommonInfo.do?chrClsCd=010202&lsJoLnkSeq=1018770115","host":"law.go.kr","body":"National Law Information Center. Statutory public holiday list; November has no fixed national holiday. Regional closures or one-off temporary holidays can differ if later designated."},
+    {"title":"2027학년도 대학수학능력시험 시행일 안내","url":"https://www.moe.go.kr/boardCnts/viewRenew.do?boardID=294&boardSeq=100526&lev=0&m=020402&opType=N&s=moe&statusYN=W","host":"moe.go.kr","body":"Ministry of Education official notice: the 2027 academic-year CSAT will be held Thursday, November 19, 2026; score reports are scheduled for December 11."},
+    {"title":"월력요항","url":"https://astro.kasi.re.kr/kor/life/post/almanac?search_year=2026","host":"astro.kasi.re.kr","body":"Korea Astronomy and Space Science Institute calendar reference for official lunar dates, 24 solar terms, national holidays and commemorative days."}
+  ],
+  "cannotSay":["No claim about individual company, school, or local institution schedules; those can differ.","November has 9 Saturdays/Sundays combined, not necessarily 9 non-working days for every worker.","No unannounced election day, temporary holiday, or local event is included."]
+}

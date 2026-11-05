@@ -1,0 +1,59 @@
+{
+  "company": "anthropic",
+  "name": "Anthropic",
+  "fetchedOk": true,
+  "sourceUrl": "https://www.anthropic.com/news",
+  "items": [
+    {
+      "title": "Announcements",
+      "url": "https://www.anthropic.com/news/announcements",
+      "publishedAt": null
+    },
+    {
+      "title": "Features",
+      "url": "https://www.anthropic.com/news/features",
+      "publishedAt": null
+    },
+    {
+      "title": "Expanding our partnership with GSA to bring Claude to all levels of government",
+      "url": "https://www.anthropic.com/news/expanding-partnership-gsa",
+      "publishedAt": null
+    },
+    {
+      "title": "Partnerships",
+      "url": "https://www.anthropic.com/news/partnerships",
+      "publishedAt": null
+    },
+    {
+      "title": "Anthropic files S-1 with the SEC for proposed initial public offering",
+      "url": "https://www.anthropic.com/news/s1-sec",
+      "publishedAt": null
+    },
+    {
+      "title": "Donating Agent Skills to the Agentic AI Foundation",
+      "url": "https://www.anthropic.com/news/donating-agent-skills-to-the-agentic-ai-foundation",
+      "publishedAt": null
+    },
+    {
+      "title": "Product",
+      "url": "https://www.anthropic.com/news/product",
+      "publishedAt": null
+    },
+    {
+      "title": "Open call for guest investigators in the life sciences",
+      "url": "https://www.anthropic.com/news/open-call-guest-investigators-life-sciences",
+      "publishedAt": null
+    },
+    {
+      "title": "Physicist Christopher Stubbs joins Anthropic&#x27;s Long-Term Benefit Trust",
+      "url": "https://www.anthropic.com/news/christopher-stubbs-joins-long-term-benefit-trust",
+      "publishedAt": null
+    },
+    {
+      "title": "Investing in the public benefit",
+      "url": "https://www.anthropic.com/news/public-benefit-fund",
+      "publishedAt": null
+    }
+  ],
+  "note": "RSS 없음 — HTML 직접 파싱. platform.claude.com/docs/en/release-notes/overview 는 API 릴리스노트(별도 채널, 미포함)."
+}

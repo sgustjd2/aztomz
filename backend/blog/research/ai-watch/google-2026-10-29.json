@@ -1,0 +1,59 @@
+{
+  "company": "google",
+  "name": "Google DeepMind",
+  "fetchedOk": true,
+  "sourceUrl": "https://deepmind.google/blog/rss.xml",
+  "items": [
+    {
+      "title": "Gemini 4 Carbon: Our next frontier model",
+      "url": "https://deepmind.google/blog/gemini-4-carbon-our-next-frontier-model/",
+      "publishedAt": "Wed, 28 Oct 2026 17:00:58 +0000"
+    },
+    {
+      "title": "Genie 4: A new generation of world simulation",
+      "url": "https://deepmind.google/blog/genie-4-a-new-generation-of-world-simulation/",
+      "publishedAt": "Tue, 27 Oct 2026 16:01:38 +0000"
+    },
+    {
+      "title": "Beyond tree cover: mapping the world’s forest types",
+      "url": "https://deepmind.google/blog/beyond-tree-cover-mapping-the-worlds-forest-types/",
+      "publishedAt": "Thu, 22 Oct 2026 14:30:24 +0000"
+    },
+    {
+      "title": "Accelerating the search for antimicrobial peptides with Google Antigravity",
+      "url": "https://deepmind.google/blog/accelerating-antimicrobial-discovery/",
+      "publishedAt": "Thu, 15 Oct 2026 16:08:03 +0000"
+    },
+    {
+      "title": "Google DeepMind and Singapore Government collaborate to build fine-tuned AI model for scam detection",
+      "url": "https://deepmind.google/blog/on-device-ai-scam-detection-mddi/",
+      "publishedAt": "Wed, 14 Oct 2026 02:00:14 +0000"
+    },
+    {
+      "title": "Developing Gemini 4 Argon responsibly and safely",
+      "url": "https://deepmind.google/blog/developing-gemini-4-argon-responsibly-and-safely/",
+      "publishedAt": "Tue, 13 Oct 2026 19:43:07 +0000"
+    },
+    {
+      "title": "Gemini 4 Argon for Robotics",
+      "url": "https://deepmind.google/blog/gemini-4-argon-for-robotics/",
+      "publishedAt": "Tue, 13 Oct 2026 16:01:58 +0000"
+    },
+    {
+      "title": "Gemini 4 Argon: Built to solve your hardest problems",
+      "url": "https://deepmind.google/blog/introducing-gemini-4-argon/",
+      "publishedAt": "Tue, 13 Oct 2026 16:01:52 +0000"
+    },
+    {
+      "title": "EmbeddingGemma 2: an open, lightweight multimodal embedding model",
+      "url": "https://deepmind.google/blog/embeddinggemma-2-an-open-lightweight-multimodal-embedding-model/",
+      "publishedAt": "Tue, 06 Oct 2026 19:57:04 +0000"
+    },
+    {
+      "title": "Gemini 4 Argon: our next era of frontier intelligence",
+      "url": "https://deepmind.google/blog/gemini-4-argon-our-next-era-of-frontier-intelligence/",
+      "publishedAt": "Wed, 30 Sep 2026 20:01:45 +0000"
+    }
+  ],
+  "note": "4사 중 가장 안정적. blog.google/technology/ai/rss/ 도 있으나(Gemini 마케팅 블로그) DeepMind 쪽이 연구/모델 발표 위주라 우선."
+}

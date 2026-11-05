@@ -1,0 +1,198 @@
+{
+  "keyword": "OpenAI Decisions API 사용법",
+  "categoryId": "llm-howto",
+  "notes": "2026-10-22 정식 출시된 Decisions API의 분류·판정 입력과 응답 형태를 설명한다. GPT-6 Luna 한 모델만 지원하며 최대 400개 독립 질문을 한 요청에 담을 수 있다. 속도 개선 수치나 개별 서비스 비용은 단정하지 않는다.",
+  "sources": [
+    {
+      "title": "OpenAI API Changelog — October 22, 2026",
+      "url": "https://developers.openai.com/api/docs/changelog",
+      "host": "developers.openai.com",
+      "tier": "official",
+      "publishedAt": "2026-10-22",
+      "body": "OpenAI의 2026년 10월 API 변경 이력은 10월 22일 Decisions API가 공개 정식(GA) 상태가 됐다고 기록해요. 정식 지원 모델은 gpt-6-luna예요. 베타 때 요청당 최대 200개였던 질문 수가 400개로 늘었고, 질문별 이미지, 구조화 JSON 입력, 공유 입력의 캐시 재사용도 추가됐다고 안내해요. 이는 변경 이력의 출시 사실이며, 특정 서비스에서 처리량이나 지연이 얼마나 개선되는지를 보장하는 내용은 아니에요.",
+      "facts": [
+        "2026-10-22에 Decisions API가 GA로 전환됐다.",
+        "현재 지원 모델은 gpt-6-luna다.",
+        "요청당 질문 한도가 베타 200개에서 400개로 증가했다.",
+        "공유 입력 캐시, 질문별 이미지, input_json 기능이 추가됐다."
+      ]
+    },
+    {
+      "title": "Decisions API guide",
+      "url": "https://developers.openai.com/api/docs/guides/decisions",
+      "host": "developers.openai.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "공식 가이드는 Decisions를 텍스트·이미지·JSON 입력을 평가해 애플리케이션이 쓰기 쉬운 형식의 판단을 돌려주는 API로 설명해요. 질문 결과는 조건의 참일 가능성을 내는 predicate, 정해진 선택지 중 하나를 고르는 choice, 순서가 있는 단계로 평가하는 score 세 종류예요. 여러 질문은 같은 입력에 대해 한 요청 안에서 병렬로 묶을 수 있지만, 앞선 답에 따라 다음 질문이 달라지는 의존 관계라면 요청을 나누라고 해요. 자체 JSON 구조를 생성하거나 긴 설명을 만들려면 Responses API의 Structured Outputs를 쓰는 편이 맞다고 구분해요. API 가이드의 REST 예제는 각 질문에 type, 고유한 name, instructions를 지정해요. choice는 choices 배열 안에 value와 description 필드를 가진 객체를 사용해요. predicate 예제도 별도 predicate 필드가 아니라 instructions로 조건을 설명해요.",
+      "facts": [
+        "Decisions 질문 유형은 predicate, choice, score다.",
+        "같은 입력을 평가하는 독립 질문은 최대 400개까지 한 요청에 넣을 수 있다.",
+        "후속 질문이 앞선 답에 의존하면 별도 요청으로 나눈다.",
+        "임의 JSON 스키마 생성은 Responses API Structured Outputs 사용 사례로 안내한다.",
+        "REST 질문 객체는 type·name·instructions를 사용하고 choice의 choices 각 항목은 value·description을 가진다."
+      ]
+    },
+    {
+      "title": "Create a decision — API reference",
+      "url": "https://developers.openai.com/api/reference/resources/decisions/methods/create",
+      "host": "developers.openai.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "API 레퍼런스의 생성 요청은 model, input, questions를 중심으로 구성돼요. model 필드는 gpt-6-luna만 지원한다고 명시돼 있고, questions 배열은 1개부터 400개까지 받을 수 있어요. 질문마다 predicate·choice·score 타입을 지정하며, 응답은 같은 순서로 answers 배열에 돌아와요. input은 문자열 또는 메시지·도구 호출 결과를 포함한 순서 있는 배열로 전달할 수 있고, 구조화된 JSON은 지정된 input_json 콘텐츠 형식으로 전달해요. 따라서 일반 텍스트를 JSON 문자열로 억지 포장할 필요가 없어요.",
+      "facts": [
+        "POST /v1/decisions 요청의 주요 필드는 model, input, questions다.",
+        "questions는 1~400개이며 답은 질문 순서로 반환된다.",
+        "현재 지원 모델은 gpt-6-luna 한 가지다.",
+        "API 입력은 문자열 또는 순서 있는 메시지 입력이다."
+      ]
+    },
+    {
+      "title": "GPT-6 Luna model page",
+      "url": "https://developers.openai.com/api/docs/models/gpt-6-luna",
+      "host": "developers.openai.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "모델 페이지는 GPT-6 Luna를 집중된 대량 처리 작업을 위한 효율 모델로 소개하고, 모델 ID가 gpt-6-luna라고 명시해요. 이 글에서 다루는 Decisions API는 현재 이 모델만 지원한다고 API 가이드와 레퍼런스도 설명해요. 그래서 모델 문자열을 다른 GPT 모델명으로 바꾸어도 같은 API 요청이 그대로 동작한다고 가정하면 안 돼요. GPT-6 Luna의 다른 엔드포인트 목록은 모델 카탈로그에 별도 안내가 있지만, 그 목록 전체가 Decisions에서 사용 가능한 것은 아니에요.",
+      "facts": [
+        "모델 ID는 gpt-6-luna다.",
+        "GPT-6 Luna는 집중된 대량 처리 작업용 효율 모델로 소개된다."
+      ]
+    },
+    {
+      "title": "Decisions API pricing and availability",
+      "url": "https://developers.openai.com/api/docs/guides/decisions",
+      "host": "developers.openai.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "Decisions 가이드의 가격·이용 가능성 섹션은 gpt-6-luna 기반 Decisions 요청에서 캐시되지 않은 입력 토큰을 백만 개당 $0.10으로 안내해요. 캐시 적중 입력은 할인되고 cache write에는 별도 요율이 적용돼요. 이 엔드포인트는 출력 토큰에 과금하지 않는다고 안내하지만, 리전 처리 프리미엄과 긴 컨텍스트의 입력 가격 배수는 적용될 수 있어요. 다른 엔드포인트에서 같은 모델을 쓸 때는 해당 처리 방식의 모델 가격표를 확인해야 해요. 이 가격은 2026-10-25에 읽은 공식 문서의 표기이며, 바뀔 수 있어요.",
+      "facts": [
+        "Decisions의 uncached input은 백만 토큰당 $0.10이다.",
+        "Decisions output tokens는 과금하지 않는다고 공식 가이드가 명시한다.",
+        "cache hit 할인, cache write 요율, 리전 프리미엄과 장문맥 배수가 별도 적용될 수 있다."
+      ]
+    },
+    {
+      "title": "OpenAI API error codes",
+      "url": "https://developers.openai.com/api/docs/guides/error-codes",
+      "host": "developers.openai.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "공식 오류 안내는 API 요청에 필요한 매개변수가 빠졌거나 형식이 잘못된 경우 BadRequestError로, 오류 본문이 어느 필드가 잘못됐는지 설명할 수 있다고 안내해요. 인증 오류는 API 키나 조직 설정을 확인해야 하고, 요청 속도가 제한을 넘으면 429가 나올 수 있어요. 이 문서는 Decisions 전용 오류 문자열을 나열하지 않으므로 글에서는 정확히 확인되지 않은 서버 메시지를 만들어 인용하지 않아요. 대신 두 가지 실무 점검 항목으로 지원 모델과 questions 구조, API 키 환경변수를 나눠 제시할게요.",
+      "facts": [
+        "형식이 잘못되거나 필수 매개변수가 없는 API 호출은 BadRequestError 범주에 해당할 수 있다.",
+        "HTTP 429는 요청 속도 제한이나 spend/usage limit 등 여러 원인이 있으므로 error.code 확인이 필요하다."
+      ]
+    },
+    {
+      "title": "Decisions organization usage reference",
+      "url": "https://developers.openai.com/api/reference/resources/admin/subresources/organization/subresources/usage/methods/decisions",
+      "host": "developers.openai.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "조직 사용량 레퍼런스는 GET /v1/organization/usage/decisions로 Decisions의 입력 토큰, 캐시 입력 토큰, 출력 토큰, 모델 요청 수를 날짜 구간과 버킷 단위로 조회할 수 있다고 설명해요. 결과는 프로젝트·모델·API 키 등으로 그룹화할 수 있고, 요청 수 필드는 질문 수가 아니라 모델에 보낸 요청 횟수를 셉니다. 예시에서 질문 여러 개를 넣은 요청도 한 번의 모델 요청으로 기록되는 점이 드러나요. 이 보고서는 조직 관리용 API 키와 api.usage.read 권한이 필요해요.",
+      "facts": [
+        "GET /v1/organization/usage/decisions가 조직 사용량 조회 엔드포인트다.",
+        "num_model_requests는 question 수가 아니라 모델 요청 수를 센다.",
+        "usage 조회는 admin API key 및 api.usage.read 권한이 필요하다."
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "evidence": [
+        "OpenAI API 변경 이력에 2026-10-22 GA로 기록"
+      ],
+      "sourceUrls": [
+        "https://developers.openai.com/api/docs/changelog"
+      ],
+      "claim": "Decisions API는 2026-10-22 정식 출시됐다.",
+      "grade": "confirmed"
+    },
+    {
+      "evidence": [
+        "가이드가 predicate, choice, score의 의미를 구분"
+      ],
+      "sourceUrls": [
+        "https://developers.openai.com/api/docs/guides/decisions"
+      ],
+      "claim": "Decisions 질문은 predicate, choice, score 세 유형이다.",
+      "grade": "confirmed"
+    },
+    {
+      "evidence": [
+        "생성 API 레퍼런스에 model과 questions 개수 조건"
+      ],
+      "sourceUrls": [
+        "https://developers.openai.com/api/reference/resources/decisions/methods/create"
+      ],
+      "claim": "현재 지원 모델은 gpt-6-luna이며 요청당 질문은 1~400개다.",
+      "grade": "confirmed"
+    },
+    {
+      "evidence": [
+        "같은 입력의 독립 질문 병렬 처리, 종속 질문 분리 권고"
+      ],
+      "sourceUrls": [
+        "https://developers.openai.com/api/docs/guides/decisions"
+      ],
+      "claim": "독립 질문은 묶을 수 있고 답에 따라 다음 질문이 달라지면 요청을 나눈다.",
+      "grade": "confirmed"
+    },
+    {
+      "evidence": [
+        "가이드가 Decisions 가격과 출력 토큰 과금 방식을 안내"
+      ],
+      "sourceUrls": [
+        "https://developers.openai.com/api/docs/guides/decisions"
+      ],
+      "claim": "Decisions의 uncached input은 백만 토큰당 $0.10이고 출력 토큰은 과금하지 않는다고 안내한다.",
+      "grade": "confirmed"
+    },
+    {
+      "evidence": [
+        "조직 사용량 문서가 num_model_requests 필드를 정의"
+      ],
+      "sourceUrls": [
+        "https://developers.openai.com/api/reference/resources/admin/subresources/organization/subresources/usage/methods/decisions"
+      ],
+      "claim": "num_model_requests는 질문 수가 아니라 모델 요청 횟수를 센다.",
+      "grade": "confirmed"
+    },
+    {
+      "evidence": [
+        "API 가이드가 Responses Structured Outputs와 사용 목적을 구분"
+      ],
+      "sourceUrls": [
+        "https://developers.openai.com/api/docs/guides/decisions"
+      ],
+      "claim": "자체 JSON 스키마 생성은 Decisions보다 Responses API Structured Outputs에 맞는다.",
+      "grade": "confirmed"
+    }
+  ],
+  "numbers": [
+    {
+      "value": "2026-10-22",
+      "what": "정식 출시일",
+      "asOf": "OpenAI API changelog",
+      "sourceUrl": "https://developers.openai.com/api/docs/changelog"
+    },
+    {
+      "value": "400",
+      "what": "요청당 최대 질문 수",
+      "asOf": "2026-10-22 기준",
+      "sourceUrl": "https://developers.openai.com/api/docs/guides/decisions"
+    },
+    {
+      "value": "$0.10/1M uncached input tokens",
+      "what": "Decisions 입력 가격",
+      "asOf": "2026-10-25 공식 문서 확인",
+      "sourceUrl": "https://developers.openai.com/api/docs/guides/decisions"
+    }
+  ],
+  "dropped": [],
+  "cannotCover": [
+    "10배 빠르다는 설명의 비교 조건과 벤치마크 방법",
+    "개별 애플리케이션의 실제 지연 시간"
+  ],
+  "songs": []
+}

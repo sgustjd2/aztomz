@@ -1,7 +1,7 @@
 {
   "keyword": "쪽파 손질법·보관법",
   "categoryId": "life-info",
-  "searchedAt": "2026-10-29",
+  "searchedAt": "2026-10-30",
   "queries": [
     "쪽파 손질법 보관법 냉동 농촌진흥청 농사로",
     "쪽파 대파 실파 차이 고르는법 제철 aT 농식품 정보",
@@ -9,7 +9,12 @@
     "쪽파 냉동 보관 방법 송송 썰어 냉동 일수 지자체 농업기술센터",
     "농식품올바로 쪽파 보관 손질 foodnara.go.kr",
     "농사로 제철 농산물 쪽파 고르는 법 보관 방법 영양",
-    "김장 재료 쪽파 손질 보관 농업기술센터 김장 가이드"
+    "김장 재료 쪽파 손질 보관 농업기술센터 김장 가이드",
+    "green onions scallions storage Purdue Extension damp paper towel one week",
+    "Texas A&M Extension green onions storage freezing texture",
+    "University of Minnesota home vegetable storage perforated bags green onions",
+    "Oregon State University Storing Food safety quality green onions refrigerator 35 40 F",
+    "University of Wisconsin Extension green onion refrigerator storage scallions"
   ],
   "sources": [
     {
@@ -61,7 +66,7 @@
       "host": "www.10000recipe.com",
       "tier": "blog",
       "publishedAt": "2023-03-18",
-      "body": "만개의레시피 사용자 구름달빛, 등록 2023-03-18, 수정 2023-09-14 (복사 금지 페이지라 요약본). 손질: 뿌리 끝을 다듬고 시든 겉잎을 떼고 흐르는 물에 흙을 씻는다, 장갑 착용 권장. 보관 전 물기를 완전히 닦는다. 큰 단은 반으로 자른다. 키친타월로 감싸 지퍼백에 소분. 냉동은 가능하나 쪽파가 질겨진다고 서술. 손질해 두면 '한 달이 편안해요'라고 서술(개인 경험, 일수 근거 없음). 냉장 온도·일수 수치 없음.",
+      "body": "만개의레시피 사용자 구름달빛, 등록 2023-03-18, 수정 2023-09-14 (복사 금지 페이지라 요약본). 손질: 뿌리 끝을 다듬고 시든 겉잎을 떼고 흐르는 물에 흙을 씻는다, 장갑 착용 권장. 보관 전 물기를 완전히 닦는다. 큰 단은 반으로 자른다. 키친타월로 감싸 지퍼백에 소분. 냉동은 가능하나 쪽파가 질겨진다고 서술. 손질해 두면 '한 달이 편안해요'라고 서술(개인 경험, 일수 근거 없음). 냉장 온도·일수 수치 없음. 공식 보관시험이나 품질자료를 함께 제시하지 않아 한 달은 개인 경험에 한정해 읽어야 한다. 작성자 개인 경험을 적은 레시피형 자료이지 보관기간 측정 결과는 아니다.",
       "facts": [
         "손질: 뿌리 끝 다듬기, 시든 겉잎 제거, 흐르는 물 세척 후 물기 완전 제거",
         "키친타월 감싸 지퍼백 소분 보관",
@@ -94,6 +99,89 @@
         "냉장 며칠 보관 시 하루 1회 점검, 구체 일수 없음",
         "기사가 전한 식약처 위험온도대 '약 4~60도' — 식약처 원문 미확인"
       ]
+    },
+    {
+      "title": "onion, green onion, scallion — Purdue Extension FoodLink",
+      "url": "https://extension.purdue.edu/foodlink/food.php?food=onion,+green+onion,+scallion",
+      "host": "extension.purdue.edu",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "Purdue Extension FoodLink의 green onion/scallion 안내. 이 페이지는 green onion을 좁고 흰 밑동과 녹색 잎을 함께 쓰는 묶음 채소로 설명하고, spring onion은 밑동이 더 크며 때로는 구근이 자라기 전의 어린 양파라고 구분한다. Green onions/scallions와 spring onions는 젖은 종이타월을 넣은 비닐봉지에 담아 냉장고에 보관하면 약 1주일이라고 안내한다. 시들거나 누렇게 변한 잎은 사용하지 말라고 한다. 생채소는 생고기·육즙과 분리해 교차오염을 막으라고 안내한다. 이는 미국의 green onion/scallion 용어와 자료이며 한국 쪽파 품종에 그대로 동일한 보관기간을 보장하는 자료는 아니다.",
+      "facts": [
+        "Purdue Extension은 green onion/scallion을 젖은 종이타월을 넣은 비닐봉지에 담아 냉장하면 약 1주일 보관한다고 안내",
+        "시들거나 누렇게 변한 잎은 사용하지 말라고 안내",
+        "green onion/scallion과 밑동이 더 큰 spring onion을 구분하며, 미국 영어 명칭 설명을 한국 쪽파에 그대로 동일시할 수 없음",
+        "생채소는 생고기와 육즙에서 분리해 보관하라고 안내"
+      ]
+    },
+    {
+      "title": "Green Onions — Texas A&M AgriLife Extension",
+      "url": "https://aggie-horticulture.tamu.edu/food-technology/nutrition/green-onions/",
+      "host": "aggie-horticulture.tamu.edu",
+      "tier": "official",
+      "publishedAt": "2009-01",
+      "body": "Texas A&M AgriLife Extension의 green onion 안내(페이지 표기 개정: 2009년 1월). 수확한 green onion은 냉장고에 넣고 수확 후 6~7일 안에 사용하는 방법을 제시한다. 고를 때는 잎이 신선하고 아삭하며 녹색인 것을 고르고, 노랗거나 시들거나 썩은 잎은 피하라고 한다. 냉동할 때는 다진 흰 부분과 녹색 부분을 냉동 봉투에 넣으면 되고 데칠 필요는 없다고 설명한다. 다만 해동하면 생것과 식감이 달라지므로 신선한 식감을 살리는 요리보다는 캐서롤이나 수프 육수처럼 익히는 요리에 쓰라고 한다. 이 보관일수는 수확 후 기준이며, 한국에서 구입한 쪽파의 구매 후 기간으로 단정할 수 없다.",
+      "facts": [
+        "Texas A&M AgriLife Extension은 수확한 green onion을 냉장해 수확 후 6~7일 안에 사용하라고 안내",
+        "신선하고 아삭한 녹색 잎을 고르고 노랗거나 시든 잎은 피하라고 안내",
+        "냉동 전 데칠 필요는 없지만 해동하면 식감이 변해 수프·캐서롤 같은 가열 요리에 쓰라고 안내"
+      ]
+    },
+    {
+      "title": "Harvesting and storing home garden vegetables — University of Minnesota Extension",
+      "url": "https://extension.umn.edu/garden-and-home/yard-and-garden/gardening-minnesota/harvesting-and-storing-home-garden-vegetables",
+      "host": "extension.umn.edu",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "University of Minnesota Extension의 가정 재배 채소 보관 안내. 채소의 장기 보관 환경을 차가우면서 습한 조건(32~40°F, 상대습도 약 95%) 등으로 구분하고, 가정 냉장고는 대체로 약 40°F이며 상대습도 50~60%로 차갑고 건조한 편이라고 설명한다. 구멍이 있는 비닐봉지는 냉장고에서 차갑고 습한 조건을 만들어 주지만 보관기간은 중간 정도라고 한다. 구멍 없는 봉지는 습도가 지나치게 높아져 결로와 곰팡이 또는 세균 증식을 유발할 수 있다고 경고한다. 이 자료는 green onion 전용 수명을 제시하지 않는 일반 채소 저장 설명이므로 쪽파의 보관 일수를 정하는 근거로 쓰지 않는다.",
+      "facts": [
+        "차갑고 습한 채소 보관 조건의 예시는 32~40°F와 상대습도 약 95%",
+        "가정 냉장고는 대체로 약 40°F, 상대습도 50~60%로 설명",
+        "구멍 없는 봉지는 결로·곰팡이·세균 증식 위험을 높일 수 있다고 안내",
+        "green onion 전용 저장기간은 제시하지 않음"
+      ]
+    },
+    {
+      "title": "Storing Food for Safety and Quality — Oregon State University Extension PNW 612",
+      "url": "https://extension.oregonstate.edu/sites/extd8/files/2023-08/pnw612.pdf",
+      "host": "extension.oregonstate.edu",
+      "tier": "official",
+      "publishedAt": "2023-08",
+      "body": "Oregon State University Extension의 PNW 612 식품 저장 안내서. 신선 과일·채소의 저장시간 표는 최상의 품질을 위한 대략적인 가이드라인이지 고정 규칙이 아니라고 명시한다. 채소 표에서 green onion은 35~40°F 냉장고에서 1~2주로 제시되며, 보관 전 씻지 말라고 덧붙인다. 표는 FoodSafety.gov FoodKeeper 자료를 바탕으로 각색되었다고 안내한다. 이 자료는 미국의 green onion 기준이며 한국 쪽파와 정확히 같은 품종·수확·유통조건이라고 볼 수 없다. 수확 직후부터 계산하는 수명과 구매 후 냉장 보관 기간도 구분해서 읽어야 한다.",
+      "facts": [
+        "Oregon State University Extension의 표는 green onion을 35~40°F에서 1~2주 냉장 보관한다고 제시",
+        "보관 전에 씻지 말라고 안내",
+        "저장시간은 최상의 품질을 위한 근사 가이드이며 고정된 규칙이 아니라고 명시",
+        "자료는 FoodSafety.gov FoodKeeper를 바탕으로 각색되었고 미국 green onion 기준"
+      ]
+    },
+    {
+      "title": "Scallion/Green Onion — University of Wisconsin-Extension fact sheet",
+      "url": "https://stcroix.extension.wisc.edu/files/2019/06/Scallion-Green-Onion-Cebollin-Cebolla-Verde-Fact-Sheet.pdf",
+      "host": "stcroix.extension.wisc.edu",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "University of Wisconsin-Extension의 영어·스페인어 green onion/scallion 안내서. 영어 쪽은 녹색 잎이 신선하고 밑동 끝이 약간 흰 줄기를 고르라고 안내하며, 냉장고에 7~10일 보관할 수 있다고 쓴다. 먹거나 조리하기 전에는 차가운 흐르는 물로 헹구고, 시든 잎을 제거한 뒤 흰 밑동과 잎 윗부분 약 2인치를 잘라 준비하라고 설명한다. 이 문서는 미국의 green onion/scallion 가정 관리 자료이며 한국 쪽파에 이 기간을 그대로 적용할 수는 없다. 그래도 보관기간이 연구·기관별로 일정하지 않다는 점을 확인하는 비교자료로 쓸 수 있다.",
+      "facts": [
+        "UW-Extension 자료는 green onion을 냉장고에서 7~10일 보관 가능하다고 안내",
+        "신선한 녹색 잎과 약간 흰 밑동을 고르고, 먹거나 조리하기 전 차가운 흐르는 물에 헹구라고 안내",
+        "준비할 때 시든 잎을 제거하고 흰 밑동 및 잎 윗부분 약 2인치를 잘라내라고 안내",
+        "미국 green onion/scallion에 대한 자료로 한국 쪽파 품종의 보관기간 보장은 아님"
+      ]
+    },
+    {
+      "title": "Veggie Bites: Green Onion — Polk County UW-Extension",
+      "url": "https://polk.extension.wisc.edu/files/2013/09/Green-Onion_Veggie-Bite-Polk-County.pdf",
+      "host": "polk.extension.wisc.edu",
+      "tier": "official",
+      "publishedAt": "2014-06",
+      "body": "Polk County UW-Extension의 Green Onion 안내서(원 자료 표기 2014년 6월). green onion은 양파가 아직 어리고 덜 자란 때 수확한 채소이며 scallion 또는 summer onion이라고도 불린다고 설명한다. 고를 때에는 잎이 선명하고 아삭한 것을 찾고 노랗거나 시들거나 썩은 잎은 피하라고 한다. 저장 전에 농산물을 씻지 말고, 먹기 직전에 찬 흐르는 물로 헹구며, 채소는 깨끗한 냉장고에 과일과 다른 서랍으로 분리해 두라고 안내한다. 손을 따뜻한 물과 비누로 20초 씻는 위생 안내도 포함한다. 한국 쪽파와 영어권 green onion의 품종 분류가 완전히 같다고 단정하지 않는다.",
+      "facts": [
+        "UW-Extension은 green onion을 어린 양파이며 scallion/summer onion이라고도 부른다고 설명",
+        "보관 전 씻지 않고 먹기 직전에 찬 흐르는 물로 헹구라고 안내",
+        "깨끗한 냉장고에 과일과 다른 서랍으로 나누어 보관하라고 안내",
+        "농산물 취급 전후 손을 비누와 따뜻한 물로 20초 씻으라고 안내"
+      ]
     }
   ],
   "conflicts": [
@@ -106,6 +194,16 @@
       "about": "냉동 시 품질",
       "a": "위키트리: 썰어 냉동하면 해동 때 조직 파괴로 식감·향 저하",
       "b": "검색 스니펫상 일부 레시피 글은 '얇게 썰어 냉동하면 오래 둔다'고 권장 (페이지 본문은 못 읽음)"
+    },
+    {
+      "about": "green onion/scallion 냉장 보관기간 (미국 대학 확장기관 자료; 한국 쪽파와 품종·유통조건 동일성 미확인)",
+      "a": "Purdue Extension은 젖은 종이타월을 넣은 비닐봉지에 넣어 냉장하면 약 1주일, Texas A&M은 수확 후 6~7일, UW-Extension fact sheet는 7~10일로 안내",
+      "b": "Oregon State University Extension은 35~40°F에서 1~2주를 최상 품질의 대략적 가이드로 제시하며, 자료 자체가 고정 규칙이 아니라고 밝힘. 저장 방식·수확부터 계산하는지 여부에 따라 차이가 있어 한국 쪽파에 단일 보관일수를 일반화하지 않음"
+    },
+    {
+      "about": "영어권 green onion/scallion과 한국 쪽파의 명칭 범위",
+      "a": "Purdue·UW 자료는 green onion/scallion을 어린 양파로 설명하고 spring onion과도 구분함",
+      "b": "농사로 자료는 쪽파 재배·종구 저장을 다루지만 가정용 쪽파 보관과 영어권 품종을 일대일 대응시키지 않음"
     }
   ],
   "unknowns": [
@@ -116,6 +214,8 @@
     "지자체 농업기술센터 김장 재료 손질·보관 안내 — 2차 검색에서 못 찾음",
     "소금 절임(쪽파 1kg당 굵은소금 약 2큰술, 30분 절임, 한 달 이상 보관) — 카페글 스니펫뿐, 본문 미열람이라 근거로 쓰지 말 것",
     "스니펫에 나온 마켓컬리 상품 설명(뿌리 밑 단단한 부분 제거, 물에 잠깐 담가 흙 불리기, 뿌리는 말려 육수) — 본문 페치 안 함, 쇼핑몰이라 보류",
-    "겉껍질 벗기는 법의 공식 설명 — 못 찾음"
+    "겉껍질 벗기는 법의 공식 설명 — 못 찾음",
+    "새로 확인한 Purdue·Texas A&M·UW·Oregon State 자료는 미국 green onion/scallion 중심. 한국 쪽파와 품종·유통조건이 같다는 1차 한국 자료는 여전히 미확인",
+    "공식 한국 자료로 가정용 쪽파 보관 기간·냉동 후 품질 변화를 수치화한 안내는 여전히 못 찾음"
   ]
 }

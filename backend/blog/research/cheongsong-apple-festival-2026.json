@@ -1,0 +1,14 @@
+{
+  "slug":"cheongsong-apple-festival-2026","keyword":"청송사과축제","researchDate":"2026-10-26",
+  "claims":[
+    {"claim":"The 20th Cheongsong Apple Festival is scheduled for Nov 4-8, 2026, 09:00-20:00, near Hyeonbiam on Yongjeoncheon in Cheongsong-eup; admission is free, some experiences may cost extra.","sourceUrls":["https://www.mcst.go.kr/site/s_culture/festival/festivalView.jsp?pRo=-1&pSeq=11910"]},
+    {"claim":"The official festival website lists Apple Nanta, Apple sorting lottery, Find the Golden Apple, apple parade and other participatory programs; daily schedule and parking/map details are linked separately.","sourceUrls":["https://csapplefestival.kr/","https://csapplefestival.kr/bbs/board.php?bo_table=program"]},
+    {"claim":"The Ministry of Culture festival listing warns that organizer circumstances may change the event.","sourceUrls":["https://www.mcst.go.kr/site/s_culture/festival/festivalView.jsp?pRo=-1&pSeq=11910"]}
+  ],
+  "sources":[
+    {"title":"지역축제 - 청송사과축제","url":"https://www.mcst.go.kr/site/s_culture/festival/festivalView.jsp?pRo=-1&pSeq=11910","host":"mcst.go.kr","body":"Ministry of Culture, Sports and Tourism festival listing: Nov 4-8, 2026, 09:00-20:00; Yongjeoncheon Hyeonbiam area in Cheongsong-eup; free entry with some paid experiences; hosted by Cheongsong-gun; contact 054-873-3686. Listed activities include Apple Nanta and Apple Sorting Lotto. Schedule subject to organizer changes."},
+    {"title":"청송사과축제","url":"https://csapplefestival.kr/","host":"csapplefestival.kr","body":"Official 20th Cheongsong Apple Festival website lists programs including Apple Nanta, Apple Sorting Lotto, Find the Golden Apple, apple parade and related activities; links to schedule, festival map, parking and directions."},
+    {"title":"축제 프로그램 안내","url":"https://csapplefestival.kr/bbs/board.php?bo_table=program","host":"csapplefestival.kr","body":"Official program page linked from the festival site; use to confirm current program dates/times before travel."}
+  ],
+  "cannotSay":["Do not state the price of each activity unless shown on current official schedule.","Do not assert shuttle frequency, public transport changes, parking capacity, or performers not verified on official current pages.","Official date/time may be changed by organizer; tell readers to recheck before departure."]
+}

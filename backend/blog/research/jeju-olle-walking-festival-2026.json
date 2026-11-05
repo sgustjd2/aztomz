@@ -1,0 +1,29 @@
+{
+  "keyword": "2026 제주올레걷기축제 일정 코스 참가비 현장접수 셔틀버스",
+  "categoryId": "life-info",
+  "notes": "2026-10-27 기준 사전 신청은 끝났지만 공식 안내에는 축제 기간 현장 접수 절차와 참가비가 적혀 있어 지금 여행 여부를 판단할 수 있어요. 3일간 19·20코스를 걷는 일정, 일반 참가비와 셔틀·식권 비용을 중심으로 안내해요. 청소년 할인 연령과 현장 잔여 접수량은 공식 안내끼리/시점별로 모호해 확정 표현을 피해야 해요.",
+  "sources": [
+    { "title": "2026 제주올레걷기축제 공식 홈페이지", "url": "https://contents.ollepass.org/static/festival_view/2026/01/index.html?name=festival", "host": "contents.ollepass.org", "body": "제주올레의 2026 제주올레걷기축제 전용 공식 안내 페이지예요. 축제 소개, 공지사항, 1일차·2일차·3일차, 교통정보, 여행준비 메뉴가 있어 일정별 행사 내용과 교통 정보를 찾아볼 수 있어요. 비짓제주 공식 축제 페이지가 이 전용 홈페이지를 상세 확인처로 연결하고 있어요. 웹에서 정적 본문으로 읽히지 않는 세부 내용은 비짓제주에 노출된 공식 행사 정보를 함께 대조하고, 참가 직전에는 동적 공지 페이지에서 변동사항을 다시 확인해야 해요.", "tier": "official" },
+    { "title": "비짓제주 - 2026 제주올레걷기축제", "url": "https://visitjeju.net/kr/festival/view?contentsid=CNTS_300000000014508", "host": "visitjeju.net", "body": "제주관광공사 비짓제주의 2026 제주올레걷기축제 안내예요. 일정은 2026년 11월 5일부터 7일까지 매일 오전 8시~오후 5시, 장소는 19·20코스 일대예요. 사전 신청은 7월 8일~10월 9일, 일반 참가비는 3만원이며 현장 접수는 매일 아침 등록부스에서 선착순으로 받는다고 안내해요. 현장 개인 참가비 3만5천원, 할인 3만원, 현장 조기 마감 가능성 및 점심 식권 현장 미판매도 적혀 있어요. 점심 식권 1만~1만2천원, 셔틀 편도 4천원이며 신청은 올레패스 앱으로만 진행한다고 되어 있어요.", "tier": "official" },
+    { "title": "비짓제주 - 제주올레길 19코스", "url": "https://www.visitjeju.net/kr/detail/view?contentsid=CNTS_000000000020312&menuId=DOM_000001718000000000", "host": "visitjeju.net", "body": "제주올레 19코스 조천-김녕 올레 안내예요. 조천 만세동산에서 출발해 신흥, 함덕, 북촌, 동복을 거쳐 김녕으로 이어지고 총 길이는 19.2km, 안내상 소요시간은 6~8시간이에요. 경로상 함덕 서우봉해변과 마을·해안 구간 등이 포함돼요. 축제 1일차 공식 행사 출발지는 조천운동장이므로 일상 코스 안내의 출발지와 행사 집결지를 혼동하면 안 돼요. 비짓제주는 올레 코스가 우회·변경될 수 있으니 방문 전 제주올레 공식 홈페이지를 확인하라고 안내해요.", "tier": "official" },
+    { "title": "비짓제주 - 제주올레길 20코스", "url": "https://www.visitjeju.net/kr/detail/view?contentsid=CNTS_000000000020313&menuId=DOM_000001718000000000", "host": "visitjeju.net", "body": "제주올레 20코스 김녕-하도 올레 안내예요. 김녕 서포구에서 출발해 김녕 성세기 해변, 환해장성, 월정해변, 행원포구, 좌가연대, 계룡동 마을회관을 지나 제주해녀박물관으로 이어져요. 총 17.4km, 예상 소요시간은 5~6시간으로 표기돼요. 해안과 마을, 포장 구간을 포함한다는 점을 미리 볼 수 있어요. 축제의 3일차 코스는 이 20코스를 역방향으로 걷는다고 행사 안내가 적고, 코스 우회·변경 가능성에 대비해 출발 전 제주올레 공식 공지를 확인하라는 안내가 있어요.", "tier": "official" }
+  ],
+  "claims": [
+    { "claim": "제16회 2026 제주올레걷기축제는 11월 5~7일 3일간 19·20코스에서 열린다.", "grade": "confirmed", "evidence": ["행사 시간은 매일 오전 8시~오후 5시로 안내돼요.", "1일차는 19코스 정방향, 2일차는 19·20코스 정방향, 3일차는 20코스 역방향 일정이에요."], "sourceUrls": ["https://www.visitjeju.net/kr/festival/view?contentsid=CNTS_300000000014508", "https://contents.ollepass.org/static/festival_view/2026/01/index.html?name=festival"] },
+    { "claim": "10월 27일 기준 사전 신청은 종료됐지만, 공식 안내에는 행사일 아침 현장 접수가 선착순으로 남아 있다.", "grade": "confirmed", "evidence": ["사전 신청 기간은 7월 8일~10월 9일이에요.", "현장 접수는 축제 기간 매일 아침 등록부스에서 선착순으로 받으며 조기 마감될 수 있어요."], "sourceUrls": ["https://visitjeju.net/kr/festival/view?contentsid=CNTS_300000000014508"] },
+    { "claim": "현장 참가 비용은 일반 개인 35,000원이며, 점심 식권과 셔틀 비용은 별도 안내를 확인해야 한다.", "grade": "confirmed", "evidence": ["현장 참가비 개인 35,000원, 할인 30,000원으로 안내돼요.", "점심 식권은 10,000~12,000원, 셔틀버스는 편도 4,000원이며 점심 식권은 현장 판매하지 않는다고 안내돼요."], "sourceUrls": ["https://visitjeju.net/kr/festival/view?contentsid=CNTS_300000000014508"] },
+    { "claim": "코스 자체의 길이와 안내 소요시간은 19코스 19.2km·6~8시간, 20코스 17.4km·5~6시간이다.", "grade": "confirmed", "evidence": ["비짓제주 19코스 안내가 19.2km·6~8시간으로 표기해요.", "비짓제주 20코스 안내가 17.4km·5~6시간으로 표기해요."], "sourceUrls": ["https://www.visitjeju.net/kr/detail/view?contentsid=CNTS_000000000020312&menuId=DOM_000001718000000000", "https://www.visitjeju.net/kr/detail/view?contentsid=CNTS_000000000020313&menuId=DOM_000001718000000000"] }
+  ],
+  "numbers": [
+    { "what": "축제 기간", "value": "2026-11-05~2026-11-07", "asOf": "2026-10-27 공식 안내 확인", "sourceUrl": "https://visitjeju.net/kr/festival/view?contentsid=CNTS_300000000014508" },
+    { "what": "축제 운영시간", "value": "매일 08:00~17:00", "asOf": "2026-10-27 공식 안내 확인", "sourceUrl": "https://visitjeju.net/kr/festival/view?contentsid=CNTS_300000000014508" },
+    { "what": "일반 사전 참가비", "value": "30,000원", "asOf": "사전 접수 기간 종료", "sourceUrl": "https://visitjeju.net/kr/festival/view?contentsid=CNTS_300000000014508" },
+    { "what": "일반 현장 참가비", "value": "35,000원", "asOf": "2026-10-27 공식 안내 확인", "sourceUrl": "https://visitjeju.net/kr/festival/view?contentsid=CNTS_300000000014508" },
+    { "what": "셔틀버스", "value": "편도 4,000원", "asOf": "2026-10-27 공식 안내 확인", "sourceUrl": "https://visitjeju.net/kr/festival/view?contentsid=CNTS_300000000014508" },
+    { "what": "제주올레 19코스 일반 코스 안내", "value": "19.2km, 6~8시간", "asOf": "비짓제주 코스 안내", "sourceUrl": "https://www.visitjeju.net/kr/detail/view?contentsid=CNTS_000000000020312&menuId=DOM_000001718000000000" },
+    { "what": "제주올레 20코스 일반 코스 안내", "value": "17.4km, 5~6시간", "asOf": "비짓제주 코스 안내", "sourceUrl": "https://www.visitjeju.net/kr/detail/view?contentsid=CNTS_000000000020313&menuId=DOM_000001718000000000" }
+  ],
+  "dropped": [],
+  "cannotCover": ["현장 접수 잔여 인원과 조기 마감 여부", "셔틀버스의 정확한 정류장·운행 시각 및 잔여 좌석", "비짓제주 내부에서 서로 다르게 표기된 할인 청소년 출생연도 기준", "기상, 도로·코스 당일 통제 여부"],
+  "songs": []
+}

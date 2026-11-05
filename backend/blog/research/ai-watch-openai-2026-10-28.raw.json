@@ -1,0 +1,88 @@
+{
+  "keyword": "OpenAI Oracle ChatGPT enterprise apps partnership",
+  "categoryId": "ai-company-watch",
+  "searchedAt": "2026-10-28",
+  "queries": [
+    "OpenAI Oracle apps in ChatGPT October 27 2026 official announcement",
+    "site:openai.com/index/oracle-apps-in-chatgpt Oracle AI Workspace",
+    "site:openai.com/index/openai-on-oracle-cloud Oracle Marketplace",
+    "site:openai.com/index/oracle ChatGPT Codex Oracle October 2026",
+    "site:help.openai.com connected apps availability workspace permissions"
+  ],
+  "sources": [
+    {
+      "title": "OpenAI expands partnership with Oracle to bring its apps to ChatGPT",
+      "url": "https://openai.com/index/oracle-apps-in-chatgpt/",
+      "host": "openai.com",
+      "tier": "official",
+      "publishedAt": "2026-10-27",
+      "body": "OpenAI says it and Oracle are bringing Oracle applications and data into ChatGPT and using OpenAI models and products to power new Oracle offerings. Oracle is developing Oracle AI Workspace to integrate Oracle applications and data into ChatGPT; the described goal is for users to state a task, find information, and complete approved workflows in one place. The release lists Oracle AI Security Mesh, Oracle AI SMB Bundle, and Oracle App Composer as related offerings. Oracle customers in the United States can purchase OpenAI API, Codex, and ChatGPT Work through Oracle Marketplace using eligible Oracle Universal Credits. OpenAI also reports Oracle has 130,000 active ChatGPT users and more than 95,000 active Codex users; its recruiting team shortened one market-research preparation task from two to four days to 15–20 minutes. The release describes the experience as a goal and Oracle AI Workspace as under development, not a generally available ChatGPT feature.",
+      "facts": [
+        "The announcement is dated October 27, 2026.",
+        "Oracle AI Workspace is described as under development and intended to integrate Oracle applications and data into ChatGPT.",
+        "Oracle customers in the United States can purchase OpenAI API, Codex, and ChatGPT Work through Oracle Marketplace using eligible Oracle Universal Credits.",
+        "OpenAI reports 130,000 active ChatGPT users and more than 95,000 active Codex users at Oracle.",
+        "OpenAI reports recruiting market research preparation changed from two to four days to 15–20 minutes."
+      ]
+    },
+    {
+      "title": "Access OpenAI models and Codex through your Oracle cloud commitment",
+      "url": "https://openai.com/index/openai-on-oracle-cloud/",
+      "host": "openai.com",
+      "tier": "official",
+      "publishedAt": "2026-06-10",
+      "body": "OpenAI's June 10, 2026 announcement describes a partnership intended to make OpenAI models and Codex accessible through Oracle Cloud Infrastructure purchasing arrangements. An August 7, 2026 update says Oracle customers can purchase OpenAI API, Codex, and ChatGPT Work through Oracle Marketplace using eligible Oracle Universal Credits and existing procurement processes. At the time of that update, OpenAI offerings through Oracle Marketplace were available in the United States, with additional regions described as coming soon. The page frames the arrangement around existing enterprise procurement and governance systems and directs customers to Oracle sales for timing and availability details. This supplies context for the October 27 expansion while not proving a new global launch.",
+      "facts": [
+        "The original post was dated June 10, 2026 and updated August 7, 2026.",
+        "The August update listed the United States as the then-current Oracle Marketplace availability region.",
+        "Eligible Oracle Universal Credits may be used to purchase the listed OpenAI offerings through Oracle Marketplace."
+      ]
+    },
+    {
+      "title": "How Oracle turns days of work into minutes with ChatGPT and Codex",
+      "url": "https://openai.com/index/oracle/",
+      "host": "openai.com",
+      "tier": "official",
+      "publishedAt": "2026-10-08",
+      "body": "OpenAI's October 8, 2026 customer story describes Oracle's internal use of ChatGPT Work and Codex across recruiting, engineering, and operations. It reports 130,000 active ChatGPT users and more than 95,000 active Codex users at Oracle. The Oracle Applications Lab built an ontology of business objects, relationships, and rules so Codex could turn plain-language questions into SQL queries and return analyses, reports, or applications. The story says site reliability engineers use Codex to gather incident context and retrieve playbooks; an Oracle executive says a simple incident that used to take an hour can be handled in minutes. The story also emphasizes that humans remain responsible for system design, security, architecture, and output quality. This is a customer case study, not an independent measurement of typical results.",
+      "facts": [
+        "The customer story is dated October 8, 2026.",
+        "It reports 130,000 active ChatGPT users and more than 95,000 active Codex users at Oracle.",
+        "It describes an Oracle Applications Lab system that converts natural-language business requests into SQL-backed answers.",
+        "An Oracle executive says a simple incident previously taking an hour can be handled in minutes; this is a reported customer example."
+      ]
+    },
+    {
+      "title": "Connected apps in ChatGPT",
+      "url": "https://help.openai.com/en/articles/11487775-connected-apps-in-chatgpt",
+      "host": "help.openai.com",
+      "tier": "official",
+      "publishedAt": "2026-10-28",
+      "body": "OpenAI's help article says connected apps bring information and supported actions from other services into ChatGPT. Availability depends on the app, plan, region, workspace, role, model, and interface. For managed workspaces, administrator settings and role permissions can control availability; provider authorization and account access may also be required. The help article distinguishes app permissions from the underlying access granted by the app and connected account. It also says app capabilities differ by integration, and some actions may require user approval. The article was updated shortly before this research, so it documents current general controls but does not establish that Oracle AI Workspace is already available or define its launch date.",
+      "facts": [
+        "App availability can depend on plan, region, workspace, role, model, interface, and the app itself.",
+        "Administrator controls, role permissions, and provider authorization can affect access.",
+        "The help page does not specify an Oracle AI Workspace launch date."
+      ]
+    },
+    {
+      "title": "ChatGPT Enterprise and Edu release notes — Manage plugins and marketplaces in Admin console",
+      "url": "https://help.openai.com/en/articles/10128477-chatgpt-enterprise-and-edu-release-notes",
+      "host": "help.openai.com",
+      "tier": "official",
+      "publishedAt": "2026-10-01",
+      "body": "OpenAI's Enterprise and Edu release notes include an October 1, 2026 entry saying Enterprise workspace owners and administrators can manage plugins and marketplaces in the Admin console. The notes say apps remain available in Workspace settings and that existing workspace permissions and app access controls continue to apply. This provides current product-governance context for the Oracle announcement: integrations in managed ChatGPT workspaces are subject to organization-level controls. The release note is not Oracle-specific and does not confirm that every Oracle integration, user plan, or region can use the new capability.",
+      "facts": [
+        "The release notes include an October 1, 2026 Enterprise Admin console update for plugins and marketplaces.",
+        "The note says existing workspace permissions and app access controls continue to apply.",
+        "The note does not announce Oracle AI Workspace availability."
+      ]
+    }
+  ],
+  "conflicts": [],
+  "unknowns": [
+    "OpenAI and Oracle do not state a launch date for Oracle AI Workspace in the October 27 announcement.",
+    "The announcement does not list the Oracle application modules, supported ChatGPT plans, or rollout regions for Oracle AI Workspace.",
+    "The reported Oracle user counts and time savings are company-reported examples, not independent comparative measurements."
+  ]
+}

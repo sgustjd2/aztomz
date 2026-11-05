@@ -1,0 +1,137 @@
+{
+  "keyword": "굴 가열조리용 표시와 안전한 섭취법",
+  "categoryId": "life-info",
+  "notes": "노로바이러스 계절에 굴 포장 용도 표시와 공식 가열 기준, 손씻기 순서를 안내한다. 증상 진단·치료는 다루지 않는다.",
+  "sources": [
+    {
+      "title": "질병관리청 국가건강정보포털 — 급성 바이러스 위장관염",
+      "url": "https://health.kdca.go.kr/healthinfo/biz/health/gnrlzHealthInfo/gnrlzHealthInfo/gnrlzHealthInfoView.do?cntnts_sn=6756",
+      "host": "health.kdca.go.kr",
+      "tier": "official",
+      "publishedAt": "2026-04-03 업데이트",
+      "body": "질병관리청 국가건강정보포털은 굴이나 조개 등 어패류를 흐르는 수돗물에 씻고 85℃ 이상에서 1분 이상 가열해 먹도록 안내해요. 포장에 ‘가열조리용’ 또는 ‘익혀 먹는 용도’ 표시가 있으면 생식하지 말고 반드시 가열해야 한다고 명시합니다. 노로바이러스 예방 수칙에는 흐르는 물에 비누로 30초 이상 손 씻기와 조리 공간·도구 위생 관리도 포함돼요. 관련 건강정보는 2025년 7월 등록, 2026년 4월 3일 업데이트로 표시돼 있어요.",
+      "facts": [
+        "‘가열조리용’ 굴은 생식하지 않고 반드시 가열한다.",
+        "어패류는 85℃ 이상에서 1분 이상 익힌다.",
+        "손은 흐르는 물과 비누로 30초 이상 씻는다."
+      ]
+    },
+    {
+      "title": "식품안전나라 — 노로바이러스 예방 안내",
+      "url": "https://www.foodsafetykorea.go.kr/portal/board/boardDetail.do?bbs_no=bbs001&menu_grp=MENU_NEW01&menu_no=3120&ntctxt_no=22269",
+      "host": "foodsafetykorea.go.kr",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "식품안전나라 노로바이러스 안내는 바이러스에 오염된 패류나 지하수 등을 가열 조리하지 않고 섭취하면 감염될 수 있다고 설명해요. 굴은 가능하면 85℃에서 1분 이상 익혀 먹고, 식수로 지하수를 쓰는 경우 끓여 마시라고 안내합니다. 설사 증상이 있는 사람은 2차 감염 방지를 위해 음식을 조리하지 않아야 한다고 설명해요. 채소와 과일은 가열하지 않고 먹을 때 세척하고 흐르는 물로 헹구는 수칙을 따로 제시해 굴의 조리 안내와 구분합니다.",
+      "facts": [
+        "굴은 가능하면 85℃에서 1분 이상 익혀 먹는다.",
+        "지하수를 식수로 쓰면 끓여 마신다.",
+        "설사 증상자는 음식을 조리하지 않는다."
+      ]
+    },
+    {
+      "title": "질병관리청 — 노로바이러스 감염증 예방수칙 보도자료",
+      "url": "https://www.kdca.go.kr/kdca/2847/subview.do?enc=Zm5jdDF8QEB8JTJGYmJzJTJGa2RjYSUyRjQxJTJGMzA5ODU2JTJGYXJ0Y2xWaWV3LmRvJTNGcGFzc3dvcmQlM0QlMjZyZ3NCZ25kZVN0ciUzRCUyNmZpbmRPcG53cmQlM0QlMjZyZ3NFbmRkZVN0ciUzRCUyNmZpbmRUeXBlJTNEJTI2ZmluZENsU2VxJTNEJTI2cGFnZSUzRDQlMjY",
+      "host": "kdca.go.kr",
+      "tier": "official",
+      "publishedAt": "2026-01-23",
+      "body": "질병관리청의 2026년 1월 보도참고자료는 2025년 11월 첫째 주부터 노로바이러스 환자가 증가해 2026년 1월 셋째 주 표본감시에서 617명을 기록했다고 설명해요. 감염경로로 오염된 물·어패류 섭취뿐 아니라 환자 접촉과 구토물 비말 전파도 들고 있어요. 예방으로 비누를 사용해 30초 이상 손 씻기, 식재료 세척, 85℃ 이상에서 1분 이상 충분히 익히기, 환자 증상 소실 뒤 48시간까지 등원·등교·출근 자제와 환경 소독을 권고해요. 수치는 당시 표본감시 결과이며 2026년 10월 현재 상황을 뜻하지 않습니다.",
+      "facts": [
+        "2026-01의 617명은 과거 표본감시 수치라 현재 발생량으로 쓰지 않는다.",
+        "오염된 어패류 섭취와 사람 간 전파가 감염 경로다.",
+        "예방수칙은 30초 손씻기와 85℃·1분 가열 등을 포함한다."
+      ]
+    },
+    {
+      "title": "식품안전나라 — 노로바이러스 식중독 예방법",
+      "url": "https://www.foodsafetykorea.go.kr/portal/board/boardDetail.do?bbs_no=bbs077&menu_grp=MENU_NEW05&menu_no=2869&ntctxt_no=10714",
+      "host": "foodsafetykorea.go.kr",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "식품안전나라의 예방 안내는 화장실 사용 후, 조리 전, 외출 후 비누로 손을 씻고 조리기구를 열탕 또는 염소 소독하며 굴 등 어패류는 생식을 삼가라고 설명해요. 음식물은 내부까지 충분히 익도록 85℃에서 1분 이상 가열하라고 안내합니다. 지하수는 끓여 마시고, 조리종사자가 배탈·설사·구토 증상을 보이면 보건소 또는 의료기관에 신속히 신고하라는 안내도 담겨 있어요. 이 자료는 예방 일반 원칙에 대한 공식 안내로, 개별 굴 제품의 품질이나 안전을 보증하는 검사는 아닙니다.",
+      "facts": [
+        "굴 등 어패류 생식을 삼가고 내부까지 익힌다.",
+        "조리 도구는 열탕 또는 염소 소독한다.",
+        "증상 있는 조리 종사자는 신고 안내에 따른다."
+      ]
+    },
+    {
+      "title": "질병관리청 카드뉴스 — 노로바이러스 감염증 개요",
+      "url": "https://www.kdca.go.kr/kdca/2853/subview.do?enc=Zm5jdDF8QEB8JTJGYmJzJTJGa2RjYSUyRjQ1JTJGMjE2NTMzJTJGYXJ0Y2xWaWV3LmRvJTNGcGFzc3dvcmQlM0QlMjZyZ3NCZ25kU3RyJTNEJTI2ZmluZFdvcmQlM0QlMjZyZ3NFbmRkZVN0ciUzRCUyNmZpbmRUeXBlJTNEc2olMjZmaW5kQ2xTZXElM0QxJTI2",
+      "host": "kdca.go.kr",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "질병관리청 카드뉴스는 노로바이러스 감염증의 전파 경로에 오염된 음식 섭취와 사람 간 2차 전파가 포함될 수 있다고 안내해요. 증상으로는 설사·구토·복통과 낮은 발열, 탈수 가능성을 정리하고, 예방 방법으로 흐르는 물에 비누로 30초 이상 손 씻기, 음식을 익혀 먹기, 물 끓여 마시기를 제시합니다. 이 자료는 카드뉴스 페이지에서 내용을 확인할 수 있고 세부 치료를 대신하지 않아요. 증상이 생겼을 때는 공식 건강정보와 의료기관 안내를 참고해야 해요.",
+      "facts": [
+        "노로바이러스는 오염 음식과 사람 간 전파로 감염될 수 있다.",
+        "설사·구토·복통과 탈수가 주요 확인 증상이다.",
+        "30초 손 씻기와 음식 가열을 예방수칙으로 제시한다."
+      ]
+    },
+    {
+      "title": "새우 손질법 내장 제거, 레시피 3단계와 식약처 재냉동 금지 안내",
+      "url": "https://blog.naver.com/shin1133/224437863060",
+      "host": "blog.naver.com",
+      "tier": "internal",
+      "publishedAt": "2026-10",
+      "body": "네이버에 게시된 새우 손질 안내 글로, 내장 제거와 손질 단계 및 식품의약품안전처 재냉동 안내를 다룹니다. 굴 안전 글과는 별개의 해산물 손질 정보이며, 이 링크는 해당 블로그에 실제로 발행된 글을 가리킵니다. 여기의 굴 가열 온도·시간 안내는 식품안전나라와 질병관리청 공식 건강정보가 근거입니다. 해산물을 손질하는 과정에서 다른 식재료를 구분하는 방법을 함께 참고할 수 있어요.",
+      "facts": [
+        "네이버에 실제 게시된 새우 손질 안내 글이다."
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "evidence": [
+        "질병관리청은 가열조리용 표시가 있으면 생식하지 말고 가열하도록 안내"
+      ],
+      "sourceUrls": [
+        "https://health.kdca.go.kr/healthinfo/biz/health/gnrlzHealthInfo/gnrlzHealthInfo/gnrlzHealthInfoView.do?cntnts_sn=6756"
+      ],
+      "claim": "가열조리용 표시 굴은 생으로 먹지 말고 가열해야 한다.",
+      "grade": "confirmed"
+    },
+    {
+      "evidence": [
+        "질병관리청과 식품안전나라가 같은 온도·시간 안내"
+      ],
+      "sourceUrls": [
+        "https://health.kdca.go.kr/healthinfo/biz/health/gnrlzHealthInfo/gnrlzHealthInfo/gnrlzHealthInfoView.do?cntnts_sn=6756",
+        "https://www.foodsafetykorea.go.kr/portal/board/boardDetail.do?bbs_no=bbs001&menu_grp=MENU_NEW01&menu_no=3120&ntctxt_no=22269"
+      ],
+      "claim": "굴·조개 등 어패류는 85℃ 이상에서 1분 이상 가열해 먹도록 권고된다.",
+      "grade": "confirmed"
+    },
+    {
+      "evidence": [
+        "질병관리청은 흐르는 물과 비누로 30초 이상 손 씻기를 안내"
+      ],
+      "sourceUrls": [
+        "https://health.kdca.go.kr/healthinfo/biz/health/gnrlzHealthInfo/gnrlzHealthInfo/gnrlzHealthInfoView.do?cntnts_sn=6756"
+      ],
+      "claim": "굴을 손질하기 전후에는 흐르는 물에 비누로 30초 이상 손을 씻는다.",
+      "grade": "confirmed"
+    }
+  ],
+  "numbers": [
+    {
+      "value": "85℃ 이상, 1분 이상",
+      "what": "굴·조개 등 어패류 가열 안내",
+      "asOf": "KDCA 건강정보 및 MFDS 식품안전나라",
+      "sourceUrl": "https://health.kdca.go.kr/healthinfo/biz/health/gnrlzHealthInfo/gnrlzHealthInfo/gnrlzHealthInfoView.do?cntnts_sn=6756"
+    },
+    {
+      "value": "30초 이상",
+      "what": "흐르는 물과 비누로 손 씻기",
+      "asOf": "KDCA 국가건강정보포털",
+      "sourceUrl": "https://health.kdca.go.kr/healthinfo/biz/health/gnrlzHealthInfo/gnrlzHealthInfo/gnrlzHealthInfoView.do?cntnts_sn=6756"
+    }
+  ],
+  "dropped": [],
+  "cannotCover": [
+    "제품 표시 없이 생식 가능 여부를 단정하지 않는다.",
+    "2026년 1월 환자 수를 2026년 10월 현재 통계인 것처럼 쓰지 않는다.",
+    "노로바이러스 진단·치료를 안내하지 않는다."
+  ],
+  "songs": []
+}

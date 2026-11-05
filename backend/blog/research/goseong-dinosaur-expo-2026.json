@@ -1,0 +1,240 @@
+{
+  "slug": "goseong-dinosaur-expo-2026",
+  "curatedAt": "2026-10-28",
+  "honestFraming": "2026-10-28 기준 폐막일 11월 1일까지 남은 기간을 안내한다. 운영자 공식 사이트의 요일별 시간과 요금은 문체부·한국관광공사 표기와 다르다. 운영자 페이지를 현재 방문 실무 안내의 우선 자료로 제시하되, 가격 차이는 숨기지 않고 결제 전 공식 예매 페이지에서 재확인하도록 한다.",
+  "themes": [
+    {
+      "key": "date-place",
+      "title": "행사 기간과 장소",
+      "claim": "2026 경남고성공룡세계엑스포는 9월 22일부터 11월 1일까지 당항포관광지에서 열린다.",
+      "facts": [
+        {
+          "fact": "운영자 공식 사이트는 2026-09-22~2026-11-01 행사 기간을 안내한다.",
+          "age": "current",
+          "evidence": "official",
+          "sourceUrls": [
+            "https://www.gngsctf.or.kr/dinoexpo"
+          ]
+        },
+        {
+          "fact": "문체부도 기간을 2026-09-22~2026-11-01, 장소를 당항포관광지로 표기한다.",
+          "age": "current",
+          "evidence": "official",
+          "sourceUrls": [
+            "https://www.mcst.go.kr/site/s_culture/festival/festivalView.jsp?pRo=20&pSeq=10181"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "last-days",
+      "title": "10월 28일 기준 방문 가능일",
+      "claim": "10월 28일 기준 행사 종료까지 10월 29~31일과 11월 1일이 남아 있다.",
+      "facts": [
+        {
+          "fact": "행사 종료일이 2026-11-01이므로 10월 28일 이후 10월 29일, 30일, 31일과 11월 1일이 일정상 남아 있다.",
+          "age": "current",
+          "evidence": "official",
+          "sourceUrls": [
+            "https://www.gngsctf.or.kr/dinoexpo"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "hours",
+      "title": "운영자 요일별 운영시간",
+      "claim": "운영자 공식 사이트는 평일 09:00~17:00, 주말 야간개장 09:00~21:00으로 안내하며 입장 마감은 각각 16:00와 20:00이다.",
+      "facts": [
+        {
+          "fact": "공식 행사 홈페이지 표기는 평일 월~금 09:00~17:00, 발권·입장 09:00~16:00이다.",
+          "age": "current",
+          "evidence": "official",
+          "sourceUrls": [
+            "https://www.gngsctf.or.kr/dinoexpo"
+          ]
+        },
+        {
+          "fact": "공식 행사 홈페이지 표기는 주말(토~일, 야간개장) 09:00~21:00, 발권·입장 09:00~20:00이다.",
+          "age": "current",
+          "evidence": "official",
+          "sourceUrls": [
+            "https://www.gngsctf.or.kr/dinoexpo"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "price-conflict",
+      "title": "입장료 공식 자료 불일치",
+      "claim": "운영자 홈페이지와 문체부·한국관광공사 페이지의 성인·어린이 금액이 다르므로 현재 결제 금액을 글에서 단정하지 않는다.",
+      "facts": [
+        {
+          "fact": "운영자 공식 사이트는 대인 만19~64세 18,000원, 소인 36개월~18세 12,000원으로 표기한다.",
+          "age": "current",
+          "evidence": "official",
+          "sourceUrls": [
+            "https://www.gngsctf.or.kr/dinoexpo"
+          ]
+        },
+        {
+          "fact": "문체부 및 VISITKOREA는 대인 19,000원, 소인/어린이 13,000원으로 표기한다.",
+          "age": "current",
+          "evidence": "official",
+          "sourceUrls": [
+            "https://www.mcst.go.kr/site/s_culture/festival/festivalView.jsp?pRo=20&pSeq=10181",
+            "https://english.visitkorea.or.kr/svc/contents/contentsView.do?vcontsId=176330"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "exhibits",
+      "title": "공룡 중심 전시와 체험",
+      "claim": "공식 엑스포 안내에는 주제관 영상관·공룡 전시와 한반도 공룡발자국화석관, AR·VR 관련 공간이 소개되어 있다.",
+      "facts": [
+        {
+          "fact": "주제관에는 4D영상관, 사파리영상관, 공룡전시관, XR존이 안내되어 있다.",
+          "age": "current",
+          "evidence": "official",
+          "sourceUrls": [
+            "https://www.gngsctf.or.kr/dinoexpo"
+          ]
+        },
+        {
+          "fact": "VISITKOREA는 공룡발자국 화석관과 AR/VR관 등 전시·체험 시설을 소개한다.",
+          "age": "current",
+          "evidence": "official",
+          "sourceUrls": [
+            "https://english.visitkorea.or.kr/svc/contents/contentsView.do?vcontsId=176330"
+          ]
+        }
+      ]
+    }
+  ],
+  "numbers": [
+    {
+      "value": "2026-09-22~2026-11-01",
+      "unit": "행사 기간",
+      "asOf": "2026-10-28 확인",
+      "sourceUrls": [
+        "https://www.gngsctf.or.kr/dinoexpo",
+        "https://www.mcst.go.kr/site/s_culture/festival/festivalView.jsp?pRo=20&pSeq=10181"
+      ]
+    },
+    {
+      "value": "09:00~17:00; 입장 마감 16:00",
+      "unit": "평일 운영",
+      "asOf": "2026-10-28 운영자 사이트 확인",
+      "sourceUrls": [
+        "https://www.gngsctf.or.kr/dinoexpo"
+      ]
+    },
+    {
+      "value": "09:00~21:00; 입장 마감 20:00",
+      "unit": "주말 야간개장 운영",
+      "asOf": "2026-10-28 운영자 사이트 확인",
+      "sourceUrls": [
+        "https://www.gngsctf.or.kr/dinoexpo"
+      ]
+    },
+    {
+      "value": "18,000원 / 12,000원",
+      "unit": "대인(만19~64세) / 소인(36개월~18세), 운영자 표기",
+      "asOf": "2026-10-28",
+      "sourceUrls": [
+        "https://www.gngsctf.or.kr/dinoexpo"
+      ]
+    },
+    {
+      "value": "19,000원 / 13,000원",
+      "unit": "대인 / 소인, 문체부·관광공사 표기",
+      "asOf": "2026-10-28 조회",
+      "sourceUrls": [
+        "https://www.mcst.go.kr/site/s_culture/festival/festivalView.jsp?pRo=20&pSeq=10181",
+        "https://english.visitkorea.or.kr/svc/contents/contentsView.do?vcontsId=176330"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "title": "경남고성공룡세계엑스포 공식 홈페이지",
+      "url": "https://www.gngsctf.or.kr/dinoexpo",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "공식 홈페이지에 2026년 경남고성공룡세계엑스포 기간은 2026년 9월 22일(화)부터 11월 1일(일)까지라고 표시되어 있다. 운영시간은 평일(월~금) 09:00~17:00, 발권 및 입장 09:00~16:00이며, 주말(토~일, 야간개장)은 09:00~21:00, 발권 및 입장 09:00~20:00이다. 관람요금은 대인(만 19~64세) 18,000원, 소인(36개월~18세) 12,000원이다. 전시시설 소개에는 주제관의 4D영상관·사파리영상관·공룡전시관·XR존, 한반도 공룡발자국화석관 등이 안내되어 있다. 홈페이지 표시 금액과 운영 일정은 조회 시점의 공식 안내이며 현장 운영은 변동될 수 있다."
+    },
+    {
+      "title": "문화체육관광부 지역축제 안내",
+      "url": "https://www.mcst.go.kr/site/s_culture/festival/festivalView.jsp?pRo=20&pSeq=10181",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "문화체육관광부 지역축제 페이지는 개최지역을 경상남도 고성군, 기간을 2026년 9월 22일부터 11월 1일까지, 장소를 당항포관광지로 안내한다. 페이지 표기 운영시간은 09:00~18:00이며 야간개장 시 22:00까지다. 요금은 유료로 대인 19,000원, 소인 13,000원이다. 권장 소요시간은 3~6시간, 연령 제한은 전 연령 가능으로 표시되어 있고 주최기관은 경남 고성군, 문의처는 경남고성공룡세계엑스포조직위원회 055-670-7491~3이다. 해당 페이지는 주최기관 사정으로 축제가 변경될 수 있다고 고지한다. 운영자 공식 홈페이지와 시간·요금 표시가 달라 날짜별 현행 안내 확인이 필요하다."
+    },
+    {
+      "title": "한국관광공사 VISITKOREA 영문 축제 안내",
+      "url": "https://english.visitkorea.or.kr/svc/contents/contentsView.do?vcontsId=176330",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "한국관광공사 VISITKOREA의 축제 안내는 행사 기간을 2026-09-22~2026-11-01, 장소를 Danghangpo Tourist Resort(당항포관광지), 주소를 경상남도 고성군 당항만로 1116으로 안내한다. 행사 운영 시간은 09:00~18:00이며 연장 운영일은 22:00까지라고 한다. 대인 19,000원, 어린이 13,000원으로 표기되어 있다. 설명에는 공룡 언덕, 캐릭터관, 공룡발자국 화석관, AR/VR관 등 전시·체험 시설과 행사·퍼레이드가 계획되어 있다고 적혀 있다. 페이지의 가격·시간 표기는 운영자 공식 사이트에 게시된 금액 및 요일별 시간표와 차이가 있으므로 이 글에서는 차이를 공개한다."
+    },
+    {
+      "title": "한국관광공사 VISITKOREA 한국어 행사 배경",
+      "url": "https://english.visitkorea.or.kr/svc/contents/contentsView.do?vcontsId=103944",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "한국관광공사 축제 소개는 경남 고성군 회화면 당항포관광지에서 열리는 공룡 주제 축제라고 설명한다. 고성군의 공룡화석 가치를 알리고 관광산업을 소개하기 위해 2006년부터 개최해 왔다고 적었다. 당항포관광지는 공룡테마존과 이순신테마존으로 구성되고 해안산책로·등산로·공룡발자국 탐방로 등 야외 테마 공원을 갖췄다고 소개한다. 주최는 경남 고성군, 2026년 운영 기관은 고성문화관광재단으로 안내한다. 2026년 축제를 10회째·20주년 행사로 소개하고 주제를 공룡과 떠나는 신나는 모험으로 적었다. 행사장과 야외 공간, 축제 성격을 파악하는 자료다. 개별 길의 현재 개방 여부나 소요시간은 해당 페이지가 보장하지 않는다."
+    },
+    {
+      "title": "경남고성공룡세계엑스포 전시 안내",
+      "url": "https://www.gngsctf.or.kr/index.goseong?menuCd=DOM_000000202002001002",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "운영자 공식 전시 안내는 한반도 공룡발자국화석관이 1,565㎡ 규모의 2층 시설이라고 설명한다. 전시품으로 공룡발자국 화석, 진품 화석, 작동 공룡(아기 공룡 인큐베이터), 5D 영상관을 열거하며 화석 발굴 현장과 연구소를 재현한 공간에서 디노G의 비밀을 찾는 구성이라고 소개한다. 화석관 입장시간은 09:00~17:00로 표시돼 있다. 무료 5D 영상관의 상영 시작 시간은 10:00, 11:00, 13:00, 14:00, 15:00, 16:00, 16:30으로 표시된다. 이 자료는 화석관 시설과 시간표를 확인하는 데 쓰며 회차 변동 여부는 현장 안내를 다시 확인한다."
+    }
+  ],
+  "conflicts": [
+    {
+      "topic": "입장 요금",
+      "sources": [
+        {
+          "url": "https://www.gngsctf.or.kr/dinoexpo",
+          "value": "대인 18,000원, 소인 12,000원"
+        },
+        {
+          "url": "https://www.mcst.go.kr/site/s_culture/festival/festivalView.jsp?pRo=20&pSeq=10181",
+          "value": "대인 19,000원, 소인 13,000원"
+        },
+        {
+          "url": "https://english.visitkorea.or.kr/svc/contents/contentsView.do?vcontsId=176330",
+          "value": "성인 19,000원, 어린이 13,000원"
+        }
+      ],
+      "resolution": "차이를 그대로 공개하고, 결제 전 운영자 공식 예매·현장 안내에서 적용 금액을 확인하도록 한다."
+    },
+    {
+      "topic": "운영시간",
+      "sources": [
+        {
+          "url": "https://www.gngsctf.or.kr/dinoexpo",
+          "value": "평일 09:00~17:00, 주말 09:00~21:00, 발권·입장 마감 각 16:00·20:00"
+        },
+        {
+          "url": "https://www.mcst.go.kr/site/s_culture/festival/festivalView.jsp?pRo=20&pSeq=10181",
+          "value": "09:00~18:00, 야간개장 시 22:00"
+        }
+      ],
+      "resolution": "요일별로 구체화한 운영자 공식 안내를 우선 소개하되, 당일 변동 가능성이 있어 출발 전 행사 사이트를 다시 보도록 한다."
+    }
+  ],
+  "cannotCover": [
+    "당일 실시간 대기시간과 관람객 혼잡도",
+    "개별 교통편 운행 간격·임시 셔틀 운행 여부",
+    "운영자와 공공 관광페이지의 금액 차이를 만드는 할인·예매 조건이 무엇인지",
+    "당일 일부 전시·공연의 돌발 변경 여부"
+  ],
+  "unknowns": [
+    "고성군 및 운영자 자료의 가격 표기가 불일치하며, 확인 가능한 공개 페이지에서 차이 원인을 찾지 못했다.",
+    "주차요금과 2026년 임시 대중교통 안내는 확인 가능한 페이지에 명시되지 않았다."
+  ]
+}

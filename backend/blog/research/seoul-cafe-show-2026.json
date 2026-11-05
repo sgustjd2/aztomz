@@ -1,0 +1,14 @@
+{
+  "slug":"seoul-cafe-show-2026","keyword":"서울카페쇼2026, 서울카페쇼","researchDate":"2026-10-26",
+  "claims":[
+    {"claim":"The 25th Seoul International Cafe Show is scheduled for Nov 11-14, 2026 at COEX, all exhibition halls.","sourceUrls":["https://www.coex.co.kr/exhibitions/%EC%A0%9C25%ED%9A%8C-%EC%84%9C%EC%9A%B8%EC%B9%B4%ED%8E%98%EC%87%BC/?list_type=LIST&search_end_date=2026.11.12&search_start_date=2026.10.12&var_page=3"]},
+    {"claim":"Nov 11-12 are business days, Nov 13-14 public days; Friday closes at 18:00, Saturday at 16:00, with last entry 30 minutes before closing.","sourceUrls":["https://www.coex.co.kr/exhibitions/%EC%A0%9C25%ED%9A%8C-%EC%84%9C%EC%9A%B8%EC%B9%B4%ED%8E%98%EC%87%BC/?list_type=LIST&search_end_date=2026.11.12&search_start_date=2026.10.12&var_page=3"]},
+    {"claim":"COEX lists admission at 25,000 KRW for one day and 50,000 KRW for multiple days; ticket and event changes should be rechecked with the organizer.","sourceUrls":["https://www.coex.co.kr/exhibitions/%EC%A0%9C25%ED%9A%8C-%EC%84%9C%EC%9A%B8%EC%B9%B4%ED%8E%98%EC%87%BC/?list_type=LIST&search_end_date=2026.11.12&search_start_date=2026.10.12&var_page=3"]}
+  ],
+  "sources":[
+    {"title":"제25회 서울카페쇼","url":"https://www.coex.co.kr/exhibitions/%EC%A0%9C25%ED%9A%8C-%EC%84%9C%EC%9A%B8%EC%B9%B4%ED%8E%98%EC%87%BC/?list_type=LIST&search_end_date=2026.11.12&search_start_date=2026.10.12&var_page=3","host":"coex.co.kr","body":"COEX event listing: Nov 11-14, 2026, all halls. Nov 11-12 10:00-18:00 business days; Nov 13 10:00-18:00 public day; Nov 14 10:00-16:00 public day; last entry 30 minutes before closing. One-day ticket 25,000 won; multi-day ticket 50,000 won. Exhibits include coffee, tea, bakery, raw materials, desserts, ice cream, chocolate, drinks/alcohol, equipment, interior, franchises/startup, kitchen appliances and foodservice business."},
+    {"title":"The 25th Seoul Int’l Cafe Show","url":"https://www.coex.co.kr/en/exhibitions/the-25th-seoul-intl-cafe-show/?list_type=LIST&search_end_date=2026.11.24&search_start_date=2026.10.24&var_page=1","host":"coex.co.kr","body":"Official English COEX page confirms Nov 11-14 dates, business/public day split, operating times, and listed admission."},
+    {"title":"Seoul International Cafe Show","url":"https://kor.cafeshow.com/kor/cafeshow/summary.asp","host":"cafeshow.com","body":"Official event organizer website, event overview and registration destination. Visit before travel for latest admission and exhibitor updates."}
+  ],
+  "cannotSay":["Do not call the event free; COEX lists paid admission.","Do not describe every day as open to the general public; the first two are business days.","No attendee numbers, booth count, shuttle, ticket inventory, or parking guarantee without an official current notice."]
+}

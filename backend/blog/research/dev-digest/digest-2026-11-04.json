@@ -1,0 +1,180 @@
+{
+  "collectedAt": "2026-11-04",
+  "days": 3,
+  "results": {
+    "geeknews": {
+      "source": "geeknews",
+      "fetchedOk": true,
+      "sourceUrl": "https://news.hada.io/rss/news",
+      "items": [
+        {
+          "title": "Deco My Tree - 친구들과 크리스마스 트리를 꾸미고 편지를 주고받는 무료 사이트",
+          "url": "",
+          "date": "2026-11-04T09:38:09.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Show GN: 처우 비교 계산기 - 이직 오퍼 3곳의 월 실수령액과 총보상을 나란히 비교하는 구글 시트",
+          "url": "",
+          "date": "2026-11-04T08:52:54.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Jelly Sheet - 천을 드래그하고 재질과 렌더링을 조절하는 인터랙티브 데모",
+          "url": "",
+          "date": "2026-11-04T08:31:28.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Show GN: 서울은 밤하늘에 별이 잘 안 보여서 그냥 만들었어요. 별자리 구경가요 eunha.io",
+          "url": "",
+          "date": "2026-11-04T08:12:44.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "C++26 승인 부결",
+          "url": "",
+          "date": "2026-11-04T06:33:00.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Show GN: Nico - 오른쪽 ⌘를 누르고 말하면 대신 일을 처리하는 Mac용 개인 에이전트",
+          "url": "",
+          "date": "2026-11-04T06:23:44.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "PostgreSQL의 내부 구조",
+          "url": "",
+          "date": "2026-11-04T05:31:46.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Show GN: 코딩하다 자세가 흐트러지면 거북이가 알려주는 앱, 모꼬 (Mac, Windows)",
+          "url": "",
+          "date": "2026-11-04T04:55:48.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "NIKKE PC 런처 침해 사고",
+          "url": "",
+          "date": "2026-11-04T04:26:17.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Flipper One Kickstarter 준비와 사전 주문 개시",
+          "url": "",
+          "date": "2026-11-04T03:33:05.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Show HN: HackerTV - HN에서 가장 많이 추천된 YouTube 영상을 24시간 TV 채널로 방송",
+          "url": "",
+          "date": "2026-11-04T02:30:57.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "OpenAI, 버그 바운티 보상금 최대 약 2.3억원으로 인상",
+          "url": "",
+          "date": "2026-11-04T02:30:02.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "JVM 시작 시간, 330초에서 3초로 줄이기",
+          "url": "",
+          "date": "2026-11-04T02:23:04.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "deepseek의 자율형 개발 에이전트 시스템 실험",
+          "url": "",
+          "date": "2026-11-04T01:58:06.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "생성형 AI 기초를 위한 작은 책: 직관적인 수학 입문서",
+          "url": "",
+          "date": "2026-11-04T01:36:53.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "미국 기술 대기업의 숨은 AI 부채, 6개월 만에 90% 증가해 3조 2,000억 달러 기록",
+          "url": "",
+          "date": "2026-11-04T01:33:53.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "wterm - DOM 렌더링과 Ghostty 코어를 지원하는 웹 터미널 에뮬레이터",
+          "url": "",
+          "date": "2026-11-04T00:30:02.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Show GN: Uranus·Venus - 긴 한글 문서를 위한 한글 전용 Typora 테마",
+          "url": "",
+          "date": "2026-11-04T00:26:37.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "지금 쓰는 nix를 선택한 이유는 무엇인가요?",
+          "url": "",
+          "date": "2026-11-04T00:11:18.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Ubuntu 26.04의 Rust sudo는 표준 sudo와 호환되지 않음",
+          "url": "",
+          "date": "2026-11-04T00:08:18.000Z",
+          "aiRelated": false
+        }
+      ],
+      "note": "GeekNews Atom 피드에서 최근 3일 항목. aiRelated=true 는 제목 키워드 기준(본문은 조사 단계에서 확인)."
+    },
+    "inpa": {
+      "source": "inpa",
+      "fetchedOk": true,
+      "sourceUrl": "https://inpa.tistory.com/rss",
+      "items": [],
+      "note": "최근 3일 이내 작성된 글만. 날짜 없는 항목은 제외. 0건이면 어제·오늘 새 글이 없다는 뜻."
+    },
+    "goddaehee": {
+      "source": "goddaehee",
+      "fetchedOk": true,
+      "sourceUrl": "https://goddaehee.tistory.com/rss",
+      "items": [],
+      "note": "최근 3일 이내 작성된 글만. 날짜 없는 항목은 제외. 0건이면 어제·오늘 새 글이 없다는 뜻."
+    },
+    "github": {
+      "source": "github",
+      "fetchedOk": true,
+      "sourceUrl": "https://github.com/trending?since=weekly",
+      "items": [
+        {
+          "repo": "Nutlope/hallmark",
+          "url": "https://github.com/Nutlope/hallmark",
+          "description": "Anti-AI-slop design skill for Claude Code, Cursor, and Codex.",
+          "starsThisWeek": 8765
+        },
+        {
+          "repo": "AgriciDaniel/claude-seo",
+          "url": "https://github.com/AgriciDaniel/claude-seo",
+          "description": "Universal SEO skill for Claude Code. 26 sub-skills + 19 sub-agents covering technical SEO, E-E-A-T, schema, GEO/AEO, agent readiness (Lighthouse Agentic Browsing, WebMCP, llms.txt), backlinks, local SEO, e-commerce, international SEO, Google APIs, and PDF/Excel reporting. 9 optional extensions for live SEO data.",
+          "starsThisWeek": 3751
+        },
+        {
+          "repo": "cloudflare/security-audit-skill",
+          "url": "https://github.com/cloudflare/security-audit-skill",
+          "description": "A coding-agent skill for multi-phase security audits with independently verified, machine-readable findings",
+          "starsThisWeek": 8598
+        },
+        {
+          "repo": "max-sixty/worktrunk",
+          "url": "https://github.com/max-sixty/worktrunk",
+          "description": "Worktrunk is a CLI for Git worktree management, designed for parallel AI agent workflows",
+          "starsThisWeek": 749
+        }
+      ],
+      "note": "주간 급상승 레포 중 plugin/extension/skill/cli/mcp 등 도구 성격 키워드가 잡힌 것만. dev-trending 과 겹치는 항목은 조사 단계에서 제외한다."
+    }
+  }
+}

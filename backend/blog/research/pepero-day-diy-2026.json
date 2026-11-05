@@ -1,0 +1,13 @@
+{
+  "slug":"pepero-day-diy-2026","keyword":"빼빼로데이, 빼빼로데이선물, 빼빼로만들기키트","researchDate":"2026-10-26",
+  "claims":[
+    {"claim":"Pepero Day is observed on Nov 11 in South Korea; this article offers original low-equipment DIY ideas and avoids claiming a historical origin or commercial ranking.","sourceUrls":["https://www.korea.net/Events/Overseas/view?articleId=16922"]},
+    {"claim":"Food label information can identify allergens; consumers should check the package for ingredients and allergen statements, particularly when gifting homemade food.","sourceUrls":["https://foodsafetykorea.go.kr/portal/board/boardDetail.do?bbs_no=bbs001&menu_no=3120&ntctxt_no=1091412"]},
+    {"claim":"The recipe ideas are suggestions, not tested recipes; ingredient proportions and setting time vary by product and room temperature.","sourceUrls":[]}
+  ],
+  "sources":[
+    {"title":"Exploring Korea's Holidays: Pepero Day","url":"https://www.korea.net/Events/Overseas/view?articleId=16922","host":"korea.net","body":"Republic of Korea official site describes Pepero Day as observed on November 11 and identifies the contemporary gift-giving custom. Background only, not evidence for sales ranking or definitive historical origin."},
+    {"title":"식품 알레르기 예방법","url":"https://foodsafetykorea.go.kr/portal/board/boardDetail.do?bbs_no=bbs001&menu_no=3120&ntctxt_no=1091412","host":"foodsafetykorea.go.kr","body":"Food Safety Korea guidance: check allergen labeling before purchase and ask whether foods contain allergens. For homemade gifts, ingredient list and cross-contact limitations should be disclosed."}
+  ],
+  "cannotSay":["Do not call any brand or kit the best-selling product or recommend based on unsupported sales data.","Do not claim a recipe has been personally tested.","Allergen labeling on a commercial package is not a guarantee against cross-contact in a home kitchen; mention this plainly.","No fixed chocolate melt or set time; follow package directions and tempering instructions if present."]
+}

@@ -1,0 +1,152 @@
+{
+  "keyword": "Anthropic AI for Science foundations and research institutions expansion",
+  "categoryId": "ai-company-watch",
+  "company": "anthropic",
+  "companyName": "Anthropic",
+  "searchedAt": "2026-10-29",
+  "notes": "Anthropic's 2026-10-28 announcement says its AI for Science credits program is expanding through partnerships with scientific foundations, institutions, and research groups. The central angle is a shift from support initially aimed at individual scientists toward institutional partnerships that may reach more researchers. Attribute the partner count, program intentions, and examples to Anthropic; many collaborations are early-stage. The page states 20 partners but its three visible lists contain 18 entries. It gives neither a universal credit amount nor a new public application path for the expansion.",
+  "sources": [
+    {
+      "title": "AI for Science expands to foundations and research institutions",
+      "url": "https://www.anthropic.com/news/ai-for-science-expands-foundations-research-institutions",
+      "host": "anthropic.com",
+      "tier": "official",
+      "publishedAt": "2026-10-28",
+      "body": "Anthropic published this announcement on October 28, 2026. It says it is highlighting 20 scientific foundations, institutions, and research groups from around the world as partners in an expansion of AI for Science, a program that gives free Claude credits to researchers working on high-impact scientific projects. The company says the program began in May 2025 and initially supported individual scientists. It says its newer institutional partnerships can reach more researchers and may produce public goods such as open datasets, open-source software, open standards, and shared libraries. The page describes a Model Hardware Standard developed with HHMI Janelia as a research preview and says the Allen Institute is building teams of AI agents to analyze its research data. It explicitly says many collaborations are still in early stages. The page lists six funding organizations, six institutions, and six projects/initiatives (18 bullet entries in those three visible lists), while its opening says 20 partners; the count is not reconciled on the page.",
+      "facts": [
+        "Anthropic dated the expansion announcement 2026-10-28.",
+        "Anthropic says 20 foundations, institutions, and research groups are included in the expansion; the three visible lists contain 18 bullet entries, and the page does not reconcile the count.",
+        "The program provides free Claude credits for researchers working on high-impact scientific projects; the announcement does not provide a per-partner or per-researcher credit amount.",
+        "Anthropic says the program started in May 2025 with support for individual scientists.",
+        "The announcement says many collaborations are early-stage; Model Hardware Standard is described as a research preview.",
+        "Anthropic frames public datasets, open-source software, standards, and shared libraries as possible outputs, not guaranteed deliverables."
+      ]
+    },
+    {
+      "title": "Early progress on accelerating drug development with Claude",
+      "url": "https://www.anthropic.com/research/early-progress-drug-development",
+      "host": "anthropic.com",
+      "tier": "official",
+      "publishedAt": "2026-10-27",
+      "body": "Anthropic's October 27, 2026 research update describes work with six organizations developing medicines: BigHat Biosciences, Bristol Myers Squibb, Divergence Labs, Enveda, Generate Biomedicines, and The Column Group. It presents examples from partner projects, including Claude-generated antibody designs and document review, but these are company and partner reports rather than independent evaluations. The article says the research remains at an early stage and is mostly preclinical, meaning most drugs described are not yet being tested in humans. The update also says Anthropic has begun running some research programs itself and mentions its acquisition of Mithril Medicine. This is related context for the broader science initiative, but it is a separate drug-development effort and should not be conflated with the October 28 institutional credit expansion.",
+      "facts": [
+        "Anthropic published its drug-development progress update on 2026-10-27.",
+        "It names six organizations developing medicines in the described partnerships.",
+        "Anthropic states that the research is at an early stage and mostly preclinical.",
+        "Reported experiments and outcomes are Anthropic/partner-described case studies, not independent evaluations."
+      ]
+    },
+    {
+      "title": "Expanding our support for scientists",
+      "url": "https://www.anthropic.com/news/expanding-support-for-scientists",
+      "host": "anthropic.com",
+      "tier": "official",
+      "publishedAt": "2026-08-27",
+      "body": "In an August 27, 2026 announcement, Anthropic said it was opening 10,000 free or discounted Claude subscription seats for scientists for one year through a scientist team plan. It described standard seats as free and premium seats with five-times usage limits at $15 per month. Separately, it said it was broadening AI for Science credits beyond biology to other scientific fields and said researchers could apply for up to $50,000 in credits per project. It described qualification for the subscription plan as principal investigators or equivalent at academic or nonprofit research institutions, while saying any researcher could apply for the AI for Science credit program. This is an earlier program update, not the individual credit amount or application rules for the October 28 partner expansion.",
+      "facts": [
+        "Anthropic announced 10,000 scientist subscription seats on 2026-08-27 for one year.",
+        "That announcement stated standard seats would be free and premium seats with 5x usage limits would cost $15 per month.",
+        "It said researchers could apply for up to $50,000 in AI for Science credits per project; this is an August program statement and not a universal award amount.",
+        "The August announcement distinguished eligibility for scientist subscriptions from eligibility to apply for research credits."
+      ]
+    },
+    {
+      "title": "Introducing Anthropic's AI for Science Program",
+      "url": "https://www.anthropic.com/news/ai-for-science-program",
+      "host": "anthropic.com",
+      "tier": "official",
+      "publishedAt": "2025-05-05",
+      "body": "Anthropic announced the AI for Science program on May 5, 2025. The original announcement said the initiative would provide free API credits to qualified researchers working on high-impact scientific projects, with an initial focus on biology and life sciences. It said applicants would be selected based on scientific contribution, potential impact, and whether AI could meaningfully accelerate the proposed work. Researchers affiliated with a research institution were directed to apply through a form, with applications reviewed by Anthropic staff and subject-matter experts. This primary source establishes the original program design and application approach at launch; it does not establish the current application window or the route for the new institutional partnerships announced in October 2026.",
+      "facts": [
+        "The program launch was announced 2025-05-05.",
+        "At launch, Anthropic described free API credits for qualified researchers, initially emphasizing biology and life sciences.",
+        "The 2025 launch page described selection by scientific contribution, potential impact, and likely usefulness of AI.",
+        "The launch page's application instructions are historical and do not confirm the current route for the October 2026 expansion."
+      ]
+    },
+    {
+      "title": "Open call for guest investigators in the life sciences",
+      "url": "https://www.anthropic.com/news/open-call-guest-investigators-life-sciences",
+      "host": "anthropic.com",
+      "tier": "official",
+      "publishedAt": "2026-10-22",
+      "body": "Anthropic's October 22, 2026 open call invites principal investigators and research groups at academic institutions, nonprofits, and government labs to propose life-sciences projects for direct collaboration with Anthropic researchers. The company described an 8-to-12-week collaboration intended to produce analyses, artifacts, and tools, with Claude models and harnesses run at no cost to participants. It said outputs would be published and accompanying data and code open-sourced, and that researchers would retain rights to their data and independent follow-on research. Applications were expected to remain open for approximately 14 days. This is a separate guest-investigator collaboration program and should not be presented as the application process for the October 28 AI for Science credit partnerships.",
+      "facts": [
+        "Anthropic posted the guest-investigator call on 2026-10-22.",
+        "The call specified an 8–12-week proposed collaboration period.",
+        "It named principal investigators and research groups at academic, nonprofit, or government labs as applicants.",
+        "Anthropic said applications would be open for approximately 14 days; this is not stated as the application window for the October 28 institutional credit expansion."
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "claim": "On October 28, 2026 Anthropic announced an expansion of AI for Science through partnerships with scientific foundations, institutions, and research groups, alongside free Claude credits for high-impact science projects.",
+      "grade": "confirmed",
+      "evidence": ["Anthropic's announcement identifies 20 partner organizations/groups and says the program gives free Claude credits to researchers working on high-impact scientific projects."],
+      "sourceUrls": ["https://www.anthropic.com/news/ai-for-science-expands-foundations-research-institutions"]
+    },
+    {
+      "claim": "Anthropic says AI for Science began in May 2025 by supporting individual scientists; it presents the new institutional partnerships as a way to reach more researchers and possible public research resources.",
+      "grade": "confirmed",
+      "evidence": ["The October 28 announcement states the 2025 start, describes the initial individual-scientist focus, and lists public goods as possible outcomes."],
+      "sourceUrls": ["https://www.anthropic.com/news/ai-for-science-expands-foundations-research-institutions"]
+    },
+    {
+      "claim": "Anthropic says many collaborations are still early-stage; the announcement describes shared research resources as possible outputs, not as completed deliverables or demonstrated discoveries.",
+      "grade": "confirmed",
+      "evidence": ["Anthropic says many collaborations are still in their early stages and describes potential public goods as future outputs."],
+      "sourceUrls": ["https://www.anthropic.com/news/ai-for-science-expands-foundations-research-institutions"]
+    },
+    {
+      "claim": "The October 27 drug-development examples are a separate life-sciences effort and are mostly preclinical according to Anthropic, so they cannot be used as proof of results from the October 28 credit-partner expansion.",
+      "grade": "confirmed",
+      "evidence": ["The October 27 article separately describes six drug-development partnerships and explicitly says the work is early-stage and mostly preclinical."],
+      "sourceUrls": ["https://www.anthropic.com/research/early-progress-drug-development"]
+    },
+    {
+      "claim": "The October 28 page states a total of 20 partners, but its six funders, six institutions, and six projects/initiatives add up to 18 visible entries; the source does not reconcile this difference, so the complete count remains unclear.",
+      "grade": "unclear",
+      "evidence": ["The opening paragraph says 20 partners; the three visible sections list six entries each, and no explanation of the difference appears in the source."],
+      "sourceUrls": ["https://www.anthropic.com/news/ai-for-science-expands-foundations-research-institutions"]
+    },
+    {
+      "claim": "The October 28 announcement does not give a universal amount of Claude credits per organization or researcher and does not provide a new public application path for the newly announced partnerships.",
+      "grade": "confirmed",
+      "evidence": ["The announcement says free Claude credits and a partnership expansion but contains no per-recipient amount or application instructions."],
+      "sourceUrls": ["https://www.anthropic.com/news/ai-for-science-expands-foundations-research-institutions"]
+    }
+  ],
+  "numbers": [
+    {"what": "Expansion announcement date", "value": "2026-10-28", "asOf": "Anthropic announcement date", "sourceUrl": "https://www.anthropic.com/news/ai-for-science-expands-foundations-research-institutions"},
+    {"what": "Partner count stated in opening", "value": "20", "asOf": "2026-10-28; 18 bullet entries visible across the three named sections", "sourceUrl": "https://www.anthropic.com/news/ai-for-science-expands-foundations-research-institutions"},
+    {"what": "Original program start", "value": "2025-05", "asOf": "Anthropic's stated program history", "sourceUrl": "https://www.anthropic.com/news/ai-for-science-expands-foundations-research-institutions"},
+    {"what": "Earlier scientist subscription seats", "value": "10,000 for one year", "asOf": "2026-08-27 announcement; separate from October partner expansion", "sourceUrl": "https://www.anthropic.com/news/expanding-support-for-scientists"},
+    {"what": "Earlier credit cap", "value": "up to $50,000 per project", "asOf": "2026-08-27 announcement; not a universal grant amount for the October expansion", "sourceUrl": "https://www.anthropic.com/news/expanding-support-for-scientists"},
+    {"what": "Life-sciences guest-investigator collaboration duration", "value": "8–12 weeks", "asOf": "2026-10-22 separate program", "sourceUrl": "https://www.anthropic.com/news/open-call-guest-investigators-life-sciences"}
+  ],
+  "dropped": [],
+  "cannotCover": [
+    "The total Claude-credit budget, individual allocation amounts, and exact criteria for the newly announced partner expansion.",
+    "Whether every named partner has started work or will publish a shared dataset, codebase, standard, or library.",
+    "Independent validation that Claude caused any scientific result described by Anthropic or its partners.",
+    "A blanket conclusion that these initiatives have already produced approved medicines or clinical outcomes."
+  ],
+  "unknowns": [
+    "The Oct 28 page says 20 partner organizations/groups, but the three visible bullet lists contain 18 entries; the page does not explain the difference.",
+    "The October 28 announcement does not state per-recipient credit quantities or an application process for the new institutional expansion.",
+    "The article does not identify the milestones, timelines, or independent evaluators for each new partnership."
+  ],
+  "themes": [
+    "Access model is widening from individual scientist support toward organizations that can distribute credits to researchers.",
+    "Anthropic presents open datasets, open-source software, standards, and shared libraries as possible public benefits, but explicitly says much work is early-stage.",
+    "The practical distinction is between funding/support infrastructure and demonstrated scientific outcomes; readers should not treat the expansion announcement as completed discovery evidence."
+  ],
+  "editorialAngle": "Explain what changes when a science-support program adds foundations and institutions: partner organizations may act as distribution and collaboration layers, while public outputs are intended rather than already delivered. Keep the Oct 27 drug-development case studies separate and describe them as early, mostly preclinical partner reports.",
+  "warnings": [
+    "Use the stated 20-partner count only attributed to Anthropic and disclose the visible-list count mismatch if relevant.",
+    "Do not imply every credit recipient can apply directly; the October 28 post does not specify an individual application route.",
+    "Do not conflate the separate October 22 guest-investigator call or August scientist-seat pricing/credit cap with the October 28 partner program.",
+    "Do not present vendor or partner case studies as independent evidence of medicine effectiveness or clinical readiness."
+  ]
+}

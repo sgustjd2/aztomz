@@ -656,10 +656,17 @@ const isLoginPage = (page) => /login|accounts\.kakao/i.test(page.url());
    채워졌는지 여부만 확인하고 출력·파일 저장하지 않는다. 보안확인/CAPTCHA는 멈춘다. */
 async function trySavedKakaoLogin(page) {
   let authPage = page;
+  const context = page.context();
+  const kakaoUrl = /accounts\.kakao\.com|kauth\.kakao\.com/i;
   const challenge = async () => {
     const text = await authPage.locator('body').innerText().catch(() => '');
     return /captcha|캡차|보안 확인|기기 인증|추가 인증|본인 확인|인증번호|2단계 인증/i.test(text)
       || await authPage.locator('iframe[src*="captcha"], [class*="captcha"], [id*="captcha"]').count().catch(() => 0) > 0;
+  };
+  const hasVisibleCredentialForm = async (candidate) => {
+    const id = candidate.locator('#loginId--1, input[name="loginId"], input[type="email"]').first();
+    const password = candidate.locator('#password--2, input[name="password"], input[type="password"]').first();
+    return await id.isVisible().catch(() => false) && await password.isVisible().catch(() => false);
   };
   if (await challenge()) return { ok: false, reason: '보안 확인/CAPTCHA가 필요합니다.' };
 
@@ -671,7 +678,7 @@ async function trySavedKakaoLogin(page) {
   // Tistory may first show its own login landing page. Continue to Kakao's
   // credential form before checking browser autofill; never use a generic
   // login button that could select another provider.
-  if (!await idField.count().catch(() => 0) || !await passwordField.count().catch(() => 0)) {
+  if (!await hasVisibleCredentialForm(authPage) && !kakaoUrl.test(authPage.url())) {
     const kakaoLogin = page.locator([
       'a[href*="accounts.kakao.com"]',
       'a[href*="kauth.kakao.com"]',
@@ -686,18 +693,40 @@ async function trySavedKakaoLogin(page) {
       return { ok: false, reason: '티스토리의 카카오 로그인 버튼을 찾지 못했습니다.' };
     }
     const popupPromise = page.waitForEvent('popup', { timeout: 10000 }).catch(() => null);
+    const samePagePromise = page.waitForURL(kakaoUrl, { timeout: 10000 }).then(() => page).catch(() => null);
     await kakaoLogin.click({ timeout: 5000 });
-    const samePagePromise = page.waitForFunction((selectors) => {
-      const url = location.href;
-      return /accounts\.kakao\.com|kauth\.kakao\.com/i.test(url)
-        || (document.querySelector(selectors.id) && document.querySelector(selectors.password));
-    }, { id: idSelector, password: passwordSelector }, { timeout: 10000 }).then(() => null).catch(() => null);
     const popup = await Promise.race([popupPromise, samePagePromise]);
-    if (popup) {
-      authPage = popup;
-      await authPage.waitForURL(/accounts\.kakao\.com|kauth\.kakao\.com/i, { timeout: 10000 }).catch(() => {});
-      await authPage.waitForLoadState('domcontentloaded').catch(() => {});
+    if (popup) authPage = popup;
+    // Kakao may navigate the current tab, open a popup, or render the chooser
+    // after a client-side transition. Re-scan the whole context instead of
+    // assuming that the original Tistory tab owns the login UI.
+    const authDeadline = Date.now() + 10000;
+    while (Date.now() < authDeadline) {
+      const pages = context.pages().filter((candidate) => !candidate.isClosed());
+      const kakaoPage = pages.find((candidate) => kakaoUrl.test(candidate.url()));
+      if (kakaoPage) {
+        authPage = kakaoPage;
+        break;
+      }
+      let accountChooserPage = null;
+      for (const candidate of pages) {
+        const text = await candidate.locator('body').innerText().catch(() => '');
+        if (/간편\s*로그인|카카오\s*계정\s*선택|계정\s*선택|로그인할\s*카카오계정/i.test(text)) {
+          accountChooserPage = candidate;
+          break;
+        }
+      }
+      if (accountChooserPage) {
+        authPage = accountChooserPage;
+        break;
+      }
+      if (await hasVisibleCredentialForm(page)) {
+        authPage = page;
+        break;
+      }
+      await new Promise((resolve) => setTimeout(resolve, 250));
     }
+    await authPage.waitForLoadState('domcontentloaded').catch(() => {});
     if (await challenge()) return { ok: false, reason: '추가 보안 확인/CAPTCHA가 필요합니다.' };
     idField = authPage.locator(idSelector).first();
     passwordField = authPage.locator(passwordSelector).first();
@@ -706,20 +735,27 @@ async function trySavedKakaoLogin(page) {
     // Auto-select only when exactly one visible clickable account identifier
     // is present; never guess between accounts or print the identifier.
     const chooserText = await authPage.locator('body').innerText().catch(() => '');
-    if (/간편\s*로그인|계정\s*선택/.test(chooserText) && !await idField.count().catch(() => 0)) {
+    const accountChooser = /간편\s*로그인|카카오\s*계정\s*선택|계정\s*선택|로그인할\s*카카오계정/i.test(chooserText);
+    if (accountChooser && !await hasVisibleCredentialForm(authPage)) {
       const result = await authPage.evaluate(() => {
         const clickable = 'button, a, [role="button"], [role="option"], [tabindex="0"]';
-        const candidates = new Set();
+        const candidates = new Map();
         const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
         const emailPattern = /[\w.+-]+@[\w.-]+\.[A-Z]{2,}/i;
         for (let node = walker.nextNode(); node; node = walker.nextNode()) {
-          if (!emailPattern.test(node.nodeValue || '')) continue;
+          const email = (node.nodeValue || '').match(emailPattern)?.[0]?.toLowerCase();
+          if (!email) continue;
           let parent = node.parentElement;
-          while (parent && !parent.matches(clickable)) parent = parent.parentElement;
-          if (!parent) continue;
-          const style = getComputedStyle(parent);
-          if (style.display === 'none' || style.visibility === 'hidden' || !parent.getClientRects().length) continue;
-          candidates.add(parent);
+          let target = parent;
+          while (parent && parent !== document.body) {
+            const style = getComputedStyle(parent);
+            if (parent.matches(clickable) || style.cursor === 'pointer') { target = parent; break; }
+            parent = parent.parentElement;
+          }
+          if (!target) continue;
+          const style = getComputedStyle(target);
+          if (style.display === 'none' || style.visibility === 'hidden' || !target.getClientRects().length) continue;
+          if (!candidates.has(email)) candidates.set(email, target);
         }
         if (candidates.size !== 1) return { count: candidates.size };
         const candidate = candidates.values().next().value;
@@ -731,18 +767,32 @@ async function trySavedKakaoLogin(page) {
       }
       console.log('· 카카오 간편로그인 계정 1개를 선택합니다. 계정 정보는 출력하지 않습니다.');
       await authPage.locator('[data-aztomz-kakao-account-choice="true"]').click({ timeout: 5000 });
-      await authPage.waitForFunction(() => !/accounts\.kakao\.com|kauth\.kakao\.com/i.test(location.href), null, { timeout: 20000 }).catch(() => {});
+      const accountDeadline = Date.now() + 20000;
+      while (Date.now() < accountDeadline) {
+        if (authPage.isClosed()) break;
+        if (!kakaoUrl.test(authPage.url()) || await hasVisibleCredentialForm(authPage)) break;
+        await new Promise((resolve) => setTimeout(resolve, 250));
+      }
       if (await challenge()) return { ok: false, reason: '추가 보안 확인/CAPTCHA가 필요합니다.' };
       // The account chooser can complete Kakao auth and return to Tistory
       // without ever showing a password form. Let login() verify the editor
       // URL and persist the resulting session state.
-      if (!isLoginPage(authPage)) return { ok: true, reason: '' };
-      if (authPage.isClosed() && !isLoginPage(page)) return { ok: true, reason: '' };
+      if (!authPage.isClosed() && !isLoginPage(authPage)) return { ok: true, reason: '' };
+      if (authPage.isClosed() || !await hasVisibleCredentialForm(authPage)) {
+        // Kakao often closes the chooser popup and sends the callback to the
+        // original tab. Verify there by opening the editor route explicitly.
+        for (const candidate of context.pages()) {
+          if (candidate.isClosed() || !candidate.url().includes('tistory.com')) continue;
+          await candidate.goto(`${BASE}/manage/newpost/`, { waitUntil: 'domcontentloaded', timeout: 10000 }).catch(() => {});
+          if (candidate.url().includes('/manage/newpost') && !isLoginPage(candidate)) return { ok: true, reason: '' };
+        }
+      }
+      if (authPage.isClosed()) return { ok: false, reason: '카카오 계정 선택 후 인증 페이지가 닫혔습니다.' };
       idField = authPage.locator(idSelector).first();
       passwordField = authPage.locator(passwordSelector).first();
     }
   }
-  if (!await idField.count().catch(() => 0) || !await passwordField.count().catch(() => 0)) {
+  if (!await hasVisibleCredentialForm(authPage)) {
     return { ok: false, reason: '카카오 로그인 입력란을 찾지 못했습니다.' };
   }
 
@@ -756,7 +806,7 @@ async function trySavedKakaoLogin(page) {
   if (!hasId || !hasPassword) return { ok: false, reason: '저장된 로그인 자동완성 정보가 없습니다.' };
   if (await challenge()) return { ok: false, reason: '보안 확인/CAPTCHA가 필요합니다.' };
 
-  const staySignedIn = page.locator('input[type="checkbox"]').first();
+  const staySignedIn = authPage.locator('input[type="checkbox"]').first();
   if (await staySignedIn.count().catch(() => 0)) {
     const label = await staySignedIn.evaluate((el) => `${el.id} ${el.name} ${el.parentElement?.innerText || ''}`).catch(() => '');
     if (/stay|유지|로그인 상태/i.test(label) && !await staySignedIn.isChecked().catch(() => true)) {
@@ -771,9 +821,31 @@ async function trySavedKakaoLogin(page) {
   return { ok: !isLoginPage(authPage), reason: isLoginPage(authPage) ? '카카오 로그인이 완료되지 않았습니다.' : '' };
 }
 
+const manualLoginWaitMs = () => {
+  const value = Number(process.env.TISTORY_LOGIN_WAIT_MS || 10 * 60 * 1000);
+  return Number.isFinite(value) && value >= 30000 ? value : 10 * 60 * 1000;
+};
+
+/* 사람이 전용 브라우저에서 인증을 마치면 엔터 입력을 기다리지 않고 세션을 저장한다.
+   비밀번호·CAPTCHA는 자동으로 채우거나 풀지 않는다. */
+async function waitForTistoryEditor(ctx, timeoutMs = manualLoginWaitMs()) {
+  const deadline = Date.now() + timeoutMs;
+  while (Date.now() < deadline) {
+    for (const candidate of ctx.pages()) {
+      if (candidate.isClosed() || !candidate.url().includes('tistory.com')) continue;
+      if (!candidate.url().startsWith(BASE) || isLoginPage(candidate) || !candidate.url().includes('/manage/newpost')) {
+        await candidate.goto(`${BASE}/manage/newpost/`, { waitUntil: 'domcontentloaded', timeout: 10000 }).catch(() => {});
+      }
+      if (!candidate.isClosed() && candidate.url().includes('/manage/newpost') && !isLoginPage(candidate)) return candidate;
+    }
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+  }
+  return null;
+}
+
 async function login() {
   const ctx = await chromium.launchPersistentContext(profileDir, { headless: false, viewport: null });
-  const page = ctx.pages()[0] || await ctx.newPage();
+  let page = ctx.pages()[0] || await ctx.newPage();
   await page.goto(`${BASE}/manage/newpost/`, { waitUntil: 'domcontentloaded' });
   if (isLoginPage(page)) {
     const result = await trySavedKakaoLogin(page);
@@ -783,10 +855,8 @@ async function login() {
     } else {
       console.log(`\n자동 로그인은 진행하지 않았습니다: ${result.reason}`
         + '\n열린 브라우저에서 카카오 로그인 또는 보안 확인을 마치세요. 비밀번호는 스크립트가 읽거나 저장하지 않습니다.'
-        + '\n로그인 상태 유지가 있으면 체크한 뒤 글쓰기 화면에서 엔터를 누르세요.');
-      const rl = createInterface({ input: process.stdin, output: process.stdout });
-      await rl.question('> 로그인 완료 후 엔터: ');
-      rl.close();
+        + `\n글쓰기 화면에 도달하면 자동으로 세션을 저장합니다(최대 ${Math.round(manualLoginWaitMs() / 60000)}분 대기).`);
+      page = await waitForTistoryEditor(ctx) || page;
     }
   }
   const url = page.url();
@@ -795,7 +865,7 @@ async function login() {
   await ctx.close();
   console.log(ok
     ? `✓ 로그인 세션 저장됨 → backend/.tistory-state.json (+ 프로필)`
-    : `⚠ 현재 URL 이 글쓰기 화면이 아닙니다(${url}). 다시 --login 하세요.`);
+    : `⚠ 로그인 제한 시간 안에 글쓰기 화면을 확인하지 못했습니다(${url}). 보안 확인이 필요하면 사람이 완료한 뒤 다시 시도하세요.`);
   process.exit(ok ? 0 : 1);
 }
 
@@ -902,17 +972,18 @@ async function publish() {
     await ctx.addCookies(st.cookies || []);
   }
 
-  const page = ctx.pages()[0] || await ctx.newPage();
+  let page = ctx.pages()[0] || await ctx.newPage();
   // "작성 중인 글을 불러올까요?" 네이티브 confirm — 페이지 진입 직후엔 '아니오'(새 글/우리가 주입할
   // 내용으로 시작). 그런데 발행 버튼을 누른 뒤에 뜨는 확인창(예: "이미 발행된 글입니다. 덮어쓸까요?")
   // 까지 똑같이 dismiss 해버리면 클릭은 성공했다고 나오는데 실제로는 취소돼 아무 것도 안 바뀐다
   // (2026-08-09 --edit 모드에서 실측 — 콘솔은 "발행 완료"인데 라이브 글이 그대로였다).
   // contentReady 이후에 뜨는 다이얼로그는 발행 확인일 가능성이 높으므로 accept 한다.
   let contentReady = false;
-  page.on('dialog', (d) => {
+  const handleDialog = (d) => {
     console.log(`  · 다이얼로그(${contentReady ? 'accept' : 'dismiss'}): ${d.message().slice(0, 100)}`);
     (contentReady ? d.accept() : d.dismiss()).catch(() => {});
-  });
+  };
+  page.on('dialog', handleDialog);
 
   let needsHumanLogin = false;
   const fail = async (e) => {
@@ -938,15 +1009,21 @@ async function publish() {
         }
         needsHumanLogin = true;
         console.log(`\n자동 로그인을 멈췄습니다: ${result.reason}`
-          + '\n열린 브라우저에서 카카오 로그인/CAPTCHA/추가 인증을 직접 완료한 뒤 엔터를 누르면 발행을 이어갑니다.');
-        const rl = createInterface({ input: process.stdin, output: process.stdout });
-        await rl.question('> 사람 인증 완료 후 엔터: ');
-        rl.close();
+          + `\n열린 전용 브라우저에서 카카오 로그인/CAPTCHA/추가 인증을 직접 완료하면 자동 감지합니다(최대 ${Math.round(manualLoginWaitMs() / 60000)}분).`);
+        const authenticatedPage = await waitForTistoryEditor(ctx);
+        if (!authenticatedPage) {
+          needsHumanLogin = false;
+          throw new Error('로그인 제한 시간 안에 글쓰기 화면을 확인하지 못했습니다.');
+        }
+        if (authenticatedPage !== page) {
+          page = authenticatedPage;
+          page.on('dialog', handleDialog);
+        }
         if (isLoginPage(page)) throw new Error('사람 인증 후에도 로그인 화면에 있습니다. 인증 상태를 확인하세요.');
         await ctx.storageState({ path: statePath });
+        needsHumanLogin = false;
         await page.goto(editorUrl, { waitUntil: 'domcontentloaded' });
         if (isLoginPage(page)) throw new Error('인증 후 글쓰기 화면으로 돌아오지 못했습니다. --login 으로 확인하세요.');
-        needsHumanLogin = false;
       } else {
         await ctx.storageState({ path: statePath });
         await page.goto(editorUrl, { waitUntil: 'domcontentloaded' });

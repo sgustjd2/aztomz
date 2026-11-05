@@ -1,0 +1,151 @@
+{
+  "keyword": "Anthropic Agent Skills AAIF 기부 2026년 10월 22일",
+  "categoryId": "ai-company-watch",
+  "notes": "2026-10-22 Anthropic의 공식 기부 발표를 중심으로 AAIF에 넘긴다고 밝힌 자산 범위와 유지보수 체계를 정리해요. 기존 Agent Skills 규격의 기본 사용 방식과 발표 수치는 공식 문서로 확인해요. 발표된 사실과 해석을 분리하고, 제안된 로드맵을 이미 완료된 기능처럼 쓰지 않아요.",
+  "sources": [
+    {
+      "title": "Donating Agent Skills to the Agentic AI Foundation",
+      "url": "https://www.anthropic.com/news/donating-agent-skills-to-the-agentic-ai-foundation",
+      "host": "anthropic.com",
+      "body": "Anthropic announced on October 22, 2026 that it is donating Agent Skills to the Agentic AI Foundation (AAIF), under the Linux Foundation. Anthropic describes Agent Skills as an open standard that gives agents specialized knowledge and workflows. A skill is a folder containing a SKILL.md file, with optional scripts and reference material. The company says it published the standard in December 2025 and that more than 70 agent platforms integrated it; examples named include ChatGPT, Cursor, GitHub Copilot and VS Code. It reports one million skills published and nearly 280 million installed. The donation includes the Agent Skills name and logo, GitHub organization and agentskills.io domain. Engineers from Anthropic, Google, OpenAI and other companies will maintain the standard as individuals; David Soria Parra and Mahesh Murag are lead maintainers. A proposed initial roadmap includes versioned releases, a formal proposal process and security guidance. Anthropic says users can keep using and contributing without joining AAIF.",
+      "tier": "official"
+    },
+    {
+      "title": "Agentic AI Foundation Announces Four New Projects: Agent Skills, Open Responses, OpenEnv, and OpenSandbox",
+      "url": "https://www.linuxfoundation.org/press/agentic-ai-foundation-announces-four-new-projects-agent-skills-open-responses-openenv-and-opensandbox",
+      "host": "linuxfoundation.org",
+      "body": "The Linux Foundation announcement dated October 22, 2026 says the Agentic AI Foundation announced four hosted projects: Agent Skills contributed by Anthropic, Open Responses by OpenAI, OpenEnv by Hugging Face, and OpenSandbox by Alibaba. It says the foundation grew from three launch projects in December 2025 to ten hosted projects in its first year. The announcement places Agent Skills among four layers of an agent stack and calls it an open format for giving agents capabilities and domain expertise. Skills package instructions, scripts and resources in reusable form that agents can load on demand. The announcement says the projects were introduced alongside AGNTCon and MCPCon North America in San Jose on October 22–23. This is an AAIF/LF announcement; it does not describe a transfer of Anthropic itself or of Claude.",
+      "tier": "official"
+    },
+    {
+      "title": "Agent Skills Overview",
+      "url": "https://agentskills.io/home",
+      "host": "agentskills.io",
+      "body": "The Agent Skills overview describes the format as a lightweight open format for extending AI-agent capabilities with specialized knowledge and workflows. It says a skill is a folder whose required SKILL.md includes at least name and description metadata and instructions for a task. Optional resources include scripts, references and assets. Documentation describes three stages: discovery, activation and execution, with full instructions loaded when needed. It says the format was originally developed by Anthropic, released as an open standard and is open to contributions from the broader ecosystem. The overview links to the specification and the public GitHub discussion. It explains the format’s intended operation; it is not an announcement about the governance transfer.",
+      "tier": "official"
+    },
+    {
+      "title": "agentskills/agentskills repository",
+      "url": "https://github.com/agentskills/agentskills",
+      "host": "github.com",
+      "body": "The public agentskills/agentskills repository identifies itself as the specification and documentation for Agent Skills. Its README repeats that a skill is a folder organized around a SKILL.md file and may include scripts, reference materials and other resources. The page links to the specification, documentation and contribution guidance, and lists an Apache 2.0 license for code and CC-BY-4.0 for documentation, while noting that individual directories can have their own terms. GitHub page metadata showed a public repository and 145 commits at retrieval. Repository metadata and README can establish that a public implementation/specification repository exists, but star counts and commit counts change and do not establish the donated legal scope.",
+      "tier": "official"
+    },
+    {
+      "title": "Linux Foundation Announces the Formation of the Agentic AI Foundation",
+      "url": "https://www.linuxfoundation.org/press/linux-foundation-announces-the-formation-of-the-agentic-ai-foundation?_bhlid=794175d0dc8bbd1e4786c6d7debc273bb0e98d97",
+      "host": "linuxfoundation.org",
+      "body": "The Linux Foundation announced formation of the Agentic AI Foundation on December 9, 2025. The announcement identifies founding project contributions from Anthropic (Model Context Protocol), Block (goose) and OpenAI (AGENTS.md), and describes the AAIF as a neutral open foundation intended to support transparent, collaborative development. It also lists the organizations’ initial project contributions and explains that the foundation is a governance home for open-source agent infrastructure. This establishes the AAIF’s founding context. It does not itself establish the specific Agent Skills donation announced in October 2026; that scope comes from the later Anthropic announcement.",
+      "tier": "official"
+    }
+  ],
+  "claims": [
+    {
+      "claim": "Anthropic은 2026-10-22 Agent Skills를 Linux Foundation 산하 AAIF에 기부한다고 발표했어요.",
+      "grade": "confirmed",
+      "evidence": [
+        "Anthropic 뉴스룸 발표일 2026-10-22.",
+        "Linux Foundation은 같은 날 Agent Skills를 Anthropic이 기여한 새 AAIF 프로젝트로 발표했어요."
+      ],
+      "sourceUrls": [
+        "https://www.anthropic.com/news/donating-agent-skills-to-the-agentic-ai-foundation",
+        "https://www.linuxfoundation.org/press/agentic-ai-foundation-announces-four-new-projects-agent-skills-open-responses-openenv-and-opensandbox"
+      ]
+    },
+    {
+      "claim": "발표문상 기부 대상은 Agent Skills의 이름·로고, GitHub 조직, agentskills.io 도메인이에요.",
+      "grade": "confirmed",
+      "evidence": [
+        "Anthropic 발표는 이름과 로고, GitHub organization, agentskills.io domain을 명시해요.",
+        "발표는 Anthropic 회사나 Claude 제품 전체를 이전한다고 하지 않아요."
+      ],
+      "sourceUrls": [
+        "https://www.anthropic.com/news/donating-agent-skills-to-the-agentic-ai-foundation"
+      ]
+    },
+    {
+      "claim": "Agent Skills는 SKILL.md를 중심으로 지식과 절차, 선택 리소스를 담는 폴더 형식이에요.",
+      "grade": "confirmed",
+      "evidence": [
+        "공식 개요는 SKILL.md와 선택적인 scripts/references/assets를 설명해요.",
+        "공식 문서는 discovery, activation, execution의 3단계 진행을 설명해요."
+      ],
+      "sourceUrls": [
+        "https://agentskills.io/home",
+        "https://github.com/agentskills/agentskills"
+      ]
+    },
+    {
+      "claim": "Anthropic은 70개 이상 플랫폼 통합, 100만 개 게시, 약 2억8000만 회 설치를 발표문에 기재했어요.",
+      "grade": "confirmed",
+      "evidence": [
+        "Anthropic은 70개 이상 통합, skills 1 million published, nearly 280 million installed라고 밝혔어요. 이는 발표 시점 회사가 제시한 집계예요."
+      ],
+      "sourceUrls": [
+        "https://www.anthropic.com/news/donating-agent-skills-to-the-agentic-ai-foundation"
+      ]
+    },
+    {
+      "claim": "유지보수자는 여러 회사 소속 엔지니어가 개인 자격으로 참여한다고 발표됐고, 최초 제안 로드맵은 확정 완료 상태가 아니에요.",
+      "grade": "confirmed",
+      "evidence": [
+        "Anthropic, Google, OpenAI 및 기타 회사 엔지니어가 개인 자격으로 유지보수한다고 발표했어요.",
+        "David Soria Parra와 Mahesh Murag가 Lead Maintainers로 명시됐어요.",
+        "버전 릴리스·제안 절차·보안 가이드는 proposed roadmap으로 표현됐어요."
+      ],
+      "sourceUrls": [
+        "https://www.anthropic.com/news/donating-agent-skills-to-the-agentic-ai-foundation"
+      ]
+    },
+    {
+      "claim": "AAIF는 2025-12-09 Anthropic, Block, OpenAI의 초기 프로젝트 기여와 함께 출범 발표됐어요.",
+      "grade": "confirmed",
+      "evidence": [
+        "Linux Foundation은 MCP(Anthropic), goose(Block), AGENTS.md(OpenAI)를 초기 기여 프로젝트로 제시했어요."
+      ],
+      "sourceUrls": [
+        "https://www.linuxfoundation.org/press/linux-foundation-announces-the-formation-of-the-agentic-ai-foundation?_bhlid=794175d0dc8bbd1e4786c6d7debc273bb0e98d97"
+      ]
+    }
+  ],
+  "numbers": [
+    {
+      "what": "발표일",
+      "value": "2026-10-22",
+      "asOf": "공식 발표",
+      "sourceUrl": "https://www.anthropic.com/news/donating-agent-skills-to-the-agentic-ai-foundation"
+    },
+    {
+      "what": "통합 플랫폼 수",
+      "value": "70개 이상",
+      "asOf": "Anthropic 발표문 기준",
+      "sourceUrl": "https://www.anthropic.com/news/donating-agent-skills-to-the-agentic-ai-foundation"
+    },
+    {
+      "what": "게시된 스킬 수",
+      "value": "100만 개",
+      "asOf": "Anthropic 발표문 기준",
+      "sourceUrl": "https://www.anthropic.com/news/donating-agent-skills-to-the-agentic-ai-foundation"
+    },
+    {
+      "what": "설치 횟수",
+      "value": "약 2억8000만 회에 가까움",
+      "asOf": "Anthropic 발표문 기준",
+      "sourceUrl": "https://www.anthropic.com/news/donating-agent-skills-to-the-agentic-ai-foundation"
+    },
+    {
+      "what": "AAIF 프로젝트 수",
+      "value": "10개(2026-10-22 발표 기준)",
+      "asOf": "Linux Foundation 발표",
+      "sourceUrl": "https://www.linuxfoundation.org/press/agentic-ai-foundation-announces-four-new-projects-agent-skills-open-responses-openenv-and-opensandbox"
+    }
+  ],
+  "dropped": [],
+  "cannotCover": [
+    "법률상 자산 이전의 별도 효력 발생 시점이나 양도 계약 세부사항",
+    "제안된 로드맵의 승인·출시 일정",
+    "이 기부로 특정 플랫폼 제품 기능이나 가격이 달라지는지",
+    "Anthropic 발표문 집계의 산정 방법이나 외부 검증"
+  ],
+  "songs": []
+}

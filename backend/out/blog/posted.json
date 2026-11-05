@@ -1448,5 +1448,65 @@
     "at": "2026-10-24 03:00",
     "url": "https://burning-go9me.tistory.com/570",
     "title": "git divergent branches 오류, merge냐 rebase냐"
+  },
+  "openai-decisions-api-2026-10-25": {
+    "at": "2026-10-25 02:17",
+    "url": "https://burning-go9me.tistory.com/571",
+    "title": "OpenAI Decisions API 사용법, GPT-6 Luna로 질문 400개 묶어 분류하기"
+  },
+  "github-copilot-teams-2026": {
+    "at": "2026-10-25 23:48",
+    "url": "https://burning-go9me.tistory.com/572",
+    "title": "GitHub Copilot Teams 연동, 이슈 알림에서 PR까지 바뀐 점"
+  },
+  "anthropic-agent-skills-foundation-2026-10-27": {
+    "at": "2026-10-27 07:10",
+    "url": "https://burning-go9me.tistory.com/573",
+    "title": "Anthropic Agent Skills 기부, AAIF에 넘긴 범위는?"
+  },
+  "ai-watch-openai-2026-10-28": {
+    "at": "2026-10-28 02:12",
+    "url": "https://burning-go9me.tistory.com/574",
+    "title": "OpenAI Oracle 협력 확대, ChatGPT 연결은 언제쯤?"
+  },
+  "ai-watch-anthropic-2026-10-29": {
+    "at": "2026-10-29 06:56",
+    "url": "https://burning-go9me.tistory.com/575",
+    "title": "Anthropic AI for Science 확대, 기관 지원은 어디까지?"
+  },
+  "git-remote-set-url": {
+    "at": "2026-10-30 03:00",
+    "url": "https://burning-go9me.tistory.com/576",
+    "title": "git remote set-url 사용법, 저장소 주소 바꾸고 SSH 전환까지"
+  },
+  "git-worktree-guide": {
+    "at": "2026-10-31 03:00",
+    "url": "https://burning-go9me.tistory.com/577",
+    "title": "git worktree 언제 쓰나요? 브랜치별 폴더와 서브모듈 제약"
+  },
+  "git-reflog-recover": {
+    "at": "2026-11-01 03:00",
+    "url": "https://burning-go9me.tistory.com/578",
+    "title": "git reflog로 날린 커밋 찾기, reset --hard 뒤 복구 순서"
+  },
+  "git-branch-delete": {
+    "at": "2026-11-02 01:44",
+    "url": "https://burning-go9me.tistory.com/579",
+    "title": "git 브랜치 삭제, 로컬 -d와 -D부터 원격과 남은 참조 정리까지"
+  },
+  "git-tag-guide": {
+    "at": "2026-11-03 09:58",
+    "url": "https://burning-go9me.tistory.com/580",
+    "title": "git tag 사용법 헷갈릴 때, push해도 원격에 태그가 없는 이유"
+  },
+  "git-restore-unstage": {
+    "at": "2026-11-04 00:16",
+    "url": "https://burning-go9me.tistory.com/581",
+    "title": "git add 취소, --staged 빼먹으면 벌어지는 일"
+  },
+  "git-clean-untracked": {
+    "at": "2026-11-05 00:18",
+    "url": "https://burning-go9me.tistory.com/582",
+    "title": "git untracked 파일 삭제, clean -n -f -d -x 차이"
   }
 }
