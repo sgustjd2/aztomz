@@ -1,0 +1,151 @@
+{
+  "keyword": "git untracked 파일 삭제 (git clean -n/-f/-d/-x 차이)",
+  "categoryId": "dev-tool",
+  "notes": "git 공식 문서 3건(git-clean, git-config, Pro Git)만으로 -n/-f/-d/-x/-X/-i/-e 의 역할과 안전 습관(-n 먼저 → -f)을 확정해 쓸 수 있다.\n모든 근거가 1차(official)라 핵심 주장은 전부 confirmed 이지만, 실제 실행 출력은 직접 검증하지 못했으므로 출력 예시는 Pro Git 에 실린 것만 인용한다.\n삭제 후 복구, -x 와 -X 동시 사용, 버전별 차이는 자료가 없어 다루지 않는다. 앞선 글(git-undo-guide, git-stash-guide, gitignore-not-working, git-restore-unstage)은 링크 없이 개념으로만 언급한다.",
+  "cannotSay": [
+    "Pro Git 에 실린 'Would remove test.o / tmp/' 류 예시 외의 정확한 터미널 출력 형식(실제 실행 출력은 검증 못 함, Bash 권한 거부)",
+    "-x 와 -X 를 함께 썼을 때의 동작",
+    "git clean 으로 지운 뒤의 복구 방법 (Pro Git 은 '되찾을 방법이 보통 없다'고만 말함. IDE 로컬 히스토리, 휴지통, 파일 복구 도구 등은 근거 없음)",
+    "심볼릭 링크, .gitignore 의 부정(negation) 패턴과 git clean 의 상호작용",
+    "git clean 이 도입된 버전, 버전별 기본값 차이 (문서 버전 표기·발행일 미확인)",
+    "git-config 문서의 0~100,000자·200,000자 이후 구간에 clean.* 다른 항목이 있는지 (읽지 않음)",
+    "GitHub Docs 등 비공식·보조 자료의 설명 (수집 안 함)",
+    "git clean 이 실제 현업에서 얼마나 자주 사고를 내는지 같은 빈도·통계"
+  ],
+  "cannotCover": [
+    "삭제한 untracked 파일 복구 방법",
+    "-x/-X 조합 동작, 심볼릭 링크·negation 패턴 같은 엣지 케이스",
+    "Windows/macOS/Linux 별 동작 차이, 파일 시스템 권한 문제",
+    "서브모듈이 있는 저장소에서의 상세 동작 (nested git 저장소에 -f 두 번이라는 사실 외에는 자료 없음)",
+    "IDE/GUI 클라이언트의 clean 기능",
+    "실제 사고 사례, 사용자 후기, 커뮤니티 의견 (비공식 자료 없음)"
+  ],
+  "claims": [
+    {
+      "claim": "git clean 은 버전 관리 대상이 아닌(untracked) 파일만 지운다. 기본값은 Git 이 모르는 파일이고, .gitignore 에 걸린 파일은 -x 를 줘야 함께 지워진다.",
+      "grade": "confirmed",
+      "evidence": [
+        "[git-clean 문서] \"Cleans the working tree by recursively removing files that are not under version control, starting from the current directory.\"",
+        "[git-clean 문서] \"Normally, only files unknown to Git are removed, but if the -x option is specified, ignored files are also removed.\"",
+        "[Pro Git] \"By default, the git clean command will only remove untracked files that are not ignored.\"",
+        "[Pro Git] .gitignore 등 ignore 파일 패턴에 맞는 파일은 기본으로 지워지지 않고, 지우려면 -x 를 추가한다."
+      ],
+      "sourceUrls": [
+        "https://git-scm.com/docs/git-clean",
+        "https://git-scm.com/book/en/v2/Git-Tools-Stashing-and-Cleaning"
+      ]
+    },
+    {
+      "claim": "-f 는 사실상 필수다. clean.requireForce 가 false 로 설정되지 않은 한(기본 true) -f 없이는 삭제를 거부하고, 중첩된 untracked git 저장소는 -f 를 두 번 줘야 건드린다. 반면 -n 과 -i 는 이 설정을 무시한다.",
+      "grade": "confirmed",
+      "evidence": [
+        "[git-clean 문서, -f] \"If the Git configuration variable clean.requireForce is not set to false, git clean will refuse to delete files or directories unless given -f.\"",
+        "[git-clean 문서, -f] \"Git will refuse to modify untracked nested git repositories (directories with a .git subdirectory) unless a second -f is given.\"",
+        "[git-config 문서] clean.requireForce: \"A boolean to make git-clean refuse to delete files unless -f is given. Defaults to true.\"",
+        "[git-clean 문서, -n] \"Configuration variable clean.requireForce is ignored, as nothing will be deleted anyway.\"",
+        "[git-clean 문서, -i] \"Configuration variable clean.requireForce is ignored, as this mode gives its own safety protection by going interactive.\"",
+        "[Pro Git] -f 는 'force' 또는 'really do this' 의 뜻이며 clean.requireForce 가 명시적으로 false 가 아니면 필요하다."
+      ],
+      "sourceUrls": [
+        "https://git-scm.com/docs/git-clean",
+        "https://git-scm.com/docs/git-config",
+        "https://git-scm.com/book/en/v2/Git-Tools-Stashing-and-Cleaning"
+      ]
+    },
+    {
+      "claim": "-d 를 주지 않으면 경로 미지정 시 untracked 디렉터리 안으로 들어가지 않는다. 그래서 untracked 파일과 폴더를 통째로 치우려면 보통 git clean -f -d 를 쓴다. 경로(pathspec)를 지정하면 -d 는 무의미하다.",
+      "grade": "confirmed",
+      "evidence": [
+        "[git-clean 문서, -d] \"Normally, when no <pathspec> is specified, git clean will not recurse into untracked directories to avoid removing too much. Specify -d to have it recurse into such directories as well.\"",
+        "[git-clean 문서, -d] \"If a <pathspec> is specified, -d is irrelevant; all untracked files matching the specified paths (with exceptions for nested git directories mentioned under --force) will be removed.\"",
+        "[Pro Git] \"To remove all the untracked files in your working directory, you can run git clean -f -d, which removes any files and also any subdirectories that become empty as a result.\"",
+        "[git-clean 문서, DESCRIPTION] \"If any optional <pathspec>... arguments are given, only those paths that match the pathspec are affected.\""
+      ],
+      "sourceUrls": [
+        "https://git-scm.com/docs/git-clean",
+        "https://git-scm.com/book/en/v2/Git-Tools-Stashing-and-Cleaning"
+      ]
+    },
+    {
+      "claim": "-x 는 표준 ignore 규칙을 쓰지 않아 ignored 파일까지 지우고, -X 는 반대로 ignored 파일만 지운다. 빌드 산출물만 정리하려면 -X, 전부 초기 상태로 되돌리려면 -x 다.",
+      "grade": "confirmed",
+      "evidence": [
+        "[git-clean 문서, -x] \"Don't use the standard ignore rules (see gitignore[5]), but still use the ignore rules given with -e options from the command line. This allows removing all untracked files, including build products.\"",
+        "[git-clean 문서, -x] \"This can be used (possibly in conjunction with git restore or git reset) to create a pristine working directory to test a clean build.\"",
+        "[git-clean 문서, -X] \"Remove only files ignored by Git. This may be useful to rebuild everything from scratch, but keep manually created files.\"",
+        "[git-clean 문서, -e] \"Use the given exclude pattern in addition to the standard ignore rules (see gitignore[5]).\"",
+        "[Pro Git] ignored 파일까지 지우고 싶으면 clean 명령에 -x 를 추가한다. 예시 git clean -n -d -x 는 build.TMP, test.o, tmp/ 를 'Would remove' 로 보여준다."
+      ],
+      "sourceUrls": [
+        "https://git-scm.com/docs/git-clean",
+        "https://git-scm.com/book/en/v2/Git-Tools-Stashing-and-Cleaning"
+      ]
+    },
+    {
+      "claim": "안전한 습관은 -n(--dry-run)으로 지울 목록을 먼저 보고, 확인한 뒤 -n 을 -f 로 바꿔 실행하는 것이다. 대화형 -i 도 대안이며, 지운 파일은 보통 되찾을 수 없으니 git stash --all 이 더 안전한 선택지로 제시된다.",
+      "grade": "confirmed",
+      "evidence": [
+        "[git-clean 문서, -n] \"Don't actually remove anything, just show what would be done.\"",
+        "[Pro Git] \"If you don't know what the git clean command is going to do, always run it with a -n first to double check before changing the -n to a -f and doing it for real.\"",
+        "[Pro Git] \"The other way you can be careful about the process is to run it with the -i or 'interactive' flag.\"",
+        "[Pro Git] \"If you change your mind, there is often no retrieving the content of those files.\"",
+        "[Pro Git] \"A safer option is to run git stash --all to remove everything but save it in a stash.\"",
+        "[git-clean 문서, -q] \"Be quiet, only report errors, but not the files that are successfully removed.\" (-q 를 쓰면 지운 목록도 안 보인다는 점에서 주의 포인트)"
+      ],
+      "sourceUrls": [
+        "https://git-scm.com/docs/git-clean",
+        "https://git-scm.com/book/en/v2/Git-Tools-Stashing-and-Cleaning"
+      ]
+    },
+    {
+      "claim": "-i 대화형 모드는 지울 목록을 보여준 뒤 메뉴로 패턴 제외·번호 선택·항목별 확인을 할 수 있어, 일부만 골라 지울 때 쓴다.",
+      "grade": "confirmed",
+      "evidence": [
+        "[git-clean 문서, INTERACTIVE MODE] \"When the command enters the interactive mode, it shows the files and directories to be cleaned, and goes into its interactive command loop.\"",
+        "[git-clean 문서] 명령은 clean / filter by pattern / select by numbers / ask each / quit / help 6개다.",
+        "[git-clean 문서] filter by pattern 은 'Input ignore patterns>>' 프롬프트에서 공백으로 구분한 패턴(예: \"*.c *.h\")으로 삭제 대상에서 제외한다.",
+        "[git-clean 문서] select by numbers 는 'Select items to delete>>' 프롬프트에서 \"2-5 7,9\" 같은 범위, \"7-\"(나머지 전부), \"*\"(전체)를 지원한다.",
+        "[git-clean 문서] ask each 는 \"you must confirm one by one in order to delete items\" 이며 앞의 두 방식만큼 효율적이지는 않다.",
+        "[Pro Git] 예시 git clean -x -i 는 'Would remove the following items' 와 1: clean ~ 6: help 메뉴를 보여준다."
+      ],
+      "sourceUrls": [
+        "https://git-scm.com/docs/git-clean",
+        "https://git-scm.com/book/en/v2/Git-Tools-Stashing-and-Cleaning"
+      ]
+    }
+  ],
+  "numbers": [
+    { "what": "clean.requireForce 기본값", "value": "true (false 로 설정되지 않은 한 -f 없이 삭제 거부)", "asOf": "2026-11-05 조회, 문서 버전 미확인", "sourceUrl": "https://git-scm.com/docs/git-config" },
+    { "what": "중첩된 untracked git 저장소를 건드리는 데 필요한 -f 횟수", "value": "2회 (-f -f)", "asOf": "2026-11-05 조회, 문서 버전 미확인", "sourceUrl": "https://git-scm.com/docs/git-clean" },
+    { "what": "-i 대화형 모드 메뉴 개수 (git-clean 문서 기준 명령 6개: clean, filter by pattern, select by numbers, ask each, quit, help)", "value": "6", "asOf": "2026-11-05 조회", "sourceUrl": "https://git-scm.com/docs/git-clean" },
+    { "what": "Pro Git 의 -x -i 예시 메뉴 번호", "value": "1: clean ~ 6: help (6개)", "asOf": "2026-11-05 조회", "sourceUrl": "https://git-scm.com/book/en/v2/Git-Tools-Stashing-and-Cleaning" },
+    { "what": "Pro Git 예시 git clean -n -d -x 의 'Would remove' 대상", "value": "build.TMP, test.o, tmp/ (3개)", "asOf": "2026-11-05 조회", "sourceUrl": "https://git-scm.com/book/en/v2/Git-Tools-Stashing-and-Cleaning" },
+    { "what": "Pro Git 예시 git clean -d -n 의 'Would remove' 대상 (앞쪽의 별개 예시, -x 비교 기준 아님)", "value": "test.o, tmp/ (2개)", "asOf": "2026-11-05 조회", "sourceUrl": "https://git-scm.com/book/en/v2/Git-Tools-Stashing-and-Cleaning" },
+    { "what": "Pro Git 예시 git clean -n -d 의 'Would remove' 대상 (git status -s 가 ?? build.TMP, ?? tmp/ 인 상태, -x 비교 기준. test.o 는 ignore 대상이라 빠짐)", "value": "build.TMP, tmp/ (2개)", "asOf": "2026-11-05 조회 (factchecker 원문 대조)", "sourceUrl": "https://git-scm.com/book/en/v2/Git-Tools-Stashing-and-Cleaning" }
+  ],
+  "sources": [
+    {
+      "title": "git-clean Documentation",
+      "url": "https://git-scm.com/docs/git-clean",
+      "host": "git-scm.com",
+      "tier": "official",
+      "body": "SYNOPSIS: git clean [-d] [-f] [-i] [-n] [-q] [-e <pattern>] [-x | -X] [--] [<pathspec>...]. DESCRIPTION: \"Cleans the working tree by recursively removing files that are not under version control, starting from the current directory.\" \"Normally, only files unknown to Git are removed, but if the -x option is specified, ignored files are also removed. This can, for example, be useful to remove all build products.\" \"If any optional <pathspec>... arguments are given, only those paths that match the pathspec are affected.\" -d: \"Normally, when no <pathspec> is specified, git clean will not recurse into untracked directories to avoid removing too much. Specify -d to have it recurse into such directories as well. If a <pathspec> is specified, -d is irrelevant; all untracked files matching the specified paths (with exceptions for nested git directories mentioned under --force) will be removed.\" -f: \"If the Git configuration variable clean.requireForce is not set to false, git clean will refuse to delete files or directories unless given -f. Git will refuse to modify untracked nested git repositories (directories with a .git subdirectory) unless a second -f is given.\" -i: \"Show what would be done and clean files interactively. ... Configuration variable clean.requireForce is ignored, as this mode gives its own safety protection by going interactive.\" -n: \"Don't actually remove anything, just show what would be done. Configuration variable clean.requireForce is ignored, as nothing will be deleted anyway.\" -q: \"Be quiet, only report errors, but not the files that are successfully removed.\" -e: \"Use the given exclude pattern in addition to the standard ignore rules (see gitignore[5]).\" -x: \"Don't use the standard ignore rules (see gitignore[5]), but still use the ignore rules given with -e options from the command line. This allows removing all untracked files, including build products. This can be used (possibly in conjunction with git restore or git reset) to create a pristine working directory to test a clean build.\" -X: \"Remove only files ignored by Git. This may be useful to rebuild everything from scratch, but keep manually created files.\" INTERACTIVE MODE: 6 commands (clean, filter by pattern, select by numbers, ask each, quit, help). CONFIGURATION: clean.requireForce: \"A boolean to make git-clean refuse to delete files unless -f is given. Defaults to true.\""
+    },
+    {
+      "title": "git-config Documentation (clean.requireForce 항목)",
+      "url": "https://git-scm.com/docs/git-config",
+      "host": "git-scm.com",
+      "tier": "official",
+      "body": "clean.requireForce: \"A boolean to make git-clean refuse to delete files unless -f is given. Defaults to true.\" git-config 문서 전체 448,023자 중 100,000~200,000자 구간만 확인했다. git-clean 문서의 CONFIGURATION 절은 git-config 문서에서 발췌 포함한 것이라 두 문서의 문구가 동일하다."
+    },
+    {
+      "title": "Pro Git - Git Tools: Stashing and Cleaning (Cleaning your Working Directory)",
+      "url": "https://git-scm.com/book/en/v2/Git-Tools-Stashing-and-Cleaning",
+      "host": "git-scm.com",
+      "tier": "official",
+      "body": "\"Finally, you may not want to stash some work or files in your working directory, but simply get rid of them; that's what the git clean command is for.\" \"You'll want to be pretty careful with this command, since it's designed to remove files from your working directory that are not tracked. If you change your mind, there is often no retrieving the content of those files. A safer option is to run git stash --all to remove everything but save it in a stash.\" \"To remove all the untracked files in your working directory, you can run git clean -f -d, which removes any files and also any subdirectories that become empty as a result. The -f means 'force' or \\\"really do this,\\\" and is required if the Git configuration variable clean.requireForce is not explicitly set to false.\" \"If you ever want to see what it would do, you can run the command with the --dry-run (or -n) option...\" Example: $ git clean -d -n -> Would remove test.o / Would remove tmp/. \"By default, the git clean command will only remove untracked files that are not ignored. ... If you want to remove those files too ... you can add a -x to the clean command.\" Example: $ git clean -n -d -x -> Would remove build.TMP / test.o / tmp/. \"If you don't know what the git clean command is going to do, always run it with a -n first to double check before changing the -n to a -f and doing it for real. The other way you can be careful about the process is to run it with the -i or 'interactive' flag.\" Interactive example: $ git clean -x -i shows the menu 1: clean 2: filter by pattern 3: select by numbers 4: ask each 5: quit 6: help."
+    }
+  ],
+  "dropped": [],
+  "songs": []
+}

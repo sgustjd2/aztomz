@@ -1,0 +1,136 @@
+{
+  "keyword": "콜라비 손질법·보관법·먹는 법 (제철)",
+  "categoryId": "life-info",
+  "notes": "1차 자료는 농식품정보누리(제철·고르기·손질·보관·먹는법·성분)와 농사로(제주 수확시기) 둘이다. 가정 손질·보관은 '비닐랩에 하나씩 싸 냉장'까지만 공식 근거가 있고, 냉장 적정 온도·습도·보관 일수는 자료 없음(블로그 수치 쓰지 말 것). foodnuri·nongsaro 본문은 WebFetch 요약이라 원문 대조 신뢰도는 중간이며, 비타민C는 출처별 수치가 달라 합치지 않는다.",
+  "sources": [
+    {
+      "title": "제주지역 콜라비 적정 수확시기 및 정식한계기 구명",
+      "url": "https://nongsaro.go.kr/portal/ps/psb/psbb/farmUseTechDtl.ps;jsessionid=X1H9GVVM15OdrIjnQnaPHYahZCulXAbh1shUkOlOMiXIm1k60UXxMezJINEkbkRP.nongsaro-web_servlet_engine1?sTchnlgyRealmCode=&sKidofcomdtySeCode=VC021099&sTchnlgyPrcuseTyCode=&sRsrchRealmCode=&sRealmName=&sPsitnCode=&sPsitnArea=&sDtlType=Y&pageIndex=1&noSpr=&menuId=PS00072&farmPrcuseSeqNo=16721&sType=sj&sValue=&sReSearchValue=&sStdYear=2004&sEndYear=2016",
+      "host": "nongsaro.go.kr",
+      "body": "농사로(농촌진흥청) 포털에 게시된 제주특별자치도농업기술원 김정선 제안 영농기술, '제주지역 콜라비 적정 수확시기 및 정식한계기 구명'(2014). 분류: 채소 > 기타엽경채류. 핵심 내용(WebFetch 요약, 원문 그대로 아님): 콜라비는 정식 후 60일부터 수확할 수 있으나, 제주에서의 적정 수확 시기는 정식 후 75~90일이며 초기 생육보다 구비대기(구가 커지는 시기)의 기온에 따라 달라진다. 제주 정식은 9월 상순~하순에 가능하며 당도를 위해서는 9월 20일 전후 정식을 권장한다. 10월 정식은 구비대와 수량이 크게 떨어져 권장하지 않는다.",
+      "tier": "official"
+    },
+    {
+      "title": "콜라비 (제철농식품) — 농식품정보누리",
+      "url": "https://www.foodnuri.go.kr/portal/bbs/B0000283/view.do?nttId=219812&menuNo=300063&selectMonth=12&searchCnd=&searchWrd=&deleteCd=0&pageIndex=1",
+      "host": "foodnuri.go.kr",
+      "body": "농식품정보누리 제철농식품 콜라비 페이지(WebFetch 요약). 제철: 생산 시기 11~12월, 주요 산지 강진·해남·제주·익산. 고르는 법: 테니스공 크기, 잎이 싱싱하고 짙푸르며 노랗게 변한 잎이 없는 것, 녹색 콜라비가 보라색보다 단맛이 약간 더 강함. 보관: 하나씩 비닐랩에 싸서 냉장. 손질: 먹는 줄기구경이 흙 위에서 자라 뿌리를 제거하고 수확하며 깨끗이 씻는 것이 중요, 잎과 뿌리 부분을 칼로 잘라낸 뒤 칼이나 필러로 껍질을 벗김. 줄기 껍질은 영양이 많지만 단단해 적콜라비는 손질에 주의. 영양(생것 100g 기준): 열량 28kcal, 수분 91.4g, 단백질 1.6g, 지질 0.5g, 탄수화물 5.6g, 칼륨 340mg, 인 187mg, 칼슘 17mg, 철 0.1mg, 나트륨 10mg, 비타민C 57mg, 베타카로틴 232㎍. 먹는 법: 생으로 샐러드·쌈·생채, 깍두기·물김치·장아찌·피클·주스, 익히면 감자와 비슷한 식감, 말려서 말랭이 반찬.",
+      "tier": "official"
+    },
+    {
+      "title": "콜라비의 수확 후 MA 포장에 따른 품질 유지 효과",
+      "url": "https://koreascience.kr/article/JAKO201436351072733.page?lang=ko",
+      "host": "koreascience.kr",
+      "body": "원예과학기술지 2014 초록(WebFetch 요약). 50μm PE와 OPP 필름에 산소투과율(OTR) 3,000/10,000/15,000 mL/m2/day/atm 포장재로 저장 비교. 저온 저장은 60일까지 포장 간 외관 품질과 이취에 유의한 차이가 없었음. OTR 3000 포장은 상온 저장 중 O2 3.2-6.7kPa, CO2 13.1-19.8kPa를 유지하고 중량 감소율이 가장 낮음. 50μm PE는 저장 말기로 갈수록 부패·이취가 빠름. 비타민C 손실은 OTR 15000에서 가장 큼. 결론: OPP OTR 3000 포장이 품질과 비타민C 유지에 가장 효과적. 저장 온도 수치와 습도는 초록에 없음.",
+      "tier": "data"
+    },
+    {
+      "title": "콜라비 껍질과 가식부 성분 비교 (JAKO201310559989407)",
+      "url": "https://koreascience.kr/article/JAKO201310559989407.page",
+      "host": "koreascience.kr",
+      "body": "koreascience 논문 초록(WebFetch 요약, 건물 기준으로 보이나 초록상 불명확). 비타민C 가식부 231.36mg/100g, 껍질 약 402.75mg/100g. 비타민E 가식부 0.17, 껍질 0.24 mg/100g(국문 초록). 껍질이 무기질·총아미노산·유기산(약 10% 높음)에서 더 높고, 가식부는 유리당 총량과 불포화지방산이 더 많음. 무기질은 K가 최다, 이어 Ca, Mg, Na. 글루탐산이 두 부위 모두 최다 아미노산.",
+      "tier": "data"
+    },
+    {
+      "title": "Composition Analysis between Kohlrabi and Radish",
+      "url": "https://koreascience.or.kr/article/JAKO201018651618927.page",
+      "host": "koreascience.or.kr",
+      "body": "koreascience 논문 초록(WebFetch 요약). 콜라비는 무보다 환원당·셀룰로오스·펙틴이 적고 조직이 단단함. 총 아미노산은 콜라비가 약 2.7배, 친수성 아미노산(아스파르트산·글루탐산·아르기닌) 약 3배. 총 글루코시놀레이트는 콜라비 내부 12.4배, 외부 28.5배 낮음. 관능검사에서 콜라비가 무보다 덜 쓰고 덜 맵고 더 달다고 평가. 글루코라파닌은 콜라비가 더 많음.",
+      "tier": "data"
+    }
+  ],
+  "claims": [
+    {
+      "claim": "콜라비 제철은 11~12월이고 강진·해남·제주·익산이 주산지다. 제주는 9월 상~하순 정식 후 75~90일에 수확하므로 늦가을이 한창이다.",
+      "grade": "confirmed",
+      "evidence": [
+        "농식품정보누리: 생산 시기 11~12월, 주요 산지 강진·해남·제주·익산",
+        "농사로(제주농업기술원): 정식 후 60일부터 수확 가능, 제주 적정 수확은 정식 후 75~90일(구비대기 기온에 좌우)",
+        "제주 정식은 9월 상~하순 가능, 당도를 위해 9월 20일 전후 권장. 10월 정식은 구비대·수량 크게 감소"
+      ],
+      "sourceUrls": [
+        "https://www.foodnuri.go.kr/portal/bbs/B0000283/view.do?nttId=219812&menuNo=300063&selectMonth=12&searchCnd=&searchWrd=&deleteCd=0&pageIndex=1",
+        "https://nongsaro.go.kr/portal/ps/psb/psbb/farmUseTechDtl.ps;jsessionid=X1H9GVVM15OdrIjnQnaPHYahZCulXAbh1shUkOlOMiXIm1k60UXxMezJINEkbkRP.nongsaro-web_servlet_engine1?sTchnlgyRealmCode=&sKidofcomdtySeCode=VC021099&sTchnlgyPrcuseTyCode=&sRsrchRealmCode=&sRealmName=&sPsitnCode=&sPsitnArea=&sDtlType=Y&pageIndex=1&noSpr=&menuId=PS00072&farmPrcuseSeqNo=16721&sType=sj&sValue=&sReSearchValue=&sStdYear=2004&sEndYear=2016"
+      ]
+    },
+    {
+      "claim": "고를 때는 테니스공 크기에 잎이 싱싱하고 짙푸른 것을 고른다. 손질은 잎과 뿌리 부분을 자르고 깨끗이 씻은 뒤 칼이나 필러로 껍질을 벗기며, 껍질이 단단한 적콜라비는 특히 조심한다.",
+      "grade": "confirmed",
+      "evidence": [
+        "고르는 법: 테니스공 크기, 잎이 싱싱하고 짙푸르며 노랗게 변한 잎이 없는 것",
+        "녹색 콜라비가 보라색보다 단맛이 약간 더 강함",
+        "손질: 먹는 줄기구경이 흙 위에서 자라 뿌리를 제거하고 수확하며 깨끗이 씻는 것이 중요, 잎과 뿌리 부분을 칼로 잘라낸 뒤 칼이나 필러로 껍질을 벗김",
+        "줄기 껍질은 영양이 많지만 단단해 적콜라비는 손질에 주의"
+      ],
+      "sourceUrls": [
+        "https://www.foodnuri.go.kr/portal/bbs/B0000283/view.do?nttId=219812&menuNo=300063&selectMonth=12&searchCnd=&searchWrd=&deleteCd=0&pageIndex=1"
+      ]
+    },
+    {
+      "claim": "보관은 하나씩 비닐랩에 싸서 냉장하는 것이 공식 안내다. 포장 연구에서도 저온 저장 시 포장 방식이 외관 품질을 크게 가르지 않았고, 산소투과율이 낮은(3,000) 필름이 중량 감소와 비타민C 손실이 가장 적었다. 가정 냉장의 적정 온도·일수는 자료가 없다.",
+      "grade": "confirmed",
+      "evidence": [
+        "농식품정보누리 보관: 하나씩 비닐랩에 싸서 냉장",
+        "MA 포장 연구: 저온 저장 60일까지 포장 간 외관 품질·이취에 유의차 없음(OTR 3000/10000/15000 비교)",
+        "OPP OTR 3000 포장이 중량 감소 최저, 비타민C 유지 최선. 비타민C 손실은 OTR 15000에서 가장 큼",
+        "50μm PE는 저장 말기로 갈수록 부패·이취가 빠름",
+        "논문 초록에 저장 온도·습도 수치 없음. 이는 상업용 필름 실험이며 가정 비닐랩에 그대로 적용된다는 근거는 아님"
+      ],
+      "sourceUrls": [
+        "https://www.foodnuri.go.kr/portal/bbs/B0000283/view.do?nttId=219812&menuNo=300063&selectMonth=12&searchCnd=&searchWrd=&deleteCd=0&pageIndex=1",
+        "https://koreascience.kr/article/JAKO201436351072733.page?lang=ko"
+      ]
+    },
+    {
+      "claim": "먹는 법은 생으로도 익혀서도 가능하다. 생으로는 샐러드·쌈·생채, 절임류는 깍두기·물김치·장아찌·피클, 그 밖에 주스와 말랭이 반찬이 있고, 익히면 감자와 비슷한 식감이 된다. 무보다 덜 맵고 더 달다는 관능평가가 있다.",
+      "grade": "confirmed",
+      "evidence": [
+        "농식품정보누리: 생(샐러드·쌈·생채)·깍두기·물김치·장아찌·피클·주스, 익히면 감자 같은 식감, 말려서 말랭이 반찬",
+        "논문 관능검사: 콜라비가 무보다 덜 쓰고 덜 맵고 더 달다고 평가",
+        "콜라비는 무보다 환원당·셀룰로오스·펙틴이 적고 조직이 단단함",
+        "총 글루코시놀레이트는 무보다 내부 12.4배, 외부 28.5배 낮음"
+      ],
+      "sourceUrls": [
+        "https://www.foodnuri.go.kr/portal/bbs/B0000283/view.do?nttId=219812&menuNo=300063&selectMonth=12&searchCnd=&searchWrd=&deleteCd=0&pageIndex=1",
+        "https://koreascience.or.kr/article/JAKO201018651618927.page"
+      ]
+    },
+    {
+      "claim": "생것 100g 기준 28kcal, 수분 91.4g으로 가볍고 칼륨(340mg)과 비타민C(57mg)가 눈에 띈다. 논문은 껍질에 성분이 더 많다고 보고하지만, 비타민C 수치는 출처마다 기준이 달라 직접 비교하지 않는다.",
+      "grade": "confirmed",
+      "evidence": [
+        "농식품정보누리(생것 100g): 열량 28kcal, 수분 91.4g, 단백질 1.6g, 탄수화물 5.6g, 칼륨 340mg, 인 187mg, 칼슘 17mg, 비타민C 57mg, 베타카로틴 232㎍",
+        "논문 초록(기준 불명확): 비타민C 가식부 231.36mg/100g, 껍질 약 402.75mg/100g. 껍질이 무기질·아미노산·유기산에서 더 높음",
+        "두 비타민C 수치는 측정 기준(생물·건물 등)이 달라 보여 합치거나 나란히 비교하지 말고 출처별로 표기"
+      ],
+      "sourceUrls": [
+        "https://www.foodnuri.go.kr/portal/bbs/B0000283/view.do?nttId=219812&menuNo=300063&selectMonth=12&searchCnd=&searchWrd=&deleteCd=0&pageIndex=1",
+        "https://koreascience.kr/article/JAKO201310559989407.page"
+      ]
+    }
+  ],
+  "numbers": [
+    { "what": "제철(생산) 시기", "value": "11~12월", "asOf": "농식품정보누리 제철농식품 페이지(게시일 불명)", "sourceUrl": "https://www.foodnuri.go.kr/portal/bbs/B0000283/view.do?nttId=219812&menuNo=300063&selectMonth=12&searchCnd=&searchWrd=&deleteCd=0&pageIndex=1" },
+    { "what": "제주 적정 수확 시기", "value": "정식 후 75~90일 (수확 가능은 60일부터)", "asOf": "2014", "sourceUrl": "https://nongsaro.go.kr/portal/ps/psb/psbb/farmUseTechDtl.ps;jsessionid=X1H9GVVM15OdrIjnQnaPHYahZCulXAbh1shUkOlOMiXIm1k60UXxMezJINEkbkRP.nongsaro-web_servlet_engine1?sTchnlgyRealmCode=&sKidofcomdtySeCode=VC021099&sTchnlgyPrcuseTyCode=&sRsrchRealmCode=&sRealmName=&sPsitnCode=&sPsitnArea=&sDtlType=Y&pageIndex=1&noSpr=&menuId=PS00072&farmPrcuseSeqNo=16721&sType=sj&sValue=&sReSearchValue=&sStdYear=2004&sEndYear=2016" },
+    { "what": "제주 권장 정식 시기", "value": "9월 상~하순, 당도 위해 9월 20일 전후", "asOf": "2014", "sourceUrl": "https://nongsaro.go.kr/portal/ps/psb/psbb/farmUseTechDtl.ps;jsessionid=X1H9GVVM15OdrIjnQnaPHYahZCulXAbh1shUkOlOMiXIm1k60UXxMezJINEkbkRP.nongsaro-web_servlet_engine1?sTchnlgyRealmCode=&sKidofcomdtySeCode=VC021099&sTchnlgyPrcuseTyCode=&sRsrchRealmCode=&sRealmName=&sPsitnCode=&sPsitnArea=&sDtlType=Y&pageIndex=1&noSpr=&menuId=PS00072&farmPrcuseSeqNo=16721&sType=sj&sValue=&sReSearchValue=&sStdYear=2004&sEndYear=2016" },
+    { "what": "열량 (생것 100g)", "value": "28kcal", "asOf": "농식품정보누리", "sourceUrl": "https://www.foodnuri.go.kr/portal/bbs/B0000283/view.do?nttId=219812&menuNo=300063&selectMonth=12&searchCnd=&searchWrd=&deleteCd=0&pageIndex=1" },
+    { "what": "수분 (생것 100g)", "value": "91.4g", "asOf": "농식품정보누리", "sourceUrl": "https://www.foodnuri.go.kr/portal/bbs/B0000283/view.do?nttId=219812&menuNo=300063&selectMonth=12&searchCnd=&searchWrd=&deleteCd=0&pageIndex=1" },
+    { "what": "칼륨 (생것 100g)", "value": "340mg", "asOf": "농식품정보누리", "sourceUrl": "https://www.foodnuri.go.kr/portal/bbs/B0000283/view.do?nttId=219812&menuNo=300063&selectMonth=12&searchCnd=&searchWrd=&deleteCd=0&pageIndex=1" },
+    { "what": "비타민C (생것 100g, 농식품정보누리 기준)", "value": "57mg", "asOf": "농식품정보누리", "sourceUrl": "https://www.foodnuri.go.kr/portal/bbs/B0000283/view.do?nttId=219812&menuNo=300063&selectMonth=12&searchCnd=&searchWrd=&deleteCd=0&pageIndex=1" },
+    { "what": "비타민C (논문 초록, 가식부 / 껍질; 측정 기준 불명확, 위 57mg과 비교 금지)", "value": "231.36mg/100g / 약 402.75mg/100g", "asOf": "논문 연도 불명", "sourceUrl": "https://koreascience.kr/article/JAKO201310559989407.page" },
+    { "what": "베타카로틴 (생것 100g)", "value": "232㎍", "asOf": "농식품정보누리", "sourceUrl": "https://www.foodnuri.go.kr/portal/bbs/B0000283/view.do?nttId=219812&menuNo=300063&selectMonth=12&searchCnd=&searchWrd=&deleteCd=0&pageIndex=1" },
+    { "what": "저온 저장 실험에서 포장 간 외관 품질 차이 없던 기간", "value": "60일까지 (포장재 OTR 비교 실험, 온도 수치는 초록에 없음)", "asOf": "2014", "sourceUrl": "https://koreascience.kr/article/JAKO201436351072733.page?lang=ko" },
+    { "what": "무 대비 총 아미노산 / 총 글루코시놀레이트", "value": "약 2.7배 / 내부 12.4배·외부 28.5배 낮음", "asOf": "2010", "sourceUrl": "https://koreascience.or.kr/article/JAKO201018651618927.page" }
+  ],
+  "dropped": [],
+  "cannotCover": [
+    "냉장 보관의 적정 온도·습도·보관 일수 (공식 수치 없음, 블로그 1주~1개월은 근거 약해 쓰지 말 것)",
+    "냉동 보관 방법(데침 시간·기간) — 블로그 스니펫뿐, 공식 근거 없음",
+    "제주 영농정보의 '구 700g 수확, 본잎 2~3장 남김' — 스니펫만 확인, 미검증",
+    "국가표준식품성분표 직접 확인 못함 (비타민C 57mg의 원출처 대조 불가)",
+    "콜라비 출하량·가격 통계 (농협/aT KAMIS 자료 없음)",
+    "건강 효능 단정 (논문은 성분 함량만 다룸, 효능 주장 근거 없음)",
+    "foodnuri·nongsaro 본문은 WebFetch 요약이라 문구를 직접 인용하지 말 것"
+  ],
+  "songs": []
+}
