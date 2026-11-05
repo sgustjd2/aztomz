@@ -3,11 +3,17 @@
 채널 [AI Engineer](https://www.youtube.com/@aiDotEngineer) 의 새 영상을 Gemini 로 자동 요약한 모음입니다.
 생성: `backend/scripts/youtube-summarize.mjs` (GitHub Actions `youtube-summary` 크론).
 
-총 **444개**.
+총 **450개**.
 
 | 발행일 | 제목 |
 |---|---|
+| 2026-11-04 | [Our Smaller Model Beat Opus on Finance Tasks - Alexander Shevchenko, Ramp](2026-11-04-T-42NrYjwxM.md) |
+| 2026-11-04 | [AI Labs Will Trap You or Replace You - Dillon Rolnick, Nous Research](2026-11-04-Sg6vtKOAOQ0.md) |
+| 2026-11-04 | [Robots Will Be Trained on Video Games - Pim de Witte, General Intuition](2026-11-04-MpkARD5pq-M.md) |
 | 2026-11-04 | [Why AI Makes You 100x Faster but Not Your Company - Mitchell Troyanovsky, Basis](2026-11-04-JGtkTjn4120.md) |
+| 2026-11-04 | [Building the AI Agent Is Easy. Proving It's Safe Isn't - Jonathan Osborne, NatWest](2026-11-04-5UgnatzpZ9E.md) |
+| 2026-11-04 | [Why Datasite Stopped Building Its Own Parsing - Adit Abraham, Reducto & Raj Bakhru, Datasite](2026-11-04-0PqGT2L6cZM.md) |
+| 2026-11-04 | [Don't Approve the AI Model. Approve the App - Doneyli De Jesus, Langfuse](2026-11-04--uBABM2AuFg.md) |
 | 2026-11-03 | [Your AI Agents Shouldn't Care Where They Run - Nikhil Harithas, Factory](2026-11-03-XIHZpZtYCzo.md) |
 | 2026-11-03 | [You Can't Tell What's Real Anymore. Here's What Comes Next - Cristóbal Valenzuela, Runway](2026-11-03-q4ITwvlFplQ.md) |
 | 2026-11-03 | [Without Caching, Your AI Agent Costs 10x More - George Cameron, Artificial Analysis](2026-11-03-prGP0huECPo.md) |
