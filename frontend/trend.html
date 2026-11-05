@@ -178,10 +178,11 @@
   function galleryBlock(){
     const all=[...(t.images||[])];
     if(t.video&&t.video.youtube) all.unshift(`https://i.ytimg.com/vi/${t.video.youtube}/hqdefault.jpg`);
-    const uniq=[...new Set(all.map(x=>typeof x==='string'?x:x.u))].filter(Boolean);
+    const cover=H.coverImg(t);   // 상단 대표 이미지와 같은 그림은 갤러리에서 뺀다(같은 사진 두 번 노출 방지)
+    const uniq=[...new Set(all.map(x=>typeof x==='string'?x:x.u))].filter(u=>u&&u!==cover);
     if(!uniq.length) return '';
     return `<div class="media">
-      <h2 class="media-h">${detailIcon("image")} 대표 이미지</h2>
+      <h2 class="media-h">${detailIcon("image")} 사진 더 보기</h2>
       <div class="gallery">${uniq.map(u=>`<a href="${u}" target="_blank" rel="noopener">
         <img src="${u}" alt="${H.esc(t.title)}" width="640" height="480" loading="lazy" referrerpolicy="no-referrer"
           onerror="this.closest('a').remove()"></a>`).join('')}</div>
