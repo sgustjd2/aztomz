@@ -59,14 +59,32 @@ Hermes는 [Nous Research](https://nousresearch.com)의 AI 에이전트 런타임
 | 항목 | 내용 |
 |---|---|
 | 주 모델 | `gpt-6-luna-900k` · provider `openai-codex`(base `chatgpt.com/backend-api/codex`) — Codex CLI와 **5시간 사용 한도를 공유** |
-| 폴백 | `fallback_providers`: provider `anthropic` · model `claude-sonnet-5` (2026-10-23 추가). 주 모델이 429 `usage_limit_reached` 등으로 실패하면 이 모델로 넘어간다 |
+| 폴백 | `fallback_providers`: provider `anthropic` · model `claude-sonnet-5-5` (2026-11-06 변경). 주 모델이 429 `usage_limit_reached` 등으로 실패하면 이 모델로 넘어간다 |
 | 되돌리기·주의 | 폴백 제거는 `config.yaml`의 `fallback_providers`를 지운다. 크론 잡이 모델을 고정(pin)해 두면 폴백을 타지 않는다 (2026-10-22 21:30·21:50 수집이 Codex 한도로 실패한 것이 계기) |
-| 이전 구성 | 2026-06-23~10-23: `gemini-2.5-pro`(GA) · provider `gemini` 단독, fallback 없음 |
+| 이전 구성 | 아래 "모델 변경 이력" 참고 (Gemini 무료 → Gemini 2.5 Pro 유료 → Claude Sonnet 5 → 현재) |
 | 재시도 | `agent.api_max_retries=6`(config). 21:30 수집이 실패하면 `21:50` 재시도 게이트(`hangeut_retry_gate.py`)가 1회 다시 큐잉 |
 | 확인 필요 | 이전 Gemini 기준으로 적힌 "무료 쿼터·cron 3분 하드제한" 제약은 현재 Codex 구성에서 재검증하지 않았다. 실제 한도는 Codex 한도 기준으로 봐야 한다 |
 | 검색 | `ddgs.exe`(DuckDuckGo, 키 불필요) — 브라우저(Chrome)는 안 됨 |
 | 화제성 | `scripts/youtube_search.py`(YouTube Data API) — 조회수·댓글·업로드일 |
 | **한계** | 무료 쿼터(분당 소량) + **cron 3분 하드제한** → 복잡한 자동 크론은 불가. **온디맨드(인터랙티브)** 또는 **가벼운 no-agent 크론**이 현실적 |
+
+### 모델 변경 이력
+
+2026-11-05에 확인했다. 근거는 세 가지다.
+- Hermes `config.yaml`과 그 백업(`config.yaml.bak-*`)
+- `logs/agent.log*`·`logs/errors.log` (2026-06-05부터 남아 있음)
+- `learnings.md`와 커밋 기록
+
+| 기간 | 모델 · 연결 | 바꾼 이유 · 근거 |
+|---|---|---|
+| 2026-06-05~06-22 | **Gemini 무료**(Google 계정 OAuth, `google-gemini-cli`): `gemini-2.5-flash`가 기본. `gemini-3-flash-preview`·`3.1-flash-lite-preview`도 시험 | 무료 한도가 작았다. flash는 하루 약 250회이고, API 키 경로는 하루 20회였다. 이 때문에 한도 초과와 서버 과부하로 호출이 자주 끊겼다. 6월 `errors.log`에 429가 2,081건, 한도 소진(RESOURCE_EXHAUSTED·quota)이 4,727건, 503이 340건 있고, 대부분 Gemini 호출이다. 6/11에는 재시도 6회가 모두 실패해 크론이 죽었다. 긴 작업은 결과가 잘렸다(6/5 `Job '한끗 수집' failed: Response truncated due to output length limit`). lite 모델은 검색을 거의 안 해 게시가 0건이었고(learnings 6/11), `gemini-3-flash-preview`는 병렬 도구 호출에서 400 오류가 났다 |
+| 2026-06-23~09-23 | **`gemini-2.5-pro`**(GA, 유료 Tier-1 키) 단독 | 무료 한도를 벗어나려고 유료로 바꿨다(커밋 `09ae8cd`). 이후에도 21시대 503 과부하가 이어졌다(7월 73건·8월 25건). 21:50 재시도 게이트를 둔 이유다 |
+| 2026-09-23~10-12 | **`claude-sonnet-5`**(provider `anthropic`, Claude Code **구독 OAuth**, effort medium) | 사용 중인 Claude 구독으로 연결해 한도에 여유를 두려고 바꿨다(커밋 `c2e9426`). `agent.log`에서는 09-24부터 이 모델이 주로 호출된다 |
+| 2026-10-13~현재 | **주 모델 `gpt-6-luna-900k`**(provider `openai-codex`, ChatGPT 계정 기기 인증 OAuth) + **10-23부터 폴백 `claude-sonnet-5`, 11-06부터 `claude-sonnet-5-5`** | `agent.log`의 첫 Codex 호출은 10-13 20:10이다. 10-22 수집이 Codex 5시간 한도(429 `usage_limit_reached`, Codex CLI와 공유)로 실패했다. 그래서 10-23에 Claude를 폴백으로 붙였다(커밋 `8f9c29f`). 11-06 사용자 요청으로 Sonnet 5.5 ID로 변경하고 게이트웨이를 재시작했다 |
+
+- **확인 못 함:** 10-13에 Claude에서 Codex로 바꾼 이유는 커밋·learnings·로그 어디에도 적혀 있지 않다. `config.yaml.bak-20261007`까지는 Claude, `bak-20261022`부터 Codex인 것만 확인된다.
+- **모델 이름:** 2026-11-06부터 Hermes 폴백은 `claude-sonnet-5-5`다.
+- **6월 시험 이력:** 무료 OpenRouter 키(크레딧 $0)와 Anthropic OAuth(당시 extra usage 결제 필요)도 시험했다. 둘 다 폴백으로 못 써서 해지했다(learnings 6/11).
 
 > ⚠️ 인스타·틱톡·페북 **직접 접근 금지**(ToS·로그인벽). 공개 검색(ddgs) + 유튜브 API만 사용.
 
@@ -127,8 +145,7 @@ Hermes는 [Nous Research](https://nousresearch.com)의 AI 에이전트 런타임
 | **한끗 광고/진짜 일일 재확인** (신규) | 매일 **21:15** | `recheck_ad.py`(no-agent) — 가장 오래된 신뢰분석 1건의 출처 재검증(recheck-ad.mjs) → 살아있으면 analyzedAt 갱신(→ 홈 featured 회전). 근거 대조(`lib/grounding.mjs`) 실패 시엔 회전 없이 '사람 확인 필요'로 보고하고 다음 오래된 항목(최대 3건)을 시도. 메인(21:00)과 trends.json 쓰기 충돌 방지로 15분 뒤 |
 | **한끗 유행 단계 재판정** (`2bfe2a1c0d40`) | 매일 **21:05** | `hangeut-restage` — 게시 트렌드 5건의 유행 단계 재판정 → `restage.mjs --apply`(검증·반영·git push). 최근 14일 재판정분은 제외. 기록 `backend/out/pipeline/restage.jsonl` |
 | **한끗 주간 갱신** (`dc54cec90b5e`) | 매주 월 **21:00** | `hangeut_daily.py`(no-agent) — trends.json 날짜 스탬프 + 신선도 리포트. 무료·안 죽음 |
-| **한끗 펄스 — 오늘의 분야** (`f3a0b6724fa4`) | 매일 **21:00** | `pulse_categories.py`(no-agent) — 오늘 분석할 펄스 분야를 디스코드로 안내 |
-| **한끗 — 오늘의 수집 분야** (`bc1a98451fb7`) | 매일 **21:00** | `trend_categories.py`(no-agent) — 오늘 수집할 트렌드 분야 안내 |
+| **한끗 오늘의 분야** (`f3a0b6724fa4`) | 매일 **21:00** | `hangeut_categories.py`(no-agent) — 오늘 날짜에 맞춘 펄스 분석 분야와 트렌드 수집 분야를 한 Discord 메시지로 안내하고, 실제 실행 시각(펄스 07:00 · 트렌드 21:30) 및 별도 명령이 필요 없음을 알림. 기존 중복 안내 잡 `bc1a98451fb7`은 일시정지됨 |
 
 > ⏰ **전부 21시대(KST)** — 아침엔 PC가 꺼져 있어 저녁으로 옮김. 유행 단계 재판정 21:05, 재확인 21:15(파일 쓰기 충돌 방지), 메인 수집·게시 21:30, 재시도 게이트 21:50. Hermes는 **로컬**이라 그 시각에 PC+게이트웨이가 켜져 있어야 실행된다(`tools/start-hermes.bat`, 로그인 시 자동 시작).
 > **⚠️ auto-build.mjs·recheck-ad.mjs는 현재 브랜치가 `main`이어야 한다.** feature 브랜치에서 실행되면 pull --rebase가 silent fail → origin/main으로 push 안 됨 → 라이브 사이트가 정체됨(2026-08-09~15 사고). 안전장치 추가: 현재 브랜치 != `main`이면 exit 1 + git rebase 실패 시 abort 자동 실행.
@@ -145,7 +162,7 @@ Hermes는 [Nous Research](https://nousresearch.com)의 AI 에이전트 런타임
 | 수 | 헬스·등산 | | 일 | 종합 검수·정리 |
 | 목 | 푸드·관광 | | | |
 
-> cron은 **안내(무료·안정)**까지만 자동. **실제 AI 분석**은 쿼터·3분 제한 때문에 온디맨드("한끗 펄스")로 오늘 분야만 깊게 돈다. 완전 자동을 원하면 Gemini 결제 또는 GitHub Actions에 키 등록으로 풀 수 있다.
+> 펄스 분야 안내와 분석은 분리되어 있다. GitHub Actions `pulse-daily.yml`이 매일 07:00 KST에 오늘 분야를 조사하고 `pulse.json`을 갱신하며, 일요일은 신규 분석을 건너뛴다. Hermes의 21:00 분야 알림은 이 분석과 21:30 트렌드 수집 일정을 한 메시지로 안내한다. Discord에서 별도 명령을 보낼 필요는 없다. `한끗 펄스`는 오늘 분야를 대화형으로 더 깊게 분석할 때 사용할 수 있다.
 
 > 메인 트렌드 데이터 갱신(재생성)은 GitHub Actions `weekly-refresh`(매주 월)가 `backend/scripts/refresh.mjs`를 돌려 `frontend/data/trends.js`를 만든다.
 
@@ -161,6 +178,22 @@ Hermes는 [Nous Research](https://nousresearch.com)의 AI 에이전트 런타임
 | `한끗 펄스` | 오늘 요일의 창업 트렌드 분야를 깊게 분석 (상세 아이디어 3개) |
 | `한끗 디자인` | 새 카드 디자인 제안 |
 | `기억해둬: …` | hangeut-learn — 교훈을 learnings.md에 기록 |
+
+### 보고 이모지로 누르기 (`discord-reactions.mjs`)
+
+크론 실행 중에는 Hermes가 버튼(clarify)을 쓸 수 없고 반응도 입력으로 받지 않는다. 그래서 같은 봇 토큰으로 게이트웨이에 한 세션 더 붙는 작은 감시 스크립트(`backend/scripts/discord-reactions.mjs`, 의존성 0)가 크론 보고(`Cronjob Response`)에 선택지 이모지를 단다.
+
+| 보고 (잡) | 선택지 | 동작 |
+|---|---|---|
+| 한끗 자동 수집·게시 (`9ddacd750b48`) · 수집 재시도 게이트 (`cb8938c4f951`) | 🔁 · 📋 · 📊 | 🔁 `hermes cron run <id>` 재실행 · 📋 보류 검수 대기 목록을 항목마다 올림 · 📊 `pipeline-review.mjs --stats` 2주 수치 |
+| 유행 단계 재판정 (`2bfe2a1c0d40`) | 🔁 · 📊 | 재실행 · 2주 수치 |
+| 광고/진짜 일일 재확인 (`f0994a8787c9`) | 🔁 | 재실행 |
+
+- 📋로 올라온 보류 항목에는 ✅ 게시(`pipeline-review.mjs --approve`) · 🗑️ 버리기(`--reject`) · ⏸️ 나중에를 단다. 코멘트는 남기지 않는다. 코멘트가 필요하면 기존 "검수" 버튼 흐름을 쓴다.
+- **무응답 자동 게시**(2026-11-05~): 보류 후보가 생기면 10분 안에(수집 보고 직후엔 바로) 항목을 디스코드에 띄우고, 띄운 지 12시간(`AUTO_HOURS`) 동안 반응이 없으면 `--approve`로 게시한다. ⏸️를 누른 항목은 자동 게시하지 않는다. 승인도 살아 있는 출처 1개+는 필요해서, 못 올린 항목은 대기열에 남기고 다시 시도하지 않는다. 상태 `backend/out/pipeline/discord-review-state.json`.
+- `DISCORD_ALLOWED_USERS`에 있는 사용자의 반응만 실행한다. 목록이 비면 아무것도 실행하지 않는다.
+- 시작할 때 홈 채널 최근 30개 보고 중 아직 선택지가 없는 것에도 이모지를 소급해 단다. 재기동 사이 눌린 반응은 놓치므로 다시 누르면 된다.
+- 실행: `tools/discord-reactions.vbs`(콘솔 숨김, 로그 `backend/out/discord-reactions.log`). 로그온 시 Windows 스케줄작업 `AZ2MZ_Discord_Reactions`가 자동 실행한다(등록·재등록: `tools/register-discord-reactions.ps1`, 관리자 권한 불필요).
 
 ---
 

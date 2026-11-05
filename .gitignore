@@ -10,6 +10,7 @@
 .env
 .env.*
 !.env.example
+!.env.example
 
 # Vercel CLI 로컬 캐시
 .vercel/
@@ -36,3 +37,12 @@ backend/.tistory-profile/
 backend/.tistory-state.json
 backend/.naver-profile/
 backend/.naver-state.json
+
+# 작업 산출물·스크래치 (2026-11-06)
+output/
+tmp/
+data/
+design-qa*
+.codex*
+docs/midterm/w9/deck/hangeut-mvp-result-v*.html
+docs/midterm/w9/deck/script-v*.pdf
