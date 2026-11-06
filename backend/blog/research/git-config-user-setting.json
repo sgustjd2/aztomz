@@ -1,0 +1,149 @@
+{
+  "keyword": "git config user.name user.email 설정 — global/local 차이, 확인(git config --list --show-origin), 잘못 커밋했을 때 작성자 수정",
+  "categoryId": "dev-tool",
+  "notes": "전 자료가 공식 문서(git-scm, GitHub Docs)라 설정 레벨·우선순위·확인 명령·마지막 커밋 작성자 수정(amend --reset-author)은 confirmed 로 쓸 수 있다. 과거 여러 커밋 일괄 수정은 rebase -i(edit) 와 filter-branch 경고까지만 근거가 있다. rebase --exec, includeIf 실사용, GitHub 이메일 노출 차단 설정은 말할 수 없다.",
+  "sources": [
+    {
+      "title": "git-config Documentation (FILES, --show-origin, --global, --local, Conditional includes)",
+      "url": "https://git-scm.com/docs/git-config",
+      "host": "git-scm.com",
+      "tier": "official",
+      "body": "읽는 순서: system(etc/gitconfig) -> global($XDG_CONFIG_HOME/git/config, ~/.gitconfig) -> repository($GIT_DIR/config) -> $GIT_DIR/config.worktree(extensions.worktreeConfig 있을 때만). last value found taking precedence 이므로 뒤쪽이 이긴다. 쓰기 기본은 repository 파일(--local), 한 번에 한 파일만 변경. --global 쓰기=~/.gitconfig(없고 XDG 파일만 있으면 XDG), 읽기=global 파일에서만. --show-origin 은 값마다 origin 종류와 경로를 붙인다. includeIf.<condition>.path 의 gitdir: 조건은 glob, 끝이 / 이면 ** 자동 추가(예: [includeIf \"gitdir:~/to/group/\"] path = /path/to/foo.inc). user.name/user.email 은 커밋의 author·committer 를 결정하고 author.*/committer.* 와 환경변수(GIT_AUTHOR_NAME/EMAIL, GIT_COMMITTER_NAME/EMAIL, EMAIL)가 덮어쓴다. user.useConfigOnly=true 를 global 에 두면 새로 clone 한 저장소에서 커밋 전에 이메일 설정을 요구한다(기본 false).",
+      "facts": []
+    },
+    {
+      "title": "Pro Git 1.6 Getting Started - First-Time Git Setup",
+      "url": "https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup",
+      "host": "git-scm.com",
+      "tier": "official",
+      "body": "설정 3단계: --system([path]/etc/gitconfig, 관리자 권한), --global(~/.gitconfig 또는 ~/.config/git/config, 내 모든 저장소), --local(.git/config, 기본값). Each level overrides values in the previous level. Windows 는 $HOME(대부분 C:\\Users\\$USER)에서 .gitconfig 를 찾는다. 커밋마다 이 정보를 쓰고 immutably baked into the commits. 명령: git config --global user.name \"John Doe\" / git config --global user.email johndoe@example.com. 특정 프로젝트만 다르게 하려면 그 프로젝트 안에서 --global 없이 실행. 확인: git config --list --show-origin, 한 키만 git config --show-origin <key> -> file:/home/johndoe/.gitconfig<TAB>값.",
+      "facts": []
+    },
+    {
+      "title": "git-commit Documentation (--amend, --reset-author, --author, COMMIT INFORMATION)",
+      "url": "https://git-scm.com/docs/git-commit",
+      "host": "git-scm.com",
+      "tier": "official",
+      "body": "--amend 는 현재 브랜치 tip 을 새 커밋으로 교체하며 새 커밋은 기존과 같은 parents 와 author 를 가진다(--reset-author 로 뒤집을 수 있음). --reset-author 는 -C/-c/--amend 와 함께 쓸 때 authorship 을 committer 로 선언하고 author timestamp 도 갱신한다. --author=\"A U Thor <author@example.com>\" 로 author 를 명시 지정(이 형식이 아니면 패턴으로 보고 기존 커밋에서 검색해 복사). 결정 순서: 환경변수 GIT_AUTHOR_*/GIT_COMMITTER_* -> author.*/committer.* -> user.name/user.email -> EMAIL 환경변수 -> 시스템 사용자명+호스트명. The typical usage is to set just the user.name and user.email variables.",
+      "facts": []
+    },
+    {
+      "title": "GitHub Docs - Setting your commit email address",
+      "url": "https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-personal-account-on-github/managing-email-preferences/setting-your-commit-email-address",
+      "host": "docs.github.com",
+      "tier": "official",
+      "body": "명령줄 커밋용: 전역 git config --global user.email \"YOUR_EMAIL\", 단일 저장소 git config user.email \"YOUR_EMAIL\"(저장소 안에서 --global 없이). 이메일을 바꾸기 전에 만든 커밋은 여전히 이전 이메일과 연결된 채로 남는다(Any commits you made prior to changing your commit email address are still associated with your previous email address). 웹 기반 작업 설정 항목은 'Keep my email addresses private'. noreply 주소 형식은 Email addresses reference 참조.",
+      "facts": []
+    },
+    {
+      "title": "GitHub Docs - Email addresses reference",
+      "url": "https://docs.github.com/en/account-and-profile/reference/email-addresses-reference",
+      "host": "docs.github.com",
+      "tier": "official",
+      "body": "noreply 형식 두 가지: ID+USERNAME@users.noreply.github.com, USERNAME@users.noreply.github.com. 2017-07-18 이후 생성 계정은 ID 기반, 그 이전 계정은 그 날짜 전에 'Keep my email address private' 를 켠 경우에만 USERNAME 기반. 이메일 설정에서 'Keep my email address private' 를 선택(또는 껐다 다시 켬)하면 ID 기반 noreply 주소를 받을 수 있다.",
+      "facts": []
+    },
+    {
+      "title": "Pro Git 7.6 Git Tools - Rewriting History",
+      "url": "https://git-scm.com/book/en/v2/Git-Tools-Rewriting-History",
+      "host": "git-scm.com",
+      "tier": "official",
+      "body": "amend 는 커밋 SHA-1 을 바꾸므로 이미 push 한 마지막 커밋은 amend 하지 말 것. 과거 커밋은 git rebase -i HEAD~3 처럼 범위를 잡아 pick 을 edit 로 바꾸고 git rebase --continue. 범위 내 변경 커밋과 그 후손이 모두 다시 쓰이므로 이미 중앙 서버에 push 한 커밋은 포함하지 말 것. 이메일 일괄 교체 예로 filter-branch --commit-filter 를 보여주며 히스토리의 모든 커밋 SHA-1 이 바뀐다. 단 filter-branch 는 함정이 많아 더 이상 권장되지 않으며 git-filter-repo 를 고려하라고 경고한다.",
+      "facts": []
+    }
+  ],
+  "claims": [
+    {
+      "claim": "설정은 system < global < local(< worktree) 순으로 뒤에 읽는 쪽이 이기므로, 저장소 안에서 --global 없이 설정한 user.name/user.email 이 전역 값보다 우선한다.",
+      "grade": "confirmed",
+      "evidence": [
+        "git-config 문서: 읽는 순서 system -> global(XDG, ~/.gitconfig) -> $GIT_DIR/config -> config.worktree, last value found taking precedence",
+        "Pro Git: --system / --global / --local 3단계, Each level overrides values in the previous level, .git/config 가 system 보다 우선",
+        "git config 쓰기 기본은 repository 파일(--local) 이고 한 번에 한 파일만 바꾼다. --global 은 ~/.gitconfig(없고 XDG 만 있으면 XDG)에 쓴다",
+        "Windows 는 $HOME(대부분 C:\\Users\\$USER)의 .gitconfig",
+        "config.worktree 는 extensions.worktreeConfig 가 있을 때만 검색(Pro Git 책에는 worktree 레벨 설명 없음)"
+      ],
+      "sourceUrls": [
+        "https://git-scm.com/docs/git-config",
+        "https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup"
+      ]
+    },
+    {
+      "claim": "지금 어떤 값이 어느 파일에서 적용되는지는 git config --list --show-origin 으로 확인한다.",
+      "grade": "confirmed",
+      "evidence": [
+        "--show-origin 은 값마다 origin 종류(file, standard input, blob, command line)와 경로를 붙인다",
+        "한 키만: git config --show-origin <key> -> file:/home/johndoe/.gitconfig<TAB>값 형태로 최종 값을 정한 파일을 알려준다",
+        "--global/--local 로 읽으면 해당 파일에서만 읽으므로, 합쳐진 최종 값을 보려면 옵션 없이 읽어야 한다"
+      ],
+      "sourceUrls": [
+        "https://git-scm.com/docs/git-config",
+        "https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup"
+      ]
+    },
+    {
+      "claim": "user.name/user.email 은 커밋에 박히는 값이라 설정을 고쳐도 과거 커밋은 안 바뀌고, author·committer 는 환경변수가 설정을 덮어쓸 수 있다.",
+      "grade": "confirmed",
+      "evidence": [
+        "Pro Git: every Git commit uses this information, and it's immutably baked into the commits",
+        "GitHub Docs: 이메일을 바꾸기 전 커밋은 여전히 이전 이메일과 연결된 채로 남는다",
+        "git-commit 문서 우선순위: GIT_AUTHOR_*/GIT_COMMITTER_* 환경변수 -> author.*/committer.* -> user.name/user.email -> EMAIL -> 시스템 사용자명+호스트명",
+        "user.useConfigOnly=true 를 global 에 두면 새 clone 저장소에서 이메일 설정을 요구(기본 false)"
+      ],
+      "sourceUrls": [
+        "https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup",
+        "https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-personal-account-on-github/managing-email-preferences/setting-your-commit-email-address",
+        "https://git-scm.com/docs/git-commit",
+        "https://git-scm.com/docs/git-config"
+      ]
+    },
+    {
+      "claim": "마지막 커밋의 작성자가 틀렸다면 설정을 고친 뒤 git commit --amend --reset-author 로 고친다. amend 만으로는 작성자가 안 바뀌고, 이미 push 한 커밋이면 SHA 가 바뀌어 조심해야 한다.",
+      "grade": "confirmed",
+      "evidence": [
+        "git-commit: --amend 의 새 커밋은 기존과 같은 parents 와 author 를 가진다(--reset-author 로 뒤집을 수 있음)",
+        "--reset-author 는 -C/-c/--amend 와 함께 쓰면 authorship 을 committer(현재 설정 사용자)로 선언하고 author timestamp 도 갱신한다",
+        "--author=\"A U Thor <author@example.com>\" 로 특정 작성자를 직접 지정 가능(형식이 다르면 기존 커밋에서 패턴 검색해 복사)",
+        "Pro Git: amend 는 커밋의 SHA-1 을 바꾸므로 이미 push 한 마지막 커밋은 amend 하지 말 것"
+      ],
+      "sourceUrls": [
+        "https://git-scm.com/docs/git-commit",
+        "https://git-scm.com/book/en/v2/Git-Tools-Rewriting-History"
+      ]
+    },
+    {
+      "claim": "더 과거의 여러 커밋은 git rebase -i 로 edit 하며 고칠 수 있지만, 범위와 후손 커밋이 모두 다시 쓰이므로 push 한 커밋이 포함되면 협업에 혼란을 준다. 일괄 교체용 filter-branch 는 공식 책이 비권장한다.",
+      "grade": "confirmed",
+      "evidence": [
+        "git rebase -i HEAD~3 처럼 범위를 지정해 pick 을 edit 로 바꾸고 git rebase --continue",
+        "범위 내 변경 커밋과 그 후손 전부가 다시 쓰이므로 이미 중앙 서버에 push 한 커밋은 포함하지 말 것(다른 개발자에게 같은 변경의 다른 버전을 주게 됨)",
+        "책의 filter-branch --commit-filter 이메일 일괄 교체 예는 히스토리의 모든 커밋 SHA-1 을 바꾼다",
+        "책 경고: git filter-branch 는 함정이 많아 더 이상 권장되지 않으며 git-filter-repo 를 고려하라"
+      ],
+      "sourceUrls": [
+        "https://git-scm.com/book/en/v2/Git-Tools-Rewriting-History"
+      ]
+    }
+  ],
+  "numbers": [
+    { "what": "GitHub noreply 주소 ID 기반 적용 기준일(이후 생성 계정)", "value": "2017-07-18", "asOf": "2026-11-06 조회", "sourceUrl": "https://docs.github.com/en/account-and-profile/reference/email-addresses-reference" },
+    { "what": "Pro Git 의 rebase -i 예시 범위", "value": "HEAD~3", "asOf": "2026-11-06 조회", "sourceUrl": "https://git-scm.com/book/en/v2/Git-Tools-Rewriting-History" },
+    { "what": "설정 레벨 수(책 기준 / git-config 문서 기준)", "value": "3단계(system·global·local) / 파일 4종(system·global·repository·worktree)", "asOf": "2026-11-06 조회", "sourceUrl": "https://git-scm.com/docs/git-config" }
+  ],
+  "dropped": [],
+  "cannotCover": [
+    "git rebase --exec 'git commit --amend --reset-author --no-edit' 로 여러 커밋 작성자를 일괄 변경하는 방법 (git-rebase 문서 미조회, 공식 근거 없음)",
+    "includeIf 로 회사/개인 이메일을 분리하는 실사용 예 (gitdir: 예시만 확인, hasconfig:remote.*.url 등 미확인, --show-origin 으로 includeIf 적용을 확인하는 동작도 실측 안 함)",
+    "GitHub 'Block command line pushes that expose my email' 설정 (조회한 두 페이지에 해당 문구 없음)",
+    "user.name/user.email 미설정 시 커밋 에러 메시지 원문 ('Please tell me who you are' 등, 1차 자료 미확인)",
+    "각 문서의 발행/수정일 (페이지에 표시 없음)"
+  ],
+  "cannotSay": [
+    "git rebase --exec 'git commit --amend --reset-author --no-edit' 로 여러 커밋 작성자를 일괄 변경하는 방법 (git-rebase 문서 미조회, 공식 근거 없음)",
+    "includeIf 로 회사/개인 이메일을 분리하는 실사용 예 (gitdir: 예시만 확인, hasconfig:remote.*.url 등 미확인, --show-origin 으로 includeIf 적용을 확인하는 동작도 실측 안 함)",
+    "GitHub 'Block command line pushes that expose my email' 설정 (조회한 두 페이지에 해당 문구 없음)",
+    "user.name/user.email 미설정 시 커밋 에러 메시지 원문 ('Please tell me who you are' 등, 1차 자료 미확인)",
+    "각 문서의 발행/수정일 (페이지에 표시 없음)"
+  ],
+  "songs": []
+}
