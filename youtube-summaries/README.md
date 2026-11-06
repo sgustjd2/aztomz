@@ -3,10 +3,16 @@
 채널 [AI Engineer](https://www.youtube.com/@aiDotEngineer) 의 새 영상을 Gemini 로 자동 요약한 모음입니다.
 생성: `backend/scripts/youtube-summarize.mjs` (GitHub Actions `youtube-summary` 크론).
 
-총 **450개**.
+총 **456개**.
 
 | 발행일 | 제목 |
 |---|---|
+| 2026-11-06 | [AI Agents Will Upend Investing Even More Than Coding - Frank Long, Coatue](2026-11-06-AYFcmnQrZCg.md) |
+| 2026-11-05 | [How Netflix Evaluates AI When There's No Right Answer - Cameron Wolfe, Netflix](2026-11-05-zLc8zeGeNaY.md) |
+| 2026-11-05 | [Stop Giving Your AI Agents API Keys - Kim Maida, Keycard & Mason Egger, Temporal](2026-11-05-YqJ4asgj1R8.md) |
+| 2026-11-05 | [Stop Making Your Customers Click Approve - Emil Chetty, Wise](2026-11-05-V2UqEUA8NjM.md) |
+| 2026-11-05 | [Why Waiting for the Next AI Model Can Pay Off - John Stecher, Blackstone & Scott Worland, Norm AI](2026-11-05-ra8X7_bnujw.md) |
+| 2026-11-05 | [How We Took an AI Agent From 41% to 97% Accurate - Milind Sunil Shah, Brainbase Labs](2026-11-05-4VmugsE-iP0.md) |
 | 2026-11-04 | [Our Smaller Model Beat Opus on Finance Tasks - Alexander Shevchenko, Ramp](2026-11-04-T-42NrYjwxM.md) |
 | 2026-11-04 | [AI Labs Will Trap You or Replace You - Dillon Rolnick, Nous Research](2026-11-04-Sg6vtKOAOQ0.md) |
 | 2026-11-04 | [Robots Will Be Trained on Video Games - Pim de Witte, General Intuition](2026-11-04-MpkARD5pq-M.md) |
