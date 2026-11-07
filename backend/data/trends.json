@@ -4579,10 +4579,10 @@
       "cat": "AI 프롬프트",
       "coverCat": "cat-ai",
       "collectedAt": "2026-06-21",
-      "analyzedAt": "2026-06-21",
+      "analyzedAt": "2026-11-07",
       "buzz": "꾸준한 인기",
       "stage": "안정화",
-      "stageMsg": "다양한 스타일로 변주되며 꾸준히 사용됨",
+      "stageMsg": "여러 창작 사례에 꾸준히 활용되는 형식",
       "label": "언제든 활용하기 좋음",
       "labelCls": "good",
       "title": "미니어처 디오라마 AI 프롬프트",
@@ -4614,6 +4614,10 @@
         [
           "allmyuniverse",
           "https://allmyuniverse.com/image-prompt-guide-needle-felt-wool-stop-motion-diorama/"
+        ],
+        [
+          "AI Neo Lab(2026-10-28)",
+          "https://www.ai-neo.co.kr/p/prompt-20261028-072137"
         ]
       ],
       "tags": [
@@ -5085,12 +5089,12 @@
       "cat": "패션",
       "coverCat": "cat-fashion",
       "collectedAt": "2026-06-27",
-      "analyzedAt": "2026-06-27",
-      "buzz": "화제성 중간",
-      "stage": "상승",
-      "stageMsg": "과감한 스타일링으로 확산 중",
-      "label": "도전해볼 만함",
-      "labelCls": "good",
+      "analyzedAt": "2026-11-07",
+      "buzz": "화제성 하락",
+      "stage": "피크 → 하락",
+      "stageMsg": "최근에도 착용 사례는 보이나 확산 신호는 제한적",
+      "label": "이제는 늦은 느낌",
+      "labelCls": "mid",
       "title": "시스루 스타일 (Sheer Style)",
       "def": "속이 비치는 얇은 소재의 옷을 활용한 스타일링",
       "excerpt": "은은한 섹시함과 세련미를 동시에 잡는 여름 스타일링의 치트키. 오간자, 시폰, 레이스 등 비치는 소재를 활용해 답답함은 덜고 스타일리시함은 더하는 것이 포인트입니다.",
@@ -5120,6 +5124,10 @@
         [
           "티스토리 패션 블로그",
           "https://dghm0502.tistory.com/entry/2026-%EC%97%AC%EB%A6%84-%ED%8C%A8%EC%85%98-%ED%8A%B8%EB%A0%8C%EB%93%9C-%EC%B4%9D%EC%A0%95%EB%A6%AC"
+        ],
+        [
+          "보그 코리아(2026-10-16)",
+          "https://www.vogue.co.kr/2026/10/16/관능을-넘어-낭만으로-플로렌스-퓨가-정의한-시스루/"
         ]
       ],
       "tags": [
@@ -6439,6 +6447,10 @@
         [
           "찾기쉬운 생활법령정보",
           "https://www.easylaw.go.kr/CSP/CnpClsMainBtr.laf?popMenu=ov&csmSeq=1592&ccfNo=2&cciNo=2&cnpClsNo=1"
+        ],
+        [
+          "파이낸셜뉴스(2026-11-06)",
+          "https://www.fnnews.com/news/202611061124118447"
         ]
       ],
       "tags": [
@@ -6477,7 +6489,7 @@
       ],
       "coverCat": "cat-slang",
       "collectedAt": "2026-07-10",
-      "analyzedAt": "2026-07-10",
+      "analyzedAt": "2026-11-07",
       "recs": [
         [
           "뜻·맥락 알고 쓰기",
@@ -6498,7 +6510,7 @@
       "labelCls": "good",
       "buzz": "화제성 상승",
       "pull": "",
-      "stageMsg": "예방 상식으로 꾸준히 알아둘 용어"
+      "stageMsg": "유행어보다 상시 쓰이는 보안 용어"
     },
     {
       "id": "WORD-2026-0027",
