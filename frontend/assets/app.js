@@ -60,7 +60,7 @@
     const img = H.coverImg(t), fallback = H.coverDefault(t);
     const tag = opts.inline ? 'span' : 'div';
     return `<${tag} class="cover ${H.esc(t.coverCat||'')} ${opts.tall?'tall':''} has-img ${img?'':'is-editorial-cover'}">
-      <img class="c-bg" src="${H.esc(img||fallback)}" alt="" width="640" height="480" loading="${opts.tall?'eager':'lazy'}" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='${fallback}';this.parentNode.classList.add('is-editorial-cover')">
+      <img class="c-bg" src="${H.esc(img||fallback)}" alt="" width="640" height="480" loading="${opts.tall?'eager':'lazy'}" referrerpolicy="no-referrer" onload="if(this.naturalWidth<40&&this.onerror)this.onerror()" onerror="this.onerror=null;this.src='${fallback}';this.parentNode.classList.add('is-editorial-cover')">
       <span class="cover-credit">${H.esc(t.cat||'한끗')} · 기본 이미지</span>
     </${tag}>`;
   };
