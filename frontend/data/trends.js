@@ -13885,7 +13885,7 @@ window.HANGEUT_DATA = {
       "cat": "디저트",
       "coverCat": "cat-dessert",
       "collectedAt": "2026-09-14",
-      "analyzedAt": "2026-10-09",
+      "analyzedAt": "2026-11-07",
       "buzz": "화제성 확인 어려움(출시 직후 SNS 인증 2건 확인, 2026-09-18)",
       "ad": 55,
       "trust": 35,
