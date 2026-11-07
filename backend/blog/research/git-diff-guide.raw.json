@@ -1,0 +1,111 @@
+{
+ "keyword": "git diff 사용법",
+ "categoryId": "dev-tool",
+ "searchedAt": "2026-11-07",
+ "queries": [
+  "WebFetch git-scm.com/docs/git-diff",
+  "WebFetch git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository",
+  "WebFetch git-scm.com/docs/gitrevisions",
+  "WebFetch git-scm.com/docs/diff-options",
+  "WebFetch git-scm.com/book/en/v2/Git-Tools-Revision-Selection"
+ ],
+ "sources": [
+  {
+   "title": "Git - git-diff Documentation (SYNOPSIS·DESCRIPTION)",
+   "url": "https://git-scm.com/docs/git-diff",
+   "host": "git-scm.com",
+   "tier": "official",
+   "publishedAt": null,
+   "body": "git diff 매뉴얼(SYNOPSIS/DESCRIPTION). git diff [<options>] [--] [<path>...] 은 인덱스 대비 작업 트리 변경(아직 git add 하지 않은 것)을 보여준다. git diff --cached [--merge-base] [<commit>] 은 스테이징한 변경을 지정 커밋과 비교하며 commit 생략 시 HEAD 기본, --staged 는 --cached 의 동의어. HEAD 가 없는(unborn branch) 경우 commit 생략 시 스테이징된 변경 전체를 보여준다. git diff <commit> 은 작업 트리를 해당 커밋과 비교(HEAD 또는 다른 브랜치 팁). git diff <commit> <commit> 은 두 커밋 간 변경, <commit>..<commit> 은 이와 동의어이며 한쪽을 생략하면 HEAD. git diff A...B 는 두 커밋의 공통 조상에서 시작해 B 까지의 브랜치 변경이며 git diff $(git merge-base A B) B 와 같고 한쪽 생략 시 HEAD. --merge-base 옵션은 before 쪽을 merge base 로 대체: git diff --merge-base A == git diff $(git merge-base A HEAD). <path>... 는 diff 를 지정 경로로 제한하며 디렉터리명도 가능. -- 는 리비전과 경로를 구분. --no-index 는 Git 관리 밖 두 경로 비교이며 --exit-code 를 내포한다.",
+   "facts": [
+    "git diff --staged 는 --cached 의 동의어",
+    "--cached 에서 commit 생략 시 HEAD 기본",
+    "git diff A...B == git diff $(git merge-base A B) B",
+    "git diff A..B 는 git diff A B 와 동의어",
+    "--merge-base 로 before 쪽을 merge base 로 대체 가능",
+    "synopsis 형태 6가지 이상(작업트리/인덱스, --cached, 커밋 간, ..., ..., blob, --no-index)"
+   ]
+  },
+  {
+   "title": "Git - git-diff Documentation (EXAMPLES·exit code)",
+   "url": "https://git-scm.com/docs/git-diff",
+   "host": "git-scm.com",
+   "tier": "official",
+   "publishedAt": null,
+   "body": "git diff EXAMPLES. 작업 트리 확인: (1) git diff = 다음 커밋용으로 아직 스테이징되지 않은 작업 트리 변경, (2) git diff --cached = 인덱스와 마지막 커밋 사이, -a 없이 git commit 하면 커밋될 내용, (3) git diff HEAD = 마지막 커밋 이후 작업 트리 변경, git commit -a 하면 커밋될 내용, (4) git diff AUTO_MERGE = 충돌 해결 중 작업 트리 변경. 임의 커밋 비교: git diff test / git diff HEAD -- ./test (HEAD 와 비교하되 파일 test 로 제한) / git diff HEAD^ HEAD (마지막 커밋 전후). 브랜치 비교: git diff topic master 와 git diff topic..master 는 두 팁 간 변경으로 동일, git diff topic...master 는 topic 이 master 에서 갈라진 이후 master 에서 일어난 변경. 출력 제한: --diff-filter=MRC(수정·이름변경·복사만), --name-status(이름과 변경 성격만), 경로 지정. -R 은 역방향 출력. --exit-code 는 차이 있으면 1, 없으면 0 종료. --quiet 는 출력 없이 --exit-code 내포.",
+   "facts": [
+    "git diff HEAD 는 git commit -a 시 커밋될 내용, git diff --cached 는 git commit(-a 없이) 시 커밋될 내용",
+    "git diff HEAD -- ./test 는 HEAD 와 비교하되 파일 test 로 제한",
+    "git diff topic...master 는 topic 이 갈라진 이후 master 에서 일어난 변경",
+    "--exit-code: 차이 있으면 1, 없으면 0",
+    "--quiet 는 --exit-code 내포",
+    "git diff -R 은 diff 를 역방향으로 출력"
+   ]
+  },
+  {
+   "title": "Git - diff-options Documentation",
+   "url": "https://git-scm.com/docs/diff-options",
+   "host": "git-scm.com",
+   "tier": "official",
+   "publishedAt": null,
+   "body": "diff-options 매뉴얼. --stat[=<width>[,<name-width>[,<count>]]] 은 diffstat 생성, 최대 너비 기본 터미널 너비 또는 터미널이 아니면 80컬럼. --shortstat 는 --stat 마지막 줄(수정 파일 수, 추가/삭제 줄 수)만. --numstat 는 추가/삭제 줄 수를 10진수·생략 없는 경로로 기계 친화적 출력, 바이너리 파일은 0 0 대신 - 두 개. --name-only 는 변경된 파일 이름만. --name-status 는 이름과 상태(A 추가, C 복사, D 삭제, M 수정, R 이름변경, T 타입변경, U 병합 안 됨). --color-words 는 --word-diff=color 와 같다. -w/--ignore-all-space 는 공백 차이 무시. --word-diff 모드 color/plain/porcelain/none, plain 은 [-removed-] {+added+}. --check 는 충돌 마커·공백 오류가 생기면 경고하고 문제 발견 시 0 아닌 코드로 종료, --exit-code 와 호환 안 됨. -U<n>/--unified=<n> 은 n 줄 컨텍스트, 기본 diff.context 또는 3.",
+   "facts": [
+    "--stat 최대 너비 기본: 터미널 너비, 터미널 아니면 80컬럼",
+    "--numstat 바이너리 파일은 - 두 개 출력",
+    "--name-status 상태 글자 A/C/D/M/R/T/U",
+    "-U<n> 컨텍스트 기본 3줄(diff.context 미설정 시)",
+    "--check 는 --exit-code 와 호환 안 됨"
+   ]
+  },
+  {
+   "title": "Pro Git 2.2 Recording Changes to the Repository",
+   "url": "https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository",
+   "host": "git-scm.com",
+   "tier": "official",
+   "publishedAt": null,
+   "body": "Pro Git 2판 2.2절 Viewing Your Staged and Unstaged Changes. git status 는 어떤 파일이 바뀌었는지, git diff 는 정확히 어느 줄이 추가/삭제됐는지 보여준다. git diff 인자 없이 = 작업 디렉터리와 스테이징 영역 비교, 즉 아직 stage 하지 않은 변경. git diff --staged = 스테이징 영역과 마지막 커밋 비교, 다음 커밋에 들어갈 내용. 주의: git diff 단독은 마지막 커밋 이후의 모든 변경이 아니라 unstaged 변경만 보여주며 전부 stage 했다면 출력이 없다. --staged 와 --cached 는 동의어. 한 파일에 staged 와 unstaged 변경이 공존하면(git add 후 다시 수정) git diff 는 새로 추가한 줄만, git diff --cached 는 이미 stage 한 내용만 보여준다. git difftool 은 같은 diff 를 emerge, vimdiff 같은 외부 도구로 보며 git difftool --tool-help 로 목록 확인.",
+   "facts": [
+    "git diff 단독은 unstaged 변경만 보여주고, 전부 stage 했으면 출력 없음",
+    "한 파일에 staged+unstaged 공존 시 git diff 와 git diff --cached 출력이 서로 다름(CONTRIBUTING.md 예시)",
+    "git difftool --tool-help 로 외부 diff 도구 목록 확인"
+   ]
+  },
+  {
+   "title": "Pro Git Revision Selection (Double/Triple Dot)",
+   "url": "https://git-scm.com/book/en/v2/Git-Tools-Revision-Selection",
+   "host": "git-scm.com",
+   "tier": "official",
+   "publishedAt": null,
+   "body": "Pro Git Revision Selection, Double Dot / Triple Dot (git log 기준 설명). master..experiment = experiment 에서 도달 가능하나 master 에서는 아닌 커밋(예시 D, C). experiment..master 는 반대(F, E). origin/master..HEAD 는 push 할 커밋이며 한쪽 생략 시 HEAD 로 대체. master...experiment 는 둘 중 한쪽에서만 도달 가능한 커밋(F E D C), git log --left-right 로 < (master 쪽) / > (experiment 쪽) 구분. 이 절은 git log 중심이며 git diff 는 언급하지 않는다. git diff 에서 .. 와 ... 의미는 git-diff 매뉴얼의 별도 정의(끝점 비교 / merge base 기준)를 따른다는 점이 log 와 다르다.",
+   "facts": [
+    "예시 history 에서 git log master...experiment 는 F E D C 4개 커밋",
+    "git log --left-right 는 < / > 로 어느 쪽 커밋인지 표시"
+   ]
+  },
+  {
+   "title": "Git - gitrevisions Documentation (Specifying Ranges)",
+   "url": "https://git-scm.com/docs/gitrevisions",
+   "host": "git-scm.com",
+   "tier": "official",
+   "publishedAt": null,
+   "body": "gitrevisions 매뉴얼 Specifying Ranges. r1..r2 는 r2 에서 도달 가능하나 r1 에서는 아닌 커밋(^r1 r2). r1...r2 는 대칭차로 r1 r2 --not $(git merge-base --all r1 r2), 양쪽 중 한쪽에서만 도달 가능한 커밋 집합. 한쪽 생략 시 HEAD (origin.. = origin..HEAD, ..origin = HEAD..origin). 이 페이지는 git diff 를 직접 다루지 않으며 commit set 을 다루는 log 류 명령의 범위 표기를 설명한다. git diff 는 범위가 아니라 두 끝점을 비교하므로 .. 의미가 다르다(이 마지막 문장은 git-diff 매뉴얼 내용에서 온 정리).",
+   "facts": [
+    "r1...r2 는 r1 r2 --not $(git merge-base --all r1 r2)",
+    "한쪽 생략 시 HEAD 로 간주"
+   ]
+  }
+ ],
+ "conflicts": [
+  {
+   "about": "A..B 의 의미",
+   "a": "gitrevisions/Pro Git(log 기준): r2 에서 도달 가능하고 r1 에서는 아닌 커밋 범위, A...B 는 대칭차",
+   "b": "git-diff 매뉴얼: A..B 는 단순히 두 끝점 비교(git diff A B), A...B 는 merge-base 와 B 비교. diff 는 범위가 아닌 끝점 비교라 log 와 의미가 다름"
+  }
+ ],
+ "unknowns": [
+  "--merge-base 옵션이 도입된 git 버전(이번 조사에서 확인 못함)",
+  "--staged 별칭이 도입된 정확한 버전",
+  "gitrevisions 페이지가 git diff 를 직접 언급하는지는 페이지 요약 기준 '언급 없음'으로만 확인(원문 전체 대조는 안 함)",
+  "tier press/blog 자료는 조사하지 않음. 전부 git-scm.com 공식 문서라 호스트가 단일"
+ ]
+}
