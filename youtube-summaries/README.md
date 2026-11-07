@@ -3,10 +3,18 @@
 채널 [AI Engineer](https://www.youtube.com/@aiDotEngineer) 의 새 영상을 Gemini 로 자동 요약한 모음입니다.
 생성: `backend/scripts/youtube-summarize.mjs` (GitHub Actions `youtube-summary` 크론).
 
-총 **456개**.
+총 **464개**.
 
 | 발행일 | 제목 |
 |---|---|
+| 2026-11-06 | [AI Engineer Code Summit 2026 — Day 1 \| November 11](2026-11-06-ZZ19zhYnDKY.md) |
+| 2026-11-06 | [当我们什么都能做，还知道自己想做什么吗？When We Can Do Anything, Do We Still Know What We Want? — Ryo Lu, ex-Cursor](2026-11-06-y9Sg--RDtks.md) |
+| 2026-11-06 | [AI Engineer Code Summit 2026 — Day 2 \| November 12](2026-11-06-y9JtCCZP2MQ.md) |
+| 2026-11-06 | [Your AI Agent Keeps Making the Same Mistakes - Sparsh Jain, CentralAgent AI](2026-11-06-SUqQlvyI3N8.md) |
+| 2026-11-06 | [Your AI Agent Is Hiding Its Mistakes From You - Ben Holmes, Warp](2026-11-06-pz74r-4dGfQ.md) |
+| 2026-11-06 | [How We Mapped a 35-Million-Line Mainframe in 4 Days - Stephen Chin, Neo4j & Neeraj Deshmukh, Blitzy](2026-11-06-oWqsBuhRRZ4.md) |
+| 2026-11-06 | [7 Things Your AI Coworker Needs - Philipp Schmid, Google DeepMind](2026-11-06-EtZwTYahfek.md) |
+| 2026-11-06 | [Your AI Isn't the Advantage. Your Judgment Is - Sid Pednekar](2026-11-06-C2-v6wkHXhY.md) |
 | 2026-11-06 | [AI Agents Will Upend Investing Even More Than Coding - Frank Long, Coatue](2026-11-06-AYFcmnQrZCg.md) |
 | 2026-11-05 | [How Netflix Evaluates AI When There's No Right Answer - Cameron Wolfe, Netflix](2026-11-05-zLc8zeGeNaY.md) |
 | 2026-11-05 | [Stop Giving Your AI Agents API Keys - Kim Maida, Keycard & Mason Egger, Temporal](2026-11-05-YqJ4asgj1R8.md) |
