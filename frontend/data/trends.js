@@ -14002,7 +14002,7 @@ window.HANGEUT_DATA = {
       "cat": "카페·핫플",
       "coverCat": "cat-cafe",
       "collectedAt": "2026-09-23",
-      "analyzedAt": "2026-10-09",
+      "analyzedAt": "2026-11-08",
       "buzz": "화제성 높음(9/18 롯데월드점 9호점 오픈 — 다만 8~9월 블로그 후기 2건은 '웨이팅이 줄었다')",
       "ad": 40,
       "trust": 60,
