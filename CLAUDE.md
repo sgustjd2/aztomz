@@ -82,7 +82,7 @@ node backend/scripts/check-source.mjs backend/data/trends.json --only=<id>  # 5)
 | 월 21:00 | 주간 갱신 | Hermes(로컬) | — |
 | 매일 21:05 | **유행 단계 재판정**(게시된 트렌드 5건/일, 분석일 오래된 순) | Hermes(로컬, 에이전트 · 잡 `2bfe2a1c0d40`) | hangeut-restage → `restage.mjs --apply` |
 | 매일 21:15 | 광고/진짜 일일 재확인 | Hermes(로컬, no-agent) | `recheck_ad.py` → `recheck-ad.mjs` |
-| 매일 21:30 | **한끗 자동 수집·게시** (목=신조어 주간 사전) | Hermes(로컬, 에이전트) | hangeut-run → `auto-build.mjs`(`.pipeline/curate.json`) |
+| 매일 13:30 · 17:30 · 21:30 | **한끗 자동 수집·게시 — 하루 3회, 슬롯마다 다른 분야**(2026-11-08~ · 슬롯 k 분야 = 7분류[(요일×3+k)%7] → 하루 3분야·분야마다 주 3회 · 슬롯당 3~5건, 근거 2개 못 채운 건 제외 · 놓친 슬롯은 60분 안에만 따라잡음) | Hermes(로컬, 에이전트 · 잡 `0a2ea7571c71` 슬롯0 · `55a2adf74363` 슬롯1 · `9ddacd750b48` 슬롯2) | hangeut-run → `trend_categories.py --slot=N`·`hangeut_search.py --slot=N` → `auto-build.mjs`(`.pipeline/curate-sN.json`) |
 | 매일 21:50 | 수집 재시도 게이트(21:30이 503/429로 죽었을 때만 1회 재실행) | Hermes(로컬, no-agent) | `hangeut_retry_gate.py` |
 | 매일 12:00 · 15:00 · 18:00 | **블로그 자동 발행 대기열 재확인**(집필 직후 실행이 실패하거나 늦게 준비된 글을 따라잡는 안전망 · 티스토리·네이버 각 하루 5편 · 글 사이 20~40분 랜덤 대기 · 티스토리 후보가 있을 때 만료 세션 자동로그인 시도) | Windows 스케줄작업 `AZ2MZ_Blog_Queue`(StartWhenAvailable) | `tools/blog-queue.vbs`(wscript 숨김) → `blog-queue.mjs` · 로그 `backend/out/blog/blog-queue.log` |
 | 매일 11:00 | **티스토리 발행 전 세션 사전 확인** — 유효하면 쿠키 갱신, 만료면 카카오 로그인 버튼 및 단일 간편로그인 계정 선택 후 저장 자동완성으로 1회 로그인; 추가 인증·CAPTCHA·복수 계정은 사용자 처리 | Windows 스케줄작업 `AZ2MZ_Tistory_Daily_Session`(대화형 사용자 세션) | `tools/tistory-daily-session.vbs` → `blog-publish.mjs --daily-session`; 등록: `tools/register-tistory-daily-session.ps1` |

@@ -22,7 +22,9 @@ const API = 'https://discord.com/api/v10';
 // 잡별 선택지. 잡 id 는 CLAUDE.md "크론 일람"·디스코드 보고의 (job_id: …) 와 같다.
 const COLLECT = { '🔁': 'rerun', '📋': 'queue', '📊': 'stats' };
 export const JOB_OPTIONS = {
-  '9ddacd750b48': COLLECT,               // 한끗 자동 수집·게시
+  '9ddacd750b48': COLLECT,               // 한끗 자동 수집·게시 (21:30 슬롯2)
+  '0a2ea7571c71': COLLECT,               // 한끗 자동 수집·게시 (13:30 슬롯0)
+  '55a2adf74363': COLLECT,               // 한끗 자동 수집·게시 (17:30 슬롯1)
   'cb8938c4f951': COLLECT,               // 수집 재시도 게이트
   '2bfe2a1c0d40': { '🔁': 'rerun', '📊': 'stats' },  // 유행 단계 재판정
   'f0994a8787c9': { '🔁': 'rerun' },     // 광고/진짜 일일 재확인
