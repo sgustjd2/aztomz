@@ -8,7 +8,7 @@
 | 대상 | 상태 |
 |---|---|
 | `sgustjd2/aztomz` (공개) | **배포 원본** — Vercel이 여기서 배포하고, 봇(`auto-build`·`recheck-ad`)도 여기(`origin`)로 push한다 |
-| `az2mz/aztomz` (조직, 비공개) | 2026-11-08 전체 이력 복사본. 로컬 remote 이름 `az2mz`. **자동 동기화 안 됨** — 맞추려면 `git push az2mz main` |
+| `az2mz/aztomz` (조직, 비공개) | 전체 이력 사본. 로컬 `origin`에 push URL을 둘 걸어 두어(`sgustjd2` 먼저 → `az2mz`) **`git push origin main` 한 번에 두 곳으로 간다** — 봇 push도 같이 따라간다. 클라우드 Actions(펄스·유튜브·주간 재생성)의 커밋은 다음 로컬 push 때 사본에 반영된다. 사본 push가 실패해도 배포 쪽 push는 이미 끝난 뒤다 |
 | `az2mz/hermes` (조직, 비공개) | Hermes 홈(`E:\workspace\side_project\hermes`, remote `origin`): `skills/`·`scripts/`·`cron/jobs.json`·`memories/`·`config.yaml`·`SOUL.md`·런처. **비밀·상태 DB·캐시·`hermes-agent/`는 허용 목록 `.gitignore`로 제외** |
 | `hermes-agent` | 이미 포크 `sgustjd2/hermes-agent`에 있음 |
 
@@ -30,7 +30,8 @@ git -c safe.directory=E:/workspace/side_project/hermes push
 ```bash
 mkdir -p ~/workspace/side_project && cd ~/workspace/side_project
 git clone https://github.com/sgustjd2/aztomz.git            # 배포 원본(봇 push 대상)
-git -C aztomz remote add az2mz https://github.com/az2mz/aztomz.git
+git -C aztomz remote set-url --add --push origin https://github.com/sgustjd2/aztomz.git
+git -C aztomz remote set-url --add --push origin https://github.com/az2mz/aztomz.git   # push 한 번에 두 곳
 git clone https://github.com/az2mz/hermes.git hermes
 git clone https://github.com/sgustjd2/hermes-agent.git hermes/hermes-agent
 cd aztomz/backend && npm install && npx playwright install chromium
