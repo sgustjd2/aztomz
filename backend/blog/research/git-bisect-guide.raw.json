@@ -1,0 +1,125 @@
+{
+  "keyword": "git bisect 사용법",
+  "categoryId": "dev-tool",
+  "searchedAt": "2026-11-08",
+  "queries": [
+    "git bisect release notes git 2.4x bisect new feature",
+    "git bisect run exit code 125 skip tutorial detached HEAD git bisect reset forgot",
+    "git bisect tutorial find the commit that introduced a bug git bisect run"
+  ],
+  "sources": [
+    {
+      "title": "git-bisect Documentation (git-scm.com)",
+      "url": "https://git-scm.com/docs/git-bisect",
+      "host": "git-scm.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "git bisect uses a binary search algorithm to find which commit introduced a bug. Synopsis: git bisect start [--term-(bad|new)=<term-new> --term-(good|old)=<term-old>] [--no-checkout] [--first-parent] [--reset-when-found[=<where>]] [<bad> [<good>...]] [--] [<pathspec>...]; git bisect (bad|new|<term-new>) [<rev>]; git bisect (good|old|<term-old>) [<rev>...]; git bisect terms; git bisect skip [(<rev>|<range>)...]; git bisect next; git bisect reset [<commit>]; git bisect (visualize|view); git bisect replay <logfile>; git bisect log; git bisect run <cmd>. After each mark git prints e.g. 'Bisecting: 675 revisions left to test after this (roughly 10 steps)'. At the end refs/bisect/bad is left pointing at the first bad commit. 'git bisect reset' returns to the commit checked out before 'bisect start'; 'git bisect reset <commit>' checks out a given commit; 'git bisect reset HEAD' stays on the current bisection commit. old/new cannot be mixed with good/bad in one session. bisect run exit codes: 0 = good/old; 1-127 except 125 = bad/new; 125 = cannot test, skip; any other code aborts the bisect (126/127 are POSIX shell errors, exit(-1) gives 255).",
+      "facts": [
+        "git bisect run: exit 0 = good/old, 1-127 (except 125) = bad/new, 125 = skip the revision, any other code (128+, e.g. 255) aborts the bisect",
+        "125 was chosen because 126 and 127 are used by POSIX shells (127 command not found, 126 found but not executable)",
+        "git bisect terms / --term-old / --term-new allow custom words, e.g. 'git bisect start --term-old broken --term-new fixed' to find a fix instead of a regression; old/new cannot be mixed with good/bad in one session",
+        "git bisect reset (no arg) returns to the commit checked out before 'bisect start'; 'git bisect reset <commit>' checks out that commit; 'git bisect reset HEAD' stays on the current bisection commit",
+        "git bisect skip: if you skip a commit adjacent to the culprit, Git cannot tell exactly which of those commits was the first bad one",
+        "Options --no-checkout (only updates BISECT_HEAD), --first-parent (follow only first parent at merges), --reset-when-found[=original|found] exist; --reset-when-found cannot be combined with --no-checkout",
+        "Docs example: git bisect start HEAD HEAD~10 -- ; git bisect run ~/test.sh ; git bisect reset; one-liner: git bisect run sh -c \"make || exit 125; ~/check_test_case.sh\"",
+        "The page advises keeping test scripts outside the repository (so checkouts do not change them)",
+        "The page does not use the phrase 'detached HEAD'"
+      ]
+    },
+    {
+      "title": "Pro Git 2e - 7.10 Git Tools: Debugging with Git (Binary Search)",
+      "url": "https://git-scm.com/book/en/v2/Git-Tools-Debugging-with-Git",
+      "host": "git-scm.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "Pro Git's Binary Search section: git bisect start; git bisect bad; git bisect good v1.0 prints 'Bisecting: 6 revisions left to test after this' and checks out the middle commit. The example has about 12 commits between v1.0 (good) and the current commit (bad). Marking good gives 'Bisecting: 3 revisions left', bad gives 'Bisecting: 1 revisions left', then good prints '<sha> is first bad commit' with author, date and changed files. 'When you are finished, you should run git bisect reset to reset your HEAD to where you were before you started, or you will end up in a weird state.' Automation: git bisect start HEAD v1.0 then git bisect run test-error.sh; the script must exit 0 if good and non-zero if bad; any command such as make or make tests can be used.",
+      "facts": [
+        "Pro Git example: ~12 commits between v1.0 and bad HEAD; revisions left shown as 6 -> 3 -> 1, then the first bad commit is printed",
+        "Pro Git: run git bisect reset when finished to return HEAD to where you were, otherwise you end up in a weird state",
+        "Pro Git automation: git bisect start HEAD v1.0 (bad first, good second) then git bisect run test-error.sh; script exits 0 = good, non-zero = bad"
+      ]
+    },
+    {
+      "title": "git-checkout Documentation - DETACHED HEAD (git-scm.com)",
+      "url": "https://git-scm.com/docs/git-checkout",
+      "host": "git-scm.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "Detached HEAD: HEAD normally refers to a named branch; checking out a commit that is not the tip of a branch is 'known as being in detached HEAD state. It means simply that HEAD refers to a specific commit, as opposed to referring to a named branch.' Commits made there are referenced only by HEAD: 'Eventually commit f (and by extension commit e) will be deleted by the routine Git garbage collection process, unless we create a reference before that happens.' To keep them: git checkout -b foo (or git switch -c foo) creates a branch and leaves detached state; git branch foo keeps HEAD detached; git tag foo also leaves HEAD detached. If you already moved away, recover the object name with git reflog (git reflog -2 HEAD or git log -g -2 HEAD) and create a reference.",
+      "facts": [
+        "Commits made in detached HEAD state are reachable only from HEAD and will eventually be removed by git garbage collection unless a branch/tag is created",
+        "git switch -c <name> (or git checkout -b) saves detached work on a new branch and ends the detached state",
+        "Recover lost detached commits with git reflog (e.g. git reflog -2 HEAD) and then create a reference"
+      ]
+    },
+    {
+      "title": "Fighting regressions with git bisect (git-bisect-lk2009)",
+      "url": "https://git-scm.com/docs/git-bisect-lk2009",
+      "host": "git-scm.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "Article by Christian Couder on how bisect chooses commits and how to use it. Algorithm: prune the graph to ancestors of the bad commit not reachable from good commits, score each commit min(X, N-X) where X is its ancestor count and N the number of commits, pick the highest score (never above N/2). Example start output: 'Bisecting: 10928 revisions left to test after this (roughly 14 steps)', then 5480 (roughly 13), 2740 (roughly 12). Skipping: 'git bisect skip' or exit code 125; when only skipped commits remain git prints 'There are only skip'ped commits left to test. The first bad commit could be any of: ... We cannot bisect more!'. Since Git 1.6.4-era changes, skipped commits are chosen using a biased pseudo-random pick instead of the next unskipped commit. Run: git bisect start v2.6.27 v2.6.25; git bisect run grep '^SUBLEVEL = 25' Makefile finds 2ddcca36c8bc (Linux 2.6.26-rc1). Exit codes: 0 good; 1-127 except 125 bad; 125 skip; 128-255 abort immediately. Logs: git bisect log > bisect_log.txt and git bisect replay bisect_log.txt. Ingo Molnar quoted: ~15 step kernel bisection in 20-30 minutes automated.",
+      "facts": [
+        "Example in the article: 10928 revisions left -> roughly 14 steps; 5480 -> 13; 2740 -> 12 (about log2 of the count; the log2 formula itself is my inference, not stated)",
+        "git bisect run grep '^SUBLEVEL = 25' Makefile between v2.6.27 (bad) and v2.6.25 (good) found Linux 2.6.26-rc1 as the first bad commit",
+        "When only skipped commits remain git prints 'There are only skip'ped commits left to test' and lists candidate commits",
+        "bisect run exit codes per this article: 128-255 abort the bisection immediately; 255 suggested for abnormal situations",
+        "Ingo Molnar quote: best case a ~15 step kernel bisection in 20-30 minutes, automated",
+        "git bisect log > file then git bisect replay file lets you save and replay a session"
+      ]
+    },
+    {
+      "title": "Bisecting a regression - The Linux Kernel documentation",
+      "url": "https://origin.kernel.org/doc/html/next/admin-guide/bug-bisect.html",
+      "host": "origin.kernel.org",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "Kernel admin guide for bisecting: git bisect start; git bisect good v6.0; git bisect bad v6.1. For each step prepare config, build and boot; if the build fails for an unrelated reason run 'git bisect skip'. Report each result with git bisect good / git bisect bad until Git prints '<sha> is the first bad commit'. Check status any time with 'git bisect log'. Finish with: git bisect log > ~/bisection-log; cp .config ~/bisection-config-culprit; git bisect reset. Optionally test a revert with 'git revert --no-edit <culprit-commit-id>' (abandon if rejected, e.g. merge commit). Warning: 'getting this wrong just once will send the rest of the bisection totally off course.' Bisecting between two linux-next releases is impossible as they share no common history.",
+      "facts": [
+        "Kernel docs warn a single wrong good/bad verdict sends the rest of the bisection off course",
+        "Recommended finish: save 'git bisect log' then run 'git bisect reset'",
+        "Unrelated build failure -> git bisect skip",
+        "Culprit can be sanity-checked with git revert --no-edit <sha> on latest mainline"
+      ]
+    },
+    {
+      "title": "Git User Manual - how to use bisect to find a regression",
+      "url": "https://www.kernel.org/pub/software/scm/git/docs/user-manual.html",
+      "host": "www.kernel.org",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "Git User Manual chapter 'How to use bisect to find a regression': git bisect start; git bisect good v2.6.18; git bisect bad master. Git checks out a commit partway through; you test and report with git bisect good / git bisect bad. The manual notes HEAD becomes 'detached from any branch' and the candidates are 'cut approximately in half each time'; in its example about 13 tests are needed. git bisect visualize opens gitk with the suggested commit labeled 'bisect'. git bisect skip avoids an untestable commit, but Git may then be unable to identify the first bad commit among skipped ones. The suggested commit is only a suggestion: you can git reset --hard <commit> to a nearby one and continue. git bisect reset ends the session and returns you to the original branch. Automation is mentioned and referred to git-bisect(1).",
+      "facts": [
+        "User manual: during bisect HEAD is detached from any branch; git bisect reset returns you to the branch you started from",
+        "User manual example needs about 13 tests as candidates are halved each time",
+        "git bisect visualize shows the suggested commit labeled 'bisect' in gitk"
+      ]
+    },
+    {
+      "title": "Git v2.40.0 announcement (LWN.net)",
+      "url": "https://lwn.net/Articles/926033",
+      "host": "lwn.net",
+      "tier": "press",
+      "publishedAt": "2023-03-13",
+      "body": "LWN's relay of the Git v2.40.0 announcement dated 13 March 2023. The release notes state 'git bisect becomes a builtin', credited to Johannes Schindelin's 'Turn git bisect into a full built-in' series; the old shell script git-bisect.sh was removed (Avar Arnfjord Bjarmason), and Doan Tran Cong Danh's 'bisect: fix output regressions in v2.30.0' is listed among fixes. The upstream Documentation/RelNotes/2.40.0 file confirms the line 'git bisect becomes a builtin'.",
+      "facts": [
+        "Git 2.40.0 (released 2023-03-13): 'git bisect becomes a builtin' (previously a shell script git-bisect.sh)",
+        "2.40.0 also lists 'bisect: fix output regressions in v2.30.0'"
+      ]
+    }
+  ],
+  "conflicts": [
+    {
+      "about": "bisect run: exit codes of 128 and above",
+      "a": "git-scm.com man page: 'Any other exit code will abort the bisect process' (other = 128+, besides 0, 1-127, 125)",
+      "b": "lk2009 article states explicitly 128-255 abort immediately (consistent; no real conflict, but the man page does not spell out the range)"
+    }
+  ],
+  "unknowns": [
+    "git-scm.com/docs/git-bisect page has no publish date; version-specific introduction of --first-parent, --reset-when-found and 'terms' (old/new) not confirmed from release notes (not looked up)",
+    "No source found that explicitly says forgetting 'git bisect reset' leaves you on a detached HEAD in those words: Pro Git says 'weird state', User Manual says HEAD is detached during bisect; the link is inferred from combining the two",
+    "Behaviour of --reset-when-found default/version availability not confirmed from release notes",
+    "No independent third-party (blog) tutorial read; searches returned official docs only"
+  ]
+}

@@ -1,0 +1,165 @@
+{
+  "keyword": "팥 삶는 법",
+  "categoryId": "life-info",
+  "notes": "공식(농사로)이 말하는 것은 '한소끔 끓여 첫물 버리기 → 새 물로 푹 삶기' 순서와 '사포닌 제거 목적'까지다. 불리는 시간·삶는 시간은 출처마다 달라 하나로 못 박지 말고 출처명을 붙여 나열한다. 사포닌 감소량·압력솥 시간·삶은 팥/앙금 보관 기간은 공식 근거가 없어 쓸 수 없다. 주의: 모든 source body는 WebFetch 요약·인용이지 원문 전체가 아니다.",
+  "sources": [
+    {
+      "title": "수수 팥떡 (농사로 농식품 레시피)",
+      "url": "https://www.nongsaro.go.kr/portal/ps/psz/psza/contentSub.ps?menuId=PS03318&seCode=308003&cntntsNo=102276&totalSearchYn=Y",
+      "host": "www.nongsaro.go.kr",
+      "body": "[요약본, 원문 아님] 농촌진흥청 농사로 '수수 팥떡' 레시피. 팥 삶는 순서를 '팥을 삶아 첫물은 한소끔 끓어오르면 버립니다'로 적고, 이어서 '끓어오른 팥은, 약한 불로 팥알이 터질 때까지 불조절하며 삶아줍니다'라고 안내한다. 첫물을 버리는 이유는 '팥의 사포닌 성분을 제거하기 위해서'라고 쓰고, 사포닌은 이뇨작용이 있지만 많이 먹으면 설사를 일으킬 수 있어 첫물을 버려 줄인다고 설명한다. 삶는 구체적 시간과 물의 양은 페이지에 없다. 불리는 시간 '3시간 이상'은 수수와 찹쌀에 대해서만 적혀 있고 팥 불리기는 언급되지 않는다.",
+      "tier": "official"
+    },
+    {
+      "title": "잡곡 꽃양갱 (농사로 농식품 레시피, 적앙금)",
+      "url": "https://www.nongsaro.go.kr/portal/ps/psz/psza/contentSub.ps?menuId=PS03318&seCode=308004&cntntsNo=102280&totalSearchYn=Y",
+      "host": "www.nongsaro.go.kr",
+      "body": "[요약본, 원문 아님] 농촌진흥청 농사로 '잡곡 꽃양갱' 레시피. 준비 시간 '3시간 이상(팥 불리기)', 요리 시간 1시간. '전날이나 최소 3시간이상 팥을 충분히 불립니다', '충분히 불린 팥을 삶아 한번 끓으면 첫 번째 물은 버립니다', '다시 물을 넣고 팥이 물러질 때까지 푹 삶습니다'. 물 분량 수치는 없다.",
+      "tier": "official"
+    },
+    {
+      "title": "팥스프 (농사로 이달의 식재료)",
+      "url": "http://www.nongsaro.go.kr/mfood/kfi/foodMonth/view?menuId=PS03599&cntntsNo=204285&code=&tabCode=1&dtlCode=3&month=12",
+      "host": "www.nongsaro.go.kr",
+      "body": "[요약본, 원문 아님] 농사로 '이달의 식재료(12월)' 팥스프. '팥은 찬물에 헹군 뒤 물에 담가 반나절 이상 불린다', '냄비에 팥과 불린 물을 함께 넣어 끓어오르면 물을 버린 뒤 새 물을 붓고 다시 끓인다', '팥이 부드럽게 으깨질 때까지 삶는다'. 3인분 기준 팥 1½컵, 밤 6개, 우유 2컵. 단체급식 팁으로 팥앙금을 써도 된다.",
+      "tier": "official"
+    },
+    {
+      "title": "팥차 (농사로 농식품 레시피)",
+      "url": "https://www.nongsaro.go.kr/portal/ps/psz/psza/contentSub.ps?menuId=PS03318&seCode=308005&cntntsNo=102282&totalSearchYn=Y",
+      "host": "www.nongsaro.go.kr",
+      "body": "[요약본, 원문 아님] 농사로 '팥차' 레시피. 붉은 팥 100g, 물 2L, 요리 시간 1시간. 팥을 먼저 고소한 냄새가 날 때까지 볶고, 물을 넣어 '약 절반정도로 물이 줄때까지 약한 불에서 서서히 끓입니다'. 팥물만 걸러 식혀 냉장 보관하며 '냉장 보관해도 3일을 넘기기 어렵다'고 안내. 이는 팥물(차)의 보관 기준이며 삶은 팥 알갱이나 앙금의 기준이 아니다.",
+      "tier": "official"
+    },
+    {
+      "title": "동지 팥죽·팥 품종 소개 (시대일보, 농촌진흥청 자료 인용)",
+      "url": "https://www.sidae.com/article/2013121818038077792",
+      "host": "www.sidae.com",
+      "body": "[요약본, 원문 아님] 2013-12-18 보도. 농촌진흥청 인용 팥죽(2인): 팥 2컵, 새알심(찹쌀가루 1/2컵, 물 1큰술, 소금 약간). 팥을 10시간 정도 불린다 → 불린 팥에 4~5배의 물을 넣고 끓이다가 새알심을 넣고 소금이나 설탕으로 간. 이 조리법에는 첫물 버리기 단계가 없다.",
+      "tier": "press"
+    },
+    {
+      "title": "혈관 지키고 액운도 막는 '동지팥죽' (정책뉴스, 하이닥 기사 전재)",
+      "url": "https://www.korea.kr/news/healthView.do?newsId=148771357",
+      "host": "www.korea.kr",
+      "body": "[요약본, 원문 아님] 2013-12-20 하이닥 전재. '팥을 깨끗이 씻어서 한 번 끓인 후 물을 따라내고 뭉그러질 때까지 한 번 더 푹 끓인 후 찹쌀 가루, 새알심 등을 넣어 먹으면 된다.' 같은 기사의 '설탕이 사포닌을 파괴한다'는 주장은 교차확인 안 됨(사용 금지).",
+      "tier": "press"
+    },
+    {
+      "title": "\"피를 맑게 해준다\"… 81세 선우용여가 건강에 좋다고 추천한 '이것' (위키트리)",
+      "url": "https://www.wikitree.co.kr/articles/1161004",
+      "host": "www.wikitree.co.kr",
+      "body": "[요약본, 원문 아님] 2026-09-27 작성, 2026-11-03 수정. 연예인 추천 건강 콘텐츠로 전문가 검증 기사 아님, 인용 기관 불명. 첫 삶은 물을 버린 뒤 새 물로 '약 30~40분간 붉은 수액이 우러나올 때까지 푹 끓여낸다'고 안내. 첫물에 사포닌이 녹아 씁쓸하고 위가 약한 사람은 속 쓰림 가능(기자 서술). 사포닌이 콜레스테롤을 낮춘다는 서술은 근거 없음(사용 금지).",
+      "tier": "press"
+    },
+    {
+      "title": "팥앙금 만들때 첫물은 왜 버리나요? (82cook 게시판)",
+      "url": "https://82cook.com/entiz/read.php?num=98504",
+      "host": "82cook.com",
+      "body": "[요약본, 원문 아님] 2006-01-10 커뮤니티 질문글 댓글 3개: 떫은맛 제거 / 독소 제거 / 사포닌 복통. 모두 출처 없음. '이유 설명이 제각각 퍼져 있다'는 사례로만 사용 가능.",
+      "tier": "blog"
+    },
+    {
+      "title": "만개의레시피 팥 레시피 (노루네, 2020-06-28)",
+      "url": "https://www.10000recipe.com/recipe/6935223",
+      "host": "www.10000recipe.com",
+      "body": "[요약본, 원문 아님] 개인 레시피. 불리지 않고 생팥을 씻어 찬물에 한소끔 끓여 첫물을 버리고, 새 물은 팥의 5~6배, 푹 삶아질 때까지. 첫물 이유는 작성자 개인 설명(사포닌이 소화를 더디게 하고 생목을 올림). 물 비율 비교용으로만.",
+      "tier": "blog"
+    }
+  ],
+  "claims": [
+    {
+      "claim": "팥은 한소끔 끓인 뒤 첫물을 버리고, 새 물을 부어 다시 푹 삶는 순서가 공식 레시피의 공통 골격이다",
+      "grade": "confirmed",
+      "evidence": [
+        "농사로 수수 팥떡: 팥을 삶아 한소끔 끓어오르면 첫물 버림 → 약한 불로 팥알이 터질 때까지 삶음",
+        "농사로 꽃양갱: 불린 팥을 삶아 한번 끓으면 첫 번째 물 버리고, 새 물 넣어 물러질 때까지 푹 삶음",
+        "농사로 팥스프: 끓어오르면 물을 버리고 새 물로 다시 끓여 부드럽게 으깨질 때까지 삶음",
+        "정책뉴스(2013): 씻어 한 번 끓여 물을 따라내고 뭉그러질 때까지 한 번 더 끓임"
+      ],
+      "sourceUrls": [
+        "https://www.nongsaro.go.kr/portal/ps/psz/psza/contentSub.ps?menuId=PS03318&seCode=308003&cntntsNo=102276&totalSearchYn=Y",
+        "https://www.nongsaro.go.kr/portal/ps/psz/psza/contentSub.ps?menuId=PS03318&seCode=308004&cntntsNo=102280&totalSearchYn=Y",
+        "http://www.nongsaro.go.kr/mfood/kfi/foodMonth/view?menuId=PS03599&cntntsNo=204285&code=&tabCode=1&dtlCode=3&month=12",
+        "https://www.korea.kr/news/healthView.do?newsId=148771357"
+      ]
+    },
+    {
+      "claim": "첫물을 버리는 공식 이유는 사포닌을 줄이기 위해서다. 다만 얼마나 줄어드는지는 확인된 수치가 없다",
+      "grade": "confirmed",
+      "evidence": [
+        "농사로 수수 팥떡: 첫물을 버리는 이유는 팥의 사포닌 성분을 제거하기 위해서. 사포닌은 이뇨작용이 있으나 많이 먹으면 설사를 일으킬 수 있음",
+        "위키트리(2026, 보조): 첫물에 사포닌이 녹아 씁쓸하고 위가 약하면 속 쓰림 가능 — 기자 서술",
+        "82cook(2006, 보조): 떫은맛·독소·복통 등 설명이 제각각 퍼져 있음 — 출처 없는 댓글"
+      ],
+      "sourceUrls": [
+        "https://www.nongsaro.go.kr/portal/ps/psz/psza/contentSub.ps?menuId=PS03318&seCode=308003&cntntsNo=102276&totalSearchYn=Y",
+        "https://www.wikitree.co.kr/articles/1161004",
+        "https://82cook.com/entiz/read.php?num=98504"
+      ]
+    },
+    {
+      "claim": "불리는 시간과 삶는 시간은 출처마다 달라 정답이 하나가 아니다. 출처명을 붙여 비교해 보여줘야 한다",
+      "grade": "confirmed",
+      "evidence": [
+        "농사로 꽃양갱: 전날 또는 최소 3시간 이상 불림, 요리 시간 1시간 표기",
+        "농사로 팥스프: 반나절 이상 불림",
+        "시대일보(2013, 농진청 인용 팥죽): 약 10시간 불림, 4~5배 물로 끓임, 첫물 버리기 단계는 적혀 있지 않음",
+        "만개의레시피(2020, 개인): 불리지 않고 바로 끓임, 새 물 5~6배",
+        "위키트리(2026, 비공식): 첫물 버린 뒤 새 물로 약 30~40분 (reported 수준)",
+        "농사로 팥떡·꽃양갱·팥스프는 삶는 시간 대신 '터질 때까지'·'물러질 때까지'로 상태 기준만 제시"
+      ],
+      "sourceUrls": [
+        "https://www.nongsaro.go.kr/portal/ps/psz/psza/contentSub.ps?menuId=PS03318&seCode=308004&cntntsNo=102280&totalSearchYn=Y",
+        "http://www.nongsaro.go.kr/mfood/kfi/foodMonth/view?menuId=PS03599&cntntsNo=204285&code=&tabCode=1&dtlCode=3&month=12",
+        "https://www.sidae.com/article/2013121818038077792",
+        "https://www.10000recipe.com/recipe/6935223",
+        "https://www.wikitree.co.kr/articles/1161004"
+      ]
+    },
+    {
+      "claim": "삶는 정도는 분 단위보다 팥알 상태(터질 때까지·물러질 때까지)로 판단하라는 것이 공식 안내다",
+      "grade": "confirmed",
+      "evidence": [
+        "농사로 수수 팥떡: 약한 불로 팥알이 터질 때까지",
+        "농사로 꽃양갱: 팥이 물러질 때까지 푹",
+        "농사로 팥스프: 부드럽게 으깨질 때까지",
+        "공식 레시피 어디에도 분 단위 삶는 시간은 없음(꽃양갱 '요리 시간 1시간'은 전체 조리 시간 표기)"
+      ],
+      "sourceUrls": [
+        "https://www.nongsaro.go.kr/portal/ps/psz/psza/contentSub.ps?menuId=PS03318&seCode=308003&cntntsNo=102276&totalSearchYn=Y",
+        "https://www.nongsaro.go.kr/portal/ps/psz/psza/contentSub.ps?menuId=PS03318&seCode=308004&cntntsNo=102280&totalSearchYn=Y",
+        "http://www.nongsaro.go.kr/mfood/kfi/foodMonth/view?menuId=PS03599&cntntsNo=204285&code=&tabCode=1&dtlCode=3&month=12"
+      ]
+    }
+  ],
+  "numbers": [
+    { "what": "팥 불리기 (농사로 꽃양갱, 앙금용)", "value": "전날 또는 최소 3시간 이상", "asOf": "게시일 미확인", "sourceUrl": "https://www.nongsaro.go.kr/portal/ps/psz/psza/contentSub.ps?menuId=PS03318&seCode=308004&cntntsNo=102280&totalSearchYn=Y" },
+    { "what": "꽃양갱 요리 시간 표기 (전체 조리 시간)", "value": "1시간", "asOf": "게시일 미확인", "sourceUrl": "https://www.nongsaro.go.kr/portal/ps/psz/psza/contentSub.ps?menuId=PS03318&seCode=308004&cntntsNo=102280&totalSearchYn=Y" },
+    { "what": "팥 불리기 (농사로 팥스프)", "value": "반나절 이상", "asOf": "게시일 미확인", "sourceUrl": "http://www.nongsaro.go.kr/mfood/kfi/foodMonth/view?menuId=PS03599&cntntsNo=204285&code=&tabCode=1&dtlCode=3&month=12" },
+    { "what": "팥스프 3인분 분량", "value": "팥 1½컵, 밤 6개, 우유 2컵", "asOf": "게시일 미확인", "sourceUrl": "http://www.nongsaro.go.kr/mfood/kfi/foodMonth/view?menuId=PS03599&cntntsNo=204285&code=&tabCode=1&dtlCode=3&month=12" },
+    { "what": "팥 불리기 (시대일보, 농진청 인용 팥죽)", "value": "약 10시간", "asOf": "2013-12-18", "sourceUrl": "https://www.sidae.com/article/2013121818038077792" },
+    { "what": "팥죽 끓일 때 물 양 (시대일보 인용)", "value": "불린 팥의 4~5배", "asOf": "2013-12-18", "sourceUrl": "https://www.sidae.com/article/2013121818038077792" },
+    { "what": "첫물 버린 뒤 새 물 양 (만개의레시피, 개인 레시피)", "value": "팥의 5~6배", "asOf": "2020-06-28", "sourceUrl": "https://www.10000recipe.com/recipe/6935223" },
+    { "what": "첫물 버린 뒤 삶는 시간 (위키트리, 비공식)", "value": "약 30~40분", "asOf": "2026-09-27", "sourceUrl": "https://www.wikitree.co.kr/articles/1161004" },
+    { "what": "팥차 분량 (농사로, 팥 볶은 뒤 끓이는 별도 방식)", "value": "붉은 팥 100g, 물 2L, 물이 절반 정도로 줄 때까지", "asOf": "게시일 미확인", "sourceUrl": "https://www.nongsaro.go.kr/portal/ps/psz/psza/contentSub.ps?menuId=PS03318&seCode=308005&cntntsNo=102282&totalSearchYn=Y" },
+    { "what": "팥차 팥물 냉장 보관 (팥물 기준, 삶은 팥/앙금 아님)", "value": "3일을 넘기기 어려움", "asOf": "게시일 미확인", "sourceUrl": "https://www.nongsaro.go.kr/portal/ps/psz/psza/contentSub.ps?menuId=PS03318&seCode=308005&cntntsNo=102282&totalSearchYn=Y" }
+  ],
+  "dropped": [
+    { "url": "https://www.nongsaro.go.kr/portal/ps/psv/psvr/psvrc/rdaInterDtl.ps?pageIndex=1&cntntsNo=34302&menuId=PS00063&srchType=a&srchVal=%ED%8C%A5", "why": "2012 영양성분 소개 글로 삶는 법·첫물 근거가 없고 오래됨. 영양 수치는 이 글 주제 밖" },
+    { "url": "설탕이 사포닌을 파괴한다는 주장 (korea.kr 2013 하이닥 전재 안의 문장)", "why": "교차확인 안 됨, 농사로 팥스프는 설탕을 함께 씀. 출처 자체는 순서 근거로만 유지하고 이 주장은 쓰지 않음" },
+    { "url": "위키트리 '사포닌이 중성지방·콜레스테롤을 낮춘다' 서술", "why": "근거 인용 없는 건강 효능 단정. 해당 문장만 사용 금지" }
+  ],
+  "cannotCover": [
+    "사포닌이 첫물 제거로 몇 % 줄어드는지 (측정 자료 못 찾음. 농사로는 '제거 목적'만 서술)",
+    "압력솥 삶는 시간 (공식 기준 없음, 블로그 요약만 있고 직접 못 읽음)",
+    "삶은 팥·팥앙금의 냉장/냉동 보관 기간 (공식 기준 없음). 농사로 '냉장 3일'은 팥차의 팥물 기준이므로 삶은 팥에 적용 금지",
+    "팥죽용과 팥앙금용의 공식 구분(시간·물 양 차이). 앙금용은 꽃양갱, 죽은 2013 기사뿐이라 팥죽 전용 공식 레시피 없음",
+    "설탕이 사포닌을 파괴한다는 주장 (교차확인 안 됨)",
+    "사포닌의 건강 효능(콜레스테롤 등) 단정",
+    "2026년 동지 날짜 (확인 안 함)",
+    "농사로 레시피 게시일 (페이지에서 확인 못 함)",
+    "불리는 게 낫다/불리지 않는 게 낫다의 우열 (공식 비교 자료 없음)"
+  ],
+  "songs": []
+}

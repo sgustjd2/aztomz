@@ -1,0 +1,169 @@
+{
+  "keyword": "겨울용 워셔액 교체",
+  "categoryId": "life-info",
+  "notes": "제조사 공식 매뉴얼(현대 NH2 2026, 기아 SG2 2027·MV1 2026)로 겨울용 사용 안내, 동결 시 행동, 열선 노즐을 말할 수 있다. 메탄올은 EU 공식 자료와 국내 2017~2018 언론 보도 기준으로만 쓰며 환경부 고시 원문은 미확인이다. 교체 개월 수, 혼합 시 어는점, 현행 어는점 기준(-25도)은 공식 근거가 없어 다루지 않는다.",
+  "sources": [
+    {
+      "title": "현대자동차 취급설명서(NH2 2026) 와이퍼와 워셔",
+      "url": "https://ownersmanual.hyundai.com/full_webhelp/NH2/2026/ko_KR/convenience_device_wipers_and_washers.html",
+      "host": "ownersmanual.hyundai.com",
+      "tier": "official",
+      "body": "현대자동차 공식 웹 취급설명서(NH2, 2026, 한국어)의 와이퍼·워셔 항목. 겨울철 사용법: \"기온이 매우 낮을 때에는 서리 제거 장치 등을 이용해 유리창 온도를 높인 후 워셔액을 사용하십시오.\" 동결 경고: \"주행 중 유리창에 워셔액이 얼어붙어 시야를 가리는 경우 매우 위험합니다.\" 대체액 금지: \"워셔액 대신 냉각수나 부동액을 사용하지 마십시오.\" 빈 상태 분사 금지: \"워셔액이 없을 때에는 워셔액을 분사하지 마십시오.\"(워셔액 펌프가 손상됨). 정기 점검: \"워셔액 양을 수시로 확인하고 보충하십시오.\" 보충구의 구체적 위치와 절차는 이 페이지가 아닌 '워셔액 보충하기' 항목을 참고하라고만 안내한다."
+    },
+    {
+      "title": "기아 사용설명서(SG2 2027) 워셔액 점검 및 보충",
+      "url": "https://ownersmanual.kia.com/full_webhelp/SG2/2027/ko_KR/topics/t00196.html",
+      "host": "ownersmanual.kia.com",
+      "tier": "official",
+      "body": "기아 공식 웹 사용설명서(SG2, 2027, 한국어)의 '워셔액 점검 및 보충' 항목. \"워셔액의 양을 점검해 부족 시 보충하십시오.\" 주의사항: \"워셔액 보충 시에는 가급적 순정 워셔액 사용을 권장합니다.\" 겨울철: \"날씨가 추운 겨울에는 외부 온도에 따라 얼 수 있으므로 반드시 겨울용 워셔액을 사용하십시오.\" 이 페이지 본문에는 저장통 위치에 대한 텍스트 설명이 없고 그림(OSG2PH125058)만 있다. 즉 제조사 매뉴얼은 사계절용으로 충분하다고 하지 않고 겨울용 사용을 명시한다."
+    },
+    {
+      "title": "Kia Owner's Manual MV1 2026 - Heated washer nozzle",
+      "url": "https://ownersmanual.kia.com/full_webhelp/MV1/2026/en_GB/topics/t00410.html",
+      "host": "ownersmanual.kia.com",
+      "tier": "official",
+      "body": "Kia owner's manual (MV1, 2026, en_GB), heated washer nozzle (if equipped). The heated nozzles keep the washer nozzles from freezing in cold weather. Heating activates when outside temperature drops below 5°C (41°F) and deactivates above 10°C (50°F). Fluid defrosts about 5 to 10 minutes after the vehicle is turned on. The system shuts off after 20 minutes to protect the battery. The heater may not work properly if the washer fluid in the reservoir is frozen. Warning: do not use the washer in freezing temperatures without first warming the windshield with the defrosters, otherwise the solution can freeze on the glass and block your view. Use anti-freeze washer fluid in winter or cold weather. Equipped vehicles only (MV1 model)."
+    },
+    {
+      "title": "New restriction on methanol in car windscreen washing fluids (European Commission, 2018-04-18)",
+      "url": "https://single-market-economy.ec.europa.eu/news/new-restriction-methanol-car-windscreen-washing-fluids-2018-04-18_en",
+      "host": "single-market-economy.ec.europa.eu",
+      "tier": "official",
+      "body": "European Commission news page. The REACH restriction applies to methanol at concentrations of 0.6% by weight or higher in windscreen washer and defrosting fluids. Published 18 April 2018; enters into force on the 20th day after publication in the Official Journal; binding one year after entry into force. Rationale: to reduce severe methanol poisonings from people drinking these fluids as a cheap alcohol substitute. One EU country recorded about 25 methanol-related deaths per year from 1996 to 2012, mostly from windscreen washer fluid. ECHA considers 0.6% protective against blindness and death. (국내 규제가 아닌 EU 비교 자료)"
+    },
+    {
+      "title": "스프레이형 제품 안전기준 강화 (서울신문, 2017-08-22)",
+      "url": "https://m.go.seoul.co.kr/news/2017/08/22/20170822011015",
+      "host": "m.go.seoul.co.kr",
+      "tier": "press",
+      "body": "환경부가 개정안을 22일부터 시행한다고 밝혔다는 보도. 자동차용 워셔액 성분인 메틸알코올은 인체에 흡수되면 중추신경계 마비와 실명 등을 일으킬 수 있어 함량 기준을 0.6% 이하로 정했다. 유예기간이 끝난 뒤 안전·표시 기준을 위반해 적발되면 회수, 판매금지, 폐기 등의 조치와 함께 최대 7년 이하 징역이나 2억원 이하의 벌금이 부과된다. 워셔액에는 별도 경과조치가 언급되지 않고, 경과조치는 스프레이형 세정제·방향제·탈취제와 틈새 충진제에 적용된다. 기사에 연도 표기는 없으며 발행일 2017-08-22 기준 시행으로 해석."
+    },
+    {
+      "title": "車워셔액·부동액도 '위해우려제품' (서울신문, 2017-04-05)",
+      "url": "https://m.go.seoul.co.kr/news/2017/04/05/20170405011008",
+      "host": "m.go.seoul.co.kr",
+      "tier": "press",
+      "body": "환경부가 4일 발표: 부동액, 자동차용 워셔액, 습기제거제, 양초, 틈새충진제 5종을 위해우려제품으로 새로 지정한다. 생산·수입자는 제품 출시 전 공인 시험분석기관에서 유해물질의 안전기준 적합 여부를 확인받고 기준에 맞춰 포장에 표기해야 한다. 개정안은 5일부터 20일 동안 행정예고될 예정. 기사에 워셔액 전용 유해물질 기준 수치는 나오지 않는다(틈새충진제는 폼알데하이드 등 12종 기준 언급)."
+    },
+    {
+      "title": "환경부 안전·표시기준 위반 14개 제품 회수 (쿠키뉴스, 2018-08-02)",
+      "url": "https://www.kukinews.com/article/view/kuk201808020187",
+      "host": "www.kukinews.com",
+      "tier": "press",
+      "body": "환경부가 안전·표시기준을 어긴 14개 업체의 14개 제품을 적발해 회수 조치했다. 소비자 신고로 올해 상반기 접수된 워셔액 등이 대상. 자가검사를 받지 않고 유통된 워셔액 2개 제품이 메틸알코올 안전기준(0.6% 이하)을 각각 38.3배, 51.3배 초과했다. 13개 제품은 자가검사 없이 유통, 세정제 1개는 에탄올아민 기준(0.1% 이하)을 5.8배 초과. 14개 기업은 관할 지방환경청을 통해 판매금지·회수명령을 받았고, 제품은 '위해상품 판매차단시스템'에 일괄 등록. 환경부는 이달 중 수사기관에 고발 예정이라 밝혔다. 원문 날짜 표기 오타('7우러24일')는 문맥상 7월 24일로 추정."
+    },
+    {
+      "title": "[카드뉴스 팡팡] '메탄올 워셔액' 궁금증 자세히 알려드립니다 (이투데이, 2016-07-20)",
+      "url": "https://www.etoday.co.kr/news/view/1359620",
+      "host": "www.etoday.co.kr",
+      "tier": "press",
+      "body": "2016년 메탄올 워셔액 논란 당시 카드뉴스. 국내 워셔액 내 메탄올 비중은 전체 성분의 25~50%. 독일·미국 등은 법적으로 메탄올 함유량을 규제하고 에탄올 워셔액을 사용하도록 하고 있다. 당시 국내 자동차 업체는 관련 규정이 없어 에탄올 워셔액으로 교체하기 어렵다는 입장. 메탄올 녹는점 -97.8°C. WHO 기준 혈중 메탄올 500mg/L 이상이면 심각한 독성, 1500~2000mg/L이면 사망 가능. 1리터당 원가 메탄올 약 500원, 에탄올 약 1200원. 직접 만드는 배합 설명도 있으나 제품 어는점 기준은 없음(참고용, 권장 안 함)."
+    },
+    {
+      "title": "겨울철 자동차 관리 기사 (오토뷰, 2015-11-27)",
+      "url": "https://www.autoview.co.kr/ko-kr/articles/57214",
+      "host": "www.autoview.co.kr",
+      "tier": "press",
+      "body": "오토뷰 2015-11-27 기사. \"워셔액은 4계절용이 기본으로 겨울철 워셔액을 따로 살 필요는 없다.\" 또한 \"4계절 워셔액은 영하 25도까지 얼지 않게 되어있으니\"라 설명하며, 영하 30도에 가까운 산간 지역은 빙점이 더 낮은 겨울철 전용 제품을 고려하라고 권한다. 워셔액 교체 시기는 언급하지 않고, 부족 여부 확인과 와이퍼 교체를 안내한다. 혼합에 대한 내용은 없다. 2015년 기사라 현행 제품 기준과 다를 수 있고 제조사 매뉴얼과 어긋난다."
+    },
+    {
+      "title": "겨울 워셔액 관련 이미지 (tilnote)",
+      "url": "https://tilnote.io/pages/6ae76230a565f4932c73b191",
+      "host": "tilnote.io",
+      "tier": "blog",
+      "body": "개인 정리 글(보조용). 2007년 기술표준원 기준 워셔액 어는점 영하 25도 이하, 당시 29개 중 4개(약 14%)가 기준 미달이라고 인용(출처: 2007-12-04 kidd.co.kr 보도). 현행 공식 수치는 확인하지 못했다고 밝힘. 물을 타면 어는점이 올라가므로 겨울에는 원액 사용이 기본, 여름용·겨울용 혼합 금지 권고(글쓴이 판단). 워셔액이 안 나올 때 스위치를 계속 당기면 펌프 모터에 부담, 뜨거운 물을 유리에 붓지 말 것, 히터를 약하게 틀어 서서히 데울 것. 교체 개월 수는 공식 자료 없음."
+    }
+  ],
+  "claims": [
+    {
+      "claim": "추운 겨울에는 제조사가 겨울용 워셔액 사용을 안내한다. 사계절용이면 충분하다는 2015년 기사보다 현행 매뉴얼을 우선한다.",
+      "grade": "confirmed",
+      "evidence": [
+        "기아 사용설명서(SG2 2027): 날씨가 추운 겨울에는 외부 온도에 따라 얼 수 있으므로 반드시 겨울용 워셔액을 사용하라고 명시",
+        "기아 MV1 2026 매뉴얼: Use anti-freeze washer fluid in winter or cold weather",
+        "기아 SG2: 보충 시 가급적 순정 워셔액 권장",
+        "반대 견해: 오토뷰 2015-11-27은 4계절용이 영하 25도까지 안 얼어 별도 구입 불필요라 했으나 2015년 기사로 현행 제품·매뉴얼과 어긋남 (오래된 자료라고 표시할 것)",
+        "한계: 현대 매뉴얼 이 페이지에는 겨울용 지정 문구가 없음. 기아 근거만 해당"
+      ],
+      "sourceUrls": [
+        "https://ownersmanual.kia.com/full_webhelp/SG2/2027/ko_KR/topics/t00196.html",
+        "https://ownersmanual.kia.com/full_webhelp/MV1/2026/en_GB/topics/t00410.html",
+        "https://www.autoview.co.kr/ko-kr/articles/57214"
+      ]
+    },
+    {
+      "claim": "워셔액이 얼 만한 날씨에는 유리를 먼저 데운 뒤 쓰고, 빈 상태 분사나 냉각수·부동액 대용은 하지 않는다.",
+      "grade": "confirmed",
+      "evidence": [
+        "현대 NH2 2026: 기온이 매우 낮을 때는 서리 제거 장치로 유리창 온도를 높인 후 워셔액 사용",
+        "현대: 주행 중 유리창에 워셔액이 얼어붙어 시야를 가리면 매우 위험",
+        "현대: 워셔액 대신 냉각수나 부동액 사용 금지",
+        "현대: 워셔액이 없을 때 분사하면 워셔액 펌프 손상",
+        "기아 MV1: 영하에서 디프로스터로 유리를 먼저 데우지 않고 워셔를 쓰면 유리에서 얼어 시야를 가릴 수 있음",
+        "뜨거운 물 붓지 말기·히터 약하게 서서히는 개인 블로그(tilnote)의 일반 권고라 보조로만 쓰고 단정 금지"
+      ],
+      "sourceUrls": [
+        "https://ownersmanual.hyundai.com/full_webhelp/NH2/2026/ko_KR/convenience_device_wipers_and_washers.html",
+        "https://ownersmanual.kia.com/full_webhelp/MV1/2026/en_GB/topics/t00410.html",
+        "https://tilnote.io/pages/6ae76230a565f4932c73b191"
+      ]
+    },
+    {
+      "claim": "열선 워셔 노즐은 장착 차종에서만 해당하며, 저장통의 액이 얼면 열선만으로는 부족할 수 있다.",
+      "grade": "confirmed",
+      "evidence": [
+        "기아 MV1 2026(장착 차종 한정): 외기 5도 미만에서 작동, 10도 초과에서 해제",
+        "시동 후 약 5~10분 뒤 워셔액이 녹고, 20분 후 배터리 보호를 위해 꺼짐",
+        "저장통 워셔액이 얼어 있으면 열선이 제대로 작동하지 않을 수 있음",
+        "근거가 기아 MV1 한 차종이라 다른 차종에 일반화 금지"
+      ],
+      "sourceUrls": [
+        "https://ownersmanual.kia.com/full_webhelp/MV1/2026/en_GB/topics/t00410.html"
+      ]
+    },
+    {
+      "claim": "메탄올 워셔액은 독성 때문에 함량 상한(0.6%)이 걸려 있다. 판매 전면 금지가 아니라 함량 기준과 위반 제품 조치다.",
+      "grade": "confirmed",
+      "evidence": [
+        "확정 근거는 EU 쪽: 워셔액·해빙액 메탄올 0.6%(중량) 이상 제한, 2018-04-18 공표, 마시는 중독 사고 감소 목적, ECHA는 0.6%를 실명·사망 방지에 충분하다고 판단",
+        "국내는 보도 기준이며 고시 원문 미확인: 2017-04 환경부가 워셔액 등 5종을 위해우려제품으로 지정 예고, 2017-08-22 시행 보도, 메틸알코올 0.6% 이하",
+        "국내 2018-08 쿠키뉴스: 자가검사 없이 유통된 워셔액 2개가 기준을 38.3배·51.3배 초과, 14개 제품 판매금지·회수명령 (위반 제품 단위 조치)",
+        "2016년 기사 기준 국내 워셔액 메탄올 비중 25~50%였고 당시 국내 규정은 없었음",
+        "'2018년부터 메탄올 워셔액 판매 금지'라고 쓰지 말 것"
+      ],
+      "sourceUrls": [
+        "https://single-market-economy.ec.europa.eu/news/new-restriction-methanol-car-windscreen-washing-fluids-2018-04-18_en",
+        "https://m.go.seoul.co.kr/news/2017/04/05/20170405011008",
+        "https://m.go.seoul.co.kr/news/2017/08/22/20170822011015",
+        "https://www.kukinews.com/article/view/kuk201808020187",
+        "https://www.etoday.co.kr/news/view/1359620"
+      ]
+    }
+  ],
+  "numbers": [
+    { "what": "EU 워셔액 메탄올 제한", "value": "0.6%(중량) 이상 제한", "asOf": "2018-04-18 공표", "sourceUrl": "https://single-market-economy.ec.europa.eu/news/new-restriction-methanol-car-windscreen-washing-fluids-2018-04-18_en" },
+    { "what": "국내 워셔액 메틸알코올 함량 기준(보도)", "value": "0.6% 이하", "asOf": "2017-08-22 시행 보도, 고시 원문 미확인", "sourceUrl": "https://m.go.seoul.co.kr/news/2017/08/22/20170822011015" },
+    { "what": "위반 시 처벌(보도)", "value": "7년 이하 징역 또는 2억원 이하 벌금", "asOf": "2017-08-22 보도", "sourceUrl": "https://m.go.seoul.co.kr/news/2017/08/22/20170822011015" },
+    { "what": "메탄올 기준 초과 워셔액", "value": "38.3배, 51.3배 (2개 제품)", "asOf": "2018-08-02 보도", "sourceUrl": "https://www.kukinews.com/article/view/kuk201808020187" },
+    { "what": "2018 환경부 적발·회수 규모", "value": "14개 업체 14개 제품", "asOf": "2018-08-02 보도", "sourceUrl": "https://www.kukinews.com/article/view/kuk201808020187" },
+    { "what": "국내 워셔액 메탄올 비중", "value": "25~50%", "asOf": "2016-07-20 기사 (현행 아님)", "sourceUrl": "https://www.etoday.co.kr/news/view/1359620" },
+    { "what": "열선 노즐 작동 외기온", "value": "5도 미만 작동 / 10도 초과 해제", "asOf": "기아 MV1 2026, 장착 차종", "sourceUrl": "https://ownersmanual.kia.com/full_webhelp/MV1/2026/en_GB/topics/t00410.html" },
+    { "what": "열선 노즐 해빙·종료 시간", "value": "시동 후 약 5~10분 해빙, 20분 후 꺼짐", "asOf": "기아 MV1 2026", "sourceUrl": "https://ownersmanual.kia.com/full_webhelp/MV1/2026/en_GB/topics/t00410.html" },
+    { "what": "4계절용 어는점(오래된 기사 주장)", "value": "영하 25도", "asOf": "2015-11-27, 현행 미확인", "sourceUrl": "https://www.autoview.co.kr/ko-kr/articles/57214" }
+  ],
+  "dropped": [
+    { "url": "https://news.jkn.co.kr/post/794362", "why": "S-OIL 에탄올 워셔액 출시 홍보 기사. 규제 수치가 없고 이 글 주장의 근거가 못 됨" }
+  ],
+  "cannotCover": [
+    "워셔액 교체 시기(개월 수) — 공식 근거 없음",
+    "사계절용·여름용과 겨울용을 섞었을 때 어는점 변화 — 공식 자료 없음",
+    "현행 워셔액 어는점 -25도 기준 — 2007년 기술표준원 조사는 블로그 2차 인용, 오토뷰 2015는 오래된 기사",
+    "환경부 고시 원문의 현행 수치·시행일 — 열어 읽지 못함, 보도 기준으로만 서술",
+    "한국교통안전공단 워셔액 공식 안내 — 못 찾음",
+    "현대차 보충구 위치·권장 규격 — '워셔액 보충하기' 항목 본문 미확인",
+    "노즐 동결 시 공식 대처 절차 — 매뉴얼은 제상 후 사용만 안내",
+    "에탄올 워셔액 현행 시판·성능 비교",
+    "열선 노즐의 전 차종 적용 — 기아 MV1 한 차종 근거뿐"
+  ],
+  "songs": []
+}

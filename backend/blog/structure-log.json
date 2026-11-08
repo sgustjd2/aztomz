@@ -1,112 +1,5 @@
 [
   {
-    "slug": "dev-trending-2026-10-07",
-    "categoryId": "dev-trending",
-    "date": "2026-10-07",
-    "h2": [
-      "숫자를 읽기 전에 확인한 세 가지",
-      "OpenShell — 에이전트가 만질 수 있는 범위를 정책으로 정하는 런타임",
-      "openrig — Claude Code와 Codex를 한 팀으로 띄우는 YAML 도구",
-      "PageIndex — 벡터 DB 없이 문서 목차를 타고 읽는 RAG",
-      "Clef — 문장 대신 선택지별 확률을 돌려주는 27B 결정 모델",
-      "Kolibri-1 — 독일어·영어용 78B MoE, Apache 2.0은 가중치까지만",
-      "Whistle — 16.9MB 파일 하나로 CPU에서 받아쓰는 음성인식",
-      "생성일·수치·단서를 한 장에 놓고 보면",
-      "내 상황에 맞춰 먼저 열어볼 곳",
-      "이 글이 근거로 읽은 페이지"
-    ],
-    "closingClichePatterns": []
-  },
-  {
-    "slug": "lp-cafe-revival-2026",
-    "categoryId": "hangeut-trend",
-    "date": "2026-10-07",
-    "h2": [
-      "LP카페는 이런 곳이에요",
-      "숫자로 보는 LP 열기",
-      "지금은 어느 단계일까요",
-      "어디서 어떻게 즐기나요",
-      "가기 전에 알아두면 좋아요"
-    ],
-    "closingClichePatterns": []
-  },
-  {
-    "slug": "iphone-quick-start",
-    "categoryId": "hangeut-trend",
-    "date": "2026-10-07",
-    "h2": [
-      "옮기기 전에 확인할 세 가지",
-      "빠른 시작, 어떻게 시작하나",
-      "직접 전송과 iCloud 다운로드 비교",
-      "옛 폰 없이 iCloud 백업으로 복원하기",
-      "iCloud 공간이 모자랄 때",
-      "케이블이나 컴퓨터로 옮기는 길",
-      "정리",
-      "참고"
-    ],
-    "closingClichePatterns": []
-  },
-  {
-    "slug": "galaxy-smart-switch",
-    "categoryId": "hangeut-trend",
-    "date": "2026-10-07",
-    "h2": [
-      "네 가지 방식 중 내 상황에 맞는 길",
-      "두 폰으로 직접 옮기는 순서",
-      "옮겨지는 것과 빠지는 것",
-      "카카오톡은 새 폰에 깔기 전에 보내요",
-      "시작하기 전 챙길 것",
-      "정리",
-      "참고"
-    ],
-    "closingClichePatterns": []
-  },
-  {
-    "slug": "google-2step-verification",
-    "categoryId": "hangeut-trend",
-    "date": "2026-10-07",
-    "h2": [
-      "켜는 순서는 네 단계예요",
-      "두 번째 확인 수단, 표로 한눈에",
-      "기기를 잃어버려도 들어갈 길, 백업 코드",
-      "복구 정보와 기다리는 시간도 같이 챙겨요",
-      "정리",
-      "참고"
-    ],
-    "closingClichePatterns": []
-  },
-  {
-    "slug": "git-stash-guide",
-    "categoryId": "hangeut-trend",
-    "date": "2026-10-07",
-    "h2": [
-      "브랜치를 옮기려는데 고치던 파일이 걸릴 때",
-      "치우고 꺼내는 기본 순서",
-      "여러 개 쌓였을 때는 메시지를 달고 번호로 골라요",
-      "새 파일은 옵션을 따로 줘야 치워져요",
-      "꺼낼 때 충돌이 나면 stash는 남아요",
-      "정리",
-      "참고"
-    ],
-    "closingClichePatterns": []
-  },
-  {
-    "slug": "excel-if-ifs",
-    "categoryId": "hangeut-trend",
-    "date": "2026-10-07",
-    "h2": [
-      "점수를 등급으로 나누는 IF 중첩 모양",
-      "조건을 쓰는 순서가 바뀌면 생기는 일",
-      "IFS로 괄호 없이 쓰기",
-      "한 칸에서 모두 맞는지, 하나만 맞는지 따지기",
-      "세 방식 비교와 버전 확인",
-      "결과가 이상할 때 보는 오류 값",
-      "정리",
-      "참고"
-    ],
-    "closingClichePatterns": []
-  },
-  {
     "slug": "garlic-storage-guide",
     "categoryId": "hangeut-trend",
     "date": "2026-10-07",
@@ -3323,6 +3216,125 @@
       "자주 묻는 세 가지",
       "세 줄로 줄이면",
       "출처 목록"
+    ],
+    "closingClichePatterns": []
+  },
+  {
+    "slug": "croc-embossed-bag-fall-2026",
+    "categoryId": "hangeut-trend",
+    "date": "2026-11-08",
+    "h2": [
+      "악어무늬, 소재가 아니라 가공",
+      "왜 하필 지금 눈에 띄나요",
+      "얼마나 뜨거운 걸까요",
+      "질감이 강한 가방, 이렇게 맞춰요",
+      "살 때 눈여겨볼 표기",
+      "처음 보면 헷갈리는 지점",
+      "가방 고르기 전 다섯 줄",
+      "참고"
+    ],
+    "closingClichePatterns": []
+  },
+  {
+    "slug": "winter-cape-coat-2026",
+    "categoryId": "hangeut-trend",
+    "date": "2026-11-08",
+    "h2": [
+      "망토와 코트 사이",
+      "왜 하필 올겨울에 보일까요",
+      "얼마나 뜨거운가요",
+      "입기 전에 따져볼 것",
+      "이렇게 입어봐요",
+      "낯설어 보여도 괜찮아요",
+      "케이프 코트 요점",
+      "참고"
+    ],
+    "closingClichePatterns": []
+  },
+  {
+    "slug": "git-bisect-guide",
+    "categoryId": "dev-tool",
+    "date": "2026-11-08",
+    "h2": [
+      "이 글 순서",
+      "커밋 목록을 반씩 잘라 가는 도구예요",
+      "수동으로 하는 순서",
+      "bisect run으로 맡기면 사람이 빠져요",
+      "건너뛰기와 로그 남기기",
+      "아쉬운 점과 다른 방법",
+      "추천 / 비추천",
+      "정리",
+      "참고"
+    ],
+    "closingClichePatterns": []
+  },
+  {
+    "slug": "hwangtae-storage-guide",
+    "categoryId": "life-info",
+    "date": "2026-11-08",
+    "h2": [
+      "이 글의 기준일과 범위",
+      "명태 이름, 한눈에 보기",
+      "북어와 황태는 무엇이 다를까요",
+      "황태는 얼마나 말릴까요",
+      "황태채 보관, 포장에서 무엇을 보나요",
+      "아직 근거를 못 찾은 부분",
+      "황태와 북어, 핵심만",
+      "참고"
+    ],
+    "closingClichePatterns": []
+  },
+  {
+    "slug": "red-bean-boiling-guide",
+    "categoryId": "life-info",
+    "date": "2026-11-08",
+    "h2": [
+      "이 글의 범위와 기준일",
+      "삶기 전에 알아둘 것",
+      "Step 1. 팥을 씻고 불릴지 정하기",
+      "Step 2. 한소끔 끓이고 첫물 버리기",
+      "Step 3. 새 물을 붓고 푹 삶기",
+      "Step 4. 다 삶아졌는지 확인하기",
+      "팥 삶다가 헷갈리는 순간",
+      "자료에서 답을 못 찾은 것",
+      "팥 삶기 요약",
+      "참고"
+    ],
+    "closingClichePatterns": []
+  },
+  {
+    "slug": "winter-washer-fluid",
+    "categoryId": "life-info",
+    "date": "2026-11-08",
+    "h2": [
+      "먼저 알아둘 범위와 기준일",
+      "준비물: 확인할 것 세 가지",
+      "Step 1. 내 차 매뉴얼에서 겨울용 안내를 찾아요",
+      "Step 2. 사계절용 충분 주장은 날짜를 보고 판단해요",
+      "Step 3. 저장통 보충은 매뉴얼의 보충 항목을 따라요",
+      "Step 4. 얼 만한 날에는 유리부터 데운 뒤 써요",
+      "열선 워셔 노즐이 있다면",
+      "막히면: 이런 경우는 이렇게",
+      "메탄올 이야기: 판매 금지가 아니라 함량 상한이에요",
+      "근거가 없어 비워 둔 칸",
+      "마무리 체크",
+      "출처"
+    ],
+    "closingClichePatterns": []
+  },
+  {
+    "slug": "knit-pilling-removal",
+    "categoryId": "life-info",
+    "date": "2026-11-08",
+    "h2": [
+      "보풀이 생기는 자리와 이유",
+      "이미 생긴 보풀, 세 가지 방법과 주의점",
+      "덜 생기게 하는 세탁 순서",
+      "건조기에 넣어도 될까",
+      "소재에 따라 달라지는 것",
+      "아직 확인되지 않은 것",
+      "오늘 챙길 세 가지",
+      "참고"
     ],
     "closingClichePatterns": []
   }
