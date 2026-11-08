@@ -181,7 +181,7 @@ async function pasteHtml(page, f, html) {
       'text/plain': new Blob([h.replace(/<[^>]+>/g, '')], { type: 'text/plain' }),
     })]);
   }, html);
-  await page.keyboard.press('Control+V');
+  await page.keyboard.press('ControlOrMeta+V'); // Windows Ctrl · macOS ⌘
   await page.waitForTimeout(1500);
   if (saved !== null) await f.evaluate((t) => navigator.clipboard.writeText(t).catch(() => {}), saved);
 }
