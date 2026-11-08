@@ -6698,6 +6698,10 @@ window.HANGEUT_DATA = {
         [
           "매일경제",
           "https://www.mk.co.kr/news/economy/11069478"
+        ],
+        [
+          "YouTube(2026-10-30)",
+          "https://www.youtube.com/watch?v=lzRb3FmhI0E"
         ]
       ],
       "tags": [
@@ -6739,7 +6743,7 @@ window.HANGEUT_DATA = {
         "https://pimg.mk.co.kr/news/cms/202407/18/20240718_01110202000002_M00.jpg"
       ],
       "collectedAt": "2026-07-10",
-      "analyzedAt": "2026-07-10",
+      "analyzedAt": "2026-11-08",
       "recs": [
         [
           "뜻·맥락 알고 쓰기",
@@ -6760,7 +6764,7 @@ window.HANGEUT_DATA = {
       "labelCls": "good",
       "buzz": "화제성 상승",
       "pull": "",
-      "stageMsg": "Z세대 사이에서 이미 보편화"
+      "stageMsg": "2024년 키워드로 소개된 뒤 설명형으로 쓰임"
     },
     {
       "id": "WORD-2026-0031",
