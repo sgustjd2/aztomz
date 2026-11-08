@@ -6,8 +6,9 @@
    그런데 남의 사진을 가져다 쓸 수는 없다 — 저작권이고, 핫링크는 403 으로 깨진다(CLAUDE.md 철칙).
    그래서 **우리가 만들거나 우리가 직접 찍은 것만** 쓴다.
 
-   두 종류:
+   세 종류:
      card  — 우리 데이터로 그린 도표·비교표·설정값 카드. 저작권 무관. 어느 카테고리에나 쓴다.
+     image — Codex ImageGen 으로 직접 만든 삽화. 파일은 <글id>.ai-<그림id>.png 로 out/blog 에 둔다.
      shot  — 이미 본문에서 인용 중인 **공개 웹페이지**를 우리가 직접 캡처. 사실 확인용 자료화면이라
              출처(URL)를 캡션에 반드시 박는다. 로그인벽·유료 페이지는 찍지 않는다.
 
@@ -23,7 +24,7 @@
 import { readFile, mkdir } from 'node:fs/promises';
 import { existsSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
-import { dirname, join } from 'node:path';
+import { basename, dirname, join } from 'node:path';
 
 const repoRoot = join(dirname(fileURLToPath(import.meta.url)), '..', '..');
 const outDir = join(repoRoot, 'backend', 'out', 'blog');
@@ -40,8 +41,8 @@ const esc = (s) => String(s ?? '')
 const W = 1000;
 
 const PALETTE = {
-  bg: '#111113', fg: '#f7f4ee', dim: '#a9a396', line: '#2c2c30',
-  accent: '#f0b429', good: '#34d399', bad: '#ff6b52', info: '#60a5fa',
+  bg: '#ffffff', fg: '#172033', dim: '#64748b', line: '#dbe3ee',
+  accent: '#1a56db', good: '#16845b', bad: '#c93434', info: '#2563eb',
 };
 
 const BASE_CSS = `
@@ -79,7 +80,7 @@ const renderSteps = (s) => `
     .step{display:flex;gap:20px;align-items:flex-start;padding:18px 0;
           border-bottom:1px solid ${PALETTE.line}}
     .step:last-child{border-bottom:0}
-    .n{flex:0 0 46px;height:46px;border-radius:50%;background:${PALETTE.accent};color:#141414;
+    .n{flex:0 0 46px;height:46px;border-radius:50%;background:${PALETTE.accent};color:#ffffff;
        font-size:23px;font-weight:800;display:flex;align-items:center;justify-content:center}
     .lb{font-size:23px;font-weight:700;line-height:1.35}
     .nt{font-size:18px;color:${PALETTE.dim};margin-top:5px;line-height:1.5}
@@ -122,6 +123,15 @@ const LAYOUTS = { table: renderTable, steps: renderSteps, timeline: renderTimeli
 
 export async function makeFigure(ctx, fig, id) {
   await mkdir(outDir, { recursive: true });
+  if (fig.kind === 'image') {
+    const expected = `${id}.ai-${fig.id}.png`;
+    if (!fig.id || basename(String(fig.assetFile || '')) !== fig.assetFile || fig.assetFile !== expected) {
+      throw new Error(`ImageGen assetFile 은 ${expected} 이어야 합니다`);
+    }
+    const file = join(outDir, expected);
+    if (!existsSync(file)) throw new Error(`ImageGen 그림 파일이 없습니다: ${file}`);
+    return file;
+  }
   const file = join(outDir, `${id}.fig-${fig.id}.png`);
   const p = await ctx.newPage();
   try {

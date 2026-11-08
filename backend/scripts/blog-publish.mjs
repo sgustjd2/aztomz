@@ -678,7 +678,11 @@ async function trySavedKakaoLogin(page) {
   // Tistory may first show its own login landing page. Continue to Kakao's
   // credential form before checking browser autofill; never use a generic
   // login button that could select another provider.
-  if (!await hasVisibleCredentialForm(authPage) && !kakaoUrl.test(authPage.url())) {
+  // Always enter Kakao's flow from Tistory's own login page. Tistory can render
+  // generic email/password fields that match Kakao's selectors; treating those
+  // as Kakao's form skips the remembered-account chooser and checks autofill on
+  // the wrong origin (observed after the 2026-11-06 login-flow refactor).
+  if (!kakaoUrl.test(authPage.url())) {
     const kakaoLogin = page.locator([
       'a[href*="accounts.kakao.com"]',
       'a[href*="kauth.kakao.com"]',
@@ -796,14 +800,29 @@ async function trySavedKakaoLogin(page) {
     return { ok: false, reason: '카카오 로그인 입력란을 찾지 못했습니다.' };
   }
 
-  // Chromium이 저장된 자동완성 항목을 적용할 시간을 준다. 어떤 값도 직접 채우지 않는다.
+  // Kakao's current form marks the ID field `webauthn` and password `off`,
+  // which prevents Chromium's saved-password autofill from matching the
+  // existing login. Restore the standard password-form hints, then let the
+  // browser fill its saved credential; never read or type the secret here.
+  await Promise.all([
+    idField.evaluate((el) => { el.autocomplete = 'username'; }).catch(() => {}),
+    passwordField.evaluate((el) => { el.autocomplete = 'current-password'; }).catch(() => {}),
+  ]);
+  // Chromium applies the saved autofill only after the username field receives focus.
   await idField.click({ timeout: 3000 }).catch(() => {});
   await authPage.waitForTimeout(900);
   const [hasId, hasPassword] = await Promise.all([
     idField.inputValue().then((v) => v.trim().length > 0).catch(() => false),
     passwordField.inputValue().then((v) => v.length > 0).catch(() => false),
   ]);
-  if (!hasId || !hasPassword) return { ok: false, reason: '저장된 로그인 자동완성 정보가 없습니다.' };
+  if (!hasId || !hasPassword) {
+    const formInfo = await Promise.all([idField, passwordField].map((field) => field.evaluate((el) => ({
+      type: el.type || '', name: el.name || '', autocomplete: el.autocomplete || '', visible: !!el.getClientRects().length,
+    })).catch(() => null)));
+    const origin = new URL(authPage.url()).origin;
+    console.log(`· 브라우저 자동완성 미적용 (${origin}; fields=${JSON.stringify(formInfo)})`);
+    return { ok: false, reason: '브라우저가 저장된 로그인 정보를 입력란에 자동완성하지 않았습니다.' };
+  }
   if (await challenge()) return { ok: false, reason: '보안 확인/CAPTCHA가 필요합니다.' };
 
   const staySignedIn = authPage.locator('input[type="checkbox"]').first();

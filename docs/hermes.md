@@ -14,7 +14,7 @@ Hermes는 [Nous Research](https://nousresearch.com)의 AI 에이전트 런타임
                          │
    수집 ─▶ 분석 ─▶ 정리 ─▶ .pipeline/curate.json(후보)
                               │
-                              ▼ (21:30 수집 직후 자동 진행)
+                              ▼ (각 슬롯 수집 직후 자동 진행 — 13:30·17:30·21:30)
                     auto-build.mjs 자동검증
                    (중복·404/410·관련성·근거 대조 제거)
                               │
@@ -33,7 +33,7 @@ Hermes는 [Nous Research](https://nousresearch.com)의 AI 에이전트 런타임
 ```
 
 - **수집·분석:** 고구미봇 온디맨드(디스코드 "한끗 실행" 명령).
-- **자동검증·게시:** 매일 21:30 hangeut-run 수집 후 auto-build.mjs가 실행 → 통과분만 사이트에 올라감 (사람 승인 불필요).
+- **자동검증·게시:** 하루 3회(13:30·17:30·21:30 슬롯) hangeut-run 수집 후 슬롯마다 auto-build.mjs가 실행 → 통과분만 사이트에 올라감 (사람 승인 불필요). 슬롯별 분야는 다르다(아래 "슬롯별 분야 로테이션").
 - **보류:** 출처가 404·무관·못읽음만 있는 항목, 또는 서술이 출처 밖 수치·매체·확산 표현(근거 대조 실패)인 항목은 자동 보류(`.pipeline/review-queue.json`). 디스코드 보고의 수치는 auto-build의 `SUMMARY` 줄을 그대로 쓴다.
 - **사람 검수(2026-10-23~):** 디스코드에서 "검수"라고 하면 `hangeut-approve` 스킬이 보류 항목을 하나씩 버튼 카드(게시/버리기/나중에)로 보여준다. "게시"는 `pipeline-review.mjs --approve=<id>` → `auto-build.mjs --approved`로 처리하며, 살아 있는 출처 1개 이상이라는 조건은 그대로 지킨다. 결정은 `backend/out/pipeline/reviews.jsonl`에 남는다. 게시·버리기 뒤에는 이유 버튼(프리셋 또는 직접 입력)이 뜨고, 코멘트는 `pipeline-review.mjs --note`로 `reviews.jsonl`과 `learnings.md`에 남아 다음 수집이 참고한다.
 - **유행 단계 재판정(2026-10-24~):** 이미 게시된 트렌드 중 분석일이 오래된 것을 매일 21:05에 3건 골라 `hangeut-restage`가 최근 검색 신호로 단계를 다시 판단한다. `restage.mjs --apply`가 정규 단계 라벨·근거 URL(살아 있는 비SNS 출처 1개 이상)을 검증해 통과분만 반영하고(`stage`·`stageMsg`·`analyzedAt`, 근거를 `src`에 추가), 하락·끝물이면 label·buzz를 함께 낮춘다. 본문(verdict·excerpt·article)은 고치지 않고 어긋나는 표현은 conflict로 보고만 한다. 기록은 `backend/out/pipeline/restage.jsonl`.
@@ -62,7 +62,7 @@ Hermes는 [Nous Research](https://nousresearch.com)의 AI 에이전트 런타임
 | 폴백 | `fallback_providers`: provider `anthropic` · model `claude-sonnet-5-5` (2026-11-06 변경). 주 모델이 429 `usage_limit_reached` 등으로 실패하면 이 모델로 넘어간다 |
 | 되돌리기·주의 | 폴백 제거는 `config.yaml`의 `fallback_providers`를 지운다. 크론 잡이 모델을 고정(pin)해 두면 폴백을 타지 않는다 (2026-10-22 21:30·21:50 수집이 Codex 한도로 실패한 것이 계기) |
 | 이전 구성 | 아래 "모델 변경 이력" 참고 (Gemini 무료 → Gemini 2.5 Pro 유료 → Claude Sonnet 5 → 현재) |
-| 재시도 | `agent.api_max_retries=6`(config). 21:30 수집이 실패하면 `21:50` 재시도 게이트(`hangeut_retry_gate.py`)가 1회 다시 큐잉 |
+| 재시도 | `agent.api_max_retries=6`(config). 21:30 수집이 실패하면 `21:50` 재시도 게이트(`hangeut_retry_gate.py`)가 1회 다시 큐잉. 게이트는 21:30 잡만 본다(13:30·17:30 슬롯 실패는 대상 아님) |
 | 확인 필요 | 이전 Gemini 기준으로 적힌 "무료 쿼터·cron 3분 하드제한" 제약은 현재 Codex 구성에서 재검증하지 않았다. 실제 한도는 Codex 한도 기준으로 봐야 한다 |
 | 검색 | `ddgs.exe`(DuckDuckGo, 키 불필요) — 브라우저(Chrome)는 안 됨 |
 | 화제성 | `scripts/youtube_search.py`(YouTube Data API) — 조회수·댓글·업로드일 |
@@ -139,18 +139,23 @@ Hermes는 [Nous Research](https://nousresearch.com)의 AI 에이전트 런타임
 
 | 작업 | 주기 | 내용 |
 |---|---|---|
-| **블로그 일일 초안** (`c49cb13870e0`) | 매일 **09:00** | **2026-09-24 일시정지** — Windows 스케줄작업 `AZ2MZ_Blog_Daily`로 이관. `claude -p /blog-daily` 스킬이 2026-10-17부터 최대 6편(티스토리 1+네이버 5, 각각 다른 글; 품질 기준 미달 시 축소) 집필·검증. 발행은 `blog-queue.mjs`가 12:00·15:00·18:00에 담당. |
-| **한끗 자동 수집·게시** (`9ddacd750b48`) | 매일 **21:30** | `hangeut-run`(수집·분석) → `auto-build.mjs`(자동검증·게시). 검증통과분만 사이트 반영 · git push → Vercel 배포. 보류분은 review-queue에 쌓이고, 후보 0건인 날은 `--none`으로 runs.jsonl에만 기록. **요일 로테이션 → 목 21:30 = 신조어(주간 사전 갱신)** |
+| **블로그 일일 초안** (`c49cb13870e0`) | 매일 **09:00** | **2026-09-24 일시정지** — Windows 스케줄작업 `AZ2MZ_Blog_Daily`로 이관. `claude -p /blog-daily` 스킬이 2026-11-07부터 최대 7편(티스토리 1+네이버 6, 각각 다른 글; 품질 기준 미달 시 축소) 집필·검증. 발행은 `blog-queue.mjs`가 12:00·15:00·18:00에 담당. |
+| **한끗 자동 수집·게시** (슬롯0 `0a2ea7571c71` · 슬롯1 `55a2adf74363` · 슬롯2 `9ddacd750b48`) | 매일 **13:30 · 17:30 · 21:30** (2026-11-08~) | `hangeut-run`(수집·분석) → `auto-build.mjs`(자동검증·게시). 검증통과분만 사이트 반영 · git push → Vercel 배포. 슬롯당 3~5건(근거 2개 못 채우면 제외). 보류분은 review-queue에 쌓이고, 후보 0건인 날은 `--none`으로 runs.jsonl에만 기록. 슬롯 분야는 `trend_categories.py --slot=N`이 정한다(아래 "슬롯별 분야 로테이션"). 놓친 실행은 60분 안에만 따라잡는다 |
 | **한끗 수집 재시도 게이트** | 매일 **21:50** | `hangeut_retry_gate.py`(no-agent) — 그날 21:30 수집이 error로 끝났을 때만 1회 재실행을 큐잉. 성공했거나 실행이 없었으면 아무것도 안 함 |
 | **한끗 광고/진짜 일일 재확인** (신규) | 매일 **21:15** | `recheck_ad.py`(no-agent) — 가장 오래된 신뢰분석 1건의 출처 재검증(recheck-ad.mjs) → 살아있으면 analyzedAt 갱신(→ 홈 featured 회전). 근거 대조(`lib/grounding.mjs`) 실패 시엔 회전 없이 '사람 확인 필요'로 보고하고 다음 오래된 항목(최대 3건)을 시도. 메인(21:00)과 trends.json 쓰기 충돌 방지로 15분 뒤 |
 | **한끗 유행 단계 재판정** (`2bfe2a1c0d40`) | 매일 **21:05** | `hangeut-restage` — 게시 트렌드 5건의 유행 단계 재판정 → `restage.mjs --apply`(검증·반영·git push). 최근 14일 재판정분은 제외. 기록 `backend/out/pipeline/restage.jsonl` |
 | **한끗 주간 갱신** (`dc54cec90b5e`) | 매주 월 **21:00** | `hangeut_daily.py`(no-agent) — trends.json 날짜 스탬프 + 신선도 리포트. 무료·안 죽음 |
-| **한끗 오늘의 분야** (`f3a0b6724fa4`) | 매일 **21:00** | `hangeut_categories.py`(no-agent) — 오늘 날짜에 맞춘 펄스 분석 분야와 트렌드 수집 분야를 한 Discord 메시지로 안내하고, 실제 실행 시각(펄스 07:00 · 트렌드 21:30) 및 별도 명령이 필요 없음을 알림. 기존 중복 안내 잡 `bc1a98451fb7`은 일시정지됨 |
+| **한끗 오늘의 분야** (`f3a0b6724fa4`) | 매일 **21:00** | `hangeut_categories.py`(no-agent) — 오늘 날짜에 맞춘 펄스 분석 분야와 트렌드 수집 분야를 한 Discord 메시지로 안내하고, 실제 실행 시각(펄스 07:00 · 트렌드 13:30·17:30·21:30 — 슬롯마다 분야 표시) 및 별도 명령이 필요 없음을 알림. 기존 중복 안내 잡 `bc1a98451fb7`은 일시정지됨 |
 
-> ⏰ **전부 21시대(KST)** — 아침엔 PC가 꺼져 있어 저녁으로 옮김. 유행 단계 재판정 21:05, 재확인 21:15(파일 쓰기 충돌 방지), 메인 수집·게시 21:30, 재시도 게이트 21:50. Hermes는 **로컬**이라 그 시각에 PC+게이트웨이가 켜져 있어야 실행된다(`tools/start-hermes.bat`, 로그인 시 자동 시작).
+> ⏰ **21시대 작업(KST)** — 아침엔 PC가 꺼져 있어 저녁으로 옮김. 유행 단계 재판정 21:05, 재확인 21:15(파일 쓰기 충돌 방지), 수집·게시 마지막 슬롯 21:30, 재시도 게이트 21:50. 수집 슬롯 13:30·17:30은 낮 시간대다. Hermes는 **로컬**이라 그 시각에 PC+게이트웨이가 켜져 있어야 실행된다(`tools/start-hermes.bat`, 로그인 시 자동 시작).
 > **⚠️ auto-build.mjs·recheck-ad.mjs는 현재 브랜치가 `main`이어야 한다.** feature 브랜치에서 실행되면 pull --rebase가 silent fail → origin/main으로 push 안 됨 → 라이브 사이트가 정체됨(2026-08-09~15 사고). 안전장치 추가: 현재 브랜치 != `main`이면 exit 1 + git rebase 실패 시 abort 자동 실행.
 > 
 > **⚠️ git 동시 작업 방지 락** — auto-build.mjs·recheck-ad.mjs는 `.git/az2mz-auto.lock`으로 서로의 git 단계(pull/commit/push)를 보호해 rebase 중단을 방지한다. **단, 인터랙티브 세션의 수동 git 명령까지는 강제할 수 없다**(계기: 2026-08-16 21:15경 인터랙티브 세션과 recheck-ad 충돌). 권장: 21:00~21:15 구간(크론 시간대)에는 수동 git 작업을 피할 것.
+
+### 슬롯별 분야 로테이션 (트렌드 수집, 2026-11-08~)
+하루 3회 수집(13:30=슬롯0 · 17:30=슬롯1 · 21:30=슬롯2)하며, 슬롯마다 분야가 다르다. 슬롯 k의 분야 = 7분류 `[(요일×3+k) % 7]` (`scripts/trend_categories.py`의 `slot_category` 한 곳에서만 정하고, `hangeut_search.py --slot=N`·21:00 안내가 같은 함수를 쓴다). 하루 3분야, 분야마다 주 3회. 예: 목요일은 13:30 카페·핫플 · 17:30 **신조어·밈** · 21:30 노래·챌린지. 슬롯별 curate는 `.pipeline/curate-sN.json`으로 분리한다.
+
+> ⚠️ 검토 필요: 이전 "목 21:30 = 신조어(주간 사전 갱신)" 규칙은 이 로테이션으로 바뀌어 신조어는 목 17:30 슬롯에 온다. 주간 사전 갱신을 어느 슬롯에 묶을지는 사람이 정한다(문서만 맞춤, 코드 미변경).
 
 ### 펄스 요일별 분야 로테이션
 11개 분야를 요일로 쪼개 **매일 1~2분야씩 → 일주일에 1회전**(한 번에 11개 몰아치던 무료 쿼터 부담 해소).
@@ -185,7 +190,7 @@ Hermes는 [Nous Research](https://nousresearch.com)의 AI 에이전트 런타임
 
 | 보고 (잡) | 선택지 | 동작 |
 |---|---|---|
-| 한끗 자동 수집·게시 (`9ddacd750b48`) · 수집 재시도 게이트 (`cb8938c4f951`) | 🔁 · 📋 · 📊 | 🔁 `hermes cron run <id>` 재실행 · 📋 보류 검수 대기 목록을 항목마다 올림 · 📊 `pipeline-review.mjs --stats` 2주 수치 |
+| 한끗 자동 수집·게시 (`0a2ea7571c71` · `55a2adf74363` · `9ddacd750b48`) · 수집 재시도 게이트 (`cb8938c4f951`) | 🔁 · 📋 · 📊 | 🔁 `hermes cron run <id>` 재실행 · 📋 보류 검수 대기 목록을 항목마다 올림 · 📊 `pipeline-review.mjs --stats` 2주 수치 |
 | 유행 단계 재판정 (`2bfe2a1c0d40`) | 🔁 · 📊 | 재실행 · 2주 수치 |
 | 광고/진짜 일일 재확인 (`f0994a8787c9`) | 🔁 | 재실행 |
 

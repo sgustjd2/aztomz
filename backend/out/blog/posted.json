@@ -1508,5 +1508,15 @@
     "at": "2026-11-05 00:18",
     "url": "https://burning-go9me.tistory.com/582",
     "title": "git untracked 파일 삭제, clean -n -f -d -x 차이"
+  },
+  "git-config-user-setting": {
+    "at": "2026-11-06 09:23",
+    "url": "https://burning-go9me.tistory.com/583",
+    "title": "git config user.name 설정했는데 커밋 작성자는 그대로?"
+  },
+  "git-diff-guide": {
+    "at": "2026-11-07 03:00",
+    "url": "https://burning-go9me.tistory.com/584",
+    "title": "git diff 출력이 빈 이유, add한 변경과 점 세 개 비교까지"
   }
 }

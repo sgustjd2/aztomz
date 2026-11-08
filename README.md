@@ -7,7 +7,7 @@
 30~50대 직장인·부모가 자녀·후배와 대화하다 처음 듣는 유행어·디저트·챌린지를 만나면, 뜻은 사전에·이유는 기사에·지금도 유행인지는 SNS에 흩어져 있고 오래된 글이 최신처럼 보입니다.
 한끗은 **뜻 · 지금 유행 단계 · 근거 출처**를 한 화면에 모아 1분 안에 이해하게 합니다. 데모: <https://az2mz.vercel.app>
 
-- 수집·초안은 Hermes 에이전트가 매일 밤 하고, 출처 생존·관련성·근거 대조는 결정적 스크립트가 검증하며, 애매한 후보는 사람이 디스코드 버튼으로 정합니다.
+- 수집·초안은 Hermes 에이전트가 하루 3번(13:30·17:30·21:30, 슬롯마다 다른 분야) 하고, 출처 생존·관련성·근거 대조는 결정적 스크립트가 검증하며, 애매한 후보는 사람이 디스코드 버튼으로 정합니다.
 - 실행 방법은 아래 [로컬 실행](#로컬-실행), 환경변수 예시는 `.env.example`, 라이선스는 `LICENSE`(MIT).
 
 ## 구조 한눈에
@@ -122,9 +122,10 @@ git push origin main              # → Vercel 자동 재배포
 - 변경시 자동 커밋·푸시 (리포에만 저장, 배포되지 않음)
 
 **블로그 티스토리·네이버 일일 발행:**
-- 09:00 집필: Windows 스케줄작업 `AZ2MZ_Blog_Daily` → `claude -p /blog-daily` 스킬이 4편(티스토리 2+네이버 2, 서로 다른 글 — 2026-10-07 토큰 절약으로 5+5에서 축소) 집필·검증. 로그: `backend/out/blog/blog-daily.log`
-- 12:00·15:00·18:00 발행: Windows 스케줄작업 `AZ2MZ_Blog_Queue` → `node backend/scripts/blog-queue.mjs`가 플랫폼별 순차 발행(T→N→T→N…, 글 사이 20~40분 랜덤, 각 플랫폼 하루 5편 한도). 로그: `backend/out/blog/blog-queue.log`
-- 로그인 자동화 없음(기존 철칙) — 전용 프로필(티스토리 `backend/.tistory-profile`, 네이버 `backend/.naver-profile`)에 1회 로그인 후 재사용
+- 09:00 집필: Windows 스케줄작업 `AZ2MZ_Blog_Daily` → `claude -p /blog-daily` 스킬이 최대 7편(티스토리 1 + 네이버 6, 서로 다른 주제)을 집필·검증한다. 품질 기준 미달이면 편수를 줄인다. 집필·검증이 끝나면 발행 대기열을 바로 실행한다. 로그: `backend/out/blog/blog-daily.log`
+- 12:00·15:00·18:00 발행 대기열 재확인: Windows 스케줄작업 `AZ2MZ_Blog_Queue` → `node backend/scripts/blog-queue.mjs`가 티스토리 최대 1편·네이버 최대 6편을 교대로 발행(T→N→T→N…, 글 사이 20~40분 랜덤). 로그: `backend/out/blog/blog-queue.log`
+- 본문 시각자료: `[FIG: id | 캡션]` 마커와 글 메타의 `figures[]`를 연결한다. 예약 집필은 `blog-figure.mjs`로 파랑 계열의 비교 카드·단계도·타임라인을 만들고, Codex 대화형 집필은 GPT ImageGen 파일을 실제 생성한 경우에만 래스터 삽화로 연결할 수 있다. 커버 외 보통 2~4개(짧은 글 1~2개)를 기준으로 하되 설명에 도움 되는 그림만 쓴다.
+- 티스토리는 매일 11:00 `AZ2MZ_Tistory_Daily_Session`이 세션을 확인하고, 만료 시 저장된 자동완성 정보로 1회 자동로그인을 시도한다. 저장정보가 없거나 추가 인증·CAPTCHA가 나오면 사람이 처리한다. 네이버는 전용 프로필(`backend/.naver-profile`) 세션을 재사용한다. CAPTCHA는 사람이 처리한다.
 - 네이버 본문은 붙여넣기 전 `naverize()`로 가독성 양식(왼쪽 정렬·문장 2개씩 짧은 문단(16px·줄간격 1.8)·문단 사이 빈 줄·밑줄형 인용구 소제목·기울임 없음)으로 바꾼다. 발행 창 위치는 `backend/scripts/lib/window.mjs`에서 정하며 `BLOG_OFFSCREEN=1`이면 화면 밖이다. 세부·주의사항은 [docs/architecture.md](docs/architecture.md)
 
 ---
@@ -136,6 +137,7 @@ git push origin main              # → Vercel 자동 재배포
 - **[docs/architecture.md](docs/architecture.md)** — 정적 멀티페이지 구조·화면 설정 계약
 - **[docs/local-first.md](docs/local-first.md)** — 정적 공개 콘텐츠 운영·화면 설정
 - **[docs/hermes.md](docs/hermes.md)** — 🤖 **Hermes(고구미봇) 작동 방식** — 파이프라인·스킬 16개·검증 게이트·검수·cron
+- **[네이버 애드포스트 성장 계획](backend/blog/naver-adpost-growth-plan.md)** — 검색 유입·30일 측정·본문 시각자료 기준
 - **[docs/menus/](docs/menus/)** — 메뉴별 상세 문서
   - [오늘의 한끗(홈)](docs/menus/home.md) / [MZ 사전](docs/menus/dictionary.md)
   - [광고일까 진짜일까](docs/menus/ad-or-real.md) / [요즘 음식](docs/menus/food.md)

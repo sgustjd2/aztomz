@@ -1,4 +1,4 @@
-' 블로그 일일 집필(티스토리 1 + 네이버 5, 서로 다른 글) — 스케줄작업 AZ2MZ_Blog_Daily(매일 09:00).
+' 블로그 일일 집필(티스토리 1 + 네이버 6, 서로 다른 글) — 스케줄작업 AZ2MZ_Blog_Daily(매일 09:00).
 ' 집필·검증이 끝나면 blog-queue.mjs를 즉시 시작한다. 정오·오후 예약 큐는 놓친 원고를 확인하는 안전망이다.
 ' Hermes 잡(50분 대기 한도)에서 옮겨옴(2026-09-24). 콘솔창 없이 실행.
 ' 로그: backend\out\blog\blog-daily.log, backend\out\blog\blog-queue.log

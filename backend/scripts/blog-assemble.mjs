@@ -103,6 +103,18 @@ const figDefs = new Map((meta.figures || []).map((f) => [f.id, f]));
 for (const ref of figRefs) {
   const def = figDefs.get(ref.id);
   if (!def) { problems.push(`본문 [FIG: ${ref.id}] 인데 메타 figures 에 정의가 없다`); continue; }
+  if (!['card', 'shot', 'image'].includes(def.kind)) {
+    problems.push(`[FIG: ${ref.id}] 메타 kind 가 card/shot/image 중 하나가 아니다`);
+    continue;
+  }
+  if (def.kind === 'image') {
+    const expected = `${slug}.ai-${ref.id}.png`;
+    const asset = join(outDir, expected);
+    if (def.assetFile !== expected || !existsSync(asset)) {
+      problems.push(`[FIG: ${ref.id}] ImageGen 파일이 없거나 assetFile 이 맞지 않다: ${expected}`);
+    }
+    if (!String(def.title || '').trim()) problems.push(`[FIG: ${ref.id}] ImageGen 그림에 alt 용 title 이 없다`);
+  }
   if (def.kind === 'shot') {
     // 남의 화면을 찍은 것이다 — 출처 URL 이 캡션에 없으면 안 된다. 그리고 그 URL 은
     // 우리가 이미 인용 중인 출처여야 한다(아무 페이지나 찍어 올리는 걸 막는다).

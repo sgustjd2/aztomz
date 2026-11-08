@@ -4,7 +4,7 @@
 
    blog-daily 가 만든 글은 meta.platform 으로 한 곳에만 배정된다("tistory" 기본 / "naver").
    이 스크립트는 **검증 통과 후 본문이 안 바뀐 글**(meta.verified.html == 현재 html 해시)만
-   골라, 두 플랫폼을 번갈아(T→N→T→N…) 글 사이 랜덤 대기를 두고 하루 --max 편씩 올린다.
+   골라, 두 플랫폼을 번갈아(T→N→T→N…) 글 사이 랜덤 대기를 두고 하루 티스토리 1편·네이버 6편까지 올린다.
    같은 글이 두 플랫폼에 가는 일은 없다(양쪽 발행 기록 모두 확인).
 
    스팸 판정은 "짧은 시간 대량"이 핵심 신호라 속도를 조절한다. 캡차는 우회하지 않는다 —
@@ -12,8 +12,9 @@
 
    실행 (레포 루트에서):
      node backend/scripts/blog-queue.mjs --list            # 대기열만 보기
-     node backend/scripts/blog-queue.mjs                   # 발행 (기본: 플랫폼당 하루 5편·20~40분 간격·7일 이내)
-     node backend/scripts/blog-queue.mjs --max=5 --gap=20-40 --max-age=7 --only=naver
+     node backend/scripts/blog-queue.mjs                   # 발행 (기본: T1/N6·20~40분 간격·7일 이내)
+     node backend/scripts/blog-queue.mjs --max-tistory=1 --max-naver=6 --gap=20-40 --max-age=7
+     node backend/scripts/blog-queue.mjs --max=5 --only=naver # --max는 양 플랫폼 공통 한도로 유지
      node backend/scripts/blog-queue.mjs --selftest
    스케줄: 매일 12:00·15:00·18:00 스케줄작업 AZ2MZ_Blog_Queue(tools/blog-queue.vbs). 18:00 회차는
    12:00 이후 늦게 검증된 글을 따라잡는다(하루 한도는 발행 기록으로 세므로 초과 안 함).
@@ -76,7 +77,13 @@ function loadPosts() {
 }
 
 async function main() {
-  const max = Number(val('max', 5));
+  // 기본 일일 분배는 티스토리 1편 + 네이버 6편(총 7편)이다.
+  // 기존 --max 옵션은 명시되면 양 플랫폼 공통 한도로 적용한다.
+  const sharedMax = val('max', undefined);
+  const maxByPlatform = {
+    tistory: Number(val('max-tistory', sharedMax ?? 1)),
+    naver: Number(val('max-naver', sharedMax ?? 6)),
+  };
   const maxAge = Number(val('max-age', 7));
   const [gapMin, gapMax] = val('gap', '20-40').split('-').map(Number);
   const only = val('only', '');
@@ -92,7 +99,7 @@ async function main() {
     const all = candidates(posts, postedAll, p, today, maxAge)
       .filter((id) => !skipped[p]?.[id]);
     const doneToday = Object.values(posted[p]).filter((v) => kstDay(atMs(v.at)) === today).length;
-    plan[p] = only && only !== p ? [] : all.slice(0, Math.max(0, max - doneToday));
+    plan[p] = only && only !== p ? [] : all.slice(0, Math.max(0, maxByPlatform[p] - doneToday));
     console.log(`${p}: 후보 ${all.length}편 · 오늘 이미 ${doneToday}편 · 이번 ${plan[p].length}편${has('list') && all.length ? '\n  ' + all.join('\n  ') : ''}`);
   }
   // 애드포스트 미디어 등록은 네이버 공개 글 50편쯤에 신청하기로 함(2026-09-24 사용자 결정) — 그 시점을 로그로 알린다.

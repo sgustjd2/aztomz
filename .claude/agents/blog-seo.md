@@ -61,10 +61,19 @@ model: sonnet
   "category": "프로파일의 tistoryCategory 를 그대로",
   "categoryId": "...",
   "coverSpec": { "title": "제목", "cat": "카테고리", "ad": null, "trust": null, "label": "키워드", "analyzedAt": "YYYY-MM-DD" },
+  "figures": [
+    { "id": "steps", "kind": "card", "layout": "steps", "title": "이미지 대체텍스트 겸 그림 제목", "sub": "근거에 맞춘 짧은 부제", "steps": [{ "label": "단계", "note": "확인된 설명" }] }
+  ],
   "internalLinks": [],
   "builtAt": "YYYY-MM-DD"
 }
 ```
+
+**본문 그림(`figures[]`) 규칙**
+- 본문 `[FIG: id | 캡션]` 마커마다 같은 id의 figure 정의를 둔다. 보통 글당 2~4개, 짧은 한끗 글은 1~2개를 목표로 한다. 그림만 늘리려고 같은 말을 반복하지 않는다.
+- 수치·날짜·단계·비교를 보여줄 때는 우리 데이터만 쓰는 `kind:"card"` (`layout:"table"|"steps"|"timeline"`)를 우선한다. 주황 대신 파랑 `#1a56db` 중심의 밝은 카드가 렌더된다.
+- GPT ImageGen 래스터 이미지는 Codex 대화형 이미지 생성 도구를 사용할 수 있고 실제 파일이 `backend/out/blog/<slug>.ai-<id>.png`에 있을 때만 `{ "id":"scene", "kind":"image", "assetFile":"<slug>.ai-scene.png", "title":"장면을 설명하는 대체텍스트" }`로 연결한다. Claude Code 예약 집필은 이 도구를 호출할 수 없으므로 래스터 파일을 가정하지 말고 card를 사용한다.
+- ImageGen은 장면·분위기 설명용 삽화에 쓴다. 정확한 문구·숫자·UI·실제 장소 사진처럼 보이는 생성물은 쓰지 않는다. 캡션에 `AI 생성 삽화`를 표시한다. 생성 파일이 없거나 alt 용 title이 없으면 조립이 실패한다.
 
 **커버 카드(`coverSpec`) 규칙** — 커버는 분야별 단색 배경 + 흰색 대형 제목 카드다(`blog-publish.mjs` `makeCover`, 2026-09-24 개편).
 - `title`: 카드에 크게 박힐 **짧은** 문구. `"핵심, 보조"` 형태면 쉼표 앞이 크게·뒤가 작게 나온다. 핵심은 12자 안팎이 가장 잘 읽힌다(목록 썸네일 120px 기준).
