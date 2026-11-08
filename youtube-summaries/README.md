@@ -3,10 +3,15 @@
 채널 [AI Engineer](https://www.youtube.com/@aiDotEngineer) 의 새 영상을 Gemini 로 자동 요약한 모음입니다.
 생성: `backend/scripts/youtube-summarize.mjs` (GitHub Actions `youtube-summary` 크론).
 
-총 **464개**.
+총 **469개**.
 
 | 발행일 | 제목 |
 |---|---|
+| 2026-11-07 | [AI Can't Make Up a Number It Can't Look Up - Vinoo Ganesh, Kepler](2026-11-07-RdQCY_-SXbA.md) |
+| 2026-11-07 | [How to Get Frontier Coding Results at 70% Lower Cost - Nouha Dziri, Cohere](2026-11-07-maitMe9HCvw.md) |
+| 2026-11-07 | [How Agents Cut Hour-Long Data Checks to 5 Minutes - Amol Kapoor & Clifford Ressel, Nori Agentic](2026-11-07-kIlVNGZZr8o.md) |
+| 2026-11-07 | [Your Financial Agent Needs to Show Its Work - Anirudh Veeraragavan, Fieldguide](2026-11-07-gdzsJZJ6DDs.md) |
+| 2026-11-07 | [Don't Vibe Code Your Agent Infrastructure - Akshat Bubna, Modal](2026-11-07-_0SQh8a1Osk.md) |
 | 2026-11-06 | [AI Engineer Code Summit 2026 — Day 1 \| November 11](2026-11-06-ZZ19zhYnDKY.md) |
 | 2026-11-06 | [当我们什么都能做，还知道自己想做什么吗？When We Can Do Anything, Do We Still Know What We Want? — Ryo Lu, ex-Cursor](2026-11-06-y9Sg--RDtks.md) |
 | 2026-11-06 | [AI Engineer Code Summit 2026 — Day 2 \| November 12](2026-11-06-y9JtCCZP2MQ.md) |
