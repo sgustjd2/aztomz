@@ -7,27 +7,31 @@
 
 | 대상 | 상태 |
 |---|---|
-| `sgustjd2/aztomz` (공개) | 미커밋 변경 0 — 전부 push됨 |
-| Hermes 홈(`E:\workspace\side_project\hermes`) | 로컬 git 커밋 완료(251개 파일: `skills/`·`scripts/`·`cron/jobs.json`·`memories/`·`config.yaml`·`SOUL.md`·런처). **비밀·상태 DB·캐시·`hermes-agent/`는 허용 목록 `.gitignore`로 제외.** GitHub 업로드는 아직 — 아래 1단계 |
+| `sgustjd2/aztomz` (공개) | **배포 원본** — Vercel이 여기서 배포하고, 봇(`auto-build`·`recheck-ad`)도 여기(`origin`)로 push한다 |
+| `az2mz/aztomz` (조직, 비공개) | 2026-11-08 전체 이력 복사본. 로컬 remote 이름 `az2mz`. **자동 동기화 안 됨** — 맞추려면 `git push az2mz main` |
+| `az2mz/hermes` (조직, 비공개) | Hermes 홈(`E:\workspace\side_project\hermes`, remote `origin`): `skills/`·`scripts/`·`cron/jobs.json`·`memories/`·`config.yaml`·`SOUL.md`·런처. **비밀·상태 DB·캐시·`hermes-agent/`는 허용 목록 `.gitignore`로 제외** |
 | `hermes-agent` | 이미 포크 `sgustjd2/hermes-agent`에 있음 |
 
-## 1. Windows에서 Hermes 홈을 비공개 레포로 올리기 (사람이 1회)
+배포 원본을 조직 비공개 레포로 옮기려면 Vercel 연결부터 바꿔야 한다(Hobby 플랜은 조직 소유 비공개 레포 배포가 막혀 있는 것으로 안다 — 옮기기 전에 Vercel 플랜을 확인할 것, 미확인).
+
+## 1. Hermes 홈 갱신 (Windows에서, 이전 직전에 한 번 더)
 
 ```powershell
 cd E:\workspace\side_project\hermes
-gh repo create sgustjd2/hermes-home --private
-git -c safe.directory=E:/workspace/side_project/hermes remote add origin https://github.com/sgustjd2/hermes-home.git
-git -c safe.directory=E:/workspace/side_project/hermes push -u origin main
+git -c safe.directory=E:/workspace/side_project/hermes add -A
+git -c safe.directory=E:/workspace/side_project/hermes commit -m "이전 직전 상태"
+git -c safe.directory=E:/workspace/side_project/hermes push
 ```
 
-반드시 `--private`. `config.yaml`의 `api_key`는 모두 빈 값이고 비밀은 `.env`·`auth.json`에만 있지만, 크론 프롬프트·메모리에 운영 정보가 있다.
+`config.yaml`의 `api_key`는 모두 빈 값이고 비밀은 `.env`·`auth.json`에만 있지만, 크론 프롬프트·메모리에 운영 정보가 있으니 레포는 비공개로 둔다.
 
 ## 2. 맥에서 받기
 
 ```bash
 mkdir -p ~/workspace/side_project && cd ~/workspace/side_project
-git clone https://github.com/sgustjd2/aztomz.git
-git clone https://github.com/sgustjd2/hermes-home.git hermes
+git clone https://github.com/sgustjd2/aztomz.git            # 배포 원본(봇 push 대상)
+git -C aztomz remote add az2mz https://github.com/az2mz/aztomz.git
+git clone https://github.com/az2mz/hermes.git hermes
 git clone https://github.com/sgustjd2/hermes-agent.git hermes/hermes-agent
 cd aztomz/backend && npm install && npx playwright install chromium
 ```
