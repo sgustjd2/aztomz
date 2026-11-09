@@ -853,8 +853,8 @@ Windows 작업 ↔ 맥 launchd 대응은 아래와 같다. 파일은 `tools/mac/
 
 | Windows 작업 | 시각 (KST) | 맥 plist (`tools/mac/`) | 실제 명령 (`tools/mac/job.sh <이름>`) |
 |---|---|---|---|
-| `AZ2MZ_Blog_Daily` | 매일 09:00 | `com.az2mz.blog-daily.plist` | `claude -p --permission-mode acceptEdits "/blog-daily"` → 성공(exit 0)이면 곧바로 `blog-queue.mjs` |
-| `AZ2MZ_Blog_Queue` | 12:00 · 15:00 · 18:00 | `com.az2mz.blog-queue.plist` | `node backend/scripts/blog-queue.mjs` |
+| `AZ2MZ_Blog_Daily` | 매일 07:00 | `com.az2mz.blog-daily.plist` | `claude -p --permission-mode acceptEdits "/blog-daily"` → 집필만(발행은 아래 큐가 맡음) |
+| `AZ2MZ_Blog_Queue` | 09:00~18:00 매시간 | `com.az2mz.blog-queue.plist` | `node backend/scripts/blog-queue.mjs --max-per-run=1` |
 | `AZ2MZ_Tistory_Daily_Session` | 매일 11:00 | `com.az2mz.tistory-daily-session.plist` | `node backend/scripts/blog-publish.mjs --daily-session` |
 | `AZ2MZ_Tistory_Keepalive` | 08:00부터 2시간마다 → 08·10·12·14·16·18·20·22시 | `com.az2mz.tistory-keepalive.plist` | `node backend/scripts/blog-publish.mjs --keepalive` |
 | `AZ2MZ_Discord_Reactions` | 로그온 시 상주 | `com.az2mz.discord-reactions.plist` (`RunAtLoad`+`KeepAlive`) | `node backend/scripts/discord-reactions.mjs` |
@@ -951,7 +951,7 @@ gh api repos/az2mz/aztomz/commits/$SHA -q .sha
 
 기대 출력: 위 `SHA`와 같다.
 
-### H4. 다음 날 09:00 이후: 블로그 집필·발행
+### H4. 다음 날 07:00(집필)·09:00 이후(발행): 블로그
 
 ```bash
 tail -5 ~/workspace/side_project/aztomz/backend/out/blog/blog-daily.log
@@ -961,7 +961,7 @@ tail -5 ~/workspace/side_project/aztomz/backend/out/blog/blog-daily.log
 tail -5 ~/workspace/side_project/aztomz/backend/out/blog/blog-queue.log
 ```
 
-기대 출력: 09:00 구분선(`===== …`)과 이어지는 집필·큐 로그. `미확인`: 맥에서 `claude -p`가 프로젝트 스킬 `/blog-daily`를 찾는지(스킬은 레포의 `.claude/skills/`에 있다). `unknown command`가 나오면 `claude`를 `~/workspace/side_project/aztomz`에서 열고 `/blog-daily`가 보이는지 확인한다.
+기대 출력: 07:00 구분선(`===== …`)과 이어지는 집필·큐 로그. `미확인`: 맥에서 `claude -p`가 프로젝트 스킬 `/blog-daily`를 찾는지(스킬은 레포의 `.claude/skills/`에 있다). `unknown command`가 나오면 `claude`를 `~/workspace/side_project/aztomz`에서 열고 `/blog-daily`가 보이는지 확인한다.
 
 ### H5. Windows가 꺼진 채인지 (Windows PowerShell)
 
@@ -1090,8 +1090,8 @@ $env:HERMES_HOME='E:\workspace\side_project\hermes'; & E:\workspace\side_project
 launchd를 쓰므로 실행하지 않는다. 크론탭으로 하려는 경우의 줄이다. **티스토리 로그인 창(Playwright가 화면에 띄움)은 로그인한 GUI 세션이 있어야 하는데 cron 작업에는 그것이 없다** — 그래서 launchd를 골랐다.
 
 ```text
-0 9 * * *       /bin/bash $HOME/workspace/side_project/aztomz/tools/mac/job.sh blog-daily
-0 12,15,18 * * * /bin/bash $HOME/workspace/side_project/aztomz/tools/mac/job.sh blog-queue
+0 7 * * *       /bin/bash $HOME/workspace/side_project/aztomz/tools/mac/job.sh blog-daily
+0 9-18 * * *    /bin/bash $HOME/workspace/side_project/aztomz/tools/mac/job.sh blog-queue
 0 11 * * *      /bin/bash $HOME/workspace/side_project/aztomz/tools/mac/job.sh tistory-daily-session
 0 8-22/2 * * *  /bin/bash $HOME/workspace/side_project/aztomz/tools/mac/job.sh tistory-keepalive
 0 20 * * *      /bin/bash $HOME/workspace/side_project/aztomz/tools/mac/job.sh hermes-autoupdate
