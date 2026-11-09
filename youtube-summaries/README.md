@@ -3,10 +3,17 @@
 채널 [AI Engineer](https://www.youtube.com/@aiDotEngineer) 의 새 영상을 Gemini 로 자동 요약한 모음입니다.
 생성: `backend/scripts/youtube-summarize.mjs` (GitHub Actions `youtube-summary` 크론).
 
-총 **469개**.
+총 **476개**.
 
 | 발행일 | 제목 |
 |---|---|
+| 2026-11-08 | [How Ramp Tests Its AI Bookkeeping Agent Before Customers Do - Ryan Stevens, Ramp](2026-11-08-WJTQBENv0KI.md) |
+| 2026-11-08 | [Claude Code Looked Right but Missed $800K - Natalia Connolly & Kevin Madura, AlixPartners](2026-11-08-u7fsyrXsPBE.md) |
+| 2026-11-08 | [Your Company Has No Model of Itself. Agents Can Build One - Joao Wenzel, Citadel Securities](2026-11-08-jDwc0aXTAFg.md) |
+| 2026-11-08 | [How Financial Planners With Zero Coding Experience Built Their Own Agents - Matt Ragone, Range](2026-11-08-EaOit1mmR9g.md) |
+| 2026-11-08 | [Your Coding Agent Can't Undo Its Own Mistakes - Tanmay Sah & Dolly Sah](2026-11-08-BT1Mo-fD-g0.md) |
+| 2026-11-08 | [One million AI Engineers!  #aiengineer](2026-11-08-7YvX1_xKUyE.md) |
+| 2026-11-08 | [What the Top Companies Do Differently With AI Coding - Martin Harrysson & Prakhar Dixit, McKinsey](2026-11-08-21tuT-e4NVo.md) |
 | 2026-11-07 | [AI Can't Make Up a Number It Can't Look Up - Vinoo Ganesh, Kepler](2026-11-07-RdQCY_-SXbA.md) |
 | 2026-11-07 | [How to Get Frontier Coding Results at 70% Lower Cost - Nouha Dziri, Cohere](2026-11-07-maitMe9HCvw.md) |
 | 2026-11-07 | [How Agents Cut Hour-Long Data Checks to 5 Minutes - Amol Kapoor & Clifford Ressel, Nori Agentic](2026-11-07-kIlVNGZZr8o.md) |
