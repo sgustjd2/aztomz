@@ -12,8 +12,8 @@
 
    실행 (레포 루트에서):
      node backend/scripts/blog-queue.mjs --list            # 대기열만 보기
-     node backend/scripts/blog-queue.mjs                   # 발행 (기본: T1/N9·20~40분 간격·7일 이내)
-     node backend/scripts/blog-queue.mjs --max-tistory=1 --max-naver=9 --max-per-run=1 --max-age=7
+     node backend/scripts/blog-queue.mjs                   # 발행 (기본: T1/N12·20~40분 간격·7일 이내)
+     node backend/scripts/blog-queue.mjs --max-tistory=1 --max-naver=12 --max-per-run=1 --max-age=7
      node backend/scripts/blog-queue.mjs --max=5 --only=naver # --max는 양 플랫폼 공통 한도로 유지
      node backend/scripts/blog-queue.mjs --selftest
    스케줄: 매일 09:00~18:00 매시간 스케줄작업 AZ2MZ_Blog_Queue(tools/blog-queue.vbs). 회차당 한 편씩,
@@ -77,12 +77,12 @@ function loadPosts() {
 }
 
 async function main() {
-  // 기본 일일 분배는 티스토리 1편 + 네이버 9편(총 10편)이다.
+  // 기본 일일 분배는 티스토리 1편 + 네이버 12편(총 13편)이다. 네이버 12편은 짝수 시각 정각(00~22시) /blog-hourly-naver 가 2시간에 1편씩 만든다(2026-11-09 사용자 지시).
   // 기존 --max 옵션은 명시되면 양 플랫폼 공통 한도로 적용한다.
   const sharedMax = val('max', undefined);
   const maxByPlatform = {
     tistory: Number(val('max-tistory', sharedMax ?? 1)),
-    naver: Number(val('max-naver', sharedMax ?? 9)),
+    naver: Number(val('max-naver', sharedMax ?? 12)),
   };
   const maxPerRun = Number(val('max-per-run', Number.POSITIVE_INFINITY));
   const maxAge = Number(val('max-age', 7));
