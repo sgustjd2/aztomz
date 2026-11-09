@@ -1518,5 +1518,10 @@
     "at": "2026-11-07 03:00",
     "url": "https://burning-go9me.tistory.com/584",
     "title": "git diff 출력이 빈 이유, add한 변경과 점 세 개 비교까지"
+  },
+  "git-bisect-guide": {
+    "at": "2026-11-09 03:00",
+    "url": "https://burning-go9me.tistory.com/585",
+    "title": "git bisect 사용법, 버그 커밋 찾는 5단계와 종료 코드 정리"
   }
 }
