@@ -16,7 +16,8 @@ import { fileURLToPath } from 'node:url';
 
 const repoRoot = join(dirname(fileURLToPath(import.meta.url)), '..', '..');
 const HERMES_HOME = process.env.HERMES_HOME || 'E:\\workspace\\side_project\\hermes';
-const HERMES = join(HERMES_HOME, 'bin', 'hermes.exe');
+// 맥/리눅스: HERMES_BIN(= `command -v hermes`)을 환경변수로 준다. 없으면 Windows 경로.
+const HERMES = process.env.HERMES_BIN || join(HERMES_HOME, 'bin', process.platform === 'win32' ? 'hermes.exe' : 'hermes');
 const API = 'https://discord.com/api/v10';
 
 // 잡별 선택지. 잡 id 는 CLAUDE.md "크론 일람"·디스코드 보고의 (job_id: …) 와 같다.
