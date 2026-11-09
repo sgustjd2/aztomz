@@ -852,7 +852,8 @@ async function waitForTistoryEditor(ctx, timeoutMs = manualLoginWaitMs()) {
   while (Date.now() < deadline) {
     for (const candidate of ctx.pages()) {
       if (candidate.isClosed() || !candidate.url().includes('tistory.com')) continue;
-      if (!candidate.url().startsWith(BASE) || isLoginPage(candidate) || !candidate.url().includes('/manage/newpost')) {
+      if (isLoginPage(candidate)) continue;   // 사람이 로그인 중인 화면은 새로고침하지 않는다(맥 이전 중 추가)
+      if (!candidate.url().startsWith(BASE) || !candidate.url().includes('/manage/newpost')) {
         await candidate.goto(`${BASE}/manage/newpost/`, { waitUntil: 'domcontentloaded', timeout: 10000 }).catch(() => {});
       }
       if (!candidate.isClosed() && candidate.url().includes('/manage/newpost') && !isLoginPage(candidate)) return candidate;
