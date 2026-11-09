@@ -1,23 +1,5 @@
 [
   {
-    "slug": "kiwi-ripening-guide",
-    "categoryId": "hangeut-trend",
-    "date": "2026-10-08",
-    "h2": [
-      "딱딱한 키위가 시큼한 건 후숙 과일이라서예요",
-      "사과·바나나와 한 봉지에 넣어 상온에 둬요",
-      "며칠 걸리는지는 공식 수치가 없고 안내가 갈려요",
-      "손끝으로 눌러 보면 익은 정도를 알 수 있어요",
-      "다 익으면 사과·바나나부터 빼요",
-      "냉장하면 숙성이 멈출까요, 자료가 갈려요",
-      "막혔을 때는 세 곳을 확인해요",
-      "이 글이 확인하지 못한 것",
-      "정리",
-      "참고"
-    ],
-    "closingClichePatterns": []
-  },
-  {
     "slug": "leather-jacket-care",
     "categoryId": "hangeut-trend",
     "date": "2026-10-08",
@@ -3335,6 +3317,20 @@
       "확인되지 않은 사항",
       "정리",
       "참고"
+    ],
+    "closingClichePatterns": []
+  },
+  {
+    "slug": "daerim-changgo-seongsu",
+    "categoryId": "hangeut-trend",
+    "date": "2026-11-10",
+    "h2": [
+      "정미소가 문화공간이 되기까지",
+      "건물 연대, 출처마다 달라요",
+      "공연장으로도 쓰였어요",
+      "지금 분위기는 어떤가요",
+      "방문 전에 챙길 것",
+      "정리"
     ],
     "closingClichePatterns": []
   }
