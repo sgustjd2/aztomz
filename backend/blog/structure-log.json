@@ -1,23 +1,5 @@
 [
   {
-    "slug": "iphone-photos-to-pc",
-    "categoryId": "hangeut-trend",
-    "date": "2026-10-08",
-    "h2": [
-      "케이블이 있는지, 사진이 어디 있는지 먼저 봐요",
-      "연결 전에 두 가지만 확인해요",
-      "케이블로 가져오는 다섯 단계",
-      "폰이 안 잡힐 때 보는 순서",
-      "iCloud에만 있는 사진은 가져오기에서 빠질 수 있어요",
-      "HEIC는 뭐고 왜 가져오면 형식이 바뀔까요",
-      "케이블 없이 옮기는 두 가지 길",
-      "문서로 확인하지 못한 것",
-      "정리",
-      "참고"
-    ],
-    "closingClichePatterns": []
-  },
-  {
     "slug": "windows11-snap-layouts",
     "categoryId": "hangeut-trend",
     "date": "2026-10-08",
@@ -3338,6 +3320,21 @@
       "해동해도 세탁기가 안 돌아갈 때",
       "한눈에 보는 세탁기 동결 대처",
       "참고"
+    ],
+    "closingClichePatterns": []
+  },
+  {
+    "slug": "waiting-zero-course-culture",
+    "categoryId": "hangeut-trend",
+    "date": "2026-11-09",
+    "h2": [
+      "한 줄로 말하면",
+      "어디서 소개됐나요",
+      "지금 어디쯤 왔나요",
+      "대기 중에 챙기면 좋은 순서",
+      "이럴 때는 피하세요",
+      "처음 들으면 헷갈릴 수 있는 지점",
+      "정리"
     ],
     "closingClichePatterns": []
   }
