@@ -94,6 +94,38 @@ gh api repos/sgustjd2/aztomz/commits/main -q .sha
 gh api repos/az2mz/aztomz/commits/main -q .sha
 ```
 
+### A3-1. (A3의 push에서 `az2mz/aztomz.git`만 `rejected`로 나왔을 때만) 사본 맞추기
+
+왜: 비공개 사본 `az2mz/aztomz`에도 GitHub Actions(`weekly-refresh`)가 켜져 있어서, 월요일 06:00마다 사본이 **자기 커밋을 따로** 만든다(2026-11-09에 실제로 갈라짐: 원본 `4dd3164`, 사본 `98cad3c`). 배포 원본(`sgustjd2`) push는 이미 성공한 뒤이고, 사본은 복제본이라 원본 기준으로 덮어쓴다.
+
+```powershell
+git -C E:\workspace\side_project\aztomz fetch az2mz
+```
+
+```powershell
+git -C E:\workspace\side_project\aztomz push --force-with-lease az2mz main:main
+```
+
+```powershell
+gh api repos/az2mz/aztomz/commits/main -q .sha
+```
+
+기대 출력: A3의 `rev-parse HEAD`와 같은 40자리.
+
+### A3-2. 사본의 Actions 끄기 (한 번만)
+
+사본 Actions는 비밀(`GEMINI_API_KEY` 등)이 없어 펄스·유튜브 요약은 어차피 실패하고, 주간 갱신만 성공해 위처럼 갈라지기만 한다. 배포 원본(`sgustjd2/aztomz`)의 Actions·Vercel에는 영향이 없다.
+
+```powershell
+gh api -X PUT repos/az2mz/aztomz/actions/permissions -F enabled=false
+```
+
+```powershell
+gh api repos/az2mz/aztomz/actions/permissions -q .enabled
+```
+
+기대 출력: `false`
+
 ### A4. Hermes 홈 커밋 + push
 
 Hermes 홈은 허용 목록 `.gitignore`라 비밀·DB·캐시는 `add -A`를 해도 올라가지 않는다. 이 폴더는 소유자가 달라 `-c safe.directory=…`가 항상 필요하다. 크론 프롬프트(`cron/jobs.json`)와 맥 경로 변환 스크립트(`scripts/mac_rewrite.py`)가 이때 함께 올라간다.
@@ -524,7 +556,7 @@ git -C E:\workspace\side_project\aztomz rev-parse HEAD
 gh api repos/az2mz/aztomz/commits/main -q .sha
 ```
 
-기대 출력: 두 해시가 같다.
+기대 출력: 두 해시가 같다. 다르면 A3-1을 한다.
 
 ### E5. 비밀·상태 묶음 만들기 (파일 하나)
 
