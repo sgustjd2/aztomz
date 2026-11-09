@@ -1,23 +1,5 @@
 [
   {
-    "slug": "leather-jacket-care",
-    "categoryId": "hangeut-trend",
-    "date": "2026-10-08",
-    "h2": [
-      "옷 안쪽 라벨의 물통 기호가 첫 관문이에요",
-      "물세탁 가부는 자료가 이렇게 갈려요",
-      "젖었을 때는 열 없이 눌러 닦고 그늘에서 말려요",
-      "보관은 통풍 커버와 가끔 입기가 먼저예요",
-      "습도 숫자는 박물관 기준이라 참고만 해요",
-      "크림과 오일은 바르라는 쪽과 말라는 쪽이 갈려요",
-      "곰팡이가 보이면 번지지 않게 한 부위씩",
-      "아직 확인되지 않은 것들",
-      "정리",
-      "참고"
-    ],
-    "closingClichePatterns": []
-  },
-  {
     "slug": "ginkgo-road-spots-2026",
     "categoryId": "hangeut-trend",
     "date": "2026-10-08",
@@ -3331,6 +3313,20 @@
       "지금 분위기는 어떤가요",
       "방문 전에 챙길 것",
       "정리"
+    ],
+    "closingClichePatterns": []
+  },
+  {
+    "slug": "anmok-coffee-street-gangneung",
+    "categoryId": "hangeut-trend",
+    "date": "2026-11-10",
+    "h2": [
+      "자판기 한 대가 거리가 되기까지",
+      "안목해변을 넘어 강릉 전체로",
+      "얼마나 뜨거운가요, 식은 건 아닐까요",
+      "어떤 사람에게 맞는 곳일까요",
+      "가기 전에 직접 확인할 것",
+      "이 글이 기댄 자료"
     ],
     "closingClichePatterns": []
   }
