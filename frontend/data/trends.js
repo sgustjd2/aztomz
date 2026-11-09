@@ -7797,10 +7797,10 @@ window.HANGEUT_DATA = {
       "cat": "신조어",
       "coverCat": "cat-slang",
       "collectedAt": "2026-07-16",
-      "analyzedAt": "2026-07-16",
+      "analyzedAt": "2026-11-09",
       "buzz": "화제성 높음",
       "stage": "상승",
-      "stageMsg": "숏폼 중독 세태를 반영하며 확산 중",
+      "stageMsg": "일본 유행어 후보로 다시 주목받음",
       "label": "알아두면 유용함",
       "labelCls": "good",
       "title": "도파가키 (Dopa-gaki)",
@@ -7835,6 +7835,10 @@ window.HANGEUT_DATA = {
         [
           "루리웹",
           "https://bbs.ruliweb.com/community/board/300143/read/75931315"
+        ],
+        [
+          "JK-Daily(2026-11-05)",
+          "https://www.jk-daily.co.kr/news/articleView.html?idxno=42041"
         ]
       ],
       "tags": [
@@ -8159,10 +8163,10 @@ window.HANGEUT_DATA = {
       "cat": "AI 프롬프트",
       "coverCat": "cat-ai",
       "collectedAt": "2026-07-19",
-      "analyzedAt": "2026-07-19",
+      "analyzedAt": "2026-11-09",
       "buzz": "화제성 중간",
-      "stage": "상승",
-      "stageMsg": "참여형 콘텐츠로 활용 시작",
+      "stage": "안정화",
+      "stageMsg": "참여형 이미지 놀이로 간헐적 활용",
       "label": "지금 써도 됨",
       "labelCls": "good",
       "title": "월리를 찾아라! 숨은그림찾기 프롬프트",
@@ -8191,6 +8195,10 @@ window.HANGEUT_DATA = {
         [
           "All My Universe",
           "https://allmyuniverse.com/image-prompt-guide-wheres-waldo-search-and-find-crowd-illustration/"
+        ],
+        [
+          "티스토리(2026-08-02)",
+          "https://burning-go9me.tistory.com/297"
         ]
       ],
       "tags": [
@@ -8650,12 +8658,12 @@ window.HANGEUT_DATA = {
       "cat": "노래·챌린지",
       "coverCat": "cat-music",
       "collectedAt": "2026-07-24",
-      "analyzedAt": "2026-07-24",
-      "buzz": "화제성 보통",
-      "stage": "안정화",
-      "stageMsg": "꾸준히 보이는 댄스 챌린지",
-      "label": "지금 써도 됨",
-      "labelCls": "good",
+      "analyzedAt": "2026-11-09",
+      "buzz": "화제성 하락",
+      "stage": "하락 (한물감)",
+      "stageMsg": "2024년 확산 이후 최근 언급이 드묾",
+      "label": "이제는 늦은 느낌",
+      "labelCls": "mid",
       "title": "Tell Ur Girlfriend 챌린지",
       "def": "Lay Bankz의 노래 'Tell Ur Girlfriend'에 맞춰 추는 간단하고 중독성 있는 댄스 챌린지",
       "excerpt": "미국 가수 레이 뱅크(Lay Bankz)의 동명 노래에 맞춰 간단한 손동작과 골반 움직임을 반복하는 댄스 챌린지입니다. 따라 하기 쉬운 안무 덕분에 전 세계적으로 꾸준한 인기를 끌고 있습니다.",
@@ -8686,6 +8694,10 @@ window.HANGEUT_DATA = {
         [
           "고구마팜",
           "https://gogumafarm.kr/챌린지-도전하고-싶은데-어렵다면-누구나-쉽게-따라/"
+        ],
+        [
+          "Billboard Canada(2024-04-16)",
+          "https://ca.billboard.com/music/chart-beat/lay-bankz-tell-ur-girlfriend"
         ]
       ],
       "tags": [
@@ -9573,12 +9585,12 @@ window.HANGEUT_DATA = {
       "cat": "노래·챌린지",
       "coverCat": "cat-music",
       "collectedAt": "2026-07-31",
-      "analyzedAt": "2026-07-31",
-      "buzz": "화제성 매우 높음",
-      "stage": "피크",
-      "stageMsg": "지금 가장 핫한 챌린지",
-      "label": "지금 바로 도전!",
-      "labelCls": "good",
+      "analyzedAt": "2026-11-09",
+      "buzz": "화제성 하락",
+      "stage": "피크 → 하락",
+      "stageMsg": "여름 화제 이후 최근 언급이 줄어듦",
+      "label": "이제는 늦은 느낌",
+      "labelCls": "mid",
       "title": "GG EZ 챌린지",
       "def": "M.Sasuke의 곡 'GG EZ'에 맞춰 파워풀하고 절도 있는 안무를 추는 댄스 챌린지",
       "excerpt": "게임에서 유래한 'GG EZ'(Good Game, Easy)라는 제목처럼, 쉽고 자신감 넘치는 분위기의 안무가 특징인 댄스 챌린지입니다. K-POP 아이돌들이 대거 참여하며 숏폼 플랫폼을 장악했습니다.",
@@ -9608,6 +9620,10 @@ window.HANGEUT_DATA = {
         [
           "유튜브 (요즘셀럽)",
           "https://www.youtube.com/watch?v=Yx0_gH1_gD4"
+        ],
+        [
+          "Know Your Meme(2026-06-13)",
+          "https://knowyourmeme.com/memes/gg-ez-by-kaien-sugar-msasuke"
         ]
       ],
       "tags": [
@@ -9674,12 +9690,12 @@ window.HANGEUT_DATA = {
       "cat": "노래·챌린지",
       "coverCat": "cat-music",
       "collectedAt": "2026-07-31",
-      "analyzedAt": "2026-07-31",
-      "buzz": "화제성 높음",
-      "stage": "상승",
-      "stageMsg": "꾸준히 인기 상승 중",
-      "label": "지금 써도 됨",
-      "labelCls": "good",
+      "analyzedAt": "2026-11-09",
+      "buzz": "화제성 하락",
+      "stage": "안정화 → 끝물",
+      "stageMsg": "봄철 챌린지 이후 새 확산 신호가 드묾",
+      "label": "이제는 늦은 느낌",
+      "labelCls": "mid",
       "title": "모시모시? 챌린지 (mosi mosi?)",
       "def": "일본어 '여보세요?'라는 가사에 맞춰 전화받는 듯한 귀여운 손동작을 하는 댄스 챌린지",
       "excerpt": "일본 아티스트 사사네(ササネ)의 노래 'mosi mosi?'에 맞춰 진행되는 댄스 챌린지입니다. 귀여운 멜로디와 따라 하기 쉬운 전화 통화 콘셉트의 안무가 특징으로, 많은 아이돌들이 참여하며 인기를 끌고 있습니다.",
@@ -9705,6 +9721,10 @@ window.HANGEUT_DATA = {
         [
           "유튜브 (Stray Kids)",
           "https://www.youtube.com/watch?v=4VpQ8g3-8Hg"
+        ],
+        [
+          "리릭미믹(2026-05-04)",
+          "https://lyricmimic.tistory.com/71"
         ]
       ],
       "tags": [
