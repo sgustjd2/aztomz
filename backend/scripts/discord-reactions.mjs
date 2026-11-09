@@ -13,6 +13,7 @@ import assert from 'node:assert';
 import { execFile } from 'node:child_process';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { parseSummary, explain, heldReason, resultMessage } from './lib/review-text.mjs';
 
 const repoRoot = join(dirname(fileURLToPath(import.meta.url)), '..', '..');
 const HERMES_HOME = process.env.HERMES_HOME || 'E:\\workspace\\side_project\\hermes';
@@ -65,7 +66,12 @@ function selftest() {
   assert.deepStrictEqual(p.show.map((h) => h.id), ['n'], 'show new');
   assert.ok(!('gone' in p.state), 'prune');
   assert.deepStrictEqual(plan({ x: { shownAt: 0, autoTried: true } }, [{ id: 'x' }], 99 * H).publish, [], 'no retry');
-  assert.ok(legend(a.options) === `${LEGEND_MARK} — 🔁 지금 다시 실행 · 📋 검수 대기 보기 · 📊 2주 수치`, 'legend');
+  const failOut = 'SUMMARY {"outcome":"schema_fail","mode":"approved","published":0,"pendingReview":2}\n\n⛔ 스키마 검증 실패 — 빌드·배포 중단:\n  · [#281 x] title 누락\n';
+  const fm = approveMessage('자동 게시', 'x', null, { ok: false, out: failOut + failOut });
+  assert.ok(fm.includes('제목(title)') && !fm.includes('SUMMARY') && fm.split('이유:').length === 2, 'fail message: human reason once, no SUMMARY');
+  assert.ok(approveMessage('승인 게시', 'x', 'X', { ok: true, out: 'SUMMARY {"outcome":"pushed","published":1,"pendingReview":0}' }).startsWith('✅ **승인 게시 완료** · X'), 'ok message');
+  assert.ok(classify(itemCard({ id: 'food-1', title: 'T', code: 'no_title', checks: [] }))?.key === 'food-1', 'card stays classifiable');
+  assert.ok(legend(a.options) ===`${LEGEND_MARK} — 🔁 지금 다시 실행 · 📋 검수 대기 보기 · 📊 2주 수치`, 'legend');
   console.log('selftest ok');
 }
 
@@ -132,12 +138,26 @@ async function readQueue() {
   const r = await node('pipeline-review.mjs', '--list', '--json');
   return r.ok ? JSON.parse(r.out || '[]') : null;
 }
+// 검수 카드: 제목 줄 · 보류 이유(사람 말) · 출처 · id · 이모지 설명. ITEM_HEAD·`id:` 줄은 classify()가 읽으니 유지.
+const VERDICT_ICON = { 정확: '✅', 약함: '⚠️', 무관: '❌', 차단: '🚫', 죽음: '💀' };
+export function itemCard(h) {
+  const srcs = (h.checks || []).slice(0, 3).map((c) => `${VERDICT_ICON[c.verdict] || '•'} <${c.url}>`).join('\n');
+  return [`${ITEM_HEAD} · [${h.cat || '?'}] **${h.title}**`, `이유: ${heldReason(h.code)}`, srcs, `id: \`${h.id}\``,
+    legend(ITEM_OPTIONS), `⏰ ${AUTO_HOURS}시간 안에 반응이 없으면 자동 게시돼요(⏸️ 누르면 안 함)`].filter(Boolean).join('\n');
+}
 async function showItem(ch, h) {
-  const srcs = (h.checks || []).slice(0, 3).map((c) => `└ ${c.verdict} ${c.status} <${c.url}>`).join('\n');
-  const m = await send(ch, `${ITEM_HEAD} · [${h.cat || '?'}] ${h.title}\n사유: ${h.reason}\n${srcs}\nid: \`${h.id}\`\n` +
-    `${legend(ITEM_OPTIONS)}\n⏰ ${AUTO_HOURS}시간 안에 반응이 없으면 자동 게시돼요(⏸️ 누르면 안 함)`);
+  const m = await send(ch, itemCard(h));
   await addOptions(ch, m.id, ITEM_OPTIONS);
 }
+
+// 승인·자동 게시 결과(pipeline-review 출력) → 디스코드 문구. 원문 출력(SUMMARY 포함)은 로그에만 남긴다.
+export function approveMessage(head, id, title, r) {
+  const sum = parseSummary(r.out), ex = explain(sum, r.out), ok = r.ok && ex.ok;
+  return resultMessage({ icon: ok ? '✅' : '⛔', head: `${head} ${ok ? '완료' : '실패'}`, subject: title || id,
+    counts: { published: sum?.published || 0, held: sum?.pendingReview ?? 0, failed: ok ? 0 : 1 },
+    why: ex.why, action: ex.action });
+}
+const titleOf = (q, id) => q?.find((h) => h.id === id)?.title;
 
 let ticking = false;
 async function tick() {
@@ -154,8 +174,8 @@ async function tick() {
       p.state[id].autoTried = true; saveState(p.state);   // 실패해도 반복 시도하지 않게 먼저 기록
       log('auto-approve', id);
       const r = await node('pipeline-review.mjs', `--approve=${id}`);
-      const last = r.out.split('\n').filter(Boolean).pop() || '';
-      await send(ch, `⏰ ${AUTO_HOURS}시간 무응답 → 자동 게시 시도 \`${id}\`\n${r.ok ? last : `✗ 실패 — 대기열에 남겨요\n\`\`\`${tail(r.out, 800)}\`\`\``}`);
+      log('auto-approve result', id, '\n' + r.out);
+      await send(ch, approveMessage(`${AUTO_HOURS}시간 무응답 자동 게시`, id, titleOf(q, id), r));
     }
   } catch (e) { log('tick error', e.message); }
   finally { ticking = false; }
@@ -170,7 +190,10 @@ async function handle(ch, msg, target, action) {
   try {
     if (action === 'rerun') {
       const r = await run(HERMES, ['cron', 'run', target.key], 60_000);
-      await send(ch, r.ok ? `🔁 \`${target.key}\` 다시 실행을 예약했어요(다음 틱). 결과는 새 보고로 와요.` : `✗ 재실행 실패\n\`\`\`${tail(r.out)}\`\`\``, msg.id);
+      if (!r.ok) log('rerun failed', target.key, '\n' + r.out);
+      await send(ch, r.ok ? `🔁 \`${target.key}\` 다시 실행을 예약했어요(다음 틱). 결과는 새 보고로 와요.`
+        : resultMessage({ icon: '⛔', head: '재실행 실패', subject: `\`${target.key}\``, why: 'hermes cron run 명령이 실패했어요.',
+          action: '`backend/out/discord-reactions.log`를 확인하세요.' }), msg.id);
     } else if (action === 'stats') {
       const r = await node('pipeline-review.mjs', '--stats', '--days=14');
       await send(ch, `\`\`\`\n${tail(r.out, 1900)}\n\`\`\``, msg.id);
@@ -187,9 +210,13 @@ async function handle(ch, msg, target, action) {
       await send(ch, `⏸️ 「${target.key}」 대기열에 그대로 두고 자동 게시도 안 할게요. 나중에 이 메시지에서 ✅/🗑️를 누르면 돼요.`, msg.id);
     } else {   // approve | reject — 코멘트는 남기지 않는다(learnings.md 에 빈 줄 안 쌓임)
       await send(ch, `⏳ ${action === 'approve' ? '게시' : '버리기'} 처리 중…`, msg.id);
+      const title = titleOf(await readQueue(), target.key);
       const r = await node('pipeline-review.mjs', `--${action}=${target.key}`);
-      const last = r.out.split('\n').filter(Boolean).pop() || '';
-      await send(ch, r.ok ? last : `✗ 실패\n\`\`\`${tail(r.out)}\`\`\``, msg.id);
+      log(action, 'result', target.key, '\n' + r.out);
+      await send(ch, action === 'approve' ? approveMessage('승인 게시', target.key, title, r)
+        : r.ok ? `🗑️ 버림 「${title || target.key}」`
+        : resultMessage({ icon: '⛔', head: '버리기 실패', subject: title || target.key, why: '대기열에서 빼지 못했어요.',
+          action: '`backend/out/discord-reactions.log`를 확인하세요.' }), msg.id);
     }
   } catch (e) { log('handle error', e.message); }
   finally { busy.delete(lock); }

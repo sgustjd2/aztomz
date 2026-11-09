@@ -23,6 +23,7 @@ import { fileURLToPath } from 'node:url';
 import {
   pipelinePaths, loadQueue, removeFromQueue, appendDecision, readRuns, readDecisions, appendRun, enqueueHeld,
 } from './lib/pipeline-log.mjs';
+import { parseSummary, explain } from './lib/review-text.mjs';
 
 const repoRoot = join(dirname(fileURLToPath(import.meta.url)), '..', '..');
 const args = process.argv.slice(2);
@@ -129,18 +130,20 @@ function approve(id, note, p) {
   writeFileSync(p.approved, JSON.stringify({ trends: [item.cand] }, null, 2) + '\n', 'utf-8');
   let out = '', ok = false;
   try {
+    // stderr도 파이프로 받는다 — 기본값이면 부모 stderr에도 새어 같은 ⛔ 오류가 디스코드에 두 번 찍혔다(2026-11-09).
     out = execFileSync('node', [join(repoRoot, 'backend', 'scripts', 'auto-build.mjs'), p.approved, '--approved'],
-      { cwd: repoRoot, encoding: 'utf-8', windowsHide: true });
+      { cwd: repoRoot, encoding: 'utf-8', windowsHide: true, stdio: ['ignore', 'pipe', 'pipe'] });
   } catch (e) { out = (e.stdout || '') + (e.stderr || ''); }
   process.stdout.write(out);
-  const line = out.split('\n').reverse().find((l) => l.startsWith('SUMMARY '));
-  const summary = line ? JSON.parse(line.slice(8)) : null;
+  const summary = parseSummary(out);
   ok = !!summary && summary.published > 0;
   // 살아 있는 출처가 0개라 승인으로도 못 올린 후보는 대기열에 남겨 둔다(사람이 버리기로 정리).
   if (ok) removeFromQueue(id, p);
   appendDecision({ at: new Date().toISOString(), id, title: item.title, decision: 'approve', ok, outcome: summary?.outcome || 'unknown', note: note || null }, p);
   if (ok) learn('approve', item.title, note, p);
-  console.log(ok ? `\n✓ 승인 게시: ${item.title}` : `\n✗ 승인했지만 게시 못 함: ${item.title} (${summary?.heldItems?.[0]?.reason || summary?.outcome || '결과 없음'})`);
+  // 마지막 줄 = 사람용 한 줄(hangeut-approve·discord-reactions가 그대로 전함). 원문 SUMMARY는 위 출력·로그에만.
+  const ex = explain(summary, out);
+  console.log(ok ? `\n✅ 게시 완료 「${item.title}」${ex.why ? ` — ${ex.why}` : ''}` : `\n⛔ 게시 못 함 「${item.title}」 — ${ex.why} 조치: ${ex.action}`);
   process.exit(ok ? 0 : 1);
 }
 
@@ -150,7 +153,7 @@ function reject(id, note, p) {
   removeFromQueue(id, p);
   appendDecision({ at: new Date().toISOString(), id, title: item.title, decision: 'reject', note: note || null }, p);
   learn('reject', item.title, note, p);
-  console.log(`✓ 버림: ${item.title}${note ? ` — ${note}` : ''}`);
+  console.log(`🗑️ 버림 「${item.title}」${note ? ` — ${note}` : ''}`);
 }
 
 function selftest() {

@@ -216,6 +216,11 @@ console.log(`🤖 자동 빌드 — ${TODAY} · 후보 ${candidates.length}개${
 for (const cand of candidates) {
   const title = cand.title || cand.id || '(무제)';
   if (!cand.id) { held.push({ title, code: 'no_id', reason: 'id 없음' }); continue; }
+  // title 없는 후보는 관련성 검사에서 '무관'으로 오판되고, 승인 게시는 스키마 게이트에서 막힌다(2026-11-09) — 원인대로 보류.
+  if (!cand.title || typeof cand.title !== 'string') {
+    held.push({ id: cand.id, title, code: 'no_title', reason: 'title 없음(수집 형식 오류)', cand: structuredClone(cand) });
+    console.log(`  → 보류: ${title} (title 없음 — 대기열에서 title을 채운 뒤 승인)\n`); continue;
+  }
   if (haveIds.has(cand.id) || haveTitles.has(normTitle(cand.title))) { skipped.push({ title, reason: '이미 사이트에 있음' }); continue; }
 
   const original = structuredClone(cand);   // 보류되면 검수 대기열에 원본 그대로 넣는다
