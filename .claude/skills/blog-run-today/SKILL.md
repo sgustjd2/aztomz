@@ -4,16 +4,16 @@ description: >
   오늘의 블로그 배치를 조사→집필→자체피드백→검증→티스토리 발행까지 한 번에 돌린다.
   사용자가 "오늘 작업 진행해줘", "오늘 블로그 진행", "오늘 글 N개", "블로그 오늘 작성",
   "오늘 게시물 5개" 처럼 이 프로젝트(한끗/az2mz)에서 오늘치 블로그 작업을 통째로 맡길 때 쓴다.
-  기본 티스토리 1편 + 네이버 6편(2026-11-07 사용자 지시, 사용자가 편수를 말하면 그 수 우선). 티스토리 로그인이 되어 있다는 전제(없으면 검증까지만 하고 알린다).
+  기본 티스토리 1편 + 네이버 9편(2026-11-09 사용자 지시, 사용자가 편수를 말하면 그 수 우선). 티스토리 로그인이 되어 있다는 전제(없으면 검증까지만 하고 알린다).
 ---
 
 # 오늘의 블로그 배치 — 조사→집필→selfreview→verify→발행
 
 > ✅ **2026-09-24 사용자 재개 지시: 매일 티스토리 5편 + 네이버 5편, 서로 다른 글.** (09-13 중단 결정을 사용자가 명시적으로 뒤집음.)
-> 현재 무인 경로는 09:00 스케줄작업 `/blog-daily`(최대 7편 = 티스토리 1 + 네이버 6 집필·검증, 글마다 `meta.platform` 배정) → 12:00·15:00·18:00 `blog-queue.mjs`(티스토리 최대 1편·네이버 최대 6편 순차 발행)다.
+> 현재 무인 경로는 07:00 스케줄작업 `/blog-daily`(최대 10편 = 티스토리 1 + 네이버 9 집필·검증, 글마다 `meta.platform` 배정) → 09:00~18:00 매시간 `blog-queue.mjs --max-per-run=1`(티스토리 최대 1편·네이버 최대 9편 발행)다.
 > 이 스킬은 그 무인 경로가 빠진 날 사람이 대신 돌릴 때 쓴다. 검색수요 게이트(`keyword-demand.mjs`)는 자격증명이 있으면 계속 적용. 제휴링크 불허 유지.
 
-한끗(az2mz) 블로그 하루치(기본 1+6편, 사용자가 말한 편수가 우선)를 만들어 티스토리(burning-go9me)·네이버에 올린다. 이 스킬은
+한끗(az2mz) 블로그 하루치(기본 1+9편, 사용자가 말한 편수가 우선)를 만들어 티스토리(burning-go9me)·네이버에 올린다. 이 스킬은
 개별 편 처리(조사/집필/검증)를 `blog-daily`·`blog-pipeline` 스킬 절차에 위임하고, 그 위에
 **여러 편 선정 · 자체피드백 · 발행 · permalink 교정 · 커밋**을 얹는다.
 
@@ -33,7 +33,7 @@ ls -t backend/blog/research/dev-digest/*.json backend/blog/research/vlm-watch/*.
 ```
 `.git/az2mz-auto.lock` 이 있으면 몇 초 기다렸다 다시 확인(봇과 git 충돌 방지).
 
-## 2. 주제 선정 (품질 우선, 일일 상한 T1+N6)
+## 2. 주제 선정 (품질 우선, 일일 상한 T1+N9)
 **검색수요 게이트 먼저**(`seo-playbook.md` §1): 후보를 정했으면 **집필 전에** `node backend/scripts/keyword-demand.mjs "<주제어>"` 로 월간 검색수를 확인 → `--min`(기본 100) 미달이면 그 주제를 버리고 다른 롱테일로. 자격증명 미설정이면 스크립트가 안내하니 사용자에게 발급을 요청(그 전엔 수동으로 searchad.naver.com 확인). 실제 검색어 표현으로, 시즌 주제는 정점 3~4주 전. 그 안에서 우선순위:
 1. **`blogchart-plan.md` 미소진 주제** — 이미 각도·템플릿·출처힌트가 정해져 있다. 같은 개념이
    `posted.json` 에 없으면 우선.
@@ -55,6 +55,7 @@ ls -t backend/blog/research/dev-digest/*.json backend/blog/research/vlm-watch/*.
 
 ## 5. 자체 피드백 → 검증 (편마다)
 ```bash
+node backend/scripts/blog-figure.mjs <slug>   # 본문 그림 생성·저장
 node backend/scripts/blog-assemble.mjs <slug> --research=<slug>
 node backend/scripts/blog-selfreview.mjs <slug>   # 자기비평→외과 수정→재조립 (비치명적)
 node backend/scripts/blog-verify.mjs <slug>        # 최종 게이트. 반려 시 원문 대조해 교정→재조립→재검
@@ -66,8 +67,8 @@ node backend/scripts/blog-verify.mjs <slug>        # 최종 게이트. 반려 �
 node backend/scripts/blog-publish.mjs <slug>
 ```
 - 글마다 `meta.platform`("tistory"/"naver")을 배정하고, 같은 주제를 두 플랫폼에 쓰지 않는다(blog-daily 스킬 상단 규칙).
-- **네이버 배정 글은 여기서 바로 올리지 않는다** — 12:00·15:00·18:00 스케줄작업 `AZ2MZ_Blog_Queue`(`blog-queue.mjs`)가
-  하루 최대 6편·20~40분 간격으로 순차 발행한다(몰아 올리면 스팸 신호). 티스토리 배정 글은 사람이 붙어 있으면 여기서 바로 올려도 된다
+- **네이버 배정 글은 여기서 바로 올리지 않는다** — 09:00~18:00 매시간 스케줄작업 `AZ2MZ_Blog_Queue`(`blog-queue.mjs`)가
+  하루 최대 9편까지 매시간 1편씩 발행한다. 티스토리 배정 글은 사람이 붙어 있으면 여기서 바로 올려도 된다
   (대기열 하루 한도는 발행 기록으로 세므로 초과 안 됨). 대기열 확인: `node backend/scripts/blog-queue.mjs --list`.
 - 결과 URL 이 `/manage/posts/`(RSS permalink 미조회)면, 방금 순번의 실제 `/NNN` 글을 `curl` 로
   제목 대조해 찾아 `backend/out/blog/posted.json` 의 그 slug url 을 `/NNN` 으로 고친다.

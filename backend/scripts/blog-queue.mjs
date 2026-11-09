@@ -4,7 +4,7 @@
 
    blog-daily 가 만든 글은 meta.platform 으로 한 곳에만 배정된다("tistory" 기본 / "naver").
    이 스크립트는 **검증 통과 후 본문이 안 바뀐 글**(meta.verified.html == 현재 html 해시)만
-   골라, 두 플랫폼을 번갈아(T→N→T→N…) 글 사이 랜덤 대기를 두고 하루 티스토리 1편·네이버 6편까지 올린다.
+   골라, 두 플랫폼을 번갈아(T→N→T→N…) 하루 티스토리 1편·네이버 9편까지 올린다.
    같은 글이 두 플랫폼에 가는 일은 없다(양쪽 발행 기록 모두 확인).
 
    스팸 판정은 "짧은 시간 대량"이 핵심 신호라 속도를 조절한다. 캡차는 우회하지 않는다 —
@@ -12,12 +12,12 @@
 
    실행 (레포 루트에서):
      node backend/scripts/blog-queue.mjs --list            # 대기열만 보기
-     node backend/scripts/blog-queue.mjs                   # 발행 (기본: T1/N6·20~40분 간격·7일 이내)
-     node backend/scripts/blog-queue.mjs --max-tistory=1 --max-naver=6 --gap=20-40 --max-age=7
+     node backend/scripts/blog-queue.mjs                   # 발행 (기본: T1/N9·20~40분 간격·7일 이내)
+     node backend/scripts/blog-queue.mjs --max-tistory=1 --max-naver=9 --max-per-run=1 --max-age=7
      node backend/scripts/blog-queue.mjs --max=5 --only=naver # --max는 양 플랫폼 공통 한도로 유지
      node backend/scripts/blog-queue.mjs --selftest
-   스케줄: 매일 12:00·15:00·18:00 스케줄작업 AZ2MZ_Blog_Queue(tools/blog-queue.vbs). 18:00 회차는
-   12:00 이후 늦게 검증된 글을 따라잡는다(하루 한도는 발행 기록으로 세므로 초과 안 함).
+   스케줄: 매일 09:00~18:00 매시간 스케줄작업 AZ2MZ_Blog_Queue(tools/blog-queue.vbs). 회차당 한 편씩,
+   하루 한도는 발행 기록으로 세므로 초과하지 않는다.
    ============================================================ */
 import { existsSync, readFileSync, readdirSync, writeFileSync, unlinkSync } from 'node:fs';
 import { spawnSync } from 'node:child_process';
@@ -77,13 +77,14 @@ function loadPosts() {
 }
 
 async function main() {
-  // 기본 일일 분배는 티스토리 1편 + 네이버 6편(총 7편)이다.
+  // 기본 일일 분배는 티스토리 1편 + 네이버 9편(총 10편)이다.
   // 기존 --max 옵션은 명시되면 양 플랫폼 공통 한도로 적용한다.
   const sharedMax = val('max', undefined);
   const maxByPlatform = {
     tistory: Number(val('max-tistory', sharedMax ?? 1)),
-    naver: Number(val('max-naver', sharedMax ?? 6)),
+    naver: Number(val('max-naver', sharedMax ?? 9)),
   };
+  const maxPerRun = Number(val('max-per-run', Number.POSITIVE_INFINITY));
   const maxAge = Number(val('max-age', 7));
   const [gapMin, gapMax] = val('gap', '20-40').split('-').map(Number);
   const only = val('only', '');
@@ -123,7 +124,8 @@ async function main() {
       if (k.status !== 0) { stopped.add('tistory'); console.error('✗ 티스토리 세션 확인/자동 로그인 실패 — 추가 인증이 필요할 수 있어 오늘 티스토리 발행을 건너뜁니다.'); }
     }
     const steps = interleave(plan.tistory, plan.naver);
-    for (let i = 0; i < steps.length; i++) {
+    let publishedThisRun = 0;
+    for (let i = 0; i < steps.length && publishedThisRun < maxPerRun; i++) {
       const [p, id] = steps[i];
       if (stopped.has(p)) continue;
       console.log(`\n[${i + 1}/${steps.length}] ${p} · ${id}  (${new Date().toLocaleTimeString('ko-KR')})`);
@@ -132,7 +134,8 @@ async function main() {
       const r = spawnSync(process.execPath, [PLATFORMS[p].script, id],
         { stdio: ['ignore', 'inherit', 'inherit'], env: process.env });
       if (r.status !== 0) { stopped.add(p); console.error(`✗ ${p} 실패 — 오늘 ${p} 대기열 중단(세션·캡차 확인)`); }
-      if (i < steps.length - 1 && stopped.size < 2) {
+      else publishedThisRun++;
+      if (i < steps.length - 1 && stopped.size < 2 && publishedThisRun < maxPerRun && r.status === 0) {
         const min = gapMin + Math.random() * (gapMax - gapMin);
         console.log(`  · 다음 글까지 ${min.toFixed(0)}분 대기`);
         await new Promise((res) => setTimeout(res, min * 60000));

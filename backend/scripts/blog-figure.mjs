@@ -3,11 +3,11 @@
    본문 삽입용 그림(figure) 생성 — 커버와 별개.
 
    왜 만들었나: 글에 이미지가 커버 1장뿐이라 본문이 텍스트만으로 허전했다(2026-07-30 운영자 지적).
-   그런데 남의 사진을 가져다 쓸 수는 없다 — 저작권이고, 핫링크는 403 으로 깨진다(CLAUDE.md 철칙).
-   그래서 **우리가 만들거나 우리가 직접 찍은 것만** 쓴다.
+   라이선스가 확인되지 않은 사진은 쓰지 않는다. 본문 사진은 무료 CC0/PDM만 내려받고 출처·라이선스를 캡션에 표시한다.
 
    세 종류:
      card  — 우리 데이터로 그린 도표·비교표·설정값 카드. 저작권 무관. 어느 카테고리에나 쓴다.
+     photo — Openverse 에서 받은 CC0/PDM 사진. 파일은 <글id>.photo-<그림id>.jpg 로 저장하고 출처를 기록한다.
      image — Codex ImageGen 으로 직접 만든 삽화. 파일은 <글id>.ai-<그림id>.png 로 out/blog 에 둔다.
      shot  — 이미 본문에서 인용 중인 **공개 웹페이지**를 우리가 직접 캡처. 사실 확인용 자료화면이라
              출처(URL)를 캡션에 반드시 박는다. 로그인벽·유료 페이지는 찍지 않는다.
@@ -21,7 +21,7 @@
      node backend/scripts/blog-figure.mjs <글id> --only=a,b
      node backend/scripts/blog-figure.mjs --selftest        # 브라우저로 샘플 렌더(네트워크 불필요)
    ============================================================ */
-import { readFile, mkdir } from 'node:fs/promises';
+import { readFile, writeFile, mkdir } from 'node:fs/promises';
 import { existsSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { basename, dirname, join } from 'node:path';
@@ -123,7 +123,35 @@ const LAYOUTS = { table: renderTable, steps: renderSteps, timeline: renderTimeli
 
 export async function makeFigure(ctx, fig, id) {
   await mkdir(outDir, { recursive: true });
-  if (fig.kind === 'image') {
+  if (fig.kind === 'image' || fig.kind === 'photo') {
+    if (fig.kind === 'photo') {
+      const expected = `${id}.photo-${fig.id}.jpg`;
+      if (!fig.id || basename(String(fig.assetFile || '')) !== fig.assetFile || fig.assetFile !== expected) {
+        throw new Error(`photo assetFile 은 ${expected} 이어야 합니다`);
+      }
+      const file = join(outDir, expected);
+      if (existsSync(file) && fig.sourceName && fig.sourceUrl && fig.sourceLicense) return file;
+      const query = String(fig.query || fig.title || '').trim();
+      if (!query) throw new Error('photo query 또는 title 이 필요합니다');
+      // 키나 생성 API 비용 없이 공개 검색 API에서 CC0/PDM 고해상도 사진만 선택한다.
+      const response = await fetch(`https://api.openverse.org/v1/images/?q=${encodeURIComponent(query)}&license=cc0,pdm&category=photograph&aspect_ratio=wide&size=large&mature=false&page_size=20`);
+      if (!response.ok) throw new Error(`Openverse 검색 실패: HTTP ${response.status}`);
+      const data = await response.json();
+      const seed = [...String(id + fig.id)].reduce((a, c) => a + c.charCodeAt(0), 0);
+      const results = (data.results || []).filter((x) => x.width >= 1000 && /^(stocksnap|wikimedia)$/.test(x.source)
+        && /^https?:\/\//i.test(x.url || '') && /^https?:\/\//i.test(x.foreign_landing_url || ''));
+      if (!results.length) throw new Error(`사용 가능한 CC0/PDM 사진 없음: ${query}`);
+      const photo = results[seed % Math.min(results.length, 10)];
+      const imageResponse = await fetch(photo.url, { signal: AbortSignal.timeout(30000) });
+      if (!imageResponse.ok) throw new Error(`사진 다운로드 실패: HTTP ${imageResponse.status}`);
+      const contentType = imageResponse.headers.get('content-type') || '';
+      if (!/^image\/jpeg$/i.test(contentType)) throw new Error(`JPEG 형식이 아닌 사진은 건너뜀: ${contentType}`);
+      await writeFile(file, Buffer.from(await imageResponse.arrayBuffer()));
+      fig.sourceName = `${photo.creator || photo.source} · ${photo.license}`;
+      fig.sourceUrl = photo.foreign_landing_url;
+      fig.sourceLicense = String(photo.license || '').toLowerCase();
+      return file;
+    }
     const expected = `${id}.ai-${fig.id}.png`;
     if (!fig.id || basename(String(fig.assetFile || '')) !== fig.assetFile || fig.assetFile !== expected) {
       throw new Error(`ImageGen assetFile 은 ${expected} 이어야 합니다`);
@@ -212,10 +240,13 @@ if (isMain) {
     const { chromium } = await import('playwright');
     const browser = await chromium.launch({ headless: true });
     const ctx = await browser.newContext();
+    let failed = 0;
     for (const f of figs) {
       try { console.log(`✓ ${f.id} → ${await makeFigure(ctx, f, id)}`); }
-      catch (e) { console.error(`✗ ${f.id}: ${String(e.message).split('\n')[0]}`); }
+      catch (e) { failed++; console.error(`✗ ${f.id}: ${String(e.message).split('\n')[0]}`); }
     }
+    await (await import('node:fs/promises')).writeFile(metaPath, JSON.stringify(meta, null, 2) + '\n', 'utf8');
+    if (failed) process.exitCode = 1;
     await browser.close();
   }
 }

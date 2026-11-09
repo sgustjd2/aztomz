@@ -100,12 +100,25 @@ if (profPath && existsSync(profPath)) {
 const figRefs = [...md.matchAll(/^\s*\[FIG:\s*([A-Za-z0-9_-]+)\s*(?:\|([^\]]*))?\]\s*$/gim)]
   .map((m) => ({ id: m[1], rest: (m[2] || '').split('|').map((s) => s.trim()) }));
 const figDefs = new Map((meta.figures || []).map((f) => [f.id, f]));
+if (!figRefs.length) problems.push('본문 그림이 없다 — 최소 1개의 실제 [FIG] 이미지를 추가한다');
 for (const ref of figRefs) {
   const def = figDefs.get(ref.id);
   if (!def) { problems.push(`본문 [FIG: ${ref.id}] 인데 메타 figures 에 정의가 없다`); continue; }
-  if (!['card', 'shot', 'image'].includes(def.kind)) {
-    problems.push(`[FIG: ${ref.id}] 메타 kind 가 card/shot/image 중 하나가 아니다`);
+  if (!['card', 'shot', 'image', 'photo'].includes(def.kind)) {
+    problems.push(`[FIG: ${ref.id}] 메타 kind 가 card/shot/image/photo 중 하나가 아니다`);
     continue;
+  }
+  if (def.kind === 'photo') {
+    const expected = `${slug}.photo-${ref.id}.jpg`;
+    if (def.assetFile !== expected || !existsSync(join(outDir, expected))) {
+      problems.push(`[FIG: ${ref.id}] 인용 사진 파일이 없거나 assetFile 이 맞지 않다: ${expected} (blog-figure 실행 필요)`);
+    }
+    if (!String(def.sourceName || '').trim() || !/^https?:\/\//i.test(def.sourceUrl || '')
+        || !['cc0', 'pdm'].includes(String(def.sourceLicense || '').toLowerCase())) {
+      problems.push(`[FIG: ${ref.id}] 사진 출처·URL·CC0/PDM 라이선스 정보가 필요하다`);
+    }
+    if (!String(def.title || '').trim()) problems.push(`[FIG: ${ref.id}] 사진 대체텍스트 title 이 필요하다`);
+    ref.rest = [ref.rest[0] || '참고 사진', def.sourceName, def.sourceUrl];
   }
   if (def.kind === 'image') {
     const expected = `${slug}.ai-${ref.id}.png`;
@@ -232,11 +245,13 @@ const updatedLog = [
 ].slice(-200);
 await writeFile(structureLogPath, JSON.stringify(updatedLog, null, 2) + '\n', 'utf8');
 
-const today = new Date().toLocaleDateString('en-CA');  // 로컬(KST) 날짜 — toISOString(UTC)은 밤엔 하루 어긋난다
-/* 각주는 '작성일'만 남긴다 — 예전엔 "사실 확인이 안 된 항목은 본문에 그렇게 표시했습니다"를
-   늘 붙였는데, 정작 본문에 그런 표시가 없는 경우가 대부분이라 거짓 고지였다(반복 지적). */
-const html = '<!--COVER-->\n' + md2html(md)
-  + `\n<p style="font-size:.85em;color:#6b7280;margin-top:2em">${today} 작성</p>\n`;
+let creditedMd = md;
+for (const ref of figRefs) {
+  if (figDefs.get(ref.id)?.kind !== 'photo' || !ref.rest[1] || !ref.rest[2]) continue;
+  const marker = new RegExp(`(^\\s*\\[FIG:\\s*${ref.id}\\s*\\|[^\\]]*\\])`, 'im');
+  creditedMd = creditedMd.replace(marker, `[FIG: ${ref.id} | ${ref.rest[0]} | ${ref.rest[1]} | ${ref.rest[2]}]`);
+}
+const html = '<!--COVER-->\n' + md2html(creditedMd) + '\n';
 
 await writeFile(join(outDir, `${slug}.html`), html, 'utf8');
 

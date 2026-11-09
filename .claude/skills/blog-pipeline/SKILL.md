@@ -33,7 +33,7 @@ description: 블로그 글 하나를 조사 → 정리 → 집필 → SEO → �
 **순차로 돌린다.** 앞 단계 산출 파일이 없으면 다음을 시작하지 마라.
 각 에이전트를 부를 때 `<slug>`, `<categoryId>`, 키워드를 프롬프트에 분명히 넣는다.
 
-본문 그림은 cover와 별도로 보통 2~4개(짧은 트렌드 글 1~2개)를 목표로 한다. `blog-writer`의 `[FIG: id | 캡션]`마다 `blog-seo`가 `meta.figures[]` 정의를 만든다. 예약 Claude Code 경로는 `card` 표·단계도·타임라인을 사용한다. Codex 대화형 작업에서 GPT ImageGen 파일을 실제로 만들었다면 `kind:"image"`로 연결해 발행기에서 업로드한다. 빈 `[IMG]` 자리표시자는 실제 이미지가 되지 않으므로 쓰지 않는다.
+본문 그림은 cover와 별도로 보통 2~4개, 짧은 글도 최소 1개를 넣는다. `blog-writer`의 `[FIG: id | 캡션]`마다 `blog-seo`가 `meta.figures[]` 정의를 만든다. 예약 집필은 공개 CC0/PDM 실사 사진을 검색해 출처를 기록하고, 표·단계도·타임라인을 자체 제작한다. Codex 대화형 작업에서 GPT ImageGen 파일을 실제로 만들었다면 `kind:"image"`로 연결해 발행기에서 업로드한다. 빈 `[IMG]` 자리표시자는 실제 이미지가 되지 않으므로 쓰지 않는다.
 
 ## 단계별 중단 조건
 
@@ -48,7 +48,8 @@ description: 블로그 글 하나를 조사 → 정리 → 집필 → SEO → �
 팩트체크 통과 후:
 
 ```bash
-node backend/scripts/blog-assemble.mjs <slug>    # md+meta → HTML, 링크 기계검사
+node backend/scripts/blog-figure.mjs <slug>     # 카드 렌더·CC0/PDM 사진 저장과 출처 기록
+node backend/scripts/blog-assemble.mjs <slug>    # md+meta → HTML, 그림·출처 포함 기계검사
 node backend/scripts/blog-selfreview.mjs <slug>  # 자체 피드백→반영: 초안을 자기비평해 실제 결함만 외과 수정 후 재조립
 node backend/scripts/blog-verify.mjs <slug>      # claude -p 최종 검증(CLAUDE.md 철칙)
 node backend/scripts/blog-publish.mjs <slug>     # 티스토리 발행 (--draft 로 비공개)

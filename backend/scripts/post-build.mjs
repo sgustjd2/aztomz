@@ -497,8 +497,7 @@ if (!review.pass) {
 const id = seo.slug ? slugify(seo.slug) : slugify(keyword);
 await mkdir(outDir, { recursive: true });
 
-const body = md2html(draft)
-  + `\n<p style="font-size:.85em;color:#6b7280;margin-top:2em">${today} 작성 · 이 글은 자동 생성 파이프라인으로 작성됐고, 사실 확인이 안 된 항목은 그렇게 표시했습니다.</p>`;
+const body = md2html(draft);
 
 await writeFile(join(outDir, `${id}.html`), '<!--COVER-->\n' + body + '\n', 'utf8');
 await writeFile(join(outDir, `${id}.json`), JSON.stringify({

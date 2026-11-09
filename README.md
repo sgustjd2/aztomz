@@ -122,9 +122,9 @@ git push origin main              # → Vercel 자동 재배포
 - 변경시 자동 커밋·푸시 (리포에만 저장, 배포되지 않음)
 
 **블로그 티스토리·네이버 일일 발행:**
-- 09:00 집필: Windows 스케줄작업 `AZ2MZ_Blog_Daily` → `claude -p /blog-daily` 스킬이 최대 7편(티스토리 1 + 네이버 6, 서로 다른 주제)을 집필·검증한다. 품질 기준 미달이면 편수를 줄인다. 집필·검증이 끝나면 발행 대기열을 바로 실행한다. 로그: `backend/out/blog/blog-daily.log`
-- 12:00·15:00·18:00 발행 대기열 재확인: Windows 스케줄작업 `AZ2MZ_Blog_Queue` → `node backend/scripts/blog-queue.mjs`가 티스토리 최대 1편·네이버 최대 6편을 교대로 발행(T→N→T→N…, 글 사이 20~40분 랜덤). 로그: `backend/out/blog/blog-queue.log`
-- 본문 시각자료: `[FIG: id | 캡션]` 마커와 글 메타의 `figures[]`를 연결한다. 예약 집필은 `blog-figure.mjs`로 파랑 계열의 비교 카드·단계도·타임라인을 만들고, Codex 대화형 집필은 GPT ImageGen 파일을 실제 생성한 경우에만 래스터 삽화로 연결할 수 있다. 커버 외 보통 2~4개(짧은 글 1~2개)를 기준으로 하되 설명에 도움 되는 그림만 쓴다.
+- 07:00 집필: Windows 스케줄작업 `AZ2MZ_Blog_Daily` → `claude -p /blog-daily` 스킬이 최대 10편(티스토리 1 + 네이버 9, 서로 다른 주제)을 집필·검증한다. 품질 기준 미달이면 편수를 줄인다. 로그: `backend/out/blog/blog-daily.log`
+- 09:00~18:00 매시간 발행: Windows 스케줄작업 `AZ2MZ_Blog_Queue`가 매회 `node backend/scripts/blog-queue.mjs --max-per-run=1`을 실행해 슬롯마다 1편을 발행한다. 기본 일일 한도는 티스토리 1편·네이버 9편이며, 로그는 `backend/out/blog/blog-queue.log`에 남는다.
+- 본문 시각자료: `[FIG: id | 캡션]` 마커와 글 메타의 `figures[]`를 연결한다. 모든 글에 최소 1개(보통 2~4개)를 넣고, `blog-figure.mjs`가 파랑 계열의 비교 카드·단계도·타임라인을 렌더링한다. 주제와 맞는 실사 사진은 Openverse CC0/PDM 자료를 내려받아 출처 링크·라이선스를 캡션에 붙인다. 사진 검색이 실패하면 도식으로 대체한다. 예약 집필은 GPT 이미지 생성 API를 호출하지 않는다. 조립은 본문 그림 파일·출처를 검증하고, 발행은 본문 그림 업로드가 실패하면 중단한다.
 - 티스토리는 매일 11:00 `AZ2MZ_Tistory_Daily_Session`이 세션을 확인하고, 만료 시 저장된 자동완성 정보로 1회 자동로그인을 시도한다. 저장정보가 없거나 추가 인증·CAPTCHA가 나오면 사람이 처리한다. 네이버는 전용 프로필(`backend/.naver-profile`) 세션을 재사용한다. CAPTCHA는 사람이 처리한다.
 - 네이버 본문은 붙여넣기 전 `naverize()`로 가독성 양식(왼쪽 정렬·문장 2개씩 짧은 문단(16px·줄간격 1.8)·문단 사이 빈 줄·밑줄형 인용구 소제목·기울임 없음)으로 바꾼다. 발행 창 위치는 `backend/scripts/lib/window.mjs`에서 정하며 `BLOG_OFFSCREEN=1`이면 화면 밖이다. 세부·주의사항은 [docs/architecture.md](docs/architecture.md)
 
