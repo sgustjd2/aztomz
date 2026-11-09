@@ -114,8 +114,8 @@ for (const ref of figRefs) {
       problems.push(`[FIG: ${ref.id}] 인용 사진 파일이 없거나 assetFile 이 맞지 않다: ${expected} (blog-figure 실행 필요)`);
     }
     if (!String(def.sourceName || '').trim() || !/^https?:\/\//i.test(def.sourceUrl || '')
-        || !['cc0', 'pdm'].includes(String(def.sourceLicense || '').toLowerCase())) {
-      problems.push(`[FIG: ${ref.id}] 사진 출처·URL·CC0/PDM 라이선스 정보가 필요하다`);
+        || !['cc0', 'pdm', 'cc-by', 'cc-by-sa'].includes(String(def.sourceLicense || '').toLowerCase())) {
+      problems.push(`[FIG: ${ref.id}] 사진 출처·URL·라이선스(cc0/pdm/cc-by/cc-by-sa) 정보가 필요하다`);
     }
     if (!String(def.title || '').trim()) problems.push(`[FIG: ${ref.id}] 사진 대체텍스트 title 이 필요하다`);
     ref.rest = [ref.rest[0] || '참고 사진', def.sourceName, def.sourceUrl];

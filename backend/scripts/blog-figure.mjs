@@ -119,6 +119,49 @@ const renderTimeline = (s) => `
       </div>`).join('')}
   </div>`;
 
+/* 특정 장소·가게 사진: 위키미디어 커먼즈(키 불필요). CC0·PDM·CC BY·CC BY-SA 만 쓰고 NC/ND 는 버린다.
+   엉뚱한 사진이 붙는 걸 막으려고 fig.match(그 장소를 가리키는 단어 목록) 중 하나가 파일명·설명·분류에 있어야 한다. */
+const COMMONS_API = 'https://commons.wikimedia.org/w/api.php';
+const COMMONS_UA = 'az2mz-blog/1.0 (blog image helper)';
+const stripTags = (h) => String(h || '').replace(/<[^>]+>/g, ' ').replace(/&amp;/g, '&').replace(/&quot;/g, '"').replace(/&#0?39;/g, "'").replace(/\s+/g, ' ').trim();
+function commonsLicense(short) {
+  const t = String(short || '').toLowerCase().replace(/\s+/g, ' ').trim();
+  if (/\b(nc|nd)\b|noncommercial|no derivatives/.test(t)) return null;
+  if (t.startsWith('cc0')) return 'cc0';
+  if (t === 'public domain' || t.startsWith('pd') || t.includes('public domain mark')) return 'pdm';
+  if (/^cc by-sa/.test(t)) return 'cc-by-sa';
+  if (/^cc by/.test(t)) return 'cc-by';
+  return null;
+}
+async function findCommonsPhoto(query, match, seed) {
+  const terms = (Array.isArray(match) ? match : [match]).map((x) => String(x || '').toLowerCase().trim()).filter(Boolean);
+  if (!terms.length) throw new Error('commons 사진은 match(장소를 가리키는 단어) 가 필요합니다');
+  const url = `${COMMONS_API}?${new URLSearchParams({
+    action: 'query', format: 'json', generator: 'search', gsrsearch: `${query} filetype:bitmap`, gsrnamespace: '6', gsrlimit: '30',
+    prop: 'imageinfo|categories', iiprop: 'url|size|mime|extmetadata', iiurlwidth: '1600', cllimit: '20',
+  })}`;
+  const res = await fetch(url, { headers: { 'user-agent': COMMONS_UA }, signal: AbortSignal.timeout(20000) });
+  if (!res.ok) throw new Error(`Commons 검색 실패: HTTP ${res.status}`);
+  const data = await res.json();
+  const found = [];
+  for (const pg of Object.values(data?.query?.pages || {})) {
+    const ii = pg.imageinfo?.[0];
+    if (!ii || ii.mime !== 'image/jpeg' || (ii.width || 0) < 1000) continue;
+    const meta = ii.extmetadata || {};
+    const license = commonsLicense(meta.LicenseShortName?.value);
+    if (!license) continue;
+    const hay = [pg.title, stripTags(meta.ImageDescription?.value), ...(pg.categories || []).map((c) => c.title)].join(' ').toLowerCase();
+    if (!terms.some((t) => hay.includes(t))) continue;
+    const artist = stripTags(meta.Artist?.value) || 'Wikimedia Commons';
+    found.push({
+      downloadUrl: ii.thumburl || ii.url, pageUrl: ii.descriptionurl, license,
+      sourceName: `${artist} · ${stripTags(meta.LicenseShortName?.value)}`,
+    });
+  }
+  if (!found.length) throw new Error(`Commons 에 쓸 수 있는 사진 없음(라이선스·장소 일치): ${query}`);
+  return found[seed % found.length];
+}
+
 const LAYOUTS = { table: renderTable, steps: renderSteps, timeline: renderTimeline };
 
 export async function makeFigure(ctx, fig, id) {
@@ -133,6 +176,18 @@ export async function makeFigure(ctx, fig, id) {
       if (existsSync(file) && fig.sourceName && fig.sourceUrl && fig.sourceLicense) return file;
       const query = String(fig.query || fig.title || '').trim();
       if (!query) throw new Error('photo query 또는 title 이 필요합니다');
+      if (fig.provider === 'commons') {
+        const seedC = [...String(id + fig.id)].reduce((a, c) => a + c.charCodeAt(0), 0);
+        const c = await findCommonsPhoto(query, fig.match, seedC);
+        const r = await fetch(c.downloadUrl, { headers: { 'user-agent': COMMONS_UA }, signal: AbortSignal.timeout(30000) });
+        if (!r.ok) throw new Error(`사진 다운로드 실패: HTTP ${r.status}`);
+        if (!/^image\/jpeg$/i.test(r.headers.get('content-type') || '')) throw new Error('JPEG 형식이 아닌 사진은 건너뜀');
+        await writeFile(file, Buffer.from(await r.arrayBuffer()));
+        fig.sourceName = c.sourceName;
+        fig.sourceUrl = c.pageUrl;
+        fig.sourceLicense = c.license;
+        return file;
+      }
       // 키나 생성 API 비용 없이 공개 검색 API에서 CC0/PDM 고해상도 사진만 선택한다.
       const response = await fetch(`https://api.openverse.org/v1/images/?q=${encodeURIComponent(query)}&license=cc0,pdm&category=photograph&aspect_ratio=wide&size=large&mature=false&page_size=20`);
       if (!response.ok) throw new Error(`Openverse 검색 실패: HTTP ${response.status}`);
