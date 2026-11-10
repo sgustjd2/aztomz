@@ -3,10 +3,24 @@
 채널 [AI Engineer](https://www.youtube.com/@aiDotEngineer) 의 새 영상을 Gemini 로 자동 요약한 모음입니다.
 생성: `backend/scripts/youtube-summarize.mjs` (GitHub Actions `youtube-summary` 크론).
 
-총 **476개**.
+총 **490개**.
 
 | 발행일 | 제목 |
 |---|---|
+| 2026-11-10 | [An Agent That Fixes Its Own Mistakes - Saloni Gandhi & Ziwei Guo, LinkedIn](2026-11-10-yH7_SIIgI-Y.md) |
+| 2026-11-10 | [60% of Our Data PRs Now Merge With No Human Review - Chetas Joshi, Robinhood](2026-11-10-MQiojLnK-E0.md) |
+| 2026-11-10 | [The Agents Were Fine. Everything Around Them Broke. - Joey Wang, Harvey](2026-11-10-ktbAVYsAxpk.md) |
+| 2026-11-09 | [The One Thing Every AI Agent Framework Agrees On - Mislav Ivanda, Daytona](2026-11-09-WWIFiQi9U4w.md) |
+| 2026-11-09 | [Your Self-Hosted LLM Needs to Say No - Harshul Jain & Parv Khatri, Audible & SAP](2026-11-09-ntVpbyDTYaQ.md) |
+| 2026-11-09 | [How to Build a Software Factory That Improves Itself - Zach Lloyd, Warp](2026-11-09-nKjPBAw_N_0.md) |
+| 2026-11-09 | [Will AI Agents Pretend to Be Human to Get Past a Check? - Maty Bohacek, Stanford](2026-11-09-LF8V0RGJU0I.md) |
+| 2026-11-09 | [Why No One Agrees on What Their AI Tokens Cost - Pratyusha Duvvuri, Cisco](2026-11-09-KdG9OSOtJOA.md) |
+| 2026-11-09 | [AI Engineer NYC 2026 Closing Remarks - Ksenia Se, Turing Post & swyx, AI Engineer](2026-11-09-Gs4Ho0ub3a4.md) |
+| 2026-11-09 | [Stop Doing Agent Archaeology on Your Team's Code - Richard Feldman, Delta](2026-11-09-Enn9dVrRXAo.md) |
+| 2026-11-09 | [Right Answer, Wrong Reasons: AI Forecasts Costco - Hassan El Mghari & Omar El Mghari, Together AI](2026-11-09-dznCt8xPW7o.md) |
+| 2026-11-09 | [How One Founder Manages 20 AI Coding Agents at Once - Ryan Carson, Untangle](2026-11-09-BTtyguoPvBU.md) |
+| 2026-11-09 | [Training Your Own Agent Models With RL Is Now Practical - Jason Mancuso, Modal](2026-11-09-3nDMYV-QHLs.md) |
+| 2026-11-09 | [Your KV Cache Can Spot Attacks on Your AI Agents - Ari Azarafrooz, Intrinsec AI](2026-11-09-1NWnSwCB4NM.md) |
 | 2026-11-08 | [How Ramp Tests Its AI Bookkeeping Agent Before Customers Do - Ryan Stevens, Ramp](2026-11-08-WJTQBENv0KI.md) |
 | 2026-11-08 | [Claude Code Looked Right but Missed $800K - Natalia Connolly & Kevin Madura, AlixPartners](2026-11-08-u7fsyrXsPBE.md) |
 | 2026-11-08 | [Your Company Has No Model of Itself. Agents Can Build One - Joao Wenzel, Citadel Securities](2026-11-08-jDwc0aXTAFg.md) |
