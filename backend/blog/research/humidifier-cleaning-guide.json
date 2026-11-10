@@ -1,0 +1,232 @@
+{
+  "keyword": "가습기 세척 방법",
+  "categoryId": "life-info",
+  "notes": "이 글은 '정답 하나'가 아니라 자료별 세척 기준(주기·세제·습도)을 나란히 비교하고, 갈리는 지점에서는 제조사 설명서를 우선하라고 안내하는 글로만 쓸 수 있다. 공통분모(물 매일 교체, 세척 후 충분한 헹굼, 완전 건조, 미사용 시 물 빼고 보관)는 official 자료로 확인된다. 한국 정부 세척 안내 원문은 2011년 것뿐이고 현행(2024~2026) 식약처·질병관리청 문서는 못 찾았으므로 '가장 가까운 정부 자료는 2011년'이라고 밝혀야 한다.",
+  "cannotSay": [
+    "'세척은 N일마다 하는 게 정답'이라는 단정 — EPA 3일, 2011 정부 이틀(물통·진동자 닦기)+주 1회(중성세제), CPSC(1992) 7일 살균으로 기준이 다르고, 소비자원 웹진·삼성·LG(5L/15g) 페이지는 일수를 명시하지 않는다.",
+    "'정부(한국)가 현재 이렇게 안내한다' — 한국 정부 세척 안내 원문은 2011년(보건복지부·질병관리본부, 정책브리핑 2011-11-04) 자료이고 기준일이 15년 가까이 지났다. 현행 식약처·질병관리청 안내는 확인하지 못했다.",
+    "'매일 물을 갈면 미생물 87.3% 감소는 한국소비자원 조사 결과' — 농민신문(2025-12-09) 기사가 소비자원 조사를 인용한 수치일 뿐, 소비자원 원문(가습기내 유해미생물 안전실태조사)을 열어 확인하지 못했다. 반드시 '기사에 따르면'으로만 쓴다.",
+    "'가습기 물에 살균제·첨가제를 넣으면 현행법상 금지'라는 단정 — 확인된 것은 2019-11-26 환경부 행정예고(2021-01-01부터 가습기 등 전기기기에 넣어 쓰는 생활화학제품의 제조·수입 금지 예고, 안전성 자체 입증 제품은 예외)까지다. 최종 시행 고시 원문과 현재 상태는 미확인.",
+    "'락스는 써도 된다/안 된다'의 단정 — 2011 한국 안내는 락스 사용 금지, CPSC(1992)는 표백제 희석액 허용으로 어긋난다. 한국 독자에게는 한국 안내를 따르되 해외 기준이 다르다고만 기록한다.",
+    "'적정 습도는 OO%' 단일 수치 — EPA는 50% 초과 금지(상한만), 2011 KTV는 50% 안팎, 농민신문은 40~60%로 표기가 다르다.",
+    "구연산이 '가장 좋은 세제'라는 우열 — LG가 자사 안내에서 구연산을 제시했다는 사실만 말할 수 있다. 다른 제조사 매뉴얼은 조회하지 않았다.",
+    "벽·창에 물기가 맺히면 과가습이라는 신호를 현재 기준으로 단정 — CPSC 1992 자료 출처다."
+  ],
+  "cannotCover": [
+    "현행 식약처·질병관리청·환경부의 가습기 세척 공식 안내 (검색에서 못 찾음)",
+    "가습기 물 첨가제(아로마 오일 등) 사용 가부의 현행 공식 문구 — EPA 페이지도 첨가제를 다루지 않음",
+    "한국소비자원 '가습기내 유해미생물 안전실태조사' 원문 및 비교공감 2025-18호 가습기 원문",
+    "삼성·위니아·쿠쿠·미로·조지루시 등 제조사별 세척 주기·구연산 농도 (LG 두 페이지와 삼성 기화식 필터 안내만 확보)",
+    "가습기살균제 피해·법적 현황 상세 (본 글 주제와 거리가 멀고 자료도 행정예고·환경부 반박 보도자료뿐)",
+    "방식별(초음파·가열·기화·복합) 세척 주기 차이의 정량 비교 — 소비자원 웹진은 유지관리비·가습량만 수치화했고 세척 주기 수치는 없음",
+    "세균·미생물 증식 정도의 수치 — 2011 KTV는 수치 없이 '급격히 늘어난다'고만 설명"
+  ],
+  "claims": [
+    {
+      "claim": "세척 주기는 자료마다 다르다 — EPA는 휴대형 3일마다, 2011 한국 정부 안내는 물통·진동자 이틀마다 닦기+주 1회 중성세제 세척, CPSC(1992)는 7일마다 살균이며, 제조사·소비자원 페이지는 일수를 정하지 않고 사용설명서를 보라고 한다",
+      "grade": "confirmed",
+      "evidence": [
+        "EPA: 'Clean portable humidifiers every third day' (휴대형은 3일마다 청소)",
+        "2011 복지부·질병관리본부(정책브리핑 2011-11-04): 진동자·물통은 이틀마다 부드러운 스폰지·천으로 닦고, 일주일에 한 번은 중성 세제로 세척, 분무유도관·분출구는 주 1회",
+        "CPSC(1992-01-27): 5갤런 미만 휴대형은 매일 비우고 7일마다 살균, 5갤런 이상은 2주마다 살균 (오래된 자료, 제조사 지침 우선)",
+        "농민신문(2025-12-09): 이틀에 한 번이 가장 효과적 (reported)",
+        "LG 가열식: 스케일 필터는 2~3일에 한 번 세척, 약 2개월 이상이면 교체",
+        "KCA 2025-12 웹진·삼성(기화식 필터)·LG(5L/15g) 페이지는 세척 주기 일수를 명시하지 않음",
+        "2011 KTV: 2~3일만 세척하지 않아도 세균 수가 급격히 늘어난다고 설명(수치 없음)"
+      ],
+      "sourceUrls": [
+        "https://www.epa.gov/indoor-air-quality-iaq/use-and-care-home-humidifiers",
+        "https://www.korea.kr/news/healthView.do?newsId=148721624",
+        "https://www.cpsc.gov/Newsroom/News-Releases/1992/Portable-Humidifiers-Need-Regular-Cleaning-During-Winter-Months",
+        "https://v.daum.net/v/GxK3qix2AO",
+        "https://www.lge.co.kr/support/solutions-20150665942827",
+        "https://www.kca.go.kr/webzine/board/view?menuId=MENU00307&linkId=954&div=kca_2512",
+        "https://www.korea.kr/news/policyNewsView.do?newsId=148720489"
+      ]
+    },
+    {
+      "claim": "물은 매일 새로 갈고 하루 지난 물은 남아 있어도 버리라는 점은 EPA·2011 한국 정부·CPSC·기사가 모두 같다 (공통분모)",
+      "grade": "confirmed",
+      "evidence": [
+        "EPA: 휴대형은 매일 비우고 닦아 말린 뒤 새 물로 채움('refill daily'), 탱크에 물을 오래 두지 말 것",
+        "2011 복지부·질병관리본부: 하루 한 번 물 교체, 하루가 지난 물은 남아 있어도 버리고 새 물로 교체",
+        "2011 KTV: '물은 하루만 사용하고 남은 물은 버리는 것이 좋습니다'",
+        "CPSC(1992): 5갤런 미만 제품은 매일 비우고 새 물로 채움",
+        "농민신문(2025-12-09): 매일 물 교체, 소비자원 조사 인용 '미생물 87.3% 감소'(원문 미확인)",
+        "EPA: 증류수 등 미네랄 적은 물 권장, spring/mineral 표기 병물은 탈미네랄 처리가 아님",
+        "KCA 2025-12 웹진: 수조 물을 주기적으로 교체하고 잔여물이 남지 않게 충분히 세척"
+      ],
+      "sourceUrls": [
+        "https://www.epa.gov/indoor-air-quality-iaq/use-and-care-home-humidifiers",
+        "https://www.korea.kr/news/healthView.do?newsId=148721624",
+        "https://www.korea.kr/news/policyNewsView.do?newsId=148720489",
+        "https://www.cpsc.gov/Newsroom/News-Releases/1992/Portable-Humidifiers-Need-Regular-Cleaning-During-Winter-Months",
+        "https://v.daum.net/v/GxK3qix2AO",
+        "https://www.kca.go.kr/webzine/board/view?menuId=MENU00307&linkId=954&div=kca_2512"
+      ]
+    },
+    {
+      "claim": "세제·약품은 자료마다 허용과 금지가 갈린다 — 2011 한국 안내는 중성세제만 쓰고 락스·비누·알칼리성·산성 세제를 금지, LG는 구연산 희석액을 제시, CPSC(1992)는 표백제·식초, EPA는 3% 과산화수소를 언급한다. 제품 설명서가 우선이다",
+      "grade": "confirmed",
+      "evidence": [
+        "2011 복지부·질병관리본부: 주 1회 중성 세제 세척 후 3회 이상 헹굼. 락스, 비누, 알칼리성·산성 세제, 기름 성분이 있는 유기 세제는 사용 금지",
+        "LG전자(해당 안내): 물 5L에 구연산 15g 희석, 가습필터·수조·물통을 1~2시간 이상 담근 뒤 솔로 세척. 이 페이지에는 금지 세제 언급이 없음",
+        "LG전자(가열식): 물 10L에 구연산 30g, 30분~1시간 불린 뒤 세척 (두 안내 모두 약 0.3% 농도지만 담금 시간이 다름)",
+        "삼성(기화식 필터): 중성세제를 탄 40℃ 미만 미지근한 물로 주물러 세척, 짜지 말고 털어 자연 건조. 40℃ 이상 뜨거운 물·세탁기는 필터 변형·보풀로 가습량 저하",
+        "CPSC(1992): 표백제 물 1갤런당 1티스푼, 20분 담근 뒤 냄새가 사라질 때까지 헹굼 / 식초:물 1:1은 물때·미네랄 제거용 (2011 한국 안내의 락스 금지와 어긋남)",
+        "EPA: 제조사 지침이 없으면 물 닿는 모든 표면을 3% 과산화수소 용액으로 닦음",
+        "농민신문(2025-12-09): 베이킹소다·식초·소금을 물에 풀어 헹굼 (reported, 1차 근거 없음)"
+      ],
+      "sourceUrls": [
+        "https://www.korea.kr/news/healthView.do?newsId=148721624",
+        "https://www.lge.co.kr/support/solutions-20150234154387",
+        "https://www.lge.co.kr/support/solutions-20150665942827",
+        "https://www.samsungsvc.co.kr/solution/37605",
+        "https://www.cpsc.gov/Newsroom/News-Releases/1992/Portable-Humidifiers-Need-Regular-Cleaning-During-Winter-Months",
+        "https://www.epa.gov/indoor-air-quality-iaq/use-and-care-home-humidifiers",
+        "https://v.daum.net/v/GxK3qix2AO"
+      ]
+    },
+    {
+      "claim": "세척 후에는 세제가 남지 않게 충분히 헹구고, 완전히 말려 보관하라는 점은 자료들이 공통이다. 오래 쓰지 않았다면 사용 전에 다시 씻는다",
+      "grade": "confirmed",
+      "evidence": [
+        "EPA: 세정·소독제를 쓰면 화학물질이 공기 중으로 나가지 않도록 수돗물로 여러 번 충분히 헹굼. 탱크를 솔로 문질러 물때·막을 제거하고 모든 표면을 닦아 말림(먼저 플러그 뽑기)",
+        "2011 복지부·질병관리본부: 세제가 남지 않도록 3회 이상 헹굼, 미사용 시 물통·진동자 물을 제거하고 건조 상태로 보관, 2~3일 이상 안 썼으면 사용 전 물통·진동자를 씻음, 새 물 담기 전 물통에 물 5분의 1가량 넣고 흔들어 2회 이상 헹굼",
+        "LG전자: 흐르는 물에 거품이 남지 않을 때까지 헹굼, '세척 후 바로 조립하지 말고 완전히 건조시킨 뒤 사용하세요'",
+        "KCA 2025-12 웹진: 진동자는 흐르는 물이나 부드러운 솔로 조심스럽게 닦고, 장시간 보관 후에는 세척 없이 바로 사용하지 말 것 (구체 주기 수치 없음)",
+        "CPSC(1992): 청소·급수 전 플러그 뽑기, 보관 전 살균 후 완전 건조",
+        "2011 KTV: 구석구석 물때를 제거해야 세균 증식을 막을 수 있음"
+      ],
+      "sourceUrls": [
+        "https://www.epa.gov/indoor-air-quality-iaq/use-and-care-home-humidifiers",
+        "https://www.korea.kr/news/healthView.do?newsId=148721624",
+        "https://www.lge.co.kr/support/solutions-20150234154387",
+        "https://www.kca.go.kr/webzine/board/view?menuId=MENU00307&linkId=954&div=kca_2512",
+        "https://www.cpsc.gov/Newsroom/News-Releases/1992/Portable-Humidifiers-Need-Regular-Cleaning-During-Winter-Months",
+        "https://www.korea.kr/news/policyNewsView.do?newsId=148720489"
+      ]
+    },
+    {
+      "claim": "적정 습도는 기관마다 표기가 다르다 — EPA는 50%를 넘기지 말라는 상한만, 2011 KTV는 50% 안팎, 2025 기사는 40~60%다. 습도 수치를 하나로 단정하지 않는다",
+      "grade": "confirmed",
+      "evidence": [
+        "EPA: 'Do not humidify to indoor relative humidity levels exceeding 50 percent.' (상한 50%만 제시, 하한 없음)",
+        "2011 KTV(정책브리핑 2011-10-20): 실내습도는 50% 정도가 적당, 장시간 사용 후 환기로 곰팡이·진드기 증식을 막으라고 안내",
+        "농민신문(2025-12-09): 적정 습도 40~60%, 40% 미만이면 호흡기 점막이 마르고 60%를 넘으면 곰팡이·집먼지진드기가 번식하기 쉬움 (reported)",
+        "농민신문: 가습기는 바닥에서 1m 이상, 코에서 2m 이상 떨어뜨리고 분무구는 허공을 향하게 (reported)",
+        "CPSC(1992): 벽·창에 물기가 맺히면 과가습의 신호 (오래된 자료)",
+        "2011 복지부·질병관리본부 안내 본문에는 습도 기준이 없음"
+      ],
+      "sourceUrls": [
+        "https://www.epa.gov/indoor-air-quality-iaq/use-and-care-home-humidifiers",
+        "https://www.korea.kr/news/policyNewsView.do?newsId=148720489",
+        "https://v.daum.net/v/GxK3qix2AO",
+        "https://www.cpsc.gov/Newsroom/News-Releases/1992/Portable-Humidifiers-Need-Regular-Cleaning-During-Winter-Months"
+      ]
+    }
+  ],
+  "numbers": [
+    { "what": "EPA 휴대형 가습기 청소 주기", "value": "3일마다(every third day)", "asOf": "EPA 페이지, 2026-11-10 열람", "sourceUrl": "https://www.epa.gov/indoor-air-quality-iaq/use-and-care-home-humidifiers" },
+    { "what": "EPA 실내 상대습도 상한", "value": "50% 초과 금지", "asOf": "EPA 페이지, 2026-11-10 열람", "sourceUrl": "https://www.epa.gov/indoor-air-quality-iaq/use-and-care-home-humidifiers" },
+    { "what": "EPA 제조사 지침 없을 때 소독용 과산화수소 농도", "value": "3% 용액", "asOf": "EPA 페이지, 2026-11-10 열람", "sourceUrl": "https://www.epa.gov/indoor-air-quality-iaq/use-and-care-home-humidifiers" },
+    { "what": "CPSC 5갤런 미만 휴대형 살균 주기", "value": "7일마다 (5갤런 이상은 2주마다)", "asOf": "1992-01-27 (오래된 자료)", "sourceUrl": "https://www.cpsc.gov/Newsroom/News-Releases/1992/Portable-Humidifiers-Need-Regular-Cleaning-During-Winter-Months" },
+    { "what": "CPSC 표백제 희석 비율과 담금 시간", "value": "물 1갤런당 1티스푼, 20분", "asOf": "1992-01-27 (오래된 자료)", "sourceUrl": "https://www.cpsc.gov/Newsroom/News-Releases/1992/Portable-Humidifiers-Need-Regular-Cleaning-During-Winter-Months" },
+    { "what": "CPSC 식초 세척 비율", "value": "식초:물 = 1:1", "asOf": "1992-01-27 (오래된 자료)", "sourceUrl": "https://www.cpsc.gov/Newsroom/News-Releases/1992/Portable-Humidifiers-Need-Regular-Cleaning-During-Winter-Months" },
+    { "what": "2011 한국 정부 안내 — 진동자·물통 닦기 주기", "value": "이틀마다", "asOf": "2011-11-04 (기준일 오래됨)", "sourceUrl": "https://www.korea.kr/news/healthView.do?newsId=148721624" },
+    { "what": "2011 한국 정부 안내 — 중성세제 세척 주기와 헹굼 횟수", "value": "주 1회, 3회 이상 헹굼", "asOf": "2011-11-04 (기준일 오래됨)", "sourceUrl": "https://www.korea.kr/news/healthView.do?newsId=148721624" },
+    { "what": "2011 한국 정부 안내 — 새 물 담기 전 물통 헹굼", "value": "물통의 5분의 1가량 물을 넣고 흔들어 2회 이상", "asOf": "2011-11-04 (기준일 오래됨)", "sourceUrl": "https://www.korea.kr/news/healthView.do?newsId=148721624" },
+    { "what": "2011 KTV — 세척 안 하면 세균이 급격히 느는 기간", "value": "2~3일 (구체 세균 수치 없음)", "asOf": "2011-10-20", "sourceUrl": "https://www.korea.kr/news/policyNewsView.do?newsId=148720489" },
+    { "what": "2011 KTV 적정 실내습도", "value": "50% 정도", "asOf": "2011-10-20", "sourceUrl": "https://www.korea.kr/news/policyNewsView.do?newsId=148720489" },
+    { "what": "LG전자 구연산 세척액 (일반 안내)", "value": "물 5L에 구연산 15g, 1~2시간 이상 담금", "asOf": "게시일 미표기, 2026-11-10 열람", "sourceUrl": "https://www.lge.co.kr/support/solutions-20150234154387" },
+    { "what": "LG전자 구연산 세척액 (가열식)", "value": "물 10L에 구연산 30g, 30분~1시간 불림", "asOf": "게시일 미표기, 2026-11-10 열람", "sourceUrl": "https://www.lge.co.kr/support/solutions-20150665942827" },
+    { "what": "LG전자 가열식 스케일 필터 세척·교체 주기", "value": "2~3일에 한 번 세척, 약 2개월 이상이면 교체", "asOf": "게시일 미표기, 2026-11-10 열람", "sourceUrl": "https://www.lge.co.kr/support/solutions-20150665942827" },
+    { "what": "삼성 기화식 필터 세척 물 온도", "value": "40℃ 미만 (40℃ 이상은 필터 변형)", "asOf": "게시일 미표기, 2026-11-10 열람", "sourceUrl": "https://www.samsungsvc.co.kr/solution/37605" },
+    { "what": "매일 물 교체 시 미생물 감소율 (한국소비자원 조사를 농민신문이 인용 — 소비자원 원문 미확인)", "value": "87.3%", "asOf": "기사 2025-12-09", "sourceUrl": "https://v.daum.net/v/GxK3qix2AO" },
+    { "what": "농민신문 보도 적정 습도 범위", "value": "40~60%", "asOf": "기사 2025-12-09", "sourceUrl": "https://v.daum.net/v/GxK3qix2AO" },
+    { "what": "농민신문 보도 설치 거리", "value": "바닥에서 1m 이상, 코에서 2m 이상", "asOf": "기사 2025-12-09", "sourceUrl": "https://v.daum.net/v/GxK3qix2AO" },
+    { "what": "농민신문 보도 세척 주기", "value": "이틀에 한 번", "asOf": "기사 2025-12-09", "sourceUrl": "https://v.daum.net/v/GxK3qix2AO" },
+    { "what": "한국소비자원 가습기 13종 시간당 가습량", "value": "182~606ml/h (최대 3.3배 차이)", "asOf": "소비자시대 2025년 12월호", "sourceUrl": "https://www.kca.go.kr/webzine/board/view?menuId=MENU00307&linkId=954&div=kca_2512" },
+    { "what": "한국소비자원 연간 유지관리비 (초음파식 vs 가열식)", "value": "초음파 4,640~6,420원 / 가열식 72,750~91,070원", "asOf": "소비자시대 2025년 12월호", "sourceUrl": "https://www.kca.go.kr/webzine/board/view?menuId=MENU00307&linkId=954&div=kca_2512" },
+    { "what": "한국소비자원 가열식 3개 제품 증기 토출부 최고 온도", "value": "99℃ (제품 표면 최대 55℃, 수조 내 물 100℃ 이상)", "asOf": "소비자시대 2025년 12월호", "sourceUrl": "https://www.kca.go.kr/webzine/board/view?menuId=MENU00307&linkId=954&div=kca_2512" },
+    { "what": "2019 환경부 행정예고 — 가습기 등에 넣어 쓰는 생활화학제품 제조·수입 금지 예고 시작일 (예고안, 최종 시행 미확인)", "value": "2021-01-01", "asOf": "행정예고 2019-11-26", "sourceUrl": "https://www.korea.kr/news/policyNewsView.do?newsId=156363086" }
+  ],
+  "sources": [
+    {
+      "title": "Use and Care of Home Humidifiers (US EPA)",
+      "url": "https://www.epa.gov/indoor-air-quality-iaq/use-and-care-home-humidifiers",
+      "host": "epa.gov",
+      "tier": "official",
+      "body": "EPA 가정용 가습기 사용·관리 페이지(WebFetch 원문 발췌). 물: 'Use water with low mineral content, such as distilled water, to prevent releasing minerals into the air.' 증류수가 미네랄을 가장 많이 제거하고, 탈이온수·역삼투수는 덜 효과적이지만 줄여준다. spring/artesian/mineral 표기 병물은 탈미네랄 처리가 아님. 세척: 'Clean portable humidifiers every third day.' 탱크를 비우고 솔로 문질러 물때(scale)·막을 제거, 모든 표면을 닦아 말린다(먼저 플러그 뽑기). 제조사 지침이 없으면 물과 닿는 모든 표면을 3% 과산화수소 용액으로 닦는다. 물 교체: 'refill the water in portable humidifiers daily'(휴대형은 비우고 닦아 말린 뒤 매일 새 물). 탱크에 물을 오래 두지 말 것. 습도: 'Do not humidify to indoor relative humidity levels exceeding 50 percent.' 세정·소독제를 쓰면 화학물질이 공기 중으로 나가지 않도록 수돗물로 여러 번 충분히 헹굴 것. 유형별: 초음파식·임펠러식이 일반적으로 미생물·미네랄을 가장 많이 퍼뜨림, 기화식은 고인 물에 미생물이 살 수 있으나 입자 방출은 적음, 스팀식도 미생물이 살 수 있으나 미네랄 방출은 적음. 향·오일 등 첨가제는 이 페이지에서 다루지 않음."
+    },
+    {
+      "title": "Portable Humidifiers Need Regular Cleaning During Winter Months (CPSC, 1992-01-27)",
+      "url": "https://www.cpsc.gov/Newsroom/News-Releases/1992/Portable-Humidifiers-Need-Regular-Cleaning-During-Winter-Months",
+      "host": "cpsc.gov",
+      "tier": "official",
+      "body": "미국 소비자제품안전위원회(CPSC) 1992년 1월 27일 보도자료(WebFetch 원문 발췌, 오래된 자료라 최신 제조사 지침 우선). 새 휴대형 가습기는 쓰기 전 청소. 5갤런 미만 제품은 매일 비우고 새 물로 채우며 7일마다 살균(sanitize), 5갤런 이상은 2주마다 살균. 시즌 시작 전 청소, 보관 전 살균 후 완전 건조. 표백제 용액: 물 1갤런당 표백제 1티스푼, 20분 담근 뒤 표백제 냄새가 사라질 때까지 헹굼. 식초 용액: 식초와 물 1:1, 물때·미네랄 침전 제거용. 부드러운 솔·수건 사용. 청소·급수 전 플러그 뽑기. 공기가 잘 순환하는 곳에 두고, 벽·창에 물기가 맺히면 과가습의 신호. 대상: 스팀식, 임펠러식, 초음파식, 온풍식, 기화식(난로 부착형 제외). 제조사 지침 우선."
+    },
+    {
+      "title": "가습기, 안전하게 사용하기 위한 세척요령 (정책브리핑 정책뉴스 — 2011.11.4, 보건복지부·질병관리본부 발표 내용 인용)",
+      "url": "https://www.korea.kr/news/healthView.do?newsId=148721624",
+      "host": "korea.kr",
+      "tier": "official",
+      "body": "대한민국 정책브리핑 정책뉴스(원 기사는 하이닥, 보건복지부·질병관리본부 발표 내용). 기준일 2011-11-04로 오래됨. 물 교체: 하루에 한 번 물을 갈아 주고, 새 물을 담기 전 물통에 물을 5분의 1가량 넣고 흔들어 2회 이상 헹굼. 하루가 지난 물은 남아 있어도 버리고 새 물로 교체. 세척: 세척 전 손 씻기, 진동자 부분과 물통은 이틀마다 부드러운 스폰지나 천으로 닦고, 일주일에 한 번은 중성 세제로 세척하며 세제가 남지 않도록 3회 이상 헹굼. 락스, 비누, 알칼리성·산성 세제, 기름 성분이 있는 유기 세제는 사용 금지. 진동자도 물통과 함께 세척하고 세제가 남지 않게 천으로 닦음. 2~3일 이상 안 썼으면 사용 전 물통·진동자를 씻음. 분무유도관·분출구는 일주일에 한 번 솔이나 천으로 닦음. 보관: 사용하지 않을 때 물통과 진동자 부분 물을 제거하고 건조 상태로 보관. 원문은 가습기살균제 사용을 권고하지 않는다는 내용도 포함. 습도 기준은 본문에 없음."
+    },
+    {
+      "title": "가습기 13종 품질비교! 가습량·유지관리비 등 차이 있어 (한국소비자원 소비자시대 2025년 12월호)",
+      "url": "https://www.kca.go.kr/webzine/board/view?menuId=MENU00307&linkId=954&div=kca_2512",
+      "host": "kca.go.kr",
+      "tier": "data",
+      "body": "한국소비자원 웹진 2025년 12월호(게시일 별도 명시 없음, 호수 기준). 가습기 13종 시험: 시간당 가습량 제품 간 최대 3.3배 차이(182~606ml/h). 가습 면적 환산 12.9~42.9㎡. 연간 유지관리비: 초음파식 4,640~6,420원, 가열식 72,750~91,070원, 기화식 5,330~108,330원, 복합식 15,780~189,290원. 가열식 3개 제품 증기 토출부 최대 99℃, 제품 표면 최대 55℃, 수조 내부 물 100℃ 이상. 세척 권장: 수조는 물을 주기적으로 교체하고 잔여물이 남지 않게 충분히 세척, 진동자는 흐르는 물이나 부드러운 솔로 조심스럽게 닦기, 증기 토출부 먼지 정기 제거, 장시간 보관 후에는 세척 없이 바로 사용하지 말 것. 구체적 세척 주기 일수는 없음."
+    },
+    {
+      "title": "가습기 청소 안내 — LG전자 고객지원 (물 5L에 구연산 15g)",
+      "url": "https://www.lge.co.kr/support/solutions-20150234154387",
+      "host": "lge.co.kr",
+      "tier": "official",
+      "body": "LG전자 고객지원 페이지(WebFetch 원문 발췌). 세척 용액: 물 5L에 구연산 15g 희석. 방법: 가습필터, 수조, 물통을 1~2시간 이상 담근 뒤 청소솔로 부드럽게 문질러 세척. 헹굼: 흐르는 물에 거품이 남지 않을 때까지 충분히 헹굼. 건조: '세척 후 바로 조립하지 말고 완전히 건조시킨 뒤 사용하세요.' 세척 주기는 명시되어 있지 않고, 냄새가 남으면 필터 교체 시기일 수 있으니 사용설명서의 필터 교체 주기를 확인하라는 안내만 있음. 사용 금지 세제는 이 페이지에 없음. 모델별 청소 구조가 다르니 사용설명서 확인."
+    },
+    {
+      "title": "가열식 가습기 관리 — LG전자 고객지원 (물 10L에 구연산 30g)",
+      "url": "https://www.lge.co.kr/support/solutions-20150665942827",
+      "host": "lge.co.kr",
+      "tier": "official",
+      "body": "LG전자 고객지원 페이지(WebFetch 원문 발췌). 가열식: 물 10L(2.6gal)에 구연산 30g(1oz) 희석, 물통과 수조부를 30분~1시간 불린 뒤 세척. 보일러 부분 스케일이 단단히 굳었으면 완전히 제거되지 않을 수 있음. 스케일 필터는 2~3일에 한 번 세척, 약 2개월 이상 지나면 교체. 가열식 항목에는 금지 세제 명시 없음(에어워셔 큰 먼지 필터는 세제 사용 금지). 초음파·복합식 기준: 전용 솔이나 부드러운 수건으로 진동자와 수조를 닦음. 10분 이상 가동해도 바람만 나오고 분무가 안 되면 진동자 노후·불량 의심."
+    },
+    {
+      "title": "삼성전자서비스 — 가습이 안 될 때(기화식 필터 세척) 안내",
+      "url": "https://www.samsungsvc.co.kr/solution/37605",
+      "host": "samsungsvc.co.kr",
+      "tier": "official",
+      "body": "삼성전자서비스 솔루션 페이지(WebFetch 원문 발췌). 가습이 안 될 때 점검: 가스켓을 빼고 조립했거나 필터 케이스 후크가 완전히 잠기지 않으면 물을 끌어올리지 못함. 필터 세척 권장: '중성세제를 탄 40 ℃ 미만의 미지근한 물로 주무르듯이 세척 후 충분히 헹군 후 짜지 말고 털어서 자연상태로 건조시켜 주세요.' 40℃ 이상 뜨거운 물은 필터가 줄거나 변형돼 가습이 잘 안 됨. 세탁기 세탁은 표면 변화·보풀로 가습량에 영향. 희망 습도를 현재 습도보다 높게 설정해야 가습됨. 이 제품은 초음파식보다 습도가 천천히 오름. 세척 주기·세제 종류 상세는 이 페이지에 없고 사용설명서 확인 안내."
+    },
+    {
+      "title": "잘못쓰면 '세균·곰팡이' 뿜뿜…겨울 필수템 '가습기' 관리·사용법 (농민신문, 다음 뉴스)",
+      "url": "https://v.daum.net/v/GxK3qix2AO",
+      "host": "v.daum.net",
+      "tier": "press",
+      "body": "농민신문 김미혜 기자, 2025년 12월 9일 15:00(WebFetch 요약). 물 교체: 매일. 한국소비자원 조사 인용 '매일 물을 교체하면 미생물이 87.3% 감소'. 세척: '이틀에 한 번 하는 것이 가장 효과적'. 세제: 베이킹소다·식초·소금을 물에 풀어 헹군 뒤 청소 솔로 물통과 분무구를 닦고 완전히 말림. 적정 습도 40~60%, 40% 미만이면 호흡기 점막이 마르고 60%를 넘으면 곰팡이와 집먼지진드기가 번식하기 쉬움. 설치 거리: 바닥에서 1m 이상, 코에서 2m 이상 떨어뜨리고 분무구는 허공을 향하게. 근거: 한국소비자원 '가습기내 유해미생물 안전실태조사'(기사 인용, 원문 미확인)."
+    },
+    {
+      "title": "가습기, 잦은 세척으로 세균 막아야 (KTV 한국정책방송, 정책브리핑 2011.10.20)",
+      "url": "https://www.korea.kr/news/policyNewsView.do?newsId=148720489",
+      "host": "korea.kr",
+      "tier": "press",
+      "body": "KTV 한국정책방송 보도를 정책브리핑이 게시(2011.10.20, WebFetch 요약). 기준일 오래됨. 2~3일만 세척하지 않아도 세균 수가 급격히 늘어남. 초음파식 가습기는 자주 세척하지 않으면 물속 세균이 호흡기에 영향을 줄 수 있음. '물은 하루만 사용하고 남은 물은 버리는 것이 좋습니다.' 가습기 구석구석 물때를 제거해야 세균 증식을 막을 수 있고, 실내습도는 50% 정도가 적당, 장시간 사용 후 환기로 곰팡이·진드기 증식을 막으라고 안내. 구체적 세균 수치·세제 종류·가습기살균제 언급은 없음."
+    },
+    {
+      "title": "안전확인 대상 생활화학제품 고시 개정 행정예고 (정책브리핑 정책뉴스, 2019.11.26)",
+      "url": "https://www.korea.kr/news/policyNewsView.do?newsId=156363086",
+      "host": "korea.kr",
+      "tier": "official",
+      "body": "환경부 브리핑을 정책브리핑이 게시(2019.11.26, WebFetch 요약). 고시 개정안(행정예고): 2021년 1월 1일부터 가습기 등 전기기기에 넣어 쓰는 생활화학제품의 제조·수입을 금지하되 기업이 안전성을 스스로 입증한 제품은 예외. 공기청정기·에어컨 등 항균필터 제품에 가습기살균제 원인물질 5종을 함유금지물질로 지정. 최종 시행 내용과 현행 법령 현황은 미확인이므로 최신 확인 필요."
+    }
+  ],
+  "dropped": [
+    {
+      "url": "https://m.korea.kr/briefing/actuallyView.do?newsId=148923064",
+      "why": "가습기 장착형 살균필터가 가습기살균제 분담금 부과 대상인지에 관한 환경부 반박 설명(2023-11-24). 가습기 세척 방법과 무관하고, 환경부 주장이라 독립 검증도 안 됨. 법적 논쟁이라 환각·단정 위험만 큼."
+    }
+  ]
+}
