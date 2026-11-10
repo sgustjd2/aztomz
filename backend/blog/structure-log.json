@@ -1,24 +1,5 @@
 [
   {
-    "slug": "broccoli-wash-guide",
-    "categoryId": "hangeut-trend",
-    "date": "2026-10-10",
-    "h2": [
-      "준비물은 큰 그릇과 물, 소금은 고르기에 따라요",
-      "걱정거리는 둘, 송이 사이 이물과 잔류농약이에요",
-      "방법 하나, 소금물에 30분 담가요",
-      "방법 둘, 물에 약 10분 담그고 흔들어요",
-      "두 안내를 한 표로 놓으면",
-      "식초나 베이킹소다를 꼭 풀어야 할까요",
-      "씻은 뒤엔 살짝 데치고 줄기도 먹어요",
-      "남은 브로콜리는 사과부터 떼어 놓아요, 둘 곳은 안내가 달라요",
-      "막히면, 보도가 알려 준 대처",
-      "한 장으로 줄이면",
-      "이 글에 쓴 자료"
-    ],
-    "closingClichePatterns": []
-  },
-  {
     "slug": "shrimp-prep-guide",
     "categoryId": "hangeut-trend",
     "date": "2026-10-10",
@@ -3265,20 +3246,6 @@
     "closingClichePatterns": []
   },
   {
-    "slug": "suwon-hwaseong-night-view",
-    "categoryId": "hangeut-trend",
-    "date": "2026-11-10",
-    "h2": [
-      "달빛화담·미디어아트는 공식 기간이 끝났어요",
-      "그래도 성곽길은 밤에 열려 있어요",
-      "방화수류정과 용연은 2025년 기사로만 확인돼요",
-      "차를 가져간다면 주차 요금부터 챙겨요",
-      "아직 확인되지 않은 사항",
-      "수원시·기사 원문 모음"
-    ],
-    "closingClichePatterns": []
-  },
-  {
     "slug": "dryer-filter-cleaning",
     "categoryId": "life-info",
     "date": "2026-11-10",
@@ -3290,6 +3257,33 @@
       "이번엔 답을 못 찾은 질문",
       "정리",
       "확인한 제조사 안내 링크"
+    ],
+    "closingClichePatterns": []
+  },
+  {
+    "slug": "suwon-hwaseong-night-view",
+    "categoryId": "hangeut-trend",
+    "date": "2026-11-11",
+    "h2": [
+      "달빛화담·미디어아트는 공식 기간이 끝났어요",
+      "그래도 성곽길은 밤에 열려 있어요",
+      "방화수류정과 용연은 2025년 기사로만 확인돼요",
+      "차를 가져간다면 주차 요금부터 챙겨요",
+      "아직 확인되지 않은 사항",
+      "수원시·기사 원문 모음"
+    ],
+    "closingClichePatterns": []
+  },
+  {
+    "slug": "hwangridan-gil-gyeongju",
+    "categoryId": "hangeut-trend",
+    "date": "2026-11-11",
+    "h2": [
+      "한 줄로 말하면",
+      "이름은 왜 서울 경리단길을 닮았을까요",
+      "지금은 식은 걸까요, 뜨거운 걸까요",
+      "가기 전에 알아두면 좋아요",
+      "정리"
     ],
     "closingClichePatterns": []
   }
