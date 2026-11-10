@@ -1,25 +1,5 @@
 [
   {
-    "slug": "windows-battery-report",
-    "categoryId": "hangeut-trend",
-    "date": "2026-10-10",
-    "h2": [
-      "시작 전에: 준비물은 노트북과 명령 프롬프트, 그리고 사전 점검 하나예요",
-      "1단계 — Win+R로 명령 프롬프트를 열어요",
-      "2단계 — 명령을 한 줄만 입력해요",
-      "3단계 — 만들어진 HTML 파일을 브라우저로 열어요",
-      "4단계 — Installed batteries에서 새 물통과 지금 물통을 견줘요",
-      "5단계 — Recent usage와 Battery life estimates로 체감과 맞춰 봐요",
-      "파일 이름이나 분석 기간을 정하고 싶다면",
-      "이름이 비슷한 /energy는 다른 일을 하는 명령이에요",
-      "막히면 — 파일이 안 나오거나 숫자가 미심쩍을 때",
-      "리포트 숫자만으로는 답하지 못하는 질문들",
-      "정리",
-      "참고"
-    ],
-    "closingClichePatterns": []
-  },
-  {
     "slug": "windows-clipboard-history",
     "categoryId": "hangeut-trend",
     "date": "2026-10-10",
@@ -3314,6 +3294,21 @@
       "가려울 때는 주의하세요",
       "아직 확인되지 않은 사항",
       "참고 자료"
+    ],
+    "closingClichePatterns": []
+  },
+  {
+    "slug": "ijaemo-pizza-busan-waiting",
+    "categoryId": "hangeut-trend",
+    "date": "2026-11-10",
+    "h2": [
+      "순위 1위부터 5위까지 한 브랜드",
+      "한 곳이던 가게가 지점으로 늘어난 길",
+      "줄 서서 먹는 메뉴는 뭘까요",
+      "치즈가 바뀌었다는 말, 맛도 달라졌을까요",
+      "줄 서기 전에 챙겨볼 것",
+      "지금도 이 정도로 붐빌까요",
+      "출처로 삼은 기사와 후기"
     ],
     "closingClichePatterns": []
   }
