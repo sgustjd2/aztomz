@@ -54,9 +54,10 @@ export function heldReason(code, mode = 'auto') {
   return explain({ outcome: 'no_publish', mode, heldItems: [{ code }] }).why;
 }
 
-// 디스코드 결과 메시지: 제목 줄 · 결과 한 줄 · 이유 · 조치 (없는 줄은 뺀다)
+// 디스코드 결과 메시지: [제목 줄 · 결과 한 줄] 빈 줄 [이유 · 조치] (없는 줄은 뺀다). 이모지는 제목 1개만.
 export function resultMessage({ icon, head, subject, counts, why, action }) {
   const c = counts && `게시 ${counts.published ?? 0} · 보류 ${counts.held ?? 0} · 실패 ${counts.failed ?? 0}`;
-  return [`${icon} **${head}**${subject ? ` · ${subject}` : ''}`, c, why && `이유: ${why}`, action && `조치: ${action}`]
-    .filter(Boolean).join('\n');
+  const top = [`${icon} **${head}**${subject ? ` · ${subject}` : ''}`, c].filter(Boolean).join('\n');
+  const body = [why && `이유: ${why}`, action && `조치: ${action}`].filter(Boolean).join('\n');
+  return [top, body].filter(Boolean).join('\n\n');
 }

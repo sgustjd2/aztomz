@@ -138,12 +138,17 @@ async function readQueue() {
   const r = await node('pipeline-review.mjs', '--list', '--json');
   return r.ok ? JSON.parse(r.out || '[]') : null;
 }
-// 검수 카드: 제목 줄 · 보류 이유(사람 말) · 출처 · id · 이모지 설명. ITEM_HEAD·`id:` 줄은 classify()가 읽으니 유지.
-const VERDICT_ICON = { 정확: '✅', 약함: '⚠️', 무관: '❌', 차단: '🚫', 죽음: '💀' };
+// 검수 카드: 제목 · 이유 / 출처 / id · 이모지 설명 — 블록 사이 빈 줄, 본문 이모지 없이 •. ITEM_HEAD·`id:` 줄은 classify()가 읽으니 유지.
+// 링크는 [출처명](<url>) — 디스코드 일반 메시지도 마스킹 링크를 그린다(<>는 미리보기 끔). 출처명이 없으면 '출처 N'.
+const VERDICT_WORD = { 정확: '내용 확인', 약함: '내용 약함', 무관: '주제 없음', 차단: '본문 못 읽음', 죽음: '안 열림' };
+export const shortLink = (name, url, i = 0) => `[${String(name || `출처 ${i + 1}`).replace(/[[\]()<>]/g, '').slice(0, 30)}](<${url}>)`;
 export function itemCard(h) {
-  const srcs = (h.checks || []).slice(0, 3).map((c) => `${VERDICT_ICON[c.verdict] || '•'} <${c.url}>`).join('\n');
-  return [`${ITEM_HEAD} · [${h.cat || '?'}] **${h.title}**`, `이유: ${heldReason(h.code)}`, srcs, `id: \`${h.id}\``,
-    legend(ITEM_OPTIONS), `⏰ ${AUTO_HOURS}시간 안에 반응이 없으면 자동 게시돼요(⏸️ 누르면 안 함)`].filter(Boolean).join('\n');
+  const srcs = (h.checks || []).slice(0, 3).map((c, i) => `• ${shortLink(c.name, c.url, i)} — ${VERDICT_WORD[c.verdict] || c.verdict || '확인 안 됨'}`);
+  return [
+    [`${ITEM_HEAD} · [${h.cat || '?'}] **${h.title}**`, `이유: ${heldReason(h.code)}`].join('\n'),
+    srcs.length && ['출처', ...srcs].join('\n'),
+    [`id: \`${h.id}\``, legend(ITEM_OPTIONS), `${AUTO_HOURS}시간 안에 반응이 없으면 자동 게시돼요(⏸️ 누르면 안 함).`].join('\n'),
+  ].filter(Boolean).join('\n\n');
 }
 async function showItem(ch, h) {
   const m = await send(ch, itemCard(h));
