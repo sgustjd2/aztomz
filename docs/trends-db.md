@@ -20,3 +20,9 @@
 - 메인의 최신 trends.json(286건)을 import → export: `diff`·`cmp` 모두 비어 있음(바이트 동일), `--verify` OK. 재import 해도 `trends_history` 0행(내용 불변이면 이력 안 남음).
 - export 결과에 `validate-trends.mjs` 통과(286건, cat 7분류, id 유니크).
 - 참고: 데이터는 281건이 아니라 286건.
+
+## P1 — trends.json → DB 미러 (2026-11-10)
+- `trends-db.mjs --mirror`: 파일 sha1 이 `backend/out/pipeline/trends-mirror.json` 의 기록과 같으면 아무것도 안 함(네트워크 호출 없음). 다르면 import. 파싱 실패(쓰는 중)·빈 배열은 건너뛰고, 항목 수가 직전보다 10%+ 줄면 거부(`--force` 로 우회).
+- launchd: `tools/mac/com.az2mz.trends-mirror.plist`(WatchPaths = 메인 `backend/data/trends.json` + 10분 간격 보험) → `tools/mac/job.sh trends-mirror` → 로그 `backend/out/pipeline/trends-mirror.log`. **이 브랜치가 메인에 합쳐진 뒤에** `cp` → `launchctl load` 로 설치한다(지금은 설치 안 함 — 메인 job.sh 에 케이스가 없다).
+- 한 방향(JSON→DB)이다. 대시보드에서 고친 값은 다음 미러 때 JSON 값으로 덮인다(history 에는 남음). 대시보드 편집을 살리는 건 P2(DB 원본 전환).
+- 시험(수동, 스크래치 파일): 첫 실행 import · 재실행 무동작 · 100건으로 줄인 파일 거부 · 깨진 파일 건너뜀 · 제목 수정 반영+원복 모두 확인. 이때 `trends_history` 에 시험 행 2건(dubai-choco)이 남았다(service_role 에 삭제 권한이 없어 둠).

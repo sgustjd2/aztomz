@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key><string>com.az2mz.trends-mirror</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>/bin/bash</string>
+    <string>-c</string>
+    <string>/bin/bash "$HOME/workspace/side_project/aztomz/tools/mac/job.sh" trends-mirror</string>
+  </array>
+  <!-- trends.json 이 바뀌면 바로, 못 잡았을 때를 위해 10분마다 한 번 더. 바뀐 게 없으면 스크립트가 아무것도 안 한다 -->
+  <key>WatchPaths</key>
+  <array>
+    <string>/Users/hsmin/workspace/side_project/aztomz/backend/data/trends.json</string>
+  </array>
+  <key>StartInterval</key><integer>600</integer>
+  <key>ThrottleInterval</key><integer>60</integer>
+</dict>
+</plist>

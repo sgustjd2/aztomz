@@ -52,9 +52,10 @@ case "$1" in
       echo "===== hourly drafting failed [$cat] with exit code $rc $(date)" >> $B/blog-hourly-naver.log
     fi ;;
   blog-queue)             node backend/scripts/blog-queue.mjs --max-per-run=1 >> $B/blog-queue.log 2>&1 ;;
+  trends-mirror)          mkdir -p backend/out/pipeline; node backend/scripts/trends-db.mjs --mirror >> backend/out/pipeline/trends-mirror.log 2>&1 ;;
   discord-reactions)      exec node backend/scripts/discord-reactions.mjs >> backend/out/discord-reactions.log 2>&1 ;;
   tistory-daily-session)  { echo "===== $(date)"; node backend/scripts/blog-publish.mjs --daily-session; } >> $B/tistory-daily-session.log 2>&1 ;;
   tistory-keepalive)      node backend/scripts/blog-publish.mjs --keepalive >> $B/tistory-keepalive.log 2>&1 ;;
   hermes-autoupdate)      { echo "===== $(date)"; hermes update; } >> "$HERMES_HOME/logs/autoupdate.log" 2>&1 ;;
-  *) echo "usage: job.sh blog-daily|naver-hourly|blog-queue|discord-reactions|tistory-daily-session|tistory-keepalive|hermes-autoupdate" >&2; exit 2 ;;
+  *) echo "usage: job.sh trends-mirror|blog-daily|naver-hourly|blog-queue|discord-reactions|tistory-daily-session|tistory-keepalive|hermes-autoupdate" >&2; exit 2 ;;
 esac

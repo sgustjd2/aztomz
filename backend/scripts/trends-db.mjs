@@ -6,12 +6,15 @@
    node backend/scripts/trends-db.mjs --import [--file=경로]        trends.json → DB upsert (DB 에만 있는 행은 지우지 않음)
    node backend/scripts/trends-db.mjs --export [--out=파일]         DB → trends.json 형식(기본: 표준출력)
    node backend/scripts/trends-db.mjs --verify [--file=경로]        DB 를 내보낸 결과와 파일을 비교(다르면 exit 1)
+   node backend/scripts/trends-db.mjs --mirror [--file=경로] [--force]  파일이 바뀌었을 때만 import(launchd 용 · P1). 파일 내용 해시를
+                                                                      backend/out/pipeline/trends-mirror.json 에 기록, 항목 수가 DB 보다 10%+ 줄면 거부
    node backend/scripts/trends-db.mjs --selftest                    네트워크 없이 변환 로직 시험
 
    자격증명: 환경변수 또는 레포 루트 .env 의 SUPABASE_URL · SUPABASE_SECRET_KEY (secret 키는 출력하지 않는다).
    worktree 에 .env 가 없으면 메인 체크아웃의 .env 를 읽는다.
    ============================================================ */
-import { readFileSync, writeFileSync, existsSync } from 'node:fs';
+import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'node:fs';
+import { createHash } from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 import { dirname, join, resolve } from 'node:path';
 import { execFileSync } from 'node:child_process';
@@ -133,6 +136,26 @@ async function cmdImport(file) {
   console.log(`import: ${trends.length}건 upsert (DB 총 ${dbRows.length}건)` + (extra.length ? ` · DB에만 있는 ${extra.length}건: ${extra.slice(0, 5).join(', ')}` : ''));
 }
 
+// P1: 봇이 trends.json 을 쓰면 DB 로 한 방향 미러. 바뀐 게 없으면 네트워크 호출 없이 끝난다.
+const MIRROR_STATE = join(ROOT, 'backend', 'out', 'pipeline', 'trends-mirror.json');
+async function cmdMirror(file, force) {
+  const raw = readFileSync(file, 'utf8');
+  const hash = createHash('sha1').update(raw).digest('hex');
+  let prev = {};
+  try { prev = JSON.parse(readFileSync(MIRROR_STATE, 'utf8')); } catch {}
+  if (!force && prev.hash === hash) return;  // 변경 없음
+  let d;
+  try { d = JSON.parse(raw); } catch { console.log(`mirror: ${file} 파싱 실패(쓰는 중일 수 있음) — 건너뜀`); return; }
+  if (!Array.isArray(d.trends) || !d.trends.length) { console.log('mirror: trends 배열이 비었음 — 건너뜀'); return; }
+  if (!force && prev.count && d.trends.length < prev.count * 0.9) {
+    console.log(`mirror: 항목이 ${prev.count} → ${d.trends.length}건으로 크게 줄어 거부(의도한 것이면 --force)`);
+    process.exitCode = 1; return;
+  }
+  await cmdImport(file);
+  mkdirSync(dirname(MIRROR_STATE), { recursive: true });
+  writeFileSync(MIRROR_STATE, JSON.stringify({ hash, count: d.trends.length, at: new Date().toISOString() }));
+}
+
 async function exportText() {
   const { rows, generatedAt } = await fetchAll(client());
   return { text: serialize(generatedAt, rows.map(fromRow)), count: rows.length };
@@ -203,9 +226,10 @@ const file = opt('file') ? resolve(opt('file')) : DEFAULT_FILE;
 try {
   if (args.includes('--selftest')) selftest();
   else if (args.includes('--import')) await cmdImport(file);
+  else if (args.includes('--mirror')) await cmdMirror(file, args.includes('--force'));
   else if (args.includes('--export')) await cmdExport(opt('out') && resolve(opt('out')));
   else if (args.includes('--verify')) await cmdVerify(file);
-  else console.log('사용법: trends-db.mjs --import|--export [--out=파일]|--verify|--selftest [--file=trends.json]');
+  else console.log('사용법: trends-db.mjs --import|--export [--out=파일]|--verify|--mirror [--force]|--selftest [--file=trends.json]');
 } catch (e) {
   console.error('오류:', e.message);
   process.exitCode = 1;
