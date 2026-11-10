@@ -12,7 +12,7 @@
 
    실행 (레포 루트에서):
      node backend/scripts/blog-queue.mjs --list            # 대기열만 보기
-     node backend/scripts/blog-queue.mjs                   # 발행 (기본: T1/N16·20~40분 간격·7일 이내)
+     node backend/scripts/blog-queue.mjs                   # 발행 (기본: T1/N7·네이버 회차 간격 100분 이상·7일 이내)
      node backend/scripts/blog-queue.mjs --max-tistory=1 --max-naver=16 --max-per-run=1 --max-age=7
      node backend/scripts/blog-queue.mjs --max=5 --only=naver # --max는 양 플랫폼 공통 한도로 유지
      node backend/scripts/blog-queue.mjs --selftest
@@ -54,6 +54,37 @@ export function candidates(posts, postedAll, platform, today, maxAgeDays) {
     .map((p) => p.id);
 }
 
+/* ── 유사도 검사(2026-11-10 네이버 보호조치 후): 새 글을 최근 30일에 올린 네이버 글과 비교한다 ──
+   제목(글자 2-gram), 소제목(h2) 구조, 본문(단어 3-gram), 태그를 보고 기준을 넘으면 발행하지 않는다. */
+const strip = (h) => h.replace(/<script[\s\S]*?<\/script>|<style[\s\S]*?<\/style>/g, ' ').replace(/<[^>]+>/g, ' ');
+const grams = (arr, n) => { const o = new Set(); for (let i = 0; i + n <= arr.length; i++) o.add(arr.slice(i, i + n).join(' ')); return o; };
+const jac = (a, b) => { if (!a.size || !b.size) return 0; let c = 0; for (const x of a) if (b.has(x)) c++; return c / (a.size + b.size - c); };
+const normT = (s) => String(s || '').toLowerCase().replace(/[^0-9a-z가-힣]/g, '');
+export function fingerprint({ meta, html }) {
+  const t = normT(meta.title);
+  return {
+    title: grams([...t], 2),
+    h2: new Set([...html.matchAll(/<h2[^>]*>([\s\S]*?)<\/h2>/g)].flatMap((m) => strip(m[1]).toLowerCase().replace(/[^0-9a-z가-힣 ]/g, '').split(/\s+/)).filter((w) => w.length >= 2)),
+    body: grams(strip(html).split(/\s+/).filter(Boolean), 3),
+    tags: new Set((meta.tags || []).map(normT)),
+  };
+}
+export const SIM_LIMIT = { title: 0.5, h2: 0.3, body: 0.3, tags: 5 };   // h2 는 소제목 단어 집합의 자카드(소제목 틀이 닮았는지)
+/* 반환: 걸린 이유 문자열, 통과면 ''. recent = [{id, fp}] */
+export function similarTo(fp, recent) {
+  for (const r of recent) {
+    const t = jac(fp.title, r.fp.title);
+    if (t >= SIM_LIMIT.title) return `제목 유사(${t.toFixed(2)}) ↔ ${r.id}`;
+    const h = jac(fp.h2, r.fp.h2);
+    if (fp.h2.size >= 8 && h >= SIM_LIMIT.h2) return `소제목 틀 유사(${h.toFixed(2)}) ↔ ${r.id}`;
+    const b = jac(fp.body, r.fp.body);
+    if (b >= SIM_LIMIT.body) return `본문 유사(${b.toFixed(2)}) ↔ ${r.id}`;
+    const tg = [...fp.tags].filter((x) => r.fp.tags.has(x)).length;
+    if (tg >= SIM_LIMIT.tags) return `태그 ${tg}개 겹침 ↔ ${r.id}`;
+  }
+  return '';
+}
+
 /* 두 목록을 T,N,T,N… 로 섞는다. */
 export function interleave(a, b) {
   const out = [];
@@ -77,13 +108,15 @@ function loadPosts() {
 }
 
 async function main() {
-  // 기본 일일 분배는 티스토리 1편 + 네이버 16편(총 17편)이다. 네이버 16편은 하루 8개 시각(07:30·08:30·11:30·12:30·17:30·19:00·20:30·21:30)마다 /blog-hourly-naver 가 카테고리 2개(life-info·hangeut-trend)를 1편씩 만든다(2026-11-10 사용자 지시). 회차마다 글 한 편을 쓰고 바로 --max-per-run=1 로 올리므로 --gap 은 한 번에 2편 이상 발행하는 수동 실행에서만 쓰인다.
+  // 기본 일일 분배는 티스토리 1편 + 네이버 7편(총 8편)이다(2026-11-10 네이버 계정 보호조치 후 16→7). 네이버는 하루 7개 시각(07:45·10:05·12:25·14:45·17:05·19:25·21:45)마다 /blog-hourly-naver 가 1편씩 만들고 바로 --max-per-run=1 로 올린다. 마지막 네이버 발행 후 --min-gap(기본 100분)이 안 지났으면 건너뛴다.
   // 기존 --max 옵션은 명시되면 양 플랫폼 공통 한도로 적용한다.
   const sharedMax = val('max', undefined);
   const maxByPlatform = {
     tistory: Number(val('max-tistory', sharedMax ?? 1)),
-    naver: Number(val('max-naver', sharedMax ?? 16)),
+    naver: Number(val('max-naver', sharedMax ?? 7)),
   };
+  // 네이버 계정 보호조치 중 — backend/out/blog/.naver-hold 파일이 있으면 네이버 발행을 전부 막는다(지우면 재개, 2026-11-10).
+  if (existsSync(join(outDir, '.naver-hold'))) { maxByPlatform.naver = 0; console.log('⏸ naver 보류 중(.naver-hold) — 네이버는 발행하지 않습니다'); }
   const maxPerRun = Number(val('max-per-run', Number.POSITIVE_INFINITY));
   const maxAge = Number(val('max-age', 7));
   const [gapMin, gapMax] = val('gap', '20-40').split('-').map(Number);
@@ -95,17 +128,38 @@ async function main() {
   const postedAll = new Set(Object.values(posted).flatMap(Object.keys));
   const posts = loadPosts();
 
+  let changedSkipped = false;
   const plan = {};
   for (const p of Object.keys(PLATFORMS)) {
-    const all = candidates(posts, postedAll, p, today, maxAge)
+    let all = candidates(posts, postedAll, p, today, maxAge)
       .filter((id) => !skipped[p]?.[id]);
+    if (p === 'naver') {
+      // 최근 30일에 올린 네이버 글과 비교 — 기준을 넘으면 queue-skipped.json 에 보류 표시(파일은 지우지 않는다)
+      const byId = new Map(posts.map((x) => [x.id, x]));
+      const cutoff = Date.now() - 30 * 864e5;
+      const recent = Object.entries(posted.naver).filter(([, v]) => atMs(v.at) >= cutoff)
+        .map(([id]) => byId.get(id)).filter(Boolean).map((x) => ({ id: x.id, fp: fingerprint(x) }));
+      const kept = [];
+      for (const id of all) {
+        const why = similarTo(fingerprint(byId.get(id)), recent);
+        if (why) { skipped.naver = { ...(skipped.naver || {}), [id]: `유사도 보류: ${why}` }; console.log(`  · ${id} 보류 — ${why}`); changedSkipped = true; }
+        else kept.push(id);
+      }
+      all = kept;
+    }
     const doneToday = Object.values(posted[p]).filter((v) => kstDay(atMs(v.at)) === today).length;
     plan[p] = only && only !== p ? [] : all.slice(0, Math.max(0, maxByPlatform[p] - doneToday));
+    if (p === 'naver' && plan[p].length) {   // 회차 사이 최소 간격 — 연달아 올리지 않는다(기본 100분)
+      const last = Math.max(0, ...Object.values(posted.naver).map((v) => atMs(v.at)));
+      const minGap = Number(val('min-gap', 100));
+      if (Date.now() - last < minGap * 60000) { console.log(`  · 마지막 네이버 발행 후 ${minGap}분이 안 지났다 — 이번 회차 건너뜀`); plan[p] = []; }
+    }
     console.log(`${p}: 후보 ${all.length}편 · 오늘 이미 ${doneToday}편 · 이번 ${plan[p].length}편${has('list') && all.length ? '\n  ' + all.join('\n  ') : ''}`);
   }
   // 애드포스트 미디어 등록은 네이버 공개 글 50편쯤에 신청하기로 함(2026-09-24 사용자 결정) — 그 시점을 로그로 알린다.
   const naverPublic = Object.values(posted.naver).filter((v) => !v.private).length;
   if (naverPublic >= 50) console.log(`📢 네이버 공개 글 ${naverPublic}편(이 스크립트 발행분) — 애드포스트 미디어 등록 신청 시점`);
+  if (changedSkipped && !has('list')) writeFileSync(join(outDir, 'queue-skipped.json'), JSON.stringify(skipped, null, 2) + '\n', 'utf8');
   if (has('list')) return;
 
   // 12:00 회차가 아직 도는 중에 18:00 회차가 뜨면 같은 글을 두 번 올릴 수 있다 — 살아있는 실행이 있으면 양보.

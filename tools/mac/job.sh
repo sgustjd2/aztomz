@@ -28,25 +28,29 @@ case "$1" in
     else
       echo "===== daily drafting failed with exit code $rc $(date)" >> $B/blog-daily.log
     fi ;;
-  naver-hourly)   # 하루 8개 시각(07:30·08:30·11:30·12:30·17:30·19:00·20:30·21:30)마다 카테고리 2개(life-info → hangeut-trend)를 차례로 1편씩(하루 16편): 조사·집필·검증(/blog-hourly-naver) → 성공이면 네이버 큐 발행
-    # 한 시각에 2편(각 5~15분)을 쓰므로 앞 작업·앞 시각 회차를 최대 1시간까지 기다린다.
+  naver-hourly)   # 하루 7개 시각마다 글 1편(2026-11-10 보호조치 후 조정): 조사·집필·검증(/blog-hourly-naver) → 성공이면 네이버 큐 발행. 새벽 제외, 시각 사이 2시간 20분
+    # 보호조치·세션 이상을 감지하면 .naver-hold 가 생기고, 있으면 쓰지도 올리지도 않는다(지우면 재개).
+    [ -e $B/.naver-hold ] && { echo "===== $(date) skip: .naver-hold(네이버 발행 보류 중)" >> $B/blog-hourly-naver.log; exit 0; }
+    # 시작 시각에 가장 가까운 지난 슬롯으로 카테고리를 정한다: 장소·핫플은 12:25·19:25(하루 2편), 나머지는 생활·제철
+    hm=$(date +%H%M); slot=07:45; cat=life-info
+    for s in 0745:07:45:life-info 1005:10:05:life-info 1225:12:25:hangeut-trend 1445:14:45:life-info 1705:17:05:life-info 1925:19:25:hangeut-trend 2145:21:45:life-info; do
+      [ "${s%%:*}" -le "$hm" ] && { slot=$(echo "$s" | cut -d: -f2-3); cat=${s##*:}; }
+    done
+    # 정각에 박히지 않게 0~25분 무작위로 늦춘다(사람이 쓴 것처럼). 락 대기는 그 뒤부터 센다.
+    sleep $((RANDOM % 1500))
     acquire_writer_lock 3600 || { echo "===== $(date) skip: 이전 집필 작업이 계속 돌고 있음" >> $B/blog-hourly-naver.log; exit 0; }
-    # 스킬이 시각별 글 유형을 고를 수 있게 실제 시작 시각(HH:MM)도 파일로 남긴다(무인 claude 는 date 명령 권한이 없다).
-    date +%H:%M > $B/.run-slot.txt
-    for cat in life-info hangeut-trend; do
-      echo "===== $(date) [$cat]" >> $B/blog-hourly-naver.log
-      echo "$cat" > $B/.run-category.txt
-      # 급상승 검색어 후보를 미리 파일로 떠 둔다(무인 claude 가 새 스크립트를 실행할 권한이 없어도 읽을 수 있게). 실패해도 회차는 계속.
-      node backend/scripts/blog-hot-keywords.mjs > $B/.hot-keywords.txt 2>&1 || echo "UNAVAILABLE: 실행 실패" > $B/.hot-keywords.txt
-      claude -p --permission-mode acceptEdits "/blog-hourly-naver $cat" >> $B/blog-hourly-naver.log 2>&1
-      rc=$?
-      if [ $rc -eq 0 ]; then
-        echo "===== naver queue after hourly drafting [$cat] $(date)" >> $B/blog-queue.log
-        node backend/scripts/blog-queue.mjs --only=naver --max-per-run=1 >> $B/blog-queue.log 2>&1
-      else
-        echo "===== hourly drafting failed [$cat] with exit code $rc $(date)" >> $B/blog-hourly-naver.log
-      fi
-    done ;;
+    echo "$slot" > $B/.run-slot.txt
+    echo "$cat" > $B/.run-category.txt
+    echo "===== $(date) [$cat] slot $slot" >> $B/blog-hourly-naver.log
+    node backend/scripts/blog-hot-keywords.mjs > $B/.hot-keywords.txt 2>&1 || echo "UNAVAILABLE: 실행 실패" > $B/.hot-keywords.txt
+    claude -p --permission-mode acceptEdits "/blog-hourly-naver $cat" >> $B/blog-hourly-naver.log 2>&1
+    rc=$?
+    if [ $rc -eq 0 ]; then
+      echo "===== naver queue after hourly drafting [$cat] $(date)" >> $B/blog-queue.log
+      node backend/scripts/blog-queue.mjs --only=naver --max-per-run=1 >> $B/blog-queue.log 2>&1
+    else
+      echo "===== hourly drafting failed [$cat] with exit code $rc $(date)" >> $B/blog-hourly-naver.log
+    fi ;;
   blog-queue)             node backend/scripts/blog-queue.mjs --max-per-run=1 >> $B/blog-queue.log 2>&1 ;;
   discord-reactions)      exec node backend/scripts/discord-reactions.mjs >> backend/out/discord-reactions.log 2>&1 ;;
   tistory-daily-session)  { echo "===== $(date)"; node backend/scripts/blog-publish.mjs --daily-session; } >> $B/tistory-daily-session.log 2>&1 ;;

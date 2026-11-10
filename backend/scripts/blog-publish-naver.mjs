@@ -28,6 +28,7 @@ import { fileURLToPath } from 'node:url';
 import { windowArgs } from './lib/window.mjs';
 import { dirname, join } from 'node:path';
 import { createInterface } from 'node:readline/promises';
+import { holdNaver, GUARD_TEXT } from './lib/naver-guard.mjs';
 
 const repoRoot = join(dirname(fileURLToPath(import.meta.url)), '..', '..');
 const outDir = join(repoRoot, 'backend', 'out', 'blog');
@@ -259,7 +260,12 @@ async function publish() {
 
   try {
     await page.goto(WRITE_URL, { waitUntil: 'domcontentloaded' });
-    if (/nid\.naver\.com/.test(page.url())) throw new Error('네이버 세션 만료 — --login 다시(로그인 상태 유지 체크)');
+    if (/nid\.naver\.com/.test(page.url())) {
+      await holdNaver('로그인 페이지로 리다이렉트(세션 만료 또는 보호조치)');
+      throw new Error('네이버 세션 만료 — --login 다시(로그인 상태 유지 체크). 오늘 네이버 발행은 .naver-hold 로 보류');
+    }
+    const warn = ((await page.locator('body').innerText({ timeout: 3000 }).catch(() => '')).match(GUARD_TEXT) || [])[0];
+    if (warn) { await holdNaver(`보호조치·경고 문구 감지("${warn}")`); throw new Error(`네이버 경고 문구 감지("${warn}") — 발행 중단, .naver-hold 로 보류`); }
     const f = await editorFrame(page);
     if (has('probe')) { await probe(f); await ctx.close(); return; }
 
@@ -328,7 +334,7 @@ async function publish() {
     await f.locator('span[class*="option__"]', { hasText: new RegExp(`${esc}$`) }).first().click({ timeout: 5000 });
     if (!(await catBtn.innerText()).includes(catName)) throw new Error(`카테고리 "${catName}" 선택 실패 — 네이버 카테고리 관리 확인`);
     const tag = await firstVisible(f, '태그 입력', ['#tag-input', 'input[placeholder*="태그"]'], 5000).catch(() => null);
-    for (const t of (meta.tags || []).slice(0, 30)) {
+    for (const t of (meta.tags || []).slice(0, 7)) {
       if (!tag) break;
       await tag.fill(t);
       await tag.press('Enter');
