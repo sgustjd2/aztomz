@@ -9788,10 +9788,10 @@ window.HANGEUT_DATA = {
       "cat": "신조어",
       "coverCat": "cat-slang",
       "collectedAt": "2026-07-25",
-      "analyzedAt": "2026-08-01",
+      "analyzedAt": "2026-11-10",
       "buzz": "화제성 보통",
-      "stage": "상승",
-      "stageMsg": "커뮤니티와 SNS에서 사용 빈도 증가 중",
+      "stage": "안정화",
+      "stageMsg": "일상 반응어로 쓰이지만 새 유행 신호는 약함",
       "label": "지금 써도 됨",
       "labelCls": "good",
       "title": "감다살",
@@ -9822,6 +9822,10 @@ window.HANGEUT_DATA = {
         [
           "아시아투데이",
           "https://www.asiatoday.co.kr/kn/view.php?key=20260723001638281"
+        ],
+        [
+          "불광미디어(2026-10-12)",
+          "https://www.bulkwang.co.kr/news/articleView.html?idxno=40711"
         ]
       ],
       "tags": [
@@ -9877,10 +9881,10 @@ window.HANGEUT_DATA = {
       "cat": "신조어",
       "coverCat": "cat-slang",
       "collectedAt": "2026-07-25",
-      "analyzedAt": "2026-08-01",
+      "analyzedAt": "2026-11-10",
       "buzz": "화제성 높음",
-      "stage": "피크",
-      "stageMsg": "실망감을 피하려는 젊은 세대의 심리가 반영되어 널리 사용",
+      "stage": "안정화",
+      "stageMsg": "게임 커뮤니티에서 꾸준히 통하는 표현",
       "label": "지금 써도 됨",
       "labelCls": "good",
       "title": "기대컨",
@@ -9911,6 +9915,10 @@ window.HANGEUT_DATA = {
         [
           "아시아투데이",
           "https://www.asiatoday.co.kr/kn/view.php?key=20260723001638281"
+        ],
+        [
+          "FM코리아(2026-11-01)",
+          "https://www.fmkorea.com/10508449236"
         ]
       ],
       "tags": [
@@ -9962,10 +9970,10 @@ window.HANGEUT_DATA = {
       "cat": "신조어",
       "coverCat": "cat-slang",
       "collectedAt": "2026-07-25",
-      "analyzedAt": "2026-08-15",
+      "analyzedAt": "2026-11-10",
       "buzz": "화제성 높음",
       "stage": "안정화",
-      "stageMsg": "업무·일상 속 능력 평가 표현으로 자리잡음",
+      "stageMsg": "서바이벌·게임 맥락에서 통용되는 표현",
       "label": "지금 써도 됨",
       "labelCls": "good",
       "title": "뇌지컬/피지컬",
@@ -9996,6 +10004,10 @@ window.HANGEUT_DATA = {
         [
           "lovegaram.tistory.com",
           "https://lovegaram.tistory.com/209"
+        ],
+        [
+          "매일경제(2026-11-06)",
+          "https://www.mk.co.kr/news/hot-issues/12198231"
         ]
       ],
       "tags": [
@@ -10050,10 +10062,10 @@ window.HANGEUT_DATA = {
       "cat": "신조어",
       "coverCat": "cat-slang",
       "collectedAt": "2026-07-25",
-      "analyzedAt": "2026-08-15",
+      "analyzedAt": "2026-11-10",
       "buzz": "화제성 최상",
-      "stage": "피크",
-      "stageMsg": "아이브 장원영의 긍정적인 사고방식이 화제가 되며 밈으로 확산",
+      "stage": "안정화",
+      "stageMsg": "한때의 대유행을 지나 일상 표현으로 남음",
       "label": "따라 해도 됨",
       "labelCls": "good",
       "title": "럭키비키",
@@ -10084,6 +10096,10 @@ window.HANGEUT_DATA = {
         [
           "오글오글",
           "https://www.ogleogle.co.kr/ko/blog/korean-slang-2026"
+        ],
+        [
+          "GOAT-1 티스토리(2026-10-19)",
+          "https://goat-1.tistory.com/entry/럭키비키-뜻-원영적-사고-유래-총정리-–-완전-럭키비키잖아-의미와-사용법·예문"
         ]
       ],
       "tags": [
