@@ -15,7 +15,8 @@
 `--import` upsert · `--export [--out=]` · `--verify`(바이트 비교) · `--selftest`(네트워크 없음).
 자격증명: 환경변수 또는 레포 루트 `.env`(worktree 면 메인 체크아웃 `.env`)의 `SUPABASE_URL`·`SUPABASE_SECRET_KEY`.
 
-## P0 결과
-- 테이블 생성·권한 확인 완료, selftest 통과(실데이터 286건 변환 왕복 바이트 동일).
-- import/export 왕복 검증은 secret 키가 `.env` 에 들어간 뒤 수행(진행 상황은 보고 참고).
-- 참고: 데이터는 281건이 아니라 286건(2026-11-10 기준).
+## P0 결과 (2026-11-10)
+- 테이블 생성·권한 확인, selftest 통과.
+- 메인의 최신 trends.json(286건)을 import → export: `diff`·`cmp` 모두 비어 있음(바이트 동일), `--verify` OK. 재import 해도 `trends_history` 0행(내용 불변이면 이력 안 남음).
+- export 결과에 `validate-trends.mjs` 통과(286건, cat 7분류, id 유니크).
+- 참고: 데이터는 281건이 아니라 286건.
