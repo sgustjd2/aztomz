@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <defs>
+    <linearGradient id="skinC" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#B9507A"/><stop offset="1" stop-color="#93365F"/>
+    </linearGradient>
+  </defs>
+  <g stroke="#fff" stroke-width="22" stroke-linejoin="round" fill="#fff">
+    <path d="M140 132 C120 100 140 70 132 40 C160 60 172 84 168 112 C176 80 196 58 194 22 C230 50 236 88 226 114 C236 92 258 82 262 56 C284 88 280 120 262 140 Z"/>
+    <path d="M200 112 C276 112 300 196 298 270 C296 336 256 372 200 372 C144 372 104 336 102 270 C100 196 124 112 200 112 Z"/>
+  </g>
+  <g stroke="#3A1626" stroke-width="7" stroke-linejoin="round" stroke-linecap="round">
+    <!-- 불꽃 머리 -->
+    <path d="M140 132 C120 100 140 70 132 40 C160 60 172 84 168 112 C176 80 196 58 194 22 C230 50 236 88 226 114 C236 92 258 82 262 56 C284 88 280 120 262 140 Z" fill="#FF7B2E"/>
+    <path d="M176 128 C170 108 182 96 182 80 C198 96 202 112 196 128 Z M214 128 C212 112 222 104 226 90 C236 106 236 120 230 130 Z" fill="#FFD25A" stroke="none"/>
+    <!-- 몸 -->
+    <path d="M200 112 C276 112 300 196 298 270 C296 336 256 372 200 372 C144 372 104 336 102 270 C100 196 124 112 200 112 Z" fill="url(#skinC)"/>
+  </g>
+  <path d="M130 200 q8 -5 16 0 M258 318 q8 -5 16 0" stroke="#6C2446" stroke-width="4" fill="none" stroke-linecap="round" opacity=".6"/>
+  <!-- 눈썹(의욕) -->
+  <path d="M150 214 L180 224 M250 214 L220 224" stroke="#3A1626" stroke-width="7" stroke-linecap="round"/>
+  <!-- 눈 -->
+  <circle cx="168" cy="248" r="15" fill="#3A1626"/><circle cx="232" cy="248" r="15" fill="#3A1626"/>
+  <circle cx="163" cy="242" r="5.5" fill="#fff"/><circle cx="227" cy="242" r="5.5" fill="#fff"/>
+  <ellipse cx="140" cy="282" rx="16" ry="9" fill="#FFA3B5" opacity=".85"/>
+  <ellipse cx="260" cy="282" rx="16" ry="9" fill="#FFA3B5" opacity=".85"/>
+  <path d="M188 276 Q200 290 212 276" stroke="#3A1626" stroke-width="6" fill="none" stroke-linecap="round"/>
+</svg>

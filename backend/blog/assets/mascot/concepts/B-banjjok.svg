@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <defs>
+    <linearGradient id="skinB" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#9C4A5E"/><stop offset="1" stop-color="#6A2F3E"/>
+    </linearGradient>
+    <radialGradient id="flesh" cx=".5" cy=".4" r=".7">
+      <stop offset="0" stop-color="#FFE58A"/><stop offset="1" stop-color="#FFB72E"/>
+    </radialGradient>
+  </defs>
+  <!-- 김이 불꽃으로 -->
+  <path d="M170 120 C150 90 178 74 166 44 C196 64 196 92 186 116 Z" fill="#FF7A30"/>
+  <path d="M206 116 C190 80 222 62 214 24 C248 52 240 92 222 116 Z" fill="#FF5A26"/>
+  <path d="M238 122 C232 98 252 88 250 64 C272 84 266 110 252 124 Z" fill="#FF9A35"/>
+  <!-- 발 -->
+  <ellipse cx="164" cy="368" rx="24" ry="13" fill="#4F2230"/>
+  <ellipse cx="236" cy="368" rx="24" ry="13" fill="#4F2230"/>
+  <!-- 몸(껍질) -->
+  <path d="M200 120 C290 120 316 200 312 262 C308 332 262 370 200 370 C138 370 92 332 88 262 C84 200 110 120 200 120 Z" fill="url(#skinB)"/>
+  <!-- 갈라진 속살 -->
+  <path d="M108 178 L132 196 L150 174 L172 198 L194 172 L216 198 L238 172 L258 196 L278 176 L294 190 C282 140 246 122 200 122 C152 122 120 140 108 178 Z" fill="url(#flesh)"/>
+  <circle cx="176" cy="152" r="5" fill="#fff" opacity=".6"/><circle cx="228" cy="146" r="4" fill="#fff" opacity=".6"/>
+  <!-- 탄 자국 -->
+  <ellipse cx="118" cy="300" rx="10" ry="6" fill="#3E1A24" opacity=".35"/>
+  <ellipse cx="286" cy="236" rx="8" ry="5" fill="#3E1A24" opacity=".35"/>
+  <!-- 팔 -->
+  <path d="M94 270 q-24 0 -32 -22" stroke="#7A3648" stroke-width="16" fill="none" stroke-linecap="round"/>
+  <path d="M306 270 q24 4 30 26" stroke="#7A3648" stroke-width="16" fill="none" stroke-linecap="round"/>
+  <!-- 얼굴 -->
+  <path d="M152 254 q13 -16 26 0" stroke="#22101A" stroke-width="6" fill="none" stroke-linecap="round"/>
+  <path d="M222 254 q13 -16 26 0" stroke="#22101A" stroke-width="6" fill="none" stroke-linecap="round"/>
+  <ellipse cx="136" cy="282" rx="16" ry="9" fill="#FF9DB0" opacity=".75"/>
+  <ellipse cx="264" cy="282" rx="16" ry="9" fill="#FF9DB0" opacity=".75"/>
+  <path d="M184 276 Q200 300 216 276 Z" fill="#22101A"/>
+  <path d="M192 288 Q200 296 208 288" fill="#FF7A8A"/>
+</svg>

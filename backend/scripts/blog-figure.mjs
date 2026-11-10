@@ -9,6 +9,7 @@
      card  — 우리 데이터로 그린 도표·비교표·설정값 카드. 저작권 무관. 어느 카테고리에나 쓴다.
      photo — Openverse 에서 받은 CC0/PDM 사진. 파일은 <글id>.photo-<그림id>.jpg 로 저장하고 출처를 기록한다.
      image — Codex ImageGen 으로 직접 만든 삽화. 파일은 <글id>.ai-<그림id>.png 로 out/blog 에 둔다.
+     mascot — 마스코트 '불타는 고구마'(lib/mascot.mjs). 네이버 글 전용, 글당 1~3장, 규칙은 assets/mascot/README.md.
      shot  — 이미 본문에서 인용 중인 **공개 웹페이지**를 우리가 직접 캡처. 사실 확인용 자료화면이라
              출처(URL)를 캡션에 반드시 박는다. 로그인벽·유료 페이지는 찍지 않는다.
 
@@ -215,6 +216,11 @@ export async function makeFigure(ctx, fig, id) {
     if (!existsSync(file)) throw new Error(`ImageGen 그림 파일이 없습니다: ${file}`);
     return file;
   }
+  if (fig.kind === 'mascot') {
+    // 마스코트 '불타는 고구마' — 우리가 그린 SVG 를 표정·말풍선대로 렌더(lib/mascot.mjs). 네이버 글 전용.
+    const { renderMascot } = await import('./lib/mascot.mjs');
+    return renderMascot(ctx, fig, join(outDir, `${id}.mascot-${fig.id}.png`));
+  }
   const file = join(outDir, `${id}.fig-${fig.id}.png`);
   const p = await ctx.newPage();
   try {
@@ -271,6 +277,10 @@ async function selftest() {
   await makeFigure(ctx, { id: 'st-bad', kind: 'card', layout: '없는레이아웃' }, '_selftest')
     .catch(() => { threw = true; });
   console.log(`${threw ? '✓' : '✗'} 모르는 layout 은 throw`);
+  const mf = await makeFigure(ctx, { id: 'st-mascot', kind: 'mascot', expr: 'thumbs', say: '말풍선 렌더 검사' }, '_selftest');
+  const mOk = statSync(mf).size > 3000;
+  console.log(`${mOk ? '✓' : '✗'} mascot    ${statSync(mf).size.toLocaleString()} bytes  ${mf}`);
+  if (!mOk) threw = false;
   await ctx.close();
   const allOk = ok === specs.length && threw;
   console.log(allOk ? '\n자체검사 통과' : '\n자체검사 실패');

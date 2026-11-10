@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <defs>
+    <linearGradient id="skinA" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#C2577E"/><stop offset="1" stop-color="#8A3159"/>
+    </linearGradient>
+    <linearGradient id="fireA" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#FF6A2B"/><stop offset="1" stop-color="#FFB13B"/>
+    </linearGradient>
+  </defs>
+  <!-- 불꽃 -->
+  <path d="M200 28 C232 70 262 92 250 130 C242 152 158 152 150 130 C140 104 166 92 178 66 C184 84 192 90 200 28 Z" fill="url(#fireA)"/>
+  <path d="M202 72 C218 96 230 110 222 130 C216 142 186 142 180 130 C174 116 186 106 192 92 C196 102 200 104 202 72 Z" fill="#FFE07A"/>
+  <!-- 발 -->
+  <ellipse cx="160" cy="366" rx="26" ry="14" fill="#6E2446"/>
+  <ellipse cx="240" cy="366" rx="26" ry="14" fill="#6E2446"/>
+  <!-- 몸 -->
+  <path d="M200 118 C292 118 322 206 318 262 C314 330 264 368 200 368 C136 368 86 330 82 262 C78 206 108 118 200 118 Z" fill="url(#skinA)"/>
+  <path d="M118 210 q10 -6 20 0 M272 300 q10 -6 20 0 M250 160 q8 -5 16 0" stroke="#6E2446" stroke-width="4" fill="none" stroke-linecap="round" opacity=".55"/>
+  <!-- 팔 -->
+  <path d="M88 268 q-22 6 -26 26" stroke="#8A3159" stroke-width="16" fill="none" stroke-linecap="round"/>
+  <path d="M312 268 q22 6 26 26" stroke="#8A3159" stroke-width="16" fill="none" stroke-linecap="round"/>
+  <!-- 얼굴 -->
+  <ellipse cx="165" cy="246" rx="12" ry="16" fill="#2B1320"/>
+  <ellipse cx="235" cy="246" rx="12" ry="16" fill="#2B1320"/>
+  <circle cx="161" cy="240" r="4.5" fill="#fff"/><circle cx="231" cy="240" r="4.5" fill="#fff"/>
+  <ellipse cx="138" cy="278" rx="17" ry="9" fill="#FF9DB0" opacity=".8"/>
+  <ellipse cx="262" cy="278" rx="17" ry="9" fill="#FF9DB0" opacity=".8"/>
+  <path d="M186 272 Q200 288 214 272" stroke="#2B1320" stroke-width="5" fill="none" stroke-linecap="round"/>
+</svg>

@@ -16,6 +16,7 @@ import { existsSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 import { md2html } from './lib/md.mjs';
+import { checkMascots, EXPRESSIONS } from './lib/mascot.mjs';
 
 const repoRoot = join(dirname(fileURLToPath(import.meta.url)), '..', '..');
 const outDir = join(repoRoot, 'backend', 'out', 'blog');
@@ -100,13 +101,18 @@ if (profPath && existsSync(profPath)) {
 const figRefs = [...md.matchAll(/^\s*\[FIG:\s*([A-Za-z0-9_-]+)\s*(?:\|([^\]]*))?\]\s*$/gim)]
   .map((m) => ({ id: m[1], rest: (m[2] || '').split('|').map((s) => s.trim()) }));
 const figDefs = new Map((meta.figures || []).map((f) => [f.id, f]));
-if (!figRefs.length) problems.push('본문 그림이 없다 — 최소 1개의 실제 [FIG] 이미지를 추가한다');
+// 마스코트(불타는 고구마)는 장식이라 '실제 그림 최소 1개'에 세지 않는다(2026-11-10).
+if (!figRefs.some((r) => figDefs.get(r.id)?.kind !== 'mascot')) problems.push('본문 그림이 없다 — 최소 1개의 실제 [FIG] 이미지를 추가한다');
 for (const ref of figRefs) {
   const def = figDefs.get(ref.id);
   if (!def) { problems.push(`본문 [FIG: ${ref.id}] 인데 메타 figures 에 정의가 없다`); continue; }
-  if (!['card', 'shot', 'image', 'photo'].includes(def.kind)) {
-    problems.push(`[FIG: ${ref.id}] 메타 kind 가 card/shot/image/photo 중 하나가 아니다`);
+  if (!['card', 'shot', 'image', 'photo', 'mascot'].includes(def.kind)) {
+    problems.push(`[FIG: ${ref.id}] 메타 kind 가 card/shot/image/photo/mascot 중 하나가 아니다`);
     continue;
+  }
+  if (def.kind === 'mascot') {
+    if (meta.platform !== 'naver') problems.push(`[FIG: ${ref.id}] 마스코트는 네이버 글에만 쓴다`);
+    if (!String(def.title || '').trim() && EXPRESSIONS[def.expr]) def.title = EXPRESSIONS[def.expr].alt;
   }
   if (def.kind === 'photo') {
     const expected = `${slug}.photo-${ref.id}.jpg`;
@@ -144,6 +150,7 @@ for (const ref of figRefs) {
 for (const f of figDefs.keys()) {
   if (!figRefs.some((r) => r.id === f)) problems.push(`메타 figures 의 "${f}" 가 본문에 안 쓰였다`);
 }
+problems.push(...checkMascots(md, meta.figures)); // 장수·표정 반복·위치·말풍선 규칙(lib/mascot.mjs)
 
 /* 영상 임베드 — 조사에 있는 영상만, 그리고 실제로 임베드가 되는 것만.
    oembed 401/404 인 영상을 넣으면 독자에게 '재생 없음' 검은 상자가 뜬다(CLAUDE.md 철칙). */
