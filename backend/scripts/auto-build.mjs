@@ -34,6 +34,7 @@
    env: DDGS_EXE(ddgs 실행경로, 기본 로컬 venv) — Actions에선 pip ddgs + DDGS_EXE=ddgs
    ============================================================ */
 import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'node:fs';
+import { load as loadTrends, save as saveTrends } from './lib/trends-store.mjs';
 import { execFileSync } from 'node:child_process';
 import { extract as ddgsExtract } from './lib/websearch.mjs';
 import { validateTrends } from './validate-trends.mjs';
@@ -44,7 +45,6 @@ import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 
 const repoRoot = join(dirname(fileURLToPath(import.meta.url)), '..', '..');
-const trendsPath = join(repoRoot, 'backend', 'data', 'trends.json');
 const refreshPath = join(repoRoot, 'backend', 'scripts', 'refresh.mjs');
 const trendsJsPath = join(repoRoot, 'frontend', 'data', 'trends.js');
 
@@ -206,7 +206,7 @@ const candidates = Array.isArray(curate) ? curate : (curate.trends || curate.can
 candidateCount = candidates.length;
 if (!candidates.length) { console.log('· curate 비어있음 — 게시할 것 없음.'); done('no_candidates'); }
 
-const data = JSON.parse(readFileSync(trendsPath, 'utf-8'));
+const data = (await loadTrends()).data;
 const trends = Array.isArray(data) ? data : (data.trends || []);
 const haveIds = new Set(trends.map(t => t.id));
 const haveTitles = new Set(trends.map(t => normTitle(t.title)));
@@ -284,7 +284,7 @@ if (DRY) { console.log('\n[DRY] 파일·git 변경 없이 종료.'); done('dry')
 
 // ── trends.json 갱신 + refresh
 // 쓰기 직전에 다시 읽는다 — 검증하는 몇 분 사이 restage.mjs·recheck-ad.mjs가 쓴 변경을 덮지 않게(2026-10-24).
-const latest = JSON.parse(readFileSync(trendsPath, 'utf-8'));
+const latest = (await loadTrends()).data;
 const latestTrends = Array.isArray(latest) ? latest : (latest.trends || []);
 const latestIds = new Set(latestTrends.map(t => t.id));
 latestTrends.push(...published.filter(t => !latestIds.has(t.id)));
@@ -294,7 +294,7 @@ const _v = validateTrends(Array.isArray(out) ? out : out.trends);
 if (!_v.ok) { console.error('\n⛔ 스키마 검증 실패 — 빌드·배포 중단:\n' + _v.errors.map((e) => '  · ' + e).join('\n')); done('schema_fail', 1); }
 if (_v.warnings.length) console.warn(`⚠ 스키마 경고 ${_v.warnings.length}건(배포는 계속)`);
 console.log('✓ 스키마 검증 통과');
-writeFileSync(trendsPath, JSON.stringify(out, null, 2) + '\n', 'utf-8');
+await saveTrends(out);   // DB(원본) + trends.json 동시 기록
 execFileSync('node', [refreshPath], { cwd: repoRoot, stdio: 'inherit', windowsHide: true });
 
 // ── git: 충돌 방지 위해 commit 후 pull --rebase → push

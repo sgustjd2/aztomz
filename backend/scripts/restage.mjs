@@ -20,12 +20,13 @@
      · 본문(verdict·excerpt·article)은 고치지 않는다. 새 단계와 어긋나는 표현이 있으면 conflicts로 보고만 한다.
      · 기록: backend/out/pipeline/restage.jsonl (from→to·이유·근거). 마지막 줄 `SUMMARY {json}`.
    ============================================================ */
-import { readFileSync, writeFileSync, appendFileSync, existsSync, mkdirSync } from 'node:fs';
+import { readFileSync, appendFileSync, existsSync, mkdirSync } from 'node:fs';
 import { execFileSync } from 'node:child_process';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { validateTrends } from './validate-trends.mjs';
 import { acquireGitLock } from './lib/git-lock.mjs';
+import { load as loadTrends, save as saveTrends } from './lib/trends-store.mjs';
 
 const repoRoot = join(dirname(fileURLToPath(import.meta.url)), '..', '..');
 const PATHS = {
@@ -140,7 +141,7 @@ async function apply(file) {
   const today = kstISO();
   const judgments = JSON.parse(readFileSync(file, 'utf-8'));
   const list = Array.isArray(judgments) ? judgments : (judgments.judgments || []);
-  const base = JSON.parse(readFileSync(PATHS.trends, 'utf-8'));
+  const base = (await loadTrends()).data;
   const byId = new Map((base.trends || base).map((t) => [t.id, t]));
   const checked = [];
   // 최근 14일 안에 재판정한 항목은 다시 반영하지 않는다 — 봇이 같은 날 판정 파일에 덧붙여 같은 항목을 또 넣은 사례(2026-10-24).
@@ -153,7 +154,7 @@ async function apply(file) {
   for (const r of rejected) console.log(`✋ 반영 안 함 ${r.id}: ${r.errs.join(', ')}`);
 
   // 쓰기 직전에 다시 읽는다 — 그 사이 auto-build·recheck-ad가 쓴 내용을 덮지 않게.
-  const data = JSON.parse(readFileSync(PATHS.trends, 'utf-8'));
+  const data = (await loadTrends()).data;
   const trends = data.trends || data;
   const fresh = new Map(trends.map((t) => [t.id, t]));
   const changes = [];
@@ -168,7 +169,7 @@ async function apply(file) {
     const v = validateTrends(trends);
     if (!v.ok) { console.error('⛔ 스키마 검증 실패 — 반영 중단:\n' + v.errors.map((e) => '  · ' + e).join('\n')); outcome = 'schema_fail'; }
     else {
-      writeFileSync(PATHS.trends, JSON.stringify(data, null, 2) + '\n', 'utf-8');
+      await saveTrends(data);   // DB(원본) + trends.json 동시 기록
       execFileSync('node', [join(repoRoot, 'backend', 'scripts', 'refresh.mjs')], { cwd: repoRoot, stdio: 'inherit', windowsHide: true });
       outcome = flag('no-git') ? 'files_only' : gitPublish(changes.length, today);
     }
@@ -228,7 +229,7 @@ async function selftest() {
 
 if (flag('selftest')) await selftest();
 else if (flag('pick')) {
-  const data = JSON.parse(readFileSync(PATHS.trends, 'utf-8'));
+  const data = (await loadTrends()).data;
   const log = readJsonl(PATHS.log), today = kstISO();
   const list = pick(data.trends || data, log, (typeof flag('pick') === 'string' ? Number(flag('pick')) : 0) || 5);
   const done = new Set(log.filter((r) => r.date === today && r.outcome === 'picked').map((r) => r.id));   // 같은 날 재호출은 중복 기록 안 함

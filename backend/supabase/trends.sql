@@ -58,11 +58,11 @@ create table if not exists public.trends_meta (
   value text
 );
 
--- 이력: update·delete 직전 행을 저장(내용이 실제로 바뀐 update 만)
+-- 이력: update·delete 직전 행을 저장(내용이 실제로 바뀐 update 만 — sort_idx(순서)만 바뀐 건 제외)
 create or replace function public.trends_log_history() returns trigger
 language plpgsql set search_path = '' as $$
 begin
-  if tg_op = 'UPDATE' and to_jsonb(old) - 'updated_at' = to_jsonb(new) - 'updated_at' then
+  if tg_op = 'UPDATE' and to_jsonb(old) - 'updated_at' - 'sort_idx' = to_jsonb(new) - 'updated_at' - 'sort_idx' then
     return new;
   end if;
   insert into public.trends_history (trend_id, op, old_row) values (old.id, tg_op, to_jsonb(old));
@@ -74,7 +74,7 @@ end $$;
 create or replace function public.trends_touch() returns trigger
 language plpgsql set search_path = '' as $$
 begin
-  if to_jsonb(old) - 'updated_at' is distinct from to_jsonb(new) - 'updated_at' then
+  if to_jsonb(old) - 'updated_at' - 'sort_idx' is distinct from to_jsonb(new) - 'updated_at' - 'sort_idx' then
     new.updated_at := now();
   else
     new.updated_at := old.updated_at;

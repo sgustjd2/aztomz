@@ -17,16 +17,15 @@
    사용: node backend/scripts/recheck-ad.mjs [--id=dubai-choco] [--no-git] [--dry]
    env: DDGS_EXE — Actions에선 pip ddgs + DDGS_EXE=ddgs
    ============================================================ */
-import { readFileSync, writeFileSync } from 'node:fs';
 import { execFileSync } from 'node:child_process';
 import { extract as ddgsExtract } from './lib/websearch.mjs';
 import { acquireGitLock } from './lib/git-lock.mjs';
+import { load as loadTrends, save as saveTrends } from './lib/trends-store.mjs';
 import { groundingCheck } from './lib/grounding.mjs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 
 const repoRoot = join(dirname(fileURLToPath(import.meta.url)), '..', '..');
-const trendsPath = join(repoRoot, 'backend', 'data', 'trends.json');
 const refreshPath = join(repoRoot, 'backend', 'scripts', 'refresh.mjs');
 
 const args = process.argv.slice(2);
@@ -62,7 +61,7 @@ async function httpStatus(url) {
 function sh(a) { return execFileSync('git', a, { cwd: repoRoot, encoding: 'utf-8', stdio: ['ignore', 'pipe', 'pipe'], windowsHide: true }); }
 
 // ── 대상 선정
-const data = JSON.parse(readFileSync(trendsPath, 'utf-8'));
+const data = (await loadTrends()).data;
 const trends = Array.isArray(data) ? data : (data.trends || []);
 const ads = trends.filter(t => t.type === '신뢰분석');
 if (!ads.length) { console.log('· 신뢰분석 항목 없음 — 종료.'); process.exit(0); }
@@ -116,7 +115,7 @@ if (DRY) { console.log('\n[DRY] 파일·git 변경 없이 종료.'); process.exi
 if (!ok) { console.log('\n· 갱신할 것 없음 — 종료.'); process.exit(0); }
 
 // 저장 + refresh + git
-writeFileSync(trendsPath, JSON.stringify(data, null, 2) + '\n', 'utf-8');
+await saveTrends(data);   // DB(원본) + trends.json 동시 기록
 execFileSync('node', [refreshPath], { cwd: repoRoot, stdio: 'inherit', windowsHide: true });
 if (NO_GIT) { console.log('\n--no-git: 파일만 갱신.'); process.exit(0); }
 

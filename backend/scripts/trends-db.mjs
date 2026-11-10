@@ -15,14 +15,14 @@
    ============================================================ */
 import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'node:fs';
 import { createHash } from 'node:crypto';
-import { fileURLToPath } from 'node:url';
+import { fileURLToPath, pathToFileURL } from 'node:url';
 import { dirname, join, resolve } from 'node:path';
 import { execFileSync } from 'node:child_process';
 import { isDeepStrictEqual } from 'node:util';
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(HERE, '..', '..');
-const DEFAULT_FILE = join(ROOT, 'backend', 'data', 'trends.json');
+export const DEFAULT_FILE = join(ROOT, 'backend', 'data', 'trends.json');
 
 // JSON 필드 → DB 컬럼. kind: s=문자열 n=숫자 b=불리언 j=json(배열·객체, 키 순서 보존을 위해 jsonb 아님)
 // 배열 순서 = 새 행을 내보낼 때의 표준 키 순서(원본 순서는 key_order 컬럼이 기억한다).
@@ -88,7 +88,7 @@ function loadEnv() {
   return { ...env, ...Object.fromEntries(['SUPABASE_URL', 'SUPABASE_SECRET_KEY'].filter((k) => process.env[k]).map((k) => [k, process.env[k]])) };
 }
 
-function client() {
+export function client() {
   const env = loadEnv();
   const base = (env.SUPABASE_URL || '').replace(/\/+$/, '');
   const key = env.SUPABASE_SECRET_KEY;
@@ -110,7 +110,7 @@ function readTrendsFile(file) {
   return d;
 }
 
-async function fetchAll(api) {
+export async function fetchAll(api) {
   const rows = [];
   for (let off = 0; ; off += 1000) {
     const page = await api('GET', `trends?select=*&order=sort_idx.asc.nullslast,id.asc&limit=1000&offset=${off}`);
@@ -137,7 +137,7 @@ async function cmdImport(file) {
 }
 
 // P1: 봇이 trends.json 을 쓰면 DB 로 한 방향 미러. 바뀐 게 없으면 네트워크 호출 없이 끝난다.
-const MIRROR_STATE = join(ROOT, 'backend', 'out', 'pipeline', 'trends-mirror.json');
+export const MIRROR_STATE = join(ROOT, 'backend', 'out', 'pipeline', 'trends-mirror.json');
 async function cmdMirror(file, force) {
   const raw = readFileSync(file, 'utf8');
   const hash = createHash('sha1').update(raw).digest('hex');
@@ -219,18 +219,22 @@ function selftest() {
   if (fail) { console.log(`selftest 실패 ${fail}건`); process.exitCode = 1; } else console.log('selftest 통과');
 }
 
-// ---------- main ----------
-const args = process.argv.slice(2);
-const opt = (n) => (args.find((a) => a.startsWith(`--${n}=`)) || '').slice(n.length + 3) || null;
-const file = opt('file') ? resolve(opt('file')) : DEFAULT_FILE;
-try {
-  if (args.includes('--selftest')) selftest();
-  else if (args.includes('--import')) await cmdImport(file);
-  else if (args.includes('--mirror')) await cmdMirror(file, args.includes('--force'));
-  else if (args.includes('--export')) await cmdExport(opt('out') && resolve(opt('out')));
-  else if (args.includes('--verify')) await cmdVerify(file);
-  else console.log('사용법: trends-db.mjs --import|--export [--out=파일]|--verify|--mirror [--force]|--selftest [--file=trends.json]');
-} catch (e) {
-  console.error('오류:', e.message);
-  process.exitCode = 1;
+// ---------- main (직접 실행했을 때만) ----------
+if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1])).href) await main();
+
+async function main() {
+  const args = process.argv.slice(2);
+  const opt = (n) => (args.find((a) => a.startsWith(`--${n}=`)) || '').slice(n.length + 3) || null;
+  const file = opt('file') ? resolve(opt('file')) : DEFAULT_FILE;
+  try {
+    if (args.includes('--selftest')) selftest();
+    else if (args.includes('--import')) await cmdImport(file);
+    else if (args.includes('--mirror')) await cmdMirror(file, args.includes('--force'));
+    else if (args.includes('--export')) await cmdExport(opt('out') && resolve(opt('out')));
+    else if (args.includes('--verify')) await cmdVerify(file);
+    else console.log('사용법: trends-db.mjs --import|--export [--out=파일]|--verify|--mirror [--force]|--selftest [--file=trends.json]');
+  } catch (e) {
+    console.error('오류:', e.message);
+    process.exitCode = 1;
+  }
 }
