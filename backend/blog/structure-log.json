@@ -1,26 +1,5 @@
 [
   {
-    "slug": "git-amend-guide",
-    "categoryId": "hangeut-trend",
-    "date": "2026-10-08",
-    "h2": [
-      "상황 네 가지를 표 한 장에 놓으면",
-      "시작하기 전에, 고친다는 말은 새로 만든다는 뜻이에요",
-      "1단계 — 마지막 커밋의 메시지만 고쳐요",
-      "2단계 — 파일을 빠뜨렸다면 stage하고 같은 명령을 써요",
-      "3단계 — 몇 개 전 커밋은 범위부터 정해요",
-      "4단계 — 목록에서 pick을 reword로 바꿔요",
-      "5단계 — push한 커밋을 고쳤다면 보통의 push는 거부돼요",
-      "push한 커밋을 고쳐도 되는지, 자료의 입장이 갈려요",
-      "--force와 --force-with-lease, 문서가 적은 차이와 한계",
-      "막힐 때 보는 네 곳",
-      "이 글이 문서로 확인하지 못한 것",
-      "정리",
-      "참고"
-    ],
-    "closingClichePatterns": []
-  },
-  {
     "slug": "windows-battery-report",
     "categoryId": "hangeut-trend",
     "date": "2026-10-10",
@@ -3319,6 +3298,22 @@
       "이럴 때 어울려요",
       "가기 전에 직접 확인할 것",
       "이 글이 기댄 자료"
+    ],
+    "closingClichePatterns": []
+  },
+  {
+    "slug": "yam-ma-prep-storage",
+    "categoryId": "life-info",
+    "date": "2026-11-10",
+    "h2": [
+      "자료별로 말하는 기준이 달라요",
+      "껍질을 벗기면 빨리 갈변해요",
+      "농가 저장 온도는 가정 권장치가 아니에요",
+      "식초는 근거를 못 찾았어요",
+      "손질 순서는 이렇게들 해요",
+      "가려울 때는 주의하세요",
+      "아직 확인되지 않은 사항",
+      "참고 자료"
     ],
     "closingClichePatterns": []
   }
