@@ -21,6 +21,7 @@
      node backend/scripts/blog-publish-naver.mjs <id> --probe # 에디터 DOM 덤프(셀렉터 고칠 때)
      node backend/scripts/blog-publish-naver.mjs <id>         # 공개 발행
      node backend/scripts/blog-publish-naver.mjs <id> --draft # 임시저장만
+     node backend/scripts/blog-publish-naver.mjs <id> --update [--dry]  # 이미 올린 글(posted-naver.json 주소)을 같은 주소 그대로 제목·본문 교체
    ============================================================ */
 import { readFile, writeFile } from 'node:fs/promises';
 import { existsSync } from 'node:fs';
@@ -187,6 +188,28 @@ async function pasteHtml(page, f, html) {
   if (saved !== null) await f.evaluate((t) => navigator.clipboard.writeText(t).catch(() => {}), saved);
 }
 
+/* 수정 화면의 기존 본문을 비운다(제목은 따로). 본문 문단에서 전체 선택 → 지우기를 반복하고,
+   본문이 빈 문단 하나만 남았는지 확인한다 — 못 비우면 예전 본문 위에 새 본문이 붙지 않게 중단. */
+async function clearBody(page, f) {
+  const left = () => f.locator('.se-content .se-component:not(.se-documentTitle)').evaluateAll((els) => ({
+    n: els.length,
+    // 빈 본문에 뜨는 안내 문구("글감과 함께 나의 일상을…")는 글자가 아니다 — placeholder 요소를 빼고 센다
+    text: els.map((e) => { const c = e.cloneNode(true); c.querySelectorAll('[class*="placeholder"]').forEach((x) => x.remove()); return c.textContent; })
+      .join('').trim().length }));
+  console.log(`  · 기존 본문: 컴포넌트 ${(await left()).n}개 → 비우는 중`);
+  for (let i = 0; i < 4; i++) {
+    const s = await left();
+    if (s.n <= 1 && s.text === 0) return;
+    await f.locator('.se-content .se-component:not(.se-documentTitle)').first().click({ position: { x: 5, y: 5 } }).catch(() => {});
+    await page.keyboard.press('ControlOrMeta+A');
+    await page.keyboard.press('ControlOrMeta+A');
+    await page.keyboard.press('Backspace');
+    await page.waitForTimeout(600);
+  }
+  const s = await left();
+  if (s.n > 1 || s.text) throw new Error(`기존 본문을 다 못 지움(컴포넌트 ${s.n}개, 글자 ${s.text}자) — 수정 중단(--update --dry 로 확인)`);
+}
+
 async function uploadImage(page, f, file) {
   const before = await f.locator('.se-component.se-image').count();
   const btn = await firstVisible(f, '사진 버튼', ['button.se-image-toolbar-button', 'button[data-name="image"]']);
@@ -238,7 +261,13 @@ async function publish() {
     console.error(`✗ "${id}" 는 ${meta.platform || 'tistory'} 배정 글입니다(meta.platform). 그래도 올리려면 --force`);
     process.exit(1);
   }
-  if (posted[id] && !has('force') && !has('dry') && !has('probe')) {
+  const update = has('update');
+  const live = update && posted[id]?.url.match(/blog\.naver\.com\/([\w-]+)\/(\d+)/);
+  if (update && !live) {
+    console.error(`✗ --update: posted-naver.json 에 "${id}" 의 글 주소가 없습니다`);
+    process.exit(1);
+  }
+  if (posted[id] && !update && !has('force') && !has('dry') && !has('probe')) {
     console.log(`· 네이버에 이미 발행됨 (${posted[id].at}) — ${posted[id].url}  (다시: --force)`);
     process.exit(0);
   }
@@ -259,7 +288,8 @@ async function publish() {
   page.on('dialog', (d) => d.dismiss().catch(() => {}));
 
   try {
-    await page.goto(WRITE_URL, { waitUntil: 'domcontentloaded' });
+    await page.goto(update ? `https://blog.naver.com/PostUpdateForm.naver?blogId=${live[1]}&logNo=${live[2]}` : WRITE_URL,
+      { waitUntil: 'domcontentloaded' });
     if (/nid\.naver\.com/.test(page.url())) {
       await holdNaver('로그인 페이지로 리다이렉트(세션 만료 또는 보호조치)');
       throw new Error('네이버 세션 만료 — --login 다시(로그인 상태 유지 체크). 오늘 네이버 발행은 .naver-hold 로 보류');
@@ -280,7 +310,9 @@ async function publish() {
     // ── 제목
     const title = await firstVisible(f, '제목', ['.se-documentTitle .se-text-paragraph', '.se-title-text']);
     await title.click();
+    if (update) { await page.keyboard.press('ControlOrMeta+A'); await page.keyboard.press('Backspace'); }
     await page.keyboard.type(meta.title);
+    if (update) await clearBody(page, f);
 
     // ── 본문: 텍스트는 붙여넣기, 이미지 마커 자리는 업로드
     const body = await firstVisible(f, '본문', ['.se-component.se-text .se-text-paragraph', '.se-content .se-text-paragraph']);
@@ -335,7 +367,7 @@ async function publish() {
     if (!(await catBtn.innerText()).includes(catName)) throw new Error(`카테고리 "${catName}" 선택 실패 — 네이버 카테고리 관리 확인`);
     const tag = await firstVisible(f, '태그 입력', ['#tag-input', 'input[placeholder*="태그"]'], 5000).catch(() => null);
     for (const t of (meta.tags || []).slice(0, 7)) {
-      if (!tag) break;
+      if (!tag || update) break;   // 수정 때는 기존 태그가 남아 있다 — 다시 넣으면 겹친다
       await tag.fill(t);
       await tag.press('Enter');
     }
@@ -346,15 +378,17 @@ async function publish() {
     let url = '';
     for (let i = 0; i < 360 && !url; i++) {
       await page.waitForTimeout(500);
-      url = page.frames().map((x) => x.url()).find((u) => /logNo=\d+|blog\.naver\.com\/[\w-]+\/\d{6,}/.test(u) && !/postwrite|PostWriteForm/i.test(u)) || '';
+      url = page.frames().map((x) => x.url()).find((u) => /logNo=\d+|blog\.naver\.com\/[\w-]+\/\d{6,}/.test(u) && !/postwrite|PostWriteForm|postupdate|PostUpdateForm/i.test(u)) || '';
     }
     if (!url) throw new Error('발행 후 글 주소를 확인하지 못했습니다(캡차 미해결일 수 있음) — 네이버에서 직접 확인');
     const m = url.match(/blogId=([\w-]+).*logNo=(\d+)/);
     if (m) url = `https://blog.naver.com/${m[1]}/${m[2]}`;
 
-    posted[id] = { at: new Date().toISOString().slice(0, 16).replace('T', ' '), url, title: meta.title };
+    const now = new Date().toISOString().slice(0, 16).replace('T', ' ');
+    if (update && !url.endsWith(`/${live[2]}`)) throw new Error(`수정 후 주소가 바뀌었습니다(${url}) — 네이버에서 직접 확인`);
+    posted[id] = update ? { ...posted[id], title: meta.title, updated: now } : { at: now, url, title: meta.title };
     await writeFile(postedPath, JSON.stringify(posted, null, 2) + '\n', 'utf8');
-    console.log(`✓ 네이버 발행 완료: ${url}`);
+    console.log(`✓ 네이버 ${update ? '수정' : '발행'} 완료: ${url}`);
     await ctx.close();
   } catch (e) {
     await page.screenshot({ path: join(outDir, `${id}.naver-error.png`) }).catch(() => {});
@@ -405,7 +439,7 @@ if (isMain) {
     ({ chromium } = await import('playwright'));
     if (has('login')) await login();
     else if (id) await publish();
-    else console.error('사용법: node backend/scripts/blog-publish-naver.mjs --login | <id> [--dry|--draft|--probe|--force]'
+    else console.error('사용법: node backend/scripts/blog-publish-naver.mjs --login | <id> [--dry|--draft|--probe|--force|--update]'
       + ' | --selftest');
   }
 }
