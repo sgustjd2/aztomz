@@ -1,71 +1,5 @@
 [
   {
-    "slug": "ice-pack-disposal",
-    "categoryId": "hangeut-trend",
-    "date": "2026-10-10",
-    "h2": [
-      "준비물은 가위와 내 동네 안내 창구예요",
-      "물형과 젤형, 두 안내를 한 표에 놓으면",
-      "젤은 왜 따로 챙길까요, 미세플라스틱 때문이라는 안내가 있어요",
-      "1단계 — 속이 물인지 젤인지 확인해요",
-      "2단계 — 물형이면 가위로 잘라요",
-      "3단계 — 젤형이면 자르지 않고 수거함부터 찾아요",
-      "4단계 — 상자와 비닐은 따로 분리해요",
-      "5단계 — 마지막으로 사는 곳 안내를 확인해요",
-      "수거함이 없거나 안내가 서로 다르면",
-      "찾지 못해서 적지 않은 것",
-      "정리",
-      "참고"
-    ],
-    "closingClichePatterns": []
-  },
-  {
-    "slug": "excel-line-break-in-cell",
-    "categoryId": "hangeut-trend",
-    "date": "2026-10-10",
-    "h2": [
-      "이 글이 기대는 버전과 한계",
-      "Step 1. Windows와 웹은 Alt+Enter로 줄을 바꿔요",
-      "Step 2. Mac과 모바일은 입력법이 달라요",
-      "Step 3. 줄이 잘려 보이면 Wrap Text와 행 높이를 봐요",
-      "Step 4. 이미 들어간 줄 바꿈은 CLEAN이나 SUBSTITUTE로 지워요",
-      "눌렀는데 이상할 때 확인할 다섯 가지",
-      "기억할 건 이 세 가지",
-      "이 글이 기댄 문서"
-    ],
-    "closingClichePatterns": []
-  },
-  {
-    "slug": "poor-upbringing-meme",
-    "categoryId": "hangeut-trend",
-    "date": "2026-10-10",
-    "h2": [
-      "한 줄로 말하면",
-      "무슨 계기로 다시 뜬 걸까요",
-      "얼마나 뜨거운가요",
-      "써도 되는 자리, 피해야 하는 자리",
-      "가볍게 웃고 넘기기 전에",
-      "참고한 기사"
-    ],
-    "closingClichePatterns": []
-  },
-  {
-    "slug": "houseplant-winter-care",
-    "categoryId": "hangeut-trend",
-    "date": "2026-10-10",
-    "h2": [
-      "시작 전에 — 내 화분이 어느 칸인지 확인해요",
-      "1단계 — 10℃ 이상 식물은 베란다에서 실내로",
-      "2단계 — 찬바람·온돌 바닥·햇빛, 자리를 골라요",
-      "3단계 — 물은 달력이 아니라 흙을 보고 줘요",
-      "4단계 — 건조한 공기는 받침대로 달래요",
-      "막히면 — 잎이 보이는 신호부터 점검해요",
-      "겨울나기 체크, 다섯 줄로",
-      "이 글이 읽은 자료"
-    ],
-    "closingClichePatterns": []
-  },
-  {
     "slug": "animal-challenge-boynextdoor",
     "categoryId": "hangeut-trend",
     "date": "2026-10-10",
@@ -3181,36 +3115,6 @@
     "closingClichePatterns": []
   },
   {
-    "slug": "ijaemo-pizza-busan-waiting",
-    "categoryId": "hangeut-trend",
-    "date": "2026-11-10",
-    "h2": [
-      "순위 1위부터 5위까지 한 브랜드",
-      "한 곳이던 가게가 지점으로 늘어난 길",
-      "줄 서서 먹는 메뉴는 뭘까요",
-      "치즈가 바뀌었다는 말, 맛도 달라졌을까요",
-      "줄 서기 전에 챙겨볼 것",
-      "지금도 이 정도로 붐빌까요",
-      "출처로 삼은 기사와 후기"
-    ],
-    "closingClichePatterns": []
-  },
-  {
-    "slug": "ginger-storage-guide",
-    "categoryId": "life-info",
-    "date": "2026-11-10",
-    "h2": [
-      "수확 적기 끝자락, 저장은 수확 때부터 시작돼요",
-      "냉장고에 넣으면 상할까?",
-      "12~15℃는 농가 저장고에서 나온 숫자예요",
-      "집에서는 쓰는 기간에 맞춰 나눠요",
-      "곰팡이가 핀 생강은 어떻게 할까?",
-      "이번 자료로는 답이 안 나온 것",
-      "참고 자료"
-    ],
-    "closingClichePatterns": []
-  },
-  {
     "slug": "humidifier-cleaning-guide",
     "categoryId": "life-info",
     "date": "2026-11-10",
@@ -3281,6 +3185,96 @@
       "아직 확인되지 않은 것",
       "세 줄 요약",
       "더 읽어볼 공식 안내"
+    ],
+    "closingClichePatterns": []
+  },
+  {
+    "slug": "ginger-storage-guide",
+    "categoryId": "life-info",
+    "date": "2026-11-11",
+    "h2": [
+      "수확 적기 끝자락, 저장은 수확 때부터 시작돼요",
+      "냉장고에 넣으면 상할까?",
+      "12~15℃는 농가 저장고에서 나온 숫자예요",
+      "집에서는 쓰는 기간에 맞춰 나눠요",
+      "곰팡이가 핀 생강은 어떻게 할까?",
+      "이번 자료로는 답이 안 나온 것",
+      "참고 자료"
+    ],
+    "closingClichePatterns": []
+  },
+  {
+    "slug": "ijaemo-pizza-busan-waiting",
+    "categoryId": "hangeut-trend",
+    "date": "2026-11-11",
+    "h2": [
+      "11월 11일에 확인한 지점별 안내",
+      "대표 피자 가격은 지점마다 조금 달라요",
+      "서부산 매장 계획도 나왔어요",
+      "치즈가 바뀐 뒤 맛도 달라졌을까요",
+      "올해 초 웨이팅 순위는 참고만 하세요",
+      "줄 서기 전에 챙겨볼 것",
+      "출처"
+    ],
+    "closingClichePatterns": []
+  },
+  {
+    "slug": "tripcom-mega-sale-2026",
+    "categoryId": "life-info",
+    "date": "2026-11-11",
+    "h2": [
+      "나흘 일정, 한 장으로 보기",
+      "결제 전에 걸리는 조건",
+      "보도에 나온 숫자는 이렇게 읽어요",
+      "지난해와 비교하면",
+      "결제 전에 챙길 것만 짚으면",
+      "공식 안내에서 빠져 있는 부분",
+      "참고한 링크"
+    ],
+    "closingClichePatterns": []
+  },
+  {
+    "slug": "seochon-anjumaru-waiting",
+    "categoryId": "hangeut-trend",
+    "date": "2026-11-11",
+    "h2": [
+      "후기에 비친 안주마을",
+      "의외로 후기마다 엇갈리는 부분",
+      "오래전부터 줄 서는 집이었을까요",
+      "지금 열기는 어느 정도일까요",
+      "기다림을 줄이는 요령",
+      "읽은 자료와 이 글의 한계"
+    ],
+    "closingClichePatterns": []
+  },
+  {
+    "slug": "jjokpa-storage",
+    "categoryId": "life-info",
+    "date": "2026-11-11",
+    "h2": [
+      "어디까지 확인된 이야기인가요",
+      "보관 전에 다듬기",
+      "냉장과 냉동, 어디로 보낼까요",
+      "며칠 안에 쓸 거라면 냉장",
+      "물컵에 세워 두면 효과가 있을까요",
+      "오래 둘 거라면 썰어서 냉동",
+      "아직 확인하지 못한 것",
+      "이 글에 쓴 자료"
+    ],
+    "closingClichePatterns": []
+  },
+  {
+    "slug": "padding-wash-guide",
+    "categoryId": "life-info",
+    "date": "2026-11-11",
+    "h2": [
+      "라벨부터 보고, 빨지 말지 정해요",
+      "출처마다 숫자가 달라요",
+      "세탁 순서",
+      "말리는 시간이 제일 길어요",
+      "뭉침을 풀고 보관해요",
+      "확인하지 못한 부분",
+      "참고한 자료"
     ],
     "closingClichePatterns": []
   }
