@@ -12,7 +12,7 @@
 
    실행 (레포 루트에서):
      node backend/scripts/blog-queue.mjs --list            # 대기열만 보기
-     node backend/scripts/blog-queue.mjs                   # 발행 (기본: T1/N7·네이버 회차 간격 100분 이상·7일 이내)
+     node backend/scripts/blog-queue.mjs                   # 발행 (기본: T1/N7·네이버 회차 간격 80분 이상·7일 이내)
      node backend/scripts/blog-queue.mjs --max-tistory=1 --max-naver=16 --max-per-run=1 --max-age=7
      node backend/scripts/blog-queue.mjs --max=5 --only=naver # --max는 양 플랫폼 공통 한도로 유지
      node backend/scripts/blog-queue.mjs --selftest
@@ -108,7 +108,7 @@ function loadPosts() {
 }
 
 async function main() {
-  // 기본 일일 분배는 티스토리 1편 + 네이버 7편(총 8편)이다(2026-11-10 네이버 계정 보호조치 후 16→7). 네이버는 하루 7개 시각(07:05·09:05·11:05·13:15·17:25·19:35·21:35)마다 /blog-hourly-naver 가 1편씩 만들고 바로 --max-per-run=1 로 올린다. 마지막 네이버 발행 후 --min-gap(기본 100분)이 안 지났으면 건너뛴다.
+  // 기본 일일 분배는 티스토리 1편 + 네이버 7편(총 8편)이다(2026-11-10 네이버 계정 보호조치 후 16→7). 네이버는 하루 7개 시각(07:05·09:05·11:05·13:15·17:25·19:35·21:35)마다 /blog-hourly-naver 가 1편씩 만들고 바로 --max-per-run=1 로 올린다. 마지막 네이버 발행 후 --min-gap(기본 80분)이 안 지났으면 건너뛴다.
   // 기존 --max 옵션은 명시되면 양 플랫폼 공통 한도로 적용한다.
   const sharedMax = val('max', undefined);
   const maxByPlatform = {
@@ -149,9 +149,9 @@ async function main() {
     }
     const doneToday = Object.values(posted[p]).filter((v) => kstDay(atMs(v.at)) === today).length;
     plan[p] = only && only !== p ? [] : all.slice(0, Math.max(0, maxByPlatform[p] - doneToday));
-    if (p === 'naver' && plan[p].length) {   // 회차 사이 최소 간격 — 연달아 올리지 않는다(기본 100분)
+    if (p === 'naver' && plan[p].length) {   // 회차 사이 최소 간격 — 연달아 올리지 않는다(기본 80분 — 2026-11-12 피크 직전 시각표로 회차 간격이 2시간으로 줄어 100→80)
       const last = Math.max(0, ...Object.values(posted.naver).map((v) => atMs(v.at)));
-      const minGap = Number(val('min-gap', 100));
+      const minGap = Number(val('min-gap', 80));
       if (Date.now() - last < minGap * 60000) { console.log(`  · 마지막 네이버 발행 후 ${minGap}분이 안 지났다 — 이번 회차 건너뜀`); plan[p] = []; }
     }
     console.log(`${p}: 후보 ${all.length}편 · 오늘 이미 ${doneToday}편 · 이번 ${plan[p].length}편${has('list') && all.length ? '\n  ' + all.join('\n  ') : ''}`);
