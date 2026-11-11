@@ -3,14 +3,27 @@
 채널 [AI Engineer](https://www.youtube.com/@aiDotEngineer) 의 새 영상을 Gemini 로 자동 요약한 모음입니다.
 생성: `backend/scripts/youtube-summarize.mjs` (GitHub Actions `youtube-summary` 크론).
 
-총 **490개**.
+총 **503개**.
 
 | 발행일 | 제목 |
 |---|---|
+| 2026-11-11 | [Pick Problems That Survive When AI Solves Coding - Ara Khan, Cline](2026-11-11-iK9gmxXyBR0.md) |
 | 2026-11-10 | [An Agent That Fixes Its Own Mistakes - Saloni Gandhi & Ziwei Guo, LinkedIn](2026-11-10-yH7_SIIgI-Y.md) |
+| 2026-11-10 | [Every Correction You Give Your Agent Is Data - Brian Douglas, Paper Compute](2026-11-10-vg3JdjGuJwM.md) |
+| 2026-11-10 | [Your Agent Hates Your CLI - Ayush Bhardwaj, Allos AI](2026-11-10-rS36lYuvXQ8.md) |
 | 2026-11-10 | [60% of Our Data PRs Now Merge With No Human Review - Chetas Joshi, Robinhood](2026-11-10-MQiojLnK-E0.md) |
 | 2026-11-10 | [The Agents Were Fine. Everything Around Them Broke. - Joey Wang, Harvey](2026-11-10-ktbAVYsAxpk.md) |
+| 2026-11-10 | [Your Agent Doesn't Need an LLM for Every Decision - Raymond Weitekamp, OpenProse](2026-11-10-hFNbPmzzcEs.md) |
+| 2026-11-10 | [Your PR Says the Tests Passed. Prove It. - Stephen Chin & Cassandra Chin](2026-11-10-gbeuC0ud1p4.md) |
+| 2026-11-10 | [Your Team's Agents Are All Shipping to the Same Code at Once - Patrick Debois, Tessl](2026-11-10-fTUinMqA1XQ.md) |
+| 2026-11-10 | [Your Sub-Agents Are a Distributed System. Treat Them Like One. - Girish Konda, Microsoft](2026-11-10-DxP5aW4VknQ.md) |
+| 2026-11-10 | [Every Company Is Building Agents That Can't Work Together - Justin Schroeder, Standard Agents](2026-11-10-3Krz7Rdd4JI.md) |
+| 2026-11-10 | [Give Your On-Call Its Own AI Teammate - Swaapnika Motapothula, Chinmay Gandhi & Vlad Tsvang, Meta](2026-11-10-_NBx2NNOuA4.md) |
+| 2026-11-10 | [You Can't Tell What an Agent Skill Will Do by Reading It - Roey Ben Chaim, Zenity](2026-11-10-_7P580m4kPY.md) |
+| 2026-11-09 | [Teach Your AI Agent to Build Products Everyone Can Use - Jemima Abu, CAIS](2026-11-09-YV1x6gCdgQA.md) |
+| 2026-11-09 | [What Your Coding Agent Can't See in the Code - Tom Moor, Linear](2026-11-09-Xw9utONfhIY.md) |
 | 2026-11-09 | [The One Thing Every AI Agent Framework Agrees On - Mislav Ivanda, Daytona](2026-11-09-WWIFiQi9U4w.md) |
+| 2026-11-09 | [Can AI Agents Beat Wall Street at Predicting Earnings? - Ashwin Paranjape, Samaya AI](2026-11-09-SE6POOEjh4I.md) |
 | 2026-11-09 | [Your Self-Hosted LLM Needs to Say No - Harshul Jain & Parv Khatri, Audible & SAP](2026-11-09-ntVpbyDTYaQ.md) |
 | 2026-11-09 | [How to Build a Software Factory That Improves Itself - Zach Lloyd, Warp](2026-11-09-nKjPBAw_N_0.md) |
 | 2026-11-09 | [Will AI Agents Pretend to Be Human to Get Past a Check? - Maty Bohacek, Stanford](2026-11-09-LF8V0RGJU0I.md) |
