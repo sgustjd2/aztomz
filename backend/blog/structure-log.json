@@ -1,18 +1,5 @@
 [
   {
-    "slug": "animal-challenge-boynextdoor",
-    "categoryId": "hangeut-trend",
-    "date": "2026-10-10",
-    "h2": [
-      "한 줄로 말하면",
-      "리우가 만든 손동작, 발매 사흘 만에 번졌어요",
-      "10월 9일 기준, 아직 '상승' 단계예요",
-      "따라 하려면 손동작부터 보세요",
-      "참고로 정리하면"
-    ],
-    "closingClichePatterns": []
-  },
-  {
     "slug": "chaek-eop-kwae",
     "categoryId": "hangeut-trend",
     "date": "2026-10-10",
@@ -3275,6 +3262,20 @@
       "뭉침을 풀고 보관해요",
       "확인하지 못한 부분",
       "참고한 자료"
+    ],
+    "closingClichePatterns": []
+  },
+  {
+    "slug": "age-reaction-challenge-2026",
+    "categoryId": "hangeut-trend",
+    "date": "2026-11-12",
+    "h2": [
+      "한 줄로 풀어 보면",
+      "처음 보면 헷갈리는 지점",
+      "어떤 설명이 나와 있나요",
+      "얼마나 뜨거운가요",
+      "따라 해 보고 싶다면",
+      "이 글에 쓴 자료"
     ],
     "closingClichePatterns": []
   }

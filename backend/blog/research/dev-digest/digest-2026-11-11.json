@@ -1,0 +1,190 @@
+{
+  "collectedAt": "2026-11-11",
+  "days": 3,
+  "results": {
+    "geeknews": {
+      "source": "geeknews",
+      "fetchedOk": true,
+      "sourceUrl": "https://news.hada.io/rss/news",
+      "items": [
+        {
+          "title": ".NET 11 발표, C# 15 도입과 런타임 및 개발 도구 개선",
+          "url": "",
+          "date": "2026-11-11T09:36:42.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Apple, 여러 Mac을 묶어 로컬 AI 모델을 실행하는 ‘Harbor’ 준비 중",
+          "url": "",
+          "date": "2026-11-11T08:32:42.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "투박한 차단 망치로 단순한 봇을 가차 없이 막기",
+          "url": "",
+          "date": "2026-11-11T08:02:20.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Microsoft, macOS용 Process Explorer 공개",
+          "url": "",
+          "date": "2026-11-11T07:33:03.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Show GN: NOX - LLM 채팅으로 영상을 찾고 제어하는 NVR/VMS 플랫폼",
+          "url": "",
+          "date": "2026-11-11T07:10:40.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "Terence Tao의 Six Math Essentials - 수학의 여섯 가지 핵심 개념",
+          "url": "",
+          "date": "2026-11-11T04:31:14.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Show GN: Officeflare - Cloudflare 인프라 위에 올라가는 오피스 스위트",
+          "url": "",
+          "date": "2026-11-11T04:23:34.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Gleam을 써보자",
+          "url": "",
+          "date": "2026-11-11T04:02:54.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Show GN: TimeCarver - 집중한 시간만큼 돌을 깎는 타이머 앱",
+          "url": "",
+          "date": "2026-11-11T03:07:37.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "AMD Zen 6 제품군: 강력한 코어에 일감 공급하기",
+          "url": "",
+          "date": "2026-11-11T01:40:18.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "7개월이 지난 Glasswing, 기대에 못 미치는 발견으로 유지보수자에게 과도한 부담을 주다",
+          "url": "",
+          "date": "2026-11-11T01:37:18.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "기업용 AI 제품은 어떻게 가격을 매기는가",
+          "url": "",
+          "date": "2026-11-11T00:50:02.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "책이 제 역할을 하지 못하는 이유 (2019)",
+          "url": "",
+          "date": "2026-11-11T00:40:02.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Show HN: 스페인 발렌시아를 SimCity풍 아이소메트릭 뷰로 보기",
+          "url": "",
+          "date": "2026-11-11T00:31:22.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Vercel agent-desktop - AI 에이전트가 데스크톱 앱을 조작하는 CLI",
+          "url": "",
+          "date": "2026-11-11T00:30:02.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "Toyota 브랜드 Scion이 돌아온다, 미국에서 경트럭 판매 예정",
+          "url": "",
+          "date": "2026-11-10T23:32:25.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "끊임없는 감시가 아이와 부모에게 미치는 영향",
+          "url": "",
+          "date": "2026-11-10T22:41:42.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Show HN: 코딩 에이전트를 2019년 무렵의 JavaScript에서 최신 웹 기본 기능으로 이끌기",
+          "url": "",
+          "date": "2026-11-10T22:38:42.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Starlink Mini 2 - 교체형 배터리를 탑재한 휴대용 위성 인터넷 단말기",
+          "url": "",
+          "date": "2026-11-10T21:43:04.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Synaptics의 특허 침해 주장으로 DisplayLink 드라이버 개발 중단",
+          "url": "",
+          "date": "2026-11-10T21:40:04.000Z",
+          "aiRelated": false
+        }
+      ],
+      "note": "GeekNews Atom 피드에서 최근 3일 항목. aiRelated=true 는 제목 키워드 기준(본문은 조사 단계에서 확인)."
+    },
+    "inpa": {
+      "source": "inpa",
+      "fetchedOk": true,
+      "sourceUrl": "https://inpa.tistory.com/rss",
+      "items": [],
+      "note": "최근 3일 이내 작성된 글만. 날짜 없는 항목은 제외. 0건이면 어제·오늘 새 글이 없다는 뜻."
+    },
+    "goddaehee": {
+      "source": "goddaehee",
+      "fetchedOk": true,
+      "sourceUrl": "https://goddaehee.tistory.com/rss",
+      "items": [
+        {
+          "title": "[AI 기초 2화] 사실 AI는 내 말뜻을 이해하지 못합니다: 박사님 아닌 '초고성능 자동완성 확률 계산기'의 원리",
+          "url": "https://goddaehee.tistory.com/657",
+          "date": "2026-11-11T10:00:32.000Z"
+        },
+        {
+          "title": "[AI 기초 1화] 챗GPT를 네이버&middot;구글 검색창처럼 쓰면 손해 보는 이유: 검색엔진 vs 생성형 AI 결정적 차이",
+          "url": "https://goddaehee.tistory.com/656",
+          "date": "2026-11-11T09:00:54.000Z"
+        },
+        {
+          "title": "Buzz 1편. Codex 연결부터 친구초대와 버그 티켓 만들기까지",
+          "url": "https://goddaehee.tistory.com/654",
+          "date": "2026-11-08T16:20:59.000Z"
+        }
+      ],
+      "note": "최근 3일 이내 작성된 글만. 날짜 없는 항목은 제외. 0건이면 어제·오늘 새 글이 없다는 뜻."
+    },
+    "github": {
+      "source": "github",
+      "fetchedOk": true,
+      "sourceUrl": "https://github.com/trending?since=weekly",
+      "items": [
+        {
+          "repo": "vercel-labs/agent-desktop",
+          "url": "https://github.com/vercel-labs/agent-desktop",
+          "description": "Computer use CLI for AI agents",
+          "starsThisWeek": 9502
+        },
+        {
+          "repo": "vercel-labs/agent-browser",
+          "url": "https://github.com/vercel-labs/agent-browser",
+          "description": "Browser automation CLI for AI agents",
+          "starsThisWeek": 3606
+        },
+        {
+          "repo": "cloudflare/security-audit-skill",
+          "url": "https://github.com/cloudflare/security-audit-skill",
+          "description": "A coding-agent skill for multi-phase security audits with independently verified, machine-readable findings",
+          "starsThisWeek": 10967
+        }
+      ],
+      "note": "주간 급상승 레포 중 plugin/extension/skill/cli/mcp 등 도구 성격 키워드가 잡힌 것만. dev-trending 과 겹치는 항목은 조사 단계에서 제외한다."
+    }
+  }
+}
