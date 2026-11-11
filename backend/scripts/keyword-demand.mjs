@@ -74,7 +74,10 @@ async function demand(keyword, creds) {
   const exact = list.find((k) => norm(k.relKeyword) === want);
   const pc = exact ? parseCount(exact.monthlyPcQcCnt) : 0;
   const mob = exact ? parseCount(exact.monthlyMobileQcCnt) : 0;
-  return { keyword, found: !!exact, pc, mobile: mob, total: pc + mob };
+  // 경쟁정도(광고주 수요: 낮음/중간/높음)와 월평균 클릭수 — 수익 가능성 판단용
+  const comp = exact ? String(exact.compIdx ?? '') : '';
+  const clk = exact ? parseCount(exact.monthlyAveMobileClkCnt) : 0;
+  return { keyword, found: !!exact, pc, mobile: mob, total: pc + mob, compIdx: comp, monthlyAveMobileClkCnt: clk };
 }
 
 function selftest() {
@@ -131,7 +134,7 @@ async function main() {
       const pass = r.total >= MIN;
       const mark = pass ? '✅' : (r.found ? '❌' : '❌無');
       const note = r.found ? '' : ' (정확일치 없음 — 검색어 표현 재검토)';
-      console.log(`${mark} ${r.keyword} — 월 ${r.total.toLocaleString()} (PC ${r.pc.toLocaleString()} / 모바일 ${r.mobile.toLocaleString()})${note}`);
+      console.log(`${mark} ${r.keyword} — 월 ${r.total.toLocaleString()} (PC ${r.pc.toLocaleString()} / 모바일 ${r.mobile.toLocaleString()}) · 경쟁 ${r.compIdx || '-'} · 월평균 모바일 클릭 ${r.monthlyAveMobileClkCnt.toLocaleString()}${note}`);
     }
     console.log(`\n임계값 --min=${MIN} (PC+모바일 월간합). ✅=통과 · ❌=미달 · ❌無=키워드 미등록(사실상 저수요).`);
   }
