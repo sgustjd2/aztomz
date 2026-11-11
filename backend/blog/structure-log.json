@@ -1,19 +1,5 @@
 [
   {
-    "slug": "chaek-eop-kwae",
-    "categoryId": "hangeut-trend",
-    "date": "2026-10-10",
-    "h2": [
-      "뜻부터 짚고 가요",
-      "말이 만들어진 방식 — 갑분싸·스불재 집안",
-      "지금 얼마나 뜨거운가요",
-      "이럴 때 바로 써먹어요",
-      "정리하면 이래요",
-      "이 글이 참고한 자료"
-    ],
-    "closingClichePatterns": []
-  },
-  {
     "slug": "lenny-kravitz-it-aint-over",
     "categoryId": "retro-revival",
     "date": "2026-10-10",
@@ -3276,6 +3262,24 @@
       "얼마나 뜨거운가요",
       "따라 해 보고 싶다면",
       "이 글에 쓴 자료"
+    ],
+    "closingClichePatterns": []
+  },
+  {
+    "slug": "suneung-day-prep-2027",
+    "categoryId": "life-info",
+    "date": "2026-11-12",
+    "h2": [
+      "기준일과 적용 범위",
+      "예비소집 날 확인할 것",
+      "가져갈 것과 두고 갈 것",
+      "시계와 필기구는 이렇게",
+      "전자기기와 스마트안경 주의점",
+      "당일 아침 순서",
+      "점심과 시간표 관련 참고",
+      "확인되지 않은 사항",
+      "정리",
+      "참고 자료"
     ],
     "closingClichePatterns": []
   }
