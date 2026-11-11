@@ -4177,7 +4177,7 @@ window.HANGEUT_DATA = {
       "cat": "맛집",
       "coverCat": "cat-food",
       "collectedAt": "2026-06-17",
-      "analyzedAt": "2026-10-10",
+      "analyzedAt": "2026-11-11",
       "title": "능동미나리 성수점",
       "buzz": "화제성 높음 (웨이팅)",
       "ad": 25,
