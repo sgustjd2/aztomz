@@ -10407,10 +10407,10 @@ window.HANGEUT_DATA = {
       "cat": "디저트",
       "coverCat": "cat-dessert",
       "collectedAt": "2026-08-03",
-      "analyzedAt": "2026-08-15",
+      "analyzedAt": "2026-11-11",
       "buzz": "급상승 중",
-      "stage": "상승",
-      "stageMsg": "여름 디저트 신흥 강자",
+      "stage": "안정화",
+      "stageMsg": "계절 신상보다는 익숙한 조합으로 정착",
       "label": "지금 경험해볼 만함",
       "labelCls": "good",
       "title": "소금빵 아이스크림",
@@ -10443,6 +10443,10 @@ window.HANGEUT_DATA = {
         [
           "[제주시] 이시돌 소금빵 아이스크림",
           "https://na-star.tistory.com/357"
+        ],
+        [
+          "네이버 블로그 후기(2026-10-18)",
+          "https://m.blog.naver.com/ggukjung98/224445293921"
         ]
       ],
       "tags": [
