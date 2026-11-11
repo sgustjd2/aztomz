@@ -28,12 +28,12 @@ case "$1" in
     else
       echo "===== daily drafting failed with exit code $rc $(date)" >> $B/blog-daily.log
     fi ;;
-  naver-hourly)   # 하루 7개 시각마다 글 1편(2026-11-10 보호조치 후 조정): 조사·집필·검증(/blog-hourly-naver) → 성공이면 네이버 큐 발행. 새벽 제외, 시각 사이 2시간 20분
+  naver-hourly)   # 하루 7개 시각마다 글 1편(2026-11-10 보호조치 후 조정): 조사·집필·검증(/blog-hourly-naver) → 성공이면 네이버 큐 발행. 새벽 제외, 피크 직전 발행 시각(2026-11-12)
     # 보호조치·세션 이상을 감지하면 .naver-hold 가 생기고, 있으면 쓰지도 올리지도 않는다(지우면 재개).
     [ -e $B/.naver-hold ] && { echo "===== $(date) skip: .naver-hold(네이버 발행 보류 중)" >> $B/blog-hourly-naver.log; exit 0; }
-    # 시작 시각에 가장 가까운 지난 슬롯으로 카테고리를 정한다: 장소·핫플은 12:25·19:25(하루 2편), 나머지는 생활·제철
-    hm=$(date +%H%M); slot=07:45; cat=life-info
-    for s in 0745:07:45:life-info 1005:10:05:life-info 1225:12:25:hangeut-trend 1445:14:45:life-info 1705:17:05:life-info 1925:19:25:hangeut-trend 2145:21:45:life-info; do
+    # 시작 시각에 가장 가까운 지난 슬롯으로 카테고리를 정한다: 장소·핫플은 11:05·19:35(하루 2편), 나머지는 생활·제철
+    hm=$(date +%H%M); slot=07:05; cat=life-info
+    for s in 0705:07:05:life-info 0905:09:05:life-info 1105:11:05:hangeut-trend 1315:13:15:life-info 1725:17:25:life-info 1935:19:35:hangeut-trend 2135:21:35:life-info; do
       [ "${s%%:*}" -le "$hm" ] && { slot=$(echo "$s" | cut -d: -f2-3); cat=${s##*:}; }
     done
     # 정각에 박히지 않게 0~25분 무작위로 늦춘다(사람이 쓴 것처럼). 락 대기는 그 뒤부터 센다.
