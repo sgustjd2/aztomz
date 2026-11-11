@@ -134,7 +134,7 @@ export function md2html(md) {
     if (line.trim()) {
       const body = [];
       while (i < lines.length && lines[i].trim()
-        && !/^(#{1,6}\s|```|\||>|\s*[-*]\s|\s*\d+\.\s|\s*\[IMG:|\s*\[YT:|\s*-{3,}\s*$|\s*\*{3,}\s*$)/i.test(lines[i])) {
+        && !/^(#{1,6}\s|```|\||>|\s*[-*]\s|\s*\d+\.\s|\s*\[IMG:|\s*\[YT:|\s*\[FIG:|\s*-{3,}\s*$|\s*\*{3,}\s*$)/i.test(lines[i])) {
         body.push(lines[i++]);
       }
       // 위 분기 중 어디도 처리하지 못한 stop 패턴(예: videoId 형식이 틀린 [YT:] 줄)은
@@ -160,6 +160,8 @@ if (process.argv[1] && import.meta.url === (await import('node:url')).pathToFile
   a(/캡션<\/p>/.test(h), '캡션 렌더');
   a(/<ul><li>목록/.test(h) && /<blockquote/.test(h), '기존 목록·인용 회귀 없음');
   a(md2html('[YT: javascript:alert(1)]').includes('[YT:'), 'videoId 형식이 아니면 임베드 안 함');
+  const fh = md2html('문단 끝이에요.\n[FIG: ph | 캡션 | A · CC0 | https://x.org/a.jpg]\n다음 문단');
+  a(/<!--FIG:ph-->/.test(fh) && !/<p>[^<]*\[FIG:/.test(fh), '바로 붙은 [FIG] 줄도 문단에 흡수되지 않음');
   const wikiLink = md2html('[문서](https://ja.wikipedia.org/wiki/MONOCHROME_(%E5%90%89%E7%94%B0))');
   a(/href="https:\/\/ja\.wikipedia\.org\/wiki\/MONOCHROME_\(%E5%90%89%E7%94%B0\)"/.test(wikiLink),
     'URL 안 괄호 한 겹(위키백과 Foo_(bar) 류)이 링크를 안 끊음');

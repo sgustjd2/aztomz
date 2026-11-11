@@ -255,10 +255,16 @@ await writeFile(structureLogPath, JSON.stringify(updatedLog, null, 2) + '\n', 'u
 let creditedMd = md;
 for (const ref of figRefs) {
   if (figDefs.get(ref.id)?.kind !== 'photo' || !ref.rest[1] || !ref.rest[2]) continue;
-  const marker = new RegExp(`(^\\s*\\[FIG:\\s*${ref.id}\\s*\\|[^\\]]*\\])`, 'im');
+  const marker = new RegExp(`(^[ \\t]*\\[FIG:\\s*${ref.id}\\s*\\|[^\\]]*\\])`, 'im');
   creditedMd = creditedMd.replace(marker, `[FIG: ${ref.id} | ${ref.rest[0]} | ${ref.rest[1]} | ${ref.rest[2]}]`);
 }
 const html = '<!--COVER-->\n' + md2html(creditedMd) + '\n';
+/* 그림 표시가 이미지로 바뀌지 않고 글자로 남으면 독자에게 [FIG: ...] 가 그대로 보인다(2026-11-10 생강·수원화성 글). */
+const leftoverFig = html.replace(/<!--[\s\S]*?-->/g, '').match(/\[FIG:[^\]]*\]/);
+if (leftoverFig) {
+  console.error(`✗ 조립 실패: 본문에 그림 표시가 글자로 남았다 — ${leftoverFig[0].slice(0, 80)}`);
+  process.exit(1);
+}
 
 await writeFile(join(outDir, `${slug}.html`), html, 'utf8');
 
