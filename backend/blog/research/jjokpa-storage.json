@@ -1,0 +1,156 @@
+{
+  "keyword": "쪽파 보관법",
+  "categoryId": "life-info",
+  "slug": "jjokpa-storage",
+  "searchedAt": "2026-11-11",
+  "origin": "Claude Code WebSearch/WebFetch (curator 정리본 — raw: jjokpa-storage.raw.json)",
+  "notes": "말할 수 있는 것: 식약처 가정 보관 온도 기준(냉장 5℃ 이하·냉동 -18℃ 이하, 쪽파 특정 아님 일반 식품 기준)과, 언론 기사 수준의 쪽파 손질·냉장·냉동 방법(뿌리 끝·수염만 자르기, 물방울 맺히지 않게 말리기, 썰어서 평평하게 냉동 후 가열용). 기사끼리 어긋나는 지점(수건 젖음 여부, 물컵 효과)은 '어긋난다'고 그대로 쓴다.\n말할 수 없는 것: 쪽파 보관을 직접 다룬 공식 자료는 0건이다(농사로=파 일반 2006, 농진청=재배만, 식약처=온도만). 농사로 '파' 내용을 쪽파 공식 기준으로 말할 수 없고, 냉장·냉동 일수/개월 확정치, 물컵 보관 효과, 제철, 쪽파 정의(교잡종 등)도 못 쓴다.\n작성 유의: 농사로는 공공누리 제2유형(상업적 이용금지) — 재서술+출처 표기, '파 일반·2006 자료'임을 밝힌다. 위키트리 2건은 게재일 미확인. 핵심 근거 중 confirmed는 온도 기준 1개뿐이고 나머지 방법론은 전부 언론(reported) 수준이라 단정 어조 금지.",
+  "sources": [
+    {
+      "title": "파 - 가정에서의 보관방법 (농사로, 농촌진흥청 농업전문정보)",
+      "url": "https://www.nongsaro.go.kr/portal/ps/psz/psza/contentSub.ps?menuId=PS03796&sSeCode=374007&cntntsNo=101933&totalSearchYn=Y",
+      "host": "www.nongsaro.go.kr",
+      "tier": "official",
+      "publishedAt": "2006-12-15",
+      "body": "[WebFetch 요약본, 공공누리 제2유형 — 재서술만] 파(양념채소) 가정 보관. 파의 저장 온도는 5℃ 전후가 좋다. 장기 보관: 햇빛이 들지 않는 곳의 화분 등 땅속에 뿌리 쪽을 묻으면 오래 보존 가능(줄기 굵은 파 적합). 단기: 신문지에 싸서 냉장고에 두면 며칠 정도. 물에 닿았으면 빨리 사용. 남은 파는 잘게 썰어 밀폐용기에 담아 냉장 또는 냉동하면 편리하나 장기 저장은 어렵다. 제목이 '파'이며 쪽파를 명시하지 않는다(쪽파 적용 근거 없음)."
+    },
+    {
+      "title": "식중독 예방을 위한 6대 수칙 (식품의약품안전처 식품안전나라)",
+      "url": "https://www.foodsafetykorea.go.kr/portal/board/boardDetail.do?menu_no=3120&bbs_no=bbs001&ntctxt_no=1094593",
+      "host": "www.foodsafetykorea.go.kr",
+      "tier": "official",
+      "publishedAt": "2023-05-19",
+      "body": "[WebFetch 요약본] 식품안전나라 '식중독 예방을 위한 6대 수칙'(2023.05.19). 보관 온도 지키기: '냉장식품은 5℃ 이하 냉동식품은 -18℃이하 보관'. 소비기한 카드뉴스의 냉장 4℃ 이하, 식품공전 냉장 0~10℃는 검색 요약으로만 확인(페이지 미열람)."
+    },
+    {
+      "title": "한식의 피날레…‘대파·쪽파’ 오래 쓰는 최적의 보관법은? (레이디경향)",
+      "url": "https://lady.khan.co.kr/cooking/article/202603241539001",
+      "host": "lady.khan.co.kr",
+      "tier": "press",
+      "publishedAt": "2026-03-24",
+      "body": "[WebFetch 요약본, 이유진 기자, 2026.03.24] 일주일 이내 사용: 물기 있는 키친타월로 감싸 지퍼백·밀폐용기에 넣어 냉장 채소 칸. 더 오래: 컵·유리병에 물 약 5cm, 뿌리 아래로 세워 냉장 선반에 두면 '최대 2주'(기사 주장). 세척은 보관 직전에, 미리 씻으면 남은 수분이 부패를 촉진할 수 있다. 다른 채소와 밀착하지 않게. 냉동 방법·구체 온도·손질 수치 없음."
+    },
+    {
+      "title": "[요리꿀팁] 쪽파 뿌리 감싸기, 김장 뒤 냉장고 보관법의 진짜 순서 (위키트리)",
+      "url": "https://www.wikitree.co.kr/articles/1170679",
+      "host": "www.wikitree.co.kr",
+      "tier": "press",
+      "publishedAt": null,
+      "body": "[WebFetch 요약본, 게재일 미확인] 1) 시들거나 미끈거리는 잎은 바로 버린다. 2) 키친타월로 두드려 말리고, 통째로 씻지 않는다. 3) 뿌리가 붙어 있으면 물기를 짠 수건으로 뿌리만 감싸고 줄기·잎은 마른 상태로. 4) 입구를 느슨하게 해 세워 보관, 생고기·생선과 떨어뜨림. 5) 며칠마다 확인해 점액·누런 잎·시큼한 냄새 줄기는 버림. 6) 일주일 안에 못 쓸 분량은 썰어 단면을 말리고 쟁반에 얇게 펴 반쯤 얼린 뒤 지퍼백에 평평하게 냉동(-18℃ 이하 언급). 해동하면 물러져 국·찌개·볶음 등 가열 요리용. 물컵 보관법은 자료마다 결과가 엇갈린다."
+    },
+    {
+      "title": "[김장꿀팁] 김장 '쪽파' 손질법, 씻는 순서부터 물기 빼는 방법까지 정리 (위키트리)",
+      "url": "https://www.wikitree.co.kr/articles/1172164",
+      "host": "www.wikitree.co.kr",
+      "tier": "press",
+      "publishedAt": null,
+      "body": "[WebFetch 요약본, 게재일 미확인] 바싹 마른 뿌리 끝과 수염만 자른다(흰 부분을 깊게 자르면 먹는 부분이 줄고 흙이 깊이 들어감). 누렇거나 무른 겉잎은 씻기 전에 뗀다. 한 줌씩 흐르는 물에 뿌리 쪽 중심으로 헹구고 오래 담가 두지 않는다. 체에 밭친 뒤 한 겹으로 펼쳐 말리며, 줄기를 쓸었을 때 물방울이 맺히지 않으면 적당. 잎을 꽉 쥐면 멍이 든다. 썰기는 마지막에. 미리 손질한다면 씻기·말리기까지만, 밀폐 용기엔 마른 키친타월을 깔고 가능하면 손질한 날 사용."
+    },
+    {
+      "title": "쪽파 씻고 '이것' 깔아 물기 빼보세요…김장 양념 간이 흐려지지 않네요 (위키트리)",
+      "url": "https://www.wikitree.co.kr/articles/1163308",
+      "host": "www.wikitree.co.kr",
+      "tier": "press",
+      "publishedAt": "2026-10-01",
+      "body": "[WebFetch 요약본, 윤시현 기자, 2026-10-01] 씻기 전 시들거나 미끈거리는 줄기는 뺀다. 마른 잔뿌리와 누런 끝만 자르고 흰 부분은 남긴다. 찬 흐르는 물로 헹군 뒤 마른 수건 위에 한 겹으로 자연 건조, 기준은 '줄기 사이에 맺힌 물방울이 보이지 않을 때까지'. 단기 보관은 수건을 살짝 적셔 느슨하게 감싸 냉장 채소칸에 세워 둔다. 식약처가 식중독균이 잘 자라는 온도대를 약 4~60도로 안내한다고 인용(기사 표기, 식약처 원문 미확인). 보관 중 매일 한 번 다발을 열어 상태 확인 권장."
+    }
+  ],
+  "claims": [
+    {
+      "claim": "쪽파에만 해당하는 공식 보관 기준은 없다. 다만 가정 냉장·냉동 온도의 공식 기준(냉장 5℃ 이하, 냉동 -18℃ 이하)은 있고, 이것이 이 글의 유일한 확정 축이다",
+      "grade": "confirmed",
+      "evidence": [
+        "식약처 식품안전나라 식중독 예방 6대 수칙(2023-05-19): 냉장식품은 5℃ 이하, 냉동식품은 -18℃ 이하 보관.",
+        "농사로 '파'(2006, 쪽파 미지칭): 파의 저장 온도는 5℃ 전후 — 쪽파 기준이 아니라 파 일반 참고로만.",
+        "식약처 자료도 쪽파를 특정하지 않는 일반 식품 기준이다.",
+        "농진청 쪽파 문서는 재배 정보만 있고 보관 수치가 없다(글에서 '공식 쪽파 보관 기준은 확인 못 함'으로 표기)."
+      ],
+      "sourceUrls": [
+        "https://www.foodsafetykorea.go.kr/portal/board/boardDetail.do?menu_no=3120&bbs_no=bbs001&ntctxt_no=1094593",
+        "https://www.nongsaro.go.kr/portal/ps/psz/psza/contentSub.ps?menuId=PS03796&sSeCode=374007&cntntsNo=101933&totalSearchYn=Y"
+      ]
+    },
+    {
+      "claim": "보관 전 다듬기는 언론 기사 기준으로 '마른 뿌리 끝·수염만 자르고 흰 부분은 남기기, 겉잎 정리, 물방울이 맺히지 않을 때까지 말리고 썰기는 마지막에'로 모인다",
+      "grade": "reported",
+      "evidence": [
+        "위키트리 1172164: 마른 뿌리 끝·수염만 자르고 흰 부분은 깊게 자르지 않는다. 한 줌씩 뿌리 쪽 중심으로 헹구고 오래 담그지 않는다. 줄기에 물방울이 맺히지 않을 때까지 말리고 썰기는 마지막.",
+        "위키트리 1163308(2026-10-01): 마른 잔뿌리와 누런 끝만 자르고 흰 부분은 남김, 물방울이 보이지 않을 때까지 자연 건조 후 썬다.",
+        "레이디경향(2026-03-24): 세척은 보관 직전에, 미리 씻으면 남은 수분이 부패를 촉진할 수 있다.",
+        "공식 쪽파 근거는 없음. 농사로 '파' 일반(2006)의 '물에 닿았으면 빨리 쓰는 편이 좋다'만 방향이 겹치는 참고(쪽파 적용은 단정 불가).",
+        "기사 3건은 서로 큰 충돌 없이 일치하지만 모두 기사 수준(실험·측정 근거 없음)."
+      ],
+      "sourceUrls": [
+        "https://www.wikitree.co.kr/articles/1172164",
+        "https://www.wikitree.co.kr/articles/1163308",
+        "https://lady.khan.co.kr/cooking/article/202603241539001",
+        "https://www.nongsaro.go.kr/portal/ps/psz/psza/contentSub.ps?menuId=PS03796&sSeCode=374007&cntntsNo=101933&totalSearchYn=Y"
+      ]
+    },
+    {
+      "claim": "냉장 보관 방법은 기사마다 수건 상태가 어긋나고 물컵 보관 효과도 근거가 없어, 하나의 정답으로 말할 수 없다. 공식 쪽파 기준이 없으니 온도(5℃ 이하)만 확정 가능",
+      "grade": "unclear",
+      "evidence": [
+        "레이디경향(2026-03-24): '물기를 머금은' 키친타월로 감싸 지퍼백·밀폐용기에 넣어 냉장 채소 칸.",
+        "위키트리 1170679·1172164: 줄기·잎은 마른 상태, 뿌리만 짠 수건으로 살짝 적셔 감싸고 입구는 느슨하게, 용기엔 마른 키친타월.",
+        "위키트리 1163308: 수건을 살짝 적셔 느슨하게 감싸 냉장 채소칸에 세워 둠.",
+        "물컵(물 약 5cm) 세워 보관: 레이디경향은 '최대 2주'라 하나 실험 근거 미확인, 위키트리 1170679는 자료마다 결과가 엇갈린다고 함.",
+        "냉장 온도 기준만 식약처 5℃ 이하로 확정(4℃ 이하 안내는 미열람이라 확정 못 함).",
+        "'냉장 약 1주일'은 확인되지 않음 — 레이디경향은 '일주일 이내 사용할 경우'라고만 쓴 사용 시점이지 보관 가능 기간 보증이 아니다."
+      ],
+      "sourceUrls": [
+        "https://lady.khan.co.kr/cooking/article/202603241539001",
+        "https://www.wikitree.co.kr/articles/1170679",
+        "https://www.wikitree.co.kr/articles/1172164",
+        "https://www.wikitree.co.kr/articles/1163308",
+        "https://www.foodsafetykorea.go.kr/portal/board/boardDetail.do?menu_no=3120&bbs_no=bbs001&ntctxt_no=1094593"
+      ]
+    },
+    {
+      "claim": "냉동은 썰어서 단면을 말린 뒤 평평하게 얼리고, 해동하면 물러지므로 가열 요리용이다 (온도 기준만 공식, 방법은 기사 1건)",
+      "grade": "reported",
+      "evidence": [
+        "위키트리 1170679: 일주일 안에 못 쓸 분량은 썰어 단면을 말리고 쟁반에 얇게 펴 반쯤 얼린 뒤 지퍼백에 평평하게 담아 냉동. 해동하면 물러져 국·찌개·볶음 등 가열 요리에 적합, 생으로 곁들이는 용도엔 부적합.",
+        "식약처: 냉동식품은 -18℃ 이하 보관(확정, 쪽파 특정 아님).",
+        "농사로 '파' 일반(2006): 남은 파는 잘게 썰어 밀폐용기에 넣어 냉장 또는 냉동할 수 있으나 장기 저장은 어렵다 — 쪽파 적용 불명이라 참고로만.",
+        "냉동 기간(개월 수)은 근거 없음. 방법론은 위키트리 1건뿐이라 교차 확인 불가."
+      ],
+      "sourceUrls": [
+        "https://www.wikitree.co.kr/articles/1170679",
+        "https://www.foodsafetykorea.go.kr/portal/board/boardDetail.do?menu_no=3120&bbs_no=bbs001&ntctxt_no=1094593",
+        "https://www.nongsaro.go.kr/portal/ps/psz/psza/contentSub.ps?menuId=PS03796&sSeCode=374007&cntntsNo=101933&totalSearchYn=Y"
+      ]
+    }
+  ],
+  "numbers": [
+    { "what": "식약처 냉장식품 보관 온도", "value": "5℃ 이하", "asOf": "2023-05-19", "sourceUrl": "https://www.foodsafetykorea.go.kr/portal/board/boardDetail.do?menu_no=3120&bbs_no=bbs001&ntctxt_no=1094593" },
+    { "what": "식약처 냉동식품 보관 온도", "value": "-18℃ 이하", "asOf": "2023-05-19", "sourceUrl": "https://www.foodsafetykorea.go.kr/portal/board/boardDetail.do?menu_no=3120&bbs_no=bbs001&ntctxt_no=1094593" },
+    { "what": "농사로 '파' 일반 저장 온도 (쪽파 미지칭)", "value": "5℃ 전후", "asOf": "2006-12-15", "sourceUrl": "https://www.nongsaro.go.kr/portal/ps/psz/psza/contentSub.ps?menuId=PS03796&sSeCode=374007&cntntsNo=101933&totalSearchYn=Y" },
+    { "what": "물컵 보관 시 물 높이 (기사 주장)", "value": "약 5cm", "asOf": "2026-03-24", "sourceUrl": "https://lady.khan.co.kr/cooking/article/202603241539001" },
+    { "what": "물컵 보관 신선도 유지 기간 (기사 주장, 실험 근거 없음 — 단정 금지)", "value": "최대 2주", "asOf": "2026-03-24", "sourceUrl": "https://lady.khan.co.kr/cooking/article/202603241539001" },
+    { "what": "식중독균이 잘 자라는 온도대 (위키트리 인용, 식약처 원문 미확인, 단위 '도' 표기)", "value": "약 4~60도", "asOf": "2026-10-01", "sourceUrl": "https://www.wikitree.co.kr/articles/1163308" }
+  ],
+  "dropped": [
+    {
+      "url": "https://www.rda.go.kr/middlePopOpenPopNongsaroDBView.do?no=2094",
+      "why": "농진청 쪽파 재배 문서(생육적온·파종·수확 시기)만 있고 식용 쪽파 보관 정보가 없다. 재배 수치는 제철 확정으로 번질 수 있어 쓰지 않는다(sources에서도 제외)."
+    }
+  ],
+  "cannotCover": [
+    "쪽파 냉장 보관 가능 일수(약 1주일·2~5℃ 포함) — 본문 확인 안 됨, 공식 근거 없음",
+    "쪽파 냉동 보관 가능 개월 수(2~3개월은 개인 블로그 주장뿐)",
+    "농사로 '파'(2006) 내용을 쪽파 공식 기준으로 말하는 것",
+    "물컵 보관의 효과 단정(기사 주장, 실험 근거 없음, 기사끼리 엇갈림)",
+    "젖은 수건 vs 마른 상태의 우열 판정",
+    "신문지 보관·화분에 뿌리 묻기의 쪽파 적용(농사로는 파 일반)",
+    "쪽파의 정의·파·양파 교잡종 설명, 쪽파 vs 실파 구분, 쪽파 제철 확정",
+    "식약처 냉장 4℃ 이하·식품공전 0~10℃ 기준(검색 요약만, 미열람)",
+    "영양·효능, 상한 쪽파의 공식 판별 기준"
+  ],
+  "unknowns": [
+    "쪽파 보관을 직접 다룬 공식(official/data) 자료는 0건: 농사로=파 일반, 농진청=재배, 식약처=냉장·냉동 온도만.",
+    "위키트리 1170679·1172164의 게재일 미확인(null).",
+    "WebFetch가 요약 형태로 본문을 돌려줘 body는 원문 전문이 아니라 요약 기록이다."
+  ],
+  "songs": []
+}
