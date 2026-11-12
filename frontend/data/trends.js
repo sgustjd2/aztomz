@@ -10928,12 +10928,12 @@ window.HANGEUT_DATA = {
       "cat": "노래·챌린지",
       "coverCat": "cat-music",
       "collectedAt": "2026-08-07",
-      "analyzedAt": "2026-08-15",
-      "buzz": "화제성 매우 높음 (역주행)",
-      "stage": "상승",
-      "stageMsg": "초등학생 고수 등장으로 재점화",
-      "label": "지금 도전해도 됨",
-      "labelCls": "good",
+      "analyzedAt": "2026-11-12",
+      "buzz": "화제성 하락",
+      "stage": "하락 (한물감)",
+      "stageMsg": "재유행 신호 없이 옛 챌린지로 소비",
+      "label": "이제는 늦은 느낌",
+      "labelCls": "mid",
       "title": "슬릭백 챌린지 (재유행)",
       "def": "공중에 떠 있는 것처럼 미끄러지듯 나아가는 댄스 챌린지",
       "excerpt": "한물간 줄 알았던 챌린지가 초등학생 고수의 등장으로 역주행. 원조를 넘어선 화제성으로 다시 불타오르고 있어요.",
@@ -10964,6 +10964,10 @@ window.HANGEUT_DATA = {
         [
           "춤추는곰돌 랜덤댄스(초등학생 슬릭백 영상)",
           "https://www.youtube.com/watch?v=-iPFHCTW8w4"
+        ],
+        [
+          "나무위키 — 슬릭백(2026-08-17)",
+          "https://namu.wiki/w/슬릭백"
         ]
       ],
       "video": {
