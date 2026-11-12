@@ -1,18 +1,5 @@
 [
   {
-    "slug": "lenny-kravitz-it-aint-over",
-    "categoryId": "retro-revival",
-    "date": "2026-10-10",
-    "h2": [
-      "기본 정보",
-      "어떤 곡인가",
-      "왜 지금 다시 통하는가",
-      "이런 분께",
-      "마무리"
-    ],
-    "closingClichePatterns": []
-  },
-  {
     "slug": "leather-jacket-silhouette-2026",
     "categoryId": "hangeut-trend",
     "date": "2026-10-11",
@@ -3280,6 +3267,19 @@
       "확인되지 않은 사항",
       "정리",
       "참고 자료"
+    ],
+    "closingClichePatterns": []
+  },
+  {
+    "slug": "korea-grand-festival-2026-nov",
+    "categoryId": "life-info",
+    "date": "2026-11-12",
+    "h2": [
+      "이미 끝난 것부터 걸러내요",
+      "품목별 종료일 표, 일요일 전에 끝난 것과 남은 것",
+      "15일 이후에도 이어지는 것, 그리고 숫자의 함정",
+      "자료로는 알 수 없었던 것",
+      "근거로 삼은 자료"
     ],
     "closingClichePatterns": []
   }
