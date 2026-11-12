@@ -1,19 +1,5 @@
 [
   {
-    "slug": "light-padding-jacket-2026",
-    "categoryId": "hangeut-trend",
-    "date": "2026-10-11",
-    "h2": [
-      "한 줄로 말하면",
-      "'격전지'라는 말, 어디서 나왔나요",
-      "아웃도어에서 일상·출근·레저로, 쓰임이 넓어져요",
-      "지금은 상승 국면으로 보여요",
-      "간절기엔 혼자, 추워지면 겹쳐 입어요",
-      "참고한 기사"
-    ],
-    "closingClichePatterns": []
-  },
-  {
     "slug": "excel-datedif",
     "categoryId": "hangeut-trend",
     "date": "2026-10-11",
@@ -3279,6 +3265,21 @@
       "이미 얼었거나 터졌다면",
       "다른 지역이거나 세입자라면 문의할 부분",
       "서울시 공지와 기사 링크 모음"
+    ],
+    "closingClichePatterns": []
+  },
+  {
+    "slug": "winter-duvet-wash-guide",
+    "categoryId": "life-info",
+    "date": "2026-11-12",
+    "h2": [
+      "안내마다 기종과 대상이 달라요",
+      "세탁기에 넣을 때는 한 장씩, 물에 잠기게",
+      "유연제 금지는 누구의 말일까요?",
+      "건조기 앞에서는 안내가 갈려요",
+      "물 온도·주기·드라이클리닝도 자료마다 달라요",
+      "여기서부터는 라벨에 물어보세요",
+      "읽어 본 안내문 목록"
     ],
     "closingClichePatterns": []
   }
