@@ -1,20 +1,5 @@
 [
   {
-    "slug": "excel-datedif",
-    "categoryId": "hangeut-trend",
-    "date": "2026-10-11",
-    "h2": [
-      "DATEDIF 구문과 단위 6종, 문서 예시 값",
-      "\"MD\" 단위 경고와 EDATE 우회 수식",
-      "DAYS·NETWORKDAYS·YEARFRAC·TODAY 비교표",
-      "DATEDIF \"Y\"와 만 나이, 연결은 이 글의 추론이에요",
-      "#NUM!이 뜨거나 날짜로 보일 때",
-      "정리",
-      "참고"
-    ],
-    "closingClichePatterns": []
-  },
-  {
     "slug": "windows-mobile-hotspot",
     "categoryId": "hangeut-trend",
     "date": "2026-10-11",
@@ -3280,6 +3265,21 @@
       "물 온도·주기·드라이클리닝도 자료마다 달라요",
       "여기서부터는 라벨에 물어보세요",
       "읽어 본 안내문 목록"
+    ],
+    "closingClichePatterns": []
+  },
+  {
+    "slug": "hanroro-question-mark-vocal-challenge",
+    "categoryId": "hangeut-trend",
+    "date": "2026-11-13",
+    "h2": [
+      "안무 없이 목소리만 내는 챌린지예요",
+      "이 곡과 이 형식은 어떻게 만났나요",
+      "확인된 것과 아직 모르는 것",
+      "단계는 아직 ‘발견’이에요",
+      "따라 불러 보려면 이 순서가 편해요",
+      "다른 사람 영상을 볼 때 알아 둘 점",
+      "한 번에 보는 요점"
     ],
     "closingClichePatterns": []
   }
