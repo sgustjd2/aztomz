@@ -13166,7 +13166,7 @@ window.HANGEUT_DATA = {
       "cat": "카페·핫플",
       "coverCat": "cat-bakery",
       "collectedAt": "2026-09-02",
-      "analyzedAt": "2026-10-11",
+      "analyzedAt": "2026-11-12",
       "buzz": "화제성 확인 어려움(확인된 익선점 후기 1건)",
       "ad": 40,
       "trust": 50,
