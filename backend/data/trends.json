@@ -28492,6 +28492,62 @@
       "images": [
         "https://www.cosmopolitan.co.kr/resources/online/thumbnail/hf/2026/11/10/a775e815-a9a3-4388-b655-df817f1fa454.jpg"
       ]
+    },
+    {
+      "id": "ai-christmas-family-photo-2026",
+      "type": "트렌드",
+      "cat": "AI 프롬프트",
+      "coverCat": "cat-ai",
+      "collectedAt": "2026-11-13",
+      "analyzedAt": "2026-11-13",
+      "buzz": "계절성 언급 확인, 확산 규모 미확인",
+      "stage": "발견",
+      "stageMsg": "2026년 11월 3일과 7일에 크리스마스 AI 사진 제작 게시물·가이드가 확인됐어요. 2025년에도 같은 계절 소재가 있었고, 올해 대중적 확산 규모는 확인되지 않았어요.",
+      "label": "시즌 맞춰 가볍게 도전",
+      "labelCls": "good",
+      "title": "AI 크리스마스 가족사진 프롬프트",
+      "def": "가족사진을 크리스마스 분위기의 연말 화보로 바꾸는 이미지 생성·편집 프롬프트",
+      "excerpt": "가족사진 한 장에 크리스마스 거실이나 눈 내리는 겨울 배경을 더해 연말 화보처럼 바꾸는 계절형 AI 이미지 소재예요.",
+      "pull": "",
+      "verdict": "2026년 11월 초 온라인에서 AI 크리스마스 가족사진을 만드는 가이드와 게시물은 확인됐어요. 다만 지난해에도 비슷한 크리스마스 AI 사진 콘텐츠가 있었고 올해 유행 규모는 확인되지 않아, 새 대세라기보다 시즌을 앞둔 재등장 소재로 보는 편이 정확해요.",
+      "recs": [
+        [
+          "가족사진을 연말 분위기로 바꿔보기",
+          "◎",
+          1
+        ],
+        [
+          "얼굴·손·사진 속 글자 결과를 확인하기",
+          "○",
+          1
+        ],
+        [
+          "실제 촬영 사진처럼 오해시키기",
+          "✕",
+          0
+        ]
+      ],
+      "src": [
+        [
+          "Moon Shell AI 크리스마스 가족사진 가이드",
+          "https://moonshells.tistory.com/321"
+        ],
+        [
+          "Atlas Cloud AI 크리스마스 사진 트렌드 가이드",
+          "https://www.atlascloud.ai/ko/blog/tips/ai-christmas-photo-trend"
+        ]
+      ],
+      "tags": [
+        "AI프롬프트",
+        "크리스마스",
+        "가족사진",
+        "연말화보"
+      ],
+      "prompt": "※ 아래는 출처의 설명 요소를 바탕으로 새로 구성한 예시이며, 게시물에 실린 원문 프롬프트가 아닙니다.\n[변환 목표]\n첨부한 가족사진을 참고해 따뜻한 크리스마스 가족 화보를 만듭니다.\n[인물 보존]\n사진 속 인원수와 각 인물의 정체성을 유지합니다.\n얼굴형, 피부색, 나이대, 표정의 특징을 최대한 보존합니다.\n가족 구성원을 새로 추가하거나 삭제하지 않습니다.\n[장면]\n따뜻한 조명이 켜진 크리스마스 거실을 배경으로 합니다.\n배경에는 트리와 은은한 장식이 보이게 합니다.\n장식은 인물의 얼굴을 가리지 않게 배치합니다.\n[의상]\n원래 의상의 형태와 색을 크게 바꾸지 않습니다.\n원하는 경우에만 자연스러운 겨울 니트나 단정한 연말 의상을 더합니다.\n의상에 읽을 수 없는 글자나 임의의 로고를 넣지 않습니다.\n[구도]\n모든 가족 구성원이 한 화면에 편안히 들어오게 합니다.\n눈높이에서 촬영한 듯한 자연스러운 가족 사진 구도를 씁니다.\n얼굴이 화면 가장자리에서 잘리지 않게 여백을 둡니다.\n[조명]\n따뜻한 실내 조명과 부드러운 그림자를 표현합니다.\n피부에 과한 광택이나 강한 색조를 더하지 않습니다.\n[분위기]\n정돈되고 포근한 연말 카드 사진처럼 연출합니다.\n과한 반짝이, 눈보라, 장식 효과는 피합니다.\n현실적인 사진 질감과 자연스러운 표정을 우선합니다.\n[피해야 할 것]\n얼굴 왜곡, 손가락 오류, 인물 복제, 신체 비율 변형을 피합니다.\n사진 속 원본 배경의 핵심 인물 특징을 임의로 바꾸지 않습니다.\n이미지 안에 날짜, 문구, 워터마크를 만들지 않습니다.\n[결과 확인]\n생성 결과에서 얼굴, 손, 의상, 배경의 이상한 부분을 확인합니다.\n원본과 다른 부분이 크면 수정 요청을 짧게 나누어 다시 합니다.\n[비율]\n가족이 함께 보이는 세로형 4:5 구도를 우선합니다.",
+      "images": [
+        "https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdna%2FRPBYA%2FdJMcagguBea%2FAAAAAAAAAAAAAAAAAAAAAPFkrQzS5BiWnNRkipEbHoWwgxri7DWQGJicvNtfkPLa%2Fimg.png%3Fcredential%3DyqXZFxpELC7KVnFOS48ylbz2pIh7yKj8%26expires%3D1796050799%26allow_ip%3D%26allow_referer%3D%26signature%3Dsq3h4wZjg1JpPYstMKKctqTjHvg%253D",
+        "https://static.atlascloud.ai/uploads/how_the_ai_christmas_photo_trend_works_and_how_to_make_yours_still_look_like_you_cover_d7b068dc3a.png"
+      ]
     }
   ]
 }
