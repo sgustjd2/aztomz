@@ -1,19 +1,5 @@
 [
   {
-    "slug": "chrome-translate",
-    "categoryId": "hangeut-trend",
-    "date": "2026-10-11",
-    "h2": [
-      "크롬 번역 제안이 안 뜰 때 먼저 해 볼 것",
-      "크롬 번역 설정 위치, PC·Android·iPhone 비교",
-      "크롬 번역 말풍선의 사이트별 '번역 안 함'은 도움말에 없어요",
-      "크롬 번역 제안을 막는 다른 조건들",
-      "회사·학교 PC라면 크롬 번역이 관리 정책으로 꺼져 있을 수 있어요",
-      "정리"
-    ],
-    "closingClichePatterns": []
-  },
-  {
     "slug": "github-ssh-key",
     "categoryId": "hangeut-trend",
     "date": "2026-10-11",
@@ -3259,6 +3245,21 @@
       "씻는 시점은 기사마다 달라요",
       "아직 확인하지 못한 것",
       "이 글에 쓴 자료"
+    ],
+    "closingClichePatterns": []
+  },
+  {
+    "slug": "riding-boots-winter-2026",
+    "categoryId": "hangeut-trend",
+    "date": "2026-11-14",
+    "h2": [
+      "한 줄로 말하면",
+      "어디서 시작된 스타일인가요",
+      "지금 상황이 이래요",
+      "실제로 어떻게 입나요",
+      "지금 따라 해도 될까요",
+      "한 번에 정리",
+      "참고"
     ],
     "closingClichePatterns": []
   }
