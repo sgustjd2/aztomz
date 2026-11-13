@@ -295,11 +295,11 @@
       "type": "트렌드",
       "cat": "디저트",
       "coverCat": "cat-trend",
-      "analyzedAt": "2026-08-16",
+      "analyzedAt": "2026-11-13",
       "title": "우베 (보라 디저트)",
       "buzz": "급상승 중",
       "stage": "상승",
-      "stageMsg": "지금 알면 빠른 편 (\"말차 다음\" 주자)",
+      "stageMsg": "11월에도 식품업계 관심이 이어짐",
       "label": "거품 주의",
       "labelCls": "warn",
       "excerpt": "필리핀 보라 뿌리채소. 동시다발 출시 중. 색감만 보라색이고 \"이름만 우베\"인 메뉴가 많아 주의.",
@@ -325,6 +325,10 @@
         [
           "우베 국내 상륙(파이낸셜뉴스)",
           "https://www.fnnews.com/news/202604171437188900"
+        ],
+        [
+          "WithBuyer(2026-11-04)",
+          "https://www.withbuyer.com/news/articleView.html?idxno=33780"
         ]
       ],
       "images": [
@@ -395,13 +399,13 @@
       "type": "트렌드",
       "cat": "디저트",
       "coverCat": "cat-dessert",
-      "analyzedAt": "2026-08-16",
+      "analyzedAt": "2026-11-13",
       "title": "상하이 버터떡",
-      "buzz": "화제성 높음",
+      "buzz": "화제성 하락",
       "stage": "피크 → 하락",
-      "stageMsg": "억지 유행 논란 + 이미 식는 중",
-      "label": "SNS 기대치 조절 필요",
-      "labelCls": "warn",
+      "stageMsg": "신상 경쟁 속에서 화제성이 낮아지는 중",
+      "label": "이제는 늦은 느낌",
+      "labelCls": "mid",
       "excerpt": "SNS 타고 빠르게 확산한 유행. 겉바속쫀이지만 찹쌀도너츠와 90% 비슷. \"인플루언서·유통 합작 억지 유행\" 지적도 큼.",
       "pull": "새 맛이라기보다 익숙한 찹쌀도너츠의 리브랜딩에 가깝다.",
       "verdict": "SNS 타고 빠르게 번지면서 베이커리·카페가 일제히 출시했지만 맛은 옛 찹쌀도너츠와 거의 같다는 평이 많고, \"억지 유행\"이라는 반응도 큽니다. 동네 베이커리·배달앱에서 4개 9,500원 선으로 쉽게 경험할 수 있으니, 품절 잦은 유명 매장까지 웨이팅 갈 필요는 약해요.",
@@ -430,6 +434,10 @@
         [
           "SNS발 억지 유행일까(문화일보)",
           "https://www.munhwa.com/article/11574520"
+        ],
+        [
+          "루리웹(2026-11-10)",
+          "https://m.ruliweb.com/community/board/300143/read/77338245"
         ]
       ],
       "video": {
@@ -884,13 +892,13 @@
       "type": "트렌드",
       "cat": "노래·챌린지",
       "coverCat": "cat-music",
-      "analyzedAt": "2026-08-16",
+      "analyzedAt": "2026-11-13",
       "title": "아일릿 'It's Me' 챌린지",
-      "buzz": "화제성 매우 높음",
-      "stage": "피크",
-      "stageMsg": "지금 가장 많이 보임",
-      "label": "지금이 적기",
-      "labelCls": "good",
+      "buzz": "화제성 하락",
+      "stage": "피크 → 하락",
+      "stageMsg": "조회수 기록은 이어져도 챌린지는 잦아듦",
+      "label": "이제는 늦은 느낌",
+      "labelCls": "mid",
       "excerpt": "아일릿 미니 4집 타이틀곡(2026.4.30). 테크노 비트 안무 챌린지가 틱톡·릴스 점령, '2026 대표 밈'으로.",
       "pull": "테크노 비트 + 따라 추기 쉬운 포인트 안무 = 숏폼 최적화.",
       "verdict": "발매 직후부터 'It's Me' 테크노 비트에 맞춘 챌린지가 쏟아졌고, 아일릿 본인들도 광고 패러디 챌린지를 올리며 밈이 됐어요. 지금이 피크라 챌린지·BGM으로 쓰기 딱 좋은 타이밍. 다만 피크는 곧 지나가니 몇 달 뒤 '신곡'이라 소개하면 늦어 보일 수 있어요.",
@@ -915,6 +923,10 @@
         [
           "아일릿 잇츠미 밈(타임스프레드)",
           "https://www.timespread.co.kr/community/illit/130433960"
+        ],
+        [
+          "K-Pop Post(2026-10-27)",
+          "https://kppost.com/kpop/아일릿-it-me/"
         ]
       ],
       "video": {
