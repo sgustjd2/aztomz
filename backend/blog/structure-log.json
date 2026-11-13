@@ -1,22 +1,5 @@
 [
   {
-    "slug": "medicine-disposal-guide",
-    "categoryId": "hangeut-trend",
-    "date": "2026-10-11",
-    "h2": [
-      "폐의약품을 내기 전에 챙길 것",
-      "폐의약품 종류별 준비법을 표로 보면",
-      "알약 포장을 뜯을지는 서울 자료끼리도 갈려요",
-      "폐의약품을 우체통에 넣는 순서, 서울 기준",
-      "폐의약품 우체통 수거, 서울 밖은 지역마다 확인이 필요해요",
-      "우체통이 막히면 폐의약품 전용 수거함으로",
-      "폐의약품을 싱크대나 종량제 봉투에 버리면 안 되는 이유",
-      "정리",
-      "참고"
-    ],
-    "closingClichePatterns": []
-  },
-  {
     "slug": "chrome-translate",
     "categoryId": "hangeut-trend",
     "date": "2026-10-11",
@@ -3261,6 +3244,21 @@
       "서명 전에 물어볼 질문 다섯 개",
       "이 글이 답하지 못한 것들",
       "참고 자료"
+    ],
+    "closingClichePatterns": []
+  },
+  {
+    "slug": "mandarin-storage-guide",
+    "categoryId": "life-info",
+    "date": "2026-11-13",
+    "h2": [
+      "먼저, 숫자 출처부터 가려요",
+      "상자째 둘 때 손이 가는 순서",
+      "어떤 귤부터 상할까요",
+      "곰팡이 핀 귤을 발견했다면",
+      "씻는 시점은 기사마다 달라요",
+      "아직 확인하지 못한 것",
+      "이 글에 쓴 자료"
     ],
     "closingClichePatterns": []
   }
