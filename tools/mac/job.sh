@@ -21,8 +21,16 @@ acquire_writer_lock() {
 case "$1" in
   blog-daily)   # tools/blog-daily.vbs 와 같은 흐름(2026-11-09~): 집필만 한다. 발행은 blog-queue(09~18시 매시간)가 맡는다
     echo "===== $(date)" >> $B/blog-daily.log
-    claude -p --permission-mode acceptEdits "/blog-daily" >> $B/blog-daily.log 2>&1
+    # 집필 모델은 GPT(codex)를 먼저 쓰고, 실패(종료코드 ≠ 0)하면 Claude 로 넘어간다(2026-11-14 사용자 지시)
+    export PATH="$HOME/.local/share/mise/installs/node/24/bin:$PATH"
+    codex exec -m gpt-6-luna -s workspace-write -c sandbox_workspace_write.network_access=true --skip-git-repo-check \
+      "이 저장소의 .claude/skills/blog-daily/SKILL.md 를 Read 로 읽고 그대로 따라 오늘 배치(티스토리 1편)를 쓴다. 스킬이 참조하는 .claude/skills/blog-pipeline/SKILL.md 와 .claude/agents/*.md 는 직접 읽고 각 역할을 네가 순서대로 수행한다. 발행·git 커밋은 하지 않는다. 마지막에 보고 한 줄 요약만 출력한다." >> $B/blog-daily.log 2>&1
     rc=$?
+    if [ $rc -ne 0 ]; then
+      echo "===== codex 실패(rc=$rc) → claude 로 대체 $(date)" >> $B/blog-daily.log
+      claude -p --model claude-sonnet-5-5 --permission-mode acceptEdits "/blog-daily" >> $B/blog-daily.log 2>&1
+      rc=$?
+    fi
     if [ $rc -eq 0 ]; then
       echo "===== daily drafting complete $(date)" >> $B/blog-daily.log
     else
@@ -44,8 +52,18 @@ case "$1" in
     echo "===== $(date) [$cat] slot $slot" >> $B/blog-hourly-naver.log
     node backend/scripts/blog-posted-titles.mjs > $B/.posted-titles.txt 2>&1 || echo "UNAVAILABLE: 실행 실패" > $B/.posted-titles.txt
     node backend/scripts/blog-hot-keywords.mjs > $B/.hot-keywords.txt 2>&1 || echo "UNAVAILABLE: 실행 실패" > $B/.hot-keywords.txt
-    claude -p --permission-mode acceptEdits "/blog-hourly-naver $cat" >> $B/blog-hourly-naver.log 2>&1
+    # 집필 모델은 GPT(codex)를 먼저 쓰고, 실패(종료코드 ≠ 0)하면 Claude 로 넘어간다(2026-11-14 사용자 지시).
+    # codex 샌드박스는 workspace-write + 네트워크 허용(조사·사진 수집용). .git 쓰기는 막혀 있어 로컬 커밋은 아래에서 따로 한다.
+    export PATH="$HOME/.local/share/mise/installs/node/24/bin:$PATH"   # codex 위치(launchd PATH 에는 없음)
+    echo "===== writer: codex(gpt) $(date)" >> $B/blog-hourly-naver.log
+    codex exec -m gpt-6-luna -s workspace-write -c sandbox_workspace_write.network_access=true --skip-git-repo-check \
+      "이 저장소의 .claude/skills/blog-hourly-naver/SKILL.md 를 Read 로 읽고 그대로 따라 이번 회차(카테고리 $cat) 글 1편을 쓴다. 그 스킬이 참조하는 .claude/skills/blog-daily/SKILL.md, blog-pipeline/SKILL.md 와 .claude/agents/*.md(blog-researcher·writer·seo·factchecker 등)는 직접 읽고 각 역할을 네가 순서대로 수행한다. 발행·git 커밋은 하지 않는다(발행은 스케줄이 큐로 올린다). 마지막에 보고 한 줄 요약만 출력한다." >> $B/blog-hourly-naver.log 2>&1
     rc=$?
+    if [ $rc -ne 0 ]; then
+      echo "===== codex 실패(rc=$rc) → claude 로 대체 $(date)" >> $B/blog-hourly-naver.log
+      claude -p --model claude-sonnet-5-5 --permission-mode acceptEdits "/blog-hourly-naver $cat" >> $B/blog-hourly-naver.log 2>&1
+      rc=$?
+    fi
     if [ $rc -eq 0 ]; then
       echo "===== naver queue after hourly drafting [$cat] $(date)" >> $B/blog-queue.log
       node backend/scripts/blog-queue.mjs --only=naver --max-per-run=1 >> $B/blog-queue.log 2>&1
