@@ -42,6 +42,7 @@ case "$1" in
     echo "$slot" > $B/.run-slot.txt
     echo "$cat" > $B/.run-category.txt
     echo "===== $(date) [$cat] slot $slot" >> $B/blog-hourly-naver.log
+    node backend/scripts/blog-posted-titles.mjs > $B/.posted-titles.txt 2>&1 || echo "UNAVAILABLE: 실행 실패" > $B/.posted-titles.txt
     node backend/scripts/blog-hot-keywords.mjs > $B/.hot-keywords.txt 2>&1 || echo "UNAVAILABLE: 실행 실패" > $B/.hot-keywords.txt
     claude -p --permission-mode acceptEdits "/blog-hourly-naver $cat" >> $B/blog-hourly-naver.log 2>&1
     rc=$?
