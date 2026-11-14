@@ -1290,10 +1290,10 @@ window.HANGEUT_DATA = {
       "cat": "신조어",
       "coverCat": "cat-slang",
       "collectedAt": "2026-06-06",
-      "analyzedAt": "2026-08-16",
-      "buzz": "화제성 높음",
-      "label": "지금 써도 됨",
-      "labelCls": "good",
+      "analyzedAt": "2026-11-14",
+      "buzz": "화제성 하락",
+      "label": "이제는 늦은 느낌",
+      "labelCls": "mid",
       "pull": "",
       "verdict": "“영(young)”+“ㅋㅋㅋ”. 젊은 감성의 가볍고 트렌디한 웃음. 그룹 코르티스 ‘YOUNG CREATOR CREW’에서 번진 말로, 모르면 ‘늙크크’ 소리 듣는다는 농담까지 세트로 유행.",
       "recs": [
@@ -1323,12 +1323,16 @@ window.HANGEUT_DATA = {
       "def": "젊은 세대의 가볍고 트렌디한 웃음. ㅋㅋㅋ의 ‘영(young)’ 버전",
       "excerpt": "“영(young)”+“ㅋㅋㅋ”. 젊은 감성의 가볍고 트렌디한 웃음. 그룹 코르티스 ‘YOUNG CREATOR CREW’에서 번진 말로, 모르면 ‘늙크크’ 소리 듣는다는 농담까지 세트로 유행.",
       "pureKorean": "풋웃음 / 젊은 웃음",
-      "stage": "피크",
-      "stageMsg": "2026 상반기 최신 — 지금 쓰면 자연스러움",
+      "stage": "피크 → 하락",
+      "stageMsg": "10월 화제 이후 최근 언급은 줄어드는 흐름",
       "src": [
         [
           "코르티스發 ‘영크크’ 열풍(인사이트)",
           "https://www.insight.co.kr/news/557234"
+        ],
+        [
+          "티스토리(2026-11-10)",
+          "https://l1berta.tistory.com/entry/영크크-뜻과-늙크크-차이-총정리｜코르티스-노래에서-나온-말-모르면-정말-늙크크일까"
         ]
       ],
       "example": "방금 그 댓글 봤어? 완전 영크크 터졌잖아 ㅋㅋㅋ",
