@@ -16,7 +16,7 @@ export function runLLM(prompt, cwd) {
     try {
       const PATH = `${join(homedir(), '.local/share/mise/installs/node/24/bin')}:${process.env.PATH || ''}`;
       execFileSync('codex', ['exec', '-m', 'gpt-6-luna', '-s', 'read-only', '--skip-git-repo-check', '-o', out, '-'], {
-        cwd, encoding: 'utf8', timeout: 300000, maxBuffer: 20 * 1024 * 1024,
+        cwd, encoding: 'utf8', timeout: 600000, maxBuffer: 20 * 1024 * 1024,
         input: prompt, stdio: ['pipe', 'pipe', 'pipe'], env: { ...process.env, PATH },
       });
       const text = readFileSync(out, 'utf8').trim();
@@ -32,7 +32,7 @@ export function runLLM(prompt, cwd) {
   const CLI = process.env.CLAUDE_BIN || (WIN ? 'claude.cmd' : 'claude');
   const [bin, pre] = WIN ? [process.env.ComSpec || 'cmd.exe', ['/d', '/s', '/c', CLI]] : [CLI, []];
   return execFileSync(bin, [...pre, '-p', '--model', 'claude-sonnet-5-5', '--output-format', 'json'], {
-    cwd, encoding: 'utf8', timeout: 300000, maxBuffer: 20 * 1024 * 1024, windowsHide: true,
+    cwd, encoding: 'utf8', timeout: 600000, maxBuffer: 20 * 1024 * 1024, windowsHide: true,
     input: prompt, stdio: ['pipe', 'pipe', 'pipe'],
   });
 }

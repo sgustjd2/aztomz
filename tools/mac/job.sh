@@ -69,7 +69,8 @@ case "$1" in
       node backend/scripts/blog-queue.mjs --only=naver --max-per-run=1 >> $B/blog-queue.log 2>&1
     else
       echo "===== hourly drafting failed [$cat] with exit code $rc $(date)" >> $B/blog-hourly-naver.log
-    fi ;;
+    fi
+    node backend/scripts/blog-health-check.mjs >> $B/blog-hourly-naver.log 2>&1 ;;
   blog-queue)             node backend/scripts/blog-queue.mjs --max-per-run=1 >> $B/blog-queue.log 2>&1 ;;
   discord-reactions)      exec node backend/scripts/discord-reactions.mjs >> backend/out/discord-reactions.log 2>&1 ;;
   tistory-daily-session)  { echo "===== $(date)"; node backend/scripts/blog-publish.mjs --daily-session; } >> $B/tistory-daily-session.log 2>&1 ;;
