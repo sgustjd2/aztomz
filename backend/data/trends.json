@@ -5620,12 +5620,12 @@
       "cat": "노래·챌린지",
       "coverCat": "cat-music",
       "collectedAt": "2026-07-03",
-      "analyzedAt": "2026-07-03",
-      "buzz": "화제성 매우 높음",
-      "stage": "피크",
-      "stageMsg": "지금이 가장 핫할 때",
-      "label": "지금 도전해도 됨",
-      "labelCls": "good",
+      "analyzedAt": "2026-11-15",
+      "buzz": "화제성 하락",
+      "stage": "하락 (한물감)",
+      "stageMsg": "여름 이후 새 참여 신호가 드문 상태",
+      "label": "이제는 늦은 느낌",
+      "labelCls": "mid",
       "title": "Rude 한 호흡 챌린지",
       "def": "노래의 특정 파트를 숨 쉬지 않고 한 번에 부르는 챌린지",
       "excerpt": "숨 막히는 30초, 당신의 폐활량을 증명할 시간. 2026년 여름 SNS를 강타한 '한 호흡 챌린지'는 성공했을 때의 쾌감과 실패했을 때의 유머가 공존하는 가장 핫한 트렌드입니다.",
@@ -5652,6 +5652,10 @@
         [
           "오!연하 Oh!yeonha 유튜브",
           "https://youtu.be/SJeJeGMAbAM"
+        ],
+        [
+          "YouTube · 박다혜dahye(2026-07-30)",
+          "https://youtu.be/njYoQFtXdig"
         ]
       ],
       "tags": [
