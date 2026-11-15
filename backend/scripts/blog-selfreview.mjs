@@ -22,6 +22,7 @@
 import { readFile, writeFile } from 'node:fs/promises';
 import { existsSync } from 'node:fs';
 import { execFileSync } from 'node:child_process';
+import { runLLM } from './lib/llm.mjs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 
@@ -110,7 +111,7 @@ ${String(research).slice(0, 6000)}
 JSON 만. 설명·머리말 없이.
 {"assessment":"한 줄 자기비평","edits":[{"where":"어느 문단","issue":"무엇이 문제","find":"본문 정확한 원문 조각","replace":"고친 문장"}],"metaEdits":{"title":"바꿀 때만","desc":"바꿀 때만"}}`;
 
-console.log(`🪞 자체 피드백 — ${slug} (claude -p)`);
+console.log(`🪞 자체 피드백 — ${slug} (GPT 우선 → Claude)`);
 
 const WIN = process.platform === 'win32';
 const CLI = process.env.CLAUDE_BIN || (WIN ? 'claude.cmd' : 'claude');
@@ -118,10 +119,7 @@ const [bin, preArgs] = WIN ? [process.env.ComSpec || 'cmd.exe', ['/d', '/s', '/c
 
 let raw;
 try {
-  raw = execFileSync(bin, [...preArgs, '-p', '--output-format', 'json'], {
-    cwd: repoRoot, encoding: 'utf8', timeout: 300000, maxBuffer: 20 * 1024 * 1024, windowsHide: true,
-    input: prompt, stdio: ['pipe', 'pipe', 'pipe'],
-  });
+  raw = runLLM(prompt, repoRoot);
 } catch (e) {
   console.error(`⚠ claude 호출 실패: ${String(e.message).slice(0, 200)} — 자체 피드백 건너뜀(비치명적)`);
   process.exit(0); // 자체 피드백 실패는 발행을 막지 않는다(뒤의 blog-verify 가 최종 게이트).

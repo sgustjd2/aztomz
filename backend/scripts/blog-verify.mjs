@@ -20,6 +20,7 @@ import { readFile, writeFile } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
 import { existsSync } from 'node:fs';
 import { execFileSync } from 'node:child_process';
+import { runLLM } from './lib/llm.mjs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 
@@ -82,7 +83,7 @@ JSON 만. 설명·머리말 없이.
 {"pass": true|false, "problems": [{"severity":"blocker|warn","where":"어디","what":"무엇이","why":"왜 문제"}], "summary":"한 줄 총평"}
 pass 는 blocker 가 하나도 없을 때만 true.`;
 
-console.log(`🔍 발행 전 검증 — ${id} (claude -p)`);
+console.log(`🔍 발행 전 검증 — ${id} (GPT 우선 → Claude)`);
 
 /* Windows 에선 npm 배치(claude.cmd)를 써야 한다 — execFileSync('claude') 는 ENOENT.
    프롬프트는 인자가 아니라 **stdin** 으로 넘긴다(본문 포함 16KB 를 인자로 주면 길이 한계에 걸린다). */
@@ -94,10 +95,7 @@ const [bin, preArgs] = WIN ? [process.env.ComSpec || 'cmd.exe', ['/d', '/s', '/c
 
 let raw;
 try {
-  raw = execFileSync(bin, [...preArgs, '-p', '--output-format', 'json'], {
-    cwd: repoRoot, encoding: 'utf8', timeout: 300000, maxBuffer: 20 * 1024 * 1024, windowsHide: true,
-    input: prompt, stdio: ['pipe', 'pipe', 'pipe'],
-  });
+  raw = runLLM(prompt, repoRoot);
 } catch (e) {
   console.error(`⚠ claude 호출 실패: ${String(e.message).slice(0, 200)}`);
   process.exit(WARN_ONLY ? 0 : 1);
