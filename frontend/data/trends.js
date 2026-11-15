@@ -17688,7 +17688,7 @@ window.HANGEUT_DATA = {
       "cat": "맛집",
       "coverCat": "cat-food",
       "collectedAt": "2026-10-13",
-      "analyzedAt": "2026-10-13",
+      "analyzedAt": "2026-11-15",
       "buzz": "화제성 상승 (9/18~10/8 블로그 후기가 이어짐)",
       "ad": 30,
       "trust": 68,
