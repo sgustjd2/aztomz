@@ -3,10 +3,11 @@
 채널 [AI Engineer](https://www.youtube.com/@aiDotEngineer) 의 새 영상을 Gemini 로 자동 요약한 모음입니다.
 생성: `backend/scripts/youtube-summarize.mjs` (GitHub Actions `youtube-summary` 크론).
 
-총 **513개**.
+총 **514개**.
 
 | 발행일 | 제목 |
 |---|---|
+| 2026-11-14 | [All Code Is Slop (Except Mine) — Lauren Tan, SpaceXSI](2026-11-14-O_zcc6Xl12g.md) |
 | 2026-11-12 | [Rethinking Claude Code Best Practices — Lydia Hallie, Anthropic](2026-11-12-vlfCjWuv4es.md) |
 | 2026-11-12 | [Stop Shipping LLM Settings That Only Win on Paper - Rohan Pandey & Balaji Varadarajan, DigitalOcean](2026-11-12-cWrYEBlWpcY.md) |
 | 2026-11-11 | [Your SKILL.md Is 70% Stuff the Model Already Knows - Nikolay Petrov, Intel](2026-11-11-yzx4IuEh_tU.md) |
