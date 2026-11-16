@@ -1795,10 +1795,10 @@ window.HANGEUT_DATA = {
       "cat": "신조어",
       "coverCat": "cat-slang",
       "collectedAt": "2026-06-06",
-      "analyzedAt": "2026-08-16",
+      "analyzedAt": "2026-11-16",
       "buzz": "화제성 높음",
-      "stage": "상승",
-      "stageMsg": "2026 상반기 화제",
+      "stage": "안정화",
+      "stageMsg": "신조어 모음과 밈 문맥에서 간헐적으로 등장",
       "label": "지금 써도 됨",
       "labelCls": "good",
       "title": "엠비스찬",
@@ -1827,6 +1827,10 @@ window.HANGEUT_DATA = {
         [
           "네이트뉴스",
           "https://news.nate.com/view/20260114n03835"
+        ],
+        [
+          "네이버 블로그(2026-10-28)",
+          "https://m.blog.naver.com/jinijiniblog/224456938947"
         ]
       ],
       "tags": [
@@ -6628,7 +6632,7 @@ window.HANGEUT_DATA = {
       "verdict": "가성비를 잇는 시간 효율 중심 소비 키워드로 지금 자연스럽게 쓸 수 있습니다. 1.5배속 시청이나 밀키트처럼 '시간을 아꼈다'는 맥락에 붙이면 딱 맞고, 단순히 빨리 끝내는 것과는 다른 '효율' 뉘앙스로 쓰는 게 포인트입니다.",
       "pureKorean": "시간 효율",
       "example": "드라마나 영화를 1.5배속으로 보는 것은 전형적인 시성비 추구 행태라고 할 수 있다.",
-      "stage": "상승",
+      "stage": "안정화",
       "label": "siseongbi",
       "src": [
         [
@@ -6638,6 +6642,10 @@ window.HANGEUT_DATA = {
         [
           "이투데이",
           "https://bravo.etoday.co.kr/view/atc_view/18797"
+        ],
+        [
+          "SRTimes(2026-11-08)",
+          "https://www.srtimes.kr/news/articleView.html?idxno=216974"
         ]
       ],
       "tags": [
@@ -6679,7 +6687,7 @@ window.HANGEUT_DATA = {
         "https://img.etoday.co.kr/pto_db/2026/03/20260316142237_2308055_1200_800.png"
       ],
       "collectedAt": "2026-07-10",
-      "analyzedAt": "2026-07-10",
+      "analyzedAt": "2026-11-16",
       "recs": [
         [
           "뜻·맥락 알고 쓰기",
@@ -6700,7 +6708,7 @@ window.HANGEUT_DATA = {
       "labelCls": "good",
       "buzz": "화제성 상승",
       "pull": "",
-      "stageMsg": "지금 알면 빠른 편"
+      "stageMsg": "시간 효율을 가리키는 소비 용어로 정착"
     },
     {
       "id": "WORD-2026-0030",
@@ -6796,12 +6804,16 @@ window.HANGEUT_DATA = {
       "verdict": "스마트폰·숏폼 중독에서 벗어나려는 흐름과 함께 꾸준히 쓰이는 라이프스타일 용어입니다. 실천을 다짐하거나 권할 때 자연스럽고, 완전한 단절보다는 '자극을 줄이는 노력' 정도의 뉘앙스로 쓰는 게 정확합니다.",
       "pureKorean": "자극 덜기",
       "example": "매일 밤늦게까지 숏폼 영상을 보던 습관을 버리고, 도파민 디톡스를 위해 저녁 시간에는 독서를 하기로 했다.",
-      "stage": "상승",
+      "stage": "안정화",
       "label": "dopamine detox",
       "src": [
         [
           "정신의학신문",
           "https://www.psychiatricnews.net/news/articleView.html?idxno=35549"
+        ],
+        [
+          "note(2026-11-14)",
+          "https://note.com/modern_allium974/n/na92fbf441af0?hl=ko"
         ]
       ],
       "tags": [
@@ -6845,7 +6857,7 @@ window.HANGEUT_DATA = {
         "https://cdn.psychiatricnews.net/news/thumbnail/202409/35549_32033_824_v150.jpg"
       ],
       "collectedAt": "2026-07-10",
-      "analyzedAt": "2026-07-10",
+      "analyzedAt": "2026-11-16",
       "recs": [
         [
           "뜻·맥락 알고 쓰기",
@@ -6866,7 +6878,7 @@ window.HANGEUT_DATA = {
       "labelCls": "good",
       "buzz": "화제성 상승",
       "pull": "",
-      "stageMsg": "실천·언급 늘어나는 중"
+      "stageMsg": "일상적 디지털 절제 맥락에서 쓰이는 말"
     },
     {
       "id": "WORD-2026-0033",
