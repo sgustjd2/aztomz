@@ -1994,12 +1994,12 @@
       "cat": "신조어",
       "coverCat": "cat-slang",
       "collectedAt": "2026-06-06",
-      "analyzedAt": "2026-08-16",
-      "buzz": "화제성 높음",
-      "stage": "상승",
-      "stageMsg": "2026 상반기 화제",
-      "label": "지금 써도 됨",
-      "labelCls": "good",
+      "analyzedAt": "2026-11-17",
+      "buzz": "화제성 하락",
+      "stage": "하락 (한물감)",
+      "stageMsg": "최근 언급이 드물고 예전 유행의 흔적이 더 많아요",
+      "label": "이제는 늦은 느낌",
+      "labelCls": "mid",
       "title": "딜루루",
       "def": "현실과 동떨어진 망상적 낙관 — 근거 없이 잘 될 거라 믿는 상태",
       "excerpt": "영어 ‘delusional’의 ‘delulu’를 한국식으로 적은 말. 근거 없는 자신감·환상을 가리키지만, 불확실한 미래를 버티는 긍정적 자기최면 뉘앙스로도 쓴다.",
@@ -2026,6 +2026,10 @@
         [
           "하퍼스 바자 코리아",
           "https://www.harpersbazaar.co.kr/article/1892657"
+        ],
+        [
+          "아시아투데이(2026-05-27)",
+          "https://www.asiatoday.co.kr/kn/view.php?key=20260527010007696"
         ]
       ],
       "tags": [
@@ -2143,10 +2147,10 @@
       "cat": "신조어",
       "coverCat": "cat-slang",
       "collectedAt": "2026-06-06",
-      "analyzedAt": "2026-08-16",
+      "analyzedAt": "2026-11-17",
       "buzz": "화제성 높음",
       "stage": "상승",
-      "stageMsg": "2026 상반기 화제",
+      "stageMsg": "최근 AI 저질 콘텐츠 논의가 다시 이어져요",
       "label": "지금 써도 됨",
       "labelCls": "good",
       "title": "슬롭",
@@ -2175,6 +2179,10 @@
         [
           "하퍼스 바자 코리아",
           "https://www.harpersbazaar.co.kr/article/1892657"
+        ],
+        [
+          "머니투데이(2026-11-04)",
+          "https://www.mt.co.kr/opinion/2026/11/04/2026110311250147299"
         ]
       ],
       "tags": [
