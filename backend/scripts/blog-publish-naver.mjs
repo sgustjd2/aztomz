@@ -217,6 +217,16 @@ async function uploadImage(page, f, file) {
   await chooser.setFiles(file);
   await f.waitForFunction((n) => document.querySelectorAll('.se-component.se-image').length > n, before, { timeout: 60000 });
   await page.waitForTimeout(800);
+  // 올린 사진을 가운데 정렬한다(2026-11-19 — 마스코트·카드가 왼쪽으로 붙어 보인다는 지적). 실패해도 본문은 계속.
+  try {
+    await f.locator('.se-component.se-image').nth(before).click({ timeout: 3000 });
+    const al = await firstVisible(f, '가운데 정렬', ['button.se-align-center-toolbar-button', 'button[data-name="align-center"]', 'button[class*="align-center"]'], 3000);
+    await al.click();
+    await page.waitForTimeout(300);
+  } catch (e) {
+    const names = await f.evaluate(() => [...document.querySelectorAll('button')].filter((b) => b.offsetParent && /align|정렬/i.test(`${b.className} ${b.dataset.name || ''} ${b.title || ''} ${b.innerText}`)).map((b) => `${b.className.toString().slice(0, 50)}|${b.dataset.name || ''}|${b.title || ''}`)).catch(() => []);
+    console.warn(`  ⚠ 사진 가운데 정렬 실패(계속): ${e.message.split('\n')[0]} · 정렬 버튼 후보: ${JSON.stringify(names)}`);
+  }
   // 사진 컴포넌트가 선택된 채면 다음 붙여넣기가 사진을 덮을 수 있다 — 본문 끝 문단으로 커서를 옮긴다.
   await f.locator('.se-component.se-text .se-text-paragraph').last().click().catch(() => {});
   await page.keyboard.press('Control+End');

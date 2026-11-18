@@ -36,40 +36,31 @@ async function imageDataUri(expr) {
 }
 
 /* 본문용 HTML: 말풍선은 위, 캐릭터는 아래 중앙에 세로 배치.
-   말풍선은 캐릭터(말랑한 키링 장난감)에 맞춘 도톰한 젤리 풍선이다:
-   자두빛 테두리, 아래쪽 입체 두께, 위쪽 광택, 캐릭터를 향한 꼬리. */
+   말풍선은 장식 없이 담백하게(2026-11-19 "촌스럽지 않게"): 흰 바탕, 얇은 회갈색 테두리,
+   은은한 그림자, 작은 꼬리 하나. 입체 두께·광택·그라데이션·진한 테두리는 쓰지 않는다. */
 function mascotHtml(src, say, expr) {
   const char = `<img src="${src}" alt="" />`;
   if (!say) {
     return `<style>*{margin:0}body{background:transparent}#m img{width:420px;height:420px;display:block;object-fit:contain}</style><div id="m">${char}</div>`;
   }
-  // 표정별 말풍선 색: [윗색, 아랫색, 두께색]
-  const tone = {
-    hello: ['#FFF3C4', '#FFDF85', '#E9A93B'],      // 꿀색 속살
-    thumbs: ['#FFE6D6', '#FFC9AE', '#E58A63'],     // 살구빛 불꽃
-    surprise: ['#FFFFFF', '#FFEFE0', '#F08A3C'],   // 불꽃 주황 테두리 강조
-  }[expr] || ['#FFFFFF', '#FFF4E8', '#C9A6B8'];
-  const ink = '#4A1838', line = expr === 'surprise' ? '#E0702A' : '#6A2A4F';
   const isThink = expr === 'think';
   return `<style>@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css');
     *{margin:0;box-sizing:border-box}body{background:transparent;font-family:"Pretendard","Apple SD Gothic Neo","Malgun Gothic",sans-serif}
-    #m{display:flex;flex-direction:column;align-items:center;width:900px;padding:14px 12px 10px}
-    #m img{width:270px;height:270px;flex:none;object-fit:contain;margin-top:46px}
-    .b{position:relative;isolation:isolate;width:fit-content;max-width:780px;padding:22px 46px 24px;
-       border:4px solid ${line};border-radius:${isThink ? '999px' : '38px'};
-       background:linear-gradient(180deg,${tone[0]} 0%,${tone[1]} 100%);
-       box-shadow:0 7px 0 ${tone[2]},0 7px 0 4px ${line},0 18px 22px rgba(74,24,56,.18);
-       color:${ink};text-align:center;font-size:32px;font-weight:700;line-height:1.22;letter-spacing:-.025em;
+    #m{display:flex;flex-direction:column;align-items:center;width:900px;padding:24px 12px 14px}
+    #m img{width:270px;height:270px;flex:none;object-fit:contain;margin-top:30px}
+    .b{position:relative;width:fit-content;max-width:760px;padding:20px 40px 21px;
+       background:#fff;border:1.5px solid #E6DDE2;border-radius:26px;
+       box-shadow:0 6px 18px rgba(60,30,50,.08);
+       color:#3A2A35;text-align:center;font-size:30px;font-weight:600;line-height:1.35;letter-spacing:-.02em;
        word-break:keep-all;overflow-wrap:anywhere}
     .b>span{position:relative;z-index:2;display:block}
-    /* 위쪽 광택 */
-    .b:before{content:"";position:absolute;left:22px;top:8px;width:46px;height:12px;border-radius:999px;background:rgba(255,255,255,.85);transform:rotate(-8deg)}
-    /* 꼬리: 입체 두께 아래에 붙는 둥근 삼각형 */
-    .t{position:absolute;left:50%;bottom:-31px;width:44px;height:24px;transform:translateX(-50%);display:block}
-    /* 생각 풍선: 꼬리 대신 방울 두 개 */
-    .d{position:absolute;border:4px solid ${line};border-radius:50%;background:${tone[1]}}
-    .d1{width:24px;height:24px;left:calc(50% - 40px);bottom:-40px}.d2{width:14px;height:14px;left:calc(50% - 62px);bottom:-58px}
-  </style><div id="m"><div class="b"><span>${esc(say)}</span>${isThink ? '<i class="d d1"></i><i class="d d2"></i>' : `<svg class="t" viewBox="0 0 44 24"><path d="M0 0 H44 L25 21 Q22 24 19 21 Z" fill="${line}"/><path d="M8 0 H36 L23.5 13 Q22 14.5 20.5 13 Z" fill="${tone[1]}"/></svg>`}</div>${char}</div>`;
+    /* 꼬리: 같은 테두리를 두른 작은 마름모를 말풍선 아래에 붙인다 */
+    .t{position:absolute;left:50%;bottom:-11px;width:20px;height:20px;margin-left:-10px;background:#fff;
+       border-right:1.5px solid #E6DDE2;border-bottom:1.5px solid #E6DDE2;border-bottom-right-radius:5px;transform:rotate(45deg);z-index:1}
+    /* 생각 풍선: 꼬리 대신 작은 방울 두 개 */
+    .d{position:absolute;border:1.5px solid #E6DDE2;border-radius:50%;background:#fff}
+    .d1{width:16px;height:16px;left:calc(50% - 30px);bottom:-30px}.d2{width:9px;height:9px;left:calc(50% - 46px);bottom:-44px}
+  </style><div id="m"><div class="b"><span>${esc(say)}</span>${isThink ? '<i class="d d1"></i><i class="d d2"></i>' : '<i class="t"></i>'}</div>${char}</div>`;
 }
 
 /* ctx = Playwright BrowserContext(blog-figure 의 makeFigure 가 넘기는 것) */
@@ -99,6 +90,7 @@ export function checkMascots(md, figures) {
   const seen = new Set();
   for (const [id] of mas) {
     const d = defs.get(id);
+    if (!/^m-/.test(id)) problems.push(`[FIG: ${id}] 마스코트 그림 id 는 m- 로 시작해야 한다(캡션이 본문에 새지 않게)`);
     if (!EXPRESSIONS[d.expr]) problems.push(`[FIG: ${id}] 마스코트 expr "${d.expr}" 없음`);
     if (seen.has(d.expr)) problems.push(`[FIG: ${id}] 마스코트 표정 "${d.expr}" 가 글 안에서 반복`);
     seen.add(d.expr);

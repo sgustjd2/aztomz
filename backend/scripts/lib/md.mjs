@@ -60,8 +60,10 @@ export function md2html(md) {
       const credit = srcUrl
         ? ` <span style="${FIG_SRC}">출처 — <a href="${esc(srcUrl)}" target="_blank" rel="noopener">${esc(srcName || srcUrl)}</a></span>`
         : (srcName ? ` <span style="${FIG_SRC}">출처 — ${esc(srcName)}</span>` : '');
+      // 마스코트(id 가 m- 로 시작)는 캡션을 화면에 쓰지 않는다 — 글 속에 "…일러스트" 같은 문구가 본문 글자로 붙던 것(2026-11-19).
+      const isMascot = /^m-/.test(fid);
       out.push(`<figure style="${FIG_BOX}"><!--FIG:${esc(fid)}-->`
-        + ((cap || '').trim() || srcName
+        + (!isMascot && ((cap || '').trim() || srcName)
           ? `<figcaption style="${FIG_CAP}">${esc((cap || '').trim())}${credit}</figcaption>` : '')
         + '</figure>');
       i++; continue;
