@@ -555,7 +555,7 @@ window.HANGEUT_DATA = {
       "type": "신뢰분석",
       "cat": "디저트",
       "coverCat": "cat-dessert",
-      "analyzedAt": "2026-10-16",
+      "analyzedAt": "2026-11-18",
       "title": "아임도넛(I’m donut?) 성수",
       "buzz": "화제성 하락(2026 홍대·강남점 개점 후 성수점 웨이팅이 줄었다는 후기)",
       "ad": 40,
