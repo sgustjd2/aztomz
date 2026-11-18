@@ -1,0 +1,93 @@
+--- _backup_2026-11-18/mascot.mjs.bak	2026-11-18 11:33:09
++++ ../../../scripts/lib/mascot.mjs	2026-11-18 11:34:44
+@@ -1,6 +1,6 @@
+ #!/usr/bin/env node
+ /* ============================================================
+-   한끗 마스코트 '불타는 고구마' — GPT Image 3D 이미지 세트
++   한끗 마스코트 '불타는 고구마' — 말랑 키링 3D 스타일 표정 세트(Meshy)
+ 
+    표정별 투명 PNG는 backend/blog/assets/mascot/<expr>.png 에 둔다.
+    본문 그림은 이 PNG에 선택적 말풍선을 합성해 만든다.
+@@ -35,45 +35,41 @@
+   return `data:image/png;base64,${bytes.toString('base64')}`;
+ }
+ 
+-/* 본문용 HTML: 말풍선은 위, 캐릭터는 아래 중앙에 세로 배치 */
++/* 본문용 HTML: 말풍선은 위, 캐릭터는 아래 중앙에 세로 배치.
++   말풍선은 캐릭터(말랑한 키링 장난감)에 맞춘 도톰한 젤리 풍선이다:
++   자두빛 테두리, 아래쪽 입체 두께, 위쪽 광택, 캐릭터를 향한 꼬리. */
+ function mascotHtml(src, say, expr) {
+   const char = `<img src="${src}" alt="" />`;
+   if (!say) {
+     return `<style>*{margin:0}body{background:transparent}#m img{width:420px;height:420px;display:block;object-fit:contain}</style><div id="m">${char}</div>`;
+   }
+-  const svgBg = (path, fill, viewBox = '28 0 560 200') => `url("data:image/svg+xml,${encodeURIComponent(
+-    `<svg xmlns="http://www.w3.org/2000/svg" viewBox="${viewBox}" preserveAspectRatio="none"><path d="${path}" fill="${fill}" stroke="#211e1c" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+-  )}")`;
+-  // 고구마처럼 살짝 울퉁불퉁한 윤곽에 아래쪽 꼬리를 붙인 말풍선
+-  const blobPath = 'M50 96 C33 67 50 42 77 37 C96 13 130 17 153 30 C178 17 210 21 231 31 C252 13 281 22 302 31 C329 14 360 21 375 33 C399 20 433 29 449 42 C482 30 520 44 532 65 C562 69 582 92 566 112 C570 137 548 151 522 148 C503 166 476 158 455 152 C432 169 402 163 382 153 C356 169 330 162 309 154 C301 165 296 179 290 190 C283 177 279 164 270 154 C245 169 216 162 196 152 C171 166 142 157 123 148 C97 163 67 150 60 130 C38 124 36 108 50 96 Z';
+-  const thoughtPath = 'M50 125 C28 105 35 80 59 70 C47 47 60 22 88 22 C103 6 139 8 158 22 C180 6 215 7 235 22 C258 5 291 8 307 22 C330 6 366 8 382 24 C406 8 439 13 450 31 C478 25 500 45 494 70 C514 88 506 112 487 126 C487 148 466 163 443 157 C423 173 397 163 377 155 C355 171 328 163 307 155 C284 171 258 164 239 155 C216 171 190 163 171 154 C149 168 124 160 106 149 C82 161 56 150 53 133 C39 131 39 125 50 125 Z';
+-  const bubbleStyle = expr === 'surprise' ? 'surprise'
+-    : expr === 'think' ? 'think'
+-    : expr === 'hello' ? 'yellow'
+-        : expr === 'thumbs' ? 'pink' : 'white';
++  // 표정별 말풍선 색: [윗색, 아랫색, 두께색]
++  const tone = {
++    hello: ['#FFF3C4', '#FFDF85', '#E9A93B'],      // 꿀색 속살
++    thumbs: ['#FFE6D6', '#FFC9AE', '#E58A63'],     // 살구빛 불꽃
++    surprise: ['#FFFFFF', '#FFEFE0', '#F08A3C'],   // 불꽃 주황 테두리 강조
++  }[expr] || ['#FFFFFF', '#FFF4E8', '#C9A6B8'];
++  const ink = '#4A1838', line = expr === 'surprise' ? '#E0702A' : '#6A2A4F';
++  const isThink = expr === 'think';
+   return `<style>@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css');
+     *{margin:0;box-sizing:border-box}body{background:transparent;font-family:"Pretendard","Apple SD Gothic Neo","Malgun Gothic",sans-serif}
+-    #m{display:flex;flex-direction:column;align-items:center;gap:0;width:900px;padding:10px 12px}
+-    #m img{width:260px;height:260px;flex:none;object-fit:contain;margin-top:48px}
+-    .b{--fill:#fff;--stroke:#211e1c;--ink:#211e1c;
+-       position:relative;isolation:isolate;z-index:1;flex:0 1 auto;width:fit-content;max-width:820px;margin-left:0;
+-       padding:24px 72px 40px;background:transparent;border:0;color:var(--ink);text-align:center;transform:rotate(-1.1deg);
+-       font-family:"Pretendard","Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+-       font-size:32px;font-weight:600;line-height:1.18;letter-spacing:-.025em;word-break:keep-all;overflow-wrap:anywhere;white-space:normal}
+-    .b>span{position:relative;z-index:1;display:block;min-width:0;max-width:100%;white-space:normal;overflow-wrap:anywhere}
+-    .b:before{content:"";position:absolute;inset:0;z-index:-1;background-position:center;background-size:100% 100%;background-repeat:no-repeat;
+-       background-image:${svgBg(blobPath, '#FFFFFF')}}
+-    .b.yellow{--fill:#fff0ad}
+-    .b.yellow:before{background-image:${svgBg(blobPath, '#FFF0AD')}}
+-    .b.pink{--fill:#ffd4df}
+-    .b.pink:before{background-image:${svgBg(blobPath, '#FFD4DF')}}
+-    .b.surprise{transform:rotate(1.2deg)}
+-    .b.pink{min-width:220px;transform:rotate(-1deg)}
+-    .b.think{padding:52px 72px 74px;transform:rotate(1deg)}
+-    .b.think>span{max-width:400px}
+-    .b.think:before{background-image:${svgBg(thoughtPath, '#FFFFFF', '0 0 540 200')}}
+-    .b.think:after{content:"";position:absolute;left:calc(50% - 2px);bottom:-18px;width:13px;height:13px;background:var(--fill);border:2px solid var(--stroke);border-radius:50%;box-shadow:-14px 12px 0 -3px var(--fill),-14px 12px 0 -1px var(--stroke)}
+-  </style><div id="m"><div class="b ${bubbleStyle}"><span>${esc(say)}</span></div>${char}</div>`;
++    #m{display:flex;flex-direction:column;align-items:center;width:900px;padding:14px 12px 10px}
++    #m img{width:270px;height:270px;flex:none;object-fit:contain;margin-top:46px}
++    .b{position:relative;isolation:isolate;width:fit-content;max-width:780px;padding:22px 46px 24px;
++       border:4px solid ${line};border-radius:${isThink ? '999px' : '38px'};
++       background:linear-gradient(180deg,${tone[0]} 0%,${tone[1]} 100%);
++       box-shadow:0 7px 0 ${tone[2]},0 7px 0 4px ${line},0 18px 22px rgba(74,24,56,.18);
++       color:${ink};text-align:center;font-size:32px;font-weight:700;line-height:1.22;letter-spacing:-.025em;
++       word-break:keep-all;overflow-wrap:anywhere}
++    .b>span{position:relative;z-index:2;display:block}
++    /* 위쪽 광택 */
++    .b:before{content:"";position:absolute;left:22px;top:8px;width:46px;height:12px;border-radius:999px;background:rgba(255,255,255,.85);transform:rotate(-8deg)}
++    /* 꼬리: 입체 두께 아래에 붙는 둥근 삼각형 */
++    .t{position:absolute;left:50%;bottom:-31px;width:44px;height:24px;transform:translateX(-50%);display:block}
++    /* 생각 풍선: 꼬리 대신 방울 두 개 */
++    .d{position:absolute;border:4px solid ${line};border-radius:50%;background:${tone[1]}}
++    .d1{width:24px;height:24px;left:calc(50% - 40px);bottom:-40px}.d2{width:14px;height:14px;left:calc(50% - 62px);bottom:-58px}
++  </style><div id="m"><div class="b"><span>${esc(say)}</span>${isThink ? '<i class="d d1"></i><i class="d d2"></i>' : `<svg class="t" viewBox="0 0 44 24"><path d="M0 0 H44 L25 21 Q22 24 19 21 Z" fill="${line}"/><path d="M8 0 H36 L23.5 13 Q22 14.5 20.5 13 Z" fill="${tone[1]}"/></svg>`}</div>${char}</div>`;
+ }
+ 
+ /* ctx = Playwright BrowserContext(blog-figure 의 makeFigure 가 넘기는 것) */
+@@ -136,7 +132,7 @@
+       .c{height:315px;background:#fff;border-radius:20px;padding:10px;text-align:center;overflow:hidden}
+       .c img{width:230px;height:230px;display:block;margin:0 auto;object-fit:contain}
+       b{display:block;font-size:22px;color:#3A1626}small{display:block;font-size:15px;color:#7a6a70;margin-top:2px}</style>
+-      <h1>불타는 고구마 — 손그림 스티커 표정 세트 8종</h1><div class="g">${cards.join('')}</div>`);
++      <h1>불타는 고구마 — 말랑 키링 표정 세트 8종</h1><div class="g">${cards.join('')}</div>`);
+     await page.screenshot({ path: join(assetDir, 'expressions-sheet.png'), fullPage: true });
+   } finally { await browser.close(); }
+   console.log(`✓ ${Object.keys(EXPRESSIONS).length}종 미리보기 → ${assetDir}`);
