@@ -2390,10 +2390,10 @@
       "cat": "신조어",
       "coverCat": "cat-slang",
       "collectedAt": "2026-06-06",
-      "analyzedAt": "2026-08-16",
+      "analyzedAt": "2026-11-18",
       "buzz": "화제성 높음",
-      "stage": "피크",
-      "stageMsg": "2026 상반기 화제",
+      "stage": "안정화",
+      "stageMsg": "오래 이어진 밈, 새 확산 신호는 약함",
       "label": "지금 써도 됨",
       "labelCls": "good",
       "title": "식스세븐",
@@ -2422,6 +2422,10 @@
         [
           "하퍼스 바자 코리아",
           "https://www.harpersbazaar.co.kr/article/1892657"
+        ],
+        [
+          "cv.cm(2026-11-10)",
+          "https://cv.cm/ko/memes/67/"
         ]
       ],
       "tags": [
