@@ -31,12 +31,21 @@ try {
   const at = log.lastIndexOf('hourly drafting/verification failed');
   const start = log.lastIndexOf('] slot ', at);
   const seg = at >= 0 ? log.slice(Math.max(0, log.lastIndexOf('\n=====', start) + 1), log.indexOf('\n', at) + 1) : '';
+  const failedLine = at >= 0 ? log.slice(at, log.indexOf('\n', at)) : '';
+  const failedAt = Date.parse((failedLine.match(/[A-Z][a-z]{2} [A-Z][a-z]{2} +\d+ [\d:]{8} KST \d{4}/)?.[0] || '').replace(' KST', ' GMT+0900'));
   const lastRoundFailed = seg && !log.slice(at).includes('✓ 집필 종료 후 자체 리뷰');
-  if (lastRoundFailed && !seg.includes('📣 디스코드 보고함') && Date.now() - statSync(join(outDir, 'blog-hourly-naver.log')).mtimeMs < 30 * 60e3) {
+  // 실패 시각이 지금부터 40분 안일 때만 보고한다(지난 실패를 다시 알리지 않게). job.sh 가 회차 끝에 바로 이 점검을 돌린다.
+  if (lastRoundFailed && !seg.includes('📣 디스코드 보고함') && Number.isFinite(failedAt) && Date.now() - failedAt < 40 * 60e3) {
     const reasons = seg.split('\n').filter((l) => /^\s*(✗|⛔|⚠ .*실패)|Error:|exit code/.test(l)).map((l) => l.trim().slice(0, 200)).slice(-6);
     problems.push(`이번 글 작성 회차가 실패했어요\n${reasons.map((r) => `  · ${r}`).join('\n') || '  · 원인 줄을 못 찾았어요(blog-hourly-naver.log 확인)'}`);
   }
 } catch { /* 로그 없음 */ }
+
+/* Playwright 를 올리면 필요한 브라우저 빌드가 바뀌어 발행이 시작도 못 하고 죽는다(2026-11-18 하루 종일 0편). 미리 잡는다. */
+try {
+  const { chromium } = await import('playwright');
+  if (!existsSync(chromium.executablePath())) problems.push('Playwright 브라우저가 설치돼 있지 않아요 — 네이버 발행이 시작도 못 해요. 터미널에서: cd backend && npx playwright install chromium');
+} catch (e) { problems.push(`Playwright 를 불러오지 못했어요: ${String(e.message).split('\n')[0].slice(0, 120)}`); }
 
 const run = (bin, args) => { const r = spawnSync(bin, args, { encoding: 'utf8', timeout: 20000, env: { ...process.env, PATH } }); return `${r.stdout || ''}${r.stderr || ''}`; };
 const gptOk = /Logged in/i.test(run('codex', ['login', 'status']));
