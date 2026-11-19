@@ -44,7 +44,18 @@ try {
 /* Playwright 를 올리면 필요한 브라우저 빌드가 바뀌어 발행이 시작도 못 하고 죽는다(2026-11-18 하루 종일 0편). 미리 잡는다. */
 try {
   const { chromium } = await import('playwright');
-  if (!existsSync(chromium.executablePath())) problems.push('Playwright 브라우저가 설치돼 있지 않아요 — 네이버 발행이 시작도 못 해요. 터미널에서: cd backend && npx playwright install chromium');
+  if (!existsSync(chromium.executablePath())) {
+    // 스스로 고친다: 프로젝트의 Playwright 가 요구하는 브라우저만 공식 경로로 내려받는다(하루 1번만 시도).
+    const tried = join(outDir, '.playwright-install-tried.txt');
+    const today = new Date().toISOString().slice(0, 10);
+    const already = existsSync(tried) && readFileSync(tried, 'utf8') === today;
+    if (!already) {
+      writeFileSync(tried, today);
+      const r = spawnSync('npx', ['playwright', 'install', 'chromium'], { cwd: join(outDir, '..', '..'), encoding: 'utf8', timeout: 8 * 60e3, env: { ...process.env, PATH } });
+      console.log(`🛠 Playwright 브라우저 자동 설치 시도: ${r.status === 0 ? '성공' : '실패'}`);
+    }
+    if (!existsSync(chromium.executablePath())) problems.push('Playwright 브라우저 설치가 안 돼 있고 자동 설치도 실패했어요 — 네이버 발행이 시작도 못 해요. 터미널에서: cd backend && npx playwright install chromium');
+  }
 } catch (e) { problems.push(`Playwright 를 불러오지 못했어요: ${String(e.message).split('\n')[0].slice(0, 120)}`); }
 
 const run = (bin, args) => { const r = spawnSync(bin, args, { encoding: 'utf8', timeout: 20000, env: { ...process.env, PATH } }); return `${r.stdout || ''}${r.stderr || ''}`; };
