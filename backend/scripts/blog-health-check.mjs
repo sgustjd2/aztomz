@@ -24,6 +24,20 @@ if (!existsSync(join(outDir, '.naver-hold')) && hour >= 8 && hour < 22) {
   } catch { /* 기록 없으면 건너뜀 */ }
 }
 
+/* 이번 회차가 실패로 끝났는데 다른 곳(finalize)이 디스코드에 안 알렸다면 원인 줄을 모아 보고한다(2026-11-19).
+   로그의 마지막 회차 구간에서 "hourly drafting/verification failed" 와 그 앞의 ✗·⛔·Error 줄을 쓴다. */
+try {
+  const log = readFileSync(join(outDir, 'blog-hourly-naver.log'), 'utf8').slice(-400000);
+  const at = log.lastIndexOf('hourly drafting/verification failed');
+  const start = log.lastIndexOf('] slot ', at);
+  const seg = at >= 0 ? log.slice(Math.max(0, log.lastIndexOf('\n=====', start) + 1), log.indexOf('\n', at) + 1) : '';
+  const lastRoundFailed = seg && !log.slice(at).includes('✓ 집필 종료 후 자체 리뷰');
+  if (lastRoundFailed && !seg.includes('📣 디스코드 보고함') && Date.now() - statSync(join(outDir, 'blog-hourly-naver.log')).mtimeMs < 30 * 60e3) {
+    const reasons = seg.split('\n').filter((l) => /^\s*(✗|⛔|⚠ .*실패)|Error:|exit code/.test(l)).map((l) => l.trim().slice(0, 200)).slice(-6);
+    problems.push(`이번 글 작성 회차가 실패했어요\n${reasons.map((r) => `  · ${r}`).join('\n') || '  · 원인 줄을 못 찾았어요(blog-hourly-naver.log 확인)'}`);
+  }
+} catch { /* 로그 없음 */ }
+
 const run = (bin, args) => { const r = spawnSync(bin, args, { encoding: 'utf8', timeout: 20000, env: { ...process.env, PATH } }); return `${r.stdout || ''}${r.stderr || ''}`; };
 const gptOk = /Logged in/i.test(run('codex', ['login', 'status']));
 const claudeOk = /"loggedIn":\s*true/.test(run('claude', ['auth', 'status']));
