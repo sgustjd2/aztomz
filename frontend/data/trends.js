@@ -10281,10 +10281,10 @@ window.HANGEUT_DATA = {
       "cat": "AI 프롬프트",
       "coverCat": "cat-ai",
       "collectedAt": "2026-08-02",
-      "analyzedAt": "2026-08-15",
+      "analyzedAt": "2026-11-19",
       "buzz": "화제성 중간",
       "stage": "안정화",
-      "stageMsg": "꾸준히 사랑받는 스테디셀러 감성",
+      "stageMsg": "최근 신호가 드물어 안정화로 유지",
       "label": "지금 써도 됨",
       "labelCls": "good",
       "title": "폴라로이드 감성 사진 프롬프트",
@@ -10313,6 +10313,10 @@ window.HANGEUT_DATA = {
         [
           "Piclumen - AI Image Generation Trends",
           "https://www.piclumen.com/blog/ai-image-generation-trends/"
+        ],
+        [
+          "DigiCraft_by_jooyoung 유튜브(2026-10-07)",
+          "https://youtu.be/Va0JlaGIeds"
         ]
       ],
       "tags": [
