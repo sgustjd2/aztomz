@@ -3033,12 +3033,12 @@
       "cat": "노래·챌린지",
       "coverCat": "cat-music",
       "collectedAt": "2026-06-12",
-      "analyzedAt": "2026-08-16",
-      "buzz": "매우 높음",
-      "stage": "피크",
-      "stageMsg": "지금 SNS 어디를 가도 보이는 대세 밈",
-      "label": "지금 써도 됨",
-      "labelCls": "good",
+      "analyzedAt": "2026-11-20",
+      "buzz": "화제성 하락",
+      "stage": "피크 → 하락",
+      "stageMsg": "초기 화제 뒤 최근 참여 신호가 줄었어요",
+      "label": "이제는 늦은 느낌",
+      "labelCls": "mid",
       "title": "난리자베스 챌린지",
       "def": "갑작스러운 상황이나 감정의 소용돌이를 유머러스하게 표현하는 접미사형 밈",
       "excerpt": "‘난리’에 ‘엘리자베스’를 붙인 말로, 주로 피부 광채나 메이크업이 잘 됐을 때 ‘피부 광 난리자베스’처럼 사용됩니다.",
@@ -3065,6 +3065,10 @@
         [
           "틱톡",
           "https://www.tiktok.com/discover/2026년-유행챌린지"
+        ],
+        [
+          "왜요쌤 유튜브(2026-10-23)",
+          "https://youtu.be/hOzxEeomfEo"
         ]
       ],
       "tags": [
@@ -10696,10 +10700,10 @@
       "cat": "맛집",
       "coverCat": "cat-food",
       "collectedAt": "2026-08-04",
-      "analyzedAt": "2026-08-15",
+      "analyzedAt": "2026-11-20",
       "buzz": "꾸준한 인기",
       "stage": "안정화",
-      "stageMsg": "미식가들 사이에서 꾸준히 찾는 스테디셀러",
+      "stageMsg": "제철 해산물은 계절 따라 꾸준히 찾는 메뉴",
       "label": "지금 가도 좋음",
       "labelCls": "good",
       "title": "제철 해산물 한식주점",
@@ -10727,6 +10731,10 @@
         [
           "순천집 (2026) - 관광지랭킹",
           "https://www.korearank.com/tour/tour_detail.php?uid=55585"
+        ],
+        [
+          "비욘드포스트(2026-11-19)",
+          "https://www.beyondpost.co.kr/view.php?ud=2026111913520377089aeda69934_30"
         ]
       ],
       "tags": [
@@ -10888,10 +10896,10 @@
       "cat": "신조어",
       "coverCat": "cat-slang",
       "collectedAt": "2026-08-06",
-      "analyzedAt": "2026-08-15",
+      "analyzedAt": "2026-11-20",
       "buzz": "화제성 높음",
-      "stage": "피크",
-      "stageMsg": "하나의 스타일로 자리 잡는 중",
+      "stage": "안정화",
+      "stageMsg": "유행어보다 취향을 가리키는 표현에 가까워요",
       "label": "지금 써도 됨",
       "labelCls": "good",
       "title": "너드남",
@@ -10922,6 +10930,10 @@
         [
           "skyupland.com",
           "https://skyupland.com/entry/2026년-최신-신조어·자주-묻는-단어-총정리-—-너드남부터-야르까지-뜻·예시-한-번에"
+        ],
+        [
+          "에펨코리아(2026-11-16)",
+          "https://www.fmkorea.com/10561725974"
         ]
       ],
       "tags": [
@@ -11071,12 +11083,12 @@
       "cat": "AI 프롬프트",
       "coverCat": "cat-ai",
       "collectedAt": "2026-08-09",
-      "analyzedAt": "2026-08-15",
-      "buzz": "화제성 중간",
-      "stage": "상승",
-      "stageMsg": "지금 막 뜨는 중",
-      "label": "지금 써도 됨",
-      "labelCls": "good",
+      "analyzedAt": "2026-11-20",
+      "buzz": "화제성 하락",
+      "stage": "하락 (한물감)",
+      "stageMsg": "최근 새 확산 신호가 드문 지난 유행",
+      "label": "이제는 늦은 느낌",
+      "labelCls": "mid",
       "title": "찰흙 소년 듀오가 주인공, 클레이 애니메이션 영상 프롬프트",
       "def": "챗GPT와 구글 플로우로 찰흙 질감의 10초짜리 바이럴 애니메이션 영상을 만들어주는 명령",
       "excerpt": "챗GPT가 던져주는 황당한 주제 중 하나를 고르면, 검은 스파이키 머리와 회색 트레이닝복 차림의 찰흙 캐릭터 콤비가 등장하는 10초짜리 클레이(Clay) 애니메이션 영상 프롬프트가 완성돼요.",
@@ -11107,6 +11119,10 @@
         [
           "일관성있는 AI 클레이 애니메이션 가이드(유튜브)",
           "https://m.youtube.com/watch?v=f0QhaTzhS4o"
+        ],
+        [
+          "영상독학 유튜브(2026-04-21)",
+          "https://youtu.be/FZUz5-EtZns"
         ]
       ],
       "tags": [
