@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /* Scheduled blog jobs call this only after the outer writer CLI exits.
    Nested Codex CLI calls from inside codex exec are blocked by app-server permissions. */
-import { readdir, readFile, stat } from 'node:fs/promises';
+import { readdir, readFile, stat, writeFile } from 'node:fs/promises';
 import { existsSync } from 'node:fs';
 import { createHash } from 'node:crypto';
 import { spawnSync } from 'node:child_process';
@@ -34,10 +34,14 @@ for (const name of await readdir(outDir)) {
   if (onlyId && name !== `${onlyId}.json`) continue;
   let meta;
   try { meta = JSON.parse(await readFile(jsonPath, 'utf8')); } catch { continue; }
-  if (!meta?.id || meta.platform !== platform || meta.builtAt !== isoToday) continue;
+  if (!meta?.id || meta.platform !== platform || (meta.builtAt && meta.builtAt !== isoToday)) continue; // builtAt 누락(작성기 실수)은 mtime(--since-ms)로 이미 걸렀으니 허용
   const htmlPath = join(outDir, `${meta.id}.html`);
   const mdPath = join(outDir, `${meta.id}.md`);
   if (!existsSync(htmlPath) || !existsSync(mdPath)) continue;
+  if (!meta.builtAt && !dry) {   // 큐가 builtAt 없는 글을 후보에서 빼므로 오늘 날짜를 채운다
+    meta.builtAt = isoToday;
+    await writeFile(jsonPath, JSON.stringify(meta, null, 2) + '\n');
+  }
   candidates.push(meta.id);
 }
 
