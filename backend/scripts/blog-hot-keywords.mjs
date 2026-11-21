@@ -109,6 +109,8 @@ async function adKeywords() {
 
 /* DataLab 검색어트렌드: 최근 7일 평균 ÷ 그 전 4주 평균. 키가 없으면 null. 5개씩 묶어 호출 */
 async function dlRise(keywords) {
+  // DataLab 은 꺼 둔다(2026-11-21): API 가 NAVER API HUB 로 옮겨져 개발자센터 키는 401. 2주 뒤 성과를 보고 재검토 — 켜려면 ENABLE_DATALAB=1
+  if (!process.env.ENABLE_DATALAB) return null;
   const id = process.env.NAVER_CLIENT_ID, sec = process.env.NAVER_CLIENT_SECRET;
   if (!id || !sec) return null;
   const fmt = (d) => new Date(d.getTime() + 9 * 3600e3).toISOString().slice(0, 10);
@@ -150,7 +152,7 @@ async function naverSection() {
   }
   let rise = null;
   try { rise = await dlRise((pool.length ? pool.map((k) => k.keyword) : seeds.filter(usable))); } catch (e) { console.log(`[급상승 키워드] UNAVAILABLE: ${e.message}`); }
-  if (rise === null && !process.env.NAVER_CLIENT_ID) console.log('[급상승 키워드] UNAVAILABLE: 키 없음(NAVER_CLIENT_ID·SECRET) — 오름폭 미확인');
+  if (rise === null) console.log('[급상승 키워드] 사용 안 함(DataLab 꺼 둠) — 오름폭 미확인. 급상승은 아래 Google 트렌드를 본다');
   if (rise) {
     console.log('[급상승 키워드 — 최근 7일 ÷ 직전 4주 평균, 오름폭 큰 순]');
     [...rise.entries()].filter(([, v]) => v.recent > 0).sort((a, b) => b[1].rise - a[1].rise).slice(0, 10)
