@@ -3130,12 +3130,12 @@
       "cat": "노래·챌린지",
       "coverCat": "cat-music",
       "collectedAt": "2026-06-12",
-      "analyzedAt": "2026-08-16",
-      "buzz": "급상승",
-      "stage": "상승",
-      "stageMsg": "월드컵 열기와 함께 빠르게 확산 중",
-      "label": "도전해도 됨",
-      "labelCls": "good",
+      "analyzedAt": "2026-11-21",
+      "buzz": "화제성 하락",
+      "stage": "하락 (한물감)",
+      "stageMsg": "월드컵 응원 열기 뒤 최근 언급이 끊김",
+      "label": "이제는 늦은 느낌",
+      "labelCls": "mid",
       "title": "TWS ‘Dream With Us’ 챌린지",
       "def": "2026 FIFA 북중미 월드컵 대한민국 축구 국가대표팀 공식 응원가",
       "excerpt": "청량돌 TWS가 부른 월드컵 응원가로, 누구나 따라 부르기 쉬운 후렴구가 특징인 챌린지예요.",
@@ -3166,6 +3166,10 @@
         [
           "조선일보",
           "https://www.chosun.com/entertainments/music/2026/06/11/MI4GIZTEG5TDSMDGGZQTENTCGE/"
+        ],
+        [
+          "YouTube · TWS 공식 응원가 현장 영상(2026-06-11)",
+          "https://youtu.be/SwNZM2E1Zvk"
         ]
       ],
       "tags": [
