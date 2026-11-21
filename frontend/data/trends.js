@@ -4111,7 +4111,7 @@ window.HANGEUT_DATA = {
       "cat": "카페·핫플",
       "coverCat": "cat-cafe",
       "collectedAt": "2026-06-17",
-      "analyzedAt": "2026-10-19",
+      "analyzedAt": "2026-11-21",
       "title": "도토리오븐 (성수)",
       "buzz": "화제성 확인 어려움(읽을 수 있는 글 1건, 2025-12)",
       "ad": 40,
