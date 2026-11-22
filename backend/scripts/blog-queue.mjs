@@ -36,6 +36,31 @@ const PLATFORMS = {
 const argv = process.argv.slice(2);
 const has = (f) => argv.includes(`--${f}`);
 const val = (k, d) => argv.find((a) => a.startsWith(`--${k}=`))?.split('=')[1] ?? d;
+const VALUE_FLAGS = new Set(['max-tistory', 'max-naver', 'max-per-run', 'max-age', 'gap', 'only', 'max', 'min-gap']);
+
+function printHelp() {
+  console.log(`한끗 — 블로그 자동 발행 대기열
+
+사용법:
+  node backend/scripts/blog-queue.mjs --list                 대기열만 확인
+  node backend/scripts/blog-queue.mjs --only=naver           네이버만 발행
+  node backend/scripts/blog-queue.mjs --max-per-run=1        실행당 한 편 발행
+  node backend/scripts/blog-queue.mjs --selftest              오프라인 자체검사
+  node backend/scripts/blog-queue.mjs --help                  도움말
+
+인자 없이 실행하면 대기열에서 글을 실제 발행합니다. 옵션은 --이름=값 형식으로 지정하세요.`);
+}
+
+function validateArgs() {
+  for (const arg of argv) {
+    if (['--help', '-h', '--list', '--selftest'].includes(arg)) continue;
+    const match = arg.match(/^--([^=]+)=(.+)$/);
+    if (match && VALUE_FLAGS.has(match[1])) continue;
+    console.error(`✗ 알 수 없는 옵션 또는 인자: ${arg}\n  node backend/scripts/blog-queue.mjs --help 로 사용법을 확인하세요.`);
+    return false;
+  }
+  return true;
+}
 
 // 발행 기록의 at 은 UTC('YYYY-MM-DD HH:MM'). 하루 한도는 한국 날짜로 센다.
 export const kstDay = (ms) => new Date(ms + 9 * 3600e3).toISOString().slice(0, 10);
@@ -228,6 +253,8 @@ function selftest() {
 }
 
 if (process.argv[1] && import.meta.url === (await import('node:url')).pathToFileURL(process.argv[1]).href) {
-  if (has('selftest')) selftest();
+  if (argv.includes('--help') || argv.includes('-h')) printHelp();
+  else if (!validateArgs()) process.exitCode = 2;
+  else if (has('selftest')) selftest();
   else await main();
 }

@@ -9,7 +9,7 @@
      card  — 우리 데이터로 그린 도표·비교표·설정값 카드. 저작권 무관. 어느 카테고리에나 쓴다.
      photo — Openverse 에서 받은 CC0/PDM 사진. 파일은 <글id>.photo-<그림id>.jpg 로 저장하고 출처를 기록한다.
      image — Codex ImageGen 으로 직접 만든 삽화. 파일은 <글id>.ai-<그림id>.png 로 out/blog 에 둔다.
-     mascot — 마스코트 '불타는 고구마'(lib/mascot.mjs). 네이버 글 전용, 글당 1~3장, 규칙은 assets/mascot/README.md.
+     mascot — 마스코트 '불타는 고구마'(lib/mascot.mjs). 네이버 글 전용, 시간당 스킬 기준 0~2장, 조립 검사는 최대 3장, 규칙은 assets/mascot/README.md.
      shot  — 이미 본문에서 인용 중인 **공개 웹페이지**를 우리가 직접 캡처. 사실 확인용 자료화면이라
              출처(URL)를 캡션에 반드시 박는다. 로그인벽·유료 페이지는 찍지 않는다.
 

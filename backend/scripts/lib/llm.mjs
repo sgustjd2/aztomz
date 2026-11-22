@@ -9,6 +9,13 @@ import { join } from 'node:path';
 const WIN = process.platform === 'win32';
 
 export function runLLM(prompt, cwd) {
+  // Scheduled writers run inside a Codex CLI session. Spawning another Codex
+  // CLI from that session is blocked by app-server permissions, so the job
+  // wrapper runs review/verification after the writer exits.
+  if (process.env.BLOG_DEFER_MODEL_GATES === '1') {
+    throw new Error('BLOG_DEFER_MODEL_GATES=1: run this LLM gate after the writer process exits');
+  }
+
   const errs = [];
   if (!WIN && !process.env.NO_CODEX) {
     const dir = mkdtempSync(join(tmpdir(), 'az2mz-llm-'));
