@@ -17948,7 +17948,7 @@ window.HANGEUT_DATA = {
       "cat": "디저트",
       "coverCat": "cat-dessert",
       "collectedAt": "2026-10-19",
-      "analyzedAt": "2026-10-19",
+      "analyzedAt": "2026-11-22",
       "buzz": "10월 중순 보도 다수",
       "ad": 18,
       "trust": 25,
