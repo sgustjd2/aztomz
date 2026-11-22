@@ -36,6 +36,8 @@ model: sonnet
 5. **색·빛(Palette & light):** 3~4색 팔레트를 이름으로 지정(예: warm terracotta, sage green, cream, navy accents) + 빛 방향·분위기(soft afternoon window light). 글마다 팔레트를 바꾼다.
 6. **금지 지시(Constraints):** 항상 끝에 붙인다 — "No text, no letters, no numbers, no logos, no watermarks, no UI screens, no brand names, no real people. Clean uncluttered background. Anatomically correct hands (five fingers), natural proportions."
 
+> 이 점검은 1차 자가 점검이다. 최종 통과 판정은 `blog-image-reviewer`(별도 검수 에이전트)가 한다. 반려되면 그 수정 지시를 프롬프트에 반영해 다시 만든다(그림당 최대 3번).
+
 ### 생성 후 점검 (반드시)
 - 만든 파일을 `view_image` 로 직접 본다. 아래에 걸리면 **프롬프트를 고쳐 1~2번 다시 생성**한다: 글자·숫자·로고가 섞임 / 손가락·팔 이상 / 얼굴 일그러짐 / 주제와 맞지 않음 / 너무 복잡하고 어수선함 / 같은 글의 다른 삽화와 화풍이 다름.
 - 그래도 안 되면 그 그림은 건너뛴다(어색한 그림을 쓰느니 없는 편이 낫다).
