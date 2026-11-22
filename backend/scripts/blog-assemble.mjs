@@ -266,6 +266,15 @@ if (leftoverFig) {
   process.exit(1);
 }
 
+/* 네이버 글은 본문이 공백 제외 2,200자 미만이면 조립을 실패시킨다(2026-11-21: 글이 점점 짧아져 체류·광고 노출이 줄었다).
+   집필 단계가 조사한 사실로 얕은 섹션을 깊게 파거나 조사를 보강해 다시 조립한다. */
+const NAVER_MIN_CHARS = 2200;
+const bodyChars = html.replace(/<[^>]+>/g, '').replace(/\s+/g, '').length;
+if (meta.platform === 'naver' && bodyChars < NAVER_MIN_CHARS) {
+  console.error(`✗ 조립 실패: 네이버 글 본문이 ${bodyChars}자(공백 제외) — 최소 ${NAVER_MIN_CHARS}자(목표 2,500~3,500자). 조사한 사실로 얕은 섹션을 깊게 파거나 조사를 보강해라(반복 문장·근거 없는 수치로 늘리지 마라).`);
+  process.exit(1);
+}
+
 await writeFile(join(outDir, `${slug}.html`), html, 'utf8');
 
 const text = html.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
