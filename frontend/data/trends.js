@@ -2746,10 +2746,10 @@ window.HANGEUT_DATA = {
       "cat": "카페·핫플",
       "coverCat": "cat-cafe",
       "collectedAt": "2026-06-10",
-      "analyzedAt": "2026-06-10",
+      "analyzedAt": "2026-11-22",
       "buzz": "높음",
-      "stage": "상승",
-      "stageMsg": "2026년 서울 카페 트렌드를 이끄는 핵심 지역들",
+      "stage": "안정화",
+      "stageMsg": "서울 카페 투어는 꾸준한 여행 코스",
       "label": "지금 즐기기 좋음",
       "labelCls": "good",
       "title": "2026 서울 카페 투어 트렌드",
@@ -2778,6 +2778,10 @@ window.HANGEUT_DATA = {
         [
           "ㅍㅍㅅㅅ",
           "https://v.daum.net/v/uVs6SDHlE4"
+        ],
+        [
+          "HelloKTrip(2026-10-27)",
+          "https://helloktrip.com/guide/seoul-cafe-map-hongdae-seongsu?lang=ko"
         ]
       ],
       "tags": [
