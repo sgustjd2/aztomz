@@ -4723,7 +4723,7 @@ window.HANGEUT_DATA = {
       "cat": "맛집",
       "coverCat": "cat-food",
       "collectedAt": "2026-06-23",
-      "analyzedAt": "2026-10-20",
+      "analyzedAt": "2026-11-23",
       "buzz": "화제성 확인 안 됨",
       "label": "후기 확인 안 됨, 판단 보류",
       "labelCls": "mid",
