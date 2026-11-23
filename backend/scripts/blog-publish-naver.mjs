@@ -272,6 +272,12 @@ async function publish() {
     process.exit(1);
   }
   const update = has('update');
+  // 2026-11-24 사용자 결정: 이미 올린 글의 자동 수정은 하지 않는다(네이버 약관 10-01 자동화 게시 제한 우려).
+  // 사람이 직접 한 번 하려면 ALLOW_NAVER_UPDATE=1 을 붙여 실행한다.
+  if (update && process.env.ALLOW_NAVER_UPDATE !== '1') {
+    console.error('✗ --update 는 막아 두었습니다(기존 글 자동 수정 중지). 꼭 필요하면 ALLOW_NAVER_UPDATE=1 로 직접 실행하세요.');
+    process.exit(1);
+  }
   const live = update && posted[id]?.url.match(/blog\.naver\.com\/([\w-]+)\/(\d+)/);
   if (update && !live) {
     console.error(`✗ --update: posted-naver.json 에 "${id}" 의 글 주소가 없습니다`);

@@ -80,6 +80,43 @@ async function demand(keyword, creds) {
   return { keyword, found: !!exact, pc, mobile: mob, total: pc + mob, compIdx: comp, monthlyAveMobileClkCnt: clk };
 }
 
+// 모바일 3위 예상 입찰가(원) — 광고 단가 가늠용. 키워드 전체를 한 번에 POST(호출 1번). 70원 ≈ 최저 입찰가(광고 가치 거의 없음).
+// 실패하면 null 을 돌려 "단가 미확인"으로 남긴다.
+async function bid3Map(keywords, creds) {
+  const uri = '/estimate/average-position-bid/keyword';
+  const ts = Date.now().toString();
+  try {
+    const res = await fetch(`${BASE}${uri}`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json; charset=UTF-8',
+        'X-Timestamp': ts, 'X-API-KEY': creds.key, 'X-Customer': creds.customer,
+        'X-Signature': sign(ts, 'POST', uri, creds.secret),
+      },
+      body: JSON.stringify({ device: 'MOBILE', items: keywords.map((k) => ({ key: k.replace(/\s+/g, ''), position: 3 })) }),
+    });
+    if (!res.ok) return null;
+    const j = await res.json();
+    const m = new Map();
+    for (const e of j.estimate || []) m.set(norm(String(e.keyword ?? e.key ?? '')), Number(e.bid));
+    return m;
+  } catch { return null; }
+}
+
+// 블로그 문서 수 — 네이버 검색 API(openapi) total. NAVER_CLIENT_ID/SECRET 에 '검색' API 가 추가돼야 한다. 안 되면 null("문서수 미확인").
+async function blogDocs(keyword) {
+  const id = process.env.NAVER_CLIENT_ID, sec = process.env.NAVER_CLIENT_SECRET;
+  if (!id || !sec) return null;
+  try {
+    const res = await fetch(`https://openapi.naver.com/v1/search/blog.json?query=${encodeURIComponent(keyword)}&display=1`, {
+      headers: { 'X-Naver-Client-Id': id, 'X-Naver-Client-Secret': sec },
+    });
+    if (!res.ok) return null;
+    const t = Number((await res.json()).total);
+    return Number.isFinite(t) ? t : null;
+  } catch { return null; }
+}
+
 function selftest() {
   const A = (c, m) => { if (!c) throw new Error('SELFTEST FAIL: ' + m); };
   A(parseCount('< 10') === 5, '"< 10" → 5');
@@ -126,6 +163,17 @@ async function main() {
     if (kw !== keywords.at(-1)) await new Promise((r) => setTimeout(r, 350)); // ≤3/sec
   }
 
+  // 광고 단가(bid3)·문서 수 보강 — 실패해도 조용히 넘기지 않고 "미확인"으로 표시한다.
+  const bids = await bid3Map(keywords, creds);
+  for (const r of results) {
+    if (r.error) continue;
+    const b = bids?.get(norm(r.keyword));
+    r.bid3 = Number.isFinite(b) ? b : null;
+    r.docs = await blogDocs(r.keyword);
+    r.competitionRatio = r.docs != null && r.total > 0 ? Math.round((r.docs / r.total) * 10) / 10 : null;
+    await new Promise((x) => setTimeout(x, 120));
+  }
+
   if (has('json')) {
     console.log(JSON.stringify({ min: MIN, results }, null, 2));
   } else {
@@ -134,7 +182,7 @@ async function main() {
       const pass = r.total >= MIN;
       const mark = pass ? '✅' : (r.found ? '❌' : '❌無');
       const note = r.found ? '' : ' (정확일치 없음 — 검색어 표현 재검토)';
-      console.log(`${mark} ${r.keyword} — 월 ${r.total.toLocaleString()} (PC ${r.pc.toLocaleString()} / 모바일 ${r.mobile.toLocaleString()}) · 경쟁 ${r.compIdx || '-'} · 월평균 모바일 클릭 ${r.monthlyAveMobileClkCnt.toLocaleString()}${note}`);
+      console.log(`${mark} ${r.keyword} — 월 ${r.total.toLocaleString()} (PC ${r.pc.toLocaleString()} / 모바일 ${r.mobile.toLocaleString()}) · 경쟁 ${r.compIdx || '-'} · 월평균 모바일 클릭 ${r.monthlyAveMobileClkCnt.toLocaleString()} · bid3 ${r.bid3 != null ? r.bid3.toLocaleString() + '원' : '단가 미확인'} · ${r.docs != null ? '문서수 ' + r.docs.toLocaleString() + (r.competitionRatio != null ? ` (경쟁비 ${r.competitionRatio})` : '') : '문서수 미확인'}${note}`);
     }
     console.log(`\n임계값 --min=${MIN} (PC+모바일 월간합). ✅=통과 · ❌=미달 · ❌無=키워드 미등록(사실상 저수요).`);
   }
