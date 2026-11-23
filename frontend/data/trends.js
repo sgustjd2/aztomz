@@ -1460,10 +1460,10 @@ window.HANGEUT_DATA = {
       "cat": "신조어",
       "coverCat": "cat-slang",
       "collectedAt": "2026-06-06",
-      "analyzedAt": "2026-08-16",
+      "analyzedAt": "2026-11-23",
       "buzz": "화제성 높음",
-      "stage": "피크",
-      "stageMsg": "2026 상반기 화제",
+      "stage": "안정화",
+      "stageMsg": "유행어보다 일상 표현으로 쓰이는 단계",
       "label": "지금 써도 됨",
       "labelCls": "good",
       "title": "밤티",
@@ -1496,6 +1496,10 @@ window.HANGEUT_DATA = {
         [
           "여행픽",
           "https://www.thetrippick.com/news/articleView.html?idxno=3296"
+        ],
+        [
+          "반론보도(2026-11-23)",
+          "https://www.banronbodo.com/news/articleView.html?idxno=33408"
         ]
       ],
       "tags": [
