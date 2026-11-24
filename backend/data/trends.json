@@ -3806,10 +3806,10 @@
       "cat": "디저트",
       "coverCat": "cat-dessert",
       "collectedAt": "2026-06-15",
-      "analyzedAt": "2026-08-16",
+      "analyzedAt": "2026-11-24",
       "buzz": "화제성 매우 높음",
       "stage": "상승",
-      "stageMsg": "여름 시즌 맞이 급상승 중",
+      "stageMsg": "마이구미 얼먹 레시피가 다시 주목받는 중",
       "label": "도전해도 됨",
       "labelCls": "good",
       "title": "여름 한정 '얼먹젤리' 열풍",
@@ -3838,6 +3838,10 @@
         [
           "썸트렌드 AI 리포트",
           "https://some.co.kr/briefing/korean-dessert-texture-trend-report-2026"
+        ],
+        [
+          "뉴스웨이(2026-11-20)",
+          "https://www.newsway.co.kr/news/view?ud=2026112014482496329"
         ]
       ],
       "tags": [
@@ -3902,12 +3906,12 @@
       "cat": "디저트",
       "coverCat": "cat-dessert",
       "collectedAt": "2026-06-15",
-      "analyzedAt": "2026-08-16",
-      "buzz": "화제성 높음",
-      "stage": "상승",
-      "stageMsg": "중동 디저트 열풍의 차기 주자",
-      "label": "도전해도 됨",
-      "labelCls": "good",
+      "analyzedAt": "2026-11-24",
+      "buzz": "화제성 하락",
+      "stage": "하락 (한물감)",
+      "stageMsg": "2024년 보도 이후 최근 화제 신호가 드뭄",
+      "label": "이제는 늦은 느낌",
+      "labelCls": "mid",
       "title": "이란식 과일 가죽 '라바삭'",
       "def": "과일을 얇게 말린 가죽 형태에 석류 시럽과 과육을 얹어 먹는 이색 중동 간식",
       "excerpt": "두바이 초콜릿 다음은 라바삭? 입안 가득 퍼지는 극강의 새콤함이 매력적입니다.",
@@ -3938,6 +3942,10 @@
         [
           "라바삭 먹방 쇼츠",
           "https://youtu.be/XnEh0yn14Aw"
+        ],
+        [
+          "아시아경제(2024-04-15)",
+          "https://view.asiae.co.kr/article/2024041413565381149"
         ]
       ],
       "tags": [
@@ -7097,12 +7105,12 @@
       "cat": "AI 프롬프트",
       "coverCat": "cat-ai",
       "collectedAt": "2026-07-10",
-      "analyzedAt": "2026-07-10",
-      "buzz": "화제성 높음",
-      "stage": "상승",
-      "stageMsg": "디지털 피로감 속 아날로그 필름 감성으로 SNS 확산 중",
-      "label": "지금 써도 됨",
-      "labelCls": "good",
+      "analyzedAt": "2026-11-24",
+      "buzz": "화제성 하락",
+      "stage": "안정화 → 끝물",
+      "stageMsg": "최근 확인 사례가 드물어 열기가 식은 흐름",
+      "label": "이제는 늦은 느낌",
+      "labelCls": "mid",
       "title": "일회용 카메라 감성 AI 프롬프트",
       "def": "깔끔한 디지털 사진을 일부러 거칠고 즉흥적인 90년대 일회용 필름 카메라 사진처럼 바꾸는 명령",
       "excerpt": "너무 완벽한 디지털 사진에 피로감을 느낀 Z세대가 일부러 거칠고 즉흥적인 필름 카메라 감성을 AI로 재현하는 프롬프트입니다.",
@@ -7129,6 +7137,10 @@
         [
           "allmyuniverse",
           "https://allmyuniverse.com/image-prompt-guide-disposable-film-flash-candid-snapshot/"
+        ],
+        [
+          "note(2026-11-11)",
+          "https://note.com/pugmomonga0616/n/n826f0de6e79b?hl=ko"
         ]
       ],
       "tags": [
