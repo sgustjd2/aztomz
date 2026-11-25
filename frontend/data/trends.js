@@ -4337,12 +4337,12 @@ window.HANGEUT_DATA = {
       "cat": "노래·챌린지",
       "coverCat": "cat-music",
       "collectedAt": "2026-06-19",
-      "analyzedAt": "2026-08-16",
+      "analyzedAt": "2026-11-25",
       "buzz": "화제성 하락",
       "stage": "하락 (한물감)",
-      "stageMsg": "2024년 여름 정점 찍고 지금은 한물감",
-      "label": "이미 한물간 챌린지",
-      "labelCls": "warn",
+      "stageMsg": "2024년 5~6월 영상 이후 최근 확산 신호가 안 보여요",
+      "label": "이제는 늦은 느낌",
+      "labelCls": "mid",
       "title": "에스파 아마겟돈 챌린지",
       "def": "쇠맛 나는 독특한 안무와 'Armageddon' 후렴구가 특징인 댄스 챌린지",
       "excerpt": "최상급 쇠맛과 절도 있는 안무로 숏폼을 강타했던 에스파의 챌린지예요. ITZY 예지와의 콜라보 영상 등으로 화제를 모았지만, 2024년 5월 발매 후 시간이 꽤 지나 지금은 한물간 유행이에요.",
@@ -4373,6 +4373,10 @@ window.HANGEUT_DATA = {
         [
           "연예부기자 다람이 YouTube",
           "https://www.youtube.com/watch?v=8viCovhY808"
+        ],
+        [
+          "aespa 공식 유튜브 쇼츠(2024-06-06)",
+          "https://youtu.be/sWszUNJRAek"
         ]
       ],
       "tags": [
