@@ -35,7 +35,7 @@ try { posted = JSON.parse(readFileSync(join(outDir, 'posted-naver.json'), 'utf8'
 const now = new Date(Date.now() + 9 * 3600e3);
 const today = ymd(now);
 const dow = new Date(`${today}T00:00:00Z`).getUTCDay(); // 0 일 … 6 토
-const placeCap = [4, 5, 6].includes(dow) ? 3 : 2;
+const placeCap = [4, 5, 6].includes(dow) ? 4 : 3; // 장소·맛집 하루 상한(평일 3, 목·금·토 4)
 const cutoff7 = ymd(new Date(now.getTime() - 6 * 86400e3));
 const cutoff3 = ymd(new Date(now.getTime() - 2 * 86400e3));
 const t = Object.fromEntries([...GROUPS, '미분류'].map((g) => [g, 0]));
@@ -52,7 +52,7 @@ for (const [slug, v] of Object.entries(posted)) {
   if (d >= cutoff3) recent3.push(`${d} [${g}] ${v.title}`);
 }
 const cap = (g) => (g === '장소·맛집' ? placeCap : 2);
-const blocked = GROUPS.filter((g) => t[g] >= cap(g) || (nWeek >= 10 && w[g] / nWeek > 0.35));
+const blocked = GROUPS.filter((g) => t[g] >= cap(g) || (nWeek >= 10 && w[g] / nWeek > (g === '장소·맛집' ? 0.5 : 0.35)));
 const open = GROUPS.filter((g) => !blocked.includes(g));
 const least = [...open].sort((a, b) => w[a] - w[b] || t[a] - t[b]).slice(0, 3);
 const used = GROUPS.filter((g) => t[g] > 0).length;
@@ -61,7 +61,7 @@ const row = (o) => GROUPS.map((g) => `${g} ${o[g]}`).join(' / ') + (o['미분류
 console.log(`# 주제 묶음 균형표 (${today} KST, 요일 ${'일월화수목금토'[dow]}) — 시각 표의 유형은 우선순위일 뿐, 상한에 걸린 묶음은 이번 회차에서 고르지 않는다`);
 console.log(`오늘 ${nToday}편: ${row(t)}`);
 console.log(`최근 7일 ${nWeek}편: ${row(w)}`);
-console.log(`상한: 한 묶음 하루 2편(장소·맛집은 목·금·토 3편 — 오늘 한도 ${placeCap}), 최근 7일 점유 35% 초과 묶음 제외, 하루 7편은 최소 4개 묶음`);
+console.log(`상한: 한 묶음 하루 2편(장소·맛집은 평일 3편·목금토 4편 — 오늘 한도 ${placeCap}), 최근 7일 점유 35%(장소·맛집 50%) 초과 묶음 제외, 하루 7편은 최소 4개 묶음`);
 console.log(`이번 회차에서 고르지 않을 묶음: ${blocked.join(', ') || '없음'}`);
 console.log(`가장 적게 나온 후보 묶음(상한 걸리면 여기서 고른다): ${least.join(', ') || '없음'}`);
 if (left > 0 && used + left < 4) console.log(`주의: 오늘 쓴 묶음 ${used}개, 남은 ${left}편 — 최소 4개 묶음이 되려면 아직 안 쓴 묶음에서 골라야 한다`);
