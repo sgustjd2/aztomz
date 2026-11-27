@@ -91,7 +91,7 @@
   .shops .sh-note{flex-basis:100%;font-size:14px;color:var(--body);line-height:1.55;word-break:keep-all;margin-top:1px}
   .shops-note{font-size:12.5px;color:var(--ink-2);margin:9px 0 2px}
 </style>
-<link rel="stylesheet" href="assets/detail.css?v=feed-20261127" />
+<link rel="stylesheet" href="assets/detail.css?v=shopfold-20261127" />
 </head>
 <body class="detail-page">
 <a class="skip-link" href="#main">본문으로 건너뛰기</a>
@@ -265,15 +265,18 @@
   // 어디서 사 먹지? — t.shops 있을 때만. [{name, area?, url?, note?}]
   function shopsBlock(){
     const s = t.shops; if(!s || !s.length) return '';
-    const rows = s.map(sh=>{
+    // 모바일(600px 이하)은 3곳만 펼치고 나머지는 '더 보기'로 접는다 — 카드 1장이 화면 40%라 8곳이면 세 화면을 넘는다(데스크톱은 2열이라 그대로)
+    const FOLD = 3, more = s.length - FOLD;
+    const rows = s.map((sh, i)=>{
       const rep = sh.rep?`<div class="shop-menu"><span class="shop-eyebrow">소개 메뉴</span><span>${H.esc(sh.rep)}</span></div>`:'';
       const area = sh.area?`<p class="shop-location">${detailIcon("pin")}<span>${H.esc(sh.area)}</span></p>`:'';
       const link = sh.url?`<a class="shop-source" href="${H.esc(sh.url)}" target="_blank" rel="noopener" aria-label="${H.esc(sh.name)} 소개 및 출처 보기 · 새 창">소개·출처 보기 ${detailIcon("arrow")}</a>`:'';
       const note = sh.note?`<p class="shop-description">${H.esc(sh.note)}</p>`:'';
-      return `<li class="shop-card"><h3 class="shop-name">${H.esc(sh.name)}</h3>${area}${rep}${note}${link}</li>`;
+      return `<li class="shop-card${i >= FOLD ? ' shop-more' : ''}"><h3 class="shop-name">${H.esc(sh.name)}</h3>${area}${rep}${note}${link}</li>`;
     }).join('');
     return `<div class="sec-head" id="places"><h2>${detailIcon("pin")} 어디서 사 먹지?</h2></div>
-      <ul class="shops shop-cards">${rows}</ul>
+      <ul class="shops shop-cards" id="shopCards">${rows}</ul>
+      ${more > 0 ? `<button type="button" class="shops-more-btn" aria-controls="shopCards" aria-expanded="false" data-more="${more}">가게 ${more}곳 더 보기</button>` : ''}
       <div class="shops-note">맛집으로 소문난 곳 위주로 골랐어요. 메뉴·가격·영업은 방문 전 다시 확인하세요.</div>`;
   }
 
@@ -329,6 +332,13 @@
       <div class="disc footer-disclaimer">${detailIcon("shield")}<span>점수는 공개 정보 기반 <b>추정치</b>이며 확정 판정이 아닙니다.</span></div>
       <footer class="site"><a class="fwm footer-brand" href="index.html" aria-label="한끗 홈">한<b>끗</b></a><div class="footer-copy">AZ와 MZ는 한 끗 차이 · 트렌드 번역소</div></footer>`;
 
+    const moreBtn = H.q('.shops-more-btn');
+    if(moreBtn) moreBtn.onclick = ()=>{
+      const open = H.q('#shopCards').classList.toggle('open');
+      moreBtn.setAttribute('aria-expanded', open);
+      moreBtn.textContent = open ? '접기' : `가게 ${moreBtn.dataset.more}곳 더 보기`;
+      if(!open) H.q('#places').scrollIntoView({block:'start'});
+    };
     H.q('#shareBtn').onclick = async ()=>{
       const text=`[한끗] ${t.title} — ${t.type==='신뢰분석'?`광고 ${t.ad}/신뢰 ${t.trust}`:t.stage} · ${t.label}`;
       await H.share({title:'한끗', text, url:location.href});

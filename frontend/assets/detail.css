@@ -112,7 +112,13 @@
  .detail-page .shop-description{grid-row:4;padding-bottom:18px}
  .detail-page .shop-source{grid-row:5;margin-top:0;align-self:end}
 }
+.detail-page .shops-more-btn{display:none}
 @media(max-width:600px){
+ /* 3곳만 펼치고 나머지는 버튼으로 (trend.html shopsBlock) */
+ .detail-page .shop-cards:not(.open) .shop-more{display:none}
+ .detail-page .shops-more-btn{display:flex;align-items:center;justify-content:center;width:100%;min-height:46px;margin:0 0 8px;
+  border:1px solid var(--line);border-radius:8px;background:var(--paper-soft);color:var(--ink);font:600 15px var(--sans);cursor:pointer}
+ .detail-page .shops-more-btn:focus-visible{outline:3px solid color-mix(in srgb, var(--accent) 72%, transparent);outline-offset:2px}
  .detail-page .shop-cards{grid-template-columns:1fr}
  .detail-page .shop-card{padding:20px}
  .detail-page .shop-name{font-size:19px}
