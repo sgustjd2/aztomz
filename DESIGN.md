@@ -127,3 +127,4 @@
 - **리드 제목 강조 구절**(`.lead h1 .hl`)은 코랄→블루 그라데이션 텍스트. 홈 리드 뒤에는 정지된 은은한 오로라 배경.
 - **SEO**: 모든 페이지에 canonical·`og:url`·`og:image`(`frontend/og.png`, 1200×630)·`summary_large_image`. 상세·목록은 `H.seo()`로 항목별 title·description·canonical·JSON-LD(Article+BreadcrumbList)를 설정하고, 홈은 WebSite·Organization JSON-LD를 둔다. `frontend/robots.txt` + `frontend/sitemap.xml`(refresh.mjs가 `build-sitemap.mjs`로 매번 재생성, 자동 커밋 대상에 포함).
 - **카드 표면(2026-11-27 추가)**: 홈 트렌드·목록(트렌드/광고 분석)·MZ 사전·펄스 카드는 1px `--line` 테두리 + `--card` 배경 + 16px 모서리 + 옅은 그림자(`--card-shadow`, 다크는 검정 계열)로 영역을 구분한다. 카드 안 썸네일은 10px 모서리, 마우스 hover 시 테두리를 진하게 하고 그림자를 키운다. 홈 '최근 분석'은 구분선 목록 형태를 유지한다.
+- **카드 타이포 위계(2026-11-27 추가)**: 카드 제목 `--card-title`(17~20px, 750, 줄간격 1.38, `text-wrap:balance`·어절 단위 줄바꿈), 설명 `--card-desc`(14~15px, 흐린 색, 2줄), 분류·단계 메타 13px. 제목이 두 줄이면 두 줄 길이를 고르게 나눠 한두 글자만 떨어지는 줄을 만들지 않는다.

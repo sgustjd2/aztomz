@@ -1365,3 +1365,16 @@ html:has(body.detail-page){scroll-padding-top:76px}
 @media (max-width:640px){
   .home-redesign .strip{padding-bottom:14px}
 }
+
+/* 카드 타이포 위계 — 제목은 더 크고 굵게, 설명은 한 단계 작고 흐리게.
+   제목 줄바꿈은 balance로 두 줄 길이를 고르게(한두 글자만 다음 줄로 떨어지는 어색함 방지), 한글은 어절 단위로. */
+:root{--card-title:clamp(17px,.4vw + 14px,20px);--card-desc:clamp(14px,.1vw + 13px,15px);--card-meta:13px}
+:root :is(.home-redesign .chip-card .cc-title,.app-redesign .editorial-feed .chip-card .cc-title,.app-redesign .analysis-card .it-title,.home-redesign .idx-row .t .it-title,.app-redesign .dword .dw-term,.app-redesign .tp-card .tp-kw){
+  font-size:var(--card-title);font-weight:750;line-height:1.38;letter-spacing:-.03em;
+  text-wrap:balance;word-break:keep-all;overflow-wrap:anywhere}
+:root :is(.home-redesign .chip-card .cc-desc,.app-redesign .editorial-feed .chip-card .cc-desc,.app-redesign .analysis-card .it-desc,.home-redesign .idx-row .t .it-desc){
+  margin-top:6px;font-size:var(--card-desc);line-height:1.6;color:var(--muted);-webkit-line-clamp:2;letter-spacing:-.01em}
+:root :is(.home-redesign .chip-card .cc-stage,.app-redesign .editorial-feed .chip-card .cc-stage,.app-redesign .analysis-card .it-cat,.home-redesign .idx-row .t .it-cat){font-size:var(--card-meta)}
+:root :is(.home-redesign .chip-card .cc-title,.app-redesign .editorial-feed .chip-card .cc-title){margin-top:4px}
+:root .app-redesign .dword .dw-def{font-size:var(--card-desc);line-height:1.65}
+:root .app-redesign .tp-card .tp-why{font-size:var(--card-desc);line-height:1.65}
