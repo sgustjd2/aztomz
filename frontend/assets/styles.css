@@ -1375,39 +1375,60 @@ body:not(.detail-page).app-redesign .sec-head{margin:22px 6px 10px;padding-botto
   .list-surface .feed{grid-template-columns:repeat(4,minmax(0,1fr))}
   .list-surface .feed-row:nth-child(-n+4){border-top:0}
 }
-/* 광고 분석 목록 필터 — 판단·점수 구간·지역·정렬 (상태는 URL 쿼리) */
-.lf{display:flex;flex-direction:column;gap:12px;padding:14px 0 12px;border-bottom:1px solid var(--line)}
-.lf-panel{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:10px 12px}
-.lf-field{position:relative;display:flex;flex-direction:column;gap:6px;min-width:0;font-size:12.5px;font-weight:600;color:var(--muted)}
-/* 셀렉트: 테두리 없는 연한 채움 + 둥근 모서리. 화살표는 currentColor 마스크라 라이트·다크 모두 글자색을 따른다 */
-.lf-field select{width:100%;min-height:44px;padding:9px 38px 9px 14px;border:1px solid transparent;border-radius:12px;
-  background:color-mix(in srgb,var(--ink) 5%,var(--card));color:var(--ink);font:600 14.5px var(--sans);letter-spacing:-.01em;
-  text-overflow:ellipsis;-webkit-appearance:none;appearance:none;cursor:pointer;transition:background-color .15s,border-color .15s,color .15s}
-.lf-field::after{content:"";position:absolute;right:14px;bottom:16px;width:12px;height:12px;background:var(--muted);pointer-events:none;
-  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m3 4.5 3 3 3-3'/%3E%3C/svg%3E") center/contain no-repeat;
-          mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m3 4.5 3 3 3-3'/%3E%3C/svg%3E") center/contain no-repeat;
-  transition:transform .15s}
-@media (hover:hover){.lf-field select:hover{background:color-mix(in srgb,var(--ink) 9%,var(--card))}}
-.lf-field select option{background:var(--card);color:var(--ink)}
-/* 값을 고른 셀렉트는 광고 강조색의 연한 바탕 + 강조 글자로 — 무엇이 걸려 있는지 한눈에 */
-.lf-field select.is-set{border-color:color-mix(in srgb,var(--accent) 35%,transparent);background:var(--accent-soft);color:var(--accent-text);font-weight:700}
-.lf-field:has(select.is-set)::after{background:var(--accent-text)}
-.lf-field:has(select.is-set)>span{color:var(--ink)}
-.lf-field select:focus-visible,.lf button:focus-visible{outline:3px solid color-mix(in srgb, var(--accent) 72%, transparent);outline-offset:2px}
-.lf-bar{display:flex;align-items:center;gap:8px 12px;font-size:13.5px;color:var(--muted)}
+/* 광고 분석 목록 필터 — 판단·점수 구간·지역은 알약 칩(토글), 정렬은 작은 셀렉트 (상태는 URL 쿼리) */
+.lf{display:flex;flex-direction:column;gap:12px;padding:14px 0;border-bottom:1px solid var(--line)}
+.lf-bar{display:flex;align-items:center;gap:8px 10px;font-size:13.5px;color:var(--muted)}
+.lf-count{min-width:0;white-space:nowrap}
 .lf-count b{color:var(--ink);font-weight:800;font-variant-numeric:tabular-nums}
-.lf-reset{margin-left:auto;min-height:36px;padding:6px 12px;border:1px solid var(--line);border-radius:999px;background:transparent;color:var(--body);font:600 13px var(--sans);cursor:pointer}
+.lf-panel{display:flex;flex-direction:column;gap:10px}
+.lf-row{display:flex;align-items:baseline;gap:12px;min-width:0}
+.lf-name{flex:none;width:64px;font-size:13px;font-weight:700;color:var(--muted)}
+.lf-chips{display:flex;flex-wrap:wrap;gap:6px;min-width:0}
+.lf-chip{flex:none;display:inline-flex;align-items:center;gap:5px;min-height:36px;padding:6px 14px;border:1px solid transparent;border-radius:999px;
+  background:color-mix(in srgb,var(--ink) 5%,var(--card));color:var(--body);font:600 13.5px var(--sans);letter-spacing:-.01em;white-space:nowrap;cursor:pointer;
+  transition:background-color .15s,border-color .15s,color .15s}
+.lf-chip .lf-cn{font-size:12px;font-weight:500;color:var(--muted);font-variant-numeric:tabular-nums}
+@media (hover:hover){.lf-chip:not(.on):hover{background:color-mix(in srgb,var(--ink) 9%,var(--card));color:var(--ink)}}
+.lf-chip:active{transform:scale(.97)}
+/* 켜진 칩: 광고 강조색의 연한 바탕 + 강조 글자 + 체크 표시(색만으로 구분하지 않음) */
+.lf-chip.on{border-color:color-mix(in srgb,var(--accent) 35%,transparent);background:var(--accent-soft);color:var(--accent-text);font-weight:700}
+.lf-chip.on::before{content:"";width:12px;height:12px;margin-left:-2px;background:currentColor;
+  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='none' stroke='%23000' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m2.5 6.2 2.4 2.4 4.6-5'/%3E%3C/svg%3E") center/contain no-repeat;
+          mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='none' stroke='%23000' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m2.5 6.2 2.4 2.4 4.6-5'/%3E%3C/svg%3E") center/contain no-repeat}
+.lf-chip.on .lf-cn{color:inherit;opacity:.75}
+/* 정렬: 작은 알약 셀렉트, 화살표는 currentColor 마스크 */
+.lf-sort{position:relative;flex:none;margin-left:auto}
+.lf-sort select{min-height:36px;padding:6px 30px 6px 13px;border:1px solid transparent;border-radius:999px;background:color-mix(in srgb,var(--ink) 5%,var(--card));
+  color:var(--ink);font:600 13px var(--sans);-webkit-appearance:none;appearance:none;cursor:pointer}
+.lf-sort::after{content:"";position:absolute;right:12px;top:50%;width:10px;height:10px;margin-top:-5px;background:currentColor;color:var(--muted);pointer-events:none;
+  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m3 4.5 3 3 3-3'/%3E%3C/svg%3E") center/contain no-repeat;
+          mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m3 4.5 3 3 3-3'/%3E%3C/svg%3E") center/contain no-repeat}
+.lf-sort select option{background:var(--card);color:var(--ink)}
+.lf-sort select.is-set{border-color:color-mix(in srgb,var(--accent) 35%,transparent);background:var(--accent-soft);color:var(--accent-text);font-weight:700}
+.lf-sort:has(select.is-set)::after{color:var(--accent-text)}
+@media (hover:hover){.lf-sort select:not(.is-set):hover{background:color-mix(in srgb,var(--ink) 9%,var(--card))}}
+.lf-chip:focus-visible,.lf-sort select:focus-visible,.lf button:focus-visible{outline:3px solid color-mix(in srgb, var(--accent) 72%, transparent);outline-offset:2px}
+.lf-reset{flex:none;min-height:36px;padding:6px 12px;border:1px solid var(--line);border-radius:999px;background:transparent;color:var(--body);font:600 13px var(--sans);cursor:pointer}
 .lf-reset:hover{border-color:var(--ink);color:var(--ink)}
 .lf-toggle{display:none}
 @media (max-width:640px){
-  /* 모바일은 접어 두고 '필터·정렬' 버튼으로 연다 — 목록이 먼저 보이게 */
+  /* 모바일은 접어 두고 '필터' 버튼으로 연다 — 목록이 먼저 보이게. 칩 줄은 가로로 넘겨 본다 */
   .lf{gap:10px;padding:10px 0}
-  .lf-bar{order:-1}
-  .lf-toggle{display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:7px 14px;border:1px solid var(--line);border-radius:999px;background:var(--paper-soft);color:var(--ink);font:700 13.5px var(--sans);cursor:pointer}
-  .lf-toggle .lf-n{min-width:20px;padding:1px 6px;border-radius:999px;background:var(--ink);color:var(--on-ink);font-size:12px;text-align:center}
-  .lf-panel{grid-template-columns:1fr 1fr}
+  .lf-bar{gap:6px}
+  .lf-of{display:none}
+  .lf-toggle{flex:none;display:inline-flex;align-items:center;gap:6px;min-height:36px;padding:6px 13px;border:1px solid var(--line);border-radius:999px;background:var(--paper-soft);color:var(--ink);font:700 13px var(--sans);cursor:pointer}
+  .lf-toggle .lf-n{min-width:19px;padding:1px 6px;border-radius:999px;background:var(--ink);color:var(--on-ink);font-size:11.5px;text-align:center}
+  .lf-sort select{padding-left:11px;padding-right:26px}
+  .lf-sort::after{right:10px}
+  .lf-row{flex-direction:column;align-items:stretch;gap:6px}
+  .lf-name{width:auto;font-size:12.5px}
+  .lf-chips{flex-wrap:nowrap;overflow-x:auto;margin:0 -18px;padding:0 18px 2px;scrollbar-width:none;overscroll-behavior-x:contain}
+  .lf-chips::-webkit-scrollbar{display:none}
   .lf:not(.open) .lf-panel{display:none}
 }
+.lf-chips.fade-r{-webkit-mask-image:linear-gradient(90deg,#000 calc(100% - 36px),transparent);mask-image:linear-gradient(90deg,#000 calc(100% - 36px),transparent)}
+.lf-chips.fade-l{-webkit-mask-image:linear-gradient(90deg,transparent,#000 36px);mask-image:linear-gradient(90deg,transparent,#000 36px)}
+.lf-chips.fade-l.fade-r{-webkit-mask-image:linear-gradient(90deg,transparent,#000 36px,#000 calc(100% - 36px),transparent);mask-image:linear-gradient(90deg,transparent,#000 36px,#000 calc(100% - 36px),transparent)}
 .app-redesign .list-surface:has(#lCatFilter[hidden]){padding-top:4px}
 .app-redesign #lPager{margin-top:20px}
 
