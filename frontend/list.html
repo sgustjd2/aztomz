@@ -26,7 +26,7 @@
 <link rel="icon" href="favicon.ico" sizes="16x16 32x32 48x48" />
 <link rel="apple-touch-icon" href="apple-touch-icon.png" />
 <link rel="manifest" href="site.webmanifest" />
-<link rel="stylesheet" href="assets/styles.css?v=listfilter2-20261127" />
+<link rel="stylesheet" href="assets/styles.css?v=listchips-20261127" />
 <style>
   .list-lead{padding:24px 0 20px;border-bottom:1px solid var(--line)}
   .list-lead h1{font-size:34px;font-weight:800;line-height:1.14;letter-spacing:0;margin:12px 0 10px;text-wrap:balance}
@@ -104,10 +104,10 @@
   const inRegion = (t, r)=> (t.tags||[]).some(g=> String(g).startsWith(r));
   const FILTERS = [
     { key:'label', name:'판단', opts:[['good','믿고 가볼 만함'],['mid','판단 보류·취향 갈림'],['warn','주의 필요']], test:(t,v)=> (t.labelCls||'mid')===v },
-    { key:'ad', name:'광고 의심', opts:[['low','낮음 (0~29)'],['mid','중간 (30~49)'],['high','높음 (50 이상)']], test:(t,v)=> band(t.ad,30,50)===v },
-    { key:'trust', name:'후기 신뢰', opts:[['high','높음 (60 이상)'],['mid','중간 (40~59)'],['low','낮음 (0~39)']], test:(t,v)=> band(t.trust,40,60)===v },
+    { key:'ad', name:'광고 의심', opts:[['low','낮음 0~29'],['mid','중간 30~49'],['high','높음 50+']], test:(t,v)=> band(t.ad,30,50)===v },
+    { key:'trust', name:'후기 신뢰', opts:[['high','높음 60+'],['mid','중간 40~59'],['low','낮음 0~39']], test:(t,v)=> band(t.trust,40,60)===v },
     { key:'region', name:'지역', opts: REGIONS.map(r=>[r, ALL.filter(t=>inRegion(t,r)).length]).filter(([,n])=>n>0)
-        .sort((a,b)=> b[1]-a[1]).map(([r,n])=>[r, `${r} (${n})`]), test:(t,v)=> inRegion(t,v) },
+        .sort((a,b)=> b[1]-a[1]).map(([r,n])=>[r, r, n]), test:(t,v)=> inRegion(t,v) },
   ];
   const SORTS = [['recent','최신 분석순'],['ad','광고 의심 높은순'],['trust','후기 신뢰 높은순']];
   const recent = (a,b)=> (b.analyzedAt||'').localeCompare(a.analyzedAt||'') || _key(b).localeCompare(_key(a));
@@ -132,29 +132,30 @@
     return list.slice().sort(SORT_FN[sort]);
   };
 
+  // 필터는 알약 칩 — 누르면 켜지고 다시 누르면 꺼진다(한 줄에 하나만). 정렬은 작은 셀렉트.
   function renderAdFilter(){
     if(type!=='ad') return;
     const host = H.q('#lFilter');
-    const sel = (key, name, opts, all)=> `<label class="lf-field"><span>${name}</span><select data-f="${key}">`
-      + (all ? `<option value="">전체</option>` : '')
-      + opts.map(([v,l])=>`<option value="${H.esc(v)}">${H.esc(l)}</option>`).join('') + `</select></label>`;
-    host.innerHTML = `<div class="lf" role="group" aria-label="광고 분석 필터">
+    const row = (d)=> `<div class="lf-row"><span class="lf-name" id="lfn-${d.key}">${d.name}</span>
+        <div class="lf-chips" role="group" aria-labelledby="lfn-${d.key}">${d.opts.map(([v,l,n])=>
+          `<button type="button" class="lf-chip" data-f="${d.key}" data-v="${H.esc(v)}" aria-pressed="false">${H.esc(l)}${n!=null?` <span class="lf-cn">${n}</span>`:''}</button>`).join('')}</div></div>`;
+    host.innerHTML = `<div class="lf">
       <div class="lf-bar">
-        <button type="button" class="lf-toggle" aria-expanded="false" aria-controls="lfPanel">필터·정렬 <span class="lf-n" hidden></span></button>
+        <button type="button" class="lf-toggle" aria-expanded="false" aria-controls="lfPanel">필터 <span class="lf-n" hidden></span></button>
         <span class="lf-count" aria-live="polite"></span>
+        <label class="lf-sort"><select aria-label="정렬">${SORTS.map(([v,l])=>`<option value="${v}">${l}</option>`).join('')}</select></label>
         <button type="button" class="lf-reset" hidden>초기화</button>
       </div>
-      <div class="lf-panel" id="lfPanel">
-        ${FILTERS.map(d=>sel(d.key, d.name, d.opts, true)).join('')}
-        ${sel('sort', '정렬', SORTS, false)}
-      </div>
+      <div class="lf-panel" id="lfPanel" role="group" aria-label="광고 분석 필터">${FILTERS.map(row).join('')}</div>
     </div>`;
-    H.qa('#lFilter select').forEach(s=> s.onchange=()=>{
-      if(s.dataset.f==='sort') sort = s.value; else f[s.dataset.f] = s.value;
+    H.qa('#lFilter .lf-chip').forEach(b=> b.onclick=()=>{
+      const k = b.dataset.f; f[k] = f[k]===b.dataset.v ? '' : b.dataset.v;
       page = 1; render(); syncURL();
     });
+    H.q('#lFilter .lf-sort select').onchange = (e)=>{ sort = e.target.value; page = 1; render(); syncURL(); };
     const lf = H.q('#lFilter .lf'), tg = H.q('#lFilter .lf-toggle');
-    tg.onclick = ()=>{ const open = !lf.classList.contains('open'); lf.classList.toggle('open', open); tg.setAttribute('aria-expanded', String(open)); };
+    tg.onclick = ()=>{ const open = !lf.classList.contains('open'); lf.classList.toggle('open', open); tg.setAttribute('aria-expanded', String(open));
+      if(open) H.qa('#lFilter .lf-chips').forEach(H.chipRail); };
     H.q('#lFilter .lf-reset').onclick = ()=>{
       FILTERS.forEach(d=> f[d.key]=''); sort = 'recent'; activeCat = '전체'; page = 1;
       renderFilter(); render(); syncURL();
@@ -163,15 +164,19 @@
   // 선택 상태·건수·초기화 버튼을 현재 값에 맞춘다
   function syncAdFilter(n){
     if(type!=='ad') return;
-    H.qa('#lFilter select').forEach(s=>{
-      const v = s.dataset.f==='sort' ? sort : f[s.dataset.f];
-      s.value = v; s.classList.toggle('is-set', s.dataset.f==='sort' ? v!=='recent' : !!v);
+    H.qa('#lFilter .lf-chip').forEach(b=>{
+      const on = f[b.dataset.f]===b.dataset.v;
+      b.classList.toggle('on', on); b.setAttribute('aria-pressed', String(on));
     });
+    const ss = H.q('#lFilter .lf-sort select'); ss.value = sort; ss.classList.toggle('is-set', sort!=='recent');
+    H.qa('#lFilter .lf-chips').forEach(H.chipRail);
     const k = activeCount(), badge = H.q('#lFilter .lf-n');
     badge.hidden = !k; badge.textContent = k;
-    H.q('#lFilter .lf-count').innerHTML = `<b>${n}</b>건${n!==ALL.length?` / 전체 ${ALL.length}건`:''}`;
+    tgLabel(k);
+    H.q('#lFilter .lf-count').innerHTML = `<b>${n}</b>건<span class="lf-of">${n!==ALL.length?` / 전체 ${ALL.length}건`:''}</span>`;
     H.q('#lFilter .lf-reset').hidden = !(k || sort!=='recent' || activeCat!=='전체');
   }
+  const tgLabel = (k)=> H.q('#lFilter .lf-toggle').setAttribute('aria-label', k ? `필터, ${k}개 적용` : '필터');
 
   // 카테고리 필터 (트렌드·광고 분석 공용)
   function renderFilter(){
