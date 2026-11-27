@@ -2,25 +2,38 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
 <meta name="color-scheme" content="light dark" />
 <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
 <meta name="theme-color" content="#151a23" media="(prefers-color-scheme: dark)" />
-<title>한끗 — 요즘 유행, 광고야 진짜야?</title>
+<title>한끗 — 요즘 유행 번역소 | MZ 신조어 뜻·맛집 광고일까 진짜일까</title>
 <meta name="description" content="SNS에서 자주 보이는 맛집·디저트가 광고인지 실제 후기인지 분석하는 트렌드 번역소. 광고 의심도·후기 신뢰도·만족도를 따로 보여줍니다. 추정치이며 확정 판정이 아닙니다." />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="한끗" />
 <meta property="og:locale" content="ko_KR" />
-<meta property="og:title" content="한끗 — 요즘 유행, 광고야 진짜야?" />
+<meta property="og:title" content="한끗 — 요즘 유행 번역소 | MZ 신조어 뜻·맛집 광고일까 진짜일까" />
 <meta property="og:description" content="SNS 맛집·디저트의 광고 의심도, 후기 신뢰도, 만족도를 따로 보는 트렌드 번역소." />
-<meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content="한끗 — 요즘 유행, 광고야 진짜야?" />
+<link rel="canonical" href="https://az2mz.vercel.app/" />
+<meta property="og:url" content="https://az2mz.vercel.app/" />
+<meta property="og:image" content="https://az2mz.vercel.app/og.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="한끗 — 요즘 유행, 광고야 진짜야?" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://az2mz.vercel.app/og.png" />
+<meta name="twitter:title" content="한끗 — 요즘 유행 번역소 | MZ 신조어 뜻·맛집 광고일까 진짜일까" />
 <meta name="twitter:description" content="SNS 맛집·디저트의 광고 의심도, 후기 신뢰도, 만족도를 따로 보는 트렌드 번역소." />
 <link rel="icon" href="favicon.ico" sizes="16x16 32x32 48x48" />
 <link rel="apple-touch-icon" href="apple-touch-icon.png" />
 <link rel="manifest" href="site.webmanifest" />
-<link rel="stylesheet" href="assets/styles.css?v=public-copy-20261024" />
+<link rel="stylesheet" href="assets/styles.css?v=ui-20261127" />
 
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+ {"@type":"WebSite","@id":"https://az2mz.vercel.app/#website","url":"https://az2mz.vercel.app/","name":"한끗","alternateName":["AZ와 MZ는 한 끗 차이","az2mz"],"inLanguage":"ko-KR","description":"요즘 유행(밈·신조어·음식·디저트·핫플)을 1분에 번역하고, SNS 맛집이 광고인지 실제 후기인지 나눠 보는 트렌드 번역소.","publisher":{"@id":"https://az2mz.vercel.app/#org"}},
+ {"@type":"Organization","@id":"https://az2mz.vercel.app/#org","name":"한끗","url":"https://az2mz.vercel.app/","logo":"https://az2mz.vercel.app/icon-512.png"}
+]}
+</script>
 </head>
 <body class="home-redesign app-redesign">
 <a class="skip-link" href="#main">본문으로 건너뛰기</a>
@@ -57,7 +70,7 @@
   </main>
 
 <script src="data/trends.js"></script>
-<script src="assets/app.js?v=public-copy-20261024"></script>
+<script src="assets/app.js?v=ui-20261127"></script>
 <script>
   H.boot();
   const href = (id)=>`trend.html?id=${encodeURIComponent(id)}`;
@@ -164,7 +177,7 @@
   function renderFilter(){
     H.q('#catFilter').innerHTML = cats.map(c=>{
       const n = c==='전체' ? trends.length : trends.filter(t=>t.cat===c).length;
-      return `<button class="cat-chip${c===activeCat?' on':''}" aria-pressed="${c===activeCat}" data-cat="${H.esc(c)}">${H.esc(c)} <span class="cc-n">${n}</span></button>`;
+      return `<button class="cat-chip${c===activeCat?' on':''}" aria-pressed="${c===activeCat}" data-cat="${H.esc(c)}">${H.catIcon(c)}${H.esc(c)} <span class="cc-n">${n}</span></button>`;
     }).join('');
     H.qa('#catFilter .cat-chip').forEach(b=> b.onclick=()=>{
       if(activeCat===b.dataset.cat) return;

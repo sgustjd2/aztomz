@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
 <meta name="color-scheme" content="light dark" />
 <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
 <meta name="theme-color" content="#151a23" media="(prefers-color-scheme: dark)" />
@@ -13,13 +13,20 @@
 <meta property="og:locale" content="ko_KR" />
 <meta property="og:title" content="MZ 사전 — 요즘 말, 1초에 해석 | 한끗" />
 <meta property="og:description" content="요즘 유행어·밈·신조어를 뜻, 예문, 예쁜 우리말, 출처와 함께 확인하세요." />
-<meta name="twitter:card" content="summary" />
+<link rel="canonical" href="https://az2mz.vercel.app/dictionary.html" />
+<meta property="og:url" content="https://az2mz.vercel.app/dictionary.html" />
+<meta property="og:image" content="https://az2mz.vercel.app/og.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="한끗 — 요즘 유행, 광고야 진짜야?" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://az2mz.vercel.app/og.png" />
 <meta name="twitter:title" content="MZ 사전 — 요즘 말, 1초에 해석 | 한끗" />
 <meta name="twitter:description" content="요즘 유행어·밈·신조어를 뜻, 예문, 예쁜 우리말, 출처와 함께 확인하세요." />
 <link rel="icon" href="favicon.ico" sizes="16x16 32x32 48x48" />
 <link rel="apple-touch-icon" href="apple-touch-icon.png" />
 <link rel="manifest" href="site.webmanifest" />
-<link rel="stylesheet" href="assets/styles.css?v=public-copy-20261024" />
+<link rel="stylesheet" href="assets/styles.css?v=ui-20261127" />
 <style>
   .lead{padding:36px 0 8px;border-bottom:1px solid var(--line)}
   .lead h1{font-size:38px;font-weight:800;line-height:1.12;letter-spacing:0;margin:12px 0 10px}
@@ -79,7 +86,7 @@
   </main>
 
 <script src="data/trends.js"></script>
-<script src="assets/app.js?v=public-copy-20261024"></script>
+<script src="assets/app.js?v=ui-20261127"></script>
 <script>
   H.boot();
   const SLANG = H.TRENDS.filter(t=>t.coverCat==='cat-slang' || t.cat==='신조어')

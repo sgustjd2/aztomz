@@ -1,6 +1,7 @@
 # 오늘의 한끗 (홈)
 - 목적: 오늘 기준으로 볼 만한 신뢰분석과 트렌드를 한 화면에서 미리 보여주고 전체 목록으로 연결한다.
 - 진입/화면: `frontend/index.html`. 공통 메뉴의 "오늘의 한끗"이며, 짧은 리드/오늘의 분석/지금 주목할 한끗/최근 분석/분석 요청 영역으로 구성된다. `?tag=`와 `?date=`가 있으면 홈 대신 필터 결과 화면을 보여준다.
+- 모바일 하단 탭(≤1024px): `홈` 탭 → `frontend/index.html`.
 - 표시 데이터: `H.TRENDS` 전체. 신뢰분석은 `type`, `ad`, `trust`, `sat`, `label`, `analyzedAt`, `buzz`를 쓰고, 트렌드 카드는 `cat`, `stage`, `title`, `images`, `analyzedAt`와 `H.summary()`가 고른 짧은 설명(`excerpt`/`def`/`stageMsg`/`verdict`/`pull`)을 표시한다.
 - 현재 상태: 구현됨. 홈은 광고 분석 상위 6개, 트렌드 상위 8개를 미리 보여준다. 트렌드 카드는 가용 폭에 따라 열 수를 조절한다. CSS subgrid 지원 환경에서 홈·전체 목록의 트렌드 카드는 같은 행의 이미지·분류·제목·설명·선택 정보·날짜 영역을 공유해 내용 길이나 선택 항목 유무에 관계없이 다음 영역의 시작선을 맞춘다. 또한 공통 메뉴는 데스크톱 사이드바 하단 접기 버튼과 좁은 화면 상단 오른쪽 메뉴 버튼·슬라이드 메뉴를 제공한다. 공통 카드의 대표 이미지가 없거나 로드에 실패하면 카테고리별 기본 일러스트 SVG를 표시한다. 더보기는 `list.html?type=ad`와 `list.html?type=trend`로 이동한다.
 - 관련 코드: `frontend/index.html`의 필터 모드/오늘의 한끗/미리보기 렌더링, `frontend/assets/app.js`의 `H.renderMast()`, `H.NAV_CATEGORIES`, `H.syncMastCurrent()`, `H.adRowHTML()`, `H.trendCardHTML()`, `H.coverHTML()`, `H.coverDefault()`, `H.summary()`, `H.freshChip()`, `backend/data/trends.json`.

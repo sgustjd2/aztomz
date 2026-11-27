@@ -135,7 +135,7 @@ if (!acquireGitLock(repoRoot, 'recheck-ad.mjs')) {
 }
 
 try {
-  sh(['add', 'backend/data/trends.json', 'frontend/data/trends.js']);
+  sh(['add', 'backend/data/trends.json', 'frontend/data/trends.js', 'frontend/sitemap.xml']);
   sh(['commit', '-m', `auto: 광고/진짜 일일 재확인 — ${target.title} (${TODAY})`]);
   try { sh(['pull', '--rebase', '--autostash', 'origin', 'main']); }
   catch (e) {

@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
 <meta name="color-scheme" content="light dark" />
 <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
 <meta name="theme-color" content="#151a23" media="(prefers-color-scheme: dark)" />
@@ -13,13 +13,18 @@
 <meta property="og:locale" content="ko_KR" />
 <meta property="og:title" content="한끗 — 트렌드 분석" />
 <meta property="og:description" content="광고 의심도·실제 후기 신뢰도·만족도를 나눠 보는 한끗 트렌드 상세 분석." />
-<meta name="twitter:card" content="summary" />
+<meta property="og:image" content="https://az2mz.vercel.app/og.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="한끗 — 요즘 유행, 광고야 진짜야?" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://az2mz.vercel.app/og.png" />
 <meta name="twitter:title" content="한끗 — 트렌드 분석" />
 <meta name="twitter:description" content="광고 의심도·실제 후기 신뢰도·만족도를 나눠 보는 한끗 트렌드 상세 분석." />
 <link rel="icon" href="favicon.ico" sizes="16x16 32x32 48x48" />
 <link rel="apple-touch-icon" href="apple-touch-icon.png" />
 <link rel="manifest" href="site.webmanifest" />
-<link rel="stylesheet" href="assets/styles.css?v=public-copy-20261024" />
+<link rel="stylesheet" href="assets/styles.css?v=ui-20261127" />
 <style>
   .crumb{font-size:13.5px;color:var(--ink-2);margin:18px 0 14px}
   .crumb a{color:var(--accent);text-decoration:none;font-weight:700}
@@ -86,7 +91,7 @@
   .shops .sh-note{flex-basis:100%;font-size:14px;color:var(--body);line-height:1.55;word-break:keep-all;margin-top:1px}
   .shops-note{font-size:12.5px;color:var(--ink-2);margin:9px 0 2px}
 </style>
-<link rel="stylesheet" href="assets/detail.css?v=public-copy-20261024" />
+<link rel="stylesheet" href="assets/detail.css?v=ui-20261127" />
 </head>
 <body class="detail-page">
 <a class="skip-link" href="#main">본문으로 건너뛰기</a>
@@ -94,7 +99,7 @@
   <div class="wrap reading"><main id="main" tabindex="-1"></main></div>
 
 <script src="data/trends.js"></script>
-<script src="assets/app.js?v=public-copy-20261024"></script>
+<script src="assets/app.js?v=ui-20261127"></script>
 <script>
   H.boot();
   const id = H.param('id');
@@ -106,8 +111,43 @@
       <div class="e-mark">!</div><h3>분석을 찾을 수 없어요</h3>
       <p>주소가 바뀌었거나 아직 올라오지 않은 항목이에요.</p>
       <a class="btn primary" href="index.html">홈으로</a></div>`;
+    H.seo({ title:'분석을 찾을 수 없어요 — 한끗', noindex:true });
   } else {
     render();
+    applySeo();
+  }
+
+  // 항목별 제목·설명·canonical·OG·구조화 데이터 (검색 결과에 항목마다 다른 제목이 보이게)
+  function applySeo(){
+    const path = H.detailHref(t.id);
+    const title = t.type==='신뢰분석'
+      ? `${t.title} 광고일까 진짜일까? 후기 분석 | 한끗`
+      : t.cat==='신조어'
+        ? `${t.title} 뜻${t.example?'·예문':''} — MZ 사전 | 한끗`
+        : `${t.title} — 요즘 ${t.cat} 트렌드 | 한끗`;
+    const lead = t.type==='신뢰분석'
+      ? `광고 의심도 ${t.ad}·후기 신뢰도 ${t.trust}(추정치). `
+      : (t.stage ? `유행 단계: ${t.stage}. ` : '');
+    const description = lead + (t.def || H.summary(t, 150));
+    const cover = H.coverImg(t);
+    const image = cover && (/^assets\//.test(cover) || cover.includes('i.ytimg.com')) ? cover : H.OG_IMAGE;
+    const org = { '@type':'Organization', name:'한끗', url:H.SITE_URL + '/' };
+    H.seo({ title, description, path, image, type:'article', jsonLd:{
+      '@context':'https://schema.org',
+      '@graph':[
+        { '@type':'Article', headline:t.title, description:H.trunc(description, 155), image:H.absUrl(image),
+          inLanguage:'ko-KR', articleSection:t.cat, keywords:(t.tags||[]).join(', '),
+          datePublished:t.collectedAt||t.analyzedAt, dateModified:t.analyzedAt||t.collectedAt,
+          author:org, publisher:org, mainEntityOfPage:H.absUrl(path) },
+        { '@type':'BreadcrumbList', itemListElement:[
+          { '@type':'ListItem', position:1, name:'홈', item:H.SITE_URL + '/' },
+          t.type==='신뢰분석'
+            ? { '@type':'ListItem', position:2, name:'광고일까 진짜일까', item:H.absUrl('list.html?type=ad') }
+            : { '@type':'ListItem', position:2, name:t.cat, item:H.absUrl(`list.html?type=trend&cat=${encodeURIComponent(t.cat)}`) },
+          { '@type':'ListItem', position:3, name:t.title, item:H.absUrl(path) }
+        ]}
+      ]
+    }});
   }
 
   // Shared outline icons for detail headings and actions.

@@ -116,3 +116,13 @@
 ### 낮은 데스크톱 화면의 메뉴 간격 (2026-10-24)
 
 1025px 이상 사이드바는 메뉴 간격을 압축하고, 화면 높이 740px 이하에서는 세로 간격과 링크 높이를 더 줄인다. 더 짧은 화면에서도 메뉴 패널의 `overflow-y:auto`를 유지해 하단 테마와 메뉴에 접근할 수 있다.
+
+### 2026-11 UI 리프레시 · SEO (2026-11-27)
+
+- **모바일 하단 탭 바(≤1024px)**: 홈·광고 분석·트렌드·MZ 사전 4개를 화면 하단에 고정한다(`H.renderMast()`가 `.tabbar`를 `[data-mast]` 뒤에 삽입). 아이콘+라벨을 함께 쓰고 현재 메뉴는 `aria-current`와 아이콘 뒤 알약 배경으로 표시한다. 상단 햄버거 드로어(카테고리·테마)는 그대로 두며, 드로어가 열리면 탭 바도 `inert` 처리된다. `env(safe-area-inset-bottom)`을 위해 viewport에 `viewport-fit=cover`를 둔다.
+- **글래스 상단 바·하단 바**: 반투명 배경 + `backdrop-filter`. 상단 바는 필터를 `.mast::before`에 둔다(`.mast` 자체에 걸면 고정 위치 드로어가 64px 안에 갇힌다). 필터가 걸린 요소나 그 조상에 `view-transition-name`을 주지 않는다(백드롭 루트가 되어 블러 뒤 배경이 사라진다).
+- **모바일 홈 '지금 주목할 한끗'(≤640px)**: 세로 1열 대신 가로 스와이프 카드(scroll-snap, 카드 폭 80%로 다음 카드가 보임). 목록 페이지는 기존 1열 유지.
+- **인터랙션**: 카드 썸네일 모서리 10~16px, 마우스 환경에서만 이미지 1.045배 확대, 터치 눌림 0.985배. 카테고리 칩은 알약 모양 + 카테고리 아이콘(`H.catIcon`). 더보기 버튼은 알약 + 화살표 아이콘. 상세 바로가기는 스크롤해도 따라오는 글래스 바(가로 스크롤).
+- **모션**: 멀티페이지 이동은 `@view-transition`(지원 브라우저만), 첫 화면 아래 카드는 스크롤 진입 시 살짝 떠오름(`animation-timeline: view()`). 둘 다 `prefers-reduced-motion`에서 끈다. 첫 화면 콘텐츠에는 진입 애니메이션을 쓰지 않는다는 원칙은 유지.
+- **리드 제목 강조 구절**(`.lead h1 .hl`)은 코랄→블루 그라데이션 텍스트. 홈 리드 뒤에는 정지된 은은한 오로라 배경.
+- **SEO**: 모든 페이지에 canonical·`og:url`·`og:image`(`frontend/og.png`, 1200×630)·`summary_large_image`. 상세·목록은 `H.seo()`로 항목별 title·description·canonical·JSON-LD(Article+BreadcrumbList)를 설정하고, 홈은 WebSite·Organization JSON-LD를 둔다. `frontend/robots.txt` + `frontend/sitemap.xml`(refresh.mjs가 `build-sitemap.mjs`로 매번 재생성, 자동 커밋 대상에 포함).

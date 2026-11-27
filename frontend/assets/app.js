@@ -125,6 +125,37 @@
     clearTimeout(H._tt); H._tt=setTimeout(()=>el.classList.remove('show'),1900);
   };
 
+  /* ---------- SEO: 페이지별 title·description·canonical·OG·JSON-LD (CSR 페이지용) ---------- */
+  H.SITE_URL = 'https://az2mz.vercel.app';
+  H.OG_IMAGE = H.SITE_URL + '/og.png';
+  H.absUrl = (path)=> /^https?:\/\//.test(path||'') ? path : `${H.SITE_URL}/${String(path||'').replace(/^\/+/, '')}`;
+  H.seo = (o)=>{
+    const head = document.head;
+    const meta = (attr, key, value)=>{
+      if(value==null) return;
+      let el = head.querySelector(`meta[${attr}="${key}"]`);
+      if(!el){ el = document.createElement('meta'); el.setAttribute(attr, key); head.appendChild(el); }
+      el.setAttribute('content', value);
+    };
+    const url = o.path!=null ? H.absUrl(o.path) : null;
+    const image = o.image ? H.absUrl(o.image) : null;
+    if(o.title){ document.title = o.title; meta('property','og:title',o.title); meta('name','twitter:title',o.title); }
+    if(o.description){ const d = H.trunc(o.description, 155); meta('name','description',d); meta('property','og:description',d); meta('name','twitter:description',d); }
+    if(url){
+      let link = head.querySelector('link[rel="canonical"]');
+      if(!link){ link = document.createElement('link'); link.rel = 'canonical'; head.appendChild(link); }
+      link.href = url; meta('property','og:url',url);
+    }
+    if(image){ meta('property','og:image',image); meta('name','twitter:image',image); }
+    if(o.type) meta('property','og:type',o.type);
+    if(o.noindex) meta('name','robots','noindex');
+    if(o.jsonLd){
+      let s = head.querySelector('script[data-seo-ld]');
+      if(!s){ s = document.createElement('script'); s.type = 'application/ld+json'; s.setAttribute('data-seo-ld',''); head.appendChild(s); }
+      s.textContent = JSON.stringify(o.jsonLd).replace(/</g, '\\u003c');
+    }
+  };
+
   /* ---------- 신조어 신선도: 한물간 단어는 사전 '최신'에서 빠지고 '지난 유행어'로 분류 ---------- */
   // 한물 조건: stage에 끝물/한물/지남 표시 OR analyzedAt이 14일+ 미갱신(재확인 안 된 옛 단어).
   H.SLANG_STALE_DAYS = 14;
@@ -168,6 +199,7 @@
 
   /* ---------- masthead, injected into [data-mast] ---------- */
   H.NAV_CATEGORIES = [['맛집','utensils'],['디저트','cake-slice'],['카페·핫플','coffee'],['신조어','message-square'],['노래·챌린지','music'],['패션','shirt'],['AI 프롬프트','square-terminal']];
+  H.catIcon = (cat)=>{ const hit=H.NAV_CATEGORIES.find(([c])=>c===cat); return hit?`<span class="nav-icon icon-${hit[1]}" aria-hidden="true"></span>`:''; };
   H.normalizeCategory = (cat)=>({'음식':'맛집','핫플':'카페·핫플','밈':'신조어','유행어':'신조어'}[cat]||cat||'전체');
   // Refresh active links without rebuilding the menu or losing drawer/focus state.
   H.syncMastCurrent = ()=>{
@@ -176,7 +208,7 @@
     const currentHref = current.pathname.split('/').pop() || 'index.html';
     const currentListType = current.searchParams.get('type') || 'trend';
     const currentCat = H.normalizeCategory(current.searchParams.get('cat'));
-    host.querySelectorAll('#mastNav a').forEach(a=>{
+    document.querySelectorAll('#mastNav a, .tabbar a').forEach(a=>{
       a.classList.remove('is-active'); a.removeAttribute('aria-current');
       const target = new URL(a.href, location.href);
       const samePage = target.pathname.split('/').pop()===currentHref;
@@ -204,6 +236,11 @@
       ['dictionary.html','MZ 사전','book-open']
     ];
     const categories = H.NAV_CATEGORIES;
+    // 모바일(≤1024px) 하단 탭 바 — 주 메뉴 4개를 엄지 닿는 곳에. 드로어가 열리면 배경과 함께 inert 처리된다.
+    const tabs = [['index.html','홈','house'],['list.html?type=ad','광고 분석','scan-search'],['list.html?type=trend','트렌드','chart-no-axes-combined'],['dictionary.html','MZ 사전','book-open']];
+    let tabbar=document.querySelector('.tabbar');
+    if(!tabbar){ tabbar=document.createElement('nav'); tabbar.className='tabbar'; tabbar.setAttribute('aria-label','주요 메뉴 바로가기'); host.after(tabbar); }
+    tabbar.innerHTML=tabs.map(([url,label,icon])=>`<a href="${url}"><span class="nav-icon icon-${icon}" aria-hidden="true"></span><span>${label}</span></a>`).join('');
     host.innerHTML=`<div class="wrap">
       <div class="mast-brand"><a class="wordmark" href="index.html" aria-label="한끗 홈"><img class="wordmark-mascot" src="assets/mascot.png" alt="" width="34" height="34">한<b>끗</b></a></div>
       <button class="nav-toggle" type="button" aria-label="메뉴 접기" aria-expanded="true" aria-controls="mastPanel"><span class="nav-icon icon-panel-left-close" aria-hidden="true"></span></button>

@@ -21,6 +21,7 @@
 | `frontend/dictionary.html` | MZ 사전 — 신조어 카드(뜻·예문·예쁜 우리말·출처) 검색 + 최신 신조어/지난 유행어 분리 |
 | 기존 `/login.html`·`/signup.html`·`/me.html` | 파일 삭제. Vercel에서 홈(`/`)으로 영구 리다이렉트 |
 | `frontend/pulse.html` | 트렌드 펄스 — 이번 주 트렌드 / 트렌드 레이더 — 아이디어 펼침·공개 검색 제공, 개인 저장 기능 없음 |
+| `frontend/robots.txt`·`sitemap.xml`·`og.png` | 검색엔진 색인·공유 미리보기. `sitemap.xml`은 `build-sitemap.mjs`가 만드는 **생성물**(직접 편집 금지), `og.png`는 1200×630 공유 이미지 |
 | `frontend/assets/styles.css`·`app.js`·`pulse.js` | 로컬 Pretendard 기반 에디토리얼 디자인 시스템 / 화면 설정과 공통 헬퍼(`H.*`) / 펄스 |
 | `frontend/data/trends.js`·`pulse.js` | 브라우저가 로드하는 **생성물** — **직접 편집 금지** |
 | `backend/` | 비공개(배포 안 됨) — 데이터 원본 + 빌드 스크립트 |
@@ -33,6 +34,7 @@
 | `backend/scripts/lib/websearch.mjs` | **ddgs 래퍼**(공용 `extract`) — 차단(HTTP 430/432/500 등)되면 ddgs가 `DDGSException`을 stdout에 찍고 0으로 끝나는데, 이를 빈 본문으로 돌려줘 '무관'이 아니라 '차단(못 읽음)'으로 처리. auto-build·recheck-ad·check-source가 이 함수를 같이 쓴다 |
 | `backend/scripts/lib/grounding.mjs` | **근거 대조 게이트**(결정적·LLM 없음) — 항목 서술(excerpt·pull·verdict·satTxt·article·shops·reasons)의 수치·매체명·확산 표현이 검증 통과 출처 본문에 있는지 문자열 대조. 유래·인물 바꿔치기·의미 오류는 못 잡음. 셀프테스트: `node backend/scripts/lib/grounding.mjs` |
 | `backend/scripts/youtube-summarize.mjs` | AI Engineer 채널 새 영상 → **Gemini 한국어 상세 요약** (URL 직수신 — 자막 스크래핑·yt-dlp 불필요) → `youtube-summaries/<날짜>-<id>.md` 저장. RSS로 신규 감지, 파일 존재로 중복 스킵. `--limit`·`--lowres`·`--channel` 등 옵션 지원 |
+| `backend/scripts/build-sitemap.mjs` | `trends.json` → `frontend/sitemap.xml` 생성. `refresh.mjs`가 trends.js 생성 직후 호출하며(실패해도 경고만), 단독 실행도 가능 |
 | `backend/scripts/refresh.mjs` 등 | 정적 데이터 생성·출처검증·이미지 스크립트 |
 | `tools/hermes-admin/` | 🔧 **Hermes 로컬 관리 콘솔** — 크론·설정·실행기록 관리(비배포, 127.0.0.1 전용) |
 | `docs/` | 기획·아키텍처·메뉴별 문서 |
@@ -52,7 +54,7 @@ python -m http.server 8000 -d frontend
 ### 데이터 갱신 (선택사항)
 ```bash
 node backend/scripts/validate-trends.mjs  # backend/data/trends.json 스키마 점검(권장)
-node backend/scripts/refresh.mjs   # backend/data/trends.json → frontend/data/trends.js 재생성 (레포 루트에서)
+node backend/scripts/refresh.mjs   # backend/data/trends.json → frontend/data/trends.js 재생성 + sitemap.xml 갱신 (레포 루트에서)
 ```
 
 > trends.json을 직접 편집한 후, 이 스크립트를 실행하면 trends.js가 자동 생성됩니다.  
@@ -82,7 +84,7 @@ backend/scripts/auto-build.mjs (자동검증 + 썸네일 주입)
     ↓
 backend/scripts/validate-trends.mjs (스키마 점검; auto-build 내부 또는 수동)
     ↓
-backend/scripts/refresh.mjs (generatedAt 갱신 + 생성)
+backend/scripts/refresh.mjs (generatedAt 갱신 + 생성 + sitemap.xml 갱신)
     ↓
 frontend/data/trends.js (브라우저가 로드 → H.TRENDS)
     ↓
@@ -100,7 +102,7 @@ Vercel 자동 배포 (git push 시)
 - 자동 게시 항목의 썸네일은 auto-build.mjs가 출처 og:image로 자동 주입을 시도하며, 공통 카드에서 대표 이미지가 없거나 로드에 실패하면 `frontend/assets/defaults/`의 카테고리별 기본 일러스트 SVG로 대체하고 기본 이미지임을 표시한다
 - 로그인·계정·개인 저장·방문자 후기·보관함·개인 아이디어 저장 구현을 제거했다. localStorage는 테마와 메뉴 접기 설정에만 사용하며, 과거 저장 데이터의 삭제 명령은 실행하지 않는다
 - `H.*`는 정적 데이터 조회·화면 렌더링·공유·화면 설정을 위한 공통 헬퍼이며, 인증/개인 저장소 API는 제공하지 않는다
-- 디자인 톤은 `frontend/assets/styles.css`와 [DESIGN.md](DESIGN.md)의 에디토리얼 원칙을 따른다. 1025px 이상은 하단 접기 버튼이 있는 사이드바, 1024px 이하는 상단 오른쪽 메뉴 버튼과 슬라이드 메뉴를 사용한다
+- 디자인 톤은 `frontend/assets/styles.css`와 [DESIGN.md](DESIGN.md)의 에디토리얼 원칙을 따른다. 1025px 이상은 하단 접기 버튼이 있는 사이드바, 1024px 이하는 상단 오른쪽 메뉴 버튼·슬라이드 메뉴와 하단 탭 바(홈·광고 분석·트렌드·MZ 사전)를 사용한다
 
 ---
 
@@ -108,6 +110,7 @@ Vercel 자동 배포 (git push 시)
 
 GitHub `GO9ME/aztomz`(public) → Vercel 정적 배포. `vercel.json`의 `outputDirectory: "frontend"`로 **frontend/만 서빙**.  
 `backend/`·`youtube-summaries/` 등 생성물은 git 추적되지만 배포되지 않습니다.  
+검색 색인용 `frontend/sitemap.xml`·`robots.txt`는 배포됩니다(`sitemap.xml`은 auto-build·recheck-ad·restage·daily-refresh 커밋 목록에 포함).  
 **자동:** 각 push마다 Vercel이 재배포 (약 1~2분).
 
 ```bash

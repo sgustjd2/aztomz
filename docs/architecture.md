@@ -14,6 +14,7 @@ frontend/dictionary.html MZ 사전 — 신조어 검색/열람
 frontend/pulse.html      트렌드 펄스 — 창업 트렌드 레이더
 frontend/assets/styles.css  로컬 Pretendard 기반 에디토리얼 디자인 시스템
 frontend/assets/app.js      H.* 공개 데이터 조회·공유·화면 설정 헬퍼
+frontend/robots.txt · sitemap.xml · og.png  검색엔진 색인·공유 미리보기 (sitemap.xml은 build-sitemap.mjs 생성물)
 backend/data/trends.json ★ 트렌드 canonical 원본
 frontend/data/trends.js  ← backend/scripts/refresh.mjs 생성물(직접 편집 금지)
 ```
@@ -24,6 +25,8 @@ frontend/data/trends.js  ← backend/scripts/refresh.mjs 생성물(직접 편집
 - localStorage는 테마·메뉴 접기 설정에만 사용한다. 기존 개인 데이터에 대한 삭제 명령은 실행하지 않는다.
 - `H.*`는 공개 정적 데이터·화면·공유 헬퍼다. 인증·개인 저장소 API와 기능 플래그는 제거했다. `login.html`·`signup.html`·`me.html` 파일은 삭제했으며 Vercel은 기존 3개 주소를 홈으로 영구 리다이렉트한다.
 - UI 톤은 `frontend/assets/styles.css`와 `DESIGN.md`의 에디토리얼 원칙을 따른다.
+- 모바일(≤1024px) 하단 탭 바(홈·광고 분석·트렌드·MZ 사전)는 `H.renderMast()`가 `.tabbar`를 삽입하고, `H.syncMastCurrent()`가 활성 상태를 맞춘다.
+- SEO: 상세(`trend.html`)·목록(`list.html`)은 `H.seo()`로 항목별 title·description·canonical·og:url·JSON-LD(Article+BreadcrumbList)를 설정한다. 홈은 WebSite·Organization JSON-LD를 둔다. 페이지 og:image는 `frontend/og.png`다.
 - 계정·인증 백엔드는 서비스 범위에 포함하지 않는다.
 
 ## 화면 설정과 데이터 계약
