@@ -26,7 +26,7 @@
 <link rel="icon" href="favicon.ico" sizes="16x16 32x32 48x48" />
 <link rel="apple-touch-icon" href="apple-touch-icon.png" />
 <link rel="manifest" href="site.webmanifest" />
-<link rel="stylesheet" href="assets/styles.css?v=feed-20261127" />
+<link rel="stylesheet" href="assets/styles.css?v=listfilter-20261127" />
 <style>
   .list-lead{padding:24px 0 20px;border-bottom:1px solid var(--line)}
   .list-lead h1{font-size:34px;font-weight:800;line-height:1.14;letter-spacing:0;margin:12px 0 10px;text-wrap:balance}
@@ -49,6 +49,7 @@
 
     <section class="surface list-surface">
     <div class="cat-filter" id="lCatFilter" role="group" aria-label="카테고리 필터" hidden></div>
+    <div id="lFilter"></div>
     <div class="feed" id="lList"></div>
     <div class="strip-empty" id="lEmpty" hidden>해당 목록이 아직 없어요.</div>
     </section>
@@ -64,7 +65,7 @@
 <script>
   H.boot();
 
-  // ?type=ad | trend (기본 trend), ?cat=, ?page=
+  // ?type=ad | trend (기본 trend), ?cat=, ?page=  — 광고 분석은 ?label= ?ad= ?trust= ?region= ?sort= 도 받는다
   const type = (H.param('type')==='ad') ? 'ad' : 'trend';
   const PAGE_SIZE = 20;  // 피드 행은 낮아서 한 페이지에 20건
   const normalizeCat = H.normalizeCategory;
@@ -94,12 +95,86 @@
     + (H.generatedAt ? ` · 기준일 ${H.fmtISO(H.generatedAt)}` : '');
 
   const cats = ['전체', ...H.NAV_CATEGORIES.map(([cat])=>cat).filter(cat=>ALL.some(t=>t.cat===cat))];
-  if(type!=='trend' || !cats.includes(activeCat))activeCat='전체';
-  const filtered = ()=> activeCat==='전체' ? ALL : ALL.filter(t=>t.cat===activeCat);
+  if(!cats.includes(activeCat))activeCat='전체';
 
-  // 카테고리 필터 (트렌드 전용 — 홈 광고 섹션과 동일하게 광고 목록엔 미노출)
+  // ---- 광고 분석 전용 필터: 판단 라벨·점수 구간·지역 태그·정렬 ----
+  const band = (v, lo, hi)=>{ const n = Number(v)||0; return n < lo ? 'low' : n < hi ? 'mid' : 'high'; };
+  // 지역은 tags 앞부분이 일치하면 묶는다(예: 을지로 ← 을지로3가·을지로맛집, 망원 ← 망원동·망원디저트)
+  const REGIONS = ['성수','을지로','망원','압구정','강남','홍대','용산','서촌','익선동','북촌','안국','명동','문래','동대문','해방촌','논현동','서대문','신대방','노원','부산','대전','천안','남양주','하남','의정부','부평'];
+  const inRegion = (t, r)=> (t.tags||[]).some(g=> String(g).startsWith(r));
+  const FILTERS = [
+    { key:'label', name:'판단', opts:[['good','믿고 가볼 만함'],['mid','판단 보류·취향 갈림'],['warn','주의 필요']], test:(t,v)=> (t.labelCls||'mid')===v },
+    { key:'ad', name:'광고 의심', opts:[['low','낮음 (0~29)'],['mid','중간 (30~49)'],['high','높음 (50 이상)']], test:(t,v)=> band(t.ad,30,50)===v },
+    { key:'trust', name:'후기 신뢰', opts:[['high','높음 (60 이상)'],['mid','중간 (40~59)'],['low','낮음 (0~39)']], test:(t,v)=> band(t.trust,40,60)===v },
+    { key:'region', name:'지역', opts: REGIONS.map(r=>[r, ALL.filter(t=>inRegion(t,r)).length]).filter(([,n])=>n>0)
+        .sort((a,b)=> b[1]-a[1]).map(([r,n])=>[r, `${r} (${n})`]), test:(t,v)=> inRegion(t,v) },
+  ];
+  const SORTS = [['recent','최신 분석순'],['ad','광고 의심 높은순'],['trust','후기 신뢰 높은순']];
+  const recent = (a,b)=> (b.analyzedAt||'').localeCompare(a.analyzedAt||'') || _key(b).localeCompare(_key(a));
+  const SORT_FN = {
+    recent,
+    ad: (a,b)=> (Number(b.ad)||0)-(Number(a.ad)||0) || recent(a,b),
+    trust: (a,b)=> (Number(b.trust)||0)-(Number(a.trust)||0) || recent(a,b),
+  };
+  const f = {};  // 선택된 필터 값 (빈 값 = 전체)
+  let sort = 'recent';
+  function readFilters(){
+    FILTERS.forEach(d=>{ const v = H.param(d.key)||''; f[d.key] = d.opts.some(([k])=>k===v) ? v : ''; });
+    const s = H.param('sort'); sort = SORT_FN[s] ? s : 'recent';
+  }
+  if(type==='ad') readFilters();
+  const activeCount = ()=> FILTERS.filter(d=>f[d.key]).length;
+
+  const filtered = ()=>{
+    let list = activeCat==='전체' ? ALL : ALL.filter(t=>t.cat===activeCat);
+    if(type!=='ad') return list;
+    FILTERS.forEach(d=>{ if(f[d.key]) list = list.filter(t=>d.test(t, f[d.key])); });
+    return list.slice().sort(SORT_FN[sort]);
+  };
+
+  function renderAdFilter(){
+    if(type!=='ad') return;
+    const host = H.q('#lFilter');
+    const sel = (key, name, opts, all)=> `<label class="lf-field"><span>${name}</span><select data-f="${key}">`
+      + (all ? `<option value="">전체</option>` : '')
+      + opts.map(([v,l])=>`<option value="${H.esc(v)}">${H.esc(l)}</option>`).join('') + `</select></label>`;
+    host.innerHTML = `<div class="lf" role="group" aria-label="광고 분석 필터">
+      <div class="lf-bar">
+        <button type="button" class="lf-toggle" aria-expanded="false" aria-controls="lfPanel">필터·정렬 <span class="lf-n" hidden></span></button>
+        <span class="lf-count" aria-live="polite"></span>
+        <button type="button" class="lf-reset" hidden>초기화</button>
+      </div>
+      <div class="lf-panel" id="lfPanel">
+        ${FILTERS.map(d=>sel(d.key, d.name, d.opts, true)).join('')}
+        ${sel('sort', '정렬', SORTS, false)}
+      </div>
+    </div>`;
+    H.qa('#lFilter select').forEach(s=> s.onchange=()=>{
+      if(s.dataset.f==='sort') sort = s.value; else f[s.dataset.f] = s.value;
+      page = 1; render(); syncURL();
+    });
+    const lf = H.q('#lFilter .lf'), tg = H.q('#lFilter .lf-toggle');
+    tg.onclick = ()=>{ const open = !lf.classList.contains('open'); lf.classList.toggle('open', open); tg.setAttribute('aria-expanded', String(open)); };
+    H.q('#lFilter .lf-reset').onclick = ()=>{
+      FILTERS.forEach(d=> f[d.key]=''); sort = 'recent'; activeCat = '전체'; page = 1;
+      renderFilter(); render(); syncURL();
+    };
+  }
+  // 선택 상태·건수·초기화 버튼을 현재 값에 맞춘다
+  function syncAdFilter(n){
+    if(type!=='ad') return;
+    H.qa('#lFilter select').forEach(s=>{
+      const v = s.dataset.f==='sort' ? sort : f[s.dataset.f];
+      s.value = v; s.classList.toggle('is-set', s.dataset.f==='sort' ? v!=='recent' : !!v);
+    });
+    const k = activeCount(), badge = H.q('#lFilter .lf-n');
+    badge.hidden = !k; badge.textContent = k;
+    H.q('#lFilter .lf-count').innerHTML = `<b>${n}</b>건${n!==ALL.length?` / 전체 ${ALL.length}건`:''}`;
+    H.q('#lFilter .lf-reset').hidden = !(k || sort!=='recent' || activeCat!=='전체');
+  }
+
+  // 카테고리 필터 (트렌드·광고 분석 공용)
   function renderFilter(){
-    if(type!=='trend') return;
     const host = H.q('#lCatFilter'); host.hidden = false;
     host.innerHTML = cats.map(c=>{
       const n = c==='전체' ? ALL.length : ALL.filter(t=>t.cat===c).length;
@@ -121,6 +196,8 @@
     const slice = list.slice(start, start + PAGE_SIZE);
 
     H.q('#lEmpty').hidden = list.length > 0;
+    if(type==='ad') H.q('#lEmpty').textContent = activeCount() ? '조건에 맞는 분석이 없어요. 필터를 하나씩 풀어 보세요.' : '해당 목록이 아직 없어요.';
+    syncAdFilter(list.length);
     const host = H.q('#lList');
     host.innerHTML = slice.map(H.feedRowHTML).join('');
     renderPager(pages);
@@ -162,6 +239,11 @@
     u.set('type', type);
     if(activeCat !== '전체') u.set('cat', activeCat);
     if(page > 1) u.set('page', String(page));
+    const canonical=`list.html?${u.toString()}`;  // 검색엔진에는 분류·페이지까지만 알린다
+    if(type==='ad'){
+      FILTERS.forEach(d=>{ if(f[d.key]) u.set(d.key, f[d.key]); });
+      if(sort!=='recent') u.set('sort', sort);
+    }
     const next=`list.html?${u.toString()}`;
     if(location.pathname.split('/').pop()+location.search!==next){
       history[replace?'replaceState':'pushState'](null, '', next);
@@ -173,16 +255,18 @@
       description: type==='ad'
         ? 'SNS에서 자주 보이는 맛집·디저트를 광고 의심도와 후기 신뢰도로 나눠 분석한 전체 목록. 점수는 공개 정보 기반 추정치입니다.'
         : `${activeCat!=='전체'?`요즘 유행하는 ${activeCat} `:'밈·신조어·음식·디저트·핫플 '}트렌드를 유행 단계와 출처와 함께 정리한 목록.`,
-      path: next
+      path: canonical
     });
   }
 
   window.addEventListener('popstate',()=>{
     activeCat=normalizeCat(H.param('cat'));
-    if(type!=='trend' || !cats.includes(activeCat))activeCat='전체';
+    if(!cats.includes(activeCat))activeCat='전체';
     page=Math.max(1,parseInt(H.param('page')||'1',10)||1);
+    if(type==='ad') readFilters();
     renderFilter(); render(); syncURL(true);
   });
+  renderAdFilter();
   renderFilter();
   render();
   syncURL(true);
