@@ -1226,86 +1226,157 @@ body.app-redesign.nav-collapsed{--nav-width:76px}
 }
 
 /* ============================================================
-   2026-11 UI refresh — 모바일 하단 탭·글래스 바·스와이프 카드·마이크로 인터랙션
-   기존 규칙을 지우지 않고 이 층에서만 덮는다(되돌리기 = 이 블록 삭제 + app.js 탭 바).
+   2026-11 앱형 피드 레이아웃 — 연회색 바탕 + 흰 섹션, 제목 중심 글 목록, 하단 탭
+   (블라인드·당근·토스류 한국형 커뮤니티 앱의 구조를 참고. 브랜드 요소는 복제하지 않음)
+   이 블록 앞의 카드·행(.chip-card/.idx-row/.analysis-card) 규칙은 더 이상 쓰이지 않는다.
    ============================================================ */
 
-/* 멀티페이지 이동을 부드럽게(지원 브라우저만, 모션 줄이기 설정 존중) */
-@media (prefers-reduced-motion:no-preference){
-  @view-transition{navigation:auto}
-}
-
-/* 제목 강조 구절 — 브랜드 두 색 그라데이션(한 구절만) */
-.app-redesign :is(.lead,.tp-lead) h1 .hl{background:linear-gradient(95deg,var(--accent-text),var(--pulse));
-  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
-@media (forced-colors:active){.app-redesign :is(.lead,.tp-lead) h1 .hl{-webkit-text-fill-color:currentColor;background:none}}
+/* ---------- 바탕과 섹션 표면 ---------- */
+:root:not([data-theme="dark"]) body.app-redesign{--bg:#f2f4f6;background:var(--bg)}
+:root[data-theme="dark"] body.app-redesign{--bg:#0f141b;background:var(--bg)}
+:root:root body.app-redesign.detail-page{--bg:var(--paper);background:var(--paper)}  /* 상세는 읽기 화면 — 단색 유지 */
+.app-redesign .surface{padding:4px 18px 10px;border:0;border-radius:18px;background:var(--card)}
+@media (prefers-reduced-motion:no-preference){@view-transition{navigation:auto}}
 h1,h2,.fx-title,.d-title{text-wrap:balance}
 
-/* 홈 리드 뒤 은은한 오로라 — 첫 화면에 움직임 없이 깊이감만 */
-.home-redesign .lead{position:relative;isolation:isolate}
-.home-redesign .lead::before{content:"";position:absolute;z-index:-1;top:-28px;right:0;width:min(560px,80%);height:calc(100% + 40px);pointer-events:none;
-  background:radial-gradient(closest-side at 72% 38%,color-mix(in srgb,var(--accent) 13%,transparent),transparent),
-             radial-gradient(closest-side at 34% 72%,color-mix(in srgb,var(--pulse) 11%,transparent),transparent)}
+/* ---------- 리드(페이지 머리말) — 장식 없이 작고 또렷하게 ---------- */
+.app-redesign :is(.lead,.tp-lead){padding:6px 6px 16px;border-bottom:0}
+.app-redesign :is(.lead,.tp-lead) h1,.app-redesign .list-lead h1,.app-redesign.home-redesign .lead h1{margin:6px 0 6px;font-size:clamp(22px,1.1vw + 17px,28px);font-weight:800;line-height:1.3;letter-spacing:-.035em}
+.app-redesign :is(.lead,.tp-lead) p,.app-redesign.home-redesign .lead p{font-size:14.5px;line-height:1.6;color:var(--muted)}
+.app-redesign .list-lead{padding:6px 6px 16px}
+.app-redesign :is(.lead,.tp-lead) .freshline{margin-top:8px;font-size:12.5px;color:var(--muted)}
+body:not(.detail-page).app-redesign .sec-head{margin:22px 6px 10px;padding-bottom:0;border-bottom:0}
 
-/* 카드 썸네일 — 더 둥근 모서리 + hover 확대(마우스 환경만) + 터치 눌림 */
-.home-redesign .chip-card .cover,.app-redesign .analysis-card .idx-thumb,.app-redesign .editorial-feed .chip-card .cover{border-radius:12px}
-.home-redesign .idx-row .idx-thumb,.app-redesign .idx-row .idx-thumb{border-radius:10px}
-.home-redesign .featured .cover{border-radius:16px}
-.app-redesign .detail-header>.cover{border-radius:14px}
+/* ---------- 홈: 오늘의 한끗 + 2단 그리드 ---------- */
+.home-redesign .home-intro{margin:0}
+.home-redesign .featured.surface{margin:0;padding:16px;border:0;border-radius:18px;background:var(--card)}
+.home-redesign .featured .cover{border-radius:12px}
+.home-redesign .featured .fx-title{font-size:clamp(20px,1vw + 16px,26px);line-height:1.32;letter-spacing:-.035em}
+.home-redesign .featured a.more,.home-redesign .sec-link{display:inline-flex;align-items:center;min-height:44px}
+.home-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:12px;margin-top:12px}
+.home-redesign .home-section.surface{margin:0;padding:4px 18px 10px;border:0;border-radius:18px;background:var(--card)}
+.home-redesign .home-section.surface .sec-head{align-items:baseline;gap:8px 10px;margin:0;padding:16px 0 8px;border-bottom:0}
+.home-redesign .home-section.surface .sec-head h2{font-size:18px;font-weight:800;letter-spacing:-.03em}
+.home-redesign .home-section.surface .sec-head .note{width:auto;margin-left:auto;font-size:12.5px;color:var(--muted)}
+.home-redesign .surface .date-group{margin:8px 0 14px;padding:0;border:0;background:transparent}
+@media (min-width:1240px){
+  .home-grid{grid-template-columns:minmax(0,1fr) 360px;grid-template-rows:auto 1fr;align-items:start;gap:16px}  /* 둘째 행이 남는 높이를 가져가 오른쪽 열 섹션이 붙어 있게 */
+  .home-grid>#trend{grid-column:1;grid-row:1 / span 2}
+  .home-grid>#rising{grid-column:2;grid-row:1}
+  .home-grid>#ad{grid-column:2;grid-row:2}
+  #ad .feed-row{grid-template-columns:minmax(0,1fr) 64px;gap:12px}
+  #ad .fr-thumb{width:64px;height:64px}
+  #ad .fr-desc{display:none}
+}
+
+/* ---------- 밑줄 탭(카테고리) ---------- */
+.app-redesign :is(#catFilter,#lCatFilter){display:flex;flex-wrap:nowrap;gap:2px;margin:0 -18px;padding:0 12px;overflow-x:auto;scrollbar-width:none;border-bottom:1px solid var(--line)}
+.app-redesign :is(#catFilter,#lCatFilter)::-webkit-scrollbar{display:none}
+.app-redesign :is(#catFilter,#lCatFilter) .cat-chip{flex:none;display:inline-flex;align-items:center;min-height:46px;margin-bottom:-1px;padding:10px;
+  border:0;border-bottom:2px solid transparent;border-radius:0;background:transparent;color:var(--muted);font-size:15px;font-weight:600;letter-spacing:-.01em;transition:color .15s,border-color .15s}
+.app-redesign :is(#catFilter,#lCatFilter) .cat-chip:hover{color:var(--ink);border-bottom-color:transparent}
+.app-redesign :is(#catFilter,#lCatFilter) .cat-chip.on{background:transparent;color:var(--ink);border-bottom-color:var(--ink);font-weight:800}
+.app-redesign :is(#catFilter,#lCatFilter) .cc-n{margin-left:4px;font:500 12px var(--sans);opacity:.7}
+:is(#catFilter,#lCatFilter,.detail-jumps).fade-r{-webkit-mask-image:linear-gradient(90deg,#000 calc(100% - 44px),transparent);mask-image:linear-gradient(90deg,#000 calc(100% - 44px),transparent)}
+:is(#catFilter,#lCatFilter,.detail-jumps).fade-l{-webkit-mask-image:linear-gradient(90deg,transparent,#000 44px);mask-image:linear-gradient(90deg,transparent,#000 44px)}
+:is(#catFilter,#lCatFilter,.detail-jumps).fade-l.fade-r{-webkit-mask-image:linear-gradient(90deg,transparent,#000 44px,#000 calc(100% - 44px),transparent);mask-image:linear-gradient(90deg,transparent,#000 44px,#000 calc(100% - 44px),transparent)}
+
+/* ---------- 글 목록(피드 행) ---------- */
+.feed{display:flex;flex-direction:column}
+.feed-row{display:grid;grid-template-columns:minmax(0,1fr) 84px;gap:14px;align-items:start;padding:16px 0;border-top:1px solid var(--line);
+  color:inherit;text-decoration:none;-webkit-tap-highlight-color:transparent}
+.feed-row:first-child{border-top:0}
+.fr-body{display:flex;min-width:0;flex-direction:column}
+.fr-meta{display:flex;align-items:center;gap:7px;min-width:0;font-size:12.5px;font-weight:600;color:var(--muted)}
+.fr-cat{flex:none;padding:2px 7px;border-radius:6px;background:color-mix(in srgb,var(--ink) 7%,transparent);color:var(--body)}
+.fr-stage{flex:none;color:var(--accent-text)}
+.fr-label{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.fr-label.good{color:var(--trust)} .fr-label.warn{color:var(--accent-text)}
+.fr-title{margin-top:7px;font-size:16.5px;font-weight:700;line-height:1.42;letter-spacing:-.03em;color:var(--ink);
+  display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden;word-break:keep-all;overflow-wrap:anywhere;text-wrap:pretty;transition:color .15s}
+.fr-desc{margin-top:4px;font-size:14px;line-height:1.55;letter-spacing:-.01em;color:var(--muted);
+  display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:1;overflow:hidden;word-break:keep-all;overflow-wrap:anywhere}
+.fr-foot{display:flex;flex-wrap:wrap;gap:2px 10px;margin-top:8px;font-size:12.5px;color:var(--muted);font-variant-numeric:tabular-nums}
+.fr-score b{font-weight:800}
+.fr-score.ad b{color:var(--ad)} .fr-score.trust b{color:var(--trust)}
+.fr-kr{color:var(--trust);font-weight:600}
+.fr-thumb{width:84px;height:84px;overflow:hidden;border-radius:12px;background:color-mix(in srgb,var(--ink) 6%,transparent)}
+.app-redesign .fr-thumb>.cover{display:block;width:100%;height:100%;min-height:0;aspect-ratio:auto;padding:0;border-radius:inherit}
+.app-redesign .fr-thumb .cover-credit{display:none}
 .app-redesign .cover .c-bg{transition:transform .45s cubic-bezier(.2,.7,.2,1)}
 @media (hover:hover){
-  .app-redesign :is(.chip-card,.analysis-card,.idx-row,.collection-row):hover .c-bg,
-  .home-redesign .featured>a:hover .c-bg{transform:scale(1.045)}
-  .app-redesign .idx-row:hover .it-title{color:var(--accent-text)}
+  .feed-row:hover .fr-title,.rank-row:hover .rk-title{color:var(--accent-text)}
+  .feed-row:hover .c-bg,.home-redesign .featured>a:hover .c-bg{transform:scale(1.045)}
 }
-.app-redesign :is(.chip-card,.analysis-card,.idx-row,.dword,.collection-row,.featured>a){-webkit-tap-highlight-color:transparent;transition:transform .14s ease,color .16s}
-.app-redesign :is(.chip-card,.analysis-card,.idx-row,.dword,.collection-row,.featured>a):active{transform:scale(.985)}
+.feed-row:active .fr-title,.rank-row:active .rk-title{color:var(--accent-text)}
+@media (min-width:641px){
+  .feed-row{grid-template-columns:minmax(0,1fr) 132px;gap:20px;padding:18px 0}
+  .fr-thumb{width:132px;height:94px}
+  .fr-title{font-size:17.5px}
+  .fr-desc{-webkit-line-clamp:2}
+}
+.app-redesign .surface .strip-empty{margin:0;padding:22px 0;color:var(--muted);font-size:14.5px}
 
-/* 카테고리 칩 — 아이콘 + 알약 모양, 44px에 가까운 터치 영역 */
-.app-redesign .cat-chip{display:inline-flex;align-items:center;gap:6px;min-height:38px;padding:7px 14px;border-radius:999px;font-weight:600;
-  transition:background .15s,border-color .15s,color .15s,transform .12s}
-.app-redesign #lCatFilter .cat-chip{padding:7px 14px;border-radius:999px}
-.app-redesign .cat-chip .nav-icon,.app-redesign .cat-chip .nav-icon::before{width:16px;height:16px}
-.app-redesign .cat-chip:active{transform:scale(.96)}
+/* ---------- 순번 목록(지금 뜨는 한끗) ---------- */
+.rank-list{display:block;padding-bottom:6px}
+.rank-row{display:grid;grid-template-columns:22px minmax(0,1fr) auto;gap:10px;align-items:center;min-height:54px;padding:7px 0;
+  color:inherit;text-decoration:none;break-inside:avoid;-webkit-tap-highlight-color:transparent}
+.rk-no{font-size:16px;font-weight:800;text-align:center;color:var(--muted);font-variant-numeric:tabular-nums}
+.rank-row:nth-child(-n+3) .rk-no{color:var(--accent-text)}
+.rk-body{min-width:0}
+.rk-title{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:15px;font-weight:650;letter-spacing:-.02em;color:var(--ink);transition:color .15s}
+.rk-sub{display:block;margin-top:1px;font-size:12.5px;color:var(--muted);font-variant-numeric:tabular-nums}
+.rk-stage{flex:none;padding:3px 8px;border-radius:999px;background:var(--accent-soft);color:var(--accent-text);font-size:12px;font-weight:700;white-space:nowrap}
+.rk-stage.peak{background:var(--pulse-soft);color:var(--pulse)}
+@media (max-width:640px){.rank-row:nth-child(n+6){display:none}}          /* 모바일은 5개만 */
+@media (min-width:641px) and (max-width:1239px){.rank-list{columns:2;column-gap:32px}}
 
-/* 더보기·상세 액션 버튼 — 알약 + 화살표 아이콘 */
-.app-redesign .more-btn{min-height:46px;padding:11px 20px 11px 22px;border:1px solid var(--line);border-radius:999px;background:var(--card);color:var(--ink);
-  font-size:15px;font-weight:700;gap:8px;transition:border-color .15s,background .15s,transform .12s}
+/* ---------- 더보기·버튼 ---------- */
+.app-redesign .more-row{margin:6px 0 8px}
+.app-redesign .more-btn{width:100%;min-height:48px;padding:12px 18px;gap:8px;border:0;border-radius:12px;background:var(--bg);color:var(--ink);font-size:14.5px;font-weight:700;box-shadow:none;transition:background .15s,transform .12s}
 .app-redesign .more-btn::after{content:"";width:16px;height:16px;flex:none;background:currentColor;
   -webkit-mask:url("icons/lucide/arrow-right.svg") center/contain no-repeat;mask:url("icons/lucide/arrow-right.svg") center/contain no-repeat;transition:transform .15s}
-.app-redesign .more-btn:hover{border-color:var(--ink);background:var(--paper-soft)}
+.app-redesign .more-btn:hover{background:color-mix(in srgb,var(--ink) 8%,var(--bg));box-shadow:none}
 .app-redesign .more-btn:hover::after{transform:translateX(3px)}
-.app-redesign .more-btn:active,.app-redesign .detail-action:active{transform:scale(.97)}
+.app-redesign .more-btn:active,.app-redesign .detail-action:active{transform:scale(.98)}
 .app-redesign .detail-title-group .detail-action{border-radius:999px;padding:7px 16px}
 .home-redesign .sec-link span{display:inline-block;transition:transform .15s}
 .home-redesign .sec-link:hover span{transform:translateX(3px)}
 
-/* 상세 바로가기 — 스크롤해도 따라오는 글래스 바(가로 스크롤) */
+/* ---------- 목록 페이지: 읽기 좋은 한 단 ---------- */
+.app-redesign>.wrap:has(.list-surface){max-width:920px}
+.app-redesign .list-surface{padding-top:0}
+.app-redesign .list-surface:has(#lCatFilter[hidden]){padding-top:4px}
+.app-redesign #lPager{margin-top:20px}
+
+/* ---------- 사전·펄스 카드: 회색 바탕 위 평평한 흰 카드 + 제목/본문 위계 ---------- */
+:root{--card-title:clamp(17px,.4vw + 14px,20px);--card-desc:clamp(14px,.1vw + 13px,15px)}
+.app-redesign .dlist>.dword{margin-bottom:12px;padding:16px 18px;border:0;border-radius:16px;background:var(--card);transition:transform .14s}
+.app-redesign :is(#tpDaily,#tpList)>.tp-card{margin-bottom:12px;border:0;border-radius:16px;background:var(--card)}
+.app-redesign :is(#tpDaily,#tpList)>.tp-card .tp-body{padding:16px}
+.app-redesign :is(#tpDaily,#tpList)>.tp-card:hover,.app-redesign :is(#tpDaily,#tpList)>.tp-card.open{background:var(--card)}
+.app-redesign .dlist>.dword:active{transform:scale(.985)}
+:root :is(.app-redesign .dword .dw-term,.app-redesign .tp-card .tp-kw){font-size:var(--card-title);font-weight:750;line-height:1.38;letter-spacing:-.03em;text-wrap:balance;word-break:keep-all;overflow-wrap:anywhere}
+:root :is(.app-redesign .dword .dw-def,.app-redesign .tp-card .tp-why){font-size:var(--card-desc);line-height:1.65}
+
+/* ---------- 상세: 따라오는 바로가기 바 ---------- */
 body.detail-page .detail-jumps{position:sticky;top:0;z-index:20;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;
   background:color-mix(in srgb,var(--paper) 88%,transparent);-webkit-backdrop-filter:saturate(1.5) blur(12px);backdrop-filter:saturate(1.5) blur(12px)}
 body.detail-page .detail-jumps::-webkit-scrollbar{display:none}
 body.detail-page .detail-jumps a{flex:none}
-html:has(body.detail-page){scroll-padding-top:0}
+body.detail-page .detail-jumps a.on{color:var(--accent-text);box-shadow:inset 0 -2px 0 currentColor}
 body.detail-page :is(#story,#judgment,#places,#recommendations,#sources,#prompt){scroll-margin-top:76px}
+html:has(body.detail-page){scroll-padding-top:0}
+.app-redesign .detail-header>.cover{border-radius:14px}
+.app-redesign .detail-header>.crumb a{text-decoration:none;font-weight:700}
+.app-redesign .detail-header>.crumb a:hover{text-decoration:underline;text-underline-offset:3px}
+html{scroll-padding-top:16px}
 
-/* 스크롤로 들어올 때만 살짝 떠오르기(첫 화면 콘텐츠는 이미 범위를 지나 움직이지 않음) */
-@keyframes hg-reveal{from{opacity:0;translate:0 16px}}
-@media (prefers-reduced-motion:no-preference){
-  @supports (animation-timeline:view()){
-    .home-redesign .idx-row,.app-redesign .editorial-feed>*,.app-redesign .dlist>.dword{
-      animation:hg-reveal linear both;animation-timeline:view();animation-range:entry 0% entry 35%}
-  }
-}
-@media (prefers-reduced-motion:no-preference) and (min-width:641px){
-  @supports (animation-timeline:view()){
-    .home-redesign .strip>.chip-card{animation:hg-reveal linear both;animation-timeline:view();animation-range:entry 0% entry 35%}
-  }
-}
-
-/* 하단 탭 바 — 데스크톱은 사이드바가 있어 숨김 */
+/* ---------- 모바일: 글래스 상단 바 + 하단 탭 바 ---------- */
 .tabbar{display:none}
 @media (max-width:1024px){
-  /* 상단 바: 글래스(필터는 가상요소에 — .mast 자체에 걸면 고정 위치 드로어가 64px 안에 갇힌다) */
+  html{scroll-padding-top:80px}
+  /* 필터는 가상요소에 — .mast 자체에 걸면 고정 위치 드로어가 64px 안에 갇힌다. view-transition-name도 주지 않는다(백드롭 루트가 됨) */
   .app-redesign .mast{background:transparent;border-bottom-color:color-mix(in srgb,var(--line) 75%,transparent)}
   .app-redesign .mast::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
     background:color-mix(in srgb,var(--paper) 92%,transparent);-webkit-backdrop-filter:saturate(1.6) blur(20px);backdrop-filter:saturate(1.6) blur(20px)}
@@ -1314,7 +1385,7 @@ body.detail-page :is(#story,#judgment,#places,#recommendations,#sources,#prompt)
   body.app-redesign,body.app-redesign.nav-collapsed{padding-bottom:calc(64px + env(safe-area-inset-bottom))}
   .app-redesign .tabbar{position:fixed;left:0;right:0;bottom:0;z-index:45;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));
     height:calc(64px + env(safe-area-inset-bottom));padding:5px max(8px,env(safe-area-inset-left)) env(safe-area-inset-bottom) max(8px,env(safe-area-inset-right));
-    background:color-mix(in srgb,var(--paper) 86%,transparent);-webkit-backdrop-filter:saturate(1.6) blur(16px);backdrop-filter:saturate(1.6) blur(16px);
+    background:color-mix(in srgb,var(--paper) 90%,transparent);-webkit-backdrop-filter:saturate(1.6) blur(16px);backdrop-filter:saturate(1.6) blur(16px);
     border-top:1px solid color-mix(in srgb,var(--line) 80%,transparent)}
   @supports not (backdrop-filter:blur(1px)){.app-redesign .tabbar{background:var(--paper)}}
   .app-redesign .tabbar a{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;min-width:0;min-height:52px;
@@ -1330,63 +1401,9 @@ body.detail-page :is(#story,#judgment,#places,#recommendations,#sources,#prompt)
   body.detail-page .detail-jumps{top:64px}
   body.detail-page :is(#story,#judgment,#places,#recommendations,#sources,#prompt){scroll-margin-top:140px}
 }
-
-/* 모바일 홈 '지금 주목할 한끗' — 세로로 길게 쌓지 않고 옆으로 넘기는 카드(다음 카드가 살짝 보임) */
 @media (max-width:640px){
-  .home-redesign .strip{--g:20px;grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:min(80%,300px);gap:0 14px;
-    overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;scroll-padding-inline:var(--g);
-    margin-inline:calc(var(--g) * -1);padding:10px var(--g) 6px;scrollbar-width:none}
-  .home-redesign .strip::-webkit-scrollbar{display:none}
-  .home-redesign .strip>.chip-card{scroll-snap-align:start;margin-bottom:0}
-  .home-redesign .chip-card .cover{aspect-ratio:1.5}
-  .home-redesign .chip-card .cc-desc{-webkit-line-clamp:2}
+  body:not(.detail-page).app-redesign>.wrap{padding:14px 12px 40px}
+  .app-redesign .surface,.home-redesign .home-section.surface{padding-inline:16px}
+  .app-redesign :is(#catFilter,#lCatFilter){margin-inline:-16px;padding-inline:8px}
+  .home-redesign .featured.surface{padding:14px}
 }
-@media (max-width:380px){.home-redesign .strip{--g:14px}}
-
-/* 카드 영역 구분 — 테두리·배경·옅은 그림자가 있는 카드 표면(라이트·다크 공통).
-   목록형 행(홈 '최근 분석')은 구분선 목록이라 그대로 둔다. */
-:root{--card-shadow:0 1px 2px rgba(23,37,64,.05),0 6px 18px rgba(23,37,64,.05);--card-shadow-hover:0 2px 4px rgba(23,37,64,.06),0 12px 28px rgba(23,37,64,.10)}
-:root[data-theme="dark"]{--card-shadow:0 1px 2px rgba(0,0,0,.35);--card-shadow-hover:0 2px 6px rgba(0,0,0,.4),0 12px 28px rgba(0,0,0,.35)}
-.home-redesign .strip>.chip-card,
-.app-redesign .editorial-feed>.chip-card,
-.app-redesign .editorial-feed>.analysis-card{padding:10px 10px 16px;border:1px solid var(--line);border-radius:16px;background:var(--card);box-shadow:var(--card-shadow);
-  transition:border-color .18s,box-shadow .18s,transform .14s}
-.app-redesign .dlist>.dword{margin-bottom:14px;padding:16px 18px;border:1px solid var(--line);border-radius:16px;background:var(--card);box-shadow:var(--card-shadow);
-  transition:border-color .18s,box-shadow .18s,transform .14s}
-.app-redesign :is(#tpDaily,#tpList)>.tp-card{margin-bottom:14px;border:1px solid var(--line);border-radius:16px;background:var(--card);box-shadow:var(--card-shadow)}
-.app-redesign :is(#tpDaily,#tpList)>.tp-card .tp-body{padding:16px}
-.home-redesign .strip>.chip-card .cover,.app-redesign .editorial-feed>.chip-card .cover,.app-redesign .editorial-feed>.analysis-card .idx-thumb{border-radius:10px}
-.app-redesign .editorial-feed>.analysis-card .idx-thumb{margin-bottom:12px}
-.home-redesign .strip>.chip-card .cc-meta,.app-redesign .editorial-feed>.chip-card .cc-meta,.app-redesign .editorial-feed>.analysis-card .analysis-card-body{padding-inline:4px}
-@media (hover:hover){
-  .home-redesign .strip>.chip-card:hover,.app-redesign .editorial-feed>:is(.chip-card,.analysis-card):hover,.app-redesign .dlist>.dword:hover,
-  .app-redesign :is(#tpDaily,#tpList)>.tp-card:hover{border-color:color-mix(in srgb,var(--ink) 22%,var(--line));box-shadow:var(--card-shadow-hover);background:var(--card)}
-}
-.app-redesign :is(#tpDaily,#tpList)>.tp-card.open{border-color:var(--ink);background:var(--card)}
-@media (max-width:640px){
-  .home-redesign .strip{padding-bottom:14px}
-}
-
-/* 카드 타이포 위계 — 제목은 더 크고 굵게, 설명은 한 단계 작고 흐리게.
-   제목 줄바꿈은 balance로 두 줄 길이를 고르게(한두 글자만 다음 줄로 떨어지는 어색함 방지), 한글은 어절 단위로. */
-:root{--card-title:clamp(17px,.4vw + 14px,20px);--card-desc:clamp(14px,.1vw + 13px,15px);--card-meta:13px}
-:root :is(.home-redesign .chip-card .cc-title,.app-redesign .editorial-feed .chip-card .cc-title,.app-redesign .analysis-card .it-title,.home-redesign .idx-row .t .it-title,.app-redesign .dword .dw-term,.app-redesign .tp-card .tp-kw){
-  font-size:var(--card-title);font-weight:750;line-height:1.38;letter-spacing:-.03em;
-  text-wrap:balance;word-break:keep-all;overflow-wrap:anywhere}
-:root :is(.home-redesign .chip-card .cc-desc,.app-redesign .editorial-feed .chip-card .cc-desc,.app-redesign .analysis-card .it-desc,.home-redesign .idx-row .t .it-desc){
-  margin-top:6px;font-size:var(--card-desc);line-height:1.6;color:var(--muted);-webkit-line-clamp:2;letter-spacing:-.01em}
-:root :is(.home-redesign .chip-card .cc-stage,.app-redesign .editorial-feed .chip-card .cc-stage,.app-redesign .analysis-card .it-cat,.home-redesign .idx-row .t .it-cat){font-size:var(--card-meta)}
-:root :is(.home-redesign .chip-card .cc-title,.app-redesign .editorial-feed .chip-card .cc-title){margin-top:4px}
-:root .app-redesign .dword .dw-def{font-size:var(--card-desc);line-height:1.65}
-:root .app-redesign .tp-card .tp-why{font-size:var(--card-desc);line-height:1.65}
-
-/* UX 다듬기(2026-11-27): 가로 스크롤 줄의 가장자리 힌트·작은 링크의 터치 영역·바로가기 현재 위치 */
-:is(#catFilter,#lCatFilter,.detail-jumps).fade-r{-webkit-mask-image:linear-gradient(90deg,#000 calc(100% - 44px),transparent);mask-image:linear-gradient(90deg,#000 calc(100% - 44px),transparent)}
-:is(#catFilter,#lCatFilter,.detail-jumps).fade-l{-webkit-mask-image:linear-gradient(90deg,transparent,#000 44px);mask-image:linear-gradient(90deg,transparent,#000 44px)}
-:is(#catFilter,#lCatFilter,.detail-jumps).fade-l.fade-r{-webkit-mask-image:linear-gradient(90deg,transparent,#000 44px,#000 calc(100% - 44px),transparent);mask-image:linear-gradient(90deg,transparent,#000 44px,#000 calc(100% - 44px),transparent)}
-.home-redesign .featured a.more,.home-redesign .sec-link{display:inline-flex;align-items:center;min-height:44px}
-body.detail-page .detail-jumps a.on{color:var(--accent-text);box-shadow:inset 0 -2px 0 currentColor}
-.app-redesign .detail-header>.crumb a{text-decoration:none;font-weight:700}
-.app-redesign .detail-header>.crumb a:hover{text-decoration:underline;text-underline-offset:3px}
-html{scroll-padding-top:16px}
-@media (max-width:1024px){html{scroll-padding-top:80px}}

@@ -64,60 +64,37 @@
       <span class="cover-credit">${H.esc(t.cat||'한끗')} · 기본 이미지</span>
     </${tag}>`;
   };
-  H.thumbHTML = (t)=>`<span class="idx-thumb" aria-hidden="true">${H.coverHTML(t,{inline:true})}</span>`;
   // 상세 페이지 링크 (모든 페이지가 frontend/ 루트에 있어 상대경로로 동작)
   H.detailHref = (id)=> `trend.html?id=${encodeURIComponent(id)}`;
-  H.scoreMetersHTML = (t)=>{
-    const meter=(key,label)=>{
-      const value=Math.max(0,Math.min(100,Number(t[key])||0));
-      return `<span class="mrow ${key==='ad'?'ad':'trust'}" role="group" aria-label="${label} ${value}점"><span class="m-label">${label}</span><b class="m-value">${value}</b><span class="mbar" role="meter" aria-label="${label} 점수" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${value}" aria-valuetext="${value}점"><i style="width:${value}%;${value?'min-width:4px;':''}"></i></span></span>`;
-    };
-    return `<span class="mini" role="group" aria-label="분석 점수">${meter('ad','광고 의심')}${meter('trust','후기 신뢰')}</span>`;
-  };
-  // 광고 분석 랭킹 행 (홈 #ad · list.html?type=ad 공용) — rank: 1-based 표시 순번
-  H.adRowHTML = (t, rank, opts={})=>{
-    if(!opts.editorial){
-      return `
-      <a class="idx-row" href="${H.detailHref(t.id)}">
-        <span class="rank">${String(rank).padStart(2,'0')}</span>
-        <span class="t">
-          <span class="it-cat">${H.esc(t.cat)} · ${H.esc(t.buzz)}</span>
-          <span class="it-title">${H.esc(t.title)}</span>
-          <span class="label it-label ${H.esc(t.labelCls||'mid')}">${H.esc(t.label)}</span>
-          ${H.summary(t)?`<span class="it-desc">${H.esc(H.summary(t, 96))}</span>`:''}
-        </span>
-        ${H.scoreMetersHTML(t)}
-      </a>`;
-    }
-    const thumb = H.thumbHTML(t);
-    const tags = (t.tags||[]).slice(0,5).map(tag=>`<span class="it-tag">#${H.esc(tag)}</span>`).join('');
-    const analyzedDate = t.analyzedAt ? t.analyzedAt.replace(/-/g,'.') : '';
+  // 앱형 피드 행 (홈·목록 공용): 말머리(분류)·제목·요약·메타 + 오른쪽 작은 썸네일.
+  // 신뢰분석은 판단 라벨과 두 점수를 이름+숫자로(색만으로 구분하지 않음), 트렌드는 유행 단계를 보여준다.
+  H.feedRowHTML = (t)=>{
+    const ad = t.type==='신뢰분석';
+    const score = (v)=> Math.max(0, Math.min(100, Number(v)||0));
+    const date = t.analyzedAt ? `<span>분석 ${H.esc(H.fmtISO(t.analyzedAt))}</span>` : '';
+    const meta = ad
+      ? `<span class="fr-label ${H.esc(t.labelCls||'mid')}">${H.esc(t.label||'')}</span>`
+      : `<span class="fr-stage">${H.esc(t.stage||'')}</span>`;
+    const foot = ad
+      ? `<span class="fr-score ad">광고 의심 <b>${score(t.ad)}</b></span><span class="fr-score trust">후기 신뢰 <b>${score(t.trust)}</b></span>${date}`
+      : `${date}${t.pureKorean?`<span class="fr-kr">우리말 · ${H.esc(t.pureKorean.split('(')[0].trim())}</span>`:''}${t.prompt?'<span>프롬프트 포함</span>':''}`;
     return `
-    <a class="idx-row has-thumb" href="${H.detailHref(t.id)}">
-      ${thumb}
-      <span class="rank">${String(rank).padStart(2,'0')}</span>
-      <span class="t">
-        <span class="it-cat"><span>${H.esc(t.cat)}</span>${t.buzz?`<span aria-hidden="true">·</span><span>${H.esc(t.buzz)}</span>`:''}</span>
-        <span class="it-title">${H.esc(t.title)}</span>
-        ${H.summary(t)?`<span class="it-desc">${H.esc(H.summary(t, 96))}</span>`:''}
-        ${tags?`<span class="it-tags">${tags}</span>`:''}
-        <span class="it-foot"><span class="label it-label ${H.esc(t.labelCls||'mid')}">${H.esc(t.label)}</span>${analyzedDate?`<span class="it-date">분석 ${H.esc(analyzedDate)}</span>`:''}</span>
+    <a class="feed-row" href="${H.detailHref(t.id)}">
+      <span class="fr-body">
+        <span class="fr-meta"><span class="fr-cat">${H.esc(t.cat||'')}</span>${meta}</span>
+        <span class="fr-title">${H.esc(t.title)}</span>
+        ${H.summary(t)?`<span class="fr-desc">${H.esc(H.summary(t, 110))}</span>`:''}
+        <span class="fr-foot">${foot}</span>
       </span>
-      ${H.scoreMetersHTML(t)}
+      <span class="fr-thumb" aria-hidden="true">${H.coverHTML(t,{inline:true})}</span>
     </a>`;
   };
-  // 요즘 트렌드 카드 (홈 #trend · list.html?type=trend 공용)
-  H.trendCardHTML = (t)=>`
-    <a class="chip-card" href="${H.detailHref(t.id)}">
-      ${H.coverHTML(t)}
-      <div class="cc-meta">
-        <div class="cc-stage">${H.esc(t.stage)}</div>
-        <div class="cc-title">${H.esc(t.title)}</div>
-        ${H.summary(t)?`<div class="cc-desc">${H.esc(H.summary(t, 72))}</div>`:''}
-        ${t.pureKorean?`<div class="cc-pure">우리말 · ${H.esc(t.pureKorean.split('(')[0].trim())}</div>`:''}
-        ${t.prompt?`<div class="cc-prompt">프롬프트 포함</div>`:''}
-        <div class="cc-foot">${t.analyzedAt?`분석 ${H.esc(t.analyzedAt.replace(/-/g,'.'))}`:''}</div>
-      </div>
+  // 순번 목록 행 (홈 '지금 뜨는 한끗') — n: 1부터 시작하는 표시 순번(최신 분석순이며 인기 순위가 아님)
+  H.rankRowHTML = (t, n)=>`
+    <a class="rank-row" href="${H.detailHref(t.id)}">
+      <span class="rk-no">${n}</span>
+      <span class="rk-body"><span class="rk-title">${H.esc(t.title)}</span><span class="rk-sub">${H.esc(t.cat||'')}${t.analyzedAt?` · 분석 ${H.esc(H.fmtISO(t.analyzedAt).slice(5))}`:''}</span></span>
+      <span class="rk-stage${/피크/.test(t.stage||'')?' peak':''}">${H.esc(t.stage||'')}</span>
     </a>`;
   H.toast = (msg)=>{
     let el=H.q('.toast'); if(!el){ el=document.createElement('div'); el.className='toast'; document.body.appendChild(el); }
@@ -204,7 +181,6 @@
 
   /* ---------- masthead, injected into [data-mast] ---------- */
   H.NAV_CATEGORIES = [['맛집','utensils'],['디저트','cake-slice'],['카페·핫플','coffee'],['신조어','message-square'],['노래·챌린지','music'],['패션','shirt'],['AI 프롬프트','square-terminal']];
-  H.catIcon = (cat)=>{ const hit=H.NAV_CATEGORIES.find(([c])=>c===cat); return hit?`<span class="nav-icon icon-${hit[1]}" aria-hidden="true"></span>`:''; };
   // 가로 스크롤 칩 줄: 선택된 칩이 화면 밖이면 보이게 옮기고, 더 넘길 칩이 있으면 가장자리를 흐리게 표시
   H.chipRail = (el)=>{
     if(!el) return;

@@ -26,7 +26,7 @@
 <link rel="icon" href="favicon.ico" sizes="16x16 32x32 48x48" />
 <link rel="apple-touch-icon" href="apple-touch-icon.png" />
 <link rel="manifest" href="site.webmanifest" />
-<link rel="stylesheet" href="assets/styles.css?v=ui-20261127" />
+<link rel="stylesheet" href="assets/styles.css?v=feed-20261127" />
 
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
@@ -42,27 +42,34 @@
     <div class="home-intro" id="homeIntro">
 
     <section class="lead">
-      <h1>요즘의 발견, <span class="hl">한끗으로 읽다</span></h1>
+      <h1>요즘의 발견, 한끗으로 읽다</h1>
       <p>새로운 트렌드와 맛집 후기를 살펴보고, 광고 신호와 실제 반응을 나눠 정리합니다.</p>
       <div class="freshline" id="freshline"></div>
     </section>
 
-    <article class="featured" id="featured"></article>
+    <article class="featured surface" id="featured"></article>
     </div>
 
-    <section class="home-section" id="trend">
-      <div class="sec-head"><h2>지금 주목할 한끗</h2></div>
+    <div class="home-grid">
+    <section class="home-section surface" id="rising">
+      <div class="sec-head"><h2>지금 뜨는 한끗</h2><span class="note">상승·피크 단계 · 최신 분석순</span></div>
+      <nav class="rank-list" id="rankList" aria-label="지금 뜨는 한끗"></nav>
+    </section>
+
+    <section class="home-section surface" id="trend">
+      <div class="sec-head"><h2>요즘 트렌드</h2></div>
       <div class="cat-filter" id="catFilter" role="group" aria-label="카테고리 필터"></div>
-      <div class="strip" id="stripList"></div>
+      <div class="feed" id="stripList"></div>
       <div class="strip-empty" id="stripEmpty" hidden>이 카테고리엔 아직 트렌드가 없어요.</div>
       <div class="more-row" id="stripMore" hidden></div>
     </section>
 
-    <section class="home-section" id="ad">
-      <div class="sec-head"><h2>최근 분석</h2><a class="sec-link" href="index.html?date=all">수집 기록 <span aria-hidden="true">→</span></a></div>
-      <nav class="index" id="indexList" aria-label="최근 광고 분석"></nav>
+    <section class="home-section surface" id="ad">
+      <div class="sec-head"><h2>최근 광고 분석</h2><a class="sec-link" href="index.html?date=all">수집 기록 <span aria-hidden="true">→</span></a></div>
+      <nav class="feed" id="indexList" aria-label="최근 광고 분석"></nav>
       <div class="more-row" id="adMore" hidden></div>
     </section>
+    </div>
 
     <div class="disc footer-disclaimer"><span>모든 점수는 공개 정보 기반 <b>추정치</b>이며 확정 판정이 아닙니다. 광고 의심도는 "광고일 수 있다"는 가능성일 뿐, 특정 업체의 광고를 단정하지 않습니다.</span></div>
 
@@ -70,7 +77,7 @@
   </main>
 
 <script src="data/trends.js"></script>
-<script src="assets/app.js?v=ui-20261127"></script>
+<script src="assets/app.js?v=feed-20261127"></script>
 <script>
   H.boot();
   const href = (id)=>`trend.html?id=${encodeURIComponent(id)}`;
@@ -88,7 +95,7 @@
   };
   if(_tag || _date){
     const sec = document.createElement('section');
-    sec.className = 'home-section';
+    sec.className = 'home-section surface';
     if(_date === 'all'){
       // 📅 전체 수집 기록 — 날짜별로 묶어 타임라인(최신일 먼저)
       const g = {};
@@ -140,13 +147,14 @@
     </div>`;
 
   // 홈은 짧은 미리보기만 노출하고 나머지는 더보기 → 전체 목록(list.html)
-  const HOME_AD_MAX = 6;     // 광고 분석 (2단 × 3행)
-  const HOME_TREND_MAX = 8;  // 트렌드 카드 (대략 2행)
+  const HOME_AD_MAX = 5;      // 광고 분석 목록
+  const HOME_TREND_MAX = 10;  // 트렌드 피드
+  const HOME_RANK_MAX = 10;   // 지금 뜨는 한끗(순번 목록)
 
   // ranked index = 신뢰분석들 (최근 재확인 순 → 매일 재확인된 항목이 위로)
   const analyses = H.TRENDS.filter(t=>t.type==='신뢰분석')
     .sort((a,b)=> (b.analyzedAt||'').localeCompare(a.analyzedAt||''));
-  H.q('#indexList').innerHTML = analyses.slice(0, HOME_AD_MAX).map((t,i)=>H.adRowHTML(t, i+1, {editorial:true})).join('');
+  H.q('#indexList').innerHTML = analyses.slice(0, HOME_AD_MAX).map(H.feedRowHTML).join('');
   const adMore = H.q('#adMore');
   if(analyses.length > HOME_AD_MAX){
     adMore.innerHTML = `<a class="btn more-btn" href="list.html?type=ad">광고 분석 전체보기 <b>+${analyses.length-HOME_AD_MAX}</b></a>`;
@@ -158,11 +166,17 @@
   const _d = (t)=> (t.collectedAt||t.analyzedAt||'')+'~'+(t.analyzedAt||'');
   const trends = H.TRENDS.filter(t=>t.type==='트렌드').sort((a,b)=> _d(b).localeCompare(_d(a)));
   const cats = ['전체', ...new Set(trends.map(t=>t.cat))];
+
+  // 지금 뜨는 한끗 = 유행 단계가 상승·피크인 트렌드를 최신 분석순으로(조회수 기반 인기 순위가 아님 — 섹션 제목 옆에 기준을 밝힌다)
+  const rising = trends.filter(t=>['상승','상승 → 피크','피크'].includes(t.stage))
+    .sort((a,b)=> (b.analyzedAt||'').localeCompare(a.analyzedAt||''));
+  H.q('#rankList').innerHTML = rising.slice(0, HOME_RANK_MAX).map((t,i)=>H.rankRowHTML(t, i+1)).join('');
+  H.q('#rising').hidden = rising.length===0;
   let activeCat = '전체';
 
   function renderStrip(){
     const list = activeCat==='전체' ? trends : trends.filter(t=>t.cat===activeCat);
-    H.q('#stripList').innerHTML = list.slice(0, HOME_TREND_MAX).map(H.trendCardHTML).join('');
+    H.q('#stripList').innerHTML = list.slice(0, HOME_TREND_MAX).map(H.feedRowHTML).join('');
     H.q('#stripEmpty').hidden = list.length>0;
     const more = H.q('#stripMore');
     if(list.length > HOME_TREND_MAX){
@@ -177,7 +191,7 @@
   function renderFilter(){
     H.q('#catFilter').innerHTML = cats.map(c=>{
       const n = c==='전체' ? trends.length : trends.filter(t=>t.cat===c).length;
-      return `<button class="cat-chip${c===activeCat?' on':''}" aria-pressed="${c===activeCat}" data-cat="${H.esc(c)}">${H.catIcon(c)}${H.esc(c)} <span class="cc-n">${n}</span></button>`;
+      return `<button class="cat-chip${c===activeCat?' on':''}" aria-pressed="${c===activeCat}" data-cat="${H.esc(c)}">${H.esc(c)} <span class="cc-n">${n}</span></button>`;
     }).join('');
     H.chipRail(H.q('#catFilter'));
     H.qa('#catFilter .cat-chip').forEach(b=> b.onclick=()=>{
