@@ -25,7 +25,8 @@
   H.esc = (s)=> String(s).replace(/[&<>"']/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   H.bandTxt = (v)=> v<=20?'낮음':v<=40?'약간':v<=60?'보통':v<=80?'높음':'매우 높음';
   H.fmtDate = (ts)=>{ const d=new Date(ts); const p=n=>String(n).padStart(2,'0'); return `${d.getFullYear()}.${p(d.getMonth()+1)}.${p(d.getDate())}`; };
-  H.param = (k)=> new URLSearchParams(global.location.search).get(k);
+  // 정적 상세 페이지(trend/<id>.html)는 주소에 ?id= 가 없어서 HG_TREND_ID 로 항목을 알려 준다
+  H.param = (k)=> (k==='id' && global.HG_TREND_ID) || new URLSearchParams(global.location.search).get(k);
   H.trunc = (s, n=88)=> {
     s = String(s || '').trim().replace(/\s+/g, ' ');
     return s.length > n ? `${s.slice(0, n - 1)}…` : s;
@@ -65,7 +66,9 @@
     </${tag}>`;
   };
   // 상세 페이지 링크 (모든 페이지가 frontend/ 루트에 있어 상대경로로 동작)
-  H.detailHref = (id)=> `trend.html?id=${encodeURIComponent(id)}`;
+  // 상세 대표 주소 = 정적 페이지(검색엔진이 JS 없이도 본문을 읽음, backend/scripts/build-static-pages.mjs 생성).
+  // 파일이 없으면 vercel.json rewrite 가 trend-redirect.html 로 보내 trend.html?id= 로 넘긴다.
+  H.detailHref = (id)=> `trend/${encodeURIComponent(id)}.html`;
   // 앱형 피드 행 (홈·목록 공용): 말머리(분류)·제목·요약·메타 + 오른쪽 작은 썸네일.
   // 신뢰분석은 판단 라벨과 두 점수를 이름+숫자로(색만으로 구분하지 않음), 트렌드는 유행 단계를 보여준다.
   H.feedRowHTML = (t)=>{
@@ -310,6 +313,18 @@
     const tb=host.querySelector('.theme-toggle');
     if(tb){ H.updateThemeBtn(H.theme.get()); tb.addEventListener('click',()=> H.theme.toggle()); }
   };
+
+  /* 정적 상세 페이지는 <base href="/"> 라 '#섹션' 링크가 홈으로 가지 않게 같은 페이지 안에서 스크롤한다 */
+  if(global.document && document.querySelector('base')){
+    document.addEventListener('click', (e)=>{
+      const a = e.target.closest && e.target.closest('a[href^="#"]'); if(!a) return;
+      const el = document.getElementById(a.getAttribute('href').slice(1)); if(!el) return;
+      e.preventDefault();
+      el.scrollIntoView({ behavior: global.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block:'start' });
+      if(el.id==='main') el.focus({preventScroll:true});
+      history.replaceState(null, '', location.pathname + location.search + '#' + el.id);
+    });
+  }
 
   /* ---------- per-page boot ---------- */
   H.boot = ()=>{ H.renderMast(); };

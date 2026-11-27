@@ -80,7 +80,7 @@
 <script src="assets/app.js?v=feed-20261127"></script>
 <script>
   H.boot();
-  const href = (id)=>`trend.html?id=${encodeURIComponent(id)}`;
+  const href = H.detailHref;   // 상세 정적 페이지 주소
 
   // 🔖 필터 모드: ?tag=X(해시태그) 또는 ?date=YYYY-MM-DD(수집일) → 해당 트렌드만, 나머지 홈 숨김
   const _tag = H.param('tag');

@@ -127,7 +127,7 @@ function gitPublish(n, today) {
   if (sh('git', ['rev-parse', '--abbrev-ref', 'HEAD']).trim() !== 'main') return 'git_deferred(main 아님)';
   if (!acquireGitLock(repoRoot, 'restage.mjs')) return 'git_deferred(다른 작업이 git 사용 중)';
   try {
-    sh('git', ['add', 'backend/data/trends.json', 'frontend/data/trends.js', 'frontend/sitemap.xml']);
+    sh('git', ['add', 'backend/data/trends.json', 'frontend/data/trends.js', 'frontend/sitemap.xml', 'frontend/trend']);
     sh('git', ['commit', '-m', `auto: 유행 단계 재판정 ${n}건 ${today}`]);
     try { sh('git', ['pull', '--rebase', '--autostash', 'origin', 'main']); }
     catch { try { sh('git', ['rebase', '--abort']); } catch {} return 'git_deferred(rebase 충돌 — abort함)'; }

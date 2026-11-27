@@ -52,6 +52,12 @@ try {
   const { writeSitemap } = await import('./build-sitemap.mjs');
   console.log(`✓ sitemap: ${await writeSitemap(data)} urls`);
 } catch (e) { console.warn(`⚠ sitemap 생성 실패(무시): ${e.message}`); }
+// 검색엔진용 상세 정적 페이지(frontend/trend/<id>.html)도 같은 데이터로 갱신(실패해도 경고만 — 링크는 vercel rewrite 로 ?id= 주소에 넘어감).
+try {
+  const { writeStaticPages } = await import('./build-static-pages.mjs');
+  const r = await writeStaticPages(data);
+  console.log(`✓ static pages: ${r.pages}개 (새로 씀 ${r.written}, 지움 ${r.removed})`);
+} catch (e) { console.warn(`⚠ 정적 페이지 생성 실패(무시): ${e.message}`); }
 
 const stale = data.trends.filter((t) => {
   const a = new Date(t.analyzedAt + 'T00:00:00'); const b = new Date();

@@ -31,7 +31,8 @@ export function buildSitemap(data) {
       .map((c) => ({ loc: `/list.html?type=trend&cat=${encodeURIComponent(c)}`, lastmod: latest(trends.filter((t) => t.type === '트렌드' && t.cat === c)) })),
     { loc: '/dictionary.html', lastmod: latest(trends.filter((t) => t.cat === '신조어')) },
     { loc: '/pulse.html' },
-    ...trends.map((t) => ({ loc: `/trend.html?id=${encodeURIComponent(t.id)}`, lastmod: t.analyzedAt || t.collectedAt })),
+    // 상세는 정적 페이지 주소(build-static-pages.mjs). id 형식이 맞지 않아 정적 페이지가 없는 항목만 ?id= 주소
+    ...trends.map((t) => ({ loc: /^[A-Za-z0-9][A-Za-z0-9_-]*$/.test(t.id || '') ? `/trend/${encodeURIComponent(t.id)}.html` : `/trend.html?id=${encodeURIComponent(t.id)}`, lastmod: t.analyzedAt || t.collectedAt })),
   ];
   const body = urls.map(({ loc, lastmod }) =>
     `  <url><loc>${xmlEsc(SITE_URL + loc)}</loc>${isDate(lastmod) ? `<lastmod>${lastmod}</lastmod>` : ''}</url>`).join('\n');

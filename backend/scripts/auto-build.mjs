@@ -353,7 +353,7 @@ if (!acquireGitLock(repoRoot, 'auto-build.mjs')) {
 }
 
 try {
-  sh('git', ['add', 'backend/data/trends.json', 'frontend/data/trends.js', 'frontend/sitemap.xml']);
+  sh('git', ['add', 'backend/data/trends.json', 'frontend/data/trends.js', 'frontend/sitemap.xml', 'frontend/trend']);
   sh('git', ['commit', '-m', APPROVED
       ? `review: 사람 승인 게시 ${published.length}건 ${TODAY}`
       : `auto: 트렌드 자동 게시(검증통과 ${published.length}) ${TODAY}`,

@@ -29,7 +29,7 @@ const DISCLOSURE = [
 ];
 // '협찬 아님'·'체험단 아니고 내돈내산' 같은 부정은 고지가 아니다 — 매칭 직후 12자 안에 부정어가 오면 버린다.
 const NEG_AFTER = /^[^.\n]{0,12}(아님|아니|아닌|아녜|없|X|x|❌|no\b|NO\b)/;
-const VENDOR_PHOTO = [/(사진|이미지|자료)\s*[=:]\s*[^\s,)\]]{1,20}\s*제공/, /(사진|이미지)\s*제공\s*[=:]/, /(업체|브랜드|매장|본사)\s*제공\s*(사진|이미지)/, /제공\s*받은\s*(사진|이미지)/];
+const VENDOR_PHOTO = [/(사진|이미지|자료)\s*[=:]\s*[^\s,)\]]{1,20}\s*제공/, /(사진|이미지)\s*제공\s*[=:]/, /(업체|브랜드|매장|본사)\s*제공\s*(사진|이미지)(?!\s*\/)/, /제공\s*받은\s*(사진|이미지)/];
 
 export function findDisclosure(text) {
   for (const re of DISCLOSURE) {
@@ -42,6 +42,7 @@ export function findDisclosure(text) {
   }
   return null;
 }
+// 매거진 목록 기사의 이미지 캡션 '사진/ 업체 제공'이 이어 붙으면 '업체 제공 사진/'으로 읽힌다 — 다른 가게 사진이라 뺀다(2026-11-27 souldining-hbc 오탐).
 const findVendorPhoto = (text) => { for (const re of VENDOR_PHOTO) { const m = text.match(re); if (m) return m[0].replace(/\s+/g, ' ').trim(); } return null; };
 
 // 작성자 단위 출처 키 — 네이버 블로그는 blogId, 티스토리는 서브도메인, 브런치는 @작가, 나머지는 호스트.
@@ -116,7 +117,8 @@ function relabel(t) {
 // item 을 제자리에서 고친다. 반환: { changed, before:{ad,trust,label}, after, notes[] }
 export function applyAdSignals(item, sig, today) {
   const prev = item.adCheck && item.adCheck.base;
-  const base = prev || { ad: item.ad, trust: item.trust, label: item.label, labelCls: item.labelCls };
+  const base = prev || { ad: item.ad, trust: item.trust, label: item.label, labelCls: item.labelCls,
+    reasons: item.reasons ? structuredClone(item.reasons) : undefined };
   const before = { ad: item.ad, trust: item.trust, label: item.label };
   let ad = base.ad, trust = base.trust;
   const adWhy = [], trustWhy = [];
@@ -131,9 +133,13 @@ export function applyAdSignals(item, sig, today) {
   if (item.ad !== base.ad || item.trust !== base.trust) relabel(item);
 
   // 근거 문장: 이전 자동 점검 문장을 지우고 새로 앞에 붙인다(화면 '왜 이 점수?'에 그대로 노출).
-  item.reasons = item.reasons && typeof item.reasons === 'object' ? item.reasons : {};
+  // 봇 근거는 base.reasons(처음 값)에서 다시 시작한다. 예전 기록(base.reasons 없음)은 지금 근거에서 자동 문장만 뺀다.
+  const src = 'reasons' in base ? structuredClone(base.reasons || {}) : (item.reasons && typeof item.reasons === 'object' ? item.reasons : {});
+  item.reasons = src;
+  // 협찬 고지를 실제로 찾았으면 '협찬·체험단 표시가 안 보였다'는 봇 근거는 사실과 반대라 뺀다(2026-11-27 eomme-cafe-gangnam).
+  const denies = (r) => /(협찬|체험단|대가성|광고)[^.]{0,40}(않|없|안 보|아니)/.test(r);
   for (const [k, why] of [['ad', adWhy], ['trust', trustWhy]]) {
-    const cur = [].concat(item.reasons[k] || []).filter((r) => typeof r === 'string' && !r.startsWith(AUTO));
+    const cur = [].concat(item.reasons[k] || []).filter((r) => typeof r === 'string' && !r.startsWith(AUTO) && !(k === 'ad' && sig.disclosure && denies(r)));
     if (why.length) cur.unshift(`${AUTO} ${why.join(' · ')}`);
     if (cur.length) item.reasons[k] = cur; else delete item.reasons[k];
   }
@@ -170,14 +176,19 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
   assert.deepEqual(Object.keys(sig).sort(), ['burst', 'disclosure', 'repeat', 'vendorPhoto'], JSON.stringify(sig));
   const r1 = applyAdSignals(t, sig, '2026-11-27');
   assert.equal(t.ad, 81); assert.equal(t.trust, 50); assert.equal(t.labelCls, 'mid', '좋음 라벨은 신호와 모순 → mid');
-  assert.ok(t.reasons.ad[0].startsWith(AUTO) && t.reasons.ad.length === 2);
+  assert.ok(t.reasons.ad[0].startsWith(AUTO) && t.reasons.ad.length === 1, '협찬 표시 없다는 봇 근거는 빠짐: ' + JSON.stringify(t.reasons.ad));
+  assert.deepEqual(t.adCheck.base.reasons.ad, ['협찬 표시는 안 보였어요.'], '처음 근거는 base에 보존');
   applyAdSignals(t, sig, '2026-11-28');
-  assert.equal(t.ad, 81, '재실행해도 누적 안 됨(멱등)'); assert.equal(t.reasons.ad.length, 2);
+  assert.equal(t.ad, 81, '재실행해도 누적 안 됨(멱등)'); assert.equal(t.reasons.ad.length, 1);
+  applyAdSignals(t, {}, '2026-11-29');
+  assert.equal(t.ad, 30, '신호가 사라지면 처음 점수로'); assert.deepEqual(t.reasons.ad, ['협찬 표시는 안 보였어요.'], '처음 근거로 복원');
   assert.ok(r1.changed);
   const solo = { title: '누데이크', ad: 20, trust: 60, label: '믿고 가볼 만함', labelCls: 'good' };
   const s2 = adSignals(solo, [], ['https://m.blog.naver.com/x/1', 'https://blog.naver.com/x/2']);
   assert.ok(s2.oneOrigin); applyAdSignals(solo, s2, '2026-11-27');
   assert.equal(solo.trust, 40); assert.equal(solo.labelCls, 'mid');
+  assert.equal(adSignals({ title: '소울다이닝' }, [{ name: 'm', url: 'https://m.com/1', body: '3. 소수헌 사진/ 업체 제공 사진/ 업체 제공 스시' }]).vendorPhoto, undefined, '목록 기사 캡션');
+  assert.ok(adSignals({ title: '바니에' }, [{ name: 'n', url: 'https://n.com/1', body: '팝업 오픈. (사진제공=신세계 센텀시티점) 마들렌' }]).vendorPhoto, '보도자료 사진');
   const warn = { title: '오하루', ad: 80, trust: 20, label: '업체 홍보 영상뿐, 판단 불가', labelCls: 'warn' };
   applyAdSignals(warn, { oneOrigin: { origin: 'youtube:x', n: 1 } }, 'x');
   assert.equal(warn.label, '업체 홍보 영상뿐, 판단 불가', '점수 그대로면 사람이 쓴 라벨 유지');

@@ -66,5 +66,11 @@
       "destination": "/",
       "permanent": true
     }
+  ],
+  "rewrites": [
+    {
+      "source": "/trend/:id.html",
+      "destination": "/trend-redirect.html"
+    }
   ]
 }

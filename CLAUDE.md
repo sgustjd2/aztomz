@@ -31,6 +31,7 @@
 |---|---|
 | `refresh.mjs` | `trends.json` → `frontend/data/trends.js` 재생성(+`generatedAt`) |
 | `build-sitemap.mjs` | `trends.json` → `frontend/sitemap.xml` 생성(검색엔진 색인용). `refresh.mjs`가 생성 직후 호출(실패 시 경고만), 단독 실행: `node backend/scripts/build-sitemap.mjs` |
+| `build-static-pages.mjs` | `trends.json` + `frontend/trend.html`(틀) → `frontend/trend/<id>.html` 상세 정적 페이지(네이버 등 JS 안 읽는 검색엔진용, 대표 주소). `refresh.mjs`가 매번 호출하고 자동 커밋 대상(`frontend/trend`)에 포함. 페이지가 없는 항목은 vercel rewrite → `trend-redirect.html` → `trend.html?id=` |
 | `font-subset.py` | `backend/fonts/PretendardVariable.woff2`(원본) → `frontend/assets/fonts/PretendardVariable-core/-rest.woff2` 분할(첫 로딩 2.0MB→약 460KB). `pip install fonttools brotli` 필요. 다시 만들면 파일 이름·`styles.css` @font-face 를 함께 바꾼다(1년 immutable 캐시) |
 | `validate-trends.mjs` | **스키마 스모크 게이트** — id 누락·중복, cat 7분류 이탈, stage 비정규 라벨, 영문 placeholder verdict, `analyzedAt` 형식 오류를 배포 전에 잡음 |
 | `check-links.mjs` | 출처 URL 상태(404) 점검 |

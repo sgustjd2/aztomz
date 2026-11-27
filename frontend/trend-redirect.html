@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="robots" content="noindex" />
+<title>한끗</title>
+<script>
+  /* 아직 정적 페이지가 만들어지지 않은 항목(trend/<id>.html 없음) — vercel.json rewrite 가 여기로 보낸다 */
+  var m = location.pathname.match(/\/trend\/([^/]+)\.html$/);
+  location.replace(m ? '/trend.html?id=' + m[1] + location.hash : '/');
+</script>
+</head>
+<body><a href="/">한끗 홈으로</a></body>
+</html>
