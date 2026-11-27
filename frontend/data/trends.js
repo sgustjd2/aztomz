@@ -6161,7 +6161,7 @@ window.HANGEUT_DATA = {
       "cat": "맛집",
       "coverCat": "cat-food",
       "collectedAt": "2026-07-10",
-      "analyzedAt": "2026-10-24",
+      "analyzedAt": "2026-11-27",
       "ad": 15,
       "trust": 45,
       "sat": "pos",
