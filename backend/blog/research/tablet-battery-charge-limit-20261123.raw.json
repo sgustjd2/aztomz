@@ -1,0 +1,114 @@
+{
+  "keyword": "태블릿 배터리 80% 충전 제한 설정",
+  "categoryId": "life-info",
+  "searchedAt": "2026-11-23",
+  "keywordSignal": {
+    "source": "이번 회차 키워드 후보 표",
+    "keyword": "태블릿",
+    "monthlySearches": 52600,
+    "competition": "high",
+    "trendRise": "unconfirmed"
+  },
+  "queries": [
+    "태블릿 배터리 80% 충전 제한 갤럭시탭 아이패드 공식 설정",
+    "site:samsung.com/sec/support/galaxy-battery 배터리 보호 태블릿 충전 상한",
+    "site:doc.samsungmobile.com/SM-X810 배터리 보호 80 95",
+    "site:support.apple.com/ko-kr/118418 iPad 충전 한도 80% 지원 모델",
+    "tablet battery charge limit 80 percent iPad Samsung news",
+    "iPad 80 percent charge limit M2 M4 battery health news"
+  ],
+  "sources": [
+    {
+      "title": "Galaxy Battery - 배터리 보호 팁",
+      "url": "https://www.samsung.com/sec/support/galaxy-battery/battery-protection-tip/",
+      "host": "samsung.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "삼성전자 배터리 보호 공식 안내는 기본 모드에서 100% 충전 후 95%에서 다시 충전하고, 최대 모드에서 80·85·90·95% 중 설정한 상한까지 충전하는 동작을 설명한다. 선택 상한보다 약 2% 내려가면 재충전될 수 있으며 기기·소프트웨어·환경에 따라 차이가 난다. 최대 모드 상한 선택은 One UI 7.0부터 제공된다고 안내한다. 설정 경로는 설정 > 배터리 > 배터리 보호이며, 화면과 기능은 모델과 소프트웨어에 따라 다를 수 있다.",
+      "facts": [
+        "삼성 최대 모드는 80·85·90·95% 중 선택한 상한까지 충전하며 상한에서 약 2% 내려가면 재충전이 시작될 수 있다.",
+        "최대 모드에서 상한을 고르는 기능은 One UI 7.0부터 제공된다고 안내한다.",
+        "삼성은 기기·소프트웨어·환경에 따라 동작이 달라질 수 있다고 명시한다."
+      ]
+    },
+    {
+      "title": "SM-X810 소프트웨어 업데이트 기록",
+      "url": "https://doc.samsungmobile.com/SM-X810/026985230725/kor.html",
+      "host": "samsungmobile.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "삼성 공식 SM-X810 업데이트 이력의 배터리 보호 사용성 개선 항목은 배터리 보호를 켜면 최대 충전량을 80%에서 95% 이내로 직접 설정할 수 있다고 적는다. 이는 SM-X810의 해당 업데이트 기록으로, 모든 갤럭시 탭 모델의 동일 기능을 보장하는 자료는 아니다.",
+      "facts": [
+        "SM-X810 업데이트 기록은 배터리 보호에서 80~95% 최대 충전량을 설정할 수 있다고 명시한다.",
+        "해당 기록은 SM-X810에 한정해 읽어야 한다."
+      ]
+    },
+    {
+      "title": "iPad 배터리 충전 및 유지 관리에 관하여",
+      "url": "https://support.apple.com/ko-kr/118418",
+      "host": "support.apple.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "Apple 지원 문서는 80% 충전 한도가 iPad Pro(M4 및 이후 모델), iPad Air(M2 및 이후 모델), iPad mini(A17 Pro), iPad(A16)에서 제공된다고 안내한다. 한도를 켜면 약 80%에서 멈추고 잔량이 75%로 내려가면 다시 약 80%까지 충전한다. 충전 상태 추정치를 정확히 유지하기 위해 가끔 100%까지 충전될 수 있다. Apple은 주변 온도 16~22°C를 이상적인 범위로 안내하고 35°C 초과 환경에서 사용·충전하지 말라고 한다. 배터리 온도가 권장 범위를 넘으면 소프트웨어가 80%까지만 충전되도록 제한할 수 있다.",
+      "facts": [
+        "80% 한도 지원 모델은 iPad Pro M4 이상, iPad Air M2 이상, iPad mini A17 Pro, iPad A16이다.",
+        "Apple의 80% 한도는 약 80%에서 멈추고 75%에서 다시 충전하며 추정치 보정을 위해 때때로 100%까지 충전될 수 있다.",
+        "주변 온도 35°C 초과 사용·충전은 피하라고 안내하며 과열 시 충전이 80%에서 제한될 수 있다."
+      ]
+    },
+    {
+      "title": "iPad에서 충전 한도 설정하기",
+      "url": "https://support.apple.com/ko-kr/guide/ipad/ipadb3190c30/27/ipados/27",
+      "host": "support.apple.com",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "Apple 사용 설명서는 지원 모델에서 설정 앱의 배터리 메뉴에서 최대 배터리 잔량을 80%로 설정하는 방법을 설명한다. 한도 설정 후에도 정확한 배터리 잔량 표시를 위해 iPad가 때때로 100%까지 충전될 수 있다고 안내한다.",
+      "facts": [
+        "지원되는 iPad의 충전 한도 설정은 설정 앱 > 배터리에서 한다.",
+        "80% 제한이어도 충전량 추정 유지를 위해 때때로 100%에 도달할 수 있다."
+      ]
+    },
+    {
+      "title": "iPad 및 iPhone의 충전 관리 기능에 관하여",
+      "url": "https://support.apple.com/ko-kr/111822",
+      "host": "support.apple.com",
+      "tier": "official",
+      "publishedAt": "2026-03-19",
+      "body": "Apple은 장시간 전원에 연결된 iPad에서 배터리 충전 관리 기능이 배터리 성능 상태를 유지하도록 저장 용량을 일시 조정할 수 있다고 설명한다. 장시간 완전 충전 상태를 유지하는 것은 배터리 성능 상태에 영향을 줄 수 있다. 지원 문서는 이를 키오스크나 충전 카트처럼 장시간 전원에 연결하는 경우의 설명으로 다룬다.",
+      "facts": [
+        "Apple은 iPad가 장시간 전원에 연결될 때 충전 관리 기능이 동작할 수 있다고 설명한다.",
+        "이 기능은 장시간 전원 연결 상태를 위한 동작으로 모든 일상 충전 상황과 같다고 일반화할 수 없다."
+      ]
+    },
+    {
+      "title": "New iPads report charge cycle count in a new Battery Health menu",
+      "url": "https://www.idownloadblog.com/2024/05/14/ipados-17-5-battery-health-menu-ipad-air-pro-models/",
+      "host": "idownloadblog.com",
+      "tier": "press",
+      "publishedAt": "2024-05-14",
+      "body": "iDownloadBlog는 2024년 당시 M2 iPad Air와 M4 iPad Pro에 새 배터리 상태 메뉴와 80% 충전 제한이 제공된다고 보도했다. 기사 시점의 대상 모델을 다루므로 2026년 현재의 지원 기종 범위는 Apple 공식 지원 문서로 다시 확인해야 한다.",
+      "facts": [
+        "보도는 출시 당시 M2 iPad Air와 M4 iPad Pro의 배터리 상태 메뉴 및 80% 제한을 다룬다.",
+        "기사 시점의 모델 범위는 현재 지원 목록으로 전용하지 않는다."
+      ]
+    },
+    {
+      "title": "Apple adds Battery Health menu to M2 iPad Air and M4 iPad Pro",
+      "url": "https://9to5mac.com/2024/05/14/apple-adds-battery-health-menu-to-new-m2-ipad-air-and-m4-ipad-pro/",
+      "host": "9to5mac.com",
+      "tier": "press",
+      "publishedAt": "2024-05-14",
+      "body": "9to5Mac는 M2 iPad Air와 M4 iPad Pro 출시 시 배터리 상태 메뉴와 최대 80% 충전 옵션이 제공된다고 보도했다. iDownloadBlog 기사와 함께 초기 지원 모델에 대한 언론 보도를 교차 확인하는 용도로 사용하며, 현재 호환 모델 목록은 Apple 공식 지원 문서를 우선한다.",
+      "facts": [
+        "보도는 2024년 당시 M2 iPad Air 및 M4 iPad Pro의 80% 상한 기능을 전한다.",
+        "현재 지원 범위 확인에는 Apple 공식 문서를 우선한다."
+      ]
+    }
+  ],
+  "conflicts": [],
+  "unknowns": [
+    "태블릿 모델과 OS 버전을 특정하지 않아 개별 기기의 메뉴 경로·기능 지원 여부는 확정할 수 없다.",
+    "배터리 수명은 충전 제한 외에도 사용·온도·충전 패턴의 영향을 받으므로 개인 기기의 수명 연장 폭을 수치화할 수 없다.",
+    "네이버 검색광고 API와 DataLab 실시간 조회값은 이 실행에서 확인되지 않아 검색량·경쟁도·상승률은 판단하지 않는다."
+  ]
+}

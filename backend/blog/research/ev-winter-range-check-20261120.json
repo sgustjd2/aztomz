@@ -1,0 +1,182 @@
+{
+  "keyword": "전기차 겨울 주행거리",
+  "categoryId": "life-info",
+  "notes": "2026-11-20 기준, 상온 인증거리만 보면 겨울 경로를 과대평가할 수 있어요.\n2026년 11월 기사 두 곳이 같은 공식 인증자료에서 네 사양의 상온·저온 복합거리를 비교했어요. 독립 실주행 결과처럼 합산하지 않아요.\n현재 법령·TS·현대 사용설명서로 시험 조건과 준비 요령을 확인하되, 차량별 차이를 유지해요.",
+  "sources": [
+    {
+      "title": "KENCIS - 전기차 1회충전주행거리 인증현황",
+      "url": "https://kencis.me.go.kr/new_kencis/hms/cs01/hmscs01ev.do",
+      "host": "kencis.me.go.kr",
+      "body": "공식 인증 조회 화면은 차명, 형식, 인증일과 함께 상온·저온 복합 주행거리 등을 보여주는 자료예요. 브라우저와 직접 요청이 시간초과되어 이 회차에 세부 행은 다시 대조하지 못했어요. 구체적 수치는 2026년 11월 두 언론 기사에 인용된 인증값만 사용해요.",
+      "tier": "data"
+    },
+    {
+      "title": "전기자동차의 저온환경 에너지소비효율 및 1회 충전 주행거리 측정방법",
+      "url": "https://law.go.kr/LSW/flDownload.do?bylClsCd=200201&flNm=%5B%EB%B3%84%ED%91%9C+3%EC%9D%982%5D+%EC%A0%84%EA%B8%B0%EC%9E%90%EB%8F%99%EC%B0%A8%EC%9D%98+%EC%A0%80%EC%98%A8%ED%99%98%EA%B2%BD+%EC%97%90%EB%84%88%EC%A7%80%EC%86%8C%EB%B9%84%ED%9A%A8%EC%9C%A8+%EB%B0%8F+1%ED%9A%8C+%EC%B6%A9%EC%A0%84+%EC%A3%BC%ED%96%89%EA%B1%B0%EB%A6%AC+%EC%B8%A1%EC%A0%95%EB%B0%A9%EB%B2%95%28%EC%A0%9C4%EC%A1%B0%EC%A0%9C1%ED%95%AD%EC%A0%9C3%ED%98%B8+%EA%B4%80%EB%A0%A8%29&flSeq=152051951",
+      "host": "law.go.kr",
+      "body": "국가법령정보센터 고시 별표는 외기온도 −7±3℃ 및 배터리 SOC 50% 이상, 4시간 이상 주차 조건을 제시해요. 시험 히터는 자동 온도조절 가능 시 22℃, 그 밖에는 최대로 설정해요. 2025-05-19 신설된 현재 규정 문구를 확인했어요.",
+      "tier": "official"
+    },
+    {
+      "title": "TS, 겨울철 전기차 관리수칙 지키면 연비·안전 다 잡는다",
+      "url": "https://main.kotsa.or.kr/portal/bbs/report_view.do?bbscCode=report&bbscSeqn=18770&menuCode=05010200",
+      "host": "main.kotsa.or.kr",
+      "body": "한국교통안전공단 자동차안전연구원은 추운 날 저온이 충전속도와 주행가능거리를 낮출 수 있다고 설명해요. 충전 포트와 커넥터의 이물질·수분을 확인하고, 목적지를 충전소로 지정해 배터리 컨디셔닝을 활용하면 충전속도 유지에 도움 된다고 안내해요. 충전 케이블 연결 상태에서 예약 공조를 쓰고, 난방은 열선 활용, 실내 주차, 눈길 감속과 충분한 차간거리도 제안해요.",
+      "tier": "official"
+    },
+    {
+      "title": "EV 설정하기(사양 적용 시) - 현대자동차 사용설명서",
+      "url": "https://ownersmanual.hyundai.com/ivi/STD_GEN5W/AVNT/KOR/Korean/010_Settings_ev.html",
+      "host": "ownersmanual.hyundai.com",
+      "body": "현대 사용설명서는 윈터 모드와 배터리 컨디셔닝이 겨울철 충전·주행 성능에 도움 될 수 있지만 배터리를 소모해 주행 가능 거리가 짧아질 수 있다고 안내해요. 기능은 차종과 사양에 따라 달라요. 따라서 모든 전기차의 기본 메뉴나 공통 조작법처럼 설명하면 안 돼요.",
+      "tier": "official"
+    },
+    {
+      "title": "전기차, 계기판 표시와 실제 주행가능거리 간 차이 있어",
+      "url": "https://www.kca.go.kr/home/sub.do?menukey=4002&mode=view&no=1003757412&page=15",
+      "host": "kca.go.kr",
+      "body": "한국소비자원은 2024년 11월 EV6·아이오닉5·모델3 특정 사양의 실주행거리를 시험했어요. 18℃와 −1℃ 조건에서 상온 대비 저온 주행거리는 각각 22%, 24%, 13% 감소했어요. 세 차량과 당시 시험환경의 결과이므로 현재 판매되는 모든 차의 일반값으로 확대할 수 없고, 계기판 표시와 실제 이동거리도 구분해야 해요.",
+      "tier": "official"
+    },
+    {
+      "title": "추위 타는 전기차…저온 주행거리 최대 24.5% '뚝'",
+      "url": "https://www.inews24.com/view/2023502",
+      "host": "inews24.com",
+      "body": "아이뉴스24는 2026-11-08 무공해차 통합누리집 등에 공개된 인증자료로 EV3·EV5·아이오닉5·모델Y의 지정 사양 네 개를 비교했어요. 상온·저온 복합 값은 각각 510/401, 460/374, 462/369, 400/302km라고 보도했어요. 인증값 감소율은 18.7~24.5%였고, 실제 거리는 속도·온도·난방·노면·적재량에 따라 달라진다고 덧붙였어요.",
+      "tier": "press"
+    },
+    {
+      "title": "\"400km 간다더니 100km 증발\"…전기 SUV 4종, 겨울철 주행거리는?",
+      "url": "https://www.autotribune.co.kr/news/articleView.html?idxno=47634",
+      "host": "autotribune.co.kr",
+      "body": "오토트리뷴은 2026-11-16 같은 네 사양의 공식 인증값을 비교해 EV5 460/374km, EV3 510/401km, 아이오닉5 462/369km, 모델Y 400/302km로 정리했어요. 같은 공공 인증자료 분석이므로 아이뉴스24 기사와 독립적인 실도로 시험으로 세지 않아요. 세부 차종 내에서도 배터리·구동방식·휠에 따라 값이 달라진다고 밝혔어요.",
+      "tier": "press"
+    },
+    {
+      "title": "\"겨울철 테슬라 실주행 가능거리, 계기판보다 120㎞ 짧아\"",
+      "url": "https://www.yna.co.kr/amp/view/AKR20241125121900030",
+      "host": "yna.co.kr",
+      "body": "연합뉴스는 2024-11-26 소비자원 시험을 보도했어요. 세 특정 차량을 18℃와 −1℃ 조건에서 평가했고, −1℃에서 EV6·아이오닉5·모델3의 실주행거리는 상온보다 각각 22%, 24%, 13% 감소했어요. 고속도로에서 시속 100~110km로 시험한 결과이며 소비자원은 장거리 전 충전소 확인과 여유 충전을 권했어요.",
+      "tier": "press"
+    }
+  ],
+  "claims": [
+    {
+      "claim": "2026년 11월에 보도된 네 가지 지정 사양의 상온·저온 복합 인증거리는 서로 다르며, 해당 기사에서 비교한 감소율 범위는 18.7~24.5%예요.",
+      "grade": "reported",
+      "evidence": [
+        "EV3 롱레인지 2WD 17인치: 510km→401km, 21.4%.",
+        "EV5 롱레인지 2WD: 460km→374km, 18.7%.",
+        "더 뉴 아이오닉5 2WD 롱레인지 19인치: 462km→369km, 20.1%.",
+        "모델Y 프리미엄 RWD: 400km→302km, 24.5%.",
+        "아이뉴스24와 오토트리뷴은 같은 공식 인증자료를 비교했어요. 두 기사 수치를 별도 시험으로 세지 않아요."
+      ],
+      "sourceUrls": [
+        "https://www.inews24.com/view/2023502",
+        "https://www.autotribune.co.kr/news/articleView.html?idxno=47634"
+      ]
+    },
+    {
+      "claim": "현행 고시의 저온 시험은 −7±3℃ 외기 조건에서 시행하며, 히터 설정도 정해져 있어 인증값을 실제 겨울 운행의 보장치로 볼 수 없어요.",
+      "grade": "confirmed",
+      "evidence": [
+        "2025-05-19 신설 고시는 −7±3℃, SOC 50% 이상, 4시간 이상 주차 조건을 명시해요.",
+        "자동 온도조절 히터는 22℃, 그 외는 최대로 설정해요."
+      ],
+      "sourceUrls": [
+        "https://law.go.kr/LSW/flDownload.do?bylClsCd=200201&flNm=%5B%EB%B3%84%ED%91%9C+3%EC%9D%982%5D+%EC%A0%84%EA%B8%B0%EC%9E%90%EB%8F%99%EC%B0%A8%EC%9D%98+%EC%A0%80%EC%98%A8%ED%99%98%EA%B2%BD+%EC%97%90%EB%84%88%EC%A7%80%EC%86%8C%EB%B9%84%ED%9A%A8%EC%9C%A8+%EB%B0%8F+1%ED%9A%8C+%EC%B6%A9%EC%A0%84+%EC%A3%BC%ED%96%89%EA%B1%B0%EB%A6%AC+%EC%B8%A1%EC%A0%95%EB%B0%A9%EB%B2%95%28%EC%A0%9C4%EC%A1%B0%EC%A0%9C1%ED%95%AD%EC%A0%9C3%ED%98%B8+%EA%B4%80%EB%A0%A8%29&flSeq=152051951"
+      ]
+    },
+    {
+      "claim": "소비자원 실주행 시험은 인증 표본값과 다른 조건의 예시이며, 시험 대상·온도·속도 조건에 따라 결과가 달라져요.",
+      "grade": "confirmed",
+      "evidence": [
+        "2024년 특정 EV6·아이오닉5·모델3 시험에서 18℃ 대비 −1℃ 실주행거리는 각각 22%, 24%, 13% 감소했어요.",
+        "시험은 시속 100~110km 고속주행을 포함한 평가였어요."
+      ],
+      "sourceUrls": [
+        "https://www.kca.go.kr/home/sub.do?menukey=4002&mode=view&no=1003757412&page=15",
+        "https://www.yna.co.kr/amp/view/AKR20241125121900030"
+      ]
+    },
+    {
+      "claim": "겨울철에는 충전기·차량 소켓을 확인하고, 지원 차종이면 충전 중 예약 공조나 배터리 컨디셔닝을 활용할 수 있지만 기능과 전력 소모를 차종별 설명서에서 확인해야 해요.",
+      "grade": "confirmed",
+      "evidence": [
+        "TS는 충전 전 이물질·수분·눈 확인, 충전 중 예약 공조, 열선 사용, 충전소 목적지 설정 후 배터리 컨디셔닝을 안내해요.",
+        "현대 사용설명서는 윈터 모드·배터리 컨디셔닝을 사양 적용 항목으로 한정하고 주행거리 감소 가능성을 알려요."
+      ],
+      "sourceUrls": [
+        "https://main.kotsa.or.kr/portal/bbs/report_view.do?bbscCode=report&bbscSeqn=18770&menuCode=05010200",
+        "https://ownersmanual.hyundai.com/ivi/STD_GEN5W/AVNT/KOR/Korean/010_Settings_ev.html"
+      ]
+    }
+  ],
+  "numbers": [
+    {
+      "what": "보도된 EV3 롱레인지 2WD 17인치 상온 복합 인증거리",
+      "value": "510km",
+      "asOf": "2026-11-08 보도 기준, 지정 사양",
+      "sourceUrl": "https://www.inews24.com/view/2023502"
+    },
+    {
+      "what": "보도된 EV3 롱레인지 2WD 17인치 저온 복합 인증거리",
+      "value": "401km",
+      "asOf": "2026-11-08 보도 기준, 지정 사양",
+      "sourceUrl": "https://www.inews24.com/view/2023502"
+    },
+    {
+      "what": "보도된 EV5 롱레인지 2WD 상온/저온 복합 인증거리",
+      "value": "460km / 374km",
+      "asOf": "2026-11-08 보도 기준, 지정 사양",
+      "sourceUrl": "https://www.inews24.com/view/2023502"
+    },
+    {
+      "what": "보도된 더 뉴 아이오닉5 2WD 롱레인지 19인치 상온/저온 복합 인증거리",
+      "value": "462km / 369km",
+      "asOf": "2026-11-08 보도 기준, 지정 사양",
+      "sourceUrl": "https://www.inews24.com/view/2023502"
+    },
+    {
+      "what": "보도된 모델Y 프리미엄 RWD 상온/저온 복합 인증거리",
+      "value": "400km / 302km",
+      "asOf": "2026-11-08 보도 기준, 지정 사양",
+      "sourceUrl": "https://www.inews24.com/view/2023502"
+    },
+    {
+      "what": "저온 시험 외기온도 조건",
+      "value": "−7±3℃",
+      "asOf": "2025-05-19 신설 고시",
+      "sourceUrl": "https://law.go.kr/LSW/flDownload.do?bylClsCd=200201&flNm=%5B%EB%B3%84%ED%91%9C+3%EC%9D%982%5D+%EC%A0%84%EA%B8%B0%EC%9E%90%EB%8F%99%EC%B0%A8%EC%9D%98+%EC%A0%80%EC%98%A8%ED%99%98%EA%B2%BD+%EC%97%90%EB%84%88%EC%A7%80%EC%86%8C%EB%B9%84%ED%9A%A8%EC%9C%A8+%EB%B0%8F+1%ED%9A%8C+%EC%B6%A9%EC%A0%84+%EC%A3%BC%ED%96%89%EA%B1%B0%EB%A6%AC+%EC%B8%A1%EC%A0%95%EB%B0%A9%EB%B2%95%28%EC%A0%9C4%EC%A1%B0%EC%A0%9C1%ED%95%AD%EC%A0%9C3%ED%98%B8+%EA%B4%80%EB%A0%A8%29&flSeq=152051951"
+    },
+    {
+      "what": "저온 시험 히터 설정",
+      "value": "자동 22℃ 또는 최대로 작동",
+      "asOf": "2025-05-19 신설 고시",
+      "sourceUrl": "https://law.go.kr/LSW/flDownload.do?bylClsCd=200201&flNm=%5B%EB%B3%84%ED%91%9C+3%EC%9D%982%5D+%EC%A0%84%EA%B8%B0%EC%9E%90%EB%8F%99%EC%B0%A8%EC%9D%98+%EC%A0%80%EC%98%A8%ED%99%98%EA%B2%BD+%EC%97%90%EB%84%88%EC%A7%80%EC%86%8C%EB%B9%84%ED%9A%A8%EC%9C%A8+%EB%B0%8F+1%ED%9A%8C+%EC%B6%A9%EC%A0%84+%EC%A3%BC%ED%96%89%EA%B1%B0%EB%A6%AC+%EC%B8%A1%EC%A0%95%EB%B0%A9%EB%B2%95%28%EC%A0%9C4%EC%A1%B0%EC%A0%9C1%ED%95%AD%EC%A0%9C3%ED%98%B8+%EA%B4%80%EB%A0%A8%29&flSeq=152051951"
+    },
+    {
+      "what": "KCA 시험의 상온/저온 대조",
+      "value": "18℃ / −1℃; EV6 22%, 아이오닉5 24%, 모델3 13% 감소",
+      "asOf": "2024-11-26 발표, 당시 시험 대상 사양",
+      "sourceUrl": "https://www.kca.go.kr/home/sub.do?menukey=4002&mode=view&no=1003757412&page=15"
+    }
+  ],
+  "dropped": [
+    {
+      "url": "https://www.newsway.co.kr/news/view?ud=2026021315474947525",
+      "why": "평균 30% 감소 등 넓은 일반화를 뒷받침할 표본·방법이 불명확하고, 본문에 쓸 필요가 없어 채택하지 않았어요."
+    },
+    {
+      "url": "https://www.segyebiz.com/newsView/20260202500161",
+      "why": "실사용 팁은 TS와 제조사 원문에서 확인할 수 있어 보도 인용을 중복하지 않았어요."
+    }
+  ],
+  "cannotCover": [
+    "개별 차량의 실제 한겨울 주행거리를 하나의 감소율로 예측하는 일",
+    "2026-11-20 현재 KENCIS 실시간 표의 네 사양 값을 직접 다시 대조하는 일",
+    "모든 제조사의 겨울 모드 메뉴 경로와 충전 잔량 권고를 공통 규칙으로 정하는 일",
+    "네이버 검색량·경쟁도·월평균 모바일 클릭수(광고 API 자격증명 미설정)"
+  ],
+  "songs": []
+}

@@ -1,0 +1,133 @@
+{
+  "keyword": "주방세제 1종 2종 차이",
+  "categoryId": "life-info",
+  "searchedAt": "2026-11-21",
+  "notes": "예전 1종·2종은 현재 기준의 안전등급이 아니라 세척 대상별 유형명이었어요. 2023년 7월부터 표시가 용도 이름으로 바뀌었고, 제품 포장에서 현재 유형·사용농도·사용방법을 확인하는 글로 정리해요.",
+  "sources": [
+    {
+      "title": "위생용품의 기준 및 규격 (식품의약품안전처고시 제2026-59호)",
+      "url": "https://www.law.go.kr/admRulLsInfoP.do?admRulSeq=2100000283830",
+      "host": "law.go.kr",
+      "tier": "official",
+      "body": "2026년 8월 10일 시행 기준은 세척제를 과일·채소용, 식품용 기구·용기용, 식품 제조·가공장치용으로 나눠요. 과일·채소용은 먹을 수 있는 과일과 채소를 씻는 유형이고, 기구·용기용은 식품을 다루는 기구와 조리기구, 제조·가공장치용은 식품 제조나 가공 장치에 쓰는 유형이에요."
+    },
+    {
+      "title": "위생용품의 표시기준 (식품의약품안전처고시 제2025-34호)",
+      "url": "https://www.law.go.kr/admRulInfoP.do?admRulSeq=2100000259600",
+      "host": "law.go.kr",
+      "tier": "official",
+      "body": "2025년 5월 27일 시행 표시기준은 세척제의 유형, 제품별 표준사용농도, 사용방법을 표시하도록 해요. 과일·채소용 세척제 용액에 농산물을 5분 이상 담가서는 안 되고, 사용 후 음용에 적합한 물로 헹궈야 해요. 흐르는 물에서 과일·채소는 30초 이상, 식기류는 5초 이상 헹구고, 고인 물은 교환하며 2회 이상 씻어요. 제품 유형별로 가능한 교차 용도와 잔류 세척제 제거 기준도 정해요."
+    },
+    {
+      "title": "위생용품 세척제 유형 개정에 따른 표시방법 알림 | 서울지방식품의약품안전청",
+      "url": "https://www.mfds.go.kr/brd/m_824/view.do?company_cd=&company_nm=&itm_seq_1=0&itm_seq_2=0&multi_itm_seq=0&page=85&seq=44969&srchFr=&srchTo=&srchTp=&srchWord=",
+      "host": "mfds.go.kr",
+      "tier": "official",
+      "body": "서울지방식품의약품안전청의 공지는 숫자로 적던 1종·2종·3종 유형이 세척 용도명으로 바뀌고, 2023년 7월 1일부터 시행됐다고 안내해요. 각각 과일·채소용, 식품용 기구·용기용, 식품 제조·가공장치용으로 바뀌었어요."
+    },
+    {
+      "title": "세척제 이젠 1종, 2종, 3종 아니고 세척용도로 말해요 | 서울특별시 보건환경연구원",
+      "url": "https://sihe.seoul.go.kr/archives/553174",
+      "host": "sihe.seoul.go.kr",
+      "tier": "official",
+      "body": "서울시 보건환경연구원은 숫자가 안전성 등급으로 오인될 수 있어 용도를 표시하는 이름으로 바뀌었다고 설명해요. 옛 1종은 과일·채소용, 2종은 식품용 기구·용기용, 3종은 식품 제조·가공장치용으로 대응해요. 2023년 상반기 검사 표본 40건 가운데 1건이 기준 범위를 벗어났다는 결과도 있지만 이 수치는 해당 표본과 시점에만 해당해요."
+    },
+    {
+      "title": "위생용품 표시 확인하고 용도에 맞게 사용하세요 | 대한민국 정책브리핑",
+      "url": "https://www.korea.kr/news/policyNewsView.do?newsId=148926323",
+      "host": "korea.kr",
+      "tier": "official",
+      "body": "식품의약품안전처의 정책 안내는 과일·채소용은 과일·채소에, 식품용 기구·용기용은 그릇·냄비와 자동식기세척기용에 쓰도록 설명해요. 과일·채소용은 그릇이나 조리기구도 씻을 수 있어요."
+    },
+    {
+      "title": "베이킹소다 주방용 세제, 세척성능이 궁금해? | 한국소비자원 소비자시대",
+      "url": "https://www.kca.go.kr/webzine/board/view?div=kca_2104&linkId=293&menuId=MENU00307",
+      "host": "kca.go.kr",
+      "tier": "official",
+      "body": "한국소비자원의 2021년 시험은 베이킹소다 함유 제품 7개를 2020년 7월 구매해 비교한 자료예요. 그 표본에서는 세척 성능과 표준 사용량 기준 비용에 제품 간 차이가 있었어요. 당시 표본을 현재 판매 제품 전반의 순위로 확대할 수는 없어요."
+    },
+    {
+      "title": "1·2·3종 세척제 명칭 과일·채소용 등 용도별로 바뀐다 | 연합뉴스",
+      "url": "https://www.yna.co.kr/view/AKR20210714079800530",
+      "host": "yna.co.kr",
+      "tier": "press",
+      "body": "연합뉴스는 2021년 7월 명칭 변경 계획을 보도하며, 숫자 유형이 안전성 등급으로 오인될 수 있다는 변경 취지를 전했어요. 옛 1·2·3종을 각각 과일·채소용, 식품용 기구·용기용, 식품 제조·가공장치용으로 바꾸는 내용이었어요."
+    }
+  ],
+  "claims": [
+    {
+      "claim": "예전 1종·2종·3종은 세척 대상별 유형을 가리켰고, 2023년 7월 1일부터 용도를 드러내는 이름으로 바뀌었어요.",
+      "grade": "confirmed",
+      "evidence": [
+        "서울지방식품의약품안전청 공지는 1종·2종·3종이 각각 과일·채소용·식품용 기구·용기용·식품 제조·가공장치용으로 바뀌어 2023년 7월 1일 시행됐다고 안내해요.",
+        "서울시 보건환경연구원 자료와 당시 연합뉴스 보도가 숫자 표시가 안전성 등급으로 오인될 수 있던 점과 새 용도명을 설명해요."
+      ],
+      "sourceUrls": [
+        "https://www.mfds.go.kr/brd/m_824/view.do?company_cd=&company_nm=&itm_seq_1=0&itm_seq_2=0&multi_itm_seq=0&page=85&seq=44969&srchFr=&srchTo=&srchTp=&srchWord=",
+        "https://sihe.seoul.go.kr/archives/553174",
+        "https://www.yna.co.kr/view/AKR20210714079800530"
+      ]
+    },
+    {
+      "claim": "현행 세척제 유형은 과일·채소용, 식품용 기구·용기용, 식품 제조·가공장치용이며 안전도 순위가 아니에요.",
+      "grade": "confirmed",
+      "evidence": [
+        "2026년 8월 시행 기준과 현행 표시기준은 세 가지를 사용 대상에 따라 분류해요.",
+        "세 유형 이름은 안전 등급이 아니라 세척 대상 용도를 구별해요."
+      ],
+      "sourceUrls": [
+        "https://www.law.go.kr/admRulLsInfoP.do?admRulSeq=2100000283830",
+        "https://www.law.go.kr/admRulInfoP.do?admRulSeq=2100000259600"
+      ]
+    },
+    {
+      "claim": "과일·채소용은 식기·조리기구에도 사용할 수 있고, 기구·용기용은 과일·채소용으로 바꾸어 쓰지 않아요.",
+      "grade": "confirmed",
+      "evidence": [
+        "현행 표시기준은 과일·채소용을 식품용 기구·용기용 또는 식품 제조·가공장치용으로 사용할 수 있다고 해요.",
+        "식약처 안내는 과일·채소용으로 그릇·냄비도 씻을 수 있다고 설명해요.",
+        "정책 안내 및 표시기준은 기구·용기용을 과일·채소용으로 사용하는 것을 허용하지 않아요."
+      ],
+      "sourceUrls": [
+        "https://www.law.go.kr/admRulInfoP.do?admRulSeq=2100000259600",
+        "https://www.korea.kr/news/policyNewsView.do?newsId=148926323"
+      ]
+    },
+    {
+      "claim": "과일·채소용 세척제를 쓴 경우 5분 이상 담그지 않고, 음용에 적합한 물로 정해진 방법에 따라 헹궈요.",
+      "grade": "confirmed",
+      "evidence": [
+        "표시기준은 과일·채소용 세척제 용액에 과일·채소를 5분 이상 담그지 않도록 하고 있어요.",
+        "흐르는 물은 농산물 30초 이상·식기 5초 이상, 고인 물은 교환하며 2회 이상 씻어요."
+      ],
+      "sourceUrls": ["https://www.law.go.kr/admRulInfoP.do?admRulSeq=2100000259600"]
+    },
+    {
+      "claim": "제품별 표준 사용농도와 방법은 포장 표시를 따라야 하며, 과거의 소수 제품 시험은 현재 전 제품의 성능 순위가 아니에요.",
+      "grade": "confirmed",
+      "evidence": [
+        "표시기준은 제품별 표준사용농도와 사용방법 표시를 규정해요.",
+        "한국소비자원 자료는 2020년 7월 구매한 베이킹소다 함유 제품 7개를 대상으로 한 2021년 시험이에요."
+      ],
+      "sourceUrls": [
+        "https://www.law.go.kr/admRulInfoP.do?admRulSeq=2100000259600",
+        "https://www.kca.go.kr/webzine/board/view?div=kca_2104&linkId=293&menuId=MENU00307"
+      ]
+    }
+  ],
+  "numbers": [
+    {"what": "현행 기준 및 규격 시행일", "value": "2026-08-10", "asOf": "식품의약품안전처고시 제2026-59호", "sourceUrl": "https://www.law.go.kr/admRulLsInfoP.do?admRulSeq=2100000283830"},
+    {"what": "용도명 표시 시행일", "value": "2023-07-01", "asOf": "서울지방식품의약품안전청 공지", "sourceUrl": "https://www.mfds.go.kr/brd/m_824/view.do?company_cd=&company_nm=&itm_seq_1=0&itm_seq_2=0&multi_itm_seq=0&page=85&seq=44969&srchFr=&srchTo=&srchTp=&srchWord="},
+    {"what": "과일·채소를 세척제 용액에 담글 수 없는 시간 기준", "value": "5분 이상 담금 금지", "asOf": "현행 표시기준", "sourceUrl": "https://www.law.go.kr/admRulInfoP.do?admRulSeq=2100000259600"},
+    {"what": "흐르는 물의 헹굼 시간", "value": "과일·채소 30초 이상, 식기류 5초 이상", "asOf": "현행 표시기준", "sourceUrl": "https://www.law.go.kr/admRulInfoP.do?admRulSeq=2100000259600"},
+    {"what": "흐르지 않는 물의 헹굼 횟수", "value": "물을 교환해 2회 이상", "asOf": "현행 표시기준", "sourceUrl": "https://www.law.go.kr/admRulInfoP.do?admRulSeq=2100000259600"},
+    {"what": "한국소비자원 과거 시험 표본", "value": "2020년 7월 구매한 제품 7개", "asOf": "2021년 공개자료", "sourceUrl": "https://www.kca.go.kr/webzine/board/view?div=kca_2104&linkId=293&menuId=MENU00307"}
+  ],
+  "dropped": [],
+  "cannotCover": [
+    "특정 브랜드의 현재 세척력이나 안전성을 추천하거나 순위를 매기지 않아요.",
+    "모든 주방세제의 성분·피부 자극·건강 영향을 일반화하지 않아요.",
+    "제품별 희석량과 사용량은 제품마다 다르므로 개별 수치를 대신 정하지 않아요.",
+    "옛 숫자만 적힌 개별 포장의 유통 여부나 해당 제품의 현재 표시 상태는 확인하지 않았어요."
+  ]
+}

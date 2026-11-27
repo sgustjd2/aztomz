@@ -188,27 +188,44 @@ export async function makeCover(ctx, spec, id) {
   // (2026-09-25 사용자: 분야색 단색 패널(주황 등)이 별로 → 흰 배경·파랑 글씨로 통일)
   const photo = spec.noPhoto ? null : await findCoverPhoto(spec, head, id, hit?.[0]);
   if (photo) console.log(`  · 커버 사진: ${photo.credit}`);
+  const mascotBytes = photo
+    ? await readFile(join(repoRoot, 'backend', 'blog', 'assets', 'mascot', hasScore ? 'caution.png' : 'explain.png'))
+    : null;
+  const mascotData = mascotBytes ? `data:image/png;base64,${mascotBytes.toString('base64')}` : '';
   const PHOTO = () => `
       <style>
         body{background:#fff}
-        .ph{position:absolute;left:0;top:0;width:1200px;height:360px;object-fit:cover}
-        .safe{padding:390px 40px 30px}
-        .tagp{position:absolute;left:40px;top:30px;background:#fff;color:#15171c;font-weight:800;font-size:24px;padding:7px 14px;border-radius:8px;box-shadow:0 2px 10px rgba(0,0,0,.25)}
-        .head{font-size:${hs(76)}px;line-height:1.12;font-weight:900;color:#1a56db;letter-spacing:-.04em}
-        .rest{margin-top:12px;font-size:28px;font-weight:600;color:#4b5a78}
-        .sc{position:absolute;left:40px;top:258px;display:flex;gap:10px}
-        .sc div{background:#fff;border-radius:12px;padding:8px 16px;font-size:18px;font-weight:700;color:#6b7080}
-        .sc b{font-size:40px;font-weight:900;margin-right:6px}
-        .foot{color:#8a93a6}
+        .ph{position:absolute;left:0;top:0;width:1200px;height:372px;object-fit:cover;z-index:0}
+        .safe{padding:0;z-index:1}
+        .tagp{position:absolute;left:32px;top:26px;background:#fff;color:#1a56db;font-weight:800;font-size:22px;padding:9px 16px;border-radius:999px;box-shadow:0 4px 18px rgba(12,30,65,.16);z-index:4}
+        .photo-panel{position:absolute;left:0;top:332px;width:1200px;height:298px;padding:0;background:#fff;border-radius:28px 28px 0 0;box-shadow:0 -12px 34px rgba(20,42,82,.16);overflow:hidden;z-index:2}
+        .photo-accent{position:absolute;left:50%;top:22px;width:72px;height:6px;background:#1a56db;border-radius:999px;transform:translateX(-50%)}
+        .main{position:absolute;left:${(1200 - SAFE) / 2}px;top:${hasScore ? 126 : 82}px;width:${SAFE}px;align-items:center}
+        .head{font-size:${hs(hasScore ? 46 : 60)}px;line-height:1.08;font-weight:900;color:#17233b;letter-spacing:-.045em;max-width:${SAFE}px;text-align:center}
+        .head span{background:linear-gradient(transparent 76%,#dce8ff 76%);box-decoration-break:clone;-webkit-box-decoration-break:clone}
+        .rest{margin-top:10px;font-size:24px;line-height:1.22;font-weight:650;color:#56637b;max-width:${SAFE}px;text-align:center}
+        .sc{position:absolute;left:50%;top:50px;display:flex;gap:9px;transform:translateX(-50%)}
+        .sc div{background:#f5f7fb;border:1px solid #e4eaf3;border-radius:13px;padding:7px 11px;font-size:15px;font-weight:750;color:#647087}
+        .sc b{font-size:27px;font-weight:900;margin-right:4px}
+        .photo-mascot{position:absolute;bottom:8px;width:132px;height:132px;object-fit:contain;filter:drop-shadow(0 4px 8px rgba(21,37,65,.14));z-index:3}
+        .photo-mascot.left{left:24px;transform:scaleX(-1)}
+        .photo-mascot.right{right:24px}
+        .photo-talk{position:absolute;right:18px;bottom:158px;padding:9px 14px;background:#fff4dc;border:2px solid #20283a;border-radius:20px 22px 18px 19px;color:#20283a;font-size:17px;line-height:1;font-weight:800;transform:rotate(1deg);z-index:4}
+        .photo-talk:after{content:"";position:absolute;right:24px;bottom:-7px;width:10px;height:10px;background:#fff4dc;border-right:2px solid #20283a;border-bottom:2px solid #20283a;transform:rotate(45deg)}
+        .photo-panel .foot{position:absolute;left:50%;bottom:12px;margin:0;color:#7a8498;font-size:15px;transform:translateX(-50%)}
       </style>
       <img class="ph" src="${photo.url}">
-      <div class="safe">
-        ${tag ? `<div class="tagp">${tag}</div>` : ''}
+      ${tag ? `<div class="tagp">${tag}</div>` : ''}
+      <div class="photo-panel">
+        <div class="photo-accent"></div>
         ${hasScore ? `<div class="sc">${Number.isFinite(spec.ad) ? `<div><b style="color:#e5484d">${spec.ad}</b>광고 의심도</div>` : ''}${Number.isFinite(spec.trust) ? `<div><b style="color:#12a150">${spec.trust}</b>후기 신뢰도</div>` : ''}</div>` : ''}
-        <div class="main">
-          <div class="head">${esc(head)}</div>
+        <div class="main ${hasScore ? 'score-main' : ''}">
+          <div class="head"><span>${esc(head)}</span></div>
           ${rest ? `<div class="rest">${esc(rest)}</div>` : ''}
         </div>
+        <div class="photo-talk">같이 봐요</div>
+        <img class="photo-mascot left" src="${mascotData}" alt="">
+        <img class="photo-mascot right" src="${mascotData}" alt="">
         ${FOOT}
       </div>`;
 
@@ -1075,7 +1092,15 @@ async function publish() {
     //    티스토리가 돌려준 CDN 마크업을 본문 <!--COVER--> 자리에 끼워 넣는다.
     let coverMarkup = '';
     if (meta.coverSpec) {
-      const coverFile = await makeCover(ctx, meta.coverSpec, id);
+      const cachedCover = join(outDir, `${id}.cover.png`);
+      let coverFile;
+      try {
+        coverFile = await makeCover(ctx, meta.coverSpec, id);
+      } catch (err) {
+        if (!existsSync(cachedCover)) throw err;
+        console.warn(`  ⚠ 커버를 다시 그리지 못해 기존 커버 PNG를 사용합니다: ${err.message.split('\n')[0]}`);
+        coverFile = cachedCover;
+      }
       await page.bringToFront();
       await page.evaluate(() => (window.tinymce.activeEditor || window.tinymce.editors[0]).setContent(''));
       const uploaded = await uploadCover(page, coverFile);

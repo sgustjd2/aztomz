@@ -10,7 +10,10 @@
       → '정확/약함'(핵심어 1종+)인 출처만 통과로 남긴다.
    3) 통과 출처가 1개 이상인 항목만 trends.json 에 추가. 0개면 '보류'(게시 안 함).
       · images 가 비어 있으면 검증 통과 출처의 og:image 를 썸네일로 자동 주입(추가 fetch 없이 본문 재사용).
-      · shops(파는 가게 목록)가 있으면 각 가게 URL 상태점검 → 죽은 링크만 제거(이름·지역은 유지).
+      · shops(파는 가게 목록)가 있으면 가게마다(최대 8곳) URL 상태점검 → 죽은 링크·가게명이 본문에 없는 링크 제거,
+        rep·note 는 가게별로 근거 대조(출처 + 그 가게 링크 본문) → 근거 없는 문장만 지운다(이름·지역 유지, 항목은 보류 안 함).
+      · 신뢰분석 항목은 출처 본문에서 광고 신호(협찬 고지·같은 문장·업체 사진·작성 시기 몰림·한 작성자)를 찾아
+        ad·trust·라벨·근거를 조정한다(lib/ad-signals.mjs).
    4) refresh.mjs 로 trends.js 재생성.
    5) git pull --rebase → add → commit → push (Vercel 자동 배포). (--no-git 면 생략)
 
@@ -39,6 +42,7 @@ import { extract as ddgsExtract } from './lib/websearch.mjs';
 import { validateTrends } from './validate-trends.mjs';
 import { acquireGitLock } from './lib/git-lock.mjs';
 import { groundingCheck } from './lib/grounding.mjs';
+import { adSignals, applyAdSignals, signalLine } from './lib/ad-signals.mjs';
 import { appendRun, enqueueHeld, loadQueue } from './lib/pipeline-log.mjs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
@@ -116,30 +120,52 @@ async function httpStatus(url) {
   } catch { return 'ERR'; }
 }
 
-// 🏪 가게(shops) 검증: 모양 교정 + 죽은 URL 제거(이름·지역·메모는 유지).
-//    LLM이 지어낸 가게 링크가 사이트에 남지 않게 — src와 같은 신뢰 철칙(추측 URL 금지) 적용.
-//    같은 URL은 한 번만 점검(캐시). 최대 6곳.
-async function verifyShops(cand) {
-  if (!Array.isArray(cand.shops) || !cand.shops.length) { delete cand.shops; return; }
-  const clean = [], cache = new Map();
+// 🏪 가게(shops) 검증: 모양 교정 + 링크·서술 근거 확인(이름·지역은 유지).
+//    LLM이 지어낸 가게 링크·평판이 사이트에 남지 않게 — src와 같은 신뢰 철칙(추측 URL 금지) 적용.
+//    · url: 404/410/연결 실패 → 제거. 본문이 읽히는데 가게명이 없으면(다른 가게 글) → 제거. 본문을 못 읽으면(차단) 유지.
+//    · rep·note: 항목 출처 본문 + 그 가게 링크 본문으로 근거 대조(lib/grounding). 출처 밖 수치·확산어가 있으면 그 문장만 지운다.
+//      (2026-11-27 전: 가게 메모 한 줄의 '웨이팅'이 항목 전체를 보류시켜, 가게를 많이 넣을수록 손해였다.)
+//    같은 URL은 한 번만 점검(캐시). 같은 이름은 한 번만. 최대 8곳(2026-11-27, 6→8 — 수집 목표 5~8곳).
+const MAX_SHOPS = 8;
+const nameKey = s => String(s || '').replace(/[\s·()\[\]'"]/g, '').toLowerCase();
+async function verifyShops(cand, srcBodies) {
+  if (!Array.isArray(cand.shops) || !cand.shops.length) { delete cand.shops; return null; }
+  const clean = [], cache = new Map(), names = new Set();
+  const stat = { input: cand.shops.length, kept: 0, urlDead: 0, urlOff: 0, textDropped: 0 };
   for (const sh of cand.shops) {
-    if (!sh || !sh.name) continue;
+    if (!sh || !sh.name || names.has(nameKey(sh.name))) continue;
+    names.add(nameKey(sh.name));
     const out = { name: String(sh.name).trim() };
     if (sh.rep) out.rep = String(sh.rep).trim();    // 맛집 평판 한 줄(예: "성수 젤라또 맛집")
     if (sh.area) out.area = String(sh.area).trim();
     if (sh.note) out.note = String(sh.note).trim();
     const url = sh.url && String(sh.url).trim();
+    let shopBody = '';
     if (url && /^https?:\/\//.test(url)) {
-      let st = cache.get(url);
-      if (st === undefined) { st = await httpStatus(url); cache.set(url, st); }
-      if (st === 404 || st === 410 || st === 'ERR') console.log(`   🏪✋ 죽은 가게링크 제거(${st}) ${out.name}`);
-      else out.url = url;
+      let c = cache.get(url);
+      if (c === undefined) {
+        const st = await httpStatus(url);
+        c = { st, body: (st === 404 || st === 410 || st === 'ERR') ? '' : extract(url) };
+        cache.set(url, c);
+      }
+      const k = nameKey(out.name);
+      if (c.st === 404 || c.st === 410 || c.st === 'ERR') { stat.urlDead++; console.log(`   🏪✋ 죽은 가게링크 제거(${c.st}) ${out.name}`); }
+      else if (c.body.length >= 80 && !nameKey(c.body).includes(k) && !(k.length > 4 && nameKey(c.body).includes(k.slice(0, 4)))) {
+        stat.urlOff++; console.log(`   🏪✋ 가게명 없는 링크 제거 ${out.name}`);
+      } else { out.url = url; shopBody = c.body; }
+    }
+    for (const f of ['rep', 'note']) {
+      if (!out[f]) continue;
+      const g = groundingCheck({ verdict: out[f] }, [], [...srcBodies, shopBody].filter(Boolean));
+      if (!g.pass) { stat.textDropped++; console.log(`   🏪📏 ${out.name} ${f} 삭제 — ${g.block.join(', ')}`); delete out[f]; }
     }
     clean.push(out);
-    if (clean.length >= 6) break;
+    if (clean.length >= MAX_SHOPS) break;
   }
-  if (clean.length) { cand.shops = clean; console.log(`   🏪 가게 ${clean.length}곳`); }
+  stat.kept = clean.length;
+  if (clean.length) { cand.shops = clean; console.log(`   🏪 가게 ${clean.length}곳 (입력 ${stat.input})`); }
   else delete cand.shops;
+  return stat;
 }
 
 function sh(cmd, a) {
@@ -184,7 +210,7 @@ function record(outcome) {
     date: TODAY, at: new Date().toISOString(), mode: APPROVED ? 'approved' : 'auto', outcome,
     candidates: candidateCount, passed: published.length, published: onSite ? published.length : 0,
     held: held.length, duplicate: skipped.length,
-    publishedItems: onSite ? published.map(t => ({ id: t.id, title: t.title, cat: t.cat, sources: t.src.length })) : [],
+    publishedItems: onSite ? published.map(t => ({ id: t.id, title: t.title, cat: t.cat, sources: t.src.length, shops: (t.shops || []).length })) : [],
     heldItems: held.map(({ id, title, code: c, reason }) => ({ id, title, code: c, reason })),
   };
   if (!DRY) {
@@ -238,6 +264,8 @@ for (const cand of candidates) {
     if (pass) { good.push([name, url]); goodBodies.push(body); for (const u of ogImages(body)) if (!ogImgs.includes(u)) ogImgs.push(u); }
   }
 
+  // 🏪 가게 목록은 항목 근거 대조 전에 가게별로 정리한다 — 근거 없는 가게 메모는 그 줄만 지우고 항목은 살린다.
+  if (good.length >= 1 && !APPROVED) await verifyShops(cand, goodBodies);
   // 📏 근거 대조(2026-10-08~): 출처는 주제를 다루는데 서술이 출처 밖 수치·매체·확산 표현을 담으면 보류.
   //    출처-주제 관련성만 보던 게이트가 '13번 출구'·'체인 전국 확장'·'170만 건' 같은 서술을 통과시킨 반성(전수 감사 182중 139).
   const gr = good.length ? groundingCheck(cand, good.map(([n]) => n), goodBodies) : { pass: true, block: [], warn: [] };
@@ -258,7 +286,14 @@ for (const cand of candidates) {
     cand.analyzedAt = TODAY;
     if (!cand.coverCat) cand.coverCat = { 디저트:'cat-dessert', 카페:'cat-cafe', 베이커리:'cat-bakery',
       '카페·베이커리':'cat-cafe', 식당:'cat-food', 음료:'cat-drink', 패션:'cat-fashion', 신조어:'cat-slang' }[cand.cat] || 'cat-trend';
-    await verifyShops(cand);   // 🏪 가게 목록 검증(죽은 링크 제거, 이름·지역 유지)
+    if (APPROVED) await verifyShops(cand, goodBodies);   // 사람 승인분도 죽은 가게링크는 정리
+    // 📢 광고 신호(신뢰분석만): 읽힌 출처 본문으로 ad·trust·라벨·근거를 조정한다.
+    if (cand.type === '신뢰분석' && typeof cand.ad === 'number' && typeof cand.trust === 'number') {
+      const sig = adSignals(cand, good.map(([name, url], i) => ({ name, url, body: goodBodies[i] })), good.map(([, u]) => u));
+      const r = applyAdSignals(cand, sig, TODAY);
+      console.log(r.changed ? `   📢 판정 조정[${signalLine(sig)}]: 광고 ${r.before.ad}→${r.after.ad} · 신뢰 ${r.before.trust}→${r.after.trust}${r.before.label !== r.after.label ? ` · 라벨 → '${r.after.label}'` : ''}`
+        : `   📢 광고 신호: ${signalLine(sig) || '없음'}`);
+    }
     sanitizeItem(cand);   // recs/필수필드 스키마 자동 교정(봇 실수 방지)
     published.push(cand);
     haveIds.add(cand.id); haveTitles.add(normTitle(cand.title));

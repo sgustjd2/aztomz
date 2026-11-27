@@ -1,0 +1,160 @@
+{
+  "keyword": "욕실환풍기 청소 주기와 안전한 관리법",
+  "categoryId": "life-info",
+  "notes": "욕실환풍기의 청소 간격은 제품별 설명서를 따라야 해요. 확인한 힘펠 FAQ와 한일전기 일부 모델 안내는 2~3개월을 제시하지만, 힘펠의 새 아파트 문답에는 3~4개월 주기도 있어요.\n전원 차단, 본체·모터·배선에 물을 대지 않는 원칙, 해당 제품 설명서가 허용한 커버 청소까지만 다뤄요.\n모든 제품의 교체 연한이나 공통 청소 주기는 확인되지 않았어요. 키워드 오름폭은 확인할 수 없어요.",
+  "sources": [
+    {
+      "title": "자주묻는 질문 — 환풍기 청소방법·새 아파트 입주 후 관리·수명",
+      "url": "https://dev.himpelmall.com/mall/cscenter/faq.php",
+      "host": "dev.himpelmall.com",
+      "tier": "official",
+      "body": "힘펠 공식 FAQ 검색결과에는 환풍기 소음이 커졌을 때의 관리 질문과 새 아파트 입주 후 청소 안내가 함께 있다. 오래된 집이 아니고 소음이 커진 경우에는 청소가 도움이 될 수 있으나, 오래 사용했고 청소 후에도 나아지지 않으면 모터 수명이나 교환을 고려하라고 답한다. 새 아파트 입주 전 시공 후 공사 먼지가 쌓일 수 있어 사용 전 청소를 권하고, 그릴 커버를 분리해 내부를 진공청소기로 정리한 뒤 3~4개월에 한 번 정기 청소하라는 내용이 보인다. 이 빈도는 해당 FAQ의 새 아파트 관리 문답이지 모든 제품·사용 환경에 적용되는 교체 주기라고 볼 수 없다. 직접 페이지 열기는 시간 초과됐으나 검색 결과에 공식 FAQ 답변 본문이 노출됐다."
+    },
+    {
+      "title": "자주묻는 질문 — 환풍기 청소 방법",
+      "url": "https://dev.himpelmall.com/mall/cscenter/faq.php?ps_page=2",
+      "host": "dev.himpelmall.com",
+      "tier": "official",
+      "body": "힘펠 공식 FAQ의 제품 청소 문답은 임펠러와 그릴에 먼지나 기름 성분의 오염이 생길 수 있어 2~3개월 간격으로 주기적인 청소를 제안한다. 안전을 위해 청소 전 주 전원을 차단하고, 장갑을 착용하며, 본체 안으로 물이 들어가지 않게 주의하라고 안내한다. 분리형 그릴 커버는 약 40℃ 온수와 중성세제로 씻는 방법을 적었지만, 내부 날개와 본체를 다루는 세부 방법은 모델 구조에 따라 달라질 수 있다. 본문은 팬 청소가 정상 회전하지 않거나 먼지·기름 오염이 있을 때 필요한 손질이라고 덧붙인다. 페이지 직접 열기는 타임아웃됐으며 공식 사이트 검색결과에 노출된 FAQ 답변을 토대로 기록했다."
+    },
+    {
+      "title": "욕실용 환풍기 EK-91ST/146ST·EK-120ST/130ST·EKS-81ST/82ST 사용설명서",
+      "url": "https://www.hanilelec.co.kr/post_file_download.cm?c=YTo1OntzOjEwOiJib2FyZF9jb2RlIjtzOjIyOiJiMjAyNTEyMThjYWIwNmYxOTQyY2NjIjtzOjk6InBvc3RfY29kZSI7czoyMjoicDIwMjUxMjI0ZTVkZjAxYTkyMmIxZiI7czo5OiJmaWxlX2NvZGUiO3M6MjI6InAyMDI1MTIyNGJjY2IxMGI5NDgyZGYiO3M6MTk6InBvc3RfZG93bmxvYWRfdG9rZW4iO3M6MTM6IjY5Yzg4NmZlMzE1OGYiO3M6MTE6Im1lbWJlcl9jb2RlIjtOO30%3D",
+      "host": "hanilelec.co.kr",
+      "tier": "official",
+      "body": "한일전기 사용설명서는 EK-91ST/146ST, EK-120ST/130ST, EKS-81ST/82ST 욕실용 환풍기에 적용되는 안내다. 먼지나 유연이 쌓이기 쉬운 그릴은 2~3개월마다 청소하라고 적혀 있다. 청소 전 플러그를 뽑고 전원 차단기를 내리며, 모터·스위치 같은 전기 부품에 물이 묻지 않게 하라고 경고한다. 가구용 합성세제나 중성세제를 40℃ 온수에 풀어 부드러운 천으로 닦는 설명도 있다. 사용설명서가 지정한 적용 모델을 넘어 모든 욕실 환풍기에 같은 주기나 세척 방법을 일반화하지 않는다. 문서에는 세척·보관 주의사항, 각 부 명칭, 설치 관련 주의사항도 포함되어 있으며 PDF 본문을 열어 대조했다."
+    },
+    {
+      "title": "‘샤워 후 환풍기 얼마나 켜둘까’…욕실 곰팡이 막는 환풍 법칙",
+      "url": "https://health.chosun.com/site/data/html_dir/2026/10/14/2026101402711.html",
+      "host": "health.chosun.com",
+      "tier": "press",
+      "body": "헬스조선은 2026년 10월 15일 욕실 환풍기 사용과 세척을 다루며, 캐나다 보건부의 실내 습도 권고와 외국 전문가 의견을 함께 소개한다. 기사에서 인용한 미국 냉난방 공조 면허 보유자는 환풍기를 최소 6개월마다 세척하고, 매일 장시간 뜨거운 샤워를 하는 경우 3~4개월 간격으로 청소하는 방안을 말했다. 전원을 끈 뒤 진공청소기 브러시나 마른 솔로 날개와 주변 먼지를 제거하고, 분리한 덮개는 비눗물로 닦아 완전히 말리는 순서도 언급한다. 이 내용은 외국 전문가를 인용한 보도이며 국내 모든 제품의 제조사 지침이나 공통 기준으로 제시된 것은 아니다. 기사에는 샤워 뒤 환풍기 작동 시간 및 곰팡이 관리 정보도 별도로 담겨 있다."
+    },
+    {
+      "title": "요즘 열일하는 욕실 환풍기…샤워 끝나도 15분 이상 틀어야",
+      "url": "https://lady.khan.co.kr/living/article/202608121444001",
+      "host": "lady.khan.co.kr",
+      "tier": "press",
+      "body": "레이디경향의 2026년 8월 생활 기사는 욕실 환풍기의 작동 시점과 습기 배출, 청소 필요성을 설명한다. 샤워 중 계속 가동하고 샤워 뒤 약 15~30분 더 작동시키는 방법을 전문가 의견으로 소개하지만, 이를 개별 가정의 완전한 환기 시간을 보증하는 수치로 말하지 않는다. 팬 소리가 난다는 것만으로 충분한 공기 배출을 입증할 수 없고, 그릴과 커버에 먼지가 쌓이지 않도록 주기적으로 청소할 필요가 있다고 덧붙인다. 환풍기가 빨아들인 습한 공기가 외부로 배출되는 설치인지 살펴야 한다는 내용도 있다. 이 보도에는 모델별 청소 간격이나 청소 시 분해 허용 범위가 제시되지 않았으므로 제조사 사용설명서를 대체하지 않는다."
+    }
+  ],
+  "claims": [
+    {
+      "claim": "확인한 제조사 문서가 제시하는 욕실 환풍기 청소 주기는 모두에게 적용되는 단일 값이 아니에요. 힘펠 제품 청소 FAQ와 한일전기 일부 모델 설명서는 2~3개월 간격을 제시해요.",
+      "grade": "confirmed",
+      "evidence": [
+        "힘펠 FAQ는 임펠러·그릴을 2~3개월마다 청소하도록 안내해요.",
+        "한일전기 EK-91ST/146ST·EK-120ST/130ST·EKS-81ST/82ST 사용설명서는 지정 모델의 그릴을 2~3개월마다 청소하도록 안내해요.",
+        "한일 안내는 지정된 모델군에 적용되므로 모든 환풍기의 공통 주기로 확대할 수 없어요."
+      ],
+      "sourceUrls": [
+        "https://dev.himpelmall.com/mall/cscenter/faq.php?ps_page=2",
+        "https://www.hanilelec.co.kr/post_file_download.cm?c=YTo1OntzOjEwOiJib2FyZF9jb2RlIjtzOjIyOiJiMjAyNTEyMThjYWIwNmYxOTQyY2NjIjtzOjk6InBvc3RfY29kZSI7czoyMjoicDIwMjUxMjI0ZTVkZjAxYTkyMmIxZiI7czo5OiJmaWxlX2NvZGUiO3M6MjI6InAyMDI1MTIyNGJjY2IxMGI5NDgyZGYiO3M6MTk6InBvc3RfZG93bmxvYWRfdG9rZW4iO3M6MTM6IjY5Yzg4NmZlMzE1OGYiO3M6MTE6Im1lbWJlcl9jb2RlIjtOO30%3D"
+      ]
+    },
+    {
+      "claim": "힘펠 공식 FAQ에는 새 아파트 입주 뒤 공사 먼지가 쌓인 환풍기의 청소를 3~4개월 간격으로 하라는 문답도 있어요. 이는 해당 입주 상황의 관리 안내예요.",
+      "grade": "confirmed",
+      "evidence": [
+        "힘펠 FAQ는 새 아파트 입주 전 환풍기가 시공 뒤 오래 방치될 수 있다고 설명하고, 그릴 커버를 분리해 내부를 청소한 다음 3~4개월마다 정기 청소하라고 안내해요.",
+        "이 숫자는 일반 제품의 보편적 주기나 교체 권고가 아니에요."
+      ],
+      "sourceUrls": [
+        "https://dev.himpelmall.com/mall/cscenter/faq.php"
+      ]
+    },
+    {
+      "claim": "청소 방법도 모델 설명서가 우선이에요. 확인한 한일전기 설명서는 청소 전 플러그와 차단기를 내리고, 모터·스위치에 물을 묻히지 말며, 지정 모델의 그릴은 부드러운 천과 40℃ 온수에 푼 중성세제로 닦도록 해요.",
+      "grade": "confirmed",
+      "evidence": [
+        "한일전기 사용설명서는 청소 전 전원플러그를 뽑고 전원차단기를 내리라고 안내해요.",
+        "모터·스위치 등 전기 부품에 물이 묻지 않도록 하고, 지정된 세제로 그릴을 닦으라고 해요.",
+        "힘펠 FAQ도 청소 전 주 전원 차단과 본체 안으로 물이 들어가지 않게 할 것을 안내해요."
+      ],
+      "sourceUrls": [
+        "https://www.hanilelec.co.kr/post_file_download.cm?c=YTo1OntzOjEwOiJib2FyZF9jb2RlIjtzOjIyOiJiMjAyNTEyMThjYWIwNmYxOTQyY2NjIjtzOjk6InBvc3RfY29kZSI7czoyMjoicDIwMjUxMjI0ZTVkZjAxYTkyMmIxZiI7czo5OiJmaWxlX2NvZGUiO3M6MjI6InAyMDI1MTIyNGJjY2IxMGI5NDgyZGYiO3M6MTk6InBvc3RfZG93bmxvYWRfdG9rZW4iO3M6MTM6IjY5Yzg4NmZlMzE1OGYiO3M6MTE6Im1lbWJlcl9jb2RlIjtOO30%3D",
+        "https://dev.himpelmall.com/mall/cscenter/faq.php?ps_page=2"
+      ]
+    },
+    {
+      "claim": "헬스조선은 외국 전문가가 말한 최소 6개월 간격과 고빈도 사용 시 3~4개월 간격을 소개하지만, 국내 모든 모델의 공식 주기로 적용할 수는 없어요.",
+      "grade": "reported",
+      "evidence": [
+        "2026-10-15 기사에서 인용한 미국 냉난방 공조 전문가의 권고는 최소 6개월마다, 매일 장시간 뜨거운 샤워를 하면 3~4개월마다예요.",
+        "해당 보도는 국내 특정 환풍기 모델 사용설명서가 아니며, 제조사 안내와 적용 범위가 달라요."
+      ],
+      "sourceUrls": [
+        "https://health.chosun.com/site/data/html_dir/2026/10/14/2026101402711.html"
+      ]
+    },
+    {
+      "claim": "환풍기 작동 시간과 물리적 청소 주기는 서로 다른 질문이에요. 레이디경향은 샤워 뒤 약 15~30분 추가 가동을 전문가 의견으로 소개하지만, 모델별 청소 간격은 제시하지 않아요.",
+      "grade": "reported",
+      "evidence": [
+        "레이디경향 2026-08-12 보도는 샤워 뒤 약 15~30분 작동을 권하는 전문가 의견을 소개해요.",
+        "같은 글은 그릴·커버의 주기적 청소를 언급하지만 구체적인 청소 간격은 제시하지 않아요."
+      ],
+      "sourceUrls": [
+        "https://lady.khan.co.kr/living/article/202608121444001"
+      ]
+    },
+    {
+      "claim": "확인한 자료에서 모든 욕실 환풍기에 적용할 교체 연한은 찾지 못했어요. 힘펠은 자사 환풍기 수명이 사용환경·시간·방법에 따라 달라 평균 기간을 지정하기 어렵다고 답해요.",
+      "grade": "confirmed",
+      "evidence": [
+        "힘펠 FAQ는 자사 환풍기 수명이 1년부터 5년 이상까지 사용환경·사용시간·사용방법에 따라 달라 평균이라고 할 지정기간이 없다고 설명해요.",
+        "이 답변도 힘펠 제품의 안내이므로 다른 브랜드 전체의 수명 데이터로 일반화할 수 없어요."
+      ],
+      "sourceUrls": [
+        "https://dev.himpelmall.com/mall/cscenter/faq.php"
+      ]
+    }
+  ],
+  "numbers": [
+    {
+      "what": "힘펠 청소 FAQ의 임펠러·그릴 청소 간격",
+      "value": "2~3개월",
+      "asOf": "공식 FAQ 확인 2026-11-21; FAQ 게시일 미표시",
+      "sourceUrl": "https://dev.himpelmall.com/mall/cscenter/faq.php?ps_page=2"
+    },
+    {
+      "what": "한일전기 지정 욕실 환풍기 모델군의 그릴 청소 간격",
+      "value": "2~3개월",
+      "asOf": "사용설명서 열람 2026-11-21; 판쇄일 확인 불가",
+      "sourceUrl": "https://www.hanilelec.co.kr/post_file_download.cm?c=YTo1OntzOjEwOiJib2FyZF9jb2RlIjtzOjIyOiJiMjAyNTEyMThjYWIwNmYxOTQyY2NjIjtzOjk6InBvc3RfY29kZSI7czoyMjoicDIwMjUxMjI0ZTVkZjAxYTkyMmIxZiI7czo5OiJmaWxlX2NvZGUiO3M6MjI6InAyMDI1MTIyNGJjY2IxMGI5NDgyZGYiO3M6MTk6InBvc3RfZG93bmxvYWRfdG9rZW4iO3M6MTM6IjY5Yzg4NmZlMzE1OGYiO3M6MTE6Im1lbWJlcl9jb2RlIjtOO30%3D"
+    },
+    {
+      "what": "한일전기 설명서에서 지정한 세제물의 온도",
+      "value": "40℃ 온수에 합성세제 또는 중성세제를 희석",
+      "asOf": "사용설명서 열람 2026-11-21",
+      "sourceUrl": "https://www.hanilelec.co.kr/post_file_download.cm?c=YTo1OntzOjEwOiJib2FyZF9jb2RlIjtzOjIyOiJiMjAyNTEyMThjYWIwNmYxOTQyY2NjIjtzOjk6InBvc3RfY29kZSI7czoyMjoicDIwMjUxMjI0ZTVkZjAxYTkyMmIxZiI7czo5OiJmaWxlX2NvZGUiO3M6MjI6InAyMDI1MTIyNGJjY2IxMGI5NDgyZGYiO3M6MTk6InBvc3RfZG93bmxvYWRfdG9rZW4iO3M6MTM6IjY5Yzg4NmZlMzE1OGYiO3M6MTE6Im1lbWJlcl9jb2RlIjtOO30%3D"
+    },
+    {
+      "what": "힘펠 새 아파트 입주 후 정기 청소 안내",
+      "value": "3~4개월마다 1회",
+      "asOf": "공식 FAQ 확인 2026-11-21; FAQ 게시일 미표시",
+      "sourceUrl": "https://dev.himpelmall.com/mall/cscenter/faq.php"
+    },
+    {
+      "what": "헬스조선이 인용한 외국 전문가의 욕실 환풍기 청소 간격",
+      "value": "최소 6개월, 매일 장시간 뜨거운 샤워를 하는 경우 3~4개월",
+      "asOf": "2026-10-15 보도",
+      "sourceUrl": "https://health.chosun.com/site/data/html_dir/2026/10/14/2026101402711.html"
+    },
+    {
+      "what": "힘펠이 안내한 자사 환풍기 수명 범위",
+      "value": "1년부터 5년 이상까지 (평균 지정기간 없음)",
+      "asOf": "공식 FAQ 확인 2026-11-21; 제품별 적용 범위 주의",
+      "sourceUrl": "https://dev.himpelmall.com/mall/cscenter/faq.php"
+    }
+  ],
+  "dropped": [],
+  "cannotCover": [
+    "모든 제조사와 모델에 통하는 단일 청소 주기·교체 연한·교체 비용",
+    "팬 본체를 천장에서 내리거나 덕트와 배선을 분해하는 방법",
+    "공기 흐름·습도 제거량을 수치로 판정하는 자가시험",
+    "샤워 뒤 환풍기 운전 시간을 국내 모든 주택의 보편 기준으로 권하는 일",
+    "힘펠 FAQ 페이지의 직접 원문 열람은 시간 초과되어 검색 결과에 표시된 공식 FAQ 답변만 확인한 범위"
+  ]
+}

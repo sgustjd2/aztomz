@@ -1,0 +1,138 @@
+{
+  "keyword": "자동차 와이퍼 교체 시기와 교체 판단 신호",
+  "categoryId": "life-info",
+  "notes": "현대 DN8 2024와 기아 사용 설명서는 고정된 월별 교체 주기보다 오염 제거 후 남는 이상 증상과 점검을 안내해요.\nRenault Scenic 설명서에는 해당 차종의 참고 주기로 약 1년이 나오며, 정비업계의 6~12개월 조언은 기사에 소개된 전문가 의견으로 한정해요.\n독자에게는 먼저 세척·해동하고, 증상이 계속되면 차종별 설명서와 서비스 점검으로 교체 여부를 판단하도록 안내할 수 있어요.",
+  "sources": [
+    {
+      "title": "블레이드 점검 — 현대자동차 DN8 2024 사용 설명서",
+      "url": "https://ownersmanual.hyundai.com/full_webhelp/DN8/2024/ko_KR/id4b106f77f9f.html",
+      "host": "ownersmanual.hyundai.com",
+      "body": "앞유리나 와이퍼 블레이드가 벌레, 수액, 자동세차 왁스 등으로 오염되면 닦임 효율이 떨어지고 마찰음이 날 수 있다고 안내해요. 잘 닦이지 않으면 유리와 고무를 깨끗한 물과 수건으로 닦고, 비눗물·합성세제나 용제는 쓰지 말라고 해요. 유리나 블레이드가 얼었으면 먼저 완전히 녹여야 해요. 오염물을 제거한 뒤에도 줄이 남거나 깨끗하게 닦이지 않음, 소음·떨림, 잔물, 일부 접촉 불량, 와이퍼 암 장력 저하가 있으면 서비스센터 점검을 권해요. 페이지에는 일률적인 월별 교체 주기가 없어요.",
+      "tier": "official"
+    },
+    {
+      "title": "정기 점검 — 기아 와이퍼 블레이드 점검 및 교환 안내",
+      "url": "https://ownersmanual.kia.com/docview/download/pdf/8dc2efef-6b46-4915-836b-ff5a26e8f59f/OM_FULL",
+      "host": "ownersmanual.kia.com",
+      "body": "벌레·수액·왁스 등으로 유리나 와이퍼가 오염되면 효율이 떨어지고 마찰음이 날 수 있어, 깨끗한 물과 수건으로 유리와 고무 표면을 닦으라고 안내해요. 비눗물·합성세제·용제는 고무 경화와 떨림·소음을 일으킬 수 있어 사용하지 말라고 해요. 오염을 닦은 뒤에도 줄이 남거나 깨끗하지 않음, 소음·떨림, 잔물, 변형으로 부분 접촉, 장력 약화 등이 있으면 서비스센터에 상담하라고 적혀 있어요. 와이퍼 규격은 차량별로 다르므로 교체 전에 해당 차의 사양을 확인해야 해요. 얼어붙은 상태에서 작동하지 않도록 해요.",
+      "tier": "official"
+    },
+    {
+      "title": "와이퍼 — Renault Scenic 사용 설명서",
+      "url": "https://www.user-manual.renault.com/ko/%EC%B0%A8%EB%9F%89%EC%97%90-%EB%8C%80%ED%95%9C-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%B3%B4/waipeo",
+      "host": "user-manual.renault.com",
+      "body": "페이지는 Renault Scenic을 대상으로 해요. 블레이드와 앞유리를 정기적으로 청소하고, 유리가 마른 상태에서는 와이퍼를 작동하지 않도록 해요. 서리나 눈이 낀 상태에서는 유리와 블레이드가 붙어 있지 않은지 확인하고 먼저 장애물을 치우라고 해요. 와이퍼 블레이드 상태와 수명은 관리 방법에 달려 있으며, 성능이 떨어지기 시작하면 교체하라고 안내해요. 이 페이지는 참고 주기로 약 1년에 한 번을 덧붙여요. 이는 해당 차종 설명서의 안내 범위예요.",
+      "tier": "official"
+    },
+    {
+      "title": "비오고 덥고…휴가 출발전 타이어·와이퍼·배터리 점검은 필수 — 한국경제",
+      "url": "https://www.hankyung.com/article/2024073084371",
+      "host": "www.hankyung.com",
+      "body": "2024년 여름 휴가철 차량 관리 기사에서 보쉬카서비스 자동차 정비 전문가들은 와이퍼를 6개월에서 1년 사이에 한 번 교체하는 것이 좋다고 조언해요. 이 숫자는 기사에 소개된 정비 전문가의 조언이며 제조사 공통 규정으로 제시된 것은 아니에요.",
+      "tier": "press"
+    },
+    {
+      "title": "보쉬 ‘韓운전자, 정비사 권유해야 와이퍼 교체…7~12개월 주기’ — 매일경제",
+      "url": "https://www.mk.co.kr/news/business/9101556",
+      "host": "www.mk.co.kr",
+      "body": "2019년 매일경제 기사는 보쉬 설문과 관계자 조언을 소개해요. 한국·말레이시아·태국·호주 4개국 2,405명 조사에서 한국 응답자 34.9%는 정비사가 권할 때 교체를 검토한다고 답했어요. 기사에 실린 보쉬 관계자 의견은 6개월 또는 늦어도 1년 이내 교체 권고예요. 이는 2019년 업체 설문과 관계자 의견을 보도한 내용이에요.",
+      "tier": "press"
+    },
+    {
+      "title": "자동차 성에 제거, 현대·기아 설명서가 말하는 순서와 뜨거운 물 주의 — 기존 한끗 글",
+      "url": "https://blog.naver.com/shin1133/224463848612",
+      "host": "blog.naver.com",
+      "body": "한끗에 발행된 생활정보 글이에요. 현대·기아 사용 설명서의 성에 제거 순서와 적용 범위를 다뤄요. 이번 글에서는 차량 유리와 블레이드 결빙을 먼저 해소하라는 관련 맥락을 연결하는 내부 링크로만 사용하고, 와이퍼 교체 주기의 근거로 사용하지 않아요.",
+      "tier": "internal"
+    }
+  ],
+  "claims": [
+    {
+      "claim": "현대 DN8 2024와 기아 안내는 오염을 먼저 제거한 뒤에도 닦임 이상이 남는지 확인하고, 증상이 계속되면 서비스 점검을 권해요.",
+      "grade": "confirmed",
+      "evidence": [
+        "두 제조사 안내는 깨끗한 물과 수건으로 유리와 고무 표면을 닦도록 해요.",
+        "청소 후에도 줄, 소음·떨림, 잔물, 부분 접촉 불량, 장력 약화가 남으면 서비스 점검 또는 상담을 안내해요."
+      ],
+      "sourceUrls": [
+        "https://ownersmanual.hyundai.com/full_webhelp/DN8/2024/ko_KR/id4b106f77f9f.html",
+        "https://ownersmanual.kia.com/docview/download/pdf/8dc2efef-6b46-4915-836b-ff5a26e8f59f/OM_FULL"
+      ]
+    },
+    {
+      "claim": "확인한 제조사 설명서의 교체 안내는 서로 달라서, 6~12개월을 모든 차량의 공식 기준으로 말할 수 없어요.",
+      "grade": "confirmed",
+      "evidence": [
+        "현대 DN8 2024와 기아 안내는 고정된 월별 교체 숫자 대신 상태 확인과 증상 지속 시 점검을 안내해요.",
+        "Renault Scenic 설명서는 성능 저하 시 교체와 함께 해당 차종의 참고 주기로 약 1년을 제시해요."
+      ],
+      "sourceUrls": [
+        "https://ownersmanual.hyundai.com/full_webhelp/DN8/2024/ko_KR/id4b106f77f9f.html",
+        "https://ownersmanual.kia.com/docview/download/pdf/8dc2efef-6b46-4915-836b-ff5a26e8f59f/OM_FULL",
+        "https://www.user-manual.renault.com/ko/%EC%B0%A8%EB%9F%89%EC%97%90-%EB%8C%80%ED%95%9C-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%B3%B4/waipeo"
+      ]
+    },
+    {
+      "claim": "정비업계의 6개월~1년 교체 조언은 언론에 소개된 전문가 의견으로, 제조사 공통 규정과 구분해야 해요.",
+      "grade": "reported",
+      "evidence": [
+        "한국경제 2024년 기사는 보쉬카서비스 정비 전문가의 6개월~1년 조언을 소개해요.",
+        "매일경제 2019년 기사는 보쉬 관계자의 6개월 또는 늦어도 1년 이내 권고를 소개해요."
+      ],
+      "sourceUrls": [
+        "https://www.hankyung.com/article/2024073084371",
+        "https://www.mk.co.kr/news/business/9101556"
+      ]
+    },
+    {
+      "claim": "얼어붙은 유리나 블레이드는 먼저 녹이거나 방해물을 치운 뒤 사용해야 해요.",
+      "grade": "confirmed",
+      "evidence": [
+        "현대 DN8 2024 안내는 유리나 블레이드가 얼었으면 작동 전에 완전히 녹이도록 해요.",
+        "르노 설명서는 서리나 눈으로 유리와 블레이드가 붙었는지 확인하고 먼저 장애물을 치우도록 해요."
+      ],
+      "sourceUrls": [
+        "https://ownersmanual.hyundai.com/full_webhelp/DN8/2024/ko_KR/id4b106f77f9f.html",
+        "https://www.user-manual.renault.com/ko/%EC%B0%A8%EB%9F%89%EC%97%90-%EB%8C%80%ED%95%9C-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%B3%B4/waipeo"
+      ]
+    },
+    {
+      "claim": "교체품을 고를 때는 차량별 와이퍼 규격을 확인해야 해요.",
+      "grade": "confirmed",
+      "evidence": [
+        "기아 사용 설명서는 와이퍼 규격이 차량별로 다르므로 교체 전에 해당 차량의 사양을 확인하도록 안내해요."
+      ],
+      "sourceUrls": [
+        "https://ownersmanual.kia.com/docview/download/pdf/8dc2efef-6b46-4915-836b-ff5a26e8f59f/OM_FULL"
+      ]
+    }
+  ],
+  "numbers": [
+    {
+      "what": "Renault Scenic 사용 설명서의 참고 교체 주기",
+      "value": "약 1년에 한 번",
+      "asOf": "2026-11-15 확인, Renault Scenic 안내에 한정",
+      "sourceUrl": "https://www.user-manual.renault.com/ko/%EC%B0%A8%EB%9F%89%EC%97%90-%EB%8C%80%ED%95%9C-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%B3%B4/waipeo"
+    },
+    {
+      "what": "정비 전문가가 언론에 제시한 와이퍼 교체 조언",
+      "value": "6개월~1년",
+      "asOf": "한국경제 2024-07-30 기사에 소개된 보쉬카서비스 전문가 의견",
+      "sourceUrl": "https://www.hankyung.com/article/2024073084371"
+    },
+    {
+      "what": "매일경제가 소개한 보쉬 관계자 교체 권고",
+      "value": "6개월 또는 늦어도 1년 이내",
+      "asOf": "2019-12-11 기사 기준",
+      "sourceUrl": "https://www.mk.co.kr/news/business/9101556"
+    }
+  ],
+  "dropped": [],
+  "cannotCover": [
+    "모든 차량에 공통으로 적용되는 교체 월령이나 제조사 공통 교체 주기",
+    "현대·기아·르노 외 모든 차량의 와이퍼 규격과 차종별 정비 절차",
+    "줄무늬나 소음의 원인을 블레이드 노후로 단정하는 진단",
+    "검색광고 API 자격증명 부재로 확인하지 못한 네이버 검색량과 경쟁도"
+  ],
+  "songs": []
+}

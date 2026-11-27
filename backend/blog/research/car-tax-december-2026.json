@@ -1,0 +1,165 @@
+{
+  "keyword": "자동차세 납부기간",
+  "categoryId": "life-info",
+  "notes": "2026년 자동차세 제2기분의 법정 기간과 12월 1일 소유 기준, 연납·소액 연세액 예외, 고지서 기준 납부 경로를 안내해요. 법령·국회예산정책처 자료와 서해구·영동군의 2026년 공지를 대조했어요. 지역별 납부 채널과 개별 차량의 세액·이전 정산은 관할기관의 실제 고지 내용을 기준으로 봐야 해요.",
+  "sources": [
+    {
+      "title": "지방세법 제128조(납기와 징수방법)",
+      "url": "https://www.law.go.kr/LSW/lsPdfPrint.do?ancYnChk=0&bylChaChk=N&efGubun=Y&efYd=20260701&joAllCheck=Y&joEfOutPutYn=on&lsiSeq=282559&mokChaChk=N",
+      "host": "law.go.kr",
+      "body": "국가법령정보센터의 2026년 7월 시행 지방세법 원문에서 자동차세 정기분의 과세기간과 납기 구조를 확인했어요. 제2기분은 7월부터 12월까지의 기간에 해당하고, 납기는 12월 16일부터 12월 31일까지로 표에 규정돼 있어요. 고지서는 납기 시작일보다 늦어도 5일 앞서 발급하도록 되어 있어요. 자동차를 과세기간 중 양도하거나 말소하는 경우와 소유권을 승계하는 경우에는 등록일 또는 소유기간을 기준으로 일할 계산하는 규정도 있어요. 연세액이 10만원 이하인 경우에는 제1기분에 전액을 부과할 수 있어요. 이 법령은 일정과 예외의 기본 틀을 확인하는 1차 자료예요.",
+      "tier": "official"
+    },
+    {
+      "title": "12월은 자동차세 납부의 달입니다",
+      "url": "https://www.seohae.go.kr/open_content/main/bbs/bbsMsgDetail.do?bcd=notice&keyfield=title&msg_seq=30479",
+      "host": "seohae.go.kr",
+      "body": "인천 서해구 자동차세팀이 2026년 11월 17일 게시한 12월 정기분 안내예요. 2026년 12월 1일 자동차등록원부에 소유자로 올라 있는 사람을 납세의무자로 안내하고, 2026년 연세액을 일시납부한 자동차는 정기분에서 제외한다고 적었어요. 해당 지역의 납부 기간은 12월 16일부터 12월 31일까지예요. 납부 수단으로 가상계좌·지방세입계좌·카드·ARS·금융기관 CD/ATM·위택스·인터넷지로를 제시했어요. ARS는 고지서에 적힌 납세자번호와 전자납부번호를 입력한 뒤 카드나 가상계좌를 선택하는 절차로 안내돼 있어요. 지역별 연락처와 절차는 이 공지에 한정해 참고해야 해요.",
+      "tier": "official"
+    },
+    {
+      "title": "2026년 12월 정기분 자동차세 납부 안내",
+      "url": "https://tour.yd21.go.kr/kr/html/sub02/020101.html?GotoPage=1&code=020101&group_at=020101&menu_dvs_cd=020101&mode=V&no=fa6823788df6e4e9b61594cdc194d48b&site_dvs_cd=kr",
+      "host": "yd21.go.kr",
+      "body": "영동군 재무과가 2026년 11월 19일 올린 12월 정기분 공지예요. 납세의무자는 12월 1일 현재 등록원부상 소유자, 과세기간은 7월 1일부터 12월 31일까지, 납부기간은 12월 16일부터 31일까지로 안내돼 있어요. 위택스나 거래은행 홈페이지, 전국 은행 CD/ATM, 고지서 앞면 가상계좌, 신청한 계좌 또는 카드 자동이체를 납부 경로로 열거했어요. 기한이 지난 경우 3% 납부지연가산세가 부과된다고 안내하며, 지방세액이 45만원 이상이면 이후 매 1개월마다 0.66%를 추가 부과할 수 있다고 적었어요. 자동이체와 전자송달을 신청한 경우의 공제 안내는 영동군 지역 공지이므로 전국 공통 혜택으로 일반화하지 않아요.",
+      "tier": "official"
+    },
+    {
+      "title": "2026 대한민국 조세 — 자동차세 신고와 납부",
+      "url": "https://www.nabo.go.kr/board/file/down.do?fid=33319156",
+      "host": "nabo.go.kr",
+      "body": "국회예산정책처가 낸 2026 대한민국 조세 자료의 자동차세 장은 소유분 자동차세가 해마다 두 번 부과되는 구조를 정리해요. 과세 기준은 납기가 있는 달의 1일 현재 자동차 소유자로, 제1기분은 1~6월 기간을 6월 16~30일에, 제2기분은 7~12월 기간을 12월 16~31일에 납부하는 표가 실려 있어요. 자료는 지방세법에 따라 연세액을 한꺼번에 내는 연납 제도와 신고 시기에 따른 공제 계산도 설명해요. 2026 보고서는 행정안전부의 2025 지방세통계연감을 바탕으로 제도를 요약하므로, 개별 차량의 금액·고지 여부보다 일반적인 제도 구조를 설명할 때 참고해요.",
+      "tier": "data"
+    },
+    {
+      "title": "2026 자동차세 2기분 납부기간과 납세의무자, 위택스에서 확인",
+      "url": "https://www.wikitree.co.kr/articles/1176090",
+      "host": "wikitree.co.kr",
+      "body": "위키트리 생활정보 기사는 2026년 12월 자동차세 제2기분의 날짜와 소유자 기준을 소개하며, 근거로 인천 서해구의 11월 17일 공지를 지목해요. 기사는 위택스에서 고지 내역을 확인하는 방법과 종이·전자 고지서의 이름·차량번호·납부액을 비교하는 확인 순서를 설명해요. 가상계좌, 지방세입계좌, 카드, ARS, 은행 CD/ATM, 위택스, 인터넷지로가 가능한 납부수단으로 언급되고, ARS 번호는 지역 고지서 안내를 우선하라고 덧붙여요. 기사 내용은 지자체의 공식 공지에 기반해 있어 새로운 법적 기준의 독립 자료로 보지 않고, 독자 질문과 확인 절차를 보조하는 기사로 사용해요.",
+      "tier": "press"
+    },
+    {
+      "title": "2026년 12월 자동차세 납부기간｜위택스 조회·납부 방법과 연납 확인",
+      "url": "https://dailytrack.co.kr/2026-december-car-tax-payment/",
+      "host": "dailytrack.co.kr",
+      "body": "DAILY TRACK의 생활정보 글은 2026년 11월 24일 게시됐어요. 2026년 제2기분 자동차세 납부기간을 12월 16일부터 31일까지로 안내하고, 과세기간은 7월 1일부터 12월 31일까지, 정기 과세 기준일은 12월 1일로 정리해요. 고지 대상은 등록원부상 소유자라고 설명하며 위택스 조회·납부, 연납 여부 확인, 자동차 소유권 이전 시 소유기간별 정산도 다뤄요. 기한 후 3% 가산 안내와 연세액 10만원 이하 때 제1기분 전액 부과 가능성도 언급해요. 이 글은 법령과 지자체 공지를 토대로 한 2차 생활정보 기사라서 법적 기준을 대신하지 않고, 검색자가 궁금해할 확인 항목과 일정의 보조 교차확인에만 사용해요. 차량별 세액 계산 예시는 이번 글의 범위가 아니어서 사용하지 않아요.",
+      "tier": "blog"
+    }
+  ],
+  "claims": [
+    {
+      "claim": "2026년 자동차세 제2기분은 7월 1일~12월 31일 과세기간에 해당하며 납부기간은 12월 16일~31일이에요. 정기 고지 대상은 12월 1일 현재 등록원부상 소유자예요.",
+      "grade": "confirmed",
+      "evidence": [
+        "지방세법 제128조는 제2기분 과세기간과 납기를 정해요.",
+        "서해구와 영동군의 2026년 공지가 날짜와 12월 1일 소유자 기준을 함께 확인해요."
+      ],
+      "sourceUrls": [
+        "https://www.law.go.kr/LSW/lsPdfPrint.do?ancYnChk=0&bylChaChk=N&efGubun=Y&efYd=20260701&joAllCheck=Y&joEfOutPutYn=on&lsiSeq=282559&mokChaChk=N",
+        "https://www.seohae.go.kr/open_content/main/bbs/bbsMsgDetail.do?bcd=notice&keyfield=title&msg_seq=30479",
+        "https://tour.yd21.go.kr/kr/html/sub02/020101.html?GotoPage=1&code=020101&group_at=020101&menu_dvs_cd=020101&mode=V&no=fa6823788df6e4e9b61594cdc194d48b&site_dvs_cd=kr",
+        "https://www.nabo.go.kr/board/file/down.do?fid=33319156",
+        "https://dailytrack.co.kr/2026-december-car-tax-payment/"
+      ]
+    },
+    {
+      "claim": "2026년 연세액을 일시 납부한 차량은 지자체의 12월 정기분 안내에서 부과 제외로 안내돼요. 연세액이 10만원 이하인 자동차는 법령에 따라 1기분에 전액을 부과할 수 있어 12월 고지가 없을 수 있어요.",
+      "grade": "confirmed",
+      "evidence": [
+        "서해구 공지는 해당 연도 연세액 일시납부 차량을 정기분에서 제외한다고 밝혀요.",
+        "지방세법 제128조는 연세액 10만원 이하일 때 제1기분에 전액 부과할 수 있다고 규정해요."
+      ],
+      "sourceUrls": [
+        "https://www.law.go.kr/LSW/lsPdfPrint.do?ancYnChk=0&bylChaChk=N&efGubun=Y&efYd=20260701&joAllCheck=Y&joEfOutPutYn=on&lsiSeq=282559&mokChaChk=N",
+        "https://www.seohae.go.kr/open_content/main/bbs/bbsMsgDetail.do?bcd=notice&keyfield=title&msg_seq=30479",
+        "https://www.nabo.go.kr/board/file/down.do?fid=33319156"
+      ]
+    },
+    {
+      "claim": "과세기간 중 자동차 소유권이 이전되거나 말소되면 소유기간을 기준으로 자동차세가 일할 계산될 수 있어요. 실제 매매·말소 차량의 정산은 등록일과 관할 지자체 부과자료로 확인해야 해요.",
+      "grade": "confirmed",
+      "evidence": [
+        "지방세법 제128조 및 제129조는 과세기간 중 이전·말소 등의 경우 소유기간에 따른 징수·안분 구조를 규정해요."
+      ],
+      "sourceUrls": [
+        "https://www.law.go.kr/LSW/lsPdfPrint.do?ancYnChk=0&bylChaChk=N&efGubun=Y&efYd=20260701&joAllCheck=Y&joEfOutPutYn=on&lsiSeq=282559&mokChaChk=N"
+      ]
+    },
+    {
+      "claim": "납부 방법은 지자체별 안내와 고지서에 따라 확인해야 해요. 2026년 서해구와 영동군 공지는 위택스·은행·가상계좌 등 여러 경로를 안내하지만 세부 채널은 같지 않아요.",
+      "grade": "confirmed",
+      "evidence": [
+        "서해구는 지방세입계좌·카드·ARS·CD/ATM·위택스·인터넷지로 등을 제시해요.",
+        "영동군은 위택스·거래은행 홈페이지·CD/ATM·가상계좌·자동이체 등을 제시해요."
+      ],
+      "sourceUrls": [
+        "https://www.seohae.go.kr/open_content/main/bbs/bbsMsgDetail.do?bcd=notice&keyfield=title&msg_seq=30479",
+        "https://tour.yd21.go.kr/kr/html/sub02/020101.html?GotoPage=1&code=020101&group_at=020101&menu_dvs_cd=020101&mode=V&no=fa6823788df6e4e9b61594cdc194d48b&site_dvs_cd=kr",
+        "https://www.wikitree.co.kr/articles/1176090",
+        "https://dailytrack.co.kr/2026-december-car-tax-payment/"
+      ]
+    },
+    {
+      "claim": "영동군 2026년 공지는 납기 후 3% 납부지연가산세와 지방세액 45만원 이상일 때의 추가 가산을 안내해요. 이 공지는 영동군 안내이므로 개별 고지 내용과 다른 지역의 세부 적용을 대신하지 않아요.",
+      "grade": "confirmed",
+      "evidence": [
+        "영동군 공지에는 기한 경과 시 3%, 지방세액 45만원 이상인 경우 매 1개월 0.66% 추가 안내가 있어요."
+      ],
+      "sourceUrls": [
+        "https://tour.yd21.go.kr/kr/html/sub02/020101.html?GotoPage=1&code=020101&group_at=020101&menu_dvs_cd=020101&mode=V&no=fa6823788df6e4e9b61594cdc194d48b&site_dvs_cd=kr"
+      ]
+    }
+  ],
+  "numbers": [
+    {
+      "what": "2026년 제2기분 납부 시작일",
+      "value": "2026-12-16",
+      "asOf": "2026년 11월 25일 확인",
+      "sourceUrl": "https://www.law.go.kr/LSW/lsPdfPrint.do?ancYnChk=0&bylChaChk=N&efGubun=Y&efYd=20260701&joAllCheck=Y&joEfOutPutYn=on&lsiSeq=282559&mokChaChk=N"
+    },
+    {
+      "what": "2026년 제2기분 납부 마감일",
+      "value": "2026-12-31",
+      "asOf": "2026년 11월 25일 확인",
+      "sourceUrl": "https://www.law.go.kr/LSW/lsPdfPrint.do?ancYnChk=0&bylChaChk=N&efGubun=Y&efYd=20260701&joAllCheck=Y&joEfOutPutYn=on&lsiSeq=282559&mokChaChk=N"
+    },
+    {
+      "what": "정기 고지 소유 기준일",
+      "value": "2026-12-01",
+      "asOf": "2026년 11월 25일 확인",
+      "sourceUrl": "https://www.seohae.go.kr/open_content/main/bbs/bbsMsgDetail.do?bcd=notice&keyfield=title&msg_seq=30479"
+    },
+    {
+      "what": "제2기분 과세기간",
+      "value": "2026-07-01~2026-12-31",
+      "asOf": "2026년 11월 25일 확인",
+      "sourceUrl": "https://www.law.go.kr/LSW/lsPdfPrint.do?ancYnChk=0&bylChaChk=N&efGubun=Y&efYd=20260701&joAllCheck=Y&joEfOutPutYn=on&lsiSeq=282559&mokChaChk=N"
+    },
+    {
+      "what": "연세액 전액 부과 가능 기준",
+      "value": "100,000원 이하",
+      "asOf": "지방세법 제128조",
+      "sourceUrl": "https://www.law.go.kr/LSW/lsPdfPrint.do?ancYnChk=0&bylChaChk=N&efGubun=Y&efYd=20260701&joAllCheck=Y&joEfOutPutYn=on&lsiSeq=282559&mokChaChk=N"
+    },
+    {
+      "what": "영동군 공지의 기한 후 가산 안내",
+      "value": "3%; 지방세액 450,000원 이상이면 매 1개월 0.66% 추가, 최대 60개월",
+      "asOf": "영동군 2026년 공지",
+      "sourceUrl": "https://tour.yd21.go.kr/kr/html/sub02/020101.html?GotoPage=1&code=020101&group_at=020101&menu_dvs_cd=020101&mode=V&no=fa6823788df6e4e9b61594cdc194d48b&site_dvs_cd=kr"
+    }
+  ],
+  "dropped": [
+    {
+      "url": "https://www.mois.go.kr/frt/bbs/type010/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000008&nttId=126843",
+      "why": "2026년 1기분의 한시 연장과 서비스 중단을 설명하는 자료라 12월 제2기분 납기 근거로 쓰지 않았어요."
+    }
+  ],
+  "cannotCover": [
+    "개별 자동차의 정확한 2026년 2기분 세액은 차량 종류·세율·차령·감면과 납부 이력에 따라 달라져 이 글에서 계산하지 않아요.",
+    "자동차 매매·명의이전·말소와 연납승계가 있는 차량의 최종 정산은 등록일과 관할 지자체 부과자료를 확인해야 해요.",
+    "2026년 11월 25일 이후 전국 또는 각 지자체가 별도로 공지할 수 있는 납기 변경은 미리 단정할 수 없어요.",
+    "차량 종류·세율·차령·감면을 반영한 개별 세액 계산은 이 자료만으로 다루지 않아요.",
+    "지역별 자동이체 공제와 ARS 번호를 전국 공통으로 일반화하지 않아요."
+  ],
+  "songs": []
+}

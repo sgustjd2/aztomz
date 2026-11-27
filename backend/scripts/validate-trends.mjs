@@ -68,6 +68,13 @@ export function validateTrends(trends) {
         }
       });
     }
+    if (t.shops !== undefined) {   // '어디서 사 먹지?' 카드 — name 없으면 화면에 빈 카드
+      if (!Array.isArray(t.shops)) errors.push(`${at} shops가 배열이 아님`);
+      else {
+        t.shops.forEach((s, si) => { if (!s || typeof s.name !== 'string' || !s.name.trim()) errors.push(`${at} shops[${si}] name 누락`); });
+        if (t.shops.length > 8) warnings.push(`${at} shops ${t.shops.length}곳(권장 최대 8)`);
+      }
+    }
     if (!Array.isArray(t.src) || t.src.length === 0) warnings.push(`${at} 출처(src) 없음`);
   });
 

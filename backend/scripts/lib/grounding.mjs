@@ -1,4 +1,4 @@
-// 근거 대조 게이트 — 항목 서술(excerpt·verdict·article·shops 등)의 '구체 사실'이 검증 통과 출처 본문에 있는지 문자열로 대조.
+// 근거 대조 게이트 — 항목 서술(excerpt·verdict·article·reasons 등, shops 는 가게별 대조)의 '구체 사실'이 검증 통과 출처 본문에 있는지 문자열로 대조.
 // auto-build.mjs 가 관련성 검사를 통과한 출처 본문으로 호출한다. LLM 없음(결정적).
 // 2026-10-08 trends.json 전수 감사(182항목 중 139 근거 없는 서술)에서 반복된 유형만 막는다:
 //   · 출처에 없는 수치(170만 건·280%·13번 출구) · 출처에 없는 매체('연합뉴스 보도') · 출처에 없는 과장·확산 사실어(웨이팅·전국·체인·지점·급증…)
@@ -24,7 +24,7 @@ const stripHtml = (s) => String(s || '').replace(/<script[\s\S]*?<\/script>|<sty
 export function claimText(t) {
   const parts = [t.excerpt, t.pull, t.verdict, t.stageMsg, t.buzz, t.satTxt];
   for (const b of t.article || []) if (Array.isArray(b) && b[0] !== 'q') parts.push(Array.isArray(b[1]) ? b[1].join(' ') : b[1]);
-  for (const s of t.shops || []) parts.push(s && s.rep, s && s.note);
+  // shops 의 rep·note 는 auto-build verifyShops 가 가게별로(그 가게 링크 본문까지) 대조하고 근거 없는 줄만 지운다 — 항목 보류 사유에서 뺀다(2026-11-27).
   if (t.reasons && typeof t.reasons === 'object') parts.push(...Object.values(t.reasons).flat(Infinity).filter((v) => typeof v === 'string'));  // 점수 근거(화면 '근거' 줄)
   return parts.filter(Boolean).join('\n');
 }

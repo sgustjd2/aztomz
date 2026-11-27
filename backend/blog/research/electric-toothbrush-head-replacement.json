@@ -1,0 +1,153 @@
+{
+  "keyword": "전동칫솔모 교체 주기",
+  "categoryId": "life-info",
+  "notes": "제품별로 확인한 교체 안내를 비교한다.\n3개월은 확인한 특정 헤드의 제조사 권고이며 모든 전동칫솔에 공통인 주기로 단정하지 않는다.\n마모 신호·색 표시·앱 알림과 호환 모델은 해당 제품 안내로 구분한다.",
+  "sources": [
+    {
+      "title": "Operating Instructions — EW-DP52",
+      "url": "https://www.panasonic.co.kr/UploadFiles/download/2021/06/20/16241974130.pdf",
+      "host": "panasonic.co.kr",
+      "body": "파나소닉 한국 공식 사이트에서 제공하는 EW-DP52 전동칫솔 사용설명서다. FAQ의 칫솔모 교체 항목은 칫솔모를 소모품으로 설명하고, 모양이 변하지 않았더라도 위생을 위해 3개월마다 교체하라고 적는다. 그 3개월이 지나기 전이라도 강모가 해어지면 헤드를 교체하라고 안내한다. 문서는 칫솔모 부품 번호와 EW-DP52 용 호환 부품을 함께 보여주므로, 안내의 적용 범위는 모든 파나소닉 전동칫솔이 아니라 설명서에 적힌 이 모델로 제한해야 한다. 다른 모델은 해당 모델의 사용설명서를 따르는 것이 맞다.",
+      "tier": "official"
+    },
+    {
+      "title": "ProResults Standard Sonic Toothbrush Heads HX6013/05",
+      "url": "https://www.philips.co.kr/p-p/HX6013_05/proresults-standard-sonic-toothbrush-heads/overview",
+      "host": "philips.co.kr",
+      "body": "필립스 코리아가 판매하는 소닉케어 ProResults 교체 헤드 HX6013/05 제품 안내다. 페이지는 칫솔모가 몇 달 사용하면 뻣뻣함이 줄고 마모된다고 설명한다. 파란색 칫솔모가 흰색에 가깝게 연해지는 색 변화가 교체 시기를 알아차리는 데 도움을 준다고 적고, 이 제품의 최적 성능을 위해 3개월마다 칫솔모를 교체하라고 안내한다. 이 안내는 이 제품군의 설명이며 색 변화 표시가 모든 전동칫솔모에 적용된다는 뜻은 아니다. 사용자는 구입한 교체 헤드와 핸들 모델의 호환 목록도 함께 확인해야 한다.",
+      "tier": "official"
+    },
+    {
+      "title": "How do I know when to replace my brush head on the Next-Generation DiamondClean 8000–9900?",
+      "url": "https://www.usa.philips.com/c-f/XC000023762/how-do-i-know-when-to-replace-my-brush-head-on-the-next-generation-diamondclean-8000-9900",
+      "host": "usa.philips.com",
+      "body": "필립스 미국 공식 고객지원 문서는 Next-Generation DiamondClean 8000–9900 일부 모델의 BrushSync 교체 알림을 설명한다. 호환되는 스마트 칫솔모를 처음 끼우면 손잡이가 사용 세션을 추적하고, 이 페이지에서 180회 칫솔질 세션이 남은 세션 기준으로 제시된다. 사용 횟수가 기준을 넘으면 교체 알림 메시지가 표시된다고 안내한다. 단, 이 기능은 BrushSync 기술이 들어간 Philips Sonicare 스마트 칫솔모에서만 작동한다고 명시한다. 문서에 적용 모델 번호도 따로 나열되어 있어, 모든 소닉케어 손잡이나 모든 교체모에 알림 기능이 있다고 일반화하면 안 된다.",
+      "tier": "official"
+    },
+    {
+      "title": "오랄-비 프리시즌 클린 교체형 칫솔모",
+      "url": "https://www.oral-b.co.kr/ko-KR/productdetail/oral-b-precision-clean-replacement-toothbrush-head",
+      "host": "oral-b.co.kr",
+      "body": "오랄-비 한국 공식 사이트의 Precision Clean 교체형 칫솔모 제품 설명이다. 이 페이지는 이 헤드가 오랄-비 회전식 전동칫솔 중 여러 모델에 쓰이지만 CrossAction Power, Pulsonic, Sonic Complete, Vital Sonic 등에는 적용되지 않는다고 예외를 적는다. 제품 페이지에는 치과의사들이 더 나은 효과를 위해 3개월마다 칫솔모를 바꾸도록 권한다는 안내도 있다. 따라서 교체 주기의 안내와 함께 호환 모델 제외 목록도 봐야 한다. 이 페이지가 모든 오랄-비 모델 또는 모든 타사 전동칫솔의 규격을 대신하지는 않는다.",
+      "tier": "official"
+    },
+    {
+      "title": "‘엄마, 얼마나 썼길래 이렇게 벌어졌어?’…‘칫솔’ 최적 교체 주기는",
+      "url": "https://v.daum.net/v/Pk8qll8Bay",
+      "host": "v.daum.net",
+      "body": "농민신문이 2026년 9월 27일 보도한 일반 칫솔 교체 시기 기사다. 특별한 구강 문제가 없는 성인에 관한 전문가 의견과 미국치과의사협회 안내를 다루며, 일반 칫솔은 3개월 전후 또는 3~4개월 간격이라는 권고를 소개한다. 기사에는 칫솔모가 눈에 띄게 마모되기 전에 일정 주기로 교체하는 관점과 3개월 사용 칫솔을 다룬 연구 이야기도 담겼다. 이 보도는 일반 칫솔 및 구강 관리 정보를 다루므로 특정 전동칫솔 손잡이의 기능, 호환성, 교체모 모델별 안내를 대신하는 자료로 사용하지 않는다.",
+      "tier": "press"
+    },
+    {
+      "title": "‘벌어질 때 교체?’…칫솔 ○○마다 바꿔야",
+      "url": "https://lady.khan.co.kr/health/article/202406050600081",
+      "host": "lady.khan.co.kr",
+      "body": "레이디경향이 2024년 6월 5일 보도한 칫솔 교체·관리 기사다. 미국치과협회 권고를 인용해 일반 칫솔은 3~4개월마다 바꾸고, 눈에 띄게 칫솔모가 헝클어지거나 닳으면 더 일찍 교체하는 기준을 소개한다. 칫솔을 사용한 뒤 헹구고 세워 자연 건조하는 관리 방법도 함께 언급한다. 전동칫솔모에 관해서는 일반 칫솔과 마찬가지로 분기마다 교체하며, 일부 제품에는 알람이나 색 변화 표시가 있다고 정리한다. 다만 특정 제조사 모델의 호환성과 센서 적용 여부는 제조사 설명서를 확인해야 한다.",
+      "tier": "press"
+    }
+  ],
+  "claims": [
+    {
+      "claim": "확인한 파나소닉 EW-DP52, 필립스 HX6013/05, 오랄-비 Precision Clean 안내는 각각 해당 헤드의 교체 기준으로 3개월을 제시한다.",
+      "grade": "confirmed",
+      "evidence": [
+        "EW-DP52 사용설명서는 위생을 위해 3개월마다 교체하라고 안내한다.",
+        "HX6013/05 제품 페이지는 3개월마다 교체를 권한다.",
+        "Precision Clean 제품 안내는 3개월마다 교체 권고를 싣고 있다."
+      ],
+      "sourceUrls": [
+        "https://www.panasonic.co.kr/UploadFiles/download/2021/06/20/16241974130.pdf",
+        "https://www.philips.co.kr/p-p/HX6013_05/proresults-standard-sonic-toothbrush-heads/overview",
+        "https://www.oral-b.co.kr/ko-KR/productdetail/oral-b-precision-clean-replacement-toothbrush-head"
+      ]
+    },
+    {
+      "claim": "파나소닉 EW-DP52는 모양이 그대로여도 3개월 기준을 따르고, 강모가 먼저 해어지면 그 전에 교체한다.",
+      "grade": "confirmed",
+      "evidence": [
+        "설명서는 모양이 변하지 않아도 위생을 위해 3개월마다 교체하라고 안내한다.",
+        "3개월 전이라도 강모가 해어지면 칫솔모 헤드를 교체하라고 안내한다."
+      ],
+      "sourceUrls": [
+        "https://www.panasonic.co.kr/UploadFiles/download/2021/06/20/16241974130.pdf"
+      ]
+    },
+    {
+      "claim": "필립스 HX6013/05는 파란 강모가 흰색에 가깝게 연해지는 표시를 교체 판단에 활용할 수 있다.",
+      "grade": "confirmed",
+      "evidence": [
+        "HX6013/05 제품 안내는 파란색 강모가 흰색으로 연해지는 색 변화가 교체 시기를 알아차리는 데 도움을 준다고 설명한다."
+      ],
+      "sourceUrls": [
+        "https://www.philips.co.kr/p-p/HX6013_05/proresults-standard-sonic-toothbrush-heads/overview"
+      ]
+    },
+    {
+      "claim": "BrushSync의 180회 세션 알림은 일부 DiamondClean 모델과 호환되는 BrushSync 스마트 헤드에 한정된다.",
+      "grade": "confirmed",
+      "evidence": [
+        "지원 문서는 180회 칫솔질 세션을 교체 알림 기준으로 제시한다.",
+        "알림은 BrushSync 기술이 있는 스마트 헤드에서만 작동하며 문서가 든 대상 모델은 HX8533/15, HX9834/91, HX9834/92 등이다."
+      ],
+      "sourceUrls": [
+        "https://www.usa.philips.com/c-f/XC000023762/how-do-i-know-when-to-replace-my-brush-head-on-the-next-generation-diamondclean-8000-9900"
+      ]
+    },
+    {
+      "claim": "생활 기사들은 일반 칫솔의 3~4개월 교체 권고를 소개하므로, 이를 전동칫솔 전체의 규칙으로 확장하지 않는다.",
+      "grade": "reported",
+      "evidence": [
+        "농민신문 기사는 일반 칫솔 교체에 3개월 또는 3~4개월 권고를 소개한다.",
+        "레이디경향 기사는 일반 칫솔의 3~4개월 교체와 마모 시 조기 교체를 소개하며, 개별 모델 기능은 제조사 자료로 확인해야 한다."
+      ],
+      "sourceUrls": [
+        "https://v.daum.net/v/Pk8qll8Bay",
+        "https://lady.khan.co.kr/health/article/202406050600081"
+      ]
+    },
+    {
+      "claim": "Oral-B Precision Clean 교체 헤드는 제품 페이지에 기재된 일부 모델군과 호환되지 않는다.",
+      "grade": "confirmed",
+      "evidence": [
+        "제품 안내는 CrossAction Power, Pulsonic, Sonic Complete, Vital Sonic 등은 적용되지 않는다고 적는다."
+      ],
+      "sourceUrls": [
+        "https://www.oral-b.co.kr/ko-KR/productdetail/oral-b-precision-clean-replacement-toothbrush-head"
+      ]
+    }
+  ],
+  "numbers": [
+    {
+      "what": "파나소닉 EW-DP52 칫솔모 교체 권고 간격",
+      "value": "3개월",
+      "asOf": "확인한 사용설명서",
+      "sourceUrl": "https://www.panasonic.co.kr/UploadFiles/download/2021/06/20/16241974130.pdf"
+    },
+    {
+      "what": "필립스 HX6013/05 칫솔모 교체 권고 간격",
+      "value": "3개월",
+      "asOf": "제품 안내 확인일 2026-11-20",
+      "sourceUrl": "https://www.philips.co.kr/p-p/HX6013_05/proresults-standard-sonic-toothbrush-heads/overview"
+    },
+    {
+      "what": "일부 DiamondClean 모델 BrushSync 교체 알림 기준",
+      "value": "180회 세션",
+      "asOf": "지원 문서 확인일 2026-11-20",
+      "sourceUrl": "https://www.usa.philips.com/c-f/XC000023762/how-do-i-know-when-to-replace-my-brush-head-on-the-next-generation-diamondclean-8000-9900"
+    },
+    {
+      "what": "오랄-비 Precision Clean 교체 권고 간격",
+      "value": "3개월",
+      "asOf": "제품 안내 확인일 2026-11-20",
+      "sourceUrl": "https://www.oral-b.co.kr/ko-KR/productdetail/oral-b-precision-clean-replacement-toothbrush-head"
+    }
+  ],
+  "dropped": [],
+  "cannotCover": [
+    "네이버 검색광고 API 자격증명이 없어 월간 검색량·경쟁도·모바일 클릭수를 확인하지 못했다.",
+    "모든 브랜드·모델에 공통으로 적용되는 법정 교체 주기는 확인되지 않았다.",
+    "판매 가격과 교체 헤드 유지비는 모델·구매처마다 달라 이번 조사 범위에서 비교하지 않았다.",
+    "교체 알림·색 변화 표시는 특정 핸들과 호환 헤드에 한정되며 전체 모델 적용 여부는 확인되지 않았다."
+  ],
+  "songs": []
+}

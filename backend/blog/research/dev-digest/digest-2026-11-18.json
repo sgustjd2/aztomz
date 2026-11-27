@@ -1,0 +1,219 @@
+{
+  "collectedAt": "2026-11-18",
+  "days": 3,
+  "results": {
+    "geeknews": {
+      "source": "geeknews",
+      "fetchedOk": true,
+      "sourceUrl": "https://news.hada.io/rss/news",
+      "items": [
+        {
+          "title": "Show GN: Clippy HTML - Clippy의 진단을 정적 웹페이지로 바꿔주는 도구",
+          "url": "",
+          "date": "2026-11-18T10:08:50.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Harvard 연구진, AI 코딩 에이전트가 병목을 코드 리뷰로 옮겼음을 확인",
+          "url": "",
+          "date": "2026-11-18T09:48:07.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "Archive Team, 2026년 11월 20일 폐쇄되는 Apple Support Community 아카이빙 진행 중",
+          "url": "",
+          "date": "2026-11-18T09:45:07.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "AI가 All About Berlin을 죽이고 있다",
+          "url": "",
+          "date": "2026-11-18T08:32:37.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "YC 스타트업 면접 중 알게 된 내 LinkedIn 무단 사용 사실",
+          "url": "",
+          "date": "2026-11-18T07:31:07.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Show GN: 냥이잡기 - 부정행위를 시도하는 냥이들을 잡는 게임",
+          "url": "",
+          "date": "2026-11-18T07:30:12.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Show GN: Claude Code와 Codex를 한 화면에서 관리하는 macOS 개발 도구를 만들었습니다",
+          "url": "",
+          "date": "2026-11-18T07:00:32.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "Show GN: 고객이 직접 문자를 보내는(MO) 방식의 휴대폰 번호 인증 API (웹 SDK 출시)",
+          "url": "",
+          "date": "2026-11-18T06:02:33.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Show GN: Disposable - AI로 만든 작은 도구를 나누고 각자 에이전트로 다시 만드는 곳",
+          "url": "",
+          "date": "2026-11-18T05:46:26.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "USN-9131-1: CRaC JDK 25 vulnerabilities",
+          "url": "",
+          "date": "2026-11-18T05:43:01.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "FOSS for All Conference 2026: 커뮤니티 주도 국내 오픈소스 컨퍼런스",
+          "url": "",
+          "date": "2026-11-18T05:12:46.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "GitHub 저장소 페이지 리디자인 제안 (2019)",
+          "url": "",
+          "date": "2026-11-18T05:02:27.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Google의 AI 답변, 검색 유입을 40% 줄임",
+          "url": "",
+          "date": "2026-11-18T04:41:59.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "IRS 로그인에 요구되는 ID.me 약관 동의",
+          "url": "",
+          "date": "2026-11-18T04:38:59.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "GitHub에서 사라진 마이크로소프트의 ONNX Runtime",
+          "url": "",
+          "date": "2026-11-18T03:30:59.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "이스라엘 대 Wikipedia",
+          "url": "",
+          "date": "2026-11-18T02:32:23.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Show HN: Alloy CSS, JavaScript를 꺼도 작동하는 대화상자, 메뉴, 탭",
+          "url": "",
+          "date": "2026-11-18T01:32:22.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Show GN: Lightcap - 가볍고 빠른 맥용 화면 녹화/스크린샷 앱",
+          "url": "",
+          "date": "2026-11-18T01:31:57.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Show GN: 깎깎 - 칼로 연필을 깎고 그 끝으로 그려 보는 3D iOS 게임",
+          "url": "",
+          "date": "2026-11-18T00:59:30.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "“X는 죽었다”는 말은 죽었다",
+          "url": "",
+          "date": "2026-11-18T00:40:02.000Z",
+          "aiRelated": false
+        }
+      ],
+      "note": "GeekNews Atom 피드에서 최근 3일 항목. aiRelated=true 는 제목 키워드 기준(본문은 조사 단계에서 확인)."
+    },
+    "inpa": {
+      "source": "inpa",
+      "fetchedOk": true,
+      "sourceUrl": "https://inpa.tistory.com/rss",
+      "items": [],
+      "note": "최근 3일 이내 작성된 글만. 날짜 없는 항목은 제외. 0건이면 어제·오늘 새 글이 없다는 뜻."
+    },
+    "goddaehee": {
+      "source": "goddaehee",
+      "fetchedOk": true,
+      "sourceUrl": "https://goddaehee.tistory.com/rss",
+      "items": [
+        {
+          "title": "[피클2편-피클활용기](AI 비서에게 생활을 맡기는 법):돈 새는 구멍(구독&middot;통신&middot;정부혜택&middot;포인트)찾기와 매물 모니터링 자동화",
+          "url": "https://goddaehee.tistory.com/665",
+          "date": "2026-11-17T09:00:42.000Z"
+        },
+        {
+          "title": "[AI 기초 5.5화 특별편] 아버지가방에들어가신다, AI는 '방'으로 읽을까 '가방'으로 읽을까?",
+          "url": "https://goddaehee.tistory.com/664",
+          "date": "2026-11-16T15:01:12.000Z"
+        },
+        {
+          "title": "실행형 AI부터 멀티 에이전트까지 - AI에게 질문하던 시대에서, 일을 맡기는 시대로(2026 AI 에이전트 비교)",
+          "url": "https://goddaehee.tistory.com/663",
+          "date": "2026-11-16T08:01:53.000Z"
+        },
+        {
+          "title": "[AI 기초 5화] 한글이 영어보다 토큰을 더 쓰는 이유: weather는 1조각인데 '날씨'는 왜 2조각일까?",
+          "url": "https://goddaehee.tistory.com/662",
+          "date": "2026-11-16T03:00:22.000Z"
+        }
+      ],
+      "note": "최근 3일 이내 작성된 글만. 날짜 없는 항목은 제외. 0건이면 어제·오늘 새 글이 없다는 뜻."
+    },
+    "github": {
+      "source": "github",
+      "fetchedOk": true,
+      "sourceUrl": "https://github.com/trending?since=weekly",
+      "items": [
+        {
+          "repo": "elementalsouls/Claude-BugHunter",
+          "url": "https://github.com/elementalsouls/Claude-BugHunter",
+          "description": "A Claude Code skill bundle for bug hunting and external red-team work - 82 skills, 15 slash commands, 681 disclosed-report patterns curated across 24 core vulnerability classes, plus enterprise identity + infrastructure attack matrices.",
+          "starsThisWeek": 2508
+        },
+        {
+          "repo": "google-labs-code/stitch-skills",
+          "url": "https://github.com/google-labs-code/stitch-skills",
+          "description": "A library of Agent Skills designed to work with the Stitch MCP server. Each skill follows the Agent Skills open standard, for compatibility with coding agents such as Antigravity, Gemini CLI, Claude Code, Cursor.",
+          "starsThisWeek": 1197
+        },
+        {
+          "repo": "ChromeDevTools/chrome-devtools-mcp",
+          "url": "https://github.com/ChromeDevTools/chrome-devtools-mcp",
+          "description": "Chrome DevTools for coding agents",
+          "starsThisWeek": 2948
+        },
+        {
+          "repo": "mvanhorn/last30days-skill",
+          "url": "https://github.com/mvanhorn/last30days-skill",
+          "description": "AI agent skill that researches any topic across Reddit, X, YouTube, HN, Polymarket, and the web - then synthesizes a grounded summary",
+          "starsThisWeek": 1548
+        },
+        {
+          "repo": "vercel-labs/agent-browser",
+          "url": "https://github.com/vercel-labs/agent-browser",
+          "description": "Browser automation CLI for AI agents",
+          "starsThisWeek": 3429
+        },
+        {
+          "repo": "openai/codex-security",
+          "url": "https://github.com/openai/codex-security",
+          "description": "OpenAI's Codex Security CLI and TypeScript SDK for finding, validating, and fixing security vulnerabilities. npm: <a href=\"https://www.npmjs.com/package/@openai/codex-security\" class=\"Link--inTextBlock\" rel=\"nofollow\">https://www.npmjs.com/package/@openai/codex-security</a>",
+          "starsThisWeek": 2531
+        },
+        {
+          "repo": "dream-num/univer",
+          "url": "https://github.com/dream-num/univer",
+          "description": "Build your own AI office with Univer Office SDK. Bring editing, calculation, collaboration, and file processing into your product for people and AI agents. Built on an extensible open-source core.",
+          "starsThisWeek": 5845
+        }
+      ],
+      "note": "주간 급상승 레포 중 plugin/extension/skill/cli/mcp 등 도구 성격 키워드가 잡힌 것만. dev-trending 과 겹치는 항목은 조사 단계에서 제외한다."
+    }
+  }
+}

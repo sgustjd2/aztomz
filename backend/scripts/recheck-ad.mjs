@@ -8,6 +8,8 @@
      **analyzedAt=오늘로 갱신**(정직한 '재확인일'). 0개면 갱신 안 하고 '사람 확인 필요'로 보고.
    - 근거 대조(2026-10-08~, lib/grounding.mjs): 출처는 살아 있어도 서술에 출처 밖 수치·매체·확산 표현이 있으면
      홈으로 올리지 않고 '사람 확인 필요'로 보고한 뒤 다음으로 오래된 항목을 시도(최대 3건).
+   - 광고 신호 점검(2026-11-27~, lib/ad-signals.mjs): 읽은 본문에서 협찬·원고료·체험단 고지, 출처 간 같은 문장,
+     업체 제공 사진, 작성 시기 몰림, 한 작성자에 몰린 출처를 찾아 ad·trust·라벨·근거를 다시 계산한다(처음 값 기준·멱등).
    - 이렇게 갱신되면 홈의 '오늘의 한끗'(가장 최근 분석)이 이 항목으로 회전한다.
    - 끝에 refresh + git pull/commit/push(Vercel 자동배포).
 
@@ -15,6 +17,7 @@
    ▶ 이미 검증된 항목이므로 보수적: ddgs가 이번에 본문을 못 읽으면(차단) 그 출처는 '유지'(삭제 X).
 
    사용: node backend/scripts/recheck-ad.mjs [--id=dubai-choco] [--no-git] [--dry]
+         node backend/scripts/recheck-ad.mjs --audit [--id=…]   ← 모든 신뢰분석 항목 광고 신호 전후 비교만(파일 안 씀)
    env: DDGS_EXE — Actions에선 pip ddgs + DDGS_EXE=ddgs
    ============================================================ */
 import { readFileSync, writeFileSync } from 'node:fs';
@@ -22,6 +25,7 @@ import { execFileSync } from 'node:child_process';
 import { extract as ddgsExtract } from './lib/websearch.mjs';
 import { acquireGitLock } from './lib/git-lock.mjs';
 import { groundingCheck } from './lib/grounding.mjs';
+import { adSignals, applyAdSignals, signalLine } from './lib/ad-signals.mjs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 
@@ -31,7 +35,8 @@ const refreshPath = join(repoRoot, 'backend', 'scripts', 'refresh.mjs');
 
 const args = process.argv.slice(2);
 const NO_GIT = args.includes('--no-git');
-const DRY = args.includes('--dry');
+const AUDIT = args.includes('--audit');
+const DRY = args.includes('--dry') || AUDIT;
 const idArg = (args.find(a => a.startsWith('--id=')) || '').slice(5) || null;
 
 const UA = { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124 Safari/537.36' };
@@ -67,6 +72,28 @@ const trends = Array.isArray(data) ? data : (data.trends || []);
 const ads = trends.filter(t => t.type === '신뢰분석');
 if (!ads.length) { console.log('· 신뢰분석 항목 없음 — 종료.'); process.exit(0); }
 
+// --audit: 전 항목의 광고 신호 전후 판정만 표로 찍는다(출처 생존·근거 대조·파일 쓰기 없음).
+if (AUDIT) {
+  const list = idArg ? ads.filter(t => t.id === idArg) : ads;
+  const rows = [];
+  console.log(`🔎 광고 신호 감사 — ${list.length}건 (파일 안 씀)`);
+  for (const t of list) {
+    const read = [];
+    for (const [name, url] of (t.src || [])) { const body = extract(url); if (body.length >= 80) read.push({ name, url, body }); }
+    const c = structuredClone(t);
+    const sig = adSignals(c, read, (t.src || []).map(s => s[1]));
+    const r = applyAdSignals(c, sig, TODAY);
+    rows.push({ id: t.id, src: (t.src || []).length, read: read.length, sig: signalLine(sig) || '-', ...r });
+    console.log(`  ${r.changed ? '△' : '·'} ${t.id}  읽음 ${read.length}/${(t.src || []).length}  신호[${signalLine(sig) || '-'}]  광고 ${r.before.ad}→${r.after.ad} · 신뢰 ${r.before.trust}→${r.after.trust}${r.before.label !== r.after.label ? ` · 라벨 '${r.before.label}'→'${r.after.label}'` : ''}`);
+  }
+  const n = (k) => rows.filter(x => x.sig.includes(k)).length;
+  console.log(`\nAUDIT ${JSON.stringify({ items: rows.length, changed: rows.filter(x => x.changed).length, unreadable: rows.filter(x => !x.read).length,
+    disclosure: n('협찬 고지'), repeat: n('같은 문장'), vendorPhoto: n('업체 제공'), burst: n('작성 시기'), oneOrigin: n('한 작성자'),
+    adUp: rows.filter(x => x.after.ad > x.before.ad).length, trustDown: rows.filter(x => x.after.trust < x.before.trust).length,
+    labelChanged: rows.filter(x => x.after.label !== x.before.label).length })}`);
+  process.exit(0);
+}
+
 // 가장 오래된 순으로 최대 3건까지 — 출처는 살아 있는데 서술이 출처 밖(근거 대조 실패)이면 홈으로 올리지 않고 다음 후보로 넘긴다.
 // ponytail: 실패 항목은 고쳐질 때까지 매일 '사람 확인 필요'로 다시 보고된다(오래된 순 맨 앞에 남으므로) — 의도된 알람.
 const order = idArg ? ads.filter(t => t.id === idArg)
@@ -79,7 +106,7 @@ const needsHuman = [];
 for (const cand of order) {
   console.log(`   대상: [${cand.id}] ${cand.title} (기존 analyzedAt=${cand.analyzedAt})`);
   const kws = titleKeywords(cand);
-  const k = [], d = [], bodies = [];
+  const k = [], d = [], bodies = [], read = [];
   for (const [name, url] of (cand.src || [])) {
     const st = await httpStatus(url);
     if (st === 404 || st === 410) { d.push([name, `죽음(${st})`]); console.log(`   ❌ ${st} 죽음 → 제거  ${name}`); continue; }
@@ -88,7 +115,7 @@ for (const cand of order) {
       const tHits = kws.filter(kw => hasKw(body, kw)).length;
       if (tHits === 0) { d.push([name, '무관']); console.log(`   ❌ 무관(제목어 없음) → 제거  ${name}`); continue; }
       console.log(`   ✅ 유효(제목어 ${tHits})  ${name}`);
-      bodies.push(body);
+      bodies.push(body); read.push({ name, url, body });
     } else {
       console.log(`   ⏸ 이번엔 본문 못읽음(차단) → 유지(기존 검증분)  ${name}`);
     }
@@ -98,7 +125,13 @@ for (const cand of order) {
   // 이번에 본문을 읽은 출처가 없으면(전부 차단) 대조할 근거가 없으므로 기존 동작대로 통과시킨다.
   const gr = bodies.length ? groundingCheck(cand, k.map(([n]) => n), bodies) : { pass: true, block: [] };
   if (!gr.pass) { needsHuman.push(`${cand.title}: 근거 대조 실패 — ${gr.block.join(', ')}`); console.log(`   📏✋ ${gr.block.join(' / ')}\n`); continue; }
-  target = cand; kept = k; dropped = d; break;
+  target = cand; kept = k; dropped = d;
+  // 📢 광고 신호 점검 — 살아 있는 출처 기준(죽음·무관 출처는 이미 빠짐). 근거 대조를 통과한 뒤에만 점수를 움직인다.
+  const sig = adSignals(cand, read, k.map(([, u]) => u));
+  const r = applyAdSignals(cand, sig, TODAY);
+  if (r.changed) console.log(`   📢 판정 조정[${signalLine(sig)}]: 광고 ${r.before.ad}→${r.after.ad} · 신뢰 ${r.before.trust}→${r.after.trust}${r.before.label !== r.after.label ? ` · 라벨 '${r.before.label}'→'${r.after.label}'` : ''}`);
+  else console.log(`   📢 광고 신호: ${signalLine(sig) || '없음'} (판정 변화 없음)`);
+  break;
 }
 
 const ok = !!target;

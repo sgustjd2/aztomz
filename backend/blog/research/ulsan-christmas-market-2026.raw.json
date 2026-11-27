@@ -1,0 +1,59 @@
+{
+  "keywordSeed": {
+    "keyword": "근처가볼만한곳",
+    "monthlySearches": 57920,
+    "competition": "높음",
+    "trendGrowth": "미확인",
+    "source": "backend/out/blog/.hot-keywords.txt",
+    "selection": "19:35 여행지·명소 회차에 맞춰 울산 지역 행사로 구체화"
+  },
+  "observedAt": "2026-11-23",
+  "sources": [
+    {
+      "title": "[울산문화관광재단] 울산 크리스마스 마켓 홍보",
+      "url": "https://www.utp.or.kr/board/board.php?bo_table=sub0501&menu_group=4&mnuno=M0000046&sno=0401&wr_id=40274",
+      "published": "2026-11-11",
+      "type": "official local tourism foundation notice",
+      "extract": "2026.11.27~12.26; 매주 금·토 18:00~22:00, 크리스마스 주간 수·목·금·토 운영. 장소 울산대공원 풍차 일원(정문). 마켓부스 31개, 푸드트럭 17대. 회전목마·산타의 집·팝업존, 버스킹·숲 체험, 스노우존·포토존 예정.",
+      "urlChecked": true
+    },
+    {
+      "title": "‘울산 크리스마스 마켓’ 참여 소상공인 48팀 모집",
+      "url": "https://nwww.newsis.com/view/NISX20261027_0003842366",
+      "published": "2026-10-27",
+      "type": "press",
+      "extract": "48팀 모집 규모는 판매 15팀, 체험 6팀, 먹거리 10팀, 푸드트럭 17팀으로 보도됨. 앞의 세 분야 합계는 31개 부스. 모집 보도이므로 확정 판매자 명단으로 취급하지 않음.",
+      "urlChecked": true
+    },
+    {
+      "title": "울산 크리스마스 마켓 11월 27일 울산대공원서 개장",
+      "url": "https://m.culturegb.com/view.php?idx=2613",
+      "published": "2026-11-22",
+      "type": "press",
+      "extract": "11.27~12.26, 금·토 18~22시, 12.23~26 추가 운영. 정문 풍차 일원, 31개 마켓부스·17개 푸드트럭과 회전목마·산타의 집·스노우존·포토존 및 버스킹·숲 체험 예정.",
+      "urlChecked": true
+    },
+    {
+      "title": "울산대공원 주차안내",
+      "url": "https://www.uic.or.kr/ulsanpark/introduction/intro02_3.do",
+      "published": "undated live page",
+      "type": "official facility operator",
+      "extract": "주차 가능 1,837대(정문 335·동문 519·남문 983). 모든 주차장 09:00~21:00. 행사 등 여건에 따라 변경 가능. 승용차 기본 30분 500원, 이후 10분당 200원, 대형은 승용차 요금의 2배. 별도 행사 연장 안내는 확인되지 않음.",
+      "urlChecked": true
+    },
+    {
+      "title": "울산대공원 오시는 길",
+      "url": "https://www.uic.or.kr/ulsanpark/introduction/intro05.do",
+      "published": "undated live page",
+      "type": "official facility operator",
+      "extract": "정문·남문·동문별 주요 시설과 길찾기 항목이 분리돼 있음. 공원 주소는 울산광역시 남구 대공원로 94.",
+      "urlChecked": true
+    }
+  ],
+  "candidateNotes": [
+    "신규 개장 전 회차라 실제 유행 단계·방문객 규모·혼잡도는 자료가 없음. 유행 중이라고 확대 표현하지 않음.",
+    "공식 행사 공지와 두 보도가 같은 행사 주관 정보를 기반으로 해 방문객 규모에 대한 독립 근거는 아님.",
+    "입장료·체험별 요금, 날짜별 공연 시간표, 버스 노선·막차, 행사 당일 주차 연장 여부는 확인하지 못함.",
+    "게시된 기간 안의 실제 운영일은 기본 금·토(8일)와 12월 23~26일 추가 운영(4일), 총 12일로 계산됨."
+  ]
+}

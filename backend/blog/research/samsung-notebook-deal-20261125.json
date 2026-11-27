@@ -1,0 +1,211 @@
+{
+  "keyword": "삼성노트북",
+  "categoryId": "life-info",
+  "notes": "삼성노트북 검색 수요가 높은 시점에 삼성닷컴에서 11월 말 종료 행사를 진행해, 행사 기간보다 모델·결제 경로·혜택의 지급 방식을 구분하는 구매 안내로 좁혀요. 공식 삼성위크·수능 해방 Week·정확한 모델 상품 페이지를 우선하고, 연합뉴스와 뉴스핌은 행사 발표 보도, 이오플래는 판매처별 조건을 살피는 보조 자료로만 사용해요. 삼성노트북은 월 검색수 74,600, 경쟁도 높음, 모바일 클릭 평균 648.4, bid3 990원으로 확인됐어요. 문서 수는 미확인이라 경쟁비를 계산할 수 없다는 한계가 있어요.",
+  "topicSelection": {
+    "keyword": "삼성노트북",
+    "monthlySearchVolume": 74600,
+    "competition": "높음",
+    "monthlyAveMobileClickCount": 648.4,
+    "bid3": 990,
+    "documentCount": null,
+    "selectionNote": "월 검색수 74,600, bid3 990원으로 확인한 후보 중 수요·광고 단가가 가장 높았어요. 문서 수는 확인되지 않아 경쟁비를 비교하지 못했고, 이 한계를 기록해요."
+  },
+  "sources": [
+    {
+      "title": "삼성위크 | 삼성닷컴",
+      "url": "https://www.samsung.com/sec/event/samsung-week/",
+      "body": "삼성닷컴 삼성위크 페이지는 행사를 2026년 11월 1일부터 11월 30일까지 진행한다고 안내해요. 행사 대상 모델을 온라인에서 구매하는 고객에게 특정 카드사의 결제일 할인 7%를 제공하는 항목이 있고, 삼성·KB국민·롯데카드와 결제 금액 50만원 이상 같은 별도 요건이 붙어요. 카드 혜택은 대상 모델과 예산에 따라 조기 종료될 수 있고, 일부 추천 상품 등 제외 조건도 있어요. 삼성카드 캐시백은 구매 합계 구간별 금액이 제시되지만 해당 모델 목록, 행사 적용 여부, 예산 한도가 따로 정해져 있어 모든 노트북에 자동 적용된다고 볼 수 없어요. 페이지는 온라인 전용 행사이며 조건이 사전 고지 없이 바뀔 수 있다고 안내하므로 결제 직전 상품 페이지와 주문 화면을 확인해야 해요.",
+      "tier": "official"
+    },
+    {
+      "title": "수능 해방 Week | 갤럭시 북6 시리즈 구매 혜택",
+      "url": "https://www.samsung.com/sec/event/galaxybook6_2026students/",
+      "body": "삼성의 갤럭시 북6 수능 해방 Week 안내는 2026년 11월 19일부터 11월 30일까지를 행사 기간으로 제시해요. 갤럭시 북6 울트라·프로·일반형과 엣지, 갤럭시 북5 프로 360·프로·일반형, 북4 엣지 등 지정 모델이 대상이에요. 대상 제품 구매자는 갤럭시 북 Members에서 신청하는 한컴오피스팩과 Goodnotes Basic 1년 혜택을 확인할 수 있고, 소프트웨어별 제공 기간과 등록 조건은 달라요. 수능 고객용 키보드 혜택은 2006년 1월 1일부터 2008년 12월 31일 사이 출생자에게만 해당하며 대상 모델 구매 후 별도 신청해야 해요. 사은품은 수량이 한정되고 일부 구성은 추가 결제나 계정 조건이 있으므로 행사 페이지에서 대상 모델과 신청 절차를 확인해야 해요.",
+      "tier": "official"
+    },
+    {
+      "title": "갤럭시 북6 Pro 35.6cm NT940XJG-KC51S 구매 페이지",
+      "url": "https://www.samsung.com/sec/galaxybook/galaxy-book6-series/buy/?modelCode=NT940XJG-KC51S",
+      "body": "삼성닷컴의 모델 코드 NT940XJG-KC51S 상품 페이지는 갤럭시 북6 Pro 35.6cm, Core Ultra 5, 512GB 구성으로 표시돼요. 페이지에 보인 기준가는 2,960,000원이고 결제일 할인 예시는 7%인 207,200원이에요. 단순 차감 후 결제액은 2,752,800원이며 별도로 삼성전자 멤버십 포인트 2,960P가 표시돼요. 페이지의 '최종 체감가' 2,749,840원은 포인트까지 가치로 반영한 수치라 카드에서 빠져나가는 현금 결제액과 구분해야 해요. 할인은 행사 대상 카드와 상품·결제 조건에 따라 달라질 수 있어요. 같은 화면에는 AI 구독형 선택의 48개월 총 납부액 4,550,880원과 초기 납부 40% 1,821,600원이 제시돼 구독 가격을 단품 구매 할인과 같은 기준으로 비교할 수 없어요. 가격은 조회 시점의 페이지 기준이에요.",
+      "tier": "official"
+    },
+    {
+      "title": "삼성카드 혜택 안내",
+      "url": "https://www.samsung.com/sec/eventList/creditcard_benefit/?anc=cardbenefit",
+      "body": "삼성닷컴 카드 혜택 안내는 결제 수단별 할인, 캐시백, 무이자 할부 같은 행사를 별도 조건과 함께 안내해요. 전체 카드 행사 목록이 있더라도 상품별 상세 페이지에서 제외되는 제품이나 다른 적용 방식이 있을 수 있으므로 상품 페이지의 결제 혜택을 우선 확인해야 해요. 카드 할인과 캐시백, 멤버십 포인트가 모두 표시될 때는 각각 실제 결제금액 차감인지, 사후 지급인지, 적립 포인트인지 구분해야 총 지출을 비교할 수 있어요. 해당 페이지는 카드 혜택이 시점별로 달라질 수 있으므로 주문 직전 조건을 확인하는 근거로만 쓰고, 특정 노트북 모델이 자동으로 혜택 대상이라고 일반화하지 않아요.",
+      "tier": "official"
+    },
+    {
+      "title": "삼성전자, 11월 삼성위크 진행…갤럭시 북6 Pro 등 혜택",
+      "url": "https://www.yna.co.kr/view/AKR20261030027700003",
+      "body": "연합뉴스는 2026년 10월 30일 삼성전자의 11월 삼성위크 계획을 보도했어요. 기사에서 삼성위크 기간은 11월 1일부터 30일까지로 소개되고, 갤럭시 북6 Pro를 포함한 모바일·IT 제품과 가전 제품 행사가 함께 언급돼요. 보도는 제조사가 발표한 행사 내용을 전하는 것이며 실제 할인율, 대상 모델, 카드 조건, 예산 소진 여부는 결제 시점의 삼성닷컴 안내를 확인해야 해요. 이 자료는 삼성위크가 노트북 한 모델만의 행사가 아닌 여러 제품을 포함한 월간 행사라는 점과 보도 시점을 교차 확인하는 용도로 사용해요. 기사 자체가 독립적인 할인 가격 비교를 제공하는 것은 아니므로 구체적 가격 근거로는 공식 상품 페이지를 우선해요.",
+      "tier": "press"
+    },
+    {
+      "title": "삼성전자, 11월 삼성위크 진행…갤럭시 북6 Pro 등 혜택",
+      "url": "https://www.newspim.com/news/view/20261030000250",
+      "body": "뉴스핌은 2026년 10월 30일 삼성전자의 11월 삼성위크를 보도했고, 갤럭시 북6 Pro를 포함해 제품군별 혜택이 제공된다고 정리했어요. 보도된 행사의 월간 일정과 제품군은 연합뉴스 기사 및 삼성 공식 행사 페이지와 대조할 수 있지만, 같은 제조사 발표에 바탕을 둔 기사라 별도 가격 조사나 실제 거래 사례로 계산하면 안 돼요. 기사에서 소개하는 행사 대상이나 혜택은 공식 페이지에서 모델별로 제한될 수 있고, 재고와 카드 행사 예산은 조기 종료될 수 있어요. 본문에서는 이 기사를 행사 존재의 보조 교차 확인 자료로만 사용하고, 개별 모델의 금액과 혜택 조건은 삼성닷컴 상품 페이지를 근거로 삼아요.",
+      "tier": "press"
+    },
+    {
+      "title": "수능 D-DAY, 노트북 할인 어디서 사야할까",
+      "url": "https://eopla.net/magazines/49290",
+      "body": "이오플래는 2026년 11월 19일 수능 이후 노트북 구매 혜택을 정리한 비교성 기사를 게시했어요. 삼성 갤럭시북 행사와 다른 유통 채널의 프로모션을 함께 살피며, 행사 기간과 제품 구성, 구매 후 신청하는 사은품 조건이 판매처별로 다를 수 있다고 안내해요. 이 기사는 제조사·유통사 이벤트를 소개하는 상업적 성격의 비교 콘텐츠이므로 기사만으로 최저가를 확정하지 않고 공식 행사 페이지와 개별 판매 페이지를 다시 확인해야 해요. 갤럭시 북 Members를 통한 혜택 신청과 수량 제한 안내가 있는지 확인하는 보조 자료로 사용하고, 공식 페이지에서 확인되지 않는 사은품 금액이나 대상 조건은 본문에 넣지 않아요.",
+      "tier": "press"
+    }
+  ],
+  "claims": [
+    {
+      "claim": "삼성위크는 2026년 11월 1일부터 30일까지이며, 7% 카드 결제일 할인은 대상 모델·지정 카드·결제액 조건이 붙어요.",
+      "grade": "confirmed",
+      "evidence": [
+        "삼성닷컴 공식 행사 안내에 기간, 대상 카드와 50만원 이상 조건, 예산 조기 소진 가능성이 표시돼요.",
+        "연합뉴스와 뉴스핌도 삼성전자의 11월 행사와 갤럭시 북6 Pro 포함을 보도해요."
+      ],
+      "sourceUrls": [
+        "https://www.samsung.com/sec/event/samsung-week/",
+        "https://www.yna.co.kr/view/AKR20261030027700003",
+        "https://www.newspim.com/news/view/20261030000250"
+      ]
+    },
+    {
+      "claim": "NT940XJG-KC51S 상품 페이지는 기준가 2,960,000원, 7% 할인 예시 207,200원, 차감 후 2,752,800원과 2,960P를 별도로 표시해요.",
+      "grade": "confirmed",
+      "evidence": [
+        "삼성닷컴의 모델 코드가 지정된 상품 페이지에 해당 모델과 결제·포인트 예시가 함께 표시돼요."
+      ],
+      "sourceUrls": [
+        "https://www.samsung.com/sec/galaxybook/galaxy-book6-series/buy/?modelCode=NT940XJG-KC51S"
+      ]
+    },
+    {
+      "claim": "삼성닷컴 상품 페이지의 2,749,840원은 2,960P 가치를 포함한 체감가라 실제 결제 차감액과 다르게 읽어야 해요.",
+      "grade": "confirmed",
+      "evidence": [
+        "페이지의 기준가에서 카드 할인액을 뺀 금액은 2,752,800원이고, 포인트 2,960P를 별도 표시한 뒤 최종 체감가를 제시해요."
+      ],
+      "sourceUrls": [
+        "https://www.samsung.com/sec/galaxybook/galaxy-book6-series/buy/?modelCode=NT940XJG-KC51S"
+      ]
+    },
+    {
+      "claim": "갤럭시 북6 AI 구독 선택은 48개월 총 납부액 4,550,880원과 초기 납부 1,821,600원이 표시돼 단품 구매 할인과 총지출 기준을 달리해야 해요.",
+      "grade": "confirmed",
+      "evidence": [
+        "삼성닷컴의 지정 상품 페이지 구독 선택에 48개월 총액과 40% 초기 납부액이 표시돼요."
+      ],
+      "sourceUrls": [
+        "https://www.samsung.com/sec/galaxybook/galaxy-book6-series/buy/?modelCode=NT940XJG-KC51S"
+      ]
+    },
+    {
+      "claim": "수능 해방 Week는 2026년 11월 19일부터 30일까지이며, 키보드 혜택은 2006년 1월 1일~2008년 12월 31일 출생자 등 조건과 별도 신청이 필요해요.",
+      "grade": "confirmed",
+      "evidence": [
+        "삼성의 공식 행사 페이지가 행사 기간, 출생일 조건, 대상 모델 및 Galaxy Book Members 신청을 안내해요.",
+        "이오플래의 기사도 기간과 구매 후 신청 조건을 보조 확인해요."
+      ],
+      "sourceUrls": [
+        "https://www.samsung.com/sec/event/galaxybook6_2026students/",
+        "https://eopla.net/magazines/49290"
+      ]
+    },
+    {
+      "claim": "삼성위크 혜택 예산 잔액과 타 판매처의 같은 모델 최저 실구매가는 이번 조사에서 확인되지 않았어요.",
+      "grade": "confirmed",
+      "evidence": [
+        "공식 행사는 조기 소진 가능성을 안내하며, 이번 조사는 타 판매처 가격 비교를 수행하지 않았어요."
+      ],
+      "sourceUrls": [
+        "https://www.samsung.com/sec/event/samsung-week/",
+        "https://www.samsung.com/sec/galaxybook/galaxy-book6-series/buy/?modelCode=NT940XJG-KC51S"
+      ]
+    }
+  ],
+  "numbers": [
+    {
+      "what": "삼성위크 기간",
+      "value": "2026-11-01~2026-11-30",
+      "asOf": "2026-11-25",
+      "sourceUrl": "https://www.samsung.com/sec/event/samsung-week/"
+    },
+    {
+      "what": "삼성위크 카드 결제일 할인 예시",
+      "value": "7%",
+      "asOf": "2026-11-25",
+      "sourceUrl": "https://www.samsung.com/sec/event/samsung-week/"
+    },
+    {
+      "what": "삼성위크 카드 결제액 기준",
+      "value": "50만원 이상",
+      "asOf": "2026-11-25",
+      "sourceUrl": "https://www.samsung.com/sec/event/samsung-week/"
+    },
+    {
+      "what": "NT940XJG-KC51S 기준가",
+      "value": "2,960,000원",
+      "asOf": "2026-11-25",
+      "sourceUrl": "https://www.samsung.com/sec/galaxybook/galaxy-book6-series/buy/?modelCode=NT940XJG-KC51S"
+    },
+    {
+      "what": "지정 상품 페이지 7% 할인액 예시",
+      "value": "207,200원",
+      "asOf": "2026-11-25",
+      "sourceUrl": "https://www.samsung.com/sec/galaxybook/galaxy-book6-series/buy/?modelCode=NT940XJG-KC51S"
+    },
+    {
+      "what": "지정 상품 페이지 단순 차감 결제액",
+      "value": "2,752,800원",
+      "asOf": "2026-11-25",
+      "sourceUrl": "https://www.samsung.com/sec/galaxybook/galaxy-book6-series/buy/?modelCode=NT940XJG-KC51S"
+    },
+    {
+      "what": "지정 상품 페이지 포인트 포함 체감가",
+      "value": "2,749,840원",
+      "asOf": "2026-11-25",
+      "sourceUrl": "https://www.samsung.com/sec/galaxybook/galaxy-book6-series/buy/?modelCode=NT940XJG-KC51S"
+    },
+    {
+      "what": "수능 해방 Week 기간",
+      "value": "2026-11-19~2026-11-30",
+      "asOf": "2026-11-25",
+      "sourceUrl": "https://www.samsung.com/sec/event/galaxybook6_2026students/"
+    },
+    {
+      "what": "수능 키보드 혜택 대상 출생일",
+      "value": "2006-01-01~2008-12-31",
+      "asOf": "2026-11-25",
+      "sourceUrl": "https://www.samsung.com/sec/event/galaxybook6_2026students/"
+    },
+    {
+      "what": "삼성노트북 월 검색수",
+      "value": "74,600",
+      "asOf": "2026-11-25",
+      "sourceUrl": null
+    },
+    {
+      "what": "삼성노트북 bid3",
+      "value": "990원",
+      "asOf": "2026-11-25",
+      "sourceUrl": null
+    }
+  ],
+  "dropped": [
+    {
+      "source": "삼성전자 갤럭시 북6 국내 출시 보도(2026-09-01)",
+      "reason": "출시 초기 혜택은 9월에 종료되어 11월 행사 조건 근거로 사용하지 않음."
+    },
+    {
+      "source": "삼성닷컴 이외 판매처의 가격 비교 페이지",
+      "reason": "동일 모델의 현재 결제 조건을 신뢰할 수 있게 확인하지 못해 최저가 주장에 사용하지 않음."
+    }
+  ],
+  "cannotCover": [
+    "행사 예산이 결제 시점에 남아 있는지와 특정 주문이 혜택 승인되는지는 글만으로 확정할 수 없어요.",
+    "삼성닷컴 이외 판매처의 같은 구성 최저 실구매가를 비교하지 않았어요.",
+    "월 검색수 74,600과 bid3 990원은 확인했지만 문서 수가 미확인이라 경쟁비는 산출하지 못했어요.",
+    "구독 가격·카드 할인·포인트 조건은 모델과 계약 방식에 따라 달라질 수 있어요."
+  ],
+  "songs": []
+}

@@ -1,0 +1,138 @@
+{
+  "keyword": "인덕션 냄비 확인 방법과 호환 기준",
+  "categoryId": "life-info",
+  "notes": "자석은 바닥의 자성을 확인하는 첫 검사지만 호환을 단독으로 보증하지 않아요. IH 표시와 바닥의 자성 범위, 평탄도, 기기별 권장 크기를 함께 확인해야 해요. LG의 90%·화구 크기 안내와 삼성의 시험 모드는 각 제조사 페이지에 적힌 범위로만 소개해요. 네이버 검색광고 API 자격증명이 없어 검색 수요는 미확인이에요.",
+  "sources": [
+    {
+      "title": "[LG 디오스 인덕션][사용 용기 가이드] 가열이 안돼요",
+      "url": "https://www.lge.co.kr/support/solutions-20151808045588?category=CT50019695&cstFlag=Y&mktModelCd=BEH3GW&page=0&seq=2&sort=update&subCategory=CT50019761",
+      "body": "LG전자 고객지원은 인덕션에서 작동하는 용기의 종류와 크기, 놓는 위치가 작동 여부와 가열 성능에 영향을 준다고 설명해요. IH 표시가 없으면 재질에 따라 작동하지 않거나 화력이 약할 수 있고, 표시가 있더라도 바닥 일부만 자석이 붙는 재질이면 제대로 작동하지 않을 수 있다고 안내해요. 철제 프라이팬·냄비, 법랑, 스테인리스 등을 사용 가능한 용기로 들고 알루미늄, 양은, 내열유리, 일부 도자기류 등을 부적합 예시로 제시해요. 바닥은 평평하고 상판에 밀착해야 하며 버너 중앙에 놓도록 안내해요. 이 페이지의 예시로 바닥 면적은 버너 크기의 90% 이상, 대·중·소 버너별 크기는 각각 15~22cm, 14~18cm, 14~15cm로 적혀 있어요. 페이지는 제품별 권장 크기가 다를 수 있으니 설명서를 보라고 덧붙여요.",
+      "tier": "official"
+    },
+    {
+      "title": "삼성 레인지(인덕션) IH(Induction Heating) 가열 방식이란",
+      "url": "https://www.samsungsvc.co.kr/solution/1025831",
+      "body": "삼성전자서비스는 인덕션이 자기 유도 방식으로 자기장을 만들어 조리 용기를 가열한다고 설명해요. 자석에 붙는 자성체 용기만 동작하며, 철·주철·법랑은 사용 가능 예시로 들고 스테인리스는 바닥이 자석에 붙는 경우에 사용할 수 있다고 안내해요. 알루미늄과 구리, 유리·도자기·뚝배기 등은 사용할 수 없는 예시예요. 자성이 약한 용기는 인식이 잘 안 되거나 출력이 낮아 조리 시간이 길어질 수 있다고 설명하고, 권장 용기와 크기를 쓰지 않으면 인식이 어려울 수 있다고 밝혀요. 일부 모델은 조작부의 마그네틱 노브를 이용해 바닥에 자석이 붙는지 확인할 수 있다고 적혀 있지만 모든 모델에 있는 기능은 아니에요.",
+      "tier": "official"
+    },
+    {
+      "title": "인덕션 제품 자주 묻는 질문",
+      "url": "https://www.samsung.com/sec/electric-range/all-electric-range/?aiscCtgYn=N&bespokeYn=N&cardMaxBenefitDcRate=%EC%B9%B4%EB%93%9C%EC%82%AC+%EA%B2%B0%EC%A0%9C+%ED%98%9C%ED%83%9D+7%25,&cardMaxBenefitIstmPrd=%EC%B5%9C%EB%8C%80+24%EA%B0%9C%EC%9B%94+%EC%9E%A5%EA%B8%B0+%EB%AC%B4%EC%9D%B4%EC%9E%90+%ED%95%A0%EB%B6%80+%ED%98%9C%ED%83%9D&ctgPathNm=cooking-appliances&dishwashersYn=N&energyCalcYn=N&installGuideYn=N&lnbUseYn=Y&maxSalePrc=199&menuTxtColor=%23000000&minSalePrc=12&pfGnbHidden_Yn=N&pfTtl=%EC%A3%BC%EB%B0%A9%EA%B0%80%EC%A0%84&pfTtlShowYn=Y&rcomSortEfctYn=Y&tabletYn=N&tvYn=N",
+      "body": "삼성전자 제품 안내는 세라믹 글래스 아래 코일의 자기장이 철 소재 조리 용기에 전류를 만들고, 그 전류가 저항에 의해 열로 바뀌는 원리를 설명해요. 현재 가진 냄비와 프라이팬은 자기장에 반응하는 철·스테인리스 소재인지 확인하고, 바닥에 자석이 붙는지 시험할 수 있다고 안내해요. 해당 제품군에는 사용 가능 용기 시험 모드가 소개되어 있으며, 80% 이상은 적합, 10~70%는 사용할 수 있지만 성능을 100% 활용하지 못하는 경우로 설명해요. 시험 모드는 일부 모델에서만 지원될 수 있다고 적혀 있으므로, 이 수치와 기능은 삼성 안내의 해당 모드 기준이에요. 구입한 인덕션에 같은 시험 기능이 있다고 일반화할 수는 없어요.",
+      "tier": "official"
+    },
+    {
+      "title": "냄비 바닥에 ‘자석’만 갖다 대보세요…왜 이제 알았나 싶어요",
+      "url": "https://www.wikitree.co.kr/articles/1102187",
+      "body": "위키트리 생활 기사에서는 인덕션 냄비를 고를 때 자석으로 바닥을 확인하는 방법을 소개해요. 인덕션은 가스 불꽃으로 냄비를 데우는 대신 상판 아래 코일이 만든 자기장이 용기 바닥에 전류를 유도해 용기 자체를 가열한다고 설명해요. 그래서 IH 표시 또는 자석이 붙는 바닥을 확인하는 것이 첫 기준이며, 자석이 붙으면 인덕션에서 쓸 수 있는 냄비일 가능성이 높다고 서술해요. 기사도 일반 알루미늄 소재의 양은 냄비와 유리·뚝배기류는 자성이 없어 사용하기 어려운 예로 들어요. 다만 기사 표현은 자석 테스트를 간단한 판별법으로 소개하는 수준이라, 제품별 바닥 면적과 화구 조건은 제조사 안내와 함께 확인해야 해요.",
+      "tier": "press"
+    },
+    {
+      "title": "인덕션용 냄비를 자석·바닥 모양·크기로 확인하는 법",
+      "url": "https://yozmpick.com/blog/induction-cookware-magnet-flat-base-check",
+      "body": "요즘 픽의 생활·쇼핑 안내는 자석 하나만으로 판단하기보다 제품이나 포장의 인덕션 호환 표시를 먼저 확인하고, 실제 냄비 바닥의 자성, 평평함, 바닥 접촉면 크기를 순서대로 살피라고 제안해요. 바닥 중앙과 가장자리에 자석을 대고, 다리나 요철, 휘어진 부분이 있는지 뒤집어 확인한 뒤, 냄비 윗지름이 아니라 상판에 닿는 평평한 바닥을 화구 기준과 비교하는 방식이에요. 글은 제조사별 권장 용기 크기가 다를 수 있어 사용 중인 제품 설명서를 마지막으로 확인하라고 명시해요. IH 표시가 있어도 바닥 일부만 자성이면 작동에 문제가 있을 수 있다는 LG 고객지원 설명도 함께 언급해요.",
+      "tier": "blog"
+    },
+    {
+      "title": "인덕션 냄비 고르는 법｜자석 테스트·바닥 크기·소음·청소 기준",
+      "url": "https://lumirexo.com/induction-cookware-magnet-size-noise-cleaning-guide/",
+      "body": "Lumirexo의 생활정보 글은 인덕션용 냄비의 IH 표시, 바닥 자석 반응, 평탄도, 화구에 맞는 바닥 크기를 함께 보라고 정리해요. 중앙 한 곳만 시험하지 말고 바닥 중앙과 가장자리에 자석을 대며, 평평한 곳에 놓아 흔들림이 있는지도 살피라고 해요. 냄비의 윗지름이 아니라 실제 상판에 닿는 바닥 지름과 사용 중인 인덕션 설명서의 화구별 권장 범위를 비교하라는 안내예요. 재질별로 철·주철·법랑과 스테인리스, 알루미늄·구리의 바닥 구조가 다를 수 있다고 구분하고, 같은 재질명이어도 결과가 다를 수 있으므로 제조사 설명과 인덕션 모델의 조건을 확인하라고 덧붙여요.",
+      "tier": "blog"
+    }
+  ],
+  "claims": [
+    {
+      "claim": "인덕션은 자기장을 이용해 조리 용기 바닥을 가열하므로, 자석은 바닥에 자성이 있는지 확인하는 빠른 첫 검사예요.",
+      "grade": "confirmed",
+      "evidence": [
+        "삼성전자서비스는 자성체 용기만 인덕션에서 동작한다고 설명해요.",
+        "삼성 제품 안내와 위키트리는 자기장이 용기 바닥에 전류를 만들어 바닥을 가열하는 원리를 설명해요."
+      ],
+      "sourceUrls": [
+        "https://www.samsungsvc.co.kr/solution/1025831",
+        "https://www.samsung.com/sec/electric-range/all-electric-range/?aiscCtgYn=N&bespokeYn=N&cardMaxBenefitDcRate=%EC%B9%B4%EB%93%9C%EC%82%AC+%EA%B2%B0%EC%A0%9C+%ED%98%9C%ED%83%9D+7%25,&cardMaxBenefitIstmPrd=%EC%B5%9C%EB%8C%80+24%EA%B0%9C%EC%9B%94+%EC%9E%A5%EA%B8%B0+%EB%AC%B4%EC%9D%B4%EC%9E%90+%ED%95%A0%EB%B6%80+%ED%98%9C%ED%83%9D&ctgPathNm=cooking-appliances&dishwashersYn=N&energyCalcYn=N&installGuideYn=N&lnbUseYn=Y&maxSalePrc=199&menuTxtColor=%23000000&minSalePrc=12&pfGnbHidden_Yn=N&pfTtl=%EC%A3%BC%EB%B0%A9%EA%B0%80%EC%A0%84&pfTtlShowYn=Y&rcomSortEfctYn=Y&tabletYn=N&tvYn=N",
+        "https://www.wikitree.co.kr/articles/1102187"
+      ]
+    },
+    {
+      "claim": "자석이 붙는지만으로 호환을 확정하기 어려워요. IH 표시와 바닥 자성 범위, 평탄도, 화구에 맞는 크기와 위치를 함께 봐야 해요.",
+      "grade": "confirmed",
+      "evidence": [
+        "LG 안내는 IH 표시가 있어도 바닥 일부만 자성이면 제대로 작동하지 않을 수 있다고 해요.",
+        "LG 안내는 평평한 바닥, 버너 크기에 맞는 용기, 중앙 배치를 제시해요.",
+        "요즘 픽과 Lumirexo는 표시·자성·평탄도·접촉면 크기를 함께 확인하라고 정리해요."
+      ],
+      "sourceUrls": [
+        "https://www.lge.co.kr/support/solutions-20151808045588?category=CT50019695&cstFlag=Y&mktModelCd=BEH3GW&page=0&seq=2&sort=update&subCategory=CT50019761",
+        "https://yozmpick.com/blog/induction-cookware-magnet-flat-base-check",
+        "https://lumirexo.com/induction-cookware-magnet-size-noise-cleaning-guide/"
+      ]
+    },
+    {
+      "claim": "철·주철·법랑은 호환 가능 예시이고, 스테인리스는 바닥 자성 여부를 확인해야 해요. 알루미늄·구리·유리·도자기류는 일반적으로 부적합 예시지만 복합 바닥 제품은 제조사 설명을 확인해야 해요.",
+      "grade": "confirmed",
+      "evidence": [
+        "삼성전자서비스는 철·주철·법랑을 사용 가능으로, 스테인리스는 자석이 붙는 경우 사용 가능으로 안내해요.",
+        "삼성전자서비스와 LG 고객지원은 알루미늄·유리·도자기 등 여러 재질을 부적합 예시로 들어요.",
+        "LG와 독립 생활 안내는 제품 상세 정보와 사용설명서를 함께 확인하라고 해요."
+      ],
+      "sourceUrls": [
+        "https://www.samsungsvc.co.kr/solution/1025831",
+        "https://www.lge.co.kr/support/solutions-20151808045588?category=CT50019695&cstFlag=Y&mktModelCd=BEH3GW&page=0&seq=2&sort=update&subCategory=CT50019761",
+        "https://yozmpick.com/blog/induction-cookware-magnet-flat-base-check"
+      ]
+    },
+    {
+      "claim": "LG의 90% 바닥 면적과 버너별 크기 수치는 LG 페이지에 나온 예시이며, 모든 인덕션의 공통 규격이 아니에요.",
+      "grade": "confirmed",
+      "evidence": [
+        "LG 안내는 바닥 면적 90% 이상과 대 15~22cm, 중 14~18cm, 소 14~15cm를 예시로 제시해요.",
+        "같은 페이지가 제품별 권장 용기 사이즈가 다를 수 있으므로 사용설명서를 보라고 밝혀요."
+      ],
+      "sourceUrls": [
+        "https://www.lge.co.kr/support/solutions-20151808045588?category=CT50019695&cstFlag=Y&mktModelCd=BEH3GW&page=0&seq=2&sort=update&subCategory=CT50019761"
+      ]
+    },
+    {
+      "claim": "삼성의 사용 가능 용기 시험 모드는 효율성 기준을 보여주지만 지원 여부와 수치 해석은 해당 안내·모델 범위로 한정돼요.",
+      "grade": "confirmed",
+      "evidence": [
+        "삼성 제품 페이지는 시험 모드에서 80% 이상을 적합, 10~70%를 사용 가능하나 성능을 100% 활용하기 어려운 기준으로 안내해요.",
+        "삼성 페이지는 시험 모드가 모델에 따라 다를 수 있다고 밝혀요."
+      ],
+      "sourceUrls": [
+        "https://www.samsung.com/sec/electric-range/all-electric-range/?aiscCtgYn=N&bespokeYn=N&cardMaxBenefitDcRate=%EC%B9%B4%EB%93%9C%EC%82%AC+%EA%B2%B0%EC%A0%9C+%ED%98%9C%ED%83%9D+7%25,&cardMaxBenefitIstmPrd=%EC%B5%9C%EB%8C%80+24%EA%B0%9C%EC%9B%94+%EC%9E%A5%EA%B8%B0+%EB%AC%B4%EC%9D%B4%EC%9E%90+%ED%95%A0%EB%B6%80+%ED%98%9C%ED%83%9D&ctgPathNm=cooking-appliances&dishwashersYn=N&energyCalcYn=N&installGuideYn=N&lnbUseYn=Y&maxSalePrc=199&menuTxtColor=%23000000&minSalePrc=12&pfGnbHidden_Yn=N&pfTtl=%EC%A3%BC%EB%B0%A9%EA%B0%80%EC%A0%84&pfTtlShowYn=Y&rcomSortEfctYn=Y&tabletYn=N&tvYn=N"
+      ]
+    }
+  ],
+  "numbers": [
+    {
+      "what": "LG 안내 예시의 버너 크기 대비 용기 바닥 면적",
+      "value": "90% 이상",
+      "asOf": "LG 디오스 인덕션 고객지원 페이지 기준이며 제품별 권장 크기는 다를 수 있음",
+      "sourceUrl": "https://www.lge.co.kr/support/solutions-20151808045588?category=CT50019695&cstFlag=Y&mktModelCd=BEH3GW&page=0&seq=2&sort=update&subCategory=CT50019761"
+    },
+    {
+      "what": "LG 고객지원 페이지의 대·중·소 버너별 크기 예시",
+      "value": "대 15~22cm, 중 14~18cm, 소 14~15cm",
+      "asOf": "LG 페이지의 예시이며 모든 모델에 공통 적용하지 말고 제품 설명서 확인",
+      "sourceUrl": "https://www.lge.co.kr/support/solutions-20151808045588?category=CT50019695&cstFlag=Y&mktModelCd=BEH3GW&page=0&seq=2&sort=update&subCategory=CT50019761"
+    },
+    {
+      "what": "삼성 사용 가능 용기 시험 모드의 적합 기준",
+      "value": "효율성 80% 이상",
+      "asOf": "삼성 제품 안내의 일부 모델용 시험 모드 기준",
+      "sourceUrl": "https://www.samsung.com/sec/electric-range/all-electric-range/?aiscCtgYn=N&bespokeYn=N&cardMaxBenefitDcRate=%EC%B9%B4%EB%93%9C%EC%82%AC+%EA%B2%B0%EC%A0%9C+%ED%98%9C%ED%83%9D+7%25,&cardMaxBenefitIstmPrd=%EC%B5%9C%EB%8C%80+24%EA%B0%9C%EC%9B%94+%EC%9E%A5%EA%B8%B0+%EB%AC%B4%EC%9D%B4%EC%9E%90+%ED%95%A0%EB%B6%80+%ED%98%9C%ED%83%9D&ctgPathNm=cooking-appliances&dishwashersYn=N&energyCalcYn=N&installGuideYn=N&lnbUseYn=Y&maxSalePrc=199&menuTxtColor=%23000000&minSalePrc=12&pfGnbHidden_Yn=N&pfTtl=%EC%A3%BC%EB%B0%A9%EA%B0%80%EC%A0%84&pfTtlShowYn=Y&rcomSortEfctYn=Y&tabletYn=N&tvYn=N"
+    }
+  ],
+  "dropped": [
+    "루미렉소가 다룬 소음·청소 정보는 이번 인덕션 냄비 호환 확인 주제와 직접 관련이 없어 본문에서 제외해요.",
+    "Haatz PDF 설명서의 모델별 바닥 두께 수치는 범용 호환 기준이 아니며 본문에서도 사용하지 않아요."
+  ],
+  "cannotCover": [
+    "네이버 검색광고 API 자격증명이 없어 키워드 검색량과 경쟁도를 확인하지 못했어요.",
+    "사용 중인 인덕션의 정확한 브랜드·모델과 냄비를 확인하지 않아 개별 조합의 호환 여부를 판정할 수 없어요.",
+    "모든 브랜드에 공통 적용되는 자석 반응 강도나 최소 바닥 크기는 확인되지 않았어요."
+  ],
+  "songs": []
+}

@@ -1,0 +1,282 @@
+{
+  "keyword": "포천펫스타 2026년 11월 29일 일정·포천아트밸리 교통·주차·입장료",
+  "categoryId": "hangeut-trend",
+  "slug": "pocheon-petstar-2026",
+  "searchedAt": "2026-11-20",
+  "origin": "hourly-event-research",
+  "note": "19:35 근교 나들이 유형의 단일 행사 안내예요. 인기·방문 규모를 추정하지 말고, 2026-11-29 개최 예정 상태와 자료별 운영시간 차이를 그대로 밝혀요. 언론 두 건은 같은 포천시 발표를 전달하므로 독립 확산 신호로 세지 않아요.",
+  "trend": {
+    "id": "pocheon-petstar-2026",
+    "type": "upcoming event",
+    "cat": "카페·핫플",
+    "title": "2026 포천 펫스타 in 아트밸리",
+    "def": "포천아트밸리에서 반려가족과 시민이 참여하는 하루 반려문화 행사예요.",
+    "excerpt": "포천 펫스타는 2026년 11월 29일 포천아트밸리에서 열릴 예정이에요. 일정은 기상 악화 예보로 변경된 이력이 있어 방문 전에 공식 공지를 다시 확인해야 해요.",
+    "verdict": "행사 일정과 프로그램은 확인되지만 실제 방문 열기나 참가 규모는 확인할 자료가 없어요.",
+    "stage": "개최 예정",
+    "stageMsg": "2026-11-20 현재 행사는 개최 전이에요. 인기·혼잡 단계는 확인되지 않았어요.",
+    "buzz": "공식 일정과 프로그램은 확인되며 방문 반응 규모는 미확인",
+    "collectedAt": "2026-11-20",
+    "analyzedAt": "2026-11-20",
+    "detailUrl": null
+  },
+  "sources": [
+    {
+      "title": "포천시, 2026 포천 펫스타 11월 29일로 연기",
+      "url": "https://gnews.gg.go.kr/briefing/brief_gongbo_view.do%3Bjsessionid%3DBD7D3C7B3EAB0F02E04CA0E718C32060.ajp13?BS_CODE=s003&bm_name=&keyword=&number=115307&page=1&period_1=&period_2=&search=0&subject_Code=",
+      "host": "gnews.gg.go.kr",
+      "tier": "official",
+      "publishedAt": "2026-11-12",
+      "body": "포천시 발표를 경기도 뉴스포털이 전한 공지예요. 당초 11월 14일 포천아트밸리에서 열 예정이던 2026 포천 펫스타를 기상 악화 예보에 따른 야외 안전 우려로 11월 29일 일요일로 연기했다고 밝혀요. 변경 뒤 행사는 오전 10시부터 오후 5시까지 열리고 장소는 그대로 포천아트밸리예요. 보도자료는 오전 10시 설채현 수의사와 함께하는 트레킹, 오전 11시 개막식, 오전 11시 30분 토크콘서트를 안내하며 나머지 주요 프로그램도 예정대로 진행한다고 적었어요. 방문자에게는 공식 누리집과 SNS의 변경 공지를 다시 확인하도록 안내하고 있어요.",
+      "kind": "official-information"
+    },
+    {
+      "title": "포천펫스타 | 대한민국 구석구석 축제",
+      "url": "https://award.visitkorea.or.kr/kfes/detail/fstvlDetail.do?cntntsNm=%ED%8F%AC%EC%B2%9C%ED%8E%AB%EC%8A%A4%ED%83%80&fstvlCntntsId=06c85b3f-b302-4025-9cc5-27ec77b3a5ff",
+      "host": "award.visitkorea.or.kr",
+      "tier": "data",
+      "publishedAt": "2026-11-12",
+      "body": "한국관광공사의 축제 상세 페이지예요. 포천펫스타를 반려동물과 시민이 함께 만드는 포천 반려문화 축제로 소개하고, 2026년 11월 29일 하루 포천시 신북면 아트밸리로 234 포천아트밸리에서 열린다고 안내해요. 문의 번호는 0502-1949-0514예요. 가격은 유료이며 아트밸리 입장료를 참고하라고 되어 있어 행사 자체 무료라고 단정할 수 없어요. 주요 프로그램으로 멍파서블, 설채현 수의사 토크콘서트, 힐링숲 트레킹, 펫림픽, 도그 필라테스, 피크닉 공연, 현장 체험을 안내해요. 페이지는 운영기관 제출 자료를 바탕으로 하며 현장 상황에 따라 변경될 수 있다고 밝히고, 최종 업데이트 날짜를 2026년 11월 12일로 표시해요.",
+      "kind": "official-information"
+    },
+    {
+      "title": "포천펫스타 | 문화체육관광부 지역축제",
+      "url": "https://www.mcst.go.kr/site/s_culture/festival/festivalView.jsp?pRo=-1&pSeq=13352",
+      "host": "www.mcst.go.kr",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "문화체육관광부의 지역축제 안내는 포천펫스타의 개최 기간을 2026년 11월 29일, 운영 시간을 오전 10시부터 오후 6시까지로 표시해요. 축제 장소는 포천아트밸리이며 요금은 유료(아트밸리 입장료 참고)라고 안내해요. 반려견과 함께하는 트레킹·도그 필라테스·반려견 올림픽·펫티켓 골든벨·체험 부스와 문화공연을 소개해요. 포천시와 언론 보도에서 확인한 17시 종료와 이 페이지의 18시 종료 표기가 서로 달라요. 동일한 날짜를 기준으로 한 운영 시간 차이가 해소되지 않았으므로 종료 시각을 하나로 단정하지 않고 당일 공식 공지를 확인해야 해요.",
+      "kind": "official-information"
+    },
+    {
+      "title": "포천아트밸리 입장료·모노레일 운임료",
+      "url": "https://artvalley.pcfac.or.kr/sub02/sub02.html",
+      "host": "artvalley.pcfac.or.kr",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "포천아트밸리 공식 이용 안내의 요금 페이지예요. 관외 개인 입장료는 성인 6,000원, 청소년과 군인 4,000원, 어린이 2,000원, 만 65세 이상 경로 3,000원으로 안내돼요. 포천시민·장애인·국가유공자·미취학 아동은 무료 대상이며 신분증 등 확인이 필요할 수 있어요. 천문과학관과 주차장 사용료는 무료라고 적혀 있어요. 모노레일은 별도 선택 요금이며 관외 성인 왕복 5,800원이에요. 반려견은 캐리어를 지참해야 모노레일에 동반 탑승할 수 있고 반려동물 유모차는 탑승할 수 없다고 안내돼요. 당일 입장권은 당일 재입장이 가능하고 입장 뒤에는 환불되지 않는다고 적혀 있어요.",
+      "kind": "official-information"
+    },
+    {
+      "title": "포천아트밸리 대중교통 이용 FAQ",
+      "url": "https://artvalley.pcfac.or.kr/sub06/sub02_view.html?wr_id=23",
+      "host": "artvalley.pcfac.or.kr",
+      "tier": "official",
+      "publishedAt": "2025-03-06",
+      "body": "포천아트밸리 공식 FAQ는 시내버스와 시외버스 이용자가 신북면행정복지센터에서 내려 73번 버스로 환승하거나 택시를 이용할 수 있다고 안내해요. 73번은 아트밸리까지 한 정거장이지만 주말 배차 간격을 130~150분으로 설명해요. 안내 페이지는 출발 전 배차시간표를 확인하라고 당부해요. FAQ 게시일은 2025년 3월 6일이라 버스 요금·배차·택시 요금 등 변동 가능한 세부값을 최신 확정 정보처럼 옮기지 않아요. 다만 환승이 필요하고 73번 배차 간격이 길다는 구조는 대중교통 방문 전에 시간을 확인해야 하는 근거예요. 공식 아트밸리 오시는 길 페이지도 출발 지역별 인터넷 길찾기를 권하고 있어요.",
+      "kind": "official-information"
+    },
+    {
+      "title": "경기버스정보 포천 지역 노선 현황",
+      "url": "https://www.gbis.go.kr/service/busInfo/metroBus.action?centerId=4165000000&cmd=searchMetroCenter",
+      "host": "www.gbis.go.kr",
+      "tier": "data",
+      "publishedAt": null,
+      "body": "경기도버스정보시스템의 포천 지역 시내버스 노선 현황에서 일반 73번의 기점은 포천고등학교앞, 종점은 포천아트밸리로 표시돼요. 토요일과 일요일 운행 시간은 기점 06:50~16:50, 종점 07:15~17:20으로 표시되며 배차 간격은 130~150분으로 나와요. 이는 노선 현황 데이터이지 행사 당일 실시간 도착 보장은 아니에요. 포천아트밸리 공식 FAQ도 버스 배차 간격이 길어 시간표를 미리 확인하라고 안내해요. 이 자료를 활용할 때는 노선이 존재한다는 점과 주말 배차 간격만 말하고, 현재 특정 출발 시각의 도착을 약속하지 않아요.",
+      "kind": "official-information"
+    },
+    {
+      "title": "포천시, 2026 포천 펫스타 29일로 연기 | 매일일보",
+      "url": "https://www.m-i.kr/news/articleView.html?idxno=2017676",
+      "host": "www.m-i.kr",
+      "tier": "press",
+      "publishedAt": "2026-11-12",
+      "body": "매일일보의 11월 12일 기사는 포천시 발표를 바탕으로 행사 연기와 주요 일정을 보도해요. 기상 악화 예보에 따라 11월 14일 행사를 11월 29일로 옮기고 장소는 포천아트밸리로 유지했다고 전해요. 보도에 적힌 행사 시간은 오전 10시부터 오후 5시까지이며, 트레킹·개막식·토크콘서트가 각각 오전 10시·11시·11시 30분에 진행된다고 안내해요. 도그 필라테스와 포천 펫림픽, 사진·체험 프로그램도 소개해요. 기사는 시 발표를 전달한 내용이므로 별도의 독립적인 인기·참가 규모 증거로 세지 않아요. 체험별 참가비나 예약 방식은 본문에서 확인되지 않으므로 이 기사를 근거로 무료·예약 불필요라고 단정하지 않아요.",
+      "kind": "report"
+    },
+    {
+      "title": "포천시, 2026 포천 펫스타 29일로 연기 | 여성신문",
+      "url": "https://www.womennews.co.kr/news/articleView.html?idxno=284406",
+      "host": "www.womennews.co.kr",
+      "tier": "press",
+      "publishedAt": "2026-11-12",
+      "body": "여성신문은 2026년 11월 12일 포천 펫스타 일정 변경 소식을 보도했어요. 기사에 따르면 당초 11월 14일 예정이었던 행사가 기상 악화 예보와 야외 프로그램의 안전을 고려해 11월 29일로 변경됐고 장소는 포천아트밸리예요. 기사에 적힌 시간은 10시부터 17시까지예요. 설채현 수의사와 함께하는 트레킹, 개막식과 토크콘서트, 반려동물 체험 프로그램이 소개돼요. 기사 내용은 포천시 발표와 일정·장소·프로그램이 거의 같으므로 두 기사 링크를 독립적인 인기 증거처럼 합산하지 않아요. 일정 변경을 확인하는 보조 보도자료로만 사용해요. 체험 예약이나 프로그램별 잔여 자리는 기사에 적혀 있지 않아 공식 문의처를 통해 확인해야 해요.",
+      "kind": "report"
+    },
+    {
+      "title": "포천아트밸리 오시는 길",
+      "url": "https://artvalley.pcfac.or.kr/sub02/sub03.html",
+      "host": "artvalley.pcfac.or.kr",
+      "tier": "official",
+      "publishedAt": null,
+      "body": "포천아트밸리 공식 오시는 길 페이지는 도로명 주소를 경기도 포천시 신북면 아트밸리로 234로 표시해요. 출발 지역별 경로는 인터넷 길찾기에서 검색해 보라고 안내하며 네이버 지도 검색 링크를 제공해요. 페이지가 특정 출발지의 소요 시간이나 주말 교통량을 보증하지 않으므로 이 글도 서울 등 출발 도시에서의 이동 시간을 단정하지 않아요. 현장 대중교통은 별도 공식 FAQ에서 신북면행정복지센터 하차 뒤 73번 또는 택시 환승으로 설명돼요. 자가용 방문자는 목적지를 공식 주소로 설정하고 행사일 도로·주차 상황을 확인할 필요가 있어요. 지도 길찾기는 출발 위치에 따라 경로를 갱신할 수 있지만, 행사 당일의 혼잡을 미리 확정해 주지는 않아요.",
+      "kind": "official-information"
+    },
+    {
+      "title": "2026 포천 펫스타 행사일정 연기 안내",
+      "url": "https://artvalley.pcfac.or.kr/sub06/sub01_view.html?wr_id=748",
+      "host": "artvalley.pcfac.or.kr",
+      "tier": "official",
+      "publishedAt": "2026-11-12",
+      "body": "포천아트밸리 공식 공지사항에는 '2026 포천 펫스타 행사일정 연기안내'라는 제목과 2026년 11월 12일 게시일이 표시돼요. 공지 페이지는 행사 주최·운영 측의 일정 변경 안내가 올라오는 공식 위치이며, 연결된 안내 이미지도 제공해요. 웹 텍스트 추출에서는 이미지 안의 세부 문구를 온전히 읽을 수 없으므로 날짜와 세부 운영 시간은 텍스트가 읽히는 포천시 보도자료와 한국관광공사·문화체육관광부 안내를 함께 대조해요. 일정 변경이 있었던 행사라 방문 직전 이 공지와 펫스타 공식 누리집을 다시 확인해야 해요. 포스터 이미지에서만 보이는 문구는 원문을 직접 판독하지 않은 상태로 본문 근거에 옮기지 않아요.",
+      "kind": "official-information"
+    },
+    {
+      "title": "포천 아트밸리 중앙무대 전경 사진",
+      "url": "https://commons.wikimedia.org/wiki/File:%ED%8F%AC%EC%B2%9C_%EC%95%84%ED%8A%B8%EB%B0%B8%EB%A6%AC_beeniru_6.JPG",
+      "host": "commons.wikimedia.org",
+      "tier": "data",
+      "publishedAt": null,
+      "body": "위키미디어 커먼즈의 File:포천 아트밸리 beeniru 6.JPG 사진이에요. 파일 설명은 포천 아트밸리의 중앙무대 전경으로 소개하며 분류에도 Pocheon Art Valley가 있어 장소가 일치해요. 촬영·기여자는 Beeniru이고 라이선스는 CC BY-SA 3.0이에요. 본문 장소를 보여주는 참고 사진으로 사용하며, 행사 당일 모습이나 2026년 현재 운영 상태를 보여주는 사진으로 표현하지 않아요.",
+      "kind": "commons-photo"
+    }
+  ],
+  "claims": [
+    {
+      "claim": "행사는 2026년 11월 29일 포천아트밸리에서 열릴 예정이에요.",
+      "grade": "confirmed",
+      "evidence": [
+        "포천시가 11월 14일 예정 행사를 11월 29일로 변경했어요.",
+        "한국관광공사 축제 페이지도 11월 29일과 포천아트밸리를 표시해요."
+      ],
+      "sourceUrls": [
+        "https://gnews.gg.go.kr/briefing/brief_gongbo_view.do%3Bjsessionid%3DBD7D3C7B3EAB0F02E04CA0E718C32060.ajp13?BS_CODE=s003&bm_name=&keyword=&number=115307&page=1&period_1=&period_2=&search=0&subject_Code=",
+        "https://award.visitkorea.or.kr/kfes/detail/fstvlDetail.do?cntntsNm=%ED%8F%AC%EC%B2%9C%ED%8E%AB%EC%8A%A4%ED%83%80&fstvlCntntsId=06c85b3f-b302-4025-9cc5-27ec77b3a5ff"
+      ]
+    },
+    {
+      "claim": "포천시 발표와 두 언론 보도는 행사를 10시부터 17시까지 안내하지만 문화체육관광부 페이지는 18시까지로 표시해요.",
+      "grade": "unclear",
+      "evidence": [
+        "포천시·매일일보·여성신문은 10:00~17:00로 안내해요.",
+        "문화체육관광부 페이지는 10:00~18:00로 안내해요.",
+        "두 언론 보도는 같은 시 발표를 전해 독립 자료가 아니에요."
+      ],
+      "sourceUrls": [
+        "https://gnews.gg.go.kr/briefing/brief_gongbo_view.do%3Bjsessionid%3DBD7D3C7B3EAB0F02E04CA0E718C32060.ajp13?BS_CODE=s003&bm_name=&keyword=&number=115307&page=1&period_1=&period_2=&search=0&subject_Code=",
+        "https://www.mcst.go.kr/site/s_culture/festival/festivalView.jsp?pRo=-1&pSeq=13352",
+        "https://www.m-i.kr/news/articleView.html?idxno=2017676",
+        "https://www.womennews.co.kr/news/articleView.html?idxno=284406"
+      ]
+    },
+    {
+      "claim": "한국관광공사 페이지에는 트레킹·토크콘서트·펫림픽·도그 필라테스 등의 프로그램이 안내돼요.",
+      "grade": "confirmed",
+      "evidence": [
+        "한국관광공사 축제 정보는 프로그램으로 트레킹, 토크콘서트, 펫림픽, 도그 필라테스, 피크닉 공연을 열거해요."
+      ],
+      "sourceUrls": [
+        "https://award.visitkorea.or.kr/kfes/detail/fstvlDetail.do?cntntsNm=%ED%8F%AC%EC%B2%9C%ED%8E%AB%EC%8A%A4%ED%83%80&fstvlCntntsId=06c85b3f-b302-4025-9cc5-27ec77b3a5ff"
+      ]
+    },
+    {
+      "claim": "한국관광공사는 행사 요금을 유료(아트밸리 입장료 참고)로 분류하고, 아트밸리 공식 요금표는 관외 성인 입장료를 6,000원으로 안내해요.",
+      "grade": "confirmed",
+      "evidence": [
+        "한국관광공사 축제 페이지는 유료(아트밸리 입장료 참고)라고 안내해요.",
+        "아트밸리 공식 요금표의 관외 성인 개인 입장료는 6,000원이에요."
+      ],
+      "sourceUrls": [
+        "https://award.visitkorea.or.kr/kfes/detail/fstvlDetail.do?cntntsNm=%ED%8F%AC%EC%B2%9C%ED%8E%AB%EC%8A%A4%ED%83%80&fstvlCntntsId=06c85b3f-b302-4025-9cc5-27ec77b3a5ff",
+        "https://artvalley.pcfac.or.kr/sub02/sub02.html"
+      ]
+    },
+    {
+      "claim": "포천아트밸리 주차장 사용료는 무료라고 공식 이용 안내에 적혀 있어요.",
+      "grade": "confirmed",
+      "evidence": [
+        "포천아트밸리 이용 안내가 주차장 사용료 무료라고 명시해요."
+      ],
+      "sourceUrls": [
+        "https://artvalley.pcfac.or.kr/sub02/sub02.html"
+      ]
+    },
+    {
+      "claim": "공식 FAQ는 신북면행정복지센터에서 73번 버스나 택시로 환승하는 방법을 안내하고, 73번의 주말 배차를 130~150분으로 적어요.",
+      "grade": "reported",
+      "evidence": [
+        "포천아트밸리 공식 FAQ는 2025-03-06 게시물에서 해당 환승과 배차 간격을 안내해요.",
+        "경기버스정보도 73번 노선의 주말 배차를 130~150분으로 표시해요."
+      ],
+      "sourceUrls": [
+        "https://artvalley.pcfac.or.kr/sub06/sub02_view.html?wr_id=23",
+        "https://www.gbis.go.kr/service/busInfo/metroBus.action?centerId=4165000000&cmd=searchMetroCenter"
+      ]
+    },
+    {
+      "claim": "행사의 실제 인기도와 체험별 사전 접수·잔여석 조건은 확인 자료로 판단할 수 없어요.",
+      "grade": "confirmed",
+      "evidence": [
+        "공식 페이지와 검색한 두 보도에는 이용자 수·혼잡도 데이터가 없어요.",
+        "체험별 접수 조건을 확인할 수 있는 공개 텍스트를 찾지 못했어요."
+      ],
+      "sourceUrls": [
+        "https://award.visitkorea.or.kr/kfes/detail/fstvlDetail.do?cntntsNm=%ED%8F%AC%EC%B2%9C%ED%8E%AB%EC%8A%A4%ED%83%80&fstvlCntntsId=06c85b3f-b302-4025-9cc5-27ec77b3a5ff",
+        "https://artvalley.pcfac.or.kr/sub06/sub01_view.html?wr_id=748"
+      ]
+    }
+  ],
+  "numbers": [
+    {
+      "what": "행사일",
+      "value": "2026-11-29",
+      "asOf": "2026-11-20 확인",
+      "sourceUrl": "https://award.visitkorea.or.kr/kfes/detail/fstvlDetail.do?cntntsNm=%ED%8F%AC%EC%B2%9C%ED%8E%AB%EC%8A%A4%ED%83%80&fstvlCntntsId=06c85b3f-b302-4025-9cc5-27ec77b3a5ff"
+    },
+    {
+      "what": "포천시 안내 운영시간",
+      "value": "10:00~17:00",
+      "asOf": "2026-11-12 발표",
+      "sourceUrl": "https://gnews.gg.go.kr/briefing/brief_gongbo_view.do%3Bjsessionid%3DBD7D3C7B3EAB0F02E04CA0E718C32060.ajp13?BS_CODE=s003&bm_name=&keyword=&number=115307&page=1&period_1=&period_2=&search=0&subject_Code="
+    },
+    {
+      "what": "문화체육관광부 안내 운영시간",
+      "value": "10:00~18:00",
+      "asOf": "2026-11-20 확인",
+      "sourceUrl": "https://www.mcst.go.kr/site/s_culture/festival/festivalView.jsp?pRo=-1&pSeq=13352"
+    },
+    {
+      "what": "관외 성인 개인 입장료",
+      "value": "6,000원",
+      "asOf": "2026-11-20 확인",
+      "sourceUrl": "https://artvalley.pcfac.or.kr/sub02/sub02.html"
+    },
+    {
+      "what": "관외 청소년·군인 개인 입장료",
+      "value": "4,000원",
+      "asOf": "2026-11-20 확인",
+      "sourceUrl": "https://artvalley.pcfac.or.kr/sub02/sub02.html"
+    },
+    {
+      "what": "관외 어린이 개인 입장료",
+      "value": "2,000원",
+      "asOf": "2026-11-20 확인",
+      "sourceUrl": "https://artvalley.pcfac.or.kr/sub02/sub02.html"
+    },
+    {
+      "what": "관외 경로 개인 입장료",
+      "value": "3,000원",
+      "asOf": "2026-11-20 확인",
+      "sourceUrl": "https://artvalley.pcfac.or.kr/sub02/sub02.html"
+    },
+    {
+      "what": "관외 성인 모노레일 왕복",
+      "value": "5,800원",
+      "asOf": "2026-11-20 확인",
+      "sourceUrl": "https://artvalley.pcfac.or.kr/sub02/sub02.html"
+    },
+    {
+      "what": "73번 주말 배차 간격",
+      "value": "130~150분",
+      "asOf": "공식 FAQ 2025-03-06 게시; 2026-11-20 경기버스정보 재확인",
+      "sourceUrl": "https://www.gbis.go.kr/service/busInfo/metroBus.action?centerId=4165000000&cmd=searchMetroCenter"
+    }
+  ],
+  "conflicts": [
+    {
+      "about": "11월 29일 행사 종료 시각",
+      "a": "포천시 보도자료와 매일일보·여성신문 보도는 10:00~17:00로 안내한다.",
+      "b": "문화체육관광부 지역축제 페이지는 10:00~18:00으로 표시한다. 한국관광공사 페이지에는 운영 시간이 별도로 표시되지 않는다.",
+      "note": "포천시 보도자료와 두 기사는 같은 발표 내용을 전달하므로 독립적인 세 근거로 세지 않는다. 종료 시각은 본문에서 차이를 공개하고 당일 공식 공지 확인을 권한다."
+    }
+  ],
+  "dropped": [],
+  "cannotCover": [
+    "일부 체험 프로그램의 사전 접수·현장 접수·잔여석 조건은 공개 텍스트 자료에서 확정하지 못함",
+    "11월 14일 일정에 사전 신청한 사람의 11월 29일 신청 승계 여부는 확인하지 못함",
+    "숙박 연계 상품이나 주최 측 제휴 숙소 안내는 확인하지 못함",
+    "행사 당일 실시간 73번 버스 도착 시각은 미확인; 공식 노선 현황과 FAQ의 배차 정보는 변동될 수 있음"
+  ],
+  "internalLinkCandidates": [],
+  "songs": []
+}

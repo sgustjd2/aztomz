@@ -1,0 +1,186 @@
+{
+  "collectedAt": "2026-11-25",
+  "days": 3,
+  "results": {
+    "geeknews": {
+      "source": "geeknews",
+      "fetchedOk": true,
+      "sourceUrl": "https://news.hada.io/rss/news",
+      "items": [
+        {
+          "title": "iOS Safari의 60 FPS 제한을 우회해 네이티브처럼 느껴지는 웹 애플리케이션 만들기",
+          "url": "",
+          "date": "2026-11-25T10:33:01.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Show GN: gpgpru - 고2가 만들어본 gpgpu crate",
+          "url": "",
+          "date": "2026-11-25T10:28:15.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Per Vognsen이 살펴본 AVX-512의 렉싱과 파싱 성능 영향",
+          "url": "",
+          "date": "2026-11-25T09:03:19.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Gemini가 ‘반짝반짝 작은 별’ 가사를 알려 달라는 요청을 거부함",
+          "url": "",
+          "date": "2026-11-25T08:37:36.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "나는 요즘 부엌에서 와인을 마시고 있다",
+          "url": "",
+          "date": "2026-11-25T08:34:36.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "샌드박스에 격리된 모델도 추론 서버를 통해 통신할 수 있음",
+          "url": "",
+          "date": "2026-11-25T07:34:06.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "USB-C 분리하기: 포트 하나에서 USB 3와 USB 2 함께 쓰기",
+          "url": "",
+          "date": "2026-11-25T06:39:12.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Button Sounds - 전문적으로 녹음한 버튼 클릭과 누름 소리 모음",
+          "url": "",
+          "date": "2026-11-25T06:36:12.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "PenGPT: 손글씨와 스케치를 위한 생성형 Transformer",
+          "url": "",
+          "date": "2026-11-25T05:38:33.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "여행 가방에 들어가는 이탈리아 접이식 자전거 디자인",
+          "url": "",
+          "date": "2026-11-25T05:35:33.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Grafana 12.4.16, 13.0.14, 13.1.11, 13.2.7, 13.3.2 (여러 CVE 관련)",
+          "url": "",
+          "date": "2026-11-25T03:36:00.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Matrix Multiplication의 Θ(n^2.25) 시간 복잡도 [pdf]",
+          "url": "",
+          "date": "2026-11-25T03:33:00.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "심장마비와 뇌졸중 위험, 수십 년 전에 감지 가능",
+          "url": "",
+          "date": "2026-11-25T02:33:32.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Show GN: Tern - Ctrl+ㅊ 를 Ctrl-C 로 처리해주는 한글 특화 터미널 에뮬레이터 앱",
+          "url": "",
+          "date": "2026-11-25T02:20:17.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "GPT-6 모델, 내재적 단백질 설계 능력 입증",
+          "url": "",
+          "date": "2026-11-25T01:34:23.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "AI 네이티브 서비스 비즈니스 모델의 내부 구조",
+          "url": "",
+          "date": "2026-11-25T01:20:02.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "2026년 기업용 AI 현황",
+          "url": "",
+          "date": "2026-11-25T01:10:02.000Z",
+          "aiRelated": true
+        },
+        {
+          "title": "오픈 소스에서 월 반복 매출 2만 달러까지: EmailEngine의 여정",
+          "url": "",
+          "date": "2026-11-25T01:00:03.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "Cloudflare가 기반 인프라의 미비점을 가림",
+          "url": "",
+          "date": "2026-11-25T00:38:52.000Z",
+          "aiRelated": false
+        },
+        {
+          "title": "iPod Nano 5G 해방하기",
+          "url": "",
+          "date": "2026-11-25T00:35:52.000Z",
+          "aiRelated": false
+        }
+      ],
+      "note": "GeekNews Atom 피드에서 최근 3일 항목. aiRelated=true 는 제목 키워드 기준(본문은 조사 단계에서 확인)."
+    },
+    "inpa": {
+      "source": "inpa",
+      "fetchedOk": true,
+      "sourceUrl": "https://inpa.tistory.com/rss",
+      "items": [],
+      "note": "최근 3일 이내 작성된 글만. 날짜 없는 항목은 제외. 0건이면 어제·오늘 새 글이 없다는 뜻."
+    },
+    "goddaehee": {
+      "source": "goddaehee",
+      "fetchedOk": true,
+      "sourceUrl": "https://goddaehee.tistory.com/rss",
+      "items": [],
+      "note": "최근 3일 이내 작성된 글만. 날짜 없는 항목은 제외. 0건이면 어제·오늘 새 글이 없다는 뜻."
+    },
+    "github": {
+      "source": "github",
+      "fetchedOk": true,
+      "sourceUrl": "https://github.com/trending?since=weekly",
+      "items": [
+        {
+          "repo": "google-labs-code/stitch-skills",
+          "url": "https://github.com/google-labs-code/stitch-skills",
+          "description": "A library of Agent Skills designed to work with the Stitch MCP server. Each skill follows the Agent Skills open standard, for compatibility with coding agents such as Antigravity, Gemini CLI, Claude Code, Cursor.",
+          "starsThisWeek": 2626
+        },
+        {
+          "repo": "mvanhorn/last30days-skill",
+          "url": "https://github.com/mvanhorn/last30days-skill",
+          "description": "AI agent skill that researches any topic across Reddit, X, YouTube, HN, Polymarket, and the web - then synthesizes a grounded summary",
+          "starsThisWeek": 5369
+        },
+        {
+          "repo": "ChromeDevTools/chrome-devtools-mcp",
+          "url": "https://github.com/ChromeDevTools/chrome-devtools-mcp",
+          "description": "Chrome DevTools for coding agents",
+          "starsThisWeek": 1258
+        },
+        {
+          "repo": "dream-num/univer",
+          "url": "https://github.com/dream-num/univer",
+          "description": "Build your own AI office with Univer Office SDK. Bring editing, calculation, collaboration, and file processing into your product for people and AI agents. Built on an extensible open-source core.",
+          "starsThisWeek": 3278
+        },
+        {
+          "repo": "kajisho5/ffmpeg-skill",
+          "url": "https://github.com/kajisho5/ffmpeg-skill",
+          "description": "Local video editor for coding agents: 42 FFmpeg tools with a machine-readable contract and an MCP server, for Claude Code, Cursor and Codex. Cut, captions, reframe, loudness, platform exports. No cloud, no API keys.",
+          "starsThisWeek": 2993
+        }
+      ],
+      "note": "주간 급상승 레포 중 plugin/extension/skill/cli/mcp 등 도구 성격 키워드가 잡힌 것만. dev-trending 과 겹치는 항목은 조사 단계에서 제외한다."
+    }
+  }
+}

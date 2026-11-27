@@ -1,0 +1,179 @@
+{
+  "keyword": "캡슐세제",
+  "categoryId": "life-info",
+  "notes": "한국소비자원의 2026년 8월 8종 시험에서 세탁량별 1회 비용과 오염별 세척·저온 용해 차이가 확인돼요. 제품마다 1캡슐 권장량이 달라 현재 판매가보다 포장 표시의 권장 세탁량을 먼저 봐야 해요. 사용 방법과 어린이 보관은 제품 등록정보·소비자원 안전안내의 범위로 한정하고, 현재 리뉴얼 제품의 성능은 단정하지 않아요.",
+  "sources": [
+    {
+      "title": "캡슐형 세탁세제 8종 품질 비교정보 제공",
+      "url": "https://m.korea.kr/briefing/pressReleaseView.do?gubun=pressRelease&newsId=156774815&pageIndex=135&repCode=",
+      "host": "m.korea.kr",
+      "body": "공정거래위원회가 게시한 한국소비자원 시험평가 결과다. 한국소비자원은 8개 캡슐형 세탁세제의 품질·가격·안전성·환경성을 비교했다. 시험 결과 세척 성능은 오염 종류와 제품에 따라 차이가 있었고 캡슐 용해 속도는 물 온도의 영향을 받았다. 8℃ 물 1L에서 캡슐 1개가 녹는 평균 시간은 11분, 25℃에서는 5분이었다. 1·2인 가구 평균 세탁량으로 제시한 4kg은 1회 157~950원, 4인 가구 평균 7kg은 314~950원으로 계산됐다. 캡슐당 권장 세탁량은 시험 제품 중 2개가 4kg 이내, 6개가 5~7kg 이내였다. 안전성·환경성 관련 기준은 모든 시험 제품이 충족했지만 1개 제품은 알레르기 반응 가능 물질 표시를 개선해야 했다. 세탁 후 기본 2회 헹굼 시험에서 세제 성분 제거율은 97.3%로 보고됐다.",
+      "tier": "official"
+    },
+    {
+      "title": "캡슐형 세탁세제 품질비교 결과 오염 종류별 세척 성능, 1회 평균 세탁량 등을 고려하여 구매 필요해요",
+      "url": "https://www.kca.go.kr/kca/sub.do?menukey=5293&mode=view&no=1004549753&page=1",
+      "host": "kca.go.kr",
+      "body": "한국소비자원 민원 주요 Q&A에 2026년 8월 시험평가를 카드 이미지와 함께 요약했다. 평가 항목은 오염 종류별 세척 성능, 물 온도별 캡슐 용해성, 1회 세탁 비용, 금지·제한 물질과 용기·포장의 안전기준, 알레르기 반응 가능 성분 표시, 생분해도와 포장재 재활용성, 헹굼 횟수다. 세척 성능은 얼룩의 종류별로 평가가 갈렸고 비용도 시험 대상끼리 최대 6배 차이가 났다고 안내한다. 시험 대상 제품 목록과 제조 시점도 함께 공개하며, 스너글 시험제품의 경우 2026년 6월 12일 이후 리뉴얼 제품이 출시됐다고 별도 표시했다. 이 안내는 시험에 사용된 제품과 비교 지표를 보여주는 것이며, 이후 판매되는 제품의 현재 가격이나 리뉴얼 제품 품질을 모두 대변한다고 쓰지는 않는다.",
+      "tier": "official"
+    },
+    {
+      "title": "캡슐형 세탁세제 올바른 보관으로 우리 아이 안전을 지켜요",
+      "url": "https://www.kca.go.kr/home/sub.do?menukey=6081&mode=view&no=1003510965",
+      "host": "kca.go.kr",
+      "body": "한국소비자원은 제조·유통사, 서울시 독성물질 중독관리센터, 아동안전 기관과 함께 캡슐형 세탁세제 안전 캠페인을 안내했다. 어린이가 캡슐을 만지지 못하도록 하고 아이가 곁에 없을 때 사용하며, 사용 뒤에는 어린이보호포장이 적용된 원래 용기에 넣어 손이 닿지 않는 곳에 보관하라는 내용이다. 어린이가 내용물을 먹거나 삼킨 경우에는 억지로 토하게 하지 말고 바로 의료기관 또는 전문가를 찾아가도록 안내한다. 이 캠페인 페이지에 따르면 국내 위해정보감시시스템에는 2017~2022년 캡슐형 세탁세제 관련 사례 14건이 접수됐다. 이 자료는 안전한 취급과 보관·응급 대응을 위한 안내이며 특정 브랜드의 세척 성능이나 현재 제품 가격을 비교한 자료는 아니다.",
+      "tier": "official"
+    },
+    {
+      "title": "초록누리 안전확인대상 생활화학제품 신고 정보 — 허글리 8인1 초고농축 캡슐 세탁세제",
+      "url": "https://ecolife.mcee.go.kr/ecolife/chemiProd/safeDclrProd/detail?DCLR_MST_ID=NLC_E3468E86E&UNQ_NO=125",
+      "host": "ecolife.mcee.go.kr",
+      "body": "기후에너지환경부 초록누리에 등록된 특정 캡슐 세탁제품의 신고·표시 정보다. 해당 제품은 캡슐형으로 분류되고 어린이보호포장 대상이라고 표시돼 있다. 표준 사용량은 세탁물 4kg 이하에서 캡슐 1개, 4kg 초과에서 2개이며, 사용 시 세제 투입구가 아니라 세탁조에 캡슐을 먼저 넣고 그 위에 세탁물을 넣도록 안내한다. 물기 없는 마른 손으로 사용하고 캡슐을 자르거나 터뜨리지 말며, 고농축 내용물이 오래 의류에 직접 닿으면 변색·탈색될 수 있다고 적혀 있다. 습기를 피해 밀봉 보관하고 어린이 손이 닿지 않는 곳에 두라는 주의도 포함한다. 이 등록 정보는 해당 상품의 사례이므로 다른 제품도 같은 용량·온도·사용량을 가진다고 일반화할 수 없다.",
+      "tier": "official"
+    },
+    {
+      "title": "캡슐형 세탁세제, 세척 성능 제각각…1회당 세탁비 최대 6배 차이",
+      "url": "https://www.news1.kr/amp/economy/trend/6262907",
+      "host": "news1.kr",
+      "body": "뉴스1은 한국소비자원의 2026년 8개 제품 시험평가 결과를 보도했다. 기름·단백질 등 일상 오염에서는 비트 제품이 상대적으로 우수했고 혈액·잉크 오염에서는 리큐와 퍼실 제품이 상대적으로 우수했다. 피지와 붉은 고추색소 오염에는 우수 등급 제품이 없었다고 보도했다. 물 25℃에서 캡슐이 녹는 평균 시간은 5분, 8℃에서는 11분으로 차이가 났으며 4kg 기준 비용은 157~950원, 7kg 기준은 314~950원이었다. 기사도 제품별 권장 세탁량이 다르므로 가정의 평소 세탁량을 보고 제품을 고를 필요가 있다고 정리한다. 수치와 평가가 한국소비자원 시험에서 나온 것이므로 독립된 두 번째 시험 결과가 아니라 보도 교차 확인 자료다.",
+      "tier": "press"
+    },
+    {
+      "title": "겨울철 실내 빨래 건조 기준",
+      "url": "https://blog.naver.com/shin1133/224485281292",
+      "host": "blog.naver.com",
+      "body": "이미 발행된 관련 생활정보 글이다. 현재 글의 세탁 후 실내 건조 관련 독서 흐름을 잇는 내부 링크로만 사용하며, 캡슐세제 시험 수치의 근거로 사용하지 않는다.",
+      "tier": "internal"
+    }
+  ],
+  "claims": [
+    {
+      "claim": "2026년 한국소비자원이 비교한 8개 제품에서는 1회 세탁 비용이 평균 세탁량 4kg 기준 157~950원, 7kg 기준 314~950원으로 차이가 있었다.",
+      "grade": "confirmed",
+      "evidence": [
+        "2026-08-19 시험평가의 평균 세탁량 기준은 1·2인 가구 4kg, 4인 가구 7kg이다.",
+        "시험에서 4kg 비용은 157~950원, 7kg 비용은 314~950원으로 산출됐다. 현재 판매점 가격 범위와는 다를 수 있다."
+      ],
+      "sourceUrls": [
+        "https://m.korea.kr/briefing/pressReleaseView.do?gubun=pressRelease&newsId=156774815&pageIndex=135&repCode=",
+        "https://www.news1.kr/amp/economy/trend/6262907"
+      ]
+    },
+    {
+      "claim": "시험 제품의 캡슐당 권장 세탁량이 달라서 제품 가격만 비교하기보다 평소 세탁량과 포장 표시를 함께 봐야 한다.",
+      "grade": "confirmed",
+      "evidence": [
+        "한국소비자원 시험 제품 중 2개는 4kg 이내, 6개는 5~7kg 이내를 캡슐당 권장 세탁량으로 표시했다.",
+        "시험 평가 비용은 가구 평균 빨래량 기준으로 캡슐 사용 개수를 달리해 계산했다."
+      ],
+      "sourceUrls": [
+        "https://m.korea.kr/briefing/pressReleaseView.do?gubun=pressRelease&newsId=156774815&pageIndex=135&repCode=",
+        "https://www.kca.go.kr/kca/sub.do?menukey=5293&mode=view&no=1004549753&page=1"
+      ]
+    },
+    {
+      "claim": "세척 성능은 오염 유형에 따라 상대적으로 우수한 제품이 달랐고 시험에서 모든 오염 유형을 통틀어 하나의 제품이 우수하다고 확인되지는 않았다.",
+      "grade": "confirmed",
+      "evidence": [
+        "일상 오염에서 비트 라벤더 클린 캡슐세제가 상대적으로 우수했다.",
+        "혈액·잉크 오염에서 미니파워캡슐 프레시코튼과 퍼실 디스크 프로(파우치)가 상대적으로 우수했다.",
+        "피지와 붉은 고추색소 오염에는 우수 판정 제품이 없었다."
+      ],
+      "sourceUrls": [
+        "https://m.korea.kr/briefing/pressReleaseView.do?gubun=pressRelease&newsId=156774815&pageIndex=135&repCode=",
+        "https://www.kca.go.kr/kca/sub.do?menukey=5293&mode=view&no=1004549753&page=1"
+      ]
+    },
+    {
+      "claim": "시험 조건에서 캡슐은 25℃보다 8℃ 물에서 평균 용해시간이 길었지만, 이 비이커 시험 시간을 실제 세탁기의 용해시간으로 볼 수는 없다.",
+      "grade": "confirmed",
+      "evidence": [
+        "물 1L에서 25℃는 평균 5분, 8℃는 평균 11분으로 시험됐다.",
+        "한국소비자원은 8개 시험제품의 물 온도에 따른 용해 속도를 같은 조건의 비이커에서 비교했다."
+      ],
+      "sourceUrls": [
+        "https://m.korea.kr/briefing/pressReleaseView.do?gubun=pressRelease&newsId=156774815&pageIndex=135&repCode=",
+        "https://www.news1.kr/amp/economy/trend/6262907"
+      ]
+    },
+    {
+      "claim": "특정 초록누리 등록 제품은 마른 손으로 다루고 세탁조에 먼저 넣은 뒤 세탁물을 올리며, 제품별 표준 사용량과 보관 주의사항을 따른다.",
+      "grade": "confirmed",
+      "evidence": [
+        "허글리 8인1 캡슐 제품의 표시에는 4kg 이하 1개, 4kg 초과 2개의 표준 사용량이 있다.",
+        "같은 제품 등록 정보는 세탁조에 캡슐을 먼저 넣고 그 위에 세탁물을 넣도록 안내하며, 마른 손 사용·밀봉·어린이 손이 닿지 않는 곳에 보관을 고지한다.",
+        "이 내용은 특정 제품 표시 예시이며 모든 캡슐 제품의 사용량으로 일반화할 수 없다."
+      ],
+      "sourceUrls": [
+        "https://ecolife.mcee.go.kr/ecolife/chemiProd/safeDclrProd/detail?DCLR_MST_ID=NLC_E3468E86E&UNQ_NO=125"
+      ]
+    },
+    {
+      "claim": "어린이 안전을 위해 캡슐은 원래의 어린이보호포장 용기에 보관하고 손이 닿지 않게 두며, 삼킨 경우 억지로 토하게 하지 말고 의료기관 또는 전문가의 도움을 받는다.",
+      "grade": "confirmed",
+      "evidence": [
+        "한국소비자원 캠페인은 아이가 곁에 없을 때 사용하고 사용 뒤 원래 보호포장 용기에 넣어 손이 닿지 않는 곳에 보관하라고 안내했다.",
+        "내용물을 먹거나 삼킨 경우 억지로 토하게 하지 말고 즉시 의료기관 또는 전문가를 찾으라고 안내했다."
+      ],
+      "sourceUrls": [
+        "https://www.kca.go.kr/home/sub.do?menukey=6081&mode=view&no=1003510965"
+      ]
+    }
+  ],
+  "numbers": [
+    {
+      "what": "시험 평가 제품 수",
+      "value": "8개",
+      "asOf": "2026-08-19",
+      "sourceUrl": "https://m.korea.kr/briefing/pressReleaseView.do?gubun=pressRelease&newsId=156774815&pageIndex=135&repCode="
+    },
+    {
+      "what": "1·2인 가구 기준 세탁량과 1회 비용 범위",
+      "value": "4kg, 157~950원",
+      "asOf": "2026년 8월 시험",
+      "sourceUrl": "https://m.korea.kr/briefing/pressReleaseView.do?gubun=pressRelease&newsId=156774815&pageIndex=135&repCode="
+    },
+    {
+      "what": "4인 가구 기준 세탁량과 1회 비용 범위",
+      "value": "7kg, 314~950원",
+      "asOf": "2026년 8월 시험",
+      "sourceUrl": "https://m.korea.kr/briefing/pressReleaseView.do?gubun=pressRelease&newsId=156774815&pageIndex=135&repCode="
+    },
+    {
+      "what": "시험 비이커에서 캡슐 1개 평균 용해시간",
+      "value": "25℃ 물 1L에서 5분, 8℃ 물 1L에서 11분",
+      "asOf": "2026년 8월 시험",
+      "sourceUrl": "https://m.korea.kr/briefing/pressReleaseView.do?gubun=pressRelease&newsId=156774815&pageIndex=135&repCode="
+    },
+    {
+      "what": "특정 등록 제품 표준 사용량",
+      "value": "4kg 이하 1개, 4kg 초과 2개",
+      "asOf": "2026-08-18 신고 정보 확인",
+      "sourceUrl": "https://ecolife.mcee.go.kr/ecolife/chemiProd/safeDclrProd/detail?DCLR_MST_ID=NLC_E3468E86E&UNQ_NO=125"
+    },
+    {
+      "what": "기본 헹굼 횟수 시험의 세제 성분 제거율",
+      "value": "2회 헹굼에서 97.3%",
+      "asOf": "2026년 8월 시험",
+      "sourceUrl": "https://m.korea.kr/briefing/pressReleaseView.do?gubun=pressRelease&newsId=156774815&pageIndex=135&repCode="
+    }
+  ],
+  "dropped": [
+    {
+      "url": "https://110.go.kr/data/counselView.do?curPage=126&num=C03_662267&scCate1=&scCate2=&scIntt=&scText=&scType=",
+      "why": "공식 검색 결과에는 답변이 노출됐지만 원문 페이지가 WebFetch에서 반복적으로 열리지 않았어요. 같은 어린이 안전 취급 내용은 열리는 한국소비자원 자료를 기준으로 정리해요."
+    },
+    {
+      "url": "https://www.lionkorea.co.kr/kr/brand/itemView.do?item_num=406",
+      "why": "제조사 페이지에는 상세 사용법·용량보다 제품 특징과 마케팅 문구가 중심이고 독립 시험 근거를 추가하지 않아요."
+    }
+  ],
+  "cannotCover": [
+    "2026년 11월 22일 현재의 실제 판매가·할인·재고와 현재 가격으로 계산한 1회 비용",
+    "한국소비자원이 시험한 제품의 품질을 현재 판매되는 모든 리뉴얼 제품에 그대로 적용하는 판단",
+    "시험 대상 전 제품이 모든 얼룩을 가장 잘 지운다는 순위 또는 모든 가정에 맞는 단일 추천",
+    "특정 캡슐이 모든 세탁기 모델과 코스에서 호환된다는 보편적 결론",
+    "비이커 시험과 동일한 속도로 실제 세탁기 안에서 캡슐이 녹는다는 주장"
+  ],
+  "songs": []
+}
