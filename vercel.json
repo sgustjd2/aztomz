@@ -25,19 +25,9 @@
   ],
   "redirects": [
     {
-      "source": "/login.html",
-      "destination": "/",
-      "permanent": true
-    },
-    {
       "source": "/signup.html",
-      "destination": "/",
-      "permanent": true
-    },
-    {
-      "source": "/me.html",
-      "destination": "/",
-      "permanent": true
+      "destination": "/login.html?tab=signup",
+      "permanent": false
     }
   ]
 }

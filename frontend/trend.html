@@ -87,6 +87,7 @@
   .shops-note{font-size:12.5px;color:var(--ink-2);margin:9px 0 2px}
 </style>
 <link rel="stylesheet" href="assets/detail.css?v=public-copy-20261024" />
+<link rel="stylesheet" href="assets/social.css?v=social-20261110" />
 </head>
 <body class="detail-page">
 <a class="skip-link" href="#main">본문으로 건너뛰기</a>
@@ -95,6 +96,8 @@
 
 <script src="data/trends.js"></script>
 <script src="assets/app.js?v=public-copy-20261024"></script>
+<script src="assets/supabase-config.js?v=social-20261110"></script>
+<script src="assets/social.js?v=social-20261110"></script>
 <script>
   H.boot();
   const id = H.param('id');
@@ -231,14 +234,14 @@
           ${t.def?`<p class="d-def">${H.esc(t.def)}</p>`:''}
           <div class="detail-meta"><span class="label ${H.esc(t.labelCls||'mid')}">${H.esc(t.label)}</span><span class="freshline"><a class="detail-date-link" href="index.html?date=${encodeURIComponent(t.collectedAt||t.analyzedAt||'')}">수집 ${H.fmtISO(t.collectedAt||t.analyzedAt)}</a>${t.analyzedAt&&t.analyzedAt!==(t.collectedAt||t.analyzedAt)?` · 분석 ${H.fmtISO(t.analyzedAt)}`:''}</span></div>
           <div class="tags">${(t.tags||[]).map(tg=>`<a class="tag-chip" href="index.html?tag=${encodeURIComponent(tg)}">#${H.esc(tg)}</a>`).join('')}</div>
-          <div class="d-actions"><button class="detail-action" id="shareBtn" type="button">${detailIcon("share")}<span>공유</span></button></div>
+          <div class="d-actions">${H.social.enabled?`<button class="detail-action like-btn" id="likeBtn" type="button" aria-pressed="false">${detailIcon("heart")}<span>좋아요</span><span class="like-n"></span></button>`:''}<button class="detail-action" id="shareBtn" type="button">${detailIcon("share")}<span>공유</span></button></div>
         </div>
       </header>
       <nav class="detail-jumps" aria-label="상세 내용 바로가기">
         ${t.type==='신뢰분석'?'<a href="#judgment">한끗 판단</a>':''}
         ${t.article?.length?'<a href="#story">자세히 읽기</a>':''}
         ${t.shops?.length?'<a href="#places">판매처</a>':''}
-        ${t.prompt?'<a href="#prompt">프롬프트</a>':''}<a href="#recommendations">추천 대상</a><a href="#sources">출처</a>
+        ${t.prompt?'<a href="#prompt">프롬프트</a>':''}<a href="#recommendations">추천 대상</a><a href="#sources">출처</a>${H.social.enabled?'<a href="#comments">댓글</a>':''}
       </nav>
       ${H.freshness(t.analyzedAt).cls==='stale' ? `<div class="stale-banner">${detailIcon("clock")}<span>오래된 분석이에요. 유행은 빨리 바뀌니 방문 전 최신 상황을 다시 확인하세요.</span></div>` : ''}
       ${scoresBlock()}
@@ -263,6 +266,10 @@
       <details class="src" id="sources"><summary>${detailIcon("link")} 참고 출처 <span class="source-count">${t.src.length}개</span></summary>
         <div class="src-list">${t.src.map(s=>`<a href="${s[1]}" target="_blank" rel="noopener"><span>${H.esc(s[0])}</span>${detailIcon("arrow")}</a>`).join('')}</div></details>
 
+      ${H.social.enabled?`<section class="comments" id="comments" aria-labelledby="comments-h">
+        <h2 class="detail-section-title" id="comments-h">${detailIcon("message")} 댓글 <span class="source-count cmt-n"></span></h2>
+        <div class="cmt-form-slot"></div><ul class="cmt-list"></ul></section>`:''}
+
       <div class="sec-head"><h2>${detailIcon("book")} ${relatedTitle}</h2></div>
       <div class="related">${related.map(x=>`<a href="trend.html?id=${x.id}">${H.coverHTML(x)}<div class="r-t">${H.esc(x.title)}</div></a>`).join('')}</div>
 
@@ -273,6 +280,8 @@
       const text=`[한끗] ${t.title} — ${t.type==='신뢰분석'?`광고 ${t.ad}/신뢰 ${t.trust}`:t.stage} · ${t.label}`;
       await H.share({title:'한끗', text, url:location.href});
     };
+    H.social.mountLike(H.q('#likeBtn'), t.id);
+    H.social.mountComments(H.q('#comments'), t.id);
   }
 
 </script>

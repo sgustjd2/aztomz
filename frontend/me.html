@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="color-scheme" content="light dark" />
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+<meta name="theme-color" content="#151a23" media="(prefers-color-scheme: dark)" />
+<meta name="robots" content="noindex" />
+<title>내 정보 — 한끗</title>
+<link rel="icon" href="favicon.ico" sizes="16x16 32x32 48x48" />
+<link rel="apple-touch-icon" href="apple-touch-icon.png" />
+<link rel="manifest" href="site.webmanifest" />
+<link rel="stylesheet" href="assets/styles.css?v=public-copy-20261024" />
+<link rel="stylesheet" href="assets/social.css?v=social-20261110" />
+</head>
+<body>
+<a class="skip-link" href="#main">본문으로 건너뛰기</a>
+  <div data-mast></div>
+  <main class="wrap" id="main" tabindex="-1">
+    <section class="account" id="account">
+      <h1>내 정보</h1>
+      <p class="lede" id="meEmail">불러오는 중이에요…</p>
+      <div class="notice" id="meNotice" role="status" hidden></div>
+
+      <form class="panel" id="f-nick" novalidate>
+        <h2>닉네임</h2>
+        <p class="muted">댓글에 이 이름으로 보여요.</p>
+        <div class="field"><label class="sr-only" for="nick">닉네임</label>
+          <input id="nick" type="text" minlength="2" maxlength="20" autocomplete="nickname" required aria-describedby="nick-hint">
+          <div class="hint" id="nick-hint">2~20자</div><div class="err" role="alert"></div></div>
+        <button class="btn primary" type="submit">닉네임 저장</button>
+      </form>
+
+      <form class="panel" id="f-pw" novalidate>
+        <h2>비밀번호 변경</h2>
+        <div class="field"><label for="pw1">새 비밀번호</label>
+          <input id="pw1" type="password" autocomplete="new-password" minlength="8" required aria-describedby="pw-hint">
+          <div class="hint" id="pw-hint">8자 이상</div></div>
+        <div class="field"><label for="pw2">새 비밀번호 확인</label>
+          <input id="pw2" type="password" autocomplete="new-password" required><div class="err" role="alert"></div></div>
+        <button class="btn primary" type="submit">비밀번호 변경</button>
+      </form>
+
+      <div class="panel">
+        <button class="btn block" type="button" id="logout">로그아웃</button>
+      </div>
+      <p style="text-align:center;margin:22px 0 0"><button class="link-btn danger" type="button" id="withdraw">회원 탈퇴</button></p>
+    </section>
+  </main>
+
+<script src="data/trends.js"></script>
+<script src="assets/app.js?v=public-copy-20261024"></script>
+<script src="assets/supabase-config.js?v=social-20261110"></script>
+<script src="assets/social.js?v=social-20261110"></script>
+<script>
+  H.boot();
+  const S = H.social;
+  const $ = (s) => H.q(s);
+  const notice = (txt, kind) => { const n = $('#meNotice'); n.textContent = txt; n.className = 'notice ' + kind; n.hidden = !txt; };
+
+  if (!S.enabled) {
+    location.replace('login.html');
+  } else {
+    S.ready().then(async () => {
+      if (!S.user) { location.replace('login.html?next=me.html'); return; }
+      $('#meEmail').textContent = S.user.email;
+      if (new URLSearchParams(location.search).get('reset') || S.recovery) {
+        notice('새 비밀번호를 정해 주세요.', 'ok'); $('#pw1').focus();
+      }
+      try { const p = await S.myProfile(); if (p) $('#nick').value = p.nickname; }
+      catch (e) { notice(S.msg(e), 'bad'); }
+    }, (e) => { $('#meEmail').textContent = S.msg(e); });
+
+    $('#f-nick').addEventListener('submit', async (e) => {
+      e.preventDefault(); const f = e.currentTarget, err = f.querySelector('.err'), btn = f.querySelector('button');
+      const v = $('#nick').value.trim();
+      if (v.length < 2 || v.length > 20) { err.textContent = '닉네임은 2~20자로 정해 주세요.'; $('#nick').focus(); return; }
+      err.textContent = ''; btn.disabled = true;
+      try { await S.updateNickname(v); H.toast('닉네임을 저장했어요'); }
+      catch (x) { err.textContent = S.msg(x); }
+      btn.disabled = false;
+    });
+
+    $('#f-pw').addEventListener('submit', async (e) => {
+      e.preventDefault(); const f = e.currentTarget, err = f.querySelector('.err'), btn = f.querySelector('button');
+      const a = $('#pw1').value, b = $('#pw2').value;
+      if (a.length < 8) { err.textContent = '비밀번호는 8자 이상으로 정해 주세요.'; $('#pw1').focus(); return; }
+      if (a !== b) { err.textContent = '비밀번호 확인이 일치하지 않아요.'; $('#pw2').focus(); return; }
+      err.textContent = ''; btn.disabled = true;
+      try { await S.updatePassword(a); f.reset(); notice('비밀번호를 바꿨어요.', 'ok'); }
+      catch (x) { err.textContent = S.msg(x); }
+      btn.disabled = false;
+    });
+
+    $('#logout').onclick = async () => {
+      try { await S.signOut(); } catch (e) {}
+      location.replace('index.html');
+    };
+
+    $('#withdraw').onclick = async () => {
+      if (!confirm('탈퇴하면 계정과 내가 쓴 댓글·좋아요가 모두 바로 지워지고 되돌릴 수 없어요. 탈퇴할까요?')) return;
+      try { await S.deleteAccount(); location.replace('index.html'); }
+      catch (e) { notice(S.msg(e), 'bad'); }
+    };
+  }
+</script>
+</body>
+</html>

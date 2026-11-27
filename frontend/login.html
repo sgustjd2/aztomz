@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="color-scheme" content="light dark" />
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+<meta name="theme-color" content="#151a23" media="(prefers-color-scheme: dark)" />
+<meta name="robots" content="noindex" />
+<title>로그인 — 한끗</title>
+<link rel="icon" href="favicon.ico" sizes="16x16 32x32 48x48" />
+<link rel="apple-touch-icon" href="apple-touch-icon.png" />
+<link rel="manifest" href="site.webmanifest" />
+<link rel="stylesheet" href="assets/styles.css?v=public-copy-20261024" />
+<link rel="stylesheet" href="assets/social.css?v=social-20261110" />
+</head>
+<body>
+<a class="skip-link" href="#main">본문으로 건너뛰기</a>
+  <div data-mast></div>
+  <main class="wrap" id="main" tabindex="-1">
+    <section class="account" id="account">
+      <h1 id="aTitle">로그인</h1>
+      <p class="lede" id="aLede">로그인하면 트렌드에 댓글과 좋아요를 남길 수 있어요.</p>
+      <div class="notice" id="aNotice" role="status" hidden></div>
+
+      <div class="tabs" role="tablist" aria-label="계정">
+        <button type="button" role="tab" id="tab-login" aria-controls="p-login" aria-selected="true">로그인</button>
+        <button type="button" role="tab" id="tab-signup" aria-controls="p-signup" aria-selected="false" tabindex="-1">회원가입</button>
+      </div>
+
+      <form id="p-login" role="tabpanel" aria-labelledby="tab-login" novalidate>
+        <div class="field"><label for="li-email">이메일</label>
+          <input id="li-email" type="email" autocomplete="email" inputmode="email" required></div>
+        <div class="field"><label for="li-pw">비밀번호</label>
+          <input id="li-pw" type="password" autocomplete="current-password" required>
+          <div class="err" role="alert"></div></div>
+        <button class="btn primary block" type="submit">로그인</button>
+        <p style="text-align:center;margin:16px 0 0"><button class="link-btn" type="button" id="toReset">비밀번호를 잊으셨나요?</button></p>
+      </form>
+
+      <form id="p-signup" role="tabpanel" aria-labelledby="tab-signup" novalidate hidden>
+        <div class="field"><label for="su-email">이메일</label>
+          <input id="su-email" type="email" autocomplete="email" inputmode="email" required></div>
+        <div class="field"><label for="su-pw">비밀번호</label>
+          <input id="su-pw" type="password" autocomplete="new-password" minlength="8" required aria-describedby="su-pw-hint">
+          <div class="hint" id="su-pw-hint">8자 이상</div></div>
+        <div class="field"><label for="su-pw2">비밀번호 확인</label>
+          <input id="su-pw2" type="password" autocomplete="new-password" required></div>
+        <label class="check"><input type="checkbox" id="su-agree" required>
+          <span>만 14세 이상이며, <a href="privacy.html" target="_blank" rel="noopener">개인정보 처리방침</a>에 동의합니다.</span></label>
+        <div class="field" style="margin-top:0"><div class="err" role="alert"></div></div>
+        <button class="btn primary block" type="submit">가입하기</button>
+      </form>
+
+      <form id="p-reset" novalidate hidden>
+        <div class="field"><label for="rs-email">가입한 이메일</label>
+          <input id="rs-email" type="email" autocomplete="email" inputmode="email" required>
+          <div class="err" role="alert"></div></div>
+        <button class="btn primary block" type="submit">재설정 메일 보내기</button>
+        <p style="text-align:center;margin:16px 0 0"><button class="link-btn" type="button" id="backLogin">로그인으로 돌아가기</button></p>
+      </form>
+    </section>
+  </main>
+
+<script src="data/trends.js"></script>
+<script src="assets/app.js?v=public-copy-20261024"></script>
+<script src="assets/supabase-config.js?v=social-20261110"></script>
+<script src="assets/social.js?v=social-20261110"></script>
+<script>
+  H.boot();
+  const S = H.social;
+  const $ = (s) => H.q(s);
+  const params = new URLSearchParams(location.search);
+  const next = S.safeNext(params.get('next')) || 'me.html';
+  const notice = (txt, kind) => { const n = $('#aNotice'); n.textContent = txt; n.className = 'notice ' + kind; n.hidden = !txt; };
+  const errOf = (form) => form.querySelector('.err');
+  const busy = (form, on) => { form.querySelector('[type=submit]').disabled = on; };
+
+  if (!S.enabled) {
+    $('#account').innerHTML = `<div class="empty"><div class="e-mark">!</div><h3>회원 기능을 준비하고 있어요</h3>
+      <p>곧 댓글과 좋아요를 남길 수 있게 열 예정이에요.</p><a class="btn primary" href="index.html">홈으로</a></div>`;
+  } else {
+    S.ready().then(() => { if (S.user) location.replace(next); }, (e) => notice(S.msg(e), 'bad'));
+    if (params.get('confirmed')) notice('가입 확인이 끝났어요. 로그인해 주세요.', 'ok');
+
+    // 탭: 좌우 화살표로 이동(WAI-ARIA tabs)
+    const tabs = [$('#tab-login'), $('#tab-signup')];
+    const show = (which) => {
+      tabs.forEach((t) => { const on = t.id === 'tab-' + which; t.setAttribute('aria-selected', on); t.tabIndex = on ? 0 : -1; });
+      $('#p-login').hidden = which !== 'login'; $('#p-signup').hidden = which !== 'signup'; $('#p-reset').hidden = which !== 'reset';
+      $('.tabs').hidden = which === 'reset';
+      $('#aTitle').textContent = which === 'signup' ? '회원가입' : which === 'reset' ? '비밀번호 재설정' : '로그인';
+      $('#aLede').textContent = which === 'reset' ? '가입한 이메일로 비밀번호 재설정 링크를 보내 드려요.' : '로그인하면 트렌드에 댓글과 좋아요를 남길 수 있어요.';
+    };
+    tabs.forEach((t, i) => {
+      t.addEventListener('click', () => { notice('', 'ok'); show(t.id.slice(4)); });
+      t.addEventListener('keydown', (e) => {
+        if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return;
+        const n = tabs[(i + (e.key === 'ArrowRight' ? 1 : tabs.length - 1)) % tabs.length];
+        n.focus(); n.click();
+      });
+    });
+    if (params.get('tab') === 'signup') show('signup');
+    $('#toReset').onclick = () => { notice('', 'ok'); show('reset'); $('#rs-email').value = $('#li-email').value; $('#rs-email').focus(); };
+    $('#backLogin').onclick = () => { show('login'); $('#li-email').focus(); };
+    const validEmail = (v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+
+    $('#p-login').addEventListener('submit', async (e) => {
+      e.preventDefault(); const f = e.currentTarget, err = errOf(f);
+      const email = $('#li-email').value.trim(), pw = $('#li-pw').value;
+      if (!validEmail(email)) { err.textContent = '이메일 주소를 확인해 주세요.'; $('#li-email').focus(); return; }
+      if (!pw) { err.textContent = '비밀번호를 입력해 주세요.'; $('#li-pw').focus(); return; }
+      err.textContent = ''; busy(f, true);
+      try { await S.signIn(email, pw); location.replace(next); }
+      catch (x) { err.textContent = S.msg(x); busy(f, false); }
+    });
+
+    $('#p-signup').addEventListener('submit', async (e) => {
+      e.preventDefault(); const f = e.currentTarget, err = errOf(f);
+      const email = $('#su-email').value.trim(), pw = $('#su-pw').value, pw2 = $('#su-pw2').value;
+      if (!validEmail(email)) { err.textContent = '이메일 주소를 확인해 주세요.'; $('#su-email').focus(); return; }
+      if (pw.length < 8) { err.textContent = '비밀번호는 8자 이상으로 정해 주세요.'; $('#su-pw').focus(); return; }
+      if (pw !== pw2) { err.textContent = '비밀번호 확인이 일치하지 않아요.'; $('#su-pw2').focus(); return; }
+      if (!$('#su-agree').checked) { err.textContent = '개인정보 처리방침 동의가 필요해요.'; $('#su-agree').focus(); return; }
+      err.textContent = ''; busy(f, true);
+      try {
+        const r = await S.signUp(email, pw);
+        if (r.session) { location.replace(next); return; }   // 이메일 확인을 끈 프로젝트
+        f.reset(); show('login'); $('#li-email').value = email;
+        notice(`${email} 로 가입 확인 메일을 보냈어요. 메일의 링크를 누르면 가입이 끝나요.`, 'ok');
+      } catch (x) { err.textContent = S.msg(x); }
+      busy(f, false);
+    });
+
+    $('#p-reset').addEventListener('submit', async (e) => {
+      e.preventDefault(); const f = e.currentTarget, err = errOf(f);
+      const email = $('#rs-email').value.trim();
+      if (!validEmail(email)) { err.textContent = '이메일 주소를 확인해 주세요.'; $('#rs-email').focus(); return; }
+      err.textContent = ''; busy(f, true);
+      try { await S.resetPassword(email); notice('가입된 이메일이라면 재설정 링크가 곧 도착해요.', 'ok'); }
+      catch (x) { err.textContent = S.msg(x); }
+      busy(f, false);
+    });
+  }
+</script>
+</body>
+</html>
