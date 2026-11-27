@@ -11,7 +11,7 @@
 | 경로 | 역할 |
 |---|---|
 | `frontend/` | ★ 배포 대상(Vercel `outputDirectory`). 브라우저가 받는 정적 파일 |
-| `frontend/index.html` | 홈 — 오늘의 한끗·급상승·광고일까 진짜일까·요즘 트렌드 |
+| `frontend/index.html` | 홈 — 오늘의 한끗·지금 뜨는 한끗·요즘 트렌드·최근 광고 분석 |
 | `frontend/trend.html?id=` | 상세 — 점수(광고/신뢰)·만족도·한끗 판단·추천·출처·후기 |
 | `frontend/list.html` | 카테고리별 트렌드 목록 |
 | `frontend/dictionary.html` | MZ 사전 — 검증된 신조어 카드(뜻·예문·순화어·출처) 검색/열람 |

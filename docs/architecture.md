@@ -7,8 +7,8 @@
 frontend/  ← Vercel outputDirectory(이것만 배포)
 backend/   ← canonical 데이터·검증·생성 스크립트(비공개)
 
-frontend/index.html      홈 — 오늘의 한끗 · 광고일까 진짜일까 · 요즘 트렌드
-frontend/list.html       전체 목록 — 광고분석/트렌드 목록 + 페이지네이션
+frontend/index.html      홈 — 오늘의 한끗 · 지금 뜨는 한끗 · 요즘 트렌드 · 최근 광고 분석
+frontend/list.html       전체 목록 — 광고분석/트렌드 피드 행 목록(20건/페이지) + 페이지네이션
 frontend/trend.html?id=  상세 — 점수 · 만족도 · 판단 · 출처 · 공유 · 함께 보기
 frontend/dictionary.html MZ 사전 — 신조어 검색/열람
 frontend/pulse.html      트렌드 펄스 — 창업 트렌드 레이더
