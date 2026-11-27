@@ -54,7 +54,8 @@ export function extract(url, { maxChars = 2500 } = {}) {
     const t = execFileSync(DDGS, ['extract', '-u', url, '-f', 'text'],
       { env: PYENV, timeout: 60000, encoding: 'utf-8', stdio: ['ignore', 'pipe', 'pipe'], windowsHide: true, maxBuffer: 64 * 1024 * 1024 });
     const s = String(t || '');
-    if (/^\s*DDGSException/.test(s)) return '';
+    // TimeoutException 도 같은 모양(한 줄·exit 0) — 2026-11-27 네이버 연속 조회 때 150자 'TimeoutException: …'이 본문으로 잡혔다.
+    if (/^\s*(DDGSException|TimeoutException|\w+Exception\()/.test(s)) return '';
     return s.replace(/\s+/g, ' ').trim().slice(0, maxChars);
   } catch { return ''; }
 }
