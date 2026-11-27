@@ -244,19 +244,20 @@
         <div class="muted" style="font-size:14px;margin-top:4px">${H.esc(t.stageMsg)}</div>
       </div>`;
     const R = t.reasons || {};
+    const why = v => H.esc([].concat(v).join(' '));   // reasons 는 문자열 또는 문장 배열 — 배열을 그냥 esc 하면 쉼표로 붙는다
     return `<div class="scores-note">두 지표는 각각 <b>0~100 독립 점수</b>예요 — 서로 더하는 값이 아니라, “광고일까?”와 “후기를 믿을 만한가?”를 따로 잰 거예요.</div>
     <div class="scores">
       <div class="score ad"><div class="s-label">${detailIcon("chart")} 광고 의심도</div>
         <div class="s-num">${t.ad}<span>/ 100</span></div><div class="s-band">${H.bandTxt(t.ad)} · 높을수록 광고 가능성</div>
         <div class="track"><i style="width:${t.ad}%"></i></div>
-        ${R.ad?`<div class="s-why"><b>왜 이 점수?</b> ${H.esc(R.ad)}</div>`:''}</div>
+        ${R.ad?`<div class="s-why"><b>왜 이 점수?</b> ${why(R.ad)}</div>`:''}</div>
       <div class="score trust"><div class="s-label">${detailIcon("shield")} 실제 후기 신뢰도</div>
         <div class="s-num">${t.trust}<span>/ 100</span></div><div class="s-band">${H.bandTxt(t.trust)} · 높을수록 믿을 만함</div>
         <div class="track"><i style="width:${t.trust}%"></i></div>
-        ${R.trust?`<div class="s-why"><b>왜 이 점수?</b> ${H.esc(R.trust)}</div>`:''}</div>
+        ${R.trust?`<div class="s-why"><b>왜 이 점수?</b> ${why(R.trust)}</div>`:''}</div>
     </div>
     <div class="detail-satisfaction"><div class="sat-heading">${detailIcon("heart")} 만족도 <span class="sat-badge sat-${t.sat}">${({pos:'긍정',neg:'부정',mix:'혼재',none:'판단 불가'})[t.sat]}</span> <span class="muted">${H.esc(t.satTxt)}</span></div>
-    ${R.sat?`<div class="sat-why"><b>근거</b> ${H.esc(R.sat)}</div>`:''}</div>`;
+    ${R.sat?`<div class="sat-why"><b>근거</b> ${why(R.sat)}</div>`:''}</div>`;
   }
 
   // 영상 임베드(유튜브/틱톡) — 데이터에 t.video 있을 때만
