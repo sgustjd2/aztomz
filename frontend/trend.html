@@ -115,6 +115,26 @@
   } else {
     render();
     applySeo();
+    jumpSpy();
+  }
+
+  // 바로가기 바: 지금 읽는 섹션의 링크를 강조하고, 가로 스크롤 안에서 보이게 유지
+  function jumpSpy(){
+    const bar = H.q('.detail-jumps');
+    const links = bar ? [...bar.querySelectorAll('a[href^="#"]')] : [];
+    const pairs = links.map(a=>[document.getElementById(a.getAttribute('href').slice(1)), a]).filter(([s])=>s);
+    if(!pairs.length) return;
+    let ticking = false;
+    const update = ()=>{
+      ticking = false;
+      const line = bar.getBoundingClientRect().bottom + 24;   // 바로가기 바 바로 아래를 지난 마지막 섹션이 현재 위치
+      let cur = null;
+      pairs.forEach(p=>{ if(p[0].getBoundingClientRect().top <= line && (!cur || p[0].getBoundingClientRect().top > cur[0].getBoundingClientRect().top)) cur = p; });
+      links.forEach(a=>{ a.classList.toggle('on', !!cur && a===cur[1]); if(cur && a===cur[1]) a.setAttribute('aria-current','true'); else a.removeAttribute('aria-current'); });
+      H.chipRail(bar);
+    };
+    addEventListener('scroll', ()=>{ if(!ticking){ ticking = true; requestAnimationFrame(update); } }, {passive:true});
+    update();
   }
 
   // 항목별 제목·설명·canonical·OG·구조화 데이터 (검색 결과에 항목마다 다른 제목이 보이게)
@@ -263,7 +283,7 @@
     const relatedTitle = t.cat==='신조어' ? '관련 사전 항목' : '함께 보기';
     main.innerHTML = `
       <header class="detail-header">
-        <div class="crumb"><a href="index.html">홈</a> <span aria-hidden="true">/</span> ${H.esc(t.cat)}</div>
+        <div class="crumb"><a href="index.html">홈</a> <span aria-hidden="true">/</span> <a href="${t.type==='신뢰분석'?'list.html?type=ad':`list.html?type=trend&cat=${encodeURIComponent(t.cat)}`}">${t.type==='신뢰분석'?'광고일까 진짜일까':H.esc(t.cat)}</a></div>
         ${H.coverHTML(t,{tall:true})}
         <div class="detail-title-group">
           <div class="d-head"><span class="kicker">${H.esc(t.cat)}${t.buzz?` · ${H.esc(t.buzz)}`:''}</span></div>

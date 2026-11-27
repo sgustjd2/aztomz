@@ -195,11 +195,33 @@
     b.innerHTML=`<span class="nav-icon icon-${dark?'sun':'moon'}" aria-hidden="true"></span><span class="nav-label">${label}</span>`;
     b.setAttribute('aria-label',label);
   };
-  H.theme.apply(H.theme.get());  // 로드 즉시 적용(테마 깜빡임 최소화)
+  H.theme.apply(H.theme.get());
+  // 페이지 전환(@view-transition)이 탭 숨김·빠른 연속 이동으로 취소되면 브라우저가 거부된 promise를 남긴다 → 조용히 처리
+  ['pageswap','pagereveal'].forEach(type=>global.addEventListener(type, (e)=>{
+    const vt = e.viewTransition; if(!vt) return;
+    ['ready','finished','updateCallbackDone'].forEach(k=>vt[k] && vt[k].catch(()=>{}));
+  }));  // 로드 즉시 적용(테마 깜빡임 최소화)
 
   /* ---------- masthead, injected into [data-mast] ---------- */
   H.NAV_CATEGORIES = [['맛집','utensils'],['디저트','cake-slice'],['카페·핫플','coffee'],['신조어','message-square'],['노래·챌린지','music'],['패션','shirt'],['AI 프롬프트','square-terminal']];
   H.catIcon = (cat)=>{ const hit=H.NAV_CATEGORIES.find(([c])=>c===cat); return hit?`<span class="nav-icon icon-${hit[1]}" aria-hidden="true"></span>`:''; };
+  // 가로 스크롤 칩 줄: 선택된 칩이 화면 밖이면 보이게 옮기고, 더 넘길 칩이 있으면 가장자리를 흐리게 표시
+  H.chipRail = (el)=>{
+    if(!el) return;
+    const on = el.querySelector('.on');
+    if(on){
+      const er = el.getBoundingClientRect(), r = on.getBoundingClientRect();
+      if(r.left < er.left || r.right > er.right) el.scrollLeft += (r.left - er.left) - (er.width - r.width)/2;
+    }
+    const upd = ()=>{
+      el.classList.toggle('fade-l', el.scrollLeft > 4);
+      el.classList.toggle('fade-r', el.scrollLeft + el.clientWidth < el.scrollWidth - 4);
+    };
+    upd();
+    if(!el._rail){ el._rail = true; el.addEventListener('scroll', upd, {passive:true}); global.addEventListener('resize', upd);
+      // 웹폰트가 늦게 적용되면 칩 폭이 바뀌므로 한 번 더 맞춘다
+      if(document.fonts && document.fonts.status!=='loaded') document.fonts.ready.then(()=>H.chipRail(el)); }
+  };
   H.normalizeCategory = (cat)=>({'음식':'맛집','핫플':'카페·핫플','밈':'신조어','유행어':'신조어'}[cat]||cat||'전체');
   // Refresh active links without rebuilding the menu or losing drawer/focus state.
   H.syncMastCurrent = ()=>{
@@ -239,7 +261,18 @@
     // 모바일(≤1024px) 하단 탭 바 — 주 메뉴 4개를 엄지 닿는 곳에. 드로어가 열리면 배경과 함께 inert 처리된다.
     const tabs = [['index.html','홈','house'],['list.html?type=ad','광고 분석','scan-search'],['list.html?type=trend','트렌드','chart-no-axes-combined'],['dictionary.html','MZ 사전','book-open']];
     let tabbar=document.querySelector('.tabbar');
-    if(!tabbar){ tabbar=document.createElement('nav'); tabbar.className='tabbar'; tabbar.setAttribute('aria-label','주요 메뉴 바로가기'); host.after(tabbar); }
+    if(!tabbar){
+      tabbar=document.createElement('nav'); tabbar.className='tabbar'; tabbar.setAttribute('aria-label','주요 메뉴 바로가기'); host.after(tabbar);
+      // 지금 보고 있는 탭을 다시 누르면 새로고침 대신 맨 위로(앱의 탭 바 관례)
+      const norm = (u)=> u.pathname.replace(/\/index\.html$/, '/') + u.search;
+      tabbar.addEventListener('click', (e)=>{
+        const a = e.target.closest('a'); if(!a) return;
+        if(norm(new URL(a.href)) === norm(new URL(location.href))){
+          e.preventDefault();
+          global.scrollTo({ top:0, behavior: global.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+        }
+      });
+    }
     tabbar.innerHTML=tabs.map(([url,label,icon])=>`<a href="${url}"><span class="nav-icon icon-${icon}" aria-hidden="true"></span><span>${label}</span></a>`).join('');
     host.innerHTML=`<div class="wrap">
       <div class="mast-brand"><a class="wordmark" href="index.html" aria-label="한끗 홈"><img class="wordmark-mascot" src="assets/mascot.png" alt="" width="34" height="34">한<b>끗</b></a></div>

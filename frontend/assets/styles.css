@@ -1285,7 +1285,8 @@ body.detail-page .detail-jumps{position:sticky;top:0;z-index:20;flex-wrap:nowrap
   background:color-mix(in srgb,var(--paper) 88%,transparent);-webkit-backdrop-filter:saturate(1.5) blur(12px);backdrop-filter:saturate(1.5) blur(12px)}
 body.detail-page .detail-jumps::-webkit-scrollbar{display:none}
 body.detail-page .detail-jumps a{flex:none}
-html:has(body.detail-page){scroll-padding-top:76px}
+html:has(body.detail-page){scroll-padding-top:0}
+body.detail-page :is(#story,#judgment,#places,#recommendations,#sources,#prompt){scroll-margin-top:76px}
 
 /* 스크롤로 들어올 때만 살짝 떠오르기(첫 화면 콘텐츠는 이미 범위를 지나 움직이지 않음) */
 @keyframes hg-reveal{from{opacity:0;translate:0 16px}}
@@ -1327,7 +1328,7 @@ html:has(body.detail-page){scroll-padding-top:76px}
   .toast{bottom:calc(78px + env(safe-area-inset-bottom))}
 
   body.detail-page .detail-jumps{top:64px}
-  html:has(body.detail-page){scroll-padding-top:140px}
+  body.detail-page :is(#story,#judgment,#places,#recommendations,#sources,#prompt){scroll-margin-top:140px}
 }
 
 /* 모바일 홈 '지금 주목할 한끗' — 세로로 길게 쌓지 않고 옆으로 넘기는 카드(다음 카드가 살짝 보임) */
@@ -1378,3 +1379,14 @@ html:has(body.detail-page){scroll-padding-top:76px}
 :root :is(.home-redesign .chip-card .cc-title,.app-redesign .editorial-feed .chip-card .cc-title){margin-top:4px}
 :root .app-redesign .dword .dw-def{font-size:var(--card-desc);line-height:1.65}
 :root .app-redesign .tp-card .tp-why{font-size:var(--card-desc);line-height:1.65}
+
+/* UX 다듬기(2026-11-27): 가로 스크롤 줄의 가장자리 힌트·작은 링크의 터치 영역·바로가기 현재 위치 */
+:is(#catFilter,#lCatFilter,.detail-jumps).fade-r{-webkit-mask-image:linear-gradient(90deg,#000 calc(100% - 44px),transparent);mask-image:linear-gradient(90deg,#000 calc(100% - 44px),transparent)}
+:is(#catFilter,#lCatFilter,.detail-jumps).fade-l{-webkit-mask-image:linear-gradient(90deg,transparent,#000 44px);mask-image:linear-gradient(90deg,transparent,#000 44px)}
+:is(#catFilter,#lCatFilter,.detail-jumps).fade-l.fade-r{-webkit-mask-image:linear-gradient(90deg,transparent,#000 44px,#000 calc(100% - 44px),transparent);mask-image:linear-gradient(90deg,transparent,#000 44px,#000 calc(100% - 44px),transparent)}
+.home-redesign .featured a.more,.home-redesign .sec-link{display:inline-flex;align-items:center;min-height:44px}
+body.detail-page .detail-jumps a.on{color:var(--accent-text);box-shadow:inset 0 -2px 0 currentColor}
+.app-redesign .detail-header>.crumb a{text-decoration:none;font-weight:700}
+.app-redesign .detail-header>.crumb a:hover{text-decoration:underline;text-underline-offset:3px}
+html{scroll-padding-top:16px}
+@media (max-width:1024px){html{scroll-padding-top:80px}}
