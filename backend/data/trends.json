@@ -10607,10 +10607,10 @@
       "cat": "디저트",
       "coverCat": "cat-dessert",
       "collectedAt": "2026-08-03",
-      "analyzedAt": "2026-08-15",
+      "analyzedAt": "2026-11-27",
       "buzz": "화제성 높음",
-      "stage": "피크",
-      "stageMsg": "크로플 다음 주자, 대중화 단계",
+      "stage": "안정화",
+      "stageMsg": "유행의 정점은 지났고 간식으로 남아 있어요",
       "label": "지금 즐기기 딱 좋음",
       "labelCls": "good",
       "title": "크룽지 (크로아상 누룽지)",
@@ -10647,6 +10647,10 @@
         [
           "'크룽지' 발명 스토리",
           "https://www.mk.co.kr/news/business/10713667"
+        ],
+        [
+          "에펨코리아(2026-11-27)",
+          "https://www.fmkorea.com/10599672894"
         ]
       ],
       "tags": [
