@@ -4,12 +4,27 @@
         calm card layouts · mobile-first rhythm.
    로컬 Pretendard 폰트(외부 CDN 0) · 빌드/프레임워크 0.
    ============================================================ */
+/* 폰트는 두 파일로 나눴다(원본 PretendardVariable 2.0MB).
+   core(약 470KB): 영문·기호 + 자주 쓰는 한글 2,350자(KS X 1001) + 사이트에 쓰인 글자.
+   rest(약 1.6MB): 나머지 한글·문자 — core에 없는 글자가 화면에 나올 때만 브라우저가 내려받는다.
+   같은 family 안에서 나중에 선언한 core가 먼저 쓰이고, 글자가 없으면 rest로 넘어간다(홈·목록·사전·상세는 core만 받음).
+   다시 만들 땐 backend/scripts/font-subset.sh, 파일 이름도 바꿔야 한다(1년 immutable 캐시). */
 @font-face{
   font-family:Pretendard;
-  src:url("fonts/PretendardVariable.woff2") format("woff2");
+  src:url("fonts/PretendardVariable-rest.woff2") format("woff2");
   font-style:normal;
   font-weight:45 920;
   font-display:swap;
+  /* 원본 폰트에 실제로 있는 글자 범위만 — 원본에도 없는 기호(✕ 등) 때문에 1.6MB를 헛되이 받지 않게 */
+  unicode-range:U+A0-148,U+14A-1C3,U+1C5-31E,U+321-377,U+37A-37F,U+384-38A,U+38C,U+38E-3A1,U+3A3-3E1,U+3F0-49D,U+4A0-4FF,U+52F,U+E3F,U+1D43,U+1D47-1D49,U+1D4D,U+1D4F-1D50,U+1D52,U+1D56-1D58,U+1D5B,U+1D62-1D65,U+1D9C,U+1DA0,U+1DBB,U+1DBF-1DF5,U+1DFC-1F15,U+1F18-1F1D,U+1F20-1F45,U+1F48-1F4D,U+1F50-1F57,U+1F59,U+1F5B,U+1F5D,U+1F5F-1F7D,U+1F80-1FB4,U+1FB6-1FC4,U+1FC6-1FD3,U+1FD6-1FDB,U+1FDD-1FEF,U+1FF2-1FF4,U+1FF6-1FFE,U+2070-2071,U+2074-208E,U+2090-209C,U+20A0-20BF,U+20DB-20DE,U+20E8,U+20F0,U+2100-2101,U+2103,U+2105-2106,U+2109,U+2113,U+2116-2117,U+211E-2123,U+2126,U+212A-212B,U+212E,U+2132,U+213B,U+214D,U+214F,U+2153,U+215A-2188,U+2202,U+2205-2206,U+220F,U+2211-2212,U+221A,U+221E,U+222B,U+2248,U+2260,U+2264-2265,U+226A-226B,U+22EF,U+2303,U+2305,U+2318,U+2325-2327,U+2329-232B,U+2380,U+2387,U+238B,U+23CE-23CF,U+2423,U+2460-2473,U+24B6-24CF,U+24EA-24F4,U+24FF,U+25A0-25A2,U+25AA,U+25B6-25B7,U+25BA-25BD,U+25C0-25C1,U+25C4-25C7,U+25CA-25CB,U+25CF,U+25E6,U+25EF,U+2600,U+2605-2606,U+263C,U+2661,U+2665,U+266A,U+2713,U+2717,U+2756,U+2776-2789,U+27EF,U+27F5-27FA,U+2985-2986,U+2B06,U+2B12-2B13,U+2B1C,U+2C7C,U+2C7F,U+2DFF,U+2E18,U+3041-3094,U+3099-309E,U+30A1-30FE,U+321C,U+3380-3384,U+3388-33CA,U+33CF-33D0,U+33D3,U+33D6,U+33D8,U+33DB-33DD,U+A69F,U+A7FF,U+A92E,U+AC00-D7A3,U+E000,U+E002-E05E,U+E06A-E080,U+E093-E096,U+E0A5-E0E6,U+E0F3-E11C,U+E11E-E12A,U+E131-E147,U+E14E-E164,U+EE01-EE05,U+F000-F057,U+F6C3,U+FE20-FE2D,U+FEFF,U+FF01-FF60,U+FFA1-FFBE,U+FFC2-FFC7,U+FFCA-FFCF,U+FFD2-FFD7,U+FFDA-FFDC,U+FFE0-FFE1,U+FFE5-FFE6,U+1F10B,U+1F12F-1F149,U+1F150-1F16B,U+1F170-1F189,U+1F850,U+1F852,U+F0000-F0002;
+}
+@font-face{
+  font-family:Pretendard;
+  src:url("fonts/PretendardVariable-core.woff2") format("woff2");
+  font-style:normal;
+  font-weight:45 920;
+  font-display:swap;
+  unicode-range:U+0000-00FF,U+2000-206F,U+2190-21FF,U+2460-24FF,U+25A0-25FF,U+2600-27BF,U+3000-303F,U+3131-318F,U+AC00-D7A3,U+FF01-FF5E;
 }
 :root{
   --paper:#fff;
@@ -1360,39 +1375,60 @@ body:not(.detail-page).app-redesign .sec-head{margin:22px 6px 10px;padding-botto
   .list-surface .feed{grid-template-columns:repeat(4,minmax(0,1fr))}
   .list-surface .feed-row:nth-child(-n+4){border-top:0}
 }
-/* 광고 분석 목록 필터 — 판단·점수 구간·지역·정렬 (상태는 URL 쿼리) */
-.lf{display:flex;flex-direction:column;gap:12px;padding:14px 0 12px;border-bottom:1px solid var(--line)}
-.lf-panel{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:10px 12px}
-.lf-field{position:relative;display:flex;flex-direction:column;gap:6px;min-width:0;font-size:12.5px;font-weight:600;color:var(--muted)}
-/* 셀렉트: 테두리 없는 연한 채움 + 둥근 모서리. 화살표는 currentColor 마스크라 라이트·다크 모두 글자색을 따른다 */
-.lf-field select{width:100%;min-height:44px;padding:9px 38px 9px 14px;border:1px solid transparent;border-radius:12px;
-  background:color-mix(in srgb,var(--ink) 5%,var(--card));color:var(--ink);font:600 14.5px var(--sans);letter-spacing:-.01em;
-  text-overflow:ellipsis;-webkit-appearance:none;appearance:none;cursor:pointer;transition:background-color .15s,border-color .15s,color .15s}
-.lf-field::after{content:"";position:absolute;right:14px;bottom:16px;width:12px;height:12px;background:var(--muted);pointer-events:none;
-  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m3 4.5 3 3 3-3'/%3E%3C/svg%3E") center/contain no-repeat;
-          mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m3 4.5 3 3 3-3'/%3E%3C/svg%3E") center/contain no-repeat;
-  transition:transform .15s}
-@media (hover:hover){.lf-field select:hover{background:color-mix(in srgb,var(--ink) 9%,var(--card))}}
-.lf-field select option{background:var(--card);color:var(--ink)}
-/* 값을 고른 셀렉트는 광고 강조색의 연한 바탕 + 강조 글자로 — 무엇이 걸려 있는지 한눈에 */
-.lf-field select.is-set{border-color:color-mix(in srgb,var(--accent) 35%,transparent);background:var(--accent-soft);color:var(--accent-text);font-weight:700}
-.lf-field:has(select.is-set)::after{background:var(--accent-text)}
-.lf-field:has(select.is-set)>span{color:var(--ink)}
-.lf-field select:focus-visible,.lf button:focus-visible{outline:3px solid color-mix(in srgb, var(--accent) 72%, transparent);outline-offset:2px}
-.lf-bar{display:flex;align-items:center;gap:8px 12px;font-size:13.5px;color:var(--muted)}
+/* 광고 분석 목록 필터 — 판단·점수 구간·지역은 알약 칩(토글), 정렬은 작은 셀렉트 (상태는 URL 쿼리) */
+.lf{display:flex;flex-direction:column;gap:12px;padding:14px 0;border-bottom:1px solid var(--line)}
+.lf-bar{display:flex;align-items:center;gap:8px 10px;font-size:13.5px;color:var(--muted)}
+.lf-count{min-width:0;white-space:nowrap}
 .lf-count b{color:var(--ink);font-weight:800;font-variant-numeric:tabular-nums}
-.lf-reset{margin-left:auto;min-height:36px;padding:6px 12px;border:1px solid var(--line);border-radius:999px;background:transparent;color:var(--body);font:600 13px var(--sans);cursor:pointer}
+.lf-panel{display:flex;flex-direction:column;gap:10px}
+.lf-row{display:flex;align-items:baseline;gap:12px;min-width:0}
+.lf-name{flex:none;width:64px;font-size:13px;font-weight:700;color:var(--muted)}
+.lf-chips{display:flex;flex-wrap:wrap;gap:6px;min-width:0}
+.lf-chip{flex:none;display:inline-flex;align-items:center;gap:5px;min-height:36px;padding:6px 14px;border:1px solid transparent;border-radius:999px;
+  background:color-mix(in srgb,var(--ink) 5%,var(--card));color:var(--body);font:600 13.5px var(--sans);letter-spacing:-.01em;white-space:nowrap;cursor:pointer;
+  transition:background-color .15s,border-color .15s,color .15s}
+.lf-chip .lf-cn{font-size:12px;font-weight:500;color:var(--muted);font-variant-numeric:tabular-nums}
+@media (hover:hover){.lf-chip:not(.on):hover{background:color-mix(in srgb,var(--ink) 9%,var(--card));color:var(--ink)}}
+.lf-chip:active{transform:scale(.97)}
+/* 켜진 칩: 광고 강조색의 연한 바탕 + 강조 글자 + 체크 표시(색만으로 구분하지 않음) */
+.lf-chip.on{border-color:color-mix(in srgb,var(--accent) 35%,transparent);background:var(--accent-soft);color:var(--accent-text);font-weight:700}
+.lf-chip.on::before{content:"";width:12px;height:12px;margin-left:-2px;background:currentColor;
+  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='none' stroke='%23000' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m2.5 6.2 2.4 2.4 4.6-5'/%3E%3C/svg%3E") center/contain no-repeat;
+          mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='none' stroke='%23000' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m2.5 6.2 2.4 2.4 4.6-5'/%3E%3C/svg%3E") center/contain no-repeat}
+.lf-chip.on .lf-cn{color:inherit;opacity:.75}
+/* 정렬: 작은 알약 셀렉트, 화살표는 currentColor 마스크 */
+.lf-sort{position:relative;flex:none;margin-left:auto}
+.lf-sort select{min-height:36px;padding:6px 30px 6px 13px;border:1px solid transparent;border-radius:999px;background:color-mix(in srgb,var(--ink) 5%,var(--card));
+  color:var(--ink);font:600 13px var(--sans);-webkit-appearance:none;appearance:none;cursor:pointer}
+.lf-sort::after{content:"";position:absolute;right:12px;top:50%;width:10px;height:10px;margin-top:-5px;background:currentColor;color:var(--muted);pointer-events:none;
+  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m3 4.5 3 3 3-3'/%3E%3C/svg%3E") center/contain no-repeat;
+          mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m3 4.5 3 3 3-3'/%3E%3C/svg%3E") center/contain no-repeat}
+.lf-sort select option{background:var(--card);color:var(--ink)}
+.lf-sort select.is-set{border-color:color-mix(in srgb,var(--accent) 35%,transparent);background:var(--accent-soft);color:var(--accent-text);font-weight:700}
+.lf-sort:has(select.is-set)::after{color:var(--accent-text)}
+@media (hover:hover){.lf-sort select:not(.is-set):hover{background:color-mix(in srgb,var(--ink) 9%,var(--card))}}
+.lf-chip:focus-visible,.lf-sort select:focus-visible,.lf button:focus-visible{outline:3px solid color-mix(in srgb, var(--accent) 72%, transparent);outline-offset:2px}
+.lf-reset{flex:none;min-height:36px;padding:6px 12px;border:1px solid var(--line);border-radius:999px;background:transparent;color:var(--body);font:600 13px var(--sans);cursor:pointer}
 .lf-reset:hover{border-color:var(--ink);color:var(--ink)}
 .lf-toggle{display:none}
 @media (max-width:640px){
-  /* 모바일은 접어 두고 '필터·정렬' 버튼으로 연다 — 목록이 먼저 보이게 */
+  /* 모바일은 접어 두고 '필터' 버튼으로 연다 — 목록이 먼저 보이게. 칩 줄은 가로로 넘겨 본다 */
   .lf{gap:10px;padding:10px 0}
-  .lf-bar{order:-1}
-  .lf-toggle{display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:7px 14px;border:1px solid var(--line);border-radius:999px;background:var(--paper-soft);color:var(--ink);font:700 13.5px var(--sans);cursor:pointer}
-  .lf-toggle .lf-n{min-width:20px;padding:1px 6px;border-radius:999px;background:var(--ink);color:var(--on-ink);font-size:12px;text-align:center}
-  .lf-panel{grid-template-columns:1fr 1fr}
+  .lf-bar{gap:6px}
+  .lf-of{display:none}
+  .lf-toggle{flex:none;display:inline-flex;align-items:center;gap:6px;min-height:36px;padding:6px 13px;border:1px solid var(--line);border-radius:999px;background:var(--paper-soft);color:var(--ink);font:700 13px var(--sans);cursor:pointer}
+  .lf-toggle .lf-n{min-width:19px;padding:1px 6px;border-radius:999px;background:var(--ink);color:var(--on-ink);font-size:11.5px;text-align:center}
+  .lf-sort select{padding-left:11px;padding-right:26px}
+  .lf-sort::after{right:10px}
+  .lf-row{flex-direction:column;align-items:stretch;gap:6px}
+  .lf-name{width:auto;font-size:12.5px}
+  .lf-chips{flex-wrap:nowrap;overflow-x:auto;margin:0 -18px;padding:0 18px 2px;scrollbar-width:none;overscroll-behavior-x:contain}
+  .lf-chips::-webkit-scrollbar{display:none}
   .lf:not(.open) .lf-panel{display:none}
 }
+.lf-chips.fade-r{-webkit-mask-image:linear-gradient(90deg,#000 calc(100% - 36px),transparent);mask-image:linear-gradient(90deg,#000 calc(100% - 36px),transparent)}
+.lf-chips.fade-l{-webkit-mask-image:linear-gradient(90deg,transparent,#000 36px);mask-image:linear-gradient(90deg,transparent,#000 36px)}
+.lf-chips.fade-l.fade-r{-webkit-mask-image:linear-gradient(90deg,transparent,#000 36px,#000 calc(100% - 36px),transparent);mask-image:linear-gradient(90deg,transparent,#000 36px,#000 calc(100% - 36px),transparent)}
 .app-redesign .list-surface:has(#lCatFilter[hidden]){padding-top:4px}
 .app-redesign #lPager{margin-top:20px}
 

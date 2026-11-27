@@ -31,6 +31,7 @@
 |---|---|
 | `refresh.mjs` | `trends.json` → `frontend/data/trends.js` 재생성(+`generatedAt`) |
 | `build-sitemap.mjs` | `trends.json` → `frontend/sitemap.xml` 생성(검색엔진 색인용). `refresh.mjs`가 생성 직후 호출(실패 시 경고만), 단독 실행: `node backend/scripts/build-sitemap.mjs` |
+| `font-subset.py` | `backend/fonts/PretendardVariable.woff2`(원본) → `frontend/assets/fonts/PretendardVariable-core/-rest.woff2` 분할(첫 로딩 2.0MB→약 460KB). `pip install fonttools brotli` 필요. 다시 만들면 파일 이름·`styles.css` @font-face 를 함께 바꾼다(1년 immutable 캐시) |
 | `validate-trends.mjs` | **스키마 스모크 게이트** — id 누락·중복, cat 7분류 이탈, stage 비정규 라벨, 영문 placeholder verdict, `analyzedAt` 형식 오류를 배포 전에 잡음 |
 | `check-links.mjs` | 출처 URL 상태(404) 점검 |
 | `check-source.mjs [파일] [--only=id,id]` | 출처 **본문 관련성** 점검(정확✅/약함⚠️/무관❌/차단🚫, LLM 없음) |
