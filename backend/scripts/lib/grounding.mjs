@@ -14,6 +14,15 @@ export const MEDIA = ['연합뉴스', '한국경제', '매일경제', '경향신
 // 사실처럼 읽히는 확산·인기 표현 — 출처 본문에 같은 말이 없으면 막는다(분위기어 '열풍·대세'는 경고만).
 export const HYPE_BLOCK = ['웨이팅', '오픈런', '품절', '완판', '매진', '전국', '체인', '여러 지점', '지점 확대', '지점을 늘', '지점이 늘', '지점으로 늘', '급증', '폭증', '역대', '최초', '유일'];
 export const HYPE_WARN = ['열풍', '대세', '돌풍', '대란', '강타', '점령', '피크'];
+// 후기·기사 수 주장 — 게시 때 검증 실패 출처가 빠져도 '후기 두 건'·'서로 다른 후기' 서술이 남던 문제(2026-11-27 신뢰분석 64건 점검에서 15건).
+// 숫자(2건)는 NUM_RE 가 이미 본문 대조하므로 한글 수사만 본다. 남은(검증 통과) 출처 수보다 많으면 막는다.
+const KOR_N = { 한: 1, 두: 2, 세: 3, 네: 4, 다섯: 5, 여섯: 6, 일곱: 7, 여덟: 8 };
+const DOC = '(?:방문 후기|후기|리뷰|방문기|글(?!자)|기사|보도|게시물|포스팅)';
+const KN = '(한|두|세|네|다섯|여섯|일곱|여덟)';
+const COUNT_RE = new RegExp(`${DOC}\\s*(?:도|는|가|이)?\\s*${KN}\\s*(?:건|개|편)|${KN}\\s*(?:건|개|편)의?\\s*${DOC}|(?<![가-힣])${KN}\\s+${DOC}`, 'g');
+// 수사 없이 '둘 이상'을 말하는 표현 — 남은 출처가 1개면 막는다. '다른 후기는 없어요'처럼 부정이 뒤따르면 제외.
+const PLURAL_RE = /(?:또 )?다른 (?:방문 후기|후기|글(?!자)|리뷰|방문기|게시물)(?:는|은|에서|에는|도)(?![^.]{0,14}(?:없|않|쌓|기다|필요|더 ))|(?:후기|리뷰|방문기|게시물)들(?:은|이|에서|을|의|도)?|몇 건|여러 건|여러 (?:방문 )?후기|둘 이상|별도 (?:방문 )?후기(?!를)/;
+const DISTINCT_RE = /서로 다른 (?:작성자|계정|후기|블로그|방문 후기|글|출처)|각기 다른 (?:작성자|계정)/;
 const NUM_RE = /\d[\d,.]*\s*(?:번 출구|번출구|만 건|만 회|만 뷰|만회|억 뷰|억 회|곳|개|명|만 ?원|원|%|배(?!속)|건|잔|호점|호선|km|kg)/g;
 
 const norm = (s) => String(s || '').replace(/\s+/g, '').toLowerCase();
@@ -45,6 +54,14 @@ export function groundingCheck(t, srcNames, bodies) {
   }
   for (const h of HYPE_BLOCK) if (text.includes(h) && !B.includes(norm(h))) block.push(`출처에 없는 표현 '${h}'`);
   for (const h of HYPE_WARN) if (text.includes(h) && !B.includes(norm(h))) warn.push(`출처에 없는 표현 '${h}'`);
+  const nSrc = srcNames.length;
+  for (const m of text.matchAll(COUNT_RE)) {
+    const n = KOR_N[m[1] || m[2] || m[3]];
+    // 한 페이지가 여러 후기를 모은 경우(뽈레·더쿠 목록 등)는 본문에 같은 수가 적혀 있으면 인정한다
+    if (n > nSrc && !B.includes(norm(m[0])) && !B.includes(`${n}건`) && !B.includes(`${n}개`)) block.push(`출처 ${nSrc}개인데 '${m[0].trim()}'`);
+  }
+  if (nSrc < 2 && PLURAL_RE.test(text) && !PLURAL_RE.test(stripHtml(all))) block.push(`출처 ${nSrc}개인데 '${text.match(PLURAL_RE)[0]}'`);
+  if (nSrc < 2 && DISTINCT_RE.test(text) && !DISTINCT_RE.test(all)) block.push(`출처 ${nSrc}개인데 '${text.match(DISTINCT_RE)[0]}'`);
   return { pass: block.length === 0, block, warn };
 }
 
@@ -65,6 +82,20 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
   assert.equal(ad.pass, false, '스크립트 속 숫자는 근거가 아님');
   assert.equal(groundingCheck({ verdict: '읽을 수 있었던 유일한 출처는 블로그 1건' }, [], [body]).pass, true, '메타 문장');
   assert.equal(groundingCheck({ verdict: '세트 11,000원' }, [], ['세트 메뉴 11,000']).pass, true, '쉼표 숫자·원 생략');
+  const two = groundingCheck({ excerpt: '최근 방문 후기 두 건을 찾았어요. 다른 후기는 웨이팅을 다뤘어요.' }, ['블로그'], ['방문 후기 웨이팅 20분']);
+  assert.ok(two.block.some((b) => b.includes('후기 두 건')), '출처 1개인데 두 건: ' + two.block);
+  assert.equal(groundingCheck({ excerpt: '후기 두 건을 확인했어요' }, ['a', 'b'], ['x', 'y']).pass, true, '출처 2개면 두 건 OK');
+  assert.equal(groundingCheck({ excerpt: '확인된 후기는 한 건뿐이에요' }, ['a'], ['x']).pass, true, '한 건');
+  assert.ok(!groundingCheck({ verdict: '두 후기 모두 맛있다고 했어요' }, ['a'], ['x']).pass, "'두 후기'");
+  assert.equal(groundingCheck({ verdict: '리뷰 세 개가 올라온 페이지' }, ['뽈레'], ['리뷰 3개 · 좋음']).pass, true, '목록 페이지 본문에 같은 수');
+  assert.ok(!groundingCheck({ verdict: '서로 다른 작성자의 후기' }, ['a'], ['x']).pass, '서로 다른 작성자 + 출처 1개');
+  assert.equal(groundingCheck({ verdict: '세 글자로 줄인 말' }, ['a'], ['x']).pass, true, "'글자'는 문서 아님");
+  assert.ok(!groundingCheck({ excerpt: '한 후기는 맛을, 다른 후기는 웨이팅을 다뤘어요' }, ['a'], ['x']).pass, "'다른 후기는' + 출처 1개");
+  assert.equal(groundingCheck({ verdict: '교차 확인할 다른 후기는 없어요' }, ['a'], ['x']).pass, true, '부정');
+  assert.ok(!groundingCheck({ satTxt: '검색된 후기들은 대체로 긍정' }, ['a'], ['x']).pass, "'후기들'");
+  assert.equal(groundingCheck({ satTxt: '검색된 후기들은 대체로 긍정' }, ['a', 'b'], ['x', 'y']).pass, true, '출처 2개면 복수 OK');
+  assert.equal(groundingCheck({ verdict: '음료 평가는 별도 후기를 더 확인하기' }, ['a'], ['x']).pass, true, '권유문');
+  assert.equal(groundingCheck({ verdict: '두 사람의 반응' }, ['a'], ['x']).pass, true, "'두 사람'은 문서 수 아님");
   const vibe = groundingCheck({ verdict: '요즘 대세' }, [], [body]);
   assert.equal(vibe.pass, true); assert.equal(vibe.warn.length, 1);
   console.log('✓ grounding selftest 통과');
