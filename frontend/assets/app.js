@@ -332,8 +332,77 @@
     // types 를 못 쓰는 브라우저는 페이지 전체가 움직이므로 그냥 바꾼다
     const ok = document.startViewTransition && global.ViewTransition && 'types' in global.ViewTransition.prototype
       && !global.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if(ok) document.startViewTransition({ update, types:['swap'] }); else update();
+    if(!ok){ update(); return; }
+    // 목록 교체 애니메이션이 이미 움직이므로 그동안 새 행은 등장 애니메이션을 하지 않는다(건너뛰어져도 update 는 돈다)
+    H._rvQuiet = (H._rvQuiet||0) + 1;
+    const done = ()=>{ H._rvQuiet = Math.max(0, H._rvQuiet - 1); };
+    document.startViewTransition({ update, types:['swap'] }).updateCallbackDone.then(done, done);
   };
+
+  /* ---------- 화면 안 등장 애니메이션 ----------
+     페이지 스크립트가 무엇을 언제 그리든 DOM 변화를 지켜보다가 블록·행에 data-rv 를 붙인다.
+     · 지금 화면 안: 차례로(45ms 간격) 떠오름. 단, 페이지 전환으로 들어온 첫 화면은 그대로 둔다(html[data-vt], vt.js).
+     · 화면 아래: 스크롤해 들어올 때 떠오름.  · 이미 지나친 위쪽: 그대로.
+     · 같은 차례에 바깥 블록이 움직이면 안쪽 행은 따로 움직이지 않는다.
+     · 목록 교체 애니메이션(H.swap) 중이거나 0.7초 안에 연달아 다시 그리면(검색 타이핑 등) 그대로 둔다. */
+  H.motion = (()=>{
+    const de = document.documentElement;
+    if(!('IntersectionObserver' in global) || !('MutationObserver' in global)
+      || global.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    de.classList.add('motion');
+    const BLOCKS = ['main .home-intro','main .lead','main .featured','main .home-section','main .list-surface','main .pager',
+      'main .dict-tools','main .sec-head','main .tp-tabs','main .tp-panel','.detail-page #main > *'].join(',');
+    const ITEMS = ['.feed-row','.rank-row','.dlist > *','#tpList > *'].join(',');
+    // 첫 화면 단계: 페이지 스크립트가 처음 그리기를 마칠 때(DOMContentLoaded 직후)까지.
+    // rAF 는 백그라운드 탭에서 멈추므로 타이머로 끝낸다.
+    let settled = false, lastItems = 0, stagger = 0, staggerAt = 0;
+    document.addEventListener('DOMContentLoaded', ()=> setTimeout(()=>{ settled = true; }, 60));
+    const show = (el, now)=>{
+      if(now){ el.classList.add('rv-in','rv-now'); return; }
+      const t = performance.now();
+      if(t - staggerAt > 120) stagger = 0;   // 새 묶음이면 순번을 처음부터
+      staggerAt = t;
+      const d = Math.min(stagger++, 8) * 45;
+      el.style.setProperty('--rv-d', d + 'ms');
+      el._rvEnd = t + d + 520;
+      el.classList.add('rv-in');
+    };
+    // 바깥 블록이 아직 숨어 있거나 떠오르는 중이면 안쪽은 따로 움직이지 않는다(블록과 함께 나타남)
+    const parentBusy = (el)=>{
+      for(let p = el.parentElement; p; p = p.parentElement){
+        if(!p.hasAttribute('data-rv')) continue;
+        if(!p.classList.contains('rv-in') || (p._rvEnd && performance.now() < p._rvEnd)) return true;
+      }
+      return false;
+    };
+    const io = new IntersectionObserver((ents)=> ents.forEach(en=>{
+      if(en.isIntersecting){ io.unobserve(en.target); show(en.target, false); }
+    }), { rootMargin:'0px 0px -6% 0px' });
+    const scan = ()=>{
+      const fresh = [...document.querySelectorAll(BLOCKS + ',' + ITEMS)].filter(el=> !el.hasAttribute('data-rv'));
+      if(!fresh.length) return;
+      const quiet = H._rvQuiet > 0;
+      const vh = global.innerHeight, t = performance.now();
+      const itemsOnly = fresh.every(el=> el.matches(ITEMS));
+      const burst = itemsOnly && settled && t - lastItems < 700;
+      if(itemsOnly) lastItems = t;
+      const marked = new Set(fresh);
+      fresh.forEach(el=>{
+        el.setAttribute('data-rv', '');
+        // 같은 차례에 바깥 블록도 새로 붙었거나, 바깥 블록이 아직 움직이는 중이면 그 블록이 대표로 움직인다
+        for(let p = el.parentElement; p; p = p.parentElement) if(marked.has(p)){ show(el, true); return; }
+        if(parentBusy(el)){ show(el, true); return; }
+        const r = el.getBoundingClientRect();
+        if(r.bottom < 0) show(el, true);                                      // 이미 지나친 위쪽
+        else if(r.top > vh) io.observe(el);                                   // 화면 아래 — 스크롤 때
+        else show(el, quiet || burst || (!settled && de.dataset.vt==='1'));   // 지금 화면 안
+      });
+    };
+    // MutationObserver 콜백은 이미 한 차례 변경을 모아서 부른다 — 바로 훑는다(교체 애니메이션 표시가 살아 있을 때)
+    new MutationObserver(scan).observe(document.body, { childList:true, subtree:true });
+    scan();
+    return { scan };
+  })();
 
   /* ---------- per-page boot ---------- */
   H.boot = ()=>{ H.renderMast(); };

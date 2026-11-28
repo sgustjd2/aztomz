@@ -1254,34 +1254,56 @@ body.app-redesign.nav-collapsed{--nav-width:76px}
 /* 페이지 간 전환 opt-in 은 각 HTML <head> 맨 앞의 인라인 <style>에도 있다. 이 파일만으론 새 페이지가 opt-in 을 늦게 읽어
    Chrome이 전환을 취소(ViewTransition opt-in disabled)하므로 인라인 줄을 지우지 말 것. */
 @media (prefers-reduced-motion:no-preference){@view-transition{navigation:auto}}
+/* ---------- 움직임 토큰 ---------- */
+:root{
+  --ease-out:cubic-bezier(.2,0,0,1);        /* 빠르게 출발해 부드럽게 멈춤 — 들어오는 것 */
+  --ease-in:cubic-bezier(.4,0,1,1);         /* 천천히 출발 — 나가는 것 */
+  --ease-pop:cubic-bezier(.3,1.3,.5,1);     /* 살짝 지나쳤다 돌아옴 — 활성 표시가 옮겨 갈 때 */
+}
 /* 페이지 이동 애니메이션 — 메뉴(사이드바·상단 바·하단 탭)는 제자리, 본문만 움직인다.
-   방향(forward/back)은 app.js 가 메뉴 순서로 정한다. 활성 메뉴 표시는 새 위치로 미끄러진다. */
+   방향(forward/back)은 assets/vt.js 가 메뉴 순서로 정한다.
+   좌우 이동은 '공유 축' 방식: 옛 화면은 짧게 사라지며 밀려나고, 새 화면은 조금 겹쳐 들어온다(빈 화면 순간 없음).
+   방향이 없을 때(같은 메뉴 안 이동 등)는 '페이드 스루': 사라졌다가 살짝 떠오르며 나타난다. */
 @media (prefers-reduced-motion:no-preference){
   html:active-view-transition .mast{view-transition-name:mast}
   html:active-view-transition .tabbar{view-transition-name:tabbar}
   .app-redesign #mastNav a.is-active{view-transition-name:nav-pill}
   .app-redesign .nav-categories a.is-active{view-transition-name:cat-pill}
   .app-redesign .tabbar a[aria-current] .nav-icon{view-transition-name:tab-pill}
-  ::view-transition-group(*){animation-duration:.34s;animation-timing-function:cubic-bezier(.2,.8,.2,1)}
-  ::view-transition-old(root){animation:vt-out .16s cubic-bezier(.4,0,1,1) both}
-  ::view-transition-new(root){animation:vt-up .34s cubic-bezier(.2,.8,.2,1) both}
-  html:active-view-transition-type(forward)::view-transition-old(root){animation:vt-to-l .2s cubic-bezier(.4,0,1,1) both}
-  html:active-view-transition-type(forward)::view-transition-new(root){animation:vt-from-r .36s cubic-bezier(.2,.8,.2,1) both}
-  html:active-view-transition-type(back)::view-transition-old(root){animation:vt-to-r .2s cubic-bezier(.4,0,1,1) both}
-  html:active-view-transition-type(back)::view-transition-new(root){animation:vt-from-l .36s cubic-bezier(.2,.8,.2,1) both}
+  ::view-transition-group(*){animation-duration:.38s;animation-timing-function:var(--ease-out)}
+  ::view-transition-group(nav-pill),::view-transition-group(cat-pill),::view-transition-group(tab-pill){animation-duration:.46s;animation-timing-function:var(--ease-pop)}
+  ::view-transition-old(root){animation:vt-fade-out .12s var(--ease-in) both}
+  ::view-transition-new(root){animation:vt-fade-in .26s var(--ease-out) .06s both,vt-rise .36s var(--ease-out) .06s both}
+  html:active-view-transition-type(forward)::view-transition-old(root){animation:vt-fade-out .12s var(--ease-in) both,vt-slide-to-l .32s var(--ease-out) both}
+  html:active-view-transition-type(forward)::view-transition-new(root){animation:vt-fade-in .22s var(--ease-out) .07s both,vt-slide-from-r .34s var(--ease-out) both}
+  html:active-view-transition-type(back)::view-transition-old(root){animation:vt-fade-out .12s var(--ease-in) both,vt-slide-to-r .32s var(--ease-out) both}
+  html:active-view-transition-type(back)::view-transition-new(root){animation:vt-fade-in .22s var(--ease-out) .07s both,vt-slide-from-l .34s var(--ease-out) both}
   /* 같은 페이지 목록 교체(카테고리 탭): 화면은 그대로, 목록만 바꿔 끼운다 */
   html:active-view-transition-type(swap) #lList{view-transition-name:feed}
   html:active-view-transition-type(swap)::view-transition-old(root),html:active-view-transition-type(swap)::view-transition-new(root){animation:none}
-  html:active-view-transition-type(swap)::view-transition-group(feed){animation-duration:.28s}
-  html:active-view-transition-type(swap)::view-transition-old(feed){animation:vt-out .12s ease-in both;height:100%;object-fit:none;object-position:top}
-  html:active-view-transition-type(swap)::view-transition-new(feed){animation:vt-up .3s cubic-bezier(.2,.8,.2,1) both;height:100%;object-fit:none;object-position:top}
+  html:active-view-transition-type(swap)::view-transition-group(feed){animation-duration:.3s}
+  html:active-view-transition-type(swap)::view-transition-old(feed){animation:vt-fade-out .1s var(--ease-in) both;height:100%;object-fit:none;object-position:top}
+  html:active-view-transition-type(swap)::view-transition-new(feed){animation:vt-fade-in .22s var(--ease-out) .05s both,vt-rise .32s var(--ease-out) .05s both;height:100%;object-fit:none;object-position:top}
 }
-@keyframes vt-out{to{opacity:0}}
-@keyframes vt-up{from{opacity:0;transform:translateY(14px)}}
-@keyframes vt-to-l{to{opacity:0;transform:translateX(-24px)}}
-@keyframes vt-to-r{to{opacity:0;transform:translateX(24px)}}
-@keyframes vt-from-r{from{opacity:0;transform:translateX(40px)}}
-@keyframes vt-from-l{from{opacity:0;transform:translateX(-40px)}}
+@keyframes vt-fade-out{to{opacity:0}}
+@keyframes vt-fade-in{from{opacity:0}}
+@keyframes vt-rise{from{transform:translateY(10px)}}
+@keyframes vt-slide-to-l{to{transform:translateX(-30px)}}
+@keyframes vt-slide-to-r{to{transform:translateX(30px)}}
+@keyframes vt-slide-from-r{from{transform:translateX(30px)}}
+@keyframes vt-slide-from-l{from{transform:translateX(-30px)}}
+
+/* ---------- 화면 안 등장 애니메이션 (app.js H.motion) ----------
+   처음 보이는 블록은 차례로 살짝 떠오르고, 아래쪽은 스크롤해 들어올 때 떠오른다. 목록이 다시 그려지면 행이 차례로 들어온다.
+   JS가 data-rv 를 붙인 요소만 숨겼다 보이므로 JS가 없거나 동작 줄이기면 아무것도 숨지 않는다.
+   fill 은 backwards 만 — 끝난 뒤 transform 이 남으면 안쪽 고정 요소의 기준이 바뀐다. */
+@media (prefers-reduced-motion:no-preference){
+  html.motion [data-rv]:not(.rv-in){opacity:0}
+  html.motion [data-rv].rv-in:not(.rv-now){animation:rv-up .52s var(--ease-out) var(--rv-d,0ms) backwards}
+  html.motion .feed-row[data-rv].rv-in:not(.rv-now),html.motion .rank-row[data-rv].rv-in:not(.rv-now){animation-duration:.42s}
+}
+@keyframes rv-up{from{opacity:0;transform:translateY(14px)}}
+@media print{html.motion [data-rv]{opacity:1!important;animation:none!important}}
 h1,h2,.fx-title,.d-title{text-wrap:balance}
 
 /* ---------- 리드(페이지 머리말) — 장식 없이 작고 또렷하게 ---------- */

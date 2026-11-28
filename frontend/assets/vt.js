@@ -21,6 +21,15 @@
     var a = rank(from), b = rank(to);
     return (a == null || b == null || a === b) ? null : (b > a ? 'forward' : 'back');
   };
+  // 같은 사이트 안 이동으로 들어왔으면(=페이지 전환 애니메이션이 돈다) 표시해 둔다.
+  // app.js 의 등장 애니메이션은 이때 첫 화면을 다시 움직이지 않는다(두 번 움직이면 어지럽다).
+  try {
+    var act0 = w.navigation && w.navigation.activation, nav = performance.getEntriesByType('navigation')[0];
+    var from = act0 ? (act0.from && act0.from.url) : document.referrer;
+    var kind = act0 ? act0.navigationType : (nav && nav.type);
+    if ('onpagereveal' in w && from && new URL(from).origin === location.origin && kind !== 'reload'
+        && !w.matchMedia('(prefers-reduced-motion: reduce)').matches) document.documentElement.dataset.vt = '1';
+  } catch (_) {}
   // 탭 숨김·빠른 연속 이동으로 전환이 취소되면 거부된 promise 가 남으므로 조용히 처리
   var quiet = function (vt) { ['ready', 'finished', 'updateCallbackDone'].forEach(function (k) { vt[k] && vt[k].catch(function () {}); }); };
   w.addEventListener('pageswap', function (e) {
