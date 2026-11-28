@@ -1252,6 +1252,34 @@ body.app-redesign.nav-collapsed{--nav-width:76px}
 :root:root body.app-redesign.detail-page{--bg:var(--paper);background:var(--paper)}  /* 상세는 읽기 화면 — 단색 유지 */
 .app-redesign .surface{padding:4px 18px 10px;border:0;border-radius:18px;background:var(--card)}
 @media (prefers-reduced-motion:no-preference){@view-transition{navigation:auto}}
+/* 페이지 이동 애니메이션 — 메뉴(사이드바·상단 바·하단 탭)는 제자리, 본문만 움직인다.
+   방향(forward/back)은 app.js 가 메뉴 순서로 정한다. 활성 메뉴 표시는 새 위치로 미끄러진다. */
+@media (prefers-reduced-motion:no-preference){
+  html:active-view-transition .mast{view-transition-name:mast}
+  html:active-view-transition .tabbar{view-transition-name:tabbar}
+  .app-redesign #mastNav a.is-active{view-transition-name:nav-pill}
+  .app-redesign .nav-categories a.is-active{view-transition-name:cat-pill}
+  .app-redesign .tabbar a[aria-current] .nav-icon{view-transition-name:tab-pill}
+  ::view-transition-group(*){animation-duration:.34s;animation-timing-function:cubic-bezier(.2,.8,.2,1)}
+  ::view-transition-old(root){animation:vt-out .16s cubic-bezier(.4,0,1,1) both}
+  ::view-transition-new(root){animation:vt-up .34s cubic-bezier(.2,.8,.2,1) both}
+  html:active-view-transition-type(forward)::view-transition-old(root){animation:vt-to-l .2s cubic-bezier(.4,0,1,1) both}
+  html:active-view-transition-type(forward)::view-transition-new(root){animation:vt-from-r .36s cubic-bezier(.2,.8,.2,1) both}
+  html:active-view-transition-type(back)::view-transition-old(root){animation:vt-to-r .2s cubic-bezier(.4,0,1,1) both}
+  html:active-view-transition-type(back)::view-transition-new(root){animation:vt-from-l .36s cubic-bezier(.2,.8,.2,1) both}
+  /* 같은 페이지 목록 교체(카테고리 탭): 화면은 그대로, 목록만 바꿔 끼운다 */
+  html:active-view-transition-type(swap) #lList{view-transition-name:feed}
+  html:active-view-transition-type(swap)::view-transition-old(root),html:active-view-transition-type(swap)::view-transition-new(root){animation:none}
+  html:active-view-transition-type(swap)::view-transition-group(feed){animation-duration:.28s}
+  html:active-view-transition-type(swap)::view-transition-old(feed){animation:vt-out .12s ease-in both;height:100%;object-fit:none;object-position:top}
+  html:active-view-transition-type(swap)::view-transition-new(feed){animation:vt-up .3s cubic-bezier(.2,.8,.2,1) both;height:100%;object-fit:none;object-position:top}
+}
+@keyframes vt-out{to{opacity:0}}
+@keyframes vt-up{from{opacity:0;transform:translateY(14px)}}
+@keyframes vt-to-l{to{opacity:0;transform:translateX(-24px)}}
+@keyframes vt-to-r{to{opacity:0;transform:translateX(24px)}}
+@keyframes vt-from-r{from{opacity:0;transform:translateX(40px)}}
+@keyframes vt-from-l{from{opacity:0;transform:translateX(-40px)}}
 h1,h2,.fx-title,.d-title{text-wrap:balance}
 
 /* ---------- 리드(페이지 머리말) — 장식 없이 작고 또렷하게 ---------- */
