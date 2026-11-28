@@ -304,16 +304,27 @@ a,button,input,select,textarea,summary,label,[role="button"]{touch-action:manipu
 .more-btn{padding:11px 22px;font-size:15px}
 .more-btn b{font-family:var(--serif);font-style:normal;color:var(--accent-text);margin-left:4px}
 
-/* ---------- pager (list.html 전체 목록) ---------- */
-.pager{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;align-items:center;margin:26px 0 40px}
-.pager button{font-family:var(--sans);font-size:14px;font-weight:800;cursor:pointer;
-  border:1.5px solid var(--line);background:var(--card);color:var(--ink-2);
-  border-radius:8px;min-width:40px;height:40px;padding:0 12px;
-  transition:background .12s,border-color .12s,color .12s}
-.pager button:hover:not(:disabled){border-color:var(--ink);color:var(--ink)}
-.pager .pg-num.on{background:var(--ink);color:var(--on-ink);border-color:var(--ink)}
-.pager button:disabled{opacity:.4;cursor:not-allowed}
-.pager .pg-gap{color:var(--faint);padding:0 4px;font-weight:800}
+/* ---------- pager (list.html 전체 목록) — « ‹  번호  › » : 네모난 칸, 화살표와 지금 쪽만 옅은 바탕 ---------- */
+.pager{display:flex;justify-content:center;align-items:center;gap:36px;margin:52px 0 56px}
+.pg-group{display:flex;gap:8px}
+.pager .pg-nums{gap:4px}
+.pager button{position:relative;display:inline-flex;align-items:center;justify-content:center;width:42px;height:42px;padding:0;border:0;border-radius:6px;
+  background:transparent;color:var(--muted);font:600 15px var(--sans);font-variant-numeric:tabular-nums;cursor:pointer;transition:background-color .15s,color .15s}
+.pager .pg-nav{background:color-mix(in srgb,var(--ink) 5%,transparent);color:var(--body)}
+.pager .pg-num.on{background:color-mix(in srgb,var(--ink) 7%,transparent);color:var(--ink);font-weight:800}
+.pager button:hover:not(:disabled):not(.on){background:color-mix(in srgb,var(--ink) 9%,transparent);color:var(--ink)}
+.pager button:disabled{color:color-mix(in srgb,var(--ink) 22%,transparent);cursor:default}
+.pager button:focus-visible{outline:3px solid color-mix(in srgb,var(--accent) 72%,transparent);outline-offset:2px}
+.pg-nav::before,.pg-first::after,.pg-last::after{content:"";width:7px;height:7px;border:solid currentColor;border-width:1.8px 1.8px 0 0;rotate:45deg}
+.pg-prev::before,.pg-first::before,.pg-first::after{rotate:225deg}
+.pg-first::before,.pg-last::before{translate:2px 0}
+.pg-first::after,.pg-last::after{translate:-2px 0}
+@media (max-width:640px){
+  .pager{gap:10px;margin:28px 0 36px}
+  .pg-group{gap:4px}
+  .pager .pg-nums{gap:0}
+  .pager button{width:34px;height:40px;font-size:14px}
+}
 
 /* ---------- scores (detail) ---------- */
 .scores-note{font-size:12.5px;color:var(--ink-2);line-height:1.5;margin:18px 0 -4px;padding:8px 11px;
@@ -1434,27 +1445,28 @@ body:not(.detail-page).app-redesign .sec-head{margin:22px 6px 10px;padding-botto
 @media (min-width:1025px){.app-redesign>.wrap:has(.list-surface){max-width:1280px}}   /* 헤더와 같은 가운데 폭 */
 .app-redesign .list-surface{padding-top:0;container-type:inline-size}
 /* 열 수는 표면(컨테이너) 폭으로 정한다 — 사이드바를 접어도 맞게. 첫 행은 위 구분선을 뺀다 */
-/* 목록 페이지: 흰 바탕 위에 테두리 없는 카드 — 넓은 화면은 2열, 큰 사진(3:2) 위에 분류·판단 꼬리표, 아래 제목·요약·점수.
-   좁으면 위의 가로 행 그대로 */
+/* 목록 페이지: 흰 바탕의 담백한 카드 — 넓은 화면 3열(중간 2열), 16:9 사진 아래 분류·판단, 제목 두 줄, 점수·분석일. 좁으면 가로 행 */
 :root:root body.app-redesign:has(.list-surface){--bg:var(--paper);background:var(--paper)}
 .app-redesign .surface.list-surface{padding-inline:0;border-radius:0;background:transparent}
 @media (max-width:640px){ .app-redesign .surface.list-surface{padding-inline:6px} }
-@container (min-width:760px){
-  .list-surface .feed{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:44px 24px;padding:22px 0 14px}
-  .list-surface .feed-row{position:relative;display:flex;flex-direction:column;gap:0;padding:0;border:0}
-  .list-surface .fr-thumb{order:-1;width:100%;height:auto;aspect-ratio:3/2;border-radius:12px}
-  .list-surface .fr-body{flex:1;padding:14px 2px 0}
-  .list-surface .fr-meta{position:absolute;top:14px;left:14px;right:14px;z-index:2;gap:6px;flex-wrap:wrap;font-size:12.5px;pointer-events:none}
-  .list-surface .fr-meta>*{padding:5px 10px;border-radius:6px;background:rgba(17,24,39,.76);color:#fff;font-weight:700;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
-  .list-surface .fr-label.warn{background:rgba(190,30,50,.92)} .list-surface .fr-label.good{background:rgba(17,110,70,.92)}
-  .list-surface .fr-label.warn::before,.list-surface .fr-label.good::before{background:#fff}
-  .list-surface .fr-title{margin-top:0;font-size:19px}
-  .list-surface .fr-desc{margin-top:5px;font-size:14.5px;line-height:1.6;-webkit-line-clamp:2}
-  .list-surface .fr-foot{padding-top:2px;margin-top:8px;font-size:14px}
-  .list-surface .fr-score b{font-size:18px}
+@container (min-width:600px){
+  .list-surface .feed{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:48px 28px;padding:28px 0 8px}
+  .list-surface .feed-row{display:flex;flex-direction:column;gap:0;padding:0;border:0}
+  .list-surface .fr-thumb{order:-1;width:100%;height:auto;aspect-ratio:16/9;border-radius:8px;border:1px solid color-mix(in srgb,var(--ink) 8%,transparent)}
+  .list-surface .fr-body{flex:1;padding:16px 0 0}
+  .list-surface .fr-meta{flex-wrap:wrap;gap:2px 8px;font-size:13px;font-weight:600}
+  .list-surface .fr-meta .fr-cat{padding:0;background:none;color:var(--accent-text)}
+  .list-surface .fr-meta .fr-label{padding:0;background:none}
+  .list-surface .fr-meta .fr-stage{color:var(--muted)}
+  .list-surface .fr-title{margin-top:7px;font-size:18px;line-height:1.5}
+  .list-surface .fr-desc{display:none}
+  .list-surface .fr-foot{margin-top:8px;font-size:13.5px}
 }
-@media (hover:hover){@container (min-width:760px){
-  .list-surface .feed-row:hover .c-bg{transform:scale(1.05)}
+@container (min-width:900px){
+  .list-surface .feed{grid-template-columns:repeat(3,minmax(0,1fr));gap:56px 36px}
+}
+@media (hover:hover){@container (min-width:600px){
+  .list-surface .feed-row:hover .c-bg{transform:scale(1.04)}
 }}
 /* 광고 분석 목록 필터 — 버튼 줄 + 선택창(dialog) + 정렬 칸 전환 (상태는 URL 쿼리) */
 .wf{display:flex;flex-direction:column;gap:14px;padding:16px 0 4px}
