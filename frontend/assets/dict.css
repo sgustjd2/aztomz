@@ -5,6 +5,11 @@
 .wa svg{width:min(46%,128px);height:auto;aspect-ratio:1;fill:none;stroke:currentColor;stroke-width:3.2;stroke-linecap:round;stroke-linejoin:round}
 .wa svg .f{fill:currentColor;stroke:none}
 .wa svg text{fill:currentColor;stroke:none;font-family:var(--sans);font-weight:800;text-anchor:middle}
+/* 그려진 그림: 종이 바탕을 그대로 쓰는 하나의 카드(화면 테마와 무관, 다크에선 살짝 낮춤) */
+.tone-paper{--wa-bg:#fdfcf8;--wa-ink:#5a5f6b}
+.wa-pic{overflow:hidden}
+.wa-pic img{display:block;width:100%;height:100%;object-fit:contain}
+[data-theme="dark"] .wa-pic{filter:brightness(.9)}
 .tone-pink{--wa-bg:#fbd9e2;--wa-ink:#8f2743} .tone-lilac{--wa-bg:#e6dcf4;--wa-ink:#513a86} .tone-peach{--wa-bg:#fbdfcf;--wa-ink:#93461f}
 .tone-butter{--wa-bg:#f6ebc4;--wa-ink:#735608} .tone-mint{--wa-bg:#d6efe1;--wa-ink:#1d684a} .tone-sky{--wa-bg:#d7e8fa;--wa-ink:#1d5389}
 [data-theme="dark"] .tone-pink{--wa-bg:#442633;--wa-ink:#ffb3c4} [data-theme="dark"] .tone-lilac{--wa-bg:#332b4c;--wa-ink:#cdb9ff} [data-theme="dark"] .tone-peach{--wa-bg:#452e23;--wa-ink:#ffc2a3}
@@ -31,7 +36,8 @@
   box-shadow:0 24px 60px color-mix(in srgb,var(--ink) 9%,transparent);rotate:.6deg;transition:rotate .25s,translate .25s}
 .dx-today:hover{rotate:0deg;translate:0 -4px}
 .dx-today-art{position:relative;display:flex;flex:1;min-height:240px}
-.dx-today-art .wa{flex:1;height:auto}
+.dx-today-art .wa{position:absolute;inset:0;height:auto}
+.dx-today-art{background:var(--wa-bg)}
 .dx-today .wa svg{width:min(52%,190px)}
 .dx-today-tag{position:absolute;left:22px;top:18px;color:var(--wa-ink);font-size:12.5px;font-weight:800}
 .dx-today-body{display:flex;flex-direction:column;gap:6px;padding:22px 26px 26px}
@@ -52,10 +58,12 @@
 .dx-card{display:flex;flex-direction:column;overflow:hidden;border:1px solid var(--line);border-radius:18px;background:var(--card);color:var(--ink);text-decoration:none;transition:translate .2s,box-shadow .2s}
 .dx-art{position:relative;aspect-ratio:4/3}
 .dx-art .wa svg{transition:scale .35s cubic-bezier(.3,1.5,.5,1),rotate .35s}
-@media (hover:hover){.dx-card:hover{translate:0 -4px;box-shadow:0 16px 36px color-mix(in srgb,var(--ink) 11%,transparent)} .dx-card:hover .wa svg{scale:1.12;rotate:-4deg}}
-.dx-art-top,.dx-art-foot{position:absolute;left:16px;right:16px;z-index:1;color:var(--wa-ink);font-size:12px;font-weight:700}
+.dx-art .wa-pic img{transition:scale .35s cubic-bezier(.2,.7,.2,1)}
+.dx-art{border-bottom:1px solid var(--line)}
+@media (hover:hover){.dx-card:hover{translate:0 -4px;box-shadow:0 16px 36px color-mix(in srgb,var(--ink) 11%,transparent)} .dx-card:hover .wa svg{scale:1.12;rotate:-4deg} .dx-card:hover .wa-pic img{scale:1.06}}
+.dx-art-top{position:absolute;left:16px;right:16px;z-index:1;color:var(--wa-ink);font-size:12px;font-weight:700}
 .dx-art-top{top:14px;display:flex;justify-content:space-between}
-.dx-art-foot{bottom:13px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;text-align:center;opacity:.9}
+.dx-body em{overflow:hidden;color:var(--trust);font-size:12.5px;font-style:normal;font-weight:700;white-space:nowrap;text-overflow:ellipsis}
 .dx-body{display:flex;flex:1;flex-direction:column;gap:8px;padding:18px 20px 18px}
 .dx-body b{font-size:19px;font-weight:800;line-height:1.4;letter-spacing:-.03em;word-break:keep-all;overflow-wrap:anywhere}
 .dx-body>span{color:var(--body);font-size:14px;line-height:1.7;word-break:keep-all;overflow-wrap:anywhere;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;overflow:hidden}
@@ -105,13 +113,13 @@
 .wd-note{margin:10px 2px 0!important;color:var(--muted)!important;font-size:13px!important}
 .detail-page.app-redesign #main .word-page .wd-sec .pure-kr{margin-top:20px;padding:16px 20px;border-radius:14px;background:var(--green-soft)}
 .wd-side{display:flex;flex-direction:column;gap:22px;padding-top:32px}
-.wd-side .wd-art{aspect-ratio:1;overflow:hidden;border-radius:20px}
+.wd-side .wd-art{aspect-ratio:4/3;overflow:hidden;border:1px solid var(--line);border-radius:20px}
 .wd-side .wd-art .wa svg{width:56%}
 .wd-side>p{margin:0;padding-bottom:20px;border-bottom:1px solid var(--line);color:var(--muted);font-size:13.5px;line-height:1.75;word-break:keep-all}
 .detail-page .wd-side h2{margin:0;font-size:17px;font-weight:800}
 .wd-related{margin:-12px 0 0;padding:0;list-style:none}
 .wd-related a{display:flex;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid var(--line);color:var(--ink);text-decoration:none}
-.wd-related .wa{flex:none;width:46px;height:46px;border-radius:12px}
+.wd-related .wa{flex:none;width:64px;height:48px;overflow:hidden;border:1px solid var(--line);border-radius:10px}
 .wd-related .wa svg{width:70%;stroke-width:4}
 .wd-related b{font-size:14.5px;line-height:1.5;word-break:keep-all}
 .wd-related a:hover b{color:var(--accent-text)}
@@ -133,8 +141,8 @@
   .dx-body b{font-size:15.5px}
   .dx-body>span{font-size:12.5px;line-height:1.65}
   .dx-body i{font-size:12px}
-  .dx-art-top,.dx-art-foot{left:10px;right:10px;font-size:11px}
-  .dx-art-top{top:9px} .dx-art-foot{bottom:8px}
+  .dx-art-top{left:10px;right:10px;top:9px;font-size:11px}
+  .dx-body em{font-size:11.5px}
   .wd-find{width:100%}
   .wd-def{font-size:16.5px}
   .detail-page .wd-sec>h2{font-size:22px}
@@ -143,4 +151,4 @@
 }
 /* 좁은 화면 상세: 머리말 아래에 그림 */
 .wd-hero-art{display:none}
-@media (max-width:900px){ .wd-hero-art{display:block;height:210px;margin-top:22px;overflow:hidden;border-radius:18px} }
+@media (max-width:900px){ .wd-hero-art{display:block;aspect-ratio:4/3;max-height:320px;width:100%;margin-top:22px;overflow:hidden;border:1px solid var(--line);border-radius:18px;background:#fdfcf8} }

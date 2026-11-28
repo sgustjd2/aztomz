@@ -1,0 +1,126 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240">
+  <rect width="320" height="240" fill="#fdfcf8"/>
+  <style>
+    .offer {
+      transform-box: fill-box;
+      transform-origin: 8% 66%;
+      animation: offer 5.8s ease-in-out infinite;
+    }
+    .sigh {
+      transform-box: fill-box;
+      transform-origin: 70% 94%;
+      animation: sigh 5.8s ease-in-out infinite;
+    }
+    @keyframes offer {
+      0%, 18%, 76%, 100% { transform: rotate(0deg); }
+      36%, 54% { transform: rotate(-7deg); }
+    }
+    @keyframes sigh {
+      0%, 24%, 86%, 100% { transform: rotate(0deg); }
+      46%, 64% { transform: rotate(5deg); }
+    }
+    @media (prefers-reduced-motion: reduce){ * { animation: none !important } }
+  </style>
+  <g stroke="#1c1c1c" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+    <!-- A few quiet marks ground the scene. -->
+    <g fill="none" stroke-width=".8">
+      <path d="M48 204q34-2 64 0m66 0q42-2 87 0"/>
+      <path d="M66 210l11 .3m167-1 9-.4"/>
+    </g>
+
+    <!-- The winner: a loose jacket, open limbs, an easy stance. -->
+    <g>
+      <path d="M77 138q-2 19-7 36l-5 23m19-58q1 20-5 37l-6 22"
+            fill="#fdfcf8"/>
+      <path d="M91 139q5 17 13 29l8 25m-14-55q7 17 14 28l8 27"
+            fill="#fdfcf8"/>
+      <path d="M65 195q5 1 9 3l-1 5q-10 1-16-1 0-4 8-7Z"
+            fill="#fdfcf8"/>
+      <path d="M111 192q4 1 9 0l10 7q1 3-4 3l-16-3Z"
+            fill="#fdfcf8"/>
+
+      <path d="M78 78q-7 7-9 20l-2 42q16 7 35-1l-6-41q-1-13-9-19"
+            fill="#7d8b9b"/>
+      <path d="M79 80q5 8 11 0M84 90q-2 21 0 40"
+            fill="none" stroke-width=".8"/>
+      <path d="M76 92q-8 12-15 16l-8-10m28 0q-8 14-20 18-6-3-12-13"
+            fill="#7d8b9b"/>
+      <path d="M49 103q-5-2-4-6l-4-8m12 9q1-5-2-8l-5-5"
+            fill="#fdfcf8"/>
+      <path d="M43 90l-2-7m5 3-1-7" fill="none"/>
+
+      <path d="M81 70l-1 10m9-11 1 10" fill="none"/>
+      <path d="M76 54q-2 10 3 16 6 6 12 0 5-7 1-17"
+            fill="#fdfcf8"/>
+      <path d="M75 57q-2-8 3-12 7-5 13 0l4 9q-11-4-20 3Z"
+            fill="#7d8b9b"/>
+      <path d="M93 53q7 0 10 3-8 2-13 0"
+            fill="#7d8b9b"/>
+
+      <g class="offer">
+        <path d="M94 91q7 7 15 12l19-5m-34 1q6 8 14 11l21-6"
+              fill="#7d8b9b"/>
+        <path d="M127 98q5-5 9-3l6 3m-13 6q7 2 12-2"
+              fill="#fdfcf8"/>
+        <!-- A tangible L-shaped prize, offered with a straight face. -->
+        <path d="M137 75q6-1 13 0l-1 26 20-1q2 6 1 13l-34 1Z"
+              fill="#d4b563"/>
+        <path d="M140 79l-.6 30 26-.8"
+              fill="none" stroke-width=".8"/>
+        <path d="M133 99q6-3 9 0m-9 5q6-3 9-1"
+              fill="none"/>
+      </g>
+    </g>
+
+    <!-- A small stool under the defeated player. -->
+    <g fill="#fdfcf8">
+      <path d="M211 164q19-3 37 0l1 6q-18 3-39 0Z"/>
+      <path d="M215 172l-4 27m10-26-3 26m23-27 6 27m-12-26 5 26"
+            fill="none"/>
+      <path d="M216 187q13 2 26 0" fill="none" stroke-width=".9"/>
+    </g>
+
+    <!-- Knees and feet stay planted as the shoulders sink. -->
+    <path d="M214 155q-13 8-16 17l-8 24m31-36q-12 7-17 16l-7 21"
+          fill="#fdfcf8"/>
+    <path d="M232 159q8 9 7 20l-1 17m-13-34q8 8 7 17l-1 17"
+          fill="#fdfcf8"/>
+    <path d="M188 195q5-1 10 2l-1 6-20 .3q-2-4 11-8Z"
+          fill="#fdfcf8"/>
+    <path d="M231 195q4 2 8 0l12 5q3 3-2 4l-19-2Z"
+          fill="#fdfcf8"/>
+
+    <g class="sigh">
+      <path d="M220 100q14 3 18 16l4 43q-14 8-31 1l-2-33q-2-16 11-27Z"
+            fill="#fdfcf8"/>
+      <path d="M215 138q7 3 15 1m-15 15q8 2 15 0"
+            fill="none" stroke-width=".8"/>
+
+      <path d="M212 96l7 7m-1-11 8 9" fill="none"/>
+      <path d="M202 76q-7 4-6 12 2 10 12 10 9-1 11-10 0-8-8-12"
+            fill="#fdfcf8"/>
+      <path d="M197 85q-4-8 3-13 7-5 15 1 7 5 5 13l-7-3-2-6q-5 6-14 8Z"
+            fill="#1c1c1c"/>
+
+      <path d="M214 111q-10 8-13 20l-9 7m27-21q-7 8-11 18l-12 9"
+            fill="#fdfcf8"/>
+      <path d="M231 114q3 14-5 22l-16 5m15-24q1 10-4 14l-13 4"
+            fill="#fdfcf8"/>
+
+      <!-- A controller hangs low between relaxed hands. -->
+      <path d="M192 136q-6-2-9 3l-5 11q-2 7 4 7l8-6 14 2 6 6q6 2 7-4l-1-12q-1-6-7-6Z"
+            fill="#7d8b9b"/>
+      <path d="M187 142l-.5 7m-3-4 7 .5"
+            fill="none" stroke-width="1"/>
+      <g fill="#1c1c1c" stroke="none">
+        <circle cx="207" cy="144" r="1.3"/>
+        <circle cx="211" cy="148" r="1.3"/>
+      </g>
+      <path d="M190 135q5-1 7 4m11-5q-4 0-6 5"
+            fill="none"/>
+    </g>
+    <g fill="none" stroke-width=".8">
+      <path d="M180 76q-5 4-4 9m7-2q-3 3-2 7"/>
+    </g>
+  </g>
+</svg>

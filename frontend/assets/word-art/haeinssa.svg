@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240">
+  <rect width="320" height="240" fill="#fdfcf8"/>
+  <style>
+    .ink{fill:none;stroke:#1c1c1c;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+    .paper{fill:#fdfcf8}
+    .detail{stroke-width:.85}
+    .cheers{transform-box:fill-box;transform-origin:18% 92%;animation:cheers 6s ease-in-out infinite}
+    .phone{transform-box:fill-box;transform-origin:84% 95%;animation:hello 6s ease-in-out infinite}
+    .nod{transform-box:fill-box;transform-origin:50% 100%;animation:nod 6s ease-in-out infinite}
+    @keyframes cheers{
+      0%,22%,70%,100%{transform:rotate(0deg)}
+      36%,48%{transform:rotate(-9deg)}
+      57%{transform:rotate(-5deg)}
+    }
+    @keyframes hello{
+      0%,30%,76%,100%{transform:rotate(0deg)}
+      42%{transform:rotate(8deg)}
+      51%{transform:rotate(-4deg)}
+      61%{transform:rotate(5deg)}
+    }
+    @keyframes nod{
+      0%,25%,75%,100%{transform:rotate(-3deg)}
+      39%,54%{transform:rotate(5deg)}
+      64%{transform:rotate(1deg)}
+    }
+    @media (prefers-reduced-motion: reduce){ * { animation: none !important } }
+  </style>
+
+  <g class="ink">
+    <!-- A few quiet marks anchor the gathering on the paper. -->
+    <path class="detail" d="M47 204q27-2 49 0m15 1q40-2 72 0m22-1q38-2 68 0"/>
+
+    <!-- Friend on the left: loose trousers and a striped shirt. -->
+    <path class="paper" d="M83 153q-2 22-5 43m9-1 8-30 4 31m9 0q-1-23-6-43"/>
+    <path class="paper" d="M78 195q-5 1-8 6 10 2 17-1l1-5m11 0-1 6q8 2 17 0-1-4-8-5"/>
+    <path class="paper" d="M82 112q-7 8-8 22l6 4 2-7-2 24q12 5 27-1l-4-24 7 7 6-6q-10-16-18-19"/>
+    <path class="detail" d="M81 127q11 2 22 0m-22 8q11 2 23 0m-23 9q12 2 24-1"/>
+    <path d="m86 105-1 8m10-7 2 7"/>
+    <path class="paper" d="M83 90q-4 6-1 13 3 7 10 5 7-2 7-10 0-9-8-11"/>
+    <path fill="#1c1c1c" stroke-width=".85" d="M81 96q-4-8 3-12 7-5 14 1l3 7q-7 1-10-3-4 5-10 7Z"/>
+
+    <!-- A relaxed hanging arm and a small canvas tote. -->
+    <path class="paper" d="M76 133q-5 11-4 20m6-17q-2 9-1 16"/>
+    <path d="M72 152q-2 5 1 7 4 1 5-3"/>
+    <path class="paper" d="M61 166q10 2 22-1l2 24q-12 5-25 0Z"/>
+    <path class="detail" d="M66 166q-2-13 6-12 7 0 7 12m-14 5-1 14"/>
+
+    <!-- The raised drink stays attached to the forearm. -->
+    <g class="cheers">
+      <path class="paper" d="M110 132q7-6 9-18m-4 21q9-8 10-20"/>
+      <path class="paper" d="M118 114q-2-6 2-7l5 1q4 2 0 8"/>
+      <path fill="#c87757" d="m115 91 14 1-2 18q-5 3-10-1Z"/>
+      <path class="detail" d="m116 97 12 1m-6-7 3-9"/>
+    </g>
+
+    <!-- The central friend opens their arms to the whole group. -->
+    <path class="paper" d="M146 145q-1 21-7 47m9 2q7-14 12-31 3 17 12 30m9-2q-9-25-9-47"/>
+    <path class="paper" d="M139 191q-8 2-10 8 10 3 19-1l1-5m23 0 1 6q10 3 19 0-3-5-11-8"/>
+    <path class="paper" d="M145 94q-13 1-22 12l-18 7m42-9q-12 1-20 10l-20 5"/>
+    <path d="M105 113q-5-2-7 1m9 5q-6 3-9-1"/>
+    <path class="paper" d="M172 94q13 1 24 12l20 7m-45-9q12 0 21 10l22 5"/>
+    <path d="M216 113q7-2 10 2m-12 4q7 3 12 0"/>
+
+    <path fill="#c87757" d="M146 94q11-4 25 0l8 17-8 4 3 33q-16 5-31-1l2-33-8-4Z"/>
+    <path class="detail" d="M151 95q8 9 15 0m-7 8q-1 20 0 43m-12-7q10 3 22 0"/>
+    <path d="m152 86-1 9m13-9 2 9"/>
+
+    <g class="nod">
+      <path class="paper" d="M150 67q-5 5-3 14 2 9 10 9 9-1 11-10 2-10-6-14"/>
+      <path fill="#1c1c1c" stroke-width=".85" d="M147 77q-5-8 1-13 1-6 7-4 7-4 13 3 5 5 0 13l-3-7q-8 4-13 0Z"/>
+      <path class="detail" d="M150 61q5-5 10-2"/>
+    </g>
+
+    <!-- Friend on the right leans into the conversation. -->
+    <path class="paper" d="M217 155q-4 19-4 41m8 0 7-28 8 28m8-1q-3-26-9-41"/>
+    <path class="paper" d="M213 195q-7 1-11 6 10 3 19 0v-5m15 0 1 6q10 2 18-1-3-5-11-6"/>
+    <path class="paper" d="M219 116q-8 6-10 19l7 3-3 19q14 4 27-1l-5-22 6 3 5-7q-8-11-15-14"/>
+    <path class="detail" d="M221 117q3 6 9 0m-12 32q9 2 18 0"/>
+    <path d="m221 108-1 9m10-9 1 9"/>
+    <path class="paper" d="M217 94q-3 7 1 13 4 6 11 2 7-4 5-12-2-8-9-8"/>
+    <path fill="#1c1c1c" stroke-width=".85" d="M216 99q-5-8 1-13 7-5 14 1 5 3 4 10-6-1-10-6-2 6-9 8Z"/>
+    <path class="paper" d="M214 88q8-9 18-3l4 6q-12-3-24 3-4 1-7-1 3-3 9-5Z"/>
+    <path class="detail" d="M217 86q8-3 13 0"/>
+
+    <!-- A second cup rests low, leaving the silhouettes readable. -->
+    <path class="paper" d="M211 135q-7 6-9 15m14-13q-7 6-8 14"/>
+    <path class="paper" d="M202 149q-3 1-2 5 3 4 7 1"/>
+    <path class="paper" d="m195 148 14 1-2 17q-5 2-10-1Z"/>
+    <path class="detail" d="m196 153 12 1"/>
+
+    <!-- A phone raised casually: connection, not a screen interface. -->
+    <g class="phone">
+      <path class="paper" d="M242 133q9-8 10-21m-5 24q10-8 11-22"/>
+      <path class="paper" d="M252 113q-3-3-1-6 3-4 6-1l3 4q1 4-3 6"/>
+      <path class="paper" d="m247 87 13-2q2 0 2 2l3 20q0 2-2 2l-12 2Z"/>
+      <path class="detail" d="m251 91 8-1m-3 16 3-.5"/>
+    </g>
+
+    <!-- Small conversational flourishes, drawn rather than animated. -->
+    <path class="detail" d="m124 68-4-5m12 2-1-7m65 18 5-4m-3 12 7-1"/>
+  </g>
+</svg>

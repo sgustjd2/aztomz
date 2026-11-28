@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240">
+  <rect width="320" height="240" fill="#fdfcf8"/>
+  <style>
+    .ink{fill:none;stroke:#1c1c1c;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+    .paper{fill:#fdfcf8}
+    .detail{stroke-width:.85}
+    .shirt{fill:#a6b9b3}
+    .chair{transform-box:fill-box;transform-origin:50% 94%;animation:teeter 6s ease-in-out infinite}
+    .hand{transform-box:fill-box;transform-origin:8% 15%;animation:tug 6s ease-in-out infinite}
+    .hush{transform-box:fill-box;transform-origin:50% 100%;animation:hush 6s ease-in-out infinite}
+    @keyframes teeter{
+      0%,28%,70%,100%{transform:rotate(0deg)}
+      38%,56%{transform:rotate(1.6deg)}
+      46%{transform:rotate(-1deg)}
+    }
+    @keyframes tug{
+      0%,24%,76%,100%{transform:translate(0,0) rotate(0deg)}
+      38%,62%{transform:translate(-3px,1px) rotate(2deg)}
+    }
+    @keyframes hush{
+      0%,20%,80%,100%{opacity:.18;transform:translateY(1px)}
+      36%,60%{opacity:.8;transform:translateY(-2px)}
+    }
+    @media (prefers-reduced-motion: reduce){ * { animation: none !important } }
+  </style>
+
+  <g class="ink">
+    <!-- A few quiet floor marks. -->
+    <path class="detail" d="M48 204q36-1 65 0m28 0q48 1 82-1m16 1h30"/>
+
+    <!-- Work bag, set down for a very small act of rebellion. -->
+    <path class="paper" d="M53 166q13-2 27 0l2 28q-16 2-30 0Z"/>
+    <path d="M61 165v-6q5-5 11 0v6"/>
+    <path class="detail" d="M53 175q14 4 28 0m-16 1v5h5v-5"/>
+
+    <!-- Office chair, with one conspicuously bare caster socket. -->
+    <g class="chair">
+      <path class="paper" d="M201 65q17-4 36 0q5 1 5 7l-2 53q0 7-7 8l-28-1q-6-1-6-7l-1-52q0-6 3-8Z"/>
+      <path class="detail" d="M205 73q15-3 29 0m-28 50q13 2 26 0"/>
+      <path d="M217 133v9"/>
+      <path class="paper" d="M184 140q25-3 55 0q7 1 6 7q-29 5-61 0q-4-3 0-7Z"/>
+      <path d="M191 139v-13q0-4 6-4m40 17v-14q0-4 7-3"/>
+      <path class="detail" d="M187 123h10m42-1h9"/>
+      <path d="M214 150q1 14 0 28m-4-20h8"/>
+      <path d="M214 178q-11 4-26 8m26-8q14 8 27 15m-27-15q-3 10-3 16m3-16q10 0 19-1"/>
+      <path class="detail" d="M188 186v5m-3 0h6"/>
+      <path class="paper" d="M235 193q4-3 8 0v6q-4 3-8 0Z"/>
+      <path class="paper" d="M206 194q4-3 8 0v6q-4 3-8 0Z"/>
+      <path class="paper" d="M230 177q4-3 7 0v5q-3 3-7 0Z"/>
+    </g>
+
+    <!-- Crouching employee: small faceless head and open-stroke limbs. -->
+    <path class="paper" d="M108 111q-4-6-4-14q0-11 9-14q10-2 14 7q3 8-2 15q-3 6-9 7"/>
+    <path fill="#1c1c1c" stroke-width=".85" d="M105 99q-6-14 3-19q10-5 17 4l3 7q-9 0-14-6q0 10-9 14Z"/>
+    <path d="M109 110l-2 8m12-8l-1 10"/>
+    <path class="shirt" d="M105 116q-10 1-14 12l-9 27q10 9 29 7l15-20q2-14-8-24l-5 9Z"/>
+    <path class="detail" d="M107 119l6 8l7-7m-31 31q10 5 18 3"/>
+
+    <!-- Folded legs, with separate bowed contours. -->
+    <path class="paper" d="M88 158q-3 13 9 21l15 12l9-8l-18-19"/>
+    <path d="M111 159q20-4 31 5q8 7 1 15l-17 17m-19-25q17-5 24-1q3 1 0 5l-16 16"/>
+    <path class="paper" d="M112 189q6-3 11-1l5 7q2 3-2 4h-22q-2-4 3-6Z"/>
+    <path class="paper" d="M123 193q5-2 9 1l8 4q2 4-3 4h-23q-1-4 3-6Z"/>
+    <path class="detail" d="M105 197h20m-8 3h19"/>
+
+    <!-- One hand steadies the chair. -->
+    <path class="paper" d="M120 126q15 2 27 9l26 4m-54-5q14 3 25 10l28 1"/>
+    <path d="M172 139q5-3 9 0l5 2m-14 4q8 3 12 0"/>
+    <path class="detail" d="M126 129l-3 8"/>
+
+    <!-- The other hand has quietly acquired a wheel. -->
+    <g class="hand">
+      <path class="paper" d="M110 139q7 18 21 27l29 13m-57-35q7 21 23 29l31 13"/>
+      <path d="M160 179q5-1 8 3l5 2m-16 2q6 4 12 2"/>
+      <path class="paper" d="M172 181l4-5l3 2l-4 6"/>
+      <path fill="#1c1c1c" d="M169 185q4-5 9-2q5 3 2 10q-3 5-8 2q-5-2-3-10Z"/>
+      <path class="paper detail" d="M173 186q3-2 4 2q1 4-2 4q-3-1-2-6Z"/>
+    </g>
+
+    <!-- A tiny, wordless sign of furtive concentration. -->
+    <g class="hush detail">
+      <path d="M137 91l5-3m-6 10l7 1"/>
+    </g>
+
+    <!-- The office plant keeps the secret. -->
+    <path class="paper" d="M258 184q9 2 19 0l-3 17q-6 2-12 0Z"/>
+    <path class="detail" d="M259 188q9 2 17 0"/>
+    <path d="M268 184q-2-16 1-30"/>
+    <path class="paper" d="M268 170q-13 1-15-11q12 0 15 11Zm1-7q-1-12 10-16q3 12-10 16Z"/>
+    <path class="detail" d="M257 162l10 7m4-9l5-9"/>
+  </g>
+</svg>

@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240">
+  <rect width="320" height="240" fill="#fdfcf8"/>
+  <style>
+    .ink{fill:none;stroke:#1c1c1c;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+    .paper{fill:#fdfcf8}
+    .fine{stroke-width:.85}
+    .thanks{transform-box:fill-box;transform-origin:65% 95%;animation:bow 6s ease-in-out infinite}
+    .hand{transform-box:fill-box;transform-origin:90% 85%;animation:cheers 6s ease-in-out infinite}
+    .steam{transform-box:fill-box;transform-origin:50% 100%;animation:drift 4.8s ease-in-out infinite}
+    @keyframes bow{
+      0%,18%,65%,100%{transform:rotate(0deg)}
+      32%,43%{transform:rotate(-7deg)}
+      53%{transform:rotate(1deg)}
+    }
+    @keyframes cheers{
+      0%,18%,65%,100%{transform:rotate(0deg)}
+      30%,44%{transform:rotate(-12deg)}
+      36%,51%{transform:rotate(-5deg)}
+    }
+    @keyframes drift{
+      0%,100%{transform:translateY(1px) rotate(-3deg);opacity:.45}
+      50%{transform:translateY(-4px) rotate(4deg);opacity:.8}
+    }
+    @media (prefers-reduced-motion: reduce){ * { animation: none !important } }
+  </style>
+  <g class="ink">
+    <path class="fine" d="M48 199 Q105 197 145 199 M166 199 Q218 197 267 199"/>
+
+    <!-- A friend offers a warm bowl. -->
+    <path class="paper" d="M90 143 Q88 163 85 187 M97 145 Q97 165 92 188"/>
+    <path class="paper" d="M104 144 Q108 165 110 187 M111 143 Q115 164 117 187"/>
+    <path class="paper" d="M84 186 Q89 185 93 188 L94 194 Q83 196 77 193 Q77 190 84 186Z"/>
+    <path class="paper" d="M109 186 Q114 185 118 189 Q126 190 126 194 Q116 196 109 193Z"/>
+    <path class="paper" d="M91 97 Q85 113 86 142 Q97 148 113 143 L115 106 Q107 99 103 98"/>
+    <path class="fine" d="M99 107 Q97 122 99 140 M87 135 Q99 139 112 135"/>
+    <path d="M95 89 L94 98 M102 90 L103 99"/>
+    <path class="paper" d="M92 75 Q99 69 105 76 Q109 82 104 90 Q99 94 93 88 Q89 82 92 75Z"/>
+    <path fill="#1c1c1c" stroke-width=".85" d="M91 81 Q86 70 96 68 Q105 66 108 77 Q102 74 98 76 L95 82Z"/>
+
+    <!-- Open strokes describe the sleeves and hands. -->
+    <path class="paper" d="M110 106 Q119 116 133 115 M107 112 Q117 124 133 121"/>
+    <path class="fine" d="M133 115 Q140 113 143 116 M133 121 Q142 122 146 118"/>
+    <path class="paper" d="M88 108 Q80 125 82 147 M94 111 Q86 126 88 147"/>
+    <path d="M82 148 Q81 156 85 156 Q89 155 88 148"/>
+
+    <!-- A small paper shopping bag. -->
+    <path class="fine" d="M81 162 Q78 150 85 151 Q92 152 90 162"/>
+    <path class="paper" d="M74 162 Q83 164 95 162 L97 184 Q86 188 75 184Z"/>
+    <path class="fine" d="M91 165 L92 182 M76 180 Q84 182 89 181"/>
+
+    <!-- Bowl and chopsticks. -->
+    <path class="paper" d="M134 113 Q138 129 151 129 Q165 129 169 113Z"/>
+    <path fill="#bf7158" d="M136 118 Q151 122 167 118 Q161 129 151 129 Q141 129 136 118Z"/>
+    <path class="paper" d="M134 113 Q150 109 169 113 Q153 118 134 113Z"/>
+    <path class="fine" d="M142 112 L160 94 M147 112 L165 96"/>
+    <g class="steam fine">
+      <path d="M143 103 Q138 98 143 93 Q147 89 144 85"/>
+      <path d="M153 101 Q149 96 153 91 Q157 86 153 81"/>
+    </g>
+
+    <!-- The recipient gives a small, easy bow of thanks. -->
+    <path class="paper" d="M207 146 Q205 166 202 188 M214 148 Q213 168 209 189"/>
+    <path class="paper" d="M221 147 Q226 166 228 188 M228 145 Q233 166 235 188"/>
+    <path class="paper" d="M201 187 Q206 186 210 190 L210 194 Q199 196 194 193 Q194 190 201 187Z"/>
+    <path class="paper" d="M227 187 Q232 186 236 190 Q244 190 244 194 Q233 196 227 193Z"/>
+    <g class="thanks">
+      <path class="paper" d="M207 101 Q199 110 199 146 Q212 152 230 146 Q230 121 220 105Z"/>
+      <path class="fine" d="M207 103 L211 112 L217 105 M211 113 Q214 129 213 143 M201 140 Q215 144 228 140"/>
+      <path d="M204 92 L206 101 M211 91 L214 103"/>
+      <path class="paper" d="M198 77 Q204 72 211 77 Q216 83 211 91 Q207 97 201 92 Q194 87 198 77Z"/>
+      <path fill="#1c1c1c" stroke-width=".85" d="M197 84 Q191 75 198 72 Q207 68 213 76 L213 82 Q208 77 203 79 L200 85Z"/>
+      <path fill="#bf7158" d="M204 99 Q210 103 216 101 L218 106 Q210 109 204 104Z"/>
+
+      <path class="paper" d="M202 111 Q190 122 173 122 M205 117 Q193 130 175 128"/>
+      <path class="fine" d="M173 122 Q168 121 165 125 M175 128 Q167 131 163 127"/>
+
+      <g class="hand">
+        <path class="paper" d="M222 112 Q226 127 215 129 Q201 129 190 116 M216 113 Q219 122 214 123 Q204 123 195 112"/>
+        <path class="paper" d="M190 116 Q186 115 184 111 L182 105 Q182 102 184 103 L188 108 L187 98 Q188 95 190 98 L192 105 Q198 103 199 108 L195 113"/>
+        <path class="fine" d="M192 108 L196 109"/>
+      </g>
+    </g>
+    <path class="fine" d="M177 78 L173 75 M180 71 L178 67"/>
+  </g>
+</svg>

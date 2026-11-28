@@ -1,0 +1,128 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240">
+  <rect width="320" height="240" fill="#fdfcf8"/>
+  <style>
+    .ink {
+      fill: none;
+      stroke: #1c1c1c;
+      stroke-width: 1.6;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .detail { stroke-width: .8 }
+    .paper { fill: #fdfcf8 }
+    .breath {
+      transform-box: fill-box;
+      transform-origin: 50% 95%;
+      animation: breathe 6s ease-in-out infinite;
+    }
+    .leaves {
+      transform-box: fill-box;
+      transform-origin: 50% 100%;
+      animation: sway 8s ease-in-out infinite;
+    }
+    .steam {
+      transform-box: fill-box;
+      transform-origin: 50% 100%;
+      animation: drift 5s ease-in-out infinite;
+    }
+    .steam.second { animation-delay: -2.5s }
+    @keyframes breathe {
+      0%, 100% { transform: translateY(0) rotate(0deg) }
+      50% { transform: translateY(-.65px) rotate(-.4deg) }
+    }
+    @keyframes sway {
+      0%, 100% { transform: rotate(-1.5deg) }
+      50% { transform: rotate(2deg) }
+    }
+    @keyframes drift {
+      0% { opacity: 0; transform: translate(0, 3px) scaleY(.85) }
+      25% { opacity: .65 }
+      70% { opacity: .4 }
+      100% { opacity: 0; transform: translate(3px, -7px) scaleY(1.1) }
+    }
+    @media (prefers-reduced-motion: reduce){
+      * { animation: none !important }
+    }
+  </style>
+
+  <g class="ink">
+    <!-- A quiet patch of floor. -->
+    <path class="detail" d="M48 202 Q106 200 160 202 M175 202 Q222 200 273 202"/>
+
+    <!-- The chair, softened by use. -->
+    <path class="paper" d="M82 151 Q77 127 72 104 Q70 97 75 96 L82 96 Q87 97 88 105 L98 145"/>
+    <path d="M84 155 Q78 179 77 199 M116 156 Q122 180 125 199"/>
+    <path class="paper" d="M82 148 Q103 145 126 148 Q130 150 127 155 Q105 159 84 156 Q80 154 82 148"/>
+    <path class="detail" d="M88 151 Q105 150 121 151"/>
+
+    <!-- Bent legs: separate open edges, with paper between. -->
+    <path d="M104 140 Q122 143 137 151 Q141 154 139 160 L127 190
+             M114 135 Q131 140 146 149 Q150 154 147 162 L134 192"/>
+    <path class="paper" d="M126 187 Q130 188 134 190 L143 194 Q146 196 144 199 L123 199 Q121 196 126 187"/>
+    <path d="M98 143 Q109 157 116 167 L109 191
+             M107 138 Q120 153 123 165 Q124 169 122 174 L117 193"/>
+    <path class="paper" d="M109 188 Q113 190 117 192 L126 196 Q129 198 126 200 L105 200 Q103 196 109 188"/>
+    <path class="detail" d="M107 197 Q115 196 122 198"/>
+
+    <g class="breath">
+      <!-- A loose sage shirt around a relaxed, seated body. -->
+      <path fill="#a4afa0" d="M94 91 Q87 95 86 106 Q86 122 90 139
+        Q101 147 118 142 L115 123 Q118 109 111 97 L104 92"/>
+      <path class="detail" d="M94 98 Q96 102 103 102 M92 129 Q99 132 105 130 M106 137 L111 139"/>
+
+      <!-- Small, faceless head and open neck. -->
+      <path d="M97 82 L96 93 M104 83 L105 93"/>
+      <path class="paper" d="M92 68 Q93 59 102 59 Q111 60 112 69
+        L111 77 Q109 85 102 86 Q95 85 93 79"/>
+      <path fill="#1c1c1c" stroke-width=".8" d="M92 73 Q88 65 94 59
+        Q101 53 109 59 Q113 62 112 68 Q106 67 102 63
+        Q101 69 95 70 L95 76"/>
+      <path class="detail" d="M94 59 Q89 56 87 61 Q85 66 90 68"/>
+
+      <!-- A sleeve and two open arm strokes resting toward the cup. -->
+      <path class="paper" d="M108 98 Q114 98 118 107 L124 119
+        Q120 123 115 123 L106 111"/>
+      <path d="M120 121 Q130 123 140 118 Q143 116 146 118
+               M116 125 Q131 130 143 123"/>
+      <path class="detail" d="M140 119 Q145 121 147 119"/>
+    </g>
+
+    <!-- Low table and a single warm cup. -->
+    <path d="M159 143 Q157 173 154 199 M192 143 Q194 174 198 199"/>
+    <path class="paper" d="M147 136 Q171 133 199 136 Q204 137 202 142
+      Q175 146 148 142 Q144 140 147 136"/>
+    <path class="detail" d="M156 139 Q172 140 189 138"/>
+    <path d="M166 119 Q177 115 177 123 Q177 129 168 127"/>
+    <path fill="#c7957b" d="M150 115 Q158 117 168 115 L167 129
+      Q159 134 152 129 Z"/>
+    <path class="paper" d="M150 115 Q158 111 168 115 Q160 119 150 115"/>
+    <path class="detail" d="M154 115 Q159 114 164 115"/>
+
+    <!-- Two slow wisps; the cup also reads clearly without motion. -->
+    <path class="steam detail" d="M155 106 Q151 102 155 98 Q159 94 156 89"/>
+    <path class="steam second detail" d="M163 105 Q167 100 163 96 Q160 92 164 86"/>
+
+    <!-- A small plant sharing the afternoon. -->
+    <g class="leaves">
+      <path d="M244 166 Q246 144 240 126 M245 153 Q252 139 258 133"/>
+      <path fill="#a4afa0" d="M241 138 Q227 138 226 125 Q238 124 241 138Z"/>
+      <path fill="#a4afa0" d="M241 129 Q232 118 238 109 Q248 115 241 129Z"/>
+      <path fill="#a4afa0" d="M249 146 Q247 133 260 128 Q263 140 249 146Z"/>
+      <path class="detail" d="M230 129 L239 136 M239 115 L241 125 M257 133 L251 142"/>
+    </g>
+    <path class="paper" d="M232 165 Q245 168 259 165 L255 190
+      Q245 196 236 190 Z"/>
+    <path class="paper" d="M230 161 Q245 158 261 161 L260 166
+      Q245 170 231 166 Z"/>
+    <path class="detail" d="M239 174 Q238 180 240 185"/>
+
+    <!-- A sleeping cat, curled close to the chair. -->
+    <path class="paper" d="M177 191 Q179 179 192 178 Q207 176 214 188
+      Q218 198 206 200 L183 200 Q175 199 177 191Z"/>
+    <path class="paper" d="M177 192 L175 182 L182 185 Q187 182 191 185
+      L197 181 L197 193 Q193 199 186 199 Q179 198 177 192Z"/>
+    <path class="detail" d="M180 191 Q182 193 184 191 M189 191 Q191 193 193 191"/>
+    <path d="M207 186 Q218 187 216 195 Q213 203 201 199 Q195 196 201 193"/>
+    <path class="detail" d="M184 196 Q186 197 188 196"/>
+  </g>
+</svg>

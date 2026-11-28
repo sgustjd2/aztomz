@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240">
+  <rect width="320" height="240" fill="#fdfcf8"/>
+  <style>
+    .ink{fill:none;stroke:#1c1c1c;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+    .paper{fill:#fdfcf8}
+    .fine{stroke-width:.8}
+    .green{fill:#71816b}
+    .sign{transform-box:fill-box;transform-origin:50% 0%;animation:sway 6s ease-in-out infinite}
+    .arm{transform-box:fill-box;transform-origin:8% 16%;animation:sip 6s ease-in-out infinite}
+    .steam{transform-box:fill-box;transform-origin:50% 100%;animation:steam 6s ease-in-out infinite}
+    .steam.second{animation-delay:-3s}
+    @keyframes sway{
+      0%,100%{transform:rotate(-3deg)}
+      50%{transform:rotate(3deg)}
+    }
+    @keyframes sip{
+      0%,25%,85%,100%{transform:rotate(0deg)}
+      45%,65%{transform:rotate(-12deg)}
+    }
+    @keyframes steam{
+      0%,100%{opacity:.25;transform:translateY(1px) scaleX(.9)}
+      50%{opacity:.7;transform:translateY(-3px) scaleX(1.1)}
+    }
+    @media (prefers-reduced-motion: reduce){ * { animation: none !important } }
+  </style>
+  <defs>
+    <filter id="ink" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency=".065" numOctaves="2" seed="8" result="grain"/>
+      <feDisplacementMap in="SourceGraphic" in2="grain" scale=".35" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+  </defs>
+  <g class="ink" filter="url(#ink)">
+    <!-- Home, a short stroll from the café. -->
+    <path d="M43 196Q91 195 133 196M201 196Q244 195 280 196"/>
+    <path class="paper" d="M50 112L50 192Q82 193 115 192L115 111"/>
+    <path class="paper" d="M43 114Q62 96 82 78Q103 95 123 113L116 118Q99 103 82 89L50 119Z"/>
+    <path d="M103 95L103 80Q107 79 111 80L111 102"/>
+    <path class="fine" d="M57 113Q70 102 82 94M91 102L108 117"/>
+    <path class="paper" d="M74 192L74 151Q85 149 96 151L96 192"/>
+    <path class="fine" d="M78 154Q85 153 92 154L92 189M89 171L89 173"/>
+    <path class="paper" d="M58 129Q69 128 80 129L80 142Q69 143 58 142Z"/>
+    <path class="fine" d="M69 130L69 142M59 136L79 136"/>
+    <path d="M71 195Q85 194 99 195"/>
+    <!-- A quiet dotted walking route. -->
+    <path class="fine" stroke-dasharray="2 6" d="M103 202Q147 219 194 204Q209 199 222 193"/>
+
+    <!-- Coffee shop: cup emblem, awning, glazed door. -->
+    <path class="paper" d="M207 107Q239 106 273 107L273 192L207 192Z"/>
+    <path d="M204 106Q240 104 277 106L277 112L204 112Z"/>
+    <path class="fine" d="M212 101Q242 100 270 101"/>
+    <path class="green" d="M207 120Q240 118 273 120L279 136Q241 139 201 136Z"/>
+    <path class="fine" d="M215 121L212 136M229 120L228 137M243 120L244 137M257 120L260 137M270 121L276 136"/>
+    <path class="paper" d="M215 146Q226 145 237 146L237 173Q226 174 215 173Z"/>
+    <path class="fine" d="M226 146L226 173M216 168Q226 167 236 168"/>
+    <path class="paper" d="M246 192L246 146Q255 145 265 146L265 192"/>
+    <path class="fine" d="M250 151L261 151L261 174L250 174ZM250 181L250 184"/>
+    <path d="M243 195Q255 194 268 195"/>
+    <path d="M266 94L266 78Q277 77 282 82"/>
+    <g class="sign">
+      <path class="fine" d="M281 81L281 88"/>
+      <path class="paper" d="M292 99C292 114 270 115 269 100C268 85 291 84 292 99Z"/>
+      <path class="green" stroke-width="1.4" d="M274 96L285 96L284 104Q280 108 276 104Z"/>
+      <path class="fine" d="M285 97Q292 96 289 101Q287 103 285 102M278 93Q276 91 279 89M282 93Q280 91 283 89"/>
+    </g>
+
+    <!-- A faceless neighbour, coffee already in hand. -->
+    <path class="paper" d="M153 158Q155 173 151 189L156 190Q162 175 162 160"/>
+    <path class="paper" d="M164 158Q166 173 175 187L180 185Q173 171 172 158"/>
+    <path class="paper" d="M151 188Q154 189 157 189L158 194Q153 197 146 195Q145 192 151 188Z"/>
+    <path class="paper" d="M175 186Q177 185 180 185Q183 189 189 190Q191 194 186 194L177 192Z"/>
+    <path class="green" d="M154 127Q160 124 166 127Q173 138 174 164Q164 168 150 163Q151 144 154 127Z"/>
+    <path class="fine" d="M158 135Q157 147 155 157M163 159L168 159M167 130Q170 144 170 151"/>
+    <!-- Open paired strokes for the relaxed rear arm. -->
+    <path class="paper" d="M155 134Q147 145 145 157Q144 161 148 162Q151 159 150 156L159 138"/>
+    <path class="fine" d="M146 157L149 158"/>
+    <path class="paper" d="M158 124L158 130M164 123L164 129"/>
+    <path class="paper" d="M155 113C155 105 165 102 170 109Q174 115 169 122Q165 128 159 123Q155 120 155 113Z"/>
+    <path fill="#1c1c1c" stroke-width=".8" d="M155 116Q151 108 157 104Q165 100 170 108Q163 107 161 113L158 112L158 117Z"/>
+    <path class="fine" d="M158 115Q161 113 161 117"/>
+    <g class="arm">
+      <path class="paper" d="M168 133Q175 141 180 145L188 137Q190 135 192 138Q194 140 191 143L183 152Q181 154 178 152Q169 147 165 140"/>
+      <path class="fine" d="M176 146L180 149"/>
+      <path class="paper" d="M185 127L197 127L195 141Q190 143 187 140Z"/>
+      <path class="green" stroke-width=".8" d="M186 132L196 132L195 137L187 137Z"/>
+      <path class="paper" d="M184 125Q191 124 198 125L198 128L184 128Z"/>
+      <path class="steam fine" d="M188 121Q184 117 188 113Q191 110 188 107"/>
+      <path class="steam second fine" d="M194 121Q191 118 195 114Q198 111 195 108"/>
+    </g>
+
+    <!-- A little pavement planting. -->
+    <path class="paper" d="M119 182Q125 180 133 182L131 193Q125 195 121 192Z"/>
+    <path class="fine" d="M126 181Q123 171 118 169M126 181Q127 170 132 166M126 177Q132 174 136 175"/>
+    <path class="green" stroke-width=".8" d="M122 175Q114 175 115 168Q122 168 122 175ZM129 172Q127 165 134 162Q137 169 129 172Z"/>
+    <path class="fine" d="M50 201L61 201M261 201L272 201"/>
+  </g>
+</svg>

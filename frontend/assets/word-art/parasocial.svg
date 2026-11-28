@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240">
+  <rect width="320" height="240" fill="#fdfcf8"/>
+  <style>
+    .ink{fill:none;stroke:#1c1c1c;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+    .paper{fill:#fdfcf8}
+    .detail{stroke-width:.85}
+    .rose{fill:#cc8278}
+    .person{transform-box:fill-box;transform-origin:50% 100%;animation:lean 6s ease-in-out infinite}
+    .wave{transform-box:fill-box;transform-origin:15% 95%;animation:wave 6s ease-in-out infinite}
+    .heart{transform-box:fill-box;transform-origin:50% 50%;animation:affection 6s ease-in-out infinite}
+    @keyframes lean{
+      0%,100%{transform:rotate(-1deg)}
+      45%,65%{transform:rotate(1.5deg)}
+    }
+    @keyframes wave{
+      0%,35%,75%,100%{transform:rotate(0deg)}
+      43%,59%{transform:rotate(-10deg)}
+      51%,67%{transform:rotate(7deg)}
+    }
+    @keyframes affection{
+      0%,100%{transform:translate(0,2px) scale(.96);opacity:.7}
+      50%{transform:translate(3px,-4px) scale(1.05);opacity:1}
+    }
+    @media (prefers-reduced-motion: reduce){ * { animation: none !important } }
+  </style>
+  <defs>
+    <filter id="ink-wobble" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency=".6" numOctaves="2" seed="7" result="grain"/>
+      <feDisplacementMap in="SourceGraphic" in2="grain" scale=".35" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+  </defs>
+  <g class="ink" filter="url(#ink-wobble)">
+    <!-- A quiet patch of floor and a soft sitting cushion. -->
+    <path class="detail" d="M49 199Q116 197 157 199M184 199Q231 198 272 199"/>
+    <path class="paper" d="M68 185Q91 179 129 184Q140 187 136 194Q105 201 73 195Q65 193 68 185Z"/>
+    <path class="detail" d="M73 190Q100 194 131 189"/>
+
+    <!-- The viewer: the intimacy belongs to this side of the screen. -->
+    <g class="person">
+      <path class="paper" d="M109 146Q130 144 143 158Q151 166 146 178Q139 186 115 188L91 187Q84 184 89 179L119 176Q125 175 125 171L107 163"/>
+      <path d="M113 158Q132 157 135 170Q136 180 121 181"/>
+      <path class="paper" d="M90 179Q79 178 76 183Q73 187 77 189L96 189"/>
+      <path class="detail" d="M78 184L87 184"/>
+
+      <path class="paper" d="M104 104Q95 109 96 125L99 152Q113 158 129 150L126 119Q124 109 117 106"/>
+      <path class="detail" d="M101 140Q113 143 125 139"/>
+      <path d="M109 99L108 107M117 99L118 107"/>
+
+      <!-- An open, faceless profile, framed by a small bun. -->
+      <path class="paper" d="M104 81Q101 75 96 79Q91 84 97 89L103 89"/>
+      <path class="paper" d="M105 77Q116 72 121 83L123 91Q122 100 114 101Q105 99 103 91Q100 82 105 77Z"/>
+      <path d="M102 86Q111 86 113 77"/>
+      <path class="detail" d="M99 80Q96 83 99 86"/>
+
+      <!-- One hand rests over the heart; the other reaches toward the phone. -->
+      <path class="paper" stroke="none" d="M100 114Q95 127 105 133L120 122L116 117L104 124L106 116Z"/>
+      <path d="M100 114Q95 127 105 133Q111 130 119 123M106 117L104 124L115 117"/>
+      <path d="M116 117Q120 113 122 115Q125 118 120 122"/>
+
+      <path class="paper" stroke="none" d="M123 113Q131 124 140 123L165 107L168 112L142 131Q128 132 120 120Z"/>
+      <path d="M124 113Q132 124 140 123L164 108M121 121Q129 133 142 131L168 113"/>
+      <path d="M164 108Q167 103 171 104Q174 107 169 112"/>
+    </g>
+
+    <!-- A public figure lives entirely inside the glass. -->
+    <path class="paper" d="M190 56Q190 51 196 51L248 52Q254 52 254 58L253 163Q253 169 247 169L195 168Q189 168 189 162Z"/>
+    <path class="detail" d="M196 64L247 65L246 151L195 150Z"/>
+    <path class="detail" d="M215 58L230 58"/>
+    <path class="detail" d="M218 160L225 160"/>
+
+    <path class="rose" stroke-width="1.4" d="M204 149L204 133Q205 124 216 123L226 123Q237 125 238 136L238 150"/>
+    <path class="paper" d="M216 114L216 123M225 114L225 123"/>
+    <path class="paper" d="M211 100Q213 92 221 93Q231 94 231 105Q231 116 223 117Q213 117 211 107Z"/>
+    <path d="M211 102Q218 104 222 95Q226 102 231 103"/>
+    <path class="detail" d="M214 127Q220 132 227 127"/>
+
+    <g class="wave">
+      <path class="paper" stroke="none" d="M232 129Q239 126 240 118L239 105L243 104L246 119Q245 132 237 136Z"/>
+      <path d="M233 129Q239 126 240 118L239 106M237 135Q246 131 246 119L243 106"/>
+      <path d="M239 106L237 101M241 105L241 99M243 106L245 101"/>
+    </g>
+
+    <!-- A small star marks celebrity without lettering. -->
+    <path class="detail" d="M203 74L205 78L210 79L206 82L207 87L203 84L199 86L200 81L197 78L202 78Z"/>
+
+    <!-- The phone's simple desk stand. -->
+    <path d="M214 169L211 187M231 169L234 187"/>
+    <path class="paper" d="M206 187Q220 184 239 188L242 192L203 192Z"/>
+
+    <!-- Affection travels in one direction, toward the screen. -->
+    <path class="detail" stroke-dasharray="2 5" d="M133 92Q153 65 179 78"/>
+    <path class="detail" d="M175 72L180 79L172 80"/>
+    <g class="heart">
+      <path class="rose" stroke-width="1.4" d="M150 57C138 48 143 40 150 45C156 37 166 44 161 51Q158 55 150 60Z"/>
+    </g>
+
+    <!-- A cooling cup keeps the scene everyday and human. -->
+    <path class="paper" d="M158 178L159 191Q165 196 173 191L175 178"/>
+    <path class="paper" d="M175 181Q183 179 181 186Q180 190 174 189"/>
+    <path d="M158 178Q166 175 175 178Q168 182 158 178Z"/>
+    <path class="detail" d="M161 180Q167 182 172 180"/>
+  </g>
+</svg>

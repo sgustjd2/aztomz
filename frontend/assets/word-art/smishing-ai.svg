@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240">
+  <rect width="320" height="240" fill="#fdfcf8"/>
+  <style>
+    .ink{fill:none;stroke:#1c1c1c;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+    .paper{fill:#fdfcf8}
+    .detail{stroke-width:.85}
+    .float-eye{transform-box:fill-box;transform-origin:center;animation:float-eye 6s ease-in-out infinite}
+    .glint{transform-box:fill-box;transform-origin:center;animation:glint 6s ease-in-out infinite}
+    .inspect{transform-box:fill-box;transform-origin:20% 85%;animation:inspect 6s ease-in-out infinite}
+    @keyframes float-eye{
+      0%,100%{transform:translate(0,0) rotate(-5deg)}
+      45%,65%{transform:translate(1.5px,-2px) rotate(5deg)}
+    }
+    @keyframes glint{
+      0%,100%{opacity:.45;transform:scale(.92)}
+      50%{opacity:1;transform:scale(1.08)}
+    }
+    @keyframes inspect{
+      0%,100%{transform:rotate(0deg)}
+      45%,65%{transform:rotate(-3deg)}
+    }
+    @media (prefers-reduced-motion: reduce){ * { animation: none !important } }
+  </style>
+
+  <g class="ink">
+    <!-- A generous paper portrait, propped up for inspection. -->
+    <path class="paper" d="M129 39 Q199 37 271 40 L273 190 Q204 193 130 191 Z"/>
+    <path class="detail" d="M139 49 Q199 47 261 50 L263 178 Q202 181 140 178 Z"/>
+    <path class="detail" d="M134 197 Q202 199 270 196"/>
+    <path d="M177 140 Q169 143 159 150 Q151 158 150 177
+      Q201 180 253 177 Q251 156 240 148 L221 139"
+      fill="#a5b5c1"/>
+    <path class="paper" d="M190 121 L189 138 Q199 149 211 138 L211 122"/>
+    <path class="paper" d="M176 79 Q176 61 196 59 Q220 56 227 77
+      L226 103 Q223 124 204 130 Q184 127 178 110 Z"/>
+    <path d="M176 83 Q171 65 186 58 Q204 49 220 63
+      Q231 72 227 87 L221 78 Q210 79 200 68 Q191 78 177 78"
+      fill="#1c1c1c" stroke-width="1.4"/>
+    <path class="detail" d="M202 96 Q199 103 204 103"/>
+    <path d="M192 111 Q201 119 213 110"/>
+    <path class="detail" d="M190 109 L188 112 M215 108 L217 111"/>
+    <!-- The two smiling eyes fail to sit together naturally. -->
+    <path stroke-width="2" d="M180 92 Q185 85 191 92"/>
+    <g class="float-eye">
+      <path stroke-width="2" d="M209 85 Q215 78 221 85"/>
+      <path class="detail" d="M210 90 Q215 87 219 89"/>
+    </g>
+    <path class="detail" d="M178 98 Q185 101 191 98"/>
+    <path class="detail" d="M172 155 Q176 164 175 177 M232 155 Q228 165 231 178"/>
+
+    <!-- A small, wordless artificial-image glimmer. -->
+    <g class="glint">
+      <path class="paper" stroke-width="1.4"
+        d="M248 55 Q249 62 256 64 Q249 65 247 72
+        Q246 65 239 64 Q246 62 248 55 Z"/>
+      <path class="detail" d="M259 74 L259 80 M256 77 L262 77"/>
+    </g>
+
+    <!-- A faceless observer with an open-stroke coat and limbs. -->
+    <path class="paper" d="M67 143 Q63 162 62 181
+      L55 201 L61 203 Q72 187 75 174 L80 157"/>
+    <path class="paper" d="M81 147 Q86 164 85 180
+      L91 200 L98 201 Q96 183 96 176 L94 148"/>
+    <path class="paper" d="M54 201 Q60 199 64 203 L65 207
+      Q57 208 49 207 Q48 204 54 201 Z"/>
+    <path class="paper" d="M91 200 Q97 199 101 203 L108 205
+      Q109 209 92 208 Z"/>
+    <path class="paper" d="M69 109 Q62 112 60 124 L57 154
+      Q72 161 97 154 L92 122 Q89 113 81 110 Z"/>
+    <path class="detail" d="M65 130 Q63 141 63 151 M83 118 Q85 135 88 151"/>
+    <path class="paper" d="M72 102 L71 111 M80 102 L80 111"/>
+    <path class="paper" d="M68 82 Q74 75 83 79 Q92 83 90 93
+      Q89 104 80 107 Q71 106 67 97 Q64 89 68 82 Z"/>
+    <path d="M66 93 Q61 82 69 77 Q78 71 86 80
+      Q78 80 74 85 L71 94" fill="#1c1c1c" stroke-width="1.4"/>
+    <path d="M61 123 Q53 137 58 147 L67 153
+      M66 125 Q60 136 63 141 L71 146"/>
+    <path class="detail" d="M67 153 Q74 154 74 149 Q74 146 71 146"/>
+
+    <!-- The hand and magnifier move together, as one held object. -->
+    <g class="inspect">
+      <path class="paper" d="M88 120 Q102 127 114 133 L137 117
+        M85 127 Q101 139 114 141 Q118 141 122 138 L141 122"/>
+      <path class="paper" stroke-width="2"
+        d="M135 125 L164 103 L168 108 L139 130 Z"/>
+      <path class="paper" d="M134 123 Q137 118 141 120
+        Q146 122 142 127 L137 131 Q133 132 132 129"/>
+      <circle cx="181" cy="92" r="20" stroke-width="2"/>
+      <path class="detail" d="M165 88 Q166 79 175 76"/>
+      <path class="detail" d="M192 105 Q197 101 198 95"/>
+    </g>
+
+    <path class="detail" d="M43 213 Q77 211 112 213 M147 204 Q211 202 277 204"/>
+  </g>
+</svg>

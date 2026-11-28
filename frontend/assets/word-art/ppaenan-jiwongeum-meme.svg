@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240">
+  <rect width="320" height="240" fill="#fdfcf8"/>
+  <style>
+    .ink{fill:none;stroke:#1c1c1c;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+    .paper{fill:#fdfcf8}
+    .detail{stroke-width:.85}
+    .gift{transform-box:fill-box;transform-origin:50% 75%;animation:offer 6s ease-in-out infinite}
+    .head{transform-box:fill-box;transform-origin:50% 95%;animation:nod 6s ease-in-out infinite}
+    .spark{transform-box:fill-box;transform-origin:center;animation:warmth 6s ease-in-out infinite}
+    @keyframes offer{
+      0%,100%{transform:rotate(-2deg) translateY(0)}
+      45%,65%{transform:rotate(2deg) translateY(-1px)}
+    }
+    @keyframes nod{
+      0%,25%,100%{transform:rotate(-3deg)}
+      45%,65%{transform:rotate(4deg)}
+    }
+    @keyframes warmth{
+      0%,20%,100%{opacity:.25}
+      45%,70%{opacity:1}
+    }
+    @media (prefers-reduced-motion: reduce){ * { animation: none !important } }
+  </style>
+
+  <g class="ink">
+    <!-- A little patch of ground -->
+    <path class="detail" d="M48 201q39-2 77 0m14 1q39-2 73 0m11-1 45 1"/>
+
+    <!-- The friend's stool -->
+    <path class="paper" d="M205 159q17-2 37 0l1 6q-18 2-38 0Z"/>
+    <path d="m210 166-4 34m31-34 5 34m-33-15q14-1 30 0"/>
+
+    <!-- Giver's trousers and planted shoes -->
+    <path class="paper" d="M84 139q13-2 25 0l-3 29-1 27m-10-51-4 25-7 25"/>
+    <path d="m96 160 1 34m-14-28-7 27"/>
+    <path class="paper" d="M76 192q5 2 9 1l2 7q-10 2-17 0 0-4 6-8Z"/>
+    <path class="paper" d="M97 193q4 1 8 0l9 5q2 3-3 3l-15-1Z"/>
+
+    <!-- Giver's cardigan -->
+    <path fill="#b56b56" d="M87 88q10-4 18 1l9 19-5 35q-15 3-29-1l2-33Z"/>
+    <path class="detail" d="M96 91q-2 23-1 49m-10-9 6 1"/>
+    <path class="paper" d="m90 82 1 8m9-8-1 7"/>
+
+    <!-- Small faceless head and soft cap -->
+    <path class="paper" d="M87 69q1-11 10-10 10 1 9 12l-2 9q-4 7-10 3-7-3-7-14Z"/>
+    <path fill="#1c1c1c" stroke-width=".85" d="M87 70q-3-13 8-15 10-1 12 9l-5-2q-6 5-15 4Z"/>
+    <path class="paper" d="M83 63q11-6 23-1l4 4q-15-3-26 1"/>
+
+    <!-- Far arm supports the spare snack carton -->
+    <path class="paper" d="M85 99q-10 13-10 26 1 7 12 8m3-7q-8 0-8-4l9-17"/>
+    <path class="detail" d="m78 124 5-1"/>
+
+    <!-- Carton full of chocolate biscuit sticks -->
+    <g transform="rotate(-7 96 126)">
+      <path stroke-width="2.1" d="m87 117-1-20m7 19 1-23m5 24 3-20m2 22 5-18"/>
+      <path stroke="#b56b56" stroke-width="2.1" d="m86 102 .5 10m7.5-13-.4 11m7.4-7-1.2 10m8.2-6-2 9"/>
+      <path class="paper" d="m83 115 24 1-3 27q-9 3-18-1Z"/>
+      <path fill="#b56b56" stroke="none" d="m86 124 18 1-1 10-16-1Z"/>
+      <path class="detail" d="m86 118 18 1m-16 20 13 1"/>
+    </g>
+
+    <!-- Giver's open, curved sleeve and offering hand -->
+    <path fill="#b56b56" d="M105 96q6 0 10 9l11 12-5 7q-12-6-19-17"/>
+    <path class="paper" d="M125 118q6 2 12-1l9-5q4-1 3 2l-6 5q8-2 8 1-7 7-15 8l-13-5"/>
+    <path class="detail" d="m121 119 4 5"/>
+
+    <!-- Seated friend's legs -->
+    <path class="paper" d="M211 147q13-2 24 2l-1 18-16 6-2 20m-8-3 1-23 16-10"/>
+    <path class="paper" d="M220 157q-10 3-19 7l-4 26m8 2 6-21 17-4"/>
+    <path class="paper" d="m196 190 9 1 1 8q-10 2-17 0 0-4 7-9Z"/>
+    <path class="paper" d="m208 192 9 1 7 5q2 3-3 3l-14-1Z"/>
+
+    <!-- Loose indigo shirt -->
+    <path fill="#777f94" d="M214 99q11-4 19 4l5 22-2 29q-16 5-30-2l2-30Z"/>
+    <path class="detail" d="M212 143q8 2 15 1m4-31 2 15"/>
+    <path class="paper" d="m218 91 1 9m9-8-1 9"/>
+
+    <!-- A small grateful nod -->
+    <g class="head">
+      <path class="paper" d="M215 76q2-10 11-8 9 1 9 11l-3 10q-5 7-11 2-7-5-6-15Z"/>
+      <path fill="#1c1c1c" stroke-width=".85" d="M215 79q-6-10 2-16 6-4 13 0 7 3 6 13l-5-2-3-6q-5 6-13 6Z"/>
+      <path class="detail" d="M213 67q-3-2-2-5"/>
+    </g>
+
+    <!-- Both hands open toward the shared gift -->
+    <path fill="#777f94" d="M215 106q-7-3-11 7l-12 14 5 7q13-8 22-18"/>
+    <path class="paper" d="M194 128q-7 0-12-4l-9-6q-4-2-4 1l6 7q-8-3-10-1-1 3 10 8 8 4 19 2"/>
+    <path class="detail" d="m191 129 4 5"/>
+    <path class="paper" d="M231 117q-1 13-15 20l-25 3m1-7 22-4 9-15"/>
+    <path class="paper" d="M192 133q-8 0-14-3l-6-1q-4 1 0 4l7 3q-9-1-9 2 8 5 21 2"/>
+
+    <!-- Three biscuit sticks bridge the two people -->
+    <g class="gift">
+      <path stroke-width="2.2" d="m151 128-11-34m17 34-2-39m7 41 9-36"/>
+      <path stroke="#b56b56" stroke-width="2.2" d="m147 116 4 12m5-13 1 13m8-10-3 12"/>
+      <path class="paper" d="m146 124 20 1-3 12-12-1Z"/>
+      <path class="detail" d="m150 127 12 1m-10 5 8 1"/>
+    </g>
+
+    <!-- Quiet, wordless delight -->
+    <g class="spark detail">
+      <path d="m148 76-3-5m15 4 1-6m11 11 5-4"/>
+    </g>
+
+    <!-- An opened, empty gift box beside the friend -->
+    <path class="paper" d="m247 185 17 3-2 14-17-3Z"/>
+    <path class="paper" d="m247 185-7-5 16-3 8 11m-17-3 9-8"/>
+    <path class="detail" d="m251 189 8 1m-16-8 10-2"/>
+  </g>
+</svg>

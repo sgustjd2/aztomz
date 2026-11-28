@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240">
+  <rect width="320" height="240" fill="#fdfcf8"/>
+  <style>
+    .ink{fill:none;stroke:#1c1c1c;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+    .paper{fill:#fdfcf8}
+    .detail{stroke-width:.8}
+    .accent{fill:#bd7359}
+    .lift{transform-box:fill-box;transform-origin:25% 70%;animation:lift 6s ease-in-out infinite}
+    .follow{animation-delay:.45s}
+    .bag{transform-box:fill-box;transform-origin:50% 0%;animation:sway 6s ease-in-out infinite}
+    @keyframes lift{
+      0%,18%,72%,100%{transform:rotate(0deg)}
+      38%,52%{transform:rotate(-7deg)}
+    }
+    @keyframes sway{
+      0%,18%,72%,100%{transform:rotate(0deg)}
+      38%{transform:rotate(3deg)}
+      52%{transform:rotate(-2deg)}
+    }
+    @media (prefers-reduced-motion: reduce){ * { animation: none !important } }
+  </style>
+  <g class="ink">
+    <!-- A trusted creator, seen on a phone. -->
+    <path class="paper" d="M64 43 Q61 43 61 49 L60 179 Q60 187 68 188 L147 188 Q154 188 154 180 L155 51 Q155 44 148 44 Z"/>
+    <path class="detail" d="M67 60 Q107 59 148 60 M67 169 Q108 170 148 169"/>
+    <path class="detail" d="M97 51 Q107 50 117 51 M99 179 Q107 180 115 179"/>
+    <path class="detail" d="M70 158 Q105 157 144 158"/>
+
+    <path class="paper" d="M94 102 Q84 105 80 119 L77 151 Q99 155 121 151 L118 116 Q115 105 105 102"/>
+    <path d="M96 96 L95 104 M103 96 L104 103"/>
+    <path class="paper" d="M92 80 Q98 75 105 81 Q110 86 106 94 Q102 100 96 96 Q90 91 92 80"/>
+    <path d="M91 86 Q87 77 95 75 Q105 71 109 82"/>
+    <path class="detail" d="M93 79 Q99 82 106 81"/>
+    <path d="M85 114 Q79 124 83 137 Q85 140 89 137 M90 116 Q86 126 89 133"/>
+
+    <g class="lift">
+      <path class="paper" stroke="none" d="M110 112 Q115 122 122 125 L130 119 L133 123 Q125 135 117 131 Q110 128 106 118 Z"/>
+      <path d="M110 112 Q115 123 121 125 L129 120 M106 118 Q110 130 118 132 Q125 133 131 125"/>
+      <path class="accent" d="M123 108 Q131 107 139 108 L138 123 Q131 127 125 123 Z"/>
+      <path d="M139 111 Q147 109 146 116 Q145 121 139 120"/>
+      <path class="detail" d="M125 111 Q131 112 137 111"/>
+      <path class="paper" d="M128 121 Q132 118 134 121 Q135 124 131 126"/>
+    </g>
+
+    <!-- The same choice travels from the screen into everyday life. -->
+    <path class="detail" d="M164 92 Q179 81 192 94 M186 88 L193 94 L185 97"/>
+
+    <!-- A shopper with the matching cup. -->
+    <path d="M221 96 L221 105 M228 96 L230 105"/>
+    <path class="paper" d="M216 77 Q223 72 229 78 Q233 82 230 86 L232 89 Q231 92 228 92 Q227 100 220 96 Q215 92 216 77"/>
+    <path d="M216 87 Q211 79 217 73 Q224 68 231 76"/>
+    <path class="detail" d="M217 76 Q220 81 229 80"/>
+    <path class="paper" d="M219 103 Q211 104 207 116 L205 144 Q221 149 240 143 L238 116 Q235 105 229 103"/>
+    <path class="detail" d="M218 106 Q223 111 230 105 M210 138 Q222 141 236 138"/>
+
+    <!-- Open strokes, with separate shoes. -->
+    <path d="M210 146 Q208 163 204 183 M217 148 Q218 165 211 185"/>
+    <path d="M227 148 Q229 165 233 184 M235 146 Q236 163 240 183"/>
+    <path class="paper" d="M204 183 Q208 183 212 185 L212 190 Q204 193 195 191 Q194 187 204 183 Z"/>
+    <path class="paper" d="M233 184 Q236 183 240 183 Q242 187 249 188 L249 192 Q240 194 233 191 Z"/>
+
+    <g class="lift follow">
+      <path class="paper" stroke="none" d="M211 114 Q206 127 198 129 L185 123 L183 128 Q197 139 204 135 Q213 132 217 119 Z"/>
+      <path d="M211 114 Q207 126 199 129 L187 124 M217 119 Q213 133 204 136 Q198 138 185 130"/>
+      <path class="accent" d="M179 112 Q187 111 195 112 L194 127 Q187 131 181 127 Z"/>
+      <path d="M195 115 Q203 113 202 120 Q201 125 195 124"/>
+      <path class="detail" d="M181 115 Q187 116 193 115"/>
+      <path class="paper" d="M184 125 Q188 122 190 125 Q191 128 187 130"/>
+    </g>
+
+    <path d="M237 115 Q244 126 245 141 M232 120 Q238 131 240 142"/>
+    <path d="M240 142 Q240 147 244 148 Q248 147 246 142"/>
+
+    <g class="bag">
+      <path d="M241 157 Q238 143 245 145 Q252 145 252 157"/>
+      <path class="paper" d="M233 156 Q246 158 259 155 L263 184 Q250 189 235 185 Z"/>
+      <path class="detail" d="M255 159 L257 180 L262 184"/>
+      <path class="accent" stroke="none" d="M244 169 Q246 165 249 169 Q252 165 254 169 Q255 173 249 177 Q243 173 244 169"/>
+    </g>
+
+    <path class="detail" d="M53 199 Q106 197 157 199 M191 200 Q226 198 269 200"/>
+  </g>
+</svg>

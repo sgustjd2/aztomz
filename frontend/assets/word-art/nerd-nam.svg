@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240">
+  <rect width="320" height="240" fill="#fdfcf8"/>
+  <style>
+    .ink{fill:none;stroke:#1c1c1c;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+    .paper{fill:#fdfcf8}
+    .detail{stroke-width:.85}
+    .head{transform-box:fill-box;transform-origin:45% 90%;animation:focus 6s ease-in-out infinite}
+    .hand{transform-box:fill-box;transform-origin:5% 45%;animation:type 6s ease-in-out infinite}
+    .steam{transform-box:fill-box;transform-origin:50% 100%;animation:steam 6s ease-in-out infinite}
+    @keyframes focus{
+      0%,100%{transform:rotate(-2deg)}
+      35%,65%{transform:rotate(3deg)}
+      80%{transform:rotate(0deg)}
+    }
+    @keyframes type{
+      0%,25%,45%,65%,100%{transform:rotate(0deg)}
+      30%,50%{transform:rotate(-3deg)}
+      35%,55%{transform:rotate(1deg)}
+    }
+    @keyframes steam{
+      0%,100%{opacity:.25;transform:translateY(2px) rotate(-4deg)}
+      50%{opacity:.65;transform:translateY(-4px) rotate(5deg)}
+    }
+    @media (prefers-reduced-motion: reduce){ * { animation: none !important } }
+  </style>
+  <g class="ink">
+    <!-- A quiet patch of floor. -->
+    <path class="detail" d="M64 213q65-1.5 118 0m15 0q32-1 59 0"/>
+
+    <!-- Stance: weight on one leg, the other heel lifted. -->
+    <path fill="#747f92" d="M108 139q17-3 32 1l-5 30-5 34-9 1 1-37-7-13-3 26-11 22-8-3 10-25Z"/>
+    <path class="detail" d="m115 155 8-8m-2 21 4-17"/>
+    <path class="paper" d="m121 203 9-.5q2 5 9 6 5 1 5 4l-23 .4q-2-4 0-9.9Z"/>
+    <path class="paper" d="m94 198 8 3q-1 5 3 8l-4 3-16-7q1-4 9-7Z"/>
+    <path class="detail" d="m124 208 7-.2m-39-4 5 2"/>
+
+    <!-- The far arm, visible beyond the shirt. -->
+    <path class="paper" d="M135 99q11 12 18 26l22 9-2 5q-17-4-25-9-10-12-17-23"/>
+    <path class="detail" d="m169 134 7 2"/>
+
+    <!-- A loose shirt, its hem following the bent torso. -->
+    <path class="paper" d="m118 83 14 5q11 9 11 25l-3 30q-15 5-34-1l1-32q0-17 11-27Z"/>
+    <path d="m118 84 5 13 9-9"/>
+    <path class="detail" d="m125 98 3 34m-16 4q11 3 24 1m-26-25 4-7"/>
+    <path fill="#747f92" stroke-width=".85" d="m130 102 8 1-.7 10q-4 3-7-.5Z"/>
+    <path class="detail" d="m134 99 .5 8"/>
+
+    <!-- Open neck strokes and an intent, faceless head. -->
+    <g class="head">
+      <path class="paper" d="m119 85 2-12m8 13 1-9"/>
+      <path class="paper" d="M115 54q10-9 21 0 6 5 5 15l4 5-5 2q-2 9-10 10-9-1-13-11"/>
+      <path fill="#1c1c1c" stroke-width="1.4" d="M114 68q-5-8-1-15l-4-2 8-3-1-5 8 3q7-7 17-1l-3 3q8 1 9 8l-8-1-5 6-8-3-6 8-1 8-4-2Z"/>
+      <path class="paper" d="M119 67q-6-4-6 3 0 5 5 5"/>
+      <path class="detail" d="m116 69 1 3"/>
+      <!-- Spectacles suggest concentration without drawing a face. -->
+      <path stroke-width="1.4" d="m120 65 10 2m1-2q4-2 9 0l-.8 7q-4 2-7-1Zm10 0 3 1"/>
+    </g>
+
+    <!-- Near sleeve and a long relaxed forearm. -->
+    <path class="paper" d="M113 98q8-4 15 5l8 18-13 5q-8-12-10-28Z"/>
+    <path class="detail" d="m122 120 12-4m-17-13 2 7"/>
+    <path class="paper" d="M125 125q8 13 17 15l22-1m-35-16q8 10 15 11l18 .2"/>
+    <g class="hand">
+      <path class="paper" d="m160 134 7-1 9 3q3 2 0 3l-8-1m-4 1 8 2q4 1 5-1"/>
+      <path class="detail" d="m167 136 6 1"/>
+    </g>
+
+    <!-- Four props: desk, laptop, books, coffee cup. -->
+    <path class="paper" d="M67 149q87-1 185 0l1 6q-94 1-186 0Z"/>
+    <path d="m76 156-2 56m6-56 2 55m158-55 3 55m-7-55-1 55"/>
+
+    <path class="paper" d="m158 144 48 .2 17-35q1-3-3-3l-37-1q-3 0-4 3l-15 32"/>
+    <path fill="#747f92" d="m182 109 36 1-14 29-35-.2Z"/>
+    <path class="detail" stroke="#fdfcf8" d="m187 119-4 3 2 3m13-6 2 3-5 3m-3-9-3 12"/>
+    <path class="paper" d="m157 142 49 .3 3 4q-24 2-52 .2l-6-2Z"/>
+    <path class="detail" d="m165 144 20 .2m6 0 8 .1"/>
+
+    <!-- Slightly uneven book spines. -->
+    <path class="paper" d="m69 140 27-2 1 9-28 1Z"/>
+    <path fill="#747f92" d="m72 131 27 2-.8 7-27-1Z"/>
+    <path class="paper" d="m67 124 25-1 1 9-25 1Z"/>
+    <path class="detail" d="m72 127 16-.7m-15 16 19-.8m-16-8-.4 4"/>
+
+    <path class="paper" d="M229 130q7-2 14 0l-1 14q-6 4-12 0Z"/>
+    <path d="M243 132q9-1 8 5-1 6-8 4"/>
+    <path class="detail" d="M230 132q6 2 12 0"/>
+    <g class="steam detail">
+      <path d="M234 123q-4-4 0-8t0-7"/>
+      <path d="M241 121q3-3 0-6"/>
+    </g>
+  </g>
+</svg>

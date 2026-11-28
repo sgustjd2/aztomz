@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240">
+  <rect width="320" height="240" fill="#fdfcf8"/>
+  <style>
+    .ink{fill:none;stroke:#1c1c1c;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+    .paper{fill:#fdfcf8}
+    .fine{stroke-width:.8}
+    .rose{fill:#bd7975}
+    .blue{fill:#737f91}
+    .plume{transform-box:fill-box;transform-origin:50% 100%;animation:plume 6s ease-in-out infinite}
+    .bag{transform-box:fill-box;transform-origin:50% 0%;animation:bag 6s ease-in-out infinite}
+    .glint{transform-box:fill-box;transform-origin:center;animation:glint 6s ease-in-out infinite}
+    @keyframes plume{
+      0%,100%{transform:rotate(-3deg)}
+      45%{transform:rotate(4deg)}
+      72%{transform:rotate(-1deg)}
+    }
+    @keyframes bag{
+      0%,100%{transform:rotate(-3deg)}
+      48%{transform:rotate(4deg)}
+      76%{transform:rotate(0deg)}
+    }
+    @keyframes glint{
+      0%,32%,76%,100%{opacity:.25;transform:scale(.8)}
+      49%,57%{opacity:1;transform:scale(1)}
+    }
+    @media (prefers-reduced-motion: reduce){ * { animation: none !important } }
+  </style>
+
+  <g class="ink">
+    <!-- A tall dressing mirror, with just a suggestion of reflection. -->
+    <path class="fine" d="M44 210Q84 208 113 210M145 211Q192 213 229 210M248 211l27 1" opacity=".4"/>
+    <path d="M60 197Q56 169 57 117L57 78Q58 54 78 53Q100 54 101 79L101 123Q102 167 96 197"/>
+    <path class="paper" d="M63 80Q63 60 78 60Q94 60 95 80L95 157Q95 176 78 177Q62 176 63 157Z"/>
+    <path d="M63 192Q78 198 96 192M65 196l-6 14M92 196l7 13"/>
+    <path class="fine" d="M69 80l8-10M69 91l16-20M86 153l4-5" opacity=".4"/>
+    <g opacity=".32">
+      <path class="fine" d="M92 91q-9-4-13 4q-3 7 4 12M81 110q-10 7-11 20l-3 29M82 112q7 13 9 25M70 141q11 4 21 0"/>
+      <path class="fine" d="M72 119l8 10l8-12"/>
+    </g>
+
+    <!-- Feathers and an extravagant, slightly crooked hat. -->
+    <g class="plume">
+      <path class="paper" d="M176 53Q168 36 176 26Q187 30 183 43Q181 49 176 53Z"/>
+      <path class="fine" d="M176 52q5-14 1-22M178 39l4-4"/>
+      <path d="M178 52Q187 35 198 37Q199 48 183 53"/>
+      <path class="fine" d="M181 51l12-10"/>
+    </g>
+
+    <!-- Far arm: a hand checking the brim. -->
+    <path class="paper" d="M185 96Q198 92 208 77L201 63M181 91Q194 87 203 76L198 65"/>
+    <path class="fine" d="M198 65q-3-6-1-8q2-1 3 4q4-3 5 0q0 3-4 5"/>
+
+    <!-- Open neck, hair, faceless head and earrings. -->
+    <path class="paper" d="M161 61Q156 64 158 73Q160 83 170 84Q179 81 181 70L179 59Z"/>
+    <path d="M160 64q-5 7-1 12M163 82l-1 8M173 84l1 7"/>
+    <path class="blue" d="M158 64Q153 55 161 51Q170 47 179 55L182 66Q175 65 173 58Q166 65 158 64Z"/>
+    <path class="paper" d="M149 58Q169 52 190 58Q193 61 188 63Q168 67 148 63Q142 61 149 58Z"/>
+    <path class="rose" d="M156 56l2-13Q169 38 181 44l5 13Q172 60 156 56Z"/>
+    <path class="fine" d="M158 51q13 4 26 1"/>
+    <path class="rose" d="M181 55q6-10 11-6q1 5-7 8q10-1 10 4q-5 5-13-3Z"/>
+    <path class="fine" d="M159 75q-5 4-1 7q4 1 4-3"/>
+    <circle cx="158" cy="83" r="1.6" class="rose" stroke-width=".8"/>
+
+    <!-- Long legs, open ink contours, and little heeled shoes. -->
+    <path class="paper" d="M157 148Q154 171 157 192M164 149Q163 173 163 193"/>
+    <path class="paper" d="M175 149Q181 171 184 190M181 147Q187 170 190 189"/>
+    <path class="blue" d="M157 190q3 3 7 0l2 8q8 3 9 6q-9 3-19-1l-1-7Z"/>
+    <path class="blue" d="M183 189q4 3 7-1l4 8q9 0 12 4q-7 5-19 2l-3-6Z"/>
+    <path d="M157 203l1 6M187 202l2 6"/>
+    <path class="fine" d="M157 196l8 1M186 194l7-1"/>
+
+    <!-- Tailored coat, scalloped hem, bow, pearls and cuff. -->
+    <path class="rose" d="M161 88Q148 88 145 99L150 123Q150 137 141 153Q149 158 156 155Q165 160 173 156Q181 159 189 153Q178 134 179 121L188 98Q183 90 174 88L168 99Z"/>
+    <path class="paper" d="M161 88l7 11l-10 12l-4-17M174 88l-6 11l8 11l6-16"/>
+    <path class="fine" d="M168 100q-2 27 1 54M151 122q12 5 28 0M147 148q4-8 5-15M181 148l-5-15"/>
+    <path class="fine" d="M149 130q4 2 9 0M174 130l7-1"/>
+    <circle cx="170" cy="116" r="1" fill="#1c1c1c" stroke="none"/>
+    <circle cx="170" cy="133" r="1" fill="#1c1c1c" stroke="none"/>
+    <path class="blue" d="M167 99q-9-8-11-3q-2 7 11 6q9 7 12 1q1-7-10-4Z"/>
+    <path class="fine" d="M162 87q5 8 12 0" stroke-dasharray=".3 2.7" stroke-width="1.8"/>
+
+    <!-- Near sleeve and open forearm. -->
+    <path class="rose" d="M149 94Q141 101 140 120L146 131L153 127Q148 116 154 105"/>
+    <path class="paper" d="M142 127l5 10l7-3l-3-10Z"/>
+    <path d="M148 137l5 12M153 136l4 11"/>
+    <path class="fine" d="M153 149q0 5 3 5q4-1 2-6"/>
+
+    <!-- A small dressed-up handbag. -->
+    <g class="bag">
+      <path d="M155 158q-4-16 3-16q7 1 6 16"/>
+      <path class="blue" d="M148 157Q158 160 171 156L174 176Q161 182 148 176Z"/>
+      <path class="fine" d="M150 160q10 8 21-1M160 165l1 5"/>
+      <circle cx="161" cy="168" r="1.3" class="paper" stroke-width=".8"/>
+    </g>
+
+    <!-- Perfume, waiting on a tiny dressing table. -->
+    <path class="paper" d="M235 170Q252 167 271 170L272 175Q252 178 235 174Z"/>
+    <path d="M240 177l-3 32M266 177l3 32"/>
+    <path class="fine" d="M239 190q13 3 28 0"/>
+    <path class="rose" d="M248 152Q254 149 260 152L262 167Q255 171 247 167Z"/>
+    <path class="paper" d="M251 146l7-1l1 7l-8 1Z"/>
+    <path class="fine" d="M250 158q4-2 9 0M252 162l5-1"/>
+
+    <!-- A quiet shimmer: already fully drawn when motion is disabled. -->
+    <g class="glint" stroke-width="1">
+      <path d="M215 102q0 7-5 8q5 1 5 8q1-7 6-8q-5-1-6-8Z"/>
+      <path d="M125 69v6M122 72h6M204 143v5M202 145h4"/>
+    </g>
+  </g>
+</svg>

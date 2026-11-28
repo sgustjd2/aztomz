@@ -30,7 +30,7 @@
 <link rel="manifest" href="site.webmanifest" />
 <link rel="stylesheet" href="assets/styles.css?v=grid3-20261128" />
 <link rel="stylesheet" href="assets/fun.css?v=dict-20261128" />
-<link rel="stylesheet" href="assets/dict.css?v=dict2-20261128" />
+<link rel="stylesheet" href="assets/dict.css?v=art2-20261128" />
 </head>
 <body class="dict-page">
 <a class="skip-link" href="#main">본문으로 건너뛰기</a>
@@ -66,7 +66,7 @@
 
 <script src="data/trends.js"></script>
 <script src="assets/app.js?v=ref2-20261128"></script>
-<script src="assets/word-art.js?v=dict-20261128"></script>
+<script src="assets/word-art.js?v=art-20261128"></script>
 <script src="assets/fun.js?v=dict-20261128"></script>
 <script>
   H.boot();
@@ -93,9 +93,8 @@
     <a class="dx-card" href="${H.detailHref(t.id)}">
       <span class="dx-art ${tone(art)}">${art}
         <span class="dx-art-top"><span>${H.isFreshSlang(t)?'요즘 쓰는 말':'지난 유행어'}</span><span>${String(i+1).padStart(2,'0')}</span></span>
-        ${t.pureKorean?`<span class="dx-art-foot">우리말 · ${H.esc(t.pureKorean.split('(')[0].trim())}</span>`:''}
       </span>
-      <span class="dx-body"><b>${H.esc(t.title)}</b><span>${H.esc(def(t))}</span><i>뜻 자세히 보기 →</i></span>
+      <span class="dx-body"><b>${H.esc(t.title)}</b><span>${H.esc(def(t))}</span>${t.pureKorean?`<em>우리말 · ${H.esc(t.pureKorean.split('(')[0].trim())}</em>`:''}<i>뜻 자세히 보기 →</i></span>
     </a>`; };
 
   function matches(t){

@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240">
+  <rect width="320" height="240" fill="#fdfcf8"/>
+  <style>
+    .ink{fill:none;stroke:#1c1c1c;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+    .paper{fill:#fdfcf8}
+    .detail{stroke-width:.85}
+    .coat{fill:#7f9295}
+    .sneak{transform-box:fill-box;transform-origin:50% 95%;animation:sneak 6s ease-in-out infinite}
+    .bag{transform-box:fill-box;transform-origin:50% 0%;animation:bag 6s ease-in-out infinite}
+    .hand{transform-box:fill-box;transform-origin:0% 100%;animation:tick 6s ease-in-out infinite}
+    @keyframes sneak{
+      0%,100%{transform:rotate(0deg)}
+      35%,65%{transform:rotate(2deg)}
+    }
+    @keyframes bag{
+      0%,100%{transform:rotate(-3deg)}
+      40%{transform:rotate(4deg)}
+      70%{transform:rotate(1deg)}
+    }
+    @keyframes tick{
+      0%,44%,100%{transform:rotate(0deg)}
+      48%,90%{transform:rotate(6deg)}
+    }
+    @media (prefers-reduced-motion: reduce){ * { animation: none !important } }
+  </style>
+
+  <g class="ink">
+    <!-- Quiet office floor and an open way out. -->
+    <path class="detail" d="M40 203Q104 202 147 203M213 203Q252 204 282 203"/>
+    <path d="M235 202V65Q252 64 274 65V202"/>
+    <path class="detail" d="M239 199V69H270V199"/>
+    <path fill="#e9dfc8" d="M240 70L258 80V194L240 200Z"/>
+    <path class="detail" d="M254 131v7"/>
+    <path d="M240 200l18-6"/>
+    <path class="detail" d="M263 202l10 4"/>
+
+    <!-- A clock: the work is finished before the usual leaving hour. -->
+    <path class="paper" d="M106 48C121 47 131 57 131 71C132 85 122 95 108 95C94 95 84 86 84 72C83 59 93 49 106 48Z"/>
+    <path class="detail" d="M108 53v4M125 71h-4M108 90v-4M89 72h4"/>
+    <path d="M108 72l-7-9"/>
+    <g class="hand">
+      <path d="M108 72l12-5"/>
+    </g>
+    <circle cx="108" cy="72" r="1.5" fill="#1c1c1c" stroke="none"/>
+
+    <!-- A cleared desk, with its completed stack squared away. -->
+    <path class="paper" d="M44 133Q84 132 133 133L135 139Q90 141 44 139Z"/>
+    <path d="M50 140l-2 62M127 141l3 61"/>
+    <path class="detail" d="M53 151q31 1 70 0"/>
+    <path class="paper" d="M65 126l40-1 7 7-45 1Z"/>
+    <path class="detail" d="M65 123l40-1 7 7-45 1ZM69 120l35-1 7 7"/>
+    <path class="detail" d="M78 122l3 2 5-5"/>
+
+    <!-- A small, faceless worker slips out on tiptoe. -->
+    <!-- Open leg strokes, with one heel lifted. -->
+    <path d="M180 152Q175 165 179 177Q185 184 192 191"/>
+    <path d="M185 153Q181 166 184 175Q191 182 196 188"/>
+    <path class="paper" d="M191 190q5-3 7-1l8 6q2 3-2 3l-9-2Z"/>
+    <path d="M194 153Q202 165 208 177Q213 186 214 197"/>
+    <path d="M199 151Q208 165 212 176Q218 188 219 196"/>
+    <path class="paper" d="M213 196q4-2 7 0l8 2q3 3-1 4l-13-1Z"/>
+
+    <g class="sneak">
+      <!-- The shoulder folds forward; the coat opens around the stride. -->
+      <path class="coat" d="M181 105Q190 101 198 110Q202 120 200 133L203 153Q195 158 188 153L184 150 178 154Q174 139 174 125Q173 113 181 105Z"/>
+      <path class="detail" d="M191 111q-3 17-2 36M178 139q5 1 9 0"/>
+      <path class="paper" d="M183 106l1-9M189 105l1-8"/>
+
+      <!-- Small oval head, hair supplying the character. -->
+      <path class="paper" d="M180 82Q181 75 188 76Q195 77 195 84L194 94Q192 100 186 98Q180 96 180 90Z"/>
+      <path fill="#1c1c1c" stroke-width="1.4" d="M180 88Q176 78 183 75Q191 71 196 79L194 84Q190 80 185 82L183 89Z"/>
+
+      <!-- A bent, open-stroke arm carries the bag close to the body. -->
+      <g class="bag">
+        <path class="paper" d="M158 152q1-7 7-7t7 7"/>
+        <path class="paper" d="M149 154Q162 152 178 154L180 176Q166 179 150 177Z"/>
+        <path class="detail" d="M151 160q13 2 26-1M163 159v4"/>
+      </g>
+      <path class="paper" stroke="none" d="M180 115Q173 124 172 134L164 145 169 148Q180 138 180 133L186 119Z"/>
+      <path d="M180 115Q173 124 172 134L164 145"/>
+      <path d="M186 119Q180 129 180 134L169 148"/>
+      <path class="paper" d="M164 145q-4 3-1 6q3 2 6-3"/>
+
+      <!-- The other hand quietly reaches toward the open door. -->
+      <path class="paper" stroke="none" d="M197 115Q206 119 211 128L227 126 228 131Q216 135 209 133Q201 129 195 123Z"/>
+      <path d="M198 115Q206 119 211 128L226 126"/>
+      <path d="M195 123Q202 130 209 133Q216 135 227 131"/>
+      <path class="paper" d="M226 126q5-3 7 0q2 3-1 4l-5 1"/>
+      <path class="detail" d="M197 114l-3 9"/>
+    </g>
+
+    <!-- Just two faint marks give the furtive departure a little air. -->
+    <path class="detail" d="M151 111q7 0 11 3M148 119l10 1"/>
+  </g>
+</svg>

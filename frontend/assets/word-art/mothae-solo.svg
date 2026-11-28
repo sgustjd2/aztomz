@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240">
+  <rect width="320" height="240" fill="#fdfcf8"/>
+  <style>
+    .ink{fill:none;stroke:#1c1c1c;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+    .paper{fill:#fdfcf8}
+    .detail{stroke-width:.85}
+    .sigh{transform-box:fill-box;transform-origin:50% 100%;animation:sigh 6s ease-in-out infinite}
+    .wish{transform-box:fill-box;transform-origin:50% 80%;animation:wish 6s ease-in-out infinite}
+    .breath{transform-box:fill-box;transform-origin:0% 50%;animation:breath 6s ease-in-out infinite}
+    @keyframes sigh{
+      0%,18%,72%,100%{transform:translateY(0) rotate(0deg)}
+      38%{transform:translateY(-2px) rotate(-1deg)}
+      53%{transform:translateY(2px) rotate(2deg)}
+    }
+    @keyframes wish{
+      0%,100%{transform:translateY(0) rotate(-3deg)}
+      50%{transform:translateY(-4px) rotate(3deg)}
+    }
+    @keyframes breath{
+      0%,32%,78%,100%{opacity:0;transform:translate(0,0)}
+      46%{opacity:.7}
+      68%{opacity:0;transform:translate(9px,-3px)}
+    }
+    @media (prefers-reduced-motion: reduce){ * { animation: none !important } }
+  </style>
+
+  <g class="ink">
+    <!-- A quiet patch of floor. -->
+    <path class="detail" d="M49 207 Q94 205 139 207 M151 208 Q206 206 269 208"/>
+
+    <!-- An empty place beside the solitary sitter. -->
+    <path class="paper" d="M67 159 Q139 157 216 159 L216 166 Q140 168 67 166 Z"/>
+    <path d="M77 168 Q75 184 74 202 M86 168 L88 201 M199 168 L197 202 M208 168 Q210 184 211 201"/>
+    <path class="detail" d="M91 163 Q146 161 204 163"/>
+
+    <!-- Planted shoes and two open strokes for each leg. -->
+    <path class="paper" stroke="none" d="M108 143 Q119 147 127 158 L139 193 L132 197 L117 168 L101 157 Z"/>
+    <path d="M108 143 Q121 147 128 160 Q133 176 139 193 M101 155 Q114 160 118 170 L131 195"/>
+    <path class="paper" stroke="none" d="M91 145 Q100 147 105 159 L103 193 L95 194 L94 164 L85 155 Z"/>
+    <path d="M91 145 Q103 149 105 160 L103 191 M85 154 Q94 159 94 167 L95 192"/>
+    <path class="paper" d="M94 191 Q98 193 103 191 Q109 195 115 198 Q118 200 116 202 L94 202 Q91 198 94 191 Z"/>
+    <path class="paper" d="M131 192 Q135 192 139 190 Q146 193 151 198 Q152 201 148 202 L132 200 Q129 197 131 192 Z"/>
+    <path class="detail" d="M96 198 L110 199 M135 197 L145 199"/>
+
+    <g class="sigh">
+      <!-- Oversized shirt, shoulders dropped. -->
+      <path fill="#a8b4c3" d="M101 97 Q89 96 82 107 L75 124 Q80 130 89 131 L87 147 Q102 155 121 150 L125 128 Q132 129 136 123 L130 108 Q120 100 111 100"/>
+      <path class="detail" d="M91 118 Q88 132 92 143 M110 140 Q115 144 121 143 M80 123 L87 126"/>
+
+      <!-- Neck and a bowed, faceless head. -->
+      <path d="M102 97 L104 89 M111 100 L113 92"/>
+      <path class="paper" d="M101 73 Q103 64 113 66 Q124 67 124 78 Q125 87 118 92 Q111 96 105 88 Q101 82 101 73 Z"/>
+      <path fill="#1c1c1c" stroke-width=".85" d="M101 79 Q96 69 103 63 Q110 57 120 64 L125 69 L121 76 Q116 70 111 72 L107 79 L105 83 Z"/>
+      <path class="detail" d="M103 65 Q108 61 113 64"/>
+
+      <!-- One hand props up the heavy head. -->
+      <path class="paper" stroke="none" d="M84 126 Q79 140 88 142 Q96 140 102 124 L111 94 L106 92 L95 119 Q92 129 89 130 Z"/>
+      <path d="M82 126 Q77 138 85 143 Q95 149 103 126 L112 97 Q114 91 110 89"/>
+      <path d="M89 130 Q92 130 96 117 L104 97 Q105 92 108 91"/>
+      <path class="detail" d="M107 96 L110 98"/>
+
+      <!-- The other arm offers a heart-filled phone. -->
+      <path class="paper" stroke="none" d="M128 123 Q136 137 148 135 L158 126 L161 131 Q148 148 136 143 Q126 139 122 128 Z"/>
+      <path d="M129 123 Q136 135 146 133 L154 127 M122 128 Q128 144 140 144 Q152 145 161 132"/>
+      <path class="paper" d="M149 105 Q149 102 152 102 L166 105 Q169 105 168 109 L164 132 Q164 135 161 134 L148 131 Q146 130 147 127 Z"/>
+      <path class="detail" d="M153 106 L164 108 M151 127 L159 129"/>
+      <path fill="#c98078" stroke-width=".85" d="M157 115 C154 109 149 114 153 118 L157 123 L162 119 C168 114 162 110 157 115 Z"/>
+      <path d="M155 130 Q154 125 157 124 Q159 124 160 128"/>
+    </g>
+
+    <!-- A small, well-used tissue box. -->
+    <path class="paper" d="M226 184 L251 182 L263 188 L262 204 L235 206 L225 199 Z"/>
+    <path class="detail" d="M226 184 L236 191 L263 188 M236 191 L235 206 M237 187 Q243 184 249 187"/>
+    <path class="paper" stroke-width="1.4" d="M239 186 Q242 181 238 175 Q244 176 247 171 Q247 178 252 182 L247 187"/>
+    <path class="detail" d="M244 177 Q243 181 246 184"/>
+    <path class="paper" stroke-width="1.4" d="M215 201 L220 197 L224 200 L228 199 L231 204 L222 206 Z"/>
+    <path class="detail" d="M220 200 L223 203 L227 202"/>
+
+    <!-- The wish: two hearts leaning toward each other. -->
+    <g class="wish">
+      <path class="paper" stroke-width="1.4" d="M183 48 Q186 31 208 31 Q233 28 249 39 Q263 49 255 65 Q246 79 221 77 Q207 80 195 72 L183 77 L188 65 Q178 59 183 48 Z"/>
+      <path fill="#c98078" stroke-width="1.4" d="M210 48 C201 36 190 48 201 58 L213 67 L221 54 C229 41 215 37 210 48 Z"/>
+      <path fill="#c98078" stroke-width="1.4" d="M234 47 C226 36 215 46 223 55 L234 65 L243 54 C251 43 240 36 234 47 Z"/>
+      <path class="detail" d="M198 47 Q199 44 202 45 M226 46 Q228 43 230 45"/>
+      <path class="paper" stroke-width="1.4" d="M177 83 Q179 79 183 81 Q187 84 183 87 Q179 90 177 86 Z"/>
+      <path class="paper" stroke-width="1.4" d="M170 94 Q170 91 173 92 Q176 94 173 96 Q170 97 170 94 Z"/>
+    </g>
+
+    <g class="breath detail">
+      <path d="M131 83 Q139 80 145 84 Q151 88 156 84"/>
+      <path d="M134 91 Q141 89 146 92"/>
+    </g>
+  </g>
+</svg>

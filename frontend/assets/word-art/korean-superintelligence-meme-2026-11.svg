@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240">
+  <rect width="320" height="240" fill="#fdfcf8"/>
+  <style>
+    svg{color:#1c1c1c}
+    .ink{stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+    .detail{stroke-width:.85}
+    .write{transform-box:fill-box;transform-origin:12% 60%;animation:write 6s ease-in-out infinite}
+    .thought{transform-box:fill-box;transform-origin:50% 85%;animation:thought 6s ease-in-out infinite}
+    .rays{transform-box:fill-box;transform-origin:center;animation:rays 6s ease-in-out infinite}
+    @keyframes write{
+      0%,28%,56%,100%{transform:rotate(0deg)}
+      8%,37%{transform:rotate(-2deg)}
+      15%,44%{transform:rotate(1.5deg)}
+      66%,84%{transform:rotate(-3deg)}
+    }
+    @keyframes thought{
+      0%,100%{transform:translateY(0) rotate(-1deg)}
+      50%{transform:translateY(-3px) rotate(1deg)}
+    }
+    @keyframes rays{
+      0%,100%{opacity:.45;transform:scale(.96)}
+      48%,64%{opacity:1;transform:scale(1.04)}
+    }
+    @media (prefers-reduced-motion: reduce){ * { animation: none !important } }
+  </style>
+
+  <g class="ink" fill="none">
+    <!-- A little burst of improbable brainpower. -->
+    <g class="thought">
+      <path class="detail" d="M120 76q5-8 13-9m-9 1 2-3"/>
+      <path fill="#fdfcf8" d="M149 65c-8 2-13-3-12-9-7-3-6-12 0-15-1-7 6-12 12-10 4-7 13-7 17-2 7-3 14 2 14 8 8 1 12 9 8 15 4 7-2 14-9 13-4 6-13 6-18 2-4 3-9 2-12-2Z"/>
+      <path class="detail" d="M160 32q-5 6-1 12-6 4-2 10-3 6 3 10m-14-28q7 1 6 7m-14 2q8-3 11 4m-8 8q3-5 10-1m21-23q-7 2-6 9m14 0q-8-3-11 5m13 9q-3-6-10-3m-5-5q-4 6 0 12"/>
+      <g class="rays">
+        <path d="m128 28-5-5m30-3-1-7m31 13 5-6m9 23 8-1m-12 23 6 5m-69-19-8-1"/>
+        <path class="detail" d="m207 26 1-4m-3 2 5 1m-92 16-1-4m-2 3 5-1"/>
+      </g>
+    </g>
+
+    <!-- Faceless student, open neck and limb strokes. -->
+    <path d="M92 123q-4 19-1 34"/>
+    <path d="M87 156q7 3 24 1m-21 1-3 46m24-46 4 45"/>
+    <path fill="#fdfcf8" d="M105 90q-3-10 4-16 8-5 15 1 5 5 1 15-2 9-8 10-8 0-12-10Z"/>
+    <path fill="#1c1c1c" stroke-width="1.4" d="M105 85q-5-12 5-15 10-5 17 5l-1 8q-3-6-7-6-5 5-14 8Z"/>
+    <path d="m113 101-1 6m9-8 1 7"/>
+
+    <path fill="#727e96" d="M111 106q-9 2-11 15l-3 25q11 5 28 1l2-24q-1-13-8-17"/>
+    <path class="detail" d="M103 139q8 3 19 1m-16-25q-3 6-3 12"/>
+
+    <path fill="#fdfcf8" d="M101 148q12-2 23 0l17 19q3 4-1 9l-14 24-7-3 10-24-19-12-10-1"/>
+    <path d="M116 160q-7 12-10 35m-8-1 3-34"/>
+    <path fill="#fdfcf8" d="m98 194 8 1 1 9q7 0 9 5-9 2-19-1Zm21 3 7 3-2 7q8 2 8 6-11 1-18-5Z"/>
+    <path class="detail" d="m99 204 7 1m11 2 6 2"/>
+
+    <path fill="#fdfcf8" d="M104 121q-2 10 3 18l22 10 3-5-19-12-1-12"/>
+    <path class="detail" d="m126 143 6 2"/>
+
+    <!-- Desk and a stack of freshly solved exam papers. -->
+    <path fill="#fdfcf8" d="M77 153q76-2 166 0l1 6q-84-2-167 0Z"/>
+    <path d="M86 160q-1 21-3 49m151-49q1 25 4 49"/>
+    <path class="detail" d="M92 161q0 23-2 47m137-47 4 47"/>
+
+    <path fill="#fdfcf8" d="m165 130 51-6 17 25-54 3Z"/>
+    <path class="detail" d="m179 147 51-3m-48 5 49-3"/>
+    <path fill="#fdfcf8" d="m161 127 51-5 17 22-54 5Z"/>
+    <g class="detail">
+      <path d="m174 131 16-2m-12 8 15-2m-11 8 14-2"/>
+      <g stroke="#b56b58">
+        <path d="M201 127c-7-1-8 7-2 8 7 1 9-7 2-8Zm5 10c-6-1-8 7-2 8 7 0 8-7 2-8Z"/>
+        <path d="m215 128 2 3 4-6"/>
+      </g>
+    </g>
+
+    <!-- The writing hand makes small, deliberate marks. -->
+    <g class="write">
+      <path fill="#fdfcf8" d="M122 117q5 2 7 10l8 12 18-1q5-2 7 1 3 3-1 5l-26 2q-4 0-6-4l-10-16"/>
+      <path class="detail" d="m151 139 5 2m-29-10 5-3"/>
+      <path d="m157 140 13-20m-12 21 3-1"/>
+      <path class="detail" d="m167 123 2 1"/>
+    </g>
+
+    <path class="detail" opacity=".45" d="M69 213q28-1 55 0m9 2 18-1m60-1q19-1 39 0"/>
+  </g>
+</svg>

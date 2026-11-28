@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240">
+  <rect width="320" height="240" fill="#fdfcf8"/>
+  <style>
+    .ink{fill:none;stroke:#1c1c1c;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+    .paper{fill:#fdfcf8}
+    .fine{stroke-width:.85}
+    .thought{transform-box:fill-box;transform-origin:50% 75%;animation:think 6s ease-in-out infinite}
+    .lift{transform-box:fill-box;transform-origin:5% 36%;animation:strength 6s ease-in-out infinite}
+    @keyframes think{
+      0%,100%{transform:translateY(0) rotate(-1deg)}
+      50%{transform:translateY(-3px) rotate(1deg)}
+    }
+    @keyframes strength{
+      0%,15%,85%,100%{transform:rotate(0deg)}
+      40%,60%{transform:rotate(-9deg)}
+    }
+    @media (prefers-reduced-motion: reduce){ * { animation: none !important } }
+  </style>
+  <defs>
+    <filter id="ink-wobble" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency=".065" numOctaves="2" seed="8"/>
+      <feDisplacementMap in="SourceGraphic" scale=".38"/>
+    </filter>
+  </defs>
+  <g class="ink" filter="url(#ink-wobble)">
+    <!-- A quiet patch of ground. -->
+    <path class="fine" d="M69 203Q111 202 138 203M170 203Q214 202 252 203"/>
+
+    <!-- Thinking: a small, open brain diagram. -->
+    <g class="thought">
+      <path class="paper" d="M82 56Q80 45 93 43Q100 34 112 40Q126 36 132 47Q143 51 138 64Q143 75 131 80Q125 89 112 84L101 92L103 84Q88 86 84 75Q75 68 82 56Z"/>
+      <path d="M109 51Q102 45 98 52Q90 51 91 59Q85 66 93 70Q92 78 102 77Q108 82 110 74L110 55"/>
+      <path d="M115 51Q122 46 126 53Q133 54 130 62Q137 68 128 72Q128 80 120 77Q114 81 114 72L114 56"/>
+      <path class="fine" d="M98 53Q102 56 99 61M91 61Q99 60 103 66M96 73Q98 68 104 71M124 54Q120 58 124 62M131 65Q123 64 121 69M118 73Q122 70 127 73"/>
+    </g>
+    <path class="fine" d="M125 94q2-3 4-1q2 2-1 4q-3 1-3-3ZM138 99q1-2 3 0q0 2-2 2"/>
+
+    <!-- Rear leg: two open ink strokes and a planted shoe. -->
+    <path class="paper" d="M151 139Q142 155 126 170Q113 180 101 192L107 196Q123 183 138 178Q155 163 164 148"/>
+    <path class="paper" d="M101 190Q98 192 95 194L85 196Q81 198 83 201Q96 203 109 200L108 195"/>
+
+    <!-- Front leg and the planted forward foot. -->
+    <path class="paper" d="M164 140Q181 153 190 169Q190 183 194 195L201 194Q202 178 199 165Q190 146 178 137"/>
+    <path class="paper" d="M194 193L192 199Q196 202 205 201L220 201Q223 198 217 196L202 192"/>
+    <path class="fine" d="M199 196l5 1m-2-3 5 1"/>
+
+    <!-- Relaxed arm, curved and open at the hand. -->
+    <path class="paper" d="M148 105Q136 113 130 125Q122 132 118 139Q117 143 120 144"/>
+    <path d="M152 111Q144 119 136 130Q128 137 124 143"/>
+
+    <!-- Muted indigo sports shirt, hem following the stance. -->
+    <path fill="#78868f" d="M147 101Q155 97 166 100Q176 102 181 110L175 119L172 130Q177 136 181 141Q167 147 151 141L145 130L148 116L142 113Z"/>
+    <path class="fine" d="M155 105Q160 108 166 104M153 134Q159 136 164 135"/>
+
+    <!-- Faceless head and short, open neck. -->
+    <path class="paper" d="M155 91L154 101M163 92L164 101"/>
+    <path class="paper" d="M150 77Q149 68 157 66Q167 65 171 75L173 83Q171 93 163 95Q154 93 152 86Z"/>
+    <path fill="#1c1c1c" stroke-width="1.4" d="M150 80Q146 70 154 66Q162 61 168 69L171 76Q164 75 160 71Q156 77 150 80Z"/>
+
+    <!-- Strength: a bent arm curls one compact dumbbell. -->
+    <g class="lift">
+      <path class="paper" d="M177 108Q186 110 194 121Q198 124 201 118L207 102"/>
+      <path d="M176 115Q186 124 193 130Q201 134 206 123L213 105"/>
+      <path class="paper" d="M206 104Q204 99 208 97Q212 95 215 99L215 105"/>
+      <path d="M198 98L226 106"/>
+      <path fill="#78868f" d="M197 88Q199 87 202 89L198 106Q195 107 193 104Z"/>
+      <path fill="#78868f" d="M225 96Q228 95 230 98L226 115Q223 117 221 113Z"/>
+      <path class="fine" d="M200 94l-3 10M227 102l-2 9"/>
+    </g>
+
+    <!-- A ball gives the two abilities one sporting context. -->
+    <g>
+      <path fill="#c7a46a" d="M252 187Q252 201 239 202Q225 202 224 189Q223 175 237 174Q250 173 252 187Z"/>
+      <path class="fine" d="M235 183l8-1 4 7-5 7-8-2-3-7ZM235 183l-3-8M243 182l5-3M247 189l5 1M242 196l1 5M234 194l-6 3M231 187l-7-1"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240">
+  <rect width="320" height="240" fill="#fdfcf8"/>
+  <style>
+    .person {
+      transform-box: fill-box;
+      transform-origin: 50% 100%;
+      animation: sigh 5s ease-in-out infinite;
+    }
+    .bus {
+      transform-box: fill-box;
+      transform-origin: 50% 100%;
+      animation: depart 6s ease-in-out infinite;
+    }
+    .marks {
+      transform-box: fill-box;
+      transform-origin: 50% 80%;
+      animation: frustration 5s ease-in-out infinite;
+    }
+    @keyframes sigh {
+      0%, 18%, 100% { transform: rotate(0deg); }
+      35%, 48% { transform: rotate(-3deg); }
+      65%, 80% { transform: rotate(1deg); }
+    }
+    @keyframes depart {
+      0%, 12%, 100% { transform: translateX(0); }
+      42%, 72% { transform: translateX(9px); }
+    }
+    @keyframes frustration {
+      0%, 15%, 85%, 100% { opacity: .25; transform: translateY(1px); }
+      30%, 55% { opacity: 1; transform: translateY(-2px); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important }
+    }
+  </style>
+  <defs>
+    <filter id="ink" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency=".065" numOctaves="2" seed="8" result="grain"/>
+      <feDisplacementMap in="SourceGraphic" in2="grain" scale=".45" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+  </defs>
+
+  <g fill="none" stroke="#1c1c1c" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" filter="url(#ink)">
+    <!-- A quiet curb and the stop just missed. -->
+    <path d="M41 199 Q150 197 284 199" stroke-width=".8"/>
+    <path d="M53 185 Q54 135 53 82"/>
+    <path d="M44 185 Q53 183 62 185" stroke-width="1"/>
+    <path d="M44 58 Q53 55 63 58 L63 81 Q53 84 44 81 Z" fill="#fdfcf8"/>
+    <g stroke-width=".8">
+      <path d="M48 64 Q53 63 59 64 L59 73 L48 73 Z"/>
+      <path d="M48 68 L59 68 M50 76 L50 77 M57 76 L57 77"/>
+    </g>
+
+    <!-- The bus is already pulling away. -->
+    <g class="bus">
+      <path d="M174 92 Q173 79 186 78 L259 78 Q273 79 275 93 L278 162 Q277 170 267 170 L183 170 Q174 169 174 161 Z" fill="#fdfcf8"/>
+      <path d="M175 140 Q225 142 277 139 L278 158 L175 159 Z" fill="#a9b5b0" stroke="none"/>
+      <path d="M175 140 Q224 142 277 139" stroke-width="1"/>
+      <path d="M184 90 Q183 88 188 88 L208 88 L208 119 L184 119 Z"/>
+      <path d="M216 88 L238 88 L239 119 L216 119 Z"/>
+      <path d="M246 88 L262 88 Q266 89 267 95 L269 119 L247 119 Z"/>
+      <path d="M184 124 L208 124 L209 159 L184 159 Z" stroke-width="1"/>
+      <path d="M196 125 L196 158 M201 140 L204 140" stroke-width=".8"/>
+      <path d="M218 150 Q236 151 254 150" stroke-width=".8"/>
+      <path d="M175 150 L180 150 L180 156 L175 156" fill="#1c1c1c" stroke-width=".8"/>
+      <path d="M270 149 L277 149 L277 155 L271 155" stroke-width="1"/>
+      <path d="M178 164 Q225 166 275 163" stroke-width="1"/>
+      <path d="M192 169 C192 155 209 155 209 169 C209 183 192 183 192 169 Z" fill="#fdfcf8"/>
+      <path d="M251 169 C251 155 268 155 268 169 C268 183 251 183 251 169 Z" fill="#fdfcf8"/>
+      <path d="M198 169 C198 165 203 165 203 169 C203 174 198 174 198 169 Z" stroke-width=".8"/>
+      <path d="M257 169 C257 165 262 165 262 169 C262 174 257 174 257 169 Z" stroke-width=".8"/>
+    </g>
+
+    <!-- Open ink strokes, a faceless head, and an unmistakable "oh, come on". -->
+    <g class="person">
+      <path d="M102 145 Q102 163 98 178 L96 191 M108 146 Q109 165 104 180 L102 191" fill="#fdfcf8"/>
+      <path d="M113 146 Q116 162 122 175 L128 188 M119 145 Q123 162 128 173 L134 186" fill="#fdfcf8"/>
+      <path d="M96 191 Q91 193 88 196 Q95 198 103 196 L103 192" fill="#fdfcf8"/>
+      <path d="M128 188 L130 194 Q137 195 143 192 Q140 189 134 186" fill="#fdfcf8"/>
+
+      <path d="M102 111 Q94 106 89 98 Q87 94 91 89 L100 81 M106 107 Q100 101 95 96 L104 85" fill="#fdfcf8"/>
+      <path d="M100 81 Q103 77 107 78 M104 85 Q108 82 109 79" stroke-width="1.4"/>
+
+      <path d="M119 112 Q130 116 138 110 L148 100 M120 119 Q131 124 141 116 L151 105" fill="#fdfcf8"/>
+      <path d="M148 100 L149 95 M149 102 L154 97 M151 105 Q157 104 159 100" stroke-width="1.4"/>
+
+      <path d="M108 103 L108 111 M114 102 L115 111" stroke-width="1.4"/>
+      <path d="M103 109 Q109 112 117 109 Q122 121 122 145 Q111 150 99 145 Q101 126 99 116 Z" fill="#a9b5b0"/>
+      <path d="M103 135 Q111 137 120 135" stroke-width=".8"/>
+      <path d="M107 83 C99 84 100 98 106 102 C112 107 120 100 120 91 C119 84 114 81 107 83 Z" fill="#fdfcf8"/>
+      <path d="M102 91 Q98 82 106 80 Q116 77 120 86 Q113 84 109 88" fill="#1c1c1c" stroke-width="1.4"/>
+      <path d="M104 99 Q106 101 108 101" stroke-width=".8"/>
+    </g>
+
+    <!-- A bag set down after the failed dash. -->
+    <path d="M145 178 Q152 175 161 177 L165 194 Q154 197 143 194 Z" fill="#fdfcf8"/>
+    <path d="M148 177 Q146 166 152 166 Q159 165 159 177" stroke-width="1.4"/>
+    <path d="M148 184 Q154 185 160 183" stroke-width=".8"/>
+
+    <g class="marks" stroke-width="1.4">
+      <path d="M90 75 Q87 71 86 67"/>
+      <path d="M105 70 Q104 65 106 61"/>
+      <path d="M121 74 Q124 69 128 67"/>
+    </g>
+  </g>
+</svg>

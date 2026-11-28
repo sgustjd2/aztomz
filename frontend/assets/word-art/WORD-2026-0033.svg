@@ -1,0 +1,162 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240">
+  <rect width="320" height="240" fill="#fdfcf8"/>
+  <style>
+    .breeze {
+      transform-box: fill-box;
+      transform-origin: 54% 70%;
+      animation: breeze 7s ease-in-out infinite;
+    }
+    .typing {
+      transform-box: fill-box;
+      transform-origin: 5% 10%;
+      animation: typing 4.8s ease-in-out infinite;
+    }
+    .signal {
+      transform-box: fill-box;
+      transform-origin: 50% 100%;
+      animation: signal 6s ease-in-out infinite;
+    }
+    @keyframes breeze {
+      0%, 100% { transform: rotate(-2deg); }
+      50% { transform: rotate(3deg); }
+    }
+    @keyframes typing {
+      0%, 24%, 48%, 72%, 100% { transform: rotate(0deg); }
+      12%, 36% { transform: rotate(-2deg); }
+      60% { transform: rotate(-1deg); }
+    }
+    @keyframes signal {
+      0%, 100% { opacity: .45; }
+      40%, 70% { opacity: 1; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important }
+    }
+  </style>
+
+  <g fill="none" stroke="#1c1c1c" stroke-width="1.6"
+     stroke-linecap="round" stroke-linejoin="round">
+    <!-- A little patch of ground, with room beyond it. -->
+    <path d="M45 201 Q92 199 121 201 M137 202 Q203 200 276 202"
+          stroke-width=".8"/>
+    <path d="M60 207 Q67 206 73 207 M244 209 l9 -1"
+          stroke-width=".8"/>
+
+    <!-- A palm marks an office that can be anywhere. -->
+    <path d="M253 198 Q261 155 258 86 Q257 78 258 72
+             M260 198 Q268 146 262 85 Q261 77 260 72"
+          fill="#fdfcf8"/>
+    <path d="M258 177 l5 -2 M260 157 l5 -2 M261 137 l4 -2
+             M260 116 l4 -1 M259 96 l4 -1"
+          stroke-width=".8"/>
+    <g class="breeze">
+      <path d="M259 74 Q237 53 216 72 Q238 62 257 77
+               M259 74 Q240 75 229 96 Q245 80 259 79
+               M259 74 Q254 49 236 45 Q252 58 259 75
+               M260 74 Q272 50 289 57 Q272 59 261 77
+               M261 76 Q282 66 294 85 Q278 75 262 79
+               M261 78 Q280 82 283 104 Q274 87 261 81"/>
+      <path d="M258 75 Q245 66 230 69 M261 77 Q277 70 286 78"
+            stroke-width=".8"/>
+    </g>
+
+    <!-- A small travel case doubles as a seat. -->
+    <path d="M112 156 Q111 151 117 150 L155 150
+             Q161 150 161 156 L161 189 Q161 194 155 194
+             L117 194 Q112 194 112 189 Z"
+          fill="#ba795f"/>
+    <path d="M125 150 L125 144 Q125 141 129 141
+             L142 141 Q146 141 146 145 L146 150"/>
+    <path d="M120 157 Q119 173 120 187
+             M153 157 Q154 174 153 187"
+          stroke-width=".9"/>
+    <path d="M111 165 l6 0 M156 165 l6 0
+             M111 181 l6 0 M156 181 l6 0"
+          stroke-width=".8"/>
+    <path d="M119 195 l0 4 M154 195 l0 4" stroke-width="2.2"/>
+
+    <!-- Far leg: two open ink strokes. -->
+    <path d="M145 140 Q161 140 175 149
+             Q177 163 174 180 L172 192
+             M151 149 Q162 149 168 154
+             Q169 169 166 189"
+          fill="#fdfcf8"/>
+    <path d="M166 190 Q171 189 174 192 L179 196
+             Q173 198 163 196 L164 193"
+          fill="#fdfcf8"/>
+
+    <!-- Near leg and a foot resting on the ground. -->
+    <path d="M143 142 Q160 140 181 146
+             Q185 148 185 154 L190 190
+             M147 151 Q165 151 177 154
+             Q177 173 183 192"
+          fill="#fdfcf8"/>
+    <path d="M183 190 Q188 189 192 192
+             Q195 195 201 196 Q202 199 197 199
+             L182 198 Q180 196 182 193"
+          fill="#fdfcf8"/>
+    <path d="M185 195 l7 1" stroke-width=".8"/>
+
+    <!-- Loose shirt; the figure has no face. -->
+    <path d="M135 99 Q126 102 125 114
+             Q124 130 129 146
+             Q141 151 153 146
+             Q149 131 151 116
+             Q151 105 144 101"
+          fill="#fdfcf8"/>
+    <path d="M130 115 Q128 129 132 139
+             M135 145 Q143 147 149 145"
+          stroke-width=".8"/>
+    <path d="M137 95 L136 102 M143 96 L144 102"/>
+    <path d="M137 76 Q144 72 149 78
+             Q153 84 149 93 Q146 98 140 95
+             Q134 92 134 85 Q133 79 137 76"
+          fill="#fdfcf8"/>
+    <path d="M134 86 Q130 77 136 73
+             Q144 68 150 76 L150 81
+             Q144 81 141 77 Q139 83 134 86"
+          fill="#1c1c1c" stroke-width="1.4"/>
+    <path d="M130 74 Q125 71 126 67 Q131 64 134 70"
+          fill="#1c1c1c" stroke-width="1.4"/>
+
+    <!-- Open laptop, with one quiet indigo accent. -->
+    <path d="M174 145 L185 112 Q186 110 189 110
+             L227 111 Q230 111 229 114 L219 146 Z"
+          fill="#788b9a"/>
+    <path d="M180 140 L188 116 L222 117 L214 141 Z"
+          fill="#fdfcf8" stroke-width=".9"/>
+    <path d="M160 146 Q188 145 219 146
+             L226 150 Q198 153 164 151 Z"
+          fill="#fdfcf8"/>
+    <path d="M178 148 L207 148 M185 150 L197 150"
+          stroke-width=".7"/>
+
+    <!-- Forearm gently shifts while working. -->
+    <g class="typing">
+      <path d="M145 109 Q151 114 153 126
+               Q165 132 179 139
+               M139 113 Q144 122 148 131
+               Q162 138 176 143"
+            fill="#fdfcf8"/>
+      <path d="M178 139 Q182 138 187 141
+               M176 143 Q182 145 188 143"/>
+      <path d="M143 116 l5 -2" stroke-width=".8"/>
+    </g>
+
+    <!-- Connection, wherever the suitcase lands. -->
+    <g class="signal">
+      <path d="M190 66 Q202 55 214 66
+               M195 72 Q202 65 209 72"
+            stroke-width="1.4"/>
+      <path d="M201 78 Q202 77 203 78" stroke-width="2.2"/>
+    </g>
+
+    <!-- A cup set down beside the office. -->
+    <path d="M77 183 L91 183 L90 196
+             Q84 200 78 196 Z"
+          fill="#fdfcf8"/>
+    <path d="M91 185 Q99 182 98 188 Q98 193 91 192"/>
+    <path d="M79 186 Q84 187 89 186" stroke-width=".8"/>
+    <path d="M74 201 Q84 203 95 201" stroke-width=".8"/>
+  </g>
+</svg>

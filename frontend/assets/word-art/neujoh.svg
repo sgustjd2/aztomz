@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240">
+  <rect width="320" height="240" fill="#fdfcf8"/>
+  <style>
+    .ink{fill:none;stroke:#1c1c1c;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+    .paper{fill:#fdfcf8}
+    .detail{stroke-width:.8}
+    .rest{transform-box:fill-box;transform-origin:50% 95%;animation:rest 6s ease-in-out infinite}
+    .steam{transform-box:fill-box;transform-origin:50% 100%;animation:steam 6s ease-in-out infinite}
+    .leaves{transform-box:fill-box;transform-origin:50% 100%;animation:leaves 7s ease-in-out infinite}
+    @keyframes rest{
+      0%,100%{transform:translateY(0) rotate(0)}
+      50%{transform:translateY(.7px) rotate(.3deg)}
+    }
+    @keyframes steam{
+      0%,100%{opacity:.25;transform:translateY(1px)}
+      50%{opacity:.65;transform:translateY(-3px)}
+    }
+    @keyframes leaves{
+      0%,100%{transform:rotate(-1deg)}
+      50%{transform:rotate(1.5deg)}
+    }
+    @media (prefers-reduced-motion: reduce){ * { animation: none !important } }
+  </style>
+  <g class="ink">
+    <!-- A quiet patch of floor. -->
+    <path class="detail" d="M49 210q45-1 86 0m24 0q55 1 111-.5"/>
+
+    <!-- Low, softly upholstered reading chair. -->
+    <path class="paper" d="M75 160q-11-22-13-48-1-12 9-14l15-2q9 0 13 12l16 44 32 3q12 1 12 13l-1 13q-1 7-12 7l-56-1q-12-1-15-12Z"/>
+    <path fill="#d9b67c" d="M82 153q25-4 53 2l14 2q6 1 6 8l-1 9q-1 5-8 5l-53-1q-10-1-11-9Z"/>
+    <path class="paper" d="M72 141q-4-6-10-3t-3 11l15 27q3 5 10 5h59q10 0 10-7t-10-7l-55-1Z"/>
+    <path d="m83 187-6 21m15-20-4 20m54-20 8 20"/>
+    <path class="detail" d="M71 106q2 19 10 35m9 34q25 2 50 0"/>
+
+    <!-- An unhurried sitter; open strokes leave the limbs airy. -->
+    <g class="rest">
+      <path class="paper" d="M111 72q-4-8 0-15 4-8 13-5 8 2 8 10l-1 8q-2 7-9 7-7 0-11-5Z"/>
+      <path fill="#1c1c1c" stroke-width="1.4" d="M109 65q-5-8 0-14 5-7 14-4 9 2 10 10-9 1-15-4-1 8-9 12Z"/>
+      <path d="m116 77-2 8m12-9 1 8"/>
+      <path class="paper" d="M113 83q-11 2-14 14l-8 34q-2 10 6 16 15 7 34 3l8-12-9-43q-2-11-17-12Z"/>
+      <path class="detail" d="M108 87q7 6 16 0m-23 42q4 4 10 4m-13 10q14 4 27 2"/>
+
+      <!-- Bent knees, loose trousers, resting shoes. -->
+      <path class="paper" d="M106 149q12-3 23-1l24 11q6 3 8 10l7 27-10 2-12-27-24-5q-15 0-22-8"/>
+      <path class="paper" d="M123 151q8-3 14 0l30 7q7 1 9 9l9 24-10 4-13-24-24-2"/>
+      <path class="detail" d="m153 165 8 5m8-6 5 6"/>
+      <path class="paper" d="m157 195 10-2 3 8 8 3q4 3 1 5l-18-1q-3-3-4-13Z"/>
+      <path class="paper" d="m174 192 10-4 4 7 9 2q5 2 3 5l-18 3q-5-3-8-13Z"/>
+      <path class="detail" d="m163 204 13 2m7-5 13-2"/>
+
+      <!-- One arm rests; the other cradles a warm cup. -->
+      <path d="M102 100q-6 12-8 24-1 4 4 7l20 9"/>
+      <path d="M108 103q-5 11-6 20l18 10"/>
+      <path d="M119 133q5-1 9 3m-10 4q6 3 10 0"/>
+      <path class="paper" d="M129 99q7 10 13 20l23-4"/>
+      <path d="M123 103q7 15 15 24 3 3 8 1l21-7"/>
+      <path d="M165 115q5-4 10-1m-8 7q6 1 9-4"/>
+
+      <path class="paper" d="M167 103q10-1 21 0l-2 13q-8 5-16 0Z"/>
+      <path d="M188 105q9-2 8 4t-9 5"/>
+      <path class="detail" d="M171 106q6 1 13 0"/>
+      <g class="steam detail" opacity=".55">
+        <path d="M174 97q-5-4-1-8t0-7"/>
+        <path d="M182 95q4-4 1-8t1-8"/>
+      </g>
+    </g>
+
+    <!-- A companion plant, with a little room to sway. -->
+    <g class="leaves">
+      <path d="M238 182q-1-25 2-49m-2 33-14-16m15 5 15-17m-14 7-9-16"/>
+      <path fill="#a9b6a0" d="M239 139q-10-8-7-20 12 4 7 20Z"/>
+      <path fill="#a9b6a0" d="M233 157q-16 1-20-12 14-4 20 12Z"/>
+      <path fill="#a9b6a0" d="M242 152q0-16 15-19 3 13-15 19Z"/>
+      <path class="paper" d="M238 172q-15 0-20-11 13-6 20 11Z"/>
+      <path class="paper" d="M239 168q5-14 20-12-2 13-20 12Z"/>
+      <path class="detail" d="m235 129 3 7m-18 13 9 5m17-9 7-8"/>
+    </g>
+    <path class="paper" d="M224 180q15-2 29 0l-4 25q-11 4-21 0Z"/>
+    <path class="paper" d="M222 179q16-2 33 0l-1 6q-15 2-31 0Z"/>
+    <path class="detail" d="m231 190 1 11"/>
+  </g>
+</svg>

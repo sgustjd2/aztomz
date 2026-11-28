@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240">
+  <rect width="320" height="240" fill="#fdfcf8"/>
+  <style>
+    .ink{stroke:#1c1c1c;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;fill:none}
+    .paper{fill:#fdfcf8}
+    .detail{stroke-width:.8}
+    .reader{transform-box:fill-box;transform-origin:50% 95%;animation:breathe 6s ease-in-out infinite}
+    .leaves{transform-box:fill-box;transform-origin:50% 100%;animation:sway 7s ease-in-out infinite}
+    .steam{transform-box:fill-box;transform-origin:50% 100%;animation:drift 5s ease-in-out infinite}
+    @keyframes breathe{
+      0%,100%{transform:translateY(0) rotate(0deg)}
+      50%{transform:translateY(-1.1px) rotate(-.5deg)}
+    }
+    @keyframes sway{
+      0%,100%{transform:rotate(-1deg)}
+      50%{transform:rotate(2deg)}
+    }
+    @keyframes drift{
+      0%,100%{transform:translateY(1px) scaleX(.95);opacity:.35}
+      50%{transform:translateY(-3px) scaleX(1.08);opacity:.7}
+    }
+    @media (prefers-reduced-motion: reduce){ * { animation: none !important } }
+  </style>
+  <g class="ink">
+    <!-- A quiet patch of floor. -->
+    <path class="detail" d="M57 205q44-2 74 0m40 0q49-2 90 0" opacity=".35"/>
+
+    <!-- The phone rests face down, well away from the reader. -->
+    <g transform="rotate(-12 72 179)">
+      <path fill="#d9dfda" d="M59 159q0-3 3-3h19q3 0 3 3v36q0 3-3 3H62q-3 0-3-3Z"/>
+      <path class="detail" d="M64 162h5v8h-5Z"/>
+      <circle cx="66.5" cy="164.5" r=".8" fill="#1c1c1c" stroke="none"/>
+      <circle cx="66.5" cy="167.5" r=".8" fill="#1c1c1c" stroke="none"/>
+      <path class="detail" d="M64 193q7 .5 15 0"/>
+    </g>
+
+    <!-- A cup with slow, irregular steam. -->
+    <ellipse class="detail" cx="100" cy="203" rx="15" ry="2.5"/>
+    <path class="paper" d="M89 186q0 15 5 15h10q5 0 5-15Z"/>
+    <path d="M109 189q10-2 8 5-1 4-9 3"/>
+    <path class="detail" d="M89 186q10-3 20 0"/>
+    <g class="steam detail" opacity=".5">
+      <path d="M96 180c-5-6 5-9 1-15"/>
+      <path d="M103 179c5-5-4-8 0-13"/>
+    </g>
+
+    <!-- Crossed legs: curved, open edges and loose cloth. -->
+    <path fill="#d9dfda" d="M137 157c-12 5-24 17-23 26 1 8 24 12 43 10 18 5 43 3 45-6 2-8-15-23-28-29"/>
+    <path d="M139 166c-9 7-15 13-13 16 5 5 23 6 38 8"/>
+    <path d="M174 166c12 7 20 15 15 18-5 3-17 3-27 2"/>
+    <path class="paper" d="M160 188c8-2 16-2 23 1q6 3 2 6c-7 2-17 0-24-2"/>
+    <path class="detail" d="M176 190l5 2m-10-2 5 3"/>
+    <path d="M135 190q-8 2-12-1"/>
+    <path class="detail" d="M132 174q6 1 10 5m32-7-7 7"/>
+
+    <g class="reader">
+      <!-- A soft shirt follows the seated posture. -->
+      <path class="paper" d="M140 102q-11 3-14 16l-3 19 10 5 1 20q20 9 43-1l-1-22 10-5-6-22q-3-8-15-10"/>
+      <path class="detail" d="M136 147q-1 7 1 12m33-12 1 11m-31 2q15 4 29 0"/>
+      <path d="M147 93l-1 11m13-12 2 11"/>
+      <path class="detail" d="M143 104q10 7 20-1"/>
+
+      <!-- Faceless head, bowed toward the book. -->
+      <path class="paper" d="M145 72c6-6 18-3 21 5l1 11q-1 10-10 12c-8 0-13-6-14-13"/>
+      <path fill="#1c1c1c" stroke-width="1.4" d="M143 86c-6-5-5-15 1-20 7-6 19-3 23 5l1 9q-7-1-11-8-2 9-14 11Z"/>
+      <path class="paper" d="M143 84q-5-3-5 2t6 6"/>
+      <path class="detail" d="M141 86l2 2"/>
+      <path class="detail" d="M146 68q7-3 13 1" stroke="#fdfcf8"/>
+
+      <!-- Two open strokes per forearm. -->
+      <path d="M127 132q2 13 15 18"/>
+      <path d="M134 130q1 9 12 13"/>
+      <path d="M179 130q-2 10-13 14"/>
+      <path d="M185 133q-3 14-16 18"/>
+
+      <!-- An open book, with paper rather than lettering. -->
+      <path class="paper" d="M136 133q10-2 21 5 10-7 22-5l-3 26q-10-2-19 3-8-5-18-4Z"/>
+      <path d="M157 138q-1 12 0 24"/>
+      <path class="detail" d="M141 138q6 0 11 3m-10 2q5 0 10 3m-9 2 8 3m12-10q5-3 10-3m-10 8 9-3m-9 8 8-3"/>
+      <path class="paper" d="M140 145q-5-4-7-1-2 3 3 6l6 2"/>
+      <path class="paper" d="M174 145q5-4 7-1 2 3-3 6l-5 2"/>
+    </g>
+
+    <!-- A small living thing, moving only with the air. -->
+    <g class="leaves">
+      <path d="M239 178q-3-22 0-43m0 23q-8-6-12-17m12 14q8-7 11-16"/>
+      <path fill="#d9dfda" d="M239 144c-8-9-5-19 1-24 5 8 6 17-1 24Z"/>
+      <path fill="#d9dfda" d="M230 150c-10 0-15-7-15-15 9 1 15 6 15 15Z"/>
+      <path fill="#d9dfda" d="M244 150c0-10 6-15 15-16-1 9-6 15-15 16Z"/>
+      <path class="detail" d="M239 137l1-10m-14 18-6-6m29 6 5-6"/>
+    </g>
+    <path class="paper" d="M225 177q14 3 28 0l-4 24q-10 4-20 0Z"/>
+    <path d="M224 176q15-3 30 0l-1 5q-14 3-28 0Z" fill="#d9dfda"/>
+    <path class="detail" d="M232 187l1 10"/>
+  </g>
+</svg>

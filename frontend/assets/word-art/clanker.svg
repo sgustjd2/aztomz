@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240">
+  <rect width="320" height="240" fill="#fdfcf8"/>
+  <style>
+    .ink{fill:none;stroke:#1c1c1c;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+    .paper{fill:#fdfcf8}
+    .detail{stroke-width:.85}
+    .robot{transform-box:fill-box;transform-origin:50% 90%;animation:confused 6s ease-in-out infinite}
+    .answer{transform-box:fill-box;transform-origin:20% 100%;animation:babble 6s ease-in-out infinite}
+    .steam{transform-box:fill-box;transform-origin:50% 100%;animation:steam 6s ease-in-out infinite}
+    @keyframes confused{
+      0%,25%,100%{transform:rotate(-5deg)}
+      38%,53%{transform:rotate(7deg)}
+      65%,80%{transform:rotate(-2deg)}
+    }
+    @keyframes babble{
+      0%,25%,100%{transform:translateY(0) rotate(-1deg)}
+      45%,65%{transform:translateY(-3px) rotate(1deg)}
+    }
+    @keyframes steam{
+      0%,100%{transform:translateY(2px);opacity:.25}
+      50%{transform:translateY(-3px);opacity:.7}
+    }
+    @media (prefers-reduced-motion: reduce){ * { animation: none !important } }
+  </style>
+  <defs>
+    <filter id="ink-wobble" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency=".055" numOctaves="2" seed="8" result="grain"/>
+      <feDisplacementMap in="SourceGraphic" in2="grain" scale=".45" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+  </defs>
+
+  <g class="ink" filter="url(#ink-wobble)">
+    <!-- A quiet desk, with plenty of paper around it. -->
+    <path d="M45 184 Q158 182 278 184 M62 186 L60 213 M261 186 L263 213"/>
+    <path class="detail" d="M46 188 Q154 186 277 188"/>
+
+    <!-- Faceless reader, one hand pressed to their forehead. -->
+    <path class="paper" d="M83 145 Q74 148 72 161 L68 182 L117 182
+      Q116 162 108 150 L101 145"/>
+    <path d="M84 142 L83 150 M98 141 L100 149"/>
+    <path class="paper" d="M81 115 Q80 105 88 101 Q99 98 105 108
+      Q109 119 102 132 Q98 141 90 139 Q82 136 81 125"/>
+    <path d="M81 119 Q76 106 85 100 Q98 93 106 104
+      M80 113 Q87 112 89 102"/>
+    <path class="detail" d="M78 155 Q87 159 99 154 M77 166 L74 178"/>
+    <!-- Open paired arm strokes; the hand covers the brow. -->
+    <path class="paper" d="M104 153 Q120 157 128 145 Q120 129 106 117
+      L102 122 Q113 135 117 143 Q110 146 104 145"/>
+    <path d="M106 117 Q102 111 96 109
+      M102 122 Q96 118 94 113"/>
+    <path class="detail" d="M101 115 L97 112"/>
+    <path class="paper" d="M78 157 Q75 168 89 173 L132 177
+      L133 172 L94 166 Q88 164 89 158"/>
+    <path d="M132 172 Q139 171 143 175 M132 177 L140 177"/>
+    <path d="M74 192 Q91 194 112 192 M78 194 L76 212"/>
+
+    <!-- The chatbot lives in a laptop. -->
+    <path class="paper" d="M158 132 Q158 129 162 129 L224 130
+      Q228 130 227 134 L222 174 L153 174 Z"/>
+    <path class="detail" d="M163 135 L221 136 L217 169 L159 169 Z"/>
+    <path class="paper" d="M153 174 L222 174 L239 181
+      Q240 184 235 184 L143 184 Q139 183 142 180 Z"/>
+    <path class="detail" d="M158 177 L220 177 M180 180 L199 180"/>
+
+    <g class="robot">
+      <path d="M181 160 L180 165 L196 165 L195 160"/>
+      <path fill="#b5c4b9" d="M172 145 Q172 141 176 141 L202 142
+        Q206 142 205 146 L204 157 Q204 161 200 161
+        L176 160 Q172 160 172 156 Z"/>
+      <path d="M188 141 L189 136"/>
+      <circle class="paper" cx="189" cy="134" r="2"/>
+      <path d="M169 147 L169 154 M208 147 L208 154"/>
+      <circle cx="181" cy="149" r="1.2" fill="#1c1c1c" stroke="none"/>
+      <circle cx="197" cy="150" r="1.2" fill="#1c1c1c" stroke="none"/>
+      <path class="detail" d="M182 155 L186 154 L189 156 L193 154 L197 155"/>
+    </g>
+
+    <!-- A confidently absurd answer: a fish on wheels. -->
+    <g class="answer">
+      <path class="paper" d="M166 58 Q163 51 175 49
+        Q210 45 247 50 Q260 52 260 65 L258 94
+        Q257 104 245 105 L209 105 L200 117 L199 105
+        L175 105 Q164 104 164 94 Z"/>
+      <path fill="#b5c4b9" d="M191 77 Q202 62 223 74
+        L236 68 L233 80 L237 89 L223 84
+        Q203 95 191 77 Z"/>
+      <path class="detail" d="M211 71 L208 65 L219 71
+        M220 75 Q217 79 220 84"/>
+      <circle cx="199" cy="76" r="1" fill="#1c1c1c" stroke="none"/>
+      <path class="detail" d="M194 81 L199 81 M203 88 L201 93 M222 87 L224 93"/>
+      <circle class="paper" cx="201" cy="95" r="5"/>
+      <circle class="paper" cx="225" cy="95" r="5"/>
+      <path class="detail" d="M198 95 L204 95 M201 92 L201 98
+        M222 95 L228 95 M225 92 L225 98"/>
+    </g>
+
+    <!-- Forgotten tea. -->
+    <path class="paper" d="M246 166 L263 166 L262 179
+      Q254 183 247 179 Z"/>
+    <path d="M264 169 Q274 168 270 175 Q268 178 263 176"/>
+    <path class="detail" d="M248 169 Q254 171 261 169"/>
+    <g class="steam detail">
+      <path d="M251 160 Q247 156 251 152 Q254 149 251 146"/>
+      <path d="M258 160 Q262 156 258 152"/>
+    </g>
+  </g>
+</svg>

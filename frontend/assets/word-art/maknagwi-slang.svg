@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240">
+  <rect width="320" height="240" fill="#fdfcf8"/>
+  <style>
+    svg{color:#1c1c1c}
+    .ink{fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+    .fine{stroke-width:.8}
+    .paper{fill:#fdfcf8}
+    .slump{transform-box:fill-box;transform-origin:28% 96%;animation:slump 6s ease-in-out infinite}
+    .leg{transform-box:fill-box;transform-origin:12% 8%;animation:idle 6s ease-in-out infinite}
+    .sigh{transform-box:fill-box;transform-origin:0% 50%;animation:sigh 6s ease-out infinite}
+    @keyframes slump{
+      0%,20%,100%{transform:rotate(0deg)}
+      48%,70%{transform:rotate(2deg)}
+    }
+    @keyframes idle{
+      0%,18%,75%,100%{transform:rotate(0deg)}
+      38%{transform:rotate(-5deg)}
+      52%{transform:rotate(-2deg)}
+    }
+    @keyframes sigh{
+      0%,28%,82%,100%{opacity:0;transform:translate(0,0)}
+      40%{opacity:.65}
+      68%{opacity:0;transform:translate(9px,-5px)}
+    }
+    @media (prefers-reduced-motion: reduce){ * { animation: none !important } }
+  </style>
+
+  <g class="ink">
+    <!-- The door is ready; its owner is not. -->
+    <path d="M211 203 Q212 125 211 40 Q238 39 267 40 L268 203"/>
+    <path d="M218 201 L218 47 Q239 46 260 47 L260 201" class="paper"/>
+    <path d="M224 57 Q237 56 254 57 L254 111 Q238 110 224 111 Z" class="fine"/>
+    <path d="M224 140 Q238 139 254 140 L254 190 L224 190 Z" class="fine"/>
+    <path d="M251 125 L243 125"/>
+    <path d="M250 124 L250 128" class="fine"/>
+    <path d="M206 204 Q235 202 273 204"/>
+    <path d="M59 205 Q111 203 182 205" class="fine"/>
+
+    <!-- A small chair. -->
+    <path d="M100 145 Q97 115 98 107 Q100 103 105 105 L111 145" class="paper"/>
+    <path d="M99 116 L106 117 M100 131 L108 132" class="fine"/>
+    <path d="M102 151 L98 202 M135 151 L140 202"/>
+    <path d="M100 180 Q118 178 138 181" class="fine"/>
+    <path d="M99 145 Q119 143 141 145 L143 151 Q122 153 101 151 Z" class="paper"/>
+
+    <!-- Far leg: two open pen strokes. -->
+    <path d="M119 141 Q130 151 146 154 Q147 169 142 190
+             M125 139 Q138 145 151 149 Q155 165 148 190" class="paper"/>
+    <path d="M142 189 Q141 193 142 197 Q150 199 163 197 Q164 194 157 193 L148 189" class="paper"/>
+    <path d="M143 195 Q152 196 160 195" class="fine"/>
+
+    <!-- Near leg hangs, with a tiny reluctant swing. -->
+    <g class="leg">
+      <path d="M128 141 Q143 146 159 150 Q166 152 164 160 L158 187
+               M133 137 Q148 140 164 145 Q173 149 170 160 L164 188" class="paper"/>
+      <path d="M158 186 Q155 190 157 194 Q165 198 178 196 Q181 193 173 191 L164 187" class="paper"/>
+      <path d="M158 192 Q166 195 175 194" class="fine"/>
+      <path d="M160 177 L166 178" class="fine"/>
+    </g>
+
+    <g class="slump">
+      <!-- The coat folds around a seated skeleton. -->
+      <path d="M135 94 Q126 96 124 109 Q120 122 112 136
+               Q114 143 127 145 Q141 147 151 140
+               L149 113 Q151 103 145 98 Z"
+            fill="#c5a17c"/>
+      <path d="M130 105 Q126 122 122 133 M123 136 Q134 140 143 138" class="fine"/>
+      <path d="M136 96 L133 108 L139 112 L143 100" class="fine"/>
+      <path d="M138 112 Q139 123 137 133" class="fine"/>
+      <path d="M140 120 L141 120 M139 128 L140 128" stroke-width="1.4"/>
+
+      <!-- Open neck, small faceless head, a loose cap. -->
+      <path d="M139 94 L140 88 M145 97 L147 88"/>
+      <path d="M141 72 Q148 69 153 74 Q157 79 152 87
+               Q149 92 143 88 Q138 84 138 78 Q138 74 141 72 Z" class="paper"/>
+      <path d="M137 76 Q135 66 143 65 Q152 64 155 74
+               Q147 71 137 76 Z" class="paper"/>
+      <path d="M150 73 Q157 71 162 75 Q159 77 152 76"/>
+
+      <!-- Sleeves and long arms sink onto the knees. -->
+      <path d="M132 101 Q138 101 143 112 L155 129
+               M128 106 Q132 119 148 134" class="paper"/>
+      <path d="M149 132 Q153 136 158 139 L166 141
+               M155 129 Q159 134 164 135 L169 138" class="paper"/>
+      <path d="M166 141 Q171 142 173 139 Q173 137 169 138"/>
+      <path d="M145 125 L152 121" class="fine"/>
+      <path d="M144 103 Q147 111 151 117 M150 120 L158 130" class="fine"/>
+
+      <g class="sigh fine">
+        <path d="M164 85 Q171 82 176 86 Q180 89 185 86"/>
+        <path d="M167 91 Q173 89 177 92"/>
+      </g>
+    </g>
+
+    <!-- Packed bag waiting beside the door. -->
+    <path d="M183 178 Q181 163 189 162 Q198 162 196 178
+             M187 177 Q186 167 190 167 Q194 167 192 177"/>
+    <path d="M177 177 Q189 175 201 178 L204 201
+             Q190 205 175 201 Z" class="paper"/>
+    <path d="M180 184 Q190 186 199 183 M180 197 Q189 199 199 197" class="fine"/>
+    <path d="M177 180 L175 198 M201 181 L203 198" class="fine"/>
+  </g>
+</svg>

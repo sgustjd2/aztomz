@@ -1,0 +1,131 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240">
+  <rect width="320" height="240" fill="#fdfcf8"/>
+  <style>
+    .ink{fill:none;stroke:#1c1c1c;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+    .paper{fill:#fdfcf8}
+    .detail{stroke-width:.85}
+    .heart{fill:#bf7773;stroke:#1c1c1c;stroke-width:1.4}
+    .love{transform-box:fill-box;transform-origin:center;animation:love 6s ease-in-out infinite}
+    .glint{transform-box:fill-box;transform-origin:center;animation:glint 6s ease-in-out infinite}
+    .flower{transform-box:fill-box;transform-origin:50% 100%;animation:sway 7s ease-in-out infinite}
+    @keyframes love{
+      0%,100%{transform:translateY(0) rotate(-4deg)}
+      45%,60%{transform:translateY(-4px) rotate(3deg)}
+    }
+    @keyframes glint{
+      0%,25%,100%{opacity:.35;transform:scale(.85)}
+      50%,65%{opacity:1;transform:scale(1)}
+    }
+    @keyframes sway{
+      0%,100%{transform:rotate(-2deg)}
+      50%{transform:rotate(3deg)}
+    }
+    @media (prefers-reduced-motion: reduce){ * { animation: none !important } }
+  </style>
+
+  <g class="ink">
+    <!-- A precious pose, kept inside a little block of ice. -->
+    <path d="M67 201 Q155 203 257 200" class="detail"/>
+    <path d="M143 185 Q188 187 232 184 L237 193 Q189 197 138 193Z" class="paper"/>
+
+    <path d="M150 51 Q189 48 226 52 Q231 53 231 60
+             L233 177 Q232 184 225 185
+             L150 185 Q143 184 143 177
+             L142 61 Q142 54 150 51Z"
+          fill="#dce9e8"/>
+
+    <path d="M154 58 Q187 56 222 59 L224 175 Q189 179 152 176Z"
+          class="paper" stroke-width=".85"/>
+
+    <!-- Faceless performer, frozen at the end of a graceful gesture. -->
+    <path d="M180 86 Q174 80 179 73 Q184 67 191 73
+             Q196 78 191 85 Q187 90 180 86Z" class="paper"/>
+    <path d="M177 78 Q175 70 183 68 Q191 66 195 75
+             Q189 75 185 71 Q182 77 177 78Z" fill="#1c1c1c" stroke-width="1.4"/>
+    <path d="M183 88 L182 94 M188 88 L189 94" class="detail"/>
+
+    <!-- Open paired arm strokes. -->
+    <path d="M178 97 Q166 92 161 81 Q158 75 156 70
+             M182 101 Q168 100 160 88 Q155 81 153 73"/>
+    <path d="M153 73 Q151 68 153 65 M156 70 Q158 66 156 63" class="detail"/>
+    <path d="M192 98 Q202 107 210 99 Q217 91 218 83
+             M191 104 Q203 114 214 103 Q220 96 222 85"/>
+    <path d="M218 83 Q216 79 219 77 M222 85 Q225 81 223 78" class="detail"/>
+
+    <!-- Legs beneath a lightly flared stage jacket. -->
+    <path d="M180 126 Q177 141 177 159 L175 167
+             M185 127 Q182 144 182 160 L180 169"/>
+    <path d="M190 127 Q195 139 203 148 L210 158
+             M195 124 Q201 136 207 144 L215 155"/>
+    <path d="M175 166 Q171 168 169 172 Q174 174 183 172 L181 167" class="paper"/>
+    <path d="M209 158 Q210 163 218 166 Q222 166 220 163 L215 155" class="paper"/>
+
+    <path d="M181 94 Q185 97 190 94
+             Q195 102 195 114 Q197 121 201 128
+             Q193 132 186 128 Q179 132 172 128
+             Q178 115 176 104Z" fill="#dce9e8"/>
+    <path d="M182 97 L186 105 L190 97
+             M186 105 Q184 116 186 128" class="detail"/>
+    <path d="M181 111 L181 114 M190 118 L190 121" class="detail"/>
+
+    <!-- Ice edges and small trapped frost marks. -->
+    <path d="M147 69 L148 91 M148 99 L148 109
+             M227 131 L228 165 M158 181 L176 182" stroke="#fdfcf8" stroke-width="2.2"/>
+    <path d="M149 55 L157 62 M224 56 L218 64
+             M146 176 L155 170 M229 177 L221 171" class="detail"/>
+    <g class="detail">
+      <path d="M207 65 L207 75 M202 68 L212 72 M202 72 L212 68"/>
+      <path d="M160 144 L160 154 M156 147 L164 151 M156 151 L164 147"/>
+    </g>
+
+    <!-- The admirer leans toward the preserved moment. -->
+    <path d="M102 121 Q96 115 100 107 Q104 100 112 104
+             Q119 108 116 116 Q112 123 105 122" class="paper"/>
+    <path d="M99 114 Q94 108 100 102 Q106 97 114 103
+             L116 108 Q109 106 106 102 Q104 110 99 114Z"
+          fill="#1c1c1c" stroke-width="1.4"/>
+    <path d="M104 122 L103 128 M110 122 L111 127" class="detail"/>
+
+    <path d="M99 163 Q97 177 95 190
+             M104 164 Q103 179 100 192"/>
+    <path d="M110 165 Q113 179 116 190
+             M115 162 Q118 177 121 190"/>
+    <path d="M95 190 Q91 191 89 195 Q96 197 102 194 L100 191" class="paper"/>
+    <path d="M116 190 L115 195 Q121 197 128 195 Q127 192 121 191" class="paper"/>
+
+    <path d="M102 127 Q108 125 113 129
+             Q116 140 118 163 Q107 169 94 163
+             Q98 148 97 135Z" class="paper"/>
+    <path d="M99 135 Q105 143 112 138 L119 130
+             M98 141 Q106 150 116 142 L123 134"/>
+    <path d="M119 130 Q120 125 123 126 Q126 128 123 134
+             M115 132 Q115 127 118 127" class="detail"/>
+    <path d="M100 156 Q107 158 113 156" class="detail"/>
+
+    <!-- A tiny offering beside the ice. -->
+    <path d="M246 181 Q242 187 244 198 Q249 201 254 198
+             Q256 187 252 181Z" fill="#dce9e8"/>
+    <path d="M245 182 Q249 184 253 182" class="detail"/>
+    <g class="flower">
+      <path d="M249 182 Q251 170 246 159" stroke-width="1.4"/>
+      <path d="M249 176 Q240 175 240 169 Q247 168 249 176Z" class="paper" stroke-width="1.4"/>
+      <path d="M247 160 Q240 164 238 159 Q235 155 241 153
+               Q238 147 243 146 Q247 144 249 150
+               Q254 145 257 150 Q260 155 253 157
+               Q253 163 247 160Z" fill="#bf7773" stroke-width="1.4"/>
+      <path d="M246 153 L248 156" class="detail"/>
+    </g>
+
+    <g class="love">
+      <path d="M119 98 Q108 91 113 86 Q117 82 121 87
+               Q125 81 129 85 Q135 91 119 98Z" class="heart"/>
+    </g>
+
+    <g class="glint">
+      <path d="M237 55 Q238 63 244 64 Q238 65 237 73
+               Q236 65 230 64 Q236 63 237 55Z"
+            class="paper" stroke-width="1.4"/>
+      <path d="M132 153 L132 161 M128 157 L136 157" class="detail"/>
+    </g>
+  </g>
+</svg>

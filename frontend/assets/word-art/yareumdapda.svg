@@ -1,0 +1,158 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240">
+  <rect width="320" height="240" fill="#fdfcf8"/>
+  <style>
+    .figure {
+      transform-box: fill-box;
+      transform-origin: 50% 100%;
+      animation: poise 6s ease-in-out infinite;
+    }
+    .ribbon {
+      transform-box: fill-box;
+      transform-origin: 5% 0%;
+      animation: silk 6s ease-in-out infinite;
+    }
+    .sprig {
+      transform-box: fill-box;
+      transform-origin: 50% 100%;
+      animation: sway 7s ease-in-out infinite;
+    }
+    @keyframes poise {
+      0%, 100% { transform: rotate(-0.35deg); }
+      50% { transform: rotate(0.45deg); }
+    }
+    @keyframes silk {
+      0%, 100% { transform: rotate(-2deg); }
+      50% { transform: rotate(3deg); }
+    }
+    @keyframes sway {
+      0%, 100% { transform: rotate(-1.8deg); }
+      50% { transform: rotate(2deg); }
+    }
+    @media (prefers-reduced-motion: reduce){ * { animation: none !important } }
+  </style>
+  <defs>
+    <filter id="ink" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.045" numOctaves="2" seed="8" result="grain"/>
+      <feDisplacementMap in="SourceGraphic" in2="grain" scale="0.35" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+  </defs>
+
+  <g fill="none" stroke="#1c1c1c" stroke-width="1.7"
+     stroke-linecap="round" stroke-linejoin="round" filter="url(#ink)">
+    <!-- A few quiet marks anchor the scene to the paper. -->
+    <g stroke-width="0.8">
+      <path d="M47 207 Q69 205 94 207 M121 210 Q163 212 199 209 M228 207 Q251 208 273 206"/>
+    </g>
+
+    <!-- A small camera, angled toward the sitter. -->
+    <g>
+      <path d="M49 110 Q48 108 51 107 L75 108 Q78 108 78 111
+               L77 126 Q65 128 49 125 Z" fill="#fdfcf8"/>
+      <path d="M54 107 L56 103 Q61 102 65 104 L66 107"/>
+      <path d="M78 112 Q84 112 88 115 L87 123 Q82 125 77 123" fill="#fdfcf8"/>
+      <path d="M86 115 Q90 117 87 123"/>
+      <path d="M53 112 L58 112 M70 113 L73 113" stroke-width="0.8"/>
+      <path d="M62 128 Q64 143 63 153 M58 153 Q64 151 69 154"/>
+      <path d="M62 154 Q53 177 45 204 M65 154 Q76 180 83 204 M64 156 L64 201"/>
+      <path d="M42 205 L48 205 M80 205 L86 205 M61 202 L67 202" stroke-width="1.4"/>
+    </g>
+
+    <!-- A low studio stool. -->
+    <g>
+      <path d="M195 166 Q211 161 231 166 Q234 170 229 173
+               Q211 176 195 172 Q191 170 195 166Z" fill="#fdfcf8"/>
+      <path d="M200 175 Q199 188 196 201 M226 175 Q228 188 230 201"/>
+      <path d="M200 188 Q212 190 227 188" stroke-width="1.2"/>
+      <path d="M199 168 Q212 166 227 168" stroke-width="0.8"/>
+    </g>
+
+    <!-- An adult figure: bare shoulder, quiet pose, flowing evening dress. -->
+    <g class="figure">
+      <!-- Open strokes leave the limbs light and unoutlined at the ends. -->
+      <path d="M156 162 Q153 180 149 198
+               M162 164 Q159 182 155 198" fill="#fdfcf8"/>
+      <path d="M175 165 Q178 177 173 188 Q169 196 170 202
+               M181 166 Q185 180 179 190 Q175 198 176 202" fill="#fdfcf8"/>
+      <path d="M148 198 Q153 200 157 198 Q161 201 164 202
+               Q158 205 148 203Z" fill="#1c1c1c" stroke-width="1.4"/>
+      <path d="M170 201 Q173 203 177 201 L184 204
+               Q180 207 170 205Z" fill="#1c1c1c" stroke-width="1.4"/>
+
+      <!-- Far arm rests lightly at the waist. -->
+      <path d="M179 88 Q190 95 199 112 Q201 116 196 119 L181 124
+               M175 94 Q186 102 192 114 L180 118" fill="#fdfcf8"/>
+
+      <!-- The dress opens around the forward knee. -->
+      <path d="M155 87 Q168 92 179 85
+               Q182 97 177 115 Q177 128 182 145
+               Q188 162 187 179
+               Q178 183 171 178
+               Q169 165 166 151
+               Q162 166 157 178
+               Q146 182 137 177
+               Q142 155 148 135 Q152 119 150 105Z"
+            fill="#92575e"/>
+      <path d="M156 99 Q164 104 175 98
+               M154 120 Q163 123 176 119
+               M154 132 Q150 151 147 167
+               M174 133 Q179 153 180 169
+               M166 151 Q167 140 165 133"
+            stroke-width="0.8"/>
+
+      <!-- Neck and the exposed shoulder. -->
+      <path d="M159 72 Q161 79 156 83 Q149 85 145 89
+               M170 73 Q168 79 173 82 Q177 83 179 85"
+            fill="#fdfcf8"/>
+      <path d="M151 89 Q161 94 170 88" stroke-width="0.8"/>
+
+      <!-- Raised arm, with fingertips touching the hair. -->
+      <path d="M147 88 Q137 88 130 80 Q125 74 130 65 L141 52
+               M151 94 Q137 96 126 85 Q118 77 123 66 L136 51"
+            fill="#fdfcf8"/>
+      <path d="M136 51 Q139 46 143 47 M140 53 L146 49" stroke-width="1.4"/>
+
+      <!-- Small faceless head and a loosely pinned bun. -->
+      <path d="M153 49 Q160 43 168 48 Q175 54 172 65
+               Q170 73 164 75 Q157 73 154 66 Q151 59 153 49Z"
+            fill="#fdfcf8"/>
+      <path d="M153 58 Q148 52 151 46 Q155 40 163 43
+               Q172 42 176 51 Q178 57 173 62
+               L169 53 Q160 56 155 51Z"
+            fill="#1c1c1c" stroke-width="1.4"/>
+      <path d="M152 45 Q144 45 145 39 Q147 33 153 36
+               Q159 38 156 44Z" fill="#1c1c1c" stroke-width="1.4"/>
+      <path d="M148 41 Q147 46 143 48" stroke-width="0.8"/>
+      <path d="M172 65 Q175 67 173 70" stroke-width="0.8"/>
+
+      <!-- A narrow silk tie catches a little air. -->
+      <g class="ribbon">
+        <path d="M179 87 Q186 98 183 112 Q181 125 189 136
+                 L183 134 Q175 124 178 111 Q181 98 176 89Z"
+              fill="#92575e" stroke-width="1.4"/>
+        <path d="M180 99 Q182 112 180 120" stroke-width="0.8"/>
+      </g>
+      <path d="M178 119 Q182 118 185 120 M178 122 L184 123"
+            stroke-width="0.8"/>
+    </g>
+
+    <!-- One stem in a small ceramic vase. -->
+    <g class="sprig">
+      <path d="M254 178 Q251 156 259 140 Q262 133 260 125" stroke-width="1.4"/>
+      <path d="M255 159 Q246 154 246 147 Q254 148 256 155
+               M257 148 Q265 145 268 138 Q260 139 258 144"
+            fill="#fdfcf8" stroke-width="1.4"/>
+      <path d="M260 127 Q250 125 252 119 Q253 115 258 119
+               Q256 111 261 111 Q266 111 265 118
+               Q272 114 274 119 Q275 125 265 128
+               Q262 131 260 127Z"
+            fill="#92575e" stroke-width="1.4"/>
+      <path d="M259 123 Q262 120 265 123" stroke-width="0.8"/>
+    </g>
+    <path d="M247 176 Q253 178 260 176
+             L261 184 Q269 197 262 203
+             Q254 207 246 202 Q240 197 247 184Z"
+          fill="#fdfcf8"/>
+    <path d="M247 180 Q253 182 260 180 M246 195 Q247 200 251 201"
+          stroke-width="0.8"/>
+  </g>
+</svg>

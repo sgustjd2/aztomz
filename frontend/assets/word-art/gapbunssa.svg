@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240">
+  <rect width="320" height="240" fill="#fdfcf8"/>
+  <style>
+    .ink{fill:none;stroke:#1c1c1c;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+    .paper{fill:#fdfcf8}
+    .detail{stroke-width:.85}
+    .remark{transform-box:fill-box;transform-origin:50% 100%;animation:remark 6.8s ease-in-out infinite}
+    .pause{transform-box:fill-box;transform-origin:50% 80%;animation:pause 6.8s ease-in-out infinite}
+    .chatter{opacity:0;transform-box:fill-box;transform-origin:center;animation:chatter 6.8s ease-in-out infinite}
+    @keyframes remark{
+      0%,12%{opacity:0;transform:translateY(3px) rotate(-2deg)}
+      23%,82%{opacity:1;transform:translateY(0) rotate(0deg)}
+      100%{opacity:0;transform:translateY(2px) rotate(1deg)}
+    }
+    @keyframes pause{
+      0%,18%,100%{transform:rotate(-3deg)}
+      33%,83%{transform:rotate(3deg)}
+    }
+    @keyframes chatter{
+      0%,12%,100%{opacity:1;transform:translateY(0)}
+      24%,88%{opacity:0;transform:translateY(-3px)}
+    }
+  </style>
+
+  <g class="ink">
+    <!-- A small café table and three suddenly quiet friends. -->
+    <path class="detail" d="M48 207Q157 205 274 208" opacity=".35"/>
+
+    <!-- Far-side friend: a head lowered into the silence. -->
+    <path d="M125 140Q125 120 133 113Q141 109 153 115Q160 123 160 140"/>
+    <path d="M135 113L136 105M144 113L144 105"/>
+    <g class="pause">
+      <path class="paper" d="M132 91Q130 82 137 79Q146 77 149 85L148 99Q145 107 138 105Q132 102 132 91Z"/>
+      <path d="M132 89Q129 80 136 77Q144 74 149 82"/>
+      <path class="detail" d="M134 78Q129 75 130 72"/>
+    </g>
+    <path d="M130 124Q124 132 127 140M135 126Q132 133 133 139"/>
+    <path d="M153 126Q158 131 155 139M148 128Q151 132 150 139"/>
+
+    <!-- Left friend: open, bowed arms and a hand around the cup. -->
+    <path class="paper" d="M66 134Q72 123 84 125Q94 129 95 146L91 169Q77 173 62 169Q65 150 66 134Z"/>
+    <path d="M75 126L76 117M83 126L83 117"/>
+    <g class="pause">
+      <path class="paper" d="M71 104Q68 95 74 91Q82 87 88 94Q91 98 88 107Q87 116 80 118Q73 117 71 104Z"/>
+      <path d="M70 104Q66 96 71 90Q77 85 84 89Q90 90 91 98"/>
+      <path class="detail" d="M70 94Q75 96 78 90"/>
+    </g>
+    <path d="M70 137Q72 151 83 151L102 147"/>
+    <path d="M76 136Q78 145 85 145L101 142"/>
+    <path d="M91 169Q96 181 94 197M83 171Q88 182 87 198"/>
+    <path class="paper" d="M86 197Q95 195 99 201L102 204Q91 207 85 204Z"/>
+    <path d="M65 169Q62 182 65 199M74 171Q70 184 72 199"/>
+    <path class="paper" d="M64 198Q69 196 74 201L80 204Q71 207 63 205Z"/>
+
+    <!-- The speaker is still holding up one finger. -->
+    <path d="M224 170Q230 181 226 198M214 172Q219 183 218 198"/>
+    <path class="paper" d="M218 197Q225 195 230 201L236 204Q226 207 217 204Z"/>
+    <path d="M239 169Q242 182 245 198M231 171Q234 184 237 199"/>
+    <path class="paper" d="M237 198Q244 196 248 200L254 204Q246 207 237 204Z"/>
+    <path fill="#be7663" d="M218 126Q228 121 237 128Q244 138 243 169Q229 175 213 169L214 143"/>
+    <path class="paper" d="M221 105Q217 96 222 91Q229 86 235 92Q240 97 237 108Q235 117 228 117Q222 115 221 105Z"/>
+    <path d="M220 100Q216 92 222 88Q230 83 236 90L240 95"/>
+    <path d="M226 117L226 124M233 116L234 124"/>
+    <path d="M218 134Q209 135 204 126L201 116"/>
+    <path d="M221 140Q208 143 200 131L196 119"/>
+    <path d="M196 118L194 108Q194 105 196 105Q199 105 199 114L201 111Q204 110 204 114L203 121"/>
+    <path d="M237 138Q245 148 240 157M231 140Q237 148 234 153"/>
+
+    <!-- Table and two cups. -->
+    <path class="paper" d="M99 144Q156 140 210 144L213 151Q156 155 97 151Z"/>
+    <path d="M111 153Q110 178 108 200M117 154L116 199"/>
+    <path d="M192 154L195 200M199 153Q200 176 202 200"/>
+    <path class="paper" d="M104 133Q110 135 118 133L117 144Q111 147 105 144Z"/>
+    <path d="M118 135Q125 132 124 138Q123 142 118 141"/>
+    <path class="detail" d="M105 133Q111 130 118 133"/>
+    <path class="paper" d="M171 131Q178 133 184 131L183 142Q177 145 172 142Z"/>
+    <path d="M184 133Q191 131 190 136Q189 140 184 139"/>
+    <path class="detail" d="M172 131Q178 129 184 131"/>
+
+    <!-- The lively marks disappear as the odd remark lands. -->
+    <g class="chatter" stroke-width="1">
+      <path d="M99 102Q103 98 106 102M100 95L103 91M111 99L116 97"/>
+      <path d="M155 95Q159 91 162 95M157 86L159 82"/>
+    </g>
+
+    <!-- A tangled, wordless remark, with a tail toward the speaker. -->
+    <g class="remark">
+      <path class="paper" d="M187 43Q211 38 252 43Q261 45 261 56L260 71Q259 81 247 81L231 80L225 88L225 79Q205 81 190 77Q182 75 183 64L183 53Q183 46 187 43Z"/>
+      <path class="detail" d="M199 61Q205 48 214 59Q221 71 225 58Q227 51 221 53Q213 58 225 64Q236 69 242 57"/>
+    </g>
+
+    <!-- Three small ink dots leave the silence visible even at rest. -->
+    <g fill="#1c1c1c" stroke="none">
+      <circle cx="109" cy="67" r="1.35"/>
+      <circle cx="120" cy="68" r="1.35"/>
+      <circle cx="131" cy="67" r="1.35"/>
+    </g>
+    <path class="detail" d="M93 113L96 117M96 109L100 111" opacity=".65"/>
+  </g>
+  <style>
+    @media (prefers-reduced-motion: reduce){ * { animation: none !important } }
+  </style>
+</svg>

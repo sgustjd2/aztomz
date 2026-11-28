@@ -1,0 +1,164 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240">
+  <rect width="320" height="240" fill="#fdfcf8"/>
+  <style>
+    .eager {
+      transform-box: fill-box;
+      transform-origin: 24% 90%;
+      animation: eager 6s ease-in-out infinite;
+    }
+    .foot {
+      transform-box: fill-box;
+      transform-origin: 15% 10%;
+      animation: kick 6s ease-in-out infinite;
+    }
+    .spark {
+      transform-box: fill-box;
+      transform-origin: center;
+      animation: delight 6s ease-in-out infinite;
+    }
+    @keyframes eager {
+      0%, 38%, 70%, 100% { transform: rotate(0deg) }
+      15%, 55% { transform: rotate(-3deg) }
+      22%, 62% { transform: rotate(1deg) }
+    }
+    @keyframes kick {
+      0%, 30%, 65%, 100% { transform: rotate(0deg) }
+      10%, 45% { transform: rotate(-9deg) }
+      19%, 54% { transform: rotate(5deg) }
+    }
+    @keyframes delight {
+      0%, 32%, 68%, 100% { opacity: .25; transform: scale(.85) }
+      15%, 50% { opacity: 1; transform: scale(1) }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important }
+    }
+  </style>
+  <g fill="none" stroke="#1c1c1c" stroke-width="1.7"
+     stroke-linecap="round" stroke-linejoin="round">
+    <!-- A quiet patch of floor. -->
+    <path d="M57 203 Q105 201 154 203 M173 203 Q222 202 267 204"
+          stroke-width=".8"/>
+
+    <!-- A small stool, nearly hidden beneath the sitter. -->
+    <path d="M117 156 Q140 153 162 156 L163 162 Q142 164 116 162 Z"
+          fill="#fdfcf8"/>
+    <path d="M122 164 Q121 179 118 193 M128 164 Q128 178 125 192
+             M153 164 Q154 181 158 193 M159 164 Q161 179 164 192"/>
+    <path d="M125 183 Q140 184 155 182" stroke-width=".9"/>
+
+    <!-- Bent trousers; the rear leg stays tucked under the stool. -->
+    <path d="M132 145 Q117 148 109 157 Q105 163 115 169
+             L137 180 L130 190 L137 193
+             Q147 184 147 178 Q140 167 126 162
+             L151 157"
+          fill="#fdfcf8"/>
+    <path d="M130 190 Q123 189 119 194 Q119 197 138 196
+             L140 192" fill="#fdfcf8"/>
+    <path d="M121 194 L132 194" stroke-width=".8"/>
+
+    <g class="foot">
+      <path d="M147 150 Q166 149 178 160 Q183 165 179 174
+               L168 192 L161 190 L169 168
+               Q156 166 147 162"
+            fill="#fdfcf8"/>
+      <path d="M162 189 Q165 192 170 192 L181 196
+               Q185 198 181 200 L160 199 Q157 197 160 192"
+            fill="#fdfcf8"/>
+      <path d="M164 196 Q173 197 180 197" stroke-width=".8"/>
+    </g>
+
+    <!-- Boxy shirt, with only a little muted indigo. -->
+    <path d="M137 102 Q148 98 157 106
+             Q162 121 166 145 L160 155
+             Q145 159 124 152
+             Q128 136 127 120 Q127 109 137 102 Z"
+          fill="#a8b4c3"/>
+    <path d="M133 144 Q141 147 148 145 M154 145 L160 146"
+          stroke-width=".8"/>
+
+    <!-- An open neck and a small, faceless head leaning forward. -->
+    <path d="M145 104 L146 96 M153 103 L154 97"/>
+    <path d="M143 76 Q143 67 151 65 Q160 64 164 73
+             Q169 85 161 94 Q156 100 149 95
+             Q141 90 143 76 Z"
+          fill="#fdfcf8"/>
+    <path d="M143 81 Q138 72 144 66 Q141 61 147 61
+             Q153 56 159 62 Q166 62 166 70
+             L162 76 Q156 72 153 68 Q151 78 143 81 Z"
+          fill="#1c1c1c" stroke-width="1.4"/>
+
+    <!-- Both arms reach eagerly toward the little screen. -->
+    <g class="eager">
+      <path d="M156 110 Q166 111 173 122
+               Q185 119 196 110 L200 115
+               Q189 129 174 131 Q168 132 163 125"
+            fill="#fdfcf8" stroke="none"/>
+      <path d="M156 110 Q166 111 173 122 Q184 119 196 110
+               M163 125 Q169 133 175 131 Q190 127 200 115"/>
+      <path d="M135 115 Q132 128 144 138
+               Q149 143 156 138 L199 116 L196 111
+               Q167 124 150 130 L143 119"
+            fill="#fdfcf8" stroke="none"/>
+      <path d="M135 115 Q132 129 144 138 Q149 143 156 138
+               L199 116
+               M143 119 L150 130 Q172 121 196 111"/>
+      <path d="M132 109 Q141 107 147 117 L142 125
+               Q134 123 130 119"
+            fill="#a8b4c3"/>
+      <path d="M154 106 Q163 105 169 115 L164 122"
+            fill="#a8b4c3"/>
+
+      <!-- Phone: one small warm accent, no interface lettering. -->
+      <path d="M197 92 Q197 89 200 89 L215 92
+               Q218 93 217 96 L212 122
+               Q211 125 208 124 L194 121
+               Q192 120 193 117 Z"
+            fill="#fdfcf8"/>
+      <path d="M200 95 L213 97 L209 116 L196 113 Z"
+            fill="#d68b75" stroke-width=".8"/>
+      <path d="M202 120 L205 120.5" stroke-width=".9"/>
+      <path d="M195 110 Q200 105 202 108
+               Q204 111 199 115
+               M209 118 Q214 116 214 112"
+            fill="#fdfcf8" stroke-width="1.4"/>
+    </g>
+
+    <!-- Brief little bursts of delight. -->
+    <g class="spark" stroke-width="1.4">
+      <path d="M222 79 L226 74 M229 93 L236 92 M214 72 L214 67"/>
+      <path d="M181 78 L177 74"/>
+      <path d="M232 110 L235 113" stroke="#d68b75"/>
+    </g>
+
+    <!-- Popcorn within easy reach. -->
+    <path d="M67 179 Q62 175 66 171 Q64 166 70 166
+             Q72 160 77 164 Q81 158 85 164
+             Q91 161 94 167 Q101 167 99 173
+             Q104 177 99 181"
+          fill="#fdfcf8" stroke-width="1.4"/>
+    <path d="M65 180 Q82 184 101 180
+             L95 198 Q82 203 71 198 Z"
+          fill="#fdfcf8"/>
+    <path d="M65 180 Q82 177 101 180" stroke-width="1"/>
+    <path d="M74 185 L77 196 M83 186 L83 197 M93 185 L90 196"
+          stroke="#d68b75" stroke-width="2"/>
+    <path d="M72 170 Q76 167 78 171 M85 168 Q90 167 90 172
+             M78 176 Q81 173 84 176"
+          stroke-width=".8"/>
+
+    <!-- Time waits off to the side. -->
+    <path d="M237 165 Q248 164 258 166 M236 198 Q247 200 259 198"/>
+    <path d="M240 168 Q239 177 247 182
+             Q239 188 240 196
+             M255 168 Q256 177 248 182
+             Q256 189 255 196"
+          stroke-width="1.4"/>
+    <path d="M243 172 Q248 173 252 172
+             Q251 176 248 179 Q245 176 243 172 Z"
+          fill="#d68b75" stroke="none"/>
+    <path d="M243 194 Q247 189 248 189 Q251 191 253 194 Z"
+          fill="#d68b75" stroke="none"/>
+    <path d="M248 182 L248 185" stroke-width=".8"/>
+  </g>
+</svg>

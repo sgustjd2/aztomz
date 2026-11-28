@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240">
+  <rect width="320" height="240" fill="#fdfcf8"/>
+  <style>
+    .ink{fill:none;stroke:#1c1c1c;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+    .paper{fill:#fdfcf8}
+    .fine{stroke-width:.8}
+    .scarf{transform-box:fill-box;transform-origin:0% 20%;animation:breeze 6s ease-in-out infinite}
+    .spark{transform-box:fill-box;transform-origin:center;animation:shine 6s ease-in-out infinite}
+    .spark.delay{animation-delay:-3s}
+    .heart{transform-box:fill-box;transform-origin:center;animation:admiration 6s ease-in-out infinite}
+    .heart.second{animation-delay:-3s}
+    @keyframes breeze{
+      0%,100%{transform:rotate(-3deg)}
+      45%{transform:rotate(5deg)}
+      75%{transform:rotate(1deg)}
+    }
+    @keyframes shine{
+      0%,100%{opacity:.35;transform:scale(.86) rotate(-5deg)}
+      45%,60%{opacity:1;transform:scale(1) rotate(3deg)}
+    }
+    @keyframes admiration{
+      0%,100%{opacity:.25;transform:translateY(3px) rotate(-5deg)}
+      35%,55%{opacity:1;transform:translateY(-4px) rotate(4deg)}
+      80%{opacity:.5;transform:translateY(-7px) rotate(0deg)}
+    }
+    @media (prefers-reduced-motion: reduce){ * { animation: none !important } }
+  </style>
+
+  <g class="ink">
+    <!-- A little stage, drawn on paper. -->
+    <path class="fine" d="M54 207q48-2 82 0m10 0q60 2 112-1"/>
+    <path class="fine" opacity=".35" d="M126 211q39 3 77-1"/>
+
+    <!-- A phone quietly catching the outfit. -->
+    <path d="M83 133q-1 25-2 39m0 0-15 33m15-33 15 33m-15-33 1 31"/>
+    <path class="paper" d="M74 104q0-3 3-3l14 1q3 0 3 3l-1 27q0 3-3 3l-14-1q-3 0-3-3Z"/>
+    <path class="fine" d="m78 106 11 .3m-12 23 11 .3"/>
+    <circle cx="79" cy="110" r="1.1" fill="#1c1c1c" stroke="none"/>
+    <path class="fine" d="m82 135-.3 6m-4 0 8 .3"/>
+
+    <!-- Open, unhurried legs with a planted stance. -->
+    <path class="paper" d="M150 142q-1 17 1 29l-8 26 8 2q10-17 12-27l4-23"/>
+    <path class="paper" d="M171 145q5 18 7 29l5 24 8-1q-1-18-5-30l-3-23"/>
+    <path class="fine" d="m155 151 1 17m23 1 4 3"/>
+    <path fill="#1c1c1c" d="M143 196q-3 4-9 5-4 1-3 4l21-.2q2-3-1-7Z"/>
+    <path fill="#1c1c1c" d="M183 197q-1 4 1 7l21 .1q1-3-5-4l-9-4"/>
+    <path class="fine" stroke="#fdfcf8" d="m136 203 12-.1m39-.2 13 .2"/>
+
+    <!-- A loose coat follows the weight of the body. -->
+    <path fill="#697987" d="M151 87q-8 4-11 13l-4 21q5 7 12 6l-6 26q13 4 22-1l5-13q4 11 7 14l18-3q-6-20-8-34l-2-19q-7-8-17-10Z"/>
+    <path d="m154 88-7 13 11 7-4 16m15-35 9 12-11 11-3 36"/>
+    <path class="fine" d="m149 130 9-2m17-1 10-1m-31 10-1 8m26-10 2 9"/>
+    <circle cx="166" cy="122" r=".9" fill="#1c1c1c" stroke="none"/>
+    <circle cx="166" cy="132" r=".9" fill="#1c1c1c" stroke="none"/>
+
+    <!-- One arm rests at the hip; the other adjusts the collar. -->
+    <path class="paper" d="M144 99q-9 11-12 24-1 4 3 7l13 8m-5-13-4-2q3-8 8-14"/>
+    <path d="M147 132q6 0 7 3m-6 3q5 2 7-1"/>
+    <path fill="#697987" d="M181 96q10 3 16 13l-14 14-6-7 10-9-9-4"/>
+    <path class="paper" d="m179 117-9-13q-2-4-1-8m5 1q0 4 2 6l8 11"/>
+    <path class="fine" d="m169 96 1-4m4 5 1-3"/>
+
+    <!-- Small faceless head, swept hair, open neck. -->
+    <path class="paper" d="m156 80-.5 10m10-10 1 9"/>
+    <path class="paper" d="M152 65q1-11 11-10 10 1 9 12l-2 12q-3 7-9 6-7-1-8-8Z"/>
+    <path fill="#1c1c1c" d="M151 72q-4-12 2-17 8-7 17-1 5 3 4 10-7-1-12-5-3 7-10 8Z"/>
+    <path class="fine" d="M154 56q6-4 12-1" stroke="#fdfcf8"/>
+    <path class="paper fine" d="M153 72q-5-3-4 2 0 4 5 4"/>
+
+    <!-- A tiny scarf gives the still pose a breath of wind. -->
+    <path fill="#b66f5d" d="M155 88q6 4 13 0l2 5q-9 5-16-1Z"/>
+    <g class="scarf">
+      <path fill="#b66f5d" d="M168 90q13 1 23-6 6-4 12-2-5 6-10 9-12 6-24 3"/>
+      <path class="fine" d="m195 84 3 3"/>
+    </g>
+
+    <!-- A dropped tote completes the outfit. -->
+    <path class="paper" d="M218 180q9 2 20 0l3 24q-12 3-26 0Z"/>
+    <path d="M222 181q-1-13 6-13 7 0 6 13"/>
+    <path class="fine" d="m220 187-1 12m16-10 2 12"/>
+
+    <!-- Charisma radiates; little hearts answer from the camera. -->
+    <g class="spark">
+      <path d="M210 54q-1 9-8 10 7 1 8 10 1-9 8-10-7-1-8-10Z"/>
+      <path class="fine" d="m222 47 2-3m-3 34 3 2"/>
+    </g>
+    <g class="spark delay">
+      <path d="M120 76q-1 6-6 7 5 1 6 7 1-6 6-7-5-1-6-7Z"/>
+      <path class="fine" d="m111 62-2-4m13 1 1-4"/>
+    </g>
+    <path class="heart" fill="#b66f5d" stroke-width="1.4"
+      d="M90 81q-8-6-8-10 0-6 5-5 3 0 4 4 3-5 7-3 6 4-8 14Z"/>
+    <path class="heart second" fill="#b66f5d" stroke-width="1.4"
+      d="M105 52q-6-4-6-7 0-4 3-4 3 0 4 3 2-4 5-2 4 3-6 10Z"/>
+    <path class="fine" opacity=".45" d="M103 112q5-9 13-14m85 24q10-9 13-20"/>
+  </g>
+</svg>

@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240">
+  <rect width="320" height="240" fill="#fdfcf8"/>
+  <style>
+    svg{color:#1c1c1c}
+    .shiver{transform-box:fill-box;transform-origin:50% 100%;animation:shiver 5.6s ease-in-out infinite}
+    .scarf{transform-box:fill-box;transform-origin:5% 12%;animation:scarf 6.4s ease-in-out infinite}
+    .snow{transform-box:fill-box;transform-origin:50% 50%;animation:snow 7s ease-in-out infinite}
+    @keyframes shiver{
+      0%,36%,52%,100%{transform:translateX(0) rotate(0deg)}
+      39%,45%{transform:translateX(-.65px) rotate(-.35deg)}
+      42%,48%{transform:translateX(.65px) rotate(.35deg)}
+    }
+    @keyframes scarf{
+      0%,100%{transform:rotate(-3deg)}
+      50%{transform:rotate(5deg)}
+    }
+    @keyframes snow{
+      0%,100%{transform:translate(0,-2px);opacity:.65}
+      50%{transform:translate(3px,4px);opacity:1}
+    }
+    @media (prefers-reduced-motion: reduce){ * { animation: none !important } }
+  </style>
+  <g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+    <!-- A quiet patch of winter ground. -->
+    <path d="M53 207q18-4 35-1m13 1q39-3 75 0m12 0q40-4 78 0" stroke-width=".8"/>
+    <path d="M64 199q8-8 17-2 7-3 12 3m126 1q10-7 19-2 7-3 14 2" stroke-width=".8"/>
+
+    <!-- A bare twig tucked into the snow. -->
+    <g stroke-width="1.4">
+      <path d="M79 202q2-17-3-32m4 17q7-6 10-15m-12 9q-7-3-11-10"/>
+      <path d="M71 169q4-2 8 0m7 2q3-2 6 0" stroke="#fdfcf8" stroke-width="3.5"/>
+    </g>
+
+    <!-- Snowflakes give the cold a little room. -->
+    <g class="snow" stroke-width=".9">
+      <path d="M83 73v12m-5-9 10 6m-10 0 10-6"/>
+      <path d="M235 62v10m-4-8 8 6m-8 0 8-6"/>
+      <path d="M251 166v10m-4-8 8 6m-8 0 8-6"/>
+      <path d="M107 113h.1m109-26h.1M66 133h.1" stroke-width="2.2"/>
+    </g>
+
+    <g class="shiver">
+      <!-- Two separate ink strokes for each trouser leg. -->
+      <path d="M129 164q-1 16-5 31m10-30q1 17-2 31" stroke-width="1.8"/>
+      <path d="M151 165q4 15 9 29m-1-31q6 15 8 30" stroke-width="1.8"/>
+      <path d="M124 193q-4 3-8 5-4 3-2 5 12 2 20-1l-2-7" fill="#fdfcf8"/>
+      <path d="M160 192q3 4 11 5 7 1 8 5-9 3-19 0l-3-6" fill="#fdfcf8"/>
+      <path d="M116 200q9 1 16-1m29 0q8 2 14 1" stroke-width=".8"/>
+
+      <!-- The oversized winter coat bows gently around the body. -->
+      <path d="M127 92q-12 7-13 25l-3 48q14 8 29 6 16 3 30-5l-5-47q-1-18-15-26Z" fill="#fdfcf8"/>
+      <path d="M143 109q-2 28 1 59m-29-40q12 4 25 2m6 0q10 1 20-3m-53 19q14 4 27 3m7 1q11 0 21-3" stroke-width=".8"/>
+      <path d="M119 151q6 3 12 1m23 0 8-2" stroke-width=".9"/>
+      <path d="M145 116h.1m0 20h.1m1 21h.1" stroke-width="2"/>
+
+      <!-- Faceless profile, with a small ear and an open neck. -->
+      <path d="M132 67q13-6 20 5 2 6 1 11l4 4-5 2q-1 10-12 9-10-1-12-12" fill="#fdfcf8"/>
+      <path d="M130 81q-5-4-6 1t5 7m9 8-1 7m10-8 2 7" stroke-width="1.4"/>
+
+      <!-- Knitted cap. -->
+      <path d="M124 76q-3-20 12-24 18-3 21 21" fill="#fdfcf8"/>
+      <path d="M123 73q17-6 34-2l1 8q-18-3-34 3Z" fill="#fdfcf8"/>
+      <path d="M130 70q-2-8 3-13m4 12q-1-9 2-13m5 12q1-7-2-12m-14 20 1 4m6-5 1 4m6-5 1 4m6-4 1 4" stroke-width=".8"/>
+      <path d="M134 52q-6-1-5-6 2-6 8-4 7 0 6 6-1 6-9 4Z" fill="#fdfcf8" stroke-width="1.4"/>
+
+      <!-- The one warm accent: a scarf caught by the wind. -->
+      <g class="scarf">
+        <path d="M143 101q-18 14-37 7-8-3-16 1l2 10q10-4 18 0 21 5 39-9Z" fill="#ad6259"/>
+        <path d="m91 111-4 1m5 2-4 2m5 1-4 3" stroke-width=".9"/>
+      </g>
+      <path d="M128 94q13 7 26 0l3 11q-15 10-31 0Z" fill="#ad6259"/>
+      <path d="M131 100q10 4 20 0" stroke-width=".8"/>
+
+      <!-- One sleeve hugs the chest against the cold. -->
+      <path d="M119 113q-6 10-1 18 6 6 19 1" fill="#fdfcf8"/>
+      <path d="M125 116q-3 5 1 8l12-2" stroke-width="1.6"/>
+      <path d="M137 122q8-4 10 1 1 5-9 8" fill="#fdfcf8" stroke-width="1.5"/>
+
+      <!-- The other arm insists on keeping hold of the iced drink. -->
+      <path d="M162 112q8 10 16 18l21-3" stroke-width="1.8"/>
+      <path d="M159 125q9 15 18 15l23-6" stroke-width="1.8"/>
+      <path d="m192 128 2 8" stroke-width=".8"/>
+
+      <!-- Transparent takeaway cup: dark coffee, unmistakable ice, tall straw. -->
+      <path d="m203 115 4 41q10 4 20-1l5-41Z" fill="#fdfcf8"/>
+      <path d="m206 132 3 21q8 3 16 0l3-21q-11 3-22 0Z" fill="#98765c" stroke="none"/>
+      <path d="m219 125 5-28 8-4" stroke-width="2"/>
+      <path d="m219 125 5-28 8-4" stroke="#fdfcf8" stroke-width=".7"/>
+      <path d="m209 122 7-2 3 8-7 2Zm13 5 6-1-1 7-6 1Zm-11 9 7 1-1 7-7-1Z" fill="#fdfcf8" stroke-width=".9"/>
+      <path d="M201 113q15-4 33 0l-1 4q-15 3-31 0Z" fill="#fdfcf8" stroke-width="1.5"/>
+      <path d="M199 127q5-5 8-1 2 3-2 5 5-1 5 3-1 4-10 4" fill="#fdfcf8" stroke-width="1.5"/>
+      <path d="M230 139v3m-1 5v2" stroke-width=".8"/>
+    </g>
+
+    <!-- Small shiver marks remain readable when motion is disabled. -->
+    <path d="m105 90-3 4 3 4m66-21 3 4-2 4" stroke-width=".9"/>
+  </g>
+</svg>

@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240">
+  <rect width="320" height="240" fill="#fdfcf8"/>
+  <style>
+    .ink{fill:none;stroke:#1c1c1c;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+    .detail{stroke-width:.85}
+    .paper{fill:#fdfcf8}
+    .relax{transform-box:fill-box;transform-origin:28% 80%;animation:relax 6s ease-in-out infinite}
+    .foot{transform-box:fill-box;transform-origin:15% 55%;animation:foot 6s ease-in-out infinite}
+    .ball{transform-box:fill-box;transform-origin:center;animation:ball 6s ease-in-out infinite}
+    @keyframes relax{
+      0%,100%{transform:rotate(0)}
+      45%,65%{transform:rotate(-1.4deg)}
+    }
+    @keyframes foot{
+      0%,35%,75%,100%{transform:rotate(0)}
+      48%,62%{transform:rotate(-7deg)}
+    }
+    @keyframes ball{
+      0%,24%{transform:translate(0,0);opacity:0}
+      28%{transform:translate(0,0);opacity:1}
+      43%{transform:translate(13px,-17px);opacity:1}
+      58%{transform:translate(29px,-6px);opacity:1}
+      64%,100%{transform:translate(32px,0);opacity:0}
+    }
+    @media (prefers-reduced-motion: reduce){ * { animation: none !important } }
+  </style>
+
+  <g class="ink">
+    <!-- A small game, safely on the other side of the room. -->
+    <path class="paper" d="M171 51 Q215 49 267 51 Q271 51 271 56 L270 122 Q270 127 265 127 L173 127 Q169 127 169 122 L169 57 Q169 52 171 51Z"/>
+    <path class="detail" d="M175 57 Q217 56 264 57 L264 119 Q218 120 176 119Z"/>
+    <path d="M211 128 L209 139 M230 128 L233 139 M201 140 Q220 138 240 140"/>
+    <circle cx="260" cy="123" r=".9" fill="#1c1c1c" stroke="none"/>
+
+    <!-- A baseball diamond and two differently dressed teams. -->
+    <path class="detail" d="M180 111 Q194 89 219 83 Q242 88 259 110"/>
+    <path class="detail" d="M201 104 L219 90 L237 104 L219 116Z"/>
+    <path class="detail" d="M217 114 L219 112 L222 114 L220 117Z M200 103 L203 103 M218 90 L221 90 M236 103 L239 104"/>
+    <path class="detail" d="M181 75 Q217 71 257 75 M182 79 Q217 75 257 79"/>
+
+    <g class="detail">
+      <path fill="#66768b" d="M216 94 Q219 92 222 95 L223 102 L216 102Z"/>
+      <path d="M218 103 L216 109 M221 103 L224 108 M217 96 L212 98 M222 96 L225 92"/>
+      <path class="paper" d="M217 89 Q218 86 221 88 Q223 90 221 93 L218 92Z"/>
+      <path fill="#66768b" d="M216 89 Q217 86 221 87 L223 89Z"/>
+      <path fill="#b77759" d="M242 98 Q245 96 248 99 L248 105 L242 105Z"/>
+      <path d="M243 106 L241 112 M246 106 L249 111 M242 100 L238 96 M247 100 L241 95 M237 96 L232 87"/>
+      <path class="paper" d="M243 93 Q244 90 247 92 L248 95 Q246 98 244 96Z"/>
+      <path fill="#b77759" d="M242 93 Q244 90 247 91 L249 94Z"/>
+    </g>
+    <circle class="ball paper" cx="225" cy="93" r="1.8" stroke-width=".85"/>
+
+    <!-- A generously cushioned chair. -->
+    <path fill="#66768b" fill-opacity=".16" d="M58 135 Q48 128 46 139 L53 175 Q55 185 67 185 L109 185 Q120 183 117 174 Q116 169 108 170 L82 168 L73 141 Q70 134 58 135Z"/>
+    <path d="M53 182 L49 199 M107 185 L112 199"/>
+    <path class="detail" d="M53 141 Q58 158 63 173 Q64 178 74 178 L108 178"/>
+
+    <!-- Faceless spectator, shoulders down, legs comfortably stretched. -->
+    <g class="relax">
+      <path class="paper" d="M64 112 Q57 107 61 98 Q63 91 70 93 Q77 96 76 102 L80 106 Q78 109 74 109 L72 117"/>
+      <path fill="#1c1c1c" stroke="none" d="M61 102 Q57 96 62 92 Q68 87 74 94 L76 99 Q71 97 68 96 Q65 103 61 102Z"/>
+      <path d="M65 109 L63 117 M71 111 L70 116"/>
+      <path class="paper" d="M62 115 Q67 113 74 117 Q81 129 86 145 L97 154 Q88 164 72 163 Q65 147 60 134 Q55 122 62 115Z"/>
+      <path class="detail" d="M66 121 Q67 132 73 140 M77 149 Q83 151 87 151"/>
+
+      <!-- Loose sleeves and open, double-stroke arms. -->
+      <path class="paper" d="M71 120 Q77 119 80 126 L88 136 L82 142 Q73 136 70 129"/>
+      <path d="M87 136 Q98 130 108 123 M85 141 Q98 136 110 127"/>
+      <path class="paper" d="M108 123 Q110 119 113 121 L116 123 Q116 126 111 128"/>
+      <path class="detail" d="M78 129 L83 135"/>
+
+      <!-- One knee draped over the other. -->
+      <path fill="#66768b" d="M77 158 Q90 153 100 157 L120 168 Q128 164 138 160 L143 167 Q128 180 119 180 Q111 179 96 172 L84 174"/>
+      <path class="detail" d="M96 161 Q108 167 117 173"/>
+      <path d="M91 171 Q105 180 116 183 L138 181 M88 176 Q104 188 115 189 L139 187"/>
+      <g class="foot">
+        <path class="paper" d="M136 160 L142 157 Q148 154 151 156 Q153 159 148 162 L143 168 L139 167"/>
+        <path class="detail" d="M143 160 L148 158"/>
+      </g>
+      <path class="paper" d="M137 181 Q145 179 147 182 L154 185 Q157 188 153 189 L139 190 L138 187"/>
+    </g>
+
+    <!-- Drink and a bowl of popcorn, close enough to reach. -->
+    <path class="paper" d="M107 113 L119 113 L117 127 Q113 129 109 126Z"/>
+    <path d="M119 115 Q126 113 124 119 Q123 122 119 121"/>
+    <path class="detail" d="M110 116 Q114 117 117 116"/>
+
+    <path d="M161 177 Q179 175 198 177 M166 178 L163 199 M193 178 L197 199"/>
+    <path class="paper" d="M169 164 Q180 161 191 164 Q189 175 181 175 Q173 175 169 164Z"/>
+    <path class="paper detail" d="M170 163 Q167 159 172 158 Q170 153 175 154 Q178 149 181 154 Q185 151 187 156 Q192 155 191 160 Q195 163 190 165 Q180 167 170 163Z"/>
+    <path class="detail" d="M174 158 L176 160 M182 156 L181 159 M186 160 L188 161"/>
+
+    <!-- Only a few ground marks; plenty of paper remains. -->
+    <path class="detail" d="M42 202 Q85 201 124 202 M151 202 L205 202 M222 142 L250 142"/>
+  </g>
+</svg>

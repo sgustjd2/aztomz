@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240">
+  <rect width="320" height="240" fill="#fdfcf8"/>
+  <style>
+    .ink{fill:none;stroke:#1c1c1c;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+    .paper{fill:#fdfcf8}
+    .detail{stroke-width:.85}
+    .helper{transform-box:fill-box;transform-origin:50% 90%;animation:help 6.4s ease-in-out infinite}
+    .writing{transform-box:fill-box;transform-origin:15% 45%;animation:write 6.4s ease-in-out infinite}
+    .alarm{transform-box:fill-box;transform-origin:50% 70%;animation:notice 6.4s ease-in-out infinite}
+    @keyframes help{
+      0%,18%,85%,100%{transform:rotate(0deg)}
+      38%,65%{transform:rotate(-5deg)}
+    }
+    @keyframes write{
+      0%,24%,76%,100%{transform:rotate(0deg)}
+      33%,49%,65%{transform:rotate(2deg)}
+      41%,57%{transform:rotate(-1deg)}
+    }
+    @keyframes notice{
+      0%,55%,100%{opacity:.15;transform:scale(.92)}
+      65%,82%{opacity:1;transform:scale(1)}
+    }
+    @media (prefers-reduced-motion: reduce){ * { animation: none !important } }
+  </style>
+  <defs>
+    <filter id="ink-wobble" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency=".065" numOctaves="2" seed="8" result="grain"/>
+      <feDisplacementMap in="SourceGraphic" in2="grain" scale=".45" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+  </defs>
+  <g class="ink" filter="url(#ink-wobble)">
+    <!-- A quiet examination desk. -->
+    <path class="detail" d="M47 204q98-2 225 0"/>
+    <path d="M70 165q-1 18 0 36m5-35q0 20 1 35"/>
+    <path class="paper" d="M62 143q-3 1-3 5l1 15q11 2 25 0l1-17q-9-4-24-3"/>
+    <path d="M61 164q13 3 25 0"/>
+    <path d="M100 146q3 22 0 55m5-54q3 23 0 54M238 147q-1 27 1 54m5-53q-1 28 1 53"/>
+    <!-- The student's open-stroke legs and little shoes. -->
+    <path d="M94 145q10 7 16 16q4 6 3 18l-1 16m-13-47q12 10 18 17q3 11 0 29"/>
+    <path class="paper" d="M110 194q-2 3-1 7q9 2 19 0q-1-4-11-6"/>
+    <path d="M84 149q7 14 7 27l-3 20m1-47q9 16 8 28l-4 19"/>
+    <path class="paper" d="M87 194q-3 3-2 7q9 2 17 0q-1-4-9-6"/>
+    <!-- A faceless examinee, leaning into the paper. -->
+    <path class="paper" d="M85 102q-9 7-10 20l1 27q13 6 29 1l3-31q-2-12-13-16"/>
+    <path fill="#a9b7ad" d="M85 104q-7 8-8 20l1 23q12 4 25 1l3-29q-3-10-11-14"/>
+    <path class="detail" d="M84 116q-3 16 0 27m11-20q1 11 7 19"/>
+    <path d="M91 100l-1 6m8-7l-1 8"/>
+    <path class="paper" d="M87 78q9-5 16 1q6 6 3 15q-2 8-9 9q-8-1-11-9q-3-9 1-16"/>
+    <path fill="#1c1c1c" stroke-width=".85" d="M85 88q-4-10 3-15q9-6 17 2l3 8q-5-3-8-7q-4 8-15 12Z"/>
+    <path class="detail" d="M83 76q-3-3-2-6m6 3q0-5 3-7"/>
+    <!-- One relaxed arm; two separate strokes stay open at the hand. -->
+    <path d="M81 117q-5 10-3 19q5 8 17 8m-11-24q-3 8-1 13q5 5 13 6"/>
+    <path class="detail" d="M95 139q5-2 7 1m-7 4q6 2 8-1"/>
+    <!-- The examination sheet: rules and answer bubbles, no lettering. -->
+    <path class="paper" d="M113 136q55-2 109 0l29 11q-81 3-145 0Z"/>
+    <path class="paper" d="M139 132l45 1l17 11l-49 1Z"/>
+    <path class="detail" d="M145 135l13 .2m-9 3l11 .1m-7 3h10"/>
+    <g class="detail">
+      <ellipse cx="165" cy="135.5" rx="1.6" ry=".8"/>
+      <ellipse cx="172" cy="135.6" rx="1.6" ry=".8"/>
+      <ellipse cx="179" cy="135.8" rx="1.6" ry=".8"/>
+      <ellipse cx="169" cy="138.4" rx="1.6" ry=".8"/>
+      <ellipse cx="176" cy="138.5" rx="1.6" ry=".8" fill="#1c1c1c"/>
+      <ellipse cx="183" cy="138.7" rx="1.6" ry=".8"/>
+      <ellipse cx="173" cy="141.5" rx="1.6" ry=".8"/>
+      <ellipse cx="180" cy="141.6" rx="1.6" ry=".8"/>
+      <ellipse cx="187" cy="141.7" rx="1.6" ry=".8"/>
+    </g>
+    <path d="M106 147q72 3 145 0"/>
+    <g class="writing">
+      <path class="paper" d="M101 115q7 5 14 11q12 1 27 6l-2 5q-17-3-29-5q-10-5-15-11"/>
+      <path class="detail" d="M140 132q4-1 7 2l-1 4q-4 1-6-1"/>
+      <path d="M144 125l11 17"/>
+      <path class="detail" d="M153 139l2 3"/>
+    </g>
+    <!-- A pocket-sized AI accomplice supplies the filled answer. -->
+    <g class="helper">
+      <path d="M217 121q8-3 14 1l2 14m-19-14q-3 6-2 13"/>
+      <path class="paper" d="M211 102q10-4 20 0l2 23q-11 5-23-1Z"/>
+      <path fill="#a9b7ad" d="M215 108q6-2 12 0l1 10q-7 2-13-1Z"/>
+      <path class="detail" d="M218 111l6 4m0-4l-6 4"/>
+      <path d="M216 126l-1 9m11-8l2 8"/>
+      <path d="M211 135q3-2 6 0m8 0q4-2 7 0"/>
+      <path d="M210 109q-8 3-13 11l-10 5m25-11q-5 1-10 10l-12 5"/>
+      <path class="paper" d="M182 115l20-2l5 15l-22 2Z"/>
+      <g class="detail">
+        <path d="M187 118l10-1"/>
+        <circle cx="189" cy="123" r="1.4"/>
+        <circle cx="195" cy="122.4" r="1.4" fill="#1c1c1c"/>
+        <circle cx="201" cy="122" r="1.4"/>
+      </g>
+      <path class="paper" d="M208 85q12-4 25 0l1 15q-13 5-27 0Z"/>
+      <path class="detail" d="M212 89q9-2 17 0l1 7q-9 2-18 0Z"/>
+      <path fill="#1c1c1c" stroke="none" d="M216 90h2v4h-2Zm8 0h2v4h-2Z"/>
+      <path d="M220 83l1-7"/>
+      <circle cx="221" cy="74" r="2" fill="#a9b7ad"/>
+      <path class="detail" d="M204 91l-3 1m35-1l3 1"/>
+    </g>
+    <!-- The watchful camera makes the joke uneasy. -->
+    <path d="M250 52l10 1l-1 12m-5-11l-1 9"/>
+    <path class="paper" d="M229 60l26 5l-2 13l-26-5Z"/>
+    <path class="paper" d="M227 63l-6 1l-1 6l7 2"/>
+    <path class="detail" d="M234 65l14 3m-13 3l8 2"/>
+    <circle cx="249" cy="72" r="1.3" fill="#a9b7ad" stroke-width=".85"/>
+    <path class="detail" stroke-dasharray="2 5" d="M219 76q-10 13-12 27"/>
+    <g class="alarm" stroke-width="1.4">
+      <path d="M215 53l-4-5m12 4l1-7m7 9l5-4"/>
+    </g>
+  </g>
+</svg>

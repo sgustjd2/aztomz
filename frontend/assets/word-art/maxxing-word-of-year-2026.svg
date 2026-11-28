@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240">
+  <rect width="320" height="240" fill="#fdfcf8"/>
+  <style>
+    .ink{fill:none;stroke:#1c1c1c;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+    .paper{fill:#fdfcf8}
+    .fine{stroke-width:.85}
+    .breathe{transform-box:fill-box;transform-origin:50% 100%;animation:breathe 6s ease-in-out infinite}
+    .lift{transform-box:fill-box;transform-origin:8% 82%;animation:lift 6s ease-in-out infinite}
+    .sprout{transform-box:fill-box;transform-origin:50% 100%;animation:sprout 7s ease-in-out infinite}
+    @keyframes breathe{
+      0%,100%{transform:translateY(0)}
+      45%,60%{transform:translateY(-1)}
+    }
+    @keyframes lift{
+      0%,18%,100%{transform:rotate(9deg)}
+      45%,65%{transform:rotate(-5deg)}
+    }
+    @keyframes sprout{
+      0%,100%{transform:rotate(-2deg)}
+      50%{transform:rotate(3deg)}
+    }
+    @media (prefers-reduced-motion: reduce){ * { animation: none !important } }
+  </style>
+  <defs>
+    <filter id="ink" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency=".045" numOctaves="2" seed="8" result="grain"/>
+      <feDisplacementMap in="SourceGraphic" in2="grain" scale=".45" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+  </defs>
+
+  <g class="ink" filter="url(#ink)">
+    <!-- A quiet ground line leaves the paper open. -->
+    <path class="fine" d="M57 202Q103 200 131 201M166 202Q213 200 266 202"/>
+
+    <!-- An ascending path, with an open arrow at its highest point. -->
+    <path stroke="#849181" d="M191 153Q208 141 215 122T239 84Q248 71 253 51"/>
+    <path stroke="#849181" d="M242 57Q248 54 253 51Q255 57 258 63"/>
+    <path class="fine" d="M201 158l7 1m12-27 7 1m9-27 7 1"/>
+
+    <!-- Planted feet and two open strokes for each leg. -->
+    <path class="paper" d="M141 133Q138 150 136 164L130 188
+      M149 135Q148 153 144 166L138 190"/>
+    <path class="paper" d="M156 135Q158 152 162 166L170 189
+      M165 134Q168 150 170 163L177 186"/>
+    <path class="paper" d="M130 187Q127 191 123 194Q121 197 125 198L140 198Q142 195 138 190"/>
+    <path class="paper" d="M170 188Q172 194 176 197L190 197Q192 194 186 192L177 186"/>
+    <path class="fine" d="M125 195l13 1m39-1 10 0"/>
+
+    <g class="breathe">
+      <!-- Small, faceless head and loose hair. -->
+      <path class="paper" d="M145 65Q149 60 156 63Q163 66 162 75
+        Q161 84 155 85Q148 84 145 78Q143 72 145 65Z"/>
+      <path d="M144 72Q139 64 145 59Q151 55 158 60
+        Q164 59 165 67Q160 68 156 64Q151 70 144 70"/>
+      <path class="fine" d="M146 60q-4-3-6 1"/>
+      <path d="M150 85l-.5 6m9-7 1 7"/>
+
+      <!-- The far arm supports an open book. -->
+      <path class="paper" d="M140 97Q133 107 125 117L116 124
+        M145 103Q139 114 130 123L121 129"/>
+      <path class="paper" d="M116 124q-5 0-5 4q1 5 8 2l4-2"/>
+
+      <!-- A muted shirt, with a gently bowed hem. -->
+      <path fill="#849181" d="M149 90Q139 90 136 99L133 109
+        Q138 113 144 113L141 136Q153 140 167 135
+        L165 110Q171 109 174 105L168 95Q164 91 160 90
+        Q155 95 149 90Z"/>
+      <path class="fine" d="M144 113q1-6 0-10m20 8-1-8m-18 29q9 2 17 0"/>
+
+      <!-- One bent arm slowly curls a single dumbbell. -->
+      <g class="lift">
+        <path class="paper" d="M171 101Q177 108 181 113
+          Q184 116 187 111L197 91
+          M168 107Q175 119 181 122Q188 126 193 117L204 96"/>
+        <path class="paper" d="M196 94q-2-6 1-8q3-2 5 2
+          q4-2 5 1q1 4-4 8"/>
+        <path stroke-width="2.2" d="M189 82l24 9"/>
+        <path fill="#c38b68" d="M185 76q2-2 4 0l-5 15q-1 2-4 0Z"/>
+        <path fill="#c38b68" d="M190 76q2-1 4 1l-6 17q-2 1-4-1Z"/>
+        <path fill="#c38b68" d="M213 84q2-1 4 1l-6 17q-2 1-4-1Z"/>
+        <path fill="#c38b68" d="M218 88q2-1 4 1l-5 14q-2 2-4 0Z"/>
+      </g>
+
+      <!-- Open pages: knowledge is another thing being cultivated. -->
+      <path class="paper" d="M86 112Q100 109 112 119Q123 110 136 113
+        L131 137Q121 134 111 141Q100 134 90 136Z"/>
+      <path d="M112 119l-1 22"/>
+      <path class="fine" d="M92 118q8 0 14 4m-12 2q6 0 11 4
+        m14-6q5-4 11-4m-12 10q5-4 10-3"/>
+      <path stroke="#c38b68" stroke-width="1.4" d="M125 114l-3 12 4-2 2 3 3-13"/>
+    </g>
+
+    <!-- A small plant shares the same upward gesture. -->
+    <g class="sprout">
+      <path d="M231 180Q229 164 235 145"/>
+      <path fill="#849181" d="M232 165Q217 165 216 153Q227 151 232 165Z"/>
+      <path fill="#849181" d="M233 156Q233 144 245 141Q246 153 233 156Z"/>
+      <path class="fine" d="M220 156l10 7m6-10 6-8"/>
+    </g>
+    <path class="paper" d="M216 178Q229 180 243 178L239 198
+      Q230 202 220 198Z"/>
+    <path class="paper" d="M214 176Q229 178 245 176L244 181
+      Q230 184 215 181Z"/>
+    <path class="fine" d="M223 187l1 8"/>
+  </g>
+</svg>

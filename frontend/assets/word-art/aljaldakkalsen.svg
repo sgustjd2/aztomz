@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240">
+  <rect width="320" height="240" fill="#fdfcf8"/>
+  <style>
+    .ink{fill:none;stroke:#1c1c1c;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+    .paper{fill:#fdfcf8}
+    .fine{stroke-width:.8}
+    .canopy{transform-box:fill-box;transform-origin:50% 100%;animation:shelter 6s ease-in-out infinite}
+    .bag{transform-box:fill-box;transform-origin:50% 0%;animation:offer 6s ease-in-out infinite}
+    .rain{transform-box:fill-box;transform-origin:center;animation:rainfall 6s ease-in-out infinite}
+    @keyframes shelter{
+      0%,100%{transform:rotate(-1deg)}
+      45%,65%{transform:rotate(1.2deg)}
+    }
+    @keyframes offer{
+      0%,100%{transform:rotate(2deg)}
+      40%,65%{transform:rotate(-2deg)}
+    }
+    @keyframes rainfall{
+      0%,100%{opacity:.3;transform:translate(0,-2px)}
+      50%{opacity:.7;transform:translate(-2px,3px)}
+    }
+    @media (prefers-reduced-motion: reduce){ * { animation: none !important } }
+  </style>
+  <defs>
+    <filter id="ink" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency=".065" numOctaves="2" seed="8" result="grain"/>
+      <feDisplacementMap in="SourceGraphic" in2="grain" scale=".35" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+  </defs>
+  <g class="ink" filter="url(#ink)">
+    <!-- A little rain outside the shelter. -->
+    <g class="rain fine">
+      <path d="M62 66l-3 8m-9 21-3 8m21 16-3 8M267 71l-3 8m12 24-3 8m-13 26-3 8"/>
+      <path d="M85 42l-2 6m153-5-2 6"/>
+    </g>
+
+    <!-- The umbrella is already held over the arriving friend. -->
+    <g class="canopy">
+      <path d="M70 91Q86 56 152 54Q215 52 249 90
+               Q232 80 216 95Q198 81 181 95
+               Q162 82 145 96Q125 82 108 96Q88 83 70 91Z"
+            fill="#bd7660"/>
+      <path class="fine" d="M152 55Q118 64 108 94m44-39q-8 21-7 39m7-39q22 15 29 38m-29-38q45 9 64 38"/>
+      <path d="M152 54l-1-5"/>
+    </g>
+    <path d="M151 95q-1 24-1 45q0 8-6 8q-6-1-5-7"/>
+
+    <!-- Helper: small faceless head, open limbs, soft coat. -->
+    <path class="paper" d="M108 110q-7-4-9 3q-2 10 5 13q8 2 10-7q2-6-6-9Z"/>
+    <path d="M100 115q-2-9 6-10q7 0 9 7"/>
+    <path class="fine" d="M104 127l-1 5m6-5 1 5"/>
+    <path d="M101 174q-2 14-5 29m10-29q-2 16-5 30"/>
+    <path d="M115 174q5 13 10 27m-5-29q6 14 10 28"/>
+    <path class="paper" d="M95 202q-1 5-3 6q6 2 13 0l-4-5"/>
+    <path class="paper" d="M125 201l-1 6q7 2 14 0q-2-3-8-5"/>
+    <path d="M99 133q-7 7-6 20l3 23q13 4 28-1l-4-30q-1-10-9-14"
+          fill="#929c83"/>
+    <path class="fine" d="M103 134l4 8l7-8m-7 8 2 29m-10-11 5 1"/>
+    <!-- Raised arm grips the umbrella shaft. -->
+    <path class="paper" d="M117 139q7 4 13 2l13-11m-23 15q8 5 14 1l12-11"/>
+    <path d="M143 130q1-4 5-3q4 1 3 5q-1 4-5 3"/>
+    <!-- Other arm offers the prepared bag. -->
+    <path class="paper" d="M117 150q9 10 20 11l32 3m-53-8q9 10 20 11l32 2"/>
+    <path d="M168 164q5-2 7 1q2 4-4 5"/>
+
+    <!-- Friend arriving empty-handed, reaching for the bag. -->
+    <path class="paper" d="M204 112q-8-2-9 6q0 10 7 10q8 0 8-8q0-7-6-8Z"/>
+    <path d="M195 117q-3-6 3-9q8-4 13 5l-7-1"/>
+    <path class="fine" d="M200 129l-1 5m6-6 1 6"/>
+    <path d="M197 177q-2 12-5 25m11-25q-1 15-5 27"/>
+    <path d="M208 177q5 13 8 26m-2-29q4 16 7 28"/>
+    <path class="paper" d="M192 202l-4 5q5 3 13 1l-3-5"/>
+    <path class="paper" d="M216 202l-1 6q7 2 13-1q-3-3-7-4"/>
+    <path class="paper" d="M197 134q-8 6-8 17l4 27q11 4 25-1l-3-30q-1-12-10-14"/>
+    <path class="fine" d="M199 136l4 6l5-7m-5 7 2 30"/>
+    <path class="paper" d="M192 144q-7 7-12 13l-6 7m21-16q-6 8-11 13l-7 7"/>
+    <path d="M174 164q-4 0-4 3q0 4 6 1"/>
+    <path class="paper" d="M212 146q8 8 8 17l-1 13m-12-28q7 7 7 15l-1 12"/>
+    <path d="M214 175q-2 6 2 7q4 0 3-6"/>
+
+    <!-- A ready-packed tote: drink, dry space, everything to hand. -->
+    <g class="bag">
+      <path d="M166 181q-1-20 8-20q9 0 10 20"/>
+      <path class="fine" d="M170 181q-1-15 4-16q6 0 6 15"/>
+      <path class="paper" d="M180 177l-1-9q0-2 3-2l4 0q3 0 3 3l1 10"/>
+      <path class="paper" d="M181 166v-4h5l1 4Z"/>
+      <path class="paper" d="M160 179q13 3 32-1l-2 25q-13 4-27 0Z"/>
+      <path class="fine" d="M165 184l1 15m19-15-1 15m-13-8q4 2 8 0"/>
+    </g>
+
+    <path class="fine" d="M77 211q11-2 25-1m7 1q23-1 37 0m47 1q24-2 47 0"/>
+    <path class="fine" d="M54 187q8-3 17 0m-12 4 8 1m190 2q7-2 14 0"/>
+  </g>
+</svg>

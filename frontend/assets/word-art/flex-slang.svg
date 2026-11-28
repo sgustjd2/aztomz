@@ -1,0 +1,129 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240">
+  <rect width="320" height="240" fill="#fdfcf8"/>
+  <style>
+    .bags {
+      transform-box: fill-box;
+      transform-origin: 42% 0%;
+      animation: sway 6s ease-in-out infinite;
+    }
+    .watch-glint {
+      transform-box: fill-box;
+      transform-origin: center;
+      animation: glint 5s ease-in-out infinite;
+    }
+    .shine {
+      transform-box: fill-box;
+      transform-origin: center;
+      animation: shine 6s ease-in-out infinite;
+    }
+    @keyframes sway {
+      0%, 100% { transform: rotate(-2deg); }
+      50% { transform: rotate(3deg); }
+    }
+    @keyframes glint {
+      0%, 35%, 75%, 100% { opacity: .25; transform: scale(.85); }
+      48%, 58% { opacity: 1; transform: scale(1.1); }
+    }
+    @keyframes shine {
+      0%, 20%, 80%, 100% { opacity: .3; transform: scale(.85); }
+      45%, 55% { opacity: 1; transform: scale(1); }
+    }
+    @media (prefers-reduced-motion: reduce){ * { animation: none !important } }
+  </style>
+  <defs>
+    <filter id="ink" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency=".065" numOctaves="2" seed="7" result="grain"/>
+      <feDisplacementMap in="SourceGraphic" in2="grain" scale=".4" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+  </defs>
+  <g stroke="#1c1c1c" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" fill="none" filter="url(#ink)">
+    <!-- A quiet patch of pavement. -->
+    <path d="M71 211 Q115 210 137 211 M167 212 Q211 210 253 211" stroke-width=".8"/>
+
+    <!-- Loose trousers and gently turned shoes. -->
+    <path d="M144 141 Q141 164 137 194 L146 196 Q155 173 160 155
+             Q163 177 174 195 L183 192 Q176 165 175 141"
+          fill="#fdfcf8"/>
+    <path d="M139 192 Q136 197 130 200 Q125 201 125 205
+             Q136 207 148 204 L147 195"
+          fill="#fdfcf8"/>
+    <path d="M174 194 L175 203 Q187 207 198 205
+             Q199 201 192 200 L182 192"
+          fill="#fdfcf8"/>
+    <path d="M130 203 Q139 204 146 202 M179 202 Q188 204 194 203" stroke-width=".8"/>
+
+    <!-- The arm lifts a wristwatch into view: two open ink edges. -->
+    <path d="M146 94 Q137 103 129 110 Q123 103 119 91"/>
+    <path d="M150 101 Q140 115 129 120 Q123 119 119 111 Q115 103 113 94"/>
+    <path d="M114 91 Q109 87 110 82 Q110 79 113 81
+             L116 85 Q116 78 119 79 Q122 81 121 89"
+          fill="#fdfcf8"/>
+    <path d="M113 95 L120 92 M115 100 L122 97" stroke-width="1.4"/>
+    <path d="M113 92 Q116 90 120 90 L123 97 Q120 100 116 100 Z"
+          fill="#bd9650" stroke-width="1.4"/>
+    <path d="M117 93 L119 96 L121 95" stroke-width=".8"/>
+
+    <!-- Relaxed arm, with the hand carrying the purchases. -->
+    <path d="M175 96 Q188 110 191 126 L194 145"/>
+    <path d="M170 103 Q180 114 183 128 L187 146"/>
+    <path d="M187 145 Q185 151 189 154 Q192 156 195 151 L195 146"
+          fill="#fdfcf8"/>
+
+    <!-- A roomy jacket, with an open collar and economical seams. -->
+    <path d="M147 88 Q158 85 171 89 L179 101 L172 108
+             Q173 126 179 144 Q160 151 140 144
+             Q144 124 141 109 L135 104 Z"
+          fill="#747e91"/>
+    <path d="M151 88 L159 103 L168 88" fill="#fdfcf8"/>
+    <path d="M149 92 L147 102 L155 107 L151 113
+             M171 93 L173 102 L165 108 L167 114
+             M159 104 Q158 126 160 146"
+          stroke-width=".9"/>
+    <path d="M166 129 L173 128 M146 130 L152 131" stroke-width=".9"/>
+    <path d="M162 123 L162 124 M163 136 L163 137" stroke-width="1.4"/>
+
+    <!-- Small, faceless head; the pose carries the expression. -->
+    <path d="M153 78 L153 88 M162 78 L163 89"/>
+    <path d="M148 58 Q147 49 155 47 Q166 46 170 56
+             Q173 67 165 77 Q161 82 155 78
+             Q149 73 148 58 Z"
+          fill="#fdfcf8"/>
+    <path d="M148 63 Q144 54 148 48 Q153 42 162 46
+             Q167 43 171 49 Q173 53 170 58
+             Q161 59 155 54 Q154 61 148 63 Z"
+          fill="#1c1c1c" stroke-width="1.4"/>
+
+    <!-- Two substantial, unbranded shopping bags. -->
+    <g class="bags">
+      <path d="M178 164 Q176 145 186 145 Q197 146 197 164" stroke-width="1.4"/>
+      <path d="M170 163 Q183 165 201 162 L205 199
+               Q186 203 168 199 Z"
+            fill="#fdfcf8"/>
+      <path d="M196 163 L192 194 L205 199 M192 194 L174 196"
+            stroke-width=".8"/>
+      <path d="M206 161 Q204 143 214 143 Q224 143 226 160"
+            stroke-width="1.4"/>
+      <path d="M199 158 Q217 161 234 157 L242 194
+               Q223 200 201 196 Z"
+            fill="#bd9650"/>
+      <path d="M229 160 L229 191 L242 194 M229 191 L207 194"
+            stroke-width=".8"/>
+      <path d="M207 163 L208 165 M226 162 L227 164"
+            stroke-width="2.2"/>
+    </g>
+
+    <!-- Small gleams make the ostentation legible without lettering. -->
+    <g class="watch-glint" stroke-width="1.4">
+      <path d="M102 76 Q102 82 97 83 Q102 84 103 90
+               Q104 84 109 83 Q104 82 102 76 Z"
+            fill="#fdfcf8"/>
+    </g>
+    <g class="shine" stroke-width="1.4">
+      <path d="M232 104 Q232 112 225 114 Q233 115 235 123
+               Q235 115 242 113 Q234 112 232 104 Z"
+            fill="#fdfcf8"/>
+      <path d="M249 132 L249 139 M246 135 L252 135" stroke-width=".9"/>
+      <path d="M88 116 L91 111 M95 121 L101 119" stroke-width=".9"/>
+    </g>
+  </g>
+</svg>

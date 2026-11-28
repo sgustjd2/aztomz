@@ -1,0 +1,129 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240">
+  <rect width="320" height="240" fill="#fdfcf8"/>
+  <style>
+    svg { color: #1c1c1c }
+    .ink {
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.6;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .paper { fill: #fdfcf8 }
+    .detail { stroke-width: .85 }
+    .red { fill: #b94b43 }
+    .fan {
+      transform-box: fill-box;
+      transform-origin: 48% 100%;
+      animation: cheer 6s ease-in-out infinite;
+    }
+    .voice {
+      transform-box: fill-box;
+      transform-origin: 0% 65%;
+      animation: drawl 6s ease-in-out infinite;
+    }
+    .cup {
+      transform-box: fill-box;
+      transform-origin: 50% 100%;
+      animation: tremble 6s ease-in-out infinite;
+    }
+    @keyframes cheer {
+      0%, 18%, 100% { transform: rotate(0deg) }
+      34%, 60% { transform: rotate(-4deg) }
+      76% { transform: rotate(1deg) }
+    }
+    @keyframes drawl {
+      0%, 16%, 100% { transform: scaleX(.88) scaleY(.95); opacity: .55 }
+      35%, 62% { transform: scaleX(1) scaleY(1.04); opacity: 1 }
+      78% { transform: scaleX(.94) scaleY(.98); opacity: .75 }
+    }
+    @keyframes tremble {
+      0%, 28%, 70%, 100% { transform: rotate(0deg) }
+      38%, 52% { transform: rotate(3deg) }
+      45%, 59% { transform: rotate(-3deg) }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important }
+    }
+  </style>
+
+  <g class="ink">
+    <!-- A drawn-out cheer travels across the empty paper. -->
+    <g class="voice">
+      <path d="M157 72 C176 57 187 80 205 63 S236 48 258 56"/>
+      <path d="M159 82 C179 70 188 94 207 80 S237 66 266 76"/>
+      <path d="M159 92 C177 88 188 106 207 97 S234 87 254 95"/>
+      <path class="detail" d="M263 43 l5 -6 M274 57 l8 -1 M271 94 l6 4"/>
+    </g>
+
+    <!-- A faceless fan, head tipped back, both hands around a megaphone. -->
+    <g class="fan">
+      <path class="paper" d="M88 151 Q87 167 82 183 L76 203
+        M94 154 Q94 171 88 186 L82 205"/>
+      <path class="paper" d="M106 153 Q112 169 121 182 L129 200
+        M112 151 Q120 168 127 179 L135 199"/>
+      <path class="paper" d="M76 201 Q73 206 72 210
+        Q82 212 91 209 Q91 206 82 204"/>
+      <path class="paper" d="M128 198 L129 207 Q138 209 147 207
+        Q147 203 135 201"/>
+      <path class="detail" d="M76 207 Q82 209 88 207 M132 204 l6 1"/>
+
+      <path class="paper" d="M87 92 Q79 104 81 122 L79 153
+        Q93 159 115 153 L111 120 Q114 105 104 95"/>
+      <path class="red" d="M86 104 Q91 108 109 106
+        L111 126 Q98 130 81 125 L82 111 Z" stroke="none"/>
+      <path class="detail" d="M85 144 Q92 147 97 146 M107 137 l3 11"/>
+
+      <path class="paper" d="M89 94 l2 -9 M99 94 l0 -8"/>
+      <path class="paper" d="M86 69 C86 59 94 55 100 60
+        C106 64 108 76 102 83 C97 88 89 82 87 76"/>
+      <path fill="currentColor" stroke="none" d="M86 73
+        Q80 62 88 57 Q98 50 104 63
+        Q97 59 93 64 L92 71 L89 68 Z"/>
+      <path class="paper" d="M86 59 Q96 53 105 60 L108 64
+        Q97 60 86 65 Z"/>
+      <path class="detail" d="M91 57 Q94 53 99 56"/>
+
+      <!-- Open paired strokes keep the arms light. -->
+      <path class="paper" d="M84 101 Q77 91 88 83 L109 76
+        M90 105 Q85 94 93 90 L110 83"/>
+      <path class="paper" d="M105 99 Q119 103 124 94 L130 83
+        M109 105 Q125 110 130 98 L136 86"/>
+      <path class="paper" d="M108 77 Q114 73 117 77
+        M109 83 Q114 86 118 81"/>
+      <path class="paper" d="M129 84 Q129 79 133 78
+        M135 86 Q140 83 139 80"/>
+
+      <!-- The megaphone is the visual cue for the exaggerated call. -->
+      <path class="paper" d="M111 75 L117 72 L145 63
+        Q150 76 146 91 L118 82 L112 82 Z"/>
+      <path class="red" d="M140 65 L145 63 Q150 76 146 91
+        L141 89 Q144 77 140 65 Z" stroke="none"/>
+      <path d="M145 63 Q150 76 146 91"/>
+      <path class="paper" d="M122 84 l-1 9 q3 3 6 0 l2 -7"/>
+      <path class="detail" d="M117 76 l1 4"/>
+    </g>
+
+    <!-- A small gaming screen and a trophy establish the match context. -->
+    <path d="M168 175 Q207 173 253 175 M174 176 l-2 35 M247 176 l2 35"/>
+    <path class="paper" d="M175 133 Q175 130 179 130
+      L223 131 Q226 131 226 135 L225 163
+      Q225 166 221 166 L178 165 Q175 165 175 161 Z"/>
+    <path class="detail" d="M180 135 L221 136 L220 159 L180 159 Z"/>
+    <path d="M199 166 l-1 8 M190 174 q9 -2 18 0"/>
+    <path class="red" stroke="none" d="M189 146
+      l17 -6 -5 6 12 -2 -15 10 3 -6 -12 2 Z"/>
+    <path class="detail" d="M183 162 l4 0 M213 162 l5 0"/>
+
+    <g class="cup">
+      <path class="paper" d="M237 143 Q238 155 244 159
+        Q251 156 252 143 Z"/>
+      <path d="M237 146 Q229 142 231 150 Q232 155 240 155
+        M252 146 Q260 142 258 150 Q257 155 250 155"/>
+      <path d="M244 159 l0 8 M239 169 Q244 166 249 169 l1 5 -12 0 Z"/>
+      <path class="red" stroke="none" d="M240 144 l9 0 -2 9 -4 2 Z"/>
+    </g>
+
+    <path class="detail" d="M57 213 Q103 211 151 213 M163 214 Q210 212 263 214"/>
+  </g>
+</svg>

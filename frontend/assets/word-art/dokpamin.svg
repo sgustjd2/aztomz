@@ -1,0 +1,138 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240">
+  <rect width="320" height="240" fill="#fdfcf8"/>
+  <style>
+    .breathe {
+      transform-box: fill-box;
+      transform-origin: 50% 100%;
+      animation: breathe 6s ease-in-out infinite;
+    }
+    .steam {
+      transform-box: fill-box;
+      transform-origin: 50% 100%;
+      animation: steam 5s ease-in-out infinite;
+    }
+    .reward {
+      transform-box: fill-box;
+      transform-origin: 50% 50%;
+      animation: reward 7s ease-in-out infinite;
+    }
+    @keyframes breathe {
+      0%, 100% { transform: rotate(0deg); }
+      50% { transform: rotate(-1.2deg); }
+    }
+    @keyframes steam {
+      0%, 100% { opacity: .25; transform: translateY(1px) rotate(-3deg); }
+      50% { opacity: .65; transform: translateY(-4px) rotate(3deg); }
+    }
+    @keyframes reward {
+      0%, 20%, 80%, 100% { opacity: .35; transform: scale(.9); }
+      45%, 60% { opacity: 1; transform: scale(1.06); }
+    }
+    @media (prefers-reduced-motion: reduce){ * { animation: none !important } }
+  </style>
+
+  <g fill="none" stroke="#1c1c1c" stroke-width="1.7"
+     stroke-linecap="round" stroke-linejoin="round">
+
+    <!-- A quiet patch of floor. -->
+    <path d="M51 207q63-1 113 0m13 0q44 1 88-1" stroke-width=".8"/>
+
+    <!-- A low wooden reading chair. -->
+    <path d="M78 143 69 96q-1-7 5-8t8 6l11 44"/>
+    <path d="M76 101q5-2 8-1m-6 13q5-2 9-1m-6 13q5-2 8-1"
+          stroke-width=".8"/>
+    <path d="M82 145q26-3 55 0l1 9q-27 3-53 0Z" fill="#fdfcf8"/>
+    <path d="m88 155-7 48m12-47-6 47m43-47 9 46m-3-47 9 47"/>
+    <path d="M81 184q29 3 55 0" stroke-width=".9"/>
+
+    <!-- Legs: separate, open ink edges with softly bent knees. -->
+    <path d="M111 140q16 1 26 9 4 4 8 18l8 23
+             M102 145q15 10 25 12 4 1 6 10l10 26"
+          fill="none"/>
+    <path d="M125 143q20-3 30 7 5 6 4 18l-2 25
+             M117 150q16 5 27 7 5 1 4 11l-1 23"
+          fill="none"/>
+    <path d="M143 189q5 2 11 0l2 7q8 1 10 7-13 3-23-1Z"
+          fill="#fdfcf8"/>
+    <path d="M147 193q5 2 11 0l2 8q11 0 14 5-15 3-27 0Z"
+          fill="#fdfcf8"/>
+    <path d="m151 201 6 1m-9-6 6 1" stroke-width=".8"/>
+
+    <g class="breathe">
+      <!-- Loose indigo shirt, small head, no face. -->
+      <path d="M100 91q-11 5-12 20l3 27q15 10 35 5
+               l-3-23q1-16-11-25Z"
+            fill="#7f909e"/>
+      <path d="M98 137q12 4 25 2m-26-30q-2 12 0 19"
+            stroke-width=".8"/>
+      <path d="m105 88-2 8m9-7-1 8" stroke-width="1.5"/>
+      <path d="M100 65q10-5 17 2 5 6 2 17-2 8-8 9
+               -8-1-12-10-4-10 1-18Z"
+            fill="#fdfcf8"/>
+      <path d="M98 78q-7-13 4-17 11-4 17 6
+               -7-2-11 1-2 6-10 10Z"
+            fill="#1c1c1c" stroke-width="1.4"/>
+      <path d="M97 76q-3 3 0 7" stroke-width=".8"/>
+
+      <!-- Far arm, resting naturally toward the page. -->
+      <path d="M116 103q10 5 15 15l14-3
+               M112 111q8 9 15 14 5 2 19-3"
+            fill="none"/>
+      <path d="M144 115q5-3 9-1m-8 9q6 0 9-4" stroke-width="1.5"/>
+
+      <!-- Thick open book; its generous page block reads as a finished tome. -->
+      <path d="M132 106q15-3 28 7 10-12 29-13
+               l-4 32q-15 1-26 10-13-8-29-8Z"
+            fill="#fdfcf8"/>
+      <path d="M132 102q17-1 28 10 11-13 28-16
+               l-5 30q-14 3-24 12-13-10-28-10Z"
+            fill="#fdfcf8"/>
+      <path d="m160 112-1 26" stroke-width="1.4"/>
+      <path d="M137 110q10 1 17 6m-18 0q10 1 17 6
+               m15-8q6-6 14-8m-15 14q6-6 13-8
+               m-45 20q12 1 21 7m6 0q10-7 20-9"
+            stroke-width=".8"/>
+      <path d="m176 100-3 15 4-3 3 1 2-15"
+            fill="#ba7960" stroke-width=".9"/>
+
+      <!-- Near sleeve and open forearm strokes. -->
+      <path d="M98 103q-6 9 1 19l9 8 9-10-10-13"
+            fill="#7f909e"/>
+      <path d="M110 126q8 6 14 4l17-7
+               M115 119q7 5 10 4l13-6"
+            fill="none"/>
+      <path d="M138 117q5-3 8-1 2 2-1 4m-4 3q6-1 7-5"
+            fill="#fdfcf8" stroke-width="1.5"/>
+      <path d="m108 128 8-9" stroke-width=".8"/>
+    </g>
+
+    <!-- A modest little burst of completion and pleasure. -->
+    <g class="reward" stroke="#ba7960" stroke-width="1.5">
+      <path d="M148 69q1-7 3-10 1 7 5 10-6 1-8 7-1-5-6-7Z"
+            fill="#fdfcf8"/>
+      <path d="m169 76 4-5m-33 7-5-3m27-27 1-5"/>
+      <path d="M181 56v7m-3-4h6" stroke-width="1"/>
+    </g>
+
+    <!-- Two read volumes and a warm cup. -->
+    <path d="M202 190q23-2 44 0v13q-22 2-45 0
+             -3-6 1-13Z" fill="#7f909e"/>
+    <path d="M207 192q18 1 36 0v9q-18 1-36 0"
+          fill="#fdfcf8" stroke-width=".9"/>
+    <path d="M204 176q21-2 39 0l1 12q-21 2-41 0
+             -3-6 1-12Z" fill="#fdfcf8"/>
+    <path d="M207 180q17 1 33 0m-33 4q16 1 31 0"
+          stroke-width=".8"/>
+    <path d="m231 176 1 12 3-2 3 2-1-12"
+          fill="#ba7960" stroke-width=".8"/>
+    <path d="M218 154q8-2 17 0l-1 16q-7 5-14 0Z"
+          fill="#fdfcf8"/>
+    <path d="M235 157q11-2 9 5-1 5-9 4"/>
+    <path d="M218 154q8 3 17 0m-20 20q12 3 24 0"
+          stroke-width=".8"/>
+    <g class="steam" stroke-width=".9">
+      <path d="M223 146q-5-5 0-10 4-4 0-8"/>
+      <path d="M231 147q-4-4 0-8"/>
+    </g>
+  </g>
+</svg>

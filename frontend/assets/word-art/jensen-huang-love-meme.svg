@@ -1,0 +1,136 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240">
+  <rect width="320" height="240" fill="#fdfcf8"/>
+  <style>
+    .ink {
+      fill: none;
+      stroke: #1c1c1c;
+      stroke-width: 1.6;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .bubble {
+      fill: #fdfcf8;
+      transform-box: fill-box;
+      transform-origin: center bottom;
+      animation: rise 6s ease-in-out infinite;
+    }
+    .second { animation-delay: -2s }
+    .third { animation-delay: -4s }
+    .heart {
+      fill: #b96c68;
+      stroke: #1c1c1c;
+      stroke-width: 1.4;
+      transform-box: fill-box;
+      transform-origin: center;
+      animation: beat 6s ease-in-out infinite;
+    }
+    .second .heart { animation-delay: -2s }
+    .third .heart { animation-delay: -4s }
+    @keyframes rise {
+      0%, 100% { transform: translateY(2px) rotate(-2deg) }
+      45% { transform: translateY(-5px) rotate(2deg) }
+      70% { transform: translateY(-3px) rotate(0deg) }
+    }
+    @keyframes beat {
+      0%, 30%, 60%, 100% { transform: scale(1) }
+      40% { transform: scale(1.09) }
+      49% { transform: scale(1.025) }
+      54% { transform: scale(1.06) }
+    }
+    @media (prefers-reduced-motion: reduce){
+      * { animation: none !important }
+    }
+  </style>
+
+  <g class="ink">
+    <!-- A small, gently imperfect phone resting on paper. -->
+    <path stroke-width=".8" d="M96 216 Q158 219 222 215"/>
+    <path fill="#fdfcf8" stroke-width="1.9"
+      d="M120 82 Q115 82 115 89
+         L112 202 Q112 211 121 212
+         L199 211 Q207 211 207 203
+         L205 90 Q205 83 198 83 Z"/>
+    <path stroke-width="1.4"
+      d="M123 97 Q159 96 197 98
+         L198 193 Q160 195 121 193 Z"/>
+    <path stroke-width=".8" d="M150 90 Q160 89 169 90"/>
+    <path stroke-width=".8" d="M154 202 Q160 201 166 202"/>
+    <path stroke-width="1.4" d="M112 113 L112 128 M209 112 L209 130"/>
+
+    <!-- Three identical messages seem to spill out of the screen. -->
+    <g class="bubble">
+      <path d="M62 64
+        Q58 64 58 59 L58 38
+        Q58 32 64 32
+        Q82 31 100 32
+        Q106 32 106 38 L106 59
+        Q106 65 100 65
+        L88 65 L78 75 L79 65
+        Q70 65 62 64 Z"/>
+      <path class="heart"
+        d="M82 56
+           C78 53 71 49 72 44
+           C73 39 79 39 82 43
+           C85 39 91 39 92 44
+           C93 49 86 53 82 56 Z"/>
+    </g>
+
+    <g class="bubble second">
+      <path d="M140 45
+        Q136 45 136 40 L136 19
+        Q136 13 142 13
+        Q160 12 178 13
+        Q184 13 184 19 L184 40
+        Q184 46 178 46
+        L166 46 L156 56 L157 46
+        Q148 46 140 45 Z"/>
+      <path class="heart"
+        d="M160 37
+           C156 34 149 30 150 25
+           C151 20 157 20 160 24
+           C163 20 169 20 170 25
+           C171 30 164 34 160 37 Z"/>
+    </g>
+
+    <g class="bubble third">
+      <path d="M218 64
+        Q214 64 214 59 L214 38
+        Q214 32 220 32
+        Q238 31 256 32
+        Q262 32 262 38 L262 59
+        Q262 65 256 65
+        L244 65 L234 75 L235 65
+        Q226 65 218 64 Z"/>
+      <path class="heart"
+        d="M238 56
+           C234 53 227 49 228 44
+           C229 39 235 39 238 43
+           C241 39 247 39 248 44
+           C249 49 242 53 238 56 Z"/>
+    </g>
+
+    <!-- Quiet curved trails connect the repetition to the phone. -->
+    <g stroke-width=".8">
+      <path d="M102 81 Q109 86 111 92"/>
+      <path d="M159 64 Q157 71 159 77"/>
+      <path d="M219 82 Q213 87 211 94"/>
+    </g>
+
+    <path stroke-width=".9"
+      d="M134 116 Q160 114 185 116
+         M135 123 Q152 122 167 123"/>
+    <path fill="#fdfcf8" stroke-width="1.4"
+      d="M138 139 Q133 139 133 144
+         L133 163 Q133 168 139 168
+         L149 168 L157 175 L157 168
+         L181 168 Q187 168 187 162
+         L186 144 Q186 139 181 139 Z"/>
+    <path fill="#b96c68" stroke-width="1.4"
+      d="M160 160
+         C156 157 150 153 151 149
+         C152 145 157 145 160 148
+         C163 145 168 145 169 149
+         C170 153 164 157 160 160 Z"/>
+    <path stroke-width=".8" d="M145 183 Q159 182 175 183"/>
+  </g>
+</svg>

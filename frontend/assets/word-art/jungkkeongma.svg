@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240">
+  <rect width="320" height="240" fill="#fdfcf8"/>
+  <style>
+    .ink{fill:none;stroke:#1c1c1c;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+    .paper{fill:#fdfcf8}
+    .detail{stroke-width:.8}
+    .effort{transform-box:fill-box;transform-origin:32% 94%;animation:effort 6s ease-in-out infinite}
+    .flag{transform-box:fill-box;transform-origin:0% 50%;animation:flag 5s ease-in-out infinite}
+    .breath{transform-box:fill-box;transform-origin:50% 50%;animation:breath 6s ease-in-out infinite}
+    @keyframes effort{
+      0%,100%{transform:rotate(0deg)}
+      42%,65%{transform:rotate(-1.5deg)}
+      82%{transform:rotate(.4deg)}
+    }
+    @keyframes flag{
+      0%,100%{transform:skewY(0deg) scaleX(1)}
+      35%{transform:skewY(4deg) scaleX(.94)}
+      70%{transform:skewY(-3deg) scaleX(.98)}
+    }
+    @keyframes breath{
+      0%,35%,85%,100%{opacity:0;transform:translate(0,2px)}
+      48%{opacity:.65;transform:translate(1px,0)}
+      70%{opacity:0;transform:translate(6px,-4px)}
+    }
+    @media (prefers-reduced-motion: reduce){ * { animation: none !important } }
+  </style>
+  <defs>
+    <filter id="ink-wobble" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency=".065" numOctaves="2" seed="8" result="grain"/>
+      <feDisplacementMap in="SourceGraphic" in2="grain" scale=".45" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+  </defs>
+  <g class="ink" filter="url(#ink-wobble)">
+    <!-- The last steep stretch, with a little room at the summit. -->
+    <path d="M43 197 Q58 196 72 190 Q86 185 103 184
+      Q116 181 130 176 L145 173 Q153 168 160 158
+      Q171 152 187 151 Q196 143 202 130
+      Q207 124 218 122 Q226 119 235 115 Q253 112 276 114"/>
+    <path class="detail" d="M48 204q15-2 24-6m40-7 13-4m44-21 12-4m35-24 9-3m24-12 16-1"/>
+
+    <!-- A small summit flag. -->
+    <path d="M245 113 Q244 88 245 61"/>
+    <g class="flag">
+      <path fill="#b96d58" d="M245 63 Q253 59 261 64 Q267 67 275 63
+        L273 81 Q265 85 258 80 Q252 77 245 81Z"/>
+      <path class="detail" d="M250 66q5-1 9 2"/>
+    </g>
+    <path class="detail" d="M240 115q5-3 10-1"/>
+
+    <!-- Two stones make the difficult footing tangible. -->
+    <path class="paper" d="M76 189l4-9q4-3 9-2l7 7-3 3"/>
+    <path class="detail" d="m81 180 6 5 7-1"/>
+    <path class="paper" d="m197 140 6-12q4-4 10-3l8 8-4 5"/>
+    <path class="detail" d="m204 128 7 6 7-1"/>
+
+    <!-- Open, paired leg strokes; both boots remain planted. -->
+    <path class="paper" stroke="none" d="M120 137L129 140 117 160 110 180
+      104 179 110 158Z"/>
+    <path d="M120 139Q114 149 110 158q-3 9-6 20
+      M129 142q-6 10-12 19l-6 18"/>
+    <path class="paper" d="M104 178q4 1 8 2l1 4q-8 2-16 1
+      q-1-3 7-7Z"/>
+    <path class="detail" d="m100 183 10 0"/>
+
+    <path class="paper" stroke="none" d="M127 136Q138 132 147 135
+      Q153 143 160 153L155 157Q147 148 142 143L130 146Z"/>
+    <path d="M129 137q9-5 17-2 7 7 14 18
+      M130 146q7-3 12-3l12 13"/>
+    <path class="paper" d="M154 153q4-2 7-1l6 4q-2 3-12 4l-3-3Z"/>
+    <path class="detail" d="m155 158 9-2"/>
+
+    <g class="effort">
+      <!-- A plain jacket and a compact, muted blue pack. -->
+      <path class="paper" d="M136 108q-9 3-13 12l-8 20
+        q8 7 18 5l12-28q-1-7-9-9Z"/>
+      <path fill="#7b9197" d="M126 111q-8-2-12 4l-7 18
+        q4 5 11 5l10-21Z"/>
+      <path class="detail" d="M117 116q3-2 6 0m-11 14 7 2
+        M129 112q-1 10-6 20m-5 7q6 4 12 3"/>
+
+      <!-- Back arm, hanging with the effort. -->
+      <path d="M129 119q-5 8-5 15l8 12
+        M133 121q-4 7-4 12l6 11"/>
+      <path class="paper" d="M132 144q4-1 5 2l-1 4q-3 2-5-2"/>
+
+      <!-- Short neck, small faceless head, and a soft cap. -->
+      <path d="m141 110 3-8m3 9 3-8"/>
+      <path class="paper" d="M143 87q5-5 10-1 5 4 3 10
+        l-1 5q-5 5-10 0-4-6-2-14Z"/>
+      <path fill="#1c1c1c" stroke="none" d="M143 87q-3 6 1 10
+        l2-7 4-5Z"/>
+      <path class="paper" d="M140 88q0-9 8-9 8 1 9 9
+        q-8-2-17 0Z"/>
+      <path d="M150 87q7-1 12 3"/>
+      <path class="detail" d="M144 82q5-2 9 1"/>
+
+      <!-- A hand reaches onto the next ledge. -->
+      <path class="paper" stroke="none" d="M141 112Q151 115 163 126
+        L180 140 176 144 158 131 138 119Z"/>
+      <path d="M142 112q10 3 21 14l15 12
+        M139 120q10 4 19 11l17 13"/>
+      <path class="paper" d="M176 138q3-3 5-1l3 5 5 1
+        q2 2-1 4l-9-2-4-3"/>
+      <path class="detail" d="m181 141 2 3"/>
+
+      <g class="breath" opacity="0">
+        <path class="detail" d="m164 99 5-2m-3 7 6 1"/>
+      </g>
+    </g>
+
+    <!-- A few quiet marks leave the paper open. -->
+    <path class="detail" d="m57 190-2-5m5 3 2-5
+      m165-30 3-5m-6 6-1-4
+      m88-14 2-5m-6 5-1-3"/>
+  </g>
+</svg>

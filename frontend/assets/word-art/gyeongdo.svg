@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240">
+  <rect width="320" height="240" fill="#fdfcf8"/>
+  <style>
+    .reach{transform-box:fill-box;transform-origin:8% 70%;animation:reach 6s ease-in-out infinite}
+    .hem{transform-box:fill-box;transform-origin:90% 15%;animation:flutter 6s ease-in-out infinite}
+    .motion{transform-box:fill-box;transform-origin:center;animation:breath 4.8s ease-in-out infinite}
+    @keyframes reach{
+      0%,100%{transform:rotate(3deg)}
+      45%,60%{transform:rotate(-5deg)}
+    }
+    @keyframes flutter{
+      0%,100%{transform:rotate(-3deg)}
+      45%,60%{transform:rotate(5deg)}
+    }
+    @keyframes breath{
+      0%,100%{opacity:.25}
+      45%,65%{opacity:.85}
+    }
+    @media (prefers-reduced-motion: reduce){ * { animation: none !important } }
+  </style>
+  <g stroke="#1c1c1c" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <!-- A quiet park bench beyond the playing space. -->
+    <g stroke-width="1.4">
+      <path d="M46 135 Q64 134 83 135 L83 147 Q65 146 46 147 Z" fill="#fdfcf8"/>
+      <path d="M44 154 Q65 153 86 154 L84 158 L45 158 Z" fill="#fdfcf8"/>
+      <path d="M49 148 L49 153 M79 148 L79 153 M50 159 L49 171 M79 159 L81 171"/>
+      <path d="M48 141 Q64 140 81 141" stroke-width=".8"/>
+    </g>
+
+    <!-- Two cones mark the informal playground. -->
+    <g fill="#b97b60" stroke-width="1.4">
+      <path d="M63 189 Q65 181 68 174 Q71 181 73 189 Z"/>
+      <path d="M246 181 Q249 172 252 164 Q255 173 257 181 Z"/>
+    </g>
+    <path d="M60 191 Q68 192 76 191 M243 183 Q252 184 260 183" stroke-width="1.4"/>
+    <path d="M65 183 L71 183 M249 174 L255 174" stroke="#fdfcf8" stroke-width="2"/>
+
+    <!-- The chaser: grown-up proportions, an open hand reaching to tag. -->
+    <path d="M118 124 Q111 138 101 149 Q94 151 85 147
+             M123 127 Q117 143 105 154 Q94 157 84 152"
+          fill="#fdfcf8"/>
+    <path d="M85 147 Q80 145 78 148 L80 152 Q85 156 89 153" fill="#fdfcf8"/>
+    <path d="M131 124 Q143 134 146 146 L136 168
+             M126 128 Q137 138 140 146 L131 166"/>
+    <path d="M131 166 Q129 169 130 172 Q136 174 145 171
+             Q147 168 137 168" fill="#fdfcf8"/>
+
+    <path d="M120 85 Q127 84 134 90 L139 112
+             Q135 123 130 130 L113 125 Q114 105 116 94 Z"
+          fill="#78858e"/>
+    <path d="M118 124 Q125 126 131 128" stroke-width=".8"/>
+    <path d="M124 80 L122 86 M130 81 L129 87"/>
+    <path d="M120 66 Q126 61 131 66 Q135 71 132 78
+             Q129 84 124 81 Q119 78 120 66 Z" fill="#fdfcf8"/>
+    <path d="M120 70 Q117 63 124 61 Q131 59 133 67
+             Q127 64 120 70" fill="#1c1c1c" stroke-width=".8"/>
+
+    <path d="M118 95 Q105 103 103 112 L113 118
+             M121 100 Q110 106 109 111 L116 114"/>
+    <path d="M113 114 Q119 113 120 116 Q120 120 115 120" fill="#fdfcf8"/>
+
+    <g class="reach">
+      <path d="M133 91 Q145 88 151 84 L170 82
+               M135 97 Q147 94 154 90 L171 87"/>
+      <path d="M170 82 Q174 79 178 80 M172 84 L180 83
+               M172 87 Q177 88 180 86"/>
+      <path d="M134 91 L137 96" stroke-width=".8"/>
+    </g>
+
+    <!-- The escaping player looks back, with long adult limbs. -->
+    <path d="M192 120 Q180 136 172 146 L158 145
+             M197 123 Q185 141 175 151 L158 150"/>
+    <path d="M159 145 Q153 142 151 146 Q149 151 157 153
+             L163 151" fill="#fdfcf8"/>
+    <path d="M203 121 Q216 136 219 146 L214 169
+             M198 126 Q210 139 213 147 L209 168"/>
+    <path d="M209 168 Q207 172 210 174 L225 174
+             Q228 171 216 169" fill="#fdfcf8"/>
+
+    <path d="M192 78 Q200 77 207 84 Q211 100 207 121
+             Q199 126 187 120 L186 98 Z" fill="#fdfcf8"/>
+    <path class="hem" d="M188 109 Q181 117 177 118 Q182 124 191 122"
+          fill="#fdfcf8"/>
+    <path d="M195 72 L193 79 M201 72 L201 80"/>
+    <path d="M193 56 Q200 52 204 57 Q207 63 203 70
+             Q199 76 193 71 Q190 66 193 56 Z" fill="#fdfcf8"/>
+    <path d="M192 61 Q188 55 194 52 Q202 49 205 57
+             M192 59 Q197 56 202 57" stroke-width="2"/>
+
+    <path d="M204 84 Q216 91 223 99 L233 90
+             M202 90 Q214 97 222 105 Q226 104 235 94"/>
+    <path d="M233 90 Q233 85 236 85 Q240 87 237 92 L235 94" fill="#fdfcf8"/>
+    <path d="M188 87 Q182 98 175 101 L164 95
+             M190 94 Q184 105 176 107 L162 100"/>
+    <path d="M164 95 Q160 91 157 94 M162 98 L156 97 M163 100 L158 101"/>
+    <path d="M189 106 Q197 108 205 106 M197 83 L198 87" stroke-width=".8"/>
+
+    <!-- Small pen marks suggest the cheerful chase without faces or labels. -->
+    <g class="motion" stroke-width=".9">
+      <path d="M94 86 Q100 84 106 85 M91 93 L102 92"/>
+      <path d="M216 61 L222 58 M219 69 L227 69"/>
+      <path d="M145 182 Q161 181 174 182 M195 185 Q208 184 222 185"/>
+    </g>
+    <path d="M88 194 Q151 192 205 194 M218 194 L236 194" stroke-width=".8"/>
+  </g>
+</svg>

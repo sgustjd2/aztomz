@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240">
+  <rect width="320" height="240" fill="#fdfcf8"/>
+  <style>
+    .ink{fill:none;stroke:#1c1c1c;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+    .detail{stroke-width:.85}
+    .paper{fill:#fdfcf8}
+    .cheer{transform-box:fill-box;transform-origin:12% 92%;animation:cheer 6s ease-in-out infinite}
+    .burst{transform-box:fill-box;transform-origin:50% 65%;animation:burst 6s ease-in-out infinite}
+    .note{transform-box:fill-box;transform-origin:8% 95%;animation:flutter 6s ease-in-out infinite}
+    @keyframes cheer{
+      0%,24%,85%,100%{transform:rotate(0deg)}
+      36%,54%{transform:rotate(-9deg)}
+      44%,64%{transform:rotate(4deg)}
+      74%{transform:rotate(-4deg)}
+    }
+    @keyframes burst{
+      0%,22%,88%,100%{opacity:.25;transform:scale(.88)}
+      37%,60%{opacity:1;transform:scale(1.06)}
+      47%,73%{opacity:.7;transform:scale(.98)}
+    }
+    @keyframes flutter{
+      0%,27%,78%,100%{transform:rotate(0deg)}
+      39%,61%{transform:rotate(-4deg)}
+      49%,69%{transform:rotate(2deg)}
+    }
+    @media (prefers-reduced-motion: reduce){ * { animation: none !important } }
+  </style>
+  <defs>
+    <filter id="ink" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency=".065" numOctaves="2" seed="8" result="grain"/>
+      <feDisplacementMap in="SourceGraphic" in2="grain" scale=".45" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+  </defs>
+
+  <g class="ink" filter="url(#ink)">
+    <!-- A little presentation, interrupted by a very cheerful impulse. -->
+    <path class="detail" d="M47 202q45-2 77 0m15 1q54-3 91-1m9 0 30 1" opacity=".4"/>
+
+    <!-- Presentation board: diagrams, never lettering. -->
+    <path d="M215 126q-2 38-9 74m29-74q4 40 11 74"/>
+    <path class="paper" d="M201 79q25-1 52 0l1 56q-28 1-54-1Z"/>
+    <path class="detail" d="M210 91q15-1 33 0M210 97l13 .2"/>
+    <path d="M210 122v-9m10 9v-15m11 15v-21" stroke="#777f99"/>
+    <path class="detail" d="M208 126q18 1 36 0"/>
+    <path d="M198 77q28-1 58 0"/>
+
+    <!-- Legs keep their weight on the floor. -->
+    <path class="paper" d="M147 144q-3 17-9 30l-9 21m24-50q-1 18-8 32l-9 20"/>
+    <path class="paper" d="M157 145q3 16 10 28l12 20m-16-49q3 15 10 27l13 22"/>
+    <path class="paper" d="M129 193q-5 2-9 6-1 3 3 3l14-1-1-7"/>
+    <path class="paper" d="m178 192 1 8q10 3 17 1 1-3-5-4l-6-6"/>
+
+    <!-- Open, curved strokes for the relaxed arm. -->
+    <path class="paper" d="M144 99q-10 7-17 15l-15 7m35-17q-9 8-16 15l-17 8"/>
+    <path d="M113 121q-5-2-8 1m9 5q-6 2-9-1"/>
+
+    <!-- Small coat, with a hem that follows the stance. -->
+    <path fill="#777f99" d="M146 94q9-3 17 1l5 27q0 13 5 24-10 4-17-1-6 5-16 1 6-24 6-52Z"/>
+    <path class="detail" d="M155 101q-2 19 1 44m-11-8 7-1"/>
+    <path class="paper" d="m150 91 1-10m8 11-1-12"/>
+    <path class="paper" d="M146 66q2-9 10-7 8 1 9 11l-2 11q-4 6-10 2-6-4-7-17Z"/>
+    <path fill="#1c1c1c" stroke-width="1.4" d="M146 70q-5-8 0-13 4-4 10-1 7-2 10 5l-1 9-4-7q-7 3-13-1Z"/>
+
+    <!-- A spontaneous raised hand with a tiny party horn. -->
+    <g class="cheer">
+      <path class="paper" d="M163 98q12-6 18-15l8-19m-22 39q13-6 20-17l8-20"/>
+      <path class="paper" d="M189 65q-3-5-1-7l3 1q-1-7 2-8 3 0 3 6 4-5 6-3 1 2-3 7l-4 5"/>
+      <path fill="#bd6e59" d="m197 53 13-17 6 6-17 13Z"/>
+      <path class="detail" d="m205 43 5 5m-2-9 5 5"/>
+      <path d="m210 36 6 6"/>
+    </g>
+
+    <!-- The sudden burst stays legible even with motion disabled. -->
+    <g class="burst">
+      <path d="m183 39-4-7m42 27 9 1m-5-28 5-5"/>
+      <path stroke="#bd6e59" d="m199 29-1-7m39 21 7-3"/>
+      <path class="detail" d="m232 71 3 4m-58-24-6-2"/>
+      <path class="paper" d="m231 48 2-4 2 4 4 2-4 2-2 4-2-4-4-2Z"/>
+    </g>
+
+    <!-- Lectern and an abandoned, slightly fluttering script. -->
+    <path class="paper" d="M61 125q24-1 51 0l11 9q-34 2-66 0Z"/>
+    <path class="paper" d="m66 136 5 61q20 2 40 0l5-62"/>
+    <path class="detail" d="M74 143q1 21 3 42m-5 13-5 4q27 2 49 0l-5-4"/>
+    <g class="note">
+      <path class="paper" d="m73 119 25-3 10 13-27 3Z"/>
+      <path class="detail" d="m80 122 15-2m-12 6 14-2"/>
+    </g>
+    <path class="detail" d="M90 124q2-11 8-16"/>
+    <path class="paper" d="M96 108q-2-3 0-5 3-2 5 1 1 3-2 5Z"/>
+
+    <!-- A tiny, quiet shadow beneath the wide celebratory stance. -->
+    <path class="detail" d="m125 206 10-.3m42 .3 15-.5" opacity=".35"/>
+  </g>
+</svg>

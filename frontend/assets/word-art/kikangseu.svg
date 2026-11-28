@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240">
+  <rect width="320" height="240" fill="#fdfcf8"/>
+  <style>
+    .ink{fill:none;stroke:#1c1c1c;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+    .detail{stroke-width:.8}
+    .paper{fill:#fdfcf8}
+    .blue{fill:#a9c6cb}
+    .red{fill:#c97d69}
+    .canopy{transform-box:fill-box;transform-origin:50% 100%;animation:breeze 7s ease-in-out infinite}
+    .child{transform-box:fill-box;transform-origin:50% 75%;animation:float 5s ease-in-out infinite}
+    .ripple{transform-box:fill-box;transform-origin:50% 50%;animation:water 6s ease-in-out infinite}
+    .late{animation-delay:-3s}
+    @keyframes breeze{
+      0%,100%{transform:rotate(-1deg)}
+      50%{transform:rotate(1.5deg)}
+    }
+    @keyframes float{
+      0%,100%{transform:translateY(0) rotate(-1deg)}
+      50%{transform:translateY(2px) rotate(1deg)}
+    }
+    @keyframes water{
+      0%,100%{transform:scaleX(.94);opacity:.55}
+      50%{transform:scaleX(1.06);opacity:1}
+    }
+    @media (prefers-reduced-motion: reduce){ * { animation: none !important } }
+  </style>
+
+  <g class="ink">
+    <!-- Resort elevation -->
+    <path class="paper" d="M115 122 Q114 85 115 49 Q191 48 265 49 L266 139"/>
+    <path d="M111 49 Q191 46 270 49 M119 44 Q192 42 263 44"/>
+    <path class="detail" d="M123 54 Q191 53 258 54"/>
+    <g class="detail">
+      <path d="M130 65 L151 65 L151 85 L130 85 Z M140 65 L140 84"/>
+      <path d="M171 65 L192 65 L192 85 L171 85 Z M181 65 L181 84"/>
+      <path d="M212 65 L233 65 L233 85 L212 85 Z M222 65 L222 84"/>
+      <path d="M126 89 Q140 90 155 89 M167 89 Q181 90 196 89 M208 89 Q222 90 237 89"/>
+      <path d="M128 85 L128 93 L153 93 L153 85 M169 85 L169 93 L194 93 L194 85 M210 85 L210 93 L235 93 L235 85"/>
+      <path d="M132 105 L151 105 L151 121 L132 121 Z M141 105 L141 121"/>
+      <path d="M223 105 L242 105 L242 121 L223 121 Z M232 105 L232 121"/>
+    </g>
+    <path class="paper" d="M172 139 L172 113 Q187 110 202 113 L202 139"/>
+    <path class="detail" d="M187 114 L187 138 M183 125 L183 128 M191 125 L191 128"/>
+    <path class="red" d="M163 113 L170 102 Q187 100 204 102 L211 113 Q187 115 163 113 Z"/>
+    <path class="detail" d="M176 103 L173 112 M187 102 L187 113 M198 103 L201 112"/>
+    <path d="M157 140 Q209 138 275 141"/>
+
+    <!-- Quiet pool, with generous paper around the scene -->
+    <path class="paper" d="M124 149 Q155 137 215 143 Q269 147 279 171 Q290 197 237 204 Q179 213 133 197 Q102 185 106 169 Q108 157 124 149 Z"/>
+    <path class="blue" stroke-width=".9" d="M130 155 Q160 145 214 150 Q259 154 270 173 Q280 191 235 197 Q178 205 137 190 Q114 181 115 170 Q116 161 130 155 Z"/>
+    <path class="detail" d="M254 151 L251 157 M272 162 L265 166 M277 181 L269 181 M256 201 L253 194 M212 207 L212 200 M161 204 L163 197"/>
+    <g class="ripple detail">
+      <path d="M224 174 Q234 171 244 174 M230 179 Q237 177 243 179"/>
+    </g>
+    <g class="ripple late detail">
+      <path d="M151 187 Q162 184 173 187 M177 194 Q188 192 199 194"/>
+    </g>
+
+    <!-- Parasol -->
+    <path d="M80 90 Q79 123 80 157 M69 159 Q79 155 89 159"/>
+    <g class="canopy">
+      <path class="red" d="M40 91 Q53 66 79 63 Q103 65 121 91 Q110 85 101 91 Q90 85 80 91 Q69 85 59 91 Q49 86 40 91 Z"/>
+      <path class="detail" d="M79 64 Q64 75 59 90 M79 64 Q80 77 80 90 M79 64 Q95 75 101 90"/>
+      <path d="M79 63 L79 59"/>
+    </g>
+
+    <!-- Grandparent sitting on the pool edge -->
+    <path class="paper" d="M106 149 Q111 143 118 145 L139 153 Q143 156 141 160 Q138 162 134 160 L117 155"/>
+    <path class="paper" d="M112 153 Q116 162 124 169 L128 180 Q129 183 132 182 M118 151 Q121 161 130 166 L134 177"/>
+    <path class="paper" d="M99 119 Q107 114 116 121 Q121 133 120 149 Q109 154 99 148 Q102 134 99 119 Z"/>
+    <path class="detail" d="M102 139 Q111 141 119 138 M105 147 L116 147"/>
+    <path class="paper" d="M102 121 Q97 131 95 143 Q95 147 98 147 M107 123 Q103 133 101 143"/>
+    <path class="paper" d="M115 123 Q123 129 130 130 L142 126 M113 128 Q122 136 131 135 L143 130"/>
+    <path d="M142 126 Q147 124 148 127 Q148 130 143 130"/>
+    <path d="M105 116 L105 120 M111 116 L112 120"/>
+    <path class="paper" d="M102 101 Q99 106 102 112 Q105 118 111 116 Q117 113 115 106 Q113 100 107 100"/>
+    <path class="detail" d="M101 106 Q107 107 113 103 M101 110 Q104 113 106 112"/>
+    <path class="paper" d="M94 102 Q106 97 122 102 Q119 106 107 106 Q98 106 94 102 Z"/>
+    <path class="paper" d="M101 100 L103 92 Q109 89 114 94 L116 101"/>
+    <path class="detail" d="M103 97 Q109 96 114 98"/>
+    <path class="ripple detail" d="M121 184 Q130 187 140 183"/>
+
+    <!-- Child floating nearby, reaching toward the grandparent -->
+    <g class="child">
+      <path d="M190 172 Q188 178 183 180 M198 173 Q202 177 208 178"/>
+      <path class="paper" d="M183 150 Q178 153 173 149 L162 141 M186 154 Q179 158 171 153 L160 146"/>
+      <path d="M162 141 Q158 138 157 141 Q156 143 160 146"/>
+      <path class="paper" d="M199 151 Q207 154 215 149 M199 156 Q208 160 217 153"/>
+      <path d="M215 149 Q219 146 220 149 Q221 151 217 153"/>
+      <path class="paper" d="M184 149 Q190 146 198 150 L201 165 L181 165 Z"/>
+      <path d="M188 144 L188 149 M194 144 L194 149"/>
+      <path class="paper" d="M183 132 Q183 124 190 124 Q198 124 199 132 Q200 141 193 145 Q186 146 183 138"/>
+      <path class="red" d="M182 134 Q181 123 190 122 Q200 122 201 133 Q191 129 182 134 Z"/>
+      <path class="detail" d="M186 126 Q191 124 196 128"/>
+      <path class="red" fill-rule="evenodd" d="M174 164 C174 155 208 155 209 165 C210 177 175 178 174 164 Z M181 163 C181 168 202 169 202 163 C201 159 182 159 181 163 Z"/>
+      <path class="detail" d="M178 169 Q190 174 204 168"/>
+    </g>
+    <path class="ripple late detail" d="M175 180 Q191 184 210 181"/>
+  </g>
+</svg>

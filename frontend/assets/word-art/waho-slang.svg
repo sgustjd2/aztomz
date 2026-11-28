@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240">
+  <rect width="320" height="240" fill="#fdfcf8"/>
+  <style>
+    .fan {
+      transform-box: fill-box;
+      transform-origin: 50% 100%;
+      animation: groove 4.8s ease-in-out infinite;
+    }
+    .spark {
+      transform-box: fill-box;
+      transform-origin: center;
+      animation: delight 4.8s ease-in-out infinite;
+    }
+    .sound {
+      transform-box: fill-box;
+      transform-origin: left center;
+      animation: rhythm 6s ease-in-out infinite;
+    }
+    @keyframes groove {
+      0%, 50%, 100% { transform: rotate(-3deg) translateY(0); }
+      23%, 73% { transform: rotate(3deg) translateY(-2px); }
+    }
+    @keyframes delight {
+      0%, 45%, 100% { transform: scale(.85) rotate(-6deg); opacity: .65; }
+      20%, 70% { transform: scale(1.12) rotate(6deg); opacity: 1; }
+    }
+    @keyframes rhythm {
+      0%, 40%, 100% { transform: scaleX(.85); opacity: .45; }
+      15%, 65% { transform: scaleX(1.08); opacity: 1; }
+    }
+    @media (prefers-reduced-motion: reduce){
+      * { animation: none !important }
+    }
+  </style>
+  <defs>
+    <filter id="ink" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency=".045" numOctaves="2" seed="8" result="grain"/>
+      <feDisplacementMap in="SourceGraphic" in2="grain" scale=".45" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+  </defs>
+
+  <g fill="none" stroke="#1c1c1c" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" filter="url(#ink)">
+    <!-- A little stage on a phone, facing an enthusiastic listener. -->
+    <path d="M49 208q29-1 55 0m12 1q64-2 91 0m16-1 46 1" stroke-width=".8"/>
+
+    <g transform="rotate(-7 92 132)">
+      <path d="M65 76q0-5 5-5l45 1q5 0 5 5l-1 101q0 5-5 5l-45-1q-5 0-5-5Z" fill="#fdfcf8"/>
+      <path d="m70 83 44 1-1 82-44-1Z" fill="#efdfd7" stroke-width="1.4"/>
+      <path d="m85 77 14 .2m-11 97 8 .1" stroke-width=".8"/>
+      <path d="m75 158 31 .5" stroke-width=".8"/>
+
+      <!-- The miniature performer has no facial features. -->
+      <path d="M90 107q-5-1-5-7 0-7 5-8 6-1 7 6 1 6-4 8" fill="#fdfcf8" stroke-width="1.4"/>
+      <path d="M85 98q-1-8 6-8 6 0 7 7-5-4-8-2" fill="#1c1c1c" stroke-width=".8"/>
+      <path d="m89 107-.3 4m4-4 .5 4" stroke-width=".8"/>
+      <path d="m86 111-5 19q9 4 18 0l-4-19" fill="#737f96" stroke-width="1.4"/>
+      <path d="M85 113q-7-4-9-11m12 8q-7-5-9-10M96 113q7-5 9-12m-7 15q8-5 10-12" stroke-width="1.4"/>
+      <path d="m85 132-4 12 4 10m4-21-3 10 3 9m5-19 8 19m-4-21 8 19" stroke-width="1.4"/>
+      <path d="m83 154 6 1m13-2 6 .4" stroke-width="1.4"/>
+      <path d="m75 119-2 4m33-4 2 4" stroke-width=".8"/>
+    </g>
+
+    <path d="m89 184-4 18m14-18 5 18m-25 3q15-3 30 0" stroke-width="1.5"/>
+
+    <!-- Open double strokes let the lifted arms feel light. -->
+    <g class="fan">
+      <path d="M168 122q-15-10-23-24l-8-18m37 36q-17-12-22-22l-9-16" fill="#fdfcf8"/>
+      <path d="M137 80q-5-2-5-6m9 4-2-10m4 10q4-3 3-7" stroke-width="1.5"/>
+
+      <path d="M196 117q13-9 18-23l6-17m-18 45q15-11 20-26l5-17" fill="#fdfcf8"/>
+      <path d="M220 77q-3-5-1-9m5 10 4-11m-1 12q6-2 7-6" stroke-width="1.5"/>
+
+      <path d="M176 113q-9-3-10-14-1-12 8-16 10-4 16 5 4 8 0 15-2 5-7 7" fill="#fdfcf8"/>
+      <path d="M167 98q-5-10 1-16 5-6 12-3 9-2 13 7l1 9q-6-2-9-11-3 8-13 7" fill="#1c1c1c" stroke-width="1.4"/>
+      <path d="m177 112-.5 7m6-8 2 7" stroke-width="1.4"/>
+
+      <path d="m169 116-9 8 8 13-2 28q15 7 36 0l-5-29 8-13-11-8q-12 10-25 1Z" fill="#cf7969"/>
+      <path d="m171 122q10 6 20 0m-21 36q12 4 25 1" stroke-width=".8"/>
+
+      <path d="M171 168q-2 13-9 22l-8 12m24-33q-1 13-8 24l-9 11" fill="#fdfcf8"/>
+      <path d="M190 169q7 12 12 19l-2 15m-3-35q7 11 12 19l-3 17" fill="#fdfcf8"/>
+      <path d="M154 201q-5 1-9 5-2 3 3 3l15-1-2-6m39 0q0 5 4 6l13-1q2-3-5-4l-6-2" fill="#737f96" stroke-width="1.5"/>
+    </g>
+
+    <!-- A compact speaker carries the beat out into the room. -->
+    <path d="M239 165q0-3 3-3l21 1q3 0 3 3l-1 37q0 3-3 3l-21-1q-3 0-3-3Z" fill="#fdfcf8"/>
+    <path d="M252 180q-5 0-5-5 0-5 5-5 5 0 5 5 0 5-5 5Zm0 19q-8 0-8-7 0-8 8-8 7 0 7 8 0 7-7 7Z" stroke-width="1.4"/>
+    <path d="M249 192q0-3 3-3t3 3q0 3-3 3t-3-3" stroke-width=".8"/>
+    <g class="sound" stroke-width="1.4">
+      <path d="M271 176q5 6 1 12m5-17q9 11 2 23"/>
+    </g>
+
+    <g class="spark">
+      <path d="M119 48q1 9 8 12-8 1-10 10-1-9-8-11 8-2 10-11Z" fill="#cf7969" stroke-width="1.4"/>
+      <path d="M234 45q0 7 6 9-6 1-8 8-1-7-6-9 6-1 8-8Z" fill="#fdfcf8" stroke-width="1.4"/>
+      <path d="m153 52 4 6m41-15-1 7m61 31 5-4" stroke-width="1.5"/>
+      <path d="m108 98-5-3m120 38 6-2" stroke-width=".9"/>
+    </g>
+  </g>
+</svg>

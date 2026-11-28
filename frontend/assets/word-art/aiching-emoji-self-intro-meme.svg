@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240">
+<rect width="320" height="240" fill="#fdfcf8"/>
+<style>
+  .ink{fill:none;stroke:#1c1c1c;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+  .detail{stroke-width:.85}
+  .paper{fill:#fdfcf8}
+  .hair{transform-box:fill-box;transform-origin:28% 18%;animation:flip 6s ease-in-out infinite}
+  .arm{transform-box:fill-box;transform-origin:12% 91%;animation:gesture 6s ease-in-out infinite}
+  .emoji{transform-box:fill-box;transform-origin:50% 80%;animation:hello 6s ease-in-out infinite}
+  @keyframes flip{
+    0%,24%,78%,100%{transform:rotate(0deg)}
+    37%{transform:rotate(-9deg)}
+    46%{transform:rotate(5deg)}
+    57%{transform:rotate(-2deg)}
+    67%{transform:rotate(0deg)}
+  }
+  @keyframes gesture{
+    0%,24%,78%,100%{transform:rotate(0deg)}
+    38%{transform:rotate(-7deg)}
+    48%{transform:rotate(3deg)}
+    62%{transform:rotate(0deg)}
+  }
+  @keyframes hello{
+    0%,17%,80%,100%{transform:translateY(0) rotate(0deg)}
+    29%{transform:translateY(-3px) rotate(-6deg)}
+    42%{transform:translateY(-1px) rotate(4deg)}
+    57%{transform:translateY(-2px) rotate(-2deg)}
+    70%{transform:translateY(0) rotate(0deg)}
+  }
+  @media (prefers-reduced-motion: reduce){ * { animation: none !important } }
+</style>
+<g class="ink">
+  <!-- A quiet floor, a phone, and its little tripod. -->
+  <path class="detail" d="M55 208Q108 206 136 208M150 209Q200 207 247 209"/>
+  <path d="M78 119Q85 117 92 119L92 164Q85 166 78 164Z" class="paper"/>
+  <path class="detail" d="M81 123Q85 122 89 123L89 157Q85 158 81 157ZM84 161h2"/>
+  <path d="M76 140Q73 145 77 149M93 140Q97 145 93 149M85 166Q84 184 85 202M85 178Q77 192 70 207M85 178Q94 192 101 207M80 208h10"/>
+
+  <!-- The speaker's personal emoji, drawn rather than typeset. -->
+  <path class="paper" d="M210 45Q231 40 254 46Q261 49 260 61L259 78Q258 88 247 89L224 89L211 98L214 86Q204 83 205 73L205 57Q205 49 210 45Z"/>
+  <g class="emoji">
+    <path fill="#e7bd68" d="M233 52Q236 60 239 62L249 64L241 71L242 81L233 76L224 81L225 71L218 64L228 62Z"/>
+    <path class="detail" d="M251 52v5M249 54h4M216 77l-2 3"/>
+  </g>
+
+  <!-- Legs and shoes: open, slightly bowed pen strokes. -->
+  <path class="paper" d="M152 151Q149 172 148 195L154 196Q159 172 161 155M168 154Q171 174 175 195L181 193Q180 172 178 151"/>
+  <path d="M148 194Q145 199 140 202Q138 205 143 205L155 204Q157 201 154 196M175 195Q175 201 179 204L191 204Q194 202 189 200L181 193" class="paper"/>
+
+  <!-- The free hand rests near the hip. -->
+  <path d="M147 110Q136 122 136 136Q138 143 146 147M151 115Q142 126 142 135Q143 139 149 142"/>
+  <path class="detail" d="M146 141Q151 141 152 145Q153 149 149 149"/>
+
+  <!-- A loose, muted blue shirt. -->
+  <path fill="#aebfc3" d="M153 103Q160 108 171 103Q179 104 185 112L179 120Q179 140 182 156Q165 161 147 156Q151 137 147 120L143 117Q146 108 153 103Z"/>
+  <path class="detail" d="M154 106Q162 113 171 106M151 150Q165 154 178 151M173 123Q171 134 173 140"/>
+
+  <!-- A faceless head and an open neck. -->
+  <path class="paper" d="M153 88L154 103M166 90L168 104"/>
+  <path class="paper" d="M149 68Q148 56 159 54Q171 53 175 66L173 82Q170 94 161 94Q151 91 150 81Z"/>
+
+  <!-- Hair sweeps outward as the raised hand passes it. -->
+  <g class="hair">
+    <path class="paper" d="M148 80Q139 65 147 55Q154 46 166 50Q180 52 180 69Q179 84 191 91Q199 96 209 92Q204 104 192 104Q176 101 172 83L169 65Q158 69 149 64Q146 70 148 80Z"/>
+    <path class="detail" d="M169 57Q176 62 175 74Q175 94 193 98M151 56Q156 53 162 54M183 85Q189 94 199 95"/>
+  </g>
+
+  <!-- Two open strokes describe the bent arm and lifted hand. -->
+  <g class="arm">
+    <path class="paper" d="M182 110Q194 103 197 95Q195 86 183 78M186 116Q203 106 203 95Q202 83 187 74"/>
+    <path d="M183 78Q178 76 178 72Q179 69 182 73L187 77M187 74Q184 69 182 68"/>
+    <path class="detail" d="M197 95q2 1 3 0"/>
+  </g>
+  <path class="detail" d="M211 106q5-1 8-5M214 113q5 1 9-2"/>
+</g>
+</svg>

@@ -1,0 +1,144 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240">
+  <rect width="320" height="240" fill="#fdfcf8"/>
+  <style>
+    .gent {
+      transform-box: fill-box;
+      transform-origin: 50% 100%;
+      animation: bow 6s ease-in-out infinite;
+    }
+    .phone {
+      transform-box: fill-box;
+      transform-origin: 25% 90%;
+      animation: replay 6s ease-in-out infinite;
+    }
+    .hearts {
+      transform-box: fill-box;
+      transform-origin: 50% 100%;
+      animation: flutter 6s ease-in-out infinite;
+    }
+    @keyframes bow {
+      0%, 24%, 76%, 100% { transform: rotate(0deg); }
+      44%, 56% { transform: rotate(-4deg); }
+    }
+    @keyframes replay {
+      0%, 24%, 76%, 100% { transform: rotate(-2deg); }
+      42%, 60% { transform: rotate(4deg); }
+    }
+    @keyframes flutter {
+      0%, 100% { transform: translateY(2px) rotate(-4deg); opacity: .6; }
+      50% { transform: translateY(-4px) rotate(4deg); opacity: 1; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important }
+    }
+  </style>
+
+  <g fill="none" stroke="#1c1c1c" stroke-width="1.7"
+     stroke-linecap="round" stroke-linejoin="round">
+    <!-- A little patch of pavement. -->
+    <path d="M54 211 Q99 210 129 211 M161 211 Q204 210 263 211"
+          stroke-width=".8"/>
+    <path d="M67 216l12 .3 M235 216l17-.5" stroke-width=".8"/>
+
+    <!-- The admirer: an open, faceless profile. -->
+    <path d="M74 132 Q68 129 69 122 Q69 114 76 113
+             Q84 112 86 120 Q89 126 82 131"
+          fill="#fdfcf8"/>
+    <path d="M69 122 Q66 115 72 111 Q78 107 83 113
+             M69 117 Q75 119 79 112"/>
+    <path d="M75 132l-.5 7 M80 132l2 7" stroke-width="1.4"/>
+
+    <path d="M72 139 Q65 140 64 150 L63 174
+             Q76 179 92 174 L87 149 Q85 141 81 138"
+          fill="#fdfcf8"/>
+    <path d="M68 174 Q67 187 68 204 M75 177 Q73 191 74 203
+             M82 177 Q84 189 88 203 M89 175 Q91 188 94 201"/>
+    <path d="M67 204 Q65 207 65 209 L79 209 Q81 206 74 204
+             M88 203 L89 209 L102 209 Q103 206 94 202"
+          fill="#fdfcf8"/>
+
+    <path d="M68 147 Q73 159 86 158 Q97 156 106 147
+             M72 145 Q77 153 86 153 Q94 152 102 143"
+          fill="#fdfcf8"/>
+    <path d="M86 145 Q90 150 98 148 L109 141
+             M89 141 Q93 145 97 144 L106 137"
+          fill="#fdfcf8"/>
+    <path d="M102 143q3-4 6-3 M106 147q4-2 4-5" stroke-width="1.4"/>
+
+    <!-- The tiny phone displays a lantern silhouette, without lettering. -->
+    <g class="phone">
+      <path d="M106 124 Q106 122 109 122 L119 124
+               Q121 124 120 127 L116 144 Q116 146 113 145
+               L103 143Z"
+            fill="#fdfcf8"/>
+      <path d="M108 126l9 1-3 13-8-1Z" stroke-width=".8"/>
+      <path d="M110 129l5 1-1 5-5-1Z" fill="#e8cf88" stroke-width=".8"/>
+      <path d="M111 135l-1 3 M108 141l3 .5" stroke-width=".8"/>
+    </g>
+
+    <!-- The lantern-headed gentleman. -->
+    <g class="gent">
+      <path d="M203 88 L202 101 M210 88 L211 101"/>
+      <path d="M192 88 Q206 91 220 88 L217 83
+               L220 56 Q206 51 192 56 L195 83Z"
+            fill="#e8cf88"/>
+      <path d="M194 57 Q205 55 218 57
+               M195 82 Q206 84 217 82
+               M201 57 Q199 70 201 83
+               M211 57 Q213 70 211 83"
+            stroke-width=".8"/>
+      <path d="M188 54 Q206 49 224 54
+               L219 47 Q206 43 193 47Z"
+            fill="#fdfcf8"/>
+      <path d="M197 45 Q206 41 215 45 M206 42l-.4-7"/>
+      <path d="M205 35q-3-3 .5-5q3 2 .5 5" fill="#1c1c1c" stroke-width="1.4"/>
+      <path d="M196 89 Q206 94 216 89" stroke-width="1.4"/>
+
+      <path d="M199 100 Q187 101 183 111
+               L186 152 L181 169 Q194 174 204 162
+               Q214 173 229 168 L222 149 L226 112
+               Q222 102 213 100"
+            fill="#fdfcf8"/>
+      <path d="M200 101 L205 126 L212 101
+               M197 102 L192 111 L200 114 L197 121 L205 132
+               M215 102 L220 111 L212 115 L215 121 L206 132"
+            stroke-width="1.4"/>
+      <path d="M201 102l5 3 6-3-1 7-5-3-5 2Z" fill="#1c1c1c" stroke-width="1.4"/>
+      <path d="M206 132 Q204 144 205 161
+               M213 136l7-.5 M190 148l7 1"
+            stroke-width=".8"/>
+      <path d="M209 141h.1 M209 150h.1" stroke-width="2"/>
+
+      <!-- One hand rests at the chest; the other holds a cane. -->
+      <path d="M185 111 Q177 122 180 130 Q187 132 199 121
+               M190 114 Q184 121 185 125 L196 117"
+            fill="#fdfcf8"/>
+      <path d="M196 117q5-5 7-2q2 3-4 6" stroke-width="1.4"/>
+      <path d="M224 112 Q230 127 232 142
+               M219 115 Q225 128 227 143"
+            fill="#fdfcf8"/>
+      <path d="M227 143q2 6 6 3q3-3-1-5" fill="#fdfcf8" stroke-width="1.4"/>
+      <path d="M232 143 Q235 138 239 142 Q241 145 237 148
+               L235 207 Q235 210 232 209"/>
+
+      <path d="M188 170 Q190 187 187 204
+               M199 168 Q199 188 195 204
+               M210 168 Q213 187 215 204
+               M222 171 Q221 188 223 204"/>
+      <path d="M187 204 Q182 205 179 209 Q185 211 196 209 L195 204
+               M215 204 L214 209 Q225 211 231 208 Q229 205 223 204"
+            fill="#fdfcf8"/>
+      <path d="M190 176q3 9 1 20 M216 177l3 18" stroke-width=".8"/>
+    </g>
+
+    <!-- Affection hangs in the generous space between them. -->
+    <g class="hearts" fill="#bd7168" stroke-width="1.4">
+      <path d="M137 107 C125 98 132 91 138 97
+               C144 88 152 96 137 107Z"/>
+      <path d="M157 88 C149 81 154 76 158 80
+               C163 74 168 80 157 88Z"/>
+    </g>
+    <path d="M100 116l4-4 M110 108l2-5 M126 118l5-1"
+          stroke-width=".8"/>
+  </g>
+</svg>

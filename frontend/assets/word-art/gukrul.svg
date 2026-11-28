@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240">
+  <rect width="320" height="240" fill="#fdfcf8"/>
+  <style>
+    .ink{fill:none;stroke:#1c1c1c;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+    .paper{fill:#fdfcf8}
+    .detail{stroke-width:.8}
+    .pour{transform-box:fill-box;transform-origin:20% 70%;animation:pour 6s ease-in-out infinite}
+    .drops{transform-box:fill-box;transform-origin:center;animation:drops 6s ease-in-out infinite}
+    .nod{transform-box:fill-box;transform-origin:50% 95%;animation:nod 6s ease-in-out infinite}
+    @keyframes pour{
+      0%,18%,78%,100%{transform:rotate(0deg)}
+      34%,60%{transform:rotate(9deg)}
+    }
+    @keyframes drops{
+      0%,26%,70%,100%{opacity:0;transform:translateY(-2px)}
+      36%,52%{opacity:1;transform:translateY(0)}
+      62%{opacity:0;transform:translateY(3px)}
+    }
+    @keyframes nod{
+      0%,42%,78%,100%{transform:rotate(0deg)}
+      52%,68%{transform:rotate(6deg)}
+      60%{transform:rotate(-2deg)}
+    }
+    @media (prefers-reduced-motion: reduce){ * { animation: none !important } }
+  </style>
+
+  <g class="ink">
+    <!-- 두 사람이 늘 하던 대로 식사하는 작은 자리 -->
+    <path class="detail" d="M44 207Q152 205 277 208"/>
+
+    <!-- 왼쪽 인물의 목과 옷 -->
+    <path d="M97 79L97 88M105 80L106 88"/>
+    <path fill="#a5afb9" d="M95 86Q83 88 80 99L77 144Q96 148 115 144L114 102Q113 92 106 87L101 94Z"/>
+    <path class="detail" d="M101 96Q99 115 101 140M83 132L88 133"/>
+
+    <g>
+      <path class="paper" d="M91 62Q91 51 100 51Q111 51 112 62L111 70Q109 80 102 81Q94 80 92 72Z"/>
+      <path fill="#1c1c1c" stroke-width=".8" d="M91 65Q87 54 95 49Q104 44 111 52L114 61Q108 62 104 56Q101 62 91 65Z"/>
+      <path class="detail" d="M91 67Q87 64 88 69Q89 73 93 73"/>
+    </g>
+
+    <!--  오른쪽 인물 -->
+    <path d="M218 82L218 91M227 82L227 91"/>
+    <path class="paper" d="M216 89Q204 90 201 103L199 145Q221 148 244 144L240 103Q237 92 228 89L222 97Z"/>
+    <path class="detail" d="M222 99Q224 119 223 142M233 133L239 132"/>
+
+    <g class="nod">
+      <path class="paper" d="M213 65Q213 55 222 54Q232 54 234 65L233 74Q230 84 222 85Q214 83 213 74Z"/>
+      <path fill="#1c1c1c" stroke-width=".8" d="M213 68Q208 58 215 52Q223 47 231 54Q236 59 233 66Q225 65 220 59Q219 65 213 68Z"/>
+      <path class="detail" d="M233 69Q238 66 237 72Q236 75 233 75"/>
+    </g>
+
+    <!-- 탁자 -->
+    <path class="paper" d="M57 157Q157 155 266 158L267 165Q159 167 56 164Z"/>
+    <path d="M71 166L69 205M78 166L77 205M246 167L249 205M254 166L256 205"/>
+    <path class="detail" d="M89 161Q111 160 124 161M239 161L253 161"/>
+
+    <!-- 왼쪽 냉면 그릇 -->
+    <path class="paper" d="M103 143Q108 163 128 164Q148 163 153 143Z"/>
+    <ellipse class="paper" cx="128" cy="143" rx="25" ry="6"/>
+    <g class="detail">
+      <path d="M108 143Q116 139 124 142T146 142"/>
+      <path d="M114 145Q116 137 122 141Q127 146 130 141Q134 137 139 144"/>
+      <path d="M118 145Q122 141 126 145M131 145Q136 141 142 144"/>
+      <path class="paper" d="M111 139L115 136L120 138L117 142Z"/>
+      <path class="paper" d="M139 139L143 136L147 139L143 142Z"/>
+      <path class="paper" d="M125 140Q123 132 129 131Q136 131 137 140Z"/>
+      <path fill="#d4bd78" d="M128 139Q127 135 130 135Q133 135 134 139Z"/>
+      <path d="M118 137L125 134M119 139L126 136"/>
+      <path d="M113 152Q127 158 142 152"/>
+    </g>
+
+    <!-- 오른쪽 냉면 그릇 -->
+    <path class="paper" d="M193 145Q198 164 217 165Q237 164 242 145Z"/>
+    <ellipse class="paper" cx="217.5" cy="145" rx="24.5" ry="6"/>
+    <g class="detail">
+      <path d="M198 145Q205 141 214 144T236 144"/>
+      <path d="M202 146Q207 138 212 144Q217 148 221 143Q226 140 231 146"/>
+      <path d="M209 147Q213 143 217 147M222 147L229 145"/>
+      <path class="paper" d="M199 141L204 138L208 141L204 144Z"/>
+      <path class="paper" d="M226 142L231 138L236 141L231 144Z"/>
+      <path class="paper" d="M213 142Q211 134 217 133Q223 133 225 142Z"/>
+      <path fill="#d4bd78" d="M216 141Q215 137 218 137Q221 137 222 141Z"/>
+      <path d="M205 139L212 136M206 141L213 138"/>
+      <path d="M203 154Q217 160 232 154"/>
+    </g>
+
+    <!-- 열린 두 선으로 그린 팔 -->
+    <path class="paper" d="M84 102Q82 117 94 123Q103 126 118 116L115 110Q101 117 98 114Q94 110 94 103"/>
+    <path class="detail" d="M84 104Q88 107 94 105"/>
+    <path d="M115 110Q120 106 124 108M118 116Q123 115 126 111"/>
+
+    <!-- 손목과 함께 기울어지는 식초병 -->
+    <g class="pour">
+      <path class="paper" d="M124 108Q124 104 128 104L132 107"/>
+      <path fill="#d4bd78" d="M125 101Q123 97 127 95L132 93Q136 92 138 96L146 108L153 110L152 115L145 115L129 108Q125 106 125 101Z"/>
+      <path class="paper" d="M150 109L155 110L154 116L150 115Z"/>
+      <path class="paper" d="M129 100L134 97L141 107L136 111Z"/>
+      <path class="detail" d="M130 98L133 97M130 112Q127 115 124 112"/>
+    </g>
+
+    <!-- 冷면에 떨어지는 식초 -->
+    <g class="drops" stroke-width="1.4">
+      <path d="M153 121L152 123"/>
+      <path d="M150 129L149 131"/>
+      <path d="M147 136L146 137"/>
+    </g>
+
+    <!-- 옆 사람은 자연스럽게 그릇을 당기며 고개를 끄덕인다 -->
+    <path class="paper" d="M204 104Q199 114 192 121Q185 126 176 124L175 130Q190 134 198 127Q208 119 212 110"/>
+    <path class="detail" d="M203 108L210 113"/>
+    <path d="M176 124Q172 123 169 125M175 130Q171 131 168 128"/>
+    <path class="paper" d="M236 108Q245 121 242 132Q240 138 233 141L230 137Q236 133 235 129Q234 121 230 116"/>
+    <path class="detail" d="M230 115L237 111"/>
+    <path d="M230 137Q226 137 224 140M233 141Q230 145 226 143"/>
+
+    <!-- 잠시 내려놓은 젓가락 -->
+    <path stroke-width="1.4" d="M160 145Q170 147 185 151M159 149Q172 151 184 154"/>
+  </g>
+</svg>

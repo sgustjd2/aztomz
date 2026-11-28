@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240">
+  <rect width="320" height="240" fill="#fdfcf8"/>
+  <style>
+    .ink{fill:none;stroke:#1c1c1c;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+    .paper{fill:#fdfcf8}
+    .detail{stroke-width:.8}
+    .tap{transform-box:fill-box;transform-origin:8% 85%;animation:tap 6s ease-in-out infinite}
+    .hush{transform-box:fill-box;transform-origin:50% 50%;animation:hush 6s ease-in-out infinite}
+    .steam{transform-box:fill-box;transform-origin:50% 100%;animation:steam 7s ease-in-out infinite}
+    @keyframes tap{
+      0%,24%,58%,100%{transform:rotate(0deg)}
+      32%{transform:rotate(-12deg)}
+      37%{transform:rotate(4deg)}
+      42%{transform:rotate(-5deg)}
+      47%{transform:rotate(3deg)}
+      53%{transform:rotate(0deg)}
+    }
+    @keyframes hush{
+      0%,34%,40%,45%,51%,100%{opacity:0}
+      37%,48%{opacity:.65}
+    }
+    @keyframes steam{
+      0%,100%{transform:translateY(1px) skewX(-5deg);opacity:.35}
+      50%{transform:translateY(-4px) skewX(6deg);opacity:.7}
+    }
+    @media (prefers-reduced-motion: reduce){ * { animation: none !important } }
+  </style>
+  <defs>
+    <filter id="ink-wobble" x="-4%" y="-4%" width="108%" height="108%">
+      <feTurbulence type="fractalNoise" baseFrequency=".065" numOctaves="2" seed="8" result="grain"/>
+      <feDisplacementMap in="SourceGraphic" in2="grain" scale=".45" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+  </defs>
+
+  <g class="ink" filter="url(#ink-wobble)">
+    <!-- A quiet pantry corner; the column is entirely intact. -->
+    <path class="detail" d="M49 198 Q153 197 269 198"/>
+    <path class="paper" d="M205 48 Q219 47 234 49 L233 194 Q220 196 206 194 Z"/>
+    <path class="detail" d="M210 51 Q210 117 211 191 M207 57 Q220 58 233 56"/>
+    <path d="M202 194 Q220 193 237 194 L237 198 L202 198 Z" class="paper"/>
+    <path d="M202 46 Q219 45 237 47 L237 52 Q219 51 202 52 Z" class="paper"/>
+
+    <!-- A little shelf and a cooling cup. -->
+    <path d="M53 142 Q73 141 94 142 L94 146 L53 146 Z" class="paper"/>
+    <path class="detail" d="M58 147 L58 157 Q64 153 67 147 M89 147 L89 155"/>
+    <path d="M65 126 Q71 125 78 126 L77 139 Q71 142 66 139 Z" fill="#b6beb0"/>
+    <path d="M79 128 Q87 127 85 133 Q84 137 78 136"/>
+    <path class="detail" d="M66 127 Q72 129 77 127"/>
+    <g class="steam detail">
+      <path d="M69 120 C64 115 73 113 69 107"/>
+      <path d="M77 119 C73 115 81 112 77 108"/>
+    </g>
+
+    <!-- Far leg: two open strokes, with a soft, planted shoe. -->
+    <path class="paper" d="M132 144 Q146 153 151 166 Q154 177 161 187 L156 190 Q145 179 142 170 Q134 162 124 159"/>
+    <path d="M155 187 Q160 186 163 190 L172 193 Q174 196 170 197 L155 197 Q152 195 155 190" fill="#1c1c1c"/>
+
+    <!-- Near leg, bent in a deliberately cautious crouch. -->
+    <path class="paper" d="M121 147 Q118 158 108 170 Q111 181 116 191 M131 153 Q128 166 118 174 Q120 184 122 191"/>
+    <path d="M115 190 Q119 188 123 191 L132 193 Q135 196 131 197 L114 197 Q111 195 115 190" fill="#1c1c1c"/>
+
+    <!-- Shirt drawn over the solved hips and knees. -->
+    <path d="M123 105 Q132 102 140 109 Q146 122 143 137 L146 150 Q133 157 119 150 Q121 139 117 127 Q114 115 123 105 Z" class="paper"/>
+    <path class="detail" d="M127 110 Q132 119 136 142 M121 145 Q131 148 142 145"/>
+    <path d="M127 108 L131 114 L128 118 L133 135 L138 129 L133 117 L135 112" fill="#a3afb9" stroke-width="1.4"/>
+    <path class="detail" d="M120 127 Q125 129 130 127 M121 129 L122 137 Q126 139 130 136 L130 129"/>
+
+    <!-- Head and open neck; no face. -->
+    <path d="M128 105 L127 100 M136 107 L135 100"/>
+    <path d="M122 90 C120 81 126 76 133 79 C140 81 141 92 136 98 C132 103 125 99 123 95" class="paper"/>
+    <path d="M122 89 Q118 79 126 77 Q134 74 139 82 Q131 80 126 85 L126 91" fill="#1c1c1c" stroke-width="1.4"/>
+    <path class="detail" d="M124 90 Q120 87 121 92 Q122 95 125 94"/>
+
+    <!-- One hand braces the elbow, making the gesture timid. -->
+    <path class="paper" d="M119 116 Q112 125 118 136 Q128 140 143 132 M124 120 Q120 126 123 130 Q131 133 140 128"/>
+    <path class="detail" d="M116 127 Q120 128 123 126"/>
+    <path d="M140 128 Q144 125 147 127 Q150 130 146 133 L142 134" class="paper"/>
+
+    <!-- A tiny hammer, held close to the body. -->
+    <g class="tap">
+      <path class="paper" d="M139 113 Q145 115 149 122 Q164 116 179 109 M135 119 Q140 126 147 130 Q163 124 181 115"/>
+      <path class="detail" d="M139 118 Q142 123 147 125 M148 122 L149 128"/>
+      <path d="M178 111 L192 90 L196 92 L182 115 Z" fill="#b6beb0" stroke-width="1.4"/>
+      <path d="M185 85 Q191 84 195 88 L203 92 L201 98 L191 94 Q187 92 183 92 Z" fill="#a3afb9"/>
+      <path class="detail" d="M197 90 L194 95"/>
+      <path class="paper" d="M176 109 Q180 106 183 109 L185 112 Q185 116 181 117 L178 116"/>
+      <path class="detail" d="M180 110 L183 112"/>
+    </g>
+
+    <!-- Fleeting, almost inaudible taps, without chips or cracks. -->
+    <g class="hush detail">
+      <path d="M197 78 L199 74 M202 82 L206 80 M193 76 L193 72"/>
+    </g>
+
+    <!-- A modest pantry plant. -->
+    <path d="M246 181 Q249 168 244 157 M249 173 Q256 162 257 155"/>
+    <path d="M245 165 Q234 164 235 155 Q244 154 245 165 Z" fill="#b6beb0" stroke-width="1.4"/>
+    <path d="M251 165 Q251 154 261 151 Q264 160 251 165 Z" fill="#b6beb0" stroke-width="1.4"/>
+    <path d="M247 173 Q239 173 238 166 Q245 164 247 173 Z" class="paper" stroke-width="1.4"/>
+    <path d="M239 180 Q250 181 260 180 L257 195 Q248 198 242 195 Z" class="paper"/>
+    <path class="detail" d="M240 184 Q250 186 259 183"/>
+  </g>
+</svg>

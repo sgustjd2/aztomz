@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240">
+  <rect width="320" height="240" fill="#fdfcf8"/>
+  <style>
+    .ink {
+      stroke: #1c1c1c;
+      stroke-width: 1.7;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      fill: none;
+    }
+    .fine { stroke-width: .85 }
+    .person {
+      transform-box: fill-box;
+      transform-origin: 42% 94%;
+      animation: breathe 6s ease-in-out infinite;
+    }
+    .heart {
+      transform-box: fill-box;
+      transform-origin: 50% 70%;
+      animation: affection 5s ease-in-out infinite;
+    }
+    .steam {
+      transform-box: fill-box;
+      transform-origin: 50% 100%;
+      animation: steam 7s ease-in-out infinite;
+    }
+    @keyframes breathe {
+      0%, 100% { transform: rotate(-.6deg) }
+      50% { transform: rotate(.8deg) }
+    }
+    @keyframes affection {
+      0%, 100% { transform: translateY(1px) rotate(-4deg) scale(.97) }
+      50% { transform: translateY(-4px) rotate(4deg) scale(1.04) }
+    }
+    @keyframes steam {
+      0%, 100% { transform: translateY(1px) skewX(-5deg); opacity: .45 }
+      50% { transform: translateY(-4px) skewX(7deg); opacity: .8 }
+    }
+    @media (prefers-reduced-motion: reduce){ * { animation: none !important } }
+  </style>
+
+  <g class="ink">
+    <!-- A quiet patch of floor. -->
+    <path class="fine" d="M60 196 Q121 194 174 196 M186 196 Q221 195 260 196"/>
+
+    <!-- A soft cushion. -->
+    <path fill="#727d96" d="M76 179 Q92 174 122 178 Q138 179 142 188 Q127 194 100 192 Q81 193 73 188 Q72 183 76 179Z"/>
+    <path class="fine" d="M78 187 Q105 190 135 186"/>
+
+    <!-- The person, leaning toward their companion. -->
+    <g class="person">
+      <!-- Far arm: two loose, open strokes. -->
+      <path d="M105 120 Q116 131 132 135 Q140 134 145 130"/>
+      <path d="M102 126 Q116 138 132 140 Q141 139 147 134"/>
+
+      <!-- Folded legs. -->
+      <path fill="#fdfcf8" d="M98 157 Q118 152 132 164 Q142 173 151 177 L148 184 Q133 181 121 175 Q111 172 99 176Z"/>
+      <path d="M98 160 Q86 174 100 181 Q117 187 139 183"/>
+      <path d="M104 164 Q97 172 107 175 Q122 180 140 178"/>
+      <path fill="#fdfcf8" d="M139 178 Q144 178 147 181 L157 183 Q161 185 158 187 L139 186"/>
+      <path class="fine" d="M143 184 Q150 185 157 185"/>
+
+      <!-- A roomy shirt, with a little bend at the waist. -->
+      <path fill="#fdfcf8" d="M97 110 Q104 109 111 116 Q116 132 115 145 Q114 153 119 160 Q106 166 89 160 Q90 148 88 137 Q87 119 97 110Z"/>
+      <path class="fine" d="M94 145 Q94 153 98 157 M103 159 Q109 158 112 156"/>
+
+      <!-- Open neck and small, faceless head. -->
+      <path d="M100 109 L101 103 M106 111 L107 104"/>
+      <path fill="#fdfcf8" d="M101 83 Q111 80 116 89 Q120 98 113 105 Q107 110 101 103 Q96 96 98 89"/>
+      <path fill="#1c1c1c" stroke-width="1.4" d="M99 96 Q93 90 96 83 Q99 76 108 79 Q117 79 118 89 Q111 90 106 84 Q105 93 99 96Z"/>
+      <path class="fine" d="M97 80 Q101 75 107 77"/>
+
+      <!-- Near sleeve and reaching hand. -->
+      <path fill="#fdfcf8" d="M109 115 Q118 118 123 128 L116 136 Q108 131 105 124"/>
+      <path class="fine" d="M116 132 L121 127"/>
+      <path d="M121 130 Q135 143 146 140 Q158 136 169 128"/>
+      <path d="M117 135 Q134 149 148 145 Q162 140 173 132"/>
+      <path d="M169 128 Q173 124 177 125 Q180 126 177 129 L173 132"/>
+      <path class="fine" d="M171 128 L175 128"/>
+    </g>
+
+    <!-- A phone, propped up at the same height as the person. -->
+    <path fill="#fdfcf8" stroke-width="2" d="M188 65 Q184 65 184 71 L182 176 Q182 183 189 183 L239 183 Q245 183 245 177 L247 72 Q247 66 241 66Z"/>
+    <path class="fine" d="M190 75 Q215 74 241 76 L239 167 Q215 169 188 167Z"/>
+    <path class="fine" d="M207 70 Q215 69 222 70"/>
+    <path class="fine" d="M209 176 Q215 175 221 176"/>
+    <path d="M197 184 L194 190 Q214 193 235 190 L232 184"/>
+
+    <!-- The AI companion: a faceless figure with quiet circuit details. -->
+    <path fill="#727d96" stroke-width="1.4" d="M195 154 Q195 137 204 131 Q214 126 224 132 Q233 139 233 154 Q216 158 195 154Z"/>
+    <path fill="#fdfcf8" stroke-width="1.4" d="M207 130 L208 122 M219 130 L218 122"/>
+    <path fill="#fdfcf8" stroke-width="1.4" d="M205 104 Q208 96 217 99 Q226 101 224 112 Q223 123 215 125 Q207 124 205 115 Q203 109 205 104Z"/>
+    <path stroke-width="1.4" d="M204 109 Q201 101 207 97 Q216 92 223 100 L225 105"/>
+    <path class="fine" d="M208 134 Q214 139 220 134 M199 145 Q199 150 201 152 M228 144 L229 151"/>
+
+    <!-- Small circuit branches distinguish the digital companion. -->
+    <path class="fine" d="M228 117 L234 117 L237 113 M199 113 L194 113 L194 105"/>
+    <circle cx="237" cy="111" r="1.5" fill="#fdfcf8" stroke-width=".85"/>
+    <circle cx="194" cy="103" r="1.5" fill="#fdfcf8" stroke-width=".85"/>
+    <path class="fine" d="M202 160 L206 160 M212 160 L216 160 M222 160 L226 160"/>
+
+    <!-- Affection crosses the space between them. -->
+    <g class="heart">
+      <path fill="#bb6961" stroke-width="1.5" d="M159 69 C145 60 146 50 153 50 Q159 49 162 55 Q167 48 172 52 C181 59 168 68 163 72Z"/>
+      <path class="fine" d="M144 65 Q139 67 137 71 M179 72 Q182 75 183 78"/>
+    </g>
+    <path class="fine" stroke-dasharray="1 5" d="M174 88 Q187 88 196 96"/>
+
+    <!-- A cup left nearby, its warmth still visible. -->
+    <path fill="#fdfcf8" d="M222 179 Q231 181 241 179 L239 191 Q231 195 224 191Z"/>
+    <path d="M242 181 Q251 179 250 185 Q250 190 241 189"/>
+    <path class="fine" d="M223 179 Q230 176 240 179"/>
+    <g class="steam fine">
+      <path d="M228 173 Q224 169 228 165 Q231 162 228 158"/>
+      <path d="M236 173 Q240 169 237 166"/>
+    </g>
+  </g>
+</svg>

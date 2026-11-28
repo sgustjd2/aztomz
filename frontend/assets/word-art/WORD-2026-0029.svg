@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240">
+  <rect width="320" height="240" fill="#fdfcf8"/>
+  <style>
+    .nod{transform-box:fill-box;transform-origin:50% 95%;animation:nod 6s ease-in-out infinite}
+    .tick{transform-box:fill-box;transform-origin:50% 100%;animation:tick 6s ease-in-out infinite}
+    .speed{transform-box:fill-box;transform-origin:center;animation:speed 6s ease-in-out infinite}
+    @keyframes nod{0%,35%,65%,100%{transform:rotate(0deg)}45%,55%{transform:rotate(5deg)}}
+    @keyframes tick{0%,100%{transform:rotate(-8deg)}50%{transform:rotate(14deg)}}
+    @keyframes speed{0%,25%,65%,100%{opacity:.65;transform:translateX(0)}40%,50%{opacity:1;transform:translateX(2px)}}
+    @media (prefers-reduced-motion: reduce){ * { animation: none !important } }
+  </style>
+  <defs>
+    <filter id="ink" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency=".045" numOctaves="2" seed="7" result="grain"/>
+      <feDisplacementMap in="SourceGraphic" in2="grain" scale=".45"/>
+    </filter>
+  </defs>
+  <g stroke="#1c1c1c" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" fill="none" filter="url(#ink)">
+    <!-- A little clock, with plenty of day left. -->
+    <path fill="#fdfcf8" d="M239 38C251 38 258 46 258 57S250 76 239 76 220 68 220 57 227 38 239 38Z"/>
+    <path stroke-width=".8" d="M239 42V45M253 57H250M239 72V69M225 57H228"/>
+    <path d="M239 57L246 60"/>
+    <path class="tick" d="M239 57V47"/>
+    <circle cx="239" cy="57" r="1.2" fill="#1c1c1c" stroke="none"/>
+
+    <!-- Chair and desk. -->
+    <path d="M71 119Q69 137 73 154Q87 158 108 155M77 158L73 198M103 158L108 198"/>
+    <path stroke-width=".8" d="M75 122Q73 137 77 148"/>
+    <path fill="#fdfcf8" d="M157 145Q209 144 268 145L268 151Q211 150 157 152Z"/>
+    <path d="M166 153L164 199M258 152L261 199"/>
+    <path stroke-width=".8" d="M171 154L170 194M254 154L256 194"/>
+
+    <!-- Screen with a play symbol and a quiet fast-forward cue. -->
+    <path fill="#fdfcf8" d="M170 89Q212 87 258 89L260 133Q215 135 171 133Z"/>
+    <path stroke-width=".8" d="M175 94Q213 93 253 94L255 128Q216 130 176 128Z"/>
+    <path fill="#b4c4bb" d="M193 102L193 121L208 111Z"/>
+    <g class="speed" stroke="#1c1c1c" stroke-width="1.4">
+      <path d="M222 106L228 111L222 116M233 106L239 111L233 116"/>
+    </g>
+    <path d="M211 135L210 143M223 135L224 143M202 144Q216 142 232 144"/>
+    <path stroke-width=".8" d="M183 138L188 138"/>
+
+    <!-- Seated figure: open strokes, loose clothes, no face. -->
+    <path fill="#fdfcf8" stroke="none" d="M101 145Q115 147 134 157Q141 160 142 167L140 191L134 191L134 169Q116 165 101 158Z"/>
+    <path d="M103 146Q121 148 137 159Q142 161 141 170L139 188M100 157Q113 161 133 168L133 189"/>
+    <path fill="#fdfcf8" d="M132 188Q136 190 141 188Q144 192 151 194Q154 198 150 199L132 198Q130 195 132 188Z"/>
+
+    <path fill="#fdfcf8" stroke="none" d="M91 145Q100 151 119 160L119 183L113 184L111 167Q95 163 88 157Z"/>
+    <path d="M91 145Q104 153 118 159Q121 161 119 169L119 182M88 157Q99 162 111 167L113 182"/>
+    <path fill="#fdfcf8" d="M112 182Q116 184 120 182L125 188Q132 188 132 192Q123 195 112 191Z"/>
+
+    <path fill="#b4c4bb" d="M94 102Q102 99 109 104Q115 119 112 134L115 149Q101 154 85 148Q88 134 87 119Q87 109 94 102Z"/>
+    <path stroke-width=".8" d="M94 109Q91 125 93 141M91 146Q101 149 110 146"/>
+
+    <!-- An easy, resting arm. -->
+    <path fill="#fdfcf8" stroke="none" d="M105 114Q111 125 117 132L139 127L141 132Q128 139 116 139Q108 137 100 119Z"/>
+    <path d="M105 114Q111 125 117 132Q127 131 137 128M100 119Q107 137 115 139Q126 139 139 133"/>
+    <path stroke-width="1.4" d="M137 128Q142 125 145 127M140 132Q145 132 146 129"/>
+    <path fill="#b4c4bb" d="M100 107Q107 108 110 118L102 123Q97 117 97 113"/>
+
+    <g class="nod">
+      <path d="M98 99L98 105M104 99L105 104"/>
+      <path fill="#fdfcf8" d="M95 81Q101 76 108 81Q112 85 110 90L112 93L109 95Q108 102 102 101Q94 99 93 91Q91 85 95 81Z"/>
+      <path fill="#1c1c1c" stroke="none" d="M93 91Q89 83 94 79Q100 74 107 79L111 83Q105 82 101 85L97 84L97 93Z"/>
+      <path stroke-width=".8" d="M100 90Q103 88 103 92"/>
+    </g>
+
+    <!-- A few grounding marks, leaving the paper open. -->
+    <path stroke-width=".8" d="M56 201Q111 200 155 201M178 201Q225 200 274 201"/>
+    <path stroke-width=".7" d="M63 205L82 205M246 205L261 205"/>
+  </g>
+</svg>

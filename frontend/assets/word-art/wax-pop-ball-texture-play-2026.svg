@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240">
+  <rect width="320" height="240" fill="#fdfcf8"/>
+  <style>
+    .ink{stroke:#1c1c1c;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+    .detail{fill:none;stroke-width:.85}
+    .ball{transform-box:fill-box;transform-origin:50% 60%;animation:squish 6s ease-in-out infinite}
+    .left{transform-box:fill-box;transform-origin:15% 90%;animation:press-left 6s ease-in-out infinite}
+    .right{transform-box:fill-box;transform-origin:85% 90%;animation:press-right 6s ease-in-out infinite}
+    .chips{transform-box:fill-box;transform-origin:50% 50%;animation:flake 6s ease-in-out infinite}
+    @keyframes squish{
+      0%,18%,85%,100%{transform:scale(1,1)}
+      43%,60%{transform:scale(.91,1.07)}
+    }
+    @keyframes press-left{
+      0%,18%,85%,100%{transform:translateX(0) rotate(0deg)}
+      43%,60%{transform:translateX(5px) rotate(-3deg)}
+    }
+    @keyframes press-right{
+      0%,18%,85%,100%{transform:translateX(0) rotate(0deg)}
+      43%,60%{transform:translateX(-5px) rotate(3deg)}
+    }
+    @keyframes flake{
+      0%,18%,85%,100%{transform:translateY(0) rotate(-2deg)}
+      48%,60%{transform:translateY(7px) rotate(5deg)}
+    }
+    @media (prefers-reduced-motion: reduce){ * { animation: none !important } }
+  </style>
+
+  <g class="ink" fill="#fdfcf8">
+    <!-- Soft core beneath a thin, fractured wax shell. -->
+    <g class="ball">
+      <path fill="#8fbdb3" d="M159 49C190 47 213 71 212 102C214 133 194 155 163 157C134 158 110 138 108 109C104 79 126 51 159 49Z"/>
+      <path fill="#dc8e7f" d="M113 88Q121 60 149 53L159 67L147 82L149 96L131 101L120 94Z"/>
+      <path fill="#dc8e7f" d="M164 51Q190 52 204 76L191 84L176 79L168 87L158 73L164 63Z"/>
+      <path fill="#dc8e7f" d="M208 89Q217 112 201 135L186 129L182 114L192 104L187 94Z"/>
+      <path fill="#dc8e7f" d="M117 119L132 111L147 119L150 136L162 146L156 155Q128 154 117 135Z"/>
+      <path fill="#dc8e7f" d="M163 100L174 92L181 102L175 113L179 124L164 132L154 122L157 110Z"/>
+      <path class="detail" d="M126 77Q131 67 140 64M177 59Q189 63 195 71M119 128Q123 139 136 145"/>
+      <path class="detail" d="M151 86L157 91L154 99M183 136L176 141L178 149"/>
+      <!-- Slightly lifted edges show the shell's thickness. -->
+      <path class="detail" d="M131 101L133 104L148 99M186 129L184 132L198 138M163 100L165 103L174 96"/>
+      <path fill="#fdfcf8" d="M146 101L151 90L158 98L155 108Z"/>
+    </g>
+
+    <!-- Detached flakes are thin, irregular plates. -->
+    <g class="chips">
+      <path fill="#dc8e7f" d="M96 61L106 64L102 73L95 69Z"/>
+      <path class="detail" d="M95 69L100 75L102 73"/>
+      <path fill="#dc8e7f" d="M222 65L232 59L230 71L224 74Z"/>
+      <path class="detail" d="M224 74L228 77L230 71"/>
+      <path fill="#dc8e7f" d="M220 142L230 146L222 153L216 149Z"/>
+      <path class="detail" d="M216 149L221 156L222 153"/>
+      <path class="detail" d="M94 84L91 88M235 88L239 85M233 132L236 135"/>
+    </g>
+
+    <!-- Two faceless human hands, framed by loose cuffs. -->
+    <g class="left">
+      <path d="M66 180L78 165Q78 151 87 136L101 113Q106 106 110 109Q114 112 110 120L102 137Q116 129 122 116L129 101Q132 96 136 99Q140 102 137 109L131 126Q127 138 119 148L108 162Q104 168 101 178L89 193"/>
+      <path class="detail" d="M88 145Q91 137 97 131M96 151Q100 142 106 138M105 155Q111 149 115 142"/>
+      <path class="detail" d="M125 113Q130 114 133 117"/>
+      <path d="M48 190Q57 178 66 170L97 189Q94 202 85 212"/>
+      <path class="detail" d="M61 179Q77 187 92 198M57 196L65 201"/>
+    </g>
+
+    <g class="right">
+      <path d="M254 180L242 165Q242 151 233 136L219 113Q214 106 210 109Q206 112 210 120L218 137Q204 129 198 116L191 101Q188 96 184 99Q180 102 183 109L189 126Q193 138 201 148L212 162Q216 168 219 178L231 193"/>
+      <path class="detail" d="M232 145Q229 137 223 131M224 151Q220 142 214 138M215 155Q209 149 205 142"/>
+      <path class="detail" d="M195 113Q190 114 187 117"/>
+      <path d="M272 190Q263 178 254 170L223 189Q226 202 235 212"/>
+      <path class="detail" d="M259 179Q243 187 228 198M263 196L255 201"/>
+    </g>
+
+    <!-- A few fallen shell pieces complete the still composition. -->
+    <path fill="#dc8e7f" d="M145 183L154 179L159 185L151 188Z"/>
+    <path class="detail" d="M145 183L149 190L151 188"/>
+    <path fill="#8fbdb3" d="M174 193L183 190L186 195L177 198Z"/>
+    <path class="detail" d="M134 202Q146 203 157 202M166 210Q178 211 190 209"/>
+  </g>
+</svg>

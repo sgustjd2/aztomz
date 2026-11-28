@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240">
+  <rect width="320" height="240" fill="#fdfcf8"/>
+  <style>
+    .ink{fill:none;stroke:#1c1c1c;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+    .detail{stroke-width:.85}
+    .laugh{transform-box:fill-box;transform-origin:50% 100%;animation:chuckle 5.6s ease-in-out infinite}
+    .phone{transform-box:fill-box;transform-origin:50% 85%;animation:tilt 5.6s ease-in-out infinite}
+    .rays{transform-box:fill-box;transform-origin:0% 100%;animation:burst 5.6s ease-in-out infinite}
+    @keyframes chuckle{
+      0%,28%,64%,100%{transform:translateY(0) rotate(0)}
+      36%,48%{transform:translateY(1.5px) rotate(2deg)}
+      41%,54%{transform:translateY(-1px) rotate(-1deg)}
+    }
+    @keyframes tilt{
+      0%,28%,65%,100%{transform:rotate(0)}
+      38%,50%{transform:rotate(-5deg)}
+      44%,57%{transform:rotate(2deg)}
+    }
+    @keyframes burst{
+      0%,25%,70%,100%{opacity:.3;transform:scale(.92)}
+      38%,53%{opacity:1;transform:scale(1.06)}
+      45%,61%{opacity:.65;transform:scale(1)}
+    }
+    @media (prefers-reduced-motion: reduce){ * { animation: none !important } }
+  </style>
+  <g class="ink">
+    <!-- A little stool and an unhurried patch of ground. -->
+    <path class="detail" d="M65 201Q110 199 142 201M180 201Q220 199 255 201"/>
+    <path fill="#fdfcf8" d="M112 151Q134 148 157 151L159 159Q136 162 111 159Z"/>
+    <path d="M118 161Q117 180 114 197M151 161Q153 181 156 197"/>
+    <path class="detail" d="M118 182Q135 184 153 182"/>
+
+    <!-- Loose trousers, bent knees, and soft shoes. -->
+    <path fill="#fdfcf8" d="M123 138Q143 137 159 147Q170 154 166 166L155 188L146 185L153 162Q139 160 126 155Z"/>
+    <path fill="#fdfcf8" d="M127 148Q139 149 144 159L136 188L126 187Q128 175 129 164L119 158"/>
+    <path class="detail" d="M157 151Q161 154 160 158M132 161Q136 163 135 169"/>
+    <path fill="#fdfcf8" d="M126 185Q131 188 137 187L145 194Q147 198 141 198L124 197Q121 194 126 185Z"/>
+    <path fill="#fdfcf8" d="M146 184Q151 188 156 187L166 193Q169 197 163 198L145 196Q142 192 146 184Z"/>
+    <path class="detail" d="M127 193L140 194M148 192L162 194"/>
+
+    <g class="laugh">
+      <!-- A faceless young reader, with a tousled fringe. -->
+      <path fill="#fdfcf8" d="M144 91L143 101M152 92L152 101"/>
+      <path fill="#fdfcf8" d="M138 66Q145 58 154 64Q161 70 159 81Q158 92 150 95Q141 94 138 85Q134 75 138 66Z"/>
+      <path fill="#1c1c1c" stroke-width="1.4" d="M137 80Q131 70 137 63L134 61Q141 61 143 57Q149 61 153 59Q161 63 161 71Q154 72 149 67Q145 76 139 75L140 81"/>
+      <path class="detail" d="M138 80Q143 77 143 83"/>
+
+      <!-- A small coral sweatshirt; the shoulders lift with the laugh. -->
+      <path fill="#d88c7c" d="M143 99Q132 98 127 108L119 137Q133 145 153 140L156 115Q159 108 152 100"/>
+      <path class="detail" d="M142 101Q146 107 152 102M123 135Q137 140 151 137"/>
+
+      <!-- Open double strokes, with a relaxed hand on the knee. -->
+      <path d="M129 108Q120 119 117 129Q120 139 132 145"/>
+      <path d="M134 112Q127 122 125 128Q128 134 137 139"/>
+      <path d="M133 142Q139 141 142 146M135 146Q139 149 143 148"/>
+
+      <!-- The raised sleeve and forearm point toward the phone. -->
+      <path fill="#d88c7c" d="M153 105Q161 108 164 119L158 124Q151 118 149 113"/>
+      <path d="M163 120Q176 119 183 104"/>
+      <path d="M158 124Q176 130 188 108"/>
+      <path d="M182 105Q181 100 185 99M188 108Q193 106 192 101"/>
+
+      <g class="phone">
+        <path fill="#fdfcf8" d="M184 85Q184 82 188 82L200 85Q203 86 202 89L197 108Q196 111 193 110L181 107Z"/>
+        <path class="detail" d="M188 87L198 89L194 103L184 101Z"/>
+        <path class="detail" d="M189 105L191 105.5"/>
+        <path stroke-width="1.4" d="M182 100Q188 98 190 102"/>
+      </g>
+    </g>
+
+    <!-- Small, wordless bursts of laughter. -->
+    <g class="rays">
+      <path d="M175 69Q180 65 180 59M186 76Q194 73 197 67M193 83Q201 83 206 79"/>
+      <path class="detail" d="M170 58L171 54"/>
+    </g>
+
+    <!-- A takeaway drink set safely beside the stool. -->
+    <path fill="#fdfcf8" d="M221 173L224 195Q233 199 242 195L245 173"/>
+    <path fill="#d88c7c" stroke-width="1.4" d="M223 180Q234 183 243 180L242 190Q233 193 224 190Z"/>
+    <path fill="#fdfcf8" d="M219 170Q232 166 247 170L247 174Q233 177 219 174Z"/>
+    <path d="M234 168L237 156L243 154"/>
+    <path class="detail" d="M226 171Q235 172 242 171"/>
+  </g>
+</svg>

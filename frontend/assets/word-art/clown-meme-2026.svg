@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240">
+  <rect width="320" height="240" fill="#fdfcf8"/>
+  <style>
+    .ink{fill:none;stroke:#1c1c1c;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+    .paper{fill:#fdfcf8}
+    .detail{stroke-width:.8}
+    .hat{transform-box:fill-box;transform-origin:50% 100%;animation:hat-sway 6s ease-in-out infinite}
+    .hand{transform-box:fill-box;transform-origin:0% 50%;animation:typing 4.8s ease-in-out infinite}
+    .hand.back{animation-delay:-2.4s}
+    .glint{transform-box:fill-box;transform-origin:50% 50%;animation:shine 6s ease-in-out infinite}
+    @keyframes hat-sway{
+      0%,100%{transform:rotate(-3deg)}
+      45%{transform:rotate(3deg)}
+      70%{transform:rotate(0deg)}
+    }
+    @keyframes typing{
+      0%,18%,42%,66%,100%{transform:rotate(0deg)}
+      12%,35%{transform:rotate(-4deg)}
+      55%{transform:rotate(-2deg)}
+      80%,90%{transform:rotate(1deg)}
+    }
+    @keyframes shine{
+      0%,25%,75%,100%{opacity:.25;transform:scale(.85)}
+      45%,55%{opacity:1;transform:scale(1)}
+    }
+    @media (prefers-reduced-motion: reduce){ * { animation: none !important } }
+  </style>
+  <defs>
+    <filter id="ink-wobble" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency=".065" numOctaves="2" seed="7" result="grain"/>
+      <feDisplacementMap in="SourceGraphic" in2="grain" scale=".45" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+  </defs>
+
+  <g class="ink" filter="url(#ink-wobble)">
+    <!-- A quiet patch of ground. -->
+    <path class="detail" d="M49 201 Q102 199 145 201 M181 201 Q231 199 278 201"/>
+
+    <!-- The little building earned by a side project. -->
+    <path class="paper" d="M221 197 Q220 145 222 89 L265 88 Q267 141 266 197 Z"/>
+    <path class="paper" d="M218 89 L218 83 Q241 81 269 83 L269 89 Z"/>
+    <path class="detail" d="M225 98 Q243 97 261 98 M225 161 Q243 160 262 161"/>
+    <g fill="#59677b" stroke-width=".9">
+      <path d="M228 106 L237 106 L237 118 L228 118 Z"/>
+      <path d="M249 106 L258 106 L258 118 L249 118 Z"/>
+      <path d="M228 132 L237 132 L237 145 L228 145 Z"/>
+      <path d="M249 132 L258 132 L258 145 L249 145 Z"/>
+    </g>
+    <g class="detail">
+      <path d="M232 107 L232 117 M253 107 L253 117 M232 133 L232 144 M253 133 L253 144"/>
+      <path d="M227 120 L239 120 M248 120 L260 120 M227 147 L239 147 M248 147 L260 147"/>
+    </g>
+    <path d="M237 196 L237 174 Q243 168 250 174 L250 196"/>
+    <path class="detail" d="M244 173 L244 195 M246 184 L247 184"/>
+    <path d="M217 197 Q243 196 270 197"/>
+
+    <!-- Stool and trouser legs. -->
+    <path class="paper" d="M76 157 Q91 154 111 157 L111 163 Q94 166 76 163 Z"/>
+    <path d="M81 165 L78 196 M105 165 L109 196"/>
+    <path class="detail" d="M80 184 Q93 186 107 184"/>
+    <path class="paper" d="M91 143 Q111 141 126 155 Q130 162 129 175 L128 192 M119 192 L119 169 Q106 163 91 160"/>
+    <path class="paper" d="M86 145 Q101 149 109 161 Q113 174 108 191 M99 191 Q102 174 98 168 L85 161"/>
+    <path class="paper" d="M99 190 Q104 192 109 190 L119 196 Q121 199 117 200 L97 200 Q95 197 99 190 Z"/>
+    <path class="paper" d="M120 191 Q125 193 129 191 L140 197 Q142 200 138 200 L119 200 Q116 198 120 191 Z"/>
+
+    <!-- A developer in a small clown collar. -->
+    <path fill="#59677b" d="M87 105 Q99 101 112 106 Q119 122 117 148 Q100 153 84 146 Q81 125 87 105 Z"/>
+    <path class="detail" d="M89 116 Q87 130 89 141 M101 148 Q106 145 114 146"/>
+    <path class="paper" d="M100 91 L99 103 M107 92 L109 103"/>
+    <path class="paper" d="M89 102 L95 98 L101 103 L106 98 L112 103 L117 101 L115 111 L108 108 L102 113 L97 108 L90 111 Z"/>
+    <path class="paper" d="M99 70 Q109 66 113 75 Q116 83 111 92 Q105 97 100 91 Q95 84 97 77"/>
+    <path d="M97 75 Q91 71 90 77 Q85 78 89 83 Q87 88 95 88"/>
+    <circle cx="115" cy="81" r="2.6" fill="#bd6558" stroke-width="1.4"/>
+
+    <g class="hat">
+      <path fill="#bd6558" d="M94 69 Q99 58 106 47 Q108 59 113 69 Z"/>
+      <path class="paper" d="M92 70 Q104 67 115 70 L115 73 Q104 71 93 73 Z"/>
+      <circle class="paper" cx="106" cy="46" r="3"/>
+      <path class="detail" d="M100 62 L109 62"/>
+    </g>
+
+    <!-- Open double strokes, with small wrist gaps. -->
+    <g class="hand back">
+      <path d="M110 114 Q119 119 125 131 Q132 135 145 139"/>
+      <path d="M106 118 Q115 126 121 136 Q131 141 142 142"/>
+      <path class="detail" d="M145 139 Q149 138 151 141"/>
+    </g>
+
+    <!-- Desk and laptop. -->
+    <path class="paper" d="M132 151 Q169 149 210 151 L210 156 Q168 155 132 157 Z"/>
+    <path d="M138 158 L136 197 M204 157 L207 197"/>
+    <path class="detail" d="M140 164 Q171 163 202 164"/>
+    <path class="paper" d="M158 145 L151 116 Q173 114 196 116 L203 145 Z"/>
+    <path class="detail" d="M162 139 L157 121 Q173 120 191 121 L197 139 Z"/>
+    <!-- Code marks are drawn strokes, never text. -->
+    <path stroke-width="1.4" d="M170 126 L166 130 L172 133 M183 125 L188 129 L185 133 M179 125 L176 134"/>
+    <path class="paper" d="M158 145 L203 145 L208 149 Q173 152 139 149 Z"/>
+    <path class="detail" d="M154 147 Q169 146 182 147 M187 147 L199 147"/>
+
+    <g class="hand">
+      <path class="paper" d="M94 117 Q98 132 113 137 Q128 141 145 144 L148 147 Q130 147 111 143 Q95 139 90 123"/>
+      <path class="detail" d="M143 144 L150 144 Q154 145 155 147 M146 146 L151 147"/>
+    </g>
+
+    <!-- A modest, quietly gleaming success. -->
+    <g class="glint" stroke-width="1.4">
+      <path d="M247 57 Q248 64 253 65 Q248 66 247 73 Q246 66 241 65 Q246 64 247 57 Z"/>
+      <path class="detail" d="M266 63 L266 69 M263 66 L269 66"/>
+    </g>
+    <path class="detail" d="M59 193 Q61 188 60 185 M60 193 Q65 189 68 190"/>
+  </g>
+</svg>

@@ -1,0 +1,195 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240">
+  <rect width="320" height="240" fill="#fdfcf8"/>
+  <style>
+    .scarf {
+      transform-box: fill-box;
+      transform-origin: 15% 0%;
+      animation: breeze 6s ease-in-out infinite;
+    }
+    .approval {
+      transform-box: fill-box;
+      transform-origin: 95% 90%;
+      animation: approve 5s ease-in-out infinite;
+    }
+    .spark {
+      transform-box: fill-box;
+      transform-origin: center;
+      animation: glimmer 6s ease-in-out infinite;
+    }
+    .spark.second { animation-delay: -3s; }
+    @keyframes breeze {
+      0%, 100% { transform: rotate(0deg); }
+      35% { transform: rotate(-5deg); }
+      70% { transform: rotate(3deg); }
+    }
+    @keyframes approve {
+      0%, 35%, 70%, 100% { transform: rotate(0deg); }
+      45%, 60% { transform: rotate(-7deg); }
+      52% { transform: rotate(-3deg); }
+    }
+    @keyframes glimmer {
+      0%, 100% { opacity: .45; transform: scale(.9); }
+      45%, 65% { opacity: 1; transform: scale(1.08); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important }
+    }
+  </style>
+
+  <g fill="none" stroke="#1c1c1c" stroke-width="1.7"
+     stroke-linecap="round" stroke-linejoin="round">
+
+    <!-- A tall, gently bowed dressing mirror. -->
+    <path d="M48 193 Q46 136 49 73 Q49 58 63 57
+             Q80 55 81 72 Q84 131 81 193Z"/>
+    <path d="M53 187 Q51 132 54 74 Q54 63 64 63
+             Q75 62 76 74 Q79 134 76 187Z"
+          stroke-width=".8"/>
+    <path d="M52 194 L49 204 M77 194 L81 204"/>
+    <path d="M58 88 L70 76 M58 99 L72 85"
+          stroke-width=".8" opacity=".45"/>
+
+    <!-- A little reflected glimpse of the chosen outfit. -->
+    <path d="M58 122 Q64 118 71 123 L74 151
+             M57 135 L56 155 M61 155 L60 178
+             M69 155 L71 178"
+          stroke-width=".9" opacity=".55"/>
+    <path d="M60 125 Q65 128 70 124"
+          stroke="#7c9296" stroke-width="3.5"/>
+
+    <!-- Fashionable shopper: small, faceless head and open neck. -->
+    <path d="M124 79 Q116 76 117 66 Q117 56 125 55
+             Q135 54 136 65 Q137 74 130 79"
+          fill="#fdfcf8"/>
+    <path d="M117 66 Q115 56 123 53 Q131 50 136 59
+             L136 65 Q130 62 126 58 Q123 65 117 66"
+          fill="#1c1c1c" stroke-width="1.4"/>
+    <path d="M123 78 L122 85 M130 78 L131 85"/>
+
+    <!-- Two open lines per leg, with rounded, unclosed ends. -->
+    <path d="M116 139 Q113 157 112 170 L108 195
+             M126 141 Q123 159 121 172 L118 195"
+          fill="#fdfcf8" stroke-width="1.8"/>
+    <path d="M130 141 Q134 158 136 171 L143 194
+             M141 139 Q143 155 145 169 L153 192"
+          fill="#fdfcf8" stroke-width="1.8"/>
+    <path d="M108 194 Q111 197 118 195 L120 200
+             Q110 202 103 200 Q102 197 108 194Z"
+          fill="#1c1c1c" stroke-width="1.4"/>
+    <path d="M143 193 Q147 195 152 192 Q155 195 160 197
+             Q161 200 155 200 L143 198Z"
+          fill="#1c1c1c" stroke-width="1.4"/>
+
+    <!-- An easy, slightly asymmetric jacket. -->
+    <path d="M121 84 Q111 85 107 92
+             Q109 108 108 128 L106 143
+             Q118 147 127 142 L130 115
+             Q132 131 135 143 Q144 145 150 140
+             L144 113 Q145 98 136 87 L131 84"
+          fill="#fdfcf8"/>
+    <path d="M121 86 L126 97 L121 104 L128 111
+             M131 85 L135 96 L131 103"
+          stroke-width=".9"/>
+    <path d="M114 123 Q118 125 122 123
+             M138 122 L143 121"
+          stroke-width=".8"/>
+    <path d="M129 115 L128 134" stroke-width=".9"/>
+    <path d="M127 118 L127.3 118 M126.5 129 L126.8 129"
+          stroke-width="2"/>
+
+    <!-- One hand rests at the hip; the other carries a small bag. -->
+    <path d="M110 92 Q103 103 100 116 Q103 122 111 124
+             M116 97 Q111 107 108 113 Q110 116 114 117"
+          fill="#fdfcf8"/>
+    <path d="M111 117 Q118 116 120 120 Q118 124 112 124"
+          fill="#fdfcf8" stroke-width="1.4"/>
+    <path d="M139 93 Q149 103 151 116 L153 135
+             M134 100 Q142 108 143 118 L146 136"
+          fill="#fdfcf8"/>
+    <path d="M146 135 Q144 140 148 143 Q154 145 154 138"
+          fill="#fdfcf8" stroke-width="1.4"/>
+
+    <path d="M146 154 Q143 138 151 139 Q159 140 157 154"
+          stroke-width="1.4"/>
+    <path d="M140 151 Q150 153 162 150 L165 173
+             Q153 177 141 173Z"
+          fill="#b99572"/>
+    <path d="M145 158 L145 167 M159 157 L160 167"
+          stroke-width=".8"/>
+
+    <!-- A single muted scarf provides the outfit's accent. -->
+    <path class="scarf"
+          d="M128 86 Q137 91 147 90
+             Q150 99 158 104 L151 110
+             Q139 103 134 94 L127 91Z"
+          fill="#7c9296" stroke-width="1.4"/>
+    <path d="M120 84 Q125 88 132 84 L135 90
+             Q126 96 119 90Z"
+          fill="#7c9296" stroke-width="1.4"/>
+
+    <!-- Friend leaning in, giving an unmistakable thumbs-up. -->
+    <path d="M216 99 Q210 95 211 86 Q212 77 220 77
+             Q229 78 230 87 Q230 96 223 100"
+          fill="#fdfcf8"/>
+    <path d="M211 88 Q208 79 215 75 Q224 72 229 81
+             Q223 79 219 81 Q217 86 211 88"
+          fill="#1c1c1c" stroke-width="1.4"/>
+    <path d="M216 99 L215 105 M223 100 L223 106"/>
+
+    <path d="M210 148 Q208 164 209 177 L206 197
+             M220 150 Q218 166 218 179 L216 197
+             M223 150 Q226 164 227 178 L232 197
+             M233 148 Q234 162 236 176 L242 195"
+          fill="#fdfcf8"/>
+    <path d="M206 196 Q211 199 216 197 L218 201
+             Q209 204 201 202 Q200 199 206 196Z"
+          fill="#fdfcf8"/>
+    <path d="M232 196 Q237 198 242 195 L249 199
+             Q250 202 244 202 L232 201Z"
+          fill="#fdfcf8"/>
+
+    <path d="M215 104 Q207 104 202 113 L204 132
+             L202 151 Q219 156 237 150
+             L233 126 Q234 112 223 105"
+          fill="#fdfcf8"/>
+    <path d="M214 105 Q217 111 224 106
+             M207 139 Q221 143 234 138"
+          stroke-width=".9"/>
+    <path d="M230 114 Q240 125 241 141
+             M224 120 Q232 129 233 142"
+          fill="#fdfcf8"/>
+    <path d="M233 141 Q232 148 236 150 Q242 149 241 142"
+          fill="#fdfcf8" stroke-width="1.4"/>
+
+    <g class="approval">
+      <path d="M207 112 Q199 122 194 124 Q187 121 180 115
+               M213 118 Q202 135 193 133 Q183 130 175 122"
+            fill="#fdfcf8"/>
+      <path d="M180 116 Q182 110 180 104
+               Q179 101 177 103 L174 112
+               L168 110 Q165 110 165 113
+               L165 121 Q168 125 175 122"
+            fill="#fdfcf8" stroke-width="1.5"/>
+      <path d="M166 115 L171 116 M166 119 L171 120"
+            stroke-width=".8"/>
+    </g>
+
+    <!-- Quiet visual praise, with no lettering. -->
+    <g class="spark" stroke-width="1.4">
+      <path d="M160 63 Q160 70 155 72 Q161 73 162 80
+               Q163 73 168 71 Q162 70 160 63Z"
+            fill="#b99572"/>
+    </g>
+    <g class="spark second" stroke-width="1.2">
+      <path d="M188 78 Q188 82 184 84 Q188 85 189 89
+               Q190 85 193 83 Q189 82 188 78Z"
+            fill="#fdfcf8"/>
+    </g>
+
+    <!-- Broken ground strokes leave the paper airy. -->
+    <path d="M43 205 Q67 203 88 205
+             M98 205 Q128 207 163 205
+             M195 207 Q224 205 254 207"
+          stroke-width=".8" opacity=".55"/>
+  </g>
+</svg>

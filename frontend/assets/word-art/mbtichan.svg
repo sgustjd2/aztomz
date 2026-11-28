@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240">
+  <rect width="320" height="240" fill="#fdfcf8"/>
+  <style>
+    .ink{fill:none;stroke:#1c1c1c;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+    .paper{fill:#fdfcf8}
+    .fine{stroke-width:.85}
+    .dark{fill:#1c1c1c}
+    .blue{fill:#697787}
+    .red{fill:#ba6b59}
+    .labeling{transform-box:fill-box;transform-origin:0% 55%;animation:labeling 6s ease-in-out infinite}
+    .head{transform-box:fill-box;transform-origin:50% 95%;animation:question 6s ease-in-out infinite}
+    .heart{transform-box:fill-box;transform-origin:50% 75%;animation:heart 6s ease-in-out infinite}
+    @keyframes labeling{
+      0%,18%,76%,100%{transform:translateX(-7px) rotate(-3deg)}
+      30%,38%,52%,60%{transform:translateX(0) rotate(0)}
+      44%{transform:translateX(-4px) rotate(-1deg)}
+    }
+    @keyframes question{
+      0%,23%,85%,100%{transform:rotate(0)}
+      38%,68%{transform:rotate(9deg)}
+    }
+    @keyframes heart{
+      0%,25%,80%,100%{transform:translateY(0) rotate(-4deg)}
+      42%,62%{transform:translateY(-3px) rotate(5deg)}
+    }
+    @media (prefers-reduced-motion: reduce){ * { animation: none !important } }
+  </style>
+  <defs>
+    <filter id="ink-wobble" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency=".065" numOctaves="2" seed="7" result="grain"/>
+      <feDisplacementMap in="SourceGraphic" in2="grain" scale=".45" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+  </defs>
+
+  <g class="ink" filter="url(#ink-wobble)">
+    <!-- A little ground, with plenty of paper around it. -->
+    <path class="fine" d="M49 202 Q101 200 135 202 M174 202 Q218 200 269 202"/>
+
+    <!-- The classifier's planted legs: separate, open pen strokes. -->
+    <path d="M91 136 Q89 158 87 175 L82 194 M98 138 Q98 159 94 176 L89 194"/>
+    <path d="M107 137 Q111 157 116 174 L120 194 M115 136 Q119 155 123 172 L127 193"/>
+    <path class="paper" d="M82 193 Q85 195 90 193 L94 198 Q89 201 77 199 Q76 196 82 193Z"/>
+    <path class="paper" d="M120 193 Q124 195 128 193 Q133 195 137 198 Q131 201 119 199Z"/>
+
+    <!-- A plain, slightly bowed jacket. -->
+    <path class="paper" d="M89 82 Q100 78 109 83 Q119 94 118 110 L119 140 Q101 144 85 139 L87 109 Q82 96 89 82Z"/>
+    <path class="blue" stroke="none" d="M91 84 Q98 82 103 84 L101 139 Q94 141 88 138 L90 106Z"/>
+    <path class="fine" d="M101 86 Q105 108 104 139 M111 120 L115 120"/>
+    <circle class="dark" stroke="none" cx="108" cy="108" r="1"/>
+    <circle class="dark" stroke="none" cx="108" cy="120" r="1"/>
+
+    <!-- Small, faceless head and swept hair. -->
+    <path d="M96 77 L95 83 M103 77 L104 82"/>
+    <path class="paper" d="M91 61 Q91 51 100 51 Q109 52 109 62 L111 67 L108 69 Q107 79 100 79 Q92 77 91 67Z"/>
+    <path class="dark" stroke-width="1.4" d="M91 64 Q87 57 92 52 Q100 46 108 53 L110 59 Q101 56 96 58 L94 66Z"/>
+
+    <!-- A clipboard: paired choices reduced to a rigid little system. -->
+    <path class="paper" d="M88 101 Q77 111 66 117 L62 112 Q71 102 82 94"/>
+    <path class="fine" d="M65 112 Q61 109 59 112 Q56 115 61 118"/>
+    <path class="paper" d="M44 88 Q43 85 47 85 L73 87 Q76 87 76 91 L72 135 Q72 138 68 137 L41 135 Q38 135 39 131Z"/>
+    <path class="blue" stroke-width="1.4" d="M53 84 Q54 80 58 81 L65 82 Q68 83 67 88 L52 87Z"/>
+    <path class="fine" d="M47 96 L67 98 M46 105 L66 107 M45 114 L65 116 M44 123 L64 125"/>
+    <g class="fine">
+      <circle class="blue" cx="50" cy="96.5" r="2.1"/>
+      <circle class="paper" cx="63" cy="97.5" r="2.1"/>
+      <circle class="paper" cx="49" cy="105.5" r="2.1"/>
+      <circle class="blue" cx="62" cy="106.5" r="2.1"/>
+      <circle class="blue" cx="48" cy="114.5" r="2.1"/>
+      <circle class="paper" cx="61" cy="115.5" r="2.1"/>
+      <circle class="paper" cx="47" cy="123.5" r="2.1"/>
+      <circle class="blue" cx="60" cy="124.5" r="2.1"/>
+    </g>
+
+    <!-- The other person, a relaxed silhouette with open limbs. -->
+    <path d="M207 139 Q204 162 207 177 L204 195 M214 140 Q212 161 214 176 L211 195"/>
+    <path d="M222 139 Q226 158 231 174 L235 193 M229 138 Q234 157 238 172 L242 192"/>
+    <path class="paper" d="M204 193 Q208 195 212 194 L215 198 Q206 201 198 199 Q198 196 204 193Z"/>
+    <path class="paper" d="M235 192 Q239 194 242 192 L251 197 Q245 201 234 198Z"/>
+
+    <path class="paper" d="M208 83 Q219 80 229 85 Q236 100 232 117 L234 141 Q216 145 200 140 L202 114 Q199 96 208 83Z"/>
+    <path class="fine" d="M207 129 Q212 131 216 129 M225 134 L230 133"/>
+    <path d="M213 78 L212 84 M221 78 L222 84"/>
+
+    <g class="head">
+      <path class="paper" d="M208 61 Q209 51 218 52 Q226 54 226 63 L228 68 L225 70 Q223 80 216 79 Q208 77 208 68Z"/>
+      <path class="dark" stroke-width="1.4" d="M209 65 Q203 58 208 53 Q215 47 223 52 Q228 55 227 61 Q222 61 219 56 Q216 62 209 65Z"/>
+      <path class="fine" d="M236 57 Q241 59 242 62 M239 48 L244 47"/>
+    </g>
+
+    <!-- One open palm, making the imposition visible. -->
+    <path class="paper" d="M230 91 Q240 100 246 111 Q249 113 258 107 L261 112 Q252 121 245 120 Q234 115 227 104"/>
+    <path d="M258 107 Q259 102 262 102 M260 108 L266 105 M261 111 L268 109"/>
+
+    <!-- The person's warm, irregular heart resists the tidy category. -->
+    <path class="paper" d="M204 102 Q193 113 185 126 Q181 129 176 125 L172 130 Q180 138 187 134 Q200 124 209 113"/>
+    <g class="heart">
+      <path class="red" stroke-width="1.5" d="M179 120 C166 113 164 105 170 102 Q176 99 179 106 Q184 99 190 104 C196 111 186 119 179 124Z"/>
+      <path class="fine" d="M173 130 Q170 125 173 122 L177 119 Q180 119 179 123 L177 126 M178 130 L184 126"/>
+    </g>
+
+    <!-- The same binary pattern is repeatedly pushed onto a person. -->
+    <g class="labeling">
+      <path class="paper" d="M111 87 Q121 89 131 97 Q149 101 174 99 L175 105 Q149 110 128 105 Q116 102 108 97"/>
+      <path class="fine" d="M119 92 Q117 96 116 100"/>
+      <path class="paper" d="M190 89 Q190 87 193 87 L216 88 Q219 88 219 91 L218 116 Q218 119 215 119 L191 118 Q188 118 188 115Z"/>
+      <path class="fine" d="M194 95 L213 95 M194 102 L213 102 M194 109 L213 109"/>
+      <g stroke-width=".85">
+        <circle class="blue" cx="198" cy="95" r="2"/>
+        <circle class="paper" cx="210" cy="95" r="2"/>
+        <circle class="paper" cx="198" cy="102" r="2"/>
+        <circle class="blue" cx="210" cy="102" r="2"/>
+        <circle class="blue" cx="198" cy="109" r="2"/>
+        <circle class="paper" cx="210" cy="109" r="2"/>
+      </g>
+      <path class="paper" d="M174 99 Q180 95 186 96 L193 98 Q195 100 192 102 L184 101 Q190 105 187 107 L180 105 L175 105"/>
+    </g>
+  </g>
+</svg>

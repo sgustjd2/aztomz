@@ -1,0 +1,150 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240">
+  <rect width="320" height="240" fill="#fdfcf8"/>
+  <style>
+    .acting {
+      transform-box: fill-box;
+      transform-origin: 50% 95%;
+      animation: acting 6s ease-in-out infinite;
+    }
+    .gesture {
+      transform-box: fill-box;
+      transform-origin: 4% 88%;
+      animation: gesture 6s ease-in-out infinite;
+    }
+    .pause {
+      transform-box: fill-box;
+      transform-origin: center;
+      animation: pause 6s ease-in-out infinite;
+    }
+    @keyframes acting {
+      0%,18%,100% { transform: rotate(-4deg); }
+      31%,48% { transform: rotate(5deg); }
+      59%,76% { transform: rotate(-2deg); }
+      84%,91% { transform: rotate(1deg); }
+    }
+    @keyframes gesture {
+      0%,18%,100% { transform: rotate(0deg); }
+      31%,48% { transform: rotate(-13deg); }
+      59%,76% { transform: rotate(7deg); }
+      84%,91% { transform: rotate(3deg); }
+    }
+    @keyframes pause {
+      0%,18%,100% { opacity: .18; transform: translateY(2px); }
+      31%,52% { opacity: 1; transform: translateY(0); }
+      64%,79% { opacity: .3; transform: translateY(1px); }
+      87%,93% { opacity: .8; transform: translateY(0); }
+    }
+    @media (prefers-reduced-motion: reduce){
+      * { animation: none !important }
+    }
+  </style>
+
+  <g stroke="#1c1c1c" stroke-width="1.7"
+     stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <!-- A small, uneven stage line. -->
+    <path d="M48 204 Q115 202 180 204 M213 204 Q243 203 274 204"
+          stroke-width=".8"/>
+
+    <!-- A conspicuously stiff stance: open strokes, planted feet. -->
+    <path d="M126 139 Q123 158 118 175 Q116 185 114 197
+             M134 141 Q132 160 126 177 Q124 187 122 197"/>
+    <path d="M146 141 Q151 158 159 172 Q165 184 166 197
+             M154 139 Q158 156 166 170 Q172 183 174 197"/>
+    <path d="M114 195 Q108 197 105 201 Q111 204 124 201 L123 196"
+          fill="#fdfcf8"/>
+    <path d="M166 196 Q170 195 174 197 Q184 198 185 202
+             Q174 204 165 201 Z" fill="#fdfcf8"/>
+
+    <g class="acting">
+      <!-- Head tilted back for an overdone performance; no face. -->
+      <path d="M134 74 Q136 80 134 85 M142 74 Q142 80 145 84"/>
+      <path d="M128 57 Q129 46 139 47 Q149 48 150 58
+               Q151 69 143 75 Q136 79 130 71 Q127 66 128 57 Z"
+            fill="#fdfcf8"/>
+      <path d="M128 59 Q124 51 131 46 Q137 42 143 47
+               Q151 45 152 55 Q145 51 140 53 Q134 50 128 59 Z"
+            fill="#1c1c1c" stroke-width=".8"/>
+
+      <!-- A modest flat accent on the shirt. -->
+      <path d="M129 83 Q138 87 145 83
+               Q154 86 157 96 L153 116
+               Q151 128 156 141
+               Q140 145 123 140
+               Q128 126 125 112 L119 96 Q122 88 129 83 Z"
+            fill="#fdfcf8"/>
+      <path d="M128 84 Q137 89 145 84 L149 96
+               Q138 99 124 95 Z"
+            fill="#b66e5e" stroke="none"/>
+      <path d="M129 85 Q137 92 145 85 M128 134 Q140 137 150 135"
+            stroke-width=".8"/>
+
+      <!-- One hand held theatrically to the chest. -->
+      <path d="M121 94 Q113 100 109 112 Q108 117 114 119
+               Q125 119 137 106
+               M125 101 Q119 107 117 112 Q124 111 132 102"
+            fill="#fdfcf8"/>
+      <path d="M132 102 Q131 98 133 97 Q135 97 137 101
+               Q142 99 143 102 Q143 105 137 108"
+            fill="#fdfcf8" stroke-width="1.4"/>
+
+      <!-- An awkwardly raised arm, held too long between gestures. -->
+      <g class="gesture">
+        <path d="M153 92 Q166 101 174 108
+                 Q178 111 181 105 Q185 96 187 86
+                 M151 100 Q162 110 173 117
+                 Q181 122 186 112 Q191 101 193 88"
+              fill="#fdfcf8"/>
+        <path d="M187 87 Q183 81 185 79 Q188 78 190 83
+                 L191 72 Q192 69 194 72 L195 82
+                 Q199 77 201 79 Q203 82 198 88
+                 Q195 93 191 91"
+              fill="#fdfcf8" stroke-width="1.4"/>
+        <path d="M175 111 Q178 113 180 110" stroke-width=".8"/>
+      </g>
+    </g>
+
+    <!-- Uneasy little beats above the performer. -->
+    <g class="pause" stroke-width="1.4">
+      <path d="M109 59 Q106 55 105 51"/>
+      <path d="M119 47 Q118 42 120 39"/>
+      <path d="M160 48 Q163 45 164 41"/>
+    </g>
+
+    <!-- Phone on a tripod, aimed at the performance. -->
+    <path d="M235 139 Q236 167 235 200
+             M235 157 Q223 177 215 201
+             M237 157 Q249 180 256 201"/>
+    <path d="M230 138 Q235 141 241 138 M230 148 L241 148"
+          stroke-width="1.4"/>
+    <path d="M226 83 Q235 81 245 83 Q248 84 248 88
+             L247 134 Q247 138 243 138 L228 138
+             Q224 138 224 134 L225 88 Q225 84 226 83 Z"
+          fill="#fdfcf8"/>
+    <path d="M228 91 Q236 90 244 91 L243 128
+             Q236 129 228 128 Z"
+          fill="#e0e6df" stroke-width=".8"/>
+    <path d="M233 86 L239 86 M233 133 L238 133"
+          stroke-width=".8"/>
+    <circle cx="241" cy="95" r="1.6" fill="#b66e5e" stroke="none"/>
+    <!-- A tiny faceless preview makes the filming legible. -->
+    <g stroke-width=".8">
+      <ellipse cx="235" cy="103" rx="2" ry="2.7" fill="#fdfcf8"/>
+      <path d="M233 107 Q235 108 237 107 L238 117 L232 117 Z"
+            fill="#fdfcf8"/>
+      <path d="M232 109 L230 113 L234 111
+               M237 109 L240 113 L242 106
+               M233 118 L231 124 M237 118 L240 124"/>
+    </g>
+
+    <!-- A resting clapperboard: the third prop is the stage itself. -->
+    <path d="M65 178 L94 178 L96 198 Q82 200 67 198 Z"
+          fill="#fdfcf8"/>
+    <path d="M64 176 L90 165 L94 172 L67 183 Z"
+          fill="#fdfcf8"/>
+    <path d="M70 174 L75 180 M79 170 L84 176 M87 167 L91 173"
+          stroke-width="2.2"/>
+    <path d="M72 187 Q81 186 90 187 M72 192 L83 192"
+          stroke-width=".8"/>
+    <circle cx="68" cy="179" r="1" fill="#1c1c1c" stroke="none"/>
+  </g>
+</svg>

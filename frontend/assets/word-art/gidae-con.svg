@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240">
+  <rect width="320" height="240" fill="#fdfcf8"/>
+  <style>
+    .ink{fill:none;stroke:#1c1c1c;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+    .paper{fill:#fdfcf8}
+    .fine{stroke-width:.85}
+    .lower{transform-box:fill-box;transform-origin:20% 50%;animation:settle 6s ease-in-out infinite}
+    .corn{transform-box:fill-box;transform-origin:50% 100%;animation:rustle 6s ease-in-out infinite}
+    @keyframes settle{
+      0%,12%,88%,100%{transform:translateY(-4px) rotate(-1deg)}
+      40%,65%{transform:translateY(3px) rotate(1deg)}
+    }
+    @keyframes rustle{
+      0%,35%,65%,100%{transform:rotate(0deg)}
+      43%{transform:rotate(-2deg)}
+      51%{transform:rotate(1.5deg)}
+      58%{transform:rotate(-.7deg)}
+    }
+    @media (prefers-reduced-motion: reduce){ * { animation: none !important } }
+  </style>
+
+  <g class="ink">
+    <!-- A generous expectation, gently brought within reach. -->
+    <path class="fine" opacity=".32" stroke-dasharray="3 5"
+      d="M211 36 Q217 48 221 57 L242 60 227 76 230 97 211 87 192 97 195 76 180 61 201 57Z"/>
+    <path class="fine" opacity=".3" d="M211 25v-6m37 22 5-4m-80 4-5-4"/>
+
+    <!-- A quiet downward gesture. -->
+    <path class="fine" opacity=".65"
+      d="M253 87q9 20-3 39m-4-9 4 10 9-5"/>
+
+    <!-- Ground. -->
+    <path class="fine" opacity=".45"
+      d="M51 202q49-2 90 0m12 0q53-2 114 0"/>
+
+    <!-- Far leg: two open ink strokes. -->
+    <path class="paper"
+      d="M100 146q-2 19-7 35l-5 15 7 2q9-23 14-47"/>
+    <path class="paper"
+      d="M88 195q-4 1-5 5 8 2 15 0l-1-4"/>
+
+    <!-- Near leg. -->
+    <path class="paper"
+      d="M113 148q5 20 7 46m-7 1q-5-21-10-37"/>
+    <path class="paper"
+      d="M113 194q-1 4 0 6 12 2 19-1-2-4-12-5"/>
+
+    <!-- Relaxed coat, with a little muted indigo. -->
+    <path fill="#a7b4bc"
+      d="M96 91q-9 4-11 15l-1 42q17 6 37 1l-4-42q-1-10-11-14"/>
+    <path class="fine" d="M104 101q-2 23 0 47m-12-13 7 1"/>
+
+    <!-- Resting arm: open at the wrist. -->
+    <path class="paper"
+      d="M90 101q-8 12-9 25 1 10 10 17m5-5q-7-7-7-13l8-17"/>
+    <path class="fine" d="M91 143q4 5 7 2 2-2-2-7"/>
+
+    <!-- Small faceless head and economical hair. -->
+    <path class="paper"
+      d="M100 82l-2 11m10-9-1 10"/>
+    <path class="paper"
+      d="M94 66q1-10 10-10 12 1 12 13l-1 9q-3 10-12 8-9-2-9-12"/>
+    <path fill="#1c1c1c" stroke-width=".85"
+      d="M94 72q-6-14 4-19 11-5 18 5l1 8q-6-1-9-7-3 9-14 8Z"/>
+    <path class="fine" d="M98 53q-5-4-8 1"/>
+
+    <!-- Hand and star move together in a slow, reassuring press. -->
+    <g class="lower">
+      <path class="paper"
+        d="M112 98q10 0 23 11l25 4m0 7q-20 1-28-3l-20-9"/>
+      <path class="paper"
+        d="M158 113q9-5 17-3l12 3q3 2-1 3l-13-1m-15 5 13-1"/>
+
+      <path fill="#d9bb76"
+        d="m207 113 7 14 16 3-12 11 2 16-13-7-14 7 3-16-12-11 16-3Z"/>
+      <path class="fine" opacity=".6" d="m207 122-4 9-9 2"/>
+      <path class="fine" d="M207 153q-4 10 0 18"/>
+    </g>
+
+    <!-- A movie ticket, without lettering. -->
+    <g transform="rotate(-12 168 182)">
+      <path class="paper"
+        d="M145 172q21-1 44 0v6q-7 3 0 7v7q-22 1-44-1v-6q7-3 0-7Z"/>
+      <path class="fine" stroke-dasharray="1 3" d="M178 175v14"/>
+      <path class="fine" d="m154 178 14-1m-14 7 10-1"/>
+    </g>
+
+    <!-- Popcorn makes the cinema context immediate. -->
+    <g class="corn">
+      <path class="paper"
+        d="M224 172q-7-3-4-8 2-3 6-2-2-7 4-8 5-1 7 4 4-7 9-3 3 2 1 7 7-2 9 3 2 5-5 8"/>
+      <path class="fine"
+        d="M225 163q5-2 6 3m6-8q-3 3 0 6m6 2q5-3 7 1"/>
+      <path class="paper"
+        d="M220 172q18 2 35 0l-5 26q-13 3-25 0Z"/>
+      <path fill="#d9bb76" stroke="none"
+        d="m226 175 5 .2 2 23-5-.6Zm13 .4 5-.2-1 23.6-5 .2Z"/>
+      <path class="fine" d="M222 176q16 2 31 0"/>
+    </g>
+  </g>
+</svg>

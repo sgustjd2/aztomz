@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240">
+  <rect width="320" height="240" fill="#fdfcf8"/>
+  <style>
+    .swimmer {
+      transform-box: fill-box;
+      transform-origin: 50% 50%;
+      animation: swim 7s ease-in-out infinite;
+    }
+    .ripples {
+      transform-box: fill-box;
+      transform-origin: 50% 50%;
+      animation: ripple 7s ease-in-out infinite;
+    }
+    .phone {
+      transform-box: fill-box;
+      transform-origin: 15% 85%;
+      animation: observe 6s ease-in-out infinite;
+    }
+    @keyframes swim {
+      0%,100% { transform: translateX(-5px) rotate(-1deg); }
+      50% { transform: translateX(6px) rotate(1deg); }
+    }
+    @keyframes ripple {
+      0%,100% { opacity: .45; transform: scaleX(.96); }
+      50% { opacity: .85; transform: scaleX(1.05); }
+    }
+    @keyframes observe {
+      0%,35%,100% { transform: rotate(0deg); }
+      55%,75% { transform: rotate(-5deg); }
+    }
+    @media (prefers-reduced-motion: reduce){ * { animation: none !important } }
+  </style>
+  <defs>
+    <filter id="ink" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency=".055" numOctaves="2" seed="8" result="grain"/>
+      <feDisplacementMap in="SourceGraphic" in2="grain" scale=".45" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+  </defs>
+  <g stroke="#1c1c1c" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" filter="url(#ink)">
+    <!-- A narrow city waterway, seen straight on. -->
+    <path d="M43 125 Q151 123 277 125 M43 139 Q155 137 277 139"/>
+    <path d="M44 125 L44 187 M276 125 L276 187" stroke-width="1.8"/>
+    <g stroke-width=".8">
+      <path d="M44 151 L54 151 M44 171 L53 171 M268 151 L276 151 M269 174 L276 174"/>
+      <path d="M58 130 L84 130 M93 130 L133 130 M146 130 L186 130 M199 130 L225 130"/>
+    </g>
+
+    <!-- Bowed rail, with generous open spaces. -->
+    <path d="M49 101 Q159 99 270 101 M49 105 Q159 103 270 105"/>
+    <path d="M56 105 L56 124 M148 105 L148 124 M217 105 L217 124 M265 105 L265 124"/>
+
+    <!-- A citizen leaning over to look. -->
+    <g fill="#fdfcf8">
+      <path d="M94 87 Q91 101 87 114 L92 115 Q99 102 100 91"/>
+      <path d="M104 88 Q109 100 111 114 L116 114 Q116 100 111 87"/>
+      <path d="M86 114 Q89 113 92 115 L95 118 Q89 119 83 118 Z"/>
+      <path d="M111 114 Q115 113 118 115 L123 118 Q116 119 111 118 Z"/>
+      <path d="M98 63 Q90 66 90 77 L89 91 Q102 95 114 90 L111 72 Q108 65 104 64"
+            fill="#a8b8b5"/>
+      <path d="M101 59 L100 65 M106 59 L105 65"/>
+      <path d="M111 47 C116 51 112 59 107 61 C102 62 99 58 100 53 C100 47 105 43 111 47 Z"/>
+      <path d="M99 53 Q97 46 104 44 Q111 42 114 49 Q108 47 105 52"
+            fill="#1c1c1c"/>
+      <!-- Two open strokes for the extended sleeve and arm. -->
+      <path d="M107 69 Q116 72 121 80 Q128 79 135 75 L137 78 Q130 86 120 85 Q111 82 106 76"
+            fill="#a8b8b5"/>
+      <path d="M135 75 Q139 73 141 76 Q142 79 137 80"/>
+    </g>
+    <path d="M94 77 Q96 82 94 87 M102 88 L108 88" stroke-width=".8"/>
+
+    <g class="phone">
+      <path d="M137 65 Q137 63 139 63 L146 65 Q148 65 147 68 L143 79 Q143 81 141 80 L134 78 Z"
+            fill="#fdfcf8"/>
+      <path d="M140 67 L144 68 M137 76 L140 77" stroke-width=".8"/>
+    </g>
+
+    <!-- A small rescue ring belongs to the canal. -->
+    <path d="M245 104 Q249 109 246 113" stroke-width=".9"/>
+    <circle cx="245" cy="123" r="11" fill="#c4806c"/>
+    <circle cx="245" cy="123" r="5" fill="#fdfcf8"/>
+    <g stroke="#fdfcf8" stroke-width="3.2">
+      <path d="M243 113 L244 117 M251 123 L255 124 M244 129 L243 133 M235 121 L239 122"/>
+    </g>
+
+    <!-- The visitor: a long, soft shark silhouette, open fins and a quiet eye. -->
+    <g class="swimmer">
+      <path d="M106 164 Q93 154 80 146 Q84 160 89 167 Q80 174 76 184 Q94 180 107 173"
+            fill="#fdfcf8"/>
+      <path d="M104 164 Q128 151 152 153 Q155 140 165 132 Q166 144 176 154
+               Q198 153 220 163 Q232 169 236 174
+               Q226 182 203 182 Q184 188 164 182
+               Q134 183 105 173"
+            fill="#fdfcf8"/>
+      <path d="M170 176 Q166 186 152 192 Q155 183 154 178" fill="#fdfcf8"/>
+      <path d="M124 174 Q118 181 113 182" stroke-width="1.4"/>
+      <path d="M219 178 Q226 179 231 176" stroke-width="1"/>
+      <g stroke-width="1">
+        <path d="M201 166 Q198 171 200 175 M195 164 Q192 170 194 175 M189 163 Q186 169 188 174"/>
+      </g>
+      <circle cx="220" cy="169" r="1.1" fill="#1c1c1c" stroke="none"/>
+      <path d="M110 161 Q130 156 145 157" stroke-width=".8"/>
+    </g>
+
+    <g class="ripples" stroke-width=".9">
+      <path d="M56 160 Q65 158 71 160 M242 165 Q251 163 261 165"/>
+      <path d="M61 194 Q79 191 94 194 M111 204 Q131 201 146 203"/>
+      <path d="M185 199 Q204 196 222 199 M239 188 Q250 186 260 188"/>
+    </g>
+  </g>
+</svg>

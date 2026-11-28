@@ -1,0 +1,138 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240">
+  <rect width="320" height="240" fill="#fdfcf8"/>
+  <style>
+    .dance {
+      transform-box: fill-box;
+      transform-origin: 50% 100%;
+      animation: dance 6s ease-in-out infinite;
+    }
+    .finger-gun {
+      transform-box: fill-box;
+      transform-origin: 12% 85%;
+      animation: point 6s ease-in-out infinite;
+    }
+    .music {
+      transform-box: fill-box;
+      transform-origin: 50% 80%;
+      animation: music 6s ease-in-out infinite;
+    }
+    @keyframes dance {
+      0%, 42%, 100% { transform: rotate(-1deg); }
+      16%, 65% { transform: rotate(1.5deg); }
+      24%, 73% { transform: rotate(.2deg); }
+    }
+    @keyframes point {
+      0%, 40%, 100% { transform: rotate(2deg); }
+      14%, 62% { transform: rotate(-5deg); }
+      22%, 70% { transform: rotate(-1deg); }
+    }
+    @keyframes music {
+      0%, 100% { transform: translateY(0) rotate(-4deg); opacity: .65; }
+      50% { transform: translateY(-4px) rotate(4deg); opacity: 1; }
+    }
+    @media (prefers-reduced-motion: reduce){ * { animation: none !important } }
+  </style>
+  <defs>
+    <filter id="ink" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency=".055" numOctaves="2" seed="8"/>
+      <feDisplacementMap in="SourceGraphic" scale=".35" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+  </defs>
+  <g stroke="#1c1c1c" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" fill="none" filter="url(#ink)">
+    <!-- A quiet floor, with space around the little recording scene. -->
+    <path d="M58 208 Q106 207 148 208 M172 208 Q221 209 266 207"
+          stroke-width=".8" opacity=".4"/>
+
+    <!-- A work bag: the hopeful “landing a job” variation. -->
+    <path d="M67 179 Q79 178 96 179 Q99 179 99 183 L98 201
+             Q84 203 65 201 L64 183 Q64 180 67 179Z" fill="#fdfcf8"/>
+    <path d="M75 178 L75 173 Q81 170 88 173 L89 178"/>
+    <path d="M65 187 Q82 191 98 187" stroke-width=".9"/>
+    <path d="M79 188 L79 193 L84 193 L84 189" fill="#fdfcf8" stroke-width=".9"/>
+    <path d="M69 196 L69 199" stroke-width=".8"/>
+
+    <!-- A phone filming the challenge. -->
+    <path d="M231 134 Q230 163 230 177 M230 177 Q224 192 215 204
+             M230 177 Q236 192 246 204 M230 177 L230 204"/>
+    <path d="M220 130 Q230 134 240 130 M230 134 L230 139"/>
+    <path d="M220 77 Q230 75 240 77 Q243 77 243 81 L242 127
+             Q242 131 238 131 L221 130 Q217 130 217 126 L217 82
+             Q217 78 220 77Z" fill="#fdfcf8"/>
+    <path d="M221 84 Q230 83 239 84 L238 121 Q230 122 221 121Z"
+          fill="#e8ecec" stroke-width=".8"/>
+    <path d="M227 80 L233 80 M228 126 L232 126" stroke-width=".8"/>
+    <circle cx="230" cy="114" r="2.1" fill="#b86b57" stroke="none"/>
+    <path d="M224 90 L224 87 L227 87 M234 87 L237 87 L237 90
+             M224 105 L224 108 L227 108 M234 108 L237 108 L237 105"
+          stroke-width=".7" opacity=".65"/>
+
+    <g class="dance">
+      <!-- Open, gently bent legs and planted shoes. -->
+      <path d="M126 144 Q123 160 118 175 Q115 186 111 197
+               M133 147 Q132 162 125 178 Q121 190 118 199"/>
+      <path d="M143 146 Q144 163 153 174 Q161 184 164 196
+               M151 143 Q153 159 159 169 Q170 183 171 196"/>
+      <path d="M111 197 Q108 199 106 204 Q114 206 124 204
+               Q124 201 118 199" fill="#fdfcf8"/>
+      <path d="M164 196 Q162 201 164 204 Q174 205 182 203
+               Q180 199 171 196" fill="#fdfcf8"/>
+      <path d="M108 202 Q115 203 121 202 M167 202 L178 202" stroke-width=".8"/>
+
+      <!-- Rear arm rests at the hip; the elbow stays soft. -->
+      <path d="M121 89 Q107 96 104 111 Q109 120 120 123
+               M123 98 Q116 103 113 110 Q118 115 124 116"/>
+      <path d="M120 123 Q125 124 129 120 M124 116 Q129 115 131 118"
+            stroke-width="1.4"/>
+
+      <!-- A loose shirt, pale indigo as the only large accent. -->
+      <path d="M125 83 Q138 80 149 86 Q154 93 156 102
+               L149 106 Q148 125 153 145
+               Q139 150 120 144 Q124 125 120 106
+               L114 103 Q115 92 125 83Z"
+            fill="#b8c7cf"/>
+      <path d="M128 85 Q137 92 145 86 M123 138 Q136 142 150 139"
+            stroke-width=".85"/>
+      <path d="M146 113 Q142 125 145 130" stroke-width=".8" opacity=".7"/>
+
+      <!-- Faceless head, hair and a short open neck. -->
+      <path d="M132 78 L131 85 M141 78 L143 85"/>
+      <path d="M126 54 Q130 45 141 48 Q150 52 149 65
+               Q148 77 139 80 Q130 79 127 70
+               Q124 63 126 54Z" fill="#fdfcf8"/>
+      <path d="M126 65 Q121 56 126 49 Q131 41 142 45
+               Q152 46 152 56 Q145 57 138 51
+               Q134 60 126 61Z" fill="#1c1c1c"/>
+      <path d="M148 58 Q153 56 154 60 Q155 64 149 66"
+            fill="#fdfcf8" stroke-width="1.4"/>
+      <path d="M127 49 Q121 45 118 49 Q115 53 122 57" fill="#1c1c1c"/>
+
+      <!-- Bent arm and an unmistakable index finger / raised thumb. -->
+      <g class="finger-gun">
+        <path d="M153 96 Q160 105 167 112 Q175 105 182 99
+                 M150 104 Q157 118 166 121 Q170 122 174 118
+                 Q182 111 187 106"
+              fill="#fdfcf8"/>
+        <path d="M182 99 Q181 95 182 89
+                 Q182 86 184 86 Q186 86 186 90 L187 95
+                 Q196 92 205 92 Q209 92 209 94
+                 Q209 96 205 96 L194 99
+                 Q199 99 199 102 Q199 105 195 105
+                 Q195 109 191 109 L187 106"
+              fill="#fdfcf8"/>
+        <path d="M189 101 Q192 101 194 102 M188 105 L191 106"
+              stroke-width=".8"/>
+      </g>
+    </g>
+
+    <!-- Small musical marks connect the pose to a dance recording. -->
+    <g class="music">
+      <path d="M190 65 Q191 55 190 47 L201 44 L202 59"/>
+      <path d="M191 51 L201 48" stroke-width=".8"/>
+      <ellipse cx="187" cy="66" rx="3.5" ry="2.1"
+               transform="rotate(-18 187 66)" fill="#1c1c1c" stroke="none"/>
+      <ellipse cx="199" cy="60" rx="3.5" ry="2.1"
+               transform="rotate(-18 199 60)" fill="#1c1c1c" stroke="none"/>
+      <path d="M211 83 L213 80 M214 87 L218 86" stroke-width=".9"/>
+    </g>
+  </g>
+</svg>

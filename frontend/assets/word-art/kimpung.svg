@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240">
+  <rect width="320" height="240" fill="#fdfcf8"/>
+  <style>
+    .ink{fill:none;stroke:#1c1c1c;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+    .paper{fill:#fdfcf8}
+    .fine{stroke-width:.85}
+    .rose{fill:#c77b70}
+    .mix{transform-box:fill-box;transform-origin:75% 20%;animation:mix 6s ease-in-out infinite}
+    .flour{transform-box:fill-box;transform-origin:50% 100%;animation:flour 6s ease-in-out infinite}
+    .shine{transform-box:fill-box;transform-origin:50% 50%;animation:shine 6s ease-in-out infinite}
+    @keyframes mix{
+      0%,40%,100%{transform:rotate(-7deg)}
+      12%,30%{transform:rotate(9deg)}
+      21%{transform:rotate(-5deg)}
+      55%,85%{transform:rotate(4deg)}
+      70%{transform:rotate(-8deg)}
+    }
+    @keyframes flour{
+      0%,100%{transform:translate(0,2px);opacity:.35}
+      35%{transform:translate(-2px,-3px);opacity:.85}
+      70%{transform:translate(2px,-6px);opacity:.2}
+    }
+    @keyframes shine{
+      0%,25%,75%,100%{opacity:.3;transform:scale(.88)}
+      50%{opacity:1;transform:scale(1.08)}
+    }
+    @media (prefers-reduced-motion: reduce){ * { animation: none !important } }
+  </style>
+  <defs>
+    <filter id="ink" x="-3%" y="-3%" width="106%" height="106%">
+      <feTurbulence type="fractalNoise" baseFrequency=".065" numOctaves="2" seed="8" result="grain"/>
+      <feDisplacementMap in="SourceGraphic" in2="grain" scale=".45" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+  </defs>
+  <g class="ink" filter="url(#ink)">
+    <!-- A hurried baker, sleeves rolled up. -->
+    <path d="M49 201Q150 203 278 201" class="fine"/>
+    <path d="M83 148Q81 171 76 194M89 149Q89 174 82 195" class="paper"/>
+    <path d="M97 149Q99 171 108 193M103 147Q105 170 114 192" class="paper"/>
+    <path d="M76 192Q72 196 72 199Q80 201 88 199L83 195M108 192L108 199Q118 201 124 198Q120 194 114 193" class="paper"/>
+    <path d="M84 91Q79 109 78 129L73 149Q90 154 109 148L104 124Q102 103 96 92" class="paper"/>
+    <path d="M85 95Q90 106 98 97L103 138Q90 143 79 138Z" class="rose"/>
+    <path d="M81 115Q92 119 101 115M85 127Q91 130 97 126" class="fine"/>
+    <path d="M85 85L84 94M92 86L94 95"/>
+    <path d="M94 66Q102 69 102 77Q101 87 94 89Q86 89 83 80Q80 71 86 67" class="paper"/>
+    <path d="M82 77Q78 70 84 65Q83 59 90 60Q93 55 97 61Q105 60 106 66Q110 71 103 74Q101 68 96 70Q91 73 86 71" fill="#1c1c1c" stroke-width=".85"/>
+    <path d="M84 100Q73 108 68 123Q77 133 94 137M89 103Q81 113 76 122Q84 128 97 131" class="paper"/>
+    <path d="M94 131Q102 130 103 134Q104 139 96 138" class="paper"/>
+
+    <!-- The whisk and reaching arm share a small, imperfect stirring motion. -->
+    <g class="mix">
+      <path d="M99 101Q108 108 116 115L133 105M97 108Q106 117 115 122Q122 120 136 111" class="paper"/>
+      <path d="M132 105Q137 101 140 104Q143 107 137 111" class="paper"/>
+      <path d="M136 108L145 132"/>
+      <path d="M144 128Q132 138 141 146Q151 149 150 139Q150 133 144 128Z" class="paper fine"/>
+      <path d="M144 129Q140 140 145 146M145 130Q148 138 146 146" class="fine"/>
+    </g>
+
+    <!-- Splashes and a wobbling-looking bowl: the process is unpromising. -->
+    <g class="flour fine">
+      <path d="M117 130Q110 125 113 120M126 121Q123 115 126 112M152 123Q158 118 157 114"/>
+      <path d="M108 137L105 135M151 110L153 107"/>
+      <circle cx="119" cy="111" r="1"/>
+      <circle cx="162" cy="128" r="1.2"/>
+    </g>
+    <path d="M113 145Q133 137 157 143L151 160Q136 169 122 162Z" class="paper"/>
+    <path d="M113 145Q132 153 157 143" class="paper"/>
+    <path d="M119 151Q120 157 125 159" class="fine"/>
+    <path d="M111 170Q129 168 153 170M117 172L115 198M149 172L152 199"/>
+    <path d="M119 167Q121 164 125 167M149 167L155 165M105 179Q108 175 112 179" class="fine"/>
+    <path d="M99 161Q102 154 107 157L111 163Q105 168 99 161Z" class="paper"/>
+    <path d="M100 160L104 161L105 158L108 161" class="fine"/>
+
+    <!-- A quiet visual turn toward the unexpectedly polished result. -->
+    <path d="M163 178Q178 185 191 175M186 174L192 174L191 180" class="fine"/>
+
+    <!-- Finished cake: precise silhouette, restrained icing and berry accents. -->
+    <path d="M200 179Q226 185 258 179M226 184Q229 190 225 198M214 200Q228 196 241 200" class="paper"/>
+    <ellipse cx="229" cy="176" rx="34" ry="5" class="paper"/>
+    <path d="M202 149L202 173Q226 180 255 173L255 149Z" class="paper"/>
+    <path d="M202 151Q207 149 209 155Q213 162 216 153Q220 149 223 156Q227 164 231 154Q235 149 238 155Q243 162 246 153Q250 149 255 151" class="fine"/>
+    <ellipse cx="228.5" cy="148" rx="26.5" ry="5" class="paper"/>
+    <path d="M212 128L212 146Q228 151 245 146L245 128Z" class="paper"/>
+    <path d="M212 131Q216 129 219 134Q222 139 225 132Q229 129 232 135Q236 140 239 132Q242 130 245 131" class="fine"/>
+    <ellipse cx="228.5" cy="127" rx="16.5" ry="4" class="paper"/>
+    <path d="M224 122Q219 116 224 113Q229 111 232 116Q233 121 227 124Z" class="rose"/>
+    <path d="M225 114L224 110M225 114L229 111" class="fine"/>
+    <path d="M207 169Q228 173 250 169M217 142Q228 145 240 142" class="fine"/>
+    <g class="shine fine">
+      <path d="M266 116Q266 124 260 126Q266 127 267 135Q267 127 273 125Q267 124 266 116Z"/>
+      <path d="M203 105L203 113M199 109L207 109"/>
+      <path d="M251 96L251 101M248.5 98.5L253.5 98.5"/>
+    </g>
+  </g>
+</svg>

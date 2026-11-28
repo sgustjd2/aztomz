@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240">
+  <rect width="320" height="240" fill="#fdfcf8"/>
+  <style>
+    .ink{fill:none;stroke:#1c1c1c;stroke-width:1.65;stroke-linecap:round;stroke-linejoin:round}
+    .paper{fill:#fdfcf8}
+    .detail{stroke-width:.85}
+    .chuckle{transform-box:fill-box;transform-origin:50% 100%;animation:chuckle 5.8s ease-in-out infinite}
+    .phone{transform-box:fill-box;transform-origin:15% 90%;animation:puzzle 5.8s ease-in-out infinite}
+    .steam{transform-box:fill-box;transform-origin:50% 100%;animation:steam 6.8s ease-in-out infinite}
+    @keyframes chuckle{
+      0%,30%,66%,100%{transform:rotate(0deg) translateY(0)}
+      38%,49%{transform:rotate(-1.4deg) translateY(1px)}
+      43%,55%{transform:rotate(.6deg) translateY(-.7px)}
+    }
+    @keyframes puzzle{
+      0%,12%,70%,100%{transform:rotate(0deg)}
+      23%,59%{transform:rotate(-7deg)}
+      36%,47%{transform:rotate(-4deg)}
+    }
+    @keyframes steam{
+      0%,100%{transform:translateY(1px) rotate(-3deg);opacity:.4}
+      50%{transform:translateY(-3px) rotate(4deg);opacity:.8}
+    }
+    @media (prefers-reduced-motion: reduce){ * { animation: none !important } }
+  </style>
+
+  <g class="ink">
+    <!-- A little island of floor, with plenty of paper around it. -->
+    <path class="detail" d="M49 202Q101 200 155 202M175 202Q222 200 272 202"/>
+
+    <!-- The familiar wooden chair. -->
+    <path class="paper" d="M94 100Q89 99 89 105L92 163Q92 168 98 169L145 169Q149 169 149 165Q148 161 143 161L101 160L99 105Q99 101 94 100Z"/>
+    <path d="M99 170Q97 184 95 199M106 171L105 198M138 171L143 199M144 171L151 198"/>
+    <path class="detail" d="M94 109Q93 129 97 150M98 181Q118 183 142 181"/>
+
+    <!-- Seated legs: separate open edges, soft knees and small shoes. -->
+    <path class="paper" d="M116 148Q136 143 151 151Q155 154 154 161L149 187L139 188Q139 174 142 161L119 164Z"/>
+    <path class="paper" d="M109 149Q121 150 130 159Q133 163 131 170L121 191L112 188Q115 175 120 165L105 160Z"/>
+    <path class="detail" d="M144 163Q147 161 151 162M119 173L116 185"/>
+    <path class="paper" d="M112 187Q115 190 121 190L123 194Q130 195 130 199Q120 202 108 198L109 191"/>
+    <path class="paper" d="M139 186Q143 189 149 187L153 192Q163 193 164 198Q153 201 138 198L138 191"/>
+    <path class="detail" d="M110 196Q119 199 127 197M140 196Q152 199 161 197"/>
+
+    <g class="chuckle">
+      <!-- A stooped cardigan, with a restrained indigo vest. -->
+      <path class="paper" d="M121 91Q108 91 103 103Q98 119 102 144L100 154Q114 160 139 154L143 139Q140 114 133 99Z"/>
+      <path fill="#727f8c" d="M120 95L125 102L132 97Q138 117 138 143L135 150Q122 153 113 150L114 112Z"/>
+      <path class="detail" d="M120 95L125 105L132 98M125 106Q127 126 126 151M105 147Q109 149 113 148"/>
+      <path class="detail" d="M130 119h1M131 130h1M131 141h1"/>
+
+      <!-- Small, faceless head; a few wisps of aging hair. -->
+      <path class="paper" d="M127 83L125 94Q128 98 133 96L135 87"/>
+      <path class="paper" d="M124 65Q128 56 139 60Q147 62 148 72L151 77Q152 79 148 80Q146 90 138 91Q130 90 126 82"/>
+      <path class="paper detail" d="M127 75Q120 71 122 78Q123 82 127 81"/>
+      <path d="M125 70Q122 65 126 61M128 61Q130 57 134 58"/>
+      <path class="detail" d="M127 65L130 62M124 69L127 67M137 57Q140 54 143 57"/>
+      <path class="detail" d="M126 84Q127 88 130 89"/>
+
+      <!-- One sleeve bends up into a quiet, old-fashioned chuckle. -->
+      <path class="paper" d="M109 103Q103 105 107 119L116 132Q120 136 124 130L137 96L131 92L118 120L115 108"/>
+      <path class="detail" d="M129 97L135 101M111 116Q112 120 115 121"/>
+      <path class="paper" d="M131 93L133 85Q134 82 136 84L136 88L140 83Q142 82 142 85L140 94Q138 98 135 97"/>
+
+      <!-- The other hand offers the bewildering new meme at arm's length. -->
+      <path class="paper" d="M135 105Q139 102 143 108L150 124L170 116L173 123L148 135Q144 137 141 131L133 116"/>
+      <path class="detail" d="M166 118L169 125"/>
+
+      <g class="phone">
+        <path class="paper" d="M174 91Q174 88 177 89L192 92Q195 93 194 96L189 121Q188 124 185 123L171 120Q169 119 170 116Z"/>
+        <path class="detail" d="M177 94L190 97L186 116L173 113Z"/>
+        <!-- A tiny unfamiliar cat-shaped image, without lettering. -->
+        <path class="detail" d="M177 106L178 100L181 103L185 102L187 100L187 107Q183 111 179 108Z"/>
+        <path class="detail" d="M178 116L183 117"/>
+        <path class="paper" d="M169 117Q173 113 175 115L174 118Q180 117 180 120Q176 125 171 123"/>
+      </g>
+    </g>
+
+    <!-- Tea on a low stool. -->
+    <path class="paper" d="M211 157Q229 154 249 157L250 164Q231 168 211 164Z"/>
+    <path d="M216 166L213 199M243 166L248 199M219 182Q230 180 244 183"/>
+    <path class="paper" d="M220 140Q228 138 237 140L235 153Q229 158 222 153Z"/>
+    <path d="M237 142Q246 140 244 147Q242 151 236 150"/>
+    <path class="detail" d="M220 140Q228 144 237 140M217 157Q228 160 240 157"/>
+    <g class="steam detail">
+      <path d="M225 134Q220 130 225 125Q229 121 226 117"/>
+      <path d="M232 134Q237 129 233 125"/>
+    </g>
+
+    <!-- A well-loved portable radio, still perfectly understandable. -->
+    <path fill="#b87d65" d="M57 171Q56 168 60 168L83 167Q87 167 87 171L88 195Q88 199 84 199L60 199Q57 199 57 195Z"/>
+    <path d="M63 167L63 162Q63 159 66 159L78 159Q81 159 81 162L81 167"/>
+    <path class="paper detail" d="M62 173L82 173L82 180L62 180Z"/>
+    <path class="detail" d="M65 176L77 176M73 174L73 178"/>
+    <circle class="paper" cx="65" cy="190" r="3"/>
+    <path class="detail" d="M74 185L82 185M74 189L82 189M74 193L82 193M63 162L57 145"/>
+  </g>
+</svg>

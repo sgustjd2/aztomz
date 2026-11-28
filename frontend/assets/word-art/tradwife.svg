@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240">
+  <rect width="320" height="240" fill="#fdfcf8"/>
+  <style>
+    .ink {
+      fill: none;
+      stroke: #1c1c1c;
+      stroke-width: 1.6;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .paper { fill: #fdfcf8; }
+    .detail { stroke-width: .8; }
+    .stir {
+      transform-box: fill-box;
+      transform-origin: 8% 15%;
+      animation: stir 6s ease-in-out infinite;
+    }
+    .cradle {
+      transform-box: fill-box;
+      transform-origin: 50% 96%;
+      animation: rock 8s ease-in-out infinite;
+    }
+    .steam {
+      transform-box: fill-box;
+      transform-origin: 50% 100%;
+      animation: steam 6s ease-in-out infinite;
+    }
+    @keyframes stir {
+      0%, 100% { transform: rotate(-2deg); }
+      25% { transform: rotate(2deg); }
+      50% { transform: rotate(-1deg); }
+      75% { transform: rotate(3deg); }
+    }
+    @keyframes rock {
+      0%, 100% { transform: rotate(-2deg); }
+      50% { transform: rotate(2deg); }
+    }
+    @keyframes steam {
+      0%, 100% { opacity: .25; transform: translateY(2px) scaleX(.94); }
+      50% { opacity: .65; transform: translateY(-4px) scaleX(1.06); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important }
+    }
+  </style>
+
+  <g class="ink">
+    <!-- A quiet patch of floor -->
+    <path class="detail" d="M39 194 Q116 192 151 194 M166 194 Q206 192 248 194"/>
+
+    <!-- Stove and cooking pot -->
+    <path class="paper" d="M163 129 Q194 127 226 129 L225 188 Q195 190 164 188 Z"/>
+    <path d="M160 129 Q194 127 229 129"/>
+    <path class="detail" d="M165 143 Q195 144 225 143"/>
+    <circle cx="174" cy="136" r="2.1"/>
+    <circle cx="186" cy="136" r="2.1"/>
+    <path class="detail" d="M172 153 Q194 152 217 153 L217 179 Q194 180 172 179 Z M180 158 Q194 157 209 158"/>
+    <path d="M169 189 L168 193 M220 189 L221 193"/>
+
+    <path class="paper" d="M176 112 Q195 110 214 112 L211 125 Q195 129 179 125 Z"/>
+    <path d="M176 115 Q169 113 170 119 Q171 122 178 121 M214 115 Q221 113 220 119 Q219 122 212 121"/>
+    <path class="detail" d="M178 113 Q195 116 212 113"/>
+
+    <g class="steam detail" opacity=".5">
+      <path d="M185 103 C178 97 191 92 185 85"/>
+      <path d="M197 101 C190 94 203 87 197 79"/>
+      <path d="M208 104 C202 99 213 94 209 88"/>
+    </g>
+
+    <!-- Mother: loose hair, small faceless head -->
+    <path class="paper" d="M108 55 C108 46 121 44 126 51 C130 57 126 67 121 70 L112 67 Q107 62 108 55 Z"/>
+    <path d="M108 58 Q106 49 113 47 Q122 44 126 52 M110 51 Q116 55 125 54"/>
+    <path class="paper" d="M108 51 C99 54 99 43 105 42 C111 41 114 47 108 51 Z"/>
+    <path class="detail" d="M104 46 Q107 44 109 47"/>
+    <path d="M114 69 L113 76 M121 70 L122 76"/>
+
+    <!-- Dress, with gently bowed seams -->
+    <path class="paper" d="M111 75 Q102 77 100 86 L104 111 Q101 134 94 160 Q116 166 140 160 Q134 135 133 111 L137 88 Q132 78 123 75"/>
+    <path class="detail" d="M111 77 Q116 82 123 77 M104 112 Q117 115 132 112"/>
+
+    <!-- Open legs and low shoes -->
+    <path d="M104 163 Q104 174 102 185 M111 164 Q110 177 109 185"/>
+    <path class="paper" d="M102 184 Q106 186 110 185 L112 189 Q105 192 98 190 Q97 187 102 184 Z"/>
+    <path d="M123 164 Q124 176 126 184 M130 163 Q131 175 133 183"/>
+    <path class="paper" d="M126 183 Q130 185 133 183 Q138 184 141 188 Q135 191 127 189 Z"/>
+
+    <!-- Apron: the single muted accent -->
+    <path fill="#c5907b" d="M110 81 L124 81 L127 108 Q127 133 135 154 Q116 159 100 154 Q108 132 108 109 Z"/>
+    <path class="detail" d="M111 81 L112 77 M123 81 L122 77 M108 109 Q117 111 127 108 M112 124 Q118 126 124 124 L123 135 Q117 138 112 134 Z"/>
+
+    <!-- Relaxed arm reaching toward the cradle -->
+    <path class="paper" d="M101 83 Q96 87 95 98 L102 102 Q106 92 107 87"/>
+    <path d="M96 101 Q91 114 85 126 Q81 133 80 139 M102 104 Q98 119 91 130 Q87 137 86 141"/>
+    <path class="detail" d="M80 139 Q78 144 81 146 Q84 148 86 141"/>
+
+    <!-- Stirring arm, drawn as separate open strokes -->
+    <g class="stir">
+      <path class="paper" d="M131 82 Q139 84 143 94 L137 100 Q132 94 129 90"/>
+      <path d="M142 96 Q152 105 165 105 L176 105 M138 102 Q150 112 165 111 L176 110"/>
+      <path class="detail" d="M176 105 Q181 104 182 107 Q182 111 176 110"/>
+      <path d="M181 101 Q187 109 191 120"/>
+    </g>
+
+    <!-- A gently rocking cradle with a sleeping infant -->
+    <g class="cradle">
+      <path d="M47 181 L45 189 M91 181 L94 189"/>
+      <path d="M39 189 Q68 201 100 189"/>
+      <path class="paper" d="M43 151 Q68 146 95 151 L91 180 Q69 186 48 180 Z"/>
+      <path class="detail" d="M51 160 Q50 169 53 177 M62 161 L63 179 M74 161 L74 180 M86 160 Q88 169 85 177"/>
+
+      <path class="paper" d="M51 150 Q51 137 61 137 Q70 137 70 147"/>
+      <path class="detail" d="M56 141 Q60 138 64 141"/>
+      <path class="paper" d="M65 148 Q76 139 87 147 Q92 150 91 155 Q72 159 54 154"/>
+      <path fill="#c5907b" stroke-width=".8" d="M69 148 Q78 143 87 149 L88 153 Q78 155 69 153 Z"/>
+      <path d="M42 152 Q68 157 96 152"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240">
+  <rect width="320" height="240" fill="#fdfcf8"/>
+  <style>
+    .ink{fill:none;stroke:#1c1c1c;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+    .paper{fill:#fdfcf8}
+    .banana{fill:#dfc46f;stroke:#1c1c1c;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+    .detail{fill:none;stroke:#1c1c1c;stroke-width:.8;stroke-linecap:round;stroke-linejoin:round}
+    .offer{transform-box:fill-box;transform-origin:12% 85%;animation:offer 6s ease-in-out infinite}
+    .stop{transform-box:fill-box;transform-origin:90% 90%;animation:stop 6s ease-in-out infinite}
+    .top{transform-box:fill-box;transform-origin:50% 95%;animation:settle 7s ease-in-out infinite}
+    @keyframes offer{0%,22%,78%,100%{transform:rotate(0deg)}42%,58%{transform:rotate(-5deg)}}
+    @keyframes stop{0%,25%,75%,100%{transform:rotate(0deg)}38%,62%{transform:rotate(7deg)}50%{transform:rotate(3deg)}}
+    @keyframes settle{0%,35%,75%,100%{transform:rotate(0deg)}48%{transform:rotate(2deg)}60%{transform:rotate(-1deg)}}
+    @media (prefers-reduced-motion: reduce){ * { animation: none !important } }
+  </style>
+
+  <!-- A quiet patch of ground. -->
+  <g class="detail">
+    <path d="M44 204q33-2 59 0m10 1q48-2 83 0m12-1q34-2 65 0"/>
+    <path d="m51 209 9-.5m193 1 13-.6"/>
+  </g>
+
+  <!-- The enthusiastic human: small, faceless, open-stroke limbs. -->
+  <g class="ink">
+    <path class="paper" d="M65 91q-6-5-5-14 1-10 9-11 9-1 11 9 1 8-5 14"/>
+    <path d="M61 77q-3-10 5-13 9-3 14 7l-8-2-3 5"/>
+    <path d="m67 90-.5 8m7-9 1 9"/>
+    <path class="paper" d="M65 98q-8 2-9 13l-3 43q15 5 31-1l-5-44q-1-9-6-11"/>
+    <path class="detail" d="m68 103 2 14m-10 26q9 3 18 0"/>
+    <path d="M58 154q-1 20-2 43m7-42q-1 23-2 42"/>
+    <path d="M74 155q3 22 7 41m-1-42q3 22 6 41"/>
+    <path class="paper" d="M55 196q-2 4-1 6l14 .3q3-2-1-4l-6-2m19-1q-1 4 1 7l14-.4q2-3-3-4l-6-2"/>
+    <path d="M57 111q-10 14-11 27 5 6 13 8m2-30q-9 13-10 20l9 6"/>
+    <path class="detail" d="m59 142 5 1m-5 3 5 1"/>
+    <g class="offer">
+      <path class="paper" d="M78 108q9 6 13 15l18-12 3 4q-12 13-22 15-5-1-9-8"/>
+      <path d="m109 111 4-5q2-2 3 0l-1 5q7-3 9-1 1 3-11 6"/>
+      <path class="detail" d="m82 112 5 7"/>
+    </g>
+  </g>
+
+  <!-- One basket, overwhelmed by a thoroughly unreasonable harvest. -->
+  <g class="ink">
+    <path class="paper" d="M107 164q31-5 70 0l-6 35q-27 6-57 0Z"/>
+    <path class="detail" d="m119 169 3 28m9-29 1 30m11-30-.3 30m12-30-1 30m12-29-3 27"/>
+    <path d="M106 164q34 4 72 0"/>
+  </g>
+
+  <g class="banana">
+    <path d="M107 155q13 16 34-2l2 4q-19 25-35 7-4-5-1-9Z"/>
+    <path d="M137 155q16 15 34-6l3 3q-15 28-34 13-5-4-3-10Z"/>
+    <path d="M119 141q-1 20 24 23l1 4q-30 4-32-19 0-6 7-8Z"/>
+    <path d="M150 141q17 14 31-8l4 2q-8 28-29 17-5-3-6-11Z"/>
+    <path d="M101 137q14 18 35-2l3 4q-18 25-36 10-5-4-2-12Z"/>
+    <path d="M128 125q8 20 30 7l3 3q-20 23-34 3-4-6 1-13Z"/>
+    <path d="M154 119q11 18 27-2l4 2q-10 27-28 13-5-4-3-13Z"/>
+    <path d="M111 117q14 15 29-7l4 2q-10 27-29 17-5-3-4-12Z"/>
+    <path d="M139 104q7 19 27 6l3 3q-17 23-32 4-4-6 2-13Z"/>
+    <path d="M123 95q12 14 25-7l4 2q-7 26-24 18-6-3-5-13Z"/>
+    <g class="top">
+      <path d="M142 77q3 19 19 15l2 4q-23 14-27-11-1-5 6-8Z"/>
+      <path d="M130 77q10 12 23-6l4 2q-9 24-24 16-5-3-3-12Z"/>
+      <path d="m151 72 2-6 4 1-1 7"/>
+    </g>
+  </g>
+  <g class="detail">
+    <path d="M111 159q10 9 23 0m11 2q13 7 23-7"/>
+    <path d="M107 142q11 10 25-3m1-7q8 12 20 5"/>
+    <path d="M160 124q8 8 18-3m-61 1q10 6 20-7"/>
+    <path d="M130 100q8 5 15-7m-4-10q3 11 13 12"/>
+    <path d="m100 136-2-3m85-16 3-2m-57-20-2-3"/>
+  </g>
+
+  <!-- A very earnest AI, halting the proposal while checking its clipboard. -->
+  <g class="ink">
+    <path d="m235 85 1-8"/>
+    <circle cx="236" cy="75" r="2.2" class="paper"/>
+    <path class="paper" d="M221 88q12-3 26 0l2 22q-13 4-28 0-2-10 0-22Z"/>
+    <path class="detail" d="M226 94q9-1 17 0m-16 5 15 .2m-12 6 8 .1"/>
+    <path d="m219 96-3 1v7l4 1m29-9 4 1-.2 7-3 1"/>
+    <path d="m229 112 0 6m11-6 .3 6"/>
+    <path class="paper" d="M222 118q11-3 23 0l5 40q-17 5-34 0Z"/>
+    <path class="detail" d="m224 127 17-.2m-14 5 11 .2"/>
+    <circle cx="233" cy="146" r="3" class="detail"/>
+    <path d="m222 161-2 35m7-35-2 35m14-35 2 35m4-36 2 35"/>
+    <path class="paper" d="M219 196q-5 1-6 6l14 .2 1-6m12 0-1 6 16 .1q0-5-8-6"/>
+    <path d="M246 122q12 11 15 24l-13 13m-5-31q9 10 11 16l-9 10"/>
+    <g class="stop">
+      <path class="paper" d="M221 121q-9 6-15 9l-9-21-5 2q3 19 11 26 5 2 19-8"/>
+      <path class="paper" d="m192 112-5-10q-1-3 1-4 2-1 4 4l-2-12q0-4 3-3l3 13-.1-15q1-3 3-1l1 15 2-12q1-3 3-1l-1 18 4-4q3-2 4 1l-8 12"/>
+      <path class="detail" d="m194 106 5-1 4 3"/>
+    </g>
+    <g transform="rotate(12 248 157)">
+      <path class="paper" d="M237 141h20l1 32q-11 1-22 0Z"/>
+      <path class="paper" d="M242 140v-3h10v4Z"/>
+      <path class="detail" d="m241 148 10 .2m-10 5 7 .2m-7 5 11 .2m-11 5 6 .2"/>
+      <path d="m250 153 4 2-4 3"/>
+    </g>
+  </g>
+
+  <!-- A tiny, restrained sign of alarm. -->
+  <g class="detail">
+    <path d="m213 81-3-4m10 2-1-5m-11 13-5-1"/>
+  </g>
+</svg>

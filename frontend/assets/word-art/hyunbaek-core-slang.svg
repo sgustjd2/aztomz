@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240">
+  <rect width="320" height="240" fill="#fdfcf8"/>
+  <style>
+    .ink{fill:none;stroke:#1c1c1c;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+    .detail{stroke-width:.85}
+    .paper{fill:#fdfcf8}
+    .sand{fill:#d7c8b5}
+    .blue{fill:#687784}
+    .bag{transform-box:fill-box;transform-origin:50% 0%;animation:sway 6s ease-in-out infinite}
+    .scarf{transform-box:fill-box;transform-origin:10% 0%;animation:drift 6s ease-in-out infinite}
+    .steam{transform-box:fill-box;transform-origin:50% 100%;animation:rise 5s ease-in-out infinite}
+    @keyframes sway{
+      0%,100%{transform:rotate(-2deg)}
+      50%{transform:rotate(2deg)}
+    }
+    @keyframes drift{
+      0%,100%{transform:rotate(-2deg)}
+      45%{transform:rotate(4deg)}
+      70%{transform:rotate(1deg)}
+    }
+    @keyframes rise{
+      0%,100%{transform:translateY(1px);opacity:.35}
+      50%{transform:translateY(-4px);opacity:.8}
+    }
+    @media (prefers-reduced-motion: reduce){ * { animation: none !important } }
+  </style>
+
+  <g class="ink">
+    <!-- A quiet pavement, with plenty of paper around it. -->
+    <path class="detail" d="M55 208q48-1 78 0m18 0q59-1 111 0"/>
+    <path class="detail" d="M75 215h19m124-1h24"/>
+
+    <!-- A small clipped tree beside the entrance. -->
+    <path class="paper" d="M237 182q8 2 21 0l-3 24q-7 3-14 0Z"/>
+    <path class="detail" d="M239 187q8 2 17 0"/>
+    <path d="M247 181q2-18 0-35m1 18 8-9m-8 3-6-8"/>
+    <path class="paper" d="M239 153c-9 0-14-7-11-13-5-7 0-15 7-16 1-9 12-12 18-6 9-2 16 5 14 12 7 6 4 17-4 19-4 8-15 9-20 4"/>
+    <path class="detail" d="M237 134q3-4 7-2m10 9q4 1 6-3"/>
+
+    <!-- Wide, soft trousers: the legs are separately articulated. -->
+    <path class="blue" d="M128 134q15-6 34 0l-5 31-8 35q-8 3-17-1l5-36-8-17"/>
+    <path class="blue" d="M147 140q8-4 16-4l5 25 13 33q-7 5-15 5l-16-34-7-15"/>
+    <path class="detail" d="M143 151q0 22-6 39m22-32 12 32"/>
+    <path class="paper" d="M132 198q8 2 16 0l1 7q-9 2-20 1-3-2 3-8Z"/>
+    <path class="paper" d="M166 197q8 0 14-4l8 7q4 4-1 5l-20-1Z"/>
+    <path class="detail" d="M129 206h20m20-2 18 1"/>
+
+    <!-- Neck and an unhurried, faceless profile. -->
+    <path class="paper" d="M139 65l-1 14m12-15 1 14"/>
+    <path class="paper" d="M135 47q2-11 12-10 11 1 12 13l-1 7 3 4-5 2q-2 9-9 9-10-1-12-13"/>
+    <path fill="#1c1c1c" stroke-width=".85" d="M135 58q-6-9-1-18 5-9 16-5 8 2 9 12-10-1-16-8-1 12-8 19Z"/>
+    <path class="detail" d="M139 41q5-5 12-2"/>
+    <path class="paper detail" d="M135 51q-4-2-3 3 0 4 4 4"/>
+
+    <!-- Loose jacket, rounded seams, open cuffs. -->
+    <path class="sand" d="M136 75q-12 1-17 12l-7 28 10 5 6-18-4 39q18 6 42-1l-5-38 8 8 9-9-14-20q-5-5-13-6"/>
+    <path class="paper" d="M140 78l6 12 5-12 4 58-17 1Z"/>
+    <path d="M136 77l-6 13 9 7-6 12m20-32 8 13-9 8"/>
+    <path class="detail" d="M146 91q-2 21-2 41m-16-9 9 1m18-1 8-2"/>
+    <path class="detail" d="M119 111l6 3m44-14 6 5"/>
+    <path d="M126 141q15 4 39-1"/>
+
+    <!-- An open double stroke for each visible forearm. -->
+    <path class="paper" stroke="none" d="M113 116l8 3-5 24-6 1Z"/>
+    <path d="M113 117q-1 12-3 23m10-20q-1 12-4 20"/>
+    <path class="paper" d="M110 139q-3 3-1 7 3 4 6 0l2-5"/>
+    <path class="paper" stroke="none" d="M172 104l5-5 13 9-2 7Z"/>
+    <path d="M173 105q7 7 13 8m-9-13 13 8"/>
+    <path class="paper" d="M186 108q4-4 7-2l2 4q-2 6-8 4"/>
+
+    <!-- A small silk scarf moves almost imperceptibly. -->
+    <g class="scarf">
+      <path class="blue" d="M139 75q8 5 14-1l2 7q-8 6-17 0Z"/>
+      <path class="blue" d="M151 80q3 8 16 13l-6 7q-12-8-14-17"/>
+      <path class="detail" d="M153 85q3 5 10 9"/>
+    </g>
+
+    <!-- Unbranded shopping bag, hanging from the relaxed hand. -->
+    <g class="bag">
+      <path d="M106 157q-2-15 5-15 7 0 9 15"/>
+      <path class="paper" d="M97 155q13 2 29-1l5 39q-16 5-35 0Z"/>
+      <path class="sand" d="M97 155l7 5-1 30-7 3Z"/>
+      <path class="detail" d="M104 160q10 1 22-2m-23 32 27 2"/>
+      <path class="detail" d="M110 157q-1-9 2-11 4 1 5 10"/>
+    </g>
+
+    <!-- Takeaway coffee and two economical wisps of steam. -->
+    <path class="paper" d="M186 95l3 18q5 2 10-1l2-17"/>
+    <path class="sand" d="M188 101l1 7q5 2 11-1l1-7Z"/>
+    <path class="paper" d="M184 94q9-3 19 0l-1 3q-8 2-18 0Z"/>
+    <path class="detail" d="M187 92q7-2 13 0"/>
+    <g class="steam detail">
+      <path d="M191 87q-4-4 0-8 3-3 0-6"/>
+      <path d="M198 86q3-3 0-6"/>
+    </g>
+  </g>
+</svg>

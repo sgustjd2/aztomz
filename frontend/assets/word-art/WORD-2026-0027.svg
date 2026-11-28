@@ -1,0 +1,127 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240">
+  <rect width="320" height="240" fill="#fdfcf8"/>
+  <style>
+    .ink {
+      fill: none;
+      stroke: #1c1c1c;
+      stroke-width: 1.7;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .detail { stroke-width: .85 }
+    .paper { fill: #fdfcf8 }
+    .pump {
+      transform-box: fill-box;
+      transform-origin: 50% 100%;
+      animation: pump 5s ease-in-out infinite;
+    }
+    .visits {
+      transform-box: fill-box;
+      transform-origin: center;
+      animation: visits 5s ease-in-out infinite;
+    }
+    .ranking {
+      transform-box: fill-box;
+      transform-origin: center;
+      animation: ranking 5s ease-in-out infinite;
+    }
+    @keyframes pump {
+      0%, 15%, 100% { transform: translateY(0) }
+      40%, 55% { transform: translateY(9px) }
+      78% { transform: translateY(0) }
+    }
+    @keyframes visits {
+      0%, 20% { opacity: .25; transform: translateY(5px) }
+      50%, 70% { opacity: 1; transform: translateY(-3px) }
+      100% { opacity: .25; transform: translateY(5px) }
+    }
+    @keyframes ranking {
+      0%, 25%, 100% { transform: translateY(2px) }
+      55%, 75% { transform: translateY(-4px) }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important }
+    }
+  </style>
+
+  <defs>
+    <filter id="ink-wobble" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency=".6" numOctaves="2" seed="7" result="grain"/>
+      <feDisplacementMap in="SourceGraphic" in2="grain" scale=".35" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+  </defs>
+
+  <g class="ink" filter="url(#ink-wobble)">
+    <!-- A quiet ground line. -->
+    <path class="detail" d="M43 193 Q92 192 133 193 M151 193 Q218 192 279 193"/>
+
+    <!-- Browser: an inflated audience lifted into the first result. -->
+    <path class="paper" d="M153 55 Q211 54 274 56 L275 158 Q213 160 153 158 Z"/>
+    <path d="M154 69 Q211 70 274 69"/>
+    <g fill="#1c1c1c" stroke="none">
+      <circle cx="161" cy="62" r="1"/>
+      <circle cx="167" cy="62" r="1"/>
+      <circle cx="173" cy="62" r="1"/>
+    </g>
+    <path class="detail" d="M184 61 Q218 60 252 62"/>
+
+    <g class="ranking">
+      <path fill="#d9b5a3" d="M164 82 Q201 81 240 83 L240 108 Q202 110 164 108 Z"/>
+      <path class="detail" d="M172 91 L174 86 L176 91 L181 92 L177 95 L178 100 L174 97 L170 100 L171 95 L168 92 Z"/>
+      <path d="M188 91 Q207 90 229 91"/>
+      <path class="detail" d="M188 99 Q201 98 218 99"/>
+    </g>
+
+    <path class="detail" d="M165 121 Q199 120 234 121 M165 127 Q186 126 211 127"/>
+    <path class="detail" d="M165 140 Q195 139 229 140 M165 146 Q185 145 203 146"/>
+    <path d="M253 145 Q255 116 253 86 M247 93 L253 85 L260 92"/>
+    <path class="detail" d="M197 159 L196 174 M229 159 L230 174"/>
+    <path d="M184 178 Q212 176 242 178"/>
+
+    <!-- Faceless person leaning over a hand pump. -->
+    <path class="paper" d="M71 78 Q65 73 68 65 Q72 58 79 62 Q85 66 82 74 Q79 81 73 79"/>
+    <path fill="#1c1c1c" stroke="none" d="M67 68 Q65 59 73 58 Q81 57 84 65 Q77 61 73 65 L71 70 Z"/>
+    <path d="M72 80 L71 86 M78 80 L79 85"/>
+
+    <!-- Open double strokes for legs. -->
+    <path d="M68 126 Q65 145 61 160 Q58 175 57 185"/>
+    <path d="M74 128 Q73 147 67 162 Q65 176 63 185"/>
+    <path class="paper" d="M56 185 Q61 183 64 186 L68 190 Q61 193 53 190 Z"/>
+    <path d="M78 128 Q82 147 84 162 L91 184"/>
+    <path d="M84 127 Q89 146 90 160 L97 183"/>
+    <path class="paper" d="M91 184 Q96 182 99 185 L106 189 Q101 192 91 190 Z"/>
+
+    <path fill="#a9b7c2" d="M70 85 Q77 82 83 87 L91 108 Q86 117 87 130 Q76 133 64 128 Q67 108 64 97 Q63 89 70 85 Z"/>
+    <path class="detail" d="M69 121 Q77 124 85 122"/>
+
+    <!-- Bent sleeve and an open forearm resting on the handle. -->
+    <path fill="#a9b7c2" d="M79 88 Q86 87 90 96 L96 109 L89 113 Q83 104 78 99"/>
+    <path d="M93 109 Q102 112 112 112"/>
+    <path d="M91 114 Q103 117 114 116"/>
+
+    <!-- Pump cylinder, foot plate and hose. -->
+    <path d="M105 189 Q118 187 132 189"/>
+    <path fill="#d9b5a3" d="M111 145 Q119 143 127 145 L128 185 Q120 188 110 185 Z"/>
+    <path class="detail" d="M115 151 Q114 167 115 179"/>
+    <path d="M128 179 Q149 187 146 165 Q140 146 145 134 Q147 129 153 129"/>
+    <path class="detail" d="M147 126 L153 126 M147 132 L153 132"/>
+
+    <g class="pump">
+      <path d="M119 144 L119 116"/>
+      <path stroke-width="2.2" d="M108 115 Q119 113 131 115"/>
+      <path class="paper" d="M111 113 Q113 109 117 110 L122 111 Q124 115 121 117 L114 117"/>
+    </g>
+
+    <!-- Repeated hollow visitors: the audience is being manufactured. -->
+    <g class="visits" stroke-dasharray="2.2 2.4" stroke-width="1.4">
+      <path class="paper" d="M134 113 C129 113 129 104 134 104 C139 104 139 113 134 113 Z"/>
+      <path d="M127 124 Q127 116 134 116 Q141 116 141 124"/>
+
+      <path class="paper" d="M144 94 C139 94 139 85 144 85 C149 85 149 94 144 94 Z"/>
+      <path d="M137 105 Q137 97 144 97 Q151 97 151 105"/>
+
+      <path class="paper" d="M142 74 C137 74 137 65 142 65 C147 65 147 74 142 74 Z"/>
+      <path d="M135 85 Q135 77 142 77 Q149 77 149 85"/>
+    </g>
+  </g>
+</svg>

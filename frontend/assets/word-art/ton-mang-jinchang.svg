@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240">
+  <rect width="320" height="240" fill="#fdfcf8"/>
+  <style>
+    .ink{fill:none;stroke:#1c1c1c;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+    .paper{fill:#fdfcf8}
+    .detail{stroke-width:.85}
+    .person{transform-box:fill-box;transform-origin:50% 100%;animation:ponder 6s ease-in-out infinite}
+    .outfit{transform-box:fill-box;transform-origin:50% 0%;animation:swing 7s ease-in-out infinite}
+    @keyframes ponder{
+      0%,100%{transform:rotate(-.7deg)}
+      35%{transform:rotate(.9deg)}
+      65%{transform:rotate(.9deg)}
+    }
+    @keyframes swing{
+      0%,100%{transform:rotate(-2deg)}
+      50%{transform:rotate(2deg)}
+    }
+    @media (prefers-reduced-motion: reduce){ * { animation: none !important } }
+  </style>
+
+  <g class="ink">
+    <!-- A standing mirror, with plenty of paper around it. -->
+    <path class="paper" d="M54 66 Q54 60 61 60 L100 61 Q106 61 106 68 L104 180 Q103 186 97 186 L59 185 Q53 185 53 178Z"/>
+    <path class="detail" d="M60 69 Q80 67 100 69 L98 178 Q80 180 60 177Z"/>
+    <path d="M64 186 59 201 M94 186 100 201"/>
+    <path class="detail" d="m66 93 20-18 m-20 30 27-25"/>
+    <path class="detail" d="M63 149 Q76 141 94 148 M64 153 Q80 146 94 152" opacity=".35"/>
+
+    <!-- The alternative outfit hangs quietly nearby. -->
+    <g class="outfit">
+      <path d="M246 60 Q242 54 248 52 Q254 51 254 57 Q254 61 249 64 L249 69"/>
+      <path d="m249 69-21 13 Q225 85 230 85 L270 85 Q275 85 271 82Z"/>
+      <path fill="#b96858" d="m237 78-12 7-5 23 11 3 5-13-2 38 Q249 139 265 136 L262 98 268 110 279 106 273 85 260 78 Q249 91 237 78Z"/>
+      <path class="detail" d="M240 81 Q249 90 258 81 M238 130 Q249 133 261 130"/>
+    </g>
+
+    <!-- A faceless figure considering a very mismatched outfit. -->
+    <g class="person">
+      <path class="paper" d="M151 63 Q147 54 151 46 Q156 39 165 43 Q173 47 172 57 Q171 65 165 68"/>
+      <path fill="#1c1c1c" stroke-width=".8" d="M150 53 Q145 45 152 40 Q160 35 169 42 Q174 46 172 52 L167 47 Q159 50 150 48Z"/>
+      <path d="m155 66-1 9 m10-8 1 8"/>
+
+      <!-- Two open leg contours, with clashing diagonal stripes. -->
+      <path fill="#b96858" stroke="none" d="M144 128 178 128 181 159 174 188 162 187 165 156 158 144 154 164 147 188 135 186 141 160Z"/>
+      <path d="M144 129 Q143 145 141 160 L135 186 M147 187 Q153 172 154 164 L158 144 Q166 151 165 158 L162 187 M174 188 Q181 168 181 159 L178 129"/>
+      <g class="detail">
+        <path d="m144 142 10 5 m-12 8 10 5 m-13 8 10 5 m-12 7 10 5"/>
+        <path d="m164 146 15 7 m-12 6 12 6 m-14 6 11 6 m-12 5 10 5"/>
+      </g>
+
+      <path class="paper" d="M135 185 Q141 188 147 187 L149 195 Q139 198 128 195 Q126 192 135 189"/>
+      <path class="paper" d="M162 186 Q168 189 174 187 L181 193 Q183 197 177 197 L161 196Z"/>
+      <path class="detail" d="M129 193 Q139 195 148 193 M163 194 179 194"/>
+
+      <!-- Open arms and a hand lifting the shirt hem. -->
+      <path class="paper" d="M139 84 Q129 96 129 109 Q134 118 145 123 L148 119 Q139 111 136 107 Q139 98 145 92"/>
+      <path class="paper" d="M174 86 Q183 97 190 109 Q188 119 177 127 L174 123 Q181 114 182 110 Q174 101 168 95"/>
+
+      <path fill="#737a96" d="M153 74 Q145 76 138 82 L134 95 144 100 144 114 Q143 123 141 132 Q151 136 160 131 Q170 133 180 128 L174 113 175 99 181 95 175 82 165 74 Q160 80 153 74Z"/>
+      <g class="detail">
+        <path d="M150 77 Q158 86 168 78 M145 103 Q158 100 174 102 M145 116 Q159 114 174 115"/>
+        <path d="M152 85 Q150 105 152 131 M164 85 Q165 107 164 130"/>
+        <path d="m139 92 6 3 m29-3 5 2"/>
+      </g>
+      <path class="paper" d="M143 120 Q147 117 151 120 L155 124 Q153 128 149 126 L144 125"/>
+      <path class="paper" d="M178 122 Q174 120 171 124 L168 129 Q172 133 176 128 L179 126"/>
+    </g>
+
+    <!-- One abandoned shoe. -->
+    <path class="paper" d="M223 185 Q225 180 230 182 L239 188 Q249 188 250 193 Q241 197 220 194 L219 189Z"/>
+    <path class="detail" d="m229 185-2 4 m6-2-2 4 M221 192 Q234 194 247 192"/>
+
+    <path class="detail" d="M120 203 Q152 205 186 203 M216 201 Q232 202 251 200 M48 205 77 205" opacity=".45"/>
+    <path class="detail" d="M187 67 Q192 65 195 69 M191 77 Q197 75 200 79"/>
+  </g>
+</svg>

@@ -1,0 +1,149 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240">
+  <rect width="320" height="240" fill="#fdfcf8"/>
+  <style>
+    .breathe {
+      transform-box: fill-box;
+      transform-origin: center bottom;
+      animation: breathe 6s ease-in-out infinite;
+    }
+    .heart {
+      transform-box: fill-box;
+      transform-origin: center center;
+      animation: heart 5s ease-in-out infinite;
+    }
+    .steam {
+      transform-box: fill-box;
+      transform-origin: center bottom;
+      animation: steam 7s ease-in-out infinite;
+    }
+    @keyframes breathe {
+      0%, 100% { transform: rotate(-0.5deg); }
+      50% { transform: rotate(0.7deg); }
+    }
+    @keyframes heart {
+      0%, 100% { transform: translateY(1px) scale(0.96); opacity: 0.75; }
+      50% { transform: translateY(-3px) scale(1.06); opacity: 1; }
+    }
+    @keyframes steam {
+      0%, 100% { transform: translateY(2px); opacity: 0.3; }
+      50% { transform: translateY(-3px); opacity: 0.7; }
+    }
+    @media (prefers-reduced-motion: reduce){ * { animation: none !important } }
+  </style>
+
+  <g stroke="#1c1c1c" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <!-- A little ground, with room around the scene. -->
+    <path d="M54 202Q125 200 166 202M180 202Q227 201 264 203"
+          stroke-width="0.8" opacity="0.35"/>
+
+    <!-- Low stool. -->
+    <path d="M70 148Q89 146 111 148L112 154Q91 156 70 154Z"
+          fill="#fdfcf8" stroke-width="1.6"/>
+    <path d="M76 155Q75 178 72 199M82 156L80 198M103 155L108 199M109 155L114 199"
+          stroke-width="1.5"/>
+
+    <!-- Seated legs: separate, open ink edges. -->
+    <path d="M87 132Q105 133 124 143Q127 145 127 150L123 188
+             M96 139Q111 144 119 148L116 187"
+          stroke-width="1.8" fill="none"/>
+    <path d="M80 135Q86 147 101 151L104 189
+             M89 135Q93 143 108 144Q112 145 112 150L111 188"
+          stroke-width="1.8"/>
+    <path d="M103 188Q108 187 112 189L122 194Q125 198 118 199L102 198Z
+             M116 188Q121 186 125 189L135 193Q139 197 132 198L118 197"
+          fill="#fdfcf8" stroke-width="1.6"/>
+
+    <g class="breathe">
+      <!-- Loose shirt, small faceless head, bowed toward the screen. -->
+      <path d="M91 92Q79 96 77 109L76 134Q87 142 102 136
+               L105 109Q109 101 103 96"
+            fill="#fdfcf8" stroke-width="1.8"/>
+      <path d="M96 85L94 94M102 86L102 96" stroke-width="1.5"/>
+      <path d="M99 65Q107 64 111 71Q114 78 109 85
+               Q105 91 98 87Q92 85 92 77Q92 70 99 65Z"
+            fill="#fdfcf8" stroke-width="1.6"/>
+      <path d="M92 78Q87 71 93 65Q100 58 108 65Q113 68 112 75
+               Q105 74 102 68Q100 75 92 78Z"
+            fill="#1c1c1c" stroke-width="1.4"/>
+
+      <!-- One arm rests; the other reaches toward the virtual companion. -->
+      <path d="M83 106Q81 119 89 126L105 132
+               M90 108Q88 118 94 120L109 126"
+            stroke-width="1.7"/>
+      <path d="M105 132Q111 134 113 130Q115 127 109 126"
+            stroke-width="1.4"/>
+      <path d="M102 103Q111 112 122 115L147 109
+               M99 111Q110 122 122 122L149 116"
+            stroke-width="1.8"/>
+      <path d="M147 109Q152 106 156 107L165 110
+               Q168 112 164 114L155 114Q153 118 149 116"
+            stroke-width="1.4"/>
+      <path d="M80 132Q87 135 95 133M98 101L102 105"
+            stroke-width="0.8"/>
+    </g>
+
+    <!-- Small desk and a phone propped upright. -->
+    <path d="M144 163Q194 161 248 163L249 169Q197 171 144 169Z"
+          fill="#fdfcf8" stroke-width="1.6"/>
+    <path d="M151 170L148 200M157 170L154 200
+             M237 170L240 200M243 170L246 200"
+          stroke-width="1.5"/>
+    <path d="M192 150L187 161L217 161L212 151"
+          fill="#fdfcf8" stroke-width="1.5"/>
+    <path d="M178 58Q178 53 184 53L222 54Q228 54 228 60
+             L227 148Q227 154 221 154L184 153Q178 153 178 147Z"
+          fill="#fdfcf8" stroke-width="1.9"/>
+    <path d="M183 64Q201 63 223 65L222 141Q202 143 183 140Z"
+          fill="#eef1f1" stroke-width="0.9"/>
+    <path d="M197 59L209 59M199 148L207 148"
+          stroke-width="0.8"/>
+
+    <!-- A faceless virtual person, mirroring the reaching hand. -->
+    <g class="breathe">
+      <path d="M201 80Q207 77 211 83Q214 90 210 95
+               Q206 100 201 96Q197 91 198 86Q198 82 201 80Z"
+            fill="#fdfcf8" stroke-width="1.4"/>
+      <path d="M198 87Q195 81 200 78Q207 74 212 81
+               M201 79Q205 85 212 85"
+            stroke-width="1.4"/>
+      <path d="M203 98L202 103M208 98L209 103" stroke-width="1.4"/>
+      <path d="M201 102Q193 105 192 114L192 137
+               Q205 140 218 137L217 113Q216 105 209 102"
+            fill="#aebfc4" stroke-width="1.5"/>
+      <path d="M197 108Q193 116 186 116L183 113
+               M202 112Q197 122 188 122L183 119"
+            stroke-width="1.4"/>
+      <path d="M183 113L181 110M183 119L181 117"
+            stroke-width="1.4"/>
+      <path d="M212 113Q215 122 213 131" stroke-width="0.8"/>
+    </g>
+
+    <!-- Tiny circuit marks distinguish the companion from a video call. -->
+    <g stroke-width="0.8">
+      <path d="M217 73L217 79L220 82M188 128L188 133L185 136"/>
+      <circle cx="217" cy="72" r="1.2" fill="#fdfcf8"/>
+      <circle cx="220" cy="83" r="1.2" fill="#fdfcf8"/>
+      <circle cx="188" cy="127" r="1.2" fill="#fdfcf8"/>
+    </g>
+
+    <!-- Affection crosses the gap between the two people. -->
+    <path class="heart"
+          d="M148 90C144 86 133 80 136 74
+             C139 68 146 71 148 75
+             C151 69 159 70 160 76
+             C161 81 153 87 148 90Z"
+          fill="#c9877c" stroke-width="1.5"/>
+
+    <!-- A warm drink beside the phone. -->
+    <path d="M235 148Q240 147 245 148L244 159
+             Q240 163 236 159Z"
+          fill="#fdfcf8" stroke-width="1.4"/>
+    <path d="M245 150Q252 148 251 153Q250 157 245 156"
+          stroke-width="1.4"/>
+    <path d="M234 162Q240 164 248 162" stroke-width="0.8"/>
+    <g class="steam" stroke-width="0.8" opacity="0.55">
+      <path d="M239 143Q235 139 239 135Q242 132 239 128"/>
+      <path d="M244 143Q247 140 244 137"/>
+    </g>
+  </g>
+</svg>

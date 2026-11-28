@@ -1,0 +1,161 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240">
+  <rect width="320" height="240" fill="#fdfcf8"/>
+  <style>
+    .ink{fill:none;stroke:#1c1c1c;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+    .paper{fill:#fdfcf8}
+    .detail{stroke-width:.85}
+    .talk{transform-box:fill-box;transform-origin:50% 100%;animation:talk 6s ease-in-out infinite}
+    .listener{transform-box:fill-box;transform-origin:55% 100%;animation:recoil 6s ease-in-out infinite}
+    .steam{transform-box:fill-box;transform-origin:50% 100%;animation:steam 6s ease-in-out infinite}
+    @keyframes talk{
+      0%,100%{transform:rotate(-1deg)}
+      25%,65%{transform:rotate(1.5deg)}
+      45%,80%{transform:rotate(-.5deg)}
+    }
+    @keyframes recoil{
+      0%,100%{transform:rotate(0)}
+      35%,75%{transform:rotate(4deg)}
+    }
+    @keyframes steam{
+      0%,100%{transform:translateY(1px);opacity:.45}
+      50%{transform:translateY(-3px);opacity:.9}
+    }
+    @media (prefers-reduced-motion: reduce){ * { animation: none !important } }
+  </style>
+
+  <g class="ink">
+    <!-- A generous cloud of unnecessary detail. -->
+    <path class="paper" d="M110 44
+      Q114 33 132 36
+      Q145 26 160 35
+      Q176 28 187 37
+      Q204 30 215 39
+      Q236 34 244 47
+      Q266 45 269 62
+      Q282 74 270 87
+      Q275 102 254 105
+      Q238 114 222 106
+      Q207 114 192 106
+      Q177 113 163 105
+      Q147 111 135 102
+      L108 110 L118 94
+      Q100 91 103 77
+      Q92 63 105 56
+      Q103 49 110 44Z"/>
+
+    <!-- Lunch, its timing, and still more small details. -->
+    <path fill="#b5c3c4" d="M122 70 Q143 67 163 70
+      Q159 87 144 88 Q128 88 122 70Z"/>
+    <path class="detail" d="M123 71 Q142 76 162 71
+      M136 88 L153 88
+      M128 68 Q132 62 136 68 Q139 73 143 66
+      Q146 61 150 68 Q153 73 157 67"/>
+    <path d="M149 58 L166 47 M152 62 L171 52"/>
+    <g class="steam detail">
+      <path d="M128 58 Q123 54 128 50 Q131 47 128 44
+        M140 57 Q136 53 140 49"/>
+    </g>
+
+    <path d="M183 62 Q181 50 192 48 Q205 46 207 59
+      Q210 72 198 75 Q184 77 183 62Z"/>
+    <path class="detail" d="M195 52 L195 61 L201 65
+      M188 46 L185 43 M202 45 L205 42
+      M186 77 L184 80 M204 76 L206 79"/>
+
+    <path class="detail" d="M220 53 Q234 51 247 54
+      M220 60 Q239 58 253 61
+      M220 67 Q231 66 240 68
+      M177 88 Q194 86 209 88
+      M219 87 Q237 85 250 88
+      M177 95 Q188 93 198 95
+      M210 95 Q229 93 241 96"/>
+    <circle cx="259" cy="116" r="3.6" class="paper"/>
+    <circle cx="270" cy="125" r="2.1" class="paper"/>
+
+    <!-- The speaker: small head, open limbs, animated gestures. -->
+    <g class="talk">
+      <path d="M79 151 Q75 169 72 190
+        M86 153 Q82 172 79 191"/>
+      <path d="M91 153 Q94 172 99 190
+        M98 151 Q102 171 105 190"/>
+      <path class="paper" d="M72 189 Q69 195 71 197
+        L85 197 Q87 193 79 191
+        M99 189 Q97 195 100 197
+        L115 197 Q116 193 105 191"/>
+
+      <path fill="#c18c77" d="M76 119 Q86 115 97 121
+        Q101 138 101 156
+        Q87 160 72 155
+        Q72 136 76 119Z"/>
+
+      <path class="paper" d="M78 106 Q75 94 83 91
+        Q93 88 96 98 Q99 109 91 113
+        Q83 116 78 106Z"/>
+      <path d="M77 99 Q74 90 82 88 Q90 85 95 94"/>
+      <path d="M83 114 L83 118 M90 114 L91 118"/>
+
+      <path class="paper" d="M96 124 Q105 132 113 135
+        Q120 130 125 121
+        M99 130 Q106 138 115 140
+        Q124 135 130 124"/>
+      <path d="M125 121 Q124 116 127 114
+        L130 120 Q135 116 136 119
+        Q138 122 130 125"/>
+
+      <path class="paper" d="M75 125 Q65 132 58 130
+        L51 120
+        M76 131 Q65 139 56 135
+        L47 123"/>
+      <path d="M51 120 Q53 115 50 113
+        L47 118 Q41 115 41 119 Q42 123 47 123"/>
+    </g>
+
+    <!-- The listener leans away and raises an open hand. -->
+    <g class="listener">
+      <path d="M224 160 Q221 176 222 192
+        M231 161 Q228 178 229 193
+        M238 159 Q244 176 248 191
+        M245 157 Q251 175 254 190"/>
+      <path class="paper" d="M222 191 Q215 192 215 197
+        L230 197 L229 192
+        M248 190 Q245 194 248 197
+        L263 197 Q264 193 254 191"/>
+
+      <path class="paper" d="M226 126 Q236 122 246 128
+        Q249 143 249 162
+        Q234 166 220 161
+        Q220 142 226 126Z"/>
+      <path class="detail" d="M224 148 Q235 150 247 148
+        M223 154 Q236 156 248 154"/>
+
+      <path class="paper" d="M231 112 Q228 101 235 98
+        Q245 94 249 105 Q253 116 245 120
+        Q237 124 231 112Z"/>
+      <path d="M231 108 Q227 102 232 97
+        Q238 92 245 97 L249 102"/>
+      <path d="M236 121 L235 125 M243 121 L244 126"/>
+
+      <path class="paper" d="M224 131 Q214 136 208 135
+        Q204 126 201 120
+        M225 138 Q215 143 205 140
+        Q200 132 197 123"/>
+      <path d="M201 120 L200 113
+        Q199 110 197 113 L197 119
+        L194 111 Q192 109 191 112 L193 121
+        L189 116 Q186 114 187 118
+        Q189 125 197 124"/>
+
+      <path class="paper" d="M246 131 Q259 137 263 128
+        L258 116
+        M247 138 Q263 146 269 130
+        L263 114"/>
+      <path d="M258 116 Q254 114 255 111
+        Q257 108 261 111 L264 115"/>
+      <path class="detail" d="M255 96 L259 91
+        M261 101 L268 98"/>
+    </g>
+
+    <path class="detail" d="M56 202 Q88 200 119 202
+      M211 202 Q241 200 269 202"/>
+  </g>
+</svg>

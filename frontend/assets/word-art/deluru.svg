@@ -1,0 +1,133 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240">
+  <rect width="320" height="240" fill="#fdfcf8"/>
+  <style>
+    .dream {
+      transform-box: fill-box;
+      transform-origin: center;
+      animation: drift 6s ease-in-out infinite;
+    }
+    .heart {
+      transform-box: fill-box;
+      transform-origin: center;
+      animation: flutter 4.8s ease-in-out infinite;
+    }
+    .daydreamer {
+      transform-box: fill-box;
+      transform-origin: 50% 95%;
+      animation: sway 7s ease-in-out infinite;
+    }
+    @keyframes drift {
+      0%, 100% { transform: translateY(0) rotate(-1deg); }
+      50% { transform: translateY(-3px) rotate(1deg); }
+    }
+    @keyframes flutter {
+      0%, 35%, 70%, 100% { transform: scale(1); }
+      45% { transform: scale(1.12) rotate(-4deg); }
+      55% { transform: scale(1.04) rotate(3deg); }
+    }
+    @keyframes sway {
+      0%, 100% { transform: rotate(-1deg); }
+      50% { transform: rotate(1.5deg); }
+    }
+    @media (prefers-reduced-motion: reduce){
+      * { animation: none !important }
+    }
+  </style>
+  <g stroke="#1c1c1c" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <!-- A very ordinary seat, phone, and solitary plant. -->
+    <path d="M49 211 Q153 213 273 210" stroke-width=".8"/>
+    <path d="M76 171 Q96 169 119 172 L118 178 Q96 180 77 177 Z" fill="#fdfcf8"/>
+    <path d="M82 179 Q81 194 78 210 M112 179 Q114 195 116 210"/>
+    <path d="M86 193 Q98 192 113 193" stroke-width=".8"/>
+
+    <g class="daydreamer">
+      <!-- Open, paired strokes keep the limbs light. -->
+      <path d="M92 168 Q102 177 119 179 Q126 179 126 185 L125 201
+               M100 165 Q110 170 127 172 Q135 174 134 184 L132 201"
+            stroke-width="1.8"/>
+      <path d="M124 200 Q129 198 133 201 L139 207 Q133 210 123 208 Z" fill="#fdfcf8"/>
+      <path d="M86 168 Q83 183 88 197
+               M94 171 Q92 184 95 197" stroke-width="1.8"/>
+      <path d="M87 196 Q92 195 96 199 L104 205 Q99 209 87 206 Z" fill="#fdfcf8"/>
+
+      <path d="M86 121 Q78 125 78 139 L81 163
+               Q93 170 111 164 L107 133 Q104 125 98 123 Z"
+            fill="#a7b6bd" stroke-width="1.8"/>
+      <path d="M87 120 L89 114 M96 122 L98 115"/>
+      <path d="M87 94 Q96 88 103 96 Q109 104 103 114
+               Q98 120 91 115 Q84 110 85 102 Q85 97 87 94 Z"
+            fill="#fdfcf8"/>
+      <path d="M85 104 Q80 94 87 89 Q98 83 105 94
+               Q98 91 94 96 Q90 100 85 100" fill="#1c1c1c"/>
+      <path d="M84 132 Q86 144 101 148 Q109 145 117 134
+               M90 132 Q93 139 101 141 Q107 139 112 130"
+            fill="#fdfcf8" stroke-width="1.8"/>
+      <path d="M112 130 Q115 126 118 127 M117 134 Q121 132 120 129" stroke-width="1.4"/>
+
+      <g transform="rotate(16 123 123)">
+        <path d="M117 112 Q122 111 128 112 L129 132 Q123 134 117 132 Z"
+              fill="#fdfcf8"/>
+        <path d="M120 115 L126 115 M121 129 L125 129" stroke-width=".8"/>
+        <circle cx="123" cy="121" r="1.6" stroke-width=".8"/>
+        <path d="M120 126 Q123 122 126 126" stroke-width=".8"/>
+      </g>
+      <path d="M81 147 Q80 154 83 159 M102 156 L104 162" stroke-width=".8"/>
+    </g>
+
+    <!-- The extravagant romance exists only in the thought cloud. -->
+    <circle cx="118" cy="100" r="2.5" stroke-width="1"/>
+    <ellipse cx="130" cy="88" rx="4.3" ry="3.5" stroke-width="1"/>
+    <g class="dream">
+      <path d="M151 99 Q136 101 138 88
+               Q124 81 135 69 Q127 55 142 49
+               Q145 35 161 39 Q172 24 187 35
+               Q202 26 214 37 Q231 28 241 42
+               Q258 40 260 55 Q278 60 269 75
+               Q278 88 262 95 Q260 109 243 105
+               Q230 116 216 107 Q202 117 190 108
+               Q173 117 164 105 Q154 109 151 99 Z"
+            fill="#fdfcf8" stroke-width="1.4"/>
+
+      <g class="heart" fill="#d79b99" stroke-width="1.4">
+        <path d="M202 58 C187 49 191 38 198 41
+                 Q202 42 203 46 Q209 36 216 43
+                 C223 50 210 57 202 63 Z"/>
+        <path d="M240 68 C231 62 234 57 238 59
+                 L241 62 Q245 56 248 60 Q252 65 240 71 Z"
+              stroke-width="1"/>
+      </g>
+
+      <!-- Two imagined, faceless figures leaning together. -->
+      <path d="M178 67 Q174 58 181 56 Q189 54 190 62
+               Q191 69 185 71 Q180 73 178 67 Z" fill="#fdfcf8"/>
+      <path d="M177 62 Q176 55 182 54 Q189 53 191 61" fill="#1c1c1c"/>
+      <path d="M180 73 Q174 74 173 83 L172 91
+               Q181 94 190 91 L190 79 Q188 74 185 73"
+            fill="#a7b6bd"/>
+      <path d="M177 95 L176 102 M184 95 L186 102" stroke-width="1.4"/>
+
+      <path d="M208 63 Q209 56 215 57 Q222 58 221 65
+               Q220 72 214 72 Q209 71 208 63 Z" fill="#fdfcf8"/>
+      <path d="M208 65 Q204 54 214 53 Q224 52 225 65 L221 70
+               M208 61 Q213 57 219 60" stroke-width="1.4"/>
+      <path d="M212 74 Q206 77 207 83 L203 94
+               Q213 97 225 94 L220 81 Q220 75 217 74"
+            fill="#d79b99"/>
+      <path d="M209 98 L208 103 M218 98 L220 103" stroke-width="1.4"/>
+
+      <path d="M189 79 Q195 86 200 86 Q203 85 207 79
+               M190 84 Q195 90 200 90 Q205 89 208 84"
+            stroke-width="1.4"/>
+      <path d="M155 61 L156 69 M152 65 L160 64
+               M242 84 L243 91 M239 88 L247 87"
+            stroke-width=".8"/>
+    </g>
+
+    <path d="M244 193 Q241 181 246 174 Q249 169 251 174
+             L251 183 Q256 181 256 175 Q257 171 260 173
+             Q264 183 254 189 L254 194" fill="#a7b6bd" stroke-width="1.4"/>
+    <path d="M238 193 Q249 195 261 193 L258 207
+             Q249 210 241 207 Z" fill="#fdfcf8" stroke-width="1.6"/>
+    <path d="M241 198 Q249 200 258 198" stroke-width=".8"/>
+  </g>
+</svg>

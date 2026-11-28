@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240">
+  <rect width="320" height="240" fill="#fdfcf8"/>
+  <style>
+    .ink{fill:none;stroke:#1c1c1c;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+    .paper{fill:#fdfcf8}
+    .detail{stroke-width:.85}
+    .ribbon{transform-box:fill-box;transform-origin:50% 10%;animation:ribbon 6s ease-in-out infinite}
+    .bag{transform-box:fill-box;transform-origin:50% 0%;animation:bag 6s ease-in-out infinite}
+    .gleam{transform-box:fill-box;transform-origin:center;animation:gleam 6s ease-in-out infinite}
+    .second{animation-delay:-3s}
+    @keyframes ribbon{
+      0%,100%{transform:rotate(-3deg)}
+      45%{transform:rotate(4deg)}
+      75%{transform:rotate(-1deg)}
+    }
+    @keyframes bag{
+      0%,100%{transform:rotate(0deg)}
+      35%{transform:rotate(3deg)}
+      70%{transform:rotate(-2deg)}
+    }
+    @keyframes gleam{
+      0%,100%{opacity:.35;transform:scale(.85)}
+      45%,60%{opacity:1;transform:scale(1)}
+    }
+    @media (prefers-reduced-motion: reduce){ * { animation: none !important } }
+  </style>
+
+  <g class="ink">
+    <!-- A small dressing mirror. -->
+    <path class="paper" d="M211 57 Q209 43 224 41 Q240 40 241 55 L243 151 Q242 164 227 165 Q213 164 213 152 Z"/>
+    <path class="detail" d="M218 58 Q216 48 225 47 Q234 46 235 57 L237 150 Q236 159 227 159 Q219 158 219 150 Z"/>
+    <path d="M222 166 Q222 184 217 198 M233 165 Q234 183 240 198"/>
+    <path class="detail" d="M214 199 Q229 197 243 199 M222 73 L229 65 M224 85 L232 76"/>
+    <path class="detail" d="M222 110 Q228 105 235 110 M223 115 Q229 118 235 115 M224 120 L223 140 Q230 144 236 139"/>
+
+    <!-- Quiet floor marks leave the paper open. -->
+    <path class="detail" d="M80 204 Q110 202 137 204 M151 205 Q177 203 196 205 M211 204 Q230 203 246 204"/>
+
+    <!-- Hair, head and open neck. -->
+    <path class="paper" d="M132 74 Q121 69 123 55 Q123 40 136 38 Q151 36 154 49 Q156 59 150 67 L152 79 Q141 84 132 74 Z"/>
+    <path class="paper" d="M130 50 Q137 46 146 51 Q151 56 147 65 Q144 73 138 72 Q130 70 129 62"/>
+    <path d="M136 72 L135 79 M144 72 L145 79"/>
+    <path class="detail" d="M127 52 Q131 43 140 43 M149 48 Q151 57 149 61"/>
+
+    <!-- Relaxed legs, drawn as separate open strokes. -->
+    <path class="paper" stroke="none" d="M126 142 L138 144 L133 169 L130 191 L122 191 L124 168 Z"/>
+    <path d="M126 145 Q123 164 124 175 L122 190 M137 146 Q132 164 133 174 L130 190"/>
+    <path class="paper" stroke="none" d="M142 144 L152 143 L156 168 L167 188 L160 192 L147 173 Z"/>
+    <path d="M143 146 Q144 163 149 174 L159 190 M152 145 Q155 160 157 168 L167 186"/>
+
+    <!-- Soft shoes share the bow and bag colour. -->
+    <path fill="#c88f91" d="M122 188 Q126 190 131 188 L133 195 Q123 200 113 198 Q110 196 114 193 Z"/>
+    <path fill="#c88f91" d="M159 188 Q163 189 167 185 Q173 188 179 189 Q183 191 180 194 Q170 198 163 195 Z"/>
+    <path class="detail" d="M114 196 Q124 197 132 194 M165 193 Q173 194 180 192"/>
+
+    <!-- Back arm reaches toward the mirror. -->
+    <path class="paper" stroke="none" d="M151 85 L159 88 L168 104 L183 91 L188 95 L170 114 L164 113 Z"/>
+    <path d="M155 86 Q163 96 168 105 Q175 101 182 94 M158 96 L164 112 Q168 117 173 112 L187 98"/>
+    <path d="M182 94 Q182 90 185 88 M185 94 Q189 87 191 90 Q192 93 187 98"/>
+
+    <!-- Blouse and skirt follow the pose. -->
+    <path class="paper" d="M133 78 Q126 79 120 85 L116 100 Q121 104 126 102 L127 119 Q139 123 153 118 L153 102 Q158 101 163 97 L156 85 Q151 80 145 78"/>
+    <path class="detail" d="M131 80 Q136 88 140 87 Q144 85 147 80 M128 98 Q130 107 128 115 M150 99 Q147 109 150 115"/>
+    <path fill="#777f98" d="M127 117 Q140 121 153 117 Q155 133 162 148 Q145 156 119 148 Q124 133 127 117 Z"/>
+    <path class="detail" d="M129 123 Q128 135 125 145 M140 125 L139 148 M150 124 Q151 137 156 146 M121 145 Q142 152 160 145"/>
+
+    <!-- A matching neck bow, gently stirred. -->
+    <g class="ribbon" fill="#c88f91">
+      <path d="M139 86 Q132 80 129 84 Q128 89 138 89 Q132 96 133 101 L140 94 L143 101 Q147 96 142 89 Q151 89 151 84 Q147 81 141 86"/>
+      <path class="detail" d="M138 87 Q140 85 142 87 L142 90 L138 90 Z"/>
+    </g>
+
+    <!-- Near arm, with two open contours. -->
+    <path class="paper" stroke="none" d="M117 99 L125 101 L119 121 L113 142 L107 141 L111 120 Z"/>
+    <path d="M118 102 Q113 119 112 126 L108 140 M124 104 Q121 119 119 127 L115 142"/>
+    <path d="M108 140 Q105 146 109 149 Q113 150 115 143"/>
+
+    <!-- One handbag repeats the outfit's accent. -->
+    <g class="bag">
+      <path d="M105 157 Q103 145 111 145 Q120 145 119 157"/>
+      <path fill="#c88f91" d="M100 157 Q111 160 123 156 L127 177 Q114 184 98 178 Z"/>
+      <path class="detail" d="M102 161 Q113 165 122 160 M111 164 L112 168 L116 168 L116 164"/>
+    </g>
+
+    <!-- A single flower on the dressing-room floor. -->
+    <path class="paper" d="M77 177 Q84 175 92 177 L89 199 Q83 202 78 198 Z"/>
+    <path class="detail" d="M84 177 Q81 163 86 151 M84 169 Q76 168 75 162 Q81 162 84 169"/>
+    <path fill="#c88f91" d="M86 153 Q78 153 79 148 Q79 144 84 146 Q82 139 87 140 Q92 140 90 146 Q96 143 97 148 Q97 153 89 154"/>
+    <path class="detail" d="M85 149 Q88 147 90 150"/>
+
+    <!-- Small glints suggest that the whole combination clicks. -->
+    <g class="gleam">
+      <path d="M179 58 Q179 65 174 68 Q179 69 180 76 Q181 70 186 68 Q180 66 179 58 Z"/>
+    </g>
+    <g class="gleam second">
+      <path class="detail" d="M98 75 Q98 80 94 82 Q98 83 99 88 Q100 83 104 81 Q99 80 98 75 Z"/>
+    </g>
+  </g>
+</svg>

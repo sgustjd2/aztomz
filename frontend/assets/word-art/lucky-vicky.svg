@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240">
+  <rect width="320" height="240" fill="#fdfcf8"/>
+  <style>
+    .depart {
+      transform-box: fill-box;
+      transform-origin: center;
+      animation: depart 7s ease-in-out infinite;
+    }
+    .lift {
+      transform-box: fill-box;
+      transform-origin: 50% 100%;
+      animation: lift 5s ease-in-out infinite;
+    }
+    .spark {
+      transform-box: fill-box;
+      transform-origin: center;
+      animation: spark 5s ease-in-out infinite;
+    }
+    @keyframes depart {
+      0%, 18% { transform: translateX(0); opacity: 1 }
+      65% { transform: translateX(32px); opacity: 0 }
+      66% { transform: translateX(-5px); opacity: 0 }
+      88%, 100% { transform: translateX(0); opacity: 1 }
+    }
+    @keyframes lift {
+      0%, 100% { transform: rotate(-1deg) }
+      50% { transform: rotate(2deg) }
+    }
+    @keyframes spark {
+      0%, 100% { transform: scale(.85); opacity: .55 }
+      45%, 65% { transform: scale(1.08); opacity: 1 }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important }
+    }
+  </style>
+  <defs>
+    <filter id="ink" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency=".065" numOctaves="2" seed="8" result="grain"/>
+      <feDisplacementMap in="SourceGraphic" in2="grain" scale=".45" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+  </defs>
+
+  <g fill="none" stroke="#1c1c1c" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" filter="url(#ink)">
+    <!-- A quiet stop, with plenty of room to sit. -->
+    <path d="M42 191 Q151 189 276 191" stroke-width=".8"/>
+    <path d="M62 186 Q61 140 62 89"/>
+    <path d="M55 188 Q62 185 69 188" stroke-width="1.4"/>
+    <path d="M50 64 Q61 62 74 64 L74 89 Q63 91 50 89 Z" fill="#fdfcf8"/>
+    <g stroke-width="1">
+      <path d="M55 71 Q62 70 69 71 L69 81 L55 81 Z"/>
+      <path d="M56 76 L68 76 M61 71 L61 76"/>
+      <path d="M57 83 L57 84 M67 83 L67 84"/>
+    </g>
+
+    <g class="depart">
+      <path d="M201 93 Q203 88 210 88 L275 88 Q282 89 283 96 L284 132 Q283 137 277 137 L204 137 Q200 136 200 131 Z" fill="#fdfcf8"/>
+      <path d="M202 119 Q242 120 283 119 L283 130 L201 130 Z" fill="#b7c4ab" stroke="none"/>
+      <path d="M207 96 L223 96 L223 113 L207 113 Z M229 96 L245 96 L245 113 L229 113 Z M251 96 L267 96 L267 113 L251 113 Z" stroke-width="1"/>
+      <path d="M274 96 L280 97 L281 125 L274 125 Z" stroke-width="1"/>
+      <path d="M200 126 L204 126 M281 127 L284 127" stroke-width="1"/>
+      <path d="M211 137 C211 127 225 127 225 137 C225 147 211 147 211 137 Z M261 137 C261 127 275 127 275 137 C275 147 261 147 261 137 Z" fill="#fdfcf8"/>
+      <path d="M216 137 Q218 135 220 137 Q218 140 216 137 M266 137 Q268 135 270 137 Q268 140 266 137" stroke-width=".8"/>
+    </g>
+    <path d="M186 113 Q190 112 193 113 M181 123 Q186 122 192 123" stroke-width=".8"/>
+
+    <g>
+      <path d="M189 155 Q225 153 260 155 L260 166 Q226 165 189 167 Z" fill="#fdfcf8"/>
+      <path d="M185 173 Q224 171 264 173 L262 179 Q223 178 187 180 Z" fill="#b7c4ab"/>
+      <path d="M195 167 L195 172 M254 167 L254 172 M195 180 L193 190 M254 180 L256 190"/>
+      <path d="M201 159 Q224 158 247 159 M202 163 L246 163" stroke-width=".7"/>
+    </g>
+
+    <!-- Open, planted legs beneath a loose coat. -->
+    <path d="M119 153 Q117 168 115 183 M124 154 Q122 171 121 183"/>
+    <path d="M131 154 Q136 169 138 182 M137 152 Q142 168 144 181"/>
+    <path d="M114 182 Q111 185 111 188 Q117 190 124 188 L122 184" fill="#fdfcf8"/>
+    <path d="M138 182 L138 187 Q145 189 151 187 Q150 184 144 182" fill="#fdfcf8"/>
+
+    <g class="lift">
+      <!-- Arms open toward the departing bus and the empty bench. -->
+      <path d="M116 117 Q105 112 98 101 Q95 98 94 95 M112 121 Q101 117 94 106 L89 98"/>
+      <path d="M94 95 Q92 90 89 90 Q87 92 89 96 M89 98 Q84 97 84 94" stroke-width="1.4"/>
+      <path d="M138 117 Q150 119 162 110 L167 106 M140 123 Q153 125 166 115 L170 111"/>
+      <path d="M167 106 Q169 101 172 102 Q174 104 171 107 Q177 105 178 108 Q176 112 170 111" stroke-width="1.4"/>
+
+      <path d="M119 110 Q127 107 136 111 Q139 129 142 153 Q128 158 112 154 Q117 132 119 110 Z" fill="#b7c4ab"/>
+      <path d="M124 111 Q125 122 131 125 M130 125 Q133 137 134 150" stroke-width=".8"/>
+      <path d="M119 140 Q122 142 126 140" stroke-width=".8"/>
+      <path d="M124 104 L123 110 M130 104 L131 109" stroke-width="1.4"/>
+      <path d="M119 91 C119 83 131 81 135 88 Q138 94 132 102 Q128 108 122 102 Q119 98 119 91 Z" fill="#fdfcf8"/>
+      <path d="M119 94 Q115 88 119 83 Q125 77 133 83 Q138 84 137 91 Q132 91 129 86 Q125 92 119 94" fill="#1c1c1c" stroke-width="1.4"/>
+      <path d="M116 86 Q111 86 112 81 Q114 77 119 81" fill="#1c1c1c" stroke-width="1.4"/>
+    </g>
+
+    <!-- A small golden thought: there is a bright side. -->
+    <g class="spark" stroke="#c49a48">
+      <path d="M153 66 Q155 74 162 76 Q155 78 153 86 Q151 78 144 76 Q151 74 153 66 Z" fill="#e4c980" stroke-width="1.4"/>
+      <path d="M173 66 L173 71 M170.5 68.5 L175.5 68.5 M139 59 L139 63 M137 61 L141 61" stroke-width="1"/>
+    </g>
+    <path d="M98 190 L102 190 M162 191 L169 191 M271 191 L275 191" stroke-width=".7"/>
+  </g>
+</svg>

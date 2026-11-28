@@ -1,0 +1,172 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240">
+  <rect width="320" height="240" fill="#fdfcf8"/>
+  <defs>
+    <filter id="ink" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency=".055" numOctaves="2" seed="8" result="grain"/>
+      <feDisplacementMap in="SourceGraphic" in2="grain" scale=".45" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+  </defs>
+  <style>
+    .breathe {
+      transform-box: fill-box;
+      transform-origin: 50% 100%;
+      animation: breathe 6s ease-in-out infinite;
+    }
+    .page {
+      transform-box: fill-box;
+      transform-origin: 0% 90%;
+      animation: page 6s ease-in-out infinite;
+    }
+    @keyframes breathe {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      45% { transform: translateY(-1.2px) rotate(-.5deg); }
+      70% { transform: translateY(-.4px) rotate(.2deg); }
+    }
+    @keyframes page {
+      0%, 35%, 100% { transform: rotate(0deg); }
+      54% { transform: rotate(-5deg); }
+      68% { transform: rotate(1deg); }
+      82% { transform: rotate(0deg); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important }
+    }
+  </style>
+
+  <g fill="none" stroke="#1c1c1c" stroke-width="1.65"
+     stroke-linecap="round" stroke-linejoin="round" filter="url(#ink)">
+
+    <!-- A quiet ground line leaves the paper open. -->
+    <path d="M51 203 Q110 202 143 203 M174 203 Q226 202 270 203"
+          stroke-width=".8"/>
+
+    <!-- A small record of repeated achievements, without lettering. -->
+    <g>
+      <path d="M218 48 Q237 46.8 257 48 L256 111 Q237 112.5 218 111 Z"
+            fill="#fdfcf8"/>
+      <path d="M226 45 L226 52 M249 45 L249 52"/>
+      <path d="M219 59 Q237 58 256 59" stroke-width=".85"/>
+      <g stroke-width=".85">
+        <path d="M225 68 L232 68 L232 75 L225 75 Z
+                 M242 68 L249 68 L249 75 L242 75 Z
+                 M225 84 L232 84 L232 91 L225 91 Z
+                 M242 84 L249 84 L249 91 L242 91 Z
+                 M225 100 L232 100 L232 106 L225 106 Z"/>
+      </g>
+      <g stroke-width="1.4">
+        <path d="M226 70 L228 73 L233 66
+                 M243 70 L245 73 L250 66
+                 M226 86 L228 89 L233 82
+                 M243 86 L245 89 L250 82
+                 M226 101 L228 104 L233 97"/>
+      </g>
+    </g>
+
+    <!-- Exercise equipment, put away after use. -->
+    <g transform="rotate(-9 72 184)">
+      <path d="M62 181 Q72 180.5 82 181 L82 186 Q72 185.5 62 186 Z"
+            fill="#fdfcf8"/>
+      <path d="M56 175 Q59 174 63 175 L63 192 Q59 193 56 192 Z
+               M81 175 Q85 174 88 175 L88 192 Q85 193 81 192 Z"
+            fill="#fdfcf8"/>
+      <path d="M53 179 L56 179 M53 188 L56 188
+               M88 179 L91 179 M88 188 L91 188"/>
+    </g>
+
+    <g>
+      <path d="M224 184 Q235 181 258 184 L258 198
+               Q239 201 224 198 Z" fill="#c5ad79"/>
+      <ellipse cx="224" cy="191" rx="8" ry="7" fill="#c5ad79"/>
+      <path d="M226 188 C219 185 219 195 225 194
+               C229 193 226 189 224 191" stroke-width=".85"/>
+      <path d="M250 184 Q248 190 250 198" stroke-width=".85"/>
+    </g>
+
+    <!-- Crossed legs: softly bent, open-ended pairs of strokes. -->
+    <path d="M144 164 C132 165 117 173 113 181
+             C109 190 135 195 157 192
+             M146 173 C136 176 125 180 123 182
+             C133 185 148 186 159 184"
+          fill="#fdfcf8"/>
+    <path d="M168 165 C181 166 195 175 196 182
+             C197 191 171 194 149 190
+             M166 174 C177 176 184 180 185 182
+             C175 185 159 184 151 182"
+          fill="#fdfcf8"/>
+    <path d="M145 183 Q136 181 131 185 Q129 190 140 191
+             M164 185 Q174 183 180 187 Q181 191 170 192"
+          fill="#fdfcf8" stroke-width="1.4"/>
+
+    <g class="breathe">
+      <!-- A simple shirt, its hem resting over the solved legs. -->
+      <path d="M143 108 Q155 104 168 109
+               Q176 120 176 134 L171 145
+               Q172 158 177 169
+               Q159 174 136 169
+               Q141 155 139 143 L132 133
+               Q133 118 143 108 Z"
+            fill="#a5afa0"/>
+      <path d="M143 109 Q148 115 155 115 Q162 115 166 109
+               M142 151 Q140 161 139 165
+               M169 153 Q170 162 173 166"
+            stroke-width=".85"/>
+
+      <!-- Neck and a small, bowed, faceless head. -->
+      <path d="M149 101 Q150 106 147 109
+               M159 102 Q158 106 162 109"
+            stroke-width="1.4"/>
+      <path d="M146 83 C151 78 161 80 165 87
+               C169 94 164 103 158 104
+               C151 105 146 98 145 92
+               C144 88 144 85 146 83 Z"
+            fill="#fdfcf8"/>
+      <path d="M146 89 Q144 96 147 99
+               M146 84 Q152 77 161 82 Q165 84 166 89
+               Q159 89 155 84 Q152 88 147 89"
+            fill="#1c1c1c" stroke-width="1.4"/>
+      <path d="M146 83 C137 85 136 77 140 74
+               C145 70 151 76 148 81"
+            fill="#1c1c1c" stroke-width="1.4"/>
+
+      <!-- Sleeves and forearms are open ink bands. -->
+      <path d="M136 120 Q131 130 133 141
+               M143 123 Q139 132 141 139"
+            fill="#a5afa0"/>
+      <path d="M133 141 Q137 151 147 155
+               M141 140 Q144 147 150 149"
+            fill="#fdfcf8"/>
+      <path d="M172 120 Q180 130 178 141
+               M166 125 Q172 132 171 138"
+            fill="#a5afa0"/>
+      <path d="M178 141 Q174 151 164 155
+               M171 139 Q168 147 163 149"
+            fill="#fdfcf8"/>
+      <path d="M132 138 Q136 141 142 138
+               M170 137 Q174 140 179 138"
+            stroke-width=".85"/>
+
+      <!-- The open book and one gently lifting page. -->
+      <path d="M130 142 Q143 140 155 147
+               Q168 140 182 142 L177 162
+               Q165 161 155 166 Q145 161 134 162 Z"
+            fill="#fdfcf8"/>
+      <path d="M155 148 Q154 156 155 166" stroke-width=".85"/>
+      <path d="M136 148 Q144 148 150 151
+               M137 153 Q143 153 149 156
+               M161 151 Q168 148 176 148
+               M161 156 Q167 153 174 153"
+            stroke-width=".75"/>
+      <g class="page">
+        <path d="M156 146 Q168 136 179 138 L177 157
+                 Q166 157 155 165 Z"
+              fill="#fdfcf8" stroke-width="1.4"/>
+        <path d="M162 147 Q168 144 174 144
+                 M162 152 Q168 149 173 149"
+              stroke-width=".75"/>
+      </g>
+      <path d="M135 151 Q132 148 131 151 Q131 155 136 156
+               M177 151 Q181 148 182 151 Q182 155 178 156"
+            fill="#fdfcf8" stroke-width="1.4"/>
+    </g>
+  </g>
+</svg>

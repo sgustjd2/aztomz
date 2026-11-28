@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240">
+  <rect width="320" height="240" fill="#fdfcf8"/>
+  <style>
+    .ink {
+      fill: none;
+      stroke: #1c1c1c;
+      stroke-width: 1.6;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .paper { fill: #fdfcf8 }
+    .detail { stroke-width: .85 }
+    .hand {
+      transform-box: fill-box;
+      transform-origin: 0% 40%;
+      animation: tap 6s ease-in-out infinite;
+    }
+    .button {
+      transform-box: fill-box;
+      transform-origin: 50% 100%;
+      animation: press 6s ease-in-out infinite;
+    }
+    .result {
+      transform-box: fill-box;
+      transform-origin: 50% 50%;
+      animation: done 6s ease-in-out infinite;
+    }
+    @keyframes tap {
+      0%, 24%, 47%, 100% { transform: rotate(-3deg) }
+      32%, 37% { transform: rotate(3deg) }
+    }
+    @keyframes press {
+      0%, 27%, 45%, 100% { transform: translateY(0) }
+      33%, 37% { transform: translateY(2px) }
+    }
+    @keyframes done {
+      0%, 32%, 78%, 100% { transform: scale(1); opacity: .75 }
+      42%, 61% { transform: scale(1.08); opacity: 1 }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important }
+    }
+  </style>
+
+  <g class="ink">
+    <!-- Quiet ground and a gently bowed worktable. -->
+    <path class="detail" d="M47 200 Q155 198 277 200"/>
+    <path class="paper" d="M131 145 Q199 143.7 278 145 L277 151 Q204 150 131 151 Z"/>
+    <path d="M141 152 Q140 174 139 198 M267 152 Q268 176 269 198"/>
+    <path class="detail" d="M145 155 Q203 156 263 155"/>
+
+    <!-- A finished little stack: three sheets, one simple result. -->
+    <path class="paper" d="M234 135 L266 134 L273 141 L241 142 Z"/>
+    <path class="paper" d="M234 131 L266 130 L273 137 L241 138 Z"/>
+    <path class="paper" d="M234 127 L266 126 L273 133 L241 134 Z"/>
+    <path class="detail" d="M244 130 L258 129.5"/>
+
+    <!-- Laptop, with an unmistakable completed check. -->
+    <path class="paper" d="M185 83 Q185 80 189 80 L259 81 Q263 81 263 85 L261 124 L187 124 Z"/>
+    <path class="detail" d="M190 86 Q223 85 257 86 L255 118 L192 118 Z"/>
+    <path class="paper" d="M187 124 L261 124 L270 130 Q271 132 267 132 L180 132 Q177 132 179 130 Z"/>
+    <path class="detail" d="M195 127 L252 127 M214 130 L233 130"/>
+    <g class="result">
+      <path fill="#879b85" stroke="none" d="M239 101 A15 15 0 1 1 209 101 A15 15 0 1 1 239 101"/>
+      <path stroke-width="2" d="M216 101 L222 107 L233 94"/>
+      <path class="detail" d="M224 69 L224 65 M245 75 L248 71 M201 75 L198 72"/>
+    </g>
+
+    <!-- A single generous push button. -->
+    <path class="paper" d="M144 139 Q144 135 160 135 Q176 135 176 139 L176 143 Q160 148 144 143 Z"/>
+    <g class="button">
+      <path fill="#d6ad67" d="M147 133 Q147 129 160 129 Q173 129 173 133 L173 138 Q160 143 147 138 Z"/>
+      <path class="detail" d="M148 133 Q160 138 172 133"/>
+    </g>
+
+    <!-- One relaxed, faceless figure. -->
+    <path class="paper" d="M82 139 Q80 162 77 184 L83 185 Q91 161 94 145"/>
+    <path class="paper" d="M96 141 Q101 161 104 184 L110 184 Q110 161 107 141"/>
+    <path fill="#1c1c1c" stroke-width="1.4" d="M77 184 Q80 185 83 184 L88 190 Q87 192 75 191 Q73 189 77 184 Z"/>
+    <path fill="#1c1c1c" stroke-width="1.4" d="M104 184 L110 184 Q113 186 119 188 L119 191 L103 191 Z"/>
+
+    <path class="paper" d="M84 92 Q76 95 77 106 L79 141 Q94 145 110 140 L107 105 Q106 95 97 93"/>
+    <path class="detail" d="M86 101 Q84 119 86 136 M96 137 L103 136"/>
+    <path d="M86 86 L86 94 M95 86 L96 94"/>
+    <path class="paper" d="M101 74 Q103 84 96 88 Q88 91 83 83 Q79 75 84 69 Q89 64 96 68 Q100 69 101 74 Z"/>
+    <path fill="#1c1c1c" stroke-width="1.4" d="M82 77 Q78 69 85 65 Q93 61 100 68 L103 72 Q95 74 90 69 Q85 71 85 78 Z"/>
+    <path class="detail" d="M81 67 Q77 63 80 60"/>
+
+    <!-- The rear arm hangs loosely; the near hand does all the work. -->
+    <path d="M79 106 Q73 119 77 132 Q78 136 82 136"/>
+    <path d="M83 108 Q79 120 82 130"/>
+    <g class="hand">
+      <path class="paper" d="M102 100 Q107 98 111 105 L122 121 L143 124 L143 130 Q128 132 118 128 Q109 119 102 109"/>
+      <path class="detail" d="M138 124 L138 130"/>
+      <path class="paper" d="M143 124 Q149 123 153 126 Q157 128 159 132 L159 135 Q157 137 155 134 L152 131 Q148 132 143 130"/>
+      <path class="detail" d="M147 127 Q151 126 153 129"/>
+    </g>
+  </g>
+</svg>

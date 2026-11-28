@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240">
+  <rect width="320" height="240" fill="#fdfcf8"/>
+  <style>
+    .ink{fill:none;stroke:#1c1c1c;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+    .paper{fill:#fdfcf8}
+    .fine{stroke-width:.85}
+    .rejoice{transform-box:fill-box;transform-origin:50% 100%;animation:rejoice 6s ease-in-out infinite}
+    .wonder{transform-box:fill-box;transform-origin:50% 70%;animation:wonder 5s ease-in-out infinite}
+    .music{transform-box:fill-box;transform-origin:50% 100%;animation:music 4.8s ease-in-out infinite}
+    @keyframes rejoice{
+      0%,100%{transform:rotate(-2deg)}
+      30%,60%{transform:rotate(2deg)}
+      78%{transform:rotate(-1deg)}
+    }
+    @keyframes wonder{
+      0%,100%{transform:translateY(1px) scale(.96);opacity:.75}
+      45%,65%{transform:translateY(-3px) scale(1.04);opacity:1}
+    }
+    @keyframes music{
+      0%,100%{transform:translateY(2px) rotate(-4deg);opacity:.65}
+      50%{transform:translateY(-4px) rotate(3deg);opacity:1}
+    }
+    @media (prefers-reduced-motion: reduce){ * { animation: none !important } }
+  </style>
+  <defs>
+    <filter id="ink-wobble" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency=".06" numOctaves="2" seed="8" result="grain"/>
+      <feDisplacementMap in="SourceGraphic" in2="grain" scale=".45" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+  </defs>
+  <g class="ink" filter="url(#ink-wobble)">
+    <!-- A quiet patch of ground. -->
+    <path class="fine" d="M48 199q42-2 79 0m38 0q48-2 105 0"/>
+    <path class="fine" d="M67 204l13-.3m157-.2 14 .4"/>
+
+    <!-- Planted feet and loosely bent legs. -->
+    <path class="paper" d="M100 148q-1 18-9 37l6 2q11-18 13-35"/>
+    <path class="paper" d="M113 150q10 16 20 34l6-3q-8-20-16-32"/>
+    <path class="paper" d="M91 184q-5 5-12 7-3 2-1 5 10 2 20-2l-1-8"/>
+    <path class="paper" d="M132 184l3 10q8 4 18 2 2-3-3-5l-12-9"/>
+    <path class="fine" d="M80 193q8 2 15-1m42 0 12 2"/>
+
+    <g class="rejoice">
+      <!-- Open double-stroke arms, lifted in delighted praise. -->
+      <path class="paper" d="M100 112Q84 101 77 85L68 66l5-3q8 14 13 22 8 10 20 16"/>
+      <path class="paper" d="M119 103q14-8 22-20l13-24 5 3q-6 17-13 28-9 15-21 22"/>
+      <path d="M68 66q-6-3-7-9m8 4-2-9m6 11q4-5 2-10"/>
+      <path d="M154 59q-2-6 1-11m2 10 3-11m-1 15q7-4 8-10"/>
+
+      <!-- A simple, softly bowed shirt. -->
+      <path class="paper" d="M100 101q9 5 20-1l10 10-6 11-3-2q0 15 4 32-15 5-29 0 4-17 2-31l-4 1-6-12Z"/>
+      <path d="M98 143q11 3 24 0"/>
+      <path class="fine" d="M103 116q-1 9-2 15m16-5 3 10"/>
+
+      <!-- Small faceless head, tilted back; character comes from hair. -->
+      <path class="paper" d="m107 100-1-9m8 9 1-9"/>
+      <path class="paper" d="M102 76q3-9 11-7 10 3 8 14-2 12-11 10-9-2-8-17Z"/>
+      <path fill="#1c1c1c" stroke="none" d="M102 83q-6-8 0-15 5-6 12-2 7-1 9 6-8 3-15-1-5 3-6 12Z"/>
+
+      <!-- Headphones: the song is the source of the celebration. -->
+      <path d="M99 81q-4-17 8-18 13-1 17 13"/>
+      <path fill="#75828e" d="M99 79q-3 0-2 5l1 4q1 3 4 1l1-2-2-7Z"/>
+      <path fill="#75828e" d="M121 77q3-2 5 2l1 4q0 4-3 4l-2-2-2-6Z"/>
+    </g>
+
+    <!-- A phone playing a much-loved song, resting on a little table. -->
+    <path class="paper" d="M179 153q29-2 66 0l1 7q-34 2-67 0Z"/>
+    <path d="m185 161-4 35m57-35 5 35"/>
+    <path class="fine" d="m190 162-2 24m44-24 4 24"/>
+    <path class="paper" d="m205 149 9-16 8 17"/>
+    <path class="paper" d="M198 98q0-4 4-4l25 1q4 0 4 4l-2 47q0 4-4 4l-25-1q-4 0-4-4Z"/>
+    <path class="fine" d="m202 101 24 1-2 37-24-1Z"/>
+    <path fill="#c7827d" stroke="none" d="M212 114c-7-7-13 3-7 8l8 7 8-8c5-6-2-14-9-7Z"/>
+    <path class="fine" d="m203 134 17 .5m-10-35 7 .2"/>
+    <path d="m210 144 5 .1"/>
+
+    <!-- A small speaker, with no interface labels. -->
+    <path class="paper" d="M249 129q0-3 3-3l12 1q3 0 3 3l-1 20-18-.2Z"/>
+    <ellipse cx="257.5" cy="140" rx="4.8" ry="5"/>
+    <path class="fine" d="m256 131 3 .2"/>
+
+    <g class="music">
+      <path d="m239 85 1-14 11-3-1 14"/>
+      <path fill="#1c1c1c" stroke="none" d="M240 82c-7-3-9 6-3 6 3 0 4-3 3-6Zm10-3c-6-3-9 5-3 6 3 0 4-3 3-6Z"/>
+      <path class="fine" d="m241 75 9-3"/>
+      <path class="fine" d="M272 132q5 6 0 12m4-16q8 10 0 20"/>
+    </g>
+
+    <!-- Wonder hangs in the generous empty space above the scene. -->
+    <g class="wonder">
+      <path fill="#c7827d" stroke="none" d="M180 60c-7-8-16 1-9 8l10 9 9-10c6-8-4-15-10-7Z"/>
+      <path d="M204 45q0 8-7 10 7 1 8 9 1-8 8-10-8-1-9-9Z"/>
+      <path class="fine" d="M172 91q1 5-4 7 5 0 6 5 0-5 5-7-5 0-7-5Z"/>
+      <path class="fine" d="m85 51-5-6m15 2-1-8m32 13 5-6"/>
+    </g>
+  </g>
+</svg>
