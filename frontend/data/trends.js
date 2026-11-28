@@ -4962,11 +4962,11 @@ window.HANGEUT_DATA = {
       "cat": "노래·챌린지",
       "coverCat": "cat-music",
       "collectedAt": "2026-06-26",
-      "analyzedAt": "2026-08-16",
-      "buzz": "꾸준히 회자되는 밈",
-      "stage": "밈화",
-      "stageMsg": "유행은 지났지만, 추억 소환 콘텐츠로 꾸준히 쓰임",
-      "label": "유행은 지났지만 지금 춰도 OK",
+      "analyzedAt": "2026-11-28",
+      "buzz": "화제성 하락",
+      "stage": "하락 (한물감)",
+      "stageMsg": "2024년 재유행 이후 최근 신호가 거의 없어요",
+      "label": "이제는 늦은 느낌",
       "labelCls": "mid",
       "title": "Bye Bye Bye 챌린지 (데드풀과 울버린)",
       "excerpt": "영화 '데드풀과 울버린'의 오프닝 시퀀스 덕분에 2000년대 보이그룹 NSYNC의 노래가 24년 만에 역주행하며 전 세계적인 댄스 챌린지 열풍을 일으켰습니다.",
@@ -4993,6 +4993,10 @@ window.HANGEUT_DATA = {
         [
           "Forbes",
           "https://www.forbes.com/sites/joshweiss/2024/07/31/nsyncs-bye-bye-bye-choreographer-darrin-henson-reacts-to-dances-resurgence-in-deadpool--wolverine/"
+        ],
+        [
+          "YouTube 검색결과(2024-08-02)",
+          "https://youtu.be/Cs3ftAvfnrA"
         ]
       ],
       "tags": [
@@ -5052,11 +5056,11 @@ window.HANGEUT_DATA = {
       "cat": "노래·챌린지",
       "coverCat": "cat-music",
       "collectedAt": "2026-06-26",
-      "analyzedAt": "2026-08-16",
-      "buzz": "꾸준히 회자되는 밈",
-      "stage": "밈화",
-      "stageMsg": "유행은 지났지만, 꾸준히 패러디·재생산됨",
-      "label": "유행은 지났지만 밈으로 OK",
+      "analyzedAt": "2026-11-28",
+      "buzz": "화제성 하락",
+      "stage": "하락 (한물감)",
+      "stageMsg": "최근 언급은 드물고 옛 밈 영상 위주예요",
+      "label": "이제는 늦은 느낌",
       "labelCls": "mid",
       "title": "치피치피 차파차파 챌린지",
       "excerpt": "중독성 있는 후렴구 '치피치피 차파차파'로 전 세계를 휩쓸었던 칠레 가수 Christell의 'Dubidubidu'. 고양이 영상 밈으로 시작되어 다양한 패러디로 폭발적인 인기를 끌었으나, 현재는 유행의 정점을 지나 밈으로 자리 잡았습니다.",
@@ -5091,6 +5095,10 @@ window.HANGEUT_DATA = {
         [
           "YouTube - ZEROBASEONE Cover",
           "https://www.youtube.com/watch?v=Xyn1oWDbFPo"
+        ],
+        [
+          "YouTube 검색결과(2024-02-02)",
+          "https://youtu.be/2nYCNorIVDw"
         ]
       ],
       "tags": [
@@ -5245,12 +5253,12 @@ window.HANGEUT_DATA = {
       "cat": "AI 프롬프트",
       "coverCat": "cat-ai",
       "collectedAt": "2026-06-28",
-      "analyzedAt": "2026-08-16",
-      "buzz": "화제성 매우 높음",
-      "stage": "피크",
-      "stageMsg": "SNS에서 밈처럼 번지는 중",
-      "label": "지금 써도 됨",
-      "labelCls": "good",
+      "analyzedAt": "2026-11-28",
+      "buzz": "화제성 하락",
+      "stage": "하락 (한물감)",
+      "stageMsg": "5월 이후 새 확산 신호가 확인되지 않아요",
+      "label": "이제는 늦은 느낌",
+      "labelCls": "mid",
       "title": "크레파스 낙서풍 프롬프트",
       "def": "일부러 못 그린 듯한 어린이의 크레파스 그림 스타일로 이미지를 생성하는 명령",
       "pureKorean": "어린이 낙서 그림체",
@@ -5278,6 +5286,10 @@ window.HANGEUT_DATA = {
         [
           "네이버 블로그",
           "https://m.blog.naver.com/dusdhr87/224272634831"
+        ],
+        [
+          "YouTube 검색결과(2026-05-03)",
+          "https://youtu.be/W_JxtQ-upsQ"
         ]
       ],
       "tags": [
