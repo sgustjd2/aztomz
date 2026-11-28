@@ -113,7 +113,30 @@
     setTimeout(function () { box.remove(); }, 900);
   }
 
-  var start = function () { hero(); stamp(); scores(); };
+  // 홈: 지금 뜨는 것들이 흐르는 띠 (상승·피크 단계, 최신 분석순). 멈춤 버튼 있음, 동작 줄이기면 손으로 넘겨 본다
+  function ticker() {
+    var H = w.H, at = d.getElementById('featured');
+    if (!H || !at || d.querySelector('.fx-ticker')) return;
+    var list = H.TRENDS.filter(function (t) { return /상승|피크$/.test(t.stage || ''); })
+      .sort(function (a, b) { return (b.analyzedAt || '').localeCompare(a.analyzedAt || ''); }).slice(0, 14);
+    if (list.length < 4) return;
+    var links = function (copy) {
+      return '<ul' + (copy ? ' aria-hidden="true"' : '') + '>' + list.map(function (t) {
+        return '<li><a href="' + H.detailHref(t.id) + '"' + (copy ? ' tabindex="-1"' : '') + '><b>' + H.esc(t.cat) + '</b>' + H.esc(t.title) + '</a></li>';
+      }).join('') + '</ul>';
+    };
+    at.insertAdjacentHTML('beforebegin', '<nav class="fx-ticker" aria-label="지금 뜨는 유행">' +
+      '<div class="fx-tk-view"><div class="fx-tk-track">' + links(false) + (still ? '' : links(true)) + '</div></div>' +
+      (still ? '' : '<button type="button" class="fx-tk-pause" aria-pressed="false" aria-label="흐르는 목록 멈추기"></button>') + '</nav>');
+    var nav = d.querySelector('.fx-ticker'), btn = nav.querySelector('.fx-tk-pause');
+    if (btn) btn.onclick = function () {
+      var off = !nav.classList.contains('paused');
+      nav.classList.toggle('paused', off); btn.setAttribute('aria-pressed', String(off));
+      btn.setAttribute('aria-label', off ? '흐르는 목록 다시 움직이기' : '흐르는 목록 멈추기');
+    };
+  }
+
+  var start = function () { hero(); stamp(); scores(); ticker(); };
   if (d.readyState === 'loading') d.addEventListener('DOMContentLoaded', start); else start();
   d.addEventListener('click', burst);
 })(window, document);
