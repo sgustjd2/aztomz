@@ -28,7 +28,7 @@
 <link rel="icon" href="favicon.ico" sizes="16x16 32x32 48x48" />
 <link rel="apple-touch-icon" href="apple-touch-icon.png" />
 <link rel="manifest" href="site.webmanifest" />
-<link rel="stylesheet" href="assets/styles.css?v=header-20261128" />
+<link rel="stylesheet" href="assets/styles.css?v=ref3-20261128" />
 <style>
   .list-lead{padding:24px 0 20px;border-bottom:1px solid var(--line)}
   .list-lead h1{font-size:34px;font-weight:800;line-height:1.14;letter-spacing:0;margin:12px 0 10px;text-wrap:balance}
@@ -64,7 +64,7 @@
   </main>
 
 <script src="data/trends.js"></script>
-<script src="assets/app.js?v=header-20261128"></script>
+<script src="assets/app.js?v=ref2-20261128"></script>
 <script src="assets/fun.js?v=fun2-20261128"></script>
 <script>
   H.boot();
@@ -136,40 +136,63 @@
     return list.slice().sort(SORT_FN[sort]);
   };
 
-  // 필터는 알약 칩 — 누르면 켜지고 다시 누르면 꺼진다(한 줄에 하나만). 정렬은 작은 셀렉트.
+  // 필터 막대: 버튼을 누르면 선택창(dialog)이 뜨고 '적용'해야 반영된다. 자주 쓰는 조건은 바로 켜는 버튼, 정렬은 칸 전환.
+  const QUICK = [['label','good','믿고 가볼 만함'],['label','warn','주의 필요'],['ad','low','광고 의심 낮음'],['trust','high','후기 신뢰 높음']];
+  const SORT_SHORT = { recent:'최신순', ad:'광고 의심순', trust:'후기 신뢰순' };
+  // 고른 값의 짧은 이름 — 점수 구간은 '높음'만으론 어느 점수인지 모르니 이름을 붙인다
+  const valueText = (d, v)=>{ const o = d.opts.find(([k])=>k===v); return (d.key==='ad'||d.key==='trust') ? `${d.name} ${o[1].split(' ')[0]}` : o[1]; };
+  const countFor = (sel)=> (activeCat==='전체' ? ALL : ALL.filter(t=>t.cat===activeCat))
+    .filter(t=> FILTERS.every(d=> !sel[d.key] || d.test(t, sel[d.key]))).length;
+
   function renderAdFilter(){
     if(type!=='ad') return;
     const host = H.q('#lFilter');
-    // 넓은 화면에선 칩이 많은 줄(지역)을 앞 FOLD개만 보이고 '+N'으로 펼친다
-    const FOLD = 8;
-    const row = (d)=> `<div class="lf-row"><span class="lf-name" id="lfn-${d.key}">${d.name}</span>
-        <div class="lf-chips" role="group" aria-labelledby="lfn-${d.key}">${d.opts.map(([v,l,n],i)=>
-          `<button type="button" class="lf-chip${i>=FOLD?' lf-extra':''}" data-f="${d.key}" data-v="${H.esc(v)}" aria-pressed="false">${H.esc(l)}${n!=null?` <span class="lf-cn">${n}</span>`:''}</button>`).join('')}${
-          d.opts.length>FOLD?`<button type="button" class="lf-more" aria-expanded="false">+${d.opts.length-FOLD}</button>`:''}</div></div>`;
-    host.innerHTML = `<div class="lf">
-      <div class="lf-bar">
-        <button type="button" class="lf-toggle" aria-expanded="false" aria-controls="lfPanel">필터 <span class="lf-n" hidden></span></button>
-        <span class="lf-active"></span>
-        <span class="lf-count" aria-live="polite"></span>
-        <label class="lf-sort"><select aria-label="정렬">${SORTS.map(([v,l])=>`<option value="${v}">${l}</option>`).join('')}</select></label>
-        <button type="button" class="lf-reset" hidden>초기화</button>
+    host.innerHTML = `<div class="wf">
+      <div class="wf-bar" role="group" aria-label="광고 분석 필터">
+        <button type="button" class="wf-btn wf-all" data-open="" aria-haspopup="dialog">필터 전체 <span class="wf-n" hidden></span></button>
+        ${FILTERS.map(d=>`<button type="button" class="wf-btn wf-drop" data-open="${d.key}" aria-haspopup="dialog"></button>`).join('')}
+        <span class="wf-div" aria-hidden="true"></span>
+        ${QUICK.map(([k,v,l])=>`<button type="button" class="wf-btn wf-quick" data-f="${k}" data-v="${v}" aria-pressed="false">${l}</button>`).join('')}
       </div>
-      <div class="lf-panel" id="lfPanel" role="group" aria-label="광고 분석 필터">${FILTERS.map(row).join('')}</div>
+      <div class="wf-sub">
+        <span class="wf-count" aria-live="polite"></span>
+        <button type="button" class="wf-reset" hidden>초기화</button>
+        <div class="wf-sort" role="group" aria-label="정렬">${SORTS.map(([v])=>`<button type="button" data-sort="${v}" aria-pressed="false">${SORT_SHORT[v]}</button>`).join('')}</div>
+      </div>
+      <dialog class="wf-dialog" aria-labelledby="wfTitle">
+        <div class="wf-head"><h2 id="wfTitle"></h2><button type="button" class="wf-close" aria-label="닫기"></button></div>
+        <div class="wf-body"></div>
+        <div class="wf-foot"><button type="button" class="wf-clear">초기화</button><button type="button" class="wf-apply"></button></div>
+      </dialog>
     </div>`;
-    H.qa('#lFilter .lf-chip').forEach(b=> b.onclick=()=>{
-      const k = b.dataset.f; f[k] = f[k]===b.dataset.v ? '' : b.dataset.v;
-      page = 1; render(); syncURL();
+    const dlg = H.q('#lFilter .wf-dialog'), body = H.q('#lFilter .wf-body'), apply = H.q('#lFilter .wf-apply');
+    let draft = {}, shown = FILTERS;
+    const paint = ()=>{
+      body.innerHTML = shown.map(d=>`<fieldset class="wf-group"><legend${shown.length===1?' class="wf-hide"':''}>${d.name}</legend>${d.opts.map(([v,l,n])=>
+        `<button type="button" class="wf-opt" data-f="${d.key}" data-v="${H.esc(v)}" aria-pressed="${draft[d.key]===v}">${H.esc(l)}${n!=null?` <span>${n}</span>`:''}</button>`).join('')}</fieldset>`).join('');
+      const n = countFor(draft); apply.textContent = n ? `${n}건 보기` : '조건에 맞는 결과 없음';
+    };
+    const commit = ()=>{ page = 1; render(); syncURL(); };
+    body.onclick = (e)=>{
+      const b = e.target.closest('.wf-opt'); if(!b) return;
+      const k = b.dataset.f, v = b.dataset.v; draft[k] = draft[k]===v ? '' : v; paint();
+      const again = [...body.querySelectorAll('.wf-opt')].find(x=>x.dataset.f===k && x.dataset.v===v); if(again) again.focus();
+    };
+    H.qa('#lFilter [data-open]').forEach(b=> b.onclick=()=>{
+      shown = b.dataset.open ? FILTERS.filter(d=>d.key===b.dataset.open) : FILTERS;
+      draft = Object.assign({}, f);
+      H.q('#wfTitle').textContent = b.dataset.open ? shown[0].name : '필터 전체';
+      paint(); dlg.showModal();
     });
-    H.q('#lFilter .lf-sort select').onchange = (e)=>{ sort = e.target.value; page = 1; render(); syncURL(); };
-    const lf = H.q('#lFilter .lf'), tg = H.q('#lFilter .lf-toggle');
-    tg.onclick = ()=>{ const open = !lf.classList.contains('open'); lf.classList.toggle('open', open); tg.setAttribute('aria-expanded', String(open));
-      if(open) H.qa('#lFilter .lf-chips').forEach(H.chipRail); };
-    H.qa('#lFilter .lf-more').forEach(b=> b.onclick=()=>{
-      const r = b.closest('.lf-row'), all = !r.classList.contains('all');
-      r.classList.toggle('all', all); b.setAttribute('aria-expanded', String(all));
-      b.textContent = all ? '접기' : `+${r.querySelectorAll('.lf-extra').length}`;
+    H.q('#lFilter .wf-close').onclick = ()=> dlg.close();
+    dlg.onclick = (e)=>{ if(e.target===dlg) dlg.close(); };   // 바깥(어두운 부분) 누르면 닫기
+    H.q('#lFilter .wf-clear').onclick = ()=>{ shown.forEach(d=> draft[d.key]=''); paint(); };
+    apply.onclick = ()=>{ FILTERS.forEach(d=> f[d.key] = draft[d.key]||''); dlg.close(); commit(); };
+    H.qa('#lFilter .wf-quick').forEach(b=> b.onclick=()=>{
+      const k = b.dataset.f; f[k] = f[k]===b.dataset.v ? '' : b.dataset.v; commit();
     });
-    H.q('#lFilter .lf-reset').onclick = ()=>{
+    H.qa('#lFilter [data-sort]').forEach(b=> b.onclick=()=>{ sort = b.dataset.sort; commit(); });
+    H.q('#lFilter .wf-reset').onclick = ()=>{
       FILTERS.forEach(d=> f[d.key]=''); sort = 'recent'; activeCat = '전체'; page = 1;
       renderFilter(); render(); syncURL();
     };
@@ -177,30 +200,21 @@
   // 선택 상태·건수·초기화 버튼을 현재 값에 맞춘다
   function syncAdFilter(n){
     if(type!=='ad') return;
-    H.qa('#lFilter .lf-chip').forEach(b=>{
-      const on = f[b.dataset.f]===b.dataset.v;
-      b.classList.toggle('on', on); b.setAttribute('aria-pressed', String(on));
+    H.qa('#lFilter .wf-drop').forEach(b=>{
+      const d = FILTERS.find(x=>x.key===b.dataset.open), v = f[d.key];
+      b.classList.toggle('on', !!v); b.textContent = v ? valueText(d, v) : d.name;
+      b.setAttribute('aria-label', v ? `${d.name} 필터, ${valueText(d, v)} 적용됨` : `${d.name} 필터`);
     });
-    const ss = H.q('#lFilter .lf-sort select'); ss.value = sort; ss.classList.toggle('is-set', sort!=='recent');
-    H.qa('#lFilter .lf-chips').forEach(H.chipRail);
-    // 고른 값은 접힌 상태에서도 막대에 'x' 알약으로 보이고, 누르면 그 조건만 푼다
-    const act = H.q('#lFilter .lf-active');
-    act.innerHTML = FILTERS.filter(d=>f[d.key]).map(d=>{
-      const o = d.opts.find(([v])=>v===f[d.key]);
-      // 점수 구간은 '높음 50+'만으론 어느 점수인지 모르니 이름을 붙인다(광고 의심 높음)
-      const txt = (d.key==='ad'||d.key==='trust') ? `${d.name} ${o[1].split(' ')[0]}` : o[1];
-      return `<button type="button" class="lf-pill" data-f="${d.key}" aria-label="${H.esc(d.name)} ${H.esc(o[1])} 조건 풀기">${H.esc(txt)}</button>`;
-    }).join('');
-    H.qa('#lFilter .lf-pill').forEach(b=> b.onclick=()=>{ f[b.dataset.f]=''; page = 1; render(); syncURL(); });
-    // 접힌 부분의 지역을 골랐으면 그 줄은 펼쳐 둔다
-    H.qa('#lFilter .lf-extra.on').forEach(b=>{ const r = b.closest('.lf-row'); if(!r.classList.contains('all')) r.querySelector('.lf-more').click(); });
-    const k = activeCount(), badge = H.q('#lFilter .lf-n');
+    H.qa('#lFilter .wf-quick').forEach(b=>{
+      const on = f[b.dataset.f]===b.dataset.v; b.classList.toggle('on', on); b.setAttribute('aria-pressed', String(on));
+    });
+    H.qa('#lFilter [data-sort]').forEach(b=> b.setAttribute('aria-pressed', String(b.dataset.sort===sort)));
+    const k = activeCount(), badge = H.q('#lFilter .wf-n');
     badge.hidden = !k; badge.textContent = k;
-    tgLabel(k);
-    H.q('#lFilter .lf-count').innerHTML = `<b>${n}</b>건<span class="lf-of">${n!==ALL.length?` / 전체 ${ALL.length}건`:''}</span>`;
-    H.q('#lFilter .lf-reset').hidden = !(k || sort!=='recent' || activeCat!=='전체');
+    H.q('#lFilter .wf-count').innerHTML = `<b>${n}</b>건${n!==ALL.length?` <span>/ 전체 ${ALL.length}건</span>`:''}`;
+    H.q('#lFilter .wf-reset').hidden = !(k || sort!=='recent' || activeCat!=='전체');
+    H.chipRail(H.q('#lFilter .wf-bar'));
   }
-  const tgLabel = (k)=> H.q('#lFilter .lf-toggle').setAttribute('aria-label', k ? `필터, ${k}개 적용` : '필터');
 
   // 카테고리 필터 (트렌드·광고 분석 공용)
   function renderFilter(){

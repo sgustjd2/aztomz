@@ -230,8 +230,8 @@
     host.className='mast';
     const menu = [
       ['index.html','오늘의 한끗','house'],
-      ['list.html?type=ad','광고일까 진짜일까','scan-search'],
-      ['list.html?type=trend','요즘 트렌드','chart-no-axes-combined'],
+      ['list.html?type=ad','광고일까 진짜일까','scan-search','ad'],
+      ['list.html?type=trend','요즘 트렌드','chart-no-axes-combined','trend'],
       ['dictionary.html','MZ 사전','book-open']
     ];
     const categories = H.NAV_CATEGORIES;
@@ -256,9 +256,9 @@
       <button class="nav-toggle" type="button" aria-label="메뉴 열기" aria-expanded="false" aria-controls="mastPanel"><span class="nav-icon icon-menu" aria-hidden="true"></span></button>
       <div class="mast-panel" id="mastPanel" tabindex="-1">
         <button class="drawer-close" type="button" aria-label="메뉴 닫기"><span class="nav-icon icon-x" aria-hidden="true"></span></button>
-        <nav id="mastNav" aria-label="주 메뉴">${menu.map(([url,label,icon])=>`<a href="${url}" title="${label}" aria-label="${label}"><span class="nav-icon icon-${icon}" aria-hidden="true"></span><span class="nav-label">${label}</span></a>`).join('')}</nav>
+        <nav id="mastNav" aria-label="주 메뉴">${menu.map(([url,label,icon,mm])=>`<a href="${url}" title="${label}" aria-label="${label}"${mm?` data-mm="${mm}"`:''}><span class="nav-icon icon-${icon}" aria-hidden="true"></span><span class="nav-label">${label}</span></a>${mm?`<button type="button" class="mm-btn" data-mm="${mm}" aria-controls="mm-${mm}" aria-expanded="false" aria-label="${label} 하위 메뉴"></button>`:''}`).join('')}</nav>
         <nav class="nav-categories" aria-label="트렌드 카테고리"><span class="nav-section-label">카테고리</span>${categories.map(([cat,icon])=>`<a href="list.html?type=trend&cat=${encodeURIComponent(cat)}"><span class="nav-icon icon-${icon}" aria-hidden="true"></span><span class="nav-label">${H.esc(cat)}</span></a>`).join('')}</nav>
-        <button class="theme-toggle" type="button" aria-label="테마 전환"></button>
+        <div class="mast-actions"><button class="theme-toggle" type="button" aria-label="테마 전환"></button><a class="mast-cta" href="list.html?type=ad">광고 분석 보기</a></div>
       </div>
     </div><button class="nav-scrim" type="button" aria-label="메뉴 닫기" tabindex="-1" hidden></button>`;
     H.syncMastCurrent();
@@ -303,8 +303,76 @@
     });
     compact.addEventListener('change',()=>{const focusInside=panel.contains(document.activeElement);setOpen(false,false);if(compact.matches && focusInside)tg.focus();});
     sync();
+    H.megaMenu(host, compact);
     const tb=host.querySelector('.theme-toggle');
     if(tb){ H.updateThemeBtn(H.theme.get()); tb.addEventListener('click',()=> H.theme.toggle()); }
+  };
+
+  /* ---------- 넓은 화면 헤더: 펼침 패널과 스크롤 시 숨김 ---------- */
+  const MM_DESC = { '맛집':'웨이팅·가격 후기', '디저트':'신상·편의점 디저트', '카페·핫플':'요즘 가는 공간', '신조어':'뜻과 쓰임',
+    '노래·챌린지':'지금 따라 하는 것', '패션':'입는 유행', 'AI 프롬프트':'복사해 쓰는 프롬프트' };
+  const megaHTML = (kind)=>{
+    const ad = kind==='ad';
+    const list = TRENDS.filter(t=>t.type===(ad?'신뢰분석':'트렌드'))
+      .sort((a,b)=>(b.analyzedAt||'').localeCompare(a.analyzedAt||''));
+    const link = (href, title, desc, n)=>`<a class="mm-link" href="${href}"><b>${H.esc(title)}${n!=null?` <i>${n}</i>`:''}</b><span>${H.esc(desc)}</span></a>`;
+    const cat = (c)=>{ const n = list.filter(t=>t.cat===c).length;
+      return n ? link(`list.html?type=${kind}&cat=${encodeURIComponent(c)}`, c, MM_DESC[c]||'', n) : ''; };
+    const col = (head, body)=>`<div class="mm-col"><span class="mm-h">${head}</span>${body}</div>`;
+    const cols = ad
+      ? col('분야', ['맛집','디저트','카페·핫플'].map(cat).join(''))
+        + col('판단별', link('list.html?type=ad&label=good','믿고 가볼 만함','후기를 믿을 만한 곳')
+          + link('list.html?type=ad&label=warn','주의 필요','광고 신호가 보이는 곳')
+          + link('list.html?type=ad&sort=trust','후기 신뢰 높은순','신뢰 점수부터 보기'))
+      : col('먹고 놀기', ['맛집','디저트','카페·핫플','패션'].map(cat).join(''))
+        + col('말·콘텐츠', ['신조어','노래·챌린지','AI 프롬프트'].map(cat).join(''));
+    const top = list.find(t=>H.coverImg(t)) || list[0];   // 사진이 있는 가장 최근 항목
+    return `<div class="mm" id="mm-${kind}" data-mm="${kind}" hidden>
+      ${top?`<a class="mm-feature" href="${H.detailHref(top.id)}">${H.coverHTML(top,{inline:true})}<span><small>${ad?'최신 광고 분석':'최신 트렌드'}</small><b>${H.esc(top.title)}</b></span></a>`:''}
+      ${cols}</div>`;
+  };
+  H.megaMenu = (host, compact)=>{
+    host.insertAdjacentHTML('beforeend', megaHTML('ad') + megaHTML('trend'));
+    const triggers = [...host.querySelectorAll('#mastNav [data-mm]')], panels = [...host.querySelectorAll('.mm')];
+    let cur = null, timer = 0;
+    const show = (kind)=>{
+      clearTimeout(timer); if(compact.matches) kind = null; cur = kind;
+      panels.forEach(p=> p.hidden = p.dataset.mm!==kind);
+      host.querySelectorAll('.mm-btn').forEach(b=> b.setAttribute('aria-expanded', String(b.dataset.mm===kind)));
+      triggers.forEach(t=> t.classList.toggle('mm-on', t.dataset.mm===kind));
+    };
+    const later = ()=>{ clearTimeout(timer); timer = setTimeout(()=>show(null), 180); };
+    [...triggers, ...panels].forEach(el=>{
+      el.addEventListener('pointerenter', (e)=>{ if(e.pointerType==='mouse') show(el.dataset.mm); });
+      el.addEventListener('pointerleave', (e)=>{ if(e.pointerType==='mouse') later(); });
+    });
+    host.querySelectorAll('.mm-btn').forEach(b=> b.addEventListener('click', (e)=>{
+      const open = cur!==b.dataset.mm || e.detail===0 ? b.dataset.mm : null;   // 키보드(detail 0)는 열고 첫 링크로
+      show(e.detail===0 && cur===b.dataset.mm ? null : open);
+      if(e.detail===0 && cur) { const a = host.querySelector(`#mm-${cur} a`); if(a) a.focus(); }
+    }));
+    host.addEventListener('focusout', (e)=>{ if(cur && e.relatedTarget && !e.relatedTarget.closest('.mm,.mm-btn')) show(null); });
+    document.addEventListener('keydown', (e)=>{
+      if(e.key!=='Escape' || !cur) return;
+      const b = host.querySelector(`.mm-btn[data-mm="${cur}"]`); show(null); if(b) b.focus();
+    });
+    document.addEventListener('click', (e)=>{ if(cur && !host.contains(e.target)) show(null); });
+    compact.addEventListener('change', ()=>show(null));
+    // 아래로 읽어 내려가면 헤더를 접고, 올리면 다시 보인다(메뉴를 쓰는 중이면 그대로)
+    let last = global.scrollY, ticking = false;
+    const onScroll = ()=>{
+      ticking = false;
+      const y = Math.max(0, global.scrollY), d = y - last;
+      document.body.classList.toggle('mast-scrolled', y > 8);
+      if(Math.abs(d) < 6) return;
+      last = y;
+      const hide = d > 0 && y > 160 && !host.contains(document.activeElement);
+      if(hide) show(null);
+      document.body.classList.toggle('mast-hidden', hide);
+    };
+    global.addEventListener('scroll', ()=>{ if(!ticking){ ticking = true; global.requestAnimationFrame(onScroll); } }, { passive:true });
+    host.addEventListener('focusin', ()=> document.body.classList.remove('mast-hidden'));
+    onScroll();
   };
 
   /* 정적 상세 페이지는 <base href="/"> 라 '#섹션' 링크가 홈으로 가지 않게 같은 페이지 안에서 스크롤한다 */
