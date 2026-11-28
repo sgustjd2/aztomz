@@ -74,12 +74,16 @@
   H.feedRowHTML = (t)=>{
     const ad = t.type==='신뢰분석';
     const score = (v)=> Math.max(0, Math.min(100, Number(v)||0));
-    const date = t.analyzedAt ? `<span>분석 ${H.esc(H.fmtISO(t.analyzedAt))}</span>` : '';
+    // 올해 분석이면 월.일만(11.27), 지난해면 연도까지
+    const ymd = t.analyzedAt ? H.fmtISO(t.analyzedAt) : '';
+    const date = ymd ? `<span class="fr-date">분석 ${H.esc(ymd.slice(0,4)===String(new Date().getFullYear()) ? ymd.slice(5) : ymd)}</span>` : '';
     const meta = ad
       ? `<span class="fr-label ${H.esc(t.labelCls||'mid')}">${H.esc(t.label||'')}</span>`
       : `<span class="fr-stage">${H.esc(t.stage||'')}</span>`;
+    // 점수는 눈여겨볼 구간일 때만 색을 입힌다(목록 필터 구간과 같은 기준): 광고 의심 50+ 빨강, 후기 신뢰 60+ 초록·40 미만 빨강
+    const a = score(t.ad), tr = score(t.trust);
     const foot = ad
-      ? `<span class="fr-score ad">광고 의심 <b>${score(t.ad)}</b></span><span class="fr-score trust">후기 신뢰 <b>${score(t.trust)}</b></span>${date}`
+      ? `<span class="fr-score${a>=50?' hi':''}">광고 의심 <b>${a}</b></span><span class="fr-score${tr>=60?' ok':tr<40?' hi':''}">후기 신뢰 <b>${tr}</b></span>${date}`
       : `${date}${t.pureKorean?`<span class="fr-kr">우리말 · ${H.esc(t.pureKorean.split('(')[0].trim())}</span>`:''}${t.prompt?'<span>프롬프트 포함</span>':''}`;
     return `
     <a class="feed-row" href="${H.detailHref(t.id)}">
