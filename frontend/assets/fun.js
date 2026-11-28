@@ -1,5 +1,5 @@
 /* 한끗 — 재미 요소 모션그래픽 (직접 그린 SVG + CSS, 외부 라이브러리 없음)
-   · 페이지 머리말 오른쪽의 장면: 홈=마스코트, 광고 분석=돋보기, 트렌드=쑥쑥 막대, 사전=말풍선, 펄스=심전도
+   · 페이지 머리말 오른쪽의 장면: 홈=마스코트, 광고 분석=돋보기, 트렌드=쑥쑥 막대, 펄스=심전도
    · 상세: 점수 숫자 올라가기 + 게이지 차오름, 판정 도장
    · 공유 버튼: 반짝이 터짐
    모두 장식(aria-hidden)이고 '동작 줄이기' 설정에선 움직이지 않는다(그림은 완성 상태로 보임). 모양·움직임은 fun.css. */
@@ -19,10 +19,6 @@
   var badge = function (x, y, text, cls) {
     return '<g transform="translate(' + x + ' ' + y + ')"><g class="fx-badge ' + cls + '"><rect x="-27" y="-12" width="54" height="24" rx="12"/><text y="4.5" text-anchor="middle">' + text + '</text></g></g>';
   };
-  var bubble = function (x, y, wd, text, cls) {
-    return '<g transform="translate(' + x + ' ' + y + ')"><g class="fx-bubble ' + cls + '"><path d="M12 0h' + (wd - 24) + 'a12 12 0 0 1 12 12v12a12 12 0 0 1-12 12H26l-11 10 2-10h-5A12 12 0 0 1 0 24V12A12 12 0 0 1 12 0z"/><text x="' + wd / 2 + '" y="23" text-anchor="middle">' + text + '</text></g></g>';
-  };
-
   var SCENES = {
     ad:
       review(18, 8, 'fx-c1') + review(44, 58, 'fx-c2') + review(18, 108, 'fx-c3') +
@@ -35,9 +31,6 @@
       }).join('') +
       '<path class="fx-line" pathLength="1" d="M42 88 90 64l40 10 52-52"/><path class="fx-tip" d="M166 20h18v18"/>' +
       star(210, 28, 1.2, 'fx-s1') + star(30, 44, .9, 'fx-s2') + star(138, 22, .7, 'fx-s3'),
-    dict:
-      bubble(14, 18, 86, '갓생', 'fx-u1') + bubble(124, 40, 96, 'ㅋㅋㅋ', 'fx-u2') + bubble(42, 92, 104, '이게 뭐야', 'fx-u3') +
-      star(116, 20, .9, 'fx-s1') + star(196, 118, 1.1, 'fx-s2'),
     pulse:
       '<path class="fx-base" d="M14 84h212"/>' +
       '<path class="fx-beat" pathLength="1" d="M14 84h46l12-26 18 56 18-82 18 66 12-14h30l10-18 12 18h36"/>' +
@@ -51,7 +44,7 @@
 
   function hero() {
     var page = location.pathname.split('/').pop() || 'index.html';
-    var key = page === 'index.html' ? 'home' : page === 'dictionary.html' ? 'dict' : page === 'pulse.html' ? 'pulse'
+    var key = page === 'index.html' ? 'home' : page === 'pulse.html' ? 'pulse'
       : page === 'list.html' ? (new URLSearchParams(location.search).get('type') === 'ad' ? 'ad' : 'trend') : null;
     var lead = key && d.querySelector('main .lead');
     if (!lead || lead.querySelector('.fx-hero')) return;

@@ -96,7 +96,8 @@
   .shops-note{font-size:12.5px;color:var(--ink-2);margin:9px 0 2px}
 </style>
 <link rel="stylesheet" href="assets/detail.css?v=cards2-20261128" />
-<link rel="stylesheet" href="assets/fun.css?v=fun2-20261128" />
+<link rel="stylesheet" href="assets/fun.css?v=dict-20261128" />
+<link rel="stylesheet" href="assets/dict.css?v=dict2-20261128" />
 <meta property="og:url" content="https://az2mz.vercel.app/trend/krispy-kreme-lets-get-merry-holiday-donuts-2026.html" />
 <link rel="canonical" href="https://az2mz.vercel.app/trend/krispy-kreme-lets-get-merry-holiday-donuts-2026.html" />
 <script type="application/ld+json" data-seo-ld>{"@context":"https://schema.org","@graph":[{"@type":"Article","headline":"크리스피크림 ‘Let’s Get MERRY!’ 홀리데이 도넛 5종","description":"광고 의심도 35·후기 신뢰도 15(추정치). 크리스피크림 도넛이 겨울 시즌 신제품 ‘Let’s Get MERRY!’ 5종을 선보였어요. 도넛을 모으면 크리스마스 케이크처럼 연출할 수 있도록 구성했지만, 구매자 반응이나 만족도는 확인된 자료가 부족해요.","image":"https://az2mz.vercel.app/og.png","inLanguage":"ko-KR","articleSection":"디저트","keywords":"디저트, 크리스피크림, 홀리데이, 도넛, 겨울시즌","datePublished":"2026-11-20","dateModified":"2026-11-20","author":{"@type":"Organization","name":"한끗","url":"https://az2mz.vercel.app/"},"publisher":{"@type":"Organization","name":"한끗","url":"https://az2mz.vercel.app/"},"mainEntityOfPage":"https://az2mz.vercel.app/trend/krispy-kreme-lets-get-merry-holiday-donuts-2026.html"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://az2mz.vercel.app/"},{"@type":"ListItem","position":2,"name":"광고일까 진짜일까","item":"https://az2mz.vercel.app/list.html?type=ad"},{"@type":"ListItem","position":3,"name":"크리스피크림 ‘Let’s Get MERRY!’ 홀리데이 도넛 5종","item":"https://az2mz.vercel.app/trend/krispy-kreme-lets-get-merry-holiday-donuts-2026.html"}]}]}</script>
@@ -153,7 +154,8 @@
 
 <script src="data/trends.js"></script>
 <script src="assets/app.js?v=ref2-20261128"></script>
-<script src="assets/fun.js?v=fun2-20261128"></script>
+<script src="assets/word-art.js?v=dict-20261128"></script>
+<script src="assets/fun.js?v=dict-20261128"></script>
 <script>
   H.boot();
   const id = H.param('id');
@@ -335,7 +337,66 @@
       <div class="shops-note">맛집으로 소문난 곳 위주로 골랐어요. 메뉴·가격·영업은 방문 전 다시 확인하세요.</div>`;
   }
 
+  // 신조어(MZ 사전 단어) 상세: 뜻 → 대화 예시 → 출처의 읽기 구성, 오른쪽에 단어 그림과 함께 읽는 말
+  function renderWord(){
+    const words = H.TRENDS.filter(x=>x.id!==t.id && x.cat==='신조어')
+      .sort((a,b)=> (H.isFreshSlang(b)-H.isFreshSlang(a)) || (b.analyzedAt||'').localeCompare(a.analyzedAt||''));
+    const shares = x=> (x.tags||[]).filter(g=>g!=='신조어' && (t.tags||[]).includes(g)).length;
+    const related = words.map((x,i)=>[x,shares(x),i]).sort((a,b)=> b[1]-a[1] || a[2]-b[2]).slice(0,5).map(a=>a[0]);
+    let no = 0; const num = (en)=> `<span class="wd-no">${String(++no).padStart(2,'0')} / ${en}</span>`;
+    main.innerHTML = `<div class="word-page">
+      <div class="wd-top"><a class="wd-back" href="dictionary.html">MZ 사전</a>
+        <form class="wd-find" action="dictionary.html" role="search"><input type="search" name="q" placeholder="다른 말도 찾아보기" aria-label="사전에서 다른 말 찾기"><button type="submit" aria-label="찾기">→</button></form></div>
+      <header class="wd-hero">
+        <span class="wd-eyebrow">신조어${t.buzz?` · ${H.esc(t.buzz)}`:''}</span>
+        <h1 class="d-title">${H.esc(t.title)}</h1>
+        ${t.def?`<p class="wd-def">${H.esc(t.def)}</p>`:''}
+        <div class="wd-meta"><b>한끗 편집</b><span>분석 ${H.esc(H.fmtISO(t.analyzedAt||t.collectedAt))}</span><span>${H.esc(t.label||'')}</span>
+          <button class="detail-action" id="shareBtn" type="button">${detailIcon("share")}<span>공유</span></button></div>
+        <div class="wd-hero-art">${H.wordArt(t)}</div>
+      </header>
+      ${H.freshness(t.analyzedAt).cls==='stale' ? `<div class="stale-banner">${detailIcon("clock")}<span>오래된 분석이에요. 유행어는 빨리 바뀌니 지금의 쓰임을 다시 확인하세요.</span></div>`:''}
+      <div class="wd-cols">
+        <div class="wd-main">
+          <nav class="detail-jumps" aria-label="상세 내용 바로가기"><a href="#judgment">뜻</a>${t.example?'<a href="#example">대화 예시</a>':''}<a href="#recommendations">이럴 때</a><a href="#sources">출처</a></nav>
+          <section class="wd-sec" id="judgment">${num('MEANING')}<h2>이런 뜻이에요.</h2>
+            <p>${H.esc(t.verdict)}</p>
+            ${t.stage?`<div class="wd-stage"><b>유행 단계 ${H.esc(t.stage)}</b><span>${H.esc(t.stageMsg||'')}</span></div>`:''}
+            ${videoBlock()}${galleryBlock()}${articleBlock()}
+          </section>
+          ${t.example?`<section class="wd-sec" id="example">${num('IN CONVERSATION')}<h2>대화에서는 이렇게.</h2>
+            <div class="wd-chat"><span class="wd-who" aria-hidden="true">A</span><p>${H.esc(t.example)}</p></div>
+            <p class="wd-note">뜻을 보여 주기 위한 예문이에요.</p>
+            ${t.pureKorean?`<div class="pure-kr"><b>예쁜 우리말로 바꾼다면</b> · ${H.esc(t.pureKorean)}</div>`:''}</section>`
+            : (t.pureKorean?`<section class="wd-sec"><div class="pure-kr"><b>예쁜 우리말로 바꾼다면</b> · ${H.esc(t.pureKorean)}</div></section>`:'')}
+          <section class="wd-sec" id="recommendations">${num('WHEN TO USE')}<h2>이럴 때 어때요.</h2>
+            <ul class="recs">${(t.recs||[]).map(r=>`<li><span>${H.esc(r[0])}</span><span class="v ${r[2]?'ok':''}">${H.esc(r[1])}</span></li>`).join('')}</ul></section>
+          <section class="wd-sec">
+            <details class="src" id="sources"><summary>${detailIcon("link")} 참고 출처 <span class="source-count">${t.src.length}개</span></summary>
+              <div class="src-list">${t.src.map(s=>`<a href="${s[1]}" target="_blank" rel="noopener"><span>${H.esc(s[0])}</span>${detailIcon("arrow")}</a>`).join('')}</div></details></section>
+        </div>
+        <aside class="wd-side" aria-label="함께 읽는 말">
+          <div class="wd-art">${H.wordArt(t)}</div>
+          <p>뜻과 예문을 함께 읽으면 말의 느낌을 더 쉽게 알 수 있어요. 신조어는 빨리 변하니 분석일을 함께 봐 주세요.</p>
+          <h2>함께 읽는 말</h2>
+          <ul class="wd-related">${related.map(x=>`<li><a href="${H.detailHref(x.id)}">${H.wordArt(x)}<b>${H.esc(x.title)}</b></a></li>`).join('')}</ul>
+        </aside>
+      </div>
+      <div class="disc footer-disclaimer">${detailIcon("shield")}<span>뜻은 공개 출처를 확인해 정리한 설명이에요. 지역·모임에 따라 다르게 쓰일 수 있어요.</span></div>
+      <footer class="site"><a class="fwm footer-brand" href="index.html" aria-label="한끗 홈">한<b>끗</b></a><div class="footer-copy">AZ와 MZ는 한 끗 차이 · 트렌드 번역소</div></footer>
+    </div>`;
+    bindShare();
+  }
+
+  function bindShare(){
+    H.q('#shareBtn').onclick = async ()=>{
+      const text=`[한끗] ${t.title} — ${t.type==='신뢰분석'?`광고 ${t.ad}/신뢰 ${t.trust}`:t.stage} · ${t.label}`;
+      await H.share({title:'한끗', text, url:location.href});
+    };
+  }
+
   function render(){
+    if(t.type!=='신뢰분석' && t.cat==='신조어') return renderWord();
     const sameCat = H.TRENDS.filter(x=>x.id!==t.id && x.cat===t.cat);
     const related = (sameCat.length ? sameCat : H.TRENDS.filter(x=>x.id!==t.id)).slice(0,2);
     const relatedTitle = t.cat==='신조어' ? '관련 사전 항목' : '함께 보기';
@@ -394,10 +455,7 @@
       moreBtn.textContent = open ? '접기' : `가게 ${moreBtn.dataset.more}곳 더 보기`;
       if(!open) H.q('#places').scrollIntoView({block:'start'});
     };
-    H.q('#shareBtn').onclick = async ()=>{
-      const text=`[한끗] ${t.title} — ${t.type==='신뢰분석'?`광고 ${t.ad}/신뢰 ${t.trust}`:t.stage} · ${t.label}`;
-      await H.share({title:'한끗', text, url:location.href});
-    };
+    bindShare();
   }
 
 </script>

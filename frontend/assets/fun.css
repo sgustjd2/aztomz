@@ -25,12 +25,9 @@ body main section.lead.has-fx.has-fx{position:relative;padding-right:112px;min-h
 .fx-hero .fx-beat{fill:none;stroke:var(--ad);stroke-width:4;stroke-linecap:round;stroke-linejoin:round}
 .fx-hero .fx-dot{fill:var(--ad)}
 .fx-hero .fx-star{fill:#ffb020}
-.fx-hero .fx-bubble path{fill:var(--card);stroke:var(--ink);stroke-width:2;stroke-linejoin:round}
-.fx-hero .fx-bubble text{fill:var(--ink);font-size:15px;font-weight:800}
-.fx-hero .fx-u2 path{fill:var(--ad-soft)} .fx-hero .fx-u3 path{fill:var(--trust-soft)}
 .fx-hero .fx-ring{fill:none;stroke:color-mix(in srgb,var(--ad) 40%,transparent);stroke-width:2}
 .fx-hero .fx-ring2{opacity:0}
-.fx-hero :is(.fx-card,.fx-badge,.fx-bubble,.fx-bar,.fx-star,.fx-mascot,.fx-ring,.fx-dot){transform-box:fill-box;transform-origin:center}
+.fx-hero :is(.fx-card,.fx-badge,.fx-bar,.fx-star,.fx-mascot,.fx-ring,.fx-dot){transform-box:fill-box;transform-origin:center}
 .fx-hero .fx-bar{transform-origin:bottom}
 
 /* ---------- 상세: 판정 도장 ---------- */
@@ -74,9 +71,6 @@ body main section.lead.has-fx.has-fx{position:relative;padding-right:112px;min-h
   .fx-trend .fx-bar2{animation-delay:.12s} .fx-trend .fx-bar3{animation-delay:.24s} .fx-trend .fx-bar4{animation-delay:.36s}
   .fx-trend .fx-line{stroke-dasharray:1;animation:fx-draw 4.8s ease-in-out infinite}
   .fx-trend .fx-tip{animation:fx-tip 4.8s ease infinite}
-  /* 사전: 말풍선이 번갈아 통통 */
-  .fx-dict .fx-bubble{animation:fx-talk 4.5s var(--ease-pop,ease) infinite}
-  .fx-dict .fx-u2{animation-delay:.7s} .fx-dict .fx-u3{animation-delay:1.4s}
   /* 펄스: 심전도가 흐름 */
   .fx-pulse .fx-beat{stroke-dasharray:1;animation:fx-draw 2.8s linear infinite}
   .fx-pulse .fx-dot{animation:fx-beat-dot 2.8s ease infinite}
@@ -119,7 +113,6 @@ body main section.lead.has-fx.has-fx{position:relative;padding-right:112px;min-h
 @keyframes fx-grow{0%{transform:scaleY(.15)}22%,88%{transform:scaleY(1)}100%{transform:scaleY(.15)}}
 @keyframes fx-draw{0%{stroke-dashoffset:1}55%,90%{stroke-dashoffset:0}100%{stroke-dashoffset:-1}}
 @keyframes fx-tip{0%,45%{opacity:0}55%,90%{opacity:1}100%{opacity:0}}
-@keyframes fx-talk{0%{opacity:0;transform:scale(.4) rotate(-8deg)}12%,80%{opacity:1;transform:none}46%{transform:translateY(-5px)}90%,100%{opacity:0;transform:scale(.85)}}
 @keyframes fx-beat-dot{0%,45%{transform:scale(.6);opacity:.4}55%{transform:scale(1.8);opacity:1}75%,100%{transform:scale(1);opacity:1}}
 @keyframes fx-bob{0%,100%{transform:translateY(3px) rotate(-3deg)}50%{transform:translateY(-7px) rotate(4deg)}}
 @keyframes fx-ripple{0%{transform:scale(.75);opacity:1}100%{transform:scale(1.45);opacity:0}}

@@ -29,111 +29,97 @@
 <link rel="apple-touch-icon" href="apple-touch-icon.png" />
 <link rel="manifest" href="site.webmanifest" />
 <link rel="stylesheet" href="assets/styles.css?v=grid3-20261128" />
-<style>
-  .lead{padding:36px 0 8px;border-bottom:1px solid var(--line)}
-  .lead h1{font-size:38px;font-weight:800;line-height:1.12;letter-spacing:0;margin:12px 0 10px}
-  .lead h1 .hl{color:var(--pulse)}
-  .lead p{font-size:15.5px;color:var(--body);max-width:44ch;margin:0;word-break:keep-all}
-  @media(max-width:520px){.lead h1{font-size:29px}}
-  @media(max-width:380px){.lead h1{font-size:26px}}
-  .dict-tools{display:flex;gap:10px;align-items:center;margin:18px 0 6px;flex-wrap:wrap}
-  .dict-search{flex:1;min-width:200px;padding:11px 14px;border:1.5px solid var(--line);border-radius:9px;
-    background:var(--card);color:var(--ink);font-size:15px;font-family:inherit}
-  .dict-search:focus{outline:none;border-color:var(--pulse)}
-  .dict-count{font-size:13px;color:var(--ink-2);font-family:var(--serif)}
-  /* 단어 카드 그리드 */
-  .dlist{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin:8px 0 28px;align-items:start}
-  .dword{display:flex;flex-direction:column;background:var(--card);border:1px solid var(--line);border-radius:11px;
-    padding:14px;text-decoration:none;color:inherit;transition:border-color .14s,background .14s}
-  .dword:hover{border-color:#c5ceda;background:var(--paper-soft)}
-  .dw-top{display:flex;align-items:center;gap:7px;flex-wrap:wrap;margin-bottom:7px}
-  .dw-term{font-size:18px;font-weight:800;line-height:1.35;letter-spacing:-.02em;color:var(--ink);margin-right:auto}
-  .dw-def{margin:0;font-size:13.5px;color:var(--body);line-height:1.55;word-break:keep-all}
-  .dw-ex{margin-top:9px;font-size:12.5px;color:var(--ink-2);background:transparent;border-left:2px solid var(--line);
-    padding:2px 0 2px 9px;line-height:1.5;word-break:keep-all}
-  .dw-kr{margin-top:8px;font-size:12.5px;color:var(--trust);font-weight:700}
-  .dw-more{margin-top:8px;font-size:11.5px;color:var(--ink-2);font-weight:700}
-  .dw-arch{font-size:10.5px;font-weight:700;color:var(--ink-2);background:var(--paper-2);
-    border:1px solid var(--line);border-radius:4px;padding:1px 6px}
-  .dword.is-arch{opacity:.62}
-  .dword.is-arch:hover{opacity:.85}
-  .dict-empty{padding:40px 0;text-align:center;color:var(--ink-2)}
-</style>
-<link rel="stylesheet" href="assets/fun.css?v=fun2-20261128" />
+<link rel="stylesheet" href="assets/fun.css?v=dict-20261128" />
+<link rel="stylesheet" href="assets/dict.css?v=dict2-20261128" />
 </head>
-<body>
+<body class="dict-page">
 <a class="skip-link" href="#main">본문으로 건너뛰기</a>
   <div data-mast></div>
   <main class="wrap" id="main" tabindex="-1">
 
-    <section class="lead">
-      <span class="kicker">MZ 사전</span>
-      <h1>요즘 말, <span class="hl">1초에 해석</span>.</h1>
-      <p>유행어·밈·신조어를 뜻·예쁜 우리말·출처까지 정리했어요. 한끗이 <b>출처를 확인한 정확한 뜻</b>만 담습니다 — 떠도는 ‘대충 뜻’과 다릅니다.</p>
-      <div class="freshline" id="freshline"></div>
+    <section class="dx-hero">
+      <div>
+        <span class="dx-eyebrow">MZ 사전</span>
+        <h1>요즘 말,<br><em>1초에</em> 해석.</h1>
+        <p class="dx-lead">유행어·밈·신조어를 뜻·예쁜 우리말·출처까지 정리했어요. 한끗은 <b>출처를 확인한 뜻</b>만 담아요.</p>
+        <form class="dx-search" id="dxForm" role="search">
+          <input id="q" type="search" placeholder="어떤 말이 궁금해요?" aria-label="사전 검색" autocomplete="off">
+          <button type="submit" aria-label="검색 결과로 이동">→</button>
+        </form>
+        <div class="dx-chips" id="dxChips"></div>
+        <p class="dx-stat" id="freshline"></p>
+      </div>
+      <div id="dxToday"></div>
     </section>
 
-    <div class="dict-tools">
-      <input class="dict-search" id="q" type="search" placeholder="단어·뜻으로 검색 (예: 샤갈, 웃음)" aria-label="사전 검색" />
-      <span class="dict-count" id="count"></span>
-    </div>
-
-    <div class="sec-head" id="freshHead"><h2>최신 신조어</h2><span class="note" id="freshNote"></span></div>
-    <div class="dlist" id="freshList"></div>
-
-    <div class="sec-head" id="archHead"><h2>지난 유행어</h2></div>
-    <div class="dlist" id="archList"></div>
-    <div class="dict-empty" id="empty" hidden>그 단어는 아직 사전에 없어요. <a href="index.html" style="color:var(--accent)">전체 트렌드</a>에서 찾아보세요.</div>
+    <section class="dx-list" id="words" aria-labelledby="dxTitle">
+      <div class="dx-head"><h2 id="dxTitle">요즘, 이런 말.</h2><p>낯선 단어를 익숙한 이야기로.</p></div>
+      <div class="dx-tabs" id="dxTabs" role="group" aria-label="단어 분류"></div>
+      <p class="dx-count" id="count" aria-live="polite"></p>
+      <div class="dx-grid" id="dxGrid"></div>
+      <button type="button" class="dx-more" id="dxMore" hidden></button>
+      <div class="dx-empty" id="empty" hidden>그 단어는 아직 사전에 없어요. <a href="index.html" style="color:var(--accent)">전체 트렌드</a>에서 찾아보세요.</div>
+    </section>
 
     <footer class="site"><a class="fwm footer-brand" href="index.html" aria-label="한끗 홈">한<b>끗</b></a><div class="footer-copy">AZ와 MZ는 한 끗 차이 · 트렌드 번역소<br>뜻은 출처를 확인해 싣지만, 신조어는 빨리 변해요. 날짜를 함께 봐주세요.</div></footer>
   </main>
 
 <script src="data/trends.js"></script>
 <script src="assets/app.js?v=ref2-20261128"></script>
-<script src="assets/fun.js?v=fun2-20261128"></script>
+<script src="assets/word-art.js?v=dict-20261128"></script>
+<script src="assets/fun.js?v=dict-20261128"></script>
 <script>
   H.boot();
   const SLANG = H.TRENDS.filter(t=>t.coverCat==='cat-slang' || t.cat==='신조어')
-    // 신선한 단어 먼저, 한물간 건 뒤로(가나다순)
-    .sort((a,b)=> (H.isFreshSlang(b)-H.isFreshSlang(a)) || (a.title||'').localeCompare(b.title||'', 'ko'));
+    // 지금 쓰는 말 먼저, 그 안에서는 최근에 확인한 순
+    .sort((a,b)=> (H.isFreshSlang(b)-H.isFreshSlang(a)) || (b.analyzedAt||'').localeCompare(a.analyzedAt||'') || (a.title||'').localeCompare(b.title||'', 'ko'));
+  const STEP = 24;
+  const TABS = [['all','전체',()=>true], ['fresh','요즘 쓰는 말', H.isFreshSlang], ['arch','지난 유행어', t=>!H.isFreshSlang(t)], ['kr','우리말로도', t=>!!t.pureKorean]];
+  let tab = 'all', shown = STEP, query = H.param('q')||'';
 
-  H.q('#freshline').innerHTML = `단어 ${SLANG.length}개`
-    + (H.generatedAt ? ` · 기준일 ${H.fmtISO(H.generatedAt)}` : '');
-
+  H.q('#freshline').textContent = `단어 ${SLANG.length}개` + (H.generatedAt ? ` · 기준일 ${H.fmtISO(H.generatedAt)}` : '');
   const def = (t)=> t.def || (t.excerpt||'').split(/(?<=[.!?。])\s/)[0] || t.excerpt || '';
-  const row = (t)=>`
-    <a class="dword${H.isFreshSlang(t)?'':' is-arch'}" href="trend.html?id=${encodeURIComponent(t.id)}">
-      <div class="dw-top">
-        <span class="dw-term">${H.esc(t.title)}</span>
-      </div>
-      <p class="dw-def">${H.esc(def(t))}</p>
-      ${t.example?`<div class="dw-ex">"${H.esc(t.example)}"</div>`:''}
-      ${t.pureKorean?`<div class="dw-kr">우리말 · ${H.esc(t.pureKorean)}</div>`:''}
-      <div class="dw-more"><span>자세히·출처 →</span>${t.analyzedAt ? `<time class="dw-date" datetime="${H.esc(t.analyzedAt)}" aria-label="분석일 ${H.fmtISO(t.analyzedAt)}">${H.fmtISO(t.analyzedAt)}</time>` : ''}</div>
-    </a>`;
 
-  function render(q){
-    const k = (q||'').trim().toLowerCase();
-    const list = !k ? SLANG : SLANG.filter(t=>
-      (t.title||'').toLowerCase().includes(k) ||
-      (def(t)||'').toLowerCase().includes(k) ||
-      (t.pureKorean||'').toLowerCase().includes(k) ||
-      (t.tags||[]).some(x=>x.toLowerCase().includes(k)));
-    const fresh = list.filter(H.isFreshSlang);
-    const arch = list.filter(t=>!H.isFreshSlang(t));
-    H.q('#freshList').innerHTML = fresh.map(row).join('');
-    H.q('#archList').innerHTML = arch.map(row).join('');
-    H.q('#freshList').hidden = fresh.length === 0;
-    H.q('#archList').hidden = arch.length === 0;
-    H.q('#freshHead').hidden = fresh.length === 0;
-    H.q('#archHead').hidden = arch.length === 0;
-    H.q('#empty').hidden = list.length>0;
-    const freshN = SLANG.filter(H.isFreshSlang).length;
-    H.q('#freshNote').textContent = k ? `${fresh.length}개` : `${freshN}개`;
-    H.q('#count').textContent = k ? `${list.length} / ${SLANG.length}개` : `최신 ${freshN} · 전체 ${SLANG.length}개`;
+  // 오늘의 말(그림 있는 가장 최근 단어)과 바로가기 칩
+  const today = SLANG.find(t=>t.article && t.article.length) || SLANG[0];
+  const tone = (art)=> art.match(/tone-\w+/)[0];
+  if(today){ const art = H.wordArt(today); H.q('#dxToday').innerHTML = `<a class="dx-today" href="${H.detailHref(today.id)}">
+    <span class="dx-today-art ${tone(art)}"><span class="dx-today-tag">오늘의 말 ↗</span>${art}</span>
+    <span class="dx-today-body"><b>${H.esc(today.title)}</b><span>${H.esc(def(today))}</span></span></a>`; }
+  H.q('#dxChips').innerHTML = '<span>요즘 궁금한 말</span>' + SLANG.filter(t=>t!==today && (t.title||'').length<=10).slice(0,3)
+    .map(t=>`<a href="${H.detailHref(t.id)}">#${H.esc(t.title)}</a>`).join('');
+
+  const card = (t, i)=>{ const art = H.wordArt(t); return `
+    <a class="dx-card" href="${H.detailHref(t.id)}">
+      <span class="dx-art ${tone(art)}">${art}
+        <span class="dx-art-top"><span>${H.isFreshSlang(t)?'요즘 쓰는 말':'지난 유행어'}</span><span>${String(i+1).padStart(2,'0')}</span></span>
+        ${t.pureKorean?`<span class="dx-art-foot">우리말 · ${H.esc(t.pureKorean.split('(')[0].trim())}</span>`:''}
+      </span>
+      <span class="dx-body"><b>${H.esc(t.title)}</b><span>${H.esc(def(t))}</span><i>뜻 자세히 보기 →</i></span>
+    </a>`; };
+
+  function matches(t){
+    const k = query.trim().toLowerCase();
+    return !k || [t.title, def(t), t.pureKorean, ...(t.tags||[])].some(x=>String(x||'').toLowerCase().includes(k));
   }
-  render('');
-  H.q('#q').addEventListener('input', e=> render(e.target.value));
+  function render(){
+    const found = SLANG.filter(matches);
+    H.q('#dxTabs').innerHTML = TABS.map(([key,label,test])=>
+      `<button type="button" data-tab="${key}" aria-pressed="${key===tab}">${label} <span>${found.filter(test).length}</span></button>`).join('');
+    H.qa('#dxTabs button').forEach(b=> b.onclick=()=>{ tab = b.dataset.tab; shown = STEP; render(); H.q(`#dxTabs [data-tab="${tab}"]`).focus(); });
+    const list = found.filter(TABS.find(x=>x[0]===tab)[2]);
+    H.q('#dxGrid').innerHTML = list.slice(0, shown).map(card).join('');
+    H.q('#count').textContent = query.trim() ? `“${query.trim()}” 검색 결과 ${list.length}개` : `${list.length}개의 말`;
+    const rest = list.length - shown, more = H.q('#dxMore');
+    more.hidden = rest <= 0; more.textContent = `단어 더 보기 (${Math.max(0,rest)}개 남음)`;
+    H.q('#empty').hidden = list.length > 0;
+  }
+  H.q('#dxMore').onclick = ()=>{ const from = shown; shown += STEP; render(); const next = H.qa('#dxGrid .dx-card')[from]; if(next) next.focus({preventScroll:true}); };
+  H.q('#q').value = query;
+  H.q('#q').addEventListener('input', e=>{ query = e.target.value; shown = STEP; render(); });
+  H.q('#dxForm').addEventListener('submit', e=>{ e.preventDefault(); H.q('#words').scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' }); });
+  render();
+  if(query) H.q('#words').scrollIntoView();
 </script>
 </body>
 </html>
