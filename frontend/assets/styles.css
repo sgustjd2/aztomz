@@ -600,9 +600,8 @@ i{font-style:normal}
   --on-ink:#151a23; --shadow:0 12px 32px rgba(0,0,0,.28);
   background:var(--paper);color:var(--ink)
 }
-body.app-redesign{--nav-width:224px;padding:0 0 0 var(--nav-width);font-size:var(--text-body)}
-body.app-redesign.nav-collapsed{--nav-width:76px}
-.app-redesign .mast{position:fixed;inset:0 auto 0 0;z-index:50;width:var(--nav-width);border:0;border-right:1px solid var(--line);background:var(--paper)}
+body.app-redesign{padding:64px 0 0;font-size:var(--text-body)}
+.app-redesign .mast{position:fixed;inset:0 0 auto;z-index:50;width:100%;height:64px;border:0;border-bottom:1px solid var(--line);background:var(--paper)}
 .app-redesign .mast>.wrap{width:100%;height:100dvh;max-width:none;margin:0;padding:20px 12px 16px;display:flex;flex-direction:column;gap:24px}
 .app-redesign .mast-brand{display:flex;align-items:center;justify-content:space-between;gap:8px;flex:none}
 .app-redesign .mast .wordmark{font-size:30px;line-height:1.2;white-space:nowrap}
@@ -624,8 +623,6 @@ body.app-redesign.nav-collapsed{--nav-width:76px}
 .app-redesign .icon-sun::before{mask-image:url("icons/lucide/sun.svg")}
 .app-redesign .icon-menu::before{mask-image:url("icons/lucide/menu.svg")}
 .app-redesign .icon-x::before{mask-image:url("icons/lucide/x.svg")}
-.app-redesign .icon-panel-left-close::before{mask-image:url("icons/lucide/panel-left-close.svg")}
-.app-redesign .icon-panel-left-open::before{mask-image:url("icons/lucide/panel-left-open.svg")}
 .app-redesign .mast .nav-categories{gap:0;padding-top:16px;border-top:1px solid var(--line)}
 .app-redesign .nav-section-label{padding:0 10px 8px;color:var(--muted);font-size:var(--text-meta);font-weight:600}
 .app-redesign .mast .nav-categories a{min-height:34px;padding:6px 10px;font-size:var(--text-body);color:var(--muted);font-weight:500}
@@ -689,20 +686,8 @@ body.app-redesign.nav-collapsed{--nav-width:76px}
   .app-redesign .editorial-feed .idx-row.topic-row{grid-template-columns:150px minmax(0,1fr)}
   .app-redesign .editorial-feed .idx-row.topic-row:not(.has-thumb){grid-template-columns:minmax(0,1fr)}
 }
-@media(min-width:1025px){
-  .app-redesign.nav-collapsed .mast>.wrap{padding-inline:10px}
-  .app-redesign.nav-collapsed .mast-brand{flex-direction:column;gap:14px}
-  /* 접힌 레일(76px)엔 마스코트+글자(84px)가 안 들어가 삐져나옴 → 마스코트만. 이름은 링크의 aria-label 이 알린다 */
-  .app-redesign.nav-collapsed .mast .wordmark{font-size:0;gap:0}
-  .app-redesign.nav-collapsed .wordmark-mascot{width:36px;height:36px}
-  .app-redesign.nav-collapsed .nav-label,.app-redesign.nav-collapsed .nav-categories{display:none}
-  .app-redesign.nav-collapsed .mast nav a{justify-content:center;padding:10px;min-height:48px}
-  .app-redesign.nav-collapsed .theme-toggle{justify-content:center;padding-inline:0}
-}
 @media(max-width:1024px){
-  body.app-redesign,body.app-redesign.nav-collapsed{--nav-width:0px;padding:64px 0 0}
   body.app-redesign.nav-open{overflow:hidden}
-  .app-redesign .mast{inset:0 0 auto;width:100%;height:64px;border-right:0;border-bottom:1px solid var(--line)}
   .app-redesign .mast>.wrap{position:relative;height:64px;padding:10px 20px;display:block}
   .app-redesign .mast-brand{height:44px}
   .app-redesign .mast .wordmark{font-size:27px}
@@ -1088,13 +1073,6 @@ body.app-redesign.nav-collapsed{--nav-width:76px}
   .app-redesign .tp-kw{font-size:var(--text-card)}
 }
 
-/* Keep the brand separate from the navigation control. */
-@media(min-width:1025px){
-  .app-redesign .mast-brand{padding:4px 10px}
-  .app-redesign .mast .nav-toggle{order:3;width:100%;min-height:40px;border:0;border-top:1px solid var(--line);border-radius:0;font:500 13px var(--sans);color:var(--muted);background:transparent}
-  .app-redesign .mast>.wrap{gap:18px}
-  .app-redesign.nav-collapsed .mast-brand{padding-inline:0}
-}
 @media(max-width:1024px){
   .app-redesign .mast .nav-toggle{position:absolute;right:20px;top:12px;border:0;background:transparent}
 }
@@ -1212,26 +1190,16 @@ body.app-redesign.nav-collapsed{--nav-width:76px}
 .app-redesign .icon-square-terminal::before{mask-image:url("icons/lucide/square-terminal.svg")}
  .app-redesign .nav-categories .nav-icon::before{width:19px;height:19px}
 
-/* Fit standard laptop heights without hiding overflow on shorter screens. */
+/* 넓은 화면: 상단 헤더 메뉴 — 로고, 가로 메뉴, 오른쪽 끝 테마 버튼. 분야는 목록의 탭에서 고른다 */
 @media(min-width:1025px){
- .app-redesign .mast>.wrap{padding:14px 12px;gap:12px}
- .app-redesign .mast-brand{min-height:36px;padding:0 10px}
- .app-redesign .mast-panel{gap:14px;overscroll-behavior:contain}
- .app-redesign .mast nav{gap:2px}
- .app-redesign .mast nav a{min-height:42px;padding:8px 10px;font-size:15px;line-height:1.4}
- .app-redesign .mast .nav-categories{gap:0;padding-top:12px}
- .app-redesign .nav-section-label{font-size:12px;line-height:18px;padding-bottom:6px}
- .app-redesign .mast .nav-categories a{min-height:34px;padding:6px 10px;font-size:14px;line-height:1.4}
- .app-redesign .theme-toggle{min-height:40px;padding:8px 10px;font-size:14px}
- .app-redesign .mast .nav-toggle{height:36px;min-height:36px}
-}
-@media(min-width:1025px) and (max-height:740px){
- .app-redesign .mast>.wrap{padding-block:12px;gap:10px}
- .app-redesign .mast-panel{gap:10px}
- .app-redesign .mast nav a{min-height:38px;padding-block:7px}
- .app-redesign .mast .nav-categories a{min-height:30px;padding-block:5px}
- .app-redesign .mast .nav-categories{padding-top:10px}
- .app-redesign .theme-toggle{min-height:36px;padding-block:6px}
+ .app-redesign .mast>.wrap{height:63px;max-width:none;margin:0;padding:0 clamp(16px,3vw,40px);flex-direction:row;align-items:center;gap:32px}
+ .app-redesign .mast .wordmark{font-size:27px}
+ .app-redesign .mast .nav-toggle,.app-redesign .mast .nav-categories{display:none}
+ .app-redesign .mast-panel{flex-direction:row;align-items:center;gap:16px;overflow:visible}
+ .app-redesign .mast nav{flex-direction:row;align-items:center;width:auto;gap:4px}
+ .app-redesign .mast nav a{min-height:40px;padding:8px 15px;gap:8px;border-radius:999px;font-size:15px;line-height:1.4}
+ .app-redesign #mastNav .nav-icon,.app-redesign #mastNav .nav-icon::before{width:19px;height:19px}
+ .app-redesign .theme-toggle{width:auto;min-height:40px;margin:0 0 0 auto;padding:8px 15px;gap:8px;border:1px solid var(--line);border-radius:999px;font-size:14px}
 }
 
 /* 피처드에 실제 사진이 없을 때(카테고리 기본 SVG) — 빈 판이 첫 화면 절반을 차지하지 않게 축소 */
@@ -1524,12 +1492,12 @@ body:not(.detail-page).app-redesign .sec-head{margin:22px 6px 10px;padding-botto
 :root :is(.app-redesign .dword .dw-def,.app-redesign .tp-card .tp-why){font-size:var(--card-desc);line-height:1.65}
 
 /* ---------- 상세: 따라오는 바로가기 바 ---------- */
-body.detail-page .detail-jumps{position:sticky;top:0;z-index:20;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;
+body.detail-page .detail-jumps{position:sticky;top:64px;z-index:20;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;
   background:color-mix(in srgb,var(--paper) 88%,transparent);-webkit-backdrop-filter:saturate(1.5) blur(12px);backdrop-filter:saturate(1.5) blur(12px)}
 body.detail-page .detail-jumps::-webkit-scrollbar{display:none}
 body.detail-page .detail-jumps a{flex:none}
 body.detail-page .detail-jumps a.on{color:var(--accent-text);box-shadow:inset 0 -2px 0 currentColor}
-body.detail-page :is(#story,#judgment,#places,#recommendations,#sources,#prompt){scroll-margin-top:76px}
+body.detail-page :is(#story,#judgment,#places,#recommendations,#sources,#prompt){scroll-margin-top:140px}
 html:has(body.detail-page){scroll-padding-top:0}
 .app-redesign .detail-header>.cover{border-radius:14px}
 .app-redesign .detail-header>.crumb a{text-decoration:none;font-weight:700}
@@ -1546,7 +1514,7 @@ html{scroll-padding-top:16px}
     background:color-mix(in srgb,var(--paper) 92%,transparent);-webkit-backdrop-filter:saturate(1.6) blur(20px);backdrop-filter:saturate(1.6) blur(20px)}
   @supports not (backdrop-filter:blur(1px)){.app-redesign .mast::before{background:var(--paper)}}
 
-  body.app-redesign,body.app-redesign.nav-collapsed{padding-bottom:calc(64px + env(safe-area-inset-bottom))}
+  body.app-redesign{padding-bottom:calc(64px + env(safe-area-inset-bottom))}
   .app-redesign .tabbar{position:fixed;left:0;right:0;bottom:0;z-index:45;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));
     height:calc(64px + env(safe-area-inset-bottom));padding:5px max(8px,env(safe-area-inset-left)) env(safe-area-inset-bottom) max(8px,env(safe-area-inset-right));
     background:color-mix(in srgb,var(--paper) 90%,transparent);-webkit-backdrop-filter:saturate(1.6) blur(16px);backdrop-filter:saturate(1.6) blur(16px);
@@ -1562,8 +1530,6 @@ html{scroll-padding-top:16px}
   .app-redesign .tabbar a:focus-visible{outline-offset:-2px;border-radius:12px}
   .toast{bottom:calc(78px + env(safe-area-inset-bottom))}
 
-  body.detail-page .detail-jumps{top:64px}
-  body.detail-page :is(#story,#judgment,#places,#recommendations,#sources,#prompt){scroll-margin-top:140px}
 }
 @media (max-width:640px){
   body:not(.detail-page).app-redesign>.wrap{padding:14px 12px 40px}

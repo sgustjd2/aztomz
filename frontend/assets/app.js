@@ -12,8 +12,6 @@
 
   /* ---------- 저수준 storage ---------- */
   const LS = global.localStorage;
-  function read(k, def){ try{ return JSON.parse(LS.getItem(k)) ?? def; }catch(e){ return def; } }
-  function write(k, v){ try{ LS.setItem(k, JSON.stringify(v)); }catch(e){} }
 
   /* ---------- 헬퍼 ---------- */
   const H = {};
@@ -255,7 +253,7 @@
     tabbar.innerHTML=tabs.map(([url,label,icon])=>`<a href="${url}"><span class="nav-icon icon-${icon}" aria-hidden="true"></span><span>${label}</span></a>`).join('');
     host.innerHTML=`<div class="wrap">
       <div class="mast-brand"><a class="wordmark" href="index.html" aria-label="한끗 홈"><img class="wordmark-mascot" src="assets/mascot.png" alt="" width="34" height="34">한<b>끗</b></a></div>
-      <button class="nav-toggle" type="button" aria-label="메뉴 접기" aria-expanded="true" aria-controls="mastPanel"><span class="nav-icon icon-panel-left-close" aria-hidden="true"></span></button>
+      <button class="nav-toggle" type="button" aria-label="메뉴 열기" aria-expanded="false" aria-controls="mastPanel"><span class="nav-icon icon-menu" aria-hidden="true"></span></button>
       <div class="mast-panel" id="mastPanel" tabindex="-1">
         <button class="drawer-close" type="button" aria-label="메뉴 닫기"><span class="nav-icon icon-x" aria-hidden="true"></span></button>
         <nav id="mastNav" aria-label="주 메뉴">${menu.map(([url,label,icon])=>`<a href="${url}" title="${label}" aria-label="${label}"><span class="nav-icon icon-${icon}" aria-hidden="true"></span><span class="nav-label">${label}</span></a>`).join('')}</nav>
@@ -267,20 +265,18 @@
     const tg=host.querySelector('.nav-toggle'), panel=host.querySelector('.mast-panel');
     const close=host.querySelector('.drawer-close'), scrim=host.querySelector('.nav-scrim');
     const compact=global.matchMedia('(max-width:1024px)');
-    let collapsed=read('hangeut.navCollapsed',false)===true, opened=false;
+    let opened=false;
     const backgroundState=new Map();
     const sync=()=>{
-      document.body.classList.toggle('nav-collapsed',collapsed);
       host.classList.toggle('nav-open',opened);
       document.body.classList.toggle('nav-open',opened);
       panel.inert=compact.matches && !opened;
       scrim.hidden=!opened;
       if(compact.matches && opened){panel.setAttribute('role','dialog');panel.setAttribute('aria-modal','true');panel.setAttribute('aria-label','사이트 메뉴');}
       else {panel.removeAttribute('role');panel.removeAttribute('aria-modal');panel.removeAttribute('aria-label');}
-      const label=compact.matches?(opened?'메뉴 닫기':'메뉴 열기'):(collapsed?'메뉴 펼치기':'메뉴 접기');
+      const label=opened?'메뉴 닫기':'메뉴 열기';
       tg.setAttribute('aria-label',label); tg.title=label;
-      tg.setAttribute('aria-expanded',String(compact.matches?opened:!collapsed));
-      tg.innerHTML=compact.matches||collapsed?'<span class="nav-icon icon-menu" aria-hidden="true"></span>':label;
+      tg.setAttribute('aria-expanded',String(opened));
     };
     const setOpen=(value,restore=true)=>{
       opened=Boolean(value) && compact.matches;
@@ -291,10 +287,7 @@
       if(opened)global.requestAnimationFrame(()=>{if(opened)close.focus({preventScroll:true});});
       else if(restore)tg.focus({preventScroll:true});
     };
-    tg.addEventListener('click',()=>{
-      if(compact.matches)setOpen(!opened);
-      else {collapsed=!collapsed;write('hangeut.navCollapsed',collapsed);sync();}
-    });
+    tg.addEventListener('click',()=>setOpen(!opened));
     close.addEventListener('click',()=>setOpen(false));
     scrim.addEventListener('click',()=>setOpen(false));
     panel.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{if(opened)setOpen(false,false);}));
