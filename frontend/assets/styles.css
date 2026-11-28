@@ -1422,18 +1422,22 @@ body:not(.detail-page).app-redesign .sec-head{margin:22px 6px 10px;padding-botto
 @media (min-width:1025px){.app-redesign>.wrap:has(.list-surface){max-width:none}}
 .app-redesign .list-surface{padding-top:0;container-type:inline-size}
 /* 열 수는 표면(컨테이너) 폭으로 정한다 — 사이드바를 접어도 맞게. 첫 행은 위 구분선을 뺀다 */
-@container (min-width:820px){
-  .list-surface .feed{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:32px}
-  .list-surface .feed-row:nth-child(-n+2){border-top:0}
+/* 목록 페이지: 넓은 화면은 큰 카드 2열(썸네일 위, 제목·요약 아래). 좁으면 위의 가로 행 그대로 */
+@container (min-width:760px){
+  .list-surface .feed{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;padding:18px 0 14px}
+  .list-surface .feed-row{display:flex;flex-direction:column;gap:0;padding:0;border:1px solid var(--line);border-radius:16px;overflow:hidden;
+    background:var(--card);transition:border-color .18s,box-shadow .18s,transform .18s}
+  .list-surface .fr-thumb{order:-1;width:100%;height:auto;aspect-ratio:16/9;border-radius:0}
+  .list-surface .fr-body{flex:1;padding:16px 20px 18px}
+  .list-surface .fr-meta{font-size:13px}
+  .list-surface .fr-title{margin-top:10px;font-size:20px}
+  .list-surface .fr-desc{margin-top:8px;font-size:15.5px;line-height:1.65;-webkit-line-clamp:3}
+  .list-surface .fr-foot{margin-top:auto;padding-top:14px;font-size:14px}
+  .list-surface .fr-score b{font-size:15.5px}
 }
-@container (min-width:1260px){
-  .list-surface .feed{grid-template-columns:repeat(3,minmax(0,1fr))}
-  .list-surface .feed-row:nth-child(-n+3){border-top:0}
-}
-@container (min-width:1700px){
-  .list-surface .feed{grid-template-columns:repeat(4,minmax(0,1fr))}
-  .list-surface .feed-row:nth-child(-n+4){border-top:0}
-}
+@media (hover:hover){@container (min-width:760px){
+  .list-surface .feed-row:hover{border-color:color-mix(in srgb,var(--ink) 22%,var(--line));box-shadow:0 8px 24px color-mix(in srgb,var(--ink) 10%,transparent);transform:translateY(-2px)}
+}}
 /* 광고 분석 목록 필터 — 판단·점수 구간·지역은 알약 칩(토글), 정렬은 작은 셀렉트 (상태는 URL 쿼리) */
 .lf{display:flex;flex-direction:column;gap:12px;padding:14px 0;border-bottom:1px solid var(--line)}
 .lf-bar{display:flex;align-items:center;gap:8px 10px;font-size:13.5px;color:var(--muted)}

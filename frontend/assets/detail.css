@@ -143,3 +143,45 @@
 
 .detail-page .prompt-box{white-space:normal}
 .detail-page .prompt-box .pb-text{white-space:pre-wrap}
+
+/* ---------- 상세 화면 정리: 회색 바탕 위 흰 카드로 구획 (목록 화면과 같은 언어) ---------- */
+:root:not([data-theme="dark"]) body.app-redesign.detail-page{--bg:#f2f4f6;background:var(--bg)}
+:root[data-theme="dark"] body.app-redesign.detail-page{--bg:#0f141b;background:var(--bg)}
+.detail-page #main :is(.detail-header,.analysis-summary,.article,.stage-box,.usage,.pure-kr,.prompt-box,.pull,.media,.recs,details.src,.detail-satisfaction){
+  background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px 28px;margin:0 0 16px}
+.detail-page #main>.verdict{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px 28px;margin:0 0 16px;max-width:none}
+.detail-page #main .detail-header{padding:22px 28px 26px;grid-template-columns:minmax(0,340px) minmax(0,1fr);gap:20px 32px}
+.detail-page .detail-header>.cover{aspect-ratio:4/3;border-radius:12px}
+.detail-page .detail-title-group .d-title{margin-top:10px}
+.detail-page .detail-jumps{border:0;margin-bottom:16px}
+body.detail-page .detail-jumps{gap:6px;padding:8px 10px;border:1px solid var(--line);border-radius:14px;background:var(--card)}
+body.detail-page .detail-jumps a{padding:0 14px;border-radius:999px;min-height:36px}
+body.detail-page .detail-jumps a.on{background:var(--accent-soft);box-shadow:none}
+.detail-page .scores-note{margin:8px 4px 12px}
+.detail-page .scores{gap:16px;margin-bottom:16px}
+.detail-page .score{padding:26px 28px;border-radius:16px;background:var(--card)}
+.detail-page.app-redesign #main .detail-satisfaction{border-left:1px solid var(--line)}
+.detail-page.app-redesign #main .analysis-summary{border-left:4px solid var(--accent)}
+.detail-page .article .detail-section-title{margin-bottom:20px}
+.detail-page .article>:last-child,.detail-page .recs li:last-child{margin-bottom:0}
+.detail-page .article .art-q{border-radius:10px}
+.detail-page.app-redesign #main .pull{border-left:4px solid var(--line)}
+.detail-page .sec-head{margin:32px 4px 12px;padding:0;border:0}
+.detail-page.app-redesign #main .recs{padding-block:8px}
+.detail-page #main details.src{padding:0 28px}
+.detail-page .shop-card{border-radius:16px;background:var(--card)}
+.detail-page .related .cover{border-radius:12px}
+.detail-page .related>a{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:12px}
+.detail-page .stale-banner{border-radius:14px}
+@media(max-width:760px){
+ .detail-page #main .detail-header{grid-template-columns:minmax(0,190px) minmax(0,1fr)}
+}
+@media(max-width:600px){
+ .detail-page.app-redesign>.wrap.reading{padding-inline:12px}
+ .detail-page #main :is(.detail-header,.analysis-summary,.article,.stage-box,.usage,.pure-kr,.prompt-box,.pull,.media,.recs,details.src,.detail-satisfaction),.detail-page #main>.verdict{padding:18px 16px;border-radius:14px;margin-bottom:12px}
+ .detail-page #main .detail-header{grid-template-columns:1fr;padding:16px}
+ .detail-page #main details.src{padding:0 16px}
+ .detail-page .score{padding:18px 16px;border-radius:14px}
+ body.detail-page .detail-jumps{padding:6px 8px}
+ body.detail-page .detail-jumps a{padding:0 12px}
+}
