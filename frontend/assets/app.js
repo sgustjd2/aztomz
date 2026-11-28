@@ -179,12 +179,8 @@
     b.innerHTML=`<span class="nav-icon icon-${dark?'sun':'moon'}" aria-hidden="true"></span><span class="nav-label">${label}</span>`;
     b.setAttribute('aria-label',label);
   };
-  H.theme.apply(H.theme.get());
-  // 페이지 전환(@view-transition)이 탭 숨김·빠른 연속 이동으로 취소되면 브라우저가 거부된 promise를 남긴다 → 조용히 처리
-  ['pageswap','pagereveal'].forEach(type=>global.addEventListener(type, (e)=>{
-    const vt = e.viewTransition; if(!vt) return;
-    ['ready','finished','updateCallbackDone'].forEach(k=>vt[k] && vt[k].catch(()=>{}));
-  }));  // 로드 즉시 적용(테마 깜빡임 최소화)
+  H.theme.apply(H.theme.get());  // 로드 즉시 적용(테마 깜빡임 최소화)
+  // 페이지 이동 애니메이션 방향·취소 처리는 <head> 의 assets/vt.js 가 맡는다(pagereveal 을 놓치지 않도록)
 
   /* ---------- masthead, injected into [data-mast] ---------- */
   H.NAV_CATEGORIES = [['맛집','utensils'],['디저트','cake-slice'],['카페·핫플','coffee'],['신조어','message-square'],['노래·챌린지','music'],['패션','shirt'],['AI 프롬프트','square-terminal']];
@@ -330,36 +326,8 @@
     });
   }
 
-  /* ---------- 페이지 이동 애니메이션 (View Transitions) ----------
-     CSS의 @view-transition 이 페이지 간 전환을 켜고, 여기서는 방향만 정한다:
-     메뉴 순서(홈 → 광고 분석 → 트렌드 → 사전 → 상세)로 앞으로 가면 'forward', 되돌아가면 'back'.
-     방향을 모르면(Safari 등 navigation.activation 미지원) CSS 기본 전환(살짝 올라오며 나타남)을 쓴다. */
-  const navRank = (href)=>{
-    try{
-      const u = new URL(href, location.href), p = u.pathname;
-      if(/\/trend(\.html|\/)/.test(p)) return 9;            // 상세(정적 trend/*.html·trend.html)
-      const f = p.split('/').pop() || 'index.html';
-      if(f==='index.html') return 0;
-      if(f==='list.html') return u.searchParams.get('type')==='ad' ? 1 : 2;
-      if(f==='pulse.html') return 2.5;
-      if(f==='dictionary.html') return 3;
-    }catch(_){}
-    return null;
-  };
-  const navType = (from, to)=>{
-    const a = navRank(from), b = navRank(to);
-    return (a==null || b==null || a===b) ? null : (b > a ? 'forward' : 'back');
-  };
-  global.addEventListener('pageswap', (e)=>{
-    const t = e.viewTransition && e.activation && e.activation.entry ? navType(location.href, e.activation.entry.url) : null;
-    if(t) e.viewTransition.types.add(t);
-  });
-  global.addEventListener('pagereveal', (e)=>{
-    const act = global.navigation && global.navigation.activation;
-    const t = e.viewTransition && act && act.from ? navType(act.from.url, act.entry.url) : null;
-    if(t) e.viewTransition.types.add(t);
-  });
-  // 같은 페이지 안에서 목록만 바뀔 때(카테고리 탭 등): 목록 영역만 살짝 바꿔 끼운다
+  /* ---------- 같은 페이지 안 목록 교체 애니메이션 (페이지 간 이동은 assets/vt.js) ----------
+     카테고리 탭 등으로 목록만 바뀔 때 목록 영역만 살짝 바꿔 끼운다 */
   H.swap = (update)=>{
     // types 를 못 쓰는 브라우저는 페이지 전체가 움직이므로 그냥 바꾼다
     const ok = document.startViewTransition && global.ViewTransition && 'types' in global.ViewTransition.prototype
