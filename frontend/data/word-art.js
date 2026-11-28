@@ -55,6 +55,7 @@ window.HANGEUT_WORD_ART = [
  "jungkkeongma",
  "kikangseu",
  "kimpung",
+ "kkeodeureokda-revival-2026",
  "korean-superintelligence-meme-2026-11",
  "kwonroot-take-the-l",
  "lucky-vicky",
@@ -77,6 +78,7 @@ window.HANGEUT_WORD_ART = [
  "simulove",
  "six-seven",
  "smishing-ai",
+ "speechip-self-expression-2026",
  "t1-ti-won-meme",
  "tmi-slang",
  "ton-mang-jinchang",
@@ -87,5 +89,6 @@ window.HANGEUT_WORD_ART = [
  "wax-pop-ball-texture-play-2026",
  "yareu",
  "yareumdapda",
- "young-keukeu"
+ "young-keukeu",
+ "youthalgia-self-soothing-2026"
 ];

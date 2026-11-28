@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240">
+  <rect width="320" height="240" fill="#fdfcf8"/>
+  <style>
+    .ink{fill:none;stroke:#1c1c1c;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+    .paper{fill:#fdfcf8}
+    .detail{stroke-width:.85}
+    .head{transform-box:fill-box;transform-origin:50% 95%;animation:sway 6s ease-in-out infinite}
+    .steam{transform-box:fill-box;transform-origin:50% 100%;animation:steam 5s ease-in-out infinite}
+    .reel{transform-box:fill-box;transform-origin:center;animation:turn 8s linear infinite}
+    @keyframes sway{0%,100%{transform:rotate(-3deg)}50%{transform:rotate(3deg)}}
+    @keyframes steam{0%,100%{transform:translateY(1px) skewX(-4deg);opacity:.35}50%{transform:translateY(-5px) skewX(5deg);opacity:.8}}
+    @keyframes turn{to{transform:rotate(360deg)}}
+    @media (prefers-reduced-motion: reduce){ * { animation: none !important } }
+  </style>
+  <defs>
+    <filter id="ink" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency=".055" numOctaves="2" seed="8" result="grain"/>
+      <feDisplacementMap in="SourceGraphic" in2="grain" scale=".45" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+  </defs>
+  <g class="ink" filter="url(#ink)">
+    <!-- A quiet patch of floor. -->
+    <path class="detail" d="M48 203Q151 201 274 203M62 208l17 1m167-1 14-1"/>
+    <!-- Folded paper airplane, a small keepsake of childhood. -->
+    <g class="paper">
+      <path d="M51 179l37-18-12 30-8-11-17-1Z"/>
+      <path class="detail" d="m68 180 20-19-12 24m-8-5 1 9 7-4"/>
+    </g>
+    <!-- Relaxed, folded legs and softly worn socks. -->
+    <path class="paper" d="M122 151c-13 4-27 15-31 24-4 10 7 15 22 15l44-1c9 0 11-8 3-12l-30-11"/>
+    <path class="paper" d="M146 153c15 0 35 9 43 19 8 9 1 16-10 20-13 4-34 4-51 2-10-1-10-9-2-12l37-9"/>
+    <path class="paper" d="M127 183c-8 1-18 1-24 0-5-1-8 3-6 6 3 4 14 6 26 5"/>
+    <path class="detail" d="m110 184-1 9m5-9-1 10M145 164q10 5 15 11"/>
+    <!-- A roomy, muted indigo sweater. -->
+    <path fill="#858da3" d="M120 101q12-7 25 1c7 11 12 29 13 49-11 7-28 9-43 3l-3-28q-5 10-13 12l-7-9c10-9 16-20 28-28Z"/>
+    <path class="detail" d="M116 147q21 6 40-2m-35 5 1 5m5-4v5m6-4v5m6-5v4m6-5v4M120 113q-3 11-3 19"/>
+    <!-- Open-stroke forearm, resting on the knee. -->
+    <path class="paper" stroke="none" d="M149 119q9 10 12 24l-23 13-3-5 19-12-10-16Z"/>
+    <path d="M149 119q9 10 12 24-10 8-23 13m6-33 10 16-19 12"/>
+    <path class="detail" d="M138 156q-5 3-8 0m5-5-5 2"/>
+    <!-- Raised hand cups one headphone. -->
+    <path class="paper" stroke="none" d="m93 129-5-22 17-20 4 4-14 18 5 17Z"/>
+    <path d="m93 129-5-22 17-20m4 4-14 18 5 17"/>
+    <path class="paper" d="M104 89c-3-4-3-9 0-12 2-2 4 0 3 3l1 5c4-3 6 0 3 4l-3 4"/>
+    <!-- Small, faceless head and padded headphones. -->
+    <g class="head">
+      <path class="paper" d="m125 94-1 9m10-9 2 8"/>
+      <path class="paper" d="M119 71c1-10 18-12 24-3 4 6 3 19-2 25-4 5-13 5-18-2-4-6-6-14-4-20Z"/>
+      <path fill="#1c1c1c" stroke-width=".85" d="M119 80c-5-7-2-19 6-22 10-5 21 1 22 10l-7-1-5-5c-2 7-8 10-14 11l-2 7Z"/>
+      <path d="M113 79c-3-15 5-26 17-26 14 0 22 12 20 26"/>
+      <path class="paper" d="M111 76q-5 2-3 12 1 5 6 4l4-2-1-13-6-1Zm35 0q6-1 7 7 0 8-5 9l-4-1-1-13 3-2Z"/>
+      <path class="detail" d="m112 79 2 10m34-10 1 10"/>
+    </g>
+    <!-- A loose headphone cable leads to the cassette player. -->
+    <path class="detail" d="M149 91c7 15 14 27 12 41-3 18 20 15 24 29 4 12 20 10 29 5"/>
+    <!-- Portable cassette player: no brand, no lettering. -->
+    <g>
+      <path class="paper" d="M211 150q0-4 5-4l49 1q5 0 5 5l-1 42q0 4-5 4l-49-1q-5 0-5-5Z"/>
+      <path d="m221 146 1-9q17-5 33 0l1 9"/>
+      <path class="detail" d="m226 145 1-5q12-3 23 0l1 5"/>
+      <path fill="#be8170" d="M217 156q20-2 46 0l-1 25q-23 2-45-1Z"/>
+      <path class="paper detail" d="M223 161q16-1 33 0l1 11-35-1Z"/>
+      <g class="reel">
+        <circle cx="229" cy="166" r="3.3" class="paper detail"/>
+        <path class="detail" d="m229 163 0 2m-3 2 2-1m3 2-1-1"/>
+      </g>
+      <g class="reel">
+        <circle cx="250" cy="166" r="3.3" class="paper detail"/>
+        <path class="detail" d="m250 163 0 2m-3 2 2-1m3 2-1-1"/>
+      </g>
+      <path class="detail" d="m232 167 15 0m-17 11 3-4 14 0 3 4m-31 10 41 1m-41 4 41 1"/>
+      <path d="m221 146 0-3m7 3v-3m7 3v-3"/>
+    </g>
+    <!-- Warm tea, gently breathing steam. -->
+    <path class="paper" d="M176 181q10-2 21 0l-2 15q-8 5-17-1Z"/>
+    <path d="M197 184c11-3 11 10-1 9"/>
+    <path class="detail" d="M174 199q14 4 27-1m-23-16q8 2 16 0"/>
+    <g class="steam detail">
+      <path d="M182 176c-7-7 6-9 0-17m9 16c-5-6 6-10 1-16"/>
+    </g>
+  </g>
+</svg>

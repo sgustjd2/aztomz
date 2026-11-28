@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240">
+  <rect width="320" height="240" fill="#fdfcf8"/>
+  <defs>
+    <filter id="ink" x="-4%" y="-4%" width="108%" height="108%">
+      <feTurbulence type="fractalNoise" baseFrequency=".045" numOctaves="2" seed="8" result="grain"/>
+      <feDisplacementMap in="SourceGraphic" in2="grain" scale=".55" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+  </defs>
+  <style>
+    .swagger {
+      transform-box: fill-box;
+      transform-origin: 50% 100%;
+      animation: swagger 6s ease-in-out infinite;
+    }
+    .gesture {
+      transform-box: fill-box;
+      transform-origin: 7% 88%;
+      animation: gesture 6s ease-in-out infinite;
+    }
+    @keyframes swagger {
+      0%, 100% { transform: rotate(-1deg); }
+      35%, 65% { transform: rotate(1.5deg); }
+    }
+    @keyframes gesture {
+      0%, 18%, 78%, 100% { transform: rotate(0deg); }
+      38%, 57% { transform: rotate(-11deg); }
+    }
+    @media (prefers-reduced-motion: reduce){ * { animation: none !important } }
+  </style>
+
+  <g fill="none" stroke="#1c1c1c" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" filter="url(#ink)">
+    <!-- A little stage for a very large opinion of oneself. -->
+    <path d="M52 210 Q154 212 268 209" stroke-width=".8"/>
+    <path d="M80 214 Q98 215 111 214 M208 214 Q233 215 246 213" stroke-width=".7"/>
+
+    <!-- Standing mirror. -->
+    <path d="M230 154 Q233 181 230 205 M214 209 Q230 203 247 208"/>
+    <path d="M230 73 C202 72 199 151 227 158 C254 162 260 80 237 74 Q233 72 230 73Z" fill="#fdfcf8"/>
+    <path d="M230 79 C208 79 207 145 228 151 C249 153 253 85 235 80" stroke-width=".8"/>
+    <path d="M235 94 Q230 104 224 112 M240 103 Q230 118 221 127" stroke-width=".8"/>
+
+    <!-- Small trophy, set rather conspicuously beside the mirror. -->
+    <path d="M191 182 Q202 184 212 182 L209 189 Q201 191 193 188Z" fill="#c6ac67"/>
+    <path d="M201 169 Q200 177 201 183"/>
+    <path d="M190 150 Q201 148 212 150 L210 162 Q207 170 201 170 Q194 169 192 162Z" fill="#c6ac67"/>
+    <path d="M190 153 Q180 149 184 159 Q187 165 194 163 M212 153 Q222 149 218 159 Q215 165 209 163"/>
+    <path d="M196 154 Q197 161 199 163" stroke-width=".8"/>
+    <path d="M184 192 Q201 190 219 192 L220 209 M185 193 L184 209" stroke-width="1.5"/>
+
+    <!-- Open-stroke legs and planted shoes. -->
+    <path d="M126 141 Q123 158 118 177 Q115 189 111 201
+             M134 143 Q133 162 125 180 Q122 192 119 201" fill="#fdfcf8"/>
+    <path d="M146 141 Q149 162 151 177 Q156 189 163 200
+             M138 146 Q139 164 143 181 Q149 195 155 204" fill="#fdfcf8"/>
+    <path d="M110 200 Q114 203 120 201 L122 207 Q111 210 101 207 Q101 204 110 200Z" fill="#1c1c1c"/>
+    <path d="M155 202 Q161 202 164 199 Q169 202 175 203 Q179 205 176 208 Q165 210 157 208Z" fill="#1c1c1c"/>
+
+    <g class="swagger">
+      <!-- Elbow out, hand firmly on hip. -->
+      <path d="M121 94 Q103 101 94 115 Q102 127 120 130
+               M124 101 Q111 106 102 115 Q109 121 120 123" fill="#fdfcf8"/>
+      <path d="M118 123 Q124 121 126 125 M120 130 Q126 129 127 126" stroke-width="1.4"/>
+
+      <!-- Chest forward, curved jacket and a slightly kicked-out hem. -->
+      <path d="M126 86 Q139 83 150 92 Q162 105 158 119
+               Q154 133 157 145 Q140 150 120 143
+               Q125 125 120 111 Q116 99 126 86Z" fill="#8b9a91"/>
+      <path d="M139 89 Q151 107 144 129 L145 145" stroke-width=".9"/>
+      <path d="M130 91 L136 101 L140 94 M145 132 Q150 134 154 131" stroke-width=".9"/>
+      <circle cx="147" cy="112" r="1" fill="#1c1c1c" stroke="none"/>
+      <circle cx="146" cy="122" r="1" fill="#1c1c1c" stroke="none"/>
+
+      <!-- Chin lifted; the face is left entirely blank. -->
+      <path d="M132 87 Q136 80 136 75 M141 87 Q143 82 145 78" stroke-width="1.5"/>
+      <path d="M129 65 C126 57 133 51 141 53 C149 54 156 63 153 69
+               Q150 77 142 79 Q133 76 129 65Z" fill="#fdfcf8"/>
+      <path d="M129 64 Q124 55 131 50 Q138 46 145 52 L143 57 Q135 55 129 64Z" fill="#1c1c1c"/>
+
+      <!-- A homemade crown: self-appointed importance. -->
+      <path d="M126 50 L121 38 L132 42 L136 31 L143 42 L153 36 L150 51 Q138 47 126 50Z" fill="#c6ac67"/>
+      <path d="M129 46 Q139 44 148 47" stroke-width=".8"/>
+
+      <!-- A languid, dismissive hand. -->
+      <g class="gesture">
+        <path d="M151 96 Q164 109 173 108 Q181 103 188 91
+                 M147 103 Q162 118 176 115 Q186 109 194 96" fill="#fdfcf8"/>
+        <path d="M188 91 Q186 85 188 82 Q191 82 192 90
+                 Q198 88 203 83
+                 M194 96 Q201 95 207 89
+                 M194 90 Q201 89 205 85
+                 M196 93 Q203 91 207 87" stroke-width="1.4"/>
+        <path d="M153 98 Q152 102 149 105" stroke-width=".8"/>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,142 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240">
+  <rect width="320" height="240" fill="#fdfcf8"/>
+  <defs>
+    <filter id="ink" x="-3%" y="-3%" width="106%" height="106%">
+      <feTurbulence type="fractalNoise" baseFrequency=".6" numOctaves="2" seed="8" result="grain"/>
+      <feDisplacementMap in="SourceGraphic" in2="grain" scale=".45" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+  </defs>
+  <style>
+    .gesture {
+      transform-box: fill-box;
+      transform-origin: 8% 88%;
+      animation: explain 6s ease-in-out infinite;
+    }
+    .thought {
+      transform-box: fill-box;
+      transform-origin: 30% 100%;
+      animation: settle 6s ease-in-out infinite;
+    }
+    .steam {
+      transform-box: fill-box;
+      transform-origin: 50% 100%;
+      animation: warm 6s ease-in-out infinite;
+    }
+    @keyframes explain {
+      0%, 18%, 78%, 100% { transform: rotate(0deg); }
+      36%, 56% { transform: rotate(-7deg); }
+    }
+    @keyframes settle {
+      0%, 18%, 80%, 100% { transform: translateY(0); }
+      40%, 60% { transform: translateY(-2px); }
+    }
+    @keyframes warm {
+      0%, 100% { transform: translateY(1px) skewX(-3deg); opacity: .45; }
+      50% { transform: translateY(-3px) skewX(5deg); opacity: .8; }
+    }
+    @media (prefers-reduced-motion: reduce){ * { animation: none !important } }
+  </style>
+
+  <g fill="none" stroke="#1c1c1c" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" filter="url(#ink)">
+    <!-- A quiet patch of ground. -->
+    <path d="M46 207 Q101 205 139 207 M165 207 Q222 205 275 207" stroke-width=".8"/>
+
+    <!-- Faceless speaker, with an open neckline and loose clothing. -->
+    <path d="M82 72 Q76 76 78 87 Q79 96 87 97 Q94 96 96 87 Q98 78 92 74"
+          fill="#fdfcf8"/>
+    <path d="M78 84 Q73 73 81 69 Q91 65 96 75 Q90 77 87 74 Q84 80 78 81"
+          fill="#1c1c1c" stroke-width="1.4"/>
+    <path d="M83 97 L82 103 M90 98 L91 103" stroke-width="1.4"/>
+
+    <!-- Far arm, resting naturally beside the thigh. -->
+    <path d="M74 112 Q66 130 68 147 L73 158
+             M80 115 Q73 132 74 146 L78 155"/>
+    <path d="M73 158 Q76 163 79 158" stroke-width="1.4"/>
+
+    <!-- Legs are separate, open pairs of ink strokes. -->
+    <path d="M79 151 Q76 171 78 196 M86 153 Q83 175 85 196"/>
+    <path d="M91 152 Q94 174 100 196 M98 150 Q101 172 107 194"/>
+    <path d="M77 196 Q81 194 85 197 L92 201 Q93 204 87 204 L77 203 Z"
+          fill="#fdfcf8"/>
+    <path d="M100 196 Q104 193 108 196 L115 200 Q118 203 112 204 L102 203 Z"
+          fill="#fdfcf8"/>
+
+    <path d="M81 103 Q70 106 72 119 L75 143 Q73 149 74 153
+             Q87 157 102 151 L98 128 Q102 118 97 108 L91 103
+             Q87 108 81 103 Z"
+          fill="#a9b6a0"/>
+    <path d="M81 109 Q83 127 81 143 M78 148 Q85 150 91 148"
+          stroke-width=".8"/>
+
+    <!-- An open palm makes the act of explaining visible. -->
+    <g class="gesture">
+      <path d="M96 111 Q106 121 114 124 Q122 120 130 114
+               M94 118 Q104 130 115 131 Q125 126 134 119"
+            fill="#fdfcf8"/>
+      <path d="M130 114 Q132 109 135 108 Q138 108 135 113
+               L141 111 Q145 111 142 114 L137 118 Q135 121 132 120"
+            stroke-width="1.4"/>
+      <path d="M101 117 L98 122" stroke-width=".8"/>
+    </g>
+
+    <!-- The speech balloon connects a personal feeling to specific tastes. -->
+    <g class="thought">
+      <path d="M129 43 Q129 31 145 30
+               Q197 27 248 31 Q262 32 262 46
+               L261 85 Q261 98 247 99
+               L164 99 Q150 106 139 111 L144 98
+               Q130 97 130 84 Z"
+            fill="#fdfcf8"/>
+      <path d="M164 54
+               C155 44 146 54 153 62
+               L164 72 L175 62
+               C182 53 172 45 164 54 Z"
+            fill="#c58d78" stroke-width="1.4"/>
+      <path d="M182 61 Q193 57 202 61 M198 57 L203 61 L198 65"
+            stroke-width=".9"/>
+
+      <!-- The same warm cup and living leaf that sit on the table. -->
+      <path d="M212 66 Q211 77 215 80 Q221 83 228 79 L230 65 Z"
+            fill="#c58d78" stroke-width="1.4"/>
+      <path d="M230 68 Q239 66 237 72 Q236 77 230 76"
+            stroke-width="1.4"/>
+      <path d="M217 57 Q216 49 223 44 Q230 44 233 47
+               Q231 56 221 58"
+            fill="#a9b6a0" stroke-width="1.4"/>
+      <path d="M219 61 Q221 52 229 48" stroke-width=".8"/>
+    </g>
+
+    <!-- Three modest props: a mug, a plant, and a closed book. -->
+    <path d="M151 158 Q205 156 267 158 L266 164 Q207 163 151 165 Z"
+          fill="#fdfcf8"/>
+    <path d="M159 165 Q158 185 157 205 M164 165 L163 204
+             M253 165 L255 205 M259 165 L260 204"
+          stroke-width="1.4"/>
+
+    <path d="M169 139 Q168 151 173 154 Q180 157 188 153 L190 139 Z"
+          fill="#c58d78"/>
+    <path d="M190 142 Q201 139 198 147 Q197 152 189 151"/>
+    <path d="M169 139 Q179 142 190 139" stroke-width=".8"/>
+    <g class="steam" stroke-width=".9">
+      <path d="M175 131 Q171 127 175 123 Q178 119 175 116"/>
+      <path d="M184 132 Q181 127 185 124"/>
+    </g>
+
+    <path d="M208 150 L236 148 L242 153 L213 156 Z"
+          fill="#fdfcf8" stroke-width="1.4"/>
+    <path d="M213 156 L213 159 L242 156 L242 153
+             M208 150 L208 153 L213 159" stroke-width="1.4"/>
+    <path d="M218 155 L236 153" stroke-width=".8"/>
+
+    <path d="M242 139 L246 155 Q251 158 257 154 L260 139 Z"
+          fill="#fdfcf8" stroke-width="1.4"/>
+    <path d="M241 137 Q250 135 261 137 L260 141 Q250 143 242 141 Z"
+          fill="#fdfcf8" stroke-width="1.4"/>
+    <path d="M251 136 Q250 124 253 112 M251 130 Q243 124 240 118"
+          stroke-width="1.4"/>
+    <path d="M253 123 Q252 112 263 110 Q265 120 253 123 Z
+             M246 126 Q236 126 235 115 Q245 115 246 126 Z"
+          fill="#a9b6a0" stroke-width="1.4"/>
+    <path d="M255 119 L260 114 M243 122 L239 118" stroke-width=".7"/>
+  </g>
+</svg>
