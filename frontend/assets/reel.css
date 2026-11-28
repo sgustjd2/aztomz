@@ -79,33 +79,34 @@
 .rl-cta{flex:none;display:inline-flex;align-items:center;min-height:40px;padding:0 16px;border-radius:99px;background:var(--accent-soft);color:var(--accent-text);font:700 14px var(--sans);text-decoration:none}
 .reel :is(.rl-play,.rl-seek,.rl-cta):focus-visible{outline:3px solid color-mix(in srgb,var(--accent) 72%,transparent);outline-offset:2px}
 
-/* 좁은 화면: 세로로 쌓은 구도 */
+/* 좁은 화면: 낮은 가로 구도(5:4)에 위아래로 쌓는다 — 아래 '오늘의 한끗'이 너무 밀리지 않게 */
 .reel{container-type:inline-size}
 @container (max-width:600px){
-  .rl-stage{aspect-ratio:4/5}
-  .rl-s1{padding:16cqw 0 0 8cqw}
-  .rl-w1{font-size:12cqw} .rl-w2{font-size:19cqw}
-  .rl-chip{font-size:5cqw;padding:2cqw 3.6cqw}
-  .rl-chip1{right:48cqw;top:66cqw} .rl-chip2{right:12cqw;top:73cqw} .rl-chip3{right:56cqw;top:88cqw} .rl-chip4{right:18cqw;top:95cqw} .rl-chip5{right:42cqw;top:108cqw}
-  .rl-h{left:8cqw;top:10cqw;margin-top:0!important;font-size:10cqw}
-  .rl-paper{left:7cqw;top:42cqw;width:82cqw;padding:5cqw 6cqw;border-width:.8cqw;box-shadow:2cqw 2cqw 0 #172033}
-  .rl-tag{font-size:3.6cqw;padding:.8cqw 2cqw}
-  .rl-paper .rl-p{margin-top:5.5cqw;font-size:5.2cqw}
-  .rl-lens{width:15cqw;height:15cqw;border-width:1.6cqw}
-  .rl-lens::after{left:10.8cqw;top:10.8cqw;width:2.2cqw;height:8cqw}
-  .rl-found{right:7cqw;bottom:8cqw;font-size:6cqw;padding:2.4cqw 4cqw;border-width:1cqw}
-  .rl-board{left:6cqw;right:6cqw;top:40cqw;bottom:7cqw;padding:0 6cqw;gap:4cqw;border-radius:4cqw}
-  .rl-title{font-size:6.2cqw}
-  .rl-meter{grid-template-columns:1fr auto;row-gap:2cqw}
-  .rl-mlabel{font-size:4.4cqw} .rl-num{font-size:11cqw} .rl-track{grid-column:1/-1;height:3cqw}
-  .rl-foot{font-size:3.4cqw}
-  .rl-mascot{left:50%;top:16cqw;width:46cqw;height:46cqw;margin:0 0 0 -23cqw}
-  .rl-end{left:0;right:0;top:68cqw;translate:none;text-align:center}
-  .rl-logo{font-size:22cqw} .rl-slogan{font-size:7.4cqw}
-  .rl-count{margin-top:4cqw;font-size:4.4cqw;padding:2cqw 4cqw}
-  .rl-star{width:8cqw;height:8cqw}
-  .rl-star1{left:9cqw;top:14cqw} .rl-star2{left:78cqw;top:12cqw;width:6cqw;height:6cqw} .rl-star3{left:8cqw;bottom:14cqw;width:6cqw;height:6cqw}
-  .rl-star4{right:8cqw;top:54cqw} .rl-star5{right:14cqw;bottom:8cqw;width:5cqw;height:5cqw} .rl-star6{right:80cqw;top:52cqw;width:6cqw;height:6cqw}
+  .rl-stage{aspect-ratio:5/4}
+  .rl-s1{padding:7cqw 0 0 7cqw}
+  .rl-w1{font-size:10cqw} .rl-w2{font-size:16cqw}
+  .rl-chip{font-size:4.4cqw;padding:1.5cqw 3cqw}
+  .rl-chip1{right:54cqw;top:48cqw} .rl-chip2{right:12cqw;top:50cqw} .rl-chip3{right:62cqw;top:61cqw} .rl-chip4{right:24cqw;top:63cqw} .rl-chip5{right:4cqw;top:38cqw}
+  .rl-h{left:7cqw;top:5cqw;margin-top:0!important;font-size:8cqw;white-space:nowrap}
+  .rl-h br{display:none}
+  .rl-paper{left:7cqw;top:19cqw;width:84cqw;padding:3.5cqw 5cqw;border-width:.7cqw;box-shadow:1.6cqw 1.6cqw 0 #172033}
+  .rl-tag{font-size:3.4cqw;padding:.7cqw 1.8cqw}
+  .rl-paper .rl-p{margin-top:3.6cqw;font-size:4.8cqw}
+  .rl-lens{width:13cqw;height:13cqw;border-width:1.4cqw}
+  .rl-lens::after{left:9.3cqw;top:9.3cqw;width:2cqw;height:7cqw}
+  .rl-found{right:6cqw;bottom:4cqw;font-size:5.4cqw;padding:1.8cqw 3.6cqw;border-width:.9cqw}
+  .rl-board{left:6cqw;right:6cqw;top:18cqw;bottom:4cqw;padding:0 5cqw;gap:1.8cqw;border-radius:3.6cqw}
+  .rl-title{font-size:5.4cqw}
+  .rl-meter{grid-template-columns:1fr auto;row-gap:1cqw}
+  .rl-mlabel{font-size:4cqw} .rl-num{font-size:8.4cqw} .rl-track{grid-column:1/-1;height:2.2cqw}
+  .rl-foot{font-size:3.1cqw}
+  .rl-mascot{left:50%;top:4cqw;width:32cqw;height:32cqw;margin:0 0 0 -16cqw}
+  .rl-end{left:0;right:0;top:36cqw;translate:none;text-align:center}
+  .rl-logo{font-size:15cqw} .rl-slogan{font-size:6.2cqw}
+  .rl-count{margin-top:2cqw;font-size:4cqw;padding:1.4cqw 3.4cqw}
+  .rl-star{width:7cqw;height:7cqw}
+  .rl-star1{left:10cqw;top:8cqw} .rl-star2{left:80cqw;top:7cqw;width:5cqw;height:5cqw} .rl-star3{left:8cqw;bottom:7cqw;width:5cqw;height:5cqw}
+  .rl-star4{right:7cqw;top:30cqw} .rl-star5{right:12cqw;bottom:6cqw;width:4.5cqw;height:4.5cqw} .rl-star6{right:84cqw;top:32cqw;width:5cqw;height:5cqw}
   .rl-bar{gap:8px;padding:8px 10px}
   .rl-cta{padding:0 12px;font-size:13px}
 }

@@ -28,7 +28,7 @@
         ['#내돈내산', '#협찬', '#체험단', '#웨이팅', '#또갈집'].map(function (c, i) { return '<span class="rl-chip rl-chip' + (i + 1) + '">' + c + '</span>'; }).join('') +
       '</div>' +
       '<div class="rl-scene rl-s2">' +
-        '<h3 class="rl-h">문장부터<br>훑어요</h3>' +
+        '<h3 class="rl-h">문장부터 <br>훑어요</h3>' +
         '<div class="rl-paper"><span class="rl-tag">예시 후기</span>' +
           '<p class="rl-p">오늘 다녀온 카페 후기예요</p>' +
           '<p class="rl-p rl-key"><i></i><span>업체에서 <b>제공받아</b> 작성했어요</span></p>' +
@@ -37,7 +37,7 @@
         '<span class="rl-found">대가성 문구 발견</span>' +
       '</div>' +
       '<div class="rl-scene rl-s3">' +
-        '<h3 class="rl-h">점수 두 개로<br>따로 재요</h3>' +
+        '<h3 class="rl-h">점수 두 개로 <br>따로 재요</h3>' +
         '<div class="rl-board"><span class="rl-tag">최근 분석</span><strong class="rl-title">' + esc(item.title) + '</strong>' +
           meter('rl-ad', '광고 의심') + meter('rl-trust', '후기 신뢰') +
           '<span class="rl-foot">추정치 · 분석 ' + esc(H.fmtISO(item.analyzedAt)) + '</span></div>' +
