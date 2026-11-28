@@ -26,7 +26,7 @@
 <link rel="icon" href="favicon.ico" sizes="16x16 32x32 48x48" />
 <link rel="apple-touch-icon" href="apple-touch-icon.png" />
 <link rel="manifest" href="site.webmanifest" />
-<link rel="stylesheet" href="assets/styles.css?v=listchips-20261127" />
+<link rel="stylesheet" href="assets/styles.css?v=lftidy-20261128" />
 <style>
   .list-lead{padding:24px 0 20px;border-bottom:1px solid var(--line)}
   .list-lead h1{font-size:34px;font-weight:800;line-height:1.14;letter-spacing:0;margin:12px 0 10px;text-wrap:balance}
@@ -136,12 +136,16 @@
   function renderAdFilter(){
     if(type!=='ad') return;
     const host = H.q('#lFilter');
+    // 넓은 화면에선 칩이 많은 줄(지역)을 앞 FOLD개만 보이고 '+N'으로 펼친다
+    const FOLD = 8;
     const row = (d)=> `<div class="lf-row"><span class="lf-name" id="lfn-${d.key}">${d.name}</span>
-        <div class="lf-chips" role="group" aria-labelledby="lfn-${d.key}">${d.opts.map(([v,l,n])=>
-          `<button type="button" class="lf-chip" data-f="${d.key}" data-v="${H.esc(v)}" aria-pressed="false">${H.esc(l)}${n!=null?` <span class="lf-cn">${n}</span>`:''}</button>`).join('')}</div></div>`;
+        <div class="lf-chips" role="group" aria-labelledby="lfn-${d.key}">${d.opts.map(([v,l,n],i)=>
+          `<button type="button" class="lf-chip${i>=FOLD?' lf-extra':''}" data-f="${d.key}" data-v="${H.esc(v)}" aria-pressed="false">${H.esc(l)}${n!=null?` <span class="lf-cn">${n}</span>`:''}</button>`).join('')}${
+          d.opts.length>FOLD?`<button type="button" class="lf-more" aria-expanded="false">+${d.opts.length-FOLD}</button>`:''}</div></div>`;
     host.innerHTML = `<div class="lf">
       <div class="lf-bar">
         <button type="button" class="lf-toggle" aria-expanded="false" aria-controls="lfPanel">필터 <span class="lf-n" hidden></span></button>
+        <span class="lf-active"></span>
         <span class="lf-count" aria-live="polite"></span>
         <label class="lf-sort"><select aria-label="정렬">${SORTS.map(([v,l])=>`<option value="${v}">${l}</option>`).join('')}</select></label>
         <button type="button" class="lf-reset" hidden>초기화</button>
@@ -156,6 +160,11 @@
     const lf = H.q('#lFilter .lf'), tg = H.q('#lFilter .lf-toggle');
     tg.onclick = ()=>{ const open = !lf.classList.contains('open'); lf.classList.toggle('open', open); tg.setAttribute('aria-expanded', String(open));
       if(open) H.qa('#lFilter .lf-chips').forEach(H.chipRail); };
+    H.qa('#lFilter .lf-more').forEach(b=> b.onclick=()=>{
+      const r = b.closest('.lf-row'), all = !r.classList.contains('all');
+      r.classList.toggle('all', all); b.setAttribute('aria-expanded', String(all));
+      b.textContent = all ? '접기' : `+${r.querySelectorAll('.lf-extra').length}`;
+    });
     H.q('#lFilter .lf-reset').onclick = ()=>{
       FILTERS.forEach(d=> f[d.key]=''); sort = 'recent'; activeCat = '전체'; page = 1;
       renderFilter(); render(); syncURL();
@@ -170,6 +179,17 @@
     });
     const ss = H.q('#lFilter .lf-sort select'); ss.value = sort; ss.classList.toggle('is-set', sort!=='recent');
     H.qa('#lFilter .lf-chips').forEach(H.chipRail);
+    // 고른 값은 접힌 상태에서도 막대에 'x' 알약으로 보이고, 누르면 그 조건만 푼다
+    const act = H.q('#lFilter .lf-active');
+    act.innerHTML = FILTERS.filter(d=>f[d.key]).map(d=>{
+      const o = d.opts.find(([v])=>v===f[d.key]);
+      // 점수 구간은 '높음 50+'만으론 어느 점수인지 모르니 이름을 붙인다(광고 의심 높음)
+      const txt = (d.key==='ad'||d.key==='trust') ? `${d.name} ${o[1].split(' ')[0]}` : o[1];
+      return `<button type="button" class="lf-pill" data-f="${d.key}" aria-label="${H.esc(d.name)} ${H.esc(o[1])} 조건 풀기">${H.esc(txt)}</button>`;
+    }).join('');
+    H.qa('#lFilter .lf-pill').forEach(b=> b.onclick=()=>{ f[b.dataset.f]=''; page = 1; render(); syncURL(); });
+    // 접힌 부분의 지역을 골랐으면 그 줄은 펼쳐 둔다
+    H.qa('#lFilter .lf-extra.on').forEach(b=>{ const r = b.closest('.lf-row'); if(!r.classList.contains('all')) r.querySelector('.lf-more').click(); });
     const k = activeCount(), badge = H.q('#lFilter .lf-n');
     badge.hidden = !k; badge.textContent = k;
     tgLabel(k);
