@@ -70,14 +70,8 @@
 .rl-play{flex:none;position:relative;width:40px;height:40px;border:0;border-radius:50%;background:color-mix(in srgb,var(--ink) 7%,transparent);color:var(--ink);cursor:pointer}
 .rl-play::before{content:"";position:absolute;left:15px;top:13px;border-style:solid;border-width:7px 0 7px 12px;border-color:transparent transparent transparent currentColor}
 .rl-play.is-playing::before{left:14px;width:12px;height:14px;border-width:0 4px;border-color:currentColor;box-sizing:border-box}
-.rl-seek{flex:1;min-width:0;height:28px;margin:0;-webkit-appearance:none;appearance:none;background:transparent;cursor:pointer}
-.rl-seek::-webkit-slider-runnable-track{height:5px;border-radius:9px;background:linear-gradient(90deg,var(--ad) var(--p,0%),color-mix(in srgb,var(--ink) 10%,transparent) var(--p,0%))}
-.rl-seek::-webkit-slider-thumb{-webkit-appearance:none;width:13px;height:13px;margin-top:-4px;border-radius:50%;background:var(--ad)}
-.rl-seek::-moz-range-track{height:5px;border-radius:9px;background:color-mix(in srgb,var(--ink) 10%,transparent)}
-.rl-seek::-moz-range-progress{height:5px;border-radius:9px;background:var(--ad)}
-.rl-seek::-moz-range-thumb{width:13px;height:13px;border:0;border-radius:50%;background:var(--ad)}
-.rl-cta{flex:none;display:inline-flex;align-items:center;min-height:40px;padding:0 16px;border-radius:99px;background:var(--accent-soft);color:var(--accent-text);font:700 14px var(--sans);text-decoration:none}
-.reel :is(.rl-play,.rl-seek,.rl-cta):focus-visible{outline:3px solid color-mix(in srgb,var(--accent) 72%,transparent);outline-offset:2px}
+.rl-cta{flex:none;margin-left:auto;display:inline-flex;align-items:center;min-height:40px;padding:0 16px;border-radius:99px;background:var(--accent-soft);color:var(--accent-text);font:700 14px var(--sans);text-decoration:none}
+.reel :is(.rl-play,.rl-cta):focus-visible{outline:3px solid color-mix(in srgb,var(--accent) 72%,transparent);outline-offset:2px}
 
 /* 좁은 화면: 낮은 가로 구도(5:4)에 위아래로 쌓는다 — 아래 '오늘의 한끗'이 너무 밀리지 않게 */
 .reel{container-type:inline-size}

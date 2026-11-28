@@ -1,6 +1,6 @@
 /* 한끗 — 홈 모션그래픽 (12초, 4장면)
    영상 파일이 아니라 코드로 그린 타임라인이다(Web Animations API). 그래서 가볍고 선명하며, 점수 장면은 최신 분석 데이터를 쓴다.
-   · 모든 움직임을 같은 12초 타임라인에 올려 재생·정지·탐색이 한 번에 된다.
+   · 모든 움직임을 같은 12초 타임라인에 올려 재생·정지가 한 번에 된다.
    · 화면 밖에서는 멈추고, '동작 줄이기'면 자동 재생하지 않고 마지막 장면을 보여 준다(재생 버튼은 있음).
    장면 그림은 aria-hidden, 내용은 설명 문장으로 전달한다. 모양은 reel.css. */
 (function (w, d) {
@@ -53,7 +53,6 @@
     '</div>' +
     '<div class="rl-bar">' +
       '<button type="button" class="rl-play" aria-label="모션 재생"></button>' +
-      '<input type="range" class="rl-seek" min="0" max="' + T * 1000 + '" step="50" value="0" aria-label="모션 재생 위치">' +
       '<a class="rl-cta" href="list.html?type=ad">광고 분석 보기</a>' +
     '</div>';
   root.hidden = false;
@@ -123,16 +122,14 @@
   });
 
   // ---------- 재생 제어 ----------
-  var play = q('.rl-play'), seek = q('.rl-seek'), nums = root.querySelectorAll('.rl-num');
+  var play = q('.rl-play'), nums = root.querySelectorAll('.rl-num');
   var playing = false, wanted = !still, visible = false, raf = 0;
   var now = function () { return (Number(anims[0].currentTime) || 0) % (T * 1000); };
   var ramp = function (s, a, b) { var p = Math.max(0, Math.min(1, (s - a) / (b - a))); return 1 - Math.pow(1 - p, 3); };
   function draw() {
-    var ms = now(), s = ms / 1000;
+    var s = now() / 1000;
     nums[0].textContent = Math.round(ad * ramp(s, 6.7, 7.8));
     nums[1].textContent = Math.round(trust * ramp(s, 7.2, 8.3));
-    seek.value = Math.round(ms);
-    seek.style.setProperty('--p', ms / (T * 10) + '%');
   }
   function loop() { draw(); if (playing) raf = requestAnimationFrame(loop); }
   function seekTo(ms) { anims.forEach(function (a) { a.currentTime = ms; }); draw(); }
@@ -149,10 +146,6 @@
   }
   play.onclick = function () { wanted = !wanted; sync(); };
   q('.rl-stage').onclick = play.onclick;
-  seek.oninput = function () {
-    var ms = Math.min(Number(seek.value), T * 1000 - 1);   // sync() 가 막대 값을 다시 쓰므로 먼저 읽는다
-    wanted = false; sync(); seekTo(ms);
-  };
   if ('IntersectionObserver' in w) new IntersectionObserver(function (es) { visible = es[0].intersectionRatio >= .35; sync(); }, { threshold: [0, .35] }).observe(q('.rl-stage'));
   else visible = true;
   seekTo(still ? 11000 : 0);
