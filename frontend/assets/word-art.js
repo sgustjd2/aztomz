@@ -40,9 +40,9 @@
     exit: r(46, 14, 34, 68, 4) + c(24, 22, 8) + p('M26 32l-8 20 16 10-4 20M18 52L8 66M26 38l16 8') + dot(54, 50)
   };
 
-  // 단어별 그림이 있는 id (frontend/assets/word-art/<id>.svg, Codex + line-art-animation 화풍으로 생성)
+  // 단어별 그림이 있는 id — data/word-art.js (backend/scripts/word-art.mjs 가 그림 폴더를 보고 만든다)
   var DRAWN = {};
-  ('46cm-bodywash-meme-2026-11 WORD-2026-0026 WORD-2026-0027 WORD-2026-0029 WORD-2026-0030 WORD-2026-0031 WORD-2026-0033 aboha age-reaction-challenge-2026 ai-exam-cheating-satire-meme ai-slop aiching-emoji-self-intro-meme ajaseu aljaldakkalsen aura-farming bad-acting-challenge-2026 bamti banana-54000-ai-meme brain-physical bukangi-shark chaek-eop-kwae chaepohagesseo-meme-2026 chagall-slang clanker clown-meme-2026 cutter-toe deluru destroy-company-challenge destroy-company-meme dokpamin dong-gyeol-geon-jo dopa-gaki-slang eoljuga flex-slang gam-da-sal gapbunssa geoje-yaho ggugguggu gidae-con glaze godsaeng gukrul gyeongdo haeinssa hallelyaru hyunbaek-core-slang inoegom-vesper jangwonyoung-slang jemmini jensen-huang-love-meme jisoo-laurel-meme-2026-11 jungjijeong jungkkeongma kikangseu kimpung korean-superintelligence-meme-2026-11 kwonroot-take-the-l lucky-vicky maknagwi-slang maxxing-word-of-year-2026 mbtichan mothae-solo nanrijabeth nerd-nam neujoh old-keukeu ounwan parasocial poor-upbringing-meme ppaenan-jiwongeum-meme promise-of-two-pm-meme samsung-stock-half-price-meme seusegwon simu-love simulove six-seven smishing-ai t1-ti-won-meme tmi-slang ton-mang-jinchang tradwife ttalk-meme-2026 vibe-coding waho-slang wax-pop-ball-texture-play-2026 yareu yareumdapda young-keukeu').split(' ').forEach(function (i) { DRAWN[i] = 1; });
+  (w.HANGEUT_WORD_ART || []).forEach(function (i) { DRAWN[i] = 1; });
 
   // 그림이 아직 없는 새 단어: 제목·뜻의 키워드로 고른다(앞에서부터 처음 맞는 것)
   var RULES = [[/AI|인공지능|챗봇|로봇/i, 'robot'], [/시험|수능|공부/, 'exam'], [/주식|투자|코인/, 'chartdown'], [/퇴근|퇴사|회사|직장/, 'exit'],

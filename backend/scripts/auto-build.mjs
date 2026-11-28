@@ -36,8 +36,8 @@
    종료코드: 게시 0건이어도 0(정상). 치명 오류만 1.
    env: DDGS_EXE(ddgs 실행경로, 기본 로컬 venv) — Actions에선 pip ddgs + DDGS_EXE=ddgs
    ============================================================ */
-import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'node:fs';
-import { execFileSync } from 'node:child_process';
+import { readFileSync, writeFileSync, existsSync, mkdirSync, openSync } from 'node:fs';
+import { execFileSync, spawn } from 'node:child_process';
 import { extract as ddgsExtract } from './lib/websearch.mjs';
 import { validateTrends } from './validate-trends.mjs';
 import { acquireGitLock } from './lib/git-lock.mjs';
@@ -368,10 +368,23 @@ try {
   sh('git', ['push', 'origin', 'main']);
   console.log(`\n✓ 자동 게시·배포: ${published.length}건 push 완료 → Vercel 재배포.`);
   record('pushed');   // 블로그(--blog) 단계는 트렌드 게시 성공과 별개 — 기록은 여기서 끝낸다
+  startWordArt();
 } catch (e) {
   if (e instanceof Exit) throw e;   // 위 rebase 실패 경로가 이미 기록·종료함
   console.error('⚠ git 단계 오류(파일은 반영됨):', (e.stderr || e.message || '').toString().slice(0, 300));
   done('git_deferred');
+}
+
+// ── MZ 사전 새 단어 그림(word-art.mjs): 배포 뒤 백그라운드에서 그려 따로 push 한다. 1장에 1분쯤 걸려
+//    봇의 명령 제한 시간 안에 끼워 넣지 않는다. 그림이 다 있으면 바로 끝나고, 실패해도 게시에는 영향 없다.
+function startWordArt() {
+  try {
+    const log = join(repoRoot, 'backend', 'out', 'pipeline', 'word-art.log');
+    mkdirSync(dirname(log), { recursive: true });
+    const fd = openSync(log, 'a');
+    spawn(process.execPath, [join(scriptsDir, 'word-art.mjs'), '--push'], { cwd: repoRoot, detached: true, stdio: ['ignore', fd, fd] })
+      .on('error', () => {}).unref();
+  } catch (e) { console.warn(`⚠ 단어 그림 작업을 시작하지 못함(게시는 완료됨): ${e.message}`); }
 }
 
 // ── 블로그 발행(--blog): 사이트 배포가 끝난 뒤에만 티스토리로 넘어간다.
